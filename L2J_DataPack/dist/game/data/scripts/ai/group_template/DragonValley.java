@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -22,8 +22,6 @@ import java.util.EnumMap;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.datatables.SpawnTable;
-import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.L2Playable;
@@ -136,22 +134,9 @@ public final class DragonValley extends AbstractNpcAI
 		addAttackId(SUMMON_NPC);
 		addKillId(NECROMANCER_OF_THE_VALLEY);
 		addKillId(SPOIL_REACT_MONSTER);
-		addSpawnId(EXPLODING_ORC_GHOST);
+		addSpawnId(EXPLODING_ORC_GHOST, NECROMANCER_OF_THE_VALLEY);
 		addSpawnId(SPOIL_REACT_MONSTER);
 		addSpellFinishedId(EXPLODING_ORC_GHOST);
-		
-		for (int npcId : SPOIL_REACT_MONSTER)
-		{
-			for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(npcId))
-			{
-				onSpawn(spawn.getLastSpawn());
-			}
-		}
-		
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(NECROMANCER_OF_THE_VALLEY))
-		{
-			onSpawn(spawn.getLastSpawn());
-		}
 	}
 	
 	@Override
@@ -190,8 +175,8 @@ public final class DragonValley extends AbstractNpcAI
 				for (int i = 0; i < rnd; i++)
 				{
 					final L2Playable playable = isSummon ? attacker.getSummon() : attacker;
-					final L2Attackable minion = (L2Attackable) addSpawn(DRAKOS_ASSASSIN, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), true, 0, true);
-					attackPlayer(minion, playable);
+					final L2Npc minion = addSpawn(DRAKOS_ASSASSIN, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), true, 0, true);
+					addAttackPlayerDesire(minion, playable);
 				}
 			}
 		}
@@ -205,7 +190,7 @@ public final class DragonValley extends AbstractNpcAI
 		{
 			spawnGhost(npc, killer, isSummon, 20);
 		}
-		else if (((L2Attackable) npc).isSweepActive())
+		else if (((L2Attackable) npc).isSpoiled())
 		{
 			npc.dropItem(killer, getRandom(GREATER_HERB_OF_MANA, SUPERIOR_HERB_OF_MANA), 1);
 			manageMoraleBoost(killer, npc);
@@ -293,14 +278,14 @@ public final class DragonValley extends AbstractNpcAI
 		{
 			int val = npc.getScriptValue();
 			final L2Playable attacker = isSummon ? player.getSummon() : player;
-			final L2Attackable Ghost1 = (L2Attackable) addSpawn(EXPLODING_ORC_GHOST, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
-			Ghost1.getVariables().set("playable", attacker);
-			attackPlayer(Ghost1, attacker);
+			final L2Npc ghost1 = addSpawn(EXPLODING_ORC_GHOST, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
+			ghost1.getVariables().set("playable", attacker);
+			addAttackPlayerDesire(ghost1, attacker);
 			val++;
 			if ((val < 2) && (getRandomBoolean()))
 			{
-				final L2Attackable Ghost2 = (L2Attackable) addSpawn(WRATHFUL_ORC_GHOST, npc.getX(), npc.getY(), npc.getZ() + 20, npc.getHeading(), false, 0, false);
-				attackPlayer(Ghost2, attacker);
+				final L2Npc ghost2 = addSpawn(WRATHFUL_ORC_GHOST, npc.getX(), npc.getY(), npc.getZ() + 20, npc.getHeading(), false, 0, false);
+				addAttackPlayerDesire(ghost2, attacker);
 				val++;
 			}
 			npc.setScriptValue(val);

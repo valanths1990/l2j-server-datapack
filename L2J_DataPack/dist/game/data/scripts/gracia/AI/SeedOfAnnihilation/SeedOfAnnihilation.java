@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -19,15 +19,13 @@
 package gracia.AI.SeedOfAnnihilation;
 
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Map;
 
-import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -43,7 +41,7 @@ import com.l2jserver.gameserver.util.Util;
  */
 public class SeedOfAnnihilation extends AbstractNpcAI
 {
-	private static final Map<Integer, Location> _teleportZones = new FastMap<>();
+	private static final Map<Integer, Location> TELEPORT_ZONES = new HashMap<>();
 	private static final int ANNIHILATION_FURNACE = 18928;
 	
 	// Strength, Agility, Wisdom
@@ -73,17 +71,17 @@ public class SeedOfAnnihilation extends AbstractNpcAI
 	
 	static
 	{
-		_teleportZones.put(60002, new Location(-213175, 182648, -10992));
-		_teleportZones.put(60003, new Location(-181217, 186711, -10528));
-		_teleportZones.put(60004, new Location(-180211, 182984, -15152));
-		_teleportZones.put(60005, new Location(-179275, 186802, -10720));
+		TELEPORT_ZONES.put(60002, new Location(-213175, 182648, -10992));
+		TELEPORT_ZONES.put(60003, new Location(-181217, 186711, -10528));
+		TELEPORT_ZONES.put(60004, new Location(-180211, 182984, -15152));
+		TELEPORT_ZONES.put(60005, new Location(-179275, 186802, -10720));
 	}
 	
 	public SeedOfAnnihilation()
 	{
 		super(SeedOfAnnihilation.class.getSimpleName(), "gracia/AI");
 		loadSeedRegionData();
-		for (int i : _teleportZones.keySet())
+		for (int i : TELEPORT_ZONES.keySet())
 		{
 			addEnterZoneId(i);
 		}
@@ -96,7 +94,6 @@ public class SeedOfAnnihilation extends AbstractNpcAI
 		}
 		addStartNpc(32739);
 		addTalkId(32739);
-		initialMinionsSpawn();
 		startEffectZonesControl();
 	}
 	
@@ -278,25 +275,6 @@ public class SeedOfAnnihilation extends AbstractNpcAI
 		startQuestTimer("ChangeSeedsStatus", _seedsNextStatusChange - System.currentTimeMillis(), null, null);
 	}
 	
-	private void initialMinionsSpawn()
-	{
-		L2MonsterInstance mob;
-		for (SeedRegion sr : _regionsData)
-		{
-			for (int npcId : sr.elite_mob_ids)
-			{
-				for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(npcId))
-				{
-					mob = (L2MonsterInstance) spawn.getLastSpawn();
-					if (mob != null)
-					{
-						spawnGroupOfMinion(mob, sr.minion_lists[getRandom(sr.minion_lists.length)]);
-					}
-				}
-			}
-		}
-	}
-	
 	private void spawnGroupOfMinion(L2MonsterInstance npc, int[] mobIds)
 	{
 		for (int mobId : mobIds)
@@ -362,9 +340,9 @@ public class SeedOfAnnihilation extends AbstractNpcAI
 	@Override
 	public String onEnterZone(L2Character character, L2ZoneType zone)
 	{
-		if (_teleportZones.containsKey(zone.getId()))
+		if (TELEPORT_ZONES.containsKey(zone.getId()))
 		{
-			Location teleLoc = _teleportZones.get(zone.getId());
+			Location teleLoc = TELEPORT_ZONES.get(zone.getId());
 			character.teleToLocation(teleLoc, false);
 		}
 		return super.onEnterZone(character, zone);

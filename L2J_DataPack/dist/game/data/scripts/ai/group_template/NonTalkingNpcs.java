@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,8 +20,6 @@ package ai.group_template;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.datatables.SpawnTable;
-import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 
 /**
@@ -60,14 +58,6 @@ public final class NonTalkingNpcs extends AbstractNpcAI
 	{
 		super(NonTalkingNpcs.class.getSimpleName(), "ai/group_template");
 		addSpawnId(NONTALKINGNPCS);
-		
-		for (int npcId : NONTALKINGNPCS)
-		{
-			for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(npcId))
-			{
-				onSpawn(spawn.getLastSpawn());
-			}
-		}
 	}
 	
 	@Override

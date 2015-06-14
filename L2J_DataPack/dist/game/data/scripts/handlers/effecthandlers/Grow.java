@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -47,7 +47,6 @@ public final class Grow extends AbstractEffect
 		if (info.getEffected().isNpc())
 		{
 			L2Npc npc = (L2Npc) info.getEffected();
-			npc.setCollisionHeight(npc.getTemplate().getCollisionHeight());
 			npc.setCollisionRadius(npc.getTemplate().getfCollisionRadius());
 		}
 	}
@@ -58,7 +57,6 @@ public final class Grow extends AbstractEffect
 		if (info.getEffected().isNpc())
 		{
 			L2Npc npc = (L2Npc) info.getEffected();
-			npc.setCollisionHeight(npc.getTemplate().getCollisionHeightGrown());
 			npc.setCollisionRadius(npc.getTemplate().getCollisionRadiusGrown());
 		}
 	}

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.GeoUtils;
 
 /**
- * @author -Nemesiss-
- * @author FBIagent
+ * @author -Nemesiss-, HorridoJoho
  */
 public class AdminGeodata implements IAdminCommandHandler
 {
@@ -78,7 +77,7 @@ public class AdminGeodata implements IAdminCommandHandler
 				
 				if (GeoData.getInstance().hasGeoPos(geoX, geoY))
 				{
-					activeChar.sendMessage("WorldX: " + worldX + ", WorldY: " + worldY + ", WorldZ: " + worldZ + ", GeoX: " + geoX + ", GeoY: " + geoY + ", GeoZ: " + GeoData.getInstance().getSpawnHeight(worldX, worldY, worldZ, worldZ));
+					activeChar.sendMessage("WorldX: " + worldX + ", WorldY: " + worldY + ", WorldZ: " + worldZ + ", GeoX: " + geoX + ", GeoY: " + geoY + ", GeoZ: " + GeoData.getInstance().getSpawnHeight(worldX, worldY, worldZ));
 				}
 				else
 				{

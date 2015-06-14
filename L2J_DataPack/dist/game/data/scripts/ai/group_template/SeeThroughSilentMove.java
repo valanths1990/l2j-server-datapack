@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,8 +20,6 @@ package ai.group_template;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.datatables.SpawnTable;
-import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 
@@ -45,17 +43,6 @@ public class SeeThroughSilentMove extends AbstractNpcAI
 	private SeeThroughSilentMove()
 	{
 		super(SeeThroughSilentMove.class.getSimpleName(), "ai/group_template");
-		for (int npcId : MONSTERS)
-		{
-			for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(npcId))
-			{
-				final L2Npc npc = spawn.getLastSpawn();
-				if ((npc != null) && npc.isAttackable())
-				{
-					((L2Attackable) npc).setSeeThroughSilentMove(true);
-				}
-			}
-		}
 		addSpawnId(MONSTERS);
 	}
 	

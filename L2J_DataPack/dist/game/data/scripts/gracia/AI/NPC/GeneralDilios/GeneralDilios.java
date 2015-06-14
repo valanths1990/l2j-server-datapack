@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,11 +18,12 @@
  */
 package gracia.AI.NPC.GeneralDilios;
 
+import java.util.Collections;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -39,10 +40,10 @@ public final class GeneralDilios extends AbstractNpcAI
 	private static final int GENERAL_ID = 32549;
 	private static final int GUARD_ID = 32619;
 	
-	private L2Npc _general;
-	private final Set<L2Spawn> _guards;
+	private L2Npc _general = null;
+	private final Set<L2Spawn> _guards = Collections.newSetFromMap(new ConcurrentHashMap<L2Spawn, Boolean>());
 	
-	private static final NpcStringId[] diliosText =
+	private static final NpcStringId[] DILIOS_TEXT =
 	{
 		NpcStringId.MESSENGER_INFORM_THE_PATRONS_OF_THE_KEUCEREUS_ALLIANCE_BASE_WERE_GATHERING_BRAVE_ADVENTURERS_TO_ATTACK_TIATS_MOUNTED_TROOP_THATS_ROOTED_IN_THE_SEED_OF_DESTRUCTION,
 		// NpcStringId.MESSENGER_INFORM_THE_PATRONS_OF_THE_KEUCEREUS_ALLIANCE_BASE_THE_SEED_OF_DESTRUCTION_IS_CURRENTLY_SECURED_UNDER_THE_FLAG_OF_THE_KEUCEREUS_ALLIANCE,
@@ -57,14 +58,8 @@ public final class GeneralDilios extends AbstractNpcAI
 	public GeneralDilios()
 	{
 		super(GeneralDilios.class.getSimpleName(), "gracia/AI/NPC");
-		_general = SpawnTable.getInstance().getFirstSpawn(GENERAL_ID).getLastSpawn();
-		_guards = SpawnTable.getInstance().getSpawns(GUARD_ID);
-		if ((_general == null) || _guards.isEmpty())
-		{
-			_log.warning(GeneralDilios.class.getSimpleName() + ": Cannot find NPCs!");
-			return;
-		}
-		startQuestTimer("command_0", 60000, null, null);
+		
+		addSpawnId(GENERAL_ID, GUARD_ID);
 	}
 	
 	@Override
@@ -81,7 +76,7 @@ public final class GeneralDilios extends AbstractNpcAI
 			else
 			{
 				value = -1;
-				_general.broadcastPacket(new NpcSay(_general.getObjectId(), Say2.NPC_SHOUT, GENERAL_ID, diliosText[getRandom(diliosText.length)]));
+				_general.broadcastPacket(new NpcSay(_general.getObjectId(), Say2.NPC_SHOUT, GENERAL_ID, DILIOS_TEXT[getRandom(DILIOS_TEXT.length)]));
 			}
 			startQuestTimer("command_" + (value + 1), 60000, null, null);
 		}
@@ -98,5 +93,20 @@ public final class GeneralDilios extends AbstractNpcAI
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
+	}
+	
+	@Override
+	public String onSpawn(L2Npc npc)
+	{
+		if (npc.getId() == GENERAL_ID)
+		{
+			startQuestTimer("command_0", 60000, null, null);
+			_general = npc;
+		}
+		else if (npc.getId() == GUARD_ID)
+		{
+			_guards.add(npc.getSpawn());
+		}
+		return super.onSpawn(npc);
 	}
 }

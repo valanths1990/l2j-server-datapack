@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,9 +20,7 @@ package ai.group_template;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -55,16 +53,6 @@ public final class PrisonGuards extends AbstractNpcAI
 		addNpcHateId(GUARD);
 		addSkillSeeId(GUARD);
 		addSpellFinishedId(GUARD_HEAD, GUARD);
-		
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(GUARD_HEAD))
-		{
-			onSpawn(spawn.getLastSpawn());
-		}
-		
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(GUARD))
-		{
-			onSpawn(spawn.getLastSpawn());
-		}
 	}
 	
 	@Override

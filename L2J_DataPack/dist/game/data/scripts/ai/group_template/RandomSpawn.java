@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,9 +18,9 @@
  */
 package ai.group_template;
 
+import java.util.HashMap;
 import java.util.Map;
 
-import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.ThreadPoolManager;
@@ -33,7 +33,7 @@ import com.l2jserver.gameserver.model.actor.L2Npc;
  */
 public final class RandomSpawn extends AbstractNpcAI
 {
-	private static Map<Integer, Location[]> SPAWN_POINTS = new FastMap<>();
+	private static final Map<Integer, Location[]> SPAWN_POINTS = new HashMap<>();
 	static
 	{
 		// Keltas
@@ -88,17 +88,13 @@ public final class RandomSpawn extends AbstractNpcAI
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		if (!npc.isTeleporting())
+		final Location[] spawnlist = SPAWN_POINTS.get(npc.getId());
+		final Location loc = spawnlist[getRandom(spawnlist.length)];
+		if (!npc.isInsideRadius(loc, 200, false, false))
 		{
-			final Location[] spawnlist = SPAWN_POINTS.get(npc.getId());
-			final Location loc = spawnlist[getRandom(spawnlist.length)];
-			if (!npc.isInsideRadius(loc, 200, false, false))
-			{
-				npc.getSpawn().setLocation(loc);
-				ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(npc, loc), 100);
-			}
+			npc.getSpawn().setLocation(loc);
+			ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(npc, loc), 100);
 		}
-		
 		return super.onSpawn(npc);
 	}
 	

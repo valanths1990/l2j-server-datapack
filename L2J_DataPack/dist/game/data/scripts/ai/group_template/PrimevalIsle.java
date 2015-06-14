@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -22,10 +22,8 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.handler.IItemHandler;
 import com.l2jserver.gameserver.handler.ItemHandler;
-import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -120,22 +118,6 @@ public final class PrimevalIsle extends AbstractNpcAI
 		addKillId(EGG, SAILREN, DEINO, ORNIT);
 		addSeeCreatureId(TREX);
 		addSeeCreatureId(MONSTERS);
-		
-		for (int npcId : SPRIGNANT)
-		{
-			for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(npcId))
-			{
-				onSpawn(spawn.getLastSpawn());
-			}
-		}
-		
-		for (int npcId : TREX)
-		{
-			for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(npcId))
-			{
-				onSpawn(spawn.getLastSpawn());
-			}
-		}
 	}
 	
 	@Override
@@ -235,7 +217,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 					{
 						npc.setTarget(player);
 						npc.doCast(LONGRANGEDMAGIC1.getSkill());
-						attackPlayer((L2Attackable) npc, player);
+						addAttackPlayerDesire(npc, player);
 					}
 				}
 				break;
@@ -350,7 +332,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 					if ((characters != null) && (characters.isAttackable()) && (getRandomBoolean()))
 					{
 						L2Attackable monster = (L2Attackable) characters;
-						attackPlayer(monster, playable);
+						addAttackPlayerDesire(monster, playable);
 					}
 				}
 			}

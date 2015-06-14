@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -72,10 +72,7 @@ public final class Shadai extends AbstractNpcAI
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		if (!npc.isTeleporting())
-		{
-			startQuestTimer("VALIDATE_POS", 60000, npc, null, true);
-		}
+		startQuestTimer("VALIDATE_POS", 60000, npc, null, true);
 		return super.onSpawn(npc);
 	}
 }

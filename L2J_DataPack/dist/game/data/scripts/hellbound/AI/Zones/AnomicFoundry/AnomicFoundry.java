@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,9 +18,11 @@
  */
 package hellbound.AI.Zones.AnomicFoundry;
 
-import java.util.Map;
+import hellbound.HellboundEngine;
 
-import javolution.util.FastMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
@@ -35,8 +37,6 @@ import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 
-import hellbound.HellboundEngine;
-
 /**
  * Anomic Foundry.
  * @author GKR
@@ -49,7 +49,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	private static int LESSER_EVIL = 22398;
 	private static int GREATER_EVIL = 22399;
 	// Misc
-	private final Map<Integer, Integer> _atkIndex = new FastMap<>();
+	private final Map<Integer, Integer> _atkIndex = new ConcurrentHashMap<>();
 	// npcId, x, y, z, heading, max count
 	//@formatter:off
 	private static int[][] SPAWNS =
@@ -80,12 +80,9 @@ public final class AnomicFoundry extends AbstractNpcAI
 		super(AnomicFoundry.class.getSimpleName(), "hellbound/AI/Zones");
 		addAggroRangeEnterId(LABORER);
 		addAttackId(LABORER);
-		addKillId(LABORER);
-		addKillId(LESSER_EVIL);
-		addKillId(GREATER_EVIL);
-		addSpawnId(LABORER);
-		addSpawnId(LESSER_EVIL);
-		addSpawnId(GREATER_EVIL);
+		addKillId(LABORER, LESSER_EVIL, GREATER_EVIL);
+		addSpawnId(LABORER, LESSER_EVIL, GREATER_EVIL);
+		addTeleportId(LABORER, LESSER_EVIL, GREATER_EVIL);
 		startQuestTimer("make_spawn_1", respawnTime, null, null);
 	}
 	
@@ -205,40 +202,39 @@ public final class AnomicFoundry extends AbstractNpcAI
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		if (!npc.isTeleporting())
+		SpawnTable.getInstance().addNewSpawn(npc.getSpawn(), false);
+		if (getSpawnGroup(npc) >= 0)
 		{
-			SpawnTable.getInstance().addNewSpawn(npc.getSpawn(), false);
-			if (getSpawnGroup(npc) >= 0)
-			{
-				_spawned[getSpawnGroup(npc)]++;
-			}
-			
-			if (npc.getId() == LABORER)
-			{
-				npc.setIsNoRndWalk(true);
-			}
+			_spawned[getSpawnGroup(npc)]++;
 		}
-		else
+		
+		if (npc.getId() == LABORER)
 		{
-			if ((getSpawnGroup(npc) >= 0) && (getSpawnGroup(npc) <= 2))
-			{
-				_spawned[getSpawnGroup(npc)]--;
-				SpawnTable.getInstance().deleteSpawn(npc.getSpawn(), false);
-				npc.scheduleDespawn(100);
-				if (_spawned[3] < SPAWNS[3][5])
-				{
-					addSpawn(SPAWNS[3][0], SPAWNS[3][1], SPAWNS[3][2], SPAWNS[3][3], SPAWNS[3][4], false, 0, false);
-				}
-			}
-			else if (getSpawnGroup(npc) == 3)
-			{
-				startQuestTimer("make_spawn_2", respawnTime * 2, null, null);
-				_spawned[3]--;
-				SpawnTable.getInstance().deleteSpawn(npc.getSpawn(), false);
-				npc.scheduleDespawn(100);
-			}
+			npc.setIsNoRndWalk(true);
 		}
 		return super.onSpawn(npc);
+	}
+	
+	@Override
+	protected void onTeleport(L2Npc npc)
+	{
+		if ((getSpawnGroup(npc) >= 0) && (getSpawnGroup(npc) <= 2))
+		{
+			_spawned[getSpawnGroup(npc)]--;
+			SpawnTable.getInstance().deleteSpawn(npc.getSpawn(), false);
+			npc.scheduleDespawn(100);
+			if (_spawned[3] < SPAWNS[3][5])
+			{
+				addSpawn(SPAWNS[3][0], SPAWNS[3][1], SPAWNS[3][2], SPAWNS[3][3], SPAWNS[3][4], false, 0, false);
+			}
+		}
+		else if (getSpawnGroup(npc) == 3)
+		{
+			startQuestTimer("make_spawn_2", respawnTime * 2, null, null);
+			_spawned[3]--;
+			SpawnTable.getInstance().deleteSpawn(npc.getSpawn(), false);
+			npc.scheduleDespawn(100);
+		}
 	}
 	
 	private static int getSpawnGroup(L2Npc npc)

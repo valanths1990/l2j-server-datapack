@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -136,23 +136,6 @@ public final class SelMahumDrill extends AbstractNpcAI
 		addEventReceivedId(MAHUM_SOLDIERS);
 		addSpawnId(MAHUM_CHIEFS);
 		addSpawnId(MAHUM_SOLDIERS);
-		
-		// Send event to monsters, that was spawned through SpawnTable at server start (it is impossible to track first spawn)
-		for (int npcId : MAHUM_CHIEFS)
-		{
-			for (L2Spawn npcSpawn : SpawnTable.getInstance().getSpawns(npcId))
-			{
-				onSpawn(npcSpawn.getLastSpawn());
-			}
-		}
-		for (int npcId : MAHUM_SOLDIERS)
-		{
-			for (L2Spawn npcSpawn : SpawnTable.getInstance().getSpawns(npcId))
-			{
-				onSpawn(npcSpawn.getLastSpawn());
-			}
-		}
-		
 		// Start global return home timer
 		startQuestTimer("return_home", 120000, null, null, true);
 	}
@@ -214,7 +197,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 				break;
 			}
 		}
-		return null;
+		return super.onAdvEvent(event, npc, player);
 	}
 	
 	@Override
@@ -224,7 +207,6 @@ public final class SelMahumDrill extends AbstractNpcAI
 		{
 			npc.broadcastEvent("ATTACKED", 1000, null);
 		}
-		
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
@@ -275,7 +257,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 				}
 			}
 		}
-		return null;
+		return super.onEventReceived(eventName, sender, receiver, reference);
 	}
 	
 	@Override
@@ -288,22 +270,19 @@ public final class SelMahumDrill extends AbstractNpcAI
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
-		if (!npc.isTeleporting())
+		if (Util.contains(MAHUM_CHIEFS, npc.getId()))
 		{
-			if (Util.contains(MAHUM_CHIEFS, npc.getId()))
-			{
-				startQuestTimer("do_social_action", 15000, npc, null);
-			}
-			
-			else if ((getRandom(18) < 1) && Util.contains(MAHUM_SOLDIERS, npc.getId()))
-			{
-				npc.getVariables().set("SOCIAL_ACTION_ALT_BEHAVIOR", 1);
-			}
-			
-			// Restore AI handling by core
-			npc.disableCoreAI(false);
+			startQuestTimer("do_social_action", 15000, npc, null);
 		}
-		return null;
+		
+		else if ((getRandom(18) < 1) && Util.contains(MAHUM_SOLDIERS, npc.getId()))
+		{
+			npc.getVariables().set("SOCIAL_ACTION_ALT_BEHAVIOR", 1);
+		}
+		
+		// Restore AI handling by core
+		npc.disableCoreAI(false);
+		return super.onSpawn(npc);
 	}
 	
 	private void handleSocialAction(L2Npc npc, Actions action, boolean firstCall)

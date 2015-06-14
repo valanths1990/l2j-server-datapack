@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -48,6 +48,11 @@ public class Ground implements ITargetTypeHandler
 			if ((character != null) && character.isInsideRadius(player.getCurrentSkillWorldPosition(), skill.getAffectRange(), false, false))
 			{
 				if (!Skill.checkForAreaOffensiveSkills(activeChar, character, skill, srcInArena))
+				{
+					continue;
+				}
+				
+				if (character.isDoor())
 				{
 					continue;
 				}

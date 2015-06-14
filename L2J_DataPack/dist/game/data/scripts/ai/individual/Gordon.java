@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,7 +20,6 @@ package ai.individual;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -39,12 +38,6 @@ public final class Gordon extends AbstractNpcAI
 		super(Gordon.class.getSimpleName(), "ai/individual");
 		addSpawnId(GORDON);
 		addSeeCreatureId(GORDON);
-		
-		final L2Npc gordon = SpawnTable.getInstance().getFirstSpawn(GORDON).getLastSpawn();
-		if (gordon != null)
-		{
-			onSpawn(gordon);
-		}
 	}
 	
 	@Override
@@ -52,7 +45,7 @@ public final class Gordon extends AbstractNpcAI
 	{
 		if (creature.isPlayer() && ((L2PcInstance) creature).isCursedWeaponEquipped())
 		{
-			attackPlayer((L2Attackable) npc, (L2PcInstance) creature);
+			addAttackPlayerDesire(npc, (L2PcInstance) creature);
 		}
 		return super.onSeeCreature(npc, creature, isSummon);
 	}

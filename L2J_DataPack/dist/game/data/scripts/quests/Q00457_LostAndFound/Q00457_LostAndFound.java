@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -60,17 +60,16 @@ public final class Q00457_LostAndFound extends Quest
 	{
 		super(457, Q00457_LostAndFound.class.getSimpleName(), "Lost and Found");
 		addStartNpc(GUMIEL);
+		addSpawnId(ESCORT_CHECKER);
 		addFirstTalkId(GUMIEL);
 		addTalkId(GUMIEL);
 		addKillId(SOLINA_CLAN);
-		
-		_escortCheckers = SpawnTable.getInstance().getSpawns(ESCORT_CHECKER);
 	}
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		final QuestState st = player.getQuestState(getName());
+		final QuestState st = getQuestState(player, false);
 		if (st == null)
 		{
 			return getNoQuestMsg(player);
@@ -208,7 +207,7 @@ public final class Q00457_LostAndFound extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
-		QuestState st = player.getQuestState(getName());
+		QuestState st = getQuestState(player, true);
 		if (st == null)
 		{
 			st = newQuestState(player);
@@ -236,6 +235,13 @@ public final class Q00457_LostAndFound extends Quest
 			}
 		}
 		return htmltext;
+	}
+	
+	@Override
+	public String onSpawn(L2Npc npc)
+	{
+		_escortCheckers = SpawnTable.getInstance().getSpawns(ESCORT_CHECKER);
+		return super.onSpawn(npc);
 	}
 	
 	public void broadcastNpcSay(L2Npc npc, L2PcInstance player, NpcStringId stringId, boolean whisper)

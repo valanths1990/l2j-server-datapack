@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,9 +21,7 @@ package ai.group_template;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -82,13 +80,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 		addAttackId(KNIGHT, CAPTAIN, GUIDE, SEEKER, ASCETIC);
 		addNpcHateId(GUIDE, SEEKER, SAVIOR, ASCETIC);
 		addAggroRangeEnterId(GUIDE, SEEKER, SAVIOR, ASCETIC);
-		
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(SCARECROW))
-		{
-			spawn.getLastSpawn().setIsInvul(true);
-			spawn.getLastSpawn().disableCoreAI(true);
-			startQuestTimer("TRAINING", 30000, spawn.getLastSpawn(), null, true);
-		}
+		addSpawnId(SCARECROW);
 	}
 	
 	@Override
@@ -171,8 +163,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 					}
 					npc.setScriptValue(1);
 					broadcastNpcSay(npc, Say2.ALL, NpcStringId.FOR_THE_GLORY_OF_SOLINA);
-					final L2Attackable knight = (L2Attackable) addSpawn(KNIGHT, npc);
-					attackPlayer(knight, player);
+					addAttackPlayerDesire(addSpawn(KNIGHT, npc), player);
 				}
 				break;
 			}
@@ -266,7 +257,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 				broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.YOU_CANNOT_CARRY_A_WEAPON_WITHOUT_AUTHORIZATION);
 			}
 			
-			attackPlayer((L2Attackable) npc, player);
+			addAttackPlayerDesire(npc, player);
 		}
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
@@ -281,12 +272,21 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 				if (obj.equals(npc))
 				{
 					broadcastNpcSay(npc, Say2.NPC_ALL, DIVINITY_MSG[getRandom(DIVINITY_MSG.length)], caster.getName());
-					attackPlayer((L2Attackable) npc, caster);
+					addAttackPlayerDesire(npc, caster);
 					break;
 				}
 			}
 		}
 		return super.onSkillSee(npc, caster, skill, targets, isSummon);
+	}
+	
+	@Override
+	public String onSpawn(L2Npc npc)
+	{
+		npc.setIsInvul(true);
+		npc.disableCoreAI(true);
+		startQuestTimer("TRAINING", 30000, npc, null, true);
+		return super.onSpawn(npc);
 	}
 	
 	public static void main(String[] args)

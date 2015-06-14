@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,14 +18,13 @@
  */
 package hellbound.AI;
 
+import hellbound.HellboundEngine;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
-
-import hellbound.HellboundEngine;
 
 /**
  * Manages Naia's cast on the Hellbound Core
@@ -42,7 +41,7 @@ public final class HellboundCore extends AbstractNpcAI
 	public HellboundCore()
 	{
 		super(HellboundCore.class.getSimpleName(), "hellbound/AI");
-		addSpawnId(HELLBOUND_CORE);
+		addSpawnId(HELLBOUND_CORE, NAIA);
 	}
 	
 	@Override
@@ -52,7 +51,7 @@ public final class HellboundCore extends AbstractNpcAI
 		{
 			for (L2Character naia : npc.getKnownList().getKnownCharactersInRadius(900))
 			{
-				if ((naia != null) && naia.isMonster() && (naia.getId() == NAIA) && !naia.isDead())
+				if ((naia != null) && naia.isMonster() && (naia.getId() == NAIA) && !naia.isDead() && !naia.isChanneling())
 				{
 					naia.setTarget(npc);
 					naia.doSimultaneousCast(BEAM.getSkill());
@@ -66,7 +65,15 @@ public final class HellboundCore extends AbstractNpcAI
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		startQuestTimer("cast", 10000, npc, null);
+		if (npc.getId() == NAIA)
+		{
+			npc.setIsNoRndWalk(true);
+		}
+		else
+		{
+			startQuestTimer("cast", 10000, npc, null);
+		}
+		
 		return super.onSpawn(npc);
 	}
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,12 +18,8 @@
  */
 package ai.group_template;
 
-import java.util.Arrays;
-
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.datatables.SpawnTable;
-import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -57,14 +53,6 @@ public final class LairOfAntharas extends AbstractNpcAI
 		addSpawnId(DRAGON_KNIGHT, DRAGON_KNIGHT2, DRAGON_GUARD, DRAGON_MAGE);
 		addMoveFinishedId(DRAGON_GUARD, DRAGON_MAGE);
 		addAggroRangeEnterId(KNORIKS);
-		
-		for (int npcId : Arrays.asList(DRAGON_KNIGHT, DRAGON_KNIGHT2, DRAGON_GUARD, DRAGON_MAGE))
-		{
-			for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(npcId))
-			{
-				onSpawn(spawn.getLastSpawn());
-			}
-		}
 	}
 	
 	@Override
@@ -108,10 +96,10 @@ public final class LairOfAntharas extends AbstractNpcAI
 			{
 				if (getRandom(100) > KNIGHT_CHANCE)
 				{
-					final L2Attackable newKnight = (L2Attackable) addSpawn(DRAGON_KNIGHT2, npc.getLocation(), false, 0, true);
+					final L2Npc newKnight = addSpawn(DRAGON_KNIGHT2, npc, false, 0, true);
 					npc.deleteMe();
 					broadcastNpcSay(newKnight, Say2.NPC_SHOUT, NpcStringId.THOSE_WHO_SET_FOOT_IN_THIS_PLACE_SHALL_NOT_LEAVE_ALIVE);
-					attackPlayer(newKnight, killer);
+					addAttackPlayerDesire(newKnight, killer);
 				}
 				break;
 			}
@@ -119,10 +107,10 @@ public final class LairOfAntharas extends AbstractNpcAI
 			{
 				if (getRandom(100) > KNIGHT_CHANCE)
 				{
-					final L2Attackable eliteKnight = (L2Attackable) addSpawn(ELITE_DRAGON_KNIGHT, npc.getLocation(), false, 0, true);
+					final L2Npc eliteKnight = addSpawn(ELITE_DRAGON_KNIGHT, npc, false, 0, true);
 					npc.deleteMe();
 					broadcastNpcSay(eliteKnight, Say2.NPC_SHOUT, NpcStringId.IF_YOU_WISH_TO_SEE_HELL_I_WILL_GRANT_YOU_YOUR_WISH);
-					attackPlayer(eliteKnight, killer);
+					addAttackPlayerDesire(eliteKnight, killer);
 				}
 				break;
 			}

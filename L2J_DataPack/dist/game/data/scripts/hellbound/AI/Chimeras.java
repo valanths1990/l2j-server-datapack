@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,6 +18,7 @@
  */
 package hellbound.AI;
 
+import hellbound.HellboundEngine;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.ThreadPoolManager;
@@ -26,8 +27,6 @@ import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
-
-import hellbound.HellboundEngine;
 
 /**
  * Chimeras AI.
@@ -70,7 +69,7 @@ public final class Chimeras extends AbstractNpcAI
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		if ((HellboundEngine.getInstance().getLevel() == 7) && !npc.isTeleporting()) // Have random spawn points only in 7 lvl
+		if (HellboundEngine.getInstance().getLevel() == 7) // Have random spawn points only in 7 lvl
 		{
 			final Location loc = LOCATIONS[getRandom(LOCATIONS.length)];
 			if (!npc.isInsideRadius(loc, 200, false, false))
