@@ -8,7 +8,7 @@ from com.l2jserver.gameserver.network.serverpackets import NpcSay
 from com.l2jserver.gameserver.model.quest import State
 from com.l2jserver.gameserver.model.quest import QuestState
 from com.l2jserver.gameserver.model.quest import Quest as JQuest
-from com.l2jserver import L2DatabaseFactory
+from com.l2jserver.commons.database.pool.impl import ConnectionFactory
 
 qn = "503_PursuitClanAmbition"
 qd = "Pursuit Clan Ambition"
@@ -58,7 +58,7 @@ DROPLIST = {
 
 def suscribe_members(st) :
   clan=st.getPlayer().getClanId()
-  con=L2DatabaseFactory.getInstance().getConnection()
+  con=ConnectionFactory.getInstance().getConnection()
   offline=con.prepareStatement("SELECT charId FROM characters WHERE clanid=? AND online=0")
   offline.setInt(1, clan)
   rs=offline.executeQuery()
@@ -82,7 +82,7 @@ def suscribe_members(st) :
 
 def offlineMemberExit(st) :
   clan=st.getPlayer().getClanId()
-  con=L2DatabaseFactory.getInstance().getConnection()
+  con=ConnectionFactory.getInstance().getConnection()
   offline=con.prepareStatement("DELETE FROM character_quests WHERE name = ? and charId IN (SELECT charId FROM characters WHERE clanId =? AND online=0")
   offline.setString(1, qn)
   offline.setInt(2, clan)
@@ -106,7 +106,7 @@ def getLeaderVar(st, var) :
   except :
     pass
   leaderId=st.getPlayer().getClan().getLeaderId()
-  con=L2DatabaseFactory.getInstance().getConnection()
+  con=ConnectionFactory.getInstance().getConnection()
   offline=con.prepareStatement("SELECT value FROM character_quests WHERE charId=? AND var=? AND name=?")
   offline.setInt(1, leaderId)
   offline.setString(2, var)
@@ -136,7 +136,7 @@ def setLeaderVar(st, var, value) :
     leader.getQuestState(qn).set(var,value)
   else :
     leaderId=st.getPlayer().getClan().getLeaderId()
-    con=L2DatabaseFactory.getInstance().getConnection()
+    con=ConnectionFactory.getInstance().getConnection()
     offline=con.prepareStatement("UPDATE character_quests SET value=? WHERE charId=? AND var=? AND name=?")
     offline.setString(1, value)
     offline.setInt(2, leaderId)
