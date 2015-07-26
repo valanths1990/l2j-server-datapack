@@ -22,7 +22,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Level;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -32,6 +31,7 @@ import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.util.data.xml.IXmlReader;
 
 /**
+ * NPC Buffers data.
  * @author UnAfraid
  */
 public class NpcBuffersData implements IXmlReader
@@ -47,7 +47,7 @@ public class NpcBuffersData implements IXmlReader
 	public void load()
 	{
 		parseDatapackFile("data/scripts/ai/npc/NpcBuffers/NpcBuffersData.xml");
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + _npcBuffers.size() + " buffers data.");
+		LOGGER.info("{}: Loaded: {} buffers data.", getClass().getSimpleName(), _npcBuffers.size());
 	}
 	
 	@Override
