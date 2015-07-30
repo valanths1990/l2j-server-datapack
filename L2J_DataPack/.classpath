@@ -5,6 +5,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/L2J_Server" />
 	<classpathentry kind="lib" path="/L2J_Server/dist/libs/mmocore.jar" />
 	<classpathentry kind="lib" path="/L2J_Server/dist/libs/mockito-all-1.9.5.jar" />
+	<classpathentry kind="lib" path="/L2J_Server/dist/libs/slf4j-api-1.7.12.jar" />
 	<classpathentry kind="lib" path="/L2J_Server/dist/libs/testng-6.9.5.jar" />
 	<classpathentry kind="output" path="bin" />
 </classpath>
