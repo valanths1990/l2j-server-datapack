@@ -17,6 +17,10 @@ repositories {
     mavenCentral()
 }
 
+configurations.all {
+    transitive = false
+}
+
 dependencies {
 	compile 'org.slf4j:slf4j-api:1.7.12'
 	compile files('../L2J_Server/dist/libs/mmocore.jar')
@@ -31,6 +35,8 @@ task zip(type: Zip) {
 	from('dist')
 	println 'Build in build/distributions/' + fileName + '.zip'
 }
+
+build.finalizedBy(zip)
 
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.6-rc-1'
