@@ -86,8 +86,7 @@ public final class FortressOfResistance extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ": Couldnt set the Bloody Lord Nurka spawn");
-			e.printStackTrace();
+			_log.warn("{}: Couldnt set the Bloody Lord Nurka spawn!", getName(), e);
 		}
 	}
 	

@@ -23,7 +23,9 @@ import java.net.Socket;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
-import com.l2jserver.Config;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.l2jserver.gameserver.data.sql.impl.CharNameTable;
 import com.l2jserver.gameserver.handler.ITelnetHandler;
 import com.l2jserver.gameserver.instancemanager.PunishmentManager;
@@ -48,6 +50,8 @@ import com.l2jserver.gameserver.util.Util;
  */
 public class PlayerHandler implements ITelnetHandler
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(PlayerHandler.class);
+	
 	private final String[] _commands =
 	{
 		"kick",
@@ -245,10 +249,7 @@ public class PlayerHandler implements ITelnetHandler
 			}
 			catch (Exception e)
 			{
-				if (Config.DEBUG)
-				{
-					e.printStackTrace();
-				}
+				LOGGER.debug("Could not jail player via telnet!", e);
 			}
 		}
 		else if (command.startsWith("unjail"))
@@ -275,10 +276,7 @@ public class PlayerHandler implements ITelnetHandler
 			}
 			catch (Exception e)
 			{
-				if (Config.DEBUG)
-				{
-					e.printStackTrace();
-				}
+				LOGGER.debug("Could not unjail player via telnet!", e);
 			}
 		}
 		return false;

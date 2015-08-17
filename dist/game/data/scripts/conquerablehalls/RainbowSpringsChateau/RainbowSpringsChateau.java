@@ -294,7 +294,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 			}
 			else
 			{
-				_log.warning("CHSiegeManager: No Date setted for RainBow Springs Chateau Clan hall siege!. SIEGE CANCELED!");
+				_log.warn("CHSiegeManager: No Date setted for RainBow Springs Chateau Clan hall siege!. SIEGE CANCELED!");
 			}
 		}
 	}
@@ -685,7 +685,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 	{
 		if ((arena < 0) || (arena > 3))
 		{
-			_log.warning("RainbowSptringChateau siege: Wrong arena id passed: " + arena);
+			_log.warn("RainbowSptringChateau siege: Wrong arena ID passed {}!", arena);
 			return;
 		}
 		for (L2PcInstance pc : leader.getParty().getMembers())
@@ -719,7 +719,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 				}
 				catch (Exception e)
 				{
-					e.printStackTrace();
+					_log.warn("Unable to spawn guard for clan index {}!", i, e);
 				}
 			}
 			SpawnTable.getInstance().addNewSpawn(_gourds[i], false);
@@ -840,7 +840,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
+			_log.warn("{}: Unable to remove attacker clan ID {} from database!", RainbowSpringsChateau.class.getSigners(), clanId, e);
 		}
 	}
 	
@@ -855,7 +855,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
+			_log.warn("{}: Unable add attakers for clan ID {} and count {}!", RainbowSpringsChateau.class.getSigners(), clanId, count, e);
 		}
 	}
 	
@@ -863,19 +863,17 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 	public void loadAttackers()
 	{
 		try (Connection con = ConnectionFactory.getInstance().getConnection();
-			Statement s = con.createStatement())
+			Statement s = con.createStatement();
+			ResultSet rset = s.executeQuery("SELECT * FROM rainbowsprings_attacker_list"))
 		{
-			try (ResultSet rset = s.executeQuery("SELECT * FROM rainbowsprings_attacker_list"))
+			while (rset.next())
 			{
-				while (rset.next())
-				{
-					_warDecreesCount.put(rset.getInt("clan_id"), rset.getLong("decrees_count"));
-				}
+				_warDecreesCount.put(rset.getInt("clan_id"), rset.getLong("decrees_count"));
 			}
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
+			_log.warn("{}: Unable load attakers!", RainbowSpringsChateau.class.getSigners(), e);
 		}
 	}
 	

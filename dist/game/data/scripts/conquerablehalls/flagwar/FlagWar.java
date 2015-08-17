@@ -251,7 +251,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 					}
 					catch (Exception e)
 					{
-						_log.warning(getName() + "->select_clan_npc->Wrong mahum warrior id: " + var[1]);
+						_log.warn("{}: select_clan_npc->Wrong mahum warrior ID {}!", getName(), var[1], e);
 					}
 					if ((id > 0) && ((html = getAllyHtml(id)) != null))
 					{
@@ -261,7 +261,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 				}
 				else
 				{
-					_log.warning(getName() + " Siege: Not enough parameters to save clan npc for clan: " + clan.getName());
+					_log.warn("{}: Siege: Not enough parameters to save clan npc for clan {}! ", getName(), clan.getName());
 				}
 			}
 		}
@@ -546,8 +546,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			catch (Exception e)
 			{
 				endSiege();
-				_log.warning(getName() + ": Problems in siege initialization!");
-				e.printStackTrace();
+				_log.warn("{}: Problems in siege initialization!", getName(), e);
 			}
 		}
 	}
@@ -653,8 +652,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ": Couldnt make clan spawns: " + e.getMessage());
-			e.printStackTrace();
+			_log.warn("{}: Could not make clan spawns!", getName(), e);
 		}
 	}
 	
@@ -776,7 +774,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 					
 					if (ClanTable.getInstance().getClan(clanId) == null)
 					{
-						_log.warning(getName() + ": Loaded an unexistent clan as attacker! Clan ID: " + clanId);
+						_log.warn("{}: Loaded an unexistent clan as attacker! Clan ID {}!", getName(), clanId);
 						continue;
 					}
 					
@@ -791,7 +789,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ".loadAttackers()->" + e.getMessage());
+			_log.warn("Could not load attackers for {}!", getName(), e);
 		}
 	}
 	
@@ -800,7 +798,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		final List<Integer> listInstance = _data.get(clanId).players;
 		if (listInstance == null)
 		{
-			_log.warning(getName() + ": Tried to load unregistered clan with ID " + clanId);
+			_log.warn(getName() + ": Tried to load unregistered clan with ID " + clanId);
 			return;
 		}
 		
@@ -818,7 +816,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ".loadAttackerMembers()->" + e.getMessage());
+			_log.warn("{}: loadAttackerMembers", getName(), e);
 		}
 	}
 	
@@ -835,7 +833,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ".saveClan()->" + e.getMessage());
+			_log.warn("{}: saveClan", getName(), e);
 		}
 	}
 	
@@ -850,7 +848,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ".saveNpc()->" + e.getMessage());
+			_log.warn("{}: saveNpc()", getName(), e);
 		}
 	}
 	
@@ -866,7 +864,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ".saveMember()->" + e.getMessage());
+			_log.warn("{}: saveMember", getName(), e);
 		}
 	}
 	
@@ -884,7 +882,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ".clearTables()->" + e.getMessage());
+			_log.warn("Unable to clear data tables for {}!", getName(), e);
 		}
 	}
 	
