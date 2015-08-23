@@ -110,7 +110,6 @@ public final class OrcChange2 extends AbstractNpcAI
 		{
 			htmltext = "30513-19.htm"; // fnYouAreThirdClass
 		}
-		
 		else if ((classId == DESTROYER) && (player.getClassId() == ClassId.orcRaider))
 		{
 			if (player.getLevel() < 40)

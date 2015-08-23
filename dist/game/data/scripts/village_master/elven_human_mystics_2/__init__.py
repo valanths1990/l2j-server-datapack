@@ -17,8 +17,8 @@ MARK_OF_MAGUS        = 2840
 MARK_OF_LIFE         = 3140
 MARK_OF_WITCHCRAFT   = 3307
 MARK_OF_SUMMONER     = 3336
-#JUREK,ARKENIAS,VALLERIA,SCRAIDE,DRIKIYAN,JAVIER
-NPCS=[30115,30174,30176,30694,30854,31996]
+#JUREK,ARKENIAS,VALLERIA,SCRAIDE,DRIKIYAN,HALASTER,JAVIER
+NPCS=[30115,30174,30176,30694,30854,31755,31996]
 #event:[newclass,req_class,req_race,low_ni,low_i,ok_ni,ok_i,req_item]
 #low_ni : level too low, and you dont have quest item
 #low_i: level too low, despite you have the item
