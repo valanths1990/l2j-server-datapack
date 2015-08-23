@@ -301,6 +301,7 @@ import quests.Q00326_VanquishRemnants.Q00326_VanquishRemnants;
 import quests.Q00327_RecoverTheFarmland.Q00327_RecoverTheFarmland;
 import quests.Q00328_SenseForBusiness.Q00328_SenseForBusiness;
 import quests.Q00329_CuriosityOfADwarf.Q00329_CuriosityOfADwarf;
+import quests.Q00330_AdeptOfTaste.Q00330_AdeptOfTaste;
 import quests.Q00331_ArrowOfVengeance.Q00331_ArrowOfVengeance;
 import quests.Q00333_HuntOfTheBlackLion.Q00333_HuntOfTheBlackLion;
 import quests.Q00337_AudienceWithTheLandDragon.Q00337_AudienceWithTheLandDragon;
@@ -779,6 +780,7 @@ public class QuestMasterHandler
 		Q00327_RecoverTheFarmland.class,
 		Q00328_SenseForBusiness.class,
 		Q00329_CuriosityOfADwarf.class,
+		Q00330_AdeptOfTaste.class,
 		Q00331_ArrowOfVengeance.class,
 		Q00333_HuntOfTheBlackLion.class,
 		Q00337_AudienceWithTheLandDragon.class,
