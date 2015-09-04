@@ -43,7 +43,6 @@ public final class DwarfBlacksmithChange1 extends AbstractNpcAI
 	// Items
 	private static final int SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE = 8869;
 	private static final int FINAL_PASS_CERTIFICATE = 1635;
-	
 	// Class
 	private static final int ARTISAN = 56;
 	

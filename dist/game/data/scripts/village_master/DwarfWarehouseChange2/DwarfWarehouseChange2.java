@@ -49,7 +49,6 @@ public final class DwarfWarehouseChange2 extends AbstractNpcAI
 	private static final int MARK_OF_SEARCHER = 2809; // proof11z
 	private static final int MARK_OF_GUILDSMAN = 3119; // proof11x
 	private static final int MARK_OF_PROSPERITY = 3238; // proof11y
-	
 	// Class
 	private static final int BOUNTY_HUNTER = 55;
 	

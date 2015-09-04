@@ -43,7 +43,6 @@ public final class DwarfWarehouseChange1 extends AbstractNpcAI
 	// Items
 	private static final int SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE = 8869;
 	private static final int RING_OF_RAVEN = 1642;
-	
 	// Class
 	private static final int SCAVENGER = 54;
 	
