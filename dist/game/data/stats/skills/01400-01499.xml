@@ -255,8 +255,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="EnlargeAbnormalSlot">
-				<param slots="#slots" />
+			<effect name="Buff">
+				<add stat="EnlargeAbnormalSlot" val="#slots" />
 			</effect>
 		</for>
 	</skill>

@@ -339,6 +339,7 @@
 			<xs:enumeration value="PrivateBuyLimit" />
 			<xs:enumeration value="PrivateSellLimit" />
 			<xs:enumeration value="inventoryLimit" />
+			<xs:enumeration value="EnlargeAbnormalSlot" />
 			<xs:enumeration value="pReuse" />
 			<xs:enumeration value="dReuse" />
 			<xs:enumeration value="debuffImmunity" />
