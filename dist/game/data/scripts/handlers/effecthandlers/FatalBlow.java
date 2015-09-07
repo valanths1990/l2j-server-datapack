@@ -26,7 +26,7 @@ import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
-import com.l2jserver.gameserver.model.stats.BaseStats;
+import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Formulas;
 
 /**
@@ -63,25 +63,25 @@ public final class FatalBlow extends AbstractEffect
 	{
 		L2Character target = info.getEffected();
 		L2Character activeChar = info.getEffector();
+		Skill skill = info.getSkill();
 		
 		if (activeChar.isAlikeDead())
 		{
 			return;
 		}
 		
-		boolean ss = info.getSkill().useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
-		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		double damage = Formulas.calcBlowDamage(activeChar, target, info.getSkill(), shld, ss);
+		boolean ss = skill.useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
+		byte shld = Formulas.calcShldUse(activeChar, target, skill);
+		double damage = Formulas.calcBlowDamage(activeChar, target, skill, shld, ss);
 		
-		// Crit rate base crit rate for skill, modified with STR bonus
-		boolean crit = Formulas.calcCrit(info.getSkill().getBaseCritRate() * 10 * BaseStats.STR.calcBonus(activeChar), true, target);
+		boolean crit = Formulas.calcCrit(activeChar, target, skill);
 		if (crit)
 		{
 			damage *= 2;
 		}
 		
-		target.reduceCurrentHp(damage, activeChar, info.getSkill());
-		target.notifyDamageReceived(damage, activeChar, info.getSkill(), crit, false);
+		target.reduceCurrentHp(damage, activeChar, skill);
+		target.notifyDamageReceived(damage, activeChar, skill, crit, false);
 		
 		// Manage attack or cast break of the target (calculating rate, sending message...)
 		if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
@@ -97,6 +97,6 @@ public final class FatalBlow extends AbstractEffect
 		}
 		
 		// Check if damage should be reflected
-		Formulas.calcDamageReflected(activeChar, target, info.getSkill(), true);
+		Formulas.calcDamageReflected(activeChar, target, skill, true);
 	}
 }

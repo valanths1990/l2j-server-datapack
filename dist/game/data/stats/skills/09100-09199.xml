@@ -1096,7 +1096,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="rCrit" val="15" />
+				<add stat="critRate" val="15" />
 				<add stat="mCritRate" val="2" />
 				<add stat="runSpd" val="10" />
 				<add stat="absorbDam" val="5" />
