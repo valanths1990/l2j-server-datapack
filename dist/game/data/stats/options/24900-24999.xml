@@ -568,7 +568,7 @@
 			<add stat="runSpd" val="7" />
 			<add stat="physicalSkillPower" val="93" />
 			<mul stat="mpConsume" val="0.97" />
-			<add stat="cAtkAdd" val="41" />
+			<add stat="critDmgAdd" val="41" />
 			<add stat="mCritRate" val="2" />
 		</for>
 	</option>
@@ -579,7 +579,7 @@
 			<add stat="runSpd" val="7" />
 			<add stat="physicalSkillPower" val="93" />
 			<mul stat="mpConsume" val="0.97" />
-			<add stat="cAtkAdd" val="41" />
+			<add stat="critDmgAdd" val="41" />
 			<add stat="mCritRate" val="2" />
 		</for>
 	</option>
@@ -655,7 +655,7 @@
 			<add stat="runSpd" val="7" />
 			<add stat="physicalSkillPower" val="93" />
 			<mul stat="mpConsume" val="0.97" />
-			<add stat="cAtkAdd" val="41" />
+			<add stat="critDmgAdd" val="41" />
 			<add stat="mCritRate" val="2" />
 		</for>
 	</option>

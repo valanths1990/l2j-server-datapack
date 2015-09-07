@@ -16,7 +16,7 @@
 													<xs:simpleType>
 														<xs:restriction base="xs:token">
 															<xs:enumeration value="accCombat" />
-															<xs:enumeration value="cAtkAdd" />
+															<xs:enumeration value="critDmgAdd" />
 															<xs:enumeration value="CON" />
 															<xs:enumeration value="darkRes" />
 															<xs:enumeration value="DEX" />
