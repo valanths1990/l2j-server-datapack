@@ -124,6 +124,7 @@
 				<xs:attribute type="xs:byte" name="hp" use="optional" />
 				<xs:attribute type="xs:byte" name="cp" use="optional" />
 				<xs:attribute type="xs:byte" name="mp" use="optional" />
+				<xs:attribute type="xs:boolean" name="hasServitor" use="optional" />
 				<xs:attribute type="xs:byte" name="souls" use="optional" />
 				<xs:attribute type="xs:string" name="canTransform" use="optional" />
 				<xs:attribute type="xs:string" name="canUntransform" use="optional" />
@@ -226,6 +227,15 @@
 	<xs:complexType name="paramType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="pAtk" use="optional" />
+				<xs:attribute type="xs:string" name="mAtk" use="optional" />
+				<xs:attribute type="xs:string" name="pDef" use="optional" />
+				<xs:attribute type="xs:string" name="mDef" use="optional" />
+				<xs:attribute type="xs:string" name="maxHp" use="optional" />
+				<xs:attribute type="xs:string" name="maxMp" use="optional" />
+				<xs:attribute type="xs:string" name="critRate" use="optional" />
+				<xs:attribute type="xs:string" name="pAtkSpd" use="optional" />
+				<xs:attribute type="xs:string" name="mAtkSpd" use="optional" />
 				<xs:attribute type="xs:string" name="chance" use="optional" />
 				<xs:attribute type="xs:string" name="power" use="optional" />
 				<xs:attribute type="operation" name="type" use="optional" />
