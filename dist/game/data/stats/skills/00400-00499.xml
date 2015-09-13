@@ -1608,7 +1608,6 @@
 		<set name="icon" val="icon.skill0441" />
 		<set name="magicLvl" val="78" />
 		<set name="operateType" val="A2" />
-		<set name="removedOnDamage" val="true" />
 		<set name="reuseDelay" val="900000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
@@ -1639,7 +1638,6 @@
 		<set name="magicLvl" val="79" />
 		<set name="mpConsume" val="65" />
 		<set name="operateType" val="A2" />
-		<set name="removedOnAnyActionExceptMove" val="true" />
 		<set name="reuseDelay" val="900000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
@@ -1665,7 +1663,6 @@
 		<set name="magicLvl" val="79" />
 		<set name="mpConsume" val="72" />
 		<set name="operateType" val="A2" />
-		<set name="removedOnAnyActionExceptMove" val="true" />
 		<set name="reuseDelay" val="900000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
