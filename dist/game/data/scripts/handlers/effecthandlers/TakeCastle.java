@@ -24,8 +24,6 @@ import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.entity.Castle;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * Take Castle effect implementation.
@@ -51,9 +49,8 @@ public final class TakeCastle extends AbstractEffect
 		{
 			return;
 		}
-		
 		Castle castle = CastleManager.getInstance().getCastle(info.getEffector());
 		castle.engrave(info.getEffector().getActingPlayer().getClan(), info.getEffected());
-		castle.getSiege().announceToPlayer(SystemMessage.getSystemMessage(SystemMessageId.OPPONENT_STARTED_ENGRAVING), false);
 	}
+	
 }
