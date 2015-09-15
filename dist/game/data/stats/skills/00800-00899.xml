@@ -1907,7 +1907,6 @@
 		<set name="power" val="100" />
 		<set name="reuseDelay" val="23000" />
 		<set name="rideState" val="NONE" />
-		<set name="simultaneousCast" val="true" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack" />
