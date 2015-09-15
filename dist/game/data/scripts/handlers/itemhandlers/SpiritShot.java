@@ -30,6 +30,7 @@ import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.model.items.type.ActionType;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
+import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Broadcast;
 
 public class SpiritShot implements IItemHandler
@@ -96,6 +97,10 @@ public class SpiritShot implements IItemHandler
 		
 		// Charge Spirit shot
 		activeChar.setChargedShot(ShotType.SPIRITSHOTS, true);
+		
+		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_S1_);
+		sm.addItemName(itemId);
+		activeChar.sendPacket(sm);
 		
 		// Send message to client
 		activeChar.sendPacket(SystemMessageId.ENABLED_SPIRITSHOT);
