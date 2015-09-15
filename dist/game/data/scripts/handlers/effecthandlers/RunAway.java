@@ -51,19 +51,6 @@ public final class RunAway extends AbstractEffect
 	}
 	
 	@Override
-	public int getTicks()
-	{
-		return 5;
-	}
-	
-	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_AFRAID, info.getEffector(), false);
-		return false;
-	}
-	
-	@Override
 	public void onStart(BuffInfo info)
 	{
 		if (!info.getEffected().isAttackable())
