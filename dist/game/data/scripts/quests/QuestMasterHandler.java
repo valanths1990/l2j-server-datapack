@@ -391,6 +391,7 @@ import quests.Q00553_OlympiadUndefeated.Q00553_OlympiadUndefeated;
 import quests.Q00601_WatchingEyes.Q00601_WatchingEyes;
 import quests.Q00602_ShadowOfLight.Q00602_ShadowOfLight;
 import quests.Q00603_DaimonTheWhiteEyedPart1.Q00603_DaimonTheWhiteEyedPart1;
+import quests.Q00604_DaimonTheWhiteEyedPart2.Q00604_DaimonTheWhiteEyedPart2;
 import quests.Q00605_AllianceWithKetraOrcs.Q00605_AllianceWithKetraOrcs;
 import quests.Q00606_BattleAgainstVarkaSilenos.Q00606_BattleAgainstVarkaSilenos;
 import quests.Q00607_ProveYourCourageKetra.Q00607_ProveYourCourageKetra;
@@ -871,6 +872,7 @@ public class QuestMasterHandler
 		Q00601_WatchingEyes.class,
 		Q00602_ShadowOfLight.class,
 		Q00603_DaimonTheWhiteEyedPart1.class,
+		Q00604_DaimonTheWhiteEyedPart2.class,
 		Q00605_AllianceWithKetraOrcs.class,
 		Q00606_BattleAgainstVarkaSilenos.class,
 		Q00607_ProveYourCourageKetra.class,
