@@ -245,7 +245,7 @@ public class TarBeetleSpawn implements IXmlReader
 			}
 			catch (Exception e)
 			{
-				LOGGER.warn("{}: Could not refresh spawns!", getClass().getSimpleName(), e);
+				LOG.warn("{}: Could not refresh spawns!", getClass().getSimpleName(), e);
 			}
 		}
 		

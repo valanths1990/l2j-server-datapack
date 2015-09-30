@@ -52,7 +52,7 @@ public final class HellboundSpawns implements IXmlReader
 		_spawns.clear();
 		_spawnLevels.clear();
 		parseDatapackFile("data/scripts/hellbound/hellboundSpawns.xml");
-		LOGGER.info("{}: Loaded {} Hellbound spawns.", getClass().getSimpleName(), _spawns.size());
+		LOG.info("{}: Loaded {} Hellbound spawns.", getClass().getSimpleName(), _spawns.size());
 	}
 	
 	@Override
@@ -81,7 +81,7 @@ public final class HellboundSpawns implements IXmlReader
 			final Node id = npc.getAttributes().getNamedItem("id");
 			if (id == null)
 			{
-				LOGGER.error("{}:  Missing NPC ID, skipping record!", getClass().getSimpleName());
+				LOG.error("{}:  Missing NPC ID, skipping record!", getClass().getSimpleName());
 				return;
 			}
 			
@@ -124,7 +124,7 @@ public final class HellboundSpawns implements IXmlReader
 				spawn.setAmount(1);
 				if (loc == null)
 				{
-					LOGGER.warn("{}: Hellbound spawn location is null!", getClass().getSimpleName());
+					LOG.warn("{}: Hellbound spawn location is null!", getClass().getSimpleName());
 				}
 				spawn.setLocation(loc);
 				spawn.setRespawnDelay(delay, randomInterval);
@@ -138,7 +138,7 @@ public final class HellboundSpawns implements IXmlReader
 			}
 			catch (SecurityException | ClassNotFoundException | NoSuchMethodException e)
 			{
-				LOGGER.warn("{}: Couldn't load spawns!", getClass().getSimpleName(), e);
+				LOG.warn("{}: Couldn't load spawns!", getClass().getSimpleName(), e);
 			}
 		}
 	}
