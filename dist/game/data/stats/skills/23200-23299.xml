@@ -1719,6 +1719,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23298" levels="1" name="Flame Hawk">
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="FLAME_HAWK" />
@@ -1726,7 +1727,7 @@
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
 		<set name="isTriggeredSkill" val="true" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1744,7 +1745,7 @@
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
 		<set name="isTriggeredSkill" val="true" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />

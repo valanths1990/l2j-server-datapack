@@ -3641,7 +3641,7 @@
 					<item id="14160" min="1" max="1" chance="33.3" /> <!-- Sealed Vesper Earring -->
 					<item id="14161" min="1" max="1" chance="33.3" /> <!-- Sealed Vesper Necklace -->
 				</group>
-				<group chance="4.107600212097168">
+				<group chance="4.1076">
 					<item id="6577" min="1" max="1" chance="13.0435" /> <!-- Blessed Scroll: Enchant Weapon (S-Grade) -->
 					<item id="6578" min="1" max="1" chance="86.9565" /> <!-- Blessed Scroll: Enchant Armor (S-Grade) -->
 				</group>
@@ -3651,6 +3651,31 @@
 				</group>
 				<group chance="25">
 					<item id="16025" min="1" max="1" chance="100" /> <!-- Necklace of Freya -->
+				</group>
+				<group chance="2.8">
+					<item id="21894" min="1" max="1" chance="50" /> <!-- Ice Queen's Tiara -->
+					<item id="21714" min="1" max="1" chance="50" /> <!-- Sealed Cloak of Freya -->
+				</group>
+				<group chance="55.241">
+					<item id="14189" min="1" max="1" chance="5.5701" /> <!-- Forgotten Scroll - Hurricane Armor -->
+					<item id="14202" min="1" max="1" chance="5.3457" /> <!-- Forgotten Scroll - Maximum Sonic Focus -->
+					<item id="14194" min="1" max="1" chance="5.342" /> <!-- Forgotten Scroll - Blessing of Eva -->
+					<item id="14190" min="1" max="1" chance="5.3077" /> <!-- Forgotten Scroll - Vampiric Mist -->
+					<item id="14198" min="1" max="1" chance="5.3022" /> <!-- Forgotten Scroll - Song of Purification -->
+					<item id="14206" min="1" max="1" chance="5.295" /> <!-- Forgotten Scroll - Spirit of the Phantom -->
+					<item id="14197" min="1" max="1" chance="5.2805" /> <!-- Forgotten Scroll - Seal of Limit -->
+					<item id="14199" min="1" max="1" chance="5.2733" /> <!-- Forgotten Scroll - Dance of Berserker -->
+					<item id="14195" min="1" max="1" chance="5.2696" /> <!-- Forgotten Scroll - Lord of Vampire -->
+					<item id="14204" min="1" max="1" chance="5.2515" /> <!-- Forgotten Scroll - Spirit of the Cat -->
+					<item id="14200" min="1" max="1" chance="5.2443" /> <!-- Forgotten Scroll - Summon Imperial Phoenix -->
+					<item id="14227" min="1" max="1" chance="5.2298" /> <!-- Forgotten Scroll - Great Fury -->
+					<item id="14201" min="1" max="1" chance="5.2244" /> <!-- Forgotten Scroll - Maximum Force Focus -->
+					<item id="14222" min="1" max="1" chance="5.2081" /> <!-- This Forgotten Scroll can be used by Fortune Seekers level 83 and above to learn Lucky Strike. -->
+					<item id="14225" min="1" max="1" chance="5.1954" /> <!-- Forgotten Scroll - Counter Critical -->
+					<item id="14226" min="1" max="1" chance="5.1936" /> <!-- Forgotten Scroll - Onslaught of Pa'agrio -->
+					<item id="14223" min="1" max="1" chance="5.1791" /> <!-- This Forgotten Scroll can be used by Doombringers level 83 and above to learn Eye for Eye. -->
+					<item id="14193" min="1" max="1" chance="5.161" /> <!-- Forgotten Scroll - Sublime Self Sacrifice -->
+					<item id="14205" min="1" max="1" chance="5.1266" /> <!-- Forgotten Scroll - Spirit of the Unicorn -->
 				</group>
 			</death>
 		</drop_lists>
@@ -3849,8 +3874,37 @@
 					<item id="16162" min="2" max="4" chance="60" /> <!-- High-Grade Life Stone - Level 85 -->
 					<item id="16166" min="2" max="4" chance="40" /> <!-- High-Grade Life Stone - Level 86 -->
 				</group>
-				<group chance="0.09000000357627869">
-					<item id="6659" min="1" max="1" chance="100" /> <!-- Earring of Zaken -->
+				<group chance="0.09">
+					<item id="21712" min="1" max="1" chance="100" /> <!-- Blessed Earring of Zaken -->
+				</group>
+				<group chance="0.1">
+					<item id="21935" min="1" max="1" chance="100" /> <!-- Butcher Blades -->
+				</group>
+				<group chance="2.893">
+					<item id="21713" min="1" max="1" chance="100" /> <!-- Sealed Cloak of Zaken -->
+				</group>
+				<group chance="3">
+					<item id="21892" min="1" max="1" chance="100" /> <!-- Pirate King Hat -->
+				</group>
+				<group chance="52.264">
+					<item id="14170" min="1" max="1" chance="5.7764" /> <!-- Forgotten Scroll - Seed of Revenge -->
+					<item id="14177" min="1" max="1" chance="5.6387" /> <!-- Forgotten Scroll - Ghost Walking -->
+					<item id="14181" min="1" max="1" chance="5.6195" /> <!-- Forgotten Scroll - Dread Pool -->
+					<item id="14179" min="1" max="1" chance="5.6081" /> <!-- Forgotten Scroll - Arrow Rain -->
+					<item id="14175" min="1" max="1" chance="5.6081" /> <!-- Forgotten Scroll - Exciting Adventure -->
+					<item id="14176" min="1" max="1" chance="5.6042" /> <!-- Forgotten Scroll - Wind Riding -->
+					<item id="14182" min="1" max="1" chance="5.6042" /> <!-- Forgotten Scroll - Force of Destruction -->
+					<item id="14178" min="1" max="1" chance="5.587" /> <!-- Forgotten Scroll - Flame Hawk -->
+					<item id="14173" min="1" max="1" chance="5.5851" /> <!-- Forgotten Scroll - Eva's Will / Touch of Eva -->
+					<item id="14174" min="1" max="1" chance="5.5813" /> <!-- Forgotten Scroll - Pain of Shillien -->
+					<item id="14172" min="1" max="1" chance="5.5641" /> <!-- Forgotten Scroll - Spirit of Phoenix -->
+					<item id="14184" min="1" max="1" chance="5.5354" /> <!-- Forgotten Scroll - Golem Armor -->
+					<item id="14183" min="1" max="1" chance="5.5143" /> <!-- Forgotten Scroll - Demolition Impact -->
+					<item id="14186" min="1" max="1" chance="5.4741" /> <!-- Forgotten Scroll - Lightning Shock -->
+					<item id="14187" min="1" max="1" chance="5.4359" /> <!-- Forgotten Scroll - Flame Armor -->
+					<item id="14188" min="1" max="1" chance="5.4263" /> <!-- Forgotten Scroll - Frost Armor -->
+					<item id="14185" min="1" max="1" chance="5.4244" /> <!-- Forgotten Scroll - Wild Shot -->
+					<item id="14171" min="1" max="1" chance="5.4129" /> <!-- Forgotten Scroll - Hell Scream -->
 				</group>
 			</death>
 		</drop_lists>

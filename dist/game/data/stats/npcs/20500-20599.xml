@@ -4466,7 +4466,7 @@
 					<item id="57" min="714" max="1424" chance="100" /> <!-- Adena -->
 				</group>
 				<group chance="0.4690000116825104">
-					<item id="21732" min="1" max="1" chance="1.732" /> <!-- Sword of Revolution - Event -->
+					<item id="129" min="1" max="1" chance="1.732" /> <!-- Sword of Revolution -->
 					<item id="2034" min="1" max="1" chance="98.268" /> <!-- Sword of Revolution Blade -->
 				</group>
 				<group chance="45.4114990234375">

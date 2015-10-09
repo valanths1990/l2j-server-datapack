@@ -16,8 +16,8 @@
 	</skillTree>
 	<!-- Prophet -->
 	<skillTree type="classSkillTree" classId="17">
-		<skill skillName="Improve Combat" skillId="1499" skillLvl="1" getLevel="70" learnedByFS="true" />
-		<skill skillName="Improve Condition" skillId="1501" skillLvl="1" getLevel="70" learnedByFS="true" />
+		<skill skillName="Improved Combat" skillId="1499" skillLvl="1" getLevel="70" learnedByFS="true" />
+		<skill skillName="Improved Condition" skillId="1501" skillLvl="1" getLevel="70" learnedByFS="true" />
 	</skillTree>
 	<!-- Elven Fighter -->
 	<skillTree type="classSkillTree" classId="18">
@@ -113,12 +113,12 @@
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Anti-magic Armor" skillId="760" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Sixth Sense" skillId="766" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Spirit of Phoenix" skillId="784" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Flame Icon" skillId="785" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Deflect Magic" skillId="913" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Spirit of Phoenix" skillId="784" skillLvl="1" getLevel="83" learnedByFS="true" />
+		<skill skillName="Flame Icon" skillId="785" skillLvl="1" getLevel="83" learnedByFS="true" />
 		<skill skillName="Summon Imperial Phoenix" skillId="912" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Hell Knight -->
@@ -126,25 +126,25 @@
 		<skill skillName="Fighters Will" skillId="758" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Anti-magic Armor" skillId="760" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Seed of Revenge" skillId="761" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Insane Crusher" skillId="762" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Hell Scream" skillId="763" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Sixth Sense" skillId="766" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Deflect Magic" skillId="913" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Seed of Revenge" skillId="761" skillLvl="1" getLevel="83" learnedByFS="true" />
+		<skill skillName="Insane Crusher" skillId="762" skillLvl="1" getLevel="83" learnedByFS="true" />
+		<skill skillName="Hell Scream" skillId="763" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Sagittarius -->
 	<skillTree type="classSkillTree" classId="92">
 		<skill skillName="Fighters Will" skillId="758" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Flame Hawk" skillId="771" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Seven Arrow" skillId="924" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Silent Mind" skillId="946" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Flame Hawk" skillId="771" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Adventurer -->
 	<skillTree type="classSkillTree" classId="93">
@@ -152,32 +152,32 @@
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Sixth Sense" skillId="766" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Expose Weak Point" skillId="767" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Exciting Adventure" skillId="768" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Hide" skillId="922" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Dual Dagger Mastery" skillId="923" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Exciting Adventure" skillId="768" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Archmage -->
 	<skillTree type="classSkillTree" classId="94">
 		<skill skillName="Magician Will" skillId="945" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Meteor" skillId="1467" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Flame Armor" skillId="1492" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Enlightement" skillId="1532" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Flame Armor" skillId="1492" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Soultaker -->
 	<skillTree type="classSkillTree" classId="95">
 		<skill skillName="Magician Will" skillId="945" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Meteor" skillId="1467" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Vampiric Mist" skillId="1495" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Enlightement" skillId="1532" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Vampiric Mist" skillId="1495" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Arcana Lord -->
 	<skillTree type="classSkillTree" classId="96">
@@ -193,12 +193,12 @@
 	<!-- Cardinal -->
 	<skillTree type="classSkillTree" classId="97">
 		<skill skillName="Magician Will" skillId="945" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Sublime Self-sacrifice" skillId="1505" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Enlightement" skillId="1533" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Turn Stone" skillId="1540" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Sublime Self-sacrifice" skillId="1505" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Hierophant -->
 	<skillTree type="classSkillTree" classId="98">
@@ -216,12 +216,12 @@
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Anti-magic Armor" skillId="760" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Sixth Sense" skillId="766" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Evas Will" skillId="786" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Touch of Eva" skillId="787" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Deflect Magic" skillId="913" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Evas Will" skillId="786" skillLvl="1" getLevel="83" learnedByFS="true" />
+		<skill skillName="Touch of Eva" skillId="787" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Sword Muse -->
 	<skillTree type="classSkillTree" classId="100">
@@ -241,33 +241,33 @@
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Sixth Sense" skillId="766" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Expose Weak Point" skillId="767" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Wind Riding" skillId="769" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Hide" skillId="922" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Dual Dagger Mastery" skillId="923" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Wind Riding" skillId="769" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Moonlight Sentinel -->
 	<skillTree type="classSkillTree" classId="102">
 		<skill skillName="Fighters Will" skillId="758" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Arrow Rain" skillId="772" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Seven Arrow" skillId="924" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Silent Mind" skillId="946" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Arrow Rain" skillId="772" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Mystic Muse -->
 	<skillTree type="classSkillTree" classId="103">
 		<skill skillName="Magician Will" skillId="945" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Star Fall" skillId="1468" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Frost Armor" skillId="1493" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Enlightement" skillId="1532" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Frost Armor" skillId="1493" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Elemental Master -->
 	<skillTree type="classSkillTree" classId="104">
@@ -283,12 +283,12 @@
 	<!-- Eva's Saint -->
 	<skillTree type="classSkillTree" classId="105">
 		<skill skillName="Magician Will" skillId="945" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Blessing of Eva" skillId="1506" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Enlightement" skillId="1533" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Turn Stone" skillId="1540" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Blessing of Eva" skillId="1506" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Shillien Templar -->
 	<skillTree type="classSkillTree" classId="106">
@@ -296,12 +296,12 @@
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Anti-magic Armor" skillId="760" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Sixth Sense" skillId="766" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Pain of Shilen" skillId="788" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Spirit of Shilen" skillId="789" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Deflect Magic" skillId="913" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Pain of Shilen" skillId="788" skillLvl="1" getLevel="83" learnedByFS="true" />
+		<skill skillName="Spirit of Shilen" skillId="789" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Spectral Dancer -->
 	<skillTree type="classSkillTree" classId="107">
@@ -321,33 +321,33 @@
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Sixth Sense" skillId="766" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Expose Weak Point" skillId="767" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Ghost Walking" skillId="770" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Hide" skillId="922" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Dual Dagger Mastery" skillId="923" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Ghost Walking" skillId="770" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
-	<!-- Phantom Ranger -->
+	<!-- Ghost Sentinel -->
 	<skillTree type="classSkillTree" classId="109">
 		<skill skillName="Fighters Will" skillId="758" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Ghost Piercing" skillId="773" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Seven Arrow" skillId="924" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Silent Mind" skillId="946" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Ghost Piercing" skillId="773" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Storm Screamer -->
 	<skillTree type="classSkillTree" classId="110">
 		<skill skillName="Magician Will" skillId="945" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Star Fall" skillId="1468" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Hurricane Armor" skillId="1494" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Enlightement" skillId="1532" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Hurricane Armor" skillId="1494" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Spectral Master -->
 	<skillTree type="classSkillTree" classId="111">
@@ -358,51 +358,51 @@
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
-		<skill skillName="Spirit of the Phantom" skillId="930" skillLvl="1" getLevel="83" learnedByFS="true" />
+		<skill skillName="Spirit of the Demon" skillId="930" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Shillien Saint -->
 	<skillTree type="classSkillTree" classId="112">
 		<skill skillName="Magician Will" skillId="945" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Lord of Vampire" skillId="1507" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Enlightement" skillId="1533" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Turn Stone" skillId="1540" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Lord of Vampire" skillId="1507" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Titan -->
 	<skillTree type="classSkillTree" classId="113">
 		<skill skillName="Fighters Will" skillId="758" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Expose Weak Point" skillId="767" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Demolition Impact" skillId="777" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Final Secret" skillId="917" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Demolition Impact" skillId="777" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Grand Khavatari -->
 	<skillTree type="classSkillTree" classId="114">
 		<skill skillName="Fighters Will" skillId="758" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Expose Weak Point" skillId="767" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Force Of Destruction" skillId="776" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Final Secret" skillId="917" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
-		<skill skillName="Maximum Force Focus" skillId="918" skillLvl="1" getLevel="83" learnedByFS="true" />
+		<skill skillName="Force Of Destruction" skillId="776" skillLvl="1" getLevel="83" learnedByFS="true" />
+		<skill skillName="Maximum Focus Force" skillId="918" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Dominator -->
 	<skillTree type="classSkillTree" classId="115">
 		<skill skillName="Magician Will" skillId="945" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Seal of Limit" skillId="1509" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Enlightement" skillId="1533" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Turn Stone" skillId="1540" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Onslaught of Paagrio" skillId="949" skillLvl="1" getLevel="83" learnedByFS="true" />
+		<skill skillName="Seal of Limit" skillId="1509" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Doomcryer -->
 	<skillTree type="classSkillTree" classId="116">
@@ -431,24 +431,24 @@
 		<skill skillName="Fighters Will" skillId="758" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Expose Weak Point" skillId="767" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Golem Armor" skillId="778" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Final Secret" skillId="917" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Create Item" skillId="172" skillLvl="10" getLevel="82" learnedByFS="true" />
+		<skill skillName="Golem Armor" skillId="778" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Male Soldier -->
 	<skillTree type="classSkillTree" classId="123">
 		<skill skillName="Aura Bird - Falcon" skillId="841" skillLvl="1" getLevel="75" learnedByFS="true" />
 		<skill skillName="Aura Bird - Owl" skillId="842" skillLvl="1" getLevel="75" learnedByFS="true" />
-		<skill skillName="Final Flying Form" skillId="840" skillLvl="1" getLevel="75" learnedByFS="true" />
+		<skill skillName="Final Flying Form" skillId="840" skillLvl="1" getLevel="79" learnedByFS="true" />
 	</skillTree>
 	<!-- Female Soldier -->
 	<skillTree type="classSkillTree" classId="124">
 		<skill skillName="Aura Bird - Falcon" skillId="841" skillLvl="1" getLevel="75" learnedByFS="true" />
 		<skill skillName="Aura Bird - Owl" skillId="842" skillLvl="1" getLevel="75" learnedByFS="true" />
-		<skill skillName="Final Flying Form" skillId="840" skillLvl="1" getLevel="75" learnedByFS="true" />
+		<skill skillName="Final Flying Form" skillId="840" skillLvl="1" getLevel="79" learnedByFS="true" />
 	</skillTree>
 	<!-- Doombringer -->
 	<skillTree type="classSkillTree" classId="131">
@@ -467,11 +467,11 @@
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Sixth Sense" skillId="766" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Expose Weak Point" skillId="767" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Lightning Shock" skillId="791" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Enlightement" skillId="1532" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Lightning Shock" skillId="791" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Female Soul Hound -->
 	<skillTree type="classSkillTree" classId="133">
@@ -479,27 +479,27 @@
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Sixth Sense" skillId="766" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Expose Weak Point" skillId="767" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Lightning Shock" skillId="791" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Enlightement" skillId="1532" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Lightning Shock" skillId="791" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Trickster -->
 	<skillTree type="classSkillTree" classId="134">
 		<skill skillName="Fighters Will" skillId="758" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Archers Will" skillId="759" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Sixth Sense" skillId="766" skillLvl="1" getLevel="81" learnedByFS="true" />
-		<skill skillName="Wild Shot" skillId="790" skillLvl="1" getLevel="81" learnedByFS="true" />
 		<skill skillName="Protection of Rune" skillId="755" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Elemental" skillId="756" skillLvl="1" getLevel="82" learnedByFS="true" />
 		<skill skillName="Protection of Alignment" skillId="757" skillLvl="1" getLevel="82" learnedByFS="true" />
+		<skill skillName="Wild Shot" skillId="790" skillLvl="1" getLevel="83" learnedByFS="true" />
 	</skillTree>
 	<!-- Inspector -->
 	<skillTree type="classSkillTree" classId="135">
 		<skill skillName="Aura Bird - Falcon" skillId="841" skillLvl="1" getLevel="75" learnedByFS="true" />
 		<skill skillName="Aura Bird - Owl" skillId="842" skillLvl="1" getLevel="75" learnedByFS="true" />
-		<skill skillName="Final Flying Form" skillId="840" skillLvl="1" getLevel="75" learnedByFS="true" />
+		<skill skillName="Final Flying Form" skillId="840" skillLvl="1" getLevel="79" learnedByFS="true" />
 	</skillTree>
 	<!-- Judicator -->
 	<skillTree type="classSkillTree" classId="136">
