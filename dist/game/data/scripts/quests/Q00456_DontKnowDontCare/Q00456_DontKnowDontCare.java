@@ -293,9 +293,9 @@ public final class Q00456_DontKnowDontCare extends Quest
 			L2PcInstance attacker = aggro.getAttacker().getActingPlayer();
 			
 			if (attacker.isInParty() //
-			&& attacker.getParty().isInCommandChannel() //
-			&& attacker.getParty().getCommandChannel().equals(cc) // only players from the same cc are allowed
-			&& Util.checkIfInRange(1500, npc, attacker, true))
+				&& attacker.getParty().isInCommandChannel() //
+				&& attacker.getParty().getCommandChannel().equals(cc) // only players from the same cc are allowed
+				&& Util.checkIfInRange(1500, npc, attacker, true))
 			{
 				allowedPlayers.add(attacker.getObjectId());
 			}
