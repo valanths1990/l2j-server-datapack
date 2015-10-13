@@ -508,11 +508,12 @@
 		</for>
 	</skill>
 	<skill id="21242" levels="1" name="Zaken's Call">
-		<!-- Can move to near Zaken's Headquarters. Reuse delay 30 minutes. -->
+		<!-- Confirmed High Five -->
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="20000" />
 		<set name="icon" val="BranchSys2.Icon.br_zaken_cloak_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -527,16 +528,17 @@
 		</cond>
 		<for>
 			<effect name="Teleport">
-				<param x="52195" y="218787" z="-3231" />
+				<param x="52201" y="218801" z="-3224" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="21243" levels="1" name="Freya's Call">
-		<!-- Can move to near Freya's Headquarters. Reuse delay 30 minutes. -->
+		<!-- Confirmed High Five -->
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="20000" />
 		<set name="icon" val="BranchSys2.Icon.br_freya_cloak_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -551,16 +553,17 @@
 		</cond>
 		<for>
 			<effect name="Teleport">
-				<param x="102728" y="-126242" z="-2840" />
+				<param x="102744" y="-124296" z="-2784" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="21244" levels="1" name="Frintezza's Call">
-		<!-- Can move to near Frintezza's Headquarters. Reuse delay 30 minutes. -->
+		<!-- Confirmed High Five -->
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="20000" />
 		<set name="icon" val="BranchSys2.Icon.br_frintessa_cloak_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -575,7 +578,7 @@
 		</cond>
 		<for>
 			<effect name="Teleport">
-				<param x="181378" y="-80915" z="-2731" />
+				<param x="181384" y="-80856" z="-2728" />
 			</effect>
 		</for>
 	</skill>

@@ -1585,9 +1585,9 @@
 		</enchant3for>
 	</skill>
 	<skill id="1549" levels="1" name="Chant of Elements">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<!-- NOTE: skill desc says "increases the elemental attribute" but is client typo, it increase defense (see skill icon) -->
-		<set name="abnormalLvl" val="3" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="MD_UP_ATTR" />
 		<set name="affectRange" val="1000" />
@@ -1595,8 +1595,8 @@
 		<set name="icon" val="icon.skill1549" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="76" />
-		<set name="mpConsume" val="220" />
-		<set name="mpInitialConsume" val="55" />
+		<set name="mpConsume" val="55" />
+		<set name="mpInitialConsume" val="220" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1611,7 +1611,7 @@
 		</for>
 	</skill>
 	<skill id="1550" levels="1" name="Mass Cure Poison">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<set name="affectRange" val="1000" />
 		<set name="effectPoint" val="1000" />
 		<set name="hitTime" val="4000" />
@@ -1631,7 +1631,7 @@
 		</for>
 	</skill>
 	<skill id="1551" levels="1" name="Mass Purify">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<set name="affectRange" val="1000" />
 		<set name="effectPoint" val="1000" />
 		<set name="hitTime" val="3000" />
@@ -1646,30 +1646,30 @@
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="POISON,9;BLEEDING,9;PARALYZE,1;TURN_STONE,1" />
+				<param dispel="POISON,9;BLEEDING,9;PARALYZE,9;TURN_STONE,9" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1552" levels="1" name="Mass Vitalize">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<set name="affectRange" val="1000" />
 		<set name="effectPoint" val="1000" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1552" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="76" />
-		<set name="mpConsume" val="155" />
-		<set name="mpInitialConsume" val="38" />
+		<set name="mpConsume" val="38" />
+		<set name="mpInitialConsume" val="155" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="9000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="Heal">
-				<param power="796" />
-			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="POISON,9;BLEEDING,9" />
+			</effect>
+			<effect name="Heal">
+				<param power="796" />
 			</effect>
 		</for>
 	</skill>
@@ -1699,10 +1699,10 @@
 		</for>
 	</skill>
 	<skill id="1554" levels="1" name="Aura Blast">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<set name="abnormalTime" val="3" />
 		<set name="affectLimit" val="2-10" />
-		<set name="affectRange" val="100" /> <!-- FIXME: value unconfirmed -->
+		<set name="affectRange" val="200" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-288" />
 		<set name="effectRange" val="1400" />
@@ -1710,9 +1710,9 @@
 		<set name="icon" val="icon.skill1554" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="81" />
-		<set name="mpConsume" val="116" />
-		<set name="mpInitialConsume" val="29" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
+		<set name="mpConsume" val="31" />
+		<set name="mpInitialConsume" val="145" />
+		<set name="operateType" val="A1" />
 		<set name="power" val="199" /> <!-- Inflicts additional non-attribute damage if the target is a monster -->
 		<set name="pvpPower" val="141" />
 		<set name="reuseDelay" val="15000" />
@@ -1721,24 +1721,19 @@
 		<for>
 			<effect name="MagicalAttack" />
 		</for>
-		<selfEffects>
-			<effect name="ManaHeal">
-				<param power="10" />  <!-- FIXME: value unconfirmed -->
-			</effect>
-		</selfEffects>
 	</skill>
 	<skill id="1555" levels="1" name="Aura Cannon">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-993" />
-		<set name="effectRange" val="650" />
+		<set name="effectRange" val="600" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1555" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="82" />
-		<set name="mpConsume" val="99" />
-		<set name="mpInitialConsume" val="24" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
+		<set name="mpConsume" val="27" />
+		<set name="mpInitialConsume" val="123" />
+		<set name="operateType" val="A1" />
 		<set name="power" val="302" /> <!-- Inflicts additional non-attribute damage if the target is a monster -->
 		<set name="pvpPower" val="178" />
 		<set name="reuseDelay" val="10000" />
@@ -1747,11 +1742,6 @@
 		<for>
 			<effect name="MagicalAttack" />
 		</for>
-		<selfEffects>
-			<effect name="ManaHeal">
-				<param power="10" />  <!-- FIXME: value unconfirmed -->
-			</effect>
-		</selfEffects>
 	</skill>
 	<skill id="1556" levels="1" name="Arcane Shield">
 		<!-- High Five Skill -->
@@ -1775,7 +1765,7 @@
 		</for>
 	</skill>
 	<skill id="1557" levels="1" name="Servitor Share">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="SUMMON_CONDITION" />
@@ -1812,10 +1802,11 @@
 		</for>
 	</skill>
 	<skill id="1558" levels="24" name="Dimension Spiral">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 76 77 78 79 80 81 82 83 84 85 </table>
-		<table name="#mpConsume"> 38 43 47 50 53 55 57 59 60 63 64 67 74 83 92 99 100 106 109 115 118 119 125 134 </table>
-		<table name="#power"> 57 58 60 61 63 66 68 71 74 77 79 82 89 94 100 104 110 115 139 152 166 179 193 207 </table>
+		<table name="#mpConsume"> 31 35 38 40 43 44 46 48 48 51 52 54 60 67 74 80 80 85 88 92 95 96 100 108 </table>
+		<table name="#mpInitialConsume"> 7 8 9 10 10 11 11 11 12 12 12 13 14 16 18 19 20 21 21 23 23 23 25 26 </table>
+		<table name="#power"> 57 58 60 61 63 66 68 71 74 77 79 82 89 94 100 104 110 115 136 152 166 179 193 207 </table>
 		<table name="#pvpPower"> 57 58 60 61 63 66 68 71 74 77 79 82 84 87 89 90 91 92 93 94 95 96 97 98 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-993" />
@@ -1825,7 +1816,8 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
+		<set name="mpInitialConsume" val="#mpInitialConsume" />
+		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
 		<set name="power" val="#power" /> <!-- Inflicts additional non-attribute damage if the target is a monster -->
 		<set name="pvpPower" val="#pvpPower" />
@@ -1834,46 +1826,36 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack" />
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="1558" /> <!-- Dimension Spiral -->
-				<param chance="5" />
-				<param skillId="5571" skillLevel="1" /> <!-- Mutual Response -->
-				<param targetType="SUMMON" />
-			</effect>
 		</for>
 	</skill>
 	<skill id="1559" levels="3" name="Potential Ability">
-		<!-- High Five Skill -->
-		<table name="#cAtkAdd"> 177 295 384 </table>
-		<table name="#magicLvl"> 28 40 49 </table>
+		<!-- Confirmed High Five -->
+		<table name="#cAtkAdd"> 117 295 384 </table>
+		<table name="#magicLvl"> 28 40 58 </table>
 		<table name="#rCrit"> 1.2 1.3 1.4 </table>
 		<set name="icon" val="icon.skill1559" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
 				<mul stat="critRate" val="#rCrit">
-					<using kind="DAGGER,DUALDAGGER,LIGHT" />
+					<using kind="DAGGER,DUALDAGGER" />
 				</mul>
 				<add stat="critDmgAdd" val="#cAtkAdd">
-					<using kind="DAGGER,DUALDAGGER,LIGHT" />
+					<using kind="DAGGER,DUALDAGGER" />
 				</add>
 			</effect>
 		</for>
 	</skill>
 	<skill id="1560" levels="1" name="Lucky Blow">
-		<!-- High Five Skill -->
-		<set name="baseCritRate" val="30" />
-		<set name="blowChance" val="60" />
+		<!-- Confirmed High Five -->
+		<set name="baseCritRate" val="10" />
+		<set name="blowChance" val="30" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-337" />
 		<set name="effectRange" val="400" />
-		<set name="halfKillRate" val="8" />
 		<set name="hitTime" val="1800" />
 		<set name="icon" val="icon.skill1560" />
-		<set name="lethalStrikeRate" val="1" /> <!-- FIXME: unconfirmed -->
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="82" />
 		<set name="nextActionAttack" val="true" />
@@ -1889,6 +1871,10 @@
 		</cond>
 		<for>
 			<effect name="FatalBlow" />
+			<effect name="Lethal">
+				<param halfLethal="10" />
+				<param fullLethal="5" />
+			</effect>
 			<effect name="Spoil" />
 		</for>
 	</skill>
@@ -1992,16 +1978,16 @@
 		</for>
 	</skill>
 	<skill id="1564" levels="1" name="Piercing Attack">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<set name="icon" val="icon.skill1564" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
-				<param chance="5" />
+				<param chance="50" />
 				<param skillId="6921" skillLevel="1" /> <!-- Penetration Attack -->
 				<param targetType="ONE" />
 			</effect>

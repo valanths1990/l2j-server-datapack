@@ -237,14 +237,13 @@
 		</for>
 	</skill>
 	<skill id="6813" levels="8" name="Focus Sonic">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<table name="#magicLvl"> 40 43 49 55 60 66 70 79 </table>
 		<table name="#maxCharges"> 1 2 3 4 5 6 7 8 </table>
-		<set name="blockedInOlympiad" val="true" />
 		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
-		<set name="reuseDelay" val="10000" /> <!-- FIXME: value unconfirmed -->
+		<set name="operateType" val="A1" />
+		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="324">
@@ -259,13 +258,13 @@
 		</for>
 	</skill>
 	<skill id="6814" levels="8" name="Focus Force">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<table name="#magicLvl"> 24 32 40 52 60 66 72 79 </table>
 		<table name="#maxCharges"> 1 2 3 4 5 6 7 8 </table>
 		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
-		<set name="reuseDelay" val="10000" /> <!-- FIXME: value unconfirmed -->
+		<set name="operateType" val="A1" />
+		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="324">
