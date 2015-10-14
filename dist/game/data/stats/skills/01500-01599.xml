@@ -1836,6 +1836,7 @@
 		<set name="icon" val="icon.skill1559" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
 				<mul stat="critRate" val="#rCrit">
@@ -1879,14 +1880,14 @@
 		</for>
 	</skill>
 	<skill id="1561" levels="5" name="Battle Cry">
-		<!-- High Five Skill -->
-		<table name="#abnormalLvls"> 2 3 4 5 6 </table>
+		<!-- Confirmed High Five -->
+		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
 		<table name="#MaxHp"> 15 20 25 30 35 </table>
 		<table name="#magicLvl"> 40 49 58 64 70 </table>
 		<table name="#mpConsume"> 18 22 27 30 33 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="600" />
-		<set name="abnormalType" val="MAX_HP_UP" />
+		<set name="abnormalType" val="MAX_HP_CP_UP" />
 		<set name="effectPoint" val="268" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1561" />
@@ -1905,17 +1906,15 @@
 		</for>
 	</skill>
 	<skill id="1562" levels="2" name="Chant of Berserker">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#amount"> 1.05 1.08 </table>
 		<table name="#effectPoints"> 549 611 </table>
 		<table name="#magicLvl"> 44 52 </table>
 		<table name="#mAtk"> 1.1 1.16 </table>
-		<table name="#mAtkSpd"> 1.05 1.08 </table>
 		<table name="#mDef"> 0.9 0.84 </table>
-		<table name="#mpConsume"> 124 151 </table>
-		<table name="#mpInitialConsume"> 30 37 </table>
-		<table name="#pAtk"> 1.05 1.08 </table>
-		<table name="#pAtkSpd"> 1.05 1.08 </table>
+		<table name="#mpConsume"> 154 188 </table>
+		<table name="#mpInitialConsume"> 8 41 </table>
 		<table name="#pDef"> 0.95 0.92 </table>
 		<table name="#rEvas"> 2 4 </table>
 		<table name="#runSpd"> 5 8 </table>
@@ -1939,27 +1938,27 @@
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mDef" val="#mDef" />
 				<sub stat="rEvas" val="#rEvas" />
-				<mul stat="pAtk" val="#pAtk" />
+				<mul stat="pAtk" val="#amount" />
 				<mul stat="mAtk" val="#mAtk" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="mAtkSpd" val="#mAtkSpd" />
+				<mul stat="pAtkSpd" val="#amount" />
+				<mul stat="mAtkSpd" val="#amount" />
 				<add stat="runSpd" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1563" levels="2" name="Fury of Pa'agrio">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<table name="#abnormalLvls"> 1 2 </table>
 		<table name="#effectPoints"> 379 457 </table>
 		<table name="#magicLvl"> 48 56 </table>
-		<table name="#mpConsume"> 138 164 </table>
-		<table name="#mpInitialConsume"> 34 40 </table>
+		<table name="#mpConsume"> 172 204 </table>
+		<table name="#mpInitialConsume"> 28 35 </table>
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
 		<set name="affectLimit" val="50-50" />
-		<set name="affectRange" val="900" />
+		<set name="affectRange" val="1000" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill1563" />
@@ -1994,7 +1993,7 @@
 		</for>
 	</skill>
 	<skill id="1565" levels="6" name="Mana Pump" enchantGroup1="1">
-		<!-- High Five Skill -->
+		<!-- Confirmed High Five -->
 		<table name="#magicLvl"> 40 49 58 64 68 72 </table>
 		<table name="#maxMp"> 70 100 140 150 180 200 </table>
 		<table name="#ench1maxMp"> 203 206 210 213 216 220 223 226 230 233 236 240 243 246 250 253 256 260 263 266 270 273 276 280 283 286 290 293 296 300 </table>
