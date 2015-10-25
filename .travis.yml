@@ -5,6 +5,6 @@ jdk:
   - oraclejdk8
 
 before_install:
- - cd ..
- - git clone -b master --single-branch git://github.com/L2J/L2J_Server.git
  - chmod +x gradlew
+ - git clone -b master --single-branch git://github.com/L2J/L2J_Server.git
+ 
