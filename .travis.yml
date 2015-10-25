@@ -4,9 +4,7 @@ language: java
 jdk:
   - oraclejdk8
 
-before_script:
- - cd ..
- - git clone git://github.com/L2J/L2J_Server.git master
-
 before_install:
  - chmod +x gradlew
+ - cd ..
+ - git clone git://github.com/L2J/L2J_Server.git
