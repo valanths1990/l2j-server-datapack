@@ -380,6 +380,7 @@ import quests.Q00461_RumbleInTheBase.Q00461_RumbleInTheBase;
 import quests.Q00463_IMustBeaGenius.Q00463_IMustBeaGenius;
 import quests.Q00464_Oath.Q00464_Oath;
 import quests.Q00501_ProofOfClanAlliance.Q00501_ProofOfClanAlliance;
+import quests.Q00503_PursuitOfClanAmbition.Q00503_PursuitOfClanAmbition;
 import quests.Q00504_CompetitionForTheBanditStronghold.Q00504_CompetitionForTheBanditStronghold;
 import quests.Q00508_AClansReputation.Q00508_AClansReputation;
 import quests.Q00509_AClansFame.Q00509_AClansFame;
@@ -861,6 +862,7 @@ public class QuestMasterHandler
 		Q00463_IMustBeaGenius.class,
 		Q00464_Oath.class,
 		Q00501_ProofOfClanAlliance.class,
+		Q00503_PursuitOfClanAmbition.class,
 		Q00504_CompetitionForTheBanditStronghold.class,
 		Q00508_AClansReputation.class,
 		Q00509_AClansFame.class,
