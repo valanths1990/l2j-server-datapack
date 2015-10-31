@@ -24,7 +24,7 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="2" /> <!--Hold -->
 			<skill id="4273" level="3" /> <!--Resist Daggers/Rapier Weapon -->
@@ -41,9 +41,9 @@
 			<skill id="4444" level="2" /> <!--Higher Resist Bow/Crossbow Weapons -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4983" level="1" /> <!--Raid Boss - Level 25 -->
-		</skill_list>
+		</skillList>
 		<ai type="BALANCED" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="223" min="1" max="1" chance="1.975622141" /> <!-- Kukuri -->
 				<item id="238" min="1" max="1" chance="1.975622141" /> <!-- Dagger of Mana -->
@@ -58,7 +58,7 @@
 				<item id="2028" min="27" max="81" chance="6.4637854247" /> <!-- Shilen Knife Edge -->
 				<item id="22229" min="1" max="1" chance="12.6939" /> <!-- Scroll: Enchant Weapon of Destruction (D-Grade) - Event -->
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="13" />
 			<height normal="37.5" />
@@ -83,7 +83,7 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4273" level="3" /> <!--Resist Daggers/Rapier Weapon -->
 			<skill id="4274" level="1" /> <!--Blunt Weapon Weak Point -->
@@ -98,7 +98,7 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4444" level="2" /> <!--Higher Resist Bow/Crossbow Weapons -->
 			<skill id="4743" level="2" /> <!--BOSS Strike -->
-		</skill_list>
+		</skillList>
 		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="14" />

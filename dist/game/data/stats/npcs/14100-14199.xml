@@ -19,10 +19,10 @@
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="7" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!--HP Medium-High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -34,10 +34,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.21</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
 			<radius normal="20" />
 			<height normal="42" />
@@ -62,10 +62,10 @@
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="7" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!--HP Medium-High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -77,10 +77,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.21</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
 			<radius normal="20" />
 			<height normal="42" />
@@ -105,10 +105,10 @@
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="7" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!--HP Medium-High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -120,10 +120,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.21</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
 			<radius normal="20" />
 			<height normal="42" />
@@ -148,10 +148,10 @@
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="7" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!--HP Medium-High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -163,10 +163,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.21</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
 			<radius normal="20" />
 			<height normal="42" />
@@ -191,10 +191,10 @@
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="7" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!--HP Medium-High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -206,10 +206,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.21</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
 			<radius normal="20" />
 			<height normal="42" />
@@ -234,10 +234,10 @@
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="7" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!--HP Medium-High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -249,10 +249,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.21</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
 			<radius normal="20" />
 			<height normal="42" />
@@ -277,10 +277,10 @@
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="7" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!--HP Medium-High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -292,10 +292,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.21</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
 			<radius normal="20" />
 			<height normal="42" />
@@ -320,10 +320,10 @@
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="7" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!--HP Medium-High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -335,10 +335,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.21</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
 			<radius normal="20" />
 			<height normal="42" />
@@ -363,10 +363,10 @@
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="7" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!--HP Medium-High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -378,10 +378,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.21</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
 			<radius normal="20" />
 			<height normal="42" />
@@ -406,10 +406,10 @@
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="7" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!--HP Medium-High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -421,10 +421,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.21</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
 			<radius normal="20" />
 			<height normal="42" />
@@ -449,10 +449,10 @@
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="7" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!--HP Medium-High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -464,10 +464,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.21</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
 			<radius normal="20" />
 			<height normal="42" />
@@ -492,10 +492,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -507,10 +507,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="1" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -535,10 +535,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -550,10 +550,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="1" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -578,10 +578,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -593,10 +593,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="2" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -621,10 +621,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -636,10 +636,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="2" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -664,10 +664,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -679,10 +679,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="2" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -707,10 +707,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -722,10 +722,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -750,10 +750,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -765,10 +765,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -793,10 +793,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -808,10 +808,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -836,10 +836,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -851,10 +851,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="4" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -879,10 +879,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -894,10 +894,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="4" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -922,10 +922,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -937,10 +937,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="4" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -965,10 +965,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -980,10 +980,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="4" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1008,10 +1008,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1023,10 +1023,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="4" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1051,10 +1051,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1066,10 +1066,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1094,10 +1094,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1109,10 +1109,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1137,10 +1137,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1152,10 +1152,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1180,10 +1180,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1195,10 +1195,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1223,10 +1223,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1238,10 +1238,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1266,10 +1266,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1281,10 +1281,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1309,10 +1309,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1324,10 +1324,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1352,10 +1352,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1367,10 +1367,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1395,10 +1395,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1410,10 +1410,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1438,10 +1438,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1453,10 +1453,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1481,10 +1481,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1496,10 +1496,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1524,10 +1524,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1539,10 +1539,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1567,10 +1567,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1582,10 +1582,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="9" />
 			<height normal="16" />
@@ -1610,10 +1610,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1625,10 +1625,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -1654,10 +1654,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1669,10 +1669,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -1698,10 +1698,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1713,10 +1713,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -1742,10 +1742,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1757,10 +1757,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -1786,10 +1786,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1801,10 +1801,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -1830,10 +1830,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1845,10 +1845,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -1874,10 +1874,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1889,10 +1889,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -1918,10 +1918,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1933,10 +1933,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -1962,10 +1962,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1977,10 +1977,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2006,10 +2006,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2021,10 +2021,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2050,10 +2050,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2065,10 +2065,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2094,10 +2094,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2109,10 +2109,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2138,10 +2138,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2153,10 +2153,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2182,10 +2182,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2197,10 +2197,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2226,10 +2226,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2241,10 +2241,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2270,10 +2270,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2285,10 +2285,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2314,10 +2314,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2329,10 +2329,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2358,10 +2358,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2373,10 +2373,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2402,10 +2402,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2417,10 +2417,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2446,10 +2446,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2461,10 +2461,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2490,10 +2490,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2505,10 +2505,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2534,10 +2534,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2549,10 +2549,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -2578,10 +2578,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2593,10 +2593,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="1" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -2621,10 +2621,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2636,10 +2636,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="1" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -2664,10 +2664,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2679,10 +2679,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="1" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -2707,10 +2707,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2722,10 +2722,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="1" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -2750,10 +2750,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2765,10 +2765,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="1" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -2793,10 +2793,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2808,10 +2808,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="1" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -2836,10 +2836,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2851,10 +2851,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="1" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -2879,10 +2879,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2894,10 +2894,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="1" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -2922,10 +2922,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2937,10 +2937,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="2" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -2965,10 +2965,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2980,10 +2980,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="2" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3008,10 +3008,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3023,10 +3023,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="2" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3051,10 +3051,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3066,10 +3066,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="2" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3094,10 +3094,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3109,10 +3109,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="2" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3137,10 +3137,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3152,10 +3152,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3180,10 +3180,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3195,10 +3195,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3223,10 +3223,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3238,10 +3238,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3266,10 +3266,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3281,10 +3281,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3309,10 +3309,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3324,10 +3324,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3352,10 +3352,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3367,10 +3367,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3395,10 +3395,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3410,10 +3410,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3438,10 +3438,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3453,10 +3453,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3481,10 +3481,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3496,10 +3496,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3524,10 +3524,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3539,10 +3539,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3567,10 +3567,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3582,10 +3582,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3610,10 +3610,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3625,10 +3625,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3653,10 +3653,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3668,10 +3668,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3696,10 +3696,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3711,10 +3711,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -3740,10 +3740,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3755,10 +3755,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -3784,10 +3784,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3799,10 +3799,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -3828,10 +3828,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3843,10 +3843,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -3872,10 +3872,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3887,10 +3887,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -3916,10 +3916,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3931,10 +3931,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -3960,10 +3960,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3975,10 +3975,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -4004,10 +4004,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4019,10 +4019,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -4048,10 +4048,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4063,10 +4063,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -4092,10 +4092,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4107,10 +4107,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -4136,10 +4136,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4151,10 +4151,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -4180,10 +4180,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4195,10 +4195,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -4224,10 +4224,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4239,10 +4239,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -4268,10 +4268,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4283,10 +4283,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -4312,10 +4312,10 @@
 				<walk ground="48" />
 				<run ground="140" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="9" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!--HP Very High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4327,10 +4327,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="5038" level="7" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="3" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.61051</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />

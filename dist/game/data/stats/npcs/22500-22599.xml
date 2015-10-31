@@ -36,10 +36,10 @@
 				<walk ground="30" />
 				<run ground="170" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="8" /> <!--NPC Strike -->
 			<skill id="4047" level="8" /> <!--Hold -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -52,12 +52,12 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="8" /> <!--Angels -->
 			<skill id="5464" level="1" /> <!--Wind Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ABYSS</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="13.5" grown="16" />
@@ -97,10 +97,10 @@
 				<walk ground="30" />
 				<run ground="170" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="8" /> <!--NPC Strike -->
 			<skill id="4047" level="8" /> <!--Hold -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -113,12 +113,12 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="8" /> <!--Angels -->
 			<skill id="5464" level="1" /> <!--Wind Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ABYSS</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="13.5" grown="16" />
@@ -161,10 +161,10 @@
 				<walk ground="50" />
 				<run ground="180" />
 			</speed>
-			<hit_time>460</hit_time>
+			<hitTime>460</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="8" /> <!--NPC Strike -->
 			<skill id="4098" level="9" /> <!--Silence -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -178,12 +178,12 @@
 			<skill id="4416" level="8" /> <!--Angels -->
 			<skill id="4613" level="8" /> <!--NPC Clan Heal -->
 			<skill id="5465" level="1" /> <!--Earth Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ABYSS</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="8" grown="9" />
@@ -219,17 +219,17 @@
 			<attack physical="9242.50952208013" magical="6311.43587965133" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="DUAL" range="40" distance="80" width="120" />
 			<defence physical="552.978032" magical="606.967992" />
 			<attribute>
-				<attack type="UNHOLY" value="100" />
+				<attack type="DARK" value="100" />
 				<defence fire="90" water="90" wind="90" earth="90" holy="65" dark="130" default="80" />
 			</attribute>
 			<speed>
 				<walk ground="70" />
 				<run ground="190" />
 			</speed>
-			<hit_time>470</hit_time>
+			<hitTime>470</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="9" /> <!--NPC Strike -->
 			<skill id="4047" level="9" /> <!--Hold -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -242,12 +242,12 @@
 			<skill id="4415" level="19" /> <!--Dual-Sword Weapons -->
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ABYSS</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="25" grown="32" />
@@ -280,17 +280,17 @@
 			<attack physical="9242.50952208013" magical="6311.43587965133" random="30" critical="4" accuracy="5" attackSpeed="253" type="DUAL" range="40" distance="80" width="120" />
 			<defence physical="552.978032" magical="606.967992" />
 			<attribute>
-				<attack type="UNHOLY" value="100" />
+				<attack type="DARK" value="100" />
 				<defence fire="90" water="90" wind="90" earth="90" holy="65" dark="130" default="80" />
 			</attribute>
 			<speed>
 				<walk ground="70" />
 				<run ground="190" />
 			</speed>
-			<hit_time>470</hit_time>
+			<hitTime>470</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="9" /> <!--NPC Strike -->
 			<skill id="4047" level="9" /> <!--Hold -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -303,12 +303,12 @@
 			<skill id="4415" level="19" /> <!--Dual-Sword Weapons -->
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ABYSS</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="25" grown="32" />
@@ -350,10 +350,10 @@
 				<walk ground="30" />
 				<run ground="170" />
 			</speed>
-			<hit_time>540</hit_time>
+			<hitTime>540</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="9" /> <!--NPC Strike -->
 			<skill id="4098" level="10" /> <!--Silence -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -367,12 +367,12 @@
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="4613" level="9" /> <!--NPC Clan Heal -->
 			<skill id="5464" level="1" /> <!--Wind Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ABYSS</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="21" />
@@ -405,7 +405,7 @@
 			</speed>
 		</stats>
 		<status undying="false" flying="true" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -416,9 +416,9 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5814" level="1" /> <!--Self-Destruction -->
-		</skill_list>
-		<corpse_time>0</corpse_time>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<corpseTime>0</corpseTime>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="33" />
@@ -451,7 +451,7 @@
 			</speed>
 		</stats>
 		<status undying="false" flying="true" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -462,9 +462,9 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5814" level="1" /> <!--Self-Destruction -->
-		</skill_list>
-		<corpse_time>0</corpse_time>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<corpseTime>0</corpseTime>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="33" />
@@ -497,7 +497,7 @@
 			</speed>
 		</stats>
 		<status undying="false" flying="true" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -508,9 +508,9 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5814" level="1" /> <!--Self-Destruction -->
-		</skill_list>
-		<corpse_time>0</corpse_time>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<corpseTime>0</corpseTime>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="33" />
@@ -535,17 +535,17 @@
 			<attack physical="824.422073095" magical="562.9734023" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="92" />
 				<run ground="200" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="16" /> <!--HP Increase (8x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="7" /> <!--Weak P. Atk. -->
@@ -559,16 +559,16 @@
 			<skill id="5884" level="1" /> <!--Weakened Sweep -->
 			<skill id="5886" level="1" /> <!--Ground Shaker -->
 			<skill id="5889" level="1" /> <!--Tainted Shackle -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>8</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>8</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="1500">
 			<skill maxChance="40" />
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="10024" max="20526" chance="100" /> <!-- Adena -->
@@ -590,7 +590,7 @@
 				<item id="5495" min="1" max="1" chance="30.3308" /> <!-- Sealed Shield of Nightmare Fragment -->
 				<item id="5157" min="1" max="1" chance="0.8877" /> <!-- Recipe: Soulshot (S) Compressed Package (100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="27" />
 			<height normal="48.5" />
@@ -613,7 +613,7 @@
 			<attack physical="856.44055895414" magical="584.837886935576" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="328.27073" magical="240.21427" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
@@ -622,7 +622,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="16" /> <!--HP Increase (8x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="7" /> <!--Weak P. Atk. -->
@@ -636,16 +636,16 @@
 			<skill id="5878" level="1" /> <!--Cruel Puncture -->
 			<skill id="5879" level="1" /> <!--Cruel Expunge -->
 			<skill id="5894" level="1" /> <!--Mark of Despair -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>8</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>8</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="1500">
 			<skill maxChance="40" />
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="9052" max="18494" chance="100" /> <!-- Adena -->
@@ -668,7 +668,7 @@
 				<item id="1894" min="1" max="1" chance="63.1759" /> <!-- Crafted Leather -->
 				<item id="1894" min="1" max="1" chance="63.1759" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14.4" />
 			<height normal="22" />
@@ -690,17 +690,17 @@
 			<attack physical="856.44055895414" magical="584.837886935576" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="328.27073" magical="240.21427" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="73" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="16" /> <!--HP Increase (8x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="7" /> <!--Weak P. Atk. -->
@@ -713,16 +713,16 @@
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
 			<skill id="5897" level="1" /> <!--Spike of Anchor -->
 			<skill id="5904" level="1" /> <!--Mist of Souleater -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>8</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>8</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="1500">
 			<skill maxChance="40" />
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="9237" max="18873" chance="100" /> <!-- Adena -->
@@ -748,7 +748,7 @@
 				<item id="5162" min="1" max="1" chance="0.8166" /> <!-- Recipe: Spiritshot (S) Compressed Package (100%) -->
 				<item id="5514" min="1" max="1" chance="31.0313" /> <!-- Sealed Gauntlets of Nightmare Design -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="19" />
 			<height normal="44" />
@@ -772,17 +772,17 @@
 			<attack physical="890.50085998804" magical="608.096657928153" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="200" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="16" /> <!--HP Increase (8x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="8" /> <!--Weak P. Atk. -->
@@ -796,16 +796,16 @@
 			<skill id="5884" level="1" /> <!--Weakened Sweep -->
 			<skill id="5895" level="1" /> <!--Mark of Cowardice -->
 			<skill id="5898" level="1" /> <!--Blast of Anchor -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>8</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>8</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="1500">
 			<skill maxChance="40" />
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="9744" max="19887" chance="100" /> <!-- Adena -->
@@ -832,7 +832,7 @@
 				<item id="5515" min="1" max="1" chance="32.712" /> <!-- Sealed Majestic Gauntlets Design -->
 				<item id="1894" min="1" max="1" chance="67.9607" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="43" />
 			<height normal="47.5" />
@@ -863,10 +863,10 @@
 				<walk ground="50" />
 				<run ground="200" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -880,16 +880,16 @@
 			<skill id="5882" level="1" /> <!--Weakened Pommel -->
 			<skill id="5883" level="1" /> <!--Meggling Injury -->
 			<skill id="5889" level="1" /> <!--Tainted Shackle -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
 			<skill maxChance="40" />
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="10019" max="20447" chance="100" /> <!-- Adena -->
@@ -914,7 +914,7 @@
 				<item id="5522" min="1" max="1" chance="5.0849" /> <!-- Sealed Armor of Nightmare Pattern -->
 				<item id="5272" min="1" max="1" chance="0.6636" /> <!-- Recipe: Greater Soulshot (S) Compressed Package(100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="34" />
 			<height normal="34" />
@@ -938,17 +938,17 @@
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="46" />
 				<run ground="200" />
 			</speed>
-			<hit_time>470</hit_time>
+			<hitTime>470</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="16" /> <!--HP Increase (8x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="7" /> <!--Weak P. Atk. -->
@@ -962,16 +962,16 @@
 			<skill id="5892" level="1" /> <!--Cunning Coercion -->
 			<skill id="5903" level="1" /> <!--Burst of Misplace -->
 			<skill id="5905" level="1" /> <!--Confusing Nuph -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>8</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>8</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="1500">
 			<skill maxChance="40" />
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8901" max="18172" chance="100" /> <!-- Adena -->
@@ -997,7 +997,7 @@
 				<item id="5277" min="1" max="1" chance="0.5897" /> <!-- Recipe: Greater Spiritshot (S) Compressed Package(100%) -->
 				<item id="5527" min="1" max="1" chance="15.8627" /> <!-- Sealed Helm of Nightmare Design -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="23" />
 			<height normal="31" />
@@ -1029,7 +1029,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="16" /> <!--HP Increase (8x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="7" /> <!--Weak P. Atk. -->
@@ -1044,16 +1044,16 @@
 			<skill id="5899" level="1" /> <!--Burst of Pain -->
 			<skill id="5918" level="8" /> <!--Physical Root Weakness -->
 			<skill id="5937" level="1" /> <!--Self Stun -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>8</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>8</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="1500">
 			<skill maxChance="40" />
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8265" max="16925" chance="100" /> <!-- Adena -->
@@ -1082,7 +1082,7 @@
 				<item id="1894" min="1" max="1" chance="43.3117" /> <!-- Crafted Leather -->
 				<item id="5528" min="1" max="1" chance="14.7583" /> <!-- Sealed Majestic Circlet Design -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="56" />
 			<height normal="35.36" />
@@ -1109,17 +1109,17 @@
 			<attack physical="1018.31275969128" magical="699.490257641174" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="347.656307100592" magical="254.399799408284" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="92" />
 				<run ground="200" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1135,15 +1135,15 @@
 			<skill id="5889" level="1" /> <!--Tainted Shackle -->
 			<skill id="5909" level="1" /> <!--Stronghold Attack -->
 			<skill id="5915" level="1" /> <!--Mummifying Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="7370" max="15093" chance="100" /> <!-- Adena -->
@@ -1169,7 +1169,7 @@
 				<item id="5529" min="1" max="1" chance="3.0199" /> <!-- Dragon Slayer Edge -->
 				<item id="1808" min="1" max="1" chance="0.4892" /> <!-- Recipe: Soulshot (S-Grade) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="27" />
 			<height normal="48.5" />
@@ -1195,17 +1195,17 @@
 			<attack physical="1018.31275969128" magical="699.490257641174" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="347.656307100592" magical="254.399799408284" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="73" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="8" /> <!--Weak P. Atk. -->
@@ -1220,15 +1220,15 @@
 			<skill id="5904" level="1" /> <!--Mist of Souleater -->
 			<skill id="5910" level="1" /> <!--Stronghold Attack -->
 			<skill id="5916" level="1" /> <!--Cruising Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6519" max="13349" chance="100" /> <!-- Adena -->
@@ -1255,7 +1255,7 @@
 				<item id="1894" min="1" max="1" chance="34.1619" /> <!-- Crafted Leather -->
 				<item id="1894" min="1" max="1" chance="34.1619" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="19" />
 			<height normal="44" />
@@ -1282,7 +1282,7 @@
 			<attack physical="1067.77424774255" magical="737.780399546166" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="353.914116390533" magical="258.97899408284" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
@@ -1291,7 +1291,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1307,15 +1307,15 @@
 			<skill id="5894" level="1" /> <!--Mark of Despair -->
 			<skill id="5909" level="1" /> <!--Stronghold Attack -->
 			<skill id="5917" level="1" /> <!--Shrouding Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6657" max="13636" chance="100" /> <!-- Adena -->
@@ -1343,7 +1343,7 @@
 				<item id="3036" min="1" max="1" chance="0.442" /> <!-- Recipe: Spiritshot S -->
 				<item id="5537" min="1" max="1" chance="2.7282" /> <!-- Soul Separator Head -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14.4" />
 			<height normal="22" />
@@ -1377,10 +1377,10 @@
 				<walk ground="50" />
 				<run ground="200" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1396,15 +1396,15 @@
 			<skill id="5889" level="1" /> <!--Tainted Shackle -->
 			<skill id="5909" level="1" /> <!--Stronghold Attack -->
 			<skill id="5911" level="1" /> <!--Pestilence Cleanse -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6468" max="12974" chance="100" /> <!-- Adena -->
@@ -1426,7 +1426,7 @@
 				<item id="6688" min="1" max="1" chance="2.3892" /> <!-- Forgotten Blade Edge -->
 				<item id="959" min="1" max="1" chance="0.0442" /> <!-- Scroll: Enchant Weapon (S-Grade) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="34" />
 			<height normal="34" />
@@ -1453,17 +1453,17 @@
 			<attack physical="1112.35801218417" magical="768.532752324125" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="358.024515764706" magical="261.986808235294" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="200" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1479,15 +1479,15 @@
 			<skill id="5898" level="1" /> <!--Blast of Anchor -->
 			<skill id="5909" level="1" /> <!--Stronghold Attack -->
 			<skill id="5913" level="1" /> <!--Putrefaction Cleanse -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6274" max="12585" chance="100" /> <!-- Adena -->
@@ -1510,7 +1510,7 @@
 				<item id="1894" min="1" max="1" chance="37.6209" /> <!-- Crafted Leather -->
 				<item id="6689" min="1" max="1" chance="2.2739" /> <!-- Basalt Battlehammer Head -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="43" />
 			<height normal="47.5" />
@@ -1538,17 +1538,17 @@
 			<attack physical="1112.35801218417" magical="768.532752324125" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="358.024515764706" magical="261.986808235294" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="46" />
 				<run ground="200" />
 			</speed>
-			<hit_time>470</hit_time>
+			<hitTime>470</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="8" /> <!--Weak P. Atk. -->
@@ -1564,15 +1564,15 @@
 			<skill id="5905" level="1" /> <!--Confusing Nuph -->
 			<skill id="5910" level="1" /> <!--Stronghold Attack -->
 			<skill id="5917" level="1" /> <!--Shrouding Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6184" max="12405" chance="100" /> <!-- Adena -->
@@ -1594,7 +1594,7 @@
 				<item id="6690" min="1" max="1" chance="2.2887" /> <!-- Imperial Staff Head -->
 				<item id="6849" min="1" max="1" chance="2.8525" /> <!-- Recipe: Sealed Tateossian Ring(70%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="23" />
 			<height normal="31" />
@@ -1630,7 +1630,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
@@ -1647,15 +1647,15 @@
 			<skill id="5909" level="1" /> <!--Stronghold Attack -->
 			<skill id="5911" level="1" /> <!--Pestilence Cleanse -->
 			<skill id="5918" level="8" /> <!--Physical Root Weakness -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6563" max="13443" chance="100" /> <!-- Adena -->
@@ -1680,7 +1680,7 @@
 				<item id="1894" min="1" max="1" chance="34.3962" /> <!-- Crafted Leather -->
 				<item id="1894" min="1" max="1" chance="34.3962" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="56" />
 			<height normal="35.36" />
@@ -1713,10 +1713,10 @@
 				<walk ground="110" />
 				<run ground="200" />
 			</speed>
-			<hit_time>440</hit_time>
+			<hitTime>440</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
@@ -1731,15 +1731,15 @@
 			<skill id="5899" level="1" /> <!--Burst of Pain -->
 			<skill id="5911" level="1" /> <!--Pestilence Cleanse -->
 			<skill id="5918" level="8" /> <!--Physical Root Weakness -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="1500" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="106409" max="217956" chance="100" /> <!-- Adena -->
@@ -1763,7 +1763,7 @@
 				<item id="1808" min="1" max="1" chance="7.064" /> <!-- Recipe: Soulshot (S-Grade) -->
 				<item id="5487" min="1" max="1" chance="71.5723" /> <!-- Sealed Robe of Nightmare Fabric -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="70" />
 			<height normal="44.2" />
@@ -1801,7 +1801,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="14" /> <!--Strong P. Atk. -->
@@ -1817,15 +1817,15 @@
 			<skill id="5899" level="1" /> <!--Burst of Pain -->
 			<skill id="5909" level="1" /> <!--Stronghold Attack -->
 			<skill id="5916" level="1" /> <!--Cruising Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6376" max="12790" chance="100" /> <!-- Adena -->
@@ -1850,7 +1850,7 @@
 				<item id="6688" min="1" max="1" chance="2.3552" /> <!-- Forgotten Blade Edge -->
 				<item id="960" min="1" max="1" chance="0.4359" /> <!-- Scroll: Enchant Armor (S-Grade) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="16" />
 			<height normal="27.2" />
@@ -1886,10 +1886,10 @@
 				<walk ground="68" />
 				<run ground="200" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="14" /> <!--Strong P. Atk. -->
@@ -1905,15 +1905,15 @@
 			<skill id="5899" level="1" /> <!--Burst of Pain -->
 			<skill id="5909" level="1" /> <!--Stronghold Attack -->
 			<skill id="5916" level="1" /> <!--Cruising Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6545" max="13102" chance="100" /> <!-- Adena -->
@@ -1939,7 +1939,7 @@
 				<item id="1894" min="1" max="1" chance="39.1868" /> <!-- Crafted Leather -->
 				<item id="6689" min="1" max="1" chance="2.3685" /> <!-- Basalt Battlehammer Head -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="34" />
@@ -1968,7 +1968,7 @@
 			<attack physical="1112.35801218417" magical="768.532752324125" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="DUAL" range="40" distance="80" width="120" />
 			<defence physical="358.024515764706" magical="261.986808235294" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
@@ -1977,7 +1977,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="14" /> <!--Strong P. Atk. -->
@@ -1993,15 +1993,15 @@
 			<skill id="5894" level="1" /> <!--Mark of Despair -->
 			<skill id="5909" level="1" /> <!--Stronghold Attack -->
 			<skill id="5986" level="1" /> <!--Vampiric Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6553" max="13144" chance="100" /> <!-- Adena -->
@@ -2030,7 +2030,7 @@
 				<item id="6690" min="1" max="1" chance="2.4251" /> <!-- Imperial Staff Head -->
 				<item id="6849" min="1" max="1" chance="3.0225" /> <!-- Recipe: Sealed Tateossian Ring(70%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="16" />
 			<height normal="27.2" />
@@ -2058,17 +2058,17 @@
 			<attack physical="1164.93244173344" magical="809.536040944386" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="DUAL" range="40" distance="80" width="120" />
 			<defence physical="364.182534058824" magical="266.492975470588" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="68" />
 				<run ground="200" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="14" /> <!--Strong P. Atk. -->
@@ -2084,15 +2084,15 @@
 			<skill id="5894" level="1" /> <!--Mark of Despair -->
 			<skill id="5909" level="1" /> <!--Stronghold Attack -->
 			<skill id="5986" level="1" /> <!--Vampiric Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6726" max="13465" chance="100" /> <!-- Adena -->
@@ -2119,7 +2119,7 @@
 				<item id="959" min="1" max="1" chance="0.0459" /> <!-- Scroll: Enchant Weapon (S-Grade) -->
 				<item id="1894" min="1" max="1" chance="40.2724" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="34" />
@@ -2158,7 +2158,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2175,15 +2175,15 @@
 			<skill id="5895" level="1" /> <!--Mark of Cowardice -->
 			<skill id="5909" level="1" /> <!--Stronghold Attack -->
 			<skill id="5915" level="1" /> <!--Mummifying Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8269" max="16587" chance="100" /> <!-- Adena -->
@@ -2211,7 +2211,7 @@
 				<item id="6693" min="1" max="1" chance="3.1098" /> <!-- Dragon Hunter Axe Blade -->
 				<item id="6851" min="1" max="1" chance="1.9071" /> <!-- Recipe: Sealed Tateossian Necklace(70%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22.88" />
 			<height normal="41.6" />
@@ -2248,10 +2248,10 @@
 				<walk ground="46.5" />
 				<run ground="180" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2268,15 +2268,15 @@
 			<skill id="5895" level="1" /> <!--Mark of Cowardice -->
 			<skill id="5909" level="1" /> <!--Stronghold Attack -->
 			<skill id="5915" level="1" /> <!--Mummifying Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8488" max="16992" chance="100" /> <!-- Adena -->
@@ -2305,7 +2305,7 @@
 				<item id="6853" min="1" max="1" chance="0.6752" /> <!-- Recipe: Sealed Imperial Crusader Breastplate (60%) -->
 				<item id="6695" min="1" max="1" chance="3.0717" /> <!-- Demon Splinter Blade -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28.6" />
 			<height normal="52" />
@@ -2335,7 +2335,7 @@
 			<attack physical="1112.35801218417" magical="768.532752324125" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
 			<defence physical="358.024515764706" magical="261.986808235294" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
@@ -2344,7 +2344,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2361,15 +2361,15 @@
 			<skill id="5900" level="1" /> <!--Burst of Oblivion -->
 			<skill id="5909" level="1" /> <!--Stronghold Attack -->
 			<skill id="5985" level="1" /> <!--Decaying Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6603" max="13244" chance="100" /> <!-- Adena -->
@@ -2393,7 +2393,7 @@
 				<item id="1894" min="1" max="1" chance="39.5922" /> <!-- Crafted Leather -->
 				<item id="1894" min="1" max="1" chance="39.5922" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22.88" />
 			<height normal="41.6" />
@@ -2422,17 +2422,17 @@
 			<attack physical="1164.93244173344" magical="809.536040944386" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
 			<defence physical="364.182534058824" magical="266.492975470588" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="46.5" />
 				<run ground="180" />
 			</speed>
-			<hit_time>470</hit_time>
+			<hitTime>470</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2449,15 +2449,15 @@
 			<skill id="5900" level="1" /> <!--Burst of Oblivion -->
 			<skill id="5909" level="1" /> <!--Stronghold Attack -->
 			<skill id="5985" level="1" /> <!--Decaying Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6777" max="13568" chance="100" /> <!-- Adena -->
@@ -2480,7 +2480,7 @@
 				<item id="6855" min="1" max="1" chance="0.8605" /> <!-- Recipe: Sealed Imperial Crusader Gaiters (60%) -->
 				<item id="6697" min="1" max="1" chance="2.4527" /> <!-- Arcana Mace Head -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28.6" />
 			<height normal="52" />
@@ -2508,7 +2508,7 @@
 			<attack physical="1112.35801218417" magical="768.532752324125" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="358.024515764706" magical="261.986808235294" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
@@ -2517,7 +2517,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
@@ -2533,15 +2533,15 @@
 			<skill id="5907" level="1" /> <!--Ritual of Entombment -->
 			<skill id="5910" level="1" /> <!--Stronghold Attack -->
 			<skill id="5916" level="1" /> <!--Cruising Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6241" max="12519" chance="100" /> <!-- Adena -->
@@ -2565,7 +2565,7 @@
 				<item id="6698" min="1" max="1" chance="20.9509" /> <!-- Sealed Tateossian Earring Part -->
 				<item id="959" min="1" max="1" chance="0.0427" /> <!-- Scroll: Enchant Weapon (S-Grade) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="21.12" />
 			<height normal="40.48" />
@@ -2592,17 +2592,17 @@
 			<attack physical="1164.93244173344" magical="809.536040944386" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="364.182534058824" magical="266.492975470588" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="46" />
 				<run ground="200" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
@@ -2618,15 +2618,15 @@
 			<skill id="5907" level="1" /> <!--Ritual of Entombment -->
 			<skill id="5910" level="1" /> <!--Stronghold Attack -->
 			<skill id="5916" level="1" /> <!--Cruising Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6406" max="12825" chance="100" /> <!-- Adena -->
@@ -2651,7 +2651,7 @@
 				<item id="1894" min="1" max="1" chance="38.3585" /> <!-- Crafted Leather -->
 				<item id="6699" min="1" max="1" chance="23.8278" /> <!-- Sealed Tateossian Ring Gem -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="26.4" />
 			<height normal="50.6" />
@@ -2688,7 +2688,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
@@ -2704,15 +2704,15 @@
 			<skill id="5908" level="1" /> <!--Ritual of Entombment -->
 			<skill id="5910" level="1" /> <!--Stronghold Attack -->
 			<skill id="5917" level="1" /> <!--Shrouding Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="5952" max="11940" chance="100" /> <!-- Adena -->
@@ -2738,7 +2738,7 @@
 				<item id="6700" min="1" max="1" chance="12.1781" /> <!-- Sealed Tateossian Necklace Chain -->
 				<item id="6861" min="1" max="1" chance="1.8036" /> <!-- Recipe: Sealed Imperial Crusader Shield (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="21.12" />
 			<height normal="40.48" />
@@ -2772,10 +2772,10 @@
 				<walk ground="46" />
 				<run ground="200" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
@@ -2791,15 +2791,15 @@
 			<skill id="5908" level="1" /> <!--Ritual of Entombment -->
 			<skill id="5910" level="1" /> <!--Stronghold Attack -->
 			<skill id="5917" level="1" /> <!--Shrouding Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ACEED</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6110" max="12231" chance="100" /> <!-- Adena -->
@@ -2824,7 +2824,7 @@
 				<item id="960" min="1" max="1" chance="0.417" /> <!-- Scroll: Enchant Armor (S-Grade) -->
 				<item id="1894" min="1" max="1" chance="36.5827" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="26.4" />
 			<height normal="50.6" />
@@ -2855,10 +2855,10 @@
 				<walk ground="100" />
 				<run ground="200" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4072" level="10" /> <!--Stun -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2872,15 +2872,15 @@
 			<skill id="5274" level="5" /> <!--NPC(party) - Physical Single Long Range Attack -->
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5826" level="1" /> <!--Fire Breath -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="28417" max="56889" chance="100" /> <!-- Adena -->
@@ -2908,7 +2908,7 @@
 				<item id="6702" min="1" max="1" chance="33.2343" /> <!-- Sealed Imperial Crusader Gaiters Pattern -->
 				<item id="6863" min="1" max="1" chance="6.0201" /> <!-- Recipe: Sealed Imperial Crusader Helmet (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="40" />
 			<height normal="55" />
@@ -2939,10 +2939,10 @@
 				<walk ground="43" />
 				<run ground="170" />
 			</speed>
-			<hit_time>420</hit_time>
+			<hitTime>420</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2956,15 +2956,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5826" level="1" /> <!--Fire Breath -->
 			<skill id="5829" level="1" /> <!--Fire Flare -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6023" max="12057" chance="100" /> <!-- Adena -->
@@ -2993,7 +2993,7 @@
 				<item id="6865" min="1" max="1" chance="0.3938" /> <!-- Recipe: Sealed Draconic Leather Armor (60%) -->
 				<item id="6704" min="1" max="1" chance="14.6325" /> <!-- Sealed Imperial Crusader Boots Design -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="29" />
 			<height normal="49.9" />
@@ -3025,10 +3025,10 @@
 				<walk ground="55" />
 				<run ground="210" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3042,15 +3042,15 @@
 			<skill id="5827" level="5" /> <!--Fireball -->
 			<skill id="5830" level="1" /> <!--Polearm Thrust -->
 			<skill id="5831" level="1" /> <!--Polearm Swing -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8154" max="16357" chance="100" /> <!-- Adena -->
@@ -3078,7 +3078,7 @@
 				<item id="1894" min="1" max="1" chance="48.8959" /> <!-- Crafted Leather -->
 				<item id="1894" min="1" max="1" chance="48.8959" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="46.5" />
@@ -3110,10 +3110,10 @@
 				<walk ground="55" />
 				<run ground="210" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3127,15 +3127,15 @@
 			<skill id="5827" level="4" /> <!--Fireball -->
 			<skill id="5830" level="1" /> <!--Polearm Thrust -->
 			<skill id="5831" level="1" /> <!--Polearm Swing -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="9574" max="19610" chance="100" /> <!-- Adena -->
@@ -3163,7 +3163,7 @@
 				<item id="1808" min="1" max="1" chance="0.6356" /> <!-- Recipe: Soulshot (S-Grade) -->
 				<item id="5481" min="1" max="1" chance="6.4168" /> <!-- Sealed Majestic Leather Armor Fabric -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="46.5" />
@@ -3195,10 +3195,10 @@
 				<walk ground="56" />
 				<run ground="210" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3212,15 +3212,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5827" level="4" /> <!--Fireball -->
 			<skill id="5832" level="1" /> <!--Hate Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8055" max="16494" chance="100" /> <!-- Adena -->
@@ -3249,7 +3249,7 @@
 				<item id="5487" min="1" max="1" chance="5.417" /> <!-- Sealed Robe of Nightmare Fabric -->
 				<item id="1894" min="1" max="1" chance="42.209" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22" />
 			<height normal="42" />
@@ -3281,10 +3281,10 @@
 				<walk ground="56" />
 				<run ground="210" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3298,15 +3298,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5827" level="3" /> <!--Fireball -->
 			<skill id="5832" level="1" /> <!--Hate Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8283" max="16910" chance="100" /> <!-- Adena -->
@@ -3330,7 +3330,7 @@
 				<item id="5488" min="1" max="1" chance="5.5596" /> <!-- Sealed Majestic Robe Fabric -->
 				<item id="3957" min="1" max="1" chance="0.5487" /> <!-- Recipe: Blessed Spiritshot S -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22" />
 			<height normal="42" />
@@ -3362,10 +3362,10 @@
 				<walk ground="92" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3380,14 +3380,14 @@
 			<skill id="5827" level="4" /> <!--Fireball -->
 			<skill id="5829" level="5" /> <!--Fire Flare -->
 			<skill id="5833" level="1" /> <!--Shield -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="19603" max="40152" chance="100" /> <!-- Adena -->
@@ -3410,7 +3410,7 @@
 				<item id="5157" min="1" max="1" chance="1.3014" /> <!-- Recipe: Soulshot (S) Compressed Package (100%) -->
 				<item id="5502" min="1" max="1" chance="49.4518" /> <!-- Sealed Boots of Nightmare Lining -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="39.5" />
@@ -3442,10 +3442,10 @@
 				<walk ground="92" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3460,15 +3460,15 @@
 			<skill id="5827" level="4" /> <!--Fireball -->
 			<skill id="5829" level="4" /> <!--Fire Flare -->
 			<skill id="5833" level="1" /> <!--Shield -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="7755" max="15880" chance="100" /> <!-- Adena -->
@@ -3492,7 +3492,7 @@
 				<item id="1894" min="1" max="1" chance="40.6392" /> <!-- Crafted Leather -->
 				<item id="5503" min="1" max="1" chance="19.5612" /> <!-- Sealed Majestic Boots Lining -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="39.5" />
@@ -3525,10 +3525,10 @@
 				<walk ground="82" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3543,15 +3543,15 @@
 			<skill id="5827" level="3" /> <!--Fireball -->
 			<skill id="5829" level="4" /> <!--Fire Flare -->
 			<skill id="5834" level="1" /> <!--Magic Barrier -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8405" max="17160" chance="100" /> <!-- Adena -->
@@ -3576,7 +3576,7 @@
 				<item id="5514" min="1" max="1" chance="21.1591" /> <!-- Sealed Gauntlets of Nightmare Design -->
 				<item id="5167" min="1" max="1" chance="0.5568" /> <!-- Recipe: Blessed Spiritshot (S) Compressed Package (100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="34.5" />
@@ -3600,17 +3600,17 @@
 			<attack physical="5883.7041177888" magical="4065.07551523469" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="572.839225223529" magical="628.768339764706" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="46" />
 				<run ground="160" />
 			</speed>
-			<hit_time>490</hit_time>
+			<hitTime>490</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3625,14 +3625,14 @@
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
 			<skill id="5827" level="5" /> <!--Fireball -->
 			<skill id="5828" level="1" /> <!--Unholy Flare -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="17815" max="35735" chance="100" /> <!-- Adena -->
@@ -3657,7 +3657,7 @@
 				<item id="960" min="1" max="1" chance="1.2178" /> <!-- Scroll: Enchant Armor (S-Grade) -->
 				<item id="1894" min="1" max="3" chance="53.4125" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="60" />
 			<height normal="66" />
@@ -3685,10 +3685,10 @@
 				<walk ground="100" />
 				<run ground="200" />
 			</speed>
-			<hit_time>570</hit_time>
+			<hitTime>570</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4211" level="9" /> <!--BOSS Might -->
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3701,15 +3701,15 @@
 			<skill id="4416" level="10" /> <!--Dragons -->
 			<skill id="5274" level="5" /> <!--NPC(party) - Physical Single Long Range Attack -->
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8197" max="16729" chance="100" /> <!-- Adena -->
@@ -3735,7 +3735,7 @@
 				<item id="5480" min="1" max="1" chance="5.4816" /> <!-- Sealed Leather Armor of Nightmare Fabric -->
 				<item id="5272" min="1" max="1" chance="0.5429" /> <!-- Recipe: Greater Soulshot (S) Compressed Package(100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="50" />
 			<height normal="55" />
@@ -3765,10 +3765,10 @@
 				<walk ground="82" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3782,15 +3782,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5835" level="1" /> <!--Major Heal -->
 			<skill id="5836" level="1" /> <!--Greater Heal -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="5890" max="12020" chance="100" /> <!-- Adena -->
@@ -3817,7 +3817,7 @@
 				<item id="5277" min="1" max="1" chance="0.3901" /> <!-- Recipe: Greater Spiritshot (S) Compressed Package(100%) -->
 				<item id="5487" min="1" max="1" chance="3.9526" /> <!-- Sealed Robe of Nightmare Fabric -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="34.5" />
@@ -3849,7 +3849,7 @@
 			</speed>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3862,15 +3862,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5837" level="1" /> <!--Double Throwing Javelin -->
 			<skill id="5838" level="1" /> <!--Throwing Javelin -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="9493" max="19381" chance="100" /> <!-- Adena -->
@@ -3900,7 +3900,7 @@
 				<item id="1894" min="1" max="1" chance="49.6499" /> <!-- Crafted Leather -->
 				<item id="5488" min="1" max="1" chance="6.372" /> <!-- Sealed Majestic Robe Fabric -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="46.5" />
@@ -3932,7 +3932,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canMove="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3946,15 +3946,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5837" level="1" /> <!--Double Throwing Javelin -->
 			<skill id="5838" level="1" /> <!--Throwing Javelin -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="9493" max="19381" chance="100" /> <!-- Adena -->
@@ -3981,7 +3981,7 @@
 				<item id="5495" min="1" max="1" chance="21.4869" /> <!-- Sealed Shield of Nightmare Fragment -->
 				<item id="1808" min="1" max="1" chance="0.6289" /> <!-- Recipe: Soulshot (S-Grade) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="46.5" />
@@ -4006,17 +4006,17 @@
 			<attack physical="4149.83975268227" magical="2833.8026342934" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="525.233168" magical="576.514248" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="92" />
 				<run ground="200" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -4030,15 +4030,15 @@
 			<skill id="5274" level="5" /> <!--NPC(party) - Physical Single Long Range Attack -->
 			<skill id="5309" level="5" /> <!--Bleed -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8218" max="16827" chance="100" /> <!-- Adena -->
@@ -4064,7 +4064,7 @@
 				<item id="1894" min="1" max="1" chance="57.4568" /> <!-- Crafted Leather -->
 				<item id="1894" min="1" max="1" chance="57.4568" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="27" />
 			<height normal="48.5" />
@@ -4086,17 +4086,17 @@
 			<attack physical="4090.13416907694" magical="2793.03141458148" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="518.05528" magical="568.635576" />
 			<attribute>
-				<attack type="UNHOLY" value="130" />
+				<attack type="DARK" value="130" />
 				<defence fire="150" water="150" wind="150" earth="150" holy="120" dark="180" default="150" />
 			</attribute>
 			<speed>
 				<walk ground="73" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -4109,15 +4109,15 @@
 			<skill id="5328" level="5" /> <!--NPC(party) -Magic Single Long Range DD - Dark -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
 			<skill id="5828" level="1" /> <!--Unholy Flare -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="7866" max="16108" chance="100" /> <!-- Adena -->
@@ -4146,7 +4146,7 @@
 				<item id="3036" min="1" max="1" chance="0.6967" /> <!-- Recipe: Spiritshot S -->
 				<item id="5514" min="1" max="1" chance="26.4734" /> <!-- Sealed Gauntlets of Nightmare Design -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="19" />
 			<height normal="44" />
@@ -4173,10 +4173,10 @@
 				<walk ground="46" />
 				<run ground="200" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -4188,15 +4188,15 @@
 			<skill id="4416" level="10" /> <!--Dragons -->
 			<skill id="5274" level="5" /> <!--NPC(party) - Physical Single Long Range Attack -->
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8566" max="17478" chance="100" /> <!-- Adena -->
@@ -4218,7 +4218,7 @@
 				<item id="5515" min="1" max="1" chance="28.7536" /> <!-- Sealed Majestic Gauntlets Design -->
 				<item id="1894" min="1" max="1" chance="59.7368" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="48" />
 			<height normal="53.5" />
@@ -4242,7 +4242,7 @@
 			</speed>
 		</stats>
 		<status undying="false" flying="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -4252,8 +4252,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="62" />
@@ -4278,7 +4278,7 @@
 			</speed>
 		</stats>
 		<status undying="false" flying="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -4288,8 +4288,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="62" />
@@ -4314,7 +4314,7 @@
 			</speed>
 		</stats>
 		<status undying="false" flying="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -4324,8 +4324,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="62" />
@@ -4350,7 +4350,7 @@
 			</speed>
 		</stats>
 		<status undying="false" flying="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -4360,8 +4360,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="62" />
@@ -4396,7 +4396,7 @@
 			</speed>
 		</stats>
 		<status undying="false" flying="true" canMove="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4408,8 +4408,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="5961" level="1" /> <!--Barrier Thunder Storm -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="86" />
@@ -4443,7 +4443,7 @@
 			</speed>
 		</stats>
 		<status undying="false" flying="true" canMove="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4455,8 +4455,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="5962" level="1" /> <!--Air Defense Cannon -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="86" />
@@ -4479,10 +4479,10 @@
 				<walk ground="55" />
 				<run ground="210" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<ex_crt_effect>true</ex_crt_effect>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="28" />
@@ -4505,10 +4505,10 @@
 				<walk ground="55" />
 				<run ground="210" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<ex_crt_effect>true</ex_crt_effect>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="28" />
@@ -4531,10 +4531,10 @@
 				<walk ground="56" />
 				<run ground="210" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="22" />
@@ -4557,10 +4557,10 @@
 				<walk ground="56" />
 				<run ground="210" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="22" />
@@ -4583,10 +4583,10 @@
 				<walk ground="92" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<ex_crt_effect>true</ex_crt_effect>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="28" />
@@ -4609,10 +4609,10 @@
 				<walk ground="92" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="28" />
@@ -4635,10 +4635,10 @@
 				<walk ground="82" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="25" />
@@ -4661,10 +4661,10 @@
 				<walk ground="82" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="25" />
@@ -4689,7 +4689,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="25" />
@@ -4714,7 +4714,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="25" />
@@ -4746,10 +4746,10 @@
 				<walk ground="60" />
 				<run ground="200" />
 			</speed>
-			<hit_time>530</hit_time>
+			<hitTime>530</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="12" /> <!--Slightly Strong P. Atk. -->
@@ -4763,14 +4763,14 @@
 			<skill id="5309" level="5" /> <!--Bleed -->
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5826" level="1" /> <!--Fire Breath -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="145170" max="290746" chance="100" /> <!-- Adena -->
@@ -4798,7 +4798,7 @@
 				<item id="960" min="1" max="1" chance="9.9136" /> <!-- Scroll: Enchant Armor (S-Grade) -->
 				<item id="1894" min="1" max="19" chance="86.9615" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="36" />
 			<height normal="51" />
@@ -4829,10 +4829,10 @@
 				<walk ground="100" />
 				<run ground="200" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4072" level="10" /> <!--Stun -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4846,15 +4846,15 @@
 			<skill id="5274" level="5" /> <!--NPC(party) - Physical Single Long Range Attack -->
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5826" level="1" /> <!--Fire Breath -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="263749" max="528002" chance="100" /> <!-- Adena -->
@@ -4885,7 +4885,7 @@
 				<item id="6689" min="1" max="3" chance="47.7247" /> <!-- Basalt Battlehammer Head -->
 				<item id="6901" min="1" max="1" chance="45.0072" /> <!-- Recipe: Shining Arrow (100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="40" />
 			<height normal="55" />
@@ -4916,10 +4916,10 @@
 				<walk ground="43" />
 				<run ground="170" />
 			</speed>
-			<hit_time>420</hit_time>
+			<hitTime>420</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -4933,15 +4933,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5826" level="1" /> <!--Fire Breath -->
 			<skill id="5829" level="6" /> <!--Fire Flare -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="46570" max="93228" chance="100" /> <!-- Adena -->
@@ -4969,7 +4969,7 @@
 				<item id="6847" min="1" max="1" chance="14.3186" /> <!-- Recipe: Sealed Tateossian Earring (70%) -->
 				<item id="6691" min="1" max="1" chance="17.1769" /> <!-- Angel Slayer Blade -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="29" />
 			<height normal="49.9" />
@@ -5001,10 +5001,10 @@
 				<walk ground="55" />
 				<run ground="210" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="13" /> <!--Slightly Strong P. Atk. -->
@@ -5018,15 +5018,15 @@
 			<skill id="5826" level="1" /> <!--Fire Breath -->
 			<skill id="5830" level="1" /> <!--Polearm Thrust -->
 			<skill id="5831" level="1" /> <!--Polearm Swing -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="108343" max="217323" chance="100" /> <!-- Adena -->
@@ -5055,7 +5055,7 @@
 				<item id="1894" min="1" max="13" chance="92.8078" /> <!-- Crafted Leather -->
 				<item id="1894" min="1" max="13" chance="92.8078" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="46.5" />
@@ -5087,10 +5087,10 @@
 				<walk ground="55" />
 				<run ground="210" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5104,15 +5104,15 @@
 			<skill id="5826" level="1" /> <!--Fire Breath -->
 			<skill id="5830" level="1" /> <!--Polearm Thrust -->
 			<skill id="5831" level="1" /> <!--Polearm Swing -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="33921" max="69481" chance="100" /> <!-- Adena -->
@@ -5142,7 +5142,7 @@
 				<item id="1808" min="1" max="1" chance="2.2519" /> <!-- Recipe: Soulshot (S-Grade) -->
 				<item id="5481" min="1" max="1" chance="22.7357" /> <!-- Sealed Majestic Leather Armor Fabric -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="46.5" />
@@ -5174,10 +5174,10 @@
 				<walk ground="56" />
 				<run ground="210" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5191,15 +5191,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5826" level="1" /> <!--Fire Breath -->
 			<skill id="5832" level="1" /> <!--Hate Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="28447" max="58252" chance="100" /> <!-- Adena -->
@@ -5224,7 +5224,7 @@
 				<item id="5487" min="1" max="1" chance="19.1316" /> <!-- Sealed Robe of Nightmare Fabric -->
 				<item id="1894" min="1" max="3" chance="74.536" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22" />
 			<height normal="42" />
@@ -5256,10 +5256,10 @@
 				<walk ground="56" />
 				<run ground="210" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5273,15 +5273,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5826" level="1" /> <!--Fire Breath -->
 			<skill id="5832" level="1" /> <!--Hate Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="29224" max="59662" chance="100" /> <!-- Adena -->
@@ -5305,7 +5305,7 @@
 				<item id="5488" min="1" max="1" chance="19.6152" /> <!-- Sealed Majestic Robe Fabric -->
 				<item id="3957" min="1" max="1" chance="1.936" /> <!-- Recipe: Blessed Spiritshot S -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22" />
 			<height normal="42" />
@@ -5337,10 +5337,10 @@
 				<walk ground="92" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5355,15 +5355,15 @@
 			<skill id="5826" level="1" /> <!--Fire Breath -->
 			<skill id="5829" level="5" /> <!--Fire Flare -->
 			<skill id="5833" level="1" /> <!--Shield -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="12783" max="26184" chance="100" /> <!-- Adena -->
@@ -5388,7 +5388,7 @@
 				<item id="5157" min="1" max="1" chance="0.8486" /> <!-- Recipe: Soulshot (S) Compressed Package (100%) -->
 				<item id="5502" min="1" max="1" chance="32.2485" /> <!-- Sealed Boots of Nightmare Lining -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="39.5" />
@@ -5420,10 +5420,10 @@
 				<walk ground="92" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5438,15 +5438,15 @@
 			<skill id="5826" level="1" /> <!--Fire Breath -->
 			<skill id="5829" level="4" /> <!--Fire Flare -->
 			<skill id="5833" level="1" /> <!--Shield -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="12844" max="26302" chance="100" /> <!-- Adena -->
@@ -5472,7 +5472,7 @@
 				<item id="1894" min="1" max="1" chance="67.3085" /> <!-- Crafted Leather -->
 				<item id="5503" min="1" max="1" chance="32.3981" /> <!-- Sealed Majestic Boots Lining -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="39.5" />
@@ -5505,10 +5505,10 @@
 				<walk ground="82" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5523,15 +5523,15 @@
 			<skill id="5826" level="1" /> <!--Fire Breath -->
 			<skill id="5829" level="4" /> <!--Fire Flare -->
 			<skill id="5834" level="1" /> <!--Magic Barrier -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="14545" max="29695" chance="100" /> <!-- Adena -->
@@ -5558,7 +5558,7 @@
 				<item id="5514" min="1" max="1" chance="36.616" /> <!-- Sealed Gauntlets of Nightmare Design -->
 				<item id="5167" min="1" max="1" chance="0.9636" /> <!-- Recipe: Blessed Spiritshot (S) Compressed Package (100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="34.5" />
@@ -5586,10 +5586,10 @@
 				<walk ground="100" />
 				<run ground="200" />
 			</speed>
-			<hit_time>570</hit_time>
+			<hitTime>570</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4211" level="9" /> <!--BOSS Might -->
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -5602,15 +5602,15 @@
 			<skill id="4416" level="10" /> <!--Dragons -->
 			<skill id="5274" level="5" /> <!--NPC(party) - Physical Single Long Range Attack -->
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="15112" max="30841" chance="100" /> <!-- Adena -->
@@ -5636,7 +5636,7 @@
 				<item id="1894" min="1" max="1" chance="79.0214" /> <!-- Crafted Leather -->
 				<item id="1894" min="1" max="1" chance="79.0214" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="50" />
 			<height normal="55" />
@@ -5666,10 +5666,10 @@
 				<walk ground="82" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5683,15 +5683,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5835" level="1" /> <!--Major Heal -->
 			<skill id="5836" level="1" /> <!--Greater Heal -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="9856" max="20114" chance="100" /> <!-- Adena -->
@@ -5719,7 +5719,7 @@
 				<item id="5272" min="1" max="1" chance="0.6528" /> <!-- Recipe: Greater Soulshot (S) Compressed Package(100%) -->
 				<item id="5523" min="1" max="1" chance="5.0019" /> <!-- Sealed Majestic Plate Armor Pattern -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="34.5" />
@@ -5751,7 +5751,7 @@
 			</speed>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5764,15 +5764,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5837" level="1" /> <!--Double Throwing Javelin -->
 			<skill id="5838" level="1" /> <!--Throwing Javelin -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="16537" max="33762" chance="100" /> <!-- Adena -->
@@ -5801,7 +5801,7 @@
 				<item id="5527" min="1" max="1" chance="29.4709" /> <!-- Sealed Helm of Nightmare Design -->
 				<item id="1894" min="1" max="1" chance="86.4895" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="46.5" />
@@ -5833,7 +5833,7 @@
 			</speed>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5847,15 +5847,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5837" level="1" /> <!--Double Throwing Javelin -->
 			<skill id="5838" level="1" /> <!--Throwing Javelin -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="16537" max="33762" chance="100" /> <!-- Adena -->
@@ -5883,7 +5883,7 @@
 				<item id="5528" min="1" max="1" chance="29.4709" /> <!-- Sealed Majestic Circlet Design -->
 				<item id="5282" min="1" max="1" chance="1.0955" /> <!-- Recipe: Greater Blessed Spiritshot (S) Compressed Package(100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="46.5" />
@@ -5915,10 +5915,10 @@
 				<walk ground="92" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5934,15 +5934,15 @@
 			<skill id="5827" level="4" /> <!--Fireball -->
 			<skill id="5829" level="5" /> <!--Fire Flare -->
 			<skill id="5833" level="1" /> <!--Shield -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="13159" max="26954" chance="100" /> <!-- Adena -->
@@ -5969,7 +5969,7 @@
 				<item id="1808" min="1" max="1" chance="0.8736" /> <!-- Recipe: Soulshot (S-Grade) -->
 				<item id="5533" min="1" max="1" chance="5.3915" /> <!-- Elysian Head -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="39.5" />
@@ -6001,10 +6001,10 @@
 				<walk ground="92" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -6020,15 +6020,15 @@
 			<skill id="5827" level="4" /> <!--Fireball -->
 			<skill id="5829" level="4" /> <!--Fire Flare -->
 			<skill id="5833" level="1" /> <!--Shield -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="13502" max="27648" chance="100" /> <!-- Adena -->
@@ -6058,7 +6058,7 @@
 				<item id="1894" min="1" max="1" chance="70.7527" /> <!-- Crafted Leather -->
 				<item id="5534" min="1" max="1" chance="5.5359" /> <!-- Soul Bow Stave -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="39.5" />
@@ -6091,10 +6091,10 @@
 				<walk ground="82" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -6110,15 +6110,15 @@
 			<skill id="5827" level="3" /> <!--Fireball -->
 			<skill id="5829" level="4" /> <!--Fire Flare -->
 			<skill id="5834" level="1" /> <!--Magic Barrier -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8627" max="17613" chance="100" /> <!-- Adena -->
@@ -6141,7 +6141,7 @@
 				<item id="5537" min="1" max="1" chance="3.5279" /> <!-- Soul Separator Head -->
 				<item id="3957" min="1" max="1" chance="0.5715" /> <!-- Recipe: Blessed Spiritshot S -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="34.5" />
@@ -6173,10 +6173,10 @@
 				<walk ground="55" />
 				<run ground="210" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canMove="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -6191,15 +6191,15 @@
 			<skill id="5827" level="5" /> <!--Fireball -->
 			<skill id="5830" level="1" /> <!--Polearm Thrust -->
 			<skill id="5831" level="1" /> <!--Polearm Swing -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="109941" max="220528" chance="100" /> <!-- Adena -->
@@ -6222,7 +6222,7 @@
 				<item id="960" min="1" max="1" chance="7.5153" /> <!-- Scroll: Enchant Armor (S-Grade) -->
 				<item id="1894" min="1" max="13" chance="94.1764" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="46.5" />
@@ -6254,10 +6254,10 @@
 				<walk ground="55" />
 				<run ground="210" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canMove="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -6272,15 +6272,15 @@
 			<skill id="5827" level="4" /> <!--Fireball -->
 			<skill id="5830" level="1" /> <!--Polearm Thrust -->
 			<skill id="5831" level="1" /> <!--Polearm Swing -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="35138" max="71973" chance="100" /> <!-- Adena -->
@@ -6303,7 +6303,7 @@
 				<item id="5480" min="1" max="1" chance="23.5513" /> <!-- Sealed Leather Armor of Nightmare Fabric -->
 				<item id="5157" min="1" max="1" chance="2.3327" /> <!-- Recipe: Soulshot (S) Compressed Package (100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="46.5" />
@@ -6335,10 +6335,10 @@
 				<walk ground="56" />
 				<run ground="210" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canMove="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -6354,15 +6354,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5827" level="4" /> <!--Fireball -->
 			<skill id="5832" level="1" /> <!--Hate Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="26168" max="53586" chance="100" /> <!-- Adena -->
@@ -6386,7 +6386,7 @@
 				<item id="5162" min="1" max="1" chance="1.737" /> <!-- Recipe: Spiritshot (S) Compressed Package (100%) -->
 				<item id="5487" min="1" max="1" chance="17.599" /> <!-- Sealed Robe of Nightmare Fabric -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22" />
 			<height normal="42" />
@@ -6418,10 +6418,10 @@
 				<walk ground="56" />
 				<run ground="210" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canMove="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -6437,15 +6437,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5827" level="3" /> <!--Fireball -->
 			<skill id="5832" level="1" /> <!--Hate Aura -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="26906" max="54930" chance="100" /> <!-- Adena -->
@@ -6470,7 +6470,7 @@
 				<item id="1894" min="1" max="3" chance="70.3582" /> <!-- Crafted Leather -->
 				<item id="5488" min="1" max="1" chance="18.0592" /> <!-- Sealed Majestic Robe Fabric -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22" />
 			<height normal="42" />
@@ -6495,7 +6495,7 @@
 			</speed>
 		</stats>
 		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -6506,15 +6506,15 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8094" max="16481" chance="100" /> <!-- Adena -->
@@ -6540,7 +6540,7 @@
 				<item id="5478" min="1" max="1" chance="13.5121" /> <!-- Sealed Dark Crystal Leather Armor Pattern -->
 				<item id="8692" min="1" max="1" chance="0.2276" /> <!-- Recipe: Sword of Ipos (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -6572,10 +6572,10 @@
 				<walk ground="92" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canMove="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -6590,15 +6590,15 @@
 			<skill id="5827" level="4" /> <!--Fireball -->
 			<skill id="5829" level="5" /> <!--Fire Flare -->
 			<skill id="5833" level="1" /> <!--Shield -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="7997" max="16379" chance="100" /> <!-- Adena -->
@@ -6624,7 +6624,7 @@
 				<item id="1894" min="1" max="1" chance="41.9102" /> <!-- Crafted Leather -->
 				<item id="1894" min="1" max="1" chance="41.9102" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="39.5" />
@@ -6656,10 +6656,10 @@
 				<walk ground="92" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canMove="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -6674,15 +6674,15 @@
 			<skill id="5827" level="4" /> <!--Fireball -->
 			<skill id="5829" level="4" /> <!--Fire Flare -->
 			<skill id="5833" level="1" /> <!--Shield -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8044" max="16471" chance="100" /> <!-- Adena -->
@@ -6711,7 +6711,7 @@
 				<item id="1808" min="1" max="1" chance="0.5339" /> <!-- Recipe: Soulshot (S-Grade) -->
 				<item id="5487" min="1" max="1" chance="5.4096" /> <!-- Sealed Robe of Nightmare Fabric -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="39.5" />
@@ -6744,10 +6744,10 @@
 				<walk ground="82" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canMove="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -6762,15 +6762,15 @@
 			<skill id="5827" level="3" /> <!--Fireball -->
 			<skill id="5829" level="4" /> <!--Fire Flare -->
 			<skill id="5834" level="1" /> <!--Magic Barrier -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8705" max="17772" chance="100" /> <!-- Adena -->
@@ -6796,7 +6796,7 @@
 				<item id="5488" min="1" max="1" chance="5.8428" /> <!-- Sealed Majestic Robe Fabric -->
 				<item id="1894" min="1" max="1" chance="45.527" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="34.5" />
@@ -6828,10 +6828,10 @@
 				<walk ground="55" />
 				<run ground="210" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canMove="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -6847,15 +6847,15 @@
 			<skill id="5827" level="5" /> <!--Fireball -->
 			<skill id="5830" level="1" /> <!--Polearm Thrust -->
 			<skill id="5831" level="1" /> <!--Polearm Swing -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="30975" max="62132" chance="100" /> <!-- Adena -->
@@ -6882,7 +6882,7 @@
 				<item id="6688" min="1" max="1" chance="11.4417" /> <!-- Forgotten Blade Edge -->
 				<item id="6901" min="1" max="1" chance="5.2934" /> <!-- Recipe: Shining Arrow (100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="46.5" />
@@ -6914,10 +6914,10 @@
 				<walk ground="55" />
 				<run ground="210" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canMove="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -6933,15 +6933,15 @@
 			<skill id="5827" level="4" /> <!--Fireball -->
 			<skill id="5830" level="1" /> <!--Polearm Thrust -->
 			<skill id="5831" level="1" /> <!--Polearm Swing -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="36140" max="74026" chance="100" /> <!-- Adena -->
@@ -6970,7 +6970,7 @@
 				<item id="1808" min="1" max="1" chance="2.3992" /> <!-- Recipe: Soulshot (S-Grade) -->
 				<item id="5481" min="1" max="1" chance="24.223" /> <!-- Sealed Majestic Leather Armor Fabric -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="46.5" />
@@ -7002,10 +7002,10 @@
 				<walk ground="56" />
 				<run ground="210" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canMove="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -7021,15 +7021,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5827" level="4" /> <!--Fireball -->
 			<skill id="5832" level="1" /> <!--Hate Aura -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8654" max="17721" chance="100" /> <!-- Adena -->
@@ -7051,7 +7051,7 @@
 				<item id="1894" min="1" max="1" chance="45.3485" /> <!-- Crafted Leather -->
 				<item id="5487" min="1" max="1" chance="5.8199" /> <!-- Sealed Robe of Nightmare Fabric -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22" />
 			<height normal="42" />
@@ -7083,10 +7083,10 @@
 				<walk ground="56" />
 				<run ground="210" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canMove="false" noSleepMode="true" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -7102,15 +7102,15 @@
 			<skill id="5462" level="1" /> <!--Fire Attacks -->
 			<skill id="5827" level="3" /> <!--Fireball -->
 			<skill id="5832" level="1" /> <!--Hate Aura -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0.5</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clan_list>
+			<clanList>
 				<clan>DES_DRAGON</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="8894" max="18157" chance="100" /> <!-- Adena -->
@@ -7133,7 +7133,7 @@
 				<item id="5488" min="1" max="1" chance="5.9695" /> <!-- Sealed Majestic Robe Fabric -->
 				<item id="3957" min="1" max="1" chance="0.5892" /> <!-- Recipe: Blessed Spiritshot S -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22" />
 			<height normal="42" />
@@ -7157,7 +7157,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="229" />
@@ -7182,7 +7182,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="57" />

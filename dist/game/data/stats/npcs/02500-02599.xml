@@ -15,11 +15,11 @@
 				<run ground="160" />
 			</speed>
 		</stats>
-		<skill_list>
+		<skillList>
 			<skill id="4416" level="3" /> <!--Beasts -->
 			<skill id="23325" level="1" /> <!--Enlarge - Luckpy -->
 			<skill id="23326" level="1" /> <!--Reduce - Luckpy -->
-		</skill_list>
+		</skillList>
 		<collision>
 			<radius normal="25" />
 			<height normal="35" />
