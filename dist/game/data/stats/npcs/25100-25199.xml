@@ -19,10 +19,10 @@
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>720</hit_time>
+			<hitTime>720</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4213" level="4" /> <!--BOSS Haste -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -35,8 +35,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="13" /> <!--Fairies -->
 			<skill id="4782" level="4" /> <!--BOSS Heal -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="5" />
@@ -58,10 +58,10 @@
 				<walk ground="55" />
 				<run ground="170" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -72,8 +72,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="11" /> <!--Giants -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="21" grown="25" />
@@ -104,10 +104,10 @@
 				<walk ground="40" />
 				<run ground="170" />
 			</speed>
-			<hit_time>590</hit_time>
+			<hitTime>590</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4172" level="5" /> <!--Stun -->
 			<skill id="4175" level="5" /> <!--BOSS Haste -->
@@ -124,10 +124,10 @@
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4731" level="5" /> <!--BOSS Mortal Blow -->
 			<skill id="4827" level="1" /> <!--Raid Boss - Level 45 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9816" min="1" max="3" chance="75" /> <!-- Earth Egg -->
 				<item id="8176" min="1" max="1" chance="75" /> <!-- Destruction Tombstone -->
@@ -150,7 +150,7 @@
 					<item id="6573" min="1" max="1" chance="2.6946" /> <!-- Blessed Scroll: Enchant Weapon (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="42" />
 			<height normal="94" />
@@ -183,10 +183,10 @@
 				<walk ground="53" />
 				<run ground="170" />
 			</speed>
-			<hit_time>460</hit_time>
+			<hitTime>460</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4182" level="5" /> <!--Poison -->
 			<skill id="4185" level="5" /> <!--Sleep -->
@@ -202,10 +202,10 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4828" level="1" /> <!--Raid Boss - Level 55 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9816" min="2" max="3" chance="75" /> <!-- Earth Egg -->
 				<item id="8176" min="1" max="1" chance="90" /> <!-- Destruction Tombstone -->
@@ -230,7 +230,7 @@
 					<item id="948" min="1" max="3" chance="82.4176" /> <!-- Scroll: Enchant Armor (B-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="30" grown="36" />
 			<height normal="63" grown="76" />
@@ -255,10 +255,10 @@
 				<walk ground="40" />
 				<run ground="170" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -270,8 +270,8 @@
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4722" level="5" /> <!--BOSS Strike -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -294,10 +294,10 @@
 				<walk ground="37" />
 				<run ground="170" />
 			</speed>
-			<hit_time>280</hit_time>
+			<hitTime>280</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -308,8 +308,8 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -334,17 +334,17 @@
 			<attack physical="785.177450040489" magical="133.511957686818" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="742.95024" magical="362.44" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -358,10 +358,10 @@
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4741" level="6" /> <!--BOSS Strike -->
 			<skill id="4829" level="1" /> <!--Raid Boss - Level 60 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9814" min="1" max="4" chance="84" /> <!-- Memento Mori -->
 				<item id="8176" min="1" max="2" chance="72" /> <!-- Destruction Tombstone -->
@@ -386,7 +386,7 @@
 					<item id="6571" min="1" max="1" chance="20.4545" /> <!-- Blessed Scroll: Enchant Weapon (B-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="85" />
@@ -405,17 +405,17 @@
 			<attack physical="1497.55052117409" magical="490.541905286893" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="364.223895" magical="355.36" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="40" />
 				<run ground="170" />
 			</speed>
-			<hit_time>800</hit_time>
+			<hitTime>800</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -427,8 +427,8 @@
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4761" level="5" /> <!--Stun -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="ARCHER" clanHelpRange="300" dodge="15" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -445,17 +445,17 @@
 			<attack physical="1497.55052117409" magical="490.541905286893" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="364.223895" magical="355.36" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="170" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -466,8 +466,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="15" grown="25" />
@@ -492,17 +492,17 @@
 			<attack physical="2396.99018807273" magical="851.89721101842" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="943.97961" magical="460.5" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
 				<walk ground="60" />
 				<run ground="170" />
 			</speed>
-			<hit_time>840</hit_time>
+			<hitTime>840</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="7" /> <!--Hold -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -516,10 +516,10 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4830" level="1" /> <!--Raid Boss - Level 74 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="8619" min="1" max="1" chance="56" /> <!-- Ancient Book: Divine Inspiration (Original Language Version) -->
 				<item id="9814" min="3" max="7" chance="82" /> <!-- Memento Mori -->
@@ -539,7 +539,7 @@
 					<item id="6570" min="1" max="1" chance="71.4286" /> <!-- Blessed Scroll: Enchant Armor (A-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="75" />
@@ -558,17 +558,17 @@
 			<attack physical="6239.97653157886" magical="5934.25589445268" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="465.044385" magical="453.74" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>540</hit_time>
+			<hitTime>540</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4194" level="7" /> <!--BOSS Aura Burn -->
 			<skill id="4200" level="7" /> <!--Decrease Atk. Spd. -->
@@ -581,8 +581,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="9" /> <!--Demons -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -601,17 +601,17 @@
 			<attack physical="9360.19880233835" magical="13352.659941391" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="465.044385" magical="453.74" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>540</hit_time>
+			<hitTime>540</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4170" level="7" /> <!--BOSS Mortal Blow -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -623,8 +623,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="9" /> <!--Demons -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="10" />
@@ -655,10 +655,10 @@
 				<walk ground="50" />
 				<run ground="170" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="3" /> <!--Hold -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -672,10 +672,10 @@
 			<skill id="4416" level="3" /> <!--Beasts -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4831" level="1" /> <!--Raid Boss - Level 30 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="65.76589965820312">
 					<item id="850" min="6" max="18" chance="4.031" /> <!-- Elven Earring -->
@@ -695,7 +695,7 @@
 					<item id="956" min="12" max="36" chance="100" /> <!-- Scroll: Enchant Armor (D-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="53" />
@@ -714,17 +714,17 @@
 			<attack physical="273.913941778549" magical="46.6211618728441" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="172.50897" magical="168.32" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
 				<walk ground="60" />
 				<run ground="170" />
 			</speed>
-			<hit_time>840</hit_time>
+			<hitTime>840</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4192" level="2" /> <!--BOSS HP Drain -->
 			<skill id="4199" level="2" /> <!--Decrease P. Atk. -->
@@ -737,8 +737,8 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="9" /> <!--Demons -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="10" />
@@ -757,17 +757,17 @@
 			<attack physical="410.881184697441" magical="104.90220368531" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="172.50897" magical="168.32" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="60" />
 				<run ground="170" />
 			</speed>
-			<hit_time>670</hit_time>
+			<hitTime>670</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -779,8 +779,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4726" level="2" /> <!--Stun -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="15" />
@@ -813,7 +813,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -827,10 +827,10 @@
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4740" level="4" /> <!--BOSS Strike -->
 			<skill id="4832" level="1" /> <!--Raid Boss - Level 40 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9817" min="1" max="4" chance="81" /> <!-- Nonliving Nucleus -->
 				<item id="8176" min="1" max="2" chance="68" /> <!-- Destruction Tombstone -->
@@ -865,7 +865,7 @@
 					<item id="952" min="21" max="63" chance="13.3779" /> <!-- Scroll: Enchant Armor (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="42" />
 			<height normal="45" />
@@ -890,10 +890,10 @@
 				<walk ground="40" />
 				<run ground="170" />
 			</speed>
-			<hit_time>800</hit_time>
+			<hitTime>800</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -905,8 +905,8 @@
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4755" level="3" /> <!--BOSS Power Shot -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="ARCHER" clanHelpRange="300" dodge="15" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -928,10 +928,10 @@
 				<walk ground="90" />
 				<run ground="170" />
 			</speed>
-			<hit_time>390</hit_time>
+			<hitTime>390</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -942,8 +942,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" grown="13" />
@@ -968,17 +968,17 @@
 			<attack physical="327.391297293902" magical="51.7199871013021" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="410.18844" magical="200.1" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="170" />
 			</speed>
-			<hit_time>210</hit_time>
+			<hitTime>210</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4175" level="4" /> <!--BOSS Haste -->
 			<skill id="4177" level="4" /> <!--BOSS Cancel Magic -->
@@ -995,10 +995,10 @@
 			<skill id="4726" level="4" /> <!--Stun -->
 			<skill id="4736" level="4" /> <!--BOSS Spinning Slash -->
 			<skill id="4833" level="1" /> <!--Raid Boss - Level 35 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="62.27199935913086">
 					<item id="353" min="1" max="1" chance="21.5211" /> <!-- Half Plate Armor -->
@@ -1025,7 +1025,7 @@
 					<item id="6573" min="1" max="1" chance="1.8127" /> <!-- Blessed Scroll: Enchant Weapon (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="58" />
@@ -1056,10 +1056,10 @@
 				<walk ground="45" />
 				<run ground="170" />
 			</speed>
-			<hit_time>580</hit_time>
+			<hitTime>580</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="5" /> <!--Hold -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -1073,10 +1073,10 @@
 			<skill id="4416" level="13" /> <!--Fairies -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4834" level="1" /> <!--Raid Boss - Level 50 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9818" min="2" max="5" chance="77" /> <!-- Angelic Essence -->
 				<item id="8176" min="1" max="2" chance="90" /> <!-- Destruction Tombstone -->
@@ -1105,7 +1105,7 @@
 					<item id="6573" min="1" max="1" chance="4.2056" /> <!-- Blessed Scroll: Enchant Weapon (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="42" />
 			<height normal="73" />
@@ -1131,10 +1131,10 @@
 				<walk ground="45" />
 				<run ground="110" />
 			</speed>
-			<hit_time>580</hit_time>
+			<hitTime>580</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4191" level="4" /> <!--BOSS Windstrike -->
 			<skill id="4199" level="4" /> <!--Decrease P. Atk. -->
@@ -1147,8 +1147,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="13" /> <!--Fairies -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="14" />
@@ -1173,10 +1173,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>720</hit_time>
+			<hitTime>720</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4170" level="4" /> <!--BOSS Mortal Blow -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -1188,8 +1188,8 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="13" /> <!--Fairies -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="5" />
@@ -1223,10 +1223,10 @@
 				<walk ground="70" />
 				<run ground="170" />
 			</speed>
-			<hit_time>260</hit_time>
+			<hitTime>260</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4183" level="5" /> <!--Decrease P. Atk. -->
 			<skill id="4190" level="5" /> <!--Decrease MP -->
@@ -1242,10 +1242,10 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4835" level="1" /> <!--Raid Boss - Level 56 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9816" min="1" max="4" chance="77" /> <!-- Earth Egg -->
 				<item id="8176" min="1" max="2" chance="65" /> <!-- Destruction Tombstone -->
@@ -1266,7 +1266,7 @@
 					<item id="948" min="1" max="3" chance="53.6376" /> <!-- Scroll: Enchant Armor (B-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22.5" />
 			<height normal="54" />
@@ -1291,10 +1291,10 @@
 				<walk ground="15" />
 				<run ground="180" />
 			</speed>
-			<hit_time>580</hit_time>
+			<hitTime>580</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1306,8 +1306,8 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="11" /> <!--Giants -->
 			<skill id="4727" level="5" /> <!--Stun -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="21" />
@@ -1330,10 +1330,10 @@
 				<walk ground="15" />
 				<run ground="180" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1344,8 +1344,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="11" /> <!--Giants -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="21" />
@@ -1375,10 +1375,10 @@
 				<walk ground="60" />
 				<run ground="170" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4170" level="6" /> <!--BOSS Mortal Blow -->
 			<skill id="4171" level="6" /> <!--BOSS Spinning Slash -->
@@ -1395,10 +1395,10 @@
 			<skill id="4416" level="3" /> <!--Beasts -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4836" level="1" /> <!--Raid Boss - Level 65 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9816" min="3" max="7" chance="80" /> <!-- Earth Egg -->
 				<item id="8176" min="1" max="4" chance="80" /> <!-- Destruction Tombstone -->
@@ -1421,7 +1421,7 @@
 					<item id="6569" min="1" max="1" chance="10.7143" /> <!-- Blessed Scroll: Enchant Weapon (A-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="72" />
 			<height normal="87" />
@@ -1451,10 +1451,10 @@
 				<walk ground="40" />
 				<run ground="170" />
 			</speed>
-			<hit_time>590</hit_time>
+			<hitTime>590</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4169" level="7" /> <!--Stun -->
 			<skill id="4172" level="7" /> <!--Stun -->
@@ -1471,10 +1471,10 @@
 			<skill id="4416" level="11" /> <!--Giants -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4837" level="1" /> <!--Raid Boss - Level 79 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="61.03409957885742">
 					<item id="6678" min="1" max="1" chance="4.9387" /> <!-- Sealed Imperial Crusader Shield -->
@@ -1501,7 +1501,7 @@
 					<item id="3936" min="1" max="3" chance="84.9057" /> <!-- Blessed Scroll of Resurrection -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="42" />
 			<height normal="94" />
@@ -1531,10 +1531,10 @@
 				<walk ground="56" />
 				<run ground="170" />
 			</speed>
-			<hit_time>650</hit_time>
+			<hitTime>650</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4172" level="3" /> <!--Stun -->
 			<skill id="4175" level="3" /> <!--BOSS Haste -->
@@ -1551,10 +1551,10 @@
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4732" level="3" /> <!--BOSS Mortal Blow -->
 			<skill id="4838" level="1" /> <!--Raid Boss - Level 24 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="76.095703125">
 					<item id="46" min="2" max="4" chance="65.1332" /> <!-- Bronze Helmet -->
@@ -1569,7 +1569,7 @@
 					<item id="955" min="1" max="3" chance="47.3684" /> <!-- Scroll: Enchant Weapon (D-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="19" />
 			<height normal="57" />
@@ -1600,10 +1600,10 @@
 				<walk ground="50" />
 				<run ground="170" />
 			</speed>
-			<hit_time>300</hit_time>
+			<hitTime>300</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="3" /> <!--Hold -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -1617,10 +1617,10 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4839" level="1" /> <!--Raid Boss - Level 33 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="57.41669845581055">
 					<item id="851" min="6" max="18" chance="3.8396" /> <!-- Omen Beast's Eye Earring -->
@@ -1648,7 +1648,7 @@
 					<item id="6573" min="1" max="1" chance="1.6232" /> <!-- Blessed Scroll: Enchant Weapon (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22" />
 			<height normal="35" />
@@ -1674,10 +1674,10 @@
 				<walk ground="45" />
 				<run ground="170" />
 			</speed>
-			<hit_time>260</hit_time>
+			<hitTime>260</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4194" level="3" /> <!--BOSS Aura Burn -->
 			<skill id="4203" level="3" /> <!--Decrease Speed -->
@@ -1690,8 +1690,8 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -1716,10 +1716,10 @@
 				<walk ground="60" />
 				<run ground="170" />
 			</speed>
-			<hit_time>650</hit_time>
+			<hitTime>650</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1731,8 +1731,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="12" /> <!--Bugs -->
 			<skill id="4722" level="3" /> <!--BOSS Strike -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="27" />
@@ -1764,10 +1764,10 @@
 				<walk ground="70" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1781,10 +1781,10 @@
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4741" level="5" /> <!--BOSS Strike -->
 			<skill id="4840" level="1" /> <!--Raid Boss - Level 50 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9814" min="1" max="3" chance="85" /> <!-- Memento Mori -->
 				<item id="8176" min="1" max="1" chance="85" /> <!-- Destruction Tombstone -->
@@ -1809,7 +1809,7 @@
 					<item id="6574" min="1" max="1" chance="19.1829" /> <!-- Blessed Scroll: Enchant Armor (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="30" />
 			<height normal="57" />
@@ -1834,10 +1834,10 @@
 				<walk ground="50" />
 				<run ground="170" />
 			</speed>
-			<hit_time>930</hit_time>
+			<hitTime>930</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1849,8 +1849,8 @@
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4761" level="4" /> <!--Stun -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="ARCHER" clanHelpRange="300" dodge="15" isAggressive="false" />
 		<collision>
 			<radius normal="14" />
@@ -1873,10 +1873,10 @@
 				<walk ground="50" />
 				<run ground="170" />
 			</speed>
-			<hit_time>630</hit_time>
+			<hitTime>630</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1887,8 +1887,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="14" grown="16" />
@@ -1921,7 +1921,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4178" level="4" /> <!--BOSS Flamestrike -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -1935,10 +1935,10 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4841" level="1" /> <!--Raid Boss - Level 40 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9816" min="1" max="2" chance="85" /> <!-- Earth Egg -->
 				<item id="8176" min="1" max="1" chance="65" /> <!-- Destruction Tombstone -->
@@ -1961,7 +1961,7 @@
 					<item id="6573" min="1" max="1" chance="1.8127" /> <!-- Blessed Scroll: Enchant Weapon (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="37.5" />
 			<height normal="30" />
@@ -1987,10 +1987,10 @@
 				<walk ground="43" />
 				<run ground="170" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4211" level="4" /> <!--BOSS Might -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -2003,8 +2003,8 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4781" level="4" /> <!--BOSS Heal -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="10" />
@@ -2027,10 +2027,10 @@
 				<walk ground="40" />
 				<run ground="170" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2041,8 +2041,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -2067,17 +2067,17 @@
 			<attack physical="610.439011291351" magical="93.5186493178929" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="670.9086" magical="327.3" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="5" /> <!--Hold -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -2091,10 +2091,10 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4842" level="1" /> <!--Raid Boss - Level 55 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9814" min="1" max="4" chance="75" /> <!-- Memento Mori -->
 				<item id="8176" min="1" max="4" chance="75" /> <!-- Destruction Tombstone -->
@@ -2119,7 +2119,7 @@
 					<item id="6571" min="1" max="1" chance="1.1173" /> <!-- Blessed Scroll: Enchant Weapon (B-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="85" />
@@ -2144,10 +2144,10 @@
 				<walk ground="90" />
 				<run ground="170" />
 			</speed>
-			<hit_time>390</hit_time>
+			<hitTime>390</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4191" level="5" /> <!--BOSS Windstrike -->
 			<skill id="4205" level="5" /> <!--Paralysis -->
@@ -2160,8 +2160,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -2180,17 +2180,17 @@
 			<attack physical="2312.08069139469" magical="1393.84679470785" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="328.343835" magical="320.36" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="170" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2202,8 +2202,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4731" level="5" /> <!--BOSS Mortal Blow -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="24" grown="29" />
@@ -2236,10 +2236,10 @@
 				<walk ground="27" />
 				<run ground="170" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4184" level="6" /> <!--Decrease Atk. Spd. -->
 			<skill id="4189" level="6" /> <!--Paralysis -->
@@ -2255,10 +2255,10 @@
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4843" level="1" /> <!--Raid Boss - Level 65 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9817" min="3" max="7" chance="80" /> <!-- Nonliving Nucleus -->
 				<item id="8176" min="1" max="4" chance="80" /> <!-- Destruction Tombstone -->
@@ -2280,7 +2280,7 @@
 					<item id="6569" min="1" max="1" chance="1.3921" /> <!-- Blessed Scroll: Enchant Weapon (A-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" grown="25" />
 			<height normal="35" grown="41.5" />
@@ -2304,10 +2304,10 @@
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>460</hit_time>
+			<hitTime>460</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2319,8 +2319,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="4720" level="6" /> <!--BOSS Strike -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -2343,10 +2343,10 @@
 				<walk ground="15" />
 				<run ground="180" />
 			</speed>
-			<hit_time>580</hit_time>
+			<hitTime>580</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2357,8 +2357,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="11" /> <!--Giants -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="21" />
@@ -2390,10 +2390,10 @@
 				<walk ground="30" />
 				<run ground="170" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4178" level="8" /> <!--BOSS Flamestrike -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -2407,10 +2407,10 @@
 			<skill id="4416" level="8" /> <!--Angels -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4844" level="1" /> <!--Raid Boss - Level 78 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="45.60350036621094">
 					<item id="6680" min="1" max="1" chance="5.855" /> <!-- Sealed Draconic Leather Armor -->
@@ -2426,7 +2426,7 @@
 					<item id="6577" min="1" max="1" chance="1.4926" /> <!-- Blessed Scroll: Enchant Weapon (S-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="13.5" grown="16" />
 			<height normal="36.5" grown="42.5" />
@@ -2452,10 +2452,10 @@
 				<walk ground="70" />
 				<run ground="170" />
 			</speed>
-			<hit_time>260</hit_time>
+			<hitTime>260</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4210" level="7" /> <!--BOSS Chant of Life -->
 			<skill id="4214" level="7" /> <!--BOSS Reflect Damage -->
@@ -2468,8 +2468,8 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="15" />
@@ -2492,10 +2492,10 @@
 				<walk ground="50" />
 				<run ground="170" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2506,8 +2506,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="8" /> <!--Angels -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -2539,10 +2539,10 @@
 				<walk ground="70" />
 				<run ground="170" />
 			</speed>
-			<hit_time>460</hit_time>
+			<hitTime>460</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2556,10 +2556,10 @@
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4743" level="5" /> <!--BOSS Strike -->
 			<skill id="4845" level="1" /> <!--Raid Boss - Level 21 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="53.525001525878906">
 					<item id="848" min="3" max="9" chance="24.9403" /> <!-- Enchanted Earring -->
@@ -2577,7 +2577,7 @@
 					<item id="6576" min="1" max="1" chance="90" /> <!-- Blessed Scroll: Enchant Armor (D-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="72" />
@@ -2602,10 +2602,10 @@
 				<walk ground="43" />
 				<run ground="170" />
 			</speed>
-			<hit_time>720</hit_time>
+			<hitTime>720</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2617,8 +2617,8 @@
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4778" level="2" /> <!--BOSS Spear Attack -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="10" grown="12" />
@@ -2641,10 +2641,10 @@
 				<walk ground="52" />
 				<run ground="170" />
 			</speed>
-			<hit_time>590</hit_time>
+			<hitTime>590</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2655,8 +2655,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="12" />
@@ -2681,7 +2681,7 @@
 			<attack physical="74.2223188804512" magical="4.67967242276365" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="305.50599" magical="149.04" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
@@ -2690,7 +2690,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2704,10 +2704,10 @@
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4741" level="2" /> <!--BOSS Strike -->
 			<skill id="4846" level="1" /> <!--Raid Boss - Level 25 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="56.87189865112305">
 					<item id="436" min="2" max="4" chance="29.4331" /> <!-- Tunic of Knowledge -->
@@ -2725,7 +2725,7 @@
 					<item id="6576" min="1" max="3" chance="100" /> <!-- Blessed Scroll: Enchant Armor (D-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="30" />
 			<height normal="21.25" />
@@ -2744,17 +2744,17 @@
 			<attack physical="136.640905723798" magical="17.2030105157932" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="148.063785" magical="144.46" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="40" />
 				<run ground="170" />
 			</speed>
-			<hit_time>800</hit_time>
+			<hitTime>800</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2766,8 +2766,8 @@
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4756" level="2" /> <!--BOSS Power Shot -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="ARCHER" clanHelpRange="300" dodge="15" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -2784,17 +2784,17 @@
 			<attack physical="136.640905723798" magical="17.2030105157932" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="148.063785" magical="144.46" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="60" />
 				<run ground="170" />
 			</speed>
-			<hit_time>300</hit_time>
+			<hitTime>300</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2805,8 +2805,8 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" grown="13" />
@@ -2833,17 +2833,17 @@
 			<attack physical="163.695648646951" magical="12.9299967753255" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="410.18844" magical="200.1" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>350</hit_time>
+			<hitTime>350</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4182" level="3" /> <!--Poison -->
 			<skill id="4186" level="3" /> <!--Hold -->
@@ -2859,10 +2859,10 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4847" level="1" /> <!--Raid Boss - Level 35 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="75.79350280761719">
 					<item id="438" min="1" max="1" chance="29.0162" /> <!-- Sage's Rag -->
@@ -2879,7 +2879,7 @@
 					<item id="6574" min="1" max="1" chance="13.6622" /> <!-- Blessed Scroll: Enchant Armor (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="75" />
@@ -2903,10 +2903,10 @@
 				<walk ground="60" />
 				<run ground="170" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2918,8 +2918,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="13" /> <!--Fairies -->
 			<skill id="4731" level="3" /> <!--BOSS Mortal Blow -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="10" />
@@ -2935,17 +2935,17 @@
 			<attack physical="303.485602119585" magical="48.1624477605241" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="199.4229" magical="194.58" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
 				<walk ground="60" />
 				<run ground="170" />
 			</speed>
-			<hit_time>840</hit_time>
+			<hitTime>840</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2956,8 +2956,8 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="9" /> <!--Demons -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="10" />
@@ -2989,10 +2989,10 @@
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>280</hit_time>
+			<hitTime>280</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="4" /> <!--Hold -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3006,10 +3006,10 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4848" level="1" /> <!--Raid Boss - Level 40 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9814" min="1" max="4" chance="81" /> <!-- Memento Mori -->
 				<item id="8176" min="1" max="2" chance="68" /> <!-- Destruction Tombstone -->
@@ -3030,7 +3030,7 @@
 					<item id="6574" min="1" max="1" chance="50.7042" /> <!-- Blessed Scroll: Enchant Armor (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="24" />
 			<height normal="52" />
@@ -3056,10 +3056,10 @@
 				<walk ground="50" />
 				<run ground="170" />
 			</speed>
-			<hit_time>300</hit_time>
+			<hitTime>300</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4194" level="3" /> <!--BOSS Aura Burn -->
 			<skill id="4199" level="3" /> <!--Decrease P. Atk. -->
@@ -3072,8 +3072,8 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -3099,10 +3099,10 @@
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>300</hit_time>
+			<hitTime>300</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3114,8 +3114,8 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4719" level="3" /> <!--BOSS Strike -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="10" />
@@ -3146,10 +3146,10 @@
 				<walk ground="55" />
 				<run ground="170" />
 			</speed>
-			<hit_time>280</hit_time>
+			<hitTime>280</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4174" level="5" /> <!--BOSS Shield -->
 			<skill id="4177" level="5" /> <!--BOSS Cancel Magic -->
@@ -3166,10 +3166,10 @@
 			<skill id="4720" level="5" /> <!--BOSS Strike -->
 			<skill id="4735" level="5" /> <!--BOSS Spinning Slash -->
 			<skill id="4849" level="1" /> <!--Raid Boss - Level 48 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9817" min="2" max="4" chance="76" /> <!-- Nonliving Nucleus -->
 				<item id="8176" min="1" max="2" chance="77" /> <!-- Destruction Tombstone -->
@@ -3194,7 +3194,7 @@
 					<item id="6574" min="1" max="1" chance="27.3418" /> <!-- Blessed Scroll: Enchant Armor (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="45" />
 			<height normal="126" />
@@ -3224,10 +3224,10 @@
 				<walk ground="46" />
 				<run ground="170" />
 			</speed>
-			<hit_time>740</hit_time>
+			<hitTime>740</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4178" level="5" /> <!--BOSS Flamestrike -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3241,10 +3241,10 @@
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4850" level="1" /> <!--Raid Boss - Level 54 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9818" min="1" max="3" chance="90" /> <!-- Angelic Essence -->
 				<item id="8176" min="1" max="1" chance="90" /> <!-- Destruction Tombstone -->
@@ -3269,7 +3269,7 @@
 					<item id="6571" min="1" max="1" chance="1.1173" /> <!-- Blessed Scroll: Enchant Weapon (B-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" />
 			<height normal="30" />
@@ -3294,10 +3294,10 @@
 				<walk ground="27" />
 				<run ground="170" />
 			</speed>
-			<hit_time>710</hit_time>
+			<hitTime>710</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4213" level="5" /> <!--BOSS Haste -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3310,8 +3310,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="4781" level="5" /> <!--BOSS Heal -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -3333,10 +3333,10 @@
 				<walk ground="27" />
 				<run ground="170" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3347,8 +3347,8 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3379,10 +3379,10 @@
 				<walk ground="15" />
 				<run ground="180" />
 			</speed>
-			<hit_time>580</hit_time>
+			<hitTime>580</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4173" level="6" /> <!--BOSS Might -->
 			<skill id="4177" level="6" /> <!--BOSS Cancel Magic -->
@@ -3399,10 +3399,10 @@
 			<skill id="4730" level="6" /> <!--BOSS Mortal Blow -->
 			<skill id="4735" level="6" /> <!--BOSS Spinning Slash -->
 			<skill id="4851" level="1" /> <!--Raid Boss - Level 60 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9817" min="2" max="6" chance="83" /> <!-- Nonliving Nucleus -->
 				<item id="8176" min="1" max="3" chance="83" /> <!-- Destruction Tombstone -->
@@ -3425,7 +3425,7 @@
 					<item id="948" min="6" max="18" chance="16.1649" /> <!-- Scroll: Enchant Armor (B-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="42" />
 			<height normal="91" />
@@ -3456,7 +3456,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4173" level="7" /> <!--BOSS Might -->
 			<skill id="4177" level="7" /> <!--BOSS Cancel Magic -->
@@ -3473,10 +3473,10 @@
 			<skill id="4730" level="7" /> <!--BOSS Mortal Blow -->
 			<skill id="4735" level="7" /> <!--BOSS Spinning Slash -->
 			<skill id="4852" level="1" /> <!--Raid Boss - Level 70 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="8619" min="1" max="1" chance="52" /> <!-- Ancient Book: Divine Inspiration (Original Language Version) -->
 				<item id="9815" min="3" max="7" chance="81" /> <!-- Dragon Heart -->
@@ -3501,7 +3501,7 @@
 					<item id="6577" min="1" max="1" chance="1.4926" /> <!-- Blessed Scroll: Enchant Weapon (S-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="44" />
 			<height normal="51.5" />
@@ -3526,17 +3526,17 @@
 			<attack physical="138.03739078453" magical="16.1331725262125" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="305.50599" magical="149.04" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="40" />
 				<run ground="170" />
 			</speed>
-			<hit_time>170</hit_time>
+			<hitTime>170</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4178" level="2" /> <!--BOSS Flamestrike -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3550,10 +3550,10 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4853" level="1" /> <!--Raid Boss - Level 25 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="71.93599700927734">
 					<item id="849" min="4" max="10" chance="18.484" /> <!-- Tiger's Eye Earring -->
@@ -3570,7 +3570,7 @@
 					<item id="6387" min="60" max="180" chance="100" /> <!-- Blessed Scroll of Resurrection for Pets -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="15" />
 			<height normal="39" />
@@ -3589,17 +3589,17 @@
 			<attack physical="253.592373602383" magical="59.1834627128382" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="148.063785" magical="144.46" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>540</hit_time>
+			<hitTime>540</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4214" level="2" /> <!--BOSS Reflect Damage -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3612,8 +3612,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4780" level="2" /> <!--BOSS Heal -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -3630,17 +3630,17 @@
 			<attack physical="253.592373602383" magical="59.1834627128382" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="148.063785" magical="144.46" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="170" />
 			</speed>
-			<hit_time>210</hit_time>
+			<hitTime>210</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3651,8 +3651,8 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="10" grown="12" />
@@ -3683,10 +3683,10 @@
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>280</hit_time>
+			<hitTime>280</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4172" level="3" /> <!--Stun -->
 			<skill id="4173" level="3" /> <!--BOSS Might -->
@@ -3703,10 +3703,10 @@
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4720" level="3" /> <!--BOSS Strike -->
 			<skill id="4854" level="1" /> <!--Raid Boss - Level 30 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="71.36630249023438">
 					<item id="606" min="10" max="30" chance="1.5126" /> <!-- Rip Gauntlets -->
@@ -3737,7 +3737,7 @@
 					<item id="6575" min="1" max="1" chance="7.5188" /> <!-- Blessed Scroll: Enchant Weapon (D-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="24" />
 			<height normal="52" />
@@ -3768,10 +3768,10 @@
 				<walk ground="53" />
 				<run ground="170" />
 			</speed>
-			<hit_time>460</hit_time>
+			<hitTime>460</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3785,10 +3785,10 @@
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4752" level="3" /> <!--BOSS Mortal Blow -->
 			<skill id="4855" level="1" /> <!--Raid Boss - Level 38 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="76.0425033569336">
 					<item id="631" min="6" max="16" chance="3.3742" /> <!-- Eldarake -->
@@ -3808,7 +3808,7 @@
 					<item id="951" min="1" max="3" chance="100" /> <!-- Scroll: Enchant Weapon (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="30" grown="36" />
 			<height normal="63" grown="76" />
@@ -3833,10 +3833,10 @@
 				<walk ground="37" />
 				<run ground="170" />
 			</speed>
-			<hit_time>930</hit_time>
+			<hitTime>930</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3848,8 +3848,8 @@
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4757" level="3" /> <!--BOSS Power Shot -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="ARCHER" clanHelpRange="300" dodge="15" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -3872,10 +3872,10 @@
 				<walk ground="40" />
 				<run ground="170" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3886,8 +3886,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3918,10 +3918,10 @@
 				<walk ground="60" />
 				<run ground="170" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4178" level="4" /> <!--BOSS Flamestrike -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3935,10 +3935,10 @@
 			<skill id="4416" level="3" /> <!--Beasts -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4856" level="1" /> <!--Raid Boss - Level 45 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9816" min="1" max="3" chance="75" /> <!-- Earth Egg -->
 				<item id="8176" min="1" max="1" chance="75" /> <!-- Destruction Tombstone -->
@@ -3959,7 +3959,7 @@
 					<item id="6574" min="1" max="1" chance="19.1829" /> <!-- Blessed Scroll: Enchant Armor (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="72" />
 			<height normal="87" />
@@ -3985,10 +3985,10 @@
 				<walk ground="27" />
 				<run ground="170" />
 			</speed>
-			<hit_time>390</hit_time>
+			<hitTime>390</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4214" level="4" /> <!--BOSS Reflect Damage -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4001,8 +4001,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4781" level="4" /> <!--BOSS Heal -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -4024,10 +4024,10 @@
 				<walk ground="37" />
 				<run ground="170" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4038,8 +4038,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="4" /> <!--Animals -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="19" />
@@ -4066,7 +4066,7 @@
 			<attack physical="610.439011291351" magical="93.5186493178929" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="670.9086" magical="327.3" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
@@ -4075,7 +4075,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4184" level="5" /> <!--Decrease Atk. Spd. -->
 			<skill id="4188" level="5" /> <!--Bleed -->
@@ -4091,10 +4091,10 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4857" level="1" /> <!--Raid Boss - Level 55 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9814" min="1" max="4" chance="75" /> <!-- Memento Mori -->
 				<item id="8176" min="1" max="1" chance="90" /> <!-- Destruction Tombstone -->
@@ -4117,7 +4117,7 @@
 					<item id="6572" min="1" max="1" chance="9.5394" /> <!-- Blessed Scroll: Enchant Armor (B-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="12" />
 			<height normal="30.7" />
@@ -4136,17 +4136,17 @@
 			<attack physical="2312.08069139469" magical="1393.84679470785" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="328.343835" magical="320.36" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="27" />
 				<run ground="170" />
 			</speed>
-			<hit_time>710</hit_time>
+			<hitTime>710</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4158,8 +4158,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4727" level="5" /> <!--Stun -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="12" grown="14.5" />
@@ -4175,17 +4175,17 @@
 			<attack physical="1156.04034569734" magical="348.461698676962" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="328.343835" magical="320.36" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>540</hit_time>
+			<hitTime>540</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4196,8 +4196,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="9" /> <!--Demons -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -4229,10 +4229,10 @@
 				<walk ground="80" />
 				<run ground="180" />
 			</speed>
-			<hit_time>630</hit_time>
+			<hitTime>630</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="6" /> <!--Hold -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4246,10 +4246,10 @@
 			<skill id="4416" level="11" /> <!--Giants -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4858" level="1" /> <!--Raid Boss - Level 60 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9817" min="1" max="4" chance="85" /> <!-- Nonliving Nucleus -->
 				<item id="8176" min="1" max="1" chance="95" /> <!-- Destruction Tombstone -->
@@ -4269,7 +4269,7 @@
 					<item id="6571" min="1" max="1" chance="1.7021" /> <!-- Blessed Scroll: Enchant Weapon (B-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="30" />
 			<height normal="66" />
@@ -4295,10 +4295,10 @@
 				<walk ground="15" />
 				<run ground="180" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4193" level="5" /> <!--BOSS Life Drain -->
 			<skill id="4198" level="5" /> <!--Poison -->
@@ -4311,8 +4311,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="11" /> <!--Giants -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="21" />
@@ -4337,10 +4337,10 @@
 				<walk ground="27" />
 				<run ground="170" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4352,8 +4352,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="4721" level="5" /> <!--BOSS Strike -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="20" grown="25" />
@@ -4378,17 +4378,17 @@
 			<attack physical="748.775260587043" magical="122.635476321723" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="728.44779" magical="355.36" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="200" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4178" level="5" /> <!--BOSS Flamestrike -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4402,10 +4402,10 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4859" level="1" /> <!--Raid Boss - Level 59 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9814" min="1" max="4" chance="83" /> <!-- Memento Mori -->
 				<item id="8176" min="1" max="2" chance="70" /> <!-- Destruction Tombstone -->
@@ -4430,7 +4430,7 @@
 					<item id="729" min="1" max="1" chance="50" /> <!-- Scroll: Enchant Weapon (A-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="50" />
 			<height normal="180" />
@@ -4449,17 +4449,17 @@
 			<attack physical="1426.0444120344" magical="460.012771989048" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="356.991435" magical="348.3" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="189" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4213" level="5" /> <!--BOSS Haste -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4472,8 +4472,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4786" level="5" /> <!--BOSS Chant of Life -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="14" />
@@ -4490,17 +4490,17 @@
 			<attack physical="1426.0444120344" magical="460.012771989048" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="356.991435" magical="348.3" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="170" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4511,8 +4511,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="15" grown="25" />
@@ -4544,10 +4544,10 @@
 				<walk ground="53" />
 				<run ground="170" />
 			</speed>
-			<hit_time>460</hit_time>
+			<hitTime>460</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4561,10 +4561,10 @@
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4751" level="3" /> <!--BOSS Mortal Blow -->
 			<skill id="4860" level="1" /> <!--Raid Boss - Level 35 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="62.51649856567383">
 					<item id="851" min="6" max="18" chance="3.8396" /> <!-- Omen Beast's Eye Earring -->
@@ -4585,7 +4585,7 @@
 					<item id="951" min="3" max="7" chance="9.1486" /> <!-- Scroll: Enchant Weapon (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="40" />
@@ -4610,10 +4610,10 @@
 				<walk ground="37" />
 				<run ground="170" />
 			</speed>
-			<hit_time>930</hit_time>
+			<hitTime>930</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4625,8 +4625,8 @@
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4761" level="3" /> <!--Stun -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -4649,10 +4649,10 @@
 				<walk ground="40" />
 				<run ground="170" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4663,8 +4663,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -4694,10 +4694,10 @@
 				<walk ground="100" />
 				<run ground="170" />
 			</speed>
-			<hit_time>460</hit_time>
+			<hitTime>460</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4172" level="3" /> <!--Stun -->
 			<skill id="4175" level="3" /> <!--BOSS Haste -->
@@ -4714,10 +4714,10 @@
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4732" level="3" /> <!--BOSS Mortal Blow -->
 			<skill id="4861" level="1" /> <!--Raid Boss - Level 30 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="58.137001037597656">
 					<item id="629" min="5" max="15" chance="6.5246" /> <!-- Kite Shield -->
@@ -4746,7 +4746,7 @@
 					<item id="6576" min="1" max="1" chance="42.2535" /> <!-- Blessed Scroll: Enchant Armor (D-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="12" />
 			<height normal="50" />
@@ -4776,10 +4776,10 @@
 				<walk ground="48" />
 				<run ground="170" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="3" /> <!--Hold -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4793,10 +4793,10 @@
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4862" level="1" /> <!--Raid Boss - Level 34 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="72.56089782714844">
 					<item id="438" min="1" max="1" chance="29.0162" /> <!-- Sage's Rag -->
@@ -4810,7 +4810,7 @@
 					<item id="952" min="12" max="36" chance="100" /> <!-- Scroll: Enchant Armor (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -4835,10 +4835,10 @@
 				<walk ground="48" />
 				<run ground="170" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4194" level="3" /> <!--BOSS Aura Burn -->
 			<skill id="4202" level="3" /> <!--Hold -->
@@ -4851,8 +4851,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -4877,10 +4877,10 @@
 				<walk ground="80" />
 				<run ground="170" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4892,8 +4892,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
 			<skill id="4722" level="3" /> <!--BOSS Strike -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -4927,10 +4927,10 @@
 				<walk ground="15" />
 				<run ground="170" />
 			</speed>
-			<hit_time>740</hit_time>
+			<hitTime>740</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4183" level="4" /> <!--Decrease P. Atk. -->
 			<skill id="4189" level="4" /> <!--Paralysis -->
@@ -4946,10 +4946,10 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4863" level="1" /> <!--Raid Boss - Level 43 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="9816" min="1" max="2" chance="89" /> <!-- Earth Egg -->
 				<item id="8176" min="1" max="1" chance="70" /> <!-- Destruction Tombstone -->
@@ -4965,7 +4965,7 @@
 					<item id="6574" min="1" max="1" chance="100" /> <!-- Blessed Scroll: Enchant Armor (C-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="16" />
 			<height normal="31" />
@@ -4990,10 +4990,10 @@
 				<walk ground="18" />
 				<run ground="170" />
 			</speed>
-			<hit_time>780</hit_time>
+			<hitTime>780</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -5005,8 +5005,8 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4721" level="4" /> <!--BOSS Strike -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="26" />
@@ -5029,10 +5029,10 @@
 				<walk ground="18" />
 				<run ground="170" />
 			</speed>
-			<hit_time>910</hit_time>
+			<hitTime>910</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -5043,8 +5043,8 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="20" />
@@ -5076,7 +5076,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4169" level="7" /> <!--Stun -->
 			<skill id="4172" level="7" /> <!--Stun -->
@@ -5093,10 +5093,10 @@
 			<skill id="4416" level="10" /> <!--Dragons -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4985" level="1" /> <!--Raid Boss - Level 70 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="8619" min="1" max="1" chance="52" /> <!-- Ancient Book: Divine Inspiration (Original Language Version) -->
 				<item id="9815" min="3" max="7" chance="82" /> <!-- Dragon Heart -->
@@ -5118,7 +5118,7 @@
 					<item id="6569" min="1" max="1" chance="23.0769" /> <!-- Blessed Scroll: Enchant Weapon (A-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="55" />
 			<height normal="80.5" />
@@ -5143,17 +5143,17 @@
 			<attack physical="2280.56634336123" magical="813.637215287937" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="916.07841" magical="446.9" evasion="-18" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="110" />
 			</attribute>
 			<speed>
 				<walk ground="43" />
 				<run ground="200" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="7" /> <!--Hold -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -5167,10 +5167,10 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="4986" level="1" /> <!--Raid Boss - Level 72 -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<item id="8619" min="1" max="1" chance="54" /> <!-- Ancient Book: Divine Inspiration (Original Language Version) -->
 				<item id="9816" min="3" max="7" chance="82" /> <!-- Earth Egg -->
@@ -5192,7 +5192,7 @@
 					<item id="6570" min="1" max="1" chance="71.4286" /> <!-- Blessed Scroll: Enchant Armor (A-Grade) -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="10" />
 			<height normal="29" />

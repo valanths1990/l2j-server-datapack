@@ -28,6 +28,7 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
+import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Broadcast;
 
 /**
@@ -95,10 +96,13 @@ public class BeastSoulShot implements IItemHandler
 			return false;
 		}
 		
-		// Pet uses the power of spirit.
-		activeOwner.sendPacket(SystemMessageId.PET_USE_SPIRITSHOT);
 		activeOwner.getSummon().setChargedShot(ShotType.SOULSHOTS, true);
 		
+		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_S1_);
+		sm.addItemName(itemId);
+		activeOwner.sendPacket(sm);
+		
+		activeOwner.sendPacket(SystemMessageId.PET_USE_SPIRITSHOT);
 		Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(activeOwner.getSummon(), activeOwner.getSummon(), skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0), 600);
 		return true;
 	}

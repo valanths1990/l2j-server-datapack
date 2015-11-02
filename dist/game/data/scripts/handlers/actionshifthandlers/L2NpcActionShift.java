@@ -18,8 +18,6 @@
  */
 package handlers.actionshifthandlers;
 
-import handlers.bypasshandlers.NpcViewMod;
-
 import java.util.Set;
 
 import com.l2jserver.Config;
@@ -36,6 +34,8 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.util.Util;
 
+import handlers.bypasshandlers.NpcViewMod;
+
 public class L2NpcActionShift implements IActionShiftHandler
 {
 	/**
@@ -43,15 +43,12 @@ public class L2NpcActionShift implements IActionShiftHandler
 	 * <BR>
 	 * <B><U> Actions (If the L2PcInstance is a GM only)</U> :</B><BR>
 	 * <BR>
-	 * <li>Set the L2NpcInstance as target of the L2PcInstance player (if necessary)</li> <li>Send a Server->Client packet MyTargetSelected to the L2PcInstance player (display the select window)</li> <li>If L2NpcInstance is autoAttackable, send a Server->Client packet StatusUpdate to the
-	 * L2PcInstance in order to update L2NpcInstance HP bar</li> <li>Send a Server->Client NpcHtmlMessage() containing the GM console about this L2NpcInstance</li><BR>
+	 * <li>Set the L2NpcInstance as target of the L2PcInstance player (if necessary)</li>
+	 * <li>Send a Server->Client packet MyTargetSelected to the L2PcInstance player (display the select window)</li>
+	 * <li>If L2NpcInstance is autoAttackable, send a Server->Client packet StatusUpdate to the L2PcInstance in order to update L2NpcInstance HP bar</li>
+	 * <li>Send a Server->Client NpcHtmlMessage() containing the GM console about this L2NpcInstance</li><BR>
 	 * <BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Each group of Server->Client packet must be terminated by a ActionFailed packet in order to avoid that client wait an other packet</B></FONT><BR>
-	 * <BR>
-	 * <B><U> Example of use </U> :</B><BR>
-	 * <BR>
-	 * <li>Client packet : Action</li><BR>
-	 * <BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Each group of Server->Client packet must be terminated by a ActionFailed packet in order to avoid that client wait an other packet</B></FONT><BR> <BR> <B><U> Example of use </U> :</B><BR> <BR> <li>Client packet : Action</li><BR> <BR>
 	 */
 	@Override
 	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
@@ -78,10 +75,10 @@ public class L2NpcActionShift implements IActionShiftHandler
 			html.replace("%mp%", String.valueOf((int) ((L2Character) target).getCurrentMp()));
 			html.replace("%mpmax%", String.valueOf(((L2Character) target).getMaxMp()));
 			
-			html.replace("%patk%", String.valueOf(((L2Character) target).getPAtk(null)));
-			html.replace("%matk%", String.valueOf(((L2Character) target).getMAtk(null, null)));
-			html.replace("%pdef%", String.valueOf(((L2Character) target).getPDef(null)));
-			html.replace("%mdef%", String.valueOf(((L2Character) target).getMDef(null, null)));
+			html.replace("%patk%", String.valueOf((int) ((L2Character) target).getPAtk(null)));
+			html.replace("%matk%", String.valueOf((int) ((L2Character) target).getMAtk(null, null)));
+			html.replace("%pdef%", String.valueOf((int) ((L2Character) target).getPDef(null)));
+			html.replace("%mdef%", String.valueOf((int) ((L2Character) target).getMDef(null, null)));
 			html.replace("%accu%", String.valueOf(((L2Character) target).getAccuracy()));
 			html.replace("%evas%", String.valueOf(((L2Character) target).getEvasionRate(null)));
 			html.replace("%crit%", String.valueOf(((L2Character) target).getCriticalHit(null, null)));

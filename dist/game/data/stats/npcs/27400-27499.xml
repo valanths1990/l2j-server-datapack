@@ -23,7 +23,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -35,8 +35,8 @@
 			<skill id="4416" level="19" /> <!--Others -->
 			<skill id="5975" level="1" /> <!--Dark Attack -->
 			<skill id="5976" level="1" /> <!--Dark Storm -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -66,7 +66,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -78,8 +78,8 @@
 			<skill id="4416" level="19" /> <!--Others -->
 			<skill id="5975" level="1" /> <!--Dark Attack -->
 			<skill id="5976" level="2" /> <!--Dark Storm -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -104,7 +104,7 @@
 			<attack physical="929.930814318487" magical="635.022195830619" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="337.07008" magical="246.65326" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="150" />
 			</attribute>
 			<speed>
@@ -113,7 +113,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -126,8 +126,8 @@
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
 			<skill id="5975" level="3" /> <!--Dark Attack -->
 			<skill id="5976" level="3" /> <!--Dark Storm -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="14" />

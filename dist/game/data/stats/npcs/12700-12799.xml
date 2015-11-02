@@ -17,7 +17,7 @@
 			</speed>
 		</stats>
 		<status />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -29,8 +29,8 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="19" /> <!--Others -->
 			<skill id="4441" level="5" /> <!--Greater Resist Mental Derangement -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" />
 		<collision>
 			<radius normal="10" />
@@ -54,7 +54,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -66,8 +66,8 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="19" /> <!--Others -->
 			<skill id="4441" level="5" /> <!--Greater Resist Mental Derangement -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" />
 		<collision>
 			<radius normal="23" />
@@ -91,7 +91,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -103,8 +103,8 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="19" /> <!--Others -->
 			<skill id="4441" level="5" /> <!--Greater Resist Mental Derangement -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" />
 		<collision>
 			<radius normal="15" />
@@ -128,7 +128,7 @@
 			</speed>
 		</stats>
 		<status />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -140,8 +140,8 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="19" /> <!--Others -->
 			<skill id="4441" level="5" /> <!--Greater Resist Mental Derangement -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" />
 		<collision>
 			<radius normal="23" />
@@ -165,7 +165,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -177,8 +177,8 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="19" /> <!--Others -->
 			<skill id="4441" level="5" /> <!--Greater Resist Mental Derangement -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" />
 		<collision>
 			<radius normal="34" />
@@ -202,7 +202,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -214,8 +214,8 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="19" /> <!--Others -->
 			<skill id="4441" level="5" /> <!--Greater Resist Mental Derangement -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" />
 		<collision>
 			<radius normal="28" />
@@ -241,10 +241,10 @@
 				<walk ground="30" />
 				<run ground="120" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -255,10 +255,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="3" /> <!--Beasts -->
-		</skill_list>
+		</skillList>
 		<shots soul="2" spirit="2" />
-		<corpse_time>86400</corpse_time>
-		<ex_crt_effect>false</ex_crt_effect>
+		<corpseTime>86400</corpseTime>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="12" />
 			<height normal="15" />
@@ -283,10 +283,10 @@
 				<walk ground="13" />
 				<run ground="120" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -297,10 +297,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="3" /> <!--Beasts -->
-		</skill_list>
+		</skillList>
 		<shots soul="2" spirit="2" />
-		<corpse_time>86400</corpse_time>
-		<ex_crt_effect>false</ex_crt_effect>
+		<corpseTime>86400</corpseTime>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
@@ -325,10 +325,10 @@
 				<walk ground="28" />
 				<run ground="120" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -339,10 +339,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="3" /> <!--Beasts -->
-		</skill_list>
+		</skillList>
 		<shots soul="2" spirit="2" />
-		<corpse_time>86400</corpse_time>
-		<ex_crt_effect>false</ex_crt_effect>
+		<corpseTime>86400</corpseTime>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="11" />
 			<height normal="15.7" />

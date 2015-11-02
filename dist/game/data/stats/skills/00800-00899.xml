@@ -570,7 +570,7 @@
 				<mul stat="pAtk" val="1.05">
 					<using kind="SWORD,DAGGER,DUALDAGGER,POLE,RAPIER,ANCIENTSWORD,DUAL,DUALFIST" />
 				</mul>
-				<mul stat="rCrit" val="1.2">
+				<mul stat="critRate" val="1.2">
 					<using kind="SWORD,DAGGER,DUALDAGGER,POLE,RAPIER,ANCIENTSWORD,DUAL,DUALFIST" />
 				</mul>
 			</effect>
@@ -861,7 +861,6 @@
 		<set name="magicLvl" val="58" />
 		<set name="mpConsume" val="53" />
 		<set name="operateType" val="A2" />
-		<set name="removedOnAnyActionExceptMove" val="true" />
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
@@ -1908,7 +1907,6 @@
 		<set name="power" val="100" />
 		<set name="reuseDelay" val="23000" />
 		<set name="rideState" val="NONE" />
-		<set name="simultaneousCast" val="true" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack" />

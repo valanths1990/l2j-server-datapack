@@ -18,14 +18,14 @@
  */
 package quests.Q00183_RelicExploration;
 
-import quests.Q00184_ArtOfPersuasion.Q00184_ArtOfPersuasion;
-import quests.Q00185_NikolasCooperation.Q00185_NikolasCooperation;
-
 import com.l2jserver.gameserver.instancemanager.QuestManager;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
+
+import quests.Q00184_ArtOfPersuasion.Q00184_ArtOfPersuasion;
+import quests.Q00185_NikolasCooperation.Q00185_NikolasCooperation;
 
 /**
  * Relic Exploration (183)
@@ -80,9 +80,9 @@ public final class Q00183_RelicExploration extends Quest
 					if (player.getLevel() < MAX_LEVEL_FOR_EXP_SP)
 					{
 						qs.addExpAndSp(60000, 3000);
-						qs.exitQuest(false, true);
-						htmltext = event;
 					}
+					qs.exitQuest(false, true);
+					htmltext = event;
 				}
 				break;
 			}
@@ -188,12 +188,9 @@ public final class Q00183_RelicExploration extends Quest
 				}
 			}
 		}
-		if (qs.isCompleted())
+		else if (qs.isCompleted())
 		{
-			if (npc.getId() == HEAD_BLACKSMITH_KUSTO)
-			{
-				htmltext = getAlreadyCompletedMsg(player);
-			}
+			htmltext = getAlreadyCompletedMsg(player);
 		}
 		return htmltext;
 	}

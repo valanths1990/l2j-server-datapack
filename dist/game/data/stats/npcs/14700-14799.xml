@@ -19,10 +19,10 @@
 				<walk ground="30" />
 				<run ground="150" />
 			</speed>
-			<hit_time>720</hit_time>
+			<hitTime>720</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!--HP High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -34,10 +34,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.331</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
 			<radius normal="5" />
 			<height normal="19" />
@@ -62,10 +62,10 @@
 				<walk ground="30" />
 				<run ground="150" />
 			</speed>
-			<hit_time>720</hit_time>
+			<hitTime>720</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!--HP High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -77,10 +77,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="5" spirit="2" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.331</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
 			<radius normal="5" />
 			<height normal="19" />
@@ -107,7 +107,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4139" level="6" /> <!--Boom Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -119,9 +119,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -148,7 +148,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4139" level="6" /> <!--Boom Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -160,9 +160,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -189,7 +189,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -200,9 +200,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -229,7 +229,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -240,9 +240,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -269,7 +269,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -280,9 +280,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -309,7 +309,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -320,9 +320,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -349,7 +349,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -360,9 +360,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -389,7 +389,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -400,9 +400,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -429,7 +429,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -440,9 +440,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -469,7 +469,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -480,9 +480,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -509,7 +509,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -520,9 +520,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -549,7 +549,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -560,9 +560,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -589,7 +589,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -600,9 +600,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -629,7 +629,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -640,9 +640,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -669,7 +669,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -680,9 +680,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -709,7 +709,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -720,9 +720,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -749,7 +749,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -760,9 +760,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -789,7 +789,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -800,9 +800,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -829,7 +829,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -840,9 +840,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -869,7 +869,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -880,9 +880,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -909,7 +909,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -920,9 +920,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -949,7 +949,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -960,9 +960,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -989,7 +989,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1000,9 +1000,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -1029,7 +1029,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1040,9 +1040,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -1069,7 +1069,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1080,9 +1080,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -1109,7 +1109,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1120,9 +1120,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -1149,7 +1149,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1160,9 +1160,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -1189,7 +1189,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1200,9 +1200,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -1229,7 +1229,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1240,9 +1240,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -1269,7 +1269,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1280,9 +1280,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -1309,7 +1309,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1320,9 +1320,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -1349,7 +1349,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1360,9 +1360,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -1389,7 +1389,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1400,9 +1400,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -1429,7 +1429,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1440,9 +1440,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -1469,7 +1469,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1480,9 +1480,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
+		</skillList>
 		<shots spirit="99" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="13" />
@@ -1503,10 +1503,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1517,9 +1517,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -1540,10 +1540,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1554,9 +1554,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -1577,10 +1577,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1591,9 +1591,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -1614,10 +1614,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1628,9 +1628,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -1651,10 +1651,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1665,9 +1665,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -1688,10 +1688,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1702,9 +1702,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -1725,10 +1725,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1739,9 +1739,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -1762,10 +1762,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1776,9 +1776,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -1799,10 +1799,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1813,9 +1813,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -1836,10 +1836,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1850,9 +1850,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -1873,10 +1873,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1887,9 +1887,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -1910,10 +1910,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1924,9 +1924,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -1947,10 +1947,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1961,9 +1961,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -1984,10 +1984,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1998,9 +1998,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2021,10 +2021,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2035,9 +2035,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2058,10 +2058,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2072,9 +2072,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2095,10 +2095,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2109,9 +2109,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2132,10 +2132,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2146,9 +2146,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2169,10 +2169,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2183,9 +2183,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2206,10 +2206,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2220,9 +2220,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2243,10 +2243,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2257,9 +2257,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2280,10 +2280,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2294,9 +2294,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2317,10 +2317,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2331,9 +2331,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2354,10 +2354,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2368,9 +2368,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2391,10 +2391,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2405,9 +2405,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2428,10 +2428,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2442,9 +2442,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2465,10 +2465,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2479,9 +2479,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2502,10 +2502,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2516,9 +2516,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2539,10 +2539,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2553,9 +2553,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2576,10 +2576,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2590,9 +2590,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2613,10 +2613,10 @@
 				<walk ground="40" />
 				<run ground="40" />
 			</speed>
-			<hit_time>690</hit_time>
+			<hitTime>690</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2627,9 +2627,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="11" /> <!--Spears -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="30" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<collision>
 			<radius normal="60" />
 			<height normal="140" />
@@ -2655,7 +2655,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2666,10 +2666,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -2695,7 +2695,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2706,10 +2706,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -2735,7 +2735,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2746,10 +2746,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -2775,7 +2775,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2786,10 +2786,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -2815,7 +2815,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2826,10 +2826,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -2855,7 +2855,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2866,10 +2866,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -2895,7 +2895,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2906,10 +2906,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -2935,7 +2935,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2946,10 +2946,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -2975,7 +2975,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2986,10 +2986,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3015,7 +3015,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3026,10 +3026,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3055,7 +3055,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3066,10 +3066,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3095,7 +3095,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3106,10 +3106,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3135,7 +3135,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3146,10 +3146,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3175,7 +3175,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3186,10 +3186,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3215,7 +3215,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3226,10 +3226,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3255,7 +3255,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3266,10 +3266,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3295,7 +3295,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3306,10 +3306,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3335,7 +3335,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3346,10 +3346,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3375,7 +3375,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3386,10 +3386,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3415,7 +3415,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3426,10 +3426,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3455,7 +3455,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3466,10 +3466,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3495,7 +3495,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3506,10 +3506,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3535,7 +3535,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3546,10 +3546,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3575,7 +3575,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3586,10 +3586,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3615,7 +3615,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3626,10 +3626,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3655,7 +3655,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3666,10 +3666,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3695,7 +3695,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3706,10 +3706,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3735,7 +3735,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3746,10 +3746,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3775,7 +3775,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3786,10 +3786,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3815,7 +3815,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3826,10 +3826,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3855,7 +3855,7 @@
 			</speed>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4332" level="1" /> <!--Mental Aegis -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3866,10 +3866,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="21" /> <!--Siege Weapons -->
-		</skill_list>
+		</skillList>
 		<shots soul="100" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<collision>
 			<radius normal="93" />
 			<height normal="90" />
@@ -3895,10 +3895,10 @@
 				<walk ground="25" />
 				<run ground="150" />
 			</speed>
-			<hit_time>200</hit_time>
+			<hitTime>200</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4121" level="6" /> <!--Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!--HP High -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3910,10 +3910,10 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="4" /> <!--Animals -->
 			<skill id="5038" level="15" /> <!--Summon PVP Penalty -->
-		</skill_list>
+		</skillList>
 		<shots soul="2" spirit="1" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>1.331</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
 			<radius normal="7" />
 			<height normal="13" />

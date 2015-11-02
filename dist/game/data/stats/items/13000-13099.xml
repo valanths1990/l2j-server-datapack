@@ -474,7 +474,7 @@
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="72" />
-			<set stat="rCrit" val="8" />
+			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
@@ -503,7 +503,7 @@
 		<for>
 			<set stat="pAtk" val="127" />
 			<set stat="mAtk" val="82" />
-			<set stat="rCrit" val="8" />
+			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
@@ -532,7 +532,7 @@
 		<for>
 			<set stat="pAtk" val="147" />
 			<set stat="mAtk" val="92" />
-			<set stat="rCrit" val="8" />
+			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
@@ -643,7 +643,7 @@
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="8" />
+			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
@@ -672,7 +672,7 @@
 		<for>
 			<set stat="pAtk" val="279" />
 			<set stat="mAtk" val="153" />
-			<set stat="rCrit" val="8" />
+			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
@@ -701,7 +701,7 @@
 		<for>
 			<set stat="pAtk" val="299" />
 			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
+			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
@@ -840,7 +840,7 @@
 		<for>
 			<set stat="pAtk" val="251" />
 			<set stat="mAtk" val="161" />
-			<set stat="rCrit" val="8" />
+			<set stat="critRate" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
 		</for>
@@ -871,7 +871,7 @@
 		<for>
 			<set stat="pAtk" val="271" />
 			<set stat="mAtk" val="171" />
-			<set stat="rCrit" val="8" />
+			<set stat="critRate" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
 		</for>
@@ -902,7 +902,7 @@
 		<for>
 			<set stat="pAtk" val="291" />
 			<set stat="mAtk" val="181" />
-			<set stat="rCrit" val="8" />
+			<set stat="critRate" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
 		</for>
@@ -1013,7 +1013,7 @@
 		<for>
 			<set stat="pAtk" val="267" />
 			<set stat="mAtk" val="202" />
-			<set stat="rCrit" val="4" />
+			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
 		</for>
@@ -1040,7 +1040,7 @@
 		<for>
 			<set stat="pAtk" val="442" />
 			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
+			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>

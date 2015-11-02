@@ -21,10 +21,10 @@
 				<walk ground="80" />
 				<run ground="30" />
 			</speed>
-			<hit_time>300</hit_time>
+			<hitTime>300</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -38,9 +38,9 @@
 			<skill id="4439" level="2" /> <!--Greater Resist Hold -->
 			<skill id="4444" level="2" /> <!--Higher Resist Bow/Crossbow Weapons -->
 			<skill id="4445" level="2" /> <!--Greater Resist Spear Weapons -->
-		</skill_list>
-		<corpse_time>3</corpse_time>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<corpseTime>3</corpseTime>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="500" isAggressive="false" />
 		<collision>
 			<radius normal="10" />
@@ -68,10 +68,10 @@
 				<walk ground="45" />
 				<run ground="70" />
 			</speed>
-			<hit_time>910</hit_time>
+			<hitTime>910</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -83,9 +83,9 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4438" level="2" /> <!--Greater Resist Sleep -->
 			<skill id="4439" level="2" /> <!--Greater Resist Hold -->
-		</skill_list>
-		<corpse_time>3</corpse_time>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<corpseTime>3</corpseTime>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="ARCHER" aggroRange="1000" clanHelpRange="500" dodge="15" isAggressive="false" />
 		<collision>
 			<radius normal="12" />
@@ -114,10 +114,10 @@
 				<walk ground="36" />
 				<run ground="130" />
 			</speed>
-			<hit_time>540</hit_time>
+			<hitTime>540</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4087" level="9" /> <!--NPC Blaze -->
 			<skill id="4273" level="3" /> <!--Resist Daggers/Rapier Weapon -->
@@ -133,17 +133,17 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4438" level="2" /> <!--Greater Resist Sleep -->
 			<skill id="4439" level="2" /> <!--Greater Resist Hold -->
-		</skill_list>
-		<corpse_time>3</corpse_time>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<corpseTime>3</corpseTime>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="500" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="12" grown="14" />
 			<height normal="24" grown="28.8" />
@@ -174,10 +174,10 @@
 				<walk ground="10" />
 				<run ground="180" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4151" level="9" /> <!--NPC Windstrike - Magic -->
 			<skill id="4160" level="9" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4225" level="5" /> <!--Resist Stun Attacks -->
@@ -193,17 +193,17 @@
 			<skill id="4438" level="2" /> <!--Greater Resist Sleep -->
 			<skill id="4439" level="2" /> <!--Greater Resist Hold -->
 			<skill id="4445" level="2" /> <!--Greater Resist Spear Weapons -->
-		</skill_list>
-		<corpse_time>3</corpse_time>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<corpseTime>3</corpseTime>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="500" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="10" />
 			<height normal="23" />
@@ -232,10 +232,10 @@
 				<walk ground="40" />
 				<run ground="135" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4244" level="9" /> <!--NPC Wild Sweep -->
 			<skill id="4273" level="3" /> <!--Resist Daggers/Rapier Weapon -->
@@ -251,17 +251,17 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4438" level="2" /> <!--Greater Resist Sleep -->
 			<skill id="4439" level="2" /> <!--Greater Resist Hold -->
-		</skill_list>
-		<corpse_time>3</corpse_time>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<corpseTime>3</corpseTime>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="500" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="13" />
 			<height normal="35" />
@@ -292,10 +292,10 @@
 				<walk ground="45" />
 				<run ground="195" />
 			</speed>
-			<hit_time>460</hit_time>
+			<hitTime>460</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="8" /> <!--NPC Strike -->
 			<skill id="4225" level="5" /> <!--Resist Stun Attacks -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -310,17 +310,17 @@
 			<skill id="4438" level="2" /> <!--Greater Resist Sleep -->
 			<skill id="4439" level="2" /> <!--Greater Resist Hold -->
 			<skill id="4445" level="2" /> <!--Greater Resist Spear Weapons -->
-		</skill_list>
-		<corpse_time>3</corpse_time>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<corpseTime>3</corpseTime>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="500" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" />
 			<height normal="34.8" />
@@ -347,10 +347,10 @@
 				<walk ground="45" />
 				<run ground="150" />
 			</speed>
-			<hit_time>910</hit_time>
+			<hitTime>910</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -362,9 +362,9 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4438" level="2" /> <!--Greater Resist Sleep -->
 			<skill id="4439" level="2" /> <!--Greater Resist Hold -->
-		</skill_list>
-		<corpse_time>3</corpse_time>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<corpseTime>3</corpseTime>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="ARCHER" aggroRange="1000" clanHelpRange="500" dodge="15" isAggressive="false" />
 		<collision>
 			<radius normal="14" />
@@ -393,10 +393,10 @@
 				<walk ground="33" />
 				<run ground="195" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="8" /> <!--NPC Strike -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -409,17 +409,17 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4438" level="2" /> <!--Greater Resist Sleep -->
 			<skill id="4439" level="2" /> <!--Greater Resist Hold -->
-		</skill_list>
-		<corpse_time>3</corpse_time>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<corpseTime>3</corpseTime>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="500" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="12" />
 			<height normal="24" />
@@ -448,10 +448,10 @@
 				<walk ground="33" />
 				<run ground="195" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4073" level="9" /> <!--Stun -->
 			<skill id="4273" level="3" /> <!--Resist Daggers/Rapier Weapon -->
@@ -466,17 +466,17 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="4438" level="2" /> <!--Greater Resist Sleep -->
 			<skill id="4439" level="2" /> <!--Greater Resist Hold -->
-		</skill_list>
-		<corpse_time>3</corpse_time>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<corpseTime>3</corpseTime>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="500" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" />
 			<height normal="28.8" />
@@ -502,10 +502,10 @@
 				<walk ground="80" />
 				<run ground="195" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -516,14 +516,14 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="200" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ALL</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="68.5553970336914">
 					<item id="8923" min="1" max="1" chance="0.014" /> <!-- Scar -->
@@ -534,7 +534,7 @@
 					<item id="1061" min="1" max="1" chance="21.1434" /> <!-- Greater Healing Potion -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -560,10 +560,10 @@
 				<walk ground="80" />
 				<run ground="195" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -574,14 +574,14 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="200" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ALL</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="104.08070373535156">
 					<item id="8923" min="1" max="1" chance="0.0141" /> <!-- Scar -->
@@ -593,7 +593,7 @@
 					<item id="1834" min="1" max="1" chance="39.0653" /> <!-- Emergency Dressing -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -619,10 +619,10 @@
 				<walk ground="80" />
 				<run ground="195" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -633,14 +633,14 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="200" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ALL</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="28.283199310302734">
 					<item id="8923" min="1" max="1" chance="0.0819" /> <!-- Scar -->
@@ -652,7 +652,7 @@
 					<item id="735" min="1" max="1" chance="17.0705" /> <!-- Alacrity Potion -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -678,10 +678,10 @@
 				<walk ground="80" />
 				<run ground="195" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -692,14 +692,14 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="200" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ALL</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="40.10879898071289">
 					<item id="8923" min="1" max="1" chance="0.084" /> <!-- Scar -->
@@ -711,7 +711,7 @@
 					<item id="735" min="1" max="1" chance="17.51" /> <!-- Alacrity Potion -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -737,10 +737,10 @@
 				<walk ground="80" />
 				<run ground="195" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -751,14 +751,14 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="200" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ALL</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="53.43259811401367">
 					<item id="8923" min="1" max="1" chance="0.0844" /> <!-- Scar -->
@@ -770,7 +770,7 @@
 					<item id="735" min="1" max="1" chance="17.5822" /> <!-- Alacrity Potion -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -796,10 +796,10 @@
 				<walk ground="80" />
 				<run ground="195" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -810,14 +810,14 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="200" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ALL</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="68.5553970336914">
 					<item id="8923" min="1" max="1" chance="0.014" /> <!-- Scar -->
@@ -828,7 +828,7 @@
 					<item id="1061" min="1" max="1" chance="21.1434" /> <!-- Greater Healing Potion -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -854,10 +854,10 @@
 				<walk ground="80" />
 				<run ground="195" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -868,14 +868,14 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="200" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ALL</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="104.08070373535156">
 					<item id="8923" min="1" max="1" chance="0.0141" /> <!-- Scar -->
@@ -887,7 +887,7 @@
 					<item id="1834" min="1" max="1" chance="39.0653" /> <!-- Emergency Dressing -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -913,10 +913,10 @@
 				<walk ground="80" />
 				<run ground="195" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -927,14 +927,14 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="200" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ALL</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="28.283199310302734">
 					<item id="8923" min="1" max="1" chance="0.0819" /> <!-- Scar -->
@@ -946,7 +946,7 @@
 					<item id="735" min="1" max="1" chance="17.0705" /> <!-- Alacrity Potion -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -972,10 +972,10 @@
 				<walk ground="80" />
 				<run ground="195" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -986,14 +986,14 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="200" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ALL</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="40.10879898071289">
 					<item id="8923" min="1" max="1" chance="0.084" /> <!-- Scar -->
@@ -1005,7 +1005,7 @@
 					<item id="735" min="1" max="1" chance="17.51" /> <!-- Alacrity Potion -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -1031,10 +1031,10 @@
 				<walk ground="80" />
 				<run ground="195" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1045,14 +1045,14 @@
 			<skill id="4414" level="3" /> <!--Light Armor Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="200" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ALL</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="53.43259811401367">
 					<item id="8923" min="1" max="1" chance="0.0844" /> <!-- Scar -->
@@ -1064,7 +1064,7 @@
 					<item id="735" min="1" max="1" chance="17.5822" /> <!-- Alacrity Potion -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -1079,17 +1079,17 @@
 			<attack physical="541.44774" magical="369.73862" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="262.19426" magical="158.831806262641" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="-5" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="15" />
 				<run ground="1" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1099,9 +1099,9 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
-		</skill_list>
-		<corpse_time>240</corpse_time>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<corpseTime>240</corpseTime>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="13" />
 			<height normal="21" />
@@ -1129,17 +1129,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="-3" shield="173" shieldRate="20" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
@@ -1156,13 +1156,13 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4572" level="9" /> <!--NPC Triple Sonic Slash -->
 			<skill id="4589" level="9" /> <!--Decrease Speed -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -1191,17 +1191,17 @@
 			<attack physical="870.827652" magical="554.0961810204" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="434.6579448" magical="263.306676" evasion="-3" shield="173" shieldRate="20" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
@@ -1218,13 +1218,13 @@
 			<skill id="4694" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4695" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4696" level="1" /> <!--Ultimate Debuff -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -1252,17 +1252,17 @@
 			<attack physical="957.910356" magical="670.4563793364" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="359.2214376" magical="217.60884" evasion="-3" shield="173" shieldRate="20" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1278,13 +1278,13 @@
 			<skill id="4589" level="9" /> <!--Decrease Speed -->
 			<skill id="4618" level="1" /> <!--NPC Cancel PC Target -->
 			<skill id="4657" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -1313,17 +1313,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="-3" shield="173" shieldRate="20" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
@@ -1340,13 +1340,13 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4572" level="9" /> <!--NPC Triple Sonic Slash -->
 			<skill id="4589" level="9" /> <!--Decrease Speed -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -1375,17 +1375,17 @@
 			<attack physical="870.827652" magical="554.0961810204" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="434.6579448" magical="263.306676" evasion="-3" shield="173" shieldRate="20" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
@@ -1402,13 +1402,13 @@
 			<skill id="4694" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4695" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4696" level="1" /> <!--Ultimate Debuff -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -1436,17 +1436,17 @@
 			<attack physical="957.910356" magical="670.4563793364" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="359.2214376" magical="217.60884" evasion="-3" shield="173" shieldRate="20" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1462,13 +1462,13 @@
 			<skill id="4589" level="9" /> <!--Decrease Speed -->
 			<skill id="4618" level="1" /> <!--NPC Cancel PC Target -->
 			<skill id="4657" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -1497,17 +1497,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="-3" shield="173" shieldRate="20" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
@@ -1524,13 +1524,13 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4572" level="9" /> <!--NPC Triple Sonic Slash -->
 			<skill id="4589" level="9" /> <!--Decrease Speed -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -1559,17 +1559,17 @@
 			<attack physical="870.827652" magical="554.0961810204" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="434.6579448" magical="263.306676" evasion="-3" shield="173" shieldRate="20" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
@@ -1586,13 +1586,13 @@
 			<skill id="4694" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4695" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4696" level="1" /> <!--Ultimate Debuff -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -1620,17 +1620,17 @@
 			<attack physical="957.910356" magical="670.4563793364" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="359.2214376" magical="217.60884" evasion="-3" shield="173" shieldRate="20" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1646,13 +1646,13 @@
 			<skill id="4589" level="9" /> <!--Decrease Speed -->
 			<skill id="4618" level="1" /> <!--NPC Cancel PC Target -->
 			<skill id="4657" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -1681,17 +1681,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="-3" shield="173" shieldRate="20" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
@@ -1708,13 +1708,13 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4572" level="9" /> <!--NPC Triple Sonic Slash -->
 			<skill id="4589" level="9" /> <!--Decrease Speed -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -1743,17 +1743,17 @@
 			<attack physical="870.827652" magical="554.0961810204" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="434.6579448" magical="263.306676" evasion="-3" shield="173" shieldRate="20" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
@@ -1770,13 +1770,13 @@
 			<skill id="4694" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4695" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4696" level="1" /> <!--Ultimate Debuff -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -1804,17 +1804,17 @@
 			<attack physical="957.910356" magical="670.4563793364" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="359.2214376" magical="217.60884" evasion="-3" shield="173" shieldRate="20" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1830,13 +1830,13 @@
 			<skill id="4589" level="9" /> <!--Decrease Speed -->
 			<skill id="4618" level="1" /> <!--NPC Cancel PC Target -->
 			<skill id="4657" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -1867,10 +1867,10 @@
 				<walk ground="45" />
 				<run ground="170" />
 			</speed>
-			<hit_time>590</hit_time>
+			<hitTime>590</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
@@ -1885,13 +1885,13 @@
 			<skill id="4569" level="9" /> <!--NPC AE Solar Flare - Magic -->
 			<skill id="4613" level="9" /> <!--NPC Clan Heal -->
 			<skill id="4640" level="9" /> <!--Sleep -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="19" />
@@ -1921,10 +1921,10 @@
 				<walk ground="37" />
 				<run ground="170" />
 			</speed>
-			<hit_time>540</hit_time>
+			<hitTime>540</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1935,13 +1935,13 @@
 			<skill id="4415" level="7" /> <!--Daggers -->
 			<skill id="4416" level="12" /> <!--Bugs -->
 			<skill id="4582" level="9" /> <!--Poison -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="28" />
@@ -1970,10 +1970,10 @@
 				<walk ground="37" />
 				<run ground="170" />
 			</speed>
-			<hit_time>540</hit_time>
+			<hitTime>540</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1985,13 +1985,13 @@
 			<skill id="4415" level="7" /> <!--Daggers -->
 			<skill id="4416" level="12" /> <!--Bugs -->
 			<skill id="4573" level="9" /> <!--NPC Sonic Blaster -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="28" />
@@ -2021,10 +2021,10 @@
 				<walk ground="37" />
 				<run ground="170" />
 			</speed>
-			<hit_time>540</hit_time>
+			<hitTime>540</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="9" /> <!--NPC Strike -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2036,13 +2036,13 @@
 			<skill id="4415" level="7" /> <!--Daggers -->
 			<skill id="4416" level="12" /> <!--Bugs -->
 			<skill id="4573" level="9" /> <!--NPC Sonic Blaster -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="28" />
@@ -2072,10 +2072,10 @@
 				<walk ground="37" />
 				<run ground="170" />
 			</speed>
-			<hit_time>540</hit_time>
+			<hitTime>540</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4091" level="1" /> <!--NPC Ogre Spirit Totem -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2087,13 +2087,13 @@
 			<skill id="4415" level="7" /> <!--Daggers -->
 			<skill id="4416" level="12" /> <!--Bugs -->
 			<skill id="4582" level="9" /> <!--Poison -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="28" />
@@ -2123,10 +2123,10 @@
 				<walk ground="45" />
 				<run ground="180" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4160" level="9" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
@@ -2139,13 +2139,13 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="12" /> <!--Bugs -->
 			<skill id="4563" level="9" /> <!--NPC Solar Flare - Magic -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="14" />
@@ -2176,10 +2176,10 @@
 				<walk ground="45" />
 				<run ground="180" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4160" level="9" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2192,13 +2192,13 @@
 			<skill id="4416" level="12" /> <!--Bugs -->
 			<skill id="4563" level="9" /> <!--NPC Solar Flare - Magic -->
 			<skill id="4609" level="4" /> <!--NPC Clan Buff - Vampiric Rage -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="14" />
@@ -2229,10 +2229,10 @@
 				<walk ground="45" />
 				<run ground="180" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4160" level="9" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2245,13 +2245,13 @@
 			<skill id="4416" level="12" /> <!--Bugs -->
 			<skill id="4563" level="9" /> <!--NPC Solar Flare - Magic -->
 			<skill id="4587" level="9" /> <!--Decrease P. Atk. -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="14" />
@@ -2281,10 +2281,10 @@
 				<walk ground="45" />
 				<run ground="180" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4033" level="9" /> <!--NPC Burn -->
 			<skill id="4160" level="9" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
@@ -2296,13 +2296,13 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="12" /> <!--Bugs -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB1</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="14" />
@@ -2334,10 +2334,10 @@
 				<walk ground="45" />
 				<run ground="180" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
@@ -2352,13 +2352,13 @@
 			<skill id="4568" level="9" /> <!--NPC AE Solar Flare -->
 			<skill id="4572" level="9" /> <!--NPC Triple Sonic Slash -->
 			<skill id="4576" level="3" /> <!--NPC Clan Buff - Damage Shield -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB2</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="14" />
@@ -2390,10 +2390,10 @@
 				<walk ground="45" />
 				<run ground="180" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
@@ -2408,13 +2408,13 @@
 			<skill id="4568" level="9" /> <!--NPC AE Solar Flare -->
 			<skill id="4572" level="9" /> <!--NPC Triple Sonic Slash -->
 			<skill id="4576" level="3" /> <!--NPC Clan Buff - Damage Shield -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB2</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="14" />
@@ -2446,10 +2446,10 @@
 				<walk ground="45" />
 				<run ground="180" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
@@ -2464,13 +2464,13 @@
 			<skill id="4568" level="9" /> <!--NPC AE Solar Flare -->
 			<skill id="4572" level="9" /> <!--NPC Triple Sonic Slash -->
 			<skill id="4576" level="3" /> <!--NPC Clan Buff - Damage Shield -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB2</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="14" />
@@ -2502,10 +2502,10 @@
 				<walk ground="45" />
 				<run ground="180" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
@@ -2520,13 +2520,13 @@
 			<skill id="4568" level="9" /> <!--NPC AE Solar Flare -->
 			<skill id="4572" level="9" /> <!--NPC Triple Sonic Slash -->
 			<skill id="4576" level="3" /> <!--NPC Clan Buff - Damage Shield -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB2</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="14" />
@@ -2557,10 +2557,10 @@
 				<walk ground="45" />
 				<run ground="180" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4031" level="3" /> <!--NPC Clan Aegis -->
 			<skill id="4155" level="9" /> <!--NPC Twister - Magic -->
 			<skill id="4160" level="9" /> <!--NPC Aura Burn - Magic -->
@@ -2574,13 +2574,13 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="12" /> <!--Bugs -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB2</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="14" />
@@ -2610,10 +2610,10 @@
 				<walk ground="45" />
 				<run ground="180" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="9" /> <!--NPC Strike -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
@@ -2626,13 +2626,13 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="12" /> <!--Bugs -->
 			<skill id="4573" level="9" /> <!--NPC Sonic Blaster -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB2</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="14" />
@@ -2662,10 +2662,10 @@
 				<walk ground="45" />
 				<run ground="180" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4155" level="9" /> <!--NPC Twister - Magic -->
 			<skill id="4160" level="9" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
@@ -2678,13 +2678,13 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="12" /> <!--Bugs -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB2</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="14" />
@@ -2714,10 +2714,10 @@
 				<walk ground="45" />
 				<run ground="180" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4074" level="2" /> <!--NPC Haste -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
@@ -2730,13 +2730,13 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="12" /> <!--Bugs -->
 			<skill id="4581" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB2</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="14" />
@@ -2765,10 +2765,10 @@
 				<walk ground="45" />
 				<run ground="180" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2782,13 +2782,13 @@
 			<skill id="4439" level="4" /> <!--Greater Resist Hold -->
 			<skill id="4444" level="2" /> <!--Higher Resist Bow/Crossbow Weapons -->
 			<skill id="4614" level="9" /> <!--NPC Death Bomb -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB2</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="14" />
@@ -2818,7 +2818,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2829,12 +2829,12 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="14" /> <!--Humans -->
 			<skill id="4697" level="9" /> <!--NPC Monster Hate -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="8" />
@@ -2864,7 +2864,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2875,12 +2875,12 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="14" /> <!--Humans -->
 			<skill id="4697" level="9" /> <!--NPC Monster Hate -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="8" />
@@ -2910,7 +2910,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2921,12 +2921,12 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="14" /> <!--Humans -->
 			<skill id="4697" level="9" /> <!--NPC Monster Hate -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="8" />
@@ -2956,7 +2956,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2967,12 +2967,12 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="14" /> <!--Humans -->
 			<skill id="4697" level="9" /> <!--NPC Monster Hate -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="8" />
@@ -3002,7 +3002,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3013,12 +3013,12 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="14" /> <!--Humans -->
 			<skill id="4697" level="9" /> <!--NPC Monster Hate -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="8" />
@@ -3048,7 +3048,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3059,12 +3059,12 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="14" /> <!--Humans -->
 			<skill id="4697" level="9" /> <!--NPC Monster Hate -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="8" />
@@ -3094,7 +3094,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3105,12 +3105,12 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="14" /> <!--Humans -->
 			<skill id="4697" level="9" /> <!--NPC Monster Hate -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="8" />
@@ -3140,7 +3140,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3151,12 +3151,12 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="14" /> <!--Humans -->
 			<skill id="4697" level="9" /> <!--NPC Monster Hate -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="8" />
@@ -3180,17 +3180,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="50" critical="1" accuracy="12" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="629.5247322" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="31" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3203,13 +3203,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4582" level="9" /> <!--Poison -->
 			<skill id="4621" level="9" /> <!--NPC AE - 80% HP Drain -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="21" grown="24" />
@@ -3233,17 +3233,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="50" critical="1" accuracy="12" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="381.352908" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="31" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3256,13 +3256,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4582" level="9" /> <!--Poison -->
 			<skill id="4657" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="21" grown="24" />
@@ -3286,17 +3286,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="50" critical="1" accuracy="12" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="629.5247322" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="31" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3309,13 +3309,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4582" level="9" /> <!--Poison -->
 			<skill id="4621" level="9" /> <!--NPC AE - 80% HP Drain -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="21" grown="24" />
@@ -3339,17 +3339,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="50" critical="1" accuracy="12" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="381.352908" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="31" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3362,13 +3362,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4582" level="9" /> <!--Poison -->
 			<skill id="4657" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="21" grown="24" />
@@ -3392,17 +3392,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="50" critical="1" accuracy="12" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="629.5247322" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="31" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3415,13 +3415,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4582" level="9" /> <!--Poison -->
 			<skill id="4621" level="9" /> <!--NPC AE - 80% HP Drain -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="21" grown="24" />
@@ -3445,17 +3445,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="50" critical="1" accuracy="12" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="381.352908" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="31" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3468,13 +3468,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4582" level="9" /> <!--Poison -->
 			<skill id="4657" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="21" grown="24" />
@@ -3498,17 +3498,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="50" critical="1" accuracy="12" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="629.5247322" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="31" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3521,13 +3521,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4582" level="9" /> <!--Poison -->
 			<skill id="4621" level="9" /> <!--NPC AE - 80% HP Drain -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="21" grown="24" />
@@ -3551,17 +3551,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="50" critical="1" accuracy="12" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="381.352908" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="31" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3574,13 +3574,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4582" level="9" /> <!--Poison -->
 			<skill id="4657" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="21" grown="24" />
@@ -3606,17 +3606,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="27" />
 				<run ground="110" />
 			</speed>
-			<hit_time>710</hit_time>
+			<hitTime>710</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3627,13 +3627,13 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4572" level="9" /> <!--NPC Triple Sonic Slash -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="12" grown="14.5" />
@@ -3658,17 +3658,17 @@
 			<attack physical="870.827652" magical="554.0961810204" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="434.6579448" magical="263.306676" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="27" />
 				<run ground="110" />
 			</speed>
-			<hit_time>710</hit_time>
+			<hitTime>710</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3680,13 +3680,13 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4573" level="9" /> <!--NPC Sonic Blaster -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="12" grown="14.5" />
@@ -3712,17 +3712,17 @@
 			<attack physical="957.910356" magical="670.4563793364" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="359.2214376" magical="217.60884" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="27" />
 				<run ground="110" />
 			</speed>
-			<hit_time>710</hit_time>
+			<hitTime>710</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3734,13 +3734,13 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4572" level="9" /> <!--NPC Triple Sonic Slash -->
 			<skill id="4573" level="9" /> <!--NPC Sonic Blaster -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="12" grown="14.5" />
@@ -3766,17 +3766,17 @@
 			<attack physical="870.827652" magical="554.0961810204" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="434.6579448" magical="263.306676" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="27" />
 				<run ground="110" />
 			</speed>
-			<hit_time>710</hit_time>
+			<hitTime>710</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4091" level="1" /> <!--NPC Ogre Spirit Totem -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3788,13 +3788,13 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4574" level="9" /> <!--NPC Sonic Storm -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="12" grown="14.5" />
@@ -3818,17 +3818,17 @@
 			<attack physical="1115.60664" magical="1187.754369768" random="10" critical="8" accuracy="2" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="296.877222" magical="179.842014" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3841,13 +3841,13 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4561" level="9" /> <!--NPC Fire Burn - Magic -->
 			<skill id="4603" level="9" /> <!--Decrease P. Atk. -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="20" />
@@ -3872,17 +3872,17 @@
 			<attack physical="692.703828" magical="457.930728288" random="10" critical="8" accuracy="2" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="478.1237352" magical="289.637364" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3895,13 +3895,13 @@
 			<skill id="4561" level="9" /> <!--NPC Fire Burn - Magic -->
 			<skill id="4603" level="9" /> <!--Decrease P. Atk. -->
 			<skill id="4609" level="4" /> <!--NPC Clan Buff - Vampiric Rage -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="20" />
@@ -3925,17 +3925,17 @@
 			<attack physical="838.171536" magical="670.4563793364" random="10" critical="8" accuracy="2" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="359.2214376" magical="217.60884" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3947,13 +3947,13 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4561" level="9" /> <!--NPC Fire Burn - Magic -->
 			<skill id="4589" level="9" /> <!--Decrease Speed -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB3</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="20" />
@@ -3979,17 +3979,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="160" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4073" level="9" /> <!--Stun -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
@@ -4004,13 +4004,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4565" level="9" /> <!--NPC Eruption -->
 			<skill id="4601" level="3" /> <!--NPC Clan Buff - Acumen Focus -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="24" grown="29" />
@@ -4038,17 +4038,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="160" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4073" level="9" /> <!--Stun -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
@@ -4065,13 +4065,13 @@
 			<skill id="4694" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4695" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4696" level="1" /> <!--Ultimate Debuff -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="24" grown="29" />
@@ -4098,17 +4098,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="160" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4073" level="9" /> <!--Stun -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4124,13 +4124,13 @@
 			<skill id="4589" level="9" /> <!--Decrease Speed -->
 			<skill id="4618" level="1" /> <!--NPC Cancel PC Target -->
 			<skill id="4657" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="24" grown="29" />
@@ -4156,17 +4156,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="160" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4073" level="9" /> <!--Stun -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
@@ -4181,13 +4181,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4565" level="9" /> <!--NPC Eruption -->
 			<skill id="4601" level="3" /> <!--NPC Clan Buff - Acumen Focus -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="24" grown="29" />
@@ -4215,17 +4215,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="160" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4073" level="9" /> <!--Stun -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
@@ -4242,13 +4242,13 @@
 			<skill id="4694" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4695" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4696" level="1" /> <!--Ultimate Debuff -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="24" grown="29" />
@@ -4275,17 +4275,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="160" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4073" level="9" /> <!--Stun -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4301,13 +4301,13 @@
 			<skill id="4589" level="9" /> <!--Decrease Speed -->
 			<skill id="4618" level="1" /> <!--NPC Cancel PC Target -->
 			<skill id="4657" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="24" grown="29" />
@@ -4333,17 +4333,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="160" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4073" level="9" /> <!--Stun -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
@@ -4358,13 +4358,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4565" level="9" /> <!--NPC Eruption -->
 			<skill id="4601" level="3" /> <!--NPC Clan Buff - Acumen Focus -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="24" grown="29" />
@@ -4392,17 +4392,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="160" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4073" level="9" /> <!--Stun -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
@@ -4419,13 +4419,13 @@
 			<skill id="4694" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4695" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4696" level="1" /> <!--Ultimate Debuff -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="24" grown="29" />
@@ -4452,17 +4452,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="160" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4073" level="9" /> <!--Stun -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4478,13 +4478,13 @@
 			<skill id="4589" level="9" /> <!--Decrease Speed -->
 			<skill id="4618" level="1" /> <!--NPC Cancel PC Target -->
 			<skill id="4657" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="24" grown="29" />
@@ -4510,17 +4510,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="160" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4073" level="9" /> <!--Stun -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
@@ -4535,13 +4535,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4565" level="9" /> <!--NPC Eruption -->
 			<skill id="4601" level="3" /> <!--NPC Clan Buff - Acumen Focus -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="24" grown="29" />
@@ -4569,17 +4569,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="160" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4073" level="9" /> <!--Stun -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="5" /> <!--Resist Hold Attacks -->
@@ -4596,13 +4596,13 @@
 			<skill id="4694" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4695" level="1" /> <!--Ultimate Debuff -->
 			<skill id="4696" level="1" /> <!--Ultimate Debuff -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="24" grown="29" />
@@ -4629,17 +4629,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="160" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4073" level="9" /> <!--Stun -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4655,13 +4655,13 @@
 			<skill id="4589" level="9" /> <!--Decrease Speed -->
 			<skill id="4618" level="1" /> <!--NPC Cancel PC Target -->
 			<skill id="4657" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="24" grown="29" />
@@ -4693,10 +4693,10 @@
 				<walk ground="22" />
 				<run ground="150" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4033" level="9" /> <!--NPC Burn -->
 			<skill id="4036" level="9" /> <!--Poison -->
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
@@ -4711,13 +4711,13 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4613" level="9" /> <!--NPC Clan Heal -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="6" />
@@ -4750,10 +4750,10 @@
 				<walk ground="22" />
 				<run ground="150" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4033" level="9" /> <!--NPC Burn -->
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
@@ -4769,13 +4769,13 @@
 			<skill id="4597" level="9" /> <!--Bleed -->
 			<skill id="4613" level="9" /> <!--NPC Clan Heal -->
 			<skill id="4657" level="9" /> <!--Hold -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="6" />
@@ -4800,17 +4800,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="40" />
 				<run ground="160" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -4821,13 +4821,13 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4582" level="9" /> <!--Poison -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="21" grown="25" />
@@ -4851,17 +4851,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="40" />
 				<run ground="160" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -4872,13 +4872,13 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4573" level="9" /> <!--NPC Sonic Blaster -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="21" grown="25" />
@@ -4903,17 +4903,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="40" />
 				<run ground="160" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="9" /> <!--NPC Strike -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4925,13 +4925,13 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4573" level="9" /> <!--NPC Sonic Blaster -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="21" grown="25" />
@@ -4956,17 +4956,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="40" />
 				<run ground="160" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4091" level="1" /> <!--NPC Ogre Spirit Totem -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4978,13 +4978,13 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4582" level="9" /> <!--Poison -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="21" grown="25" />
@@ -5009,17 +5009,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4160" level="9" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -5031,13 +5031,13 @@
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4563" level="9" /> <!--NPC Solar Flare - Magic -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -5063,17 +5063,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4160" level="9" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -5086,13 +5086,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4563" level="9" /> <!--NPC Solar Flare - Magic -->
 			<skill id="4609" level="4" /> <!--NPC Clan Buff - Vampiric Rage -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -5118,17 +5118,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4160" level="9" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -5141,13 +5141,13 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4563" level="9" /> <!--NPC Solar Flare - Magic -->
 			<skill id="4587" level="9" /> <!--Decrease P. Atk. -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -5172,17 +5172,17 @@
 			<attack physical="1159.0719" magical="981.6151849884" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="326.5649442" magical="197.826246" evasion="3" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-13" dark="184" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4033" level="9" /> <!--NPC Burn -->
 			<skill id="4160" level="9" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
@@ -5194,13 +5194,13 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="9" /> <!--Demons -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="9" />
@@ -5229,10 +5229,10 @@
 				<walk ground="40" />
 				<run ground="60" />
 			</speed>
-			<hit_time>350</hit_time>
+			<hitTime>350</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5246,13 +5246,13 @@
 			<skill id="4439" level="4" /> <!--Greater Resist Hold -->
 			<skill id="4444" level="2" /> <!--Higher Resist Bow/Crossbow Weapons -->
 			<skill id="4614" level="9" /> <!--NPC Death Bomb -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="12" />
@@ -5280,10 +5280,10 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5296,13 +5296,13 @@
 			<skill id="4436" level="5" /> <!--Greater Resist Poison -->
 			<skill id="4437" level="5" /> <!--Greater Resist Bleeding -->
 			<skill id="4628" level="1" /> <!--Mysterious Aura -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="15" />
@@ -5330,10 +5330,10 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5346,13 +5346,13 @@
 			<skill id="4436" level="5" /> <!--Greater Resist Poison -->
 			<skill id="4437" level="5" /> <!--Greater Resist Bleeding -->
 			<skill id="4628" level="1" /> <!--Mysterious Aura -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="15" />
@@ -5380,10 +5380,10 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5396,13 +5396,13 @@
 			<skill id="4436" level="5" /> <!--Greater Resist Poison -->
 			<skill id="4437" level="5" /> <!--Greater Resist Bleeding -->
 			<skill id="4628" level="1" /> <!--Mysterious Aura -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="15" />
@@ -5430,10 +5430,10 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5446,13 +5446,13 @@
 			<skill id="4436" level="5" /> <!--Greater Resist Poison -->
 			<skill id="4437" level="5" /> <!--Greater Resist Bleeding -->
 			<skill id="4628" level="1" /> <!--Mysterious Aura -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="600" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB4</clan>
-			</clan_list>
+			</clanList>
 		</ai>
 		<collision>
 			<radius normal="15" />

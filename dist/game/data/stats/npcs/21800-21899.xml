@@ -16,17 +16,17 @@
 			<attack physical="835.75573" magical="570.71283" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="328.27073" magical="218.566351305224" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="15" />
 				<run ground="15" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4274" level="1" /> <!--Blunt Weapon Weak Point -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -39,12 +39,12 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4567" level="8" /> <!--NPC Eruption - Slow -->
 			<skill id="4789" level="5" /> <!--NPC High Level -->
-		</skill_list>
+		</skillList>
 		<shots shotChance="30" spiritChance="30" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1853" max="3785" chance="100" /> <!-- Adena -->
@@ -77,7 +77,7 @@
 				<item id="5529" min="1" max="1" chance="1.0311" /> <!-- Dragon Slayer Edge -->
 				<item id="4042" min="1" max="1" chance="6.2641" /> <!-- Enria -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="13" />
 			<height normal="21" />
@@ -99,10 +99,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -113,10 +113,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="107" max="191" chance="100" /> <!-- Adena -->
@@ -138,7 +138,7 @@
 				<item id="1869" min="1" max="1" chance="23.4957" /> <!-- Iron Ore -->
 				<item id="1926" min="1" max="1" chance="2.3733" /> <!-- Piece Bone Breastplate Fragment -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -160,10 +160,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -174,10 +174,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="122" max="225" chance="100" /> <!-- Adena -->
@@ -198,7 +198,7 @@
 				<item id="1928" min="1" max="1" chance="4.0001" /> <!-- Piece Bone Gaiters Fragment -->
 				<item id="2176" min="1" max="1" chance="13.1391" /> <!-- Recipe: Leather Boots -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -220,10 +220,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -234,10 +234,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="137" max="264" chance="100" /> <!-- Adena -->
@@ -261,7 +261,7 @@
 				<item id="1871" min="1" max="1" chance="31.7362" /> <!-- Charcoal -->
 				<item id="5220" min="1" max="1" chance="1.2695" /> <!-- Metal Hardener -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -283,10 +283,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -297,10 +297,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="154" max="308" chance="100" /> <!-- Adena -->
@@ -321,7 +321,7 @@
 				<item id="1900" min="1" max="1" chance="3.9943" /> <!-- Enchanted Necklace Chain -->
 				<item id="2250" min="1" max="1" chance="9.1271" /> <!-- Recipe: Bone Arrow -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -343,10 +343,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -357,10 +357,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="184" max="368" chance="100" /> <!-- Adena -->
@@ -387,7 +387,7 @@
 				<item id="2154" min="1" max="1" chance="4.6627" /> <!-- Recipe: Elven Earring -->
 				<item id="1938" min="1" max="1" chance="2.9277" /> <!-- Mithril Banded Mail Material -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -409,10 +409,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -423,10 +423,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="216" max="433" chance="100" /> <!-- Adena -->
@@ -448,7 +448,7 @@
 				<item id="1880" min="1" max="1" chance="5.1242" /> <!-- Steel -->
 				<item id="1939" min="1" max="1" chance="4.5008" /> <!-- Mithril Banded Gaiters Material -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -470,10 +470,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -484,10 +484,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="253" max="504" chance="100" /> <!-- Adena -->
@@ -522,7 +522,7 @@
 				<item id="1902" min="1" max="1" chance="6.0588" /> <!-- Elven Earring Beads -->
 				<item id="2158" min="1" max="1" chance="7.401" /> <!-- Recipe: Mithril Ring -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -544,10 +544,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -558,10 +558,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="282" max="570" chance="100" /> <!-- Adena -->
@@ -586,7 +586,7 @@
 				<item id="1871" min="1" max="1" chance="70.0321" /> <!-- Charcoal -->
 				<item id="1866" min="1" max="1" chance="46.6881" /> <!-- Suede -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -608,10 +608,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -622,10 +622,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="320" max="650" chance="100" /> <!-- Adena -->
@@ -668,7 +668,7 @@
 				<item id="1908" min="1" max="1" chance="7.6616" /> <!-- Moonstone Earring Wire -->
 				<item id="2163" min="1" max="1" chance="4.1279" /> <!-- Recipe: Earring of Protection -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -690,10 +690,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -704,10 +704,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="364" max="740" chance="100" /> <!-- Adena -->
@@ -738,7 +738,7 @@
 				<item id="2166" min="1" max="1" chance="3.1207" /> <!-- Recipe: Earrings of Binding (100%) -->
 				<item id="1967" min="1" max="1" chance="5.0211" /> <!-- Plated Leather Gaiters Material -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -760,10 +760,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -774,10 +774,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="413" max="839" chance="100" /> <!-- Adena -->
@@ -806,7 +806,7 @@
 				<item id="1884" min="1" max="1" chance="64.1767" /> <!-- Cord -->
 				<item id="4601" min="1" max="1" chance="0.2317" /> <!-- Greater Dye of STR <Str+3 Con-3> -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -828,10 +828,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -842,10 +842,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="464" max="945" chance="100" /> <!-- Adena -->
@@ -874,7 +874,7 @@
 				<item id="4126" min="1" max="1" chance="1.9385" /> <!-- Recipe: Adamantite Earrings (100%) -->
 				<item id="1985" min="1" max="1" chance="4.0508" /> <!-- Theca Leather Gaiters Pattern -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -896,10 +896,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -910,10 +910,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="519" max="1060" chance="100" /> <!-- Adena -->
@@ -946,7 +946,7 @@
 				<item id="4049" min="1" max="1" chance="6.9028" /> <!-- Adamantite Earring Gemstone -->
 				<item id="947" min="1" max="1" chance="0.0526" /> <!-- Scroll: Enchant Weapon (B-Grade) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -968,10 +968,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -982,10 +982,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="580" max="1179" chance="100" /> <!-- Adena -->
@@ -1018,7 +1018,7 @@
 				<item id="1872" min="1" max="5" chance="65.1751" /> <!-- Animal Bone -->
 				<item id="4613" min="1" max="1" chance="0.2023" /> <!-- Greater Dye of STR <Str+4 Con-4> -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -1040,10 +1040,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1054,10 +1054,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="646" max="1308" chance="100" /> <!-- Adena -->
@@ -1090,7 +1090,7 @@
 				<item id="5230" min="1" max="1" chance="0.2172" /> <!-- Recipe: Mithril Arrow (100%) -->
 				<item id="4053" min="1" max="1" chance="6.9816" /> <!-- Ring of Black Ore Gemstone -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -1112,10 +1112,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1126,10 +1126,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="714" max="1448" chance="100" /> <!-- Adena -->
@@ -1160,7 +1160,7 @@
 				<item id="4054" min="1" max="1" chance="3.5501" /> <!-- Necklace of Black Ore Beads -->
 				<item id="5550" min="1" max="1" chance="2.4032" /> <!-- Durable Metal Plate -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -1182,10 +1182,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1196,10 +1196,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="786" max="1596" chance="100" /> <!-- Adena -->
@@ -1232,7 +1232,7 @@
 				<item id="5478" min="1" max="1" chance="1.6699" /> <!-- Sealed Dark Crystal Leather Armor Pattern -->
 				<item id="5434" min="1" max="1" chance="0.0735" /> <!-- Recipe: Dragon Slayer(60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -1254,10 +1254,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1269,10 +1269,10 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="4789" level="2" /> <!--NPC High Level -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="860" max="1756" chance="100" /> <!-- Adena -->
@@ -1303,7 +1303,7 @@
 				<item id="5440" min="1" max="1" chance="0.0646" /> <!-- Recipe: Elysian(60%) -->
 				<item id="5482" min="1" max="1" chance="2.3018" /> <!-- Sealed Dark Crystal Leggings Design -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -1325,10 +1325,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1340,10 +1340,10 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="4789" level="4" /> <!--NPC High Level -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="941" max="1920" chance="100" /> <!-- Adena -->
@@ -1376,7 +1376,7 @@
 				<item id="4041" min="1" max="1" chance="1.6588" /> <!-- Mold Hardener -->
 				<item id="5480" min="1" max="1" chance="0.856" /> <!-- Sealed Leather Armor of Nightmare Fabric -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -1398,10 +1398,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1413,10 +1413,10 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="4789" level="5" /> <!--NPC High Level -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1025" max="2092" chance="100" /> <!-- Adena -->
@@ -1447,7 +1447,7 @@
 				<item id="5481" min="1" max="1" chance="0.9325" /> <!-- Sealed Majestic Leather Armor Fabric -->
 				<item id="1808" min="1" max="1" chance="0.0924" /> <!-- Recipe: Soulshot (S-Grade) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -1469,10 +1469,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1484,10 +1484,10 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="4789" level="7" /> <!--NPC High Level -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1110" max="2273" chance="100" /> <!-- Adena -->
@@ -1518,7 +1518,7 @@
 				<item id="4039" min="1" max="1" chance="7.5202" /> <!-- Mold Glue -->
 				<item id="4041" min="1" max="1" chance="1.9618" /> <!-- Mold Hardener -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -1540,10 +1540,10 @@
 				<walk ground="80" />
 				<run ground="165" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1555,10 +1555,10 @@
 			<skill id="4415" level="5" /> <!--Blunt Weapons -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="4789" level="8" /> <!--NPC High Level -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1200" max="2449" chance="100" /> <!-- Adena -->
@@ -1587,7 +1587,7 @@
 				<item id="6689" min="1" max="1" chance="0.5162" /> <!-- Basalt Battlehammer Head -->
 				<item id="6690" min="1" max="1" chance="0.5271" /> <!-- Imperial Staff Head -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -1612,17 +1612,17 @@
 			<attack physical="912.6537108" magical="635.688655236" random="30" critical="4" accuracy="6.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="348.2025" magical="231.837152158566" evasion="2" shield="171" shieldRate="20" />
 			<attribute>
-				<attack type="UNHOLY" value="20" />
+				<attack type="DARK" value="20" />
 				<defence fire="20" water="20" wind="20" earth="20" holy="-32" dark="53" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="190" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4077" level="9" /> <!--NPC Aura Burn -->
 			<skill id="4078" level="9" /> <!--NPC Flamestrike -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
@@ -1638,15 +1638,15 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4613" level="9" /> <!--NPC Clan Heal -->
 			<skill id="4789" level="6" /> <!--NPC High Level -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>TOMB</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="10189" max="20801" chance="100" /> <!-- Adena -->
@@ -1671,7 +1671,7 @@
 				<item id="4039" min="1" max="1" chance="68.8934" /> <!-- Mold Glue -->
 				<item id="5480" min="1" max="1" chance="9.2742" /> <!-- Sealed Leather Armor of Nightmare Fabric -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="7" grown="8" />
 			<height normal="30" grown="36" />
@@ -1707,10 +1707,10 @@
 				<walk ground="23" />
 				<run ground="210" />
 			</speed>
-			<hit_time>540</hit_time>
+			<hitTime>540</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1724,16 +1724,16 @@
 			<skill id="4438" level="2" /> <!--Greater Resist Sleep -->
 			<skill id="4589" level="6" /> <!--Decrease Speed -->
 			<skill id="4600" level="6" /> <!--Reducing P. Def Stun -->
-		</skill_list>
+		</skillList>
 		<shots shotChance="30" spiritChance="30" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>PET</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="0.6834999918937683">
 					<item id="171" min="1" max="1" chance="0.0913" /> <!-- Deadman's Glory -->
@@ -1764,7 +1764,7 @@
 				<item id="4052" min="1" max="1" chance="37.7427" /> <!-- Earring of Black Ore Piece -->
 				<item id="1807" min="1" max="1" chance="1.4214" /> <!-- Recipe: Soulshot (A-Grade) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="10" grown="13" />
 			<height normal="33" grown="40" />
@@ -1801,10 +1801,10 @@
 				<walk ground="23" />
 				<run ground="210" />
 			</speed>
-			<hit_time>540</hit_time>
+			<hitTime>540</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4160" level="6" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
@@ -1820,16 +1820,16 @@
 			<skill id="4566" level="6" /> <!--NPC Eruption - Magic -->
 			<skill id="4571" level="6" /> <!--NPC Blazing Circle -->
 			<skill id="4657" level="6" /> <!--Hold -->
-		</skill_list>
+		</skillList>
 		<shots shotChance="30" spiritChance="30" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>PET</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="2.2676000595092773">
 					<item id="358" min="1" max="1" chance="0.1784" /> <!-- Blue Wolf Breastplate -->
@@ -1858,7 +1858,7 @@
 				<item id="3035" min="1" max="1" chance="1.3559" /> <!-- Recipe: Spiritshot A -->
 				<item id="4054" min="1" max="1" chance="20.0294" /> <!-- Necklace of Black Ore Beads -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="10" grown="13" />
 			<height normal="33" grown="40" />
@@ -1894,10 +1894,10 @@
 				<walk ground="20" />
 				<run ground="170" />
 			</speed>
-			<hit_time>460</hit_time>
+			<hitTime>460</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1911,16 +1911,16 @@
 			<skill id="4438" level="2" /> <!--Greater Resist Sleep -->
 			<skill id="4589" level="6" /> <!--Decrease Speed -->
 			<skill id="4600" level="6" /> <!--Reducing P. Def Stun -->
-		</skill_list>
+		</skillList>
 		<shots shotChance="30" spiritChance="30" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>PET</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="2.538300037384033">
 					<item id="358" min="1" max="1" chance="0.1784" /> <!-- Blue Wolf Breastplate -->
@@ -1948,7 +1948,7 @@
 				<item id="4043" min="1" max="1" chance="37.9428" /> <!-- Asofe -->
 				<item id="4077" min="1" max="1" chance="51.2049" /> <!-- Doom Shield Fragment -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22" grown="27" />
 			<height normal="31" grown="38" />
@@ -1985,10 +1985,10 @@
 				<walk ground="20" />
 				<run ground="170" />
 			</speed>
-			<hit_time>460</hit_time>
+			<hitTime>460</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4160" level="6" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
@@ -2004,16 +2004,16 @@
 			<skill id="4566" level="6" /> <!--NPC Eruption - Magic -->
 			<skill id="4571" level="6" /> <!--NPC Blazing Circle -->
 			<skill id="4657" level="6" /> <!--Hold -->
-		</skill_list>
+		</skillList>
 		<shots shotChance="30" spiritChance="30" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>PET</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="0.7049000263214111">
 					<item id="79" min="1" max="1" chance="0.1503" /> <!-- Sword of Damascus -->
@@ -2042,7 +2042,7 @@
 				<item id="4078" min="1" max="1" chance="15.8605" /> <!-- Blue Wolf Breastplate Part -->
 				<item id="5156" min="1" max="1" chance="1.4477" /> <!-- Recipe: Soulshot (A) Compressed Package (100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22" grown="27" />
 			<height normal="31" grown="38" />
@@ -2078,10 +2078,10 @@
 				<walk ground="60" />
 				<run ground="200" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2095,16 +2095,16 @@
 			<skill id="4438" level="2" /> <!--Greater Resist Sleep -->
 			<skill id="4589" level="6" /> <!--Decrease Speed -->
 			<skill id="4600" level="6" /> <!--Reducing P. Def Stun -->
-		</skill_list>
+		</skillList>
 		<shots shotChance="30" spiritChance="30" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>PET</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="0.6086000204086304">
 					<item id="212" min="1" max="1" chance="0.1045" /> <!-- Dasparion's Staff -->
@@ -2134,7 +2134,7 @@
 				<item id="729" min="1" max="1" chance="0.1349" /> <!-- Scroll: Enchant Weapon (A-Grade) -->
 				<item id="1875" min="1" max="1" chance="80.9392" /> <!-- Stone of Purity -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="34" />
 			<height normal="28" grown="34" />
@@ -2171,10 +2171,10 @@
 				<walk ground="60" />
 				<run ground="200" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4160" level="6" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4318" level="1" /> <!--Ultimate Buff -->
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
@@ -2190,16 +2190,16 @@
 			<skill id="4566" level="6" /> <!--NPC Eruption - Magic -->
 			<skill id="4571" level="6" /> <!--NPC Blazing Circle -->
 			<skill id="4657" level="6" /> <!--Hold -->
-		</skill_list>
+		</skillList>
 		<shots shotChance="30" spiritChance="30" />
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>PET</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="1.582900047302246">
 					<item id="5304" min="1" max="1" chance="0.2697" /> <!-- Sealed Tallum Tunic -->
@@ -2228,7 +2228,7 @@
 				<item id="3035" min="1" max="1" chance="1.5442" /> <!-- Recipe: Spiritshot A -->
 				<item id="4054" min="1" max="1" chance="22.811" /> <!-- Necklace of Black Ore Beads -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="34" />
 			<height normal="28" grown="34" />

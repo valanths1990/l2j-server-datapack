@@ -301,6 +301,7 @@ import quests.Q00326_VanquishRemnants.Q00326_VanquishRemnants;
 import quests.Q00327_RecoverTheFarmland.Q00327_RecoverTheFarmland;
 import quests.Q00328_SenseForBusiness.Q00328_SenseForBusiness;
 import quests.Q00329_CuriosityOfADwarf.Q00329_CuriosityOfADwarf;
+import quests.Q00330_AdeptOfTaste.Q00330_AdeptOfTaste;
 import quests.Q00331_ArrowOfVengeance.Q00331_ArrowOfVengeance;
 import quests.Q00333_HuntOfTheBlackLion.Q00333_HuntOfTheBlackLion;
 import quests.Q00337_AudienceWithTheLandDragon.Q00337_AudienceWithTheLandDragon;
@@ -330,6 +331,7 @@ import quests.Q00368_TrespassingIntoTheHolyGround.Q00368_TrespassingIntoTheHolyG
 import quests.Q00369_CollectorOfJewels.Q00369_CollectorOfJewels;
 import quests.Q00370_AnElderSowsSeeds.Q00370_AnElderSowsSeeds;
 import quests.Q00371_ShrieksOfGhosts.Q00371_ShrieksOfGhosts;
+import quests.Q00372_LegacyOfInsolence.Q00372_LegacyOfInsolence;
 import quests.Q00373_SupplierOfReagents.Q00373_SupplierOfReagents;
 import quests.Q00376_ExplorationOfTheGiantsCavePart1.Q00376_ExplorationOfTheGiantsCavePart1;
 import quests.Q00377_ExplorationOfTheGiantsCavePart2.Q00377_ExplorationOfTheGiantsCavePart2;
@@ -378,6 +380,7 @@ import quests.Q00461_RumbleInTheBase.Q00461_RumbleInTheBase;
 import quests.Q00463_IMustBeaGenius.Q00463_IMustBeaGenius;
 import quests.Q00464_Oath.Q00464_Oath;
 import quests.Q00501_ProofOfClanAlliance.Q00501_ProofOfClanAlliance;
+import quests.Q00503_PursuitOfClanAmbition.Q00503_PursuitOfClanAmbition;
 import quests.Q00504_CompetitionForTheBanditStronghold.Q00504_CompetitionForTheBanditStronghold;
 import quests.Q00508_AClansReputation.Q00508_AClansReputation;
 import quests.Q00509_AClansFame.Q00509_AClansFame;
@@ -389,6 +392,7 @@ import quests.Q00553_OlympiadUndefeated.Q00553_OlympiadUndefeated;
 import quests.Q00601_WatchingEyes.Q00601_WatchingEyes;
 import quests.Q00602_ShadowOfLight.Q00602_ShadowOfLight;
 import quests.Q00603_DaimonTheWhiteEyedPart1.Q00603_DaimonTheWhiteEyedPart1;
+import quests.Q00604_DaimonTheWhiteEyedPart2.Q00604_DaimonTheWhiteEyedPart2;
 import quests.Q00605_AllianceWithKetraOrcs.Q00605_AllianceWithKetraOrcs;
 import quests.Q00606_BattleAgainstVarkaSilenos.Q00606_BattleAgainstVarkaSilenos;
 import quests.Q00607_ProveYourCourageKetra.Q00607_ProveYourCourageKetra;
@@ -779,6 +783,7 @@ public class QuestMasterHandler
 		Q00327_RecoverTheFarmland.class,
 		Q00328_SenseForBusiness.class,
 		Q00329_CuriosityOfADwarf.class,
+		Q00330_AdeptOfTaste.class,
 		Q00331_ArrowOfVengeance.class,
 		Q00333_HuntOfTheBlackLion.class,
 		Q00337_AudienceWithTheLandDragon.class,
@@ -808,6 +813,7 @@ public class QuestMasterHandler
 		Q00369_CollectorOfJewels.class,
 		Q00370_AnElderSowsSeeds.class,
 		Q00371_ShrieksOfGhosts.class,
+		Q00372_LegacyOfInsolence.class,
 		Q00373_SupplierOfReagents.class,
 		Q00376_ExplorationOfTheGiantsCavePart1.class,
 		Q00377_ExplorationOfTheGiantsCavePart2.class,
@@ -856,6 +862,7 @@ public class QuestMasterHandler
 		Q00463_IMustBeaGenius.class,
 		Q00464_Oath.class,
 		Q00501_ProofOfClanAlliance.class,
+		Q00503_PursuitOfClanAmbition.class,
 		Q00504_CompetitionForTheBanditStronghold.class,
 		Q00508_AClansReputation.class,
 		Q00509_AClansFame.class,
@@ -867,6 +874,7 @@ public class QuestMasterHandler
 		Q00601_WatchingEyes.class,
 		Q00602_ShadowOfLight.class,
 		Q00603_DaimonTheWhiteEyedPart1.class,
+		Q00604_DaimonTheWhiteEyedPart2.class,
 		Q00605_AllianceWithKetraOrcs.class,
 		Q00606_BattleAgainstVarkaSilenos.class,
 		Q00607_ProveYourCourageKetra.class,

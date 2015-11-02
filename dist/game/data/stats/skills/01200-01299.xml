@@ -1418,7 +1418,7 @@
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="#cAtk" />
+				<mul stat="critDmg" val="#cAtk" />
 			</effect>
 		</for>
 	</skill>
@@ -1848,7 +1848,7 @@
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="#cAtk" />
+				<mul stat="critDmg" val="#cAtk" />
 			</effect>
 		</for>
 	</skill>

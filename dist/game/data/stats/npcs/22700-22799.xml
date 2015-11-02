@@ -9,18 +9,18 @@
 			<attack physical="1055.28566004965" magical="720.623302603812" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="349.77477" magical="255.95" />
 			<attribute>
-				<attack type="UNHOLY" value="150" />
+				<attack type="DARK" value="150" />
 				<defence fire="130" water="130" wind="130" earth="130" holy="90" dark="150" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="35" />
 				<run ground="185" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
 		<shots shotChance="10" spiritChance="10" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="14" grown="17" />
@@ -42,17 +42,17 @@
 			<attack physical="1012.32268463427" magical="691.285164307598" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
 			<attribute>
-				<attack type="UNHOLY" value="150" />
+				<attack type="DARK" value="150" />
 				<defence fire="130" water="130" wind="130" earth="130" holy="90" dark="150" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="70" />
 				<run ground="155" />
 			</speed>
-			<hit_time>760</hit_time>
+			<hitTime>760</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="9" /> <!--NPC Strike -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -68,15 +68,15 @@
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
 			<skill id="5620" level="5" /> <!--Short-Range Physical Attack Weakness -->
 			<skill id="6168" level="9" /> <!--Shock -->
-		</skill_list>
+		</skillList>
 		<shots shotChance="10" spiritChance="10" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>BARANKAD</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="854" max="1722" chance="100" /> <!-- Adena -->
@@ -132,7 +132,7 @@
 				<item id="9530" min="1" max="1" chance="0.5077" /> <!-- Sealed Dynasty Breast Plate Piece -->
 				<item id="5282" min="1" max="1" chance="0.1549" /> <!-- Recipe: Greater Blessed Spiritshot (S) Compressed Package(100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" />
 			<height normal="44" />
@@ -154,17 +154,17 @@
 			<attack physical="1055.28566004965" magical="720.623302603812" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="349.77477" magical="255.95" />
 			<attribute>
-				<attack type="UNHOLY" value="150" />
+				<attack type="DARK" value="150" />
 				<defence fire="130" water="130" wind="130" earth="130" holy="90" dark="150" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="37" />
 				<run ground="160" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4046" level="9" /> <!--Sleep -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4158" level="9" /> <!--NPC Prominence - Magic -->
@@ -181,15 +181,15 @@
 			<skill id="4444" level="3" /> <!--Higher Resist Bow/Crossbow Weapons -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
 			<skill id="5620" level="5" /> <!--Short-Range Physical Attack Weakness -->
-		</skill_list>
+		</skillList>
 		<shots shotChance="10" spiritChance="10" />
-		<ex_crt_effect>false</ex_crt_effect>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>BARANKAD</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="791" max="1594" chance="100" /> <!-- Adena -->
@@ -245,7 +245,7 @@
 				<item id="1808" min="1" max="1" chance="0.1435" /> <!-- Recipe: Soulshot (S-Grade) -->
 				<item id="9621" min="1" max="1" chance="0.1804" /> <!-- Dynasty Halberd Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="19" />
 			<height normal="32" />
@@ -273,10 +273,10 @@
 				<walk ground="80" />
 				<run ground="140" />
 			</speed>
-			<hit_time>280</hit_time>
+			<hitTime>280</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4160" level="10" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
@@ -292,11 +292,11 @@
 			<skill id="4458" level="4" /> <!--Spear Weapon Weak Point -->
 			<skill id="5465" level="1" /> <!--Earth Attacks -->
 			<skill id="5620" level="9" /> <!--Short-Range Physical Attack Weakness -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="2291" max="4622" chance="100" /> <!-- Adena -->
@@ -321,7 +321,7 @@
 				<item id="9617" min="1" max="1" chance="0.5201" /> <!-- Dynasty Blade Piece -->
 				<item id="9537" min="1" max="1" chance="3.3638" /> <!-- Sealed Dynasty Leather Helmet Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" grown="17" />
 			<height normal="28.8" grown="34.9" />
@@ -350,10 +350,10 @@
 				<walk ground="45" />
 				<run ground="170" />
 			</speed>
-			<hit_time>460</hit_time>
+			<hitTime>460</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4160" level="10" /> <!--NPC Aura Burn - Magic -->
 			<skill id="4408" level="13" /> <!--HP Increase (5x) -->
@@ -375,15 +375,15 @@
 			<skill id="4458" level="4" /> <!--Spear Weapon Weak Point -->
 			<skill id="5465" level="1" /> <!--Earth Attacks -->
 			<skill id="5620" level="9" /> <!--Short-Range Physical Attack Weakness -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>5</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>LEGENDORC</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="2841" max="5731" chance="100" /> <!-- Adena -->
@@ -410,7 +410,7 @@
 				<item id="9623" min="1" max="1" chance="0.6245" /> <!-- Dynasty Mace Piece -->
 				<item id="3036" min="1" max="1" chance="0.5156" /> <!-- Recipe: Spiritshot S -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" />
 			<height normal="34.8" />
@@ -439,10 +439,10 @@
 				<walk ground="36" />
 				<run ground="170" />
 			</speed>
-			<hit_time>540</hit_time>
+			<hitTime>540</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="13" /> <!--HP Increase (5x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -464,15 +464,15 @@
 			<skill id="4561" level="10" /> <!--NPC Fire Burn - Magic -->
 			<skill id="5465" level="1" /> <!--Earth Attacks -->
 			<skill id="5620" level="9" /> <!--Short-Range Physical Attack Weakness -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>5</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>LEGENDORC</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="2933" max="5909" chance="100" /> <!-- Adena -->
@@ -499,7 +499,7 @@
 				<item id="9630" min="1" max="1" chance="6.2984" /> <!-- Orichalcum -->
 				<item id="9628" min="1" max="1" chance="9.3859" /> <!-- Leonard -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" />
 			<height normal="28.8" />
@@ -521,17 +521,17 @@
 			<attack physical="1055.28566004965" magical="720.623302603812" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="349.77477" magical="255.95" />
 			<attribute>
-				<attack type="UNHOLY" value="150" />
+				<attack type="DARK" value="150" />
 				<defence fire="130" water="130" wind="130" earth="130" holy="90" dark="150" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="33" />
 				<run ground="190" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="14" /> <!--HP Increase (6x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -553,15 +553,15 @@
 			<skill id="4560" level="10" /> <!--NPC Fire Burn -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
 			<skill id="5620" level="9" /> <!--Short-Range Physical Attack Weakness -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>6</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="500">
-			<clan_list>
+			<clanList>
 				<clan>LEGENDORC</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="3145" max="6334" chance="100" /> <!-- Adena -->
@@ -588,7 +588,7 @@
 				<item id="9623" min="1" max="1" chance="0.6906" /> <!-- Dynasty Mace Piece -->
 				<item id="5157" min="1" max="1" chance="0.5702" /> <!-- Recipe: Soulshot (S) Compressed Package (100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" />
 			<height normal="28.8" />
@@ -610,17 +610,17 @@
 			<attack physical="1055.28566004965" magical="720.623302603812" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="349.77477" magical="255.95" />
 			<attribute>
-				<attack type="UNHOLY" value="150" />
+				<attack type="DARK" value="150" />
 				<defence fire="130" water="130" wind="130" earth="130" holy="90" dark="150" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="24" />
 				<run ground="185" />
 			</speed>
-			<hit_time>510</hit_time>
+			<hitTime>510</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4158" level="10" /> <!--NPC Prominence - Magic -->
 			<skill id="4408" level="16" /> <!--HP Increase (8x) -->
@@ -641,15 +641,15 @@
 			<skill id="4449" level="4" /> <!--Greater Resist Two-handed Weapons -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
 			<skill id="5620" level="9" /> <!--Short-Range Physical Attack Weakness -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>8</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>8</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>LEGENDORC</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="3043" max="6130" chance="100" /> <!-- Adena -->
@@ -675,7 +675,7 @@
 				<item id="5162" min="1" max="1" chance="0.5518" /> <!-- Recipe: Spiritshot (S) Compressed Package (100%) -->
 				<item id="9622" min="1" max="1" chance="0.6683" /> <!-- Dynasty Cudgel Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="17" />
 			<height normal="46.2" />
@@ -696,17 +696,17 @@
 			<attack physical="1012.32268463427" magical="691.285164307598" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="39" />
 				<run ground="150" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="13" /> <!--HP Increase (5x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -716,15 +716,15 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5334" level="4" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>5</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="3902" max="7872" chance="100" /> <!-- Adena -->
@@ -757,7 +757,7 @@
 				<item id="10114" min="1" max="1" chance="3.9508" /> <!-- Sealed Dynasty Sigil Piece -->
 				<item id="9542" min="1" max="1" chance="5.7296" /> <!-- Sealed Dynasty Circlet Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="7" grown="8" />
 			<height normal="30" grown="36" />
@@ -778,17 +778,17 @@
 			<attack physical="1012.32268463427" magical="691.285164307598" random="10" critical="1" accuracy="9" attackSpeed="253" type="DUALFIST" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="13" /> <!--HP Increase (5x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -800,15 +800,15 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4613" level="10" /> <!--NPC Clan Heal -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>5</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="3911" max="7889" chance="100" /> <!-- Adena -->
@@ -838,7 +838,7 @@
 				<item id="9530" min="1" max="1" chance="2.3255" /> <!-- Sealed Dynasty Breast Plate Piece -->
 				<item id="1894" min="1" max="1" chance="56.0271" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="42" />
@@ -862,17 +862,17 @@
 			<attack physical="1012.32268463427" magical="691.285164307598" random="10" critical="1" accuracy="9" attackSpeed="253" type="DUALFIST" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="160" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4046" level="10" /> <!--Sleep -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -886,15 +886,15 @@
 			<skill id="5374" level="4" /> <!--NPC(party) -Magic Range Long Range DD - Fire -->
 			<skill id="5375" level="4" /> <!--NPC(party) -Magic Range Close Range DD - Fire -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="2528" max="5099" chance="100" /> <!-- Adena -->
@@ -921,7 +921,7 @@
 				<item id="1894" min="1" max="1" chance="36.2152" /> <!-- Crafted Leather -->
 				<item id="9628" min="1" max="1" chance="8.0952" /> <!-- Leonard -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="42" />
@@ -942,17 +942,17 @@
 			<attack physical="1012.32268463427" magical="691.285164307598" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="170" />
 			</speed>
-			<hit_time>450</hit_time>
+			<hitTime>450</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="18" /> <!--Extremely Strong P. Atk. -->
@@ -964,15 +964,15 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5334" level="4" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="3469" max="6998" chance="100" /> <!-- Adena -->
@@ -1000,7 +1000,7 @@
 				<item id="1808" min="1" max="1" chance="0.6296" /> <!-- Recipe: Soulshot (S-Grade) -->
 				<item id="9993" min="1" max="1" chance="4.6678" /> <!-- Sealed Dynasty Ring Gemstone -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="15" grown="25" />
 			<height normal="45" grown="52" />
@@ -1020,7 +1020,7 @@
 			<attack physical="1012.32268463427" magical="691.285164307598" random="30" critical="4" accuracy="5" attackSpeed="253" type="DUAL" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -1029,7 +1029,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="14" /> <!--Strong P. Atk. -->
@@ -1041,15 +1041,15 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4579" level="9" /> <!--Bleed -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="2597" max="5238" chance="100" /> <!-- Adena -->
@@ -1071,7 +1071,7 @@
 				<item id="9531" min="1" max="1" chance="4.5677" /> <!-- Sealed Dynasty Gaiters Piece -->
 				<item id="9628" min="1" max="1" chance="8.3162" /> <!-- Leonard -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="15" />
 			<height normal="20" />
@@ -1096,7 +1096,7 @@
 			<attack physical="1012.32268463427" magical="691.285164307598" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -1105,7 +1105,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="12" /> <!--HP Increase (4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1119,15 +1119,15 @@
 			<skill id="5374" level="4" /> <!--NPC(party) -Magic Range Long Range DD - Fire -->
 			<skill id="5375" level="4" /> <!--NPC(party) -Magic Range Close Range DD - Fire -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="3242" max="6540" chance="100" /> <!-- Adena -->
@@ -1150,7 +1150,7 @@
 				<item id="9617" min="1" max="1" chance="0.736" /> <!-- Dynasty Blade Piece -->
 				<item id="6901" min="1" max="1" chance="1.3237" /> <!-- Recipe: Shining Arrow (100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="15" />
 			<height normal="26.5" />
@@ -1171,7 +1171,7 @@
 			<attack physical="1012.32268463427" magical="691.285164307598" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="345.61127" magical="252.90333" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -1180,7 +1180,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1192,15 +1192,15 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5335" level="4" /> <!--NPC(party) - Physical Single Long Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="2466" max="4974" chance="100" /> <!-- Adena -->
@@ -1222,7 +1222,7 @@
 				<item id="1808" min="1" max="1" chance="0.4475" /> <!-- Recipe: Soulshot (S-Grade) -->
 				<item id="9620" min="1" max="1" chance="0.5593" /> <!-- Dynasty Knife Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="13" />
 			<height normal="26" />
@@ -1242,17 +1242,17 @@
 			<attack physical="1012.32268463427" magical="691.285164307598" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="20" />
 				<run ground="90" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="13" /> <!--HP Increase (5x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1264,15 +1264,15 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5334" level="4" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>5</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>5</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="3902" max="7872" chance="100" /> <!-- Adena -->
@@ -1295,7 +1295,7 @@
 				<item id="9541" min="1" max="1" chance="4.1904" /> <!-- Sealed Dynasty Stocking Piece -->
 				<item id="9534" min="1" max="1" chance="7.6233" /> <!-- Sealed Dynasty Boot Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="13" />
 			<height normal="40" />
@@ -1315,17 +1315,17 @@
 			<attack physical="1012.32268463427" magical="691.285164307598" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="20" />
 				<run ground="90" />
 			</speed>
-			<hit_time>480</hit_time>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1337,14 +1337,14 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5334" level="4" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1000" max="2018" chance="100" /> <!-- Adena -->
@@ -1369,7 +1369,7 @@
 				<item id="9530" min="1" max="1" chance="0.5949" /> <!-- Sealed Dynasty Breast Plate Piece -->
 				<item id="3957" min="1" max="1" chance="0.1815" /> <!-- Recipe: Blessed Spiritshot S -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="13" />
 			<height normal="40" />
@@ -1389,17 +1389,17 @@
 			<attack physical="1012.32268463427" magical="691.285164307598" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="70" />
 			</speed>
-			<hit_time>370</hit_time>
+			<hitTime>370</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="16" /> <!--HP Increase (8x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1411,15 +1411,15 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5334" level="4" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>8</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>8</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="4153" max="8378" chance="100" /> <!-- Adena -->
@@ -1443,7 +1443,7 @@
 				<item id="9619" min="1" max="1" chance="0.9492" /> <!-- Dynasty Bow Piece -->
 				<item id="959" min="1" max="1" chance="0.0678" /> <!-- Scroll: Enchant Weapon (S-Grade) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" />
 			<height normal="22" />
@@ -1464,17 +1464,17 @@
 			<attack physical="1012.32268463427" magical="691.285164307598" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="40" />
 				<run ground="140" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="16" /> <!--HP Increase (8x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="18" /> <!--Extremely Strong P. Atk. -->
@@ -1486,15 +1486,15 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5334" level="4" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>8</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>8</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="4501" max="9079" chance="100" /> <!-- Adena -->
@@ -1518,7 +1518,7 @@
 				<item id="9628" min="1" max="1" chance="14.4129" /> <!-- Leonard -->
 				<item id="9535" min="1" max="1" chance="3.2876" /> <!-- Sealed Dynasty Leather Armor Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="21" grown="25" />
 			<height normal="40" grown="48" />
@@ -1538,7 +1538,7 @@
 			<attack physical="5571.87244121247" magical="3804.86656104545" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
 			<defence physical="559.639632" magical="614.28" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -1547,7 +1547,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1559,14 +1559,14 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="5334" level="4" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="7198" max="14500" chance="100" /> <!-- Adena -->
@@ -1593,7 +1593,7 @@
 				<item id="9624" min="1" max="1" chance="1.5808" /> <!-- Dynasty Bagh-Nakh Piece -->
 				<item id="3036" min="1" max="1" chance="1.3052" /> <!-- Recipe: Spiritshot S -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="40" />
@@ -1614,7 +1614,7 @@
 			<attack physical="5571.87244121247" magical="3804.86656104545" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="559.639632" magical="614.28" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -1623,7 +1623,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1635,14 +1635,14 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4613" level="10" /> <!--NPC Clan Heal -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6885" max="13870" chance="100" /> <!-- Adena -->
@@ -1675,7 +1675,7 @@
 				<item id="9628" min="1" max="1" chance="22.032" /> <!-- Leonard -->
 				<item id="9630" min="1" max="1" chance="14.7846" /> <!-- Orichalcum -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="32.5" />
@@ -1699,7 +1699,7 @@
 			<attack physical="5793.32235492338" magical="3956.08814418738" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="559.639632" magical="614.28" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -1708,7 +1708,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4046" level="10" /> <!--Sleep -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1722,14 +1722,14 @@
 			<skill id="5374" level="4" /> <!--NPC(party) -Magic Range Long Range DD - Fire -->
 			<skill id="5375" level="4" /> <!--NPC(party) -Magic Range Close Range DD - Fire -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="3307" max="6661" chance="100" /> <!-- Adena -->
@@ -1759,7 +1759,7 @@
 				<item id="3957" min="1" max="1" chance="0.5996" /> <!-- Recipe: Blessed Spiritshot S -->
 				<item id="9538" min="1" max="1" chance="6.4545" /> <!-- Sealed Dynasty Leather Glove Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="32.5" />
@@ -1779,7 +1779,7 @@
 			<attack physical="5571.87244121247" magical="3804.86656104545" random="30" critical="4" accuracy="5" attackSpeed="253" type="DUAL" range="40" distance="80" width="120" />
 			<defence physical="559.639632" magical="614.28" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -1788,7 +1788,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4411" level="11" /> <!--Average M. Atk. -->
@@ -1799,14 +1799,14 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5334" level="4" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6867" max="13832" chance="100" /> <!-- Adena -->
@@ -1832,7 +1832,7 @@
 				<item id="9538" min="1" max="1" chance="13.4027" /> <!-- Sealed Dynasty Leather Glove Piece -->
 				<item id="1894" min="1" max="3" chance="49.149" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="29" />
 			<height normal="40" />
@@ -1852,7 +1852,7 @@
 			<attack physical="5793.32235492338" magical="3956.08814418738" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="559.639632" magical="614.28" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -1861,7 +1861,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="13" /> <!--Slightly Strong P. Atk. -->
@@ -1873,14 +1873,14 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4579" level="9" /> <!--Bleed -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="3369" max="6786" chance="100" /> <!-- Adena -->
@@ -1909,7 +1909,7 @@
 				<item id="9530" min="1" max="1" chance="2.0017" /> <!-- Sealed Dynasty Breast Plate Piece -->
 				<item id="5162" min="1" max="1" chance="0.6109" /> <!-- Recipe: Spiritshot (S) Compressed Package (100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" />
 			<height normal="32.5" />
@@ -1934,7 +1934,7 @@
 			<attack physical="5571.87244121247" magical="3804.86656104545" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="559.639632" magical="614.28" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -1943,7 +1943,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1957,14 +1957,14 @@
 			<skill id="5374" level="4" /> <!--NPC(party) -Magic Range Long Range DD - Fire -->
 			<skill id="5375" level="4" /> <!--NPC(party) -Magic Range Close Range DD - Fire -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6904" max="13907" chance="100" /> <!-- Adena -->
@@ -1989,7 +1989,7 @@
 				<item id="5167" min="1" max="1" chance="1.2518" /> <!-- Recipe: Blessed Spiritshot (S) Compressed Package (100%) -->
 				<item id="9622" min="1" max="1" chance="1.5162" /> <!-- Dynasty Cudgel Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="32.5" />
@@ -2010,7 +2010,7 @@
 			<attack physical="5571.87244121247" magical="3804.86656104545" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="559.639632" magical="614.28" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -2019,7 +2019,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2031,14 +2031,14 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5335" level="4" /> <!--NPC(party) - Physical Single Long Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6755" max="13607" chance="100" /> <!-- Adena -->
@@ -2063,7 +2063,7 @@
 				<item id="1894" min="1" max="3" chance="48.3509" /> <!-- Crafted Leather -->
 				<item id="9533" min="1" max="1" chance="13.185" /> <!-- Sealed Dynasty Gauntlet Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="18" />
 			<height normal="27.5" />
@@ -2083,7 +2083,7 @@
 			<attack physical="5571.87244121247" magical="3804.86656104545" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="559.639632" magical="614.28" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -2092,7 +2092,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2104,14 +2104,14 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5334" level="4" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6867" max="13832" chance="100" /> <!-- Adena -->
@@ -2137,7 +2137,7 @@
 				<item id="9623" min="1" max="1" chance="1.508" /> <!-- Dynasty Mace Piece -->
 				<item id="5277" min="1" max="1" chance="1.2451" /> <!-- Recipe: Greater Spiritshot (S) Compressed Package(100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="41" />
@@ -2157,7 +2157,7 @@
 			<attack physical="5571.87244121247" magical="3804.86656104545" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="559.639632" magical="614.28" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -2166,7 +2166,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="8" /> <!--HP Increase (1/4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2178,15 +2178,15 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5334" level="4" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.25</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1313" max="2645" chance="100" /> <!-- Adena -->
@@ -2212,7 +2212,7 @@
 				<item id="960" min="1" max="1" chance="0.2143" /> <!-- Scroll: Enchant Armor (S-Grade) -->
 				<item id="9533" min="1" max="1" chance="2.5633" /> <!-- Sealed Dynasty Gauntlet Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="41" />
@@ -2232,7 +2232,7 @@
 			<attack physical="5571.87244121247" magical="3804.86656104545" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="559.639632" magical="614.28" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -2241,7 +2241,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2253,14 +2253,14 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="5334" level="4" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6867" max="13832" chance="100" /> <!-- Adena -->
@@ -2287,7 +2287,7 @@
 				<item id="9530" min="1" max="1" chance="4.0801" /> <!-- Sealed Dynasty Breast Plate Piece -->
 				<item id="1894" min="1" max="3" chance="49.149" /> <!-- Crafted Leather -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="18" />
 			<height normal="33" />
@@ -2307,7 +2307,7 @@
 			<attack physical="5571.87244121247" magical="3804.86656104545" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
 			<defence physical="559.639632" magical="614.28" />
 			<attribute>
-				<attack type="UNHOLY" value="200" />
+				<attack type="DARK" value="200" />
 				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="100" />
 			</attribute>
 			<speed>
@@ -2316,7 +2316,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4411" level="11" /> <!--Average M. Atk. -->
@@ -2327,15 +2327,15 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="5334" level="4" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="12665" max="25512" chance="100" /> <!-- Adena -->
@@ -2362,7 +2362,7 @@
 				<item id="10546" min="1" max="1" chance="2.8826" /> <!-- Dynasty Staff Fragment -->
 				<item id="9993" min="1" max="1" chance="17.0259" /> <!-- Sealed Dynasty Ring Gemstone -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="40" />
@@ -2382,7 +2382,7 @@
 			<attack physical="9081.1688312179" magical="6201.26109011382" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
 			<defence physical="572.587568" magical="628.492104" />
 			<attribute>
-				<attack type="UNHOLY" value="250" />
+				<attack type="DARK" value="250" />
 				<defence fire="220" water="220" wind="220" earth="220" holy="170" dark="250" default="220" />
 			</attribute>
 			<speed>
@@ -2391,7 +2391,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2404,14 +2404,14 @@
 			<skill id="4441" level="5" /> <!--Greater Resist Mental Derangement -->
 			<skill id="5334" level="5" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="12455" max="25456" chance="100" /> <!-- Adena -->
@@ -2439,7 +2439,7 @@
 				<item id="9630" min="1" max="1" chance="27.0125" /> <!-- Orichalcum -->
 				<item id="959" min="1" max="1" chance="0.2053" /> <!-- Scroll: Enchant Weapon (S-Grade) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="40" />
@@ -2460,7 +2460,7 @@
 			<attack physical="9081.1688312179" magical="6201.26109011382" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="572.587568" magical="628.492104" />
 			<attribute>
-				<attack type="UNHOLY" value="250" />
+				<attack type="DARK" value="250" />
 				<defence fire="220" water="220" wind="220" earth="220" holy="170" dark="250" default="220" />
 			</attribute>
 			<speed>
@@ -2469,7 +2469,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2481,14 +2481,14 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="4613" level="10" /> <!--NPC Clan Heal -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="11758" max="24031" chance="100" /> <!-- Adena -->
@@ -2517,7 +2517,7 @@
 				<item id="9630" min="1" max="1" chance="25.5001" /> <!-- Orichalcum -->
 				<item id="10402" min="1" max="1" chance="2.0705" /> <!-- Icarus Hammer Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="50" />
@@ -2541,7 +2541,7 @@
 			<attack physical="9081.1688312179" magical="6201.26109011382" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="572.587568" magical="628.492104" />
 			<attribute>
-				<attack type="UNHOLY" value="250" />
+				<attack type="DARK" value="250" />
 				<defence fire="220" water="220" wind="220" earth="220" holy="170" dark="250" default="220" />
 			</attribute>
 			<speed>
@@ -2550,7 +2550,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4046" level="10" /> <!--Sleep -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2564,14 +2564,14 @@
 			<skill id="5374" level="4" /> <!--NPC(party) -Magic Range Long Range DD - Fire -->
 			<skill id="5375" level="4" /> <!--NPC(party) -Magic Range Close Range DD - Fire -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="11790" max="24097" chance="100" /> <!-- Adena -->
@@ -2606,7 +2606,7 @@
 				<item id="10403" min="1" max="1" chance="2.0762" /> <!-- Icarus Hand Piece -->
 				<item id="10400" min="1" max="1" chance="2.0762" /> <!-- Icarus Heavy Arms Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="50" />
@@ -2626,7 +2626,7 @@
 			<attack physical="9081.1688312179" magical="6201.26109011382" random="30" critical="4" accuracy="5" attackSpeed="253" type="DUAL" range="40" distance="80" width="120" />
 			<defence physical="572.587568" magical="628.492104" />
 			<attribute>
-				<attack type="UNHOLY" value="250" />
+				<attack type="DARK" value="250" />
 				<defence fire="220" water="220" wind="220" earth="220" holy="170" dark="250" default="220" />
 			</attribute>
 			<speed>
@@ -2635,7 +2635,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="18" /> <!--Extremely Strong P. Atk. -->
@@ -2647,14 +2647,14 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5334" level="5" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="12423" max="25390" chance="100" /> <!-- Adena -->
@@ -2688,7 +2688,7 @@
 				<item id="9630" min="1" max="1" chance="26.9421" /> <!-- Orichalcum -->
 				<item id="9991" min="1" max="1" chance="12.0025" /> <!-- Sealed Dynasty Earring Gemstone -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="29" />
 			<height normal="40" />
@@ -2708,7 +2708,7 @@
 			<attack physical="9311.19147688918" magical="6358.33673851965" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="572.587568" magical="628.492104" />
 			<attribute>
-				<attack type="UNHOLY" value="250" />
+				<attack type="DARK" value="250" />
 				<defence fire="220" water="220" wind="220" earth="220" holy="170" dark="250" default="220" />
 			</attribute>
 			<speed>
@@ -2717,7 +2717,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="14" /> <!--Strong P. Atk. -->
@@ -2729,14 +2729,14 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="4579" level="9" /> <!--Bleed -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="5705" max="11661" chance="100" /> <!-- Adena -->
@@ -2766,7 +2766,7 @@
 				<item id="1808" min="1" max="1" chance="1.0449" /> <!-- Recipe: Soulshot (S-Grade) -->
 				<item id="9530" min="1" max="1" chance="3.424" /> <!-- Sealed Dynasty Breast Plate Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" />
 			<height normal="32.5" />
@@ -2791,7 +2791,7 @@
 			<attack physical="9081.1688312179" magical="6201.26109011382" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="572.587568" magical="628.492104" />
 			<attribute>
-				<attack type="UNHOLY" value="250" />
+				<attack type="DARK" value="250" />
 				<defence fire="220" water="220" wind="220" earth="220" holy="170" dark="250" default="220" />
 			</attribute>
 			<speed>
@@ -2800,7 +2800,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2814,14 +2814,14 @@
 			<skill id="5374" level="4" /> <!--NPC(party) -Magic Range Long Range DD - Fire -->
 			<skill id="5375" level="4" /> <!--NPC(party) -Magic Range Close Range DD - Fire -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="11790" max="24097" chance="100" /> <!-- Adena -->
@@ -2848,7 +2848,7 @@
 				<item id="10114" min="1" max="1" chance="12.0457" /> <!-- Sealed Dynasty Sigil Piece -->
 				<item id="960" min="1" max="1" chance="1.9434" /> <!-- Scroll: Enchant Armor (S-Grade) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="50" />
@@ -2869,7 +2869,7 @@
 			<attack physical="9311.19147688918" magical="6358.33673851965" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="572.587568" magical="628.492104" />
 			<attribute>
-				<attack type="UNHOLY" value="250" />
+				<attack type="DARK" value="250" />
 				<defence fire="220" water="220" wind="220" earth="220" holy="170" dark="250" default="220" />
 			</attribute>
 			<speed>
@@ -2878,7 +2878,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2890,14 +2890,14 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5335" level="4" /> <!--NPC(party) - Physical Single Long Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="5452" max="11142" chance="100" /> <!-- Adena -->
@@ -2922,7 +2922,7 @@
 				<item id="10399" min="1" max="1" chance="0.9631" /> <!-- Icarus Spirit Piece -->
 				<item id="9630" min="1" max="1" chance="11.8234" /> <!-- Orichalcum -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="34" />
@@ -2942,7 +2942,7 @@
 			<attack physical="9081.1688312179" magical="6201.26109011382" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="572.587568" magical="628.492104" />
 			<attribute>
-				<attack type="UNHOLY" value="250" />
+				<attack type="DARK" value="250" />
 				<defence fire="220" water="220" wind="220" earth="220" holy="170" dark="250" default="220" />
 			</attribute>
 			<speed>
@@ -2951,7 +2951,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2963,14 +2963,14 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5334" level="5" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="11726" max="23964" chance="100" /> <!-- Adena -->
@@ -2996,7 +2996,7 @@
 				<item id="10398" min="1" max="1" chance="2.0714" /> <!-- Icarus Disperser Piece -->
 				<item id="10404" min="1" max="1" chance="2.0648" /> <!-- Icarus Hall Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="41" />
@@ -3016,7 +3016,7 @@
 			<attack physical="9081.1688312179" magical="6201.26109011382" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="572.587568" magical="628.492104" />
 			<attribute>
-				<attack type="UNHOLY" value="250" />
+				<attack type="DARK" value="250" />
 				<defence fire="220" water="220" wind="220" earth="220" holy="170" dark="250" default="220" />
 			</attribute>
 			<speed>
@@ -3025,7 +3025,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="8" /> <!--HP Increase (1/4x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3037,15 +3037,15 @@
 			<skill id="4416" level="1" /> <!--Undead -->
 			<skill id="5334" level="5" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.25</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="2243" max="4585" chance="100" /> <!-- Adena -->
@@ -3070,7 +3070,7 @@
 				<item id="5272" min="1" max="1" chance="0.4109" /> <!-- Recipe: Greater Soulshot (S) Compressed Package(100%) -->
 				<item id="9545" min="1" max="1" chance="3.9622" /> <!-- Sealed Dynasty Shield Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="41" />
@@ -3090,7 +3090,7 @@
 			<attack physical="9081.1688312179" magical="6201.26109011382" random="30" critical="4" accuracy="5" attackSpeed="253" type="DUAL" range="40" distance="80" width="120" />
 			<defence physical="572.587568" magical="628.492104" />
 			<attribute>
-				<attack type="UNHOLY" value="250" />
+				<attack type="DARK" value="250" />
 				<defence fire="220" water="220" wind="220" earth="220" holy="170" dark="250" default="220" />
 			</attribute>
 			<speed>
@@ -3099,7 +3099,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3111,15 +3111,15 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="5334" level="5" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="21208" max="43344" chance="100" /> <!-- Adena -->
@@ -3145,7 +3145,7 @@
 				<item id="10398" min="1" max="1" chance="3.7466" /> <!-- Icarus Disperser Piece -->
 				<item id="9619" min="1" max="1" chance="4.8916" /> <!-- Dynasty Bow Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="30" />
 			<height normal="45" />
@@ -3165,7 +3165,7 @@
 			<attack physical="9081.1688312179" magical="6201.26109011382" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="572.587568" magical="628.492104" />
 			<attribute>
-				<attack type="UNHOLY" value="250" />
+				<attack type="DARK" value="250" />
 				<defence fire="220" water="220" wind="220" earth="220" holy="170" dark="250" default="220" />
 			</attribute>
 			<speed>
@@ -3174,7 +3174,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="18" /> <!--Extremely Strong P. Atk. -->
@@ -3186,15 +3186,15 @@
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="5334" level="5" /> <!--NPC(party) - Physical Single Close Range Attack -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>FANTASY</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="22332" max="45642" chance="100" /> <!-- Adena -->
@@ -3223,7 +3223,7 @@
 				<item id="9620" min="1" max="1" chance="5.1123" /> <!-- Dynasty Knife Piece -->
 				<item id="5282" min="1" max="1" chance="4.0899" /> <!-- Recipe: Greater Blessed Spiritshot (S) Compressed Package(100%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="15" />
 			<height normal="35" />
@@ -3247,10 +3247,10 @@
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
-			<hit_time>610</hit_time>
+			<hitTime>610</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="13" /> <!--Slightly Strong P. Atk. -->
@@ -3261,14 +3261,14 @@
 			<skill id="4415" level="7" /> <!--Daggers -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="5465" level="1" /> <!--Earth Attacks -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>ROBBER</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="682" max="1375" chance="100" /> <!-- Adena -->
@@ -3327,7 +3327,7 @@
 				<item id="1808" min="1" max="1" chance="0.1237" /> <!-- Recipe: Soulshot (S-Grade) -->
 				<item id="9630" min="1" max="1" chance="1.465" /> <!-- Orichalcum -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" />
 			<height normal="27.5" />
@@ -3362,10 +3362,10 @@
 				<walk ground="36" />
 				<run ground="160" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4084" level="9" /> <!--Resist Physical Attack -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
@@ -3381,11 +3381,11 @@
 			<skill id="4417" level="4" /> <!--Beasts -->
 			<skill id="4439" level="2" /> <!--Greater Resist Hold -->
 			<skill id="4445" level="1" /> <!--Greater Resist Spear Weapons -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.25</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="500" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="395" max="797" chance="100" /> <!-- Adena -->
@@ -3441,7 +3441,7 @@
 				<item id="9531" min="1" max="1" chance="0.6954" /> <!-- Sealed Dynasty Gaiters Piece -->
 				<item id="960" min="1" max="1" chance="0.0646" /> <!-- Scroll: Enchant Armor (S-Grade) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="15" />
 			<height normal="37.2" />
@@ -3476,10 +3476,10 @@
 				<walk ground="24" />
 				<run ground="160" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4084" level="9" /> <!--Resist Physical Attack -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
@@ -3495,11 +3495,11 @@
 			<skill id="4417" level="4" /> <!--Beasts -->
 			<skill id="4439" level="2" /> <!--Greater Resist Hold -->
 			<skill id="4445" level="1" /> <!--Greater Resist Spear Weapons -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.25</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="500" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="395" max="797" chance="100" /> <!-- Adena -->
@@ -3549,7 +3549,7 @@
 				<item id="959" min="1" max="1" chance="0.0065" /> <!-- Scroll: Enchant Weapon (S-Grade) -->
 				<item id="1875" min="1" max="1" chance="10.7617" /> <!-- Stone of Purity -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" />
 			<height normal="14.3" />
@@ -3577,10 +3577,10 @@
 				<walk ground="36" />
 				<run ground="200" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4084" level="9" /> <!--Resist Physical Attack -->
 			<skill id="4285" level="5" /> <!--Resist Sleep Attacks -->
@@ -3597,11 +3597,11 @@
 			<skill id="4439" level="2" /> <!--Greater Resist Hold -->
 			<skill id="4445" level="1" /> <!--Greater Resist Spear Weapons -->
 			<skill id="5084" level="1" /> <!--NPC Blinding Blow -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.25</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="500" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="395" max="797" chance="100" /> <!-- Adena -->
@@ -3657,7 +3657,7 @@
 				<item id="9630" min="1" max="1" chance="0.8496" /> <!-- Orichalcum -->
 				<item id="960" min="1" max="1" chance="0.0646" /> <!-- Scroll: Enchant Armor (S-Grade) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="15" />
 			<height normal="37.2" />
@@ -3685,10 +3685,10 @@
 				<walk ground="24" />
 				<run ground="190" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="10" /> <!--NPC Strike -->
 			<skill id="4071" level="3" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4084" level="9" /> <!--Resist Physical Attack -->
@@ -3705,11 +3705,11 @@
 			<skill id="4416" level="24" /> <!--Unknown Creature -->
 			<skill id="4417" level="4" /> <!--Beasts -->
 			<skill id="4445" level="1" /> <!--Greater Resist Spear Weapons -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0.25</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="500" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="395" max="797" chance="100" /> <!-- Adena -->
@@ -3759,7 +3759,7 @@
 				<item id="959" min="1" max="1" chance="0.0065" /> <!-- Scroll: Enchant Weapon (S-Grade) -->
 				<item id="9630" min="1" max="1" chance="0.8496" /> <!-- Orichalcum -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="14" />
 			<height normal="14.3" />
@@ -3789,7 +3789,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3809,11 +3809,11 @@
 			<skill id="6382" level="1" /> <!--Bistakon Rolling Claw -->
 			<skill id="6383" level="1" /> <!--Bistakon Deadly Roar -->
 			<skill id="6384" level="1" /> <!--Bistakon Deadly Blow -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="38976" max="80332" chance="100" /> <!-- Adena -->
@@ -3845,7 +3845,7 @@
 				<item id="15795" min="1" max="1" chance="1.7307" /> <!-- Recipe - Sealed Vesper Breastplate (60%) -->
 				<item id="15798" min="1" max="1" chance="2.769" /> <!-- Recipe - Sealed Vesper Gaiter (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="23" />
 			<height normal="30.5" />
@@ -3875,7 +3875,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3895,11 +3895,11 @@
 			<skill id="6381" level="1" /> <!--Bistakon Soul Beam -->
 			<skill id="6384" level="2" /> <!--Bistakon Deadly Blow -->
 			<skill id="6385" level="1" /> <!--Bistakon Critical Claw -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="38976" max="80332" chance="100" /> <!-- Adena -->
@@ -3929,7 +3929,7 @@
 				<item id="15796" min="1" max="1" chance="2.7692" /> <!-- Recipe - Sealed Vesper Leather Breastplate (60%) -->
 				<item id="15799" min="1" max="1" chance="4.4305" /> <!-- Recipe - Sealed Vesper Leather Legging (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="30" />
@@ -3959,7 +3959,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3979,11 +3979,11 @@
 			<skill id="6381" level="1" /> <!--Bistakon Soul Beam -->
 			<skill id="6386" level="1" /> <!--Bistakon Earth Rise -->
 			<skill id="6387" level="1" /> <!--Bistakon Earthquake -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="38982" max="80346" chance="100" /> <!-- Adena -->
@@ -4015,7 +4015,7 @@
 				<item id="15797" min="1" max="1" chance="2.7697" /> <!-- Recipe - Sealed Vesper Tunic (60%) -->
 				<item id="15800" min="1" max="1" chance="4.4312" /> <!-- Recipe - Sealed Vesper Stockings (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="32" />
 			<height normal="31" />
@@ -4045,7 +4045,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4066,11 +4066,11 @@
 			<skill id="6381" level="1" /> <!--Bistakon Soul Beam -->
 			<skill id="6385" level="1" /> <!--Bistakon Critical Claw -->
 			<skill id="6388" level="1" /> <!--Bistakon Jump Blow -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="39200" max="80795" chance="100" /> <!-- Adena -->
@@ -4117,7 +4117,7 @@
 				<item id="15805" min="1" max="1" chance="3.2135" /> <!-- Recipe - Sealed Vesper Leather Boots (60%) -->
 				<item id="15806" min="1" max="1" chance="3.2135" /> <!-- Recipe - Sealed Vesper Shoes (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="25" />
 			<height normal="27" />
@@ -4147,7 +4147,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4168,15 +4168,15 @@
 			<skill id="6382" level="1" /> <!--Bistakon Rolling Claw -->
 			<skill id="6383" level="1" /> <!--Bistakon Deadly Roar -->
 			<skill id="6384" level="1" /> <!--Bistakon Deadly Blow -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>BESTACON_ELITE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="82667" max="170383" chance="100" /> <!-- Adena -->
@@ -4212,7 +4212,7 @@
 				<item id="15816" min="1" max="1" chance="1.0243" /> <!-- Recipe - Sealed Vesper Slasher (60%) -->
 				<item id="15817" min="1" max="1" chance="1.0243" /> <!-- Recipe - Vesper Buster (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="23" />
 			<height normal="40.5" />
@@ -4242,7 +4242,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4263,15 +4263,15 @@
 			<skill id="6381" level="1" /> <!--Bistakon Soul Beam -->
 			<skill id="6384" level="2" /> <!--Bistakon Deadly Blow -->
 			<skill id="6385" level="1" /> <!--Bistakon Critical Claw -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>BESTACON_ELITE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="82667" max="170383" chance="100" /> <!-- Adena -->
@@ -4311,7 +4311,7 @@
 				<item id="15823" min="1" max="1" chance="0.8962" /> <!-- Recipe - Vesper Caster (60%) -->
 				<item id="15824" min="1" max="1" chance="0.8962" /> <!-- Recipe - Vesper Singer (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="35" />
 			<height normal="41.5" />
@@ -4341,7 +4341,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4362,15 +4362,15 @@
 			<skill id="6381" level="1" /> <!--Bistakon Soul Beam -->
 			<skill id="6386" level="1" /> <!--Bistakon Earth Rise -->
 			<skill id="6387" level="1" /> <!--Bistakon Earthquake -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>BESTACON_ELITE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="82570" max="170185" chance="100" /> <!-- Adena -->
@@ -4397,7 +4397,7 @@
 				<item id="9628" min="1" max="5" chance="67.1007" /> <!-- Leonard -->
 				<item id="15819" min="1" max="1" chance="1.7904" /> <!-- Recipe - Vesper Fighter (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="40" />
 			<height normal="47" />
@@ -4427,7 +4427,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4448,15 +4448,15 @@
 			<skill id="6381" level="1" /> <!--Bistakon Soul Beam -->
 			<skill id="6385" level="1" /> <!--Bistakon Critical Claw -->
 			<skill id="6388" level="1" /> <!--Bistakon Jump Blow -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>BESTACON_ELITE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="82667" max="170383" chance="100" /> <!-- Adena -->
@@ -4481,7 +4481,7 @@
 				<item id="959" min="1" max="1" chance="1.3705" /> <!-- Scroll: Enchant Weapon (S-Grade) -->
 				<item id="15825" min="1" max="1" chance="2.3899" /> <!-- Recipe - Vesper Thrower (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="30" />
 			<height normal="42" />
@@ -4512,7 +4512,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4533,11 +4533,11 @@
 			<skill id="6410" level="1" /> <!--Reptilikon Rush -->
 			<skill id="6411" level="1" /> <!--Reptilikon Summon -->
 			<skill id="6412" level="1" /> <!--Reptilikon Critical Blow -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="38976" max="80332" chance="100" /> <!-- Adena -->
@@ -4583,7 +4583,7 @@
 				<item id="15805" min="1" max="1" chance="3.4614" /> <!-- Recipe - Sealed Vesper Leather Boots (60%) -->
 				<item id="15806" min="1" max="1" chance="3.4614" /> <!-- Recipe - Sealed Vesper Shoes (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="28.5" />
@@ -4613,7 +4613,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4633,11 +4633,11 @@
 			<skill id="6413" level="1" /> <!--Reptilikon Missile -->
 			<skill id="6414" level="1" /> <!--Reptilikon Charge -->
 			<skill id="6415" level="1" /> <!--Reptilikon Scratch -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="38976" max="80332" chance="100" /> <!-- Adena -->
@@ -4678,7 +4678,7 @@
 				<item id="15808" min="1" max="1" chance="3.956" /> <!-- Recipe - Sealed Vesper Shield (60%) -->
 				<item id="15807" min="1" max="1" chance="3.956" /> <!-- Recipe - Sealed Vesper Sigil (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="26" />
 			<height normal="36" />
@@ -4708,7 +4708,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4728,11 +4728,11 @@
 			<skill id="6416" level="1" /> <!--Reptilikon Poison Breath -->
 			<skill id="6417" level="1" /> <!--Reptilikon Poison Shot -->
 			<skill id="6418" level="1" /> <!--Reptilikon Fury Poison Bomb -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="38982" max="80346" chance="100" /> <!-- Adena -->
@@ -4771,7 +4771,7 @@
 				<item id="15811" min="1" max="1" chance="4.5577" /> <!-- Recipe - Sealed Vesper Necklace (70%) -->
 				<item id="15809" min="1" max="1" chance="9.1155" /> <!-- Recipe - Sealed Vesper Ring (70%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="30" />
 			<height normal="35" />
@@ -4802,7 +4802,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4824,15 +4824,15 @@
 			<skill id="6410" level="1" /> <!--Reptilikon Rush -->
 			<skill id="6411" level="1" /> <!--Reptilikon Summon -->
 			<skill id="6412" level="1" /> <!--Reptilikon Critical Blow -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>RAPTILICON_ELITE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="82667" max="170383" chance="100" /> <!-- Adena -->
@@ -4858,7 +4858,7 @@
 				<item id="9630" min="1" max="3" chance="90.1613" /> <!-- Orichalcum -->
 				<item id="15818" min="1" max="1" chance="2.3899" /> <!-- Recipe - Vesper Shaper (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="38" />
 			<height normal="42" />
@@ -4888,7 +4888,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4909,15 +4909,15 @@
 			<skill id="6413" level="1" /> <!--Reptilikon Missile -->
 			<skill id="6414" level="1" /> <!--Reptilikon Charge -->
 			<skill id="6415" level="1" /> <!--Reptilikon Scratch -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>RAPTILICON_ELITE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="82570" max="170185" chance="100" /> <!-- Adena -->
@@ -4943,7 +4943,7 @@
 				<item id="9630" min="1" max="3" chance="90.0563" /> <!-- Orichalcum -->
 				<item id="15820" min="1" max="1" chance="2.3872" /> <!-- Recipe - Vesper Stormer (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="26" />
 			<height normal="48" />
@@ -4973,7 +4973,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4994,15 +4994,15 @@
 			<skill id="6416" level="1" /> <!--Reptilikon Poison Breath -->
 			<skill id="6417" level="1" /> <!--Reptilikon Poison Shot -->
 			<skill id="6418" level="1" /> <!--Reptilikon Fury Poison Bomb -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>RAPTILICON_ELITE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="82667" max="170383" chance="100" /> <!-- Adena -->
@@ -5028,7 +5028,7 @@
 				<item id="1894" min="1" max="25" chance="92.4732" /> <!-- Crafted Leather -->
 				<item id="15819" min="1" max="1" chance="2.3899" /> <!-- Recipe - Vesper Fighter (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="30" />
 			<height normal="47" />
@@ -5059,7 +5059,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -5080,11 +5080,11 @@
 			<skill id="6393" level="1" /> <!--Cokrakon Sonic Beam -->
 			<skill id="6394" level="1" /> <!--Cokrakon Sonic Bomb -->
 			<skill id="6395" level="1" /> <!--Cokrakon Dreadful Clow -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="38976" max="80332" chance="100" /> <!-- Adena -->
@@ -5130,7 +5130,7 @@
 				<item id="15805" min="1" max="1" chance="3.4614" /> <!-- Recipe - Sealed Vesper Leather Boots (60%) -->
 				<item id="15806" min="1" max="1" chance="3.4614" /> <!-- Recipe - Sealed Vesper Shoes (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="22" />
 			<height normal="45.5" />
@@ -5160,7 +5160,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -5180,11 +5180,11 @@
 			<skill id="6396" level="1" /> <!--Cokrakon Panic -->
 			<skill id="6397" level="1" /> <!--Cokrakon Staggering Blow -->
 			<skill id="6398" level="1" /> <!--Cokrakon Sonic Shout -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="38976" max="80332" chance="100" /> <!-- Adena -->
@@ -5227,7 +5227,7 @@
 				<item id="15808" min="1" max="1" chance="3.956" /> <!-- Recipe - Sealed Vesper Shield (60%) -->
 				<item id="15807" min="1" max="1" chance="3.956" /> <!-- Recipe - Sealed Vesper Sigil (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="33" />
 			<height normal="33" />
@@ -5257,7 +5257,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -5277,11 +5277,11 @@
 			<skill id="6399" level="1" /> <!--Cokrakon Dreadful Piercing -->
 			<skill id="6400" level="1" /> <!--Cokrakon Dwindling Velocity -->
 			<skill id="6401" level="1" /> <!--Cokrakon Wheeling Clow -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="38982" max="80346" chance="100" /> <!-- Adena -->
@@ -5319,7 +5319,7 @@
 				<item id="15811" min="1" max="1" chance="4.5577" /> <!-- Recipe - Sealed Vesper Necklace (70%) -->
 				<item id="15809" min="1" max="1" chance="9.1155" /> <!-- Recipe - Sealed Vesper Ring (70%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="32" />
 			<height normal="37.5" />
@@ -5350,7 +5350,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -5372,15 +5372,15 @@
 			<skill id="6393" level="1" /> <!--Cokrakon Sonic Beam -->
 			<skill id="6394" level="1" /> <!--Cokrakon Sonic Bomb -->
 			<skill id="6395" level="1" /> <!--Cokrakon Dreadful Clow -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>COCRACON_ELITE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="82667" max="170383" chance="100" /> <!-- Adena -->
@@ -5416,7 +5416,7 @@
 				<item id="15816" min="1" max="1" chance="1.0243" /> <!-- Recipe - Sealed Vesper Slasher (60%) -->
 				<item id="15817" min="1" max="1" chance="1.0243" /> <!-- Recipe - Vesper Buster (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="32" />
 			<height normal="69.5" />
@@ -5446,7 +5446,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -5467,15 +5467,15 @@
 			<skill id="6396" level="1" /> <!--Cokrakon Panic -->
 			<skill id="6397" level="1" /> <!--Cokrakon Staggering Blow -->
 			<skill id="6398" level="1" /> <!--Cokrakon Sonic Shout -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>COCRACON_ELITE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="82570" max="170185" chance="100" /> <!-- Adena -->
@@ -5516,7 +5516,7 @@
 				<item id="15823" min="1" max="1" chance="0.7957" /> <!-- Recipe - Vesper Caster (60%) -->
 				<item id="15824" min="1" max="1" chance="0.7957" /> <!-- Recipe - Vesper Singer (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="48" />
 			<height normal="46" />
@@ -5546,7 +5546,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4388" level="4" /> <!--Resist Paralysis Attacks -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -5567,15 +5567,15 @@
 			<skill id="6399" level="1" /> <!--Cokrakon Dreadful Piercing -->
 			<skill id="6400" level="1" /> <!--Cokrakon Dwindling Velocity -->
 			<skill id="6401" level="1" /> <!--Cokrakon Wheeling Clow -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>COCRACON_ELITE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="82667" max="170383" chance="100" /> <!-- Adena -->
@@ -5601,7 +5601,7 @@
 				<item id="9628" min="1" max="5" chance="67.179" /> <!-- Leonard -->
 				<item id="15825" min="1" max="1" chance="1.7925" /> <!-- Recipe - Vesper Thrower (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="35" />
 			<height normal="49.5" />
@@ -5625,7 +5625,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="7" /> <!--Weak P. Atk. -->
@@ -5635,10 +5635,10 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="12" /> <!--Bugs -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="203" max="419" chance="100" /> <!-- Adena -->
@@ -5650,7 +5650,7 @@
 					<item id="4044" min="1" max="1" chance="30.1795" /> <!-- Thons -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="45" />
 			<height normal="8" />
@@ -5678,7 +5678,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5690,11 +5690,11 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="6290" level="1" /> <!--Power Strike -->
 			<skill id="6292" level="1" /> <!--Rush -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1395" max="2875" chance="100" /> <!-- Adena -->
@@ -5706,7 +5706,7 @@
 					<item id="4043" min="1" max="1" chance="28.3402" /> <!-- Asofe -->
 				</group>
 			</death>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="15" />
 			<height normal="31" />
@@ -5734,10 +5734,10 @@
 				<walk ground="40" />
 				<run ground="140" />
 			</speed>
-			<hit_time>560</hit_time>
+			<hitTime>560</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4273" level="4" /> <!--Resist Daggers/Rapier Weapon -->
 			<skill id="4276" level="4" /> <!--Weak Point against Bow/Crossbow Weapons -->
@@ -5756,10 +5756,10 @@
 			<skill id="5465" level="1" /> <!--Earth Attacks -->
 			<skill id="5601" level="9" /> <!--Short-Range Physical Attack Resistance -->
 			<skill id="6419" level="1" /> <!--Light of Scout -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="666" max="1341" chance="100" /> <!-- Adena -->
@@ -5791,7 +5791,7 @@
 				<item id="10379" min="1" max="1" chance="0.0088" /> <!-- Recipe - Icarus Hand (60%) -->
 				<item id="10403" min="1" max="1" chance="0.0581" /> <!-- Icarus Hand Piece -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="13" grown="22" />
 			<height normal="35" grown="42.2" />
@@ -5818,10 +5818,10 @@
 				<walk ground="53" />
 				<run ground="140" />
 			</speed>
-			<hit_time>460</hit_time>
+			<hitTime>460</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4273" level="4" /> <!--Resist Daggers/Rapier Weapon -->
 			<skill id="4276" level="4" /> <!--Weak Point against Bow/Crossbow Weapons -->
@@ -5840,10 +5840,10 @@
 			<skill id="5465" level="1" /> <!--Earth Attacks -->
 			<skill id="5601" level="9" /> <!--Short-Range Physical Attack Resistance -->
 			<skill id="6420" level="1" /> <!--Lizard Strike -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="885" max="1786" chance="100" /> <!-- Adena -->
@@ -5876,7 +5876,7 @@
 				<item id="10375" min="1" max="1" chance="0.01" /> <!-- Recipe - Icarus Spirit (60%) -->
 				<item id="10376" min="1" max="1" chance="0.01" /> <!-- Recipe - Icarus Heavy Arms (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" grown="24" />
 			<height normal="40" grown="48" />
@@ -5904,7 +5904,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4273" level="4" /> <!--Resist Daggers/Rapier Weapon -->
 			<skill id="4276" level="4" /> <!--Weak Point against Bow/Crossbow Weapons -->
@@ -5923,11 +5923,11 @@
 			<skill id="5465" level="1" /> <!--Earth Attacks -->
 			<skill id="5601" level="9" /> <!--Short-Range Physical Attack Resistance -->
 			<skill id="6421" level="1" /> <!--Rage of Soldier -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1445" max="2953" chance="100" /> <!-- Adena -->
@@ -5973,7 +5973,7 @@
 				<item id="15791" min="1" max="1" chance="0.2021" /> <!-- Recipe - Sealed Moirai Shield (60%) -->
 				<item id="15790" min="1" max="1" chance="0.2021" /> <!-- Recipe - Sealed Moirai Sigil (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="40.25" />
@@ -6001,7 +6001,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4273" level="4" /> <!--Resist Daggers/Rapier Weapon -->
 			<skill id="4276" level="4" /> <!--Weak Point against Bow/Crossbow Weapons -->
@@ -6020,11 +6020,11 @@
 			<skill id="5465" level="1" /> <!--Earth Attacks -->
 			<skill id="5601" level="9" /> <!--Short-Range Physical Attack Resistance -->
 			<skill id="6422" level="1" /> <!--Resistance Explosion -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1488" max="3042" chance="100" /> <!-- Adena -->
@@ -6060,7 +6060,7 @@
 				<item id="10380" min="1" max="1" chance="0.0237" /> <!-- Recipe - Icarus Hall (60%) -->
 				<item id="10378" min="1" max="1" chance="0.0237" /> <!-- Recipe - Icarus Hammer (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="28" />
 			<height normal="37.5" />
@@ -6089,7 +6089,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4273" level="4" /> <!--Resist Daggers/Rapier Weapon -->
 			<skill id="4276" level="4" /> <!--Weak Point against Bow/Crossbow Weapons -->
@@ -6109,10 +6109,10 @@
 			<skill id="5601" level="9" /> <!--Short-Range Physical Attack Resistance -->
 			<skill id="6423" level="1" /> <!--Shock -->
 			<skill id="6424" level="1" /> <!--Double Shot -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="ARCHER" aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="945" max="1907" chance="100" /> <!-- Adena -->
@@ -6153,7 +6153,7 @@
 				<item id="15813" min="1" max="1" chance="0.1408" /> <!-- Recipe - Sealed Moirai Earring (70%) -->
 				<item id="15814" min="1" max="1" chance="0.1056" /> <!-- Recipe - Sealed Moirai Necklace (70%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="20" />
 			<height normal="40.25" />
@@ -6181,10 +6181,10 @@
 				<walk ground="43" />
 				<run ground="120" />
 			</speed>
-			<hit_time>630</hit_time>
+			<hitTime>630</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4273" level="4" /> <!--Resist Daggers/Rapier Weapon -->
 			<skill id="4276" level="4" /> <!--Weak Point against Bow/Crossbow Weapons -->
@@ -6203,10 +6203,10 @@
 			<skill id="5465" level="1" /> <!--Earth Attacks -->
 			<skill id="5601" level="9" /> <!--Short-Range Physical Attack Resistance -->
 			<skill id="6676" level="1" /> <!--Magician's Perversity -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="300" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="939" max="1895" chance="100" /> <!-- Adena -->
@@ -6256,7 +6256,7 @@
 				<item id="15788" min="1" max="1" chance="0.1139" /> <!-- Recipe - Sealed Moirai Leather Boots (60%) -->
 				<item id="15789" min="1" max="1" chance="0.1139" /> <!-- Recipe - Sealed Moirai Shoes (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="13" />
 			<height normal="35" />
@@ -6285,7 +6285,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4273" level="4" /> <!--Resist Daggers/Rapier Weapon -->
 			<skill id="4276" level="4" /> <!--Weak Point against Bow/Crossbow Weapons -->
@@ -6304,11 +6304,11 @@
 			<skill id="5465" level="1" /> <!--Earth Attacks -->
 			<skill id="5601" level="9" /> <!--Short-Range Physical Attack Resistance -->
 			<skill id="6679" level="1" /> <!--Summoner's Strike -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1628" max="3326" chance="100" /> <!-- Adena -->
@@ -6347,7 +6347,7 @@
 				<item id="15780" min="1" max="1" chance="0.1138" /> <!-- Recipe - Sealed Moirai Tunic (60%) -->
 				<item id="15783" min="1" max="1" chance="0.1821" /> <!-- Recipe - Sealed Moirai Stockings (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="29" />
 			<height normal="44" />
@@ -6378,7 +6378,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
@@ -6396,11 +6396,11 @@
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6335" level="1" /> <!--Electric Rain 1 -->
 			<skill id="6337" level="1" /> <!--Red Slash 1 -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1029" max="2103" chance="100" /> <!-- Adena -->
@@ -6462,7 +6462,7 @@
 				<item id="15778" min="1" max="1" chance="0.0756" /> <!-- Recipe - Sealed Moirai Breastplate (60%) -->
 				<item id="15781" min="1" max="1" chance="0.1209" /> <!-- Recipe - Sealed Moirai Gaiter (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="27" />
 			<height normal="31.5" />
@@ -6491,7 +6491,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="11" /> <!--HP Increase (3x) -->
@@ -6509,11 +6509,11 @@
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6336" level="1" /> <!--Electric Rain 2 -->
 			<skill id="6338" level="1" /> <!--Red Slash 2 -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1542" max="3152" chance="100" /> <!-- Adena -->
@@ -6576,7 +6576,7 @@
 				<item id="15779" min="1" max="1" chance="0.151" /> <!-- Recipe - Sealed Moirai Leather Breastplate (60%) -->
 				<item id="15782" min="1" max="1" chance="0.2415" /> <!-- Recipe - Sealed Moirai Leather Legging (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="29" />
 			<height normal="33.5" />
@@ -6607,7 +6607,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
@@ -6625,11 +6625,11 @@
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6339" level="1" /> <!--Sacred Hammer Attack -->
 			<skill id="6340" level="1" /> <!--Shock -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1029" max="2103" chance="100" /> <!-- Adena -->
@@ -6691,7 +6691,7 @@
 				<item id="15780" min="1" max="1" chance="0.1007" /> <!-- Recipe - Sealed Moirai Tunic (60%) -->
 				<item id="15783" min="1" max="1" chance="0.1612" /> <!-- Recipe - Sealed Moirai Stockings (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="29" />
 			<height normal="37" />
@@ -6719,7 +6719,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
@@ -6736,11 +6736,11 @@
 			<skill id="5620" level="9" /> <!--Short-Range Physical Attack Weakness -->
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6334" level="1" /> <!--Shock -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1029" max="2103" chance="100" /> <!-- Adena -->
@@ -6806,7 +6806,7 @@
 				<item id="15813" min="1" max="1" chance="0.2579" /> <!-- Recipe - Sealed Moirai Earring (70%) -->
 				<item id="15814" min="1" max="1" chance="0.1934" /> <!-- Recipe - Sealed Moirai Necklace (70%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="27" />
 			<height normal="31" />
@@ -6835,7 +6835,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
@@ -6853,11 +6853,11 @@
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6339" level="1" /> <!--Sacred Hammer Attack -->
 			<skill id="6340" level="1" /> <!--Shock -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1008" max="2061" chance="100" /> <!-- Adena -->
@@ -6938,7 +6938,7 @@
 				<item id="15788" min="1" max="1" chance="0.1234" /> <!-- Recipe - Sealed Moirai Leather Boots (60%) -->
 				<item id="15789" min="1" max="1" chance="0.1234" /> <!-- Recipe - Sealed Moirai Shoes (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="29" />
 			<height normal="37" />
@@ -6969,7 +6969,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -6987,10 +6987,10 @@
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6335" level="1" /> <!--Electric Rain 1 -->
 			<skill id="6337" level="1" /> <!--Red Slash 1 -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="400" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="346" max="699" chance="100" /> <!-- Adena -->
@@ -7040,7 +7040,7 @@
 				<item id="15791" min="1" max="1" chance="0.0437" /> <!-- Recipe - Sealed Moirai Shield (60%) -->
 				<item id="15790" min="1" max="1" chance="0.0437" /> <!-- Recipe - Sealed Moirai Sigil (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="27" />
 			<height normal="31.5" />
@@ -7071,7 +7071,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -7089,10 +7089,10 @@
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6336" level="1" /> <!--Electric Rain 2 -->
 			<skill id="6338" level="1" /> <!--Red Slash 2 -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="457" max="933" chance="100" /> <!-- Adena -->
@@ -7130,7 +7130,7 @@
 				<item id="10375" min="1" max="1" chance="0.0052" /> <!-- Recipe - Icarus Spirit (60%) -->
 				<item id="10376" min="1" max="1" chance="0.0052" /> <!-- Recipe - Icarus Heavy Arms (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="29" />
 			<height normal="33.5" />
@@ -7161,7 +7161,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -7179,10 +7179,10 @@
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6339" level="1" /> <!--Sacred Hammer Attack -->
 			<skill id="6340" level="1" /> <!--Shock -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="400" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="346" max="699" chance="100" /> <!-- Adena -->
@@ -7215,7 +7215,7 @@
 				<item id="10380" min="1" max="1" chance="0.0055" /> <!-- Recipe - Icarus Hall (60%) -->
 				<item id="10378" min="1" max="1" chance="0.0055" /> <!-- Recipe - Icarus Hammer (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="29" />
 			<height normal="37" />
@@ -7246,7 +7246,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -7264,10 +7264,10 @@
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6339" level="1" /> <!--Sacred Hammer Attack -->
 			<skill id="6340" level="1" /> <!--Shock -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="333" max="680" chance="100" /> <!-- Adena -->
@@ -7298,7 +7298,7 @@
 				<item id="1894" min="1" max="1" chance="3.6096" /> <!-- Crafted Leather -->
 				<item id="10379" min="1" max="1" chance="0.0066" /> <!-- Recipe - Icarus Hand (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="29" />
 			<height normal="37" />
@@ -7328,7 +7328,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -7345,10 +7345,10 @@
 			<skill id="5620" level="9" /> <!--Short-Range Physical Attack Weakness -->
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6333" level="1" /> <!--Electric Bolt 1 -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="400" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="346" max="699" chance="100" /> <!-- Adena -->
@@ -7378,7 +7378,7 @@
 				<item id="960" min="1" max="1" chance="0.0425" /> <!-- Scroll: Enchant Armor (S-Grade) -->
 				<item id="10381" min="1" max="1" chance="0.0068" /> <!-- Recipe - Icarus Spitter (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="27" />
 			<height normal="31" />
@@ -7408,7 +7408,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -7425,10 +7425,10 @@
 			<skill id="5620" level="9" /> <!--Short-Range Physical Attack Weakness -->
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6334" level="1" /> <!--Shock -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="160" max="326" chance="100" /> <!-- Adena -->
@@ -7457,7 +7457,7 @@
 				<item id="1894" min="1" max="1" chance="2.3092" /> <!-- Crafted Leather -->
 				<item id="10374" min="1" max="1" chance="0.0042" /> <!-- Recipe - Icarus Disperser (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="27" />
 			<height normal="31" />
@@ -7486,7 +7486,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
@@ -7504,15 +7504,15 @@
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6335" level="1" /> <!--Electric Rain 1 -->
 			<skill id="6337" level="1" /> <!--Red Slash 1 -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="400" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>XEL_PRIVATE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="826" max="1689" chance="100" /> <!-- Adena -->
@@ -7570,7 +7570,7 @@
 				<item id="1894" min="1" max="1" chance="11.9474" /> <!-- Crafted Leather -->
 				<item id="10377" min="1" max="1" chance="0.0219" /> <!-- Recipe - Icarus Trident (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="27" />
 			<height normal="31.5" />
@@ -7599,7 +7599,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
@@ -7617,15 +7617,15 @@
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6339" level="1" /> <!--Sacred Hammer Attack -->
 			<skill id="6340" level="1" /> <!--Shock -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="400" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>XEL_PRIVATE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="826" max="1689" chance="100" /> <!-- Adena -->
@@ -7709,7 +7709,7 @@
 				<item id="15788" min="1" max="1" chance="0.0933" /> <!-- Recipe - Sealed Moirai Leather Boots (60%) -->
 				<item id="15789" min="1" max="1" chance="0.0933" /> <!-- Recipe - Sealed Moirai Shoes (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="29" />
 			<height normal="37" />
@@ -7737,7 +7737,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4071" level="5" /> <!--Resist Bow/Crossbow Weapons -->
 			<skill id="4116" level="9" /> <!--Resist M. Atk. -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
@@ -7754,15 +7754,15 @@
 			<skill id="5620" level="9" /> <!--Short-Range Physical Attack Weakness -->
 			<skill id="5663" level="5" /> <!--Resistance to Ancient Sword -->
 			<skill id="6333" level="1" /> <!--Electric Bolt 1 -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="400" isAggressive="false">
-			<clan_list>
+			<clanList>
 				<clan>XEL_PRIVATE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="826" max="1689" chance="100" /> <!-- Adena -->
@@ -7841,7 +7841,7 @@
 				<item id="15791" min="1" max="1" chance="0.1051" /> <!-- Recipe - Sealed Moirai Shield (60%) -->
 				<item id="15790" min="1" max="1" chance="0.1051" /> <!-- Recipe - Sealed Moirai Sigil (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="27" />
 			<height normal="31" />
@@ -7869,10 +7869,10 @@
 				<walk ground="61" />
 				<run ground="180" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4276" level="5" /> <!--Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -7888,15 +7888,15 @@
 			<skill id="5620" level="4" /> <!--Short-Range Physical Attack Weakness -->
 			<skill id="6303" level="1" /> <!--Trial of the Coup -->
 			<skill id="6304" level="1" /> <!--Shock -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>SOLINA_N</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="949" max="1916" chance="100" /> <!-- Adena -->
@@ -7964,7 +7964,7 @@
 				<item id="15816" min="1" max="1" chance="0.0116" /> <!-- Recipe - Sealed Vesper Slasher (60%) -->
 				<item id="15817" min="1" max="1" chance="0.0116" /> <!-- Recipe - Vesper Buster (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="9" />
 			<height normal="23.4" />
@@ -7992,10 +7992,10 @@
 				<walk ground="70" />
 				<run ground="170" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4276" level="5" /> <!--Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -8011,15 +8011,15 @@
 			<skill id="5620" level="4" /> <!--Short-Range Physical Attack Weakness -->
 			<skill id="6305" level="1" /> <!--Sacred Gnosis -->
 			<skill id="6306" level="1" /> <!--Solina Strike -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>SOLINA_N</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1047" max="2114" chance="100" /> <!-- Adena -->
@@ -8090,7 +8090,7 @@
 				<item id="15823" min="1" max="1" chance="0.0112" /> <!-- Recipe - Vesper Caster (60%) -->
 				<item id="15824" min="1" max="1" chance="0.0112" /> <!-- Recipe - Vesper Singer (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="11" />
 			<height normal="25.4" />
@@ -8117,10 +8117,10 @@
 				<walk ground="65" />
 				<run ground="180" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4276" level="5" /> <!--Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -8136,15 +8136,15 @@
 			<skill id="5620" level="4" /> <!--Short-Range Physical Attack Weakness -->
 			<skill id="6307" level="1" /> <!--Opus of the Hand -->
 			<skill id="6308" level="1" /> <!--Opus of the Wave -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>SOLINA_N</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1021" max="2062" chance="100" /> <!-- Adena -->
@@ -8205,7 +8205,7 @@
 				<item id="960" min="1" max="1" chance="0.1252" /> <!-- Scroll: Enchant Armor (S-Grade) -->
 				<item id="15819" min="1" max="1" chance="0.0218" /> <!-- Recipe - Vesper Fighter (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="9" />
 			<height normal="15.6" />
@@ -8235,7 +8235,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4276" level="5" /> <!--Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -8252,15 +8252,15 @@
 			<skill id="6309" level="1" /> <!--Pain of the Ascetic -->
 			<skill id="6677" level="1" /> <!--Hold -->
 			<skill id="6678" level="1" /> <!--Hold Cancel -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>SOLINA_N</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1033" max="2086" chance="100" /> <!-- Adena -->
@@ -8320,7 +8320,7 @@
 				<item id="9628" min="1" max="1" chance="3.3117" /> <!-- Leonard -->
 				<item id="15825" min="1" max="1" chance="0.0295" /> <!-- Recipe - Vesper Thrower (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="15" />
 			<height normal="30" />
@@ -8347,10 +8347,10 @@
 				<walk ground="61" />
 				<run ground="180" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4276" level="5" /> <!--Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -8365,15 +8365,15 @@
 			<skill id="5466" level="1" /> <!--Holy Attacks -->
 			<skill id="5620" level="4" /> <!--Short-Range Physical Attack Weakness -->
 			<skill id="6310" level="1" /> <!--Loss of Quest -->
-		</skill_list>
-		<ex_crt_effect>false</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>SOLINA_N</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="1076" max="2172" chance="100" /> <!-- Adena -->
@@ -8433,7 +8433,7 @@
 				<item id="959" min="1" max="1" chance="0.0176" /> <!-- Scroll: Enchant Weapon (S-Grade) -->
 				<item id="15818" min="1" max="1" chance="0.0307" /> <!-- Recipe - Vesper Shaper (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="9" />
 			<height normal="23.4" />
@@ -8462,10 +8462,10 @@
 				<walk ground="30" />
 				<run ground="170" />
 			</speed>
-			<hit_time>520</hit_time>
+			<hitTime>520</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4276" level="5" /> <!--Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -8482,14 +8482,14 @@
 			<skill id="5620" level="9" /> <!--Short-Range Physical Attack Weakness -->
 			<skill id="6314" level="1" /> <!--Sacred Judgement -->
 			<skill id="6315" level="1" /> <!--Sacred Strike -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>DIVINE_N</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="5594" max="11432" chance="100" /> <!-- Adena -->
@@ -8519,7 +8519,7 @@
 				<item id="959" min="1" max="1" chance="0.0922" /> <!-- Scroll: Enchant Weapon (S-Grade) -->
 				<item id="15820" min="1" max="1" chance="0.1608" /> <!-- Recipe - Vesper Stormer (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="13.5" grown="16" />
 			<height normal="36.5" grown="42.5" />
@@ -8548,10 +8548,10 @@
 				<walk ground="50" />
 				<run ground="170" />
 			</speed>
-			<hit_time>760</hit_time>
+			<hitTime>760</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4276" level="5" /> <!--Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -8567,14 +8567,14 @@
 			<skill id="5466" level="1" /> <!--Holy Attacks -->
 			<skill id="6309" level="1" /> <!--Pain of the Ascetic -->
 			<skill id="6316" level="1" /> <!--Accomplish of Authority -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>DIVINE_N</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="5832" max="11919" chance="100" /> <!-- Adena -->
@@ -8611,7 +8611,7 @@
 				<item id="15795" min="1" max="1" chance="0.3089" /> <!-- Recipe - Sealed Vesper Breastplate (60%) -->
 				<item id="15798" min="1" max="1" chance="0.4943" /> <!-- Recipe - Sealed Vesper Gaiter (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="15" />
 			<height normal="80" />
@@ -8639,10 +8639,10 @@
 				<walk ground="30" />
 				<run ground="220" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4276" level="5" /> <!--Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -8657,14 +8657,14 @@
 			<skill id="4458" level="2" /> <!--Spear Weapon Weak Point -->
 			<skill id="5466" level="1" /> <!--Holy Attacks -->
 			<skill id="6317" level="1" /> <!--Sacred Tacit -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>DIVINE_N</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6469" max="13222" chance="100" /> <!-- Adena -->
@@ -8701,7 +8701,7 @@
 				<item id="15796" min="1" max="1" chance="0.457" /> <!-- Recipe - Sealed Vesper Leather Breastplate (60%) -->
 				<item id="15799" min="1" max="1" chance="0.7311" /> <!-- Recipe - Sealed Vesper Leather Legging (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="13" />
 			<height normal="47" />
@@ -8730,7 +8730,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4276" level="5" /> <!--Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -8746,14 +8746,14 @@
 			<skill id="5466" level="1" /> <!--Holy Attacks -->
 			<skill id="5620" level="9" /> <!--Short-Range Physical Attack Weakness -->
 			<skill id="6327" level="1" /> <!--Sacred Worship -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
-			<clan_list>
+			<clanList>
 				<clan>DIVINE_N</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="6033" max="12331" chance="100" /> <!-- Adena -->
@@ -8788,7 +8788,7 @@
 				<item id="15797" min="1" max="1" chance="0.4262" /> <!-- Recipe - Sealed Vesper Tunic (60%) -->
 				<item id="15800" min="1" max="1" chance="0.6819" /> <!-- Recipe - Sealed Vesper Stockings (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="24" />
 			<height normal="49" />
@@ -8821,7 +8821,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4276" level="4" /> <!--Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4285" level="4" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="4" /> <!--Resist Hold Attacks -->
@@ -8841,15 +8841,15 @@
 			<skill id="6319" level="1" /> <!--Sacred Magic Protection -->
 			<skill id="6502" level="17" /> <!--NPC holy shot -->
 			<skill id="6686" level="1" /> <!--Sacred Protector Cancel -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="500">
-			<clan_list>
+			<clanList>
 				<clan>N_DIVINE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="11026" max="22534" chance="100" /> <!-- Adena -->
@@ -8890,7 +8890,7 @@
 				<item id="15811" min="1" max="1" chance="1.4953" /> <!-- Recipe - Sealed Vesper Necklace (70%) -->
 				<item id="15809" min="1" max="1" chance="2.9905" /> <!-- Recipe - Sealed Vesper Ring (70%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="18" />
 			<height normal="44" />
@@ -8920,7 +8920,7 @@
 			</speed>
 		</stats>
 		<status undying="false" canBeSown="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4276" level="4" /> <!--Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4285" level="4" /> <!--Resist Sleep Attacks -->
 			<skill id="4287" level="4" /> <!--Resist Hold Attacks -->
@@ -8937,15 +8937,15 @@
 			<skill id="5466" level="1" /> <!--Holy Attacks -->
 			<skill id="6328" level="1" /> <!--Fighter Judgement -->
 			<skill id="6329" level="1" /> <!--Fighter Strike -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
-		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="500">
-			<clan_list>
+			<clanList>
 				<clan>N_DIVINE</clan>
-			</clan_list>
+			</clanList>
 		</ai>
-		<drop_lists>
+		<dropLists>
 			<death>
 				<group chance="70">
 					<item id="57" min="11191" max="22872" chance="100" /> <!-- Adena -->
@@ -9001,7 +9001,7 @@
 				<item id="15805" min="1" max="1" chance="0.9121" /> <!-- Recipe - Sealed Vesper Leather Boots (60%) -->
 				<item id="15806" min="1" max="1" chance="0.9121" /> <!-- Recipe - Sealed Vesper Shoes (60%) -->
 			</corpse>
-		</drop_lists>
+		</dropLists>
 		<collision>
 			<radius normal="24" />
 			<height normal="49" />

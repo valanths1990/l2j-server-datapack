@@ -30,21 +30,21 @@
 	</skillTree>
 	<!-- Dark Avenger -->
 	<skillTree type="classSkillTree" classId="6">
-		<skill skillName="Shield Strike" skillId="984" skillLvl="1" getLevel="40" levelUpSp="30000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="2" getLevel="43" levelUpSp="38000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="3" getLevel="46" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="4" getLevel="49" levelUpSp="76000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="5" getLevel="52" levelUpSp="110000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="1" getLevel="40" levelUpSp="28000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="2" getLevel="43" levelUpSp="36000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="3" getLevel="46" levelUpSp="40000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="4" getLevel="49" levelUpSp="65000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="5" getLevel="52" levelUpSp="100000" learnedByNpc="true" />
 		<skill skillName="Shield Strike" skillId="984" skillLvl="6" getLevel="55" levelUpSp="130000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="7" getLevel="58" levelUpSp="141000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="7" getLevel="58" levelUpSp="131000" learnedByNpc="true" />
 		<skill skillName="Shield Strike" skillId="984" skillLvl="8" getLevel="60" levelUpSp="171000" learnedByNpc="true" />
 		<skill skillName="Shield Strike" skillId="984" skillLvl="9" getLevel="62" levelUpSp="240000" learnedByNpc="true" />
 		<skill skillName="Shield Strike" skillId="984" skillLvl="10" getLevel="64" levelUpSp="250000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="11" getLevel="66" levelUpSp="390000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="11" getLevel="66" levelUpSp="410000" learnedByNpc="true" />
 		<skill skillName="Shield Strike" skillId="984" skillLvl="12" getLevel="68" levelUpSp="460000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="13" getLevel="70" levelUpSp="520000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="13" getLevel="70" levelUpSp="490000" learnedByNpc="true" />
 		<skill skillName="Shield Strike" skillId="984" skillLvl="14" getLevel="72" levelUpSp="670000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="15" getLevel="74" levelUpSp="1400000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="15" getLevel="74" levelUpSp="1500000" learnedByNpc="true" />
 	</skillTree>
 	<!-- Warlock -->
 	<skillTree type="classSkillTree" classId="14">
@@ -89,7 +89,7 @@
 	</skillTree>
 	<!-- Swordsinger -->
 	<skillTree type="classSkillTree" classId="21">
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="1" getLevel="40" levelUpSp="43000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="1" getLevel="40" levelUpSp="49000" learnedByNpc="true" />
 		<skill skillName="Deadly Strike" skillId="986" skillLvl="2" getLevel="43" levelUpSp="51000" learnedByNpc="true" />
 		<skill skillName="Deadly Strike" skillId="986" skillLvl="3" getLevel="46" levelUpSp="75000" learnedByNpc="true" />
 		<skill skillName="Deadly Strike" skillId="986" skillLvl="4" getLevel="49" levelUpSp="110000" learnedByNpc="true" />
@@ -110,79 +110,79 @@
 	</skillTree>
 	<!-- Elemental Summoner -->
 	<skillTree type="classSkillTree" classId="28">
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="1" getLevel="40" levelUpSp="30000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="1" getLevel="40" levelUpSp="28000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="2" getLevel="44" levelUpSp="37000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="3" getLevel="48" levelUpSp="71000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="4" getLevel="52" levelUpSp="100000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="5" getLevel="56" levelUpSp="105000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="6" getLevel="58" levelUpSp="120000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="3" getLevel="48" levelUpSp="60000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="4" getLevel="52" levelUpSp="95000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="5" getLevel="56" levelUpSp="95000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="6" getLevel="58" levelUpSp="140000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="7" getLevel="60" levelUpSp="180000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="8" getLevel="62" levelUpSp="220000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="9" getLevel="64" levelUpSp="320000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="10" getLevel="66" levelUpSp="410000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="11" getLevel="68" levelUpSp="520000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="12" getLevel="70" levelUpSp="520000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="12" getLevel="70" levelUpSp="630000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="13" getLevel="72" levelUpSp="1000000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="14" getLevel="74" levelUpSp="1300000" learnedByNpc="true" />
 	</skillTree>
 	<!-- Shilien Knight -->
 	<skillTree type="classSkillTree" classId="33">
-		<skill skillName="Shield Strike" skillId="984" skillLvl="1" getLevel="40" levelUpSp="30000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="2" getLevel="43" levelUpSp="38000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="3" getLevel="46" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="4" getLevel="49" levelUpSp="76000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="5" getLevel="52" levelUpSp="110000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="6" getLevel="55" levelUpSp="130000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="7" getLevel="58" levelUpSp="141000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="8" getLevel="60" levelUpSp="171000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="9" getLevel="62" levelUpSp="240000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="10" getLevel="64" levelUpSp="250000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="11" getLevel="66" levelUpSp="390000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="12" getLevel="68" levelUpSp="460000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="13" getLevel="70" levelUpSp="520000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="14" getLevel="72" levelUpSp="670000" learnedByNpc="true" />
-		<skill skillName="Shield Strike" skillId="984" skillLvl="15" getLevel="74" levelUpSp="1400000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="1" getLevel="40" levelUpSp="24000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="2" getLevel="43" levelUpSp="26000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="3" getLevel="46" levelUpSp="38000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="4" getLevel="49" levelUpSp="54000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="5" getLevel="52" levelUpSp="83000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="6" getLevel="55" levelUpSp="105000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="7" getLevel="58" levelUpSp="115000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="8" getLevel="60" levelUpSp="130000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="9" getLevel="62" levelUpSp="190000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="10" getLevel="64" levelUpSp="210000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="11" getLevel="66" levelUpSp="330000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="12" getLevel="68" levelUpSp="370000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="13" getLevel="70" levelUpSp="400000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="14" getLevel="72" levelUpSp="550000" learnedByNpc="true" />
+		<skill skillName="Shield Strike" skillId="984" skillLvl="15" getLevel="74" levelUpSp="1200000" learnedByNpc="true" />
 	</skillTree>
 	<!-- BladeDancer -->
 	<skillTree type="classSkillTree" classId="34">
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="1" getLevel="40" levelUpSp="43000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="2" getLevel="43" levelUpSp="51000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="3" getLevel="46" levelUpSp="75000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="4" getLevel="49" levelUpSp="110000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="5" getLevel="52" levelUpSp="190000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="6" getLevel="55" levelUpSp="200000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="7" getLevel="58" levelUpSp="200000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="8" getLevel="60" levelUpSp="260000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="9" getLevel="62" levelUpSp="400000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="10" getLevel="64" levelUpSp="480000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="11" getLevel="66" levelUpSp="780000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="12" getLevel="68" levelUpSp="870000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="13" getLevel="70" levelUpSp="1030000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="14" getLevel="72" levelUpSp="1200000" learnedByNpc="true" />
-		<skill skillName="Deadly Strike" skillId="986" skillLvl="15" getLevel="74" levelUpSp="2900000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="1" getLevel="40" levelUpSp="39000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="2" getLevel="43" levelUpSp="42000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="3" getLevel="46" levelUpSp="60000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="4" getLevel="49" levelUpSp="82000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="5" getLevel="52" levelUpSp="150000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="6" getLevel="55" levelUpSp="160000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="7" getLevel="58" levelUpSp="180000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="8" getLevel="60" levelUpSp="240000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="9" getLevel="62" levelUpSp="330000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="10" getLevel="64" levelUpSp="400000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="11" getLevel="66" levelUpSp="540000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="12" getLevel="68" levelUpSp="710000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="13" getLevel="70" levelUpSp="780000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="14" getLevel="72" levelUpSp="920000" learnedByNpc="true" />
+		<skill skillName="Deadly Strike" skillId="986" skillLvl="15" getLevel="74" levelUpSp="2000000" learnedByNpc="true" />
 		<skill skillName="Defense Motion" skillId="989" skillLvl="1" getLevel="60" levelUpSp="240000" learnedByNpc="true" />
 	</skillTree>
 	<!-- Phantom Summoner -->
 	<skillTree type="classSkillTree" classId="41">
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="1" getLevel="40" levelUpSp="30000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="2" getLevel="44" levelUpSp="37000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="3" getLevel="48" levelUpSp="71000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="4" getLevel="52" levelUpSp="100000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="5" getLevel="56" levelUpSp="105000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="1" getLevel="40" levelUpSp="28000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="2" getLevel="44" levelUpSp="32000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="3" getLevel="48" levelUpSp="63000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="4" getLevel="52" levelUpSp="86000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="5" getLevel="56" levelUpSp="91000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="6" getLevel="58" levelUpSp="120000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="7" getLevel="60" levelUpSp="180000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="8" getLevel="62" levelUpSp="220000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="9" getLevel="64" levelUpSp="320000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="10" getLevel="66" levelUpSp="410000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="11" getLevel="68" levelUpSp="520000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="12" getLevel="70" levelUpSp="520000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="13" getLevel="72" levelUpSp="1000000" learnedByNpc="true" />
-		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="14" getLevel="74" levelUpSp="1300000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="7" getLevel="60" levelUpSp="170000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="8" getLevel="62" levelUpSp="200000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="9" getLevel="64" levelUpSp="300000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="10" getLevel="66" levelUpSp="390000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="11" getLevel="68" levelUpSp="480000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="12" getLevel="70" levelUpSp="500000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="13" getLevel="72" levelUpSp="880000" learnedByNpc="true" />
+		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="14" getLevel="74" levelUpSp="1210000" learnedByNpc="true" />
 	</skillTree>
 	<!-- Monk -->
 	<skillTree type="classSkillTree" classId="47">
-		<skill skillName="Focus Mastery" skillId="993" skillLvl="1" getLevel="24" levelUpSp="8800" learnedByNpc="true" />
-		<skill skillName="Focus Mastery" skillId="993" skillLvl="2" getLevel="32" levelUpSp="25000" learnedByNpc="true" />
+		<skill skillName="Force Mastery" skillId="993" skillLvl="1" getLevel="24" levelUpSp="8800" learnedByNpc="true" />
+		<skill skillName="Force Mastery" skillId="993" skillLvl="2" getLevel="32" levelUpSp="25000" learnedByNpc="true" />
 	</skillTree>
 	<!-- Tyrant -->
 	<skillTree type="classSkillTree" classId="48">
@@ -291,7 +291,6 @@
 	</skillTree>
 	<!-- Arcana Lord -->
 	<skillTree type="classSkillTree" classId="96">
-		<skill skillName="Servitor Share" skillId="1557" skillLvl="1" getLevel="83" levelUpSp="100000000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="15" getLevel="76" levelUpSp="6250000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="16" getLevel="77" levelUpSp="11000000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="17" getLevel="78" levelUpSp="16000000" learnedByNpc="true" />
@@ -299,6 +298,7 @@
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="19" getLevel="80" levelUpSp="18000000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="20" getLevel="81" levelUpSp="19000000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="21" getLevel="82" levelUpSp="20000000" learnedByNpc="true" />
+		<skill skillName="Servitor Share" skillId="1557" skillLvl="1" getLevel="83" levelUpSp="100000000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="22" getLevel="83" levelUpSp="21000000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="23" getLevel="84" levelUpSp="22000000" learnedByNpc="true" />
 		<skill skillName="Dimension Spiral" skillId="1558" skillLvl="24" getLevel="85" levelUpSp="23000000" learnedByNpc="true" />
@@ -433,7 +433,7 @@
 	</skillTree>
 	<!-- Shilien Saint -->
 	<skillTree type="classSkillTree" classId="112">
-		<skill skillName="Mass Cure Poison" skillId="1550" skillLvl="1" getLevel="76" levelUpSp="11000000" learnedByNpc="true" />
+		<skill skillName="Mass Cure Poison" skillId="1550" skillLvl="1" getLevel="76" levelUpSp="13000000" learnedByNpc="true" />
 		<skill skillName="Mass Purify" skillId="1551" skillLvl="1" getLevel="76" levelUpSp="13000000" learnedByNpc="true" />
 		<skill skillName="Chain Heal" skillId="1553" skillLvl="1" getLevel="83" levelUpSp="100000000" learnedByNpc="true" />
 	</skillTree>

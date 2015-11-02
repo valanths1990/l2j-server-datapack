@@ -73,7 +73,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		"admin_setfame", // sets fame of target char to any amount. //setfame <fame>
 		"admin_character_list", // same as character_info, kept for compatibility purposes
 		"admin_character_info", // given a player name, displays an information window
-		"admin_show_characters",// list of characters
+		"admin_show_characters", // list of characters
 		"admin_find_character", // find a player by his name or a part of it (case-insensitive)
 		"admin_find_ip", // find all the player connections from a given IPv4 number
 		"admin_find_account", // list all the characters from an account (useful for GMs w/o DB access)
@@ -908,7 +908,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		final PageResult result = HtmlUtil.createPage(players, page, 20, i ->
 		{
 			return "<td align=center><a action=\"bypass -h admin_show_characters " + i + "\">Page " + (i + 1) + "</a></td>";
-		}, player ->
+		} , player ->
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.append("<tr>");
@@ -1009,10 +1009,10 @@ public class AdminEditChar implements IAdminCommandHandler
 		adminReply.replace("%currentload%", String.valueOf(player.getCurrentLoad()));
 		adminReply.replace("%maxload%", String.valueOf(player.getMaxLoad()));
 		adminReply.replace("%percent%", String.valueOf(Util.roundTo(((float) player.getCurrentLoad() / (float) player.getMaxLoad()) * 100, 2)));
-		adminReply.replace("%patk%", String.valueOf(player.getPAtk(null)));
-		adminReply.replace("%matk%", String.valueOf(player.getMAtk(null, null)));
-		adminReply.replace("%pdef%", String.valueOf(player.getPDef(null)));
-		adminReply.replace("%mdef%", String.valueOf(player.getMDef(null, null)));
+		adminReply.replace("%patk%", String.valueOf((int) player.getPAtk(null)));
+		adminReply.replace("%matk%", String.valueOf((int) player.getMAtk(null, null)));
+		adminReply.replace("%pdef%", String.valueOf((int) player.getPDef(null)));
+		adminReply.replace("%mdef%", String.valueOf((int) player.getMDef(null, null)));
 		adminReply.replace("%accuracy%", String.valueOf(player.getAccuracy()));
 		adminReply.replace("%evasion%", String.valueOf(player.getEvasionRate(null)));
 		adminReply.replace("%critical%", String.valueOf(player.getCriticalHit(null, null)));

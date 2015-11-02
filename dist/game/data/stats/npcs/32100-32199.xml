@@ -19,10 +19,10 @@
 				<walk ground="48" />
 				<run ground="120" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -33,8 +33,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="7" /> <!--Spirits -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -59,10 +59,10 @@
 				<walk ground="48" />
 				<run ground="120" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -73,8 +73,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="7" /> <!--Spirits -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -99,10 +99,10 @@
 				<walk ground="48" />
 				<run ground="120" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -113,8 +113,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="7" /> <!--Spirits -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -139,10 +139,10 @@
 				<walk ground="48" />
 				<run ground="120" />
 			</speed>
-			<hit_time>340</hit_time>
+			<hitTime>340</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -153,8 +153,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="7" /> <!--Spirits -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -182,7 +182,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -193,8 +193,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="25" />
 			<height normal="33" />
@@ -221,7 +221,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -232,8 +232,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="14" /> <!--Humans -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
@@ -260,7 +260,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -271,8 +271,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="14" /> <!--Humans -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
@@ -299,7 +299,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4390" level="1" /> <!--NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -311,8 +311,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="19" /> <!--Others -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="40" />
 			<height normal="80" />
@@ -336,10 +336,10 @@
 				<walk ground="60" />
 				<run ground="160" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status attackable="false" flying="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -350,8 +350,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="1" />
 			<height normal="30" />
@@ -374,7 +374,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4390" level="1" /> <!--NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -386,8 +386,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="19" /> <!--Others -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="24" />
 			<height normal="72.5" />
@@ -410,7 +410,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4390" level="1" /> <!--NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -422,8 +422,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -451,7 +451,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -461,8 +461,8 @@
 			<skill id="4413" level="11" /> <!--Average M. Def. -->
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="25" />
 			<height normal="33" />
@@ -489,7 +489,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -500,8 +500,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="25" />
 			<height normal="33" />
@@ -528,7 +528,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -539,8 +539,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="14" /> <!--Humans -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
@@ -567,7 +567,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -578,8 +578,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="30" />
 			<height normal="42.5105" />
@@ -606,7 +606,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -617,8 +617,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="45" />
 			<height normal="41.5" />
@@ -645,7 +645,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -656,8 +656,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="45" />
 			<height normal="41.5" />
@@ -684,7 +684,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -695,8 +695,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="6" /> <!--Humanoids -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="25" />
 			<height normal="33" />
@@ -723,7 +723,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4390" level="1" /> <!--NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -735,8 +735,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="19" /> <!--Others -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="53" />
 			<height normal="11.5" />
@@ -761,10 +761,10 @@
 				<walk ground="10" />
 				<run ground="100" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4390" level="1" /> <!--NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -776,8 +776,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="25" />
 			<height normal="33.5" />
@@ -802,10 +802,10 @@
 				<walk ground="10" />
 				<run ground="100" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4390" level="1" /> <!--NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -817,8 +817,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="25" />
 			<height normal="33.5" />
@@ -843,10 +843,10 @@
 				<walk ground="10" />
 				<run ground="100" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4390" level="1" /> <!--NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -858,8 +858,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="25" />
 			<height normal="33.5" />
@@ -884,10 +884,10 @@
 				<walk ground="10" />
 				<run ground="100" />
 			</speed>
-			<hit_time>500</hit_time>
+			<hitTime>500</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4390" level="1" /> <!--NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -899,8 +899,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="16" />
 			<height normal="18.5" />
@@ -923,7 +923,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" flying="true" noSleepMode="true" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -934,8 +934,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="10" /> <!--Dragons -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="190" />
 			<height normal="335" />
@@ -962,7 +962,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4390" level="1" /> <!--NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -974,8 +974,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="19" /> <!--Others -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="14" />
 			<height normal="25" />
@@ -1002,7 +1002,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4390" level="1" /> <!--NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -1014,8 +1014,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="19" /> <!--Others -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="14" />
 			<height normal="25" />
@@ -1039,7 +1039,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1050,8 +1050,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="14" /> <!--Humans -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="8" />
 			<height normal="23.5" />
@@ -1075,7 +1075,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1086,8 +1086,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="14" /> <!--Humans -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="8" />
 			<height normal="23.5" />
@@ -1111,7 +1111,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1122,8 +1122,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="14" /> <!--Humans -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="8" />
 			<height normal="24.5" />
@@ -1146,7 +1146,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4390" level="1" /> <!--NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -1158,8 +1158,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="19" /> <!--Others -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="5" />
 			<height normal="10" />
@@ -1186,7 +1186,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1197,8 +1197,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="7" /> <!--Spirits -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="6" />
 			<height normal="16.0055" />
@@ -1222,7 +1222,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1233,8 +1233,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="18" /> <!--Dwarves -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="8" />
 			<height normal="17.5" />
@@ -1257,7 +1257,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4390" level="1" /> <!--NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -1269,8 +1269,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="19" /> <!--Others -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
@@ -1297,7 +1297,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1308,8 +1308,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" />
 		<collision>
 			<radius normal="17" />
@@ -1337,7 +1337,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1348,8 +1348,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" />
 		<collision>
 			<radius normal="13" />
@@ -1377,7 +1377,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1388,8 +1388,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" />
 		<collision>
 			<radius normal="17" />
@@ -1416,10 +1416,10 @@
 				<walk ground="39" />
 				<run ground="120" />
 			</speed>
-			<hit_time>490</hit_time>
+			<hitTime>490</hitTime>
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1430,8 +1430,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -1458,10 +1458,10 @@
 				<walk ground="39" />
 				<run ground="120" />
 			</speed>
-			<hit_time>490</hit_time>
+			<hitTime>490</hitTime>
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1472,8 +1472,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -1501,7 +1501,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1512,8 +1512,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" />
 		<collision>
 			<radius normal="18" />
@@ -1541,7 +1541,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1552,8 +1552,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="17" />
@@ -1581,7 +1581,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1592,8 +1592,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -1622,7 +1622,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1633,8 +1633,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="15" />
@@ -1663,7 +1663,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1674,8 +1674,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="15" />
@@ -1705,7 +1705,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1716,8 +1716,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="12" />
@@ -1747,7 +1747,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1758,8 +1758,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="12" />
@@ -1790,7 +1790,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1801,8 +1801,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -1832,7 +1832,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1843,8 +1843,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -1872,7 +1872,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1883,8 +1883,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="15" /> <!--Elves -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
@@ -1912,7 +1912,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1923,8 +1923,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="15" /> <!--Elves -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
@@ -1952,7 +1952,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -1963,8 +1963,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="15" /> <!--Elves -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -1992,7 +1992,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2003,8 +2003,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="17" /> <!--Orcs -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -2032,7 +2032,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2043,8 +2043,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="17" /> <!--Orcs -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -2072,7 +2072,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2083,8 +2083,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="17" /> <!--Orcs -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
@@ -2112,7 +2112,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2123,8 +2123,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="14" /> <!--Humans -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -2152,7 +2152,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2163,8 +2163,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="14" /> <!--Humans -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -2194,7 +2194,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2205,8 +2205,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="14" /> <!--Humans -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -2234,7 +2234,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2245,8 +2245,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="14" /> <!--Humans -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -2274,7 +2274,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2285,8 +2285,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="18" /> <!--Dwarves -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -2314,7 +2314,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2325,8 +2325,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="18" /> <!--Dwarves -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -2354,7 +2354,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2365,8 +2365,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="18" /> <!--Dwarves -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
@@ -2394,7 +2394,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2405,8 +2405,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="16" /> <!--Dark Elves -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -2434,7 +2434,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2445,8 +2445,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="16" /> <!--Dark Elves -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -2476,7 +2476,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2487,8 +2487,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="16" /> <!--Dark Elves -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -2517,7 +2517,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2528,8 +2528,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -2557,7 +2557,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2568,8 +2568,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -2597,7 +2597,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2608,8 +2608,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -2637,7 +2637,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2648,8 +2648,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -2677,7 +2677,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2688,8 +2688,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -2717,7 +2717,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2728,8 +2728,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -2757,7 +2757,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2768,8 +2768,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -2797,7 +2797,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2808,8 +2808,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="18" /> <!--Dwarves -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -2837,7 +2837,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2848,8 +2848,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="18" /> <!--Dwarves -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -2877,7 +2877,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2888,8 +2888,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="18" /> <!--Dwarves -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
@@ -2916,10 +2916,10 @@
 				<walk ground="48" />
 				<run ground="120" />
 			</speed>
-			<hit_time>430</hit_time>
+			<hitTime>430</hitTime>
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2930,8 +2930,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" />
 		<collision>
 			<radius normal="13" />
@@ -2958,10 +2958,10 @@
 				<walk ground="60" />
 				<run ground="120" />
 			</speed>
-			<hit_time>410</hit_time>
+			<hitTime>410</hitTime>
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2972,8 +2972,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3000,10 +3000,10 @@
 				<walk ground="39" />
 				<run ground="120" />
 			</speed>
-			<hit_time>490</hit_time>
+			<hitTime>490</hitTime>
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3014,8 +3014,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3042,10 +3042,10 @@
 				<walk ground="60" />
 				<run ground="120" />
 			</speed>
-			<hit_time>410</hit_time>
+			<hitTime>410</hitTime>
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3056,8 +3056,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3084,10 +3084,10 @@
 				<walk ground="39" />
 				<run ground="120" />
 			</speed>
-			<hit_time>490</hit_time>
+			<hitTime>490</hitTime>
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3098,8 +3098,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3126,10 +3126,10 @@
 				<walk ground="60" />
 				<run ground="120" />
 			</speed>
-			<hit_time>410</hit_time>
+			<hitTime>410</hitTime>
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3140,8 +3140,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3168,10 +3168,10 @@
 				<walk ground="39" />
 				<run ground="120" />
 			</speed>
-			<hit_time>490</hit_time>
+			<hitTime>490</hitTime>
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3182,8 +3182,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3210,10 +3210,10 @@
 				<walk ground="39" />
 				<run ground="120" />
 			</speed>
-			<hit_time>490</hit_time>
+			<hitTime>490</hitTime>
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3224,8 +3224,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3255,7 +3255,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3266,8 +3266,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3296,7 +3296,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3307,8 +3307,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="15" />
@@ -3338,7 +3338,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3349,8 +3349,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="12" />
@@ -3380,7 +3380,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3391,8 +3391,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3419,10 +3419,10 @@
 				<walk ground="39" />
 				<run ground="120" />
 			</speed>
-			<hit_time>490</hit_time>
+			<hitTime>490</hitTime>
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3433,8 +3433,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3464,7 +3464,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3475,8 +3475,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3504,7 +3504,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3515,8 +3515,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" />
 		<collision>
 			<radius normal="13" />
@@ -3543,10 +3543,10 @@
 				<walk ground="60" />
 				<run ground="120" />
 			</speed>
-			<hit_time>410</hit_time>
+			<hitTime>410</hitTime>
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3557,8 +3557,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3587,7 +3587,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3598,8 +3598,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3629,7 +3629,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3640,8 +3640,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" />
 		<collision>
 			<radius normal="17" />
@@ -3672,7 +3672,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3683,8 +3683,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -3711,10 +3711,10 @@
 				<walk ground="39" />
 				<run ground="120" />
 			</speed>
-			<hit_time>490</hit_time>
+			<hitTime>490</hitTime>
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3725,8 +3725,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="9" /> <!--Bows -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3757,7 +3757,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3768,8 +3768,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" />
@@ -3798,7 +3798,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3809,8 +3809,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="15" />
@@ -3840,7 +3840,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3851,8 +3851,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="12" />
@@ -3882,7 +3882,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3893,8 +3893,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />
@@ -3923,7 +3923,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3934,8 +3934,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="15" />
@@ -3965,7 +3965,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3976,8 +3976,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="12" />
@@ -4007,7 +4007,7 @@
 			</speed>
 		</stats>
 		<status attackable="false" canMove="false" />
-		<skill_list>
+		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -4018,8 +4018,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="1" /> <!--Bare Hands -->
 			<skill id="4416" level="25" /> <!--Kamael -->
-		</skill_list>
-		<ex_crt_effect>true</ex_crt_effect>
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="13" />

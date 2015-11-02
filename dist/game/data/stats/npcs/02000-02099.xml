@@ -15,11 +15,11 @@
 				<run ground="160" />
 			</speed>
 		</stats>
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="1" /> <!--NPC Strike -->
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="5565" level="1" /> <!--Expose Weak Point -->
-		</skill_list>
+		</skillList>
 		<collision>
 			<radius normal="25" />
 			<height normal="35" />
@@ -40,11 +40,11 @@
 				<run ground="160" />
 			</speed>
 		</stats>
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="1" /> <!--NPC Strike -->
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="5565" level="1" /> <!--Expose Weak Point -->
-		</skill_list>
+		</skillList>
 		<collision>
 			<radius normal="25" />
 			<height normal="35" />
@@ -65,12 +65,12 @@
 				<run ground="160" />
 			</speed>
 		</stats>
-		<skill_list>
+		<skillList>
 			<skill id="4032" level="1" /> <!--NPC Strike -->
 			<skill id="4340" level="1" /> <!--Ultimate Buff, 2nd -->
 			<skill id="4416" level="9" /> <!--Demons -->
 			<skill id="5565" level="1" /> <!--Expose Weak Point -->
-		</skill_list>
+		</skillList>
 		<collision>
 			<radius normal="25" />
 			<height normal="35" />

@@ -1121,7 +1121,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
+				<mul stat="critRate" val="#rCrit" />
 			</effect>
 		</for>
 	</skill>
@@ -1525,7 +1525,6 @@
 		<set name="mpConsume" val="65" />
 		<set name="mpInitialConsume" val="17" />
 		<set name="operateType" val="A2" />
-		<set name="removedOnAnyActionExceptMove" val="true" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
@@ -1616,7 +1615,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
+				<mul stat="physicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
 			</effect>
 		</for>
 	</skill>
@@ -1643,7 +1642,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
+				<mul stat="magicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
 		</for>
 	</skill>
@@ -1670,7 +1669,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="DanceMpConsumeRate" val="#DanceMpConsumeRate" />
+				<mul stat="danceMpConsumeRate" val="#DanceMpConsumeRate" />
 			</effect>
 		</for>
 	</skill>
@@ -1698,9 +1697,9 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
-				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
-				<mul stat="DanceMpConsumeRate" val="0.9" />
+				<mul stat="physicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
+				<mul stat="magicalMpConsumeRate" val="#MagicalMpConsumeRate" />
+				<mul stat="danceMpConsumeRate" val="0.9" />
 			</effect>
 		</for>
 	</skill>
@@ -2461,7 +2460,6 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="40" />
-		<set name="removedOnDamage" val="true" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />

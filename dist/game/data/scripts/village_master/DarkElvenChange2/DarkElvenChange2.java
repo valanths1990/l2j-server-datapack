@@ -35,7 +35,6 @@ public final class DarkElvenChange2 extends Quest
 	// NPCs
 	private static int[] NPCS =
 	{
-		31328, // Innocentin
 		30195, // Brecson
 		30699, // Medown
 		30474, // Angus
@@ -43,7 +42,6 @@ public final class DarkElvenChange2 extends Quest
 		30862, // Oltran
 		30910, // Xairakin
 		31285, // Samael
-		31331, // Valdis
 		31334, // Tifaren
 		31974, // Drizzit
 		32096, // Helminter

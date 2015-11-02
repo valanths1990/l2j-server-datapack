@@ -30,6 +30,7 @@ import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.model.items.type.ActionType;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
+import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Broadcast;
 
 public class BlessedSpiritShot implements IItemHandler
@@ -95,10 +96,13 @@ public class BlessedSpiritShot implements IItemHandler
 			return false;
 		}
 		
-		// Send message to client
-		activeChar.sendPacket(SystemMessageId.ENABLED_SPIRITSHOT);
 		activeChar.setChargedShot(ShotType.BLESSED_SPIRITSHOTS, true);
 		
+		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_S1_);
+		sm.addItemName(itemId);
+		activeChar.sendPacket(sm);
+		
+		activeChar.sendPacket(SystemMessageId.ENABLED_SPIRITSHOT);
 		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0), 600);
 		return true;
 	}

@@ -18,9 +18,7 @@
  */
 package handlers.admincommandhandlers;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -124,16 +122,18 @@ public class AdminEventEngine implements IAdminCommandHandler
 				{
 					final NpcHtmlMessage adminReply = new NpcHtmlMessage();
 					
-					DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(Config.DATAPACK_ROOT + "/data/events/" + eventName)));
-					BufferedReader inbr = new BufferedReader(new InputStreamReader(in));
-					adminReply.setFile("en", "data/html/mods/EventEngine/Participation.htm");
-					adminReply.replace("%eventName%", eventName);
-					adminReply.replace("%eventCreator%", inbr.readLine());
-					adminReply.replace("%eventInfo%", inbr.readLine());
-					adminReply.replace("npc_%objectId%_event_participate", "admin_event"); // Weird, but nice hack, isnt it? :)
-					adminReply.replace("button value=\"Participate\"", "button value=\"Back\"");
-					activeChar.sendPacket(adminReply);
-					inbr.close();
+					try (FileInputStream fis = new FileInputStream(Config.DATAPACK_ROOT + "/data/events/" + eventName);
+						InputStreamReader isr = new InputStreamReader(fis);
+						BufferedReader br = new BufferedReader(isr))
+					{
+						adminReply.setFile("en", "data/html/mods/EventEngine/Participation.htm");
+						adminReply.replace("%eventName%", eventName);
+						adminReply.replace("%eventCreator%", br.readLine());
+						adminReply.replace("%eventInfo%", br.readLine());
+						adminReply.replace("npc_%objectId%_event_participate", "admin_event"); // Weird, but nice hack, isnt it? :)
+						adminReply.replace("button value=\"Participate\"", "button value=\"Back\"");
+						activeChar.sendPacket(adminReply);
+					}
 				}
 				catch (Exception e)
 				{
@@ -166,12 +166,12 @@ public class AdminEventEngine implements IAdminCommandHandler
 			{
 				try
 				{
-					FileOutputStream file = new FileOutputStream(new File(Config.DATAPACK_ROOT, "data/events/" + tempName));
-					PrintStream p = new PrintStream(file);
-					p.println(activeChar.getName());
-					p.println(tempBuffer);
-					file.close();
-					p.close();
+					try (FileOutputStream file = new FileOutputStream(new File(Config.DATAPACK_ROOT, "data/events/" + tempName));
+						PrintStream p = new PrintStream(file))
+					{
+						p.println(activeChar.getName());
+						p.println(tempBuffer);
+					}
 				}
 				catch (Exception e)
 				{
@@ -479,7 +479,8 @@ public class AdminEventEngine implements IAdminCommandHandler
 	{
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		
-		final String replyMSG = StringUtil.concat("<html><title>[ L2J EVENT ENGINE ]</title><body>" + "<br><center><button value=\"Create NEW event \" action=\"bypass -h admin_event_new\" width=150 height=32 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">" + "<center><br><font color=LEVEL>Stored Events:</font><br></center>", showStoredEvents(), "</body></html>");
+		final String replyMSG = StringUtil.concat("<html><title>[ L2J EVENT ENGINE ]</title><body>" + "<br><center><button value=\"Create NEW event \" action=\"bypass -h admin_event_new\" width=150 height=32 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">"
+			+ "<center><br><font color=LEVEL>Stored Events:</font><br></center>", showStoredEvents(), "</body></html>");
 		adminReply.setHtml(replyMSG);
 		activeChar.sendPacket(adminReply);
 	}
@@ -576,8 +577,28 @@ public class AdminEventEngine implements IAdminCommandHandler
 			sb.append("<tr><td><button value=\"Start!\" action=\"bypass -h admin_event_control_begin\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Destroys all event npcs so no more people can't participate now on</font></td></tr>");
 		}
 		
-		sb.append("<tr><td>&nbsp;</td></tr>" + "<tr><td><button value=\"Teleport\" action=\"bypass -h admin_event_control_teleport $team_number\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Teleports the specified team to your position</font></td></tr>" + "<tr><td>&nbsp;</td></tr>" + "<tr><td><button value=\"Sit/Stand\" action=\"bypass -h admin_event_control_sit $team_number\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Sits/Stands up the team</font></td></tr>" + "<tr><td>&nbsp;</td></tr>" + "<tr><td><button value=\"Kill\" action=\"bypass -h admin_event_control_kill $team_number\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Finish with the life of all the players in the selected team</font></td></tr>" + "<tr><td>&nbsp;</td></tr>" + "<tr><td><button value=\"Resurrect\" action=\"bypass -h admin_event_control_res $team_number\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Resurrect Team's members</font></td></tr>" + "<tr><td>&nbsp;</td></tr>" + "<tr><td><table cellspacing=-1><tr><td><button value=\"Polymorph*\" action=\"bypass -h admin_event_control_poly $team_number $poly_id\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr><tr><td><edit var=\"poly_id\" width=98 height=15></td></tr></table></td><td><font color=\"LEVEL\">Polymorphs the team into the NPC with the ID specified. Multiple IDs result in randomly chosen one for each player.</font></td></tr>" + "<tr><td>&nbsp;</td></tr>" + "<tr><td><button value=\"UnPolymorph\" action=\"bypass -h admin_event_control_unpoly $team_number\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Unpolymorph the team</font></td></tr>" + "<tr><td>&nbsp;</td></tr>" + "<tr><td><table cellspacing=-1><tr><td><button value=\"Transform*\" action=\"bypass -h admin_event_control_transform $team_number $transf_id\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr><tr><td><edit var=\"transf_id\" width=98 height=15></td></tr></table></td><td><font color=\"LEVEL\">Transforms the team into the transformation with the ID specified. Multiple IDs result in randomly chosen one for each player.</font></td></tr>" + "<tr><td>&nbsp;</td></tr>" + "<tr><td><button value=\"UnTransform\" action=\"bypass -h admin_event_control_untransform $team_number\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Untransforms the team</font></td></tr>" + "<tr><td>&nbsp;</td></tr>" + "<tr><td><table cellspacing=-1><tr><td><button value=\"Give Item\" action=\"bypass -h admin_event_control_prize $team_number $n $id\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><table><tr><td width=32>Num</td><td><edit var=\"n\" width=60 height=15></td></tr><tr><td>ID</td><td><edit var=\"id\" width=60 height=15></td></tr></table></td><td><font color=\"LEVEL\">Give the specified item id to every single member of the team, you can put 5*level, 5*kills or 5 in the number field for example</font></td></tr>" + "<tr><td>&nbsp;</td></tr>" + "<tr><td><table cellspacing=-1><tr><td><button value=\"Kick Player\" action=\"bypass -h admin_event_control_kick $player_name\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr><tr><td><edit var=\"player_name\" width=98 height=15></td></tr></table></td><td><font color=\"LEVEL\">Kicks the specified player(s) from the event. Blank field kicks target.</font></td></tr>" + "<tr><td>&nbsp;</td></tr>" + "<tr><td><button value=\"End!\" action=\"bypass -h admin_event_control_finish\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Will finish the event teleporting back all the players</font></td></tr>" + "<tr><td>&nbsp;</td></tr>" + "</table></td></tr></table></body></html>");
-		
+		sb.append("<tr><td>&nbsp;</td></tr>"
+			+ "<tr><td><button value=\"Teleport\" action=\"bypass -h admin_event_control_teleport $team_number\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Teleports the specified team to your position</font></td></tr>"
+			+ "<tr><td>&nbsp;</td></tr><tr><td><button value=\"Sit/Stand\" action=\"bypass -h admin_event_control_sit $team_number\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Sits/Stands up the team</font></td></tr>"
+			+ "<tr><td>&nbsp;</td></tr>"
+			+ "<tr><td><button value=\"Kill\" action=\"bypass -h admin_event_control_kill $team_number\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Finish with the life of all the players in the selected team</font></td></tr>"
+			+ "<tr><td>&nbsp;</td></tr><tr><td><button value=\"Resurrect\" action=\"bypass -h admin_event_control_res $team_number\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Resurrect Team's members</font></td></tr>"
+			+ "<tr><td>&nbsp;</td></tr>"
+			+ "<tr><td><table cellspacing=-1><tr><td><button value=\"Polymorph*\" action=\"bypass -h admin_event_control_poly $team_number $poly_id\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr><tr><td><edit var=\"poly_id\" width=98 height=15></td></tr></table></td>"
+			+ "<td><font color=\"LEVEL\">Polymorphs the team into the NPC with the ID specified. Multiple IDs result in randomly chosen one for each player.</font></td></tr>"
+			+ "<tr><td>&nbsp;</td></tr><tr><td><button value=\"UnPolymorph\" action=\"bypass -h admin_event_control_unpoly $team_number\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Unpolymorph the team</font></td></tr>"
+			+ "<tr><td>&nbsp;</td></tr>"
+			+ "<tr><td><table cellspacing=-1><tr><td><button value=\"Transform*\" action=\"bypass -h admin_event_control_transform $team_number $transf_id\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr><tr><td><edit var=\"transf_id\" width=98 height=15></td></tr>"
+			+ "</table></td><td><font color=\"LEVEL\">Transforms the team into the transformation with the ID specified. Multiple IDs result in randomly chosen one for each player.</font></td></tr>"
+			+ "<tr><td>&nbsp;</td></tr><tr><td><button value=\"UnTransform\" action=\"bypass -h admin_event_control_untransform $team_number\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Untransforms the team</font></td></tr>"
+			+ "<tr><td>&nbsp;</td></tr>"
+			+ "<tr><td><table cellspacing=-1><tr><td><button value=\"Give Item\" action=\"bypass -h admin_event_control_prize $team_number $n $id\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><table><tr><td width=32>Num</td><td><edit var=\"n\" width=60 height=15></td></tr>"
+			+ "<tr><td>ID</td><td><edit var=\"id\" width=60 height=15></td></tr></table></td><td><font color=\"LEVEL\">Give the specified item id to every single member of the team, you can put 5*level, 5*kills or 5 in the number field for example</font></td></tr>" + "<tr><td>&nbsp;</td></tr>"
+			+ "<tr><td><table cellspacing=-1><tr><td><button value=\"Kick Player\" action=\"bypass -h admin_event_control_kick $player_name\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr><tr><td><edit var=\"player_name\" width=98 height=15></td></tr></table></td>"
+			+ "<td><font color=\"LEVEL\">Kicks the specified player(s) from the event. Blank field kicks target.</font></td></tr>" + "<tr><td>&nbsp;</td></tr>"
+			+ "<tr><td><button value=\"End!\" action=\"bypass -h admin_event_control_finish\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Will finish the event teleporting back all the players</font></td></tr>"
+			+ "<tr><td>&nbsp;</td></tr></table></td></tr></table></body></html>");
+			
 		adminReply.setHtml(sb.toString());
 		activeChar.sendPacket(adminReply);
 	}

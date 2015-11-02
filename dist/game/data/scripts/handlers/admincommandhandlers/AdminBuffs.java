@@ -26,6 +26,7 @@ import java.util.StringTokenizer;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
+import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.L2World;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -160,47 +161,39 @@ public class AdminBuffs implements IAdminCommandHandler
 			StringTokenizer st = new StringTokenizer(command, " ");
 			command = st.nextToken();
 			
-			L2PcInstance player = null;
+			L2Character creature = null;
 			if (st.hasMoreTokens())
 			{
-				String playername = st.nextToken();
-				
-				try
+				creature = L2World.getInstance().getPlayer(st.nextToken());
+				if (creature == null)
 				{
-					player = L2World.getInstance().getPlayer(playername);
-				}
-				catch (Exception e)
-				{
-				}
-				
-				if (player == null)
-				{
-					activeChar.sendMessage("The player " + playername + " is not online.");
+					activeChar.sendPacket(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME);
 					return false;
 				}
 			}
-			else if ((activeChar.getTarget() != null) && activeChar.getTarget().isPlayer())
-			{
-				player = activeChar.getTarget().getActingPlayer();
-			}
 			else
 			{
-				activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
-				return false;
+				final L2Object target = activeChar.getTarget();
+				if ((target != null) && target.isCharacter())
+				{
+					creature = (L2Character) target;
+				}
+				
+				if (creature == null)
+				{
+					activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
+					return false;
+				}
 			}
 			
-			try
+			creature.resetTimeStamps();
+			creature.resetDisabledSkills();
+			if (creature.isPlayer())
 			{
-				player.resetTimeStamps();
-				player.resetDisabledSkills();
-				player.sendPacket(new SkillCoolTime(player));
-				activeChar.sendMessage("Skill reuse was removed from " + player.getName() + ".");
-				return true;
+				creature.sendPacket(new SkillCoolTime(creature.getActingPlayer()));
 			}
-			catch (NullPointerException e)
-			{
-				return false;
-			}
+			activeChar.sendMessage("Skill reuse was removed from " + creature.getName() + ".");
+			return true;
 		}
 		else if (command.startsWith("admin_switch_gm_buffs"))
 		{
@@ -261,7 +254,8 @@ public class AdminBuffs implements IAdminCommandHandler
 			max++;
 		}
 		
-		final StringBuilder html = StringUtil.startAppend(500 + (effects.size() * 200), "<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center><font color=\"LEVEL\">Effects of ", target.getName(), "</font></td><td width=45><button value=\"Back\" action=\"bypass -h admin_current_player\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><table width=\"100%\"><tr><td width=200>Skill</td><td width=30>Rem. Time</td><td width=70>Action</td></tr>");
+		final StringBuilder html = StringUtil.startAppend(500 + (effects.size()
+			* 200), "<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center><font color=\"LEVEL\">Effects of ", target.getName(), "</font></td><td width=45><button value=\"Back\" action=\"bypass -h admin_current_player\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><table width=\"100%\"><tr><td width=200>Skill</td><td width=30>Rem. Time</td><td width=70>Action</td></tr>");
 		int start = ((page - 1) * PAGE_LIMIT);
 		int end = Math.min(((page - 1) * PAGE_LIMIT) + PAGE_LIMIT, effects.size());
 		int count = 0;
@@ -272,7 +266,9 @@ public class AdminBuffs implements IAdminCommandHandler
 				final Skill skill = info.getSkill();
 				for (AbstractEffect effect : info.getEffects())
 				{
-					StringUtil.append(html, "<tr><td>", (!info.isInUse() ? FONT_RED1 : "") + skill.getName(), " Lv ", String.valueOf(skill.getLevel()), " (", effect.getClass().getSimpleName(), ")" + (!info.isInUse() ? FONT_RED2 : ""), "</td><td>", skill.isToggle() ? "T (" + info.getTickCount(effect) + ")" : skill.isPassive() ? "P" : info.getTime() + "s", "</td><td><button value=\"X\" action=\"bypass -h admin_stopbuff ", Integer.toString(target.getObjectId()), " ", String.valueOf(skill.getId()), "\" width=30 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+					StringUtil.append(html, "<tr><td>", (!info.isInUse() ? FONT_RED1 : "") + skill.getName(), " Lv ", String.valueOf(skill.getLevel()), " (", effect.getClass().getSimpleName(), ")"
+						+ (!info.isInUse() ? FONT_RED2 : ""), "</td><td>", skill.isToggle() ? "T (" + info.getTickCount(effect) + ")" : skill.isPassive() ? "P" : info.getTime()
+							+ "s", "</td><td><button value=\"X\" action=\"bypass -h admin_stopbuff ", Integer.toString(target.getObjectId()), " ", String.valueOf(skill.getId()), "\" width=30 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
 				}
 			}
 			count++;

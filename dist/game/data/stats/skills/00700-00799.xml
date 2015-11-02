@@ -126,7 +126,7 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="runSpd" val="0.8" />
-				<mul stat="MagicalMpConsumeRate" val="0.95" />
+				<mul stat="magicalMpConsumeRate" val="0.95" />
 			</effect>
 		</for>
 	</skill>
@@ -153,7 +153,7 @@
 				<mul stat="maxMp" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
-				<mul stat="cAtk" val="1.2" />
+				<mul stat="critDmg" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
@@ -187,7 +187,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.2" />
-				<mul stat="rCrit" val="1.2" />
+				<mul stat="critRate" val="1.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
@@ -223,7 +223,7 @@
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
-				<mul stat="cAtk" val="1.2" />
+				<mul stat="critDmg" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
@@ -291,8 +291,8 @@
 				<mul stat="pDef" val="1.1" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pAtkSpd" val="1.1" />
-				<mul stat="rCrit" val="1.1" />
-				<mul stat="cAtk" val="1.1" />
+				<mul stat="critRate" val="1.1" />
+				<mul stat="critDmg" val="1.1" />
 				<mul stat="mDef" val="1.1" />
 				<mul stat="mAtk" val="1.1" />
 				<mul stat="mAtkSpd" val="1.1" />
@@ -368,9 +368,9 @@
 				<param power="20" />
 				<param type="PER" />
 				<param heal="true" />
-				<mul stat="rCrit" val="1.2" />
+				<mul stat="critRate" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
-				<mul stat="cAtk" val="1.2" />
+				<mul stat="critDmg" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="runSpd" val="0.8" />
 				<add stat="accCombat" val="4" />
@@ -422,8 +422,8 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.2" />
-				<mul stat="cAtk" val="1.2" />
+				<mul stat="critRate" val="1.2" />
+				<mul stat="critDmg" val="1.2" />
 			</effect>
 		</for>
 		<selfEffects>
@@ -1450,7 +1450,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="critRate" val="1.3" />
 			</effect>
 		</for>
 	</skill>
@@ -1584,7 +1584,7 @@
 		</for>
 	</skill>
 	<skill id="761" levels="1" name="Seed of Revenge">
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SEED_OF_KNIGHT" />
@@ -1592,7 +1592,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill0761" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="29" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="operateType" val="A2" />
@@ -1627,7 +1627,7 @@
 		<set name="ignoreShld" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
@@ -1672,7 +1672,7 @@
 		<set name="icon" val="icon.skill0763" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="87" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="75000" />
@@ -1790,7 +1790,7 @@
 		<set name="effectPoint" val="679" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill0768" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="36" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="900000" />
@@ -1814,7 +1814,7 @@
 		<set name="effectPoint" val="679" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill0769" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="36" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="900000" />
@@ -1838,7 +1838,7 @@
 		<set name="effectPoint" val="679" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill0770" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="36" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="900000" />
@@ -1866,7 +1866,7 @@
 		<set name="fanRange" val="0,0,900,40" />
 		<set name="hitTime" val="3500" />
 		<set name="icon" val="icon.skill0771" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="160" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
@@ -1895,7 +1895,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill0772" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="160" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
@@ -1925,7 +1925,7 @@
 		<set name="fanRange" val="0,0,900,100" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill0773" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="160" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
@@ -2008,7 +2008,7 @@
 		</for>
 	</skill>
 	<skill id="776" levels="1" name="Force of Destruction">
-		<!-- Confirmed CT2.5 and Partially Updated to H5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="10" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="FORCE_OF_DESTRUCTION" />
@@ -2024,7 +2024,7 @@
 		<set name="icon" val="icon.skill0776" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="37" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
@@ -2048,7 +2048,7 @@
 		</for>
 	</skill>
 	<skill id="777" levels="1" name="Demolition Impact">
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="affectRange" val="500" />
 		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="150" />
@@ -2057,7 +2057,7 @@
 		<set name="fanRange" val="0,0,500,60" />
 		<set name="hitTime" val="1200" />
 		<set name="icon" val="icon.skill0777" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="160" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
@@ -2206,7 +2206,7 @@
 		</for>
 	</skill>
 	<skill id="784" levels="1" name="Spirit of Phoenix">
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SEED_OF_KNIGHT" />
@@ -2214,7 +2214,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill0784" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="29" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="operateType" val="A2" />
@@ -2242,7 +2242,7 @@
 		<set name="hitTime" val="1800" />
 		<set name="hpConsume" val="1253" />
 		<set name="icon" val="icon.skill0785" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="150000" />
 		<set name="rideState" val="NONE" />
@@ -2258,10 +2258,10 @@
 				<add stat="accCombat" val="6" />
 				<add stat="runSpd" val="30" />
 				<mul stat="pAtkSpd" val="1.3" />
-				<add stat="rCrit" val="100">
+				<add stat="critRate" val="100">
 					<using kind="SWORD" />
 				</add>
-				<mul stat="cAtk" val="2">
+				<mul stat="critDmg" val="2">
 					<using kind="BLUNT" />
 				</mul>
 				<sub stat="cancelVuln" val="40" />
@@ -2270,7 +2270,7 @@
 		</for>
 	</skill>
 	<skill id="786" levels="1" name="Eva's Will">
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SEED_OF_KNIGHT" />
@@ -2278,7 +2278,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill0786" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="29" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="operateType" val="A2" />
@@ -2297,20 +2297,20 @@
 		</for>
 	</skill>
 	<skill id="787" levels="1" name="Touch of Eva">
-		<!-- Confirmed CT2.5 -->
-		<!-- set name="castRange" val="40" / -->
-		<!-- set name="effectRange" val="400" / -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="TOUCH_OF_LIFE" />
 		<set name="affectRange" val="1000" />
+		<set name="castRange" val="40" />
 		<set name="effectPoint" val="835" />
+		<set name="effectRange" val="400" />
 		<set name="element" val="4" /> <!-- Holy -->
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="1800" />
 		<set name="hpConsume" val="1253" />
 		<set name="icon" val="icon.skill0787" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="150000" />
 		<set name="rideState" val="NONE" />
@@ -2333,7 +2333,7 @@
 		</for>
 	</skill>
 	<skill id="788" levels="1" name="Pain of Shilen">
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SEED_OF_KNIGHT" />
@@ -2341,7 +2341,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill0788" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="29" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="operateType" val="A2" />
@@ -2355,7 +2355,7 @@
 				<param chance="20" />
 				<param skillId="5564" skillLevel="1" /> <!-- Pain of Shillien -->
 				<param targetType="SELF" />
-				<mul stat="cAtk" val="1.1" />
+				<mul stat="critDmg" val="1.1" />
 			</effect>
 		</for>
 	</skill>
@@ -2369,7 +2369,7 @@
 		<set name="hitTime" val="1800" />
 		<set name="hpConsume" val="1253" />
 		<set name="icon" val="icon.skill0789" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="150000" />
 		<set name="rideState" val="NONE" />
@@ -2383,10 +2383,10 @@
 				<mul stat="mAtk" val="1.3" />
 				<add stat="runSpd" val="30" />
 				<mul stat="pAtkSpd" val="1.3" />
-				<add stat="rCrit" val="100">
+				<add stat="critRate" val="100">
 					<using kind="SWORD" />
 				</add>
-				<mul stat="cAtk" val="2">
+				<mul stat="critDmg" val="2">
 					<using kind="BLUNT" />
 				</mul>
 				<add stat="absorbDam" val="40" /> <!-- Recovers as HP 40% of general close rate physical damage inflicted on the enemy -->
@@ -2406,7 +2406,7 @@
 		<set name="fanRange" val="0,0,900,40" />
 		<set name="hitTime" val="3500" />
 		<set name="icon" val="icon.skill0790" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="120" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
@@ -2436,7 +2436,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="52" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="69" />

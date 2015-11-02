@@ -30,6 +30,7 @@ import com.l2jserver.gameserver.model.entity.TvTEvent;
 import com.l2jserver.gameserver.model.holders.SummonRequestHolder;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.zone.ZoneId;
+import com.l2jserver.gameserver.model.olympiad.OlympiadManager;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ConfirmDlg;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
@@ -125,7 +126,7 @@ public final class CallPc extends AbstractEffect
 			return false;
 		}
 		
-		if (target.isInOlympiadMode())
+		if (target.isInOlympiadMode() || OlympiadManager.getInstance().isRegisteredInComp(target))
 		{
 			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_SUMMON_PLAYERS_WHO_ARE_IN_OLYMPIAD);
 			return false;

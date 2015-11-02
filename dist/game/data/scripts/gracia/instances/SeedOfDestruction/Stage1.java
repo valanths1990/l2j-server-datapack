@@ -81,6 +81,7 @@ public final class Stage1 extends Quest
 		public Map<L2Npc, Boolean> npcList = new HashMap<>();
 		public int deviceSpawnedMobCount = 0;
 		public Lock lock = new ReentrantLock();
+		public L2MonsterInstance tiat;
 	}
 	
 	protected static class SODSpawn
@@ -739,9 +740,10 @@ public final class Stage1 extends Quest
 		}
 		else if (npcId == TIAT)
 		{
+			world.tiat = (L2MonsterInstance) npc;
 			for (int i = 0; i < TIAT_GUARD_NUMBER; i++)
 			{
-				addMinion((L2MonsterInstance) npc, TIAT_GUARD);
+				addMinion(world.tiat, TIAT_GUARD);
 			}
 		}
 	}
@@ -1008,7 +1010,7 @@ public final class Stage1 extends Quest
 				}
 				else if (npc.getId() == TIAT_GUARD)
 				{
-					addMinion(((L2MonsterInstance) npc).getLeader(), TIAT_GUARD);
+					addMinion(world.tiat, TIAT_GUARD);
 				}
 			}
 		}

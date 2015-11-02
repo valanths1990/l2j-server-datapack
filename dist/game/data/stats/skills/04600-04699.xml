@@ -53,7 +53,7 @@
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
+				<mul stat="critRate" val="#rCrit" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
 		</for>
@@ -325,7 +325,7 @@
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
+				<mul stat="critRate" val="#rCrit" />
 			</effect>
 		</for>
 	</skill>
@@ -349,7 +349,7 @@
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="#cAtk" />
+				<mul stat="critDmg" val="#cAtk" />
 			</effect>
 		</for>
 	</skill>
@@ -1062,7 +1062,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="removedOnDamage" val="true" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1170,7 +1169,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
+				<mul stat="critRate" val="#rCrit" />
 			</effect>
 		</for>
 	</skill>
@@ -1190,7 +1189,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="#cAtk" />
+				<mul stat="critDmg" val="#cAtk" />
 			</effect>
 		</for>
 	</skill>
@@ -1522,7 +1521,6 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
-		<set name="removedOnDamage" val="true" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1558,7 +1556,6 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
-		<set name="removedOnDamage" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
@@ -1593,7 +1590,6 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
-		<set name="removedOnDamage" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
@@ -2289,7 +2285,7 @@
 				<sub stat="rEvas" val="4" />
 				<mul stat="pDef" val="0.55" />
 				<mul stat="pAtkSpd" val="0.75" />
-				<mul stat="rCrit" val="0.77" />
+				<mul stat="critRate" val="0.77" />
 				<mul stat="mDef" val="0.2" />
 			</effect>
 		</for>
@@ -2388,8 +2384,8 @@
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="#cAtk" />
+				<mul stat="critRate" val="#rCrit" />
+				<mul stat="critDmg" val="#cAtk" />
 			</effect>
 		</for>
 	</skill>

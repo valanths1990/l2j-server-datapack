@@ -2,7 +2,7 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/skillTrees.xsd">
 	<!-- Gladiator -->
 	<skillTree type="classSkillTree" classId="2">
-		<skill skillName="Rush" skillId="994" skillLvl="1" getLevel="40" levelUpSp="33000" learnedByNpc="true" />
+		<skill skillName="Rush" skillId="994" skillLvl="1" getLevel="40" levelUpSp="30000" learnedByNpc="true" />
 	</skillTree>
 	<!-- Warlord -->
 	<skillTree type="classSkillTree" classId="3">
@@ -23,13 +23,13 @@
 	<!-- Scavenger -->
 	<skillTree type="classSkillTree" classId="54">
 		<skill skillName="Dagger Mastery" skillId="209" skillLvl="1" getLevel="20" levelUpSp="3400" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLvl="2" getLevel="24" levelUpSp="3400" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLvl="3" getLevel="28" levelUpSp="3400" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLvl="4" getLevel="28" levelUpSp="3400" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLvl="5" getLevel="32" levelUpSp="3400" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLvl="6" getLevel="32" levelUpSp="3400" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLvl="7" getLevel="36" levelUpSp="3400" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLvl="8" getLevel="36" levelUpSp="3400" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLvl="2" getLevel="24" levelUpSp="7000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLvl="3" getLevel="28" levelUpSp="5000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLvl="4" getLevel="28" levelUpSp="5000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLvl="5" getLevel="32" levelUpSp="11000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLvl="6" getLevel="32" levelUpSp="11000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLvl="7" getLevel="36" levelUpSp="16000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLvl="8" getLevel="36" levelUpSp="16000" learnedByNpc="true" />
 	</skillTree>
 	<!-- Bounty Hunter -->
 	<skillTree type="classSkillTree" classId="55">
@@ -78,24 +78,24 @@
 		<skill skillName="Deadly Blow" skillId="263" skillLvl="13" getLevel="52" levelUpSp="36000" learnedByNpc="true" />
 		<skill skillName="Deadly Blow" skillId="263" skillLvl="14" getLevel="52" levelUpSp="36000" learnedByNpc="true" />
 		<skill skillName="Deadly Blow" skillId="263" skillLvl="15" getLevel="52" levelUpSp="36000" learnedByNpc="true" />
-		<skill skillName="Backstab" skillId="30" skillLvl="16" getLevel="55" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Backstab" skillId="30" skillLvl="17" getLevel="55" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Backstab" skillId="30" skillLvl="18" getLevel="55" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLvl="24" getLevel="55" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLvl="25" getLevel="55" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLvl="26" getLevel="55" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Deadly Blow" skillId="263" skillLvl="16" getLevel="55" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Deadly Blow" skillId="263" skillLvl="17" getLevel="55" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Deadly Blow" skillId="263" skillLvl="18" getLevel="55" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Backstab" skillId="30" skillLvl="19" getLevel="58" levelUpSp="52000" learnedByNpc="true" />
-		<skill skillName="Backstab" skillId="30" skillLvl="20" getLevel="58" levelUpSp="52000" learnedByNpc="true" />
-		<skill skillName="Backstab" skillId="30" skillLvl="21" getLevel="58" levelUpSp="52000" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLvl="27" getLevel="58" levelUpSp="52000" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLvl="28" getLevel="58" levelUpSp="52000" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLvl="29" getLevel="58" levelUpSp="52000" learnedByNpc="true" />
-		<skill skillName="Deadly Blow" skillId="263" skillLvl="19" getLevel="58" levelUpSp="52000" learnedByNpc="true" />
-		<skill skillName="Deadly Blow" skillId="263" skillLvl="20" getLevel="58" levelUpSp="52000" learnedByNpc="true" />
-		<skill skillName="Deadly Blow" skillId="263" skillLvl="21" getLevel="58" levelUpSp="52000" learnedByNpc="true" />
+		<skill skillName="Backstab" skillId="30" skillLvl="16" getLevel="55" levelUpSp="52000" learnedByNpc="true" />
+		<skill skillName="Backstab" skillId="30" skillLvl="17" getLevel="55" levelUpSp="52000" learnedByNpc="true" />
+		<skill skillName="Backstab" skillId="30" skillLvl="18" getLevel="55" levelUpSp="52000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLvl="24" getLevel="55" levelUpSp="52000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLvl="25" getLevel="55" levelUpSp="52000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLvl="26" getLevel="55" levelUpSp="52000" learnedByNpc="true" />
+		<skill skillName="Deadly Blow" skillId="263" skillLvl="16" getLevel="55" levelUpSp="52000" learnedByNpc="true" />
+		<skill skillName="Deadly Blow" skillId="263" skillLvl="17" getLevel="55" levelUpSp="52000" learnedByNpc="true" />
+		<skill skillName="Deadly Blow" skillId="263" skillLvl="18" getLevel="55" levelUpSp="52000" learnedByNpc="true" />
+		<skill skillName="Backstab" skillId="30" skillLvl="19" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
+		<skill skillName="Backstab" skillId="30" skillLvl="20" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
+		<skill skillName="Backstab" skillId="30" skillLvl="21" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLvl="27" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLvl="28" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLvl="29" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
+		<skill skillName="Deadly Blow" skillId="263" skillLvl="19" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
+		<skill skillName="Deadly Blow" skillId="263" skillLvl="20" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
+		<skill skillName="Deadly Blow" skillId="263" skillLvl="21" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
 		<skill skillName="Backstab" skillId="30" skillLvl="22" getLevel="60" levelUpSp="110000" learnedByNpc="true" />
 		<skill skillName="Backstab" skillId="30" skillLvl="23" getLevel="60" levelUpSp="110000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLvl="30" getLevel="60" levelUpSp="110000" learnedByNpc="true" />

@@ -255,8 +255,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="EnlargeAbnormalSlot">
-				<param slots="#slots" />
+			<effect name="Buff">
+				<add stat="enlargeAbnormalSlot" val="#slots" />
 			</effect>
 		</for>
 	</skill>
@@ -540,7 +540,7 @@
 				<mul stat="maxCp" val="1.2" />
 				<mul stat="regCp" val="1.2" />
 				<mul stat="maxMp" val="1.2" />
-				<mul stat="rCrit" val="1.2" />
+				<mul stat="critRate" val="1.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
@@ -560,7 +560,7 @@
 				<mul stat="maxCp" val="1.2" />
 				<mul stat="regCp" val="1.2" />
 				<mul stat="maxMp" val="1.2" />
-				<mul stat="rCrit" val="1.2" />
+				<mul stat="critRate" val="1.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
@@ -701,7 +701,6 @@
 		<set name="magicLvl" val="64" />
 		<set name="mpConsume" val="60" />
 		<set name="operateType" val="A2" />
-		<set name="removedOnAnyActionExceptMove" val="true" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
@@ -931,7 +930,6 @@
 		<set name="mpConsume" val="37" />
 		<set name="mpInitialConsume" val="36" />
 		<set name="operateType" val="A2" />
-		<set name="removedOnAnyActionExceptMove" val="true" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
@@ -1006,7 +1004,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A2" />
-		<set name="removedOnDamage" val="true" />
 		<set name="reuseDelay" val="900000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
@@ -1754,7 +1751,6 @@
 		<set name="power" val="1" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="simultaneousCast" val="true" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
@@ -2103,7 +2099,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.25" />
-				<mul stat="MagicalMpConsumeRate" val="1.35" />
+				<mul stat="magicalMpConsumeRate" val="1.35" />
 			</effect>
 		</for>
 	</skill>
@@ -2685,8 +2681,8 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#amount" />
-				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="#amount" />
+				<mul stat="critRate" val="#rCrit" />
+				<mul stat="critDmg" val="#amount" />
 			</effect>
 		</for>
 	</skill>
@@ -2838,7 +2834,6 @@
 		<set name="mpConsume" val="104" />
 		<set name="mpInitialConsume" val="26" />
 		<set name="operateType" val="A2" />
-		<set name="removedOnDamage" val="true" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
@@ -3297,7 +3292,7 @@
 		</for>
 	</skill>
 	<skill id="1492" levels="1" name="Flame Armor">
-		<!-- Confirmed CT2.5 and Partially Updated to H5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ELEMENTAL_ARMOR" />
@@ -3305,7 +3300,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1492" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="29" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="operateType" val="A2" />
@@ -3324,7 +3319,7 @@
 		</for>
 	</skill>
 	<skill id="1493" levels="1" name="Frost Armor">
-		<!-- Confirmed CT2.5 and Partially Updated to H5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ELEMENTAL_ARMOR" />
@@ -3332,7 +3327,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1493" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="29" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="operateType" val="A2" />
@@ -3351,7 +3346,7 @@
 		</for>
 	</skill>
 	<skill id="1494" levels="1" name="Hurricane Armor">
-		<!-- Confirmed CT2.5 and Partially Updated to H5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ELEMENTAL_ARMOR" />
@@ -3359,7 +3354,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1494" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="29" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="operateType" val="A2" />
@@ -3393,7 +3388,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="145" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="117" />
@@ -3429,7 +3424,6 @@
 		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="73" />
 		<set name="operateType" val="A2" />
-		<set name="removedOnAnyActionExceptMove" val="true" />
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SERVITOR" />
