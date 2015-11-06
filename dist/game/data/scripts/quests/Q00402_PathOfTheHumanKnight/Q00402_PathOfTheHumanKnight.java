@@ -155,25 +155,7 @@ public final class Q00402_PathOfTheHumanKnight extends Quest
 				{
 					giveAdena(player, 81900, true);
 					giveItems(player, SWORD_OF_RITUAL, 1);
-					takeItems(player, COIN_OF_LORDS1, 1);
-					takeItems(player, COIN_OF_LORDS2, 1);
-					takeItems(player, COIN_OF_LORDS3, 1);
-					takeItems(player, COIN_OF_LORDS4, 1);
-					takeItems(player, COIN_OF_LORDS5, 1);
-					takeItems(player, COIN_OF_LORDS6, 1);
-					takeItems(player, GLUDIO_GUARDS_1ST_BADGE, 1);
-					takeItems(player, GLUDIO_GUARDS_2ND_BADGE, 1);
-					takeItems(player, GLUDIO_GUARDS_3RD_BADGE, 1);
-					takeItems(player, EINHASADS_1ST_TEMPLE_BADGE, 1);
-					takeItems(player, EINHASADS_2ND_TEMPLE_BADGE, 1);
-					takeItems(player, EINHASADS_3RD_TEMPLE_BADGE, 1);
-					takeItems(player, BUGBEAR_NECKLACE, 1);
-					takeItems(player, EINHASAD_CRUCIFIX, 1);
-					takeItems(player, VENOMOUS_SPIDERS_LEG, 1);
-					takeItems(player, LIZARDMANS_TOTEM, 1);
-					takeItems(player, GIANT_SPIDERS_HUSK, 1);
-					takeItems(player, SKULL_OF_SILENT_HORROR, 1);
-					takeItems(player, SQUIRES_MARK, 1);
+					
 					final int level = player.getLevel();
 					if (level >= 20)
 					{
@@ -200,25 +182,7 @@ public final class Q00402_PathOfTheHumanKnight extends Quest
 				{
 					giveAdena(player, 81900, true);
 					giveItems(player, SWORD_OF_RITUAL, 1);
-					takeItems(player, COIN_OF_LORDS1, 1);
-					takeItems(player, COIN_OF_LORDS2, 1);
-					takeItems(player, COIN_OF_LORDS3, 1);
-					takeItems(player, COIN_OF_LORDS4, 1);
-					takeItems(player, COIN_OF_LORDS5, 1);
-					takeItems(player, COIN_OF_LORDS6, 1);
-					takeItems(player, GLUDIO_GUARDS_1ST_BADGE, 1);
-					takeItems(player, GLUDIO_GUARDS_2ND_BADGE, 1);
-					takeItems(player, GLUDIO_GUARDS_3RD_BADGE, 1);
-					takeItems(player, EINHASADS_1ST_TEMPLE_BADGE, 1);
-					takeItems(player, EINHASADS_2ND_TEMPLE_BADGE, 1);
-					takeItems(player, EINHASADS_3RD_TEMPLE_BADGE, 1);
-					takeItems(player, BUGBEAR_NECKLACE, 1);
-					takeItems(player, EINHASAD_CRUCIFIX, 1);
-					takeItems(player, VENOMOUS_SPIDERS_LEG, 1);
-					takeItems(player, LIZARDMANS_TOTEM, 1);
-					takeItems(player, GIANT_SPIDERS_HUSK, 1);
-					takeItems(player, SKULL_OF_SILENT_HORROR, 1);
-					takeItems(player, SQUIRES_MARK, 1);
+					
 					final int level = player.getLevel();
 					if (level >= 20)
 					{
@@ -431,13 +395,7 @@ public final class Q00402_PathOfTheHumanKnight extends Quest
 						{
 							giveAdena(player, 163800, true);
 							giveItems(player, SWORD_OF_RITUAL, 1);
-							takeItems(player, COIN_OF_LORDS1, 1);
-							takeItems(player, COIN_OF_LORDS2, 1);
-							takeItems(player, COIN_OF_LORDS3, 1);
-							takeItems(player, COIN_OF_LORDS4, 1);
-							takeItems(player, COIN_OF_LORDS5, 1);
-							takeItems(player, COIN_OF_LORDS6, 1);
-							takeItems(player, SQUIRES_MARK, 1);
+							
 							final int level = player.getLevel();
 							if (level >= 20)
 							{
