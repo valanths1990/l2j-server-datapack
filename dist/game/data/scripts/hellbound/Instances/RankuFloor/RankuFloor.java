@@ -107,7 +107,7 @@ public final class RankuFloor extends AbstractInstance
 		{
 			final Instance inst = InstanceManager.getInstance().getInstance(instanceId);
 			final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-			inst.setSpawnLoc(EXIT_POINT);
+			inst.setExitLoc(EXIT_POINT);
 			finishInstance(world);
 			addSpawn(CUBE, -19056, 278732, -15000, 0, false, 0, false, instanceId);
 		}

@@ -3,7 +3,7 @@
 	<activityTime val="60" />
 	<allowSummon val="false" />
 	<emptyDestroyTime val="900" />
-	<spawnPoint spawnX="-12797" spawnY="122675" spawnZ="-3117" />
+	<exitPoint x="-12797" y="122675" z="-3117" />
 	<doorlist>
 		<door doorId="17240001" />
 		<door doorId="17240002" />

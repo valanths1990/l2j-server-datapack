@@ -107,7 +107,7 @@ public final class DemonPrinceFloor extends AbstractInstance
 		{
 			final Instance inst = InstanceManager.getInstance().getInstance(instanceId);
 			final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-			inst.setSpawnLoc(EXIT_POINT);
+			inst.setExitLoc(EXIT_POINT);
 			
 			finishInstance(world);
 			addSpawn(CUBE, -22144, 278744, -8239, 0, false, 0, false, instanceId);
