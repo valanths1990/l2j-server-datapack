@@ -732,10 +732,10 @@
 	<skill id="5646" levels="2" name="Unicorn Seraphim - Wild Magic">
 		<!-- Confirmed CT2.5 -->
 		<!-- 3 lvl not_used, don't add it on skill -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#abnormalTypes"> MAGIC_CRITICAL_UP MAGIC_CRITICAL_UP HIT_UP </table>
-		<table name="#effectPoints"> 582 635 532 </table>
-		<table name="#icons"> icon.skill1303 icon.skill1303 icon.skill1240 </table>
+		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#abnormalTypes"> MAGIC_CRITICAL_UP MAGIC_CRITICAL_UP </table>
+		<table name="#effectPoints"> 582 635 </table>
+		<table name="#icons"> icon.skill1303 icon.skill1303 </table>
 		<table name="#magicLvl"> 64 72 </table>
 		<table name="#mCritRate"> 2 3 </table>
 		<table name="#mpConsume"> 46 52 </table>
