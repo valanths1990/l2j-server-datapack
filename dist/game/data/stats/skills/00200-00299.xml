@@ -2661,6 +2661,9 @@
 				<param SLEEP="#traits" />
 				<param PARALYZE="#traits" />
 			</effect>
+			<effect name="Buff">
+				<sub stat="cancelVuln" val="40" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="288" levels="4" name="Guard Stance" enchantGroup1="1" enchantGroup2="1">
