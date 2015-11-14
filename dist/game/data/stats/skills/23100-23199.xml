@@ -927,7 +927,13 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="Invincible" />
+			<effect name="BlockDamage">
+				<param block="HP"/>
+			</effect>
+			<effect name="BlockDamage">
+				<param block="MP"/>
+			</effect>
+			<effect name="BlockDebuff" />
 			<effect name="CpHealPercent">
 				<param power="100" />
 			</effect>
