@@ -325,6 +325,9 @@
 		<for>
 			<effect name="Transformation">
 				<param id="121" />
+				<mul stat="weightLimit" val="11" />
+				<mul stat="weightPenalty" val="9000" />
+				<add stat="inventoryLimit" val="8" />
 			</effect>
 		</for>
 	</skill>
@@ -345,6 +348,9 @@
 		<for>
 			<effect name="Transformation">
 				<param id="122" />
+				<mul stat="weightLimit" val="11" />
+				<mul stat="weightPenalty" val="9000" />
+				<add stat="inventoryLimit" val="8" />
 			</effect>
 		</for>
 	</skill>
@@ -795,7 +801,14 @@
 		<set name="icon" val="icon.skill1257" />
 		<set name="magicLvl" val="52" />
 		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="weightLimit" val="11" />
+				<mul stat="weightPenalty" val="9000" />
+				<add stat="inventoryLimit" val="8" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="6062" levels="1" name="Raid Boss - Level 81">
 		<!-- Confirmed CT2.5 -->
