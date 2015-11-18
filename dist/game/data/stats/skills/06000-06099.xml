@@ -326,7 +326,7 @@
 			<effect name="Transformation">
 				<param id="121" />
 				<mul stat="weightLimit" val="11" />
-				<mul stat="weightPenalty" val="9000" />
+				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
 			</effect>
 		</for>
@@ -349,7 +349,7 @@
 			<effect name="Transformation">
 				<param id="122" />
 				<mul stat="weightLimit" val="11" />
-				<mul stat="weightPenalty" val="9000" />
+				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
 			</effect>
 		</for>
@@ -805,7 +805,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="11" />
-				<mul stat="weightPenalty" val="9000" />
+				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
 			</effect>
 		</for>
