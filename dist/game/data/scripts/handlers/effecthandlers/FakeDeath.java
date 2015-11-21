@@ -49,17 +49,6 @@ public final class FakeDeath extends AbstractEffect
 	}
 	
 	@Override
-	public boolean canStart(BuffInfo info)
-	{
-		System.out.println(info.getEffected().getActingPlayer().isFakeDeath());
-		if (info.getEffected().isAlikeDead())
-		{
-			info.getEffected().sendPacket(SystemMessageId.CANT_MOVE_SITTING);
-		}
-		return super.canStart(info);
-	}
-	
-	@Override
 	public boolean onActionTime(BuffInfo info)
 	{
 		if (info.getEffected().isDead())
