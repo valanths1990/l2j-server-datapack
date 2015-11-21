@@ -309,6 +309,7 @@ import quests.Q00337_AudienceWithTheLandDragon.Q00337_AudienceWithTheLandDragon;
 import quests.Q00338_AlligatorHunter.Q00338_AlligatorHunter;
 import quests.Q00340_SubjugationOfLizardmen.Q00340_SubjugationOfLizardmen;
 import quests.Q00341_HuntingForWildBeasts.Q00341_HuntingForWildBeasts;
+import quests.Q00343_UnderTheShadowOfTheIvoryTower.Q00343_UnderTheShadowOfTheIvoryTower;
 import quests.Q00344_1000YearsTheEndOfLamentation.Q00344_1000YearsTheEndOfLamentation;
 import quests.Q00345_MethodToRaiseTheDead.Q00345_MethodToRaiseTheDead;
 import quests.Q00347_GoGetTheCalculator.Q00347_GoGetTheCalculator;
@@ -793,6 +794,7 @@ public class QuestMasterHandler
 		Q00338_AlligatorHunter.class,
 		Q00340_SubjugationOfLizardmen.class,
 		Q00341_HuntingForWildBeasts.class,
+		Q00343_UnderTheShadowOfTheIvoryTower.class,
 		Q00344_1000YearsTheEndOfLamentation.class,
 		Q00345_MethodToRaiseTheDead.class,
 		Q00347_GoGetTheCalculator.class,
