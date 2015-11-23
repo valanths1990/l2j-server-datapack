@@ -157,6 +157,7 @@ public final class EffectMasterHandler
 		ServitorShare.class,
 		SetSkill.class,
 		SilentMove.class,
+		SingleTarget.class,
 		SkillTurning.class,
 		Sleep.class,
 		SoulBlow.class,
