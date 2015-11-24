@@ -1792,7 +1792,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 		QuestState qs = player.getQuestState(getName());
 		final List<QuestState> candidates = new ArrayList<>();
 		
-		if (qs.isStarted() && (qs.getMemoState() == memoState))
+		if ((qs != null) && qs.isStarted() && (qs.getMemoState() == memoState))
 		{
 			candidates.add(qs);
 			candidates.add(qs);
@@ -1804,7 +1804,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 			{
 				
 				QuestState qss = pm.getQuestState(getName());
-				if (qss.isStarted() && (qss.getMemoState() == memoState) && Util.checkIfInRange(1500, npc, pm, true))
+				if ((qss != null) && qss.isStarted() && (qss.getMemoState() == memoState) && Util.checkIfInRange(1500, npc, pm, true))
 				{
 					candidates.add(qss);
 				}
@@ -1817,7 +1817,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 	{
 		QuestState qs = player.getQuestState(getName());
 		final List<QuestState> candidates = new ArrayList<>();
-		if (qs.isStarted() && (qs.getMemoState() == memoState) && !qs.hasQuestItems(Q_KALDIS_GOLD_DRAGON))
+		if ((qs != null) && qs.isStarted() && (qs.getMemoState() == memoState) && !qs.hasQuestItems(Q_KALDIS_GOLD_DRAGON))
 		{
 			candidates.add(qs);
 			candidates.add(qs);
@@ -1829,7 +1829,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 			{
 				
 				QuestState qss = pm.getQuestState(getName());
-				if (qss.isStarted() && (qss.getMemoState() == memoState) && !qs.hasQuestItems(Q_KALDIS_GOLD_DRAGON) && Util.checkIfInRange(1500, npc, pm, true))
+				if ((qss != null) && qss.isStarted() && (qss.getMemoState() == memoState) && !qss.hasQuestItems(Q_KALDIS_GOLD_DRAGON) && Util.checkIfInRange(1500, npc, pm, true))
 				{
 					candidates.add(qss);
 				}
