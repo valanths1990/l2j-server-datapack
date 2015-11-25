@@ -1810,7 +1810,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 				}
 			});
 		}
-		return candidates.get(getRandom(candidates.size()));
+		return candidates.size() > 0 ? candidates.get(getRandom(candidates.size())) : null;
 	}
 	
 	private QuestState getRandomPlayerFromPartyCoin(L2PcInstance player, L2Npc npc, int memoState)
