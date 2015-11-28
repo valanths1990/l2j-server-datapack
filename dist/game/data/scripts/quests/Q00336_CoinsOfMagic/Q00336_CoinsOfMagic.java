@@ -296,6 +296,10 @@ public final class Q00336_CoinsOfMagic extends Quest
 			qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
 			return "30232-05.htm";
 		}
+		if (event.contains(".htm"))
+		{
+			return event;
+		}
 		int npcId = npc.getId();
 		int eventID = Integer.parseInt(event);
 		
@@ -1810,7 +1814,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 				}
 			});
 		}
-		return candidates.size() > 0 ? candidates.get(getRandom(candidates.size())) : null;
+		return candidates.isEmpty() ? null : candidates.get(getRandom(candidates.size()));
 	}
 	
 	private QuestState getRandomPlayerFromPartyCoin(L2PcInstance player, L2Npc npc, int memoState)
@@ -1835,6 +1839,6 @@ public final class Q00336_CoinsOfMagic extends Quest
 				}
 			});
 		}
-		return candidates.size() > 0 ? candidates.get(getRandom(candidates.size())) : null;
+		return candidates.isEmpty() ? null : candidates.get(getRandom(candidates.size()));
 	}
 }

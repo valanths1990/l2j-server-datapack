@@ -225,6 +225,7 @@ import quests.Q00230_TestOfTheSummoner.Q00230_TestOfTheSummoner;
 import quests.Q00231_TestOfTheMaestro.Q00231_TestOfTheMaestro;
 import quests.Q00232_TestOfTheLord.Q00232_TestOfTheLord;
 import quests.Q00233_TestOfTheWarSpirit.Q00233_TestOfTheWarSpirit;
+import quests.Q00234_FatesWhisper.Q00234_FatesWhisper;
 import quests.Q00235_MimirsElixir.Q00235_MimirsElixir;
 import quests.Q00236_SeedsOfChaos.Q00236_SeedsOfChaos;
 import quests.Q00237_WindsOfChange.Q00237_WindsOfChange;
@@ -710,6 +711,7 @@ public class QuestMasterHandler
 		Q00231_TestOfTheMaestro.class,
 		Q00232_TestOfTheLord.class,
 		Q00233_TestOfTheWarSpirit.class,
+		Q00234_FatesWhisper.class,
 		Q00235_MimirsElixir.class,
 		Q00236_SeedsOfChaos.class,
 		Q00237_WindsOfChange.class,
