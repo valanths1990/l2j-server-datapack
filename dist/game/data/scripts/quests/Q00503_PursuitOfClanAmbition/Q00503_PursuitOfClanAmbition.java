@@ -262,7 +262,7 @@ public final class Q00503_PursuitOfClanAmbition extends Quest
 				qs.setMemoState(8100);
 				qs.setCond(9, true);
 				npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.BLOOD_AND_HONOR));
-				startQuestTimer("SPAWN_WITH", 5000, npc, player);
+				startQuestTimer("SPAWN_WITCH", 5000, npc, player);
 				htmltext = event;
 				break;
 			}
@@ -307,11 +307,11 @@ public final class Q00503_PursuitOfClanAmbition extends Quest
 				htmltext = event;
 				break;
 			}
-			case "SPAWN_WITH":
+			case "SPAWN_WITCH":
 			{
-				L2Npc athrea = addSpawn(WITCH_ATHREA, 160688, 21296, -3714, 0, false, 0);
+				final L2Npc athrea = addSpawn(WITCH_ATHREA, 160688, 21296, -3714, 0, false, 0);
 				athrea.setScriptValue(50301);
-				L2Npc kalis = addSpawn(WITCH_KALIS, 160690, 21176, -3712, 0, false, 0);
+				final L2Npc kalis = addSpawn(WITCH_KALIS, 160690, 21176, -3712, 0, false, 0);
 				kalis.setScriptValue(50302);
 				break;
 			}
