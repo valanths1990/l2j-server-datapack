@@ -629,19 +629,17 @@
 		<enchant2 name="mpConsume" val="#ench2mpConsume" />
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
 		<for>
-			<effect name="Buff">
-				<add stat="maxCp" val="800" />
-			</effect>
-			<effect name="CpHeal">
+			<effect name="MaxCp">
 				<param power="800" />
+				<param type="DIFF" />
+				<param heal="true" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff">
-				<add stat="maxCp" val="#ench1amount" />
-			</effect>
-			<effect name="CpHeal">
+			<effect name="MaxCp">
 				<param power="#ench1amount" />
+				<param type="DIFF" />
+				<param heal="true" />
 			</effect>
 		</enchant1for>
 	</skill>
