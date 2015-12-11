@@ -1121,7 +1121,7 @@ public final class Q00234_FatesWhisper extends Quest
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
-		QuestState qs = attacker.getQuestState(getName());
+		QuestState qs = getQuestState(attacker, false);
 		if ((qs != null) && (npc.getId() == BAIUM))
 		{
 			if ((attacker.getActiveWeaponItem() != null) && (attacker.getActiveWeaponItem().getId() == Q_PIPETTE_KNIFE))
@@ -1137,7 +1137,7 @@ public final class Q00234_FatesWhisper extends Quest
 	
 	private QuestState getRandomPlayerFromParty(L2PcInstance player, L2Npc npc, int memoState)
 	{
-		QuestState qs = player.getQuestState(getName());
+		QuestState qs = getQuestState(player, false);
 		final List<QuestState> candidates = new ArrayList<>();
 		
 		if ((qs != null) && qs.isStarted() && (qs.getMemoState() == memoState) && !qs.hasQuestItems(Q_WHITE_FABRIC_Q0234))
@@ -1151,7 +1151,7 @@ public final class Q00234_FatesWhisper extends Quest
 			player.getParty().getMembers().stream().forEach(pm ->
 			{
 				
-				QuestState qss = pm.getQuestState(getName());
+				QuestState qss = getQuestState(pm, false);
 				if ((qss != null) && qss.isStarted() && (qss.getMemoState() == memoState) && !qss.hasQuestItems(Q_WHITE_FABRIC_Q0234) && Util.checkIfInRange(1500, npc, pm, true))
 				{
 					candidates.add(qss);

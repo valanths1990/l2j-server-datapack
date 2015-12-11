@@ -873,7 +873,7 @@ public final class Q00386_StolenDignity extends Quest
 	
 	private QuestState getRandomPlayerFromParty(L2PcInstance player, L2Npc npc)
 	{
-		QuestState qs = player.getQuestState(getName());
+		QuestState qs = getQuestState(player, false);
 		final List<QuestState> candidates = new ArrayList<>();
 		
 		if ((qs != null) && qs.isStarted())
@@ -887,7 +887,7 @@ public final class Q00386_StolenDignity extends Quest
 			player.getParty().getMembers().stream().forEach(pm ->
 			{
 				
-				QuestState qss = pm.getQuestState(getName());
+				QuestState qss = getQuestState(pm, false);
 				if ((qss != null) && qss.isStarted() && Util.checkIfInRange(1500, npc, pm, true))
 				{
 					candidates.add(qss);
