@@ -18,8 +18,6 @@
  */
 package ai.npc.Teleports.OracleTeleport;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.enums.QuestSound;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -29,6 +27,8 @@ import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Oracle teleport AI.
@@ -322,7 +322,7 @@ public final class OracleTeleport extends AbstractNpcAI
 				htmltext = "1.htm";
 				st.exitQuest(true);
 			}
-			else if (player.getAllActiveQuests().length > 23)
+			else if (player.getAllActiveQuests().size() > 23)
 			{
 				htmltext = "1a.htm";
 				st.exitQuest(true);
@@ -345,7 +345,7 @@ public final class OracleTeleport extends AbstractNpcAI
 				htmltext = "ziggurat_lowlevel.htm";
 				st.exitQuest(true);
 			}
-			else if (player.getAllActiveQuests().length > 40)
+			else if (player.getAllActiveQuests().size() > 40)
 			{
 				player.sendPacket(SystemMessageId.TOO_MANY_QUESTS);
 				st.exitQuest(true);
