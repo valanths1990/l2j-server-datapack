@@ -331,49 +331,49 @@ public final class Q00334_TheWishingPotion extends Quest
 			case GRIMA:
 			{
 				startQuestTimer("2336002", 1000 * 200, npc, null);
-				npc.Say(NpcStringId.OH_OH_OH);
+				npc.say(NpcStringId.OH_OH_OH);
 				break;
 			}
 			case SUCCUBUS_OF_SEDUCTION:
 			{
 				startQuestTimer("2336003", 1000 * 200, npc, null);
-				npc.Say(NpcStringId.DO_YOU_WANT_US_TO_LOVE_YOU_OH);
+				npc.say(NpcStringId.DO_YOU_WANT_US_TO_LOVE_YOU_OH);
 				break;
 			}
 			case GREAT_DEMON_KING:
 			{
 				startQuestTimer("2336007", 1000 * 600, npc, null);
-				npc.Say(NpcStringId.WHO_KILLED_MY_UNDERLING_DEVIL);
+				npc.say(NpcStringId.WHO_KILLED_MY_UNDERLING_DEVIL);
 				break;
 			}
 			case DLORD_ALEXANDROSANCHES:
 			{
 				startQuestTimer("2336004", 1000 * 200, npc, null);
-				npc.Say(NpcStringId.WHO_IS_CALLING_THE_LORD_OF_DARKNESS);
+				npc.say(NpcStringId.WHO_IS_CALLING_THE_LORD_OF_DARKNESS);
 				break;
 			}
 			case ABYSSKING_BONAPARTERIUS:
 			{
 				startQuestTimer("2336005", 1000 * 200, npc, null);
-				npc.Say(NpcStringId.I_AM_A_GREAT_EMPIRE_BONAPARTERIUS);
+				npc.say(NpcStringId.I_AM_A_GREAT_EMPIRE_BONAPARTERIUS);
 				break;
 			}
 			case EVILOVERLORD_RAMSEBALIUS:
 			{
 				startQuestTimer("2336006", 1000 * 200, npc, null);
-				npc.Say(NpcStringId.LET_YOUR_HEAD_DOWN_BEFORE_THE_LORD);
+				npc.say(NpcStringId.LET_YOUR_HEAD_DOWN_BEFORE_THE_LORD);
 				break;
 			}
 			case FAIRY_RUPINA:
 			{
 				startQuestTimer("2336001", 120 * 1000, npc, null);
-				npc.Say(NpcStringId.I_WILL_MAKE_YOUR_LOVE_COME_TRUE_LOVE_LOVE_LOVE);
+				npc.say(NpcStringId.I_WILL_MAKE_YOUR_LOVE_COME_TRUE_LOVE_LOVE_LOVE);
 				break;
 			}
 			case WISDOM_CHEST:
 			{
 				startQuestTimer("2336007", 120 * 1000, npc, null);
-				npc.Say(NpcStringId.I_HAVE_WISDOM_IN_ME_I_AM_THE_BOX_OF_WISDOM);
+				npc.say(NpcStringId.I_HAVE_WISDOM_IN_ME_I_AM_THE_BOX_OF_WISDOM);
 				break;
 			}
 		}
@@ -395,26 +395,26 @@ public final class Q00334_TheWishingPotion extends Quest
 			}
 			case DLORD_ALEXANDROSANCHES:
 			{
-				npc.Say(NpcStringId.OH_ITS_NOT_AN_OPPONENT_OF_MINE_HA_HA_HA);
+				npc.say(NpcStringId.OH_ITS_NOT_AN_OPPONENT_OF_MINE_HA_HA_HA);
 				npc.deleteMe();
 				break;
 			}
 			case ABYSSKING_BONAPARTERIUS:
 			{
-				npc.Say(NpcStringId.OH_ITS_NOT_AN_OPPONENT_OF_MINE_HA_HA_HA);
+				npc.say(NpcStringId.OH_ITS_NOT_AN_OPPONENT_OF_MINE_HA_HA_HA);
 				npc.deleteMe();
 				break;
 			}
 			case EVILOVERLORD_RAMSEBALIUS:
 			{
-				npc.Say(NpcStringId.OH_ITS_NOT_AN_OPPONENT_OF_MINE_HA_HA_HA);
+				npc.say(NpcStringId.OH_ITS_NOT_AN_OPPONENT_OF_MINE_HA_HA_HA);
 				npc.deleteMe();
 				break;
 			}
 			case WISDOM_CHEST:
 			{
-				npc.Say(NpcStringId.DONT_INTERRUPT_MY_REST_AGAIN);
-				npc.Say(NpcStringId.YOURE_A_GREAT_DEVIL_NOW);
+				npc.say(NpcStringId.DONT_INTERRUPT_MY_REST_AGAIN);
+				npc.say(NpcStringId.YOURE_A_GREAT_DEVIL_NOW);
 				npc.deleteMe();
 				break;
 			}
@@ -577,19 +577,19 @@ public final class Q00334_TheWishingPotion extends Quest
 					}
 					case 2336008:
 					{
-						npc.Say(NpcStringId.OK_EVERYBODY_PRAY_FERVENTLY);
+						npc.say(NpcStringId.OK_EVERYBODY_PRAY_FERVENTLY);
 						startQuestTimer("2336009", 4 * 1000, npc, player);
 						break;
 					}
 					case 2336009:
 					{
-						npc.Say(NpcStringId.BOTH_HANDS_TO_HEAVEN_EVERYBODY_YELL_TOGETHER);
+						npc.say(NpcStringId.BOTH_HANDS_TO_HEAVEN_EVERYBODY_YELL_TOGETHER);
 						startQuestTimer("2336010", 4 * 1000, npc, player);
 						break;
 					}
 					case 2336010:
 					{
-						npc.Say(NpcStringId.ONE_TWO_MAY_YOUR_DREAMS_COME_TRUE);
+						npc.say(NpcStringId.ONE_TWO_MAY_YOUR_DREAMS_COME_TRUE);
 						int i0 = 0;
 						switch (qs.getInt(I_QUEST0))
 						{
@@ -940,7 +940,7 @@ public final class Q00334_TheWishingPotion extends Quest
 				{
 					if (qs.isMemoState(2) && (qs.getInt(FLAG) == 3))
 					{
-						npc.Say(NpcStringId.BONAPARTERIUS_ABYSS_KING_WILL_PUNISH_YOU);
+						npc.say(NpcStringId.BONAPARTERIUS_ABYSS_KING_WILL_PUNISH_YOU);
 						if (getRandom(2) == 0)
 						{
 							addSpawn(ABYSSKING_BONAPARTERIUS, npc, true, 0, false);
@@ -977,7 +977,7 @@ public final class Q00334_TheWishingPotion extends Quest
 				{
 					if (qs.isMemoState(2) && (qs.getInt(FLAG) == 3))
 					{
-						npc.Say(NpcStringId.REVENGE_IS_OVERLORD_RAMSEBALIUS_OF_THE_EVIL_WORLD);
+						npc.say(NpcStringId.REVENGE_IS_OVERLORD_RAMSEBALIUS_OF_THE_EVIL_WORLD);
 						if (getRandom(2) == 0)
 						{
 							addSpawn(EVILOVERLORD_RAMSEBALIUS, npc, true, 0, false);
@@ -1016,7 +1016,7 @@ public final class Q00334_TheWishingPotion extends Quest
 				{
 					if (qs.isMemoState(2) && (qs.getInt(FLAG) == 3))
 					{
-						npc.Say(NpcStringId.OH_GREAT_DEMON_KING);
+						npc.say(NpcStringId.OH_GREAT_DEMON_KING);
 						if (getRandom(2) == 0)
 						{
 							addSpawn(GREAT_DEMON_KING, npc, true, 0, false);
