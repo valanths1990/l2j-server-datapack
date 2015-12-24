@@ -2749,7 +2749,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="30767" level="70" type="L2Npc" name="Auctioneer">
+	<npc id="30767" level="70" type="L2Auctioneer" name="Auctioneer">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2789,7 +2789,7 @@
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="30768" level="70" type="L2Npc" name="Auctioneer">
+	<npc id="30768" level="70" type="L2Auctioneer" name="Auctioneer">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2829,7 +2829,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="30769" level="70" type="L2Npc" name="Auctioneer">
+	<npc id="30769" level="70" type="L2Auctioneer" name="Auctioneer">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2869,7 +2869,7 @@
 			<height normal="21.5" />
 		</collision>
 	</npc>
-	<npc id="30770" level="70" type="L2Npc" name="Auctioneer">
+	<npc id="30770" level="70" type="L2Auctioneer" name="Auctioneer">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2909,7 +2909,7 @@
 			<height normal="18.5" />
 		</collision>
 	</npc>
-	<npc id="30771" level="70" type="L2Npc" name="Auctioneer">
+	<npc id="30771" level="70" type="L2Auctioneer" name="Auctioneer">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
