@@ -36,6 +36,7 @@ import com.l2jserver.gameserver.model.zone.ZoneId;
 import com.l2jserver.gameserver.network.SystemMessageId;
 
 /**
+ * Area Friendly target handler implementation.
  * @author Adry_85
  */
 public class AreaFriendly implements ITargetTypeHandler
@@ -107,7 +108,7 @@ public class AreaFriendly implements ITargetTypeHandler
 			return false;
 		}
 		
-		if ((target == null) || target.isAlikeDead() || target.isDoor() || (target instanceof L2SiegeFlagInstance) || target.isMonster())
+		if ((target == null) || target.isAlikeDead() || target.isDoor() || !activeChar.isOnSameSiegeSideWith(target) || (target instanceof L2SiegeFlagInstance) || target.isMonster())
 		{
 			return false;
 		}
