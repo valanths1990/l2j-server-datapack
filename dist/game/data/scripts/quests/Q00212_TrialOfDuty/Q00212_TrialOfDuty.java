@@ -295,7 +295,7 @@ public final class Q00212_TrialOfDuty extends Quest
 					{
 						case 1:
 						{
-							html = "30109-04.html";
+							html = "30109-04.htm";
 							break;
 						}
 						case 14:
