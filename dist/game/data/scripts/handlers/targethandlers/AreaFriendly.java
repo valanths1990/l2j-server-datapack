@@ -18,10 +18,9 @@
  */
 package handlers.targethandlers;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 
 import com.l2jserver.gameserver.GeoData;
@@ -37,14 +36,15 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 
 /**
  * Area Friendly target handler implementation.
- * @author Adry_85
+ * @author Adry_85, Zoey76
  */
 public class AreaFriendly implements ITargetTypeHandler
 {
+	private static final CharComparator CHAR_COMPARATOR = new CharComparator();
+	
 	@Override
 	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
 	{
-		List<L2Character> targetList = new ArrayList<>();
 		L2PcInstance player = activeChar.getActingPlayer();
 		
 		if (!checkTarget(player, target) && (skill.getCastRange() >= 0))
@@ -68,30 +68,31 @@ public class AreaFriendly implements ITargetTypeHandler
 				player
 			};
 		}
-		targetList.add(target); // Add target to target list
 		
+		final List<L2Character> targetList = new LinkedList<>();
 		if (target != null)
 		{
-			int maxTargets = skill.getAffectLimit();
-			final Collection<L2Character> objs = target.getKnownList().getKnownCharactersInRadius(skill.getAffectRange());
+			// Add target to target list.
+			targetList.add(target);
 			
-			// TODO: Chain Heal - The recovery amount decreases starting from the most injured person.
-			Collections.sort(targetList, new CharComparator());
-			
-			for (L2Character obj : objs)
+			final int maxTargets = skill.getAffectLimit();
+			for (L2Character obj : target.getKnownList().getKnownCharactersInRadius(skill.getAffectRange()))
 			{
-				if (!checkTarget(player, obj) || (obj == activeChar))
-				{
-					continue;
-				}
-				
 				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
 				{
 					break;
 				}
 				
+				if (!checkTarget(player, obj) || (obj == activeChar))
+				{
+					continue;
+				}
+				
 				targetList.add(obj);
 			}
+			
+			// Sort creatures, the most injured first.
+			Collections.sort(targetList, CHAR_COMPARATOR);
 		}
 		
 		if (targetList.isEmpty())
@@ -108,7 +109,13 @@ public class AreaFriendly implements ITargetTypeHandler
 			return false;
 		}
 		
-		if ((target == null) || target.isAlikeDead() || target.isDoor() || !activeChar.isOnSameSiegeSideWith(target) || (target instanceof L2SiegeFlagInstance) || target.isMonster())
+		if ((target == null) || target.isAlikeDead() || target.isDoor() || (target instanceof L2SiegeFlagInstance) || target.isMonster())
+		{
+			return false;
+		}
+		
+		// GMs and hidden creatures.
+		if (target.isInvisible())
 		{
 			return false;
 		}
@@ -137,6 +144,12 @@ public class AreaFriendly implements ITargetTypeHandler
 				return true;
 			}
 			
+			// Only siege allies.
+			if (activeChar.isInSiege() && !activeChar.isOnSameSiegeSideWith(targetPlayer))
+			{
+				return false;
+			}
+			
 			if (target.isInsideZone(ZoneId.PVP))
 			{
 				return false;
@@ -155,7 +168,7 @@ public class AreaFriendly implements ITargetTypeHandler
 		return true;
 	}
 	
-	public class CharComparator implements Comparator<L2Character>
+	public static class CharComparator implements Comparator<L2Character>
 	{
 		@Override
 		public int compare(L2Character char1, L2Character char2)
