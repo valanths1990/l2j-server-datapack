@@ -52,12 +52,18 @@ public final class CrystalGradeModify extends AbstractEffect
 		if (player != null)
 		{
 			player.setExpertisePenaltyBonus(0);
+			player.refreshExpertisePenalty();
 		}
 	}
 	
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		info.getEffected().getActingPlayer().setExpertisePenaltyBonus(_grade);
+		final L2PcInstance player = info.getEffected().getActingPlayer();
+		if (player != null)
+		{
+			player.setExpertisePenaltyBonus(_grade);
+			player.refreshExpertisePenalty();
+		}
 	}
 }
