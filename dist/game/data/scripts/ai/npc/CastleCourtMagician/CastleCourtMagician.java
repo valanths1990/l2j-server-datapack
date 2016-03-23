@@ -18,14 +18,13 @@
  */
 package ai.npc.CastleCourtMagician;
 
-import handlers.effecthandlers.CallPc;
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.ClanPrivilege;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.network.clientpackets.RequestAcquireSkill;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Castle Court Magician AI.
@@ -268,7 +267,7 @@ public final class CastleCourtMagician extends AbstractNpcAI
 					
 					if ((clanLeader != null) && clanLeader.isAffectedBySkill(CLAN_GATE))
 					{
-						if (CallPc.checkSummonTargetStatus(player, clanLeader)) // TODO: Custom one, retail dont check it but for sure lets check same conditions like when summon player by skill.
+						if (clanLeader.canSummonTarget(player)) // TODO: Custom one, retail dont check it but for sure lets check same conditions like when summon player by skill.
 						{
 							npc.setTarget(player);
 							npc.doCast(DISPLAY_CLAN_GATE.getSkill());
