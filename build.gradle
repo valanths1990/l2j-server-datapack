@@ -22,11 +22,11 @@ configurations.all {
 }
 
 dependencies {
-	compile 'org.slf4j:slf4j-api:1.7.12'
+	compile 'org.slf4j:slf4j-api:1.7.21'
 	compile files('../L2J_Server/dist/libs/mmocore.jar')
 	compile project(':L2J_Server')
 	testCompile 'org.mockito:mockito-all:2.0.2-beta'
-	testCompile 'org.testng:testng:6.9.6'
+	testCompile 'org.testng:testng:6.9.10'
 }
 
 task zip(type: Zip) {
@@ -39,5 +39,5 @@ task zip(type: Zip) {
 build.finalizedBy(zip)
 
 task wrapper(type: Wrapper) {
-	gradleVersion = '2.8'
+	gradleVersion = '2.14.1'
 }
