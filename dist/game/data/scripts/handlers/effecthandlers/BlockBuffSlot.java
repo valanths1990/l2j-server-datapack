@@ -46,7 +46,7 @@ public final class BlockBuffSlot extends AbstractEffect
 			_blockBuffSlots = new HashSet<>();
 			for (String slot : blockBuffSlots.split(";"))
 			{
-				_blockBuffSlots.add(AbnormalType.getAbnormalType(slot));
+				_blockBuffSlots.add(AbnormalType.valueOf(slot));
 			}
 		}
 		else

@@ -52,7 +52,7 @@ public final class DispelBySlot extends AbstractEffect
 			for (String ngtStack : _dispel.split(";"))
 			{
 				String[] ngt = ngtStack.split(",");
-				_dispelAbnormals.put(AbnormalType.getAbnormalType(ngt[0]), Short.parseShort(ngt[1]));
+				_dispelAbnormals.put(AbnormalType.valueOf(ngt[0]), Short.parseShort(ngt[1]));
 			}
 		}
 		else
