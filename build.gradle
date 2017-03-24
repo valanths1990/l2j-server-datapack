@@ -31,6 +31,7 @@ dependencies {
 	testCompile 'net.bytebuddy:byte-buddy:1.6.8'
 	testCompile 'net.bytebuddy:byte-buddy-agent:1.6.8'
 	testCompile 'org.objenesis:objenesis:2.5.1'
+	testCompile 'org.jmockit:jmockit:1.30'
 }
 
 task zip(type: Zip) {

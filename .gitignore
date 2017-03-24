@@ -1,8 +1,9 @@
 /bin/
 /build/
-/.gradle/
+.gradle/
 .DS_Store
 *.log
 .project
 .classpath
-/.idea/
+.idea/
+test-output/

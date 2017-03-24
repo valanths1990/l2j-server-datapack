@@ -452,6 +452,7 @@ import quests.Q00659_IdRatherBeCollectingFairyBreath.Q00659_IdRatherBeCollecting
 import quests.Q00660_AidingTheFloranVillage.Q00660_AidingTheFloranVillage;
 import quests.Q00661_MakingTheHarvestGroundsSafe.Q00661_MakingTheHarvestGroundsSafe;
 import quests.Q00662_AGameOfCards.Q00662_AGameOfCards;
+import quests.Q00663_SeductiveWhispers.Q00663_SeductiveWhispers;
 import quests.Q00688_DefeatTheElrokianRaiders.Q00688_DefeatTheElrokianRaiders;
 import quests.Q00690_JudesRequest.Q00690_JudesRequest;
 import quests.Q00691_MatrasSuspiciousRequest.Q00691_MatrasSuspiciousRequest;
@@ -941,6 +942,7 @@ public class QuestMasterHandler
 		Q00660_AidingTheFloranVillage.class,
 		Q00661_MakingTheHarvestGroundsSafe.class,
 		Q00662_AGameOfCards.class,
+		Q00663_SeductiveWhispers.class,
 		Q00688_DefeatTheElrokianRaiders.class,
 		Q00690_JudesRequest.class,
 		Q00691_MatrasSuspiciousRequest.class,
