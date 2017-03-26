@@ -345,6 +345,7 @@ import quests.Q00380_BringOutTheFlavorOfIngredients.Q00380_BringOutTheFlavorOfIn
 import quests.Q00381_LetsBecomeARoyalMember.Q00381_LetsBecomeARoyalMember;
 import quests.Q00382_KailsMagicCoin.Q00382_KailsMagicCoin;
 import quests.Q00383_TreasureHunt.Q00383_TreasureHunt;
+import quests.Q00384_WarehouseKeepersPastime.Q00384_WarehouseKeepersPastime;
 import quests.Q00385_YokeOfThePast.Q00385_YokeOfThePast;
 import quests.Q00386_StolenDignity.Q00386_StolenDignity;
 import quests.Q00401_PathOfTheWarrior.Q00401_PathOfTheWarrior;
@@ -833,6 +834,7 @@ public class QuestMasterHandler
 		Q00381_LetsBecomeARoyalMember.class,
 		Q00382_KailsMagicCoin.class,
 		Q00383_TreasureHunt.class,
+		Q00384_WarehouseKeepersPastime.class,
 		Q00385_YokeOfThePast.class,
 		Q00386_StolenDignity.class,
 		Q00401_PathOfTheWarrior.class,

@@ -144,9 +144,9 @@ public final class Q00386_StolenDignity extends Quest
 			if (event.equals("QUEST_ACCEPTED"))
 			{
 				qs.playSound(QuestSound.ITEMSOUND_QUEST_ACCEPT);
-				qs.setMemoState(336);
+				qs.setMemoState(386);
 				qs.startQuest();
-				qs.showQuestionMark(336);
+				qs.showQuestionMark(386);
 				qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
 				return "30843-05.htm";
 			}
@@ -188,80 +188,32 @@ public final class Q00386_StolenDignity extends Quest
 				case 17:
 				case 18:
 				{
-					selectBingoNumber(qs, (ask - 10) + 1);
+					selectBingoNumber(qs, (ask - 9));
 					return fillBoard(player, qs, getHtm(player.getHtmlPrefix(), "30843-13.html"));
 				}
 				case 19:
-				{
-					return takeHtml(player, qs, 1);
-				}
 				case 20:
-				{
-					return takeHtml(player, qs, 2);
-				}
 				case 21:
-				{
-					return takeHtml(player, qs, 3);
-				}
 				case 22:
-				{
-					return takeHtml(player, qs, 4);
-				}
 				case 23:
-				{
-					return takeHtml(player, qs, 5);
-				}
 				case 24:
-				{
-					return takeHtml(player, qs, 6);
-				}
 				case 25:
-				{
-					return takeHtml(player, qs, 7);
-				}
 				case 26:
-				{
-					return takeHtml(player, qs, 8);
-				}
 				case 27:
 				{
-					return takeHtml(player, qs, 9);
+					return takeHtml(player, qs, (ask - 18));
 				}
 				case 55:
-				{
-					return beforeReward(player, qs, 1);
-				}
 				case 56:
-				{
-					return beforeReward(player, qs, 2);
-				}
 				case 57:
-				{
-					return beforeReward(player, qs, 3);
-				}
 				case 58:
-				{
-					return beforeReward(player, qs, 4);
-				}
 				case 59:
-				{
-					return beforeReward(player, qs, 5);
-				}
 				case 60:
-				{
-					return beforeReward(player, qs, 6);
-				}
 				case 61:
-				{
-					return beforeReward(player, qs, 7);
-				}
 				case 62:
-				{
-					return beforeReward(player, qs, 8);
-				}
 				case 63:
 				{
-					return beforeReward(player, qs, 9);
+					return beforeReward(player, qs, (ask - 54));
 				}
 			}
 		}
