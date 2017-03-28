@@ -30,7 +30,7 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.instancemanager.GraciaSeedsManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.L2Object;
@@ -398,7 +398,7 @@ public class EnergySeeds extends AbstractNpcAI
 		if (numItems > 0)
 		{
 			giveItems(player, itemId, numItems);
-			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 	}
 	

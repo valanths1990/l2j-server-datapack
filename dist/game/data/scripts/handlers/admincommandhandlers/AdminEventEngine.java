@@ -29,6 +29,7 @@ import java.util.StringTokenizer;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.AdminData;
 import com.l2jserver.gameserver.data.xml.impl.TransformData;
+import com.l2jserver.gameserver.enums.audio.Music;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.L2World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -223,7 +224,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 				activeChar.sendMessage(L2Event.startEventParticipation());
 				Broadcast.toAllOnlinePlayers(activeChar.getName() + " has started an event. You will find a participation NPC somewhere around you.");
 				
-				PlaySound _snd = new PlaySound(1, "B03_F", 0, 0, 0, 0, 0);
+				PlaySound _snd = Music.B03_F.getPacket();
 				activeChar.sendPacket(_snd);
 				activeChar.broadcastPacket(_snd);
 				
@@ -598,7 +599,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 			+ "<td><font color=\"LEVEL\">Kicks the specified player(s) from the event. Blank field kicks target.</font></td></tr>" + "<tr><td>&nbsp;</td></tr>"
 			+ "<tr><td><button value=\"End!\" action=\"bypass -h admin_event_control_finish\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><font color=\"LEVEL\">Will finish the event teleporting back all the players</font></td></tr>"
 			+ "<tr><td>&nbsp;</td></tr></table></td></tr></table></body></html>");
-			
+		
 		adminReply.setHtml(sb.toString());
 		activeChar.sendPacket(adminReply);
 	}

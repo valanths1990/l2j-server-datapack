@@ -18,7 +18,7 @@
  */
 package village_master.DarkElvenChange2;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -108,7 +108,7 @@ public final class DarkElvenChange2 extends Quest
 						takeItems(player, CLASSES[i][6], -1);
 						takeItems(player, CLASSES[i][7], -1);
 						takeItems(player, CLASSES[i][8], -1);
-						playSound(player, QuestSound.ITEMSOUND_QUEST_FANFARE_2);
+						playSound(player, Sound.ITEMSOUND_QUEST_FANFARE_2);
 						player.setClassId(CLASSES[i][0]);
 						player.setBaseClass(CLASSES[i][0]);
 						player.broadcastUserInfo();

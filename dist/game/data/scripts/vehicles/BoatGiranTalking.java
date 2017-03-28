@@ -22,13 +22,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.l2jserver.gameserver.ThreadPoolManager;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.instancemanager.BoatManager;
 import com.l2jserver.gameserver.model.VehiclePathPoint;
 import com.l2jserver.gameserver.model.actor.instance.L2BoatInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
-import com.l2jserver.gameserver.network.serverpackets.PlaySound;
 
 /**
  * @author DS
@@ -119,9 +119,6 @@ public class BoatGiranTalking implements Runnable
 	private final CreatureSay ARRIVAL_GIRAN5;
 	private final CreatureSay ARRIVAL_GIRAN1;
 	
-	private final PlaySound GIRAN_SOUND;
-	private final PlaySound TALKING_SOUND;
-	
 	public BoatGiranTalking(L2BoatInstance boat)
 	{
 		_boat = boat;
@@ -149,9 +146,6 @@ public class BoatGiranTalking implements Runnable
 		ARRIVAL_GIRAN10 = new CreatureSay(0, Say2.BOAT, 801, SystemMessageId.FERRY_FROM_TALKING_ARRIVE_AT_GIRAN_10_MINUTES);
 		ARRIVAL_GIRAN5 = new CreatureSay(0, Say2.BOAT, 801, SystemMessageId.FERRY_FROM_TALKING_ARRIVE_AT_GIRAN_5_MINUTES);
 		ARRIVAL_GIRAN1 = new CreatureSay(0, Say2.BOAT, 801, SystemMessageId.FERRY_FROM_TALKING_ARRIVE_AT_GIRAN_1_MINUTE);
-		
-		GIRAN_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat.getObjectId(), GIRAN_DOCK.getX(), GIRAN_DOCK.getY(), GIRAN_DOCK.getZ());
-		TALKING_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat.getObjectId(), TALKING_DOCK[0].getX(), TALKING_DOCK[0].getY(), TALKING_DOCK[0].getZ());
 	}
 	
 	@Override
@@ -175,7 +169,7 @@ public class BoatGiranTalking implements Runnable
 					break;
 				case 3:
 					BoatManager.getInstance().broadcastPackets(GIRAN_DOCK, TALKING_DOCK[0], LEAVING_GIRAN, ARRIVAL_TALKING15);
-					_boat.broadcastPacket(GIRAN_SOUND);
+					_boat.broadcastPacket(Sound.ITEMSOUND_SHIP_ARRIVAL_DEPARTURE.withObject(_boat));
 					_boat.payForRide(3946, 1, 46763, 187041, -3451);
 					_boat.executePath(GIRAN_TO_TALKING);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 250000);
@@ -213,7 +207,7 @@ public class BoatGiranTalking implements Runnable
 				case 8:
 					BoatManager.getInstance().dockShip(BoatManager.TALKING_ISLAND, true);
 					BoatManager.getInstance().broadcastPackets(TALKING_DOCK[0], GIRAN_DOCK, ARRIVED_AT_TALKING, ARRIVED_AT_TALKING_2);
-					_boat.broadcastPacket(TALKING_SOUND);
+					_boat.broadcastPacket(Sound.ITEMSOUND_SHIP_ARRIVAL_DEPARTURE.withObject(_boat));
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 300000);
 					break;
 				case 9:
@@ -231,7 +225,7 @@ public class BoatGiranTalking implements Runnable
 				case 12:
 					BoatManager.getInstance().dockShip(BoatManager.TALKING_ISLAND, false);
 					BoatManager.getInstance().broadcastPackets(TALKING_DOCK[0], GIRAN_DOCK, LEAVING_TALKING);
-					_boat.broadcastPacket(TALKING_SOUND);
+					_boat.broadcastPacket(Sound.ITEMSOUND_SHIP_ARRIVAL_DEPARTURE.withObject(_boat));
 					_boat.payForRide(3945, 1, -96777, 258970, -3623);
 					_boat.executePath(TALKING_TO_GIRAN);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 200000);
@@ -257,7 +251,7 @@ public class BoatGiranTalking implements Runnable
 					break;
 				case 18:
 					BoatManager.getInstance().broadcastPackets(GIRAN_DOCK, TALKING_DOCK[0], ARRIVED_AT_GIRAN, ARRIVED_AT_GIRAN_2);
-					_boat.broadcastPacket(GIRAN_SOUND);
+					_boat.broadcastPacket(Sound.ITEMSOUND_SHIP_ARRIVAL_DEPARTURE.withObject(_boat));
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 300000);
 					break;
 			}
