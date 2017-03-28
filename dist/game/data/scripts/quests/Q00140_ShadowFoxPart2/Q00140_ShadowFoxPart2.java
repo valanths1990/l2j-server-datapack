@@ -23,7 +23,7 @@ import java.util.Map;
 
 import quests.Q00139_ShadowFoxPart1.Q00139_ShadowFoxPart1;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -145,7 +145,7 @@ public class Q00140_ShadowFoxPart2 extends Quest
 		if (getRandom(100) < MOBS.get(npc.getId()))
 		{
 			st.giveItems(DARK_CRYSTAL, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return super.onKill(npc, player, isSummon);
 	}

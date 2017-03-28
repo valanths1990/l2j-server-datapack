@@ -23,7 +23,7 @@ import java.util.HashMap;
 import quests.Q00024_InhabitantsOfTheForestOfTheDead.Q00024_InhabitantsOfTheForestOfTheDead;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -273,7 +273,7 @@ public class Q00025_HidingBehindTheTruth extends Quest
 				{
 					qs.setMemoState(8);
 					htmltext = event;
-					playSound(player, QuestSound.AMDSOUND_HORROR_02);
+					playSound(player, Sound.AMDSOUND_HORROR_02);
 				}
 				break;
 			}
@@ -355,7 +355,7 @@ public class Q00025_HidingBehindTheTruth extends Quest
 				if (qs.isMemoState(10))
 				{
 					qs.setMemoState(11);
-					playSound(player, QuestSound.SKILLSOUND_HORROR_1);
+					playSound(player, Sound.SKILLSOUND_HORROR_1);
 					qs.setCond(11);
 					htmltext = event;
 				}
@@ -369,7 +369,7 @@ public class Q00025_HidingBehindTheTruth extends Quest
 					if (memoStateEx <= 3)
 					{
 						qs.setMemoStateEx(1, memoStateEx + 1);
-						playSound(player, QuestSound.CHRSOUND_FDELF_CRY);
+						playSound(player, Sound.CHRSOUND_FDELF_CRY);
 						htmltext = event;
 					}
 					else
@@ -657,7 +657,7 @@ public class Q00025_HidingBehindTheTruth extends Quest
 							}
 							case 11:
 							{
-								playSound(talker, QuestSound.SKILLSOUND_HORROR_1);
+								playSound(talker, Sound.SKILLSOUND_HORROR_1);
 								htmltext = "31532-08.html";
 								break;
 							}
@@ -675,7 +675,7 @@ public class Q00025_HidingBehindTheTruth extends Quest
 							case 13:
 							{
 								qs.setMemoStateEx(1, 0);
-								playSound(talker, QuestSound.CHRSOUND_FDELF_CRY);
+								playSound(talker, Sound.CHRSOUND_FDELF_CRY);
 								htmltext = "31532-10.html";
 								break;
 							}

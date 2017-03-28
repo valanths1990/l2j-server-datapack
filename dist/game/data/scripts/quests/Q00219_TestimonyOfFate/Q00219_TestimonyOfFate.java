@@ -19,7 +19,7 @@
 package quests.Q00219_TestimonyOfFate;
 
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -125,7 +125,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 				if (qs.isCreated())
 				{
 					qs.startQuest();
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					giveItems(player, KAIRAS_LETTER, 1);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
@@ -239,7 +239,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						if (getQuestItemsCount(killer, NIGHTSHADE_ROOT) == 9)
 						{
 							giveItems(killer, NIGHTSHADE_ROOT, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, MEDUSAS_ICHOR) >= 10) && (getQuestItemsCount(killer, MARSH_SPIDER_FLUIDS) >= 10) && (getQuestItemsCount(killer, DEAD_SEEKER_DUNG) >= 10) && (getQuestItemsCount(killer, TYRANTS_BLOOD) >= 10))
 							{
 								qs.setCond(7);
@@ -248,7 +248,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						else
 						{
 							giveItems(killer, NIGHTSHADE_ROOT, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -260,7 +260,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						if (getQuestItemsCount(killer, MEDUSAS_ICHOR) == 9)
 						{
 							giveItems(killer, MEDUSAS_ICHOR, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, MARSH_SPIDER_FLUIDS) >= 10) && (getQuestItemsCount(killer, DEAD_SEEKER_DUNG) >= 10) && (getQuestItemsCount(killer, TYRANTS_BLOOD) >= 10) && (getQuestItemsCount(killer, NIGHTSHADE_ROOT) >= 10))
 							{
 								qs.setCond(7);
@@ -269,7 +269,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						else
 						{
 							giveItems(killer, MEDUSAS_ICHOR, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -282,7 +282,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						if (getQuestItemsCount(killer, TYRANTS_BLOOD) == 9)
 						{
 							giveItems(killer, TYRANTS_BLOOD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, MEDUSAS_ICHOR) >= 10) && (getQuestItemsCount(killer, MARSH_SPIDER_FLUIDS) >= 10) && (getQuestItemsCount(killer, DEAD_SEEKER_DUNG) >= 10) && (getQuestItemsCount(killer, NIGHTSHADE_ROOT) >= 10))
 							{
 								qs.setCond(7);
@@ -291,7 +291,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						else
 						{
 							giveItems(killer, TYRANTS_BLOOD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -303,7 +303,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						if (getQuestItemsCount(killer, DEAD_SEEKER_DUNG) == 9)
 						{
 							giveItems(killer, DEAD_SEEKER_DUNG, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, MEDUSAS_ICHOR) >= 10) && (getQuestItemsCount(killer, MARSH_SPIDER_FLUIDS) >= 10) && (getQuestItemsCount(killer, TYRANTS_BLOOD) >= 10) && (getQuestItemsCount(killer, NIGHTSHADE_ROOT) >= 10))
 							{
 								qs.setCond(7);
@@ -312,7 +312,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						else
 						{
 							giveItems(killer, DEAD_SEEKER_DUNG, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -324,7 +324,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						if (getQuestItemsCount(killer, MARSH_SPIDER_FLUIDS) == 9)
 						{
 							giveItems(killer, MARSH_SPIDER_FLUIDS, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, MEDUSAS_ICHOR) >= 10) && (getQuestItemsCount(killer, DEAD_SEEKER_DUNG) >= 10) && (getQuestItemsCount(killer, TYRANTS_BLOOD) >= 10) && (getQuestItemsCount(killer, NIGHTSHADE_ROOT) >= 10))
 							{
 								qs.setCond(7);
@@ -333,7 +333,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						else
 						{
 							giveItems(killer, MARSH_SPIDER_FLUIDS, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -345,7 +345,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						if (!hasQuestItems(killer, BREKA_OVERLORD_SKULL))
 						{
 							giveItems(killer, BREKA_OVERLORD_SKULL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 					}
 					break;
@@ -357,7 +357,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						if (!hasQuestItems(killer, GRANDISS_SKULL))
 						{
 							giveItems(killer, GRANDISS_SKULL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 					}
 					break;
@@ -369,7 +369,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						if (!hasQuestItems(killer, LETO_OVERLORD_SKULL))
 						{
 							giveItems(killer, LETO_OVERLORD_SKULL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 					}
 					break;
@@ -381,7 +381,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 						if (!hasQuestItems(killer, KARUL_BUGBEAR_SKULL))
 						{
 							giveItems(killer, KARUL_BUGBEAR_SKULL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 					}
 					break;
@@ -391,7 +391,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 					if (hasQuestItems(killer, PALUS_CHARM, ARKENIAS_NOTE, TIMIRIRAN_SEED) && !hasQuestItems(killer, BLIGHT_TREANT_SAP, BLACK_WILLOW_LEAF))
 					{
 						giveItems(killer, BLACK_WILLOW_LEAF, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					break;
 				}

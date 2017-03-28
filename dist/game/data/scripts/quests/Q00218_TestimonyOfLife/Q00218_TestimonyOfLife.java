@@ -19,7 +19,7 @@
 package quests.Q00218_TestimonyOfLife;
 
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -126,7 +126,7 @@ public final class Q00218_TestimonyOfLife extends Quest
 					{
 						giveItems(player, CARDIENS_LETTER, 1);
 					}
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
 						giveItems(player, DIMENSIONAL_DIAMOND, 102);
@@ -275,7 +275,7 @@ public final class Q00218_TestimonyOfLife extends Quest
 						giveItems(killer, ANT_SOLDIER_ACID, 2);
 						if (getQuestItemsCount(killer, ANT_SOLDIER_ACID) == 20)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, PURE_MITHRIL_ORE) >= 10) && (getQuestItemsCount(killer, WYRMS_TALON) >= 20))
 							{
 								qs.setCond(5);
@@ -283,7 +283,7 @@ public final class Q00218_TestimonyOfLife extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -296,7 +296,7 @@ public final class Q00218_TestimonyOfLife extends Quest
 						if (getQuestItemsCount(killer, HARPYS_DOWN) == 20)
 						{
 							
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if (getQuestItemsCount(killer, SPIDER_ICHOR) >= 20)
 							{
 								qs.setCond(10);
@@ -304,7 +304,7 @@ public final class Q00218_TestimonyOfLife extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -316,7 +316,7 @@ public final class Q00218_TestimonyOfLife extends Quest
 						giveItems(killer, WYRMS_TALON, 4);
 						if (getQuestItemsCount(killer, WYRMS_TALON) == 20)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, PURE_MITHRIL_ORE) >= 10) && (getQuestItemsCount(killer, ANT_SOLDIER_ACID) >= 20))
 							{
 								qs.setCond(5);
@@ -324,7 +324,7 @@ public final class Q00218_TestimonyOfLife extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -336,7 +336,7 @@ public final class Q00218_TestimonyOfLife extends Quest
 						giveItems(killer, SPIDER_ICHOR, 4);
 						if (getQuestItemsCount(killer, SPIDER_ICHOR) == 20)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if (getQuestItemsCount(killer, HARPYS_DOWN) >= 20)
 							{
 								qs.setCond(10);
@@ -344,7 +344,7 @@ public final class Q00218_TestimonyOfLife extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -356,7 +356,7 @@ public final class Q00218_TestimonyOfLife extends Quest
 						giveItems(killer, PURE_MITHRIL_ORE, 2);
 						if (getQuestItemsCount(killer, PURE_MITHRIL_ORE) == 10)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, WYRMS_TALON) >= 20) && (getQuestItemsCount(killer, ANT_SOLDIER_ACID) >= 20))
 							{
 								qs.setCond(5);
@@ -364,7 +364,7 @@ public final class Q00218_TestimonyOfLife extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -377,32 +377,32 @@ public final class Q00218_TestimonyOfLife extends Quest
 						if (!hasQuestItems(killer, TALINS_SPEAR_BLADE))
 						{
 							giveItems(killer, TALINS_SPEAR_BLADE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else if (!hasQuestItems(killer, TALINS_SPEAR_SHAFT))
 						{
 							giveItems(killer, TALINS_SPEAR_SHAFT, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else if (!hasQuestItems(killer, TALINS_RUBY))
 						{
 							giveItems(killer, TALINS_RUBY, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else if (!hasQuestItems(killer, TALINS_AQUAMARINE))
 						{
 							giveItems(killer, TALINS_AQUAMARINE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else if (!hasQuestItems(killer, TALINS_AMETHYST))
 						{
 							giveItems(killer, TALINS_AMETHYST, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else if (!hasQuestItems(killer, TALINS_PERIDOT))
 						{
 							giveItems(killer, TALINS_PERIDOT, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 					}
 					break;

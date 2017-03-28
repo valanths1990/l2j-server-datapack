@@ -18,7 +18,7 @@
  */
 package quests.Q00254_LegendaryTales;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -235,7 +235,7 @@ public class Q00254_LegendaryTales extends Quest
 				
 				if (st.getQuestItemsCount(LARGE_DRAGON_SKULL) < 7)
 				{
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				else
 				{

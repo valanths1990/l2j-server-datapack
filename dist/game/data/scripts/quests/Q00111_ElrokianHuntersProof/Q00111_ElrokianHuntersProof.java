@@ -21,7 +21,7 @@ package quests.Q00111_ElrokianHuntersProof;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemChanceHolder;
@@ -163,7 +163,7 @@ public final class Q00111_ElrokianHuntersProof extends Quest
 				{
 					qs.setMemoState(10);
 					qs.setCond(9);
-					playSound(player, QuestSound.ETCSOUND_ELROKI_SONG_FULL);
+					playSound(player, Sound.ETCSOUND_ELROKI_SONG_FULL);
 					htmltext = event;
 				}
 				break;
@@ -183,7 +183,7 @@ public final class Q00111_ElrokianHuntersProof extends Quest
 				if (qs.isMemoState(7))
 				{
 					qs.setMemoState(8);
-					playSound(player, QuestSound.ETCSOUND_ELROKI_SONG_FULL);
+					playSound(player, Sound.ETCSOUND_ELROKI_SONG_FULL);
 					htmltext = event;
 				}
 				break;

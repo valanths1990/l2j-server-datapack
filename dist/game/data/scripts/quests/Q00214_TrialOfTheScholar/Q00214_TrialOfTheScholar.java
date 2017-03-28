@@ -18,7 +18,7 @@
  */
 package quests.Q00214_TrialOfTheScholar;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -142,7 +142,7 @@ public final class Q00214_TrialOfTheScholar extends Quest
 					{
 						giveItems(player, MIRIENS_1ST_SIGIL, 1);
 					}
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
 						giveItems(player, DIMENSIONAL_DIAMOND, 168);
@@ -426,7 +426,7 @@ public final class Q00214_TrialOfTheScholar extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -438,11 +438,11 @@ public final class Q00214_TrialOfTheScholar extends Quest
 						giveItems(killer, MEDUSAS_BLOOD, 1);
 						if (getQuestItemsCount(killer, MEDUSAS_BLOOD) == 12)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -458,7 +458,7 @@ public final class Q00214_TrialOfTheScholar extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -475,7 +475,7 @@ public final class Q00214_TrialOfTheScholar extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -491,7 +491,7 @@ public final class Q00214_TrialOfTheScholar extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -503,11 +503,11 @@ public final class Q00214_TrialOfTheScholar extends Quest
 						giveItems(killer, FETTERED_SOULS_ICHOR, 1);
 						if (getQuestItemsCount(killer, FETTERED_SOULS_ICHOR) >= 5)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -517,7 +517,7 @@ public final class Q00214_TrialOfTheScholar extends Quest
 					if (hasQuestItems(killer, MIRIENS_3RD_SIGIL, CRONOS_SIGIL, TRIFFS_RING) && !hasQuestItems(killer, SCRIPTURE_CHAPTER_3))
 					{
 						giveItems(killer, SCRIPTURE_CHAPTER_3, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					break;
 				}
@@ -528,11 +528,11 @@ public final class Q00214_TrialOfTheScholar extends Quest
 						giveItems(killer, ENCHANTED_GARGOYLES_NAIL, 1);
 						if (getQuestItemsCount(killer, ENCHANTED_GARGOYLES_NAIL) >= 5)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -548,7 +548,7 @@ public final class Q00214_TrialOfTheScholar extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;

@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
@@ -146,7 +146,7 @@ public final class Q00264_KeenClaws extends Quest
 									}
 									if (chance == 0)
 									{
-										st.playSound(QuestSound.ITEMSOUND_QUEST_JACKPOT);
+										st.playSound(Sound.ITEMSOUND_QUEST_JACKPOT);
 									}
 									break;
 								}

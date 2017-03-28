@@ -18,7 +18,7 @@
  */
 package quests.Q00062_PathOfTheTrooper;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -111,11 +111,11 @@ public final class Q00062_PathOfTheTrooper extends Quest
 						giveItems(killer, FELIM_LIZARDMAN_HEAD, 1);
 						if (getQuestItemsCount(killer, FELIM_LIZARDMAN_HEAD) == 5)
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -127,11 +127,11 @@ public final class Q00062_PathOfTheTrooper extends Quest
 						giveItems(killer, VENOMOUS_SPIDERS_LEG, 1);
 						if (getQuestItemsCount(killer, VENOMOUS_SPIDERS_LEG) == 10)
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -141,7 +141,7 @@ public final class Q00062_PathOfTheTrooper extends Quest
 					if (qs.isCond(5) && !hasQuestItems(killer, TUMRAN_BUGBEAR_HEART) && (getRandom(1000) < 500))
 					{
 						giveItems(killer, TUMRAN_BUGBEAR_HEART, 1);
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					break;
 				}

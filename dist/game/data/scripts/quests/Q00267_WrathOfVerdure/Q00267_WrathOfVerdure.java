@@ -18,7 +18,7 @@
  */
 package quests.Q00267_WrathOfVerdure;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -90,7 +90,7 @@ public final class Q00267_WrathOfVerdure extends Quest
 		if ((st != null) && (getRandom(10) < 5))
 		{
 			st.giveItems(GOBLIN_CLUB, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}

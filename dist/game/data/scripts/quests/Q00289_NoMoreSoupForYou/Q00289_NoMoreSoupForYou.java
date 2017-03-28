@@ -20,7 +20,7 @@ package quests.Q00289_NoMoreSoupForYou;
 
 import quests.Q00252_ItSmellsDelicious.Q00252_ItSmellsDelicious;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -190,7 +190,7 @@ public class Q00289_NoMoreSoupForYou extends Quest
 				{
 					st.giveItems(WEAPONS[c][0], WEAPONS[c][1]);
 					st.takeItems(SOUP, 500);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "30200-04.htm";
 				}
 				else
@@ -204,7 +204,7 @@ public class Q00289_NoMoreSoupForYou extends Quest
 				{
 					st.giveItems(ARMORS[b][0], ARMORS[b][1]);
 					st.takeItems(SOUP, 100);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "30200-04.htm";
 				}
 				else
@@ -228,7 +228,7 @@ public class Q00289_NoMoreSoupForYou extends Quest
 		if (Util.contains(MOBS, npcId))
 		{
 			st.giveItems(SOUP, 1 * RATE);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return super.onKill(npc, player, isSummon);
 	}

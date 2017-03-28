@@ -21,7 +21,7 @@ package quests.Q00242_PossessorOfAPreciousSoul2;
 import quests.Q00241_PossessorOfAPreciousSoul1.Q00241_PossessorOfAPreciousSoul1;
 
 import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -151,7 +151,7 @@ public class Q00242_PossessorOfAPreciousSoul2 extends Quest
 		if (st.isCond(9) && (st.getQuestItemsCount(ORB_OF_BINDING) < 4))
 		{
 			st.giveItems(ORB_OF_BINDING, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		if (st.getQuestItemsCount(ORB_OF_BINDING) >= 4)
 		{
@@ -317,7 +317,7 @@ public class Q00242_PossessorOfAPreciousSoul2 extends Quest
 						{
 							st.setCond(10);
 						}
-						st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						npc.setTarget(player);
 						npc.doCast(SkillData.getInstance().getSkill(4546, 1));
 					}

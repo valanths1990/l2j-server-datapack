@@ -18,7 +18,7 @@
  */
 package quests.Q00213_TrialOfTheSeeker;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -114,7 +114,7 @@ public final class Q00213_TrialOfTheSeeker extends Quest
 					{
 						giveItems(player, DUFNERS_LETTER, 1);
 					}
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
 						giveItems(player, DIMENSIONAL_DIAMOND, 128);
@@ -259,7 +259,7 @@ public final class Q00213_TrialOfTheSeeker extends Quest
 					if (hasQuestItems(killer, TERRYS_2ND_ORDER) && !hasQuestItems(killer, ANT_SPIRIT_ORE))
 					{
 						giveItems(killer, ANT_SPIRIT_ORE, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						if (hasQuestItems(killer, OL_MAHUM_SPIRIT_ORE, TUREK_SPIRIT_ORE, TURAK_BUGBEAR_SPIRIT_ORE))
 						{
 							qs.setCond(5);
@@ -272,7 +272,7 @@ public final class Q00213_TrialOfTheSeeker extends Quest
 					if (hasQuestItems(killer, LIST_OF_HOST) && !hasQuestItems(killer, ABYSS_SPIRIT_ORE3))
 					{
 						giveItems(killer, ABYSS_SPIRIT_ORE3, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						if (hasQuestItems(killer, ABYSS_SPIRIT_ORE1, ABYSS_SPIRIT_ORE2, ABYSS_SPIRIT_ORE4))
 						{
 							qs.setCond(16);
@@ -291,7 +291,7 @@ public final class Q00213_TrialOfTheSeeker extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -313,7 +313,7 @@ public final class Q00213_TrialOfTheSeeker extends Quest
 					if (hasQuestItems(killer, TERRYS_2ND_ORDER) && !hasQuestItems(killer, OL_MAHUM_SPIRIT_ORE))
 					{
 						giveItems(killer, OL_MAHUM_SPIRIT_ORE, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						if (hasQuestItems(killer, TUREK_SPIRIT_ORE, ANT_SPIRIT_ORE, TURAK_BUGBEAR_SPIRIT_ORE))
 						{
 							qs.setCond(5);
@@ -326,7 +326,7 @@ public final class Q00213_TrialOfTheSeeker extends Quest
 					if (hasQuestItems(killer, LIST_OF_HOST) && !hasQuestItems(killer, ABYSS_SPIRIT_ORE1))
 					{
 						giveItems(killer, ABYSS_SPIRIT_ORE1, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						if (hasQuestItems(killer, ABYSS_SPIRIT_ORE2, ABYSS_SPIRIT_ORE3, ABYSS_SPIRIT_ORE4))
 						{
 							qs.setCond(16);
@@ -339,7 +339,7 @@ public final class Q00213_TrialOfTheSeeker extends Quest
 					if (hasQuestItems(killer, TERRYS_2ND_ORDER) && !hasQuestItems(killer, TURAK_BUGBEAR_SPIRIT_ORE))
 					{
 						giveItems(killer, TURAK_BUGBEAR_SPIRIT_ORE, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						if (hasQuestItems(killer, OL_MAHUM_SPIRIT_ORE, TUREK_SPIRIT_ORE, ANT_SPIRIT_ORE))
 						{
 							qs.setCond(5);
@@ -352,7 +352,7 @@ public final class Q00213_TrialOfTheSeeker extends Quest
 					if (hasQuestItems(killer, LIST_OF_HOST) && !hasQuestItems(killer, ABYSS_SPIRIT_ORE2))
 					{
 						giveItems(killer, ABYSS_SPIRIT_ORE2, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						if (hasQuestItems(killer, ABYSS_SPIRIT_ORE1, ABYSS_SPIRIT_ORE3, ABYSS_SPIRIT_ORE4))
 						{
 							qs.setCond(16);
@@ -365,7 +365,7 @@ public final class Q00213_TrialOfTheSeeker extends Quest
 					if (hasQuestItems(killer, TERRYS_2ND_ORDER) && !hasQuestItems(killer, TUREK_SPIRIT_ORE))
 					{
 						giveItems(killer, TUREK_SPIRIT_ORE, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						if (hasQuestItems(killer, OL_MAHUM_SPIRIT_ORE, ANT_SPIRIT_ORE, TURAK_BUGBEAR_SPIRIT_ORE))
 						{
 							qs.setCond(5);
@@ -378,7 +378,7 @@ public final class Q00213_TrialOfTheSeeker extends Quest
 					if (hasQuestItems(killer, LIST_OF_HOST) && !hasQuestItems(killer, ABYSS_SPIRIT_ORE4))
 					{
 						giveItems(killer, ABYSS_SPIRIT_ORE4, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						if (hasQuestItems(killer, ABYSS_SPIRIT_ORE1, ABYSS_SPIRIT_ORE2, ABYSS_SPIRIT_ORE3))
 						{
 							qs.setCond(16);

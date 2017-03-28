@@ -18,7 +18,7 @@
  */
 package quests.Q00234_FatesWhisper;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -436,7 +436,7 @@ public final class Q00234_FatesWhisper extends Quest
 				if (qs.isMemoState(1) && !qs.hasQuestItems(Q_REIRIAS_SOULORB))
 				{
 					qs.giveItems(Q_REIRIAS_SOULORB, 1);
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					return "31027-01.html";
 				}
 				if ((qs.getMemoState() > 1) || qs.hasQuestItems(Q_REIRIAS_SOULORB))
@@ -450,7 +450,7 @@ public final class Q00234_FatesWhisper extends Quest
 				if (qs.isMemoState(2) && !qs.hasQuestItems(Q_INFERNIUM_SCEPTER_1))
 				{
 					qs.giveItems(Q_INFERNIUM_SCEPTER_1, 1);
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					return "31028-01.html";
 				}
 				if (!qs.isMemoState(2) || qs.hasQuestItems(Q_INFERNIUM_SCEPTER_1))
@@ -464,7 +464,7 @@ public final class Q00234_FatesWhisper extends Quest
 				if (qs.isMemoState(2) && !qs.hasQuestItems(Q_INFERNIUM_SCEPTER_2))
 				{
 					qs.giveItems(Q_INFERNIUM_SCEPTER_2, 1);
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					return "31029-01.html";
 				}
 				if (!qs.isMemoState(2) || qs.hasQuestItems(Q_INFERNIUM_SCEPTER_2))
@@ -478,7 +478,7 @@ public final class Q00234_FatesWhisper extends Quest
 				if (qs.isMemoState(2) && !qs.hasQuestItems(Q_INFERNIUM_SCEPTER_3))
 				{
 					qs.giveItems(Q_INFERNIUM_SCEPTER_3, 1);
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					return "31030-01.html";
 				}
 				if (!qs.isMemoState(2) || qs.hasQuestItems(Q_INFERNIUM_SCEPTER_3))
@@ -516,7 +516,7 @@ public final class Q00234_FatesWhisper extends Quest
 			qs.setMemoState(1);
 			qs.startQuest();
 			qs.showQuestionMark(234);
-			qs.playSound(QuestSound.ITEMSOUND_QUEST_ACCEPT);
+			qs.playSound(Sound.ITEMSOUND_QUEST_ACCEPT);
 			return "31002-06.html";
 		}
 		if (event.contains(".htm"))
@@ -538,7 +538,7 @@ public final class Q00234_FatesWhisper extends Quest
 						qs.setMemoState(7);
 						qs.setCond(6);
 						qs.showQuestionMark(234);
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30178-02.html";
 					}
 				}
@@ -1108,7 +1108,7 @@ public final class Q00234_FatesWhisper extends Quest
 					}
 					else
 					{
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;
 				}
@@ -1128,7 +1128,7 @@ public final class Q00234_FatesWhisper extends Quest
 			{
 				qs.takeItems(Q_PIPETTE_KNIFE, 1);
 				qs.giveItems(Q_RED_PIPETTE_KNIFE, 1);
-				qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.ALL, npc.getId(), NpcStringId.WHO_DARES_TO_TRY_AND_STEAL_MY_NOBLE_BLOOD));
 			}
 		}

@@ -21,7 +21,7 @@ package quests.Q00292_BrigandsSweep;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -127,14 +127,14 @@ public final class Q00292_BrigandsSweep extends Quest
 				{
 					if (giveItemRandomly(killer, npc, SUSPICIOUS_MEMO, 1, 3, 1.0, false))
 					{
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						giveItems(killer, SUSPICIOUS_CONTRACT, 1);
 						takeItems(killer, SUSPICIOUS_MEMO, -1);
 						qs.setCond(2, true);
 					}
 					else
 					{
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 			}

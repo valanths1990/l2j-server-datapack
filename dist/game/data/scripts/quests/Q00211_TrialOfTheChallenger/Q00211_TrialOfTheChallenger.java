@@ -20,7 +20,7 @@ package quests.Q00211_TrialOfTheChallenger;
 
 import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
@@ -132,7 +132,7 @@ public final class Q00211_TrialOfTheChallenger extends Quest
 					takeItems(player, BROKEN_KEY, -1);
 					if (getRandom(10) < 2)
 					{
-						playSound(player, QuestSound.ITEMSOUND_QUEST_JACKPOT);
+						playSound(player, Sound.ITEMSOUND_QUEST_JACKPOT);
 						final int random = getRandom(100);
 						if (random > 90)
 						{

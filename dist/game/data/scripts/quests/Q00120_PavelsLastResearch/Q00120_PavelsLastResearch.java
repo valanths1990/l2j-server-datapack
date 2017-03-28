@@ -20,7 +20,7 @@ package quests.Q00120_PavelsLastResearch;
 
 import quests.Q00114_ResurrectionOfAnOldManager.Q00114_ResurrectionOfAnOldManager;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -612,7 +612,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 				if (qs.isMemoState(9))
 				{
 					qs.setMemoState(10);
-					playSound(player, QuestSound.AMBSOUND_PERCUSSION_01);
+					playSound(player, Sound.AMBSOUND_PERCUSSION_01);
 					html = event;
 				}
 				break;
@@ -853,7 +853,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 					final int i1 = (memoStateEx / 10000) * 10000;
 					final int i2 = (memoStateEx % 1000) + 1000;
 					qs.setMemoStateEx(0, i1 + i2);
-					playSound(player, QuestSound.AMBSOUND_DRONE);
+					playSound(player, Sound.AMBSOUND_DRONE);
 					html = event;
 				}
 				break;
@@ -1003,7 +1003,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 						qs.setMemoState(21);
 						qs.setCond(21, true);
 						qs.setMemoStateEx(0, 0);
-						playSound(player, QuestSound.AMBSOUND_PERCUSSION_02);
+						playSound(player, Sound.AMBSOUND_PERCUSSION_02);
 						html = "32044-06.html";
 					}
 					else
@@ -1105,7 +1105,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 					qs.setMemoState(22);
 					qs.setCond(22, true);
 					qs.setMemoStateEx(0, 0);
-					playSound(player, QuestSound.AMBSOUND_DRONE);
+					playSound(player, Sound.AMBSOUND_DRONE);
 					npc.setTarget(player);
 					npc.doCast(QUEST_TRAP_POWER_SHOT.getSkill());
 					html = event;
@@ -1433,7 +1433,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 					case 8:
 					{
 						html = "32042-01.html";
-						playSound(player, QuestSound.AMBSOUND_CRYSTAL_LOOP);
+						playSound(player, Sound.AMBSOUND_CRYSTAL_LOOP);
 						break;
 					}
 					case 9:

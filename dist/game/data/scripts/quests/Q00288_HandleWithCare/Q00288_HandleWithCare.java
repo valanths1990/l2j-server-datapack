@@ -18,7 +18,7 @@
  */
 package quests.Q00288_HandleWithCare;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
@@ -171,13 +171,13 @@ public class Q00288_HandleWithCare extends Quest
 			if (!st.hasQuestItems(MIDDLE_GRADE_LIZARD_SCALE))
 			{
 				st.giveItems(MIDDLE_GRADE_LIZARD_SCALE, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				st.setCond(2, true);
 			}
 			else if (!st.hasQuestItems(HIGH_GRADE_LIZARD_SCALE))
 			{
 				st.giveItems(HIGH_GRADE_LIZARD_SCALE, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				st.setCond(3, true);
 			}
 		}

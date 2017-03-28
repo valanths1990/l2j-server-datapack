@@ -18,7 +18,7 @@
  */
 package quests.Q00225_TestOfTheSearcher;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -110,7 +110,7 @@ public final class Q00225_TestOfTheSearcher extends Quest
 				{
 					qs.startQuest();
 					qs.setMemoState(1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					giveItems(player, LUTHERS_LETTER, 1);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
@@ -237,14 +237,14 @@ public final class Q00225_TestOfTheSearcher extends Quest
 							if (getRandom(100) < 50)
 							{
 								giveItems(killer, TORN_MAP_PIECE_2ND, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 						else if (getRandom(100) < 50)
 						{
 							takeItems(killer, TORN_MAP_PIECE_2ND, -1);
 							giveItems(killer, MAKELS_MAP, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if (getQuestItemsCount(killer, SOLTS_MAP) >= 1)
 							{
 								qs.setCond(15);
@@ -260,13 +260,13 @@ public final class Q00225_TestOfTheSearcher extends Quest
 						if (getQuestItemsCount(killer, TORN_MAP_PIECE_1ST) < 3)
 						{
 							giveItems(killer, TORN_MAP_PIECE_1ST, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 						else
 						{
 							takeItems(killer, TORN_MAP_PIECE_1ST, -1);
 							giveItems(killer, SOLTS_MAP, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if (getQuestItemsCount(killer, MAKELS_MAP) >= 1)
 							{
 								qs.setCond(15);
@@ -286,7 +286,7 @@ public final class Q00225_TestOfTheSearcher extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -302,7 +302,7 @@ public final class Q00225_TestOfTheSearcher extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;

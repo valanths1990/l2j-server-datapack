@@ -18,7 +18,7 @@
  */
 package quests.Q00232_TestOfTheLord;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -245,11 +245,11 @@ public final class Q00232_TestOfTheLord extends Quest
 							giveItems(killer, MARSH_SPIDER_FEELER, 2);
 							if (getQuestItemsCount(killer, MARSH_SPIDER_FEELER) >= 10)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 						else if (getQuestItemsCount(killer, MARSH_SPIDER_FEET) < 10)
@@ -257,11 +257,11 @@ public final class Q00232_TestOfTheLord extends Quest
 							giveItems(killer, MARSH_SPIDER_FEET, 2);
 							if (getQuestItemsCount(killer, MARSH_SPIDER_FEET) >= 10)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -277,11 +277,11 @@ public final class Q00232_TestOfTheLord extends Quest
 							giveItems(killer, BREKA_ORC_FANG, 2);
 							if (getQuestItemsCount(killer, BREKA_ORC_FANG) >= 20)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -296,11 +296,11 @@ public final class Q00232_TestOfTheLord extends Quest
 							giveItems(killer, ENCHANTED_MONSTER_CORNEA, 1);
 							if (getQuestItemsCount(killer, ENCHANTED_MONSTER_CORNEA) >= 20)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -320,11 +320,11 @@ public final class Q00232_TestOfTheLord extends Quest
 							giveItems(killer, TIMAK_ORC_SKULL, 1);
 							if (getQuestItemsCount(killer, TIMAK_ORC_SKULL) >= 10)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -338,7 +338,7 @@ public final class Q00232_TestOfTheLord extends Quest
 						if (!hasQuestItems(killer, RAGNA_CHIEF_NOTICE))
 						{
 							giveItems(killer, RAGNA_CHIEF_NOTICE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else if (!hasQuestItems(killer, RAGNA_ORC_HEAD))
 						{

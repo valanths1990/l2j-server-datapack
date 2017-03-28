@@ -18,7 +18,7 @@
  */
 package quests.Q00128_PailakaSongOfIceAndFire;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -315,7 +315,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 					if (st.isCond(2))
 					{
 						st.setCond(3);
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 						takeItems(player, BOOK1, -1);
 						giveItems(player, BOOK2, 1);
 						giveItems(player, WATER_ESSENCE, 1);
@@ -330,7 +330,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 						st.setCond(5);
 						takeItems(player, BOOK3, -1);
 						giveItems(player, BOOK4, 1);
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					addSpawn(KINSUS, -61415, 181418, -4818, 63852, false, 0, false, npc.getInstanceId());
 					break;
@@ -340,7 +340,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 					if (st.isCond(5))
 					{
 						st.setCond(6);
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 						takeItems(player, BOOK4, -1);
 						giveItems(player, BOOK5, 1);
 						giveItems(player, FIRE_ESSENCE, 1);
@@ -353,7 +353,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 					if (st.isCond(7))
 					{
 						st.setCond(8);
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 						takeItems(player, BOOK6, -1);
 						giveItems(player, BOOK7, 1);
 					}
@@ -365,7 +365,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 					if (st.isCond(8))
 					{
 						st.setCond(9);
-						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 						takeItems(player, BOOK7, -1);
 						addSpawn(ADLER2, -53297, 185027, -4617, 33486, false, 0, false, npc.getInstanceId());
 					}

@@ -19,7 +19,7 @@
 package quests.Q00052_WilliesSpecialBait;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -92,7 +92,7 @@ public class Q00052_WilliesSpecialBait extends Quest
 			if (getRandom(100) < chance)
 			{
 				st.rewardItems(TARLK_EYE, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		

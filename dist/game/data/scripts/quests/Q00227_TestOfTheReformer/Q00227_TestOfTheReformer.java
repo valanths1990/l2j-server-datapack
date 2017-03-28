@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -147,7 +147,7 @@ public final class Q00227_TestOfTheReformer extends Quest
 				{
 					qs.startQuest();
 					qs.setMemoState(1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					giveItems(player, BOOK_OF_REFORM, 1);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
@@ -277,7 +277,7 @@ public final class Q00227_TestOfTheReformer extends Quest
 					if (qs.isMemoState(16) && !hasQuestItems(killer, BONE_FRAGMENT7))
 					{
 						giveItems(killer, BONE_FRAGMENT7, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						if (hasQuestItems(killer, BONE_FRAGMENT4, BONE_FRAGMENT5, BONE_FRAGMENT6, BONE_FRAGMENT8))
 						{
 							qs.setMemoState(17);
@@ -291,7 +291,7 @@ public final class Q00227_TestOfTheReformer extends Quest
 					if (qs.isMemoState(16) && !hasQuestItems(killer, BONE_FRAGMENT8))
 					{
 						giveItems(killer, BONE_FRAGMENT8, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						if (hasQuestItems(killer, BONE_FRAGMENT4, BONE_FRAGMENT5, BONE_FRAGMENT6, BONE_FRAGMENT7))
 						{
 							qs.setMemoState(17);
@@ -305,7 +305,7 @@ public final class Q00227_TestOfTheReformer extends Quest
 					if (qs.isMemoState(16) && !hasQuestItems(killer, BONE_FRAGMENT6))
 					{
 						giveItems(killer, BONE_FRAGMENT6, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						if (hasQuestItems(killer, BONE_FRAGMENT4, BONE_FRAGMENT5, BONE_FRAGMENT7, BONE_FRAGMENT8))
 						{
 							qs.setMemoState(17);
@@ -319,7 +319,7 @@ public final class Q00227_TestOfTheReformer extends Quest
 					if (qs.isMemoState(16) && !hasQuestItems(killer, BONE_FRAGMENT5))
 					{
 						giveItems(killer, BONE_FRAGMENT5, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						if (hasQuestItems(killer, BONE_FRAGMENT4, BONE_FRAGMENT6, BONE_FRAGMENT7, BONE_FRAGMENT8))
 						{
 							qs.setMemoState(17);
@@ -333,7 +333,7 @@ public final class Q00227_TestOfTheReformer extends Quest
 					if (qs.isMemoState(16) && !hasQuestItems(killer, BONE_FRAGMENT4))
 					{
 						giveItems(killer, BONE_FRAGMENT4, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						if (hasQuestItems(killer, BONE_FRAGMENT5, BONE_FRAGMENT6, BONE_FRAGMENT7, BONE_FRAGMENT8))
 						{
 							qs.setMemoState(17);
@@ -355,7 +355,7 @@ public final class Q00227_TestOfTheReformer extends Quest
 						else
 						{
 							giveItems(killer, RIPPED_DIARY, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -366,7 +366,7 @@ public final class Q00227_TestOfTheReformer extends Quest
 					{
 						npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.THE_CONCEALED_TRUTH_WILL_ALWAYS_BE_REVEALED));
 						giveItems(killer, HUGE_NAIL, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						qs.setMemoState(3);
 						qs.setCond(3);
 					}
@@ -388,7 +388,7 @@ public final class Q00227_TestOfTheReformer extends Quest
 						qs.setMemoState(9);
 						qs.setCond(9);
 						giveItems(killer, LETTER_OF_BETRAYER, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;
 				}

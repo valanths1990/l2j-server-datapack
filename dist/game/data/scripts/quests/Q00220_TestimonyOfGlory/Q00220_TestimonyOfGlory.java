@@ -19,7 +19,7 @@
 package quests.Q00220_TestimonyOfGlory;
 
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -139,7 +139,7 @@ public final class Q00220_TestimonyOfGlory extends Quest
 				if (qs.isCreated())
 				{
 					qs.startQuest();
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					giveItems(player, VOKIANS_ORDER, 1);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
@@ -446,7 +446,7 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						if (getQuestItemsCount(killer, TYRANT_TALON) == 9)
 						{
 							giveItems(killer, TYRANT_TALON, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, MANASHEN_SHARD) >= 10) && (getQuestItemsCount(killer, GUARDIAN_BASILISK_FANG) >= 10))
 							{
 								qs.setCond(2);
@@ -455,7 +455,7 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						else
 						{
 							giveItems(killer, TYRANT_TALON, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -467,12 +467,12 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						if (getQuestItemsCount(killer, TYRANT_TALON) == 29)
 						{
 							giveItems(killer, STAKATO_DRONE_HUSK, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
 							giveItems(killer, STAKATO_DRONE_HUSK, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -484,7 +484,7 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						if (getQuestItemsCount(killer, GUARDIAN_BASILISK_FANG) == 9)
 						{
 							giveItems(killer, GUARDIAN_BASILISK_FANG, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, MANASHEN_SHARD) >= 10) && (getQuestItemsCount(killer, TYRANT_TALON) >= 10))
 							{
 								qs.setCond(2);
@@ -493,7 +493,7 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						else
 						{
 							giveItems(killer, GUARDIAN_BASILISK_FANG, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -505,7 +505,7 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						if (getQuestItemsCount(killer, MANASHEN_SHARD) == 9)
 						{
 							giveItems(killer, MANASHEN_SHARD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, TYRANT_TALON) >= 10) && (getQuestItemsCount(killer, GUARDIAN_BASILISK_FANG) >= 10))
 							{
 								qs.setCond(2);
@@ -514,7 +514,7 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						else
 						{
 							giveItems(killer, MANASHEN_SHARD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -531,7 +531,7 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						if (getQuestItemsCount(killer, MANASHEN_SHARD) == 19)
 						{
 							giveItems(killer, TIMAK_ORC_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if (getQuestItemsCount(killer, TAMLIN_ORC_SKULL) >= 20)
 							{
 								qs.setCond(7);
@@ -540,7 +540,7 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						else
 						{
 							giveItems(killer, TIMAK_ORC_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -553,7 +553,7 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						if (getQuestItemsCount(killer, TAMLIN_ORC_SKULL) == 19)
 						{
 							giveItems(killer, TAMLIN_ORC_SKULL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if (getQuestItemsCount(killer, TIMAK_ORC_HEAD) >= 20)
 							{
 								qs.setCond(7);
@@ -562,7 +562,7 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						else
 						{
 							giveItems(killer, TAMLIN_ORC_SKULL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -585,12 +585,12 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						{
 							giveItems(killer, PASHIKAS_HEAD, 1);
 							takeItems(killer, GLOVE_OF_VOLTAR, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
 							giveItems(killer, PASHIKAS_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -603,12 +603,12 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						{
 							giveItems(killer, VULTUS_HEAD, 1);
 							takeItems(killer, GLOVE_OF_VOLTAR, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
 							giveItems(killer, VULTUS_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -621,12 +621,12 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						{
 							giveItems(killer, ENKU_OVERLORD_HEAD, 1);
 							takeItems(killer, GLOVE_OF_KEPRA, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
 							giveItems(killer, ENKU_OVERLORD_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -639,12 +639,12 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						{
 							giveItems(killer, MAKUM_BUGBEAR_HEAD, 1);
 							takeItems(killer, GLOVE_OF_BURAI, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
 							giveItems(killer, MAKUM_BUGBEAR_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;

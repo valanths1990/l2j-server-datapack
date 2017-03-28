@@ -18,7 +18,7 @@
  */
 package quests.Q00229_TestOfWitchcraft;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -133,7 +133,7 @@ public final class Q00229_TestOfWitchcraft extends Quest
 				if (qs.isCreated())
 				{
 					qs.startQuest();
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					giveItems(player, ORIMS_DIAGRAM, 1);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
@@ -365,11 +365,11 @@ public final class Q00229_TestOfWitchcraft extends Quest
 							giveItems(killer, DIRE_WYRM_FANG, 1);
 							if (getQuestItemsCount(killer, DIRE_WYRM_FANG) >= 20)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -384,11 +384,11 @@ public final class Q00229_TestOfWitchcraft extends Quest
 							giveItems(killer, ENCHANTED_STONE_GOLEM_HEARTSTONE, 1);
 							if (getQuestItemsCount(killer, ENCHANTED_STONE_GOLEM_HEARTSTONE) >= 20)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -408,11 +408,11 @@ public final class Q00229_TestOfWitchcraft extends Quest
 							giveItems(killer, LETO_LIZARDMAN_CHARM, 1);
 							if (getQuestItemsCount(killer, LETO_LIZARDMAN_CHARM) >= 20)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -428,11 +428,11 @@ public final class Q00229_TestOfWitchcraft extends Quest
 							giveItems(killer, TAMLIN_ORC_AMULET, 1);
 							if (getQuestItemsCount(killer, TAMLIN_ORC_AMULET) >= 20)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -444,7 +444,7 @@ public final class Q00229_TestOfWitchcraft extends Quest
 					{
 						takeItems(killer, LARAS_MEMO, 1);
 						giveItems(killer, AKLANTOTH_3RD_GEM, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						if (hasQuestItems(killer, AKLANTOTH_1ST_GEM, AKLANTOTH_2ND_GEM, AKLANTOTH_4TH_GEM, AKLANTOTH_5TH_GEM, AKLANTOTH_6TH_GEM))
 						{
 							qs.setCond(3);
@@ -459,18 +459,18 @@ public final class Q00229_TestOfWitchcraft extends Quest
 						if (!hasQuestItems(killer, AKLANTOTH_4TH_GEM))
 						{
 							giveItems(killer, AKLANTOTH_4TH_GEM, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 						else if (!hasQuestItems(killer, AKLANTOTH_5TH_GEM))
 						{
 							giveItems(killer, AKLANTOTH_5TH_GEM, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 						else if (!hasQuestItems(killer, AKLANTOTH_6TH_GEM))
 						{
 							takeItems(killer, LEOPOLDS_JOURNAL, 1);
 							giveItems(killer, AKLANTOTH_6TH_GEM, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							if (hasQuestItems(killer, AKLANTOTH_1ST_GEM, AKLANTOTH_2ND_GEM, AKLANTOTH_3RD_GEM))
 							{
 								qs.setCond(3);
@@ -490,7 +490,7 @@ public final class Q00229_TestOfWitchcraft extends Quest
 							giveItems(killer, PURGATORY_KEY, 1);
 							giveItems(killer, ZERUEL_BIND_CRYSTAL, 1);
 							takeItems(killer, BRIMSTONE_2ND, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							qs.setCond(10);
 						}
 					}

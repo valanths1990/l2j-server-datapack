@@ -18,7 +18,7 @@
  */
 package quests.Q00115_TheOtherSideOfTruth;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -133,7 +133,7 @@ public class Q00115_TheOtherSideOfTruth extends Quest
 				if (st.isCond(4))
 				{
 					st.setCond(5, true);
-					st.playSound(QuestSound.AMBSOUND_WINGFLAP);
+					st.playSound(Sound.AMBSOUND_WINGFLAP);
 					htmltext = event;
 				}
 				break;
@@ -162,7 +162,7 @@ public class Q00115_TheOtherSideOfTruth extends Quest
 					{
 						st.setCond(11, true);
 						htmltext = "32020-26.html";
-						st.playSound(QuestSound.AMBSOUND_THUNDER);
+						st.playSound(Sound.AMBSOUND_THUNDER);
 					}
 				}
 				break;
@@ -182,7 +182,7 @@ public class Q00115_TheOtherSideOfTruth extends Quest
 					{
 						st.setCond(11, true);
 						htmltext = "32020-28.html";
-						st.playSound(QuestSound.AMBSOUND_THUNDER);
+						st.playSound(Sound.AMBSOUND_THUNDER);
 					}
 				}
 				break;

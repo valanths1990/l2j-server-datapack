@@ -18,7 +18,7 @@
  */
 package quests.Q00223_TestOfTheChampion;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -103,7 +103,7 @@ public final class Q00223_TestOfTheChampion extends Quest
 				if (qs.isCreated())
 				{
 					qs.startQuest();
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					giveItems(player, ASCALONS_1ST_LETTER, 1);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
@@ -323,7 +323,7 @@ public final class Q00223_TestOfTheChampion extends Quest
 						if (getQuestItemsCount(killer, HARPYS_EGG) >= 28)
 						{
 							giveItems(killer, HARPYS_EGG, 2);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, MEDUSA_VENOM) >= 30) && (getQuestItemsCount(killer, WINDSUS_BILE) >= 30))
 							{
 								qs.setCond(7);
@@ -332,7 +332,7 @@ public final class Q00223_TestOfTheChampion extends Quest
 						else
 						{
 							giveItems(killer, HARPYS_EGG, 2);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -344,7 +344,7 @@ public final class Q00223_TestOfTheChampion extends Quest
 						if (getQuestItemsCount(killer, MEDUSA_VENOM) >= 27)
 						{
 							giveItems(killer, MEDUSA_VENOM, 3);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, HARPYS_EGG) >= 30) && (getQuestItemsCount(killer, WINDSUS_BILE) >= 30))
 							{
 								qs.setCond(7);
@@ -353,7 +353,7 @@ public final class Q00223_TestOfTheChampion extends Quest
 						else
 						{
 							giveItems(killer, MEDUSA_VENOM, 3);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -365,7 +365,7 @@ public final class Q00223_TestOfTheChampion extends Quest
 						if (getQuestItemsCount(killer, WINDSUS_BILE) >= 27)
 						{
 							giveItems(killer, WINDSUS_BILE, 3);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if ((getQuestItemsCount(killer, HARPYS_EGG) >= 30) && (getQuestItemsCount(killer, MEDUSA_VENOM) >= 30))
 							{
 								qs.setCond(7);
@@ -374,7 +374,7 @@ public final class Q00223_TestOfTheChampion extends Quest
 						else
 						{
 							giveItems(killer, WINDSUS_BILE, 3);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -392,7 +392,7 @@ public final class Q00223_TestOfTheChampion extends Quest
 						else
 						{
 							giveItems(killer, ROAD_RATMAN_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -414,7 +414,7 @@ public final class Q00223_TestOfTheChampion extends Quest
 						else
 						{
 							giveItems(killer, LETO_LIZARDMAN_FANG, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -431,7 +431,7 @@ public final class Q00223_TestOfTheChampion extends Quest
 						else
 						{
 							giveItems(killer, BLOODY_AXE_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;

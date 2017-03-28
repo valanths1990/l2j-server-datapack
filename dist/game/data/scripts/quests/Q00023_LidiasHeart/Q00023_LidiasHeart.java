@@ -21,7 +21,7 @@ package quests.Q00023_LidiasHeart;
 import quests.Q00022_TragedyInVonHellmannForest.Q00022_TragedyInVonHellmannForest;
 import quests.Q00024_InhabitantsOfTheForestOfTheDead.Q00024_InhabitantsOfTheForestOfTheDead;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -154,7 +154,7 @@ public final class Q00023_LidiasHeart extends Quest
 			}
 			case "31328-19.html":
 			{
-				playSound(player, QuestSound.AMBSOUND_MT_CREAK);
+				playSound(player, Sound.AMBSOUND_MT_CREAK);
 				htmltext = event;
 				break;
 			}
@@ -178,7 +178,7 @@ public final class Q00023_LidiasHeart extends Quest
 			{
 				if (qs.isMemoState(8) || qs.isMemoState(9))
 				{
-					playSound(player, QuestSound.SKILLSOUND_HORROR_02);
+					playSound(player, Sound.SKILLSOUND_HORROR_02);
 					if (!npc.getVariables().getBoolean("SPAWNED", false))
 					{
 						npc.getVariables().set("SPAWNED", true);
@@ -206,7 +206,7 @@ public final class Q00023_LidiasHeart extends Quest
 			}
 			case "31524-02.html":
 			{
-				playSound(player, QuestSound.CHRSOUND_MHFIGHTER_CRY);
+				playSound(player, Sound.CHRSOUND_MHFIGHTER_CRY);
 				htmltext = event;
 				break;
 			}
@@ -247,13 +247,13 @@ public final class Q00023_LidiasHeart extends Quest
 			}
 			case "31526-08.html":
 			{
-				playSound(player, QuestSound.ITEMSOUND_ARMOR_LEATHER);
+				playSound(player, Sound.ITEMSOUND_ARMOR_LEATHER);
 				htmltext = event;
 				break;
 			}
 			case "31526-10.html":
 			{
-				playSound(player, QuestSound.AMBSOUND_EG_DRON);
+				playSound(player, Sound.AMBSOUND_EG_DRON);
 				htmltext = event;
 				break;
 			}
@@ -274,7 +274,7 @@ public final class Q00023_LidiasHeart extends Quest
 				{
 					giveItems(player, SILVER_SPEAR, 1);
 					takeItems(player, SILVER_KEY, -1);
-					playSound(player, QuestSound.ITEMSOUND_WEAPON_SPEAR);
+					playSound(player, Sound.ITEMSOUND_WEAPON_SPEAR);
 					qs.setCond(10);
 					htmltext = event;
 				}

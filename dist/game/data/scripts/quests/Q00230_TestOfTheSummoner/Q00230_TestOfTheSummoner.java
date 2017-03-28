@@ -21,7 +21,7 @@ package quests.Q00230_TestOfTheSummoner;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.L2Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -209,7 +209,7 @@ public final class Q00230_TestOfTheSummoner extends Quest
 				if (qs.isCreated())
 				{
 					qs.startQuest();
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					giveItems(player, GALATEAS_LETTER, 1);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
@@ -835,7 +835,7 @@ public final class Q00230_TestOfTheSummoner extends Quest
 						npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, data.getNpcStringId()));
 						takeItems(killer, data.getCrystalOfInprogress(), 1);
 						giveItems(killer, data.getCrystalOfVictory(), 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					break;
 				}

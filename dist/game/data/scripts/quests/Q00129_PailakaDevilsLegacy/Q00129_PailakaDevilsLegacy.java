@@ -18,7 +18,7 @@
  */
 package quests.Q00129_PailakaDevilsLegacy;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -289,7 +289,7 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 					if (hasQuestItems(player, SWORD))
 					{
 						giveItems(player, SCROLL_1, 1);
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;
 				}
@@ -298,7 +298,7 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 					if (hasQuestItems(player, ENH_SWORD1))
 					{
 						giveItems(player, SCROLL_2, 1);
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;
 				}

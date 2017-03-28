@@ -1,4 +1,5 @@
 import sys
+from com.l2jserver.gameserver.enums.audio import Sound
 from com.l2jserver.gameserver.model.quest import State
 from com.l2jserver.gameserver.model.quest import QuestState
 from com.l2jserver.gameserver.model.quest import Quest as JQuest
@@ -122,7 +123,7 @@ class Quest (JQuest) :
         if npcId in range(18120,18256) :
           if self.getRandom(100) < 30 :
             st.giveItems(SEALED_BOX,1)
-            st.playSound("ItemSound.quest_itemget")
+            st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
       return
 
   def onAdvEvent (self,event,npc,player) :
@@ -137,7 +138,7 @@ class Quest (JQuest) :
       if int(st.get("cond")) == 0 :
         if st.getPlayer().getLevel() >= 74 :
           st.setState(State.STARTED)
-          st.playSound("ItemSound.quest_accept")
+          st.playSound(Sound.ITEMSOUND_QUEST_ACCEPT)
           htmltext = "31453-13.htm"
           st.set("cond","1")
         else :
@@ -327,12 +328,12 @@ class Quest (JQuest) :
         st.takeItems(GOBLETS[3],-1)
         st.giveItems(ANTIQUE_BROOCH,1)
         st.set("cond","2")
-        st.playSound("ItemSound.quest_finish")
+        st.playSound(Sound.ITEMSOUND_QUEST_FINISH)
         htmltext = "31453-16.htm"
       else :
         htmltext = "31453-14.htm"
     elif event == "13" :
-      st.playSound("ItemSound.quest_finish")
+      st.playSound(Sound.ITEMSOUND_QUEST_FINISH)
       st.exitQuest(1)
       htmltext = "31453-18.htm"
     elif event == "14" :

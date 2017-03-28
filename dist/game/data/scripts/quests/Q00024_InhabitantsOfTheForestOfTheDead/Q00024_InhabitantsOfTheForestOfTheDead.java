@@ -21,7 +21,7 @@ package quests.Q00024_InhabitantsOfTheForestOfTheDead;
 import quests.Q00023_LidiasHeart.Q00023_LidiasHeart;
 import quests.Q00025_HidingBehindTheTruth.Q00025_HidingBehindTheTruth;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -92,7 +92,7 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 				st.unset("var");
 				break;
 			case "31389-18.html":
-				st.playSound(QuestSound.INTERFACESOUND_CHARSTAT_OPEN);
+				st.playSound(Sound.INTERFACESOUND_CHARSTAT_OPEN);
 				break;
 			case "31389-19.html":
 				if (!st.hasQuestItems(BROKEN_SILVER_CROSS_OF_EINHASAD))
@@ -298,7 +298,7 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 				{
 					if (st.isCond(1))
 					{
-						st.playSound(QuestSound.AMDSOUND_WIND_LOOT);
+						st.playSound(Sound.AMDSOUND_WIND_LOOT);
 						htmltext = "31531-01.html";
 					}
 					else if (st.isCond(2))

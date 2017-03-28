@@ -1,5 +1,6 @@
 #Made by Emperorc
 import sys
+from com.l2jserver.gameserver.enums.audio import Sound
 from com.l2jserver.gameserver.model.quest import State
 from com.l2jserver.gameserver.model.quest import QuestState
 from com.l2jserver.gameserver.model.quest import Quest as JQuest
@@ -300,12 +301,12 @@ class Quest (JQuest) :
         htmltext = event
         if event == "30744-03.htm" :
             st.setState(State.STARTED)
-            st.playSound("ItemSound.quest_accept")
+            st.playSound(Sound.ITEMSOUND_QUEST_ACCEPT)
             st.giveItems(Test_Instructions_1,1)
             st.set("cond","1")
             #set Memo = 0
         elif event == "30744-32.htm" :
-            st.playSound("ItemSound.quest_finish")
+            st.playSound(Sound.ITEMSOUND_QUEST_FINISH)
             if st.getQuestItemsCount(Leaf_Pin) >= 20 :
                 htmltext = "30744-33.htm"
                 st.giveItems(57,20000)
@@ -459,7 +460,7 @@ class Quest (JQuest) :
                     item,quantity,reward = Tor_Rewards_1[req]
                     st.giveItems(Leaf_Pin,1)
                     st.giveItems(57,reward)
-                    st.playSound("ItemSound.quest_middle")
+                    st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                     st.set("hasTask","0")
                     st.takeItems(req,-1)
                     st.takeItems(item,-1)
@@ -474,7 +475,7 @@ class Quest (JQuest) :
                     item,quantity,reward = Tor_Rewards_2[req]
                     st.giveItems(Leaf_Pin,1)
                     st.giveItems(57,reward)
-                    st.playSound("ItemSound.quest_middle")
+                    st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                     st.set("hasTask","0")
                     st.takeItems(req,-1)
                     st.takeItems(item,-1)
@@ -518,9 +519,9 @@ class Quest (JQuest) :
                 if rand < chance and st.getQuestItemsCount(item) < amount :
                     st.giveItems(item,1)
                     if st.getQuestItemsCount(item) >= amount :
-                        st.playSound("ItemSound.quest_middle")
+                        st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                     else :
-                        st.playSound("ItemSound.quest_itemget")
+                        st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
             elif npcId == Breka_Orc_Warrior and rand < 10 :
                 if st.getQuestItemsCount(3711) == 0 :
                     st.addSpawn(27140,300000)
@@ -537,9 +538,9 @@ class Quest (JQuest) :
                     if rand < chance and st.getQuestItemsCount(item) < amount :
                         st.giveItems(item,1)
                         if st.getQuestItemsCount(item) >= amount :
-                            st.playSound("ItemSound.quest_middle")
+                            st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                         else :
-                            st.playSound("ItemSound.quest_itemget")
+                            st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
                 elif npcId == Tarlk_Bugbear_Warrior and rand < 10 :
                     if st.getQuestItemsCount(3722) == 0 :
                         st.addSpawn(27144,300000)
@@ -556,9 +557,9 @@ class Quest (JQuest) :
                 if rand < chance and st.getQuestItemsCount(req) and st.getQuestItemsCount(give) < amount :
                     st.giveItems(give,eval(giveAmount))
                     if st.getQuestItemsCount(give) >= amount :
-                        st.playSound("ItemSound.quest_middle")
+                        st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                     else :
-                        st.playSound("ItemSound.quest_itemget")
+                        st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
                     if npcId in [27160,27164] and Rnd.get(2) :
                         st.addSpawn(27150,300000)
                         st.addSpawn(27150,300000)
@@ -570,9 +571,9 @@ class Quest (JQuest) :
                     if rand < chance :
                         st.giveItems(give,1)
                         if st.getQuestItemsCount(give) >= amount :
-                            st.playSound("ItemSound.quest_middle")
+                            st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                         else :
-                            st.playSound("ItemSound.quest_itemget")
+                            st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
                         if npcId == 27162 and Rnd.get(2) :
                             st.addSpawn(27150,300000)
                             st.addSpawn(27150,300000)
@@ -591,9 +592,9 @@ class Quest (JQuest) :
                     if st.getQuestItemsCount(item) < amount :
                         st.giveItems(item,bonus)
                         if st.getQuestItemsCount(item) >= amount :
-                            st.playSound("ItemSound.quest_middle")
+                            st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                         else :
-                            st.playSound("ItemSound.quest_itemget")
+                            st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
                         AutoChat(npc,"What!")
         if npcId in Tor_requests_tospawn.keys() and rand < 10:
             it1,it2,id = Tor_requests_tospawn[npcId]
@@ -607,7 +608,7 @@ class Quest (JQuest) :
                             st.giveItems(item+1,1)
                             st.takeItems(item,-1)
                             if item >= 3703 :
-                                st.playSound("ItemSound.quest_jackpot")
+                                st.playSound(Sound.ITEMSOUND_QUEST_JACKPOT)
                             break
             else :
                 for item in range(3698,3707) :

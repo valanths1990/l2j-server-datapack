@@ -21,7 +21,7 @@ package quests.Q00102_SeaOfSporesFever;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -108,7 +108,7 @@ public class Q00102_SeaOfSporesFever extends Quest
 			st.giveItems(DRYADS_TEAR, 1);
 			if (st.getQuestItemsCount(DRYADS_TEAR) < 10)
 			{
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 			else
 			{

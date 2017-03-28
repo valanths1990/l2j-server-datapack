@@ -19,7 +19,7 @@
 package quests.Q00226_TestOfTheHealer;
 
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -101,7 +101,7 @@ public final class Q00226_TestOfTheHealer extends Quest
 				{
 					qs.startQuest();
 					qs.setMemoState(1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					giveItems(player, REPORT_OF_PERRIN, 1);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
@@ -241,7 +241,7 @@ public final class Q00226_TestOfTheHealer extends Quest
 					addSpawn(npc, LERO_LIZARDMAN_AGENT, npc, true, 200000);
 					addSpawn(npc, LERO_LIZARDMAN_AGENT, npc, true, 200000);
 					addSpawn(npc, LERO_LIZARDMAN_LEADER, npc, true, 200000);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_BEFORE_BATTLE);
 					htmltext = event;
 				}
 				break;
@@ -300,7 +300,7 @@ public final class Q00226_TestOfTheHealer extends Quest
 					{
 						qs.setMemoState(2);
 						qs.setCond(3, true);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					break;
 				}
@@ -513,7 +513,7 @@ public final class Q00226_TestOfTheHealer extends Quest
 								addSpawn(npc, LERO_LIZARDMAN_ASSASSIN, npc, true, 200000);
 								addSpawn(npc, LERO_LIZARDMAN_ASSASSIN, npc, true, 200000);
 								addSpawn(npc, LERO_LIZARDMAN_ASSASSIN, npc, true, 200000);
-								playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+								playSound(player, Sound.ITEMSOUND_QUEST_BEFORE_BATTLE);
 							}
 							qs.setCond(14);
 							npc.deleteMe();
@@ -526,7 +526,7 @@ public final class Q00226_TestOfTheHealer extends Quest
 								addSpawn(npc, LERO_LIZARDMAN_SNIPER, npc, true, 200000);
 								addSpawn(npc, LERO_LIZARDMAN_SNIPER, npc, true, 200000);
 								addSpawn(npc, LERO_LIZARDMAN_SNIPER, npc, true, 200000);
-								playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+								playSound(player, Sound.ITEMSOUND_QUEST_BEFORE_BATTLE);
 							}
 							qs.setCond(16);
 							npc.deleteMe();
@@ -539,7 +539,7 @@ public final class Q00226_TestOfTheHealer extends Quest
 								addSpawn(npc, LERO_LIZARDMAN_WIZARD, npc, true, 200000);
 								addSpawn(npc, LERO_LIZARDMAN_WIZARD, npc, true, 200000);
 								addSpawn(npc, LERO_LIZARDMAN_LORD, npc, true, 200000);
-								playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+								playSound(player, Sound.ITEMSOUND_QUEST_BEFORE_BATTLE);
 							}
 							qs.setCond(18);
 							npc.deleteMe();

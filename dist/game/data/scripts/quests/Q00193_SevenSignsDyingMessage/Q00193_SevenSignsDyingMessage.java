@@ -21,7 +21,7 @@ package quests.Q00193_SevenSignsDyingMessage;
 import quests.Q00192_SevenSignsSeriesOfDoubt.Q00192_SevenSignsSeriesOfDoubt;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -223,7 +223,7 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 		if (npc.isInsideRadius(partyMember, 1500, true, false))
 		{
 			st.giveItems(SCULPTURE_OF_DOUBT, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_FINISH);
+			st.playSound(Sound.ITEMSOUND_QUEST_FINISH);
 			st.setCond(5);
 		}
 		

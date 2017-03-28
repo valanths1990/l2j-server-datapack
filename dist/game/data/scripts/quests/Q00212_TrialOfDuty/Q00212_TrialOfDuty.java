@@ -19,7 +19,7 @@
 package quests.Q00212_TrialOfDuty;
 
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -245,12 +245,12 @@ public final class Q00212_TrialOfDuty extends Quest
 					if (!hasQuestItems(killer, ATHEBALDTS_SKULL))
 					{
 						giveItems(killer, ATHEBALDTS_SKULL, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					else if (!hasQuestItems(killer, ATHEBALDTS_RIBS))
 					{
 						giveItems(killer, ATHEBALDTS_RIBS, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					else if (!hasQuestItems(killer, ATHEBALDTS_SHIN))
 					{

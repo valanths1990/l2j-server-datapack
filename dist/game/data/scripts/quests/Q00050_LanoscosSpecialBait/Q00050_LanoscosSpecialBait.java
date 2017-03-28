@@ -19,7 +19,7 @@
 package quests.Q00050_LanoscosSpecialBait;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -94,7 +94,7 @@ public class Q00050_LanoscosSpecialBait extends Quest
 			if (getRandom(100) < chance)
 			{
 				st.rewardItems(ESSENCE_OF_WIND, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		

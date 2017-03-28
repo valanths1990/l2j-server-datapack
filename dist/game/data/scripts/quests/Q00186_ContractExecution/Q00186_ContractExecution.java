@@ -23,7 +23,7 @@ import java.util.Map;
 
 import quests.Q00184_ArtOfPersuasion.Q00184_ArtOfPersuasion;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -154,7 +154,7 @@ public final class Q00186_ContractExecution extends Quest
 			if (!hasQuestItems(killer, LETO_LIZARDMAN_ACCESSORY))
 			{
 				giveItems(killer, LETO_LIZARDMAN_ACCESSORY, 1);
-				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

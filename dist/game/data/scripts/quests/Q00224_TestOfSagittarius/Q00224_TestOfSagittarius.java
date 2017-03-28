@@ -18,7 +18,7 @@
  */
 package quests.Q00224_TestOfSagittarius;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -113,7 +113,7 @@ public final class Q00224_TestOfSagittarius extends Quest
 				{
 					qs.startQuest();
 					qs.setMemoState(1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					giveItems(player, BERNARDS_INTRODUCTION, 1);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
@@ -212,7 +212,7 @@ public final class Q00224_TestOfSagittarius extends Quest
 						else
 						{
 							giveItems(killer, HUNTERS_1ST_RUNE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -232,7 +232,7 @@ public final class Q00224_TestOfSagittarius extends Quest
 						else
 						{
 							giveItems(killer, STAKATO_CHITIN, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -250,7 +250,7 @@ public final class Q00224_TestOfSagittarius extends Quest
 						else
 						{
 							giveItems(killer, REINFORCED_BOWSTRING, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -270,7 +270,7 @@ public final class Q00224_TestOfSagittarius extends Quest
 						else
 						{
 							giveItems(killer, HUNTERS_2ND_RUNE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -288,7 +288,7 @@ public final class Q00224_TestOfSagittarius extends Quest
 						else
 						{
 							giveItems(killer, MITHRIL_CLIP, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -306,7 +306,7 @@ public final class Q00224_TestOfSagittarius extends Quest
 						else
 						{
 							giveItems(killer, MANASHENS_HORN, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -324,12 +324,12 @@ public final class Q00224_TestOfSagittarius extends Quest
 						{
 							addSpawn(SERPENT_DEMON_KADESH, npc, true, 300000);
 							takeItems(killer, BLOOD_OF_LIZARDMAN, -1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_BEFORE_BATTLE);
 						}
 						else
 						{
 							giveItems(killer, BLOOD_OF_LIZARDMAN, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
