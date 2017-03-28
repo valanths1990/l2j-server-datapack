@@ -26,7 +26,7 @@ import java.util.Map;
 import quests.Q00230_TestOfTheSummoner.Q00230_TestOfTheSummoner;
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2ServitorInstance;
@@ -120,7 +120,7 @@ public final class Servitors extends AbstractNpcAI
 				final L2Npc killer = (L2Npc) event.getAttacker();
 				final List<Integer> items = MONSTERS.get(killer.getId());
 				giveItems(master, items.get(2), 1); // Crystal of Defeat
-				playSound(master, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(master, Sound.ITEMSOUND_QUEST_ITEMGET);
 				takeItems(master, items.get(1), -1); // Crystal of Inprogress
 				takeItems(master, items.get(0), -1); // Crystal of Starting
 			}

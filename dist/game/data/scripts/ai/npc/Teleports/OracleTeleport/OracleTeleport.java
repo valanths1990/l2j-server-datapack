@@ -18,7 +18,7 @@
  */
 package ai.npc.Teleports.OracleTeleport;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -267,7 +267,7 @@ public final class OracleTeleport extends AbstractNpcAI
 			}
 			st.set("id", Integer.toString(i));
 			st.setState(State.STARTED);
-			playSound(player, QuestSound.ITEMSOUND_QUEST_ACCEPT);
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			htmltext = "ziggurat_rift.htm";
 			player.teleToLocation(new Location(-114755, -179466, -6752));
 		}
@@ -294,7 +294,7 @@ public final class OracleTeleport extends AbstractNpcAI
 				i++;
 			}
 			st.set("id", Integer.toString(i));
-			playSound(player, QuestSound.ITEMSOUND_QUEST_ACCEPT);
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			player.teleToLocation(new Location(-80157, 111344, -4901));
 			player.setIsIn7sDungeon(true);
 		}
@@ -311,7 +311,7 @@ public final class OracleTeleport extends AbstractNpcAI
 				i++;
 			}
 			st.set("id", Integer.toString(i));
-			playSound(player, QuestSound.ITEMSOUND_QUEST_ACCEPT);
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			player.teleToLocation(new Location(-81261, 86531, -5157));
 			player.setIsIn7sDungeon(true);
 		}
