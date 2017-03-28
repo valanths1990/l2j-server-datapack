@@ -23,7 +23,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -152,11 +152,11 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 				{
 					if (event.equals("QUEST_ACCEPTED"))
 					{
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_ACCEPT);
+						qs.playSound(Sound.ITEMSOUND_QUEST_ACCEPT);
 						qs.setMemoState(384);
 						qs.startQuest();
 						qs.showQuestionMark(384);
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30182-05.htm";
 					}
 					switch (ask)

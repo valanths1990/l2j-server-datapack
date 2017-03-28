@@ -18,7 +18,7 @@
  */
 package quests.Q00906_TheCallOfValakas;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -60,7 +60,7 @@ public class Q00906_TheCallOfValakas extends Quest
 		if ((st != null) && Util.checkIfInRange(1500, npc, player, false))
 		{
 			st.giveItems(LAVASAURUS_ALPHA_FRAGMENT, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			st.setCond(2, true);
 		}
 	}
@@ -142,7 +142,7 @@ public class Q00906_TheCallOfValakas extends Quest
 					case 2:
 					{
 						st.giveItems(SCROLL_VALAKAS_CALL, 1);
-						st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 						st.exitQuest(QuestType.DAILY, true);
 						htmltext = "31540-08.html";
 						break;

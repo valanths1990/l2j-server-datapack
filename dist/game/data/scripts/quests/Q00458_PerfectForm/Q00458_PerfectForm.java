@@ -18,7 +18,7 @@
  */
 package quests.Q00458_PerfectForm;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -266,7 +266,7 @@ public class Q00458_PerfectForm extends Quest
 				}
 				else
 				{
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				
 				final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());

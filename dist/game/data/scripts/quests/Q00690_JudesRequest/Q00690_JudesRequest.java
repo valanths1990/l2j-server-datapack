@@ -19,7 +19,7 @@
 package quests.Q00690_JudesRequest;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -93,7 +93,7 @@ public class Q00690_JudesRequest extends Quest
 			{
 				st.giveItems(REWARDS[0][getRandom(REWARDS[0].length)], 1);
 				st.takeItems(EVIL_WEAPON, 200);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+				st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 				htmltext = "32356-07.htm";
 			}
 			else
@@ -112,7 +112,7 @@ public class Q00690_JudesRequest extends Quest
 			{
 				st.giveItems(REWARDS[1][getRandom(REWARDS[1].length)], 1);
 				st.takeItems(EVIL_WEAPON, 5);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+				st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 				htmltext = "32356-09.htm";
 			}
 			else
@@ -151,7 +151,7 @@ public class Q00690_JudesRequest extends Quest
 		if (getRandom(1000) <= chance)
 		{
 			st.giveItems(EVIL_WEAPON, Math.max(chance / 1000, 1));
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return null;
 	}

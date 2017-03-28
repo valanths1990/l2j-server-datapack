@@ -21,7 +21,7 @@ package quests.Q00419_GetAPet;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -385,11 +385,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_NAIL, 1);
 							if (getQuestItemsCount(killer, BLOODY_NAIL) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -404,11 +404,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_NAIL, 1);
 							if (getQuestItemsCount(killer, BLOODY_NAIL) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -423,11 +423,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_FANG, 1);
 							if (getQuestItemsCount(killer, BLOODY_FANG) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -442,11 +442,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_NAIL, 1);
 							if (getQuestItemsCount(killer, BLOODY_NAIL) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -461,11 +461,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_FANG, 1);
 							if (getQuestItemsCount(killer, BLOODY_FANG) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -480,11 +480,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_FANG, 1);
 							if (getQuestItemsCount(killer, BLOODY_FANG) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -499,11 +499,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_CLAW, 1);
 							if (getQuestItemsCount(killer, BLOODY_CLAW) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -518,11 +518,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_TARANTULA_NAIL, 1);
 							if (getQuestItemsCount(killer, BLOODY_TARANTULA_NAIL) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -537,11 +537,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_CLAW, 1);
 							if (getQuestItemsCount(killer, BLOODY_CLAW) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -556,11 +556,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_CLAW, 1);
 							if (getQuestItemsCount(killer, BLOODY_CLAW) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -575,11 +575,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_KASHA_FANG, 1);
 							if (getQuestItemsCount(killer, BLOODY_KASHA_FANG) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -594,11 +594,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_KASHA_FANG, 1);
 							if (getQuestItemsCount(killer, BLOODY_KASHA_FANG) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -613,11 +613,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_KASHA_FANG, 1);
 							if (getQuestItemsCount(killer, BLOODY_KASHA_FANG) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -632,11 +632,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_TARANTULA_NAIL, 1);
 							if (getQuestItemsCount(killer, BLOODY_TARANTULA_NAIL) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -651,11 +651,11 @@ public final class Q00419_GetAPet extends Quest
 							giveItems(killer, BLOODY_RED_CLAW, 1);
 							if (getQuestItemsCount(killer, BLOODY_RED_CLAW) >= 50)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}

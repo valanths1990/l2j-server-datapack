@@ -21,7 +21,7 @@ package quests.Q00327_RecoverTheFarmland;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
@@ -166,7 +166,7 @@ public final class Q00327_RecoverTheFarmland extends Quest
 				{
 					addExpAndSp(player, getQuestItemsCount(player, item.getId()) * item.getCount(), 0);
 					takeItems(player, item.getId(), -1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 					html = event;
 				}
 				break;
@@ -180,7 +180,7 @@ public final class Q00327_RecoverTheFarmland extends Quest
 					{
 						addExpAndSp(player, getQuestItemsCount(player, it.getId()) * it.getCount(), 0);
 						takeItems(player, it.getId(), -1);
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 						rewarded = true;
 					}
 				}

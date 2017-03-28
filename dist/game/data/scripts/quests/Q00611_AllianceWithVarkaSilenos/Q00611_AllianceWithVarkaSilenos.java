@@ -21,7 +21,7 @@ package quests.Q00611_AllianceWithVarkaSilenos;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -204,7 +204,7 @@ public class Q00611_AllianceWithVarkaSilenos extends Quest
 					return "31378-03.htm";
 				}
 				st.setState(State.STARTED);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ACCEPT);
+				st.playSound(Sound.ITEMSOUND_QUEST_ACCEPT);
 				for (int i = 0; i < VARKA_MARKS.length; i++)
 				{
 					if (st.hasQuestItems(VARKA_MARKS[i]))

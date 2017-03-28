@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -150,7 +150,7 @@ public class Q00508_AClansReputation extends Quest
 				if ((npc.getId() == REWARD_POINTS.get(raid).get(0)) && !st.hasQuestItems(REWARD_POINTS.get(raid).get(1)))
 				{
 					st.rewardItems(REWARD_POINTS.get(raid).get(1), 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}
@@ -187,7 +187,7 @@ public class Q00508_AClansReputation extends Quest
 					if (st.hasQuestItems(REWARD_POINTS.get(raid).get(1)))
 					{
 						htmltext = "30868-" + raid + "b.html";
-						st.playSound(QuestSound.ITEMSOUND_QUEST_FANFARE_1);
+						st.playSound(Sound.ITEMSOUND_QUEST_FANFARE_1);
 						st.takeItems(REWARD_POINTS.get(raid).get(1), -1);
 						final int rep = REWARD_POINTS.get(raid).get(2);
 						clan.addReputationScore(rep, true);

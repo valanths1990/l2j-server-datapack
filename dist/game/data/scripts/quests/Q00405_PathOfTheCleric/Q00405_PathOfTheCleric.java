@@ -18,7 +18,7 @@
  */
 package quests.Q00405_PathOfTheCleric;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -125,7 +125,7 @@ public final class Q00405_PathOfTheCleric extends Quest
 			if (hasQuestItems(killer, NECKLACE_OF_MOTHER) && !hasQuestItems(killer, PENDANT_OF_MOTHER))
 			{
 				giveItems(killer, PENDANT_OF_MOTHER, 1);
-				playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+				playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

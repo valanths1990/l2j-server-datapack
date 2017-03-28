@@ -18,7 +18,7 @@
  */
 package quests.Q00901_HowLavasaurusesAreMade;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -184,7 +184,7 @@ public class Q00901_HowLavasaurusesAreMade extends Quest
 		if (st.getQuestItemsCount(itemId) < 10)
 		{
 			st.giveItems(itemId, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		else if (gotAllQuestItems(st))
 		{

@@ -18,7 +18,7 @@
  */
 package quests.Q10504_JewelOfAntharas;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -61,7 +61,7 @@ public final class Q10504_JewelOfAntharas extends Quest
 		{
 			takeItems(player, CLEAR_CRYSTAL, -1);
 			giveItems(player, FILLED_CRYSTAL_ANTHARAS_ENERGY, 1);
-			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 			st.setCond(2, true);
 		}
 	}
@@ -148,7 +148,7 @@ public final class Q10504_JewelOfAntharas extends Quest
 					case 2:
 					{
 						giveItems(player, JEWEL_OF_ANTHARAS, 1);
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 						st.exitQuest(false, true);
 						htmltext = "30755-10.html";
 						break;

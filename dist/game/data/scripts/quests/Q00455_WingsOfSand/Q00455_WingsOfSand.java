@@ -21,7 +21,7 @@ package quests.Q00455_WingsOfSand;
 import java.util.Arrays;
 import java.util.List;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -79,7 +79,7 @@ public class Q00455_WingsOfSand extends Quest
 		if ((st != null) && Util.checkIfInRange(1500, npc, player, false) && (getRandom(1000) < CHANCE))
 		{
 			st.giveItems(LARGE_BABY_DRAGON, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			if (st.getQuestItemsCount(LARGE_BABY_DRAGON) == 1)
 			{
 				st.setCond(2, true);

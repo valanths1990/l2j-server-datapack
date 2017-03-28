@@ -18,7 +18,7 @@
  */
 package quests.Q00451_LuciensAltar;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -137,7 +137,7 @@ public class Q00451_LuciensAltar extends Quest
 				st.set(String.valueOf(npcId), "1");
 				st.takeItems(REPLENISHED_BEAD, 1);
 				st.giveItems(DISCHARGED_BEAD, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				
 				if (st.getQuestItemsCount(DISCHARGED_BEAD) >= 5)
 				{

@@ -18,7 +18,7 @@
  */
 package quests.Q00345_MethodToRaiseTheDead;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
@@ -215,7 +215,7 @@ public final class Q00345_MethodToRaiseTheDead extends Quest
 				giveItems(qs.getPlayer(), USELESS_BONE_PIECES, 1);
 			}
 			
-			playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		else if (random <= 11)
 		{
@@ -228,7 +228,7 @@ public final class Q00345_MethodToRaiseTheDead extends Quest
 				giveItems(qs.getPlayer(), USELESS_BONE_PIECES, 1);
 			}
 			
-			playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		else if (random <= 17)
 		{
@@ -241,7 +241,7 @@ public final class Q00345_MethodToRaiseTheDead extends Quest
 				giveItems(qs.getPlayer(), USELESS_BONE_PIECES, 1);
 			}
 			
-			playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		else if (random <= 23)
 		{
@@ -254,7 +254,7 @@ public final class Q00345_MethodToRaiseTheDead extends Quest
 				giveItems(qs.getPlayer(), USELESS_BONE_PIECES, 1);
 			}
 			
-			playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		else if (random <= 29)
 		{
@@ -267,7 +267,7 @@ public final class Q00345_MethodToRaiseTheDead extends Quest
 				giveItems(qs.getPlayer(), USELESS_BONE_PIECES, 1);
 			}
 			
-			playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		else if (random <= 60)
 		{

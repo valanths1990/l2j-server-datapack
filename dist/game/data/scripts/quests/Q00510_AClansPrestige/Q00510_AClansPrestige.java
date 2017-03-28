@@ -18,7 +18,7 @@
  */
 package quests.Q00510_AClansPrestige;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -101,7 +101,7 @@ public class Q00510_AClansPrestige extends Quest
 		if ((st != null) && st.isStarted())
 		{
 			st.rewardItems(TYRANNOSAURUS_CLAW, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return null;
 	}
@@ -137,7 +137,7 @@ public class Q00510_AClansPrestige extends Quest
 				{
 					int count = (int) st.getQuestItemsCount(TYRANNOSAURUS_CLAW);
 					int reward = (count < 10) ? (30 * count) : (59 + (30 * count));
-					st.playSound(QuestSound.ITEMSOUND_QUEST_FANFARE_1);
+					st.playSound(Sound.ITEMSOUND_QUEST_FANFARE_1);
 					st.takeItems(TYRANNOSAURUS_CLAW, -1);
 					clan.addReputationScore(reward, true);
 					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLAN_QUEST_COMPLETED_AND_S1_POINTS_GAINED).addInt(reward));

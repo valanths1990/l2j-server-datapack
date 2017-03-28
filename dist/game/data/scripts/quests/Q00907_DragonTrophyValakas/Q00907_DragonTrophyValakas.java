@@ -18,7 +18,7 @@
  */
 package quests.Q00907_DragonTrophyValakas;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -139,7 +139,7 @@ public class Q00907_DragonTrophyValakas extends Quest
 					case 2:
 					{
 						st.giveItems(MEDAL_OF_GLORY, 30);
-						st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 						st.exitQuest(QuestType.DAILY, true);
 						htmltext = "31540-09.html";
 						break;

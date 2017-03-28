@@ -21,7 +21,7 @@ package quests.Q00624_TheFinestIngredientsPart1;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -111,7 +111,7 @@ public final class Q00624_TheFinestIngredientsPart1 extends Quest
 				if (count < 50)
 				{
 					giveItems(partyMember, item, 50 - count);
-					playSound(partyMember, QuestSound.ITEMSOUND_QUEST_FANFARE_MIDDLE);
+					playSound(partyMember, Sound.ITEMSOUND_QUEST_FANFARE_MIDDLE);
 				}
 				if (getQuestItemsCount(partyMember, getRegisteredItemIds()) == 150)
 				{
@@ -121,7 +121,7 @@ public final class Q00624_TheFinestIngredientsPart1 extends Quest
 			else
 			{
 				giveItems(partyMember, item, 1);
-				playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(partyMember, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

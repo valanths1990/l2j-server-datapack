@@ -21,7 +21,7 @@ package quests.Q10272_LightFragment;
 import quests.Q10271_TheEnvelopingDarkness.Q10271_TheEnvelopingDarkness;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
@@ -165,7 +165,7 @@ public class Q10272_LightFragment extends Quest
 					if (numItems > 0)
 					{
 						st.giveItems(FRAGMENT_POWDER, numItems);
-						st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 			}

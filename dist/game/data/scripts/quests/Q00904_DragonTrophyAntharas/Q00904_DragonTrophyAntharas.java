@@ -18,7 +18,7 @@
  */
 package quests.Q00904_DragonTrophyAntharas;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -134,7 +134,7 @@ public final class Q00904_DragonTrophyAntharas extends Quest
 					case 2:
 					{
 						st.giveItems(MEDAL_OF_GLORY, 30);
-						st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 						st.exitQuest(QuestType.DAILY, true);
 						htmltext = "30755-09.html";
 						break;

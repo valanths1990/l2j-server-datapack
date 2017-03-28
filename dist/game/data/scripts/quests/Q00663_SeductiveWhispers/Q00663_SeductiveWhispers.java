@@ -23,7 +23,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
@@ -769,7 +769,7 @@ public class Q00663_SeductiveWhispers extends Quest
 			else if (rnd < MONSTERS.get(npc.getId()))
 			{
 				giveItems(rewardedPlayer, SPIRIT_BEAD, 1);
-				playSound(rewardedPlayer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(rewardedPlayer, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		

@@ -18,7 +18,7 @@
  */
 package quests.Q00381_LetsBecomeARoyalMember;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -82,7 +82,7 @@ public final class Q00381_LetsBecomeARoyalMember extends Quest
 				if (qs.isMemoState(1) && !hasQuestItems(player, COIN_ALBUM))
 				{
 					qs.setMemoState(2);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = event;
 				}
 				break;
@@ -155,7 +155,7 @@ public final class Q00381_LetsBecomeARoyalMember extends Quest
 						{
 							takeItems(talker, FOUR_LEAF_COIN, 1);
 							giveItems(talker, COIN_ALBUM, 1);
-							playSound(talker, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(talker, Sound.ITEMSOUND_QUEST_MIDDLE);
 							htmltext = "30090-04.html";
 						}
 						else
@@ -183,7 +183,7 @@ public final class Q00381_LetsBecomeARoyalMember extends Quest
 			else if (qs.isMemoState(2) && !hasQuestItems(killer, FOUR_LEAF_COIN))
 			{
 				giveItems(killer, FOUR_LEAF_COIN, 1);
-				playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+				playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

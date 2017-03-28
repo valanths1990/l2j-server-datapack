@@ -21,7 +21,7 @@ package quests.Q00618_IntoTheFlame;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -133,7 +133,7 @@ public class Q00618_IntoTheFlame extends Quest
 				}
 				else
 				{
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}

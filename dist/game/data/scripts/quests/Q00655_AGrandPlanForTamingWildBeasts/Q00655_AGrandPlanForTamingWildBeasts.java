@@ -22,7 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.instancemanager.CHSiegeManager;
 import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -249,7 +249,7 @@ public final class Q00655_AGrandPlanForTamingWildBeasts extends Quest
 					}
 					else
 					{
-						playSound(clanLeader, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(clanLeader, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 			}

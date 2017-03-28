@@ -23,7 +23,7 @@ import java.util.Map;
 
 import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -123,14 +123,14 @@ public class Q00699_GuardianOfTheSkies extends Quest
 					amount = getRandom(10) + 60;
 				}
 				st.giveItems(VULTURES_GOLDEN_FEATHER, amount);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 			else
 			{
 				if (getRandom(1000) < MONSTERS.get(npc.getId()))
 				{
 					st.giveItems(VULTURES_GOLDEN_FEATHER, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}

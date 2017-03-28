@@ -23,7 +23,7 @@ import java.util.Map;
 
 import quests.Q00115_TheOtherSideOfTruth.Q00115_TheOtherSideOfTruth;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -214,7 +214,7 @@ public final class Q00648_AnIceMerchantsDream extends Quest
 					takeItems(player, SILVER_ICE_CRYSTAL, 1);
 					int val = (st.getInt("ex") + 1);
 					st.set("ex", val);
-					playSound(player, QuestSound.ITEMSOUND_BROKEN_KEY);
+					playSound(player, Sound.ITEMSOUND_BROKEN_KEY);
 					htmltext = event;
 				}
 				break;
@@ -226,7 +226,7 @@ public final class Q00648_AnIceMerchantsDream extends Quest
 					takeItems(player, SILVER_ICE_CRYSTAL, 1);
 					int val = (st.getInt("ex") + 2);
 					st.set("ex", val);
-					playSound(player, QuestSound.ITEMSOUND_BROKEN_KEY);
+					playSound(player, Sound.ITEMSOUND_BROKEN_KEY);
 					htmltext = event;
 				}
 				break;
@@ -242,12 +242,12 @@ public final class Q00648_AnIceMerchantsDream extends Quest
 					{
 						htmltext = "32023-07.html";
 						giveItems(player, BLACK_ICE_CRYSTAL, 1);
-						playSound(player, QuestSound.ITEMSOUND_ENCHANT_SUCCESS);
+						playSound(player, Sound.ITEMSOUND_ENCHANT_SUCCESS);
 					}
 					else
 					{
 						htmltext = "32023-08.html";
-						playSound(player, QuestSound.ITEMSOUND_ENCHANT_FAILED);
+						playSound(player, Sound.ITEMSOUND_ENCHANT_FAILED);
 					}
 					st.set("ex", 0);
 				}
@@ -264,12 +264,12 @@ public final class Q00648_AnIceMerchantsDream extends Quest
 					{
 						htmltext = "32023-07.html";
 						giveItems(player, BLACK_ICE_CRYSTAL, 1);
-						playSound(player, QuestSound.ITEMSOUND_ENCHANT_SUCCESS);
+						playSound(player, Sound.ITEMSOUND_ENCHANT_SUCCESS);
 					}
 					else
 					{
 						htmltext = "32023-08.html";
-						playSound(player, QuestSound.ITEMSOUND_ENCHANT_FAILED);
+						playSound(player, Sound.ITEMSOUND_ENCHANT_FAILED);
 					}
 					st.set("ex", 0);
 				}

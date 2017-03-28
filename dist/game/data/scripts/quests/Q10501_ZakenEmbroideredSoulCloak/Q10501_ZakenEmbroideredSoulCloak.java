@@ -18,7 +18,7 @@
  */
 package quests.Q10501_ZakenEmbroideredSoulCloak;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -68,7 +68,7 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 			else
 			{
 				giveItems(player, ZAKENS_SOUL_FRAGMENT, count);
-				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 	}
@@ -118,7 +118,7 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 						if (getQuestItemsCount(player, ZAKENS_SOUL_FRAGMENT) >= FRAGMENT_COUNT)
 						{
 							giveItems(player, SOUL_CLOAK_OF_ZAKEN, 1);
-							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 							st.exitQuest(false, true);
 							htmltext = "32612-06.html";
 						}

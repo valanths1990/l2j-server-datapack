@@ -21,7 +21,7 @@ package quests.Q00334_TheWishingPotion;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -132,7 +132,7 @@ public final class Q00334_TheWishingPotion extends Quest
 					{
 						qs.giveAdena(500000, true);
 						qs.takeItems(Q_FOBBIDEN_LOVE_SCROLL, 1);
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30557-01.html";
 					}
 					break;
@@ -424,7 +424,7 @@ public final class Q00334_TheWishingPotion extends Quest
 				
 				if (event.equals("QUEST_ACCEPTED"))
 				{
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_ACCEPT);
+					qs.playSound(Sound.ITEMSOUND_QUEST_ACCEPT);
 					qs.startQuest();
 					qs.setMemoState(1);
 					qs.setCond(1);
@@ -433,7 +433,7 @@ public final class Q00334_TheWishingPotion extends Quest
 					{
 						qs.giveItems(Q_ALCHEMY_TEXT, 1);
 					}
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					return "30738-04.htm";
 				}
 				
@@ -478,7 +478,7 @@ public final class Q00334_TheWishingPotion extends Quest
 							qs.takeItems(Q_POTION_RECIPE_1, -1);
 							qs.takeItems(Q_POTION_RECIPE_2, -1);
 							qs.setMemoState(2);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							qs.setCond(5);
 							qs.showQuestionMark(334);
 							return "30738-11.html";
@@ -721,7 +721,7 @@ public final class Q00334_TheWishingPotion extends Quest
 						if (getRandom(10) == 0)
 						{
 							qs.giveItems(Q_WIND_SOULSTONE, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							if (qs.hasQuestItems(Q_AMBER_SCALE, Q_GLASS_EYE, Q_HORROR_ECTOPLASM, Q_SILENOS_HORN, Q_ANT_SOLDIER_APHID, Q_TYRANTS_CHITIN, Q_BUGBEAR_BLOOD))
 							{
 								qs.setCond(4, true);
@@ -729,7 +729,7 @@ public final class Q00334_TheWishingPotion extends Quest
 							}
 							else
 							{
-								qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -743,7 +743,7 @@ public final class Q00334_TheWishingPotion extends Quest
 						if (getRandom(10) == 0)
 						{
 							qs.giveItems(Q_ANT_SOLDIER_APHID, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							if (qs.hasQuestItems(Q_AMBER_SCALE, Q_WIND_SOULSTONE, Q_GLASS_EYE, Q_HORROR_ECTOPLASM, Q_SILENOS_HORN, Q_ANT_SOLDIER_APHID, Q_TYRANTS_CHITIN, Q_BUGBEAR_BLOOD))
 							{
 								qs.setCond(4, true);
@@ -751,7 +751,7 @@ public final class Q00334_TheWishingPotion extends Quest
 							}
 							else
 							{
-								qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -764,7 +764,7 @@ public final class Q00334_TheWishingPotion extends Quest
 						if (getRandom(10) == 0)
 						{
 							qs.giveItems(Q_SILENOS_HORN, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							if (qs.hasQuestItems(Q_AMBER_SCALE, Q_WIND_SOULSTONE, Q_GLASS_EYE, Q_HORROR_ECTOPLASM, Q_ANT_SOLDIER_APHID, Q_TYRANTS_CHITIN, Q_BUGBEAR_BLOOD))
 							{
 								qs.setCond(4, true);
@@ -772,7 +772,7 @@ public final class Q00334_TheWishingPotion extends Quest
 							}
 							else
 							{
-								qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -786,7 +786,7 @@ public final class Q00334_TheWishingPotion extends Quest
 						if (getRandom(10) == 0)
 						{
 							qs.giveItems(Q_TYRANTS_CHITIN, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							if (qs.hasQuestItems(Q_AMBER_SCALE, Q_WIND_SOULSTONE, Q_GLASS_EYE, Q_HORROR_ECTOPLASM, Q_SILENOS_HORN, Q_ANT_SOLDIER_APHID, Q_TYRANTS_CHITIN, Q_BUGBEAR_BLOOD))
 							{
 								qs.setCond(4, true);
@@ -794,7 +794,7 @@ public final class Q00334_TheWishingPotion extends Quest
 							}
 							else
 							{
-								qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -807,7 +807,7 @@ public final class Q00334_TheWishingPotion extends Quest
 						if (getRandom(10) == 0)
 						{
 							qs.giveItems(Q_AMBER_SCALE, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							if (qs.hasQuestItems(Q_WIND_SOULSTONE, Q_GLASS_EYE, Q_HORROR_ECTOPLASM, Q_SILENOS_HORN, Q_ANT_SOLDIER_APHID, Q_TYRANTS_CHITIN, Q_BUGBEAR_BLOOD))
 							{
 								qs.setCond(4, true);
@@ -815,7 +815,7 @@ public final class Q00334_TheWishingPotion extends Quest
 							}
 							else
 							{
-								qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -828,7 +828,7 @@ public final class Q00334_TheWishingPotion extends Quest
 						if (getRandom(10) == 0)
 						{
 							qs.giveItems(Q_HORROR_ECTOPLASM, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							if (qs.hasQuestItems(Q_AMBER_SCALE, Q_WIND_SOULSTONE, Q_GLASS_EYE, Q_HORROR_ECTOPLASM, Q_SILENOS_HORN, Q_ANT_SOLDIER_APHID, Q_TYRANTS_CHITIN, Q_BUGBEAR_BLOOD))
 							{
 								qs.setCond(4, true);
@@ -836,7 +836,7 @@ public final class Q00334_TheWishingPotion extends Quest
 							}
 							else
 							{
-								qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -850,7 +850,7 @@ public final class Q00334_TheWishingPotion extends Quest
 						if (getRandom(10) == 0)
 						{
 							qs.giveItems(Q_BUGBEAR_BLOOD, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							if (qs.hasQuestItems(Q_AMBER_SCALE, Q_WIND_SOULSTONE, Q_GLASS_EYE, Q_HORROR_ECTOPLASM, Q_SILENOS_HORN, Q_ANT_SOLDIER_APHID, Q_TYRANTS_CHITIN, Q_BUGBEAR_BLOOD))
 							{
 								qs.setCond(4, true);
@@ -858,7 +858,7 @@ public final class Q00334_TheWishingPotion extends Quest
 							}
 							else
 							{
-								qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -871,7 +871,7 @@ public final class Q00334_TheWishingPotion extends Quest
 						if (getRandom(10) == 0)
 						{
 							qs.giveItems(Q_GLASS_EYE, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							if (qs.hasQuestItems(Q_AMBER_SCALE, Q_WIND_SOULSTONE, Q_GLASS_EYE, Q_HORROR_ECTOPLASM, Q_SILENOS_HORN, Q_ANT_SOLDIER_APHID, Q_TYRANTS_CHITIN, Q_BUGBEAR_BLOOD))
 							{
 								qs.setCond(4, true);
@@ -879,7 +879,7 @@ public final class Q00334_TheWishingPotion extends Quest
 							}
 							else
 							{
-								qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -899,7 +899,7 @@ public final class Q00334_TheWishingPotion extends Quest
 							{
 								qs.giveAdena(900_000, true);
 							}
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							qs.set(FLAG, 0);
 						}
 					}
@@ -910,7 +910,7 @@ public final class Q00334_TheWishingPotion extends Quest
 					if (qs.isMemoState(2) && !qs.hasQuestItems(Q_FOBBIDEN_LOVE_SCROLL) && (qs.getInt(FLAG) == 1) && (getRandom(1000) < 28))
 					{
 						qs.giveItems(Q_FOBBIDEN_LOVE_SCROLL, 1);
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 						qs.set(FLAG, 0);
 					}
 					break;
@@ -920,7 +920,7 @@ public final class Q00334_TheWishingPotion extends Quest
 					if (qs.isMemoState(2) && (qs.getInt(FLAG) == 3))
 					{
 						qs.giveAdena(1_406_956, true);
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 						qs.set(FLAG, 0);
 					}
 					break;
@@ -932,7 +932,7 @@ public final class Q00334_TheWishingPotion extends Quest
 						qs.giveItems(Q_SECRET_BOOK_OF_POTION, 1);
 						qs.setCond(2, true);
 						qs.showQuestionMark(334);
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;
 				}

@@ -21,7 +21,7 @@ package quests.Q10279_MutatedKaneusOren;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -161,12 +161,12 @@ public class Q10279_MutatedKaneusOren extends Quest
 		if ((npcId == KAIM_ABIGORE) && !st.hasQuestItems(TISSUE_KA))
 		{
 			st.giveItems(TISSUE_KA, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		else if ((npcId == KNIGHT_MONTAGNAR) && !st.hasQuestItems(TISSUE_KM))
 		{
 			st.giveItems(TISSUE_KM, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 	}
 }

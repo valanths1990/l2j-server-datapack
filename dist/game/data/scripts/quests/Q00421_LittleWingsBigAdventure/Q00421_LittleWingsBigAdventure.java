@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.L2Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -405,7 +405,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 								takeItems(attacker, FAIRY_LEAF, 1);
 								qs.setMemoState(qs.getMemoState() + data.memoStateValue);
 								qs.unset("hits");
-								playSound(attacker, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(attacker, Sound.ITEMSOUND_QUEST_MIDDLE);
 								
 								if (qs.getMemoState() == 15)
 								{

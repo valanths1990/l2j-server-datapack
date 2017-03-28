@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Set;
 
 import com.l2jserver.gameserver.datatables.ItemTable;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.AggroInfo;
 import com.l2jserver.gameserver.model.L2CommandChannel;
@@ -175,7 +175,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 			}
 			else
 			{
-				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		

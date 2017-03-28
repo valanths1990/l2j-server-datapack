@@ -21,7 +21,7 @@ package quests.Q00360_PlunderTheirSupplies;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -107,7 +107,7 @@ public final class Q00360_PlunderTheirSupplies extends Quest
 		if (getRandom(100) < MONSTER_DROP_CHANCES.get(npc.getId()))
 		{
 			st.giveItems(SUPPLY_ITEMS, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		
 		if (getRandom(100) < 10)
@@ -121,7 +121,7 @@ public final class Q00360_PlunderTheirSupplies extends Quest
 				st.giveItems(RECIPE_OF_SUPPLY, 1);
 				st.takeItems(SUSPICIOUS_DOCUMENT_PIECE, -1);
 			}
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return super.onKill(npc, killer, isPet);
 	}

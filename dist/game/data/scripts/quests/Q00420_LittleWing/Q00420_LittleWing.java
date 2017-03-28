@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -423,7 +423,7 @@ public final class Q00420_LittleWing extends Quest
 		if ((qs != null) && (getQuestItemsCount(attacker, DELUXE_FAIRY_STONE) > 0) && (getRandom(100) < 30))
 		{
 			takeItems(attacker, DELUXE_FAIRY_STONE, -1);
-			qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+			qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 			npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.THE_STONE_THE_ELVEN_STONE_BROKE));
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);

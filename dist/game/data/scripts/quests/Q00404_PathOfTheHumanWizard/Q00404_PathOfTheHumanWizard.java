@@ -18,7 +18,7 @@
  */
 package quests.Q00404_PathOfTheHumanWizard;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -168,7 +168,7 @@ public final class Q00404_PathOfTheHumanWizard extends Quest
 						}
 						else
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;

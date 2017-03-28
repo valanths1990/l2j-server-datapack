@@ -21,7 +21,7 @@ package quests.Q00336_CoinsOfMagic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -251,7 +251,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 						qs.setMemoState(3);
 						qs.setCond(4);
 						qs.showQuestionMark(336);
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30232-07.html";
 					}
 					if (qs.hasQuestItems(Q_CC_MEMBERSHIP_3) && (qs.getMemoState() == 3))
@@ -285,7 +285,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 		
 		if (event.equals("QUEST_ACCEPTED"))
 		{
-			qs.playSound(QuestSound.ITEMSOUND_QUEST_ACCEPT);
+			qs.playSound(Sound.ITEMSOUND_QUEST_ACCEPT);
 			if (!qs.hasQuestItems(Q_COIN_DIAGRAM))
 			{
 				qs.giveItems(Q_COIN_DIAGRAM, 1);
@@ -293,7 +293,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 			qs.setMemoState(1);
 			qs.startQuest();
 			qs.showQuestionMark(336);
-			qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+			qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 			return "30232-05.htm";
 		}
 		if (event.contains(".htm"))
@@ -796,7 +796,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 						qs.setMemoState(2);
 						qs.setCond(2);
 						qs.showQuestionMark(336);
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30702-03.html";
 					}
 					case 3:
@@ -804,14 +804,14 @@ public final class Q00336_CoinsOfMagic extends Quest
 						qs.setMemoState(2);
 						qs.setCond(2);
 						qs.showQuestionMark(336);
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30702-04.html";
 					}
 					case 4:
 					{
 						qs.setCond(7);
 						qs.showQuestionMark(336);
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30702-06.html";
 					}
 				}
@@ -845,7 +845,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							{
 								qs.setCond(9);
 								qs.showQuestionMark(336);
-								qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 								qs.takeItems(Q_CC_MEMBERSHIP_3, -1);
 								qs.takeItems(Q_BLOOD_DREVANUL, 1);
 								qs.takeItems(Q_BLOOD_WEREWOLF, 1);
@@ -858,7 +858,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							}
 							qs.setCond(8);
 							qs.showQuestionMark(336);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-13.html";
 						}
 						if (qs.hasQuestItems(Q_CC_MEMBERSHIP_2))
@@ -867,7 +867,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							{
 								qs.setCond(11);
 								qs.showQuestionMark(336);
-								qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 								qs.takeItems(Q_CC_MEMBERSHIP_2, -1);
 								qs.takeItems(Q_BLOOD_BASILISK, 1);
 								qs.takeItems(Q_BLOOD_SUCCUBUS, 1);
@@ -880,7 +880,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							}
 							qs.setCond(10);
 							qs.showQuestionMark(336);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-14.html";
 						}
 						if (qs.hasQuestItems(Q_CC_MEMBERSHIP_1))
@@ -909,14 +909,14 @@ public final class Q00336_CoinsOfMagic extends Quest
 					{
 						qs.setCond(6);
 						qs.showQuestionMark(336);
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30232-22.html";
 					}
 					case 11:
 					{
 						qs.setCond(5);
 						qs.showQuestionMark(336);
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30232-23.html";
 					}
 					case 20:
@@ -927,7 +927,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							qs.takeItems(Q_SILVER_DRAGON, 1);
 							qs.takeItems(Q_GOLD_WYRM, 13);
 							qs.giveItems(DEMON_STAFF, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24a.html";
 						}
 						return "30232-24.html";
@@ -941,7 +941,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							qs.takeItems(Q_SILVER_DRYAD, 1);
 							qs.takeItems(Q_GOLD_GIANT, 1);
 							qs.giveItems(DARK_SCREAMER, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24b.html";
 						}
 						return "30232-24.html";
@@ -955,7 +955,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							qs.takeItems(Q_BLOOD_SUCCUBUS, 1);
 							qs.takeItems(Q_BLOOD_BASILISK, 2);
 							qs.giveItems(WIDOW_MAKER, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24c.html";
 						}
 						return "30232-24.html";
@@ -969,7 +969,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							qs.takeItems(Q_BLOOD_DRAGON, 1);
 							qs.takeItems(Q_SILVER_UNDINE, 1);
 							qs.giveItems(SWORD_OF_LIMIT, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24d.html";
 						}
 						return "30232-24.html";
@@ -980,7 +980,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 						{
 							qs.takeItems(Q_MANAKS_GOLD_GIANT, 1);
 							qs.giveItems(DEMONS_BOOTS, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24e.html";
 						}
 						return "30232-24.html";
@@ -992,7 +992,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							qs.takeItems(Q_MANAKS_SILVER_DRYAD, 1);
 							qs.takeItems(Q_SILVER_DRYAD, 1);
 							qs.giveItems(DEMONS_HOSE, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24f.html";
 						}
 						return "30232-24.html";
@@ -1003,7 +1003,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 						{
 							qs.takeItems(Q_MANAKS_GOLD_GIANT, 1);
 							qs.giveItems(DEMONS_GLOVES, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24g.html";
 						}
 						return "30232-24.html";
@@ -1016,7 +1016,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							qs.takeItems(Q_GOLD_GIANT, 1);
 							qs.takeItems(Q_GOLD_WYRM, 1);
 							qs.giveItems(FULL_PLATE_HELMET, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24h.html";
 						}
 						return "30232-24.html";
@@ -1030,7 +1030,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							qs.takeItems(Q_BLOOD_DREVANUL, 2);
 							qs.takeItems(Q_GOLD_KNIGHT, 3);
 							qs.giveItems(MOONSTONE_EARING, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24i.html";
 						}
 						return "30232-24.html";
@@ -1044,7 +1044,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							qs.takeItems(Q_BLOOD_DREVANUL, 5);
 							qs.takeItems(Q_SILVER_GOLEM, 5);
 							qs.giveItems(NASSENS_EARING, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24j.html";
 						}
 						return "30232-24.html";
@@ -1058,7 +1058,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							qs.takeItems(Q_GOLD_DRAKE, 4);
 							qs.takeItems(Q_BLOOD_DREVANUL, 4);
 							qs.giveItems(RING_OF_BINDING, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24k.html";
 						}
 						return "30232-24.html";
@@ -1072,7 +1072,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 							qs.takeItems(Q_GOLD_KNIGHT, 3);
 							qs.takeItems(Q_BLOOD_DREVANUL, 3);
 							qs.giveItems(NECKLACE_OF_PROTECTION, 1);
-							qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24l.html";
 						}
 						return "30232-24.html";
@@ -1082,7 +1082,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 						qs.takeItems(Q_CC_MEMBERSHIP_1, -1);
 						qs.takeItems(Q_CC_MEMBERSHIP_2, -1);
 						qs.takeItems(Q_CC_MEMBERSHIP_3, -1);
-						qs.playSound(QuestSound.ITEMSOUND_QUEST_FINISH);
+						qs.playSound(Sound.ITEMSOUND_QUEST_FINISH);
 						qs.exitQuest(true);
 						return "30232-18a.html";
 					}
@@ -1472,7 +1472,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 				{
 					qs.takeItems(ITEM_1, 10 * mul * ITEM_1_MUL);
 					qs.giveItems(REWARD_1, 1 * mul);
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					return npcId + "-07.html";
 				}
 				break;
@@ -1483,7 +1483,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 				{
 					qs.takeItems(ITEM_2, 5 * mul);
 					qs.giveItems(REWARD_2, 1 * mul);
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					return npcId + "-07.html";
 				}
 				break;
@@ -1494,7 +1494,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 				{
 					qs.takeItems(ITEM_3, 5 * mul);
 					qs.giveItems(REWARD_3, 1 * mul);
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					return npcId + "-07.html";
 				}
 				break;
@@ -1505,7 +1505,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 				{
 					qs.takeItems(ITEM_4, 5 * mul);
 					qs.giveItems(REWARD_4, 1 * mul);
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					return npcId + "-07.html";
 				}
 				break;
@@ -1543,7 +1543,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 					qs.takeItems(ITEM_1_1, 10 * mul);
 					qs.takeItems(ITEM_1_2, 10 * mul);
 					qs.giveItems(REWARD_1, 1 * mul);
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					return npcId + "-07.html";
 				}
 				break;
@@ -1555,7 +1555,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 					qs.takeItems(ITEM_2_1, 5 * mul);
 					qs.takeItems(ITEM_2_2, 5 * mul);
 					qs.giveItems(REWARD_2, 1 * mul);
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					return npcId + "-07.html";
 				}
 				break;
@@ -1567,7 +1567,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 					qs.takeItems(ITEM_3_1, 5 * mul);
 					qs.takeItems(ITEM_3_2, 5 * mul);
 					qs.giveItems(REWARD_3, 1 * mul);
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					return npcId + "-07.html";
 				}
 				break;
@@ -1579,7 +1579,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 					qs.takeItems(ITEM_4_1, 5 * mul);
 					qs.takeItems(ITEM_4_2, 5 * mul);
 					qs.giveItems(REWARD_4, 1 * mul);
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					return npcId + "-07.html";
 				}
 				break;

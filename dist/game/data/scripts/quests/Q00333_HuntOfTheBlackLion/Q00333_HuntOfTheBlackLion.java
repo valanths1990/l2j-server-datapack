@@ -19,7 +19,7 @@
 package quests.Q00333_HuntOfTheBlackLion;
 
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
@@ -984,7 +984,7 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 					if (hasQuestItems(killer, SOPHYAS_3RD_ORDER))
 					{
 						giveItems(killer, DELU_LIZARDMAN_FANG, 4);
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;
 				}
@@ -993,7 +993,7 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 					if (hasQuestItems(killer, SOPHYAS_4TH_ORDER))
 					{
 						giveItems(killer, STAKATO_TALON, 8);
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;
 				}

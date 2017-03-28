@@ -25,7 +25,7 @@ import quests.Q00238_SuccessFailureOfBusiness.Q00238_SuccessFailureOfBusiness;
 import quests.Q00309_ForAGoodCause.Q00309_ForAGoodCause;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -201,7 +201,7 @@ public class Q00308_ReedFieldMaintenance extends Quest
 			{
 				st.giveItems(item, 1);
 			}
-			st.playSound(QuestSound.ITEMSOUND_QUEST_FINISH);
+			st.playSound(Sound.ITEMSOUND_QUEST_FINISH);
 			htmltext = "32646-14.html";
 		}
 		else
@@ -229,7 +229,7 @@ public class Q00308_ReedFieldMaintenance extends Quest
 				{
 					st.giveItems(MUCROKIAN_HIDE, 1);
 				}
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

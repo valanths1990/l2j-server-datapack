@@ -20,7 +20,7 @@ package quests.Q00453_NotStrongEnoughAlone;
 
 import quests.Q10282_ToTheSeedOfAnnihilation.Q10282_ToTheSeedOfAnnihilation;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -147,7 +147,7 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 				if (i < 15)
 				{
 					st.set(Integer.toString(npcId), Integer.toString(i + 1));
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				
 				checkProgress(st, 15, MONSTER1[0], MONSTER1[1], MONSTER1[2], MONSTER1[3]);
@@ -176,7 +176,7 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 				if (i < 20)
 				{
 					st.set(Integer.toString(npcId), Integer.toString(i + 1));
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				
 				checkProgress(st, 20, MONSTER2[0], MONSTER2[1], MONSTER2[2]);
@@ -204,7 +204,7 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 				if (i < 20)
 				{
 					st.set(Integer.toString(npcId), Integer.toString(i + 1));
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				
 				checkProgress(st, 20, MONSTER3[0], MONSTER3[1], MONSTER3[2]);

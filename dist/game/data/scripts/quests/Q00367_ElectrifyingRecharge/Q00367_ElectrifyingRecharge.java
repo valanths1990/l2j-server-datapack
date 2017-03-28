@@ -18,7 +18,7 @@
  */
 package quests.Q00367_ElectrifyingRecharge;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -131,19 +131,19 @@ public final class Q00367_ElectrifyingRecharge extends Quest
 				{
 					giveItems(luckyPlayer, TITAN_LAMP2, 1);
 					takeItems(luckyPlayer, TITAN_LAMP1, -1);
-					playSound(luckyPlayer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(luckyPlayer, Sound.ITEMSOUND_QUEST_MIDDLE);
 				}
 				else if (hasQuestItems(luckyPlayer, TITAN_LAMP2))
 				{
 					giveItems(luckyPlayer, TITAN_LAMP3, 1);
 					takeItems(luckyPlayer, TITAN_LAMP2, -1);
-					playSound(luckyPlayer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(luckyPlayer, Sound.ITEMSOUND_QUEST_MIDDLE);
 				}
 				else if (hasQuestItems(luckyPlayer, TITAN_LAMP3))
 				{
 					giveItems(luckyPlayer, TITAN_LAMP4, 1);
 					takeItems(luckyPlayer, TITAN_LAMP3, -1);
-					playSound(luckyPlayer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(luckyPlayer, Sound.ITEMSOUND_QUEST_MIDDLE);
 				}
 				else if (hasQuestItems(luckyPlayer, TITAN_LAMP4))
 				{
@@ -156,7 +156,7 @@ public final class Q00367_ElectrifyingRecharge extends Quest
 			{
 				giveItems(luckyPlayer, BROKEN_TITAN_LAMP, 1);
 				takeItems(luckyPlayer, -1, TITAN_LAMP1, TITAN_LAMP2, TITAN_LAMP3, TITAN_LAMP4);
-				playSound(luckyPlayer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(luckyPlayer, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);

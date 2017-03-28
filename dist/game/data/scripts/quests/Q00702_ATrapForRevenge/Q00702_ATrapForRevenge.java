@@ -20,7 +20,7 @@ package quests.Q00702_ATrapForRevenge;
 
 import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -357,7 +357,7 @@ public class Q00702_ATrapForRevenge extends Quest
 				st.giveItems(VARIANT_DRAKE_WING_HORNS, count);
 				break;
 		}
-		st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		return null;
 	}
 	

@@ -19,7 +19,7 @@
 package quests.Q00604_DaimonTheWhiteEyedPart2;
 
 import com.l2jserver.gameserver.datatables.SpawnTable;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -82,7 +82,7 @@ public final class Q00604_DaimonTheWhiteEyedPart2 extends Quest
 				}
 				
 				giveItems(player, ESSENCE_OF_DAIMON, 1);
-				qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 	}

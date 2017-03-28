@@ -18,7 +18,7 @@
  */
 package quests.Q00319_ScentOfDeath;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
@@ -91,7 +91,7 @@ public class Q00319_ScentOfDeath extends Quest
 				st.giveItems(ZOMBIES_SKIN, 1);
 				if (st.getQuestItemsCount(ZOMBIES_SKIN) < REQUIRED_ITEM_COUNT)
 				{
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				else
 				{

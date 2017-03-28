@@ -19,7 +19,7 @@
 package quests.Q00343_UnderTheShadowOfTheIvoryTower;
 
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -518,7 +518,7 @@ public final class Q00343_UnderTheShadowOfTheIvoryTower extends Quest
 					if (getRandom(100) < 63)
 					{
 						giveItems(killer, NEBULITE_ORB, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					
 					if (qs.getMemoStateEx(1) > 1)
@@ -535,7 +535,7 @@ public final class Q00343_UnderTheShadowOfTheIvoryTower extends Quest
 					if (getRandom(100) < 65)
 					{
 						giveItems(killer, NEBULITE_ORB, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					
 					if (qs.getMemoStateEx(1) > 1)
@@ -552,7 +552,7 @@ public final class Q00343_UnderTheShadowOfTheIvoryTower extends Quest
 					if (getRandom(100) < 68)
 					{
 						giveItems(killer, NEBULITE_ORB, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					
 					if (qs.getMemoStateEx(1) > 1)

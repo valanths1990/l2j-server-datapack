@@ -18,7 +18,7 @@
  */
 package quests.Q00408_PathOfTheElvenWizard;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -212,11 +212,11 @@ public final class Q00408_PathOfTheElvenWizard extends Quest
 						giveItems(killer, GOLD_LEAVES, 1);
 						if (getQuestItemsCount(killer, GOLD_LEAVES) == 5)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -228,11 +228,11 @@ public final class Q00408_PathOfTheElvenWizard extends Quest
 						giveItems(killer, AMETHYST, 1);
 						if (getQuestItemsCount(killer, AMETHYST) == 2)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -244,11 +244,11 @@ public final class Q00408_PathOfTheElvenWizard extends Quest
 						giveItems(killer, RED_DOWN, 1);
 						if (getQuestItemsCount(killer, RED_DOWN) == 5)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;

@@ -19,7 +19,7 @@
 package quests.Q00450_GraveRobberRescue;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
@@ -137,7 +137,7 @@ public class Q00450_GraveRobberRescue extends Quest
 			if (getRandom(100) < 66)
 			{
 				st.giveItems(EVIDENCE_OF_MIGRATION, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(npc.getX() + 100, npc.getY() + 100, npc.getZ(), 0));
 				npc.setBusy(true);
 				

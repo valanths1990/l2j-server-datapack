@@ -18,7 +18,7 @@
  */
 package quests.Q00415_PathOfTheOrcMonk;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -300,7 +300,7 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 						else
 						{
 							giveItems(killer, FELIM_LIZARDMAN_TOOTH, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -322,7 +322,7 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 						else
 						{
 							giveItems(killer, VUKU_ORK_TUSK, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -344,7 +344,7 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 						else
 						{
 							giveItems(killer, LANGK_LIZARDMAN_TOOTH, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -366,7 +366,7 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 						else
 						{
 							giveItems(killer, RATMAN_FANG, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -385,7 +385,7 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 						else
 						{
 							giveItems(killer, SCARLET_SALAMANDER_SCALE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -403,7 +403,7 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -423,7 +423,7 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 						else
 						{
 							giveItems(killer, KASHA_BLADE_SPIDER_TALON, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					else if (qs.isMemoState(3) && (getQuestItemsCount(killer, KASHA_SPIDERS_TOOTH) < 6))
@@ -437,7 +437,7 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -457,7 +457,7 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 						else
 						{
 							giveItems(killer, KASHA_BEAR_CLAW, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;

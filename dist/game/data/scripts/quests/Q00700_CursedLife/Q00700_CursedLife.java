@@ -23,7 +23,7 @@ import java.util.Map;
 
 import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -242,7 +242,7 @@ public class Q00700_CursedLife extends Quest
 					amount = getRandom(6) + 17;
 				}
 				st.giveItems(SWALLOWED_SKULL, amount);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 			else
 			{
@@ -251,17 +251,17 @@ public class Q00700_CursedLife extends Quest
 				if (chance < chances[0])
 				{
 					st.giveItems(SWALLOWED_BONES, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				else if (chance < chances[1])
 				{
 					st.giveItems(SWALLOWED_STERNUM, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				else if (chance < chances[2])
 				{
 					st.giveItems(SWALLOWED_SKULL, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}

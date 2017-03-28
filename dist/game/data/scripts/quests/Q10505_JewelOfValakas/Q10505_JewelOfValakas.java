@@ -18,7 +18,7 @@
  */
 package quests.Q10505_JewelOfValakas;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -61,7 +61,7 @@ public class Q10505_JewelOfValakas extends Quest
 		{
 			takeItems(player, EMPTY_CRYSTAL, -1);
 			giveItems(player, FILLED_CRYSTAL_VALAKAS_ENERGY, 1);
-			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 			st.setCond(2, true);
 		}
 	}
@@ -148,7 +148,7 @@ public class Q10505_JewelOfValakas extends Quest
 					case 2:
 					{
 						giveItems(player, JEWEL_OF_VALAKAS, 1);
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 						st.exitQuest(false, true);
 						htmltext = "31540-10.html";
 						break;

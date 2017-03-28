@@ -18,7 +18,7 @@
  */
 package quests.Q00307_ControlDeviceOfTheGiants;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -131,19 +131,19 @@ public class Q00307_ControlDeviceOfTheGiants extends Quest
 			case GORGOLOS:
 			{
 				st.giveItems(CET_1_SHEET, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				break;
 			}
 			case LAST_TITAN_UTENUS:
 			{
 				st.giveItems(CET_2_SHEET, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				break;
 			}
 			case GIANT_MARPANAK:
 			{
 				st.giveItems(CET_3_SHEET, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				break;
 			}
 			case HEKATON_PRIME:
