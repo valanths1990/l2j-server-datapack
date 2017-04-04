@@ -38,7 +38,7 @@ public class DustRider extends AbstractNpcAI
 	private static final String CAST_FLAG = "CAST_FLAG";
 	// Misc
 	private static final int MAX_CHASE_DIST = 2500;
-	private static final double MIN_HP_PERCENTAGE = 30.00;
+	private static final double MIN_HP_PERCENTAGE = 0.30;
 	
 	public DustRider()
 	{
