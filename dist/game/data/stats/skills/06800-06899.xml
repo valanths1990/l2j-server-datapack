@@ -508,30 +508,86 @@
 		</endEffects>
 	</skill>
 	<skill id="6826" levels="1" name="Critical Strike">
-		<!-- none -->
-		<set name="effectPoint" val="-100" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="baseCritRate" val="30" />
+		<set name="castRange" val="40" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="150" />
+		<set name="hitTime" val="2000" />
+		<set name="magicLvl" val="84" />
+		<set name="operateType" val="A1" />
+		<set name="power" val="6960" />
+		<set name="reuseDelay" val="2000" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="6827" levels="1" name="Petrify">
+		<!-- High Five Confirmed -->
 		<!-- "Inflicted with petrification, the body is rigid like stone for 30 seconds." -->
-		<set name="abnormalTime" val="30" />
-		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="MEN" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="TURN_STONE" />
+		<set name="abnormalVisualEffect" val="FLESH_STONE" />
+		<set name="baseCritRate" val="30" />
+		<set name="castRange" val="300" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill4111" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="isDebuff" val="true" />
+		<set name="magicLvl" val="84" />
+		<set name="operateType" val="A2" />
+		<set name="power" val="6960" />
+		<set name="reuseDelay" val="5000" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="Stun" />
+			<effect name="PhysicalAttack" />
+			<effect name="BlockBuff" />
+			<effect name="BlockDebuff" />
+			<effect name="BlockDamage">
+				<param block="HP"/>
+			</effect>
+			<effect name="BlockDamage">
+				<param block="MP"/>
+			</effect>
+			<effect name="Buff">
+				<mul stat="regHp" val="0" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="6828" levels="1" name="Dust Storm">
+		<!-- High Five Confirmed -->
 		<!-- "For 30 seconds, Atk. Spd. is decreased by 50% and Casting Spd. is decreased by 50%." -->
-		<set name="abnormalTime" val="30" />
-		<set name="activateRate" val="80" />
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="CASTING_TIME_UP" />
 		<set name="basicProperty" val="MEN" />
-		<set name="effectPoint" val="-100" />
+		<set name="castRange" val="900" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="1200" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1386" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="isDebuff" val="true" />
+		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="lvlBonusRate" val="2" />
+		<set name="operateType" val="A2" />
+		<set name="power" val="250" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="AREA" />
+		<for>
+			<effect name="MagicalAttack" />
+			<effect name="Debuff">
+				<mul stat="runSpd" val="0.5" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mAtkSpd" val="0.5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="6829" levels="1" name="Vampiric Attack">
 		<!-- none -->
@@ -1700,7 +1756,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6899" levels="1" name="84 level Raid Boss">
-		<!-- High Five Skill -->
+		<!-- High Five Confirmed -->
 		<set name="icon" val="icon.skillraid" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
