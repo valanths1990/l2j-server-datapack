@@ -22,10 +22,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import com.l2jserver.gameserver.datatables.ItemTable;
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.AggroInfo;
 import com.l2jserver.gameserver.model.L2CommandChannel;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
@@ -65,6 +66,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 	private static final int MIN_LEVEL = 80;
 	private static final Map<Integer, Integer> MONSTER_NPCS = new HashMap<>();
 	private static final Map<Integer, Integer> MONSTER_ESSENCES = new HashMap<>();
+	private static final String TIMER_UNSPAWN_RAID_CORPSE = "TIMER_UNSPAWN_RAID_CORPSE";
 	
 	static
 	{
@@ -133,7 +135,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 	private static final int BLESSED_SCROLL_ENCHANT_ARMOR_S = 6578;
 	private static final int SCROLL_ENCHANT_WEAPON_S = 959;
 	private static final int GEMSTONE_S = 2134;
-	private final Map<Integer, Set<Integer>> allowedPlayerMap = new HashMap<>();
+	private final Map<Integer, Set<Integer>> allowedPlayerMap = new ConcurrentHashMap<>();
 	
 	public Q00456_DontKnowDontCare()
 	{
@@ -236,30 +238,35 @@ public final class Q00456_DontKnowDontCare extends Quest
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		final QuestState qs = getQuestState(player, false);
+		final QuestState qs = player != null ? getQuestState(player, false) : null;
 		String htmltext = null;
-		
 		switch (event)
 		{
 			case "32864-04.htm":
 			case "32864-05.htm":
 			case "32864-06.htm":
+			{
 				if ((qs != null) && qs.isCreated())
 				{
 					htmltext = event;
 				}
 				break;
+			}
 			case "32864-07.htm":
+			{
 				if ((qs != null) && qs.isCreated())
 				{
 					qs.startQuest();
 					htmltext = event;
 				}
 				break;
-			case "unspawnRaidCorpse":
+			}
+			case TIMER_UNSPAWN_RAID_CORPSE:
+			{
 				allowedPlayerMap.remove(npc.getObjectId());
 				npc.deleteMe();
 				break;
+			}
 		}
 		
 		return htmltext;
@@ -306,7 +313,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 			// This depends on the boss respawn delay being at least 5 minutes.
 			final L2Npc spawned = addSpawn(MONSTER_NPCS.get(npc.getId()), npc, true, 0);
 			allowedPlayerMap.put(spawned.getObjectId(), allowedPlayers);
-			startQuestTimer("unspawnRaidCorpse", 300000, npc, null);
+			startQuestTimer(TIMER_UNSPAWN_RAID_CORPSE, 300000, npc, null);
 		}
 		
 		return super.onKill(npc, killer, isSummon);
