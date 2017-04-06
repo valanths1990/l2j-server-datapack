@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2016 L2J DataPack
+ * Copyright (C) 2004-2017 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -22,63 +22,71 @@ import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.model.quest.State;
 
 /**
- * Secret Meeting With Ketra Orcs (11)<br>
- * Original Jython script by Emperorc.
- * @author nonom
+ * Secret Meeting With Ketra Orcs (11)
+ * @author ivantotov
  */
-public class Q00011_SecretMeetingWithKetraOrcs extends Quest
+public final class Q00011_SecretMeetingWithKetraOrcs extends Quest
 {
 	// NPCs
-	private static final int CADMON = 31296;
 	private static final int LEON = 31256;
+	private static final int CADMON = 31296;
 	private static final int WAHKAN = 31371;
 	// Item
-	private static final int BOX = 7231;
+	private static final int MUNITIONS_BOX = 7231;
+	// Misc
+	private static final int MIN_LEVEL = 74;
 	
 	public Q00011_SecretMeetingWithKetraOrcs()
 	{
 		super(11, Q00011_SecretMeetingWithKetraOrcs.class.getSimpleName(), "Secret Meeting With Ketra Orcs");
 		addStartNpc(CADMON);
 		addTalkId(CADMON, LEON, WAHKAN);
-		registerQuestItems(BOX);
+		registerQuestItems(MUNITIONS_BOX);
 	}
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		String htmltext = event;
-		final QuestState st = getQuestState(player, false);
-		if (st == null)
+		final QuestState qs = getQuestState(player, false);
+		if (qs == null)
 		{
-			return htmltext;
+			return null;
 		}
 		
+		String htmltext = null;
 		switch (event)
 		{
-			case "31296-03.html":
-				st.startQuest();
+			case "31296-03.htm":
+			{
+				qs.startQuest();
+				qs.setMemoState(11);
+				htmltext = event;
 				break;
+			}
 			case "31256-02.html":
-				if (st.isCond(1))
-				{
-					st.setCond(2, true);
-					st.giveItems(BOX, 1);
-				}
+			{
+				giveItems(player, MUNITIONS_BOX, 1);
+				qs.setMemoState(21);
+				qs.setCond(2, true);
+				htmltext = event;
 				break;
+			}
 			case "31371-02.html":
-				if (st.isCond(2) && st.hasQuestItems(BOX))
+			{
+				if (hasQuestItems(player, MUNITIONS_BOX))
 				{
-					st.addExpAndSp(233125, 18142);
-					st.exitQuest(false, true);
+					addExpAndSp(player, 82045, 6047);
+					qs.exitQuest(false, true);
+					htmltext = event;
 				}
 				else
 				{
 					htmltext = "31371-03.html";
 				}
 				break;
+			}
 		}
 		return htmltext;
 	}
@@ -86,47 +94,49 @@ public class Q00011_SecretMeetingWithKetraOrcs extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
+		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		final QuestState st = getQuestState(player, true);
-		if (st == null)
+		if (qs.isCreated())
 		{
-			return htmltext;
+			if (npc.getId() == CADMON)
+			{
+				htmltext = (player.getLevel() >= MIN_LEVEL) ? "31296-01.htm" : "31296-02.html";
+			}
 		}
-		
-		int npcId = npc.getId();
-		switch (st.getState())
+		else if (qs.isStarted())
 		{
-			case State.COMPLETED:
-				htmltext = getAlreadyCompletedMsg(player);
-				break;
-			case State.CREATED:
-				if (npcId == CADMON)
-				{
-					htmltext = (player.getLevel() >= 74) ? "31296-01.htm" : "31296-02.html";
-				}
-				break;
-			case State.STARTED:
-				if ((npcId == CADMON) && st.isCond(1))
+			if (npc.getId() == CADMON)
+			{
+				if (qs.isMemoState(11))
 				{
 					htmltext = "31296-04.html";
 				}
-				else if (npcId == LEON)
+			}
+			else if (npc.getId() == LEON)
+			{
+				if (qs.isMemoState(11))
 				{
-					if (st.isCond(1))
-					{
-						htmltext = "31256-01.html";
-						
-					}
-					else if (st.isCond(2))
-					{
-						htmltext = "31256-03.html";
-					}
+					htmltext = "31256-01.html";
 				}
-				else if ((npcId == WAHKAN) && st.isCond(2))
+				else if (qs.isMemoState(21))
+				{
+					htmltext = "31256-03.html";
+				}
+			}
+			else if (npc.getId() == WAHKAN)
+			{
+				if (hasQuestItems(player, MUNITIONS_BOX) && qs.isMemoState(21))
 				{
 					htmltext = "31371-01.html";
 				}
-				break;
+			}
+		}
+		else if (qs.isCompleted())
+		{
+			if (npc.getId() == CADMON)
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+			}
 		}
 		return htmltext;
 	}

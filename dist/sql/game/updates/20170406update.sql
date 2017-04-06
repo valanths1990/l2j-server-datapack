@@ -1,0 +1,2 @@
+UPDATE character_quests SET name='Q00011_SecretMeetingWithKetraOrcs' WHERE name='Q00011_SecretMeetingWithKetraOrcs'; 
+UPDATE character_quests SET name='Q00012_SecretMeetingWithVarkaSilenos' WHERE name='Q00012_SecretMeetingWithVarkaSilenos'; 
