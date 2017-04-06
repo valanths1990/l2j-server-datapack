@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00903_TheCallOfAntharas;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -66,13 +66,13 @@ public class Q00903_TheCallOfAntharas extends Quest
 				case BEHEMOTH_DRAGON:
 				{
 					st.giveItems(BEHEMOTH_DRAGON_LEATHER, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					break;
 				}
 				case TARASK_DRAGON:
 				{
 					st.giveItems(TARASK_DRAGONS_LEATHER_FRAGMENT, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					break;
 				}
 			}
@@ -161,7 +161,7 @@ public class Q00903_TheCallOfAntharas extends Quest
 					case 2:
 					{
 						st.giveItems(SCROLL_ANTHARAS_CALL, 1);
-						st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 						st.exitQuest(QuestType.DAILY, true);
 						htmltext = "30755-08.html";
 						break;

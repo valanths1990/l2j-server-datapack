@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -425,7 +425,7 @@ public abstract class Chamber extends AbstractInstance
 			return;
 		}
 		final Instance inst = InstanceManager.getInstance().getInstance(player.getInstanceId());
-		Location ret = inst.getSpawnLoc();
+		Location ret = inst.getExitLoc();
 		final String return_point = player.getVariables().getString(RETURN, null);
 		if (return_point != null)
 		{

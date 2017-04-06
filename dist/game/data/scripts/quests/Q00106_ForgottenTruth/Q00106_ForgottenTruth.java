@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,7 +20,7 @@ package quests.Q00106_ForgottenTruth;
 
 import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -100,7 +100,7 @@ public final class Q00106_ForgottenTruth extends Quest
 				if (!st.hasQuestItems(ANCIENT_SCROLL))
 				{
 					st.giveItems(ANCIENT_SCROLL, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 				}
 				else if (!st.hasQuestItems(ANCIENT_CLAY_TABLET))
 				{

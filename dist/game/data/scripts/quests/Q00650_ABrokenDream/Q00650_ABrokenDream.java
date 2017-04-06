@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -25,7 +25,7 @@ import java.util.Map;
 
 import quests.Q00117_TheOceanOfDistantStars.Q00117_TheOceanOfDistantStars;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -170,7 +170,7 @@ public final class Q00650_ABrokenDream extends Quest
 			if ((getRandom(1000) < monsterChance) && Util.checkIfInRange(1500, npc, player, true))
 			{
 				giveItems(player, REMNANTS_OF_OLD_DWARVES_DREAMS, 1);
-				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,7 +21,7 @@ package quests.Q10281_MutatedKaneusRune;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -157,6 +157,6 @@ public class Q10281_MutatedKaneusRune extends Quest
 	private final void rewardItem(int npcId, QuestState st)
 	{
 		st.giveItems(TISSUE_WA, 1);
-		st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 	}
 }

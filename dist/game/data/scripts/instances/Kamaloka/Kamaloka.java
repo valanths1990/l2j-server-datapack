@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -1381,7 +1381,7 @@ public final class Kamaloka extends AbstractInstance
 		// set name for the kamaloka
 		inst.setName(InstanceManager.getInstance().getInstanceIdName(templateId));
 		// set return location
-		inst.setSpawnLoc(new Location(player));
+		inst.setExitLoc(new Location(player));
 		// disable summon friend into instance
 		inst.setAllowSummon(false);
 		// set duration and empty destroy time
@@ -1574,7 +1574,7 @@ public final class Kamaloka extends AbstractInstance
 						{
 							if ((partyMember != null) && (partyMember.getInstanceId() == world.getInstanceId()))
 							{
-								teleportPlayer(partyMember, inst.getSpawnLoc(), 0);
+								teleportPlayer(partyMember, inst.getExitLoc(), 0);
 							}
 						}
 					}

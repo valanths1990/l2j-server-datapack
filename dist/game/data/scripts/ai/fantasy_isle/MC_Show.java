@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -22,19 +22,19 @@ import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.GameTimeController;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlIntention;
+import com.l2jserver.gameserver.enums.audio.Music;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
-import com.l2jserver.gameserver.network.serverpackets.PlaySound;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * MC Show AI.
@@ -385,7 +385,7 @@ public class MC_Show extends AbstractNpcAI
 			{
 				autoChat(npc, MESSAGES[6], Say2.NPC_SHOUT);
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(-56511, -56647, -2008, 36863));
-				npc.broadcastPacket(new PlaySound(1, "NS22_F", 0, 0, 0, 0, 0));
+				npc.broadcastPacket(Music.NS22_F.getPacket());
 				addSpawn(SINGERS[0], -56344, -56328, -2008, 32768, false, 224000);
 				addSpawn(SINGERS[1], -56552, -56245, -2008, 36863, false, 224000);
 				addSpawn(SINGERS[1], -56546, -56426, -2008, 28672, false, 224000);
@@ -413,7 +413,7 @@ public class MC_Show extends AbstractNpcAI
 			else if (event.equalsIgnoreCase("10"))
 			{
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(-56483, -56665, -2034, 32768));
-				npc.broadcastPacket(new PlaySound(1, "TP05_F", 0, 0, 0, 0, 0));
+				npc.broadcastPacket(Music.TP05_F.getPacket());
 				startQuestTimer("npc1_1", 3000, addSpawn(CIRCUS[0], -56495, -56375, -2008, 32768, false, 101000), null);
 				startQuestTimer("npc2_1", 3000, addSpawn(CIRCUS[0], -56491, -56289, -2008, 32768, false, 101000), null);
 				startQuestTimer("npc3_1", 3000, addSpawn(CIRCUS[1], -56502, -56246, -2008, 32768, false, 101000), null);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,7 +21,7 @@ package quests.Q00142_FallenAngelRequestOfDawn;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -42,6 +42,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 	// Monsters
 	private static final int FALLEN_ANGEL = 27338;
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20079, 338); // Ant
@@ -55,6 +56,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 		MOBS.put(20089, 431); // Noble Ant
 		MOBS.put(20090, 917); // Noble Ant Leader
 	}
+	
 	// Items
 	private static final int CRYPTOGRAM_OF_THE_ANGEL_SEARCH = 10351;
 	private static final int PROPHECY_FRAGMENT = 10352;
@@ -138,7 +140,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 		final QuestState st;
 		if ((npc.getId() == FALLEN_ANGEL))
 		{
-			st = player.getQuestState(getName());
+			st = getQuestState(player, false);
 			if (st.isCond(5))
 			{
 				st.giveItems(FALLEN_ANGEL_BLOOD, 1);
@@ -162,7 +164,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 					}
 					else
 					{
-						st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 			}

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00340_SubjugationOfLizardmen;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -185,12 +185,12 @@ public final class Q00340_SubjugationOfLizardmen extends Quest
 						if (!hasQuestItems(killer, AGNESS_HOLY_SYMBOL) && (getRandom(100) <= 19))
 						{
 							giveItems(killer, AGNESS_HOLY_SYMBOL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 						else if (hasQuestItems(killer, AGNESS_HOLY_SYMBOL) && !hasQuestItems(killer, AGNESS_ROSARY) && (getRandom(100) <= 18))
 						{
 							giveItems(killer, AGNESS_ROSARY, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -203,12 +203,12 @@ public final class Q00340_SubjugationOfLizardmen extends Quest
 						if (!hasQuestItems(killer, AGNESS_HOLY_SYMBOL) && (getRandom(100) <= 18))
 						{
 							giveItems(killer, AGNESS_HOLY_SYMBOL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 						else if (hasQuestItems(killer, AGNESS_HOLY_SYMBOL) && !hasQuestItems(killer, AGNESS_ROSARY) && (getRandom(100) <= 18))
 						{
 							giveItems(killer, AGNESS_ROSARY, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;

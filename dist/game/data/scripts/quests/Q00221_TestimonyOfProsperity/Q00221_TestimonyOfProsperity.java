@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -19,7 +19,7 @@
 package quests.Q00221_TestimonyOfProsperity;
 
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -146,7 +146,7 @@ public final class Q00221_TestimonyOfProsperity extends Quest
 					{
 						giveItems(player, RING_OF_TESTIMONY_1ST, 1);
 					}
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
 						giveItems(player, DIMENSIONAL_DIAMOND, 50);
@@ -333,11 +333,11 @@ public final class Q00221_TestimonyOfProsperity extends Quest
 							giveItems(killer, MANDRAGORA_PETAL, 1);
 							if (getQuestItemsCount(killer, MANDRAGORA_PETAL) == 20)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -355,7 +355,7 @@ public final class Q00221_TestimonyOfProsperity extends Quest
 							giveItems(killer, STAKATO_SHELL, 1);
 							if (getQuestItemsCount(killer, STAKATO_SHELL) == 20)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 								if ((getQuestItemsCount(killer, TOAD_LORD_SAC) >= 10) && (getQuestItemsCount(killer, MARSH_SPIDER_THORN) >= 10))
 								{
 									qs.setCond(8);
@@ -363,7 +363,7 @@ public final class Q00221_TestimonyOfProsperity extends Quest
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -378,11 +378,11 @@ public final class Q00221_TestimonyOfProsperity extends Quest
 							giveItems(killer, CRIMSON_MOSS, 1);
 							if (getQuestItemsCount(killer, CRIMSON_MOSS) == 10)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -397,7 +397,7 @@ public final class Q00221_TestimonyOfProsperity extends Quest
 							giveItems(killer, TOAD_LORD_SAC, 1);
 							if (getQuestItemsCount(killer, TOAD_LORD_SAC) == 10)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 								if ((getQuestItemsCount(killer, STAKATO_SHELL) >= 20) && (getQuestItemsCount(killer, MARSH_SPIDER_THORN) >= 10))
 								{
 									qs.setCond(8);
@@ -405,7 +405,7 @@ public final class Q00221_TestimonyOfProsperity extends Quest
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -420,7 +420,7 @@ public final class Q00221_TestimonyOfProsperity extends Quest
 							giveItems(killer, MARSH_SPIDER_THORN, 1);
 							if (getQuestItemsCount(killer, MARSH_SPIDER_THORN) == 10)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 								if ((getQuestItemsCount(killer, STAKATO_SHELL) >= 20) && (getQuestItemsCount(killer, TOAD_LORD_SAC) >= 10))
 								{
 									qs.setCond(8);
@@ -428,7 +428,7 @@ public final class Q00221_TestimonyOfProsperity extends Quest
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -644,7 +644,7 @@ public final class Q00221_TestimonyOfProsperity extends Quest
 								takeItems(player, RECEIPT_OF_CONTRIBUTION_3RD, 1);
 								takeItems(player, RECEIPT_OF_CONTRIBUTION_4TH, 1);
 								takeItems(player, RECEIPT_OF_CONTRIBUTION_5TH, 1);
-								playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 								if (hasQuestItems(player, BLESSED_SEED, EMILYS_RECIPE, LILITHS_ELVEN_WAFER))
 								{
 									qs.setCond(2, true);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,7 +21,7 @@ package quests.Q00328_SenseForBusiness;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -145,12 +145,12 @@ public class Q00328_SenseForBusiness extends Quest
 				if (chance < MONSTER_EYES.get(npc.getId())[0])
 				{
 					st.giveItems(MONSTER_EYE_CARCASS, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				else if (chance < MONSTER_EYES.get(npc.getId())[1])
 				{
 					st.giveItems(MONSTER_EYE_LENS, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 			else if (MONSTER_BASILISKS.containsKey(npc.getId()))
@@ -158,7 +158,7 @@ public class Q00328_SenseForBusiness extends Quest
 				if (chance < MONSTER_BASILISKS.get(npc.getId()))
 				{
 					st.giveItems(BASILISK_GIZZARD, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}

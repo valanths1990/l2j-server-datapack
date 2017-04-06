@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00422_RepentYourSins;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.L2Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -88,7 +88,7 @@ public final class Q00422_RepentYourSins extends Quest
 				qs.startQuest();
 				if ((player.getLevel() > 20) && (player.getLevel() < 31))
 				{
-					playSound(player, QuestSound.ITEMSOUND_QUEST_ACCEPT);
+					playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 					qs.setMemoState(2);
 					qs.setCond(3);
 					htmltext = "30981-04.htm";
@@ -231,12 +231,12 @@ public final class Q00422_RepentYourSins extends Quest
 						if (getQuestItemsCount(killer, RATMAN_SCAVENGERS_SKULL) == 9)
 						{
 							giveItems(killer, RATMAN_SCAVENGERS_SKULL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
 							giveItems(killer, RATMAN_SCAVENGERS_SKULL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -246,7 +246,7 @@ public final class Q00422_RepentYourSins extends Quest
 					if (qs.isMemoState(7) && !hasQuestItems(killer, TYRANT_KINGPINS_HEART))
 					{
 						giveItems(killer, TYRANT_KINGPINS_HEART, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					break;
 				}
@@ -257,12 +257,12 @@ public final class Q00422_RepentYourSins extends Quest
 						if (getQuestItemsCount(killer, TUREK_WAR_HOUNDS_TAIL) == 9)
 						{
 							giveItems(killer, TUREK_WAR_HOUNDS_TAIL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
 							giveItems(killer, TUREK_WAR_HOUNDS_TAIL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -274,12 +274,12 @@ public final class Q00422_RepentYourSins extends Quest
 						if (getQuestItemsCount(killer, TRISALIM_TARANTULAS_VENOM_SAC) == 2)
 						{
 							giveItems(killer, TRISALIM_TARANTULAS_VENOM_SAC, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
 							giveItems(killer, TRISALIM_TARANTULAS_VENOM_SAC, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;

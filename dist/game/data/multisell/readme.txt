@@ -34,9 +34,9 @@ of this directory a little bit.
 
 1235.xml -> Apella shop
 
-3361.xml -> Quest 336: Coins of Magic, Rewards level 1
-3362.xml -> Quest 336: Coins of Magic, Rewards level 2
-3363.xml -> Quest 336: Coins of Magic, Rewards level 3
+507.xml -> Quest 336: Coins of Magic, Rewards level 1
+508.xml -> Quest 336: Coins of Magic, Rewards level 2
+509.xml -> Quest 336: Coins of Magic, Rewards level 3
 
 6281.xml -> Swamp of Screams: Abercrombie, first list
 6282.xml -> Swamp of Screams: Abercrombie, second list

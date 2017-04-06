@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00066_CertifiedArbalester;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -439,7 +439,7 @@ public final class Q00066_CertifiedArbalester extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 						giveItems(killer, MANUSCRIPT_PAGE, 1);
 						if ((getRandom(1000) < 100) && (getQuestItemsCount(killer, MANUSCRIPT_PAGE) < 29))
@@ -461,7 +461,7 @@ public final class Q00066_CertifiedArbalester extends Quest
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 							giveItems(killer, MANUSCRIPT_PAGE, 1);
 						}
@@ -480,7 +480,7 @@ public final class Q00066_CertifiedArbalester extends Quest
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 							giveItems(killer, MANUSCRIPT_PAGE, 1);
 						}
@@ -498,7 +498,7 @@ public final class Q00066_CertifiedArbalester extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 						giveItems(killer, MANUSCRIPT_PAGE, 1);
 						if ((getRandom(1000) < 20) && (getQuestItemsCount(killer, MANUSCRIPT_PAGE) < 29))
@@ -529,7 +529,7 @@ public final class Q00066_CertifiedArbalester extends Quest
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 								giveItems(killer, FRAGMENT_OF_ATTACK_ORDERS, 1);
 							}
 						}
@@ -554,7 +554,7 @@ public final class Q00066_CertifiedArbalester extends Quest
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 							giveItems(killer, MANASHENS_TALISMAN, 1);
 						}
@@ -590,7 +590,7 @@ public final class Q00066_CertifiedArbalester extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 						giveItems(killer, ENMITY_CRYSTAL, 1);
 						if ((getRandom(1000) < 80) && (getQuestItemsCount(killer, ENMITY_CRYSTAL) < 29))
@@ -612,7 +612,7 @@ public final class Q00066_CertifiedArbalester extends Quest
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 							giveItems(killer, ENMITY_CRYSTAL, 1);
 						}
@@ -631,7 +631,7 @@ public final class Q00066_CertifiedArbalester extends Quest
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 							giveItems(killer, ENMITY_CRYSTAL, 1);
 						}
@@ -648,7 +648,7 @@ public final class Q00066_CertifiedArbalester extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 						giveItems(killer, ENMITY_CRYSTAL, 1);
 						if ((getRandom(1000) < 240) && (getQuestItemsCount(killer, ENMITY_CRYSTAL) < 29))
@@ -668,7 +668,7 @@ public final class Q00066_CertifiedArbalester extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 						giveItems(killer, ENMITY_CRYSTAL, 1);
 						if ((getRandom(1000) < 40) && (getQuestItemsCount(killer, ENMITY_CRYSTAL) < 29))
@@ -699,7 +699,7 @@ public final class Q00066_CertifiedArbalester extends Quest
 								}
 								else
 								{
-									playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+									playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 								}
 							}
 						}

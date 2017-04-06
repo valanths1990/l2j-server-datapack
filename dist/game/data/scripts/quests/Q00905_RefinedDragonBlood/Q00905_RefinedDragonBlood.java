@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,7 +21,7 @@ package quests.Q00905_RefinedDragonBlood;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -98,7 +98,7 @@ public final class Q00905_RefinedDragonBlood extends Quest
 				}
 				else
 				{
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}
@@ -134,7 +134,7 @@ public final class Q00905_RefinedDragonBlood extends Quest
 				case "32864-11.html":
 				{
 					st.giveItems(REFINED_RED_DRAGON_BLOOD, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					st.exitQuest(QuestType.DAILY, true);
 					htmltext = event;
 					break;
@@ -142,7 +142,7 @@ public final class Q00905_RefinedDragonBlood extends Quest
 				case "32864-12.html":
 				{
 					st.giveItems(REFINED_BLUE_DRAGON_BLOOD, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					st.exitQuest(QuestType.DAILY, true);
 					htmltext = event;
 					break;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00233_TestOfTheWarSpirit;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -217,12 +217,12 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 							if (!hasQuestItems(killer, KIRUNAS_THIGH_BONE))
 							{
 								giveItems(killer, KIRUNAS_THIGH_BONE, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else if (!hasQuestItems(killer, KIRUNAS_ARM_BONE))
 							{
 								giveItems(killer, KIRUNAS_ARM_BONE, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 						}
 						else if (i0 > 30)
@@ -230,12 +230,12 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 							if (!hasQuestItems(killer, KIRUNAS_SPINE))
 							{
 								giveItems(killer, KIRUNAS_SPINE, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else if (!hasQuestItems(killer, KIRUNAS_RIB_BONE))
 							{
 								giveItems(killer, KIRUNAS_RIB_BONE, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 						}
 						else if (i0 > 0)
@@ -243,7 +243,7 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 							if (!hasQuestItems(killer, KIRUNAS_SKULL))
 							{
 								giveItems(killer, KIRUNAS_SKULL, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 						}
 					}
@@ -256,22 +256,22 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 						if (!hasQuestItems(killer, HERMODTS_RIB_BONE))
 						{
 							giveItems(killer, HERMODTS_RIB_BONE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else if (!hasQuestItems(killer, HERMODTS_SPINE))
 						{
 							giveItems(killer, HERMODTS_SPINE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else if (!hasQuestItems(killer, HERMODTS_ARM_BONE))
 						{
 							giveItems(killer, HERMODTS_ARM_BONE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else if (!hasQuestItems(killer, HERMODTS_THIGH_BONE))
 						{
 							giveItems(killer, HERMODTS_THIGH_BONE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 					}
 					break;
@@ -308,27 +308,27 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 						if (!hasQuestItems(killer, TONARS_SKULL))
 						{
 							giveItems(killer, TONARS_SKULL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else if (!hasQuestItems(killer, TONARS_RIB_BONE))
 						{
 							giveItems(killer, TONARS_RIB_BONE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else if (!hasQuestItems(killer, TONARS_SPINE))
 						{
 							giveItems(killer, TONARS_SPINE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else if (!hasQuestItems(killer, TONARS_ARM_BONE))
 						{
 							giveItems(killer, TONARS_ARM_BONE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else if (!hasQuestItems(killer, TONARS_THIGH_BONE))
 						{
 							giveItems(killer, TONARS_THIGH_BONE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 					}
 					break;
@@ -350,7 +350,7 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 					if (hasQuestItems(killer, MANAKIAS_TOTEM) && !hasQuestItems(killer, HERMODTS_SKULL))
 					{
 						giveItems(killer, HERMODTS_SKULL, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					break;
 				}

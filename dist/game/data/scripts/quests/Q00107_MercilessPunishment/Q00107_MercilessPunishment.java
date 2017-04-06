@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,7 +20,7 @@ package quests.Q00107_MercilessPunishment;
 
 import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -96,7 +96,7 @@ public final class Q00107_MercilessPunishment extends Quest
 			case "30568-07.html":
 			{
 				giveAdena(player, 200, true);
-				playSound(player, QuestSound.ITEMSOUND_QUEST_GIVEUP);
+				playSound(player, Sound.ITEMSOUND_QUEST_GIVEUP);
 				qs.exitQuest(true);
 				htmltext = event;
 				break;

@@ -1,4 +1,6 @@
 import sys
+from com.l2jserver.gameserver.enums.audio import Sound
+from com.l2jserver.gameserver.enums.audio import Voice
 from com.l2jserver.gameserver.model.quest import State
 from com.l2jserver.gameserver.model.quest import QuestState
 from com.l2jserver.gameserver.model.quest import Quest as JQuest
@@ -8,17 +10,17 @@ qn = "255_Tutorial"
 
 # table for Quest Timer ( Ex == -2 ) [voice, html]
 QTEXMTWO = {
-    0  : ["tutorial_voice_001a","tutorial_human_fighter001.htm"],
-    10 : ["tutorial_voice_001b","tutorial_human_mage001.htm"],
-    18 : ["tutorial_voice_001c","tutorial_elven_fighter001.htm"],
-    25 : ["tutorial_voice_001d","tutorial_elven_mage001.htm"],
-    31 : ["tutorial_voice_001e","tutorial_delf_fighter001.htm"],
-    38 : ["tutorial_voice_001f","tutorial_delf_mage001.htm"],
-    44 : ["tutorial_voice_001g","tutorial_orc_fighter001.htm"],
-    49 : ["tutorial_voice_001h","tutorial_orc_mage001.htm"],
-    53 : ["tutorial_voice_001i","tutorial_dwarven_fighter001.htm"],
-    123: ["tutorial_voice_001k","tutorial_kamael_male001.htm"],
-    124: ["tutorial_voice_001j","tutorial_kamael_female001.htm"]
+    0  : [Voice.TUTORIAL_VOICE_001A_2000,"tutorial_human_fighter001.htm"],
+    10 : [Voice.TUTORIAL_VOICE_001B_2000,"tutorial_human_mage001.htm"],
+    18 : [Voice.TUTORIAL_VOICE_001C_2000,"tutorial_elven_fighter001.htm"],
+    25 : [Voice.TUTORIAL_VOICE_001D_2000,"tutorial_elven_mage001.htm"],
+    31 : [Voice.TUTORIAL_VOICE_001E_2000,"tutorial_delf_fighter001.htm"],
+    38 : [Voice.TUTORIAL_VOICE_001F_2000,"tutorial_delf_mage001.htm"],
+    44 : [Voice.TUTORIAL_VOICE_001G_2000,"tutorial_orc_fighter001.htm"],
+    49 : [Voice.TUTORIAL_VOICE_001H_2000,"tutorial_orc_mage001.htm"],
+    53 : [Voice.TUTORIAL_VOICE_001I_2000,"tutorial_dwarven_fighter001.htm"],
+    123: [Voice.TUTORIAL_VOICE_001K_2000,"tutorial_kamael_male001.htm"],
+    124: [Voice.TUTORIAL_VOICE_001K_2000,"tutorial_kamael_female001.htm"]
     }
 # table for Client Event Enable (8) [html, x, y, z]
 CEEa = {
@@ -148,42 +150,42 @@ class Quest (JQuest) :
                     st.set("Ex","-2")
                 elif uc == 1 :
                     st.showQuestionMark(1)
-                    st.playTutorialVoice("tutorial_voice_006")
-                    st.playSound("ItemSound.quest_tutorial")
+                    st.playSound(Voice.TUTORIAL_VOICE_006_1000)
+                    st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                 elif uc == 2 :
                     if st.getInt("Ex") == 2 :
                         st.showQuestionMark(3)
-                        st.playSound("ItemSound.quest_tutorial")
+                        st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                     if st.getQuestItemsCount(6353) == 1 :
                         st.showQuestionMark(5)
-                        st.playSound("ItemSound.quest_tutorial")
+                        st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                 elif uc == 3 :
                     st.showQuestionMark(12)
-                    st.playSound("ItemSound.quest_tutorial")
+                    st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                     st.onTutorialClientEvent(0)
                 else :
                     return
             elif playerLevel == 18 and not player.getQuestState("Q10276_MutatedKaneusGludio") :
                 st.showQuestionMark(33)
-                st.playSound("ItemSound.quest_tutorial")
+                st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
             elif playerLevel == 28 and not player.getQuestState("Q10277_MutatedKaneusDion") :
                 st.showQuestionMark(33)
-                st.playSound("ItemSound.quest_tutorial")
+                st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
             elif playerLevel == 28 and not player.getQuestState("Q10278_MutatedKaneusHeine") :
                 st.showQuestionMark(33)
-                st.playSound("ItemSound.quest_tutorial")
+                st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
             elif playerLevel == 28 and not player.getQuestState("Q10279_MutatedKaneusOren") :
                 st.showQuestionMark(33)
-                st.playSound("ItemSound.quest_tutorial")
+                st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
             elif playerLevel == 28 and not player.getQuestState("Q10280_MutatedKaneusSchuttgart") :
                 st.showQuestionMark(33)
-                st.playSound("ItemSound.quest_tutorial")
+                st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
             elif playerLevel == 28 and not player.getQuestState("Q10281_MutatedKaneusRune") :
                 st.showQuestionMark(33)
-                st.playSound("ItemSound.quest_tutorial")
+                st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
             elif playerLevel == 79 and not player.getQuestState("Q00192_SevenSignSeriesOfDoubt") :
                 st.showQuestionMark(33)
-                st.playSound("ItemSound.quest_tutorial")
+                st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
         # QUEST TIMER #
 
         elif string == "QT" :
@@ -191,16 +193,16 @@ class Quest (JQuest) :
             if Ex == -2 :
                if classId in QTEXMTWO.keys():
                   voice, htmltext = QTEXMTWO[classId]
-                  st.playTutorialVoice(voice)
+                  st.playSound(voice)
                   if player.isOnline() and st.getQuestItemsCount(5588) == 0 :
                      st.giveItems(5588,1)
                   st.startQuestTimer("QT",30000)
                   st.set("Ex","-3")
             elif Ex == -3 :
-                st.playTutorialVoice("tutorial_voice_002")
+                st.playSound(Voice.TUTORIAL_VOICE_002_1000)
                 st.set("Ex","0")
             elif Ex == -4 :
-                st.playTutorialVoice("tutorial_voice_008")
+                st.playSound(Voice.TUTORIAL_VOICE_008_1000)
                 st.set("Ex","-5")
 
         # TUTORIAL CLOSE [N] #
@@ -212,13 +214,13 @@ class Quest (JQuest) :
                 st.closeTutorialHtml()
             elif event_id == 1 :
                 st.closeTutorialHtml()
-                st.playTutorialVoice("tutorial_voice_006")
+                st.playSound(Voice.TUTORIAL_VOICE_006_1000)
                 st.showQuestionMark(1)
-                st.playSound("ItemSound.quest_tutorial")
+                st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                 st.startQuestTimer("QT",30000)
                 st.set("Ex","-4")
             elif event_id == 2 :
-                st.playTutorialVoice("tutorial_voice_003")
+                st.playSound(Voice.TUTORIAL_VOICE_003_2000)
                 htmltext = "tutorial_02.htm"
                 st.onTutorialClientEvent(1)
                 st.set("Ex","-5")
@@ -263,36 +265,36 @@ class Quest (JQuest) :
             playerLevel = player.getLevel()
             if event_id == 1 :
                 if playerLevel < 6 :
-                    st.playTutorialVoice("tutorial_voice_004")
+                    st.playSound(Voice.TUTORIAL_VOICE_004_5000)
                     htmltext = "tutorial_03.htm"
-                    st.playSound("ItemSound.quest_tutorial")
+                    st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                     st.onTutorialClientEvent(2)
             elif event_id == 2 :
                 if playerLevel < 6 :
-                    st.playTutorialVoice("tutorial_voice_005")
+                    st.playSound(Voice.TUTORIAL_VOICE_005_5000)
                     htmltext = "tutorial_05.htm"
-                    st.playSound("ItemSound.quest_tutorial")
+                    st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                     st.onTutorialClientEvent(8)
             elif event_id == 8 :
                 if playerLevel < 6 :
                     if classId in CEEa.keys():
                        htmltext, x, y, z = CEEa[classId]
-                       st.playSound("ItemSound.quest_tutorial")
+                       st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                        st.addRadar(x,y,z)
-                       st.playTutorialVoice("tutorial_voice_007")
+                       st.playSound(Voice.TUTORIAL_VOICE_007_3500)
                        st.set("ucMemo","1")
                        st.set("Ex","-5")
             elif event_id == 30 :
                 if playerLevel < 10 and st.getInt("Die") == 0:
-                    st.playTutorialVoice("tutorial_voice_016")
-                    st.playSound("ItemSound.quest_tutorial")
+                    st.playSound(Voice.TUTORIAL_VOICE_016_1000)
+                    st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                     st.set("Die","1")
                     st.showQuestionMark(8)
                     st.onTutorialClientEvent(0)
             elif event_id == 800000 :
                 if playerLevel < 6 and st.getInt("sit") == 0:
-                    st.playTutorialVoice("tutorial_voice_018")
-                    st.playSound("ItemSound.quest_tutorial")
+                    st.playSound(Voice.TUTORIAL_VOICE_018_1000)
+                    st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                     st.set("sit","1")
                     st.onTutorialClientEvent(0)
                     htmltext = "tutorial_21z.htm"
@@ -300,35 +302,35 @@ class Quest (JQuest) :
                 if playerLevel == 5 and player.getClassId().level() == 0:
                    if st.getInt("lvl") < 5 :
                     if not player.getClassId().isMage() or classId == 49:
-                     st.playTutorialVoice("tutorial_voice_014")
+                     st.playSound(Voice.TUTORIAL_VOICE_014_1000)
                      st.showQuestionMark(9)
-                     st.playSound("ItemSound.quest_tutorial")
+                     st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                      st.set("lvl","5")
                 elif playerLevel == 6 and st.getInt("lvl") < 6 and player.getClassId().level() == 0:
-                   st.playTutorialVoice("tutorial_voice_020")
-                   st.playSound("ItemSound.quest_tutorial")
+                   st.playSound(Voice.TUTORIAL_VOICE_020_1000)
+                   st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                    st.showQuestionMark(24)
                    st.set("lvl","6")
                 elif playerLevel == 7 and player.getClassId().isMage() and classId != 49:
                    if st.getInt("lvl") < 7 and player.getClassId().level() == 0:
-                      st.playTutorialVoice("tutorial_voice_019")
-                      st.playSound("ItemSound.quest_tutorial")
+                      st.playSound(Voice.TUTORIAL_VOICE_019_1000)
+                      st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                       st.set("lvl","7")
                       st.showQuestionMark(11)
                 elif playerLevel == 10 :
                    if st.getInt("lvl") < 10:
-                      st.playTutorialVoice("tutorial_voice_030")
-                      st.playSound("ItemSound.quest_tutorial")
+                      st.playSound(Voice.TUTORIAL_VOICE_030_1000)
+                      st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                       st.set("lvl","10")
                       st.showQuestionMark(27)
                 elif playerLevel == 15 :
                    if st.getInt("lvl") < 15:
-                      st.playSound("ItemSound.quest_tutorial")
+                      st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                       st.set("lvl","15")
                       st.showQuestionMark(17)
                 elif playerLevel == 18 :
                    if st.getInt("lvl") < 18:
-                      st.playSound("ItemSound.quest_tutorial")
+                      st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                       st.set("lvl","18")
                       st.showQuestionMark(33)
                 elif playerLevel == 19 :
@@ -337,12 +339,12 @@ class Quest (JQuest) :
                       if race != 5 and player.getClassId().level() == 0 :
                          if classId in [0,10,18,25,31,38,44,49,52]:
                            #st.playTutorialVoice("tutorial_voice_???")
-                           st.playSound("ItemSound.quest_tutorial")
+                           st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                            st.set("lvl","19")
                            st.showQuestionMark(35)
                 elif playerLevel == 28 :
                    if st.getInt("lvl") < 28:
-                      st.playSound("ItemSound.quest_tutorial")
+                      st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                       st.set("lvl","28")
                       st.showQuestionMark(33)
                 elif playerLevel == 35 :
@@ -351,52 +353,52 @@ class Quest (JQuest) :
                       if race != 5 and player.getClassId().level() == 1 :
                          if classId in [1,4,7,11,15,19,22,26,29,32,35,39,42,45,47,50,54,56]:
                            #st.playTutorialVoice("tutorial_voice_???")
-                           st.playSound("ItemSound.quest_tutorial")
+                           st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                            st.set("lvl","35")
                            st.showQuestionMark(34)
                 elif playerLevel == 38 :
                    if st.getInt("lvl") < 38:
-                      st.playSound("ItemSound.quest_tutorial")
+                      st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                       st.set("lvl","38")
                       st.showQuestionMark(33)
                 elif playerLevel == 48 :
                    if st.getInt("lvl") < 48:
-                      st.playSound("ItemSound.quest_tutorial")
+                      st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                       st.set("lvl","48")
                       st.showQuestionMark(33)
                 elif playerLevel == 58 :
                    if st.getInt("lvl") < 58:
-                      st.playSound("ItemSound.quest_tutorial")
+                      st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                       st.set("lvl","58")
                       st.showQuestionMark(33)
                 elif playerLevel == 68 :
                    if st.getInt("lvl") < 68:
-                      st.playSound("ItemSound.quest_tutorial")
+                      st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                       st.set("lvl","68")
                       st.showQuestionMark(33)
                 elif playerLevel == 79 :
                    if st.getInt("lvl") < 79:
-                      st.playSound("ItemSound.quest_tutorial")
+                      st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                       st.set("lvl","79")
                       st.showQuestionMark(33)
             elif event_id == 45 :
                 if playerLevel < 10 :
                    if st.getInt("HP") == 0:
-                    st.playTutorialVoice("tutorial_voice_017")
-                    st.playSound("ItemSound.quest_tutorial")
+                    st.playSound(Voice.TUTORIAL_VOICE_017_1000)
+                    st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                     st.set("HP","1")
                     st.showQuestionMark(10)
                     st.onTutorialClientEvent(800000)
             elif event_id == 57 :
                 if playerLevel < 6 and st.getInt("Adena") == 0:
-                    st.playTutorialVoice("tutorial_voice_012")
-                    st.playSound("ItemSound.quest_tutorial")
+                    st.playSound(Voice.TUTORIAL_VOICE_012_1000)
+                    st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                     st.set("Adena","1")
                     st.showQuestionMark(23)
             elif event_id == 6353 :
                 if playerLevel < 6 and st.getInt("Gemstone") == 0:
-                    st.playTutorialVoice("tutorial_voice_013")
-                    st.playSound("ItemSound.quest_tutorial")
+                    st.playSound(Voice.TUTORIAL_VOICE_013_1000)
+                    st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE)
                     st.set("Gemstone","1")
                     st.showQuestionMark(5)
 
@@ -407,7 +409,7 @@ class Quest (JQuest) :
           if event[2:].isdigit() :
             MarkId = int(event[2:])
             if MarkId == 1 :
-                st.playTutorialVoice("tutorial_voice_007")
+                st.playSound(Voice.TUTORIAL_VOICE_007_3500)
                 st.set("Ex","-5")
                 if classId in CEEa.keys():
                    htmltext, x, y, z = CEEa[classId]

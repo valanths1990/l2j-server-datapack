@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,15 +18,11 @@
  */
 package instances.CrystalCaverns;
 
-import instances.AbstractInstance;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import quests.Q00131_BirdInACage.Q00131_BirdInACage;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.GeoData;
@@ -60,11 +56,13 @@ import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
 import com.l2jserver.gameserver.network.serverpackets.FlyToLocation;
 import com.l2jserver.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
-import com.l2jserver.gameserver.network.serverpackets.PlaySound;
 import com.l2jserver.gameserver.network.serverpackets.SpecialCamera;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.network.serverpackets.ValidateLocation;
 import com.l2jserver.gameserver.util.Util;
+
+import instances.AbstractInstance;
+import quests.Q00131_BirdInACage.Q00131_BirdInACage;
 
 /**
  * Crystal Caverns instance zone.<br>
@@ -1056,7 +1054,8 @@ public final class CrystalCaverns extends AbstractInstance
 				else if (!world.copys.isEmpty())
 				{
 					boolean notAOE = true;
-					if ((skill != null) && ((skill.getTargetType() == L2TargetType.AREA) || (skill.getTargetType() == L2TargetType.FRONT_AREA) || (skill.getTargetType() == L2TargetType.BEHIND_AREA) || (skill.getTargetType() == L2TargetType.AURA) || (skill.getTargetType() == L2TargetType.FRONT_AURA) || (skill.getTargetType() == L2TargetType.BEHIND_AURA)))
+					if ((skill != null) && ((skill.getTargetType() == L2TargetType.AREA) || (skill.getTargetType() == L2TargetType.FRONT_AREA) || (skill.getTargetType() == L2TargetType.BEHIND_AREA) || (skill.getTargetType() == L2TargetType.AURA) || (skill.getTargetType() == L2TargetType.FRONT_AURA)
+						|| (skill.getTargetType() == L2TargetType.BEHIND_AURA)))
 					{
 						notAOE = false;
 					}
@@ -1739,7 +1738,6 @@ public final class CrystalCaverns extends AbstractInstance
 			{
 				world.setStatus(31);
 				world._baylor = null;
-				npc.broadcastPacket(new PlaySound(1, "BS01_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
 				Instance baylorInstance = InstanceManager.getInstance().getInstance(npc.getInstanceId());
 				baylorInstance.setDuration(300000);
 				this.startQuestTimer("spawn_oracle", 1000, npc, null);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,7 +20,7 @@ package quests.Q10274_CollectingInTheAir;
 
 import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -112,7 +112,7 @@ public class Q10274_CollectingInTheAir extends Quest
 					st.giveItems(GREEN, 1);
 					break;
 			}
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			npc.doDie(caster);
 		}
 		return super.onSkillSee(npc, caster, skill, targets, isSummon);

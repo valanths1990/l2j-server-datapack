@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,7 +20,7 @@ package quests.Q00270_TheOneWhoEndsSilence;
 
 import quests.Q10288_SecretMission.Q10288_SecretMission;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -133,7 +133,7 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 					}
 					
 					st.takeItems(TATTERED_MONK_CLOTHES, 100);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "32757-09.html";
 				}
 				else
@@ -157,7 +157,7 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 					rewardScroll(st, 2);
 					
 					st.takeItems(TATTERED_MONK_CLOTHES, 200);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "32757-09.html";
 				}
 				else
@@ -175,7 +175,7 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 					rewardScroll(st, 3);
 					
 					st.takeItems(TATTERED_MONK_CLOTHES, 300);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "32757-09.html";
 				}
 				else
@@ -209,7 +209,7 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 					}
 					
 					st.takeItems(TATTERED_MONK_CLOTHES, 400);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "32757-09.html";
 				}
 				else
@@ -237,7 +237,7 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 					
 					rewardScroll(st, 2);
 					st.takeItems(TATTERED_MONK_CLOTHES, 500);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "32757-09.html";
 				}
 				else
@@ -448,7 +448,7 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 			{
 				final QuestState qs = player.getQuestState(Q00270_TheOneWhoEndsSilence.class.getSimpleName());
 				qs.giveItems(TATTERED_MONK_CLOTHES, count);
-				qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 	}

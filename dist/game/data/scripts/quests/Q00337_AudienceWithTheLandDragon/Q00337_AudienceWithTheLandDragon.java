@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00337_AudienceWithTheLandDragon;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -190,7 +190,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.4)) && !hasQuestItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_1ST))
 						{
 							giveItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_1ST, 1);
-							playSound(attacker, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(attacker, Sound.ITEMSOUND_QUEST_ITEMGET);
 							startQuestTimer("DESPAWN_240", 240000, npc, attacker);
 						}
 					}
@@ -218,7 +218,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.4)) && !hasQuestItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_2ND))
 						{
 							giveItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_2ND, 1);
-							playSound(attacker, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(attacker, Sound.ITEMSOUND_QUEST_ITEMGET);
 							startQuestTimer("DESPAWN_240", 240000, npc, attacker);
 						}
 					}
@@ -245,7 +245,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.4)) && !hasQuestItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_3RD))
 						{
 							giveItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_3RD, 1);
-							playSound(attacker, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(attacker, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					
@@ -374,7 +374,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 							if (!hasQuestItems(killer, HAMRUT_LEG))
 							{
 								giveItems(killer, HAMRUT_LEG, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 							break;
 						}
@@ -397,7 +397,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 							if (!hasQuestItems(killer, KRANROT_SKIN))
 							{
 								giveItems(killer, KRANROT_SKIN, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 							break;
 						}
@@ -420,7 +420,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 							if (!hasQuestItems(killer, MARSH_STALKER_HORN))
 							{
 								giveItems(killer, MARSH_STALKER_HORN, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 							break;
 						}
@@ -443,7 +443,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 							if (!hasQuestItems(killer, MARSH_DRAKE_TALONS))
 							{
 								giveItems(killer, MARSH_DRAKE_TALONS, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 							break;
 						}
@@ -457,7 +457,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						if (!hasQuestItems(killer, MARA_FANG))
 						{
 							giveItems(killer, MARA_FANG, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -469,7 +469,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						if (!hasQuestItems(killer, MUSFEL_FANG))
 						{
 							giveItems(killer, MUSFEL_FANG, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -490,7 +490,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 							if (!hasQuestItems(killer, REMAINS_OF_SACRAFICE))
 							{
 								giveItems(killer, REMAINS_OF_SACRAFICE, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 							break;
 						}
@@ -513,7 +513,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 							if (!hasQuestItems(killer, TOTEM_OF_LAND_DRAGON))
 							{
 								giveItems(killer, TOTEM_OF_LAND_DRAGON, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 							break;
 						}

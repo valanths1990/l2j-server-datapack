@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,7 +20,7 @@ package quests.Q00021_HiddenTruth;
 
 import quests.Q00022_TragedyInVonHellmannForest.Q00022_TragedyInVonHellmannForest;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.instancemanager.WalkingManager;
 import com.l2jserver.gameserver.model.L2World;
 import com.l2jserver.gameserver.model.Location;
@@ -133,7 +133,7 @@ public class Q00021_HiddenTruth extends Quest
 					if (GHOST_SPAWNED)
 					{
 						htmltext = "31523-04.html";
-						st.playSound(QuestSound.SKILLSOUND_HORROR_2);
+						st.playSound(Sound.SKILLSOUND_HORROR_2);
 					}
 					else
 					{
@@ -142,7 +142,7 @@ public class Q00021_HiddenTruth extends Quest
 						GHOST_SPAWNED = true;
 						st.startQuestTimer("DESPAWN_GHOST", 1000 * 300, ghost);
 						st.setCond(2);
-						st.playSound(QuestSound.SKILLSOUND_HORROR_2);
+						st.playSound(Sound.SKILLSOUND_HORROR_2);
 						htmltext = event;
 					}
 					break;
@@ -167,7 +167,7 @@ public class Q00021_HiddenTruth extends Quest
 				}
 				case "31526-03.html":
 				{
-					st.playSound(QuestSound.ITEMSOUND_ARMOR_CLOTH);
+					st.playSound(Sound.ITEMSOUND_ARMOR_CLOTH);
 					htmltext = event;
 					break;
 				}
@@ -181,7 +181,7 @@ public class Q00021_HiddenTruth extends Quest
 				{
 					if (!st.isCond(5))
 					{
-						st.playSound(QuestSound.AMDSOUND_ED_CHIMES);
+						st.playSound(Sound.AMDSOUND_ED_CHIMES);
 						st.setCond(5);
 						htmltext = event;
 					}
@@ -320,7 +320,7 @@ public class Q00021_HiddenTruth extends Quest
 						case 4:
 						{
 							st.setCond(5);
-							st.playSound(QuestSound.AMDSOUND_ED_CHIMES);
+							st.playSound(Sound.AMDSOUND_ED_CHIMES);
 							htmltext = "31526-10.html";
 							break;
 						}
@@ -440,7 +440,7 @@ public class Q00021_HiddenTruth extends Quest
 	{
 		if (creature.isPlayer())
 		{
-			playSound((L2PcInstance) creature, QuestSound.HORROR_01);
+			playSound((L2PcInstance) creature, Sound.HORROR_01);
 		}
 		return super.onSeeCreature(npc, creature, isSummon);
 	}

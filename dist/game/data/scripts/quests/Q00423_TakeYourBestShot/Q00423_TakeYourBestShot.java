@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -122,8 +122,8 @@ public class Q00423_TakeYourBestShot extends Quest
 				switch (st.getState())
 				{
 					case State.CREATED:
-						final QuestState _prev = player.getQuestState(Q00249_PoisonedPlainsOfTheLizardmen.class.getSimpleName());
-						if ((_prev != null) && _prev.isCompleted() && (player.getLevel() >= MIN_LEVEL))
+						final QuestState qs249 = player.getQuestState(Q00249_PoisonedPlainsOfTheLizardmen.class.getSimpleName());
+						if ((qs249 != null) && qs249.isCompleted() && (player.getLevel() >= MIN_LEVEL))
 						{
 							htmltext = (st.hasQuestItems(SEER_UGOROS_PASS)) ? "32744-07.htm" : "32744-01.htm";
 						}

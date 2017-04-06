@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,7 +21,7 @@ package quests.Q10292_SevenSignsGirlOfDoubt;
 import quests.Q00198_SevenSignsEmbryo.Q00198_SevenSignsEmbryo;
 
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
@@ -126,7 +126,7 @@ public final class Q10292_SevenSignsGirlOfDoubt extends Quest
 			{
 				if (st.isCond(4) && hasItem(player, ELCADIAS_MARK))
 				{
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = event;
 				}
 				break;
@@ -280,7 +280,7 @@ public final class Q10292_SevenSignsGirlOfDoubt extends Quest
 					{
 						if (hasItem(player, ELCADIAS_MARK))
 						{
-							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 							htmltext = "32784-05.html";
 						}
 						break;

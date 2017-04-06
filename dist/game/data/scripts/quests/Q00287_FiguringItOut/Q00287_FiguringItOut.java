@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -23,7 +23,7 @@ import java.util.Map;
 
 import quests.Q00250_WatchWhatYouEat.Q00250_WatchWhatYouEat;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
@@ -118,7 +118,7 @@ public class Q00287_FiguringItOut extends Quest
 					final ItemHolder holder = ICARUS[getRandom(ICARUS.length)];
 					st.giveItems(holder);
 					st.takeItems(VIAL_OF_TANTA_BLOOD, 500);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_FINISH);
+					st.playSound(Sound.ITEMSOUND_QUEST_FINISH);
 					htmltext = "32742-06.html";
 				}
 				else
@@ -132,7 +132,7 @@ public class Q00287_FiguringItOut extends Quest
 					final ItemHolder holder = MOIRAI[getRandom(MOIRAI.length)];
 					st.giveItems(holder);
 					st.takeItems(VIAL_OF_TANTA_BLOOD, 100);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_FINISH);
+					st.playSound(Sound.ITEMSOUND_QUEST_FINISH);
 					htmltext = "32742-08.html";
 				}
 				else
@@ -173,7 +173,7 @@ public class Q00287_FiguringItOut extends Quest
 		if (getRandom(1000) < MONSTERS.get(npc.getId()))
 		{
 			st.giveItems(VIAL_OF_TANTA_BLOOD, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return super.onKill(npc, player, isSummon);
 	}

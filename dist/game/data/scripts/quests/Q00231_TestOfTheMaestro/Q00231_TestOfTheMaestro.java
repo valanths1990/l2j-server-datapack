@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00231_TestOfTheMaestro;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -100,7 +100,7 @@ public final class Q00231_TestOfTheMaestro extends Quest
 				{
 					qs.startQuest();
 					qs.setMemoState(1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
 						giveItems(player, DIMENSIONAL_DIAMOND, 23);
@@ -184,11 +184,11 @@ public final class Q00231_TestOfTheMaestro extends Quest
 						giveItems(killer, BLOOD_OF_LEECH, 1);
 						if (getQuestItemsCount(killer, BLOOD_OF_LEECH) >= 10)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -200,11 +200,11 @@ public final class Q00231_TestOfTheMaestro extends Quest
 						giveItems(killer, STINGER_WASP_NEEDLE, 1);
 						if (getQuestItemsCount(killer, STINGER_WASP_NEEDLE) >= 10)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -216,11 +216,11 @@ public final class Q00231_TestOfTheMaestro extends Quest
 						giveItems(killer, MARSH_SPIDERS_WEB, 1);
 						if (getQuestItemsCount(killer, MARSH_SPIDERS_WEB) >= 10)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -230,7 +230,7 @@ public final class Q00231_TestOfTheMaestro extends Quest
 					if (qs.isMemoState(2) && hasQuestItems(killer, PAINT_OF_KAMURU) && !hasQuestItems(killer, NECKLACE_OF_KAMUTU))
 					{
 						giveItems(killer, NECKLACE_OF_KAMUTU, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					break;
 				}

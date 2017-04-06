@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,7 +21,7 @@ package quests.Q00605_AllianceWithKetraOrcs;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -204,7 +204,7 @@ public class Q00605_AllianceWithKetraOrcs extends Quest
 					return "31371-03.htm";
 				}
 				st.setState(State.STARTED);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ACCEPT);
+				st.playSound(Sound.ITEMSOUND_QUEST_ACCEPT);
 				for (int i = 0; i < KETRA_MARKS.length; i++)
 				{
 					if (st.hasQuestItems(KETRA_MARKS[i]))

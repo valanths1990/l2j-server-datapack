@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00367_ElectrifyingRecharge;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -131,32 +131,32 @@ public final class Q00367_ElectrifyingRecharge extends Quest
 				{
 					giveItems(luckyPlayer, TITAN_LAMP2, 1);
 					takeItems(luckyPlayer, TITAN_LAMP1, -1);
-					playSound(luckyPlayer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(luckyPlayer, Sound.ITEMSOUND_QUEST_MIDDLE);
 				}
 				else if (hasQuestItems(luckyPlayer, TITAN_LAMP2))
 				{
 					giveItems(luckyPlayer, TITAN_LAMP3, 1);
 					takeItems(luckyPlayer, TITAN_LAMP2, -1);
-					playSound(luckyPlayer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(luckyPlayer, Sound.ITEMSOUND_QUEST_MIDDLE);
 				}
 				else if (hasQuestItems(luckyPlayer, TITAN_LAMP3))
 				{
 					giveItems(luckyPlayer, TITAN_LAMP4, 1);
 					takeItems(luckyPlayer, TITAN_LAMP3, -1);
-					playSound(luckyPlayer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(luckyPlayer, Sound.ITEMSOUND_QUEST_MIDDLE);
 				}
 				else if (hasQuestItems(luckyPlayer, TITAN_LAMP4))
 				{
 					giveItems(luckyPlayer, TITAN_LAMP5, 1);
 					takeItems(luckyPlayer, TITAN_LAMP4, -1);
-					luckyPlayer.getQuestState(getName()).setCond(2, true);
+					getQuestState(luckyPlayer, false).setCond(2, true);
 				}
 			}
 			else if ((random == 1) && !hasQuestItems(luckyPlayer, BROKEN_TITAN_LAMP))
 			{
 				giveItems(luckyPlayer, BROKEN_TITAN_LAMP, 1);
 				takeItems(luckyPlayer, -1, TITAN_LAMP1, TITAN_LAMP2, TITAN_LAMP3, TITAN_LAMP4);
-				playSound(luckyPlayer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(luckyPlayer, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);

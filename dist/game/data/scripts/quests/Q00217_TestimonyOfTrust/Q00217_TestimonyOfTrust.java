@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -19,7 +19,7 @@
 package quests.Q00217_TestimonyOfTrust;
 
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -128,7 +128,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 					qs.setMemoState(1);
 					giveItems(player, LETTER_TO_ELF, 1);
 					giveItems(player, LETTER_TO_DARKELF, 1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
 						giveItems(player, DIMENSIONAL_DIAMOND, 96);
@@ -253,7 +253,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						if (getRandom(100) < (flag * 33))
 						{
 							addSpawn(ACTEA_OF_VERDANT_WILDS, npc, true, 200000);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_BEFORE_BATTLE);
 						}
 					}
 					break;
@@ -267,7 +267,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						if (getRandom(100) < (flag * 33))
 						{
 							addSpawn(LUELL_OF_ZEPHYR_WINDS, npc, true, 200000);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_BEFORE_BATTLE);
 						}
 					}
 					break;
@@ -281,7 +281,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						{
 							giveItems(killer, HONEY_DEW, 1);
 							takeItems(killer, GIANT_APHID, -1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if (hasQuestItems(killer, BASILISK_PLASMA, STAKATO_ICHOR))
 							{
 								qs.setCond(7);
@@ -290,7 +290,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						else
 						{
 							giveItems(killer, GIANT_APHID, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -305,7 +305,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						{
 							giveItems(killer, HONEY_DEW, 1);
 							takeItems(killer, GIANT_APHID, -1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if (hasQuestItems(killer, BASILISK_PLASMA, STAKATO_ICHOR))
 							{
 								qs.setCond(7);
@@ -314,7 +314,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						else
 						{
 							giveItems(killer, GIANT_APHID, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -328,7 +328,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						{
 							giveItems(killer, STAKATO_ICHOR, 1);
 							takeItems(killer, STAKATOS_FLUIDS, -1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if (hasQuestItems(killer, BASILISK_PLASMA, HONEY_DEW))
 							{
 								qs.setCond(7);
@@ -337,7 +337,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						else
 						{
 							giveItems(killer, STAKATOS_FLUIDS, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -351,7 +351,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						{
 							giveItems(killer, STAKATO_ICHOR, 1);
 							takeItems(killer, STAKATOS_FLUIDS, -1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if (hasQuestItems(killer, BASILISK_PLASMA, HONEY_DEW))
 							{
 								qs.setCond(7);
@@ -360,7 +360,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						else
 						{
 							giveItems(killer, STAKATOS_FLUIDS, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -385,7 +385,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						{
 							giveItems(killer, BASILISK_PLASMA, 1);
 							takeItems(killer, BLOOD_OF_GUARDIAN_BASILISK, -1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							if (hasQuestItems(killer, STAKATO_ICHOR, HONEY_DEW))
 							{
 								qs.setCond(7);
@@ -394,7 +394,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						else
 						{
 							giveItems(killer, BLOOD_OF_GUARDIAN_BASILISK, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -411,7 +411,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -429,7 +429,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						else
 						{
 							giveItems(killer, BREATH_OF_WINDS, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -442,12 +442,12 @@ public final class Q00217_TestimonyOfTrust extends Quest
 						{
 							giveItems(killer, SEED_OF_VERDURE, 1);
 							qs.setMemoState(3);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
 							giveItems(killer, SEED_OF_VERDURE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;

@@ -807,7 +807,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
 		<for>
-			<effect name="Invincible" />
+			<effect name="BlockDamage">
+				<param block="HP"/>
+			</effect>
+			<effect name="BlockDamage">
+				<param block="MP"/>
+			</effect>
+			<effect name="BlockDebuff" />
 		</for>
 	</skill>
 	<skill id="5740" levels="1" name="Recovery Pet">
@@ -1135,11 +1141,12 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5759" levels="1" name="Presentation - The Rise of Latana">
+		<!-- High Five Confirmed -->
 		<set name="hitTime" val="9700" />
 		<set name="magicLvl" val="73" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5760" levels="9" name="Critical Hit">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 9 10 </table>

@@ -3,10 +3,11 @@
 # C4 addons by Kerberos
 # updated to Kamael by Kerberos
 import sys
+from com.l2jserver.gameserver.enums.audio import Sound
+from com.l2jserver.gameserver.enums.audio import Voice
 from com.l2jserver.gameserver.model.quest import State
 from com.l2jserver.gameserver.model.quest import QuestState
 from com.l2jserver.gameserver.model.quest import Quest as JQuest
-from com.l2jserver.gameserver.network.serverpackets import PlaySound
 from com.l2jserver import Config
 
 qn = "999_T1Tutorial"
@@ -91,19 +92,19 @@ class Quest (JQuest) :
        if event == "TimerEx_NewbieHelper" :
           if Ex == 0 :
              if classId.isMage() :
-                st.playTutorialVoice("tutorial_voice_009b")
+                st.playSound(Voice.TUTORIAL_VOICE_009B)
              else :
-                st.playTutorialVoice("tutorial_voice_009a")
+                st.playSound(Voice.TUTORIAL_VOICE_009A)
              qs.set("Ex","1")
           elif Ex == 3 :
-             st.playTutorialVoice("tutorial_voice_010a")
+             st.playSound(Voice.TUTORIAL_VOICE_025_1000)
              qs.set("Ex","4")
           return
        elif event == "TimerEx_GrandMaster" :
           if Ex >= 4 :
              st.showQuestionMark(7)
-             st.playSound("ItemSound.quest_tutorial")
-             st.playTutorialVoice("tutorial_voice_025")
+             st.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL)
+             st.playSound(Voice.TUTORIAL_VOICE_025_1000)
           return
        elif event == "isle" :
           st.addRadar(-119692,44504,380)
@@ -123,13 +124,13 @@ class Quest (JQuest) :
              if classId.getId() == classId1 :
                 st.giveItems(gift1,count1)
                 if gift1 == SPIRITSHOT_NOVICE :
-                   st.playTutorialVoice("tutorial_voice_027")
+                   st.playSound(Voice.TUTORIAL_VOICE_027_1000)
                 else:
-                   st.playTutorialVoice("tutorial_voice_026")
+                   st.playSound(Voice.TUTORIAL_VOICE_026_1000)
              elif classId.getId() == classId2 :
                 if gift2:
                    st.giveItems(gift2,count2)
-                   st.playTutorialVoice("tutorial_voice_026")
+                   st.playSound(Voice.TUTORIAL_VOICE_026_1000)
              st.unset("step")
              st.set("onlyone","1")
     return htmltext
@@ -159,10 +160,10 @@ class Quest (JQuest) :
      reward=qs.getInt("reward")
      if reward == 0:
        if isMage :
-         st.playTutorialVoice("tutorial_voice_027")
+         st.playSound(Voice.TUTORIAL_VOICE_027_1000)
          st.giveItems(SPIRITSHOT_NOVICE,100)
        else:
-         st.playTutorialVoice("tutorial_voice_026")
+         st.playSound(Voice.TUTORIAL_VOICE_026_1000)
          st.giveItems(SOULSHOT_NOVICE,200)
        st.giveItems(TOKEN,12)
        st.giveItems(SCROLL,2)
@@ -193,13 +194,13 @@ class Quest (JQuest) :
            st.startQuestTimer("TimerEx_NewbieHelper",30000)
            qs.set("ucMemo","3")
            if isMage :
-             st.playTutorialVoice("tutorial_voice_027")
+             st.playSound(Voice.TUTORIAL_VOICE_027_1000)
              st.giveItems(SPIRITSHOT_NOVICE,100)
              htmltext = htmlfiles[2]
              if htmltext == 0 :
                  htmltext = "<html><body>I am sorry.  I only help warriors.  Please go to another Newbie Helper who may assist you.</body></html>"
            else:
-             st.playTutorialVoice("tutorial_voice_026")
+             st.playSound(Voice.TUTORIAL_VOICE_026_1000)
              st.giveItems(SOULSHOT_NOVICE,200)
              htmltext = htmlfiles[1]
              if htmltext == 0 :
@@ -236,12 +237,12 @@ class Quest (JQuest) :
    Ex = int(qs.get("Ex"))
    if qs != None :
       if Ex in [0,1] :
-         st.playTutorialVoice("tutorial_voice_011")
+         st.playSound(Voice.TUTORIAL_VOICE_011_1000)
          st.showQuestionMark(3)
          qs.set("Ex","2")
       if Ex in [0,1,2] and st.getQuestItemsCount(6353) < 1 :
          npc.dropItem(player, 6353, 1)
-         st.playSound("ItemSound.quest_tutorial")
+         st.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL)
    return
 
 QUEST       = Quest(999,qn,"Kamael Tutorial")

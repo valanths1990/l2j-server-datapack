@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,7 +21,7 @@ package quests.Q00372_LegacyOfInsolence;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.QuestItemHolder;
@@ -462,7 +462,7 @@ public final class Q00372_LegacyOfInsolence extends Quest
 				if (qs != null)
 				{
 					giveItems(qs.getPlayer(), item.getId(), item.getCount());
-					playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 			return super.onKill(npc, killer, isSummon);
@@ -500,7 +500,7 @@ public final class Q00372_LegacyOfInsolence extends Quest
 			if ((rewardedPlayer != null) && Util.checkIfInRange(1500, npc, rewardedPlayer, true))
 			{
 				giveItems(rewardedPlayer, item.getId(), item.getCount());
-				playSound(rewardedPlayer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(rewardedPlayer, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		

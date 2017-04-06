@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -42,7 +42,10 @@ public final class EffectMasterHandler
 		Betray.class,
 		Blink.class,
 		BlockAction.class,
+		BlockBuff.class,
 		BlockChat.class,
+		BlockDamage.class,
+		BlockDebuff.class,
 		BlockParty.class,
 		BlockBuffSlot.class,
 		BlockResurrection.class,
@@ -106,7 +109,6 @@ public final class EffectMasterHandler
 		HpDrain.class,
 		ImmobileBuff.class,
 		ImmobilePetBuff.class,
-		Invincible.class,
 		Lethal.class,
 		Lucky.class,
 		MagicalAttack.class,
@@ -132,7 +134,6 @@ public final class EffectMasterHandler
 		OutpostDestroy.class,
 		Paralyze.class,
 		Passive.class,
-		Petrification.class,
 		PhysicalAttack.class,
 		PhysicalAttackHpLink.class,
 		PhysicalAttackMute.class,
@@ -156,6 +157,7 @@ public final class EffectMasterHandler
 		ServitorShare.class,
 		SetSkill.class,
 		SilentMove.class,
+		SingleTarget.class,
 		SkillTurning.class,
 		Sleep.class,
 		SoulBlow.class,

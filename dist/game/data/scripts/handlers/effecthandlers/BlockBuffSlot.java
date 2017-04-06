@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -46,7 +46,7 @@ public final class BlockBuffSlot extends AbstractEffect
 			_blockBuffSlots = new HashSet<>();
 			for (String slot : blockBuffSlots.split(";"))
 			{
-				_blockBuffSlots.add(AbnormalType.getAbnormalType(slot));
+				_blockBuffSlots.add(AbnormalType.valueOf(slot));
 			}
 		}
 		else

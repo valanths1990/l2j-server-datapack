@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00216_TrialOfTheGuildsman;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -117,7 +117,7 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 					{
 						giveItems(player, VALKONS_RECOMMENDATION, 1);
 					}
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
 						giveItems(player, DIMENSIONAL_DIAMOND, 85);
@@ -276,7 +276,7 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 					if (getRandomBoolean() && (qs.getPlayer().getClassId() == ClassId.artisan))
 					{
 						giveItems(qs.getPlayer(), AMBER_LUMP, 1);
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					
 					if ((getQuestItemsCount(qs.getPlayer(), AMBER_BEAD) + count) < 70)
@@ -299,11 +299,11 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 					giveItems(qs.getPlayer(), GRANITE_WHETSTONE, 7);
 					if (getQuestItemsCount(qs.getPlayer(), GRANITE_WHETSTONE) == 70)
 					{
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					else
 					{
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 				break;
@@ -332,11 +332,11 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 					giveItems(qs.getPlayer(), BRAIDED_YARN, 10);
 					if (getQuestItemsCount(qs.getPlayer(), BRAIDED_YARN) == 70)
 					{
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					else
 					{
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 				break;
@@ -350,11 +350,11 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 					giveItems(qs.getPlayer(), GRAY_BONE_POWDER, 5);
 					if (getQuestItemsCount(qs.getPlayer(), GRAY_BONE_POWDER) == 70)
 					{
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					else
 					{
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 				break;
@@ -367,11 +367,11 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 					giveItems(qs.getPlayer(), RED_PIGMENT, 7);
 					if (getQuestItemsCount(qs.getPlayer(), RED_PIGMENT) == 70)
 					{
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					else
 					{
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 				break;
@@ -389,12 +389,12 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 					{
 						giveItems(qs.getPlayer(), DUNINGS_KEY, 1);
 						takeItems(qs.getPlayer(), DUNINGS_INSTRUCTIONS, 1);
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					else
 					{
 						giveItems(qs.getPlayer(), DUNINGS_KEY, 1);
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 				break;

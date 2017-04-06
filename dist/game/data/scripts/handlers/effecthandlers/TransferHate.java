@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -70,7 +70,7 @@ public final class TransferHate extends AbstractEffect
 			}
 			
 			final L2Attackable hater = ((L2Attackable) obj);
-			final int hate = hater.getHating(info.getEffector());
+			final long hate = hater.getHating(info.getEffector());
 			if (hate <= 0)
 			{
 				continue;

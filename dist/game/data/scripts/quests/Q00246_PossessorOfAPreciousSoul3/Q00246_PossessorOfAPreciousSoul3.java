@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,15 +18,15 @@
  */
 package quests.Q00246_PossessorOfAPreciousSoul3;
 
-import quests.Q00242_PossessorOfAPreciousSoul2.Q00242_PossessorOfAPreciousSoul2;
-
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
 import com.l2jserver.gameserver.util.Util;
+
+import quests.Q00242_PossessorOfAPreciousSoul2.Q00242_PossessorOfAPreciousSoul2;
 
 /**
  * Possessor Of A PreciousSoul part 3 (246)<br>
@@ -163,7 +163,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 							}
 							else
 							{
-								st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -187,7 +187,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 							}
 							else
 							{
-								st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -212,7 +212,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				}
 				else
 				{
-					pst = player.getQuestState(getName());
+					pst = getQuestState(player, false);
 					if (pst != null)
 					{
 						if (pst.isCond(4) && !pst.hasQuestItems(RAIN_SONG))
@@ -224,7 +224,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				}
 				break;
 			default:
-				st = player.getQuestState(getName());
+				st = getQuestState(player, false);
 				if ((st == null))
 				{
 					return super.onKill(npc, player, isSummon);
@@ -237,7 +237,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 						st.giveItems(FRAGMENTS, 1);
 						if (st.getQuestItemsCount(FRAGMENTS) < 100)
 						{
-							st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 						else
 						{

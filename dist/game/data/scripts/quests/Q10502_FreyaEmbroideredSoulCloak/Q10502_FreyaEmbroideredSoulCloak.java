@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q10502_FreyaEmbroideredSoulCloak;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -68,7 +68,7 @@ public class Q10502_FreyaEmbroideredSoulCloak extends Quest
 			else
 			{
 				giveItems(player, FREYAS_SOUL_FRAGMENT, count);
-				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 	}
@@ -123,7 +123,7 @@ public class Q10502_FreyaEmbroideredSoulCloak extends Quest
 						if (getQuestItemsCount(player, FREYAS_SOUL_FRAGMENT) >= FRAGMENT_COUNT)
 						{
 							giveItems(player, SOUL_CLOAK_OF_FREYA, 1);
-							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 							st.exitQuest(false, true);
 							htmltext = "32612-06.html";
 						}

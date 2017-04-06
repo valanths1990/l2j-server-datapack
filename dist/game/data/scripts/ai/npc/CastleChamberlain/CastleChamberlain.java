@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -25,14 +25,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.SevenSigns;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.data.sql.impl.TeleportLocationTable;
 import com.l2jserver.gameserver.instancemanager.CastleManorManager;
 import com.l2jserver.gameserver.instancemanager.FortManager;
+import com.l2jserver.gameserver.instancemanager.TerritoryWarManager;
 import com.l2jserver.gameserver.model.ClanPrivilege;
 import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.L2TeleportLocation;
@@ -63,6 +62,8 @@ import com.l2jserver.gameserver.network.serverpackets.ExShowSeedSetting;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.util.Util;
 
+import ai.npc.AbstractNpcAI;
+
 /**
  * Castle Chamberlain AI.
  * @author malyelfik
@@ -86,6 +87,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 	private static final int CROWN = 6841;
 	// Fortress
 	private static final Map<Integer, List<Integer>> FORTRESS = new HashMap<>();
+	
 	static
 	{
 		FORTRESS.put(1, Arrays.asList(101, 102, 112, 113)); // Gludio Castle
@@ -98,6 +100,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 		FORTRESS.put(8, Arrays.asList(110, 120, 121)); // Rune Castle
 		FORTRESS.put(9, Arrays.asList(111, 121)); // Schuttgart Castle
 	}
+	
 	// Buffs
 	private static final SkillHolder[] BUFFS =
 	{
@@ -880,7 +883,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 			{
 				if (isOwner(player, npc) && player.hasClanPrivilege(ClanPrivilege.CS_DISMISS))
 				{
-					if (castle.getSiege().isInProgress())
+					if (castle.getSiege().isInProgress() || TerritoryWarManager.getInstance().isTWInProgress())
 					{
 						htmltext = "chamberlain-08.html";
 					}

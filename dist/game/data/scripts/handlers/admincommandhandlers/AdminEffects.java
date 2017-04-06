@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -50,10 +50,21 @@ import com.l2jserver.gameserver.util.Broadcast;
 import com.l2jserver.gameserver.util.Util;
 
 /**
- * This class handles following admin commands: <li>invis/invisible/vis/visible = makes yourself invisible or visible <li>earthquake = causes an earthquake of a given intensity and duration around you <li>bighead/shrinkhead = changes head size <li>gmspeed = temporary Super Haste effect. <li>
- * para/unpara = paralyze/remove paralysis from target <li>para_all/unpara_all = same as para/unpara, affects the whole world. <li>polyself/unpolyself = makes you look as a specified mob. <li>changename = temporary change name <li>clearteams/setteam_close/setteam = team related commands <li>social =
- * forces an L2Character instance to broadcast social action packets. <li>effect = forces an L2Character instance to broadcast MSU packets. <li>abnormal = force changes over an L2Character instance's abnormal state. <li>play_sound/play_sounds = Music broadcasting related commands <li>atmosphere =
- * sky change related commands.
+ * This class handles following admin commands:
+ * <li>invis/invisible/vis/visible = makes yourself invisible or visible
+ * <li>earthquake = causes an earthquake of a given intensity and duration around you
+ * <li>bighead/shrinkhead = changes head size
+ * <li>gmspeed = temporary Super Haste effect.
+ * <li>para/unpara = paralyze/remove paralysis from target
+ * <li>para_all/unpara_all = same as para/unpara, affects the whole world.
+ * <li>polyself/unpolyself = makes you look as a specified mob.
+ * <li>changename = temporary change name
+ * <li>clearteams/setteam_close/setteam = team related commands
+ * <li>social = forces an L2Character instance to broadcast social action packets.
+ * <li>effect = forces an L2Character instance to broadcast MSU packets.
+ * <li>abnormal = force changes over an L2Character instance's abnormal state.
+ * <li>play_sound/play_sounds = Music broadcasting related commands
+ * <li>atmosphere = sky change related commands.
  */
 public class AdminEffects implements IAdminCommandHandler
 {
@@ -761,7 +772,7 @@ public class AdminEffects implements IAdminCommandHandler
 	
 	private void playAdminSound(L2PcInstance activeChar, String sound)
 	{
-		PlaySound _snd = new PlaySound(1, sound, 0, 0, 0, 0, 0);
+		PlaySound _snd = PlaySound.createSound(sound);
 		activeChar.sendPacket(_snd);
 		activeChar.broadcastPacket(_snd);
 		activeChar.sendMessage("Playing " + sound + ".");

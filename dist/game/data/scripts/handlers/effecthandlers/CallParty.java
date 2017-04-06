@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -51,7 +51,7 @@ public final class CallParty extends AbstractEffect
 		
 		for (L2PcInstance partyMember : info.getEffector().getParty().getMembers())
 		{
-			if (CallPc.checkSummonTargetStatus(partyMember, info.getEffector().getActingPlayer()))
+			if (info.getEffector().getActingPlayer().canSummonTarget(partyMember))
 			{
 				if (info.getEffector() != partyMember)
 				{

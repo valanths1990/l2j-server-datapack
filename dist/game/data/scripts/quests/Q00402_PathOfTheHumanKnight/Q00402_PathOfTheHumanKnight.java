@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00402_PathOfTheHumanKnight;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -260,11 +260,11 @@ public final class Q00402_PathOfTheHumanKnight extends Quest
 						giveItems(killer, LIZARDMANS_TOTEM, 1);
 						if (getQuestItemsCount(killer, LIZARDMANS_TOTEM) == 20)
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -278,11 +278,11 @@ public final class Q00402_PathOfTheHumanKnight extends Quest
 						giveItems(killer, VENOMOUS_SPIDERS_LEG, 1);
 						if (getQuestItemsCount(killer, VENOMOUS_SPIDERS_LEG) == 20)
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -296,11 +296,11 @@ public final class Q00402_PathOfTheHumanKnight extends Quest
 						giveItems(killer, GIANT_SPIDERS_HUSK, 1);
 						if (getQuestItemsCount(killer, GIANT_SPIDERS_HUSK) == 20)
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -312,11 +312,11 @@ public final class Q00402_PathOfTheHumanKnight extends Quest
 						giveItems(killer, SKULL_OF_SILENT_HORROR, 1);
 						if (getQuestItemsCount(killer, SKULL_OF_SILENT_HORROR) == 10)
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -328,11 +328,11 @@ public final class Q00402_PathOfTheHumanKnight extends Quest
 						giveItems(killer, BUGBEAR_NECKLACE, 1);
 						if (getQuestItemsCount(killer, BUGBEAR_NECKLACE) == 10)
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -344,11 +344,11 @@ public final class Q00402_PathOfTheHumanKnight extends Quest
 						giveItems(killer, EINHASAD_CRUCIFIX, 1);
 						if (getQuestItemsCount(killer, EINHASAD_CRUCIFIX) == 12)
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;

@@ -888,7 +888,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff">
+			<effect name="BlockBuff">
 				<mul stat="pAtk" val="0.5" />
 				<mul stat="pDef" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
@@ -899,7 +899,6 @@
 				<sub stat="windRes" val="50" />
 				<sub stat="waterRes" val="50" />
 				<sub stat="earthRes" val="50" />
-				<!-- set stat="buffImmunity" val="1" / TODO: Needs Support -->
 				<mul stat="regHp" val="0.1" />
 			</effect>
 		</for>
@@ -1529,7 +1528,18 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Petrification" />
+			<effect name="Stun" />
+			<effect name="BlockDamage">
+				<param block="HP"/>
+			</effect>
+			<effect name="BlockDamage">
+				<param block="MP"/>
+			</effect>
+			<effect name="BlockBuff" />
+			<effect name="BlockDebuff" />
+			<effect name="Buff">
+				<mul stat="regHp" val="0" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5173" levels="10" name="Fear">

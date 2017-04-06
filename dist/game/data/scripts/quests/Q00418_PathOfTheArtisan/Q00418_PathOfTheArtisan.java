@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00418_PathOfTheArtisan;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -446,7 +446,7 @@ public final class Q00418_PathOfTheArtisan extends Quest
 							if (getQuestItemsCount(killer, BOOGLE_RATMAN_TOOTH) == 9)
 							{
 								giveItems(killer, BOOGLE_RATMAN_TOOTH, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 								if (getQuestItemsCount(killer, BOOGLE_RATMAN_LEADERS_TOOTH) >= 2)
 								{
 									qs.setCond(2);
@@ -455,7 +455,7 @@ public final class Q00418_PathOfTheArtisan extends Quest
 							else
 							{
 								giveItems(killer, BOOGLE_RATMAN_TOOTH, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -470,7 +470,7 @@ public final class Q00418_PathOfTheArtisan extends Quest
 							if (getQuestItemsCount(killer, BOOGLE_RATMAN_LEADERS_TOOTH) == 1)
 							{
 								giveItems(killer, BOOGLE_RATMAN_LEADERS_TOOTH, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 								if (getQuestItemsCount(killer, BOOGLE_RATMAN_TOOTH) >= 10)
 								{
 									qs.setCond(2);
@@ -480,7 +480,7 @@ public final class Q00418_PathOfTheArtisan extends Quest
 						else
 						{
 							giveItems(killer, BOOGLE_RATMAN_LEADERS_TOOTH, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;

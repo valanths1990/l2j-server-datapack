@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00228_TestOfMagus;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -117,7 +117,7 @@ public final class Q00228_TestOfMagus extends Quest
 				if (qs.isCreated())
 				{
 					qs.startQuest();
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					giveItems(player, RUKALS_LETTER, 1);
 					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
 					{
@@ -202,11 +202,11 @@ public final class Q00228_TestOfMagus extends Quest
 						giveItems(killer, HARPYS_FEATHER, 1);
 						if (getQuestItemsCount(killer, HARPYS_FEATHER) >= 20)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -222,11 +222,11 @@ public final class Q00228_TestOfMagus extends Quest
 						giveItems(killer, DAZZLING_DROP, 1);
 						if (getQuestItemsCount(killer, DAZZLING_DROP) >= 20)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -240,11 +240,11 @@ public final class Q00228_TestOfMagus extends Quest
 							giveItems(killer, WYRMS_WINGBONE, 1);
 							if (getQuestItemsCount(killer, WYRMS_WINGBONE) >= 10)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -259,11 +259,11 @@ public final class Q00228_TestOfMagus extends Quest
 							giveItems(killer, WINDSUS_MANE, 1);
 							if (getQuestItemsCount(killer, WINDSUS_MANE) >= 10)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -276,11 +276,11 @@ public final class Q00228_TestOfMagus extends Quest
 						giveItems(killer, ENCHANTED_MONSTER_EYE_SHELL, 1);
 						if (getQuestItemsCount(killer, ENCHANTED_MONSTER_EYE_SHELL) >= 10)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -292,11 +292,11 @@ public final class Q00228_TestOfMagus extends Quest
 						giveItems(killer, ENCHANTED_GOLEM_POWDER, 1);
 						if (getQuestItemsCount(killer, ENCHANTED_GOLEM_POWDER) >= 10)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -308,11 +308,11 @@ public final class Q00228_TestOfMagus extends Quest
 						giveItems(killer, ENCHANTED_IRON_GOLEM_SCRAP, 1);
 						if (getQuestItemsCount(killer, ENCHANTED_IRON_GOLEM_SCRAP) >= 10)
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						else
 						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
@@ -323,7 +323,7 @@ public final class Q00228_TestOfMagus extends Quest
 					{
 						giveItems(killer, GOLDEN_SEED_1ST, 1);
 						npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.I_AM_A_TREE_OF_NOTHING_A_TREE_THAT_KNOWS_WHERE_TO_RETURN));
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						if (hasQuestItems(killer, GOLDEN_SEED_2ND, GOLDEN_SEED_3RD))
 						{
 							qs.setCond(4);
@@ -337,7 +337,7 @@ public final class Q00228_TestOfMagus extends Quest
 					{
 						giveItems(killer, GOLDEN_SEED_2ND, 1);
 						npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.I_AM_A_CREATURE_THAT_SHOWS_THE_TRUTH_OF_THE_PLACE_DEEP_IN_MY_HEART));
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						if (hasQuestItems(killer, GOLDEN_SEED_1ST, GOLDEN_SEED_3RD))
 						{
 							qs.setCond(4);
@@ -351,7 +351,7 @@ public final class Q00228_TestOfMagus extends Quest
 					{
 						giveItems(killer, GOLDEN_SEED_3RD, 1);
 						npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.I_AM_A_MIRROR_OF_DARKNESS_A_VIRTUAL_IMAGE_OF_DARKNESS));
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						if (hasQuestItems(killer, GOLDEN_SEED_1ST, GOLDEN_SEED_2ND))
 						{
 							qs.setCond(4);
@@ -368,11 +368,11 @@ public final class Q00228_TestOfMagus extends Quest
 							giveItems(killer, FLAME_CRYSTAL, 1);
 							if (getQuestItemsCount(killer, FLAME_CRYSTAL) >= 5)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}

@@ -2,7 +2,7 @@
 <instance name="Nornil's Garden" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
 	<activityTime val="15" />
 	<allowSummon val="false" />
-	<spawnPoint spawnX="-119538" spawnY="87177" spawnZ="-12592" />
+	<exitPoint x="-119538" y="87177" z="-12592" />
 	<spawnlist>
 		<group name="general">
 			<!-- Rodenpicula -->

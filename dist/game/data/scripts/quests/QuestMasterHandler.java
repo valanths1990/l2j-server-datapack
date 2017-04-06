@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -225,6 +225,7 @@ import quests.Q00230_TestOfTheSummoner.Q00230_TestOfTheSummoner;
 import quests.Q00231_TestOfTheMaestro.Q00231_TestOfTheMaestro;
 import quests.Q00232_TestOfTheLord.Q00232_TestOfTheLord;
 import quests.Q00233_TestOfTheWarSpirit.Q00233_TestOfTheWarSpirit;
+import quests.Q00234_FatesWhisper.Q00234_FatesWhisper;
 import quests.Q00235_MimirsElixir.Q00235_MimirsElixir;
 import quests.Q00236_SeedsOfChaos.Q00236_SeedsOfChaos;
 import quests.Q00237_WindsOfChange.Q00237_WindsOfChange;
@@ -304,10 +305,13 @@ import quests.Q00329_CuriosityOfADwarf.Q00329_CuriosityOfADwarf;
 import quests.Q00330_AdeptOfTaste.Q00330_AdeptOfTaste;
 import quests.Q00331_ArrowOfVengeance.Q00331_ArrowOfVengeance;
 import quests.Q00333_HuntOfTheBlackLion.Q00333_HuntOfTheBlackLion;
+import quests.Q00334_TheWishingPotion.Q00334_TheWishingPotion;
+import quests.Q00336_CoinsOfMagic.Q00336_CoinsOfMagic;
 import quests.Q00337_AudienceWithTheLandDragon.Q00337_AudienceWithTheLandDragon;
 import quests.Q00338_AlligatorHunter.Q00338_AlligatorHunter;
 import quests.Q00340_SubjugationOfLizardmen.Q00340_SubjugationOfLizardmen;
 import quests.Q00341_HuntingForWildBeasts.Q00341_HuntingForWildBeasts;
+import quests.Q00343_UnderTheShadowOfTheIvoryTower.Q00343_UnderTheShadowOfTheIvoryTower;
 import quests.Q00344_1000YearsTheEndOfLamentation.Q00344_1000YearsTheEndOfLamentation;
 import quests.Q00345_MethodToRaiseTheDead.Q00345_MethodToRaiseTheDead;
 import quests.Q00347_GoGetTheCalculator.Q00347_GoGetTheCalculator;
@@ -341,7 +345,9 @@ import quests.Q00380_BringOutTheFlavorOfIngredients.Q00380_BringOutTheFlavorOfIn
 import quests.Q00381_LetsBecomeARoyalMember.Q00381_LetsBecomeARoyalMember;
 import quests.Q00382_KailsMagicCoin.Q00382_KailsMagicCoin;
 import quests.Q00383_TreasureHunt.Q00383_TreasureHunt;
+import quests.Q00384_WarehouseKeepersPastime.Q00384_WarehouseKeepersPastime;
 import quests.Q00385_YokeOfThePast.Q00385_YokeOfThePast;
+import quests.Q00386_StolenDignity.Q00386_StolenDignity;
 import quests.Q00401_PathOfTheWarrior.Q00401_PathOfTheWarrior;
 import quests.Q00402_PathOfTheHumanKnight.Q00402_PathOfTheHumanKnight;
 import quests.Q00403_PathOfTheRogue.Q00403_PathOfTheRogue;
@@ -360,6 +366,7 @@ import quests.Q00415_PathOfTheOrcMonk.Q00415_PathOfTheOrcMonk;
 import quests.Q00416_PathOfTheOrcShaman.Q00416_PathOfTheOrcShaman;
 import quests.Q00417_PathOfTheScavenger.Q00417_PathOfTheScavenger;
 import quests.Q00418_PathOfTheArtisan.Q00418_PathOfTheArtisan;
+import quests.Q00419_GetAPet.Q00419_GetAPet;
 import quests.Q00420_LittleWing.Q00420_LittleWing;
 import quests.Q00421_LittleWingsBigAdventure.Q00421_LittleWingsBigAdventure;
 import quests.Q00422_RepentYourSins.Q00422_RepentYourSins;
@@ -408,6 +415,7 @@ import quests.Q00616_MagicalPowerOfFirePart2.Q00616_MagicalPowerOfFirePart2;
 import quests.Q00617_GatherTheFlames.Q00617_GatherTheFlames;
 import quests.Q00618_IntoTheFlame.Q00618_IntoTheFlame;
 import quests.Q00619_RelicsOfTheOldEmpire.Q00619_RelicsOfTheOldEmpire;
+import quests.Q00620_FourGoblets.Q00620_FourGoblets;
 import quests.Q00621_EggDelivery.Q00621_EggDelivery;
 import quests.Q00622_SpecialtyLiquorDelivery.Q00622_SpecialtyLiquorDelivery;
 import quests.Q00623_TheFinestFood.Q00623_TheFinestFood;
@@ -445,6 +453,7 @@ import quests.Q00659_IdRatherBeCollectingFairyBreath.Q00659_IdRatherBeCollecting
 import quests.Q00660_AidingTheFloranVillage.Q00660_AidingTheFloranVillage;
 import quests.Q00661_MakingTheHarvestGroundsSafe.Q00661_MakingTheHarvestGroundsSafe;
 import quests.Q00662_AGameOfCards.Q00662_AGameOfCards;
+import quests.Q00663_SeductiveWhispers.Q00663_SeductiveWhispers;
 import quests.Q00688_DefeatTheElrokianRaiders.Q00688_DefeatTheElrokianRaiders;
 import quests.Q00690_JudesRequest.Q00690_JudesRequest;
 import quests.Q00691_MatrasSuspiciousRequest.Q00691_MatrasSuspiciousRequest;
@@ -707,6 +716,7 @@ public class QuestMasterHandler
 		Q00231_TestOfTheMaestro.class,
 		Q00232_TestOfTheLord.class,
 		Q00233_TestOfTheWarSpirit.class,
+		Q00234_FatesWhisper.class,
 		Q00235_MimirsElixir.class,
 		Q00236_SeedsOfChaos.class,
 		Q00237_WindsOfChange.class,
@@ -786,10 +796,13 @@ public class QuestMasterHandler
 		Q00330_AdeptOfTaste.class,
 		Q00331_ArrowOfVengeance.class,
 		Q00333_HuntOfTheBlackLion.class,
+		Q00334_TheWishingPotion.class,
+		Q00336_CoinsOfMagic.class,
 		Q00337_AudienceWithTheLandDragon.class,
 		Q00338_AlligatorHunter.class,
 		Q00340_SubjugationOfLizardmen.class,
 		Q00341_HuntingForWildBeasts.class,
+		Q00343_UnderTheShadowOfTheIvoryTower.class,
 		Q00344_1000YearsTheEndOfLamentation.class,
 		Q00345_MethodToRaiseTheDead.class,
 		Q00347_GoGetTheCalculator.class,
@@ -823,7 +836,9 @@ public class QuestMasterHandler
 		Q00381_LetsBecomeARoyalMember.class,
 		Q00382_KailsMagicCoin.class,
 		Q00383_TreasureHunt.class,
+		Q00384_WarehouseKeepersPastime.class,
 		Q00385_YokeOfThePast.class,
+		Q00386_StolenDignity.class,
 		Q00401_PathOfTheWarrior.class,
 		Q00402_PathOfTheHumanKnight.class,
 		Q00403_PathOfTheRogue.class,
@@ -842,6 +857,7 @@ public class QuestMasterHandler
 		Q00416_PathOfTheOrcShaman.class,
 		Q00417_PathOfTheScavenger.class,
 		Q00418_PathOfTheArtisan.class,
+		Q00419_GetAPet.class,
 		Q00420_LittleWing.class,
 		Q00421_LittleWingsBigAdventure.class,
 		Q00422_RepentYourSins.class,
@@ -890,6 +906,7 @@ public class QuestMasterHandler
 		Q00617_GatherTheFlames.class,
 		Q00618_IntoTheFlame.class,
 		Q00619_RelicsOfTheOldEmpire.class,
+		Q00620_FourGoblets.class,
 		Q00621_EggDelivery.class,
 		Q00622_SpecialtyLiquorDelivery.class,
 		Q00623_TheFinestFood.class,
@@ -927,6 +944,7 @@ public class QuestMasterHandler
 		Q00660_AidingTheFloranVillage.class,
 		Q00661_MakingTheHarvestGroundsSafe.class,
 		Q00662_AGameOfCards.class,
+		Q00663_SeductiveWhispers.class,
 		Q00688_DefeatTheElrokianRaiders.class,
 		Q00690_JudesRequest.class,
 		Q00691_MatrasSuspiciousRequest.class,

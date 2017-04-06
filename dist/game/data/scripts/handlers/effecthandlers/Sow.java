@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -19,7 +19,7 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.L2Seed;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -75,7 +75,7 @@ public final class Sow extends AbstractEffect
 		final SystemMessage sm;
 		if (calcSuccess(player, target, seed))
 		{
-			player.sendPacket(QuestSound.ITEMSOUND_QUEST_ITEMGET.getPacket());
+			player.sendPacket(Sound.ITEMSOUND_QUEST_ITEMGET.getPacket());
 			target.setSeeded(player.getActingPlayer());
 			sm = SystemMessage.getSystemMessage(SystemMessageId.THE_SEED_WAS_SUCCESSFULLY_SOWN);
 		}

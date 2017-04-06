@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -54,6 +54,7 @@ public final class ServitorShare extends AbstractEffect
 		if (info.getEffected().getActingPlayer().getSummon() != null)
 		{
 			info.getEffected().getActingPlayer().getSummon().broadcastInfo();
+			info.getEffected().getActingPlayer().getSummon().getStatus().startHpMpRegeneration();
 		}
 	}
 	
@@ -75,6 +76,14 @@ public final class ServitorShare extends AbstractEffect
 		info.getEffected().getActingPlayer().setServitorShare(null);
 		if (info.getEffected().getSummon() != null)
 		{
+			if (info.getEffected().getSummon().getCurrentHp() > info.getEffected().getSummon().getMaxHp())
+			{
+				info.getEffected().getSummon().setCurrentHp(info.getEffected().getSummon().getMaxHp());
+			}
+			if (info.getEffected().getSummon().getCurrentMp() > info.getEffected().getSummon().getMaxMp())
+			{
+				info.getEffected().getSummon().setCurrentMp(info.getEffected().getSummon().getMaxMp());
+			}
 			info.getEffected().getSummon().broadcastInfo();
 		}
 	}

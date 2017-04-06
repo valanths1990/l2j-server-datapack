@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00171_ActsOfEvil;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -172,14 +172,14 @@ public final class Q00171_ActsOfEvil extends Quest
 						if (!hasQuestItems(killer, RANGERS_REPORT1))
 						{
 							giveItems(killer, RANGERS_REPORT1, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 						else if (hasQuestItems(killer, RANGERS_REPORT1) && !hasQuestItems(killer, RANGERS_REPORT2))
 						{
 							if (getRandom(100) <= 19)
 							{
 								giveItems(killer, RANGERS_REPORT2, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 						else if (hasQuestItems(killer, RANGERS_REPORT1, RANGERS_REPORT2) && !hasQuestItems(killer, RANGERS_REPORT3))
@@ -187,7 +187,7 @@ public final class Q00171_ActsOfEvil extends Quest
 							if (getRandom(100) <= 19)
 							{
 								giveItems(killer, RANGERS_REPORT3, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 						else if (hasQuestItems(killer, RANGERS_REPORT1, RANGERS_REPORT2, RANGERS_REPORT3) && !hasQuestItems(killer, RANGERS_REPORT4))
@@ -195,7 +195,7 @@ public final class Q00171_ActsOfEvil extends Quest
 							if (getRandom(100) <= 19)
 							{
 								giveItems(killer, RANGERS_REPORT4, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -210,11 +210,11 @@ public final class Q00171_ActsOfEvil extends Quest
 							giveItems(killer, OL_MAHUM_CAPTAINS_HEAD, 1);
 							if (getQuestItemsCount(killer, OL_MAHUM_CAPTAINS_HEAD) == 30)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -229,12 +229,12 @@ public final class Q00171_ActsOfEvil extends Quest
 							if (!hasQuestItems(killer, WEAPONS_TRADE_CONTRACT))
 							{
 								giveItems(killer, WEAPONS_TRADE_CONTRACT, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 							if (!hasQuestItems(killer, ATTACK_DIRECTIVES))
 							{
 								giveItems(killer, ATTACK_DIRECTIVES, 1);
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -249,11 +249,11 @@ public final class Q00171_ActsOfEvil extends Quest
 							giveItems(killer, BLADE_MOLD, 1);
 							if (getQuestItemsCount(killer, BLADE_MOLD) == 20)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 						if (getQuestItemsCount(killer, BLADE_MOLD) == 5)
@@ -279,11 +279,11 @@ public final class Q00171_ActsOfEvil extends Quest
 							giveItems(killer, BLADE_MOLD, 1);
 							if (getQuestItemsCount(killer, BLADE_MOLD) == 20)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 						if (getQuestItemsCount(killer, BLADE_MOLD) == 5)
@@ -309,11 +309,11 @@ public final class Q00171_ActsOfEvil extends Quest
 							giveItems(killer, BLADE_MOLD, 1);
 							if (getQuestItemsCount(killer, BLADE_MOLD) == 20)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 						if (getQuestItemsCount(killer, BLADE_MOLD) == 5)
@@ -339,11 +339,11 @@ public final class Q00171_ActsOfEvil extends Quest
 							giveItems(killer, BLADE_MOLD, 1);
 							if (getQuestItemsCount(killer, BLADE_MOLD) == 20)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 						if (getQuestItemsCount(killer, BLADE_MOLD) == 5)

@@ -886,7 +886,18 @@
 			<player insideZoneId="2239" />
 		</cond>
 		<for>
-			<effect name="Petrification" />
+			<effect name="Stun" />
+			<effect name="BlockDamage">
+				<param block="HP"/>
+			</effect>
+			<effect name="BlockDamage">
+				<param block="MP"/>
+			</effect>
+			<effect name="BlockBuff" />
+			<effect name="BlockDebuff" />
+			<effect name="Buff">
+				<mul stat="regHp" val="0" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="2240" levels="1" name="Hot Spring Nectar">
@@ -1621,7 +1632,7 @@
 	<skill id="2274" levels="8" name="Fisherman's Potion">
 		<table name="#active_skill_id_lvl"> 1315,4 1315,7 1315,10 1315,13 1315,16 1315,19 1315,22 1315,25 </table>
 		<table name="#icons"> icon.etc_oblivion_green_i00 icon.etc_oblivion_jade_i00 icon.etc_oblivion_blue_i00 icon.etc_oblivion_yellow_i00 icon.etc_oblivion_orange_i00 icon.etc_oblivion_violet_i00 icon.etc_oblivion_red_i00 icon.etc_oblivion_white_i00 </table>
-		<table name="#power"> 2 5 8 11 14 17 20 23 26 </table>
+		<table name="#power"> 2 5 8 11 14 17 20 23 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="FISHING_MASTERY_DOWN" />

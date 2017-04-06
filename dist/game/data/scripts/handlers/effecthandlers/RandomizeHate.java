@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -73,7 +73,7 @@ public final class RandomizeHate extends AbstractEffect
 		
 		// Choosing randomly a new target
 		final L2Character target = aggroList.get(Rnd.get(aggroList.size()));
-		final int hate = effectedMob.getHating(info.getEffector());
+		final long hate = effectedMob.getHating(info.getEffector());
 		effectedMob.stopHating(info.getEffector());
 		effectedMob.addDamageHate(target, 0, hate);
 	}

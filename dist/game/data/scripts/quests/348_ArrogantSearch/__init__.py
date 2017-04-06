@@ -3,6 +3,7 @@
 # in this version, the quest only works as total solo (no option to work with friends) and
 # only for the purpose of gaining access to Baium's floor (not for making money via rewards).
 import sys
+from com.l2jserver.gameserver.enums.audio import Sound
 from com.l2jserver.gameserver.model.quest import State
 from com.l2jserver.gameserver.model.quest import QuestState
 from com.l2jserver.gameserver.model.quest import Quest as JQuest
@@ -186,7 +187,7 @@ class Quest (JQuest) :
         htmltext = "30864-10c.htm" # disappointment
         st.takeItems(WHITE_FABRIC_1,-1) # just to be sure
         st.takeItems(BLOODED_FABRIC,-1) # just to be sure
-        st.playSound("ItemSound.quest_finish")
+        st.playSound(Sound.ITEMSOUND_QUEST_FINISH)
         st.exitQuest(1)
     return htmltext
 
@@ -271,7 +272,7 @@ class Quest (JQuest) :
             htmltext = "30864-09b.htm" # Where are other pieces?
             st.giveItems(ADENA,5000)
             st.takeItems(BLOODED_FABRIC,-1)
-            st.playSound("ItemSound.quest_finish")
+            st.playSound(Sound.ITEMSOUND_QUEST_FINISH)
             st.exitQuest(1)
         elif cond == 26 :
             htmltext = "30864-09.htm" # Ah, 10 fabrics.
@@ -291,7 +292,7 @@ class Quest (JQuest) :
             htmltext = "30864-09b.htm" # Where are other pieces?
             st.giveItems(ADENA,5000)
             st.takeItems(BLOODED_FABRIC,-1)
-            st.playSound("ItemSound.quest_finish")
+            st.playSound(Sound.ITEMSOUND_QUEST_FINISH)
             st.exitQuest(1)
         elif cond == 29 :
             htmltext = "30864-09.htm" # Ah, 10 fabrics.
@@ -356,20 +357,20 @@ class Quest (JQuest) :
          chance =  ATTACK_DROPS_24[npcId][3]
          if st.getInt("cond") == cond and self.getRandom(1000) < ATTACK_DROPS_24[npcId][3] and st.getQuestItemsCount(ATTACK_DROPS_24[npcId][4]) > 0 :  # Attack drops are low chance
              st.giveItems(ATTACK_DROPS_24[npcId][1],ATTACK_DROPS_24[npcId][2])
-             st.playSound("ItemSound.quest_itemget")
+             st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
              st.takeItems(ATTACK_DROPS_24[npcId][4],1)
              if cond == 24:
-                 st.playSound("ItemSound.quest_finish")
+                 st.playSound(Sound.ITEMSOUND_QUEST_FINISH)
                  st.exitQuest(1)
      elif npcId in ATTACK_DROPS_25.keys() :
          cond = ATTACK_DROPS_25[npcId][0]
          chance =  ATTACK_DROPS_25[npcId][3]
          if st.getInt("cond") == cond and self.getRandom(1000) < ATTACK_DROPS_25[npcId][3] and st.getQuestItemsCount(ATTACK_DROPS_25[npcId][4]) > 0 :  # Attack drops are low chance
              st.giveItems(ATTACK_DROPS_25[npcId][1],ATTACK_DROPS_25[npcId][2])
-             st.playSound("ItemSound.quest_itemget")
+             st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
              st.takeItems(ATTACK_DROPS_25[npcId][4],1)
              if cond == 24:
-                 st.playSound("ItemSound.quest_finish")
+                 st.playSound(Sound.ITEMSOUND_QUEST_FINISH)
                  st.exitQuest(1)
      return
 
@@ -383,19 +384,19 @@ class Quest (JQuest) :
          cond = DROPS[npcId][0]
          if st.getInt("cond") == cond and st.getQuestItemsCount(DROPS[npcId][1]) < DROPS[npcId][2] and self.getRandom(100) < DROPS[npcId][3] and (DROPS[npcId][4] == 0 or st.getQuestItemsCount(DROPS[npcId][4])>0) :
              st.giveItems(DROPS[npcId][1],1)
-             st.playSound("ItemSound.quest_itemget")
+             st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
              if DROPS[npcId][4] != 0:
                  st.takeItems(DROPS[npcId][4],1)
              # in accordance to http://www.l2jdp.com/forum//viewtopic.php?t=2974
              # quest ends when you get the blooded fabric
              if cond == 24:
-                 st.playSound("ItemSound.quest_finish")
+                 st.playSound(Sound.ITEMSOUND_QUEST_FINISH)
                  st.exitQuest(1)
      if npcId in DROPS_29.keys() :
          cond = DROPS_29[npcId][0]
          if st.getInt("cond") == cond and st.getQuestItemsCount(DROPS_29[npcId][1]) < DROPS[npcId][2] and self.getRandom(100) < DROPS[npcId][3] and (DROPS[npcId][4] == 0 or st.getQuestItemsCount(DROPS[npcId][4])>0) :
              st.giveItems(DROPS_29[npcId][1],1)
-             st.playSound("ItemSound.quest_itemget")
+             st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
              if DROPS_29[npcId][4] != 0:
                  st.takeItems(DROPS_29[npcId][4],1)
      if npcId == ANGEL_KILLER :

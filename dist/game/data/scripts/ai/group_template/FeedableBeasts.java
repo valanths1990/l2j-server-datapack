@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -22,10 +22,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
-import quests.Q00655_AGrandPlanForTamingWildBeasts.Q00655_AGrandPlanForTamingWildBeasts;
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
@@ -36,6 +32,10 @@ import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
 import com.l2jserver.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
+import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
+import quests.Q00655_AGrandPlanForTamingWildBeasts.Q00655_AGrandPlanForTamingWildBeasts;
 
 /**
  * Growth-capable mobs: Polymorphing upon successful feeding.
@@ -423,12 +423,9 @@ public final class FeedableBeasts extends AbstractNpcAI
 		// player might have and initialize the Tamed Beast.
 		if (Util.contains(TAMED_BEASTS, nextNpcId))
 		{
-			if ((player.getTrainedBeasts() != null) && !player.getTrainedBeasts().isEmpty())
+			for (L2TamedBeastInstance oldTrained : player.getTamedBeasts())
 			{
-				for (L2TamedBeastInstance oldTrained : player.getTrainedBeasts())
-				{
-					oldTrained.deleteMe();
-				}
+				oldTrained.deleteMe();
 			}
 			
 			final L2TamedBeastInstance nextNpc = new L2TamedBeastInstance(nextNpcId, player, food - FOODSKILLDIFF, npc.getX(), npc.getY(), npc.getZ());

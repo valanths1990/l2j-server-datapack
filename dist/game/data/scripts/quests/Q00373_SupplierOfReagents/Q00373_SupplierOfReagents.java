@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -22,7 +22,7 @@ import java.util.HashMap;
 
 import quests.Q00235_MimirsElixir.Q00235_MimirsElixir;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
@@ -230,7 +230,7 @@ public final class Q00373_SupplierOfReagents extends Quest
 					// If the player has the chosen item (ingredient or catalyst), we save it (for the catalyst or the reward)
 					qs.setMemoState(qs.getMemoState() + memoState);
 					htmltext = event;
-					playSound(player, QuestSound.SKILLSOUND_LIQUID_MIX);
+					playSound(player, Sound.SKILLSOUND_LIQUID_MIX);
 				}
 				else
 				{
@@ -303,7 +303,7 @@ public final class Q00373_SupplierOfReagents extends Quest
 					takeItem(player, item1);
 					takeItem(player, item2);
 					htmltext = (reward == null) ? "31149-44.html" : "31149-45.html";
-					playSound(player, QuestSound.SKILLSOUND_LIQUID_FAIL);
+					playSound(player, Sound.SKILLSOUND_LIQUID_FAIL);
 				}
 				else if ((memoState != 1324) || ((memoState == 1324) && (q235 != null) && q235.isStarted() && !hasQuestItems(player, reward.getItem())))
 				{
@@ -315,12 +315,12 @@ public final class Q00373_SupplierOfReagents extends Quest
 						qs.setMemoState(0);
 						qs.setMemoStateEx(1, 0);
 						htmltext = reward.getHtml();
-						playSound(player, QuestSound.SKILLSOUND_LIQUID_SUCCESS);
+						playSound(player, Sound.SKILLSOUND_LIQUID_SUCCESS);
 					}
 					else
 					{
 						htmltext = "31149-44.html";
-						playSound(player, QuestSound.SKILLSOUND_LIQUID_FAIL);
+						playSound(player, Sound.SKILLSOUND_LIQUID_FAIL);
 					}
 				}
 				else

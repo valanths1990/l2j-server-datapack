@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,7 +21,7 @@ package quests.Q00022_TragedyInVonHellmannForest;
 import quests.Q00021_HiddenTruth.Q00021_HiddenTruth;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -198,7 +198,7 @@ public final class Q00022_TragedyInVonHellmannForest extends Quest
 			{
 				if (npc.getScriptValue() == player.getObjectId())
 				{
-					playSound(player, QuestSound.AMBSOUND_HORROR_03);
+					playSound(player, Sound.AMBSOUND_HORROR_03);
 					htmltext = event;
 				}
 				break;
@@ -272,7 +272,7 @@ public final class Q00022_TragedyInVonHellmannForest extends Quest
 					qs.startQuestTimer("activateSoulOfWell", 90000, _soulWellNpc);
 					qs.startQuestTimer("despawnSoulOfWell", 120000, _soulWellNpc);
 					_soulWellNpc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
-					playSound(player, QuestSound.SKILLSOUND_ANTARAS_FEAR);
+					playSound(player, Sound.SKILLSOUND_ANTARAS_FEAR);
 					htmltext = event;
 				}
 				else
@@ -457,7 +457,7 @@ public final class Q00022_TragedyInVonHellmannForest extends Quest
 			}
 			case GHOST_OF_PRIEST:
 			{
-				playSound(talker, QuestSound.AMBSOUND_HORROR_15);
+				playSound(talker, Sound.AMBSOUND_HORROR_15);
 				if (npc.getScriptValue() == talker.getObjectId())
 				{
 					htmltext = "31528-01.html";
@@ -546,7 +546,7 @@ public final class Q00022_TragedyInVonHellmannForest extends Quest
 						if (hasQuestItems(talker, JEWEL_OF_ADVENTURER_1))
 						{
 							htmltext = "31527-01.html";
-							playSound(talker, QuestSound.AMBSOUND_HORROR_01);
+							playSound(talker, Sound.AMBSOUND_HORROR_01);
 						}
 						break;
 					}

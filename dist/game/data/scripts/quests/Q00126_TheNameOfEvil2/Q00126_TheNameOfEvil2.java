@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,7 +20,7 @@ package quests.Q00126_TheNameOfEvil2;
 
 import quests.Q00125_TheNameOfEvil1.Q00125_TheNameOfEvil1;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -90,7 +90,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 				break;
 			case "32119-4a.html":
 			case "32119-5b.html":
-				st.playSound(QuestSound.ETCSOUND_ELROKI_SONG_1ST);
+				st.playSound(Sound.ETCSOUND_ELROKI_SONG_1ST);
 				break;
 			case "32119-5.html":
 				if (st.isCond(4))
@@ -112,7 +112,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 				break;
 			case "32120-4a.html":
 			case "32120-5b.html":
-				st.playSound(QuestSound.ETCSOUND_ELROKI_SONG_2ND);
+				st.playSound(Sound.ETCSOUND_ELROKI_SONG_2ND);
 				break;
 			case "32120-5.html":
 				if (st.isCond(7))
@@ -134,7 +134,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 				break;
 			case "32121-4a.html":
 			case "32121-5b.html":
-				st.playSound(QuestSound.ETCSOUND_ELROKI_SONG_3RD);
+				st.playSound(Sound.ETCSOUND_ELROKI_SONG_3RD);
 				break;
 			case "32121-5.html":
 				if (st.isCond(10))
@@ -283,7 +283,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 				break;
 			case "32122-7.html":
 				st.giveItems(BONE_POWDER, 1);
-				st.playSound(QuestSound.ETCSOUND_ELROKI_SONG_FULL);
+				st.playSound(Sound.ETCSOUND_ELROKI_SONG_FULL);
 				npc.broadcastPacket(new MagicSkillUse(npc, player, 5089, 1, 1000, 0));
 				break;
 			case "32122-8.html":

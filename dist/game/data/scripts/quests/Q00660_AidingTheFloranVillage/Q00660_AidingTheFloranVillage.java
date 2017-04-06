@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,7 +21,7 @@ package quests.Q00660_AidingTheFloranVillage;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemChanceHolder;
@@ -121,7 +121,7 @@ public final class Q00660_AidingTheFloranVillage extends Quest
 					{
 						qs.setState(State.STARTED);
 						qs.setCond(2);
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ACCEPT);
+						playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 					}
 					htmltext = event;
 				}
@@ -286,7 +286,7 @@ public final class Q00660_AidingTheFloranVillage extends Quest
 				{
 					giveItems(player, DELU_LIZARDMANS_SCALE, 1);
 				}
-				playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 			}
 		}
 		return super.onKill(npc, player, isSummon);

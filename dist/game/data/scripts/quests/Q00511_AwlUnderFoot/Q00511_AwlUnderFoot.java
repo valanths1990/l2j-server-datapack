@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.L2Party;
 import com.l2jserver.gameserver.model.Location;
@@ -290,7 +290,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 		L2Party party = player.getParty();
 		int instanceId = InstanceManager.getInstance().createDynamicInstance(template);
 		Instance ins = InstanceManager.getInstance().getInstance(instanceId);
-		ins.setSpawnLoc(new Location(player));
+		ins.setExitLoc(new Location(player));
 		world = new FAUWorld();
 		world.setInstanceId(instanceId);
 		world.setTemplateId(dungeon.getInstanceId());
@@ -464,7 +464,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 		if (st.isCond(1))
 		{
 			st.giveItems(DL_MARK, 140);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 	}
 	

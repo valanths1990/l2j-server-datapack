@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,7 +21,8 @@ package quests.Q00281_HeadForTheHills;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
+import com.l2jserver.gameserver.enums.audio.Voice;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
@@ -162,7 +163,7 @@ public final class Q00281_HeadForTheHills extends Quest
 		if ((st != null) && (getRandom(1000) <= MONSTERS.get(npc.getId())))
 		{
 			st.giveItems(CLAWS, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
@@ -205,12 +206,12 @@ public final class Q00281_HeadForTheHills extends Quest
 			if (player.isMageClass())
 			{
 				giveItems(player, SPIRITSHOTS_NO_GRADE_FOR_ROOKIES);
-				playSound(player, "tutorial_voice_27");
+				playSound(player, Voice.TUTORIAL_VOICE_027_1000);
 			}
 			else
 			{
 				giveItems(player, SOULSHOTS_NO_GRADE_FOR_ROOKIES);
-				playSound(player, "tutorial_voice_26");
+				playSound(player, Voice.TUTORIAL_VOICE_026_1000);
 			}
 			vars.set("NEWBIE_SHOTS", true);
 		}

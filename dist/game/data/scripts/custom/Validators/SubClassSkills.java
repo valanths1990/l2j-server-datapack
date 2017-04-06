@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -139,7 +139,7 @@ public final class SubClassSkills extends Quest
 			cItems[i][1] = (int) Math.min(item.getCount(), Integer.MAX_VALUE);
 		}
 		
-		QuestState st = player.getQuestState("SubClassSkills");
+		QuestState st = getQuestState(player, false);
 		if (st == null)
 		{
 			st = newQuestState(player);

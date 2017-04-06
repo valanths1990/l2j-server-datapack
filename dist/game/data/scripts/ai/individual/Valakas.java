@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,13 +21,12 @@ package ai.individual;
 import java.util.ArrayList;
 import java.util.List;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.enums.MountType;
+import com.l2jserver.gameserver.enums.audio.Music;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.StatsSet;
@@ -40,10 +39,11 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.type.L2BossZone;
-import com.l2jserver.gameserver.network.serverpackets.PlaySound;
 import com.l2jserver.gameserver.network.serverpackets.SocialAction;
 import com.l2jserver.gameserver.network.serverpackets.SpecialCamera;
 import com.l2jserver.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Valakas' AI.
@@ -202,7 +202,7 @@ public final class Valakas extends AbstractNpcAI
 				// Sound + socialAction.
 				for (L2PcInstance plyr : ZONE.getPlayersInside())
 				{
-					plyr.sendPacket(new PlaySound(1, "B03_A", 0, 0, 0, 0, 0));
+					plyr.sendPacket(Music.BS03_A_10000.getPacket());
 					plyr.sendPacket(new SocialAction(npc.getObjectId(), 3));
 				}
 				
@@ -427,7 +427,7 @@ public final class Valakas extends AbstractNpcAI
 		cancelQuestTimer("skill_task", npc, null);
 		
 		// Launch death animation.
-		ZONE.broadcastPacket(new PlaySound(1, "B03_D", 0, 0, 0, 0, 0));
+		ZONE.broadcastPacket(Music.B03_D_10000.getPacket());
 		ZONE.broadcastPacket(new SpecialCamera(npc, 1200, 20, -10, 0, 10000, 13000, 0, 0, 0, 0, 0));
 		
 		startQuestTimer("die_1", 300, npc, null); // 300

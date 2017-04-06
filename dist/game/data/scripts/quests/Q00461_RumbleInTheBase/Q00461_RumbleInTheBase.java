@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -23,7 +23,7 @@ import java.util.Map;
 
 import quests.Q00252_ItSmellsDelicious.Q00252_ItSmellsDelicious;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -102,7 +102,7 @@ public class Q00461_RumbleInTheBase extends Quest
 			if ((st != null) && st.isCond(1) && (st.getQuestItemsCount(SHINY_SALMON) < 5))
 			{
 				st.giveItems(SHINY_SALMON, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				if ((st.getQuestItemsCount(SHINY_SALMON) >= 5) && (st.getQuestItemsCount(SHOES_STRING_OF_SEL_MAHUM) >= 10))
 				{
 					st.setCond(2, true);
@@ -121,7 +121,7 @@ public class Q00461_RumbleInTheBase extends Quest
 			if (st.getQuestItemsCount(SHOES_STRING_OF_SEL_MAHUM) < 10)
 			{
 				st.giveItems(SHOES_STRING_OF_SEL_MAHUM, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				if ((st.getQuestItemsCount(SHINY_SALMON) >= 5) && (st.getQuestItemsCount(SHOES_STRING_OF_SEL_MAHUM) >= 10))
 				{
 					st.setCond(2, true);

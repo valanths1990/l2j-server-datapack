@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2015 L2J Server
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
- * This file is part of L2J Server.
+ * This file is part of L2J DataPack.
  * 
- * L2J Server is free software: you can redistribute it and/or modify
+ * L2J DataPack is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * L2J Server is distributed in the hope that it will be useful,
+ * L2J DataPack is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -18,11 +18,11 @@
  */
 package ai.npc.NpcBuffers;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * @author UnAfraid
@@ -33,7 +33,7 @@ public final class NpcBuffers extends AbstractNpcAI
 	
 	private NpcBuffers()
 	{
-		super(NpcBuffers.class.getSimpleName(), "npc");
+		super(NpcBuffers.class.getSimpleName(), "ai/npc");
 		
 		for (int npcId : _npcBuffers.getNpcBufferIds())
 		{

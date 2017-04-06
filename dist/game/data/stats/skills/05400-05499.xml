@@ -970,6 +970,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5465" levels="1" name="Earth Attacks">
+		<!-- High Five Confirmed -->
 		<set name="icon" val="icon.skill4282_new" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />

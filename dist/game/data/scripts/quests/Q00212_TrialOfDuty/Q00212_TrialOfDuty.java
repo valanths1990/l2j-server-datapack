@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -19,7 +19,7 @@
 package quests.Q00212_TrialOfDuty;
 
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -245,12 +245,12 @@ public final class Q00212_TrialOfDuty extends Quest
 					if (!hasQuestItems(killer, ATHEBALDTS_SKULL))
 					{
 						giveItems(killer, ATHEBALDTS_SKULL, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					else if (!hasQuestItems(killer, ATHEBALDTS_RIBS))
 					{
 						giveItems(killer, ATHEBALDTS_RIBS, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					else if (!hasQuestItems(killer, ATHEBALDTS_SHIN))
 					{
@@ -295,7 +295,7 @@ public final class Q00212_TrialOfDuty extends Quest
 					{
 						case 1:
 						{
-							html = "30109-04.html";
+							html = "30109-04.htm";
 							break;
 						}
 						case 14:

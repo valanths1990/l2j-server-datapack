@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -19,6 +19,7 @@
 package quests.Q00175_TheWayOfTheWarrior;
 
 import com.l2jserver.gameserver.enums.Race;
+import com.l2jserver.gameserver.enums.audio.Voice;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
@@ -53,7 +54,7 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 	private static final ItemHolder SOULSHOTS_NO_GRADE_FOR_ROOKIES = new ItemHolder(5789, 7000);
 	private static final ItemHolder[] REWARDS =
 	{
-		new ItemHolder(1060, 100),// Lesser Healing Potion
+		new ItemHolder(1060, 100), // Lesser Healing Potion
 		new ItemHolder(4412, 10), // Echo Crystal - Theme of Battle
 		new ItemHolder(4413, 10), // Echo Crystal - Theme of Love
 		new ItemHolder(4414, 10), // Echo Crystal - Theme of Solitude
@@ -301,7 +302,7 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 		final PlayerVariables vars = player.getVariables();
 		if ((player.getLevel() < 25) && !vars.getBoolean("NEWBIE_SHOTS", false))
 		{
-			playSound(player, "tutorial_voice_26");
+			playSound(player, Voice.TUTORIAL_VOICE_026_1000);
 			giveItems(player, SOULSHOTS_NO_GRADE_FOR_ROOKIES);
 			vars.set("NEWBIE_SHOTS", true);
 		}

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -19,7 +19,7 @@
 package quests.Q00333_HuntOfTheBlackLion;
 
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
@@ -69,8 +69,8 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 	private static final int STAKATO_TALON = 3851;
 	// Rewards
 	private static final int ALACRITY_POTION = 735;
-	private static final int SCROL_OF_ESCAPE = 736;
-	private static final int HELING_POTION = 1061;
+	private static final int SCROLL_OF_ESCAPE = 736;
+	private static final int HEALING_POTION = 1061;
 	private static final int SOULSHOT_D_GRADE = 1463;
 	private static final int SPIRITSHOT_D_GRADE = 2510;
 	private static final int GLUDIO_APPLES = 3444;
@@ -207,7 +207,7 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 					giveItems(player, LIONS_EYE, 1);
 					if (chance < 25)
 					{
-						giveItems(player, HELING_POTION, 20);
+						giveItems(player, HEALING_POTION, 20);
 					}
 					else if (chance < 50)
 					{
@@ -222,7 +222,7 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 					}
 					else if (chance < 75)
 					{
-						giveItems(player, SCROL_OF_ESCAPE, 20);
+						giveItems(player, SCROLL_OF_ESCAPE, 20);
 					}
 					else
 					{
@@ -236,7 +236,7 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 					giveItems(player, LIONS_EYE, 1);
 					if (chance < 25)
 					{
-						giveItems(player, HELING_POTION, 25);
+						giveItems(player, HEALING_POTION, 25);
 					}
 					else if (chance < 50)
 					{
@@ -251,7 +251,7 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 					}
 					else if (chance < 75)
 					{
-						giveItems(player, SCROL_OF_ESCAPE, 20);
+						giveItems(player, SCROLL_OF_ESCAPE, 20);
 					}
 					else
 					{
@@ -265,7 +265,7 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 					takeItems(player, LIONS_EYE, 8);
 					if (chance < 25)
 					{
-						giveItems(player, HELING_POTION, 50);
+						giveItems(player, HEALING_POTION, 50);
 					}
 					else if (chance < 50)
 					{
@@ -280,7 +280,7 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 					}
 					else if (chance < 75)
 					{
-						giveItems(player, SCROL_OF_ESCAPE, 30);
+						giveItems(player, SCROLL_OF_ESCAPE, 30);
 					}
 					else
 					{
@@ -984,7 +984,7 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 					if (hasQuestItems(killer, SOPHYAS_3RD_ORDER))
 					{
 						giveItems(killer, DELU_LIZARDMAN_FANG, 4);
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;
 				}
@@ -993,7 +993,7 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 					if (hasQuestItems(killer, SOPHYAS_4TH_ORDER))
 					{
 						giveItems(killer, STAKATO_TALON, 8);
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;
 				}
@@ -1038,20 +1038,26 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 					{
 						htmltext = "30735-14.html";
 					}
-					else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1) && ((getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON)) < 1) && ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) < 1))
+					else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1)
+						&& ((getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON)) < 1)
+						&& ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) < 1))
 					{
 						htmltext = "30735-15.html";
 					}
-					else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1) && ((getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON)) < 1) && ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1))
+					else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1)
+						&& ((getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON)) < 1)
+						&& ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1))
 					{
 						htmltext = "30735-15a.html";
 					}
-					else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1) && ((getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON)) >= 1) && ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) == 0))
+					else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1)
+						&& ((getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON)) >= 1)
+						&& ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) == 0))
 					{
 						final long itemcount = getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON);
 						if (itemcount < 20)
 						{
-							
+						
 						}
 						else if (itemcount < 50)
 						{
@@ -1077,12 +1083,14 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 						qs.setMemoState(0);
 						htmltext = "30735-22.html";
 					}
-					else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1) && ((getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON)) >= 1) && ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1))
+					else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1)
+						&& ((getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON)) >= 1)
+						&& ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1))
 					{
 						final long itemcount = getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON);
 						if (itemcount < 20)
 						{
-							
+						
 						}
 						else if (itemcount < 50)
 						{
@@ -1130,7 +1138,9 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 				}
 				case BLACKSMITH_RUPIO:
 				{
-					if (((getQuestItemsCount(player, STATUE_OF_SHILEN_HEAD) + getQuestItemsCount(player, STATUE_OF_SHILEN_TORSO) + getQuestItemsCount(player, STATUE_OF_SHILEN_ARM) + getQuestItemsCount(player, STATUE_OF_SHILEN_LEG)) >= 1) || ((getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_1ST_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_2ND_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_3RD_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_4TH_PIECE)) >= 1))
+					if (((getQuestItemsCount(player, STATUE_OF_SHILEN_HEAD) + getQuestItemsCount(player, STATUE_OF_SHILEN_TORSO) + getQuestItemsCount(player, STATUE_OF_SHILEN_ARM) + getQuestItemsCount(player, STATUE_OF_SHILEN_LEG)) >= 1)
+						|| ((getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_1ST_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_2ND_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_3RD_PIECE)
+							+ getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_4TH_PIECE)) >= 1))
 					{
 						htmltext = "30471-02.html";
 					}
@@ -1144,7 +1154,8 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 				{
 					if (!hasQuestItems(player, COMPLETE_ANCIENT_TABLET))
 					{
-						if ((getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_1ST_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_2ND_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_3RD_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_4TH_PIECE)) >= 1)
+						if ((getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_1ST_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_2ND_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_3RD_PIECE)
+							+ getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_4TH_PIECE)) >= 1)
 						{
 							htmltext = "30531-02.html";
 						}

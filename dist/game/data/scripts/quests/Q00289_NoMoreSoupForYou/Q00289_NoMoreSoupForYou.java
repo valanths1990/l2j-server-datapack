@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,7 +20,7 @@ package quests.Q00289_NoMoreSoupForYou;
 
 import quests.Q00252_ItSmellsDelicious.Q00252_ItSmellsDelicious;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -190,7 +190,7 @@ public class Q00289_NoMoreSoupForYou extends Quest
 				{
 					st.giveItems(WEAPONS[c][0], WEAPONS[c][1]);
 					st.takeItems(SOUP, 500);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "30200-04.htm";
 				}
 				else
@@ -204,7 +204,7 @@ public class Q00289_NoMoreSoupForYou extends Quest
 				{
 					st.giveItems(ARMORS[b][0], ARMORS[b][1]);
 					st.takeItems(SOUP, 100);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "30200-04.htm";
 				}
 				else
@@ -228,7 +228,7 @@ public class Q00289_NoMoreSoupForYou extends Quest
 		if (Util.contains(MOBS, npcId))
 		{
 			st.giveItems(SOUP, 1 * RATE);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return super.onKill(npc, player, isSummon);
 	}
@@ -248,8 +248,8 @@ public class Q00289_NoMoreSoupForYou extends Quest
 			switch (st.getState())
 			{
 				case State.CREATED:
-					QuestState _prev = player.getQuestState(Q00252_ItSmellsDelicious.class.getSimpleName());
-					htmltext = ((_prev != null) && _prev.isCompleted() && (player.getLevel() >= 82)) ? "30200-01.htm" : "30200-00.htm";
+					QuestState qs252 = player.getQuestState(Q00252_ItSmellsDelicious.class.getSimpleName());
+					htmltext = ((qs252 != null) && qs252.isCompleted() && (player.getLevel() >= 82)) ? "30200-01.htm" : "30200-00.htm";
 					break;
 				case State.STARTED:
 					if (st.isCond(1))

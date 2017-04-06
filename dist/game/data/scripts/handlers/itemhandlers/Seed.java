@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -52,6 +52,10 @@ public class Seed implements IItemHandler
 		}
 		
 		final L2Object tgt = playable.getTarget();
+		if (tgt == null)
+		{
+			return false;
+		}
 		if (!tgt.isNpc())
 		{
 			playable.sendPacket(SystemMessageId.INCORRECT_TARGET);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -33,6 +33,7 @@ import com.l2jserver.Config;
 import com.l2jserver.commons.database.pool.impl.ConnectionFactory;
 import com.l2jserver.gameserver.data.sql.impl.CharNameTable;
 import com.l2jserver.gameserver.data.xml.impl.ClassListData;
+import com.l2jserver.gameserver.data.xml.impl.TransformData;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.L2World;
@@ -368,6 +369,7 @@ public class AdminEditChar implements IAdminCommandHandler
 				}
 				if (valid && (player.getClassId().getId() != classidval))
 				{
+					TransformData.getInstance().transformPlayer(255, player);
 					player.setClassId(classidval);
 					if (!player.isSubClassActive())
 					{
@@ -376,7 +378,10 @@ public class AdminEditChar implements IAdminCommandHandler
 					String newclass = ClassListData.getInstance().getClass(player.getClassId()).getClassName();
 					player.storeMe();
 					player.sendMessage("A GM changed your class to " + newclass + ".");
+					player.untransform();
 					player.broadcastUserInfo();
+					activeChar.setTarget(null);
+					activeChar.setTarget(player);
 					activeChar.sendMessage(player.getName() + " is a " + newclass + ".");
 				}
 				else

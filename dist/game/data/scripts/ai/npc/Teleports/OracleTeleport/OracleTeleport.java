@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,9 +18,7 @@
  */
 package ai.npc.Teleports.OracleTeleport;
 
-import ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -29,6 +27,8 @@ import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Oracle teleport AI.
@@ -267,7 +267,7 @@ public final class OracleTeleport extends AbstractNpcAI
 			}
 			st.set("id", Integer.toString(i));
 			st.setState(State.STARTED);
-			playSound(player, QuestSound.ITEMSOUND_QUEST_ACCEPT);
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			htmltext = "ziggurat_rift.htm";
 			player.teleToLocation(new Location(-114755, -179466, -6752));
 		}
@@ -294,7 +294,7 @@ public final class OracleTeleport extends AbstractNpcAI
 				i++;
 			}
 			st.set("id", Integer.toString(i));
-			playSound(player, QuestSound.ITEMSOUND_QUEST_ACCEPT);
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			player.teleToLocation(new Location(-80157, 111344, -4901));
 			player.setIsIn7sDungeon(true);
 		}
@@ -311,7 +311,7 @@ public final class OracleTeleport extends AbstractNpcAI
 				i++;
 			}
 			st.set("id", Integer.toString(i));
-			playSound(player, QuestSound.ITEMSOUND_QUEST_ACCEPT);
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			player.teleToLocation(new Location(-81261, 86531, -5157));
 			player.setIsIn7sDungeon(true);
 		}
@@ -322,7 +322,7 @@ public final class OracleTeleport extends AbstractNpcAI
 				htmltext = "1.htm";
 				st.exitQuest(true);
 			}
-			else if (player.getAllActiveQuests().length > 23)
+			else if (player.getAllActiveQuests().size() > 23)
 			{
 				htmltext = "1a.htm";
 				st.exitQuest(true);
@@ -345,7 +345,7 @@ public final class OracleTeleport extends AbstractNpcAI
 				htmltext = "ziggurat_lowlevel.htm";
 				st.exitQuest(true);
 			}
-			else if (player.getAllActiveQuests().length > 40)
+			else if (player.getAllActiveQuests().size() > 40)
 			{
 				player.sendPacket(SystemMessageId.TOO_MANY_QUESTS);
 				st.exitQuest(true);

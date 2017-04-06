@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -278,7 +278,7 @@ public final class NornilsGarden extends AbstractInstance
 		final Instance inst = InstanceManager.getInstance().getInstance(instanceId);
 		
 		inst.setName(InstanceManager.getInstance().getInstanceIdName(TEMPLATE_ID));
-		inst.setSpawnLoc(new Location(player));
+		inst.setExitLoc(new Location(player));
 		inst.setAllowSummon(false);
 		inst.setDuration(DURATION_TIME * 60000);
 		inst.setEmptyDestroyTime(EMPTY_DESTROY_TIME * 60000);

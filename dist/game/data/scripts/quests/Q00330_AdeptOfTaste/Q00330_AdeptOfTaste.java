@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,7 +18,7 @@
  */
 package quests.Q00330_AdeptOfTaste;
 
-import com.l2jserver.gameserver.enums.QuestSound;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -198,11 +198,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 							giveItems(killer, HOBGOBLIN_AMULET, 1);
 							if (getQuestItemsCount(killer, HOBGOBLIN_AMULET) == 30)
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 							else
 							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
@@ -223,11 +223,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, RED_MANDRAGORA_ROOT, 1);
 									if (getQuestItemsCount(killer, RED_MANDRAGORA_ROOT) == 40)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -238,11 +238,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, WHITE_MANDRAGORA_ROOT, 1);
 									if (getQuestItemsCount(killer, WHITE_MANDRAGORA_ROOT) == 40)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -264,11 +264,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, RED_MANDRAGORA_ROOT, 1);
 									if (getQuestItemsCount(killer, RED_MANDRAGORA_ROOT) == 40)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -279,11 +279,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, WHITE_MANDRAGORA_ROOT, 1);
 									if (getQuestItemsCount(killer, WHITE_MANDRAGORA_ROOT) == 40)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -305,11 +305,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, RED_MANDRAGORA_ROOT, 1);
 									if (getQuestItemsCount(killer, RED_MANDRAGORA_ROOT) == 40)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -320,11 +320,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, WHITE_MANDRAGORA_ROOT, 1);
 									if (getQuestItemsCount(killer, WHITE_MANDRAGORA_ROOT) == 40)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -346,11 +346,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, NECTAR, 1);
 									if (getQuestItemsCount(killer, NECTAR) == 20)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -361,11 +361,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, ROYAL_JELLY, 1);
 									if (getQuestItemsCount(killer, ROYAL_JELLY) == 10)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -387,11 +387,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, GREEN_MARSH_MOSS, 1);
 									if (getQuestItemsCount(killer, GREEN_MARSH_MOSS) == 20)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -402,11 +402,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, BROWN_MARSH_MOSS, 1);
 									if (getQuestItemsCount(killer, BROWN_MARSH_MOSS) == 20)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -428,11 +428,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, GREEN_MARSH_MOSS, 1);
 									if (getQuestItemsCount(killer, GREEN_MARSH_MOSS) == 20)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -443,11 +443,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, BROWN_MARSH_MOSS, 1);
 									if (getQuestItemsCount(killer, BROWN_MARSH_MOSS) == 20)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -469,11 +469,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, NECTAR, 1);
 									if (getQuestItemsCount(killer, NECTAR) == 20)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -484,11 +484,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 									giveItems(killer, ROYAL_JELLY, 1);
 									if (getQuestItemsCount(killer, ROYAL_JELLY) == 10)
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+										playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 									}
 									else
 									{
-										playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 									}
 								}
 							}
@@ -508,12 +508,12 @@ public final class Q00330_AdeptOfTaste extends Quest
 								if (getQuestItemsCount(killer, BODY_OF_MONSTER_EYE) == 29)
 								{
 									giveItems(killer, BODY_OF_MONSTER_EYE, 1);
-									playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+									playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 								}
 								else
 								{
 									giveItems(killer, BODY_OF_MONSTER_EYE, 2);
-									playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+									playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 								}
 							}
 							else if (i0 < 97)
@@ -521,17 +521,17 @@ public final class Q00330_AdeptOfTaste extends Quest
 								if (getQuestItemsCount(killer, BROWN_MARSH_MOSS) == 28)
 								{
 									giveItems(killer, BODY_OF_MONSTER_EYE, 2);
-									playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+									playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 								}
 								else if (getQuestItemsCount(killer, BROWN_MARSH_MOSS) == 29)
 								{
 									giveItems(killer, BODY_OF_MONSTER_EYE, 1);
-									playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+									playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 								}
 								else
 								{
 									giveItems(killer, BODY_OF_MONSTER_EYE, 3);
-									playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+									playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 								}
 								
 							}
@@ -551,11 +551,11 @@ public final class Q00330_AdeptOfTaste extends Quest
 								giveItems(killer, BODY_OF_MONSTER_EYE, 1);
 								if (getQuestItemsCount(killer, BODY_OF_MONSTER_EYE) == 30)
 								{
-									playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+									playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 								}
 								else
 								{
-									playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+									playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 								}
 							}
 							else
@@ -563,12 +563,12 @@ public final class Q00330_AdeptOfTaste extends Quest
 								if (getQuestItemsCount(killer, BROWN_MARSH_MOSS) == 29)
 								{
 									giveItems(killer, BODY_OF_MONSTER_EYE, 1);
-									playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+									playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 								}
 								else
 								{
 									giveItems(killer, BODY_OF_MONSTER_EYE, 2);
-									playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+									playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 								}
 								
 							}
@@ -724,7 +724,7 @@ public final class Q00330_AdeptOfTaste extends Quest
 									takeItems(player, BROWN_MOSS_BUNDLE, -1);
 									takeItems(player, MONSTER_EYE_MEAT, -1);
 									giveItems(player, JONASS_5TH_STEAK_DISH, 1);
-									playSound(player, QuestSound.ITEMSOUND_QUEST_JACKPOT);
+									playSound(player, Sound.ITEMSOUND_QUEST_JACKPOT);
 									htmltext = "30469-05t5.html";
 								}
 								else

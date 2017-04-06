@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,8 +18,6 @@
  */
 package quests.Q00114_ResurrectionOfAnOldManager;
 
-import quests.Q00121_PavelTheGiant.Q00121_PavelTheGiant;
-
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -32,6 +30,8 @@ import com.l2jserver.gameserver.model.quest.State;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
+
+import quests.Q00121_PavelTheGiant.Q00121_PavelTheGiant;
 
 /**
  * Resurrection of an Old Manager (114)<br>
@@ -80,7 +80,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 		String htmltext = event;
 		switch (event)
 		{
-		// Yumi
+			// Yumi
 			case "32041-04.htm":
 				st.startQuest();
 				break;
@@ -342,7 +342,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 	{
 		if (creature.isPlayer())
 		{
-			final QuestState st = creature.getActingPlayer().getQuestState(getName());
+			final QuestState st = getQuestState(creature.getActingPlayer(), false);
 			if ((st != null) && st.isCond(17))
 			{
 				st.takeItems(DETCTOR, 1);
