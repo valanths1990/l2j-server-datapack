@@ -750,29 +750,31 @@ public class Q00663_SeductiveWhispers extends Quest
 			}
 		}
 		
-		final L2PcInstance rewardedPlayer = players.get(getRandom(players.size()));
-		if ((rewardedPlayer != null) && Util.checkIfInRange(1500, npc, rewardedPlayer, false))
+		if (!players.isEmpty())
 		{
-			final int rnd = getRandom(1000);
-			
-			if (npc.getId() == SPITEFUL_SOUL_LEADER)
+			final L2PcInstance rewardedPlayer = players.get(getRandom(players.size()));
+			if (Util.checkIfInRange(1500, npc, rewardedPlayer, false))
 			{
-				if (rnd <= SPITEFUL_SOUL_LEADER_CHANCE)
+				final int rnd = getRandom(1000);
+				
+				if (npc.getId() == SPITEFUL_SOUL_LEADER)
 				{
-					giveItems(rewardedPlayer, SPIRIT_BEAD, 2);
+					if (rnd <= SPITEFUL_SOUL_LEADER_CHANCE)
+					{
+						giveItems(rewardedPlayer, SPIRIT_BEAD, 2);
+					}
+					else
+					{
+						giveItems(rewardedPlayer, SPIRIT_BEAD, 1);
+					}
 				}
-				else
+				else if (rnd < MONSTERS.get(npc.getId()))
 				{
 					giveItems(rewardedPlayer, SPIRIT_BEAD, 1);
+					playSound(rewardedPlayer, Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
-			else if (rnd < MONSTERS.get(npc.getId()))
-			{
-				giveItems(rewardedPlayer, SPIRIT_BEAD, 1);
-				playSound(rewardedPlayer, Sound.ITEMSOUND_QUEST_ITEMGET);
-			}
 		}
-		
 		return super.onKill(npc, killer, isSummon);
 	}
 	
