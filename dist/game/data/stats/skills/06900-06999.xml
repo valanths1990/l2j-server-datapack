@@ -127,9 +127,22 @@
 		</for>
 	</skill>
 	<skill id="6915" levels="10" name="npc Acumen">
-		<!-- none -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<table name="#mAtkSpd"> 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2 </table>
+		<set name="abnormalLvl" val="4" />
+		<set name="abnormalTime" val="600" />
+		<set name="abnormalType" val="CASTING_TIME_DOWN" />
+		<set name="hitTime" val="1000" />
+		<set name="icon" val="icon.skill1085" />
+		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="operateType" val="A2" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="mAtkSpd" val="#mAtkSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="6916" levels="1" name="Antharas's Cute Tricks">
 		<!-- You can see the summoned spirit's cute tricks. -->

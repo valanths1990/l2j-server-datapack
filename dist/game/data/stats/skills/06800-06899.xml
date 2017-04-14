@@ -613,9 +613,12 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6832" levels="1" name="Summon Parasite Leech">
-		<!-- none -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="84" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6833" levels="1" name="Power Strike">
 		<!-- none -->
@@ -1236,23 +1239,21 @@
 		</for>
 	</skill>
 	<skill id="6872" levels="1" name="Self-destruction">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
+		<!-- High Five Confirmed -->
 		<set name="affectRange" val="200" />
-		<set name="blockedInOlympiad" val="true" />
-		<set name="effectPoint" val="-100" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
+		<set name="castRange" val="600" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="800" />
 		<set name="hitTime" val="5000" />
 		<set name="isSuicideAttack" val="true" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="300" />
+		<set name="power" val="12670" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="PhysicalAttack" />
 		</for>
 	</skill>
 	<skill id="6873" levels="2" name="Hex">
