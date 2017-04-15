@@ -431,7 +431,7 @@ public final class Q00454_CompletelyLost extends Quest
 	{
 		if (creature.isPlayer() && (npc.getVariables().getInt("state", 0) == 0))
 		{
-			addAttackPlayerDesire(npc, creature.getActingPlayer(), 10);
+			addAttackDesire(npc, creature.getActingPlayer(), 10);
 		}
 		return super.onSeeCreature(npc, creature, isSummon);
 	}

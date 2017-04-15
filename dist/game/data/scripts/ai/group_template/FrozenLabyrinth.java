@@ -18,11 +18,11 @@
  */
 package ai.group_template;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Frozen Labyrinth AI.
@@ -55,7 +55,7 @@ public final class FrozenLabyrinth extends AbstractNpcAI
 				final int y = diff >= 60 ? npc.getY() + (diff - 40) : npc.getY();
 				
 				final L2Npc monster = addSpawn(spawnId, x, y, npc.getZ(), npc.getHeading(), false, 0);
-				addAttackPlayerDesire(monster, attacker);
+				addAttackDesire(monster, attacker);
 				diff += 20;
 			}
 			npc.setScriptValue(1);

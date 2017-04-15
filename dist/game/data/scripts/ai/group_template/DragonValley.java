@@ -20,8 +20,6 @@ package ai.group_template;
 
 import java.util.EnumMap;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.L2Playable;
@@ -30,6 +28,8 @@ import com.l2jserver.gameserver.model.base.ClassId;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Dragon Valley AI.
@@ -53,7 +53,7 @@ public final class DragonValley extends AbstractNpcAI
 		22826, // Scorpion Bones
 		22823, // Drakos Assassin
 		22828, // Parasitic Leech
-		
+	
 	};
 	private static final int[] SPOIL_REACT_MONSTER =
 	{
@@ -176,7 +176,7 @@ public final class DragonValley extends AbstractNpcAI
 				{
 					final L2Playable playable = isSummon ? attacker.getSummon() : attacker;
 					final L2Npc minion = addSpawn(DRAKOS_ASSASSIN, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), true, 0, true);
-					addAttackPlayerDesire(minion, playable);
+					addAttackDesire(minion, playable);
 				}
 			}
 		}
@@ -280,12 +280,12 @@ public final class DragonValley extends AbstractNpcAI
 			final L2Playable attacker = isSummon ? player.getSummon() : player;
 			final L2Npc ghost1 = addSpawn(EXPLODING_ORC_GHOST, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 			ghost1.getVariables().set("playable", attacker);
-			addAttackPlayerDesire(ghost1, attacker);
+			addAttackDesire(ghost1, attacker);
 			val++;
 			if ((val < 2) && (getRandomBoolean()))
 			{
 				final L2Npc ghost2 = addSpawn(WRATHFUL_ORC_GHOST, npc.getX(), npc.getY(), npc.getZ() + 20, npc.getHeading(), false, 0, false);
-				addAttackPlayerDesire(ghost2, attacker);
+				addAttackDesire(ghost2, attacker);
 				val++;
 			}
 			npc.setScriptValue(val);

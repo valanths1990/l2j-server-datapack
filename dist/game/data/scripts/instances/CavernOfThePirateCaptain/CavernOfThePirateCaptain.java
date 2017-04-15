@@ -18,8 +18,6 @@
  */
 package instances.CavernOfThePirateCaptain;
 
-import instances.AbstractInstance;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +32,8 @@ import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+
+import instances.AbstractInstance;
 
 /**
  * Cavern Of The Pirate Captain (Day Dream) instance Zone.
@@ -481,7 +481,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		if ((player != null) && (npcId != ZAKEN_60) && (npcId != ZAKEN_83))
 		{
 			final L2Attackable mob = (L2Attackable) addSpawn(npcId, ROOM_DATA[roomId - 1][0] + getRandom(350), ROOM_DATA[roomId - 1][1] + getRandom(350), ROOM_DATA[roomId - 1][2], 0, false, 0, false, world.getInstanceId());
-			addAttackPlayerDesire(mob, player);
+			addAttackDesire(mob, player);
 			return mob;
 		}
 		return (L2Attackable) addSpawn(npcId, ROOM_DATA[roomId - 1][0], ROOM_DATA[roomId - 1][1], ROOM_DATA[roomId - 1][2], 0, false, 0, false, world.getInstanceId());

@@ -682,7 +682,7 @@ public final class Q00065_CertifiedSoulBreaker extends Quest
 							final L2Npc angel = addSpawn(GUARDIAN_ANGEL, 36110, 191921, -3712, 0, true, 0, false);
 							angel.getVariables().set("npc0", npc);
 							angel.getVariables().set("player0", player);
-							addAttackPlayerDesire(angel, player);
+							addAttackDesire(angel, player);
 							htmltext = "32243-01.html";
 						}
 						else if (npc.getVariables().getInt("PLAYER_ID") == player.getObjectId())

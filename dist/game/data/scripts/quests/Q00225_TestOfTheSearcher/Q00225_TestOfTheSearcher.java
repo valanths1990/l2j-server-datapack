@@ -214,7 +214,7 @@ public final class Q00225_TestOfTheSearcher extends Quest
 			if (npc.isScriptValue(0) && hasQuestItems(attacker, LEIRYNNS_1ST_ORDER))
 			{
 				npc.setScriptValue(1);
-				addAttackPlayerDesire(addSpawn(NEER_BODYGUARD, npc, true, 200000), attacker);
+				addAttackDesire(addSpawn(NEER_BODYGUARD, npc, true, 200000), attacker);
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);

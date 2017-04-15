@@ -20,8 +20,6 @@ package ai.group_template;
 
 import java.util.List;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -31,6 +29,8 @@ import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
 import com.l2jserver.gameserver.util.Broadcast;
 import com.l2jserver.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Stakato Nest AI.
@@ -130,7 +130,7 @@ public final class StakatoNest extends AbstractNpcAI
 					for (int i = 0; i < 3; i++)
 					{
 						L2Npc spawned = addSpawn(STAKATO_CAPTAIN, monster, true);
-						addAttackPlayerDesire(spawned, killer);
+						addAttackDesire(spawned, killer);
 					}
 				}
 				break;
@@ -149,7 +149,7 @@ public final class StakatoNest extends AbstractNpcAI
 					for (int i = 0; i < 3; i++)
 					{
 						L2Npc spawned = addSpawn(STAKATO_GUARD, monster, true);
-						addAttackPlayerDesire(spawned, killer);
+						addAttackDesire(spawned, killer);
 					}
 				}
 				break;
@@ -185,7 +185,7 @@ public final class StakatoNest extends AbstractNpcAI
 		{
 			npc.doDie(caster);
 			final L2Npc spawned = addSpawn(STAKATO_CHIEF, npc.getX(), npc.getY(), npc.getZ(), Util.calculateHeadingFrom(npc, caster), false, 0, true);
-			addAttackPlayerDesire(spawned, caster);
+			addAttackDesire(spawned, caster);
 		}
 		return super.onSkillSee(npc, caster, skill, targets, isSummon);
 	}
@@ -213,7 +213,7 @@ public final class StakatoNest extends AbstractNpcAI
 			npc.getSpawn().decreaseCount(npc);
 			npc.deleteMe();
 			final L2Npc spawned = addSpawn(npcId, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0, true);
-			addAttackPlayerDesire(spawned, player);
+			addAttackDesire(spawned, player);
 		}
 		return super.onAdvEvent(event, npc, player);
 	}

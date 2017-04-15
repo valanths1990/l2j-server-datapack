@@ -290,7 +290,7 @@ public final class Q00063_PathOfTheWarder extends Quest
 						{
 							qs.set("ex", 0);
 							final L2Npc monster = addSpawn(OL_MAHUM_OFFICER_TAK, npc, true, 0, false);
-							addAttackPlayerDesire(monster, killer);
+							addAttackDesire(monster, killer);
 						}
 					}
 					break;

@@ -159,7 +159,7 @@ public final class Q00226_TestOfTheHealer extends Quest
 					qs.setCond(2, true);
 					if (npc.getSummonedNpcCount() < 1)
 					{
-						addAttackPlayerDesire(addSpawn(npc, TATOMA, npc, true, 200000), player);
+						addAttackDesire(addSpawn(npc, TATOMA, npc, true, 200000), player);
 					}
 				}
 				htmltext = event;

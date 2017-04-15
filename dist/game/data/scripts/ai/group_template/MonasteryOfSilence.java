@@ -18,8 +18,6 @@
  */
 package ai.group_template;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
@@ -31,6 +29,8 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Monastery of Silence AI.
@@ -163,7 +163,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 					}
 					npc.setScriptValue(1);
 					broadcastNpcSay(npc, Say2.ALL, NpcStringId.FOR_THE_GLORY_OF_SOLINA);
-					addAttackPlayerDesire(addSpawn(KNIGHT, npc), player);
+					addAttackDesire(addSpawn(KNIGHT, npc), player);
 				}
 				break;
 			}
@@ -257,7 +257,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 				broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.YOU_CANNOT_CARRY_A_WEAPON_WITHOUT_AUTHORIZATION);
 			}
 			
-			addAttackPlayerDesire(npc, player);
+			addAttackDesire(npc, player);
 		}
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
@@ -272,7 +272,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 				if (obj.equals(npc))
 				{
 					broadcastNpcSay(npc, Say2.NPC_ALL, DIVINITY_MSG[getRandom(DIVINITY_MSG.length)], caster.getName());
-					addAttackPlayerDesire(npc, caster);
+					addAttackDesire(npc, caster);
 					break;
 				}
 			}

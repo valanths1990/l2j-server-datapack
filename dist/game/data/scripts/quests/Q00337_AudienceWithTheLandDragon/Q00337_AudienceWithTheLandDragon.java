@@ -181,7 +181,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						{
 							for (int i = 0; i < 20; i++)
 							{
-								addAttackPlayerDesire(addSpawn(JEWEL_GUARDIAN_MARA, npc, true, 180000), attacker);
+								addAttackDesire(addSpawn(JEWEL_GUARDIAN_MARA, npc, true, 180000), attacker);
 							}
 							npc.getVariables().set("i_quest0", 1);
 							startQuestTimer("DESPAWN", 900000, npc, attacker);
@@ -209,7 +209,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						{
 							for (int i = 0; i < 20; i++)
 							{
-								addAttackPlayerDesire(addSpawn(JEWEL_GUARDIAN_MUSFEL, npc, true, 180000), attacker);
+								addAttackDesire(addSpawn(JEWEL_GUARDIAN_MUSFEL, npc, true, 180000), attacker);
 							}
 							npc.getVariables().set("i_quest0", 1);
 							startQuestTimer("DESPAWN", 900000, npc, attacker);
@@ -235,10 +235,10 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 					{
 						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.8)) && (npc.getVariables().getInt("i_quest0") == 0))
 						{
-							addAttackPlayerDesire(addSpawn(JEWEL_GUARDIAN_PYTON, npc, true, 180000), attacker);
-							addAttackPlayerDesire(addSpawn(JEWEL_GUARDIAN_PYTON, npc, true, 180000), attacker);
-							addAttackPlayerDesire(addSpawn(JEWEL_GUARDIAN_PYTON, npc, true, 180000), attacker);
-							addAttackPlayerDesire(addSpawn(JEWEL_GUARDIAN_PYTON, npc, true, 180000), attacker);
+							addAttackDesire(addSpawn(JEWEL_GUARDIAN_PYTON, npc, true, 180000), attacker);
+							addAttackDesire(addSpawn(JEWEL_GUARDIAN_PYTON, npc, true, 180000), attacker);
+							addAttackDesire(addSpawn(JEWEL_GUARDIAN_PYTON, npc, true, 180000), attacker);
+							addAttackDesire(addSpawn(JEWEL_GUARDIAN_PYTON, npc, true, 180000), attacker);
 							npc.getVariables().set("i_quest0", 1);
 						}
 						
@@ -322,9 +322,9 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						{
 							if (!hasQuestItems(killer, TOTEM_OF_LAND_DRAGON))
 							{
-								addAttackPlayerDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
-								addAttackPlayerDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
-								addAttackPlayerDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
+								addAttackDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
+								addAttackDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
+								addAttackDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
 							}
 							break;
 						}
@@ -348,9 +348,9 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 							{
 								if (getRandom(5) == 0)
 								{
-									addAttackPlayerDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
-									addAttackPlayerDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
-									addAttackPlayerDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
+									addAttackDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
+									addAttackDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
+									addAttackDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
 								}
 							}
 							break;

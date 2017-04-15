@@ -174,7 +174,7 @@ public final class Q00414_PathOfTheOrcRaider extends Quest
 						if (getRandom(100) < (getQuestItemsCount(killer, GREEN_BLOOD) * 5))
 						{
 							takeItems(killer, GREEN_BLOOD, -1);
-							addAttackPlayerDesire(addSpawn(KURUKA_RATMAN_LEADER, npc, true, 0, true), killer);
+							addAttackDesire(addSpawn(KURUKA_RATMAN_LEADER, npc, true, 0, true), killer);
 						}
 						else
 						{
