@@ -566,6 +566,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="CASTING_TIME_UP" />
+		<set name="affectRange" val="1000" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-10000" />
@@ -621,17 +622,36 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6833" levels="1" name="Power Strike">
-		<!-- none -->
-		<set name="effectPoint" val="-100" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="castRange" val="40" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="150" />
+		<set name="hitTime" val="1500" />
+		<set name="magicLvl" val="84" />
+		<set name="operateType" val="A1" />
+		<set name="power" val="6960" />
+		<set name="reuseDelay" val="5000" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="6834" levels="1" name="Range Magic Attack">
-		<!-- none -->
-		<set name="blockedInOlympiad" val="true" />
-		<set name="effectPoint" val="-100" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="affectRange" val="1000" />
+		<set name="castRange" val="900" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="1200" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="84" />
+		<set name="operateType" val="A1" />
+		<set name="power" val="182" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="AREA" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="6835" levels="1" name="Summon Skeleton">
 		<!-- none -->
