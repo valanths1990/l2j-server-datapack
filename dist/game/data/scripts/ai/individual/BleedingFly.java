@@ -40,8 +40,8 @@ public class BleedingFly extends AbstractNpcAI
 	// Variables
 	private static final String MID_HP_FLAG = "MID_HP_FLAG";
 	private static final String LOW_HP_FLAG = "LOW_HP_FLAG";
-	private static final String MID_HP_MINION_COUNT = "MID_HP_MINIM_COUNT";
-	private static final String LOW_HP_MINION_COUNT = "LOW_HP_MINIM_COUNT";
+	private static final String MID_HP_MINION_COUNT = "MID_HP_MINION_COUNT";
+	private static final String LOW_HP_MINION_COUNT = "LOW_HP_MINION_COUNT";
 	// Timers
 	private static final String TIMER_MID_HP = "TIMER_MID_HP";
 	private static final String TIMER_LOW_HP = "TIMER_LOW_HP";
