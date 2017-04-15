@@ -1062,7 +1062,7 @@ public final class Q00060_GoodWorksReward extends Quest
 						pursuer.getVariables().set("PLAYER_ID", player.getObjectId());
 						pursuer.getVariables().set("npc0", npc);
 						pursuer.getVariables().set("player0", player);
-						addAttackPlayerDesire(pursuer, player);
+						addAttackDesire(pursuer, player);
 						htmltext = event;
 					}
 					else

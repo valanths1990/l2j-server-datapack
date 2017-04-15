@@ -18,12 +18,12 @@
  */
 package ai.group_template;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.L2Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Fairy Trees AI.
@@ -64,7 +64,7 @@ public class FairyTrees extends AbstractNpcAI
 			{
 				final L2Npc guardian = addSpawn(SOUL_GUARDIAN, npc, false, 30000);
 				final L2Playable attacker = isSummon ? killer.getSummon() : killer;
-				addAttackPlayerDesire(guardian, attacker);
+				addAttackDesire(guardian, attacker);
 				if (getRandomBoolean())
 				{
 					guardian.setTarget(attacker);

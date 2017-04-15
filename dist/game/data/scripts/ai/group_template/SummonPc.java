@@ -90,7 +90,7 @@ public final class SummonPc extends AbstractNpcAI
 			npc.getVariables().set("attacked", false);
 			
 			// TODO(Zoey76): Teleport removes the player from all known lists, affecting aggro lists.
-			addAttackPlayerDesire(npc, player);
+			addAttackDesire(npc, player);
 		}
 		return super.onSpellFinished(npc, player, skill);
 	}

@@ -160,9 +160,9 @@ public final class Q00231_TestOfTheMaestro extends Quest
 			}
 			case "SPAWN_KING_BUGBEAR":
 			{
-				addAttackPlayerDesire(addSpawn(KING_BUGBEAR, 140395, -194147, -3146, 0, false, 200000, false), player);
-				addAttackPlayerDesire(addSpawn(KING_BUGBEAR, 140395, -194147, -3146, 0, false, 200000, false), player);
-				addAttackPlayerDesire(addSpawn(KING_BUGBEAR, 140395, -194147, -3146, 0, false, 200000, false), player);
+				addAttackDesire(addSpawn(KING_BUGBEAR, 140395, -194147, -3146, 0, false, 200000, false), player);
+				addAttackDesire(addSpawn(KING_BUGBEAR, 140395, -194147, -3146, 0, false, 200000, false), player);
+				addAttackDesire(addSpawn(KING_BUGBEAR, 140395, -194147, -3146, 0, false, 200000, false), player);
 				break;
 			}
 		}

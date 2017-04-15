@@ -18,14 +18,14 @@
  */
 package ai.group_template;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.ValidateLocation;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Lair of Antharas AI.
@@ -99,7 +99,7 @@ public final class LairOfAntharas extends AbstractNpcAI
 					final L2Npc newKnight = addSpawn(DRAGON_KNIGHT2, npc, false, 0, true);
 					npc.deleteMe();
 					broadcastNpcSay(newKnight, Say2.NPC_SHOUT, NpcStringId.THOSE_WHO_SET_FOOT_IN_THIS_PLACE_SHALL_NOT_LEAVE_ALIVE);
-					addAttackPlayerDesire(newKnight, killer);
+					addAttackDesire(newKnight, killer);
 				}
 				break;
 			}
@@ -110,7 +110,7 @@ public final class LairOfAntharas extends AbstractNpcAI
 					final L2Npc eliteKnight = addSpawn(ELITE_DRAGON_KNIGHT, npc, false, 0, true);
 					npc.deleteMe();
 					broadcastNpcSay(eliteKnight, Say2.NPC_SHOUT, NpcStringId.IF_YOU_WISH_TO_SEE_HELL_I_WILL_GRANT_YOU_YOUR_WISH);
-					addAttackPlayerDesire(eliteKnight, killer);
+					addAttackDesire(eliteKnight, killer);
 				}
 				break;
 			}

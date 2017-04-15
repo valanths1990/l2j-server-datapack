@@ -18,8 +18,6 @@
  */
 package ai.group_template;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.GameTimeController;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.datatables.SkillData;
@@ -32,6 +30,8 @@ import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Sel Mahum Training Ground AI for squads and chefs.
@@ -109,7 +109,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 					npc.getVariables().remove("INVUL_REMOVE_TIMER_STARTED");
 					if ((player != null) && !player.isDead() && npc.getKnownList().knowsThePlayer(player))
 					{
-						addAttackPlayerDesire(npc, player);
+						addAttackDesire(npc, player);
 					}
 				}
 				break;

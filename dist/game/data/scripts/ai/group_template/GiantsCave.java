@@ -18,13 +18,13 @@
  */
 package ai.group_template;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Giant's Cave AI.
@@ -64,7 +64,7 @@ public final class GiantsCave extends AbstractNpcAI
 			{
 				if ((characters != null) && (characters.isAttackable()) && (getRandomBoolean()))
 				{
-					addAttackPlayerDesire((L2Npc) characters, player);
+					addAttackDesire((L2Npc) characters, player);
 				}
 			}
 		}

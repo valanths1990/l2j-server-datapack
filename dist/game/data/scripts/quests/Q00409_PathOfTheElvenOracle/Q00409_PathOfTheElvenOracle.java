@@ -128,9 +128,9 @@ public final class Q00409_PathOfTheElvenOracle extends Quest
 			case "replay_1":
 			{
 				qs.setMemoState(2);
-				addAttackPlayerDesire(addSpawn(lIZARDMAN_WARRIOR, npc, true, 0, false), player);
-				addAttackPlayerDesire(addSpawn(LIZARDMAN_SCOUT, npc, true, 0, false), player);
-				addAttackPlayerDesire(addSpawn(LIZARDMAN_SOLDIER, npc, true, 0, false), player);
+				addAttackDesire(addSpawn(lIZARDMAN_WARRIOR, npc, true, 0, false), player);
+				addAttackDesire(addSpawn(LIZARDMAN_SCOUT, npc, true, 0, false), player);
+				addAttackDesire(addSpawn(LIZARDMAN_SOLDIER, npc, true, 0, false), player);
 				break;
 			}
 			case "30428-02.html":
@@ -147,7 +147,7 @@ public final class Q00409_PathOfTheElvenOracle extends Quest
 				if (qs.isMemoState(2))
 				{
 					qs.setMemoState(3);
-					addAttackPlayerDesire(addSpawn(TAMIL, npc, true, 0, true), player);
+					addAttackDesire(addSpawn(TAMIL, npc, true, 0, true), player);
 				}
 				break;
 			}

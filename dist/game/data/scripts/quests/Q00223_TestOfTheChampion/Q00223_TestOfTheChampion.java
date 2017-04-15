@@ -224,12 +224,12 @@ public final class Q00223_TestOfTheChampion extends Quest
 								{
 									if (getRandom(10) < 7)
 									{
-										addAttackPlayerDesire(addSpawn(HARPY_MATRIARCH, npc, true, 0, false), attacker);
+										addAttackDesire(addSpawn(HARPY_MATRIARCH, npc, true, 0, false), attacker);
 									}
 									else
 									{
-										addAttackPlayerDesire(addSpawn(HARPY_MATRIARCH, npc, true, 0, false), attacker);
-										addAttackPlayerDesire(addSpawn(HARPY_MATRIARCH, npc, true, 0, false), attacker);
+										addAttackDesire(addSpawn(HARPY_MATRIARCH, npc, true, 0, false), attacker);
+										addAttackDesire(addSpawn(HARPY_MATRIARCH, npc, true, 0, false), attacker);
 									}
 								}
 							}
@@ -257,12 +257,12 @@ public final class Q00223_TestOfTheChampion extends Quest
 								{
 									if (getRandom(10) < 7)
 									{
-										addAttackPlayerDesire(addSpawn(ROAD_COLLECTOR, npc, true, 0, false), attacker);
+										addAttackDesire(addSpawn(ROAD_COLLECTOR, npc, true, 0, false), attacker);
 									}
 									else
 									{
-										addAttackPlayerDesire(addSpawn(ROAD_COLLECTOR, npc, true, 0, false), attacker);
-										addAttackPlayerDesire(addSpawn(ROAD_COLLECTOR, npc, true, 0, false), attacker);
+										addAttackDesire(addSpawn(ROAD_COLLECTOR, npc, true, 0, false), attacker);
+										addAttackDesire(addSpawn(ROAD_COLLECTOR, npc, true, 0, false), attacker);
 									}
 								}
 							}
@@ -288,7 +288,7 @@ public final class Q00223_TestOfTheChampion extends Quest
 							{
 								if (getRandomBoolean())
 								{
-									addAttackPlayerDesire(addSpawn(BLOODY_AXE_ELITE, npc, true, 0, false), attacker);
+									addAttackDesire(addSpawn(BLOODY_AXE_ELITE, npc, true, 0, false), attacker);
 								}
 							}
 							npc.setScriptValue(1);

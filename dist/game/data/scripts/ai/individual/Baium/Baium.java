@@ -30,7 +30,6 @@ import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2GrandBossInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -301,14 +300,14 @@ public final class Baium extends AbstractNpcAI
 				
 				if ((player != null) && !player.isDead())
 				{
-					addAttackPlayerDesire(npc, player);
+					addAttackDesire(npc, player);
 				}
 				else
 				{
 					L2PcInstance randomPlayer = getRandomPlayer(npc);
 					if (randomPlayer != null)
 					{
-						addAttackPlayerDesire(npc, randomPlayer);
+						addAttackDesire(npc, randomPlayer);
 					}
 				}
 				break;
@@ -332,7 +331,7 @@ public final class Baium extends AbstractNpcAI
 						{
 							mob.clearAggroList();
 						}
-						addAttackPlayerDesire(mob, (L2Playable) mostHated);
+						addAttackDesire(mob, mostHated);
 					}
 					else
 					{
@@ -345,7 +344,7 @@ public final class Baium extends AbstractNpcAI
 								{
 									mob.clearAggroList();
 								}
-								addAttackPlayerDesire(mob, (L2Playable) creature);
+								addAttackDesire(mob, creature);
 								found = true;
 								break;
 							}

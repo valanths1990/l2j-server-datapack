@@ -19,8 +19,8 @@
 package quests.Q00220_TestimonyOfGlory;
 
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -278,8 +278,8 @@ public final class Q00220_TestimonyOfGlory extends Quest
 				{
 					giveItems(player, GLOVE_OF_VOLTAR, 1);
 					takeItems(player, MANAKIA_1ST_LETTER, 1);
-					addAttackPlayerDesire(addSpawn(npc, PASHIKA_SON_OF_VOLTAR, npc, true, 200000), player);
-					addAttackPlayerDesire(addSpawn(npc, VULTUS_SON_OF_VOLTAR, npc, true, 200000), player);
+					addAttackDesire(addSpawn(npc, PASHIKA_SON_OF_VOLTAR, npc, true, 200000), player);
+					addAttackDesire(addSpawn(npc, VULTUS_SON_OF_VOLTAR, npc, true, 200000), player);
 					htmltext = event;
 				}
 				break;
@@ -290,10 +290,10 @@ public final class Q00220_TestimonyOfGlory extends Quest
 				{
 					giveItems(player, GLOVE_OF_KEPRA, 1);
 					takeItems(player, MANAKIA_2ND_LETTER, 1);
-					addAttackPlayerDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
-					addAttackPlayerDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
-					addAttackPlayerDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
-					addAttackPlayerDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
+					addAttackDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
+					addAttackDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
+					addAttackDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
+					addAttackDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
 					htmltext = event;
 				}
 				break;
@@ -304,8 +304,8 @@ public final class Q00220_TestimonyOfGlory extends Quest
 				{
 					giveItems(player, GLOVE_OF_BURAI, 1);
 					takeItems(player, KASMANS_2ND_LETTER, 1);
-					addAttackPlayerDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
-					addAttackPlayerDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
+					addAttackDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
+					addAttackDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
 					htmltext = event;
 				}
 				break;
@@ -813,8 +813,8 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						{
 							if (npc.getSummonedNpcCount() < 2)
 							{
-								addAttackPlayerDesire(addSpawn(npc, PASHIKA_SON_OF_VOLTAR, npc, true, 200000), player);
-								addAttackPlayerDesire(addSpawn(npc, VULTUS_SON_OF_VOLTAR, npc, true, 200000), player);
+								addAttackDesire(addSpawn(npc, PASHIKA_SON_OF_VOLTAR, npc, true, 200000), player);
+								addAttackDesire(addSpawn(npc, VULTUS_SON_OF_VOLTAR, npc, true, 200000), player);
 							}
 							htmltext = "30615-05.html";
 						}
@@ -857,7 +857,7 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						{
 							if (npc.getSummonedNpcCount() < 5)
 							{
-								addAttackPlayerDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
+								addAttackDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
 							}
 							htmltext = "30616-05.html";
 						}
@@ -899,8 +899,8 @@ public final class Q00220_TestimonyOfGlory extends Quest
 						{
 							if (npc.getSummonedNpcCount() < 3)
 							{
-								addAttackPlayerDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
-								addAttackPlayerDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
+								addAttackDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
+								addAttackDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
 							}
 							htmltext = "30617-04.html";
 						}

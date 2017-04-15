@@ -18,8 +18,6 @@
  */
 package ai.group_template;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.handler.IItemHandler;
@@ -36,6 +34,8 @@ import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Primeval Isle AI.
@@ -217,7 +217,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 					{
 						npc.setTarget(player);
 						npc.doCast(LONGRANGEDMAGIC1.getSkill());
-						addAttackPlayerDesire(npc, player);
+						addAttackDesire(npc, player);
 					}
 				}
 				break;
@@ -332,7 +332,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 					if ((characters != null) && (characters.isAttackable()) && (getRandomBoolean()))
 					{
 						L2Attackable monster = (L2Attackable) characters;
-						addAttackPlayerDesire(monster, playable);
+						addAttackDesire(monster, playable);
 					}
 				}
 			}

@@ -18,8 +18,6 @@
  */
 package ai.individual.Sailren;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.instancemanager.GlobalVariablesManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.TeleportWhereType;
@@ -30,6 +28,8 @@ import com.l2jserver.gameserver.model.actor.instance.L2RaidBossInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.zone.type.L2NoRestartZone;
 import com.l2jserver.gameserver.network.serverpackets.SpecialCamera;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Sailren AI.
@@ -291,7 +291,7 @@ public final class Sailren extends AbstractNpcAI
 					if (_killCount == 3)
 					{
 						final L2Npc pterosaur = addSpawn(PTEROSAUR, 27313, -6766, -1975, 0, false, 0);
-						addAttackPlayerDesire(pterosaur, killer);
+						addAttackDesire(pterosaur, killer);
 						_killCount = 0;
 					}
 					break;
@@ -299,7 +299,7 @@ public final class Sailren extends AbstractNpcAI
 				case PTEROSAUR:
 				{
 					final L2Npc trex = addSpawn(TREX, 27313, -6766, -1975, 0, false, 0);
-					addAttackPlayerDesire(trex, killer);
+					addAttackDesire(trex, killer);
 					break;
 				}
 				case TREX:
