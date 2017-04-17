@@ -550,10 +550,10 @@
 			<effect name="BlockBuff" />
 			<effect name="BlockDebuff" />
 			<effect name="BlockDamage">
-				<param block="HP"/>
+				<param block="HP" />
 			</effect>
 			<effect name="BlockDamage">
-				<param block="MP"/>
+				<param block="MP" />
 			</effect>
 			<effect name="Buff">
 				<mul stat="regHp" val="0" />
@@ -654,30 +654,73 @@
 		</for>
 	</skill>
 	<skill id="6835" levels="1" name="Summon Skeleton">
-		<!-- none -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="84" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6836" levels="1" name="Silence">
+		<!-- High Five Confirmed -->
 		<!-- Magic skills are blocked. -->
-		<set name="abnormalTime" val="20" />
-		<set name="activateRate" val="80" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="SILENCE" />
+		<set name="abnormalVisualEffect" val="SILENCE" />
 		<set name="basicProperty" val="MEN" />
-		<set name="effectPoint" val="-100" />
+		<set name="castRange" val="1000" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="1500" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1064" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="isDebuff" val="true" />
+		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="lvlBonusRate" val="2" />
+		<set name="magicLvl" val="85" />
+		<set name="operateType" val="A2" />
+		<set name="power" val="124" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="ONE" />
+		<set name="trait" val="DERANGEMENT" />
+		<for>
+			<effect name="MagicalAttack" />
+			<effect name="Mute" />
+		</for>
 	</skill>
 	<skill id="6837" levels="1" name="Range Magic Attack">
-		<!-- none -->
-		<set name="effectPoint" val="-100" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="affectRange" val="1000" />
+		<set name="castRange" val="900" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="1200" />
+		<set name="hitTime" val="3000" />
+		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="magicLvl" val="85" />
+		<set name="operateType" val="A1" />
+		<set name="power" val="182" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="AREA" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="6838" levels="1" name="Self-destruction">
-		<!-- none -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="affectRange" val="200" />
+		<set name="castRange" val="600" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="800" />
+		<set name="hitTime" val="4000" />
+		<set name="isSuicideAttack" val="true" />
+		<set name="magicLvl" val="85" />
+		<set name="operateType" val="A1" />
+		<set name="power" val="6960" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="AURA" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="6839" levels="2" name="Power Attack">
 		<!-- none -->
@@ -833,6 +876,7 @@
 		<set name="affectRange" val="200" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="3000" />
+		<set name="isSuicideAttack" val="true" />
 		<set name="magicLvl" val="81" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="3000" />
@@ -1508,10 +1552,10 @@
 		<for>
 			<effect name="Stun" />
 			<effect name="BlockDamage">
-				<param block="HP"/>
+				<param block="HP" />
 			</effect>
 			<effect name="BlockDamage">
-				<param block="MP"/>
+				<param block="MP" />
 			</effect>
 			<effect name="BlockBuff" />
 			<effect name="BlockDebuff" />
