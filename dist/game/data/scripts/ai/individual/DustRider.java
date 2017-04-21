@@ -28,6 +28,7 @@ import ai.npc.AbstractNpcAI;
 /**
  * Dust Rider AI.
  * @author Zoey76
+ * @since 2.6.0.0
  */
 public class DustRider extends AbstractNpcAI
 {

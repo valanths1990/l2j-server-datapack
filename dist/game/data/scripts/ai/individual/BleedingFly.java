@@ -28,6 +28,7 @@ import ai.npc.AbstractNpcAI;
 /**
  * Bleeding Fly AI.
  * @author Zoey76
+ * @since 2.6.0.0
  */
 public class BleedingFly extends AbstractNpcAI
 {

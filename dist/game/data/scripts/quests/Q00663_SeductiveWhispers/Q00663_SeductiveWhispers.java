@@ -35,6 +35,7 @@ import com.l2jserver.gameserver.util.Util;
 /**
  * Seductive Whispers (663)
  * @author Zoey76
+ * @since 2.6.0.0
  */
 public class Q00663_SeductiveWhispers extends Quest
 {

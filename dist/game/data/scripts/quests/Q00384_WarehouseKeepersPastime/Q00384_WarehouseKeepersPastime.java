@@ -33,6 +33,7 @@ import com.l2jserver.gameserver.util.Util;
 /**
  * Warehouse Keeper's Pastime (384)
  * @author Zealar
+ * @since 2.6.0.0
  */
 public final class Q00384_WarehouseKeepersPastime extends Quest
 {

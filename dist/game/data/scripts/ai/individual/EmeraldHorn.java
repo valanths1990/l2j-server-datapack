@@ -31,6 +31,7 @@ import ai.npc.AbstractNpcAI;
 /**
  * Emerald Horn AI.
  * @author Zoey76
+ * @since 2.6.0.0
  */
 public class EmeraldHorn extends AbstractNpcAI
 {
