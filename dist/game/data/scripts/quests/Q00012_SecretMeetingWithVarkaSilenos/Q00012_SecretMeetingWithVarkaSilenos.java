@@ -26,6 +26,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
 /**
  * Secret Meeting With Varka Silenos (12)
  * @author ivantotov
+ * @since 2.6.0.0
  */
 public final class Q00012_SecretMeetingWithVarkaSilenos extends Quest
 {

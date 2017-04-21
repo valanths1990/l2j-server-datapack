@@ -33,6 +33,7 @@ import ai.npc.AbstractNpcAI;
 /**
  * Blackdagger Wing AI.
  * @author Zoey76
+ * @since 2.6.0.0
  */
 public class BlackdaggerWing extends AbstractNpcAI
 {

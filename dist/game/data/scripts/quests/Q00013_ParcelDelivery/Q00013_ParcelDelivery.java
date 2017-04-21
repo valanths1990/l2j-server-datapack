@@ -26,6 +26,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
 /**
  * Parcel Delivery (13)
  * @author ivantotov
+ * @since 2.6.0.0
  */
 public final class Q00013_ParcelDelivery extends Quest
 {

@@ -33,6 +33,7 @@ import com.l2jserver.gameserver.util.Util;
 /**
  * Four Goblets (620)
  * @author Adry_85
+ * @since 2.6.0.0
  */
 public class Q00620_FourGoblets extends Quest
 {
