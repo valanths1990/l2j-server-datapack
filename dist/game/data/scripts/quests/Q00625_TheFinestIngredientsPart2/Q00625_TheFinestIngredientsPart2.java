@@ -101,7 +101,6 @@ public final class Q00625_TheFinestIngredientsPart2 extends Quest
 						if (random < 167)
 						{
 							rewardItems(player, GREATER_DYE_OF_STR_1);
-							
 						}
 						else if (random < 334)
 						{
