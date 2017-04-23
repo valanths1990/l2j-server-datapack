@@ -293,6 +293,7 @@ public class Q00348_AnArrogantSearch extends Quest
 			{
 				if (st.isMemoState(17) && (getQuestItemsCount(player, BLOODED_FABRIC) >= 10) && !hasQuestItems(player, WHITE_FABRIC_1))
 				{
+					st.setMemoState(18); // Custom line
 					st.setMemoStateEx(0, 18);
 					st.setMemoStateEx(1, 0);
 					st.setCond(27);
@@ -305,6 +306,7 @@ public class Q00348_AnArrogantSearch extends Quest
 				if (st.isMemoState(19))
 				{
 					giveItems(player, WHITE_FABRIC_1, 10);
+					st.setMemoState(17); // Custom line
 					st.setMemoStateEx(0, 17);
 					st.setMemoStateEx(1, 0);
 					st.setCond(29);
