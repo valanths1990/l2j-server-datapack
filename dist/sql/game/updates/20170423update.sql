@@ -1,0 +1,1 @@
+UPDATE character_quests SET name='Q00348_AnArrogantSearch' WHERE name='348_ArrogantSearch';

@@ -315,6 +315,7 @@ import quests.Q00343_UnderTheShadowOfTheIvoryTower.Q00343_UnderTheShadowOfTheIvo
 import quests.Q00344_1000YearsTheEndOfLamentation.Q00344_1000YearsTheEndOfLamentation;
 import quests.Q00345_MethodToRaiseTheDead.Q00345_MethodToRaiseTheDead;
 import quests.Q00347_GoGetTheCalculator.Q00347_GoGetTheCalculator;
+import quests.Q00348_AnArrogantSearch.Q00348_AnArrogantSearch;
 import quests.Q00350_EnhanceYourWeapon.Q00350_EnhanceYourWeapon;
 import quests.Q00351_BlackSwan.Q00351_BlackSwan;
 import quests.Q00352_HelpRoodRaiseANewPet.Q00352_HelpRoodRaiseANewPet;
@@ -806,6 +807,7 @@ public class QuestMasterHandler
 		Q00344_1000YearsTheEndOfLamentation.class,
 		Q00345_MethodToRaiseTheDead.class,
 		Q00347_GoGetTheCalculator.class,
+		Q00348_AnArrogantSearch.class,
 		Q00350_EnhanceYourWeapon.class,
 		Q00351_BlackSwan.class,
 		Q00352_HelpRoodRaiseANewPet.class,
