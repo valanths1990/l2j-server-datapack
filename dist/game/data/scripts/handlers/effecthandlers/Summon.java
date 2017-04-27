@@ -18,7 +18,8 @@
  */
 package handlers.effecthandlers;
 
-import com.l2jserver.gameserver.data.xml.impl.ExperienceData;
+import com.l2jserver.Config;
+import com.l2jserver.gameserver.data.json.ExperienceData;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.StatsSet;
@@ -85,14 +86,14 @@ public final class Summon extends AbstractEffect
 		summon.setItemConsume(_consumeItem);
 		summon.setItemConsumeInterval(consumeItemInterval);
 		
-		if (summon.getLevel() >= ExperienceData.getInstance().getMaxPetLevel())
+		if (summon.getLevel() >= Config.MAX_PET_LEVEL)
 		{
-			summon.getStat().setExp(ExperienceData.getInstance().getExpForLevel(ExperienceData.getInstance().getMaxPetLevel() - 1));
-			_log.warning(Summon.class.getSimpleName() + ": (" + summon.getName() + ") NpcID: " + summon.getId() + " has a level above " + ExperienceData.getInstance().getMaxPetLevel() + ". Please rectify.");
+			summon.getStat().setExp(ExperienceData.getInstance().getExpForLevel(Config.MAX_PET_LEVEL - 1));
+			_log.warning(Summon.class.getSimpleName() + ": (" + summon.getName() + ") NpcID: " + summon.getId() + " has a level above " + Config.MAX_PET_LEVEL + ". Please rectify.");
 		}
 		else
 		{
-			summon.getStat().setExp(ExperienceData.getInstance().getExpForLevel(summon.getLevel() % ExperienceData.getInstance().getMaxPetLevel()));
+			summon.getStat().setExp(ExperienceData.getInstance().getExpForLevel(summon.getLevel() % Config.MAX_PET_LEVEL));
 		}
 		
 		summon.setCurrentHp(summon.getMaxHp());
