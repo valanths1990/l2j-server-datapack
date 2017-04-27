@@ -20,7 +20,8 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import com.l2jserver.gameserver.data.xml.impl.ExperienceData;
+import com.l2jserver.Config;
+import com.l2jserver.gameserver.data.json.ExperienceData;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Playable;
@@ -73,30 +74,23 @@ public class AdminLevel implements IAdminCommandHandler
 				}
 				L2PcInstance targetPlayer = (L2PcInstance) targetChar;
 				
-				byte lvl = Byte.parseByte(val);
-				if ((lvl >= 1) && (lvl <= ExperienceData.getInstance().getMaxLevel()))
+				int level = Math.min(Math.max(Integer.parseInt(val), 1), Config.MAX_PLAYER_LEVEL);
+				
+				long pXp = targetPlayer.getExp();
+				long tXp = ExperienceData.getInstance().getExpForLevel(level);
+				
+				if (pXp > tXp)
 				{
-					long pXp = targetPlayer.getExp();
-					long tXp = ExperienceData.getInstance().getExpForLevel(lvl);
-					
-					if (pXp > tXp)
-					{
-						targetPlayer.removeExpAndSp(pXp - tXp, 0);
-					}
-					else if (pXp < tXp)
-					{
-						targetPlayer.addExpAndSp(tXp - pXp, 0);
-					}
+					targetPlayer.removeExpAndSp(pXp - tXp, 0);
 				}
-				else
+				else if (pXp < tXp)
 				{
-					activeChar.sendMessage("You must specify level between 1 and " + ExperienceData.getInstance().getMaxLevel() + ".");
-					return false;
+					targetPlayer.addExpAndSp(tXp - pXp, 0);
 				}
 			}
 			catch (NumberFormatException e)
 			{
-				activeChar.sendMessage("You must specify level between 1 and " + ExperienceData.getInstance().getMaxLevel() + ".");
+				activeChar.sendMessage("Level require number as value!");
 				return false;
 			}
 		}
