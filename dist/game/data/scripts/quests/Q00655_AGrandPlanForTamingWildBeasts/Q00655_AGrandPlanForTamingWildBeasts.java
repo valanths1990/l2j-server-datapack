@@ -203,7 +203,7 @@ public final class Q00655_AGrandPlanForTamingWildBeasts extends Quest
 		if (hall != null)
 		{
 			final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			return sdf.format(hall.getSiegeDate());
+			return sdf.format(hall.getSiegeDate().getTime());
 		}
 		return "Error in date.";
 	}
