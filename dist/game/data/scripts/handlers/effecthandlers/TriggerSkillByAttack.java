@@ -87,7 +87,7 @@ public final class TriggerSkillByAttack extends AbstractEffect
 	
 	public void onAttackEvent(OnCreatureDamageDealt event)
 	{
-		if (event.isDamageOverTime() || (_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLvl() == 0)))
+		if ((event.getSkill() != null) || event.isDamageOverTime() || (_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLvl() == 0)))
 		{
 			return;
 		}
