@@ -18,8 +18,8 @@
  */
 package village_master.DarkElvenChange2;
 
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -44,7 +44,6 @@ public final class DarkElvenChange2 extends Quest
 		31285, // Samael
 		31334, // Tifaren
 		31974, // Drizzit
-		32096, // Helminter
 	};
 	// Items
 	private static int MARK_OF_CHALLENGER = 2627;
