@@ -55,19 +55,19 @@ public final class DarkElfChange2 extends AbstractNpcAI
 	private static final int PHANTOM_SUMMONER = 41;
 	private static final int SHILLIEN_ELDER = 43;
 	// Items
-	private static final int MARK_OF_CHALLENGER = 2627; // proof12x
-	private static final int MARK_OF_DUTY = 2633; // proof11x
-	private static final int MARK_OF_SEEKER = 2673; // proof21x, proof22x
-	private static final int MARK_OF_SCHOLAR = 2674; // proof31x, proof32x
-	private static final int MARK_OF_PILGRIM = 2721; // proof41x
-	private static final int MARK_OF_DUELIST = 2762; // proof12z
-	private static final int MARK_OF_SEARCHER = 2809; // proof21z
-	private static final int MARK_OF_REFORMER = 2821; // proof41z
-	private static final int MARK_OF_MAGUS = 2840; // proof31z
-	private static final int MARK_OF_FATE = 3172; // proof11y, proof12y, proof21y, proof22y, proof31y, proof32y, proof41y
-	private static final int MARK_OF_SAGITTARIUS = 3293; // proof22z
-	private static final int MARK_OF_WITCHCRAFT = 3307; // proof11z
-	private static final int MARK_OF_SUMMONER = 3336; // proof32z
+	private static final int MARK_OF_CHALLENGER = 2627;
+	private static final int MARK_OF_DUTY = 2633;
+	private static final int MARK_OF_SEEKER = 2673;
+	private static final int MARK_OF_SCHOLAR = 2674;
+	private static final int MARK_OF_PILGRIM = 2721;
+	private static final int MARK_OF_DUELIST = 2762;
+	private static final int MARK_OF_SEARCHER = 2809;
+	private static final int MARK_OF_REFORMER = 2821;
+	private static final int MARK_OF_MAGUS = 2840;
+	private static final int MARK_OF_FATE = 3172;
+	private static final int MARK_OF_SAGITTARIUS = 3293;
+	private static final int MARK_OF_WITCHCRAFT = 3307;
+	private static final int MARK_OF_SUMMONER = 3336;
 	// Reward
 	private static final int SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE = 8870;
 	// Misc
@@ -86,31 +86,31 @@ public final class DarkElfChange2 extends AbstractNpcAI
 		String htmltext = null;
 		switch (event)
 		{
-			case "30195-02.htm": // master_lv3_de003k
-			case "30195-03.htm": // master_lv3_de006ka
-			case "30195-04.htm": // master_lv3_de007ka
-			case "30195-05.htm": // master_lv3_de007kat
-			case "30195-06.htm": // master_lv3_de006kb
-			case "30195-07.htm": // master_lv3_de007kb
-			case "30195-08.htm": // master_lv3_de007kbt
-			case "30195-09.htm": // master_lv3_de003s
-			case "30195-10.htm": // master_lv3_de006sa
-			case "30195-11.htm": // master_lv3_de007sa
-			case "30195-12.htm": // master_lv3_de007sat
-			case "30195-13.htm": // master_lv3_de006sb
-			case "30195-14.htm": // master_lv3_de007sb
-			case "30195-15.htm": // master_lv3_de007sbt
-			case "30195-16.htm": // master_lv3_de003w
-			case "30195-17.htm": // master_lv3_de006wa
-			case "30195-18.htm": // master_lv3_de007wa
-			case "30195-19.htm": // master_lv3_de007wat
-			case "30195-20.htm": // master_lv3_de006wb
-			case "30195-21.htm": // master_lv3_de007wb
-			case "30195-22.htm": // master_lv3_de007wbt
-			case "30195-23.htm": // master_lv3_de003o
-			case "30195-24.htm": // master_lv3_de006oa
-			case "30195-25.htm": // master_lv3_de007oa
-			case "30195-26.htm": // master_lv3_de007oat
+			case "30195-02.htm":
+			case "30195-03.htm":
+			case "30195-04.htm":
+			case "30195-05.htm":
+			case "30195-06.htm":
+			case "30195-07.htm":
+			case "30195-08.htm":
+			case "30195-09.htm":
+			case "30195-10.htm":
+			case "30195-11.htm":
+			case "30195-12.htm":
+			case "30195-13.htm":
+			case "30195-14.htm":
+			case "30195-15.htm":
+			case "30195-16.htm":
+			case "30195-17.htm":
+			case "30195-18.htm":
+			case "30195-19.htm":
+			case "30195-20.htm":
+			case "30195-21.htm":
+			case "30195-22.htm":
+			case "30195-23.htm":
+			case "30195-24.htm":
+			case "30195-25.htm":
+			case "30195-26.htm":
 			{
 				htmltext = event;
 				break;
@@ -135,7 +135,7 @@ public final class DarkElfChange2 extends AbstractNpcAI
 		String htmltext = null;
 		if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP))
 		{
-			htmltext = "30195-29.htm"; // fnYouAreThirdClass
+			htmltext = "30195-29.htm";
 		}
 		else if ((classId == SHILLIEN_KNIGHT) && (player.getClassId() == ClassId.palusKnight))
 		{
@@ -143,11 +143,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 			{
 				if (hasQuestItems(player, MARK_OF_DUTY, MARK_OF_FATE, MARK_OF_WITCHCRAFT))
 				{
-					htmltext = "30195-30.htm"; // fnLowLevel11
+					htmltext = "30195-30.htm";
 				}
 				else
 				{
-					htmltext = "30195-31.htm"; // fnLowLevelNoProof11
+					htmltext = "30195-31.htm";
 				}
 			}
 			else if (hasQuestItems(player, MARK_OF_DUTY, MARK_OF_FATE, MARK_OF_WITCHCRAFT))
@@ -158,11 +158,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
-				htmltext = "30195-32.htm"; // fnAfterClassChange11
+				htmltext = "30195-32.htm";
 			}
 			else
 			{
-				htmltext = "30195-33.htm"; // fnNoProof11
+				htmltext = "30195-33.htm";
 			}
 		}
 		else if ((classId == BLADEDANCER) && (player.getClassId() == ClassId.palusKnight))
@@ -171,11 +171,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 			{
 				if (hasQuestItems(player, MARK_OF_CHALLENGER, MARK_OF_FATE, MARK_OF_DUELIST))
 				{
-					htmltext = "30195-34.htm"; // fnLowLevel12
+					htmltext = "30195-34.htm";
 				}
 				else
 				{
-					htmltext = "30195-35.htm"; // fnLowLevelNoProof12
+					htmltext = "30195-35.htm";
 				}
 			}
 			else if (hasQuestItems(player, MARK_OF_CHALLENGER, MARK_OF_FATE, MARK_OF_DUELIST))
@@ -186,11 +186,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
-				htmltext = "30195-36.htm"; // fnAfterClassChange12
+				htmltext = "30195-36.htm";
 			}
 			else
 			{
-				htmltext = "30195-37.htm"; // fnNoProof12
+				htmltext = "30195-37.htm";
 			}
 		}
 		else if ((classId == ABYSS_WALKER) && (player.getClassId() == ClassId.assassin))
@@ -199,11 +199,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 			{
 				if (hasQuestItems(player, MARK_OF_SEEKER, MARK_OF_FATE, MARK_OF_SEARCHER))
 				{
-					htmltext = "30195-38.htm"; // fnLowLevel21
+					htmltext = "30195-38.htm";
 				}
 				else
 				{
-					htmltext = "30195-39.htm"; // fnLowLevelNoProof21
+					htmltext = "30195-39.htm";
 				}
 			}
 			else if (hasQuestItems(player, MARK_OF_SEEKER, MARK_OF_FATE, MARK_OF_SEARCHER))
@@ -214,11 +214,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
-				htmltext = "30195-40.htm"; // fnAfterClassChange21
+				htmltext = "30195-40.htm";
 			}
 			else
 			{
-				htmltext = "30195-41.htm"; // fnNoProof21
+				htmltext = "30195-41.htm";
 			}
 		}
 		else if ((classId == PHANTOM_RANGER) && (player.getClassId() == ClassId.assassin))
@@ -227,11 +227,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 			{
 				if (hasQuestItems(player, MARK_OF_SEEKER, MARK_OF_FATE, MARK_OF_SAGITTARIUS))
 				{
-					htmltext = "30195-42.htm"; // fnLowLevel22
+					htmltext = "30195-42.htm";
 				}
 				else
 				{
-					htmltext = "30195-43.htm"; // fnLowLevelNoProof22
+					htmltext = "30195-43.htm";
 				}
 			}
 			else if (hasQuestItems(player, MARK_OF_SEEKER, MARK_OF_FATE, MARK_OF_SAGITTARIUS))
@@ -242,11 +242,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
-				htmltext = "30195-44.htm"; // fnAfterClassChange22
+				htmltext = "30195-44.htm";
 			}
 			else
 			{
-				htmltext = "30195-45.htm"; // fnNoProof22
+				htmltext = "30195-45.htm";
 			}
 		}
 		else if ((classId == SPELLHOWLER) && (player.getClassId() == ClassId.darkWizard))
@@ -255,11 +255,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 			{
 				if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_FATE, MARK_OF_MAGUS))
 				{
-					htmltext = "30195-46.htm"; // fnLowLevel31
+					htmltext = "30195-46.htm";
 				}
 				else
 				{
-					htmltext = "30195-47.htm"; // fnLowLevelNoProof31
+					htmltext = "30195-47.htm";
 				}
 			}
 			else if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_FATE, MARK_OF_MAGUS))
@@ -270,11 +270,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
-				htmltext = "30195-48.htm"; // fnAfterClassChange31
+				htmltext = "30195-48.htm";
 			}
 			else
 			{
-				htmltext = "30195-49.htm"; // fnNoProof31
+				htmltext = "30195-49.htm";
 			}
 		}
 		else if ((classId == PHANTOM_SUMMONER) && (player.getClassId() == ClassId.darkWizard))
@@ -283,11 +283,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 			{
 				if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_FATE, MARK_OF_SUMMONER))
 				{
-					htmltext = "30195-50.htm"; // fnLowLevel32
+					htmltext = "30195-50.htm";
 				}
 				else
 				{
-					htmltext = "30195-51.htm"; // fnLowLevelNoProof32
+					htmltext = "30195-51.htm";
 				}
 			}
 			else if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_FATE, MARK_OF_SUMMONER))
@@ -298,11 +298,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
-				htmltext = "30195-52.htm"; // fnAfterClassChange32
+				htmltext = "30195-52.htm";
 			}
 			else
 			{
-				htmltext = "30195-53.htm"; // fnNoProof32
+				htmltext = "30195-53.htm";
 			}
 		}
 		else if ((classId == SHILLIEN_ELDER) && (player.getClassId() == ClassId.shillienOracle))
@@ -311,11 +311,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 			{
 				if (hasQuestItems(player, MARK_OF_PILGRIM, MARK_OF_FATE, MARK_OF_REFORMER))
 				{
-					htmltext = "30195-54.htm"; // fnLowLevel41
+					htmltext = "30195-54.htm";
 				}
 				else
 				{
-					htmltext = "30195-55.htm"; // fnLowLevelNoProof41
+					htmltext = "30195-55.htm";
 				}
 			}
 			else if (hasQuestItems(player, MARK_OF_PILGRIM, MARK_OF_FATE, MARK_OF_REFORMER))
@@ -326,11 +326,11 @@ public final class DarkElfChange2 extends AbstractNpcAI
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
-				htmltext = "30195-56.htm"; // fnAfterClassChange41
+				htmltext = "30195-56.htm";
 			}
 			else
 			{
-				htmltext = "30195-57.htm"; // fnNoProof41
+				htmltext = "30195-57.htm";
 			}
 		}
 		return htmltext;
@@ -342,35 +342,35 @@ public final class DarkElfChange2 extends AbstractNpcAI
 		String htmltext = null;
 		if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) && (player.isInCategory(CategoryType.DELF_MALL_CLASS) || player.isInCategory(CategoryType.DELF_FALL_CLASS)))
 		{
-			htmltext = "30195-01.htm"; // fnYouAreFourthClass
+			htmltext = "30195-01.htm";
 		}
 		else if ((player.isInCategory(CategoryType.DELF_MALL_CLASS) || player.isInCategory(CategoryType.DELF_FALL_CLASS)))
 		{
 			final ClassId classId = player.getClassId();
 			if ((classId == ClassId.palusKnight) || (classId == ClassId.shillienKnight) || (classId == ClassId.bladedancer))
 			{
-				htmltext = "30195-02.htm"; // fnClassList1
+				htmltext = "30195-02.htm";
 			}
 			else if ((classId == ClassId.assassin) || (classId == ClassId.abyssWalker) || (classId == ClassId.phantomRanger))
 			{
-				htmltext = "30195-09.htm"; // fnClassList2
+				htmltext = "30195-09.htm";
 			}
 			else if ((classId == ClassId.darkWizard) || (classId == ClassId.spellhowler) || (classId == ClassId.phantomSummoner))
 			{
-				htmltext = "30195-16.htm"; // fnClassList3
+				htmltext = "30195-16.htm";
 			}
 			else if ((classId == ClassId.shillienOracle) || (classId == ClassId.shillenElder))
 			{
-				htmltext = "30195-23.htm"; // fnClassList4
+				htmltext = "30195-23.htm";
 			}
 			else
 			{
-				htmltext = "30195-27.htm"; // fnYouAreFirstClass
+				htmltext = "30195-27.htm";
 			}
 		}
 		else
 		{
-			htmltext = "30195-28.htm"; // fnClassMismatch
+			htmltext = "30195-28.htm";
 		}
 		return htmltext;
 	}
