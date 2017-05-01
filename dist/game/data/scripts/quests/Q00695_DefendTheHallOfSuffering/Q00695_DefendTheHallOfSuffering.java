@@ -86,7 +86,7 @@ public class Q00695_DefendTheHallOfSuffering extends Quest
 			final int playerLevel = player.getLevel();
 			if ((playerLevel >= MIN_LEVEL) && (playerLevel <= MAX_LEVEL))
 			{
-				// TODO (Adry_85): This quest can only be carried out during the Seed of Infinity 4th period or Seed of Infinity 5th period. Added
+				// TODO (Adry_85): This quest can only be carried out during the Seed of Infinity 4th period or Seed of Infinity 5th period.
 				htmltext = "32603-01.htm";
 			}
 			else if (playerLevel < MIN_LEVEL)
