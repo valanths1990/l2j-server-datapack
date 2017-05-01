@@ -459,6 +459,7 @@ import quests.Q00688_DefeatTheElrokianRaiders.Q00688_DefeatTheElrokianRaiders;
 import quests.Q00690_JudesRequest.Q00690_JudesRequest;
 import quests.Q00691_MatrasSuspiciousRequest.Q00691_MatrasSuspiciousRequest;
 import quests.Q00692_HowtoOpposeEvil.Q00692_HowtoOpposeEvil;
+import quests.Q00695_DefendTheHallOfSuffering.Q00695_DefendTheHallOfSuffering;
 import quests.Q00699_GuardianOfTheSkies.Q00699_GuardianOfTheSkies;
 import quests.Q00700_CursedLife.Q00700_CursedLife;
 import quests.Q00701_ProofOfExistence.Q00701_ProofOfExistence;
@@ -951,6 +952,7 @@ public class QuestMasterHandler
 		Q00690_JudesRequest.class,
 		Q00691_MatrasSuspiciousRequest.class,
 		Q00692_HowtoOpposeEvil.class,
+		Q00695_DefendTheHallOfSuffering.class,
 		Q00699_GuardianOfTheSkies.class,
 		Q00700_CursedLife.class,
 		Q00701_ProofOfExistence.class,

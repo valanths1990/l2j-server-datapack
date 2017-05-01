@@ -22,8 +22,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ai.CtrlEvent;
 import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.datatables.SkillData;
@@ -39,16 +37,19 @@ import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
+import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Util;
 
+import ai.npc.AbstractNpcAI;
+import quests.Q00695_DefendTheHallOfSuffering.Q00695_DefendTheHallOfSuffering;
+
 /**
  * Seed of Infinity (Hall of Suffering) instance zone.<br>
  * TODO:<br>
  * - after 15mins mobs are despawned<br>
- * - bound instance to quests<br>
  * @author Gigiikun, ZakaX, Didldak
  */
 public final class HallOfSuffering extends AbstractNpcAI
@@ -395,47 +396,47 @@ public final class HallOfSuffering extends AbstractNpcAI
 	private void calcRewardItemId(HSWorld world)
 	{
 		Long finishDiff = System.currentTimeMillis() - world.startTime;
-		if (finishDiff < 1260000)
+		if (finishDiff < 1200000)
 		{
 			world.rewardHtm = "32530-00.htm";
 			world.rewardItemId = 13777;
 		}
-		else if (finishDiff < 1380000)
+		else if (finishDiff <= 1260000)
 		{
 			world.rewardHtm = "32530-01.htm";
 			world.rewardItemId = 13778;
 		}
-		else if (finishDiff < 1500000)
+		else if (finishDiff <= 1320000)
 		{
 			world.rewardHtm = "32530-02.htm";
 			world.rewardItemId = 13779;
 		}
-		else if (finishDiff < 1620000)
+		else if (finishDiff <= 1380000)
 		{
 			world.rewardHtm = "32530-03.htm";
 			world.rewardItemId = 13780;
 		}
-		else if (finishDiff < 1740000)
+		else if (finishDiff <= 1440000)
 		{
 			world.rewardHtm = "32530-04.htm";
 			world.rewardItemId = 13781;
 		}
-		else if (finishDiff < 1860000)
+		else if (finishDiff <= 1500000)
 		{
 			world.rewardHtm = "32530-05.htm";
 			world.rewardItemId = 13782;
 		}
-		else if (finishDiff < 1980000)
+		else if (finishDiff <= 1560000)
 		{
 			world.rewardHtm = "32530-06.htm";
 			world.rewardItemId = 13783;
 		}
-		else if (finishDiff < 2100000)
+		else if (finishDiff <= 1620000)
 		{
 			world.rewardHtm = "32530-07.htm";
 			world.rewardItemId = 13784;
 		}
-		else if (finishDiff < 2220000)
+		else if (finishDiff <= 1680000)
 		{
 			world.rewardHtm = "32530-08.htm";
 			world.rewardItemId = 13785;
@@ -680,10 +681,12 @@ public final class HallOfSuffering extends AbstractNpcAI
 				((HSWorld) world).isRewarded = true;
 				for (L2PcInstance member : talker.getParty().getMembers())
 				{
-					if (getQuestState(member, false) != null)
+					final QuestState st = member.getQuestState(Q00695_DefendTheHallOfSuffering.class.getSimpleName());
+					if ((st != null) && st.isMemoState(2))
 					{
-						giveItems(member, 736, 1);
+						giveItems(member, 736, 1); // Scroll of Escape
 						giveItems(member, ((HSWorld) world).rewardItemId, 1);
+						st.exitQuest(true);
 					}
 				}
 				return "";
