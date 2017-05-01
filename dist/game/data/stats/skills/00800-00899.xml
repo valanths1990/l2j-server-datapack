@@ -734,19 +734,16 @@
 	</skill>
 	<skill id="832" levels="2" name="Fast Recovery">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
-		<!-- FIXME: Level 2 regen values unconfirmed -->
-		<table name="#magicLvl"> 43 49 </table>
-		<table name="#regHpCp"> 4 6 </table>
-		<table name="#regMp"> 2 4 </table>
+		<table name="#regMp"> 2 5.4 </table>
 		<set name="icon" val="icon.skill0832" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="43" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="regHp" val="#regHpCp" />
+				<add stat="regHp" val="4" />
 				<add stat="regMp" val="#regMp" />
-				<add stat="regCp" val="#regHpCp" />
+				<add stat="regCp" val="4" />
 			</effect>
 		</for>
 	</skill>
