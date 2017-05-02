@@ -1641,10 +1641,6 @@ INSERT INTO `spawnlist` VALUES
 ("unset", 1, 31688, -115008, 47488, 496, 0, 0, 37504, 60, 0, 0, 0),
 -- Monument of Heroes 
 ("unset", 1, 31690, -114991, 47563, 496, 0, 0, 32768, 60, 0, 0, 0),
--- Mr. Cat
-("Kamael Village", 1, 31756, -116948, 46841, 360, 0, 0, 3355, 60, 0, 0, 0),
--- Miss Queen
-("Kamael Village", 1, 31757, -116902, 46841, 360, 0, 0, 49151, 60, 0, 0, 0),
 -- Perwan
 ("unset", 1, 32133, -125872, 38208, 1232, 0, 0, 0, 60, 0, 0, 0),
 -- Newbie Helper
@@ -3577,10 +3573,6 @@ INSERT INTO `spawnlist` VALUES
 ("gludio25_npc1725_018", 1, 31688, -84816, 151056, -3127, 0, 0, 0, 60, 0, 0, 0),
 -- Monument of Heroes 
 ("gludio25_npc1725_018", 1, 31690, -84816, 151008, -3127, 0, 0, 0, 60, 0, 0, 0),
--- Mr. Cat
-("Gludin Village", 1, 31756, -82032, 150160, -3122, 0, 0, 16500, 60, 0, 0, 0),
--- Miss Queen
-("Gludin Village", 1, 31757, -81967, 150160, -3122, 0, 0, 16500, 60, 0, 0, 0),
 -- Adventure Guildsman
 ("gludio06_npc1722_059", 1, 31787, -78992, 152512, -3170, 0, 0, 33000, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -4092,12 +4084,6 @@ INSERT INTO `spawnlist` VALUES
 ("Talking_Island_Npc", 1, 31688, -85151, 241476, -3728, 0, 0, 25000, 60, 0, 0, 0),
 -- Monument of Heroes 
 ("Talking_Island_Npc", 1, 31690, -85096, 241516, -3728, 0, 0, 25000, 60, 0, 0, 0),
--- Mr. Cat
-("Talking Island Village", 1, 31756, -84119, 243254, -3725, 0, 0, 8000, 60, 0, 0, 0),
-("Talking Island Village", 1, 31756, -84336, 242156, -3725, 0, 0, 24500, 60, 0, 0, 0),
--- Miss Queen
-("Talking Island Village", 1, 31757, -84047, 243193, -3725, 0, 0, 8000, 60, 0, 0, 0),
-("Talking Island Village", 1, 31757, -84294, 242204, -3725, 0, 0, 24500, 60, 0, 0, 0),
 -- Adventure Guildsman
 ("Talking_Island_Npc", 1, 31775, -83472, 242896, -3728, 0, 0, 39000, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -4653,10 +4639,6 @@ INSERT INTO `spawnlist` VALUES
 ("Orc_Village_Npc", 1, 31565, -44112, -115824, -220, 0, 0, 23000, 60, 0, 0, 0),
 -- Grand Olympiad Manager
 ("Orc_Village_Npc", 1, 31688, -45360, -114640, -240, 0, 0, 0, 60, 0, 0, 0),
--- Mr. Cat
-("Orc Village", 1, 31756, -44979, -113508, -194, 0, 0, 32000, 60, 0, 0, 0),
--- Miss Queen
-("Orc Village", 1, 31757, -44983, -113554, -194, 0, 0, 32000, 60, 0, 0, 0),
 -- Monument of Heroes
 ("Orc_Village_Npc", 1, 31771, -45360, -114688, -240, 0, 0, 0, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -10485,10 +10467,6 @@ INSERT INTO `spawnlist` VALUES
 ("dion22_npc2023_04", 1, 31688, -15120, 122096, -3064, 0, 0, 3000, 60, 0, 0, 0),
 -- Monument of Heroes 
 ("dion22_npc2023_03", 1, 31690, -15104, 122040, -3048, 0, 0, 3000, 60, 0, 0, 0),
--- Mr. Cat
-("Town of Gludio", 1, 31756, -14048, 123184, -3115, 0, 0, 32000, 60, 0, 0, 0),
--- Miss Queen
-("Town of Gludio", 1, 31757, -14050, 123229, -3115, 0, 0, 32000, 60, 0, 0, 0),
 -- Adventure Guildsman
 ("gludio08_npc1921_035", 1, 31792, -13328, 122720, -3055, 0, 0, 0, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -14217,12 +14195,6 @@ INSERT INTO `spawnlist` VALUES
 ("Dark_Elf_Village_Npc", 1, 31564, 11648, 15872, -4552, 0, 0, 0, 60, 0, 0, 0),
 -- Grand Olympiad Manager
 ("Dark_Elf_Village_Npc", 1, 31688, 9680, 16672, -4568, 0, 0, 14000, 60, 0, 0, 0),
--- Mr. Cat
-("Dark Elven Village", 1, 31756, 11340, 15972, -4577, 0, 0, 14000, 60, 0, 0, 0),
-("Dark Elven Village", 1, 31756, 10968, 17540, -4567, 0, 0, 55000, 60, 0, 0, 0),
--- Miss Queen
-("Dark Elven Village", 1, 31757, 11353, 16022, -4577, 0, 0, 14000, 60, 0, 0, 0),
-("Dark Elven Village", 1, 31757, 10918, 17511, -4567, 0, 0, 55000, 60, 0, 0, 0),
 -- Monument of Heroes
 ("Dark_Elf_Village_Npc", 1, 31770, 9760, 16656, -4568, 0, 0, 14000, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -16172,10 +16144,6 @@ INSERT INTO `spawnlist` VALUES
 ("gludio25_npc1725_018", 1, 31688, 16304, 144288, -2992, 0, 0, 55000, 60, 0, 0, 0),
 -- Monument of Heroes 
 ("gludio25_npc1725_018", 1, 31690, 16256, 144256, -2992, 0, 0, 55000, 60, 0, 0, 0),
--- Mr. Cat
-("Town of Dion", 1, 31756, 15584, 142784, -2699, 0, 0, 16500, 60, 0, 0, 0),
--- Miss Queen
-("Town of Dion", 1, 31757, 15631, 142778, -2699, 0, 0, 16500, 60, 0, 0, 0),
 -- Adventure Guildsman
 ("dion09_npc2022_038", 1, 31797, 15856, 142816, -2704, 0, 0, 15000, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -16704,10 +16672,6 @@ INSERT INTO `spawnlist` VALUES
 ("Grand Olympiad Manager", 1, 31688, 11758, 183932, -3560, 0, 0, 35179, 60, 0, 0, 0),
 -- Monument of Heroes 
 ("Monument of Heroes", 1, 31690, 11760, 184097, -3560, 0, 0, 19000, 60, 0, 0, 0),
--- Mr. Cat
-("Floran Village", 1, 31756, 17956, 170536, -3499, 0, 0, 48000, 60, 0, 0, 0),
--- Miss Queen
-("Floran Village", 1, 31757, 17913, 170536, -3499, 0, 0, 48000, 60, 0, 0, 0),
 -- Sonin
 ("dion10_npc2023_01", 1, 31773, 17788, 169842, -3496, 0, 0, 20000, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -18548,9 +18512,6 @@ INSERT INTO `spawnlist` VALUES
 -- Mr. Cat
 ("Rune Township", 1, 31756, 44176, -48732, -800, 0, 0, 33000, 60, 0, 0, 0),
 ("Rune Township", 1, 31756, 44319, -47640, -792, 0, 0, 50000, 60, 0, 0, 0),
--- Miss Queen
-("Rune Township", 1, 31757, 44176, -48688, -800, 0, 0, 33000, 60, 0, 0, 0),
-("Rune Township", 1, 31757, 44294, -47642, -792, 0, 0, 50000, 60, 0, 0, 0),
 -- Adventure Guildsman
 ("rune02_npc2116_57", 1, 31832, 42928, -41616, -2192, 0, 0, 37500, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -19412,12 +19373,6 @@ INSERT INTO `spawnlist` VALUES
 ("Elven_Village_Npc", 1, 31563, 42672, 50352, -2984, 0, 0, 63500, 60, 0, 0, 0),
 -- Grand Olympiad Manager
 ("Elven_Village_Npc", 1, 31688, 44652, 50972, -3056, 0, 0, 49000, 60, 0, 0, 0),
--- Mr. Cat
-("Elven Village", 1, 31756, 45472, 49312, -3067, 0, 0, 53000, 60, 0, 0, 0),
-("Elven Village", 1, 31756, 47648, 51296, -2989, 0, 0, 38500, 60, 0, 0, 0),
--- Miss Queen
-("Elven Village", 1, 31757, 45414, 49296, -3067, 0, 0, 53000, 60, 0, 0, 0),
-("Elven Village", 1, 31757, 47680, 51255, -2989, 0, 0, 38500, 60, 0, 0, 0),
 -- Monument of Heroes
 ("Elven_Village_Npc", 1, 31769, 44602, 50979, -3056, 0, 0, 49000, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -21975,12 +21930,6 @@ INSERT INTO `spawnlist` VALUES
 ("Town of Schuttgart", 1, 31734, 88223, -142349, -1343, 0, 0, 60027, 60, 0, 0, 0),
 -- Adventure Guildsman
 ("Town of Schuttgart", 1, 31738, 84521, -141191, -1542, 0, 0, 57344, 60, 0, 0, 0),
--- Mr. Cat
-("Town of Schuttgart", 1, 31756, 87824, -142256, -1336, 0, 0, 7342, 60, 0, 0, 0),
-("Town of Schuttgart", 1, 31756, 87596, -140674, -1536, 0, 0, 16500, 60, 0, 0, 0),
--- Miss Queen
-("Town of Schuttgart", 1, 31757, 87856, -142272, -1336, 0, 0, 44000, 60, 0, 0, 0),
-("Town of Schuttgart", 1, 31757, 87644, -140674, -1536, 0, 0, 16500, 60, 0, 0, 0),
 -- Auzendorff
 ("Town of Schuttgart", 1, 31945, 86459, -139631, -1527, 0, 0, 52453, 60, 0, 0, 0),
 -- Hombre
@@ -25094,10 +25043,6 @@ INSERT INTO `spawnlist` VALUES
 ("gludio25_npc1725_018", 1, 31688, 82688, 53056, -1494, 0, 0, 16500, 60, 0, 0, 0),
 -- Monument of Heroes 
 ("gludio25_npc1725_018", 1, 31690, 82752, 53056, -1494, 0, 0, 16500, 60, 0, 0, 0),
--- Mr. Cat
-("Town of Oren", 1, 31756, 81136, 54576, -1517, 0, 0, 32000, 60, 0, 0, 0),
--- Miss Queen
-("Town of Oren", 1, 31757, 81126, 54519, -1517, 0, 0, 32000, 60, 0, 0, 0),
 -- Adventure Guildsman
 ("oren17_npc2219_032", 1, 31814, 80848, 53168, -1558, 0, 0, 16500, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -26694,10 +26639,6 @@ INSERT INTO `spawnlist` VALUES
 ("gludio25_npc1725_018", 1, 31688, 82053, 147526, -3464, 0, 0, 16500, 60, 0, 0, 0),
 -- Monument of Heroes 
 ("gludio25_npc1725_018", 1, 31690, 82118, 147524, -3464, 0, 0, 16500, 60, 0, 0, 0),
--- Mr. Cat
-("Town of Giran", 1, 31756, 83076, 147912, -3467, 0, 0, 32000, 60, 0, 0, 0),
--- Miss Queen
-("Town of Giran", 1, 31757, 83082, 147845, -3467, 0, 0, 32000, 60, 0, 0, 0),
 -- Adventure Guildsman
 ("giran11_npc2222_53", 1, 31804, 88384, 147176, -3408, 0, 0, 33000, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -28823,12 +28764,6 @@ INSERT INTO `spawnlist` VALUES
 ("Dwarf_Village_Npc", 1, 31566, 116272, -177248, -880, 0, 0, 40000, 60, 0, 0, 0),
 -- Grand Olympiad Manager
 ("Dwarf_Village_Npc", 1, 31688, 115488, -179616, -888, 0, 0, 0, 60, 0, 0, 0),
--- Mr. Cat
-("Dwarven Village", 1, 31756, 116224, -181728, -1373, 0, 0, 0, 60, 0, 0, 0),
-("Dwarven Village", 1, 31756, 114880, -178144, -827, 0, 0, 0, 60, 0, 0, 0),
--- Miss Queen
-("Dwarven Village", 1, 31757, 116218, -181793, -1379, 0, 0, 0, 60, 0, 0, 0),
-("Dwarven Village", 1, 31757, 114880, -178196, -827, 0, 0, 0, 60, 0, 0, 0),
 -- Monument of Heroes
 ("Dwarf_Village_Npc", 1, 31772, 115488, -179664, -888, 0, 0, 0, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -31868,10 +31803,6 @@ INSERT INTO `spawnlist` VALUES
 ("gludio25_npc1725_018", 1, 31688, 116144, 77856, -2688, 0, 0, 49000, 60, 0, 0, 0),
 -- Monument of Heroes 
 ("gludio25_npc1725_018", 1, 31690, 116096, 77856, -2688, 0, 0, 49000, 60, 0, 0, 0),
--- Mr. Cat
-("Hunters Village", 1, 31756, 117200, 75824, -2725, 0, 0, 25000, 60, 0, 0, 0),
--- Miss Queen
-("Hunters Village", 1, 31757, 117160, 75784, -2725, 0, 0, 25000, 60, 0, 0, 0),
 -- Adventure Guildsman
 ("aden14_npc2320_130", 1, 31823, 115056, 74560, -2608, 0, 0, 9000, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -33426,10 +33357,6 @@ INSERT INTO `spawnlist` VALUES
 ("gludio25_npc1725_018", 1, 31688, 112336, 220128, -3599, 0, 0, 33000, 60, 0, 0, 0),
 -- Monument of Heroes 
 ("gludio25_npc1725_018", 1, 31690, 112336, 220208, -3599, 0, 0, 33000, 60, 0, 0, 0),
--- Mr. Cat
-("Heine", 1, 31756, 110592, 220400, -3667, 0, 0, 0, 60, 0, 0, 0),
--- Miss Queen
-("Heine", 1, 31757, 110592, 220443, -3667, 0, 0, 0, 60, 0, 0, 0),
 -- Adventure Guildsman
 ("innadril09_npc2324_29", 1, 31819, 110000, 220608, -3480, 0, 0, 16500, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -35408,14 +35335,6 @@ INSERT INTO `spawnlist` VALUES
 ("godard02_npc2416_54", 1, 31741, 150208, -57872, -2979, 0, 0, 26000, 60, 0, 0, 0),
 -- Halaster
 ("godard02_npc2416_16", 1, 31755, 146553, -52608, -2760, 0, 0, 49500, 60, 0, 0, 0),
--- Mr. Cat
-("Town of Goddard", 1, 31756, 148560, -57952, -2974, 0, 0, 53000, 60, 0, 0, 0),
-("Town of Goddard", 1, 31756, 147888, -58048, -2979, 0, 0, 49000, 60, 0, 0, 0),
-("Town of Goddard", 1, 31756, 147262, -56450, -2776, 0, 0, 33000, 60, 0, 0, 0),
--- Miss Queen
-("Town of Goddard", 1, 31757, 148514, -57972, -2974, 0, 0, 53000, 60, 0, 0, 0),
-("Town of Goddard", 1, 31757, 147924, -58052, -2979, 0, 0, 49000, 60, 0, 0, 0),
-("Town of Goddard", 1, 31757, 147285, -56461, -2776, 0, 0, 11500, 60, 0, 0, 0),
 -- Rafi
 ("unset", 1, 31758, 148938, -58390, -2976, 0, 0, 7937, 60, 0, 0, 0),
 -- Adventure Guildsman
@@ -36445,10 +36364,6 @@ INSERT INTO `spawnlist` VALUES
 ("gludio25_npc1725_018", 1, 31690, 147504, 27408, -2203, 0, 0, 16500, 60, 0, 0, 0),
 -- Talien
 ("aden13_npc2418_53", 1, 31739, 147792, 26368, -2107, 0, 0, 33000, 60, 0, 0, 0),
--- Mr. Cat
-("Town of Aden", 1, 31756, 147728, 27408, -2198, 0, 0, 16500, 60, 0, 0, 0),
--- Miss Queen
-("Town of Aden", 1, 31757, 147761, 27408, -2198, 0, 0, 16500, 60, 0, 0, 0),
 -- Adventure Guildsman
 ("aden13_npc2418_54", 1, 31827, 150856, 24864, -2144, 0, 0, 26000, 60, 0, 0, 0),
 -- Adventure Guildsman

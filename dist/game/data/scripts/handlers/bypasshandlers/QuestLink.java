@@ -87,7 +87,7 @@ public class QuestLink implements IBypassHandler
 	 * <li>Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance</li>
 	 * @param player The L2PcInstance that talk with the L2NpcInstance
 	 * @param npc The table containing quests of the L2NpcInstance
-	 * @param quests
+	 * @param quests the quest available
 	 */
 	private static void showQuestChooseWindow(L2PcInstance player, L2Npc npc, Quest[] quests)
 	{
@@ -151,12 +151,14 @@ public class QuestLink implements IBypassHandler
 			{
 				if (questId == TO_LEAD_AND_BE_LED)
 				{
-					sb.append("<a action=\"bypass -h Quest Q00118_ToLeadAndBeLed sponsor\"><font color=\"" + color + "\">[<fstring>" + questId + state + "</fstring> (Sponsor)]</font></a><br>");
+					sb.append("<a action=\"bypass -h Quest Q00118_ToLeadAndBeLed sponsor\"><font color=\"").append(color) //
+					.append("\">[<fstring>").append(questId).append(state).append("</fstring> (Sponsor)]</font></a><br>");
 				}
 				
 				if (questId == THE_LEADER_AND_THE_FOLLOWER)
 				{
-					sb.append("<a action=\"bypass -h Quest Q00123_TheLeaderAndTheFollower sponsor\"><font color=\"" + color + "\">[<fstring>" + questId + state + "</fstring> (Sponsor)]</font></a><br>");
+					sb.append("<a action=\"bypass -h Quest Q00123_TheLeaderAndTheFollower sponsor\"><font color=\"").append(color) //
+					.append("\">[<fstring>").append(questId).append(state).append("</fstring> (Sponsor)]</font></a><br>");
 				}
 			}
 		}
@@ -178,7 +180,7 @@ public class QuestLink implements IBypassHandler
 	 * @param npc the L2NpcInstance that chats with the {@code player}
 	 * @param questId the Id of the quest to display the message
 	 */
-	public static void showQuestWindow(L2PcInstance player, L2Npc npc, String questId)
+	private static void showQuestWindow(L2PcInstance player, L2Npc npc, String questId)
 	{
 		String content = null;
 		
@@ -228,11 +230,11 @@ public class QuestLink implements IBypassHandler
 	}
 	
 	/**
-	 * @param player
+	 * @param player the player talking to the NPC
 	 * @param npcId The Identifier of the NPC
 	 * @return a table containing all QuestState from the table _quests in which the L2PcInstance must talk to the NPC.
 	 */
-	private static List<QuestState> getQuestsForTalk(final L2PcInstance player, int npcId)
+	private static List<QuestState> getQuestsForTalk(L2PcInstance player, int npcId)
 	{
 		// Create a QuestState table that will contain all QuestState to modify
 		final List<QuestState> states = new ArrayList<>();
@@ -250,12 +252,14 @@ public class QuestLink implements IBypassHandler
 			if (listener.getOwner() instanceof Quest)
 			{
 				final Quest quest = (Quest) listener.getOwner();
-				
-				// Copy the current L2PcInstance QuestState in the QuestState table
-				final QuestState st = player.getQuestState(quest.getName());
-				if (st != null)
+				if (quest.isVisibleInQuestWindow())
 				{
-					states.add(st);
+					// Copy the current L2PcInstance QuestState in the QuestState table
+					final QuestState st = player.getQuestState(quest.getName());
+					if (st != null)
+					{
+						states.add(st);
+					}
 				}
 			}
 		}
@@ -296,12 +300,15 @@ public class QuestLink implements IBypassHandler
 			if (listener.getOwner() instanceof Quest)
 			{
 				final Quest quest = (Quest) listener.getOwner();
-				if ((quest.getId() > 0) && (quest.getId() < 20000))
+				if (quest.isVisibleInQuestWindow())
 				{
-					options.add(quest);
-					if (quest.canStartQuest(player))
+					if ((quest.getId() > 0) && (quest.getId() < 20000))
 					{
-						conditionMeet = true;
+						options.add(quest);
+						if (quest.canStartQuest(player))
+						{
+							conditionMeet = true;
+						}
 					}
 				}
 			}
