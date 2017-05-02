@@ -21,6 +21,16 @@ package quests;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import quests.Dummy.Q00201_HumanFighterTutorial;
+import quests.Dummy.Q00202_HumanMageTutorial;
+import quests.Dummy.Q00203_ElfTutorial;
+import quests.Dummy.Q00204_DarkElfTutorial;
+import quests.Dummy.Q00205_OrcTutorial;
+import quests.Dummy.Q00206_DwarfTutorial;
+import quests.Dummy.Q00207_NewbieWeaponCoupon;
+import quests.Dummy.Q00208_NewbieAccessoryCoupon;
+import quests.Dummy.Q00209_KamaelTutorial;
+import quests.Dummy.Q00728_TerritoryWar;
 import quests.Q00001_LettersOfLove.Q00001_LettersOfLove;
 import quests.Q00002_WhatWomenWant.Q00002_WhatWomenWant;
 import quests.Q00003_WillTheSealBeBroken.Q00003_WillTheSealBeBroken;
@@ -241,6 +251,7 @@ import quests.Q00250_WatchWhatYouEat.Q00250_WatchWhatYouEat;
 import quests.Q00251_NoSecrets.Q00251_NoSecrets;
 import quests.Q00252_ItSmellsDelicious.Q00252_ItSmellsDelicious;
 import quests.Q00254_LegendaryTales.Q00254_LegendaryTales;
+import quests.Q00255_Tutorial.Q00255_Tutorial;
 import quests.Q00257_TheGuardIsBusy.Q00257_TheGuardIsBusy;
 import quests.Q00258_BringWolfPelts.Q00258_BringWolfPelts;
 import quests.Q00259_RequestFromTheFarmOwner.Q00259_RequestFromTheFarmOwner;
@@ -695,6 +706,15 @@ public class QuestMasterHandler
 		Q00196_SevenSignsSealOfTheEmperor.class,
 		Q00197_SevenSignsTheSacredBookOfSeal.class,
 		Q00198_SevenSignsEmbryo.class,
+		Q00201_HumanFighterTutorial.class,
+		Q00202_HumanMageTutorial.class,
+		Q00203_ElfTutorial.class,
+		Q00204_DarkElfTutorial.class,
+		Q00205_OrcTutorial.class,
+		Q00206_DwarfTutorial.class,
+		Q00207_NewbieWeaponCoupon.class,
+		Q00208_NewbieAccessoryCoupon.class,
+		Q00209_KamaelTutorial.class,
 		Q00211_TrialOfTheChallenger.class,
 		Q00212_TrialOfDuty.class,
 		Q00213_TrialOfTheSeeker.class,
@@ -734,6 +754,7 @@ public class QuestMasterHandler
 		Q00251_NoSecrets.class,
 		Q00252_ItSmellsDelicious.class,
 		Q00254_LegendaryTales.class,
+		Q00255_Tutorial.class,
 		Q00257_TheGuardIsBusy.class,
 		Q00258_BringWolfPelts.class,
 		Q00259_RequestFromTheFarmOwner.class,
@@ -957,6 +978,7 @@ public class QuestMasterHandler
 		Q00700_CursedLife.class,
 		Q00701_ProofOfExistence.class,
 		Q00702_ATrapForRevenge.class,
+		Q00728_TerritoryWar.class,
 		Q00901_HowLavasaurusesAreMade.class,
 		Q00902_ReclaimOurEra.class,
 		Q00903_TheCallOfAntharas.class,
