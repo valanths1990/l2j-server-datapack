@@ -2130,7 +2130,7 @@
 		<table name="#pAtk"> 1.05 1.1 1.15 </table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
-		<set name="abnormalType" val="SONG_BATTLE_WHISPER" />
+		<set name="abnormalType" val="WISPERING_OF_BATTLE" />
 		<!-- <set name="affectRange" val="1000" /> -->
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="2500" />
@@ -2155,7 +2155,7 @@
 		<!-- Confirmed High Five -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
-		<set name="abnormalType" val="DANCE_DEFENCE_MOTION1" />
+		<set name="abnormalType" val="MOTION_OF_DEFENCE" />
 		<!-- <set name="affectRange" val="1000" /> -->
 		<set name="effectPoint" val="635" />
 		<set name="hitTime" val="2500" />

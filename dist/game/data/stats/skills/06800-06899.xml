@@ -1588,7 +1588,7 @@
 		<table name="#traits"> 50 80 90 </table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
-		<set name="abnormalType" val="DRAGON_BUFF" />
+		<set name="abnormalType" val="MORALE_UP" />
 		<set name="affectRange" val="1000" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="1500" />

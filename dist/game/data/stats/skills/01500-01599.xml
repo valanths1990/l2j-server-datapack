@@ -1904,7 +1904,7 @@
 		<table name="#mpConsume"> 18 22 27 30 33 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="600" />
-		<set name="abnormalType" val="MAX_HP_CP_UP" />
+		<set name="abnormalType" val="MAX_HP_UP" />
 		<set name="effectPoint" val="268" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1561" />

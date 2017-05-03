@@ -3,7 +3,7 @@
 	<skill id="23300" levels="1" name="Ghost Piercing">
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="GHOST_PIERCING" />
+		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="element" val="5" /> <!-- Dark -->
 		<set name="elementPower" val="20" />
