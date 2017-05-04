@@ -92,6 +92,11 @@ public class BleedingFly extends AbstractNpcAI
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
+		if (npc.isDead())
+		{
+			return super.onAdvEvent(event, npc, player);
+		}
+		
 		if (TIMER_MID_HP.equals(event))
 		{
 			if (npc.getVariables().getInt(MID_HP_MINION_COUNT) > 0)

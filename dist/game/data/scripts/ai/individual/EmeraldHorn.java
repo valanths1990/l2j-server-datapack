@@ -114,7 +114,14 @@ public class EmeraldHorn extends AbstractNpcAI
 				final L2Character mostHated = ((L2Attackable) npc).getMostHated();
 				if (mostHated != null)
 				{
-					addSkillCastDesire(npc, mostHated, PIERCING_STORM, 9999000000000000L);
+					if (mostHated.isDead())
+					{
+						((L2Attackable) npc).stopHating(mostHated);
+					}
+					else
+					{
+						addSkillCastDesire(npc, mostHated, PIERCING_STORM, 9999000000000000L);
+					}
 				}
 			}
 			npc.getVariables().set(CAST_FLAG, false);
