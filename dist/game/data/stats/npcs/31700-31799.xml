@@ -2114,7 +2114,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="31756" level="70" type="L2ClassMaster" name="Mr. Cat" title="Test Server Helper">
+	<npc id="31756" level="70" type="L2Npc" name="Mr. Cat" title="Test Server Helper">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2156,7 +2156,7 @@
 			<height normal="16" />
 		</collision>
 	</npc>
-	<npc id="31757" level="70" type="L2ClassMaster" name="Miss Queen" title="Test Server Helper">
+	<npc id="31757" level="70" type="L2Npc" name="Miss Queen" title="Test Server Helper">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
