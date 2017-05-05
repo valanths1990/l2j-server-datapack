@@ -1,38 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="6800" levels="1" name="Presentation - Yellow Portal Ray">
-		<!-- none -->
-		<set name="blockedInOlympiad" val="true" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="magicLvl" val="85" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6801" levels="1" name="Presentation - Yellow-Green Portal Ray">
-		<!-- none -->
-		<set name="blockedInOlympiad" val="true" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="magicLvl" val="85" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6802" levels="1" name="Presentation - SSQ2 General Purpose 6">
-		<!-- none -->
-		<set name="blockedInOlympiad" val="true" />
+		<!-- High Five Confirmed -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="86400" />
+		<set name="abnormalType" val="HIDE" />
+		<set name="abnormalVisualEffect" val="STEALTH" />
+		<set name="effectPoint" val="679" />
 		<set name="icon" val="icon.skill0922" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="magicLvl" val="-2" />
+		<set name="operateType" val="A2" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="Hide" />
+		</for>
 	</skill>
 	<skill id="6803" levels="1" name="Arena Haste">
-		<!-- High Five Skill -->
-		<!-- Arena Skill -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
-		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="495" />
+		<set name="effectPoint" val="624" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1086" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -41,19 +51,18 @@
 		</for>
 	</skill>
 	<skill id="6804" levels="1" name="Arena Wind Walk">
-		<!-- High Five Skill -->
-		<!-- Arena Skill -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="SPEED_UP" />
-		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="285" />
+		<set name="effectPoint" val="624" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1204" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -62,19 +71,18 @@
 		</for>
 	</skill>
 	<skill id="6805" levels="1" name="Arena Empower">
-		<!-- High Five Skill -->
-		<!-- Arena Skill -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="MA_UP" />
-		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="495" />
+		<set name="effectPoint" val="624" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1059" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -83,19 +91,17 @@
 		</for>
 	</skill>
 	<skill id="6806" levels="1" name="Arena Acumen">
-		<!-- High Five Skill -->
-		<!-- Arena Skill -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="CASTING_TIME_DOWN" />
-		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="457" />
+		<set name="effectPoint" val="624" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1085" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -104,19 +110,18 @@
 		</for>
 	</skill>
 	<skill id="6807" levels="1" name="Arena Concentration">
-		<!-- High Five Skill -->
-		<!-- Arena Skill -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="CANCEL_PROB_DOWN" />
-		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="624" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1078" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -125,19 +130,18 @@
 		</for>
 	</skill>
 	<skill id="6808" levels="1" name="Arena Might">
-		<!-- High Five Skill -->
-		<!-- Arena Skill -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="PA_UP" />
-		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="379" />
+		<set name="effectPoint" val="624" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1068" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -146,19 +150,18 @@
 		</for>
 	</skill>
 	<skill id="6809" levels="1" name="Arena Guidance">
-		<!-- High Five Skill -->
-		<!-- Arena Skill -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="HIT_UP" />
-		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="532" />
+		<set name="effectPoint" val="624" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1240" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -167,19 +170,18 @@
 		</for>
 	</skill>
 	<skill id="6810" levels="1" name="Arena Focus">
-		<!-- High Five Skill -->
-		<!-- Arena Skill -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="CRITICAL_PROB_UP" />
-		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="495" />
+		<set name="effectPoint" val="624" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1077" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -188,19 +190,19 @@
 		</for>
 	</skill>
 	<skill id="6811" levels="1" name="Arena Death Whisper">
-		<!-- High Five Skill -->
-		<!-- Arena Skill -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="CRITICAL_DMG_UP" />
-		<set name="blockedInOlympiad" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="532" />
+		<set name="effectPoint" val="624" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1242" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -209,35 +211,49 @@
 		</for>
 	</skill>
 	<skill id="6812" levels="1" name="Arena Berserker Spirit">
-		<!-- High Five Skill -->
-		<!-- Arena Skill -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="BERSERKER" />
-		<set name="blockedInOlympiad" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="495" />
+		<set name="effectPoint" val="624" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1062" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.16" />
-				<mul stat="pAtk" val="1.08" />
-				<mul stat="mDef" val="0.84" />
-				<mul stat="pDef" val="0.92" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pAtkSpd" val="1.08" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="0.84" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.08" />
+			</effect>
+			<effect name="Buff">
+				<sub stat="pAtkSpd" val="4" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="0.92" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="rEvas" val="1.08" />
+			</effect>
+			<effect name="Buff">
 				<add stat="runSpd" val="8" />
-				<sub stat="rEvas" val="4" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="6813" levels="8" name="Focus Sonic">
-		<!-- Confirmed High Five -->
+		<!-- High Five Confirmed -->
 		<table name="#magicLvl"> 40 43 49 55 60 66 70 79 </table>
 		<table name="#maxCharges"> 1 2 3 4 5 6 7 8 </table>
 		<set name="isTriggeredSkill" val="true" />
@@ -258,7 +274,7 @@
 		</for>
 	</skill>
 	<skill id="6814" levels="8" name="Focus Force">
-		<!-- Confirmed High Five -->
+		<!-- High Five Confirmed -->
 		<table name="#magicLvl"> 24 32 40 52 60 66 72 79 </table>
 		<table name="#maxCharges"> 1 2 3 4 5 6 7 8 </table>
 		<set name="isTriggeredSkill" val="true" />
@@ -279,9 +295,36 @@
 		</for>
 	</skill>
 	<skill id="6815" levels="16" name="Deadly Poison">
+		<!-- High Five Confirmed -->
 		<!-- "Poison seeps deeper and for 10 seconds, 800 HP is decreased every second. If not treated, the poison will worsen." -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- TODO(Zoey76): Power must be negative and effect HealOverTime. -->
+		<table name="#magicLvl"> 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 </table>
+		<table name="#power"> 330 370 400 440 480 520 560 600 640 680 720 760 780 780 800 800 </table>
+		<table name="#skillLevel"> 2 3 4 5 6 7 8 9 10 11 12 13 14 15 15 16 </table>
+		<set name="abnormalLvl" val="10" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="POISON" />
+		<set name="abnormalVisualEffect" val="DOT_POISON" />
+		<set name="basicProperty" val="CON" />
+		<set name="icon" val="icon.skill6815" />
+		<set name="isDebuff" val="true" />
+		<set name="isMagic" val="2" />
+		<set name="lvlBonusRate" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="operateType" val="A2" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<set name="trait" val="POISON" />
+		<for>
+			<effect name="DamOverTime" ticks="5">
+				<param power="#power" />
+			</effect>
+		</for>
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="6815" skillLevel="#skillLevel" />
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="6816" levels="16" name="Deadly Bleed">
 		<!-- High Five Confirmed -->

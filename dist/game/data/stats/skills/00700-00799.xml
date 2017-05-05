@@ -1944,12 +1944,12 @@
 		</for>
 	</skill>
 	<skill id="774" levels="1" name="Dread Pool">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="8" />
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
-		<set name="activateRate" val="80" />
+		<set name="activateRate" val="90" />
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="MEN" />
