@@ -74,18 +74,15 @@ public class AdminLevel implements IAdminCommandHandler
 				}
 				L2PcInstance targetPlayer = (L2PcInstance) targetChar;
 				
-				int level = Math.min(Math.max(Integer.parseInt(val), 1), Config.MAX_PLAYER_LEVEL);
-				
-				long pXp = targetPlayer.getExp();
-				long tXp = ExperienceData.getInstance().getExpForLevel(level);
-				
-				if (pXp > tXp)
+				if (targetPlayer.isSubClassActive())
 				{
-					targetPlayer.removeExpAndSp(pXp - tXp, 0);
+					targetPlayer.getSubClasses().get(targetPlayer.getClassIndex()).getStat().setExp(ExperienceData.getInstance().getExpForLevel(Math.min(Math.max(Integer.parseInt(val), 1), Config.MAX_SUBCLASS_LEVEL)));
+					targetPlayer.getSubClasses().get(targetPlayer.getClassIndex()).getStat().incrementLevel();
 				}
-				else if (pXp < tXp)
+				else
 				{
-					targetPlayer.addExpAndSp(tXp - pXp, 0);
+					targetPlayer.getStat().setExp(ExperienceData.getInstance().getExpForLevel(Math.min(Math.max(Integer.parseInt(val), 1), Config.MAX_PLAYER_LEVEL)));
+					targetPlayer.getStat().incrementLevel();
 				}
 			}
 			catch (NumberFormatException e)
