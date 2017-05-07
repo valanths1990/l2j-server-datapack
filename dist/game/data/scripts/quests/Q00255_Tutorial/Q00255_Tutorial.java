@@ -1112,7 +1112,7 @@ public class Q00255_Tutorial extends Quest
 			case 58:
 				if (!haveMemo(player, Q10280_MUTATED_KANEUS_SCHUTTGART) || (getOneTimeQuestFlag(player, Q10280_MUTATED_KANEUS_SCHUTTGART) == 0))
 				{
-					showTutorialHTML(player, "tw-shuttgart.htm");
+					showTutorialHTML(player, "tw-schuttgart.htm");
 					playSound(player, Sound.ITEMSOUND_QUEST_TUTORIAL);
 					showRadar(player, 85868, -142164, -1342, 2);
 				}
