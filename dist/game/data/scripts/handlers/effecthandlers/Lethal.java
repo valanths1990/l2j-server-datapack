@@ -23,6 +23,7 @@ import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
+import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Formulas;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.util.Rnd;
@@ -33,15 +34,15 @@ import com.l2jserver.util.Rnd;
  */
 public final class Lethal extends AbstractEffect
 {
-	private final int _fullLethal;
-	private final int _halfLethal;
+	private final double _fullLethal;
+	private final double _halfLethal;
 	
 	public Lethal(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
-		_fullLethal = params.getInt("fullLethal", 0);
-		_halfLethal = params.getInt("halfLethal", 0);
+		_fullLethal = params.getDouble("fullLethal", .0);
+		_halfLethal = params.getDouble("halfLethal", .0);
 	}
 	
 	@Override
@@ -53,14 +54,15 @@ public final class Lethal extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		L2Character target = info.getEffected();
-		L2Character activeChar = info.getEffector();
+		final L2Character target = info.getEffected();
+		final L2Character activeChar = info.getEffector();
+		final Skill skill = info.getSkill();
 		if (activeChar.isPlayer() && !activeChar.getAccessLevel().canGiveDamage())
 		{
 			return;
 		}
 		
-		if (info.getSkill().getMagicLevel() < (target.getLevel() - 6))
+		if (skill.getMagicLevel() < (target.getLevel() - 6))
 		{
 			return;
 		}
@@ -70,14 +72,14 @@ public final class Lethal extends AbstractEffect
 			return;
 		}
 		
-		double chanceMultiplier = Formulas.calcAttributeBonus(activeChar, target, info.getSkill()) * Formulas.calcGeneralTraitBonus(activeChar, target, info.getSkill().getTraitType(), false);
+		double chanceMultiplier = Formulas.calcAttributeBonus(activeChar, target, skill) * Formulas.calcGeneralTraitBonus(activeChar, target, skill.getTraitType(), false);
 		// Lethal Strike
 		if (Rnd.get(100) < (_fullLethal * chanceMultiplier))
 		{
 			// for Players CP and HP is set to 1.
 			if (target.isPlayer())
 			{
-				target.notifyDamageReceived(target.getCurrentHp() - 1, info.getEffector(), info.getSkill(), true, false);
+				target.notifyDamageReceived(target.getCurrentHp() - 1, activeChar, skill, true, false);
 				target.setCurrentCp(1);
 				target.setCurrentHp(1);
 				target.sendPacket(SystemMessageId.LETHAL_STRIKE);
@@ -85,7 +87,7 @@ public final class Lethal extends AbstractEffect
 			// for Monsters HP is set to 1.
 			else if (target.isMonster() || target.isSummon())
 			{
-				target.notifyDamageReceived(target.getCurrentHp() - 1, info.getEffector(), info.getSkill(), true, false);
+				target.notifyDamageReceived(target.getCurrentHp() - 1, activeChar, skill, true, false);
 				target.setCurrentHp(1);
 			}
 			activeChar.sendPacket(SystemMessageId.LETHAL_STRIKE_SUCCESSFUL);
@@ -103,7 +105,7 @@ public final class Lethal extends AbstractEffect
 			// for Monsters HP is set to 50%.
 			else if (target.isMonster() || target.isSummon())
 			{
-				target.notifyDamageReceived(target.getCurrentHp() * 0.5, info.getEffector(), info.getSkill(), true, false);
+				target.notifyDamageReceived(target.getCurrentHp() * 0.5, activeChar, skill, true, false);
 				target.setCurrentHp(target.getCurrentHp() * 0.5);
 			}
 			activeChar.sendPacket(SystemMessageId.HALF_KILL);
