@@ -719,9 +719,10 @@
 	</skill>
 	<skill id="928" levels="1" name="Dual Blow">
 		<!-- High Five Skill -->
-		<set name="baseCritRate" val="20" />
-		<set name="blowChance" val="40" />
+		<set name="baseCritRate" val="30" />
+		<set name="blowChance" val="60" />
 		<set name="castRange" val="40" />
+		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-337" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1800" />
@@ -742,7 +743,7 @@
 		<for>
 			<effect name="FatalBlow" />
 			<effect name="Lethal">
-				<param fullLethal="1" halfLethal="8" /> <!-- FIXME: full lethal rate unconfirmed -->
+				<param fullLethal="0.1" halfLethal="8" />
 			</effect>
 		</for>
 	</skill>
