@@ -550,9 +550,6 @@ public final class ClassMaster extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		if (ALLOW_CLASS_MASTERS)
-		{
-			new ClassMaster();
-		}
+		new ClassMaster();
 	}
 }
