@@ -99,8 +99,7 @@ public final class PhysicalSoulAttack extends AbstractEffect
 		if ((skill.getMaxSoulConsumeCount() > 0) && activeChar.isPlayer())
 		{
 			// Souls Formula (each soul increase +4%)
-			int chargedSouls = (activeChar.getActingPlayer().getChargedSouls() <= skill.getMaxSoulConsumeCount()) ? activeChar.getActingPlayer().getChargedSouls() : skill.getMaxSoulConsumeCount();
-			damage *= 1 + (chargedSouls * 0.04);
+			damage *= 1 + (info.getCharges() * 0.04);
 		}
 		if (crit)
 		{
