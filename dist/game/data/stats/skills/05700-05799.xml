@@ -1150,6 +1150,9 @@
 	</skill>
 	<skill id="5760" levels="9" name="Critical Hit">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 9 10 </table>
+		<table name="#skillLevel"> 2 3 4 5 6 7 0 0 0 </table>
+		<table name="#critRate"> 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1 1 </table>
+		<table name="#pAtkSpd"> 1.33 1.33 1.33 1.33 1.33 1.33 1.33 1 1 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="SEED_OF_CRITICAL" />
@@ -1158,7 +1161,21 @@
 		<set name="magicLvl" val="73" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="critRate" val="#critRate" />
+				<mul stat="pAtkSpd" val="#pAtkSpd" />
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="50" />
+				<param skillId="5760" skillLevel="#skillLevel" />
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="5761" levels="2" name="Power Strike">
 		<table name="#mpConsume"> 91 122 </table>
