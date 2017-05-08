@@ -32,6 +32,7 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
+import com.l2jserver.gameserver.util.Util;
 import com.l2jserver.util.Rnd;
 
 /**
@@ -50,7 +51,6 @@ public final class TriggerSkillByAvoid extends AbstractEffect
 	 * @param set
 	 * @param params
 	 */
-	
 	public TriggerSkillByAvoid(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
@@ -63,6 +63,11 @@ public final class TriggerSkillByAvoid extends AbstractEffect
 	public void onAvoidEvent(OnCreatureAttackAvoid event)
 	{
 		if (event.isDamageOverTime() || (_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLvl() == 0)))
+		{
+			return;
+		}
+		
+		if (((_targetType == L2TargetType.SELF) && (_skill.getSkill().getCastRange() > 0)) && (Util.calculateDistance(event.getAttacker(), event.getTarget(), true, false) > _skill.getSkill().getCastRange()))
 		{
 			return;
 		}

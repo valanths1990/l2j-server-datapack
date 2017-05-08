@@ -33,6 +33,7 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
+import com.l2jserver.gameserver.util.Util;
 import com.l2jserver.util.Rnd;
 
 /**
@@ -65,6 +66,11 @@ public final class TriggerSkillByDamage extends AbstractEffect
 	public void onDamageReceivedEvent(OnCreatureDamageReceived event)
 	{
 		if (event.isDamageOverTime() || (_chance == 0) || (_skill.getSkillLvl() == 0))
+		{
+			return;
+		}
+		
+		if (((_targetType == L2TargetType.SELF) && (_skill.getSkill().getCastRange() > 0)) && (Util.calculateDistance(event.getAttacker(), event.getTarget(), true, false) > _skill.getSkill().getCastRange()))
 		{
 			return;
 		}
