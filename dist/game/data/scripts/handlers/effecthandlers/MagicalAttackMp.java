@@ -43,7 +43,7 @@ public final class MagicalAttackMp extends AbstractEffect
 	@Override
 	public boolean calcSuccess(BuffInfo info)
 	{
-		if (info.getEffected().isInvul())
+		if (info.getEffected().isInvul() || info.getEffected().isMpBlocked())
 		{
 			return false;
 		}
@@ -99,21 +99,6 @@ public final class MagicalAttackMp extends AbstractEffect
 		{
 			target.stopEffectsOnDamage(true);
 			target.setCurrentMp(target.getCurrentMp() - mp);
-		}
-		
-		if (target.isPlayer())
-		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_MP_HAS_BEEN_DRAINED_BY_C1);
-			sm.addCharName(activeChar);
-			sm.addInt((int) mp);
-			target.sendPacket(sm);
-		}
-		
-		if (activeChar.isPlayer())
-		{
-			SystemMessage sm2 = SystemMessage.getSystemMessage(SystemMessageId.YOUR_OPPONENTS_MP_WAS_REDUCED_BY_S1);
-			sm2.addInt((int) mp);
-			activeChar.sendPacket(sm2);
 		}
 	}
 }
