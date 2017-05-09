@@ -59,7 +59,7 @@ public final class ManaHealByLevel extends AbstractEffect
 	public void onStart(BuffInfo info)
 	{
 		L2Character target = info.getEffected();
-		if ((target == null) || target.isDead() || target.isDoor() || target.isInvul())
+		if ((target == null) || target.isDead() || target.isDoor() || target.isInvul() || target.isMpBlocked())
 		{
 			return;
 		}

@@ -40,7 +40,7 @@ public final class ManaHealOverTime extends AbstractEffect
 	@Override
 	public boolean onActionTime(BuffInfo info)
 	{
-		if (info.getEffected().isDead())
+		if (info.getEffected().isDead() || info.getEffected().isInvul() || info.getEffected().isMpBlocked())
 		{
 			return false;
 		}
