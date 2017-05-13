@@ -34,6 +34,7 @@ import com.l2jserver.gameserver.data.xml.impl.EnchantItemData;
 import com.l2jserver.gameserver.data.xml.impl.EnchantItemGroupsData;
 import com.l2jserver.gameserver.data.xml.impl.MultisellData;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
+import com.l2jserver.gameserver.data.xml.impl.PlayerCreationPointData;
 import com.l2jserver.gameserver.data.xml.impl.TransformData;
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.datatables.SkillData;
@@ -56,7 +57,7 @@ public class AdminReload implements IAdminCommandHandler
 		"admin_reload"
 	};
 	
-	private static final String RELOAD_USAGE = "Usage: //reload <config|access|npc|quest [quest_id|quest_name]|walker|htm[l] [file|directory]|multisell|buylist|teleport|skill|item|door|effect|handler|enchant>";
+	private static final String RELOAD_USAGE = "Usage: //reload <config|access|npc|quest [quest_id|quest_name]|walker|htm[l] [file|directory]|multisell|buylist|teleport|skill|item|door|effect|handler|enchant|creationpoint>";
 	
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
@@ -246,6 +247,11 @@ public class AdminReload implements IAdminCommandHandler
 					TransformData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded transform data.");
 					break;
+				}
+				case "creationpoint":
+				{
+					PlayerCreationPointData.getInstance().load();
+					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded creation points data.");
 				}
 				default:
 				{
