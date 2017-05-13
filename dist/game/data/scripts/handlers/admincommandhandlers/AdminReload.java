@@ -252,6 +252,7 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					PlayerCreationPointData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded creation points data.");
+					break;
 				}
 				default:
 				{
