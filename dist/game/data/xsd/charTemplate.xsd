@@ -20,19 +20,6 @@
 							<xs:element type="xs:nonNegativeInteger" name="baseMEN" minOccurs="1" maxOccurs="1" />
 							<xs:element type="xs:nonNegativeInteger" name="baseDEX" minOccurs="1" maxOccurs="1" />
 							<xs:element type="xs:nonNegativeInteger" name="baseWIT" minOccurs="1" maxOccurs="1" />
-							<xs:element name="creationPoints" minOccurs="1" maxOccurs="1">
-								<xs:complexType>
-									<xs:sequence maxOccurs="1" minOccurs="0">
-										<xs:element name="node" maxOccurs="unbounded" minOccurs="1">
-											<xs:complexType>
-												<xs:attribute type="xs:integer" name="x" use="required" />
-												<xs:attribute type="xs:integer" name="y" use="required" />
-												<xs:attribute type="xs:integer" name="z" use="required" />
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
 							<xs:element type="xs:positiveInteger" name="basePAtk" minOccurs="1" maxOccurs="1" />
 							<xs:element type="xs:positiveInteger" name="baseCritRate" minOccurs="1" maxOccurs="1" />
 							<xs:element name="baseAtkType" minOccurs="1" maxOccurs="1">

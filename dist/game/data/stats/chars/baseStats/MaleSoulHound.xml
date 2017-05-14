@@ -8,14 +8,6 @@
 		<baseMEN>25</baseMEN>
 		<baseDEX>33</baseDEX>
 		<baseWIT>11</baseWIT>
-		<creationPoints>
-			<node x="-125607" y="38452" z="1152" />
-			<node x="-125472" y="38450" z="1152" />
-			<node x="-125615" y="37771" z="1152" />
-			<node x="-125464" y="37776" z="1152" />
-			<node x="-125517" y="38267" z="1155" />
-			<node x="-125531" y="37944" z="1155" />
-		</creationPoints>
 		<basePAtk>4</basePAtk>
 		<baseCritRate>4</baseCritRate>
 		<baseAtkType>FIST</baseAtkType>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- TODO: Require Support -->
-<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/startPoints.xsd">
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/pcCreationPoints.xsd">
 	<!-- Cedric's Training Hall -->
 	<startPoints> <!-- 17_25 -->
 		<spawn x="-71338" y="258271" z="-3104" />
