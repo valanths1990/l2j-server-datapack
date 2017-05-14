@@ -20,11 +20,9 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.json.ExperienceData;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 
@@ -53,9 +51,10 @@ public class AdminLevel implements IAdminCommandHandler
 		{
 			try
 			{
-				if (targetChar instanceof L2Playable)
+				if (targetChar.isPlayer())
 				{
-					((L2Playable) targetChar).getStat().addLevel(Byte.parseByte(val));
+					L2PcInstance targetPlayer = (L2PcInstance) targetChar;
+					targetPlayer.addLevel(Integer.parseInt(val));
 				}
 			}
 			catch (NumberFormatException e)
@@ -69,21 +68,21 @@ public class AdminLevel implements IAdminCommandHandler
 			{
 				if (!(targetChar instanceof L2PcInstance))
 				{
-					activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT); // incorrect target!
+					activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 					return false;
 				}
 				L2PcInstance targetPlayer = (L2PcInstance) targetChar;
+				int oldLevel = targetPlayer.getLevel();
+				int newLevel = Integer.parseInt(val);
 				
-				if (targetPlayer.isSubClassActive())
+				if (newLevel < 1)
 				{
-					targetPlayer.getSubClasses().get(targetPlayer.getClassIndex()).getStat().setExp(ExperienceData.getInstance().getExpForLevel(Math.min(Math.max(Integer.parseInt(val), 1), Config.MAX_SUBCLASS_LEVEL)));
-					targetPlayer.getSubClasses().get(targetPlayer.getClassIndex()).getStat().incrementLevel();
+					newLevel = 1;
 				}
-				else
-				{
-					targetPlayer.getStat().setExp(ExperienceData.getInstance().getExpForLevel(Math.min(Math.max(Integer.parseInt(val), 1), Config.MAX_PLAYER_LEVEL)));
-					targetPlayer.getStat().incrementLevel();
-				}
+				targetPlayer.setLevel(newLevel);
+				targetPlayer.setExp(ExperienceData.getInstance().getExpForLevel(Math.min(newLevel, targetPlayer.getMaxExpLevel())));
+				targetPlayer.onLevelChange(newLevel > oldLevel);
+				targetPlayer.broadcastInfo();
 			}
 			catch (NumberFormatException e)
 			{
