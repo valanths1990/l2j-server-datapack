@@ -149,6 +149,7 @@ public class Q00254_LegendaryTales extends Quest
 		{
 			case "30754-05.html":
 				st.startQuest();
+				st.set("raids", 0);
 			case "30754-02.html":
 			case "30754-03.html":
 			case "30754-04.htm":
