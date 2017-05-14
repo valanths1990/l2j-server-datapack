@@ -105,7 +105,7 @@ public final class PhysicalAttack extends AbstractEffect
 		{
 			activeChar.sendDamageMessage(target, damage, false, crit, false);
 			target.reduceCurrentHp(damage, activeChar, skill);
-			target.notifyDamageReceived(damage, activeChar, skill, crit, false);
+			target.notifyDamageReceived(damage, activeChar, skill, crit, false, false);
 			
 			// Check if damage should be reflected
 			Formulas.calcDamageReflected(activeChar, target, skill, crit);

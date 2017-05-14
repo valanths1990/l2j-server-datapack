@@ -81,7 +81,7 @@ public final class FatalBlow extends AbstractEffect
 		}
 		
 		target.reduceCurrentHp(damage, activeChar, skill);
-		target.notifyDamageReceived(damage, activeChar, skill, crit, false);
+		target.notifyDamageReceived(damage, activeChar, skill, crit, false, false);
 		
 		// Manage attack or cast break of the target (calculating rate, sending message...)
 		if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))

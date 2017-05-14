@@ -77,7 +77,7 @@ public final class DamOverTime extends AbstractEffect
 		}
 		
 		info.getEffected().reduceCurrentHpByDOT(damage, info.getEffector(), info.getSkill());
-		info.getEffected().notifyDamageReceived(damage, info.getEffector(), info.getSkill(), false, true);
+		info.getEffected().notifyDamageReceived(damage, info.getEffector(), info.getSkill(), false, true, false);
 		return info.getSkill().isToggle();
 	}
 }

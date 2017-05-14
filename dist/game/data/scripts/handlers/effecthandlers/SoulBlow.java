@@ -81,7 +81,7 @@ public final class SoulBlow extends AbstractEffect
 		}
 		
 		target.reduceCurrentHp(damage, activeChar, info.getSkill());
-		target.notifyDamageReceived(damage, activeChar, info.getSkill(), false, false);
+		target.notifyDamageReceived(damage, activeChar, info.getSkill(), false, false, false);
 		
 		// Manage attack or cast break of the target (calculating rate, sending message...)
 		if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
