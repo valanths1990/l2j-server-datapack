@@ -418,7 +418,8 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="ResurrectionSpecial">
-				<param power="100" />
+				<param resPower="100" />
+				<param resRecovery="100" />
 			</effect>
 		</for>
 	</skill>

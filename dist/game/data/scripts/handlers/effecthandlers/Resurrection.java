@@ -64,7 +64,7 @@ public final class Resurrection extends AbstractEffect
 		{
 			if (target.getActingPlayer() != null)
 			{
-				target.getActingPlayer().reviveRequest(activeChar.getActingPlayer(), info.getSkill(), target.isPet(), _power);
+				target.getActingPlayer().reviveRequest(activeChar.getActingPlayer(), info.getSkill(), target.isPet(), _power, 0);
 			}
 		}
 		else

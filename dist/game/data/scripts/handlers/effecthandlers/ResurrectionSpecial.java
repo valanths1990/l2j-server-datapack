@@ -34,13 +34,15 @@ import com.l2jserver.gameserver.model.skills.Skill;
  */
 public final class ResurrectionSpecial extends AbstractEffect
 {
-	private final int _power;
+	private final int _resPower;
+	private final int _resRecovery;
 	
 	public ResurrectionSpecial(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
-		_power = params.getInt("power", 0);
+		_resPower = params.getInt("resPower", 0);
+		_resRecovery = params.getInt("resRecovery", 0);
 	}
 	
 	@Override
@@ -68,13 +70,13 @@ public final class ResurrectionSpecial extends AbstractEffect
 		
 		if (info.getEffected().isPlayer())
 		{
-			info.getEffected().getActingPlayer().reviveRequest(caster, skill, false, _power);
+			info.getEffected().getActingPlayer().reviveRequest(caster, skill, false, _resPower, _resRecovery);
 			return;
 		}
 		if (info.getEffected().isPet())
 		{
 			L2PetInstance pet = (L2PetInstance) info.getEffected();
-			info.getEffected().getActingPlayer().reviveRequest(pet.getActingPlayer(), skill, true, _power);
+			info.getEffected().getActingPlayer().reviveRequest(pet.getActingPlayer(), skill, true, _resPower, _resRecovery);
 		}
 	}
 }

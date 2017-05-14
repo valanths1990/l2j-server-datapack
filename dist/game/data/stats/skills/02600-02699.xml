@@ -348,7 +348,8 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="ResurrectionSpecial">
-				<param power="50" />
+				<param resPower="50" />
+				<param resRecovery="50" />
 			</effect>
 		</for>
 	</skill>
