@@ -345,6 +345,8 @@ public class AdminShowQuests implements IAdminCommandHandler
 					qs.exitQuest(true);
 					target.sendPacket(new QuestList());
 					target.sendPacket(new ExShowQuestMark(qs.getQuest().getId()));
+					target.delQuestState(qs.getQuestName());
+					actor.sendMessage("Removed quest " + qs.getQuest().getDescr() + " from " + target.getName() + ".");
 					break;
 				}
 				case "CREATE":
@@ -380,7 +382,6 @@ public class AdminShowQuests implements IAdminCommandHandler
 			target.sendPacket(new QuestList());
 			target.sendPacket(new ExShowQuestMark(qs.getQuest().getId()));
 		}
-		actor.sendMessage("");
 		outval[0] = "name";
 		outval[1] = val[0];
 		showQuestMenu(target, actor, outval);
