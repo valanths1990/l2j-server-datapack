@@ -1046,6 +1046,11 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
+		<for>
+			<effect name="StealAbnormal">
+				<param slot="buff" rate="50" max="5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="7069" levels="1" name="Test Abnormal State DD">
 		<set name="coolTime" val="200" />
