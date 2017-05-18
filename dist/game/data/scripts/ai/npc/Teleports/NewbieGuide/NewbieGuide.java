@@ -67,7 +67,7 @@ public final class NewbieGuide extends AbstractNpcAI
 	private static final int NEWBIE_GUIDE_KAMAEL = 32135;
 	private static final int NEWBIE_GUIDE_GLUDIN = 31076;
 	private static final int NEWBIE_GUIDE_GLUDIO = 31077;
-	private static final int ADVENTURERS_GUIDE_ADEN = 32327;
+	private static final int ADVENTURERS_GUIDE = 32327;
 	
 	private static final int GUIDE_MISSION = 41;
 	
@@ -100,7 +100,7 @@ public final class NewbieGuide extends AbstractNpcAI
 	private static final int ACCESORIES_MULTISELL = 305986002;
 	
 	private static final Map<Integer, List<Location>> TELEPORT_MAP = new HashMap<>();
-
+	
 	static
 	{
 		Location TALKING_ISLAND_VILLAGE = new Location(-84081, 243227, -3723);
@@ -132,7 +132,7 @@ public final class NewbieGuide extends AbstractNpcAI
 			NEWBIE_GUIDE_KAMAEL,
 			NEWBIE_GUIDE_GLUDIN,
 			NEWBIE_GUIDE_GLUDIO,
-			ADVENTURERS_GUIDE_ADEN
+			ADVENTURERS_GUIDE
 		};
 		addStartNpc(newbieList);
 		addFirstTalkId(newbieList);
@@ -145,6 +145,10 @@ public final class NewbieGuide extends AbstractNpcAI
 		QuestState qs = player.getQuestState(Q00255_Tutorial.class.getSimpleName());
 		if (qs != null)
 		{
+			if (npc.getId() == ADVENTURERS_GUIDE)
+			{
+				return "32327.htm";
+			}
 			return talkGuide(player, qs);
 		}
 		return super.onFirstTalk(npc, player);
