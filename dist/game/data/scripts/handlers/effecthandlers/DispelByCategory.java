@@ -20,6 +20,7 @@ package handlers.effecthandlers;
 
 import java.util.List;
 
+import com.l2jserver.gameserver.enums.DispelCategory;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -33,7 +34,7 @@ import com.l2jserver.gameserver.model.stats.Formulas;
  */
 public final class DispelByCategory extends AbstractEffect
 {
-	private final String _slot;
+	private final DispelCategory _slot;
 	private final int _rate;
 	private final int _max;
 	
@@ -41,7 +42,7 @@ public final class DispelByCategory extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 		
-		_slot = params.getString("slot", null);
+		_slot = params.getEnum("slot", DispelCategory.class, DispelCategory.BUFF);
 		_rate = params.getInt("rate", 0);
 		_max = params.getInt("max", 0);
 	}
@@ -66,7 +67,7 @@ public final class DispelByCategory extends AbstractEffect
 			return;
 		}
 		
-		final List<BuffInfo> canceled = Formulas.calcCancelStealEffects(info.getEffector(), info.getEffected(), info.getSkill(), _slot, _rate, _max);
+		final List<BuffInfo> canceled = Formulas.calcCancelEffects(info.getEffector(), info.getEffected(), info.getSkill(), _slot, _rate, _max);
 		for (BuffInfo can : canceled)
 		{
 			info.getEffected().getEffectList().stopSkillEffects(true, can.getSkill());
