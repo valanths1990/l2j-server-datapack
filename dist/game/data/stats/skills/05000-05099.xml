@@ -183,7 +183,7 @@
 				<mul stat="healEffect" val="#healEffect" />
 			</effect>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="#activateRate" max="#maxNegated" />
+				<param slot="BUFF" rate="#activateRate" max="#maxNegated" />
 			</effect>
 			<effect name="HealPercent">
 				<param power="#healPercent" />
@@ -698,7 +698,7 @@
 		<for>
 			<effect name="MagicalAttack" />
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="25" max="20" />
+				<param slot="BUFF" rate="25" max="20" />
 			</effect>
 		</for>
 	</skill>

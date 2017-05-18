@@ -16,7 +16,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="100" max="20" />
+				<param slot="BUFF" rate="100" max="20" />
 			</effect>
 		</for>
 	</skill>
@@ -30,7 +30,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="20" />
+				<param slot="DEBUFF" rate="100" max="20" />
 			</effect>
 		</for>
 	</skill>
@@ -45,10 +45,10 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="100" max="20" />
+				<param slot="BUFF" rate="100" max="20" />
 			</effect>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="20" />
+				<param slot="DEBUFF" rate="100" max="20" />
 			</effect>
 		</for>
 	</skill>
@@ -1048,7 +1048,7 @@
 		</cond>
 		<for>
 			<effect name="StealAbnormal">
-				<param slot="buff" rate="50" max="5" />
+				<param slot="BUFF" rate="50" max="5" />
 			</effect>
 		</for>
 	</skill>

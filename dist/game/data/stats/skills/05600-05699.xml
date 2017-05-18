@@ -1548,7 +1548,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="25" max="3" />
+				<param slot="BUFF" rate="25" max="3" />
 			</effect>
 		</for>
 	</skill>

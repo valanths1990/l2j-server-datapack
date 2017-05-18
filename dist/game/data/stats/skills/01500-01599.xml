@@ -224,7 +224,7 @@
 				<param power="100" />
 			</effect>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="40" max="10" />
+				<param slot="DEBUFF" rate="40" max="10" />
 			</effect>
 		</for>
 	</skill>
@@ -338,7 +338,7 @@
 		</cond>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="3" />
+				<param slot="DEBUFF" rate="100" max="3" />
 			</effect>
 		</for>
 	</skill>

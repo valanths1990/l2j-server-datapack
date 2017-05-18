@@ -20,6 +20,7 @@ package handlers.effecthandlers;
 
 import java.util.List;
 
+import com.l2jserver.gameserver.enums.DispelCategory;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -34,7 +35,7 @@ import com.l2jserver.gameserver.model.stats.Formulas;
  */
 public final class StealAbnormal extends AbstractEffect
 {
-	private final String _slot;
+	private final DispelCategory _slot;
 	private final int _rate;
 	private final int _max;
 	
@@ -42,7 +43,7 @@ public final class StealAbnormal extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 		
-		_slot = params.getString("slot", null);
+		_slot = params.getEnum("slot", DispelCategory.class, DispelCategory.BUFF);
 		_rate = params.getInt("rate", 0);
 		_max = params.getInt("max", 0);
 	}
@@ -64,7 +65,7 @@ public final class StealAbnormal extends AbstractEffect
 	{
 		if ((info.getEffected() != null) && info.getEffected().isPlayer() && (info.getEffector() != info.getEffected()))
 		{
-			final List<BuffInfo> toSteal = Formulas.calcCancelStealEffects(info.getEffector(), info.getEffected(), info.getSkill(), _slot, _rate, _max);
+			final List<BuffInfo> toSteal = Formulas.calcStealEffects(info.getEffector(), info.getEffected(), info.getSkill(), _slot, _rate, _max);
 			if (toSteal.isEmpty())
 			{
 				return;

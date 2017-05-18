@@ -552,7 +552,7 @@
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="25" max="5" />
+				<param slot="BUFF" rate="25" max="5" />
 			</effect>
 		</for>
 	</skill>
@@ -573,7 +573,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="StealAbnormal">
-				<param slot="buff" rate="50" max="3" />
+				<param slot="BUFF" rate="50" max="3" />
 			</effect>
 		</for>
 	</skill>

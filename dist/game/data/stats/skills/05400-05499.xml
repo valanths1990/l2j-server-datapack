@@ -867,7 +867,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="100" max="20" />
+				<param slot="BUFF" rate="100" max="20" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.7" />

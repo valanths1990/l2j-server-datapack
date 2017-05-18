@@ -962,7 +962,7 @@
 		</cond>
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="20" />
+				<param slot="DEBUFF" rate="100" max="20" />
 			</effect>
 		</for>
 	</skill>

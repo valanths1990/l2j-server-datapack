@@ -62,7 +62,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" />
+				<param slot="DEBUFF" rate="100" max="10" />
 			</effect>
 		</for>
 	</skill>
@@ -675,7 +675,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" />
+				<param slot="DEBUFF" rate="100" max="10" />
 			</effect>
 		</for>
 	</skill>
@@ -1201,7 +1201,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" />
+				<param slot="DEBUFF" rate="100" max="10" />
 			</effect>
 		</for>
 	</skill>
@@ -1650,7 +1650,7 @@
 				<mul stat="healEffect" val="0.7" />
 			</effect>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="25" max="5" />
+				<param slot="BUFF" rate="25" max="5" />
 			</effect>
 			<effect name="CpDamPercent">
 				<param power="90" />
