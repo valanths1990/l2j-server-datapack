@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2016 L2J DataPack
+ * Copyright (C) 2004-2017 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,8 +18,6 @@
  */
 package quests.Q10285_MeetingSirra;
 
-import quests.Q10284_AcquisitionOfDivineSword.Q10284_AcquisitionOfDivineSword;
-
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -27,14 +25,16 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.model.quest.State;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
 
+import quests.Q10284_AcquisitionOfDivineSword.Q10284_AcquisitionOfDivineSword;
+
 /**
  * Meeting Sirra (10285)
  * @author Adry_85
+ * @since 2.6.0.0
  */
 public final class Q10285_MeetingSirra extends Quest
 {
@@ -79,14 +79,15 @@ public final class Q10285_MeetingSirra extends Quest
 			{
 				st.startQuest();
 				st.setMemoState(1);
+				st.setMemoStateEx(1, 0);
 				htmltext = event;
 				break;
 			}
 			case "32760-02.html":
 			{
-				if (st.isMemoState(1) && (st.getInt("ex") == 0))
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 0))
 				{
-					st.set("ex", 1);
+					st.setMemoStateEx(1, 1);
 					st.setCond(3, true);
 					htmltext = event;
 				}
@@ -94,7 +95,7 @@ public final class Q10285_MeetingSirra extends Quest
 			}
 			case "32760-05.html":
 			{
-				if (st.isMemoState(1) && (st.getInt("ex") == 2))
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 2))
 				{
 					htmltext = event;
 				}
@@ -102,11 +103,11 @@ public final class Q10285_MeetingSirra extends Quest
 			}
 			case "32760-06.html":
 			{
-				if (st.isMemoState(1) && (st.getInt("ex") == 2))
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 2))
 				{
 					final L2Npc sirra = addSpawn(SIRRA, -23905, -8790, -5384, 56238, false, 0, false, npc.getInstanceId());
 					sirra.broadcastPacket(new NpcSay(sirra.getObjectId(), Say2.NPC_ALL, sirra.getId(), NpcStringId.THERES_NOTHING_YOU_CANT_SAY_I_CANT_LISTEN_TO_YOU_ANYMORE));
-					st.set("ex", 3);
+					st.setMemoStateEx(1, 3);
 					st.setCond(5, true);
 					htmltext = event;
 				}
@@ -116,7 +117,7 @@ public final class Q10285_MeetingSirra extends Quest
 			case "32760-10.html":
 			case "32760-11.html":
 			{
-				if (st.isMemoState(1) && (st.getInt("ex") == 4))
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 4))
 				{
 					htmltext = event;
 				}
@@ -124,9 +125,9 @@ public final class Q10285_MeetingSirra extends Quest
 			}
 			case "32760-12.html":
 			{
-				if (st.isMemoState(1) && (st.getInt("ex") == 4))
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 4))
 				{
-					st.set("ex", 5);
+					st.setMemoStateEx(1, 5);
 					st.setCond(7, true);
 					htmltext = event;
 				}
@@ -134,9 +135,9 @@ public final class Q10285_MeetingSirra extends Quest
 			}
 			case "32760-13.html":
 			{
-				if (st.isMemoState(1) && (st.getInt("ex") == 5))
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 5))
 				{
-					st.unset("ex");
+					st.setMemoStateEx(1, 0);
 					st.setMemoState(2);
 					final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 					world.removeAllowed(player.getObjectId());
@@ -156,9 +157,9 @@ public final class Q10285_MeetingSirra extends Quest
 			}
 			case "32761-02.html":
 			{
-				if (st.isMemoState(1) && (st.getInt("ex") == 1))
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 1))
 				{
-					st.set("ex", 2);
+					st.setMemoStateEx(1, 2);
 					st.setCond(4, true);
 					htmltext = event;
 				}
@@ -171,7 +172,7 @@ public final class Q10285_MeetingSirra extends Quest
 			case "32762-06.html":
 			case "32762-07.html":
 			{
-				if (st.isMemoState(1) && (st.getInt("ex") == 3))
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 3))
 				{
 					htmltext = event;
 				}
@@ -179,9 +180,9 @@ public final class Q10285_MeetingSirra extends Quest
 			}
 			case "32762-08.html":
 			{
-				if (st.isMemoState(1) && (st.getInt("ex") == 3))
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 3))
 				{
-					st.set("ex", 4);
+					st.setMemoStateEx(1, 4);
 					st.setCond(6, true);
 					htmltext = event;
 					npc.deleteMe();
@@ -214,160 +215,148 @@ public final class Q10285_MeetingSirra extends Quest
 	{
 		QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
+		if (st.isCompleted())
 		{
-			case State.COMPLETED:
+			if (npc.getId() == RAFFORTY)
 			{
-				if (npc.getId() == RAFFORTY)
-				{
-					htmltext = "32020-05.htm";
-				}
-				break;
+				htmltext = "32020-05.htm";
 			}
-			case State.CREATED:
+		}
+		else if (st.isCreated())
+		{
+			st = player.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
+			htmltext = ((player.getLevel() >= MIN_LEVEL) && (st != null) && (st.isCompleted())) ? "32020-01.htm" : "32020-04.htm";
+		}
+		else if (st.isStarted())
+		{
+			switch (npc.getId())
 			{
-				if (npc.getId() == RAFFORTY)
+				case RAFFORTY:
 				{
-					st = player.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
-					htmltext = ((player.getLevel() >= MIN_LEVEL) && (st != null) && (st.isCompleted())) ? "32020-01.htm" : "32020-04.htm";
-				}
-				break;
-			}
-			case State.STARTED:
-			{
-				switch (npc.getId())
-				{
-					case RAFFORTY:
+					switch (st.getMemoState())
 					{
-						switch (st.getMemoState())
+						case 1:
 						{
+							htmltext = (player.getLevel() >= MIN_LEVEL) ? "32020-06.html" : "32020-09.html";
+							break;
+						}
+						case 2:
+						{
+							htmltext = "32020-07.html";
+							break;
+						}
+						case 3:
+						{
+							st.giveAdena(283425, true);
+							st.addExpAndSp(939075, 83855);
+							st.exitQuest(false, true);
+							htmltext = "32020-08.html";
+							break;
+						}
+					}
+					break;
+				}
+				case JINIA:
+				{
+					if (st.isMemoState(1))
+					{
+						switch (st.getMemoStateEx(1))
+						{
+							case 0:
+							{
+								htmltext = "32760-01.html";
+								break;
+							}
 							case 1:
 							{
-								htmltext = (player.getLevel() >= MIN_LEVEL) ? "32020-06.html" : "32020-09.html";
+								htmltext = "32760-03.html";
 								break;
 							}
 							case 2:
 							{
-								htmltext = "32020-07.html";
+								htmltext = "32760-04.html";
 								break;
 							}
 							case 3:
 							{
-								st.giveAdena(283425, true);
-								st.addExpAndSp(939075, 83855);
-								st.exitQuest(false, true);
-								htmltext = "32020-08.html";
+								htmltext = "32760-07.html";
+								break;
+							}
+							case 4:
+							{
+								htmltext = "32760-08.html";
+								break;
+							}
+							case 5:
+							{
+								htmltext = "32760-15.html";
 								break;
 							}
 						}
-						break;
 					}
-					case JINIA:
-					{
-						if (st.isMemoState(1))
-						{
-							final int state = st.getInt("ex");
-							switch (state)
-							{
-								case 0:
-								{
-									htmltext = "32760-01.html";
-									break;
-								}
-								case 1:
-								{
-									htmltext = "32760-03.html";
-									break;
-								}
-								case 2:
-								{
-									htmltext = "32760-04.html";
-									break;
-								}
-								case 3:
-								{
-									htmltext = "32760-07.html";
-									break;
-								}
-								case 4:
-								{
-									htmltext = "32760-08.html";
-									break;
-								}
-								case 5:
-								{
-									htmltext = "32760-15.html";
-									break;
-								}
-							}
-						}
-						break;
-					}
-					case KEGOR:
-					{
-						if (st.isMemoState(1))
-						{
-							final int state = st.getInt("ex");
-							switch (state)
-							{
-								case 1:
-								{
-									htmltext = "32761-01.html";
-									break;
-								}
-								case 2:
-								{
-									htmltext = "32761-03.html";
-									break;
-								}
-								case 3:
-								{
-									htmltext = "32761-04.html";
-									break;
-								}
-							}
-						}
-						break;
-					}
-					case SIRRA:
-					{
-						if (st.isMemoState(1))
-						{
-							final int state = st.getInt("ex");
-							if (state == 3)
-							{
-								htmltext = "32762-01.html";
-							}
-							else if (state == 4)
-							{
-								htmltext = "32762-09.html";
-							}
-						}
-						break;
-					}
-					case JINIA2:
-					{
-						if (st.isMemoState(2))
-						{
-							htmltext = "32781-01.html";
-						}
-						else if (st.isMemoState(3))
-						{
-							htmltext = "32781-04.html";
-						}
-						break;
-					}
-					case FREYAS_STEWARD:
-					{
-						if (st.isMemoState(2))
-						{
-							htmltext = "32029-01.html";
-							st.setCond(8, true);
-						}
-						break;
-					}
+					break;
 				}
-				break;
+				case KEGOR:
+				{
+					if (st.isMemoState(1))
+					{
+						switch (st.getMemoStateEx(1))
+						{
+							case 1:
+							{
+								htmltext = "32761-01.html";
+								break;
+							}
+							case 2:
+							{
+								htmltext = "32761-03.html";
+								break;
+							}
+							case 3:
+							{
+								htmltext = "32761-04.html";
+								break;
+							}
+						}
+					}
+					break;
+				}
+				case SIRRA:
+				{
+					if (st.isMemoState(1))
+					{
+						if (st.isMemoStateEx(1, 3))
+						{
+							htmltext = "32762-01.html";
+						}
+						else if (st.isMemoStateEx(1, 4))
+						{
+							htmltext = "32762-09.html";
+						}
+					}
+					break;
+				}
+				case JINIA2:
+				{
+					if (st.isMemoState(2))
+					{
+						htmltext = "32781-01.html";
+					}
+					else if (st.isMemoState(3))
+					{
+						htmltext = "32781-04.html";
+					}
+					break;
+				}
+				case FREYAS_STEWARD:
+				{
+					if (st.isMemoState(2))
+					{
+						htmltext = "32029-01.html";
+						st.setCond(8, true);
+					}
+					break;
+				}
 			}
 		}
 		return htmltext;

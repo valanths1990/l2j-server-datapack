@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2016 L2J DataPack
+ * Copyright (C) 2004-2017 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,8 +18,6 @@
  */
 package quests.Q10287_StoryOfThoseLeft;
 
-import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
-
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -27,11 +25,13 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
 
 /**
  * Story of Those Left (10287)
  * @author Adry_85
+ * @since 2.6.0.0
  */
 public final class Q10287_StoryOfThoseLeft extends Quest
 {
@@ -67,6 +67,8 @@ public final class Q10287_StoryOfThoseLeft extends Quest
 			{
 				st.startQuest();
 				st.setMemoState(1);
+				st.setMemoStateEx(1, 0);
+				st.setMemoStateEx(2, 0);
 				htmltext = event;
 				break;
 			}
@@ -90,7 +92,7 @@ public final class Q10287_StoryOfThoseLeft extends Quest
 			{
 				if (st.isMemoState(1))
 				{
-					st.set("ex1", 1);
+					st.setMemoStateEx(1, 1);
 					st.setCond(3, true);
 					htmltext = event;
 				}
@@ -108,7 +110,7 @@ public final class Q10287_StoryOfThoseLeft extends Quest
 			}
 			case "32761-02.html":
 			{
-				if (st.isMemoState(1) && (st.getInt("ex1") == 1) && (st.getInt("ex2") == 0))
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 1) && st.isMemoStateEx(2, 0))
 				{
 					htmltext = event;
 				}
@@ -116,9 +118,9 @@ public final class Q10287_StoryOfThoseLeft extends Quest
 			}
 			case "32761-03.html":
 			{
-				if (st.isMemoState(1) && (st.getInt("ex1") == 1) && (st.getInt("ex2") == 0))
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 1) && st.isMemoStateEx(2, 0))
 				{
-					st.set("ex2", 1);
+					st.setMemoStateEx(2, 1);
 					st.setCond(4, true);
 					htmltext = event;
 				}
@@ -148,92 +150,86 @@ public final class Q10287_StoryOfThoseLeft extends Quest
 	{
 		QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
+		if (st.isCompleted())
 		{
-			case State.COMPLETED:
+			if (npc.getId() == RAFFORTY)
 			{
-				if (npc.getId() == RAFFORTY)
-				{
-					htmltext = "32020-04.html";
-				}
-				break;
+				htmltext = "32020-04.html";
 			}
-			case State.CREATED:
+		}
+		else if (st.isCreated())
+		{
+			if (npc.getId() == RAFFORTY)
 			{
-				if (npc.getId() == RAFFORTY)
-				{
-					st = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
-					htmltext = ((player.getLevel() >= MIN_LEVEL) && (st != null) && (st.isCompleted())) ? "32020-01.htm" : "32020-03.htm";
-				}
-				break;
+				st = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
+				htmltext = ((player.getLevel() >= MIN_LEVEL) && (st != null) && (st.isCompleted())) ? "32020-01.htm" : "32020-03.htm";
 			}
-			case State.STARTED:
+		}
+		else if (st.isStarted())
+		{
+			switch (npc.getId())
 			{
-				switch (npc.getId())
+				case RAFFORTY:
 				{
-					case RAFFORTY:
+					if (st.isMemoState(1))
 					{
-						if (st.isMemoState(1))
-						{
-							htmltext = (player.getLevel() >= MIN_LEVEL) ? "32020-05.html" : "32020-06.html";
-						}
-						else if (st.isMemoState(2))
-						{
-							htmltext = "32020-07.html";
-						}
-						break;
+						htmltext = (player.getLevel() >= MIN_LEVEL) ? "32020-05.html" : "32020-06.html";
 					}
-					case JINIA:
+					else if (st.isMemoState(2))
 					{
-						if (st.isMemoState(1))
-						{
-							final int state1 = st.getInt("ex1");
-							final int state2 = st.getInt("ex2");
-							if ((state1 == 0) && (state2 == 0))
-							{
-								htmltext = "32760-01.html";
-							}
-							else if ((state1 == 1) && (state2 == 0))
-							{
-								htmltext = "32760-04.html";
-							}
-							else if ((state1 == 1) && (state2 == 1))
-							{
-								st.setCond(5, true);
-								st.setMemoState(2);
-								st.unset("ex1");
-								st.unset("ex2");
-								final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-								world.removeAllowed(player.getObjectId());
-								player.setInstanceId(0);
-								htmltext = "32760-05.html";
-							}
-						}
-						break;
+						htmltext = "32020-07.html";
 					}
-					case KEGOR:
-					{
-						if (st.isMemoState(1))
-						{
-							final int state1 = st.getInt("ex1");
-							final int state2 = st.getInt("ex2");
-							if ((state1 == 1) && (state2 == 0))
-							{
-								htmltext = "32761-01.html";
-							}
-							else if ((state1 == 0) && (state2 == 0))
-							{
-								htmltext = "32761-04.html";
-							}
-							else if ((state1 == 1) && (state2 == 1))
-							{
-								htmltext = "32761-05.html";
-							}
-						}
-						break;
-					}
+					break;
 				}
-				break;
+				case JINIA:
+				{
+					if (st.isMemoState(1))
+					{
+						final int memoStateEx1 = st.getMemoStateEx(1);
+						final int memoStateEx2 = st.getMemoStateEx(2);
+						if ((memoStateEx1 == 0) && (memoStateEx2 == 0))
+						{
+							htmltext = "32760-01.html";
+						}
+						else if ((memoStateEx1 == 1) && (memoStateEx2 == 0))
+						{
+							htmltext = "32760-04.html";
+						}
+						else if ((memoStateEx1 == 1) && (memoStateEx2 == 1))
+						{
+							st.setCond(5, true);
+							st.setMemoState(2);
+							st.setMemoStateEx(1, 0);
+							st.setMemoStateEx(2, 0);
+							final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
+							world.removeAllowed(player.getObjectId());
+							player.setInstanceId(0);
+							htmltext = "32760-05.html";
+						}
+					}
+					break;
+				}
+				case KEGOR:
+				{
+					if (st.isMemoState(1))
+					{
+						final int memoStateEx1 = st.getMemoStateEx(1);
+						final int memoStateEx2 = st.getMemoStateEx(2);
+						if ((memoStateEx1 == 1) && (memoStateEx2 == 0))
+						{
+							htmltext = "32761-01.html";
+						}
+						else if ((memoStateEx1 == 0) && (memoStateEx2 == 0))
+						{
+							htmltext = "32761-04.html";
+						}
+						else if ((memoStateEx1 == 1) && (memoStateEx2 == 1))
+						{
+							htmltext = "32761-05.html";
+						}
+					}
+					break;
+				}
 			}
 		}
 		return htmltext;
