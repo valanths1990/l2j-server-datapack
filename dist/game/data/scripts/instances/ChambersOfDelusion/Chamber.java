@@ -18,8 +18,6 @@
  */
 package instances.ChambersOfDelusion;
 
-import instances.AbstractInstance;
-
 import java.util.Calendar;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
@@ -46,6 +44,8 @@ import com.l2jserver.gameserver.network.serverpackets.Earthquake;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Util;
+
+import instances.AbstractInstance;
 
 /**
  * Chambers of Delusion superclass.
@@ -330,7 +330,7 @@ public abstract class Chamber extends AbstractInstance
 			if (world.getInstanceId() == partyMember.getInstanceId())
 			{
 				partyMember.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-				partyMember.teleToLocation(ROOM_ENTER_POINTS[newRoom], true);
+				teleportPlayer(partyMember, ROOM_ENTER_POINTS[newRoom], world.getInstanceId());
 			}
 		}
 		
@@ -517,7 +517,7 @@ public abstract class Chamber extends AbstractInstance
 			{
 				if ((player.getParty() != null) && (player.getParty() == world.getPartyInside()))
 				{
-					player.teleToLocation(ROOM_ENTER_POINTS[world.currentRoom], false);
+					teleportPlayer(player, ROOM_ENTER_POINTS[world.currentRoom], world.getInstanceId(), false);
 				}
 			}
 		}
