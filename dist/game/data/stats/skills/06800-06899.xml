@@ -91,6 +91,7 @@
 		</for>
 	</skill>
 	<skill id="6806" levels="1" name="Arena Acumen">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="CASTING_TIME_DOWN" />
@@ -194,7 +195,6 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="CRITICAL_DMG_UP" />
-		<set name="basicProperty" val="NONE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="624" />
 		<set name="effectRange" val="900" />
@@ -215,7 +215,6 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="BERSERKER" />
-		<set name="basicProperty" val="NONE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="624" />
 		<set name="effectRange" val="900" />
@@ -783,60 +782,72 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6841" levels="1" name="Summon Subordinate">
-		<!-- none -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="hitTime" val="5000"/>
+		<set name="magicLvl" val="84"/>
+		<set name="operateType" val="A1"/>
+		<set name="rideState" val="NONE"/>
+		<set name="targetType" val="SELF"/>
+		<for/>
 	</skill>
 	<skill id="6842" levels="2" name="Enhance">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
-		<table name="#abnormalLvls"> 2 3 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 </table>
 		<table name="#pAtk"> 1.12 1 </table>
-		<table name="#pAtkSpd"> 1.15 1.4 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalTime" val="60" />
-		<set name="abnormalType" val="PA_UP" />
-		<set name="affectRange" val="600" />
-		<set name="blockedInOlympiad" val="true" />
-		<set name="effectPoint" val="100" />
-		<set name="hitTime" val="3000" />
-		<set name="icon" val="icon.skill1086" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="75" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="CLAN" />
+		<table name="#pAtkSpd"> 1.15 1.33 </table>
+		<set name="abnormalLvl" val="#abnormalLvl"/>
+		<set name="abnormalTime" val="300"/>
+		<set name="abnormalType" val="CASTING_TIME_UP"/>
+		<set name="basicProperty" val="MEN"/>
+		<set name="hitTime" val="3000"/>
+		<set name="icon" val="icon.skill1086"/>
+		<set name="isMagic" val="1"/>
+		<set name="lvlBonusRate" val="2"/>
+		<set name="magicLvl" val="85"/>
+		<set name="operateType" val="A2"/>
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF"/>
+		<set name="targetType" val="SELF"/>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
+				<mul stat="pAtk" val="#pAtk"/>
+			</effect>
+			<effect name="Buff">
+				<mul stat="rEvas" val="#pAtkSpd"/>
 			</effect>
 		</for>
 	</skill>
 	<skill id="6843" levels="1" name="Enhance">
+		<!-- High Five Confirmed -->
 		<!-- Atk. Spd. is increased by 33%. -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="abnormalLvl" val="3"/>
+		<set name="abnormalTime" val="300"/>
+		<set name="abnormalType" val="CASTING_TIME_UP"/>
+		<set name="basicProperty" val="MEN"/>
+		<set name="hitTime" val="3000"/>
+		<set name="icon" val="icon.skill1086"/>
+		<set name="isMagic" val="1"/>
+		<set name="lvlBonusRate" val="2"/>
+		<set name="magicLvl" val="85"/>
+		<set name="operateType" val="A2"/>
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF"/>
+		<set name="targetType" val="SELF"/>
+		<for>
+			<effect name="Buff">
+				<mul stat="rEvas" val="1.4"/>
+			</effect>
+		</for>
 	</skill>
 	<skill id="6844" levels="1" name="Power Strike">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
-		<set name="affectLimit" val="5-15" />
-		<set name="baseCritRate" val="20" />
-		<set name="castRange" val="300" />
-		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="500" />
-		<set name="element" val="0" /> <!-- Fire -->
-		<set name="elementPower" val="20" />
-		<set name="hitTime" val="3000" />
-		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A1" />
-		<set name="power" val="15000" />
-		<set name="reuseDelay" val="5000" />
-		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<!-- High Five Confirmed -->
+		<set name="castRange" val="300"/>
+		<set name="effectPoint" val="-10000"/>
+		<set name="effectRange" val="500"/>
+		<set name="hitTime" val="3000"/>
+		<set name="magicLvl" val="85"/>
+		<set name="operateType" val="A1"/>
+		<set name="power" val="6960" />
+		<set name="rideState" val="NONE"/>
+		<set name="targetType" val="ONE"/>
 		<for>
 			<effect name="PhysicalAttack" />
 		</for>
