@@ -741,7 +741,6 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
-		
 	}
 	
 	@Override
