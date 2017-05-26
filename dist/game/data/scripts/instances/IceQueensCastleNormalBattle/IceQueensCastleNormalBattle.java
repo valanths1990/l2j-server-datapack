@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2016 L2J DataPack
+ * Copyright (C) 2004-2017 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,14 +18,10 @@
  */
 package instances.IceQueensCastleNormalBattle;
 
-import instances.AbstractInstance;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-
-import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.MountType;
@@ -58,6 +54,9 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.taskmanager.DecayTaskManager;
 import com.l2jserver.gameserver.util.Util;
 
+import instances.AbstractInstance;
+import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
+
 /**
  * Ice Queen's Castle (Normal Battle) instance zone.
  * @author St3eT
@@ -75,23 +74,29 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 		protected L2QuestGuardInstance supp_Kegor = null;
 		protected boolean isSupportActive = false;
 		protected boolean canSpawnMobs = true;
+		protected boolean isHardMode = false;
 	}
 	
 	// Npcs
 	private static final int FREYA_THRONE = 29177; // First freya
 	private static final int FREYA_SPELLING = 29178; // Second freya
 	private static final int FREYA_STAND = 29179; // Last freya
+	private static final int FREYA_STAND_ULTIMATE = 29180; // Last freya - Ultimate Battle
 	private static final int INVISIBLE_NPC = 18919;
 	private static final int KNIGHT = 18855; // Archery Knight
+	private static final int KNIGHT_ULTIMATE = 18856; // Archery Knight - Ultimate Battle
 	private static final int GLACIER = 18853; // Glacier
 	private static final int BREATH = 18854; // Archer's Breath
 	private static final int GLAKIAS = 25699; // Glakias (Archery Knight Captain)
+	private static final int GLAKIAS_ULTIMATE = 25700; // Glakias (Archery Knight Captain) - Ultimate Battle
 	private static final int SIRRA = 32762; // Sirra
 	private static final int JINIA = 32781; // Jinia
 	private static final int SUPP_JINIA = 18850; // Jinia
 	private static final int SUPP_KEGOR = 18851; // Kegor
 	// Skills
 	private static final SkillHolder BLIZZARD = new SkillHolder(6274, 1); // Eternal Blizzard
+	private static final SkillHolder BLIZZARD_HARD = new SkillHolder(6275, 1); // Eternal Blizzard
+	private static final SkillHolder BLIZZARD_FORCE = new SkillHolder(6697, 1); // Eternal Blizzard
 	private static final SkillHolder BLIZZARD_BREATH = new SkillHolder(6299, 1); // Breath of Ice Palace - Ice Storm
 	private static final SkillHolder SUICIDE_BREATH = new SkillHolder(6300, 1); // Self-Destruction
 	private static final SkillHolder JINIA_SUPPORT = new SkillHolder(6288, 1); // Jinia's Prayer
@@ -101,13 +106,15 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	private static final SkillHolder POWER_STRIKE = new SkillHolder(6293, 1); // Power Strike
 	private static final SkillHolder POINT_TARGET = new SkillHolder(6295, 1); // Point Target
 	private static final SkillHolder CYLINDER_THROW = new SkillHolder(6297, 1); // Cylinder Throw
-	private static final SkillHolder SelfRangeBuff = new SkillHolder(6294, 1); // Leader's Roar
+	private static final SkillHolder SELF_RANGE_BUFF = new SkillHolder(6294, 1); // Leader's Roar
 	private static final SkillHolder LEADER_RUSH = new SkillHolder(6296, 1); // Rush
 	private static final SkillHolder ANTI_STRIDER = new SkillHolder(4258, 1); // Hinder Strider
 	private static final SkillHolder ICE_BALL = new SkillHolder(6278, 1); // Ice Ball
 	private static final SkillHolder SUMMON_ELEMENTAL = new SkillHolder(6277, 1); // Summon Spirits
 	private static final SkillHolder SELF_NOVA = new SkillHolder(6279, 1); // Attack Nearby Range
 	private static final SkillHolder REFLECT_MAGIC = new SkillHolder(6282, 1); // Reflect Magic
+	private static final SkillHolder FREYA_ANGER = new SkillHolder(6285, 1); // Rage of Ice
+	private static final SkillHolder FREYA_BUFF = new SkillHolder(6284, 1); // Freya's Bless
 	// Locations
 	private static final Location FREYA_SPAWN = new Location(114720, -117085, -11088, 15956);
 	private static final Location FREYA_SPELLING_SPAWN = new Location(114723, -117502, -10672, 15956);
@@ -159,6 +166,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	private static final int MIN_PLAYERS = 10;
 	private static final int MIN_LEVEL = 82;
 	private static final int TEMPLATE_ID = 139; // Ice Queen's Castle
+	private static final int TEMPLATE_ID_ULTIMATE = 144; // Ice Queen's Castle (Ultimate Battle)
 	private static final int DOOR_ID = 23140101;
 	
 	public IceQueensCastleNormalBattle()
@@ -167,9 +175,9 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 		addStartNpc(SIRRA, SUPP_KEGOR, SUPP_JINIA);
 		addFirstTalkId(SUPP_KEGOR, SUPP_JINIA);
 		addTalkId(SIRRA, JINIA, SUPP_KEGOR);
-		addAttackId(FREYA_THRONE, FREYA_STAND, GLAKIAS, GLACIER, BREATH, KNIGHT);
-		addKillId(GLAKIAS, FREYA_STAND, KNIGHT, GLACIER, BREATH);
-		addSpawnId(GLAKIAS, FREYA_STAND, KNIGHT, GLACIER, BREATH);
+		addAttackId(FREYA_THRONE, FREYA_STAND, FREYA_STAND_ULTIMATE, GLAKIAS, GLAKIAS_ULTIMATE, GLACIER, BREATH, KNIGHT, KNIGHT_ULTIMATE);
+		addKillId(GLAKIAS, GLAKIAS_ULTIMATE, FREYA_STAND, FREYA_STAND_ULTIMATE, KNIGHT, KNIGHT_ULTIMATE, GLACIER, BREATH);
+		addSpawnId(GLAKIAS, GLAKIAS_ULTIMATE, FREYA_STAND, FREYA_STAND_ULTIMATE, KNIGHT, KNIGHT_ULTIMATE, GLACIER, BREATH);
 		addSpellFinishedId(GLACIER, BREATH);
 	}
 	
@@ -179,6 +187,10 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 		if (event.equals("enter"))
 		{
 			enterInstance(player, new IQCNBWorld(), "IceQueensCastleNormalBattle.xml", TEMPLATE_ID);
+		}
+		else if (event.equals("enterUltimate"))
+		{
+			enterInstance(player, new IQCNBWorld(), "IceQueensCastleUltimateBattle.xml", TEMPLATE_ID_ULTIMATE);
 		}
 		else
 		{
@@ -204,14 +216,18 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 									world.knightStatues.add(statue);
 								}
 							}
-							for (L2PcInstance players : world.playersInside)
+							
+							if (!world.isHardMode)
 							{
-								if ((players != null) && !players.isDead() && (players.getInstanceId() == world.getInstanceId()))
+								for (L2PcInstance players : world.playersInside)
 								{
-									final QuestState qs = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
-									if ((qs != null) && (qs.getState() == State.STARTED) && qs.isCond(5))
+									if ((players != null) && !players.isDead() && (players.getInstanceId() == world.getInstanceId()))
 									{
-										qs.setCond(6, true);
+										final QuestState qs = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
+										if ((qs != null) && (qs.getState() == State.STARTED) && qs.isCond(5))
+										{
+											qs.setCond(6, true);
+										}
 									}
 								}
 							}
@@ -279,7 +295,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						world.freya = (L2GrandBossInstance) addSpawn(FREYA_SPELLING, FREYA_SPELLING_SPAWN, false, 0, true, world.getInstanceId());
 						world.freya.setIsInvul(true);
 						world.freya.disableCoreAI(true);
-						manageTimer(world, 60);
+						manageTimer(world, 60, NpcStringId.TIME_REMAINING_UNTIL_NEXT_BATTLE);
 						world.setStatus(2);
 						startQuestTimer("STAGE_2_START", 60000, world.controller, null);
 						break;
@@ -289,6 +305,13 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						world.canSpawnMobs = true;
 						notifyEvent("START_SPAWN", world.controller, null);
 						manageScreenMsg(world, NpcStringId.BEGIN_STAGE_2);
+						
+						if (world.isHardMode)
+						{
+							startQuestTimer("STAGE_2_FAILED", 360000, world.controller, null);
+							manageTimer(world, 360, NpcStringId.BATTLE_END_LIMIT_TIME);
+							world.controller.getVariables().set("TIMER_END", System.currentTimeMillis() + 360000);
+						}
 						break;
 					}
 					case "STAGE_2_MOVIE":
@@ -308,8 +331,24 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 								startQuestTimer("SPAWN_KNIGHT", 5000, statue, null);
 							}
 						}
-						final L2RaidBossInstance glakias = (L2RaidBossInstance) addSpawn(GLAKIAS, GLAKIAS_SPAWN, false, 0, true, world.getInstanceId());
+						final L2RaidBossInstance glakias = (L2RaidBossInstance) addSpawn((world.isHardMode ? GLAKIAS_ULTIMATE : GLAKIAS), GLAKIAS_SPAWN, false, 0, true, world.getInstanceId());
 						startQuestTimer("LEADER_DELAY", 5000, glakias, null);
+						
+						if (world.isHardMode)
+						{
+							startQuestTimer("SHOW_GLAKIAS_TIMER", 3000, world.controller, null);
+						}
+						break;
+					}
+					case "STAGE_2_FAILED":
+					{
+						manageMovie(world, 22);
+						startQuestTimer("STAGE_2_FAILED2", 22000, npc, null);
+						break;
+					}
+					case "STAGE_2_FAILED2":
+					{
+						InstanceManager.getInstance().destroyInstance(world.getInstanceId());
 						break;
 					}
 					case "STAGE_3_MOVIE":
@@ -330,12 +369,24 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						world.setStatus(4);
 						world.freya.deleteMe();
 						world.canSpawnMobs = true;
-						world.freya = (L2GrandBossInstance) addSpawn(FREYA_STAND, FREYA_SPAWN, false, 0, true, world.getInstanceId());
+						world.freya = (L2GrandBossInstance) addSpawn((world.isHardMode ? FREYA_STAND_ULTIMATE : FREYA_STAND), FREYA_SPAWN, false, 0, true, world.getInstanceId());
 						world.controller.getVariables().set("FREYA_MOVE", 0);
 						notifyEvent("START_SPAWN", world.controller, null);
 						startQuestTimer("START_MOVE", 10000, world.controller, null);
 						startQuestTimer("CAST_BLIZZARD", 50000, world.controller, null);
 						manageScreenMsg(world, NpcStringId.BEGIN_STAGE_3);
+						
+						if (world.isHardMode)
+						{
+							world.freya.doCast(FREYA_ANGER.getSkill());
+							startQuestTimer("FREYA_BUFF", 15000, world.controller, null);
+						}
+						break;
+					}
+					case "FREYA_BUFF":
+					{
+						world.freya.doCast(FREYA_BUFF.getSkill());
+						startQuestTimer("FREYA_BUFF", 15000, world.controller, null);
 						break;
 					}
 					case "START_MOVE":
@@ -352,9 +403,22 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					{
 						if (!world.freya.isInvul())
 						{
-							world.freya.doCast(BLIZZARD.getSkill());
+							final int blizzardForceCount = world.controller.getVariables().getInt("BLIZZARD_FORCE_COUNT", 0);
+							if (world.isHardMode && (blizzardForceCount < 4) && (world.freya.getCurrentHp() < (world.freya.getMaxHp() * (0.8 - (0.2 * blizzardForceCount)))))
+							{
+								world.controller.getVariables().set("BLIZZARD_FORCE_COUNT", blizzardForceCount + 1);
+								world.freya.doCast(BLIZZARD_FORCE.getSkill());
+							}
+							else
+							{
+								final Skill skill = (world.isHardMode ? BLIZZARD_HARD.getSkill() : BLIZZARD.getSkill());
+								world.freya.doCast(skill);
+							}
 							manageScreenMsg(world, NpcStringId.STRONG_MAGIC_POWER_CAN_BE_FELT_FROM_SOMEWHERE);
 						}
+						
+						final int time = (world.isHardMode ? getRandom(35, 40) : getRandom(55, 60)) * 1000;
+						startQuestTimer("CAST_BLIZZARD", time, world.controller, null);
 						
 						for (L2Attackable minion : world.spawnedMobs)
 						{
@@ -363,7 +427,6 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 								manageRandomAttack(world, minion);
 							}
 						}
-						startQuestTimer("CAST_BLIZZARD", getRandom(55, 60) * 1000, world.controller, null);
 						break;
 					}
 					case "SPAWN_SUPPORT":
@@ -418,7 +481,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						
 						for (Location loc : KNIGHTS_LOC)
 						{
-							final L2Attackable knight = (L2Attackable) addSpawn(KNIGHT, loc, false, 0, false, world.getInstanceId());
+							final L2Attackable knight = (L2Attackable) addSpawn((world.isHardMode ? KNIGHT_ULTIMATE : KNIGHT), loc, false, 0, false, world.getInstanceId());
 							knight.disableCoreAI(true);
 							knight.setDisplayEffect(1);
 							knight.getSpawn().setLocation(loc);
@@ -437,14 +500,15 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (world.canSpawnMobs)
 						{
 							final Location loc = new Location(MIDDLE_POINT.getX() + getRandom(-1000, 1000), MIDDLE_POINT.getY() + getRandom(-1000, 1000), MIDDLE_POINT.getZ());
-							final L2Attackable knight = (L2Attackable) addSpawn(KNIGHT, npc.getLocation(), false, 0, false, world.getInstanceId());
+							final L2Attackable knight = (L2Attackable) addSpawn(world.isHardMode ? KNIGHT_ULTIMATE : KNIGHT, npc.getLocation(), false, 0, false, world.getInstanceId());
 							knight.getVariables().set("SPAWNED_NPC", npc);
 							knight.disableCoreAI(true);
 							knight.setIsImmobilized(true);
 							knight.setDisplayEffect(1);
 							knight.getSpawn().setLocation(loc);
 							world.spawnedMobs.add(knight);
-							startQuestTimer("ICE_RUPTURE", getRandom(5, 10) * 1000, knight, null);
+							final int time = (world.isHardMode ? getRandom(5, 10) : getRandom(15, 20)) * 1000;
+							startQuestTimer("ICE_RUPTURE", time, knight, null);
 						}
 						break;
 					}
@@ -580,10 +644,10 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "LEADER_RANGEBUFF":
 					{
-						if (npc.checkDoCastConditions(SelfRangeBuff.getSkill()) && !npc.isCastingNow())
+						if (npc.checkDoCastConditions(SELF_RANGE_BUFF.getSkill()) && !npc.isCastingNow())
 						{
 							npc.setTarget(npc);
-							npc.doCast(SelfRangeBuff.getSkill());
+							npc.doCast(SELF_RANGE_BUFF.getSkill());
 						}
 						else
 						{
@@ -667,10 +731,17 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						}
 						break;
 					}
+					case "SHOW_GLAKIAS_TIMER":
+					{
+						final int time = (int) ((world.controller.getVariables().getLong("TIMER_END", 0) - System.currentTimeMillis()) / 1000);
+						manageTimer(world, time, NpcStringId.BATTLE_END_LIMIT_TIME);
+						break;
+					}
 				}
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
+		
 	}
 	
 	@Override
@@ -797,6 +868,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					break;
 				}
 				case FREYA_STAND:
+				case FREYA_STAND_ULTIMATE:
 				{
 					if (world.controller.getVariables().getInt("FREYA_MOVE") == 0)
 					{
@@ -907,6 +979,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					break;
 				}
 				case KNIGHT:
+				case KNIGHT_ULTIMATE:
 				{
 					if (npc.isCoreAIDisabled())
 					{
@@ -919,6 +992,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					break;
 				}
 				case GLAKIAS:
+				case GLAKIAS_ULTIMATE:
 				{
 					if (npc.getCurrentHp() < (npc.getMaxHp() * 0.02))
 					{
@@ -1064,13 +1138,16 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 			switch (npc.getId())
 			{
 				case GLAKIAS:
+				case GLAKIAS_ULTIMATE:
 				{
 					manageDespawnMinions(world);
-					manageTimer(world, 60);
+					manageTimer(world, 60, NpcStringId.TIME_REMAINING_UNTIL_NEXT_BATTLE);
+					cancelQuestTimer("STAGE_2_FAILED", world.controller, null);
 					startQuestTimer("STAGE_3_MOVIE", 60000, world.controller, null);
 					break;
 				}
 				case FREYA_STAND:
+				case FREYA_STAND_ULTIMATE:
 				{
 					world.isSupportActive = false;
 					manageMovie(world, 19);
@@ -1081,11 +1158,13 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					cancelQuestTimer("ATTACK_FREYA", world.supp_Kegor, null);
 					cancelQuestTimer("GIVE_SUPPORT", world.controller, null);
 					cancelQuestTimer("CAST_BLIZZARD", world.controller, null);
+					cancelQuestTimer("FREYA_BUFF", world.controller, null);
 					startQuestTimer("FINISH_STAGE", 16000, world.controller, null);
 					startQuestTimer("FINISH_WORLD", 300000, world.controller, null);
 					break;
 				}
 				case KNIGHT:
+				case KNIGHT_ULTIMATE:
 				{
 					final L2Npc spawnedBy = npc.getVariables().getObject("SPAWNED_NPC", L2Npc.class);
 					final NpcVariables var = world.controller.getVariables();
@@ -1113,7 +1192,8 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					
 					if (spawnedBy != null)
 					{
-						startQuestTimer("SPAWN_KNIGHT", getRandom(30, 60) * 1000, spawnedBy, null);
+						final int time = (world.isHardMode ? getRandom(30, 60) : getRandom(50, 60)) * 1000;
+						startQuestTimer("SPAWN_KNIGHT", time, spawnedBy, null);
 					}
 					world.spawnedMobs.remove(npc);
 					break;
@@ -1139,22 +1219,24 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	{
 		if (firstEntrance)
 		{
+			final IQCNBWorld curworld = (IQCNBWorld) world;
+			curworld.isHardMode = curworld.getTemplateId() == TEMPLATE_ID_ULTIMATE;
 			if (!player.isInParty())
 			{
-				managePlayerEnter(player, (IQCNBWorld) world);
+				managePlayerEnter(player, curworld);
 			}
 			else if (player.getParty().isInCommandChannel())
 			{
 				for (L2PcInstance players : player.getParty().getCommandChannel().getMembers())
 				{
-					managePlayerEnter(players, (IQCNBWorld) world);
+					managePlayerEnter(players, curworld);
 				}
 			}
 			else
 			{
 				for (L2PcInstance players : player.getParty().getMembers())
 				{
-					managePlayerEnter(players, (IQCNBWorld) world);
+					managePlayerEnter(players, curworld);
 				}
 			}
 		}
@@ -1225,6 +1307,13 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 				party.broadcastPacket(sm);
 				return false;
 			}
+			else if (System.currentTimeMillis() < InstanceManager.getInstance().getInstanceTime(channelMember.getObjectId(), TEMPLATE_ID_ULTIMATE))
+			{
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_MAY_NOT_RE_ENTER_YET);
+				sm.addPcName(channelMember);
+				party.broadcastPacket(sm);
+				return false;
+			}
 		}
 		return true;
 	}
@@ -1266,13 +1355,13 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 		}
 	}
 	
-	private void manageTimer(IQCNBWorld world, int time)
+	private void manageTimer(IQCNBWorld world, int time, NpcStringId npcStringId)
 	{
 		for (L2PcInstance players : world.playersInside)
 		{
 			if ((players != null) && (players.getInstanceId() == world.getInstanceId()))
 			{
-				players.sendPacket(new ExSendUIEvent(players, false, false, time, 0, "Time remaining until next battle"));
+				players.sendPacket(new ExSendUIEvent(players, false, false, time, 0, npcStringId));
 			}
 		}
 	}
