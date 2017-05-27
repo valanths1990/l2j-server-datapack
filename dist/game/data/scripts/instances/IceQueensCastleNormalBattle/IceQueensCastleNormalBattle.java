@@ -78,43 +78,43 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	}
 	
 	// Npcs
-	private static final int FREYA_THRONE = 29177; // First freya
-	private static final int FREYA_SPELLING = 29178; // Second freya
-	private static final int FREYA_STAND = 29179; // Last freya
-	private static final int FREYA_STAND_ULTIMATE = 29180; // Last freya - Ultimate Battle
+	private static final int FREYA_THRONE = 29177;
+	private static final int FREYA_SPELLING = 29178;
+	private static final int FREYA_STAND = 29179;
+	private static final int FREYA_STAND_ULTIMATE = 29180;
 	private static final int INVISIBLE_NPC = 18919;
-	private static final int KNIGHT = 18855; // Archery Knight
-	private static final int KNIGHT_ULTIMATE = 18856; // Archery Knight - Ultimate Battle
-	private static final int GLACIER = 18853; // Glacier
-	private static final int BREATH = 18854; // Archer's Breath
-	private static final int GLAKIAS = 25699; // Glakias (Archery Knight Captain)
-	private static final int GLAKIAS_ULTIMATE = 25700; // Glakias (Archery Knight Captain) - Ultimate Battle
-	private static final int SIRRA = 32762; // Sirra
-	private static final int JINIA = 32781; // Jinia
-	private static final int SUPP_JINIA = 18850; // Jinia
-	private static final int SUPP_KEGOR = 18851; // Kegor
+	private static final int KNIGHT = 18855;
+	private static final int KNIGHT_ULTIMATE = 18856;
+	private static final int GLACIER = 18853;
+	private static final int BREATH = 18854;
+	private static final int GLAKIAS = 25699;
+	private static final int GLAKIAS_ULTIMATE = 25700;
+	private static final int SIRRA = 32762;
+	private static final int JINIA = 32781;
+	private static final int SUPP_JINIA = 18850;
+	private static final int SUPP_KEGOR = 18851;
 	// Skills
-	private static final SkillHolder BLIZZARD = new SkillHolder(6274, 1); // Eternal Blizzard
-	private static final SkillHolder BLIZZARD_HARD = new SkillHolder(6275, 1); // Eternal Blizzard
-	private static final SkillHolder BLIZZARD_FORCE = new SkillHolder(6697, 1); // Eternal Blizzard
-	private static final SkillHolder BLIZZARD_BREATH = new SkillHolder(6299, 1); // Breath of Ice Palace - Ice Storm
-	private static final SkillHolder SUICIDE_BREATH = new SkillHolder(6300, 1); // Self-Destruction
-	private static final SkillHolder JINIA_SUPPORT = new SkillHolder(6288, 1); // Jinia's Prayer
-	private static final SkillHolder KEGOR_SUPPORT = new SkillHolder(6289, 1); // Kegor's Courage
-	private static final SkillHolder ICE_STONE = new SkillHolder(6301, 1); // Cold Mana's Fragment
-	private static final SkillHolder CANCEL = new SkillHolder(4618, 1); // NPC Cancel PC Target
-	private static final SkillHolder POWER_STRIKE = new SkillHolder(6293, 1); // Power Strike
-	private static final SkillHolder POINT_TARGET = new SkillHolder(6295, 1); // Point Target
-	private static final SkillHolder CYLINDER_THROW = new SkillHolder(6297, 1); // Cylinder Throw
-	private static final SkillHolder SELF_RANGE_BUFF = new SkillHolder(6294, 1); // Leader's Roar
-	private static final SkillHolder LEADER_RUSH = new SkillHolder(6296, 1); // Rush
-	private static final SkillHolder ANTI_STRIDER = new SkillHolder(4258, 1); // Hinder Strider
-	private static final SkillHolder ICE_BALL = new SkillHolder(6278, 1); // Ice Ball
-	private static final SkillHolder SUMMON_ELEMENTAL = new SkillHolder(6277, 1); // Summon Spirits
-	private static final SkillHolder SELF_NOVA = new SkillHolder(6279, 1); // Attack Nearby Range
-	private static final SkillHolder REFLECT_MAGIC = new SkillHolder(6282, 1); // Reflect Magic
-	private static final SkillHolder FREYA_ANGER = new SkillHolder(6285, 1); // Rage of Ice
-	private static final SkillHolder FREYA_BUFF = new SkillHolder(6284, 1); // Freya's Bless
+	private static final SkillHolder ETERNAL_BLIZZARD = new SkillHolder(6274);
+	private static final SkillHolder ETERNAL_BLIZZARD_HARD = new SkillHolder(6275);
+	private static final SkillHolder ETERNAL_BLIZZARD_FORCE = new SkillHolder(6697);
+	private static final SkillHolder BREATH_OF_ICE_PALACE = new SkillHolder(6299);
+	private static final SkillHolder SELF_DESTRUCTION = new SkillHolder(6300);
+	private static final SkillHolder JINIAS_PRAYER = new SkillHolder(6288);
+	private static final SkillHolder KEGORS_COURAGE = new SkillHolder(6289);
+	private static final SkillHolder COLD_MANAS_FRAGMENT = new SkillHolder(6301);
+	private static final SkillHolder NPC_CANCEL_PC_TARGET = new SkillHolder(4618);
+	private static final SkillHolder POWER_STRIKE = new SkillHolder(6293);
+	private static final SkillHolder POINT_TARGET = new SkillHolder(6295);
+	private static final SkillHolder CYLINDER_THROW = new SkillHolder(6297);
+	private static final SkillHolder LEADERS_ROAR = new SkillHolder(6294);
+	private static final SkillHolder RUSH = new SkillHolder(6296);
+	private static final SkillHolder HINDER_STRIDER = new SkillHolder(4258);
+	private static final SkillHolder ICE_BALL = new SkillHolder(6278);
+	private static final SkillHolder SUMMON_SPIRITS = new SkillHolder(6277);
+	private static final SkillHolder ATTACK_NEARBY_RANGE = new SkillHolder(6279);
+	private static final SkillHolder REFLECT_MAGIC = new SkillHolder(6282);
+	private static final SkillHolder RAGE_OF_ICE = new SkillHolder(6285);
+	private static final SkillHolder FREYAS_BLESS = new SkillHolder(6284);
 	// Locations
 	private static final Location FREYA_SPAWN = new Location(114720, -117085, -11088, 15956);
 	private static final Location FREYA_SPELLING_SPAWN = new Location(114723, -117502, -10672, 15956);
@@ -378,14 +378,14 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						
 						if (world.isHardMode)
 						{
-							world.freya.doCast(FREYA_ANGER.getSkill());
+							world.freya.doCast(RAGE_OF_ICE.getSkill());
 							startQuestTimer("FREYA_BUFF", 15000, world.controller, null);
 						}
 						break;
 					}
 					case "FREYA_BUFF":
 					{
-						world.freya.doCast(FREYA_BUFF.getSkill());
+						world.freya.doCast(FREYAS_BLESS.getSkill());
 						startQuestTimer("FREYA_BUFF", 15000, world.controller, null);
 						break;
 					}
@@ -407,14 +407,15 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							if (world.isHardMode && (blizzardForceCount < 4) && (world.freya.getCurrentHp() < (world.freya.getMaxHp() * (0.8 - (0.2 * blizzardForceCount)))))
 							{
 								world.controller.getVariables().set("BLIZZARD_FORCE_COUNT", blizzardForceCount + 1);
-								world.freya.doCast(BLIZZARD_FORCE.getSkill());
+								world.freya.doCast(ETERNAL_BLIZZARD_FORCE.getSkill());
+								manageScreenMsg(world, NpcStringId.MAGIC_POWER_SO_STRONG_THAT_IT_COULD_MAKE_YOU_LOSE_YOUR_MIND_CAN_BE_FELT_FROM_SOMEWHERE);
 							}
 							else
 							{
-								final Skill skill = (world.isHardMode ? BLIZZARD_HARD.getSkill() : BLIZZARD.getSkill());
+								final Skill skill = (world.isHardMode ? ETERNAL_BLIZZARD_HARD.getSkill() : ETERNAL_BLIZZARD.getSkill());
 								world.freya.doCast(skill);
+								manageScreenMsg(world, NpcStringId.STRONG_MAGIC_POWER_CAN_BE_FELT_FROM_SOMEWHERE);
 							}
-							manageScreenMsg(world, NpcStringId.STRONG_MAGIC_POWER_CAN_BE_FELT_FROM_SOMEWHERE);
 						}
 						
 						final int time = (world.isHardMode ? getRandom(35, 40) : getRandom(55, 60)) * 1000;
@@ -458,8 +459,8 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					{
 						if (world.isSupportActive)
 						{
-							world.supp_Jinia.doCast(JINIA_SUPPORT.getSkill());
-							world.supp_Kegor.doCast(KEGOR_SUPPORT.getSkill());
+							world.supp_Jinia.doCast(JINIAS_PRAYER.getSkill());
+							world.supp_Kegor.doCast(KEGORS_COURAGE.getSkill());
 							startQuestTimer("GIVE_SUPPORT", 25000, world.controller, null);
 						}
 						break;
@@ -553,7 +554,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (npc.isScriptValue(0) && !npc.isDead())
 						{
 							npc.setTarget(npc);
-							npc.doCast(ICE_STONE.getSkill());
+							npc.doCast(COLD_MANAS_FRAGMENT.getSkill());
 							npc.setScriptValue(1);
 						}
 						break;
@@ -577,10 +578,10 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							}
 							else
 							{
-								if (npc.checkDoCastConditions(BLIZZARD_BREATH.getSkill()) && !npc.isCastingNow())
+								if (npc.checkDoCastConditions(BREATH_OF_ICE_PALACE.getSkill()) && !npc.isCastingNow())
 								{
 									npc.setTarget(npc);
-									npc.doCast(BLIZZARD_BREATH.getSkill());
+									npc.doCast(BREATH_OF_ICE_PALACE.getSkill());
 								}
 								startQuestTimer("BLIZZARD", 20000, npc, null);
 							}
@@ -590,7 +591,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					case "ELEMENTAL_SUICIDE":
 					{
 						npc.setTarget(npc);
-						npc.doCast(SUICIDE_BREATH.getSkill());
+						npc.doCast(SELF_DESTRUCTION.getSkill());
 						break;
 					}
 					case "ELEMENTAL_KILLED":
@@ -598,7 +599,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (npc.getVariables().getInt("SUICIDE_ON") == 1)
 						{
 							npc.setTarget(npc);
-							npc.doCast(SUICIDE_BREATH.getSkill());
+							npc.doCast(SELF_DESTRUCTION.getSkill());
 						}
 						break;
 					}
@@ -644,10 +645,10 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "LEADER_RANGEBUFF":
 					{
-						if (npc.checkDoCastConditions(SELF_RANGE_BUFF.getSkill()) && !npc.isCastingNow())
+						if (npc.checkDoCastConditions(LEADERS_ROAR.getSkill()) && !npc.isCastingNow())
 						{
 							npc.setTarget(npc);
-							npc.doCast(SELF_RANGE_BUFF.getSkill());
+							npc.doCast(LEADERS_ROAR.getSkill());
 						}
 						else
 						{
@@ -676,7 +677,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (getRandomBoolean() && !npc.isCastingNow() && (mostHated != null) && !mostHated.isDead() && (npc.calculateDistance(mostHated, true, false) < 1000))
 						{
 							npc.setTarget(mostHated);
-							npc.doCast(LEADER_RUSH.getSkill());
+							npc.doCast(RUSH.getSkill());
 						}
 						startQuestTimer("LEADER_DASH", 10000, npc, null);
 						break;
@@ -805,12 +806,12 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					else
 					{
-						if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTI_STRIDER.getSkillId()) && !npc.isCastingNow())
+						if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(HINDER_STRIDER.getSkillId()) && !npc.isCastingNow())
 						{
-							if (!npc.isSkillDisabled(ANTI_STRIDER.getSkill()))
+							if (!npc.isSkillDisabled(HINDER_STRIDER.getSkill()))
 							{
 								npc.setTarget(attacker);
-								npc.doCast(ANTI_STRIDER.getSkill());
+								npc.doCast(HINDER_STRIDER.getSkill());
 							}
 						}
 						
@@ -840,27 +841,27 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						{
 							if (getRandomBoolean())
 							{
-								if ((npc.calculateDistance(attacker, true, false) <= 800) && npc.checkDoCastConditions(SUMMON_ELEMENTAL.getSkill()) && !npc.isCastingNow())
+								if ((npc.calculateDistance(attacker, true, false) <= 800) && npc.checkDoCastConditions(SUMMON_SPIRITS.getSkill()) && !npc.isCastingNow())
 								{
 									npc.setTarget(attacker);
-									npc.doCast(SUMMON_ELEMENTAL.getSkill());
+									npc.doCast(SUMMON_SPIRITS.getSkill());
 								}
 							}
 							else
 							{
-								if (canReachMostHated && npc.checkDoCastConditions(SUMMON_ELEMENTAL.getSkill()) && !npc.isCastingNow())
+								if (canReachMostHated && npc.checkDoCastConditions(SUMMON_SPIRITS.getSkill()) && !npc.isCastingNow())
 								{
 									npc.setTarget(mostHated);
-									npc.doCast(SUMMON_ELEMENTAL.getSkill());
+									npc.doCast(SUMMON_SPIRITS.getSkill());
 								}
 							}
 						}
 						else if (getRandom(10000) < 1500)
 						{
-							if (!npc.isAffectedBySkill(SELF_NOVA.getSkillId()) && npc.checkDoCastConditions(SELF_NOVA.getSkill()) && !npc.isCastingNow())
+							if (!npc.isAffectedBySkill(ATTACK_NEARBY_RANGE.getSkillId()) && npc.checkDoCastConditions(ATTACK_NEARBY_RANGE.getSkill()) && !npc.isCastingNow())
 							{
 								npc.setTarget(npc);
-								npc.doCast(SELF_NOVA.getSkill());
+								npc.doCast(ATTACK_NEARBY_RANGE.getSkill());
 							}
 						}
 					}
@@ -890,12 +891,12 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						startQuestTimer("SPAWN_SUPPORT", 27000, world.controller, null);
 					}
 					
-					if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTI_STRIDER.getSkillId()) && !npc.isCastingNow())
+					if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(HINDER_STRIDER.getSkillId()) && !npc.isCastingNow())
 					{
-						if (!npc.isSkillDisabled(ANTI_STRIDER.getSkill()))
+						if (!npc.isSkillDisabled(HINDER_STRIDER.getSkill()))
 						{
 							npc.setTarget(attacker);
-							npc.doCast(ANTI_STRIDER.getSkill());
+							npc.doCast(HINDER_STRIDER.getSkill());
 						}
 					}
 					
@@ -925,27 +926,27 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					{
 						if (getRandomBoolean())
 						{
-							if ((npc.calculateDistance(attacker, true, false) <= 800) && npc.checkDoCastConditions(SUMMON_ELEMENTAL.getSkill()) && !npc.isCastingNow())
+							if ((npc.calculateDistance(attacker, true, false) <= 800) && npc.checkDoCastConditions(SUMMON_SPIRITS.getSkill()) && !npc.isCastingNow())
 							{
 								npc.setTarget(attacker);
-								npc.doCast(SUMMON_ELEMENTAL.getSkill());
+								npc.doCast(SUMMON_SPIRITS.getSkill());
 							}
 						}
 						else
 						{
-							if (canReachMostHated && npc.checkDoCastConditions(SUMMON_ELEMENTAL.getSkill()) && !npc.isCastingNow())
+							if (canReachMostHated && npc.checkDoCastConditions(SUMMON_SPIRITS.getSkill()) && !npc.isCastingNow())
 							{
 								npc.setTarget(mostHated);
-								npc.doCast(SUMMON_ELEMENTAL.getSkill());
+								npc.doCast(SUMMON_SPIRITS.getSkill());
 							}
 						}
 					}
 					else if (getRandom(10000) < 1500)
 					{
-						if (!npc.isAffectedBySkill(SELF_NOVA.getSkillId()) && npc.checkDoCastConditions(SELF_NOVA.getSkill()) && !npc.isCastingNow())
+						if (!npc.isAffectedBySkill(ATTACK_NEARBY_RANGE.getSkillId()) && npc.checkDoCastConditions(ATTACK_NEARBY_RANGE.getSkill()) && !npc.isCastingNow())
 						{
 							npc.setTarget(npc);
-							npc.doCast(SELF_NOVA.getSkill());
+							npc.doCast(ATTACK_NEARBY_RANGE.getSkill());
 						}
 					}
 					else if (getRandom(10000) < 1333)
@@ -963,7 +964,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					if (npc.isScriptValue(0) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.5)))
 					{
 						npc.setTarget(attacker);
-						npc.doCast(ICE_STONE.getSkill());
+						npc.doCast(COLD_MANAS_FRAGMENT.getSkill());
 						npc.setScriptValue(1);
 					}
 					break;
@@ -1000,12 +1001,12 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							npc.getVariables().set("OFF_SHOUT", 1);
 							npc.getVariables().set("DELAY_VAL", 2);
 							npc.setTarget(attacker);
-							npc.doCast(CANCEL.getSkill());
+							npc.doCast(NPC_CANCEL_PC_TARGET.getSkill());
 						}
 						else if (npc.getVariables().getInt("OFF_SHOUT") == 1)
 						{
 							npc.setTarget(attacker);
-							npc.doCast(CANCEL.getSkill());
+							npc.doCast(NPC_CANCEL_PC_TARGET.getSkill());
 						}
 					}
 					else if ((npc.getVariables().getInt("OFF_SHOUT") == 0) && (npc.getVariables().getInt("DELAY_VAL") == 1))
@@ -1091,7 +1092,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 			{
 				case GLACIER:
 				{
-					if (skill == ICE_STONE.getSkill())
+					if (skill == COLD_MANAS_FRAGMENT.getSkill())
 					{
 						if (getRandom(100) < 75)
 						{
@@ -1115,7 +1116,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 				}
 				case BREATH:
 				{
-					if (skill == SUICIDE_BREATH.getSkill())
+					if (skill == SELF_DESTRUCTION.getSkill())
 					{
 						npc.doDie(null);
 					}
