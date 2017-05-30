@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2016 L2J DataPack
+ * Copyright (C) 2004-2017 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,31 +18,27 @@
  */
 package quests.Q00423_TakeYourBestShot;
 
-import quests.Q00249_PoisonedPlainsOfTheLizardmen.Q00249_PoisonedPlainsOfTheLizardmen;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.model.quest.State;
+import com.l2jserver.gameserver.util.Util;
+
+import quests.Q00249_PoisonedPlainsOfTheLizardmen.Q00249_PoisonedPlainsOfTheLizardmen;
 
 /**
  * Take Your Best Shot (423)
- * @author Gnacik
- * @version 2010-06-26 Based on official server Franz
+ * @author ivantotov
  */
-public class Q00423_TakeYourBestShot extends Quest
+public final class Q00423_TakeYourBestShot extends Quest
 {
 	// NPCs
 	private static final int BATRACOS = 32740;
 	private static final int JOHNNY = 32744;
-	
 	// Monster
 	private static final int TANTA_GUARD = 18862;
-	
 	// Item
 	private static final int SEER_UGOROS_PASS = 15496;
-	
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
@@ -51,57 +47,67 @@ public class Q00423_TakeYourBestShot extends Quest
 		super(423, Q00423_TakeYourBestShot.class.getSimpleName(), "Take Your Best Shot!");
 		addStartNpc(JOHNNY, BATRACOS);
 		addTalkId(JOHNNY, BATRACOS);
-		addFirstTalkId(BATRACOS);
 		addKillId(TANTA_GUARD);
 	}
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		final QuestState st = getQuestState(player, false);
-		if (st == null)
+		final QuestState qs = getQuestState(player, false);
+		if (qs == null)
 		{
 			return null;
 		}
 		
-		String htmltext = event;
+		String htmltext = null;
 		switch (event)
 		{
-			case "32740.html":
-			case "32740-01.html":
-			case "32744-02.html":
-			case "32744-03.htm":
+			case "32744-06.htm":
+			{
+				if (qs.isCreated() && (player.getLevel() >= MIN_LEVEL))
+				{
+					qs.startQuest();
+					qs.setMemoState(1);
+					htmltext = event;
+				}
 				break;
-			case "32744-04.htm":
-				st.startQuest();
+			}
+			case "32744-04.html":
+			case "32744-05.htm":
+			{
+				if (!hasQuestItems(player, SEER_UGOROS_PASS) && (player.getLevel() >= MIN_LEVEL))
+				{
+					htmltext = event;
+				}
 				break;
-			case "32744-quit.html":
-				st.exitQuest(true);
+			}
+			case "32744-07.html":
+			{
+				htmltext = event;
 				break;
-			default:
-				htmltext = null;
-				break;
+			}
 		}
 		return htmltext;
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (npc.isInsideRadius(96782, 85918, 0, 100, false, true))
-		{
-			return "32740-ugoros.html";
-		}
-		return "32740.html";
-	}
-	
-	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
 	{
-		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(1))
+		final QuestState qs = getQuestState(killer, false);
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
 		{
-			st.setCond(2, true);
+			switch (npc.getId())
+			{
+				case TANTA_GUARD:
+				{
+					if ((qs.isMemoState(1)) && !hasQuestItems(killer, SEER_UGOROS_PASS))
+					{
+						qs.setMemoState(2);
+						qs.setCond(2, true);
+					}
+					break;
+				}
+			}
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
@@ -109,60 +115,58 @@ public class Q00423_TakeYourBestShot extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		final QuestState st = getQuestState(player, true);
+		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st == null)
+		if (qs.isCreated())
 		{
-			return htmltext;
+			if (npc.getId() == JOHNNY)
+			{
+				if (hasQuestItems(player, SEER_UGOROS_PASS))
+				{
+					htmltext = "32744-02.htm";
+				}
+				else
+				{
+					final QuestState q249 = player.getQuestState(Q00249_PoisonedPlainsOfTheLizardmen.class.getSimpleName());
+					htmltext = ((player.getLevel() >= MIN_LEVEL) && (q249 != null) && (q249.isCompleted())) ? "32744-03.htm" : "32744-01.htm";
+				}
+			}
+			else if (npc.getId() == BATRACOS)
+			{
+				htmltext = (qs.hasQuestItems(SEER_UGOROS_PASS)) ? "32740-04.html" : "32740-01.html";
+			}
 		}
-		
-		switch (npc.getId())
+		else if (qs.isStarted())
 		{
-			case JOHNNY:
-				switch (st.getState())
+			switch (npc.getId())
+			{
+				case JOHNNY:
 				{
-					case State.CREATED:
-						final QuestState qs249 = player.getQuestState(Q00249_PoisonedPlainsOfTheLizardmen.class.getSimpleName());
-						if ((qs249 != null) && qs249.isCompleted() && (player.getLevel() >= MIN_LEVEL))
-						{
-							htmltext = (st.hasQuestItems(SEER_UGOROS_PASS)) ? "32744-07.htm" : "32744-01.htm";
-						}
-						else
-						{
-							htmltext = "32744-00.htm";
-						}
-						break;
-					case State.STARTED:
-						if (st.isCond(1))
-						{
-							htmltext = "32744-05.html";
-						}
-						else if (st.isCond(2))
-						{
-							htmltext = "32744-06.html";
-						}
-						break;
+					if (qs.isMemoState(1))
+					{
+						htmltext = "32744-08.html";
+					}
+					else if (qs.isMemoState(2))
+					{
+						htmltext = "32744-09.html";
+					}
+					break;
 				}
-				break;
-			case BATRACOS:
-				switch (st.getState())
+				case BATRACOS:
 				{
-					case State.CREATED:
-						htmltext = (st.hasQuestItems(SEER_UGOROS_PASS)) ? "32740-05.html" : "32740-00.html";
-						break;
-					case State.STARTED:
-						if (st.isCond(1))
-						{
-							htmltext = "32740-02.html";
-						}
-						else if (st.isCond(2))
-						{
-							st.giveItems(SEER_UGOROS_PASS, 1);
-							st.exitQuest(true, true);
-							htmltext = "32740-04.html";
-						}
-						break;
+					if (qs.isMemoState(1))
+					{
+						htmltext = "32740-02.html";
+					}
+					else if (qs.isMemoState(2))
+					{
+						giveItems(player, SEER_UGOROS_PASS, 1);
+						qs.exitQuest(true, true);
+						htmltext = "32740-03.html";
+					}
+					break;
 				}
+			}
 		}
 		return htmltext;
 	}
