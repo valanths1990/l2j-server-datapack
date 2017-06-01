@@ -3,6 +3,16 @@
 	<activityTime val="60" />
 	<allowSummon val="false" />
 	<emptyDestroyTime val="600" />
-	<showTimer val="true" />
 	<exitPoint x="-183292" y="206063" z="-12888" />
+	<reenter additionStyle="ON_INSTANCE_FINISH">
+		<reset day="Monday" hour="6" minute="30" />
+		<reset day="Tuesday" hour="6" minute="30" />
+		<reset day="Wednesday" hour="6" minute="30" />
+		<reset day="Thursday" hour="6" minute="30" />
+		<reset day="Friday" hour="6" minute="30" />
+		<reset day="Saturday" hour="6" minute="30" />
+		<reset day="Sunday" hour="6" minute="30" />
+	</reenter>
+	<removeBuffs type="ALL" /> 
+	<showTimer val="true" />
 </instance>

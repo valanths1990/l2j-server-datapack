@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2016 L2J DataPack
+ * Copyright (C) 2004-2017 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,24 +18,23 @@
  */
 package gracia.instances.SeedOfInfinity.HallOfSuffering;
 
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 import com.l2jserver.gameserver.ai.CtrlEvent;
 import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.L2World;
 import com.l2jserver.gameserver.model.Location;
+import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
+import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -43,7 +42,7 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Util;
 
-import ai.npc.AbstractNpcAI;
+import instances.AbstractInstance;
 import quests.Q00695_DefendTheHallOfSuffering.Q00695_DefendTheHallOfSuffering;
 
 /**
@@ -52,26 +51,28 @@ import quests.Q00695_DefendTheHallOfSuffering.Q00695_DefendTheHallOfSuffering;
  * - after 15mins mobs are despawned<br>
  * @author Gigiikun, ZakaX, Didldak
  */
-public final class HallOfSuffering extends AbstractNpcAI
+public final class HallOfSuffering extends AbstractInstance
 {
 	protected class HSWorld extends InstanceWorld
 	{
-		public Map<L2Npc, Boolean> npcList = new HashMap<>();
-		public L2Npc klodekus = null;
-		public L2Npc klanikus = null;
-		public boolean isBossesAttacked = false;
-		public long startTime = 0;
-		public String ptLeaderName = "";
-		public int rewardItemId = -1;
-		public String rewardHtm = "";
-		public boolean isRewarded = false;
+		protected Map<L2Npc, Boolean> npcList = new HashMap<>();
+		protected L2Npc klodekus = null;
+		protected L2Npc klanikus = null;
+		protected boolean isBossesAttacked = false;
+		protected long startTime = 0;
+		protected String ptLeaderName = "";
+		protected int rewardItemId = -1;
+		protected String rewardHtm = "";
+		protected boolean isRewarded = false;
 	}
 	
 	// NPCs
-	private static final int MOUTHOFEKIMUS = 32537;
+	private static final int MOUTH_OF_EKIMUS = 32537;
 	private static final int TEPIOS = 32530;
 	// Location
 	private static final Location ENTER_TELEPORT = new Location(-187567, 205570, -9538);
+	// Skill
+	private static final SkillHolder PRESENTATION_DISTRICT1_BOSS_ARISE = new SkillHolder(5824);
 	// Monsters
 	private static final int KLODEKUS = 25665;
 	private static final int KLANIKUS = 25666;
@@ -159,39 +160,23 @@ public final class HallOfSuffering extends AbstractNpcAI
 		new Location(-181039, 216633, -9528),
 		new Location(-177264, 217760, -9544)
 	};
-	private static final int[][] TWIN_SPAWNS =
-	{
-		{
-			25665,
-			-173727,
-			218169,
-			-9536
-		},
-		{
-			25666,
-			-173727,
-			218049,
-			-9536
-		}
-	};
+	private static final Location KLODEKUS_SPAWN = new Location(-173727, 218169, -9536, -16384);
+	private static final Location KLANIKUS_SPAWN = new Location(-173727, 218049, -9538, 16360);
 	private static final Location TEPIOS_SPAWN = new Location(-173727, 218109, -9536);
 	// Boss
 	private static final int BOSS_INVUL_TIME = 30000; // In Milliseconds.
 	private static final int BOSS_MINION_SPAWN_TIME = 60000; // In Milliseconds.
 	private static final int BOSS_RESSURECT_TIME = 20000; // In Milliseconds.
-	// Instance reenter time
-	private static final int INSTANCE_PENALTY = 24; // Default: 24h
 	// Misc
 	private static final int TEMPLATE_ID = 115;
 	private static final int MIN_LEVEL = 75;
 	private static final int MAX_LEVEL = 82;
-	private static final boolean debug = false;
 	
 	public HallOfSuffering()
 	{
 		super(HallOfSuffering.class.getSimpleName(), "gracia/instances/SeedOfInfinity");
-		addStartNpc(MOUTHOFEKIMUS, TEPIOS);
-		addTalkId(MOUTHOFEKIMUS, TEPIOS);
+		addStartNpc(MOUTH_OF_EKIMUS, TEPIOS);
+		addTalkId(MOUTH_OF_EKIMUS, TEPIOS);
 		addFirstTalkId(TEPIOS);
 		addKillId(TUMOR_ALIVE, KLODEKUS, KLANIKUS);
 		addAttackId(KLODEKUS, KLANIKUS);
@@ -199,9 +184,10 @@ public final class HallOfSuffering extends AbstractNpcAI
 		addKillId(TUMOR_MOBIDS);
 	}
 	
-	private static boolean checkConditions(L2PcInstance player)
+	@Override
+	protected boolean checkConditions(L2PcInstance player)
 	{
-		if (debug)
+		if (player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
 		{
 			return true;
 		}
@@ -235,8 +221,7 @@ public final class HallOfSuffering extends AbstractNpcAI
 				party.broadcastPacket(sm);
 				return false;
 			}
-			final long reentertime = InstanceManager.getInstance().getInstanceTime(partyMember.getObjectId(), TEMPLATE_ID);
-			if (System.currentTimeMillis() < reentertime)
+			if (System.currentTimeMillis() < InstanceManager.getInstance().getInstanceTime(partyMember.getObjectId(), TEMPLATE_ID))
 			{
 				final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_MAY_NOT_RE_ENTER_YET);
 				sm.addPcName(partyMember);
@@ -247,52 +232,31 @@ public final class HallOfSuffering extends AbstractNpcAI
 		return true;
 	}
 	
-	private void enterInstance(L2PcInstance player, String template, Location loc)
+	@Override
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
 	{
-		// check for existing instances for this player
-		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-		// existing instance
-		if (world != null)
+		if (firstEntrance)
 		{
-			if (!(world instanceof HSWorld))
+			if (!player.isInParty())
 			{
-				player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
-				return;
+				teleportPlayer(player, ENTER_TELEPORT, world.getInstanceId());
+				world.addAllowed(player.getObjectId());
 			}
-			teleportPlayer(player, loc, world.getInstanceId());
-			return;
-		}
-		// New instance
-		if (!checkConditions(player))
-		{
-			return;
-		}
-		L2Party party = player.getParty();
-		final int instanceId = InstanceManager.getInstance().createDynamicInstance(template);
-		world = new HSWorld();
-		world.setInstanceId(instanceId);
-		world.setTemplateId(TEMPLATE_ID);
-		world.setStatus(0);
-		((HSWorld) world).startTime = System.currentTimeMillis();
-		((HSWorld) world).ptLeaderName = player.getName();
-		InstanceManager.getInstance().addWorld(world);
-		_log.info("Hall Of Suffering started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
-		runTumors((HSWorld) world);
-		
-		// teleport players
-		if (player.getParty() == null)
-		{
-			teleportPlayer(player, loc, instanceId);
-			world.addAllowed(player.getObjectId());
+			else
+			{
+				for (L2PcInstance players : player.getParty().getMembers())
+				{
+					teleportPlayer(players, ENTER_TELEPORT, world.getInstanceId());
+					world.addAllowed(players.getObjectId());
+					getQuestState(players, true);
+				}
+			}
+			
+			runTumors((HSWorld) world);
 		}
 		else
 		{
-			for (L2PcInstance partyMember : party.getMembers())
-			{
-				teleportPlayer(partyMember, loc, instanceId);
-				world.addAllowed(partyMember.getObjectId());
-				getQuestState(partyMember, true);
-			}
+			teleportPlayer(player, ENTER_TELEPORT, world.getInstanceId());
 		}
 	}
 	
@@ -350,8 +314,8 @@ public final class HallOfSuffering extends AbstractNpcAI
 	private void runTwins(HSWorld world)
 	{
 		world.incStatus();
-		world.klodekus = addSpawn(TWIN_SPAWNS[0][0], TWIN_SPAWNS[0][1], TWIN_SPAWNS[0][2], TWIN_SPAWNS[0][3], 0, false, 0, false, world.getInstanceId());
-		world.klanikus = addSpawn(TWIN_SPAWNS[1][0], TWIN_SPAWNS[1][1], TWIN_SPAWNS[1][2], TWIN_SPAWNS[1][3], 0, false, 0, false, world.getInstanceId());
+		world.klodekus = addSpawn(KLODEKUS, KLODEKUS_SPAWN, false, 0, false, world.getInstanceId());
+		world.klanikus = addSpawn(KLANIKUS, KLANIKUS_SPAWN, false, 0, false, world.getInstanceId());
 		world.klanikus.setIsMortal(false);
 		world.klodekus.setIsMortal(false);
 	}
@@ -484,11 +448,11 @@ public final class HallOfSuffering extends AbstractNpcAI
 					world.isBossesAttacked = false;
 					return "";
 				}
-				L2Npc mob = addSpawn(TWIN_MOBIDS[getRandom(TWIN_MOBIDS.length)], TWIN_SPAWNS[0][1], TWIN_SPAWNS[0][2], TWIN_SPAWNS[0][3], 0, false, 0, false, npc.getInstanceId());
+				L2Npc mob = addSpawn(TWIN_MOBIDS[getRandom(TWIN_MOBIDS.length)], KLODEKUS_SPAWN, false, 0, false, npc.getInstanceId());
 				((L2Attackable) mob).addDamageHate(((L2Attackable) npc).getMostHated(), 0, 1);
 				if (getRandom(100) < 33)
 				{
-					mob = addSpawn(TWIN_MOBIDS[getRandom(TWIN_MOBIDS.length)], TWIN_SPAWNS[1][1], TWIN_SPAWNS[1][2], TWIN_SPAWNS[1][3], 0, false, 0, false, npc.getInstanceId());
+					mob = addSpawn(TWIN_MOBIDS[getRandom(TWIN_MOBIDS.length)], KLANIKUS_SPAWN, false, 0, false, npc.getInstanceId());
 					((L2Attackable) mob).addDamageHate(((L2Attackable) npc).getMostHated(), 0, 1);
 				}
 				startQuestTimer("spawnBossGuards", BOSS_MINION_SPAWN_TIME, npc, null);
@@ -509,10 +473,9 @@ public final class HallOfSuffering extends AbstractNpcAI
 			}
 			else if (event.equalsIgnoreCase("ressurectTwin"))
 			{
-				Skill skill = SkillData.getInstance().getSkill(5824, 1);
 				L2Npc aliveTwin = (world.klanikus == npc ? world.klodekus : world.klanikus);
 				npc.doRevive();
-				npc.doCast(skill);
+				npc.doCast(PRESENTATION_DISTRICT1_BOSS_ARISE.getSkill());
 				npc.setCurrentHp(aliveTwin.getCurrentHp());
 				
 				// get most hated of other boss
@@ -543,22 +506,6 @@ public final class HallOfSuffering extends AbstractNpcAI
 			if (!world.isBossesAttacked)
 			{
 				world.isBossesAttacked = true;
-				Calendar reenter = Calendar.getInstance();
-				reenter.add(Calendar.HOUR, INSTANCE_PENALTY);
-				
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_FROM_HERE_S1_S_ENTRY_HAS_BEEN_RESTRICTED);
-				sm.addInstanceName(tmpworld.getTemplateId());
-				
-				// set instance reenter time for all allowed players
-				for (int objectId : tmpworld.getAllowed())
-				{
-					L2PcInstance player = L2World.getInstance().getPlayer(objectId);
-					if ((player != null) && player.isOnline())
-					{
-						InstanceManager.getInstance().setInstanceTime(objectId, tmpworld.getTemplateId(), reenter.getTimeInMillis());
-						player.sendPacket(sm);
-					}
-				}
 				startQuestTimer("spawnBossGuards", BOSS_MINION_SPAWN_TIME, npc, null);
 				startQuestTimer("isTwinSeparated", 10000, npc, null);
 			}
@@ -592,7 +539,7 @@ public final class HallOfSuffering extends AbstractNpcAI
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof HSWorld)
 		{
-			HSWorld world = (HSWorld) tmpworld;
+			final HSWorld world = (HSWorld) tmpworld;
 			
 			if (npc.getId() == TUMOR_ALIVE)
 			{
@@ -625,6 +572,7 @@ public final class HallOfSuffering extends AbstractNpcAI
 					cancelQuestTimers("spawnBossGuards");
 					cancelQuestTimers("isTwinSeparated");
 					addSpawn(TEPIOS, TEPIOS_SPAWN, false, 0, false, world.getInstanceId());
+					finishInstance(world);
 				}
 			}
 		}
@@ -660,9 +608,9 @@ public final class HallOfSuffering extends AbstractNpcAI
 	public String onTalk(L2Npc npc, L2PcInstance talker)
 	{
 		getQuestState(talker, true);
-		if (npc.getId() == MOUTHOFEKIMUS)
+		if (npc.getId() == MOUTH_OF_EKIMUS)
 		{
-			enterInstance(talker, "HallOfSuffering.xml", ENTER_TELEPORT);
+			enterInstance(talker, new HSWorld(), "HallOfSuffering.xml", TEMPLATE_ID);
 		}
 		else if (npc.getId() == TEPIOS)
 		{
