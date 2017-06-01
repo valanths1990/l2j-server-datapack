@@ -22,8 +22,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.InstanceReenterType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
@@ -37,6 +35,8 @@ import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Abstract class for Instances.
@@ -153,7 +153,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 			
 			if (data.getDay() != null)
 			{
-				while (calendar.get(Calendar.DAY_OF_WEEK) != (data.getDay().getValue() + 1))
+				while (calendar.get(Calendar.DAY_OF_WEEK) != (Math.min(data.getDay().getValue() + 1, 7)))
 				{
 					calendar.add(Calendar.DAY_OF_MONTH, 1);
 				}
