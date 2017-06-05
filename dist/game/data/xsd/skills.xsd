@@ -718,7 +718,6 @@
 			<xs:element name="endEffects" type="effectsType" />
 			<xs:element name="selfEffects" type="effectsType" />
 			<xs:element name="enchant2selfEffects" type="effectsType" />
-			<xs:element name="effect" type="effectType" />
 			<xs:element name="enchant1cond" type="condType" />
 			<xs:element name="enchant4selfEffects" type="effectsType" />
 			<xs:element name="pvpEffects" type="effectsType" />
