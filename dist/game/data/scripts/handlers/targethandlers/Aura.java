@@ -42,7 +42,7 @@ public class Aura implements ITargetTypeHandler
 		final boolean srcInArena = (activeChar.isInsideZone(ZoneId.PVP) && !activeChar.isInsideZone(ZoneId.SIEGE));
 		for (L2Character obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getAffectRange()))
 		{
-			if (obj.isDoor() || obj.isAttackable() || obj.isPlayable())
+			if (obj.isDoor() || obj.isAttackable() || obj.isPlayable() || obj.isTrap())
 			{
 				// Stealth door targeting.
 				if (obj.isDoor())

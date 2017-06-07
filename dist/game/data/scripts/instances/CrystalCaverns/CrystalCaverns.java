@@ -51,6 +51,7 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.SystemMessageId;
+import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
 import com.l2jserver.gameserver.network.serverpackets.FlyToLocation;
@@ -130,45 +131,44 @@ public final class CrystalCaverns extends AbstractInstance
 	}
 	
 	// Items
-	private static final int WHITE_SEED = 9597;
-	private static final int BLACK_SEED = 9598;
-	private static final int CONT_CRYSTAL = 9690; // Contaminated Crystal
-	private static final int RED_CORAL = 9692; // Red Coral
-	private static final int CRYSTALFOOD = 9693; // Food item for Crystal Golems
-	final private static int RACE_KEY = 9694; // Race Key for Emerald doors
-	private static final int BOSS_CRYSTAL_1 = 9695; // Clear Crystal
-	private static final int BOSS_CRYSTAL_2 = 9696; // Clear Crystal
-	private static final int BOSS_CRYSTAL_3 = 9697; // Clear Crystal
+	private static final int WHITE_SEED_OF_EVIL_SHARD = 9597;
+	private static final int BLACK_SEED_OF_EVIL_SHARD = 9598;
+	private static final int CONTAMINATED_CRYSTAL = 9690;
+	private static final int RED_CORAL = 9692;
+	private static final int CRYSTAL_FRAGMENT = 9693;
+	private static final int SECRET_KEY = 9694;
+	private static final int BLUE_CRYSTAL = 9695;
+	private static final int RED_CRYSTAL = 9696;
+	private static final int CLEAR_CRYSTAL = 9697;
 	// NPCs
 	private static final int ORACLE_GUIDE_1 = 32281;
 	private static final int ORACLE_GUIDE_2 = 32278;
 	private static final int ORACLE_GUIDE_3 = 32280;
 	private static final int ORACLE_GUIDE_4 = 32279;
-	private static final int CRYSTAL_GOLEM = 32328;
+	private static final int CRYSTALLINE_GOLEM = 32328;
 	private static final int[] DOOR_OPENING_TRAP =
 	{
 		18378,
-		143682,
-		142492,
-		-11886,
-		16384
+		143680,
+		142608,
+		-11845,
+		0
 	};
-	private static final int GK1 = 22275;
-	private static final int GK2 = 22277;
+	private static final int GATEKEEPER_LOHAN = 22275;
+	private static final int GATEKEEPER_PROVO = 22277;
 	private static final int TOURMALINE = 22292;
 	private static final int TEROD = 22301;
 	private static final int DOLPH = 22299;
 	private static final int WEYLIN = 22298;
-	private static final int GUARDIAN = 22303;
-	private static final int GUARDIAN2 = 22304;
+	private static final int GUARDIAN_OF_THE_SQUARE = 22303;
+	private static final int GUARDIAN_OF_THE_EMERALD = 22304;
 	private static final int TEARS = 25534;
 	private static final int TEARS_COPY = 25535;
 	private static final int KECHI = 25532;
-	private static final int KECHIGUARD = 25533;
+	private static final int KECHIS_HENCHMAN = 25533;
 	private static final int BAYLOR = 29099;
 	private static final int DARNEL = 25531;
-	private final static int ALARMID = 18474;
-	// private static final int[] BOSSCR = {9695,9696,9697};
+	private static final int ALARM = 18474;
 	private static final int[] CGMOBS =
 	{
 		22311,
@@ -218,7 +218,7 @@ public final class CrystalCaverns extends AbstractInstance
 	private static final Location START_LOC = new Location(143348, 148707, -11972);
 	// Misc
 	private static final int TEMPLATE_ID = 10;
-	private static final boolean debug = false;
+	private static final int MIN_LEVEL = 78;
 	private static final int DOOR1 = 24220021;
 	private static final int DOOR2 = 24220024;
 	private static final int DOOR3 = 24220023;
@@ -496,30 +496,24 @@ public final class CrystalCaverns extends AbstractInstance
 		super(CrystalCaverns.class.getSimpleName());
 		addStartNpc(ORACLE_GUIDE_1, ORACLE_GUIDE_4);
 		addTalkId(ORACLE_GUIDE_1, ORACLE_GUIDE_3, ORACLE_GUIDE_4, 32275, 32276, 32277);
-		addFirstTalkId(ORACLE_GUIDE_1, ORACLE_GUIDE_2, ORACLE_GUIDE_4, CRYSTAL_GOLEM, 32274, 32275, 32276, 32277);
-		addKillId(TEARS, GK1, GK2, TEROD, WEYLIN, DOLPH, DARNEL, KECHI, GUARDIAN, GUARDIAN2, TOURMALINE, BAYLOR, ALARMID);
+		addFirstTalkId(ORACLE_GUIDE_1, ORACLE_GUIDE_2, ORACLE_GUIDE_4, CRYSTALLINE_GOLEM, 32274, 32275, 32276, 32277);
+		addKillId(TEARS, GATEKEEPER_LOHAN, GATEKEEPER_PROVO, TEROD, WEYLIN, DOLPH, DARNEL, KECHI, GUARDIAN_OF_THE_SQUARE, GUARDIAN_OF_THE_EMERALD, TOURMALINE, BAYLOR, ALARM);
 		addSkillSeeId(BAYLOR, 25534, 32275, 32276, 32277);
 		addTrapActionId(DOOR_OPENING_TRAP[0]);
 		addSpellFinishedId(BAYLOR);
 		addAttackId(TEARS);
 		addKillId(MOBLIST);
 		addKillId(CGMOBS);
-		for (int zones : ZONES)
-		{
-			addEnterZoneId(zones);
-			addExitZoneId(zones);
-		}
+		addEnterZoneId(ZONES);
+		addExitZoneId(ZONES);
 	}
 	
 	@Override
 	protected boolean checkConditions(L2PcInstance player)
 	{
-		if (debug || player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
+		if (player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
 		{
-			if (debug)
-			{
-				return true;
-			}
+			return true;
 		}
 		
 		final L2Party party = player.getParty();
@@ -535,14 +529,14 @@ public final class CrystalCaverns extends AbstractInstance
 		}
 		for (L2PcInstance partyMember : party.getMembers())
 		{
-			if (partyMember.getLevel() < 78)
+			if (partyMember.getLevel() < MIN_LEVEL)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 				sm.addPcName(partyMember);
 				party.broadcastPacket(sm);
 				return false;
 			}
-			L2ItemInstance item = partyMember.getInventory().getItemByItemId(CONT_CRYSTAL);
+			L2ItemInstance item = partyMember.getInventory().getItemByItemId(CONTAMINATED_CRYSTAL);
 			if (item == null)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ITEM_REQUIREMENT_NOT_SUFFICIENT);
@@ -557,8 +551,7 @@ public final class CrystalCaverns extends AbstractInstance
 				party.broadcastPacket(sm);
 				return false;
 			}
-			Long reentertime = InstanceManager.getInstance().getInstanceTime(partyMember.getObjectId(), TEMPLATE_ID);
-			if (System.currentTimeMillis() < reentertime)
+			if (System.currentTimeMillis() < InstanceManager.getInstance().getInstanceTime(partyMember.getObjectId(), TEMPLATE_ID))
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_MAY_NOT_RE_ENTER_YET);
 				sm.addPcName(partyMember);
@@ -571,10 +564,11 @@ public final class CrystalCaverns extends AbstractInstance
 	
 	private boolean checkOracleConditions(L2PcInstance player)
 	{
-		if (debug)
+		if (player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
 		{
 			return true;
 		}
+		
 		L2Party party = player.getParty();
 		if (party == null)
 		{
@@ -609,6 +603,11 @@ public final class CrystalCaverns extends AbstractInstance
 	
 	private boolean checkBaylorConditions(L2PcInstance player)
 	{
+		if (player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
+		{
+			return true;
+		}
+		
 		L2Party party = player.getParty();
 		if (party == null)
 		{
@@ -622,9 +621,9 @@ public final class CrystalCaverns extends AbstractInstance
 		}
 		for (L2PcInstance partyMember : party.getMembers())
 		{
-			L2ItemInstance item1 = partyMember.getInventory().getItemByItemId(BOSS_CRYSTAL_1);
-			L2ItemInstance item2 = partyMember.getInventory().getItemByItemId(BOSS_CRYSTAL_2);
-			L2ItemInstance item3 = partyMember.getInventory().getItemByItemId(BOSS_CRYSTAL_3);
+			L2ItemInstance item1 = partyMember.getInventory().getItemByItemId(BLUE_CRYSTAL);
+			L2ItemInstance item2 = partyMember.getInventory().getItemByItemId(RED_CRYSTAL);
+			L2ItemInstance item3 = partyMember.getInventory().getItemByItemId(CLEAR_CRYSTAL);
 			if ((item1 == null) || (item2 == null) || (item3 == null))
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ITEM_REQUIREMENT_NOT_SUFFICIENT);
@@ -698,8 +697,6 @@ public final class CrystalCaverns extends AbstractInstance
 		{
 			if (player.getParty() == null)
 			{
-				// this can happen only if debug is true
-				player.sendMessage("Welcome to Crystal Caverns.");
 				teleportPlayer(player, START_LOC, world.getInstanceId());
 				world.addAllowed(player.getObjectId());
 			}
@@ -707,7 +704,6 @@ public final class CrystalCaverns extends AbstractInstance
 			{
 				for (L2PcInstance partyMember : player.getParty().getMembers())
 				{
-					partyMember.sendMessage("Welcome to Crystal Caverns.");
 					teleportPlayer(partyMember, START_LOC, world.getInstanceId());
 					world.addAllowed(partyMember.getObjectId());
 				}
@@ -743,7 +739,6 @@ public final class CrystalCaverns extends AbstractInstance
 	protected void runOracle(CCWorld world)
 	{
 		world.setStatus(0);
-		
 		world.oracle.add(addSpawn(ORACLE_GUIDE_1, 143172, 148894, -11975, 0, false, 0, false, world.getInstanceId()));
 	}
 	
@@ -776,9 +771,8 @@ public final class CrystalCaverns extends AbstractInstance
 	protected void runFirst(CCWorld world)
 	{
 		world.setStatus(2);
-		
-		world.keyKeepers.add(addSpawn(GK1, 148206, 149486, -12140, 32308, false, 0, false, world.getInstanceId()));
-		world.keyKeepers.add(addSpawn(GK2, 148203, 151093, -12140, 31100, false, 0, false, world.getInstanceId()));
+		world.keyKeepers.add(addSpawn(GATEKEEPER_LOHAN, 148206, 149486, -12140, 32308, false, 0, false, world.getInstanceId()));
+		world.keyKeepers.add(addSpawn(GATEKEEPER_PROVO, 148203, 151093, -12140, 31100, false, 0, false, world.getInstanceId()));
 		
 		for (int[] spawn : FIRST_SPAWNS)
 		{
@@ -914,7 +908,7 @@ public final class CrystalCaverns extends AbstractInstance
 			final QuestState st = player.getQuestState(Q00131_BirdInACage.class.getSimpleName());
 			return (st != null) && !st.isCompleted() ? "32279-01.htm" : "32279.htm";
 		}
-		else if (npc.getId() == CRYSTAL_GOLEM)
+		else if (npc.getId() == CRYSTALLINE_GOLEM)
 		{
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
@@ -1176,15 +1170,15 @@ public final class CrystalCaverns extends AbstractInstance
 			else if (event.equalsIgnoreCase("spawnGuards"))
 			{
 				world.kechisHenchmanSpawn++;
-				world.guards.add(addSpawn(KECHIGUARD, 153622, 149699, -12131, 56890, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153609, 149622, -12131, 64023, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153606, 149428, -12131, 64541, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153601, 149534, -12131, 64901, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153620, 149354, -12131, 1164, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153637, 149776, -12131, 61733, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153638, 149292, -12131, 64071, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153647, 149857, -12131, 59402, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153661, 149227, -12131, 65275, false, 0, false, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIS_HENCHMAN, 153622, 149699, -12131, 56890, false, 0, false, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIS_HENCHMAN, 153609, 149622, -12131, 64023, false, 0, false, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIS_HENCHMAN, 153606, 149428, -12131, 64541, false, 0, false, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIS_HENCHMAN, 153601, 149534, -12131, 64901, false, 0, false, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIS_HENCHMAN, 153620, 149354, -12131, 1164, false, 0, false, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIS_HENCHMAN, 153637, 149776, -12131, 61733, false, 0, false, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIS_HENCHMAN, 153638, 149292, -12131, 64071, false, 0, false, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIS_HENCHMAN, 153647, 149857, -12131, 59402, false, 0, false, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIS_HENCHMAN, 153661, 149227, -12131, 65275, false, 0, false, world.getInstanceId()));
 				if (world.kechisHenchmanSpawn <= 5)
 				{
 					startQuestTimer("spawnGuards", SPAWN[world.kechisHenchmanSpawn], npc, null);
@@ -1298,7 +1292,7 @@ public final class CrystalCaverns extends AbstractInstance
 					int[] spawnLoc = ALARMSPAWN[getRandom(ALARMSPAWN.length)];
 					npc.addSkill(SkillData.getInstance().getSkill(5244, 1));
 					npc.addSkill(SkillData.getInstance().getSkill(5245, 1));
-					world._alarm = addSpawn(ALARMID, spawnLoc[0], spawnLoc[1], spawnLoc[2], 10800, false, 0, false, world.getInstanceId());
+					world._alarm = addSpawn(ALARM, spawnLoc[0], spawnLoc[1], spawnLoc[2], 10800, false, 0, false, world.getInstanceId());
 					world._alarm.disableCoreAI(true);
 					world._alarm.setIsImmobilized(true);
 					world._alarm.broadcastPacket(new CreatureSay(world._alarm.getObjectId(), 1, world._alarm.getName(), NpcStringId.AN_ALARM_HAS_BEEN_SET_OFF_EVERYBODY_WILL_BE_IN_DANGER_IF_THEY_ARE_NOT_TAKEN_CARE_OF_IMMEDIATELY));
@@ -1372,7 +1366,7 @@ public final class CrystalCaverns extends AbstractInstance
 				int minDist = 300000;
 				for (L2Object object : L2World.getInstance().getVisibleObjects(npc, 300))
 				{
-					if (object.isItem() && (object.getId() == CRYSTALFOOD))
+					if (object.isItem() && (object.getId() == CRYSTAL_FRAGMENT))
 					{
 						int dx = npc.getX() - object.getX();
 						int dy = npc.getY() - object.getY();
@@ -1480,36 +1474,36 @@ public final class CrystalCaverns extends AbstractInstance
 			{
 				if (partyMember.getInstanceId() == instanceId)
 				{
-					if (!isBaylor && hasQuestItems(partyMember, CONT_CRYSTAL))
+					if (!isBaylor && hasQuestItems(partyMember, CONTAMINATED_CRYSTAL))
 					{
-						takeItems(partyMember, CONT_CRYSTAL, 1);
+						takeItems(partyMember, CONTAMINATED_CRYSTAL, 1);
 						giveItems(partyMember, bossCry, 1);
 					}
 					if (getRandom(10) < 5)
 					{
-						giveItems(partyMember, WHITE_SEED, num);
+						giveItems(partyMember, WHITE_SEED_OF_EVIL_SHARD, num);
 					}
 					else
 					{
-						giveItems(partyMember, BLACK_SEED, num);
+						giveItems(partyMember, BLACK_SEED_OF_EVIL_SHARD, num);
 					}
 				}
 			}
 		}
 		else if (player.getInstanceId() == instanceId)
 		{
-			if (!isBaylor && hasQuestItems(player, CONT_CRYSTAL))
+			if (!isBaylor && hasQuestItems(player, CONTAMINATED_CRYSTAL))
 			{
-				takeItems(player, CONT_CRYSTAL, 1);
+				takeItems(player, CONTAMINATED_CRYSTAL, 1);
 				giveItems(player, bossCry, 1);
 			}
 			if (getRandom(10) < 5)
 			{
-				giveItems(player, WHITE_SEED, num);
+				giveItems(player, WHITE_SEED_OF_EVIL_SHARD, num);
 			}
 			else
 			{
-				giveItems(player, BLACK_SEED, num);
+				giveItems(player, BLACK_SEED_OF_EVIL_SHARD, num);
 			}
 		}
 		
@@ -1536,8 +1530,8 @@ public final class CrystalCaverns extends AbstractInstance
 				world.tears = addSpawn(TEARS, 144298, 154420, -11854, 32767, false, 0, false, world.getInstanceId()); // Tears
 				CrystalGolem crygolem1 = new CrystalGolem();
 				CrystalGolem crygolem2 = new CrystalGolem();
-				world.crystalGolems.put(addSpawn(CRYSTAL_GOLEM, 140547, 151670, -11813, 32767, false, 0, false, world.getInstanceId()), crygolem1);
-				world.crystalGolems.put(addSpawn(CRYSTAL_GOLEM, 141941, 151684, -11813, 63371, false, 0, false, world.getInstanceId()), crygolem2);
+				world.crystalGolems.put(addSpawn(CRYSTALLINE_GOLEM, 140547, 151670, -11813, 32767, false, 0, false, world.getInstanceId()), crygolem1);
+				world.crystalGolems.put(addSpawn(CRYSTALLINE_GOLEM, 141941, 151684, -11813, 63371, false, 0, false, world.getInstanceId()), crygolem2);
 				for (L2Npc crygolem : world.crystalGolems.keySet())
 				{
 					startQuestTimer("autoFood", 2000, crygolem, null);
@@ -1547,16 +1541,16 @@ public final class CrystalCaverns extends AbstractInstance
 			{
 				InstanceManager.getInstance().getInstance(world.getInstanceId()).setDuration(300000);
 				addSpawn(32280, 144312, 154420, -11855, 0, false, 0, false, world.getInstanceId());
-				giveRewards(player, npc.getInstanceId(), BOSS_CRYSTAL_3, false);
+				giveRewards(player, npc.getInstanceId(), CLEAR_CRYSTAL, false);
 			}
 			else if ((world.getStatus() == 2) && world.keyKeepers.contains(npc))
 			{
-				if (npc.getId() == GK1)
+				if (npc.getId() == GATEKEEPER_LOHAN)
 				{
 					npc.dropItem(player, 9698, 1);
 					runEmeraldSquare(world);
 				}
-				else if (npc.getId() == GK2)
+				else if (npc.getId() == GATEKEEPER_PROVO)
 				{
 					npc.dropItem(player, 9699, 1);
 					runSteamRooms(world, STEAM1_SPAWNS, 22);
@@ -1629,7 +1623,8 @@ public final class CrystalCaverns extends AbstractInstance
 				{
 					world.setStatus(8);
 					// first door opener trap
-					addTrap(DOOR_OPENING_TRAP[0], DOOR_OPENING_TRAP[1], DOOR_OPENING_TRAP[2], DOOR_OPENING_TRAP[3], DOOR_OPENING_TRAP[4], null, world.getInstanceId());
+					L2Npc trap = addTrap(DOOR_OPENING_TRAP[0], DOOR_OPENING_TRAP[1], DOOR_OPENING_TRAP[2], DOOR_OPENING_TRAP[3], DOOR_OPENING_TRAP[4], null, world.getInstanceId());
+					broadcastNpcSay(trap, Say2.NPC_SHOUT, NpcStringId.YOU_HAVE_FINALLY_COME_HERE_BUT_YOU_WILL_NOT_BE_ABLE_TO_FIND_THE_SECRET_ROOM);
 				}
 			}
 			else if (world.getStatus() == 8)
@@ -1708,13 +1703,13 @@ public final class CrystalCaverns extends AbstractInstance
 				int bossCry;
 				if (npc.getId() == KECHI)
 				{
-					bossCry = BOSS_CRYSTAL_2;
+					bossCry = RED_CRYSTAL;
 					cancelQuestTimers("spawnGuards");
 					addSpawn(32280, 154077, 149527, -12159, 0, false, 0, false, world.getInstanceId());
 				}
 				else if (npc.getId() == DARNEL)
 				{
-					bossCry = BOSS_CRYSTAL_1;
+					bossCry = BLUE_CRYSTAL;
 					addSpawn(32280, 152761, 145950, -12588, 0, false, 0, false, world.getInstanceId());
 				}
 				else
@@ -1724,7 +1719,7 @@ public final class CrystalCaverns extends AbstractInstance
 				}
 				giveRewards(player, npc.getInstanceId(), bossCry, false);
 			}
-			if (npc.getId() == ALARMID)
+			if (npc.getId() == ALARM)
 			{
 				world._baylor.removeSkill(5244);
 				world._baylor.removeSkill(5245);
@@ -1766,7 +1761,7 @@ public final class CrystalCaverns extends AbstractInstance
 		if (tmpworld instanceof CCWorld)
 		{
 			CCWorld world = (CCWorld) tmpworld;
-			if (npcId == CRYSTAL_GOLEM)
+			if (npcId == CRYSTALLINE_GOLEM)
 			{
 			}
 			else if ((npc.getId() >= 32275) && (npc.getId() <= 32277) && world.OracleTriggered[npc.getId() - 32275])
@@ -2001,7 +1996,7 @@ public final class CrystalCaverns extends AbstractInstance
 								return "";
 							}
 							
-							if (!hasQuestItems((L2PcInstance) character, RACE_KEY))
+							if (!hasQuestItems((L2PcInstance) character, SECRET_KEY))
 							{
 								return "";
 							}
@@ -2010,7 +2005,7 @@ public final class CrystalCaverns extends AbstractInstance
 								runEmeraldRooms(world, spawns, room);
 							}
 							door.openMe();
-							takeItems((L2PcInstance) character, RACE_KEY, 1);
+							takeItems((L2PcInstance) character, SECRET_KEY, 1);
 							world.openedDoors.put(door, (L2PcInstance) character);
 							break;
 						}
