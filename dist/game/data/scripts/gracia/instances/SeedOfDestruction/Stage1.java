@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2016 L2J DataPack
+ * Copyright (C) 2004-2017 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,7 +20,6 @@ package gracia.instances.SeedOfDestruction;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,6 +45,7 @@ import com.l2jserver.gameserver.model.L2Party;
 import com.l2jserver.gameserver.model.L2Territory;
 import com.l2jserver.gameserver.model.L2World;
 import com.l2jserver.gameserver.model.Location;
+import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -55,13 +55,13 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2TrapInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
-import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.ExShowScreenMessage;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Util;
+
+import instances.AbstractInstance;
 
 /**
  * Seed of Destruction instance zone.<br>
@@ -74,14 +74,15 @@ import com.l2jserver.gameserver.util.Util;
  * Please maintain consistency between the Seed scripts.
  * @author Gigiikun
  */
-public final class Stage1 extends Quest
+public final class Stage1 extends AbstractInstance
 {
 	protected class SOD1World extends InstanceWorld
 	{
-		public Map<L2Npc, Boolean> npcList = new HashMap<>();
-		public int deviceSpawnedMobCount = 0;
-		public Lock lock = new ReentrantLock();
-		public L2MonsterInstance tiat;
+		protected List<L2PcInstance> playersInside = new ArrayList<>();
+		protected Map<L2Npc, Boolean> npcList = new HashMap<>();
+		protected int deviceSpawnedMobCount = 0;
+		protected Lock lock = new ReentrantLock();
+		protected L2MonsterInstance tiat;
 	}
 	
 	protected static class SODSpawn
@@ -97,9 +98,10 @@ public final class Stage1 extends Quest
 		public int count = 0;
 	}
 	
-	private static final int INSTANCEID = 110; // this is the client number
-	private static final int MIN_PLAYERS = 36;
+	private static final int TEMPLATE_ID = 110;
+	private static final int MIN_PLAYERS = 27;
 	private static final int MAX_PLAYERS = 45;
+	private static final int MIN_LEVEL = 75;
 	private static final int MAX_DEVICESPAWNEDMOBCOUNT = 100; // prevent too much mob spawn
 	
 	private final Map<Integer, L2Territory> _spawnZoneList = new HashMap<>();
@@ -115,7 +117,6 @@ public final class Stage1 extends Quest
 	private static final SkillHolder TRAP_HOLD = new SkillHolder(4186, 9); // 18720-18728
 	private static final SkillHolder TRAP_STUN = new SkillHolder(4072, 10); // 18729-18736
 	private static final SkillHolder TRAP_DAMAGE = new SkillHolder(5340, 4); // 18737-18770
-	private static final SkillHolder TRAP_SPAWN = new SkillHolder(10002, 1); // 18771-18774 : handled in this script
 	private static final int[] TRAP_18771_NPCS =
 	{
 		22541,
@@ -191,6 +192,7 @@ public final class Stage1 extends Quest
 		12240029,
 		12240030
 	};
+	
 	private static final int[] ENTRANCE_ROOM_DOORS =
 	{
 		12240001,
@@ -209,40 +211,22 @@ public final class Stage1 extends Quest
 	private static final int FORTRESS_DOOR = 12240030;
 	private static final int THRONE_DOOR = 12240031;
 	
-	// Initialization at 6:30 am on Wednesday and Saturday
-	private static final int RESET_HOUR = 6;
-	private static final int RESET_MIN = 30;
-	private static final int RESET_DAY_1 = 4;
-	private static final int RESET_DAY_2 = 7;
-	
 	public Stage1()
 	{
-		// TODO change name to use actual class name
-		super(-1, "Stage1", "gracia/instances");
+		super(Stage1.class.getSimpleName(), "gracia/instances");
 		load();
-		addStartNpc(ALENOS);
-		addTalkId(ALENOS);
-		addStartNpc(TELEPORT);
-		addTalkId(TELEPORT);
-		addAttackId(OBELISK);
-		addSpawnId(OBELISK);
-		addKillId(OBELISK);
-		addSpawnId(POWERFUL_DEVICE);
-		addKillId(POWERFUL_DEVICE);
-		addSpawnId(THRONE_POWERFUL_DEVICE);
-		addKillId(THRONE_POWERFUL_DEVICE);
-		addAttackId(TIAT);
-		addKillId(TIAT);
-		addKillId(SPAWN_DEVICE);
-		addSpawnId(TIAT_GUARD);
-		addKillId(TIAT_GUARD);
+		addStartNpc(ALENOS, TELEPORT);
+		addTalkId(ALENOS, TELEPORT);
+		addAttackId(OBELISK, TIAT);
+		addSpawnId(OBELISK, POWERFUL_DEVICE, THRONE_POWERFUL_DEVICE, TIAT_GUARD);
+		addKillId(OBELISK, POWERFUL_DEVICE, THRONE_POWERFUL_DEVICE, TIAT, SPAWN_DEVICE, TIAT_GUARD);
+		addKillId(_mustKillMobsId);
 		addAggroRangeEnterId(TIAT_VIDEO_NPC);
 		// registering spawn traps which handled in this script
 		for (int i = 18771; i <= 18774; i++)
 		{
 			addTrapActionId(i);
 		}
-		addKillId(_mustKillMobsId);
 	}
 	
 	private void load()
@@ -468,15 +452,22 @@ public final class Stage1 extends Quest
 		}
 	}
 	
-	private boolean checkConditions(L2PcInstance player)
+	@Override
+	protected boolean checkConditions(L2PcInstance player)
 	{
+		if (player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
+		{
+			return true;
+		}
+		
 		final L2Party party = player.getParty();
+		final L2CommandChannel channel = player.getParty().getCommandChannel();
 		if (party == null)
 		{
 			player.sendPacket(SystemMessageId.NOT_IN_PARTY_CANT_ENTER);
 			return false;
 		}
-		final L2CommandChannel channel = player.getParty().getCommandChannel();
+		
 		if (channel == null)
 		{
 			player.sendPacket(SystemMessageId.NOT_IN_COMMAND_CHANNEL_CANT_ENTER);
@@ -494,7 +485,7 @@ public final class Stage1 extends Quest
 		}
 		for (L2PcInstance partyMember : channel.getMembers())
 		{
-			if (partyMember.getLevel() < 75)
+			if (partyMember.getLevel() < MIN_LEVEL)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 				sm.addPcName(partyMember);
@@ -508,8 +499,7 @@ public final class Stage1 extends Quest
 				party.broadcastPacket(sm);
 				return false;
 			}
-			Long reentertime = InstanceManager.getInstance().getInstanceTime(partyMember.getObjectId(), INSTANCEID);
-			if (System.currentTimeMillis() < reentertime)
+			if (System.currentTimeMillis() < InstanceManager.getInstance().getInstanceTime(partyMember.getObjectId(), TEMPLATE_ID))
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_MAY_NOT_RE_ENTER_YET);
 				sm.addPcName(partyMember);
@@ -520,57 +510,51 @@ public final class Stage1 extends Quest
 		return true;
 	}
 	
-	protected int enterInstance(L2PcInstance player, String template, Location loc)
+	@Override
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
 	{
-		int instanceId = 0;
-		// check for existing instances for this player
-		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-		// existing instance
-		if (world != null)
+		if (firstEntrance)
 		{
-			if (!(world instanceof SOD1World))
+			if (!player.isInParty())
 			{
-				player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
-				return 0;
+				managePlayerEnter(player, (SOD1World) world);
 			}
-			teleportPlayer(player, loc, world.getInstanceId(), false);
-			return world.getInstanceId();
-		}
-		// New instance
-		if (!checkConditions(player))
-		{
-			return 0;
-		}
-		instanceId = InstanceManager.getInstance().createDynamicInstance(template);
-		world = new SOD1World();
-		world.setTemplateId(INSTANCEID);
-		world.setInstanceId(instanceId);
-		world.setStatus(0);
-		InstanceManager.getInstance().addWorld(world);
-		spawnState((SOD1World) world);
-		for (L2DoorInstance door : InstanceManager.getInstance().getInstance(instanceId).getDoors())
-		{
-			if (Util.contains(ATTACKABLE_DOORS, door.getId()))
+			else if (player.getParty().isInCommandChannel())
 			{
-				door.setIsAttackableDoor(true);
+				for (L2PcInstance players : player.getParty().getCommandChannel().getMembers())
+				{
+					managePlayerEnter(players, (SOD1World) world);
+				}
 			}
-		}
-		_log.info("Seed of Destruction started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
-		// teleport players
-		if ((player.getParty() == null) || (player.getParty().getCommandChannel() == null))
-		{
-			teleportPlayer(player, loc, instanceId, false);
-			world.addAllowed(player.getObjectId());
+			else
+			{
+				for (L2PcInstance players : player.getParty().getMembers())
+				{
+					managePlayerEnter(players, (SOD1World) world);
+				}
+			}
+			
+			spawnState((SOD1World) world);
+			
+			for (L2DoorInstance door : InstanceManager.getInstance().getInstance(world.getInstanceId()).getDoors())
+			{
+				if (Util.contains(ATTACKABLE_DOORS, door.getId()))
+				{
+					door.setIsAttackableDoor(true);
+				}
+			}
 		}
 		else
 		{
-			for (L2PcInstance channelMember : player.getParty().getCommandChannel().getMembers())
-			{
-				teleportPlayer(channelMember, loc, instanceId, false);
-				world.addAllowed(channelMember.getObjectId());
-			}
+			teleportPlayer(player, ENTER_TELEPORT_1, world.getInstanceId());
 		}
-		return instanceId;
+	}
+	
+	private void managePlayerEnter(L2PcInstance player, SOD1World world)
+	{
+		world.playersInside.add(player);
+		world.addAllowed(player.getObjectId());
+		teleportPlayer(player, ENTER_TELEPORT_1, world.getInstanceId(), false);
 	}
 	
 	protected boolean checkKillProgress(L2Npc mob, SOD1World world)
@@ -641,8 +625,7 @@ public final class Stage1 extends Quest
 						spawnFlaggedNPCs(world, 0);
 						break;
 					case 1:
-						ExShowScreenMessage message1 = new ExShowScreenMessage(NpcStringId.THE_ENEMIES_HAVE_ATTACKED_EVERYONE_COME_OUT_AND_FIGHT_URGH, 5, 1);
-						sendScreenMessage(world, message1);
+						manageScreenMsg(world, NpcStringId.THE_ENEMIES_HAVE_ATTACKED_EVERYONE_COME_OUT_AND_FIGHT_URGH);
 						for (int i : ENTRANCE_ROOM_DOORS)
 						{
 							openDoor(i, world.getInstanceId());
@@ -654,8 +637,7 @@ public final class Stage1 extends Quest
 						// handled elsewhere
 						return true;
 					case 4:
-						ExShowScreenMessage message2 = new ExShowScreenMessage(NpcStringId.OBELISK_HAS_COLLAPSED_DONT_LET_THE_ENEMIES_JUMP_AROUND_WILDLY_ANYMORE, 5, 1);
-						sendScreenMessage(world, message2);
+						manageScreenMsg(world, NpcStringId.OBELISK_HAS_COLLAPSED_DONT_LET_THE_ENEMIES_JUMP_AROUND_WILDLY_ANYMORE);
 						for (int i : SQUARE_DOORS)
 						{
 							openDoor(i, world.getInstanceId());
@@ -674,8 +656,7 @@ public final class Stage1 extends Quest
 						spawnFlaggedNPCs(world, 7);
 						break;
 					case 8:
-						ExShowScreenMessage message4 = new ExShowScreenMessage(NpcStringId.COME_OUT_WARRIORS_PROTECT_SEED_OF_DESTRUCTION, 5, 1);
-						sendScreenMessage(world, message4);
+						manageScreenMsg(world, NpcStringId.COME_OUT_WARRIORS_PROTECT_SEED_OF_DESTRUCTION);
 						world.deviceSpawnedMobCount = 0;
 						spawnFlaggedNPCs(world, 8);
 						break;
@@ -712,10 +693,7 @@ public final class Stage1 extends Quest
 			{
 				skill = TRAP_DAMAGE.getSkill();
 			}
-			else
-			{
-				skill = TRAP_SPAWN.getSkill();
-			}
+			
 			addTrap(npcId, x, y, z, h, skill, world.getInstanceId());
 			return;
 		}
@@ -748,54 +726,13 @@ public final class Stage1 extends Quest
 		}
 	}
 	
-	protected void setInstanceTimeRestrictions(SOD1World world)
+	private void manageScreenMsg(SOD1World world, NpcStringId stringId)
 	{
-		Calendar reenter = Calendar.getInstance();
-		reenter.set(Calendar.MINUTE, RESET_MIN);
-		reenter.set(Calendar.HOUR_OF_DAY, RESET_HOUR);
-		// if time is >= RESET_HOUR - roll to the next day
-		if (reenter.getTimeInMillis() <= System.currentTimeMillis())
+		for (L2PcInstance players : world.playersInside)
 		{
-			reenter.add(Calendar.DAY_OF_MONTH, 1);
-		}
-		if (reenter.get(Calendar.DAY_OF_WEEK) <= RESET_DAY_1)
-		{
-			while (reenter.get(Calendar.DAY_OF_WEEK) != RESET_DAY_1)
+			if ((players != null) && (players.getInstanceId() == world.getInstanceId()))
 			{
-				reenter.add(Calendar.DAY_OF_MONTH, 1);
-			}
-		}
-		else
-		{
-			while (reenter.get(Calendar.DAY_OF_WEEK) != RESET_DAY_2)
-			{
-				reenter.add(Calendar.DAY_OF_MONTH, 1);
-			}
-		}
-		
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_FROM_HERE_S1_S_ENTRY_HAS_BEEN_RESTRICTED);
-		sm.addInstanceName(INSTANCEID);
-		
-		// set instance reenter time for all allowed players
-		for (int objectId : world.getAllowed())
-		{
-			L2PcInstance player = L2World.getInstance().getPlayer(objectId);
-			InstanceManager.getInstance().setInstanceTime(objectId, INSTANCEID, reenter.getTimeInMillis());
-			if ((player != null) && player.isOnline())
-			{
-				player.sendPacket(sm);
-			}
-		}
-	}
-	
-	private void sendScreenMessage(SOD1World world, ExShowScreenMessage message)
-	{
-		for (int objId : world.getAllowed())
-		{
-			L2PcInstance player = L2World.getInstance().getPlayer(objId);
-			if (player != null)
-			{
-				player.sendPacket(message);
+				showOnScreenMsg(players, stringId, 2, 5000);
 			}
 		}
 	}
@@ -867,7 +804,6 @@ public final class Stage1 extends Quest
 					if (spawnState(world))
 					{
 						startQuestTimer("TiatFullHp", 3000, npc, null);
-						setInstanceTimeRestrictions(world);
 					}
 				}
 			}
@@ -908,8 +844,7 @@ public final class Stage1 extends Quest
 				{
 					world.deviceSpawnedMobCount = 0;
 					spawnFlaggedNPCs(world, 6);
-					ExShowScreenMessage message3 = new ExShowScreenMessage(NpcStringId.ENEMIES_ARE_TRYING_TO_DESTROY_THE_FORTRESS_EVERYONE_DEFEND_THE_FORTRESS, 5, 1);
-					sendScreenMessage(world, message3);
+					manageScreenMsg(world, NpcStringId.ENEMIES_ARE_TRYING_TO_DESTROY_THE_FORTRESS_EVERYONE_DEFEND_THE_FORTRESS);
 				}
 				else
 				{
@@ -1007,6 +942,7 @@ public final class Stage1 extends Quest
 					}
 					
 					GraciaSeedsManager.getInstance().increaseSoDTiatKilled();
+					finishInstance(world);
 				}
 				else if (npc.getId() == TIAT_GUARD)
 				{
@@ -1027,7 +963,7 @@ public final class Stage1 extends Quest
 			InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 			if ((GraciaSeedsManager.getInstance().getSoDState() == 1) || ((world != null) && (world instanceof SOD1World)))
 			{
-				enterInstance(player, "SeedOfDestructionStage1.xml", ENTER_TELEPORT_1);
+				enterInstance(player, new SOD1World(), "SeedOfDestructionStage1.xml", TEMPLATE_ID);
 			}
 			else if (GraciaSeedsManager.getInstance().getSoDState() == 2)
 			{
