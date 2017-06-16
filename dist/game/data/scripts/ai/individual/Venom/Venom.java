@@ -21,8 +21,6 @@ package ai.individual.Venom;
 import java.util.ArrayList;
 import java.util.List;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.GlobalVariablesManager;
@@ -38,6 +36,8 @@ import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.ZoneId;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Venom AI on Rune Castle.
@@ -77,10 +77,10 @@ public final class Venom extends AbstractNpcAI
 	private static final Location TELEPORT = new Location(12589, -49044, -3008);
 	private static final Location CUBE = new Location(12047, -49211, -3009);
 	
-	private static final SkillHolder VENOM_STRIKE = new SkillHolder(4993, 1);
-	private static final SkillHolder SONIC_STORM = new SkillHolder(4994, 1);
-	private static final SkillHolder VENOM_TELEPORT = new SkillHolder(4995, 1);
-	private static final SkillHolder RANGE_TELEPORT = new SkillHolder(4996, 1);
+	private static final SkillHolder VENOM_STRIKE = new SkillHolder(4993);
+	private static final SkillHolder SONIC_STORM = new SkillHolder(4994);
+	private static final SkillHolder VENOM_TELEPORT = new SkillHolder(4995);
+	private static final SkillHolder RANGE_TELEPORT = new SkillHolder(4996);
 	
 	private L2Npc _venom;
 	private L2Npc _massymore;
@@ -303,22 +303,22 @@ public final class Venom extends AbstractNpcAI
 		if (_aggroMode && (getRandom(100) < 25))
 		{
 			npc.setTarget(attacker);
-			npc.doCast(VENOM_TELEPORT.getSkill());
+			npc.doCast(VENOM_TELEPORT);
 		}
 		else if (_aggroMode && (npc.getCurrentHp() < (npc.getMaxHp() / 3)) && (getRandom(100) < 25) && !npc.isCastingNow())
 		{
 			npc.setTarget(attacker);
-			npc.doCast(RANGE_TELEPORT.getSkill());
+			npc.doCast(RANGE_TELEPORT);
 		}
 		else if ((distance > 300) && (getRandom(100) < 10) && !npc.isCastingNow())
 		{
 			npc.setTarget(attacker);
-			npc.doCast(VENOM_STRIKE.getSkill());
+			npc.doCast(VENOM_STRIKE);
 		}
 		else if ((getRandom(100) < 10) && !npc.isCastingNow())
 		{
 			npc.setTarget(attacker);
-			npc.doCast(SONIC_STORM.getSkill());
+			npc.doCast(SONIC_STORM);
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}

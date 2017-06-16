@@ -87,22 +87,22 @@ public final class Antharas extends AbstractNpcAI
 	// Item
 	private static final int STONE = 3865; // Portal Stone
 	// Skill
-	private static final SkillHolder ANTH_JUMP = new SkillHolder(4106, 1); // Antharas Stun
-	private static final SkillHolder ANTH_TAIL = new SkillHolder(4107, 1); // Antharas Stun
-	private static final SkillHolder ANTH_FEAR = new SkillHolder(4108, 1); // Antharas Terror
-	private static final SkillHolder ANTH_DEBUFF = new SkillHolder(4109, 1); // Curse of Antharas
+	private static final SkillHolder ANTH_JUMP = new SkillHolder(4106); // Antharas Stun
+	private static final SkillHolder ANTH_TAIL = new SkillHolder(4107); // Antharas Stun
+	private static final SkillHolder ANTH_FEAR = new SkillHolder(4108); // Antharas Terror
+	private static final SkillHolder ANTH_DEBUFF = new SkillHolder(4109); // Curse of Antharas
 	private static final SkillHolder ANTH_MOUTH = new SkillHolder(4110, 2); // Breath Attack
-	private static final SkillHolder ANTH_BREATH = new SkillHolder(4111, 1); // Antharas Fossilization
-	private static final SkillHolder ANTH_NORM_ATTACK = new SkillHolder(4112, 1); // Ordinary Attack
-	private static final SkillHolder ANTH_NORM_ATTACK_EX = new SkillHolder(4113, 1); // Animal doing ordinary attack
-	private static final SkillHolder ANTH_REGEN_1 = new SkillHolder(4125, 1); // Antharas Regeneration
-	private static final SkillHolder ANTH_REGEN_2 = new SkillHolder(4239, 1); // Antharas Regeneration
-	private static final SkillHolder ANTH_REGEN_3 = new SkillHolder(4240, 1); // Antharas Regeneration
-	private static final SkillHolder ANTH_REGEN_4 = new SkillHolder(4241, 1); // Antharas Regeneration
-	private static final SkillHolder DISPEL_BOM = new SkillHolder(5042, 1); // NPC Dispel Bomb
-	private static final SkillHolder ANTH_ANTI_STRIDER = new SkillHolder(4258, 1); // Hinder Strider
-	private static final SkillHolder ANTH_FEAR_SHORT = new SkillHolder(5092, 1); // Antharas Terror
-	private static final SkillHolder ANTH_METEOR = new SkillHolder(5093, 1); // Antharas Meteor
+	private static final SkillHolder ANTH_BREATH = new SkillHolder(4111); // Antharas Fossilization
+	private static final SkillHolder ANTH_NORM_ATTACK = new SkillHolder(4112); // Ordinary Attack
+	private static final SkillHolder ANTH_NORM_ATTACK_EX = new SkillHolder(4113); // Animal doing ordinary attack
+	private static final SkillHolder ANTH_REGEN_1 = new SkillHolder(4125); // Antharas Regeneration
+	private static final SkillHolder ANTH_REGEN_2 = new SkillHolder(4239); // Antharas Regeneration
+	private static final SkillHolder ANTH_REGEN_3 = new SkillHolder(4240); // Antharas Regeneration
+	private static final SkillHolder ANTH_REGEN_4 = new SkillHolder(4241); // Antharas Regeneration
+	private static final SkillHolder DISPEL_BOM = new SkillHolder(5042); // NPC Dispel Bomb
+	private static final SkillHolder ANTH_ANTI_STRIDER = new SkillHolder(4258); // Hinder Strider
+	private static final SkillHolder ANTH_FEAR_SHORT = new SkillHolder(5092); // Antharas Terror
+	private static final SkillHolder ANTH_METEOR = new SkillHolder(5093); // Antharas Meteor
 	// Zone
 	private static final L2NoRestartZone zone = ZoneManager.getInstance().getZoneById(70050, L2NoRestartZone.class); // Antharas Nest zone
 	// Status
@@ -339,26 +339,26 @@ public final class Antharas extends AbstractNpcAI
 					{
 						if (!npc.isAffectedBySkill(ANTH_REGEN_4.getSkillId()))
 						{
-							npc.doCast(ANTH_REGEN_4.getSkill());
+							npc.doCast(ANTH_REGEN_4);
 						}
 					}
 					else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.5))
 					{
 						if (!npc.isAffectedBySkill(ANTH_REGEN_3.getSkillId()))
 						{
-							npc.doCast(ANTH_REGEN_3.getSkill());
+							npc.doCast(ANTH_REGEN_3);
 						}
 					}
 					else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.75))
 					{
 						if (!npc.isAffectedBySkill(ANTH_REGEN_2.getSkillId()))
 						{
-							npc.doCast(ANTH_REGEN_2.getSkill());
+							npc.doCast(ANTH_REGEN_2);
 						}
 					}
 					else if (!npc.isAffectedBySkill(ANTH_REGEN_1.getSkillId()))
 					{
-						npc.doCast(ANTH_REGEN_1.getSkill());
+						npc.doCast(ANTH_REGEN_1);
 					}
 					startQuestTimer("SET_REGEN", 60000, npc, null);
 				}
@@ -610,7 +610,7 @@ public final class Antharas extends AbstractNpcAI
 	@Override
 	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
 	{
-		npc.doCast(DISPEL_BOM.getSkill());
+		npc.doCast(DISPEL_BOM);
 		npc.doDie(player);
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
@@ -624,7 +624,7 @@ public final class Antharas extends AbstractNpcAI
 		{
 			if (npc.calculateDistance(attacker, true, false) < 230)
 			{
-				npc.doCast(DISPEL_BOM.getSkill());
+				npc.doCast(DISPEL_BOM);
 				npc.doDie(attacker);
 			}
 		}
@@ -641,7 +641,7 @@ public final class Antharas extends AbstractNpcAI
 				if (npc.checkDoCastConditions(ANTH_ANTI_STRIDER.getSkill()))
 				{
 					npc.setTarget(attacker);
-					npc.doCast(ANTH_ANTI_STRIDER.getSkill());
+					npc.doCast(ANTH_ANTI_STRIDER);
 				}
 			}
 			
@@ -702,7 +702,7 @@ public final class Antharas extends AbstractNpcAI
 	@Override
 	public void onMoveFinished(L2Npc npc)
 	{
-		npc.doCast(DISPEL_BOM.getSkill());
+		npc.doCast(DISPEL_BOM);
 		npc.doDie(null);
 	}
 	
@@ -1040,7 +1040,7 @@ public final class Antharas extends AbstractNpcAI
 			
 			if ((skillToCast != null) && npc.checkDoCastConditions(skillToCast.getSkill()))
 			{
-				npc.doCast(skillToCast.getSkill());
+				npc.doCast(skillToCast);
 			}
 		}
 	}

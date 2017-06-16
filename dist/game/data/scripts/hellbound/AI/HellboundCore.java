@@ -18,13 +18,13 @@
  */
 package hellbound.AI;
 
-import hellbound.HellboundEngine;
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
+
+import ai.npc.AbstractNpcAI;
+import hellbound.HellboundEngine;
 
 /**
  * Manages Naia's cast on the Hellbound Core
@@ -36,7 +36,7 @@ public final class HellboundCore extends AbstractNpcAI
 	private static final int NAIA = 18484;
 	private static final int HELLBOUND_CORE = 32331;
 	// Skills
-	private static SkillHolder BEAM = new SkillHolder(5493, 1);
+	private static final SkillHolder BEAM = new SkillHolder(5493);
 	
 	public HellboundCore()
 	{
@@ -54,7 +54,7 @@ public final class HellboundCore extends AbstractNpcAI
 				if ((naia != null) && naia.isMonster() && (naia.getId() == NAIA) && !naia.isDead() && !naia.isChanneling())
 				{
 					naia.setTarget(npc);
-					naia.doSimultaneousCast(BEAM.getSkill());
+					naia.doSimultaneousCast(BEAM);
 				}
 			}
 			startQuestTimer("cast", 10000, npc, null);

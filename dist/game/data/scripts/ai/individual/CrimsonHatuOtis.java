@@ -18,13 +18,13 @@
  */
 package ai.individual;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * AI for Kamaloka (33) - Crimson Hatu Otis
@@ -35,8 +35,8 @@ public final class CrimsonHatuOtis extends AbstractNpcAI
 	// Npc
 	private static final int CRIMSON_HATU_OTIS = 18558;
 	// Skills
-	private static SkillHolder BOSS_SPINING_SLASH = new SkillHolder(4737, 1);
-	private static SkillHolder BOSS_HASTE = new SkillHolder(4175, 1);
+	private static final SkillHolder BOSS_SPINING_SLASH = new SkillHolder(4737);
+	private static final SkillHolder BOSS_HASTE = new SkillHolder(4175);
 	
 	private CrimsonHatuOtis()
 	{
@@ -58,7 +58,7 @@ public final class CrimsonHatuOtis extends AbstractNpcAI
 					return null;
 				}
 				npc.setTarget(player);
-				npc.doCast(BOSS_SPINING_SLASH.getSkill());
+				npc.doCast(BOSS_SPINING_SLASH);
 				startQuestTimer("SKILL", 60000, npc, null);
 				break;
 			}
@@ -67,7 +67,7 @@ public final class CrimsonHatuOtis extends AbstractNpcAI
 				if (npc.isScriptValue(2))
 				{
 					npc.setTarget(npc);
-					npc.doCast(BOSS_HASTE.getSkill());
+					npc.doCast(BOSS_HASTE);
 				}
 				break;
 			}

@@ -18,8 +18,6 @@
  */
 package instances.Kamaloka;
 
-import instances.AbstractInstance;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -44,6 +42,8 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+
+import instances.AbstractInstance;
 
 public final class Kamaloka extends AbstractInstance
 {
@@ -650,7 +650,7 @@ public final class Kamaloka extends AbstractInstance
 			5700,
 			7
 		}
-	
+		
 	};
 	
 	/*
@@ -1182,11 +1182,8 @@ public final class Kamaloka extends AbstractInstance
 		super(Kamaloka.class.getSimpleName());
 		addFirstTalkId(TELEPORTER);
 		addTalkId(TELEPORTER);
-		for (int cap : CAPTAINS)
-		{
-			addStartNpc(cap);
-			addTalkId(cap);
-		}
+		addStartNpc(CAPTAINS);
+		addTalkId(CAPTAINS);
 		for (int[] mob : FIRST_ROOM)
 		{
 			if (mob != null)

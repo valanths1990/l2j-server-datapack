@@ -18,14 +18,10 @@
  */
 package instances.DisciplesNecropolisPast;
 
-import instances.AbstractInstance;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import quests.Q00196_SevenSignsSealOfTheEmperor.Q00196_SevenSignsSealOfTheEmperor;
 
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
@@ -39,6 +35,9 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
 import com.l2jserver.gameserver.util.Util;
+
+import instances.AbstractInstance;
+import quests.Q00196_SevenSignsSealOfTheEmperor.Q00196_SevenSignsSealOfTheEmperor;
 
 /**
  * Disciple's Necropolis Past instance zone.
@@ -83,13 +82,13 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	private static final Map<Integer, SkillHolder> SKILLS = new HashMap<>();
 	static
 	{
-		SKILLS.put(32715, new SkillHolder(6187, 1)); // Presentation - Lilith Battle
-		SKILLS.put(32716, new SkillHolder(6188, 1)); // Presentation - Lilith's Steward Battle1
-		SKILLS.put(32717, new SkillHolder(6190, 1)); // Presentation - Lilith's Bodyguards Battle1
-		SKILLS.put(32718, new SkillHolder(6191, 1)); // Presentation - Anakim Battle
-		SKILLS.put(32719, new SkillHolder(6192, 1)); // Presentation - Anakim's Guardian Battle1
-		SKILLS.put(32720, new SkillHolder(6194, 1)); // Presentation - Anakim's Guard Battle
-		SKILLS.put(32721, new SkillHolder(6195, 1)); // Presentation - Anakim's Executor Battle
+		SKILLS.put(32715, new SkillHolder(6187)); // Presentation - Lilith Battle
+		SKILLS.put(32716, new SkillHolder(6188)); // Presentation - Lilith's Steward Battle1
+		SKILLS.put(32717, new SkillHolder(6190)); // Presentation - Lilith's Bodyguards Battle1
+		SKILLS.put(32718, new SkillHolder(6191)); // Presentation - Anakim Battle
+		SKILLS.put(32719, new SkillHolder(6192)); // Presentation - Anakim's Guardian Battle1
+		SKILLS.put(32720, new SkillHolder(6194)); // Presentation - Anakim's Guard Battle
+		SKILLS.put(32721, new SkillHolder(6195)); // Presentation - Anakim's Executor Battle
 	}
 	// Locations
 	private static final Location ENTER = new Location(-89554, 216078, -7488, 0, 0);
@@ -187,7 +186,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 		npc.setTarget(targets.get(getRandom(targets.size())));
 		if (SKILLS.containsKey(npc.getId()))
 		{
-			npc.doCast(SKILLS.get(npc.getId()).getSkill());
+			npc.doCast(SKILLS.get(npc.getId()));
 		}
 	}
 	
@@ -362,7 +361,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 			}
 			if (getRandom(100) < 50)
 			{
-				npc.doCast(SEAL_ISOLATION.getSkill());
+				npc.doCast(SEAL_ISOLATION);
 			}
 		}
 		return super.onAttack(npc, player, damage, isSummon);

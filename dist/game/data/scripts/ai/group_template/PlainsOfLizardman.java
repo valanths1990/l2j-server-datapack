@@ -56,12 +56,12 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		22774, // Tanta Lizardman Summoner
 	};
 	// Skills
-	private static final SkillHolder STUN_EFFECT = new SkillHolder(6622, 1);
-	private static final SkillHolder DEMOTIVATION_HEX = new SkillHolder(6425, 1);
-	private static final SkillHolder FANTASY_MUSHROOM_SKILL = new SkillHolder(6427, 1);
-	private static final SkillHolder RAINBOW_FROG_SKILL = new SkillHolder(6429, 1);
-	private static final SkillHolder STICKY_MUSHROOM_SKILL = new SkillHolder(6428, 1);
-	private static final SkillHolder ENERGY_PLANT_SKILL = new SkillHolder(6430, 1);
+	private static final SkillHolder STUN_EFFECT = new SkillHolder(6622);
+	private static final SkillHolder DEMOTIVATION_HEX = new SkillHolder(6425);
+	private static final SkillHolder FANTASY_MUSHROOM_SKILL = new SkillHolder(6427);
+	private static final SkillHolder RAINBOW_FROG_SKILL = new SkillHolder(6429);
+	private static final SkillHolder STICKY_MUSHROOM_SKILL = new SkillHolder(6428);
+	private static final SkillHolder ENERGY_PLANT_SKILL = new SkillHolder(6430);
 	// Buffs
 	private static final SkillHolder[] BUFFS =
 	{
@@ -100,14 +100,14 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	{
 		if (event.equals("fantasy_mushroom") && (npc != null) && (player != null))
 		{
-			npc.doCast(FANTASY_MUSHROOM_SKILL.getSkill());
+			npc.doCast(FANTASY_MUSHROOM_SKILL);
 			for (L2Character target : npc.getKnownList().getKnownCharactersInRadius(200))
 			{
 				if ((target != null) && target.isAttackable())
 				{
 					final L2Npc monster = (L2Npc) target;
 					npc.setTarget(monster);
-					npc.doCast(STUN_EFFECT.getSkill());
+					npc.doCast(STUN_EFFECT);
 					addAttackDesire(monster, player);
 				}
 			}
@@ -124,7 +124,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 			case TANTA_SUMMONER:
 				if (!npc.isAffectedBySkill(DEMOTIVATION_HEX.getSkillId()))
 				{
-					npc.doCast(DEMOTIVATION_HEX.getSkill());
+					npc.doCast(DEMOTIVATION_HEX);
 				}
 				break;
 			case RAINBOW_FROG:
@@ -185,7 +185,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		}
 		if (random <= 25)
 		{
-			buffer.doCast(BUFFS[BUFF_LIST[getRandom(BUFF_LIST.length)]].getSkill());
+			buffer.doCast(BUFFS[BUFF_LIST[getRandom(BUFF_LIST.length)]]);
 		}
 		if (random <= 10)
 		{
@@ -196,18 +196,18 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 			final int i = getRandom(100);
 			if (i <= 34)
 			{
-				buffer.doCast(BUFFS[6].getSkill());
-				buffer.doCast(BUFFS[7].getSkill());
-				buffer.doCast(BUFFS[8].getSkill());
+				buffer.doCast(BUFFS[6]);
+				buffer.doCast(BUFFS[7]);
+				buffer.doCast(BUFFS[8]);
 			}
 			else if (i < 67)
 			{
-				buffer.doCast(BUFFS[13].getSkill());
+				buffer.doCast(BUFFS[13]);
 			}
 			else
 			{
-				buffer.doCast(BUFFS[2].getSkill());
-				buffer.doCast(BUFFS[5].getSkill());
+				buffer.doCast(BUFFS[2]);
+				buffer.doCast(BUFFS[5]);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
@@ -218,15 +218,15 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		final int rand = getRandom(100);
 		if (rand <= chance1)
 		{
-			npc.doCast(buffs[2].getSkill());
+			npc.doCast(buffs[2]);
 		}
 		else if (rand <= chance2)
 		{
-			npc.doCast(buffs[1].getSkill());
+			npc.doCast(buffs[1]);
 		}
 		else
 		{
-			npc.doCast(buffs[0].getSkill());
+			npc.doCast(buffs[0]);
 		}
 	}
 	

@@ -18,9 +18,6 @@
  */
 package instances.MithrilMine;
 
-import instances.AbstractInstance;
-import quests.Q10284_AcquisitionOfDivineSword.Q10284_AcquisitionOfDivineSword;
-
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
@@ -33,6 +30,9 @@ import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
+
+import instances.AbstractInstance;
+import quests.Q10284_AcquisitionOfDivineSword.Q10284_AcquisitionOfDivineSword;
 
 /**
  * Mithril Mine instance zone.
@@ -53,7 +53,7 @@ public final class MithrilMine extends AbstractInstance
 	// Item
 	private static final int COLD_RESISTANCE_POTION = 15514;
 	// Skill
-	private static SkillHolder BLESS_OF_SWORD = new SkillHolder(6286, 1);
+	private static final SkillHolder BLESS_OF_SWORD = new SkillHolder(6286);
 	// Location
 	private static final Location START_LOC = new Location(186852, -173492, -3763, 0, 0);
 	private static final Location EXIT_LOC = new Location(178823, -184303, -347, 0, 0);
@@ -89,7 +89,7 @@ public final class MithrilMine extends AbstractInstance
 				if ((player != null) && npc.isInsideRadius(player, 1000, true, false) && npc.isScriptValue(1) && !player.isDead())
 				{
 					npc.setTarget(player);
-					npc.doCast(BLESS_OF_SWORD.getSkill());
+					npc.doCast(BLESS_OF_SWORD);
 				}
 				startQuestTimer("BUFF", 30000, npc, player);
 				break;

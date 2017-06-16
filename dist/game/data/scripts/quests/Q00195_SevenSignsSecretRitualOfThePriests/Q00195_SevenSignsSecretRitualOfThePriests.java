@@ -18,14 +18,14 @@
  */
 package quests.Q00195_SevenSignsSecretRitualOfThePriests;
 
-import quests.Q00194_SevenSignsMammonsContract.Q00194_SevenSignsMammonsContract;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00194_SevenSignsMammonsContract.Q00194_SevenSignsMammonsContract;
 
 /**
  * Seven Signs, Secret Ritual of the Priests (195)
@@ -50,7 +50,7 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 	private static final int MIN_LEVEL = 79;
 	// Skills
 	// private static SkillHolder TRANSFORM_DISPEL = new SkillHolder(6200, 1);
-	private static SkillHolder TRANSFORMATION = new SkillHolder(6204, 1);
+	private static final SkillHolder TRANSFORMATION = new SkillHolder(6204);
 	
 	public Q00195_SevenSignsSecretRitualOfThePriests()
 	{
@@ -112,7 +112,7 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 				if (st.isCond(2))
 				{
 					npc.setTarget(player);
-					npc.doCast(TRANSFORMATION.getSkill());
+					npc.doCast(TRANSFORMATION);
 					st.setCond(3, true);
 					htmltext = event;
 				}
@@ -135,7 +135,7 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 					htmltext = event;
 					if (player.getTransformationId() == 113)
 					{
-						// player.doCast(TRANSFORM_DISPEL.getSkill());
+						// player.doCast(TRANSFORM_DISPEL);
 						player.stopAllEffects();
 					}
 				}
@@ -146,7 +146,7 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 				if (st.isCond(3))
 				{
 					npc.setTarget(player);
-					npc.doCast(TRANSFORMATION.getSkill());
+					npc.doCast(TRANSFORMATION);
 					htmltext = event;
 				}
 				break;
@@ -155,7 +155,7 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 			{
 				if (st.isCond(3))
 				{
-					// player.doCast(TRANSFORM_DISPEL.getSkill());
+					// player.doCast(TRANSFORM_DISPEL);
 					player.stopAllEffects();
 					htmltext = event;
 				}

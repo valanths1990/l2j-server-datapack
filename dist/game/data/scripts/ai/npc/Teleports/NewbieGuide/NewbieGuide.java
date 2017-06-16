@@ -287,39 +287,39 @@ public final class NewbieGuide extends AbstractNpcAI
 							else if (!talker.isMageClass() && (talker.getClassId().level() < 3))
 							{
 								npc.setTarget(talker);
-								npc.doCast(WIND_WALK_FOR_BEGINNERS.getSkill());
-								npc.doCast(WIND_WALK_FOR_BEGINNERS.getSkill());
-								npc.doCast(SHIELD_FOR_BEGINNERS.getSkill());
-								npc.doCast(ADVENTURERS_MAGIC_BARRIER.getSkill());
-								npc.doCast(BLESS_THE_BODY_FOR_BEGINNERS.getSkill());
-								npc.doCast(VAMPIRIC_RAGE_FOR_BEGINNERS.getSkill());
-								npc.doCast(REGENERATION_FOR_BEGINNERS.getSkill());
+								npc.doCast(WIND_WALK_FOR_BEGINNERS);
+								npc.doCast(WIND_WALK_FOR_BEGINNERS);
+								npc.doCast(SHIELD_FOR_BEGINNERS);
+								npc.doCast(ADVENTURERS_MAGIC_BARRIER);
+								npc.doCast(BLESS_THE_BODY_FOR_BEGINNERS);
+								npc.doCast(VAMPIRIC_RAGE_FOR_BEGINNERS);
+								npc.doCast(REGENERATION_FOR_BEGINNERS);
 								if ((talker.getLevel() >= 6) && (talker.getLevel() <= 39))
 								{
-									npc.doCast(HASTE_FOR_BEGINNERS.getSkill());
+									npc.doCast(HASTE_FOR_BEGINNERS);
 								}
 								if ((talker.getLevel() >= 40) && (talker.getLevel() <= 75))
 								{
-									npc.doCast(ADVENTURERS_HASTE.getSkill());
+									npc.doCast(ADVENTURERS_HASTE);
 								}
 								if ((talker.getLevel() >= 16) && (talker.getLevel() <= 34))
 								{
-									npc.doCast(LIFE_CUBIC_FOR_BEGINNERS.getSkill());
+									npc.doCast(LIFE_CUBIC_FOR_BEGINNERS);
 								}
 							}
 							else if (talker.isMageClass() && (talker.getClassId().level() < 3))
 							{
 								npc.setTarget(talker);
-								npc.doCast(WIND_WALK_FOR_BEGINNERS.getSkill());
-								npc.doCast(SHIELD_FOR_BEGINNERS.getSkill());
-								npc.doCast(ADVENTURERS_MAGIC_BARRIER.getSkill());
-								npc.doCast(BLESS_THE_SOUL_FOR_BEGINNERS.getSkill());
-								npc.doCast(ACUMEN_FOR_BEGINNERS.getSkill());
-								npc.doCast(CONCENTRATION_FOR_BEGINNERS.getSkill());
-								npc.doCast(EMPOWER_FOR_BEGINNERS.getSkill());
+								npc.doCast(WIND_WALK_FOR_BEGINNERS);
+								npc.doCast(SHIELD_FOR_BEGINNERS);
+								npc.doCast(ADVENTURERS_MAGIC_BARRIER);
+								npc.doCast(BLESS_THE_SOUL_FOR_BEGINNERS);
+								npc.doCast(ACUMEN_FOR_BEGINNERS);
+								npc.doCast(CONCENTRATION_FOR_BEGINNERS);
+								npc.doCast(EMPOWER_FOR_BEGINNERS);
 								if ((talker.getLevel() >= 16) && (talker.getLevel() <= 34))
 								{
-									npc.doCast(LIFE_CUBIC_FOR_BEGINNERS.getSkill());
+									npc.doCast(LIFE_CUBIC_FOR_BEGINNERS);
 								}
 							}
 						}
@@ -334,7 +334,7 @@ public final class NewbieGuide extends AbstractNpcAI
 						if ((talker.getLevel() <= 39) && (talker.getClassId().level() < 3))
 						{
 							npc.setTarget(talker);
-							npc.doCast(BLESSING_OF_PROTECTION.getSkill());
+							npc.doCast(BLESSING_OF_PROTECTION);
 						}
 						else
 						{
@@ -354,23 +354,23 @@ public final class NewbieGuide extends AbstractNpcAI
 							else
 							{
 								npc.setTarget(talker);
-								npc.doCast(WIND_WALK_FOR_BEGINNERS.getSkill());
-								npc.doCast(SHIELD_FOR_BEGINNERS.getSkill());
-								npc.doCast(ADVENTURERS_MAGIC_BARRIER.getSkill());
-								npc.doCast(BLESS_THE_BODY_FOR_BEGINNERS.getSkill());
-								npc.doCast(VAMPIRIC_RAGE_FOR_BEGINNERS.getSkill());
-								npc.doCast(REGENERATION_FOR_BEGINNERS.getSkill());
-								npc.doCast(BLESS_THE_SOUL_FOR_BEGINNERS.getSkill());
-								npc.doCast(ACUMEN_FOR_BEGINNERS.getSkill());
-								npc.doCast(CONCENTRATION_FOR_BEGINNERS.getSkill());
-								npc.doCast(EMPOWER_FOR_BEGINNERS.getSkill());
+								npc.doCast(WIND_WALK_FOR_BEGINNERS);
+								npc.doCast(SHIELD_FOR_BEGINNERS);
+								npc.doCast(ADVENTURERS_MAGIC_BARRIER);
+								npc.doCast(BLESS_THE_BODY_FOR_BEGINNERS);
+								npc.doCast(VAMPIRIC_RAGE_FOR_BEGINNERS);
+								npc.doCast(REGENERATION_FOR_BEGINNERS);
+								npc.doCast(BLESS_THE_SOUL_FOR_BEGINNERS);
+								npc.doCast(ACUMEN_FOR_BEGINNERS);
+								npc.doCast(CONCENTRATION_FOR_BEGINNERS);
+								npc.doCast(EMPOWER_FOR_BEGINNERS);
 								if ((talker.getLevel() >= 6) && (talker.getLevel() <= 39))
 								{
-									npc.doCast(HASTE_FOR_BEGINNERS.getSkill());
+									npc.doCast(HASTE_FOR_BEGINNERS);
 								}
 								if ((talker.getLevel() >= 40) && (talker.getLevel() <= 75))
 								{
-									npc.doCast(ADVENTURERS_HASTE.getSkill());
+									npc.doCast(ADVENTURERS_HASTE);
 								}
 							}
 						}

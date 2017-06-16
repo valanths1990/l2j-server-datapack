@@ -18,10 +18,6 @@
  */
 package instances.NornilsGarden;
 
-import instances.AbstractInstance;
-import quests.Q00179_IntoTheLargeCavern.Q00179_IntoTheLargeCavern;
-
-import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.L2Party;
 import com.l2jserver.gameserver.model.Location;
@@ -30,14 +26,17 @@ import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Instance;
+import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
-import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Util;
+
+import instances.AbstractInstance;
+import quests.Q00179_IntoTheLargeCavern.Q00179_IntoTheLargeCavern;
 
 /**
  * Nornil's Garden instance zone.
@@ -64,10 +63,10 @@ public final class NornilsGarden extends AbstractInstance
 		32262
 	};
 	// Skills
-	private static final Skill skill1 = SkillData.getInstance().getSkill(4322, 1);
-	private static final Skill skill2 = SkillData.getInstance().getSkill(4327, 1);
-	private static final Skill skill3 = SkillData.getInstance().getSkill(4329, 1);
-	private static final Skill skill4 = SkillData.getInstance().getSkill(4324, 1);
+	private static final SkillHolder ADVENTURERS_WIND_WALK = new SkillHolder(4322);
+	private static final SkillHolder ADVENTURERS_HASTE = new SkillHolder(4327);
+	private static final SkillHolder ADVENTURERS_ACUMEN = new SkillHolder(4329);
+	private static final SkillHolder ADVENTURERS_BLESS_THE_BODY = new SkillHolder(4324);
 	// Locations
 	private static final Location SPAWN_PPL = new Location(-111184, 74540, -12430);
 	private static final Location EXIT_PPL = new Location(-74058, 52040, -3680);
@@ -182,21 +181,21 @@ public final class NornilsGarden extends AbstractInstance
 	
 	private static final void giveBuffs(L2Character ch)
 	{
-		if (skill1 != null)
+		if (ADVENTURERS_WIND_WALK.getSkill() != null)
 		{
-			skill1.applyEffects(ch, ch);
+			ADVENTURERS_WIND_WALK.getSkill().applyEffects(ch, ch);
 		}
-		if (skill2 != null)
+		if (ADVENTURERS_HASTE.getSkill() != null)
 		{
-			skill2.applyEffects(ch, ch);
+			ADVENTURERS_HASTE.getSkill().applyEffects(ch, ch);
 		}
-		if (skill3 != null)
+		if (ADVENTURERS_ACUMEN.getSkill() != null)
 		{
-			skill3.applyEffects(ch, ch);
+			ADVENTURERS_ACUMEN.getSkill().applyEffects(ch, ch);
 		}
-		if (skill4 != null)
+		if (ADVENTURERS_BLESS_THE_BODY.getSkill() != null)
 		{
-			skill4.applyEffects(ch, ch);
+			ADVENTURERS_BLESS_THE_BODY.getSkill().applyEffects(ch, ch);
 		}
 	}
 	

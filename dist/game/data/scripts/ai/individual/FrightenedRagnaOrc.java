@@ -18,8 +18,6 @@
  */
 package ai.individual;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
@@ -29,6 +27,8 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Frightened Ragna Orc AI.
@@ -44,7 +44,7 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 	private static final int ADENA2 = 1000000;
 	private static final int CHANCE2 = 10;
 	// Skill
-	private static final SkillHolder SKILL = new SkillHolder(6234, 1);
+	private static final SkillHolder SKILL = new SkillHolder(6234);
 	
 	private FrightenedRagnaOrc()
 	{
@@ -105,7 +105,7 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 						final NpcStringId msg = getRandomBoolean() ? NpcStringId.TH_THANKS_I_COULD_HAVE_BECOME_GOOD_FRIENDS_WITH_YOU : NpcStringId.ILL_GIVE_YOU_10000000_ADENA_LIKE_I_PROMISED_I_MIGHT_BE_AN_ORC_WHO_KEEPS_MY_PROMISES;
 						broadcastNpcSay(npc, Say2.NPC_ALL, msg);
 						npc.setScriptValue(3);
-						npc.doCast(SKILL.getSkill());
+						npc.doCast(SKILL);
 						for (int i = 0; i < 10; i++)
 						{
 							npc.dropItem(player, Inventory.ADENA_ID, ADENA2);
@@ -116,7 +116,7 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 						final NpcStringId msg = getRandomBoolean() ? NpcStringId.TH_THANKS_I_COULD_HAVE_BECOME_GOOD_FRIENDS_WITH_YOU : NpcStringId.SORRY_BUT_THIS_IS_ALL_I_HAVE_GIVE_ME_A_BREAK;
 						broadcastNpcSay(npc, Say2.NPC_ALL, msg);
 						npc.setScriptValue(3);
-						npc.doCast(SKILL.getSkill());
+						npc.doCast(SKILL);
 						for (int i = 0; i < 10; i++)
 						{
 							((L2Attackable) npc).dropItem(player, Inventory.ADENA_ID, ADENA);

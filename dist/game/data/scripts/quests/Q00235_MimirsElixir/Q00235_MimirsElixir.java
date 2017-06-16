@@ -53,7 +53,7 @@ public final class Q00235_MimirsElixir extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 75;
 	// Skill
-	private static SkillHolder QUEST_MIMIRS_ELIXIR = new SkillHolder(4339, 1);
+	private static final SkillHolder QUEST_MIMIRS_ELIXIR = new SkillHolder(4339);
 	// Mobs
 	private static final Map<Integer, QuestItemHolder> MOBS = new HashMap<>();
 	static
@@ -139,7 +139,7 @@ public final class Q00235_MimirsElixir extends Quest
 				if (st.isMemoState(8) && hasQuestItems(player, MAGISTERS_MIXING_STONE, MIMIRS_ELIXIR))
 				{
 					npc.setTarget(player);
-					npc.doCast(QUEST_MIMIRS_ELIXIR.getSkill());
+					npc.doCast(QUEST_MIMIRS_ELIXIR);
 					takeItems(player, STAR_OF_DESTINY, -1);
 					rewardItems(player, ENCHANT_WEAPON_A, 1);
 					st.exitQuest(false, true);

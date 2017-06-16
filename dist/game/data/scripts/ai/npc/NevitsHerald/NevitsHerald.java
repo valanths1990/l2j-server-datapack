@@ -21,11 +21,12 @@ package ai.npc.NevitsHerald;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
+import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -42,21 +43,19 @@ public final class NevitsHerald extends AbstractNpcAI
 {
 	private static final int NEVITS_HERALD = 4326;
 	private static final List<L2Npc> SPAWNS = new ArrayList<>();
-	private static final int[][] NEVITS_HERALD_SPAWNS =
+	private static final Location[] NEVITS_HERALD_LOC =
 	{
-		// @formatter:off
-		{86971, -142772, -1336, 20480}, // Town of Schuttgart
-		{44165, -48494, -792, 32768}, // Rune Township
-		{148017, -55264, -2728, 49152}, // Town of Goddard
-		{147919, 26631, -2200, 16384}, // Town of Aden
-		{82325, 53278, -1488, 16384}, // Town of Oren
-		{81925, 148302, -3464, 49152}, // Town of Giran
-		{111678, 219197, -3536, 49152}, // Heine
-		{16254, 142808, -2696, 16384}, // Town of Dion
-		{-13865, 122081, -2984, 32768}, // Town of Gludio
-		{-83248, 150832, -3136, 32768}, // Gludin Village
-		{116899, 77256, -2688, 49152} // Hunters Village
-		// @formatter:on
+		new Location(86971, -142772, -1336, 20480), // Town of Schuttgart
+		new Location(44165, -48494, -792, 32768), // Rune Township
+		new Location(148017, -55264, -2728, 49152), // Town of Goddard
+		new Location(147919, 26631, -2200, 16384), // Town of Aden
+		new Location(82325, 53278, -1488, 16384), // Town of Oren
+		new Location(81925, 148302, -3464, 49152), // Town of Giran
+		new Location(111678, 219197, -3536, 49152), // Heine
+		new Location(16254, 142808, -2696, 16384), // Town of Dion
+		new Location(-13865, 122081, -2984, 32768), // Town of Gludio
+		new Location(-83248, 150832, -3136, 32768), // Gludin Village
+		new Location(116899, 77256, -2688, 49152) // Hunters Village
 	};
 	private static final int ANTHARAS = 29068; // Antharas Strong (85)
 	private static final int VALAKAS = 29028; // Valakas (85)
@@ -67,17 +66,16 @@ public final class NevitsHerald extends AbstractNpcAI
 		NpcStringId.PRAISE_THE_ACHIEVEMENT_OF_THE_HEROES_AND_RECEIVE_NEVITS_BLESSING
 	};
 	private static boolean isActive = false;
+	// Skill
+	private static final SkillHolder FALL_OF_THE_DRAGON = new SkillHolder(23312);
 	
 	private NevitsHerald()
 	{
 		super(NevitsHerald.class.getSimpleName(), "ai/npc");
-		
 		addFirstTalkId(NEVITS_HERALD);
 		addStartNpc(NEVITS_HERALD);
 		addTalkId(NEVITS_HERALD);
-		
-		addKillId(ANTHARAS);
-		addKillId(VALAKAS);
+		addKillId(ANTHARAS, VALAKAS);
 	}
 	
 	@Override
@@ -100,7 +98,7 @@ public final class NevitsHerald extends AbstractNpcAI
 					return "4326-1.htm";
 				}
 				npc.setTarget(player);
-				npc.doCast(SkillData.getInstance().getSkill(23312, 1));
+				npc.doCast(FALL_OF_THE_DRAGON);
 				return null;
 			}
 		}
@@ -147,9 +145,9 @@ public final class NevitsHerald extends AbstractNpcAI
 			
 			SPAWNS.clear();
 			
-			for (int[] _spawn : NEVITS_HERALD_SPAWNS)
+			for (Location loc : NEVITS_HERALD_LOC)
 			{
-				L2Npc herald = addSpawn(NEVITS_HERALD, _spawn[0], _spawn[1], _spawn[2], _spawn[3], false, 0);
+				L2Npc herald = addSpawn(NEVITS_HERALD, loc, false, 0);
 				if (herald != null)
 				{
 					SPAWNS.add(herald);

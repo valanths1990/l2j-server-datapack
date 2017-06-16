@@ -1117,7 +1117,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 							if (holder.getSkill().getMpConsume() < npc.getCurrentMp())
 							{
 								npc.setTarget(player);
-								npc.doCast(holder.getSkill());
+								npc.doCast(holder);
 								html = getHtmlPacket(player, npc, "castleafterbuff.html");
 							}
 							else

@@ -52,14 +52,14 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 		22795, // Divinity Manager
 	};
 	// Skills
-	private static final SkillHolder ORDEAL_STRIKE = new SkillHolder(6303, 1); // Trial of the Coup
-	private static final SkillHolder LEADER_STRIKE = new SkillHolder(6304, 1); // Shock
-	private static final SkillHolder SAVER_STRIKE = new SkillHolder(6305, 1); // Sacred Gnosis
-	private static final SkillHolder SAVER_BLEED = new SkillHolder(6306, 1); // Solina Strike
-	private static final SkillHolder LEARNING_MAGIC = new SkillHolder(6308, 1); // Opus of the Wave
-	private static final SkillHolder STUDENT_CANCEL = new SkillHolder(6310, 1); // Loss of Quest
-	private static final SkillHolder WARRIOR_THRUSTING = new SkillHolder(6311, 1); // Solina Thrust
-	private static final SkillHolder KNIGHT_BLESS = new SkillHolder(6313, 1); // Solina Bless
+	private static final SkillHolder ORDEAL_STRIKE = new SkillHolder(6303); // Trial of the Coup
+	private static final SkillHolder LEADER_STRIKE = new SkillHolder(6304); // Shock
+	private static final SkillHolder SAVER_STRIKE = new SkillHolder(6305); // Sacred Gnosis
+	private static final SkillHolder SAVER_BLEED = new SkillHolder(6306); // Solina Strike
+	private static final SkillHolder LEARNING_MAGIC = new SkillHolder(6308); // Opus of the Wave
+	private static final SkillHolder STUDENT_CANCEL = new SkillHolder(6310); // Loss of Quest
+	private static final SkillHolder WARRIOR_THRUSTING = new SkillHolder(6311); // Solina Thrust
+	private static final SkillHolder KNIGHT_BLESS = new SkillHolder(6313); // Solina Bless
 	// Misc
 	private static final NpcStringId[] DIVINITY_MSG =
 	{
@@ -118,7 +118,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 					if (npc.checkDoCastConditions(STUDENT_CANCEL.getSkill()))
 					{
 						npc.setTarget(player);
-						npc.doCast(STUDENT_CANCEL.getSkill());
+						npc.doCast(STUDENT_CANCEL);
 					}
 					npc.setScriptValue(0);
 				}
@@ -148,7 +148,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 				if ((getRandom(100) < 10) && (mob.getMostHated() == player) && mob.checkDoCastConditions(WARRIOR_THRUSTING.getSkill()))
 				{
 					npc.setTarget(player);
-					npc.doCast(WARRIOR_THRUSTING.getSkill());
+					npc.doCast(WARRIOR_THRUSTING);
 				}
 				break;
 			}
@@ -159,7 +159,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 					if (npc.checkDoCastConditions(KNIGHT_BLESS.getSkill()))
 					{
 						npc.setTarget(npc);
-						npc.doCast(KNIGHT_BLESS.getSkill());
+						npc.doCast(KNIGHT_BLESS);
 					}
 					npc.setScriptValue(1);
 					broadcastNpcSay(npc, Say2.ALL, NpcStringId.FOR_THE_GLORY_OF_SOLINA);
@@ -172,7 +172,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 				if ((getRandom(100) < 3) && (mob.getMostHated() == player) && npc.checkDoCastConditions(ORDEAL_STRIKE.getSkill()))
 				{
 					npc.setTarget(player);
-					npc.doCast(ORDEAL_STRIKE.getSkill());
+					npc.doCast(ORDEAL_STRIKE);
 				}
 				break;
 			}
@@ -181,7 +181,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 				if ((getRandom(100) < 33) && (mob.getMostHated() == player) && npc.checkDoCastConditions(SAVER_STRIKE.getSkill()))
 				{
 					npc.setTarget(npc);
-					npc.doCast(SAVER_STRIKE.getSkill());
+					npc.doCast(SAVER_STRIKE);
 				}
 				break;
 			}
@@ -249,7 +249,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 			if ((skill != null) && npc.checkDoCastConditions(skill.getSkill()))
 			{
 				npc.setTarget(player);
-				npc.doCast(skill.getSkill());
+				npc.doCast(skill);
 			}
 			
 			if (!npc.isInCombat())

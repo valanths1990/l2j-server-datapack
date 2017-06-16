@@ -475,7 +475,7 @@ public final class HallOfSuffering extends AbstractInstance
 			{
 				L2Npc aliveTwin = (world.klanikus == npc ? world.klodekus : world.klanikus);
 				npc.doRevive();
-				npc.doCast(PRESENTATION_DISTRICT1_BOSS_ARISE.getSkill());
+				npc.doCast(PRESENTATION_DISTRICT1_BOSS_ARISE);
 				npc.setCurrentHp(aliveTwin.getCurrentHp());
 				
 				// get most hated of other boss

@@ -108,7 +108,7 @@ public final class RangeGuard extends AbstractNpcAI
 		{
 			final L2Object target = npc.getTarget();
 			npc.setTarget(npc);
-			npc.doCast(ULTIMATE_DEFENSE.getSkill());
+			npc.doCast(ULTIMATE_DEFENSE);
 			npc.setTarget(target);
 		}
 		return super.onAttack(npc, attacker, damage, isSummon, skill);

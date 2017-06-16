@@ -58,16 +58,16 @@ public final class Baium extends AbstractNpcAI
 	private static final int ARCHANGEL = 29021; // Archangel
 	private static final int TELE_CUBE = 31842; // Teleportation Cubic
 	// Skills
-	private static final SkillHolder BAIUM_ATTACK = new SkillHolder(4127, 1); // Baium: General Attack
-	private static final SkillHolder ENERGY_WAVE = new SkillHolder(4128, 1); // Wind Of Force
-	private static final SkillHolder EARTH_QUAKE = new SkillHolder(4129, 1); // Earthquake
-	private static final SkillHolder THUNDERBOLT = new SkillHolder(4130, 1); // Striking of Thunderbolt
-	private static final SkillHolder GROUP_HOLD = new SkillHolder(4131, 1); // Stun
-	private static final SkillHolder SPEAR_ATTACK = new SkillHolder(4132, 1); // Spear: Pound the Ground
-	private static final SkillHolder ANGEL_HEAL = new SkillHolder(4133, 1); // Angel Heal
-	private static final SkillHolder HEAL_OF_BAIUM = new SkillHolder(4135, 1); // Baium Heal
-	private static final SkillHolder BAIUM_PRESENT = new SkillHolder(4136, 1); // Baium's Gift
-	private static final SkillHolder ANTI_STRIDER = new SkillHolder(4258, 1); // Hinder Strider
+	private static final SkillHolder BAIUM_ATTACK = new SkillHolder(4127); // Baium: General Attack
+	private static final SkillHolder ENERGY_WAVE = new SkillHolder(4128); // Wind Of Force
+	private static final SkillHolder EARTH_QUAKE = new SkillHolder(4129); // Earthquake
+	private static final SkillHolder THUNDERBOLT = new SkillHolder(4130); // Striking of Thunderbolt
+	private static final SkillHolder GROUP_HOLD = new SkillHolder(4131); // Stun
+	private static final SkillHolder SPEAR_ATTACK = new SkillHolder(4132); // Spear: Pound the Ground
+	private static final SkillHolder ANGEL_HEAL = new SkillHolder(4133); // Angel Heal
+	private static final SkillHolder HEAL_OF_BAIUM = new SkillHolder(4135); // Baium Heal
+	private static final SkillHolder BAIUM_PRESENT = new SkillHolder(4136); // Baium's Gift
+	private static final SkillHolder ANTI_STRIDER = new SkillHolder(4258); // Hinder Strider
 	// Items
 	private static final int FABRIC = 4295; // Blooded Fabric
 	// Zone
@@ -274,7 +274,7 @@ public final class Baium extends AbstractNpcAI
 					zone.broadcastPacket(new SocialAction(npc.getObjectId(), 1));
 					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.HOW_DARE_YOU_WAKE_ME_NOW_YOU_SHALL_DIE, player.getName());
 					npc.setTarget(player);
-					npc.doCast(BAIUM_PRESENT.getSkill());
+					npc.doCast(BAIUM_PRESENT);
 				}
 				
 				for (L2PcInstance insidePlayer : zone.getPlayersInside())
@@ -386,7 +386,7 @@ public final class Baium extends AbstractNpcAI
 					if (((_lastAttack + 300000) < System.currentTimeMillis()) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.75)))
 					{
 						npc.setTarget(npc);
-						npc.doCast(HEAL_OF_BAIUM.getSkill());
+						npc.doCast(HEAL_OF_BAIUM);
 					}
 					startQuestTimer("CHECK_ATTACK", 60000, npc, null);
 				}
@@ -493,7 +493,7 @@ public final class Baium extends AbstractNpcAI
 				if (!npc.isSkillDisabled(ANTI_STRIDER.getSkill()))
 				{
 					npc.setTarget(attacker);
-					npc.doCast(ANTI_STRIDER.getSkill());
+					npc.doCast(ANTI_STRIDER);
 				}
 			}
 			
@@ -529,19 +529,19 @@ public final class Baium extends AbstractNpcAI
 				if ((mostHated != null) && (npc.calculateDistance(mostHated, true, false) < 1000) && zone.isCharacterInZone(mostHated))
 				{
 					mob.setTarget(mostHated);
-					mob.doCast(SPEAR_ATTACK.getSkill());
+					mob.doCast(SPEAR_ATTACK);
 				}
 				else if (zone.isCharacterInZone(attacker))
 				{
 					mob.setTarget(attacker);
-					mob.doCast(SPEAR_ATTACK.getSkill());
+					mob.doCast(SPEAR_ATTACK);
 				}
 			}
 			
 			if ((getRandom(100) < 5) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.5)) && mob.checkDoCastConditions(ANGEL_HEAL.getSkill()))
 			{
 				npc.setTarget(npc);
-				npc.doCast(ANGEL_HEAL.getSkill());
+				npc.doCast(ANGEL_HEAL);
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon, skill);
@@ -777,7 +777,7 @@ public final class Baium extends AbstractNpcAI
 		if ((skillToCast != null) && npc.checkDoCastConditions(skillToCast.getSkill()))
 		{
 			npc.setTarget(player);
-			npc.doCast(skillToCast.getSkill());
+			npc.doCast(skillToCast);
 		}
 	}
 	

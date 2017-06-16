@@ -18,9 +18,6 @@
  */
 package gracia.AI;
 
-import gracia.AI.NPC.Nemo.Nemo;
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
 import com.l2jserver.gameserver.model.L2Object;
@@ -31,6 +28,9 @@ import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
+
+import ai.npc.AbstractNpcAI;
+import gracia.AI.NPC.Nemo.Nemo;
 
 /**
  * Maguen AI.
@@ -187,7 +187,7 @@ public final class Maguen extends AbstractNpcAI
 			showOnScreenMsg(player, NpcStringId.ENOUGH_MAGUEN_PLASMA_BISTAKON_HAVE_GATHERED, 2, 4000);
 			player.getEffectList().stopSkillEffects(true, B_PLASMA1.getSkill().getAbnormalType());
 			npc.setTarget(player);
-			npc.doCast((getRandom(100) < 70) ? B_BUFF_1.getSkill() : B_BUFF_2.getSkill());
+			npc.doCast((getRandom(100) < 70) ? B_BUFF_1 : B_BUFF_2);
 			maguenPetChance(player);
 			startQuestTimer("END_TIMER", 3000, npc, player);
 		}
@@ -196,7 +196,7 @@ public final class Maguen extends AbstractNpcAI
 			showOnScreenMsg(player, NpcStringId.ENOUGH_MAGUEN_PLASMA_COKRAKON_HAVE_GATHERED, 2, 4000);
 			player.getEffectList().stopSkillEffects(true, C_PLASMA1.getSkill().getAbnormalType());
 			npc.setTarget(player);
-			npc.doCast((getRandom(100) < 70) ? C_BUFF_1.getSkill() : C_BUFF_2.getSkill());
+			npc.doCast((getRandom(100) < 70) ? C_BUFF_1 : C_BUFF_2);
 			maguenPetChance(player);
 			startQuestTimer("END_TIMER", 3000, npc, player);
 		}
@@ -205,7 +205,7 @@ public final class Maguen extends AbstractNpcAI
 			showOnScreenMsg(player, NpcStringId.ENOUGH_MAGUEN_PLASMA_LEPTILIKON_HAVE_GATHERED, 2, 4000);
 			player.getEffectList().stopSkillEffects(true, R_PLASMA1.getSkill().getAbnormalType());
 			npc.setTarget(player);
-			npc.doCast((getRandom(100) < 70) ? R_BUFF_1.getSkill() : R_BUFF_2.getSkill());
+			npc.doCast((getRandom(100) < 70) ? R_BUFF_1 : R_BUFF_2);
 			maguenPetChance(player);
 			startQuestTimer("END_TIMER", 3000, npc, player);
 		}
@@ -234,7 +234,7 @@ public final class Maguen extends AbstractNpcAI
 				if (skillToCast != null)
 				{
 					npc.setTarget(player);
-					npc.doCast(skillToCast.getSkill());
+					npc.doCast(skillToCast);
 				}
 				maguenPetChance(player);
 				startQuestTimer("END_TIMER", 3000, npc, player);
@@ -335,7 +335,7 @@ public final class Maguen extends AbstractNpcAI
 				if (skillToCast != null)
 				{
 					npc.setTarget(caster);
-					npc.doCast(skillToCast.getSkill());
+					npc.doCast(skillToCast);
 				}
 			}
 		}

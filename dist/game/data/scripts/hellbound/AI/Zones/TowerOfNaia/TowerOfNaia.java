@@ -28,12 +28,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
-import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.instancemanager.GlobalVariablesManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.L2Party;
@@ -41,6 +38,7 @@ import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
 import com.l2jserver.gameserver.network.NpcStringId;
@@ -48,6 +46,8 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.util.MinionList;
 import com.l2jserver.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Tower Of Naia.
@@ -63,6 +63,9 @@ public final class TowerOfNaia extends AbstractNpcAI
 	// Some constants
 	private static final int SELF_DESPAWN_LIMIT = 600; // Challenge discontinues after 600 self-despawns by timer
 	private static final int ELEMENT_INDEX_LIMIT = 120; // Epidos spawns when index reaches 120 points
+	
+	// Skill
+	private static final SkillHolder OVERFLOW = new SkillHolder(5527);
 	
 	private static final int LOCK = 18491;
 	private static final int CONTROLLER = 18492;
@@ -512,7 +515,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 				cancelQuestTimers("spawn_lock");
 				startQuestTimer("spawn_lock", 300000, null, null);
 				npc.setTarget(player);
-				npc.doCast(SkillData.getInstance().getSkill(5527, 1));
+				npc.doCast(OVERFLOW);
 			}
 		}
 		else if (event.equalsIgnoreCase("teleport") && (_lock != null))
@@ -538,7 +541,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 				else
 				{
 					npc.setTarget(player);
-					npc.doCast(SkillData.getInstance().getSkill(5527, 1));
+					npc.doCast(OVERFLOW);
 				}
 			}
 			else

@@ -188,7 +188,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 			{
 				if ((npc != null) && !npc.isDead())
 				{
-					npc.doCast((npc.getId() == SPRIGNANT[0] ? ANESTHESIA.getSkill() : DEADLY_POISON.getSkill()));
+					npc.doCast((npc.getId() == SPRIGNANT[0] ? ANESTHESIA : DEADLY_POISON));
 					startQuestTimer("USE_SKILL", 15000, npc, null);
 				}
 				break;
@@ -216,7 +216,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 					if (player.isInsideRadius(npc, 800, true, false))
 					{
 						npc.setTarget(player);
-						npc.doCast(LONGRANGEDMAGIC1.getSkill());
+						npc.doCast(LONGRANGEDMAGIC1);
 						addAttackDesire(npc, player);
 					}
 				}
@@ -226,7 +226,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 			{
 				if ((npc != null) && !npc.isDead())
 				{
-					npc.doCast(INVIN_BUFF_ON.getSkill());
+					npc.doCast(INVIN_BUFF_ON);
 					startQuestTimer("START_INVUL_2", 30000, npc, null);
 				}
 				break;
@@ -281,7 +281,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 						if (!npc.isSkillDisabled(physicalSpecial1.getSkillId()))
 						{
 							npc.setTarget(creature);
-							npc.doCast(physicalSpecial1.getSkill());
+							npc.doCast(physicalSpecial1);
 						}
 					}
 					else if (getRandom(100) <= (probPhysicalSpecial2 * npc.getVariables().getInt("SKILL_MULTIPLER")))
@@ -289,7 +289,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 						if (!npc.isSkillDisabled(physicalSpecial2.getSkill()))
 						{
 							npc.setTarget(creature);
-							npc.doCast(physicalSpecial2.getSkill());
+							npc.doCast(physicalSpecial2);
 						}
 					}
 				}
@@ -298,7 +298,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 		else if (Util.contains(VEGETABLE, creature.getId()))
 		{
 			npc.setTarget(creature);
-			npc.doCast(CREW_SKILL.getSkill());
+			npc.doCast(CREW_SKILL);
 			npc.setIsRunning(true);
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, creature);
 		}
@@ -348,14 +348,14 @@ public final class PrimevalIsle extends AbstractNpcAI
 				{
 					if (!npc.isSkillDisabled(SELFBUFF1.getSkill()))
 					{
-						npc.doCast(SELFBUFF1.getSkill());
+						npc.doCast(SELFBUFF1);
 					}
 				}
 				else if (npc.isScriptValue(1))
 				{
 					if (!npc.isSkillDisabled(SELFBUFF2.getSkill()))
 					{
-						npc.doCast(SELFBUFF2.getSkill());
+						npc.doCast(SELFBUFF2);
 					}
 				}
 			}
@@ -363,7 +363,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 			{
 				if (!npc.isSkillDisabled(SELFBUFF1.getSkill()))
 				{
-					npc.doCast(SELFBUFF1.getSkill());
+					npc.doCast(SELFBUFF1);
 				}
 			}
 			
@@ -372,7 +372,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 				if (!npc.isSkillDisabled(LONGRANGEDMAGIC1.getSkill()) && (getRandom(100) <= (10 * npc.getScriptValue())))
 				{
 					npc.setTarget(attacker);
-					npc.doCast(LONGRANGEDMAGIC1.getSkill());
+					npc.doCast(LONGRANGEDMAGIC1);
 				}
 			}
 			else
@@ -380,22 +380,22 @@ public final class PrimevalIsle extends AbstractNpcAI
 				if (!npc.isSkillDisabled(LONGRANGEDMAGIC1.getSkill()) && (getRandom(100) <= (10 * npc.getScriptValue())))
 				{
 					npc.setTarget(target);
-					npc.doCast(LONGRANGEDMAGIC1.getSkill());
+					npc.doCast(LONGRANGEDMAGIC1);
 				}
 				if (!npc.isSkillDisabled(PHYSICALSPECIAL1.getSkill()) && (getRandom(100) <= (5 * npc.getScriptValue())))
 				{
 					npc.setTarget(target);
-					npc.doCast(PHYSICALSPECIAL1.getSkill());
+					npc.doCast(PHYSICALSPECIAL1);
 				}
 				if (!npc.isSkillDisabled(PHYSICALSPECIAL2.getSkill()) && (getRandom(100) <= (3 * npc.getScriptValue())))
 				{
 					npc.setTarget(target);
-					npc.doCast(PHYSICALSPECIAL2.getSkill());
+					npc.doCast(PHYSICALSPECIAL2);
 				}
 				if (!npc.isSkillDisabled(PHYSICALSPECIAL3.getSkill()) && (getRandom(100) <= (5 * npc.getScriptValue())))
 				{
 					npc.setTarget(target);
-					npc.doCast(PHYSICALSPECIAL3.getSkill());
+					npc.doCast(PHYSICALSPECIAL3);
 				}
 			}
 		}
@@ -425,7 +425,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 				if (!npc.isSkillDisabled(selfRangeBuff1.getSkillId()))
 				{
 					npc.getVariables().set("SELFBUFF_USED", 1);
-					npc.doCast(selfRangeBuff1.getSkill());
+					npc.doCast(selfRangeBuff1);
 					npc.setIsRunning(true);
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 				}
@@ -438,7 +438,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 					if (!npc.isSkillDisabled(physicalSpecial1.getSkill()))
 					{
 						npc.setTarget(target);
-						npc.doCast(physicalSpecial1.getSkill());
+						npc.doCast(physicalSpecial1);
 					}
 				}
 				if (getRandom(100) <= (probPhysicalSpecial2 * npc.getVariables().getInt("SKILL_MULTIPLER")))
@@ -446,7 +446,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 					if (!npc.isSkillDisabled(physicalSpecial2.getSkill()))
 					{
 						npc.setTarget(target);
-						npc.doCast(physicalSpecial2.getSkill());
+						npc.doCast(physicalSpecial2);
 					}
 				}
 			}

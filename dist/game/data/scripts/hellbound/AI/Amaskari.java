@@ -18,9 +18,6 @@
  */
 package hellbound.AI;
 
-import hellbound.HellboundEngine;
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
@@ -30,6 +27,9 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
+
+import ai.npc.AbstractNpcAI;
+import hellbound.HellboundEngine;
 
 /**
  * Manages Amaskari's and minions' chat and some skill usage.
@@ -82,7 +82,7 @@ public final class Amaskari extends AbstractNpcAI
 			((L2MonsterInstance) npc).clearAggroList();
 			((L2MonsterInstance) npc).getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 			npc.setIsInvul(false);
-			// npc.doCast(INVINCIBILITY.getSkill())
+			// npc.doCast(INVINCIBILITY)
 		}
 		else if (event.equalsIgnoreCase("onspawn_msg") && (npc != null) && !npc.isDead())
 		{
@@ -137,16 +137,16 @@ public final class Amaskari extends AbstractNpcAI
 					master.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 					if (info == null)
 					{
-						master.doCast(BUFF[0].getSkill());
+						master.doCast(BUFF[0]);
 					}
 					else if (info.getSkill().getAbnormalLvl() < 3)
 					{
-						master.doCast(BUFF[info.getSkill().getAbnormalLvl()].getSkill());
+						master.doCast(BUFF[info.getSkill().getAbnormalLvl()]);
 					}
 					else
 					{
 						broadcastNpcSay(master, Say2.NPC_ALL, AMASKARI_NPCSTRING_ID[3]);
-						// master.doCast(INVINCIBILITY.getSkill())
+						// master.doCast(INVINCIBILITY)
 						master.setIsInvul(true);
 						startQuestTimer("stop_toggle", 10000, master, null);
 					}

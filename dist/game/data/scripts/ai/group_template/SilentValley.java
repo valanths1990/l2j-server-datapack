@@ -36,7 +36,7 @@ import ai.npc.AbstractNpcAI;
 public final class SilentValley extends AbstractNpcAI
 {
 	// Skills
-	private static final SkillHolder BETRAYAL = new SkillHolder(6033, 1); // Treasure Seeker's Betrayal
+	private static final SkillHolder BETRAYAL = new SkillHolder(6033); // Treasure Seeker's Betrayal
 	private static final SkillHolder BLAZE = new SkillHolder(4157, 10); // NPC Blaze - Magic
 	// Item
 	private static final int SACK = 13799; // Treasure Sack of the Ancient Giants
@@ -106,7 +106,7 @@ public final class SilentValley extends AbstractNpcAI
 					npc.setScriptValue(1);
 					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.YOU_WILL_BE_CURSED_FOR_SEEKING_THE_TREASURE);
 					npc.setTarget(player);
-					npc.doCast(BETRAYAL.getSkill());
+					npc.doCast(BETRAYAL);
 				}
 				else if (isSummon || (getRandom(100) < CHEST_DIE_CHANCE))
 				{
@@ -121,7 +121,7 @@ public final class SilentValley extends AbstractNpcAI
 			case GUARD2:
 			{
 				npc.setTarget(player);
-				npc.doCast(BLAZE.getSkill());
+				npc.doCast(BLAZE);
 				addAttackDesire(npc, player);
 				break;
 			}
@@ -159,7 +159,7 @@ public final class SilentValley extends AbstractNpcAI
 			if ((npc.getId() == GUARD1) || (npc.getId() == GUARD2))
 			{
 				npc.setTarget(player);
-				npc.doCast(BLAZE.getSkill());
+				npc.doCast(BLAZE);
 				addAttackDesire(npc, player);
 			}
 			else if (creature.isAffectedBySkill(BETRAYAL.getSkillId()))

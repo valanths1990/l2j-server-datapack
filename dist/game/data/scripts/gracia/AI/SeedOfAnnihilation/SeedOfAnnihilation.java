@@ -22,18 +22,18 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-import ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
 import com.l2jserver.gameserver.model.zone.type.L2EffectZone;
 import com.l2jserver.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Seed Of Annihilation AI.
@@ -43,6 +43,10 @@ public class SeedOfAnnihilation extends AbstractNpcAI
 {
 	private static final Map<Integer, Location> TELEPORT_ZONES = new HashMap<>();
 	private static final int ANNIHILATION_FURNACE = 18928;
+	
+	// Skills
+	private static final SkillHolder SOUL_WEAKNESS = new SkillHolder(6408);
+	private static final SkillHolder TREYKAN_TRANSFORMATION = new SkillHolder(6649);
 	
 	// Strength, Agility, Wisdom
 	private static final int[] ZONE_BUFFS =
@@ -322,15 +326,15 @@ public class SeedOfAnnihilation extends AbstractNpcAI
 		}
 		else if (event.equalsIgnoreCase("transform"))
 		{
-			if (player.isAffectedBySkill(6408))
+			if (player.isAffectedBySkill(SOUL_WEAKNESS.getSkillId()))
 			{
 				npc.showChatWindow(player, 2);
 			}
 			else
 			{
 				npc.setTarget(player);
-				npc.doCast(SkillData.getInstance().getSkill(6408, 1));
-				npc.doCast(SkillData.getInstance().getSkill(6649, 1));
+				npc.doCast(SOUL_WEAKNESS);
+				npc.doCast(TREYKAN_TRANSFORMATION);
 				npc.showChatWindow(player, 1);
 			}
 		}

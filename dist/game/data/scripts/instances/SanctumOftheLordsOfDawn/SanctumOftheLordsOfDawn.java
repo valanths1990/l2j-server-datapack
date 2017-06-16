@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2016 L2J DataPack
+ * Copyright (C) 2004-2017 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,14 +18,10 @@
  */
 package instances.SanctumOftheLordsOfDawn;
 
-import instances.AbstractInstance;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import quests.Q00195_SevenSignsSecretRitualOfThePriests.Q00195_SevenSignsSecretRitualOfThePriests;
 
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.L2World;
@@ -40,13 +36,16 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
 
+import instances.AbstractInstance;
+import quests.Q00195_SevenSignsSecretRitualOfThePriests.Q00195_SevenSignsSecretRitualOfThePriests;
+
 /**
  * Sanctum of the Lords of Dawn instance zone.
  * @author Adry_85
  */
 public final class SanctumOftheLordsOfDawn extends AbstractInstance
 {
-	protected static final class HSWorld extends InstanceWorld
+	protected static final class SotLoDWorld extends InstanceWorld
 	{
 		protected int doorst = 0;
 		protected final static Map<Integer, List<L2Npc>> _save_point = new HashMap<>();
@@ -69,7 +68,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 	// Item
 	private static final int IDENTITY_CARD = 13822;
 	// Skill
-	private static SkillHolder GUARD_SKILL = new SkillHolder(5978, 1);
+	private static final SkillHolder GUARD_SKILL = new SkillHolder(5978);
 	// Locations
 	private static final Location ENTER = new Location(-76161, 213401, -7120, 0, 0);
 	private static final Location EXIT = new Location(-12585, 122305, -2989, 0, 0);
@@ -102,9 +101,9 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 			case "spawn":
 			{
 				final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
-				if (tmpworld instanceof HSWorld)
+				if (tmpworld instanceof SotLoDWorld)
 				{
-					final HSWorld world = (HSWorld) tmpworld;
+					final SotLoDWorld world = (SotLoDWorld) tmpworld;
 					spawnGroup("high_priest_of_dawn", world.getInstanceId());
 					player.sendPacket(SystemMessageId.BY_USING_THE_SKILL_OF_EINHASAD_S_HOLY_SWORD_DEFEAT_THE_EVIL_LILIMS);
 				}
@@ -131,7 +130,8 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 					}
 				}
 				
-				OUTTER: for (Entry<Integer, List<L2Npc>> entry : HSWorld._save_point.entrySet())
+				OUTTER:
+				for (Entry<Integer, List<L2Npc>> entry : SotLoDWorld._save_point.entrySet())
 				{
 					for (L2Npc monster : entry.getValue())
 					{
@@ -153,7 +153,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 		if (firstEntrance)
 		{
 			world.addAllowed(player.getObjectId());
-			final Map<Integer, List<L2Npc>> save_point = HSWorld.getMonsters();
+			final Map<Integer, List<L2Npc>> save_point = SotLoDWorld.getMonsters();
 			save_point.put(0, spawnGroup("save_point1", world.getInstanceId()));
 			save_point.put(1, spawnGroup("save_point2", world.getInstanceId()));
 			save_point.put(2, spawnGroup("save_point3", world.getInstanceId()));
@@ -172,7 +172,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 				final QuestState qs = talker.getQuestState(Q00195_SevenSignsSecretRitualOfThePriests.class.getSimpleName());
 				if ((qs != null) && qs.isCond(3) && hasQuestItems(talker, IDENTITY_CARD) && (talker.getTransformationId() == 113))
 				{
-					enterInstance(talker, new HSWorld(), "SanctumoftheLordsofDawn.xml", TEMPLATE_ID);
+					enterInstance(talker, new SotLoDWorld(), "SanctumoftheLordsofDawn.xml", TEMPLATE_ID);
 					return "32575-01.html";
 				}
 				return "32575-02.html";
@@ -180,11 +180,11 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 			case IDENTITY_CONFIRM_DEVICE:
 			{
 				final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-				if (tmpworld instanceof HSWorld)
+				if (tmpworld instanceof SotLoDWorld)
 				{
 					if (hasQuestItems(talker, IDENTITY_CARD) && (talker.getTransformationId() == 113))
 					{
-						final HSWorld world = (HSWorld) tmpworld;
+						final SotLoDWorld world = (SotLoDWorld) tmpworld;
 						if (world.doorst == 0)
 						{
 							openDoor(DOOR_ONE, world.getInstanceId());
@@ -218,9 +218,9 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 			case PASSWORD_ENTRY_DEVICE:
 			{
 				final InstanceWorld tmworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-				if (tmworld instanceof HSWorld)
+				if (tmworld instanceof SotLoDWorld)
 				{
-					final HSWorld world = (HSWorld) tmworld;
+					final SotLoDWorld world = (SotLoDWorld) tmworld;
 					openDoor(DOOR_THREE, world.getInstanceId());
 					return "32577-01.html";
 				}

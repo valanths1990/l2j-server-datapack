@@ -18,13 +18,13 @@
  */
 package quests.Q10294_SevenSignsToTheMonasteryOfSilence;
 
-import quests.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
+
+import quests.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom;
 
 /**
  * Seven Signs, To the Monastery of Silence (10294)
@@ -67,21 +67,21 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	// Buffs
-	private static final SkillHolder VAMPIRIC_RAGE = new SkillHolder(6727, 1);
-	private static final SkillHolder RESIST_HOLY = new SkillHolder(6729, 1);
+	private static final SkillHolder VAMPIRIC_RAGE = new SkillHolder(6727);
+	private static final SkillHolder RESIST_HOLY = new SkillHolder(6729);
 	private static final SkillHolder[] MAGE_BUFFS =
 	{
-		new SkillHolder(6714, 1), // Wind Walk of Elcadia
-		new SkillHolder(6721, 1), // Empower of Elcadia
-		new SkillHolder(6722, 1), // Acumen of Elcadia
-		new SkillHolder(6717, 1), // Berserker Spirit of Elcadia
+		new SkillHolder(6714), // Wind Walk of Elcadia
+		new SkillHolder(6721), // Empower of Elcadia
+		new SkillHolder(6722), // Acumen of Elcadia
+		new SkillHolder(6717), // Berserker Spirit of Elcadia
 	};
 	private static final SkillHolder[] WARRIOR_BUFFS =
 	{
-		new SkillHolder(6714, 1), // Wind Walk of Elcadia
-		new SkillHolder(6715, 1), // Haste of Elcadia
-		new SkillHolder(6716, 1), // Might of Elcadia
-		new SkillHolder(6717, 1), // Berserker Spirit of Elcadia
+		new SkillHolder(6714), // Wind Walk of Elcadia
+		new SkillHolder(6715), // Haste of Elcadia
+		new SkillHolder(6716), // Might of Elcadia
+		new SkillHolder(6717), // Berserker Spirit of Elcadia
 	};
 	
 	public Q10294_SevenSignsToTheMonasteryOfSilence()
@@ -195,14 +195,14 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 				{
 					for (SkillHolder skill : MAGE_BUFFS)
 					{
-						npc.doSimultaneousCast(skill.getSkill());
+						npc.doSimultaneousCast(skill);
 					}
 				}
 				else
 				{
 					for (SkillHolder skill : WARRIOR_BUFFS)
 					{
-						npc.doSimultaneousCast(skill.getSkill());
+						npc.doSimultaneousCast(skill);
 					}
 				}
 				break;
@@ -224,7 +224,7 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 				qs.set("good2", "1");
 				npc.setDisplayEffect(1);
 				npc.setTarget(player);
-				npc.doCast(VAMPIRIC_RAGE.getSkill());
+				npc.doCast(VAMPIRIC_RAGE);
 				htmltext = "32821-02.html";
 				if (hasCheckedAllRightBooks(qs))
 				{
@@ -238,7 +238,7 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 				npc.setDisplayEffect(1);
 				final L2Npc jude = addSpawn(JUDE_VAN_ETINA, 85783, -253471, -8320, 65, false, 0, false, player.getInstanceId());
 				jude.setTarget(player);
-				jude.doCast(RESIST_HOLY.getSkill());
+				jude.doCast(RESIST_HOLY);
 				htmltext = "32821-02.html";
 				if (hasCheckedAllRightBooks(qs))
 				{
@@ -252,7 +252,7 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 				npc.setDisplayEffect(1);
 				final L2Npc solina = addSpawn(SOLINAS_EVIL_THOUGHTS, 85793, -247581, -8320, 0, false, 0, false, player.getInstanceId());
 				solina.setTarget(player);
-				solina.doCast(RESIST_HOLY.getSkill());
+				solina.doCast(RESIST_HOLY);
 				htmltext = "32821-02.html";
 				if (hasCheckedAllRightBooks(qs))
 				{

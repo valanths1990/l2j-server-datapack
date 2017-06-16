@@ -18,15 +18,15 @@
  */
 package quests.Q00242_PossessorOfAPreciousSoul2;
 
-import quests.Q00241_PossessorOfAPreciousSoul1.Q00241_PossessorOfAPreciousSoul1;
-
-import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00241_PossessorOfAPreciousSoul1.Q00241_PossessorOfAPreciousSoul1;
 
 /**
  * Possessor Of A PreciousSoul part 2 (242)<br>
@@ -55,6 +55,8 @@ public class Q00242_PossessorOfAPreciousSoul2 extends Quest
 	private static final int CARADINE_LETTER = 7678;
 	// Rewards
 	private static final int CHANCE_FOR_HAIR = 20;
+	// Skill
+	private static final SkillHolder QUEST_COMMUNE_TO_SLATE = new SkillHolder(4546);
 	
 	public Q00242_PossessorOfAPreciousSoul2()
 	{
@@ -319,7 +321,7 @@ public class Q00242_PossessorOfAPreciousSoul2 extends Quest
 						}
 						st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						npc.setTarget(player);
-						npc.doCast(SkillData.getInstance().getSkill(4546, 1));
+						npc.doCast(QUEST_COMMUNE_TO_SLATE);
 					}
 					else
 					{

@@ -18,12 +18,8 @@
  */
 package instances.PailakaDevilsLegacy;
 
-import instances.AbstractInstance;
-
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-
-import quests.Q00129_PailakaDevilsLegacy.Q00129_PailakaDevilsLegacy;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
@@ -36,6 +32,9 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
+
+import instances.AbstractInstance;
+import quests.Q00129_PailakaDevilsLegacy.Q00129_PailakaDevilsLegacy;
 
 /**
  * Pailaka Devil's Legacy Instance zone.
@@ -64,9 +63,9 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	private static final int DEFENCE_POTION = 13059; // Long-Range Defense Increasing Potion
 	private static final int HEALING_POTION = 13033; // Quick Healing Potion
 	// Skills
-	private static final SkillHolder ENERGY = new SkillHolder(5712, 1); // Energy Ditch
-	private static final SkillHolder BOOM = new SkillHolder(5714, 1); // Boom Up
-	private static final SkillHolder AV_TELEPORT = new SkillHolder(4671, 1); // AV - Teleport
+	private static final SkillHolder ENERGY = new SkillHolder(5712); // Energy Ditch
+	private static final SkillHolder BOOM = new SkillHolder(5714); // Boom Up
+	private static final SkillHolder AV_TELEPORT = new SkillHolder(4671); // AV - Teleport
 	// Locations
 	private static final Location TELEPORT = new Location(76427, -219045, -3780);
 	private static final Location LEMATAN_SPAWN = new Location(88108, -209252, -3744, 6425);
@@ -132,7 +131,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 						for (L2Attackable follower : world._followerslist)
 						{
 							follower.setTarget(world._lematanNpc);
-							follower.doCast(ENERGY.getSkill());
+							follower.doCast(ENERGY);
 						}
 						startQuestTimer("FOLLOWER_CAST", 15000, world._lematanNpc, null);
 					}
@@ -193,7 +192,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 								monster.reduceCurrentHp(500 + getRandom(0, 200), npc, BOOM.getSkill());
 							}
 						}
-						npc.doCast(BOOM.getSkill());
+						npc.doCast(BOOM);
 						npc.setScriptValue(1);
 						startQuestTimer("DELETE", 2000, npc, null);
 					}
@@ -299,7 +298,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	{
 		if (npc.getLocation() == LEMATAN_PORT_POINT)
 		{
-			npc.doCast(AV_TELEPORT.getSkill());
+			npc.doCast(AV_TELEPORT);
 			startQuestTimer("LEMATAN_TELEPORT", 2000, npc, null);
 		}
 	}

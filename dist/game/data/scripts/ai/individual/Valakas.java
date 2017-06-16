@@ -24,7 +24,6 @@ import java.util.List;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.enums.MountType;
 import com.l2jserver.gameserver.enums.audio.Music;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
@@ -37,7 +36,6 @@ import com.l2jserver.gameserver.model.actor.instance.L2GrandBossInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
-import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.type.L2BossZone;
 import com.l2jserver.gameserver.network.serverpackets.SocialAction;
 import com.l2jserver.gameserver.network.serverpackets.SpecialCamera;
@@ -54,35 +52,39 @@ public final class Valakas extends AbstractNpcAI
 	// NPC
 	private static final int VALAKAS = 29028;
 	// Skills
-	private static final SkillHolder VALAKAS_LAVA_SKIN = new SkillHolder(4680, 1);
-	private static final int VALAKAS_REGENERATION = 4691;
+	private static final SkillHolder HINDER_STRIDER = new SkillHolder(4258);
+	private static final SkillHolder VALAKAS_LAVA_SKIN = new SkillHolder(4680);
+	private static final SkillHolder VALAKAS_REGENERATION_1 = new SkillHolder(4691);
+	private static final SkillHolder VALAKAS_REGENERATION_2 = new SkillHolder(4691, 2);
+	private static final SkillHolder VALAKAS_REGENERATION_3 = new SkillHolder(4691, 3);
+	private static final SkillHolder VALAKAS_REGENERATION_4 = new SkillHolder(4691, 4);
 	
 	private static final SkillHolder[] VALAKAS_REGULAR_SKILLS =
 	{
-		new SkillHolder(4681, 1), // Valakas Trample
-		new SkillHolder(4682, 1), // Valakas Trample
-		new SkillHolder(4683, 1), // Valakas Dragon Breath
-		new SkillHolder(4689, 1), // Valakas Fear TODO: has two levels only level one is used.
+		new SkillHolder(4681), // Valakas Trample
+		new SkillHolder(4682), // Valakas Trample
+		new SkillHolder(4683), // Valakas Dragon Breath
+		new SkillHolder(4689), // Valakas Fear TODO: has two levels only level one is used.
 	};
 	
 	private static final SkillHolder[] VALAKAS_LOWHP_SKILLS =
 	{
-		new SkillHolder(4681, 1), // Valakas Trample
-		new SkillHolder(4682, 1), // Valakas Trample
-		new SkillHolder(4683, 1), // Valakas Dragon Breath
-		new SkillHolder(4689, 1), // Valakas Fear TODO: has two levels only level one is used.
-		new SkillHolder(4690, 1), // Valakas Meteor Storm
+		new SkillHolder(4681), // Valakas Trample
+		new SkillHolder(4682), // Valakas Trample
+		new SkillHolder(4683), // Valakas Dragon Breath
+		new SkillHolder(4689), // Valakas Fear TODO: has two levels only level one is used.
+		new SkillHolder(4690), // Valakas Meteor Storm
 	};
 	
 	private static final SkillHolder[] VALAKAS_AOE_SKILLS =
 	{
-		new SkillHolder(4683, 1), // Valakas Dragon Breath
-		new SkillHolder(4684, 1), // Valakas Dragon Breath
-		new SkillHolder(4685, 1), // Valakas Tail Stomp
-		new SkillHolder(4686, 1), // Valakas Tail Stomp
-		new SkillHolder(4688, 1), // Valakas Stun
-		new SkillHolder(4689, 1), // Valakas Fear TODO: has two levels only level one is used.
-		new SkillHolder(4690, 1), // Valakas Meteor Storm
+		new SkillHolder(4683), // Valakas Dragon Breath
+		new SkillHolder(4684), // Valakas Dragon Breath
+		new SkillHolder(4685), // Valakas Tail Stomp
+		new SkillHolder(4686), // Valakas Tail Stomp
+		new SkillHolder(4688), // Valakas Stun
+		new SkillHolder(4689), // Valakas Fear TODO: has two levels only level one is used.
+		new SkillHolder(4690), // Valakas Meteor Storm
 	};
 	
 	// Locations
@@ -243,32 +245,32 @@ public final class Valakas extends AbstractNpcAI
 				}
 				
 				// Verify if "Valakas Regeneration" skill is active.
-				final BuffInfo info = npc.getEffectList().getBuffInfoBySkillId(VALAKAS_REGENERATION);
+				final BuffInfo info = npc.getEffectList().getBuffInfoBySkillId(VALAKAS_REGENERATION_1.getSkillId());
 				final int lvl = info != null ? info.getSkill().getLevel() : 0;
 				
 				// Current HPs are inferior to 25% ; apply lvl 4 of regen skill.
 				if ((npc.getCurrentHp() < (npc.getMaxHp() / 4)) && (lvl != 4))
 				{
 					npc.setTarget(npc);
-					npc.doCast(SkillData.getInstance().getSkill(VALAKAS_REGENERATION, 4));
+					npc.doCast(VALAKAS_REGENERATION_4);
 				}
 				// Current HPs are inferior to 50% ; apply lvl 3 of regen skill.
 				else if ((npc.getCurrentHp() < ((npc.getMaxHp() * 2) / 4.0)) && (lvl != 3))
 				{
 					npc.setTarget(npc);
-					npc.doCast(SkillData.getInstance().getSkill(VALAKAS_REGENERATION, 3));
+					npc.doCast(VALAKAS_REGENERATION_3);
 				}
 				// Current HPs are inferior to 75% ; apply lvl 2 of regen skill.
 				else if ((npc.getCurrentHp() < ((npc.getMaxHp() * 3) / 4.0)) && (lvl != 2))
 				{
 					npc.setTarget(npc);
-					npc.doCast(SkillData.getInstance().getSkill(VALAKAS_REGENERATION, 2));
+					npc.doCast(VALAKAS_REGENERATION_2);
 				}
 				// Apply lvl 1.
 				else if (lvl != 1)
 				{
 					npc.setTarget(npc);
-					npc.doCast(SkillData.getInstance().getSkill(VALAKAS_REGENERATION, 1));
+					npc.doCast(VALAKAS_REGENERATION_1);
 				}
 			}
 			// Spawn cinematic, regen_task and choose of skill.
@@ -407,11 +409,10 @@ public final class Valakas extends AbstractNpcAI
 		// Debuff strider-mounted players.
 		if (attacker.getMountType() == MountType.STRIDER)
 		{
-			final Skill skill = SkillData.getInstance().getSkill(4258, 1);
-			if (!attacker.isAffectedBySkill(4258))
+			if (!attacker.isAffectedBySkill(HINDER_STRIDER.getSkillId()))
 			{
 				npc.setTarget(attacker);
-				npc.doCast(skill);
+				npc.doCast(HINDER_STRIDER);
 			}
 		}
 		_timeTracker = System.currentTimeMillis();
@@ -492,10 +493,10 @@ public final class Valakas extends AbstractNpcAI
 			return;
 		}
 		
-		final Skill skill = getRandomSkill(npc).getSkill();
+		final SkillHolder skill = getRandomSkill(npc);
 		
 		// Cast the skill or follow the target.
-		if (Util.checkIfInRange((skill.getCastRange() < 600) ? 600 : skill.getCastRange(), npc, _actualVictim, true))
+		if (Util.checkIfInRange((skill.getSkill().getCastRange() < 600) ? 600 : skill.getSkill().getCastRange(), npc, _actualVictim, true))
 		{
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			npc.setIsCastingNow(true);

@@ -18,9 +18,6 @@
  */
 package instances.IceQueensCastle;
 
-import instances.AbstractInstance;
-import quests.Q10285_MeetingSirra.Q10285_MeetingSirra;
-
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
@@ -35,6 +32,9 @@ import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
+
+import instances.AbstractInstance;
+import quests.Q10285_MeetingSirra.Q10285_MeetingSirra;
 
 /**
  * Ice Queen's Castle instance zone.
@@ -59,7 +59,7 @@ public final class IceQueensCastle extends AbstractInstance
 	private static final Location EXIT_LOC = new Location(113883, -108777, -848, 0, 0);
 	private static final Location FREYA_LOC = new Location(114730, -114805, -11200, 50, 0);
 	// Skill
-	private static SkillHolder ETHERNAL_BLIZZARD = new SkillHolder(6276, 1);
+	private static final SkillHolder ETHERNAL_BLIZZARD = new SkillHolder(6276);
 	// Misc
 	private static final int TEMPLATE_ID = 137;
 	private static final int ICE_QUEEN_DOOR = 23140101;
@@ -107,7 +107,7 @@ public final class IceQueensCastle extends AbstractInstance
 				broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.I_CAN_NO_LONGER_STAND_BY);
 				npc.stopMove(null);
 				npc.setTarget(player);
-				npc.doCast(ETHERNAL_BLIZZARD.getSkill());
+				npc.doCast(ETHERNAL_BLIZZARD);
 				break;
 			}
 			case "TIMER_SCENE_21":

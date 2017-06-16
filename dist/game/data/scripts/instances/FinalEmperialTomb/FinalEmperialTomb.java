@@ -651,7 +651,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 							world.activeScarlet.abortCast();
 						}
 						handleReenterTime(world);
-						world.activeScarlet.doCast(FIRST_MORPH_SKILL.getSkill());
+						world.activeScarlet.doCast(FIRST_MORPH_SKILL);
 						ThreadPoolManager.getInstance().scheduleGeneral(new SongTask(world, 2), 1500);
 						break;
 					case 4: // second morph
@@ -1084,7 +1084,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 					_world.activeScarlet.setIsImmobilized(false);
 					_world.activeScarlet.enableAllSkills();
 					_world.activeScarlet.setRunning();
-					_world.activeScarlet.doCast(INTRO_SKILL.getSkill());
+					_world.activeScarlet.doCast(INTRO_SKILL);
 					_world.frintezza.enableAllSkills();
 					_world.frintezza.disableCoreAI(true);
 					_world.frintezza.setIsMortal(false);

@@ -78,8 +78,8 @@ public final class DragonValley extends AbstractNpcAI
 	private static final int GREATER_HERB_OF_MANA = 8604;
 	private static final int SUPERIOR_HERB_OF_MANA = 8605;
 	// Skills
-	private static final SkillHolder SELF_DESTRUCTION = new SkillHolder(6850, 1);
-	private static final SkillHolder MORALE_BOOST1 = new SkillHolder(6885, 1);
+	private static final SkillHolder SELF_DESTRUCTION = new SkillHolder(6850);
+	private static final SkillHolder MORALE_BOOST1 = new SkillHolder(6885);
 	private static final SkillHolder MORALE_BOOST2 = new SkillHolder(6885, 2);
 	private static final SkillHolder MORALE_BOOST3 = new SkillHolder(6885, 3);
 	// Misc
@@ -149,7 +149,7 @@ public final class DragonValley extends AbstractNpcAI
 			if ((playable != null) && (npc.calculateDistance(playable, true, false) < 250))
 			{
 				npc.disableCoreAI(true);
-				npc.doCast(SELF_DESTRUCTION.getSkill());
+				npc.doCast(SELF_DESTRUCTION);
 			}
 			else if (playable != null)
 			{

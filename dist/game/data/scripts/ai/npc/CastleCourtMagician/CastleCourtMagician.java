@@ -47,7 +47,7 @@ public final class CastleCourtMagician extends AbstractNpcAI
 	};
 	// Skills
 	private static final int CLAN_GATE = 3632; // Clan Gate
-	private static final SkillHolder DISPLAY_CLAN_GATE = new SkillHolder(5109, 1); // Production - Clan Gate
+	private static final SkillHolder DISPLAY_CLAN_GATE = new SkillHolder(5109); // Production - Clan Gate
 	// Items
 	private static final int EPAULETTE = 9912; // Knight's Epaulette
 	private static final int RED_MEDITATION = 9931; // Red Talisman of Meditation
@@ -270,7 +270,7 @@ public final class CastleCourtMagician extends AbstractNpcAI
 						if (clanLeader.canSummonTarget(player)) // TODO: Custom one, retail dont check it but for sure lets check same conditions like when summon player by skill.
 						{
 							npc.setTarget(player);
-							npc.doCast(DISPLAY_CLAN_GATE.getSkill());
+							npc.doCast(DISPLAY_CLAN_GATE);
 							player.teleToLocation(clanLeader.getLocation(), true);
 						}
 					}

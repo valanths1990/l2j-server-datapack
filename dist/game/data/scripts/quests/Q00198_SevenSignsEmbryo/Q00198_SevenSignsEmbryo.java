@@ -18,8 +18,6 @@
  */
 package quests.Q00198_SevenSignsEmbryo;
 
-import quests.Q00197_SevenSignsTheSacredBookOfSeal.Q00197_SevenSignsTheSacredBookOfSeal;
-
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
@@ -32,6 +30,8 @@ import com.l2jserver.gameserver.model.quest.State;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
+
+import quests.Q00197_SevenSignsTheSacredBookOfSeal.Q00197_SevenSignsTheSacredBookOfSeal;
 
 /**
  * Seven Signs, Embryo (198)
@@ -51,7 +51,7 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 	private static final int MIN_LEVEL = 79;
 	private boolean isBusy = false;
 	// Skill
-	private static SkillHolder NPC_HEAL = new SkillHolder(4065, 8);
+	private static final SkillHolder NPC_HEAL = new SkillHolder(4065, 8);
 	
 	public Q00198_SevenSignsEmbryo()
 	{
@@ -130,7 +130,7 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 				else if (!player.isDead())
 				{
 					npc.setTarget(player);
-					npc.doCast(NPC_HEAL.getSkill());
+					npc.doCast(NPC_HEAL);
 				}
 				startQuestTimer("heal", 30000 - getRandom(20000), npc, player);
 				break;

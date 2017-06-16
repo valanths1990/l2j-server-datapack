@@ -48,7 +48,7 @@ public final class Sailren extends AbstractNpcAI
 	// Item
 	private static final int GAZKH = 8784; // Gazkh
 	// Skill
-	private static final SkillHolder ANIMATION = new SkillHolder(5090, 1);
+	private static final SkillHolder ANIMATION = new SkillHolder(5090);
 	// Zone
 	private static final L2NoRestartZone zone = ZoneManager.getInstance().getZoneById(70049, L2NoRestartZone.class);
 	// Misc
@@ -166,7 +166,7 @@ public final class Sailren extends AbstractNpcAI
 				if (npc != null)
 				{
 					npc.setTarget(npc);
-					npc.doCast(ANIMATION.getSkill());
+					npc.doCast(ANIMATION);
 					startQuestTimer("ANIMATION", 2000, npc, null);
 				}
 				break;

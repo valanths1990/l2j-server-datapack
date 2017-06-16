@@ -78,8 +78,8 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 		7215, // Mark of Ketra's Alliance - Level 5
 	};
 	// Skills
-	private static SkillHolder GOW = new SkillHolder(4547, 1); // Gaze of Watcher
-	private static SkillHolder DISPEL_GOW = new SkillHolder(4548, 1); // Quest - Dispel Watcher Gaze
+	private static final SkillHolder GOW = new SkillHolder(4547); // Gaze of Watcher
+	private static final SkillHolder DISPEL_GOW = new SkillHolder(4548); // Quest - Dispel Watcher Gaze
 	// Misc
 	private static final int MIN_LEVEL = 74;
 	
@@ -144,7 +144,7 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 		{
 			st.set("spawned", "1");
 			npc.setTarget(attacker);
-			npc.doCast(GOW.getSkill());
+			npc.doCast(GOW);
 			final L2Npc eye = addSpawn(UDANS_EYE, npc);
 			eye.broadcastPacket(new NpcSay(eye, Say2.NPC_ALL, NpcStringId.YOU_CANT_AVOID_THE_EYES_OF_UDAN));
 			startQuestTimer("eye_despawn", 10000, eye, attacker);
@@ -192,7 +192,7 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 							{
 								st.unset("spawned");
 								npc.setTarget(player);
-								npc.doCast(DISPEL_GOW.getSkill());
+								npc.doCast(DISPEL_GOW);
 								htmltext = "31372-03.html";
 							}
 							else

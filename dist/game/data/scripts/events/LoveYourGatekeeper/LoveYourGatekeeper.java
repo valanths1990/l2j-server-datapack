@@ -37,7 +37,7 @@ public final class LoveYourGatekeeper extends LongTimeEvent
 	// Item
 	private static final int GATEKEEPER_TRANSFORMATION_STICK = 12814;
 	// Skills
-	private static SkillHolder TELEPORTER_TRANSFORM = new SkillHolder(5655, 1);
+	private static final SkillHolder TELEPORTER_TRANSFORM = new SkillHolder(5655);
 	// Misc
 	private static final int HOURS = 24;
 	private static final int PRICE = 10000;
@@ -89,7 +89,7 @@ public final class LoveYourGatekeeper extends LongTimeEvent
 			{
 				if (!player.isTransformed())
 				{
-					player.doCast(TELEPORTER_TRANSFORM.getSkill());
+					player.doCast(TELEPORTER_TRANSFORM);
 				}
 				return null;
 			}
