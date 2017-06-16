@@ -68,7 +68,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 		736, // Scroll of Escape
 	};
 	// Skills
-	private static SkillHolder VITALITY_REPLENISHING = new SkillHolder(5774, 1);
+	private static final SkillHolder VITALITY_REPLENISHING = new SkillHolder(5774);
 	// Misc
 	private static final int MIN_LEVEL = 36;
 	private static final int MAX_LEVEL = 42;
@@ -165,7 +165,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 				if (inst.containsPlayer(player.getObjectId()))
 				{
 					npc.setTarget(player);
-					npc.doCast(VITALITY_REPLENISHING.getSkill());
+					npc.doCast(VITALITY_REPLENISHING);
 					addExpAndSp(player, 810000, 50000);
 					for (int id : REWARDS)
 					{

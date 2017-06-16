@@ -39,39 +39,39 @@ public final class GiftOfVitality extends LongTimeEvent
 	
 	private static SkillHolder[] FIGHTER_SKILLS =
 	{
-		new SkillHolder(5627, 1), // Wind Walk
-		new SkillHolder(5628, 1), // Shield
-		new SkillHolder(5637, 1), // Magic Barrier
-		new SkillHolder(5629, 1), // Bless the Body
-		new SkillHolder(5630, 1), // Vampiric Rage
-		new SkillHolder(5631, 1), // Regeneration
-		new SkillHolder(5632, 1), // Haste
+		new SkillHolder(5627), // Wind Walk
+		new SkillHolder(5628), // Shield
+		new SkillHolder(5637), // Magic Barrier
+		new SkillHolder(5629), // Bless the Body
+		new SkillHolder(5630), // Vampiric Rage
+		new SkillHolder(5631), // Regeneration
+		new SkillHolder(5632), // Haste
 	};
 	
 	private static SkillHolder[] MAGE_SKILLS =
 	{
-		new SkillHolder(5627, 1), // Wind Walk
-		new SkillHolder(5628, 1), // Shield
-		new SkillHolder(5637, 1), // Magic Barrier
-		new SkillHolder(5633, 1), // Bless the Soul
-		new SkillHolder(5634, 1), // Acumen
-		new SkillHolder(5635, 1), // Concentration
-		new SkillHolder(5636, 1), // Empower
+		new SkillHolder(5627), // Wind Walk
+		new SkillHolder(5628), // Shield
+		new SkillHolder(5637), // Magic Barrier
+		new SkillHolder(5633), // Bless the Soul
+		new SkillHolder(5634), // Acumen
+		new SkillHolder(5635), // Concentration
+		new SkillHolder(5636), // Empower
 	};
 	
 	private static SkillHolder[] SERVITOR_SKILLS =
 	{
-		new SkillHolder(5627, 1), // Wind Walk
-		new SkillHolder(5628, 1), // Shield
-		new SkillHolder(5637, 1), // Magic Barrier
-		new SkillHolder(5629, 1), // Bless the Body
-		new SkillHolder(5633, 1), // Bless the Soul
-		new SkillHolder(5630, 1), // Vampiric Rage
-		new SkillHolder(5634, 1), // Acumen
-		new SkillHolder(5631, 1), // Regeneration
-		new SkillHolder(5635, 1), // Concentration
-		new SkillHolder(5632, 1), // Haste
-		new SkillHolder(5636, 1), // Empower
+		new SkillHolder(5627), // Wind Walk
+		new SkillHolder(5628), // Shield
+		new SkillHolder(5637), // Magic Barrier
+		new SkillHolder(5629), // Bless the Body
+		new SkillHolder(5633), // Bless the Soul
+		new SkillHolder(5630), // Vampiric Rage
+		new SkillHolder(5634), // Acumen
+		new SkillHolder(5631), // Regeneration
+		new SkillHolder(5635), // Concentration
+		new SkillHolder(5632), // Haste
+		new SkillHolder(5636), // Empower
 	};
 	
 	// Misc
@@ -110,8 +110,8 @@ public final class GiftOfVitality extends LongTimeEvent
 				}
 				else
 				{
-					player.doCast(GIFT_OF_VITALITY.getSkill());
-					player.doSimultaneousCast(JOY_OF_VITALITY.getSkill());
+					player.doCast(GIFT_OF_VITALITY);
+					player.doSimultaneousCast(JOY_OF_VITALITY);
 					player.getVariables().set(REUSE, System.currentTimeMillis() + (HOURS * 3600000));
 					htmltext = "4306-okvitality.htm";
 				}
@@ -129,7 +129,7 @@ public final class GiftOfVitality extends LongTimeEvent
 					npc.setTarget(player);
 					for (SkillHolder sk : skills)
 					{
-						npc.doCast(sk.getSkill());
+						npc.doCast(sk);
 					}
 					htmltext = "4306-okbuff.htm";
 				}
@@ -150,7 +150,7 @@ public final class GiftOfVitality extends LongTimeEvent
 					npc.setTarget(player.getSummon());
 					for (SkillHolder sk : SERVITOR_SKILLS)
 					{
-						npc.doCast(sk.getSkill());
+						npc.doCast(sk);
 					}
 					htmltext = "4306-okbuff.htm";
 				}

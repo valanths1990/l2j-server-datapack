@@ -18,8 +18,6 @@
  */
 package quests.Q00194_SevenSignsMammonsContract;
 
-import quests.Q00193_SevenSignsDyingMessage.Q00193_SevenSignsDyingMessage;
-
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -27,6 +25,8 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00193_SevenSignsDyingMessage.Q00193_SevenSignsDyingMessage;
 
 /**
  * Seven Signs, Mammon's Contract (194)
@@ -49,9 +49,9 @@ public final class Q00194_SevenSignsMammonsContract extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 79;
 	// Skills
-	private static SkillHolder TRANSFORMATION_FROG = new SkillHolder(6201, 1);
-	private static SkillHolder TRANSFORMATION_KID = new SkillHolder(6202, 1);
-	private static SkillHolder TRANSFORMATION_NATIVE = new SkillHolder(6203, 1);
+	private static final SkillHolder TRANSFORMATION_FROG = new SkillHolder(6201);
+	private static final SkillHolder TRANSFORMATION_KID = new SkillHolder(6202);
+	private static final SkillHolder TRANSFORMATION_NATIVE = new SkillHolder(6203);
 	
 	public Q00194_SevenSignsMammonsContract()
 	{
@@ -131,7 +131,7 @@ public final class Q00194_SevenSignsMammonsContract extends Quest
 				{
 					st.takeItems(ATHEBALDTS_INTRODUCTION, -1);
 					npc.setTarget(player);
-					npc.doCast(TRANSFORMATION_FROG.getSkill());
+					npc.doCast(TRANSFORMATION_FROG);
 					st.setCond(4, true);
 					htmltext = event;
 				}
@@ -142,7 +142,7 @@ public final class Q00194_SevenSignsMammonsContract extends Quest
 				if (st.isCond(4) && (player.getTransformationId() != 111) && !st.hasQuestItems(FROG_KINGS_BEAD))
 				{
 					npc.setTarget(player);
-					npc.doCast(TRANSFORMATION_FROG.getSkill());
+					npc.doCast(TRANSFORMATION_FROG);
 					htmltext = event;
 				}
 				break;
@@ -175,7 +175,7 @@ public final class Q00194_SevenSignsMammonsContract extends Quest
 				if (st.isCond(6))
 				{
 					npc.setTarget(player);
-					npc.doCast(TRANSFORMATION_KID.getSkill());
+					npc.doCast(TRANSFORMATION_KID);
 					st.setCond(7, true);
 					htmltext = event;
 				}
@@ -186,7 +186,7 @@ public final class Q00194_SevenSignsMammonsContract extends Quest
 				if (st.isCond(7) && (player.getTransformationId() != 112) && !st.hasQuestItems(GRANDA_TESS_CANDY_POUCH))
 				{
 					npc.setTarget(player);
-					npc.doCast(TRANSFORMATION_KID.getSkill());
+					npc.doCast(TRANSFORMATION_KID);
 					htmltext = event;
 				}
 				break;
@@ -219,7 +219,7 @@ public final class Q00194_SevenSignsMammonsContract extends Quest
 				if (st.isCond(9))
 				{
 					npc.setTarget(player);
-					npc.doCast(TRANSFORMATION_NATIVE.getSkill());
+					npc.doCast(TRANSFORMATION_NATIVE);
 					st.setCond(10, true);
 					htmltext = event;
 				}
@@ -230,7 +230,7 @@ public final class Q00194_SevenSignsMammonsContract extends Quest
 				if (st.isCond(10) && (player.getTransformationId() != 124) && !st.hasQuestItems(NATIVES_GLOVE))
 				{
 					npc.setTarget(player);
-					npc.doCast(TRANSFORMATION_NATIVE.getSkill());
+					npc.doCast(TRANSFORMATION_NATIVE);
 					htmltext = event;
 				}
 				break;

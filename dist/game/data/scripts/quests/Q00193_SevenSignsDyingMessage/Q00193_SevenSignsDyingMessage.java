@@ -53,7 +53,7 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 	private static final int MIN_LEVEL = 79;
 	private boolean isBusy = false;
 	// Skill
-	private static SkillHolder NPC_HEAL = new SkillHolder(4065, 8);
+	private static final SkillHolder NPC_HEAL = new SkillHolder(4065, 8);
 	
 	public Q00193_SevenSignsDyingMessage()
 	{
@@ -184,7 +184,7 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 				else if (!player.isDead())
 				{
 					npc.setTarget(player);
-					npc.doCast(NPC_HEAL.getSkill());
+					npc.doCast(NPC_HEAL);
 				}
 				startQuestTimer("heal", 30000 - getRandom(20000), npc, player);
 				break;

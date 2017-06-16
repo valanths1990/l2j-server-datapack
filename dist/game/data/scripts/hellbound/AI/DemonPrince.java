@@ -21,12 +21,12 @@ package hellbound.AI;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.Skill;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Demon Prince's AI.
@@ -61,7 +61,7 @@ public final class DemonPrince extends AbstractNpcAI
 	{
 		if (event.equalsIgnoreCase("cast") && (npc != null) && (npc.getId() == FIEND) && !npc.isDead())
 		{
-			npc.doCast(AOE[getRandom(AOE.length)].getSkill());
+			npc.doCast(AOE[getRandom(AOE.length)]);
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
@@ -73,13 +73,13 @@ public final class DemonPrince extends AbstractNpcAI
 		{
 			if (!ATTACK_STATE.containsKey(npc.getObjectId()) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.5)))
 			{
-				npc.doCast(UD.getSkill());
+				npc.doCast(UD);
 				spawnMinions(npc);
 				ATTACK_STATE.put(npc.getObjectId(), false);
 			}
 			else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.1)) && ATTACK_STATE.containsKey(npc.getObjectId()) && (ATTACK_STATE.get(npc.getObjectId()) == false))
 			{
-				npc.doCast(UD.getSkill());
+				npc.doCast(UD);
 				spawnMinions(npc);
 				ATTACK_STATE.put(npc.getObjectId(), true);
 			}

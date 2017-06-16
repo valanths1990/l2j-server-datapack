@@ -70,8 +70,8 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 	private static final int ALLIANCE_MANIFESTO = 3874;
 	private static final int POTION_OF_RECOVERY = 3889;
 	// Skills
-	private static final SkillHolder POISON_OF_DEATH = new SkillHolder(4082, 1);
-	private static final SkillHolder DIE_YOU_FOOL = new SkillHolder(4083, 1);
+	private static final SkillHolder POISON_OF_DEATH = new SkillHolder(4082);
+	private static final SkillHolder DIE_YOU_FOOL = new SkillHolder(4083);
 	// Locations
 	// @formatter:off
 	private static final List<Location> LOCS = Arrays.asList(
@@ -153,7 +153,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 				else
 				{
 					npc.setTarget(player);
-					npc.doCast(DIE_YOU_FOOL.getSkill());
+					npc.doCast(DIE_YOU_FOOL);
 					startQuestTimer("SYMBOL_OF_LOYALTY", 4000, npc, player);
 					htmltext = "30757-03.html";
 				}
@@ -217,7 +217,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 					takeItems(player, SYMBOL_OF_LOYALTY, -1);
 					giveItems(player, ANTIDOTE_RECIPE_LIST, 1);
 					npc.setTarget(player);
-					npc.doCast(POISON_OF_DEATH.getSkill());
+					npc.doCast(POISON_OF_DEATH);
 					qs.setCond(3, true);
 					qs.setMemoState(3);
 					htmltext = event;

@@ -54,7 +54,7 @@ public final class Q00365_DevilsLegacy extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 39;
 	// Skill
-	private static SkillHolder POISON = new SkillHolder(4035, 2);
+	private static final SkillHolder POISON = new SkillHolder(4035, 2);
 	// Mobs
 	private static final Map<Integer, Double> MOBS = new HashMap<>();
 	static
@@ -183,7 +183,7 @@ public final class Q00365_DevilsLegacy extends Quest
 							itemId = COARSE_BONE_POWDER;
 						}
 						npc.setTarget(player);
-						npc.doCast(POISON.getSkill());
+						npc.doCast(POISON);
 						npc.setCurrentMp(npc.getMaxMp());
 						qs.setMemoState(2);
 						htmltext = "30092-06.html";

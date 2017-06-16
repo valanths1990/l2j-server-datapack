@@ -21,8 +21,6 @@ package ai.individual;
 import java.util.ArrayList;
 import java.util.Map;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
@@ -30,6 +28,8 @@ import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.quest.QuestTimer;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Anais AI.
@@ -42,7 +42,7 @@ public final class Anais extends AbstractNpcAI
 	private static final int DIVINE_BURNER = 18915;
 	private static final int GRAIL_WARD = 18929;
 	// Skill
-	private static SkillHolder DIVINE_NOVA = new SkillHolder(6326, 1);
+	private static final SkillHolder DIVINE_NOVA = new SkillHolder(6326);
 	// Instances
 	ArrayList<L2Npc> _divineBurners = new ArrayList<>(4);
 	private L2PcInstance _nextTarget = null;
@@ -118,7 +118,7 @@ public final class Anais extends AbstractNpcAI
 					final double distance = npc.calculateDistance(_nextTarget, false, false);
 					if (distance < 100)
 					{
-						npc.doCast(DIVINE_NOVA.getSkill());
+						npc.doCast(DIVINE_NOVA);
 					}
 					else if (distance > 2000)
 					{
@@ -130,7 +130,7 @@ public final class Anais extends AbstractNpcAI
 			}
 			case "SUICIDE":
 			{
-				npc.doCast(DIVINE_NOVA.getSkill());
+				npc.doCast(DIVINE_NOVA);
 				cancelQuestTimer("GUARD_ATTACK", npc, _nextTarget);
 				if (_current != null)
 				{

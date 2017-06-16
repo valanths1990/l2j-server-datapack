@@ -18,13 +18,13 @@
  */
 package hellbound.AI;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2RaidBossInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Typhoon's AI.
@@ -35,7 +35,7 @@ public final class Typhoon extends AbstractNpcAI
 	// NPCs
 	private static final int TYPHOON = 25539;
 	// Skills
-	private static SkillHolder STORM = new SkillHolder(5434, 1); // Gust
+	private static final SkillHolder STORM = new SkillHolder(5434); // Gust
 	
 	public Typhoon()
 	{
@@ -55,7 +55,7 @@ public final class Typhoon extends AbstractNpcAI
 	{
 		if (event.equalsIgnoreCase("CAST") && (npc != null) && !npc.isDead())
 		{
-			npc.doSimultaneousCast(STORM.getSkill());
+			npc.doSimultaneousCast(STORM);
 			startQuestTimer("CAST", 5000, npc, null);
 		}
 		return super.onAdvEvent(event, npc, player);
@@ -64,7 +64,7 @@ public final class Typhoon extends AbstractNpcAI
 	@Override
 	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
 	{
-		npc.doSimultaneousCast(STORM.getSkill());
+		npc.doSimultaneousCast(STORM);
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
 	

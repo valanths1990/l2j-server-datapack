@@ -57,9 +57,9 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 	private static final int TREE_OF_ABYSS = 27188;
 	private static final int SOUL_OF_TREE_GUARDIAN = 27189;
 	// Skills
-	private static final SkillHolder CURSE_OF_MIMYU = new SkillHolder(4167, 1);
+	private static final SkillHolder CURSE_OF_MIMYU = new SkillHolder(4167);
 	private static final SkillHolder DRYAD_ROOT = new SkillHolder(1201, 33);
-	private static final SkillHolder VICIOUS_POISON = new SkillHolder(4243, 1);
+	private static final SkillHolder VICIOUS_POISON = new SkillHolder(4243);
 	// Rewards
 	private static final int DRAGON_BUGLE_OF_WIND = 4422;
 	private static final int DRAGON_BUGLE_OF_STAR = 4423;
@@ -358,7 +358,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 									else
 									{
 										npc.setTarget(talker);
-										npc.doCast(CURSE_OF_MIMYU.getSkill());
+										npc.doCast(CURSE_OF_MIMYU);
 										htmltext = "30747-18.html";
 									}
 								}
@@ -394,7 +394,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 							if ((npc.getId() == TREE_OF_ABYSS) && (getRandom(100) < 2))
 							{
 								npc.setTarget(attacker);
-								npc.doCast(DRYAD_ROOT.getSkill());
+								npc.doCast(DRYAD_ROOT);
 							}
 						}
 						else if (getRandom(100) < 2)
@@ -434,13 +434,13 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 			else if (getRandom(100) < 30)
 			{
 				npc.setTarget(attacker);
-				npc.doCast(VICIOUS_POISON.getSkill());
+				npc.doCast(VICIOUS_POISON);
 			}
 		}
 		else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.67)) && (getRandom(100) < 30))
 		{
 			npc.setTarget(attacker);
-			npc.doCast(VICIOUS_POISON.getSkill());
+			npc.doCast(VICIOUS_POISON);
 		}
 		
 		return super.onAttack(npc, attacker, damage, isSummon);
@@ -459,7 +459,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 				if (i == 0)
 				{
 					npc.setTarget(killer);
-					npc.doCast(VICIOUS_POISON.getSkill());
+					npc.doCast(VICIOUS_POISON);
 				}
 				
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);

@@ -18,11 +18,11 @@
  */
 package ai.group_template;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Sandstorms AI.
@@ -33,7 +33,7 @@ public class Sandstorms extends AbstractNpcAI
 	// NPCs
 	private static final int SANDSTORM = 32350;
 	// Skills
-	private static final SkillHolder GUST = new SkillHolder(5435, 1); // Gust
+	private static final SkillHolder GUST = new SkillHolder(5435); // Gust
 	
 	public Sandstorms()
 	{
@@ -45,7 +45,7 @@ public class Sandstorms extends AbstractNpcAI
 	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		npc.setTarget(player);
-		npc.doCast(GUST.getSkill());
+		npc.doCast(GUST);
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
 	

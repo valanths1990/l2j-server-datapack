@@ -28,12 +28,9 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
-import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager.StatusEnum;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
@@ -45,6 +42,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
+import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
 import com.l2jserver.gameserver.network.NpcStringId;
@@ -52,6 +50,8 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.util.MinionList;
 import com.l2jserver.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Tully's Workshop.
@@ -81,6 +81,10 @@ public final class TullyWorkshop extends AbstractNpcAI
 	private static final int TEMENIR = 25600;
 	private static final int DRAXIUS = 25601;
 	private static final int KIRETCENAH = 25602;
+	
+	// Skills
+	private static final SkillHolder CHALLENGERS_BLESSING = new SkillHolder(5526);
+	private static final SkillHolder NPC_HEAL = new SkillHolder(4065, 11);
 	
 	// Items
 	private static final int[] REWARDS =
@@ -985,7 +989,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 					{
 						npc.setTarget(player);
 					}
-					npc.doCast(SkillData.getInstance().getSkill(5526, 1));
+					npc.doCast(CHALLENGERS_BLESSING);
 				}
 				else
 				{
@@ -1000,7 +1004,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 					for (L2PcInstance partyMember : party.getMembers())
 					{
 						npc.setTarget(partyMember);
-						npc.doCast(SkillData.getInstance().getSkill(5526, 1));
+						npc.doCast(CHALLENGERS_BLESSING);
 					}
 					startQuestTimer("despawn_agent_7", 60000, npc, null);
 				}
@@ -1157,7 +1161,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 				actor.clearAggroList();
 				actor.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 				actor.setTarget(victim);
-				actor.doCast(SkillData.getInstance().getSkill(4065, 11));
+				actor.doCast(NPC_HEAL);
 				victim.setCurrentHp(victim.getCurrentHp() + (victim.getMaxHp() * 0.03)); // FIXME: not retail, it should be done after spell is finished, but it cannot be tracked now
 			}
 		}

@@ -43,7 +43,7 @@ public class FairyTrees extends AbstractNpcAI
 	};
 	
 	// Skill
-	private static SkillHolder VENOMOUS_POISON = new SkillHolder(4243, 1); // Venomous Poison
+	private static final SkillHolder VENOMOUS_POISON = new SkillHolder(4243);
 	
 	// Misc
 	private static final int MIN_DISTANCE = 1500;
@@ -68,7 +68,7 @@ public class FairyTrees extends AbstractNpcAI
 				if (getRandomBoolean())
 				{
 					guardian.setTarget(attacker);
-					guardian.doCast(VENOMOUS_POISON.getSkill());
+					guardian.doCast(VENOMOUS_POISON);
 				}
 			}
 		}

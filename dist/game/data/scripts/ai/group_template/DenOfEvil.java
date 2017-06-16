@@ -18,20 +18,19 @@
  */
 package ai.group_template;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.skills.Skill;
+import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.zone.type.L2EffectZone;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Dummy AI for spawns/respawns only for testing.
@@ -205,8 +204,8 @@ public final class DenOfEvil extends AbstractNpcAI
 				}
 				if (character.isPlayable())
 				{
-					Skill skill = SkillData.getInstance().getSkill(6149, 1);
-					skill.applyEffects(character, character);
+					SkillHolder KASHAS_BETRAYAL = new SkillHolder(6149);
+					KASHAS_BETRAYAL.getSkill().applyEffects(character, character);
 				}
 				else
 				{

@@ -37,7 +37,7 @@ public final class SummonPc extends AbstractNpcAI
 	private static final int PORTA = 20213;
 	private static final int PERUM = 20221;
 	// Skill
-	private static final SkillHolder SUMMON_PC = new SkillHolder(4161, 1);
+	private static final SkillHolder SUMMON_PC = new SkillHolder(4161);
 	// Misc
 	private static final int MIN_DISTANCE = 300;
 	private static final int MIN_DISTANCE_MOST_HATED = 100;
@@ -100,7 +100,7 @@ public final class SummonPc extends AbstractNpcAI
 		if ((SUMMON_PC.getSkill().getMpConsume() < npc.getCurrentMp()) && (SUMMON_PC.getSkill().getHpConsume() < npc.getCurrentHp()) && !npc.isSkillDisabled(SUMMON_PC.getSkill()))
 		{
 			npc.setTarget(attacker);
-			npc.doCast(SUMMON_PC.getSkill());
+			npc.doCast(SUMMON_PC);
 			npc.getVariables().set("attacked", true);
 		}
 	}

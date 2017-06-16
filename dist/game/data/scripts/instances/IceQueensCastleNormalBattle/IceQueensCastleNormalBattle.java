@@ -378,14 +378,14 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						
 						if (world.isHardMode)
 						{
-							world.freya.doCast(RAGE_OF_ICE.getSkill());
+							world.freya.doCast(RAGE_OF_ICE);
 							startQuestTimer("FREYA_BUFF", 15000, world.controller, null);
 						}
 						break;
 					}
 					case "FREYA_BUFF":
 					{
-						world.freya.doCast(FREYAS_BLESS.getSkill());
+						world.freya.doCast(FREYAS_BLESS);
 						startQuestTimer("FREYA_BUFF", 15000, world.controller, null);
 						break;
 					}
@@ -407,7 +407,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							if (world.isHardMode && (blizzardForceCount < 4) && (world.freya.getCurrentHp() < (world.freya.getMaxHp() * (0.8 - (0.2 * blizzardForceCount)))))
 							{
 								world.controller.getVariables().set("BLIZZARD_FORCE_COUNT", blizzardForceCount + 1);
-								world.freya.doCast(ETERNAL_BLIZZARD_FORCE.getSkill());
+								world.freya.doCast(ETERNAL_BLIZZARD_FORCE);
 								manageScreenMsg(world, NpcStringId.MAGIC_POWER_SO_STRONG_THAT_IT_COULD_MAKE_YOU_LOSE_YOUR_MIND_CAN_BE_FELT_FROM_SOMEWHERE);
 							}
 							else
@@ -459,8 +459,8 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					{
 						if (world.isSupportActive)
 						{
-							world.supp_Jinia.doCast(JINIAS_PRAYER.getSkill());
-							world.supp_Kegor.doCast(KEGORS_COURAGE.getSkill());
+							world.supp_Jinia.doCast(JINIAS_PRAYER);
+							world.supp_Kegor.doCast(KEGORS_COURAGE);
 							startQuestTimer("GIVE_SUPPORT", 25000, world.controller, null);
 						}
 						break;
@@ -554,7 +554,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (npc.isScriptValue(0) && !npc.isDead())
 						{
 							npc.setTarget(npc);
-							npc.doCast(COLD_MANAS_FRAGMENT.getSkill());
+							npc.doCast(COLD_MANAS_FRAGMENT);
 							npc.setScriptValue(1);
 						}
 						break;
@@ -581,7 +581,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 								if (npc.checkDoCastConditions(BREATH_OF_ICE_PALACE.getSkill()) && !npc.isCastingNow())
 								{
 									npc.setTarget(npc);
-									npc.doCast(BREATH_OF_ICE_PALACE.getSkill());
+									npc.doCast(BREATH_OF_ICE_PALACE);
 								}
 								startQuestTimer("BLIZZARD", 20000, npc, null);
 							}
@@ -591,7 +591,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					case "ELEMENTAL_SUICIDE":
 					{
 						npc.setTarget(npc);
-						npc.doCast(SELF_DESTRUCTION.getSkill());
+						npc.doCast(SELF_DESTRUCTION);
 						break;
 					}
 					case "ELEMENTAL_KILLED":
@@ -599,7 +599,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (npc.getVariables().getInt("SUICIDE_ON") == 1)
 						{
 							npc.setTarget(npc);
-							npc.doCast(SELF_DESTRUCTION.getSkill());
+							npc.doCast(SELF_DESTRUCTION);
 						}
 						break;
 					}
@@ -611,7 +611,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							if (npc.checkDoCastConditions(skill.getSkill()) && !npc.isCastingNow())
 							{
 								npc.setTarget(world.freya);
-								npc.doCast(skill.getSkill());
+								npc.doCast(skill);
 								startQuestTimer("ATTACK_FREYA", 20000, npc, null);
 							}
 							else
@@ -648,7 +648,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (npc.checkDoCastConditions(LEADERS_ROAR.getSkill()) && !npc.isCastingNow())
 						{
 							npc.setTarget(npc);
-							npc.doCast(LEADERS_ROAR.getSkill());
+							npc.doCast(LEADERS_ROAR);
 						}
 						else
 						{
@@ -677,7 +677,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (getRandomBoolean() && !npc.isCastingNow() && (mostHated != null) && !mostHated.isDead() && (npc.calculateDistance(mostHated, true, false) < 1000))
 						{
 							npc.setTarget(mostHated);
-							npc.doCast(RUSH.getSkill());
+							npc.doCast(RUSH);
 						}
 						startQuestTimer("LEADER_DASH", 10000, npc, null);
 						break;
@@ -811,7 +811,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							if (!npc.isSkillDisabled(HINDER_STRIDER.getSkill()))
 							{
 								npc.setTarget(attacker);
-								npc.doCast(HINDER_STRIDER.getSkill());
+								npc.doCast(HINDER_STRIDER);
 							}
 						}
 						
@@ -825,7 +825,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 								if ((npc.calculateDistance(attacker, true, false) <= 800) && npc.checkDoCastConditions(ICE_BALL.getSkill()) && !npc.isCastingNow())
 								{
 									npc.setTarget(attacker);
-									npc.doCast(ICE_BALL.getSkill());
+									npc.doCast(ICE_BALL);
 								}
 							}
 							else
@@ -833,7 +833,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 								if (canReachMostHated && npc.checkDoCastConditions(ICE_BALL.getSkill()) && !npc.isCastingNow())
 								{
 									npc.setTarget(mostHated);
-									npc.doCast(ICE_BALL.getSkill());
+									npc.doCast(ICE_BALL);
 								}
 							}
 						}
@@ -844,7 +844,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 								if ((npc.calculateDistance(attacker, true, false) <= 800) && npc.checkDoCastConditions(SUMMON_SPIRITS.getSkill()) && !npc.isCastingNow())
 								{
 									npc.setTarget(attacker);
-									npc.doCast(SUMMON_SPIRITS.getSkill());
+									npc.doCast(SUMMON_SPIRITS);
 								}
 							}
 							else
@@ -852,7 +852,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 								if (canReachMostHated && npc.checkDoCastConditions(SUMMON_SPIRITS.getSkill()) && !npc.isCastingNow())
 								{
 									npc.setTarget(mostHated);
-									npc.doCast(SUMMON_SPIRITS.getSkill());
+									npc.doCast(SUMMON_SPIRITS);
 								}
 							}
 						}
@@ -861,7 +861,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							if (!npc.isAffectedBySkill(ATTACK_NEARBY_RANGE.getSkillId()) && npc.checkDoCastConditions(ATTACK_NEARBY_RANGE.getSkill()) && !npc.isCastingNow())
 							{
 								npc.setTarget(npc);
-								npc.doCast(ATTACK_NEARBY_RANGE.getSkill());
+								npc.doCast(ATTACK_NEARBY_RANGE);
 							}
 						}
 					}
@@ -896,7 +896,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (!npc.isSkillDisabled(HINDER_STRIDER.getSkill()))
 						{
 							npc.setTarget(attacker);
-							npc.doCast(HINDER_STRIDER.getSkill());
+							npc.doCast(HINDER_STRIDER);
 						}
 					}
 					
@@ -910,7 +910,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							if ((npc.calculateDistance(attacker, true, false) <= 800) && npc.checkDoCastConditions(ICE_BALL.getSkill()) && !npc.isCastingNow())
 							{
 								npc.setTarget(attacker);
-								npc.doCast(ICE_BALL.getSkill());
+								npc.doCast(ICE_BALL);
 							}
 						}
 						else
@@ -918,7 +918,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							if (canReachMostHated && npc.checkDoCastConditions(ICE_BALL.getSkill()) && !npc.isCastingNow())
 							{
 								npc.setTarget(mostHated);
-								npc.doCast(ICE_BALL.getSkill());
+								npc.doCast(ICE_BALL);
 							}
 						}
 					}
@@ -929,7 +929,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							if ((npc.calculateDistance(attacker, true, false) <= 800) && npc.checkDoCastConditions(SUMMON_SPIRITS.getSkill()) && !npc.isCastingNow())
 							{
 								npc.setTarget(attacker);
-								npc.doCast(SUMMON_SPIRITS.getSkill());
+								npc.doCast(SUMMON_SPIRITS);
 							}
 						}
 						else
@@ -937,7 +937,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							if (canReachMostHated && npc.checkDoCastConditions(SUMMON_SPIRITS.getSkill()) && !npc.isCastingNow())
 							{
 								npc.setTarget(mostHated);
-								npc.doCast(SUMMON_SPIRITS.getSkill());
+								npc.doCast(SUMMON_SPIRITS);
 							}
 						}
 					}
@@ -946,7 +946,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (!npc.isAffectedBySkill(ATTACK_NEARBY_RANGE.getSkillId()) && npc.checkDoCastConditions(ATTACK_NEARBY_RANGE.getSkill()) && !npc.isCastingNow())
 						{
 							npc.setTarget(npc);
-							npc.doCast(ATTACK_NEARBY_RANGE.getSkill());
+							npc.doCast(ATTACK_NEARBY_RANGE);
 						}
 					}
 					else if (getRandom(10000) < 1333)
@@ -954,7 +954,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (!npc.isAffectedBySkill(REFLECT_MAGIC.getSkillId()) && npc.checkDoCastConditions(REFLECT_MAGIC.getSkill()) && !npc.isCastingNow())
 						{
 							npc.setTarget(npc);
-							npc.doCast(REFLECT_MAGIC.getSkill());
+							npc.doCast(REFLECT_MAGIC);
 						}
 					}
 					break;
@@ -964,7 +964,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					if (npc.isScriptValue(0) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.5)))
 					{
 						npc.setTarget(attacker);
-						npc.doCast(COLD_MANAS_FRAGMENT.getSkill());
+						npc.doCast(COLD_MANAS_FRAGMENT);
 						npc.setScriptValue(1);
 					}
 					break;
@@ -1001,12 +1001,12 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							npc.getVariables().set("OFF_SHOUT", 1);
 							npc.getVariables().set("DELAY_VAL", 2);
 							npc.setTarget(attacker);
-							npc.doCast(NPC_CANCEL_PC_TARGET.getSkill());
+							npc.doCast(NPC_CANCEL_PC_TARGET);
 						}
 						else if (npc.getVariables().getInt("OFF_SHOUT") == 1)
 						{
 							npc.setTarget(attacker);
-							npc.doCast(NPC_CANCEL_PC_TARGET.getSkill());
+							npc.doCast(NPC_CANCEL_PC_TARGET);
 						}
 					}
 					else if ((npc.getVariables().getInt("OFF_SHOUT") == 0) && (npc.getVariables().getInt("DELAY_VAL") == 1))
@@ -1030,13 +1030,13 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 								if (npc.checkDoCastConditions(POWER_STRIKE.getSkill()) && !npc.isCastingNow())
 								{
 									npc.setTarget(attacker);
-									npc.doCast(POWER_STRIKE.getSkill());
+									npc.doCast(POWER_STRIKE);
 								}
 							}
 							else if (npc.checkDoCastConditions(POWER_STRIKE.getSkill()) && !npc.isCastingNow() && canReachMostHated)
 							{
 								npc.setTarget(((L2Attackable) npc).getMostHated());
-								npc.doCast(POWER_STRIKE.getSkill());
+								npc.doCast(POWER_STRIKE);
 							}
 						}
 						else if (getRandom(10000) < 1500)
@@ -1046,13 +1046,13 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 								if (npc.checkDoCastConditions(POINT_TARGET.getSkill()) && !npc.isCastingNow())
 								{
 									npc.setTarget(attacker);
-									npc.doCast(POINT_TARGET.getSkill());
+									npc.doCast(POINT_TARGET);
 								}
 							}
 							else if (npc.checkDoCastConditions(POINT_TARGET.getSkill()) && !npc.isCastingNow() && canReachMostHated)
 							{
 								npc.setTarget(((L2Attackable) npc).getMostHated());
-								npc.doCast(POINT_TARGET.getSkill());
+								npc.doCast(POINT_TARGET);
 							}
 						}
 						else if (getRandom(10000) < 1500)
@@ -1062,13 +1062,13 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 								if (npc.checkDoCastConditions(CYLINDER_THROW.getSkill()) && !npc.isCastingNow())
 								{
 									npc.setTarget(attacker);
-									npc.doCast(CYLINDER_THROW.getSkill());
+									npc.doCast(CYLINDER_THROW);
 								}
 							}
 							else if (npc.checkDoCastConditions(CYLINDER_THROW.getSkill()) && !npc.isCastingNow() && canReachMostHated)
 							{
 								npc.setTarget(((L2Attackable) npc).getMostHated());
-								npc.doCast(CYLINDER_THROW.getSkill());
+								npc.doCast(CYLINDER_THROW);
 							}
 						}
 					}
@@ -1259,7 +1259,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 		final L2Party party = player.getParty();
 		final L2CommandChannel channel = party != null ? party.getCommandChannel() : null;
 		
-		if (player.isGM() && player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
+		if (player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
 		{
 			return true;
 		}

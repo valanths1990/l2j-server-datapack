@@ -156,7 +156,7 @@ public abstract class Chamber extends AbstractInstance
 	private final int BOX;
 	
 	// Skills
-	private static final SkillHolder SUCCESS_SKILL = new SkillHolder(5758, 1);
+	private static final SkillHolder SUCCESS_SKILL = new SkillHolder(5758);
 	private static final SkillHolder FAIL_SKILL = new SkillHolder(5376, 4);
 	
 	private static final int ROOM_CHANGE_INTERVAL = 480; // 8 min
@@ -551,7 +551,7 @@ public abstract class Chamber extends AbstractInstance
 				}
 				
 				npc.broadcastEvent("SCE_LUCKY", 2000, null);
-				npc.doCast(SUCCESS_SKILL.getSkill());
+				npc.doCast(SUCCESS_SKILL);
 			}
 			else
 			{
@@ -569,11 +569,11 @@ public abstract class Chamber extends AbstractInstance
 		{
 			case "SCE_LUCKY":
 				receiver.setBusy(true);
-				receiver.doCast(SUCCESS_SKILL.getSkill());
+				receiver.doCast(SUCCESS_SKILL);
 				break;
 			case "SCE_DREAM_FIRE_IN_THE_HOLE":
 				receiver.setBusy(true);
-				receiver.doCast(FAIL_SKILL.getSkill());
+				receiver.doCast(FAIL_SKILL);
 				break;
 		}
 		

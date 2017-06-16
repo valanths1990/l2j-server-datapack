@@ -48,7 +48,7 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 10;
 	// Buff
-	private static final SkillHolder UNSEALED_ALTAR = new SkillHolder(4549, 1);
+	private static final SkillHolder UNSEALED_ALTAR = new SkillHolder(4549);
 	// Rewards
 	private static final int WARRIORS_SWORD = 9720;
 	private static final ItemHolder SOULSHOTS_NO_GRADE_FOR_ROOKIES = new ItemHolder(5789, 7000);
@@ -141,7 +141,7 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 				qs.setMemoState(5);
 				qs.setCond(6, true);
 				npc.setTarget(player);
-				npc.doCast(UNSEALED_ALTAR.getSkill());
+				npc.doCast(UNSEALED_ALTAR);
 				htmltext = event;
 				break;
 			}

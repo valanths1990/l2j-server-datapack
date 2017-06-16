@@ -21,8 +21,6 @@ package ai.npc.Minigame;
 import java.util.ArrayList;
 import java.util.List;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.L2Spawn;
@@ -36,6 +34,8 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Monastery Minigame AI.
@@ -51,7 +51,7 @@ public final class Minigame extends AbstractNpcAI
 	private static final int TORCHLIGHT = 15485;
 	
 	private static final int SKILL_TORCH_LIGHT = 9059;
-	private static final SkillHolder TRIGGER_MIRAGE = new SkillHolder(5144, 1);
+	private static final SkillHolder TRIGGER_MIRAGE = new SkillHolder(5144);
 	
 	private static final Location TELEPORT1 = new Location(113187, -85388, -3424, 0);
 	private static final Location TELEPORT2 = new Location(118833, -80589, -2688, 0);
@@ -273,7 +273,7 @@ public final class Minigame extends AbstractNpcAI
 					L2Npc npc = (L2Npc) obj;
 					if (npc.getId() == BURNER)
 					{
-						npc.doCast(TRIGGER_MIRAGE.getSkill());
+						npc.doCast(TRIGGER_MIRAGE);
 						final int pos = room.getBurnerPos(npc);
 						if (pos == room.getOrder()[room.getCurrentPot()])
 						{

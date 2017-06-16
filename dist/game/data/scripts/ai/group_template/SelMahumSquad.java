@@ -20,12 +20,12 @@ package ai.group_template;
 
 import com.l2jserver.gameserver.GameTimeController;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
@@ -46,6 +46,12 @@ public final class SelMahumSquad extends AbstractNpcAI
 	
 	private static final int OHS_Weapon = 15280;
 	private static final int THS_Weapon = 15281;
+	
+	// Skills
+	private static final SkillHolder SALMON_PORRIDGE_ATTACK = new SkillHolder(6330);
+	private static final SkillHolder CAMP_FIRE_TIRED = new SkillHolder(6331);
+	private static final SkillHolder CAMP_FIRE_FULL = new SkillHolder(6332);
+	private static final SkillHolder SOUP_OF_FAILURE = new SkillHolder(6688);
 	
 	// Sel Mahum Squad Leaders
 	private static final int[] SQUAD_LEADERS =
@@ -147,12 +153,12 @@ public final class SelMahumSquad extends AbstractNpcAI
 				
 				if (npc.isNoRndWalk())
 				{
-					npc.doCast(SkillData.getInstance().getSkill(6331, 1));
+					npc.doCast(CAMP_FIRE_TIRED);
 					npc.setDisplayEffect(MAHUM_EFFECT_SLEEP);
 				}
 				if (npc.getVariables().getInt("BUSY_STATE") == 1) // Eating
 				{
-					npc.doCast(SkillData.getInstance().getSkill(6332, 1));
+					npc.doCast(CAMP_FIRE_FULL);
 					npc.setDisplayEffect(MAHUM_EFFECT_EAT);
 				}
 				
@@ -334,7 +340,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 	{
 		if ((npc.getId() == STOVE) && (skill.getId() == 9075) && Util.contains(targets, npc))
 		{
-			npc.doCast(SkillData.getInstance().getSkill(6688, 1));
+			npc.doCast(SOUP_OF_FAILURE);
 			npc.broadcastEvent("SCE_SOUP_FAILURE", 600, caster);
 		}
 		return super.onSkillSee(npc, caster, skill, targets, isSummon);
@@ -374,7 +380,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 		if ((player != null) && !player.isDead() && (npc.getVariables().getInt("INVUL_REMOVE_TIMER_STARTED") != 1) && ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST)))
 		{
 			npc.setTarget(player);
-			npc.doCast(SkillData.getInstance().getSkill(6330, 1));
+			npc.doCast(SALMON_PORRIDGE_ATTACK);
 		}
 		else
 		{

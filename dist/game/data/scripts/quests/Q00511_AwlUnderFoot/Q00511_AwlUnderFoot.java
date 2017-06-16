@@ -149,7 +149,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 	};
 	
 	// Skill
-	private static final SkillHolder RAID_CURSE = new SkillHolder(5456, 1);
+	private static final SkillHolder RAID_CURSE = new SkillHolder(5456);
 	
 	public Q00511_AwlUnderFoot()
 	{
@@ -355,7 +355,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 			if ((attacker.getBuffCount() > 0) || (attacker.getDanceCount() > 0))
 			{
 				npc.setTarget(attacker);
-				npc.doSimultaneousCast(RAID_CURSE.getSkill());
+				npc.doSimultaneousCast(RAID_CURSE);
 			}
 			else if (player.getParty() != null)
 			{
@@ -364,7 +364,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 					if ((pmember.getBuffCount() > 0) || (pmember.getDanceCount() > 0))
 					{
 						npc.setTarget(pmember);
-						npc.doSimultaneousCast(RAID_CURSE.getSkill());
+						npc.doSimultaneousCast(RAID_CURSE);
 					}
 				}
 			}

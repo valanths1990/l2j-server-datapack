@@ -73,10 +73,10 @@ public final class Beleth extends AbstractNpcAI
 	private static final L2ZoneType ZONE = ZoneManager.getInstance().getZoneById(12018);
 	private static final Location BELETH_SPAWN = new Location(16323, 213059, -9357, 49152);
 	// Skills
-	private static final SkillHolder BLEED = new SkillHolder(5495, 1);
-	private static final SkillHolder FIREBALL = new SkillHolder(5496, 1);
-	private static final SkillHolder HORN_OF_RISING = new SkillHolder(5497, 1);
-	private static final SkillHolder LIGHTENING = new SkillHolder(5499, 1);
+	private static final SkillHolder BLEED = new SkillHolder(5495);
+	private static final SkillHolder FIREBALL = new SkillHolder(5496);
+	private static final SkillHolder HORN_OF_RISING = new SkillHolder(5497);
+	private static final SkillHolder LIGHTENING = new SkillHolder(5499);
 	// Doors
 	private static final int DOOR1 = 20240001;
 	private static final int DOOR2 = 20240002;
@@ -143,7 +143,7 @@ public final class Beleth extends AbstractNpcAI
 				if (!npc.isDead() && !npc.isCastingNow())
 				{
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-					npc.doCast(FIREBALL.getSkill());
+					npc.doCast(FIREBALL);
 				}
 				break;
 			}
@@ -601,7 +601,7 @@ public final class Beleth extends AbstractNpcAI
 		if (!npc.isDead() && (npc.getId() == REAL_BELETH) && !npc.isCastingNow() && skill.hasEffectType(L2EffectType.HEAL) && (getRandom(100) < 80))
 		{
 			npc.setTarget(player);
-			npc.doCast(HORN_OF_RISING.getSkill());
+			npc.doCast(HORN_OF_RISING);
 		}
 		
 		return null;
@@ -616,12 +616,12 @@ public final class Beleth extends AbstractNpcAI
 			{
 				if (!npc.getKnownList().getKnownPlayersInRadius(200).isEmpty())
 				{
-					npc.doCast(BLEED.getSkill());
+					npc.doCast(BLEED);
 					return null;
 				}
 			}
 			npc.setTarget(player);
-			npc.doCast(FIREBALL.getSkill());
+			npc.doCast(FIREBALL);
 		}
 		
 		return null;
@@ -646,7 +646,7 @@ public final class Beleth extends AbstractNpcAI
 				else if (distance2 < 890)
 				{
 					npc.setTarget(player);
-					npc.doCast(FIREBALL.getSkill());
+					npc.doCast(FIREBALL);
 				}
 				return null;
 			}
@@ -654,14 +654,14 @@ public final class Beleth extends AbstractNpcAI
 			{
 				if (!npc.getKnownList().getKnownPlayersInRadius(200).isEmpty())
 				{
-					npc.doCast(LIGHTENING.getSkill());
+					npc.doCast(LIGHTENING);
 					return null;
 				}
 			}
 			for (L2PcInstance plr : npc.getKnownList().getKnownPlayersInRadius(950))
 			{
 				npc.setTarget(plr);
-				npc.doCast(FIREBALL.getSkill());
+				npc.doCast(FIREBALL);
 				return null;
 			}
 			((L2Attackable) npc).clearAggroList();
@@ -675,7 +675,7 @@ public final class Beleth extends AbstractNpcAI
 		npc.setRunning();
 		if (!npc.getKnownList().getKnownPlayersInRadius(300).isEmpty() && (getRandom(100) < 60))
 		{
-			npc.doCast(BLEED.getSkill());
+			npc.doCast(BLEED);
 		}
 		if (npc.getId() == REAL_BELETH)
 		{
@@ -727,20 +727,20 @@ public final class Beleth extends AbstractNpcAI
 				if ((beleth != null) && !beleth.isDead() && Util.checkIfInRange(900, beleth, attacker, false) && !beleth.isCastingNow())
 				{
 					beleth.setTarget(attacker);
-					beleth.doCast(FIREBALL.getSkill());
+					beleth.doCast(FIREBALL);
 				}
 			}
 			if ((_beleth != null) && !_beleth.isDead() && Util.checkIfInRange(900, _beleth, attacker, false) && !_beleth.isCastingNow())
 			{
 				_beleth.setTarget(attacker);
-				_beleth.doCast(FIREBALL.getSkill());
+				_beleth.doCast(FIREBALL);
 			}
 		}
 		else if (!npc.isDead() && !npc.isCastingNow())
 		{
 			if (!npc.getKnownList().getKnownPlayersInRadius(200).isEmpty())
 			{
-				npc.doCast(LIGHTENING.getSkill());
+				npc.doCast(LIGHTENING);
 				return null;
 			}
 			((L2Attackable) npc).clearAggroList();

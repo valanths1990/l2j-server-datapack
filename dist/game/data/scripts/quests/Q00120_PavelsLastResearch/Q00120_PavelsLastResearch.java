@@ -18,8 +18,6 @@
  */
 package quests.Q00120_PavelsLastResearch;
 
-import quests.Q00114_ResurrectionOfAnOldManager.Q00114_ResurrectionOfAnOldManager;
-
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -28,6 +26,8 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.skills.Skill;
+
+import quests.Q00114_ResurrectionOfAnOldManager.Q00114_ResurrectionOfAnOldManager;
 
 /**
  * Pavel's Last Research (120)
@@ -52,7 +52,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 	private static final int KEY_OF_ENIGMA = 8060;
 	// Skills
 	private static final SkillHolder QUEST_TRAP_POWER_SHOT = new SkillHolder(5073, 5);
-	private static final SkillHolder NPC_DEFAULT = new SkillHolder(7000, 1);
+	private static final SkillHolder NPC_DEFAULT = new SkillHolder(7000);
 	// Rewards
 	private static final int SEALED_PHOENIX_EARRING = 6324;
 	
@@ -1107,7 +1107,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 					qs.setMemoStateEx(0, 0);
 					playSound(player, Sound.AMBSOUND_DRONE);
 					npc.setTarget(player);
-					npc.doCast(QUEST_TRAP_POWER_SHOT.getSkill());
+					npc.doCast(QUEST_TRAP_POWER_SHOT);
 					html = event;
 				}
 				break;
@@ -1131,7 +1131,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 					qs.setMemoState(14);
 					qs.setCond(15, true);
 					npc.setTarget(player);
-					npc.doCast(QUEST_TRAP_POWER_SHOT.getSkill());
+					npc.doCast(QUEST_TRAP_POWER_SHOT);
 					html = event;
 				}
 				break;

@@ -18,8 +18,6 @@
  */
 package ai.group_template;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -28,6 +26,8 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Prison Guards AI.
@@ -42,7 +42,7 @@ public final class PrisonGuards extends AbstractNpcAI
 	private static final int STAMP = 10013; // Race Stamp
 	// Skills
 	private static final int TIMER = 5239; // Event Timer
-	private static final SkillHolder STONE = new SkillHolder(4578, 1); // Petrification
+	private static final SkillHolder STONE = new SkillHolder(4578); // Petrification
 	private static final SkillHolder SILENCE = new SkillHolder(4098, 9); // Silence
 	
 	private PrisonGuards()
@@ -93,7 +93,7 @@ public final class PrisonGuards extends AbstractNpcAI
 			else
 			{
 				npc.setTarget(player);
-				npc.doCast(STONE.getSkill());
+				npc.doCast(STONE);
 				broadcastNpcSay(npc, Say2.ALL, NpcStringId.ITS_NOT_EASY_TO_OBTAIN);
 			}
 		}
@@ -102,7 +102,7 @@ public final class PrisonGuards extends AbstractNpcAI
 			if (!player.isAffectedBySkill(TIMER) && (npc.calculateDistance(npc.getSpawn().getLocation(), false, false) < 2000))
 			{
 				npc.setTarget(player);
-				npc.doCast(STONE.getSkill());
+				npc.doCast(STONE);
 				broadcastNpcSay(npc, Say2.ALL, NpcStringId.YOURE_OUT_OF_YOUR_MIND_COMING_HERE);
 			}
 		}
@@ -115,7 +115,7 @@ public final class PrisonGuards extends AbstractNpcAI
 		if (!caster.isAffectedBySkill(TIMER))
 		{
 			npc.setTarget(caster);
-			npc.doCast(SILENCE.getSkill());
+			npc.doCast(SILENCE);
 		}
 		return super.onSkillSee(npc, caster, skill, targets, isSummon);
 	}

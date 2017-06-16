@@ -42,15 +42,15 @@ public class ArenaManager extends AbstractNpcAI
 	// Skill
 	private static final SkillHolder[] BUFFS =
 	{
-		new SkillHolder(6805, 1), // Arena Empower
-		new SkillHolder(6806, 1), // Arena Acumen
-		new SkillHolder(6807, 1), // Arena Concentration
-		new SkillHolder(6808, 1), // Arena Might
-		new SkillHolder(6804, 1), // Arena Wind Walk
-		new SkillHolder(6812, 1), // Arena Berserker Spirit
+		new SkillHolder(6805), // Arena Empower
+		new SkillHolder(6806), // Arena Acumen
+		new SkillHolder(6807), // Arena Concentration
+		new SkillHolder(6808), // Arena Might
+		new SkillHolder(6804), // Arena Wind Walk
+		new SkillHolder(6812), // Arena Berserker Spirit
 	};
-	private static final SkillHolder CP_RECOVERY = new SkillHolder(4380, 1); // Arena: CP Recovery
-	private static final SkillHolder HP_RECOVERY = new SkillHolder(6817, 1); // Arena HP Recovery
+	private static final SkillHolder CP_RECOVERY = new SkillHolder(4380); // Arena: CP Recovery
+	private static final SkillHolder HP_RECOVERY = new SkillHolder(6817); // Arena HP Recovery
 	// Misc
 	private static final int CP_COST = 1000;
 	private static final int HP_COST = 1000;
@@ -87,7 +87,7 @@ public class ArenaManager extends AbstractNpcAI
 				if ((player != null) && !player.isInsideZone(ZoneId.PVP))
 				{
 					npc.setTarget(player);
-					npc.doCast(CP_RECOVERY.getSkill());
+					npc.doCast(CP_RECOVERY);
 				}
 				break;
 			}
@@ -109,7 +109,7 @@ public class ArenaManager extends AbstractNpcAI
 				if ((player != null) && !player.isInsideZone(ZoneId.PVP))
 				{
 					npc.setTarget(player);
-					npc.doCast(HP_RECOVERY.getSkill());
+					npc.doCast(HP_RECOVERY);
 				}
 				break;
 			}
@@ -121,7 +121,7 @@ public class ArenaManager extends AbstractNpcAI
 					npc.setTarget(player);
 					for (SkillHolder skill : BUFFS)
 					{
-						npc.doCast(skill.getSkill());
+						npc.doCast(skill);
 					}
 				}
 				else
