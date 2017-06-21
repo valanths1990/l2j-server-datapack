@@ -18,6 +18,10 @@
  */
 package instances;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import instances.CastleDungeon.CastleDungeon;
 import instances.CavernOfThePirateCaptain.CavernOfThePirateCaptain;
 import instances.ChambersOfDelusion.ChamberOfDelusionEast;
 import instances.ChambersOfDelusion.ChamberOfDelusionNorth;
@@ -47,9 +51,6 @@ import instances.PailakaDevilsLegacy.PailakaDevilsLegacy;
 import instances.PailakaSongOfIceAndFire.PailakaSongOfIceAndFire;
 import instances.SanctumOftheLordsOfDawn.SanctumOftheLordsOfDawn;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  * Instance class-loader.
  * @author FallenAngel
@@ -60,6 +61,7 @@ public final class InstanceLoader
 	
 	private static final Class<?>[] SCRIPTS =
 	{
+		CastleDungeon.class,
 		CavernOfThePirateCaptain.class,
 		CrystalCaverns.class,
 		DarkCloudMansion.class,
