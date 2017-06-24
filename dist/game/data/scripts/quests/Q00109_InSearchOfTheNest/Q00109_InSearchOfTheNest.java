@@ -95,7 +95,7 @@ public class Q00109_InSearchOfTheNest extends Quest
 						htmltext = (player.getLevel() < 81) ? "31553-0a.htm" : "31553-0b.htm";
 						break;
 					case State.STARTED:
-						switch (st.getInt("cond"))
+						switch (st.getCond())
 						{
 							case 1:
 								htmltext = "31553-1.html";
