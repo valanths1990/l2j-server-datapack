@@ -78,9 +78,7 @@ of this directory a little bit.
 311262513.xml -> Seven Signs - Blacksmith of Mammon - Foundation Items
 311262516.xml -> Seven Signs - Blacksmith of Mammon - Exchange rare armor for superior armor.
 
-306893001.xml -> Shadow weaponry system. D-grade coupons exchange
-306893002.xml -> Shadow weaponry system. C-grade coupons exchange
-306893003.xml -> Shadow weaponry system. D/C-grade coupons exchange
+306893001.xml -> Shadow weaponry system. D/C-grade coupons exchange
 319463001.xml -> Shadow weaponry system. D-grade adena exchange
 319463002.xml -> Shadow weaponry system. C-grade adena exchange
 319463003.xml -> Shadow weaponry system. B-grade adena exchange

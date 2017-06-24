@@ -26,7 +26,6 @@
 		<npc>30503</npc> <!-- Rikadio -->
 		<npc>30504</npc> <!-- Mendio -->
 		<npc>30505</npc> <!-- Drikus -->
-		<npc>30508</npc> <!-- Castor -->
 		<npc>30511</npc> <!-- Gesto -->
 		<npc>30512</npc> <!-- Kusto -->
 		<npc>30513</npc> <!-- Penatus -->
@@ -151,21 +150,69 @@
 		<production count="1" id="8829" />
 	</item>
 	<item>
-		<!-- Shadow Item Exchange Coupon (D-Grade) -->
-		<ingredient count="1" id="8869" />
-		<!-- Shadow Item: Fleuret -->
-		<production count="1" id="10005" />
+		<!-- Shadow Item Exchange Coupon (C-Grade) -->
+		<ingredient count="1" id="8870" />
+		<!-- Shadow Item: Sword of Delusion -->
+		<production count="1" id="8926" />
 	</item>
 	<item>
-		<!-- Shadow Item Exchange Coupon (D-Grade) -->
-		<ingredient count="1" id="8869" />
-		<!-- Shadow Item: Military Talwar -->
-		<production count="1" id="10006" />
+		<!-- Shadow Item Exchange Coupon (C-Grade) -->
+		<ingredient count="1" id="8870" />
+		<!-- Shadow Item: Poleaxe -->
+		<production count="1" id="8927" />
 	</item>
 	<item>
-		<!-- Shadow Item Exchange Coupon (D-Grade) -->
-		<ingredient count="1" id="8869" />
-		<!-- Shadow Item: Hand Crossbow -->
-		<production count="1" id="10007" />
+		<!-- Shadow Item Exchange Coupon (C-Grade) -->
+		<ingredient count="1" id="8870" />
+		<!-- Shadow Item: Stick of Eternity -->
+		<production count="1" id="8928" />
+	</item>
+	<item>
+		<!-- Shadow Item Exchange Coupon (C-Grade) -->
+		<ingredient count="1" id="8870" />
+		<!-- Shadow Item: Inferno Staff -->
+		<production count="1" id="8929" />
+	</item>
+	<item>
+		<!-- Shadow Item Exchange Coupon (C-Grade) -->
+		<ingredient count="1" id="8870" />
+		<!-- Shadow Item: Pa'agrian Hammer -->
+		<production count="1" id="8930" />
+	</item>
+	<item>
+		<!-- Shadow Item Exchange Coupon (C-Grade) -->
+		<ingredient count="1" id="8870" />
+		<!-- Shadow Item: Dark Screamer -->
+		<production count="1" id="8931" />
+	</item>
+	<item>
+		<!-- Shadow Item Exchange Coupon (C-Grade) -->
+		<ingredient count="1" id="8870" />
+		<!-- Shadow Item: Akat Long Bow -->
+		<production count="1" id="8932" />
+	</item>
+	<item>
+		<!-- Shadow Item Exchange Coupon (C-Grade) -->
+		<ingredient count="1" id="8870" />
+		<!-- Shadow Item: Pa'agrian Sword -->
+		<production count="1" id="8933" />
+	</item>
+	<item>
+		<!-- Shadow Item Exchange Coupon (C-Grade) -->
+		<ingredient count="1" id="8870" />
+		<!-- Shadow Item: Fisted Blade -->
+		<production count="1" id="8934" />
+	</item>
+	<item>
+		<!-- Shadow Item Exchange Coupon (C-Grade) -->
+		<ingredient count="1" id="8870" />
+		<!-- Shadow Item: Stormbringer -->
+		<production count="1" id="8937" />
+	</item>
+	<item>
+		<!-- Shadow Item Exchange Coupon (C-Grade) -->
+		<ingredient count="1" id="8870" />
+		<!-- Shadow Item - War Axe -->
+		<production count="1" id="10011" />
 	</item>
 </list>
