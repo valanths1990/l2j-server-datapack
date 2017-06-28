@@ -461,13 +461,12 @@ public final class Stage1 extends AbstractInstance
 		}
 		
 		final L2Party party = player.getParty();
-		final L2CommandChannel channel = player.getParty().getCommandChannel();
 		if (party == null)
 		{
 			player.sendPacket(SystemMessageId.NOT_IN_PARTY_CANT_ENTER);
 			return false;
 		}
-		
+		final L2CommandChannel channel = party.getCommandChannel();
 		if (channel == null)
 		{
 			player.sendPacket(SystemMessageId.NOT_IN_COMMAND_CHANNEL_CANT_ENTER);
@@ -718,6 +717,7 @@ public final class Stage1 extends AbstractInstance
 		}
 		else if (npcId == TIAT)
 		{
+			npc.setIsImmobilized(true);
 			world.tiat = (L2MonsterInstance) npc;
 			for (int i = 0; i < TIAT_GUARD_NUMBER; i++)
 			{
