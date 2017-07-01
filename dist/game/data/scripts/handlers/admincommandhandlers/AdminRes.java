@@ -185,13 +185,12 @@ public class AdminRes implements IAdminCommandHandler
 		// If the target is a player, then restore the XP lost on death.
 		if (targetChar instanceof L2PcInstance)
 		{
-			((L2PcInstance) targetChar).restoreExp(100.0);
+			targetChar.doRevive(100.0);
 		}
 		else
 		{
 			DecayTaskManager.getInstance().cancel(targetChar);
+			targetChar.doRevive();
 		}
-		
-		targetChar.doRevive();
 	}
 }
