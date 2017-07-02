@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2016 L2J DataPack
+ * Copyright (C) 2004-2017 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,8 +18,6 @@
  */
 package ai.npc.ForgeOfTheGods;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -27,9 +25,11 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 
+import ai.npc.AbstractNpcAI;
+
 /**
  * Rooney AI
- * @author malyelfik
+ * @author malyelfik, Adry_85
  */
 public final class Rooney extends AbstractNpcAI
 {
@@ -38,45 +38,13 @@ public final class Rooney extends AbstractNpcAI
 	// Locations
 	private static final Location[] LOCATIONS =
 	{
-		new Location(175937, -112167, -5550),
-		new Location(178896, -112425, -5860),
-		new Location(180628, -115992, -6135),
-		new Location(183010, -114753, -6135),
-		new Location(184496, -116773, -6135),
-		new Location(181857, -109491, -5865),
-		new Location(178917, -107633, -5853),
-		new Location(178804, -110080, -5853),
-		new Location(182221, -106806, -6025),
-		new Location(186488, -109715, -5915),
-		new Location(183847, -119231, -3113),
-		new Location(185193, -120342, -3113),
-		new Location(188047, -120867, -3113),
-		new Location(189734, -120471, -3113),
-		new Location(188754, -118940, -3313),
-		new Location(190022, -116803, -3313),
-		new Location(188443, -115814, -3313),
-		new Location(186421, -114614, -3313),
-		new Location(185188, -113307, -3313),
-		new Location(187378, -112946, -3313),
-		new Location(189815, -113425, -3313),
-		new Location(189301, -111327, -3313),
-		new Location(190289, -109176, -3313),
-		new Location(187783, -110478, -3313),
-		new Location(185889, -109990, -3313),
-		new Location(181881, -109060, -3695),
-		new Location(183570, -111344, -3675),
-		new Location(182077, -112567, -3695),
-		new Location(180127, -112776, -3698),
-		new Location(179155, -108629, -3695),
-		new Location(176282, -109510, -3698),
-		new Location(176071, -113163, -3515),
-		new Location(179376, -117056, -3640),
-		new Location(179760, -115385, -3640),
-		new Location(177950, -119691, -4140),
-		new Location(177037, -120820, -4340),
-		new Location(181125, -120148, -3702),
-		new Location(182212, -117969, -3352),
-		new Location(186074, -118154, -3312)
+		new Location(179221, -115743, -3600),
+		new Location(177668, -118775, -4080),
+		new Location(179906, -108469, -5832),
+		new Location(181285, -113798, -6064),
+		new Location(181805, -108718, -5832),
+		new Location(184131, -117511, -3336),
+		new Location(186418, -112998, -3272)
 	};
 	
 	private Rooney()
@@ -89,30 +57,51 @@ public final class Rooney extends AbstractNpcAI
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		if (event.equals("teleport") && !npc.isDecayed())
+		switch (event)
 		{
-			final int aiVal = npc.getScriptValue();
-			switch (aiVal)
+			case "teleport":
 			{
-				case 1:
-					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.HURRY_HURRY);
-					break;
-				case 2:
-					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.I_AM_NOT_THAT_TYPE_OF_PERSON_WHO_STAYS_IN_ONE_PLACE_FOR_A_LONG_TIME);
-					break;
-				case 3:
-					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.ITS_HARD_FOR_ME_TO_KEEP_STANDING_LIKE_THIS);
-					break;
-				case 4:
-					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.WHY_DONT_I_GO_THAT_WAY_THIS_TIME);
-					break;
-				default:
-					npc.teleToLocation(LOCATIONS[getRandom(LOCATIONS.length)], false);
+				if (!npc.isDecayed())
+				{
 					npc.setScriptValue(0);
-					return null;
+				}
+				break;
 			}
-			npc.setScriptValue(aiVal + 1);
-			startQuestTimer("teleport", 60000, npc, null);
+			case "message1":
+			{
+				if (!npc.isDecayed())
+				{
+					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.HURRY_HURRY);
+					startQuestTimer("message2", 60000, npc, null);
+				}
+				break;
+			}
+			case "message2":
+			{
+				if (!npc.isDecayed())
+				{
+					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.I_AM_NOT_THAT_TYPE_OF_PERSON_WHO_STAYS_IN_ONE_PLACE_FOR_A_LONG_TIME);
+					startQuestTimer("message3", 60000, npc, null);
+				}
+				break;
+			}
+			case "message3":
+			{
+				if (!npc.isDecayed())
+				{
+					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.ITS_HARD_FOR_ME_TO_KEEP_STANDING_LIKE_THIS);
+					startQuestTimer("message4", 60000, npc, null);
+				}
+				break;
+			}
+			case "message4":
+			{
+				if (!npc.isDecayed())
+				{
+					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.WHY_DONT_I_GO_THAT_WAY_THIS_TIME);
+				}
+				break;
+			}
 		}
 		return null;
 	}
@@ -123,7 +112,8 @@ public final class Rooney extends AbstractNpcAI
 		if (creature.isPlayer() && npc.isScriptValue(0))
 		{
 			broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.WELCOME);
-			startQuestTimer("teleport", 60000, npc, null);
+			startQuestTimer("teleport", 3600000, npc, null);
+			startQuestTimer("message1", 60000, npc, null);
 			npc.setScriptValue(1);
 		}
 		return super.onSeeCreature(npc, creature, isSummon);
