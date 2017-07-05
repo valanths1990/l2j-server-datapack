@@ -1076,7 +1076,7 @@
 			<skill id="6898" level="1" /> <!--84 level Raid Boss -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
@@ -1146,7 +1146,7 @@
 			<skill id="6899" level="1" /> <!--84 level Raid Boss -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
@@ -1218,7 +1218,7 @@
 			<skill id="6915" level="1" /> <!--npc Acumen -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
@@ -1291,7 +1291,7 @@
 			<skill id="6901" level="1" /> <!--84 level Raid Boss -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
@@ -1368,7 +1368,7 @@
 			<skill id="6902" level="1" /> <!--84 level Raid Boss -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
@@ -1443,7 +1443,7 @@
 			<skill id="6903" level="1" /> <!--84 level Raid Boss -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
@@ -1516,7 +1516,7 @@
 			<skill id="6904" level="1" /> <!--84 level Raid Boss -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
