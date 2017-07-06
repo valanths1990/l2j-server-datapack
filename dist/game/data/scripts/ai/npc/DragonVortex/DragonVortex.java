@@ -45,7 +45,7 @@ public final class DragonVortex extends AbstractNpcAI
 	private static final int LARGE_DRAGON_BONE = 17248;
 	// Variables
 	private static final String I_QUEST0 = "I_QUEST0";
-	// Location
+	// Locations
 	private static final Location SPOT_1 = new Location(92744, 114045, -3072);
 	private static final Location SPOT_2 = new Location(110112, 124976, -3624);
 	private static final Location SPOT_3 = new Location(121637, 113657, -3792);
