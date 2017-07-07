@@ -433,6 +433,7 @@
 		<set name="effectRange" val="300" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill0122" />
+		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="4" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
@@ -470,7 +471,7 @@
 		<for>
 			<effect name="PhysicalAttack" />
 			<effect name="Buff">
-				<mul stat="pDef" val="0.60" />
+				<mul stat="pDef" val="0.6" />
 			</effect>
 		</for>
 	</skill>
@@ -483,6 +484,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill0086" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -626,7 +628,7 @@
 		<for>
 			<effect name="MagicalAttack" />
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="pAtkSpd" val="0.5" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="mAtkSpd" val="0.5" />
@@ -687,6 +689,7 @@
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="1200" />
 		<set name="hitTime" val="3000" />
+		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="182" />
@@ -706,7 +709,6 @@
 	</skill>
 	<skill id="6836" levels="1" name="Silence">
 		<!-- High Five Confirmed -->
-		<!-- Magic skills are blocked. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SILENCE" />
@@ -788,7 +790,6 @@
 		<set name="operateType" val="A1"/>
 		<set name="rideState" val="NONE"/>
 		<set name="targetType" val="SELF"/>
-		<for/>
 	</skill>
 	<skill id="6842" levels="2" name="Enhance">
 		<!-- High Five Confirmed -->
@@ -812,13 +813,12 @@
 				<mul stat="pAtk" val="#pAtk"/>
 			</effect>
 			<effect name="Buff">
-				<mul stat="rEvas" val="#pAtkSpd"/>
+				<mul stat="pAtkSpd" val="#pAtkSpd"/>
 			</effect>
 		</for>
 	</skill>
 	<skill id="6843" levels="1" name="Enhance">
 		<!-- High Five Confirmed -->
-		<!-- Atk. Spd. is increased by 33%. -->
 		<set name="abnormalLvl" val="3"/>
 		<set name="abnormalTime" val="300"/>
 		<set name="abnormalType" val="CASTING_TIME_UP"/>
@@ -833,7 +833,7 @@
 		<set name="targetType" val="SELF"/>
 		<for>
 			<effect name="Buff">
-				<mul stat="rEvas" val="1.4"/>
+				<mul stat="pAtkSpd" val="1.4"/>
 			</effect>
 		</for>
 	</skill>
