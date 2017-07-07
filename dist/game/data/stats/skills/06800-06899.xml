@@ -422,7 +422,6 @@
 	</skill>
 	<skill id="6821" levels="1" name="P. Def. Decrease">
 		<!-- High Five Confirmed -->
-		<!-- "For 4 seconds, P. Def. decreases by 23%." -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="4" />
 		<set name="abnormalType" val="PD_DOWN" />
@@ -443,14 +442,13 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack" />
-			<effect name="Buff">
+			<effect name="Debuff">
 				<mul stat="pDef" val="0.77" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="6822" levels="1" name="P. Def. Decrease">
 		<!-- High Five Confirmed -->
-		<!-- "For 4 seconds, P. Def. decreases by 40%." -->
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="4" />
 		<set name="abnormalType" val="PD_DOWN" />
@@ -470,7 +468,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack" />
-			<effect name="Buff">
+			<effect name="Debuff">
 				<mul stat="pDef" val="0.6" />
 			</effect>
 		</for>
@@ -516,7 +514,6 @@
 	</skill>
 	<skill id="6825" levels="2" name="Bleed">
 		<!-- High Five Confirmed -->
-		<!-- "For 8 seconds, inflicts bleed and decreases 120 HP every second." -->
 		<table name="#hotValue"> -100 -120 </table>
 		<table name="#power"> 122 146 </table>
 		<set name="affectRange" val="200" />
@@ -571,7 +568,6 @@
 	</skill>
 	<skill id="6827" levels="1" name="Petrify">
 		<!-- High Five Confirmed -->
-		<!-- "Inflicted with petrification, the body is rigid like stone for 30 seconds." -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="TURN_STONE" />
@@ -607,7 +603,6 @@
 	</skill>
 	<skill id="6828" levels="1" name="Dust Storm">
 		<!-- High Five Confirmed -->
-		<!-- "For 30 seconds, Atk. Spd. is decreased by 50% and Casting Spd. is decreased by 50%." -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="CASTING_TIME_UP" />
