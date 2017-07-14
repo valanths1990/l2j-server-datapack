@@ -29626,7 +29626,7 @@ INSERT INTO `spawnlist` VALUES
 -- Odd Globe
 ("monastery_of_silence", 1, 32815, 115475, -81400, -3374, 0, 0, 0, 60, 0, 0, 0),
 ("monastery_of_silence", 1, 32815, 116400, -81402, -3376, 0, 0, 32272, 60, 0, 0, 0),
-("monastery_of_silence", 1, 32815, 116400, -84992, -3371, 0, 0, 33168, 60, 0, 0, 0),
+("monastery_of_silence", 1, 32815, 116400, -84992, -3371, 0, 0, -32368, 60, 0, 0, 0),
 ("monastery_of_silence", 1, 32815, 115467, -84990, -3376, 0, 0, 0, 60, 0, 0, 0);
 INSERT INTO `spawnlist` VALUES
 

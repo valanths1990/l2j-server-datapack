@@ -3206,7 +3206,7 @@
 			</speed>
 		</stats>
 		<collision>
-			<radius normal="11" />
+			<radius normal="12" />
 			<height normal="23" />
 		</collision>
 	</npc>
@@ -3227,7 +3227,7 @@
 		</stats>
 		<collision>
 			<radius normal="11" />
-			<height normal="12" />
+			<height normal="22" />
 		</collision>
 	</npc>
 	<npc id="32796" level="80" type="L2Npc" name="Anais" title="Solina's Disciple">
@@ -3246,8 +3246,8 @@
 			</speed>
 		</stats>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="14" />
+			<height normal="27" />
 		</collision>
 	</npc>
 	<npc id="32797" level="80" type="L2Npc" name="Jude van Etina" title="Solina's Disciple">
