@@ -2128,164 +2128,288 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="18952" level="80" type="L2Npc" name="Solina's Guardian">
+	<npc id="18952" level="82" type="L2Monster" name="Solina's Guardian">
 		<!-- TODO: Must be confirmed -->
+		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3643.38976668326" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="160" />
+				<defence fire="170" water="170" wind="170" earth="170" holy="200" dark="120" default="140" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="50" />
+				<run ground="120" />
 			</speed>
 		</stats>
+		<skillList>
+			<skill id="4416" level="14" /> <!--Humans -->
+			<skill id="5466" level="1" /> <!--Holy Attacks -->
+			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
+			<skill id="4409" level="1" /> <!--MP Increase (1x)-->
+			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
+			<skill id="4411" level="8" /> <!--Weak M. Atk. -->
+			<skill id="4412" level="9" /> <!--Slightly Weak P. Def. -->
+			<skill id="4413" level="8" /> <!--Weak M. Def. -->
+			<skill id="4414" level="1" /> <!--Heavy Armor Type -->
+			<skill id="4415" level="3" /> <!--One-handed Sword -->
+		</skillList>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="15" />
+			<height normal="30" />
 		</collision>
 	</npc>
-	<npc id="18953" level="80" type="L2Npc" name="Solina's Guardian">
+	<npc id="18953" level="82" type="L2Monster" name="Solina's Guardian">
 		<!-- TODO: Must be confirmed -->
+		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3643.38976668326" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="160" />
+				<defence fire="170" water="170" wind="170" earth="170" holy="200" dark="120" default="140" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="50" />
+				<run ground="120" />
 			</speed>
 		</stats>
+		<skillList>
+			<skill id="4416" level="14" /> <!--Humans -->
+			<skill id="5466" level="1" /> <!--Holy Attacks -->
+			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
+			<skill id="4409" level="1" /> <!--MP Increase (1x)-->
+			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
+			<skill id="4411" level="8" /> <!--Weak M. Atk. -->
+			<skill id="4412" level="9" /> <!--Slightly Weak P. Def. -->
+			<skill id="4413" level="8" /> <!--Weak M. Def. -->
+			<skill id="4414" level="1" /> <!--Heavy Armor Type -->
+			<skill id="4415" level="3" /> <!--One-handed Sword -->
+		</skillList>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="15" />
+			<height normal="30" />
 		</collision>
 	</npc>
-	<npc id="18954" level="80" type="L2Npc" name="Solina's Guardian">
+	<npc id="18954" level="82" type="L2Monster" name="Solina's Guardian">
 		<!-- TODO: Must be confirmed -->
+		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3643.38976668326" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="160" />
+				<defence fire="170" water="170" wind="170" earth="170" holy="200" dark="120" default="140" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="50" />
+				<run ground="120" />
 			</speed>
 		</stats>
+		<skillList>
+			<skill id="4416" level="14" /> <!--Humans -->
+			<skill id="5466" level="1" /> <!--Holy Attacks -->
+			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
+			<skill id="4409" level="1" /> <!--MP Increase (1x)-->
+			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
+			<skill id="4411" level="8" /> <!--Weak M. Atk. -->
+			<skill id="4412" level="9" /> <!--Slightly Weak P. Def. -->
+			<skill id="4413" level="8" /> <!--Weak M. Def. -->
+			<skill id="4414" level="1" /> <!--Heavy Armor Type -->
+			<skill id="4415" level="3" /> <!--One-handed Sword -->
+		</skillList>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="15" />
+			<height normal="30" />
 		</collision>
 	</npc>
-	<npc id="18955" level="80" type="L2Npc" name="Solina's Guardian">
+	<npc id="18955" level="82" type="L2Monster" name="Solina's Guardian">
 		<!-- TODO: Must be confirmed -->
+		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3643.38976668326" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="160" />
+				<defence fire="170" water="170" wind="170" earth="170" holy="200" dark="120" default="140" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="50" />
+				<run ground="120" />
 			</speed>
 		</stats>
+		<skillList>
+			<skill id="4416" level="14" /> <!--Humans -->
+			<skill id="5466" level="1" /> <!--Holy Attacks -->
+			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
+			<skill id="4409" level="1" /> <!--MP Increase (1x)-->
+			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
+			<skill id="4411" level="8" /> <!--Weak M. Atk. -->
+			<skill id="4412" level="9" /> <!--Slightly Weak P. Def. -->
+			<skill id="4413" level="8" /> <!--Weak M. Def. -->
+			<skill id="4414" level="1" /> <!--Heavy Armor Type -->
+			<skill id="4415" level="3" /> <!--One-handed Sword -->
+		</skillList>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="15" />
+			<height normal="30" />
 		</collision>
 	</npc>
-	<npc id="18956" level="80" type="L2Npc" name="Guardian of the Tomb">
+	<npc id="18956" level="82" type="L2Monster" name="Guardian of the Tomb">
 		<!-- TODO: Must be confirmed -->
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3643.38976668326" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="160" />
+				<defence fire="170" water="170" wind="170" earth="170" holy="200" dark="120" default="140" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="30" />
+				<run ground="220" />
 			</speed>
 		</stats>
+		<status canMove="false" />
+		<skillList>
+			<skill id="4416" level="8" /> <!--Angels -->
+			<skill id="5466" level="1" /> <!--Holy Attacks -->
+			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
+			<skill id="4409" level="1" /> <!--MP Increase (1x)-->
+			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
+			<skill id="4411" level="8" /> <!--Weak M. Atk. -->
+			<skill id="4412" level="9" /> <!--Slightly Weak P. Def. -->
+			<skill id="4413" level="8" /> <!--Weak M. Def. -->
+			<skill id="4414" level="2" /> <!--Standard Type -->
+			<skill id="4415" level="5" /> <!--Blunt Weapons -->
+		</skillList>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="13" />
+			<height normal="47" />
 		</collision>
 	</npc>
-	<npc id="18957" level="80" type="L2Npc" name="Guardian of the Tomb">
+	<npc id="18957" level="82" type="L2Monster" name="Guardian of the Tomb">
 		<!-- TODO: Must be confirmed -->
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3643.38976668326" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="160" />
+				<defence fire="170" water="170" wind="170" earth="170" holy="200" dark="120" default="140" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="30" />
+				<run ground="220" />
 			</speed>
 		</stats>
+		<status canMove="false" />
+		<skillList>
+			<skill id="4416" level="8" /> <!--Angels -->
+			<skill id="5466" level="1" /> <!--Holy Attacks -->
+			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
+			<skill id="4409" level="1" /> <!--MP Increase (1x)-->
+			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
+			<skill id="4411" level="8" /> <!--Weak M. Atk. -->
+			<skill id="4412" level="9" /> <!--Slightly Weak P. Def. -->
+			<skill id="4413" level="8" /> <!--Weak M. Def. -->
+			<skill id="4414" level="2" /> <!--Standard Type -->
+			<skill id="4415" level="5" /> <!--Blunt Weapons -->
+		</skillList>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="13" />
+			<height normal="47" />
 		</collision>
 	</npc>
-	<npc id="18958" level="80" type="L2Npc" name="Guardian of the Tomb">
+	<npc id="18958" level="82" type="L2Monster" name="Guardian of the Tomb">
 		<!-- TODO: Must be confirmed -->
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3643.38976668326" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="160" />
+				<defence fire="170" water="170" wind="170" earth="170" holy="200" dark="120" default="140" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="30" />
+				<run ground="220" />
 			</speed>
 		</stats>
+		<status canMove="false" />
+		<skillList>
+			<skill id="4416" level="8" /> <!--Angels -->
+			<skill id="5466" level="1" /> <!--Holy Attacks -->
+			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
+			<skill id="4409" level="1" /> <!--MP Increase (1x)-->
+			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
+			<skill id="4411" level="8" /> <!--Weak M. Atk. -->
+			<skill id="4412" level="9" /> <!--Slightly Weak P. Def. -->
+			<skill id="4413" level="8" /> <!--Weak M. Def. -->
+			<skill id="4414" level="2" /> <!--Standard Type -->
+			<skill id="4415" level="5" /> <!--Blunt Weapons -->
+		</skillList>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="13" />
+			<height normal="47" />
 		</collision>
 	</npc>
-	<npc id="18959" level="80" type="L2Npc" name="Guardian of the Tomb">
+	<npc id="18959" level="82" type="L2Monster" name="Guardian of the Tomb">
 		<!-- TODO: Must be confirmed -->
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3643.38976668326" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="160" />
+				<defence fire="170" water="170" wind="170" earth="170" holy="200" dark="120" default="140" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="30" />
+				<run ground="220" />
 			</speed>
 		</stats>
+		<status canMove="false" />
+		<skillList>
+			<skill id="4416" level="8" /> <!--Angels -->
+			<skill id="5466" level="1" /> <!--Holy Attacks -->
+			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
+			<skill id="4409" level="1" /> <!--MP Increase (1x)-->
+			<skill id="4410" level="9" /> <!--Slightly Weak P. Atk. -->
+			<skill id="4411" level="8" /> <!--Weak M. Atk. -->
+			<skill id="4412" level="9" /> <!--Slightly Weak P. Def. -->
+			<skill id="4413" level="8" /> <!--Weak M. Def. -->
+			<skill id="4414" level="2" /> <!--Standard Type -->
+			<skill id="4415" level="5" /> <!--Blunt Weapons -->
+		</skillList>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="13" />
+			<height normal="47" />
 		</collision>
 	</npc>
 	<npc id="18960" level="80" type="L2Npc" name="Drake Lord">
