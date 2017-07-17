@@ -514,8 +514,8 @@
 		</for>
 	</skill>
 	<skill id="1018" levels="3" name="Purify">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
-		<table name="#dispelAbnormals"> POISON,3;BLEEDING,3;PARALYZE,1 POISON,7;BLEEDING,7;PARALYZE,1;TURN_STONE,2 POISON,9;BLEEDING,9;PARALYZE,1;TURN_STONE,2 </table>
+		<!-- High Five Confirmed -->
+		<table name="#dispelAbnormals"> POISON,3;BLEEDING,3;PARALYZE,1 POISON,7;BLEEDING,7;PARALYZE,1;TURN_STONE,1 POISON,9;BLEEDING,9;PARALYZE,1;TURN_STONE,1 </table>
 		<table name="#effectPoints"> 418 495 566 </table>
 		<table name="#magicLvl"> 44 52 62 </table>
 		<table name="#mpConsume"> 31 38 44 </table>
