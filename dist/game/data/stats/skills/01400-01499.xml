@@ -2392,19 +2392,14 @@
 		</for>
 	</skill>
 	<skill id="1467" levels="1" name="Meteor">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="DOT_ATTR" />
-		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="activateRate" val="40" />
-		<set name="basicProperty" val="CON" />
-		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="trait" val="BLEED" />
+		<set name="activateRate" val="80" />
 		<set name="affectLimit" val="10-10" />
-		<set name="affectRange" val="150" />
+		<set name="affectRange" val="200" />
+		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-679" />
 		<set name="effectRange" val="1100" />
@@ -2412,58 +2407,61 @@
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1467" />
+		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="81" />
-		<set name="mpInitialConsume" val="72" />
+		<set name="mpConsume" val="116" />
+		<set name="mpInitialConsume" val="29" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="117" />
 		<set name="reuseDelay" val="300000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack" />
-			<effect name="DamOverTime" ticks="3">
-				<param power="111" />
+			<effect name="DamOverTime" ticks="5">
+				<param power="100" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1468" levels="1" name="Star Fall">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="DOT_ATTR" />
-		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="activateRate" val="40" />
-		<set name="basicProperty" val="CON" />
-		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="trait" val="BLEED" />
+		<set name="activateRate" val="80" />
 		<set name="affectLimit" val="10-10" />
-		<set name="affectRange" val="150" />
+		<set name="affectRange" val="200" />
+		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-679" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1468" />
+		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="81" />
-		<set name="mpInitialConsume" val="72" />
+		<set name="mpConsume" val="116" />
+		<set name="mpInitialConsume" val="29" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="117" />
 		<set name="reuseDelay" val="300000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack" />
-			<effect name="DamOverTime" ticks="3">
-				<param power="111" />
+			<effect name="DamOverTime" ticks="5">
+				<param power="100" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1469" levels="1" name="Leopold" enchantGroup1="6" enchantGroup2="6" enchantGroup3="6" enchantGroup4="6">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
 		<table name="#ench1Power"> 235 235 236 237 237 238 238 239 239 240 241 241 242 242 243 </table>
-		<table name="#ench2MpConsume"> 66 64 62 60 58 55 55 51 48 47 44 42 40 38 36 </table>
-		<table name="#ench2MpInitialConsume"> 16 15 15 14 14 13 13 12 12 11 10 10 9 9 8 </table>
+		<table name="#ench2MpConsume"> 65 63 61 59 57 54 52 50 48 46 43 41 39 37 35 </table>
+		<table name="#ench2MpInitialConsume"> 17 16 16 15 15 14 13 13 12 12 11 11 10 10 9 </table>
 		<table name="#ench3ElementPower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
 		<table name="#ench4Duel"> 228 232 236 241 245 249 253 258 262 266 270 275 279 283 288 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
@@ -3307,7 +3305,7 @@
 		</for>
 	</skill>
 	<skill id="1492" levels="1" name="Flame Armor">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ELEMENTAL_ARMOR" />
@@ -3315,7 +3313,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1492" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="29" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="operateType" val="A2" />
@@ -3329,12 +3327,14 @@
 				<param chance="10" />
 				<param skillId="5567" skillLevel="1" /> <!-- Flame Armor -->
 				<param targetType="ONE" />
+			</effect>
+			<effect name="Buff">
 				<add stat="fireRes" val="60" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1493" levels="1" name="Frost Armor">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ELEMENTAL_ARMOR" />
@@ -3342,7 +3342,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1493" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="29" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="operateType" val="A2" />
@@ -3356,12 +3356,14 @@
 				<param chance="10" />
 				<param skillId="5568" skillLevel="1" /> <!-- Frost Armor -->
 				<param targetType="ONE" />
+			</effect>
+			<effect name="Buff">
 				<add stat="waterRes" val="60" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1494" levels="1" name="Hurricane Armor">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ELEMENTAL_ARMOR" />
@@ -3369,7 +3371,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1494" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="29" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="operateType" val="A2" />
@@ -3383,17 +3385,20 @@
 				<param chance="10" />
 				<param skillId="5569" skillLevel="1" /> <!-- Hurricane Armor -->
 				<param targetType="ONE" />
+			</effect>
+			<effect name="Buff">
 				<add stat="windRes" val="60" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1495" levels="1" name="Vampiric Mist">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="ULTIMATE_DEBUFF" />
-		<set name="activateRate" val="90" />
+		<set name="activateRate" val="100" />
 		<set name="affectLimit" val="10-10" />
-		<set name="affectRange" val="200" />
+		<set name="affectRange" val="300" />
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="-679" />
 		<set name="element" val="5" /> <!-- Dark -->
@@ -3403,8 +3408,9 @@
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="83" />
-		<set name="mpConsume" val="145" />
+		<set name="magicLvl" val="81" />
+		<set name="mpConsume" val="116" />
+		<set name="mpInitialConsume" val="29" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="117" />
 		<set name="reuseDelay" val="60000" />
@@ -3417,8 +3423,14 @@
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.5" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="runSpd" val="0.5" />
+			</effect>
+			<effect name="Debuff">
 				<sub stat="accCombat" val="12" />
 			</effect>
 		</for>

@@ -1622,8 +1622,14 @@
 		<for>
 			<effect name="Buff">
 				<add stat="fireRes" val="20" />
+			</effect>
+			<effect name="Buff">
 				<add stat="waterRes" val="20" />
+			</effect>
+			<effect name="Buff">
 				<add stat="windRes" val="20" />
+			</effect>
+			<effect name="Buff">
 				<add stat="earthRes" val="20" />
 			</effect>
 		</for>
@@ -1831,14 +1837,14 @@
 	</skill>
 	<skill id="1558" levels="24" name="Dimension Spiral">
 		<!-- High Five Confirmed -->
-		<table name="#effectPoint"> -379 -389 -399 -408 -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 </table>
+		<table name="#effectPoints"> -379 -389 -399 -408 -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 </table>
 		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#mpConsume"> 30 34 37 40 42 44 45 47 48 50 51 53 59 66 73 79 80 86 87 93 94 95 101 108 </table>
 		<table name="#mpInitialConsume"> 8 9 10 10 11 11 12 12 12 13 13 14 15 17 19 20 20 20 22 22 24 24 24 26 </table>
 		<table name="#power"> 57 58 60 61 63 66 68 71 74 77 79 82 89 94 100 104 110 115 139 152 166 179 193 207 </table>
 		<table name="#pvpPower"> 57 58 60 61 63 66 68 71 74 77 79 82 84 87 89 90 91 92 93 94 95 96 97 98 </table>
 		<set name="castRange" val="900" />
-		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1558" />
@@ -1875,6 +1881,8 @@
 				<mul stat="critRate" val="#rCrit">
 					<using kind="DAGGER,DUALDAGGER" />
 				</mul>
+			</effect>
+			<effect name="Buff">
 				<add stat="critDmgAdd" val="#cAtkAdd">
 					<using kind="DAGGER,DUALDAGGER" />
 				</add>
@@ -1915,14 +1923,14 @@
 	<skill id="1561" levels="5" name="Battle Cry">
 		<!-- High Five Confirmed -->
 		<table name="#abnormalLvls"> 2 3 4 5 6 </table>
-		<table name="#effectPoint"> 379 467 549 597 635 </table>
+		<table name="#effectPoints"> 379 467 549 597 635 </table>
 		<table name="#MaxHp"> 15 20 25 30 35 </table>
 		<table name="#magicLvl"> 40 49 58 64 70 </table>
 		<table name="#mpConsume"> 18 22 27 30 33 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="MAX_HP_UP" />
-		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1561" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1970,12 +1978,26 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#amount" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#amount" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#amount" />
+			</effect>
+			<effect name="Buff">
 				<add stat="runSpd" val="#runSpd" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="Buff">
 				<sub stat="rEvas" val="#rEvas" />
 			</effect>
 		</for>

@@ -584,7 +584,7 @@
 		</for>
 	</skill>
 	<skill id="1326" levels="1" name="Harmony of Noblesse">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
@@ -612,10 +612,20 @@
 		<for>
 			<effect name="Buff">
 				<add stat="pDef" val="3000" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="runSpd" val="1.25" />
+			</effect>
+			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="maxCp" val="0.8" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="maxRecoverableCp" val="0.6" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="maxRecoverableHp" val="0.7" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -625,7 +635,7 @@
 		</for>
 	</skill>
 	<skill id="1327" levels="1" name="Symphony of Noblesse">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
@@ -653,10 +663,20 @@
 		<for>
 			<effect name="Buff">
 				<add stat="mDef" val="4500" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="runSpd" val="1.25" />
+			</effect>
+			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="maxCp" val="0.8" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="maxRecoverableCp" val="0.6" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="maxRecoverableHp" val="0.7" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -2561,15 +2581,15 @@
 		</for>
 	</skill>
 	<skill id="1381" levels="5" name="Mass Fear" enchantGroup1="1" enchantGroup2="1">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
 		<table name="#effectPoints"> -549 -582 -611 -635 -655 </table>
 		<table name="#magicLvl"> 58 62 66 70 74 </table>
-		<table name="#mpConsume"> 64 69 74 78 82 </table>
-		<table name="#mpInitialConsume"> 16 18 19 20 21 </table>
-		<table name="#ench1ActivateRates"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 86 86 86 87 87 87 88 88 88 89 89 89 90 90 90 </table>
-		<table name="#ench1MpConsume"> 80 78 77 76 74 73 72 70 69 68 66 65 63 62 61 59 58 57 55 54 53 51 50 48 47 46 44 43 42 40 </table>
-		<table name="#ench1MpInitialConsume"> 20 19 19 19 18 18 18 17 17 17 16 16 15 15 15 14 14 14 13 13 13 12 12 12 11 11 11 10 10 10 </table>
-		<table name="#ench2ActivateRates"> 80 81 82 82 83 84 84 85 86 86 87 88 88 89 90 90 91 92 92 93 94 94 95 96 96 97 98 98 99 100 </table>
+		<table name="#mpConsume"> 85 92 98 104 109 </table>
+		<table name="#mpInitialConsume"> 22 23 25 26 28 </table>
+		<table name="#ench1ActivateRates"> 81 81 82 82 83 83 84 84 85 85 86 86 87 87 88 88 88 89 89 90 90 91 91 92 92 93 93 94 94 95 </table>
+		<table name="#ench1MpConsume"> 108 106 104 102 101 99 97 95 93 91 89 88 86 84 82 80 78 76 74 73 71 69 67 65 63 61 60 58 56 54 </table>
+		<table name="#ench1MpInitialConsume"> 27 26 26 25 25 24 24 23 23 22 22 22 21 21 20 20 19 19 18 18 17 17 16 16 15 15 15 14 14 13 </table>
+		<table name="#ench2ActivateRates"> 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
