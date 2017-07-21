@@ -32,7 +32,7 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
 
 import instances.AbstractInstance;
 import quests.Q10294_SevenSignsToTheMonasteryOfSilence.Q10294_SevenSignsToTheMonasteryOfSilence;
-import quests.Q10295_Seven_Signs_Solinas_Tomb.Q10295_Seven_Signs_Solinas_Tomb;
+import quests.Q10295_SevenSignsSolinasTomb.Q10295_SevenSignsSolinasTomb;
 
 /**
  * Monastery of Silence instance zone.
@@ -279,7 +279,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 				case "DIALOG":
 				{
 					final QuestState st_Q10294 = player.getQuestState(Q10294_SevenSignsToTheMonasteryOfSilence.class.getSimpleName());
-					final QuestState st_Q10295 = player.getQuestState(Q10295_Seven_Signs_Solinas_Tomb.class.getSimpleName());
+					final QuestState st_Q10295 = player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName());
 					if ((st_Q10294 != null) && st_Q10294.isStarted())
 					{
 						broadcastNpcSay(npc, Say2.NPC_ALL, ELCADIA_DIALOGS_Q010294[getRandom(ELCADIA_DIALOGS_Q010294.length)]);
@@ -455,7 +455,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 					if (world.deadTombGuardianCount == 4)
 					{
 						openDoor(TOMB_DOOR, world.getInstanceId());
-						final QuestState st = player.getQuestState(Q10295_Seven_Signs_Solinas_Tomb.class.getSimpleName());
+						final QuestState st = player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName());
 						if ((st != null) && st.isMemoState(2))
 						{
 							st.setMemoState(3);
@@ -472,7 +472,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 					if (world.deadSolinaGuardianCount == 4)
 					{
 						player.showQuestMovie(27);
-						final QuestState st = player.getQuestState(Q10295_Seven_Signs_Solinas_Tomb.class.getSimpleName());
+						final QuestState st = player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName());
 						if ((st != null) && st.isMemoState(1))
 						{
 							st.setMemoState(2);
