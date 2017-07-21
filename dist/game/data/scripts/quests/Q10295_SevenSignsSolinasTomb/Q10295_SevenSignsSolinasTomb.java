@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package quests.Q10295_Seven_Signs_Solinas_Tomb;
+package quests.Q10295_SevenSignsSolinasTomb;
 
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -30,7 +30,7 @@ import quests.Q10294_SevenSignsToTheMonasteryOfSilence.Q10294_SevenSignsToTheMon
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class Q10295_Seven_Signs_Solinas_Tomb extends Quest
+public final class Q10295_SevenSignsSolinasTomb extends Quest
 {
 	// NPCs
 	private static final int ELCADIA = 32787;
@@ -60,9 +60,9 @@ public final class Q10295_Seven_Signs_Solinas_Tomb extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	
-	public Q10295_Seven_Signs_Solinas_Tomb()
+	public Q10295_SevenSignsSolinasTomb()
 	{
-		super(10295, Q10295_Seven_Signs_Solinas_Tomb.class.getSimpleName(), "Seven Signs, Solina's Tomb");
+		super(10295, Q10295_SevenSignsSolinasTomb.class.getSimpleName(), "Seven Signs, Solina's Tomb");
 		addStartNpc(ERISS_EVIL_THOUGHTS);
 		addTalkId(ERISS_EVIL_THOUGHTS, SOLINAS_EVIL_THOUGHTS, SOLINA, ERIS, ANAIS, JUDE_VAN_ETINA, TELEPORT_CONTROL_DEVICE_1, POWERFUL_DEVICE_1, POWERFUL_DEVICE_2, POWERFUL_DEVICE_3, POWERFUL_DEVICE_4, TELEPORT_CONTROL_DEVICE_2, TOMB_OF_THE_SAINTESS, TELEPORT_CONTROL_DEVICE_3, ALTAR_OF_HALLOWS_1, ALTAR_OF_HALLOWS_2, ALTAR_OF_HALLOWS_3, ALTAR_OF_HALLOWS_4, ELCADIA);
 		registerQuestItems(SCROLL_OF_ABSTINENCE, SHIELD_OF_SACRIFICE, SWORD_OF_HOLY_SPIRIT, STAFF_OF_BLESSING);
