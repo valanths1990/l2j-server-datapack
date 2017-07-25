@@ -18,13 +18,13 @@
  */
 package instances.HideoutOfTheDawn;
 
-import instances.AbstractInstance;
-
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
+
+import instances.AbstractInstance;
 
 /**
  * Hideout of the Dawn instance zone.
@@ -41,8 +41,8 @@ public final class HideoutOfTheDawn extends AbstractInstance
 	private static final int WOOD = 32593;
 	private static final int JAINA = 32617;
 	// Location
-	private static final Location WOOD_LOC = new Location(-23758, -8959, -5384, 0, 0);
-	private static final Location JAINA_LOC = new Location(147072, 23743, -1984, 0);
+	private static final Location WOOD_LOC = new Location(-23758, -8959, -5384);
+	private static final Location JAINA_LOC = new Location(147072, 23743, -1984);
 	// Misc
 	private static final int TEMPLATE_ID = 113;
 	

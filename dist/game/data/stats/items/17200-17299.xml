@@ -530,7 +530,12 @@
 	<item id="17265" type="EtcItem" name="Certificate of Dawn">
 		<!-- Description: A certificate received from the Witness of Dawn Franz. It says that if you show this certificate to Priest Wood, he will exchange it for an occupation specific Forgotten Scroll that can be learned at level 81. -->
 		<set name="icon" val="icon.etc_charm_of_courage_i05" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_questitem" val="true" />
 	</item>
 	<item id="17266" type="EtcItem" name="Will of Antharas">
 		<!-- Description: A command stone made by Antharas embedded in his high commanding minions so he will always have control over them. Used to create Antharas Blood Crystal. Bring it to a Separated Soul. -->
