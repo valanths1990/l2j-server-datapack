@@ -33,6 +33,7 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
 import instances.AbstractInstance;
 import quests.Q10294_SevenSignsToTheMonasteryOfSilence.Q10294_SevenSignsToTheMonasteryOfSilence;
 import quests.Q10295_SevenSignsSolinasTomb.Q10295_SevenSignsSolinasTomb;
+import quests.Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal.Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal;
 
 /**
  * Monastery of Silence instance zone.
@@ -64,6 +65,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	// Monsters
 	private static final int TRAINEE_OF_REST = 27403;
 	private static final int SUPPLICANT_OF_REST = 27404;
+	private static final int ETIS_VAN_ETINA = 18949;
 	private static final int SOLINAS_GUARDIAN_1 = 18952;
 	private static final int SOLINAS_GUARDIAN_2 = 18953;
 	private static final int SOLINAS_GUARDIAN_3 = 18954;
@@ -86,7 +88,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	};
 	// Locations
 	private static final Location START_LOC = new Location(120717, -86879, -3424);
-	private static final Location EXIT_LOC = new Location(115983, -87351, -3397, 0, 0);
+	private static final Location EXIT_LOC = new Location(115983, -87351, -3397);
 	private static final Location CENTRAL_ROOM_LOC = new Location(85794, -249788, -8320);
 	private static final Location SOUTH_WATCHERS_ROOM_LOC = new Location(85798, -246566, -8320);
 	private static final Location WEST_WATCHERS_ROOM_LOC = new Location(82531, -249405, -8320);
@@ -105,6 +107,9 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	private static final Location SOLINAS_GUARDIAN_2_LOC = new Location(48736, -249632, -6768, -32628);
 	private static final Location SOLINAS_GUARDIAN_3_LOC = new Location(45392, -246303, -6768, -16268);
 	private static final Location SOLINAS_GUARDIAN_4_LOC = new Location(42016, -249648, -6764, 0);
+	private static final Location ELCADIA_LOC = new Location(115927, -87005, -3392);
+	private static final Location SPACE_LOC = new Location(76736, -241021, -10780);
+	private static final Location ETIS_VAN_ETINA_LOC = new Location(76625, -240824, -10832, 0);
 	private static final Location[] SLAVE_SPAWN_1_LOC =
 	{
 		new Location(55680, -252832, -6752),
@@ -183,7 +188,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	{
 		super(MonasteryOfSilence1.class.getSimpleName());
 		addFirstTalkId(TELEPORT_CONTROL_DEVICE1, TELEPORT_CONTROL_DEVICE2, TELEPORT_CONTROL_DEVICE3, TELEPORT_CONTROL_DEVICE4);
-		addKillId(SOLINAS_GUARDIAN_1, SOLINAS_GUARDIAN_2, SOLINAS_GUARDIAN_3, SOLINAS_GUARDIAN_4, GUARDIAN_OF_THE_TOMB_1, GUARDIAN_OF_THE_TOMB_2, GUARDIAN_OF_THE_TOMB_3, GUARDIAN_OF_THE_TOMB_4);
+		addKillId(SOLINAS_GUARDIAN_1, SOLINAS_GUARDIAN_2, SOLINAS_GUARDIAN_3, SOLINAS_GUARDIAN_4, GUARDIAN_OF_THE_TOMB_1, GUARDIAN_OF_THE_TOMB_2, GUARDIAN_OF_THE_TOMB_3, GUARDIAN_OF_THE_TOMB_4, ETIS_VAN_ETINA);
 		addSpawnId(ERIS_EVIL_THOUGHTS, TOMB_OF_THE_SAINTESS);
 		addStartNpc(ODD_GLOBE, TELEPORT_CONTROL_DEVICE1, TELEPORT_CONTROL_DEVICE2, TELEPORT_CONTROL_DEVICE3, TELEPORT_CONTROL_DEVICE4, ERIS_EVIL_THOUGHTS);
 		addTalkId(ODD_GLOBE, ERIS_EVIL_THOUGHTS, RELIC_GUARDIAN, RELIC_WATCHER1, RELIC_WATCHER2, RELIC_WATCHER3, RELIC_WATCHER4, TELEPORT_CONTROL_DEVICE1, TELEPORT_CONTROL_DEVICE2, TELEPORT_CONTROL_DEVICE3, TELEPORT_CONTROL_DEVICE4, ERIS_EVIL_THOUGHTS);
@@ -432,6 +437,25 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 					}
 					return "32843-01.html";
 				}
+				case "START_MOVIE_Q10296":
+				{
+					player.showQuestMovie(29);
+					startQuestTimer("TELEPORT_SPACE", 60000, npc, player);
+					world.elcadia.teleToLocation(ELCADIA_LOC, world.getInstanceId(), 0);
+					break;
+				}
+				case "TELEPORT_SPACE":
+				{
+					teleportPlayer(player, SPACE_LOC, world.getInstanceId());
+					world.elcadia.teleToLocation(SPACE_LOC, world.getInstanceId(), 0);
+					addSpawn(ETIS_VAN_ETINA, ETIS_VAN_ETINA_LOC, false, 0, false, world.getInstanceId());
+					break;
+				}
+				case "TELEPORT_TO_PLAYER":
+				{
+					world.elcadia.teleToLocation(player.getX(), player.getY(), player.getZ(), 0, world.getInstanceId());
+					break;
+				}
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
@@ -477,6 +501,18 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 						{
 							st.setMemoState(2);
 						}
+					}
+					break;
+				}
+				case ETIS_VAN_ETINA:
+				{
+					player.showQuestMovie(30);
+					world.elcadia.teleToLocation(ELCADIA_LOC, world.getInstanceId(), 0);
+					startQuestTimer("TELEPORT_TO_PLAYER", 63000, npc, player);
+					final QuestState st = player.getQuestState(Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal.class.getSimpleName());
+					if ((st != null) && st.isMemoState(2))
+					{
+						st.setMemoState(3);
 					}
 					break;
 				}
