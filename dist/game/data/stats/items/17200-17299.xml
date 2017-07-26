@@ -423,7 +423,9 @@
 	<item id="17249" type="EtcItem" name="Large Dragon Skull">
 		<!-- Description: Dragon Skull obtained after finishing off the raid monster that lives in the Dragon Valley. After obtaining the dragon skulls from all 7 different raid monsters, bring them to Gilmore. -->
 		<set name="icon" val="icon.etc_fang_red_i00" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
@@ -433,23 +435,47 @@
 	<item id="17250" type="EtcItem" name="Large Baby Dragon">
 		<!-- Description: Baby Dragon obtained after finishing off the raid monster that lives in the Dragon Valley. After obtaining the baby dragon, bring it to the separated soul in the Dragon Valley. -->
 		<set name="icon" val="icon.etc_claw_i00" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
 	</item>
 	<item id="17251" type="EtcItem" name="Drake Lord's Essence">
 		<!-- Description: Drake Lord's essence. Bring it to Theodric. -->
 		<set name="icon" val="icon.etc_crystal_blue_i00" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_questitem" val="true" />
 	</item>
 	<item id="17252" type="EtcItem" name="Behemoth Leader's Essence">
 		<!-- Description: Behemoth Leader's Essence. Bring it to Theodric. -->
 		<set name="icon" val="icon.etc_crystal_green_i00" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_questitem" val="true" />
 	</item>
 	<item id="17253" type="EtcItem" name="Dragon Beast's Essence">
 		<!-- Description: Dragon Beast's Essence. Bring it to Theodric. -->
 		<set name="icon" val="icon.etc_crystal_gold_i00" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_questitem" val="true" />
 	</item>
 	<item id="17254" type="EtcItem" name="Box of Theodric">
 		<!-- Description: Old and tattered box. You can hear a rattling sound when you shake it. -->
