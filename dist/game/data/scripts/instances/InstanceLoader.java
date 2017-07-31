@@ -50,6 +50,7 @@ import instances.NornilsGardenQuest.NornilsGardenQuest;
 import instances.PailakaDevilsLegacy.PailakaDevilsLegacy;
 import instances.PailakaSongOfIceAndFire.PailakaSongOfIceAndFire;
 import instances.SanctumOftheLordsOfDawn.SanctumOftheLordsOfDawn;
+import instances.SecretAreaInTheKeucereusFortress1.SecretAreaInTheKeucereusFortress1;
 
 /**
  * Instance class-loader.
@@ -90,6 +91,7 @@ public final class InstanceLoader
 		PailakaDevilsLegacy.class,
 		PailakaSongOfIceAndFire.class,
 		SanctumOftheLordsOfDawn.class,
+		SecretAreaInTheKeucereusFortress1.class,
 	};
 	
 	public static void main(String[] args)

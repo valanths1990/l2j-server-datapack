@@ -37,7 +37,7 @@ public final class SecretArea extends Quest
 		
 	}
 	
-	private static final int TEMPLATE_ID = 117;
+	private static final int TEMPLATE_ID = 118;
 	private static final int GINBY = 32566;
 	private static final int LELRIKIA = 32567;
 	private static final int ENTER = 0;
@@ -72,7 +72,7 @@ public final class SecretArea extends Quest
 		}
 		
 		world = new SAWorld();
-		world.setInstanceId(InstanceManager.getInstance().createDynamicInstance("SecretArea.xml"));
+		world.setInstanceId(InstanceManager.getInstance().createDynamicInstance("SecretAreaInTheKeucereusFortress.xml"));
 		world.setTemplateId(TEMPLATE_ID);
 		world.addAllowed(player.getObjectId());
 		world.setStatus(0);

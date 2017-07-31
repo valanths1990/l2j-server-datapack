@@ -487,6 +487,7 @@ import quests.Q00998_FallenAngelSelect.Q00998_FallenAngelSelect;
 import quests.Q10267_JourneyToGracia.Q10267_JourneyToGracia;
 import quests.Q10268_ToTheSeedOfInfinity.Q10268_ToTheSeedOfInfinity;
 import quests.Q10269_ToTheSeedOfDestruction.Q10269_ToTheSeedOfDestruction;
+import quests.Q10270_BirthOfTheSeed.Q10270_BirthOfTheSeed;
 import quests.Q10271_TheEnvelopingDarkness.Q10271_TheEnvelopingDarkness;
 import quests.Q10272_LightFragment.Q10272_LightFragment;
 import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
@@ -994,6 +995,7 @@ public class QuestMasterHandler
 		Q10267_JourneyToGracia.class,
 		Q10268_ToTheSeedOfInfinity.class,
 		Q10269_ToTheSeedOfDestruction.class,
+		Q10270_BirthOfTheSeed.class,
 		Q10271_TheEnvelopingDarkness.class,
 		Q10272_LightFragment.class,
 		Q10273_GoodDayToFly.class,
