@@ -317,6 +317,7 @@ import quests.Q00330_AdeptOfTaste.Q00330_AdeptOfTaste;
 import quests.Q00331_ArrowOfVengeance.Q00331_ArrowOfVengeance;
 import quests.Q00333_HuntOfTheBlackLion.Q00333_HuntOfTheBlackLion;
 import quests.Q00334_TheWishingPotion.Q00334_TheWishingPotion;
+import quests.Q00335_TheSongOfTheHunter.Q00335_TheSongOfTheHunter;
 import quests.Q00336_CoinsOfMagic.Q00336_CoinsOfMagic;
 import quests.Q00337_AudienceWithTheLandDragon.Q00337_AudienceWithTheLandDragon;
 import quests.Q00338_AlligatorHunter.Q00338_AlligatorHunter;
@@ -824,6 +825,7 @@ public class QuestMasterHandler
 		Q00331_ArrowOfVengeance.class,
 		Q00333_HuntOfTheBlackLion.class,
 		Q00334_TheWishingPotion.class,
+		Q00335_TheSongOfTheHunter.class,
 		Q00336_CoinsOfMagic.class,
 		Q00337_AudienceWithTheLandDragon.class,
 		Q00338_AlligatorHunter.class,
