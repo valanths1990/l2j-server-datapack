@@ -18,7 +18,6 @@
  */
 package instances.HideoutOfTheDawn;
 
-import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -49,30 +48,37 @@ public final class HideoutOfTheDawn extends AbstractInstance
 	public HideoutOfTheDawn()
 	{
 		super(HideoutOfTheDawn.class.getSimpleName());
+		addFirstTalkId(JAINA);
 		addStartNpc(WOOD);
 		addTalkId(WOOD, JAINA);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		switch (npc.getId())
+		String htmltext = null;
+		switch (event)
 		{
-			case WOOD:
+			case "32617-01.html":
+			case "32617-02a.html":
 			{
-				enterInstance(talker, new HotDWorld(), "HideoutOfTheDawn.xml", TEMPLATE_ID);
-				return "32593-01.htm";
+				htmltext = event;
+				break;
 			}
-			case JAINA:
+			case "32617-02.html":
 			{
-				final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(talker);
-				world.removeAllowed(talker.getObjectId());
-				talker.setInstanceId(0);
-				talker.teleToLocation(JAINA_LOC);
-				return "32617-01.htm";
+				player.setInstanceId(0);
+				player.teleToLocation(JAINA_LOC, true);
+				htmltext = event;
+				break;
+			}
+			case "32593-01.html":
+			{
+				enterInstance(player, new HotDWorld(), "HideoutOfTheDawn.xml", TEMPLATE_ID);
+				htmltext = event;
 			}
 		}
-		return super.onTalk(npc, talker);
+		return htmltext;
 	}
 	
 	@Override
