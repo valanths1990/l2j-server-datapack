@@ -359,14 +359,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		
-		if (st == null)
-		{
-			return getNoQuestMsg(player);
-		}
-		
 		int talk = st.getInt("talk");
-		
 		switch (npc.getId())
 		{
 			case YUMI:

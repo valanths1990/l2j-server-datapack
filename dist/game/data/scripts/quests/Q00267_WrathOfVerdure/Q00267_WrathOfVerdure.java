@@ -18,8 +18,8 @@
  */
 package quests.Q00267_WrathOfVerdure;
 
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -100,34 +100,31 @@ public final class Q00267_WrathOfVerdure extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st != null)
+		switch (st.getState())
 		{
-			switch (st.getState())
+			case State.CREATED:
 			{
-				case State.CREATED:
+				htmltext = (player.getRace() == Race.ELF) ? (player.getLevel() >= MIN_LVL) ? "31853-03.htm" : "31853-02.htm" : "31853-01.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				if (st.hasQuestItems(GOBLIN_CLUB))
 				{
-					htmltext = (player.getRace() == Race.ELF) ? (player.getLevel() >= MIN_LVL) ? "31853-03.htm" : "31853-02.htm" : "31853-01.htm";
-					break;
+					final long count = st.getQuestItemsCount(GOBLIN_CLUB);
+					st.rewardItems(SILVERY_LEAF, count);
+					if (count >= 10)
+					{
+						st.giveAdena(600, true);
+					}
+					st.takeItems(GOBLIN_CLUB, -1);
+					htmltext = "31853-06.html";
 				}
-				case State.STARTED:
+				else
 				{
-					if (st.hasQuestItems(GOBLIN_CLUB))
-					{
-						final long count = st.getQuestItemsCount(GOBLIN_CLUB);
-						st.rewardItems(SILVERY_LEAF, count);
-						if (count >= 10)
-						{
-							st.giveAdena(600, true);
-						}
-						st.takeItems(GOBLIN_CLUB, -1);
-						htmltext = "31853-06.html";
-					}
-					else
-					{
-						htmltext = "31853-05.html";
-					}
-					break;
+					htmltext = "31853-05.html";
 				}
+				break;
 			}
 		}
 		return htmltext;

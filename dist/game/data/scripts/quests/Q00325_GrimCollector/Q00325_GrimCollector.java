@@ -221,11 +221,6 @@ public final class Q00325_GrimCollector extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (npc.getId())
 		{
 			case GUARD_CURTIZ:

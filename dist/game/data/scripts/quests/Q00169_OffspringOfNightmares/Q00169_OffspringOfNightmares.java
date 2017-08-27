@@ -18,8 +18,8 @@
  */
 package quests.Q00169_OffspringOfNightmares;
 
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -112,36 +112,33 @@ public class Q00169_OffspringOfNightmares extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st != null)
+		switch (st.getState())
 		{
-			switch (st.getState())
+			case State.CREATED:
 			{
-				case State.CREATED:
+				htmltext = (player.getRace() == Race.DARK_ELF) ? (player.getLevel() >= MIN_LVL) ? "30145-02.htm" : "30145-01.htm" : "30145-00.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				if (st.hasQuestItems(CRACKED_SKULL) && !st.hasQuestItems(PERFECT_SKULL))
 				{
-					htmltext = (player.getRace() == Race.DARK_ELF) ? (player.getLevel() >= MIN_LVL) ? "30145-02.htm" : "30145-01.htm" : "30145-00.htm";
-					break;
+					htmltext = "30145-05.html";
 				}
-				case State.STARTED:
+				else if (st.isCond(2) && st.hasQuestItems(PERFECT_SKULL))
 				{
-					if (st.hasQuestItems(CRACKED_SKULL) && !st.hasQuestItems(PERFECT_SKULL))
-					{
-						htmltext = "30145-05.html";
-					}
-					else if (st.isCond(2) && st.hasQuestItems(PERFECT_SKULL))
-					{
-						htmltext = "30145-06.html";
-					}
-					else if (!st.hasQuestItems(CRACKED_SKULL, PERFECT_SKULL))
-					{
-						htmltext = "30145-04.html";
-					}
-					break;
+					htmltext = "30145-06.html";
 				}
-				case State.COMPLETED:
+				else if (!st.hasQuestItems(CRACKED_SKULL, PERFECT_SKULL))
 				{
-					htmltext = getAlreadyCompletedMsg(player);
-					break;
+					htmltext = "30145-04.html";
 				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
 		return htmltext;

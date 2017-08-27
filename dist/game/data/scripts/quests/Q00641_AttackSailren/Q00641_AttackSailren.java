@@ -18,14 +18,14 @@
  */
 package quests.Q00641_AttackSailren;
 
-import quests.Q00126_TheNameOfEvil2.Q00126_TheNameOfEvil2;
-
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00126_TheNameOfEvil2.Q00126_TheNameOfEvil2;
 
 /**
  * Attack Sailren! (641)
@@ -111,11 +111,6 @@ public class Q00641_AttackSailren extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (st.getState())
 		{
 			case State.CREATED:

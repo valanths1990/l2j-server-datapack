@@ -167,10 +167,6 @@ public class Q00242_PossessorOfAPreciousSoul2 extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
 		if (st.isStarted() && !player.isSubClassActive())
 		{
 			return "no_sub.html";

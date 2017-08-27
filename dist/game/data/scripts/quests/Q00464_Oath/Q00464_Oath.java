@@ -223,11 +223,9 @@ public class Q00464_Oath extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		
-		if ((st != null) && st.isStarted())
+		if (st.isStarted())
 		{
 			int npcId = npc.getId();
-			
 			if (npcId == NPC[0][0])
 			{
 				switch (st.getCond())

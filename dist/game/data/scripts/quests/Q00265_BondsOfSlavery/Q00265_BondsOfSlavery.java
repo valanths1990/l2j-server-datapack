@@ -21,15 +21,15 @@ package quests.Q00265_BondsOfSlavery;
 import java.util.HashMap;
 import java.util.Map;
 
-import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
-
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
 
 /**
  * Bonds of Slavery (265)
@@ -110,11 +110,6 @@ public final class Q00265_BondsOfSlavery extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (st.getState())
 		{
 			case State.CREATED:

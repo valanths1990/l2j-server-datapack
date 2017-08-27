@@ -162,11 +162,6 @@ public class Q00508_AClansReputation extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		L2Clan clan = player.getClan();
 		switch (st.getState())
 		{

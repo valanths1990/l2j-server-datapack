@@ -116,38 +116,35 @@ public final class Q00326_VanquishRemnants extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, true);
-		String htmltext = null;
-		if (st != null)
+		String htmltext = getNoQuestMsg(player);
+		switch (st.getState())
 		{
-			switch (st.getState())
+			case State.CREATED:
 			{
-				case State.CREATED:
+				htmltext = (player.getLevel() >= MIN_LVL) ? "30435-02.htm" : "30435-01.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final long red_badges = st.getQuestItemsCount(RED_CROSS_BADGE);
+				final long blue_badges = st.getQuestItemsCount(BLUE_CROSS_BADGE);
+				final long black_badges = st.getQuestItemsCount(BLACK_CROSS_BADGE);
+				final long sum = red_badges + blue_badges + black_badges;
+				if (sum > 0)
 				{
-					htmltext = (player.getLevel() >= MIN_LVL) ? "30435-02.htm" : "30435-01.htm";
-					break;
+					if ((sum >= 100) && !st.hasQuestItems(BLACK_LION_MARK))
+					{
+						st.giveItems(BLACK_LION_MARK, 1);
+					}
+					st.giveAdena(((red_badges * 46) + (blue_badges * 52) + (black_badges * 58) + ((sum >= 10) ? 4320 : 0)), true);
+					takeItems(player, -1, RED_CROSS_BADGE, BLUE_CROSS_BADGE, BLACK_CROSS_BADGE);
+					htmltext = (sum >= 100) ? (st.hasQuestItems(BLACK_LION_MARK)) ? "30435-09.html" : "30435-06.html" : "30435-05.html";
 				}
-				case State.STARTED:
+				else
 				{
-					final long red_badges = st.getQuestItemsCount(RED_CROSS_BADGE);
-					final long blue_badges = st.getQuestItemsCount(BLUE_CROSS_BADGE);
-					final long black_badges = st.getQuestItemsCount(BLACK_CROSS_BADGE);
-					final long sum = red_badges + blue_badges + black_badges;
-					if (sum > 0)
-					{
-						if ((sum >= 100) && !st.hasQuestItems(BLACK_LION_MARK))
-						{
-							st.giveItems(BLACK_LION_MARK, 1);
-						}
-						st.giveAdena(((red_badges * 46) + (blue_badges * 52) + (black_badges * 58) + ((sum >= 10) ? 4320 : 0)), true);
-						takeItems(player, -1, RED_CROSS_BADGE, BLUE_CROSS_BADGE, BLACK_CROSS_BADGE);
-						htmltext = (sum >= 100) ? (st.hasQuestItems(BLACK_LION_MARK)) ? "30435-09.html" : "30435-06.html" : "30435-05.html";
-					}
-					else
-					{
-						htmltext = "30435-04.html";
-					}
-					break;
+					htmltext = "30435-04.html";
 				}
+				break;
 			}
 		}
 		return htmltext;

@@ -18,15 +18,15 @@
  */
 package quests.Q00024_InhabitantsOfTheForestOfTheDead;
 
-import quests.Q00023_LidiasHeart.Q00023_LidiasHeart;
-import quests.Q00025_HidingBehindTheTruth.Q00025_HidingBehindTheTruth;
-
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00023_LidiasHeart.Q00023_LidiasHeart;
+import quests.Q00025_HidingBehindTheTruth.Q00025_HidingBehindTheTruth;
 
 /**
  * Inhabitants of the Forest of the Dead (24)
@@ -73,7 +73,7 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 		String htmltext = event;
 		switch (event)
 		{
-		// Dorian
+			// Dorian
 			case "31389-02.htm":
 				final QuestState qs = player.getQuestState(Q00023_LidiasHeart.class.getSimpleName());
 				if ((player.getLevel() >= 65) && (qs != null) && qs.isCompleted())
@@ -224,12 +224,6 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (npc.getId())
 		{
 			case DORIAN:

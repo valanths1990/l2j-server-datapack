@@ -33,13 +33,10 @@ public class Q00338_AlligatorHunter extends Quest
 {
 	// NPC
 	private static final int ENVERUN = 30892;
-	
 	// Monster
 	private static final int ALLIGATOR = 20135;
-	
 	// Items
 	private static final int ALLIGATOR_LEATHER = 4337;
-	
 	// Misc
 	private static final int MIN_LEVEL = 40;
 	private static final int SECOND_CHANCE = 19;
@@ -50,7 +47,6 @@ public class Q00338_AlligatorHunter extends Quest
 		addStartNpc(ENVERUN);
 		addTalkId(ENVERUN);
 		addKillId(ALLIGATOR);
-		
 		registerQuestItems(ALLIGATOR_LEATHER);
 	}
 	
@@ -114,11 +110,6 @@ public class Q00338_AlligatorHunter extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (st.getState())
 		{
 			case State.CREATED:

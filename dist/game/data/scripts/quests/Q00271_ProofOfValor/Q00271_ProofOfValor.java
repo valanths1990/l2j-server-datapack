@@ -18,8 +18,8 @@
  */
 package quests.Q00271_ProofOfValor;
 
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -92,46 +92,43 @@ public final class Q00271_ProofOfValor extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = null;
-		if (st != null)
+		switch (st.getState())
 		{
-			switch (st.getState())
+			case State.CREATED:
 			{
-				case State.CREATED:
+				htmltext = (player.getRace() == Race.ORC) ? (player.getLevel() >= MIN_LVL) ? (hasAtLeastOneQuestItem(player, NECKLACE_OF_VALOR, NECKLACE_OF_COURAGE)) ? "30577-07.htm" : "30577-03.htm" : "30577-02.htm" : "30577-01.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (st.getCond())
 				{
-					htmltext = (player.getRace() == Race.ORC) ? (player.getLevel() >= MIN_LVL) ? (hasAtLeastOneQuestItem(player, NECKLACE_OF_VALOR, NECKLACE_OF_COURAGE)) ? "30577-07.htm" : "30577-03.htm" : "30577-02.htm" : "30577-01.htm";
-					break;
-				}
-				case State.STARTED:
-				{
-					switch (st.getCond())
+					case 1:
 					{
-						case 1:
-						{
-							htmltext = "30577-05.html";
-							break;
-						}
-						case 2:
-						{
-							if (st.getQuestItemsCount(KASHA_WOLF_FANG) >= 50)
-							{
-								if (getRandom(100) <= 13)
-								{
-									st.rewardItems(NECKLACE_OF_VALOR, 1);
-									st.rewardItems(HEALING_POTION, 10);
-								}
-								else
-								{
-									st.rewardItems(NECKLACE_OF_COURAGE, 1);
-								}
-								st.takeItems(KASHA_WOLF_FANG, -1);
-								st.exitQuest(true, true);
-								htmltext = "30577-06.html";
-							}
-							break;
-						}
+						htmltext = "30577-05.html";
+						break;
 					}
-					break;
+					case 2:
+					{
+						if (st.getQuestItemsCount(KASHA_WOLF_FANG) >= 50)
+						{
+							if (getRandom(100) <= 13)
+							{
+								st.rewardItems(NECKLACE_OF_VALOR, 1);
+								st.rewardItems(HEALING_POTION, 10);
+							}
+							else
+							{
+								st.rewardItems(NECKLACE_OF_COURAGE, 1);
+							}
+							st.takeItems(KASHA_WOLF_FANG, -1);
+							st.exitQuest(true, true);
+							htmltext = "30577-06.html";
+						}
+						break;
+					}
 				}
+				break;
 			}
 		}
 		return htmltext;

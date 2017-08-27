@@ -89,11 +89,6 @@ public class Q00179_IntoTheLargeCavern extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		if (npc.getId() == KEKROPUS)
 		{
 			switch (st.getState())

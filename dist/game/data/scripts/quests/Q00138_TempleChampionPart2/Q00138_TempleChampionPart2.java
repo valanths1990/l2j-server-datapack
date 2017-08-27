@@ -18,13 +18,13 @@
  */
 package quests.Q00138_TempleChampionPart2;
 
-import quests.Q00137_TempleChampionPart1.Q00137_TempleChampionPart1;
-
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
+
+import quests.Q00137_TempleChampionPart1.Q00137_TempleChampionPart1;
 
 /**
  * Temple Champion - 2 (138)
@@ -140,10 +140,6 @@ public class Q00138_TempleChampionPart2 extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
 		switch (npc.getId())
 		{
 			case SYLVAIN:

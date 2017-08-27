@@ -21,9 +21,6 @@ package quests.Q00308_ReedFieldMaintenance;
 import java.util.HashMap;
 import java.util.Map;
 
-import quests.Q00238_SuccessFailureOfBusiness.Q00238_SuccessFailureOfBusiness;
-import quests.Q00309_ForAGoodCause.Q00309_ForAGoodCause;
-
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -32,6 +29,9 @@ import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.network.serverpackets.RadarControl;
 import com.l2jserver.gameserver.util.Util;
+
+import quests.Q00238_SuccessFailureOfBusiness.Q00238_SuccessFailureOfBusiness;
+import quests.Q00309_ForAGoodCause.Q00309_ForAGoodCause;
 
 /**
  * Reed Field Maintenance (308)<br>
@@ -240,11 +240,6 @@ public class Q00308_ReedFieldMaintenance extends Quest
 	{
 		String htmltext = getNoQuestMsg(talker);
 		final QuestState st = getQuestState(talker, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		final QuestState q309 = talker.getQuestState(Q00309_ForAGoodCause.class.getSimpleName());
 		if ((q309 != null) && q309.isStarted())
 		{

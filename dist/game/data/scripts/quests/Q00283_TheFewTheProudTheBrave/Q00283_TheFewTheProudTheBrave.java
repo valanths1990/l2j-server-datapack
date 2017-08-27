@@ -18,13 +18,13 @@
  */
 package quests.Q00283_TheFewTheProudTheBrave;
 
-import quests.Q00261_CollectorsDream.Q00261_CollectorsDream;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00261_CollectorsDream.Q00261_CollectorsDream;
 
 /**
  * The Few, The Proud, The Brave (283)
@@ -117,11 +117,6 @@ public final class Q00283_TheFewTheProudTheBrave extends Quest
 	{
 		final QuestState st = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (st.getState())
 		{
 			case State.CREATED:

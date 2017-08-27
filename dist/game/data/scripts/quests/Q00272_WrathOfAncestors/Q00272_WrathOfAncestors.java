@@ -18,8 +18,8 @@
  */
 package quests.Q00272_WrathOfAncestors;
 
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -90,34 +90,31 @@ public final class Q00272_WrathOfAncestors extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = null;
-		if (st != null)
+		switch (st.getState())
 		{
-			switch (st.getState())
+			case State.CREATED:
 			{
-				case State.CREATED:
+				htmltext = (player.getRace() == Race.ORC) ? (player.getLevel() >= MIN_LVL) ? "30572-03.htm" : "30572-02.htm" : "30572-01.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (st.getCond())
 				{
-					htmltext = (player.getRace() == Race.ORC) ? (player.getLevel() >= MIN_LVL) ? "30572-03.htm" : "30572-02.htm" : "30572-01.htm";
-					break;
-				}
-				case State.STARTED:
-				{
-					switch (st.getCond())
+					case 1:
 					{
-						case 1:
-						{
-							htmltext = "30572-05.html";
-							break;
-						}
-						case 2:
-						{
-							st.giveAdena(1500, true);
-							st.exitQuest(true, true);
-							htmltext = "30572-06.html";
-							break;
-						}
+						htmltext = "30572-05.html";
+						break;
 					}
-					break;
+					case 2:
+					{
+						st.giveAdena(1500, true);
+						st.exitQuest(true, true);
+						htmltext = "30572-06.html";
+						break;
+					}
 				}
+				break;
 			}
 		}
 		return htmltext;

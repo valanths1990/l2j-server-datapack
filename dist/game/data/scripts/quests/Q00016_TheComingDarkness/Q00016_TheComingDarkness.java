@@ -18,13 +18,13 @@
  */
 package quests.Q00016_TheComingDarkness;
 
-import quests.Q00017_LightAndDarkness.Q00017_LightAndDarkness;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00017_LightAndDarkness.Q00017_LightAndDarkness;
 
 /**
  * The Coming Darkness (16)<br>
@@ -90,11 +90,6 @@ public class Q00016_TheComingDarkness extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		final QuestState st2 = player.getQuestState(Q00017_LightAndDarkness.class.getSimpleName());
 		if ((st2 != null) && !st2.isCompleted())
 		{

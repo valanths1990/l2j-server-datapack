@@ -18,14 +18,14 @@
  */
 package quests.Q00702_ATrapForRevenge;
 
-import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
-
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
 
 /**
  * A Trap for Revenge (702)
@@ -366,11 +366,6 @@ public class Q00702_ATrapForRevenge extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		if (npc.getId() == PLENOS)
 		{
 			switch (st.getState())

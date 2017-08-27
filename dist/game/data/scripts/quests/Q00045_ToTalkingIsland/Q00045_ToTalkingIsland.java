@@ -21,14 +21,14 @@ package quests.Q00045_ToTalkingIsland;
 import java.util.HashMap;
 import java.util.Map;
 
-import quests.Q00006_StepIntoTheFuture.Q00006_StepIntoTheFuture;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00006_StepIntoTheFuture.Q00006_StepIntoTheFuture;
 
 /**
  * To Talking Island (45)
@@ -190,10 +190,6 @@ public final class Q00045_ToTalkingIsland extends Quest
 	{
 		QuestState st = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		if (st == null)
-		{
-			return htmltext;
-		}
 		switch (npc.getId())
 		{
 			case GALLADUCCI:

@@ -82,35 +82,32 @@ public class Q00164_BloodFiend extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st != null)
+		switch (st.getState())
 		{
-			switch (st.getState())
+			case State.CREATED:
 			{
-				case State.CREATED:
+				htmltext = (player.getRace() != Race.DARK_ELF) ? player.getLevel() >= MIN_LVL ? "30149-03.htm" : "30149-02.htm" : "30149-00.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				if (st.isCond(2) && st.hasQuestItems(KIRUNAK_SKULL))
 				{
-					htmltext = (player.getRace() != Race.DARK_ELF) ? player.getLevel() >= MIN_LVL ? "30149-03.htm" : "30149-02.htm" : "30149-00.htm";
-					break;
+					st.giveAdena(42130, true);
+					st.addExpAndSp(35637, 1854);
+					st.exitQuest(false, true);
+					htmltext = "30149-06.html";
 				}
-				case State.STARTED:
+				else
 				{
-					if (st.isCond(2) && st.hasQuestItems(KIRUNAK_SKULL))
-					{
-						st.giveAdena(42130, true);
-						st.addExpAndSp(35637, 1854);
-						st.exitQuest(false, true);
-						htmltext = "30149-06.html";
-					}
-					else
-					{
-						htmltext = "30149-05.html";
-					}
-					break;
+					htmltext = "30149-05.html";
 				}
-				case State.COMPLETED:
-				{
-					htmltext = getAlreadyCompletedMsg(player);
-					break;
-				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
 		return htmltext;

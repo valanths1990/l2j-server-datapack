@@ -21,8 +21,6 @@ package quests.Q00276_TotemOfTheHestui;
 import java.util.ArrayList;
 import java.util.List;
 
-import quests.Q00261_CollectorsDream.Q00261_CollectorsDream;
-
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -31,6 +29,8 @@ import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
 import com.l2jserver.gameserver.util.Util;
+
+import quests.Q00261_CollectorsDream.Q00261_CollectorsDream;
 
 /**
  * Totem of the Hestui (276)
@@ -133,11 +133,6 @@ public final class Q00276_TotemOfTheHestui extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (st.getState())
 		{
 			case State.CREATED:

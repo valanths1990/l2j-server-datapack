@@ -21,9 +21,6 @@ package quests.Q00141_ShadowFoxPart3;
 import java.util.HashMap;
 import java.util.Map;
 
-import quests.Q00140_ShadowFoxPart2.Q00140_ShadowFoxPart2;
-import quests.Q00998_FallenAngelSelect.Q00998_FallenAngelSelect;
-
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -31,6 +28,9 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00140_ShadowFoxPart2.Q00140_ShadowFoxPart2;
+import quests.Q00998_FallenAngelSelect.Q00998_FallenAngelSelect;
 
 /**
  * Shadow Fox - 3 (141)
@@ -150,11 +150,6 @@ public class Q00141_ShadowFoxPart3 extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (st.getState())
 		{
 			case State.CREATED:

@@ -143,11 +143,6 @@ public final class Q00132_MatrasCuriosity extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		if (st.isCreated())
 		{
 			htmltext = (player.getLevel() >= 76) ? "32245-01.htm" : "32245-02.htm";

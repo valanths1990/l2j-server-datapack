@@ -18,14 +18,14 @@
  */
 package quests.Q00237_WindsOfChange;
 
-import quests.Q00238_SuccessFailureOfBusiness.Q00238_SuccessFailureOfBusiness;
-import quests.Q00239_WontYouJoinUs.Q00239_WontYouJoinUs;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00238_SuccessFailureOfBusiness.Q00238_SuccessFailureOfBusiness;
+import quests.Q00239_WontYouJoinUs.Q00239_WontYouJoinUs;
 
 /**
  * Winds of Change (237)<br>
@@ -155,11 +155,6 @@ public class Q00237_WindsOfChange extends Quest
 	{
 		String htmltext = getNoQuestMsg(talker);
 		final QuestState st = getQuestState(talker, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (npc.getId())
 		{
 			case FLAUEN:

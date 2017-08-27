@@ -124,11 +124,6 @@ public final class Q00279_TargetOfOpportunity extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		if (st.getState() == State.CREATED)
 		{
 			htmltext = (player.getLevel() >= 82) ? "32302-01.htm" : "32302-02.html";

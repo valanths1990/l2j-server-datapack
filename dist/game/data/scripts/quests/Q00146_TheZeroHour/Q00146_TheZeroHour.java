@@ -18,13 +18,13 @@
  */
 package quests.Q00146_TheZeroHour;
 
-import quests.Q00109_InSearchOfTheNest.Q00109_InSearchOfTheNest;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00109_InSearchOfTheNest.Q00109_InSearchOfTheNest;
 
 /**
  * The Zero Hour (146)
@@ -85,11 +85,6 @@ public class Q00146_TheZeroHour extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (st.getState())
 		{
 			case State.CREATED:

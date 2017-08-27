@@ -372,7 +372,6 @@ public final class Q00327_RecoverTheFarmland extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String html = getNoQuestMsg(player);
-		
 		switch (npc.getId())
 		{
 			case LEIKAN:

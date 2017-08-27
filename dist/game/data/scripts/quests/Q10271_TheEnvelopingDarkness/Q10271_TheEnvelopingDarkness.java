@@ -18,13 +18,13 @@
  */
 package quests.Q10271_TheEnvelopingDarkness;
 
-import quests.Q10269_ToTheSeedOfDestruction.Q10269_ToTheSeedOfDestruction;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q10269_ToTheSeedOfDestruction.Q10269_ToTheSeedOfDestruction;
 
 /**
  * The Enveloping Darkness (10271)
@@ -80,11 +80,6 @@ public class Q10271_TheEnvelopingDarkness extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (npc.getId())
 		{
 			case ORBYU:

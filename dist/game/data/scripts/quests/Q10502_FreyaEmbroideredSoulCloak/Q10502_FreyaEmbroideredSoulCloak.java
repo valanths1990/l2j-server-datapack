@@ -96,11 +96,6 @@ public class Q10502_FreyaEmbroideredSoulCloak extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return getNoQuestMsg(player);
-		}
-		
 		String htmltext = getNoQuestMsg(player);
 		switch (st.getState())
 		{

@@ -416,43 +416,41 @@ public final class Q00511_AwlUnderFoot extends Quest
 		{
 			return ret;
 		}
-		else if (st != null)
+		
+		int npcId = npc.getId();
+		int cond = 0;
+		if (st.getState() == State.CREATED)
 		{
-			int npcId = npc.getId();
-			int cond = 0;
-			if (st.getState() == State.CREATED)
+			st.set("cond", "0");
+		}
+		else
+		{
+			cond = st.getInt("cond");
+		}
+		if (_fortDungeons.containsKey(npcId) && (cond == 0))
+		{
+			if (player.getLevel() >= 60)
 			{
-				st.set("cond", "0");
+				htmltext = "FortressWarden-09.htm";
 			}
 			else
 			{
-				cond = st.getInt("cond");
+				htmltext = "FortressWarden-00.htm";
+				st.exitQuest(true);
 			}
-			if (_fortDungeons.containsKey(npcId) && (cond == 0))
+		}
+		else if (_fortDungeons.containsKey(npcId) && (cond > 0) && (st.getState() == State.STARTED))
+		{
+			long count = st.getQuestItemsCount(DL_MARK);
+			if ((cond == 1) && (count > 0))
 			{
-				if (player.getLevel() >= 60)
-				{
-					htmltext = "FortressWarden-09.htm";
-				}
-				else
-				{
-					htmltext = "FortressWarden-00.htm";
-					st.exitQuest(true);
-				}
+				htmltext = "FortressWarden-14.htm";
+				st.takeItems(DL_MARK, -1);
+				st.rewardItems(KNIGHT_EPALUETTE, count);
 			}
-			else if (_fortDungeons.containsKey(npcId) && (cond > 0) && (st.getState() == State.STARTED))
+			else if ((cond == 1) && (count == 0))
 			{
-				long count = st.getQuestItemsCount(DL_MARK);
-				if ((cond == 1) && (count > 0))
-				{
-					htmltext = "FortressWarden-14.htm";
-					st.takeItems(DL_MARK, -1);
-					st.rewardItems(KNIGHT_EPALUETTE, count);
-				}
-				else if ((cond == 1) && (count == 0))
-				{
-					htmltext = "FortressWarden-10.htm";
-				}
+				htmltext = "FortressWarden-10.htm";
 			}
 		}
 		return htmltext;

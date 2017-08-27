@@ -252,11 +252,6 @@ public final class Q00111_ElrokianHuntersProof extends Quest
 	{
 		QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs == null)
-		{
-			return htmltext;
-		}
-		
 		switch (qs.getState())
 		{
 			case State.COMPLETED:

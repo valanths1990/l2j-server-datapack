@@ -204,11 +204,6 @@ public final class Q00692_HowtoOpposeEvil extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		if (st.isCreated())
 		{
 			htmltext = (player.getLevel() >= 75) ? "32549-01.htm" : "32549-00.htm";

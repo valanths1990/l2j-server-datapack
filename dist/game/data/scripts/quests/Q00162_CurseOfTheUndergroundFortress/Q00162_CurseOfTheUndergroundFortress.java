@@ -21,8 +21,8 @@ package quests.Q00162_CurseOfTheUndergroundFortress;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -145,36 +145,33 @@ public class Q00162_CurseOfTheUndergroundFortress extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st != null)
+		switch (st.getState())
 		{
-			switch (st.getState())
+			case State.CREATED:
 			{
-				case State.CREATED:
+				htmltext = (player.getRace() != Race.DARK_ELF) ? (player.getLevel() >= MIN_LVL) ? "30147-02.htm" : "30147-01.htm" : "30147-00.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				if ((st.getQuestItemsCount(BONE_FRAGMENT) + st.getQuestItemsCount(ELF_SKULL)) >= REQUIRED_COUNT)
 				{
-					htmltext = (player.getRace() != Race.DARK_ELF) ? (player.getLevel() >= MIN_LVL) ? "30147-02.htm" : "30147-01.htm" : "30147-00.htm";
-					break;
+					st.giveItems(BONE_SHIELD, 1);
+					st.addExpAndSp(22652, 1004);
+					st.giveAdena(24000, true);
+					st.exitQuest(false, true);
+					htmltext = "30147-06.html";
 				}
-				case State.STARTED:
+				else
 				{
-					if ((st.getQuestItemsCount(BONE_FRAGMENT) + st.getQuestItemsCount(ELF_SKULL)) >= REQUIRED_COUNT)
-					{
-						st.giveItems(BONE_SHIELD, 1);
-						st.addExpAndSp(22652, 1004);
-						st.giveAdena(24000, true);
-						st.exitQuest(false, true);
-						htmltext = "30147-06.html";
-					}
-					else
-					{
-						htmltext = "30147-05.html";
-					}
-					break;
+					htmltext = "30147-05.html";
 				}
-				case State.COMPLETED:
-				{
-					htmltext = getAlreadyCompletedMsg(player);
-					break;
-				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
 		return htmltext;

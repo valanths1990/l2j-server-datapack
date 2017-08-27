@@ -122,202 +122,199 @@ public final class Q00334_TheWishingPotion extends Quest
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs != null)
+		switch (npc.getId())
 		{
-			switch (npc.getId())
+			case TORAI:
 			{
-				case TORAI:
+				if (qs.hasQuestItems(Q_FOBBIDEN_LOVE_SCROLL))
 				{
-					if (qs.hasQuestItems(Q_FOBBIDEN_LOVE_SCROLL))
-					{
-						qs.giveAdena(500000, true);
-						qs.takeItems(Q_FOBBIDEN_LOVE_SCROLL, 1);
-						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
-						return "30557-01.html";
-					}
-					break;
+					qs.giveAdena(500000, true);
+					qs.takeItems(Q_FOBBIDEN_LOVE_SCROLL, 1);
+					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
+					return "30557-01.html";
 				}
-				case ALCHEMIST_MATILD:
+				break;
+			}
+			case ALCHEMIST_MATILD:
+			{
+				if (qs.isCreated())
 				{
-					if (qs.isCreated())
+					if (player.getLevel() < 30)
 					{
-						if (player.getLevel() < 30)
-						{
-							return "30738-01.htm";
-						}
-						return "30738-02.html";
+						return "30738-01.htm";
 					}
-					if (!qs.hasQuestItems(Q_SECRET_BOOK_OF_POTION) && qs.hasQuestItems(Q_ALCHEMY_TEXT))
-					{
-						return "30738-05.html";
-					}
-					if (qs.hasQuestItems(Q_SECRET_BOOK_OF_POTION) && qs.hasQuestItems(Q_ALCHEMY_TEXT))
-					{
-						return "30738-06.html";
-					}
-					if (qs.hasQuestItems(Q_POTION_RECIPE_1, Q_POTION_RECIPE_2) && (!qs.hasQuestItems(Q_AMBER_SCALE) || (qs.hasQuestItems(Q_WIND_SOULSTONE) && !qs.hasQuestItems(Q_GLASS_EYE))
-						|| (!qs.hasQuestItems(Q_HORROR_ECTOPLASM) || !qs.hasQuestItems(Q_SILENOS_HORN) || !qs.hasQuestItems(Q_ANT_SOLDIER_APHID) || !qs.hasQuestItems(Q_TYRANTS_CHITIN) || !qs.hasQuestItems(Q_BUGBEAR_BLOOD))))
-					{
-						return "30738-08.html";
-					}
-					if (qs.hasQuestItems(Q_POTION_RECIPE_1, Q_POTION_RECIPE_2, Q_AMBER_SCALE, Q_WIND_SOULSTONE, Q_WIND_SOULSTONE, Q_GLASS_EYE, Q_GLASS_EYE, Q_HORROR_ECTOPLASM, Q_SILENOS_HORN, Q_ANT_SOLDIER_APHID, Q_TYRANTS_CHITIN, Q_BUGBEAR_BLOOD))
-					{
-						return "30738-09.html";
-					}
-					if (qs.hasQuestItems(Q_MATILDS_ORB) && !qs.hasQuestItems(Q_POTION_RECIPE_1) && !qs.hasQuestItems(Q_POTION_RECIPE_2) && (!qs.hasQuestItems(Q_AMBER_SCALE) || (qs.hasQuestItems(Q_WIND_SOULSTONE) && !qs.hasQuestItems(Q_GLASS_EYE)) || !qs.hasQuestItems(Q_HORROR_ECTOPLASM)
-						|| !qs.hasQuestItems(Q_SILENOS_HORN) || !qs.hasQuestItems(Q_ANT_SOLDIER_APHID) || !qs.hasQuestItems(Q_TYRANTS_CHITIN) || !qs.hasQuestItems(Q_BUGBEAR_BLOOD)))
-					{
-						return "30738-12.html";
-					}
-					break;
+					return "30738-02.html";
 				}
-				case FAIRY_RUPINA:
+				if (!qs.hasQuestItems(Q_SECRET_BOOK_OF_POTION) && qs.hasQuestItems(Q_ALCHEMY_TEXT))
 				{
-					if (qs.getInt(FLAG) == 1)
+					return "30738-05.html";
+				}
+				if (qs.hasQuestItems(Q_SECRET_BOOK_OF_POTION) && qs.hasQuestItems(Q_ALCHEMY_TEXT))
+				{
+					return "30738-06.html";
+				}
+				if (qs.hasQuestItems(Q_POTION_RECIPE_1, Q_POTION_RECIPE_2) && (!qs.hasQuestItems(Q_AMBER_SCALE) || (qs.hasQuestItems(Q_WIND_SOULSTONE) && !qs.hasQuestItems(Q_GLASS_EYE))
+					|| (!qs.hasQuestItems(Q_HORROR_ECTOPLASM) || !qs.hasQuestItems(Q_SILENOS_HORN) || !qs.hasQuestItems(Q_ANT_SOLDIER_APHID) || !qs.hasQuestItems(Q_TYRANTS_CHITIN) || !qs.hasQuestItems(Q_BUGBEAR_BLOOD))))
+				{
+					return "30738-08.html";
+				}
+				if (qs.hasQuestItems(Q_POTION_RECIPE_1, Q_POTION_RECIPE_2, Q_AMBER_SCALE, Q_WIND_SOULSTONE, Q_WIND_SOULSTONE, Q_GLASS_EYE, Q_GLASS_EYE, Q_HORROR_ECTOPLASM, Q_SILENOS_HORN, Q_ANT_SOLDIER_APHID, Q_TYRANTS_CHITIN, Q_BUGBEAR_BLOOD))
+				{
+					return "30738-09.html";
+				}
+				if (qs.hasQuestItems(Q_MATILDS_ORB) && !qs.hasQuestItems(Q_POTION_RECIPE_1) && !qs.hasQuestItems(Q_POTION_RECIPE_2) && (!qs.hasQuestItems(Q_AMBER_SCALE) || (qs.hasQuestItems(Q_WIND_SOULSTONE) && !qs.hasQuestItems(Q_GLASS_EYE)) || !qs.hasQuestItems(Q_HORROR_ECTOPLASM)
+					|| !qs.hasQuestItems(Q_SILENOS_HORN) || !qs.hasQuestItems(Q_ANT_SOLDIER_APHID) || !qs.hasQuestItems(Q_TYRANTS_CHITIN) || !qs.hasQuestItems(Q_BUGBEAR_BLOOD)))
+				{
+					return "30738-12.html";
+				}
+				break;
+			}
+			case FAIRY_RUPINA:
+			{
+				if (qs.getInt(FLAG) == 1)
+				{
+					String html = null;
+					if ((getRandom(4) < 4))
 					{
-						String html = null;
-						if ((getRandom(4) < 4))
-						{
-							qs.giveItems(NECKLACE_OF_GRACE, 1);
-							qs.set(FLAG, 0);
-							html = "30742-01.html";
-						}
-						else
-						{
-							switch (getRandom(4))
-							{
-								case 0:
-								{
-									qs.giveItems(DEMONS_TUNIC_FABRIC, 1);
-									break;
-								}
-								case 1:
-								{
-									qs.giveItems(DEMONS_HOSE_PATTERN, 1);
-									break;
-								}
-								case 2:
-								{
-									qs.giveItems(DEMONS_BOOTS_FABRIC, 1);
-									break;
-								}
-								case 3:
-								{
-									qs.giveItems(DEMONS_GLOVES_FABRIC, 1);
-								}
-							}
-							html = "30742-02.html";
-						}
+						qs.giveItems(NECKLACE_OF_GRACE, 1);
 						qs.set(FLAG, 0);
-						npc.deleteMe();
-						return html;
+						html = "30742-01.html";
 					}
-					break;
-				}
-				case WISDOM_CHEST:
-				{
-					if (qs.getInt(FLAG) == 4)
+					else
 					{
-						int random = getRandom(100);
-						String html = null;
-						if (random < 10)
+						switch (getRandom(4))
 						{
-							qs.giveItems(Q_FOBBIDEN_LOVE_SCROLL, 1);
-							html = "30743-02.html";
-						}
-						else if ((random >= 10) && (random < 50))
-						{
-							switch (getRandom(4))
+							case 0:
 							{
-								case 0:
-								{
-									qs.giveItems(DEMONS_TUNIC_FABRIC, 1);
-									break;
-								}
-								case 1:
-								{
-									qs.giveItems(DEMONS_HOSE_PATTERN, 1);
-									break;
-								}
-								case 2:
-								{
-									qs.giveItems(DEMONS_BOOTS_FABRIC, 1);
-									break;
-								}
-								case 3:
-								{
-									qs.giveItems(DEMONS_GLOVES_FABRIC, 1);
-									break;
-								}
+								qs.giveItems(DEMONS_TUNIC_FABRIC, 1);
+								break;
 							}
-							html = "30743-03.html";
-						}
-						else if ((random >= 50) && (random < 100))
-						{
-							switch (getRandom(2))
+							case 1:
 							{
-								case 0:
-								{
-									qs.giveItems(Q_MUSICNOTE_LOVE, 1);
-									break;
-								}
-								case 1:
-								{
-									qs.giveItems(Q_MUSICNOTE_BATTLE, 1);
-									break;
-								}
+								qs.giveItems(DEMONS_HOSE_PATTERN, 1);
+								break;
 							}
-							html = "30743-04.html";
-						}
-						else if ((random >= 85) && (random < 95))
-						{
-							switch (getRandom(4))
+							case 2:
 							{
-								case 0:
-								{
-									qs.giveItems(DEMONS_TUNIC, 1);
-									break;
-								}
-								case 1:
-								{
-									qs.giveItems(DEMONS_HOSE, 1);
-									break;
-								}
-								case 2:
-								{
-									qs.giveItems(DEMONS_BOOTS, 1);
-									break;
-								}
-								case 3:
-								{
-									qs.giveItems(DEMONS_GLOVES, 1);
-									break;
-								}
+								qs.giveItems(DEMONS_BOOTS_FABRIC, 1);
+								break;
 							}
-							html = "30743-05.html";
-						}
-						else if (random >= 95)
-						{
-							switch (getRandom(2))
+							case 3:
 							{
-								case 0:
-								{
-									qs.giveItems(Q_GOLD_CIRCLET, 1);
-									break;
-								}
-								case 1:
-								{
-									qs.giveItems(Q_SILVER_CIRCLET, 1);
-								}
+								qs.giveItems(DEMONS_GLOVES_FABRIC, 1);
 							}
-							html = "30743-06.htm";
 						}
-						qs.set(FLAG, 0);
-						npc.deleteMe();
-						return html;
+						html = "30742-02.html";
 					}
-					break;
+					qs.set(FLAG, 0);
+					npc.deleteMe();
+					return html;
 				}
+				break;
+			}
+			case WISDOM_CHEST:
+			{
+				if (qs.getInt(FLAG) == 4)
+				{
+					int random = getRandom(100);
+					String html = null;
+					if (random < 10)
+					{
+						qs.giveItems(Q_FOBBIDEN_LOVE_SCROLL, 1);
+						html = "30743-02.html";
+					}
+					else if ((random >= 10) && (random < 50))
+					{
+						switch (getRandom(4))
+						{
+							case 0:
+							{
+								qs.giveItems(DEMONS_TUNIC_FABRIC, 1);
+								break;
+							}
+							case 1:
+							{
+								qs.giveItems(DEMONS_HOSE_PATTERN, 1);
+								break;
+							}
+							case 2:
+							{
+								qs.giveItems(DEMONS_BOOTS_FABRIC, 1);
+								break;
+							}
+							case 3:
+							{
+								qs.giveItems(DEMONS_GLOVES_FABRIC, 1);
+								break;
+							}
+						}
+						html = "30743-03.html";
+					}
+					else if ((random >= 50) && (random < 100))
+					{
+						switch (getRandom(2))
+						{
+							case 0:
+							{
+								qs.giveItems(Q_MUSICNOTE_LOVE, 1);
+								break;
+							}
+							case 1:
+							{
+								qs.giveItems(Q_MUSICNOTE_BATTLE, 1);
+								break;
+							}
+						}
+						html = "30743-04.html";
+					}
+					else if ((random >= 85) && (random < 95))
+					{
+						switch (getRandom(4))
+						{
+							case 0:
+							{
+								qs.giveItems(DEMONS_TUNIC, 1);
+								break;
+							}
+							case 1:
+							{
+								qs.giveItems(DEMONS_HOSE, 1);
+								break;
+							}
+							case 2:
+							{
+								qs.giveItems(DEMONS_BOOTS, 1);
+								break;
+							}
+							case 3:
+							{
+								qs.giveItems(DEMONS_GLOVES, 1);
+								break;
+							}
+						}
+						html = "30743-05.html";
+					}
+					else if (random >= 95)
+					{
+						switch (getRandom(2))
+						{
+							case 0:
+							{
+								qs.giveItems(Q_GOLD_CIRCLET, 1);
+								break;
+							}
+							case 1:
+							{
+								qs.giveItems(Q_SILVER_CIRCLET, 1);
+							}
+						}
+						html = "30743-06.htm";
+					}
+					qs.set(FLAG, 0);
+					npc.deleteMe();
+					return html;
+				}
+				break;
 			}
 		}
 		return htmltext;
