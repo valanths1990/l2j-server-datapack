@@ -129,10 +129,6 @@ public class Q00037_MakeFormalWear extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
 		switch (npc.getId())
 		{
 			case ALEXIS:
@@ -172,7 +168,7 @@ public class Q00037_MakeFormalWear extends Quest
 						case 7:
 							htmltext = (st.hasQuestItems(DRESS_SHOES_BOX)) ? "31520-10.html" : "31520-11.html";
 							break;
-					
+						
 					}
 				}
 				break;

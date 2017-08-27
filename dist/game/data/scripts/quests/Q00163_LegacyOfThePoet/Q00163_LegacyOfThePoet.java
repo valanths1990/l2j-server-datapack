@@ -18,8 +18,8 @@
  */
 package quests.Q00163_LegacyOfThePoet;
 
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -146,35 +146,32 @@ public class Q00163_LegacyOfThePoet extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st != null)
+		switch (st.getState())
 		{
-			switch (st.getState())
+			case State.CREATED:
 			{
-				case State.CREATED:
+				htmltext = (player.getRace() != Race.DARK_ELF) ? (player.getLevel() >= MIN_LVL) ? "30220-02.htm" : "30220-01.htm" : "30220-00.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				if (st.hasQuestItems(RUMIELS_1ST_POEM, RUMIELS_2ND_POEM, RUMIELS_3RD_POEM, RUMIELS_4TH_POEM))
 				{
-					htmltext = (player.getRace() != Race.DARK_ELF) ? (player.getLevel() >= MIN_LVL) ? "30220-02.htm" : "30220-01.htm" : "30220-00.htm";
-					break;
+					st.addExpAndSp(21643, 943);
+					st.giveAdena(13890, true);
+					st.exitQuest(false, true);
+					htmltext = "30220-07.html";
 				}
-				case State.STARTED:
+				else
 				{
-					if (st.hasQuestItems(RUMIELS_1ST_POEM, RUMIELS_2ND_POEM, RUMIELS_3RD_POEM, RUMIELS_4TH_POEM))
-					{
-						st.addExpAndSp(21643, 943);
-						st.giveAdena(13890, true);
-						st.exitQuest(false, true);
-						htmltext = "30220-07.html";
-					}
-					else
-					{
-						htmltext = "30220-06.html";
-					}
-					break;
+					htmltext = "30220-06.html";
 				}
-				case State.COMPLETED:
-				{
-					htmltext = getAlreadyCompletedMsg(player);
-					break;
-				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
 		return htmltext;

@@ -111,11 +111,6 @@ public final class Q00317_CatchTheWind extends Quest
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs == null)
-		{
-			return htmltext;
-		}
-		
 		if (qs.isCreated())
 		{
 			htmltext = ((player.getLevel() >= MIN_LEVEL) ? "30361-03.htm" : "30361-02.htm");

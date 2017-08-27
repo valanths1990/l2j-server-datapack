@@ -135,11 +135,6 @@ public class Q00042_HelpTheUncle extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (npc.getId())
 		{
 			case WATERS:

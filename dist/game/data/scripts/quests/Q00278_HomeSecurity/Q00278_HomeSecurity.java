@@ -174,11 +174,6 @@ public class Q00278_HomeSecurity extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		if (st.isCreated())
 		{
 			htmltext = "31537-01.htm";

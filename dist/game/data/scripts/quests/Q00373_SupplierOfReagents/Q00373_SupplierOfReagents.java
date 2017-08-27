@@ -20,14 +20,14 @@ package quests.Q00373_SupplierOfReagents;
 
 import java.util.HashMap;
 
-import quests.Q00235_MimirsElixir.Q00235_MimirsElixir;
-
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
+
+import quests.Q00235_MimirsElixir.Q00235_MimirsElixir;
 
 /**
  * Supplier of Reagents (373)
@@ -430,7 +430,6 @@ public final class Q00373_SupplierOfReagents extends Quest
 	{
 		final QuestState qs = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		
 		if (qs.isCreated())
 		{
 			if (talker.getLevel() < MIN_LVL)

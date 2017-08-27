@@ -18,13 +18,13 @@
  */
 package quests.Q00028_ChestCaughtWithABaitOfIcyAir;
 
-import quests.Q00051_OFullesSpecialBait.Q00051_OFullesSpecialBait;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00051_OFullesSpecialBait.Q00051_OFullesSpecialBait;
 
 /**
  * Chest Caught With A Bait Of Icy Air (28)<br>
@@ -81,7 +81,7 @@ public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
 					htmltext = "31442-02.htm";
 				}
 				break;
-		
+			
 		}
 		return htmltext;
 	}
@@ -91,11 +91,6 @@ public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		final int npcId = npc.getId();
 		switch (st.getState())
 		{

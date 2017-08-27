@@ -110,104 +110,101 @@ public class Q00152_ShardsOfGolem extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st != null)
+		switch (npc.getId())
 		{
-			switch (npc.getId())
+			case HARRYS:
 			{
-				case HARRYS:
+				switch (st.getState())
 				{
-					switch (st.getState())
+					case State.CREATED:
 					{
-						case State.CREATED:
-						{
-							htmltext = player.getLevel() >= MIN_LVL ? "30035-02.htm" : "30035-01.htm";
-							break;
-						}
-						case State.STARTED:
-						{
-							switch (st.getCond())
-							{
-								case 1:
-								{
-									if (st.hasQuestItems(HARRYS_1ST_RECIEPT))
-									{
-										htmltext = "30035-04a.html";
-									}
-									break;
-								}
-								case 2:
-								case 3:
-								{
-									if (st.hasQuestItems(HARRYS_2ND_RECIEPT))
-									{
-										htmltext = "30035-04.html";
-									}
-									break;
-								}
-								case 4:
-								{
-									if (st.hasQuestItems(HARRYS_2ND_RECIEPT, TOOL_BOX))
-									{
-										st.giveItems(WOODEN_BREASTPLATE, 1);
-										st.addExpAndSp(5000, 0);
-										st.exitQuest(false, true);
-										htmltext = "30035-05.html";
-									}
-									break;
-								}
-							}
-							break;
-						}
-						case State.COMPLETED:
-						{
-							htmltext = getAlreadyCompletedMsg(player);
-							break;
-						}
+						htmltext = player.getLevel() >= MIN_LVL ? "30035-02.htm" : "30035-01.htm";
+						break;
 					}
-					break;
+					case State.STARTED:
+					{
+						switch (st.getCond())
+						{
+							case 1:
+							{
+								if (st.hasQuestItems(HARRYS_1ST_RECIEPT))
+								{
+									htmltext = "30035-04a.html";
+								}
+								break;
+							}
+							case 2:
+							case 3:
+							{
+								if (st.hasQuestItems(HARRYS_2ND_RECIEPT))
+								{
+									htmltext = "30035-04.html";
+								}
+								break;
+							}
+							case 4:
+							{
+								if (st.hasQuestItems(HARRYS_2ND_RECIEPT, TOOL_BOX))
+								{
+									st.giveItems(WOODEN_BREASTPLATE, 1);
+									st.addExpAndSp(5000, 0);
+									st.exitQuest(false, true);
+									htmltext = "30035-05.html";
+								}
+								break;
+							}
+						}
+						break;
+					}
+					case State.COMPLETED:
+					{
+						htmltext = getAlreadyCompletedMsg(player);
+						break;
+					}
 				}
-				case ALTRAN:
+				break;
+			}
+			case ALTRAN:
+			{
+				switch (st.getCond())
 				{
-					switch (st.getCond())
+					case 1:
 					{
-						case 1:
+						if (st.hasQuestItems(HARRYS_1ST_RECIEPT))
 						{
-							if (st.hasQuestItems(HARRYS_1ST_RECIEPT))
-							{
-								htmltext = "30283-01.html";
-							}
-							break;
+							htmltext = "30283-01.html";
 						}
-						case 2:
-						{
-							if (st.hasQuestItems(HARRYS_2ND_RECIEPT) && (st.getQuestItemsCount(GOLEM_SHARD) < 5))
-							{
-								htmltext = "30283-03.html";
-							}
-							break;
-						}
-						case 3:
-						{
-							if (st.hasQuestItems(HARRYS_2ND_RECIEPT) && (st.getQuestItemsCount(GOLEM_SHARD) >= 5))
-							{
-								st.takeItems(GOLEM_SHARD, -1);
-								st.giveItems(TOOL_BOX, 1);
-								st.setCond(4, true);
-								htmltext = "30283-04.html";
-							}
-							break;
-						}
-						case 4:
-						{
-							if (st.hasQuestItems(HARRYS_2ND_RECIEPT, TOOL_BOX))
-							{
-								htmltext = "30283-05.html";
-							}
-							break;
-						}
+						break;
 					}
-					break;
+					case 2:
+					{
+						if (st.hasQuestItems(HARRYS_2ND_RECIEPT) && (st.getQuestItemsCount(GOLEM_SHARD) < 5))
+						{
+							htmltext = "30283-03.html";
+						}
+						break;
+					}
+					case 3:
+					{
+						if (st.hasQuestItems(HARRYS_2ND_RECIEPT) && (st.getQuestItemsCount(GOLEM_SHARD) >= 5))
+						{
+							st.takeItems(GOLEM_SHARD, -1);
+							st.giveItems(TOOL_BOX, 1);
+							st.setCond(4, true);
+							htmltext = "30283-04.html";
+						}
+						break;
+					}
+					case 4:
+					{
+						if (st.hasQuestItems(HARRYS_2ND_RECIEPT, TOOL_BOX))
+						{
+							htmltext = "30283-05.html";
+						}
+						break;
+					}
 				}
+				break;
 			}
 		}
 		return htmltext;

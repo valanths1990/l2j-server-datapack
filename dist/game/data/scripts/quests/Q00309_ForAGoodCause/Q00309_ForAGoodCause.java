@@ -21,9 +21,6 @@ package quests.Q00309_ForAGoodCause;
 import java.util.HashMap;
 import java.util.Map;
 
-import quests.Q00239_WontYouJoinUs.Q00239_WontYouJoinUs;
-import quests.Q00308_ReedFieldMaintenance.Q00308_ReedFieldMaintenance;
-
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -32,6 +29,9 @@ import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.network.serverpackets.RadarControl;
 import com.l2jserver.gameserver.util.Util;
+
+import quests.Q00239_WontYouJoinUs.Q00239_WontYouJoinUs;
+import quests.Q00308_ReedFieldMaintenance.Q00308_ReedFieldMaintenance;
 
 /**
  * For A Good Cause (309)
@@ -243,11 +243,6 @@ public class Q00309_ForAGoodCause extends Quest
 	{
 		String htmltext = getNoQuestMsg(talker);
 		final QuestState st = getQuestState(talker, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		final QuestState q308 = talker.getQuestState(Q00308_ReedFieldMaintenance.class.getSimpleName());
 		if ((q308 != null) && q308.isStarted())
 		{

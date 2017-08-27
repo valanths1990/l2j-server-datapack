@@ -21,8 +21,6 @@ package quests.Q00125_TheNameOfEvil1;
 import java.util.HashMap;
 import java.util.Map;
 
-import quests.Q00124_MeetingTheElroki.Q00124_MeetingTheElroki;
-
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -31,6 +29,8 @@ import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
+
+import quests.Q00124_MeetingTheElroki.Q00124_MeetingTheElroki;
 
 /**
  * The Name of Evil - 1 (125)
@@ -293,11 +293,6 @@ public class Q00125_TheNameOfEvil1 extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (npc.getId())
 		{
 			case MUSHIKA:

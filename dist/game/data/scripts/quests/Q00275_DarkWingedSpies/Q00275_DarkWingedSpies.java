@@ -129,11 +129,6 @@ public final class Q00275_DarkWingedSpies extends Quest
 	{
 		final QuestState st = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (st.getState())
 		{
 			case State.CREATED:

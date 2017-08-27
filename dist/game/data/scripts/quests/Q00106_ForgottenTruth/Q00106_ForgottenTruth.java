@@ -18,10 +18,8 @@
  */
 package quests.Q00106_ForgottenTruth;
 
-import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
-
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -29,6 +27,8 @@ import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
 import com.l2jserver.gameserver.network.serverpackets.SocialAction;
 import com.l2jserver.gameserver.util.Util;
+
+import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
 
 /**
  * Forgotten Truth (106)
@@ -117,11 +117,6 @@ public final class Q00106_ForgottenTruth extends Quest
 	{
 		final QuestState st = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (npc.getId())
 		{
 			case THIFIELL:

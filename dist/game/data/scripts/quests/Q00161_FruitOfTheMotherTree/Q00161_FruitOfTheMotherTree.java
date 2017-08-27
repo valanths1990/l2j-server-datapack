@@ -69,7 +69,7 @@ public class Q00161_FruitOfTheMotherTree extends Quest
 			default:
 				htmltext = null;
 				break;
-		
+			
 		}
 		return htmltext;
 	}
@@ -79,11 +79,6 @@ public class Q00161_FruitOfTheMotherTree extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (npc.getId())
 		{
 			case ANDELLIA:

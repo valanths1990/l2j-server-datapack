@@ -91,11 +91,6 @@ public class Q00019_GoToThePastureland extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		if (npc.getId() == VLADIMIR)
 		{
 			switch (st.getState())

@@ -140,11 +140,6 @@ public class Q00250_WatchWhatYouEat extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		if (npc.getId() == SALLY)
 		{
 			switch (st.getState())

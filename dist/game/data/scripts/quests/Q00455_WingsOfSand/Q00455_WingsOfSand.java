@@ -21,8 +21,8 @@ package quests.Q00455_WingsOfSand;
 import java.util.Arrays;
 import java.util.List;
 
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -134,11 +134,6 @@ public class Q00455_WingsOfSand extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return getNoQuestMsg(player);
-		}
-		
 		String htmltext = getNoQuestMsg(player);
 		switch (st.getState())
 		{

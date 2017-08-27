@@ -82,11 +82,6 @@ public class Q00014_WhereaboutsOfTheArchaeologist extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		final int npcId = npc.getId();
 		switch (st.getState())
 		{

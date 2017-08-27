@@ -21,14 +21,14 @@ package quests.Q00047_IntoTheDarkElvenForest;
 import java.util.HashMap;
 import java.util.Map;
 
-import quests.Q00008_AnAdventureBegins.Q00008_AnAdventureBegins;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00008_AnAdventureBegins.Q00008_AnAdventureBegins;
 
 /**
  * Into The Dark Elven Forest (47)
@@ -190,10 +190,6 @@ public final class Q00047_IntoTheDarkElvenForest extends Quest
 	{
 		QuestState st = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		if (st == null)
-		{
-			return htmltext;
-		}
 		switch (npc.getId())
 		{
 			case GALLADUCCI:

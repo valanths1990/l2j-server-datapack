@@ -173,11 +173,6 @@ public class Q00136_MoreThanMeetsTheEye extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (npc.getId())
 		{
 			case HARDIN:

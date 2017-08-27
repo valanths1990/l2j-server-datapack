@@ -128,11 +128,6 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs == null)
-		{
-			return htmltext;
-		}
-		
 		if (qs.isCreated())
 		{
 			htmltext = ((player.getLevel() >= 79) ? "31147-01.htm" : "31147-00.html");

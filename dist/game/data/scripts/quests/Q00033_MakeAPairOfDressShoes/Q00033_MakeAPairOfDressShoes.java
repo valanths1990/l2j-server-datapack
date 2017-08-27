@@ -112,11 +112,6 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (npc.getId())
 		{
 			case WOODLEY:

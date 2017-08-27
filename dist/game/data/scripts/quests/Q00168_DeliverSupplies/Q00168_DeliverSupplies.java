@@ -80,106 +80,103 @@ public class Q00168_DeliverSupplies extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st != null)
+		switch (npc.getId())
 		{
-			switch (npc.getId())
+			case JENNA:
 			{
-				case JENNA:
+				switch (st.getState())
 				{
-					switch (st.getState())
+					case State.CREATED:
 					{
-						case State.CREATED:
+						htmltext = (player.getRace() == Race.DARK_ELF) ? (player.getLevel() >= MIN_LVL) ? "30349-02.htm" : "30349-01.htm" : "30349-00.htm";
+						break;
+					}
+					case State.STARTED:
+					{
+						switch (st.getCond())
 						{
-							htmltext = (player.getRace() == Race.DARK_ELF) ? (player.getLevel() >= MIN_LVL) ? "30349-02.htm" : "30349-01.htm" : "30349-00.htm";
-							break;
-						}
-						case State.STARTED:
-						{
-							switch (st.getCond())
+							case 1:
 							{
-								case 1:
+								if (st.hasQuestItems(JENNAS_LETTER))
 								{
-									if (st.hasQuestItems(JENNAS_LETTER))
-									{
-										htmltext = "30349-04.html";
-									}
-									break;
+									htmltext = "30349-04.html";
 								}
-								case 2:
-								{
-									if (st.hasQuestItems(SENTRY_BLADE1, SENTRY_BLADE2, SENTRY_BLADE3))
-									{
-										st.takeItems(SENTRY_BLADE1, -1);
-										st.setCond(3, true);
-										htmltext = "30349-05.html";
-									}
-									break;
-								}
-								case 3:
-								{
-									if (hasAtLeastOneQuestItem(player, SENTRY_BLADE2, SENTRY_BLADE3))
-									{
-										htmltext = "30349-07.html";
-									}
-									break;
-								}
-								case 4:
-								{
-									if (st.getQuestItemsCount(OLD_BRONZE_SWORD) >= 2)
-									{
-										st.giveAdena(820, true);
-										st.exitQuest(false, true);
-										htmltext = "30349-07.html";
-									}
-									break;
-								}
+								break;
 							}
-							break;
+							case 2:
+							{
+								if (st.hasQuestItems(SENTRY_BLADE1, SENTRY_BLADE2, SENTRY_BLADE3))
+								{
+									st.takeItems(SENTRY_BLADE1, -1);
+									st.setCond(3, true);
+									htmltext = "30349-05.html";
+								}
+								break;
+							}
+							case 3:
+							{
+								if (hasAtLeastOneQuestItem(player, SENTRY_BLADE2, SENTRY_BLADE3))
+								{
+									htmltext = "30349-07.html";
+								}
+								break;
+							}
+							case 4:
+							{
+								if (st.getQuestItemsCount(OLD_BRONZE_SWORD) >= 2)
+								{
+									st.giveAdena(820, true);
+									st.exitQuest(false, true);
+									htmltext = "30349-07.html";
+								}
+								break;
+							}
 						}
-						case State.COMPLETED:
-						{
-							htmltext = getAlreadyCompletedMsg(player);
-							break;
-						}
+						break;
 					}
-					break;
+					case State.COMPLETED:
+					{
+						htmltext = getAlreadyCompletedMsg(player);
+						break;
+					}
 				}
-				case HARANT:
+				break;
+			}
+			case HARANT:
+			{
+				if (st.isCond(1) && st.hasQuestItems(JENNAS_LETTER))
 				{
-					if (st.isCond(1) && st.hasQuestItems(JENNAS_LETTER))
-					{
-						st.takeItems(JENNAS_LETTER, -1);
-						st.giveItems(SENTRY_BLADE1, 1);
-						st.giveItems(SENTRY_BLADE2, 1);
-						st.giveItems(SENTRY_BLADE3, 1);
-						st.setCond(2, true);
-						htmltext = "30360-01.html";
-					}
-					else if (st.isCond(2))
-					{
-						htmltext = "30360-02.html";
-					}
-					break;
+					st.takeItems(JENNAS_LETTER, -1);
+					st.giveItems(SENTRY_BLADE1, 1);
+					st.giveItems(SENTRY_BLADE2, 1);
+					st.giveItems(SENTRY_BLADE3, 1);
+					st.setCond(2, true);
+					htmltext = "30360-01.html";
 				}
-				case ROSELYN:
-				case KRISTIN:
+				else if (st.isCond(2))
 				{
-					if (st.isCond(3) && st.hasQuestItems(SENTRIES.get(npc.getId())))
-					{
-						st.takeItems(SENTRIES.get(npc.getId()), -1);
-						st.giveItems(OLD_BRONZE_SWORD, 1);
-						if (st.getQuestItemsCount(OLD_BRONZE_SWORD) >= 2)
-						{
-							st.setCond(4, true);
-						}
-						htmltext = npc.getId() + "-01.html";
-					}
-					else if (!st.hasQuestItems(SENTRIES.get(npc.getId())) && st.hasQuestItems(OLD_BRONZE_SWORD))
-					{
-						htmltext = npc.getId() + "-02.html";
-					}
-					break;
+					htmltext = "30360-02.html";
 				}
+				break;
+			}
+			case ROSELYN:
+			case KRISTIN:
+			{
+				if (st.isCond(3) && st.hasQuestItems(SENTRIES.get(npc.getId())))
+				{
+					st.takeItems(SENTRIES.get(npc.getId()), -1);
+					st.giveItems(OLD_BRONZE_SWORD, 1);
+					if (st.getQuestItemsCount(OLD_BRONZE_SWORD) >= 2)
+					{
+						st.setCond(4, true);
+					}
+					htmltext = npc.getId() + "-01.html";
+				}
+				else if (!st.hasQuestItems(SENTRIES.get(npc.getId())) && st.hasQuestItems(OLD_BRONZE_SWORD))
+				{
+					htmltext = npc.getId() + "-02.html";
+				}
+				break;
 			}
 		}
 		return htmltext;

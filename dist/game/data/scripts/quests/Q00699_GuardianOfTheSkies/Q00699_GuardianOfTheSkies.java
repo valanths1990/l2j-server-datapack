@@ -21,14 +21,14 @@ package quests.Q00699_GuardianOfTheSkies;
 import java.util.HashMap;
 import java.util.Map;
 
-import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
-
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
 
 /**
  * Guardian of the Skies
@@ -142,31 +142,28 @@ public class Q00699_GuardianOfTheSkies extends Quest
 	{
 		QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st != null)
+		switch (st.getState())
 		{
-			switch (st.getState())
+			case State.CREATED:
 			{
-				case State.CREATED:
+				st = player.getQuestState(Q10273_GoodDayToFly.class.getSimpleName());
+				htmltext = ((st == null) || (!st.isCompleted()) || (player.getLevel() < MIN_LVL)) ? "32557-02.htm" : "32557-01.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final long feathers = st.getQuestItemsCount(VULTURES_GOLDEN_FEATHER);
+				if (feathers > 0)
 				{
-					st = player.getQuestState(Q10273_GoodDayToFly.class.getSimpleName());
-					htmltext = ((st == null) || (!st.isCompleted()) || (player.getLevel() < MIN_LVL)) ? "32557-02.htm" : "32557-01.htm";
-					break;
+					st.giveAdena(((feathers * VULTURES_GOLDEN_FEATHER_ADENA) + (feathers > BONUS_COUNT ? BONUS : 0)), true);
+					st.takeItems(VULTURES_GOLDEN_FEATHER, -1);
+					htmltext = (feathers > BONUS_COUNT) ? "32557-07.html" : "32557-06.html";
 				}
-				case State.STARTED:
+				else
 				{
-					final long feathers = st.getQuestItemsCount(VULTURES_GOLDEN_FEATHER);
-					if (feathers > 0)
-					{
-						st.giveAdena(((feathers * VULTURES_GOLDEN_FEATHER_ADENA) + (feathers > BONUS_COUNT ? BONUS : 0)), true);
-						st.takeItems(VULTURES_GOLDEN_FEATHER, -1);
-						htmltext = (feathers > BONUS_COUNT) ? "32557-07.html" : "32557-06.html";
-					}
-					else
-					{
-						htmltext = "32557-05.html";
-					}
-					break;
+					htmltext = "32557-05.html";
 				}
+				break;
 			}
 		}
 		return htmltext;

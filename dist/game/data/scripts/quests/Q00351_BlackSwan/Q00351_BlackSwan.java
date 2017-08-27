@@ -21,13 +21,13 @@ package quests.Q00351_BlackSwan;
 import java.util.HashMap;
 import java.util.Map;
 
-import quests.Q00345_MethodToRaiseTheDead.Q00345_MethodToRaiseTheDead;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.util.Util;
+
+import quests.Q00345_MethodToRaiseTheDead.Q00345_MethodToRaiseTheDead;
 
 /**
  * Black Swan (351)
@@ -187,7 +187,6 @@ public final class Q00351_BlackSwan extends Quest
 		QuestState qs = getQuestState(player, true);
 		QuestState qs2 = player.getQuestState(Q00345_MethodToRaiseTheDead.class.getSimpleName());
 		String htmltext = getNoQuestMsg(player);
-		
 		switch (npc.getId())
 		{
 			case GOSTA:

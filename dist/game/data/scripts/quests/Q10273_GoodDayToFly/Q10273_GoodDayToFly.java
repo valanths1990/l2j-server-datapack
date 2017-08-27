@@ -124,11 +124,6 @@ public class Q10273_GoodDayToFly extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		final int transform = st.getInt("transform");
 		switch (st.getState())
 		{

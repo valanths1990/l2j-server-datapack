@@ -18,13 +18,13 @@
  */
 package quests.Q00029_ChestCaughtWithABaitOfEarth;
 
-import quests.Q00052_WilliesSpecialBait.Q00052_WilliesSpecialBait;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00052_WilliesSpecialBait.Q00052_WilliesSpecialBait;
 
 /**
  * Chest Caught With A Bait Of Earth (29)<br>
@@ -81,7 +81,7 @@ public class Q00029_ChestCaughtWithABaitOfEarth extends Quest
 					htmltext = "30909-02.htm";
 				}
 				break;
-		
+			
 		}
 		return htmltext;
 	}
@@ -91,11 +91,6 @@ public class Q00029_ChestCaughtWithABaitOfEarth extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		final int npcId = npc.getId();
 		switch (st.getState())
 		{

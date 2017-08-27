@@ -169,11 +169,6 @@ public final class Q00632_NecromancersRequest extends Quest
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs == null)
-		{
-			return htmltext;
-		}
-		
 		if (qs.isCreated())
 		{
 			htmltext = player.getLevel() >= MIN_LEVEL ? "31522-101.htm" : "31522-103.htm";

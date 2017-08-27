@@ -21,14 +21,14 @@ package quests.Q00046_OnceMoreInTheArmsOfTheMotherTree;
 import java.util.HashMap;
 import java.util.Map;
 
-import quests.Q00007_ATripBegins.Q00007_ATripBegins;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q00007_ATripBegins.Q00007_ATripBegins;
 
 /**
  * Once More In The Arms Of The Mother Tree (46)
@@ -190,10 +190,6 @@ public final class Q00046_OnceMoreInTheArmsOfTheMotherTree extends Quest
 	{
 		QuestState st = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		if (st == null)
-		{
-			return htmltext;
-		}
 		switch (npc.getId())
 		{
 			case GALLADUCCI:

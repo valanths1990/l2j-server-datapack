@@ -18,8 +18,6 @@
  */
 package quests.Q10272_LightFragment;
 
-import quests.Q10271_TheEnvelopingDarkness.Q10271_TheEnvelopingDarkness;
-
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -28,6 +26,8 @@ import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+
+import quests.Q10271_TheEnvelopingDarkness.Q10271_TheEnvelopingDarkness;
 
 /**
  * Light Fragment (10272)
@@ -56,7 +56,7 @@ public class Q10272_LightFragment extends Quest
 		22551, // Priest of Darkness
 		22552, // Mutation Drake
 		22596
-	// White Dragon Leader
+		// White Dragon Leader
 	};
 	private static final int FRAGMENT_POWDER = 13853;
 	private static final int LIGHT_FRAGMENT_POWDER = 13854;
@@ -178,11 +178,6 @@ public class Q10272_LightFragment extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (npc.getId())
 		{
 			case ORBYU:
