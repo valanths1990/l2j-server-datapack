@@ -21,6 +21,7 @@
 							<xs:enumeration value="activateRate" />
 							<xs:enumeration value="affectLimit" />
 							<xs:enumeration value="affectRange" />
+							<xs:enumeration value="affectScope" />
 							<xs:enumeration value="afterEffectId" />
 							<xs:enumeration value="attribute" />
 							<xs:enumeration value="attributePower" />

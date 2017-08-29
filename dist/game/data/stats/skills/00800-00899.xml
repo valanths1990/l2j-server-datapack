@@ -440,6 +440,7 @@
 	</skill>
 	<skill id="821" levels="1" name="Shadow Step">
 		<!-- Confirmed CT2.5 -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-1" />
@@ -451,7 +452,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="75000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<for>
 			<effect name="TeleportToTarget" />
 			<effect name="TargetCancel" />
