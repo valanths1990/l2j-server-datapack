@@ -228,6 +228,8 @@ import handlers.targethandlers.ClanMember;
 import handlers.targethandlers.CommandChannel;
 import handlers.targethandlers.CorpseClan;
 import handlers.targethandlers.CorpseMob;
+import handlers.targethandlers.Enemy;
+import handlers.targethandlers.EnemyOnly;
 import handlers.targethandlers.EnemySummon;
 import handlers.targethandlers.FlagPole;
 import handlers.targethandlers.FrontArea;
@@ -549,6 +551,8 @@ public class MasterHandler
 			CommandChannel.class,
 			CorpseClan.class,
 			CorpseMob.class,
+			Enemy.class,
+			EnemyOnly.class,
 			EnemySummon.class,
 			FlagPole.class,
 			FrontArea.class,
