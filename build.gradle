@@ -26,8 +26,7 @@ dependencies {
 	compile files('../L2J_Server/dist/libs/mmocore.jar')
 	compile project(':L2J_Server')
 	testCompile 'org.testng:testng:6.11'
-	testCompile 'com.beust:jcommander:1.69'
-	testCompile 'org.jmockit:jmockit:1.31'
+	testCompile 'org.jmockit:jmockit:1.34'
 }
 
 task zip(type: Zip) {
