@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2016 L2J DataPack
+ * Copyright (C) 2004-2017 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,27 +18,40 @@
  */
 package handlers.usercommandhandlers;
 
+import static com.l2jserver.gameserver.GameTimeController.MILLIS_IN_TICK;
+import static com.l2jserver.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
+import static com.l2jserver.gameserver.model.TeleportWhereType.TOWN;
+import static com.l2jserver.gameserver.network.SystemMessageId.THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT;
+import static com.l2jserver.gameserver.network.serverpackets.ActionFailed.STATIC_PACKET;
+import static java.util.concurrent.TimeUnit.MINUTES;
+import static java.util.concurrent.TimeUnit.SECONDS;
+
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.GameTimeController;
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.handler.IUserCommandHandler;
-import com.l2jserver.gameserver.model.TeleportWhereType;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.TvTEvent;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
+import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
 import com.l2jserver.gameserver.network.serverpackets.SetupGauge;
 import com.l2jserver.gameserver.util.Broadcast;
 
 /**
  * Unstuck user command.
+ * @author Zoey76
+ * @since 2.6.0.0
  */
 public class Unstuck implements IUserCommandHandler
 {
+	private static final long FIVE_MINUTES = MINUTES.toSeconds(5);
+	
+	private static final SkillHolder ESCAPE_5_MINUTES = new SkillHolder(2099);
+	
+	private static final SkillHolder ESCAPE_1_SECOND = new SkillHolder(2100);
+	
+	private static final int RETURN = 1050;
+	
 	private static final int[] COMMAND_IDS =
 	{
 		52
@@ -47,100 +60,75 @@ public class Unstuck implements IUserCommandHandler
 	@Override
 	public boolean useUserCommand(int id, L2PcInstance activeChar)
 	{
-		// Thanks nbd
 		if (!TvTEvent.onEscapeUse(activeChar.getObjectId()))
 		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		else if (activeChar.isJailed())
-		{
-			activeChar.sendMessage("You cannot use this function while you are jailed.");
+			activeChar.sendPacket(STATIC_PACKET);
 			return false;
 		}
 		
-		int unstuckTimer = (activeChar.getAccessLevel().isGm() ? 1000 : Config.UNSTUCK_INTERVAL * 1000);
+		if (activeChar.isJailed())
+		{
+			activeChar.sendMessage("You cannot use unstuck while you are in jail.");
+			return false;
+		}
 		
 		if (activeChar.isInOlympiadMode())
 		{
-			activeChar.sendPacket(SystemMessageId.THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT);
+			activeChar.sendPacket(THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT);
 			return false;
 		}
 		
-		if (activeChar.isCastingNow() || activeChar.isMovementDisabled() || activeChar.isMuted() || activeChar.isAlikeDead() || activeChar.inObserverMode() || activeChar.isCombatFlagEquipped())
+		if (activeChar.isCastingNow() || activeChar.isMovementDisabled() || activeChar.isMuted() || //
+			activeChar.isAlikeDead() || activeChar.inObserverMode() || activeChar.isCombatFlagEquipped())
 		{
 			return false;
 		}
 		
-		activeChar.forceIsCasting(GameTimeController.getInstance().getGameTicks() + (unstuckTimer / GameTimeController.MILLIS_IN_TICK));
+		final int unstuckTimer = (activeChar.isGM() ? 1000 : Config.UNSTUCK_INTERVAL * 1000);
+		activeChar.forceIsCasting(GameTimeController.getInstance().getGameTicks() + (unstuckTimer / MILLIS_IN_TICK));
 		
-		Skill escape = SkillData.getInstance().getSkill(2099, 1); // 5 minutes escape
-		Skill GM_escape = SkillData.getInstance().getSkill(2100, 1); // 1 second escape
-		if (activeChar.getAccessLevel().isGm())
+		if (activeChar.isGM())
 		{
-			if (GM_escape != null)
-			{
-				activeChar.doCast(GM_escape);
-				return true;
-			}
-			activeChar.sendMessage("You use Escape: 1 second.");
-		}
-		else if ((Config.UNSTUCK_INTERVAL == 300) && (escape != null))
-		{
-			activeChar.doCast(escape);
+			activeChar.doCast(ESCAPE_1_SECOND);
 			return true;
+		}
+		
+		if (Config.UNSTUCK_INTERVAL == FIVE_MINUTES)
+		{
+			activeChar.doCast(ESCAPE_5_MINUTES);
+			return true;
+		}
+		
+		if (Config.UNSTUCK_INTERVAL > 100)
+		{
+			activeChar.sendMessage("You use Escape: " + SECONDS.toMinutes(Config.UNSTUCK_INTERVAL) + " minutes.");
 		}
 		else
 		{
-			if (Config.UNSTUCK_INTERVAL > 100)
-			{
-				activeChar.sendMessage("You use Escape: " + (unstuckTimer / 60000) + " minutes.");
-			}
-			else
-			{
-				activeChar.sendMessage("You use Escape: " + (unstuckTimer / 1000) + " seconds.");
-			}
+			activeChar.sendMessage("You use Escape: " + Config.UNSTUCK_INTERVAL + " seconds.");
 		}
-		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+		
+		activeChar.getAI().setIntention(AI_INTENTION_IDLE);
 		// SoE Animation section
 		activeChar.setTarget(activeChar);
 		activeChar.disableAllSkills();
-		
-		MagicSkillUse msk = new MagicSkillUse(activeChar, 1050, 1, unstuckTimer, 0);
-		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, msk, 900);
-		SetupGauge sg = new SetupGauge(0, unstuckTimer);
-		activeChar.sendPacket(sg);
+		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, RETURN, 1, unstuckTimer, 0), 900);
+		activeChar.sendPacket(new SetupGauge(0, unstuckTimer));
 		// End SoE Animation section
 		
-		// continue execution later
-		activeChar.setSkillCast(ThreadPoolManager.getInstance().scheduleGeneral(new EscapeFinalizer(activeChar), unstuckTimer));
-		
-		return true;
-	}
-	
-	private static class EscapeFinalizer implements Runnable
-	{
-		private final L2PcInstance _activeChar;
-		
-		protected EscapeFinalizer(L2PcInstance activeChar)
+		// Continue execution later
+		activeChar.setSkillCast(ThreadPoolManager.getInstance().scheduleGeneral(() ->
 		{
-			_activeChar = activeChar;
-		}
-		
-		@Override
-		public void run()
-		{
-			if (_activeChar.isDead())
+			if (!activeChar.isDead())
 			{
-				return;
+				activeChar.setIsIn7sDungeon(false);
+				activeChar.enableAllSkills();
+				activeChar.setIsCastingNow(false);
+				activeChar.setInstanceId(0);
+				activeChar.teleToLocation(TOWN);
 			}
-			
-			_activeChar.setIsIn7sDungeon(false);
-			_activeChar.enableAllSkills();
-			_activeChar.setIsCastingNow(false);
-			_activeChar.setInstanceId(0);
-			_activeChar.teleToLocation(TeleportWhereType.TOWN);
-		}
+		}, unstuckTimer));
+		return true;
 	}
 	
 	@Override
