@@ -279,13 +279,14 @@
 		</enchant3for>
 	</skill>
 	<skill id="106" levels="14" name="Veil">
+		<!-- High Five Confirmed -->
 		<table name="#magicLvl"> 43 46 49 52 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 19 21 22 24 25 27 28 29 30 31 32 33 34 34 </table>
-		<set name="affectScope" val="SINGLE" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="TURN_PASSIVE" />
 		<set name="activateRate" val="70" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="500" />
 		<set name="effectRange" val="900" />

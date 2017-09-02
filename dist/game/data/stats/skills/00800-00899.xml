@@ -439,7 +439,7 @@
 		</for>
 	</skill>
 	<skill id="821" levels="1" name="Shadow Step">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="200" />
@@ -447,7 +447,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.skill0821" />
-		<set name="magicLvl" val="72" />
+		<set name="magicLvl" val="40" />
 		<set name="mpConsume" val="50" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="75000" />
