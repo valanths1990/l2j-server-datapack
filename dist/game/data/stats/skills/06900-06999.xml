@@ -143,8 +143,7 @@
 		<set name="affectRange" val="1000" />
 		<set name="effectPoint" val="673" />
 		<set name="icon" val="icon.skill0985" />
-		<set name="isMagic" val="4" />
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="60000" />
@@ -269,8 +268,7 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="PATIENCE" />
 		<set name="icon" val="BranchSys2.icon.skill0952" />
-		<set name="isMagic" val="4" />
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
@@ -305,7 +303,6 @@
 		<set name="icon" val="icon.skill0122" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" />
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="1" />

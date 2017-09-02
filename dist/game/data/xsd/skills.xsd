@@ -61,7 +61,6 @@
 							<xs:enumeration value="isOutpost" />
 							<xs:enumeration value="isRecoveryHerb" />
 							<xs:enumeration value="isSuicideAttack" />
-							<xs:enumeration value="isTriggeredSkill" />
 							<xs:enumeration value="itemConsumeCount" />
 							<xs:enumeration value="itemConsumeId" />
 							<xs:enumeration value="itemConsumeSteps" />
