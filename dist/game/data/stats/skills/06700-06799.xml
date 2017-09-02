@@ -50,7 +50,6 @@
 		<set name="castRange" val="100" />
 		<set name="effectRange" val="500" />
 		<set name="isDebuff" val="true" />
-		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="83" />
 		<set name="operateType" val="A2" /> <!-- FIXME: value unconfirmed -->
@@ -371,7 +370,6 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.skill3080" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1309,7 +1307,6 @@
 		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

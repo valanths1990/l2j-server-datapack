@@ -1158,6 +1158,7 @@
 		<set name="abnormalType" val="SEED_OF_CRITICAL" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill5760" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="73" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />

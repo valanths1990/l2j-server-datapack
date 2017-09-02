@@ -1052,7 +1052,6 @@
 		<!-- Freya Skills (Triggered from 6280) -->
 		<set name="affectRange" val="300" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="18560" />

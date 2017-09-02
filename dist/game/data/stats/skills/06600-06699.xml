@@ -877,7 +877,6 @@
 		<set name="icon" val="icon.skill6274" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
@@ -1328,8 +1327,7 @@
 		<set name="abnormalTime" val="7" />
 		<set name="abnormalType" val="PATIENCE" />
 		<set name="icon" val="icon.skill0983" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="60" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1473,7 +1471,6 @@
 		<set name="icon" val="icon.skill6274" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />

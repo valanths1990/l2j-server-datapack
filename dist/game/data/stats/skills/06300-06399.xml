@@ -55,7 +55,6 @@
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill6302" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

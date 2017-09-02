@@ -85,7 +85,6 @@
 		<set name="abnormalType" val="SEIZURE_A" />
 		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="77" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -101,7 +100,6 @@
 		<set name="abnormalType" val="SEIZURE_B" />
 		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="77" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -117,7 +115,6 @@
 		<set name="abnormalType" val="SEIZURE_C" />
 		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="77" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -866,7 +863,6 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
-		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="79" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
@@ -911,7 +907,6 @@
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill3080" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="30000" />
@@ -933,8 +928,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -956,8 +950,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -977,7 +970,6 @@
 		<set name="hitTime" val="6000" />
 		<set name="icon" val="icon.skill3080" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="300000" />
@@ -999,8 +991,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1021,8 +1012,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1042,7 +1032,6 @@
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill3080" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="300000" />
@@ -1064,8 +1053,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1087,8 +1075,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1110,8 +1097,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1132,8 +1118,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1156,8 +1141,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1179,8 +1163,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1206,7 +1189,6 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -1230,8 +1212,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1253,8 +1234,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1276,8 +1256,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1299,8 +1278,7 @@
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3080" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
+		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1322,7 +1300,6 @@
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill3080" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="180000" />
@@ -1349,7 +1326,6 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -1376,7 +1352,6 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -1404,7 +1379,6 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -1431,8 +1405,6 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
-		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
@@ -1461,7 +1433,6 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -1491,7 +1462,6 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -1520,7 +1490,6 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -1557,7 +1526,6 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -1590,7 +1558,6 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -1621,7 +1588,6 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="nextActionAttack" val="true" />
@@ -1651,7 +1617,6 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -1678,7 +1643,6 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
