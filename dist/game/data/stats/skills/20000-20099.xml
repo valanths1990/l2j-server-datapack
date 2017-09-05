@@ -12,7 +12,6 @@
 	</skill>
 	<skill id="20002" levels="1" name="Dragon Blow">
 		<!-- A dragon's powerful blow that attacks an enemy with 3420 Power added to P. Atk. Over-hit is possible. -->
-		<set name="blowChance" val="20" />
 		<set name="castRange" val="55" />
 		<set name="effectRange" val="550" /> <!-- FIXME: value unconfirmed -->
 		<set name="hitTime" val="2000" />
@@ -24,7 +23,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param blowChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="20003" levels="1" name="Dragon Slash">

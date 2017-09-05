@@ -771,7 +771,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
-		<set name="blowChance" val="25" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -795,7 +794,9 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param blowChance="25" />
+			</effect>
 			<effect name="Bluff">
 				<param chance="80" />
 			</effect>
@@ -1434,7 +1435,6 @@
 		<table name="#enchelementPower"> 3 6 10 13 16 20 23 26 30 33 36 40 43 46 50 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="baseCritRate" val="20" />
-		<set name="blowChance" val="30" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-337" />
 		<set name="effectRange" val="400" />
@@ -1472,7 +1472,9 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param blowChance="30" />
+			</effect>
 			<effect name="Lethal">
 				<param halfLethal="15" />
 			</effect>

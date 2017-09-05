@@ -275,7 +275,6 @@
 		<table name="#mpConsume"> 58 62 67 71 73 75 77 78 79 80 </table>
 		<table name="#power"> 4181 4920 5700 6503 6906 7305 7698 8079 8265 8447 </table>
 		<set name="baseCritRate" val="10" />
-		<set name="blowChance" val="20" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="200" />
@@ -288,7 +287,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param blowChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4710" levels="12" name="Wild Stun">

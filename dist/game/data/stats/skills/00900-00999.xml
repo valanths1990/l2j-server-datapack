@@ -740,7 +740,6 @@
 	<skill id="928" levels="1" name="Dual Blow">
 		<!-- High Five Confirmed -->
 		<set name="baseCritRate" val="30" />
-		<set name="blowChance" val="60" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-337" />
@@ -761,7 +760,9 @@
 			<using kind="DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param blowChance="60" />
+			</effect>
 			<effect name="Lethal">
 				<param fullLethal="0.1" halfLethal="8" />
 			</effect>

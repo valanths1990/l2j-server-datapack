@@ -703,7 +703,6 @@
 	<skill id="6753" levels="1" name="Death Blow">
 		<!-- High Five Confirmed -->
 		<set name="baseCritRate" val="20" />
-		<set name="blowChance" val="30" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-337" />
 		<set name="effectRange" val="300" />
@@ -719,7 +718,9 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DEATH" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param blowChance="30" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6754" levels="1" name="Bleed">
@@ -732,7 +733,6 @@
 		<set name="affectRange" val="150" />
 		<set name="baseCritRate" val="20" />
 		<set name="basicProperty" val="CON" />
-		<set name="blowChance" val="30" />
 		<set name="effectPoint" val="-10000" />
 		<set name="element" val="5" /> <!-- Dark -->
 		<set name="elementPower" val="120" />
@@ -749,7 +749,9 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="BLEED" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param blowChance="30" />
+			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="100" />
 			</effect>

@@ -1831,7 +1831,6 @@
 		</for>
 	</skill>
 	<skill id="689" levels="1" name="Divine Rogue Deadly Blow">
-		<set name="blowChance" val="20" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-342" />
@@ -1848,7 +1847,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param blowChance="20" />
+			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" />
 			</effect>

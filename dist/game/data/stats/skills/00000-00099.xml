@@ -620,7 +620,6 @@
 		<table name="#magicLvl"> 3 4 5 8 9 10 13 14 15 18 19 20 22 23 24 26 27 28 30 31 32 34 35 36 </table>
 		<table name="#mpConsume"> 8 8 9 10 11 11 14 15 15 18 18 18 19 20 21 22 23 24 26 26 26 28 29 30 </table>
 		<table name="#power"> 73 80 88 115 126 137 178 193 210 268 291 314 367 396 427 494 531 571 656 703 752 859 916 977 </table>
-		<set name="blowChance" val="20" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -640,7 +639,9 @@
 			<using kind="DAGGER" />
 		</cond>
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param blowChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="17" levels="34" name="Force Burst" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
@@ -1063,7 +1064,6 @@
 		<table name="#enchElementPower"> 11 12 14 15 16 18 19 20 22 23 24 26 27 28 30 31 32 34 35 36 38 39 40 42 43 44 46 47 48 50 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="baseCritRate" val="#baseCritLethal" />
-		<set name="blowChance" val="40" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
 		<set name="dmgDirectlyToHp" val="true" />
@@ -1102,7 +1102,9 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="Backstab" />
+			<effect name="Backstab">
+				<param blowChance="40" />
+			</effect>
 			<effect name="Lethal">
 				<param halfLethal="#baseCritLethal" />
 			</effect>

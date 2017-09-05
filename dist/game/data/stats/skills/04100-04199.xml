@@ -1582,7 +1582,6 @@
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 181 487 1339 3507 8825 17057 26195 30391 34864 39544 44350 49193 </table>
-		<set name="blowChance" val="115" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
@@ -1595,7 +1594,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param blowChance="115" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4171" levels="12" name="BOSS Spinning Slash">
@@ -1826,7 +1827,6 @@
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 301 812 2231 5844 14708 28428 43658 50651 58107 65907 73917 81989 </table>
-		<set name="blowChance" val="67" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
@@ -1839,7 +1839,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param blowChance="67" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4182" levels="12" name="Poison">
