@@ -1486,7 +1486,6 @@
 		<set name="element" val="3" /> <!-- Earth -->
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="2000" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
@@ -1495,7 +1494,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6388" levels="1" name="Bistakon Jump Blow">

@@ -36,9 +36,13 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  */
 public final class PhysicalAttack extends AbstractEffect
 {
+	private final boolean _ignoreShieldDefence;
+	
 	public PhysicalAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+		
+		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
 	}
 	
 	@Override
@@ -85,8 +89,14 @@ public final class PhysicalAttack extends AbstractEffect
 		}
 		
 		int damage = 0;
+		byte shield = 0;
 		boolean ss = skill.isPhysical() && activeChar.isChargedShot(ShotType.SOULSHOTS);
-		final byte shld = Formulas.calcShldUse(activeChar, target, skill);
+		
+		if (!_ignoreShieldDefence)
+		{
+			shield = Formulas.calcShldUse(activeChar, target, skill, true);
+		}
+		
 		// Physical damage critical rate is only affected by STR.
 		boolean crit = false;
 		if (skill.getBaseCritRate() > 0)
@@ -94,7 +104,7 @@ public final class PhysicalAttack extends AbstractEffect
 			crit = Formulas.calcCrit(activeChar, target, skill);
 		}
 		
-		damage = (int) Formulas.calcPhysDam(activeChar, target, skill, shld, false, ss);
+		damage = (int) Formulas.calcPhysDam(activeChar, target, skill, shield, false, ss);
 		
 		if (crit)
 		{

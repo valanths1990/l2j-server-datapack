@@ -17,7 +17,6 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1730" />
 		<set name="icon" val="icon.skill0001" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
@@ -49,7 +48,9 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="2" levels="19" name="Confusion">
@@ -1255,7 +1256,6 @@
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="1070" />
 		<set name="icon" val="icon.skill0036" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
@@ -1286,7 +1286,9 @@
 			<using kind="POLE" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="42" levels="1" name="Sweeper" enchantGroup1="2" enchantGroup2="2">
@@ -1436,7 +1438,6 @@
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="1080" />
 		<set name="icon" val="icon.skill0048" />
-		<set name="ignoreShld" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1457,11 +1458,15 @@
 			<using kind="POLE" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 		<enchant1for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 			<effect name="Stun" />
 		</enchant1for>
 	</skill>
@@ -2086,7 +2091,6 @@
 		<set name="hpConsume" val="#hpConsume" />
 		<set name="icon" val="icon.skill0081" />
 		<set name="isDebuff" val="true" />
-		<set name="ignoreShld" val="true" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="nextActionAttack" val="true" />
@@ -2107,7 +2111,9 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="82" levels="3" name="Majesty" enchantGroup1="1" enchantGroup2="1">
