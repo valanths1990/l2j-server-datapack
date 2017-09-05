@@ -1624,7 +1624,6 @@
 		<set name="effectPoint" val="-1357" />
 		<set name="hitTime" val="1300" />
 		<set name="icon" val="icon.skill0762" />
-		<set name="ignoreShld" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="83" />
@@ -1643,7 +1642,9 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="maxCp" val="0.1" />
 				<add stat="debuffVuln" val="30" />

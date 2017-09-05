@@ -1521,7 +1521,6 @@
 		<set name="effectPoint" val="-342" />
 		<set name="hitTime" val="1067" />
 		<set name="icon" val="icon.skill_transform_s_attack" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
@@ -1531,7 +1530,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="678" levels="1" name="Divine Warrior War Cry">
@@ -1675,7 +1676,6 @@
 		<set name="effectPoint" val="-171" />
 		<set name="hitTime" val="1080" />
 		<set name="icon" val="icon.skill_transform_debuff" />
-		<set name="ignoreShld" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="80" />
@@ -1688,7 +1688,9 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>

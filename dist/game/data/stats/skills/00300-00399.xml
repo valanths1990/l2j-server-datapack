@@ -589,7 +589,6 @@
 		<set name="hitTime" val="1620" />
 		<set name="hpConsume" val="#hpConsume" />
 		<set name="icon" val="icon.skill0315" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
@@ -623,7 +622,9 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="316" levels="1" name="Aegis">
@@ -1548,7 +1549,6 @@
 		<set name="hitTime" val="1800" />
 		<set name="hpConsume" val="340" />
 		<set name="icon" val="icon.skill0347" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="78" />
 		<set name="mpConsume" val="78" />
 		<set name="operateType" val="A1" />
@@ -1572,7 +1572,9 @@
 			<effect name="TargetCancel">
 				<param chance="60" />
 			</effect>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="348" levels="1" name="Spoil Crush">
@@ -2211,7 +2213,6 @@
 		<set name="hitTime" val="2500" />
 		<set name="hpConsume" val="507" />
 		<set name="icon" val="icon.skill0361" />
-		<set name="ignoreShld" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="77" />
@@ -2237,7 +2238,9 @@
 			<effect name="TargetCancel">
 				<param chance="60" />
 			</effect>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 			<effect name="Stun">
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
@@ -2247,7 +2250,9 @@
 			<effect name="TargetCancel">
 				<param chance="60" />
 			</effect>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 			<effect name="Stun">
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
@@ -2274,7 +2279,6 @@
 		<set name="hitTime" val="1900" />
 		<set name="hpConsume" val="338" />
 		<set name="icon" val="icon.skill0362" />
-		<set name="ignoreShld" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="77" />
@@ -2298,14 +2302,18 @@
 			<using kind="BLUNT,SWORD" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 			<effect name="Stun">
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 			</effect>
 		</for>
 		<enchant3for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 			<effect name="Stun">
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />

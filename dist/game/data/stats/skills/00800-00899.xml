@@ -287,7 +287,6 @@
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="1067" />
 		<set name="icon" val="icon.skill0814" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
@@ -303,7 +302,9 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="815" levels="43" name="Blade Hurricane">
@@ -319,7 +320,6 @@
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="1067" />
 		<set name="icon" val="icon.skill0815" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
@@ -332,7 +332,9 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="816" levels="43" name="Cleave">
@@ -349,7 +351,6 @@
 		<set name="hitTime" val="1620" />
 		<set name="hpConsume" val="1" />
 		<set name="icon" val="icon.skill0816" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
@@ -366,7 +367,9 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="817" levels="43" name="Double Strike">
@@ -382,7 +385,6 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1733" />
 		<set name="icon" val="icon.skill0817" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
@@ -396,7 +398,9 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="818" levels="1" name="Evasion Counter">

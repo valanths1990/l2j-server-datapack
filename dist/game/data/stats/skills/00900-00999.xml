@@ -577,7 +577,6 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
 		<set name="icon" val="icon.skill0921" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="76" />
 		<set name="mpConsume" val="77" />
 		<set name="nextActionAttack" val="true" />
@@ -591,7 +590,9 @@
 			<using kind="POLE" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="922" levels="1" name="Hide">
@@ -1390,7 +1391,6 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1620" />
 		<set name="icon" val="icon.skill957" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
@@ -1407,7 +1407,9 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="958" levels="37" name="Triple Blade Slash">
@@ -1424,7 +1426,6 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1733" />
 		<set name="icon" val="icon.skill958" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
@@ -1438,7 +1439,9 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="959" levels="1" name="Frog Jump">
