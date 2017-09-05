@@ -28,7 +28,6 @@
 							<xs:enumeration value="baseCritRate" />
 							<xs:enumeration value="basicProperty" />
 							<xs:enumeration value="blockedInOlympiad" />
-							<xs:enumeration value="blowChance" />
 							<xs:enumeration value="canBeDispeled" />
 							<xs:enumeration value="capsuled_items_skill" />
 							<xs:enumeration value="castRange" />

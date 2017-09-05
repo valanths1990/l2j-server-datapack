@@ -843,7 +843,6 @@
 	</skill>
 	<skill id="5143" levels="1" name="Sailren Use Blow">
 		<!-- Confirmed CT2.5 -->
-		<set name="blowChance" val="115" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
@@ -856,7 +855,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param blowChance="115" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5144" levels="1" name="Mirage">
