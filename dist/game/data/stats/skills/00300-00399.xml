@@ -542,7 +542,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -563,13 +562,20 @@
 		<enchant6 name="elementPower" val="#enchElementPower" />
 		<enchant6 name="magicLvl" val="#enchMagicLvl" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
-		<enchant7 name="pvpPower" val="#enchDuel" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttackHpLink" />
+			<effect name="PhysicalAttackHpLink">
+				<param power="#power" />
+			</effect>
 		</for>
+		<enchant7for>
+			<effect name="PhysicalAttackHpLink">
+				<param power="4870" />
+				<param pvpPower="#enchDuel" />
+			</effect>
+		</enchant7for>
 	</skill>
 	<skill id="315" levels="16" name="Crush of Doom" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
 		<table name="#effectPoints"> -425 -431 -438 -444 -449 -455 -460 -466 -471 -475 -480 -484 -488 -492 -496 -499 </table>

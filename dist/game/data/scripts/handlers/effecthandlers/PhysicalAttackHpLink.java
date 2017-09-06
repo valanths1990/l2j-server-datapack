@@ -36,9 +36,15 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  */
 public final class PhysicalAttackHpLink extends AbstractEffect
 {
+	private final double _power;
+	private final double _pvpPower;
+	
 	public PhysicalAttackHpLink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+		
+		_power = params.getDouble("power", 0);
+		_pvpPower = params.getDouble("pvpPower", _power);
 	}
 	
 	@Override
@@ -50,7 +56,7 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 	@Override
 	public L2EffectType getEffectType()
 	{
-		return L2EffectType.PHYSICAL_ATTACK_HP_LINK;
+		return L2EffectType.PHYSICAL_ATTACK;
 	}
 	
 	@Override
@@ -65,6 +71,8 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		L2Character target = info.getEffected();
 		L2Character activeChar = info.getEffector();
 		Skill skill = info.getSkill();
+		double power = activeChar.isPlayable() && target.isPlayable() ? _pvpPower : _power;
+		power *= (-((target.getCurrentHp() * 2) / target.getMaxHp()) + 2);
 		
 		if (activeChar.isAlikeDead())
 		{
@@ -80,13 +88,13 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		}
 		
 		final byte shld = Formulas.calcShldUse(activeChar, target, skill);
-		int damage = 0;
+		double damage = 0;
 		boolean ss = skill.isPhysical() && activeChar.isChargedShot(ShotType.SOULSHOTS);
-		damage = (int) Formulas.calcPhysDam(activeChar, target, skill, shld, false, ss);
+		damage = Formulas.calcSkillPhysDam(activeChar, target, shld, false, ss, power);
 		
 		if (damage > 0)
 		{
-			activeChar.sendDamageMessage(target, damage, false, false, false);
+			activeChar.sendDamageMessage(target, (int) damage, false, false, false);
 			target.reduceCurrentHp(damage, activeChar, skill);
 			target.notifyDamageReceived(damage, activeChar, skill, false, false, false);
 			
