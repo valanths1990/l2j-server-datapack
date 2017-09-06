@@ -1675,13 +1675,14 @@
 		<set name="mpConsume" val="25" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="75000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="PhysicalSoulAttack" />
+			<effect name="PhysicalSoulAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="877" levels="8" name="Kamael Captain Mercenary Disarm">

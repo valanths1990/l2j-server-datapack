@@ -2413,7 +2413,6 @@
 		<set name="mpConsume" val="120" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="7475" />
 		<set name="reuseDelay" val="75000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
@@ -2423,6 +2422,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param power="7475" />
 				<param criticalChance="15" />
 			</effect>
 		</for>
@@ -2526,7 +2526,6 @@
 		<set name="mpInitialConsume" val="83" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="DA2" />
-		<set name="power" val="4040" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="FRONT_AREA" />
@@ -2550,7 +2549,6 @@
 		<enchant7 name="elementPower" val="#enchElementAttack" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
 		<enchant8 name="magicLvl" val="#enchMagicLvl" />
-		<enchant8 name="pvpPower" val="#ench8Duel" />
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="ANCIENTSWORD" />
@@ -2558,13 +2556,18 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="PhysicalSoulAttack" />
+			<effect name="PhysicalSoulAttack">
+				<param power="4040" />
+			</effect>
 			<effect name="Stun" />
 		</for>
-		<enchant3for>
-			<effect name="PhysicalSoulAttack" />
+		<enchant8for>
+			<effect name="PhysicalSoulAttack">
+				<param power="4040" />
+				<param pvpPower="#ench8Duel" />
+			</effect>
 			<effect name="Stun" />
-		</enchant3for>
+		</enchant8for>
 	</skill>
 	<skill id="794" levels="1" name="Mass Disarm" enchantGroup1="6" enchantGroup2="6">
 		<!-- Confirmed CT2.5 -->
