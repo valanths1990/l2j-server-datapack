@@ -295,11 +295,10 @@
 	<skill id="5014" levels="3" name="Frintezza's Daemon Attack">
 		<!-- Confirmed CT2.5 -->
 		<!-- Frintezza Skills -->
-		<table name="#baseCritRate"> 6 8 10 </table>
+		<table name="#criticalChance"> 6 8 10 </table>
 		<table name="#magicLvl"> 85 85 90 </table>
 		<table name="#power"> 15835 19096 16176 </table>
 		<set name="affectRange" val="150" />
-		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="castRange" val="150" />
 		<set name="coolTime" val="1200" />
 		<set name="effectPoint" val="-100" />
@@ -314,7 +313,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="#criticalChance" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5015" levels="6" name="Frintezza's Daemon Charge">

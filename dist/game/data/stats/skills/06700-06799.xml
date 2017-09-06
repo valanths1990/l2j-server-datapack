@@ -657,7 +657,6 @@
 	</skill>
 	<skill id="6750" levels="1" name="Power Strike">
 		<!-- High Five Confirmed -->
-		<set name="baseCritRate" val="5" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-1000" />
 		<set name="effectRange" val="300" />
@@ -673,7 +672,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="5" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6751" levels="1" name="Blow Attack">
@@ -702,7 +703,6 @@
 	</skill>
 	<skill id="6753" levels="1" name="Death Blow">
 		<!-- High Five Confirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-337" />
 		<set name="effectRange" val="300" />
@@ -720,6 +720,7 @@
 		<for>
 			<effect name="FatalBlow">
 				<param blowChance="30" />
+				<param criticalChance="20" />
 			</effect>
 		</for>
 	</skill>
@@ -731,7 +732,6 @@
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="80" />
 		<set name="affectRange" val="150" />
-		<set name="baseCritRate" val="20" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="-10000" />
 		<set name="element" val="5" /> <!-- Dark -->
@@ -751,6 +751,7 @@
 		<for>
 			<effect name="FatalBlow">
 				<param blowChance="30" />
+				<param criticalChance="20" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="100" />
@@ -862,7 +863,6 @@
 	</skill>
 	<skill id="6760" levels="1" name="Dragon Strike">
 		<!-- High Five Confirmed -->
-		<set name="baseCritRate" val="50" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-1000" />
 		<set name="effectRange" val="300" />
@@ -877,7 +877,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="50" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6761" levels="1" name="Dragon Blow Strike">
@@ -926,7 +928,6 @@
 	</skill>
 	<skill id="6763" levels="1" name="Dragon Earth Strike">
 		<!-- High Five Confirmed -->
-		<set name="baseCritRate" val="10" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-1000" />
 		<set name="effectRange" val="300" />
@@ -941,12 +942,13 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6764" levels="1" name="Dragon Earth Shot">
 		<!-- High Five Confirmed -->
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-897" />
 		<set name="effectRange" val="1400" />
@@ -961,7 +963,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6765" levels="1" name="Complete Recovery">
@@ -1117,7 +1121,6 @@
 	</skill>
 	<skill id="6772" levels="1" name="Power Strike">
 		<!-- High Five Confirmed -->
-		<set name="baseCritRate" val="10" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-1000" />
 		<set name="effectRange" val="300" />
@@ -1133,7 +1136,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6773" levels="1" name="Rage">
@@ -1169,7 +1174,6 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" />
-		<set name="baseCritRate" val="10" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-10000" />
@@ -1189,7 +1193,9 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>

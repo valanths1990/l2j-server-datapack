@@ -274,7 +274,6 @@
 		<table name="#magicLvl"> 58 62 66 70 72 74 76 78 79 80 </table>
 		<table name="#mpConsume"> 58 62 67 71 73 75 77 78 79 80 </table>
 		<table name="#power"> 4181 4920 5700 6503 6906 7305 7698 8079 8265 8447 </table>
-		<set name="baseCritRate" val="10" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="200" />
@@ -289,6 +288,7 @@
 		<for>
 			<effect name="FatalBlow">
 				<param blowChance="20" />
+				<param criticalChance="10" />
 			</effect>
 		</for>
 	</skill>

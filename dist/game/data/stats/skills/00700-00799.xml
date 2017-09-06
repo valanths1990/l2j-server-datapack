@@ -1618,7 +1618,6 @@
 		<set name="activateRate" val="70" />
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="300" />
-		<set name="baseCritRate" val="50" />
 		<set name="basicProperty" val="CON" />
 		<set name="coolTime" val="700" />
 		<set name="effectPoint" val="-1357" />
@@ -1643,6 +1642,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="50" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 			<effect name="Debuff">
@@ -1859,7 +1859,6 @@
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="900" />
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-686" />
@@ -1879,7 +1878,9 @@
 			<using kind="BOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="23298" skillLevel="1" />
 			</effect>
@@ -1889,7 +1890,6 @@
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="200" />
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-686" />
@@ -1908,7 +1908,9 @@
 			<using kind="BOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="23299" skillLevel="1" />
 			</effect>
@@ -1918,7 +1920,6 @@
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="900" />
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-686" />
@@ -1938,7 +1939,9 @@
 			<using kind="BOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="23300" skillLevel="1" />
 			</effect>
@@ -2015,7 +2018,6 @@
 		<set name="abnormalType" val="FORCE_OF_DESTRUCTION" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="activateRate" val="80" />
-		<set name="baseCritRate" val="20" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="chargeConsume" val="2" />
@@ -2051,7 +2053,6 @@
 	<skill id="777" levels="1" name="Demolition Impact">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="affectRange" val="500" />
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-686" />
 		<set name="effectRange" val="650" />
@@ -2073,7 +2074,9 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="778" levels="1" name="Golem Armor">
@@ -2399,7 +2402,6 @@
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="900" />
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-1" />
@@ -2420,7 +2422,9 @@
 			<using kind="CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalSoulAttack" />
+			<effect name="PhysicalSoulAttack">
+				<param criticalChance="15" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="791" levels="1" name="Lightning Shock">

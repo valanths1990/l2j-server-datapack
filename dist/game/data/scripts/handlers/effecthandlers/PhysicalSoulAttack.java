@@ -36,12 +36,14 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  */
 public final class PhysicalSoulAttack extends AbstractEffect
 {
+	private final int _criticalChance;
 	private final boolean _ignoreShieldDefence;
 	
 	public PhysicalSoulAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
+		_criticalChance = params.getInt("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
 	}
 	
@@ -99,9 +101,9 @@ public final class PhysicalSoulAttack extends AbstractEffect
 		
 		// Physical damage critical rate is only affected by STR.
 		boolean crit = false;
-		if (skill.getBaseCritRate() > 0)
+		if (_criticalChance > 0)
 		{
-			crit = Formulas.calcCrit(activeChar, target, skill);
+			crit = Formulas.calcSkillCrit(activeChar, target, _criticalChance);
 		}
 		
 		damage = (int) Formulas.calcPhysDam(activeChar, target, skill, shield, false, ss);

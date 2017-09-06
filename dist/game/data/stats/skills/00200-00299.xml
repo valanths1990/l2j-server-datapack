@@ -1570,7 +1570,6 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="50" />
-		<set name="baseCritRate" val="15" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
@@ -1612,12 +1611,14 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 			<effect name="Stun" />
 		</for>
 		<enchant1for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 			<effect name="Stun" />
@@ -2354,7 +2355,6 @@
 		<table name="#ench2MpConsume"> 85 84 83 82 81 80 79 78 78 77 76 75 74 73 72 71 71 70 69 68 67 66 65 64 64 63 62 61 60 59 </table>
 		<table name="#enchElementPower"> 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="400" />
@@ -2383,6 +2383,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</for>
@@ -2404,7 +2405,6 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="50" />
-		<set name="baseCritRate" val="15" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="#coolTime" />
@@ -2436,18 +2436,21 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 			<effect name="Stun" />
 		</for>
 		<enchant1for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 			<effect name="Stun" />
 		</enchant1for>
 		<enchant3for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 			<effect name="Stun">
@@ -2456,6 +2459,7 @@
 		</enchant3for>
 		<enchant4for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 			<effect name="Stun">

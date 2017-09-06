@@ -80,25 +80,18 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		}
 		
 		final byte shld = Formulas.calcShldUse(activeChar, target, skill);
-		// Physical damage critical rate is only affected by STR.
-		boolean crit = false;
-		if (skill.getBaseCritRate() > 0)
-		{
-			crit = Formulas.calcCrit(activeChar, target, skill);
-		}
-		
 		int damage = 0;
 		boolean ss = skill.isPhysical() && activeChar.isChargedShot(ShotType.SOULSHOTS);
 		damage = (int) Formulas.calcPhysDam(activeChar, target, skill, shld, false, ss);
 		
 		if (damage > 0)
 		{
-			activeChar.sendDamageMessage(target, damage, false, crit, false);
+			activeChar.sendDamageMessage(target, damage, false, false, false);
 			target.reduceCurrentHp(damage, activeChar, skill);
-			target.notifyDamageReceived(damage, activeChar, skill, crit, false, false);
+			target.notifyDamageReceived(damage, activeChar, skill, false, false, false);
 			
 			// Check if damage should be reflected.
-			Formulas.calcDamageReflected(activeChar, target, skill, crit);
+			Formulas.calcDamageReflected(activeChar, target, skill, false);
 		}
 		else
 		{
