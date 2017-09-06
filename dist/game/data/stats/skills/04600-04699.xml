@@ -1988,7 +1988,6 @@
 		<!-- Valakas Skills -->
 		<!-- Valakas Trample Left -->
 		<set name="affectRange" val="250" />
-		<set name="baseCritRate" val="10" />
 		<set name="castRange" val="50" />
 		<set name="coolTime" val="1500" />
 		<set name="effectPoint" val="-100" />
@@ -2004,7 +2003,9 @@
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="VALAKAS" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4682" levels="1" name="Valakas Trample">
@@ -2012,7 +2013,6 @@
 		<!-- Valakas Skills -->
 		<!-- Valakas Trample Right -->
 		<set name="affectRange" val="250" />
-		<set name="baseCritRate" val="10" />
 		<set name="castRange" val="50" />
 		<set name="coolTime" val="1500" />
 		<set name="effectPoint" val="-100" />
@@ -2028,7 +2028,9 @@
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="VALAKAS" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4683" levels="1" name="Valakas Dragon Breath">
@@ -2102,7 +2104,6 @@
 		<!-- Valakas Skills -->
 		<!-- Valakas Tail Stomp A from Behind -->
 		<set name="affectRange" val="1000" />
-		<set name="baseCritRate" val="10" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-100" />
 		<set name="element" val="0" /> <!-- Fire -->
@@ -2115,7 +2116,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="BEHIND_AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4686" levels="1" name="Valakas Tail Stomp">
@@ -2155,7 +2158,6 @@
 		<set name="abnormalType" val="FLY_AWAY" />
 		<set name="activateRate" val="80" />
 		<set name="affectRange" val="250" />
-		<set name="baseCritRate" val="10" />
 		<set name="basicProperty" val="CON" />
 		<set name="coolTime" val="3000" />
 		<set name="effectPoint" val="-100" />
@@ -2175,7 +2177,9 @@
 		<set name="targetType" val="BEHIND_AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 			<effect name="ThrowUp" />
 			<effect name="Stun" />
 		</for>

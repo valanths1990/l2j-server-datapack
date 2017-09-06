@@ -36,12 +36,14 @@ import com.l2jserver.gameserver.model.stats.Formulas;
 public final class FatalBlow extends AbstractEffect
 {
 	private final int _blowChance;
+	private final int _criticalChance;
 	
 	public FatalBlow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
 		_blowChance = params.getInt("blowChance", 0);
+		_criticalChance = params.getInt("criticalChance", 0);
 	}
 	
 	@Override
@@ -78,7 +80,12 @@ public final class FatalBlow extends AbstractEffect
 		byte shld = Formulas.calcShldUse(activeChar, target, skill);
 		double damage = Formulas.calcBlowDamage(activeChar, target, skill, shld, ss);
 		
-		boolean crit = Formulas.calcCrit(activeChar, target, skill);
+		boolean crit = false;
+		if (_criticalChance > 0)
+		{
+			crit = Formulas.calcSkillCrit(activeChar, target, _criticalChance);
+		}
+		
 		if (crit)
 		{
 			damage *= 2;
@@ -97,10 +104,10 @@ public final class FatalBlow extends AbstractEffect
 		if (activeChar.isPlayer())
 		{
 			L2PcInstance activePlayer = activeChar.getActingPlayer();
-			activePlayer.sendDamageMessage(target, (int) damage, false, true, false);
+			activePlayer.sendDamageMessage(target, (int) damage, false, crit, false);
 		}
 		
 		// Check if damage should be reflected
-		Formulas.calcDamageReflected(activeChar, target, skill, true);
+		Formulas.calcDamageReflected(activeChar, target, skill, crit);
 	}
 }

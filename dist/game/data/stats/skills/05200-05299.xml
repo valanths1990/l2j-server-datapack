@@ -559,7 +559,6 @@
 		<!-- Confirmed CT2.5 -->
 		<!-- Baylor Skills -->
 		<set name="affectRange" val="200" />
-		<set name="baseCritRate" val="20" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="85" />
@@ -569,14 +568,15 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5228" levels="1" name="Jump Attack">
 		<!-- Confirmed CT2.5 -->
 		<!-- Baylor Skills -->
 		<set name="affectRange" val="200" />
-		<set name="baseCritRate" val="20" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="85" />
@@ -587,7 +587,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5229" levels="1" name="Strong Punch">
@@ -598,7 +600,6 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" />
-		<set name="baseCritRate" val="20" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
@@ -617,7 +618,9 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 			<effect name="Stun" />
 			<effect name="ThrowUp" />
 		</for>

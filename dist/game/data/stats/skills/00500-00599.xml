@@ -265,7 +265,6 @@
 		<table name="#enchDuel"> 5285 5391 5497 5602 5708 5814 5920 6025 6131 6237 6343 6448 6554 6660 6766 6871 6977 7083 7188 7294 7400 7506 7611 7717 7823 7929 8034 8140 8246 8352 </table>
 		<table name="#enchElementPower"> 1 3 5 6 8 10 11 13 15 16 18 20 21 23 25 26 28 30 31 33 35 36 38 40 41 43 45 46 48 50 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
-		<set name="baseCritRate" val="5" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -299,6 +298,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param criticalChance="5" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</for>
@@ -314,7 +314,6 @@
 		<table name="#enchDuel"> 4955 5040 5125 5210 5295 5380 5465 5551 5636 5721 5806 5891 5976 6061 6147 6232 6317 6402 6487 6572 6657 6742 6828 6913 6998 7083 7168 7253 7338 7424 </table>
 		<table name="#enchElementPower"> 1 3 5 6 8 10 11 13 15 16 18 20 21 23 25 26 28 30 31 33 35 36 38 40 41 43 45 46 48 50 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
-		<set name="baseCritRate" val="25" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -352,7 +351,9 @@
 			<using kind="CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalSoulAttack" />
+			<effect name="PhysicalSoulAttack">
+				<param criticalChance="25" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="508" levels="31" name="Rising Shot" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
@@ -2228,7 +2229,6 @@
 		<table name="#effectPoints"> -288 -300 -311 -320 </table>
 		<table name="#magicLvl"> 60 63 66 69 </table>
 		<table name="#maxCharges"> 1 2 3 4 </table>
-		<set name="baseCritRate" val="10" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1100" />
@@ -2243,7 +2243,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 		</for>
 		<selfEffects>
 			<effect name="FocusEnergy">
@@ -2323,7 +2325,6 @@
 		<set name="activateRate" val="50" />
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="250" />
-		<set name="baseCritRate" val="15" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="element" val="3" /> <!-- Earth -->
@@ -2342,7 +2343,9 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>

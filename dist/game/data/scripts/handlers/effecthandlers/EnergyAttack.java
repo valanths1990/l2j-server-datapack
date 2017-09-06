@@ -29,10 +29,8 @@ import com.l2jserver.gameserver.model.items.L2Weapon;
 import com.l2jserver.gameserver.model.items.type.WeaponType;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.model.stats.BaseStats;
 import com.l2jserver.gameserver.model.stats.Formulas;
 import com.l2jserver.gameserver.model.stats.Stats;
-import com.l2jserver.util.Rnd;
 
 /**
  * Energy Attack effect implementation.
@@ -148,7 +146,11 @@ public final class EnergyAttack extends AbstractEffect
 				damage = attacker.getStat().calcStat(Stats.PHYSICAL_SKILL_POWER, damage);
 			}
 			
-			critical = (BaseStats.STR.calcBonus(attacker) * _criticalChance) > (Rnd.nextDouble() * 100);
+			if (_criticalChance > 0)
+			{
+				critical = Formulas.calcSkillCrit(attacker, target, _criticalChance);
+			}
+			
 			if (critical)
 			{
 				damage *= 2;

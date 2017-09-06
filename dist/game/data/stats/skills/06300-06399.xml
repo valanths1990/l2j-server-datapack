@@ -1480,7 +1480,6 @@
 	</skill>
 	<skill id="6387" levels="1" name="Bistakon Earthquake">
 		<set name="affectRange" val="150" />
-		<set name="baseCritRate" val="15" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1000" />
 		<set name="element" val="3" /> <!-- Earth -->
@@ -1495,6 +1494,7 @@
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</for>
