@@ -36,6 +36,8 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  */
 public final class PhysicalSoulAttack extends AbstractEffect
 {
+	private final double _power;
+	private final double _pvpPower;
 	private final int _criticalChance;
 	private final boolean _ignoreShieldDefence;
 	
@@ -43,6 +45,8 @@ public final class PhysicalSoulAttack extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 		
+		_power = params.getDouble("power", 0);
+		_pvpPower = params.getDouble("pvpPower", _power);
 		_criticalChance = params.getInt("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
 	}
@@ -71,6 +75,7 @@ public final class PhysicalSoulAttack extends AbstractEffect
 		L2Character target = info.getEffected();
 		L2Character activeChar = info.getEffector();
 		Skill skill = info.getSkill();
+		double power = activeChar.isPlayable() && target.isPlayable() ? _pvpPower : _power;
 		
 		if (activeChar.isAlikeDead())
 		{
@@ -90,7 +95,7 @@ public final class PhysicalSoulAttack extends AbstractEffect
 			target.stopFakeDeath(true);
 		}
 		
-		int damage = 0;
+		double damage = 0;
 		boolean ss = skill.isPhysical() && activeChar.isChargedShot(ShotType.SOULSHOTS);
 		byte shield = 0;
 		
@@ -106,7 +111,7 @@ public final class PhysicalSoulAttack extends AbstractEffect
 			crit = Formulas.calcSkillCrit(activeChar, target, _criticalChance);
 		}
 		
-		damage = (int) Formulas.calcPhysDam(activeChar, target, skill, shield, false, ss);
+		damage = Formulas.calcSkillPhysDam(activeChar, target, shield, false, ss, power);
 		
 		if ((skill.getMaxSoulConsumeCount() > 0) && activeChar.isPlayer())
 		{
@@ -120,7 +125,7 @@ public final class PhysicalSoulAttack extends AbstractEffect
 		
 		if (damage > 0)
 		{
-			activeChar.sendDamageMessage(target, damage, false, crit, false);
+			activeChar.sendDamageMessage(target, (int) damage, false, crit, false);
 			target.reduceCurrentHp(damage, activeChar, skill);
 			target.notifyDamageReceived(damage, activeChar, skill, crit, false, false);
 			

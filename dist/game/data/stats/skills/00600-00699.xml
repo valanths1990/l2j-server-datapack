@@ -509,7 +509,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
@@ -527,13 +526,11 @@
 			<using kind="CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalSoulAttack" />
+			<effect name="PhysicalSoulAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Fear" />
 		</for>
-		<enchant4for>
-			<effect name="PhysicalSoulAttack" />
-			<effect name="Fear" />
-		</enchant4for>
 	</skill>
 	<skill id="628" levels="1" name="Warp">
 		<!-- Confirmed CT2.5 -->

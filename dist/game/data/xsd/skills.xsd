@@ -25,7 +25,6 @@
 							<xs:enumeration value="afterEffectId" />
 							<xs:enumeration value="attribute" />
 							<xs:enumeration value="attributePower" />
-							<xs:enumeration value="baseCritRate" />
 							<xs:enumeration value="basicProperty" />
 							<xs:enumeration value="blockedInOlympiad" />
 							<xs:enumeration value="canBeDispeled" />
