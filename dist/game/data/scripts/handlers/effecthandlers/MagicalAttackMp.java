@@ -35,9 +35,13 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  */
 public final class MagicalAttackMp extends AbstractEffect
 {
+	private final double _power;
+	
 	public MagicalAttackMp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+		
+		_power = params.getDouble("power", 0);
 	}
 	
 	@Override
@@ -92,7 +96,7 @@ public final class MagicalAttackMp extends AbstractEffect
 		boolean bss = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		final byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
 		final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()));
-		double damage = Formulas.calcManaDam(activeChar, target, info.getSkill(), shld, sps, bss, mcrit);
+		double damage = Formulas.calcManaDam(activeChar, target, info.getSkill(), shld, sps, bss, mcrit, _power);
 		double mp = (damage > target.getCurrentMp() ? target.getCurrentMp() : damage);
 		
 		if (damage > 0)
