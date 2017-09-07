@@ -210,12 +210,13 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="3000" /> <!-- FIXME: value unconfirmed -->
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" /> <!-- FIXME: value unconfirmed -->
+			<effect name="PhysicalAttack"> <!-- FIXME: value unconfirmed -->
+				<param power="3000" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5910" levels="1" name="Stronghold Attack">
@@ -225,12 +226,13 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="5000" /> <!-- FIXME: value unconfirmed -->
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" /> <!-- FIXME: value unconfirmed -->
+			<effect name="PhysicalAttack"> <!-- FIXME: value unconfirmed -->
+				<param power="5000" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5911" levels="1" name="Pestilence Cleanse">
@@ -594,12 +596,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="9279" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="9279" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5933" levels="1" name="Dark Blade">
@@ -617,12 +620,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="9279" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="9279" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5934" levels="1" name="Meet the soul of darkness and fight against it.">
@@ -651,12 +655,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="9279" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="9279" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5936" levels="1" name="Earth Ring">
@@ -673,12 +678,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="9279" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="9279" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5937" levels="1" name="Self Stun">
@@ -1153,12 +1159,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5976" levels="3" name="Dark Storm">
@@ -1173,12 +1180,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5977" levels="3" name="Dark Strike">
@@ -1221,12 +1229,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5981" levels="3" name="Lilith's Curse">

@@ -760,7 +760,6 @@
 		<set name="itemConsumeId" val="8192" /> <!-- Soul Breaking Arrow -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="2320" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -772,7 +771,9 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2320" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>

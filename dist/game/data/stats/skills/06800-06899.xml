@@ -435,12 +435,13 @@
 		<set name="lvlBonusRate" val="4" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="7072" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="7072" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.77" />
 			</effect>
@@ -461,12 +462,13 @@
 		<set name="lvlBonusRate" val="4" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="7072" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="7072" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.6" />
 			</effect>
@@ -556,12 +558,12 @@
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="6960" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="6960" />
 				<param criticalChance="30" />
 			</effect>
 		</for>
@@ -580,13 +582,13 @@
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="6960" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Stun" />
 			<effect name="PhysicalAttack">
+				<param power="6960" />
 				<param criticalChance="30" />
 			</effect>
 			<effect name="BlockBuff" />
@@ -670,12 +672,13 @@
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="6960" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="6960" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6834" levels="1" name="Range Magic Attack">
@@ -755,11 +758,12 @@
 		<set name="hitTime" val="4000" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="6960" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="6960" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6839" levels="2" name="Power Attack">
@@ -840,11 +844,12 @@
 		<set name="hitTime" val="3000"/>
 		<set name="magicLvl" val="85"/>
 		<set name="operateType" val="A1"/>
-		<set name="power" val="6960" />
 		<set name="rideState" val="NONE"/>
 		<set name="targetType" val="ONE"/>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="6960" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6845" levels="1" name="Power Strike">
@@ -856,11 +861,12 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="12670" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="12670" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6846" levels="1" name="Vampiric Claw">
@@ -904,11 +910,12 @@
 		<set name="magicLvl" val="82" />
 		<set name="mpConsume" val="100" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="12936" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="12936" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6850" levels="1" name="Self-destruction">
@@ -920,11 +927,12 @@
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="81" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="6335" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="6335" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6851" levels="1" name="Power Strike">
@@ -936,11 +944,12 @@
 		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="12936" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="12936" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6852" levels="1" name="Magic Strike">
@@ -1050,11 +1059,12 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13446" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13446" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6858" levels="1" name="Summon">
@@ -1073,11 +1083,12 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13446" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13446" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6860" levels="1" name="Power Strike">
@@ -1091,11 +1102,12 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="20168" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="20168" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6861" levels="1" name="Enhance">
@@ -1142,11 +1154,12 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="6723" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="6723" />
+			</effect>
 			<effect name="DamOverTime" ticks="4">
 				<param power="100" />
 			</effect>
@@ -1210,11 +1223,12 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="6723" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="6723" />
+			</effect>
 			<effect name="DamOverTime" ticks="4">
 				<param power="100" />
 			</effect>
@@ -1331,11 +1345,12 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="12670" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="12670" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6873" levels="2" name="Hex">
@@ -1355,11 +1370,12 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="4715" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4715" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
@@ -1425,11 +1441,12 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13446" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13446" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6877" levels="1" name="Power Strike">
@@ -1441,11 +1458,12 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="20168" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="20168" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6878" levels="1" name="Paralysis">
@@ -1529,12 +1547,12 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="89" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="6960" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="6960" />
 				<param criticalChance="30" />
 			</effect>
 		</for>
@@ -1650,11 +1668,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13446" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13446" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6888" levels="1" name="Fatal Shot">
@@ -1667,11 +1686,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13446" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13446" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6889" levels="1" name="Range Attack">
@@ -1685,11 +1705,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13446" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13446" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6890" levels="1" name="Bleed">
@@ -1708,11 +1729,12 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13446" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13446" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6892" levels="1" name="Power Shot">
@@ -1727,11 +1749,12 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13446" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13446" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6893" levels="1" name="Power Attack">
@@ -1745,11 +1768,12 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13446" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13446" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6894" levels="1" name="Power Shot">
@@ -1764,11 +1788,12 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13446" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13446" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6895" levels="1" name="Power Attack">
@@ -1782,11 +1807,12 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13446" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13446" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6896" levels="1" name="Power Shot">
@@ -1801,11 +1827,12 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13446" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13446" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6897" levels="12" name="Shock">

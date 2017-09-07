@@ -954,12 +954,13 @@
 		<set name="magicLvl" val="73" />
 		<set name="mpConsume" val="74" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="1827" />
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="1827" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="8239" levels="1" name="Critical Up">
@@ -1010,7 +1011,6 @@
 		<set name="magicLvl" val="73" />
 		<set name="mpConsume" val="149" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -1019,7 +1019,9 @@
 			<player checkAbnormal="SEED_OF_CRITICAL,#abnormalLvl" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 		<selfEffects>
@@ -1064,12 +1066,13 @@
 		<set name="magicLvl" val="61" />
 		<set name="mpConsume" val="61" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="1230" />
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="1230" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="8243" levels="1" name="Chill Strike">
@@ -1084,12 +1087,13 @@
 		<set name="magicLvl" val="61" />
 		<set name="mpConsume" val="61" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="1845" />
 		<set name="reuseDelay" val="120000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="1845" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="8244" levels="1" name="Transform Gatekeeper">

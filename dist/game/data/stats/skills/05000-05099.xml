@@ -9,11 +9,12 @@
 		<set name="magicLvl" val="76" />
 		<set name="mpConsume" val="108" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="10000000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="10000000" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5001" levels="1" name="Alfred - Life Drain">
@@ -90,12 +91,13 @@
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="5964" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="5964" />
+			</effect>
 			<effect name="ThrowUp" />
 			<effect name="Stun" />
 		</for>
@@ -202,11 +204,12 @@
 		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="6400" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="6400" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5010" levels="1" name="Frintezza's Ghostly Mage">
@@ -309,11 +312,11 @@
 		<set name="hitTime" val="1300" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="#criticalChance" />
 			</effect>
 		</for>
@@ -338,14 +341,15 @@
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<cond msgId="113" addName="1">
 			<player insideZoneId="5015" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5016" levels="1" name="Yoke of Scarlet">
@@ -715,12 +719,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5044" levels="3" name="NPC Ultimate Defense">
@@ -765,12 +770,13 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5046" levels="12" name="Castle Power Shot">
@@ -784,12 +790,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5047" levels="12" name="Castle Spinning Slash">
@@ -1306,11 +1313,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="2112" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2112" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5083" levels="4" name="Stun">
@@ -1333,12 +1341,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Stun" />
 			<effect name="TargetCancel">
 				<param chance="10" />
@@ -1554,11 +1563,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="83" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="30215" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="30215" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5096" levels="1" name="Antharas Subordinate Remote Attack">
@@ -1570,11 +1580,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="83" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="88254" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="88254" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5097" levels="1" name="Antharas Subordinate Suicide (Narrow Range)">

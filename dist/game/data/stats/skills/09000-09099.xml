@@ -83,7 +83,6 @@
 		<set name="itemConsumeId" val="15364" /> <!-- Cool Pack -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -91,7 +90,9 @@
 			<target npcId="13270" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="9011" levels="1" name="Might">

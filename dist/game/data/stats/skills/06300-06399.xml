@@ -12,11 +12,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="123" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="3194" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="3194" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="6662" skillLevel="1" />
 			</effect>
@@ -79,12 +80,13 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6304" levels="1" name="Shock">
@@ -129,12 +131,13 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6306" levels="1" name="Solina Strike">
@@ -278,12 +281,13 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6312" levels="1" name="Launch Sacred Sword Energy">
@@ -300,12 +304,13 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6313" levels="1" name="Solina Bless">
@@ -373,12 +378,13 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6316" levels="1" name="Accomplish of Authority">
@@ -624,12 +630,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="123" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="20531" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="20531" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6327" levels="1" name="Sacred Worship">
@@ -645,12 +652,13 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="11407" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="11407" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6328" levels="1" name="Fighter Judgement">
@@ -690,12 +698,13 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6330" levels="1" name="Salmon Porridge Attack">
@@ -782,13 +791,14 @@
 		<set name="mpConsume" val="121" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="200" />
 			</effect>
@@ -814,13 +824,14 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -873,12 +884,13 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6338" levels="1" name="Red Slash 2">
@@ -892,12 +904,13 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6339" levels="1" name="Sacred Hammer Attack">
@@ -922,13 +935,14 @@
 		<set name="mpConsume" val="121" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="BLEED" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="200" />
 			</effect>
@@ -954,13 +968,14 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -974,12 +989,13 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="500" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6342" levels="1" name="Trap Over Steam">
@@ -989,12 +1005,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="123" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6343" levels="2" name="Maguen Plasma - Power">
@@ -1412,12 +1429,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6385" levels="1" name="Bistakon Critical Claw">
@@ -1468,13 +1486,14 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="9125" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="9125" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -1488,12 +1507,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13688" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="13688" />
 				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
@@ -1507,12 +1526,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13688" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13688" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6389" levels="1" name="Cokrakon Sonic Cage">
@@ -1579,13 +1599,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="4563" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -1626,12 +1647,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13688" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13688" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6394" levels="1" name="Cokrakon Sonic Bomb">
@@ -1642,12 +1664,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13688" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13688" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6395" levels="1" name="Cokrakon Dreadful Clow">
@@ -1724,13 +1747,14 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="9125" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="9125" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -1770,12 +1794,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13688" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13688" />
+			</effect>
 		</for>
 	</skill>
 </list>

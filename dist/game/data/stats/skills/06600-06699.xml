@@ -182,12 +182,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.5" />
 			</effect>
@@ -213,12 +214,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.1" />
 			</effect>
@@ -293,12 +295,13 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="2748" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2748" />
+			</effect>
 			<effect name="Stun">
 				<mul stat="defCritRate" val="0.5" />
 			</effect>
@@ -678,7 +681,6 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="83" />
 		<set name="operateType" val="DA1" />
-		<set name="power" val="2319" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -686,7 +688,9 @@
 			<target mindistance="200" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2319" />
+			</effect>
 			<effect name="EnemyCharge" />
 		</for>
 	</skill>
@@ -702,12 +706,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="83" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="2319" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2319" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6644" levels="1" name="Ice Queen Freya">
@@ -1448,12 +1453,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="45257" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="45257" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="6698" skillLevel="1" />
 			</effect>

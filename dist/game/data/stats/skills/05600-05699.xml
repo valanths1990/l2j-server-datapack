@@ -1568,13 +1568,14 @@
 		<set name="magicLvl" val="80" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5685" levels="1" name="PvP Weapon - Casting">

@@ -637,12 +637,13 @@
 		<set name="magicLvl" val="78" />
 		<set name="mpConsume" val="140" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="11500" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="11500" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3631" levels="1" name="Void Flow">
@@ -655,12 +656,13 @@
 		<set name="magicLvl" val="78" />
 		<set name="mpConsume" val="140" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="15000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="15000" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3632" levels="1" name="Clan Gate">

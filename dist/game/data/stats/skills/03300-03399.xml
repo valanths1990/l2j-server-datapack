@@ -363,12 +363,13 @@
 		<set name="mpConsume" val="140" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="11500" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="11500" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3329" levels="1" name="Power Slash">
@@ -383,12 +384,13 @@
 		<set name="mpConsume" val="140" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="11500" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="11500" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3330" levels="1" name="Air Blade">
@@ -405,12 +407,13 @@
 		<set name="mpConsume" val="140" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="15000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="15000" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3331" levels="1" name="Enslave">
