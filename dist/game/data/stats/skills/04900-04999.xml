@@ -678,11 +678,12 @@
 		<set name="magicLvl" val="79" />
 		<set name="mpConsume" val="88" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="57742" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="57742" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4994" levels="1" name="Venom - Sonic Storm">
@@ -696,12 +697,13 @@
 		<set name="magicLvl" val="79" />
 		<set name="mpConsume" val="88" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="28871" />
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="28871" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4995" levels="1" name="Venom - Teleport">

@@ -34,12 +34,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13688" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13688" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6402" levels="5" name="Torumba Poison Strike">
@@ -87,12 +88,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="13688" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13688" />
+			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="58" />
 				<mul stat="runSpd" val="0.8" />
@@ -114,12 +116,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="13688" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13688" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.3" />
 			</effect>
@@ -227,12 +230,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13688" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13688" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6410" levels="1" name="Reptilikon Rush">
@@ -255,13 +259,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="9125" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="9125" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -282,12 +287,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13688" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13688" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6413" levels="1" name="Reptilikon Missile">
@@ -300,12 +306,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13688" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13688" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6414" levels="1" name="Reptilikon Charge">
@@ -326,13 +333,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="9125" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="9125" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -344,12 +352,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13688" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13688" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6416" levels="1" name="Reptilikon Poison Breath">
@@ -454,11 +463,12 @@
 		<set name="magicLvl" val="82" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="6844" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="6844" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6420" levels="1" name="Lizard Strike">
@@ -469,11 +479,12 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="6844" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="6844" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6421" levels="1" name="Rage of Soldier">
@@ -484,11 +495,12 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="6844" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="6844" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6422" levels="1" name="Resistance Explosion">
@@ -498,11 +510,12 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="6844" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="6844" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6423" levels="1" name="Shock">
@@ -523,12 +536,13 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="2738" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2738" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -541,11 +555,12 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="6844" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="6844" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6425" levels="1" name="Demotivation Hex">

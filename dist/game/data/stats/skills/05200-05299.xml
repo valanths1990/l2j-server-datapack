@@ -564,11 +564,11 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="187" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="5800" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="5800" />
 				<param criticalChance="20" />
 			</effect>
 		</for>
@@ -582,12 +582,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="373" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="11786" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="11786" />
 				<param criticalChance="20" />
 			</effect>
 		</for>
@@ -613,12 +613,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="75" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="4640" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="4640" />
 				<param criticalChance="20" />
 			</effect>
 			<effect name="Stun" />
@@ -643,12 +643,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="195" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="2784" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2784" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -670,12 +671,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="390" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="5704" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="5704" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -697,12 +699,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="779" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="11407" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="11407" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -715,11 +718,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="149" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4563" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5234" levels="1" name="Weight Spin Attack - Mid">
@@ -731,11 +735,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="260" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="7685" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="7685" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5235" levels="1" name="Weight Spin Attack - Strong">
@@ -747,11 +752,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="445" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13688" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13688" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5236" levels="1" name="Speed Up">
@@ -863,12 +869,13 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="221" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="6723" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="6723" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -890,12 +897,13 @@
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume" val="368" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="11205" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="11205" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -1430,12 +1438,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="25000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5263" levels="12" name="NPC _ Chain Lightning">
@@ -1709,11 +1718,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5274" levels="9" name="NPC(party) - Physical Single Long Range Attack">
@@ -1728,11 +1738,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5275" levels="9" name="NPC(party) - Physical Range Close Range Attack">
@@ -1747,11 +1758,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5276" levels="9" name="NPC(party) - Physical Range Long Range Attack">
@@ -1768,11 +1780,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5277" levels="9" name="NPC(party) - Physical Single Close Range Attack - Fire">
@@ -1790,11 +1803,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5278" levels="9" name="NPC(party) - Physical Single Long Range Attack - Fire">
@@ -1811,11 +1825,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5279" levels="9" name="NPC(party) - Physical Range Close Range Attack - Fire">
@@ -1831,11 +1846,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13066" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13066" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5280" levels="9" name="NPC(party) - Physical Range Long Range Attack - Fire">
@@ -1854,11 +1870,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5281" levels="9" name="NPC(party) - Physical Single Close Range Attack - Water">
@@ -1877,11 +1894,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5282" levels="9" name="NPC(party) - Physical Single Long Range Attack - Water">
@@ -1898,11 +1916,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5283" levels="9" name="NPC(party) - Physical Range Close Range Attack - Water">
@@ -1918,11 +1937,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13066" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13066" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5284" levels="9" name="NPC(party) - Physical Range Long Range Attack - Water">
@@ -1941,11 +1961,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5285" levels="9" name="NPC(party) - Physical Single Close Range Attack - Wind">
@@ -1964,11 +1985,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5286" levels="9" name="NPC(party) - Physical Single Long Range Attack - Wind">
@@ -1985,11 +2007,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5287" levels="9" name="NPC(party) - Physical Range Close Range Attack - Wind">
@@ -2005,11 +2028,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13066" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13066" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5288" levels="9" name="NPC(party) - Physical Range Long Range Attack - Wind">
@@ -2028,11 +2052,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5289" levels="9" name="NPC(party) - Physical Single Close Range Attack - Earth">
@@ -2051,11 +2076,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5290" levels="9" name="NPC(party) - Physical Single Long Range Attack - Earth">
@@ -2072,11 +2098,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5291" levels="9" name="NPC(party) - Physical Range Close Range Attack - Earth">
@@ -2092,11 +2119,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13066" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13066" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5292" levels="9" name="NPC(party) - Physical Range Long Range Attack - Earth">
@@ -2115,11 +2143,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5293" levels="9" name="NPC(party) - Physical Single Close Range Attack - Holy">
@@ -2138,11 +2167,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5294" levels="9" name="NPC(party) - Physical Single Long Range Attack - Holy">
@@ -2159,11 +2189,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5295" levels="9" name="NPC(party) - Physical Range Close Range Attack - Holy">
@@ -2179,11 +2210,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13066" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13066" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5296" levels="9" name="NPC(party) - Physical Range Long Range Attack - Holy">
@@ -2202,11 +2234,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5297" levels="9" name="NPC(party) - Physical Single Close Range Attack - Dark">
@@ -2224,11 +2257,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5298" levels="9" name="NPC(party) - Physical Single Long Range Attack - Dark">
@@ -2245,11 +2279,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5299" levels="9" name="NPC(party) - Physical Range Close Range Attack - Dark">
@@ -2265,11 +2300,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="13066" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="13066" />
+			</effect>
 		</for>
 	</skill>
 </list>

@@ -21,12 +21,13 @@
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="2616" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="BLEED" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2616" />
+			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="52" />
 			</effect>
@@ -135,11 +136,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="2319" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2319" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5506" levels="1" name="Water Blossom">
@@ -153,11 +155,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="2319" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2319" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5507" levels="1" name="Wind Blossom">
@@ -171,11 +174,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="2319" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2319" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5508" levels="1" name="Earth Blossom">
@@ -189,11 +193,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="2319" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2319" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5509" levels="1" name="Fire Power">
@@ -1497,12 +1502,13 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="916" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="916" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5581" levels="1" name="Divine Beast Stun Attack">
@@ -1518,13 +1524,14 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="704" />
 		<set name="reuseDelay" val="13000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="704" />
+			</effect>
 			<effect name="Stun" /> <!-- using 1 second due abnormal don't have abnormal time -->
 		</for>
 	</skill>
@@ -1543,12 +1550,13 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="875" />
 		<set name="reuseDelay" val="120000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="875" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5583" levels="1" name="Divine Beast Roar">

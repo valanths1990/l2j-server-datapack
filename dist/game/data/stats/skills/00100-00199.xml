@@ -26,20 +26,26 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<cond msgId="113" addName="1">
 			<using kind="BLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Stun" />
 		</for>
+		<enchant1for>
+			<effect name="PhysicalAttack">
+				<param power="#ench1Power" />
+			</effect>
+			<effect name="Stun" />
+		</enchant1for>
 	</skill>
 	<skill id="101" levels="40" name="Stun Shot" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">
 		<!-- Confirmed CT2.5 -->
@@ -70,7 +76,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -79,28 +84,42 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2mpConsume" />
-		<enchant2 name="power" val="#ench2Power" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Stun" />
 			<effect name="TargetCancel">
 				<param chance="40" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2192" />
+			</effect>
 			<effect name="Stun" />
 			<effect name="TargetCancel">
 				<param chance="40" />
 			</effect>
 		</enchant1for>
+		<enchant2for>
+			<effect name="PhysicalAttack">
+				<param power="#ench2Power" />
+			</effect>
+			<effect name="Stun" />
+			<effect name="TargetCancel">
+				<param chance="40" />
+			</effect>
+		</enchant2for>
 		<enchant3for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2192" />
+			</effect>
 			<effect name="Stun">
 				<mul stat="pDef" val="#ench34pmDef" />
 			</effect>
@@ -109,7 +128,9 @@
 			</effect>
 		</enchant3for>
 		<enchant4for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2192" />
+			</effect>
 			<effect name="Stun">
 				<mul stat="mDef" val="#ench34pmDef" />
 			</effect>
@@ -573,7 +594,6 @@
 		<enchant2 name="abnormalTime" val="#ench2AbnormalTimes" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant3 name="power" val="#ench3Attack" />
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="#pAtk" />
@@ -583,7 +603,9 @@
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.77" />
 			</effect>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#ench3Attack" />
+			</effect>
 		</enchant3for>
 	</skill>
 	<skill id="116" levels="14" name="Howl" enchantGroup1="1" enchantGroup2="1">
@@ -661,7 +683,6 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -670,7 +691,9 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -746,7 +769,6 @@
 		<enchant2 name="abnormalTime" val="#ench2AbnormalTimes" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant3 name="power" val="#ench3Attack" />
 		<for>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.77" />
@@ -756,7 +778,9 @@
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.77" />
 			</effect>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#ench3Attack" />
+			</effect>
 		</enchant3for>
 	</skill>
 	<skill id="123" levels="3" name="Spirit Barrier" enchantGroup1="1" enchantGroup2="1">
@@ -1413,12 +1437,10 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2mpConsume" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
@@ -1438,10 +1460,18 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="PhysicalAttack">
+				<param power="#ench1Power" />
+				<param criticalChance="15" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+		</enchant1for>
 	</skill>
 	<skill id="191" levels="6" name="Focus Mind" enchantGroup1="1">
 		<table name="#magicLvl"> 36 43 49 55 64 72 </table>

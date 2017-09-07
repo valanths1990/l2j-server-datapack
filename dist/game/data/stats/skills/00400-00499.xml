@@ -33,12 +33,10 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="activateRate" val="#ench2ActivateRates" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
@@ -49,6 +47,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="10" />
 			</effect>
 			<effect name="Debuff">
@@ -67,8 +66,9 @@
 			</effect>
 			<effect name="GetAgro" />
 		</for>
-		<enchant2for>
+		<enchant1for>
 			<effect name="PhysicalAttack">
+				<param power="#ench1Power" />
 				<param criticalChance="10" />
 			</effect>
 			<effect name="Debuff">
@@ -86,9 +86,10 @@
 				<param DUALDAGGER="-20" />
 			</effect>
 			<effect name="GetAgro" />
-		</enchant2for>
+		</enchant1for>
 		<enchant3for>
 			<effect name="PhysicalAttack">
+				<param power="1841" />
 				<param criticalChance="10" />
 			</effect>
 			<effect name="Debuff">
@@ -143,12 +144,10 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="abnormalTime" val="#ench2AbnormalTimes" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
@@ -160,6 +159,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="10" />
 			</effect>
 			<effect name="Debuff">
@@ -178,8 +178,30 @@
 			</effect>
 			<effect name="GetAgro" />
 		</for>
+		<enchant1for>
+			<effect name="PhysicalAttack">
+				<param power="#ench1Power" />
+				<param criticalChance="10" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="critDmg" val="0.65" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param SWORD="-20" />
+				<param BLUNT="-20" />
+				<param DAGGER="-20" />
+				<param DUAL="-20" />
+				<param DUALFIST="-20" />
+				<param POLE="-20" />
+				<param ANCIENTSWORD="-20" />
+				<param RAPIER="-20" />
+				<param DUALDAGGER="-20" />
+			</effect>
+			<effect name="GetAgro" />
+		</enchant1for>
 		<enchant3for>
 			<effect name="PhysicalAttack">
+				<param power="2104" />
 				<param criticalChance="10" />
 			</effect>
 			<effect name="Debuff">
@@ -345,7 +367,6 @@
 		<enchant1 name="mpConsume" val="#ench1Cost" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant3 name="power" val="#ench3Attack" />
 		<enchant4 name="element" val="4" /> <!-- Holy -->
 		<enchant4 name="elementPower" val="#ench4HolyAttack" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
@@ -378,7 +399,9 @@
 			<effect name="Lethal">
 				<param fullLethal="25" />
 			</effect>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#ench3Attack" />
+			</effect>
 		</enchant3for>
 	</skill>
 	<skill id="406" levels="3" name="Angelic Icon" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1" enchantGroup4="1">
@@ -488,12 +511,12 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="10" />
 			</effect>
 			<effect name="Debuff">
@@ -527,7 +550,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -536,6 +558,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="10" />
 			</effect>
 			<effect name="Debuff">
@@ -1884,7 +1907,6 @@
 		<enchant1 name="mpConsume" val="#ench1Cost" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant3 name="power" val="#ench3Attack" />
 		<enchant4 name="element" val="5" /> <!-- Dark -->
 		<enchant4 name="elementPower" val="#ench4DarkAttack" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
@@ -1917,7 +1939,9 @@
 			<effect name="Lethal">
 				<param fullLethal="25" />
 			</effect>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#ench3Attack" />
+			</effect>
 		</enchant3for>
 	</skill>
 	<skill id="451" levels="2" name="Sonic Move">
@@ -2360,7 +2384,6 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -2368,7 +2391,9 @@
 			<using kind="SWORD,BLUNT,RAPIER" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="469" levels="1" name="Rapid Attack">

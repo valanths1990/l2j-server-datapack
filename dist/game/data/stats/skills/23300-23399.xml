@@ -182,12 +182,13 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="5000" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="5000" />
+			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="105" />
 			</effect>
