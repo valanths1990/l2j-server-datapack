@@ -1273,11 +1273,12 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttackMp" />
+			<effect name="MagicalAttackMp">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5256" levels="1" name="Announcement of Death">
@@ -1336,11 +1337,12 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttackMp" />
+			<effect name="MagicalAttackMp">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5259" levels="12" name="Fear">

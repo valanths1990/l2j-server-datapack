@@ -1580,11 +1580,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttackMp" />
+			<effect name="MagicalAttackMp">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4490" levels="12" name="NPC Holy Wall">

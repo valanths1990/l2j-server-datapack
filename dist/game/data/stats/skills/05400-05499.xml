@@ -822,11 +822,12 @@
 		<table name="#power"> 148 153 157 162 </table>
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="MagicalAttackMp" />
+			<effect name="MagicalAttackMp">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5454" levels="1" name="Shadow Bind">
