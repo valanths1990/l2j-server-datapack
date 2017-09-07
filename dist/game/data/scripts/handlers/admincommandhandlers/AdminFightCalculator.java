@@ -240,7 +240,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			
 			if (!_miss1)
 			{
-				double _dmg1 = Formulas.calcPhysDam(npc1, npc2, null, _shld1, _crit1, false);
+				double _dmg1 = Formulas.calcPhysDam(npc1, npc2, _shld1, _crit1, false);
 				dmg1 += _dmg1;
 				npc1.abortAttack();
 			}
@@ -273,7 +273,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			
 			if (!_miss2)
 			{
-				double _dmg2 = Formulas.calcPhysDam(npc2, npc1, null, _shld2, _crit2, false);
+				double _dmg2 = Formulas.calcPhysDam(npc2, npc1, _shld2, _crit2, false);
 				dmg2 += _dmg2;
 				npc2.abortAttack();
 			}
@@ -319,9 +319,9 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			+ "<tr><td>crit</td><td>", String.valueOf(crit1), "%</td><td>", String.valueOf(crit2), "%</td></tr>"
 				+ "<tr><td>pAtk / pDef</td><td>", String.valueOf((int) patk1), " / ", String.valueOf((int) pdef1), "</td><td>", String.valueOf((int) patk2), " / ", String.valueOf((int) pdef2), "</td></tr>"
 					+ "<tr><td>made hits</td><td>", String.valueOf(sAtk1), "</td><td>", String.valueOf(sAtk2), "</td></tr>" + "<tr><td>dmg per hit</td><td>", String.valueOf((int) dmg1), "</td><td>", String.valueOf((int) dmg2), "</td></tr>"
-						+ "<tr><td>got dmg</td><td>", String.valueOf(tdmg2), "</td><td>", String.valueOf(tdmg1), "</td></tr>" + "<tr><td>got regen</td><td>", String.valueOf(hp1), "</td><td>", String.valueOf(hp2), "</td></tr>"
-							+ "<tr><td>had HP</td><td>", String.valueOf((int) maxHp1), "</td><td>", String.valueOf((int) maxHp2), "</td></tr>" + "<tr><td>die</td>");
-							
+						+ "<tr><td>got dmg</td><td>", String.valueOf(tdmg2), "</td><td>", String.valueOf(tdmg1), "</td></tr>"
+							+ "<tr><td>got regen</td><td>", String.valueOf(hp1), "</td><td>", String.valueOf(hp2), "</td></tr>" + "<tr><td>had HP</td><td>", String.valueOf((int) maxHp1), "</td><td>", String.valueOf((int) maxHp2), "</td></tr>" + "<tr><td>die</td>");
+		
 		if ((tdmg2 - hp1) > 1)
 		{
 			StringUtil.append(replyMSG, "<td>", String.valueOf((int) ((100 * maxHp1) / (tdmg2 - hp1))), " sec</td>");
