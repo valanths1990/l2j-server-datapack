@@ -37,7 +37,6 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 public final class PhysicalSoulAttack extends AbstractEffect
 {
 	private final double _power;
-	private final double _pvpPower;
 	private final int _criticalChance;
 	private final boolean _ignoreShieldDefence;
 	
@@ -46,7 +45,6 @@ public final class PhysicalSoulAttack extends AbstractEffect
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
-		_pvpPower = params.getDouble("pvpPower", _power);
 		_criticalChance = params.getInt("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
 	}
@@ -75,7 +73,6 @@ public final class PhysicalSoulAttack extends AbstractEffect
 		L2Character target = info.getEffected();
 		L2Character activeChar = info.getEffector();
 		Skill skill = info.getSkill();
-		double power = activeChar.isPlayable() && target.isPlayable() ? _pvpPower : _power;
 		
 		if (activeChar.isAlikeDead())
 		{
@@ -111,7 +108,7 @@ public final class PhysicalSoulAttack extends AbstractEffect
 			crit = Formulas.calcSkillCrit(activeChar, target, _criticalChance);
 		}
 		
-		damage = Formulas.calcSkillPhysDam(activeChar, target, shield, false, ss, power);
+		damage = Formulas.calcSkillPhysDam(activeChar, target, shield, false, ss, _power);
 		
 		if ((skill.getMaxSoulConsumeCount() > 0) && activeChar.isPlayer())
 		{

@@ -37,14 +37,12 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 public final class PhysicalAttackHpLink extends AbstractEffect
 {
 	private final double _power;
-	private final double _pvpPower;
 	
 	public PhysicalAttackHpLink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
-		_pvpPower = params.getDouble("pvpPower", _power);
 	}
 	
 	@Override
@@ -71,8 +69,8 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		L2Character target = info.getEffected();
 		L2Character activeChar = info.getEffector();
 		Skill skill = info.getSkill();
-		double power = activeChar.isPlayable() && target.isPlayable() ? _pvpPower : _power;
-		power *= (-((target.getCurrentHp() * 2) / target.getMaxHp()) + 2);
+		
+		double power = _power * (-((target.getCurrentHp() * 2) / target.getMaxHp()) + 2);
 		
 		if (activeChar.isAlikeDead())
 		{

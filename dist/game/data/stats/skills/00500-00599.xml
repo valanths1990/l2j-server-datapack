@@ -171,10 +171,8 @@
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
-		<enchant2 name="power" val="#ench2Power" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
 		<enchant3 name="elementPower" val="#enchElementPower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
@@ -196,12 +194,26 @@
 				<param power="#power" />
 			</effect>
 		</for>
-		<enchant7for>
+		<enchant1for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench1Power" />
+			</effect>
+		</enchant1for>
+		<enchant2for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench2Power" />
+			</effect>
+		</enchant2for>
+		<enchant7pvpEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="#enchDuel" />
+			</effect>
+		</enchant7pvpEffects>
+		<enchant7pveEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="3069" />
-				<param pvpPower="#enchDuel" />
 			</effect>
-		</enchant7for>
+		</enchant7pveEffects>
 	</skill>
 	<skill id="505" levels="28" name="Shining Edge" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
 		<!-- Confirmed CT2.5 -->
@@ -286,10 +298,8 @@
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
-		<enchant2 name="power" val="#ench2Power" />
 		<enchant3 name="element" val="5" /> <!-- Dark -->
 		<enchant3 name="elementPower" val="#enchElementPower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
@@ -307,14 +317,34 @@
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</for>
-		<enchant4for>
+		<enchant1for>
 			<effect name="PhysicalSoulAttack">
-				<param power="5180" />
+				<param power="#ench1Power" />
+				<param criticalChance="5" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+		</enchant1for>
+		<enchant2for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench2Power" />
+				<param criticalChance="5" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+		</enchant2for>
+		<enchant4pvpEffects>
+			<effect name="PhysicalSoulAttack">
 				<param power="#enchDuel" />
 				<param criticalChance="5" />
 				<param ignoreShieldDefence="true" />
 			</effect>
-		</enchant4for>
+		</enchant4pvpEffects>
+		<enchant4pveEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="5180" />
+				<param criticalChance="5" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+		</enchant4pveEffects>
 	</skill>
 	<skill id="507" levels="37" name="Twin Shot" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
 		<!-- Confirmed CT2.5 -->
@@ -342,7 +372,6 @@
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
@@ -367,13 +396,24 @@
 				<param criticalChance="25" />
 			</effect>
 		</for>
-		<enchant7for>
+		<enchant1for>
 			<effect name="PhysicalSoulAttack">
-				<param power="4870" />
-				<param pvpPower="#enchDuel" />
+				<param power="#ench1Power" />
 				<param criticalChance="25" />
 			</effect>
-		</enchant7for>
+		</enchant1for>
+		<enchant7pvpEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="#enchDuel" />
+				<param criticalChance="25" />
+			</effect>
+		</enchant7pvpEffects>
+		<enchant7pveEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="4870" />
+				<param criticalChance="25" />
+			</effect>
+		</enchant7pveEffects>
 	</skill>
 	<skill id="508" levels="31" name="Rising Shot" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
 		<!-- Confirmed CT2.5 -->
@@ -403,7 +443,6 @@
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="AREA" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
@@ -427,12 +466,21 @@
 				<param power="#power" />
 			</effect>
 		</for>
-		<enchant7for>
+		<enchant1for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench1Power" />
+			</effect>
+		</enchant1for>
+		<enchant7pvpEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="#enchDuel" />
+			</effect>
+		</enchant7pvpEffects>
+		<enchant7pveEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="1218" />
-				<param pvpPower="#enchDuel" />
 			</effect>
-		</enchant7for>
+		</enchant7pveEffects>
 	</skill>
 	<skill id="509" levels="34" name="Bleeding Shot" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2">
 		<!-- Confirmed CT2.5 -->
@@ -471,7 +519,6 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<enchant3 name="activateRate" val="#ench3ActivateRates" />
@@ -488,15 +535,15 @@
 				<param power="#dot" />
 			</effect>
 		</for>
-		<enchant3for>
+		<enchant1for>
 			<effect name="PhysicalSoulAttack">
-				<param power="2192" />
+				<param power="#ench1Power" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="67" />
 			</effect>
-		</enchant3for>
+		</enchant1for>
 	</skill>
 	<skill id="510" levels="5" name="Deadly Roulette" enchantGroup1="2" enchantGroup2="2">
 		<!-- Confirmed CT2.5 -->
@@ -1139,10 +1186,8 @@
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="FRONT_AREA" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#enchmpConsume" />
-		<enchant2 name="power" val="#ench2Power" />
 		<enchant3 name="element" val="4" /> <!-- Holy -->
 		<enchant3 name="elementPower" val="#ench3elementPower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
@@ -1153,12 +1198,26 @@
 				<param power="6060" />
 			</effect>
 		</for>
-		<enchant4for>
+		<enchant1for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench1Power" />
+			</effect>
+		</enchant1for>
+		<enchant2for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench2Power" />
+			</effect>
+		</enchant2for>
+		<enchant4pvpEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench4Duel" />
+			</effect>
+		</enchant4pvpEffects>
+		<enchant4pveEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="6060" />
-				<param pvpPower="#ench4Duel" />
 			</effect>
-		</enchant4for>
+		</enchant4pveEffects>
 	</skill>
 	<skill id="527" levels="1" name="Iron Shield">
 		<!-- Confirmed CT2.5 -->
