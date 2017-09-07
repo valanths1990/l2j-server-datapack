@@ -2661,7 +2661,6 @@
 		<set name="targetType" val="ONE" />
 		<enchant1 name="effectPoint" val="#ench1EffectPoints" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<enchant3 name="element" val="5" /> <!-- Dark -->
@@ -2669,7 +2668,6 @@
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant4 name="effectPoint" val="#ench4EffectPoints" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="pvpPower" val="#enchDuel" />
 		<cond msgId="113" addName="1">
 			<using kind="ANCIENTSWORD" />
 		</cond>
@@ -2678,6 +2676,21 @@
 				<param power="#power" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench1Power" />
+			</effect>
+		</enchant1for>
+		<enchant4pvpEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="#enchDuel" />
+			</effect>
+		</enchant4pvpEffects>
+		<enchant4pveEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="3653" />
+			</effect>
+		</enchant4pveEffects>
 	</skill>
 	<skill id="478" levels="15" name="Double Thrust">
 		<!-- Confirmed CT2.5 -->
@@ -3042,15 +3055,23 @@
 		<set name="targetType" val="AURA" />
 		<enchant1 name="effectPoint" val="#ench1EffectPoints" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
-		<enchant2 name="power" val="#ench2Power" />
 		<for>
 			<effect name="PhysicalSoulAttack">
 				<param power="#power" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench1Power" />
+			</effect>
+		</enchant1for>
+		<enchant2for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench2Power" />
+			</effect>
+		</enchant2for>
 	</skill>
 	<skill id="493" levels="28" name="Storm Assault" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
 		<!-- Confirmed CT2.5 -->
@@ -3084,10 +3105,8 @@
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="AREA" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
-		<enchant2 name="power" val="#ench2Power" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
 		<enchant3 name="elementPower" val="#enchElementPower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
@@ -3101,7 +3120,6 @@
 		<enchant6 name="elementPower" val="#enchElementPower" />
 		<enchant6 name="magicLvl" val="#enchMagicLvl" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
-		<enchant7 name="pvpPower" val="#enchDuel" />
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="ANCIENTSWORD" />
@@ -3113,6 +3131,26 @@
 				<param power="#power" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench1Power" />
+			</effect>
+		</enchant1for>
+		<enchant2for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench2Power" />
+			</effect>
+		</enchant2for>
+		<enchant7pvpEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="#enchDuel" />
+			</effect>
+		</enchant7pvpEffects>
+		<enchant7pveEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="2192" />
+			</effect>
+		</enchant7pveEffects>
 	</skill>
 	<skill id="494" levels="37" name="Shoulder Charge" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
 		<!-- Confirmed CT2.5 -->
@@ -3152,7 +3190,6 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="activateRate" val="#ench2ActivateRates" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
@@ -3181,21 +3218,27 @@
 			<effect name="Stun" />
 			<effect name="EnemyCharge" />
 		</for>
-		<enchant2for>
+		<enchant1for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench1Power" />
+			</effect>
+			<effect name="Stun" />
+			<effect name="EnemyCharge" />
+		</enchant1for>
+		<enchant7pvpEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench7Duel" />
+			</effect>
+			<effect name="Stun" />
+			<effect name="EnemyCharge" />
+		</enchant7pvpEffects>
+		<enchant7pveEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="1" />
 			</effect>
 			<effect name="Stun" />
 			<effect name="EnemyCharge" />
-		</enchant2for>
-		<enchant7for>
-			<effect name="PhysicalSoulAttack">
-				<param power="1" />
-				<param pvpPower="#ench7Duel" />
-			</effect>
-			<effect name="Stun" />
-			<effect name="EnemyCharge" />
-		</enchant7for>
+		</enchant7pveEffects>
 	</skill>
 	<skill id="495" levels="10" name="Blade Rush" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">
 		<!-- Confirmed CT2.5 -->
@@ -3267,15 +3310,22 @@
 				<param power="#ench1Power" />
 			</effect>
 		</enchant1for>
-		<enchant4for>
+		<enchant4pvpEffects>
 			<effect name="PhysicalSoulAttack">
-				<param power="1" />
-				<param pvpPower="#ench4Duel" />
+				<param power="#ench4Duel" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="134" />
 			</effect>
-		</enchant4for>
+		</enchant4pvpEffects>
+		<enchant4pveEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="1" />
+			</effect>
+			<effect name="DamOverTime" ticks="5">
+				<param power="134" />
+			</effect>
+		</enchant4pveEffects>
 	</skill>
 	<skill id="496" levels="31" name="Slashing Blade" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
 		<!-- Confirmed CT2.5 -->
@@ -3304,10 +3354,8 @@
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="AURA" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
-		<enchant2 name="power" val="#ench2Power" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
 		<enchant3 name="elementPower" val="#enchElementPower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
@@ -3329,12 +3377,26 @@
 				<param power="#power" />
 			</effect>
 		</for>
-		<enchant7for>
+		<enchant1for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench1Power" />
+			</effect>
+		</enchant1for>
+		<enchant2for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench2Power" />
+			</effect>
+		</enchant2for>
+		<enchant7pvpEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="#enchDuel" />
+			</effect>
+		</enchant7pvpEffects>
+		<enchant7pveEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="2740" />
-				<param pvpPower="#enchDuel" />
 			</effect>
-		</enchant7for>
+		</enchant7pveEffects>
 	</skill>
 	<skill id="497" levels="16" name="Crushing Pain" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
 		<!-- Confirmed CT2.5 -->
@@ -3364,10 +3426,8 @@
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
-		<enchant2 name="power" val="#ench2Power" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
 		<enchant3 name="elementPower" val="#enchElementPower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
@@ -3381,7 +3441,6 @@
 		<enchant6 name="elementPower" val="#enchElementPower" />
 		<enchant6 name="magicLvl" val="#enchMagicLvl" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
-		<enchant7 name="pvpPower" val="#enchDuel" />
 		<cond msgId="113" addName="1">
 			<using kind="ANCIENTSWORD" />
 		</cond>
@@ -3391,6 +3450,30 @@
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench1Power" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+		</enchant1for>
+		<enchant2for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench2Power" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+		</enchant2for>
+		<enchant7pvpEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="#enchDuel" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+		</enchant7pvpEffects>
+		<enchant7pveEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="7635" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+		</enchant7pveEffects>
 	</skill>
 	<skill id="498" levels="12" name="Contagion" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2">
 		<!-- Confirmed CT2.5 -->
@@ -3419,11 +3502,8 @@
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
-		<enchant2 name="power" val="#ench2Power" />
-		<enchant3 name="pvpPower" val="#enchDuel" />
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="ANCIENTSWORD" />
@@ -3436,6 +3516,30 @@
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench1Power" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+		</enchant1for>
+		<enchant2for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench2Power" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+		</enchant2for>
+		<enchant3pvpEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="#enchDuel" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+		</enchant3pvpEffects>
+		<enchant3pveEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="7635" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+		</enchant3pveEffects>
 	</skill>
 	<skill id="499" levels="3" name="Courage">
 		<!-- Confirmed CT2.5 -->

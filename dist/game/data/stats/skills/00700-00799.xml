@@ -2547,7 +2547,6 @@
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="SHOCK" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpInitialConsume" val="#ench2Cost" />
 		<enchant3 name="activateRate" val="#ench3ActivateRates" />
@@ -2577,13 +2576,24 @@
 			</effect>
 			<effect name="Stun" />
 		</for>
-		<enchant8for>
+		<enchant1for>
 			<effect name="PhysicalSoulAttack">
-				<param power="4040" />
-				<param pvpPower="#ench8Duel" />
+				<param power="#ench1Power" />
 			</effect>
 			<effect name="Stun" />
-		</enchant8for>
+		</enchant1for>
+		<enchant8pvpEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench8Duel" />
+			</effect>
+			<effect name="Stun" />
+		</enchant8pvpEffects>
+		<enchant8pveEffects>
+			<effect name="PhysicalSoulAttack">
+				<param power="4040" />
+			</effect>
+			<effect name="Stun" />
+		</enchant8pveEffects>
 	</skill>
 	<skill id="794" levels="1" name="Mass Disarm" enchantGroup1="6" enchantGroup2="6">
 		<!-- Confirmed CT2.5 -->

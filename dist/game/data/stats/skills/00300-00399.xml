@@ -546,7 +546,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2mpConsume" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
@@ -570,12 +569,21 @@
 				<param power="#power" />
 			</effect>
 		</for>
-		<enchant7for>
+		<enchant1for>
+			<effect name="PhysicalAttackHpLink">
+				<param power="#ench1Power" />
+			</effect>
+		</enchant1for>
+		<enchant7pvpEffects>
+			<effect name="PhysicalAttackHpLink">
+				<param power="#enchDuel" />
+			</effect>
+		</enchant7pvpEffects>
+		<enchant7pveEffects>
 			<effect name="PhysicalAttackHpLink">
 				<param power="4870" />
-				<param pvpPower="#enchDuel" />
 			</effect>
-		</enchant7for>
+		</enchant7pveEffects>
 	</skill>
 	<skill id="315" levels="16" name="Crush of Doom" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
 		<table name="#effectPoints"> -425 -431 -438 -444 -449 -455 -460 -466 -471 -475 -480 -484 -488 -492 -496 -499 </table>

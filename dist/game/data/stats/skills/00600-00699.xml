@@ -515,7 +515,6 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<enchant3 name="abnormalTime" val="#ench3AbnormalTimes" />
@@ -531,6 +530,12 @@
 			</effect>
 			<effect name="Fear" />
 		</for>
+		<enchant1for>
+			<effect name="PhysicalSoulAttack">
+				<param power="#ench1Power" />
+			</effect>
+			<effect name="Fear" />
+		</enchant1for>
 	</skill>
 	<skill id="628" levels="1" name="Warp">
 		<!-- Confirmed CT2.5 -->
