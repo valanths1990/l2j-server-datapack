@@ -2072,7 +2072,6 @@
 		<set name="mpConsume" val="44" />
 		<set name="mpInitialConsume" val="36" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="200" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
@@ -2094,7 +2093,6 @@
 		<set name="mpConsume" val="44" />
 		<set name="mpInitialConsume" val="36" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="200" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="GROUND" />
@@ -2115,7 +2113,6 @@
 		<set name="mpConsume" val="44" />
 		<set name="mpInitialConsume" val="36" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="200" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
@@ -2136,7 +2133,6 @@
 		<set name="mpConsume" val="44" />
 		<set name="mpInitialConsume" val="36" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="200" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
@@ -2157,7 +2153,6 @@
 		<set name="mpConsume" val="44" />
 		<set name="mpInitialConsume" val="36" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="200" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
@@ -2178,7 +2173,6 @@
 		<set name="mpConsume" val="44" />
 		<set name="mpInitialConsume" val="36" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="200" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
@@ -2199,7 +2193,6 @@
 		<set name="mpConsume" val="44" />
 		<set name="mpInitialConsume" val="36" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="200" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />

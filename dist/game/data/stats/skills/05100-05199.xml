@@ -401,7 +401,6 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="5" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="703" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -577,13 +576,14 @@
 		<set name="affectRange" val="300" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="300" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="300" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5131" levels="1" name="Tsunami">
@@ -591,13 +591,14 @@
 		<set name="affectRange" val="300" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="300" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="300" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5132" levels="1" name="Cyclone">
@@ -605,13 +606,14 @@
 		<set name="affectRange" val="300" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="300" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="300" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5133" levels="1" name="Gehenna">
@@ -619,13 +621,14 @@
 		<set name="affectRange" val="300" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="300" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="element" val="5" /> <!-- Dark -->
 		<set name="elementPower" val="20" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="300" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5134" levels="1" name="Anti-Summoning Field">
@@ -769,12 +772,13 @@
 		<set name="mpInitialConsume" val="64" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="228" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="228" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5140" levels="1" name="Dark Curse">
@@ -842,13 +846,14 @@
 		<set name="mpConsume" val="258" />
 		<set name="mpInitialConsume" val="64" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="228" />
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
 		<for>
 			<effect name="ConsumeBody" />
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="228" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5143" levels="1" name="Sailren Use Blow">
@@ -1676,11 +1681,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="116" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="116" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5179" levels="1" name="Raid Boss - Level 80">
@@ -1762,12 +1768,13 @@
 		<set name="hitTime" val="4000" />
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="54" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="54" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5186" levels="2" name="Pet Haste">

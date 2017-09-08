@@ -66,11 +66,9 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		L2Character target = info.getEffected();
-		L2Character activeChar = info.getEffector();
-		Skill skill = info.getSkill();
-		
-		double power = _power * (-((target.getCurrentHp() * 2) / target.getMaxHp()) + 2);
+		final L2Character target = info.getEffected();
+		final L2Character activeChar = info.getEffector();
+		final Skill skill = info.getSkill();
 		
 		if (activeChar.isAlikeDead())
 		{
@@ -88,6 +86,9 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		final byte shld = Formulas.calcShldUse(activeChar, target, skill);
 		double damage = 0;
 		boolean ss = skill.isPhysical() && activeChar.isChargedShot(ShotType.SOULSHOTS);
+		
+		double power = _power * (-((target.getCurrentHp() * 2) / target.getMaxHp()) + 2);
+		
 		damage = Formulas.calcSkillPhysDam(activeChar, target, shld, false, ss, power);
 		
 		if (damage > 0)

@@ -434,12 +434,12 @@
 		<set name="magicLvl" val="78" />
 		<set name="mpConsume" val="200" />
 		<set name="operateType" val="A1" /> <!-- Should be A2 -->
-		<set name="power" val="200" />
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="HpDrain">
-				<param power="0.05" />
+				<param power="200" />
+				<param drain="0.05" />
 			</effect>
 		</for>
 	</skill>

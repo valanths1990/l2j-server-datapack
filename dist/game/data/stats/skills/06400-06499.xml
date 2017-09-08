@@ -595,11 +595,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="120" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="120" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6427" levels="1" name="Medicinal Mushroom 1">

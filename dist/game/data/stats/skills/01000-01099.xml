@@ -632,25 +632,34 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1power" />
 		<enchant2 name="elementPower" val="#ench2ElementPower" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2mpConsume" />
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
-		<enchant2 name="power" val="#ench2power" />
 		<enchant3 name="elementPower" val="#enchElementPower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<cond msgId="113" addName="1">
 			<target race="UNDEAD" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
+		<enchant1for>
+			<effect name="MagicalAttack">
+				<param power="#ench1power" />
+			</effect>
+		</enchant1for>
+		<enchant2for>
+			<effect name="MagicalAttack">
+				<param power="#ench2power" />
+			</effect>
+		</enchant2for>
 	</skill>
 	<skill id="1031" levels="8" name="Disrupt Undead">
 		<table name="#effectPoints"> -182 -204 -227 -243 -268 -285 -313 -331 </table>
@@ -670,7 +679,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -678,7 +686,9 @@
 			<target race="UNDEAD" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1032" levels="3" name="Invigor" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
@@ -793,7 +803,6 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2mpConsume" />
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
@@ -805,6 +814,11 @@
 				<param chance="40" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="DeleteHate">
+				<param chance="#ench1Power" />
+			</effect>
+		</enchant1for>
 	</skill>
 	<skill id="1035" levels="4" name="Mental Shield" enchantGroup1="1" enchantGroup2="1">
 		<table name="#abnormalLvls"> 1 2 3 4 </table>
@@ -960,7 +974,6 @@
 		<enchant3 name="element" val="4" /> <!-- Holy -->
 		<enchant3 name="elementPower" val="20" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant3 name="power" val="#ench3Attack" />
 		<cond msgId="113" addName="1">
 			<target race="UNDEAD" />
 		</cond>
@@ -968,7 +981,9 @@
 			<effect name="Paralyze" />
 		</for>
 		<enchant3for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#ench3Attack" />
+			</effect>
 			<effect name="Paralyze" />
 		</enchant3for>
 	</skill>
@@ -1924,13 +1939,13 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
-				<param power="0.8" />
+				<param power="#power" />
+				<param drain="0.8" />
 			</effect>
 		</for>
 	</skill>

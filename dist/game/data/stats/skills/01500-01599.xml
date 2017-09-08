@@ -415,22 +415,21 @@
 		<set name="mpInitialConsume" val="17" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
-		<set name="power" val="112" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<enchant2 name="mpInitialConsume" val="#ench2MpInitialConsume" />
 		<enchant3 name="activateRate" val="#ench3ActivateRates" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="pvpPower" val="#ench4Duel" />
 		<for>
-			<effect name="MagicalSoulAttack" />
+			<effect name="MagicalSoulAttack">
+				<param power="112" />
+			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
 				<param power="12" />
 				<mul stat="runSpd" val="0.8" />
@@ -438,15 +437,39 @@
 				<mul stat="mAtkSpd" val="0.7" />
 			</effect>
 		</for>
-		<enchant3for>
-			<effect name="MagicalSoulAttack" />
+		<enchant1for>
+			<effect name="MagicalSoulAttack">
+				<param power="#ench1Power" />
+			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
 				<param power="12" />
 				<mul stat="runSpd" val="0.8" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="mAtkSpd" val="0.7" />
 			</effect>
-		</enchant3for>
+		</enchant1for>
+		<enchant4pvpEffects>
+			<effect name="MagicalSoulAttack">
+				<param power="#ench4Duel" />
+			</effect>
+			<effect name="ManaDamOverTime" ticks="5">
+				<param power="12" />
+				<mul stat="runSpd" val="0.8" />
+				<mul stat="pAtkSpd" val="0.7" />
+				<mul stat="mAtkSpd" val="0.7" />
+			</effect>
+		</enchant4pvpEffects>
+		<enchant4pveEffects>
+			<effect name="MagicalSoulAttack">
+				<param power="112" />
+			</effect>
+			<effect name="ManaDamOverTime" ticks="5">
+				<param power="12" />
+				<mul stat="runSpd" val="0.8" />
+				<mul stat="pAtkSpd" val="0.7" />
+				<mul stat="mAtkSpd" val="0.7" />
+			</effect>
+		</enchant4pveEffects>
 	</skill>
 	<skill id="1513" levels="1" name="Soul Vortex Extinction" enchantGroup1="6" enchantGroup2="6" enchantGroup3="6">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -465,27 +488,50 @@
 		<set name="mpConsume" val="68" />
 		<set name="mpInitialConsume" val="17" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="195" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<enchant2 name="mpInitialConsume" val="#ench2MpInitialConsume" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant3 name="pvpPower" val="#ench3Duel" />
 		<cond msgId="109">
 			<target active_effect_id="1512" />
 		</cond>
 		<for>
-			<effect name="MagicalSoulAttack" />
+			<effect name="MagicalSoulAttack">
+				<param power="195" />
+			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="MULTI_DEBUFF_SOUL,9" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="MagicalSoulAttack">
+				<param power="#ench1Power" />
+			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="MULTI_DEBUFF_SOUL,9" />
+			</effect>
+		</enchant1for>
+		<enchant3pvpEffects>
+			<effect name="MagicalSoulAttack">
+				<param power="#ench3Duel" />
+			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="MULTI_DEBUFF_SOUL,9" />
+			</effect>
+		</enchant3pvpEffects>
+		<enchant3pveEffects>
+			<effect name="MagicalSoulAttack">
+				<param power="195" />
+			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="MULTI_DEBUFF_SOUL,9" />
+			</effect>
+		</enchant3pveEffects>
 	</skill>
 	<skill id="1514" levels="1" name="Soul Barrier" enchantGroup1="1" enchantGroup2="1">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -609,18 +655,32 @@
 		<set name="mpConsume" val="27" />
 		<set name="mpInitialConsume" val="7" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="166" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="pvpPower" val="#ench2Duel" />
 		<for>
-			<effect name="MagicalSoulAttack" />
+			<effect name="MagicalSoulAttack">
+				<param power="166" />
+			</effect>
 		</for>
+		<enchant1for>
+			<effect name="MagicalSoulAttack">
+				<param power="#ench1Power" />
+			</effect>
+		</enchant1for>
+		<enchant2pvpEffects>
+			<effect name="MagicalSoulAttack">
+				<param power="#ench2Duel" />
+			</effect>
+		</enchant2pvpEffects>
+		<enchant2pveEffects>
+			<effect name="MagicalSoulAttack">
+				<param power="166" />
+			</effect>
+		</enchant2pveEffects>
 	</skill>
 	<skill id="1517" levels="1" name="Chant of Combat">
 		<!-- Confirmed CT2.5 -->
@@ -808,14 +868,19 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
+		</pveEffects>
 	</skill>
 	<skill id="1524" levels="42" name="Surrender to the Holy">
 		<!-- Confirmed CT2.5 -->
@@ -945,14 +1010,19 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
+		</pveEffects>
 	</skill>
 	<skill id="1529" levels="7" name="Soul Web" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
 		<!-- Confirmed CT2.5 -->
@@ -1021,7 +1091,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpConsume_Init" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1029,10 +1098,21 @@
 		<enchant2 name="elementPower" val="#enchElementPower" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant3 name="pvpPower" val="#enchDuel" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
+		<enchant3pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#enchDuel" />
+			</effect>
+		</enchant3pvpEffects>
+		<enchant3pveEffects>
+			<effect name="MagicalAttack">
+				<param power="65" />
+			</effect>
+		</enchant3pveEffects>
 	</skill>
 	<skill id="1531" levels="7" name="Bless the Blood" enchantGroup1="1" enchantGroup2="1">
 		<!-- Confirmed CT2.5 -->
@@ -1445,12 +1525,13 @@
 		<set name="mpConsume" val="58" />
 		<set name="mpInitialConsume" val="15" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="MagicalSoulAttack" />
+			<effect name="MagicalSoulAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1545" levels="1" name="Soul Sucking">
@@ -1470,13 +1551,14 @@
 		<set name="mpInitialConsume" val="36" />
 		<set name="mpPerChanneling" val="30" />
 		<set name="operateType" val="CA1" />
-		<set name="power" val="30" />
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<channelingEffects>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="30" />
+			</effect>
 		</channelingEffects>
 	</skill>
 	<skill id="1546" levels="1" name="Strider Fear">
@@ -1736,14 +1818,19 @@
 		<set name="mpConsume" val="116" />
 		<set name="mpInitialConsume" val="29" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="199" /> <!-- Inflicts additional non-attribute damage if the target is a monster -->
-		<set name="pvpPower" val="141" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="141" />
+			</effect>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="199" />
+			</effect>
+		</pveEffects>
 		<selfEffects>
 			<effect name="ManaHeal">
 				<param power="29" />
@@ -1762,14 +1849,19 @@
 		<set name="mpConsume" val="98" />
 		<set name="mpInitialConsume" val="25" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="302" /> <!-- Inflicts additional non-attribute damage if the target is a monster -->
-		<set name="pvpPower" val="178" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="178" />
+			</effect>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="302" />
+			</effect>
+		</pveEffects>
 		<selfEffects>
 			<effect name="ManaHeal">
 				<param power="25" />
@@ -1854,15 +1946,20 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" /> <!-- Inflicts additional non-attribute damage if the target is a monster -->
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
+		</pveEffects>
 	</skill>
 	<skill id="1559" levels="3" name="Potential Ability">
 		<!-- High Five Confirmed -->

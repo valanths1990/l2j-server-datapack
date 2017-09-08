@@ -660,12 +660,13 @@
 		<set name="mpConsume" val="88" />
 		<set name="mpInitialConsume" val="22" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="122" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="122" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6642" levels="1" name="Dash">
@@ -1128,11 +1129,12 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="82" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="120" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="120" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6677" levels="1" name="Hold">
@@ -1173,11 +1175,12 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="82" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="120" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="120" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6680" levels="1" name="Faint Plus">

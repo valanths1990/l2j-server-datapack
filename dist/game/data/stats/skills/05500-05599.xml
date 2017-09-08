@@ -427,11 +427,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="85" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttackByAbnormal" />
+			<effect name="MagicalAttackByAbnormal">
+				<param power="85" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5523" levels="1" name="Chain Magic - Unholy Castle">
@@ -545,11 +546,12 @@
 		<set name="mpConsume" val="66" />
 		<set name="mpInitialConsume" val="17" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="971" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY_OTHER" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="971" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5528" levels="1" name="Self-Destruct">
@@ -1247,11 +1249,12 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="47" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="47" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5568" levels="1" name="Frost Armor">
@@ -1837,13 +1840,13 @@
 		<set name="mpConsume" val="119" />
 		<set name="mpInitialConsume" val="29" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="122" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
-				<param power="0.8" />
+				<param power="122" />
+				<param drain="0.8" />
 			</effect>
 			<effect name="ManaDamOverTime">
 				<param power="182" />

@@ -34,12 +34,14 @@ import com.l2jserver.gameserver.model.stats.Formulas;
 public final class HpDrain extends AbstractEffect
 {
 	private final double _power;
+	private final double _drain;
 	
 	public HpDrain(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
+		_drain = params.getDouble("drain", 0);
 	}
 	
 	@Override
@@ -70,11 +72,11 @@ public final class HpDrain extends AbstractEffect
 		boolean bss = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()));
 		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		int damage = (int) Formulas.calcMagicDam(activeChar, target, info.getSkill(), shld, sps, bss, mcrit);
+		double damage = Formulas.calcMagicDam(activeChar, target, info.getSkill(), shld, sps, bss, mcrit, _power);
 		
-		int drain = 0;
-		int cp = (int) target.getCurrentCp();
-		int hp = (int) target.getCurrentHp();
+		double drain = 0;
+		double cp = target.getCurrentCp();
+		double hp = target.getCurrentHp();
 		
 		if (cp > 0)
 		{
@@ -89,7 +91,7 @@ public final class HpDrain extends AbstractEffect
 			drain = damage;
 		}
 		
-		final double hpAdd = (_power * drain);
+		final double hpAdd = (_drain * drain);
 		final double hpFinal = ((activeChar.getCurrentHp() + hpAdd) > activeChar.getMaxHp() ? activeChar.getMaxHp() : (activeChar.getCurrentHp() + hpAdd));
 		activeChar.setCurrentHp(hpFinal);
 		
@@ -101,7 +103,7 @@ public final class HpDrain extends AbstractEffect
 				target.breakAttack();
 				target.breakCast();
 			}
-			activeChar.sendDamageMessage(target, damage, mcrit, false, false);
+			activeChar.sendDamageMessage(target, (int) damage, mcrit, false, false);
 			target.reduceCurrentHp(damage, activeChar, info.getSkill());
 			target.notifyDamageReceived(damage, activeChar, info.getSkill(), mcrit, false, false);
 		}
