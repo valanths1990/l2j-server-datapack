@@ -595,12 +595,10 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A3" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
@@ -616,12 +614,12 @@
 		<enchant6 name="elementPower" val="#enchElementPower" />
 		<enchant6 name="magicLvl" val="#enchMagicLvl" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
-		<enchant7 name="pvpPower" val="#enchDuel" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param blowChance="25" />
 			</effect>
 			<effect name="Lethal">
@@ -633,6 +631,33 @@
 				<mul stat="blowRate" val="#blowRate" />
 			</effect>
 		</selfEffects>
+		<enchant1for>
+			<effect name="FatalBlow">
+				<param power="#ench1Power" />
+				<param blowChance="25" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="5" />
+			</effect>
+		</enchant1for>
+		<enchant7pvpEffects>
+			<effect name="FatalBlow">
+				<param power="#enchDuel" />
+				<param blowChance="25" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="5" />
+			</effect>
+		</enchant7pvpEffects>
+		<enchant7pveEffects>
+			<effect name="FatalBlow">
+				<param power="3653" />
+				<param blowChance="25" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="5" />
+			</effect>
+		</enchant7pveEffects>
 	</skill>
 	<skill id="410" levels="3" name="Mortal Strike" enchantGroup1="2" enchantGroup2="2">
 		<!-- NOTE: This skill increases "Blow Rate" and description in client says "Critical Rate" but is client typo, so please don't change this skill -->

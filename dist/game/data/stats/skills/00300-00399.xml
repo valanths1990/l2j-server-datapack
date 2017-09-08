@@ -815,12 +815,10 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A3" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<cond msgId="113" addName="1">
@@ -828,6 +826,7 @@
 		</cond>
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param blowChance="25" />
 			</effect>
 			<effect name="Bluff">
@@ -842,6 +841,18 @@
 				<add stat="runSpd" val="40" />
 			</effect>
 		</selfEffects>
+		<enchant1for>
+			<effect name="FatalBlow">
+				<param power="#ench1Power" />
+				<param blowChance="25" />
+			</effect>
+			<effect name="Bluff">
+				<param chance="80" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="5" />
+			</effect>
+		</enchant1for>
 	</skill>
 	<skill id="322" levels="6" name="Shield Fortress" enchantGroup1="1" enchantGroup2="1">
 		<table name="#magicLvl"> 64 66 68 70 72 74 </table>
@@ -1504,13 +1515,11 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="5773" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DEATH" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
 		<enchant3 name="elementPower" val="#enchelementPower" />
@@ -1525,12 +1534,12 @@
 		<enchant6 name="elementPower" val="#enchelementPower" />
 		<enchant6 name="magicLvl" val="#enchMagicLvl" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
-		<enchant7 name="pvpPower" val="#ench7Duel" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
 			<effect name="FatalBlow">
+				<param power="5773" />
 				<param blowChance="30" />
 				<param criticalChance="20" />
 			</effect>
@@ -1538,8 +1547,19 @@
 				<param halfLethal="15" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="FatalBlow">
+				<param power="#ench1Power" />
+				<param blowChance="30" />
+				<param criticalChance="20" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="15" />
+			</effect>
+		</enchant1for>
 		<enchant2for>
 			<effect name="FatalBlow">
+				<param power="5773" />
 				<param blowChance="30" />
 				<param criticalChance="#ench2CriticalChance" />
 			</effect>
@@ -1547,6 +1567,26 @@
 				<param halfLethal="15" />
 			</effect>
 		</enchant2for>
+		<enchant7pvpEffects>
+			<effect name="FatalBlow">
+				<param power="#ench7Duel" />
+				<param blowChance="30" />
+				<param criticalChance="20" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="15" />
+			</effect>
+		</enchant7pvpEffects>
+		<enchant7pveEffects>
+			<effect name="FatalBlow">
+				<param power="5773" />
+				<param blowChance="30" />
+				<param criticalChance="20" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="15" />
+			</effect>
+		</enchant7pveEffects>
 	</skill>
 	<skill id="345" levels="1" name="Sonic Rage">
 		<!-- Confirmed CT2.5 and Updated to H5 -->

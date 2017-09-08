@@ -861,11 +861,11 @@
 		<set name="magicLvl" val="89" />
 		<set name="mpConsume" val="84" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="39544" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="39544" />
 				<param blowChance="115" />
 			</effect>
 		</for>

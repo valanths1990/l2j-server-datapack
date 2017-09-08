@@ -35,6 +35,7 @@ import com.l2jserver.gameserver.model.stats.Formulas;
  */
 public final class Backstab extends AbstractEffect
 {
+	private final double _power;
 	private final int _blowChance;
 	private final int _criticalChance;
 	
@@ -42,6 +43,7 @@ public final class Backstab extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 		
+		_power = params.getDouble("power", 0);
 		_blowChance = params.getInt("blowChance", 0);
 		_criticalChance = params.getInt("criticalChance", 0);
 	}
@@ -77,7 +79,7 @@ public final class Backstab extends AbstractEffect
 		Skill skill = info.getSkill();
 		boolean ss = skill.useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
 		byte shld = Formulas.calcShldUse(activeChar, target, skill);
-		double damage = Formulas.calcBackstabDamage(activeChar, target, skill, shld, ss);
+		double damage = Formulas.calcBackstabDamage(activeChar, target, skill, shld, ss, _power);
 		
 		// Crit rate base crit rate for skill, modified with STR bonus
 		if (Formulas.calcSkillCrit(activeChar, target, _criticalChance))

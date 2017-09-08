@@ -1603,11 +1603,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param blowChance="115" />
 			</effect>
 		</for>
@@ -1850,11 +1850,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param blowChance="67" />
 			</effect>
 		</for>

@@ -35,6 +35,7 @@ import com.l2jserver.gameserver.model.stats.Formulas;
  */
 public final class FatalBlow extends AbstractEffect
 {
+	private final double _power;
 	private final int _blowChance;
 	private final int _criticalChance;
 	
@@ -42,6 +43,7 @@ public final class FatalBlow extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 		
+		_power = params.getDouble("power", 0);
 		_blowChance = params.getInt("blowChance", 0);
 		_criticalChance = params.getInt("criticalChance", 0);
 	}
@@ -78,7 +80,7 @@ public final class FatalBlow extends AbstractEffect
 		
 		boolean ss = skill.useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
 		byte shld = Formulas.calcShldUse(activeChar, target, skill);
-		double damage = Formulas.calcBlowDamage(activeChar, target, skill, shld, ss);
+		double damage = Formulas.calcBlowDamage(activeChar, target, skill, shld, ss, _power);
 		
 		boolean crit = false;
 		if (_criticalChance > 0)

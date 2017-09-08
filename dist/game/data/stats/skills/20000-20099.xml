@@ -18,12 +18,12 @@
 		<set name="magicLvl" val="85" /> <!-- FIXME: value unconfirmed -->
 		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
 		<set name="overHit" val="true" />
-		<set name="power" val="3420" />
 		<set name="reuseDelay" val="5000" /> <!-- FIXME: value unconfirmed -->
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="3420" />
 				<param blowChance="20" />
 			</effect>
 		</for>

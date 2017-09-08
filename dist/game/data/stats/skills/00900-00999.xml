@@ -808,7 +808,6 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="11234" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -818,6 +817,7 @@
 		</cond>
 		<for>
 			<effect name="FatalBlow">
+				<param power="11234" />
 				<param blowChance="60" />
 				<param criticalChance="30" />
 			</effect>

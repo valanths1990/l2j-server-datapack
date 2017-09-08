@@ -1294,11 +1294,11 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param blowChance="20" />
 			</effect>
 			<effect name="PhysicalMute" />
@@ -1367,11 +1367,11 @@
 		<set name="mpConsume" val="83" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A3" />
-		<set name="power" val="6335" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="6335" />
 				<param blowChance="15" />
 			</effect>
 		</for>

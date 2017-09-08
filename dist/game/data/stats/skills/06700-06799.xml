@@ -716,12 +716,12 @@
 		<set name="mpConsume" val="77" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="5773" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DEATH" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="5773" />
 				<param blowChance="30" />
 				<param criticalChance="20" />
 			</effect>
@@ -746,13 +746,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="100" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="5773" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="BLEED" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="5773" />
 				<param blowChance="30" />
 				<param criticalChance="20" />
 			</effect>
