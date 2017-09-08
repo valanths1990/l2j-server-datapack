@@ -1159,12 +1159,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="42" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param blowChance="20" />
 			</effect>
 		</for>

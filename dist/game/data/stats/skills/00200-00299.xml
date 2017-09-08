@@ -1784,45 +1784,109 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
-		<enchant2 name="power" val="#ench2Power" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
 		<enchant3 name="elementPower" val="#enchElementPower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant3 name="power" val="#ench2Power" />
 		<enchant4 name="element" val="1" /> <!-- Water -->
 		<enchant4 name="elementPower" val="#enchElementPower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="power" val="#ench2Power" />
 		<enchant5 name="element" val="2" /> <!-- Wind -->
 		<enchant5 name="elementPower" val="#enchElementPower" />
 		<enchant5 name="magicLvl" val="#enchMagicLvl" />
-		<enchant5 name="power" val="#ench2Power" />
 		<enchant6 name="element" val="3" /> <!-- Earth -->
 		<enchant6 name="elementPower" val="#enchElementPower" />
 		<enchant6 name="magicLvl" val="#enchMagicLvl" />
-		<enchant6 name="power" val="#ench2Power" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
-		<enchant7 name="power" val="#ench2Power" />
-		<enchant7 name="pvpPower" val="#enchDuel" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param blowChance="30" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="FatalBlow">
+				<param power="#ench1Power" />
+				<param blowChance="30" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="10" />
+			</effect>
+		</enchant1for>
+		<enchant2for>
+			<effect name="FatalBlow">
+				<param power="#ench2Power" />
+				<param blowChance="30" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="10" />
+			</effect>
+		</enchant2for>
+		<enchant3for>
+			<effect name="FatalBlow">
+				<param power="#ench2Power" />
+				<param blowChance="30" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="10" />
+			</effect>
+		</enchant3for>
+		<enchant4for>
+			<effect name="FatalBlow">
+				<param power="#ench2Power" />
+				<param blowChance="30" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="10" />
+			</effect>
+		</enchant4for>
+		<enchant5for>
+			<effect name="FatalBlow">
+				<param power="#ench2Power" />
+				<param blowChance="30" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="10" />
+			</effect>
+		</enchant5for>
+		<enchant6for>
+			<effect name="FatalBlow">
+				<param power="#ench2Power" />
+				<param blowChance="30" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="10" />
+			</effect>
+		</enchant6for>
+		<enchant7pvpEffects>
+			<effect name="FatalBlow">
+				<param power="#enchDuel" />
+				<param blowChance="30" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="10" />
+			</effect>
+		</enchant7pvpEffects>
+		<enchant7pveEffects>
+			<effect name="FatalBlow">
+				<param power="#ench2Power" />
+				<param blowChance="30" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="10" />
+			</effect>
+		</enchant7pveEffects>
 	</skill>
 	<skill id="264" levels="1" name="Song of Earth" enchantGroup1="1" enchantGroup2="1">
 		<table name="#ench1AbnormalTimes"> 125 131 136 142 147 153 158 164 169 175 180 186 191 197 202 208 213 219 224 230 235 241 246 252 257 263 268 274 279 285 </table>

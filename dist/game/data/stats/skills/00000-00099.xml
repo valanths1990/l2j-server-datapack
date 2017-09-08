@@ -651,7 +651,6 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -660,6 +659,7 @@
 		</cond>
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param blowChance="20" />
 			</effect>
 		</for>
@@ -1118,12 +1118,10 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
@@ -1139,12 +1137,12 @@
 		<enchant6 name="elementPower" val="#enchElementPower" />
 		<enchant6 name="magicLvl" val="#enchMagicLvl" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
-		<enchant7 name="pvpPower" val="#enchDuel" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
 			<effect name="Backstab">
+				<param power="#power" />
 				<param blowChance="40" />
 				<param criticalChance="#baseCritLethal" />
 			</effect>
@@ -1152,6 +1150,36 @@
 				<param halfLethal="#baseCritLethal" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="Backstab">
+				<param power="#ench1Power" />
+				<param blowChance="40" />
+				<param criticalChance="15" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="15" />
+			</effect>
+		</enchant1for>
+		<enchant7pvpEffects>
+			<effect name="Backstab">
+				<param power="#enchDuel" />
+				<param blowChance="40" />
+				<param criticalChance="15" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="15" />
+			</effect>
+		</enchant7pvpEffects>
+		<enchant7pveEffects>
+			<effect name="Backstab">
+				<param power="5479" />
+				<param blowChance="40" />
+				<param criticalChance="15" />
+			</effect>
+			<effect name="Lethal">
+				<param halfLethal="15" />
+			</effect>
+		</enchant7pveEffects>
 	</skill>
 	<skill id="33" levels="8" name="Summon Phantom Cubic" enchantGroup1="2">
 		<!-- Confirmed CT2.5 -->

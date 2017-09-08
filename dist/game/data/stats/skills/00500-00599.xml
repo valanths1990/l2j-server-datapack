@@ -238,16 +238,13 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
-		<enchant2 name="power" val="#ench2Power" />
 		<enchant3 name="element" val="0" /> <!-- Fire -->
 		<enchant3 name="elementPower" val="#enchElementPower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
@@ -261,15 +258,39 @@
 		<enchant6 name="elementPower" val="#enchElementPower" />
 		<enchant6 name="magicLvl" val="#enchMagicLvl" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
-		<enchant7 name="pvpPower" val="#enchDuel" />
 		<cond msgId="113" addName="1">
 			<using kind="RAPIER" />
 		</cond>
 		<for>
 			<effect name="SoulBlow">
+				<param power="#power" />
 				<param blowChance="20" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="SoulBlow">
+				<param power="#ench1Power" />
+				<param blowChance="20" />
+			</effect>
+		</enchant1for>
+		<enchant2for>
+			<effect name="SoulBlow">
+				<param power="#ench2Power" />
+				<param blowChance="20" />
+			</effect>
+		</enchant2for>
+		<enchant7pvpEffects>
+			<effect name="SoulBlow">
+				<param power="#enchDuel" />
+				<param blowChance="20" />
+			</effect>
+		</enchant7pvpEffects>
+		<enchant7pveEffects>
+			<effect name="SoulBlow">
+				<param power="5479" />
+				<param blowChance="20" />
+			</effect>
+		</enchant7pveEffects>
 	</skill>
 	<skill id="506" levels="4" name="Checkmate" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">
 		<!-- Confirmed CT2.5 -->
@@ -2633,12 +2654,12 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param blowChance="20" />
 			</effect>
 			<effect name="Lethal">
