@@ -821,12 +821,13 @@
 		<set name="mpConsume" val="89" />
 		<set name="mpInitialConsume" val="23" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="298" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="298" />
+			</effect>
 			<effect name="Paralyze" />
 		</for>
 	</skill>
@@ -1003,12 +1004,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5247" levels="12" name="Seed of Darkness">
@@ -1065,12 +1067,13 @@
 		<set name="hitTime" val="3300" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5249" levels="12" name="Boss Dark Circle">
@@ -1089,11 +1092,12 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5250" levels="1" name="Stun">
@@ -1178,7 +1182,6 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="100" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1465,12 +1468,13 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5264" levels="12" name="Death Mark">
@@ -1521,11 +1525,12 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5266" levels="12" name="Magical Backfire">
@@ -1574,11 +1579,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5268" levels="17" name="Poison">

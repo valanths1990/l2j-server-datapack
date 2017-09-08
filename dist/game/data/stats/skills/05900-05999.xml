@@ -118,12 +118,12 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="HpDrain">
-				<param power="0.8" />
+				<param power="#power" />
+				<param drain="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -373,11 +373,12 @@
 		<set name="mpConsume" val="239" />
 		<set name="mpInitialConsume" val="60" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="150" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="150" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5921" levels="1" name="Inhale">
@@ -404,12 +405,12 @@
 		<set name="mpConsume" val="179" />
 		<set name="mpInitialConsume" val="45" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="121" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
 			<effect name="HpDrain">
-				<param power="0.8" />
+				<param power="121" />
+				<param drain="0.8" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.9" />
@@ -444,11 +445,12 @@
 		<set name="mpConsume" val="179" />
 		<set name="mpInitialConsume" val="45" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="121" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="121" />
+			</effect>
 			<effect name="Debuff">
 				<sub stat="rEvas" val="3" />
 				<mul stat="pDef" val="0.5" />
@@ -1486,12 +1488,13 @@
 		<set name="mpConsume" val="60" />
 		<set name="mpInitialConsume" val="15" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="171" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="171" />
+			</effect>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Attackable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />

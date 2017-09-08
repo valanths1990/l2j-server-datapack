@@ -9,11 +9,12 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="81" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="47" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="47" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5601" levels="12" name="Short-Range Physical Attack Resistance">
@@ -1006,19 +1007,21 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A3" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<pvpEffects>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pvpMagicalDmg" val="0.5" />
 			</effect>
 		</pvpEffects>
 		<pveEffects>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pvpMagicalDmg" val="0.5" />
 			</effect>
@@ -1039,14 +1042,19 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
 	</skill>
 	<skill id="5658" levels="85" name="Gatekeeper Flame Strike">
 		<table name="#effectPoints"> -92 -97 -101 -106 -111 -116 -121 -126 -132 -138 -143 -149 -156 -162 -168 -175 -182 -189 -196 -204 -211 -219 -227 -235 -243 -251 -259 -268 -277 -285 -294 -303 -313 -322 -331 -341 -350 -360 -369 -379 -389 -399 -408 -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 -597 -604 -611 -617 -624 -630 -635 -641 -646 -650 -655 -659 -662 -666 -669 -673 -676 -679 -681 -684 -687 -689 </table>
@@ -1065,14 +1073,19 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
 	</skill>
 	<skill id="5659" levels="2" name="Gatekeeper Berserker Spirit">
 		<table name="#abnormalLvls"> 1 2 </table>

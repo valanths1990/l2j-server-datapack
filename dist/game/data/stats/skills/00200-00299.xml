@@ -2389,19 +2389,19 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<enchant2 name="mpInitialConsume" val="#ench2MpInitialConsume" />
 		<enchant3 name="activateRate" val="#ench3ActivateRates" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
@@ -2413,6 +2413,16 @@
 				<param skillId="6090" skillLevel="1" />
 			</effect>
 		</endEffects>
+		<enchant1for>
+			<effect name="MagicalAttack">
+				<param power="#ench1Power" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.5" />
+				<mul stat="runSpd" val="0.5" />
+				<mul stat="mAtkSpd" val="0.5" />
+			</effect>
+		</enchant1for>
 	</skill>
 	<skill id="280" levels="37" name="Burning Fist" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2">
 		<table name="#effectPoints"> -213 -219 -225 -231 -237 -242 -248 -254 -260 -265 -271 -277 -283 -288 -294 -299 -305 -310 -316 -321 -326 -331 -336 -340 -345 -350 -354 -358 -362 -366 -370 -373 -377 -380 -383 -386 -388 </table>
@@ -2826,24 +2836,30 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2mpConsume" />
 		<enchant2 name="mpInitialConsume" val="#ench2mpConsume_Init" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="HpDrain">
-				<param power="0.8" />
+				<param power="#power" />
+				<param drain="0.8" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="HpDrain">
+				<param power="#ench1power" />
+				<param drain="0.8" />
+			</effect>
+		</enchant1for>
 		<enchant3for>
 			<effect name="HpDrain">
-				<param power="#ench3absorbPart" />
+				<param power="54" />
+				<param drain="#ench3absorbPart" />
 			</effect>
 		</enchant3for>
 	</skill>

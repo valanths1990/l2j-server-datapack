@@ -287,13 +287,13 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
-				<param power="#absorbPart" />
+				<param power="#power" />
+				<param drain="#absorbPart" />
 			</effect>
 		</for>
 	</skill>
@@ -571,12 +571,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
-				<param power="#absorbPart" />
+				<param power="#power" />
+				<param drain="#absorbPart" />
 			</effect>
 		</for>
 	</skill>
@@ -770,11 +770,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="8.39" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="8.39" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3050" levels="2" name="Special Ability: Focus">
@@ -968,12 +969,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
-				<param power="0.65" />
+				<param power="#power" />
+				<param drain="0.65" />
 			</effect>
 		</for>
 	</skill>
@@ -986,12 +987,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
-				<param power="0.35" />
+				<param power="#power" />
+				<param drain="0.35" />
 			</effect>
 		</for>
 	</skill>

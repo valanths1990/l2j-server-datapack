@@ -1631,12 +1631,13 @@
 		<set name="mpConsume" val="32" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="875" levels="1" name="Empower">
@@ -1814,12 +1815,13 @@
 		<set name="mpConsume" val="56" />
 		<set name="mpInitialConsume" val="14" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="882" levels="7" name="Commander Mercenary Blaze">
@@ -1839,12 +1841,13 @@
 		<set name="mpConsume" val="56" />
 		<set name="mpInitialConsume" val="14" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="883" levels="7" name="Commander Mercenary Seal of Binding">
@@ -1990,13 +1993,14 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="HOLD" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Root" />
 		</for>
 	</skill>
@@ -2084,12 +2088,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="892" levels="11" name="Energy Shot">
@@ -2107,12 +2112,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="893" levels="11" name="Concentrated Energy Shot">
@@ -2130,12 +2136,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="894" levels="1" name="Exhilarate">
@@ -2289,14 +2296,14 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
-			<effect name="PhysicalAttack" />
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.6" />
 				<mul stat="mDef" val="0.6" />
@@ -2304,6 +2311,18 @@
 				<mul stat="pAtkSpd" val="0.6" />
 				<mul stat="mAtkSpd" val="0.6" />
 			</effect>
-		</for>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.6" />
+				<mul stat="mDef" val="0.6" />
+				<mul stat="runSpd" val="0.6" />
+				<mul stat="pAtkSpd" val="0.6" />
+				<mul stat="mAtkSpd" val="0.6" />
+			</effect>
+		</pveEffects>
 	</skill>
 </list>

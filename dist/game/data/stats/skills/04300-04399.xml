@@ -116,11 +116,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4315" levels="12" name="Hold">
@@ -165,12 +166,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="HpDrain">
-				<param power="0.4" />
+				<param power="#power" />
+				<param drain="0.4" />
 			</effect>
 		</for>
 	</skill>
@@ -232,7 +233,6 @@
 		<set name="magicLvl" val="60" />
 		<set name="mpConsume" val="50" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="30" /> <!-- Freya retail 0, no level depend, possibly done differently -->
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
@@ -1528,7 +1528,6 @@
 		<set name="elementPower" val="20" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A3" />
-		<set name="power" val="100" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>

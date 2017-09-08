@@ -26,12 +26,12 @@
 		<set name="magicLvl" val="76" />
 		<set name="mpConsume" val="181" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="111" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
-				<param power="0.8" />
+				<param power="111" />
+				<param drain="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -66,12 +66,13 @@
 		<set name="magicLvl" val="76" />
 		<set name="mpConsume" val="103" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="111" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="111" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5004" levels="1" name="Dimensional Stun">
@@ -159,7 +160,6 @@
 		<table name="#isMagic"> 1 0 0 1 1 </table>
 		<table name="#lvlDepend"> 0 0 0 1 1 </table>
 		<table name="#maxNegated"> 0 0 0 0 10 </table>
-		<table name="#power"> 0 0 0 10 10 </table>
 		<table name="#time"> 0 0 5 5 5 </table>
 		<table name="#traits"> NONE NONE NONE DERANGEMENT DERANGEMENT </table>
 		<set name="abnormalType" val="#abnormalTypes" />
@@ -171,7 +171,6 @@
 		<set name="lvlBonusRate" val="#lvlDepend" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<set name="trait" val="#traits" />
@@ -225,11 +224,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="106" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="106" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5011" levels="1" name="Frintezza's Bomber Ghost">
@@ -243,11 +243,12 @@
 		<set name="isSuicideAttack" val="true" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="364" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="364" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5012" levels="1" name="Breath of Scarlet">
@@ -286,12 +287,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="61" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
-				<param power="0.8" />
+				<param power="61" />
+				<param drain="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -417,11 +418,12 @@
 		<set name="hitTime" val="7000" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5019" levels="1" name="Frintezza's Daemon Drain">
@@ -435,12 +437,12 @@
 		<set name="hitTime" val="6000" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="314" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="HpDrain">
-				<param power="0.8" />
+				<param power="314" />
+				<param drain="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -697,11 +699,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelByCategory">
 				<param slot="BUFF" rate="25" max="20" />
 			</effect>
@@ -852,11 +855,12 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5052" levels="12" name="Castle Long AE Fire">
@@ -877,11 +881,12 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5053" levels="12" name="Castle DD Water">
@@ -898,11 +903,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5054" levels="12" name="Castle Self AE Water">
@@ -940,11 +946,12 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5057" levels="12" name="Castle Self AE Wind">
@@ -1033,11 +1040,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5066" levels="12" name="Castle Self AE Unholy">
@@ -1158,11 +1166,12 @@
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5074" levels="1" name="The Victor of War">
@@ -1529,12 +1538,13 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="1084" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="1084" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5094" levels="1" name="Antharas Subordinate Suicide ">
@@ -1547,11 +1557,12 @@
 		<set name="isSuicideAttack" val="true" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="473" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="473" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5095" levels="1" name="Antharas Subordinate Melee Attack">
@@ -1598,11 +1609,12 @@
 		<set name="isSuicideAttack" val="true" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="473" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="473" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5098" levels="2" name="Capture Penalty">

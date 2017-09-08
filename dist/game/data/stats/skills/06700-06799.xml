@@ -779,11 +779,12 @@
 		<set name="mpConsume" val="62" />
 		<set name="mpInitialConsume" val="16" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="129" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="129" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6756" levels="1" name="Death Talon">
@@ -798,11 +799,12 @@
 		<set name="mpConsume" val="124" />
 		<set name="mpInitialConsume" val="31" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="65" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="65" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6757" levels="1" name="Slow">
@@ -1001,11 +1003,12 @@
 		<set name="mpConsume" val="62" />
 		<set name="mpInitialConsume" val="16" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="129" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="129" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6767" levels="1" name="Earthquake">
@@ -1248,12 +1251,13 @@
 		<set name="mpConsume" val="55" />
 		<set name="mpInitialConsume" val="14" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="120" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="120" />
+			</effect>
 			<effect name="Paralyze" />
 		</for>
 	</skill>

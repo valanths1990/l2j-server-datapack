@@ -1929,12 +1929,13 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="73" />
 		<set name="operateType" val="A3" />
-		<set name="power" val="102" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="102" />
+			</effect>
 		</for>
 		<selfEffects>
 			<effect name="Buff">
@@ -1955,7 +1956,6 @@
 		<set name="mpConsume" val="90" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
-		<set name="power" val="128" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1963,7 +1963,9 @@
 			<target race="UNDEAD" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="128" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="694" levels="1" name="Divine Wizard Holy Curtain">
@@ -1980,12 +1982,13 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="109" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="64" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="64" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="695" levels="1" name="Divine Wizard Holy Cloud">

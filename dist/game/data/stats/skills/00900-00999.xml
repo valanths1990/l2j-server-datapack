@@ -139,18 +139,26 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
 		<set name="trait" val="POISON" />
-		<for>
-			<effect name="MagicalAttack" />
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="230" />
 			</effect>
-		</for>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+			</effect>
+			<effect name="DamOverTime" ticks="5">
+				<param power="230" />
+			</effect>
+		</pveEffects>
 	</skill>
 	<skill id="905" levels="6" name="Dark Detonation">
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
@@ -296,21 +304,32 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="POISON" />
-		<for>
-			<effect name="MagicalAttack" />
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="230" />
 				<mul stat="runSpd" val="0.3" />
 				<mul stat="pAtkSpd" val="0.8" />
 				<mul stat="mAtkSpd" val="0.8" />
 			</effect>
-		</for>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+			</effect>
+			<effect name="DamOverTime" ticks="5">
+				<param power="230" />
+				<mul stat="runSpd" val="0.3" />
+				<mul stat="pAtkSpd" val="0.8" />
+				<mul stat="mAtkSpd" val="0.8" />
+			</effect>
+		</pveEffects>
 	</skill>
 	<skill id="910" levels="6" name="Water Jet">
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
@@ -1866,12 +1885,13 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="15" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="1200" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="976" levels="7" name="Wind Strike">
@@ -1893,12 +1913,13 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="15" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="1200" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="977" levels="6" name="Ice Bolt">
@@ -1928,12 +1949,13 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="15" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.8" />
 			</effect>

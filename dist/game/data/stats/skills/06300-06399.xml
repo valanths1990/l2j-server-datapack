@@ -189,12 +189,13 @@
 		<set name="mpConsume" val="30" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="120" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="120" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6308" levels="1" name="Opus of the Wave">
@@ -213,12 +214,13 @@
 		<set name="mpConsume" val="30" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="120" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="120" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6309" levels="1" name="Pain of the Ascetic">
@@ -237,12 +239,13 @@
 		<set name="mpConsume" val="88" />
 		<set name="mpInitialConsume" val="22" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="120" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="120" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6310" levels="1" name="Loss of Quest">
@@ -357,12 +360,13 @@
 		<set name="mpConsume" val="88" />
 		<set name="mpInitialConsume" val="22" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="125" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="125" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6315" levels="1" name="Sacred Strike">
@@ -424,12 +428,13 @@
 		<set name="mpConsume" val="88" />
 		<set name="mpInitialConsume" val="22" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="128" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="128" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6318" levels="1" name="Divine Shield Protection">
@@ -524,12 +529,13 @@
 		<set name="mpConsume" val="88" />
 		<set name="mpInitialConsume" val="22" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="121" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="121" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6322" levels="1" name="Divine Impact">
@@ -548,12 +554,13 @@
 		<set name="mpConsume" val="88" />
 		<set name="mpInitialConsume" val="22" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="121" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="121" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6323" levels="1" name="Divine Bolt">
@@ -567,11 +574,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="85" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="85" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6324" levels="1" name="Divine Strike">
@@ -588,12 +596,13 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="121" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="121" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6325" levels="1" name="Divine Nova">
@@ -610,12 +619,13 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="85" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="85" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6326" levels="1" name="Martyr's Happiness">
@@ -677,12 +687,13 @@
 		<set name="mpConsume" val="88" />
 		<set name="mpInitialConsume" val="22" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="205" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="205" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6329" levels="1" name="Fighter Strike">
@@ -846,12 +857,13 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="120" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="120" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6336" levels="1" name="Electric Rain 2">
@@ -865,12 +877,13 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="121" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="121" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6337" levels="1" name="Red Slash 1">
