@@ -970,10 +970,12 @@
 		</for>
 	</skill>
 	<skill id="6442" levels="1" name="Efficacy of Wisdom">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SIGNAL_E" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill6439" />
@@ -983,17 +985,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
-			<effect name="Buff">
-				<mul stat="pveMagicalDmg" val="2.0" />
-			</effect>
-		</for>
 	</skill>
 	<skill id="6443" levels="1" name="Efficacy of Strength">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SIGNAL_E" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill6440" />
@@ -1003,18 +1002,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
-			<effect name="Buff">
-				<mul stat="pvePhysDmg" val="2.0" />
-				<mul stat="pvePhysSkillsDmg" val="2.0" />
-			</effect>
-		</for>
 	</skill>
 	<skill id="6444" levels="1" name="Efficacy of Agility">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SIGNAL_E" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill6441" />
@@ -1024,12 +1019,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
-			<effect name="Buff">
-				<mul stat="pveBowDmg" val="2.0" />
-				<mul stat="pveBowSkillsDmg" val="2.0" />
-			</effect>
-		</for>
 	</skill>
 	<skill id="6445" levels="1" name="Presentation - Freya's Message 1">
 		<!-- Confirmed CT2.5 -->
