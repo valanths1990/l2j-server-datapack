@@ -6,11 +6,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3301" levels="1" name="Yellow Talisman of Violent Haste">
 		<!-- Confirmed CT2.5 -->
@@ -18,11 +18,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtkSpd" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3302" levels="1" name="Yellow Talisman of Arcane Haste">
 		<!-- Confirmed CT2.5 -->
@@ -30,11 +30,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mAtkSpd" val="8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3303" levels="1" name="White Talisman of Bandages">
 		<!-- Confirmed CT2.5 -->
@@ -42,11 +42,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLEED="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3304" levels="1" name="White Talisman of Attention">
 		<!-- Confirmed CT2.5 -->
@@ -54,11 +54,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3305" levels="1" name="White Talisman of Grounding">
 		<!-- Confirmed CT2.5 -->
@@ -66,11 +66,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3306" levels="1" name="White Talisman of Bravery">
 		<!-- Confirmed CT2.5 -->
@@ -78,11 +78,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DERANGEMENT="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3307" levels="1" name="White Talisman of Motion">
 		<!-- Confirmed CT2.5 -->
@@ -90,11 +90,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PARALYZE="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3308" levels="1" name="White Talisman of Freedom">
 		<!-- Confirmed CT2.5 -->
@@ -102,11 +102,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3309" levels="1" name="White Talisman of Protection">
 		<!-- Confirmed CT2.5 -->
@@ -114,11 +114,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3310" levels="1" name="Yellow Talisman of Physical Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -126,11 +126,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.03" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3311" levels="1" name="Yellow Talisman of CP Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -138,11 +138,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regCp" val="1.03" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3312" levels="1" name="Yellow Talisman of Healing">
 		<!-- Confirmed CT2.5 -->
@@ -150,11 +150,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="healEffect" val="40" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3313" levels="1" name="Yellow Talisman of Alacrity">
 		<!-- Confirmed CT2.5 -->
@@ -162,13 +162,13 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtkSpd" val="5" />
 				<add stat="mAtkSpd" val="4" />
 				<add stat="runSpd" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3314" levels="1" name="Grey Talisman of Weight Training">
 		<!-- Confirmed CT2.5 -->
@@ -176,11 +176,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="1.1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3315" levels="1" name="Grey Talisman of Fishing">
 		<!-- TODO: Require Support -->
@@ -195,11 +195,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="0.97" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3317" levels="1" name="Yellow Talisman of Critical Reduction">
 		<!-- Confirmed CT2.5 -->
@@ -207,11 +207,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="defCritDamageAdd" val="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3318" levels="1" name="Flag Display">
 		<!-- Flag Skill -->
@@ -231,19 +231,19 @@
 		<startEffects>
 			<effect name="TakeFortStart" />
 		</startEffects>
-		<for>
+		<effects>
 			<effect name="TakeFort" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3319" levels="1" name="Divine Protection of Ring">
 		<set name="magicLvl" val="86" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param GUST="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3320" levels="1" name="Yellow Talisman of Mental Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -251,11 +251,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.03" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3321" levels="1" name="Blue Talisman of Evasion">
 		<!-- Confirmed CT2.5 -->
@@ -274,12 +274,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="2" />
 				<mul stat="defCritRate" val="0.95" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3322" levels="1" name="Brass Bracelet">
 		<!-- Confirmed CT2.5 -->
@@ -287,11 +287,11 @@
 		<set name="magicLvl" val="20" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TalismanSlot">
 				<param slots="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3323" levels="1" name="Bronze Bracelet">
 		<!-- Confirmed CT2.5 -->
@@ -299,11 +299,11 @@
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TalismanSlot">
 				<param slots="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3324" levels="1" name="Steel Bracelet">
 		<!-- Confirmed CT2.5 -->
@@ -311,11 +311,11 @@
 		<set name="magicLvl" val="52" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TalismanSlot">
 				<param slots="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3325" levels="1" name="Mithril Bracelet">
 		<!-- Confirmed CT2.5 -->
@@ -323,33 +323,33 @@
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TalismanSlot">
 				<param slots="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3326" levels="1" name="Jewelry Bracelet">
 		<!-- Confirmed CT2.5 -->
 		<set name="magicLvl" val="76" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TalismanSlot">
 				<param slots="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3327" levels="1" name="Oriharukon Bracelet">
 		<!-- Confirmed CT2.5 -->
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TalismanSlot">
 				<param slots="6" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3328" levels="1" name="Double Stab">
 		<!-- Confirmed CT2.5 -->
@@ -366,11 +366,11 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="11500" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3329" levels="1" name="Power Slash">
 		<!-- Confirmed CT2.5 -->
@@ -387,11 +387,11 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="11500" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3330" levels="1" name="Air Blade">
 		<!-- Confirmed CT2.5 -->
@@ -410,11 +410,11 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="15000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3331" levels="1" name="Enslave">
 		<!-- Confirmed CT2.5 -->
@@ -436,12 +436,12 @@
 		<set name="operateType" val="A1" /> <!-- Should be A2 -->
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="200" />
 				<param drain="0.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3332" levels="1" name="Orange Talisman - Hot Springs Recovery">
 		<!-- Confirmed CT2.5 -->
@@ -464,11 +464,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="10166" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3333" levels="1" name="Orange Talisman - A Grade Elixir of Life">
 		<!-- Confirmed CT2.5 -->
@@ -491,11 +491,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="8626" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3334" levels="1" name="Orange Talisman - A Grade Elixir of Mental Strength">
 		<!-- Confirmed CT2.5 -->
@@ -518,11 +518,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="8632" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3335" levels="1" name="Transform Yeti">
 		<!-- Confirmed CT2.5 -->
@@ -540,11 +540,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="102" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3336" levels="1" name="Transform Buffalo">
 		<!-- Confirmed CT2.5 -->
@@ -562,14 +562,14 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="103" />
 			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="BIG_HEAD,9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3337" levels="1" name="Transform Cutie Pig">
 		<!-- Confirmed CT2.5 -->
@@ -588,11 +588,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="104" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3338" levels="1" name="Shield Master">
 		<set name="magicLvl" val="1" />
@@ -650,7 +650,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.054" /> <!-- P. Def. +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
@@ -661,7 +661,7 @@
 				<param SHOCK="13" />
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3349" levels="1" name="Dynasty Breast Plate - Weapon Master">
 		<!-- Confirmed CT2.5 -->
@@ -669,7 +669,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.054" /> <!-- P. Atk +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
@@ -678,7 +678,7 @@
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3350" levels="1" name="Dynasty Breast Plate - Force Master">
 		<!-- Confirmed CT2.5 -->
@@ -686,7 +686,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.054" /> <!-- P. Atk. +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- HP +492 -->
@@ -694,7 +694,7 @@
 				<mul stat="physicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3351" levels="1" name="Dynasty Breast Plate - Bard">
 		<!-- Confirmed CT2.5 -->
@@ -702,7 +702,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.054" /> <!-- P. Def. +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
@@ -710,7 +710,7 @@
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3352" levels="1" name="Dynasty Leather Armor - Dagger Master">
 		<!-- Confirmed CT2.5 -->
@@ -718,7 +718,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="4.3" /> <!-- Evasion +4.3 -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
@@ -729,7 +729,7 @@
 				<param HOLD="13" />
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3353" levels="1" name="Dynasty Leather Armor - Bow Master">
 		<!-- Confirmed CT2.5 -->
@@ -737,7 +737,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="4.3" /> <!-- Accuracy +4.3 -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 Effect -->
@@ -746,7 +746,7 @@
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3354" levels="1" name="Dynasty Tunic - Healer">
 		<!-- Confirmed CT2.5 -->
@@ -754,7 +754,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
@@ -763,7 +763,7 @@
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3355" levels="1" name="Dynasty Tunic - Enchanter">
 		<!-- Confirmed CT2.5 -->
@@ -771,7 +771,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
@@ -780,7 +780,7 @@
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3356" levels="1" name="Dynasty Tunic - Summoner">
 		<!-- Confirmed CT2.5 -->
@@ -788,7 +788,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
@@ -797,7 +797,7 @@
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3357" levels="1" name="Dynasty Tunic - Wizard">
 		<!-- Confirmed CT2.5 -->
@@ -805,7 +805,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 				<mul stat="mAtk" val="1.054" /> <!-- Increase M. Atk +5.4% -->
@@ -813,7 +813,7 @@
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3358" levels="1" name="Flag Equip">
 		<!-- Confirmed CT2.5 -->
@@ -822,7 +822,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="runSpd" val="0.2" />
 				<mul stat="pAtkSpd" val="0.2" />
@@ -830,7 +830,7 @@
 				<mul stat="mAtkSpd" val="0.2" />
 				<mul stat="mAtk" val="0.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3359" levels="1" name="Transform Native">
 		<!-- Confirmed CT2.5 -->
@@ -848,23 +848,23 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="101" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3360" levels="1" name="Cheap Shot">
 		<!-- Confirmed CT2.5 -->
 		<set name="magicLvl" val="99" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="physicalMpConsumeRate" val="0.88" />
 				<mul stat="magicalMpConsumeRate" val="0.88" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3361" levels="1" name="Summon Agathion - Fortress">
 		<!-- Confirmed CT2.5 -->
@@ -875,11 +875,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="16029" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3362" levels="1" name="Traits Strengthen Necklace">
 		<set name="magicLvl" val="80" />
@@ -900,31 +900,31 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="18" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3366" levels="1" name="Dynasty Resistance Ring">
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3367" levels="1" name="Dynasty Resistance Earring">
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="12" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3368" levels="1" name="Traits Strengthen Necklace">
 		<set name="magicLvl" val="80" />
@@ -945,31 +945,31 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLEED="11" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3372" levels="1" name="Dynasty Resistance Ring">
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLEED="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3373" levels="1" name="Dynasty Resistance Earring">
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLEED="8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3374" levels="1" name="Traits Strengthen Necklace">
 		<set name="magicLvl" val="80" />
@@ -990,31 +990,31 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param POISON="16" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3378" levels="1" name="Dynasty Resistance Ring">
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param POISON="7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3379" levels="1" name="Dynasty Resistance Earring">
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param POISON="11" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3380" levels="1" name="Traits Strengthen Necklace">
 		<set name="magicLvl" val="80" />
@@ -1035,31 +1035,31 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PARALYZE="9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3384" levels="1" name="Dynasty Resistance Ring">
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PARALYZE="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3385" levels="1" name="Dynasty Resistance Earring">
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PARALYZE="6" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3386" levels="1" name="Traits Strengthen Necklace">
 		<set name="magicLvl" val="80" />
@@ -1080,31 +1080,31 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="18" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3390" levels="1" name="Dynasty Resistance Ring">
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3391" levels="1" name="Dynasty Resistance Earring">
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="12" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3392" levels="1" name="Traits Strengthen Necklace">
 		<set name="magicLvl" val="80" />
@@ -1125,31 +1125,31 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="18" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3396" levels="1" name="Dynasty Resistance Ring">
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3397" levels="1" name="Dynasty Resistance Earring">
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="12" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3398" levels="1" name="Traits Strengthen Necklace">
 		<set name="magicLvl" val="80" />

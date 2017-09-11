@@ -24,14 +24,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="16" />
 			</effect>
 			<effect name="Stun">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4601" levels="3" name="NPC Clan Buff - Acumen Focus">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -52,12 +52,12 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="#rCrit" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4602" levels="12" name="Decrease P. Atk.">
 		<table name="#abnormalLvls"> 1 2 2 3 3 3 3 3 3 3 3 3 </table>
@@ -85,14 +85,14 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4603" levels="12" name="Decrease P. Atk.">
 		<table name="#abnormalLvls"> 1 2 2 3 3 3 3 3 3 3 3 3 </table>
@@ -119,14 +119,14 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4604" levels="12" name="Decrease P. Atk.">
 		<table name="#abnormalLvls"> 1 2 2 3 3 3 3 3 3 3 3 3 </table>
@@ -153,14 +153,14 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4605" levels="12" name="Surrender To Fire">
 		<table name="#abnormalLvls"> 2 3 3 4 4 4 4 4 4 4 4 4 </table>
@@ -190,7 +190,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
@@ -198,7 +198,7 @@
 				<sub stat="fireRes" val="#fireRes" />
 				<add stat="waterRes" val="#waterRes" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4606" levels="12" name="Poison">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
@@ -226,14 +226,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="DamOverTime" ticks="3">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4607" levels="1" name="Magma Attack">
 		<set name="castRange" val="600" />
@@ -247,11 +247,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="187" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4608" levels="2" name="NPC Clan Buff - Berserk">
 		<table name="#abnormalLvls"> 1 2 </table>
@@ -277,7 +277,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
@@ -287,7 +287,7 @@
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mDef" val="#mDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4609" levels="4" name="NPC Clan Buff - Vampiric Rage">
 		<table name="#abnormalLvls"> 1 2 3 4 </table>
@@ -307,11 +307,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="absorbDam" val="#absorbDam" /> <!-- absorb HP from damage inflicted on enemies -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4610" levels="3" name="NPC Clan Buff - Focus">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -331,11 +331,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="#rCrit" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4611" levels="3" name="NPC Clan Buff - Death Whisper">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -355,11 +355,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="#cAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4612" levels="12" name="NPC Wide Wild Sweep">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -377,11 +377,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4613" levels="12" name="NPC Clan Heal">
 		<table name="#amount"> 83 151 245 362 494 627 743 789 823 845 853 853 </table>
@@ -397,11 +397,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4614" levels="12" name="NPC Death Bomb">
 		<!-- Confirmed CT2.5 -->
@@ -416,11 +416,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4615" levels="12" name="Bleed">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
@@ -448,11 +448,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<param power="#dmg" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4616" levels="1" name="Fake Petrification">
 		<set name="abnormalLvl" val="2" />
@@ -467,7 +467,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Stun" />
 			<effect name="BlockDamage">
 				<param block="HP"/>
@@ -480,7 +480,7 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4617" levels="1" name="Dispel Petrification">
 		<!-- Confirmed CT2.5 -->
@@ -492,11 +492,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="TURN_STONE,2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4618" levels="1" name="NPC Cancel PC Target">
 		<set name="castRange" val="400" />
@@ -510,11 +510,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="TargetCancel">
 				<param chance="80" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4619" levels="1" name="NPC Dispel Sleep">
 		<set name="castRange" val="600" />
@@ -527,11 +527,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="SLEEP,1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4620" levels="12" name="Paralysis">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -557,9 +557,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4621" levels="12" name="NPC AE - 80% HP Drain">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -578,12 +578,12 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4622" levels="12" name="NPC AE - 80% HP Drain - Magic">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -602,12 +602,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4623" levels="12" name="NPC AE - 80% HP Drain - Slow">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -625,12 +625,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4624" levels="12" name="Decrease HP Regeneration Rate">
 		<!-- Confirmed CT2.5 -->
@@ -650,11 +650,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="healEffect" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4625" levels="12" name="Decrease Speed">
 		<!-- Confirmed CT2.5 -->
@@ -676,11 +676,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="#runSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4626" levels="12" name="NPC Buff - Physical Barrier">
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
@@ -699,11 +699,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4627" levels="12" name="NPC Buff - Magical Barrier">
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
@@ -722,11 +722,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mDef" val="#mDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4628" levels="1" name="Mysterious Aura">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -752,12 +752,12 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4630" levels="12" name="NPC MR - Twister">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -776,11 +776,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4631" levels="3" name="NPC Buff - Acumen Shield WildMagic">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -801,13 +801,13 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="mCritRate" val="#mCritRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4632" levels="3" name="NPC Buff - Acumen Empower WildMagic">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -828,13 +828,13 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="mCritRate" val="#mCritRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4633" levels="3" name="NPC Buff - Acumen Empower Berserk">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -859,7 +859,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
@@ -869,7 +869,7 @@
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mDef" val="#mDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4634" levels="3" name="NPC Buff - Acumen Empower DamageShield">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -890,13 +890,13 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<add stat="reflectDam" val="#reflect" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4635" levels="3" name="NPC Buff - Acumen Berserk WildMagic">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -922,7 +922,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
@@ -933,7 +933,7 @@
 				<mul stat="mDef" val="#mDef" />
 				<mul stat="mCritRate" val="#mCritRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4636" levels="3" name="NPC Buff - Acumen Berserk DamageShield">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -959,7 +959,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
@@ -970,7 +970,7 @@
 				<mul stat="mDef" val="#mDef" />
 				<add stat="reflectDam" val="#reflect" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4637" levels="3" name="NPC Buff - Acumen WildMagic DamageShield">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -991,13 +991,13 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="mCritRate" val="#mCritRate" />
 				<add stat="reflectDam" val="#reflect" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4638" levels="3" name="NPC Clan Buff - Acumen Empower WildMagic">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -1019,13 +1019,13 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="mCritRate" val="#mCritRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4639" levels="3" name="NPC Clan Buff - Acumen Empower Berserk">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -1051,7 +1051,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
@@ -1061,7 +1061,7 @@
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mDef" val="#mDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4640" levels="12" name="Sleep">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1087,9 +1087,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
-		<for>
+		<effects>
 			<effect name="Sleep" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4641" levels="12" name="NPC Super Strike">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1105,11 +1105,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4642" levels="9" name="NPC Fast Spell Casting">
 		<table name="#magicLvl"> 20 40 60 70 75 80 85 90 95 </table>
@@ -1117,11 +1117,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4643" levels="12" name="Decrease Speed">
 		<table name="#abnormalLvls"> 1 2 2 3 3 3 3 3 3 3 3 3 </table>
@@ -1147,14 +1147,14 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="#runSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4644" levels="2" name="Area Buff - Haste">
 		<!-- Confirmed CT2.5 -->
@@ -1170,11 +1170,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4645" levels="3" name="Area Buff - Focus">
 		<!-- Confirmed CT2.5 -->
@@ -1190,11 +1190,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="#rCrit" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4646" levels="3" name="Area Buff - Death Whisper">
 		<!-- Confirmed CT2.5 -->
@@ -1210,11 +1210,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="#cAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4647" levels="3" name="Area Buff - Might">
 		<!-- Confirmed CT2.5 -->
@@ -1230,11 +1230,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4648" levels="3" name="Area Buff - Shield">
 		<!-- Confirmed CT2.5 -->
@@ -1250,11 +1250,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4649" levels="12" name="Poison">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
@@ -1279,11 +1279,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4650" levels="1" name="NPC AE - Dispel Hold">
 		<set name="affectRange" val="200" />
@@ -1295,11 +1295,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="ROOT_MAGICALLY,1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4651" levels="3" name="NPC AE - Dispel Slow">
 		<table name="#dispelAbnormals"> SPEED_DOWN,1 SPEED_DOWN,2 SPEED_DOWN,3 </table>
@@ -1315,11 +1315,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="#dispelAbnormals" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4652" levels="1" name="NPC AE - Dispel Silence">
 		<set name="affectRange" val="200" />
@@ -1331,11 +1331,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="SILENCE,1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4653" levels="12" name="NPC Corpse Life Drain">
 		<table name="#amount"> 131 201 271 351 451 551 651 691 731 751 771 781 </table>
@@ -1351,12 +1351,12 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CORPSE" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
 			<effect name="ConsumeBody" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4654" levels="12" name="NPC Death Link">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1373,11 +1373,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DeathLink">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4655" levels="12" name="NPC Death Link - Magic">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1393,11 +1393,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DeathLink">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4656" levels="12" name="NPC Death Link - Slow">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1413,11 +1413,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DeathLink">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4657" levels="12" name="Hold">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1446,13 +1446,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="HOLD" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.2" />
 			</effect>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4658" levels="12" name="Hold">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1480,13 +1480,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="HOLD" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.2" />
 			</effect>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4659" levels="12" name="Hold">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1514,13 +1514,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="HOLD" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.2" />
 			</effect>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4660" levels="12" name="Sleep">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1549,13 +1549,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.2" />
 			</effect>
 			<effect name="Sleep" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4661" levels="12" name="Sleep">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1583,13 +1583,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.2" />
 			</effect>
 			<effect name="Sleep" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4662" levels="12" name="Sleep">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1617,13 +1617,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.2" />
 			</effect>
 			<effect name="Sleep" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4663" levels="1" name="NPC Hate">
 		<set name="castRange" val="900" />
@@ -1633,11 +1633,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="TargetMeProbability">
 				<param chance="80" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4664" levels="12" name="NPC 100% HP Drain">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1658,12 +1658,12 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4665" levels="12" name="NPC 100% HP Drain - Magic">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1683,12 +1683,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4666" levels="12" name="NPC 100% HP Drain - Slow">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1708,12 +1708,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4667" levels="12" name="NPC Strong 100% HP Drain">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1734,12 +1734,12 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4668" levels="12" name="NPC Strong 100% HP Drain - Magic">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1759,12 +1759,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4669" levels="12" name="NPC Strong 100% HP Drain - Slow">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1784,12 +1784,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4670" levels="12" name="Short Stun">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1814,9 +1814,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4671" levels="1" name="AV - Teleport">
 		<set name="castRange" val="1500" />
@@ -1825,10 +1825,10 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="TeleportToTarget" />
 			<effect name="TargetMe" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4672" levels="1" name="NPC Corpse Remove">
 		<!-- TODO: Needs to be done -->
@@ -1854,11 +1854,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<param dispel="PA_UP;BERSERKER;MA_UP;ATTACK_TIME_DOWN;DANCE_OF_FURY;SONG_OF_HUNTER" rate="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4674" levels="12" name="NPC Dispel Defensive Buff">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1875,11 +1875,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<param dispel="PD_UP;MAX_HP_UP;SPEED_UP;CASTING_TIME_DOWN;SONG_OF_EARTH;DANCE_OF_FIRE" rate="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4675" levels="12" name="NPC Dispel Fighter Buff">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1896,11 +1896,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<param dispel="HIT_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;ATTACK_TIME_DOWN" rate="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4676" levels="12" name="NPC Dispel Mage Offensive Buff">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1917,11 +1917,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<param dispel="MA_UP;BERSERKER;CASTING_TIME_DOWN;MAX_MP_UP" rate="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4677" levels="12" name="NPC Dispel Fighter Defensive Buff">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1938,11 +1938,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<param dispel="MAX_HP_UP;SHIELD_PROB_UP;VAMPIRIC_ATTACK;MD_UP" rate="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4678" levels="12" name="NPC Dispel Mage Defensive Buff">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1959,11 +1959,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<param dispel="RESIST_DERANGEMENT;MAX_HP_UP;CANCEL_PROB_DOWN;SPEED_UP" rate="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4679" levels="1" name="Valakas">
 		<!-- Confirmed CT2.5 -->
@@ -1972,12 +1972,12 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param VALAKAS="-8" />
 			</effect>
 			<effect name="BlockDebuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4680" levels="1" name="Valakas Lava Skin">
 		<!-- Confirmed CT2.5 -->
@@ -1990,12 +1990,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="10" />
 				<mul stat="mDef" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4681" levels="1" name="Valakas Trample">
 		<!-- Confirmed CT2.5 -->
@@ -2015,12 +2015,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="VALAKAS" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="30416" />
 				<param criticalChance="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4682" levels="1" name="Valakas Trample">
 		<!-- Confirmed CT2.5 -->
@@ -2040,12 +2040,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="VALAKAS" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="30416" />
 				<param criticalChance="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4683" levels="1" name="Valakas Dragon Breath">
 		<!-- Confirmed CT2.5 -->
@@ -2072,14 +2072,14 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="648" />
 			</effect>
 			<effect name="DamOverTime" ticks="3">
 				<param power="216" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4684" levels="1" name="Valakas Dragon Breath">
 		<!-- Confirmed CT2.5 -->
@@ -2106,14 +2106,14 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="648" />
 			</effect>
 			<effect name="DamOverTime" ticks="3">
 				<param power="216" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4685" levels="1" name="Valakas Tail Stomp">
 		<!-- Confirmed CT2.5 -->
@@ -2130,12 +2130,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="BEHIND_AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="48391" />
 				<param criticalChance="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4686" levels="1" name="Valakas Tail Stomp">
 		<!-- Confirmed CT2.5 -->
@@ -2150,11 +2150,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="BEHIND_AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="157" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4687" levels="1" name="Valakas Tail Stomp">
 		<!-- Confirmed CT2.5 -->
@@ -2192,14 +2192,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="BEHIND_AURA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="27849" />
 				<param criticalChance="10" />
 			</effect>
 			<effect name="ThrowUp" />
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4689" levels="2" name="Valakas Fear">
 		<!-- Confirmed CT2.5 -->
@@ -2231,9 +2231,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AURA" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4690" levels="1" name="Valakas Meteor Storm">
 		<!-- Confirmed CT2.5 -->
@@ -2248,11 +2248,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="1084" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4691" levels="5" name="Valakas Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -2266,11 +2266,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regHp" val="#regHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4692" levels="1" name="Quest BOSS Big Body">
 		<set name="abnormalLvl" val="1" />
@@ -2283,9 +2283,9 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Grow" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4693" levels="1" name="Quest BOSS Dispel Big Body">
 		<!-- Confirmed CT2.5 -->
@@ -2295,11 +2295,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="BIG_BODY,1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4694" levels="1" name="Ultimate Debuff">
 		<set name="abnormalLvl" val="1" />
@@ -2311,7 +2311,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.55" />
 				<sub stat="accCombat" val="4" />
@@ -2321,7 +2321,7 @@
 				<mul stat="critRate" val="0.77" />
 				<mul stat="mDef" val="0.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4695" levels="1" name="Ultimate Debuff">
 		<set name="abnormalLvl" val="1" />
@@ -2333,11 +2333,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4696" levels="1" name="Ultimate Debuff">
 		<set name="abnormalLvl" val="1" />
@@ -2349,12 +2349,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.2" />
 				<mul stat="mDef" val="0.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4697" levels="12" name="NPC Monster Hate">
 		<!-- TODO: Needs to be done -->
@@ -2384,11 +2384,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regHp" val="#regHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4699" levels="13" name="Blessing of Queen">
 		<!-- Confirmed CT2.5 -->
@@ -2415,11 +2415,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="#rCrit" />
 				<mul stat="critDmg" val="#cAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

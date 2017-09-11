@@ -18,9 +18,9 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CORPSE_MOB" />
-		<for>
+		<effects>
 			<effect name="ConsumeBody" />
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.4" />
@@ -54,9 +54,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22102" levels="1" name="Soul Magic Box">
 		<!-- Confirmed CT2.5 -->
@@ -75,11 +75,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="20623" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22103" levels="1" name="Blessed Scroll of Escape (Event)">
 		<!-- Confirmed CT2.5 -->
@@ -100,11 +100,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22104" levels="1" name="Blessed Scroll of Resurrection (Event)">
 		<!-- Confirmed CT2.5 -->
@@ -123,11 +123,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22105" levels="1" name="Uldie Summon Scroll (Event)">
 		<!-- Confirmed CT2.5 -->
@@ -150,12 +150,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="20" />
 				<param randomOffset="40" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22106" levels="1" name="Belldandy Summon Scroll (Event)">
 		<!-- Confirmed CT2.5 -->
@@ -178,12 +178,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="21" />
 				<param randomOffset="40" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22107" levels="1" name="Skooldie Summon Scroll (Event)">
 		<!-- Confirmed CT2.5 -->
@@ -206,12 +206,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="19" />
 				<param randomOffset="40" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22108" levels="1" name="Halloween Toy Box">
 		<!-- Confirmed CT2.5 -->
@@ -231,9 +231,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22109" levels="1" name="Shiny Halloween Toy Box">
 		<!-- Confirmed CT2.5 -->
@@ -253,9 +253,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22110" levels="1" name="Lucky Sky Lantern Summon">
 		<!-- Confirmed CT2.5 -->
@@ -267,11 +267,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="22" npcCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22111" levels="1" name="Ambient Sky Lantern Summon">
 		<!-- Confirmed CT2.5 -->
@@ -283,11 +283,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="23" npcCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22112" levels="1" name="Sway Sky Lantern Summon">
 		<!-- Confirmed CT2.5 -->
@@ -299,11 +299,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="24" npcCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22113" levels="1" name="Comfort Sky Lantern Summon">
 		<!-- Confirmed CT2.5 -->
@@ -315,11 +315,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="25" npcCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22114" levels="1" name="Morph Scroll Box">
 		<!-- Confirmed CT2.5 -->
@@ -339,9 +339,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22115" levels="1" name="Santa's Weapon Exchange Ticket Box">
 		<!-- Confirmed CT2.5 -->
@@ -363,9 +363,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22116" levels="1" name="Summon Flames Box">
 		<!-- Confirmed CT2.5 -->
@@ -377,11 +377,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="29" npcCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22117" levels="1" name="Flames Box Firework">
 		<set name="icon" val="icon.skill0788" />
@@ -403,13 +403,13 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regCp" val="1.3" />
 				<mul stat="regHp" val="1.4" />
 				<mul stat="regMp" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22119" levels="1" name="Love for All Seasons">
 		<!-- Confirmed CT2.5 -->
@@ -425,12 +425,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.75" />
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22120" levels="1" name="Happy New Year">
 		<!-- Confirmed CT2.5 -->
@@ -446,13 +446,13 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="1.35" />
 				<mul stat="critRate" val="1.3" />
 				<add stat="accCombat" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22121" levels="1" name="Female Aniruddha">
 		<!-- Confirmed CT2.5 -->
@@ -468,13 +468,13 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mDef" val="1.3" />
 				<mul stat="pDef" val="1.15" />
 				<add stat="sDef" val="15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22122" levels="1" name="Kung Hei Fat Choy">
 		<!-- Confirmed CT2.5 -->
@@ -490,7 +490,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="mDef" val="0.84" />
@@ -502,7 +502,7 @@
 				<add stat="runSpd" val="8" />
 				<add stat="absorbDam" val="9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22123" levels="1" name="Chinese Feast">
 		<!-- Confirmed CT2.5 -->
@@ -518,7 +518,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="danceMpConsumeRate" val="0.8" />
 				<mul stat="magicalMpConsumeRate" val="0.8" />
@@ -526,7 +526,7 @@
 				<mul stat="maxHp" val="1.35" />
 				<mul stat="physicalMpConsumeRate" val="0.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22124" levels="1" name="Hwa Gei Bu Gwi">
 		<!-- Confirmed CT2.5 -->
@@ -542,12 +542,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="9000" />
 				<add stat="pAtkSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22125" levels="1" name="Fire Stamp">
 		<!-- Confirmed CT2.5 -->
@@ -563,13 +563,13 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.35" />
 				<add stat="rEvas" val="4" />
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22126" levels="1" name="Baby Food Skill">
 		<!-- TODO: Implement. -->
@@ -599,11 +599,11 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="127" npcCount="1" despawnDelay="7200" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22128" levels="3" name="Rudolph's Joy">
 		<!-- Confirmed CT2.5 -->
@@ -621,12 +621,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#AtkSpd" />
 				<mul stat="mAtkSpd" val="#AtkSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22129" levels="1" name="Red Dimensional Stone">
 		<!-- TODO: Implement. -->
@@ -669,12 +669,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="1" />
 				<add stat="waterRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22132" levels="1" name="Gold Firework Flames">
 		<!-- Confirmed CT2.5 -->
@@ -690,12 +690,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="CON" val="1" />
 				<add stat="holyRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22133" levels="1" name="Blue Firework Flames">
 		<!-- Confirmed CT2.5 -->
@@ -711,12 +711,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="DEX" val="1" />
 				<add stat="fireRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22134" levels="1" name="Pink Firework Flames">
 		<!-- Confirmed CT2.5 -->
@@ -732,12 +732,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="MEN" val="1" />
 				<add stat="earthRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22135" levels="1" name="White Firework Flames">
 		<!-- Confirmed CT2.5 -->
@@ -753,12 +753,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="WIT" val="1" />
 				<add stat="windRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22136" levels="1" name="Silver Firework Flames">
 		<!-- Confirmed CT2.5 -->
@@ -774,12 +774,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="1" />
 				<add stat="darkRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22137" levels="1" name="Star Food">
 		<!-- Confirmed CT2.5 -->
@@ -788,11 +788,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<param value="20000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22138" levels="1" name="Mango Dessert">
 		<!-- Confirmed CT2.5 -->
@@ -804,11 +804,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<param value="20000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22139" levels="1" name="Branding Wind Walk">
 		<!-- Confirmed CT2.5 -->
@@ -822,11 +822,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22140" levels="1" name="Hwa Gei Bu Gwi Haste">
 		<!-- Confirmed CT2.5 -->
@@ -840,11 +840,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22141" levels="1" name="Branding Agility">
 		<!-- Confirmed CT2.5 -->
@@ -858,11 +858,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22142" levels="1" name="Female Aniruddha's Shield">
 		<!-- Confirmed CT2.5 -->
@@ -876,11 +876,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22143" levels="1" name="Happy New Year Death Whisper">
 		<!-- Confirmed CT2.5 -->
@@ -894,11 +894,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22144" levels="1" name="Happy New Year Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -912,11 +912,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22145" levels="1" name="Love for All Seasons Empower">
 		<!-- Confirmed CT2.5 -->
@@ -930,11 +930,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.75" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22146" levels="1" name="Chinese Feast Greater Acumen">
 		<!-- Confirmed CT2.5 -->
@@ -948,11 +948,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22147" levels="1" name="Kung Hei Fat Choy Vampiric Rage">
 		<!-- Confirmed CT2.5 -->
@@ -966,11 +966,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="absorbDam" val="9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22148" levels="1" name="Branding Blessed Body">
 		<!-- Confirmed CT2.5 -->
@@ -984,11 +984,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22149" levels="1" name="Kung Hei Fat Choy Berserker Spirit">
 		<!-- Confirmed CT2.5 -->
@@ -1002,7 +1002,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="mDef" val="0.84" />
@@ -1012,7 +1012,7 @@
 				<sub stat="rEvas" val="4" />
 				<add stat="runSpd" val="8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22150" levels="1" name="Female Aniruddha's Magic Barrier">
 		<!-- Confirmed CT2.5 -->
@@ -1026,11 +1026,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mDef" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22151" levels="1" name="Chinese Feast Blessed Soul">
 		<!-- Confirmed CT2.5 -->
@@ -1044,11 +1044,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22152" levels="1" name="Chinese Feast Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -1062,13 +1062,13 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="danceMpConsumeRate" val="0.8" />
 				<mul stat="magicalMpConsumeRate" val="0.9" />
 				<mul stat="physicalMpConsumeRate" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22153" levels="1" name="Love for All Seasons Wild Magic">
 		<!-- Confirmed CT2.5 -->
@@ -1082,11 +1082,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22154" levels="1" name="Happy New Year Focus">
 		<!-- Confirmed CT2.5 -->
@@ -1100,11 +1100,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22155" levels="1" name="Female Aniruddha's Blessed Shield">
 		<!-- Confirmed CT2.5 -->
@@ -1118,11 +1118,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rShld" val="15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22156" levels="1" name="Hwa Gei Bu Gwi Decrease Weight">
 		<!-- Confirmed CT2.5 -->
@@ -1136,11 +1136,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="9000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22157" levels="1" name="Kung Hei Fat Choy Might">
 		<!-- Confirmed CT2.5 -->
@@ -1154,11 +1154,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22158" levels="10" name="Rose Petal">
 		<!-- Confirmed CT2.5 -->
@@ -1177,12 +1177,12 @@
 		<set name="operateType" val="A4" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.2" />
 				<mul stat="regMp" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22159" levels="1" name="Vesper Super Power">
 		<!-- Increases P. Atk. by 15%, M. Atk. by 20% and Speed by 10 for 10 minutes. -->
@@ -1201,13 +1201,13 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 				<mul stat="mAtk" val="1.15" />
 				<add stat="runSpd" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22160" levels="1" name="Vesper Critical Power">
 		<!-- Increases Physical critical attack rate by 15, Magical critical attack rate by 2 and Speed by 10 for 10 minutes. 5% of the standard short-range physical damage inflicted on the enemy is recovered as HP. -->
@@ -1226,14 +1226,14 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critRate" val="15" />
 				<add stat="mCritRate" val="2" />
 				<add stat="runSpd" val="10" />
 				<add stat="absorbDam" val="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22161" levels="1" name="Invincible Vesper">
 		<!-- Increases Atk. Spd. by 20%, Casting Spd. by 20% and Speed by 20 for 10 minutes. -->
@@ -1252,13 +1252,13 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="runSpd" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22162" levels="1" name="Mt. Fuji Herb">
 		<!-- Confirmed CT2.5 -->
@@ -1277,11 +1277,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22163" levels="1" name="Hawk Herb">
 		<!-- Confirmed CT2.5 -->
@@ -1299,12 +1299,12 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.15" />
 				<mul stat="critRate" val="1.1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22164" levels="1" name="Eggplant Herb">
 		<!-- Confirmed CT2.5 -->
@@ -1322,12 +1322,12 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.1" />
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22165" levels="1" name="Energy Replenish">
 		<!-- 5000 Soul Avatar Energy is replenished. -->
@@ -1369,9 +1369,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22168" levels="1" name="Thirst Quencher">
 		<!-- Replenishes an Agathion's energy by 2500 -->
@@ -1404,9 +1404,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22170" levels="1" name="Hardin's Protection">
 		<!-- Maximies P. Def. for 10 seconds. -->
@@ -1497,11 +1497,11 @@
 		<cond>
 			<player hp="30" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="CallSkill">
 				<param skillId="23214" skillLevel="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22176" levels="1" name="Rune of Spirit">
 		<!-- Confirmed CT2.5 -->
@@ -1512,11 +1512,11 @@
 		<cond>
 			<player mp="10" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="CallSkill">
 				<param skillId="23215" skillLevel="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22177" levels="1" name="Warrior's Breath">
 		<set name="blockedInOlympiad" val="true" />
@@ -1541,14 +1541,14 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="500" />
 			</effect>
 			<effect name="ManaHeal">
 				<param power="200" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22179" levels="1" name="Fortuna of Chaos">
 		<!-- Confirmed CT2.5 -->
@@ -1571,9 +1571,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22180" levels="1" name="Wondrous Cubic - 1 time use">
 		<!-- High Five Skill -->
@@ -1592,9 +1592,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22181" levels="1" name="Refined Cubic - 1 time use">
 		<!-- none -->
@@ -1611,11 +1611,11 @@
 		<set name="stayAfterDeath" val="true" />
 		<set name="stayOnSubclassChange" val="false" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22183" levels="1" name="Dragon Master Lee Transformation Scroll">
 		<!-- High Five Skill -->
@@ -1625,11 +1625,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="20005" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22184" levels="1" name="Dragon Master Karin Transformation Scroll">
 		<!-- High Five Skill -->
@@ -1639,11 +1639,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="20006" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22185" levels="1" name="Shiny Lighting">
 		<!-- Lighting shines brightly above the character's head. -->
@@ -1682,11 +1682,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="127" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22191" levels="1" name="Transformation Scroll - Onyx Beast Event">
 		<!-- Transformed into an Onyx Beast. -->
@@ -1706,11 +1706,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22192" levels="1" name="Transformation Scroll - Death Blader Event">
 		<!-- Transformed into a Death Blader. -->
@@ -1730,11 +1730,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22193" levels="1" name="Transformation Scroll - Grail Apostle Event">
 		<!-- Transformed into a Grail Apostle. -->
@@ -1754,11 +1754,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="202" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22194" levels="1" name="Transformation Scroll - Unicorn Event">
 		<!-- Transformed into a Unicorn. -->
@@ -1778,11 +1778,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="205" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22195" levels="1" name="Transformation Scroll - Lilim Knight Event">
 		<!-- Transformed into a Lilim Knight. -->
@@ -1802,11 +1802,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="208" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22196" levels="1" name="Transformation Scroll - Golem Guardian Event">
 		<!-- Transformed into a Golem Guardian. -->
@@ -1826,11 +1826,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="211" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22197" levels="1" name="Transformation Scroll - Inferno Drake Event">
 		<!-- Transformed into an Inferno Drake. -->
@@ -1850,11 +1850,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="214" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22198" levels="1" name="Transformation Scroll - Dragon Bomber Event">
 		<!-- Transformed into a Dragon Bomber. -->
@@ -1874,11 +1874,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="217" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22199" levels="1" name="Transformation Scroll - Heretic Event">
 		<!-- Transformed into a Heretic. -->
@@ -1898,10 +1898,10 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

@@ -298,11 +298,11 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5827" levels="6" name="Fireball">
 		<table name="#magicLvl"> 75 77 79 81 83 85 </table>
@@ -325,11 +325,11 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5828" levels="6" name="Unholy Flare">
 		<table name="#effectPoints"> -659 -666 -673 -681 -684 -689 </table>
@@ -351,11 +351,11 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5829" levels="6" name="Fire Flare">
 		<table name="#effectPoints"> -659 -666 -673 -681 -684 -689 </table>
@@ -377,11 +377,11 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5830" levels="1" name="Polearm Thrust">
 		<set name="castRange" val="150" />
@@ -394,11 +394,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4640" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5831" levels="1" name="Polearm Swing">
 		<set name="affectRange" val="150" />
@@ -412,14 +412,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4640" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="70" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5832" levels="1" name="Hate Aura">
 		<!-- Confirmed CT2.5 -->
@@ -441,9 +441,9 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="TargetMe" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5833" levels="1" name="Shield">
 		<set name="abnormalLvl" val="3" />
@@ -462,11 +462,11 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5834" levels="1" name="Magic Barrier">
 		<set name="abnormalLvl" val="3" />
@@ -485,11 +485,11 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mDef" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5835" levels="1" name="Major Heal">
 		<set name="castRange" val="600" />
@@ -504,11 +504,11 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN_MEMBER" />
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5836" levels="1" name="Greater Heal">
 		<set name="abnormalLvl" val="5" />
@@ -528,14 +528,14 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<param power="270" />
 			</effect>
 			<effect name="HealPercent">
 				<param power="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5837" levels="1" name="Double Throwing Javelin">
 		<set name="castRange" val="900" />
@@ -548,11 +548,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4640" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5838" levels="1" name="Throwing Javelin">
 		<set name="castRange" val="900" />
@@ -565,11 +565,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4640" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5839" levels="1" name="Breath">
 		<!-- Confirmed CT2.5 -->
@@ -588,11 +588,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="183" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5840" levels="1" name="Fire Breath">
 		<!-- Confirmed CT2.5 -->
@@ -613,11 +613,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="244" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5841" levels="1" name="Multi Defense">
 		<!-- Confirmed CT2.5 -->
@@ -636,12 +636,12 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
 				<mul stat="mDef" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5842" levels="1" name="Spinning Slasher">
 		<!-- Confirmed CT2.5 -->
@@ -657,11 +657,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="17400" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5843" levels="1" name="Terror">
 		<!-- Confirmed CT2.5 -->
@@ -687,9 +687,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5844" levels="1" name="Thunder Storm">
 		<!-- Confirmed CT2.5 -->
@@ -706,11 +706,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="834" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5845" levels="12" name="NPC Trigger Bleed">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -718,7 +718,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -727,7 +727,7 @@
 				<param targetType="ONE" />
 				<param allowWeapons="ALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5846" levels="12" name="Bleed">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
@@ -751,11 +751,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5847" levels="1" name="Flip Nearby Blocks">
 		<set name="affectLimit" val="10-10" />
@@ -791,11 +791,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5850" levels="1" name="Block Trigger Stun">
 		<set name="magicLvl" val="80" />
@@ -822,12 +822,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="Stun" />
 			<effect name="TargetCancel">
 				<param chance="80" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5852" levels="1" name="Flip Block">
 		<!-- CT2.5 retail confirmed -->
@@ -898,11 +898,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="117" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5857" levels="1" name="Transform Lure Tow">
 		<!-- Confirmed CT2.5 -->
@@ -919,11 +919,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="118" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5858" levels="1" name="Transform Heavy Tow">
 		<!-- Confirmed CT2.5 -->
@@ -940,11 +940,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="119" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5859" levels="1" name="Transform Wing Tow">
 		<!-- Confirmed CT2.5 -->
@@ -961,11 +961,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="120" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5860" levels="1" name="Wrath of Valakas">
 		<set name="abnormalLvl" val="1" />
@@ -1280,14 +1280,14 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpByLevel">
 				<param power="73" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="mAtkSpd" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5879" levels="1" name="Cruel Expunge">
 		<set name="abnormalLvl" val="9" />
@@ -1310,11 +1310,11 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="145" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5880" levels="2" name="Vicious Mutilation">
 		<set name="abnormalLvl" val="3" />
@@ -1374,12 +1374,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="873" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5883" levels="1" name="Meggling Injury">
 		<set name="abnormalLvl" val="9" />
@@ -1402,11 +1402,11 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="145" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5884" levels="2" name="Weakened Sweep">
 		<!-- Confirmed CT2.5 -->
@@ -1434,12 +1434,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="1" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Disarm" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5885" levels="2" name="Weakened Sweep">
 		<!-- Confirmed CT2.5 -->
@@ -1469,12 +1469,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5886" levels="1" name="Ground Shaker">
 		<set name="abnormalLvl" val="3" />
@@ -1496,12 +1496,12 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<sub stat="rEvas" val="10" />
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5887" levels="1" name="Howl from Beyond">
 		<set name="abnormalLvl" val="1" />
@@ -1546,11 +1546,11 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="TargetCancel">
 				<param chance="80" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5889" levels="3" name="Tainted Shackle">
 		<set name="abnormalLvl" val="1" />
@@ -1620,11 +1620,11 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Bluff">
 				<param chance="80" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5893" levels="1" name="Ritual of Cannibalism">
 		<set name="effectPoint" val="100" />
@@ -1655,7 +1655,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.8" />
 				<mul stat="mDef" val="0.8" />
@@ -1669,7 +1669,7 @@
 				<mul stat="critDmg" val="1.2" />
 				<mul stat="critRate" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5895" levels="1" name="Mark of Cowardice">
 		<set name="abnormalLvl" val="1" />
@@ -1691,7 +1691,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.8" />
 				<mul stat="mDef" val="0.8" />
@@ -1700,7 +1700,7 @@
 				<mul stat="regHp" val="0.1" />
 				<mul stat="runSpd" val="1.25" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5896" levels="2" name="Soulless">
 		<table name="#hitTime"> 2000 22940 </table>
@@ -1735,14 +1735,14 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<sub stat="rEvas" val="5" />
 				<mul stat="runSpd" val="0.9" />
 				<mul stat="pDef" val="0.9" />
 				<mul stat="mDef" val="0.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5898" levels="2" name="Blast of Anger">
 		<table name="#hitTime"> 2000 22940 </table>
@@ -1766,14 +1766,14 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<sub stat="rEvas" val="10" />
 				<mul stat="runSpd" val="0.8" />
 				<mul stat="pDef" val="0.8" />
 				<mul stat="mDef" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5899" levels="2" name="Burst of Pain">
 		<table name="#hitTime"> 2000 22940 </table>
@@ -1789,10 +1789,10 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="3000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

@@ -9,11 +9,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="3">
 				<param power="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2002" levels="1" name="Healing Drug">
 		<set name="abnormalLvl" val="1" />
@@ -24,11 +24,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="3">
 				<param power="1.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2003" levels="1" name="Squash Seed">
 		<!-- Confirmed CT2.5 -->
@@ -42,11 +42,11 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="12774" npcCount="1" despawnDelay="180000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2004" levels="1" name="Large Squash Seed">
 		<!-- Confirmed CT2.5 -->
@@ -60,11 +60,11 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="12777" npcCount="1" despawnDelay="180000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2005" levels="1" name="Nectar">
 		<!-- Confirmed CT2.5 -->
@@ -118,11 +118,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2011" levels="1" name="Haste Potion">
 		<set name="abnormalLvl" val="1" />
@@ -134,11 +134,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2012" levels="1" name="Potion of Alacrity">
 		<set name="abnormalLvl" val="1" />
@@ -150,11 +150,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2013" levels="1" name="Scroll Of Escape">
 		<!-- Confirmed CT2.5 -->
@@ -174,11 +174,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2014" levels="1" name="Scroll Of Resurrection">
 		<set name="castRange" val="400" />
@@ -195,9 +195,9 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2015" levels="1" name="Scroll: Enchant Weapon (Grade B)">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -335,11 +335,11 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="3">
 				<param power="8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2032" levels="1" name="Healing potion">
 		<set name="abnormalLvl" val="2" />
@@ -352,11 +352,11 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="3">
 				<param power="24" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2033" levels="1" name="Item - Beast Soul Shot">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -375,11 +375,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2035" levels="1" name="Greater Swift Attack Potion">
 		<set name="abnormalLvl" val="2" />
@@ -391,11 +391,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2036" levels="2" name="Blessed Scroll of Escape">
 		<!-- Confirmed CT2.5 -->
@@ -416,11 +416,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2037" levels="1" name="Greater Healing Potion">
 		<set name="abnormalLvl" val="3" />
@@ -433,11 +433,11 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="3">
 				<param power="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2038" levels="1" name="Quick Healing Potion">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -445,11 +445,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="435" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2039" levels="1" name="Soulshot: No Grade">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -476,11 +476,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="CLANHALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2041" levels="1" name="Scroll of Escape: Castle">
 		<!-- Confirmed CT2.5 -->
@@ -500,11 +500,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="CASTLE" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2042" levels="1" name="Antidote">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -512,11 +512,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="POISON,3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2043" levels="1" name="Greater Antidote">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -524,11 +524,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="POISON,7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2044" levels="1" name="Bandage">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -536,11 +536,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="BLEEDING,3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2045" levels="1" name="Emergency Dressing">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -548,11 +548,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="BLEEDING,7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2046" levels="2" name="Wolf's Necklace">
 		<set name="hitTime" val="5000" />
@@ -561,9 +561,9 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonPet" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2047" levels="1" name="Spiritshot: No Grade">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -596,11 +596,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2050" levels="1" name="Scroll of Guidance">
 		<set name="abnormalLvl" val="4" />
@@ -615,11 +615,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2051" levels="1" name="Scroll of Death Whisper">
 		<set name="abnormalLvl" val="4" />
@@ -634,11 +634,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2052" levels="1" name="Scroll of Focus">
 		<set name="abnormalLvl" val="4" />
@@ -653,11 +653,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2053" levels="1" name="Scroll of Greater Acumen">
 		<set name="abnormalLvl" val="4" />
@@ -672,11 +672,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2054" levels="1" name="Scroll of Haste">
 		<set name="abnormalLvl" val="3" />
@@ -691,11 +691,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2055" levels="1" name="Scroll of Agility">
 		<set name="abnormalLvl" val="4" />
@@ -710,11 +710,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2056" levels="1" name="Scroll of Mystic Empower">
 		<set name="abnormalLvl" val="4" />
@@ -729,11 +729,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.75" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2057" levels="1" name="Scroll of Might">
 		<set name="abnormalLvl" val="4" />
@@ -748,11 +748,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2058" levels="1" name="Scroll of Wind Walk">
 		<set name="abnormalLvl" val="3" />
@@ -767,11 +767,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2059" levels="1" name="Scroll of Shield">
 		<set name="abnormalLvl" val="4" />
@@ -786,11 +786,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2060" levels="1" name="Healing Medicine">
 		<!-- Confirmed CT2.5 -->
@@ -799,11 +799,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="FATAL_POISON,1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2061" levels="1" name="Blessed Spiritshot: No Grade">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -827,11 +827,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2063" levels="1" name="Hatchling Food">
 		<!-- Confirmed CT2.5 -->
@@ -855,11 +855,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="regMp" val="1.82" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2065" levels="8" name="Box Key">
 		<table name="#effectPoints"> -1 -2 -3 -4 -5 -6 -7 -8 </table>
@@ -875,9 +875,9 @@
 		<cond msgId="109">
 			<target npcType="L2ChestInstance" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenChest" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2066" levels="1" name="Item - Theme Sound Crystal">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -951,12 +951,12 @@
 		<set name="operateType" val="A3" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="RandomizeHate" />
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2075" levels="1" name="Decrease Hate Scroll">
 		<set name="castRange" val="600" />
@@ -966,11 +966,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DeleteHateOfMe">
 				<param chance="70" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2076" levels="1" name="Bless of Eva">
 		<set name="abnormalLvl" val="2" />
@@ -982,11 +982,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="breath" val="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2077" levels="1" name="Potion of Revenge">
 		<!-- Confirmed CT2.5 -->
@@ -999,12 +999,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="0.83" />
 				<add stat="reflectDam" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2078" levels="1" name="Compressed Package of Soulshots: No Grade">
 		<!-- Confirmed CT2.5 -->
@@ -1019,11 +1019,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="1835" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2079" levels="1" name="Compressed Package of Soulshots: D-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1038,11 +1038,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="1463" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2080" levels="1" name="Compressed Package of Soulshots: C-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1057,11 +1057,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="1464" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2081" levels="1" name="Compressed Package of Soulshots: B-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1076,11 +1076,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="1465" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2082" levels="1" name="Compressed Package of Soulshots: A-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1095,11 +1095,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="1466" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2083" levels="1" name="Compressed Package of Soulshots: S-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1114,11 +1114,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="1467" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2084" levels="1" name="Compressed Package of Spiritshots: No Grade">
 		<!-- Confirmed CT2.5 -->
@@ -1133,11 +1133,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="2509" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2085" levels="1" name="Compressed Package of Spiritshots: D-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1152,11 +1152,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="2510" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2086" levels="1" name="Compressed Package of Spiritshots: C-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1171,11 +1171,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="2511" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2087" levels="1" name="Compressed Package of Spiritshots: B-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1190,11 +1190,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="2512" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2088" levels="1" name="Compressed Package of Spiritshots: A-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1209,11 +1209,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="2513" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2089" levels="1" name="Compressed Package of Spiritshots: S-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1228,11 +1228,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="2514" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2090" levels="1" name="Compressed Package of Blessed Spiritshots: No Grade">
 		<!-- Confirmed CT2.5 -->
@@ -1247,11 +1247,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="3947" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2091" levels="1" name="Compressed Package of Blessed Spiritshots: D-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1266,11 +1266,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="3948" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2092" levels="1" name="Compressed Package of Blessed Spiritshots: C-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1285,11 +1285,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="3949" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2093" levels="1" name="Compressed Package of Blessed Spiritshots: B-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1304,11 +1304,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="3950" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2094" levels="1" name="Compressed Package of Blessed Spiritshots: A-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1323,11 +1323,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="3951" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2095" levels="1" name="Compressed Package of Blessed Spiritshots: S-grade">
 		<!-- Confirmed CT2.5 -->
@@ -1342,11 +1342,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="3952" itemCount="300" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2096" levels="1" name="Soul Crystal">
 		<set name="castRange" val="300" />
@@ -1375,9 +1375,9 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Sow" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2098" levels="1" name="Harvesting">
 		<!-- Confirmed CT2.5 -->
@@ -1391,9 +1391,9 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CORPSE_MOB" />
-		<for>
+		<effects>
 			<effect name="Harvesting" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2099" levels="1" name="Escape: 5 minutes">
 		<set name="blockedInOlympiad" val="true" />
@@ -1411,10 +1411,10 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

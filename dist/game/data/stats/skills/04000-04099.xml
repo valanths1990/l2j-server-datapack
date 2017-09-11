@@ -19,11 +19,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4002" levels="12" name="NPC HP Drain">
 		<!-- Freya retail confirmed -->
@@ -43,88 +43,88 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4003" levels="1" name="Golem Body">
 		<!-- Freya retail confirmed -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BOW="70" />
 				<param DAGGER="30" />
 				<param BLUNT="-10" />
 				<param DUALDAGGER="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4004" levels="1" name="Fragile Skull">
 		<!-- Freya retail confirmed -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLUNT="-10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4005" levels="1" name="Floating Target">
 		<!-- Freya retail confirmed -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="windRes" val="15" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param BOW="-10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4006" levels="1" name="Blazing Log">
 		<!-- Freya retail confirmed -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="fireRes" val="15" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param POISON="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4007" levels="1" name="Immortal Life">
 		<!-- Freya retail confirmed -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyRes" val="20" />
 				<sub stat="darkPower" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4008" levels="1" name="Insect Skin">
 		<!-- Freya retail confirmed -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="fireRes" val="15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4009" levels="5" name="Resist Fire">
 		<!-- Confirmed CT2.5 -->
@@ -189,11 +189,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="271" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4018" levels="1" name="Decrease Speed">
 		<!-- Confirmed CT2.5 -->
@@ -215,14 +215,14 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="542" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4019" levels="1" name="Decrease Speed">
 		<!-- Confirmed CT2.5 -->
@@ -245,12 +245,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<param power="30" />
 				<mul stat="runSpd" val="0.7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4020" levels="1" name="Heal Queen Ant1">
 		<!-- Confirmed CT2.5 -->
@@ -263,11 +263,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="10846" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4021" levels="1" name="Queen Ant">
 		<!-- Confirmed CT2.5 -->
@@ -276,11 +276,11 @@
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BOW="80" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4022" levels="1" name="Body Of Nurse Ant">
 		<!-- Confirmer CT2.5 -->
@@ -307,11 +307,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="10846" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4025" levels="12" name="Master Recharge">
 		<!-- Freya retail confirmed -->
@@ -330,11 +330,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="OWNER_PET" />
-		<for>
+		<effects>
 			<effect name="ManaHealByLevel">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4026" levels="1" name="Gludio Flame">
 		<!-- Freya retail confirmed -->
@@ -352,11 +352,11 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="43" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4027" levels="1" name="Gludio Heal">
 		<!-- Freya retail confirmed -->
@@ -371,11 +371,11 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="628" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4028" levels="3" name="NPC Might">
 		<!-- Freya retail confirmed -->
@@ -395,11 +395,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Grow">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4029" levels="3" name="NPC Shield">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -417,11 +417,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4030" levels="3" name="NPC Clan Might">
 		<!-- Freya retail confirmed -->
@@ -443,11 +443,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4031" levels="3" name="NPC Clan Aegis">
 		<!-- Freya retail confirmed -->
@@ -470,11 +470,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4032" levels="12" name="NPC Strike">
 		<!-- Freya retail confirmed -->
@@ -492,11 +492,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4033" levels="12" name="NPC Burn">
 		<!-- Freya retail confirmed -->
@@ -513,11 +513,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4034" levels="12" name="Decrease Speed">
 		<!-- Freya retail confirmed -->
@@ -544,14 +544,14 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4035" levels="12" name="Poison">
 		<!-- Freya retail confirmed -->
@@ -580,11 +580,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<param power="#dmg" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4036" levels="12" name="Poison">
 		<!-- Freya retail confirmed -->
@@ -614,11 +614,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<param power="#dmg" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4037" levels="3" name="Decrease P.Atk">
 		<!-- Freya retail confirmed -->
@@ -645,11 +645,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4038" levels="5" name="Decrease Atk.Spd.">
 		<!-- Freya retail confirmed -->
@@ -677,11 +677,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4039" levels="12" name="NPC MP Drain">
 		<!-- Freya retail confirmed -->
@@ -699,11 +699,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4040" levels="12" name="NPC Bow Attack">
 		<!-- Freya retail confirmed -->
@@ -720,11 +720,11 @@
 		<set name="reuseDelay" val="17000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4041" levels="2" name="Cruma Blaze">
 		<!-- Freya retail confirmed -->
@@ -743,11 +743,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4042" levels="1" name="Nurka Blaze">
 		<!-- Freya retail confirmed -->
@@ -763,11 +763,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="60" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4043" levels="1" name="Partisan Flame">
 		<!-- Freya retail confirmed -->
@@ -785,11 +785,11 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4044" levels="1" name="Partisan Heal">
 		<!-- Freya retail confirmed -->
@@ -804,18 +804,18 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="427" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4045" levels="1" name="Resist Full Magic Attack">
 		<!-- Freya retail confirmed -->
 		<set name="magicLvl" val="50" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="100" />
 				<param SLEEP="100" />
@@ -825,7 +825,7 @@
 				<param BOSS="100" />
 				<param PHYSICAL_BLOCKADE="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4046" levels="12" name="Sleep">
 		<!-- Freya retail confirmed -->
@@ -852,9 +852,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
-		<for>
+		<effects>
 			<effect name="Sleep" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4047" levels="12" name="Hold">
 		<!-- Freya retail confirmed -->
@@ -883,9 +883,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="HOLD" />
-		<for>
+		<effects>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4048" levels="3" name="NPC Dash">
 		<!-- Freya retail confirmed -->
@@ -900,11 +900,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="runSpd" val="#runSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4049" levels="16" name="Cubic Drain">
 		<!-- Cubic Skill -->
@@ -917,11 +917,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4050" levels="16" name="Cubic DD">
 		<!-- Cubic Skill -->
@@ -935,12 +935,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4051" levels="20" name="Cubic Heal">
 		<!-- Cubic Skill -->
@@ -957,11 +957,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4052" levels="15" name="Poison">
 		<!-- Cubic Skill -->
@@ -985,11 +985,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4053" levels="16" name="Decrease P.Atk">
 		<!-- Cubic Skill -->
@@ -1010,11 +1010,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.77" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4054" levels="16" name="Decrease P. Def">
 		<!-- Cubic Skill -->
@@ -1035,11 +1035,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.77" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4055" levels="16" name="Decrease Atk.Speed">
 		<!-- Cubic Skill -->
@@ -1060,11 +1060,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.77" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4056" levels="1" name="Immortal Attack">
 		<!-- Freya retail confirmed -->
@@ -1077,55 +1077,55 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BUG_WEAKNESS="-15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4058" levels="1" name="Plant Weak Point">
 		<!-- Freya retail confirmed -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param ANIMAL_WEAKNESS="-15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4059" levels="1" name="Animal Weak Point">
 		<!-- Freya retail confirmed -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PLANT_WEAKNESS="-15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4060" levels="1" name="Beast Weak Point">
 		<!-- Freya retail confirmed -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BEAST_WEAKNESS="-15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4061" levels="1" name="Dragon Weak Point">
 		<!-- Freya retail confirmed -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DRAGON_WEAKNESS="-15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4062" levels="1" name="Orfen">
 		<!-- Confirmed CT2.5 -->
@@ -1134,11 +1134,11 @@
 		<set name="magicLvl" val="50" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BOW="80" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4063" levels="1" name="Paralysis">
 		<!-- Confirmed CT2.5 -->
@@ -1160,12 +1160,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="916" />
 			</effect>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4064" levels="1" name="Paralysis">
 		<!-- Confirmed CT2.5 -->
@@ -1188,9 +1188,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4065" levels="12" name="NPC Heal">
 		<!-- Freya retail confirmed -->
@@ -1210,11 +1210,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4066" levels="12" name="NPC Twister">
 		<!-- Freya retail confirmed -->
@@ -1234,11 +1234,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4067" levels="12" name="NPC Mortal Blow">
 		<!-- Freya retail confirmed -->
@@ -1256,12 +1256,12 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param blowChance="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4068" levels="12" name="Mechanical Cannon">
 		<!-- Freya retail confirmed -->
@@ -1279,11 +1279,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4069" levels="12" name="NPC Curve Beam Cannon">
 		<!-- Freya retail confirmed -->
@@ -1301,11 +1301,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4070" levels="1" name="Decrease Atk. Spd.">
 		<!-- Confirmed CT2.5 -->
@@ -1323,11 +1323,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.77" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4071" levels="5" name="Resist Archery">
 		<table name="#icons"> icon.skill4071 icon.skill4071 icon.skill4071 icon.skill4272 icon.skill4272 </table>
@@ -1336,12 +1336,12 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BOW="#traits" />
 				<param CROSSBOW="#traits" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4072" levels="12" name="Shock">
 		<!-- Freya retail confirmed -->
@@ -1368,12 +1368,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4073" levels="12" name="Shock">
 		<!-- Freya retail confirmed -->
@@ -1400,12 +1400,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4074" levels="2" name="NPC Haste">
 		<!-- Freya retail confirmed -->
@@ -1428,11 +1428,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4075" levels="12" name="Shock">
 		<!-- Freya retail confirmed -->
@@ -1459,9 +1459,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4076" levels="3" name="Reduction in movement speed">
 		<!-- Freya retail confirmed -->
@@ -1488,11 +1488,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="#runSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4077" levels="12" name="NPC Aura Burn">
 		<!-- Freya retail confirmed -->
@@ -1512,11 +1512,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4078" levels="12" name="NPC Flamestrike">
 		<!-- Freya retail confirmed -->
@@ -1537,11 +1537,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4079" levels="1" name="Siege Hammer">
 		<!-- Confirmed CT2.5 -->
@@ -1554,11 +1554,11 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="665060" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4080" levels="1" name="Dark Heal">
 		<!-- Freya retail confirmed -->
@@ -1572,11 +1572,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="628" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4081" levels="1" name="Pretending to steal">
 		<!-- Freya retail confirmed -->
@@ -1608,12 +1608,12 @@
 		<set name="reuseDelay" val="50" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<param canKill="true" power="30" />
 			</effect>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4083" levels="1" name="Die! You fool!">
 		<!-- Confirmed CT2.5 -->
@@ -1627,11 +1627,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="90000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4084" levels="11" name="Resist Physical Attack">
 		<!-- Freya retail confirmed -->
@@ -1640,11 +1640,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4085" levels="1" name="Critical Power">
 		<!-- Freya retail confirmed -->
@@ -1652,11 +1652,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="1.25" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4086" levels="1" name="Critical Chance">
 		<!-- Freya retail confirmed -->
@@ -1664,11 +1664,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="1.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4087" levels="12" name="NPC Blaze">
 		<!-- Freya retail confirmed -->
@@ -1688,11 +1688,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4088" levels="12" name="Bleed">
 		<!-- Freya retail confirmed -->
@@ -1722,11 +1722,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<param power="#damage" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4089" levels="1" name="NPC Bear Spirit Totem">
 		<!-- Freya retail confirmed -->
@@ -1741,12 +1741,12 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="runSpd" val="0.85" />
 				<mul stat="pAtk" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4090" levels="1" name="NPC Wolf Spirit Totem">
 		<!-- Freya retail confirmed -->
@@ -1761,11 +1761,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="runSpd" val="1.4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4091" levels="3" name="NPC Ogre Spirit Totem">
 		<!-- Confirmed CT2.5 -->
@@ -1789,7 +1789,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Grow">
 				<mul stat="runSpd" val="#runSpd" />
 				<mul stat="pAtk" val="#pAtk" />
@@ -1802,7 +1802,7 @@
 				<param type="PER" />
 				<param heal="true" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4092" levels="1" name="NPC Puma Spirit Totem">
 		<!-- Freya retail confirmed -->
@@ -1817,13 +1817,13 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.3" />
 				<add stat="rEvas" val="4" />
 				<mul stat="pDef" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4093" levels="1" name="Evasion">
 		<!-- Freya retail confirmed -->
@@ -1831,11 +1831,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4094" levels="12" name="NPC Cancel Magic">
 		<!-- Confirmed CT2.5 -->
@@ -1853,9 +1853,9 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DispelAll" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4095" levels="1" name="Damage Shield">
 		<!-- Freya retail confirmed -->
@@ -1863,11 +1863,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="reflectDam" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4096" levels="3" name="NPC Hawkeye">
 		<!-- Freya retail confirmed -->
@@ -1886,12 +1886,12 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="#accCombat" />
 				<mul stat="pDef" val="0.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4097" levels="12" name="NPC Chant of Life">
 		<!-- Freya retail confirmed -->
@@ -1914,11 +1914,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4098" levels="12" name="Magic Skill Block">
 		<!-- Freya retail confirmed -->
@@ -1945,9 +1945,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4099" levels="2" name="NPC Berserk">
 		<!-- Freya retail confirmed -->
@@ -1977,7 +1977,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
@@ -1988,6 +1988,6 @@
 				<mul stat="mDef" val="#mDef" />
 				<sub stat="rEvas" val="#rEvas" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

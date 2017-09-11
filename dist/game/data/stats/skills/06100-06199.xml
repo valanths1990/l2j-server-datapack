@@ -198,7 +198,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.1" />
 				<mul stat="maxMp" val="1.1" />
@@ -210,7 +210,7 @@
 				<mul stat="critDmg" val="1.15" />
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6121" levels="1" name="Agathion's New Year's Gift 1">
 		<!-- Confirmed CT2.5 -->
@@ -228,11 +228,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="14676" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6122" levels="1" name="Agathion's New Year's Gift 2">
 		<!-- Confirmed CT2.5 -->
@@ -250,11 +250,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="14677" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6123" levels="1" name="Agathion's New Year's Wish">
 		<set name="abnormalLvl" val="2" />
@@ -298,9 +298,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6126" levels="1" name="Paralysis">
 		<!-- Confirmed CT2.5 -->
@@ -316,20 +316,20 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6127" levels="1" name="Anti-limit">
 		<!-- Confirmed CT2.5 -->
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="BlockBuffSlot">
 				<param slot="LIMIT" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6128" levels="1" name="Presentation - Cow Rage">
 		<set name="hitTime" val="3000" />
@@ -576,13 +576,13 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="#speed" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="rEvas" val="#pDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6143" levels="1" name="Ancient Beam">
 		<set name="effectPoint" val="-100" />
@@ -637,13 +637,13 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="vengeancePdam" val="70" />
 				<add stat="reflectSkillPhysic" val="70" />
 				<add stat="reflectDam" val="70" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6148" levels="1" name="Altar's Curse">
 		<!-- You have been weakened by the Altar's Curse. You probably can't fight in this condition. -->
@@ -665,13 +665,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Mute">
 				<sub stat="accCombat" val="99" />
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="pAtk" val="0.01" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6149" levels="1" name="Kasha's Betrayal">
 		<!-- Kasha's Betrayal. For 15 minutes, decreases P. Atk./P. Def./moving speed by 50%. -->
@@ -688,13 +688,13 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.5" />
 				<mul stat="pDef" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6150" levels="4" name="Kasha's Curse">
 		<!-- Zone Skill -->
@@ -715,11 +715,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6151" levels="4" name="Kasha's Curse">
 		<table name="#icons"> icon.skill6151_1 icon.skill6151_2 icon.skill6151_3 icon.skill6151_4 </table>
@@ -753,11 +753,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6153" levels="4" name="Kasha's Yearning">
 		<table name="#icons"> icon.skill6152_1 icon.skill6152_2 icon.skill6152_3 icon.skill6152_4 </table>
@@ -793,11 +793,11 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<add stat="critRate" val="#rCrit" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6155" levels="4" name="Kasha's Despair">
 		<table name="#icons"> icon.skill6154_1 icon.skill6154_2 icon.skill6154_3 icon.skill6154_4 </table>
@@ -883,9 +883,9 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6170" levels="1" name="Shyeed's Fury">
 		<!-- Confirmed CT2.5 -->
@@ -899,7 +899,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<!-- NOTE: Using abnormalLvl 99 instead of 1 due is a irreplaceable buff -->
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.05" />
@@ -908,7 +908,7 @@
 				<mul stat="pAtkSpd" val="1.05" />
 				<mul stat="mAtkSpd" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6171" levels="1" name="Full Authority">
 		<!-- Confirmed CT2.5 -->
@@ -922,7 +922,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<!-- NOTE: Using abnormalLvl 99 instead of 1 due is a irreplaceable buff -->
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.05" />
@@ -931,7 +931,7 @@
 				<mul stat="pAtkSpd" val="1.05" />
 				<mul stat="mAtkSpd" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6172" levels="1" name="Presentation - Tyranno">
 		<!-- Confirmed CT2.5 -->
@@ -947,11 +947,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="2320" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6173" levels="1" name="Presentation - Memorial Service for Repose">
 		<!-- Confirmed CT2.5 -->
@@ -1261,10 +1261,10 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

@@ -20,11 +20,11 @@
 		<set name="reuseDelay" val="12000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="OWNER_PET" />
-		<for>
+		<effects>
 			<effect name="ManaHealByLevel">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5201" levels="6" name="Pet Concentration">
 		<!-- CT2.5 retail confirmed -->
@@ -50,11 +50,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="OWNER_PET" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancel" val="#cancel" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5202" levels="12" name="Stun">
 		<!-- CT2.5 retail confirmed -->
@@ -80,9 +80,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5203" levels="12" name="Fear">
 		<!-- CT2.5 retail confirmed -->
@@ -108,9 +108,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5204" levels="1" name="Production-First Gigantic Pig Combination">
 		<!-- Confirmed CT2.5 -->
@@ -126,11 +126,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5206" levels="1" name="Decrease Speed">
 		<!-- CT2.5 retail confirmed -->
@@ -154,11 +154,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.85" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5207" levels="1" name="Decrease Atk. Spd.">
 		<!-- CT2.5 retail confirmed -->
@@ -182,11 +182,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.85" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5208" levels="1" name="Event Wind walk">
 		<!-- CT2.5 retail confirmed -->
@@ -201,11 +201,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5209" levels="1" name="Event Shield">
 		<!-- CT2.5 retail confirmed -->
@@ -220,11 +220,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5210" levels="1" name="Event Bless the body">
 		<!-- CT2.5 retail confirmed -->
@@ -239,11 +239,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5211" levels="1" name="Event Vampiric rage">
 		<!-- CT2.5 retail confirmed -->
@@ -258,11 +258,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5212" levels="1" name="Event Regeneration">
 		<!-- CT2.5 retail confirmed -->
@@ -277,11 +277,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5213" levels="1" name="Event Haste">
 		<!-- CT2.5 retail confirmed -->
@@ -296,11 +296,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5214" levels="1" name="Event Bless the soul">
 		<!-- CT2.5 retail confirmed -->
@@ -315,11 +315,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5215" levels="1" name="Event Acumen">
 		<!-- CT2.5 retail confirmed -->
@@ -334,11 +334,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5216" levels="1" name="Event Concentration">
 		<!-- CT2.5 retail confirmed -->
@@ -353,11 +353,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancel" val="18" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5217" levels="1" name="Event Empower">
 		<!-- CT2.5 retail confirmed -->
@@ -372,11 +372,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.55" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5218" levels="1" name="Production: Event Teleport">
 		<!-- Confirmed CT2.5 -->
@@ -412,9 +412,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5220" levels="1" name="Fear of giant mutated animal">
 		<!-- CT2.5 retail confirmed -->
@@ -439,9 +439,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5221" levels="1" name="Balor - Physical Close Range Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -451,7 +451,7 @@
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLUNT="-70" />
 				<param DAGGER="-70" />
@@ -461,7 +461,7 @@
 				<param POLE="-70" />
 				<param DUALDAGGER="-70" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5222" levels="1" name="Balor - Physical Long Range Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -471,11 +471,11 @@
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BOW="-70" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5223" levels="1" name="Balor - Magic Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -485,11 +485,11 @@
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mDef" val="0.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5224" levels="1" name="Berserk">
 		<!-- Confirmed CT2.5 -->
@@ -505,12 +505,12 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.5" />
 				<mul stat="pDef" val="1.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5225" levels="1" name="Invincible">
 		<!-- Confirmed CT2.5 -->
@@ -527,7 +527,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="BlockDamage">
 				<param block="HP"/>
 			</effect>
@@ -538,7 +538,7 @@
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5226" levels="1" name="Imprison">
 		<!-- Confirmed CT2.5 -->
@@ -566,12 +566,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="5800" />
 				<param criticalChance="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5228" levels="1" name="Jump Attack">
 		<!-- Confirmed CT2.5 -->
@@ -585,12 +585,12 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="11786" />
 				<param criticalChance="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5229" levels="1" name="Strong Punch">
 		<!-- Confirmed CT2.5 -->
@@ -616,14 +616,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4640" />
 				<param criticalChance="20" />
 			</effect>
 			<effect name="Stun" />
 			<effect name="ThrowUp" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5230" levels="1" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -646,12 +646,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="2784" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5231" levels="1" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -674,12 +674,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="5704" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5232" levels="1" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -702,12 +702,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="11407" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5233" levels="1" name="Weight Spin Attack - Weak">
 		<!-- Confirmed CT2.5 -->
@@ -720,11 +720,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4563" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5234" levels="1" name="Weight Spin Attack - Mid">
 		<!-- Confirmed CT2.5 -->
@@ -737,11 +737,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="7685" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5235" levels="1" name="Weight Spin Attack - Strong">
 		<!-- Confirmed CT2.5 -->
@@ -754,11 +754,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="13688" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5236" levels="1" name="Speed Up">
 		<!-- Confirmed CT2.5 -->
@@ -773,11 +773,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5237" levels="1" name="Speed Down">
 		<!-- Confirmed CT2.5 -->
@@ -792,11 +792,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5238" levels="1" name="Freezing">
 		<!-- CT2.5 retail confirmed -->
@@ -824,12 +824,12 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="298" />
 			</effect>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5239" levels="5" name="Event Timer">
 		<!-- CT2.5 retail confirmed -->
@@ -847,9 +847,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="stayAfterDeath" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5240" levels="1" name="Stun">
 		<!-- CT2.5 retail confirmed -->
@@ -873,12 +873,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="6723" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5241" levels="1" name="Stun">
 		<!-- CT2.5 retail confirmed -->
@@ -901,12 +901,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="11205" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5242" levels="1" name="Sickness">
 		<!-- CT2.5 retail confirmed -->
@@ -928,9 +928,9 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5243" levels="1" name="Blind">
 		<!-- CT2.5 retail confirmed -->
@@ -961,14 +961,14 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 			</effect>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5245" levels="1" name="Magical Up">
 		<set name="abnormalLvl" val="1" />
@@ -980,14 +980,14 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.15" />
 			</effect>
 			<effect name="Buff">
 				<mul stat="mDef" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5246" levels="12" name="Boss Dark Explosion">
 		<!-- CT2.5 retail confirmed -->
@@ -1007,11 +1007,11 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5247" levels="12" name="Seed of Darkness">
 		<!-- CT2.5 retail confirmed -->
@@ -1043,11 +1043,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="5248" skillLevel="#calledSkillLevel" />
@@ -1070,11 +1070,11 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5249" levels="12" name="Boss Dark Circle">
 		<!-- CT2.5 retail confirmed -->
@@ -1094,11 +1094,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5250" levels="1" name="Stun">
 		<!-- CT2.5 retail confirmed -->
@@ -1123,9 +1123,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5251" levels="12" name="Poison">
 		<!-- CT2.5 retail confirmed -->
@@ -1154,11 +1154,11 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="5252" skillLevel="#calledSkillLevel" />
@@ -1186,9 +1186,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5253" levels="12" name="Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -1219,11 +1219,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="5252" skillLevel="#calledSkillLevel" />
@@ -1256,11 +1256,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="5255" skillLevel="#calledSkillLevel" />
@@ -1278,11 +1278,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5256" levels="1" name="Announcement of Death">
 		<!-- CT2.5 retail confirmed -->
@@ -1319,11 +1319,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Lethal">
 				<param fullLethal="#lethalStrikeRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5258" levels="12" name="Mana Burn">
 		<!-- CT2.5 retail confirmed -->
@@ -1342,11 +1342,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5259" levels="12" name="Fear">
 		<!-- CT2.5 retail confirmed -->
@@ -1376,9 +1376,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5260" levels="12" name="Disarm">
 		<!-- CT2.5 retail confirmed -->
@@ -1402,9 +1402,9 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Disarm" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5261" levels="1" name="Zombie">
 		<!-- CT2.5 retail confirmed -->
@@ -1422,11 +1422,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="303" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5262" levels="12" name="NPC - Rise Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -1446,11 +1446,11 @@
 		<set name="reuseDelay" val="25000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5263" levels="12" name="NPC _ Chain Lightning">
 		<!-- CT2.5 retail confirmed -->
@@ -1471,11 +1471,11 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5264" levels="12" name="Death Mark">
 		<!-- CT2.5 retail confirmed -->
@@ -1502,9 +1502,9 @@
 		<set name="reuseDelay" val="9000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5265" levels="12" name="NPC - Soul Emission">
 		<!-- CT2.5 retail confirmed -->
@@ -1527,11 +1527,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5266" levels="12" name="Magical Backfire">
 		<!-- CT2.5 retail confirmed -->
@@ -1559,13 +1559,13 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="magicalMpConsumeRate" val="#val" />
 				<mul stat="physicalMpConsumeRate" val="#val" />
 				<mul stat="danceMpConsumeRate" val="#val" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5267" levels="21" name="Trap Explosion">
 		<!-- Confirmed CT2.5 -->
@@ -1581,11 +1581,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5268" levels="17" name="Poison">
 		<!-- Confirmed CT2.5 -->
@@ -1608,11 +1608,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dmg" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5269" levels="17" name="Slow Trap">
 		<!-- Confirmed CT2.5 -->
@@ -1632,13 +1632,13 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.7" />
 				<mul stat="pAtkSpd" val="0.77" />
 				<mul stat="mAtkSpd" val="0.7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5270" levels="16" name="Flash Trap">
 		<!-- Confirmed CT2.5 -->
@@ -1660,12 +1660,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="Stun" />
 			<effect name="TargetCancel">
 				<param chance="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5271" levels="19" name="Hold">
 		<!-- Confirmed CT2.5 -->
@@ -1689,12 +1689,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="#traits" />
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<param HOLD="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5272" levels="17" name="Decoy Provocation">
 		<!-- Confirmed CT2.5 -->
@@ -1707,11 +1707,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="TargetMeProbability">
 				<param chance="80" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5273" levels="9" name="NPC(party) - Physical Single Close Range Attack">
 		<!-- CT2.5 retail confirmed -->
@@ -1728,11 +1728,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5274" levels="9" name="NPC(party) - Physical Single Long Range Attack">
 		<!-- CT2.5 retail confirmed -->
@@ -1748,11 +1748,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5275" levels="9" name="NPC(party) - Physical Range Close Range Attack">
 		<!-- CT2.5 retail confirmed -->
@@ -1768,11 +1768,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5276" levels="9" name="NPC(party) - Physical Range Long Range Attack">
 		<!-- CT2.5 retail confirmed -->
@@ -1790,11 +1790,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5277" levels="9" name="NPC(party) - Physical Single Close Range Attack - Fire">
 		<!-- CT2.5 retail confirmed -->
@@ -1813,11 +1813,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5278" levels="9" name="NPC(party) - Physical Single Long Range Attack - Fire">
 		<!-- CT2.5 retail confirmed -->
@@ -1835,11 +1835,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5279" levels="9" name="NPC(party) - Physical Range Close Range Attack - Fire">
 		<!-- CT2.5 retail confirmed -->
@@ -1856,11 +1856,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="13066" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5280" levels="9" name="NPC(party) - Physical Range Long Range Attack - Fire">
 		<!-- CT2.5 retail confirmed -->
@@ -1880,11 +1880,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5281" levels="9" name="NPC(party) - Physical Single Close Range Attack - Water">
 		<!-- CT2.5 retail confirmed -->
@@ -1904,11 +1904,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5282" levels="9" name="NPC(party) - Physical Single Long Range Attack - Water">
 		<!-- CT2.5 retail confirmed -->
@@ -1926,11 +1926,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5283" levels="9" name="NPC(party) - Physical Range Close Range Attack - Water">
 		<!-- CT2.5 retail confirmed -->
@@ -1947,11 +1947,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="13066" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5284" levels="9" name="NPC(party) - Physical Range Long Range Attack - Water">
 		<!-- CT2.5 retail confirmed -->
@@ -1971,11 +1971,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5285" levels="9" name="NPC(party) - Physical Single Close Range Attack - Wind">
 		<!-- CT2.5 retail confirmed -->
@@ -1995,11 +1995,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5286" levels="9" name="NPC(party) - Physical Single Long Range Attack - Wind">
 		<!-- CT2.5 retail confirmed -->
@@ -2017,11 +2017,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5287" levels="9" name="NPC(party) - Physical Range Close Range Attack - Wind">
 		<!-- CT2.5 retail confirmed -->
@@ -2038,11 +2038,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="13066" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5288" levels="9" name="NPC(party) - Physical Range Long Range Attack - Wind">
 		<!-- CT2.5 retail confirmed -->
@@ -2062,11 +2062,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5289" levels="9" name="NPC(party) - Physical Single Close Range Attack - Earth">
 		<!-- CT2.5 retail confirmed -->
@@ -2086,11 +2086,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5290" levels="9" name="NPC(party) - Physical Single Long Range Attack - Earth">
 		<!-- CT2.5 retail confirmed -->
@@ -2108,11 +2108,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5291" levels="9" name="NPC(party) - Physical Range Close Range Attack - Earth">
 		<!-- CT2.5 retail confirmed -->
@@ -2129,11 +2129,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="13066" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5292" levels="9" name="NPC(party) - Physical Range Long Range Attack - Earth">
 		<!-- CT2.5 retail confirmed -->
@@ -2153,11 +2153,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5293" levels="9" name="NPC(party) - Physical Single Close Range Attack - Holy">
 		<!-- CT2.5 retail confirmed -->
@@ -2177,11 +2177,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5294" levels="9" name="NPC(party) - Physical Single Long Range Attack - Holy">
 		<!-- CT2.5 retail confirmed -->
@@ -2199,11 +2199,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5295" levels="9" name="NPC(party) - Physical Range Close Range Attack - Holy">
 		<!-- CT2.5 retail confirmed -->
@@ -2220,11 +2220,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="13066" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5296" levels="9" name="NPC(party) - Physical Range Long Range Attack - Holy">
 		<!-- CT2.5 retail confirmed -->
@@ -2244,11 +2244,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5297" levels="9" name="NPC(party) - Physical Single Close Range Attack - Dark">
 		<!-- CT2.5 retail confirmed -->
@@ -2267,11 +2267,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5298" levels="9" name="NPC(party) - Physical Single Long Range Attack - Dark">
 		<!-- CT2.5 retail confirmed -->
@@ -2289,11 +2289,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5299" levels="9" name="NPC(party) - Physical Range Close Range Attack - Dark">
 		<!-- CT2.5 retail confirmed -->
@@ -2310,10 +2310,10 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="13066" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

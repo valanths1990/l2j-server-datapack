@@ -6,12 +6,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="runSpd" val="1.30" /> <!--Increases Speed by 30% -->
 				<mul stat="fall" val="0.7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22301" levels="1" name="Party Cake">
 		<!-- none -->
@@ -79,11 +79,11 @@
 		<set name="stayAfterDeath" val="true" />
 		<set name="stayOnSubclassChange" val="false" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22313" levels="1" name="Pa'agrio's Warm Breeze - 4 hour">
 		<!-- "For 4 hours, recovers energy when Exp. is acquired through hunting." -->

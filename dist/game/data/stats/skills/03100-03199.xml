@@ -22,12 +22,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
-		<for>
+		<effects>
 			<effect name="Sleep" />
 			<effect name="DefenceTrait">
 				<param SLEEP="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3101" levels="10" name="Item Skill: Paralyze">
 		<!-- Confirmed CT2.5 -->
@@ -50,13 +50,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="6126" skillLevel="1" />
@@ -86,7 +86,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Stun" />
 			<effect name="BlockDamage">
 				<param block="HP"/>
@@ -99,7 +99,7 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3103" levels="10" name="Item Skill: Fear">
 		<!-- Confirmed CT2.5 -->
@@ -123,9 +123,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3104" levels="10" name="Item Skill: Poison">
 		<!-- Confirmed CT2.5 -->
@@ -151,11 +151,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3105" levels="10" name="Item Skill: Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -182,11 +182,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3106" levels="10" name="Item Skill: Silence">
 		<!-- Confirmed CT2.5 -->
@@ -210,9 +210,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3107" levels="10" name="Item Skill: Doom">
 		<!-- Confirmed CT2.5 -->
@@ -236,10 +236,10 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3108" levels="10" name="Item Skill: Aggression Up">
 		<!-- Confirmed CT2.5 -->
@@ -254,11 +254,11 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="TargetMeProbability">
 				<param chance="40" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3109" levels="10" name="Item Skill: Aggression Down">
 		<!-- Confirmed CT2.5 -->
@@ -274,11 +274,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="AddHate">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3110" levels="10" name="Item Skill: Mana Burn">
 		<!-- Confirmed CT2.5 -->
@@ -293,11 +293,11 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3111" levels="10" name="Item Skill: Slow">
 		<!-- Confirmed CT2.5 -->
@@ -318,11 +318,11 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3112" levels="10" name="Item Skill: Winter">
 		<!-- Confirmed CT2.5 -->
@@ -343,11 +343,11 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.77" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3113" levels="10" name="Item Skill: Stun">
 		<!-- Confirmed CT2.5 -->
@@ -370,9 +370,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3114" levels="10" name="Item Skill: Hold">
 		<!-- Confirmed CT2.5 -->
@@ -395,12 +395,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="HOLD" />
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<param HOLD="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3115" levels="10" name="Item Skill: Sleep">
 		<!-- Confirmed CT2.5 -->
@@ -423,12 +423,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
-		<for>
+		<effects>
 			<effect name="Sleep" />
 			<effect name="DefenceTrait">
 				<param SLEEP="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3116" levels="10" name="Item Skill: Paralyze">
 		<!-- Confirmed CT2.5 -->
@@ -450,13 +450,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="6126" skillLevel="1" />
@@ -485,7 +485,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Stun" />
 			<effect name="BlockDamage">
 				<param block="HP"/>
@@ -498,7 +498,7 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3118" levels="10" name="Item Skill: Fear">
 		<!-- Confirmed CT2.5 -->
@@ -521,9 +521,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3119" levels="10" name="Item Skill: Poison">
 		<!-- Confirmed CT2.5 -->
@@ -548,11 +548,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3120" levels="10" name="Item Skill: Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -578,11 +578,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3121" levels="10" name="Item Skill: Silence">
 		<!-- Confirmed CT2.5 -->
@@ -605,9 +605,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3122" levels="10" name="Item Skill: Doom">
 		<!-- Confirmed CT2.5 -->
@@ -630,10 +630,10 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3123" levels="10" name="Item Skill: Heal">
 		<!-- Confirmed CT2.5 -->
@@ -654,11 +654,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3124" levels="10" name="Item Skill: Blessed Body">
 		<!-- Confirmed CT2.5 -->
@@ -681,11 +681,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3125" levels="10" name="Item Skill: Battle Roar">
 		<!-- Confirmed CT2.5 -->
@@ -707,13 +707,13 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<param power="3" />
 				<param type="PER" />
 				<param heal="true" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3126" levels="10" name="Item Skill: Prayer">
 		<!-- Confirmed CT2.5 -->
@@ -736,11 +736,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="healEffect" val="#healEffect" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3127" levels="10" name="Item Skill: Recharge">
 		<!-- Confirmed CT2.5 -->
@@ -762,11 +762,11 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="ManaHealByLevel">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3128" levels="10" name="Item Skill: Blessed Soul">
 		<!-- Confirmed CT2.5 -->
@@ -789,11 +789,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxMp" val="#maxMp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3129" levels="10" name="Item Skill: Mana Gain">
 		<!-- Confirmed CT2.5 -->
@@ -816,11 +816,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="manaCharge" val="#manaCharge" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3130" levels="10" name="Item Skill: Ritual">
 		<!-- Confirmed CT2.5 -->
@@ -840,11 +840,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3131" levels="10" name="Item Skill: Cheer">
 		<!-- Confirmed CT2.5 -->
@@ -867,11 +867,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxCp" val="#maxCp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3132" levels="10" name="Item Skill: Might">
 		<!-- Confirmed CT2.5 -->
@@ -894,11 +894,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3133" levels="10" name="Item Skill: Empower">
 		<!-- Confirmed CT2.5 -->
@@ -921,11 +921,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mAtk" val="#mAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3134" levels="10" name="Item Skill: Duel Might">
 		<!-- Confirmed CT2.5 -->
@@ -947,12 +947,12 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pvpPhysDmg" val="1.05" />
 				<mul stat="pvpPhysSkillsDmg" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3135" levels="10" name="Item Skill: Shield">
 		<!-- Confirmed CT2.5 -->
@@ -975,11 +975,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pDef" val="#pDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3136" levels="10" name="Item Skill: Magic Barrier">
 		<!-- Confirmed CT2.5 -->
@@ -1002,11 +1002,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mDef" val="#mDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3137" levels="10" name="Item Skill: Duel Weakness">
 		<!-- Confirmed CT2.5 -->
@@ -1033,12 +1033,12 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pvpPhysDmg" val="0.95" />
 				<mul stat="pvpPhysSkillsDmg" val="0.95" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3138" levels="10" name="Item Skill: Heal Empower">
 		<!-- Confirmed CT2.5 -->
@@ -1061,11 +1061,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="healEffect" val="#healEffect" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3139" levels="10" name="Item Skill: Agility">
 		<!-- Confirmed CT2.5 -->
@@ -1088,11 +1088,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="#rEvas" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3140" levels="10" name="Item Skill: Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -1115,11 +1115,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="#accCombat" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3141" levels="10" name="Item Skill: Focus">
 		<!-- Confirmed CT2.5 -->
@@ -1142,11 +1142,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="#rCrit" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3142" levels="10" name="Item Skill: Wild Magic">
 		<!-- Confirmed CT2.5 -->
@@ -1169,11 +1169,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="#mCritRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3143" levels="10" name="Item Skill: Kiss of Eva">
 		<!-- Confirmed CT2.5 -->
@@ -1195,11 +1195,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="breath" val="7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3144" levels="10" name="Item Skill: Acrobatics">
 		<!-- Confirmed CT2.5 -->
@@ -1221,11 +1221,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="fall" val="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3145" levels="10" name="Item Skill: Iron Body">
 		<!-- Confirmed CT2.5 -->
@@ -1248,11 +1248,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="damageZoneVuln" val="#damageZoneVuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3146" levels="1" name="Item Skill: Recall">
 		<!-- Confirmed CT2.5 -->
@@ -1275,11 +1275,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3147" levels="1" name="Item Skill: Recall">
 		<!-- Confirmed CT2.5 -->
@@ -1302,11 +1302,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3148" levels="10" name="Item Skill: Vampiric Rage">
 		<!-- Confirmed CT2.5 -->
@@ -1329,11 +1329,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="absorbDam" val="#absorbDam" /> <!-- absorb HP from damage inflicted on enemies -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3149" levels="10" name="Item Skill: Aggression">
 		<!-- Confirmed CT2.5 -->
@@ -1353,11 +1353,11 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="TargetMeProbability">
 				<param chance="40" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3150" levels="10" name="Item Skill: Charm">
 		<!-- Confirmed CT2.5 -->
@@ -1378,11 +1378,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="AddHate">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3151" levels="10" name="Item Skill: Peace">
 		<!-- Confirmed CT2.5 -->
@@ -1402,11 +1402,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="DeleteHate">
 				<param chance="80" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3152" levels="10" name="Item Skill: Trick">
 		<!-- Confirmed CT2.5 -->
@@ -1424,11 +1424,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="TargetCancel">
 				<param chance="80" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3153" levels="10" name="Item Skill: Vampiric Touch">
 		<!-- Confirmed CT2.5 -->
@@ -1453,12 +1453,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3154" levels="10" name="Item Skill: Mana Burn">
 		<!-- Confirmed CT2.5 -->
@@ -1481,11 +1481,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3155" levels="10" name="Item Skill: Unlock">
 		<!-- Confirmed CT2.5 -->
@@ -1507,12 +1507,12 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="UNLOCKABLE" />
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<param chance="100" />
 			</effect>
 			<effect name="OpenChest" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3156" levels="1" name="Item Skill: Firework">
 		<!-- Confirmed CT2.5 -->
@@ -1552,14 +1552,14 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="BlockDamage">
 				<param block="HP"/>
 			</effect>
 			<effect name="BlockDamage">
 				<param block="MP"/>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3159" levels="3" name="Item Skill: Stealth">
 		<!-- Confirmed CT2.5 -->
@@ -1581,7 +1581,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SilentMove">
 				<sub stat="rEvas" val="#rEvas" />
 				<mul stat="pDef" val="#amount" />
@@ -1589,7 +1589,7 @@
 				<sub stat="accCombat" val="12" />
 				<mul stat="pAtk" val="0.55" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3160" levels="9" name="Item Skill: Resurrection">
 		<!-- Confirmed CT2.5 -->
@@ -1615,11 +1615,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3161" levels="3" name="Item Skill: Skill Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -1642,11 +1642,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="physicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3162" levels="3" name="Item Skill: Spell Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -1669,11 +1669,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3163" levels="3" name="Item Skill: Music Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -1696,11 +1696,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="danceMpConsumeRate" val="#DanceMpConsumeRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3164" levels="3" name="Item Skill: Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -1724,13 +1724,13 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="physicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
 				<mul stat="magicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 				<mul stat="danceMpConsumeRate" val="0.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3165" levels="10" name="Item Skill: Prominence">
 		<!-- Confirmed CT2.5 -->
@@ -1755,11 +1755,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3167" levels="10" name="Item Skill: Hydro Blast">
 		<!-- Confirmed CT2.5 -->
@@ -1784,11 +1784,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3168" levels="10" name="Item Skill: Hurricane">
 		<!-- Confirmed CT2.5 -->
@@ -1813,11 +1813,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3169" levels="10" name="Item Skill: Stone">
 		<!-- Confirmed CT2.5 -->
@@ -1842,11 +1842,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3170" levels="10" name="Item Skill: Solar Flare">
 		<!-- Confirmed CT2.5 -->
@@ -1871,11 +1871,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3171" levels="10" name="Item Skill: Shadow Flare">
 		<!-- Confirmed CT2.5 -->
@@ -1900,11 +1900,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3172" levels="10" name="Item Skill: Aura Flare">
 		<!-- Confirmed CT2.5 -->
@@ -1927,11 +1927,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3173" levels="10" name="Item Skill: Prominence">
 		<!-- Confirmed CT2.5 -->
@@ -1958,11 +1958,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3174" levels="10" name="Item Skill: Hydro Blast">
 		<!-- Confirmed CT2.5 -->
@@ -1989,11 +1989,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3175" levels="10" name="Item Skill: Hurricane">
 		<!-- Confirmed CT2.5 -->
@@ -2020,11 +2020,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3176" levels="10" name="Item Skill: Stone">
 		<!-- Confirmed CT2.5 -->
@@ -2051,11 +2051,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3177" levels="10" name="Item Skill: Solar Flare">
 		<!-- Confirmed CT2.5 -->
@@ -2082,11 +2082,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3178" levels="10" name="Item Skill: Shadow Flare">
 		<!-- Confirmed CT2.5 -->
@@ -2113,11 +2113,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3179" levels="10" name="Item Skill: Aura Flare">
 		<!-- Confirmed CT2.5 -->
@@ -2142,11 +2142,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3180" levels="10" name="Item Skill: Prominence">
 		<!-- Confirmed CT2.5 -->
@@ -2171,11 +2171,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3181" levels="10" name="Item Skill: Hydro Blast">
 		<!-- Confirmed CT2.5 -->
@@ -2200,11 +2200,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3182" levels="10" name="Item Skill: Hurricane">
 		<!-- Confirmed CT2.5 -->
@@ -2229,11 +2229,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3183" levels="10" name="Item Skill: Stone">
 		<!-- Confirmed CT2.5 -->
@@ -2258,11 +2258,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3184" levels="10" name="Item Skill: Solar Flare">
 		<!-- Confirmed CT2.5 -->
@@ -2287,11 +2287,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3185" levels="10" name="Item Skill: Shadow Flare">
 		<!-- Confirmed CT2.5 -->
@@ -2316,11 +2316,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3186" levels="10" name="Item Skill: Aura Flare">
 		<!-- Confirmed CT2.5 -->
@@ -2343,11 +2343,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3187" levels="10" name="Item Skill: Slow">
 		<!-- Confirmed CT2.5 -->
@@ -2376,11 +2376,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3188" levels="10" name="Item Skill: Winter">
 		<!-- Confirmed CT2.5 -->
@@ -2409,11 +2409,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.77" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3189" levels="10" name="Item Skill: Stun">
 		<!-- Confirmed CT2.5 -->
@@ -2443,9 +2443,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3190" levels="10" name="Item Skill: Hold">
 		<!-- Confirmed CT2.5 -->
@@ -2476,12 +2476,12 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="HOLD" />
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<param HOLD="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3191" levels="10" name="Item Skill: Sleep">
 		<!-- Confirmed CT2.5 -->
@@ -2512,12 +2512,12 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
-		<for>
+		<effects>
 			<effect name="Sleep" />
 			<effect name="DefenceTrait">
 				<param SLEEP="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3192" levels="10" name="Item Skill: Paralyze">
 		<!-- Confirmed CT2.5 -->
@@ -2547,13 +2547,13 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="6126" skillLevel="1" />
@@ -2590,7 +2590,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Stun" />
 			<effect name="BlockDamage">
 				<param block="HP"/>
@@ -2603,7 +2603,7 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3194" levels="10" name="Item Skill: Fear">
 		<!-- Confirmed CT2.5 -->
@@ -2634,9 +2634,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3195" levels="10" name="Item Skill: Poison">
 		<!-- Confirmed CT2.5 -->
@@ -2669,11 +2669,11 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<param power="#dmg" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3196" levels="10" name="Item Skill: Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -2706,11 +2706,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<param power="#dmg" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3197" levels="10" name="Item Skill: Silence">
 		<!-- Confirmed CT2.5 -->
@@ -2741,9 +2741,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3198" levels="10" name="Item Skill: Doom">
 		<!-- Confirmed CT2.5 -->
@@ -2774,10 +2774,10 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3199" levels="3" name="Item Skill: Skill Refresh">
 		<!-- Confirmed CT2.5 -->
@@ -2799,10 +2799,10 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pReuse" val="0.85" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>
