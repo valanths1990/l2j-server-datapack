@@ -6,7 +6,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLEED="50" />
 				<param HOLD="50" />
@@ -23,7 +23,7 @@
 				<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8401" levels="1" name="Vorpal Leather Armor Set">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -31,7 +31,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="50" />
 				<mul stat="pAtk" val="1.0557" /> <!-- Atk. Power + 5.57% -->
@@ -46,7 +46,7 @@
 				<add stat="maxMp" val="360" /> <!-- Increases Max MP by 360 -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8402" levels="1" name="Vorpal Robe Set">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -54,7 +54,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="50" />
 				<mul stat="mAtk" val="1.087" /> <!-- M. Power +8.7% -->
@@ -68,7 +68,7 @@
 				<add stat="maxMp" val="92" /> <!-- Increases Max MP by 92 -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8403" levels="1" name="Elegia Armor Set">
 		<!-- Confirmed CT2.5 -->
@@ -76,7 +76,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLEED="50" />
 				<param HOLD="50" />
@@ -92,7 +92,7 @@
 				<add stat="absorbDam" val="3" /> <!-- Steal opponent's HP on attack -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8404" levels="1" name="Elegia Leather Armor Set">
 		<!-- Confirmed CT2.5 -->
@@ -100,7 +100,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PARALYZE="50" />
 				<mul stat="pAtk" val="1.0659" /> <!-- Attack Power +6.59% -->
@@ -113,7 +113,7 @@
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8405" levels="1" name="Elegia Robe Set">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -121,7 +121,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="50" />
 				<mul stat="mAtk" val="1.1" /> <!-- M. Power +10% -->
@@ -136,7 +136,7 @@
 				<mul stat="magicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8406" levels="1" name="Moirai Armor Set - PvP">
 		<!-- Confirmed CT2.5 -->
@@ -144,7 +144,7 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
@@ -166,7 +166,7 @@
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8407" levels="1" name="Moirai Leather Armor Set - PvP">
 		<!-- Confirmed CT2.5 -->
@@ -174,7 +174,7 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
@@ -196,7 +196,7 @@
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8408" levels="1" name="Moirai Robe Set - PvP">
 		<!-- Confirmed CT2.5 -->
@@ -204,7 +204,7 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
@@ -225,7 +225,7 @@
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8409" levels="1" name="Vorpal Heavy Armor Set - PvP">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -233,7 +233,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
@@ -260,7 +260,7 @@
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8410" levels="1" name="Vorpal Leather Armor Set - PvP">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -268,7 +268,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
@@ -293,7 +293,7 @@
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8411" levels="1" name="Vorpal Robe Set - PvP">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -301,7 +301,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
@@ -325,7 +325,7 @@
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8412" levels="1" name="Elegia Armor Set - PvP">
 		<!-- Confirmed CT2.5 -->
@@ -333,7 +333,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
@@ -359,7 +359,7 @@
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8413" levels="1" name="Elegia Leather Armor Set - PvP">
 		<!-- Confirmed CT2.5 -->
@@ -367,7 +367,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
@@ -390,7 +390,7 @@
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8414" levels="1" name="Elegia Robe Set - PvP">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -398,7 +398,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
@@ -423,7 +423,7 @@
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			</effect>
 			<effect name="EnableCloak" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8415" levels="5" name="Ring Ability - Drop Rate Up">
 		<set name="icon" val="icon.skill3080" />
@@ -449,14 +449,14 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="5" />
 				<mul stat="pAtk" val="1.0125" />
 				<mul stat="pAtkSpd" val="1.01" />
 				<add stat="fireRes" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8419" levels="1" name="Moirai Cuirass">
 		<!-- Increases P.Atk. by 4.26%, Atk. Spd. by 4%, resistance to shock by 5% and resistance to Fire/Water/Wind/Earth attack by 1. -->
@@ -464,7 +464,7 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="5" />
 				<mul stat="pAtk" val="1.0426" />
@@ -474,7 +474,7 @@
 				<add stat="windRes" val="1" />
 				<add stat="earthRes" val="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8420" levels="1" name="Moirai Gaiter">
 		<!-- Increases P.Atk. by 2.08%, Atk. Spd. by 1.67%, resistance to shock by 5% and resistance to Water Attibute by 3. -->
@@ -482,14 +482,14 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="5" />
 				<mul stat="pAtk" val="1.0208" />
 				<mul stat="pAtkSpd" val="1.0167" />
 				<add stat="waterRes" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8421" levels="1" name="Moirai Gauntlet">
 		<!-- Increases P.Atk. by 0.83%, Atk. Spd. by 0.67%, resistance to shock by 5% and resistance to Wind Attibute by 3. -->
@@ -497,14 +497,14 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="5" />
 				<mul stat="pAtk" val="1.0083" />
 				<mul stat="pAtkSpd" val="1.0067" />
 				<add stat="windRes" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8422" levels="1" name="Moirai Boots">
 		<!-- Increases P.Atk. by 0.83%, Atk. Spd. by 0.67%, resistance to shock by 5% and resistance to Earth Attibute by 3. -->
@@ -512,14 +512,14 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="5" />
 				<mul stat="pAtk" val="1.0083" />
 				<mul stat="pAtkSpd" val="1.0067" />
 				<add stat="earthRes" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8423" levels="1" name="Moirai Shield">
 		<!-- Increases resistance to magic damage by 2%. -->
@@ -527,11 +527,11 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.02" /> <!-- resistance to damage magic by 2% -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8424" levels="1" name="Moirai Leather Helmet">
 		<!-- Increases P. Atk. by 1.25%, MP recovery rate by 1%, resistance to Hold by 5% and resistance to Fire by 3. -->
@@ -539,14 +539,14 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="5" />
 				<mul stat="pAtk" val="1.0125" />
 				<mul stat="regMp" val="1.01" />
 				<add stat="fireRes" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8425" levels="1" name="Moirai Leather Hauberk">
 		<!-- Increases P. Atk. by 4.26%, MP recovery rate by 4%, resistance to Hold by 5% and resistance to Water by 3. -->
@@ -554,14 +554,14 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="5" />
 				<mul stat="pAtk" val="1.0426" />
 				<mul stat="regMp" val="1.04" />
 				<add stat="waterRes" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8426" levels="1" name="Moirai Leather Legging">
 		<!-- Increases P. Atk. by 2.08%, MP recovery rate by 1.67%, resistance to Hold by 5% and resistance to Water by 3. -->
@@ -569,14 +569,14 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="5" />
 				<mul stat="pAtk" val="1.0208" />
 				<mul stat="regMp" val="1.0167" />
 				<add stat="waterRes" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8427" levels="1" name="Moirai Leather Gloves">
 		<!-- Increases P. Atk. by 0.83%, MP recovery rate by 0.67%, resistance to Hold by 5% and resistance to Wind by 3. -->
@@ -584,14 +584,14 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="5" />
 				<mul stat="pAtk" val="1.0083" />
 				<mul stat="regMp" val="1.0067" />
 				<add stat="windRes" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8428" levels="1" name="Moirai Leather Boots">
 		<!-- Increases P. Atk. by 0.83%, MP recovery rate by 0.67%, resistance to Hold by 5% and resistance to Earth by 3. -->
@@ -599,14 +599,14 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="5" />
 				<mul stat="pAtk" val="1.0083" />
 				<mul stat="regMp" val="1.0067" />
 				<add stat="earthRes" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8429" levels="1" name="Moirai Circlet">
 		<!-- Increases M. Atk. by 0.62%, resistance to Paralysis by 5% and resistance to Fire by 5. -->
@@ -614,13 +614,13 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PARALYZE="5" />
 				<mul stat="mAtk" val="1.0062" />
 				<add stat="fireRes" val="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8430" levels="1" name="Moirai Jacket">
 		<!-- Increases M. Atk. by 8.11%, Casting Spd. by 15%, resistance to Paralysis by 5% and resistance to Fire/Water/Wind/Earth by 1. -->
@@ -628,7 +628,7 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PARALYZE="5" />
 				<mul stat="mAtk" val="1.0811" /> <!-- M. Atk. +8.11% -->
@@ -638,7 +638,7 @@
 				<add stat="windRes" val="1" />
 				<add stat="earthRes" val="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8431" levels="1" name="Moirai Hose">
 		<!-- Increases M. Atk. by 1.03%, resistance to Paralysis by 5% and resistance to Water by 5. -->
@@ -646,13 +646,13 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PARALYZE="5" />
 				<mul stat="mAtk" val="1.0103" />
 				<add stat="waterRes" val="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8432" levels="1" name="Moirai Gloves">
 		<!-- Increases M. Atk. by 0.41%, resistance to Paralysis by 5% and resistance to Wind by 5. -->
@@ -660,13 +660,13 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PARALYZE="5" />
 				<mul stat="mAtk" val="1.0041" />
 				<add stat="windRes" val="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8433" levels="1" name="Moirai Shoes">
 		<!-- Increases M. Atk. by 0.41%, resistance to Paralysis by 5% and resistance to Earth by 5. -->
@@ -674,13 +674,13 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PARALYZE="5" />
 				<mul stat="mAtk" val="1.0041" />
 				<add stat="earthRes" val="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8434" levels="1" name="Moirai Sigil">
 		<!-- Increases resistance to magic damage by 2%. -->
@@ -688,11 +688,11 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.02" /> <!-- resistance to damage magic by 2% -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8435" levels="1" name="Vesper Helmet">
 		<!-- Increases P. Atk./P. Def. by 0.62%, Max HP by 133 and resistance to Sleep/Hold Atk. by 10.5%. -->
@@ -700,7 +700,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="10.5" />
 				<param HOLD="10.5" />
@@ -708,7 +708,7 @@
 				<mul stat="pDef" val="1.0062" />
 				<add stat="maxHp" val="133" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8436" levels="1" name="Vesper Cuirass">
 		<!-- Increases P. Atk./P. Def. by 5.57%, Max HP by 531 and resistance to Sleep/Hold Atk. by 28%. -->
@@ -716,7 +716,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="28" />
 				<param HOLD="28" />
@@ -724,7 +724,7 @@
 				<mul stat="pDef" val="1.0557" />
 				<add stat="maxHp" val="531" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8437" levels="1" name="Vesper Gaiter">
 		<!-- Increases P. Atk./P. Def. by 1/03%, Max HP by 55 and resistance to Sleep/Hold Atk. by 18%. -->
@@ -732,7 +732,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="18" />
 				<param HOLD="18" />
@@ -740,7 +740,7 @@
 				<mul stat="pDef" val="1.0103" />
 				<add stat="maxHp" val="55" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8438" levels="1" name="Vesper Gauntlet">
 		<!-- Increases P. Atk./P. Def. by 0.41%, Max HP by 22 and resistance to Sleep/Hold Atk. by 7%. -->
@@ -748,7 +748,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="7" />
 				<param HOLD="7" />
@@ -756,7 +756,7 @@
 				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8439" levels="1" name="Vesper Boots">
 		<!-- Increases P. Atk./P. Def. by 0.41%, Max HP by 22 and resistance to Sleep/Hold Atk. by 7%. -->
@@ -764,7 +764,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="7" />
 				<param HOLD="7" />
@@ -772,7 +772,7 @@
 				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8440" levels="1" name="Vesper Verteidiger">
 		<!-- Increases resistance to magic damage by 2%. -->
@@ -780,11 +780,11 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.02" /> <!-- resistance to damage magic by 2% -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8441" levels="1" name="Vesper Leather Helmet">
 		<!-- Increases P. Atk. by 0.41%, Atk. Spd./MP Recovery Bonus by 0.41% and Max MP by 87. -->
@@ -792,14 +792,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pAtkSpd" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 				<add stat="maxMp" val="87" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8442" levels="1" name="Vesper Leather Hauberk">
 		<!-- Increases P. Atk. by 5.57%, Atk. Spd./MP Recovery Bonus by 5% and Max MP by 347. -->
@@ -807,14 +807,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0557" />
 				<mul stat="pAtkSpd" val="1.05" />
 				<mul stat="regMp" val="1.05" />
 				<add stat="maxMp" val="347" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8443" levels="1" name="Vesper Leather Legging">
 		<!-- Increases P. Atk. by 0.68%, Atk. Spd./MP Recovery Bonus by 0.68% and Max MP by 145. -->
@@ -822,14 +822,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0068" />
 				<mul stat="pAtkSpd" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
 				<add stat="maxMp" val="145" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8444" levels="1" name="Vesper Leather Gloves">
 		<!-- Increases P. Atk. by 0.27%, Atk. Spd./MP Recovery Bonus by 0.27% and Max MP by 58. -->
@@ -837,14 +837,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0027" />
 				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<add stat="maxMp" val="58" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8445" levels="1" name="Vesper Leather Boots">
 		<!-- Increases P. Atk. by 0.27%, Atk. Spd./MP Recovery Bonus by 0.27% and Max MP by 58. -->
@@ -852,14 +852,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0027" />
 				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<add stat="maxMp" val="58" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8446" levels="1" name="Vesper Circlet">
 		<!-- Increases M. Atk. by 0.41%, MP recovery rate by 0.41%, resistance to Stun by 7.5% and decreases magic cancel rate by 4.5. -->
@@ -867,14 +867,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="7.5" />
 				<mul stat="mAtk" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 				<sub stat="cancel" val="4.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8447" levels="1" name="Vesper Jacket">
 		<!-- Increases M. Atk. by 8.47%, Casting Spd. By 15%, MP recovery rate by 5%, resistance to Stun by 20% and decreases magic cancel rate by 12. -->
@@ -882,7 +882,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="20" />
 				<mul stat="mAtk" val="1.0847" />
@@ -890,7 +890,7 @@
 				<mul stat="regMp" val="1.05" />
 				<sub stat="cancel" val="12" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8448" levels="1" name="Vesper Hose">
 		<!-- Increases M. Atk. by 0.68%, MP recovery rate by 0.68%, resistance to Stun by 5% and decreases magic cancel rate by 7.5. -->
@@ -898,14 +898,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="12.5" />
 				<mul stat="mAtk" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
 				<sub stat="cancel" val="7.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8449" levels="1" name="Vesper Gloves">
 		<!-- Increases M. Atk. by 0.27%, MP recovery rate by 0.27%, resistance to Stun by 5% and decreases magic cancel rate by 3. -->
@@ -913,14 +913,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="5" />
 				<mul stat="mAtk" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8450" levels="1" name="Vesper Shoes">
 		<!-- Increases M. Atk. by 0.27%, MP recovery rate by 0.27%, resistance to Stun by 5% and decreases magic cancel rate by 3. -->
@@ -928,14 +928,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="5" />
 				<mul stat="mAtk" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8451" levels="1" name="Vesper Sigil">
 		<!-- Increases resistance to magic damage by 2%. -->
@@ -943,11 +943,11 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.02" /> <!-- resistance to damage magic by 2% -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8452" levels="1" name="Moirai Earring">
 		<!-- Confirmed CT2.5 -->
@@ -955,11 +955,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLEED="7.62" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8453" levels="1" name="Moirai Necklace">
 		<!-- Confirmed CT2.5 -->
@@ -967,11 +967,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param POISON="6" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8454" levels="1" name="Moirai Ring">
 		<!-- Confirmed CT2.5 -->
@@ -979,11 +979,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxMp" val="16" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8455" levels="1" name="Vesper Earring">
 		<!-- Confirmed CT2.5 -->
@@ -991,12 +991,12 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="5" />
 				<param HOLD="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8456" levels="1" name="Vesper Necklace">
 		<!-- Confirmed CT2.5 -->
@@ -1004,11 +1004,11 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxMp" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8457" levels="1" name="Vesper Ring">
 		<!-- Confirmed CT2.5 -->
@@ -1016,11 +1016,11 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="4.76" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8458" levels="1" name="Bracelet Weight Gauge Add">
 		<!-- Confirmed CT2.5 -->
@@ -1028,11 +1028,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightLimit" val="3000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8459" levels="1" name="Necklace of Freya">
 		<!-- Confirmed CT2.5 -->
@@ -1041,7 +1041,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLEED="20" />
 				<param PARALYZE="15" />
@@ -1054,7 +1054,7 @@
 				<mul stat="mReuse" val="0.95" />
 				<add stat="reflectDam" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8460" levels="1" name="Blessed Necklace of Freya">
 		<!-- Confirmed CT2.5 -->
@@ -1063,7 +1063,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLEED="25" />
 				<param PARALYZE="20" />
@@ -1081,7 +1081,7 @@
 				<add stat="CON" val="1" />
 				<sub stat="STR" val="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8461" levels="1" name="Heavy Set">
 		<!-- Confirmed CT2.5 -->
@@ -1089,7 +1089,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pDef" val="70">
 					<using kind="HEAVY" />
@@ -1103,14 +1103,14 @@
 					</and>
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8462" levels="1" name="Light Set">
 		<set name="icon" val="icon.skill0233" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="2">
 					<using kind="LIGHT" />
@@ -1119,21 +1119,21 @@
 					<using kind="LIGHT" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8463" levels="1" name="Magic Set">
 		<set name="icon" val="icon.skill0234" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pDef" val="45">
 					<using kind="MAGIC" />
 				</add>
 				<mul stat="weightLimit" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8464" levels="1" name="Release the Seal on Agathion - Kid Rudolph">
 		<!-- Confirmed CT2.5 -->
@@ -1144,11 +1144,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="16073" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8465" levels="1" name="Notifier">
 		<!-- It's time to return Santa Claus's gift that the Agathions gave you. -->
@@ -1256,7 +1256,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="10.5" />
 				<param HOLD="10.5" />
@@ -1264,7 +1264,7 @@
 				<mul stat="pDef" val="1.0062" />
 				<add stat="maxHp" val="133" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8482" levels="1" name="Vesper Noble Gaiter">
 		<!-- Increases P. Atk./P. Def. by 1.03%, Max HP by 55 and resistance to Sleep/Hold by 185%. -->
@@ -1272,7 +1272,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="18" />
 				<param HOLD="18" />
@@ -1280,7 +1280,7 @@
 				<mul stat="pDef" val="1.0103" />
 				<add stat="maxHp" val="55" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8483" levels="1" name="Vesper Noble Gauntlet">
 		<!-- Increases P. Atk./P. Def. by 0.41%, Max HP by 22 and resistance to Sleep/Hold by 7%. -->
@@ -1288,7 +1288,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="7" />
 				<param HOLD="7" />
@@ -1296,7 +1296,7 @@
 				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8484" levels="1" name="Vesper Noble Boots">
 		<!-- Increases P. Atk./P. Def. by 0.41%, Max HP by 22 and resistance to Sleep/Hold by 7%. -->
@@ -1304,7 +1304,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="7" />
 				<param HOLD="7" />
@@ -1312,7 +1312,7 @@
 				<mul stat="pDef" val="1.0041" />
 				<add stat="maxHp" val="22" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8485" levels="1" name="Vesper Noble Leather Helmet">
 		<!-- Increases P.Atk. By 0.41%, Atk. Spd./MP Recovery Bonus by 0.41% and Max MP by 87. -->
@@ -1320,14 +1320,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pAtkSpd" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 				<add stat="maxMp" val="87" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8486" levels="1" name="Vesper Noble Leather Legging">
 		<!-- Increases P.Atk. By 0.68%, Atk. Spd./MP Recovery Bonus by 0.68% and Max MP by 145. -->
@@ -1335,14 +1335,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0068" />
 				<mul stat="pAtkSpd" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
 				<add stat="maxMp" val="145" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8487" levels="1" name="Vesper Noble Leather Gloves">
 		<!-- Increases P.Atk. By 0.27%, Atk. Spd./MP Recovery Bonus by 0.27% and Max MP by 58. -->
@@ -1350,14 +1350,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0027" />
 				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<add stat="maxMp" val="58" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8488" levels="1" name="Vesper Noble Leather Boots">
 		<!-- Increases P.Atk. By 0.27%, Atk. Spd./MP Recovery Bonus by 0.27% and Max MP by 58. -->
@@ -1365,14 +1365,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0027" />
 				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<add stat="maxMp" val="58" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8489" levels="1" name="Vesper Noble Circlet">
 		<!-- Increases M. Atk. by 0.41%, MP recovery rate by 0.41%, resistance to Stun Atk. by 7.5% and decreases magic cancel rate by 4.5. -->
@@ -1380,14 +1380,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="7.5" />
 				<mul stat="mAtk" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
 				<sub stat="cancel" val="4.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8490" levels="1" name="Vesper Noble Hose">
 		<!-- Increases M. Atk. by 0.68%, MP recovery rate by 0.68%, resistance to Stun Atk. by 12.5% and decreases magic cancel rate by 7.5. -->
@@ -1395,14 +1395,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="12.5" />
 				<mul stat="mAtk" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
 				<sub stat="cancel" val="7.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8491" levels="1" name="Vesper Noble Gloves">
 		<!-- Increases M. Atk. by 0.27%, MP recovery rate by 0.27%, resistance to Stun by 5% and decreases magic cancel rate by 3. -->
@@ -1410,14 +1410,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="5" />
 				<mul stat="mAtk" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8492" levels="1" name="Vesper Noble Shoes">
 		<!-- Increases M. Atk. by 0.27%, MP recovery rate by 0.27%, resistance to Stun by 5% and decreases magic cancel rate by 3. -->
@@ -1425,14 +1425,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="5" />
 				<mul stat="mAtk" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
 				<sub stat="cancel" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8493" levels="1" name="Moirai Shield">
 		<!-- Confirmed CT2.5 -->
@@ -1440,11 +1440,11 @@
 		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rShld" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8494" levels="1" name="Vesper Verteidiger">
 		<!-- Confirmed CT2.5 -->
@@ -1452,11 +1452,11 @@
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rShld" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8495" levels="1" name="Vorpal Shield">
 		<!-- Confirmed CT2.5 -->
@@ -1464,11 +1464,11 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rShld" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8496" levels="1" name="Elegia Shield">
 		<!-- Confirmed CT2.5 -->
@@ -1476,11 +1476,11 @@
 		<set name="magicLvl" val="86" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rShld" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8497" levels="1" name="Ice Hair Circlet">
 		<!-- Increases resistance to water-type attacks by 30. -->
@@ -1495,11 +1495,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8499" levels="1" name="Pink Talisman - DEX">
 		<!-- Confirmed CT2.5 -->
@@ -1507,10 +1507,10 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="DEX" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

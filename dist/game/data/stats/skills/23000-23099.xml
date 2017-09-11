@@ -86,11 +86,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23006" levels="1" name="Black Majo Agathion Special Skill - Power of Blessed Return">
 		<set name="blockedInOlympiad" val="true" />
@@ -113,11 +113,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23007" levels="1" name="Plaipitak Agathion Special Skill - Mysterious Power">
 		<set name="abnormalLvl" val="0" />
@@ -159,11 +159,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23009" levels="1" name="Plaipitak Agathion Special Skill - Power of Blessed Resurrection">
 		<set name="blockedInOlympiad" val="true" />
@@ -184,11 +184,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23010" levels="1" name="Baby Panda Agathion Cute Trick">
 		<set name="hitTime" val="3000" />
@@ -264,11 +264,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23015" levels="1" name="Sexy Panda Agathion Special Skill - Power of Blessed Return">
 		<set name="blockedInOlympiad" val="true" />
@@ -291,11 +291,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23016" levels="1" name="Rudolph Agathion Special Skill - Ability of Energy">
 		<set name="abnormalLvl" val="3" />
@@ -315,11 +315,11 @@
 		<cond msgId="2292">
 			<player agathionId="16033" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23017" levels="1" name="Holiday Festival">
 		<set name="abnormalLvl" val="1" />
@@ -332,7 +332,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.4" />
 				<mul stat="maxMp" val="1.4" />
@@ -346,7 +346,7 @@
 				<mul stat="physicalMpConsumeRate" val="0.95" />
 				<mul stat="danceMpConsumeRate" val="0.95" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23018" levels="1" name="Thomas D. Turkey's Mistake">
 		<set name="abnormalLvl" val="2" />
@@ -360,7 +360,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.4" />
 				<mul stat="maxMp" val="1.4" />
@@ -374,7 +374,7 @@
 				<mul stat="physicalMpConsumeRate" val="0.9" />
 				<mul stat="danceMpConsumeRate" val="0.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23019" levels="3" name="Scissors">
 		<table name="#icons"> BranchSys.icon.br_xmas_gawi_i00 BranchSys.icon.br_xmas_bawi_i00 BranchSys.icon.br_xmas_bo_i00 </table>
@@ -393,9 +393,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="stayAfterDeath" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="ImmobileBuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="23020" levels="1" name="Challenge the Turkey">
 		<set name="affectRange" val="500" />
@@ -432,9 +432,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="stayAfterDeath" val="true" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="23023" levels="1" name="Reset Consecutive Wins">
 		<set name="blockedInOlympiad" val="true" />
@@ -463,11 +463,11 @@
 		<cond msgId="2292">
 			<player agathionId="16049" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23025" levels="1" name="Charming Cupid Agathion Cute Trick">
 		<set name="hitTime" val="3000" />
@@ -548,11 +548,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23031" levels="1" name="Black Maneki Neko Agathion Special Skill - Ability of Blessed Return">
 		<set name="blockedInOlympiad" val="true" />
@@ -575,11 +575,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23032" levels="1" name="Brown Maneki Neko Agathion Special Skill - Ability of Energy Recovery">
 		<!-- Recovers energy when acquiring Exp. for 5 minutes. Reuse Delay 1 hours -->
@@ -600,11 +600,11 @@
 		<cond msgId="2292">
 			<player agathionId="1512" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23033" levels="1" name="One-Eyed Bat Drove Agathion Cute Trick">
 		<set name="hitTime" val="3000" />
@@ -637,11 +637,11 @@
 		<cond msgId="2292">
 			<player agathionId="1513" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23035" levels="1" name="One-eyed Bat Drove Agathion Special Skill - Ability of Energy Recovery">
 		<!-- Recovers energy when acquiring Exp. for 5 minutes. Reuse Delay 1 hours -->
@@ -662,11 +662,11 @@
 		<cond msgId="2292">
 			<player agathionId="1513" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23036" levels="1" name="Pegasus Agathion Cute Trick">
 		<set name="hitTime" val="3000" />
@@ -699,11 +699,11 @@
 		<cond msgId="2292">
 			<player agathionId="1514" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23038" levels="1" name="Pegasus Agathion Special Skill - Blessed Return Ability">
 		<set name="blockedInOlympiad" val="true" />
@@ -726,11 +726,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23039" levels="1" name="Yellow-Robed Tojigong Agathion Cute Trick">
 		<set name="hitTime" val="3000" />
@@ -787,14 +787,14 @@
 		<cond msgId="2292">
 			<player agathionId="1515" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.3" />
 			</effect>
 			<effect name="Heal">
 				<param power="444" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23043" levels="1" name="Blue-robed Tojigong Agathion Special Skill - Ability of Reflect Damage">
 		<!-- For 5 minutes, returns 20% of the damage back to the enemy. Excludes skill and long-range attacks. Reuse Delay 1 hours -->
@@ -815,11 +815,11 @@
 		<cond msgId="2292">
 			<player agathionId="1516" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="reflectDam" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23044" levels="1" name="Green-robed Tojigong Agathion Special Skill - Ability of Mana Regeneration">
 		<!-- Increases MP Regeneration by 3% for 5 minutes. Reuse Delay 1 hours -->
@@ -840,11 +840,11 @@
 		<cond msgId="2292">
 			<player agathionId="1517" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.03" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23045" levels="1" name="Bugbear Agathion Cute Trick">
 		<set name="hitTime" val="3000" />
@@ -1007,11 +1007,11 @@
 		<cond msgId="2292">
 			<player agathionId="1519" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23058" levels="1" name="Blue Sumo Wrestler Agathion Special Skill - Wild Magic Ability">
 		<!-- For 5 minutes, increases by 2% the occurrence rate of damage that is caused by damage magic. Reuse Delay 1 hours -->
@@ -1030,11 +1030,11 @@
 		<cond msgId="2292">
 			<player agathionId="1520" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23059" levels="1" name="Great Sumo Match Agathion Special Skill - Mysterious Power">
 		<!-- A mysterious power that no one knows. Use with caution! Reuse Delay 1 hour -->
@@ -1090,11 +1090,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23062" levels="1" name="Button-Eyed Bear Doll Agathion Special Skill - Ability of Blessed Resurrection">
 		<set name="blockedInOlympiad" val="true" />
@@ -1115,11 +1115,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23063" levels="1" name="Button-Eyed Bear Doll Agathion Special Skill - Ability of Energy Recovery">
 		<!-- Recovers energy when acquiring Exp. for 5 minutes. Reuse Delay 1 hours -->
@@ -1140,11 +1140,11 @@
 		<cond msgId="2292">
 			<player agathionId="1522" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23064" levels="1" name="God of Fortune Agathion Special Skill - Energy Recovery Ability">
 		<!-- Recovers energy when acquiring Exp. for 5 minutes. Reuse Delay 1 hours -->
@@ -1165,11 +1165,11 @@
 		<cond msgId="2292">
 			<player agathionId="1523" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23065" levels="1" name="Wonboso Agathion Special Skill - Wind Walk Ability">
 		<!-- Increases moving speed by 20 for 5 minutes. Reuse Delay 1 hours -->
@@ -1188,11 +1188,11 @@
 		<cond msgId="2292">
 			<player agathionId="1525" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23066" levels="1" name="Daewoonso Agathion Special Skill - New Year's Gift Ability">
 		<!-- Confirmed CT2.5 -->
@@ -1217,9 +1217,9 @@
 		<cond msgId="2292">
 			<player agathionId="1526" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="23067" levels="1" name="Pomona Agathion Cute Trick">
 		<set name="hitTime" val="3000" />
@@ -1248,13 +1248,13 @@
 		<cond msgId="2292">
 			<player agathionId="1527" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="50" />
 				<param SLEEP="50" />
 				<param DERANGEMENT="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23069" levels="1" name="Threatening Roar">
 		<!-- Confirmed CT2.5 -->
@@ -1274,12 +1274,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<!-- TODO: Add new operate condition check_abnormal -->
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.2" />
 				<mul stat="runSpd" val="0.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23070" levels="1" name="Red Flame">
 		<!-- Cannot damage the spirit for 10 seconds. Exclusive use for the Reckless Spirit of Fire. -->
@@ -1326,9 +1326,9 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="23073" levels="1" name="Switch Mode">
 		<!-- State to switch the spirit's mode. Switches to counter-attack mode or deadly mode. -->
@@ -1401,7 +1401,7 @@
 		<cond msgId="2292">
 			<player agathionId="1528" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.6" />
 				<mul stat="maxMp" val="1.6" />
@@ -1414,7 +1414,7 @@
 				<mul stat="magicalMpConsumeRate" val="0.9" />
 				<mul stat="danceMpConsumeRate" val="0.9"/>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23078" levels="1" name="Weaver Agathion Special Skill - Flute Sound">
 		<!-- Confirmed CT2.5 -->
@@ -1439,7 +1439,7 @@
 		<cond msgId="2292">
 			<player agathionId="1528" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.4" />
 				<mul stat="maxMp" val="1.4" />
@@ -1452,7 +1452,7 @@
 				<mul stat="magicalMpConsumeRate" val="0.85" />
 				<mul stat="danceMpConsumeRate" val="0.9"/>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23079" levels="1" name="Chon-chon Agathion Cute Trick">
 		<!-- Confirmed CT2.5 -->
@@ -1484,7 +1484,7 @@
 		<cond msgId="2292">
 			<player agathionId="1529" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.2"/>
 				<mul stat="pDef" val="1.2" />
@@ -1492,7 +1492,7 @@
 				<mul stat="critRate" val="1.2" />
 				<mul stat="critDmg" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23081" levels="1" name="Tang-tang Agathion Cute Trick">
 		<!-- Confirmed CT2.5 -->
@@ -1524,7 +1524,7 @@
 		<cond msgId="2292">
 			<player agathionId="1530" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<mul stat="mCritPower" val="1.2" />
@@ -1532,7 +1532,7 @@
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23083" levels="1" name="Dancing Kid Agathion Cute Trick">
 		<!-- Confirmed CT2.5 -->
@@ -1564,7 +1564,7 @@
 		<cond msgId="2292">
 			<player agathionId="1531" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.2" />
 				<mul stat="maxMp" val="1.2" />
@@ -1572,7 +1572,7 @@
 				<mul stat="runSpd" val="1.2"/>
 				<mul stat="regHp" val="1.2"/>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23085" levels="1" name="Monkey King Agathion Cute Trick">
 		<!-- Confirmed CT2.5 -->
@@ -1604,7 +1604,7 @@
 		<cond msgId="2292">
 			<player agathionId="1532" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<mul stat="mCritPower" val="1.2" />
@@ -1612,7 +1612,7 @@
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23087" levels="1" name="Utanka Agathion Cute Trick">
 		<!-- Confirmed CT2.5 -->
@@ -1644,7 +1644,7 @@
 		<cond msgId="2292">
 			<player agathionId="1533" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.2"/>
 				<mul stat="pDef" val="1.2" />
@@ -1652,7 +1652,7 @@
 				<mul stat="critRate" val="1.2" />
 				<mul stat="critDmg" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23089" levels="1" name="Bonus B Agathion Cute Trick">
 		<!-- Confirmed CT2.5 -->
@@ -1684,7 +1684,7 @@
 		<cond msgId="2292">
 			<player agathionId="1534" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.2" />
 				<mul stat="maxMp" val="1.2" />
@@ -1692,7 +1692,7 @@
 				<mul stat="runSpd" val="1.2"/>
 				<mul stat="regHp" val="1.2"/>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23091" levels="1" name="Trick of Halloween Children">
 		<!-- By trick of Halloween Children, increase max HP/MP/CP by 40% for 10 seconds. -->

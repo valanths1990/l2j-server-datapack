@@ -185,14 +185,14 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6619" levels="7" name="Maguen Power Strike">
 		<!-- Moving Spd. Is decreased by 90% for 10 seconds. -->
@@ -217,14 +217,14 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6620" levels="7" name="Maguen Plasma">
 		<table name="#mAtk"> 5 10 15 20 25 30 35 </table>
@@ -244,14 +244,14 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
 			</effect>
 			<effect name="Buff">
 				<add stat="mAtk" val="#mAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6621" levels="7" name="Maguen Plasma">
 		<table name="#mAtk"> 15 20 25 30 35 40 45 </table>
@@ -271,14 +271,14 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
 			</effect>
 			<effect name="Buff">
 				<add stat="mAtk" val="#mAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6622" levels="1" name="Shock">
 		<!-- Momentarily causes shock, which stuns the enemy for 20 seconds. In addition, your chance of being critically attacked is increased by 50%. -->
@@ -298,14 +298,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="2748" />
 			</effect>
 			<effect name="Stun">
 				<mul stat="defCritRate" val="0.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6623" levels="1" name="Fungus Hub">
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -342,11 +342,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6626" levels="2" name="Energy of Life's Power">
 		<!-- This skill only has one level, 2. -->
@@ -359,11 +359,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="25" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6627" levels="3" name="Energy of Life's Highest Power">
 		<!-- This skill only has one level, 3. -->
@@ -376,11 +376,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6628" levels="1" name="Energy of Mana">
 		<set name="castRange" val="2000" />
@@ -393,11 +393,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="ManaHealPercent">
 				<param power="11" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6629" levels="2" name="Energy of Mana's Power">
 		<!-- This skill only has one level, 2. -->
@@ -410,11 +410,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="ManaHealPercent">
 				<param power="18" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6630" levels="3" name="Energy of Mana's Highest Power">
 		<!-- This skill only has one level, 3. -->
@@ -427,11 +427,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="ManaHealPercent">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6631" levels="1" name="Energy of Power">
 		<set name="abnormalInstant" val="true" />
@@ -448,11 +448,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6632" levels="1" name="Energy of Enchant">
 		<set name="abnormalInstant" val="true" />
@@ -483,11 +483,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6634" levels="1" name="Energy of Casting Speed">
 		<set name="abnormalInstant" val="true" />
@@ -518,11 +518,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6636" levels="1" name="Energy of Moving Speed">
 		<set name="abnormalInstant" val="true" />
@@ -539,11 +539,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6637" levels="1" name="Vampiric Aura">
 		<!-- Confirmed CT2.5 -->
@@ -566,12 +566,12 @@
 				<player transformationId="103" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regHp" val="2" />
 				<mul stat="regMp" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6638" levels="1" name="Aura of Mystery">
 		<set name="abnormalInstant" val="true" />
@@ -595,12 +595,12 @@
 				<player transformationId="103" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regHp" val="2" />
 				<mul stat="regMp" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6639" levels="1" name="Bane of Auras - Damage">
 		<set name="abnormalInstant" val="true" />
@@ -617,11 +617,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6640" levels="1" name="Energizing Aura">
 		<set name="abnormalInstant" val="true" />
@@ -639,11 +639,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6641" levels="1" name="Holy Ball">
 		<!-- Confirmed CT2.5 -->
@@ -663,11 +663,11 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="122" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6642" levels="1" name="Dash">
 		<!-- Confirmed CT2.5 -->
@@ -688,12 +688,12 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="2319" />
 			</effect>
 			<effect name="EnemyCharge" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6643" levels="1" name="Holy Strike">
 		<!-- Confirmed CT2.5 -->
@@ -710,11 +710,11 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="2319" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6644" levels="1" name="Ice Queen Freya">
 		<!-- Confirmed CT2.5 -->
@@ -771,11 +771,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="126" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6650" levels="1" name="Tacrakahn's Alienation">
 		<set name="abnormalLvl" val="99" />
@@ -888,7 +888,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Paralyze" />
 			<effect name="DamOverTime" ticks="#ticks">
 				<param power="115" />
@@ -896,7 +896,7 @@
 			<effect name="CallSkill">
 				<param skillId="6302" skillLevel="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6663" levels="1" name="Level 76 Raid Boss">
 		<!-- Confirmed CT2.5 -->
@@ -935,11 +935,11 @@
 		<set name="reuseDelay" val="90000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.18" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6667" levels="1" name="Feral Wind Walk">
 		<!-- Increases Moving Spd. by 33 for 5 minutes. -->
@@ -957,11 +957,11 @@
 		<set name="reuseDelay" val="90000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6668" levels="1" name="Feral Death Whisper">
 		<!-- Increases critical attack power by 35% for 5 minutes. -->
@@ -979,11 +979,11 @@
 		<set name="reuseDelay" val="90000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6669" levels="1" name="Feral Body Bless">
 		<!-- Increases Max HP by 35% for 5 minutes. -->
@@ -1001,11 +1001,11 @@
 		<set name="reuseDelay" val="90000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6670" levels="1" name="Feral Vampiric Rage">
 		<!-- For 5 minutes, 9% of the standard short-range physical damage inflicted on the enemy is converted to HP for you. -->
@@ -1023,11 +1023,11 @@
 		<set name="reuseDelay" val="90000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="absorbDam" val="9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6671" levels="1" name="Feral Berserker Spirit">
 		<!-- Decreases P. Def. by 8%, M. Def. by 16%, Evasion by 4 and increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Moving Spd. by 8 for 5 minutes. -->
@@ -1045,7 +1045,7 @@
 		<set name="reuseDelay" val="90000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="pAtk" val="1.08" />
@@ -1056,7 +1056,7 @@
 				<add stat="runSpd" val="8" />
 				<sub stat="rEvas" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6672" levels="1" name="Feral Bless Shield">
 		<!-- Increases Shield defense rate by 5% for 30 minutes. -->
@@ -1074,11 +1074,11 @@
 		<set name="reuseDelay" val="90000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rShld" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6673" levels="1" name="Presentation - Attain Noblesse">
 		<set name="effectPoint" val="100" />
@@ -1103,13 +1103,13 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtkRange" val="50">
 					<using kind="BOW,CROSSBOW" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6675" levels="1" name="Lavasaurus Firstborn Attack">
 		<set name="effectPoint" val="-100" />
@@ -1131,11 +1131,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="120" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6677" levels="1" name="Hold">
 		<set name="abnormalLvl" val="1" />
@@ -1177,11 +1177,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="120" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6680" levels="1" name="Faint Plus">
 		<set name="coolTime" val="500" />
@@ -1209,11 +1209,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="40" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6682" levels="1" name="Elite Maguen Speed Walk">
 		<!-- Moving Spd. increases by 45 for 20 minutes. -->
@@ -1234,11 +1234,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="45" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6683" levels="1" name="Maguen Recall">
 		<!-- Confirmed CT2.5 -->
@@ -1259,11 +1259,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<param x="-178244" y="153389" z="2472" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6684" levels="1" name="Maguen Recall">
 		<!-- Confirmed CT2.5 -->
@@ -1285,11 +1285,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<param x="-178244" y="153389" z="2472" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6685" levels="1" name="Santa Claus's Gift">
 		<!-- Confirmed CT2.5 -->
@@ -1307,11 +1307,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="17003" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6686" levels="1" name="Sacred Protector Cancel">
 		<!-- Confirmed CT2.5 -->
@@ -1322,11 +1322,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="CLAN" /> <!-- FIXME: Aura Friendly ? -->
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="PA_UP,9;PD_UP,9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6687" levels="1" name="Patience">
 		<!-- Confirmed CT2.5 -->
@@ -1340,11 +1340,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="physicalSkillPower" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6688" levels="1" name="Soup of Failure">
 		<!-- Confirmed CT2.5 -->
@@ -1362,12 +1362,12 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" /> <!-- FIXME: Aura Friendly ? -->
-		<for>
+		<effects>
 			<effect name="DamOverTimePercent" ticks="5">
 				<param power="0.02" />
 				<mul stat="pAtkSpd" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6689" levels="1" name="Absorb HP MP">
 		<set name="coolTime" val="2000" />
@@ -1459,14 +1459,14 @@
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="45257" />
 			</effect>
 			<effect name="CallSkill">
 				<param skillId="6698" skillLevel="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6698" levels="1" name="Pillar of Frozen - Eternal Ice">
 		<!-- Confirmed CT2.5 -->
@@ -1485,7 +1485,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="Paralyze" />
 			<effect name="DamOverTime" ticks="5">
 				<param power="115" />
@@ -1493,7 +1493,7 @@
 			<effect name="ManaDamOverTime" ticks="5">
 				<param power="5" />
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="6302" skillLevel="1" />

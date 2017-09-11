@@ -18,11 +18,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22201" levels="1" name="Transformation Scroll - Saber Tooth Tiger Event">
 		<!-- Transformed into a Saber Tooth Tiger. -->
@@ -42,11 +42,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22202" levels="1" name="Transformation Scroll - Ol Mahum Event">
 		<!-- Transformed into an Ol Mahum. -->
@@ -66,11 +66,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="6" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22203" levels="1" name="Transformation Scroll - Doll Blader Event">
 		<!-- Transformed into a Doll Blader. -->
@@ -90,11 +90,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22204" levels="1" name="Transformation Scroll - Zaken Event">
 		<!-- Transformed into Zaken. -->
@@ -114,11 +114,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="305" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22205" levels="1" name="Transformation Scroll - Anakim Event">
 		<!-- Transformed into Anakim. -->
@@ -138,11 +138,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="306" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22206" levels="1" name="Transformation Scroll - Venom Event">
 		<!-- Transformed into Venom. -->
@@ -162,11 +162,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="307" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22207" levels="1" name="Transformation Scroll - Gordon Event">
 		<!-- Transformed into Gordon. -->
@@ -186,11 +186,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="308" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22208" levels="1" name="Transformation Scroll - Ranku Event">
 		<!-- Transformed into Ranku. -->
@@ -210,11 +210,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="309" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22209" levels="1" name="Transformation Scroll - Kechi Event">
 		<!-- Transformed into Kechi. -->
@@ -234,11 +234,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="310" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22210" levels="1" name="Transformation Scroll - Demon Prince Event">
 		<!-- Transformed into Demon Prince. -->
@@ -258,11 +258,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="311" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22211" levels="1" name="Blessed Scroll of Escape">
 		<!-- none -->
@@ -289,7 +289,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
 		<set name="targetType" val="SELF" />	
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.2" />
 				<mul stat="critRate" val="1.2" />
@@ -304,7 +304,7 @@
 				<mul stat="runSpd" val="0.8" />
 				<add stat="absorbDam" val="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22214" levels="1" name="MP Recovery Potion">
 		<!-- Magic potion that quickly recovers MP by 50% when used. -->
@@ -317,11 +317,11 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="300000" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="ManaHealPercent">
 				<param power="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22215" levels="1" name="Energy Replenishing Herb Tea">
 		<!-- "For 30 minute(s), energy is replenished when Exp. is acquired through hunting." -->
@@ -340,11 +340,11 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22216" levels="1" name="Transformation Scroll - Anakim">
 		<!-- Transformed into Anakim. -->
@@ -364,11 +364,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="306" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22217" levels="1" name="Super Healthy Juice (HP)">
 		<!-- Magic juice that instantly fully recovers HP. -->
@@ -381,11 +381,11 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="300000" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22218" levels="1" name="Super Healthy Juice (HP)">
 		<!-- Magic juice that instantly fully recovers HP. -->
@@ -398,11 +398,11 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="300000" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22219" levels="1" name="Super Healthy Juice (CP)">
 		<!-- Magic juice that temporarily recovers CP in full. -->
@@ -415,11 +415,11 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="300000" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="CpHealPercent">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22220" levels="1" name="Super Healthy Juice (CP)">
 		<!-- Magic juice that temporarily recovers CP in full. -->
@@ -432,11 +432,11 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="300000" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="CpHealPercent">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22221" levels="1" name="Energy Replenishing Beverage">
 		<!-- Vitality is replenished to 100% upon use. -->
@@ -449,11 +449,11 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<param value="20000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22222" levels="1" name="Energy Replenishing Beverage">
 		<!-- Vitality is replenished to 100% upon use. -->
@@ -466,11 +466,11 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<param value="20000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22223" levels="1" name="Potion of Energy Maintenance">
 		<!-- Energy is maintained for 30 minutes. -->
@@ -487,11 +487,11 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="vitalityConsumeRate" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22224" levels="1" name="Potion of Energy Maintenance">
 		<!-- Energy is maintained for 30 minutes. -->
@@ -508,11 +508,11 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="vitalityConsumeRate" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22225" levels="1" name="Gludio Homemade Cookie">
 		<!-- Increases P. Atk. by 10% for 60 minutes. -->
@@ -645,11 +645,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="139" npcCount="1" despawnDelay="1200000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22250" levels="1" name="Birthday Cake Effect">
 		<!-- Confirmed CT2.5 -->
@@ -661,11 +661,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="vitalityConsumeRate" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22251" levels="1" name="Honey Rice Cakes">
 		<!-- none -->
@@ -789,9 +789,9 @@
 		<cond msgId="109">
 			<target npcType="L2ChestInstance" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenChest" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22272" levels="1" name="Beginner Adventurer's Treasure Sack">
 		<!-- High Five Skill -->
@@ -808,9 +808,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22273" levels="1" name="Experienced Adventurer's Treasure Sack">
 		<!-- High Five Skill -->
@@ -827,9 +827,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22274" levels="1" name="Great Adventurer's Treasure Sack">
 		<!-- High Five Skill -->
@@ -846,9 +846,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22275" levels="1" name="Rune Jewelry Box - Crystal">
 		<!-- none -->
@@ -941,11 +941,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<param x="183624" y="-114891" z="-3340" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22291" levels="1" name="Jewel of Valakas">
 		<!-- Mysterious jewel that teleports you to Watcher of Valakas Klein in the Hall of Flames. Re-use time is 60 minutes. -->
@@ -963,11 +963,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<param x="183624" y="-114891" z="-3340" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22292" levels="1" name="Scroll: Antharas Call">
 		<!-- One-time use scroll that teleports you to the entrance to Antharas's Lair. -->
@@ -984,11 +984,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<param x="154596" y="121127" z="-3812" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22293" levels="1" name="Jewel of Antharas">
 		<!-- Mysterious jewel that teleports you to the entrance to Antharas's Lair. Re-use time is 60 minutes. -->
@@ -1006,11 +1006,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<param x="154596" y="121127" z="-3812" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22294" levels="1" name="Totem of Body">
 		<set name="blockedInOlympiad" val="true" />
@@ -1019,11 +1019,11 @@
 		<set name="reuseDelay" val="600" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="143" npcCount="1" despawnDelay="1800000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22295" levels="1" name="Totem of Spirit">
 		<set name="blockedInOlympiad" val="true" />
@@ -1032,11 +1032,11 @@
 		<set name="reuseDelay" val="600" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="144" npcCount="1" despawnDelay="1800000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22296" levels="1" name="Totem of Bravery">
 		<set name="blockedInOlympiad" val="true" />
@@ -1046,11 +1046,11 @@
 		<set name="reuseDelay" val="600" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="145" npcCount="1" despawnDelay="1800000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22297" levels="1" name="Totem of Fortitude">
 		<set name="blockedInOlympiad" val="true" />
@@ -1059,11 +1059,11 @@
 		<set name="reuseDelay" val="600" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="146" npcCount="1" despawnDelay="1800000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22298" levels="1" name="Refined Red Dragon Blood">
 		<set name="blockedInOlympiad" val="true" />
@@ -1074,11 +1074,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="1000" /> <!-- TODO: Custom. -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22299" levels="1" name="Refined Blue Dragon Blood">
 		<set name="blockedInOlympiad" val="true" />
@@ -1089,10 +1089,10 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<param power="1000" /> <!-- TODO: Custom. -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

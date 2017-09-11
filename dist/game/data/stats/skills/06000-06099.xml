@@ -134,14 +134,14 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="0.75" />
 				<mul stat="mDef" val="0.75" />
 				<mul stat="regHp" val="0.75" />
 				<mul stat="mAtk" val="1.06" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6021" levels="1" name="Soul Retain">
 		<!-- Confirmed CT2.5 -->
@@ -156,14 +156,14 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="0.5" />
 				<mul stat="mDef" val="0.5" />
 				<mul stat="regHp" val="0.5" />
 				<mul stat="mAtk" val="1.09" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6022" levels="1" name="Soul Retain">
 		<!-- Confirmed CT2.5 -->
@@ -178,14 +178,14 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="0.25" />
 				<mul stat="mDef" val="0.25" />
 				<mul stat="regHp" val="0.25" />
 				<mul stat="mAtk" val="1.12" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6023" levels="1" name="Soul Retain">
 		<!-- Confirmed CT2.5 -->
@@ -200,14 +200,14 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="0.06" />
 				<mul stat="mDef" val="0.06" />
 				<mul stat="regHp" val="0.06" />
 				<mul stat="mAtk" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6024" levels="1" name="Weight Aerial Cleft">
 		<set name="abnormalLvl" val="1" />
@@ -275,9 +275,9 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6034" levels="1" name="Freeze">
 		<!-- CT2.5 retail confirmed -->
@@ -293,7 +293,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="BlockDamage">
 				<param block="HP"/>
 			</effect>
@@ -306,7 +306,7 @@
 			</effect>
 			<effect name="ImmobileBuff" />
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6035" levels="1" name="Red Team Transformation">
 		<set name="abnormalLvl" val="1" />
@@ -322,14 +322,14 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="121" />
 				<mul stat="weightLimit" val="11" />
 				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6036" levels="1" name="Blue Team Transformation">
 		<set name="abnormalLvl" val="1" />
@@ -345,14 +345,14 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="122" />
 				<mul stat="weightLimit" val="11" />
 				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6037" levels="1" name="Soul Unleash">
 		<set name="magicLvl" val="80" />
@@ -371,9 +371,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="stayAfterDeath" val="True" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="BlockChat" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6039" levels="1" name="Report Status">
 		<set name="abnormalLvl" val="1" />
@@ -386,9 +386,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="stayAfterDeath" val="True" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="BlockParty" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6040" levels="1" name="Report Status">
 		<set name="abnormalLvl" val="1" />
@@ -401,9 +401,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="stayAfterDeath" val="True" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Flag" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6041" levels="1" name="Phoenix Rush">
 		<!-- Confirmed CT2.5 -->
@@ -423,12 +423,12 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="2372" />
 			</effect>
 			<effect name="EnemyCharge" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6042" levels="1" name="Phoenix Cleanse">
 		<!-- Confirmed CT2.5 -->
@@ -445,11 +445,11 @@
 		<set name="reuseDelay" val="180000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<param slot="DEBUFF" rate="100" max="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6043" levels="1" name="Phoenix Flame Feather">
 		<!-- Confirmed CT2.5 -->
@@ -468,11 +468,11 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="70" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6044" levels="1" name="Phoenix Flame Beak">
 		<!-- Confirmed CT2.5 -->
@@ -491,11 +491,11 @@
 		<set name="reuseDelay" val="13000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="2156" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6045" levels="1" name="Presentation - Fortune Bug">
 		<set name="hitTime" val="2000" />
@@ -519,11 +519,11 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6047" levels="14" name="Whirlwind">
 		<table name="#effectPoints"> -273 -405 -568 -756 -951 -1130 -1268 -1289 -1307 -1322 -1330 -1336 -1343 -1349 </table>
@@ -540,11 +540,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6048" levels="14" name="Lance Smash">
 		<table name="#effectPoints"> -273 -405 -568 -756 -951 -1130 -1268 -1289 -1307 -1322 -1330 -1336 -1343 -1349 </table>
@@ -563,11 +563,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6049" levels="4" name="Battle Cry">
 		<!-- Confirmed CT2.5 -->
@@ -588,13 +588,13 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#amount" />
 				<mul stat="pDef" val="#amount" />
 				<mul stat="mDef" val="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6050" levels="14" name="Power Smash">
 		<table name="#effectPoints"> -136 -202 -283 -377 -475 -564 -633 -644 -653 -660 -664 -667 -671 -674 </table>
@@ -611,11 +611,11 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6051" levels="14" name="Energy Burst">
 		<table name="#effectPoints"> -273 -405 -568 -756 -951 -1130 -1268 -1289 -1307 -1322 -1330 -1336 -1343 -1349 </table>
@@ -633,11 +633,11 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6052" levels="14" name="Shockwave">
 		<table name="#effectPoints"> -273 -405 -568 -756 -951 -1130 -1268 -1289 -1307 -1322 -1330 -1336 -1343 -1349 </table>
@@ -655,11 +655,11 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6053" levels="4" name="Howl">
 		<!-- Confirmed CT2.5 -->
@@ -683,14 +683,14 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#amount" />
 				<mul stat="pDef" val="#amount" />
 				<mul stat="mAtk" val="#amount" />
 				<mul stat="mDef" val="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6054" levels="1" name="Switch State">
 		<!-- Confirmed CT2.5 -->
@@ -711,11 +711,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="stayAfterDeath" val="True" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="BlockAction">
 				<param blockedActions="-2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6056" levels="1" name="Report Status">
 		<set name="abnormalLvl" val="1" />
@@ -728,11 +728,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="stayAfterDeath" val="True" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="BlockAction">
 				<param blockedActions="-2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6057" levels="1" name="Report Status">
 		<set name="abnormalLvl" val="1" />
@@ -745,11 +745,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="stayAfterDeath" val="True" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6058" levels="1" name="Report Status">
 		<set name="abnormalLvl" val="1" />
@@ -762,11 +762,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="stayAfterDeath" val="True" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6059" levels="1" name="Counter Critical">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -780,13 +780,13 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="2">
 					<using kind="SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER" />
 				</mul>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6060" levels="1" name="Great Fury">
 		<set name="abnormalLvl" val="1" />
@@ -800,24 +800,24 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="PARTY" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6061" levels="1" name="Decrease Weight">
 		<set name="icon" val="icon.skill1257" />
 		<set name="magicLvl" val="52" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="11" />
 				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6062" levels="1" name="Raid Boss - Level 81">
 		<!-- Confirmed CT2.5 -->
@@ -1031,9 +1031,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6091" levels="1" name="Anchor">
 		<!-- Confirmed CT2.5 -->
@@ -1051,9 +1051,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6092" levels="1" name="Lightning Shock">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -1071,9 +1071,9 @@
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6093" levels="1" name="Panther Hide">
 		<!-- Confirmed CT2.5 -->
@@ -1090,11 +1090,11 @@
 		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Hide">
 				<mul stat="runSpd" val="0.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6094" levels="11" name="Panther Cancel">
 		<!-- Confirmed CT2.5 -->
@@ -1110,11 +1110,11 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<param slot="BUFF" rate="25" max="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6095" levels="15" name="Panther Dark Claw">
 		<!-- Confirmed CT2.5 -->
@@ -1140,14 +1140,14 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
 				<sub stat="darkRes" val="25" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6096" levels="13" name="Panther Fatal Claw">
 		<!-- Confirmed CT2.5 -->
@@ -1165,12 +1165,12 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param blowChance="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6097" levels="1" name="Scissors">
 		<set name="effectPoint" val="-1" />

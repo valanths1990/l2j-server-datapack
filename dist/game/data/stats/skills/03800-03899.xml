@@ -6,13 +6,13 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.0208" />
 				<add stat="maxMp" val="133" />
 				<add stat="darkRes" val="3.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3801" levels="1" name="Dynasty Gloves">
 		<!-- Confirmed CT2.5 -->
@@ -20,13 +20,13 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.0083" />
 				<add stat="maxMp" val="53" />
 				<add stat="darkRes" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3802" levels="1" name="Dynasty Shoes">
 		<!-- Confirmed CT2.5 -->
@@ -34,13 +34,13 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.0083" />
 				<add stat="maxMp" val="53" />
 				<add stat="darkRes" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3803" levels="1" name="Dynasty Circlet">
 		<!-- Confirmed CT2.5 -->
@@ -48,13 +48,13 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.0125" />
 				<add stat="maxMp" val="80" />
 				<add stat="darkRes" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3804" levels="1" name="Dynasty Silver Satin Tunic">
 		<!-- Confirmed CT2.5 -->
@@ -62,11 +62,11 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3805" levels="1" name="Dynasty Jewel Leather Mail">
 		<!-- Confirmed CT2.5 -->
@@ -74,7 +74,7 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="3.4" />
 				<add stat="darkRes" val="3.2" />
@@ -82,7 +82,7 @@
 				<mul stat="pAtkSpd" val="1.0477" />
 				<add stat="rEvas" val="3.4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3806" levels="1" name="Dynasty Platinum Plate">
 		<!-- Confirmed CT2.5 -->
@@ -90,14 +90,14 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="3.2" />
 				<mul stat="magicalMpConsumeRate" val="0.95" />
 				<add stat="maxHp" val="1023" />
 				<mul stat="pDef" val="1.0724" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3807" levels="1" name="Adamantite Earring">
 		<!-- Confirmed CT2.5 -->
@@ -105,11 +105,11 @@
 		<set name="magicLvl" val="58" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxMp" val="17" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3808" levels="1" name="Adamantite Necklace">
 		<!-- Confirmed CT2.5 -->
@@ -117,11 +117,11 @@
 		<set name="magicLvl" val="58" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="3.57" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3809" levels="1" name="Adamantite Ring">
 		<!-- Confirmed CT2.5 -->
@@ -129,11 +129,11 @@
 		<set name="magicLvl" val="58" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.0071" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3810" levels="1" name="Earring of Black Ore">
 		<!-- Confirmed CT2.5 -->
@@ -141,11 +141,11 @@
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="1.71" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3811" levels="1" name="Necklace of Black Ore">
 		<!-- Confirmed CT2.5 -->
@@ -153,11 +153,11 @@
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="4.76" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3812" levels="1" name="Ring of Black Ore">
 		<!-- Confirmed CT2.5 -->
@@ -165,11 +165,11 @@
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxMp" val="9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3813" levels="1" name="Phoenix Necklace">
 		<!-- Confirmed CT2.5 -->
@@ -177,11 +177,11 @@
 		<set name="magicLvl" val="64" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxMp" val="21" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3814" levels="1" name="Phoenix Ring">
 		<!-- Confirmed CT2.5 -->
@@ -189,11 +189,11 @@
 		<set name="magicLvl" val="64" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.0071" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3815" levels="1" name="Phoenix Earring">
 		<!-- Confirmed CT2.5 -->
@@ -201,11 +201,11 @@
 		<set name="magicLvl" val="64" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.01" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3816" levels="1" name="Majestic Necklace">
 		<!-- Confirmed CT2.5 -->
@@ -213,11 +213,11 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.01" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3817" levels="1" name="Majestic Ring">
 		<!-- Confirmed CT2.5 -->
@@ -225,11 +225,11 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxMp" val="11" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3818" levels="1" name="Majestic Earring">
 		<!-- Confirmed CT2.5 -->
@@ -237,11 +237,11 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param POISON="5.71" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3819" levels="1" name="Tateossian Necklace">
 		<!-- Confirmed CT2.5 -->
@@ -249,11 +249,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLEED="7.61" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3820" levels="1" name="Tateossian Ring">
 		<!-- Confirmed CT2.5 -->
@@ -261,11 +261,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="earthRes" val="1.14" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3821" levels="1" name="Tateossian Earring">
 		<!-- Confirmed CT2.5 -->
@@ -273,11 +273,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxMp" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3822" levels="1" name="Dynasty Necklace">
 		<!-- Confirmed CT2.5 -->
@@ -285,11 +285,11 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxMp" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3823" levels="1" name="Dynasty Ring">
 		<!-- Confirmed CT2.5 -->
@@ -297,11 +297,11 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="1.14" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3824" levels="1" name="Dynasty Earring">
 		<!-- Confirmed CT2.5 -->
@@ -309,11 +309,11 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3825" levels="3" name="Sword of Might">
 		<!-- CT2.5 retail confirmed -->
@@ -323,11 +323,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3826" levels="2" name="Sword of Boost HP">
 		<!-- CT2.5 retail confirmed -->
@@ -337,11 +337,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3827" levels="1" name="Sword of Critical Power">
 		<!-- CT2.5 retail confirmed -->
@@ -349,11 +349,11 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critDmgAdd" val="220" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3828" levels="1" name="Sword of Critical Chance">
 		<!-- CT2.5 retail confirmed -->
@@ -361,18 +361,18 @@
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critRate" val="54.4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3829" levels="1" name="Sword of Stun">
 		<!-- Confirmed CT2.5 -->
 		<set name="icon" val="icon.skill0100" />
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="P" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -381,7 +381,7 @@
 				<param targetType="ONE" />
 				<param allowWeapons="ALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3830" levels="3" name="Rapier of Might">
 		<!-- CT2.5 retail confirmed -->
@@ -391,11 +391,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3831" levels="2" name="Rapier of Boost HP">
 		<!-- CT2.5 retail confirmed -->
@@ -405,11 +405,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3832" levels="1" name="Rapier of Critical Power">
 		<!-- CT2.5 retail confirmed -->
@@ -417,11 +417,11 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critDmgAdd" val="169" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3833" levels="1" name="Rapier of Critical Chance">
 		<!-- CT2.5 retail confirmed -->
@@ -429,18 +429,18 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critRate" val="54.4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3834" levels="1" name="Rapier of Stun">
 		<!-- Confirmed CT2.5 -->
 		<set name="icon" val="icon.skill0100" />
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="P" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -449,7 +449,7 @@
 				<param targetType="ONE" />
 				<param allowWeapons="ALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3835" levels="3" name="Dual-Blade Weapon of Might">
 		<!-- CT2.5 retail confirmed -->
@@ -459,11 +459,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3836" levels="2" name="Dual-Blade Weapon of Boost HP">
 		<!-- CT2.5 retail confirmed -->
@@ -473,11 +473,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3837" levels="1" name="Dual-Blade Weapon of Critical Power">
 		<!-- CT2.5 retail confirmed -->
@@ -485,11 +485,11 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critDmgAdd" val="268" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3838" levels="1" name="Dual-Blade Weapon of Critical Chance">
 		<!-- CT2.5 retail confirmed -->
@@ -497,18 +497,18 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critRate" val="54.4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3839" levels="1" name="Dual-Blade Weapon of Stun">
 		<!-- Confirmed CT2.5 -->
 		<set name="icon" val="icon.skill0100" />
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="P" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -517,7 +517,7 @@
 				<param targetType="ONE" />
 				<param allowWeapons="ALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3840" levels="2" name="Two-handed Sword of Haste">
 		<!-- CT2.5 retail confirmed -->
@@ -526,11 +526,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3841" levels="1" name="Two-handed Sword of Guidance">
 		<!-- CT2.5 retail confirmed -->
@@ -538,11 +538,11 @@
 		<set name="magicLvl" val="64" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="3.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3842" levels="1" name="Two-handed Sword of Vampiric Rage">
 		<!-- CT2.5 retail confirmed -->
@@ -550,11 +550,11 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="absorbDam" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3843" levels="1" name="Two-handed Sword of Boost HP">
 		<!-- CT2.5 retail confirmed -->
@@ -562,11 +562,11 @@
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="398" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3844" levels="1" name="Two-handed Sword of Critical Power">
 		<!-- CT2.5 retail confirmed -->
@@ -574,11 +574,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critDmgAdd" val="340" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3845" levels="2" name="Two-handed Sword of Critical Chance">
 		<!-- CT2.5 retail confirmed -->
@@ -587,11 +587,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critRate" val="54.4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3846" levels="2" name="Ancient Sword of Haste">
 		<!-- CT2.5 retail confirmed -->
@@ -600,11 +600,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3847" levels="1" name="Ancient Sword of Guidance">
 		<!-- CT2.5 retail confirmed -->
@@ -612,11 +612,11 @@
 		<set name="magicLvl" val="64" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="3.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3848" levels="1" name="Ancient Sword of Vampiric Rage">
 		<!-- CT2.5 retail confirmed -->
@@ -624,11 +624,11 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="absorbDam" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3849" levels="1" name="Ancient Sword of Boost HP">
 		<!-- CT2.5 retail confirmed -->
@@ -636,11 +636,11 @@
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="398" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3850" levels="1" name="Ancient Sword of Critical Power">
 		<!-- CT2.5 retail confirmed -->
@@ -648,11 +648,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critDmgAdd" val="303" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3851" levels="2" name="Ancient Sword of Critical Chance">
 		<!-- CT2.5 retail confirmed -->
@@ -661,11 +661,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critRate" val="54.4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3852" levels="3" name="Sword of Mana Boost">
 		<!-- CT2.5 retail confirmed -->
@@ -675,11 +675,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxMp" val="#maxMp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3853" levels="2" name="Sword of Mana Regeneration">
 		<!-- CT2.5 retail confirmed -->
@@ -688,11 +688,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3854" levels="1" name="Sword of Empower">
 		<!-- CT2.5 retail confirmed -->
@@ -700,11 +700,11 @@
 		<set name="magicLvl" val="64" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mAtk" val="21.77" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3855" levels="1" name="not_used">
 		<set name="magicLvl" val="75" />
@@ -717,11 +717,11 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="healEffect" val="37" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3857" levels="1" name="Sword of Clarity">
 		<!-- CT2.5 retail confirmed -->
@@ -729,13 +729,13 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicalMpConsumeRate" val="0.95" />
 				<mul stat="physicalMpConsumeRate" val="0.95" />
 				<mul stat="danceMpConsumeRate" val="0.95" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3858" levels="3" name="Dagger of Avoid">
 		<!-- CT2.5 retail confirmed -->
@@ -744,11 +744,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="3.3 " />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3859" levels="2" name="Dagger of Haste">
 		<!-- CT2.5 retail confirmed -->
@@ -757,11 +757,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3860" levels="1" name="Dagger of Regeneration">
 		<!-- CT2.5 retail confirmed -->
@@ -769,18 +769,18 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3861" levels="1" name="Dagger of Poison">
 		<!-- Confirmed CT2.5 -->
 		<set name="icon" val="icon.skill0129" />
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="P" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -789,7 +789,7 @@
 				<param targetType="ONE" />
 				<param allowWeapons="ALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3862" levels="1" name="Dagger of Guidance">
 		<!-- CT2.5 retail confirmed -->
@@ -797,11 +797,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="3.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3863" levels="4" name="Bow of Guidance">
 		<!-- CT2.5 retail confirmed -->
@@ -810,11 +810,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="3.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3864" levels="2" name="Bow of Haste">
 		<!-- CT2.5 retail confirmed -->
@@ -823,11 +823,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3865" levels="1" name="Bow of Long Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -835,13 +835,13 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtkRange" val="100">
 					<using kind="BOW" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3866" levels="1" name="Dynasty Leather Gloves">
 		<!-- Confirmed CT2.5 -->
@@ -849,7 +849,7 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="0.31" />
 				<add stat="accCombat" val="0.31" />
@@ -857,7 +857,7 @@
 				<mul stat="pAtkSpd" val="1.0027" />
 				<add stat="darkRes" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3867" levels="1" name="Bow of Boost HP">
 		<!-- CT2.5 retail confirmed -->
@@ -865,11 +865,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="444" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3868" levels="4" name="Crossbow of Guidance">
 		<!-- CT2.5 retail confirmed -->
@@ -878,11 +878,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="3.7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3869" levels="2" name="Crossbow of Haste">
 		<!-- CT2.5 retail confirmed -->
@@ -891,11 +891,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3870" levels="1" name="Crossbow of Long Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -903,13 +903,13 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtkRange" val="100">
 					<using kind="CROSSBOW" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3871" levels="1" name="not_used">
 		<set name="magicLvl" val="75" />
@@ -922,11 +922,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="444" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3873" levels="2" name="Polearm of Critical Power">
 		<!-- CT2.5 retail confirmed -->
@@ -936,11 +936,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critDmgAdd" val="#cAtkAdd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3874" levels="1" name="Polearm of Critical Chance">
 		<!-- CT2.5 retail confirmed -->
@@ -948,11 +948,11 @@
 		<set name="magicLvl" val="64" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critRate" val="54.4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3875" levels="1" name="Polearm of Regeneration">
 		<!-- CT2.5 retail confirmed -->
@@ -960,18 +960,18 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3876" levels="1" name="Polearm of Stun">
 		<!-- Confirmed CT2.5 -->
 		<set name="icon" val="icon.skill0100" />
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="P" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -980,7 +980,7 @@
 				<param targetType="ONE" />
 				<param allowWeapons="ALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3877" levels="2" name="Polearm of Boost HP">
 		<!-- CT2.5 retail confirmed -->
@@ -990,11 +990,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3878" levels="1" name="Polearm of Might">
 		<!-- CT2.5 retail confirmed -->
@@ -1002,11 +1002,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="31.25" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3879" levels="3" name="Fist Weapon of Might">
 		<!-- CT2.5 retail confirmed -->
@@ -1016,11 +1016,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3880" levels="2" name="Fist Weapon of Haste">
 		<!-- CT2.5 retail confirmed -->
@@ -1029,11 +1029,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3881" levels="1" name="Fist Weapon of Boost HP">
 		<!-- CT2.5 retail confirmed -->
@@ -1041,18 +1041,18 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="372" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3882" levels="1" name="Fist Weapon of Stun">
 		<!-- Confirmed CT2.5 -->
 		<set name="icon" val="icon.skill0100" />
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="P" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -1061,7 +1061,7 @@
 				<param targetType="ONE" />
 				<param allowWeapons="ALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3883" levels="1" name="Fist Weapon of Critical Power">
 		<!-- CT2.5 retail confirmed -->
@@ -1069,11 +1069,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critDmgAdd" val="528" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3884" levels="3" name="Blunt Weapon of Boost HP">
 		<!-- CT2.5 retail confirmed -->
@@ -1083,11 +1083,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3885" levels="2" name="Blunt Weapon of Stun">
 		<!-- Confirmed CT2.5 -->
@@ -1096,7 +1096,7 @@
 		<set name="icon" val="icon.skill0100" />
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="P" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -1105,7 +1105,7 @@
 				<param targetType="ONE" />
 				<param allowWeapons="ALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3886" levels="1" name="Blunt Weapon of Haste">
 		<!-- CT2.5 retail confirmed -->
@@ -1113,11 +1113,11 @@
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3887" levels="1" name="Blunt Weapon of Regeneration">
 		<!-- CT2.5 retail confirmed -->
@@ -1125,11 +1125,11 @@
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3888" levels="1" name="Blunt Weapon of Guidance">
 		<!-- CT2.5 retail confirmed -->
@@ -1137,11 +1137,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="4.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3889" levels="3" name="Blunt Weapon of Empower">
 		<!-- CT2.5 retail confirmed -->
@@ -1151,11 +1151,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mAtk" val="#mAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3890" levels="1" name="Blunt Weapon of Mana Boost">
 		<!-- CT2.5 retail confirmed -->
@@ -1163,11 +1163,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxMp" val="289" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3891" levels="2" name="Blunt Weapon of Boost HP">
 		<!-- CT2.5 retail confirmed -->
@@ -1177,11 +1177,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3892" levels="1" name="Blunt Weapon of Clarity">
 		<!-- CT2.5 retail confirmed -->
@@ -1189,11 +1189,11 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicalMpConsumeRate" val="0.95" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3893" levels="1" name="Blunt Weapon of Mana Regeneration">
 		<!-- CT2.5 retail confirmed -->
@@ -1201,11 +1201,11 @@
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3894" levels="1" name="Two-handed Blunt Weapon of Critical Power">
 		<!-- CT2.5 retail confirmed -->
@@ -1213,11 +1213,11 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critDmgAdd" val="415" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3895" levels="3" name="Two-handed Blunt Weapon of Critical Chance">
 		<!-- CT2.5 retail confirmed -->
@@ -1226,11 +1226,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critRate" val="52.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3896" levels="2" name="Two-handed Blunt Weapon of Haste">
 		<!-- CT2.5 retail confirmed -->
@@ -1239,11 +1239,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3897" levels="1" name="Two-handed Blunt Weapon of Might">
 		<!-- CT2.5 retail confirmed -->
@@ -1251,11 +1251,11 @@
 		<set name="magicLvl" val="58" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="32.97" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3898" levels="1" name="Two-handed Blunt Weapon of Guidance">
 		<!-- CT2.5 retail confirmed -->
@@ -1263,11 +1263,11 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="4.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3899" levels="3" name="Staff of Empower">
 		<!-- CT2.5 retail confirmed -->
@@ -1277,10 +1277,10 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mAtk" val="#mAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

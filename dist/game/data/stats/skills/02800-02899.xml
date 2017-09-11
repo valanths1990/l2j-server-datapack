@@ -12,11 +12,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2801" levels="1" name="Stone of Abundance">
 		<!-- High Five Confirmed -->
@@ -30,11 +30,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2802" levels="1" name="Recovery Stone">
 		<!-- High Five Confirmed -->
@@ -47,14 +47,14 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="100" />
 			</effect>
 			<effect name="ManaHealPercent">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2803" levels="1" name="Seed of Revenge">
 		<!-- Confirmed CT2.5 -->
@@ -75,14 +75,14 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="761" skillLvl="1" />
 			</effect>
 			<effect name="SetSkill">
 				<param skillId="762" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2804" levels="1" name="Hell Scream">
 		<!-- Confirmed CT2.5 -->
@@ -103,11 +103,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="763" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2805" levels="1" name="Spirit of Phoenix">
 		<!-- Confirmed CT2.5 -->
@@ -128,14 +128,14 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="784" skillLvl="1" />
 			</effect>
 			<effect name="SetSkill">
 				<param skillId="785" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2806" levels="1" name="Eva's Will">
 		<!-- Confirmed CT2.5 -->
@@ -156,14 +156,14 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="786" skillLvl="1" />
 			</effect>
 			<effect name="SetSkill">
 				<param skillId="787" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2807" levels="1" name="Pain of Shilen">
 		<!-- Confirmed CT2.5 -->
@@ -184,14 +184,14 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="788" skillLvl="1" />
 			</effect>
 			<effect name="SetSkill">
 				<param skillId="789" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2808" levels="1" name="Exciting Adventure">
 		<!-- Confirmed CT2.5 -->
@@ -212,11 +212,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="768" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2809" levels="1" name="Wind Riding">
 		<!-- Confirmed CT2.5 -->
@@ -237,11 +237,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="769" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2810" levels="1" name="Ghost Walking">
 		<!-- Confirmed CT2.5 -->
@@ -262,11 +262,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="770" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2811" levels="1" name="Flame Hawk">
 		<!-- Confirmed CT2.5 -->
@@ -287,11 +287,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="771" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2812" levels="1" name="Arrow Rain">
 		<!-- Confirmed CT2.5 -->
@@ -312,11 +312,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="772" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2813" levels="1" name="Ghost Piercing">
 		<!-- Confirmed CT2.5 -->
@@ -337,11 +337,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="773" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2814" levels="1" name="Dread Pool">
 		<!-- Confirmed CT2.5 -->
@@ -362,11 +362,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="774" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2815" levels="1" name="Force of Destruction">
 		<!-- Confirmed CT2.5 -->
@@ -387,11 +387,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="776" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2816" levels="1" name="Demolition Impact">
 		<!-- Confirmed CT2.5 -->
@@ -412,11 +412,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="777" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2817" levels="1" name="Golem Armor">
 		<!-- Confirmed CT2.5 -->
@@ -437,11 +437,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="778" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2818" levels="1" name="Wild Shot">
 		<!-- Confirmed CT2.5 -->
@@ -462,11 +462,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="790" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2819" levels="1" name="Lightning Shock">
 		<!-- Confirmed CT2.5 -->
@@ -487,11 +487,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="791" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2820" levels="1" name="Flame Armor">
 		<!-- Confirmed CT2.5 -->
@@ -512,11 +512,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="1492" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2821" levels="1" name="Frost Armor">
 		<!-- Confirmed CT2.5 -->
@@ -537,11 +537,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="1493" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2822" levels="1" name="Hurricane Armor">
 		<!-- Confirmed CT2.5 -->
@@ -562,11 +562,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="1494" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2823" levels="1" name="Vampiric Mist">
 		<!-- Confirmed CT2.5 -->
@@ -587,11 +587,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="1495" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2824" levels="1" name="Meteor">
 		<!-- Confirmed CT2.5 -->
@@ -612,11 +612,11 @@
 				<player level="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="1467" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2825" levels="1" name="Starfall">
 		<!-- Confirmed CT2.5 -->
@@ -637,11 +637,11 @@
 				<player level="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="1468" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2826" levels="1" name="Sublime Self-Sacrifice">
 		<!-- Confirmed CT2.5 -->
@@ -662,11 +662,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="1505" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2827" levels="1" name="Blessing of Eva">
 		<!-- Confirmed CT2.5 -->
@@ -687,11 +687,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="1506" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2828" levels="1" name="Lord of Vampire">
 		<!-- Confirmed CT2.5 -->
@@ -712,11 +712,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="1507" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2829" levels="1" name="Throne Root">
 		<!-- Confirmed CT2.5 -->
@@ -737,11 +737,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="1508" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2830" levels="1" name="Seal of Limit">
 		<!-- Confirmed CT2.5 -->
@@ -762,11 +762,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="1509" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2831" levels="1" name="Weapon Blockade">
 		<!-- Confirmed CT2.5 -->
@@ -787,11 +787,11 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="775" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2832" levels="1" name="S80 Weapon Chest">
 		<!-- Confirmed CT2.5 -->
@@ -810,9 +810,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2833" levels="1" name="S80 Armor Chest">
 		<!-- Confirmed CT2.5 -->
@@ -831,9 +831,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2834" levels="1" name="S Weapon Chest">
 		<!-- Confirmed CT2.5 -->
@@ -852,9 +852,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2835" levels="1" name="S Armor Chest">
 		<!-- Confirmed CT2.5 -->
@@ -873,9 +873,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2836" levels="1" name="S Accessory Chest">
 		<!-- Confirmed CT2.5 -->
@@ -894,9 +894,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2837" levels="1" name="Gracia Key">
 		<set name="effectPoint" val="-1" />
@@ -925,9 +925,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2839" levels="1" name="Sacred Light Fragment">
 		<set name="abnormalLvl" val="1" />
@@ -964,11 +964,11 @@
 				<player level="75" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<param skillId="932" skillLvl="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2841" levels="1" name="PC Cafe Points">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -999,9 +999,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2843" levels="1" name="Duel Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1022,9 +1022,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2844" levels="1" name="Duel Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1045,9 +1045,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2845" levels="1" name="Duel Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1068,9 +1068,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2846" levels="1" name="Duel Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1091,9 +1091,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2847" levels="1" name="Duel Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1114,9 +1114,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2848" levels="1" name="Duel Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1137,9 +1137,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2849" levels="1" name="Duel Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1160,9 +1160,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2850" levels="1" name="Duel Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1183,9 +1183,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2851" levels="1" name="Duel Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1206,9 +1206,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2852" levels="1" name="Duel Reward Box">
 		<!-- Confirmed CT2.5 -->
@@ -1229,9 +1229,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2853" levels="1" name="Duel Reward Box">
 		<!-- Confirmed CT2.5 -->
@@ -1252,9 +1252,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2854" levels="1" name="Duel Reward Box">
 		<!-- Confirmed CT2.5 -->
@@ -1275,9 +1275,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2855" levels="1" name="Duel Reward Box">
 		<!-- Confirmed CT2.5 -->
@@ -1298,9 +1298,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2856" levels="1" name="Santa's Buff Gift Set">
 		<!-- Confirmed CT2.5 -->
@@ -1316,7 +1316,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -1335,7 +1335,7 @@
 				<mul stat="regMp" val="1.2" />
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2857" levels="1" name="Christmas Event - Magic Use Enhancement Scroll">
 		<!-- Confirmed CT2.5 -->
@@ -1351,7 +1351,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="magicalMpConsumeRate" val="0.95" />
@@ -1367,7 +1367,7 @@
 				<mul stat="regMp" val="1.2" />
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2858" levels="1" name="Christmas Red Sock">
 		<!-- Confirmed CT2.5 -->
@@ -1388,9 +1388,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2859" levels="1" name="Christmas Gift">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1417,11 +1417,11 @@
 		<cond msgId="113" addName="1">
 			<player levelRange="#levelRange" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2861" levels="6" name="Highest Power Secret Medicine of Mind">
 		<!-- Confirmed CT2.5 -->
@@ -1438,11 +1438,11 @@
 		<cond msgId="113" addName="1">
 			<player levelRange="#levelRange" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2862" levels="6" name="Highest Power Secret Medicine of Will">
 		<!-- Confirmed CT2.5 -->
@@ -1459,11 +1459,11 @@
 		<cond msgId="113" addName="1">
 			<player levelRange="#levelRange" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2863" levels="1" name="Highest Power Healing Potion">
 		<!-- Confirmed CT2.5 -->
@@ -1478,11 +1478,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="3">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2864" levels="1" name="Highest Power Quick Healing Potion">
 		<!-- Confirmed CT2.5 -->
@@ -1493,11 +1493,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="870" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2865" levels="1" name="Agathion's New Year's Gift 1">
 		<!-- Confirmed CT2.5 -->
@@ -1518,9 +1518,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2866" levels="1" name="Agathion's New Year's Gift 2">
 		<!-- Confirmed CT2.5 -->
@@ -1541,9 +1541,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2867" levels="1" name="Cupid's Cure">
 		<set name="effectPoint" val="-1000" />
@@ -1581,11 +1581,11 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="13187" npcCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2870" levels="1" name="Event - Head Milk Cow Summon Scroll">
 		<!-- Confirmed CT2.5 -->
@@ -1599,11 +1599,11 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="13188" npcCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2871" levels="1" name="Summon Gloomy Milk Cow">
 		<!-- Confirmed CT2.5 -->
@@ -1615,11 +1615,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="13191" npcCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2872" levels="1" name="Summon Head Gloomy Milk Cow">
 		<!-- Confirmed CT2.5 -->
@@ -1631,11 +1631,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="13192" npcCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2873" levels="1" name="Might">
 		<!-- Confirmed CT2.5 -->
@@ -1649,11 +1649,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2874" levels="1" name="Wind Walk">
 		<!-- Confirmed CT2.5 -->
@@ -1667,11 +1667,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2875" levels="1" name="Haste">
 		<!-- Confirmed CT2.5 -->
@@ -1685,11 +1685,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2876" levels="1" name="Vampiric Rage">
 		<!-- Confirmed CT2.5 -->
@@ -1703,11 +1703,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="absorbDam" val="9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2877" levels="1" name="Berserker Spirit">
 		<!-- Confirmed CT2.5 -->
@@ -1721,7 +1721,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="pAtk" val="1.08" />
@@ -1732,7 +1732,7 @@
 				<add stat="runSpd" val="8" />
 				<sub stat="rEvas" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2878" levels="1" name="Empower">
 		<!-- Confirmed CT2.5 -->
@@ -1746,11 +1746,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.75" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2879" levels="1" name="Acumen">
 		<!-- Confirmed CT2.5 -->
@@ -1764,11 +1764,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2880" levels="1" name="Event - Gloomy Milk Cow Summon Scroll">
 		<!-- Confirmed CT2.5 -->
@@ -1782,11 +1782,11 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="13194" npcCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2881" levels="1" name="Event - Gloomy Head Milk Cow Summon Scroll">
 		<!-- Confirmed CT2.5 -->
@@ -1800,11 +1800,11 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<param npcId="13195" npcCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2882" levels="1" name="Crystal Cube">
 		<!-- Confirmed CT2.5 -->
@@ -1826,9 +1826,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2883" levels="1" name="Energy Replenishing Herb Tea">
 		<set name="abnormalLvl" val="1" />
@@ -1876,11 +1876,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2886" levels="1" name="Focus">
 		<!-- Confirmed CT2.5 -->
@@ -1894,11 +1894,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2887" levels="1" name="Death Whisper">
 		<!-- Confirmed CT2.5 -->
@@ -1912,11 +1912,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2888" levels="1" name="Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -1930,11 +1930,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2889" levels="1" name="Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -1948,13 +1948,13 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicalMpConsumeRate" val="0.9" />
 				<mul stat="physicalMpConsumeRate" val="0.8" />
 				<mul stat="danceMpConsumeRate" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2890" levels="1" name="Wild Magic">
 		<!-- Confirmed CT2.5 -->
@@ -1968,11 +1968,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2891" levels="6" name="Concentration">
 		<!-- Confirmed CT2.5 -->
@@ -1986,11 +1986,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancel" val="53" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2892" levels="1" name="Event - Extra Entrance Pass">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -2028,11 +2028,11 @@
 		<set name="reuseDelay" val="3600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<param value="20000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2895" levels="1" name="Special White Day Candy Basket">
 		<!-- Confirmed CT2.5 -->
@@ -2053,9 +2053,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2896" levels="1" name="White Day Candy Basket">
 		<!-- Confirmed CT2.5 -->
@@ -2076,9 +2076,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2897" levels="1" name="Baguette's Herb">
 		<set name="abnormalInstant" val="true" />
@@ -2095,12 +2095,12 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.1" />
 				<mul stat="regHp" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2898" levels="1" name="Fresh Cream Herb">
 		<set name="abnormalInstant" val="true" />
@@ -2117,7 +2117,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.1" />
 				<mul stat="maxMp" val="1.1" />
@@ -2127,7 +2127,7 @@
 				<mul stat="pAtkSpd" val="1.15" />
 				<add stat="runSpd" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2899" levels="1" name="Cheesecake Herb">
 		<set name="abnormalInstant" val="true" />
@@ -2144,11 +2144,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.1" />
 				<mul stat="regMp" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

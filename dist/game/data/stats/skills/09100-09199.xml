@@ -20,9 +20,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9101" levels="1" name="Icarus Weapon Box">
 		<!-- Confirmed CT2.5 -->
@@ -44,9 +44,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9102" levels="1" name="Dynasty Weapon Box">
 		<!-- Confirmed CT2.5 -->
@@ -68,9 +68,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9103" levels="1" name="Box of Vesper Armor">
 		<!-- Confirmed CT2.5 -->
@@ -92,9 +92,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9104" levels="1" name="Box of Moirai Armor">
 		<!-- Confirmed CT2.5 -->
@@ -116,9 +116,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9105" levels="1" name="Box of Dynasty Armor">
 		<!-- Confirmed CT2.5 -->
@@ -140,9 +140,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9106" levels="1" name="Soul Crystal Box - Level 14">
 		<!-- Confirmed CT2.5 -->
@@ -164,9 +164,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9107" levels="1" name="Soul Crystal Box - Level 15">
 		<!-- Confirmed CT2.5 -->
@@ -188,9 +188,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9108" levels="1" name="Soul Crystal Box - Level 16">
 		<!-- Confirmed CT2.5 -->
@@ -212,9 +212,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9109" levels="1" name="Box of Facelift Potions">
 		<!-- Confirmed CT2.5 -->
@@ -236,9 +236,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9110" levels="1" name="Box of Haircolor Change Potions">
 		<!-- Confirmed CT2.5 -->
@@ -260,9 +260,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9111" levels="1" name="Box of Hairstyle Change Potions">
 		<!-- Confirmed CT2.5 -->
@@ -284,9 +284,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9112" levels="1" name="Box of Gold Apiga">
 		<!-- Confirmed CT2.5 -->
@@ -308,9 +308,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9113" levels="1" name="Vitality Potion">
 		<!-- Maintains the current Vitality for 10 minutes. -->
@@ -338,11 +338,11 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="GiveRecommendation">
 				<param amount="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9115" levels="1" name="Nevit's Hourglass - 1 hour">
 		<!-- Increases Nevit's blessing by 1 hour. -->
@@ -1002,9 +1002,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9159" levels="1" name="Transformation Scroll - Anakim">
 		<set name="abnormalLvl" val="1" />
@@ -1024,11 +1024,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="306" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9160" levels="1" name="Transformation Scroll - Zaken">
 		<set name="abnormalLvl" val="1" />
@@ -1048,11 +1048,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="305" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9161" levels="1" name="Vesper's Mighty Power">
 		<!-- Increase Physical Attack by 15%, Magical Attack by 20%, and Moving Speed by 10 for 10 minutes. -->
@@ -1070,13 +1070,13 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 				<mul stat="mAtk" val="1.2" />
 				<add stat="runSpd" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9162" levels="1" name="Vesper's Critical Attack Power">
 		<!-- Increase Physical Critical Attack Rate by 15, Magic Critical Attack Rate by 2, and Moving Speed by 10 for 10 minutes. Recovers 5% of the standard short-range physical damage inflicted on the enemy as HP. -->
@@ -1094,14 +1094,14 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critRate" val="15" />
 				<add stat="mCritRate" val="2" />
 				<add stat="runSpd" val="10" />
 				<add stat="absorbDam" val="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9163" levels="1" name="Invincible Vesper">
 		<!-- Increase Max. Attack Speed by 20%, Magic Speed by 20%, and Moving Speed by 20 for 10 minutes. -->
@@ -1119,13 +1119,13 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="runSpd" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9164" levels="1" name="Special Gift of April Fool's Day - Event">
 		<!-- Confirmed CT2.5 -->
@@ -1148,9 +1148,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9165" levels="1" name="Energy of Sprout">
 		<!-- For 1 hour, receives help from the Energy of Sprout to increase Max MP by 20%, MP recovery bonus by 20%, HP recovery bonus by 20%, the rate of Prominent Damage occurring through damage magic by 2, the power of critical attacks by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and resistance to de-buffs by 10%. Decreases moving speed by 20% and MP consumption needed for skill use by 5%. -->
@@ -1229,11 +1229,11 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="GiveSp">
 				<param sp="500000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9175" levels="1" name="1,000,000 SP scroll">
 		<!-- High Five Skill -->
@@ -1246,11 +1246,11 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="GiveSp">
 				<param sp="1000000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9176" levels="1" name="Provided gift of cheers">
 		<!-- none -->
@@ -1276,9 +1276,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9178" levels="1" name="Theodric's Box">
 		<!-- none -->
@@ -1303,11 +1303,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9180" levels="2" name="10,000,000 SP scroll">
 		<!-- High Five Skill -->
@@ -1321,11 +1321,11 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="GiveSp">
 				<param sp="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9181" levels="1" name="Nevit's Hourglass - 4 hour(s)">
 		<!-- Increases Nevit's blessing by 4 hour(s). -->

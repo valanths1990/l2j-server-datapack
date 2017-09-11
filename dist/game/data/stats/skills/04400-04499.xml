@@ -15,11 +15,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4401" levels="3" name="Empower">
 		<!-- Confirmed CT2.5 -->
@@ -36,11 +36,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="#mAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4402" levels="2" name="Haste">
 		<!-- Confirmed CT2.5 -->
@@ -57,11 +57,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4403" levels="3" name="Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -78,11 +78,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="#accCombat" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4404" levels="3" name="Focus">
 		<!-- Confirmed CT2.5 -->
@@ -99,11 +99,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="#rCrit" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4405" levels="3" name="Death Whisper">
 		<!-- Confirmed CT2.5 -->
@@ -120,11 +120,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="#cAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4406" levels="3" name="Agility">
 		<!-- Confirmed CT2.5 -->
@@ -141,11 +141,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="#rEvas" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4407" levels="2" name="Monster Type">
 		<!-- Confirmed CT2.5 -->
@@ -163,12 +163,12 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#maxhp" />
 				<mul stat="regHp" val="#maxhp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4409" levels="20" name="MP Modifiers">
 		<!-- Confirmed CT2.5 -->
@@ -178,12 +178,12 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxMp" val="#maxmp" />
 				<mul stat="regMp" val="#maxmp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4410" levels="22" name="P. Atk. Modifiers">
 		<!-- Confirmed CT2.5 -->
@@ -193,11 +193,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4411" levels="22" name="M. Atk. Modifiers">
 		<!-- Confirmed CT2.5 -->
@@ -207,11 +207,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="#mAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4412" levels="22" name="P. Def. Modifiers">
 		<!-- Confirmed CT2.5 -->
@@ -221,11 +221,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4413" levels="22" name="M. Def. Modifiers">
 		<!-- Confirmed CT2.5 -->
@@ -235,11 +235,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mDef" val="#mDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4414" levels="3" name="Armor Type">
 		<!-- Confirmed CT2.5 -->
@@ -250,12 +250,12 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="#evasion" />
 				<mul stat="pDef" val="#pdef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4415" levels="26" name="Weapon Type">
 		<!-- Confirmed CT2.5 -->
@@ -264,12 +264,12 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4416" levels="25" name="Races">
 		<!-- Confirmed CT2.5 -->
@@ -290,7 +290,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait"> <!-- TODO: Verify me! -->
 				<param CONSTRUCT_WEAKNESS="#pDefMagicCreatures" />
 				<param BEAST_WEAKNESS="#pDefBeasts" />
@@ -305,7 +305,7 @@
 				<param SHOCK="#pDefShocks" />
 				<param BUG_WEAKNESS="#pDefBugs" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4417" levels="38" name="Race Types">
 		<!-- Confirmed CT2.5 -->
@@ -322,7 +322,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait"> <!-- TODO: Verify me! -->
 				<param BOW="#pDefBows" />
 				<param POISON="#pDefPoison" />
@@ -333,7 +333,7 @@
 				<param DUALDAGGER="#pDefDualDagger" />
 				<param HOLD="#pDefHold" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4418" levels="5" name="Fire Attacks">
 		<!-- Confirmed CT2.5 -->
@@ -342,12 +342,12 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="firePower" val="10" />
 				<add stat="fireRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4419" levels="5" name="Water Attacks">
 		<!-- Confirmed CT2.5 -->
@@ -356,12 +356,12 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterPower" val="10" />
 				<add stat="waterRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4420" levels="5" name="Wind Attacks">
 		<!-- Confirmed CT2.5 -->
@@ -370,12 +370,12 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="windPower" val="10" />
 				<add stat="windRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4421" levels="5" name="Earth Attacks">
 		<!-- Confirmed CT2.5 -->
@@ -384,12 +384,12 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="earthPower" val="10" />
 				<add stat="earthRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4422" levels="5" name="Dark Attacks">
 		<!-- Confirmed CT2.5 -->
@@ -398,12 +398,12 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkPower" val="10" />
 				<add stat="darkRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4423" levels="5" name="Sacred Attacks">
 		<!-- Confirmed CT2.5 -->
@@ -412,12 +412,12 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyPower" val="10" />
 				<add stat="holyRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4424" levels="5" name="Resist Hand-to-hand Weapons">
 		<!-- Confirmed CT2.5 -->
@@ -426,11 +426,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DUALFIST="#trait_dualfist" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4425" levels="5" name="Resist Blunt Weapons">
 		<!-- Confirmed CT2.5 -->
@@ -439,11 +439,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLUNT="#trait_blunt" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4426" levels="5" name="Resist Dual-Sword Weapons">
 		<!-- Confirmed CT2.5 -->
@@ -452,11 +452,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DUAL="#trait_dual" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4427" levels="5" name="Resist Swords">
 		<!-- Confirmed CT2.5 -->
@@ -465,11 +465,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SWORD="#trait_sword" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4428" levels="5" name="Resist Two-handed Weapons">
 		<!-- Confirmed CT2.5 -->
@@ -485,11 +485,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="fireRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4430" levels="5" name="Greater Resist Water Attacks">
 		<!-- Confirmed CT2.5 -->
@@ -498,11 +498,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4431" levels="5" name="Greater Resist Wind Attacks">
 		<!-- Confirmed CT2.5 -->
@@ -511,11 +511,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="windRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4432" levels="5" name="Greater Resist Earth Attacks">
 		<!-- Confirmed CT2.5 -->
@@ -524,11 +524,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="earthRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4433" levels="5" name="Greater Resist Sacred Attacks">
 		<!-- Confirmed CT2.5 -->
@@ -537,11 +537,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4434" levels="5" name="Greater Resist Dark Attacks">
 		<!-- Confirmed CT2.5 -->
@@ -550,11 +550,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4435" levels="5" name="Greater Resist Stun">
 		<!-- Confirmed CT2.5 -->
@@ -563,11 +563,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="#trait_shock" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4436" levels="5" name="Greater Resist Poison">
 		<!-- Confirmed CT2.5 -->
@@ -576,11 +576,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param POISON="#trait_poison" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4437" levels="5" name="Greater Resist Bleeding">
 		<!-- Confirmed CT2.5 -->
@@ -589,11 +589,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLEED="#trait_bleed" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4438" levels="5" name="Greater Resist Sleep">
 		<!-- Confirmed CT2.5 -->
@@ -602,11 +602,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="#trait_sleep" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4439" levels="5" name="Greater Resist Hold">
 		<!-- Confirmed CT2.5 -->
@@ -615,11 +615,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="#trait_hold" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4440" levels="5" name="Greater Resist Paralysis">
 		<!-- Confirmed CT2.5 -->
@@ -628,11 +628,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PARALYZE="#trait_paralyze" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4441" levels="5" name="Greater Resist Mental Derangement">
 		<!-- Confirmed CT2.5 -->
@@ -641,11 +641,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DERANGEMENT="#trait_derangement" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4442" levels="5" name="Greater Resist Hand-to-hand Weapons">
 		<!-- Confirmed CT2.5 -->
@@ -654,11 +654,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DUALFIST="#trait_dualfist" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4443" levels="5" name="Greater Resist Blunt Weapons">
 		<!-- Confirmed CT2.5 -->
@@ -667,11 +667,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLUNT="#trait_blunt" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4444" levels="5" name="Higher Resist Bow/Crossbow Weapons">
 		<!-- Confirmed CT2.5 -->
@@ -680,12 +680,12 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BOW="#traits" />
 				<param CROSSBOW="#traits" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4445" levels="5" name="Greater Resist Spear Weapons">
 		<!-- Confirmed CT2.5 -->
@@ -694,11 +694,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param POLE="#trait_pole" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4446" levels="5" name="Greater Resist Dual-Sword Weapons">
 		<!-- Confirmed CT2.5 -->
@@ -707,11 +707,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DUAL="#trait_dual" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4447" levels="5" name="Greater Resist Swords">
 		<!-- Confirmed CT2.5 -->
@@ -720,11 +720,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SWORD="#trait_sword" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4448" levels="5" name="Higher resist Daggers/Rapier Weapon">
 		<!-- Confirmed CT2.5 -->
@@ -733,13 +733,13 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DAGGER="#traits" />
 				<param RAPIER="#traits" />
 				<param DUALDAGGER="#traits" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4449" levels="5" name="Greater Resist Two-handed Weapons">
 		<!-- Confirmed CT2.5 -->
@@ -755,11 +755,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="#trait_shock" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4451" levels="5" name="Poison Attack Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -768,11 +768,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param POISON="#trait_poison" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4452" levels="5" name="Bleed Attack Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -781,11 +781,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLEED="#trait_bleed" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4453" levels="5" name="Sleep Attack Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -794,11 +794,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="#trait_sleep" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4454" levels="5" name="Hold Attack Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -807,11 +807,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="#trait_hold" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4455" levels="5" name="Paralysis Attack Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -820,11 +820,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PARALYZE="#trait_paralyze" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4456" levels="5" name="Mental Attack Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -833,11 +833,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DERANGEMENT="#trait_derangement" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4457" levels="5" name="Hand-to-hand Weapon Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -846,11 +846,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DUALFIST="#trait_dualfist" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4458" levels="5" name="Spear Weapon Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -859,11 +859,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param POLE="#trait_pole" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4459" levels="5" name="Dual-Sword Weapon Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -872,11 +872,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DUAL="#trait_dual" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4460" levels="5" name="Sword Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -885,11 +885,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SWORD="#trait_sword" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4461" levels="5" name="Dagger Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -898,13 +898,13 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DAGGER="#traits" />
 				<param RAPIER="#traits" />
 				<param DUALDAGGER="#traits" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4462" levels="5" name="Two-handed Weapon Weak Point">
 		<!-- Confirmed CT2.5 -->
@@ -913,13 +913,13 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DAGGER="#traits" />
 				<param RAPIER="#traits" />
 				<param DUALDAGGER="#traits" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4463" levels="3" name="Surrender To Water">
 		<!-- Confirmed CT2.5 -->
@@ -949,12 +949,12 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<add stat="fireRes" val="#fire" />
 				<sub stat="waterRes" val="#water" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4464" levels="3" name="Surrender To Wind">
 		<!-- Confirmed CT2.5 -->
@@ -984,12 +984,12 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<add stat="earthRes" val="#earth" />
 				<sub stat="windRes" val="#wind" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4465" levels="3" name="Surrender To Earth">
 		<!-- Confirmed CT2.5 -->
@@ -1019,12 +1019,12 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<add stat="windRes" val="#wind" />
 				<sub stat="earthRes" val="#earth" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4466" levels="3" name="Surrender To Darkness">
 		<!-- Confirmed CT2.5 -->
@@ -1054,12 +1054,12 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<add stat="holyRes" val="#holy" />
 				<sub stat="darkRes" val="#dark" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4467" levels="3" name="Surrender To Light">
 		<!-- Confirmed CT2.5 -->
@@ -1089,12 +1089,12 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<add stat="darkRes" val="#dark" />
 				<sub stat="holyRes" val="#holy" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4468" levels="2" name="Area Buff - Wind Walk">
 		<!-- Confirmed CT2.5 -->
@@ -1111,11 +1111,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="#speed" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4469" levels="1" name="Potion Drinking">
 		<!-- Confirmed CT2.5 -->
@@ -1156,12 +1156,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtkDef" />
 				<mul stat="pDef" val="#pAtkDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4472" levels="12" name="NPC Strike Golem">
 		<!-- Confirmed CT2.5 -->
@@ -1178,11 +1178,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4473" levels="12" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -1209,12 +1209,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4474" levels="5" name="Area Heal - Per">
 		<!-- Confirmed CT2.5 -->
@@ -1226,11 +1226,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4475" levels="1" name="Perfect Resist Bleeding">
 		<!-- Confirmed CT2.5 -->
@@ -1249,11 +1249,11 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BLEED="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4476" levels="5" name="Silent Move">
 		<!-- Confirmed CT2.5 -->
@@ -1276,9 +1276,9 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="SilentMove" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4477" levels="12" name="NPC Frost Wall">
 		<!-- Confirmed CT2.5 -->
@@ -1302,11 +1302,11 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4478" levels="1" name="Ice Fairy Aqua Splash">
 		<!-- Confirmed CT2.5 -->
@@ -1322,11 +1322,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="183" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4479" levels="1" name="Ice Fairy Resist Cold">
 		<!-- Confirmed CT2.5 -->
@@ -1346,11 +1346,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterRes" val="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4480" levels="1" name="Ice Fairy Curse Gloom">
 		<!-- Confirmed CT2.5 -->
@@ -1370,11 +1370,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4481" levels="1" name="Ice Fairy Hex">
 		<!-- Confirmed CT2.5 -->
@@ -1394,11 +1394,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4482" levels="1" name="Ice Fairy Silence">
 		<!-- Confirmed CT2.5 -->
@@ -1416,10 +1416,10 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4483" levels="12" name="Hold">
 		<!-- Confirmed CT2.5 -->
@@ -1447,9 +1447,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="HOLD" />
-		<for>
+		<effects>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4484" levels="1" name="Eating Follower Heal">
 		<!-- Confirmed CT2.5 -->
@@ -1461,11 +1461,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4485" levels="1" name="Eating Follower">
 		<!-- Confirmed CT2.5 -->
@@ -1506,11 +1506,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pDef" val="#pdef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4487" levels="12" name="Decrease M. Def.">
 		<!-- Confirmed CT2.5 -->
@@ -1539,11 +1539,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="mDef" val="#mdef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4488" levels="12" name="Hold">
 		<!-- Confirmed CT2.5 -->
@@ -1567,9 +1567,9 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4489" levels="12" name="NPC Death MP Bomb">
 		<!-- Confirmed CT2.5 -->
@@ -1583,11 +1583,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4490" levels="12" name="NPC Holy Wall">
 		<!-- Confirmed CT2.5 -->
@@ -1611,11 +1611,11 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4491" levels="12" name="Holy Weapon">
 		<!-- Confirmed CT2.5 -->
@@ -1640,14 +1640,14 @@
 		<set name="reuseDelay" val="25000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Buff">
 				<add stat="holyPower" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4492" levels="12" name="Enlarging Head Curse">
 		<!-- Confirmed CT2.5 -->
@@ -1672,11 +1672,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4493" levels="12" name="NPC Debuff Shield Slow">
 		<!-- Confirmed CT2.5 -->
@@ -1698,7 +1698,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
@@ -1706,7 +1706,7 @@
 				<param skillId="5022" skillLevel="#triggeredLevel" /> <!-- Decrease Speed -->
 				<param targetType="ONE" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4494" levels="2" name="Raid Boss">
 		<!-- Confirmed CT2.5 -->
@@ -1729,11 +1729,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4496" levels="12" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -1758,12 +1758,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4497" levels="1" name="Treasure Chest - Level 21">
 		<!-- Confirmed CT2.5 -->

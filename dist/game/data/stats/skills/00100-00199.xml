@@ -34,18 +34,18 @@
 		<cond msgId="113" addName="1">
 			<using kind="BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="PhysicalAttack">
 				<param power="#ench1Power" />
 			</effect>
 			<effect name="Stun" />
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 	<skill id="101" levels="40" name="Stun Shot" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">
 		<!-- Confirmed CT2.5 -->
@@ -89,7 +89,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
@@ -97,8 +97,8 @@
 			<effect name="TargetCancel">
 				<param chance="40" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="PhysicalAttack">
 				<param power="2192" />
 			</effect>
@@ -106,8 +106,8 @@
 			<effect name="TargetCancel">
 				<param chance="40" />
 			</effect>
-		</enchant1for>
-		<enchant2for>
+		</enchant1Effects>
+		<enchant2Effects>
 			<effect name="PhysicalAttack">
 				<param power="#ench2Power" />
 			</effect>
@@ -115,8 +115,8 @@
 			<effect name="TargetCancel">
 				<param chance="40" />
 			</effect>
-		</enchant2for>
-		<enchant3for>
+		</enchant2Effects>
+		<enchant3Effects>
 			<effect name="PhysicalAttack">
 				<param power="2192" />
 			</effect>
@@ -126,8 +126,8 @@
 			<effect name="TargetCancel">
 				<param chance="40" />
 			</effect>
-		</enchant3for>
-		<enchant4for>
+		</enchant3Effects>
+		<enchant4Effects>
 			<effect name="PhysicalAttack">
 				<param power="2192" />
 			</effect>
@@ -137,7 +137,7 @@
 			<effect name="TargetCancel">
 				<param chance="40" />
 			</effect>
-		</enchant4for>
+		</enchant4Effects>
 	</skill>
 	<skill id="102" levels="16" name="Entangle" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
 		<table name="#abnormalLvls"> 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </table>
@@ -176,16 +176,16 @@
 		<enchant2 name="abnormalTime" val="#ench2AbnormalTimes" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="#runSpd" />
 			</effect>
-		</for>
-		<enchant3for>
+		</effects>
+		<enchant3Effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="#ench3-runSpd" />
 			</effect>
-		</enchant3for>
+		</enchant3Effects>
 	</skill>
 	<skill id="103" levels="4" name="Corpse Plague">
 		<table name="#abnormalLvls"> 5 6 7 8 </table>
@@ -216,12 +216,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
 			<effect name="ConsumeBody" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="104" levels="1" name="Detect Plant Weakness">
 		<set name="abnormalLvl" val="1" />
@@ -236,11 +236,11 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="AttackTrait">
 				<param PLANT_WEAKNESS="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="105" levels="24" name="Freezing Strike" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">
 		<table name="#effectPoints"> -322 -341 -360 -379 -399 -408 -428 -438 -457 -467 -486 -495 -514 -523 -541 -549 -566 -582 -597 -611 -624 -635 -646 -655 </table>
@@ -284,22 +284,22 @@
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant4 name="elementPower" val="#enchElementPower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="MagicalAttack">
 				<param power="#ench1Power" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 	<skill id="106" levels="14" name="Veil">
 		<!-- High Five Confirmed -->
@@ -323,9 +323,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="DERANGEMENT" />
-		<for>
+		<effects>
 			<effect name="Passive" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="107" levels="9" name="Divine Aura" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
 		<table name="#effectPoints"> -549 -566 -582 -597 -611 -624 -635 -646 -655 </table>
@@ -363,20 +363,20 @@
 		<cond msgId="144">
 			<target race="UNDEAD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<param HOLD="100" />
 			</effect>
-		</for>
-		<enchant3for>
+		</effects>
+		<enchant3Effects>
 			<effect name="Root">
 				<mul stat="defCritRate" val="#ench3defCritRate" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param HOLD="100" />
 			</effect>
-		</enchant3for>
+		</enchant3Effects>
 	</skill>
 	<skill id="109" levels="1" name="Ogre Spirit Totem">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -395,7 +395,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.3">
 					<using kind="DUALFIST" />
@@ -406,7 +406,7 @@
 					<using kind="DUALFIST" />
 				</mul>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="110" levels="2" name="Ultimate Defense" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
 		<table name="#abnormalLvls"> 1 2 </table>
@@ -440,35 +440,35 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="reuseDelay" val="#ench2reuseDelay" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="ImmobileBuff">
 				<add stat="pDef" val="#pDef" />
 				<add stat="mDef" val="#mDef" />
 				<sub stat="cancelVuln" val="80" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="ImmobileBuff">
 				<add stat="pDef" val="#enchpDef" />
 				<add stat="mDef" val="#enchmDef" />
 				<sub stat="cancelVuln" val="80" />
 			</effect>
-		</enchant1for>
-		<enchant2for>
+		</enchant1Effects>
+		<enchant2Effects>
 			<effect name="ImmobileBuff">
 				<add stat="pDef" val="#enchpDef" />
 				<add stat="mDef" val="#enchmDef" />
 				<sub stat="cancelVuln" val="80" />
 			</effect>
-		</enchant2for>
-		<enchant3for>
+		</enchant2Effects>
+		<enchant3Effects>
 			<effect name="Buff">
 				<add stat="pDef" val="#enchpDef" />
 				<add stat="mDef" val="#enchmDef" />
 				<sub stat="cancelVuln" val="80" />
 				<mul stat="runSpd" val="#ench3decreasePenalty" />
 			</effect>
-		</enchant3for>
+		</enchant3Effects>
 	</skill>
 	<skill id="111" levels="2" name="Ultimate Evasion" enchantGroup1="1" enchantGroup2="1">
 		<table name="#abnormalLvls"> 1 2 </table>
@@ -496,13 +496,13 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="reuseDelay" val="#ench2reuseDelay" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pSkillEvas" val="#pSkillEvas" />
 				<add stat="rEvas" val="#rEvas" />
 				<sub stat="cancelVuln" val="80" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="112" levels="4" name="Deflect Arrow" enchantGroup1="1" enchantGroup2="1">
 		<table name="#abnormalLvls"> 1 2 3 4 </table>
@@ -531,19 +531,19 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2mpConsume" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param BOW="#trait_bow" />
 				<param CROSSBOW="#trait_crossbow" />
 			</effect>
-		</for>
-		<enchant2for>
+		</effects>
+		<enchant2Effects>
 			<effect name="DefenceTrait">
 				<param BOW="40" />
 				<param CROSSBOW="20" />
 				<mul stat="sDef" val="#ench2sDef" />
 			</effect>
-		</enchant2for>
+		</enchant2Effects>
 	</skill>
 	<skill id="113" levels="2" name="Long Shot">
 		<table name="#dist"> 200 400 </table>
@@ -552,13 +552,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtkRange" val="#dist">
 					<using kind="BOW" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="115" levels="17" name="Power Break" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
 		<table name="#abnormalLvls"> 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </table>
@@ -596,19 +596,19 @@
 		<enchant2 name="abnormalTime" val="#ench2AbnormalTimes" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
-		<enchant3for>
+		</effects>
+		<enchant3Effects>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.77" />
 			</effect>
 			<effect name="PhysicalAttack">
 				<param power="#ench3Attack" />
 			</effect>
-		</enchant3for>
+		</enchant3Effects>
 	</skill>
 	<skill id="116" levels="14" name="Howl" enchantGroup1="1" enchantGroup2="1">
 		<table name="#effectPoints"> -204 -219 -234 -248 -262 -275 -283 -291 -299 -306 -312 -318 -323 -328 </table>
@@ -639,11 +639,11 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="abnormalTime" val="#ench2AbnormalTimes" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.77" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="118" levels="1" name="Magician's Movement">
 		<!-- Confirmed CT2.5 -->
@@ -651,7 +651,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="0.8">
 					<not>
@@ -659,7 +659,7 @@
 					</not>
 				</mul>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="120" levels="15" name="Stunning Fist">
 		<table name="#effectPoints"> -96 -100 -104 -111 -115 -119 -128 -132 -136 -145 -150 -154 -164 -169 -173 </table>
@@ -692,12 +692,12 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="121" levels="6" name="Battle Roar" enchantGroup1="1" enchantGroup2="1">
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
@@ -723,21 +723,21 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="reuseDelay" val="#ench1Reuse" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<param power="#power" />
 				<param type="PER" />
 				<param heal="true" />
 			</effect>
-		</for>
-		<enchant2for>
+		</effects>
+		<enchant2Effects>
 			<effect name="MaxHp">
 				<param power="35" />
 				<param type="PER" />
 				<param heal="true" />
 				<add stat="pAtk" val="#ench2pAtk" />
 			</effect>
-		</enchant2for>
+		</enchant2Effects>
 	</skill>
 	<skill id="122" levels="15" name="Hex" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
 		<table name="#effectPoints"> -190 -204 -219 -234 -248 -262 -275 -283 -291 -299 -306 -312 -318 -323 -328 </table>
@@ -771,19 +771,19 @@
 		<enchant2 name="abnormalTime" val="#ench2AbnormalTimes" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.77" />
 			</effect>
-		</for>
-		<enchant3for>
+		</effects>
+		<enchant3Effects>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.77" />
 			</effect>
 			<effect name="PhysicalAttack">
 				<param power="#ench3Attack" />
 			</effect>
-		</enchant3for>
+		</enchant3Effects>
 	</skill>
 	<skill id="123" levels="3" name="Spirit Barrier" enchantGroup1="1" enchantGroup2="1">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -812,16 +812,16 @@
 		<enchant1 name="abnormalTime" val="#ench1AbnormalTimes" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mDef" val="#mDef" />
 			</effect>
-		</for>
-		<enchant2for>
+		</effects>
+		<enchant2Effects>
 			<effect name="Buff">
 				<mul stat="mDef" val="#ench2power" />
 			</effect>
-		</enchant2for>
+		</enchant2Effects>
 	</skill>
 	<skill id="127" levels="14" name="Hamstring" enchantGroup1="1" enchantGroup2="1">
 		<table name="#effectPoints"> -408 -438 -467 -495 -523 -549 -566 -582 -597 -611 -624 -635 -646 -655 </table>
@@ -854,11 +854,11 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="abnormalTime" val="#ench2AbnormalTimes" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="129" levels="5" name="Poison">
 		<table name="#abnormalLvls"> 3 5 6 7 8 </table>
@@ -889,11 +889,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="130" levels="2" name="Thrill Fight" enchantGroup1="1">
 		<!-- Confirmed CT2.5 -->
@@ -917,18 +917,18 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="runSpd" val="0.8" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="Buff">
 				<mul stat="runSpd" val="#ench1runSpd" />
 				<mul stat="pAtkSpd" val="1.1" />
 			</effect>
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 	<skill id="131" levels="3" name="Hawk Eye" enchantGroup1="1">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -952,12 +952,12 @@
 		<set name="targetType" val="SELF" />
 		<enchant1 name="abnormalTime" val="#ench1AbnormalTimes" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="#accCombat" />
 				<mul stat="pDef" val="0.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="134" levels="1" name="Toughness" enchantGroup1="1">
 		<table name="#ench1Traits"> 21 21 21 22 22 22 23 23 23 24 24 24 24 25 25 25 26 26 26 27 27 27 27 28 28 28 29 29 29 30 </table>
@@ -967,20 +967,20 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="20" />
 				<param SLEEP="20" />
 				<param POISON="20" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="DefenceTrait">
 				<param HOLD="#ench1Traits" />
 				<param SLEEP="#ench1Traits" />
 				<param POISON="#ench1Traits" />
 			</effect>
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 	<skill id="137" levels="4" name="Critical Chance" enchantGroup1="1">
 		<table name="#magicLvl"> 28 40 49 58 </table>
@@ -992,16 +992,16 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="#rate" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="#ench1rate" />
 			</effect>
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 	<skill id="139" levels="3" name="Guts">
 		<!-- Confirmed CT2.5 -->
@@ -1025,11 +1025,11 @@
 		<cond msgId="113" addName="1">
 			<player hp="30" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="141" levels="3" name="Weapon Mastery">
 		<!-- Confirmed CT2.5 -->
@@ -1039,12 +1039,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.085" />
 				<add stat="pAtk" val="#pAtk" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="142" levels="5" name="Armor Mastery">
 		<!-- Confirmed CT2.5 -->
@@ -1055,7 +1055,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pDef" val="#pDef" />
 				<mul stat="regMp" val="1.1" />
@@ -1063,7 +1063,7 @@
 					<using kind="LIGHT" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="143" levels="2" name="Cubic Mastery">
 		<!-- Confirmed CT2.5 -->
@@ -1073,11 +1073,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="CubicMastery">
 				<param cubicCount="#cubicCount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="144" levels="37" name="Dual Weapon Mastery" enchantGroup1="1" enchantGroup2="1">
 		<table name="#magicLvl"> 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
@@ -1091,21 +1091,21 @@
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk">
 					<using kind="DUAL" />
 				</add>
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="#ench1pAtk">
 					<using kind="DUAL" />
 				</add>
 			</effect>
-		</enchant1for>
-		<enchant2for>
+		</enchant1Effects>
+		<enchant2Effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="129.3">
 					<using kind="DUAL" />
@@ -1114,7 +1114,7 @@
 					<using kind="DUAL" />
 				</mul>
 			</effect>
-		</enchant2for>
+		</enchant2Effects>
 	</skill>
 	<skill id="146" levels="45" name="Anti Magic" enchantGroup1="1">
 		<table name="#magicLvl"> 4 7 11 14 17 20 23 25 28 30 33 35 38 39 40 42 43 44 46 47 48 50 51 52 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
@@ -1127,18 +1127,18 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mDef" val="#mDef" />
 				<mul stat="magicSuccRes" val="#magicSuccRes" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="Buff">
 				<add stat="mDef" val="#ench1mDef" />
 				<mul stat="magicSuccRes" val="1.3" />
 			</effect>
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 	<skill id="147" levels="51" name="Magic Resistance" enchantGroup1="1">
 		<table name="#magicLvl"> 18 20 22 23 24 26 27 28 30 31 32 34 35 36 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
@@ -1151,18 +1151,18 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mDef" val="#mDef" />
 				<mul stat="magicSuccRes" val="#magicSuccRes" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="Buff">
 				<add stat="mDef" val="#ench1mDef" />
 				<mul stat="magicSuccRes" val="1.2" />
 			</effect>
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 	<skill id="148" levels="8" name="Vital Force">
 		<table name="#hp"> 1.9 2.7 2.9 3.6 4.5 4.7 5.6 6.7 </table>
@@ -1172,7 +1172,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="regHp" val="#hp">
 					<player resting="true" />
@@ -1181,7 +1181,7 @@
 					<player resting="true" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="150" levels="3" name="Weight Limit">
 		<table name="#magicLvl"> 10 24 46 </table>
@@ -1190,11 +1190,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="#rate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="153" levels="4" name="Shield Mastery" enchantGroup1="1">
 		<table name="#magicLvl"> 20 28 40 52 </table>
@@ -1208,7 +1208,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rShld" val="#rShld" />
 				<mul stat="sDef" val="#sDef" />
@@ -1216,8 +1216,8 @@
 					<using kind="HEAVY" />
 				</mul>
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="Buff">
 				<add stat="sDef" val="#ench1sDef" />
 				<mul stat="sDef" val="1.6" />
@@ -1226,7 +1226,7 @@
 					<using kind="HEAVY" />
 				</mul>
 			</effect>
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 	<skill id="163" levels="1" name="Spellcraft">
 		<!-- Confirmed CT2.5 -->
@@ -1234,7 +1234,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="0.5">
 					<not>
@@ -1242,7 +1242,7 @@
 					</not>
 				</mul>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="164" levels="3" name="Quick Recycle">
 		<table name="#magicLvl"> 20 30 48 </table>
@@ -1251,11 +1251,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mReuse" val="#reuse" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="165" levels="5" name="Trade">
 		<!-- Confirmed CT2.5 -->
@@ -1274,16 +1274,16 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#rate" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#ench1rate" />
 			</effect>
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 	<skill id="169" levels="2" name="Quick Step" enchantGroup1="1">
 		<table name="#magicLvl"> 28 43 </table>
@@ -1293,16 +1293,16 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="#spd" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="#ench1spd" />
 			</effect>
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 	<skill id="171" levels="8" name="Esprit">
 		<!-- Confirmed CT2.5 -->
@@ -1313,7 +1313,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="regHp" val="#hp">
 					<player running="true" />
@@ -1325,7 +1325,7 @@
 			<effect name="DefenceTrait">
 				<param HOLD="-11" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="172" levels="10" name="Create Item">
 		<table name="#magicLvl"> 5 20 28 36 43 49 55 62 70 82 </table>
@@ -1342,11 +1342,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="fall" val="#fall" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="176" levels="3" name="Frenzy">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -1373,7 +1373,7 @@
 		<cond msgId="113" addName="1">
 			<player hp="60" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#all" />
 				<mul stat="pAtk" val="#swordblunt">
@@ -1398,7 +1398,7 @@
 					</and>
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="181" levels="1" name="Revival">
 		<set name="effectPoint" val="562" />
@@ -1413,11 +1413,11 @@
 		<cond msgId="113" addName="1">
 			<player hp="10" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="190" levels="37" name="Fatal Strike" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2">
 		<table name="#effectPoints"> -183 -188 -193 -198 -203 -208 -213 -218 -223 -228 -233 -237 -242 -247 -252 -257 -261 -266 -271 -275 -279 -284 -288 -292 -296 -300 -304 -307 -311 -314 -317 -320 -323 -326 -328 -331 -333 </table>
@@ -1460,20 +1460,20 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="PhysicalAttack">
 				<param power="#ench1Power" />
 				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 	<skill id="191" levels="6" name="Focus Mind" enchantGroup1="1">
 		<table name="#magicLvl"> 36 43 49 55 64 72 </table>
@@ -1483,16 +1483,16 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="regMp" val="#regMp" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="Buff">
 				<add stat="regMp" val="#ench1regMp" />
 			</effect>
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 	<skill id="193" levels="7" name="Critical Power" enchantGroup1="1">
 		<table name="#crit"> 32 56 93 177 295 384 406 </table>
@@ -1502,16 +1502,16 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="critDmgAdd" val="#crit" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="Buff">
 				<add stat="critDmgAdd" val="#ench1crit" />
 			</effect>
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 	<skill id="194" levels="1" name="Lucky">
 		<!-- Confirmed CT2.5 -->
@@ -1519,9 +1519,9 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Lucky" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="195" levels="2" name="Breath Boost">
 		<table name="#breath"> 180 300 </table>
@@ -1530,11 +1530,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="breath" val="#breath" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="196" levels="1" name="Holy Blade">
 		<set name="abnormalVisualEffect" val="NONE" />
@@ -1545,11 +1545,11 @@
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyPower" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="197" levels="2" name="Holy Armor">
 		<table name="#darkRes"> 7 10 </table>
@@ -1562,11 +1562,11 @@
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="#darkRes" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="198" levels="3" name="Boost Evasion" enchantGroup1="1">
 		<table name="#magicLvl"> 24 46 58 </table>
@@ -1576,15 +1576,15 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="#rEvas" />
 			</effect>
-		</for>
-		<enchant1for>
+		</effects>
+		<enchant1Effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="#ench1rEvas" />
 			</effect>
-		</enchant1for>
+		</enchant1Effects>
 	</skill>
 </list>

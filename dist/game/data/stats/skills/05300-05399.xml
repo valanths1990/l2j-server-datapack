@@ -18,11 +18,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5301" levels="9" name="Stun">
 		<!-- Temporarily gets thrown into a state of shock and immobilized. -->
@@ -50,12 +50,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5302" levels="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
@@ -84,14 +84,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5303" levels="9" name="Bleed">
 		<!-- Condition causing target to instantly decrease HP by bleeding. Effect 8-10. -->
@@ -120,14 +120,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5304" levels="9" name="Paralysis">
 		<!-- A temporary paralysis which prevents movement. -->
@@ -157,12 +157,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5305" levels="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
@@ -188,14 +188,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5306" levels="9" name="Paralysis">
 		<!-- A temporary paralysis which prevents movement. -->
@@ -223,12 +223,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5307" levels="9" name="Stun">
 		<!-- Temporarily gets thrown into a state of shock and immobilized. -->
@@ -255,12 +255,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5308" levels="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
@@ -288,14 +288,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5309" levels="9" name="Bleed">
 		<!-- Condition causing target to instantly decrease HP by bleeding. Effect 8-10. -->
@@ -323,14 +323,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5310" levels="9" name="NPC(party) - Magic Close Range DD - less powerful">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -348,11 +348,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5311" levels="9" name="NPC(party) - Magic Close Range DD - less powerful">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -369,11 +369,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5312" levels="9" name="NPC(party) -Magic Single Long Range DD - Fire">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -394,11 +394,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5313" levels="9" name="NPC(party) -Magic Range Long Range DD - Fire">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -419,11 +419,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5314" levels="9" name="NPC(party) -Magic Range Close Range DD - Fire">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -442,11 +442,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5315" levels="9" name="NPC(party) -Magic Range Close Range DD - Fire(Self-Destruction)">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -460,11 +460,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5316" levels="9" name="NPC(party) -Magic Single Long Range DD - Water">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -485,11 +485,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5317" levels="9" name="NPC(party) -Magic Range Long Range DD - Water">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -510,11 +510,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5318" levels="9" name="NPC(party) -Magic Range Close Range DD - Water">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -533,11 +533,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5319" levels="9" name="NPC(party) -Magic Single Long Range DD - Wind">
 		<set name="effectPoint" val="-100" />
@@ -639,11 +639,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5329" levels="9" name="NPC(party) -Magic Range Long Range DD - Holy">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -664,11 +664,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5330" levels="9" name="NPC(party) -Magic Range Close Range DD - Holy">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -687,11 +687,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5331" levels="9" name="NPC HP Drain">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -707,11 +707,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="250" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5332" levels="9" name="NPC MP Burn">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -731,11 +731,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5333" levels="9" name="Poison">
 		<!-- TODO: Need to be Checked in Retail -->
@@ -765,12 +765,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5334" levels="9" name="NPC(party) - Physical Single Close Range Attack">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -786,11 +786,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5335" levels="9" name="NPC(party) - Physical Single Long Range Attack">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -805,11 +805,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5336" levels="9" name="NPC(party) - Physical Range Close Range Attack">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -823,11 +823,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="12777" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5337" levels="9" name="NPC(party) - Physical Range Long Range Attack">
 		<set name="coolTime" val="800" />
@@ -854,11 +854,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5339" levels="9" name="NPC(party) - Physical Single Long Range Attack - Fire">
 		<set name="effectPoint" val="-100" />
@@ -883,11 +883,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="12777" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5341" levels="9" name="NPC(party) - Physical Range Long Range Attack - Fire">
 		<set name="coolTime" val="800" />
@@ -914,11 +914,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5343" levels="9" name="NPC(party) - Physical Single Long Range Attack - Water">
 		<set name="effectPoint" val="-100" />
@@ -962,11 +962,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5347" levels="9" name="NPC(party) - Physical Single Long Range Attack - Wind">
 		<set name="effectPoint" val="-100" />
@@ -1010,11 +1010,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5351" levels="9" name="NPC(party) - Physical Single Long Range Attack - Earth">
 		<set name="effectPoint" val="-100" />
@@ -1038,11 +1038,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="12777" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5353" levels="9" name="NPC(party) - Physical Range Long Range Attack - Earth">
 		<set name="coolTime" val="800" />
@@ -1084,11 +1084,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="12777" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5357" levels="9" name="NPC(party) - Physical Range Long Range Attack - Holy">
 		<set name="coolTime" val="800" />
@@ -1115,11 +1115,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5359" levels="9" name="NPC(party) - Physical Single Long Range Attack - Dark">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -1136,11 +1136,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5360" levels="9" name="NPC(party) - Physical Range Close Range Attack - Dark">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -1156,11 +1156,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="12777" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5361" levels="9" name="NPC(party) - Physical Range Long Range Attack - Dark">
 		<set name="coolTime" val="800" />
@@ -1197,12 +1197,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5363" levels="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
@@ -1231,14 +1231,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5364" levels="9" name="Bleed">
 		<!-- Condition causing target to instantly decrease HP by bleeding. Effect 8-10. -->
@@ -1267,14 +1267,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5365" levels="9" name="Paralysis">
 		<!-- A temporary paralysis which prevents movement. -->
@@ -1303,12 +1303,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5366" levels="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
@@ -1335,14 +1335,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5367" levels="9" name="Paralysis">
 		<!-- A temporary paralysis which prevents movement. -->
@@ -1370,12 +1370,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5368" levels="9" name="Stun">
 		<!-- Temporarily gets thrown into a state of shock and immobilized. -->
@@ -1423,14 +1423,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5370" levels="9" name="Bleed">
 		<!-- Condition causing target to instantly decrease HP by bleeding. Effect 8-10. -->
@@ -1469,11 +1469,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5372" levels="9" name="NPC(party) - Magic Close Range DD - less powerful">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -1490,11 +1490,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5373" levels="9" name="NPC(party) -Magic Single Long Range DD - Fire">
 		<set name="effectPoint" val="-100" />
@@ -1524,11 +1524,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5375" levels="9" name="NPC(party) -Magic Range Close Range DD - Fire">
 		<set name="effectPoint" val="-100" />
@@ -1553,11 +1553,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5377" levels="9" name="NPC(party) -Magic Single Long Range DD - Water">
 		<set name="effectPoint" val="-100" />
@@ -1605,11 +1605,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5381" levels="9" name="NPC(party) -Magic Range Long Range DD - Wind">
 		<set name="effectPoint" val="-100" />
@@ -1637,11 +1637,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5383" levels="9" name="NPC(party) -Magic Single Long Range DD - Earth">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -1662,11 +1662,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5384" levels="9" name="NPC(party) -Magic Range Long Range DD - Earth">
 		<set name="effectPoint" val="-100" />
@@ -1732,11 +1732,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5390" levels="9" name="NPC(party) -Magic Range Long Range DD - Holy">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -1757,11 +1757,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5391" levels="9" name="NPC(party) -Magic Range Close Range DD - Holy">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -1780,11 +1780,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5392" levels="9" name="NPC HP Drain">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -1804,12 +1804,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<param power="#power" />
 				<param drain="0.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5393" levels="9" name="NPC MP Burn">
 		<table name="#magicLvl"> 75 78 81 84 87 90 93 96 99 </table>
@@ -1829,11 +1829,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5394" levels="9" name="Poison">
 		<!-- TODO: Need to be Checked in Retail -->
@@ -1866,12 +1866,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5395" levels="3" name="NPC Clan Buff - Super Might Haste">
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -1894,12 +1894,12 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
-		<for>
+		<effects>
 			<effect name="Grow">
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5396" levels="1" name="NPC - Spell Stance">
 		<set name="abnormalVisualEffect" val="NONE" />
@@ -1939,11 +1939,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="657" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5399" levels="1" name="Heat of Desert">
 		<!-- Confirmed CT2.5 -->
@@ -1969,10 +1969,10 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="75" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

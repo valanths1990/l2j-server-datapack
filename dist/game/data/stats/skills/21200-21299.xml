@@ -41,11 +41,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1576" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21203" levels="1" name="Agathion Seal Cancel - Ball Trapping Orodriel">
 		<!-- Confirmed CT2.5 -->
@@ -56,11 +56,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1577" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21204" levels="1" name="Agathion Seal Cancel - Penalty Kick">
 		<!-- Confirmed CT2.5 -->
@@ -71,11 +71,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1578" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21205" levels="1" name="Agathion Seal Cancel - Ball Trapping Gnocian">
 		<!-- Confirmed CT2.5 -->
@@ -86,11 +86,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1579" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21206" levels="1" name="Agathion Seal Cancel - Ball Trapping Orodriel">
 		<!-- Confirmed CT2.5 -->
@@ -101,11 +101,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1580" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21207" levels="1" name="Agathion Seal Cancel - Penalty Kick">
 		<!-- Confirmed CT2.5 -->
@@ -116,11 +116,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1581" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21208" levels="1" name="Agathion Seal Cancel - Ball Trapping Gnocian">
 		<!-- Confirmed CT2.5 -->
@@ -131,11 +131,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1582" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21209" levels="1" name="Agathion Seal Cancel - Ball Trapping Orodriel">
 		<!-- Confirmed CT2.5 -->
@@ -146,11 +146,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1583" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21210" levels="1" name="Agathion Seal Cancel - Penalty Kick">
 		<!-- Confirmed CT2.5 -->
@@ -161,11 +161,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1584" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21211" levels="1" name="Blessing of Victory">
 		<!-- Increases moving speed by 2% through the Blessing of Victory. -->
@@ -183,11 +183,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1585" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21213" levels="1" name="Agathion Seal Cancel - Flower Fairy Spirit">
 		<!-- Confirmed CT2.5 -->
@@ -198,11 +198,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1586" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21214" levels="1" name="Agathion Seal Cancel - Cheerleader Orodriel">
 		<!-- Confirmed CT2.5 -->
@@ -213,11 +213,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1587" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21215" levels="1" name="Agathion Seal Cancel - Cheerleader Lana">
 		<!-- Confirmed CT2.5 -->
@@ -228,11 +228,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1588" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21216" levels="1" name="Agathion Seal Cancel - Cheerleader Naonin">
 		<!-- Confirmed CT2.5 -->
@@ -243,11 +243,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1589" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21217" levels="1" name="Agathion Seal Cancel - Cheerleader Mortia">
 		<!-- Confirmed CT2.5 -->
@@ -258,11 +258,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1590" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21218" levels="1" name="Agathion Seal Cancel - Cheerleader Kaurin">
 		<!-- Confirmed CT2.5 -->
@@ -273,11 +273,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1591" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21219" levels="1" name="Agathion Seal Cancel - Cheerleader Meruril">
 		<!-- Confirmed CT2.5 -->
@@ -288,11 +288,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1592" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21220" levels="1" name="Agathion Seal Cancel - Handy">
 		<!-- Confirmed CT2.5 -->
@@ -303,11 +303,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1593" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21221" levels="1" name="Blessed Resurrection">
 		<!-- Can use the ability of Blessed Resurrection. Reuse delay is 12 hours. -->
@@ -380,12 +380,12 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="20004" />
 				<mul stat="runSpd" val="1.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21233" levels="1" name="Release Seal on Agathion - Singer Dancer">
 		<!-- High Five Skill -->
@@ -395,11 +395,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1594" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21234" levels="1" name="Release Seal on Agathion - Zaken Spirit Sword">
 		<!-- High Five Skill -->
@@ -409,21 +409,21 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1595" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21235" levels="1" name="7th Anniversary T-shirt: Speed">
 		<!-- High Five Skill -->
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21236" levels="1" name="7th Anniversary T-shirt: Blessed Escape Ability">
 		<!-- High Five Skill -->
@@ -441,11 +441,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21237" levels="1" name="7th Anniversary T-shirt: Blessed Protection Ability">
 		<!-- High Five Skill -->
@@ -458,7 +458,7 @@
 		<set name="reuseDelay" val="72000000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="BlockDamage">
 				<param block="HP"/>
 			</effect>
@@ -466,7 +466,7 @@
 				<param block="MP"/>
 			</effect>
 			<effect name="BlockDebuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="21238" levels="1" name="Jet Bike">
 		<!-- Mounts a jet bike. -->
@@ -481,11 +481,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1596" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21240" levels="1" name="Release Seal on Agathion - Tow">
 		<!-- High Five Skill -->
@@ -495,11 +495,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1597" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21241" levels="1" name="Magic Glasses">
 		<!-- High Five Skill -->
@@ -507,11 +507,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mDef" val="70" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21242" levels="1" name="Zaken's Call">
 		<!-- High Five Confirmed -->
@@ -532,11 +532,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<param x="52201" y="218801" z="-3224" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21243" levels="1" name="Freya's Call">
 		<!-- High Five Confirmed -->
@@ -557,11 +557,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<param x="102605" y="-124399" z="-2784" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21244" levels="1" name="Frintezza's Call">
 		<!-- High Five Confirmed -->
@@ -582,11 +582,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<param x="181380" y="-80878" z="-2728" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21245" levels="1" name="Release Seal on Agathion - Rudolph">
 		<!-- High Five Skill -->
@@ -596,11 +596,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1598" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21246" levels="1" name="Rudolph's Energy">
 		<!-- "For 10 minute(s), energy is replenished when Exp. is acquired through hunting. Reuse time is 30 minutes." -->
@@ -620,11 +620,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1599" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21249" levels="1" name="Release Seal on Agathion - Enze">
 		<!-- High Five Skill -->
@@ -634,11 +634,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1600" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21250" levels="1" name="Academy Circlet">
 		<!-- "Characters between levels 40 to 75, when worn this item decreases death EXP. Penalty by 50%." -->
@@ -656,7 +656,7 @@
 		<set name="icon" val="BranchSys2.icon.br_wp_Caladbulg_i00" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="P" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -665,14 +665,14 @@
 				<param targetType="ONE" />
 				<param allowWeapons="ALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21253" levels="1" name="Butcher Blades">
 		<!-- Confirmed High Five -->
 		<set name="icon" val="BranchSys2.icon.br_wp_habus_knife_i00" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="P" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -681,14 +681,14 @@
 				<param targetType="ONE" />
 				<param allowWeapons="ALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21254" levels="1" name="Claw of Destruction">
 		<!-- Confirmed High Five -->
 		<set name="icon" val="BranchSys2.icon.br_wp_tiatenon_i00" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="P" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -697,14 +697,14 @@
 				<param targetType="ONE" />
 				<param allowWeapons="ALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21255" levels="1" name="Blades of Delusion">
 		<!-- Confirmed High Five -->
 		<set name="icon" val="BranchSys2.icon.br_wp_astarot_i00" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="P" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -713,14 +713,14 @@
 				<param targetType="ONE" />
 				<param allowWeapons="ALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21256" levels="1" name="Blood Brother">
 		<!-- Confirmed High Five -->
 		<set name="icon" val="BranchSys2.icon.br_wp_tirbing_i00" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="P" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -729,14 +729,14 @@
 				<param targetType="ONE" />
 				<param allowWeapons="ALL" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21257" levels="1" name="Mardil">
 		<!-- Confirmed High Five -->
 		<set name="icon" val="BranchSys2.icon.br_wp_wind_of_mardil_i00" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="P" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
@@ -744,7 +744,7 @@
 				<param skillId="23324" skillLevel="1" /> <!-- Jet Black Typhoon -->
 				<param targetType="SELF" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21258" levels="1" name="Rocking Horse Mount">
 		<!-- High Five Skill -->
@@ -755,11 +755,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<param id="20007" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21259" levels="1" name="Release Seal on Agathion - Chorong">
 		<!-- High Five Skill -->
@@ -769,11 +769,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1604" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21260" levels="1" name="Notifier">
 		<!-- Description: You can use to learn the number of received gifts and the number of remaining gifts. The gift provision time is reset every morning at 6:30. -->
@@ -813,11 +813,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1605" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21267" levels="1" name="Notifier">
 		<!-- Description: Notifies the number of received gifts and remaining gifts when used. The gift supply time is initialized at 6:30 am every day. -->

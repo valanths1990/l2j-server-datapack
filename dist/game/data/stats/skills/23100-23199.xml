@@ -379,11 +379,11 @@
 		<cond msgId="2292">
 			<player agathionId="1556" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="9000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23135" levels="1" name="Nepal Snow Agathion Cute Trick">
 		<set name="hitTime" val="3000" />
@@ -415,11 +415,11 @@
 		<cond msgId="2292">
 			<player agathionId="1557" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23137" levels="1" name="Round Ball Snow Agathion Cute Trick">
 		<set name="hitTime" val="3000" />
@@ -451,11 +451,11 @@
 		<cond msgId="2292">
 			<player agathionId="1558" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23139" levels="1" name="Ladder Snow Agathion Cute Trick">
 		<set name="hitTime" val="3000" />
@@ -488,11 +488,11 @@
 		<cond msgId="2292">
 			<player agathionId="1559" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23141" levels="1" name="Iken Agathion Cute Trick">
 		<set name="hitTime" val="3000" />
@@ -766,11 +766,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<param value="20000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23163" levels="1" name="Turkey's Big Mistake">
 		<!-- For 1 hour, increases Max HP, MP, and CP by 50%. Increases physical P. Atk., magic M. Atk., physical P. Def., and magic M. Def. by 20%. Increases moving speed by 30%. -->
@@ -826,12 +826,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<!-- TODO: Need new effect i_dispel_by_name. -->
 			<effect name="VitalityPointUp">
 				<param value="5000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23167" levels="1" name="Rosy Seduction">
 		<!-- Increases Max HP by 20%, Max MP by 20%, and the moving speed by 20% for 5 minutes. Increases the resistance to de-buffs by 10%. Reuse delay 10 minutes. Consumes 3 Rose Essence during skill use. -->
@@ -926,7 +926,7 @@
 				<player hp="30" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="BlockDamage">
 				<param block="HP"/>
 			</effect>
@@ -943,7 +943,7 @@
 			<effect name="ManaHealPercent">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23173" levels="1" name="Phoenix Agathion Special Skill - Oriental Phoenix">
 		<!-- All Debuff is canceled with the power of Phoenix. Cooldown of 4 hours. -->
@@ -960,11 +960,11 @@
 		<cond msgId="2292">
 			<player agathionId="1574" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<param slot="DEBUFF" rate="100" max="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23174" levels="1" name="Narrow Escape from Death">
 		<!-- Revives from death with completely recovered status. Buff/de-buff doesn't disappear at death but is maintained, though the Blessing of Noblesse and the Amulet of Luck will both be lost. Cooldown of 12 hours. -->
@@ -980,12 +980,12 @@
 		<set name="reuseDelay" val="43200000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="ResurrectionSpecial">
 				<param resPower="100" />
 				<param resRecovery="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23175" levels="1" name="Soul Stealth">
 		<!-- Hides for 5 seconds, then bestows the ability not to provoke preemptive attacks from monsters for 2 minutes. Decreases moving speed by 50% while the skill is in effect. Reuse delay is 12 hours. -->
@@ -1066,11 +1066,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="vitalityConsumeRate" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23180" levels="1" name="Joy of Vitality">
 		<!-- Confirmed CT2.5 -->
@@ -1083,11 +1083,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<param value="20000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23181" levels="1" name="Three-headed Dragon Agathion Cute Trick">
 		<set name="hitTime" val="3000" />
@@ -1119,11 +1119,11 @@
 		<cond msgId="2292">
 			<player agathionId="1575" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23183" levels="1" name="Ball Trapping Gnosian Agathion Special Skill - Buff of Cheers">
 		<!-- With the power of cheers, for 1 hour, increases Max MP, MP Recovery Bonus, HP Recovery Bonus, Critical Attack Power, P. Def., Atk. Spd., M. Atk., M. Def., Casting Spd. by 20%, the occurrence rate of Prominent Damage through damage magic by 2, P. Atk. by 10%, and resistance to de-buffs by 10%. Also decreases MP consumption needed for skill use by 5% and moving speed by 20%. Reuse Delay 1 hour. Consumes 30 energy. -->
@@ -1157,11 +1157,11 @@
 		<cond msgId="2292">
 			<player agathionId="20983" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="20993" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23185" levels="1" name="Ball Trapping Orodriel Agathion Special Skill - Buff of Cheers">
 		<!-- With the power of cheers, for 1 hour, increases Max MP, MP Recovery Bonus, HP Recovery Bonus, Critical Attack Power, P. Def., Atk. Spd., M. Atk., M. Def., Casting Spd. by 20%, the occurrence rate of Prominent Damage through damage magic by 2, P. Atk. by 10%, and resistance to de-buffs by 10%. Also decreases MP consumption needed for skill use by 5% and moving speed by 20%. Reuse Delay 1 hour. Consumes 250 energy. -->
@@ -1195,11 +1195,11 @@
 		<cond msgId="2292">
 			<player agathionId="20984" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="20993" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23187" levels="1" name="Ball Trapping Penalty Kick Agathion Special Skill - Buff of Cheers">
 		<!-- With the power of cheers, for 1 hour, increases Max MP, MP Recovery Bonus, HP Recovery Bonus, Critical Attack Power, P. Def., Atk. Spd., M. Atk., M. Def., Casting Spd. by 20%, the occurrence rate of Prominent Damage through damage magic by 2, P. Atk. by 10%, and resistance to de-buffs by 10%. Also decreases MP consumption needed for skill use by 5% and moving speed by 20%. Reuse Delay 1 hour. Consumes 250 energy. -->
@@ -1233,11 +1233,11 @@
 		<cond msgId="2292">
 			<player agathionId="20985" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="20993" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23189" levels="1" name="Ball Trapping Gnosian Agathion Special Skill - Buff of Cheers">
 		<!-- With the power of cheers, for 1 hour, increases Max MP, MP Recovery Bonus, HP Recovery Bonus, Critical Attack Power, P. Def., Atk. Spd., M. Atk., M. Def., Casting Spd. by 20%, the occurrence rate of Prominent Damage through damage magic by 2, P. Atk. by 10%, and resistance to de-buffs by 10%. Also decreases MP consumption needed for skill use by 5% and moving speed by 20%. Reuse Delay 1 hour. Consumes 250 energy. -->
@@ -1271,11 +1271,11 @@
 		<cond msgId="2292">
 			<player agathionId="20986" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="20993" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23191" levels="1" name="Ball Trapping Orodriel Agathion Special Skill - Buff of Cheers">
 		<!-- With the power of cheers, for 1 hour, increases Max MP, MP Recovery Bonus, HP Recovery Bonus, Critical Attack Power, P. Def., Atk. Spd., M. Atk., M. Def., Casting Spd. by 20%, the occurrence rate of Prominent Damage through damage magic by 2, P. Atk. by 10%, and resistance to de-buffs by 10%. Also decreases MP consumption needed for skill use by 5% and moving speed by 20%. Reuse Delay 1 hour. Consumes 250 energy. -->
@@ -1309,11 +1309,11 @@
 		<cond msgId="2292">
 			<player agathionId="20987" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="20993" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23193" levels="1" name="Ball Trapping Penalty Kick Agathion Special Skill - Buff of Cheers">
 		<!-- With the power of cheers, for 1 hour, increases Max MP, MP Recovery Bonus, HP Recovery Bonus, Critical Attack Power, P. Def., Atk. Spd., M. Atk., M. Def., Casting Spd. by 20%, the occurrence rate of Prominent Damage through damage magic by 2, P. Atk. by 10%, and resistance to de-buffs by 10%. Also decreases MP consumption needed for skill use by 5% and moving speed by 20%. Reuse Delay 1 hour. Consumes 250 energy. -->
@@ -1347,11 +1347,11 @@
 		<cond msgId="2292">
 			<player agathionId="20988" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="20993" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23195" levels="1" name="Ball Trapping Gnosian Agathion Special Skill - Buff of Cheers">
 		<!-- With the power of cheers, for 1 hour, increases Max MP, MP Recovery Bonus, HP Recovery Bonus, Critical Attack Power, P. Def., Atk. Spd., M. Atk., M. Def., Casting Spd. by 20%, the occurrence rate of Prominent Damage through damage magic by 2, P. Atk. by 10%, and resistance to de-buffs by 10%. Also decreases MP consumption needed for skill use by 5% and moving speed by 20%. Reuse Delay 1 hour. Consumes 250 energy. -->
@@ -1385,11 +1385,11 @@
 		<cond msgId="2292">
 			<player agathionId="20989" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="20993" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23197" levels="1" name="Ball Trapping Orodriel Agathion Special Skill - Buff of Cheers">
 		<!-- With the power of cheers, for 1 hour, increases Max MP, MP Recovery Bonus, HP Recovery Bonus, Critical Attack Power, P. Def., Atk. Spd., M. Atk., M. Def., Casting Spd. by 20%, the occurrence rate of Prominent Damage through damage magic by 2, P. Atk. by 10%, and resistance to de-buffs by 10%. Also decreases MP consumption needed for skill use by 5% and moving speed by 20%. Reuse Delay 1 hour. Consumes 250 energy. -->
@@ -1423,11 +1423,11 @@
 		<cond msgId="2292">
 			<player agathionId="20990" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="20993" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23199" levels="1" name="Ball Trapping Penalty Kick Agathion Special Skill - Buff of Cheers">
 		<!-- With the power of cheers, for 1 hour, increases Max MP, MP Recovery Bonus, HP Recovery Bonus, Critical Attack Power, P. Def., Atk. Spd., M. Atk., M. Def., Casting Spd. by 20%, the occurrence rate of Prominent Damage through damage magic by 2, P. Atk. by 10%, and resistance to de-buffs by 10%. Also decreases MP consumption needed for skill use by 5% and moving speed by 20%. Reuse Delay 1 hour. Consumes 250 energy. -->

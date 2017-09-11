@@ -680,11 +680,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="57742" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4994" levels="1" name="Venom - Sonic Storm">
 		<!-- Confirmed CT2.5 -->
@@ -700,11 +700,11 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="28871" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4995" levels="1" name="Venom - Teleport">
 		<!-- Confirmed CT2.5 -->

@@ -17,9 +17,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26001" levels="1" name="Middle fortuna box">
 		<!-- Confirmed CT2.5 -->
@@ -38,9 +38,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26002" levels="1" name="Large fortuna box">
 		<!-- Confirmed CT2.5 -->
@@ -59,9 +59,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26003" levels="1" name="Small fortuna cube">
 		<!-- Confirmed CT2.5 -->
@@ -80,9 +80,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26004" levels="1" name="Middle fortuna cube">
 		<!-- Confirmed CT2.5 -->
@@ -101,9 +101,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26005" levels="1" name="Large fortuna cube">
 		<!-- Confirmed CT2.5 -->
@@ -122,9 +122,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26006" levels="1" name="Weapon Enchant Scroll - D Grade">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -249,11 +249,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26023" levels="1" name="High grade potion which improves moving speed">
 		<set name="abnormalLvl" val="2" />
@@ -266,11 +266,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26024" levels="1" name="Temporary Healing Potion">
 		<set name="blockedInOlympiad" val="true" />
@@ -279,11 +279,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="435" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26025" levels="1" name="Powerful Healing Potion">
 		<set name="abnormalLvl" val="3" />
@@ -296,11 +296,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="3">
 				<param power="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26026" levels="1" name="High-grade Healing Potion">
 		<set name="abnormalLvl" val="2" />
@@ -313,11 +313,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="3">
 				<param power="24" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26027" levels="6" name="Secret medicine of Will">
 		<!-- Confirmed CT2.5 -->
@@ -333,11 +333,11 @@
 		<cond msgId="113" addName="1">
 			<player levelRange="#levelRange" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26028" levels="6" name="Secret medicine of Life">
 		<!-- Confirmed CT2.5 -->
@@ -353,11 +353,11 @@
 		<cond msgId="113" addName="1">
 			<player levelRange="#levelRange" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26029" levels="1" name="Potion of Will">
 		<set name="blockedInOlympiad" val="true" />
@@ -366,11 +366,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<param power="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26030" levels="1" name="Healing medicine for Mana">
 		<!-- Confirmed CT2.5 -->
@@ -381,11 +381,11 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<param power="60" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26031" levels="1" name="Wind Walk Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -401,11 +401,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26032" levels="1" name="Haste Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -421,11 +421,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26033" levels="1" name="Might Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -441,11 +441,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26034" levels="1" name="Shield Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -461,11 +461,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26035" levels="1" name="Death Whisper Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -481,11 +481,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26036" levels="1" name="Guidance Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -501,11 +501,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26037" levels="1" name="Empower Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -521,11 +521,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.75" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26038" levels="1" name="Greater Acumen Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -541,11 +541,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26039" levels="1" name="Vampiric Rage Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -561,11 +561,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26040" levels="1" name="Bless the Body Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -581,11 +581,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26041" levels="1" name="Berserker Spirit Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -601,7 +601,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mDef" val="0.84" />
@@ -612,7 +612,7 @@
 				<mul stat="mAtkSpd" val="1.08" />
 				<add stat="runSpd" val="8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26042" levels="1" name="Magic Barrier Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -628,11 +628,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mDef" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26043" levels="1" name="Bless the Soul Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -648,11 +648,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26044" levels="1" name="Clarity Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -668,13 +668,13 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="physicalMpConsumeRate" val="0.8" />
 				<mul stat="magicalMpConsumeRate" val="0.9" />
 				<mul stat="danceMpConsumeRate" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26045" levels="1" name="Wild Magic Scroll">
 		<set name="abnormalLvl" val="26" />
@@ -690,11 +690,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26046" levels="5" name="Rune of Experience Points">
 		<!-- Confirmed CT2.5 -->
@@ -704,11 +704,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="bonusExp" val="#bonusExp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26047" levels="5" name="Rune of SP">
 		<!-- Confirmed CT2.5 -->
@@ -718,11 +718,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="bonusSp" val="#bonusSp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26048" levels="5" name="Rune of Crystal Form">
 		<!-- Confirmed CT2.5 -->
@@ -732,22 +732,22 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="CrystalGradeModify">
 				<param grade="#bonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26049" levels="1" name="Rune of Feather">
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26050" levels="1" name="Blessed Spiritshot - D grade">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -872,9 +872,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26066" levels="1" name="A Scroll Bundle of Mage">
 		<!-- Confirmed CT2.5 -->
@@ -894,9 +894,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26067" levels="5" name="Bone Quiver">
 		<!-- Confirmed CT2.5 -->
@@ -912,11 +912,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="#itemId" itemCount="10000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26068" levels="10" name="Blessed Spiritshot Pack">
 		<!-- Confirmed CT2.5 -->
@@ -933,11 +933,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="#itemId" itemCount="#itemCount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26069" levels="10" name="Spiritshot Pack">
 		<!-- Confirmed CT2.5 -->
@@ -954,11 +954,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="#itemId" itemCount="#itemCount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26070" levels="10" name="Soulshot Pack">
 		<!-- Confirmed CT2.5 -->
@@ -975,11 +975,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="#itemId" itemCount="#itemCount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26071" levels="17" name="Wrapped daisy hairpin">
 		<!-- Confirmed CT2.5 -->
@@ -995,11 +995,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="#itemId" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26072" levels="3" name="Wrapped Pet Exchange Ticket">
 		<!-- Confirmed CT2.5 -->
@@ -1015,11 +1015,11 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="#itemId" itemCount="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26073" levels="5" name="Bone Bolt Container">
 		<!-- Confirmed CT2.5 -->
@@ -1035,10 +1035,10 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<param itemId="#itemId" itemCount="10000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

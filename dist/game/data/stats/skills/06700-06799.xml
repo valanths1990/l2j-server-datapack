@@ -56,12 +56,12 @@
 		<set name="reuseDelay" val="10000" /> <!-- FIXME: reuseDelay unconfirmed -->
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<!-- FIXME: Time value is unconfirmed -->
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.77" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6707" levels="1" name="Self-destruction">
 		<!-- none -->
@@ -113,11 +113,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6715" levels="1" name="Haste of Elcadia">
 		<!-- High Five Skill -->
@@ -134,11 +134,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6716" levels="1" name="Might of Elcadia">
 		<!-- High Five Skill -->
@@ -155,11 +155,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6717" levels="1" name="Berserker Spirit of Elcadia">
 		<!-- High Five Skill -->
@@ -176,7 +176,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="pAtk" val="1.08" />
@@ -187,7 +187,7 @@
 				<add stat="runSpd" val="8" />
 				<sub stat="rEvas" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6718" levels="1" name="Death Whisper of Elcadia">
 		<!-- High Five Skill -->
@@ -204,11 +204,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6719" levels="1" name="Guidance of Elcadia">
 		<!-- High Five Skill -->
@@ -225,11 +225,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6720" levels="1" name="Focus of Elcadia">
 		<!-- High Five Skill -->
@@ -246,11 +246,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6721" levels="1" name="Empower of Elcadia">
 		<!-- High Five Skill -->
@@ -267,11 +267,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.75" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6722" levels="1" name="Acumen of Elcadia">
 		<!-- High Five Skill -->
@@ -288,11 +288,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6723" levels="1" name="Concentration of Elcadia">
 		<!-- High Five Skill -->
@@ -309,11 +309,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancel" val="53" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6724" levels="1" name="Greater Heal of Elcadia">
 		<!-- High Five Skill -->
@@ -331,14 +331,14 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<param power="30" />
 			</effect>
 			<effect name="Heal">
 				<param power="450" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6725" levels="1" name="Bless the Blood of Elcadia">
 		<!-- High Five Skill -->
@@ -355,7 +355,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="60" />
@@ -363,7 +363,7 @@
 				<param skillId="6726" skillLevel="1" /> <!-- Bless the Blood -->
 				<param targetType="SELF" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6726" levels="1" name="Bless the Blood">
 		<!-- High Five Skill -->
@@ -375,11 +375,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="458" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6727" levels="1" name="Vampiric Rage of Elcadia">
 		<!-- High Five Skill -->
@@ -396,11 +396,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="absorbDam" val="9" /> <!-- absorb HP from damage inflicted on enemies -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6728" levels="1" name="Recharge of Elcadia">
 		<!-- High Five Skill -->
@@ -414,11 +414,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="ManaHealByLevel">
 				<param power="136" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6729" levels="1" name="Resist Holy of Elcadia">
 		<!-- High Five Skill -->
@@ -435,11 +435,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6730" levels="1" name="Greater Battle Heal of Elcadia">
 		<!-- High Five Skill -->
@@ -453,11 +453,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="858" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6731" levels="1" name="Etis Shadow">
 		<!-- none -->
@@ -474,9 +474,9 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="TargetCancel" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6733" levels="1" name="Antharas's Stigma">
 		<!-- "Antharas's stigma. After 10 seconds, spreads the Stigma Aftermath nearby, which decreases 400 HP per second and 150 MP." -->
@@ -506,11 +506,11 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="22272" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6737" levels="1" name="Heal">
 		<!-- High Five Confirmed -->
@@ -523,11 +523,11 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6738" levels="1" name="Hold">
 		<!-- Temporarily inflicted with hold and unable to move. -->
@@ -581,12 +581,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="200" />
 				<sub stat="darkRes" val="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6744" levels="1" name="Dark Storm">
 		<!-- Casting Spd. decreases by 90% and Atk. Spd. decreases by 30%. -->
@@ -632,12 +632,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="9279" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6749" levels="1" name="Death Strike">
 		<!-- High Five Confirmed -->
@@ -652,11 +652,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="7072" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6750" levels="1" name="Power Strike">
 		<!-- High Five Confirmed -->
@@ -673,12 +673,12 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="6960" />
 				<param criticalChance="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6751" levels="1" name="Blow Attack">
 		<!-- none -->
@@ -698,11 +698,11 @@
 		<cond msgId="113" addName="1">
 			<player hp="10" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6753" levels="1" name="Death Blow">
 		<!-- High Five Confirmed -->
@@ -719,13 +719,13 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DEATH" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="5773" />
 				<param blowChance="30" />
 				<param criticalChance="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6754" levels="1" name="Bleed">
 		<!-- High Five Confirmed -->
@@ -750,7 +750,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="5773" />
 				<param blowChance="30" />
@@ -759,7 +759,7 @@
 			<effect name="DamOverTime" ticks="5">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="6815" skillLevel="1" />
@@ -781,11 +781,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="129" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6756" levels="1" name="Death Talon">
 		<!-- High Five Confirmed -->
@@ -801,11 +801,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="65" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6757" levels="1" name="Slow">
 		<!-- High Five Confirmed -->
@@ -831,11 +831,11 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6758" levels="1" name="Rage">
 		<!-- High Five Confirmed -->
@@ -854,11 +854,11 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6759" levels="1" name="Death Shot">
 		<!-- none -->
@@ -880,12 +880,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="6960" />
 				<param criticalChance="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6761" levels="1" name="Dragon Blow Strike">
 		<!-- High Five Confirmed -->
@@ -901,11 +901,11 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4640" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6762" levels="1" name="Rage">
 		<!-- High Five Confirmed -->
@@ -923,14 +923,14 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 			</effect>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6763" levels="1" name="Dragon Earth Strike">
 		<!-- High Five Confirmed -->
@@ -946,12 +946,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="6960" />
 				<param criticalChance="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6764" levels="1" name="Dragon Earth Shot">
 		<!-- High Five Confirmed -->
@@ -967,12 +967,12 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="5132" />
 				<param criticalChance="15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6765" levels="1" name="Complete Recovery">
 		<!-- High Five Confirmed -->
@@ -984,11 +984,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6766" levels="1" name="Earth Tremor">
 		<!-- High Five Confirmed -->
@@ -1005,11 +1005,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="129" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6767" levels="1" name="Earthquake">
 		<!-- none -->
@@ -1041,12 +1041,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="9279" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6769" levels="1" name="Petrify">
 		<!-- High Five Confirmed -->
@@ -1074,7 +1074,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="Stun" />
 			<effect name="BlockDamage">
 				<param block="HP"/>
@@ -1087,7 +1087,7 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6770" levels="1" name="Heal">
 		<!-- High Five Confirmed -->
@@ -1103,11 +1103,11 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<param power="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6771" levels="1" name="Death Strike">
 		<!-- High Five Confirmed -->
@@ -1122,11 +1122,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="9193" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6772" levels="1" name="Power Strike">
 		<!-- High Five Confirmed -->
@@ -1143,12 +1143,12 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="9048" />
 				<param criticalChance="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6773" levels="1" name="Rage">
 		<!-- High Five Confirmed -->
@@ -1167,14 +1167,14 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 			</effect>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6774" levels="1" name="Stun Attack">
 		<!-- High Five Confirmed -->
@@ -1200,13 +1200,13 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="12063" />
 				<param criticalChance="10" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6775" levels="1" name="Soul Breath">
 		<!-- High Five Confirmed -->
@@ -1225,11 +1225,11 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="10440" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6776" levels="1" name="Paralysis">
 		<!-- High Five Confirmed -->
@@ -1254,12 +1254,12 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="120" />
 			</effect>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6777" levels="1" name="Bleeding Gash">
 		<!-- High Five Confirmed -->
@@ -1285,14 +1285,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="BLEED" />
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="200" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="6779" skillLevel="1" />
@@ -1312,11 +1312,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="10205" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6779" levels="1" name="Paralysis">
 		<!-- High Five Confirmed -->
@@ -1332,9 +1332,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<set name="trait" val="PARALYZE" />
-		<for>
+		<effects>
 			<effect name="Paralyze" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6780" levels="1" name="Presentation - Portal Ray Combined Light Maintenance">
 		<!-- none -->

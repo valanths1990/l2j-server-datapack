@@ -14,11 +14,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<param slot="BUFF" rate="100" max="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7002" levels="1" name="Dispel Debuff">
 		<set name="castRange" val="400" />
@@ -28,11 +28,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<param slot="DEBUFF" rate="100" max="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7003" levels="1" name="Dispel All">
 		<!-- Confirmed CT2.5 -->
@@ -43,14 +43,14 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<param slot="BUFF" rate="100" max="20" />
 			</effect>
 			<effect name="DispelByCategory">
 				<param slot="DEBUFF" rate="100" max="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7004" levels="2" name="Dispel Petrification">
 		<!-- This skill only has one level, 2. -->
@@ -61,11 +61,11 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="TURN_STONE,2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7005" levels="4" name="Greater Chant of Vampire">
 		<!-- This skill only has one level, 4. -->
@@ -84,11 +84,11 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN_MEMBER" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7006" levels="13" name="The Love of Pa'agrio">
 		<!-- TODO: Needs to be done -->
@@ -252,11 +252,11 @@
 		<set name="magicLvl" val="99" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param DERANGEMENT="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7029" levels="4" name="Super Haste">
 		<!-- GM Skill -->
@@ -275,7 +275,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="runSpd" val="#runSpd" />
@@ -288,7 +288,7 @@
 				<mul stat="maxMp" val="#amount" />
 				<mul stat="weightLimit" val="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7030" levels="1" name="Summon King Bugbear">
 		<set name="hitTime" val="4000" />
@@ -304,12 +304,12 @@
 		<cond>
 			<player canSummon="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<param npcId="20150" />
 				<param lifeTime="1200" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7031" levels="1" name="Summon Skeleton Royal Guard">
 		<set name="hitTime" val="4000" />
@@ -325,12 +325,12 @@
 		<cond>
 			<player canSummon="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<param npcId="20169" />
 				<param lifeTime="1200" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7032" levels="1" name="Summon Hunter Gargoyle">
 		<set name="hitTime" val="4000" />
@@ -346,12 +346,12 @@
 		<cond>
 			<player canSummon="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<param npcId="20241" />
 				<param lifeTime="1200" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7033" levels="1" name="not_used">
 		<set name="magicLvl" val="1" />
@@ -409,11 +409,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7042" levels="1" name="Master's Blessing - Death Whisper">
 		<!-- GM Skill -->
@@ -431,11 +431,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7043" levels="1" name="Master's Blessing - Haste">
 		<!-- GM Skill -->
@@ -453,11 +453,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7044" levels="1" name="Master's Blessing - Guidance">
 		<!-- GM Skill -->
@@ -475,11 +475,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7045" levels="1" name="Master's Blessing - Blessed Body">
 		<!-- GM Skill -->
@@ -497,11 +497,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7046" levels="1" name="Master's Blessing - Blessed Soul">
 		<!-- GM Skill -->
@@ -519,11 +519,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7047" levels="1" name="Master's Blessing - Agility">
 		<!-- GM Skill -->
@@ -541,11 +541,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7048" levels="1" name="Master's Blessing - Acumen">
 		<!-- GM Skill -->
@@ -563,11 +563,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7049" levels="1" name="Master's Blessing - Decrease Weight">
 		<!-- GM Skill -->
@@ -585,11 +585,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="9000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7050" levels="1" name="Master's Blessing - Might">
 		<!-- GM Skill -->
@@ -607,11 +607,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7051" levels="1" name="Master's Blessing - Shield">
 		<!-- GM Skill -->
@@ -629,11 +629,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7052" levels="1" name="Master's Blessing - Magic Barrier">
 		<!-- GM Skill -->
@@ -651,11 +651,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mDef" val="1.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7053" levels="1" name="Master's Blessing - Vampiric Rage">
 		<!-- GM Skill -->
@@ -673,11 +673,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7054" levels="1" name="Master's Blessing - Empower">
 		<!-- GM Skill -->
@@ -695,11 +695,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.75" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7055" levels="1" name="Master's Blessing - Wind Walk">
 		<!-- GM Skill -->
@@ -717,11 +717,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7056" levels="1" name="Master's Blessing - Berserker Spirit">
 		<!-- GM Skill -->
@@ -739,7 +739,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="pAtk" val="1.08" />
@@ -750,7 +750,7 @@
 				<add stat="runSpd" val="8" />
 				<sub stat="rEvas" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7057" levels="1" name="Master's Blessing - Greater Might">
 		<!-- GM Skill -->
@@ -768,11 +768,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7058" levels="1" name="Master's Blessing - Greater Shield">
 		<!-- GM Skill -->
@@ -790,11 +790,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7059" levels="1" name="Master's Blessing - Wild Magic">
 		<!-- GM Skill -->
@@ -812,11 +812,11 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7060" levels="1" name="Master's Blessing - Clarity">
 		<!-- GM Skill -->
@@ -834,13 +834,13 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicalMpConsumeRate" val="0.9" />
 				<mul stat="physicalMpConsumeRate" val="0.8" />
 				<mul stat="danceMpConsumeRate" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7061" levels="1" name="Master's Blessing - Prophecy of Water">
 		<!-- GM Skill -->
@@ -860,7 +860,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<mul stat="regMp" val="1.2" />
@@ -876,7 +876,7 @@
 				<mul stat="physicalMpConsumeRate" val="0.95" />
 				<mul stat="danceMpConsumeRate" val="0.95" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7062" levels="1" name="Master's Blessing - Prophecy of Fire">
 		<!-- GM Skill -->
@@ -894,7 +894,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.2" />
 				<mul stat="regHp" val="1.2" />
@@ -910,7 +910,7 @@
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7063" levels="1" name="Master's Blessing - Prophecy of Wind">
 		<!-- GM Skill -->
@@ -928,7 +928,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.2" />
 				<mul stat="critRate" val="1.2" />
@@ -943,7 +943,7 @@
 				<mul stat="runSpd" val="0.8" />
 				<add stat="absorbDam" val="5" /> <!-- absorb 5% HP from damage inflicted on enemies -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7064" levels="1" name="Master's Blessing - Chant of Victory">
 		<!-- GM Skill -->
@@ -961,7 +961,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<param power="20" />
 				<param type="PER" />
@@ -978,7 +978,7 @@
 				<add stat="accCombat" val="4" />
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7065" levels="1" name="Test - Charge">
 		<set name="coolTime" val="200" />
@@ -1046,11 +1046,11 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="StealAbnormal">
 				<param slot="BUFF" rate="50" max="5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7069" levels="1" name="Test Abnormal State DD">
 		<set name="coolTime" val="200" />
@@ -1088,11 +1088,11 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonTrap">
 				<param npcId="30048" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7073" levels="1" name="Test - Find Trap">
 		<set name="hitTime" val="1000" />
@@ -1175,9 +1175,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="Stun" />
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="Blink" />
 		</selfEffects>
@@ -1290,7 +1290,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 				<mul stat="pDef" val="1.15" />
@@ -1301,7 +1301,7 @@
 			<effect name="BlockBuffSlot">
 				<param slot="PA_UP;PD_UP" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7089" levels="1" name="Master's Blessing - Improve Magic">
 		<!-- Confirmed CT2.5 -->
@@ -1322,7 +1322,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.75" />
 				<mul stat="mDef" val="1.3" />
@@ -1333,7 +1333,7 @@
 			<effect name="BlockBuffSlot">
 				<param slot="MA_UP;MD_UP" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7090" levels="1" name="Master's Blessing - Improve Condition">
 		<!-- Confirmed CT2.5 -->
@@ -1354,7 +1354,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.35" />
 				<mul stat="maxMp" val="1.35" />
@@ -1365,7 +1365,7 @@
 			<effect name="BlockBuffSlot">
 				<param slot="MAX_HP_UP;MAX_MP_UP" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7091" levels="1" name="Master's Blessing - Improve Critical">
 		<!-- Confirmed CT2.5 -->
@@ -1386,7 +1386,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="1.3" />
 				<mul stat="critDmg" val="1.35" />
@@ -1397,7 +1397,7 @@
 			<effect name="BlockBuffSlot">
 				<param slot="CRITICAL_PROB_UP;CRITICAL_DMG_UP" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7092" levels="1" name="Master's Blessing - Improve Shield Defense">
 		<!-- Confirmed CT2.5 -->
@@ -1418,7 +1418,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rShld" val="1.3" />
 				<mul stat="sDef" val="1.5" />
@@ -1429,7 +1429,7 @@
 			<effect name="BlockBuffSlot">
 				<param slot="SHIELD_PROB_UP;SHIELD_DEFENCE_UP" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7093" levels="1" name="Master's Blessing - Improve Movement">
 		<!-- Confirmed CT2.5 -->
@@ -1450,7 +1450,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 				<add stat="rEvas" val="4" />
@@ -1461,7 +1461,7 @@
 			<effect name="BlockBuffSlot">
 				<param slot="SPEED_UP;AVOID_UP" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7094" levels="1" name="Master's Blessing - Sharpen Edge">
 		<!-- GM Skill -->
@@ -1480,7 +1480,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.05">
 					<using kind="SWORD,DUAL,ANCIENTSWORD,RAPIER,DAGGER,DUALDAGGER,POLE,DUALFIST" />
@@ -1489,7 +1489,7 @@
 					<using kind="SWORD,DUAL,ANCIENTSWORD,RAPIER,DAGGER,DUALDAGGER,POLE,DUALFIST" />
 				</mul>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7095" levels="1" name="Master's Blessing - Face Harden">
 		<!-- GM Skill -->
@@ -1508,13 +1508,13 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.1">
 					<using kind="HEAVY" />
 				</mul>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7096" levels="1" name="Master's Blessing - Blessing of Noblesse">
 		<!-- GM Skill -->
@@ -1534,8 +1534,8 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="NoblesseBless" />
-		</for>
+		</effects>
 	</skill>
 </list>

@@ -23,12 +23,12 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
 				<add stat="accCombat" val="#accCombat" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4701" levels="13" name="Cure of Queen">
 		<table name="#effectPoints"> 541 611 659 666 669 673 676 679 681 684 687 689 692 </table>
@@ -45,11 +45,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<param dispel="ATTACK_TIME_UP;HIT_DOWN;PA_DOWN" rate="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4702" levels="13" name="Blessing of Seraphim">
 		<table name="#abnormalLvls"> 1 2 3 3 3 3 3 3 3 3 3 3 3 </table>
@@ -73,11 +73,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regMp" val="#regMp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4703" levels="13" name="Gift of Seraphim">
 		<table name="#abnormalLvls"> 1 2 3 3 3 3 3 3 3 3 3 3 3 </table>
@@ -101,11 +101,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mReuse" val="#mReuse" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4704" levels="13" name="Cure of Seraphim">
 		<table name="#effectPoints"> 541 611 659 666 669 673 676 679 681 684 687 689 692 </table>
@@ -122,11 +122,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<param dispel="SLEEP;ROOT_MAGICALLY;STUN;PARALYZE;SILENCE" rate="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4705" levels="13" name="Curse of Shade">
 		<!-- Confirmed CT2.5 -->
@@ -160,7 +160,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="mDef" val="#mpDef" />
 				<mul stat="pDef" val="#mpDef" />
@@ -168,7 +168,7 @@
 			<effect name="TargetMeProbability">
 				<param chance="80" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4706" levels="13" name="Mass Curse of Shade">
 		<!-- Confirmed CT2.5 -->
@@ -203,7 +203,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="mDef" val="#mpDef" />
 				<mul stat="pDef" val="#mpDef" />
@@ -211,7 +211,7 @@
 			<effect name="TargetMeProbability">
 				<param chance="40" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4707" levels="13" name="Shade Sacrifice">
 		<!-- Confirmed CT2.5 -->
@@ -232,11 +232,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<!-- NOTE: skill description mention party members, but is client typo, it could affect any single target -->
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4708" levels="10" name="Cursed Strike">
 		<table name="#effectPoints"> -279 -296 -311 -323 -328 -333 -337 -340 -341 -342 </table>
@@ -263,12 +263,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4709" levels="10" name="Cursed Blow">
 		<table name="#effectPoints"> -279 -296 -311 -323 -328 -333 -337 -340 -341 -342 </table>
@@ -285,13 +285,13 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param blowChance="20" />
 				<param criticalChance="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4710" levels="12" name="Wild Stun">
 		<table name="#effectPoints"> -49 -73 -102 -135 -170 -202 -226 -235 -240 -243 -246 -248 </table>
@@ -319,12 +319,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4711" levels="12" name="Wild Defense">
 		<table name="#activateRates"> -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 15 </table>
@@ -345,14 +345,14 @@
 		<set name="reuseDelay" val="1200000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="ImmobileBuff">
 				<mul stat="mDef" val="5" />
 				<mul stat="pDef" val="5" />
 				<mul stat="pAtkSpd" val="0.3" />
 				<mul stat="runSpd" val="0.1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4712" levels="12" name="Bright Burst">
 		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -635 -659 -676 -689 -700 -709 </table>
@@ -371,11 +371,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4713" levels="12" name="Bright Heal">
 		<table name="#amount"> 33 61 98 145 198 251 298 316 330 338 341 342 </table>
@@ -393,11 +393,11 @@
 		<set name="reuseDelay" val="12000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4714" levels="1" name="Twilight Dragon">
 		<!-- This Skill Is Only For Description In The Client -->
@@ -437,11 +437,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="OWNER_PET" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#effectPoints" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4718" levels="12" name="Greater Heal Trick">
 		<table name="#effectPoints"> 62 113 184 272 371 471 558 592 620 651 672 685 </table>
@@ -460,11 +460,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="OWNER_PET" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#effectPoints" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4719" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
@@ -481,11 +481,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4720" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
@@ -502,11 +502,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4721" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
@@ -523,11 +523,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4722" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
@@ -544,11 +544,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4723" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
@@ -565,11 +565,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4724" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -594,12 +594,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4725" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -624,12 +624,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4726" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -654,12 +654,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4727" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -684,12 +684,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4728" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -714,12 +714,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4729" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
@@ -736,12 +736,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param blowChance="115" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4730" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
@@ -758,12 +758,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param blowChance="115" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4731" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
@@ -780,12 +780,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param blowChance="115" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4732" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
@@ -802,12 +802,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param blowChance="115" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4733" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
@@ -824,12 +824,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param blowChance="115" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4734" levels="12" name="BOSS Spinning Slash">
 		<!-- Boss Skill -->
@@ -845,11 +845,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4735" levels="12" name="BOSS Spinning Slash">
 		<!-- Boss Skill -->
@@ -865,11 +865,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4736" levels="12" name="BOSS Spinning Slash">
 		<!-- Boss Skill -->
@@ -885,11 +885,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4737" levels="12" name="BOSS Spinning Slash">
 		<!-- Boss Skill -->
@@ -905,11 +905,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4738" levels="12" name="BOSS Spinning Slash">
 		<!-- Boss Skill -->
@@ -925,11 +925,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4739" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
@@ -946,11 +946,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4740" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
@@ -967,11 +967,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4741" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
@@ -988,11 +988,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4742" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
@@ -1009,11 +1009,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4743" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
@@ -1030,11 +1030,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4744" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1059,12 +1059,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4745" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1089,12 +1089,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4746" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1119,12 +1119,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4747" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1149,12 +1149,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4748" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1179,12 +1179,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4749" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
@@ -1201,12 +1201,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param blowChance="67" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4750" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
@@ -1223,12 +1223,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param blowChance="67" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4751" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
@@ -1245,12 +1245,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param blowChance="67" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4752" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
@@ -1267,12 +1267,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param blowChance="67" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4753" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
@@ -1289,12 +1289,12 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param blowChance="67" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4754" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
@@ -1310,11 +1310,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4755" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
@@ -1330,11 +1330,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4756" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
@@ -1350,11 +1350,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4757" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
@@ -1370,11 +1370,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4758" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
@@ -1390,11 +1390,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4759" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1418,12 +1418,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4760" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1447,12 +1447,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4761" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1476,12 +1476,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4762" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1505,12 +1505,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4763" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1534,12 +1534,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4764" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
@@ -1555,11 +1555,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4765" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
@@ -1575,11 +1575,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4766" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
@@ -1595,11 +1595,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4767" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
@@ -1615,11 +1615,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4768" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
@@ -1635,11 +1635,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4769" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1663,12 +1663,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4770" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1692,12 +1692,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4771" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1721,12 +1721,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4772" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1750,12 +1750,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4773" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
@@ -1779,12 +1779,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Stun" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4774" levels="12" name="BOSS Spear Attack">
 		<!-- Boss Skill -->
@@ -1800,11 +1800,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4775" levels="12" name="BOSS Spear Attack">
 		<!-- Boss Skill -->
@@ -1820,11 +1820,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4776" levels="12" name="BOSS Spear Attack">
 		<!-- Boss Skill -->
@@ -1840,11 +1840,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4777" levels="12" name="BOSS Spear Attack">
 		<!-- Boss Skill -->
@@ -1860,11 +1860,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4778" levels="12" name="BOSS Spear Attack">
 		<!-- Boss Skill -->
@@ -1880,11 +1880,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4779" levels="12" name="BOSS Heal">
 		<!-- Boss Skill -->
@@ -1901,11 +1901,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="CLAN_MEMBER" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4780" levels="12" name="BOSS Heal">
 		<!-- Boss Skill -->
@@ -1922,11 +1922,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="CLAN_MEMBER" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4781" levels="12" name="BOSS Heal">
 		<!-- Boss Skill -->
@@ -1943,11 +1943,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="CLAN_MEMBER" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4782" levels="12" name="BOSS Heal">
 		<!-- Boss Skill -->
@@ -1964,11 +1964,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="CLAN_MEMBER" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4783" levels="12" name="BOSS Heal">
 		<!-- Boss Skill -->
@@ -1985,11 +1985,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="CLAN_MEMBER" />
-		<for>
+		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4784" levels="12" name="BOSS Chant of Life">
 		<!-- Boss Skill -->
@@ -2011,11 +2011,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN_MEMBER" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4785" levels="12" name="BOSS Chant of Life">
 		<!-- Boss Skill -->
@@ -2037,11 +2037,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN_MEMBER" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4786" levels="12" name="BOSS Chant of Life">
 		<!-- Boss Skill -->
@@ -2063,11 +2063,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN_MEMBER" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4787" levels="12" name="BOSS Chant of Life">
 		<!-- Boss Skill -->
@@ -2089,11 +2089,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN_MEMBER" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4788" levels="12" name="BOSS Chant of Life">
 		<!-- Boss Skill -->
@@ -2115,11 +2115,11 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN_MEMBER" />
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hot" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4789" levels="10" name="NPC High Level">
 		<table name="#mDef"> 1.03 1.06 1.09 1.12 1.15 1.18 1.21 1.24 1.27 1.3 </table>
@@ -2127,12 +2127,12 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="#rEvas" />
 				<mul stat="mDef" val="#mDef" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4790" levels="1" name="Raid Boss - Level 23">
 		<!-- Confirmed CT2.5 -->

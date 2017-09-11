@@ -6,11 +6,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="CON" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8501" levels="1" name="Pink Talisman - INT">
 		<!-- Confirmed CT2.5 -->
@@ -18,11 +18,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8502" levels="1" name="Pink Talisman - WIT">
 		<!-- Confirmed CT2.5 -->
@@ -30,11 +30,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="WIT" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8503" levels="1" name="Pink Talisman - MEN">
 		<!-- Confirmed CT2.5 -->
@@ -42,11 +42,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="MEN" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8504" levels="1" name="Pink Talisman - Stun Resist">
 		<!-- Confirmed CT2.5 -->
@@ -54,11 +54,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SHOCK="15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8505" levels="1" name="Pink Talisman - Sleep Resist">
 		<!-- Confirmed CT2.5 -->
@@ -66,11 +66,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param SLEEP="15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8506" levels="1" name="Pink Talisman - Hold Resist">
 		<!-- Confirmed CT2.5 -->
@@ -78,11 +78,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param HOLD="15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8507" levels="1" name="Pink Talisman - Paralyze Resist">
 		<!-- Confirmed CT2.5 -->
@@ -90,11 +90,11 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<param PARALYZE="15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8508" levels="1" name="Pink Talisman - All STAT">
 		<!-- Confirmed CT2.5 -->
@@ -102,7 +102,7 @@
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="1" />
 				<add stat="DEX" val="1" />
@@ -111,7 +111,7 @@
 				<add stat="WIT" val="1" />
 				<add stat="MEN" val="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8509" levels="1" name="High Angel Circlet">
 		<!-- Confirmed CT2.5 -->
@@ -132,11 +132,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<param escapeType="TOWN" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8510" levels="1" name="Summon Friend">
 		<set name="effectPoint" val="1000" />
@@ -183,11 +183,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1576" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8516" levels="1" name="Release Seal on Agathion - Ball Trapping Orodriel">
 		<!-- High Five Skill -->
@@ -199,11 +199,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1577" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8517" levels="1" name="Release Seal on Agathion - Penalty Kick">
 		<!-- High Five Skill -->
@@ -215,11 +215,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="1578" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8518" levels="1" name="Notifier">
 		<!-- Informs you of the re-supply time of the gift given by the Agathion. -->
@@ -244,11 +244,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="16077" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8522" levels="1" name="Release Seal on Agathion - Nevit's Messenger Kanna">
 		<!-- High Five Skill -->
@@ -258,11 +258,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="16078" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8523" levels="1" name="Release Seal on Agathion - Guardian of the Dawn Kallesin">
 		<!-- High Five Skill -->
@@ -272,11 +272,11 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<param npcId="16079" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8524" levels="1" name="Hero's Holy Attack">
 		<!-- Divine attck is increased by 250. -->
