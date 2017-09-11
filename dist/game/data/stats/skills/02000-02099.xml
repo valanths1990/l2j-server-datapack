@@ -110,19 +110,16 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="2010" levels="1" name="Endeavor Potion">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="HIT_UP" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<effects>
-			<effect name="Buff">
-				<add stat="accCombat" val="4" />
-			</effect>
-		</effects>
 	</skill>
 	<skill id="2011" levels="1" name="Haste Potion">
 		<set name="abnormalLvl" val="1" />
