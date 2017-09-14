@@ -89,7 +89,7 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		
 		double power = _power * (-((target.getCurrentHp() * 2) / target.getMaxHp()) + 2);
 		
-		damage = Formulas.calcSkillPhysDam(activeChar, target, shld, false, ss, power);
+		damage = Formulas.calcSkillPhysDam(activeChar, target, skill, shld, false, ss, power);
 		
 		if (damage > 0)
 		{
