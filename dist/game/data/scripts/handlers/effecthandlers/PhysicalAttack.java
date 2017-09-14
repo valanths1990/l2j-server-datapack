@@ -108,7 +108,7 @@ public final class PhysicalAttack extends AbstractEffect
 			crit = Formulas.calcSkillCrit(activeChar, target, _criticalChance);
 		}
 		
-		damage = Formulas.calcSkillPhysDam(activeChar, target, shield, false, ss, _power);
+		damage = Formulas.calcSkillPhysDam(activeChar, target, skill, shield, false, ss, _power);
 		
 		if (crit)
 		{
