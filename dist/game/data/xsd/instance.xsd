@@ -177,6 +177,11 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:element name="showTimer" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="val" type="xs:boolean" use="optional" />
+					</xs:complexType>
+				</xs:element>
 			</xs:sequence>
 			<xs:attribute name="name" type="xs:normalizedString"
 				use="required" />

@@ -244,7 +244,9 @@
 				<xs:attribute type="xs:string" name="power" use="optional" />
 				<xs:attribute type="operation" name="type" use="optional" />
 				<xs:attribute type="xs:boolean" name="heal" use="optional" />
-				<xs:attribute type="xs:byte" name="criticalChance" use="optional" />
+				<xs:attribute type="xs:string" name="criticalChance" use="optional" />
+				<xs:attribute type="xs:byte" name="blowChance" use="optional" />
+				<xs:attribute type="xs:string" name="drain" use="optional" />
 				<xs:attribute type="xs:byte" name="resPower" use="optional" />
 				<xs:attribute type="xs:byte" name="resRecovery" use="optional" />
 				<xs:attribute type="xs:string" name="charge" use="optional" />
@@ -669,7 +671,7 @@
 		<xs:attribute type="xs:string" name="activationMinDamage" use="optional" />
 		<xs:attribute type="xs:short" name="activationSkills" use="optional" />
 	</xs:complexType>
-	<xs:complexType name="forType" mixed="true">
+	<xs:complexType name="effectsType" mixed="true">
 		<xs:choice maxOccurs="unbounded" minOccurs="0">
 			<xs:element name="add" type="addType" />
 			<xs:element name="mul" type="addType" />
@@ -680,11 +682,6 @@
 		</xs:choice>
 		<xs:attribute type="xs:string" name="name" use="optional" />
 		<xs:attribute type="xs:byte" name="val" use="optional" />
-	</xs:complexType>
-	<xs:complexType name="effectsType">
-		<xs:sequence>
-			<xs:element name="effect" type="effectType" maxOccurs="unbounded" />
-		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="skillType">
 		<xs:choice maxOccurs="unbounded" minOccurs="0">
@@ -699,23 +696,31 @@
 			<xs:element name="enchant7" type="enchantType" />
 			<xs:element name="enchant8" type="enchantType" />
 			<xs:element name="cond" type="condType" />
-			<xs:element name="for" type="forType" />
-			<xs:element name="enchant1for" type="forType" />
-			<xs:element name="enchant2for" type="forType" />
+			<xs:element name="effects" type="effectsType" />
+			<xs:element name="enchant1Effects" type="effectsType" />
+			<xs:element name="enchant2Effects" type="effectsType" />
 			<xs:element name="enchant2pvpEffects" type="effectsType" />
 			<xs:element name="enchant2pveEffects" type="effectsType" />
-			<xs:element name="enchant7for" type="forType" />
+			<xs:element name="enchant7Effects" type="effectsType" />
+			<xs:element name="enchant3pvpEffects" type="effectsType" />
+			<xs:element name="enchant3pveEffects" type="effectsType" />
+			<xs:element name="enchant4pvpEffects" type="effectsType" />
+			<xs:element name="enchant4pveEffects" type="effectsType" />
 			<xs:element name="enchant7pvpEffects" type="effectsType" />
 			<xs:element name="enchant7pveEffects" type="effectsType" />
-			<xs:element name="enchant3for" type="forType" />
-			<xs:element name="enchant4for" type="forType" />
-			<xs:element name="enchant5for" type="forType" />
-			<xs:element name="enchant6for" type="forType" />
+			<xs:element name="enchant8pvpEffects" type="effectsType" />
+			<xs:element name="enchant8pveEffects" type="effectsType" />
+			<xs:element name="enchant3Effects" type="effectsType" />
+			<xs:element name="enchant4Effects" type="effectsType" />
+			<xs:element name="enchant5Effects" type="effectsType" />
+			<xs:element name="enchant6Effects" type="effectsType" />
 			<xs:element name="endEffects" type="effectsType" />
 			<xs:element name="selfEffects" type="effectsType" />
+			<xs:element name="enchant1selfEffects" type="effectsType" />
 			<xs:element name="enchant2selfEffects" type="effectsType" />
 			<xs:element name="enchant1cond" type="condType" />
 			<xs:element name="enchant4selfEffects" type="effectsType" />
+			<xs:element name="enchant8selfEffects" type="effectsType" />
 			<xs:element name="pvpEffects" type="effectsType" />
 			<xs:element name="pveEffects" type="effectsType" />
 			<xs:element name="channelingEffects" type="effectsType" />
