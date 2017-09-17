@@ -1069,6 +1069,7 @@
 		<set name="magicLvl" val="81" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="SELF" />
 		<set name="trait" val="PARALYZE" />
 		<effects>

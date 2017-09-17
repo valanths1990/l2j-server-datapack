@@ -2472,6 +2472,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PARALYZE" />
 		<effects>
