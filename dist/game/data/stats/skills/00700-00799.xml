@@ -2451,34 +2451,44 @@
 		</effects>
 	</skill>
 	<skill id="791" levels="1" name="Lightning Shock">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="PARALYZE" />
 		<set name="activateRate" val="50" />
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="150" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="basicProperty" val="MEN" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-1" />
 		<set name="hitTime" val="1080" />
 		<set name="icon" val="icon.skill0791" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="52" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
-		<set name="rideState" val="NONE" />
-		<set name="soulMaxConsumeCount" val="5" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
+		<set name="trait" val="PARALYZE" />
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<param power="69" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="runSpd" val="0.5" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="mAtkSpd" val="0.5" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param PARALYZE="100" />
 			</effect>
 		</effects>
 		<endEffects>

@@ -1056,23 +1056,26 @@
 		</effects>
 	</skill>
 	<skill id="6092" levels="1" name="Lightning Shock">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="abnormalVisualEffect" val="PARALYZE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill0791" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="83" />
+		<set name="isMagic" val="2" />
+		<set name="magicLvl" val="81" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="soulMaxConsumeCount" val="5" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="PARALYZE" />
 		<effects>
 			<effect name="Paralyze" />
+			<effect name="DefenceTrait">
+				<param PARALYZE="100" />
+			</effect>
 		</effects>
 	</skill>
 	<skill id="6093" levels="1" name="Panther Hide">
