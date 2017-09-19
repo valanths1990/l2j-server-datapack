@@ -1,34 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="2001" levels="1" name="Red Potion">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="HP_RECOVER" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<effects>
-			<effect name="HealOverTime" ticks="3">
-				<param power="2" />
-			</effect>
-		</effects>
 	</skill>
 	<skill id="2002" levels="1" name="Healing Drug">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="HP_RECOVER" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<effects>
-			<effect name="HealOverTime" ticks="3">
-				<param power="1.5" />
-			</effect>
-		</effects>
 	</skill>
 	<skill id="2003" levels="1" name="Squash Seed">
 		<!-- Confirmed CT2.5 -->

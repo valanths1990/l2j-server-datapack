@@ -1979,6 +1979,7 @@
 		<set name="activateRate" val="90" />
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="200" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="-655" />
 		<set name="hitTime" val="1000" />
@@ -1993,20 +1994,26 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
 		<effects>
-			<effect name="Fear">
-				<mul stat="runSpd" val="0.67" />
+			<effect name="Fear" />
+			<effect name="Debuff">
 				<mul stat="pDef" val="0.67" />
+			</effect>
+			<effect name="Debuff">
 				<sub stat="rEvas" val="10" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="0.67" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="775" levels="1" name="Weapon Blockade">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="DISARM" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="70" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="STR" />
 		<set name="castRange" val="40" />
 		<set name="chargeConsume" val="2" />
@@ -2016,31 +2023,33 @@
 		<set name="icon" val="icon.skill0775" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="58" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="DUAL" />
-				<player Charges="2" /> <!-- Need to recharge 2nd stage of Sword Energy. -->
+				<player Charges="2" />
 			</and>
 		</cond>
 		<effects>
-			<effect name="Disarm">
+			<effect name="Disarm" />
+			<effect name="Debuff">
 				<mul stat="pAtk" val="0.6" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="776" levels="1" name="Force of Destruction">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="10" />
-		<set name="abnormalTime" val="20" />
+		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="FORCE_OF_DESTRUCTION" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
-		<set name="activateRate" val="80" />
+		<set name="activateRate" val="90" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="chargeConsume" val="2" />
@@ -2050,17 +2059,17 @@
 		<set name="icon" val="icon.skill0776" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="37" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="DUALFIST" />
-				<player Charges="2" /> <!-- Chi Energy Stage 2 Recharge needed. -->
+				<player Charges="2" />
 			</and>
 		</cond>
 		<effects>
@@ -2069,26 +2078,25 @@
 				<param criticalChance="20" />
 			</effect>
 			<effect name="DamOverTime" ticks="1">
-				<param power="80" />
+				<param power="200" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="777" levels="1" name="Demolition Impact">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
-		<set name="affectRange" val="500" />
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-686" />
-		<set name="effectRange" val="650" />
-		<set name="fanRange" val="0,0,500,60" />
+		<set name="effectRange" val="200" />
 		<set name="hitTime" val="1200" />
 		<set name="icon" val="icon.skill0777" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="160" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
 		<set name="reuseDelay" val="75000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD,BLUNT" />
