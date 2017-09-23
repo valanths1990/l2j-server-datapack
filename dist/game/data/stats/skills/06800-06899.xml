@@ -1660,16 +1660,18 @@
 		</effects>
 	</skill>
 	<skill id="6886" levels="1" name="Complete Recovery">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
-		<set name="hitTime" val="2500" />
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="900000" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="HealPercent">
+				<param power="100" />
+			</effect>
+			<effect name="ManaHealPercent">
 				<param power="100" />
 			</effect>
 		</effects>
