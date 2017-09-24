@@ -1076,9 +1076,14 @@
 		</effects>
 	</skill>
 	<skill id="6858" levels="1" name="Summon">
-		<!-- none -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="effectPoint" val="546" />
+		<set name="hitTime" val="1000" />
+		<set name="magicLvl" val="81" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6859" levels="1" name="Power Strike">
 		<!-- High Five Confirmed -->
