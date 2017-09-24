@@ -44,7 +44,6 @@ public final class DragonValley extends AbstractNpcAI
 	private static final int DRAKOS_ASSASSIN = 22823;
 	private static final int[] SUMMON_NPC =
 	{
-		22822, // Drakos Warrior
 		22824, // Drakos Guardian
 		22862, // Drakos Hunter
 	};
