@@ -640,6 +640,8 @@
 				<param halfLethal="5" />
 			</effect>
 		</enchant1Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="FatalBlow">
 				<param power="#enchDuel" />
@@ -2699,6 +2701,8 @@
 				<param power="#ench1Power" />
 			</effect>
 		</enchant1Effects>
+		<enchant4Effects>
+		</enchant4Effects>
 		<enchant4pvpEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="#enchDuel" />
@@ -3159,6 +3163,8 @@
 				<param power="#ench2Power" />
 			</effect>
 		</enchant2Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="#enchDuel" />
@@ -3243,6 +3249,8 @@
 			<effect name="Stun" />
 			<effect name="EnemyCharge" />
 		</enchant1Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="#ench7Duel" />
@@ -3328,6 +3336,8 @@
 				<param power="#ench1Power" />
 			</effect>
 		</enchant1Effects>
+		<enchant4Effects>
+		</enchant4Effects>
 		<enchant4pvpEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="#ench4Duel" />
@@ -3405,6 +3415,8 @@
 				<param power="#ench2Power" />
 			</effect>
 		</enchant2Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="#enchDuel" />
@@ -3480,6 +3492,8 @@
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</enchant2Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="#enchDuel" />
@@ -3546,6 +3560,8 @@
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</enchant2Effects>
+		<enchant3Effects>
+		</enchant3Effects>
 		<enchant3pvpEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="#enchDuel" />

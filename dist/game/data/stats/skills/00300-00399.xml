@@ -574,6 +574,8 @@
 				<param power="#ench1Power" />
 			</effect>
 		</enchant1Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="PhysicalAttackHpLink">
 				<param power="#enchDuel" />
@@ -645,6 +647,8 @@
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</enchant1Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="PhysicalAttack">
 				<param power="#enchDuel" />
@@ -1483,6 +1487,8 @@
 				<param halfLethal="10" />
 			</effect>
 		</enchant1Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="PhysicalAttack">
 				<param power="#ench7Duel" />
@@ -1571,6 +1577,8 @@
 				<param halfLethal="15" />
 			</effect>
 		</enchant2Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="FatalBlow">
 				<param power="#ench7Duel" />
@@ -2750,6 +2758,8 @@
 				<add stat="rEvas" val="#ench2rEvas" />
 			</effect>
 		</enchant2selfEffects>
+		<enchant8Effects>
+		</enchant8Effects>
 		<enchant8pvpEffects>
 			<effect name="PhysicalAttack">
 				<param power="#enchDuel" />
