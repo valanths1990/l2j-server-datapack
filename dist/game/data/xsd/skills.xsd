@@ -23,8 +23,6 @@
 							<xs:enumeration value="affectRange" />
 							<xs:enumeration value="affectScope" />
 							<xs:enumeration value="afterEffectId" />
-							<xs:enumeration value="attribute" />
-							<xs:enumeration value="attributePower" />
 							<xs:enumeration value="basicProperty" />
 							<xs:enumeration value="blockedInOlympiad" />
 							<xs:enumeration value="canBeDispeled" />
