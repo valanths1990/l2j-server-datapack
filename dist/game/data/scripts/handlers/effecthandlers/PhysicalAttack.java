@@ -128,10 +128,5 @@ public final class PhysicalAttack extends AbstractEffect
 		{
 			activeChar.sendPacket(SystemMessageId.ATTACK_FAILED);
 		}
-		
-		if (skill.isSuicideAttack())
-		{
-			activeChar.doDie(activeChar);
-		}
 	}
 }

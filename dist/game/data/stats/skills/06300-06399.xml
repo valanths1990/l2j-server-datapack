@@ -8,7 +8,6 @@
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="5000" />
-		<set name="isSuicideAttack" val="true" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="123" />
 		<set name="operateType" val="A1" />

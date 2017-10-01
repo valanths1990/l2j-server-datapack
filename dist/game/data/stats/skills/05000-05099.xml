@@ -1554,7 +1554,6 @@
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="180" />
 		<set name="hitTime" val="100" />
-		<set name="isSuicideAttack" val="true" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
@@ -1606,7 +1605,6 @@
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="100" />
-		<set name="isSuicideAttack" val="true" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
