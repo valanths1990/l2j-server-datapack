@@ -448,6 +448,8 @@
 				<mul stat="mAtkSpd" val="0.7" />
 			</effect>
 		</enchant1Effects>
+		<enchant4Effects>
+		</enchant4Effects>
 		<enchant4pvpEffects>
 			<effect name="MagicalSoulAttack">
 				<param power="#ench4Duel" />
@@ -516,6 +518,8 @@
 				<param dispel="MULTI_DEBUFF_SOUL,9" />
 			</effect>
 		</enchant1Effects>
+		<enchant3Effects>
+		</enchant3Effects>
 		<enchant3pvpEffects>
 			<effect name="MagicalSoulAttack">
 				<param power="#ench3Duel" />
@@ -671,6 +675,8 @@
 				<param power="#ench1Power" />
 			</effect>
 		</enchant1Effects>
+		<enchant2Effects>
+		</enchant2Effects>
 		<enchant2pvpEffects>
 			<effect name="MagicalSoulAttack">
 				<param power="#ench2Duel" />
@@ -1103,6 +1109,8 @@
 				<param power="#power" />
 			</effect>
 		</effects>
+		<enchant3Effects>
+		</enchant3Effects>
 		<enchant3pvpEffects>
 			<effect name="MagicalAttack">
 				<param power="#enchDuel" />

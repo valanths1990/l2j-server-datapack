@@ -2609,6 +2609,8 @@
 			</effect>
 			<effect name="Stun" />
 		</enchant1Effects>
+		<enchant8Effects>
+		</enchant8Effects>
 		<enchant8pvpEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="#ench8Duel" />

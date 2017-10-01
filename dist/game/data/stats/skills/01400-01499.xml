@@ -1275,6 +1275,8 @@
 				<param chance="30" />
 			</effect>
 		</enchant2Effects>
+		<enchant4Effects>
+		</enchant4Effects>
 		<enchant4pvpEffects>
 			<effect name="MagicalSoulAttack">
 				<param power="#ench4Duel" />
@@ -1430,6 +1432,8 @@
 				<param power="#ench2Power" />
 			</effect>
 		</enchant2Effects>
+		<enchant4Effects>
+		</enchant4Effects>
 		<enchant4pvpEffects>
 			<effect name="MagicalSoulAttack">
 				<param power="#ench4Duel" />
@@ -1926,6 +1930,8 @@
 				<param power="#ench1Power" />
 			</effect>
 		</enchant1Effects>
+		<enchant4Effects>
+		</enchant4Effects>
 		<enchant4pvpEffects>
 			<effect name="MagicalSoulAttack">
 				<param power="#ench4Duel" />
@@ -2626,6 +2632,8 @@
 				<param power="#ench1Power" />
 			</effect>
 		</enchant1Effects>
+		<enchant4Effects>
+		</enchant4Effects>
 		<enchant4pvpEffects>
 			<effect name="MagicalSoulAttack">
 				<param power="#ench4Duel" />

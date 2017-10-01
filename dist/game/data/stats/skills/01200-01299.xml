@@ -2760,6 +2760,8 @@
 				<param power="#ench2Power" />
 			</effect>
 		</enchant2Effects>
+		<enchant3Effects>
+		</enchant3Effects>
 		<enchant3pvpEffects>
 			<effect name="MagicalAttack">
 				<param power="#enchDuel" />
@@ -3189,6 +3191,8 @@
 				<param power="#ench1Power" />
 			</effect>
 		</enchant1Effects>
+		<enchant3Effects>
+		</enchant3Effects>
 		<enchant3pvpEffects>
 			<effect name="MagicalAttack">
 				<param power="#enchDuel" />
@@ -3383,6 +3387,8 @@
 				<param power="#ench1Power" />
 			</effect>
 		</enchant1Effects>
+		<enchant3Effects>
+		</enchant3Effects>
 		<enchant3pvpEffects>
 			<effect name="MagicalAttack">
 				<param power="#enchDuel" />
@@ -3429,6 +3435,8 @@
 				<param power="#ench1Power" />
 			</effect>
 		</enchant1Effects>
+		<enchant3Effects>
+		</enchant3Effects>
 		<enchant3pvpEffects>
 			<effect name="MagicalAttack">
 				<param power="#enchDuel" />
@@ -3474,6 +3482,8 @@
 				<param power="#ench1Power" />
 			</effect>
 		</enchant1Effects>
+		<enchant3Effects>
+		</enchant3Effects>
 		<enchant3pvpEffects>
 			<effect name="MagicalAttack">
 				<param power="#enchDuel" />

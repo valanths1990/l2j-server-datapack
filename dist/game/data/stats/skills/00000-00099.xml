@@ -842,6 +842,8 @@
 				<param criticalChance="15" />
 			</effect>
 		</enchant1Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="PhysicalAttack">
 				<param power="#enchDuel" />
@@ -1160,6 +1162,8 @@
 				<param halfLethal="15" />
 			</effect>
 		</enchant1Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="Backstab">
 				<param power="#enchDuel" />
@@ -1368,6 +1372,8 @@
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</enchant1Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="PhysicalAttack">
 				<param power="#enchDuel" />

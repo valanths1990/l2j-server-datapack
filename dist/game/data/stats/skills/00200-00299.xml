@@ -1869,6 +1869,8 @@
 				<param halfLethal="10" />
 			</effect>
 		</enchant6Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="FatalBlow">
 				<param power="#enchDuel" />
