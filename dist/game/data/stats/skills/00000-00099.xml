@@ -57,6 +57,8 @@
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</enchant1Effects>
+		<enchant7Effects>
+		</enchant7Effects>
 		<enchant7pvpEffects>
 			<effect name="PhysicalAttack">
 				<param power="#enchDuel" />
