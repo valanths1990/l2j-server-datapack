@@ -6,7 +6,7 @@
 		<table name="#accCombat"> 2 2 3 3 3 3 3 3 3 3 3 3 3 </table>
 		<table name="#effectPoints"> 541 611 659 666 669 673 676 679 681 684 687 689 692 </table>
 		<table name="#magicLvl"> 57 66 75 77 78 79 80 81 82 83 84 85 86 </table>
-		<table name="#mpConsume"> 122 157 194 202 207 212 215 220 224 229 233 237 242 </table>
+		<table name="#mpConsume2"> 122 157 194 202 207 212 215 220 224 229 233 237 242 </table>
 		<table name="#pAtk"> 1.06 1.08 1.1 1.1 1.1 1.1 1.1 1.1 1.1 1.1 1.1 1.1 1.1 </table>
 		<table name="#time"> 120 120 120 150 165 180 195 210 225 240 255 270 285 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -18,7 +18,7 @@
 		<set name="icon" val="icon.skill1331" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -33,14 +33,14 @@
 	<skill id="4701" levels="13" name="Cure of Queen">
 		<table name="#effectPoints"> 541 611 659 666 669 673 676 679 681 684 687 689 692 </table>
 		<table name="#magicLvl"> 57 66 75 77 78 79 80 81 82 83 84 85 86 </table>
-		<table name="#mpConsume"> 62 79 98 102 104 107 108 110 113 115 117 119 122 </table>
+		<table name="#mpConsume2"> 62 79 98 102 104 107 108 110 113 115 117 119 122 </table>
 		<table name="#power"> 40 45 50 55 60 65 70 75 80 85 90 95 100 </table> <!-- Base Land Rate -->
 		<set name="affectRange" val="1000" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -56,7 +56,7 @@
 		<table name="#abnormalTime"> 120 120 120 150 165 180 195 210 225 240 255 270 285 </table>
 		<table name="#effectPoints"> 541 611 659 666 669 673 676 679 681 684 687 689 692 </table>
 		<table name="#magicLvl"> 57 66 75 77 78 79 80 81 82 83 84 85 86 </table>
-		<table name="#mpConsume"> 122 157 194 202 207 212 215 220 224 229 233 237 242 </table>
+		<table name="#mpConsume2"> 122 157 194 202 207 212 215 220 224 229 233 237 242 </table>
 		<table name="#regMp"> 1.3 1.32 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 </table>
 		<table name="#time"> 120 120 120 150 165 180 195 210 225 240 255 270 285 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -68,7 +68,7 @@
 		<set name="icon" val="icon.skill1332" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -84,7 +84,7 @@
 		<table name="#abnormalTime"> 120 120 120 150 165 180 195 210 225 240 255 270 285 </table>
 		<table name="#effectPoints"> 541 611 659 666 669 673 676 679 681 684 687 689 692 </table>
 		<table name="#magicLvl"> 57 66 75 77 78 79 80 81 82 83 84 85 86 </table>
-		<table name="#mpConsume"> 122 157 194 202 207 212 215 220 224 229 233 237 242 </table>
+		<table name="#mpConsume2"> 122 157 194 202 207 212 215 220 224 229 233 237 242 </table>
 		<table name="#mReuse"> 0.7 0.68 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 </table>
 		<table name="#time"> 120 120 120 150 165 180 195 210 225 240 255 270 285 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -96,7 +96,7 @@
 		<set name="icon" val="icon.skill1332" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -110,14 +110,14 @@
 	<skill id="4704" levels="13" name="Cure of Seraphim">
 		<table name="#effectPoints"> 541 611 659 666 669 673 676 679 681 684 687 689 692 </table>
 		<table name="#magicLvl"> 57 66 75 77 78 79 80 81 82 83 84 85 86 </table>
-		<table name="#mpConsume"> 62 79 98 102 104 107 108 110 113 115 117 119 122 </table>
+		<table name="#mpConsume2"> 62 79 98 102 104 107 108 110 113 115 117 119 122 </table>
 		<table name="#power"> 40 45 50 55 60 65 70 75 80 85 90 95 100 </table> <!-- Base Land Rate -->
 		<set name="affectRange" val="1000" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -135,9 +135,9 @@
 		<table name="#activateRates"> 40 40 40 41 42 43 44 45 46 47 48 49 50 </table>
 		<table name="#effectPoints"> -1621 -1831 -1975 -1997 -2007 -2017 -2026 -2035 -2043 -2051 -2059 -2066 -2074 </table>
 		<table name="#magicLvl"> 57 66 75 77 78 79 80 81 82 83 84 85 86 </table>
-		<table name="#mpConsume"> 42 49 55 56 57 58 58 58 59 59 60 60 60 </table>
+		<table name="#mpConsume2"> 42 49 55 56 57 58 58 58 59 59 60 60 60 </table>
 		<table name="#mpDef"> 0.94 0.92 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 </table>
-		<table name="#mpInitialConsume"> 11 13 14 14 15 15 15 15 15 15 15 15 15 </table>
+		<table name="#mpConsume1"> 11 13 14 14 15 15 15 15 15 15 15 15 15 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="DEBUFF_NIGHTSHADE" />
@@ -154,8 +154,8 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="mpInitialConsume" val="#mpInitialConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -177,9 +177,9 @@
 		<table name="#activateRates"> 40 40 40 41 42 43 44 45 46 47 48 49 50 </table>
 		<table name="#effectPoints"> -1621 -1831 -1975 -1997 -2007 -2017 -2026 -2035 -2043 -2051 -2059 -2066 -2074 </table>
 		<table name="#magicLvl"> 57 66 75 77 78 79 80 81 82 83 84 85 86 </table>
-		<table name="#mpConsume"> 63 74 83 84 85 86 87 87 88 89 89 90 90 </table>
+		<table name="#mpConsume2"> 63 74 83 84 85 86 87 87 88 89 89 90 90 </table>
 		<table name="#mpDef"> 0.94 0.92 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 </table>
-		<table name="#mpInitialConsume"> 16 19 21 21 22 22 22 22 22 23 23 23 23 </table>
+		<table name="#mpConsume1"> 16 19 21 21 22 22 22 22 22 23 23 23 23 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="DEBUFF_NIGHTSHADE" />
@@ -196,8 +196,8 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="mpInitialConsume" val="#mpInitialConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -241,7 +241,7 @@
 	<skill id="4708" levels="10" name="Cursed Strike">
 		<table name="#effectPoints"> -279 -296 -311 -323 -328 -333 -337 -340 -341 -342 </table>
 		<table name="#magicLvl"> 58 62 66 70 72 74 76 78 79 80 </table>
-		<table name="#mpConsume"> 58 62 67 71 73 75 77 78 79 80 </table>
+		<table name="#mpConsume2"> 58 62 67 71 73 75 77 78 79 80 </table>
 		<table name="#power"> 1046 1230 1425 1626 1727 1827 1925 2020 2067 2112 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -257,7 +257,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
@@ -273,14 +273,14 @@
 	<skill id="4709" levels="10" name="Cursed Blow">
 		<table name="#effectPoints"> -279 -296 -311 -323 -328 -333 -337 -340 -341 -342 </table>
 		<table name="#magicLvl"> 58 62 66 70 72 74 76 78 79 80 </table>
-		<table name="#mpConsume"> 58 62 67 71 73 75 77 78 79 80 </table>
+		<table name="#mpConsume2"> 58 62 67 71 73 75 77 78 79 80 </table>
 		<table name="#power"> 4181 4920 5700 6503 6906 7305 7698 8079 8265 8447 </table>
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
@@ -296,7 +296,7 @@
 	<skill id="4710" levels="12" name="Wild Stun">
 		<table name="#effectPoints"> -49 -73 -102 -135 -170 -202 -226 -235 -240 -243 -246 -248 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 3 5 7 9 12 14 17 18 18 19 20 20 </table>
+		<table name="#mpConsume2"> 3 5 7 9 12 14 17 18 18 19 20 20 </table>
 		<table name="#power"> 16 35 73 138 238 375 537 619 697 766 821 864 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -313,7 +313,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="12000" />
 		<set name="rideState" val="NONE" />
@@ -330,7 +330,7 @@
 		<table name="#activateRates"> -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 15 </table>
 		<table name="#effectPoints"> 138 204 285 379 477 566 635 659 676 689 700 709 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 46 76 104 139 179 220 258 275 288 298 305 309 </table>
+		<table name="#mpConsume2"> 46 76 104 139 179 220 258 275 288 298 305 309 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ULTIMATE_BUFF" />
@@ -340,7 +340,7 @@
 		<set name="hitTime" val="1100" />
 		<set name="icon" val="icon.skill0110" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1200000" />
 		<set name="rideState" val="NONE" />
@@ -357,7 +357,7 @@
 	<skill id="4712" levels="12" name="Bright Burst">
 		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -635 -659 -676 -689 -700 -709 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 6 6 7 7 8 8 9 9 10 10 11 11 </table>
+		<table name="#mpConsume2"> 6 6 7 7 8 8 9 9 10 10 11 11 </table>
 		<table name="#power"> 6 9 13 17 23 28 34 36 39 41 42 43 </table>
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="500" />
@@ -367,7 +367,7 @@
 		<set name="icon" val="icon.skill4712" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -381,14 +381,14 @@
 		<table name="#amount"> 33 61 98 145 198 251 298 316 330 338 341 342 </table>
 		<table name="#effectPoints"> 33 61 98 145 198 251 298 316 331 347 358 366 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 5 9 11 15 19 23 27 28 30 30 32 32 </table>
+		<table name="#mpConsume2"> 5 9 11 15 19 23 27 28 30 30 32 32 </table>
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill4713" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="12000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -423,7 +423,7 @@
 	<skill id="4717" levels="12" name="Heal Trick">
 		<table name="#effectPoints"> 9 16 25 37 50 63 75 79 83 87 90 92 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 5 8 12 17 20 25 29 32 33 33 34 34 </table>
+		<table name="#mpConsume2"> 5 8 12 17 20 25 29 32 33 33 34 34 </table>
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1100" />
@@ -431,7 +431,7 @@
 		<set name="icon" val="icon.skill4717" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#effectPoints" /> <!-- TODO: remove after BabyPet rework -->
 		<set name="reuseDelay" val="8000" />
@@ -446,7 +446,7 @@
 	<skill id="4718" levels="12" name="Greater Heal Trick">
 		<table name="#effectPoints"> 62 113 184 272 371 471 558 592 620 651 672 685 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 33 59 88 122 162 195 228 242 252 259 262 262 </table>
+		<table name="#mpConsume2"> 33 59 88 122 162 195 228 242 252 259 262 262 </table>
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1100" />
@@ -454,7 +454,7 @@
 		<set name="icon" val="icon.skill4718" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#effectPoints" /> <!-- TODO: remove after BabyPet rework -->
 		<set name="reuseDelay" val="8000" />
@@ -469,7 +469,7 @@
 	<skill id="4719" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 112 302 834 2177 5631 11008 17044 20119 23243 26363 29567 32796 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -477,7 +477,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -490,7 +490,7 @@
 	<skill id="4720" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 95 255 705 1840 4754 9291 14390 16978 19710 22699 25871 28860 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -498,7 +498,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -511,7 +511,7 @@
 	<skill id="4721" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 51 136 375 982 2536 4958 7667 9037 10483 12074 13778 15349 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -519,7 +519,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -532,7 +532,7 @@
 	<skill id="4722" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 48 128 352 922 2377 4651 7195 8489 9855 11363 12921 14430 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -540,7 +540,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -553,7 +553,7 @@
 	<skill id="4723" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 45 120 330 858 2218 4344 6724 7942 9228 10625 12093 13512 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -561,7 +561,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -573,7 +573,7 @@
 	</skill>
 	<skill id="4724" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 56 151 417 1089 2816 5504 8522 10060 11622 13182 14784 16398 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -589,7 +589,7 @@
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -603,7 +603,7 @@
 	</skill>
 	<skill id="4725" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 48 128 352 920 2377 4645 7195 8490 9855 11350 12936 14430 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -619,7 +619,7 @@
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -633,7 +633,7 @@
 	</skill>
 	<skill id="4726" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 26 68 188 491 1268 2479 3834 4519 5242 6037 6889 7675 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -649,7 +649,7 @@
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -663,7 +663,7 @@
 	</skill>
 	<skill id="4727" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 24 64 176 461 1189 2326 3598 4245 4928 5682 6461 7215 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -679,7 +679,7 @@
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -693,7 +693,7 @@
 	</skill>
 	<skill id="4728" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 23 60 165 429 1109 2172 3362 3971 4614 5313 6047 6756 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -709,7 +709,7 @@
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -724,7 +724,7 @@
 	<skill id="4729" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 168 453 1251 3265 7446 16511 25566 30178 34864 39544 44350 49193 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -732,7 +732,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -746,7 +746,7 @@
 	<skill id="4730" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 142 382 1056 2760 7131 13935 21585 25467 29565 34048 38806 43290 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -754,7 +754,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -768,7 +768,7 @@
 	<skill id="4731" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 76 204 563 1473 3804 7437 11500 13555 15724 18112 20667 23023 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -776,7 +776,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -790,7 +790,7 @@
 	<skill id="4732" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 71 191 528 1382 3566 6977 10793 12734 14783 17044 19381 21645 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -798,7 +798,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -812,7 +812,7 @@
 	<skill id="4733" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 67 179 494 1287 3327 6516 10085 11913 13841 15937 18140 20268 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -820,7 +820,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -834,14 +834,14 @@
 	<skill id="4734" levels="12" name="BOSS Spinning Slash">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 56 151 417 1089 2816 5504 8522 10060 11622 13182 14784 16398 </table>
 		<set name="affectRange" val="200" />
 		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -854,14 +854,14 @@
 	<skill id="4735" levels="12" name="BOSS Spinning Slash">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 48 128 352 920 2377 4645 7195 8490 9855 11350 12936 14430 </table>
 		<set name="affectRange" val="200" />
 		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -874,14 +874,14 @@
 	<skill id="4736" levels="12" name="BOSS Spinning Slash">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 26 68 188 491 1268 2479 3834 4519 5242 6037 6889 7675 </table>
 		<set name="affectRange" val="200" />
 		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -894,14 +894,14 @@
 	<skill id="4737" levels="12" name="BOSS Spinning Slash">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 24 64 176 461 1189 2326 3598 4245 4928 5682 6461 7215 </table>
 		<set name="affectRange" val="200" />
 		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -914,14 +914,14 @@
 	<skill id="4738" levels="12" name="BOSS Spinning Slash">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 23 60 165 429 1109 2172 3362 3971 4614 5313 6047 6756 </table>
 		<set name="affectRange" val="200" />
 		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -934,7 +934,7 @@
 	<skill id="4739" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 112 302 834 2177 5631 11008 17044 20119 23243 26363 29567 32796 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -942,7 +942,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -955,7 +955,7 @@
 	<skill id="4740" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 95 255 705 1840 4754 9291 14390 16978 19710 22699 25871 28860 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -963,7 +963,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -976,7 +976,7 @@
 	<skill id="4741" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 51 136 375 982 2536 4958 7667 9037 10483 12074 13778 15349 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -984,7 +984,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -997,7 +997,7 @@
 	<skill id="4742" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 48 128 352 922 2377 4651 7195 8489 9855 11363 12921 14430 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -1005,7 +1005,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1018,7 +1018,7 @@
 	<skill id="4743" levels="12" name="BOSS Strike">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 45 120 330 858 2218 4344 6724 7942 9228 10625 12093 13512 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -1026,7 +1026,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1038,7 +1038,7 @@
 	</skill>
 	<skill id="4744" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 56 151 417 1089 2816 5504 8522 10060 11622 13182 14784 16398 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1054,7 +1054,7 @@
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1068,7 +1068,7 @@
 	</skill>
 	<skill id="4745" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 48 128 352 920 2377 4645 7195 8490 9855 11350 12936 14430 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1084,7 +1084,7 @@
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1098,7 +1098,7 @@
 	</skill>
 	<skill id="4746" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 26 68 188 491 1268 2479 3834 4519 5242 6037 6889 7675 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1114,7 +1114,7 @@
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1128,7 +1128,7 @@
 	</skill>
 	<skill id="4747" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 24 64 176 461 1189 2326 3598 4245 4928 5682 6461 7215 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1144,7 +1144,7 @@
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1158,7 +1158,7 @@
 	</skill>
 	<skill id="4748" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 23 60 165 429 1109 2172 3362 3971 4614 5313 6047 6756 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1174,7 +1174,7 @@
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1189,7 +1189,7 @@
 	<skill id="4749" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 280 755 2084 5441 14076 27518 42610 50296 58107 65907 73917 81989 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -1197,7 +1197,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1211,7 +1211,7 @@
 	<skill id="4750" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 236 637 1761 4600 11884 23226 35974 42445 49275 56746 64677 72150 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -1219,7 +1219,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1233,7 +1233,7 @@
 	<skill id="4751" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 126 339 937 2455 6339 12395 19166 22591 26206 30185 34445 38371 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -1241,7 +1241,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1255,7 +1255,7 @@
 	<skill id="4752" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 118 319 879 2303 5942 11627 17987 21223 24638 28406 32302 36075 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -1263,7 +1263,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1277,7 +1277,7 @@
 	<skill id="4753" levels="12" name="BOSS Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 111 298 824 2145 5545 10860 16808 19855 23069 26561 30232 33780 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
@@ -1285,7 +1285,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1299,14 +1299,14 @@
 	<skill id="4754" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 327 882 2435 6357 16445 32150 49783 58763 67888 77001 86359 95790 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1319,14 +1319,14 @@
 	<skill id="4755" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 275 744 2057 5374 13885 27135 42030 49590 57569 66298 75565 84295 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1339,14 +1339,14 @@
 	<skill id="4756" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 147 396 1095 2868 7407 14481 22392 26393 30618 35267 40244 44830 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1359,14 +1359,14 @@
 	<skill id="4757" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 138 372 1027 2691 6943 13584 21015 24795 28785 33188 37739 42148 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1379,14 +1379,14 @@
 	<skill id="4758" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 129 348 962 2506 6479 12688 19638 23198 26952 31032 35321 39466 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1398,7 +1398,7 @@
 	</skill>
 	<skill id="4759" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 164 441 1218 3179 8223 16075 24892 29382 33944 38501 43180 47895 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1413,7 +1413,7 @@
 		<set name="icon" val="icon.skill0101" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1427,7 +1427,7 @@
 	</skill>
 	<skill id="4760" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 138 372 1029 2687 6943 13568 21015 24795 28785 33149 37783 42148 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1442,7 +1442,7 @@
 		<set name="icon" val="icon.skill0101" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1456,7 +1456,7 @@
 	</skill>
 	<skill id="4761" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 74 198 548 1434 3704 7241 11196 13197 15309 17634 20122 22415 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1471,7 +1471,7 @@
 		<set name="icon" val="icon.skill0101" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1485,7 +1485,7 @@
 	</skill>
 	<skill id="4762" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 69 186 514 1346 3472 6792 10508 12398 14393 16594 18870 21074 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1500,7 +1500,7 @@
 		<set name="icon" val="icon.skill0101" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1514,7 +1514,7 @@
 	</skill>
 	<skill id="4763" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 65 174 481 1253 3240 6344 9819 11599 13476 15516 17661 19733 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1529,7 +1529,7 @@
 		<set name="icon" val="icon.skill0101" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1544,14 +1544,14 @@
 	<skill id="4764" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 327 882 2435 6357 16445 32150 49783 58763 67888 77001 86359 95790 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1564,14 +1564,14 @@
 	<skill id="4765" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 275 744 2057 5374 13885 27135 42030 49590 57569 66298 75565 84295 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1584,14 +1584,14 @@
 	<skill id="4766" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 147 396 1095 2868 7407 14481 22392 26393 30618 35267 40244 44830 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1604,14 +1604,14 @@
 	<skill id="4767" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 138 372 1027 2691 6943 13584 21015 24795 28785 33188 37739 42148 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1624,14 +1624,14 @@
 	<skill id="4768" levels="12" name="BOSS Power Shot">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 129 348 962 2506 6479 12688 19638 23198 26952 31032 35321 39466 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1643,7 +1643,7 @@
 	</skill>
 	<skill id="4769" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 164 441 1218 3179 8223 16075 24892 29382 33944 38501 43180 47895 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1658,7 +1658,7 @@
 		<set name="icon" val="icon.skill0101" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1672,7 +1672,7 @@
 	</skill>
 	<skill id="4770" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 138 372 1029 2687 6943 13568 21015 24795 28785 33149 37783 42148 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1687,7 +1687,7 @@
 		<set name="icon" val="icon.skill0101" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1701,7 +1701,7 @@
 	</skill>
 	<skill id="4771" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 74 198 548 1434 3704 7241 11196 13197 15309 17634 20122 22415 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1716,7 +1716,7 @@
 		<set name="icon" val="icon.skill0101" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1730,7 +1730,7 @@
 	</skill>
 	<skill id="4772" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 69 186 514 1346 3472 6792 10508 12398 14393 16594 18870 21074 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1745,7 +1745,7 @@
 		<set name="icon" val="icon.skill0101" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1759,7 +1759,7 @@
 	</skill>
 	<skill id="4773" levels="12" name="Stun">
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 65 174 481 1253 3240 6344 9819 11599 13476 15516 17661 19733 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1774,7 +1774,7 @@
 		<set name="icon" val="icon.skill0101" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1789,14 +1789,14 @@
 	<skill id="4774" levels="12" name="BOSS Spear Attack">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 352 949 2607 6828 17184 33213 51007 59177 67888 77001 86359 95790 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1809,14 +1809,14 @@
 	<skill id="4775" levels="12" name="BOSS Spear Attack">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 352 949 2607 6828 17184 33213 51007 59177 67888 77001 86359 95790 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1829,14 +1829,14 @@
 	<skill id="4776" levels="12" name="BOSS Spear Attack">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 352 949 2607 6828 17184 33213 51007 59177 67888 77001 86359 95790 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1849,14 +1849,14 @@
 	<skill id="4777" levels="12" name="BOSS Spear Attack">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 352 949 2607 6828 17184 33213 51007 59177 67888 77001 86359 95790 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1869,14 +1869,14 @@
 	<skill id="4778" levels="12" name="BOSS Spear Attack">
 		<!-- Boss Skill -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
+		<table name="#mpConsume2"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<table name="#power"> 352 949 2607 6828 17184 33213 51007 59177 67888 77001 86359 95790 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1890,13 +1890,13 @@
 		<!-- Boss Skill -->
 		<table name="#amount"> 1640 2824 4501 6612 9334 11649 12865 13406 13624 13544 13303 13157 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
+		<table name="#mpConsume2"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
@@ -1911,13 +1911,13 @@
 		<!-- Boss Skill -->
 		<table name="#amount"> 1382 2381 3802 5590 7881 9832 10862 11314 11553 11661 11640 11578 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
+		<table name="#mpConsume2"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
@@ -1932,13 +1932,13 @@
 		<!-- Boss Skill -->
 		<table name="#amount"> 736 1267 2024 2983 4204 5247 5787 6022 6144 6203 6199 6158 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
+		<table name="#mpConsume2"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
@@ -1953,13 +1953,13 @@
 		<!-- Boss Skill -->
 		<table name="#amount"> 691 1191 1899 2799 3941 4922 5431 5657 5777 5838 5813 5789 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
+		<table name="#mpConsume2"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
@@ -1974,13 +1974,13 @@
 		<!-- Boss Skill -->
 		<table name="#amount"> 647 1115 1778 2607 3677 4597 5075 5293 5409 5458 5441 5421 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
+		<table name="#mpConsume2"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
@@ -1996,7 +1996,7 @@
 		<table name="#abnormalLvls"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
 		<table name="#hot"> 167 210 315 507 784 1026 1195 1283 1358 1427 951 940 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
+		<table name="#mpConsume2"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
@@ -2006,7 +2006,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -2022,7 +2022,7 @@
 		<table name="#abnormalLvls"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
 		<table name="#hot"> 141 177 266 428 662 866 1009 1083 1152 1229 832 827 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
+		<table name="#mpConsume2"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
@@ -2032,7 +2032,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -2048,7 +2048,7 @@
 		<table name="#abnormalLvls"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
 		<table name="#hot"> 75 94 142 229 353 463 538 576 613 654 443 440 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
+		<table name="#mpConsume2"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
@@ -2058,7 +2058,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -2074,7 +2074,7 @@
 		<table name="#abnormalLvls"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
 		<table name="#hot"> 71 89 133 215 331 434 505 542 576 615 416 414 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
+		<table name="#mpConsume2"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
@@ -2084,7 +2084,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -2100,7 +2100,7 @@
 		<table name="#abnormalLvls"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
 		<table name="#hot"> 66 83 125 200 309 405 472 507 539 576 389 388 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
+		<table name="#mpConsume2"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
@@ -2110,7 +2110,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

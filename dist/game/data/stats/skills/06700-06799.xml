@@ -51,7 +51,7 @@
 		<set name="effectRange" val="500" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="80" />
-		<set name="mpConsume" val="83" />
+		<set name="mpConsume2" val="83" />
 		<set name="operateType" val="A2" /> <!-- FIXME: value unconfirmed -->
 		<set name="reuseDelay" val="10000" /> <!-- FIXME: reuseDelay unconfirmed -->
 		<set name="rideState" val="NONE" />
@@ -518,7 +518,7 @@
 		<set name="effectPoint" val="546" />
 		<set name="hitTime" val="90000" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="78" />
+		<set name="mpConsume2" val="78" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
@@ -574,8 +574,8 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="20" />
-		<set name="mpInitialConsume" val="5" />
+		<set name="mpConsume2" val="20" />
+		<set name="mpConsume1" val="5" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -626,7 +626,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="33" />
+		<set name="mpConsume2" val="33" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
@@ -648,7 +648,7 @@
 		<set name="elementPower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="79" />
+		<set name="mpConsume2" val="79" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -667,7 +667,7 @@
 		<set name="elementPower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="33" />
+		<set name="mpConsume2" val="33" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
@@ -690,7 +690,7 @@
 		<set name="effectPoint" val="562" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="158" />
+		<set name="mpConsume2" val="158" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE" />
@@ -713,7 +713,7 @@
 		<set name="elementPower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="77" />
+		<set name="mpConsume2" val="77" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
@@ -744,7 +744,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="100" />
+		<set name="mpConsume2" val="100" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
@@ -776,8 +776,8 @@
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="62" />
-		<set name="mpInitialConsume" val="16" />
+		<set name="mpConsume2" val="62" />
+		<set name="mpConsume1" val="16" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -796,8 +796,8 @@
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="124" />
-		<set name="mpInitialConsume" val="31" />
+		<set name="mpConsume2" val="124" />
+		<set name="mpConsume1" val="31" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
@@ -825,8 +825,8 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="55" />
-		<set name="mpInitialConsume" val="14" />
+		<set name="mpConsume2" val="55" />
+		<set name="mpConsume1" val="14" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -848,8 +848,8 @@
 		<set name="icon" val="icon.skill1068" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="55" />
-		<set name="mpInitialConsume" val="14" />
+		<set name="mpConsume2" val="55" />
+		<set name="mpConsume1" val="14" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -875,7 +875,7 @@
 		<set name="elementPower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="79" />
+		<set name="mpConsume2" val="79" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
@@ -895,7 +895,7 @@
 		<set name="elementPower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="158" />
+		<set name="mpConsume2" val="158" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
@@ -917,8 +917,8 @@
 		<set name="icon" val="icon.skill1068" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="55" />
-		<set name="mpInitialConsume" val="14" />
+		<set name="mpConsume2" val="55" />
+		<set name="mpConsume1" val="14" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -941,7 +941,7 @@
 		<set name="elementPower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="79" />
+		<set name="mpConsume2" val="79" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
@@ -962,7 +962,7 @@
 		<set name="elementPower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="79" />
+		<set name="mpConsume2" val="79" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
@@ -1000,8 +1000,8 @@
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="62" />
-		<set name="mpInitialConsume" val="16" />
+		<set name="mpConsume2" val="62" />
+		<set name="mpConsume1" val="16" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1034,7 +1034,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="158" />
+		<set name="mpConsume2" val="158" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
@@ -1068,8 +1068,8 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="124" />
-		<set name="mpInitialConsume" val="31" />
+		<set name="mpConsume2" val="124" />
+		<set name="mpConsume1" val="31" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1097,8 +1097,8 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="104" />
-		<set name="mpInitialConsume" val="26" />
+		<set name="mpConsume2" val="104" />
+		<set name="mpConsume1" val="26" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1118,7 +1118,7 @@
 		<set name="elementPower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="79" />
+		<set name="mpConsume2" val="79" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1137,7 +1137,7 @@
 		<set name="elementPower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="33" />
+		<set name="mpConsume2" val="33" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
@@ -1161,8 +1161,8 @@
 		<set name="icon" val="icon.skill1068" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="55" />
-		<set name="mpInitialConsume" val="14" />
+		<set name="mpConsume2" val="55" />
+		<set name="mpConsume1" val="14" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1194,7 +1194,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="85" />
+		<set name="mpConsume2" val="85" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
@@ -1219,7 +1219,7 @@
 		<set name="fanRange" val="0,0,150,60" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="85" />
+		<set name="mpConsume2" val="85" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
@@ -1248,8 +1248,8 @@
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="55" />
-		<set name="mpInitialConsume" val="14" />
+		<set name="mpConsume2" val="55" />
+		<set name="mpConsume1" val="14" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1278,7 +1278,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="89" />
+		<set name="mpConsume2" val="89" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
@@ -1308,7 +1308,7 @@
 		<set name="elementPower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="89" />
+		<set name="mpConsume2" val="89" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />

@@ -108,7 +108,7 @@ public final class Q00367_ElectrifyingRecharge extends Quest
 		npc.setScriptValue(367);
 		
 		if ((NPC_THUNDER_STORM != null) //
-			&& (NPC_THUNDER_STORM.getMpConsume() < npc.getCurrentMp()) // has enough MP
+			&& (NPC_THUNDER_STORM.getMpConsume2() < npc.getCurrentMp()) // has enough MP
 			&& (NPC_THUNDER_STORM.getHpConsume() < npc.getCurrentHp()) // has enough HP
 			&& (npc.getSkillRemainingReuseTime(NPC_THUNDER_STORM.getReuseHashCode()) <= 0)) // no reuse delay
 		{

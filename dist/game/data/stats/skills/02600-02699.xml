@@ -276,8 +276,8 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="60" />
-		<set name="mpInitialConsume" val="15" />
+		<set name="mpConsume2" val="60" />
+		<set name="mpConsume1" val="15" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

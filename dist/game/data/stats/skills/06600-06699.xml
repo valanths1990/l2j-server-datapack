@@ -165,7 +165,7 @@
 	<skill id="6618" levels="7" name="Maguen Strike">
 		<!-- Moving Spd. Is decreased by 50% for 10 seconds. -->
 		<table name="#magicLvl"> 55 60 65 70 75 80 85 </table>
-		<table name="#mpConsume"> 109 121 131 142 151 159 165 </table>
+		<table name="#mpConsume2"> 109 121 131 142 151 159 165 </table>
 		<table name="#power"> 1832 2272 2751 3252 3752 4224 4640 </table>
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="10" />
@@ -180,7 +180,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="3" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
@@ -197,7 +197,7 @@
 	<skill id="6619" levels="7" name="Maguen Power Strike">
 		<!-- Moving Spd. Is decreased by 90% for 10 seconds. -->
 		<table name="#magicLvl"> 55 60 65 70 75 80 85 </table>
-		<table name="#mpConsume"> 109 121 131 142 151 159 165 </table>
+		<table name="#mpConsume2"> 109 121 131 142 151 159 165 </table>
 		<table name="#power"> 1832 2272 2751 3252 3752 4224 4640 </table>
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="10" />
@@ -212,7 +212,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="3" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
@@ -238,8 +238,8 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="88" />
-		<set name="mpInitialConsume" val="22" />
+		<set name="mpConsume2" val="88" />
+		<set name="mpConsume1" val="22" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -265,8 +265,8 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="88" />
-		<set name="mpInitialConsume" val="22" />
+		<set name="mpConsume2" val="88" />
+		<set name="mpConsume1" val="22" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -293,7 +293,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="84" />
-		<set name="mpConsume" val="121" />
+		<set name="mpConsume2" val="121" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -657,8 +657,8 @@
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="88" />
-		<set name="mpInitialConsume" val="22" />
+		<set name="mpConsume2" val="88" />
+		<set name="mpConsume1" val="22" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -680,7 +680,7 @@
 		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="500" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="83" />
+		<set name="mpConsume2" val="83" />
 		<set name="operateType" val="DA1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
@@ -705,7 +705,7 @@
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="83" />
+		<set name="mpConsume2" val="83" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
@@ -1127,7 +1127,7 @@
 		<set name="elementPower" val="180" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="83" />
-		<set name="mpConsume" val="82" />
+		<set name="mpConsume2" val="82" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1173,7 +1173,7 @@
 		<set name="elementPower" val="180" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="83" />
-		<set name="mpConsume" val="82" />
+		<set name="mpConsume2" val="82" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1203,8 +1203,8 @@
 		<set name="icon" val="icon.skill1204" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="88" />
-		<set name="mpInitialConsume" val="22" />
+		<set name="mpConsume2" val="88" />
+		<set name="mpConsume1" val="22" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1228,8 +1228,8 @@
 		<set name="icon" val="icon.skill1204" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="88" />
-		<set name="mpInitialConsume" val="22" />
+		<set name="mpConsume2" val="88" />
+		<set name="mpConsume1" val="22" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1454,7 +1454,7 @@
 		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill6274" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="1" />
+		<set name="mpConsume2" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />

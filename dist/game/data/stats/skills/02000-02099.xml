@@ -1346,7 +1346,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="26" />
+		<set name="mpConsume2" val="26" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1354,13 +1354,13 @@
 	</skill>
 	<skill id="2097" levels="3" name="Sowing">
 		<table name="#magicLvl"> 10 20 30 </table>
-		<table name="#mpConsume"> 4 6 8 </table>
+		<table name="#mpConsume2"> 4 6 8 </table>
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1800" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
@@ -1377,7 +1377,7 @@
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="3" />
+		<set name="mpConsume2" val="3" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

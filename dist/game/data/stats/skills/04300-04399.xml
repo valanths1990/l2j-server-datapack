@@ -104,7 +104,7 @@
 	<skill id="4314" levels="12" name="BOSS Holy Light Burst">
 		<!-- Freya retail confirmed -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 17 29 39 53 67 83 97 103 108 112 115 116 </table>
+		<table name="#mpConsume2"> 17 29 39 53 67 83 97 103 108 112 115 116 </table>
 		<table name="#power"> 21 31 43 58 75 92 108 115 121 125 129 132 </table>
 		<set name="affectRange" val="200" />
 		<set name="castRange" val="700" />
@@ -114,7 +114,7 @@
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
@@ -127,7 +127,7 @@
 	<skill id="4315" levels="12" name="Hold">
 		<!-- Freya retail confirmed -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 17 29 39 53 67 83 97 103 108 112 115 116 </table>
+		<table name="#mpConsume2"> 17 29 39 53 67 83 97 103 108 112 115 116 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
@@ -142,7 +142,7 @@
 		<set name="icon" val="icon.skill1201" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
@@ -154,7 +154,7 @@
 	<skill id="4316" levels="12" name="Boss Lilim Drain">
 		<!-- Freya retail confirmed -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume"> 31 51 71 94 121 149 175 186 195 202 206 209 </table>
+		<table name="#mpConsume2"> 31 51 71 94 121 149 175 186 195 202 206 209 </table>
 		<table name="#power"> 11 16 22 29 38 46 54 58 61 63 65 66 </table>
 		<set name="affectRange" val="150" />
 		<set name="castRange" val="750" />
@@ -164,7 +164,7 @@
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
@@ -185,7 +185,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="1800" />
 		<set name="magicLvl" val="60" />
-		<set name="mpConsume" val="50" />
+		<set name="mpConsume2" val="50" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
@@ -203,7 +203,7 @@
 		<set name="abnormalVisualEffect" val="BIG_BODY" />
 		<set name="effectPoint" val="100" />
 		<set name="magicLvl" val="60" />
-		<set name="mpConsume" val="50" />
+		<set name="mpConsume2" val="50" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
@@ -231,7 +231,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="60" />
-		<set name="mpConsume" val="50" />
+		<set name="mpConsume2" val="50" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -245,7 +245,7 @@
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
 		<table name="#dot"> 16 24 32 41 50 58 63 63 66 66 68 68 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 13 20 27 35 45 55 65 69 73 83 77 78 </table>
+		<table name="#mpConsume2"> 13 20 27 35 45 55 65 69 73 83 77 78 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="POISON" />
@@ -257,7 +257,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -280,7 +280,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="60" />
-		<set name="mpConsume" val="50" />
+		<set name="mpConsume2" val="50" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -602,7 +602,7 @@
 		<set name="abnormalVisualEffect" val="BIG_BODY" />
 		<set name="effectPoint" val="100" />
 		<set name="magicLvl" val="60" />
-		<set name="mpConsume" val="50" />
+		<set name="mpConsume2" val="50" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
@@ -620,7 +620,7 @@
 		<set name="abnormalVisualEffect" val="BIG_BODY" />
 		<set name="effectPoint" val="100" />
 		<set name="magicLvl" val="60" />
-		<set name="mpConsume" val="50" />
+		<set name="mpConsume2" val="50" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
@@ -634,7 +634,7 @@
 	<skill id="4342" levels="2" name="Clan Hall: Wind Walk">
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 </table>
-		<table name="#mpConsume"> 50 100 </table>
+		<table name="#mpConsume2"> 50 100 </table>
 		<table name="#runSpd"> 20 33 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
@@ -644,7 +644,7 @@
 		<set name="icon" val="icon.skill1204" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -657,7 +657,7 @@
 	<skill id="4343" levels="3" name="Clan Hall: Decrease Weight">
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#mpConsume"> 50 0 100 </table>
+		<table name="#mpConsume2"> 50 0 100 </table>
 		<table name="#Weight"> 3000 6000 9000 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
@@ -667,7 +667,7 @@
 		<set name="icon" val="icon.skill1257" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -681,7 +681,7 @@
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#magicLvl"> 7 25 44 </table>
-		<table name="#mpConsume"> 50 0 100 </table>
+		<table name="#mpConsume2"> 50 0 100 </table>
 		<table name="#rate"> 1.08 1.12 1.15 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
@@ -691,7 +691,7 @@
 		<set name="icon" val="icon.skill1040" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -704,7 +704,7 @@
 	<skill id="4345" levels="3" name="Clan Hall: Might">
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#mpConsume"> 50 0 100 </table>
+		<table name="#mpConsume2"> 50 0 100 </table>
 		<table name="#rate"> 1.08 1.12 1.15 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
@@ -714,7 +714,7 @@
 		<set name="icon" val="icon.skill1068" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -727,7 +727,7 @@
 	<skill id="4346" levels="4" name="Clan Hall: Mental Shield">
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 4 </table>
-		<table name="#mpConsume"> 50 0 0 100 </table>
+		<table name="#mpConsume2"> 50 0 0 100 </table>
 		<table name="#traits"> 20 30 40 50 </table> <!-- TODO: Freya retail has still old values (50 60 70 80) here, retail bug? -->
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
@@ -737,7 +737,7 @@
 		<set name="icon" val="icon.skill1035" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -753,7 +753,7 @@
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
 		<table name="#maxHp"> 1.1 1.15 1.2 1.25 1.3 1.35 </table>
-		<table name="#mpConsume"> 0 150 0 0 0 300 </table>
+		<table name="#mpConsume2"> 0 150 0 0 0 300 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="MAX_HP_UP" />
@@ -762,7 +762,7 @@
 		<set name="icon" val="icon.skill1045" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -776,7 +776,7 @@
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
 		<table name="#maxMp"> 1.1 1.15 1.2 1.25 1.3 1.35 </table>
-		<table name="#mpConsume"> 0 150 0 0 0 300 </table>
+		<table name="#mpConsume2"> 0 150 0 0 0 300 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="MAX_MP_UP" />
@@ -785,7 +785,7 @@
 		<set name="icon" val="icon.skill1048" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -799,7 +799,7 @@
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 2 3 </table>
 		<table name="#mDef"> 1.23 1.3 </table>
-		<table name="#mpConsume"> 150 300 </table>
+		<table name="#mpConsume2"> 150 300 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="MD_UP" />
@@ -808,7 +808,7 @@
 		<set name="icon" val="icon.skill1036" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -821,7 +821,7 @@
 	<skill id="4350" levels="4" name="Clan Hall: Resist Shock">
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 4 </table>
-		<table name="#mpConsume"> 150 0 0 300 </table>
+		<table name="#mpConsume2"> 150 0 0 300 </table>
 		<table name="#trait_shock"> 15 20 30 40 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
@@ -831,7 +831,7 @@
 		<set name="icon" val="icon.skill1259" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -845,7 +845,7 @@
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
 		<table name="#cancel"> 18 25 36 42 48 53 </table>
-		<table name="#mpConsume"> 0 200 0 0 0 400 </table>
+		<table name="#mpConsume2"> 0 200 0 0 0 400 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="CANCEL_PROB_DOWN" />
@@ -854,7 +854,7 @@
 		<set name="icon" val="icon.skill1078" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -870,7 +870,7 @@
 		<table name="#mAtk"> 1.1 1.16 </table>
 		<table name="#mAtkSpd"> 1.05 1.08 </table>
 		<table name="#mDef"> 0.9 0.84 </table>
-		<table name="#mpConsume"> 200 400 </table>
+		<table name="#mpConsume2"> 200 400 </table>
 		<table name="#pAtk"> 1.05 1.08 </table>
 		<table name="#pAtkSpd"> 1.05 1.08 </table>
 		<table name="#pDef"> 0.95 0.92 </table>
@@ -884,7 +884,7 @@
 		<set name="icon" val="icon.skill1062" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -904,7 +904,7 @@
 	<skill id="4353" levels="6" name="Clan Hall: Bless Shield">
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
-		<table name="#mpConsume"> 0 200 0 0 0 400 </table>
+		<table name="#mpConsume2"> 0 200 0 0 0 400 </table>
 		<table name="#rShld"> 1.05 1.1 1.15 1.2 1.25 1.3 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
@@ -914,7 +914,7 @@
 		<set name="icon" val="icon.skill1243" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -928,7 +928,7 @@
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 4 </table>
 		<table name="#absorbDam"> 6 7 8 9 </table>
-		<table name="#mpConsume"> 200 0 0 400 </table>
+		<table name="#mpConsume2"> 200 0 0 400 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="VAMPIRIC_ATTACK" />
@@ -937,7 +937,7 @@
 		<set name="icon" val="icon.skill1268" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -951,7 +951,7 @@
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
-		<table name="#mpConsume"> 300 0 600 </table>
+		<table name="#mpConsume2"> 300 0 600 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="CASTING_TIME_DOWN" />
@@ -960,7 +960,7 @@
 		<set name="icon" val="icon.skill1085" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -974,7 +974,7 @@
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#mAtk"> 1.55 1.65 1.75 </table>
-		<table name="#mpConsume"> 300 0 600 </table>
+		<table name="#mpConsume2"> 300 0 600 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="MA_UP" />
@@ -983,7 +983,7 @@
 		<set name="icon" val="icon.skill1059" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -996,7 +996,7 @@
 	<skill id="4357" levels="2" name="Clan Hall: Haste">
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 </table>
-		<table name="#mpConsume"> 300 600 </table>
+		<table name="#mpConsume2"> 300 600 </table>
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
@@ -1006,7 +1006,7 @@
 		<set name="icon" val="icon.skill1086" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1020,7 +1020,7 @@
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#accCombat"> 2 3 4 </table>
-		<table name="#mpConsume"> 200 0 400 </table>
+		<table name="#mpConsume2"> 200 0 400 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="HIT_UP" />
@@ -1029,7 +1029,7 @@
 		<set name="icon" val="icon.skill1240" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1042,7 +1042,7 @@
 	<skill id="4359" levels="3" name="Clan Hall: Focus">
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#mpConsume"> 300 0 600 </table>
+		<table name="#mpConsume2"> 300 0 600 </table>
 		<table name="#rCrit"> 1.2 1.25 1.3 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
@@ -1052,7 +1052,7 @@
 		<set name="icon" val="icon.skill1077" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1066,7 +1066,7 @@
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#cAtk"> 1.25 1.3 1.35 </table>
-		<table name="#mpConsume"> 300 0 600 </table>
+		<table name="#mpConsume2"> 300 0 600 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="CRITICAL_DMG_UP" />
@@ -1075,7 +1075,7 @@
 		<set name="icon" val="icon.skill1242" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1413,7 +1413,7 @@
 	<skill id="4377" levels="12" name="Wield Temper">
 		<!-- Freya retail confirmed -->
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 13 20 28 38 50 61 71 76 80 83 84 85 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 71 76 80 83 84 85 </table>
 		<table name="#power"> 46 105 219 417 722 1136 1626 1876 2112 2320 2487 2617 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="800" />
@@ -1421,7 +1421,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="1000" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
@@ -1435,7 +1435,7 @@
 	<skill id="4378" levels="12" name="Self Damage Shield">
 		<!-- Freya retail confirmed -->
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 12 19 26 35 45 55 65 69 72 75 77 78 </table>
+		<table name="#mpConsume2"> 12 19 26 35 45 55 65 69 72 75 77 78 </table>
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="DMG_SHIELD" />
@@ -1443,7 +1443,7 @@
 		<set name="hitTime" val="1800" />
 		<set name="icon" val="icon.action105" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
@@ -1493,7 +1493,7 @@
 	<skill id="4382" levels="12" name="Curse of Lake Ghost">
 		<!-- Freya retail confirmed -->
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume"> 13 20 28 38 50 61 71 76 80 83 84 85 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 71 76 80 83 84 85 </table>
 		<table name="#power"> 46 105 219 417 722 1136 1626 1876 2112 2320 2487 2617 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
@@ -1506,7 +1506,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />

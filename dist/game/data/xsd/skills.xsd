@@ -64,8 +64,8 @@
 							<xs:enumeration value="lvlBonusRate" />
 							<xs:enumeration value="magicLvl" />
 							<xs:enumeration value="minPledgeClass" />
-							<xs:enumeration value="mpConsume" />
-							<xs:enumeration value="mpInitialConsume" />
+							<xs:enumeration value="mpConsume1" />
+							<xs:enumeration value="mpConsume2" />
 							<xs:enumeration value="mpPerChanneling" />
 							<xs:enumeration value="nextActionAttack" />
 							<xs:enumeration value="operateType" />
