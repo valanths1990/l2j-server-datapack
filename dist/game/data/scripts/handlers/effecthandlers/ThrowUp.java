@@ -21,6 +21,7 @@ package handlers.effecthandlers;
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.StatsSet;
+import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.EffectFlag;
@@ -54,25 +55,25 @@ public final class ThrowUp extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
+		L2Character target = info.getEffected();
+		L2Character activeChar = info.getEffector();
+		
 		// Get current position of the L2Character
-		final int curX = info.getEffected().getX();
-		final int curY = info.getEffected().getY();
-		final int curZ = info.getEffected().getZ();
+		final int curX = target.getX();
+		final int curY = target.getY();
+		final int curZ = target.getZ();
 		
 		// Calculate distance between effector and effected current position
-		double dx = info.getEffector().getX() - curX;
-		double dy = info.getEffector().getY() - curY;
-		double dz = info.getEffector().getZ() - curZ;
-		double distance = Math.sqrt((dx * dx) + (dy * dy));
+		double dx = activeChar.getX() - curX;
+		double dy = activeChar.getY() - curY;
+		double dz = activeChar.getZ() - curZ;
+		double distance = Math.hypot(dx, dy);
 		if (distance > 2000)
 		{
-			_log.info("EffectThrow was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " + info.getEffector().getX() + "," + info.getEffector().getY());
+			_log.info("EffectThrow was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " + activeChar.getX() + "," + activeChar.getY());
 			return;
 		}
 		int offset = Math.min((int) distance + info.getSkill().getFlyRadius(), 1400);
-		
-		double cos;
-		double sin;
 		
 		// approximation for moving futher when z coordinates are different
 		// TODO: handle Z axis movement better
@@ -89,19 +90,19 @@ public final class ThrowUp extends AbstractEffect
 		}
 		
 		// Calculate movement angles needed
-		sin = dy / distance;
-		cos = dx / distance;
+		double sin = dy / distance;
+		double cos = dx / distance;
 		
 		// Calculate the new destination with offset included
-		int x = info.getEffector().getX() - (int) (offset * cos);
-		int y = info.getEffector().getY() - (int) (offset * sin);
-		int z = info.getEffected().getZ();
+		int x = activeChar.getX() - (int) (offset * cos);
+		int y = activeChar.getY() - (int) (offset * sin);
+		int z = target.getZ();
 		
-		final Location destination = GeoData.getInstance().moveCheck(info.getEffected().getX(), info.getEffected().getY(), info.getEffected().getZ(), x, y, z, info.getEffected().getInstanceId());
+		final Location destination = GeoData.getInstance().moveCheck(curX, curY, curZ, x, y, z, target.getInstanceId());
 		
-		info.getEffected().broadcastPacket(new FlyToLocation(info.getEffected(), destination, FlyType.THROW_UP));
+		target.broadcastPacket(new FlyToLocation(target, destination, FlyType.THROW_UP));
 		// TODO: Review.
-		info.getEffected().setXYZ(destination);
-		info.getEffected().broadcastPacket(new ValidateLocation(info.getEffected()));
+		target.setXYZ(destination);
+		target.broadcastPacket(new ValidateLocation(target));
 	}
 }
