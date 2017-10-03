@@ -48,7 +48,7 @@
 	<skill id="20004" levels="1" name="Dragon Dash">
 		<!-- Increases Speed by 100% for 5 seconds with a dragon's strength. -->
 		<set name="abnormalTime" val="5" />
-		<set name="mpConsume" val="1" />
+		<set name="mpConsume2" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" /> <!-- FIXME: value unconfirmed -->
 		<set name="rideState" val="NONE" />
@@ -63,7 +63,7 @@
 		<!-- Increases Critical Rate by 30% for 20 minutes with a dragon's strength. -->
 		<set name="abnormalTime" val="1200" />
 		<set name="hitTime" val="4000" />
-		<set name="mpConsume" val="1" />
+		<set name="mpConsume2" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" /> <!-- FIXME: value unconfirmed -->
 		<set name="rideState" val="NONE" />
@@ -83,7 +83,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="BranchSys2.icon.skill20006" />
 		<set name="magicLvl" val="62" />
-		<set name="mpConsume" val="58" />
+		<set name="mpConsume2" val="58" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="240000" />
 		<set name="rideState" val="NONE" />

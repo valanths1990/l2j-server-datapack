@@ -18,13 +18,13 @@
  */
 package ai.npc.ForgeOfTheGods;
 
-import ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Tar Beetle AI
@@ -78,7 +78,7 @@ public final class TarBeetle extends AbstractNpcAI
 		if ((skill != null) && (skill.getId() == TAR_SPITE))
 		{
 			final int val = npc.getScriptValue() - 1;
-			if ((val <= 0) || (SKILLS[0].getSkill().getMpConsume() > npc.getCurrentMp()))
+			if ((val <= 0) || (SKILLS[0].getSkill().getMpConsume2() > npc.getCurrentMp()))
 			{
 				spawn.removeBeetle(npc);
 			}

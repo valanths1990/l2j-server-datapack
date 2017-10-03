@@ -77,13 +77,13 @@ public final class Heal extends AbstractEffect
 		
 		if (((sps || bss) && (activeChar.isPlayer() && activeChar.getActingPlayer().isMageClass())) || activeChar.isSummon())
 		{
-			staticShotBonus = info.getSkill().getMpConsume(); // static bonus for spiritshots
+			staticShotBonus = info.getSkill().getMpConsume2(); // static bonus for spiritshots
 			mAtkMul = bss ? 4 : 2;
 			staticShotBonus *= bss ? 2.4 : 1.0;
 		}
 		else if ((sps || bss) && activeChar.isNpc())
 		{
-			staticShotBonus = 2.4 * info.getSkill().getMpConsume(); // always blessed spiritshots
+			staticShotBonus = 2.4 * info.getSkill().getMpConsume2(); // always blessed spiritshots
 			mAtkMul = 4;
 		}
 		else

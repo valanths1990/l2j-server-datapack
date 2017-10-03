@@ -154,8 +154,8 @@
 		<set name="icon" val="icon.etc_talisman_i01" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="55" />
-		<set name="mpConsume" val="40" />
-		<set name="mpInitialConsume" val="10" />
+		<set name="mpConsume2" val="40" />
+		<set name="mpConsume1" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="360000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -430,8 +430,8 @@
 		<set name="icon" val="icon.etc_talisman_i01" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="75" />
-		<set name="mpConsume" val="40" />
-		<set name="mpInitialConsume" val="10" />
+		<set name="mpConsume2" val="40" />
+		<set name="mpConsume1" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -472,8 +472,8 @@
 		<set name="icon" val="icon.etc_talisman_i06" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="75" />
-		<set name="mpConsume" val="40" />
-		<set name="mpInitialConsume" val="10" />
+		<set name="mpConsume2" val="40" />
+		<set name="mpConsume1" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -494,8 +494,8 @@
 		<set name="icon" val="icon.etc_talisman_i06" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="75" />
-		<set name="mpConsume" val="40" />
-		<set name="mpInitialConsume" val="10" />
+		<set name="mpConsume2" val="40" />
+		<set name="mpConsume1" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -516,8 +516,8 @@
 		<set name="icon" val="icon.etc_talisman_i06" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="75" />
-		<set name="mpConsume" val="40" />
-		<set name="mpInitialConsume" val="10" />
+		<set name="mpConsume2" val="40" />
+		<set name="mpConsume1" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -538,8 +538,8 @@
 		<set name="icon" val="icon.etc_talisman_i06" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="75" />
-		<set name="mpConsume" val="40" />
-		<set name="mpInitialConsume" val="10" />
+		<set name="mpConsume2" val="40" />
+		<set name="mpConsume1" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -560,8 +560,8 @@
 		<set name="icon" val="icon.etc_talisman_i06" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="75" />
-		<set name="mpConsume" val="40" />
-		<set name="mpInitialConsume" val="10" />
+		<set name="mpConsume2" val="40" />
+		<set name="mpConsume1" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -582,8 +582,8 @@
 		<set name="icon" val="icon.etc_talisman_i06" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="75" />
-		<set name="mpConsume" val="40" />
-		<set name="mpInitialConsume" val="10" />
+		<set name="mpConsume2" val="40" />
+		<set name="mpConsume1" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -623,8 +623,8 @@
 		<set name="icon" val="icon.etc_talisman_i01" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="75" />
-		<set name="mpConsume" val="40" />
-		<set name="mpInitialConsume" val="10" />
+		<set name="mpConsume2" val="40" />
+		<set name="mpConsume1" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -646,8 +646,8 @@
 		<set name="icon" val="icon.etc_talisman_i01" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="75" />
-		<set name="mpConsume" val="40" />
-		<set name="mpInitialConsume" val="10" />
+		<set name="mpConsume2" val="40" />
+		<set name="mpConsume1" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1172,8 +1172,8 @@
 		<set name="icon" val="icon.etc_talisman_i01" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="55" />
-		<set name="mpConsume" val="40" />
-		<set name="mpInitialConsume" val="10" />
+		<set name="mpConsume2" val="40" />
+		<set name="mpConsume1" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="360000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1194,8 +1194,8 @@
 		<set name="icon" val="icon.etc_talisman_i01" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="55" />
-		<set name="mpConsume" val="40" />
-		<set name="mpInitialConsume" val="10" />
+		<set name="mpConsume2" val="40" />
+		<set name="mpConsume1" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="360000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1297,8 +1297,8 @@
 		<set name="icon" val="icon.etc_talisman_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="55" />
-		<set name="mpConsume" val="40" />
-		<set name="mpInitialConsume" val="10" />
+		<set name="mpConsume2" val="40" />
+		<set name="mpConsume1" val="10" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

@@ -676,7 +676,7 @@
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="79" />
-		<set name="mpConsume" val="88" />
+		<set name="mpConsume2" val="88" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -695,7 +695,7 @@
 		<set name="effectRange" val="1000" />
 		<set name="hitTime" val="1900" />
 		<set name="magicLvl" val="79" />
-		<set name="mpConsume" val="88" />
+		<set name="mpConsume2" val="88" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE" />
