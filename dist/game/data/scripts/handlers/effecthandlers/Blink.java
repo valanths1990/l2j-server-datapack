@@ -35,20 +35,25 @@ import com.l2jserver.gameserver.util.Util;
  * Blink effect implementation.<br>
  * This class handles warp effects, disappear and quickly turn up in a near location.<br>
  * If geodata enabled and an object is between initial and final point, flight is stopped just before colliding with object.<br>
- * Flight course and radius are set as skill properties (flyCourse and flyRadius):
+ * Flight course and radius are set as effect properties (flyCourse and flyRadius):
  * <ul>
  * <li>Fly Radius means the distance between starting point and final point, it must be an integer.</li>
  * <li>Fly Course means the movement direction: imagine a compass above player's head, making north player's heading. So if fly course is 180, player will go backwards (good for blink, e.g.).</li>
  * </ul>
  * By the way, if flyCourse = 360 or 0, player will be moved in in front of him. <br>
- * If target is effector, put in XML self="1", this will make _actor = getEffector(). This, combined with target type, allows more complex actions like flying target's backwards or player's backwards.
  * @author DrHouse
  */
 public final class Blink extends AbstractEffect
 {
+	private final int _flyCourse;
+	private final int _flyRadius;
+	
 	public Blink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+		
+		_flyCourse = params.getInt("flyCourse", 0);
+		_flyRadius = params.getInt("flyRadius", 0);
 	}
 	
 	@Override
@@ -61,12 +66,11 @@ public final class Blink extends AbstractEffect
 	public void onStart(BuffInfo info)
 	{
 		final L2Character effected = info.getEffected();
-		final int radius = info.getSkill().getFlyRadius();
 		final double angle = Util.convertHeadingToDegree(effected.getHeading());
 		final double radian = Math.toRadians(angle);
-		final double course = Math.toRadians(info.getSkill().getFlyCourse());
-		final int x1 = (int) (Math.cos(Math.PI + radian + course) * radius);
-		final int y1 = (int) (Math.sin(Math.PI + radian + course) * radius);
+		final double course = Math.toRadians(_flyCourse);
+		final int x1 = (int) (Math.cos(Math.PI + radian + course) * _flyRadius);
+		final int y1 = (int) (Math.sin(Math.PI + radian + course) * _flyRadius);
 		
 		int x = effected.getX() + x1;
 		int y = effected.getY() + y1;

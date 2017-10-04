@@ -1910,31 +1910,31 @@
 		</effects>
 	</skill>
 	<skill id="885" levels="1" name="Air Blink">
-		<!-- Aurabird Falcon and Owl -->
+		<!-- High Five Confirmed -->
 		<set name="affectLimit" val="6-12" />
-		<set name="affectRange" val="100" />
+		<set name="affectRange" val="150" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-659" />
-		<set name="flyCourse" val="0" /> <!-- Teleport to Back -->
-		<set name="flyRadius" val="500" />
-		<set name="flyType" val="DUMMY" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="magicLvl" val="75" />
-		<set name="mpConsume2" val="50" />
 		<set name="mpConsume1" val="50" />
+		<set name="mpConsume2" val="50" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="23000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<effects>
 			<effect name="PhysicalAttack">
-				<param power="100" />
+				<param power="1" />
 			</effect>
 			<effect name="Stun" />
 		</effects>
 		<selfEffects>
-			<effect name="Blink" />
+			<effect name="Blink">
+				<param flyRadius="1000" />
+			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="886" levels="11" name="Air Shock Bomb">

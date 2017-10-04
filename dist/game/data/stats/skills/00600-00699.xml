@@ -538,22 +538,24 @@
 		</enchant1Effects>
 	</skill>
 	<skill id="628" levels="1" name="Warp">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="coolTime" val="200" />
-		<set name="flyCourse" val="180" /> <!-- Teleport to Front -->
-		<set name="flyRadius" val="500" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.skill0484" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="32" />
-		<set name="mpConsume2" val="20" />
 		<set name="mpConsume1" val="10" />
+		<set name="mpConsume2" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Blink" />
+			<effect name="Blink">
+				<param flyCourse="180" /> <!-- Teleport to Front -->
+				<param flyRadius="500" />
+			</effect>
 		</effects>
 	</skill>
 	<skill id="629" levels="1" name="Rabbit Magic Eye">
