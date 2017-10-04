@@ -1152,7 +1152,7 @@
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="7078" levels="1" name="Test - Blink">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalType" val="STUN" />
@@ -1160,16 +1160,15 @@
 		<set name="activateRate" val="80" />
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="200" />
+		<set name="affectScope" val="RANGE" />
 		<set name="basicProperty" val="CON" />
 		<set name="coolTime" val="200" />
-		<set name="flyCourse" val="0" /> <!-- Teleport to Back -->
-		<set name="flyRadius" val="400" />
 		<set name="hitTime" val="300" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="75" />
-		<set name="mpConsume2" val="50" />
 		<set name="mpConsume1" val="50" />
+		<set name="mpConsume2" val="50" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1179,7 +1178,9 @@
 			<effect name="Stun" />
 		</effects>
 		<selfEffects>
-			<effect name="Blink" />
+			<effect name="Blink">
+				<param flyRadius="400" />
+			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="7079" levels="1" name="Test - Party Damage Absorb">
