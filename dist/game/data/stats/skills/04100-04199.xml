@@ -198,8 +198,6 @@
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="180" />
 		<set name="fanRange" val="0,180,1500,400" />
-		<set name="flyRadius" val="600" />
-		<set name="flyType" val="THROW_UP" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill4107" />
 		<set name="isDebuff" val="true" />
@@ -212,7 +210,9 @@
 			<effect name="PhysicalAttack">
 				<param power="28600" />
 			</effect>
-			<effect name="ThrowUp" />
+			<effect name="ThrowUp">
+				<param flyRadius="600" />
+			</effect>
 			<effect name="Stun" />
 		</effects>
 	</skill>
