@@ -14,14 +14,13 @@
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="5401" levels="1" name="Stun">
-		<!-- Temporarily gets thrown into a state of shock and immobilized. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalType" val="FLY_AWAY" />
 		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="effectPoint" val="-100" />
-		<set name="flyRadius" val="300" />
-		<set name="flyType" val="THROW_UP" />
 		<set name="hitTime" val="5800" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
@@ -31,7 +30,9 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<effects>
-			<effect name="ThrowUp" />
+			<effect name="ThrowUp">
+				<param flyRadius="300" />
+			</effect>
 			<effect name="Stun" />
 		</effects>
 	</skill>
@@ -1290,14 +1291,14 @@
 	<skill id="5494" levels="1" name="Gust">
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="1" />
-		<set name="flyRadius" val="300" />
-		<set name="flyType" val="THROW_UP" />
 		<set name="magicLvl" val="86" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="ThrowUp" />
+			<effect name="ThrowUp">
+				<param flyRadius="300" />
+			</effect>
 		</effects>
 	</skill>
 	<skill id="5495" levels="1" name="Bleed">

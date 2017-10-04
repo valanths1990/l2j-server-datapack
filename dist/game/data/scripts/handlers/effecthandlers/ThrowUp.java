@@ -35,9 +35,13 @@ import com.l2jserver.gameserver.network.serverpackets.ValidateLocation;
  */
 public final class ThrowUp extends AbstractEffect
 {
+	private final int _flyRadius;
+	
 	public ThrowUp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+		
+		_flyRadius = params.getInt("flyRadius", 0);
 	}
 	
 	@Override
@@ -73,7 +77,7 @@ public final class ThrowUp extends AbstractEffect
 			_log.info("EffectThrow was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " + activeChar.getX() + "," + activeChar.getY());
 			return;
 		}
-		int offset = Math.min((int) distance + info.getSkill().getFlyRadius(), 1400);
+		int offset = Math.min((int) distance + _flyRadius, 1400);
 		
 		// approximation for moving futher when z coordinates are different
 		// TODO: handle Z axis movement better

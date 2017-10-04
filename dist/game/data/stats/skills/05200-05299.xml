@@ -604,8 +604,6 @@
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
-		<set name="flyRadius" val="300" />
-		<set name="flyType" val="THROW_UP" />
 		<set name="hitTime" val="2800" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
@@ -622,7 +620,9 @@
 				<param criticalChance="20" />
 			</effect>
 			<effect name="Stun" />
-			<effect name="ThrowUp" />
+			<effect name="ThrowUp">
+				<param flyRadius="300" />
+			</effect>
 		</effects>
 	</skill>
 	<skill id="5230" levels="1" name="Stun">
