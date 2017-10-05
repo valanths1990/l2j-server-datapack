@@ -1302,7 +1302,9 @@
 			<effect name="PhysicalAttack">
 				<param power="4563" />
 			</effect>
-			<effect name="EnemyCharge" />
+			<effect name="EnemyCharge">
+				<param flyRadius="250" />
+			</effect>
 		</effects>
 	</skill>
 	<skill id="6293" levels="1" name="Power Strike">
@@ -1387,7 +1389,9 @@
 			<effect name="PhysicalAttack">
 				<param power="4563" />
 			</effect>
-			<effect name="EnemyCharge" />
+			<effect name="EnemyCharge">
+				<param flyRadius="250" />
+			</effect>
 		</effects>
 	</skill>
 	<skill id="6297" levels="1" name="Cylinder Throw">

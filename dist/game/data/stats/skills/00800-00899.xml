@@ -1916,6 +1916,7 @@
 		<set name="affectScope" val="POINT_BLANK" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-659" />
+		<set name="flyType" val="DUMMY" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="magicLvl" val="75" />

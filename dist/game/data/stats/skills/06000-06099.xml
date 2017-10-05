@@ -427,7 +427,9 @@
 			<effect name="PhysicalAttack">
 				<param power="2372" />
 			</effect>
-			<effect name="EnemyCharge" />
+			<effect name="EnemyCharge">
+				<param flyRadius="200" />
+			</effect>
 		</effects>
 	</skill>
 	<skill id="6042" levels="1" name="Phoenix Cleanse">

@@ -85,6 +85,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="element" val="5" /> <!-- Dark -->
 		<set name="elementPower" val="180" />
+		<set name="flyType" val="THROW_UP" />
 		<set name="hitTime" val="5800" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
@@ -337,7 +338,6 @@
 		<set name="element" val="5" /> <!-- Dark -->
 		<set name="elementPower" val="180" />
 		<set name="fanRange" val="#fanRange" />
-		<set name="flyRadius" val="#radius" />
 		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
@@ -350,6 +350,9 @@
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
+			</effect>
+			<effect name="EnemyCharge">
+				<param flyRadius="#radius" />
 			</effect>
 		</effects>
 	</skill>
