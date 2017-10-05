@@ -1998,7 +1998,9 @@
 				<param power="1" />
 			</effect>
 			<effect name="Stun" />
-			<effect name="EnemyCharge" />
+			<effect name="EnemyCharge">
+				<param flyRadius="200" />
+			</effect>
 		</effects>
 	</skill>
 	<skill id="979" levels="6" name="Aggression">
@@ -2453,7 +2455,9 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="EnemyCharge" />
+			<effect name="EnemyCharge">
+				<param flyRadius="200" />
+			</effect>
 		</effects>
 	</skill>
 	<skill id="995" levels="1" name="Rush Impact">
@@ -2593,7 +2597,9 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="EnemyCharge" />
+			<effect name="EnemyCharge">
+				<param flyRadius="200" />
+			</effect>
 		</effects>
 	</skill>
 </list>

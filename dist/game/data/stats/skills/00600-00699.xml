@@ -541,6 +541,7 @@
 		<!-- High Five Confirmed -->
 		<set name="affectScope" val="SINGLE" />
 		<set name="coolTime" val="200" />
+		<set name="flyType" val="DUMMY" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.skill0484" />
 		<set name="isMagic" val="1" />

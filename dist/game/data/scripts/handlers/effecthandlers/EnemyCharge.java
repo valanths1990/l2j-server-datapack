@@ -34,9 +34,13 @@ import com.l2jserver.gameserver.network.serverpackets.ValidateLocation;
  */
 public final class EnemyCharge extends AbstractEffect
 {
+	private final int _flyRadius;
+	
 	public EnemyCharge(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+		
+		_flyRadius = params.getInt("flyRadius", 0);
 	}
 	
 	@Override
@@ -72,7 +76,7 @@ public final class EnemyCharge extends AbstractEffect
 			return;
 		}
 		
-		int offset = Math.max((int) distance - info.getSkill().getFlyRadius(), 30);
+		int offset = Math.max((int) distance - _flyRadius, 30);
 		
 		// approximation for moving closer when z coordinates are different
 		// TODO: handle Z axis movement better

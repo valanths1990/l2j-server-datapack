@@ -2882,7 +2882,9 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="EnemyCharge" />
+			<effect name="EnemyCharge">
+				<param flyRadius="200" />
+			</effect>
 		</effects>
 	</skill>
 	<skill id="485" levels="7" name="Disarm" enchantGroup1="1" enchantGroup2="1">
@@ -3240,14 +3242,18 @@
 				<param power="1" />
 			</effect>
 			<effect name="Stun" />
-			<effect name="EnemyCharge" />
+			<effect name="EnemyCharge">
+				<param flyRadius="200" />
+			</effect>
 		</effects>
 		<enchant1Effects>
 			<effect name="PhysicalSoulAttack">
 				<param power="#ench1Power" />
 			</effect>
 			<effect name="Stun" />
-			<effect name="EnemyCharge" />
+			<effect name="EnemyCharge">
+				<param flyRadius="200" />
+			</effect>
 		</enchant1Effects>
 		<enchant7Effects>
 		</enchant7Effects>
@@ -3256,14 +3262,18 @@
 				<param power="#ench7Duel" />
 			</effect>
 			<effect name="Stun" />
-			<effect name="EnemyCharge" />
+			<effect name="EnemyCharge">
+				<param flyRadius="200" />
+			</effect>
 		</enchant7pvpEffects>
 		<enchant7pveEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="1" />
 			</effect>
 			<effect name="Stun" />
-			<effect name="EnemyCharge" />
+			<effect name="EnemyCharge">
+				<param flyRadius="200" />
+			</effect>
 		</enchant7pveEffects>
 	</skill>
 	<skill id="495" levels="10" name="Blade Rush" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">

@@ -28,7 +28,6 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Formulas;
 import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * Physical Attack effect implementation.
@@ -76,14 +75,6 @@ public final class PhysicalAttack extends AbstractEffect
 		
 		if (activeChar.isAlikeDead())
 		{
-			return;
-		}
-		
-		if (((info.getSkill().getFlyRadius() > 0) || (skill.getFlyType() != null)) && activeChar.isMovementDisabled())
-		{
-			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
-			sm.addSkillName(skill);
-			activeChar.sendPacket(sm);
 			return;
 		}
 		

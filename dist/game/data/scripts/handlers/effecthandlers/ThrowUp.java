@@ -105,6 +105,7 @@ public final class ThrowUp extends AbstractEffect
 		final Location destination = GeoData.getInstance().moveCheck(curX, curY, curZ, x, y, z, target.getInstanceId());
 		
 		target.broadcastPacket(new FlyToLocation(target, destination, FlyType.THROW_UP));
+		
 		// TODO: Review.
 		target.setXYZ(destination);
 		target.broadcastPacket(new ValidateLocation(target));
