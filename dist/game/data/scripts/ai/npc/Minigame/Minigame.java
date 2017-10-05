@@ -159,7 +159,7 @@ public final class Minigame extends AbstractNpcAI
 					room.burnThemAll();
 					startQuestTimer("off", 2000, npc, null);
 					final ConsumerEventListener listener = new ConsumerEventListener(room.getParticipant(), EventType.ON_CREATURE_SKILL_USE, (OnCreatureSkillUse listenerEvent) -> onSkillUse(listenerEvent), room);
-					room.getParticipant().addListener(listener);
+					room.setListener(listener);
 					room.setCurrentPot(0);
 				}
 				break;
@@ -185,11 +185,7 @@ public final class Minigame extends AbstractNpcAI
 				cancelQuestTimer("expire", npc, null);
 				cancelQuestTimer("hurry_up", npc, null);
 				cancelQuestTimer("hurry_up2", npc, null);
-				room.getManager().setTarget(null);
-				room.setParticipant(null);
-				room.setStarted(false);
-				room.setAttemptNumber(1);
-				room.setCurrentPot(0);
+				room.clean();
 				break;
 			}
 			case "afterthat":
@@ -391,6 +387,7 @@ public final class Minigame extends AbstractNpcAI
 		private int _attemptNumber;
 		private int _currentPot;
 		private final int _order[];
+		private ConsumerEventListener _listener;
 		
 		public MinigameRoom(L2Npc[] burners, L2Npc manager)
 		{
@@ -529,6 +526,34 @@ public final class Minigame extends AbstractNpcAI
 		public int[] getOrder()
 		{
 			return _order;
+		}
+		
+		/**
+		 * Set a listener for player inside room
+		 * @param listener
+		 */
+		public void setListener(ConsumerEventListener listener)
+		{
+			_listener = listener;
+			_participant.addListener(listener);
+		}
+		
+		/**
+		 * Clean the room values
+		 */
+		public void clean()
+		{
+			if (_listener != null)
+			{
+				_participant.removeListener(_listener);
+				_listener = null;
+			}
+			
+			getManager().setTarget(null);
+			setParticipant(null);
+			setStarted(false);
+			setAttemptNumber(1);
+			setCurrentPot(0);
 		}
 	}
 	
