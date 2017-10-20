@@ -790,6 +790,7 @@
 		</effects>
 	</skill>
 	<skill id="9049" levels="1" name="Golden Spice">
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="-150" />
 		<set name="effectRange" val="900" />
@@ -801,12 +802,13 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="109">
 			<target npcId="18873,18874,18875,18876,18877,18878,18879,18880,18881,18882,18883,18884,18885,18886,18887,18888,18889,18890,18891,18892,18893,18894,18895,18896,18897,18898,18899,18900" />
 		</cond>
 	</skill>
 	<skill id="9050" levels="1" name="Crystal Spice">
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="-150" />
 		<set name="effectRange" val="900" />
@@ -818,12 +820,13 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="109">
 			<target npcId="18873,18874,18875,18876,18877,18878,18879,18880,18881,18882,18883,18884,18885,18886,18887,18888,18889,18890,18891,18892,18893,18894,18895,18896,18897,18898,18899,18900" />
 		</cond>
 	</skill>
 	<skill id="9051" levels="1" name="Blessed Golden Spice">
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="-150" />
 		<set name="effectRange" val="900" />
@@ -835,12 +838,13 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="109">
 			<target npcId="18873,18880,18887,18894" />
 		</cond>
 	</skill>
 	<skill id="9052" levels="1" name="Blessed Crystal Spice">
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="-150" />
 		<set name="effectRange" val="900" />
@@ -852,12 +856,13 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="109">
 			<target npcId="18873,18880,18887,18894" />
 		</cond>
 	</skill>
 	<skill id="9053" levels="1" name="S Grade Golden Spice">
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="-150" />
 		<set name="effectRange" val="900" />
@@ -869,12 +874,13 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="109">
 			<target npcId="18873,18880,18887,18894" />
 		</cond>
 	</skill>
 	<skill id="9054" levels="1" name="S Grade Crystal Spice">
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="-150" />
 		<set name="effectRange" val="900" />
@@ -886,7 +892,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="109">
 			<target npcId="18873,18880,18887,18894" />
 		</cond>

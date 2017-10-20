@@ -69,6 +69,7 @@
 	<skill id="6303" levels="1" name="Trial of the Coup">
 		<!-- Confirmed CT2.5 -->
 		<!-- Monastery of Silence Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
@@ -81,7 +82,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4563" />
@@ -96,6 +97,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
@@ -112,7 +114,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="SHOCK" />
 		<effects>
 			<effect name="Stun" />
@@ -147,6 +149,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="100" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
@@ -164,7 +167,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
 			<effect name="DamOverTime" ticks="5">
@@ -175,7 +178,7 @@
 	<skill id="6307" levels="1" name="Opus of the Hand">
 		<!-- Confirmed CT2.5 -->
 		<!-- Monastery of Silence Skills -->
-		<set name="affectRange" val="180" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
@@ -190,7 +193,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="MagicalAttack">
 				<param power="120" />
@@ -200,7 +203,7 @@
 	<skill id="6308" levels="1" name="Opus of the Wave">
 		<!-- Confirmed CT2.5 -->
 		<!-- Monastery of Silence Skills -->
-		<set name="affectRange" val="270" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
@@ -215,7 +218,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="MagicalAttack">
 				<param power="120" />
@@ -225,7 +228,7 @@
 	<skill id="6309" levels="1" name="Pain of the Ascetic">
 		<!-- Confirmed CT2.5 -->
 		<!-- Monastery of Silence Skills -->
-		<set name="affectRange" val="180" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
@@ -240,7 +243,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="MagicalAttack">
 				<param power="120" />
@@ -250,6 +253,7 @@
 	<skill id="6310" levels="1" name="Loss of Quest">
 		<!-- Confirmed CT2.5 -->
 		<!-- Monastery of Silence Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
@@ -263,7 +267,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="TargetCancel">
 				<param chance="80" />
@@ -273,6 +277,7 @@
 	<skill id="6311" levels="1" name="Solina Thrust">
 		<!-- Confirmed CT2.5 -->
 		<!-- Monastery of Silence Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
@@ -285,7 +290,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4563" />
@@ -371,6 +376,7 @@
 	<skill id="6315" levels="1" name="Sacred Strike">
 		<!-- Confirmed CT2.5 -->
 		<!-- Monastery of Silence Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
@@ -383,7 +389,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4563" />
@@ -565,6 +571,7 @@
 	<skill id="6323" levels="1" name="Divine Bolt">
 		<!-- Confirmed CT2.5 -->
 		<!-- Monastery of Silence Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
@@ -574,7 +581,7 @@
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="MagicalAttack">
 				<param power="85" />
@@ -651,6 +658,7 @@
 	<skill id="6327" levels="1" name="Sacred Worship">
 		<!-- Confirmed CT2.5 -->
 		<!-- Monastery of Silence Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
@@ -663,7 +671,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="11407" />
@@ -698,6 +706,7 @@
 	<skill id="6329" levels="1" name="Fighter Strike">
 		<!-- Confirmed CT2.5 -->
 		<!-- Monastery of Silence Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
@@ -710,7 +719,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4563" />
@@ -719,6 +728,7 @@
 	</skill>
 	<skill id="6330" levels="1" name="Salmon Porridge Attack">
 		<!-- Confirmed CT2.5 -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
@@ -728,7 +738,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="HealPercent">
 				<param power="5" />
@@ -788,6 +798,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
@@ -803,7 +814,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
 			<effect name="PhysicalAttack">
@@ -822,6 +833,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="40" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
@@ -836,7 +848,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="SHOCK" />
 		<effects>
 			<effect name="PhysicalAttack">
@@ -888,6 +900,7 @@
 	<skill id="6337" levels="1" name="Red Slash 1">
 		<!-- Confirmed CT2.5 -->
 		<!-- Sel Mahum Training Grounds Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
@@ -898,7 +911,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4563" />
@@ -908,6 +921,7 @@
 	<skill id="6338" levels="1" name="Red Slash 2">
 		<!-- Confirmed CT2.5 -->
 		<!-- Sel Mahum Training Grounds Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
@@ -918,7 +932,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4563" />
@@ -968,6 +982,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
@@ -982,7 +997,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="SHOCK" />
 		<effects>
 			<effect name="PhysicalAttack">
@@ -1410,6 +1425,7 @@
 		<set name="abnormalType" val="SILENCE_ALL" />
 		<set name="abnormalVisualEffect" val="SILENCE" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-666" />
@@ -1424,7 +1440,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="DERANGEMENT" />
 		<effects>
 			<effect name="Mute" />
@@ -1433,6 +1449,7 @@
 	</skill>
 	<skill id="6384" levels="2" name="Bistakon Deadly Blow">
 		<table name="#power"> 9125 13688 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="60" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
@@ -1443,7 +1460,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
@@ -1551,6 +1568,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1200" />
@@ -1562,7 +1580,7 @@
 		<set name="mpConsume1" val="22" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.5" />
@@ -1599,6 +1617,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="60" />
 		<set name="coolTime" val="500" />
@@ -1613,7 +1632,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="SHOCK" />
 		<effects>
 			<effect name="PhysicalAttack">
@@ -1651,6 +1670,7 @@
 		</effects>
 	</skill>
 	<skill id="6393" levels="1" name="Cokrakon Sonic Beam">
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
@@ -1661,7 +1681,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="13688" />
@@ -1691,6 +1711,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="100" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
@@ -1706,7 +1727,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
 			<effect name="DamOverTime" ticks="5">
@@ -1720,6 +1741,7 @@
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-574" />
@@ -1735,7 +1757,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="DERANGEMENT" />
 		<effects>
 			<effect name="Fear" />
@@ -1798,6 +1820,7 @@
 		</effects>
 	</skill>
 	<skill id="6399" levels="1" name="Cokrakon Dreadful Piercing">
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="60" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
@@ -1808,7 +1831,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="13688" />

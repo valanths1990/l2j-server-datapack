@@ -648,6 +648,7 @@
 	<skill id="6641" levels="1" name="Holy Ball">
 		<!-- Confirmed CT2.5 -->
 		<!-- Freya Jinia Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="650" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
@@ -662,7 +663,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="MagicalAttack">
 				<param power="122" />
@@ -1121,6 +1122,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6676" levels="1" name="Magician's Perversity">
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-684" />
@@ -1132,7 +1134,7 @@
 		<set name="mpConsume2" val="82" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="MagicalAttack">
 				<param power="120" />
@@ -1167,6 +1169,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6679" levels="1" name="Summoner's Strike">
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-684" />
@@ -1178,7 +1181,7 @@
 		<set name="mpConsume2" val="82" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="MagicalAttack">
 				<param power="120" />

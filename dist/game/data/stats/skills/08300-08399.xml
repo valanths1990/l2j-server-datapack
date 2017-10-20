@@ -558,6 +558,7 @@
 	</skill>
 	<skill id="8332" levels="1" name="Blue Talisman - Buff Steal">
 		<!-- Confirmed CT2.5 -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-532" />
 		<set name="effectRange" val="1100" />
@@ -570,7 +571,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="360000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="StealAbnormal">
 				<param slot="BUFF" rate="50" max="3" />

@@ -573,6 +573,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ARMOR_UNHOLY" />
 		<set name="activateRate" val="100" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-100" />
@@ -587,7 +588,7 @@
 		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Debuff">
 				<sub stat="darkRes" val="#vuln" />
@@ -931,6 +932,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-100" />
@@ -942,7 +944,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="SHOCK" />
 		<effects>
 			<effect name="Stun" />
@@ -1210,6 +1212,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="EXPOSE_WEAK_POINT" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-671" />
@@ -1224,7 +1227,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.8" />
@@ -1831,6 +1834,7 @@
 	<skill id="5593" levels="1" name="Vampiric Mana Burn">
 		<!-- Confirmed CT2.5 -->
 		<!-- Darion Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-689" />
 		<set name="effectRange" val="1400" />
@@ -1842,7 +1846,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="HpDrain">
 				<param power="122" />

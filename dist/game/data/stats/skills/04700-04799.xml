@@ -142,6 +142,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="DEBUFF_NIGHTSHADE" />
 		<set name="activateRate" val="#activateRates" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -159,7 +160,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="mDef" val="#mpDef" />
