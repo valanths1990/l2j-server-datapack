@@ -50,11 +50,11 @@ public class EnemyOnly implements ITargetTypeHandler
 				final L2PcInstance player = activeChar.getActingPlayer();
 				if (target.isDead() || (!target.isAttackable() && //
 					(player != null) && //
-					(player.isInPartyWith(target) || //
-						player.isInClanWith(target) || //
-						player.isInAllyWith(target) || // TODO(Zoey76): Confirm.
-						player.isInCommandChannelWith(target)) // TODO(Zoey76): Confirm.
-					&& !player.checkIfPvP(target)))
+					!player.isInPartyWith(target) && //
+					!player.isInClanWith(target) && //
+					!player.isInAllyWith(target) && // TODO(Zoey76): Confirm.
+					!player.isInCommandChannelWith(target) && // TODO(Zoey76): Confirm.
+					!player.checkIfPvP(target)))
 				{
 					activeChar.sendPacket(INCORRECT_TARGET);
 					return EMPTY_TARGET_LIST;
