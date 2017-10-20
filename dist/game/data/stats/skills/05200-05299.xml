@@ -138,6 +138,7 @@
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
@@ -153,7 +154,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.85" />
@@ -166,6 +167,7 @@
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="ATTACK_TIME_UP" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
@@ -181,7 +183,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.85" />

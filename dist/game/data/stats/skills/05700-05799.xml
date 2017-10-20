@@ -111,6 +111,7 @@
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="activateRate" val="70" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="2000" />
@@ -122,7 +123,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
 	</skill>
 	<skill id="5707" levels="1" name="Paralysis">
@@ -130,6 +131,7 @@
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="abnormalVisualEffect" val="PARALYZE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill1170" />
 		<set name="isDebuff" val="true" />
@@ -137,7 +139,7 @@
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="PARALYZE" />
 	</skill>
 	<skill id="5708" levels="2" name="Water Cannon">
@@ -723,6 +725,7 @@
 		<set name="abnormalType" val="SLEEP" />
 		<set name="abnormalVisualEffect" val="SLEEP" />
 		<set name="activateRate" val="25" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="500" />
@@ -739,7 +742,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="SLEEP" />
 		<effects>
 			<effect name="MagicalAttack">

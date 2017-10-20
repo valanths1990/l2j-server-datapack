@@ -358,6 +358,7 @@
 		<set name="abnormalType" val="CURSE_LIFE_FLOW" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="activateRate" val="70" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -373,7 +374,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<enchant1 name="abnormalTime" val="#ench1AbnormalTimes" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
@@ -899,6 +900,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ARMOR_HOLY" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="750" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -914,7 +916,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Debuff">
 				<sub stat="holyRes" val="25" />
@@ -934,6 +936,7 @@
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="HEAL_EFFECT_DOWN" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="750" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -951,7 +954,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
@@ -1445,6 +1448,7 @@
 		<set name="abnormalType" val="ULTIMATE_DEBUFF" />
 		<set name="abnormalVisualEffect" val="SILENCE" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-679" />
@@ -1460,7 +1464,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="DERANGEMENT" />
 		<effects>
 			<effect name="Debuff">

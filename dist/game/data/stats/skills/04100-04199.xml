@@ -56,6 +56,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ARMOR_FIRE" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
@@ -70,7 +71,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Debuff">
 				<sub stat="fireRes" val="#fireRes" />
@@ -112,6 +113,7 @@
 		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="70" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
@@ -128,7 +130,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<param power="#dmg" />
@@ -454,6 +456,7 @@
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="abnormalVisualEffect" val="PARALYZE" />
 		<set name="activateRate" val="40" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="-100" />
@@ -469,7 +472,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="PARALYZE" />
 		<effects>
 			<effect name="Paralyze" />
@@ -517,6 +520,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="HIT_DOWN" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
@@ -531,7 +535,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Debuff">
 				<sub stat="accCombat" val="#accCombat" />
@@ -604,6 +608,7 @@
 		<table name="#effectPoints"> -410 -608 -853 -1134 -1427 -1695 -1903 -1973 -2024 -2064 -2097 -2123 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 12 19 26 35 45 55 65 76 80 83 84 85 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="900" />
@@ -613,7 +618,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 	</skill>
 	<skill id="4124" levels="12" name="NPC Spear Attack">
 		<!-- Freya retail confirmed -->
@@ -1248,6 +1253,7 @@
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 7 10 14 18 23 28 33 35 37 38 39 39 </table>
 		<table name="#power"> 34 57 78 105 134 165 194 206 216 224 229 232 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
@@ -1257,7 +1263,7 @@
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="MagicalAttackMp">
 				<param power="#power" />
@@ -1540,6 +1546,7 @@
 		<set name="abnormalLvl" val="99" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="ATTACK_TIME_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="icon" val="icon.skill1206" />
@@ -1547,7 +1554,7 @@
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.77" />
@@ -2298,6 +2305,7 @@
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="activateRate" val="90" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="750" />
 		<set name="effectPoint" val="-100" />
@@ -2309,7 +2317,7 @@
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
 		<effects>
 			<effect name="DamOverTime" ticks="5">
@@ -2327,6 +2335,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="PA_DOWN" />
 		<set name="activateRate" val="90" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="750" />
 		<set name="effectPoint" val="-100" />
@@ -2338,7 +2347,7 @@
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />

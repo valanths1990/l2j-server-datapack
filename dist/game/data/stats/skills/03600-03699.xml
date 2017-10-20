@@ -520,6 +520,7 @@
 	</skill>
 	<skill id="3626" levels="1" name="Kabokula">
 		<set name="abnormalVisualEffect" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="300" />
 		<set name="channelingSkillId" val="5106" />
 		<set name="channelingTickInterval" val="2" />
@@ -534,13 +535,14 @@
 		<set name="operateType" val="CA5" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="109">
 			<target npcId="22215,22216,22217" />
 		</cond>
 	</skill>
 	<skill id="3627" levels="1" name="Tapirawa">
 		<set name="abnormalVisualEffect" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="300" />
 		<set name="channelingSkillId" val="5107" />
 		<set name="channelingTickInterval" val="2" />
@@ -555,13 +557,14 @@
 		<set name="operateType" val="CA5" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="109">
 			<target npcId="22215,22216,22217" />
 		</cond>
 	</skill>
 	<skill id="3628" levels="1" name="Shabonoba">
 		<set name="abnormalVisualEffect" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="300" />
 		<set name="channelingSkillId" val="5108" />
 		<set name="channelingTickInterval" val="2" />
@@ -576,7 +579,7 @@
 		<set name="operateType" val="CA5" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="109">
 			<target npcId="22215,22216,22217" />
 		</cond>

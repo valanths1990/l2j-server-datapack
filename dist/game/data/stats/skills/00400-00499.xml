@@ -234,6 +234,7 @@
 		<set name="abnormalType" val="ROOT_PHYSICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -247,7 +248,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="HOLD" />
 		<enchant1 name="effectPoint" val="#ench1EffectPoints" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
@@ -272,6 +273,7 @@
 		<set name="abnormalType" val="ROOT_PHYSICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -285,7 +287,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="HOLD" />
 		<enchant1 name="effectPoint" val="#ench1EffectPoints" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
@@ -755,6 +757,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="HIT_DOWN" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -768,7 +771,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<enchant1 name="abnormalTime" val="#ench1AbnormalTimes" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="mpConsume2" val="#ench1MpConsume2" />
@@ -2900,6 +2903,7 @@
 		<set name="abnormalType" val="DISARM" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="70" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="STR" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -2913,7 +2917,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<enchant1 name="activateRate" val="#ench1ActivateRates" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="abnormalTime" val="#ench2AbnormalTimes" />

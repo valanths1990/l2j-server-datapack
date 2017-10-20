@@ -559,6 +559,7 @@
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="90" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="canBeDispeled" val="false" />
 		<set name="castRange" val="300" />
@@ -575,7 +576,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="#speed" />
@@ -650,6 +651,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="SILENCE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1500" />
@@ -663,7 +665,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="DERANGEMENT" />
 		<effects>
 			<effect name="Mute">
@@ -707,6 +709,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="11" />
 		<set name="abnormalType" val="PD_DOWN" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="canBeDispeled" val="false" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="#icons" />
@@ -714,7 +717,7 @@
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
@@ -745,6 +748,7 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="11" />
 		<set name="abnormalType" val="SIGNAL_A" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="canBeDispeled" val="false" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="#icons" />
@@ -752,7 +756,7 @@
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="#pAtk" />
@@ -784,6 +788,7 @@
 		<set name="abnormalTime" val="11" />
 		<set name="abnormalType" val="MAX_HP_DOWN" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="canBeDispeled" val="false" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="#icons" />
@@ -791,7 +796,7 @@
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
 			<effect name="Debuff">

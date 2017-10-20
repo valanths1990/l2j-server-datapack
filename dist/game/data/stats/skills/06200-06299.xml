@@ -160,6 +160,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
@@ -175,7 +176,7 @@
 		<set name="overHit" val="true" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
 			<effect name="PhysicalAttack">
@@ -974,6 +975,7 @@
 	<skill id="6277" levels="1" name="Summon Spirits">
 		<!-- Confirmed CT2.5 -->
 		<!-- Freya Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="800" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-689" />
@@ -983,7 +985,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 	</skill>
 	<skill id="6278" levels="1" name="Ice Ball">
 		<!-- Confirmed CT2.5 -->
@@ -1034,6 +1036,7 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="DEATH_CLACK" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="1500" />
 		<set name="coolTime" val="800" />
@@ -1046,7 +1049,7 @@
 		<set name="mpConsume2" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="6281" skillLevel="1" />
@@ -1090,6 +1093,7 @@
 	<skill id="6283" levels="1" name="Ice Storm">
 		<!-- Confirmed CT2.5 -->
 		<!-- Freya Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="1100" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-689" />
@@ -1100,7 +1104,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="18560" />
@@ -1242,6 +1246,7 @@
 	<skill id="6290" levels="1" name="Power Strike">
 		<!-- Confirmed CT2.5 -->
 		<!-- Freya Ice Knight Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-574" />
 		<set name="effectRange" val="400" />
@@ -1252,7 +1257,7 @@
 		<set name="mpConsume2" val="123" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4563" />
@@ -1281,6 +1286,7 @@
 	<skill id="6292" levels="1" name="Rush">
 		<!-- Confirmed CT2.5 -->
 		<!-- Freya Ice Knight Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-574" />
@@ -1294,7 +1300,7 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="DA1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="113" addName="1">
 			<target mindistance="250" />
 		</cond>
@@ -1355,6 +1361,7 @@
 	<skill id="6295" levels="1" name="Point Target">
 		<!-- Confirmed CT2.5 -->
 		<!-- Freya Ice Knight Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="800" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-689" />
@@ -1363,11 +1370,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 	</skill>
 	<skill id="6296" levels="1" name="Rush">
 		<!-- Confirmed CT2.5 -->
 		<!-- Freya Ice Knight Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-574" />
@@ -1381,7 +1389,7 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="DA1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="113" addName="1">
 			<target mindistance="250" />
 		</cond>
@@ -1397,6 +1405,7 @@
 	<skill id="6297" levels="1" name="Cylinder Throw">
 		<!-- Confirmed CT2.5 -->
 		<!-- Freya Ice Knight Skills -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="1100" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-689" />
@@ -1408,7 +1417,7 @@
 		<set name="mpConsume2" val="123" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="4563" />

@@ -1126,6 +1126,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="100" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-1" />
@@ -1136,7 +1137,7 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 	</skill>
 	<skill id="7077" levels="1" name="Test - Delay Debuff - Call">
@@ -1199,6 +1200,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="40" />
 		<set name="abnormalType" val="PUBLIC_SLOT" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="-1" />
 		<set name="hitTime" val="2500" />
@@ -1206,7 +1208,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 	</skill>
 	<skill id="7081" levels="1" name="Effect Test - Land Shot">
 		<set name="affectLimit" val="5-12" />

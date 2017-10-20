@@ -1105,6 +1105,7 @@
 	<skill id="6094" levels="11" name="Panther Cancel">
 		<!-- Confirmed CT2.5 -->
 		<table name="#magicLvl"> 68 72 76 78 79 80 81 82 83 84 85 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-475" />
 		<set name="effectRange" val="400" />
@@ -1115,7 +1116,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="DispelByCategory">
 				<param slot="BUFF" rate="25" max="2" />
@@ -1130,6 +1131,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ARMOR_UNHOLY" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-475" />
@@ -1145,7 +1147,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />

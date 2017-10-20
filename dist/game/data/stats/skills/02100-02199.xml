@@ -1232,6 +1232,7 @@
 	</skill>
 	<skill id="2188" levels="1" name="Golden Spice">
 		<!-- Confirmed CT2.5 -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-150" />
 		<set name="effectRange" val="200" />
@@ -1243,10 +1244,11 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="500" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 	</skill>
 	<skill id="2189" levels="1" name="Crystal Spice">
 		<!-- Confirmed CT2.5 -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-150" />
 		<set name="effectRange" val="200" />
@@ -1258,7 +1260,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="500" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 	</skill>
 	<skill id="2190" levels="9" name="Item - Green Fish">
 		<!-- Confirmed CT2.5 -->
