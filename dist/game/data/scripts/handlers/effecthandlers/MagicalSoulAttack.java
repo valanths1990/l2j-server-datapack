@@ -60,14 +60,14 @@ public final class MagicalSoulAttack extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		final L2Character target = info.getEffected();
-		final L2Character activeChar = info.getEffector();
-		final Skill skill = info.getSkill();
-		
-		if (activeChar.isAlikeDead())
+		if (info.getEffector().isAlikeDead())
 		{
 			return;
 		}
+		
+		final L2Character target = info.getEffected();
+		final L2Character activeChar = info.getEffector();
+		final Skill skill = info.getSkill();
 		
 		if (target.isPlayer() && target.getActingPlayer().isFakeDeath())
 		{

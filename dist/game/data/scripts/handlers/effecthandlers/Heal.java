@@ -27,6 +27,7 @@ import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.model.items.type.CrystalType;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
+import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Formulas;
 import com.l2jserver.gameserver.model.stats.Stats;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -62,8 +63,9 @@ public final class Heal extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		L2Character target = info.getEffected();
-		L2Character activeChar = info.getEffector();
+		final L2Character target = info.getEffected();
+		final L2Character activeChar = info.getEffector();
+		final Skill skill = info.getSkill();
 		if ((target == null) || target.isDead() || target.isDoor() || target.isInvul())
 		{
 			return;
@@ -72,18 +74,18 @@ public final class Heal extends AbstractEffect
 		double amount = _power;
 		double staticShotBonus = 0;
 		int mAtkMul = 1;
-		boolean sps = info.getSkill().isMagic() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
-		boolean bss = info.getSkill().isMagic() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+		boolean sps = skill.isMagic() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
+		boolean bss = skill.isMagic() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		
 		if (((sps || bss) && (activeChar.isPlayer() && activeChar.getActingPlayer().isMageClass())) || activeChar.isSummon())
 		{
-			staticShotBonus = info.getSkill().getMpConsume2(); // static bonus for spiritshots
+			staticShotBonus = skill.getMpConsume2(); // static bonus for spiritshots
 			mAtkMul = bss ? 4 : 2;
 			staticShotBonus *= bss ? 2.4 : 1.0;
 		}
 		else if ((sps || bss) && activeChar.isNpc())
 		{
-			staticShotBonus = 2.4 * info.getSkill().getMpConsume2(); // always blessed spiritshots
+			staticShotBonus = 2.4 * skill.getMpConsume2(); // always blessed spiritshots
 			mAtkMul = 4;
 		}
 		else
@@ -99,12 +101,12 @@ public final class Heal extends AbstractEffect
 			mAtkMul = bss ? mAtkMul * 4 : mAtkMul + 1;
 		}
 		
-		if (!info.getSkill().isStatic())
+		if (!skill.isStatic())
 		{
 			amount += staticShotBonus + Math.sqrt(mAtkMul * activeChar.getMAtk(activeChar, null));
 			amount = target.calcStat(Stats.HEAL_EFFECT, amount, null, null);
 			// Heal critic, since CT2.3 Gracia Final
-			if (info.getSkill().isMagic() && Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill())))
+			if (skill.isMagic() && Formulas.calcMCrit(activeChar.getMCriticalHit(target, skill)))
 			{
 				amount *= 3;
 			}
@@ -119,7 +121,7 @@ public final class Heal extends AbstractEffect
 		
 		if (target.isPlayer())
 		{
-			if (info.getSkill().getId() == 4051)
+			if (skill.getId() == 4051)
 			{
 				target.sendPacket(SystemMessageId.REJUVENATING_HP);
 			}
