@@ -25,6 +25,7 @@ import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
+import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Formulas;
 
 /**
@@ -59,20 +60,21 @@ public final class HpDrain extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		L2Character target = info.getEffected();
-		L2Character activeChar = info.getEffector();
+		final L2Character target = info.getEffected();
+		final L2Character activeChar = info.getEffector();
+		final Skill skill = info.getSkill();
 		
 		// TODO: Unhardcode Cubic Skill to avoid double damage
-		if (activeChar.isAlikeDead() || (info.getSkill().getId() == 4050))
+		if (activeChar.isAlikeDead() || (skill.getId() == 4050))
 		{
 			return;
 		}
 		
-		boolean sps = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
-		boolean bss = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
-		boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()));
-		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		double damage = Formulas.calcMagicDam(activeChar, target, info.getSkill(), shld, sps, bss, mcrit, _power);
+		boolean sps = skill.useSpiritShot() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
+		boolean bss = skill.useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+		boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, skill));
+		byte shld = Formulas.calcShldUse(activeChar, target, skill);
+		double damage = Formulas.calcMagicDam(activeChar, target, skill, shld, sps, bss, mcrit, _power);
 		
 		double drain = 0;
 		double cp = target.getCurrentCp();
@@ -104,8 +106,8 @@ public final class HpDrain extends AbstractEffect
 				target.breakCast();
 			}
 			activeChar.sendDamageMessage(target, (int) damage, mcrit, false, false);
-			target.reduceCurrentHp(damage, activeChar, info.getSkill());
-			target.notifyDamageReceived(damage, activeChar, info.getSkill(), mcrit, false, false);
+			target.reduceCurrentHp(damage, activeChar, skill);
+			target.notifyDamageReceived(damage, activeChar, skill, mcrit, false, false);
 		}
 	}
 }

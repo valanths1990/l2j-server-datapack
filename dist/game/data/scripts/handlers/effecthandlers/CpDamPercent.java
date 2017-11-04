@@ -19,6 +19,7 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.model.StatsSet;
+import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
@@ -53,22 +54,23 @@ public final class CpDamPercent extends AbstractEffect
 			return;
 		}
 		
-		if (info.getEffected().isPlayer() && info.getEffected().getActingPlayer().isFakeDeath())
+		final L2Character target = info.getEffected();
+		if (target.isPlayer() && target.getActingPlayer().isFakeDeath())
 		{
-			info.getEffected().stopFakeDeath(true);
+			target.stopFakeDeath(true);
 		}
 		
-		int damage = (int) ((info.getEffected().getCurrentCp() * _power) / 100);
+		double damage = (target.getCurrentCp() * _power) / 100;
 		// Manage attack or cast break of the target (calculating rate, sending message)
-		if (!info.getEffected().isRaid() && Formulas.calcAtkBreak(info.getEffected(), damage))
+		if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
 		{
-			info.getEffected().breakAttack();
-			info.getEffected().breakCast();
+			target.breakAttack();
+			target.breakCast();
 		}
 		
 		if (damage > 0)
 		{
-			info.getEffected().setCurrentCp(info.getEffected().getCurrentCp() - damage);
+			target.setCurrentCp(target.getCurrentCp() - damage);
 		}
 	}
 }

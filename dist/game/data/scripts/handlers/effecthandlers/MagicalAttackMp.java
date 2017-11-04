@@ -25,6 +25,7 @@ import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
+import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Formulas;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
@@ -84,19 +85,20 @@ public final class MagicalAttackMp extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		L2Character target = info.getEffected();
-		L2Character activeChar = info.getEffector();
-		
-		if (activeChar.isAlikeDead())
+		if (info.getEffector().isAlikeDead())
 		{
 			return;
 		}
 		
-		boolean sps = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
-		boolean bss = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
-		final byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()));
-		double damage = Formulas.calcManaDam(activeChar, target, info.getSkill(), shld, sps, bss, mcrit, _power);
+		final L2Character target = info.getEffected();
+		final L2Character activeChar = info.getEffector();
+		final Skill skill = info.getSkill();
+		
+		boolean sps = skill.useSpiritShot() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
+		boolean bss = skill.useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+		final byte shld = Formulas.calcShldUse(activeChar, target, skill);
+		final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, skill));
+		double damage = Formulas.calcManaDam(activeChar, target, skill, shld, sps, bss, mcrit, _power);
 		double mp = (damage > target.getCurrentMp() ? target.getCurrentMp() : damage);
 		
 		if (damage > 0)

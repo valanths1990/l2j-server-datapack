@@ -19,6 +19,7 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.model.StatsSet;
+import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
@@ -61,14 +62,16 @@ public final class HpByLevel extends AbstractEffect
 			return;
 		}
 		
+		final L2Character activeChar = info.getEffector();
+		
 		// Calculation
 		final double abs = _power;
-		final double absorb = ((info.getEffector().getCurrentHp() + abs) > info.getEffector().getMaxHp() ? info.getEffector().getMaxHp() : (info.getEffector().getCurrentHp() + abs));
-		final int restored = (int) (absorb - info.getEffector().getCurrentHp());
-		info.getEffector().setCurrentHp(absorb);
+		final double absorb = ((activeChar.getCurrentHp() + abs) > activeChar.getMaxHp() ? activeChar.getMaxHp() : (activeChar.getCurrentHp() + abs));
+		final int restored = (int) (absorb - activeChar.getCurrentHp());
+		activeChar.setCurrentHp(absorb);
 		// System message
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_RESTORED);
 		sm.addInt(restored);
-		info.getEffector().sendPacket(sm);
+		activeChar.sendPacket(sm);
 	}
 }

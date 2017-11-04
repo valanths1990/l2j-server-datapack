@@ -74,9 +74,9 @@ public final class Backstab extends AbstractEffect
 			return;
 		}
 		
-		L2Character target = info.getEffected();
-		L2Character activeChar = info.getEffector();
-		Skill skill = info.getSkill();
+		final L2Character target = info.getEffected();
+		final L2Character activeChar = info.getEffector();
+		final Skill skill = info.getSkill();
 		boolean ss = skill.useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
 		byte shld = Formulas.calcShldUse(activeChar, target, skill);
 		double damage = Formulas.calcBackstabDamage(activeChar, target, skill, shld, ss, _power);
