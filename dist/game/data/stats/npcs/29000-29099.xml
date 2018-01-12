@@ -2235,7 +2235,6 @@
 			<skill id="4170" level="9" /> <!--BOSS Mortal Blow -->
 			<skill id="4172" level="9" /> <!--Stun -->
 			<skill id="4175" level="9" /> <!--BOSS Haste -->
-			<skill id="4177" level="9" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2464,7 +2463,6 @@
 			<skill id="4168" level="10" /> <!--BOSS Strike -->
 			<skill id="4172" level="10" /> <!--Stun -->
 			<skill id="4175" level="10" /> <!--BOSS Haste -->
-			<skill id="4177" level="10" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3495,7 +3493,6 @@
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4173" level="5" /> <!--BOSS Might -->
-			<skill id="4177" level="5" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3798,7 +3795,6 @@
 			<skill id="4416" level="3" /> <!--Beasts -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="5117" level="1" /> <!--Stun -->
-			<skill id="5118" level="1" /> <!--Cancel Sailren Use -->
 			<skill id="5122" level="1" /> <!--Sailren Use Might -->
 			<skill id="5143" level="1" /> <!--Sailren Use Blow -->
 			<skill id="5180" level="1" /> <!--Raid Boss - Level 80 -->
@@ -5792,7 +5788,6 @@
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4174" level="10" /> <!--BOSS Shield -->
-			<skill id="4177" level="10" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->

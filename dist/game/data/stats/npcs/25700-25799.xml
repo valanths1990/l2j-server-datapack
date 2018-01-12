@@ -546,7 +546,6 @@
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4173" level="8" /> <!--BOSS Might -->
-			<skill id="4177" level="8" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -2895,7 +2894,6 @@
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4175" level="4" /> <!--BOSS Haste -->
-			<skill id="4177" level="4" /> <!--BOSS Cancel Magic -->
 			<skill id="4275" level="2" /> <!--Sacred Attack Weak Point -->
 			<skill id="4278" level="1" /> <!--Dark Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3542,7 +3540,6 @@
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4172" level="6" /> <!--Stun -->
 			<skill id="4175" level="6" /> <!--BOSS Haste -->
-			<skill id="4177" level="6" /> <!--BOSS Cancel Magic -->
 			<skill id="4276" level="1" /> <!--Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->

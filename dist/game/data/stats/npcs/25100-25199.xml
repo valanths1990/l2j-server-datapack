@@ -111,7 +111,6 @@
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4172" level="5" /> <!--Stun -->
 			<skill id="4175" level="5" /> <!--BOSS Haste -->
-			<skill id="4177" level="5" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -981,7 +980,6 @@
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4175" level="4" /> <!--BOSS Haste -->
-			<skill id="4177" level="4" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1383,7 +1381,6 @@
 			<skill id="4170" level="6" /> <!--BOSS Mortal Blow -->
 			<skill id="4171" level="6" /> <!--BOSS Spinning Slash -->
 			<skill id="4176" level="6" /> <!--BOSS Reflect Damage -->
-			<skill id="4177" level="6" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1459,7 +1456,6 @@
 			<skill id="4169" level="7" /> <!--Stun -->
 			<skill id="4172" level="7" /> <!--Stun -->
 			<skill id="4173" level="7" /> <!--BOSS Might -->
-			<skill id="4177" level="7" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1538,7 +1534,6 @@
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4172" level="3" /> <!--Stun -->
 			<skill id="4175" level="3" /> <!--BOSS Haste -->
-			<skill id="4177" level="3" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3152,7 +3147,6 @@
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4174" level="5" /> <!--BOSS Shield -->
-			<skill id="4177" level="5" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3385,7 +3379,6 @@
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4173" level="6" /> <!--BOSS Might -->
-			<skill id="4177" level="6" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3459,7 +3452,6 @@
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4173" level="7" /> <!--BOSS Might -->
-			<skill id="4177" level="7" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -3690,7 +3682,6 @@
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4172" level="3" /> <!--Stun -->
 			<skill id="4173" level="3" /> <!--BOSS Might -->
-			<skill id="4177" level="3" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -4701,7 +4692,6 @@
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4172" level="3" /> <!--Stun -->
 			<skill id="4175" level="3" /> <!--BOSS Haste -->
-			<skill id="4177" level="3" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -5081,7 +5071,6 @@
 			<skill id="4169" level="7" /> <!--Stun -->
 			<skill id="4172" level="7" /> <!--Stun -->
 			<skill id="4176" level="7" /> <!--BOSS Reflect Damage -->
-			<skill id="4177" level="7" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
