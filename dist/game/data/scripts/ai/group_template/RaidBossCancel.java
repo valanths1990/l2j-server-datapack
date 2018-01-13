@@ -18,9 +18,11 @@
  */
 package ai.group_template;
 
+import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
+import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;
@@ -105,6 +107,7 @@ public final class RaidBossCancel extends AbstractNpcAI
 	{
 		super(RaidBossCancel.class.getSimpleName(), "ai/group_template");
 		addAttackId(RAID_BOSSES);
+		addSkillSeeId(RAID_BOSSES);
 	}
 	
 	@Override
@@ -116,6 +119,17 @@ public final class RaidBossCancel extends AbstractNpcAI
 			addSkillCastDesire(npc, attacker, selfRangeCancel, 1000000L);
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
+	}
+	
+	@Override
+	public String onSkillSee(L2Npc npc, L2PcInstance player, Skill skill, L2Object[] targets, boolean isSummon)
+	{
+		final SkillHolder selfRangeCancel = npc.getTemplate().getParameters().getObject("SelfRangeCancel_a", SkillHolder.class);
+		if (Util.checkIfInRange(150, npc, player, true) && (getRandom(750) < 1))
+		{
+			addSkillCastDesire(npc, player, selfRangeCancel, 1000000L);
+		}
+		return super.onSkillSee(npc, player, skill, targets, isSummon);
 	}
 	
 	public static void main(String[] args)
