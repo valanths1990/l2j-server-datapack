@@ -30,6 +30,7 @@ import ai.npc.AbstractNpcAI;
 /**
  * Raid Boss Cancel AI.
  * @author Adry_85
+ * @since 2.6.0.0
  */
 public final class RaidBossCancel extends AbstractNpcAI
 {
