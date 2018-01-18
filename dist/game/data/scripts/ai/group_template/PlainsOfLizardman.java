@@ -62,6 +62,8 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	private static final SkillHolder RAINBOW_FROG_SKILL = new SkillHolder(6429);
 	private static final SkillHolder STICKY_MUSHROOM_SKILL = new SkillHolder(6428);
 	private static final SkillHolder ENERGY_PLANT_SKILL = new SkillHolder(6430);
+	// Misc
+	private static final double HP_PERCENTAGE = 0.60;
 	// Buffs
 	private static final SkillHolder[] BUFFS =
 	{
@@ -122,9 +124,12 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		switch (npc.getId())
 		{
 			case TANTA_SUMMONER:
-				if (!npc.isAffectedBySkill(DEMOTIVATION_HEX.getSkillId()))
+				if ((npc.getCurrentHp() < (npc.getMaxHp() * HP_PERCENTAGE)) && npc.isScriptValue(0))
 				{
+					npc.setScriptValue(1);
 					npc.doCast(DEMOTIVATION_HEX);
+					addAttackDesire(addSpawn(TANTA_SCOUT, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false), attacker);
+					addAttackDesire(addSpawn(TANTA_SCOUT, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false), attacker);
 				}
 				break;
 			case RAINBOW_FROG:
