@@ -263,7 +263,7 @@
 			<height normal="28" />
 		</collision>
 	</npc>
-	<npc id="32007" level="70" type="L2Fisherman" name="Galba" title="Fishing Guild Member">
+	<npc id="32007" level="70" type="L2Merchant" name="Galba" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />

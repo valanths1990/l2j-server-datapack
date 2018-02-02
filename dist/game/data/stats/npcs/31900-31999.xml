@@ -4071,7 +4071,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="31989" level="70" type="L2Fisherman" name="Batidae" title="Fishing Guild Member">
+	<npc id="31989" level="70" type="L2Merchant" name="Batidae" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
