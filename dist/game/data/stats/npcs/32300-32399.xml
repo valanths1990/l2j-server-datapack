@@ -1732,7 +1732,7 @@
 			<height normal="16.5" />
 		</collision>
 	</npc>
-	<npc id="32348" level="70" type="L2Fisherman" name="Burang" title="Fishing Guild Member">
+	<npc id="32348" level="70" type="L2Merchant" name="Burang" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />

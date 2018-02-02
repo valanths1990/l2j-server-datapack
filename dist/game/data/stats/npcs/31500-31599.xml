@@ -2576,7 +2576,7 @@
 			<height normal="9" />
 		</collision>
 	</npc>
-	<npc id="31562" level="70" type="L2Fisherman" name="Klufe" title="Fishing Guild Member">
+	<npc id="31562" level="70" type="L2Merchant" name="Klufe" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2617,7 +2617,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31563" level="70" type="L2Fisherman" name="Perelin" title="Fishing Guild Member">
+	<npc id="31563" level="70" type="L2Merchant" name="Perelin" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2658,7 +2658,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31564" level="70" type="L2Fisherman" name="Mishini" title="Fishing Guild Member">
+	<npc id="31564" level="70" type="L2Merchant" name="Mishini" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2699,7 +2699,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31565" level="70" type="L2Fisherman" name="Ogord" title="Fishing Guild Member">
+	<npc id="31565" level="70" type="L2Merchant" name="Ogord" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2740,7 +2740,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31566" level="70" type="L2Fisherman" name="Ropfi" title="Fishing Guild Member">
+	<npc id="31566" level="70" type="L2Merchant" name="Ropfi" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2781,7 +2781,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31567" level="70" type="L2Fisherman" name="Bleaker" title="Fishing Guild Member">
+	<npc id="31567" level="70" type="L2Merchant" name="Bleaker" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2822,7 +2822,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31568" level="70" type="L2Fisherman" name="Pamfus" title="Fishing Guild Member">
+	<npc id="31568" level="70" type="L2Merchant" name="Pamfus" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2863,7 +2863,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31569" level="70" type="L2Fisherman" name="Cyano" title="Fishing Guild Member">
+	<npc id="31569" level="70" type="L2Merchant" name="Cyano" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2904,7 +2904,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31570" level="70" type="L2Fisherman" name="Lanosco" title="Fishing Guild Member">
+	<npc id="31570" level="70" type="L2Merchant" name="Lanosco" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2945,7 +2945,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31571" level="70" type="L2Fisherman" name="Hufs" title="Fishing Guild Member">
+	<npc id="31571" level="70" type="L2Merchant" name="Hufs" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2986,7 +2986,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31572" level="70" type="L2Fisherman" name="O'Fulle" title="Fishing Guild Member">
+	<npc id="31572" level="70" type="L2Merchant" name="O'Fulle" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3027,7 +3027,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31573" level="70" type="L2Fisherman" name="Monakan" title="Fishing Guild Member">
+	<npc id="31573" level="70" type="L2Merchant" name="Monakan" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3068,7 +3068,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31574" level="70" type="L2Fisherman" name="Willie" title="Fishing Guild Member">
+	<npc id="31574" level="70" type="L2Merchant" name="Willie" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3109,7 +3109,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31575" level="70" type="L2Fisherman" name="Litulon" title="Fishing Guild Member">
+	<npc id="31575" level="70" type="L2Merchant" name="Litulon" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3150,7 +3150,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31576" level="70" type="L2Fisherman" name="Berix" title="Fishing Guild Member">
+	<npc id="31576" level="70" type="L2Merchant" name="Berix" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3191,7 +3191,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31577" level="70" type="L2Fisherman" name="Linnaeus" title="Fishing Guild Member">
+	<npc id="31577" level="70" type="L2Merchant" name="Linnaeus" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3232,7 +3232,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31578" level="70" type="L2Fisherman" name="Hilgendorf" title="Fishing Guild Member">
+	<npc id="31578" level="70" type="L2Merchant" name="Hilgendorf" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3273,7 +3273,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31579" level="70" type="L2Fisherman" name="Klaus" title="Fishing Guild Member">
+	<npc id="31579" level="70" type="L2Merchant" name="Klaus" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />

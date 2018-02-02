@@ -3938,7 +3938,7 @@
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="31696" level="70" type="L2Fisherman" name="Platis" title="Fishing Guild Member">
+	<npc id="31696" level="70" type="L2Merchant" name="Platis" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3979,7 +3979,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31697" level="70" type="L2Fisherman" name="Eindarkner" title="Fishing Guild Member">
+	<npc id="31697" level="70" type="L2Merchant" name="Eindarkner" title="Fishing Guild Member">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
