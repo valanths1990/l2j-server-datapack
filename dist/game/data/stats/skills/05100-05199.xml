@@ -2070,34 +2070,37 @@
 		</effects>
 	</skill>
 	<skill id="5195" levels="12" name="Pet Greater Heal">
-		<table name="#abnormalLvls"> 1 1 2 2 4 6 7 7 7 7 7 7 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 1 2 2 4 6 7 7 7 7 7 7 </table>
 		<table name="#amount"> 58 92 148 219 299 380 450 477 500 525 542 550 </table>
-		<table name="#effectPoints"> 83 151 245 362 494 628 743 789 826 867 895 913 </table>
+		<table name="#effectPoint"> 83 151 245 362 494 628 743 789 826 867 895 913 </table>
+		<table name="#healOverTime"> 4 7 10 15 20 26 30 32 32 32 32 32 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume2"> 7 12 18 25 32 39 46 49 51 52 53 53  </table>
 		<table name="#mpConsume1"> 2 3 5 7 8 10 12 13 13 13 14 14 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume2"> 7 12 18 25 32 39 46 49 51 52 53 53 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
-		<set name="activateRate" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill1217" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#amount" /> <!-- TODO: remove after BabyPet rework -->
-		<set name="reuseDelay" val="6000" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="OWNER_PET" />
 		<effects>
 			<effect name="Heal">
 				<param power="#amount" />
+			</effect>
+			<effect name="HealOverTime" ticks="1">
+				<param power="#healOverTime" />
 			</effect>
 		</effects>
 	</skill>

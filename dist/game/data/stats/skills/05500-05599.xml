@@ -1761,22 +1761,23 @@
 		</effects>
 	</skill>
 	<skill id="5590" levels="12" name="Pet Battle Heal">
+		<!-- High Five Confirmed -->
 		<table name="#amount"> 91 166 269 398 544 690 817 867 909 954 985 1005 </table>
-		<table name="#effectPoints"> 66 121 196 290 396 502 595 631 661 694 716 731 </table>
+		<table name="#effectPoint"> 66 121 196 290 396 502 595 631 661 694 716 731 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume2"> 10 18 27 37 48 59 68 73 76 78 79 79 </table>
 		<table name="#mpConsume1"> 3 5 7 10 12 15 17 19 19 20 20 20 </table>
+		<table name="#mpConsume2"> 10 18 27 37 48 59 68 73 76 78 79 79 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1218" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#amount" /> <!-- TODO: remove after BabyPet rework -->
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="OWNER_PET" />

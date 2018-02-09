@@ -1100,7 +1100,7 @@
 			<height normal="5.271" />
 		</collision>
 	</npc>
-	<npc id="16034" level="55" type="L2BabyPet" name="Improved Baby Buffalo">
+	<npc id="16034" level="55" type="L2Pet" name="Improved Baby Buffalo">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<skill name="step0_buff01" id="5189" level="6" /> <!-- Pet Blessed Body -->
@@ -1228,7 +1228,7 @@
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="16035" level="55" type="L2BabyPet" name="Improved Baby Kookaburra">
+	<npc id="16035" level="55" type="L2Pet" name="Improved Baby Kookaburra">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<skill name="step0_buff01" id="5194" level="3" /> <!-- Pet Empower -->
@@ -1357,7 +1357,7 @@
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="16036" level="55" type="L2BabyPet" name="Improved Baby Cougar">
+	<npc id="16036" level="55" type="L2Pet" name="Improved Baby Cougar">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<skill name="step0_buff01" id="5194" level="3" /> <!-- Pet Empower -->
@@ -2230,7 +2230,7 @@
 			<height normal="16.5" />
 		</collision>
 	</npc>
-	<npc id="16045" level="55" type="L2BabyPet" name="White Weasel">
+	<npc id="16045" level="55" type="L2Pet" name="White Weasel">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="133" />
@@ -2323,7 +2323,7 @@
 			<height normal="12.5" />
 		</collision>
 	</npc>
-	<npc id="16046" level="55" type="L2BabyPet" name="Fairy Princess">
+	<npc id="16046" level="55" type="L2Pet" name="Fairy Princess">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="123" />
@@ -2486,7 +2486,7 @@
 			<height normal="19.5" />
 		</collision>
 	</npc>
-	<npc id="16051" level="55" type="L2BabyPet" name="Spirit Shaman">
+	<npc id="16051" level="55" type="L2Pet" name="Spirit Shaman">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="80" />
@@ -2631,7 +2631,7 @@
 			<height normal="15.6" />
 		</collision>
 	</npc>
-	<npc id="16052" level="55" type="L2BabyPet" name="Toy Knight">
+	<npc id="16052" level="55" type="L2Pet" name="Toy Knight">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="58" />
@@ -2806,7 +2806,7 @@
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="16053" level="55" type="L2BabyPet" name="Turtle Ascetic">
+	<npc id="16053" level="55" type="L2Pet" name="Turtle Ascetic">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="100" />
