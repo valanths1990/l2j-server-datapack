@@ -149,13 +149,15 @@
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
 		<effects>
-			<effect name="CpHeal">
-				<param power="#amount" />
+			<effect name="Cp">
+				<param amount="#amount" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="CpHeal">
-				<param power="#ench1amount" />
+			<effect name="Cp">
+				<param amount="#ench1amount" />
+				<param mode="DIFF" />
 			</effect>
 		</enchant1Effects>
 	</skill>
@@ -187,13 +189,15 @@
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
 		<effects>
-			<effect name="CpHeal">
-				<param power="#amount" />
+			<effect name="Cp">
+				<param amount="#amount" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="CpHeal">
-				<param power="#ench1amount" />
+			<effect name="Cp">
+				<param amount="#ench1amount" />
+				<param mode="DIFF" />
 			</effect>
 		</enchant1Effects>
 	</skill>

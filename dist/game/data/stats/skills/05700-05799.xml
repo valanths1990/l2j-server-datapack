@@ -854,8 +854,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="CpHeal">
-				<param power="5000" />
+			<effect name="Cp">
+				<param amount="5000" />
+				<param mode="DIFF" />
 			</effect>
 			<effect name="HealPercent">
 				<param power="100" />

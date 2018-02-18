@@ -552,9 +552,6 @@
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-			<effect name="CpHealPercent">
-				<param power="20" />
-			</effect>
 		</effects>
 		<enchant3Effects>
 			<effect name="Buff">
@@ -571,9 +568,6 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="runSpd" val="#ench3decreasePenalty" />
-			</effect>
-			<effect name="CpHealPercent">
-				<param power="20" />
 			</effect>
 		</enchant3Effects>
 	</skill>

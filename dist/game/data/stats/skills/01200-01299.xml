@@ -2636,8 +2636,9 @@
 			</effect>
 		</effects>
 		<enchant2Effects>
-			<effect name="CpHeal">
-				<param power="#ench2Bravery" />
+			<effect name="Cp">
+				<param amount="#ench2Bravery" />
+				<param mode="DIFF" />
 			</effect>
 			<effect name="HealPercent">
 				<param power="100" />

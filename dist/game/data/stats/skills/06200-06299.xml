@@ -1188,8 +1188,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<effects>
-			<effect name="CpHealPercent">
-				<param power="100" />
+			<effect name="Cp">
+				<param amount="100" />
+				<param mode="PER" />
 			</effect>
 			<effect name="HealPercent">
 				<param power="100" />
