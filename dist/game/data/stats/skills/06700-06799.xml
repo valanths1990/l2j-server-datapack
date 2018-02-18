@@ -376,8 +376,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Heal">
-				<param power="458" />
+			<effect name="Hp">
+				<param amount="687" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

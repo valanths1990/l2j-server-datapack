@@ -1282,8 +1282,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Heal">
-				<param power="2300" />
+			<effect name="Hp">
+				<param amount="2300" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

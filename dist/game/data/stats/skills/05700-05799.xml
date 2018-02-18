@@ -228,11 +228,6 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<effects>
-			<effect name="Heal">
-				<param power="200" />
-			</effect>
-		</effects>
 	</skill>
 	<skill id="5713" levels="5" name="Energy Ditch">
 		<table name="#abnormalLvls"> 1 2 3 4 5 </table>

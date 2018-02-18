@@ -51,7 +51,7 @@ public final class Heal extends AbstractEffect
 	@Override
 	public L2EffectType getEffectType()
 	{
-		return L2EffectType.HEAL;
+		return L2EffectType.HP;
 	}
 	
 	@Override
@@ -129,14 +129,14 @@ public final class Heal extends AbstractEffect
 			{
 				if (activeChar.isPlayer() && (activeChar != target))
 				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_RESTORED_BY_C1);
+					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_HAS_BEEN_RESTORED_BY_C1);
 					sm.addString(activeChar.getName());
 					sm.addInt((int) amount);
 					target.sendPacket(sm);
 				}
 				else
 				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_RESTORED);
+					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_HAS_BEEN_RESTORED);
 					sm.addInt((int) amount);
 					target.sendPacket(sm);
 				}

@@ -1077,8 +1077,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
 		<effects>
-			<effect name="Heal">
-				<param power="1000" /> <!-- TODO: Custom. -->
+			<effect name="Hp">
+				<param amount="1100" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

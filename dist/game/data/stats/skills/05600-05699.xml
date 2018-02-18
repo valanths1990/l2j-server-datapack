@@ -54,8 +54,9 @@
 			<effect name="Debuff">
 				<mul stat="maxRecoverableHp" val="0.1" />
 			</effect>
-			<effect name="HealPercent">
-				<param power="-99" />
+			<effect name="Hp">
+				<param amount="-99" />
+				<param mode="PER" />
 			</effect>
 		</effects>
 	</skill>
@@ -1888,8 +1889,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Heal">
-				<param power="#amount" />
+			<effect name="Hp">
+				<param amount="#amount" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
