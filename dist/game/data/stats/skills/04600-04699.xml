@@ -1354,8 +1354,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CORPSE" />
 		<effects>
-			<effect name="Heal">
-				<param power="#amount" />
+			<effect name="Hp">
+				<param amount="#amount" />
+				<param mode="DIFF" />
 			</effect>
 			<effect name="ConsumeBody" />
 		</effects>

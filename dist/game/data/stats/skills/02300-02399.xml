@@ -1865,8 +1865,9 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="Heal">
-				<param power="1900" />
+			<effect name="Hp">
+				<param amount="1900" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

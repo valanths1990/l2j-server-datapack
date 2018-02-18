@@ -995,8 +995,9 @@
 			<player flyMounted="false" />
 		</cond>
 		<effects>
-			<effect name="Heal">
-				<param power="60" />
+			<effect name="Hp">
+				<param amount="60" />
+				<param mode="DIFF" />
 			</effect>
 			<effect name="HealPercent">
 				<param power="17" />
@@ -1928,8 +1929,9 @@
 			<player levelRange="#levelRange" />
 		</cond>
 		<effects>
-			<effect name="Heal">
-				<param power="#amount" />
+			<effect name="Hp">
+				<param amount="#amount" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

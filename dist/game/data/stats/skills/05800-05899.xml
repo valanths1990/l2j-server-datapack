@@ -1676,6 +1676,10 @@
 				<mul stat="critDmg" val="1.2" />
 				<mul stat="critRate" val="1.2" />
 			</effect>
+			<effect name="Hp">
+				<param amount="-33" />
+				<param mode="PER" />
+			</effect>
 		</effects>
 	</skill>
 	<skill id="5895" levels="1" name="Mark of Cowardice">
@@ -1706,6 +1710,10 @@
 				<mul stat="maxHp" val="0.8" />
 				<mul stat="regHp" val="0.1" />
 				<mul stat="runSpd" val="1.25" />
+			</effect>
+			<effect name="Hp">
+				<param amount="-33" />
+				<param mode="PER" />
 			</effect>
 		</effects>
 	</skill>

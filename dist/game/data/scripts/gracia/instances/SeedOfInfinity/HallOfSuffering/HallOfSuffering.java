@@ -422,7 +422,7 @@ public final class HallOfSuffering extends AbstractInstance
 	@Override
 	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
 	{
-		if (skill.hasEffectType(L2EffectType.REBALANCE_HP, L2EffectType.HEAL))
+		if (skill.hasEffectType(L2EffectType.REBALANCE_HP, L2EffectType.HP))
 		{
 			int hate = 2 * skill.getEffectPoint();
 			if (hate < 2)
