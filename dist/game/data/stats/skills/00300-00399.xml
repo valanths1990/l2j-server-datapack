@@ -765,8 +765,8 @@
 		<table name="#effectPoints"> -307 -311 -314 -317 -320 -323 -326 -328 -331 -333 </table>
 		<table name="#magicLvl"> 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume2"> 66 67 68 69 70 71 72 73 74 75 </table>
-		<table name="#power"> 7 10 12 15 17 20 22 25 27 30 </table>
-		<table name="#ench1Power"> 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 </table>
+		<table name="#power"> -7 -10 -12 -15 -17 -20 -22 -25 -27 -30 </table>
+		<table name="#ench1Power"> -31 -32 -33 -34 -35 -36 -37 -38 -39 -40 -41 -42 -43 -44 -45 -46 -47 -48 -49 -50 -51 -52 -53 -54 -55 -56 -57 -58 -59 -60 </table>
 		<table name="#ench2MpConsume2"> 74 72 71 69 68 67 65 64 62 61 59 58 56 55 53 52 50 49 48 46 45 43 42 40 39 37 36 34 33 32 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="affectLimit" val="5-12" />
@@ -791,13 +791,15 @@
 			<using kind="POLE" />
 		</cond>
 		<effects>
-			<effect name="CpDamPercent">
-				<param power="#power" />
+			<effect name="Cp">
+				<param amount="#power" />
+				<param mode="PER" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="CpDamPercent">
-				<param power="#ench1Power" />
+			<effect name="Cp">
+				<param amount="#ench1Power" />
+				<param mode="PER" />
 			</effect>
 		</enchant1Effects>
 	</skill>
@@ -1414,8 +1416,9 @@
 			<effect name="DispelByCategory">
 				<param slot="BUFF" rate="25" max="5" />
 			</effect>
-			<effect name="CpDamPercent">
-				<param power="90" />
+			<effect name="Cp">
+				<param amount="-90" />
+				<param mode="PER" />
 			</effect>
 		</effects>
 		<enchant2Effects>
@@ -1427,8 +1430,9 @@
 			<effect name="DispelByCategory">
 				<param slot="BUFF" rate="25" max="5" />
 			</effect>
-			<effect name="CpDamPercent">
-				<param power="90" />
+			<effect name="Cp">
+				<param amount="-90" />
+				<param mode="PER" />
 			</effect>
 		</enchant2Effects>
 	</skill>

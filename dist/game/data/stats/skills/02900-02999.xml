@@ -175,8 +175,9 @@
 			<player levelRange="61;75" />
 		</cond>
 		<effects>
-			<effect name="CpHeal">
-				<param power="360" />
+			<effect name="Cp">
+				<param amount="360" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

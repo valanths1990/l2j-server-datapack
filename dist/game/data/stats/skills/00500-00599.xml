@@ -1481,8 +1481,9 @@
 			<player cp="80" />
 		</cond>
 		<effects>
-			<effect name="CpDamPercent">
-				<param power="100" />
+			<effect name="Cp">
+				<param amount="-100" />
+				<param mode="PER" />
 			</effect>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.35" />

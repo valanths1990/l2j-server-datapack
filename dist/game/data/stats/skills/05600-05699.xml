@@ -1526,8 +1526,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="CpHeal">
-				<param power="200" />
+			<effect name="Cp">
+				<param amount="200" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

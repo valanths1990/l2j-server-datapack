@@ -778,8 +778,9 @@
 			<effect name="ConsumeBody" />
 		</enchant2Effects>
 		<enchant2selfEffects>
-			<effect name="CpHeal">
-				<param power="#ench2Bravery" />
+			<effect name="Cp">
+				<param amount="#ench2Bravery" />
+				<param mode="DIFF" />
 			</effect>
 		</enchant2selfEffects>
 	</skill>
@@ -922,8 +923,9 @@
 			</effect>
 		</enchant1Effects>
 		<enchant3Effects>
-			<effect name="CpHeal">
-				<param power="#ench3Bravery" />
+			<effect name="Cp">
+				<param amount="#ench3Bravery" />
+				<param mode="DIFF" />
 			</effect>
 			<effect name="ManaHeal">
 				<param power="61" />

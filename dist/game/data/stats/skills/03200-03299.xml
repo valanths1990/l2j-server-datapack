@@ -1270,8 +1270,9 @@
 			<effect name="Heal">
 				<param power="200" />
 			</effect>
-			<effect name="CpHeal">
-				<param power="200" />
+			<effect name="Cp">
+				<param amount="200" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

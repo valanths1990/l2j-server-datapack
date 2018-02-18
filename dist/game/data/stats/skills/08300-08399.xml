@@ -211,8 +211,9 @@
 			<effect name="Buff">
 				<add stat="maxCp" val="1200" />
 			</effect>
-			<effect name="CpHeal">
-				<param power="1200" />
+			<effect name="Cp">
+				<param amount="1200" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -236,8 +237,9 @@
 			<effect name="Buff">
 				<add stat="maxCp" val="800" />
 			</effect>
-			<effect name="CpHeal">
-				<param power="800" />
+			<effect name="Cp">
+				<param amount="800" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -598,8 +600,9 @@
 			<effect name="Buff">
 				<add stat="maxCp" val="1500" />
 			</effect>
-			<effect name="CpHeal">
-				<param power="1500" />
+			<effect name="Cp">
+				<param amount="1500" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

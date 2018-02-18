@@ -934,8 +934,9 @@
 				<param block="MP"/>
 			</effect>
 			<effect name="BlockDebuff" />
-			<effect name="CpHealPercent">
-				<param power="100" />
+			<effect name="Cp">
+				<param amount="9000" />
+				<param mode="DIFF" />
 			</effect>
 			<effect name="HealPercent">
 				<param power="100" />

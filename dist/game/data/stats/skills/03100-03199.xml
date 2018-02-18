@@ -864,8 +864,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="CpHeal">
-				<param power="#amount" />
+			<effect name="Cp">
+				<param amount="#amount" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

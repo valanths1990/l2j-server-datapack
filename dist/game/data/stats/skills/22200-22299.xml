@@ -416,8 +416,9 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="CpHealPercent">
-				<param power="100" />
+			<effect name="Cp">
+				<param amount="20000" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -433,8 +434,9 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="CpHealPercent">
-				<param power="100" />
+			<effect name="Cp">
+				<param amount="20000" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
