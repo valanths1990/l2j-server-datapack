@@ -1546,8 +1546,9 @@
 				<param amount="500" />
 				<param mode="DIFF" />
 			</effect>
-			<effect name="ManaHeal">
-				<param power="200" />
+			<effect name="Mp">
+				<param amount="200" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

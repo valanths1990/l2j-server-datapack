@@ -455,9 +455,10 @@
 				<param power="57" />
 				<param drain="0.4" />
 			</effect>
-			<effect name="ManaDamOverTime">
-				<param power="274" />
-			</effect>
+			<effect name="Mp">
+				<param amount="-274" />
+				<param mode="DIFF" />
+ 			</effect>
 		</effects>
 	</skill>
 	<skill id="4219" levels="1" name="Hold">

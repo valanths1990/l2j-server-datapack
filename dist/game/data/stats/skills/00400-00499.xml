@@ -954,13 +954,15 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="ManaHeal">
-				<param power="#amount" />
+			<effect name="Mp">
+				<param amount="#amount" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="ManaHeal">
-				<param power="#ench1amount" />
+			<effect name="Mp">
+				<param amount="#ench1amount" />
+				<param mode="DIFF" />
 			</effect>
 		</enchant1Effects>
 	</skill>

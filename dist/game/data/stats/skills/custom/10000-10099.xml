@@ -26,8 +26,9 @@
 		<set name="reuseDelay" val="500" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="ManaHeal">
-				<param power="100" />
+			<effect name="Mp">
+				<param amount="100" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

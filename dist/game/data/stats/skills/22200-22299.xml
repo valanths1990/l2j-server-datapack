@@ -1093,8 +1093,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
 		<effects>
-			<effect name="ManaHeal">
-				<param power="1000" /> <!-- TODO: Custom. -->
+			<effect name="Mp">
+				<param amount="360" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

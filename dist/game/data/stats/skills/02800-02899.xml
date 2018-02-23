@@ -1440,8 +1440,9 @@
 			<player levelRange="#levelRange" />
 		</cond>
 		<effects>
-			<effect name="ManaHeal">
-				<param power="#amount" />
+			<effect name="Mp">
+				<param amount="#amount" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

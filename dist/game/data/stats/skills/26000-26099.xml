@@ -386,8 +386,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="ManaHeal">
-				<param power="60" />
+			<effect name="Mp">
+				<param amount="60" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

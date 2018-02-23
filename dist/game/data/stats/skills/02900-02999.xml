@@ -159,8 +159,9 @@
 			<player levelRange="61;75" />
 		</cond>
 		<effects>
-			<effect name="ManaHeal">
-				<param power="360" />
+			<effect name="Mp">
+				<param amount="360" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

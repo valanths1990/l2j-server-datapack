@@ -688,9 +688,9 @@
 	</skill>
 	<skill id="4039" levels="12" name="NPC MP Drain">
 		<!-- Freya retail confirmed -->
+		<table name="#amount"> -34 -57 -78 -105 -134 -165 -194 -206 -216 -224 -229 -232 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 13 20 27 35 45 55 65 69 73 75 77 78 </table>
-		<table name="#power"> 34 57 78 105 134 165 194 206 216 224 229 232 </table>
 		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
@@ -704,9 +704,10 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
-			<effect name="MagicalAttackMp">
-				<param power="#power" />
-			</effect>
+			<effect name="Mp">
+				<param amount="#amount" />
+				<param mode="DIFF" />
+ 			</effect>
 		</effects>
 	</skill>
 	<skill id="4040" levels="12" name="NPC Bow Attack">
