@@ -1192,10 +1192,10 @@
 				<param amount="100" />
 				<param mode="PER" />
 			</effect>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
-			<effect name="ManaHealPercent">
+			<effect name="MpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>

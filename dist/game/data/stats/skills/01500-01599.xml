@@ -186,10 +186,10 @@
 				<param amount="9000" />
 				<param mode="DIFF" />
 			</effect>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
-			<effect name="ManaHealPercent">
+			<effect name="MpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>
@@ -219,10 +219,10 @@
 				<param amount="9000" />
 				<param mode="DIFF" />
 			</effect>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
-			<effect name="ManaHealPercent">
+			<effect name="MpPerMax">
 				<param power="100" />
 			</effect>
 			<effect name="DispelByCategory">
@@ -1813,7 +1813,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA_FRIENDLY" />
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="30" />
 			</effect>
 		</effects>

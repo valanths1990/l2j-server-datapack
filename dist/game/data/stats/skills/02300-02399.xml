@@ -1322,7 +1322,7 @@
 			<target npcId="18482" />
 		</cond>
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="30" />
 			</effect>
 		</effects>

@@ -2132,12 +2132,12 @@
 			</not>
 		</cond>
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="#amount" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="#ench1power" />
 			</effect>
 		</enchant1Effects>
@@ -2631,7 +2631,7 @@
 			<player mp="25" />
 		</cond>
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>
@@ -2640,7 +2640,7 @@
 				<param amount="#ench2Bravery" />
 				<param mode="DIFF" />
 			</effect>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
 		</enchant2Effects>

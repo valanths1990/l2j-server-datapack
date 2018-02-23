@@ -28,14 +28,14 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * Mana Heal Percent effect implementation.
+ * Mp Per Max effect implementation.
  * @author UnAfraid
  */
-public final class ManaHealPercent extends AbstractEffect
+public final class MpPerMax extends AbstractEffect
 {
 	private final double _power;
 	
-	public ManaHealPercent(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public MpPerMax(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		

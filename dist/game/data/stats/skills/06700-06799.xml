@@ -525,7 +525,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>
@@ -701,7 +701,7 @@
 			<player hp="10" />
 		</cond>
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>
@@ -988,7 +988,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>
@@ -1107,7 +1107,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="10" />
 			</effect>
 		</effects>

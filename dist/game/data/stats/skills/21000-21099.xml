@@ -642,10 +642,10 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
-			<effect name="ManaHealPercent">
+			<effect name="MpPerMax">
 				<param power="50" />
 			</effect>
 		</effects>

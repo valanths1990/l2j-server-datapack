@@ -999,7 +999,7 @@
 				<param amount="60" />
 				<param mode="DIFF" />
 			</effect>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="17" />
 			</effect>
 		</effects>
@@ -1023,7 +1023,7 @@
 				<param amount="20" />
 				<param mode="DIFF" />
 			</effect>
-			<effect name="ManaHealPercent">
+			<effect name="MpPerMax">
 				<param power="4" />
 			</effect>
 		</effects>
@@ -1725,7 +1725,7 @@
 			<player flyMounted="false" />
 		</cond>
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="#amount" />
 			</effect>
 		</effects>
@@ -1746,7 +1746,7 @@
 			<player flyMounted="false" />
 		</cond>
 		<effects>
-			<effect name="ManaHealPercent">
+			<effect name="MpPerMax">
 				<param power="#amount" />
 			</effect>
 		</effects>

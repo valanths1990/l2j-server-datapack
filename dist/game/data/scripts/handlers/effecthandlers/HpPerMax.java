@@ -28,14 +28,14 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * Heal Percent effect implementation.
+ * Hp Per Max effect implementation.
  * @author UnAfraid
  */
-public final class HealPercent extends AbstractEffect
+public final class HpPerMax extends AbstractEffect
 {
 	private final int _power;
 	
-	public HealPercent(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public HpPerMax(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		

@@ -83,10 +83,10 @@
 			<player mp="10" />
 		</cond>
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
-			<effect name="ManaHealPercent">
+			<effect name="MpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>
@@ -2370,7 +2370,7 @@
 			<effect name="HealOverTime" ticks="5">
 				<param power="50" />
 			</effect>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="50" />
 			</effect>
 		</effects>

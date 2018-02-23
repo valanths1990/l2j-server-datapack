@@ -842,7 +842,7 @@
 			<player levelRange="#levelRange" />
 		</cond>
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="50" />
 			</effect>
 		</effects>

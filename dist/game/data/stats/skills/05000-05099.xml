@@ -187,7 +187,7 @@
 			<effect name="DispelByCategory">
 				<param slot="BUFF" rate="#activateRate" max="#maxNegated" />
 			</effect>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="#healPercent" />
 			</effect>
 		</effects>
@@ -403,7 +403,7 @@
 			<effect name="Grow">
 				<mul stat="runSpd" val="1.22" />
 			</effect>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="20" />
 			</effect>
 		</effects>

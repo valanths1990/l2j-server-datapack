@@ -295,7 +295,7 @@
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hot" />
 			</effect>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="3" />
 			</effect>
 		</effects>

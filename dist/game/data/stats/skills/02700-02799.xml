@@ -2791,7 +2791,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="#hpHeal" />
 			</effect>
 		</effects>
@@ -2808,7 +2808,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="ManaHealPercent">
+			<effect name="MpPerMax">
 				<param power="#mpHeal" />
 			</effect>
 		</effects>
@@ -2826,10 +2826,10 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="#hpHeal" />
 			</effect>
-			<effect name="ManaHealPercent">
+			<effect name="MpPerMax">
 				<param power="#mpHeal" />
 			</effect>
 		</effects>
