@@ -318,7 +318,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="ManaHealPercent">
+			<effect name="MpPerMax">
 				<param power="50" />
 			</effect>
 		</effects>
@@ -382,7 +382,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>
@@ -399,7 +399,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>

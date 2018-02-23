@@ -1419,7 +1419,7 @@
 			<player hp="10" />
 		</cond>
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>

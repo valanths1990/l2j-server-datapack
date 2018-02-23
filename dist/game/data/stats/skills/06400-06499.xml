@@ -652,7 +652,7 @@
 			<effect name="DefenceTrait">
 				<param HOLD="100" />
 			</effect>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="90" />
 			</effect>
 		</effects>
@@ -691,7 +691,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="30" />
 			</effect>
 		</effects>

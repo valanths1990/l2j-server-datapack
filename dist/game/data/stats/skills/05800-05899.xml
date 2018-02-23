@@ -505,7 +505,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN_MEMBER" />
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="10" />
 			</effect>
 		</effects>
@@ -532,7 +532,7 @@
 			<effect name="HealOverTime" ticks="1">
 				<param power="270" />
 			</effect>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="20" />
 			</effect>
 		</effects>

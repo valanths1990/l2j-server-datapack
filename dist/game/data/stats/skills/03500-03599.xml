@@ -1538,7 +1538,7 @@
 			</not>
 		</cond>
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>
@@ -1576,7 +1576,7 @@
 			</not>
 		</cond>
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>

@@ -924,7 +924,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="CLAN" />
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>
@@ -3403,7 +3403,7 @@
 			<target active_effect_id="1487" />
 		</cond>
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="#amount" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -3411,7 +3411,7 @@
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="#ench1amount" />
 			</effect>
 			<effect name="DispelBySlot">

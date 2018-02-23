@@ -486,7 +486,7 @@
 			<target race="CONSTRUCT" />
 		</cond>
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="#amount" />
 			</effect>
 		</effects>
@@ -765,7 +765,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="HealPercent">
+			<effect name="HpPerMax">
 				<param power="100" />
 			</effect>
 		</effects>
