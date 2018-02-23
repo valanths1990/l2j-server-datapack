@@ -1846,8 +1846,9 @@
 			</effect>
 		</pveEffects>
 		<selfEffects>
-			<effect name="ManaHeal">
-				<param power="29" />
+			<effect name="Mp">
+				<param amount="29" />
+				<param mode="DIFF" />
 			</effect>
 		</selfEffects>
 	</skill>
@@ -1877,8 +1878,9 @@
 			</effect>
 		</pveEffects>
 		<selfEffects>
-			<effect name="ManaHeal">
-				<param power="25" />
+			<effect name="Mp">
+				<param amount="25" />
+				<param mode="DIFF" />
 			</effect>
 		</selfEffects>
 	</skill>

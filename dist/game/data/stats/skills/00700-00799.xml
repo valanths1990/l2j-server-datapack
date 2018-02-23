@@ -434,6 +434,7 @@
 	</skill>
 	<skill id="715" levels="4" name="Zaken Energy Drain">
 		<!-- Confirmed CT2.5 -->
+		<table name="#amount"> -274 -348 -422 -496 </table>
 		<table name="#effectPoints"> -307 -323 -335 -342 </table>
 		<table name="#magicLvl"> 65 70 75 80 </table>
 		<table name="#mpConsume2"> 60 65 69 72 </table>
@@ -459,6 +460,10 @@
 				<param power="#power" />
 				<param drain="0.4" />
 			</effect>
+			<effect name="Mp">
+				<param amount="#amount" />
+				<param mode="DIFF" />
+ 			</effect>
 		</effects>
 	</skill>
 	<skill id="716" levels="4" name="Zaken Hold">

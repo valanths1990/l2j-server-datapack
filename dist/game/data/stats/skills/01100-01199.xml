@@ -913,13 +913,15 @@
 		<set name="targetType" val="SELF" />
 		<enchant2 name="hpConsume" val="#ench2hpConsume" />
 		<effects>
-			<effect name="ManaHeal">
-				<param power="#amount" />
+			<effect name="Mp">
+				<param amount="#amount" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="ManaHeal">
-				<param power="#ench1amount" />
+			<effect name="Mp">
+				<param amount="#ench1amount" />
+				<param mode="DIFF" />
 			</effect>
 		</enchant1Effects>
 		<enchant3Effects>
@@ -927,8 +929,9 @@
 				<param amount="#ench3Bravery" />
 				<param mode="DIFF" />
 			</effect>
-			<effect name="ManaHeal">
-				<param power="61" />
+			<effect name="Mp">
+				<param amount="61" />
+				<param mode="DIFF" />
 			</effect>
 		</enchant3Effects>
 	</skill>

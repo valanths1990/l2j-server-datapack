@@ -1019,8 +1019,9 @@
 			<player flyMounted="false" />
 		</cond>
 		<effects>
-			<effect name="ManaHeal">
-				<param power="20" />
+			<effect name="Mp">
+				<param amount="20" />
+				<param mode="DIFF" />
 			</effect>
 			<effect name="ManaHealPercent">
 				<param power="4" />
@@ -1948,8 +1949,9 @@
 			<player levelRange="#levelRange" />
 		</cond>
 		<effects>
-			<effect name="ManaHeal">
-				<param power="#amount" />
+			<effect name="Mp">
+				<param amount="#amount" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
