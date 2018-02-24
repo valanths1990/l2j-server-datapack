@@ -20,7 +20,6 @@ package handlers.itemhandlers;
 
 import java.util.List;
 
-import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.PetDataTable;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.handler.IItemHandler;
@@ -70,7 +69,7 @@ public class PetFood implements IItemHandler
 				if (pet.destroyItem("Consume", item.getObjectId(), 1, null, false))
 				{
 					pet.broadcastPacket(new MagicSkillUse(pet, pet, skillId, skillLevel, 0, 0));
-					pet.setCurrentFed(pet.getCurrentFed() + (skill.getFeed() * Config.PET_FOOD_RATE));
+					skill.applyEffects(pet, pet);
 					pet.broadcastStatusUpdate();
 					if (pet.isHungry())
 					{
@@ -90,14 +89,13 @@ public class PetFood implements IItemHandler
 						if (player.destroyItem("Consume", item.getObjectId(), 1, null, false))
 						{
 							player.broadcastPacket(new MagicSkillUse(player, player, skillId, skillLevel, 0, 0));
-							player.setCurrentFeed(player.getCurrentFeed() + skill.getFeed());
+							skill.applyEffects(player, player);
 							return true;
 						}
 					}
 				}
-				final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
-				sm.addItemName(item);
-				player.sendPacket(sm);
+				
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED).addItemName(item));
 			}
 		}
 		return false;

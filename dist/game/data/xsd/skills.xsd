@@ -41,9 +41,7 @@
 							<xs:enumeration value="elementPower" />
 							<xs:enumeration value="excludedFromCheck" />
 							<xs:enumeration value="fanRange" />
-							<xs:enumeration value="feed" />
 							<xs:enumeration value="flyType" />
-							<xs:enumeration value="halfKillRate" />
 							<xs:enumeration value="hitTime" />
 							<xs:enumeration value="hpConsume" />
 							<xs:enumeration value="icon" />
@@ -239,6 +237,7 @@
 				<xs:attribute type="xs:string" name="chance" use="optional" />
 				<xs:attribute type="xs:string" name="power" use="optional" />
 				<xs:attribute type="operation" name="type" use="optional" />
+				<xs:attribute type="operation" name="mode" use="optional" />
 				<xs:attribute type="xs:boolean" name="heal" use="optional" />
 				<xs:attribute type="xs:string" name="criticalChance" use="optional" />
 				<xs:attribute type="xs:byte" name="blowChance" use="optional" />
@@ -311,7 +310,7 @@
 				<xs:attribute type="xs:string" name="itemId" use="optional" />
 				<xs:attribute type="xs:string" name="itemCount" use="optional" />
 				<xs:attribute type="xs:short" name="id" use="optional" />
-				<xs:attribute type="xs:short" name="amount" use="optional" />
+				<xs:attribute type="xs:string" name="amount" use="optional" />
 				<xs:attribute type="xs:int" name="despawnDelay" use="optional" />
 				<xs:attribute type="xs:string" name="isSummonSpawn" use="optional" />
 				<xs:attribute type="xs:string" name="escapeType" use="optional" />
@@ -337,6 +336,9 @@
 				<xs:attribute type="xs:short" name="skillId3" use="optional" />
 				<xs:attribute type="xs:string" name="time" use="optional" />
 				<xs:attribute type="xs:string" name="flyRadius" use="optional" />
+				<xs:attribute type="xs:string" name="normal" use="optional" />
+				<xs:attribute type="xs:string" name="ride" use="optional" />
+				<xs:attribute type="xs:string" name="wyvern" use="optional" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -523,10 +525,8 @@
 					<xs:enumeration value="Confuse" />
 					<xs:enumeration value="ConsumeBody" />
 					<xs:enumeration value="ConvertItem" />
-					<xs:enumeration value="CpDamPercent" />
-					<xs:enumeration value="CpHeal" />
+					<xs:enumeration value="Cp" />
 					<xs:enumeration value="CpHealOverTime" />
-					<xs:enumeration value="CpHealPercent" />
 					<xs:enumeration value="CrystalGradeModify" />
 					<xs:enumeration value="CubicMastery" />
 					<xs:enumeration value="DamOverTime" />
@@ -555,6 +555,7 @@
 					<xs:enumeration value="FocusEnergy" />
 					<xs:enumeration value="FocusMaxEnergy" />
 					<xs:enumeration value="FocusSouls" />
+					<xs:enumeration value="FoodForPet" />
 					<xs:enumeration value="GetAgro" />
 					<xs:enumeration value="GiveRecommendation" />
 					<xs:enumeration value="GiveSp" />
@@ -563,10 +564,11 @@
 					<xs:enumeration value="HeadquarterCreate" />
 					<xs:enumeration value="Heal" />
 					<xs:enumeration value="HealOverTime" />
-					<xs:enumeration value="HealPercent" />
 					<xs:enumeration value="Hide" />
+					<xs:enumeration value="Hp" />
 					<xs:enumeration value="HpByLevel" />
 					<xs:enumeration value="HpDrain" />
+					<xs:enumeration value="HpPerMax" />
 					<xs:enumeration value="ImmobileBuff" />
 					<xs:enumeration value="ImmobilePetBuff" />
 					<xs:enumeration value="Lethal" />
@@ -576,13 +578,13 @@
 					<xs:enumeration value="MagicalAttackMp" />
 					<xs:enumeration value="MagicalSoulAttack" />
 					<xs:enumeration value="ManaDamOverTime" />
-					<xs:enumeration value="ManaHeal" />
 					<xs:enumeration value="ManaHealByLevel" />
 					<xs:enumeration value="ManaHealOverTime" />
-					<xs:enumeration value="ManaHealPercent" />
 					<xs:enumeration value="MaxCp" />
 					<xs:enumeration value="MaxHp" />
+					<xs:enumeration value="Mp" />
 					<xs:enumeration value="MpConsumePerLevel" />
+					<xs:enumeration value="MpPerMax" />
 					<xs:enumeration value="Mute" />
 					<xs:enumeration value="NoblesseBless" />
 					<xs:enumeration value="OpenChest" />
