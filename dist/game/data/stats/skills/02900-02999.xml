@@ -264,14 +264,19 @@
 		</effects>
 	</skill>
 	<skill id="2916" levels="1" name="Feed for Enriched Enhanced Pets">
-		<!-- Confirmed CT2.5 -->
-		<set name="blockedInOlympiad" val="true" />
-		<set name="feed" val="11000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="FoodForPet">
+				<param normal="11000" />
+				<param ride="11000" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="2917" levels="1" name="Big Staccato Silk Cocoon">
 		<!-- Confirmed CT2.5 -->

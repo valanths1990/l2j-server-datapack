@@ -93,6 +93,7 @@ public final class EffectMasterHandler
 		FocusEnergy.class,
 		FocusMaxEnergy.class,
 		FocusSouls.class,
+		FoodForPet.class,
 		GetAgro.class,
 		GiveRecommendation.class,
 		GiveSp.class,
