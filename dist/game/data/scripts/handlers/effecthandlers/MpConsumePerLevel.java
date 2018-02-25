@@ -19,6 +19,7 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.model.StatsSet;
+import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
@@ -46,15 +47,15 @@ public final class MpConsumePerLevel extends AbstractEffect
 			return false;
 		}
 		
-		final double base = _power * getTicksMultiplier();
-		final double consume = (info.getAbnormalTime() > 0) ? ((info.getEffected().getLevel() - 1) / 7.5) * base * info.getAbnormalTime() : base;
-		if (consume > info.getEffected().getCurrentMp())
+		final L2Character target = info.getEffected();
+		final double consume = _power * getTicksMultiplier() * ((target.getLevel() - 1) / 7.5);
+		if (consume > target.getCurrentMp())
 		{
-			info.getEffected().sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
+			target.sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
 			return false;
 		}
 		
-		info.getEffected().reduceCurrentMp(consume);
+		target.reduceCurrentMp(consume);
 		return info.getSkill().isToggle();
 	}
 }
