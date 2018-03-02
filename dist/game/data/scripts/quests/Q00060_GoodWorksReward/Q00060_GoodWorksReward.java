@@ -226,36 +226,17 @@ public final class Q00060_GoodWorksReward extends Quest
 			{
 				if (qs.isMemoState(10))
 				{
-					final QuestState q211 = player.getQuestState(Q00211_TrialOfTheChallenger.class.getSimpleName());
-					final QuestState q212 = player.getQuestState(Q00212_TrialOfDuty.class.getSimpleName());
-					final QuestState q213 = player.getQuestState(Q00213_TrialOfTheSeeker.class.getSimpleName());
-					final QuestState q214 = player.getQuestState(Q00214_TrialOfTheScholar.class.getSimpleName());
-					final QuestState q215 = player.getQuestState(Q00215_TrialOfThePilgrim.class.getSimpleName());
-					final QuestState q216 = player.getQuestState(Q00216_TrialOfTheGuildsman.class.getSimpleName());
-					final QuestState q217 = player.getQuestState(Q00217_TestimonyOfTrust.class.getSimpleName());
-					final QuestState q218 = player.getQuestState(Q00218_TestimonyOfLife.class.getSimpleName());
-					final QuestState q219 = player.getQuestState(Q00219_TestimonyOfFate.class.getSimpleName());
-					final QuestState q220 = player.getQuestState(Q00220_TestimonyOfGlory.class.getSimpleName());
-					final QuestState q221 = player.getQuestState(Q00221_TestimonyOfProsperity.class.getSimpleName());
-					final QuestState q222 = player.getQuestState(Q00222_TestOfTheDuelist.class.getSimpleName());
-					final QuestState q223 = player.getQuestState(Q00223_TestOfTheChampion.class.getSimpleName());
-					final QuestState q224 = player.getQuestState(Q00224_TestOfSagittarius.class.getSimpleName());
-					final QuestState q225 = player.getQuestState(Q00225_TestOfTheSearcher.class.getSimpleName());
-					final QuestState q226 = player.getQuestState(Q00226_TestOfTheHealer.class.getSimpleName());
-					final QuestState q227 = player.getQuestState(Q00227_TestOfTheReformer.class.getSimpleName());
-					final QuestState q228 = player.getQuestState(Q00228_TestOfMagus.class.getSimpleName());
-					final QuestState q229 = player.getQuestState(Q00229_TestOfWitchcraft.class.getSimpleName());
-					final QuestState q230 = player.getQuestState(Q00230_TestOfTheSummoner.class.getSimpleName());
-					final QuestState q231 = player.getQuestState(Q00231_TestOfTheMaestro.class.getSimpleName());
-					final QuestState q232 = player.getQuestState(Q00232_TestOfTheLord.class.getSimpleName());
-					final QuestState q233 = player.getQuestState(Q00233_TestOfTheWarSpirit.class.getSimpleName());
-					if (((q211 != null) && q211.isCompleted()) || ((q212 != null) && q212.isCompleted()) || ((q213 != null) && q213.isCompleted()) || ((q214 != null) && q214.isCompleted()) || ((q215 != null) && q215.isCompleted()) || ((q216 != null) && q216.isCompleted()))
+					if (player.hasQuestCompleted(Q00211_TrialOfTheChallenger.class.getSimpleName()) || player.hasQuestCompleted(Q00212_TrialOfDuty.class.getSimpleName()) || player.hasQuestCompleted(Q00213_TrialOfTheSeeker.class.getSimpleName())
+						|| player.hasQuestCompleted(Q00214_TrialOfTheScholar.class.getSimpleName()) || player.hasQuestCompleted(Q00215_TrialOfThePilgrim.class.getSimpleName()) || player.hasQuestCompleted(Q00216_TrialOfTheGuildsman.class.getSimpleName()))
 					{
-						if (((q217 != null) && q217.isCompleted()) || ((q218 != null) && q218.isCompleted()) || ((q219 != null) && q219.isCompleted()) || ((q220 != null) && q220.isCompleted()) || ((q221 != null) && q221.isCompleted()))
+						if (player.hasQuestCompleted(Q00217_TestimonyOfTrust.class.getSimpleName()) || player.hasQuestCompleted(Q00218_TestimonyOfLife.class.getSimpleName()) || player.hasQuestCompleted(Q00219_TestimonyOfFate.class.getSimpleName())
+							|| player.hasQuestCompleted(Q00220_TestimonyOfGlory.class.getSimpleName()) || player.hasQuestCompleted(Q00221_TestimonyOfProsperity.class.getSimpleName()))
 						{
 							
-							if (((q222 != null) && q222.isCompleted()) || ((q223 != null) && q223.isCompleted()) || ((q224 != null) && q224.isCompleted()) || ((q225 != null) && q225.isCompleted()) || ((q226 != null) && q226.isCompleted()) || ((q227 != null) && q227.isCompleted())
-								|| ((q228 != null) && q228.isCompleted()) || ((q229 != null) && q229.isCompleted()) || ((q230 != null) && q230.isCompleted()) || ((q231 != null) && q231.isCompleted()) || ((q232 != null) && q232.isCompleted()) || ((q233 != null) && q233.isCompleted()))
+							if (player.hasQuestCompleted(Q00222_TestOfTheDuelist.class.getSimpleName()) || player.hasQuestCompleted(Q00223_TestOfTheChampion.class.getSimpleName()) || player.hasQuestCompleted(Q00224_TestOfSagittarius.class.getSimpleName())
+								|| player.hasQuestCompleted(Q00225_TestOfTheSearcher.class.getSimpleName()) || player.hasQuestCompleted(Q00226_TestOfTheHealer.class.getSimpleName()) || player.hasQuestCompleted(Q00227_TestOfTheReformer.class.getSimpleName())
+								|| player.hasQuestCompleted(Q00228_TestOfMagus.class.getSimpleName()) || player.hasQuestCompleted(Q00229_TestOfWitchcraft.class.getSimpleName()) || player.hasQuestCompleted(Q00230_TestOfTheSummoner.class.getSimpleName())
+								|| player.hasQuestCompleted(Q00231_TestOfTheMaestro.class.getSimpleName()) || player.hasQuestCompleted(Q00232_TestOfTheLord.class.getSimpleName()) || player.hasQuestCompleted(Q00233_TestOfTheWarSpirit.class.getSimpleName()))
 							{
 								qs.setMemoStateEx(1, 3);
 							}
@@ -264,8 +245,10 @@ public final class Q00060_GoodWorksReward extends Quest
 								qs.setMemoStateEx(1, 2);
 							}
 						}
-						else if (((q222 != null) && q222.isCompleted()) || ((q223 != null) && q223.isCompleted()) || ((q224 != null) && q224.isCompleted()) || ((q225 != null) && q225.isCompleted()) || ((q226 != null) && q226.isCompleted()) || ((q227 != null) && q227.isCompleted())
-							|| ((q228 != null) && q228.isCompleted()) || ((q229 != null) && q229.isCompleted()) || ((q230 != null) && q230.isCompleted()) || ((q231 != null) && q231.isCompleted()) || ((q232 != null) && q232.isCompleted()) || ((q233 != null) && q233.isCompleted()))
+						else if (player.hasQuestCompleted(Q00222_TestOfTheDuelist.class.getSimpleName()) || player.hasQuestCompleted(Q00223_TestOfTheChampion.class.getSimpleName()) || player.hasQuestCompleted(Q00224_TestOfSagittarius.class.getSimpleName())
+							|| player.hasQuestCompleted(Q00225_TestOfTheSearcher.class.getSimpleName()) || player.hasQuestCompleted(Q00226_TestOfTheHealer.class.getSimpleName()) || player.hasQuestCompleted(Q00227_TestOfTheReformer.class.getSimpleName())
+							|| player.hasQuestCompleted(Q00228_TestOfMagus.class.getSimpleName()) || player.hasQuestCompleted(Q00229_TestOfWitchcraft.class.getSimpleName()) || player.hasQuestCompleted(Q00230_TestOfTheSummoner.class.getSimpleName())
+							|| player.hasQuestCompleted(Q00231_TestOfTheMaestro.class.getSimpleName()) || player.hasQuestCompleted(Q00232_TestOfTheLord.class.getSimpleName()) || player.hasQuestCompleted(Q00233_TestOfTheWarSpirit.class.getSimpleName()))
 						{
 							qs.setMemoStateEx(1, 2);
 						}
@@ -274,10 +257,13 @@ public final class Q00060_GoodWorksReward extends Quest
 							qs.setMemoStateEx(1, 1);
 						}
 					}
-					else if (((q217 != null) && q217.isCompleted()) || ((q218 != null) && q218.isCompleted()) || ((q219 != null) && q219.isCompleted()) || ((q220 != null) && q220.isCompleted()) || ((q221 != null) && q221.isCompleted()))
+					else if (player.hasQuestCompleted(Q00217_TestimonyOfTrust.class.getSimpleName()) || player.hasQuestCompleted(Q00218_TestimonyOfLife.class.getSimpleName()) || player.hasQuestCompleted(Q00219_TestimonyOfFate.class.getSimpleName())
+						|| player.hasQuestCompleted(Q00220_TestimonyOfGlory.class.getSimpleName()) || player.hasQuestCompleted(Q00221_TestimonyOfProsperity.class.getSimpleName()))
 					{
-						if (((q222 != null) && q222.isCompleted()) || ((q223 != null) && q223.isCompleted()) || ((q224 != null) && q224.isCompleted()) || ((q225 != null) && q225.isCompleted()) || ((q226 != null) && q226.isCompleted()) || ((q227 != null) && q227.isCompleted())
-							|| ((q228 != null) && q228.isCompleted()) || ((q229 != null) && q229.isCompleted()) || ((q230 != null) && q230.isCompleted()) || ((q231 != null) && q231.isCompleted()) || ((q232 != null) && q232.isCompleted()) || ((q233 != null) && q233.isCompleted()))
+						if (player.hasQuestCompleted(Q00222_TestOfTheDuelist.class.getSimpleName()) || player.hasQuestCompleted(Q00223_TestOfTheChampion.class.getSimpleName()) || player.hasQuestCompleted(Q00224_TestOfSagittarius.class.getSimpleName())
+							|| player.hasQuestCompleted(Q00225_TestOfTheSearcher.class.getSimpleName()) || player.hasQuestCompleted(Q00226_TestOfTheHealer.class.getSimpleName()) || player.hasQuestCompleted(Q00227_TestOfTheReformer.class.getSimpleName())
+							|| player.hasQuestCompleted(Q00228_TestOfMagus.class.getSimpleName()) || player.hasQuestCompleted(Q00229_TestOfWitchcraft.class.getSimpleName()) || player.hasQuestCompleted(Q00230_TestOfTheSummoner.class.getSimpleName())
+							|| player.hasQuestCompleted(Q00231_TestOfTheMaestro.class.getSimpleName()) || player.hasQuestCompleted(Q00232_TestOfTheLord.class.getSimpleName()) || player.hasQuestCompleted(Q00233_TestOfTheWarSpirit.class.getSimpleName()))
 						{
 							qs.setMemoStateEx(1, 2);
 						}
@@ -286,8 +272,10 @@ public final class Q00060_GoodWorksReward extends Quest
 							qs.setMemoStateEx(1, 1);
 						}
 					}
-					else if (((q222 != null) && q222.isCompleted()) || ((q223 != null) && q223.isCompleted()) || ((q224 != null) && q224.isCompleted()) || ((q225 != null) && q225.isCompleted()) || ((q226 != null) && q226.isCompleted()) || ((q227 != null) && q227.isCompleted())
-						|| ((q228 != null) && q228.isCompleted()) || ((q229 != null) && q229.isCompleted()) || ((q230 != null) && q230.isCompleted()) || ((q231 != null) && q231.isCompleted()) || ((q232 != null) && q232.isCompleted()) || ((q233 != null) && q233.isCompleted()))
+					else if (player.hasQuestCompleted(Q00222_TestOfTheDuelist.class.getSimpleName()) || player.hasQuestCompleted(Q00223_TestOfTheChampion.class.getSimpleName()) || player.hasQuestCompleted(Q00224_TestOfSagittarius.class.getSimpleName())
+						|| player.hasQuestCompleted(Q00225_TestOfTheSearcher.class.getSimpleName()) || player.hasQuestCompleted(Q00226_TestOfTheHealer.class.getSimpleName()) || player.hasQuestCompleted(Q00227_TestOfTheReformer.class.getSimpleName())
+						|| player.hasQuestCompleted(Q00228_TestOfMagus.class.getSimpleName()) || player.hasQuestCompleted(Q00229_TestOfWitchcraft.class.getSimpleName()) || player.hasQuestCompleted(Q00230_TestOfTheSummoner.class.getSimpleName())
+						|| player.hasQuestCompleted(Q00231_TestOfTheMaestro.class.getSimpleName()) || player.hasQuestCompleted(Q00232_TestOfTheLord.class.getSimpleName()) || player.hasQuestCompleted(Q00233_TestOfTheWarSpirit.class.getSimpleName()))
 					{
 						qs.setMemoStateEx(1, 1);
 					}

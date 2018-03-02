@@ -18,8 +18,6 @@
  */
 package quests.Q00196_SevenSignsSealOfTheEmperor;
 
-import quests.Q00195_SevenSignsSecretRitualOfThePriests.Q00195_SevenSignsSecretRitualOfThePriests;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -29,6 +27,8 @@ import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
+
+import quests.Q00195_SevenSignsSecretRitualOfThePriests.Q00195_SevenSignsSecretRitualOfThePriests;
 
 /**
  * Seven Signs, Seal of the Emperor (196)
@@ -248,8 +248,7 @@ public final class Q00196_SevenSignsSealOfTheEmperor extends Quest
 			{
 				if (npc.getId() == IASON_HEINE)
 				{
-					st = player.getQuestState(Q00195_SevenSignsSecretRitualOfThePriests.class.getSimpleName());
-					htmltext = ((player.getLevel() >= MIN_LEVEL) && (st != null) && (st.isCompleted())) ? "30969-01.htm" : "30969-08.html";
+					htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q00195_SevenSignsSecretRitualOfThePriests.class.getSimpleName())) ? "30969-01.htm" : "30969-08.html";
 				}
 				break;
 			}

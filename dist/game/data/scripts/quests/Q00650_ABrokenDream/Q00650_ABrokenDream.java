@@ -121,8 +121,7 @@ public final class Q00650_ABrokenDream extends Quest
 				}
 				else
 				{
-					final QuestState q117 = player.getQuestState(Q00117_TheOceanOfDistantStars.class.getSimpleName());
-					htmltext = (q117 != null) && q117.isCompleted() ? "32054-01.htm" : "32054-04.htm";
+					htmltext = player.hasQuestCompleted(Q00117_TheOceanOfDistantStars.class.getSimpleName()) ? "32054-01.htm" : "32054-04.htm";
 				}
 				break;
 			}

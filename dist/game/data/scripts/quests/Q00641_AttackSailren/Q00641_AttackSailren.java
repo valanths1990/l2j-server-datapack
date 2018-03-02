@@ -120,8 +120,7 @@ public class Q00641_AttackSailren extends Quest
 				}
 				else
 				{
-					st = player.getQuestState(Q00126_TheNameOfEvil2.class.getSimpleName());
-					htmltext = ((st != null) && st.isCompleted()) ? "32109-0a.htm" : "32109-0b.htm";
+					htmltext = (player.hasQuestCompleted(Q00126_TheNameOfEvil2.class.getSimpleName())) ? "32109-0a.htm" : "32109-0b.htm";
 				}
 				break;
 			case State.STARTED:

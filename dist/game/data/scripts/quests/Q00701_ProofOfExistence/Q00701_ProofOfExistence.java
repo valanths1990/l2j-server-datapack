@@ -145,8 +145,7 @@ public class Q00701_ProofOfExistence extends Quest
 		switch (st.getState())
 		{
 			case State.CREATED:
-				final QuestState qs = player.getQuestState(Q10273_GoodDayToFly.class.getSimpleName());
-				htmltext = ((player.getLevel() >= MIN_LEVEL) && (qs != null) && qs.isCompleted()) ? "32559-01.htm" : "32559-02.htm";
+				htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q10273_GoodDayToFly.class.getSimpleName())) ? "32559-01.htm" : "32559-02.htm";
 				break;
 			case State.STARTED:
 				if (st.hasQuestItems(BANSHEE_QUEENS_EYE))

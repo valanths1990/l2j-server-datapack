@@ -236,8 +236,7 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 			{
 				if (npc.getId() == CLAUDIA_ATHEBALDT)
 				{
-					st = player.getQuestState(Q00194_SevenSignsMammonsContract.class.getSimpleName());
-					htmltext = ((player.getLevel() >= MIN_LEVEL) && (st != null) && (st.isCompleted())) ? "31001-01.htm" : "31001-02.html";
+					htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q00194_SevenSignsMammonsContract.class.getSimpleName())) ? "31001-01.htm" : "31001-02.html";
 				}
 				break;
 			}

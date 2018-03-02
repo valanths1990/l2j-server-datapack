@@ -101,8 +101,7 @@ public class Q00017_LightAndDarkness extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			case State.CREATED:
-				final QuestState st2 = player.getQuestState(Q00015_SweetWhispers.class.getSimpleName());
-				htmltext = ((st2 != null) && (st2.isCompleted())) ? "31517-00.htm" : "31517-06.html";
+				htmltext = (player.hasQuestCompleted(Q00015_SweetWhispers.class.getSimpleName())) ? "31517-00.htm" : "31517-06.html";
 				break;
 			case State.STARTED:
 				final long blood = st.getQuestItemsCount(BLOOD_OF_SAINT);

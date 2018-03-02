@@ -90,7 +90,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 			}
 			case "quest_accept":
 			{
-				if (qs.isCreated() && checkQ114(player))
+				if (qs.isCreated() && player.hasQuestCompleted(Q00114_ResurrectionOfAnOldManager.class.getSimpleName()))
 				{
 					if (player.getLevel() >= 70)
 					{
@@ -1166,7 +1166,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 			{
 				if (qs.isCreated())
 				{
-					if (checkQ114(player))
+					if (player.hasQuestCompleted(Q00114_ResurrectionOfAnOldManager.class.getSimpleName()))
 					{
 						html = "32046-01.htm";
 					}
@@ -1249,7 +1249,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 				}
 				else
 				{
-					if (checkQ114(player))
+					if (player.hasQuestCompleted(Q00114_ResurrectionOfAnOldManager.class.getSimpleName()))
 					{
 						html = getAlreadyCompletedMsg(player);
 					}
@@ -1530,11 +1530,5 @@ public final class Q00120_PavelsLastResearch extends Quest
 		}
 		
 		return html;
-	}
-	
-	private static boolean checkQ114(L2PcInstance player)
-	{
-		final QuestState q114 = player.getQuestState(Q00114_ResurrectionOfAnOldManager.class.getSimpleName());
-		return ((q114 != null) && q114.isCompleted());
 	}
 }

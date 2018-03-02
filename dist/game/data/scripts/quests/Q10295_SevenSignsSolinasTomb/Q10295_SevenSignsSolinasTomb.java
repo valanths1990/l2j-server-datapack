@@ -294,8 +294,7 @@ public final class Q10295_SevenSignsSolinasTomb extends Quest
 		}
 		else if (st.isCreated())
 		{
-			final QuestState st1 = player.getQuestState(Q10294_SevenSignsToTheMonasteryOfSilence.class.getSimpleName());
-			if ((player.getLevel() >= MIN_LEVEL) && (st1 != null) && (st1.isCompleted()))
+			if ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q10294_SevenSignsToTheMonasteryOfSilence.class.getSimpleName()))
 			{
 				htmltext = "32792-01.htm";
 			}

@@ -18,12 +18,12 @@
  */
 package quests.Q00190_LostDream;
 
-import quests.Q00187_NikolasHeart.Q00187_NikolasHeart;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
+
+import quests.Q00187_NikolasHeart.Q00187_NikolasHeart;
 
 /**
  * Lost Dream (190)
@@ -111,8 +111,7 @@ public final class Q00190_LostDream extends Quest
 		{
 			if (npc.getId() == HEAD_BLACKSMITH_KUSTO)
 			{
-				final QuestState q187 = player.getQuestState(Q00187_NikolasHeart.class.getSimpleName());
-				if ((q187 != null) && q187.isCompleted())
+				if (player.hasQuestCompleted(Q00187_NikolasHeart.class.getSimpleName()))
 				{
 					htmltext = (player.getLevel() >= MIN_LEVEL) ? "30512-01.htm" : "30512-02.htm";
 				}

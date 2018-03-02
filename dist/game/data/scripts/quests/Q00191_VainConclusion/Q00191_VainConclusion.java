@@ -18,12 +18,12 @@
  */
 package quests.Q00191_VainConclusion;
 
-import quests.Q00188_SealRemoval.Q00188_SealRemoval;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
+
+import quests.Q00188_SealRemoval.Q00188_SealRemoval;
 
 /**
  * Vain Conclusion (191)
@@ -134,8 +134,7 @@ public final class Q00191_VainConclusion extends Quest
 		{
 			if (npc.getId() == DOROTHY_LOCKSMITH)
 			{
-				final QuestState q188 = player.getQuestState(Q00188_SealRemoval.class.getSimpleName());
-				if ((q188 != null) && q188.isCompleted())
+				if (player.hasQuestCompleted(Q00188_SealRemoval.class.getSimpleName()))
 				{
 					htmltext = (player.getLevel() >= MIN_LEVEL) ? "30970-01.htm" : "30970-02.htm";
 				}

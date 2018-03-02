@@ -366,8 +366,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				switch (st.getState())
 				{
 					case State.CREATED:
-						final QuestState prev = player.getQuestState(Q00121_PavelTheGiant.class.getSimpleName());
-						if ((prev != null) && prev.isCompleted())
+						if (player.hasQuestCompleted(Q00121_PavelTheGiant.class.getSimpleName()))
 						{
 							htmltext = (player.getLevel() >= 70) ? "32041-02.htm" : "32041-03.htm";
 						}

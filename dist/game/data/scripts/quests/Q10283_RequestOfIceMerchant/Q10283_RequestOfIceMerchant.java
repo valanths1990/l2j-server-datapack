@@ -161,8 +161,7 @@ public class Q10283_RequestOfIceMerchant extends Quest
 		}
 		else if (st.isCreated())
 		{
-			final QuestState st1 = player.getQuestState(Q00115_TheOtherSideOfTruth.class.getSimpleName());
-			htmltext = ((player.getLevel() >= MIN_LEVEL) && (st1 != null) && (st1.isCompleted())) ? "32020-01.htm" : "32020-08.htm";
+			htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q00115_TheOtherSideOfTruth.class.getSimpleName())) ? "32020-01.htm" : "32020-08.htm";
 		}
 		else if (st.isStarted())
 		{

@@ -25,7 +25,6 @@ import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
 
-import quests.Q00237_WindsOfChange.Q00237_WindsOfChange;
 import quests.Q00239_WontYouJoinUs.Q00239_WontYouJoinUs;
 
 /**
@@ -147,13 +146,11 @@ public class Q00238_SuccessFailureOfBusiness extends Quest
 				htmltext = "32461-09.html";
 				break;
 			case State.CREATED:
-				final QuestState q237 = st.getPlayer().getQuestState(Q00237_WindsOfChange.class.getSimpleName());
-				final QuestState q239 = st.getPlayer().getQuestState(Q00239_WontYouJoinUs.class.getSimpleName());
-				if ((q239 != null) && q239.isCompleted())
+				if (st.getPlayer().hasQuestCompleted(Q00239_WontYouJoinUs.class.getSimpleName()))
 				{
 					htmltext = "32461-10.html";
 				}
-				else if ((q237 != null) && q237.isCompleted() && (talker.getLevel() >= MIN_LEVEL) && st.hasQuestItems(VICINITY_OF_FOS))
+				else if (st.getPlayer().hasQuestCompleted(Q00239_WontYouJoinUs.class.getSimpleName()) && (talker.getLevel() >= MIN_LEVEL) && st.hasQuestItems(VICINITY_OF_FOS))
 				{
 					htmltext = "32461-01.htm";
 				}

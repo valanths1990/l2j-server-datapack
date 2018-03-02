@@ -180,8 +180,7 @@ public final class Q10286_ReunionWithSirra extends Quest
 		}
 		else if (st.isCreated())
 		{
-			st = player.getQuestState(Q10285_MeetingSirra.class.getSimpleName());
-			htmltext = ((player.getLevel() >= MIN_LEVEL) && (st != null) && (st.isCompleted())) ? "32020-01.htm" : "32020-04.htm";
+			htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q10285_MeetingSirra.class.getSimpleName())) ? "32020-01.htm" : "32020-04.htm";
 		}
 		else if (st.isStarted())
 		{

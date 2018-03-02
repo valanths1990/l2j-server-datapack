@@ -242,8 +242,7 @@ public final class Q10292_SevenSignsGirlOfDoubt extends Quest
 		}
 		else if (st.isCreated())
 		{
-			final QuestState st1 = player.getQuestState(Q00198_SevenSignsEmbryo.class.getSimpleName());
-			htmltext = ((player.getLevel() >= MIN_LEVEL) && (st1 != null) && (st1.isCompleted())) ? "32593-01.htm" : "32593-06.htm";
+			htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q00198_SevenSignsEmbryo.class.getSimpleName())) ? "32593-01.htm" : "32593-06.htm";
 		}
 		else if (st.isStarted())
 		{

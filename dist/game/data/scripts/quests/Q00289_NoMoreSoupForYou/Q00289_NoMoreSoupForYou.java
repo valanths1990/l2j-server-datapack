@@ -243,8 +243,7 @@ public class Q00289_NoMoreSoupForYou extends Quest
 			switch (st.getState())
 			{
 				case State.CREATED:
-					QuestState qs252 = player.getQuestState(Q00252_ItSmellsDelicious.class.getSimpleName());
-					htmltext = ((qs252 != null) && qs252.isCompleted() && (player.getLevel() >= 82)) ? "30200-01.htm" : "30200-00.htm";
+					htmltext = (player.hasQuestCompleted(Q00252_ItSmellsDelicious.class.getSimpleName()) && (player.getLevel() >= 82)) ? "30200-01.htm" : "30200-00.htm";
 					break;
 				case State.STARTED:
 					if (st.isCond(1))

@@ -204,8 +204,7 @@ public final class Q00049_TheRoadHome extends Quest
 						}
 						else
 						{
-							st = talker.getQuestState(Q00010_IntoTheWorld.class.getSimpleName());
-							if ((st != null) && st.isCompleted() && st.hasQuestItems(MARK_OF_TRAVELER))
+							if (talker.hasQuestCompleted(Q00010_IntoTheWorld.class.getSimpleName()) && st.hasQuestItems(MARK_OF_TRAVELER))
 							{
 								htmltext = "30097-01.htm";
 							}

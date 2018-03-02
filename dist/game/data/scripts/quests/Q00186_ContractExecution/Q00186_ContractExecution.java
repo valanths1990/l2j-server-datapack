@@ -21,14 +21,14 @@ package quests.Q00186_ContractExecution;
 import java.util.HashMap;
 import java.util.Map;
 
-import quests.Q00184_ArtOfPersuasion.Q00184_ArtOfPersuasion;
-
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.util.Util;
+
+import quests.Q00184_ArtOfPersuasion.Q00184_ArtOfPersuasion;
 
 /**
  * Contract Execution (186)
@@ -170,8 +170,7 @@ public final class Q00186_ContractExecution extends Quest
 		{
 			if (npc.getId() == RESEARCHER_LORAIN)
 			{
-				final QuestState q184 = player.getQuestState(Q00184_ArtOfPersuasion.class.getSimpleName());
-				if ((q184 != null) && q184.isCompleted() && hasQuestItems(player, LORAINES_CERTIFICATE))
+				if (player.hasQuestCompleted(Q00184_ArtOfPersuasion.class.getSimpleName()) && hasQuestItems(player, LORAINES_CERTIFICATE))
 				{
 					htmltext = player.getLevel() >= MIN_LEVEL ? "30673-01.htm" : "30673-02.htm";
 				}

@@ -191,8 +191,7 @@ public class Q10272_LightFragment extends Quest
 						}
 						else
 						{
-							st = player.getQuestState(Q10271_TheEnvelopingDarkness.class.getSimpleName());
-							htmltext = ((st != null) && st.isCompleted()) ? "32560-01.htm" : "32560-02.html";
+							htmltext = (player.hasQuestCompleted(Q10271_TheEnvelopingDarkness.class.getSimpleName())) ? "32560-01.htm" : "32560-02.html";
 						}
 						break;
 					case State.STARTED:

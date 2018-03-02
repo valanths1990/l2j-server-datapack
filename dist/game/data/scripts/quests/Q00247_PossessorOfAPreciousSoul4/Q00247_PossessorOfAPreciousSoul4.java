@@ -113,8 +113,7 @@ public class Q00247_PossessorOfAPreciousSoul4 extends Quest
 				switch (st.getState())
 				{
 					case State.CREATED:
-						final QuestState qs = player.getQuestState(Q00246_PossessorOfAPreciousSoul3.class.getSimpleName());
-						if ((qs != null) && qs.isCompleted())
+						if (player.hasQuestCompleted(Q00246_PossessorOfAPreciousSoul3.class.getSimpleName()))
 						{
 							htmltext = ((player.getLevel() >= 75) ? "31740-1.htm" : "31740-2.html");
 						}
