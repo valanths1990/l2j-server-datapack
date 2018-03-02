@@ -98,14 +98,9 @@ public class Q00029_ChestCaughtWithABaitOfEarth extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			case State.CREATED:
-				final QuestState qs = player.getQuestState(Q00052_WilliesSpecialBait.class.getSimpleName());
 				if (npcId == WILLIE)
 				{
-					htmltext = "31574-02.htm";
-					if (qs != null)
-					{
-						htmltext = ((player.getLevel() >= 48) && qs.isCompleted()) ? "31574-01.htm" : htmltext;
-					}
+					htmltext = ((player.getLevel() >= 48) && player.hasQuestCompleted(Q00052_WilliesSpecialBait.class.getSimpleName())) ? "31574-01.htm" : "31574-02.htm";
 				}
 				break;
 			case State.STARTED:

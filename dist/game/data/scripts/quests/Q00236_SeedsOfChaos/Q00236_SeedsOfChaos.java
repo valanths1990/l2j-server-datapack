@@ -18,10 +18,8 @@
  */
 package quests.Q00236_SeedsOfChaos;
 
-import quests.Q00025_HidingBehindTheTruth.Q00025_HidingBehindTheTruth;
-
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.Race;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -30,6 +28,8 @@ import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
 import com.l2jserver.gameserver.util.Util;
+
+import quests.Q00025_HidingBehindTheTruth.Q00025_HidingBehindTheTruth;
 
 /**
  * Seeds Of Chaos (236)
@@ -220,8 +220,7 @@ public final class Q00236_SeedsOfChaos extends Quest
 			{
 				if (qs.isMemoState(12))
 				{
-					final QuestState q25 = player.getQuestState(Q00025_HidingBehindTheTruth.class.getSimpleName());
-					if ((q25 != null) && q25.isCompleted())
+					if (player.hasQuestCompleted(Q00025_HidingBehindTheTruth.class.getSimpleName()))
 					{
 						htmltext = event;
 					}

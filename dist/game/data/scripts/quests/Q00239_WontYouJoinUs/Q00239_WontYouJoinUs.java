@@ -147,13 +147,12 @@ public class Q00239_WontYouJoinUs extends Quest
 				htmltext = "32643-11.html";
 				break;
 			case State.CREATED:
-				final QuestState q237 = st.getPlayer().getQuestState(Q00237_WindsOfChange.class.getSimpleName());
-				final QuestState q238 = st.getPlayer().getQuestState(Q00238_SuccessFailureOfBusiness.class.getSimpleName());
-				if ((q238 != null) && q238.isCompleted())
+				
+				if (st.getPlayer().hasQuestCompleted(Q00238_SuccessFailureOfBusiness.class.getSimpleName()))
 				{
 					htmltext = "32643-12.html";
 				}
-				else if ((q237 != null) && q237.isCompleted() && (talker.getLevel() >= MIN_LEVEL) && st.hasQuestItems(SUPPORT_CERTIFICATE))
+				else if (st.getPlayer().hasQuestCompleted(Q00237_WindsOfChange.class.getSimpleName()) && (talker.getLevel() >= MIN_LEVEL) && st.hasQuestItems(SUPPORT_CERTIFICATE))
 				{
 					htmltext = "32643-01.htm";
 				}

@@ -269,11 +269,10 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		QuestState prev = player.getQuestState(Q10282_ToTheSeedOfAnnihilation.class.getSimpleName());
 		switch (st.getState())
 		{
 			case State.CREATED:
-				if ((player.getLevel() >= 84) && (prev != null) && prev.isCompleted())
+				if ((player.getLevel() >= 84) && player.hasQuestCompleted(Q10282_ToTheSeedOfAnnihilation.class.getSimpleName()))
 				{
 					htmltext = "32734-01.htm";
 				}
@@ -322,7 +321,7 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 				else
 				{
 					st.setState(State.CREATED);
-					if ((player.getLevel() >= 84) && (prev != null) && (prev.getState() == State.COMPLETED))
+					if ((player.getLevel() >= 84) && player.hasQuestCompleted(Q10282_ToTheSeedOfAnnihilation.class.getSimpleName()))
 					{
 						htmltext = "32734-01.htm";
 					}

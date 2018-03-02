@@ -21,12 +21,12 @@ package quests.Q00654_JourneyToASettlement;
 import java.util.HashMap;
 import java.util.Map;
 
-import quests.Q00119_LastImperialPrince.Q00119_LastImperialPrince;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
+
+import quests.Q00119_LastImperialPrince.Q00119_LastImperialPrince;
 
 /**
  * Journey to a Settlement (654)
@@ -117,8 +117,7 @@ public final class Q00654_JourneyToASettlement extends Quest
 		String htmltext = getNoQuestMsg(player);
 		if (st.isCreated())
 		{
-			st = player.getQuestState(Q00119_LastImperialPrince.class.getSimpleName());
-			htmltext = ((player.getLevel() >= MIN_LEVEL) && (st != null) && (st.isCompleted())) ? "31453-01.htm" : "31453-04.htm";
+			htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q00119_LastImperialPrince.class.getSimpleName())) ? "31453-01.htm" : "31453-04.htm";
 		}
 		else if (st.isStarted())
 		{

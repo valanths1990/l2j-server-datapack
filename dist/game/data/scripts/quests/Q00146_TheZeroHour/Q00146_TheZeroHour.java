@@ -94,15 +94,7 @@ public class Q00146_TheZeroHour extends Quest
 				}
 				else
 				{
-					final QuestState prev = player.getQuestState(Q00109_InSearchOfTheNest.class.getSimpleName());
-					if ((prev != null) && prev.isCompleted())
-					{
-						htmltext = "31554-01a.htm";
-					}
-					else
-					{
-						htmltext = "31554-04.html";
-					}
+					htmltext = (player.hasQuestCompleted(Q00109_InSearchOfTheNest.class.getSimpleName())) ? "31554-01a.htm" : "31554-04.html";
 				}
 				break;
 			case State.STARTED:

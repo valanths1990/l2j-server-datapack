@@ -154,8 +154,7 @@ public class Q00309_ForAGoodCause extends Quest
 				htmltext = event;
 				break;
 			case "claimreward":
-				final QuestState q239 = player.getQuestState(Q00239_WontYouJoinUs.class.getSimpleName());
-				htmltext = ((q239 != null) && q239.isCompleted()) ? "32647-11.html" : "32647-09.html";
+				htmltext = (player.hasQuestCompleted(Q00239_WontYouJoinUs.class.getSimpleName())) ? "32647-11.html" : "32647-09.html";
 				break;
 			case "100":
 			case "120":

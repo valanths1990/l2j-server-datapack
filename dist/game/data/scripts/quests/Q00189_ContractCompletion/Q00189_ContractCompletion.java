@@ -18,12 +18,12 @@
  */
 package quests.Q00189_ContractCompletion;
 
-import quests.Q00186_ContractExecution.Q00186_ContractExecution;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
+
+import quests.Q00186_ContractExecution.Q00186_ContractExecution;
 
 /**
  * Contract Completion (189)
@@ -129,8 +129,7 @@ public final class Q00189_ContractCompletion extends Quest
 		{
 			if (npc.getId() == BLUEPRINT_SELLER_LUKA)
 			{
-				final QuestState q186 = player.getQuestState(Q00186_ContractExecution.class.getSimpleName());
-				if ((q186 != null) && q186.isCompleted())
+				if (player.hasQuestCompleted(Q00186_ContractExecution.class.getSimpleName()))
 				{
 					htmltext = (player.getLevel() >= MIN_LEVEL) ? "31437-01.htm" : "31437-02.htm";
 				}

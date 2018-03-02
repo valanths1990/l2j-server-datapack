@@ -97,14 +97,9 @@ public class Q00030_ChestCaughtWithABaitOfFire extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			case State.CREATED:
-				final QuestState qs = player.getQuestState(Q00053_LinnaeusSpecialBait.class.getSimpleName());
 				if (npcId == LINNAEUS)
 				{
-					htmltext = "31577-00.htm";
-					if (qs != null)
-					{
-						htmltext = ((player.getLevel() >= 61) && qs.isCompleted()) ? "31577-01.htm" : htmltext;
-					}
+					htmltext = ((player.getLevel() >= 61) && player.hasQuestCompleted(Q00053_LinnaeusSpecialBait.class.getSimpleName())) ? "31577-01.htm" : "31577-00.htm";
 				}
 				break;
 			case State.STARTED:

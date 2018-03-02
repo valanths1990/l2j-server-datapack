@@ -217,8 +217,7 @@ public final class Q10284_AcquisitionOfDivineSword extends Quest
 		}
 		else if (st.isCreated())
 		{
-			st = player.getQuestState(Q10283_RequestOfIceMerchant.class.getSimpleName());
-			htmltext = ((player.getLevel() >= MIN_LEVEL) && (st != null) && (st.isCompleted())) ? "32020-01.htm" : "32020-04.html";
+			htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q10283_RequestOfIceMerchant.class.getSimpleName())) ? "32020-01.htm" : "32020-04.html";
 		}
 		else if (st.isStarted())
 		{

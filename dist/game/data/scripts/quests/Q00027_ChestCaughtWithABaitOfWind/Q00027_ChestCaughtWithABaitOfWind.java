@@ -97,14 +97,9 @@ public class Q00027_ChestCaughtWithABaitOfWind extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			case State.CREATED:
-				final QuestState qs = player.getQuestState(Q00050_LanoscosSpecialBait.class.getSimpleName());
 				if (npc.getId() == LANOSCO)
 				{
-					htmltext = "31570-02.htm";
-					if (qs != null)
-					{
-						htmltext = ((player.getLevel() >= 27) && qs.isCompleted()) ? "31570-01.htm" : htmltext;
-					}
+					htmltext = ((player.getLevel() >= 27) && player.hasQuestCompleted(Q00050_LanoscosSpecialBait.class.getSimpleName())) ? "31570-01.htm" : "31570-02.htm";
 				}
 				break;
 			case State.STARTED:

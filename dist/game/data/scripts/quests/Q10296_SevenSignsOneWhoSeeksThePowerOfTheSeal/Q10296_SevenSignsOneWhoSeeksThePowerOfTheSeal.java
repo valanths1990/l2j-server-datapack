@@ -164,8 +164,7 @@ public final class Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal extends Quest
 		}
 		else if (st.isCreated())
 		{
-			final QuestState st1 = player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName());
-			if ((st1 != null) && (st1.isCompleted()))
+			if (player.hasQuestCompleted(Q10295_SevenSignsSolinasTomb.class.getSimpleName()))
 			{
 				if ((npc.getId() == ERISS_EVIL_THOUGHTS) && (player.getLevel() >= MIN_LEVEL))
 				{

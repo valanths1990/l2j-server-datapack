@@ -98,14 +98,9 @@ public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			case State.CREATED:
-				final QuestState qs = player.getQuestState(Q00051_OFullesSpecialBait.class.getSimpleName());
 				if (npcId == OFULLE)
 				{
-					htmltext = "31572-02.htm";
-					if (qs != null)
-					{
-						htmltext = ((player.getLevel() >= 36) && qs.isCompleted()) ? "31572-01.htm" : htmltext;
-					}
+					htmltext = ((player.getLevel() >= 36) && player.hasQuestCompleted(Q00051_OFullesSpecialBait.class.getSimpleName())) ? "31572-01.htm" : "31572-02.htm";
 				}
 				break;
 			case State.STARTED:

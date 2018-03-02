@@ -161,8 +161,7 @@ public final class Q10287_StoryOfThoseLeft extends Quest
 		{
 			if (npc.getId() == RAFFORTY)
 			{
-				st = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
-				htmltext = ((player.getLevel() >= MIN_LEVEL) && (st != null) && (st.isCompleted())) ? "32020-01.htm" : "32020-03.htm";
+				htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q10286_ReunionWithSirra.class.getSimpleName())) ? "32020-01.htm" : "32020-03.htm";
 			}
 		}
 		else if (st.isStarted())

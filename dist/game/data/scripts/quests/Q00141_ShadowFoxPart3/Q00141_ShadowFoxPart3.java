@@ -153,8 +153,7 @@ public class Q00141_ShadowFoxPart3 extends Quest
 		switch (st.getState())
 		{
 			case State.CREATED:
-				final QuestState qs = player.getQuestState(Q00140_ShadowFoxPart2.class.getSimpleName());
-				htmltext = (player.getLevel() >= MIN_LEVEL) ? ((qs != null) && qs.isCompleted()) ? "30894-01.htm" : "30894-00.html" : "30894-02.htm";
+				htmltext = (player.getLevel() >= MIN_LEVEL) ? (player.hasQuestCompleted(Q00140_ShadowFoxPart2.class.getSimpleName())) ? "30894-01.htm" : "30894-00.html" : "30894-02.htm";
 				break;
 			case State.STARTED:
 				switch (st.getCond())

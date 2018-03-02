@@ -136,8 +136,7 @@ public class Q00310_OnlyWhatRemains extends Quest
 		switch (st.getState())
 		{
 			case State.CREATED:
-				final QuestState prev = player.getQuestState(Q00240_ImTheOnlyOneYouCanTrust.class.getSimpleName());
-				htmltext = ((player.getLevel() >= 81) && (prev != null) && prev.isCompleted()) ? "32640-01.htm" : "32640-00.htm";
+				htmltext = ((player.getLevel() >= 81) && player.hasQuestCompleted(Q00240_ImTheOnlyOneYouCanTrust.class.getSimpleName())) ? "32640-01.htm" : "32640-00.htm";
 				break;
 			case State.STARTED:
 				if (!st.hasQuestItems(DIRTY_BEAD))

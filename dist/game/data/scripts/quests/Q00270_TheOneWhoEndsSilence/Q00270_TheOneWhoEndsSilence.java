@@ -342,8 +342,7 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 		switch (st.getState())
 		{
 			case State.CREATED:
-				final QuestState qs = player.getQuestState(Q10288_SecretMission.class.getSimpleName());
-				htmltext = ((player.getLevel() >= MIN_LEVEL) && (qs != null) && qs.isCompleted()) ? "32757-01.htm" : "32757-03.html";
+				htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q10288_SecretMission.class.getSimpleName())) ? "32757-01.htm" : "32757-03.html";
 				break;
 			case State.STARTED:
 				if (st.isCond(1))

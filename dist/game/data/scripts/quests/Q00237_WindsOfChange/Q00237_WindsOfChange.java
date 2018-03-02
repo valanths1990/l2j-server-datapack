@@ -237,8 +237,7 @@ public class Q00237_WindsOfChange extends Quest
 			case HELVETICA:
 				if (st.isCompleted())
 				{
-					final QuestState q238 = st.getPlayer().getQuestState(Q00238_SuccessFailureOfBusiness.class.getSimpleName());
-					htmltext = (st.hasQuestItems(VICINITY_OF_FOS) || ((q238 != null) && q238.isCompleted())) ? "32641-03.html" : "32641-05.html";
+					htmltext = (st.hasQuestItems(VICINITY_OF_FOS) || st.getPlayer().hasQuestCompleted(Q00238_SuccessFailureOfBusiness.class.getSimpleName())) ? "32641-03.html" : "32641-05.html";
 				}
 				else if (st.isCond(5))
 				{
@@ -252,8 +251,7 @@ public class Q00237_WindsOfChange extends Quest
 			case ATHENIA:
 				if (st.isCompleted())
 				{
-					final QuestState q239 = st.getPlayer().getQuestState(Q00239_WontYouJoinUs.class.getSimpleName());
-					htmltext = (st.hasQuestItems(SUPPORT_CERTIFICATE) || ((q239 != null) && q239.isCompleted())) ? "32643-03.html" : "32643-05.html";
+					htmltext = (st.hasQuestItems(SUPPORT_CERTIFICATE) || st.getPlayer().hasQuestCompleted(Q00239_WontYouJoinUs.class.getSimpleName())) ? "32643-03.html" : "32643-05.html";
 				}
 				else if (st.isCond(5))
 				{

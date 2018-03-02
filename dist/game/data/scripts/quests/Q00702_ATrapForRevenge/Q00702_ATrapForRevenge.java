@@ -371,8 +371,7 @@ public class Q00702_ATrapForRevenge extends Quest
 			switch (st.getState())
 			{
 				case State.CREATED:
-					final QuestState prev = player.getQuestState(Q10273_GoodDayToFly.class.getSimpleName());
-					htmltext = ((prev != null) && prev.isCompleted() && (player.getLevel() >= 78)) ? "32563-01.htm" : "32563-02.htm";
+					htmltext = (player.hasQuestCompleted(Q10273_GoodDayToFly.class.getSimpleName()) && (player.getLevel() >= 78)) ? "32563-01.htm" : "32563-02.htm";
 					break;
 				case State.STARTED:
 					htmltext = (st.isCond(1)) ? "32563-05.html" : "32563-06.html";

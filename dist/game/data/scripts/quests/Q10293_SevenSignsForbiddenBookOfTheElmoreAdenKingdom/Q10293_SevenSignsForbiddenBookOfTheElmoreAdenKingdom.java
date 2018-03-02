@@ -18,12 +18,12 @@
  */
 package quests.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom;
 
-import quests.Q10292_SevenSignsGirlOfDoubt.Q10292_SevenSignsGirlOfDoubt;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
+
+import quests.Q10292_SevenSignsGirlOfDoubt.Q10292_SevenSignsGirlOfDoubt;
 
 /**
  * Seven Signs, Forbidden Book of the Elmore-Aden Kingdom (10293)
@@ -232,8 +232,7 @@ public final class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends 
 				}
 				else if (qs.isCreated())
 				{
-					qs = player.getQuestState(Q10292_SevenSignsGirlOfDoubt.class.getSimpleName());
-					htmltext = ((player.getLevel() >= MIN_LEVEL) && (qs != null) && (qs.isCompleted())) ? "32784-01.htm" : "32784-11.htm";
+					htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q10292_SevenSignsGirlOfDoubt.class.getSimpleName())) ? "32784-01.htm" : "32784-11.htm";
 				}
 				else if (qs.isStarted())
 				{

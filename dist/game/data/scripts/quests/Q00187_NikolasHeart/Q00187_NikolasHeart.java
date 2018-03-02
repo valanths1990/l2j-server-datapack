@@ -18,12 +18,12 @@
  */
 package quests.Q00187_NikolasHeart;
 
-import quests.Q00185_NikolasCooperation.Q00185_NikolasCooperation;
-
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
+
+import quests.Q00185_NikolasCooperation.Q00185_NikolasCooperation;
 
 /**
  * Nikola's Heart (187)
@@ -128,8 +128,7 @@ public final class Q00187_NikolasHeart extends Quest
 		{
 			if (npc.getId() == RESEARCHER_LORAIN)
 			{
-				final QuestState q185 = player.getQuestState(Q00185_NikolasCooperation.class.getSimpleName());
-				if ((q185 != null) && q185.isCompleted() && hasQuestItems(player, LORAINES_CERTIFICATE))
+				if (player.hasQuestCompleted(Q00185_NikolasCooperation.class.getSimpleName()) && hasQuestItems(player, LORAINES_CERTIFICATE))
 				{
 					htmltext = player.getLevel() >= MIN_LEVEL ? "30673-01.htm" : "30673-02.htm";
 				}

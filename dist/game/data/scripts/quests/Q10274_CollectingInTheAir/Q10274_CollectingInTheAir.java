@@ -129,15 +129,7 @@ public class Q10274_CollectingInTheAir extends Quest
 				htmltext = "32557-0a.html";
 				break;
 			case State.CREATED:
-				st = player.getQuestState(Q10273_GoodDayToFly.class.getSimpleName());
-				if (st == null)
-				{
-					htmltext = "32557-00.html";
-				}
-				else
-				{
-					htmltext = ((player.getLevel() >= 75) && st.isCompleted()) ? "32557-01.htm" : "32557-00.html";
-				}
+				htmltext = ((player.getLevel() >= 75) && player.hasQuestCompleted(Q10273_GoodDayToFly.class.getSimpleName())) ? "32557-01.htm" : "32557-00.html";
 				break;
 			case State.STARTED:
 				if ((st.getQuestItemsCount(RED) + st.getQuestItemsCount(BLUE) + st.getQuestItemsCount(GREEN)) >= 8)

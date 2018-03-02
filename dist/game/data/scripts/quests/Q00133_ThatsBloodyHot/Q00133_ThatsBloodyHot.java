@@ -164,8 +164,7 @@ public class Q00133_ThatsBloodyHot extends Quest
 			{
 				if (npc.getId() == KANIS)
 				{
-					final QuestState qs = player.getQuestState(Q00131_BirdInACage.class.getSimpleName());
-					if ((qs != null) && qs.isCompleted())
+					if (player.hasQuestCompleted(Q00131_BirdInACage.class.getSimpleName()))
 					{
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? "32264-01.htm" : "32264-02.html";
 					}

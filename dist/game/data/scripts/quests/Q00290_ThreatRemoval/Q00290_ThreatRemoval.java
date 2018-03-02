@@ -203,8 +203,7 @@ public class Q00290_ThreatRemoval extends Quest
 		{
 			case State.CREATED:
 			{
-				st = player.getQuestState(Q00251_NoSecrets.class.getSimpleName());
-				htmltext = ((player.getLevel() >= MIN_LEVEL) && (st != null) && (st.isCompleted())) ? "30201-01.htm" : "30201-03.html";
+				htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q00251_NoSecrets.class.getSimpleName())) ? "30201-01.htm" : "30201-03.html";
 				break;
 			}
 			case State.STARTED:

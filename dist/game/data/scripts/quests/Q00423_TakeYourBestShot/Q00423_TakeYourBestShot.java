@@ -127,8 +127,7 @@ public final class Q00423_TakeYourBestShot extends Quest
 				}
 				else
 				{
-					final QuestState q249 = player.getQuestState(Q00249_PoisonedPlainsOfTheLizardmen.class.getSimpleName());
-					htmltext = ((player.getLevel() >= MIN_LEVEL) && (q249 != null) && (q249.isCompleted())) ? "32744-03.htm" : "32744-01.htm";
+					htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q00249_PoisonedPlainsOfTheLizardmen.class.getSimpleName())) ? "32744-03.htm" : "32744-01.htm";
 				}
 			}
 			else if (npc.getId() == BATRACOS)

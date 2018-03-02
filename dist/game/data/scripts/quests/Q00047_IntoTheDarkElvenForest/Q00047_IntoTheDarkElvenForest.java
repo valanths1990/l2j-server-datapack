@@ -204,8 +204,7 @@ public final class Q00047_IntoTheDarkElvenForest extends Quest
 						}
 						else
 						{
-							st = talker.getQuestState(Q00008_AnAdventureBegins.class.getSimpleName());
-							if ((st != null) && st.isCompleted() && st.hasQuestItems(MARK_OF_TRAVELER))
+							if (talker.hasQuestCompleted(Q00008_AnAdventureBegins.class.getSimpleName()) && st.hasQuestItems(MARK_OF_TRAVELER))
 							{
 								htmltext = "30097-01.htm";
 							}

@@ -305,8 +305,7 @@ public class Q00125_TheNameOfEvil1 extends Quest
 						}
 						else
 						{
-							st = player.getQuestState(Q00124_MeetingTheElroki.class.getSimpleName());
-							htmltext = ((st != null) && st.isCompleted()) ? "32114-01.htm" : "32114-01b.htm";
+							htmltext = (player.hasQuestCompleted(Q00124_MeetingTheElroki.class.getSimpleName())) ? "32114-01.htm" : "32114-01b.htm";
 						}
 						break;
 					case State.STARTED:

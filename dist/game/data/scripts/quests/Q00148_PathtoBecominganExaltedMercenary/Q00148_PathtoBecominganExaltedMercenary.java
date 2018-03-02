@@ -86,7 +86,6 @@ public class Q00148_PathtoBecominganExaltedMercenary extends Quest
 		switch (st.getState())
 		{
 			case State.CREATED:
-				QuestState _prev = player.getQuestState(Q00147_PathtoBecominganEliteMercenary.class.getSimpleName());
 				if ((player.getClan() != null) && (player.getClan().getCastleId() > 0))
 				{
 					htmltext = "castle.htm";
@@ -97,14 +96,7 @@ public class Q00148_PathtoBecominganExaltedMercenary extends Quest
 				}
 				else
 				{
-					if ((_prev != null) && _prev.isCompleted())
-					{
-						htmltext = "exalted-00a.htm";
-					}
-					else
-					{
-						htmltext = "exalted-00.htm";
-					}
+					htmltext = (player.hasQuestCompleted(Q00147_PathtoBecominganEliteMercenary.class.getSimpleName())) ? "exalted-00a.htm" : "exalted-00.htm";
 				}
 				break;
 			case State.STARTED:

@@ -136,11 +136,10 @@ public class Q00461_RumbleInTheBase extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		final QuestState prev = player.getQuestState(Q00252_ItSmellsDelicious.class.getSimpleName());
 		switch (st.getState())
 		{
 			case State.CREATED:
-				htmltext = ((player.getLevel() >= 82) && (prev != null) && prev.isCompleted()) ? "30200-01.htm" : "30200-02.htm";
+				htmltext = ((player.getLevel() >= 82) && player.hasQuestCompleted(Q00252_ItSmellsDelicious.class.getSimpleName())) ? "30200-01.htm" : "30200-02.htm";
 				break;
 			case State.STARTED:
 				if (st.isCond(1))
@@ -162,7 +161,7 @@ public class Q00461_RumbleInTheBase extends Quest
 				else
 				{
 					st.setState(State.CREATED);
-					htmltext = ((player.getLevel() >= 82) && (prev != null) && (prev.getState() == State.COMPLETED)) ? "30200-01.htm" : "30200-02.htm";
+					htmltext = ((player.getLevel() >= 82) && player.hasQuestCompleted(Q00252_ItSmellsDelicious.class.getSimpleName())) ? "30200-01.htm" : "30200-02.htm";
 				}
 				break;
 		}

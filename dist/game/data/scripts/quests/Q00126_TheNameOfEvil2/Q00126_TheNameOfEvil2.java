@@ -350,8 +350,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 						}
 						else
 						{
-							st = player.getQuestState(Q00125_TheNameOfEvil1.class.getSimpleName());
-							htmltext = ((st != null) && st.isCompleted()) ? "32115-0a.htm" : "32115-0b.htm";
+							htmltext = (player.hasQuestCompleted(Q00125_TheNameOfEvil1.class.getSimpleName())) ? "32115-0a.htm" : "32115-0b.htm";
 						}
 						break;
 					case State.STARTED:
