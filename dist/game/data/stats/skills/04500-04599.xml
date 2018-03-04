@@ -109,7 +109,6 @@
 		<set name="abnormalType" val="TURN_STONE" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
 		<set name="affectScope" val="SINGLE" />
-		<set name="canBeDispeled" val="false" />
 		<set name="castRange" val="1500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="2000" />

@@ -522,6 +522,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.etc.event_steamed_rice_cake_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="15379" /> <!-- Steamed Rice Cake -->
@@ -626,6 +627,7 @@
 		<set name="abnormalVisualEffect" val="VP_UP" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.event_six_party_cake_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="15427" /> <!-- 6th Anniversary Party Cake -->
@@ -1130,6 +1132,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.etc_lesser_potion_blue_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="15438" /> <!-- Vitality Maintaining Potion (10 minutes) -->
@@ -1151,6 +1154,7 @@
 		<set name="abnormalType" val="VP_KEEP" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.etc_lesser_potion_scarlet_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="15440" /> <!-- Vitality Maintaining Potion (30 Minutes) -->
@@ -1376,6 +1380,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="icon" val="icon.mysterious_wedding_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="16408" /> <!-- Santa's Buff Scroll -->
@@ -1455,6 +1460,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.etc_candle_white_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="16404" /> <!-- White Christmas Wish Candle -->
@@ -1472,6 +1478,7 @@
 	<skill id="9083" levels="1" name="Christmas Cake - event">
 		<!-- Confirmed CT2.5 -->
 		<set name="icon" val="icon.event_six_party_cake_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="16405" /> <!-- Christmas Cake (event) -->
@@ -1653,7 +1660,6 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17036" /> <!-- Forgotten Scroll - Magician's Will - For Events -->
-		<set name="learnSkillId" val="945" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

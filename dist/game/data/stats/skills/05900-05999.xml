@@ -841,6 +841,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1500" />
 		<set name="icon" val="icon.skill5950" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1261,6 +1262,7 @@
 		<set name="effectRange" val="2100" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill0841" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-2" />
 		<set name="mpConsume2" val="75" />
@@ -1292,6 +1294,7 @@
 		<set name="effectRange" val="2100" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill0842" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-2" />
 		<set name="mpConsume2" val="75" />

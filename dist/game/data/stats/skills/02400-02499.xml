@@ -540,6 +540,7 @@
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill0298" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="10274" /> <!-- Transformation Scroll: Rabbit -->

@@ -398,6 +398,7 @@
 		<set name="abnormalType" val="HP_REGEN_UP" />
 		<set name="affectRange" val="200" />
 		<set name="icon" val="BranchSys.icon.br_kotatsu_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -418,6 +419,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_a_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20876" /> <!-- Love for All Seasons -->
@@ -439,6 +441,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_b_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20877" /> <!-- Happy New Year -->
@@ -461,6 +464,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_c_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20878" /> <!-- Female Aniruddha -->
@@ -483,6 +487,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_d_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20879" /> <!-- Kung Hei Fat Choy -->
@@ -511,6 +516,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_e_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20880" /> <!-- Chinese Feast -->
@@ -535,6 +541,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_f_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20881" /> <!-- Hwa Gei Bu Gwi -->
@@ -556,6 +563,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_g_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20882" /> <!-- Fire Stamp -->
@@ -616,6 +624,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill1256" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -662,6 +671,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF10" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_firecracker_red_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20870" /> <!-- Red Firework -->
@@ -683,6 +693,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF10" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_firecracker_gold_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20871" /> <!-- Gold Firework -->
@@ -704,6 +715,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF10" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_firecracker_blue_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20872" /> <!-- Blue Firework -->
@@ -725,6 +737,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF10" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_firecracker_pink_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20873" /> <!-- Pink Firework -->
@@ -746,6 +759,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF10" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_firecracker_white_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20874" /> <!-- White Firework -->
@@ -767,6 +781,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF10" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_firecracker_silver_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20875" /> <!-- Silver Firework -->
@@ -817,6 +832,7 @@
 		<set name="abnormalType" val="SPEED_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_g_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -835,6 +851,7 @@
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_f_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -853,6 +870,7 @@
 		<set name="abnormalType" val="AVOID_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_g_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -871,6 +889,7 @@
 		<set name="abnormalType" val="PD_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_c_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -889,6 +908,7 @@
 		<set name="abnormalType" val="CRITICAL_DMG_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_b_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -907,6 +927,7 @@
 		<set name="abnormalType" val="HIT_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_b_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -925,6 +946,7 @@
 		<set name="abnormalType" val="MA_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_a_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -943,6 +965,7 @@
 		<set name="abnormalType" val="CASTING_TIME_DOWN" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_e_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -961,6 +984,7 @@
 		<set name="abnormalType" val="VAMPIRIC_ATTACK" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_d_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -979,6 +1003,7 @@
 		<set name="abnormalType" val="MAX_HP_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_g_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -997,6 +1022,7 @@
 		<set name="abnormalType" val="BERSERKER" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_d_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1021,6 +1047,7 @@
 		<set name="abnormalType" val="MD_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_c_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1039,6 +1066,7 @@
 		<set name="abnormalType" val="MAX_MP_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_e_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1057,6 +1085,7 @@
 		<set name="abnormalType" val="CHEAP_MAGIC" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_e_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1077,6 +1106,7 @@
 		<set name="abnormalType" val="MAGIC_CRITICAL_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_a_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1095,6 +1125,7 @@
 		<set name="abnormalType" val="CRITICAL_PROB_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_b_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1113,6 +1144,7 @@
 		<set name="abnormalType" val="SHIELD_PROB_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_c_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1131,6 +1163,7 @@
 		<set name="abnormalType" val="DECREASE_WEIGHT_PENALTY" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_f_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1149,6 +1182,7 @@
 		<set name="abnormalType" val="PA_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_d_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1172,6 +1206,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="#icons" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A4" />
@@ -1607,6 +1642,7 @@
 		<!-- "Birthday gift received once a year. For 12 hours, recovers energy when Exp. is acquired through hunting. The buff disappears when the sub-class is changed." -->
 		<!-- Birthday Skill -->
 		<set name="canBeDispeled" val="false" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
 		<set name="reuseDelay" val="3600000" />
 		<set name="rideState" val="NONE" />
@@ -1624,6 +1660,7 @@
 		<!-- Transformed into Dragon Master Lee. -->
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="TRANSFORM" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
@@ -1638,6 +1675,7 @@
 		<!-- Transformed into Dragon Master Karin. -->
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="TRANSFORM" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
@@ -1681,6 +1719,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform3" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
@@ -1698,6 +1737,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21172" /> <!-- Transformation Scroll: Onyx Beast Event -->
@@ -1722,6 +1762,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21173" /> <!-- Transformation Scroll: Death Blader Event -->
@@ -1746,6 +1787,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21174" /> <!-- Transformation Scroll: Grail Apostle Event -->
@@ -1770,6 +1812,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21175" /> <!-- Transformation Scroll: Unicorn Event -->
@@ -1794,6 +1837,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21176" /> <!-- Transformation Scroll: Lilim Knight Event -->
@@ -1818,6 +1862,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21177" /> <!-- Transformation Scroll: Golem Guardian Event -->
@@ -1842,6 +1887,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21178" /> <!-- Transformation Scroll: Inferno Drake Event -->
@@ -1866,6 +1912,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21179" /> <!-- Transformation Scroll: Dragon Bomber Event -->
@@ -1890,6 +1937,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21180" /> <!-- Transformation Scroll: Heretic Event -->

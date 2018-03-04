@@ -7,6 +7,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13597" /> <!-- Transformation Scroll: Giran Dwarf Mercenary -->
@@ -38,6 +39,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13598" /> <!-- Transformation Scroll: Giran Kamael Mercenary -->
@@ -69,6 +71,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13599" /> <!-- Transformation Scroll: Giran Knight Mercenary -->
@@ -100,6 +103,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13600" /> <!-- Transformation Scroll: Giran Archer Mercenary -->
@@ -131,6 +135,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13601" /> <!-- Transformation Scroll: Giran Wizard Mercenary -->
@@ -162,6 +167,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13602" /> <!-- Transformation Scroll: Giran Kamael Captain Mercenary -->
@@ -193,6 +199,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13603" /> <!-- Transformation Scroll: Giran Knight Captain Mercenary -->
@@ -224,6 +231,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13604" /> <!-- Transformation Scroll: Giran Commander Mercenary -->
@@ -255,6 +263,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13605" /> <!-- Transformation Scroll: Oren Human Mercenary -->
@@ -286,6 +295,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13606" /> <!-- Transformation Scroll: Oren Elf Mercenary -->
@@ -317,6 +327,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13607" /> <!-- Transformation Scroll: Oren Dark Elf Mercenary -->
@@ -348,6 +359,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13608" /> <!-- Transformation Scroll: Oren Orc Mercenary -->
@@ -379,6 +391,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13609" /> <!-- Transformation Scroll: Oren Dwarf Mercenary -->
@@ -410,6 +423,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13610" /> <!-- Transformation Scroll: Oren Kamael Mercenary -->
@@ -441,6 +455,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13611" /> <!-- Transformation Scroll: Oren Knight Mercenary -->
@@ -472,6 +487,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13612" /> <!-- Transformation Scroll: Oren Archer Mercenary -->
@@ -503,6 +519,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13613" /> <!-- Transformation Scroll: Oren Wizard Mercenary -->
@@ -534,6 +551,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13614" /> <!-- Transformation Scroll: Oren Kamael Captain Mercenary -->
@@ -565,6 +583,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13615" /> <!-- Transformation Scroll: Oren Knight Captain Mercenary -->
@@ -596,6 +615,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13616" /> <!-- Transformation Scroll: Oren Commander Mercenary -->
@@ -627,6 +647,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13617" /> <!-- Transformation Scroll: Aden Human Mercenary -->
@@ -658,6 +679,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13618" /> <!-- Transformation Scroll: Aden Elf Mercenary -->
@@ -689,6 +711,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13619" /> <!-- Transformation Scroll: Aden Dark Elf Mercenary -->
@@ -720,6 +743,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13620" /> <!-- Transformation Scroll: Aden Orc Mercenary -->
@@ -751,6 +775,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13621" /> <!-- Transformation Scroll: Aden Dwarf Mercenary -->
@@ -782,6 +807,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13622" /> <!-- Transformation Scroll: Aden Kamael Mercenary -->
@@ -813,6 +839,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13623" /> <!-- Transformation Scroll: Aden Knight Mercenary -->
@@ -844,6 +871,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13624" /> <!-- Transformation Scroll: Aden Archer Mercenary -->
@@ -875,6 +903,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13625" /> <!-- Transformation Scroll: Aden Wizard Mercenary -->
@@ -906,6 +935,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13626" /> <!-- Transformation Scroll: Aden Kamael Captain Mercenary -->
@@ -937,6 +967,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13627" /> <!-- Transformation Scroll: Aden Knight Captain Mercenary -->
@@ -968,6 +999,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13628" /> <!-- Transformation Scroll: Aden Commander Mercenary -->
@@ -999,6 +1031,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13629" /> <!-- Transformation Scroll: Innadril Human Mercenary -->
@@ -1030,6 +1063,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13630" /> <!-- Transformation Scroll: Innadril Elf Mercenary -->
@@ -1061,6 +1095,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13631" /> <!-- Transformation Scroll: Innadril Dark Elf Mercenary -->
@@ -1092,6 +1127,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13632" /> <!-- Transformation Scroll: Innadril Orc Mercenary -->
@@ -1123,6 +1159,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13633" /> <!-- Transformation Scroll: Innadril Dwarf Mercenary -->
@@ -1154,6 +1191,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13634" /> <!-- Transformation Scroll: Innadril Kamael Mercenary -->
@@ -1185,6 +1223,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13635" /> <!-- Transformation Scroll: Innadril Knight Mercenary -->
@@ -1216,6 +1255,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13636" /> <!-- Transformation Scroll: Innadril Archer Mercenary -->
@@ -1247,6 +1287,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13637" /> <!-- Transformation Scroll: Innadril Wizard Mercenary -->
@@ -1278,6 +1319,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13638" /> <!-- Transformation Scroll: Innadril Kamael Captain Mercenary -->
@@ -1309,6 +1351,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13639" /> <!-- Transformation Scroll: Innadril Knight Captain Mercenary -->
@@ -1340,6 +1383,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13640" /> <!-- Transformation Scroll: Innadril Commander Mercenary -->
@@ -1371,6 +1415,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13641" /> <!-- Transformation Scroll: Goddard Human Mercenary -->
@@ -1402,6 +1447,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13642" /> <!-- Transformation Scroll: Goddard Elf Mercenary -->
@@ -1433,6 +1479,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13643" /> <!-- Transformation Scroll: Goddard Dark Elf Mercenary -->
@@ -1464,6 +1511,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13644" /> <!-- Transformation Scroll: Goddard Orc Mercenary -->
@@ -1495,6 +1543,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13645" /> <!-- Transformation Scroll: Goddard Dwarf Mercenary -->
@@ -1526,6 +1575,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13646" /> <!-- Transformation Scroll: Goddard Kamael Mercenary -->
@@ -1557,6 +1607,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13647" /> <!-- Transformation Scroll: Goddard Knight Mercenary -->
@@ -1588,6 +1639,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13648" /> <!-- Transformation Scroll: Goddard Archer Mercenary -->
@@ -1619,6 +1671,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13649" /> <!-- Transformation Scroll: Goddard Wizard Mercenary -->
@@ -1650,6 +1703,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13650" /> <!-- Transformation Scroll: Goddard Kamael Captain Mercenary -->
@@ -1681,6 +1735,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13651" /> <!-- Transformation Scroll: Goddard Knight Captain Mercenary -->
@@ -1712,6 +1767,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13652" /> <!-- Transformation Scroll: Goddard Commander Mercenary -->
@@ -1743,6 +1799,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13653" /> <!-- Transformation Scroll: Rune Human Mercenary -->
@@ -1774,6 +1831,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13654" /> <!-- Transformation Scroll: Rune Elf Mercenary -->
@@ -1805,6 +1863,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13655" /> <!-- Transformation Scroll: Rune Dark Elf Mercenary -->
@@ -1836,6 +1895,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13656" /> <!-- Transformation Scroll: Rune Orc Mercenary -->
@@ -1867,6 +1927,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13657" /> <!-- Transformation Scroll: Rune Dwarf Mercenary -->
@@ -1898,6 +1959,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13658" /> <!-- Transformation Scroll: Rune Kamael Mercenary -->
@@ -1929,6 +1991,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13659" /> <!-- Transformation Scroll: Rune Knight Mercenary -->
@@ -1960,6 +2023,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13660" /> <!-- Transformation Scroll: Rune Archer Mercenary -->
@@ -1991,6 +2055,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13661" /> <!-- Transformation Scroll: Rune Wizard Mercenary -->
@@ -2022,6 +2087,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13662" /> <!-- Transformation Scroll: Rune Kamael Captain Mercenary -->
@@ -2053,6 +2119,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13663" /> <!-- Transformation Scroll: Rune Knight Captain Mercenary -->
@@ -2084,6 +2151,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13664" /> <!-- Transformation Scroll: Rune Commander Mercenary -->
@@ -2115,6 +2183,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13665" /> <!-- Transformation Scroll: Schuttgart Human Mercenary -->
@@ -2146,6 +2215,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13666" /> <!-- Transformation Scroll: Schuttgart Elf Mercenary -->
@@ -2177,6 +2247,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13667" /> <!-- Transformation Scroll: Schuttgart Dark Elf Mercenary -->
@@ -2208,6 +2279,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13668" /> <!-- Transformation Scroll: Schuttgart Orc Mercenary -->
@@ -2239,6 +2311,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13669" /> <!-- Transformation Scroll: Schuttgart Dwarf Mercenary -->
@@ -2270,6 +2343,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13670" /> <!-- Transformation Scroll: Schuttgart Kamael Mercenary -->
@@ -2301,6 +2375,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13671" /> <!-- Transformation Scroll: Schuttgart Knight Mercenary -->
@@ -2332,6 +2407,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13672" /> <!-- Transformation Scroll: Schuttgart Archer Mercenary -->
@@ -2363,6 +2439,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13673" /> <!-- Transformation Scroll: Schuttgart Wizard Mercenary -->
@@ -2394,6 +2471,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13674" /> <!-- Transformation Scroll: Schuttgart Kamael Captain Mercenary -->
@@ -2425,6 +2503,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13675" /> <!-- Transformation Scroll: Schuttgart Knight Captain Mercenary -->
@@ -2456,6 +2535,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="13676" /> <!-- Transformation Scroll: Schuttgart Commander Mercenary -->
@@ -2486,7 +2566,6 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="14219" /> <!-- Forgotten Scroll - Magician's Will -->
-		<set name="learnSkillId" val="945" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

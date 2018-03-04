@@ -25,7 +25,6 @@
 							<xs:enumeration value="afterEffectId" />
 							<xs:enumeration value="basicProperty" />
 							<xs:enumeration value="blockedInOlympiad" />
-							<xs:enumeration value="canBeDispeled" />
 							<xs:enumeration value="capsuled_items_skill" />
 							<xs:enumeration value="castRange" />
 							<xs:enumeration value="channelingSkillId" />
@@ -45,8 +44,7 @@
 							<xs:enumeration value="hitTime" />
 							<xs:enumeration value="hpConsume" />
 							<xs:enumeration value="icon" />
-							<xs:enumeration value="inheritElementals" />
-							<xs:enumeration value="inheritPercent" />
+							<xs:enumeration value="irreplaceableBuff" />
 							<xs:enumeration value="isDebuff" />
 							<xs:enumeration value="isMagic" />
 							<xs:enumeration value="isOutpost" />
@@ -55,8 +53,6 @@
 							<xs:enumeration value="itemConsumeCount" />
 							<xs:enumeration value="itemConsumeId" />
 							<xs:enumeration value="itemConsumeSteps" />
-							<xs:enumeration value="learnSkillId" />
-							<xs:enumeration value="lethalStrikeRate" />
 							<xs:enumeration value="lvlBonusRate" />
 							<xs:enumeration value="magicLvl" />
 							<xs:enumeration value="minPledgeClass" />
