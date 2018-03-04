@@ -8,6 +8,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="BranchSys.icon.br_spirit_skill_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20977" /> <!-- Proof of Friendship -->
@@ -25,6 +26,7 @@
 		<set name="activateRate" val="0" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_dragonboat_cap_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -377,6 +379,7 @@
 		<set name="abnormalTime" val="-1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
@@ -470,6 +473,7 @@
 	</skill>
 	<skill id="21238" levels="1" name="Jet Bike">
 		<!-- Mounts a jet bike. -->
+		<set name="irreplaceableBuff" val="true" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="NONE" />
 	</skill>
@@ -752,6 +756,7 @@
 		<set name="abnormalTime" val="-1" /> <!-- FIXME: value unconfirmed -->
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />

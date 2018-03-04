@@ -1606,7 +1606,6 @@
 		<set name="abnormalTime" val="4200" />
 		<set name="abnormalType" val="FATAL_POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
-		<set name="canBeDispeled" val="false" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />

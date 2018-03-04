@@ -1748,7 +1748,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="7200" />
 		<set name="abnormalType" val="PK_PROTECT" />
-		<set name="canBeDispeled" val="false" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill0194" />

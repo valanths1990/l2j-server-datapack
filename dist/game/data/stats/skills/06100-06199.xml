@@ -561,7 +561,6 @@
 		<set name="activateRate" val="90" />
 		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
-		<set name="canBeDispeled" val="false" />
 		<set name="castRange" val="300" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="600" />
@@ -681,7 +680,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="900" />
 		<set name="abnormalType" val="MULTI_DEBUFF" />
-		<set name="canBeDispeled" val="false" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill0122" />
 		<set name="isDebuff" val="true" />
@@ -710,7 +708,6 @@
 		<set name="abnormalTime" val="11" />
 		<set name="abnormalType" val="PD_DOWN" />
 		<set name="affectScope" val="SINGLE" />
-		<set name="canBeDispeled" val="false" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="#icons" />
 		<set name="isDebuff" val="true" />
@@ -749,7 +746,6 @@
 		<set name="abnormalTime" val="11" />
 		<set name="abnormalType" val="SIGNAL_A" />
 		<set name="affectScope" val="SINGLE" />
-		<set name="canBeDispeled" val="false" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="#icons" />
 		<set name="isDebuff" val="true" />
@@ -789,7 +785,6 @@
 		<set name="abnormalType" val="MAX_HP_DOWN" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="affectScope" val="SINGLE" />
-		<set name="canBeDispeled" val="false" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="#icons" />
 		<set name="isDebuff" val="true" />
@@ -900,12 +895,12 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill6169" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<!-- NOTE: Using abnormalLvl 99 instead of 1 due is a irreplaceable buff -->
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.05" />
 				<mul stat="mAtk" val="1.05" />
@@ -923,12 +918,12 @@
 		<set name="abnormalType" val="ULTIMATE_BUFF" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill6171" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<!-- NOTE: Using abnormalLvl 99 instead of 1 due is a irreplaceable buff -->
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.05" />
 				<mul stat="mAtk" val="1.05" />

@@ -341,8 +341,6 @@
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="hitTime" val="6000" />
 		<set name="icon" val="icon.skill1408" />
-		<set name="inheritElementals" val="true" />
-		<set name="inheritPercent" val="1.00" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="4" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->

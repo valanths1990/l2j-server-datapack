@@ -2487,7 +2487,6 @@
 		<set name="affectRange" val="1000" />
 		<set name="basicProperty" val="MEN" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="canBeDispeled" val="false" />
 		<set name="effectPoint" val="-676" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill1375" />
@@ -2526,7 +2525,6 @@
 		<set name="affectRange" val="1000" />
 		<set name="basicProperty" val="MEN" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="canBeDispeled" val="false" />
 		<set name="effectPoint" val="-676" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill1376" />

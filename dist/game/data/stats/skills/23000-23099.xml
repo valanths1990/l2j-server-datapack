@@ -56,6 +56,7 @@
 		<set name="activateRate" val="0" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
@@ -127,6 +128,7 @@
 		<set name="activateRate" val="0" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
@@ -234,6 +236,7 @@
 		<set name="activateRate" val="0" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
@@ -305,6 +308,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -327,6 +331,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_xmas_reward_buff_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -355,6 +360,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="coolTime" val="500" />
 		<set name="icon" val="BranchSys.icon.br_turkey_buff_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -383,10 +389,10 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="BR_EVENT_BUF2" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="canBeDispeled" val="false" />
 		<set name="castRange" val="500" />
 		<set name="effectRange" val="550" />
 		<set name="icon" val="#icons" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -424,8 +430,8 @@
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="BR_EVENT_BUF3" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="canBeDispeled" val="false" />
 		<set name="icon" val="#icons" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
@@ -453,6 +459,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -590,6 +597,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -627,6 +635,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -652,6 +661,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -689,6 +699,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -777,6 +788,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -805,6 +817,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -830,6 +843,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -998,6 +1012,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1021,6 +1036,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1045,6 +1061,7 @@
 		<set name="activateRate" val="0" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1130,6 +1147,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1155,6 +1173,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1179,6 +1198,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1240,6 +1260,7 @@
 		<set name="abnormalType" val="RESIST_DERANGEMENT" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="6000" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
@@ -1268,6 +1289,7 @@
 		<set name="effectRange" val="600" />
 		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill1289" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
@@ -1322,6 +1344,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="500" />
 		<set name="icon" val="BranchSys.icon.br_power_of_eva_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1390,6 +1413,7 @@
 		<set name="effectPoint" val="486" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20597" /> <!-- Girl's Soul Ore -->
@@ -1428,6 +1452,7 @@
 		<set name="effectPoint" val="486" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20597" /> <!-- Girl's Soul Ore -->
@@ -1476,6 +1501,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1516,6 +1542,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1556,6 +1583,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1596,6 +1624,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1636,6 +1665,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1676,6 +1706,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_agathion_special" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />

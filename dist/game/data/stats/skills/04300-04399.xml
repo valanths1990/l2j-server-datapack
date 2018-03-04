@@ -1096,7 +1096,6 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="SSQ_TOWN_CURSE" />
-		<set name="canBeDispeled" val="false" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="icon" val="icon.skill0046" />
@@ -1125,7 +1124,6 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="SSQ_TOWN_CURSE" />
-		<set name="canBeDispeled" val="false" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="icon" val="icon.skill0046" />
@@ -1174,7 +1172,6 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="SSQ_TOWN_BLESSING" />
-		<set name="canBeDispeled" val="false" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1044" />
@@ -1204,7 +1201,6 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="SSQ_TOWN_BLESSING" />
-		<set name="canBeDispeled" val="false" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1044" />
@@ -1230,7 +1226,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="DECREASE_WEIGHT_PENALTY" />
-		<set name="canBeDispeled" val="false" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1044" />

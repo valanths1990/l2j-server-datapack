@@ -244,6 +244,7 @@
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="br_cashtex.item.br_cash_adv_swift_attack_potion_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -261,6 +262,7 @@
 		<set name="abnormalType" val="SPEED_UP" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="br_cashtex.item.br_cash_adv_quick_step_potion_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -292,6 +294,7 @@
 		<set name="abnormalType" val="HP_RECOVER" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="br_cashtex.item.br_cash_greater_healing_potion_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -309,6 +312,7 @@
 		<set name="abnormalType" val="HP_RECOVER" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="br_cashtex.item.br_cash_healing_potion_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -399,6 +403,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22039" /> <!-- Wind Walk Scroll -->
@@ -419,6 +424,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_haste_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22040" /> <!-- Haste Scroll -->
@@ -439,6 +445,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_might_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22041" /> <!-- Might Scroll -->
@@ -459,6 +466,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_shield_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22042" /> <!-- Shield Scroll -->
@@ -479,6 +487,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_death_whisper_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22043" /> <!-- Scroll of Death Whisper -->
@@ -499,6 +508,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_guidance_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22044" /> <!-- Scroll of Guidance -->
@@ -519,6 +529,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_empower_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22045" /> <!-- Empower Scroll -->
@@ -539,6 +550,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_greater_acumen_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22046" /> <!-- Grater Acumen Scroll -->
@@ -559,6 +571,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_vampiric_rage_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22047" /> <!-- Vampiric Rage Scroll -->
@@ -579,6 +592,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_bless_the_body_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22048" /> <!-- Bless the Body Scroll -->
@@ -599,6 +613,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_berserker_spirit_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22049" /> <!-- Berserker Spirit Scroll -->
@@ -626,6 +641,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_magic_barrier_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22050" /> <!-- Magic Barrier Scroll -->
@@ -646,6 +662,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_bless_the_soul_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22051" /> <!-- Bless the Soul Scroll -->
@@ -666,6 +683,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_clarity_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22052" /> <!-- Clarity Scroll -->
@@ -688,6 +706,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wild_magic_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="22053" /> <!-- Wild Magic Scroll -->
