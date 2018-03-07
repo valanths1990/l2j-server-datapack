@@ -81,7 +81,7 @@ public final class NevitsHerald extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		return "4326.htm";
+		return "4326.html";
 	}
 	
 	@Override
@@ -95,7 +95,7 @@ public final class NevitsHerald extends AbstractNpcAI
 			{
 				if (player.getEffectList().getFirstEffect(L2EffectType.NEVIT_HOURGLASS) != null)
 				{
-					return "4326-1.htm";
+					return "4326-1.html";
 				}
 				npc.setTarget(player);
 				npc.doCast(FALL_OF_THE_DRAGON);
