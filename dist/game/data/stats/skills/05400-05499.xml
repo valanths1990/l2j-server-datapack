@@ -21,7 +21,6 @@
 		<set name="affectRange" val="300" />
 		<set name="affectScope" val="POINT_BLANK" />
 		<set name="effectPoint" val="-100" />
-		<set name="flyType" val="THROW_UP" />
 		<set name="hitTime" val="5800" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
@@ -1292,7 +1291,6 @@
 	<skill id="5494" levels="1" name="Gust">
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="1" />
-		<set name="flyType" val="THROW_UP" />
 		<set name="magicLvl" val="86" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />

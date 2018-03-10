@@ -1764,7 +1764,6 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="affectRange" val="300" />
 		<set name="effectPoint" val="-100" />
-		<set name="flyType" val="THROW_UP" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />

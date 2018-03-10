@@ -1593,7 +1593,6 @@
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-676" />
 		<set name="effectRange" val="600" />
-		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="800" />
 		<set name="icon" val="icon.skill0540" />
 		<set name="magicLvl" val="79" />

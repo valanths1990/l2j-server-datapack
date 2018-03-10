@@ -1313,7 +1313,6 @@
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-676" />
 		<set name="effectRange" val="600" />
-		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="800" />
 		<set name="icon" val="icon.skill0540" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1980,7 +1979,6 @@
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="800" />
-		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="800" />
 		<set name="icon" val="icon.skill0494" />
 		<set name="isDebuff" val="true" />
@@ -2002,9 +2000,6 @@
 				<param power="1" />
 			</effect>
 			<effect name="Stun" />
-			<effect name="EnemyCharge">
-				<param flyRadius="200" />
-			</effect>
 		</effects>
 	</skill>
 	<skill id="979" levels="6" name="Aggression">
@@ -2444,7 +2439,6 @@
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-379" />
 		<set name="effectRange" val="600" />
-		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="800" />
 		<set name="icon" val="icon.skill0484" />
 		<set name="magicLvl" val="40" />
@@ -2460,11 +2454,6 @@
 				<target mindistance="200" />
 			</and>
 		</cond>
-		<effects>
-			<effect name="EnemyCharge">
-				<param flyRadius="200" />
-			</effect>
-		</effects>
 	</skill>
 	<skill id="995" levels="1" name="Rush Impact">
 		<!-- High Five Confirmed -->
@@ -2481,7 +2470,6 @@
 		<set name="effectPoint" val="-681" />
 		<set name="effectRange" val="800" />
 		<set name="fanRange" val="0,0,600,60" />
-		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="800" />
 		<set name="icon" val="icon.skill0793" />
 		<set name="isDebuff" val="true" />
@@ -2587,7 +2575,6 @@
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-630" />
 		<set name="effectRange" val="600" />
-		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="800" />
 		<set name="icon" val="icon.skill0998" />
 		<set name="magicLvl" val="40" />
@@ -2603,10 +2590,5 @@
 				<target mindistance="200" />
 			</and>
 		</cond>
-		<effects>
-			<effect name="EnemyCharge">
-				<param flyRadius="200" />
-			</effect>
-		</effects>
 	</skill>
 </list>
