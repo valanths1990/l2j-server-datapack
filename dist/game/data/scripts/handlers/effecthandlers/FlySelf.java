@@ -30,13 +30,13 @@ import com.l2jserver.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import com.l2jserver.gameserver.network.serverpackets.ValidateLocation;
 
 /**
- * Enemy Charge effect implementation.
+ * Fly Self effect implementation.
  */
-public final class EnemyCharge extends AbstractEffect
+public final class FlySelf extends AbstractEffect
 {
 	private final int _flyRadius;
 	
-	public EnemyCharge(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public FlySelf(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		

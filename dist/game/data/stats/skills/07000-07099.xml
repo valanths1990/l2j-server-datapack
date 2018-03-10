@@ -1164,7 +1164,6 @@
 		<set name="affectScope" val="RANGE" />
 		<set name="basicProperty" val="CON" />
 		<set name="coolTime" val="200" />
-		<set name="flyType" val="DUMMY" />
 		<set name="hitTime" val="300" />
 		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />

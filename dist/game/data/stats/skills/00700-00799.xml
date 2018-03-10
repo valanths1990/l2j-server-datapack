@@ -2570,7 +2570,6 @@
 		<set name="effectPoint" val="-669" />
 		<set name="effectRange" val="800" />
 		<set name="fanRange" val="0,0,600,60" />
-		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="800" />
 		<set name="icon" val="icon.skill0793" />
 		<set name="isDebuff" val="true" />

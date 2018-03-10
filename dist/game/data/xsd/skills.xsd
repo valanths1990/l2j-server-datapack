@@ -40,7 +40,6 @@
 							<xs:enumeration value="elementPower" />
 							<xs:enumeration value="excludedFromCheck" />
 							<xs:enumeration value="fanRange" />
-							<xs:enumeration value="flyType" />
 							<xs:enumeration value="hitTime" />
 							<xs:enumeration value="hpConsume" />
 							<xs:enumeration value="icon" />
@@ -540,7 +539,6 @@
 					<xs:enumeration value="DispelBySlot" />
 					<xs:enumeration value="DispelBySlotProbability" />
 					<xs:enumeration value="EnableCloak" />
-					<xs:enumeration value="EnemyCharge" />
 					<xs:enumeration value="EnergyAttack" />
 					<xs:enumeration value="Escape" />
 					<xs:enumeration value="FakeDeath" />
@@ -548,6 +546,7 @@
 					<xs:enumeration value="Fear" />
 					<xs:enumeration value="Fishing" />
 					<xs:enumeration value="Flag" />
+					<xs:enumeration value="FlySelf" />
 					<xs:enumeration value="FocusEnergy" />
 					<xs:enumeration value="FocusMaxEnergy" />
 					<xs:enumeration value="FocusSouls" />
