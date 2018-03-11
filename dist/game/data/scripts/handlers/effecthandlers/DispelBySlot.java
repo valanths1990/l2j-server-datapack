@@ -64,7 +64,7 @@ public final class DispelBySlot extends AbstractEffect
 	@Override
 	public L2EffectType getEffectType()
 	{
-		return L2EffectType.DISPEL_BY_SLOT;
+		return L2EffectType.DISPEL;
 	}
 	
 	@Override

@@ -61,7 +61,6 @@
 							<xs:enumeration value="nextActionAttack" />
 							<xs:enumeration value="operateType" />
 							<xs:enumeration value="overHit" />
-							<xs:enumeration value="power" />
 							<xs:enumeration value="resetQuest" />
 							<xs:enumeration value="reuseDelay" />
 							<xs:enumeration value="rideState" />
