@@ -614,17 +614,17 @@
 		<table name="#mpConsume1"> 7 7 8 8 9 9 9 10 10 11 11 11 12 12 13 13 13 14 14 </table>
 		<table name="#power"> 39 42 44 47 49 52 55 57 60 63 66 68 71 74 77 79 82 84 87 </table>
 		<table name="#ench1power"> 87 88 89 89 89 90 90 91 91 92 92 93 93 94 94 95 95 96 96 97 97 98 98 99 99 100 100 101 102 102 </table>
-		<table name="#ench2ElementPower"> 21 21 22 22 23 23 24 24 25 25 26 26 27 27 28 28 28 29 29 30 30 31 31 32 32 33 33 34 34 35 </table>
+		<table name="#ench2AttributePower"> 21 21 22 22 23 23 24 24 25 25 26 26 27 27 28 28 28 29 29 30 30 31 31 32 32 33 33 34 34 35 </table>
 		<table name="#ench2MpConsume2"> 54 53 52 50 50 49 48 46 46 45 44 42 42 42 41 40 38 38 37 36 34 34 33 32 30 30 29 29 28 26 </table>
 		<table name="#ench2MpConsume1"> 13 13 13 13 12 12 12 12 11 11 11 11 10 10 10 10 10 9 9 9 9 8 8 8 8 7 7 7 7 7 </table>
 		<table name="#ench2power"> 88 88 88 88 89 89 89 89 90 90 90 90 91 91 91 91 91 92 92 92 92 93 93 93 93 94 94 94 94 95 </table>
-		<table name="#enchElementPower"> 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 </table>
+		<table name="#enchAttributePower"> 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill1028" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -636,11 +636,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="elementPower" val="#ench2ElementPower" />
+		<enchant2 name="attributePower" val="#ench2AttributePower" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
-		<enchant3 name="elementPower" val="#enchElementPower" />
+		<enchant3 name="attributePower" val="#enchAttributePower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<cond msgId="113" addName="1">
 			<target race="UNDEAD" />
@@ -670,8 +670,8 @@
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill1031" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -972,8 +972,8 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
-		<enchant3 name="element" val="4" /> <!-- Holy -->
-		<enchant3 name="elementPower" val="20" />
+		<enchant3 name="attributeType" val="HOLY" />
+		<enchant3 name="attributePower" val="20" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<cond msgId="113" addName="1">
 			<target race="UNDEAD" />
@@ -999,7 +999,6 @@
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="243" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="4" /> <!-- Holy -->
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1043" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -1487,7 +1486,7 @@
 		<table name="#ench2AbnormalTimes"> 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 </table>
 		<table name="#ench2MpConsume2"> 54 53 52 51 50 49 48 47 46 45 44 44 43 42 41 40 39 38 37 36 35 34 33 33 32 31 30 29 28 27 </table>
 		<table name="#ench2MpConsume1"> 13 13 13 12 12 12 12 11 11 11 11 11 10 10 10 10 9 9 9 9 8 8 8 8 8 7 7 7 7 6 </table>
-		<table name="#enchElementPower"> 2 4 5 7 9 10 12 14 15 17 18 20 22 23 25 27 28 30 32 33 35 36 38 40 41 43 45 46 48 50 </table>
+		<table name="#enchAttributePower"> 2 4 5 7 9 10 12 14 15 17 18 20 22 23 25 27 28 30 32 33 35 36 38 40 41 43 45 46 48 50 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="30" />
@@ -1498,8 +1497,8 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1400" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1071" />
 		<set name="isDebuff" val="true" />
@@ -1529,7 +1528,7 @@
 			<effect name="Debuff">
 				<sub stat="waterRes" val="20" />
 				<add stat="fireRes" val="10" />
-				<sub stat="waterPower" val="#enchElementPower" />
+				<sub stat="waterPower" val="#enchAttributePower" />
 			</effect>
 		</enchant3Effects>
 	</skill>
@@ -1624,7 +1623,7 @@
 		<table name="#ench2AbnormalTimes"> 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 </table>
 		<table name="#ench2MpConsume2"> 54 53 52 51 50 49 48 47 46 45 44 44 43 42 41 40 39 38 37 36 35 34 33 33 32 31 30 29 28 27 </table>
 		<table name="#ench2MpConsume1"> 13 13 13 12 12 12 12 11 11 11 11 11 10 10 10 10 9 9 9 9 8 8 8 8 8 7 7 7 7 6 </table>
-		<table name="#enchElementPower"> 2 4 5 7 9 10 12 14 15 17 18 20 22 23 25 27 28 30 32 33 35 36 38 40 41 43 45 46 48 50 </table>
+		<table name="#enchAttributePower"> 2 4 5 7 9 10 12 14 15 17 18 20 22 23 25 27 28 30 32 33 35 36 38 40 41 43 45 46 48 50 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="30" />
@@ -1635,8 +1634,8 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1400" />
-		<set name="element" val="2" /> <!-- Wind -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WIND" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1074" />
 		<set name="isDebuff" val="true" />
@@ -1666,7 +1665,7 @@
 			<effect name="Debuff">
 				<sub stat="windRes" val="20" />
 				<add stat="earthRes" val="10" />
-				<sub stat="windPower" val="#enchElementPower" />
+				<sub stat="windPower" val="#enchAttributePower" />
 			</effect>
 		</enchant3Effects>
 	</skill>
@@ -1777,7 +1776,7 @@
 		<table name="#ench2AbnormalTimes"> 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 </table>
 		<table name="#ench2MpConsume2"> 54 53 52 51 50 49 48 47 46 45 44 44 43 42 41 40 39 38 37 36 35 34 33 33 32 31 30 29 28 27 </table>
 		<table name="#ench2MpConsume1"> 13 13 13 12 12 12 12 11 11 11 11 11 10 10 10 10 9 9 9 9 8 8 8 8 8 7 7 7 7 6 </table>
-		<table name="#enchElementPower"> 2 4 5 7 9 10 12 14 15 17 18 20 22 23 25 27 28 30 32 33 35 36 38 40 41 43 45 46 48 50 </table>
+		<table name="#enchAttributePower"> 2 4 5 7 9 10 12 14 15 17 18 20 22 23 25 27 28 30 32 33 35 36 38 40 41 43 45 46 48 50 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="30" />
@@ -1788,8 +1787,8 @@
 		<set name="castRange" val="#castRange" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="#effectRange" />
-		<set name="element" val="0" /> <!-- Fire -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="FIRE" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1083" />
 		<set name="isDebuff" val="true" />
@@ -1819,7 +1818,7 @@
 			<effect name="Debuff">
 				<sub stat="fireRes" val="20" />
 				<add stat="waterRes" val="10" />
-				<sub stat="firePower" val="#enchElementPower" />
+				<sub stat="firePower" val="#enchAttributePower" />
 			</effect>
 		</enchant3Effects>
 	</skill>

@@ -1102,7 +1102,7 @@
 		<table name="#ench2MpConsume2"> 81 78 74 72 70 66 64 61 58 56 53 50 46 44 42 </table>
 		<table name="#ench2MpConsume1"> 20 19 19 18 17 17 16 15 14 14 13 12 12 11 10 </table>
 		<table name="#ench3ActivateRates"> 82 83 84 86 87 88 90 91 92 94 95 96 97 99 100 </table>
-		<table name="#ench4elementPower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
+		<table name="#ench4AttributePower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
@@ -1112,8 +1112,8 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-999" />
 		<set name="effectRange" val="1400" />
-		<set name="element" val="0" /> <!-- Fire -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="FIRE" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="6000" />
 		<set name="icon" val="icon.skill1339" />
 		<set name="isDebuff" val="true" />
@@ -1133,7 +1133,7 @@
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
 		<enchant3 name="activateRate" val="#ench3ActivateRates" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="elementPower" val="#ench4elementPower" />
+		<enchant4 name="attributePower" val="#ench4AttributePower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
 			<effect name="MagicalAttack">
@@ -1165,7 +1165,7 @@
 		<table name="#ench2MpConsume2"> 81 78 74 72 70 66 64 61 58 56 53 50 46 44 42 </table>
 		<table name="#ench2MpConsume1"> 20 19 19 18 17 17 16 15 14 14 13 12 12 11 10 </table>
 		<table name="#ench3ActivateRates"> 82 83 84 86 87 88 90 91 92 94 95 96 97 99 100 </table>
-		<table name="#ench4elementPower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
+		<table name="#ench4AttributePower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
@@ -1175,8 +1175,8 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-999" />
 		<set name="effectRange" val="1400" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="6000" />
 		<set name="icon" val="icon.skill1340" />
 		<set name="isDebuff" val="true" />
@@ -1196,7 +1196,7 @@
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
 		<enchant3 name="activateRate" val="#ench3ActivateRates" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="elementPower" val="#ench4elementPower" />
+		<enchant4 name="attributePower" val="#ench4AttributePower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
 			<effect name="MagicalAttack">
@@ -1228,7 +1228,7 @@
 		<table name="#ench2MpConsume2"> 81 78 74 72 70 66 64 61 58 56 53 50 46 44 42 </table>
 		<table name="#ench2MpConsume1"> 20 19 19 18 17 17 16 15 14 14 13 12 12 11 10 </table>
 		<table name="#ench3ActivateRates"> 82 83 84 86 87 88 90 91 92 94 95 96 97 99 100 </table>
-		<table name="#ench4elementPower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
+		<table name="#ench4AttributePower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
@@ -1238,8 +1238,8 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-999" />
 		<set name="effectRange" val="1400" />
-		<set name="element" val="2" /> <!-- Wind -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WIND" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="6000" />
 		<set name="icon" val="icon.skill1341" />
 		<set name="isDebuff" val="true" />
@@ -1259,7 +1259,7 @@
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
 		<enchant3 name="activateRate" val="#ench3ActivateRates" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="elementPower" val="#ench4elementPower" />
+		<enchant4 name="attributePower" val="#ench4AttributePower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
 			<effect name="MagicalAttack">
@@ -1291,7 +1291,7 @@
 		<table name="#ench2MpConsume2"> 81 78 74 72 70 66 64 61 58 56 53 50 46 44 42 </table>
 		<table name="#ench2MpConsume1"> 20 19 19 18 17 17 16 15 14 14 13 12 12 11 10 </table>
 		<table name="#ench3ActivateRates"> 82 83 84 86 87 88 90 91 92 94 95 96 97 99 100 </table>
-		<table name="#ench4elementPower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
+		<table name="#ench4AttributePower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
@@ -1301,8 +1301,8 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-993" />
 		<set name="effectRange" val="1400" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="6000" />
 		<set name="icon" val="icon.skill1342" />
 		<set name="isDebuff" val="true" />
@@ -1321,7 +1321,7 @@
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
 		<enchant3 name="activateRate" val="#ench3ActivateRates" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="elementPower" val="#ench4elementPower" />
+		<enchant4 name="attributePower" val="#ench4AttributePower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
 			<effect name="MagicalAttack">
@@ -1349,7 +1349,7 @@
 		<table name="#ench2MpConsume2"> 81 78 74 72 70 66 64 61 58 56 53 50 46 44 42 </table>
 		<table name="#ench2MpConsume1"> 20 19 19 18 17 17 16 15 14 14 13 12 12 11 10 </table>
 		<table name="#ench3ActivateRates"> 82 83 84 86 87 88 90 91 92 94 95 96 97 99 100 </table>
-		<table name="#ench4elementPower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
+		<table name="#ench4AttributePower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
@@ -1359,8 +1359,8 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-993" />
 		<set name="effectRange" val="1400" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="6000" />
 		<set name="icon" val="icon.skill1343" />
 		<set name="isDebuff" val="true" />
@@ -1379,7 +1379,7 @@
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
 		<enchant3 name="activateRate" val="#ench3ActivateRates" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="elementPower" val="#ench4elementPower" />
+		<enchant4 name="attributePower" val="#ench4AttributePower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
 			<effect name="HpDrain">
@@ -2662,8 +2662,8 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1400" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="6000" />
 		<set name="icon" val="icon.skill1382" />
 		<set name="isDebuff" val="true" />

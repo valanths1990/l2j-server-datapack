@@ -465,7 +465,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="HOLY_ATTACK" />
-		<set name="element" val="0" /> <!-- Fire -->
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="25" />
 		<set name="operateType" val="A2" />
@@ -482,7 +481,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="HOLY_ATTACK" />
-		<set name="element" val="3" /> <!-- Earth -->
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="25" />
 		<set name="operateType" val="A2" />

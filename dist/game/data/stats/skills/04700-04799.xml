@@ -147,8 +147,8 @@
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1333" />
 		<set name="isDebuff" val="true" />
@@ -189,8 +189,8 @@
 		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="#effectPoints" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1333" />
 		<set name="isDebuff" val="true" />

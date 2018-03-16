@@ -23,6 +23,8 @@
 							<xs:enumeration value="affectRange" />
 							<xs:enumeration value="affectScope" />
 							<xs:enumeration value="afterEffectId" />
+							<xs:enumeration value="attributePower" />
+							<xs:enumeration value="attributeType" />
 							<xs:enumeration value="basicProperty" />
 							<xs:enumeration value="blockedInOlympiad" />
 							<xs:enumeration value="capsuled_items_skill" />
@@ -36,8 +38,6 @@
 							<xs:enumeration value="dmgDirectlyToHp" />
 							<xs:enumeration value="effectPoint" />
 							<xs:enumeration value="effectRange" />
-							<xs:enumeration value="element" />
-							<xs:enumeration value="elementPower" />
 							<xs:enumeration value="excludedFromCheck" />
 							<xs:enumeration value="fanRange" />
 							<xs:enumeration value="hitTime" />

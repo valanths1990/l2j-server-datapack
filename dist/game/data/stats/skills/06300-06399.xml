@@ -5,8 +5,8 @@
 		<!-- Freya Skills -->
 		<set name="affectRange" val="350" />
 		<set name="effectPoint" val="-574" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="5000" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="123" />
@@ -74,8 +74,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume2" val="121" />
@@ -103,8 +103,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
@@ -126,8 +126,8 @@
 		<set name="affectRange" val="200" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume2" val="121" />
@@ -155,8 +155,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill0096" />
 		<set name="isDebuff" val="true" />
@@ -183,8 +183,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="83" />
@@ -208,8 +208,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="83" />
@@ -233,8 +233,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="83" />
@@ -257,8 +257,8 @@
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="83" />
@@ -282,8 +282,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume2" val="121" />
@@ -305,8 +305,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume2" val="121" />
@@ -355,8 +355,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="fanRange" val="0,0,100,0" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -381,8 +381,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume2" val="121" />
@@ -402,8 +402,8 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
@@ -425,8 +425,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
@@ -526,8 +526,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
@@ -551,8 +551,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="5000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
@@ -575,8 +575,8 @@
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
@@ -596,8 +596,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
@@ -619,8 +619,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="5000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
@@ -641,8 +641,8 @@
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-574" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="123" />
 		<set name="operateType" val="A1" />
@@ -663,8 +663,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume2" val="121" />
@@ -686,8 +686,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="84" />
@@ -711,8 +711,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-574" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume2" val="121" />
@@ -1530,8 +1530,8 @@
 		<set name="affectRange" val="150" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1000" />
-		<set name="element" val="3" /> <!-- Earth -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="121" />
