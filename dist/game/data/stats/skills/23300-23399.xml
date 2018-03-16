@@ -5,8 +5,8 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributePower" val="20" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
@@ -309,8 +309,8 @@
 		<!-- <set name="castRange" val="40" /> -->
 		<set name="effectPoint" val="800" />
 		<!-- <set name="effectRange" val="400" /> -->
-		<set name="element" val="2" /> <!-- Wind -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WIND" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="BranchSys2.icon.br_wp_wind_of_mardil_i00" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->

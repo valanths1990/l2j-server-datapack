@@ -462,8 +462,8 @@
 		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="-100" />
-		<set name="element" val="3" /> <!-- Earth -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributePower" val="20" />
 		<set name="icon" val="icon.skill1160" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
@@ -916,8 +916,8 @@
 		<set name="affectRange" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1000" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="180" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="180" />
 		<set name="hitTime" val="10000" />
 		<set name="icon" val="icon.skill6274" />
 		<set name="magicLvl" val="85" />
@@ -941,8 +941,8 @@
 		<set name="affectRange" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1000" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="180" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="180" />
 		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill6274" />
 		<set name="magicLvl" val="85" />
@@ -966,8 +966,8 @@
 		<set name="affectRange" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1000" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="180" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="180" />
 		<set name="hitTime" val="10000" />
 		<set name="icon" val="icon.skill6274" />
 		<set name="magicLvl" val="85" />
@@ -999,8 +999,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-689" />
 		<set name="effectRange" val="1100" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="168" />
@@ -1019,8 +1019,8 @@
 		<set name="affectRange" val="450" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-689" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="5000" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="168" />
@@ -1102,8 +1102,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-689" />
 		<set name="effectRange" val="1200" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3500" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
@@ -1255,8 +1255,8 @@
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-574" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="123" />
@@ -1274,8 +1274,8 @@
 		<!-- Freya Ice Knight Skills -->
 		<set name="affectRange" val="300" />
 		<set name="effectPoint" val="-574" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="123" />
@@ -1296,8 +1296,8 @@
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-574" />
 		<set name="effectRange" val="1100" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume1" val="20" />
@@ -1321,8 +1321,8 @@
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-574" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="fanRange" val="0,0,250,60" />
 		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="85" />
@@ -1381,8 +1381,8 @@
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-574" />
 		<set name="effectRange" val="1100" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume1" val="20" />
@@ -1407,8 +1407,8 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-689" />
 		<set name="effectRange" val="1400" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="123" />
@@ -1440,8 +1440,8 @@
 		<set name="affectRange" val="200" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-689" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />

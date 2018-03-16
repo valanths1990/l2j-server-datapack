@@ -1636,8 +1636,8 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="3" /> <!-- Earth -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributePower" val="20" />
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->

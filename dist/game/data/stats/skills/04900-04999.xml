@@ -747,7 +747,6 @@
 	<skill id="4998" levels="1" name="Lidia - Twister">
 		<!-- TODO: Needs to be done -->
 		<set name="effectPoint" val="-100" />
-		<set name="element" val="2" /> <!-- Wind -->
 		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="77" />
 		<set name="operateType" val="A1" />

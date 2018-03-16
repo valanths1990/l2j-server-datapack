@@ -1083,7 +1083,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="HOLY_ATTACK" />
-		<set name="element" val="0" /> <!-- Fire -->
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.etc_fire_crystal_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1104,7 +1103,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="HOLY_ATTACK" />
-		<set name="element" val="1" /> <!-- Water -->
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.etc_water_crystal_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1125,7 +1123,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="HOLY_ATTACK" />
-		<set name="element" val="2" /> <!-- Wind -->
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.etc_wind_crystal_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1146,7 +1143,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="HOLY_ATTACK" />
-		<set name="element" val="3" /> <!-- Earth -->
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.etc_earth_crystal_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1167,7 +1163,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="HOLY_ATTACK" />
-		<set name="element" val="5" /> <!-- Dark -->
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.etc_unholy_crystal_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1188,7 +1183,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="HOLY_ATTACK" />
-		<set name="element" val="4" /> <!-- Holy -->
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.etc_holy_crystal_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->

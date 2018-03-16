@@ -66,8 +66,8 @@
 		<enchant1 name="abnormalType" val="ATTACK_TIME_UP" />
 		<enchant1 name="activateRate" val="#ench1ActivateRates" />
 		<enchant1 name="basicProperty" val="MEN" />
-		<enchant1 name="element" val="3" /> <!-- Earth -->
-		<enchant1 name="elementPower" val="20" />
+		<enchant1 name="attributeType" val="EARTH" />
+		<enchant1 name="attributePower" val="20" />
 		<enchant1 name="isDebuff" val="true" />
 		<enchant1 name="operateType" val="A2" />
 		<enchant1 name="lvlBonusRate" val="1" />
@@ -78,8 +78,8 @@
 		<enchant2 name="abnormalType" val="DOT_ATTR" />
 		<enchant2 name="activateRate" val="#ench2ActivateRates" />
 		<enchant2 name="basicProperty" val="MEN" />
-		<enchant2 name="element" val="3" /> <!-- Earth -->
-		<enchant2 name="elementPower" val="20" />
+		<enchant2 name="attributeType" val="EARTH" />
+		<enchant2 name="attributePower" val="20" />
 		<enchant2 name="isDebuff" val="true" />
 		<enchant2 name="operateType" val="A2" />
 		<enchant2 name="lvlBonusRate" val="1" />
@@ -90,8 +90,8 @@
 		<enchant3 name="abnormalType" val="HOLY_ATTACK" />
 		<enchant3 name="activateRate" val="80" />
 		<enchant3 name="basicProperty" val="MEN" />
-		<enchant3 name="element" val="3" /> <!-- Earth -->
-		<enchant3 name="elementPower" val="20" />
+		<enchant3 name="attributeType" val="EARTH" />
+		<enchant3 name="attributePower" val="20" />
 		<enchant3 name="isDebuff" val="true" />
 		<enchant3 name="operateType" val="A2" />
 		<enchant3 name="lvlBonusRate" val="1" />
@@ -530,7 +530,7 @@
 		<table name="#ench1Power"> 4915 4959 5003 5047 5090 5134 5178 5222 5266 5310 5354 5398 5442 5486 5529 5573 5617 5661 5705 5749 5793 5837 5881 5925 5968 6012 6056 6100 6144 6188 </table>
 		<table name="#ench2MpConsume2"> 148 145 143 140 138 135 132 130 127 125 122 120 117 115 112 110 107 105 102 100 97 95 92 90 87 85 82 80 77 75 </table>
 		<table name="#enchDuel"> 4955 5040 5125 5210 5295 5380 5465 5551 5636 5721 5806 5891 5976 6061 6147 6232 6317 6402 6487 6572 6657 6742 6828 6913 6998 7083 7168 7253 7338 7424 </table>
-		<table name="#enchElementPower"> 1 3 5 6 8 10 11 13 15 16 18 20 21 23 25 26 28 30 31 33 35 36 38 40 41 43 45 46 48 50 </table>
+		<table name="#enchAttributePower"> 1 3 5 6 8 10 11 13 15 16 18 20 21 23 25 26 28 30 31 33 35 36 38 40 41 43 45 46 48 50 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="1000" />
@@ -548,17 +548,17 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
-		<enchant3 name="element" val="0" /> <!-- Fire -->
-		<enchant3 name="elementPower" val="#enchElementPower" />
+		<enchant3 name="attributeType" val="FIRE" />
+		<enchant3 name="attributePower" val="#enchAttributePower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="element" val="1" /> <!-- Water -->
-		<enchant4 name="elementPower" val="#enchElementPower" />
+		<enchant4 name="attributeType" val="WATER" />
+		<enchant4 name="attributePower" val="#enchAttributePower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
-		<enchant5 name="element" val="2" /> <!-- Wind -->
-		<enchant5 name="elementPower" val="#enchElementPower" />
+		<enchant5 name="attributeType" val="WIND" />
+		<enchant5 name="attributePower" val="#enchAttributePower" />
 		<enchant5 name="magicLvl" val="#enchMagicLvl" />
-		<enchant6 name="element" val="3" /> <!-- Earth -->
-		<enchant6 name="elementPower" val="#enchElementPower" />
+		<enchant6 name="attributeType" val="EARTH" />
+		<enchant6 name="attributePower" val="#enchAttributePower" />
 		<enchant6 name="magicLvl" val="#enchMagicLvl" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
 		<cond msgId="113" addName="1">
@@ -595,7 +595,7 @@
 		<table name="#ench1Power"> 7710 7779 7848 7917 7986 8055 8123 8192 8261 8330 8399 8468 8537 8605 8674 8743 8812 8881 8950 9019 9088 9156 9225 9294 9363 9432 9501 9570 9639 9707 </table>
 		<table name="#ench2HpConsume"> 259 256 252 249 245 242 239 235 232 228 225 222 218 215 211 208 205 201 198 195 191 188 184 181 178 174 171 167 164 161 </table>
 		<table name="#enchDuel"> 7768 7901 8035 8168 8302 8435 8569 8702 8836 8969 9103 9236 9370 9503 9637 9770 9903 10037 10170 10304 10437 10571 10704 10838 10971 11105 11238 11372 11505 11639 </table>
-		<table name="#enchElementPower"> 2 4 5 7 9 10 12 14 15 17 18 20 22 23 25 27 28 30 32 33 35 36 38 40 41 43 45 46 48 50 </table>
+		<table name="#enchAttributePower"> 2 4 5 7 9 10 12 14 15 17 18 20 22 23 25 27 28 30 32 33 35 36 38 40 41 43 45 46 48 50 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="1080" />
@@ -614,17 +614,17 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="hpConsume" val="#ench2HpConsume" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
-		<enchant3 name="element" val="0" /> <!-- Fire -->
-		<enchant3 name="elementPower" val="#enchElementPower" />
+		<enchant3 name="attributeType" val="FIRE" />
+		<enchant3 name="attributePower" val="#enchAttributePower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="element" val="1" /> <!-- Water -->
-		<enchant4 name="elementPower" val="#enchElementPower" />
+		<enchant4 name="attributeType" val="WATER" />
+		<enchant4 name="attributePower" val="#enchAttributePower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
-		<enchant5 name="element" val="2" /> <!-- Wind -->
-		<enchant5 name="elementPower" val="#enchElementPower" />
+		<enchant5 name="attributeType" val="WIND" />
+		<enchant5 name="attributePower" val="#enchAttributePower" />
 		<enchant5 name="magicLvl" val="#enchMagicLvl" />
-		<enchant6 name="element" val="3" /> <!-- Earth -->
-		<enchant6 name="elementPower" val="#enchElementPower" />
+		<enchant6 name="attributeType" val="EARTH" />
+		<enchant6 name="attributePower" val="#enchAttributePower" />
 		<enchant6 name="magicLvl" val="#enchMagicLvl" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
 		<cond msgId="113" addName="1">
@@ -1344,8 +1344,8 @@
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="810" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1800" />
 		<set name="hpConsume" val="1215" />
 		<set name="icon" val="icon.skill0341" />
@@ -1440,7 +1440,7 @@
 		<table name="#ench1Power"> 8475 8503 8530 8558 8586 8614 8641 8669 8697 8725 8753 8780 8808 8836 8864 </table>
 		<table name="#ench2MpConsume2"> 148 143 138 133 128 123 118 113 108 103 98 93 88 83 79 </table>
 		<table name="#ench7Duel"> 7905 8113 8321 8528 8736 8944 9151 9359 9567 9774 9982 10190 10397 10605 10813 </table>
-		<table name="#enchelementPower"> 3 6 10 13 16 20 23 26 30 33 36 40 43 46 50 </table>
+		<table name="#enchAttributePower"> 3 6 10 13 16 20 23 26 30 33 36 40 43 46 50 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-897" />
@@ -1458,17 +1458,17 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
-		<enchant3 name="element" val="0" /> <!-- Fire -->
-		<enchant3 name="elementPower" val="#enchelementPower" />
+		<enchant3 name="attributeType" val="FIRE" />
+		<enchant3 name="attributePower" val="#enchAttributePower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="element" val="1" /> <!-- Water -->
-		<enchant4 name="elementPower" val="#enchelementPower" />
+		<enchant4 name="attributeType" val="WATER" />
+		<enchant4 name="attributePower" val="#enchAttributePower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
-		<enchant5 name="element" val="2" /> <!-- Wind -->
-		<enchant5 name="elementPower" val="#enchelementPower" />
+		<enchant5 name="attributeType" val="WIND" />
+		<enchant5 name="attributePower" val="#enchAttributePower" />
 		<enchant5 name="magicLvl" val="#enchMagicLvl" />
-		<enchant6 name="element" val="3" /> <!-- Earth -->
-		<enchant6 name="elementPower" val="#enchelementPower" />
+		<enchant6 name="attributeType" val="EARTH" />
+		<enchant6 name="attributePower" val="#enchAttributePower" />
 		<enchant6 name="magicLvl" val="#enchMagicLvl" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
 		<cond msgId="113" addName="1">
@@ -1518,7 +1518,7 @@
 		<table name="#ench1Power"> 6502 6535 6568 6601 6634 6667 6700 6733 6766 6799 6833 6866 6899 6932 6965 </table>
 		<table name="#ench2CriticalChance"> 21 21 21 21 21 21 21 22 22 22 22 22 22 22 23 </table>
 		<table name="#ench7Duel"> 5880 5986 6092 6198 6304 6410 6516 6622 6728 6834 6940 7046 7152 7258 7364 </table>
-		<table name="#enchelementPower"> 3 6 10 13 16 20 23 26 30 33 36 40 43 46 50 </table>
+		<table name="#enchAttributePower"> 3 6 10 13 16 20 23 26 30 33 36 40 43 46 50 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-337" />
@@ -1536,17 +1536,17 @@
 		<set name="trait" val="DEATH" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
-		<enchant3 name="element" val="0" /> <!-- Fire -->
-		<enchant3 name="elementPower" val="#enchelementPower" />
+		<enchant3 name="attributeType" val="FIRE" />
+		<enchant3 name="attributePower" val="#enchAttributePower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="element" val="1" /> <!-- Water -->
-		<enchant4 name="elementPower" val="#enchelementPower" />
+		<enchant4 name="attributeType" val="WATER" />
+		<enchant4 name="attributePower" val="#enchAttributePower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
-		<enchant5 name="element" val="2" /> <!-- Wind -->
-		<enchant5 name="elementPower" val="#enchelementPower" />
+		<enchant5 name="attributeType" val="WIND" />
+		<enchant5 name="attributePower" val="#enchAttributePower" />
 		<enchant5 name="magicLvl" val="#enchMagicLvl" />
-		<enchant6 name="element" val="3" /> <!-- Earth -->
-		<enchant6 name="elementPower" val="#enchelementPower" />
+		<enchant6 name="attributeType" val="EARTH" />
+		<enchant6 name="attributePower" val="#enchAttributePower" />
 		<enchant6 name="magicLvl" val="#enchMagicLvl" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
 		<cond msgId="113" addName="1">
@@ -1667,13 +1667,13 @@
 		<table name="#ench1Power"> 5201 5228 5254 5281 5307 5334 5360 5387 5413 5440 5466 5693 5519 5546 5572 </table>
 		<table name="#ench2hpConsume"> 328 317 306 294 283 272 260 249 238 227 215 204 193 181 170 </table>
 		<table name="#ench2MpConsume2"> 75 72 70 67 65 62 60 57 54 52 49 47 44 42 39 </table>
-		<table name="#ench3elementPower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
+		<table name="#ench3AttributePower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="150" />
 		<set name="effectPoint" val="-679" />
-		<set name="element" val="3" /> <!-- Earth -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1800" />
 		<set name="hpConsume" val="340" />
 		<set name="icon" val="icon.skill0347" />
@@ -1688,8 +1688,8 @@
 		<enchant2 name="hpConsume" val="#ench2hpConsume" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
-		<enchant3 name="element" val="3" /> <!-- Earth -->
-		<enchant3 name="elementPower" val="#ench3elementPower" />
+		<enchant3 name="attributeType" val="EARTH" />
+		<enchant3 name="attributePower" val="#ench3AttributePower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
@@ -2605,8 +2605,8 @@
 		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="-666" />
-		<set name="element" val="3" /> <!-- Earth -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill0367" />
 		<set name="isDebuff" val="true" />
@@ -2699,7 +2699,7 @@
 		<table name="#ench2rEvas"> 7 7 7 7 8 8 8 8 8 9 9 9 9 9 10 </table>
 		<table name="#ench3MpConsume2"> 110 106 102 98 95 91 87 83 80 76 72 68 65 61 57 </table>
 		<table name="#enchDuel"> 2077 2134 2191 2248 2305 2362 2419 2476 2533 2590 2647 2704 2761 2818 2875 </table>
-		<table name="#enchelementPower"> 3 6 10 13 16 20 23 26 30 33 36 40 43 46 50 </table>
+		<table name="#enchAttributePower"> 3 6 10 13 16 20 23 26 30 33 36 40 43 46 50 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="30" />
@@ -2720,17 +2720,17 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="mpConsume2" val="#ench3MpConsume2" />
-		<enchant4 name="element" val="0" /> <!-- Fire -->
-		<enchant4 name="elementPower" val="#enchelementPower" />
+		<enchant4 name="attributeType" val="FIRE" />
+		<enchant4 name="attributePower" val="#enchAttributePower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
-		<enchant5 name="element" val="1" /> <!-- Water -->
-		<enchant5 name="elementPower" val="#enchelementPower" />
+		<enchant5 name="attributeType" val="WATER" />
+		<enchant5 name="attributePower" val="#enchAttributePower" />
 		<enchant5 name="magicLvl" val="#enchMagicLvl" />
-		<enchant6 name="element" val="2" /> <!-- Wind -->
-		<enchant6 name="elementPower" val="#enchelementPower" />
+		<enchant6 name="attributeType" val="WIND" />
+		<enchant6 name="attributePower" val="#enchAttributePower" />
 		<enchant6 name="magicLvl" val="#enchMagicLvl" />
-		<enchant7 name="element" val="3" /> <!-- Earth -->
-		<enchant7 name="elementPower" val="#enchelementPower" />
+		<enchant7 name="attributeType" val="EARTH" />
+		<enchant7 name="attributePower" val="#enchAttributePower" />
 		<enchant7 name="magicLvl" val="#enchMagicLvl" />
 		<enchant8 name="magicLvl" val="#enchMagicLvl" />
 		<cond msgId="113" addName="1">

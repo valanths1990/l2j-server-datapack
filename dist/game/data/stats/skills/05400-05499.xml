@@ -229,8 +229,8 @@
 		<set name="affectRange" val="300" />
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="-100" />
-		<set name="element" val="0" /> <!-- Fire -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="FIRE" />
+		<set name="attributePower" val="20" />
 		<set name="icon" val="icon.skill1101" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -1337,8 +1337,8 @@
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1500" />
-		<set name="element" val="0" /> <!-- Fire -->
-		<set name="elementPower" val="180" />
+		<set name="attributeType" val="FIRE" />
+		<set name="attributePower" val="180" />
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
@@ -1363,8 +1363,8 @@
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1500" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="180" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributePower" val="180" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
@@ -1407,8 +1407,8 @@
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="180" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributePower" val="180" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />

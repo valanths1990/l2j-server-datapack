@@ -365,8 +365,8 @@
 		<set name="affectRange" val="300" />
 		<set name="coolTime" val="2000" />
 		<set name="effectPoint" val="-100" />
-		<set name="element" val="3" /> <!-- Earth -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="91740" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
@@ -591,8 +591,8 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1500" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="180" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributePower" val="180" />
 		<set name="fanRange" val="0,0,300,160" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
@@ -615,8 +615,8 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1500" />
-		<set name="element" val="3" /> <!-- Earth -->
-		<set name="elementPower" val="180" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributePower" val="180" />
 		<set name="fanRange" val="0,0,300,160" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
@@ -651,8 +651,8 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1500" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="180" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributePower" val="180" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="1" />
@@ -674,8 +674,8 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1500" />
-		<set name="element" val="3" /> <!-- Earth -->
-		<set name="elementPower" val="180" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributePower" val="180" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="1" />

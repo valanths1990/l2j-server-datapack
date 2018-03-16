@@ -1295,8 +1295,8 @@
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="fanRange" val="0,0,200,180" />
 		<set name="hitTime" val="5000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -1319,8 +1319,8 @@
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1200" />
-		<set name="element" val="1" /> <!-- Water -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3300" />
 		<set name="magicLvl" val="64" />
 		<set name="mpConsume2" val="23" />
@@ -1604,8 +1604,8 @@
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="4" /> <!-- Holy -->
-		<set name="elementPower" val="20" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributePower" val="20" />
 		<set name="fanRange" val="0,0,200,180" />
 		<set name="hitTime" val="5000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
