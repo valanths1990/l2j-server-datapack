@@ -354,16 +354,13 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="AURA_UNDEAD_ENEMY" />
 		<set name="trait" val="HOLD" />
 		<enchant1 name="activateRate" val="#ench1ActivateRates" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<cond msgId="144">
-			<target race="UNDEAD" />
-		</cond>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">

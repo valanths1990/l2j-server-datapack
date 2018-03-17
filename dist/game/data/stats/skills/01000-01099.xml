@@ -800,15 +800,12 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="AURA_UNDEAD_ENEMY" />
 		<set name="trait" val="DERANGEMENT" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
-		<cond msgId="144">
-			<target race="UNDEAD" />
-		</cond>
 		<effects>
 			<effect name="DeleteHate">
 				<param chance="40" />
@@ -1194,11 +1191,8 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="AURA_UNDEAD_ENEMY" />
 		<set name="trait" val="DERANGEMENT" />
-		<cond msgId="144">
-			<target race="UNDEAD" />
-		</cond>
 		<effects>
 			<effect name="Passive" />
 		</effects>

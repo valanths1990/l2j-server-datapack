@@ -222,6 +222,7 @@ import handlers.targethandlers.AreaSummon;
 import handlers.targethandlers.Aura;
 import handlers.targethandlers.AuraCorpseMob;
 import handlers.targethandlers.AuraFriendly;
+import handlers.targethandlers.AuraUndeadEnemy;
 import handlers.targethandlers.BehindArea;
 import handlers.targethandlers.BehindAura;
 import handlers.targethandlers.Clan;
@@ -546,6 +547,7 @@ public class MasterHandler
 			Aura.class,
 			AuraCorpseMob.class,
 			AuraFriendly.class,
+			AuraUndeadEnemy.class,
 			BehindArea.class,
 			BehindAura.class,
 			Clan.class,
