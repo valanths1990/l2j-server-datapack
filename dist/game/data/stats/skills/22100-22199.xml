@@ -1638,16 +1638,28 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="NONE" />
 	</skill>
-	<skill id="22182" levels="1" name="Birthday Joy">
-		<!-- "Birthday gift received once a year. For 12 hours, recovers energy when Exp. is acquired through hunting. The buff disappears when the sub-class is changed." -->
+	<skill id="22182" levels="1" name="Joyous Vitality Potion">
+		<!-- High Five Confirmed -->
 		<!-- Birthday Skill -->
-		<set name="canBeDispeled" val="false" />
+		<set name="abnormalLvl" val="99" />
+		<set name="abnormalTime" val="43200" />
+		<set name="abnormalType" val="VP_UP" />
+		<set name="abnormalVisualEffect" val="VP_UP" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="effectPoint" val="100" />
+		<set name="hitTime" val="100" />
+		<set name="icon" val="icon.etc_potion_blue_i00" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
-		<set name="reuseDelay" val="3600000" />
-		<set name="rideState" val="NONE" />
+		<set name="isMagic" val="2" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="21170" /> <!-- Birthday Vitality Potion -->
+		<set name="magicLvl" val="-2" />
+		<set name="operateType" val="A2" />
+		<set name="reuseDelay" val="43200000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="stayAfterDeath" val="true" />
 		<set name="stayOnSubclassChange" val="false" />
+		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="Buff">
