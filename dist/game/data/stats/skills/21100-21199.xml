@@ -1418,7 +1418,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="180000" />
 		<set name="rideState" val="NONE" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21173" levels="1" name="Enhanced Authority - WIT+1 INT+1">
@@ -1434,7 +1434,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="180000" />
 		<set name="rideState" val="NONE" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21174" levels="1" name="Enhanced Authority - WIT+1 MEN+1">
@@ -1450,7 +1450,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="180000" />
 		<set name="rideState" val="NONE" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21175" levels="1" name="Enhanced Authority - CON+1 DEX+1">
@@ -1466,7 +1466,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="180000" />
 		<set name="rideState" val="NONE" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21176" levels="1" name="Divine Protection - Divinity">
@@ -1652,7 +1652,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1200000" />
 		<set name="rideState" val="NONE" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21191" levels="1" name="Agathion Seal Cancel - Phoenix">
@@ -1684,7 +1684,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="SilentMove">
@@ -1705,7 +1705,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21194" levels="1" name="Agathion Seal Cancel - Three-headed Dragon">
