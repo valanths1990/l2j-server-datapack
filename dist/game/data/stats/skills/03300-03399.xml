@@ -272,7 +272,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="360000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="Buff">
@@ -456,7 +456,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -483,7 +483,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -510,7 +510,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>

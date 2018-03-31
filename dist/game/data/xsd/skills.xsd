@@ -63,10 +63,10 @@
 							<xs:enumeration value="overHit" />
 							<xs:enumeration value="resetQuest" />
 							<xs:enumeration value="reuseDelay" />
+							<xs:enumeration value="reuseDelayLock" />
 							<xs:enumeration value="rideState" />
 							<xs:enumeration value="simultaneousCast" />
 							<xs:enumeration value="soulMaxConsumeCount" />
-							<xs:enumeration value="staticReuse" />
 							<xs:enumeration value="stayAfterDeath" />
 							<xs:enumeration value="stayOnSubclassChange" />
 							<xs:enumeration value="targetType" />

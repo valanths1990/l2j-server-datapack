@@ -1059,7 +1059,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23179" levels="1" name="Blessing of Vitality">

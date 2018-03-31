@@ -1092,7 +1092,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="180000" />
 		<set name="rideState" val="NONE" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="Hide">

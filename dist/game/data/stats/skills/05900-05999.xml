@@ -1041,7 +1041,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="40000" />
 		<set name="rideState" val="NONE" />
-		<set name="staticReuse" val="true" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5968" levels="2" name="Rapid Shot">
