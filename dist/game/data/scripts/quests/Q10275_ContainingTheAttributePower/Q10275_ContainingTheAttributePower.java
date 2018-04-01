@@ -19,7 +19,6 @@
 package quests.Q10275_ContainingTheAttributePower;
 
 import com.l2jserver.gameserver.enums.audio.Sound;
-import com.l2jserver.gameserver.model.Elementals;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -27,6 +26,7 @@ import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
+import com.l2jserver.gameserver.model.skills.AttributeType;
 import com.l2jserver.gameserver.util.Util;
 
 /**
@@ -85,11 +85,11 @@ public class Q10275_ContainingTheAttributePower extends Quest
 				break;
 			case "32325-03.html":
 				st.setCond(3, true);
-				st.giveItems(YINSWORD, 1, Elementals.FIRE, 10);
+				st.giveItems(YINSWORD, 1, AttributeType.FIRE.getId(), 10);
 				break;
 			case "32326-03.html":
 				st.setCond(8, true);
-				st.giveItems(YANGSWORD, 1, Elementals.EARTH, 10);
+				st.giveItems(YANGSWORD, 1, AttributeType.EARTH.getId(), 10);
 				break;
 			case "32325-06.html":
 				if (st.hasQuestItems(YINSWORD))
@@ -97,7 +97,7 @@ public class Q10275_ContainingTheAttributePower extends Quest
 					st.takeItems(YINSWORD, 1);
 					htmltext = "32325-07.html";
 				}
-				st.giveItems(YINSWORD, 1, Elementals.FIRE, 10);
+				st.giveItems(YINSWORD, 1, AttributeType.FIRE.getId(), 10);
 				break;
 			case "32326-06.html":
 				if (st.hasQuestItems(YANGSWORD))
@@ -105,17 +105,17 @@ public class Q10275_ContainingTheAttributePower extends Quest
 					st.takeItems(YANGSWORD, 1);
 					htmltext = "32326-07.html";
 				}
-				st.giveItems(YANGSWORD, 1, Elementals.EARTH, 10);
+				st.giveItems(YANGSWORD, 1, AttributeType.EARTH.getId(), 10);
 				break;
 			case "32325-09.html":
 				st.setCond(5, true);
 				BLESSING_OF_FIRE.getSkill().applyEffects(player, player);
-				st.giveItems(YINSWORD, 1, Elementals.FIRE, 10);
+				st.giveItems(YINSWORD, 1, AttributeType.FIRE.getId(), 10);
 				break;
 			case "32326-09.html":
 				st.setCond(10, true);
 				BLESSING_OF_EARTH.getSkill().applyEffects(player, player);
-				st.giveItems(YANGSWORD, 1, Elementals.EARTH, 10);
+				st.giveItems(YANGSWORD, 1, AttributeType.EARTH.getId(), 10);
 				break;
 		}
 		
