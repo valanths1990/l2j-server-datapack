@@ -284,7 +284,6 @@
 		<effects>
 			<effect name="Hp">
 				<param amount="435" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -301,8 +300,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="HealOverTime" ticks="3">
+			<effect name="TickHp">
 				<param power="50" />
+				<param ticks="3" />
 			</effect>
 		</effects>
 	</skill>
@@ -319,8 +319,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="HealOverTime" ticks="3">
+			<effect name="TickHp">
 				<param power="24" />
+				<param ticks="3" />
 			</effect>
 		</effects>
 	</skill>
@@ -341,7 +342,6 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="#amount" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -362,7 +362,6 @@
 		<effects>
 			<effect name="Hp">
 				<param amount="#amount" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -376,7 +375,6 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="50" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -392,7 +390,6 @@
 		<effects>
 			<effect name="Mp">
 				<param amount="60" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

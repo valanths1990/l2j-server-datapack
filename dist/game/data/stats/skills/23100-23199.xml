@@ -944,7 +944,6 @@
 			<effect name="BlockDebuff" />
 			<effect name="Cp">
 				<param amount="9000" />
-				<param mode="DIFF" />
 			</effect>
 			<effect name="HpPerMax">
 				<param power="100" />

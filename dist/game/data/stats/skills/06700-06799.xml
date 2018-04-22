@@ -332,8 +332,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="TickHp">
 				<param power="30" />
+				<param ticks="1" />
 			</effect>
 			<effect name="Heal">
 				<param power="450" />
@@ -378,7 +379,6 @@
 		<effects>
 			<effect name="Hp">
 				<param amount="687" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -584,8 +584,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="200" />
+			<effect name="TickHp">
+				<param power="-200" />
+				<param ticks="5" />
 				<sub stat="darkRes" val="50" />
 			</effect>
 		</effects>
@@ -758,8 +759,9 @@
 				<param blowChance="30" />
 				<param criticalChance="20" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="100" />
+			<effect name="TickHp">
+				<param power="-100" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 		<endEffects>
@@ -1289,8 +1291,9 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="200" />
+			<effect name="TickHp">
+				<param power="-200" />
+				<param ticks="5" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.8" />

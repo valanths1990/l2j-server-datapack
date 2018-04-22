@@ -36,7 +36,6 @@
 		<effects>
 			<effect name="Mp">
 				<param amount="360" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -54,7 +53,6 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="1000" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -69,7 +67,6 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="1000" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

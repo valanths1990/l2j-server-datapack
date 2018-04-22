@@ -510,7 +510,6 @@
 					<xs:enumeration value="CallParty" />
 					<xs:enumeration value="CallPc" />
 					<xs:enumeration value="CallSkill" />
-					<xs:enumeration value="ChameleonRest" />
 					<xs:enumeration value="ChangeFace" />
 					<xs:enumeration value="ChangeFishingMastery" />
 					<xs:enumeration value="ChangeHairColor" />
@@ -518,13 +517,16 @@
 					<xs:enumeration value="ClanGate" />
 					<xs:enumeration value="Confuse" />
 					<xs:enumeration value="ConsumeBody" />
+					<xs:enumeration value="ConsumeChameleonRest" />
+					<xs:enumeration value="ConsumeFakeDeath" />
+					<xs:enumeration value="ConsumeHp" />
+					<xs:enumeration value="ConsumeMp" />
+					<xs:enumeration value="ConsumeMpByLevel" />
+					<xs:enumeration value="ConsumeRest" />
 					<xs:enumeration value="ConvertItem" />
 					<xs:enumeration value="Cp" />
-					<xs:enumeration value="CpHealOverTime" />
 					<xs:enumeration value="CrystalGradeModify" />
 					<xs:enumeration value="CubicMastery" />
-					<xs:enumeration value="DamOverTime" />
-					<xs:enumeration value="DamOverTimePercent" />
 					<xs:enumeration value="DeathLink" />
 					<xs:enumeration value="Debuff" />
 					<xs:enumeration value="DefenceTrait" />
@@ -540,7 +542,6 @@
 					<xs:enumeration value="EnableCloak" />
 					<xs:enumeration value="EnergyAttack" />
 					<xs:enumeration value="Escape" />
-					<xs:enumeration value="FakeDeath" />
 					<xs:enumeration value="FatalBlow" />
 					<xs:enumeration value="Fear" />
 					<xs:enumeration value="Fishing" />
@@ -557,7 +558,6 @@
 					<xs:enumeration value="Harvesting" />
 					<xs:enumeration value="HeadquarterCreate" />
 					<xs:enumeration value="Heal" />
-					<xs:enumeration value="HealOverTime" />
 					<xs:enumeration value="Hide" />
 					<xs:enumeration value="Hp" />
 					<xs:enumeration value="HpByLevel" />
@@ -571,13 +571,10 @@
 					<xs:enumeration value="MagicalAttackByAbnormal" />
 					<xs:enumeration value="MagicalAttackMp" />
 					<xs:enumeration value="MagicalSoulAttack" />
-					<xs:enumeration value="ManaDamOverTime" />
 					<xs:enumeration value="ManaHealByLevel" />
-					<xs:enumeration value="ManaHealOverTime" />
 					<xs:enumeration value="MaxCp" />
 					<xs:enumeration value="MaxHp" />
 					<xs:enumeration value="Mp" />
-					<xs:enumeration value="MpConsumePerLevel" />
 					<xs:enumeration value="MpPerMax" />
 					<xs:enumeration value="Mute" />
 					<xs:enumeration value="NoblesseBless" />
@@ -602,7 +599,6 @@
 					<xs:enumeration value="Recovery" />
 					<xs:enumeration value="Reeling" />
 					<xs:enumeration value="RefuelAirship" />
-					<xs:enumeration value="Relax" />
 					<xs:enumeration value="ResistSkill" />
 					<xs:enumeration value="Restoration" />
 					<xs:enumeration value="RestorationRandom" />
@@ -641,6 +637,9 @@
 					<xs:enumeration value="Teleport" />
 					<xs:enumeration value="TeleportToTarget" />
 					<xs:enumeration value="ThrowUp" />
+					<xs:enumeration value="TickHp" />
+					<xs:enumeration value="TickHpFatal" />
+					<xs:enumeration value="TickMp" />
 					<xs:enumeration value="TransferDamage" />
 					<xs:enumeration value="TransferHate" />
 					<xs:enumeration value="Transformation" />

@@ -997,7 +997,6 @@
 		<effects>
 			<effect name="Hp">
 				<param amount="60" />
-				<param mode="DIFF" />
 			</effect>
 			<effect name="HpPerMax">
 				<param power="17" />
@@ -1021,7 +1020,6 @@
 		<effects>
 			<effect name="Mp">
 				<param amount="20" />
-				<param mode="DIFF" />
 			</effect>
 			<effect name="MpPerMax">
 				<param power="4" />
@@ -1924,7 +1922,6 @@
 		<effects>
 			<effect name="Hp">
 				<param amount="#amount" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -1943,7 +1940,6 @@
 		<effects>
 			<effect name="Mp">
 				<param amount="#amount" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -1962,7 +1958,6 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="#amount" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

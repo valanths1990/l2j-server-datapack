@@ -679,8 +679,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="TickHp">
 				<param power="#hot" />
+				<param ticks="1" />
 			</effect>
 		</effects>
 	</skill>
@@ -1437,8 +1438,9 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param canKill="true" power="12" />
+			<effect name="TickHpFatal">
+				<param power="-12" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>

@@ -964,8 +964,9 @@
 		<set name="targetType" val="SELF" />
 		<set name="trait" val="ETC" />
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="TickHp">
 				<param power="30" />
+				<param ticks="1" />
 			</effect>
 			<effect name="Heal">
 				<param power="444" />
@@ -1319,8 +1320,9 @@
 		<set name="targetType" val="SELF" />
 		<set name="trait" val="ETC" />
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="TickHp">
 				<param power="30" />
+				<param ticks="1" />
 			</effect>
 			<effect name="Heal">
 				<param power="444" />
@@ -1497,8 +1499,9 @@
 		<set name="targetType" val="SELF" />
 		<set name="trait" val="ETC" />
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="TickHp">
 				<param power="30" />
+				<param ticks="1" />
 			</effect>
 			<effect name="Heal">
 				<param power="444" />

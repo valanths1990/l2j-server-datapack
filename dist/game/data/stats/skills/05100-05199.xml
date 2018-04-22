@@ -823,8 +823,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="109" />
+			<effect name="TickHp">
+				<param power="-109" />
+				<param ticks="5" />
 				<mul stat="pAtkSpd" val="0.77" />
 			</effect>
 		</effects>
@@ -1074,7 +1075,6 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="#amount" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -1591,7 +1591,7 @@
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 </table>
-		<table name="#dot"> 41 41 50 50 50 58 58 58 63 63 </table>
+		<table name="#dot"> -41 -41 -50 -50 -50 -58 -58 -58 -63 -63 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="30" />
@@ -1613,8 +1613,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -1622,7 +1623,7 @@
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 </table>
-		<table name="#dot"> 44 44 54 54 54 62 62 62 67 67 </table>
+		<table name="#dot"> -44 -44 -54 -54 -54 -62 -62 -62 -67 -67 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="20" />
@@ -1645,8 +1646,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -2098,8 +2100,9 @@
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="TickHp">
 				<param power="#healOverTime" />
+				<param ticks="1" />
 			</effect>
 		</effects>
 	</skill>

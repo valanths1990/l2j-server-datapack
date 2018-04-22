@@ -890,8 +890,9 @@
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="Paralyze" />
-			<effect name="DamOverTime" ticks="#ticks">
-				<param power="115" />
+			<effect name="TickHp">
+				<param power="-115" />
+				<param ticks="#ticks" />
 			</effect>
 			<effect name="CallSkill">
 				<param skillId="6302" skillLevel="1" />
@@ -1365,8 +1366,10 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" /> <!-- FIXME: Aura Friendly ? -->
 		<effects>
-			<effect name="DamOverTimePercent" ticks="5">
-				<param power="0.02" />
+			<effect name="TickHp">
+				<param power="-0.02" />
+				<param mode="PER" />
+				<param ticks="5" />
 				<mul stat="pAtkSpd" val="1.2" />
 			</effect>
 		</effects>
@@ -1489,11 +1492,13 @@
 		<set name="targetType" val="AURA" />
 		<effects>
 			<effect name="Paralyze" />
-			<effect name="DamOverTime" ticks="5">
-				<param power="115" />
+			<effect name="TickHp">
+				<param power="-115" />
+				<param ticks="5" />
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
-				<param power="5" />
+			<effect name="TickMp">
+				<param power="-5" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 		<endEffects>

@@ -291,7 +291,6 @@
 		<effects>
 			<effect name="Mp">
 				<param amount="#amount" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -1287,8 +1286,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="63" />
+			<effect name="TickHp">
+				<param power="-63" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -1446,7 +1446,6 @@
 		<effects>
 			<effect name="Mp">
 				<param amount="41" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -1460,7 +1459,6 @@
 		<effects>
 			<effect name="Mp">
 				<param amount="51" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -1474,7 +1472,6 @@
 		<effects>
 			<effect name="Mp">
 				<param amount="59" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -1533,7 +1530,6 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="200" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -1895,7 +1891,6 @@
 		<effects>
 			<effect name="Hp">
 				<param amount="#amount" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

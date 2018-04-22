@@ -416,8 +416,9 @@
 			<effect name="PhysicalAttack">
 				<param power="4640" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="70" />
+			<effect name="TickHp">
+				<param power="-70" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -529,8 +530,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="CLAN" />
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="TickHp">
 				<param power="270" />
+				<param ticks="1" />
 			</effect>
 			<effect name="HpPerMax">
 				<param power="20" />
@@ -731,7 +733,7 @@
 	</skill>
 	<skill id="5846" levels="12" name="Bleed">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
-		<table name="#dot"> 18 25 34 44 54 62 67 67 70 70 71 71 </table>
+		<table name="#dot"> -18 -25 -34 -44 -54 -62 -67 -67 -70 -70 -71 -71 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="20" />
@@ -753,8 +755,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -1319,8 +1322,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="145" />
+			<effect name="TickHp">
+				<param power="-145" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -1413,8 +1417,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="145" />
+			<effect name="TickHp">
+				<param power="-145" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>

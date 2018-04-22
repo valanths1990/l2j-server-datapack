@@ -128,11 +128,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="500" />
+			<effect name="TickHp">
+				<param power="-500" />
+				<param ticks="5" />
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
-				<param power="300" />
+			<effect name="TickMp">
+				<param power="-300" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>

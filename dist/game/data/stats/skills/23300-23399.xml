@@ -12,8 +12,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="300" />
+			<effect name="TickHp">
+				<param power="-300" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -189,8 +190,9 @@
 			<effect name="PhysicalAttack">
 				<param power="5000" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="105" />
+			<effect name="TickHp">
+				<param power="-105" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -214,8 +216,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="88" />
+			<effect name="TickHp">
+				<param power="-88" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>

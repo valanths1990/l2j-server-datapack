@@ -219,7 +219,7 @@
 	</skill>
 	<skill id="5422" levels="12" name="Flame">
 		<!-- Body is on fire. HP continually decreases. -->
-		<table name="#dot"> 6.45 11.1 20.39 30.49 30.49 60.43 77 85.7 94.66 103.89 113.38 123.15 </table>
+		<table name="#dot"> -6.45 -11.1 -20.39 -30.49 -30.49 -60.43 -77 -85.7 -94.66 -103.89 -113.38 -123.15 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mAtk"> 9.16 15.36 27.82 41.49 61.66 84.61 111.26 126.31 142.73 160.7 180.46 201.65 </table>
 		<set name="abnormalLvl" val="3" />
@@ -240,8 +240,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 				<add stat="mAtk" val="#mAtk" />
 				<mul stat="runSpd" val="0.7" />
 			</effect>
@@ -249,7 +250,7 @@
 	</skill>
 	<skill id="5423" levels="12" name="Poison">
 		<!-- Condition causing target to be poisoned. -->
-		<table name="#dot"> 8 21 57 91 133 179 223 251 289 318 324 354 </table>
+		<table name="#dot"> -8 -21 -57 -91 -133 -179 -223 -251 -289 -318 -324 -354 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
@@ -269,15 +270,16 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.7" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5424" levels="12" name="Bleed">
 		<!-- Condition causing target to instantly decrease HP by bleeding. Effect 2-10. -->
-		<table name="#dot"> 15 21 43 55 89 103 140 168 174 232 265 295 </table>
+		<table name="#dot"> -15 -21 -43 -55 -89 -103 -140 -168 -174 -232 -265 -295 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
@@ -297,8 +299,9 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.7" />
 			</effect>
 		</effects>
@@ -645,7 +648,7 @@
 		</effects>
 	</skill>
 	<skill id="5444" levels="2" name="Maul">
-		<table name="#dot"> 62 67 </table>
+		<table name="#dot"> -62 -67 </table>
 		<table name="#magicLvl"> 65 70 </table>
 		<table name="#mpConsume2"> 66 71 </table>
 		<table name="#power"> 917 1084 </table>
@@ -675,8 +678,9 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -765,7 +769,7 @@
 	<skill id="5450" levels="7" name="Thin Skin">
 		<!-- Confirmed CT2.5 -->
 		<table name="#abnormalLvls"> 4 5 5 6 7 8 8 </table>
-		<table name="#dot"> 218 266 266 307 307 335 335 </table>
+		<table name="#dot"> -218 -266 -266 -307 -307 -335 -335 </table>
 		<table name="#magicLvl"> 46 52 58 62 66 70 74 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" />
@@ -778,8 +782,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -1325,8 +1330,9 @@
 			<effect name="PhysicalAttack">
 				<param power="2616" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="71" />
+			<effect name="TickHp">
+				<param power="-71" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -1378,8 +1384,9 @@
 				<param power="2319" />
 			</effect>
 			<effect name="Stun" />
-			<effect name="DamOverTime" ticks="5">
-				<param power="52" />
+			<effect name="TickHp">
+				<param power="-52" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>

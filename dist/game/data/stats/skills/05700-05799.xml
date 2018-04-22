@@ -277,8 +277,9 @@
 			<effect name="MagicalAttack">
 				<param power="213" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="55" />
+			<effect name="TickHp">
+				<param power="-55" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.77" />
 			</effect>
 		</effects>
@@ -851,7 +852,6 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="5000" />
-				<param mode="DIFF" />
 			</effect>
 			<effect name="HpPerMax">
 				<param power="100" />

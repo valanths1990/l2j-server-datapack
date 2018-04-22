@@ -1836,8 +1836,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="FakeDeath" ticks="5">
+			<effect name="ConsumeFakeDeath">
 				<param power="10" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -2312,7 +2313,7 @@
 	</skill>
 	<skill id="84" levels="3" name="Poison Blade Dance" enchantGroup1="2" enchantGroup2="2">
 		<table name="#abnormalLvls"> 6 7 8 </table>
-		<table name="#dot"> 50 58 63 </table>
+		<table name="#dot"> -50 -58 -63 </table>
 		<table name="#effectPoints"> -523 -566 -646 </table>
 		<table name="#magicLvl"> 55 60 72 </table>
 		<table name="#mpConsume2"> 38 42 50 </table>
@@ -2355,8 +2356,9 @@
 			<effect name="PhysicalAttack">
 				<param power="1" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -2679,13 +2681,13 @@
 	</skill>
 	<skill id="96" levels="6" name="Bleed" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
 		<table name="#abnormalLvls"> 3 4 5 6 7 8 </table>
-		<table name="#dot"> 25 34 44 54 62 67 </table>
+		<table name="#dot"> -25 -34 -44 -54 -62 -67 </table>
 		<table name="#effectPoints"> -119 -154 -237 -279 -311 -323 </table>
 		<table name="#magicLvl"> 24 32 49 58 66 70 </table>
 		<table name="#mpConsume2"> 28 37 60 73 83 89 </table>
 		<table name="#ench1MpConsume2"> 88 86 85 83 82 80 79 77 76 74 73 71 70 68 67 65 64 62 61 59 58 56 55 53 52 50 49 47 46 44 </table>
 		<table name="#ench2Sap"> 24 49 74 99 124 148 173 198 223 248 273 297 322 347 372 397 422 446 471 496 521 546 570 595 620 645 670 695 719 744 </table>
-		<table name="#ench3dot"> 69 70 71 72 74 75 76 77 79 80 81 82 83 85 86 87 88 90 91 92 93 95 96 97 98 100 101 102 103 105 </table>
+		<table name="#ench3dot"> -69 -70 -71 -72 -74 -75 -76 -77 -79 -80 -81 -82 -83 -85 -86 -87 -88 -90 -91 -92 -93 -95 -96 -97 -98 -100 -101 -102 -103 -105 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="20" />
@@ -2718,8 +2720,9 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</effects>
@@ -2727,14 +2730,16 @@
 			<effect name="HpByLevel">
 				<param power="#ench2Sap" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="67" />
+			<effect name="TickHp">
+				<param power="-67" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</enchant2Effects>
 		<enchant3Effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#ench3dot" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</enchant3Effects>

@@ -1376,7 +1376,7 @@
 	</skill>
 	<skill id="4579" levels="12" name="Bleed">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
-		<table name="#damage"> 18 25 34 44 54 62 67 67 70 70 71 71 </table>
+		<table name="#damage"> -18 -25 -34 -44 -54 -62 -67 -67 -70 -70 -71 -71 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 25 40 56 76 99 121 142 151 159 165 168 170 </table>
 		<table name="#power"> 137 314 656 1249 2164 3408 4878 5627 6335 6960 7461 7850 </table>
@@ -1405,8 +1405,9 @@
 				<param power="#power" />
 				<param blowChance="20" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#damage" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -1469,7 +1470,7 @@
 	</skill>
 	<skill id="4582" levels="12" name="Poison">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
-		<table name="#dmg"> 16 24 32 41 50 58 63 63 66 66 68 68 </table>
+		<table name="#dmg"> -16 -24 -32 -41 -50 -58 -63 -63 -66 -66 -68 -68 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 24 39 54 73 94 116 136 144 152 158 161 163 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -1493,8 +1494,9 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dmg" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -1907,7 +1909,7 @@
 	</skill>
 	<skill id="4596" levels="12" name="Bleed">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
-		<table name="#damage"> 18 25 34 44 54 62 67 67 70 70 71 71 </table>
+		<table name="#damage"> -18 -25 -34 -44 -54 -62 -67 -67 -70 -70 -71 -71 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 29 47 64 88 113 138 162 173 180 188 192 194 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -1932,14 +1934,15 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#damage" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4597" levels="12" name="Bleed">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
-		<table name="#damage"> 18 25 34 44 54 62 67 67 70 70 71 71 </table>
+		<table name="#damage"> -18 -25 -34 -44 -54 -62 -67 -67 -70 -70 -71 -71 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 20 34 47 63 82 100 117 124 130 135 138 140 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -1963,14 +1966,15 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#damage" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4598" levels="12" name="Bleed">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
-		<table name="#damage"> 18 25 34 44 54 62 67 67 70 70 71 71 </table>
+		<table name="#damage"> -18 -25 -34 -44 -54 -62 -67 -67 -70 -70 -71 -71 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 20 34 47 63 82 100 117 124 130 135 138 140 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -1994,8 +1998,9 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#damage" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>

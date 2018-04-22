@@ -244,7 +244,7 @@
 	<skill id="4320" levels="12" name="Poison">
 		<!-- Freya retail confirmed -->
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
-		<table name="#dot"> 16 24 32 41 50 58 63 63 66 66 68 68 </table>
+		<table name="#dot"> -16 -24 -32 -41 -50 -58 -63 -63 -66 -66 -68 -68 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 13 20 27 35 45 55 65 69 73 83 77 78 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -265,8 +265,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -1255,8 +1256,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="TickMp">
 				<param power="9.26" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -1271,8 +1273,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="TickMp">
 				<param power="18.52" />
+				<param ticks="5" />
 				<add stat="maxMp" val="5000" />
 			</effect>
 		</effects>
@@ -1288,8 +1291,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="TickMp">
 				<param power="27.78" />
+				<param ticks="5" />
 				<add stat="maxMp" val="10000" />
 			</effect>
 		</effects>
@@ -1305,8 +1309,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="TickMp">
 				<param power="61.11" />
+				<param ticks="5" />
 				<add stat="maxMp" val="28000" />
 			</effect>
 		</effects>
@@ -1322,8 +1327,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="TickMp">
 				<param power="116.7" />
+				<param ticks="5" />
 				<add stat="maxMp" val="58000" />
 			</effect>
 		</effects>
@@ -1339,8 +1345,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="TickMp">
 				<param power="200" />
+				<param ticks="5" />
 				<add stat="maxMp" val="103000" />
 			</effect>
 		</effects>
@@ -1356,8 +1363,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="TickMp">
 				<param power="205.6" />
+				<param ticks="5" />
 				<add stat="maxMp" val="106000" />
 			</effect>
 		</effects>
@@ -1373,8 +1381,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="TickMp">
 				<param power="288.9" />
+				<param ticks="5" />
 				<add stat="maxMp" val="151000" />
 			</effect>
 		</effects>
@@ -1390,8 +1399,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="TickMp">
 				<param power="372.2" />
+				<param ticks="5" />
 				<add stat="maxMp" val="196000" />
 			</effect>
 		</effects>
@@ -1478,7 +1488,6 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="5000" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

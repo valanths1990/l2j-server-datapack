@@ -147,16 +147,18 @@
 			<effect name="MagicalAttack">
 				<param power="#pvpPower" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="230" />
+			<effect name="TickHp">
+				<param power="-230" />
+				<param ticks="5" />
 			</effect>
 		</pvpEffects>
 		<pveEffects>
 			<effect name="MagicalAttack">
 				<param power="#pvePower" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="230" />
+			<effect name="TickHp">
+				<param power="-230" />
+				<param ticks="5" />
 			</effect>
 		</pveEffects>
 	</skill>
@@ -312,8 +314,9 @@
 			<effect name="MagicalAttack">
 				<param power="#pvpPower" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="230" />
+			<effect name="TickHp">
+				<param power="-230" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.3" />
 				<mul stat="pAtkSpd" val="0.8" />
 				<mul stat="mAtkSpd" val="0.8" />
@@ -323,8 +326,9 @@
 			<effect name="MagicalAttack">
 				<param power="#pvePower" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="230" />
+			<effect name="TickHp">
+				<param power="-230" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.3" />
 				<mul stat="pAtkSpd" val="0.8" />
 				<mul stat="mAtkSpd" val="0.8" />
@@ -759,7 +763,7 @@
 	<skill id="927" levels="14" name="Burning Chop" enchantGroup1="2">
 		<!-- High Five Confirmed -->
 		<table name="#abnormalLvls"> 5 5 5 6 6 6 7 7 7 7 7 8 8 8 </table>
-		<table name="#dot"> 43 43 43 53 53 53 61 61 61 61 61 66 66 66 </table>
+		<table name="#dot"> -43 -43 -43 -53 -53 -53 -61 -61 -61 -61 -61 -66 -66 -66 </table>
 		<table name="#effectPoints"> -193 -213 -233 -252 -271 -279 -288 -296 -304 -311 -317 -323 -328 -333 </table>
 		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#power"> 167 210 261 319 384 419 455 492 531 570 610 651 691 731 </table>
@@ -800,8 +804,9 @@
 				<param power="#power" />
 				<param criticalChance="10" />
 			</effect>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="1" />
 			</effect>
 		</effects>
 		<enchant1Effects>
@@ -809,8 +814,9 @@
 				<param power="#ench1Power" />
 				<param criticalChance="10" />
 			</effect>
-			<effect name="DamOverTime" ticks="1">
-				<param power="66" />
+			<effect name="TickHp">
+				<param power="-66" />
+				<param ticks="1" />
 			</effect>
 		</enchant1Effects>
 	</skill>
@@ -1271,8 +1277,9 @@
 			<effect name="PhysicalAttack">
 				<param power="4312" />
 			</effect>
-			<effect name="DamOverTime" ticks="1">
-				<param power="92" />
+			<effect name="TickHp">
+				<param power="-92" />
+				<param ticks="1" />
 			</effect>
 		</effects>
 	</skill>
@@ -1406,8 +1413,9 @@
 			<effect name="PhysicalAttack">
 				<param power="1649" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="52" />
+			<effect name="TickHp">
+				<param power="-52" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>

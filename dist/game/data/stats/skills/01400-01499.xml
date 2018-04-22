@@ -1034,8 +1034,9 @@
 			<effect name="Paralyze">
 				<mul stat="pDef" val="0.1" />
 			</effect>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="TickMp">
 				<param power="#mhot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -1160,12 +1161,12 @@
 		<!-- Confirmed CT2.5 -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<table name="#amount"> 0.8 0.8 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 </table>
-		<table name="#dmg"> 24 32 41 41 50 50 58 58 63 63 </table>
+		<table name="#dmg"> -24 -32 -41 -41 -50 -50 -58 -58 -63 -63 </table>
 		<table name="#effectPoints"> -235 -303 -379 -438 -495 -549 -582 -611 -635 -655 </table>
 		<table name="#magicLvl"> 24 32 40 46 52 58 62 66 70 74 </table>
 		<table name="#mpConsume2"> 9 11 14 17 19 22 23 25 26 28 </table>
 		<table name="#mpConsume1"> 3 3 4 5 5 6 6 7 7 7 </table>
-		<table name="#ench1dmg"> 63 63 63 64 64 64 64 64 64 64 64 64 64 65 65 65 65 65 65 65 65 65 65 66 66 66 66 66 66 66 </table>
+		<table name="#ench1dmg"> -63 -63 -63 -64 -64 -64 -64 -64 -64 -64 -64 -64 -64 -65 -65 -65 -65 -65 -65 -65 -65 -65 -65 -66 -66 -66 -66 -66 -66 -66 </table>
 		<table name="#ench2ActivateRates"> 70 71 72 72 73 74 74 75 76 76 77 78 78 79 80 80 81 82 82 83 84 84 85 86 86 87 88 88 89 90 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -1194,15 +1195,17 @@
 		<enchant2 name="activateRate" val="#ench2ActivateRates" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dmg" />
+				<param ticks="5" />
 				<mul stat="pDef" val="#amount" />
 				<mul stat="mDef" val="#amount" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#ench1dmg" />
+				<param ticks="5" />
 				<mul stat="pDef" val="0.77" />
 				<mul stat="mDef" val="0.77" />
 			</effect>
@@ -1994,7 +1997,7 @@
 		</enchant1Effects>
 	</skill>
 	<skill id="1452" levels="1" name="Count of Fire" enchantGroup1="6" enchantGroup2="6" enchantGroup3="6">
-		<table name="#ench1Power"> 176 178 180 182 183 185 187 189 190 192 194 196 197 199 201 </table>
+		<table name="#ench1Power"> -176 -178 -180 -182 -183 -185 -187 -189 -190 -192 -194 -196 -197 -199 -201 </table>
 		<table name="#ench2MpConsume2"> 84 81 78 74 72 69 66 62 61 58 54 52 49 46 42 </table>
 		<table name="#ench2MpConsume1"> 21 20 19 19 18 17 16 16 15 14 14 13 12 11 11 </table>
 		<table name="#ench3AttributePower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
@@ -2030,13 +2033,15 @@
 		<enchant3 name="attributePower" val="#ench3AttributePower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="173" />
+			<effect name="TickHp">
+				<param power="-173" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#ench1Power" />
+				<param ticks="5" />
 			</effect>
 		</enchant1Effects>
 	</skill>
@@ -2136,7 +2141,7 @@
 		</enchant1Effects>
 	</skill>
 	<skill id="1455" levels="1" name="Throne of Ice" enchantGroup1="6" enchantGroup2="6" enchantGroup3="6">
-		<table name="#ench1Power"> 176 178 180 182 183 185 187 189 190 192 194 196 197 199 201 </table>
+		<table name="#ench1Power"> -176 -178 -180 -182 -183 -185 -187 -189 -190 -192 -194 -196 -197 -199 -201 </table>
 		<table name="#ench2MpConsume2"> 105 101 97 93 90 86 82 78 76 72 68 65 61 57 53 </table>
 		<table name="#ench3AttributePower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
@@ -2169,13 +2174,15 @@
 		<enchant3 name="attributePower" val="#ench3AttributePower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="173" />
+			<effect name="TickHp">
+				<param power="-173" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#ench1Power" />
+				<param ticks="5" />
 			</effect>
 		</enchant1Effects>
 	</skill>
@@ -2252,7 +2259,7 @@
 		</effects>
 	</skill>
 	<skill id="1458" levels="1" name="Throne of Wind" enchantGroup1="6" enchantGroup2="6" enchantGroup3="6">
-		<table name="#ench1Power"> 176 178 180 182 183 185 187 189 190 192 194 196 197 199 201 </table>
+		<table name="#ench1Power"> -176 -178 -180 -182 -183 -185 -187 -189 -190 -192 -194 -196 -197 -199 -201 </table>
 		<table name="#ench2MpConsume2"> 105 101 97 93 90 86 82 78 76 72 68 65 61 57 53 </table>
 		<table name="#ench3AttributePower"> 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
@@ -2286,13 +2293,15 @@
 		<enchant3 name="attributePower" val="#ench3AttributePower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="173" />
+			<effect name="TickHp">
+				<param power="-173" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#ench1Power" />
+				<param ticks="5" />
 			</effect>
 		</enchant1Effects>
 	</skill>
@@ -2553,8 +2562,9 @@
 			<effect name="MagicalAttack">
 				<param power="117" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="100" />
+			<effect name="TickHp">
+				<param power="-100" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -2586,8 +2596,9 @@
 			<effect name="MagicalAttack">
 				<param power="117" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="100" />
+			<effect name="TickHp">
+				<param power="-100" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -3011,8 +3022,9 @@
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="reuseDelay" val="#ench3Reuse" />
 		<effects>
-			<effect name="ManaHealOverTime" ticks="1">
+			<effect name="TickMp">
 				<param power="200" />
+				<param ticks="1" />
 			</effect>
 			<effect name="Paralyze">
 				<mul stat="pDef" val="0.1" />
@@ -3359,13 +3371,15 @@
 			</not>
 		</cond>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="TickHp">
 				<param power="#hot" />
+				<param ticks="1" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="TickHp">
 				<param power="#ench1Heal" />
+				<param ticks="1" />
 			</effect>
 		</enchant1Effects>
 	</skill>

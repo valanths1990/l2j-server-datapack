@@ -213,7 +213,6 @@
 			</effect>
 			<effect name="Cp">
 				<param amount="1200" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -239,7 +238,6 @@
 			</effect>
 			<effect name="Cp">
 				<param amount="800" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -602,7 +600,6 @@
 			</effect>
 			<effect name="Cp">
 				<param amount="1500" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

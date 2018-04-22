@@ -956,13 +956,11 @@
 		<effects>
 			<effect name="Mp">
 				<param amount="#amount" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 		<enchant1Effects>
 			<effect name="Mp">
 				<param amount="#ench1amount" />
-				<param mode="DIFF" />
 			</effect>
 		</enchant1Effects>
 	</skill>
@@ -1113,24 +1111,27 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="0.5" />
+				<param ticks="5" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="POLE" />
 				</add>
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="0.5" />
+				<param ticks="5" />
 				<add stat="accCombat" val="#ench1accCombat">
 					<using kind="POLE" />
 				</add>
 			</effect>
 		</enchant1Effects>
 		<enchant2Effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="#ench2MpConsume2" />
+				<param ticks="5" />
 				<add stat="accCombat" val="4">
 					<using kind="POLE" />
 				</add>
@@ -1178,8 +1179,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="1" />
+				<param ticks="5" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="#trait_shock" />
@@ -1187,8 +1189,9 @@
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="1" />
+				<param ticks="5" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="#ench1Trait_shock" />
@@ -1196,8 +1199,9 @@
 			</effect>
 		</enchant1Effects>
 		<enchant2Effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="#ench2MpConsume2" />
+				<param ticks="5" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="15" />
@@ -1655,13 +1659,11 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="1000" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 		<enchant1Effects>
 			<effect name="Cp">
 				<param amount="#ench1amount" />
-				<param mode="DIFF" />
 			</effect>
 		</enchant1Effects>
 	</skill>
@@ -1686,11 +1688,13 @@
 			<effect name="Paralyze">
 				<mul stat="pDef" val="0.2" />
 			</effect>
-			<effect name="HealOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="60" />
+				<param ticks="5" />
 			</effect>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="TickMp">
 				<param power="10" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -2621,8 +2625,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="0.2" />
+				<param ticks="5" />
 				<add stat="vengeancePdam" val="3" />
 			</effect>
 		</effects>
@@ -2759,8 +2764,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="0.4" />
+				<param ticks="5" />
 				<add stat="runSpd" val="20" />
 			</effect>
 		</effects>
@@ -3267,13 +3273,13 @@
 		<!-- Confirmed CT2.5 -->
 		<table name="#abnormalLvls"> 6 6 7 7 7 7 8 8 8 8 </table>
 		<table name="#castRange"> 400 500 500 500 500 500 600 600 600 600 </table>
-		<table name="#dot"> 107 107 123 123 123 123 123 134 134 134 </table>
+		<table name="#dot"> -107 -107 -123 -123 -123 -123 -123 -134 -134 -134 </table>
 		<table name="#effectPoints"> -266 -279 -288 -296 -304 -311 -317 -323 -328 -333 </table>
 		<table name="#effectRange"> 600 700 700 700 700 700 800 800 800 800 </table>
 		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume1"> 65 70 73 75 77 80 83 85 88 90 </table>
 		<table name="#ench1AbnormalLvl"> 8 9 9 9 9 9 9 9 9 9 9 9 9 10 10 10 10 10 10 10 10 10 10 10 10 11 11 11 11 11 </table>
-		<table name="#ench1Power"> 134 135 135 135 135 135 135 136 136 136 136 136 136 137 137 137 137 137 137 138 138 138 138 138 138 139 139 139 139 139 </table>
+		<table name="#ench1Power"> -134 -135 -135 -135 -135 -135 -135 -136 -136 -136 -136 -136 -136 -137 -137 -137 -137 -137 -137 -138 -138 -138 -138 -138 -138 -139 -139 -139 -139 -139 </table>
 		<table name="#ench2ActivateRates"> 51 52 54 55 56 58 59 60 62 63 64 66 67 68 70 71 72 74 75 76 78 79 80 82 83 84 86 87 88 90 </table>
 		<table name="#ench3Cost"> 88 87 85 84 82 81 79 78 76 75 73 72 70 69 67 66 64 63 61 60 58 57 55 54 52 51 49 48 46 45 </table>
 		<table name="#ench4Duel"> 16 22 29 35 41 48 54 60 67 73 79 86 92 98 105 111 117 124 130 136 143 149 155 162 168 174 181 187 193 200 </table>
@@ -3320,16 +3326,18 @@
 			<effect name="PhysicalSoulAttack">
 				<param power="1" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 		<enchant1Effects>
 			<effect name="PhysicalSoulAttack">
 				<param power="1" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#ench1Power" />
+				<param ticks="5" />
 			</effect>
 		</enchant1Effects>
 		<enchant4Effects>
@@ -3338,16 +3346,18 @@
 			<effect name="PhysicalSoulAttack">
 				<param power="#ench4Duel" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="134" />
+			<effect name="TickHp">
+				<param power="-134" />
+				<param ticks="5" />
 			</effect>
 		</enchant4pvpEffects>
 		<enchant4pveEffects>
 			<effect name="PhysicalSoulAttack">
 				<param power="1" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="134" />
+			<effect name="TickHp">
+				<param power="-134" />
+				<param ticks="5" />
 			</effect>
 		</enchant4pveEffects>
 	</skill>
