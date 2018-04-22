@@ -294,9 +294,8 @@
 	<skill id="6815" levels="16" name="Deadly Poison">
 		<!-- High Five Confirmed -->
 		<!-- "Poison seeps deeper and for 10 seconds, 800 HP is decreased every second. If not treated, the poison will worsen." -->
-		<!-- TODO(Zoey76): Power must be negative and effect HealOverTime. -->
 		<table name="#magicLvl"> 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 </table>
-		<table name="#power"> 330 370 400 440 480 520 560 600 640 680 720 760 780 780 800 800 </table>
+		<table name="#power"> -330 -370 -400 -440 -480 -520 -560 -600 -640 -680 -720 -760 -780 -780 -800 -800 </table>
 		<table name="#skillLevel"> 2 3 4 5 6 7 8 9 10 11 12 13 14 15 15 16 </table>
 		<set name="abnormalLvl" val="10" />
 		<set name="abnormalTime" val="10" />
@@ -313,8 +312,9 @@
 		<set name="targetType" val="SELF" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#power" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 		<endEffects>
@@ -326,9 +326,8 @@
 	<skill id="6816" levels="16" name="Deadly Bleed">
 		<!-- High Five Confirmed -->
 		<!-- "Bleed becomes deeper and for 10 seconds, 800 HP is decreased every second. If not treated, the bleed will worsen." -->
-		<!-- TODO(Zoey76): Power must be negative and effect HealOverTime. -->
 		<table name="#magicLvl"> 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 </table>
-		<table name="#power"> 330 370 400 440 480 520 560 600 640 680 720 760 780 780 800 800 </table>
+		<table name="#power"> -330 -370 -400 -440 -480 -520 -560 -600 -640 -680 -720 -760 -780 -780 -800 -800 </table>
 		<table name="#skillLevel"> 2 3 4 5 6 7 8 9 10 11 12 13 14 15 15 16 </table>
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="BLEEDING" />
@@ -343,8 +342,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#power" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 		<endEffects>
@@ -544,8 +544,9 @@
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="HealOverTime" ticks="4">
+			<effect name="TickHp">
 				<param power="#hotValue" />
+				<param ticks="4" />
 			</effect>
 		</effects>
 		<endEffects>
@@ -1179,8 +1180,9 @@
 			<effect name="PhysicalAttack">
 				<param power="6723" />
 			</effect>
-			<effect name="DamOverTime" ticks="4">
-				<param power="100" />
+			<effect name="TickHp">
+				<param power="-100" />
+				<param ticks="4" />
 			</effect>
 		</effects>
 		<endEffects>
@@ -1211,8 +1213,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<effects>
-			<effect name="DamOverTime" ticks="4">
-				<param power="120" />
+			<effect name="TickHp">
+				<param power="-120" />
+				<param ticks="4" />
 			</effect>
 		</effects>
 		<endEffects>
@@ -1248,8 +1251,9 @@
 			<effect name="PhysicalAttack">
 				<param power="6723" />
 			</effect>
-			<effect name="DamOverTime" ticks="4">
-				<param power="100" />
+			<effect name="TickHp">
+				<param power="-100" />
+				<param ticks="4" />
 			</effect>
 		</effects>
 		<endEffects>
@@ -1424,7 +1428,7 @@
 	</skill>
 	<skill id="6875" levels="2" name="Poison">
 		<!-- High Five Confirmed -->
-		<table name="#dmg"> 120 140 </table>
+		<table name="#dmg"> -120 -140 </table>
 		<set name="abnormalLvl" val="10" />
 		<set name="abnormalTime" val="8" />
 		<set name="abnormalType" val="POISON" />
@@ -1447,8 +1451,9 @@
 			<effect name="MagicalAttack">
 				<param power="122" />
 			</effect>
-			<effect name="DamOverTime" ticks="4">
+			<effect name="TickHp">
 				<param power="#dmg" />
+				<param ticks="4" />
 			</effect>
 		</effects>
 		<endEffects>

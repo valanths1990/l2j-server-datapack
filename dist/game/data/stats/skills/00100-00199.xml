@@ -190,7 +190,7 @@
 	</skill>
 	<skill id="103" levels="4" name="Corpse Plague">
 		<table name="#abnormalLvls"> 5 6 7 8 </table>
-		<table name="#dot"> 41 50 58 63 </table>
+		<table name="#dot"> -41 -50 -58 -63 </table>
 		<table name="#effectPoints"> -438 -549 -582 -635 </table>
 		<table name="#magicLvl"> 46 58 62 70 </table>
 		<table name="#mpConsume2"> 22 28 29 33 </table>
@@ -218,8 +218,9 @@
 		<set name="targetType" val="AREA_CORPSE_MOB" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 			<effect name="ConsumeBody" />
 		</effects>
@@ -863,7 +864,7 @@
 	</skill>
 	<skill id="129" levels="5" name="Poison">
 		<table name="#abnormalLvls"> 3 5 6 7 8 </table>
-		<table name="#dot"> 24 41 50 58 63 </table>
+		<table name="#dot"> -24 -41 -50 -58 -63 </table>
 		<table name="#effectPoints"> -204 -467 -549 -611 -655 </table>
 		<table name="#magicLvl"> 20 49 58 66 74 </table>
 		<table name="#mpConsume2"> 8 18 22 25 28 </table>
@@ -892,8 +893,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>

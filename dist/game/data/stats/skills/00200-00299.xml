@@ -422,14 +422,18 @@
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
-			<effect name="SilentMove" ticks="5">
-				<param power="9" />
+			<effect name="SilentMove" />
+			<effect name="ConsumeMp">
+				<param power="-9" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.6" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="SilentMove" ticks="5">
-				<param power="9" />
+			<effect name="SilentMove" />
+			<effect name="ConsumeMp">
+				<param power="-9" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="#ench1Penalty" />
 			</effect>
 		</enchant1Effects>
@@ -444,15 +448,16 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="DamOverTime" ticks="2">
+			<effect name="ConsumeHp">
 				<param power="12" />
+				<param ticks="2" />
 				<mul stat="pAtkSpd" val="1.25" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="223" levels="49" name="Sting" enchantGroup1="2" enchantGroup2="2">
 		<table name="#abnormalLvls"> 3 3 3 3 3 3 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 7 7 8 8 8 8 8 </table>
-		<table name="#dot"> 25 25 25 25 25 25 34 34 34 34 34 34 34 34 44 44 44 44 44 44 44 44 44 44 54 54 54 54 54 54 54 54 54 54 62 62 62 62 62 62 62 62 62 62 67 67 67 67 67 </table>
+		<table name="#dot"> -25 -25 -25 -25 -25 -25 -34 -34 -34 -34 -34 -34 -34 -34 -44 -44 -44 -44 -44 -44 -44 -44 -44 -44 -54 -54 -54 -54 -54 -54 -54 -54 -54 -54 -62 -62 -62 -62 -62 -62 -62 -62 -62 -62 -67 -67 -67 -67 -67 </table>
 		<table name="#effectPoints"> -111 -115 -119 -128 -132 -136 -145 -150 -154 -164 -169 -173 -183 -188 -193 -198 -203 -208 -213 -218 -223 -228 -233 -237 -242 -247 -252 -257 -261 -266 -271 -275 -279 -284 -288 -292 -296 -300 -304 -307 -311 -314 -317 -320 -323 -326 -328 -331 -333 </table>
 		<table name="#magicLvl"> 22 23 24 26 27 28 30 31 32 34 35 36 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 54 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume2"> 21 22 23 25 26 27 28 28 29 32 33 34 36 37 38 38 40 41 42 43 44 46 47 48 50 50 51 52 53 55 56 57 58 60 61 61 62 63 65 66 67 68 69 70 71 72 73 74 75 </table>
@@ -495,16 +500,18 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 		<enchant2Effects>
 			<effect name="PhysicalAttack">
 				<param power="#ench2Power" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="67" />
+			<effect name="TickHp">
+				<param power="-67" />
+				<param ticks="5" />
 			</effect>
 		</enchant2Effects>
 	</skill>
@@ -536,8 +543,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Relax" ticks="3">
+			<effect name="ConsumeRest">
 				<param power="1" />
+				<param ticks="3" />
 				<add stat="regHp" val="5" />
 			</effect>
 		</effects>
@@ -1360,8 +1368,9 @@
 			<effect name="Spoil" />
 		</enchant1Effects>
 		<enchant2Effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="118" />
+			<effect name="TickHp">
+				<param power="-118" />
+				<param ticks="5" />
 			</effect>
 			<effect name="Spoil" />
 		</enchant2Effects>
@@ -1412,14 +1421,16 @@
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="0.4" />
+				<param ticks="5" />
 				<add stat="accCombat" val="3" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="#ench1val" />
+				<param ticks="5" />
 				<add stat="accCombat" val="3" />
 			</effect>
 		</enchant1Effects>
@@ -2797,22 +2808,25 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="2" />
+				<param ticks="5" />
 				<add stat="pDef" val="#pDef" />
 				<mul stat="rShld" val="1.5" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="2" />
+				<param ticks="5" />
 				<add stat="pDef" val="#ench1pDef" />
 				<mul stat="rShld" val="1.5" />
 			</effect>
 		</enchant1Effects>
 		<enchant2Effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="#ench2val" />
+				<param ticks="5" />
 				<add stat="pDef" val="256" />
 				<mul stat="rShld" val="1.5" />
 			</effect>
@@ -3051,8 +3065,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="ChameleonRest" ticks="5">
+			<effect name="ConsumeChameleonRest">
 				<param power="2" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>

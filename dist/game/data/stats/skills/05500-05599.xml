@@ -29,8 +29,9 @@
 			<effect name="PhysicalAttack">
 				<param power="2616" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="52" />
+			<effect name="TickHp">
+				<param power="-52" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -1854,7 +1855,7 @@
 				<param power="122" />
 				<param drain="0.8" />
 			</effect>
-			<effect name="ManaDamOverTime">
+			<effect name="MagicalAttackMp">
 				<param power="182" />
 			</effect>
 		</effects>
@@ -1913,8 +1914,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="DamOverTime" ticks="1">
-				<param power="200" />
+			<effect name="TickHp">
+				<param power="-200" />
+				<param ticks="1" />
 			</effect>
 		</effects>
 	</skill>

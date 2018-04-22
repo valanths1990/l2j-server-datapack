@@ -202,7 +202,7 @@
 	</skill>
 	<skill id="4606" levels="12" name="Poison">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
-		<table name="#dot"> 16 24 32 41 50 58 63 63 66 66 68 68 </table>
+		<table name="#dot"> -16 -24 -32 -41 -50 -58 -63 -63 -66 -66 -68 -68 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 35 58 81 109 141 174 203 216 227 235 241 244 </table>
 		<table name="#power"> 46 106 219 417 722 1136 1626 1876 2112 2320 2487 2617 </table>
@@ -230,8 +230,9 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="DamOverTime" ticks="3">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="3" />
 			</effect>
 		</effects>
 	</skill>
@@ -424,7 +425,7 @@
 	</skill>
 	<skill id="4615" levels="12" name="Bleed">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
-		<table name="#dmg"> 18 25 34 44 54 62 67 67 70 70 71 71 </table>
+		<table name="#dmg"> -18 -25 -34 -44 -54 -62 -67 -67 -70 -70 -71 -71 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 19 30 42 57 74 91 106 114 119 124 126 128 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -449,8 +450,9 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="3">
+			<effect name="TickHp">
 				<param power="#dmg" />
+				<param ticks="3" />
 			</effect>
 		</effects>
 	</skill>
@@ -1260,7 +1262,7 @@
 	</skill>
 	<skill id="4649" levels="12" name="Poison">
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
-		<table name="#dot"> 16 24 32 41 50 58 63 63 66 66 68 68 </table>
+		<table name="#dot"> -16 -24 -32 -41 -50 -58 -63 -63 -66 -66 -68 -68 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 18 29 40 53 68 83 98 104 109 113 115 117 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -1282,8 +1284,9 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="3">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="3" />
 			</effect>
 		</effects>
 	</skill>
@@ -1356,7 +1359,6 @@
 		<effects>
 			<effect name="Hp">
 				<param amount="#amount" />
-				<param mode="DIFF" />
 			</effect>
 			<effect name="ConsumeBody" />
 		</effects>
@@ -2087,8 +2089,9 @@
 			<effect name="MagicalAttack">
 				<param power="648" />
 			</effect>
-			<effect name="DamOverTime" ticks="3">
-				<param power="216" />
+			<effect name="TickHp">
+				<param power="-216" />
+				<param ticks="3" />
 			</effect>
 		</effects>
 	</skill>
@@ -2121,8 +2124,9 @@
 			<effect name="MagicalAttack">
 				<param power="648" />
 			</effect>
-			<effect name="DamOverTime" ticks="3">
-				<param power="216" />
+			<effect name="TickHp">
+				<param power="-216" />
+				<param ticks="3" />
 			</effect>
 		</effects>
 	</skill>

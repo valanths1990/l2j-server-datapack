@@ -18,8 +18,9 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="0.4" />
+				<param ticks="5" />
 				<mul stat="pAtk" val="#amount" />
 				<mul stat="pAtkSpd" val="#amount" />
 				<add stat="accCombat" val="#amount2" />
@@ -28,8 +29,9 @@
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="0.4" />
+				<param ticks="5" />
 				<mul stat="pAtk" val="#ench1Power" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<add stat="accCombat" val="#ench1Power2" />
@@ -38,8 +40,9 @@
 			</effect>
 		</enchant1Effects>
 		<enchant2Effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="ConsumeMpByLevel">
 				<param power="#ench2Cost" />
+				<param ticks="5" />
 				<mul stat="pAtk" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<add stat="accCombat" val="4" />
@@ -516,7 +519,7 @@
 	</skill>
 	<skill id="509" levels="34" name="Bleeding Shot" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2">
 		<!-- Confirmed CT2.5 -->
-		<table name="#dot"> 44 44 44 44 44 44 44 44 44 54 54 54 54 54 54 54 54 54 54 62 62 62 62 62 62 62 62 62 62 67 67 67 67 67 </table>
+		<table name="#dot"> -44 -44 -44 -44 -44 -44 -44 -44 -44 -54 -54 -54 -54 -54 -54 -54 -54 -54 -54 -62 -62 -62 -62 -62 -62 -62 -62 -62 -62 -67 -67 -67 -67 -67 </table>
 		<table name="#effectPoints"> -395 -405 -415 -425 -435 -445 -455 -465 -474 -484 -494 -503 -513 -522 -532 -541 -550 -558 -567 -575 -583 -591 -599 -607 -614 -621 -627 -634 -640 -646 -651 -656 -661 -665 </table>
 		<table name="#magicLvl"> 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume2"> 56 58 59 61 63 65 66 68 70 72 72 74 76 78 80 81 83 85 87 88 89 91 92 94 96 97 99 100 102 103 105 106 108 109 </table>
@@ -563,8 +566,9 @@
 				<param power="#power" />
 				<param ignoreShieldDefence="true" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 		<enchant1Effects>
@@ -572,8 +576,9 @@
 				<param power="#ench1Power" />
 				<param ignoreShieldDefence="true" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="67" />
+			<effect name="TickHp">
+				<param power="-67" />
+				<param ticks="5" />
 			</effect>
 		</enchant1Effects>
 	</skill>
@@ -1097,7 +1102,7 @@
 	<skill id="523" levels="7" name="Imbue Dark Seed">
 		<!-- Confirmed CT2.5 -->
 		<table name="#calledSkillLevel"> 1 2 3 4 5 6 7 </table>
-		<table name="#dot"> 76 76 76 76 83 83 83 </table>
+		<table name="#dot"> -76 -76 -76 -76 -83 -83 -83 </table>
 		<table name="#effectLevel"> 1 2 3 4 5 6 7 </table>
 		<table name="#effectPoints"> -296 -304 -311 -317 -323 -328 -333 </table>
 		<table name="#magicLvl"> 62 64 66 68 70 72 74 </table>
@@ -1127,8 +1132,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 		<endEffects>
@@ -2130,8 +2136,9 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="123" />
+			<effect name="TickHp">
+				<param power="-123" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -2435,8 +2442,9 @@
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="58" />
+			<effect name="TickHp">
+				<param power="-58" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -2607,7 +2615,7 @@
 	<skill id="578" levels="4" name="Blaze Quake">
 		<!-- Confirmed CT2.5 -->
 		<table name="#abnormalLvls"> 6 6 7 7 </table>
-		<table name="#dot"> 27 27 31 31 </table>
+		<table name="#dot"> -27 -27 -31 -31 </table>
 		<table name="#effectPoints"> -477 -532 -582 -630 </table>
 		<table name="#magicLvl"> 60 63 66 69 </table>
 		<table name="#mpConsume2"> 61 63 67 70 </table>
@@ -2638,8 +2646,9 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -2766,8 +2775,9 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="123" />
+			<effect name="TickHp">
+				<param power="-123" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -2885,7 +2895,7 @@
 	</skill>
 	<skill id="588" levels="2" name="Curse of Darkness">
 		<!-- Confirmed CT2.5 -->
-		<table name="#dot"> 88 101 </table>
+		<table name="#dot"> -88 -101 </table>
 		<table name="#magicLvl"> 59 63 </table>
 		<table name="#mpConsume2"> 54 58 </table>
 		<set name="abnormalLvl" val="1" />
@@ -2907,8 +2917,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>

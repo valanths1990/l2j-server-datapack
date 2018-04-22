@@ -1288,7 +1288,6 @@
 		<effects>
 			<effect name="Hp">
 				<param amount="2300" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -1550,7 +1549,6 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="300" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

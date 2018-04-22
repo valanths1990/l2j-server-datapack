@@ -17,14 +17,16 @@
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ConsumeMp">
 				<param power="#mdot" />
+				<param ticks="5" />
 				<add stat="pAtk" val="#pAtk" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ConsumeMp">
 				<param power="4" />
+				<param ticks="5" />
 				<add stat="pAtk" val="#ench1patk" />
 			</effect>
 		</enchant1Effects>
@@ -1995,7 +1997,7 @@
 	</skill>
 	<skill id="1095" levels="5" name="Venom">
 		<table name="#abnormalLvls"> 1 2 3 5 6 </table>
-		<table name="#dot"> 11 16 24 41 50 </table>
+		<table name="#dot"> -11 -16 -24 -41 -50 </table>
 		<table name="#effectPoints"> -121 -162 -204 -379 -495 </table>
 		<table name="#magicLvl"> 7 14 20 40 52 </table>
 		<table name="#mpConsume2"> 8 12 16 28 38 </table>
@@ -2024,8 +2026,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>

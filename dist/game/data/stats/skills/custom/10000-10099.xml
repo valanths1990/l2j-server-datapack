@@ -11,8 +11,9 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="ManaHealOverTime" ticks="3">
+			<effect name="TickMp">
 				<param power="1.5" />
+				<param ticks="3" />
 			</effect>
 		</effects>
 	</skill>
@@ -28,7 +29,6 @@
 		<effects>
 			<effect name="Mp">
 				<param amount="100" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

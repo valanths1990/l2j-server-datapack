@@ -1310,7 +1310,6 @@
 			</effect>
 			<effect name="Cp">
 				<param amount="100" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

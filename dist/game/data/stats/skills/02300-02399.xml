@@ -1881,7 +1881,6 @@
 		<effects>
 			<effect name="Hp">
 				<param amount="1900" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

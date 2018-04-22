@@ -200,7 +200,6 @@
 		<effects>
 			<effect name="Hp">
 				<param amount="500" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -216,7 +215,6 @@
 		<effects>
 			<effect name="Mp">
 				<param amount="500" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -1730,8 +1728,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="300" />
+			<effect name="TickHp">
+				<param power="-300" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -1747,8 +1746,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="300" />
+			<effect name="TickHp">
+				<param power="-300" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>

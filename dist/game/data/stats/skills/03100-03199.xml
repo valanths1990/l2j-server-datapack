@@ -134,7 +134,7 @@
 	<skill id="3104" levels="10" name="Item Skill: Poison">
 		<!-- Confirmed CT2.5 -->
 		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 </table>
-		<table name="#dot"> 41 41 50 50 50 58 58 58 63 63 </table>
+		<table name="#dot"> -41 -41 -50 -50 -50 -58 -58 -58 -63 -63 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="30" />
@@ -157,15 +157,16 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3105" levels="10" name="Item Skill: Bleed">
 		<!-- Confirmed CT2.5 -->
 		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 </table>
-		<table name="#dot"> 44 44 54 54 54 62 62 62 67 67 </table>
+		<table name="#dot"> -44 -44 -54 -54 -54 -62 -62 -62 -67 -67 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="20" />
@@ -189,8 +190,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -547,7 +549,7 @@
 	<skill id="3119" levels="10" name="Item Skill: Poison">
 		<!-- Confirmed CT2.5 -->
 		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 </table>
-		<table name="#dot"> 41 41 50 50 50 58 58 58 63 63 </table>
+		<table name="#dot"> -41 -41 -50 -50 -50 -58 -58 -58 -63 -63 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="30" />
@@ -569,15 +571,16 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3120" levels="10" name="Item Skill: Bleed">
 		<!-- Confirmed CT2.5 -->
 		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 </table>
-		<table name="#dot"> 44 44 54 54 54 62 62 62 67 67 </table>
+		<table name="#dot"> -44 -44 -54 -54 -54 -62 -62 -62 -67 -67 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="20" />
@@ -600,8 +603,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -866,7 +870,6 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="#amount" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -2679,7 +2682,7 @@
 	<skill id="3195" levels="10" name="Item Skill: Poison">
 		<!-- Confirmed CT2.5 -->
 		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 </table>
-		<table name="#dmg"> 41 41 50 50 50 58 58 58 63 63 </table>
+		<table name="#dmg"> -41 -41 -50 -50 -50 -58 -58 -58 -63 -63 </table>
 		<table name="#effectPoints"> -436 -465 -493 -521 -547 -572 -595 -615 -633 -657 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
 		<table name="#mpConsume2"> 33 35 38 40 43 45 48 50 52 55 </table>
@@ -2709,15 +2712,16 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="3">
+			<effect name="TickHp">
 				<param power="#dmg" />
+				<param ticks="3" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3196" levels="10" name="Item Skill: Bleed">
 		<!-- Confirmed CT2.5 -->
 		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 </table>
-		<table name="#dmg"> 44 44 54 54 54 62 62 62 67 67 </table>
+		<table name="#dmg"> -44 -44 -54 -54 -54 -62 -62 -62 -67 -67 </table>
 		<table name="#effectPoints"> -436 -465 -493 -521 -547 -572 -595 -615 -633 -657 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
 		<table name="#mpConsume2"> 33 35 38 40 43 45 48 50 52 55 </table>
@@ -2747,8 +2751,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
 		<effects>
-			<effect name="DamOverTime" ticks="3">
+			<effect name="TickHp">
 				<param power="#dmg" />
+				<param ticks="3" />
 			</effect>
 		</effects>
 	</skill>

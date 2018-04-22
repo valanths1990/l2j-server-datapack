@@ -897,7 +897,6 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="#amount" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

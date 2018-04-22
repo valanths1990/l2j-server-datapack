@@ -46,7 +46,7 @@
 	</skill>
 	<skill id="6402" levels="5" name="Torumba Poison Strike">
 		<table name="#abnormalLvls"> 11 12 13 14 15 </table>
-		<table name="#dot"> 100 220 440 880 1600 </table>
+		<table name="#dot"> -100 -220 -440 -880 -1600 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="POISON" />
@@ -68,8 +68,9 @@
 		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -97,8 +98,9 @@
 			<effect name="PhysicalAttack">
 				<param power="13688" />
 			</effect>
-			<effect name="DamOverTime" ticks="5">
-				<param power="58" />
+			<effect name="TickHp">
+				<param power="-58" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</effects>
@@ -392,8 +394,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
 		<effects>
-			<effect name="ManaDamOverTime" ticks="5">
-				<param power="4" />
+			<effect name="TickMp">
+				<param power="-4" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -422,8 +425,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<effects>
-			<effect name="ManaDamOverTime" ticks="5">
-				<param power="4" />
+			<effect name="TickMp">
+				<param power="-4" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -452,11 +456,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
-				<param power="69" />
+			<effect name="TickHp">
+				<param power="-69" />
+				<param ticks="5" />
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
-				<param power="4" />
+			<effect name="TickMp">
+				<param power="-4" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
@@ -789,7 +795,7 @@
 		<!-- Zone Skill -->
 		<table name="#abnormalLvls"> 7 8 9 </table>
 		<table name="#cAtk"> 1.2 1.3 1.4 </table>
-		<table name="#dot"> 0.005 0.01 0.02 </table>
+		<table name="#dot"> -0.005 -0.01 -0.02 </table>
 		<table name="#rCrit"> 1.2 1.5 1.75 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" />
@@ -805,8 +811,10 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="DamOverTimePercent" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param mode="PER" />
+				<param ticks="5" />
 				<mul stat="critRate" val="#rCrit">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
@@ -833,8 +841,10 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="DamOverTimePercent" ticks="5">
-				<param power="0.05" />
+			<effect name="TickHp">
+				<param power="-0.05" />
+				<param mode="PER" />
+				<param ticks="5" />
 				<mul stat="critRate" val="1.9">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
@@ -845,7 +855,7 @@
 		</effects>
 	</skill>
 	<skill id="6437" levels="7" name="Area of Freezing Core">
-		<table name="#dot"> 30 60 90 150 250 350 500 </table>
+		<table name="#dot"> -30 -60 -90 -150 -250 -350 -500 </table>
 		<set name="abnormalLvl" val="10" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="POISON" />
@@ -864,8 +874,9 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>

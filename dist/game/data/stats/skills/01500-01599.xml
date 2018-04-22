@@ -184,7 +184,6 @@
 			<effect name="BlockDebuff" />
 			<effect name="Cp">
 				<param amount="9000" />
-				<param mode="DIFF" />
 			</effect>
 			<effect name="HpPerMax">
 				<param power="100" />
@@ -217,7 +216,6 @@
 		<effects>
 			<effect name="Cp">
 				<param amount="9000" />
-				<param mode="DIFF" />
 			</effect>
 			<effect name="HpPerMax">
 				<param power="100" />
@@ -282,11 +280,13 @@
 			<effect name="DefenceTrait">
 				<param HOLD="100" />
 			</effect>
-			<effect name="DamOverTime" ticks="1">
-				<param power="90" />
+			<effect name="TickHp">
+				<param power="-90" />
+				<param ticks="1" />
 			</effect>
-			<effect name="ManaDamOverTime" ticks="1">
-				<param power="30" />
+			<effect name="TickMp">
+				<param power="-30" />
+				<param ticks="1" />
 			</effect>
 		</effects>
 	</skill>
@@ -433,8 +433,9 @@
 			<effect name="MagicalSoulAttack">
 				<param power="112" />
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
-				<param power="12" />
+			<effect name="TickMp">
+				<param power="-12" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.8" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="mAtkSpd" val="0.7" />
@@ -444,8 +445,9 @@
 			<effect name="MagicalSoulAttack">
 				<param power="#ench1Power" />
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
-				<param power="12" />
+			<effect name="TickMp">
+				<param power="-12" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.8" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="mAtkSpd" val="0.7" />
@@ -457,8 +459,9 @@
 			<effect name="MagicalSoulAttack">
 				<param power="#ench4Duel" />
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
-				<param power="12" />
+			<effect name="TickMp">
+				<param power="-12" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.8" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="mAtkSpd" val="0.7" />
@@ -468,8 +471,9 @@
 			<effect name="MagicalSoulAttack">
 				<param power="112" />
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
-				<param power="12" />
+			<effect name="TickMp">
+				<param power="-12" />
+				<param ticks="5" />
 				<mul stat="runSpd" val="0.8" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="mAtkSpd" val="0.7" />
@@ -932,7 +936,7 @@
 	<skill id="1525" levels="42" name="Divine Curse">
 		<!-- Confirmed CT2.5 -->
 		<!-- Inquisitor Stance Skill -->
-		<table name="#dot"> 9 9 9 9 9 9 11 11 11 11 11 11 11 11 11 11 13 13 13 13 13 13 13 13 13 13 14 14 14 14 14 14 14 14 14 14 15 15 15 15 15 15 </table>
+		<table name="#dot"> -9 -9 -9 -9 -9 -9 -11 -11 -11 -11 -11 -11 -11 -11 -11 -11 -13 -13 -13 -13 -13 -13 -13 -13 -13 -13 -14 -14 -14 -14 -14 -14 -14 -14 -14 -14 -15 -15 -15 -15 -15 -15 </table>
 		<table name="#effectPoints"> -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 -597 -604 -611 -617 -624 -630 -635 -641 -646 -650 -655 -659 -662 -666 -669 -673 -676 -679 -681 -684 -687 -689 </table>
 		<table name="#magicLvl"> 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#mpConsume2"> 31 31 32 33 34 35 35 36 37 38 39 39 40 41 42 43 44 44 45 46 47 48 48 49 50 51 51 52 53 53 54 55 55 56 56 57 58 58 58 59 59 60 </table>
@@ -961,8 +965,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ENEMY_ONLY" />
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="TickHp">
 				<param power="#dot" />
+				<param ticks="5" />
 				<mul stat="healEffect" val="0.5" />
 			</effect>
 		</effects>
@@ -1851,7 +1856,6 @@
 		<selfEffects>
 			<effect name="Mp">
 				<param amount="29" />
-				<param mode="DIFF" />
 			</effect>
 		</selfEffects>
 	</skill>
@@ -1883,7 +1887,6 @@
 		<selfEffects>
 			<effect name="Mp">
 				<param amount="25" />
-				<param mode="DIFF" />
 			</effect>
 		</selfEffects>
 	</skill>

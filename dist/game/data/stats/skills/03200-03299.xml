@@ -1272,7 +1272,6 @@
 			</effect>
 			<effect name="Cp">
 				<param amount="200" />
-				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
@@ -1406,8 +1405,9 @@
 			<effect name="Paralyze">
 				<mul stat="pDef" val="0.1" />
 			</effect>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="TickMp">
 				<param power="27" />
+				<param ticks="5" />
 			</effect>
 		</effects>
 	</skill>
