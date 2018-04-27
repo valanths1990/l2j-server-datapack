@@ -654,9 +654,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="492" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.054" /> <!-- P. Def. +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
 				<mul stat="healEffect" val="1.03" /> <!-- Received Increased Heal +3% -->
 				<add stat="darkRes" val="8" /> <!-- Darkness resistance is increased +8 -->
 			</effect>
@@ -673,9 +675,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="492" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.054" /> <!-- P. Atk +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
 				<add stat="critRate" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
 				<add stat="critDmgAdd" val="234" /> <!-- Critical Damage +234 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -690,9 +694,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="492" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.054" /> <!-- P. Atk. +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- HP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Resistance to Darkness attacks +8 -->
 				<mul stat="physicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
 			</effect>
@@ -706,9 +712,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="492" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.054" /> <!-- P. Def. +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
 				<mul stat="danceMpConsumeRate" val="0.95" /> <!-- MP consumption is decreased when song and dance skills are used -5% -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 			</effect>
@@ -722,9 +730,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="492" />
+			</effect>
 			<effect name="Buff">
 				<add stat="rEvas" val="4.3" /> <!-- Evasion +4.3 -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
 				<mul stat="pAtkSpd" val="1.0266" /> <!-- Atk. Spd. are increased +2.66% -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 			</effect>
@@ -741,9 +751,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="321" />
+			</effect>
 			<effect name="Buff">
 				<add stat="accCombat" val="4.3" /> <!-- Accuracy +4.3 -->
-				<add stat="maxMp" val="321" /> <!-- Max MP +321 Effect -->
 				<mul stat="pAtkSpd" val="1.0266" /> <!-- Atk. Spd. are increased +2.66% -->
 				<add stat="regMp" val="1.72" /> <!-- MP recovery are increased +1.72 -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
@@ -758,9 +770,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="321" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
-				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<add stat="healEffect" val="20" /> <!-- Increase amount of heal +20 -->
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -775,9 +789,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="321" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
-				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<mul stat="magicalMpConsumeRate" val="0.95" /> <!-- Decrease MP consumption -5% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -792,9 +808,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="321" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
-				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<mul stat="pDef" val="1.026" /> <!-- P. Def. +2.6% -->
 				<mul stat="pAtk" val="1.026" /> <!-- Increase P. Atk. +2.6% -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
@@ -809,10 +827,12 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="321" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 				<mul stat="mAtk" val="1.054" /> <!-- Increase M. Atk +5.4% -->
-				<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />

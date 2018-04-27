@@ -78,14 +78,15 @@ public final class ConsumeRest extends AbstractEffect
 			return false;
 		}
 		
-		final double manaDam = _power * getTicksMultiplier();
-		if (manaDam > target.getCurrentMp())
+		final double consume = _power * getTicksMultiplier();
+		double mp = target.getCurrentMp();
+		if ((consume < 0) && ((mp + consume) <= 0))
 		{
 			target.sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
 			return false;
 		}
 		
-		target.reduceCurrentMp(manaDam);
+		target.setCurrentMp(Math.min(mp + consume, target.getMaxRecoverableMp()));
 		return true;
 	}
 	

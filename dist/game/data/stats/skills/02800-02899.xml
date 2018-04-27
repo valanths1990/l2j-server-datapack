@@ -13,8 +13,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="maxHp" val="1.2" />
+			<effect name="MaxHp">
+				<param power="20" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
@@ -31,8 +32,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
+			<effect name="MaxMp">
+				<param power="20" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
@@ -1318,6 +1320,10 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="critDmg" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -1326,7 +1332,6 @@
 				<mul stat="danceMpConsumeRate" val="0.95" />
 				<mul stat="mAtk" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
-				<mul stat="maxMp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="mDef" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
@@ -2102,8 +2107,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="10" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.1" />
 				<mul stat="regHp" val="1.2" />
 			</effect>
 		</effects>
@@ -2124,9 +2132,15 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="10" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="10" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.1" />
-				<mul stat="maxMp" val="1.1" />
 				<mul stat="mAtkSpd" val="1.1" />
 				<mul stat="pDef" val="1.1" />
 				<mul stat="mDef" val="1.1" />
@@ -2151,8 +2165,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="10" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.1" />
 				<mul stat="regMp" val="1.2" />
 			</effect>
 		</effects>

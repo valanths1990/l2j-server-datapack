@@ -158,30 +158,38 @@
 	<skill id="4408" levels="20" name="HP Modifiers">
 		<!-- Confirmed CT2.5 -->
 		<table name="#icons"> icon.skill0000 icon.skill0000 icon.skill0000 icon.skill0000 icon.skill0000 icon.skill0000 icon.skill0000 icon.skill4381 icon.skill4311 icon.skill4303 icon.skill4304 icon.skill4305 icon.skill4306 icon.skill4307 icon.skill4308 icon.skill4309 icon.skill4310 icon.skill4408_x10 icon.skill4408_x11 icon.skill4408_x12 </table>
-		<table name="#maxhp"> 1 1.1 1.21 1.33 1.46 1.61 1.77 0.25 0.5 2 3 4 5 6 7 8 9 10 11 12 </table>
+		<table name="#maxHp"> 0 10 21 33 46 61 77 -75 -50 100 200 300 400 500 600 700 800 900 1000 1100 </table>
+		<table name="#regHp"> 1 1.1 1.21 1.33 1.46 1.61 1.77 0.25 0.5 2 3 4 5 6 7 8 9 10 11 12 </table>
 		<set name="icon" val="#icons" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="#maxHp" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="#maxhp" />
-				<mul stat="regHp" val="#maxhp" />
+				<mul stat="regHp" val="#regHp" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4409" levels="20" name="MP Modifiers">
 		<!-- Confirmed CT2.5 -->
 		<table name="#icons"> icon.skill0000 icon.skill0000 icon.skill0000 icon.skill0000 icon.skill0000 icon.skill0000 icon.skill0000 icon.skill4381 icon.skill4311 icon.skill4303 icon.skill4304 icon.skill4305 icon.skill4306 icon.skill4307 icon.skill4308 icon.skill4309 icon.skill4310 icon.skill4409_x10 icon.skill4409_x11 icon.skill4409_x12 </table>
-		<table name="#maxmp"> 1 1.1 1.21 1.33 1.46 1.61 1.77 0.25 0.5 2 3 4 5 6 7 8 9 10 11 12 </table>
+		<table name="#maxMp"> 0 10 21 33 46 61 77 -75 -50 100 200 300 400 500 600 700 800 900 1000 1100 </table>
+		<table name="#regHp"> 1 1.1 1.21 1.33 1.46 1.61 1.77 0.25 0.5 2 3 4 5 6 7 8 9 10 11 12 </table>
 		<set name="icon" val="#icons" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="#maxMp" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxMp" val="#maxmp" />
-				<mul stat="regMp" val="#maxmp" />
+				<mul stat="regMp" val="#regHp" />
 			</effect>
 		</effects>
 	</skill>

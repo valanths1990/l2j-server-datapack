@@ -262,6 +262,7 @@
 		<!-- GM Skill -->
 		<table name="#amount"> 1 1 1 2 </table>
 		<table name="#mAtkSpd"> 2 3 3 2 </table>
+		<table name="#maxMp"> 0 0 0 100 </table>
 		<table name="#pAtk"> 1 1 10000 1 </table>
 		<table name="#pAtkSpd"> 2 3 3 2 </table>
 		<table name="#reuse"> 0.01 0.01 0.01 1 </table>
@@ -276,6 +277,10 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="#maxMp" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="runSpd" val="#runSpd" />
@@ -283,9 +288,8 @@
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pReuse" val="#reuse" />
 				<mul stat="mReuse" val="#reuse" />
+				<mul stat="regHp" val="#amount" />
 				<mul stat="regMp" val="#amount" />
-				<mul stat="regMp" val="#amount" />
-				<mul stat="maxMp" val="#amount" />
 				<mul stat="weightLimit" val="#amount" />
 			</effect>
 		</effects>
@@ -498,8 +502,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="maxHp" val="1.35" />
+			<effect name="MaxHp">
+				<param power="35" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
@@ -520,8 +525,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="maxMp" val="1.35" />
+			<effect name="MaxMp">
+				<param power="35" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
@@ -895,8 +901,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="critDmg" val="1.2" />
@@ -929,8 +938,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.2" />
 				<mul stat="critRate" val="1.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
@@ -1358,9 +1370,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="maxHp" val="1.35" />
-				<mul stat="maxMp" val="1.35" />
+			<effect name="MaxHp">
+				<param power="35" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="35" />
+				<param type="PER" />
 			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="MAX_HP_UP,9;MAX_MP_UP,9" />

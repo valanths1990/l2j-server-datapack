@@ -1227,12 +1227,14 @@
 				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
 				<param targetType="ONE" />
 			</effect>
+			<effect name="MaxMp">
+				<param power="240" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="50" />
 				<mul stat="pAtk" val="1.08"> <!-- Archery P. Atk. +8% -->
 					<using kind="BOW,CROSSBOW" />
 				</mul>
-				<add stat="maxMp" val="240" /> <!-- MP +240 -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -1279,9 +1281,11 @@
 				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
 				<param targetType="SELF" />
 			</effect>
+			<effect name="MaxMp">
+				<param power="240" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="50" />
-				<add stat="maxMp" val="240" /> <!-- MP +240 -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 				<mul stat="regMp" val="1.08" /> <!-- MP Regeneration +8% -->
 				<mul stat="pvpPhysDef" val="1.05" />
@@ -1304,10 +1308,12 @@
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
 				<param targetType="ONE" />
 			</effect>
+			<effect name="MaxHp">
+				<param power="445" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="70" />
 				<param HOLD="70" />
-				<add stat="maxHp" val="445" /> <!-- Maximum HP +445 -->
 				<mul stat="pDef" val="1.08" /> <!-- P Def. +8% -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />

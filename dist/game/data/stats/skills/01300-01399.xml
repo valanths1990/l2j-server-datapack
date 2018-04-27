@@ -619,8 +619,9 @@
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
 			</effect>
-			<effect name="Buff">
-				<mul stat="maxCp" val="0.8" />
+			<effect name="MaxCp">
+				<param power="-20" />
+				<param type="PER" />
 			</effect>
 			<effect name="Buff">
 				<mul stat="maxRecoverableCp" val="0.6" />
@@ -670,8 +671,9 @@
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
 			</effect>
-			<effect name="Buff">
-				<mul stat="maxCp" val="0.8" />
+			<effect name="MaxCp">
+				<param power="-20" />
+				<param type="PER" />
 			</effect>
 			<effect name="Buff">
 				<mul stat="maxRecoverableCp" val="0.6" />
@@ -1479,12 +1481,15 @@
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.2" />
 				<add stat="accCombat" val="4" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="maxHp" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<mul stat="runSpd" val="0.9" />
 				<sub stat="debuffVuln" val="10" />
@@ -1842,8 +1847,11 @@
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="critDmg" val="1.2" />
@@ -1859,8 +1867,11 @@
 			</effect>
 		</effects>
 		<enchant3Effects>
+			<effect name="MaxMp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="critDmg" val="1.2" />
@@ -1903,8 +1914,11 @@
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.2" />
 				<mul stat="critRate" val="1.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
@@ -1919,8 +1933,11 @@
 			</effect>
 		</effects>
 		<enchant3Effects>
+			<effect name="MaxHp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.2" />
 				<mul stat="critRate" val="1.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />

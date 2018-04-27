@@ -242,8 +242,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="maxHp" val="1.35" />
+			<effect name="MaxHp">
+				<param power="35" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
@@ -318,8 +319,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="maxMp" val="1.35" />
+			<effect name="MaxMp">
+				<param power="35" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>

@@ -7,6 +7,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="541" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param BLEED="50" />
 				<param HOLD="50" />
@@ -14,7 +17,6 @@
 				<mul stat="pDef" val="1.0847" /> <!-- Def. Power +8.47% -->
 				<mul stat="pAtk" val="1.0557" /> <!-- Atk. Power +5.57% -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
-				<add stat="maxHp" val="541" /> <!-- Max. HP +541 -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
@@ -32,6 +34,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="360" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="50" />
 				<mul stat="pAtk" val="1.0557" /> <!-- Atk. Power + 5.57% -->
@@ -43,7 +48,6 @@
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 				<add stat="critDmgAdd" val="182" /> <!-- Increases Critical Damage by 182 -->
-				<add stat="maxMp" val="360" /> <!-- Increases Max MP by 360 -->
 			</effect>
 			<effect name="EnableCloak" />
 		</effects>
@@ -55,6 +59,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="92" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="50" />
 				<mul stat="mAtk" val="1.087" /> <!-- M. Power +8.7% -->
@@ -65,7 +72,6 @@
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 				<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
-				<add stat="maxMp" val="92" /> <!-- Increases Max MP by 92 -->
 			</effect>
 			<effect name="EnableCloak" />
 		</effects>
@@ -77,6 +83,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="550" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param BLEED="50" />
 				<param HOLD="50" />
@@ -84,7 +93,6 @@
 				<mul stat="pAtk" val="1.0659" /> <!-- P. Atk. +6.59% -->
 				<add stat="critRate" val="127.4" /> <!-- Critical rate +127.4 -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to damage magic +2% -->
-				<add stat="maxHp" val="550" /> <!-- Max. HP +550 -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
@@ -122,6 +130,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="97" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="50" />
 				<mul stat="mAtk" val="1.1" /> <!-- M. Power +10% -->
@@ -132,7 +143,6 @@
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 				<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
-				<add stat="maxMp" val="92" /> <!-- Increases Max MP by 97 -->
 				<mul stat="magicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
 			</effect>
 			<effect name="EnableCloak" />
@@ -241,6 +251,9 @@
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
 				<param targetType="ONE" />
 			</effect>
+			<effect name="MaxHp">
+				<param power="541" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param BLEED="50" />
 				<param HOLD="50" />
@@ -248,7 +261,6 @@
 				<mul stat="pDef" val="1.0847" /> <!-- Def. Power +8.47% -->
 				<mul stat="pAtk" val="1.0557" /> <!-- Atk. Power +5.57% -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
-				<add stat="maxHp" val="541" /> <!-- Max. HP +541 -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
@@ -276,6 +288,9 @@
 				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
 				<param targetType="ONE" />
 			</effect>
+			<effect name="MaxMp">
+				<param power="360" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="50" />
 				<mul stat="pAtk" val="1.0557" /> <!-- Atk. Power + 5.57% -->
@@ -287,7 +302,6 @@
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 				<add stat="critDmgAdd" val="182" /> <!-- Increases Critical Damage by 182 -->
-				<add stat="maxMp" val="360" /> <!-- Increases Max MP by 360 -->
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
@@ -309,6 +323,9 @@
 				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
 				<param targetType="SELF" />
 			</effect>
+			<effect name="MaxMp">
+				<param power="92" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="50" />
 				<mul stat="mAtk" val="1.087" /> <!-- M. Power +8.7% -->
@@ -319,7 +336,6 @@
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 				<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
-				<add stat="maxMp" val="92" /> <!-- Increases Max MP by 92 -->
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
@@ -341,6 +357,9 @@
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
 				<param targetType="ONE" />
 			</effect>
+			<effect name="MaxHp">
+				<param power="550" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param BLEED="50" />
 				<param HOLD="50" />
@@ -348,7 +367,6 @@
 				<mul stat="pAtk" val="1.0659" /> <!-- P. Atk. +6.59% -->
 				<add stat="critRate" val="127.4" /> <!-- Critical rate +127.4 -->
 				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to damage magic +2% -->
-				<add stat="maxHp" val="550" /> <!-- Max. HP +550 -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
@@ -406,6 +424,9 @@
 				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
 				<param targetType="SELF" />
 			</effect>
+			<effect name="MaxMp">
+				<param power="92" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="50" />
 				<mul stat="mAtk" val="1.1" /> <!-- M. Power +10% -->
@@ -416,7 +437,6 @@
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 				<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
-				<add stat="maxMp" val="92" /> <!-- Increases Max MP by 97 -->
 				<mul stat="magicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
@@ -701,12 +721,14 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="133" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="10.5" />
 				<param HOLD="10.5" />
 				<mul stat="pAtk" val="1.0062" />
 				<mul stat="pDef" val="1.0062" />
-				<add stat="maxHp" val="133" />
 			</effect>
 		</effects>
 	</skill>
@@ -717,12 +739,14 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="531" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="28" />
 				<param HOLD="28" />
 				<mul stat="pAtk" val="1.0557" />
 				<mul stat="pDef" val="1.0557" />
-				<add stat="maxHp" val="531" />
 			</effect>
 		</effects>
 	</skill>
@@ -733,12 +757,14 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="55" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="18" />
 				<param HOLD="18" />
 				<mul stat="pAtk" val="1.0103" />
 				<mul stat="pDef" val="1.0103" />
-				<add stat="maxHp" val="55" />
 			</effect>
 		</effects>
 	</skill>
@@ -749,12 +775,14 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="22" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="7" />
 				<param HOLD="7" />
 				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pDef" val="1.0041" />
-				<add stat="maxHp" val="22" />
 			</effect>
 		</effects>
 	</skill>
@@ -765,12 +793,14 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="22" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="7" />
 				<param HOLD="7" />
 				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pDef" val="1.0041" />
-				<add stat="maxHp" val="22" />
 			</effect>
 		</effects>
 	</skill>
@@ -793,11 +823,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="87" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pAtkSpd" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
-				<add stat="maxMp" val="87" />
 			</effect>
 		</effects>
 	</skill>
@@ -808,11 +840,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="347" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0557" />
 				<mul stat="pAtkSpd" val="1.05" />
 				<mul stat="regMp" val="1.05" />
-				<add stat="maxMp" val="347" />
 			</effect>
 		</effects>
 	</skill>
@@ -823,11 +857,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="145" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0068" />
 				<mul stat="pAtkSpd" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
-				<add stat="maxMp" val="145" />
 			</effect>
 		</effects>
 	</skill>
@@ -838,11 +874,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="58" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0027" />
 				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
-				<add stat="maxMp" val="58" />
 			</effect>
 		</effects>
 	</skill>
@@ -853,11 +891,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="58" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0027" />
 				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
-				<add stat="maxMp" val="58" />
 			</effect>
 		</effects>
 	</skill>
@@ -980,8 +1020,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxMp" val="16" />
+			<effect name="MaxMp">
+				<param power="16" />
 			</effect>
 		</effects>
 	</skill>
@@ -1005,8 +1045,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxMp" val="33" />
+			<effect name="MaxMp">
+				<param power="33" />
 			</effect>
 		</effects>
 	</skill>
@@ -1042,13 +1082,15 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="50" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param BLEED="20" />
 				<param PARALYZE="15" />
 				<param SHOCK="15" />
 				<param SLEEP="15" />
 				<param DERANGEMENT="10" />
-				<add stat="maxMp" val="50" />
 				<add stat="regMp" val="0.23" />
 				<add stat="waterRes" val="10" />
 				<mul stat="mReuse" val="0.95" />
@@ -1064,13 +1106,15 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="50" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param BLEED="25" />
 				<param PARALYZE="20" />
 				<param SHOCK="20" />
 				<param SLEEP="20" />
 				<param DERANGEMENT="10" />
-				<add stat="maxMp" val="50" />
 				<add stat="regMp" val="0.46" />
 				<add stat="waterRes" val="15" />
 				<mul stat="mReuse" val="0.95" />
@@ -1257,12 +1301,14 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="133" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="10.5" />
 				<param HOLD="10.5" />
 				<mul stat="pAtk" val="1.0062" />
 				<mul stat="pDef" val="1.0062" />
-				<add stat="maxHp" val="133" />
 			</effect>
 		</effects>
 	</skill>
@@ -1273,12 +1319,14 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="55" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="18" />
 				<param HOLD="18" />
 				<mul stat="pAtk" val="1.0103" />
 				<mul stat="pDef" val="1.0103" />
-				<add stat="maxHp" val="55" />
 			</effect>
 		</effects>
 	</skill>
@@ -1289,12 +1337,14 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="22" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="7" />
 				<param HOLD="7" />
 				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pDef" val="1.0041" />
-				<add stat="maxHp" val="22" />
 			</effect>
 		</effects>
 	</skill>
@@ -1305,12 +1355,14 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="22" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="7" />
 				<param HOLD="7" />
 				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pDef" val="1.0041" />
-				<add stat="maxHp" val="22" />
 			</effect>
 		</effects>
 	</skill>
@@ -1321,11 +1373,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="87" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0041" />
 				<mul stat="pAtkSpd" val="1.0041" />
 				<mul stat="regMp" val="1.0041" />
-				<add stat="maxMp" val="87" />
 			</effect>
 		</effects>
 	</skill>
@@ -1336,11 +1390,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="145" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0068" />
 				<mul stat="pAtkSpd" val="1.0068" />
 				<mul stat="regMp" val="1.0068" />
-				<add stat="maxMp" val="145" />
 			</effect>
 		</effects>
 	</skill>
@@ -1351,11 +1407,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="58" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0027" />
 				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
-				<add stat="maxMp" val="58" />
 			</effect>
 		</effects>
 	</skill>
@@ -1366,11 +1424,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="58" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0027" />
 				<mul stat="pAtkSpd" val="1.0027" />
 				<mul stat="regMp" val="1.0027" />
-				<add stat="maxMp" val="58" />
 			</effect>
 		</effects>
 	</skill>

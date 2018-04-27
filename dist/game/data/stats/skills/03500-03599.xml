@@ -6,9 +6,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="41" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.022" /> <!-- P. Def. +2.2% -->
-				<add stat="maxHp" val="41" /> <!-- HP +41 -->
 			</effect>
 		</effects>
 	</skill>
@@ -40,8 +42,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxMp" val="80" /> <!-- MP +80 -->
+			<effect name="MaxMp">
+				<param power="80" />
 			</effect>
 		</effects>
 	</skill>
@@ -63,8 +65,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxMp" val="91.81" /> <!-- MP +91.81 -->
+			<effect name="MaxMp">
+				<param power="91.81" />
 			</effect>
 		</effects>
 	</skill>
@@ -74,9 +76,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="153" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.05" /> <!-- P. Def. +5% -->
-				<add stat="maxHp" val="153" /> <!-- HP +153 -->
 			</effect>
 		</effects>
 	</skill>
@@ -149,8 +153,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<sub stat="maxHp" val="269.65" /> <!-- HP -269.65 -->
+			<effect name="MaxHp">
+				<param power="269.65" />
 			</effect>
 		</effects>
 	</skill>
@@ -182,8 +186,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxHp" val="269.65" /> <!-- HP +269.65 -->
+			<effect name="MaxHp">
+				<param power="269.65" />
 			</effect>
 		</effects>
 	</skill>
@@ -193,9 +197,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="170.62" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.0526" /> <!-- P. Def. +5.26% -->
-				<add stat="maxMp" val="170.62" /> <!-- MP +170.62 -->
 			</effect>
 		</effects>
 	</skill>
@@ -205,9 +211,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="294.49" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.0526" /> <!-- P. Def. +5.246 -->
-				<add stat="maxHp" val="294.49" /> <!-- HP +294.49 -->
 			</effect>
 		</effects>
 	</skill>
@@ -217,8 +225,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxHp" val="294.49" /> <!-- HP +294.49 -->
+			<effect name="MaxHp">
+				<param power="294.49" />
 			</effect>
 		</effects>
 	</skill>
@@ -287,8 +295,10 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="320" />
+			</effect>
 			<effect name="Buff">
-				<add stat="maxHp" val="320" /> <!-- HP +320 -->
 				<add stat="breath" val="200" /> <!-- Breath Gauge increased +200 -->
 			</effect>
 		</effects>
@@ -327,8 +337,10 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="206" />
+			</effect>
 			<effect name="Buff">
-				<add stat="maxMp" val="206" /> <!-- MP +206 -->
 				<mul stat="regMp" val="1.0524" /> <!-- MP Regeneration +5.24% -->
 			</effect>
 		</effects>
@@ -397,9 +409,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="222" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.08" /> <!-- MP Regeneration +8% -->
-				<add stat="maxMp" val="222" /> <!-- MP +222 -->
 			</effect>
 			<effect name="DefenceTrait">
 				<param POISON="80" />
@@ -492,11 +506,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="240" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.08"> <!-- Archery P. Atk. +8% -->
 					<using kind="BOW,CROSSBOW" />
 				</mul>
-				<add stat="maxMp" val="240" /> <!-- MP +240 -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
 			</effect>
 			<effect name="DefenceTrait">
@@ -526,8 +542,10 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="240" />
+			</effect>
 			<effect name="Buff">
-				<add stat="maxMp" val="240" /> <!-- MP +240 -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 				<mul stat="regMp" val="1.08" /> <!-- MP Regeneration +8% -->
 			</effect>
@@ -557,8 +575,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxHp" val="126.13" />
+			<effect name="MaxHp">
+				<param power="126.13" />
 			</effect>
 		</effects>
 	</skill>
@@ -569,8 +587,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxHp" val="20" />
+			<effect name="MaxHp">
+				<param power="20" />
 			</effect>
 		</effects>
 	</skill>
@@ -581,8 +599,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxHp" val="198.21" />
+			<effect name="MaxHp">
+				<param power="198.21" />
 			</effect>
 		</effects>
 	</skill>
@@ -682,9 +700,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="445" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.08" /> <!-- P Def. +8% -->
-				<add stat="maxHp" val="445" /> <!-- Maximum HP +445 -->
 			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="70" />
@@ -711,10 +731,12 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="289" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.04" /> <!-- Attack Speed +4% -->
 				<mul stat="pAtk" val="1.04" /> <!-- P. Atk +4% -->
-				<add stat="maxMp" val="289" /> <!-- Maximum MP +289 -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
 			</effect>
 		</effects>
@@ -744,9 +766,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="445" />
+			</effect>
 			<effect name="Buff">
 				<add stat="fireRes" val="15" />
-				<add stat="maxHp" val="445" />
 				<mul stat="pAtk" val="1.04" />
 				<mul stat="mAtk" val="1.08" />
 				<add stat="mCritRate" val="2" />
@@ -1011,10 +1035,19 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="15" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="30" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.15" />
-				<mul stat="maxMp" val="1.2" />
-				<mul stat="maxCp" val="1.3" />
 				<mul stat="pvpPhysDmg" val="1.05" />
 				<mul stat="pvpPhysSkillsDmg" val="1.05" />
 				<mul stat="pvpMagicalDmg" val="1.05" />
@@ -1171,10 +1204,19 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="25" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="30" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.25" />
-				<mul stat="maxMp" val="1.3" />
-				<mul stat="maxCp" val="1.5" />
 				<mul stat="sDef" val="1.33" />
 				<mul stat="pvpPhysDmg" val="1.07" />
 				<mul stat="pvpMagicalDmg" val="1.07" />
@@ -1212,10 +1254,19 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="25" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="30" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.25" />
-				<mul stat="maxMp" val="1.3" />
-				<mul stat="maxCp" val="1.5" />
 				<mul stat="rShld" val="1.39" />
 				<mul stat="pvpPhysDmg" val="1.07" />
 				<mul stat="pvpMagicalDmg" val="1.07" />
@@ -1245,10 +1296,16 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="25" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
 				<add stat="critDmgAdd" val="504" />
-				<mul stat="maxHp" val="1.25" />
-				<mul stat="maxCp" val="1.5" />
 				<add stat="critRate" val="78.7" />
 				<mul stat="pvpPhysDmg" val="1.07" />
 				<mul stat="pvpMagicalDmg" val="1.07" />
@@ -1265,9 +1322,15 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="25" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.25" />
-				<mul stat="maxCp" val="1.5" />
 				<mul stat="pAtkSpd" val="1.07" />
 				<mul stat="pvpPhysDmg" val="1.07" />
 				<mul stat="pvpMagicalDmg" val="1.07" />
@@ -1307,10 +1370,19 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="25" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="30" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.25" />
-				<mul stat="maxMp" val="1.3" />
-				<mul stat="maxCp" val="1.5" />
 				<add stat="critRate" val="78.7" />
 				<mul stat="pvpPhysDmg" val="1.07" />
 				<mul stat="pvpMagicalDmg" val="1.07" />
@@ -1350,10 +1422,19 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="25" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="30" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.25" />
-				<mul stat="maxMp" val="1.3" />
-				<mul stat="maxCp" val="1.5" />
 				<add stat="rEvas" val="3.15" />
 				<mul stat="pvpPhysDmg" val="1.07" />
 				<mul stat="pvpMagicalDmg" val="1.07" />
@@ -1393,9 +1474,15 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxCp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="30" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.3" />
-				<mul stat="maxCp" val="1.5" />
 				<mul stat="pAtkSpd" val="1.03" />
 				<add stat="regMp" val="0.51" />
 				<mul stat="critRatePos" val="1.22">
@@ -1438,9 +1525,15 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="25" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.25" />
-				<mul stat="maxCp" val="1.5" />
 				<mul stat="pAtkSpd" val="1.07" />
 				<add stat="accCombat" val="4.89" />
 				<mul stat="pvpPhysDmg" val="1.07" />
@@ -1472,9 +1565,15 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxCp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="30" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.3" />
-				<mul stat="maxCp" val="1.5" />
 				<mul stat="pvpPhysDmg" val="1.07" />
 				<mul stat="pvpMagicalDmg" val="1.07" />
 				<mul stat="pvpPhysSkillsDmg" val="1.07" />
@@ -1510,9 +1609,15 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxCp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="30" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.3" />
-				<mul stat="maxCp" val="1.5" />
 				<add stat="mAtk" val="29.67" />
 				<add stat="mCritRate" val="1" />
 				<mul stat="pvpPhysDmg" val="1.07" />
@@ -1550,9 +1655,15 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxCp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="30" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.3" />
-				<mul stat="maxCp" val="1.5" />
 				<mul stat="mAtkSpd" val="1.15" />
 				<add stat="regMp" val="0.51" />
 				<mul stat="pvpPhysDmg" val="1.07" />

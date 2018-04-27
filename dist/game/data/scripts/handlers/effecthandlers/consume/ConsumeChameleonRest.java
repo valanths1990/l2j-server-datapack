@@ -20,6 +20,7 @@ package handlers.effecthandlers.consume;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.StatsSet;
+import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.EffectFlag;
@@ -62,22 +63,23 @@ public final class ConsumeChameleonRest extends AbstractEffect
 			return false;
 		}
 		
-		if (info.getEffected().isPlayer())
+		final L2Character target = info.getEffected();
+		if (target.isPlayer())
 		{
-			if (!info.getEffected().getActingPlayer().isSitting())
+			if (!target.getActingPlayer().isSitting())
 			{
 				return false;
 			}
 		}
 		
-		double manaDam = _power * getTicksMultiplier();
-		if (manaDam > info.getEffected().getCurrentMp())
+		final double manaDam = _power * getTicksMultiplier();
+		if ((manaDam < 0) && ((target.getCurrentMp() + manaDam) <= 0))
 		{
-			info.getEffected().sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
+			target.sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
 			return false;
 		}
 		
-		info.getEffected().reduceCurrentMp(manaDam);
+		target.setCurrentMp(Math.min(target.getCurrentMp() + manaDam, target.getMaxRecoverableMp()));
 		return true;
 	}
 	

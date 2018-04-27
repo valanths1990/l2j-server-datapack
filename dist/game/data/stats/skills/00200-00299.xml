@@ -253,30 +253,36 @@
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxHp" val="#hp" />
+			<effect name="MaxHp">
+				<param power="#hp" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="Buff">
-				<add stat="maxHp" val="#ench1hp" />
+			<effect name="MaxHp">
+				<param power="#ench1hp" />
 			</effect>
 		</enchant1Effects>
 		<enchant2Effects>
-			<effect name="Buff">
-				<add stat="maxHp" val="480" />
-				<add stat="maxCp" val="#ench2cp" />
+			<effect name="MaxHp">
+				<param power="480" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="#ench2cp" />
 			</effect>
 		</enchant2Effects>
 		<enchant3Effects>
-			<effect name="Buff">
-				<add stat="maxHp" val="480" />
-				<mul stat="regHp" val="#enchreg" />
+			<effect name="MaxHp">
+				<param power="480" />
 			</effect>
+			<effect name="Buff">
+				<mul stat="regHp" val="#enchreg" />
+			</effect>			
 		</enchant3Effects>
 		<enchant4Effects>
+			<effect name="MaxHp">
+				<param power="480" />
+			</effect>
 			<effect name="Buff">
-				<add stat="maxHp" val="480" />
 				<mul stat="regCp" val="#enchreg" />
 			</effect>
 		</enchant4Effects>
@@ -309,13 +315,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxMp" val="#mp" />
+			<effect name="MaxMp">
+				<param power="#mp" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="Buff">
-				<add stat="maxMp" val="#ench1mp" />
+			<effect name="MaxMp">
+				<param power="#ench1mp" />
 			</effect>
 		</enchant1Effects>
 	</skill>
@@ -449,7 +455,7 @@
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="ConsumeHp">
-				<param power="12" />
+				<param power="-12" />
 				<param ticks="2" />
 				<mul stat="pAtkSpd" val="1.25" />
 			</effect>
@@ -538,13 +544,13 @@
 		<set name="abnormalVisualEffect" val="NONE" />
 		<set name="icon" val="icon.skill0226" />
 		<set name="magicLvl" val="5" />
-		<set name="mpConsume2" val="2" />
+		<set name="mpConsume1" val="2" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="ConsumeRest">
-				<param power="1" />
+				<param power="-1" />
 				<param ticks="3" />
 				<add stat="regHp" val="5" />
 			</effect>
@@ -1410,7 +1416,7 @@
 		</effects>
 	</skill>
 	<skill id="256" levels="1" name="Accuracy" enchantGroup1="1">
-		<table name="#ench1val"> 0.39 0.39 0.39 0.38 0.38 0.38 0.38 0.37 0.37 0.37 0.36 0.36 0.36 0.36 0.35 0.35 0.35 0.34 0.34 0.34 0.34 0.33 0.33 0.33 0.32 0.32 0.32 0.32 0.31 0.31 </table>
+		<table name="#ench1val"> -0.39 -0.39 -0.39 -0.38 -0.38 -0.38 -0.38 -0.37 -0.37 -0.37 -0.36 -0.36 -0.36 -0.36 -0.35 -0.35 -0.35 -0.34 -0.34 -0.34 -0.34 -0.33 -0.33 -0.33 -0.32 -0.32 -0.32 -0.32 -0.31 -0.31 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalVisualEffect" val="NONE" />
 		<set name="icon" val="icon.skill0256" />
@@ -1422,7 +1428,7 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="0.4" />
+				<param power="-0.4" />
 				<param ticks="5" />
 				<add stat="accCombat" val="3" />
 			</effect>
@@ -2795,7 +2801,7 @@
 		<table name="#pDef"> 121.8 161.1 212.1 256.5 </table>
 		<table name="#ench1pDef"> 259.4 262.3 265.2 268.1 271 274 276.9 279.8 282.7 285.6 288.5 291.5 294.4 297.3 300.2 303.1 306 309 311.9 314.8 317.7 320.6 323.5 326.5 329.4 332.3 335.2 338.1 341 344 </table>
 		<table name="#ench2MpConsume2"> 12 12 12 11 11 10 10 10 9 9 9 9 8 8 8 7 7 7 6 6 6 5 5 5 4 4 4 3 3 3 </table>
-		<table name="#ench2val"> 1.98 1.96 1.95 1.93 1.91 1.9 1.88 1.86 1.85 1.83 1.81 1.8 1.78 1.76 1.75 1.73 1.71 1.7 1.68 1.66 1.65 1.63 1.61 1.6 1.58 1.56 1.55 1.53 1.51 1.5 </table>
+		<table name="#ench2val"> -1.98 -1.96 -1.95 -1.93 -1.91 -1.9 -1.88 -1.86 -1.85 -1.83 -1.81 -1.8 -1.78 -1.76 -1.75 -1.73 -1.71 -1.7 -1.68 -1.66 -1.65 -1.63 -1.61 -1.6 -1.58 -1.56 -1.55 -1.53 -1.51 -1.5 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalVisualEffect" val="NONE" />
 		<set name="icon" val="icon.skill0288" />
@@ -2809,7 +2815,7 @@
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="2" />
+				<param power="-2" />
 				<param ticks="5" />
 				<add stat="pDef" val="#pDef" />
 				<mul stat="rShld" val="1.5" />
@@ -2817,7 +2823,7 @@
 		</effects>
 		<enchant1Effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="2" />
+				<param power="-2" />
 				<param ticks="5" />
 				<add stat="pDef" val="#ench1pDef" />
 				<mul stat="rShld" val="1.5" />
@@ -3066,7 +3072,7 @@
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="ConsumeChameleonRest">
-				<param power="2" />
+				<param power="-2" />
 				<param ticks="5" />
 			</effect>
 		</effects>

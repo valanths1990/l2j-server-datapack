@@ -52,13 +52,14 @@ public final class ConsumeHp extends AbstractEffect
 		
 		final L2Character target = info.getEffected();
 		final double consume = _power * getTicksMultiplier();
-		if ((consume > target.getCurrentHp()))
+		double hp = target.getCurrentHp();
+		if ((consume < 0) && ((hp + consume) <= 0))
 		{
 			target.sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_HP);
 			return false;
 		}
 		
-		target.setCurrentHp(Math.max(target.getCurrentHp() - consume, 0));
+		target.setCurrentHp(Math.min(hp + consume, target.getMaxRecoverableHp()));
 		return true;
 	}
 }

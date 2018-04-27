@@ -49,12 +49,12 @@ public final class MaxCp extends AbstractEffect
 		{
 			case DIFF:
 			{
-				_power = params.getInt("power", 0);
+				_power = params.getDouble("power", 0);
 				break;
 			}
 			default:
 			{
-				_power = 1 + (params.getInt("power", 0) / 100.0);
+				_power = 1 + (params.getDouble("power", 0) / 100.0);
 			}
 		}
 		_heal = params.getBoolean("heal", false);
