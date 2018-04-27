@@ -574,6 +574,7 @@
 					<xs:enumeration value="ManaHealByLevel" />
 					<xs:enumeration value="MaxCp" />
 					<xs:enumeration value="MaxHp" />
+					<xs:enumeration value="MaxMp" />
 					<xs:enumeration value="Mp" />
 					<xs:enumeration value="MpPerMax" />
 					<xs:enumeration value="Mute" />
