@@ -150,8 +150,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="critDmg" val="1.2" />
@@ -186,8 +189,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.2" />
 				<mul stat="critRate" val="1.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
@@ -221,8 +227,11 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<effects>
+			<effect name="MaxHp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="critDmg" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
@@ -340,7 +349,7 @@
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="0.4" />
+				<param power="-0.4" />
 				<param ticks="5" />
 				<add stat="transDam" val="50" />
 			</effect>
@@ -1679,8 +1688,11 @@
 				<param criticalChance="50" />
 				<param ignoreShieldDefence="true" />
 			</effect>
+			<effect name="MaxCp">
+				<param power="-90" />
+				<param type="PER" />
+			</effect>
 			<effect name="Debuff">
-				<mul stat="maxCp" val="0.1" />
 				<add stat="debuffVuln" val="30" />
 				<mul stat="healEffect" val="0.7" />
 			</effect>

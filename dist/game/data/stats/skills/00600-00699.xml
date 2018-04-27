@@ -200,16 +200,19 @@
 	</skill>
 	<skill id="615" levels="3" name="Holy Squad">
 		<!-- Confirmed CT2.5 -->
-		<table name="#maxMp"> 1 1.3 1.3 </table>
+		<table name="#maxMp"> 0 30 30 </table>
 		<table name="#MpConsumeRate"> 1 1 0.95 </table>
 		<set name="icon" val="icon.skill1043" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="#maxMp" />
+				<param type="PER" />
+			</effect>
 			<effect name="Buff">
 				<add stat="healEffect" val="20" />
-				<mul stat="maxMp" val="#maxMp" />
 				<mul stat="magicalMpConsumeRate" val="#MpConsumeRate" />
 				<mul stat="physicalMpConsumeRate" val="#MpConsumeRate" />
 				<mul stat="danceMpConsumeRate" val="#MpConsumeRate" />
@@ -794,8 +797,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxHp" val="295.32" />
+			<effect name="MaxHp">
+				<param power="295.32" />
 			</effect>
 		</effects>
 	</skill>
@@ -807,8 +810,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxMp" val="148.2" />
+			<effect name="MaxMp">
+				<param power="148.2" />
 			</effect>
 		</effects>
 	</skill>
@@ -820,9 +823,11 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxHp" val="147.66" />
-				<add stat="maxMp" val="74.1" />
+			<effect name="MaxHp">
+				<param power="147.66" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="74.1" />
 			</effect>
 		</effects>
 	</skill>

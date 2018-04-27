@@ -1182,8 +1182,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="maxCp" val="1.1" />
+			<effect name="MaxCp">
+				<param power="10" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
@@ -1193,8 +1194,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="maxCp" val="0.9" />
+			<effect name="MaxCp">
+				<param power="-10" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>

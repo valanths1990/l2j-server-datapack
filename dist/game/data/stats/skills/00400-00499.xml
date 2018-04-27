@@ -1100,19 +1100,19 @@
 	<skill id="422" levels="3" name="Polearm Accuracy" enchantGroup1="1" enchantGroup2="1">
 		<table name="#accCombat"> 2 3 4 </table>
 		<table name="#magicLvl"> 58 66 74 </table>
-		<table name="#mpConsume2"> 11 13 14 </table>
+		<table name="#mpConsume1"> 11 13 14 </table>
 		<table name="#ench1accCombat"> 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7 </table>
-		<table name="#ench2MpConsume2"> 0.49 0.48 0.47 0.46 0.45 0.44 0.43 0.42 0.41 0.4 0.39 0.38 0.37 0.36 0.35 0.34 0.33 0.32 0.31 0.3 0.29 0.28 0.27 0.26 0.25 0.24 0.23 0.22 0.21 0.2 </table>
+		<table name="#ench2val"> -0.49 -0.48 -0.47 -0.46 -0.45 -0.44 -0.43 -0.42 -0.41 -0.4 -0.39 -0.38 -0.37 -0.36 -0.35 -0.34 -0.33 -0.32 -0.31 -0.3 -0.29 -0.28 -0.27 -0.26 -0.25 -0.24 -0.23 -0.22 -0.21 -0.2 </table>
 		<set name="abnormalVisualEffect" val="NONE" />
 		<set name="icon" val="icon.skill0422" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="0.5" />
+				<param power="-0.5" />
 				<param ticks="5" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="POLE" />
@@ -1121,7 +1121,7 @@
 		</effects>
 		<enchant1Effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="0.5" />
+				<param power="-0.5" />
 				<param ticks="5" />
 				<add stat="accCombat" val="#ench1accCombat">
 					<using kind="POLE" />
@@ -1130,7 +1130,7 @@
 		</enchant1Effects>
 		<enchant2Effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="#ench2MpConsume2" />
+				<param power="#ench2val" />
 				<param ticks="5" />
 				<add stat="accCombat" val="4">
 					<using kind="POLE" />
@@ -1165,22 +1165,22 @@
 	</skill>
 	<skill id="424" levels="3" name="War Frenzy" enchantGroup1="1" enchantGroup2="1">
 		<table name="#magicLvl"> 58 66 74 </table>
-		<table name="#mpConsume2"> 13 14 15 </table>
+		<table name="#mpConsume1"> 13 14 15 </table>
 		<table name="#trait_shock"> 5 10 15 </table>
 		<table name="#trait_sleep"> 10 20 30 </table>
 		<table name="#ench1Trait_shock"> 16 16 16 17 17 17 18 18 18 19 19 19 19 20 20 20 21 21 21 22 22 22 22 23 23 23 24 24 24 25 </table>
 		<table name="#ench1Trait_sleep"> 31 31 31 32 32 32 33 33 33 34 34 34 34 35 35 35 36 36 36 37 37 37 37 38 38 38 39 39 39 40 </table>
-		<table name="#ench2MpConsume2"> 0.98 0.97 0.96 0.94 0.93 0.92 0.9 0.89 0.88 0.86 0.85 0.84 0.82 0.81 0.8 0.78 0.77 0.76 0.74 0.73 0.72 0.7 0.69 0.68 0.66 0.65 0.64 0.62 0.61 0.6 </table>
+		<table name="#ench2val"> -0.98 -0.97 -0.96 -0.94 -0.93 -0.92 -0.9 -0.89 -0.88 -0.86 -0.85 -0.84 -0.82 -0.81 -0.8 -0.78 -0.77 -0.76 -0.74 -0.73 -0.72 -0.7 -0.69 -0.68 -0.66 -0.65 -0.64 -0.62 -0.61 -0.6 </table>
 		<set name="abnormalVisualEffect" val="NONE" />
 		<set name="icon" val="icon.skill0424" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="1" />
+				<param power="-1" />
 				<param ticks="5" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -1190,7 +1190,7 @@
 		</effects>
 		<enchant1Effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="1" />
+				<param power="-1" />
 				<param ticks="5" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -1200,7 +1200,7 @@
 		</enchant1Effects>
 		<enchant2Effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="#ench2MpConsume2" />
+				<param power="#ench2val" />
 				<param ticks="5" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -1332,7 +1332,10 @@
 				<add stat="pAtk" val="80">
 					<using kind="SWORD,BLUNT,POLE,DUAL,DUALFIST" />
 				</add>
-				<mul stat="maxCp" val="1.05" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="5" />
+				<param type="PER" />
 			</effect>
 		</effects>
 		<enchant1Effects>
@@ -1343,7 +1346,10 @@
 				<add stat="pAtk" val="80">
 					<using kind="DUAL,DUALFIST" />
 				</add>
-				<mul stat="maxCp" val="1.05" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="5" />
+				<param type="PER" />
 			</effect>
 		</enchant1Effects>
 		<enchant2Effects>
@@ -1354,7 +1360,10 @@
 				<add stat="pAtk" val="#enchPAtk">
 					<using kind="DUAL,DUALFIST" />
 				</add>
-				<mul stat="maxCp" val="1.05" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="5" />
+				<param type="PER" />
 			</effect>
 		</enchant2Effects>
 	</skill>
@@ -2626,7 +2635,7 @@
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="0.2" />
+				<param power="-0.2" />
 				<param ticks="5" />
 				<add stat="vengeancePdam" val="3" />
 			</effect>
@@ -2765,7 +2774,7 @@
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="0.4" />
+				<param power="-0.4" />
 				<param ticks="5" />
 				<add stat="runSpd" val="20" />
 			</effect>

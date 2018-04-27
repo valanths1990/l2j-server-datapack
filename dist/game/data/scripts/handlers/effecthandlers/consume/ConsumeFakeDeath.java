@@ -19,6 +19,7 @@
 package handlers.effecthandlers.consume;
 
 import com.l2jserver.gameserver.model.StatsSet;
+import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
@@ -57,18 +58,16 @@ public final class ConsumeFakeDeath extends AbstractEffect
 			return false;
 		}
 		
+		final L2Character target = info.getEffected();
 		final double manaDam = _power * getTicksMultiplier();
-		if (manaDam > info.getEffected().getCurrentMp())
+		
+		if ((manaDam < 0) && ((target.getCurrentMp() + manaDam) <= 0))
 		{
-			if (info.getSkill().isToggle())
-			{
-				info.getEffected().sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
-				return false;
-			}
+			target.sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
+			return false;
 		}
 		
-		info.getEffected().reduceCurrentMp(manaDam);
-		
+		target.setCurrentMp(Math.min(target.getCurrentMp() + manaDam, target.getMaxRecoverableMp()));
 		return true;
 	}
 	

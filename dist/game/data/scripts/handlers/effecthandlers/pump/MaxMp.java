@@ -32,15 +32,17 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * @author Zealar
+ * Max Mp effect implementation.
+ * @author Adry_85
+ * @since 2.6.0.0
  */
-public final class MaxHp extends AbstractEffect
+public final class MaxMp extends AbstractEffect
 {
 	private final double _power;
 	private final EffectCalculationType _type;
 	private final boolean _heal;
 	
-	public MaxHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public MaxMp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
@@ -70,7 +72,7 @@ public final class MaxHp extends AbstractEffect
 	{
 		final L2Character effected = info.getEffected();
 		final CharStat charStat = effected.getStat();
-		final double currentHp = effected.getCurrentHp();
+		final double currentMp = effected.getCurrentMp();
 		double amount = _power;
 		
 		synchronized (charStat)
@@ -79,22 +81,21 @@ public final class MaxHp extends AbstractEffect
 			{
 				case DIFF:
 				{
-					
-					charStat.getActiveChar().addStatFunc(new FuncAdd(Stats.MAX_HP, 1, this, _power, null));
+					charStat.getActiveChar().addStatFunc(new FuncAdd(Stats.MAX_MP, 1, this, _power, null));
 					if (_heal)
 					{
-						effected.setCurrentHp((currentHp + _power));
+						effected.setCurrentMp((currentMp + _power));
 					}
 					break;
 				}
 				case PER:
 				{
-					final double maxHp = effected.getMaxHp();
-					charStat.getActiveChar().addStatFunc(new FuncMul(Stats.MAX_HP, 1, this, _power, null));
+					final double maxMp = effected.getMaxMp();
+					charStat.getActiveChar().addStatFunc(new FuncMul(Stats.MAX_MP, 1, this, _power, null));
 					if (_heal)
 					{
-						amount = (_power - 1) * maxHp;
-						effected.setCurrentHp(currentHp + amount);
+						amount = (_power - 1) * maxMp;
+						effected.setCurrentMp(currentMp + amount);
 					}
 					break;
 				}
@@ -102,7 +103,7 @@ public final class MaxHp extends AbstractEffect
 		}
 		if (_heal)
 		{
-			effected.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_HP_HAS_BEEN_RESTORED).addInt((int) amount));
+			effected.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_MP_HAS_BEEN_RESTORED).addInt((int) amount));
 		}
 	}
 	

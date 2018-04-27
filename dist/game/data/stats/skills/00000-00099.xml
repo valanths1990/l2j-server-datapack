@@ -1837,7 +1837,7 @@
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="ConsumeFakeDeath">
-				<param power="10" />
+				<param power="-10" />
 				<param ticks="5" />
 			</effect>
 		</effects>

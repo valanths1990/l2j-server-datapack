@@ -50,9 +50,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="maxHp" val="1.35" />
-				<mul stat="maxMp" val="1.35" />
+			<effect name="MaxHp">
+				<param power="35" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="35" />
+				<param type="PER" />
 			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="MAX_HP_UP,9;MAX_MP_UP,9" />
@@ -1253,8 +1257,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="maxCp" val="1.1" />
+			<effect name="MaxCp">
+				<param power="10" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
@@ -1369,9 +1374,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY_CLAN" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="maxHp" val="1.35" />
-				<mul stat="maxMp" val="1.35" />
+			<effect name="MaxHp">
+				<param power="35" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="35" />
+				<param type="PER" />
 			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="MAX_HP_UP,9;MAX_MP_UP,9" />
@@ -2181,13 +2190,13 @@
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxMp" val="#maxMp" />
+			<effect name="MaxMp">
+				<param power="#maxMp" />
 			</effect>
 		</effects>
 		<enchant1Effects>
-			<effect name="Buff">
-				<add stat="maxMp" val="#ench1maxMp" />
+			<effect name="MaxMp">
+				<param power="#ench1maxMp" />
 			</effect>
 		</enchant1Effects>
 	</skill>

@@ -52,13 +52,14 @@ public final class ConsumeMp extends AbstractEffect
 		
 		final L2Character target = info.getEffected();
 		final double consume = _power * getTicksMultiplier();
-		if ((consume > target.getCurrentMp()))
+		double mp = target.getCurrentMp();
+		if ((consume < 0) && ((mp + consume) <= 0))
 		{
 			target.sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
 			return false;
 		}
 		
-		target.setCurrentMp(Math.max(target.getCurrentMp() - consume, 0));
+		target.setCurrentMp(Math.min(mp + consume, target.getMaxRecoverableMp()));
 		return true;
 	}
 }

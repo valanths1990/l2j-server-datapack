@@ -2305,14 +2305,14 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="0.2" />
+				<param power="-0.2" />
 				<param ticks="5" />
 				<add stat="transDam" val="#power" />
 			</effect>
 		</effects>
 		<enchant1Effects>
 			<effect name="ConsumeMpByLevel">
-				<param power="0.2" />
+				<param power="-0.2" />
 				<param ticks="5" />
 				<add stat="transDam" val="#ench1power" />
 			</effect>
@@ -3057,7 +3057,7 @@
 	<skill id="1283" levels="13" name="Soul Guard" enchantGroup1="1">
 		<table name="#def"> 293.3 333.2 375.9 421.4 445.2 469.7 494.9 520.1 546 571.9 598.5 625.8 653.1 </table>
 		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#mdot"> 5 5 6 6 7 7 7 8 8 8 8 9 9 </table>
+		<table name="#mdot"> -5 -5 -6 -6 -7 -7 -7 -8 -8 -8 -8 -9 -9 </table>
 		<table name="#mpConsume1"> 8 9 10 11 11 11 12 12 13 13 13 14 14 </table>
 		<table name="#ench1def"> 683.76 687.82 691.88 695.94 700 704.06 708.12 712.18 716.24 720.3 724.36 728.42 732.48 736.54 740.6 744.66 748.72 752.78 756.84 760.9 764.96 769.02 773.08 777.14 781.2 785.26 789.32 793.38 797.44 801.5 </table>
 		<set name="abnormalVisualEffect" val="NONE" />
@@ -3076,7 +3076,7 @@
 		</effects>
 		<enchant1Effects>
 			<effect name="ConsumeMp">
-				<param power="9" />
+				<param power="-9" />
 				<param ticks="5" />
 				<add stat="pDef" val="#ench1def" />
 			</effect>

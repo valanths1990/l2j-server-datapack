@@ -162,6 +162,7 @@ import handlers.effecthandlers.pump.Hide;
 import handlers.effecthandlers.pump.Lucky;
 import handlers.effecthandlers.pump.MaxCp;
 import handlers.effecthandlers.pump.MaxHp;
+import handlers.effecthandlers.pump.MaxMp;
 import handlers.effecthandlers.pump.NoblesseBless;
 import handlers.effecthandlers.pump.Passive;
 import handlers.effecthandlers.pump.PhysicalAttackMute;
@@ -276,6 +277,7 @@ public final class EffectMasterHandler
 		ManaHealByLevel.class,
 		MaxCp.class,
 		MaxHp.class,
+		MaxMp.class,
 		Mp.class,
 		MpPerMax.class,
 		Mute.class,

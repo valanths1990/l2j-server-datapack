@@ -6,8 +6,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="maxMp" val="1.05" />
+			<effect name="MaxMp">
+				<param power="5" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
@@ -25,12 +26,14 @@
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
 				<param targetType="ONE" />
 			</effect>
+			<effect name="MaxHp">
+				<param power="531" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param HOLD="70" />
 				<param SLEEP="70" />
 				<mul stat="pAtk" val="1.0557" /> <!-- P. Atk. +5.57% -->
 				<mul stat="pDef" val="1.0557" /> <!-- P. Def. +5.57% -->
-				<add stat="maxHp" val="531" /> <!-- Max HP +531 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
 				<mul stat="pvpPhysDef" val="1.05" />
@@ -51,12 +54,14 @@
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
 				<param targetType="ONE" />
 			</effect>
+			<effect name="MaxHp">
+				<param power="540" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param HOLD="70" />
 				<param SLEEP="70" />
 				<mul stat="pAtk" val="1.0557" /> <!-- P. Atk. +5.57% -->
 				<mul stat="pDef" val="1.0557" /> <!-- P. Def. +5.57% -->
-				<add stat="maxHp" val="540" /> <!-- Max HP +540 -->
 				<add stat="accCombat" val="4" /> <!-- Increases Accuracy by 4 -->
 				<add stat="runSpd" val="5" /> <!-- Increases Speed by 5 -->
 				<mul stat="magicSuccRes" val="1.01" /> <!-- Resistance to magic damage by 1% -->
@@ -74,11 +79,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="347" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0557" /> <!-- P. Atk. +5.57% -->
 				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5% -->
-				<add stat="maxMp" val="347" /> <!-- Max MP by 347 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
 				<mul stat="pvpPhysDef" val="1.05" />
@@ -99,11 +106,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
+			<effect name="MaxMp">
+				<param power="354" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.0557" /> <!-- P. Atk. +5.57% -->
 				<mul stat="pAtkSpd" val="1.05" /> <!-- Atk. Spd. +5% -->
 				<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5.57% -->
-				<add stat="maxMp" val="354" /> <!-- Max MP by 354 -->
 				<add stat="rEvas" val="3" /> <!-- Increases Evasion by 3 -->
 				<add stat="critDmgAdd" val="172" /> <!-- Increases Critical Damage by 172 -->
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -208,8 +217,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxCp" val="1200" />
+			<effect name="MaxCp">
+				<param power="1200" />
 			</effect>
 			<effect name="Cp">
 				<param amount="1200" />
@@ -233,8 +242,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxCp" val="800" />
+			<effect name="MaxCp">
+				<param power="800" />
 			</effect>
 			<effect name="Cp">
 				<param amount="800" />
@@ -449,8 +458,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxCp" val="672" />
+			<effect name="MaxCp">
+				<param power="672" />
 			</effect>
 		</effects>
 	</skill>
@@ -595,8 +604,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="Buff">
-				<add stat="maxCp" val="1500" />
+			<effect name="MaxCp">
+				<param power="1500" />
 			</effect>
 			<effect name="Cp">
 				<param amount="1500" />
@@ -834,7 +843,7 @@
 	</skill>
 	<skill id="8348" levels="2" name="Royal Guard Earring - Gludio">
 		<table name="#icons"> icon.accessary_inferno_earing_i00 icon.accessory_earring_of_domi_protection_i00 </table>
-		<table name="#maxCp"> 1 1.05 </table>
+		<table name="#maxCp"> 0 5 </table>
 		<set name="icon" val="#icons" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
@@ -842,16 +851,19 @@
 		<effects>
 			<effect name="AttackTrait">
 				<param SHOCK="15" />
-				<mul stat="maxCp" val="#maxCp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param BLEED="15" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="#maxCp" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="8349" levels="2" name="Royal Guard Earring - Dion">
 		<table name="#icons"> icon.accessary_inferno_earing_i00 icon.accessory_earring_of_domi_protection_i00 </table>
-		<table name="#maxCp"> 1 1.05 </table>
+		<table name="#maxCp"> 0 5 </table>
 		<set name="icon" val="#icons" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
@@ -859,16 +871,19 @@
 		<effects>
 			<effect name="AttackTrait">
 				<param HOLD="15" />
-				<mul stat="maxCp" val="#maxCp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param POISON="15" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="#maxCp" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="8350" levels="2" name="Royal Guard Earring - Giran">
 		<table name="#icons"> icon.accessary_inferno_earing_i00 icon.accessory_earring_of_domi_protection_i00 </table>
-		<table name="#maxCp"> 1 1.05 </table>
+		<table name="#maxCp"> 0 5 </table>
 		<set name="icon" val="#icons" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
@@ -876,16 +891,19 @@
 		<effects>
 			<effect name="AttackTrait">
 				<param BLEED="15" />
-				<mul stat="maxCp" val="#maxCp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param PARALYZE="15" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="#maxCp" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="8351" levels="2" name="Royal Guard Earring - Oren">
 		<table name="#icons"> icon.accessary_inferno_earing_i00 icon.accessory_earring_of_domi_protection_i00 </table>
-		<table name="#maxCp"> 1 1.05 </table>
+		<table name="#maxCp"> 0 5 </table>
 		<set name="icon" val="#icons" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
@@ -893,16 +911,19 @@
 		<effects>
 			<effect name="AttackTrait">
 				<param PARALYZE="15" />
-				<mul stat="maxCp" val="#maxCp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param HOLD="15" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="#maxCp" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="8352" levels="2" name="Royal Guard Earring - Aden">
 		<table name="#icons"> icon.accessary_inferno_earing_i00 icon.accessory_earring_of_domi_protection_i00 </table>
-		<table name="#maxCp"> 1 1.05 </table>
+		<table name="#maxCp"> 0 5 </table>
 		<set name="icon" val="#icons" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
@@ -910,16 +931,19 @@
 		<effects>
 			<effect name="AttackTrait">
 				<param DERANGEMENT="15" />
-				<mul stat="maxCp" val="#maxCp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="15" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="#maxCp" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="8353" levels="2" name="Royal Guard Earring - Innadril">
 		<table name="#icons"> icon.accessary_inferno_earing_i00 icon.accessory_earring_of_domi_protection_i00 </table>
-		<table name="#maxCp"> 1 1.05 </table>
+		<table name="#maxCp"> 0 5 </table>
 		<set name="icon" val="#icons" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
@@ -927,16 +951,19 @@
 		<effects>
 			<effect name="AttackTrait">
 				<param SLEEP="15" />
-				<mul stat="maxCp" val="#maxCp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="15" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="#maxCp" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="8354" levels="2" name="Royal Guard Earring - Goddard">
 		<table name="#icons"> icon.accessary_inferno_earing_i00 icon.accessory_earring_of_domi_protection_i00 </table>
-		<table name="#maxCp"> 1 1.05 </table>
+		<table name="#maxCp"> 0 5 </table>
 		<set name="icon" val="#icons" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
@@ -944,16 +971,19 @@
 		<effects>
 			<effect name="AttackTrait">
 				<param SHOCK="15" />
-				<mul stat="maxCp" val="#maxCp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="15" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="#maxCp" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="8355" levels="2" name="Royal Guard Earring - Rune">
 		<table name="#icons"> icon.accessary_inferno_earing_i00 icon.accessory_earring_of_domi_protection_i00 </table>
-		<table name="#maxCp"> 1 1.05 </table>
+		<table name="#maxCp"> 0 5 </table>
 		<set name="icon" val="#icons" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
@@ -961,16 +991,19 @@
 		<effects>
 			<effect name="AttackTrait">
 				<param POISON="15" />
-				<mul stat="maxCp" val="#maxCp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param HOLD="15" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="#maxCp" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="8356" levels="2" name="Royal Guard Earring - Schuttgart">
 		<table name="#icons"> icon.accessary_inferno_earing_i00 icon.accessory_earring_of_domi_protection_i00 </table>
-		<table name="#maxCp"> 1 1.05 </table>
+		<table name="#maxCp"> 0 5 </table>
 		<set name="icon" val="#icons" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
@@ -978,10 +1011,13 @@
 		<effects>
 			<effect name="AttackTrait">
 				<param HOLD="15" />
-				<mul stat="maxCp" val="#maxCp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param DERANGEMENT="15" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="#maxCp" />
+				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
