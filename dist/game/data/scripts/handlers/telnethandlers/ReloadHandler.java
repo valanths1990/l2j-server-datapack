@@ -23,8 +23,6 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.StringTokenizer;
 
-import javax.script.ScriptException;
-
 import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.data.sql.impl.TeleportLocationTable;
 import com.l2jserver.gameserver.data.xml.impl.MultisellData;
@@ -38,7 +36,7 @@ import com.l2jserver.gameserver.instancemanager.QuestManager;
 import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.scripting.L2ScriptEngineManager;
+import com.l2jserver.gameserver.scripting.ScriptEngineManager;
 
 /**
  * @author UnAfraid
@@ -120,18 +118,13 @@ public class ReloadHandler implements ITelnetHandler
 					{
 						String questPath = st.hasMoreTokens() ? st.nextToken() : "";
 						
-						File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, questPath);
+						File file = new File(ScriptEngineManager.SCRIPT_FOLDER, questPath);
 						if (file.isFile())
 						{
 							try
 							{
-								L2ScriptEngineManager.getInstance().executeScript(file);
+								ScriptEngineManager.getInstance().compileScript(file);
 								_print.println(file.getName() + " was successfully loaded!\n");
-							}
-							catch (ScriptException e)
-							{
-								_print.println("Failed loading: " + questPath);
-								L2ScriptEngineManager.getInstance().reportScriptFileError(file, e);
 							}
 							catch (Exception e)
 							{

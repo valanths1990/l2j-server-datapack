@@ -21,8 +21,6 @@ package handlers.admincommandhandlers;
 import java.io.File;
 import java.util.StringTokenizer;
 
-import javax.script.ScriptException;
-
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.data.sql.impl.CrestTable;
@@ -44,7 +42,7 @@ import com.l2jserver.gameserver.instancemanager.QuestManager;
 import com.l2jserver.gameserver.instancemanager.WalkingManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.scripting.L2ScriptEngineManager;
+import com.l2jserver.gameserver.scripting.ScriptEngineManager;
 import com.l2jserver.gameserver.util.Util;
 
 /**
@@ -207,32 +205,16 @@ public class AdminReload implements IAdminCommandHandler
 				}
 				case "effect":
 				{
-					final File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, "handlers/EffectMasterHandler.java");
-					try
-					{
-						L2ScriptEngineManager.getInstance().executeScript(file);
-						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Effects.");
-					}
-					catch (ScriptException e)
-					{
-						L2ScriptEngineManager.getInstance().reportScriptFileError(file, e);
-						activeChar.sendMessage("There was an error while loading handlers.");
-					}
+					final File file = new File(ScriptEngineManager.SCRIPT_FOLDER, "handlers/EffectMasterHandler.java");
+					ScriptEngineManager.getInstance().compileScript(file);
+					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Effects.");
 					break;
 				}
 				case "handler":
 				{
-					final File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, "handlers/MasterHandler.java");
-					try
-					{
-						L2ScriptEngineManager.getInstance().executeScript(file);
-						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Handlers.");
-					}
-					catch (ScriptException e)
-					{
-						L2ScriptEngineManager.getInstance().reportScriptFileError(file, e);
-						activeChar.sendMessage("There was an error while loading handlers.");
-					}
+					final File file = new File(ScriptEngineManager.SCRIPT_FOLDER, "handlers/MasterHandler.java");
+					ScriptEngineManager.getInstance().compileScript(file);
+					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Handlers.");
 					break;
 				}
 				case "enchant":
