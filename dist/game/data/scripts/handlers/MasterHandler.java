@@ -18,12 +18,8 @@
  */
 package handlers;
 
-import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.ActionHandler;
@@ -180,7 +176,6 @@ import handlers.communityboard.HomepageBoard;
 import handlers.communityboard.MailBoard;
 import handlers.communityboard.MemoBoard;
 import handlers.communityboard.RegionBoard;
-import handlers.custom.CustomAnnouncePkPvP;
 import handlers.itemhandlers.BeastSoulShot;
 import handlers.itemhandlers.BeastSpiritShot;
 import handlers.itemhandlers.BlessedSpiritShot;
@@ -286,370 +281,346 @@ import handlers.voicedcommandhandlers.Wedding;
 /**
  * Master handler.
  * @author UnAfraid
+ * @author Zoey76
  */
 public class MasterHandler
 {
-	private static final Logger _log = Logger.getLogger(MasterHandler.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(MasterHandler.class);
 	
-	private static final IHandler<?, ?>[] LOAD_INSTANCES =
+	private static final Class<?>[] ACTION_HANDLERS =
 	{
-		ActionHandler.getInstance(),
-		ActionShiftHandler.getInstance(),
-		AdminCommandHandler.getInstance(),
-		BypassHandler.getInstance(),
-		ChatHandler.getInstance(),
-		CommunityBoardHandler.getInstance(),
-		ItemHandler.getInstance(),
-		PunishmentHandler.getInstance(),
-		UserCommandHandler.getInstance(),
-		VoicedCommandHandler.getInstance(),
-		TargetHandler.getInstance(),
-		TelnetHandler.getInstance(),
+		L2ArtefactInstanceAction.class,
+		L2DecoyAction.class,
+		L2DoorInstanceAction.class,
+		L2ItemInstanceAction.class,
+		L2NpcAction.class,
+		L2PcInstanceAction.class,
+		L2PetInstanceAction.class,
+		L2StaticObjectInstanceAction.class,
+		L2SummonAction.class,
+		L2TrapAction.class,
 	};
 	
-	private static final Class<?>[][] HANDLERS =
+	private static final Class<?>[] ACTION_SHIFT_HANDLERS =
 	{
-		{
-			// Action Handlers
-			L2ArtefactInstanceAction.class,
-			L2DecoyAction.class,
-			L2DoorInstanceAction.class,
-			L2ItemInstanceAction.class,
-			L2NpcAction.class,
-			L2PcInstanceAction.class,
-			L2PetInstanceAction.class,
-			L2StaticObjectInstanceAction.class,
-			L2SummonAction.class,
-			L2TrapAction.class,
-		},
-		{
-			// Action Shift Handlers
-			L2DoorInstanceActionShift.class,
-			L2ItemInstanceActionShift.class,
-			L2NpcActionShift.class,
-			L2PcInstanceActionShift.class,
-			L2StaticObjectInstanceActionShift.class,
-			L2SummonActionShift.class,
-		},
-		{
-			// Admin Command Handlers
-			AdminAdmin.class,
-			AdminAnnouncements.class,
-			AdminBBS.class,
-			AdminBuffs.class,
-			AdminCamera.class,
-			AdminChangeAccessLevel.class,
-			AdminCHSiege.class,
-			AdminClan.class,
-			AdminPcCondOverride.class,
-			AdminCreateItem.class,
-			AdminCursedWeapons.class,
-			AdminDebug.class,
-			AdminDelete.class,
-			AdminDisconnect.class,
-			AdminDoorControl.class,
-			AdminEditChar.class,
-			AdminEffects.class,
-			AdminElement.class,
-			AdminEnchant.class,
-			AdminEventEngine.class,
-			AdminEvents.class,
-			AdminExpSp.class,
-			AdminFightCalculator.class,
-			AdminFortSiege.class,
-			AdminGeodata.class,
-			AdminGm.class,
-			AdminGmChat.class,
-			AdminGraciaSeeds.class,
-			AdminGrandBoss.class,
-			AdminHeal.class,
-			AdminHtml.class,
-			AdminInstance.class,
-			AdminInstanceZone.class,
-			AdminInvul.class,
-			AdminKick.class,
-			AdminKill.class,
-			AdminLevel.class,
-			AdminLogin.class,
-			AdminMammon.class,
-			AdminManor.class,
-			AdminMenu.class,
-			AdminMessages.class,
-			AdminMobGroup.class,
-			AdminMonsterRace.class,
-			AdminPathNode.class,
-			AdminPetition.class,
-			AdminPForge.class,
-			AdminPledge.class,
-			AdminPolymorph.class,
-			AdminPunishment.class,
-			AdminQuest.class,
-			AdminReload.class,
-			AdminRepairChar.class,
-			AdminRes.class,
-			AdminRide.class,
-			AdminScan.class,
-			AdminShop.class,
-			AdminShowQuests.class,
-			AdminShutdown.class,
-			AdminSiege.class,
-			AdminSkill.class,
-			AdminSpawn.class,
-			AdminSummon.class,
-			AdminTarget.class,
-			AdminTargetSay.class,
-			AdminTeleport.class,
-			AdminTerritoryWar.class,
-			AdminTest.class,
-			AdminTvTEvent.class,
-			AdminUnblockIp.class,
-			AdminVitality.class,
-			AdminZone.class,
-		},
-		{
-			// Bypass Handlers
-			Augment.class,
-			Buy.class,
-			BuyShadowItem.class,
-			ChatLink.class,
-			ClanWarehouse.class,
-			EventEngine.class,
-			Festival.class,
-			Freight.class,
-			ItemAuctionLink.class,
-			Link.class,
-			Loto.class,
-			Multisell.class,
-			NpcViewMod.class,
-			Observation.class,
-			OlympiadObservation.class,
-			OlympiadManagerLink.class,
-			QuestLink.class,
-			PlayerHelp.class,
-			PrivateWarehouse.class,
-			QuestList.class,
-			ReceivePremium.class,
-			ReleaseAttribute.class,
-			RentPet.class,
-			Rift.class,
-			SkillList.class,
-			SupportBlessing.class,
-			SupportMagic.class,
-			TerritoryStatus.class,
-			TutorialClose.class,
-			VoiceCommand.class,
-			Wear.class,
-		},
-		{
-			// Chat Handlers
-			ChatAll.class,
-			ChatAlliance.class,
-			ChatBattlefield.class,
-			ChatClan.class,
-			ChatHeroVoice.class,
-			ChatParty.class,
-			ChatPartyMatchRoom.class,
-			ChatPartyRoomAll.class,
-			ChatPartyRoomCommander.class,
-			ChatPetition.class,
-			ChatShout.class,
-			ChatTell.class,
-			ChatTrade.class,
-		},
-		{
-			// Community Board
-			ClanBoard.class,
-			FavoriteBoard.class,
-			FriendsBoard.class,
-			HomeBoard.class,
-			HomepageBoard.class,
-			MailBoard.class,
-			MemoBoard.class,
-			RegionBoard.class,
-		},
-		{
-			// Item Handlers
-			BeastSoulShot.class,
-			BeastSpiritShot.class,
-			BlessedSpiritShot.class,
-			Book.class,
-			Bypass.class,
-			Calculator.class,
-			CharmOfCourage.class,
-			Disguise.class,
-			Elixir.class,
-			EnchantAttribute.class,
-			EnchantScrolls.class,
-			EventItem.class,
-			ExtractableItems.class,
-			FishShots.class,
-			Harvester.class,
-			ItemSkills.class,
-			ItemSkillsTemplate.class,
-			ManaPotion.class,
-			Maps.class,
-			MercTicket.class,
-			NicknameColor.class,
-			PetFood.class,
-			Recipes.class,
-			RollingDice.class,
-			Seed.class,
-			SevenSignsRecord.class,
-			SoulShots.class,
-			SpecialXMas.class,
-			SpiritShot.class,
-			SummonItems.class,
-			TeleportBookmark.class,
-		},
-		{
-			// Punishment Handlers
-			BanHandler.class,
-			ChatBanHandler.class,
-			JailHandler.class,
-		},
-		{
-			// User Command Handlers
-			ClanPenalty.class,
-			ClanWarsList.class,
-			Dismount.class,
-			Unstuck.class,
-			InstanceZone.class,
-			Loc.class,
-			Mount.class,
-			PartyInfo.class,
-			Time.class,
-			OlympiadStat.class,
-			ChannelLeave.class,
-			ChannelDelete.class,
-			ChannelInfo.class,
-			MyBirthday.class,
-			SiegeStatus.class,
-		},
-		{
-			// Voiced Command Handlers
-			StatsVCmd.class,
-			// TODO: Add configuration options for this voiced commands:
-			// CastleVCmd.class,
-			// SetVCmd.class,
-			(Config.L2JMOD_ALLOW_WEDDING ? Wedding.class : null),
-			(Config.BANKING_SYSTEM_ENABLED ? Banking.class : null),
-			(Config.L2JMOD_CHAT_ADMIN ? ChatAdmin.class : null),
-			(Config.L2JMOD_MULTILANG_ENABLE && Config.L2JMOD_MULTILANG_VOICED_ALLOW ? Lang.class : null),
-			(Config.L2JMOD_DEBUG_VOICE_COMMAND ? Debug.class : null),
-			(Config.L2JMOD_ALLOW_CHANGE_PASSWORD ? ChangePassword.class : null),
-		},
-		{
-			// Target Handlers
-			Area.class,
-			AreaCorpseMob.class,
-			AreaFriendly.class,
-			AreaSummon.class,
-			Aura.class,
-			AuraCorpseMob.class,
-			AuraFriendly.class,
-			AuraUndeadEnemy.class,
-			BehindArea.class,
-			BehindAura.class,
-			Clan.class,
-			ClanMember.class,
-			CommandChannel.class,
-			CorpseClan.class,
-			CorpseMob.class,
-			Enemy.class,
-			EnemyOnly.class,
-			EnemySummon.class,
-			FlagPole.class,
-			FrontArea.class,
-			FrontAura.class,
-			Ground.class,
-			Holy.class,
-			One.class,
-			OwnerPet.class,
-			Party.class,
-			PartyClan.class,
-			PartyMember.class,
-			PartyNotMe.class,
-			PartyOther.class,
-			PcBody.class,
-			Pet.class,
-			Self.class,
-			Servitor.class,
-			Summon.class,
-			TargetParty.class,
-			Unlockable.class,
-		},
-		{
-			// Telnet Handlers
-			ChatsHandler.class,
-			DebugHandler.class,
-			HelpHandler.class,
-			PlayerHandler.class,
-			ReloadHandler.class,
-			ServerHandler.class,
-			StatusHandler.class,
-			ThreadHandler.class,
-		},
-		{
-			// Custom Handlers
-			CustomAnnouncePkPvP.class
-		}
+		L2DoorInstanceActionShift.class,
+		L2ItemInstanceActionShift.class,
+		L2NpcActionShift.class,
+		L2PcInstanceActionShift.class,
+		L2StaticObjectInstanceActionShift.class,
+		L2SummonActionShift.class,
 	};
+	
+	private static final Class<?>[] ADMIN_HANDLERS =
+	{
+		AdminAdmin.class,
+		AdminAnnouncements.class,
+		AdminBBS.class,
+		AdminBuffs.class,
+		AdminCamera.class,
+		AdminChangeAccessLevel.class,
+		AdminCHSiege.class,
+		AdminClan.class,
+		AdminPcCondOverride.class,
+		AdminCreateItem.class,
+		AdminCursedWeapons.class,
+		AdminDebug.class,
+		AdminDelete.class,
+		AdminDisconnect.class,
+		AdminDoorControl.class,
+		AdminEditChar.class,
+		AdminEffects.class,
+		AdminElement.class,
+		AdminEnchant.class,
+		AdminEventEngine.class,
+		AdminEvents.class,
+		AdminExpSp.class,
+		AdminFightCalculator.class,
+		AdminFortSiege.class,
+		AdminGeodata.class,
+		AdminGm.class,
+		AdminGmChat.class,
+		AdminGraciaSeeds.class,
+		AdminGrandBoss.class,
+		AdminHeal.class,
+		AdminHtml.class,
+		AdminInstance.class,
+		AdminInstanceZone.class,
+		AdminInvul.class,
+		AdminKick.class,
+		AdminKill.class,
+		AdminLevel.class,
+		AdminLogin.class,
+		AdminMammon.class,
+		AdminManor.class,
+		AdminMenu.class,
+		AdminMessages.class,
+		AdminMobGroup.class,
+		AdminMonsterRace.class,
+		AdminPathNode.class,
+		AdminPetition.class,
+		AdminPForge.class,
+		AdminPledge.class,
+		AdminPolymorph.class,
+		AdminPunishment.class,
+		AdminQuest.class,
+		AdminReload.class,
+		AdminRepairChar.class,
+		AdminRes.class,
+		AdminRide.class,
+		AdminScan.class,
+		AdminShop.class,
+		AdminShowQuests.class,
+		AdminShutdown.class,
+		AdminSiege.class,
+		AdminSkill.class,
+		AdminSpawn.class,
+		AdminSummon.class,
+		AdminTarget.class,
+		AdminTargetSay.class,
+		AdminTeleport.class,
+		AdminTerritoryWar.class,
+		AdminTest.class,
+		AdminTvTEvent.class,
+		AdminUnblockIp.class,
+		AdminVitality.class,
+		AdminZone.class,
+	};
+	
+	private static final Class<?>[] BYPASS_HANDLERS =
+	{
+		Augment.class,
+		Buy.class,
+		BuyShadowItem.class,
+		ChatLink.class,
+		ClanWarehouse.class,
+		EventEngine.class,
+		Festival.class,
+		Freight.class,
+		ItemAuctionLink.class,
+		Link.class,
+		Loto.class,
+		Multisell.class,
+		NpcViewMod.class,
+		Observation.class,
+		OlympiadObservation.class,
+		OlympiadManagerLink.class,
+		QuestLink.class,
+		PlayerHelp.class,
+		PrivateWarehouse.class,
+		QuestList.class,
+		ReceivePremium.class,
+		ReleaseAttribute.class,
+		RentPet.class,
+		Rift.class,
+		SkillList.class,
+		SupportBlessing.class,
+		SupportMagic.class,
+		TerritoryStatus.class,
+		TutorialClose.class,
+		VoiceCommand.class,
+		Wear.class,
+	};
+	
+	private static final Class<?>[] CHAT_HANDLERS =
+	{
+		ChatAll.class,
+		ChatAlliance.class,
+		ChatBattlefield.class,
+		ChatClan.class,
+		ChatHeroVoice.class,
+		ChatParty.class,
+		ChatPartyMatchRoom.class,
+		ChatPartyRoomAll.class,
+		ChatPartyRoomCommander.class,
+		ChatPetition.class,
+		ChatShout.class,
+		ChatTell.class,
+		ChatTrade.class,
+	};
+	
+	private static final Class<?>[] COMMUNITY_HANDLERS =
+	{
+		ClanBoard.class,
+		FavoriteBoard.class,
+		FriendsBoard.class,
+		HomeBoard.class,
+		HomepageBoard.class,
+		MailBoard.class,
+		MemoBoard.class,
+		RegionBoard.class,
+	};
+	
+	private static final Class<?>[] ITEM_HANDLERS =
+	{
+		BeastSoulShot.class,
+		BeastSpiritShot.class,
+		BlessedSpiritShot.class,
+		Book.class,
+		Bypass.class,
+		Calculator.class,
+		CharmOfCourage.class,
+		Disguise.class,
+		Elixir.class,
+		EnchantAttribute.class,
+		EnchantScrolls.class,
+		EventItem.class,
+		ExtractableItems.class,
+		FishShots.class,
+		Harvester.class,
+		ItemSkillsTemplate.class,
+		ItemSkills.class,
+		ManaPotion.class,
+		Maps.class,
+		MercTicket.class,
+		NicknameColor.class,
+		PetFood.class,
+		Recipes.class,
+		RollingDice.class,
+		Seed.class,
+		SevenSignsRecord.class,
+		SoulShots.class,
+		SpecialXMas.class,
+		SpiritShot.class,
+		SummonItems.class,
+		TeleportBookmark.class,
+	};
+	
+	private static final Class<?>[] PUNISHMENT_HANDLERS =
+	{
+		BanHandler.class,
+		ChatBanHandler.class,
+		JailHandler.class,
+	};
+	
+	private static final Class<?>[] USER_COMMAND_HANDLERS =
+	{
+		ClanPenalty.class,
+		ClanWarsList.class,
+		Dismount.class,
+		Unstuck.class,
+		InstanceZone.class,
+		Loc.class,
+		Mount.class,
+		PartyInfo.class,
+		Time.class,
+		OlympiadStat.class,
+		ChannelLeave.class,
+		ChannelDelete.class,
+		ChannelInfo.class,
+		MyBirthday.class,
+		SiegeStatus.class,
+	};
+	
+	private static final Class<?>[] TARGET_HANDLERS =
+	{
+		Area.class,
+		AreaCorpseMob.class,
+		AreaFriendly.class,
+		AreaSummon.class,
+		Aura.class,
+		AuraCorpseMob.class,
+		AuraFriendly.class,
+		AuraUndeadEnemy.class,
+		BehindArea.class,
+		BehindAura.class,
+		Clan.class,
+		ClanMember.class,
+		CommandChannel.class,
+		CorpseClan.class,
+		CorpseMob.class,
+		Enemy.class,
+		EnemyOnly.class,
+		EnemySummon.class,
+		FlagPole.class,
+		FrontArea.class,
+		FrontAura.class,
+		Ground.class,
+		Holy.class,
+		One.class,
+		OwnerPet.class,
+		Party.class,
+		PartyClan.class,
+		PartyMember.class,
+		PartyNotMe.class,
+		PartyOther.class,
+		PcBody.class,
+		Pet.class,
+		Self.class,
+		Servitor.class,
+		Summon.class,
+		TargetParty.class,
+		Unlockable.class,
+	};
+	
+	private static final Class<?>[] TELNET_HANDLERS =
+	{
+		ChatsHandler.class,
+		DebugHandler.class,
+		HelpHandler.class,
+		PlayerHandler.class,
+		ReloadHandler.class,
+		ServerHandler.class,
+		StatusHandler.class,
+		ThreadHandler.class,
+	};
+	
+	private static final Class<?>[] VOICED_COMMAND_HANDLERS =
+	{
+		StatsVCmd.class,
+		// TODO: Add configuration options for this voiced commands:
+		// CastleVCmd.class,
+		// SetVCmd.class,
+		(Config.L2JMOD_ALLOW_WEDDING ? Wedding.class : null),
+		(Config.BANKING_SYSTEM_ENABLED ? Banking.class : null),
+		(Config.L2JMOD_CHAT_ADMIN ? ChatAdmin.class : null),
+		(Config.L2JMOD_MULTILANG_ENABLE && Config.L2JMOD_MULTILANG_VOICED_ALLOW ? Lang.class : null),
+		(Config.L2JMOD_DEBUG_VOICE_COMMAND ? Debug.class : null),
+		(Config.L2JMOD_ALLOW_CHANGE_PASSWORD ? ChangePassword.class : null),
+	};
+	
+	// TODO(Zoey76): Add this handler.
+	// private static final Class<?>[] CUSTOM_HANDLERS =
+	// {
+	// CustomAnnouncePkPvP.class
+	// };
 	
 	public static void main(String[] args)
 	{
-		_log.log(Level.INFO, "Loading Handlers...");
-		
-		Map<IHandler<?, ?>, Method> registerHandlerMethods = new HashMap<>();
-		for (IHandler<?, ?> loadInstance : LOAD_INSTANCES)
+		LOG.info("Loading Handlers...");
+		loadHandlers(VoicedCommandHandler.getInstance(), VOICED_COMMAND_HANDLERS);
+		loadHandlers(ActionHandler.getInstance(), ACTION_HANDLERS);
+		loadHandlers(ActionShiftHandler.getInstance(), ACTION_SHIFT_HANDLERS);
+		loadHandlers(AdminCommandHandler.getInstance(), ADMIN_HANDLERS);
+		loadHandlers(BypassHandler.getInstance(), BYPASS_HANDLERS);
+		loadHandlers(ChatHandler.getInstance(), CHAT_HANDLERS);
+		loadHandlers(CommunityBoardHandler.getInstance(), COMMUNITY_HANDLERS);
+		loadHandlers(ItemHandler.getInstance(), ITEM_HANDLERS);
+		loadHandlers(PunishmentHandler.getInstance(), PUNISHMENT_HANDLERS);
+		loadHandlers(UserCommandHandler.getInstance(), USER_COMMAND_HANDLERS);
+		loadHandlers(TargetHandler.getInstance(), TARGET_HANDLERS);
+		loadHandlers(TelnetHandler.getInstance(), TELNET_HANDLERS);
+		LOG.info("Handlers Loaded...");
+	}
+	
+	private static void loadHandlers(IHandler<?, ?> handler, Class<?>[] classes)
+	{
+		for (Class<?> c : classes)
 		{
-			registerHandlerMethods.put(loadInstance, null);
-			for (Method method : loadInstance.getClass().getMethods())
+			if (c == null)
 			{
-				if (method.getName().equals("registerHandler") && !method.isBridge())
-				{
-					registerHandlerMethods.put(loadInstance, method);
-				}
+				continue;
+			}
+			
+			try
+			{
+				handler.registerByClass(c);
+			}
+			catch (Exception ex)
+			{
+				LOG.error("Failed loading handler {}!", c.getSimpleName(), ex);
 			}
 		}
-		
-		registerHandlerMethods.entrySet().stream().filter(e -> e.getValue() == null).forEach(e ->
-		{
-			_log.log(Level.WARNING, "Failed loading handlers of: " + e.getKey().getClass().getSimpleName() + " seems registerHandler function does not exist.");
-		});
-		
-		for (Class<?> classes[] : HANDLERS)
-		{
-			for (Class<?> c : classes)
-			{
-				if (c == null)
-				{
-					continue; // Disabled handler
-				}
-				
-				try
-				{
-					Object handler = c.newInstance();
-					for (Entry<IHandler<?, ?>, Method> entry : registerHandlerMethods.entrySet())
-					{
-						if ((entry.getValue() != null) && entry.getValue().getParameterTypes()[0].isInstance(handler))
-						{
-							entry.getValue().invoke(entry.getKey(), handler);
-						}
-					}
-				}
-				catch (Exception e)
-				{
-					_log.log(Level.WARNING, "Failed loading handler: " + c.getSimpleName(), e);
-					continue;
-				}
-			}
-		}
-		
-		for (IHandler<?, ?> loadInstance : LOAD_INSTANCES)
-		{
-			_log.log(Level.INFO, loadInstance.getClass().getSimpleName() + ": Loaded " + loadInstance.size() + " Handlers");
-		}
-		
-		_log.log(Level.INFO, "Handlers Loaded...");
+		LOG.info("{}: Loaded {} handlers.", handler.getClass().getSimpleName(), handler.size());
 	}
 }

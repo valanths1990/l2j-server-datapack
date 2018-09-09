@@ -101,7 +101,7 @@ public final class InstanceLoader
 		{
 			try
 			{
-				script.newInstance();
+				script.getDeclaredConstructor().newInstance();
 			}
 			catch (Exception e)
 			{

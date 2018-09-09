@@ -61,7 +61,7 @@ public final class AdminCHSiege implements IAdminCommandHandler
 	{
 		final String[] split = command.split(" ");
 		SiegableHall hall = null;
-		if (Config.ALT_DEV_NO_QUESTS)
+		if (Config.NO_QUESTS)
 		{
 			activeChar.sendMessage("AltDevNoQuests = true; Clan Hall Sieges are disabled!");
 			return false;

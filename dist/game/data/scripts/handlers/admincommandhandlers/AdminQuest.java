@@ -25,6 +25,9 @@ import java.util.TreeSet;
 
 import javax.script.ScriptException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -35,11 +38,13 @@ import com.l2jserver.gameserver.model.events.listeners.AbstractEventListener;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestTimer;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.gameserver.scripting.L2ScriptEngineManager;
+import com.l2jserver.gameserver.scripting.ScriptEngineManager;
 import com.l2jserver.gameserver.util.Util;
 
 public class AdminQuest implements IAdminCommandHandler
 {
+	private static final Logger LOG = LoggerFactory.getLogger(AdminQuest.class);
+	
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_quest_reload",
@@ -117,14 +122,14 @@ public class AdminQuest implements IAdminCommandHandler
 			}
 			else
 			{
-				File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, parts[1]);
+				File file = new File(ScriptEngineManager.SCRIPT_FOLDER, parts[1]);
 				// Trying to reload by script name.
 				if (!file.exists())
 				{
 					Quest quest = QuestManager.getInstance().getQuest(parts[1]);
 					if (quest != null)
 					{
-						file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, quest.getClass().getName().replaceAll("\\.", "/") + ".java");
+						file = new File(ScriptEngineManager.SCRIPT_FOLDER, quest.getClass().getName().replaceAll("\\.", "/") + ".java");
 					}
 				}
 				
@@ -133,15 +138,15 @@ public class AdminQuest implements IAdminCommandHandler
 				{
 					try
 					{
-						L2ScriptEngineManager.getInstance().executeScript(file);
+						ScriptEngineManager.getInstance().executeScript(file);
 						
 						// This part should be called only when the script is successfully loaded.
 						activeChar.sendMessage("Script Successfully Loaded.");
 					}
-					catch (ScriptException e)
+					catch (ScriptException ex)
 					{
 						activeChar.sendMessage("Failed loading: " + parts[1]);
-						L2ScriptEngineManager.getInstance().reportScriptFileError(file, e);
+						LOG.error("Failed loading {}!", parts[1], ex);
 					}
 					catch (Exception e)
 					{
@@ -292,7 +297,8 @@ public class AdminQuest implements IAdminCommandHandler
 			{
 				for (QuestTimer timer : list)
 				{
-					timers += "<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">" + timer.getName() + ":</font> <font color=00FF00>Active: " + timer.getIsActive() + " Repeatable: " + timer.getIsRepeating() + " Player: " + timer.getPlayer() + " Npc: " + timer.getNpc() + "</font></td></tr></table></td></tr>";
+					timers += "<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">" + timer.getName() + ":</font> <font color=00FF00>Active: " + timer.getIsActive() + " Repeatable: " + timer.getIsRepeating() + " Player: " + timer.getPlayer()
+						+ " Npc: " + timer.getNpc() + "</font></td></tr></table></td></tr>";
 					counter++;
 					if (counter > 10)
 					{
@@ -305,7 +311,8 @@ public class AdminQuest implements IAdminCommandHandler
 			sb.append("<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">ID:</font> <font color=00FF00>" + quest.getId() + "</font></td></tr></table></td></tr>");
 			sb.append("<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">Name:</font> <font color=00FF00>" + quest.getName() + "</font></td></tr></table></td></tr>");
 			sb.append("<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">Descr:</font> <font color=00FF00>" + quest.getDescr() + "</font></td></tr></table></td></tr>");
-			sb.append("<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">Path:</font> <font color=00FF00>" + quest.getClass().getName().substring(0, quest.getClass().getName().lastIndexOf('.')).replaceAll("\\.", "/") + "</font></td></tr></table></td></tr>");
+			sb.append("<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">Path:</font> <font color=00FF00>" + quest.getClass().getName().substring(0, quest.getClass().getName().lastIndexOf('.')).replaceAll("\\.", "/")
+				+ "</font></td></tr></table></td></tr>");
 			sb.append("<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">Events:</font> <font color=00FF00>" + events + "</font></td></tr></table></td></tr>");
 			if (!npcs.isEmpty())
 			{
@@ -324,7 +331,8 @@ public class AdminQuest implements IAdminCommandHandler
 			final NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
 			msg.setFile(activeChar.getHtmlPrefix(), "data/html/admin/npc-quests.htm");
 			msg.replace("%quests%", sb.toString());
-			msg.replace("%questName%", "<table><tr><td width=\"50\" align=\"left\"><a action=\"bypass -h admin_script_load " + quest.getName() + "\">Reload</a></td> <td width=\"150\"  align=\"center\"><a action=\"bypass -h admin_quest_info " + quest.getName() + "\">" + quest.getName() + "</a></td> <td width=\"50\" align=\"right\"><a action=\"bypass -h admin_script_unload " + quest.getName() + "\">Unload</a></tr></td></table>");
+			msg.replace("%questName%", "<table><tr><td width=\"50\" align=\"left\"><a action=\"bypass -h admin_script_load " + quest.getName() + "\">Reload</a></td> <td width=\"150\"  align=\"center\"><a action=\"bypass -h admin_quest_info " + quest.getName() + "\">" + quest.getName()
+				+ "</a></td> <td width=\"50\" align=\"right\"><a action=\"bypass -h admin_script_unload " + quest.getName() + "\">Unload</a></tr></td></table>");
 			activeChar.sendPacket(msg);
 		}
 		return true;
