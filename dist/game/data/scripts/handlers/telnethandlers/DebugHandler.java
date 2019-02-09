@@ -56,54 +56,43 @@ import com.l2jserver.gameserver.taskmanager.DecayTaskManager;
 /**
  * @author UnAfraid
  */
-public class DebugHandler implements ITelnetHandler
-{
-	private final String[] _commands =
-	{
+public class DebugHandler implements ITelnetHandler {
+	private final String[] _commands = {
 		"debug"
 	};
 	
-	private int uptime = 0;
+	private int _uptime = 0;
 	
 	@Override
-	public boolean useCommand(String command, PrintWriter _print, Socket _cSocket, int _uptime)
-	{
-		if (command.startsWith("debug") && (command.length() > 6))
-		{
+	public boolean useCommand(String command, PrintWriter _print, Socket _cSocket, int uptime) {
+		if (command.startsWith("debug") && (command.length() > 6)) {
 			StringTokenizer st = new StringTokenizer(command.substring(6));
 			// TODO: Rewrite to use ARM.
 			FileOutputStream fos = null;
 			OutputStreamWriter out = null;
-			try
-			{
+			try {
 				String dbg = st.nextToken();
 				
-				if (dbg.equals("decay"))
-				{
+				if (dbg.equals("decay")) {
 					_print.print(DecayTaskManager.getInstance().toString());
 				}
-				else if (dbg.equals("packetsend"))
-				{
-					if (st.countTokens() < 2)
-					{
+				else if (dbg.equals("packetsend")) {
+					if (st.countTokens() < 2) {
 						_print.println("Usage: debug packetsend <charName> <packetData>");
 						return false;
 					}
 					String charName = st.nextToken();
 					L2PcInstance targetPlayer = L2World.getInstance().getPlayer(charName);
 					
-					if (targetPlayer == null)
-					{
+					if (targetPlayer == null) {
 						_print.println("Player " + charName + " cannot be found online");
 						return false;
 					}
 					
 					AdminForgePacket sp = new AdminForgePacket();
-					while (st.hasMoreTokens())
-					{
+					while (st.hasMoreTokens()) {
 						String b = st.nextToken();
-						if (!b.isEmpty())
-						{
+						if (!b.isEmpty()) {
 							sp.addPart("C".getBytes()[0], "0x" + b);
 						}
 					}
@@ -111,14 +100,12 @@ public class DebugHandler implements ITelnetHandler
 					targetPlayer.sendPacket(sp);
 					_print.println("Packet sent to player " + charName);
 				}
-				else if (dbg.equals("PacketTP"))
-				{
+				else if (dbg.equals("PacketTP")) {
 					String str = ThreadPoolManager.getInstance().getPacketStats();
 					_print.println(str);
 					int i = 0;
 					File f = new File("./log/StackTrace-PacketTP-" + i + ".txt");
-					while (f.exists())
-					{
+					while (f.exists()) {
 						i++;
 						f = new File("./log/StackTrace-PacketTP-" + i + ".txt");
 					}
@@ -127,14 +114,12 @@ public class DebugHandler implements ITelnetHandler
 					out = new OutputStreamWriter(fos, "UTF-8");
 					out.write(str);
 				}
-				else if (dbg.equals("IOPacketTP"))
-				{
+				else if (dbg.equals("IOPacketTP")) {
 					String str = ThreadPoolManager.getInstance().getIOPacketStats();
 					_print.println(str);
 					int i = 0;
 					File f = new File("./log/StackTrace-IOPacketTP-" + i + ".txt");
-					while (f.exists())
-					{
+					while (f.exists()) {
 						i++;
 						f = new File("./log/StackTrace-IOPacketTP-" + i + ".txt");
 					}
@@ -143,14 +128,12 @@ public class DebugHandler implements ITelnetHandler
 					out = new OutputStreamWriter(fos, "UTF-8");
 					out.write(str);
 				}
-				else if (dbg.equals("GeneralTP"))
-				{
+				else if (dbg.equals("GeneralTP")) {
 					String str = ThreadPoolManager.getInstance().getGeneralStats();
 					_print.println(str);
 					int i = 0;
 					File f = new File("./log/StackTrace-GeneralTP-" + i + ".txt");
-					while (f.exists())
-					{
+					while (f.exists()) {
 						i++;
 						f = new File("./log/StackTrace-GeneralTP-" + i + ".txt");
 					}
@@ -159,15 +142,15 @@ public class DebugHandler implements ITelnetHandler
 					out = new OutputStreamWriter(fos, "UTF-8");
 					out.write(str);
 				}
-				else if (dbg.equals("full"))
-				{
-					Calendar cal = Calendar.getInstance();
-					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z");
+				else if (dbg.equals("full")) {
+					_uptime = uptime;
 					
-					StringBuilder sb = new StringBuilder();
+					final Calendar cal = Calendar.getInstance();
+					final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z");
+					
+					final StringBuilder sb = new StringBuilder();
 					sb.append(sdf.format(cal.getTime()));
 					sb.append("\n\n");
-					uptime = _uptime;
 					sb.append(getServerStatus());
 					sb.append("\n\n");
 					sb.append("\n## Java Platform Information ##");
@@ -196,8 +179,7 @@ public class DebugHandler implements ITelnetHandler
 					sb.append("\n## Class Path Information ##\n");
 					String cp = System.getProperty("java.class.path");
 					String[] libs = cp.split(File.pathSeparator);
-					for (String lib : libs)
-					{
+					for (String lib : libs) {
 						sb.append(lib);
 						sb.append('\n');
 					}
@@ -209,8 +191,7 @@ public class DebugHandler implements ITelnetHandler
 					final List<Entry<Thread, StackTraceElement[]>> entries = new ArrayList<>(allThread.entrySet());
 					Collections.sort(entries, (e1, e2) -> e1.getKey().getName().compareTo(e2.getKey().getName()));
 					
-					for (Entry<Thread, StackTraceElement[]> entry : entries)
-					{
+					for (Entry<Thread, StackTraceElement[]> entry : entries) {
 						StackTraceElement[] stes = entry.getValue();
 						Thread t = entry.getKey();
 						sb.append("--------------\n");
@@ -218,8 +199,7 @@ public class DebugHandler implements ITelnetHandler
 						sb.append("State: " + t.getState() + '\n');
 						sb.append("isAlive: " + t.isAlive() + " | isDaemon: " + t.isDaemon() + " | isInterrupted: " + t.isInterrupted() + '\n');
 						sb.append('\n');
-						for (StackTraceElement ste : stes)
-						{
+						for (StackTraceElement ste : stes) {
 							sb.append(ste.toString());
 							sb.append('\n');
 						}
@@ -229,20 +209,16 @@ public class DebugHandler implements ITelnetHandler
 					sb.append('\n');
 					ThreadMXBean mbean = ManagementFactory.getThreadMXBean();
 					long[] ids = findDeadlockedThreads(mbean);
-					if ((ids != null) && (ids.length > 0))
-					{
+					if ((ids != null) && (ids.length > 0)) {
 						Thread[] threads = new Thread[ids.length];
-						for (int i = 0; i < threads.length; i++)
-						{
+						for (int i = 0; i < threads.length; i++) {
 							threads[i] = findMatchingThread(mbean.getThreadInfo(ids[i]));
 						}
 						sb.append("Deadlocked Threads:\n");
 						sb.append("-------------------\n");
-						for (Thread thread : threads)
-						{
+						for (Thread thread : threads) {
 							System.err.println(thread);
-							for (StackTraceElement ste : thread.getStackTrace())
-							{
+							for (StackTraceElement ste : thread.getStackTrace()) {
 								sb.append("\t" + ste);
 								sb.append('\n');
 							}
@@ -250,16 +226,14 @@ public class DebugHandler implements ITelnetHandler
 					}
 					
 					sb.append("\n\n## Thread Pool Manager Statistics ##\n");
-					for (String line : ThreadPoolManager.getInstance().getStats())
-					{
+					for (String line : ThreadPoolManager.getInstance().getStats()) {
 						sb.append(line);
 						sb.append('\n');
 					}
 					
 					int i = 0;
 					File f = new File("./log/Debug-" + i + ".txt");
-					while (f.exists())
-					{
+					while (f.exists()) {
 						i++;
 						f = new File("./log/Debug-" + i + ".txt");
 					}
@@ -275,31 +249,23 @@ public class DebugHandler implements ITelnetHandler
 					_print.flush();
 				}
 			}
-			catch (Exception e)
-			{
+			catch (Exception e) {
 			}
-			finally
-			{
-				try
-				{
-					if (out != null)
-					{
+			finally {
+				try {
+					if (out != null) {
 						out.close();
 					}
 				}
-				catch (Exception e)
-				{
+				catch (Exception e) {
 				}
 				
-				try
-				{
-					if (fos != null)
-					{
+				try {
+					if (fos != null) {
 						fos.close();
 					}
 				}
-				catch (Exception e)
-				{
+				catch (Exception e) {
 				}
 			}
 			
@@ -307,31 +273,25 @@ public class DebugHandler implements ITelnetHandler
 		return false;
 	}
 	
-	private long[] findDeadlockedThreads(ThreadMXBean mbean)
-	{
+	private long[] findDeadlockedThreads(ThreadMXBean mbean) {
 		// JDK 1.5 only supports the findMonitorDeadlockedThreads()
 		// method, so you need to comment out the following three lines
-		if (mbean.isSynchronizerUsageSupported())
-		{
+		if (mbean.isSynchronizerUsageSupported()) {
 			return mbean.findDeadlockedThreads();
 		}
 		return mbean.findMonitorDeadlockedThreads();
 	}
 	
-	private Thread findMatchingThread(ThreadInfo inf)
-	{
-		for (Thread thread : Thread.getAllStackTraces().keySet())
-		{
-			if (thread.getId() == inf.getThreadId())
-			{
+	private Thread findMatchingThread(ThreadInfo inf) {
+		for (Thread thread : Thread.getAllStackTraces().keySet()) {
+			if (thread.getId() == inf.getThreadId()) {
 				return thread;
 			}
 		}
 		throw new IllegalStateException("Deadlocked Thread not found");
 	}
 	
-	public String getServerStatus()
-	{
+	public String getServerStatus() {
 		int playerCount = 0, objectCount = 0;
 		int max = LoginServerThread.getInstance().getMaxPlayer();
 		
@@ -351,61 +311,46 @@ public class DebugHandler implements ITelnetHandler
 		int summonCount = 0;
 		int AICount = 0;
 		
-		for (L2Object obj : L2World.getInstance().getVisibleObjects())
-		{
-			if (obj == null)
-			{
+		for (L2Object obj : L2World.getInstance().getVisibleObjects()) {
+			if (obj == null) {
 				continue;
 			}
-			if (obj instanceof L2Character)
-			{
-				if (((L2Character) obj).hasAI())
-				{
+			if (obj instanceof L2Character) {
+				if (((L2Character) obj).hasAI()) {
 					AICount++;
 				}
 			}
-			if (obj instanceof L2ItemInstance)
-			{
-				if (((L2ItemInstance) obj).getItemLocation() == ItemLocation.VOID)
-				{
+			if (obj instanceof L2ItemInstance) {
+				if (((L2ItemInstance) obj).getItemLocation() == ItemLocation.VOID) {
 					itemVoidCount++;
 				}
-				else
-				{
+				else {
 					itemCount++;
 				}
 			}
-			else if (obj instanceof L2MonsterInstance)
-			{
+			else if (obj instanceof L2MonsterInstance) {
 				monsterCount++;
-				if (((L2MonsterInstance) obj).hasMinions())
-				{
+				if (((L2MonsterInstance) obj).hasMinions()) {
 					minionCount += ((L2MonsterInstance) obj).getMinionList().countSpawnedMinions();
 					minionsGroupCount += ((L2MonsterInstance) obj).getMinionList().lazyCountSpawnedMinionsGroups();
 				}
 			}
-			else if (obj instanceof L2Npc)
-			{
+			else if (obj instanceof L2Npc) {
 				npcCount++;
 			}
-			else if (obj instanceof L2PcInstance)
-			{
+			else if (obj instanceof L2PcInstance) {
 				pcCount++;
-				if ((((L2PcInstance) obj).getClient() != null) && ((L2PcInstance) obj).getClient().isDetached())
-				{
+				if ((((L2PcInstance) obj).getClient() != null) && ((L2PcInstance) obj).getClient().isDetached()) {
 					detachedCount++;
 				}
 			}
-			else if (obj instanceof L2Summon)
-			{
+			else if (obj instanceof L2Summon) {
 				summonCount++;
 			}
-			else if (obj instanceof L2DoorInstance)
-			{
+			else if (obj instanceof L2DoorInstance) {
 				doorCount++;
 			}
-			else if (obj instanceof L2Character)
-			{
+			else if (obj instanceof L2Character) {
 				charCount++;
 			}
 		}
@@ -426,7 +371,7 @@ public class DebugHandler implements ITelnetHandler
 		sb.append("\r\n  +.......... L2Door: " + doorCount);
 		sb.append("\r\n  +.......... L2Char: " + charCount);
 		sb.append("\r\n  --->   Ingame Time: " + gameTime());
-		sb.append("\r\n  ---> Server Uptime: " + getUptime(uptime));
+		sb.append("\r\n  ---> Server Uptime: " + getUptime(_uptime));
 		sb.append("\r\n  --->      GM Count: " + getOnlineGMS());
 		sb.append("\r\n  --->       Threads: " + Thread.activeCount());
 		sb.append("\r\n  RAM Used: " + ((Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576)); // 1024 * 1024 = 1048576
@@ -435,23 +380,19 @@ public class DebugHandler implements ITelnetHandler
 		return sb.toString();
 	}
 	
-	private int getOnlineGMS()
-	{
+	private int getOnlineGMS() {
 		return AdminData.getInstance().getAllGms(true).size();
 	}
 	
-	private String getUptime(int time)
-	{
-		int uptime = (int) System.currentTimeMillis() - time;
-		uptime = uptime / 1000;
-		int h = uptime / 3600;
-		int m = (uptime - (h * 3600)) / 60;
-		int s = ((uptime - (h * 3600)) - (m * 60));
+	private String getUptime(int time) {
+		final int uptime = (int) (System.currentTimeMillis() - time) / 1000;
+		final int h = uptime / 3600;
+		final int m = (uptime - (h * 3600)) / 60;
+		final int s = ((uptime - (h * 3600)) - (m * 60));
 		return h + "hrs " + m + "mins " + s + "secs";
 	}
 	
-	private String gameTime()
-	{
+	private String gameTime() {
 		int t = GameTimeController.getInstance().getGameTime();
 		int h = t / 60;
 		int m = t % 60;
@@ -463,8 +404,7 @@ public class DebugHandler implements ITelnetHandler
 	}
 	
 	@Override
-	public String[] getCommandList()
-	{
+	public String[] getCommandList() {
 		return _commands;
 	}
 }

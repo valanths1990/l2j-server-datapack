@@ -46,7 +46,7 @@ public class Q00091_SagaOfTheArcanaLord extends AbstractSagaQuest
 			31658,
 			31608
 		};
-		Items = new int[]
+		_items = new int[]
 		{
 			7080,
 			7604,
@@ -61,27 +61,27 @@ public class Q00091_SagaOfTheArcanaLord extends AbstractSagaQuest
 			7110,
 			0
 		};
-		Mob = new int[]
+		_mob = new int[]
 		{
 			27313,
 			27240,
 			27310
 		};
-		classid = new int[]
+		_classId = new int[]
 		{
 			96
 		};
-		prevclass = new int[]
+		_previousClass = new int[]
 		{
 			0x0e
 		};
-		npcSpawnLocations = new Location[]
+		_npcSpawnLocations = new Location[]
 		{
 			new Location(119518, -28658, -3811),
 			new Location(181215, 36676, -4812),
 			new Location(181227, 36703, -4816)
 		};
-		Text = new String[]
+		_text = new String[]
 		{
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",

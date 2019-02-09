@@ -46,85 +46,68 @@ import com.l2jserver.gameserver.util.Util;
 /**
  * @author NosBit
  */
-public class NpcViewMod implements IBypassHandler
-{
-	private static final String[] COMMANDS =
-	{
+public class NpcViewMod implements IBypassHandler {
+	private static final String[] COMMANDS = {
 		"NpcViewMod"
 	};
 	
 	private static final int DROP_LIST_ITEMS_PER_PAGE = 10;
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character bypassOrigin)
-	{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Character bypassOrigin) {
 		final StringTokenizer st = new StringTokenizer(command);
 		st.nextToken();
 		
-		if (!st.hasMoreTokens())
-		{
+		if (!st.hasMoreTokens()) {
 			_log.warning("Bypass[NpcViewMod] used without enough parameters.");
 			return false;
 		}
 		
 		final String actualCommand = st.nextToken();
-		switch (actualCommand.toLowerCase())
-		{
-			case "view":
-			{
+		switch (actualCommand.toLowerCase()) {
+			case "view": {
 				final L2Object target;
-				if (st.hasMoreElements())
-				{
-					try
-					{
+				if (st.hasMoreElements()) {
+					try {
 						target = L2World.getInstance().findObject(Integer.parseInt(st.nextToken()));
 					}
-					catch (NumberFormatException e)
-					{
+					catch (NumberFormatException e) {
 						return false;
 					}
 				}
-				else
-				{
+				else {
 					target = activeChar.getTarget();
 				}
 				
 				final L2Npc npc = target instanceof L2Npc ? (L2Npc) target : null;
-				if (npc == null)
-				{
+				if (npc == null) {
 					return false;
 				}
 				
 				NpcViewMod.sendNpcView(activeChar, npc);
 				break;
 			}
-			case "droplist":
-			{
-				if (st.countTokens() < 2)
-				{
+			case "droplist": {
+				if (st.countTokens() < 2) {
 					_log.warning("Bypass[NpcViewMod] used without enough parameters.");
 					return false;
 				}
 				
 				final String dropListScopeString = st.nextToken();
-				try
-				{
+				try {
 					final DropListScope dropListScope = Enum.valueOf(DropListScope.class, dropListScopeString);
 					final L2Object target = L2World.getInstance().findObject(Integer.parseInt(st.nextToken()));
 					final L2Npc npc = target instanceof L2Npc ? (L2Npc) target : null;
-					if (npc == null)
-					{
+					if (npc == null) {
 						return false;
 					}
 					final int page = st.hasMoreElements() ? Integer.parseInt(st.nextToken()) : 0;
 					sendNpcDropList(activeChar, npc, dropListScope, page);
 				}
-				catch (NumberFormatException e)
-				{
+				catch (NumberFormatException e) {
 					return false;
 				}
-				catch (IllegalArgumentException e)
-				{
+				catch (IllegalArgumentException e) {
 					_log.warning("Bypass[NpcViewMod] unknown drop list scope: " + dropListScopeString);
 					return false;
 				}
@@ -136,13 +119,11 @@ public class NpcViewMod implements IBypassHandler
 	}
 	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 	
-	public static void sendNpcView(L2PcInstance activeChar, L2Npc npc)
-	{
+	public static void sendNpcView(L2PcInstance activeChar, L2Npc npc) {
 		final NpcHtmlMessage html = new NpcHtmlMessage();
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/mods/NpcView/Info.htm");
 		html.replace("%name%", npc.getName());
@@ -150,22 +131,17 @@ public class NpcViewMod implements IBypassHandler
 		html.replace("%mpGauge%", HtmlUtil.getMpGauge(250, (long) npc.getCurrentMp(), npc.getMaxMp(), false));
 		
 		final L2Spawn npcSpawn = npc.getSpawn();
-		if ((npcSpawn == null) || (npcSpawn.getRespawnMinDelay() == 0))
-		{
+		if ((npcSpawn == null) || (npcSpawn.getRespawnMinDelay() == 0)) {
 			html.replace("%respawn%", "None");
 		}
-		else
-		{
+		else {
 			TimeUnit timeUnit = TimeUnit.MILLISECONDS;
 			long min = Long.MAX_VALUE;
-			for (TimeUnit tu : TimeUnit.values())
-			{
+			for (TimeUnit tu : TimeUnit.values()) {
 				final long minTimeFromMillis = tu.convert(npcSpawn.getRespawnMinDelay(), TimeUnit.MILLISECONDS);
 				final long maxTimeFromMillis = tu.convert(npcSpawn.getRespawnMaxDelay(), TimeUnit.MILLISECONDS);
-				if ((TimeUnit.MILLISECONDS.convert(minTimeFromMillis, tu) == npcSpawn.getRespawnMinDelay()) && (TimeUnit.MILLISECONDS.convert(maxTimeFromMillis, tu) == npcSpawn.getRespawnMaxDelay()))
-				{
-					if (min > minTimeFromMillis)
-					{
+				if ((TimeUnit.MILLISECONDS.convert(minTimeFromMillis, tu) == npcSpawn.getRespawnMinDelay()) && (TimeUnit.MILLISECONDS.convert(maxTimeFromMillis, tu) == npcSpawn.getRespawnMaxDelay())) {
+					if (min > minTimeFromMillis) {
 						min = minTimeFromMillis;
 						timeUnit = tu;
 					}
@@ -174,12 +150,10 @@ public class NpcViewMod implements IBypassHandler
 			final long minRespawnDelay = timeUnit.convert(npcSpawn.getRespawnMinDelay(), TimeUnit.MILLISECONDS);
 			final long maxRespawnDelay = timeUnit.convert(npcSpawn.getRespawnMaxDelay(), TimeUnit.MILLISECONDS);
 			final String timeUnitName = timeUnit.name().charAt(0) + timeUnit.name().toLowerCase().substring(1);
-			if (npcSpawn.hasRespawnRandom())
-			{
+			if (npcSpawn.hasRespawnRandom()) {
 				html.replace("%respawn%", minRespawnDelay + "-" + maxRespawnDelay + " " + timeUnitName);
 			}
-			else
-			{
+			else {
 				html.replace("%respawn%", minRespawnDelay + " " + timeUnitName);
 			}
 		}
@@ -216,20 +190,16 @@ public class NpcViewMod implements IBypassHandler
 		activeChar.sendPacket(html);
 	}
 	
-	public static String getDropListButtons(L2Npc npc)
-	{
+	public static String getDropListButtons(L2Npc npc) {
 		final StringBuilder sb = new StringBuilder();
 		final Map<DropListScope, List<IDropItem>> dropLists = npc.getTemplate().getDropLists();
-		if ((dropLists != null) && !dropLists.isEmpty() && (dropLists.containsKey(DropListScope.DEATH) || dropLists.containsKey(DropListScope.CORPSE)))
-		{
+		if ((dropLists != null) && !dropLists.isEmpty() && (dropLists.containsKey(DropListScope.DEATH) || dropLists.containsKey(DropListScope.CORPSE))) {
 			sb.append("<table width=275 cellpadding=0 cellspacing=0><tr>");
-			if (dropLists.containsKey(DropListScope.DEATH))
-			{
+			if (dropLists.containsKey(DropListScope.DEATH)) {
 				sb.append("<td align=center><button value=\"Show Drop\" width=100 height=25 action=\"bypass NpcViewMod dropList DEATH " + npc.getObjectId() + "\" back=\"L2UI_CT1.Button_DF_Calculator_Down\" fore=\"L2UI_CT1.Button_DF_Calculator\"></td>");
 			}
 			
-			if (dropLists.containsKey(DropListScope.CORPSE))
-			{
+			if (dropLists.containsKey(DropListScope.CORPSE)) {
 				sb.append("<td align=center><button value=\"Show Spoil\" width=100 height=25 action=\"bypass NpcViewMod dropList CORPSE " + npc.getObjectId() + "\" back=\"L2UI_CT1.Button_DF_Calculator_Down\" fore=\"L2UI_CT1.Button_DF_Calculator\"></td>");
 			}
 			sb.append("</tr></table>");
@@ -237,41 +207,34 @@ public class NpcViewMod implements IBypassHandler
 		return sb.toString();
 	}
 	
-	public static void sendNpcDropList(L2PcInstance activeChar, L2Npc npc, DropListScope dropListScope, int page)
-	{
+	public static void sendNpcDropList(L2PcInstance activeChar, L2Npc npc, DropListScope dropListScope, int page) {
 		final List<IDropItem> dropList = npc.getTemplate().getDropList(dropListScope);
-		if ((dropList == null) || dropList.isEmpty())
-		{
+		if ((dropList == null) || dropList.isEmpty()) {
 			return;
 		}
 		
 		int pages = dropList.size() / DROP_LIST_ITEMS_PER_PAGE;
-		if ((DROP_LIST_ITEMS_PER_PAGE * pages) < dropList.size())
-		{
+		if ((DROP_LIST_ITEMS_PER_PAGE * pages) < dropList.size()) {
 			pages++;
 		}
 		
 		final StringBuilder pagesSb = new StringBuilder();
-		if (pages > 1)
-		{
+		if (pages > 1) {
 			pagesSb.append("<table><tr>");
-			for (int i = 0; i < pages; i++)
-			{
+			for (int i = 0; i < pages; i++) {
 				pagesSb.append("<td align=center><button value=\"" + (i + 1) + "\" width=20 height=20 action=\"bypass NpcViewMod dropList " + dropListScope + " " + npc.getObjectId() + " " + i + "\" back=\"L2UI_CT1.Button_DF_Calculator_Down\" fore=\"L2UI_CT1.Button_DF_Calculator\"></td>");
 			}
 			pagesSb.append("</tr></table>");
 		}
 		
-		if (page >= pages)
-		{
+		if (page >= pages) {
 			page = pages - 1;
 		}
 		
 		final int start = page > 0 ? page * DROP_LIST_ITEMS_PER_PAGE : 0;
 		
 		int end = (page * DROP_LIST_ITEMS_PER_PAGE) + DROP_LIST_ITEMS_PER_PAGE;
-		if (end > dropList.size())
-		{
+		if (end > dropList.size()) {
 			end = dropList.size();
 		}
 		
@@ -282,27 +245,22 @@ public class NpcViewMod implements IBypassHandler
 		int rightHeight = 0;
 		final StringBuilder leftSb = new StringBuilder();
 		final StringBuilder rightSb = new StringBuilder();
-		for (int i = start; i < end; i++)
-		{
+		for (int i = start; i < end; i++) {
 			final StringBuilder sb = new StringBuilder();
 			
 			int height = 64;
 			final IDropItem dropItem = dropList.get(i);
-			if (dropItem instanceof GeneralDropItem)
-			{
+			if (dropItem instanceof GeneralDropItem) {
 				addGeneralDropItem(activeChar, npc, amountFormat, chanceFormat, sb, (GeneralDropItem) dropItem);
 			}
-			else if (dropItem instanceof GroupedGeneralDropItem)
-			{
+			else if (dropItem instanceof GroupedGeneralDropItem) {
 				final GroupedGeneralDropItem generalGroupedDropItem = (GroupedGeneralDropItem) dropItem;
-				if (generalGroupedDropItem.getItems().size() == 1)
-				{
+				if (generalGroupedDropItem.getItems().size() == 1) {
 					final GeneralDropItem generalDropItem = generalGroupedDropItem.getItems().get(0);
 					addGeneralDropItem(activeChar, npc, amountFormat, chanceFormat, sb, new GeneralDropItem(generalDropItem.getItemId(), generalDropItem.getMin(), generalDropItem.getMax(), (generalDropItem.getChance() * generalGroupedDropItem.getChance())
 						/ 100, generalDropItem.getAmountStrategy(), generalDropItem.getChanceStrategy(), generalGroupedDropItem.getPreciseStrategy(), generalGroupedDropItem.getKillerChanceModifierStrategy(), generalDropItem.getDropCalculationStrategy()));
 				}
-				else
-				{
+				else {
 					GroupedGeneralDropItem normalized = generalGroupedDropItem.normalizeMe(npc, activeChar);
 					sb.append("<table width=332 cellpadding=2 cellspacing=0 background=\"L2UI_CT1.Windows.Windows_DF_TooltipBG\">");
 					sb.append("<tr><td width=32 valign=top><img src=\"L2UI_CT1.ICON_DF_premiumItem\" width=32 height=32></td>");
@@ -313,14 +271,12 @@ public class NpcViewMod implements IBypassHandler
 					sb.append(chanceFormat.format(Math.min(normalized.getChance(), 100)));
 					sb.append("%</td></tr></table><br>");
 					
-					for (GeneralDropItem generalDropItem : normalized.getItems())
-					{
+					for (GeneralDropItem generalDropItem : normalized.getItems()) {
 						final L2Item item = ItemTable.getInstance().getTemplate(generalDropItem.getItemId());
 						sb.append("<table width=291 cellpadding=2 cellspacing=0 background=\"L2UI_CT1.Windows.Windows_DF_TooltipBG\">");
 						sb.append("<tr><td width=32 valign=top>");
 						String icon = item.getIcon();
-						if (icon == null)
-						{
+						if (icon == null) {
 							icon = "icon.etc_question_mark_i00";
 						}
 						sb.append("<img src=\"" + icon + "\" width=32 height=32>");
@@ -329,14 +285,12 @@ public class NpcViewMod implements IBypassHandler
 						sb.append("</font></td></tr><tr><td width=32></td><td width=259><table width=253 cellpadding=0 cellspacing=0>");
 						sb.append("<tr><td width=48 align=right valign=top><font color=\"LEVEL\">Amount:</font></td><td width=205 align=center>");
 						MinMax minMax = getPreciseMinMax(normalized.getChance(), generalDropItem.getMin(npc), generalDropItem.getMax(npc), generalDropItem.isPreciseCalculated());
-						final long min = minMax.min;
-						final long max = minMax.max;
-						if (min == max)
-						{
+						final long min = minMax._min;
+						final long max = minMax._max;
+						if (min == max) {
 							sb.append(amountFormat.format(min));
 						}
-						else
-						{
+						else {
 							sb.append(amountFormat.format(min));
 							sb.append(" - ");
 							sb.append(amountFormat.format(max));
@@ -354,13 +308,11 @@ public class NpcViewMod implements IBypassHandler
 				}
 			}
 			
-			if (leftHeight >= (rightHeight + height))
-			{
+			if (leftHeight >= (rightHeight + height)) {
 				rightSb.append(sb);
 				rightHeight += height;
 			}
-			else
-			{
+			else {
 				leftSb.append(sb);
 				leftHeight += height;
 			}
@@ -376,8 +328,7 @@ public class NpcViewMod implements IBypassHandler
 		bodySb.append("</tr></table>");
 		
 		String html = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/mods/NpcView/DropList.htm");
-		if (html == null)
-		{
+		if (html == null) {
 			_log.warning(NpcViewMod.class.getSimpleName() + ": The html file data/html/mods/NpcView/DropList.htm could not be found.");
 			return;
 		}
@@ -396,8 +347,7 @@ public class NpcViewMod implements IBypassHandler
 	 * @param sb
 	 * @param dropItem
 	 */
-	private static void addGeneralDropItem(L2PcInstance activeChar, L2Npc npc, final DecimalFormat amountFormat, final DecimalFormat chanceFormat, final StringBuilder sb, final GeneralDropItem dropItem)
-	{
+	private static void addGeneralDropItem(L2PcInstance activeChar, L2Npc npc, final DecimalFormat amountFormat, final DecimalFormat chanceFormat, final StringBuilder sb, final GeneralDropItem dropItem) {
 		final L2Item item = ItemTable.getInstance().getTemplate(dropItem.getItemId());
 		sb.append("<table width=332 cellpadding=2 cellspacing=0 background=\"L2UI_CT1.Windows.Windows_DF_TooltipBG\">");
 		sb.append("<tr><td width=32 valign=top>");
@@ -409,14 +359,12 @@ public class NpcViewMod implements IBypassHandler
 		sb.append("<td width=247 align=center>");
 		MinMax minMax = getPreciseMinMax(dropItem.getChance(npc, activeChar), dropItem.getMin(npc), dropItem.getMax(npc), dropItem.isPreciseCalculated());
 		
-		final long min = minMax.min;
-		final long max = minMax.max;
-		if (min == max)
-		{
+		final long min = minMax._min;
+		final long max = minMax._max;
+		if (min == max) {
 			sb.append(amountFormat.format(min));
 		}
-		else
-		{
+		else {
 			sb.append(amountFormat.format(min));
 			sb.append(" - ");
 			sb.append(amountFormat.format(max));
@@ -428,23 +376,18 @@ public class NpcViewMod implements IBypassHandler
 		sb.append("%</td></tr></table></td></tr><tr><td width=32></td><td width=300>&nbsp;</td></tr></table>");
 	}
 	
-	private static class MinMax
-	{
-		public final long min, max;
+	private static class MinMax {
+		private final long _min;
+		private final long _max;
 		
-		public MinMax(long min, long max)
-		{
-			this.min = min;
-			this.max = max;
-			
+		public MinMax(long min, long max) {
+			_min = min;
+			_max = max;
 		}
-		
 	}
 	
-	private static MinMax getPreciseMinMax(double chance, long min, long max, boolean isPrecise)
-	{
-		if (!isPrecise || (chance <= 100))
-		{
+	private static MinMax getPreciseMinMax(double chance, long min, long max, boolean isPrecise) {
+		if (!isPrecise || (chance <= 100)) {
 			return new MinMax(min, max);
 		}
 		
