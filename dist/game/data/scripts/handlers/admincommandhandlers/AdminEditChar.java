@@ -61,12 +61,10 @@ import com.l2jserver.util.StringUtil;
 /**
  * EditChar admin command implementation.
  */
-public class AdminEditChar implements IAdminCommandHandler
-{
+public class AdminEditChar implements IAdminCommandHandler {
 	private static Logger _log = Logger.getLogger(AdminEditChar.class.getName());
 	
-	private static final String[] ADMIN_COMMANDS =
-	{
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_edit_character",
 		"admin_current_player",
 		"admin_nokarma", // this is to remove karma from selected char...
@@ -105,132 +103,104 @@ public class AdminEditChar implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.equals("admin_current_player"))
-		{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (command.equals("admin_current_player")) {
 			showCharacterInfo(activeChar, activeChar);
 		}
-		else if (command.startsWith("admin_character_info"))
-		{
+		else if (command.startsWith("admin_character_info")) {
 			String[] data = command.split(" ");
-			if ((data.length > 1))
-			{
+			if ((data.length > 1)) {
 				showCharacterInfo(activeChar, L2World.getInstance().getPlayer(data[1]));
 			}
-			else if (activeChar.getTarget() instanceof L2PcInstance)
-			{
+			else if (activeChar.getTarget() instanceof L2PcInstance) {
 				showCharacterInfo(activeChar, activeChar.getTarget().getActingPlayer());
 			}
-			else
-			{
+			else {
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			}
 		}
-		else if (command.startsWith("admin_character_list"))
-		{
+		else if (command.startsWith("admin_character_list")) {
 			listCharacters(activeChar, 0);
 		}
-		else if (command.startsWith("admin_show_characters"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_show_characters")) {
+			try {
 				String val = command.substring(22);
 				int page = Integer.parseInt(val);
 				listCharacters(activeChar, page);
 			}
-			catch (StringIndexOutOfBoundsException e)
-			{
+			catch (StringIndexOutOfBoundsException e) {
 				// Case of empty page number
 				activeChar.sendMessage("Usage: //show_characters <page_number>");
 			}
 		}
-		else if (command.startsWith("admin_find_character"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_find_character")) {
+			try {
 				String val = command.substring(21);
 				findCharacter(activeChar, val);
 			}
-			catch (StringIndexOutOfBoundsException e)
-			{ // Case of empty character name
+			catch (StringIndexOutOfBoundsException e) {
+				// Case of empty character name
 				activeChar.sendMessage("Usage: //find_character <character_name>");
 				listCharacters(activeChar, 0);
 			}
 		}
-		else if (command.startsWith("admin_find_ip"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_find_ip")) {
+			try {
 				String val = command.substring(14);
 				findCharactersPerIp(activeChar, val);
 			}
-			catch (Exception e)
-			{ // Case of empty or malformed IP number
+			catch (Exception e) {
+				// Case of empty or malformed IP number
 				activeChar.sendMessage("Usage: //find_ip <www.xxx.yyy.zzz>");
 				listCharacters(activeChar, 0);
 			}
 		}
-		else if (command.startsWith("admin_find_account"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_find_account")) {
+			try {
 				String val = command.substring(19);
 				findCharactersPerAccount(activeChar, val);
 			}
-			catch (Exception e)
-			{ // Case of empty or malformed player name
+			catch (Exception ex) {
+				// Case of empty or malformed player name
 				activeChar.sendMessage("Usage: //find_account <player_name>");
 				listCharacters(activeChar, 0);
 			}
 		}
-		else if (command.startsWith("admin_edit_character"))
-		{
+		else if (command.startsWith("admin_edit_character")) {
 			String[] data = command.split(" ");
-			if ((data.length > 1))
-			{
+			if ((data.length > 1)) {
 				editCharacter(activeChar, data[1]);
 			}
-			else if (activeChar.getTarget() instanceof L2PcInstance)
-			{
+			else if (activeChar.getTarget() instanceof L2PcInstance) {
 				editCharacter(activeChar, null);
 			}
-			else
-			{
+			else {
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			}
 		}
 		// Karma control commands
-		else if (command.equals("admin_nokarma"))
-		{
+		else if (command.equals("admin_nokarma")) {
 			setTargetKarma(activeChar, 0);
 		}
-		else if (command.startsWith("admin_setkarma"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_setkarma")) {
+			try {
 				String val = command.substring(15);
 				int karma = Integer.parseInt(val);
 				setTargetKarma(activeChar, karma);
 			}
-			catch (Exception e)
-			{
-				if (Config.DEVELOPER)
-				{
+			catch (Exception e) {
+				if (Config.DEVELOPER) {
 					_log.warning("Set karma error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setkarma <new_karma_value>");
 			}
 		}
-		else if (command.startsWith("admin_setpk"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_setpk")) {
+			try {
 				String val = command.substring(12);
 				int pk = Integer.parseInt(val);
 				L2Object target = activeChar.getTarget();
-				if (target instanceof L2PcInstance)
-				{
+				if (target instanceof L2PcInstance) {
 					L2PcInstance player = (L2PcInstance) target;
 					player.setPkKills(pk);
 					player.broadcastUserInfo();
@@ -239,29 +209,23 @@ public class AdminEditChar implements IAdminCommandHandler
 					player.sendMessage("A GM changed your PK count to " + pk);
 					activeChar.sendMessage(player.getName() + "'s PK count changed to " + pk);
 				}
-				else
-				{
+				else {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 				}
 			}
-			catch (Exception e)
-			{
-				if (Config.DEVELOPER)
-				{
+			catch (Exception e) {
+				if (Config.DEVELOPER) {
 					_log.warning("Set pk error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setpk <pk_count>");
 			}
 		}
-		else if (command.startsWith("admin_setpvp"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_setpvp")) {
+			try {
 				String val = command.substring(13);
 				int pvp = Integer.parseInt(val);
 				L2Object target = activeChar.getTarget();
-				if (target instanceof L2PcInstance)
-				{
+				if (target instanceof L2PcInstance) {
 					L2PcInstance player = (L2PcInstance) target;
 					player.setPvpKills(pvp);
 					player.broadcastUserInfo();
@@ -270,29 +234,23 @@ public class AdminEditChar implements IAdminCommandHandler
 					player.sendMessage("A GM changed your PVP count to " + pvp);
 					activeChar.sendMessage(player.getName() + "'s PVP count changed to " + pvp);
 				}
-				else
-				{
+				else {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 				}
 			}
-			catch (Exception e)
-			{
-				if (Config.DEVELOPER)
-				{
+			catch (Exception e) {
+				if (Config.DEVELOPER) {
 					_log.warning("Set pvp error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setpvp <pvp_count>");
 			}
 		}
-		else if (command.startsWith("admin_setfame"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_setfame")) {
+			try {
 				String val = command.substring(14);
 				int fame = Integer.parseInt(val);
 				L2Object target = activeChar.getTarget();
-				if (target instanceof L2PcInstance)
-				{
+				if (target instanceof L2PcInstance) {
 					L2PcInstance player = (L2PcInstance) target;
 					player.setFame(fame);
 					player.broadcastUserInfo();
@@ -301,29 +259,23 @@ public class AdminEditChar implements IAdminCommandHandler
 					player.sendMessage("A GM changed your Reputation points to " + fame);
 					activeChar.sendMessage(player.getName() + "'s Fame changed to " + fame);
 				}
-				else
-				{
+				else {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 				}
 			}
-			catch (Exception e)
-			{
-				if (Config.DEVELOPER)
-				{
+			catch (Exception e) {
+				if (Config.DEVELOPER) {
 					_log.warning("Set Fame error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setfame <new_fame_value>");
 			}
 		}
-		else if (command.startsWith("admin_rec"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_rec")) {
+			try {
 				String val = command.substring(10);
 				int recVal = Integer.parseInt(val);
 				L2Object target = activeChar.getTarget();
-				if (target instanceof L2PcInstance)
-				{
+				if (target instanceof L2PcInstance) {
 					L2PcInstance player = (L2PcInstance) target;
 					player.setRecomHave(recVal);
 					player.broadcastUserInfo();
@@ -333,46 +285,36 @@ public class AdminEditChar implements IAdminCommandHandler
 					player.sendMessage("A GM changed your Recommend points to " + recVal);
 					activeChar.sendMessage(player.getName() + "'s Recommend changed to " + recVal);
 				}
-				else
-				{
+				else {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 				}
 			}
-			catch (Exception e)
-			{
+			catch (Exception e) {
 				activeChar.sendMessage("Usage: //rec number");
 			}
 		}
-		else if (command.startsWith("admin_setclass"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_setclass")) {
+			try {
 				String val = command.substring(15).trim();
 				int classidval = Integer.parseInt(val);
 				L2Object target = activeChar.getTarget();
 				L2PcInstance player = null;
-				if (target instanceof L2PcInstance)
-				{
+				if (target instanceof L2PcInstance) {
 					player = (L2PcInstance) target;
 				}
-				else
-				{
+				else {
 					return false;
 				}
 				boolean valid = false;
-				for (ClassId classid : ClassId.values())
-				{
-					if (classidval == classid.getId())
-					{
+				for (ClassId classid : ClassId.values()) {
+					if (classidval == classid.getId()) {
 						valid = true;
 					}
 				}
-				if (valid && (player.getClassId().getId() != classidval))
-				{
+				if (valid && (player.getClassId().getId() != classidval)) {
 					TransformData.getInstance().transformPlayer(255, player);
 					player.setClassId(classidval);
-					if (!player.isSubClassActive())
-					{
+					if (!player.isSubClassActive()) {
 						player.setBaseClass(classidval);
 					}
 					String newclass = ClassListData.getInstance().getClass(player.getClassId()).getClassName();
@@ -384,61 +326,48 @@ public class AdminEditChar implements IAdminCommandHandler
 					activeChar.setTarget(player);
 					activeChar.sendMessage(player.getName() + " is a " + newclass + ".");
 				}
-				else
-				{
+				else {
 					activeChar.sendMessage("Usage: //setclass <valid_new_classid>");
 				}
 			}
-			catch (StringIndexOutOfBoundsException e)
-			{
+			catch (StringIndexOutOfBoundsException e) {
 				AdminHtml.showAdminHtml(activeChar, "setclass/human_fighter.htm");
 			}
-			catch (NumberFormatException e)
-			{
+			catch (NumberFormatException e) {
 				activeChar.sendMessage("Usage: //setclass <valid_new_classid>");
 			}
 		}
-		else if (command.startsWith("admin_settitle"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_settitle")) {
+			try {
 				String val = command.substring(15);
 				L2Object target = activeChar.getTarget();
 				L2PcInstance player = null;
-				if (target instanceof L2PcInstance)
-				{
+				if (target instanceof L2PcInstance) {
 					player = (L2PcInstance) target;
 				}
-				else
-				{
+				else {
 					return false;
 				}
 				player.setTitle(val);
 				player.sendMessage("Your title has been changed by a GM");
 				player.broadcastTitleInfo();
 			}
-			catch (StringIndexOutOfBoundsException e)
-			{ // Case of empty character title
+			catch (StringIndexOutOfBoundsException e) { // Case of empty character title
 				activeChar.sendMessage("You need to specify the new title.");
 			}
 		}
-		else if (command.startsWith("admin_changename"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_changename")) {
+			try {
 				String val = command.substring(17);
 				L2Object target = activeChar.getTarget();
 				L2PcInstance player = null;
-				if (target instanceof L2PcInstance)
-				{
+				if (target instanceof L2PcInstance) {
 					player = (L2PcInstance) target;
 				}
-				else
-				{
+				else {
 					return false;
 				}
-				if (CharNameTable.getInstance().getIdByName(val) > 0)
-				{
+				if (CharNameTable.getInstance().getIdByName(val) > 0) {
 					activeChar.sendMessage("Warning, player " + val + " already exists");
 					return false;
 				}
@@ -449,114 +378,93 @@ public class AdminEditChar implements IAdminCommandHandler
 				player.sendMessage("Your name has been changed by a GM.");
 				player.broadcastUserInfo();
 				
-				if (player.isInParty())
-				{
+				if (player.isInParty()) {
 					// Delete party window for other party members
 					player.getParty().broadcastToPartyMembers(player, PartySmallWindowDeleteAll.STATIC_PACKET);
-					for (L2PcInstance member : player.getParty().getMembers())
-					{
+					for (L2PcInstance member : player.getParty().getMembers()) {
 						// And re-add
-						if (member != player)
-						{
+						if (member != player) {
 							member.sendPacket(new PartySmallWindowAll(member, player.getParty()));
 						}
 					}
 				}
-				if (player.getClan() != null)
-				{
+				if (player.getClan() != null) {
 					player.getClan().broadcastClanStatus();
 				}
 			}
-			catch (StringIndexOutOfBoundsException e)
-			{ // Case of empty character name
+			catch (StringIndexOutOfBoundsException e) {
+				// Case of empty character name
 				activeChar.sendMessage("Usage: //setname new_name_for_target");
 			}
 		}
-		else if (command.startsWith("admin_setsex"))
-		{
+		else if (command.startsWith("admin_setsex")) {
 			L2Object target = activeChar.getTarget();
 			L2PcInstance player = null;
-			if (target instanceof L2PcInstance)
-			{
+			if (target instanceof L2PcInstance) {
 				player = (L2PcInstance) target;
 			}
-			else
-			{
+			else {
 				return false;
 			}
 			player.getAppearance().setSex(player.getAppearance().getSex() ? false : true);
 			player.sendMessage("Your gender has been changed by a GM");
 			player.broadcastUserInfo();
 		}
-		else if (command.startsWith("admin_setcolor"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_setcolor")) {
+			try {
 				String val = command.substring(15);
 				L2Object target = activeChar.getTarget();
 				L2PcInstance player = null;
-				if (target instanceof L2PcInstance)
-				{
+				if (target instanceof L2PcInstance) {
 					player = (L2PcInstance) target;
 				}
-				else
-				{
+				else {
 					return false;
 				}
 				player.getAppearance().setNameColor(Integer.decode("0x" + val));
 				player.sendMessage("Your name color has been changed by a GM");
 				player.broadcastUserInfo();
 			}
-			catch (Exception e)
-			{ // Case of empty color or invalid hex string
+			catch (Exception e) {
+				// Case of empty color or invalid hex string
 				activeChar.sendMessage("You need to specify a valid new color.");
 			}
 		}
-		else if (command.startsWith("admin_settcolor"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_settcolor")) {
+			try {
 				String val = command.substring(16);
 				L2Object target = activeChar.getTarget();
 				L2PcInstance player = null;
-				if (target instanceof L2PcInstance)
-				{
+				if (target instanceof L2PcInstance) {
 					player = (L2PcInstance) target;
 				}
-				else
-				{
+				else {
 					return false;
 				}
 				player.getAppearance().setTitleColor(Integer.decode("0x" + val));
 				player.sendMessage("Your title color has been changed by a GM");
 				player.broadcastUserInfo();
 			}
-			catch (Exception e)
-			{ // Case of empty color or invalid hex string
+			catch (Exception e) {
+				// Case of empty color or invalid hex string
 				activeChar.sendMessage("You need to specify a valid new color.");
 			}
 		}
-		else if (command.startsWith("admin_fullfood"))
-		{
+		else if (command.startsWith("admin_fullfood")) {
 			L2Object target = activeChar.getTarget();
-			if (target instanceof L2PetInstance)
-			{
+			if (target instanceof L2PetInstance) {
 				L2PetInstance targetPet = (L2PetInstance) target;
 				targetPet.setCurrentFed(targetPet.getMaxFed());
 				targetPet.broadcastStatusUpdate();
 			}
-			else
-			{
+			else {
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			}
 		}
-		else if (command.startsWith("admin_remove_clan_penalty"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_remove_clan_penalty")) {
+			try {
 				StringTokenizer st = new StringTokenizer(command, " ");
-				if (st.countTokens() != 3)
-				{
+				if (st.countTokens() != 3) {
 					activeChar.sendMessage("Usage: //remove_clan_penalty join|create charname");
 					return false;
 				}
@@ -569,328 +477,256 @@ public class AdminEditChar implements IAdminCommandHandler
 				L2PcInstance player = null;
 				player = L2World.getInstance().getPlayer(playerName);
 				
-				if (player == null)
-				{
+				if (player == null) {
 					final String updateQuery = "UPDATE characters SET " + (changeCreateExpiryTime ? "clan_create_expiry_time" : "clan_join_expiry_time") + " WHERE char_name=? LIMIT 1";
 					try (Connection con = ConnectionFactory.getInstance().getConnection();
-						PreparedStatement ps = con.prepareStatement(updateQuery))
-					{
+						PreparedStatement ps = con.prepareStatement(updateQuery)) {
 						ps.setString(1, playerName);
 						ps.execute();
 					}
 				}
-				else
-				{
+				else {
 					// removing penalty
-					if (changeCreateExpiryTime)
-					{
+					if (changeCreateExpiryTime) {
 						player.setClanCreateExpiryTime(0);
 					}
-					else
-					{
+					else {
 						player.setClanJoinExpiryTime(0);
 					}
 				}
 				
 				activeChar.sendMessage("Clan penalty successfully removed to character: " + playerName);
 			}
-			catch (Exception e)
-			{
+			catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		else if (command.startsWith("admin_find_dualbox"))
-		{
+		else if (command.startsWith("admin_find_dualbox")) {
 			int multibox = 2;
-			try
-			{
+			try {
 				String val = command.substring(19);
 				multibox = Integer.parseInt(val);
-				if (multibox < 1)
-				{
+				if (multibox < 1) {
 					activeChar.sendMessage("Usage: //find_dualbox [number > 0]");
 					return false;
 				}
 			}
-			catch (Exception e)
-			{
+			catch (Exception e) {
 			}
 			findDualbox(activeChar, multibox);
 		}
-		else if (command.startsWith("admin_strict_find_dualbox"))
-		{
+		else if (command.startsWith("admin_strict_find_dualbox")) {
 			int multibox = 2;
-			try
-			{
+			try {
 				String val = command.substring(26);
 				multibox = Integer.parseInt(val);
-				if (multibox < 1)
-				{
+				if (multibox < 1) {
 					activeChar.sendMessage("Usage: //strict_find_dualbox [number > 0]");
 					return false;
 				}
 			}
-			catch (Exception e)
-			{
+			catch (Exception e) {
 			}
 			findDualboxStrict(activeChar, multibox);
 		}
-		else if (command.startsWith("admin_tracert"))
-		{
+		else if (command.startsWith("admin_tracert")) {
 			String[] data = command.split(" ");
 			L2PcInstance pl = null;
-			if ((data.length > 1))
-			{
+			if ((data.length > 1)) {
 				pl = L2World.getInstance().getPlayer(data[1]);
 			}
-			else
-			{
+			else {
 				L2Object target = activeChar.getTarget();
-				if (target instanceof L2PcInstance)
-				{
+				if (target instanceof L2PcInstance) {
 					pl = (L2PcInstance) target;
 				}
 			}
 			
-			if (pl == null)
-			{
+			if (pl == null) {
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 				return false;
 			}
 			
 			final L2GameClient client = pl.getClient();
-			if (client == null)
-			{
+			if (client == null) {
 				activeChar.sendMessage("Client is null.");
 				return false;
 			}
 			
-			if (client.isDetached())
-			{
+			if (client.isDetached()) {
 				activeChar.sendMessage("Client is detached.");
 				return false;
 			}
 			
 			String ip;
 			int[][] trace = client.getTrace();
-			for (int i = 0; i < trace.length; i++)
-			{
+			for (int i = 0; i < trace.length; i++) {
 				ip = "";
-				for (int o = 0; o < trace[0].length; o++)
-				{
+				for (int o = 0; o < trace[0].length; o++) {
 					ip = ip + trace[i][o];
-					if (o != (trace[0].length - 1))
-					{
+					if (o != (trace[0].length - 1)) {
 						ip = ip + ".";
 					}
 				}
 				activeChar.sendMessage("Hop" + i + ": " + ip);
 			}
 		}
-		else if (command.startsWith("admin_summon_info"))
-		{
+		else if (command.startsWith("admin_summon_info")) {
 			L2Object target = activeChar.getTarget();
-			if (target instanceof L2Summon)
-			{
+			if (target instanceof L2Summon) {
 				gatherSummonInfo((L2Summon) target, activeChar);
 			}
-			else
-			{
+			else {
 				activeChar.sendMessage("Invalid target.");
 			}
 		}
-		else if (command.startsWith("admin_unsummon"))
-		{
+		else if (command.startsWith("admin_unsummon")) {
 			L2Object target = activeChar.getTarget();
-			if (target instanceof L2Summon)
-			{
+			if (target instanceof L2Summon) {
 				((L2Summon) target).unSummon(((L2Summon) target).getOwner());
 			}
-			else
-			{
+			else {
 				activeChar.sendMessage("Usable only with Pets/Summons");
 			}
 		}
-		else if (command.startsWith("admin_summon_setlvl"))
-		{
+		else if (command.startsWith("admin_summon_setlvl")) {
 			L2Object target = activeChar.getTarget();
-			if (target instanceof L2PetInstance)
-			{
+			if (target instanceof L2PetInstance) {
 				L2PetInstance pet = (L2PetInstance) target;
-				try
-				{
+				try {
 					String val = command.substring(20);
 					int level = Integer.parseInt(val);
 					long newexp, oldexp = 0;
 					oldexp = pet.getStat().getExp();
 					newexp = pet.getStat().getExpForLevel(level);
-					if (oldexp > newexp)
-					{
+					if (oldexp > newexp) {
 						pet.getStat().removeExp(oldexp - newexp);
 					}
-					else if (oldexp < newexp)
-					{
+					else if (oldexp < newexp) {
 						pet.getStat().addExp(newexp - oldexp);
 					}
 				}
-				catch (Exception e)
-				{
+				catch (Exception e) {
 				}
 			}
-			else
-			{
+			else {
 				activeChar.sendMessage("Usable only with Pets");
 			}
 		}
-		else if (command.startsWith("admin_show_pet_inv"))
-		{
+		else if (command.startsWith("admin_show_pet_inv")) {
 			L2Object target;
-			try
-			{
+			try {
 				String val = command.substring(19);
 				int objId = Integer.parseInt(val);
 				target = L2World.getInstance().getPet(objId);
 			}
-			catch (Exception e)
-			{
+			catch (Exception e) {
 				target = activeChar.getTarget();
 			}
 			
-			if (target instanceof L2PetInstance)
-			{
+			if (target instanceof L2PetInstance) {
 				activeChar.sendPacket(new GMViewItemList((L2PetInstance) target));
 			}
-			else
-			{
+			else {
 				activeChar.sendMessage("Usable only with Pets");
 			}
-			
 		}
-		else if (command.startsWith("admin_partyinfo"))
-		{
+		else if (command.startsWith("admin_partyinfo")) {
 			L2Object target;
-			try
-			{
+			try {
 				String val = command.substring(16);
 				target = L2World.getInstance().getPlayer(val);
-				if (target == null)
-				{
+				if (target == null) {
 					target = activeChar.getTarget();
 				}
 			}
-			catch (Exception e)
-			{
+			catch (Exception e) {
 				target = activeChar.getTarget();
 			}
 			
-			if (target instanceof L2PcInstance)
-			{
-				if (((L2PcInstance) target).isInParty())
-				{
+			if (target instanceof L2PcInstance) {
+				if (((L2PcInstance) target).isInParty()) {
 					gatherPartyInfo((L2PcInstance) target, activeChar);
 				}
-				else
-				{
+				else {
 					activeChar.sendMessage("Not in party.");
 				}
 			}
-			else
-			{
+			else {
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			}
 			
 		}
-		else if (command.equals("admin_setnoble"))
-		{
+		else if (command.equals("admin_setnoble")) {
 			L2PcInstance player = null;
-			if (activeChar.getTarget() == null)
-			{
+			if (activeChar.getTarget() == null) {
 				player = activeChar;
 			}
-			else if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2PcInstance))
-			{
+			else if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2PcInstance)) {
 				player = (L2PcInstance) activeChar.getTarget();
 			}
 			
-			if (player != null)
-			{
+			if (player != null) {
 				player.setNoble(!player.isNoble());
-				if (player.getObjectId() != activeChar.getObjectId())
-				{
+				if (player.getObjectId() != activeChar.getObjectId()) {
 					activeChar.sendMessage("You've changed nobless status of: " + player.getName());
 				}
 				player.sendMessage("GM changed your nobless status!");
 			}
 		}
-		else if (command.startsWith("admin_set_hp"))
-		{
+		else if (command.startsWith("admin_set_hp")) {
 			final String[] data = command.split(" ");
-			try
-			{
+			try {
 				final L2Object target = activeChar.getTarget();
-				if ((target == null) || !target.isCharacter())
-				{
+				if ((target == null) || !target.isCharacter()) {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 					return false;
 				}
 				((L2Character) target).setCurrentHp(Double.parseDouble(data[1]));
 			}
-			catch (Exception e)
-			{
+			catch (Exception e) {
 				activeChar.sendMessage("Usage: //set_hp 1000");
 			}
 		}
-		else if (command.startsWith("admin_set_mp"))
-		{
+		else if (command.startsWith("admin_set_mp")) {
 			final String[] data = command.split(" ");
-			try
-			{
+			try {
 				final L2Object target = activeChar.getTarget();
-				if ((target == null) || !target.isCharacter())
-				{
+				if ((target == null) || !target.isCharacter()) {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 					return false;
 				}
 				((L2Character) target).setCurrentMp(Double.parseDouble(data[1]));
 			}
-			catch (Exception e)
-			{
+			catch (Exception e) {
 				activeChar.sendMessage("Usage: //set_mp 1000");
 			}
 		}
-		else if (command.startsWith("admin_set_cp"))
-		{
+		else if (command.startsWith("admin_set_cp")) {
 			final String[] data = command.split(" ");
-			try
-			{
+			try {
 				final L2Object target = activeChar.getTarget();
-				if ((target == null) || !target.isCharacter())
-				{
+				if ((target == null) || !target.isCharacter()) {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 					return false;
 				}
 				((L2Character) target).setCurrentCp(Double.parseDouble(data[1]));
 			}
-			catch (Exception e)
-			{
+			catch (Exception e) {
 				activeChar.sendMessage("Usage: //set_cp 1000");
 			}
 		}
-		else if (command.startsWith("admin_set_pvp_flag"))
-		{
-			try
-			{
+		else if (command.startsWith("admin_set_pvp_flag")) {
+			try {
 				final L2Object target = activeChar.getTarget();
-				if ((target == null) || !target.isPlayable())
-				{
+				if ((target == null) || !target.isPlayable()) {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 					return false;
 				}
 				final L2Playable playable = ((L2Playable) target);
 				playable.updatePvPFlag(Math.abs(playable.getPvpFlag() - 1));
 			}
-			catch (Exception e)
-			{
+			catch (Exception e) {
 				activeChar.sendMessage("Usage: //set_pvp_flag");
 			}
 		}
@@ -898,23 +734,19 @@ public class AdminEditChar implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 	
-	private void listCharacters(L2PcInstance activeChar, int page)
-	{
+	private void listCharacters(L2PcInstance activeChar, int page) {
 		final L2PcInstance[] players = L2World.getInstance().getPlayersSortedBy(Comparator.comparingLong(L2PcInstance::getUptime));
 		
 		final NpcHtmlMessage html = new NpcHtmlMessage();
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/charlist.htm");
 		
-		final PageResult result = HtmlUtil.createPage(players, page, 20, i ->
-		{
+		final PageResult result = HtmlUtil.createPage(players, page, 20, i -> {
 			return "<td align=center><a action=\"bypass -h admin_show_characters " + i + "\">Page " + (i + 1) + "</a></td>";
-		} , player ->
-		{
+		}, player -> {
 			StringBuilder sb = new StringBuilder();
 			sb.append("<tr>");
 			sb.append("<td width=80><a action=\"bypass -h admin_character_info " + player.getName() + "\">" + player.getName() + "</a></td>");
@@ -923,12 +755,10 @@ public class AdminEditChar implements IAdminCommandHandler
 			return sb.toString();
 		});
 		
-		if (result.getPages() > 0)
-		{
+		if (result.getPages() > 0) {
 			html.replace("%pages%", "<table width=280 cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table>");
 		}
-		else
-		{
+		else {
 			html.replace("%pages%", "");
 		}
 		
@@ -936,22 +766,17 @@ public class AdminEditChar implements IAdminCommandHandler
 		activeChar.sendPacket(html);
 	}
 	
-	private void showCharacterInfo(L2PcInstance activeChar, L2PcInstance player)
-	{
-		if (player == null)
-		{
+	private void showCharacterInfo(L2PcInstance activeChar, L2PcInstance player) {
+		if (player == null) {
 			L2Object target = activeChar.getTarget();
-			if (target instanceof L2PcInstance)
-			{
+			if (target instanceof L2PcInstance) {
 				player = (L2PcInstance) target;
 			}
-			else
-			{
+			else {
 				return;
 			}
 		}
-		else
-		{
+		else {
 			activeChar.setTarget(player);
 		}
 		gatherCharacterInfo(activeChar, player, "charinfo.htm");
@@ -963,27 +788,22 @@ public class AdminEditChar implements IAdminCommandHandler
 	 * @param player
 	 * @param filename
 	 */
-	private void gatherCharacterInfo(L2PcInstance activeChar, L2PcInstance player, String filename)
-	{
+	private void gatherCharacterInfo(L2PcInstance activeChar, L2PcInstance player, String filename) {
 		String ip = "N/A";
 		
-		if (player == null)
-		{
+		if (player == null) {
 			activeChar.sendMessage("Player is null.");
 			return;
 		}
 		
 		final L2GameClient client = player.getClient();
-		if (client == null)
-		{
+		if (client == null) {
 			activeChar.sendMessage("Client is null.");
 		}
-		else if (client.isDetached())
-		{
+		else if (client.isDetached()) {
 			activeChar.sendMessage("Client is detached.");
 		}
-		else
-		{
+		else {
 			ip = client.getConnection().getInetAddress().getHostAddress();
 		}
 		
@@ -1033,22 +853,18 @@ public class AdminEditChar implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private void setTargetKarma(L2PcInstance activeChar, int newKarma)
-	{
+	private void setTargetKarma(L2PcInstance activeChar, int newKarma) {
 		// function to change karma of selected char
 		L2Object target = activeChar.getTarget();
 		L2PcInstance player = null;
-		if (target instanceof L2PcInstance)
-		{
+		if (target instanceof L2PcInstance) {
 			player = (L2PcInstance) target;
 		}
-		else
-		{
+		else {
 			return;
 		}
 		
-		if (newKarma >= 0)
-		{
+		if (newKarma >= 0) {
 			// for display
 			int oldKarma = player.getKarma();
 			// update karma
@@ -1059,47 +875,35 @@ public class AdminEditChar implements IAdminCommandHandler
 			player.sendPacket(sm);
 			// Admin information
 			activeChar.sendMessage("Successfully Changed karma for " + player.getName() + " from (" + oldKarma + ") to (" + newKarma + ").");
-			if (Config.DEBUG)
-			{
+			if (Config.DEBUG) {
 				_log.fine("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player.getName() + " from (" + oldKarma + ") to (" + newKarma + ").");
 			}
 		}
-		else
-		{
+		else {
 			// tell admin of mistake
 			activeChar.sendMessage("You must enter a value for karma greater than or equal to 0.");
-			if (Config.DEBUG)
-			{
+			if (Config.DEBUG) {
 				_log.fine("[SET KARMA] ERROR: [GM]" + activeChar.getName() + " entered an incorrect value for new karma: " + newKarma + " for " + player.getName() + ".");
 			}
 		}
 	}
 	
-	private void editCharacter(L2PcInstance activeChar, String targetName)
-	{
+	private void editCharacter(L2PcInstance activeChar, String targetName) {
 		L2Object target = null;
-		if (targetName != null)
-		{
+		if (targetName != null) {
 			target = L2World.getInstance().getPlayer(targetName);
 		}
-		else
-		{
+		else {
 			target = activeChar.getTarget();
 		}
 		
-		if (target instanceof L2PcInstance)
-		{
+		if (target instanceof L2PcInstance) {
 			L2PcInstance player = (L2PcInstance) target;
 			gatherCharacterInfo(activeChar, player, "charedit.htm");
 		}
 	}
 	
-	/**
-	 * @param activeChar
-	 * @param CharacterToFind
-	 */
-	private void findCharacter(L2PcInstance activeChar, String CharacterToFind)
-	{
+	private void findCharacter(L2PcInstance activeChar, String CharacterToFind) {
 		int CharactersFound = 0;
 		String name;
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
@@ -1107,38 +911,30 @@ public class AdminEditChar implements IAdminCommandHandler
 		
 		final StringBuilder replyMSG = new StringBuilder(1000);
 		
-		for (L2PcInstance player : L2World.getInstance().getPlayersSortedBy(Comparator.comparingLong(L2PcInstance::getUptime)))
-		{ // Add player info into new Table row
+		for (L2PcInstance player : L2World.getInstance().getPlayersSortedBy(Comparator.comparingLong(L2PcInstance::getUptime))) { // Add player info into new Table row
 			name = player.getName();
-			if (name.toLowerCase().contains(CharacterToFind.toLowerCase()))
-			{
+			if (name.toLowerCase().contains(CharacterToFind.toLowerCase())) {
 				CharactersFound = CharactersFound + 1;
 				StringUtil.append(replyMSG, "<tr><td width=80><a action=\"bypass -h admin_character_info ", name, "\">", name, "</a></td><td width=110>", ClassListData.getInstance().getClass(player.getClassId()).getClientCode(), "</td><td width=40>", String.valueOf(player.getLevel()), "</td></tr>");
 			}
-			if (CharactersFound > 20)
-			{
+			if (CharactersFound > 20) {
 				break;
 			}
 		}
 		adminReply.replace("%results%", replyMSG.toString());
 		
 		final String replyMSG2;
-		
-		if (CharactersFound == 0)
-		{
+		if (CharactersFound == 0) {
 			replyMSG2 = "s. Please try again.";
 		}
-		else if (CharactersFound > 20)
-		{
+		else if (CharactersFound > 20) {
 			adminReply.replace("%number%", " more than 20");
 			replyMSG2 = "s.<br>Please refine your search to see all of the results.";
 		}
-		else if (CharactersFound == 1)
-		{
+		else if (CharactersFound == 1) {
 			replyMSG2 = ".";
 		}
-		else
-		{
+		else {
 			replyMSG2 = "s.";
 		}
 		
@@ -1147,23 +943,14 @@ public class AdminEditChar implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	/**
-	 * @param activeChar
-	 * @param IpAdress
-	 * @throws IllegalArgumentException
-	 */
-	private void findCharactersPerIp(L2PcInstance activeChar, String IpAdress) throws IllegalArgumentException
-	{
+	private void findCharactersPerIp(L2PcInstance activeChar, String IpAdress) throws IllegalArgumentException {
 		boolean findDisconnected = false;
 		
-		if (IpAdress.equals("disconnected"))
-		{
+		if (IpAdress.equals("disconnected")) {
 			findDisconnected = true;
 		}
-		else
-		{
-			if (!IpAdress.matches("^(?:(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2(?:[0-4][0-9]|5[0-5]))\\.){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2(?:[0-4][0-9]|5[0-5]))$"))
-			{
+		else {
+			if (!IpAdress.matches("^(?:(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2(?:[0-4][0-9]|5[0-5]))\\.){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2(?:[0-4][0-9]|5[0-5]))$")) {
 				throw new IllegalArgumentException("Malformed IPv4 number");
 			}
 		}
@@ -1174,31 +961,24 @@ public class AdminEditChar implements IAdminCommandHandler
 		final StringBuilder replyMSG = new StringBuilder(1000);
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/ipfind.htm");
-		for (L2PcInstance player : L2World.getInstance().getPlayersSortedBy(Comparator.comparingLong(L2PcInstance::getUptime)))
-		{
+		for (L2PcInstance player : L2World.getInstance().getPlayersSortedBy(Comparator.comparingLong(L2PcInstance::getUptime))) {
 			client = player.getClient();
-			if (client == null)
-			{
+			if (client == null) {
 				continue;
 			}
 			
-			if (client.isDetached())
-			{
-				if (!findDisconnected)
-				{
+			if (client.isDetached()) {
+				if (!findDisconnected) {
 					continue;
 				}
 			}
-			else
-			{
-				if (findDisconnected)
-				{
+			else {
+				if (findDisconnected) {
 					continue;
 				}
 				
 				ip = client.getConnection().getInetAddress().getHostAddress();
-				if (!ip.equals(IpAdress))
-				{
+				if (!ip.equals(IpAdress)) {
 					continue;
 				}
 			}
@@ -1207,30 +987,24 @@ public class AdminEditChar implements IAdminCommandHandler
 			CharactersFound = CharactersFound + 1;
 			StringUtil.append(replyMSG, "<tr><td width=80><a action=\"bypass -h admin_character_info ", name, "\">", name, "</a></td><td width=110>", ClassListData.getInstance().getClass(player.getClassId()).getClientCode(), "</td><td width=40>", String.valueOf(player.getLevel()), "</td></tr>");
 			
-			if (CharactersFound > 20)
-			{
+			if (CharactersFound > 20) {
 				break;
 			}
 		}
 		adminReply.replace("%results%", replyMSG.toString());
 		
 		final String replyMSG2;
-		
-		if (CharactersFound == 0)
-		{
+		if (CharactersFound == 0) {
 			replyMSG2 = "s. Maybe they got d/c? :)";
 		}
-		else if (CharactersFound > 20)
-		{
+		else if (CharactersFound > 20) {
 			adminReply.replace("%number%", " more than " + String.valueOf(CharactersFound));
 			replyMSG2 = "s.<br>In order to avoid you a client crash I won't <br1>display results beyond the 20th character.";
 		}
-		else if (CharactersFound == 1)
-		{
+		else if (CharactersFound == 1) {
 			replyMSG2 = ".";
 		}
-		else
-		{
+		else {
 			replyMSG2 = "s.";
 		}
 		adminReply.replace("%ip%", IpAdress);
@@ -1239,16 +1013,9 @@ public class AdminEditChar implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	/**
-	 * @param activeChar
-	 * @param characterName
-	 * @throws IllegalArgumentException
-	 */
-	private void findCharactersPerAccount(L2PcInstance activeChar, String characterName) throws IllegalArgumentException
-	{
+	private void findCharactersPerAccount(L2PcInstance activeChar, String characterName) throws IllegalArgumentException {
 		L2PcInstance player = L2World.getInstance().getPlayer(characterName);
-		if (player == null)
-		{
+		if (player == null) {
 			throw new IllegalArgumentException("Player doesn't exist");
 		}
 		
@@ -1264,41 +1031,30 @@ public class AdminEditChar implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	/**
-	 * @param activeChar
-	 * @param multibox
-	 */
-	private void findDualbox(L2PcInstance activeChar, int multibox)
-	{
+	private void findDualbox(L2PcInstance activeChar, int multibox) {
 		Map<String, List<L2PcInstance>> ipMap = new HashMap<>();
 		String ip = "0.0.0.0";
 		L2GameClient client;
 		final Map<String, Integer> dualboxIPs = new HashMap<>();
 		
-		for (L2PcInstance player : L2World.getInstance().getPlayersSortedBy(Comparator.comparingLong(L2PcInstance::getUptime)))
-		{
+		for (L2PcInstance player : L2World.getInstance().getPlayersSortedBy(Comparator.comparingLong(L2PcInstance::getUptime))) {
 			client = player.getClient();
-			if ((client == null) || client.isDetached())
-			{
+			if ((client == null) || client.isDetached()) {
 				continue;
 			}
 			
 			ip = client.getConnection().getInetAddress().getHostAddress();
-			if (ipMap.get(ip) == null)
-			{
+			if (ipMap.get(ip) == null) {
 				ipMap.put(ip, new ArrayList<L2PcInstance>());
 			}
 			ipMap.get(ip).add(player);
 			
-			if (ipMap.get(ip).size() >= multibox)
-			{
+			if (ipMap.get(ip).size() >= multibox) {
 				Integer count = dualboxIPs.get(ip);
-				if (count == null)
-				{
+				if (count == null) {
 					dualboxIPs.put(ip, multibox);
 				}
-				else
-				{
+				else {
 					dualboxIPs.put(ip, count + 1);
 				}
 			}
@@ -1308,8 +1064,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		keys.sort(Comparator.comparing(s -> dualboxIPs.get(s)).reversed());
 		
 		final StringBuilder results = new StringBuilder();
-		for (String dualboxIP : keys)
-		{
+		for (String dualboxIP : keys) {
 			StringUtil.append(results, "<a action=\"bypass -h admin_find_ip " + dualboxIP + "\">" + dualboxIP + " (" + dualboxIPs.get(dualboxIP) + ")</a><br1>");
 		}
 		
@@ -1321,36 +1076,29 @@ public class AdminEditChar implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private void findDualboxStrict(L2PcInstance activeChar, int multibox)
-	{
+	private void findDualboxStrict(L2PcInstance activeChar, int multibox) {
 		Map<IpPack, List<L2PcInstance>> ipMap = new HashMap<>();
 		L2GameClient client;
 		final Map<IpPack, Integer> dualboxIPs = new HashMap<>();
 		
-		for (L2PcInstance player : L2World.getInstance().getPlayersSortedBy(Comparator.comparingLong(L2PcInstance::getUptime)))
-		{
+		for (L2PcInstance player : L2World.getInstance().getPlayersSortedBy(Comparator.comparingLong(L2PcInstance::getUptime))) {
 			client = player.getClient();
-			if ((client == null) || client.isDetached())
-			{
+			if ((client == null) || client.isDetached()) {
 				continue;
 			}
 			
 			IpPack pack = new IpPack(client.getConnection().getInetAddress().getHostAddress(), client.getTrace());
-			if (ipMap.get(pack) == null)
-			{
+			if (ipMap.get(pack) == null) {
 				ipMap.put(pack, new ArrayList<L2PcInstance>());
 			}
 			ipMap.get(pack).add(player);
 			
-			if (ipMap.get(pack).size() >= multibox)
-			{
+			if (ipMap.get(pack).size() >= multibox) {
 				Integer count = dualboxIPs.get(pack);
-				if (count == null)
-				{
+				if (count == null) {
 					dualboxIPs.put(pack, multibox);
 				}
-				else
-				{
+				else {
 					dualboxIPs.put(pack, count + 1);
 				}
 			}
@@ -1360,9 +1108,8 @@ public class AdminEditChar implements IAdminCommandHandler
 		keys.sort(Comparator.comparing(s -> dualboxIPs.get(s)).reversed());
 		
 		final StringBuilder results = new StringBuilder();
-		for (IpPack dualboxIP : keys)
-		{
-			StringUtil.append(results, "<a action=\"bypass -h admin_find_ip " + dualboxIP.ip + "\">" + dualboxIP.ip + " (" + dualboxIPs.get(dualboxIP) + ")</a><br1>");
+		for (IpPack dualboxIP : keys) {
+			StringUtil.append(results, "<a action=\"bypass -h admin_find_ip " + dualboxIP._ip + "\">" + dualboxIP._ip + " (" + dualboxIPs.get(dualboxIP) + ")</a><br1>");
 		}
 		
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
@@ -1373,67 +1120,52 @@ public class AdminEditChar implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private final class IpPack
-	{
-		String ip;
-		int[][] tracert;
+	private final class IpPack {
+		private final String _ip;
+		private final int[][] _tracert;
 		
-		public IpPack(String ip, int[][] tracert)
-		{
-			this.ip = ip;
-			this.tracert = tracert;
+		public IpPack(String ip, int[][] tracert) {
+			_ip = ip;
+			_tracert = tracert;
 		}
 		
 		@Override
-		public int hashCode()
-		{
+		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = (prime * result) + ((ip == null) ? 0 : ip.hashCode());
-			for (int[] array : tracert)
-			{
+			result = (prime * result) + ((_ip == null) ? 0 : _ip.hashCode());
+			for (int[] array : _tracert) {
 				result = (prime * result) + Arrays.hashCode(array);
 			}
 			return result;
 		}
 		
 		@Override
-		public boolean equals(Object obj)
-		{
-			if (this == obj)
-			{
+		public boolean equals(Object obj) {
+			if (this == obj) {
 				return true;
 			}
-			if (obj == null)
-			{
+			if (obj == null) {
 				return false;
 			}
-			if (getClass() != obj.getClass())
-			{
+			if (getClass() != obj.getClass()) {
 				return false;
 			}
 			IpPack other = (IpPack) obj;
-			if (!getOuterType().equals(other.getOuterType()))
-			{
+			if (!getOuterType().equals(other.getOuterType())) {
 				return false;
 			}
-			if (ip == null)
-			{
-				if (other.ip != null)
-				{
+			if (_ip == null) {
+				if (other._ip != null) {
 					return false;
 				}
 			}
-			else if (!ip.equals(other.ip))
-			{
+			else if (!_ip.equals(other._ip)) {
 				return false;
 			}
-			for (int i = 0; i < tracert.length; i++)
-			{
-				for (int o = 0; o < tracert[0].length; o++)
-				{
-					if (tracert[i][o] != other.tracert[i][o])
-					{
+			for (int i = 0; i < _tracert.length; i++) {
+				for (int o = 0; o < _tracert[0].length; o++) {
+					if (_tracert[i][o] != other._tracert[i][o]) {
 						return false;
 					}
 				}
@@ -1441,14 +1173,12 @@ public class AdminEditChar implements IAdminCommandHandler
 			return true;
 		}
 		
-		private AdminEditChar getOuterType()
-		{
+		private AdminEditChar getOuterType() {
 			return AdminEditChar.this;
 		}
 	}
 	
-	private void gatherSummonInfo(L2Summon target, L2PcInstance activeChar)
-	{
+	private void gatherSummonInfo(L2Summon target, L2PcInstance activeChar) {
 		final NpcHtmlMessage html = new NpcHtmlMessage();
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/petinfo.htm");
 		String name = target.getName();
@@ -1463,42 +1193,34 @@ public class AdminEditChar implements IAdminCommandHandler
 		html.replace("%mp%", (int) target.getStatus().getCurrentMp() + "/" + target.getStat().getMaxMp());
 		html.replace("%karma%", Integer.toString(target.getKarma()));
 		html.replace("%race%", target.getTemplate().getRace().toString());
-		if (target instanceof L2PetInstance)
-		{
+		if (target instanceof L2PetInstance) {
 			int objId = target.getActingPlayer().getObjectId();
 			html.replace("%inv%", " <a action=\"bypass admin_show_pet_inv " + objId + "\">view</a>");
 		}
-		else
-		{
+		else {
 			html.replace("%inv%", "none");
 		}
-		if (target instanceof L2PetInstance)
-		{
+		if (target instanceof L2PetInstance) {
 			html.replace("%food%", ((L2PetInstance) target).getCurrentFed() + "/" + ((L2PetInstance) target).getPetLevelData().getPetMaxFeed());
 			html.replace("%load%", ((L2PetInstance) target).getInventory().getTotalWeight() + "/" + ((L2PetInstance) target).getMaxLoad());
 		}
-		else
-		{
+		else {
 			html.replace("%food%", "N/A");
 			html.replace("%load%", "N/A");
 		}
 		activeChar.sendPacket(html);
 	}
 	
-	private void gatherPartyInfo(L2PcInstance target, L2PcInstance activeChar)
-	{
+	private void gatherPartyInfo(L2PcInstance target, L2PcInstance activeChar) {
 		boolean color = true;
 		final NpcHtmlMessage html = new NpcHtmlMessage();
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/partyinfo.htm");
 		StringBuilder text = new StringBuilder(400);
-		for (L2PcInstance member : target.getParty().getMembers())
-		{
-			if (color)
-			{
+		for (L2PcInstance member : target.getParty().getMembers()) {
+			if (color) {
 				text.append("<tr><td><table width=270 border=0 bgcolor=131210 cellpadding=2><tr><td width=30 align=right>");
 			}
-			else
-			{
+			else {
 				text.append("<tr><td><table width=270 border=0 cellpadding=2><tr><td width=30 align=right>");
 			}
 			text.append(member.getLevel() + "</td><td width=130><a action=\"bypass -h admin_character_info " + member.getName() + "\">" + member.getName() + "</a>");

@@ -33,10 +33,8 @@ import com.l2jserver.util.Rnd;
  * Quest for Fishing Shot (426)<br>
  * @author Zealar
  */
-public class Q00426_QuestForFishingShot extends Quest
-{
-	private static final int[] NPC = new int[]
-	{
+public class Q00426_QuestForFishingShot extends Quest {
+	private static final int[] NPC = new int[] {
 		31562, // Klufe
 		31563, // Perelin
 		31564, // Mishini
@@ -62,8 +60,7 @@ public class Q00426_QuestForFishingShot extends Quest
 		32348, // Burang
 	};
 	private static final Map<Integer, ChanceReward> MOBS = new HashMap<>(250);
-	static
-	{
+	static {
 		MOBS.put(20005, new ChanceReward(45, 1)); // Imp Elder
 		MOBS.put(20013, new ChanceReward(100, 1)); // Dryad
 		MOBS.put(20016, new ChanceReward(100, 1)); // Stone Golem
@@ -316,8 +313,7 @@ public class Q00426_QuestForFishingShot extends Quest
 		MOBS.put(21656, new ChanceReward(750, 5)); // Ashuras of Destruction
 	}
 	private static final Map<Integer, ChanceReward> MOBS_SPECIAL = new HashMap<>(5);
-	static
-	{
+	static {
 		MOBS_SPECIAL.put(20829, new ChanceReward(115, 6)); // Platinum Tribe Overlord
 		MOBS_SPECIAL.put(20859, new ChanceReward(890, 8)); // Guardian Angel
 		MOBS_SPECIAL.put(21066, new ChanceReward(5, 5)); // Platinum Guardian Shaman
@@ -326,8 +322,7 @@ public class Q00426_QuestForFishingShot extends Quest
 	}
 	private static final int SWEET_FLUID = 7586;
 	
-	public Q00426_QuestForFishingShot()
-	{
+	public Q00426_QuestForFishingShot() {
 		super(426, Q00426_QuestForFishingShot.class.getSimpleName(), "Quest for Fishing Shot");
 		addStartNpc(NPC);
 		addTalkId(NPC);
@@ -335,43 +330,34 @@ public class Q00426_QuestForFishingShot extends Quest
 		registerQuestItems(SWEET_FLUID);
 	}
 	
-	private static class ChanceReward
-	{
-		final int chance;
-		final int reward;
+	private static class ChanceReward {
+		private final int _chance;
+		private final int _reward;
 		
-		ChanceReward(int chance, int reward)
-		{
-			this.chance = chance;
-			this.reward = reward;
+		ChanceReward(int chance, int reward) {
+			_chance = chance;
+			_reward = reward;
 		}
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
-		switch (event)
-		{
-			case "QUEST_ACEPT":
-			{
+		switch (event) {
+			case "QUEST_ACEPT": {
 				qs.startQuest();
 				return "03.htm";
 			}
-			case "1":
-			{
+			case "1": {
 				return "06.html";
 			}
-			case "2":
-			{
+			case "2": {
 				return "07.html";
 			}
-			case "3":
-			{
+			case "3": {
 				qs.exitQuest(true);
 				return "08.html";
 			}
@@ -380,28 +366,21 @@ public class Q00426_QuestForFishingShot extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, -1, 2, npc);
-		if (qs != null)
-		{
-			if (MOBS_SPECIAL.containsKey(npc.getId()))
-			{
-				if (Rnd.get(1000) <= MOBS_SPECIAL.get(npc.getId()).chance)
-				{
-					rewardItems(qs.getPlayer(), SWEET_FLUID, MOBS_SPECIAL.get(npc.getId()).reward + 1);
+		if (qs != null) {
+			if (MOBS_SPECIAL.containsKey(npc.getId())) {
+				if (Rnd.get(1000) <= MOBS_SPECIAL.get(npc.getId())._chance) {
+					rewardItems(qs.getPlayer(), SWEET_FLUID, MOBS_SPECIAL.get(npc.getId())._reward + 1);
 				}
-				else
-				{
-					rewardItems(qs.getPlayer(), SWEET_FLUID, MOBS_SPECIAL.get(npc.getId()).reward);
+				else {
+					rewardItems(qs.getPlayer(), SWEET_FLUID, MOBS_SPECIAL.get(npc.getId())._reward);
 				}
 				playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
-			else
-			{
-				if (Rnd.get(1000) <= MOBS.get(npc.getId()).chance)
-				{
-					rewardItems(qs.getPlayer(), SWEET_FLUID, MOBS.get(npc.getId()).reward);
+			else {
+				if (Rnd.get(1000) <= MOBS.get(npc.getId())._chance) {
+					rewardItems(qs.getPlayer(), SWEET_FLUID, MOBS.get(npc.getId())._reward);
 					playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
@@ -410,21 +389,16 @@ public class Q00426_QuestForFishingShot extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				return "01.htm";
 			}
-			case State.STARTED:
-			{
-				if (!hasQuestItems(player, SWEET_FLUID))
-				{
+			case State.STARTED: {
+				if (!hasQuestItems(player, SWEET_FLUID)) {
 					return "04.html";
 				}
 				return "05.html";

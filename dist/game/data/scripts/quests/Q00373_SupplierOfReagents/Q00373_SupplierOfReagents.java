@@ -33,8 +33,7 @@ import quests.Q00235_MimirsElixir.Q00235_MimirsElixir;
  * Supplier of Reagents (373)
  * @author Joxit
  */
-public final class Q00373_SupplierOfReagents extends Quest
-{
+public final class Q00373_SupplierOfReagents extends Quest {
 	// NPCs
 	private static final int WESLEY = 30166;
 	private static final int ALCHEMIST_MIXING_URN = 31149;
@@ -84,8 +83,7 @@ public final class Q00373_SupplierOfReagents extends Quest
 	private static final HashMap<Integer, ItemHolder> MEMO_STATE_TO_ITEM = new HashMap<>(20);
 	private static final HashMap<Integer, Entry> MEMO_STATE_TO_REWARD = new HashMap<>(15);
 	
-	static
-	{
+	static {
 		// List of ingredients to mix
 		HTML_TO_MEMO_STATE.put("31149-03.html", 11);
 		HTML_TO_MEMO_STATE.put("31149-04.html", 12);
@@ -148,8 +146,7 @@ public final class Q00373_SupplierOfReagents extends Quest
 		MEMO_STATE_TO_REWARD.put(1324, new Entry(PURE_SILVER, "31149-46.html"));
 	}
 	
-	public Q00373_SupplierOfReagents()
-	{
+	public Q00373_SupplierOfReagents() {
 		super(373, Q00373_SupplierOfReagents.class.getSimpleName(), "Supplier of Reagents");
 		addStartNpc(WESLEY);
 		addKillId(HALLATE_GUARDIAN, HALLATE_MAID, HAMES_ORC_SHAMAN, LAVA_WYRM, CRENDION, PLATINUM_GUARDIAN_SHAMAN, PLATINUM_TRIBE_SHAMAN);
@@ -158,31 +155,25 @@ public final class Q00373_SupplierOfReagents extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return htmltext;
 		}
-		switch (event)
-		{
+		switch (event) {
 			case "30166-03.htm":
 			case "30166-06.html":
 			case "30166-04a.html":
 			case "30166-04b.html":
 			case "30166-04c.html":
 			case "30166-04d.html":
-			case "31149-18.html":
-			{
+			case "31149-18.html": {
 				htmltext = event;
 				break;
 			}
-			case "30166-04.html":
-			{
-				if ((player.getLevel() >= MIN_LVL) && qs.isCreated())
-				{
+			case "30166-04.html": {
+				if ((player.getLevel() >= MIN_LVL) && qs.isCreated()) {
 					giveItems(player, WESLEYS_MIXING_STONE, 1);
 					giveItems(player, MIXING_MANUAL, 1);
 					qs.startQuest();
@@ -190,14 +181,12 @@ public final class Q00373_SupplierOfReagents extends Quest
 				}
 				break;
 			}
-			case "30166-07.html":
-			{
+			case "30166-07.html": {
 				qs.exitQuest(true, true);
 				htmltext = event;
 				break;
 			}
-			case "31149-02.html":
-			{
+			case "31149-02.html": {
 				qs.setMemoState(0);
 				qs.setMemoStateEx(1, 0);
 				htmltext = event;
@@ -222,93 +211,74 @@ public final class Q00373_SupplierOfReagents extends Quest
 			case "31149-21.html":
 			case "31149-22.html":
 			case "31149-23.html":
-			case "31149-24.html":
-			{
+			case "31149-24.html": {
 				final int memoState = HTML_TO_MEMO_STATE.get(event);
-				if (hasItem(player, MEMO_STATE_TO_ITEM.get(memoState)))
-				{
+				if (hasItem(player, MEMO_STATE_TO_ITEM.get(memoState))) {
 					// If the player has the chosen item (ingredient or catalyst), we save it (for the catalyst or the reward)
 					qs.setMemoState(qs.getMemoState() + memoState);
 					htmltext = event;
 					playSound(player, Sound.SKILLSOUND_LIQUID_MIX);
 				}
-				else
-				{
+				else {
 					// If the player has not the chosen catalyst, we take the ingredient previously saved (if not null)
 					takeItem(player, MEMO_STATE_TO_ITEM.get(qs.getMemoState()));
-					if (event.equals("31149-19.html"))
-					{
+					if (event.equals("31149-19.html")) {
 						htmltext = "31149-25.html";
 					}
-					else
-					{
+					else {
 						htmltext = "31149-17.html";
 					}
 				}
 				break;
 			}
-			case "31149-26.html":
-			{
-				if (qs.isMemoState(1324))
-				{
+			case "31149-26.html": {
+				if (qs.isMemoState(1324)) {
 					htmltext = "31149-26a.html";
 				}
-				else
-				{
+				else {
 					htmltext = event;
 				}
 				break;
 			}
-			case "31149-27.html":
-			{
+			case "31149-27.html": {
 				qs.setMemoStateEx(1, 1); // Temperature Salamander
 				htmltext = event;
 				break;
 			}
-			case "31149-28a.html":
-			{
-				if (getRandom(100) < 33)
-				{
+			case "31149-28a.html": {
+				if (getRandom(100) < 33) {
 					qs.setMemoStateEx(1, 3); // Temperature Ifrit
 				}
-				else
-				{
+				else {
 					qs.setMemoStateEx(1, 0);
 				}
 				htmltext = event;
 				break;
 			}
-			case "31149-29a.html":
-			{
-				if (getRandom(100) < 20)
-				{
+			case "31149-29a.html": {
+				if (getRandom(100) < 20) {
 					qs.setMemoStateEx(1, 5); // Temperature Phoenix
 				}
-				else
-				{
+				else {
 					qs.setMemoStateEx(1, 0);
 				}
 				htmltext = event;
 				break;
 			}
-			case "mixitems":
-			{
+			case "mixitems": {
 				final int memoState = qs.getMemoState();
 				final ItemHolder item1 = MEMO_STATE_TO_ITEM.get(memoState % 100);
 				final ItemHolder item2 = MEMO_STATE_TO_ITEM.get((memoState / 100) * 100);
 				final Entry reward = MEMO_STATE_TO_REWARD.get(memoState);
 				final QuestState q235 = player.getQuestState(Q00235_MimirsElixir.class.getSimpleName());
-				if ((reward == null) || qs.isMemoStateEx(1, 0))
-				{
+				if ((reward == null) || qs.isMemoStateEx(1, 0)) {
 					takeItem(player, item1);
 					takeItem(player, item2);
 					htmltext = (reward == null) ? "31149-44.html" : "31149-45.html";
 					playSound(player, Sound.SKILLSOUND_LIQUID_FAIL);
 				}
-				else if ((memoState != 1324) || ((memoState == 1324) && (q235 != null) && q235.isStarted() && !hasQuestItems(player, reward.getItem())))
-				{
-					if ((item1 != null) && (item2 != null) && hasItem(player, item1) && hasItem(player, item2))
-					{
+				else if ((memoState != 1324) || ((memoState == 1324) && (q235 != null) && q235.isStarted() && !hasQuestItems(player, reward.getItem()))) {
+					if ((item1 != null) && (item2 != null) && hasItem(player, item1) && hasItem(player, item2)) {
 						takeItem(player, item1);
 						takeItem(player, item2);
 						giveItems(player, reward.getItem(), (memoState == 1324) ? 1 : qs.getMemoStateEx(1));
@@ -317,14 +287,12 @@ public final class Q00373_SupplierOfReagents extends Quest
 						htmltext = reward.getHtml();
 						playSound(player, Sound.SKILLSOUND_LIQUID_SUCCESS);
 					}
-					else
-					{
+					else {
 						htmltext = "31149-44.html";
 						playSound(player, Sound.SKILLSOUND_LIQUID_FAIL);
 					}
 				}
-				else
-				{
+				else {
 					htmltext = "31149-44.html";
 				}
 				break;
@@ -334,88 +302,66 @@ public final class Q00373_SupplierOfReagents extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, -1, 3, npc);
-		if (qs != null)
-		{
-			switch (npc.getId())
-			{
-				case HALLATE_GUARDIAN:
-				{
+		if (qs != null) {
+			switch (npc.getId()) {
+				case HALLATE_GUARDIAN: {
 					final int chance = getRandom(1000);
-					if (chance < 766)
-					{
+					if (chance < 766) {
 						giveItemRandomly(qs.getPlayer(), npc, DEMONS_BLOOD, 3, 0, 1, true);
 					}
-					else if (chance < 876)
-					{
+					else if (chance < 876) {
 						giveItemRandomly(qs.getPlayer(), npc, MOONSTONE_SHARD, 1, 0, 1, true);
 					}
 					break;
 				}
-				case HALLATE_MAID:
-				{
+				case HALLATE_MAID: {
 					final int chance = getRandom(100);
-					if (chance < 45)
-					{
+					if (chance < 45) {
 						giveItemRandomly(qs.getPlayer(), npc, REAGENT_POUNCH1, 1, 0, 1, true);
 					}
-					else if (chance < 65)
-					{
+					else if (chance < 65) {
 						giveItemRandomly(qs.getPlayer(), npc, VOLCANIC_ASH, 1, 0, 1, true);
 					}
 					break;
 				}
-				case HAMES_ORC_SHAMAN:
-				{
-					if (getRandom(1000) < 616)
-					{
+				case HAMES_ORC_SHAMAN: {
+					if (getRandom(1000) < 616) {
 						giveItemRandomly(qs.getPlayer(), npc, REAGENT_POUNCH3, 1, 0, 1, true);
 					}
 					break;
 				}
-				case LAVA_WYRM:
-				{
+				case LAVA_WYRM: {
 					final int chance = getRandom(1000);
-					if (chance < 666)
-					{
+					if (chance < 666) {
 						giveItemRandomly(qs.getPlayer(), npc, WYRM_BLOOD, 1, 0, 1, true);
 					}
-					else if (chance < 989)
-					{
+					else if (chance < 989) {
 						giveItemRandomly(qs.getPlayer(), npc, LAVA_STONE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case CRENDION:
-				{
-					if (getRandom(1000) < 618)
-					{
+				case CRENDION: {
+					if (getRandom(1000) < 618) {
 						giveItemRandomly(qs.getPlayer(), npc, ROTTEN_BONE, 1, 0, 1, true);
 					}
-					else
-					{
+					else {
 						giveItemRandomly(qs.getPlayer(), npc, QUICKSILVER, 1, 0, 1, true);
 					}
 					break;
 				}
-				case PLATINUM_GUARDIAN_SHAMAN:
-				{
-					if (getRandom(1000) < 444)
-					{
+				case PLATINUM_GUARDIAN_SHAMAN: {
+					if (getRandom(1000) < 444) {
 						giveItemRandomly(qs.getPlayer(), npc, REAGENT_BOX, 1, 0, 1, true);
 					}
 					break;
 				}
-				case PLATINUM_TRIBE_SHAMAN:
-				{
-					if (getRandom(1000) < 658)
-					{
+				case PLATINUM_TRIBE_SHAMAN: {
+					if (getRandom(1000) < 658) {
 						giveItemRandomly(qs.getPlayer(), npc, REAGENT_POUNCH2, 1, 0, 1, true);
 					}
-					else
-					{
+					else {
 						giveItemRandomly(qs.getPlayer(), npc, QUICKSILVER, 2, 0, 1, true);
 					}
 					break;
@@ -426,29 +372,22 @@ public final class Q00373_SupplierOfReagents extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		if (qs.isCreated())
-		{
-			if (talker.getLevel() < MIN_LVL)
-			{
+		if (qs.isCreated()) {
+			if (talker.getLevel() < MIN_LVL) {
 				htmltext = "30166-01.html";
 			}
-			else
-			{
+			else {
 				htmltext = "30166-02.htm";
 			}
 		}
-		else if (qs.isStarted())
-		{
-			if (npc.getId() == WESLEY)
-			{
+		else if (qs.isStarted()) {
+			if (npc.getId() == WESLEY) {
 				htmltext = "30166-05.html";
 			}
-			else
-			{
+			else {
 				htmltext = "31149-01.html";
 			}
 		}
@@ -456,25 +395,21 @@ public final class Q00373_SupplierOfReagents extends Quest
 		return htmltext;
 	}
 	
-	private static final class Entry
-	{
-		private final int item;
-		private final String html;
+	private static final class Entry {
+		private final int _item;
+		private final String _html;
 		
-		public Entry(int item, String html)
-		{
-			this.item = item;
-			this.html = html;
+		public Entry(int item, String html) {
+			_item = item;
+			_html = html;
 		}
 		
-		public int getItem()
-		{
-			return item;
+		public int getItem() {
+			return _item;
 		}
 		
-		public String getHtml()
-		{
-			return html;
+		public String getHtml() {
+			return _html;
 		}
 	}
 }

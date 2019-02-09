@@ -38,8 +38,7 @@ import com.l2jserver.gameserver.util.Broadcast;
 /**
  * @author Gnacik
  */
-public final class Race extends Event
-{
+public final class Race extends Event {
 	// Event NPC's list
 	private final Set<L2Npc> _npcs = ConcurrentHashMap.newKeySet();
 	// Npc
@@ -49,23 +48,22 @@ public final class Race extends Event
 	// Event Task
 	ScheduledFuture<?> _eventTask = null;
 	// Event state
-	private static boolean _isactive = false;
+	private static boolean _isActive = false;
 	// Race state
 	private static boolean _isRaceStarted = false;
 	// 5 min for register
-	private static final int _time_register = 5;
+	private static final int TIME_REGISTER = 5;
 	// 5 min for race
-	private static final int _time_race = 10;
+	private static final int TIME_RACE = 10;
 	// NPC's
-	private static final int _start_npc = 900103;
-	private static final int _stop_npc = 900104;
+	private static final int START_NPC = 900103;
+	private static final int STOP_NPC = 900104;
 	// Skills (Frog by default)
 	private static int _skill = 6201;
 	// We must keep second NPC spawn for radar
 	private static int[] _randspawn = null;
 	// Locations
-	private static final String[] _locations =
-	{
+	private static final String[] LOCATIONS = {
 		"Heretic catacomb enterance",
 		"Dion castle bridge",
 		"Floran village enterance",
@@ -73,7 +71,7 @@ public final class Race extends Event
 	};
 	
 	// @formatter:off
-	private static final int[][] _coords =
+	private static final int[][] COORDS =
 	{
 		// x, y, z, heading
 		{ 39177, 144345, -3650, 0 },
@@ -81,7 +79,7 @@ public final class Race extends Event
 		{ 16537, 169937, -3500, 0 },
 		{  7644, 150898, -2890, 0 }
 	};
-	private static final int[][] _rewards =
+	private static final int[][] REWARDS =
 	{
 		{ 6622, 2 }, // Giant's Codex
 		{ 9625, 2 }, // Giant's Codex -
@@ -100,55 +98,49 @@ public final class Race extends Event
 	};
 	// @formatter:on
 	
-	private Race()
-	{
+	private Race() {
 		super(Race.class.getSimpleName(), "custom/events");
-		addStartNpc(_start_npc);
-		addFirstTalkId(_start_npc);
-		addTalkId(_start_npc);
-		addStartNpc(_stop_npc);
-		addFirstTalkId(_stop_npc);
-		addTalkId(_stop_npc);
+		addStartNpc(START_NPC);
+		addFirstTalkId(START_NPC);
+		addTalkId(START_NPC);
+		addStartNpc(STOP_NPC);
+		addFirstTalkId(STOP_NPC);
+		addTalkId(STOP_NPC);
 	}
 	
 	@Override
-	public boolean eventStart(L2PcInstance eventMaker)
-	{
+	public boolean eventStart(L2PcInstance eventMaker) {
 		// Don't start event if its active
-		if (_isactive)
-		{
+		if (_isActive) {
 			return false;
 		}
 		
 		// Check Custom Table - we use custom NPC's
-		if (!Config.CUSTOM_NPC_DATA)
-		{
+		if (!Config.CUSTOM_NPC_DATA) {
 			_log.info(getName() + ": Event can't be started, because custom npc table is disabled!");
 			eventMaker.sendMessage("Event " + getName() + " can't be started because custom NPC table is disabled!");
 			return false;
 		}
 		
 		// Set Event active
-		_isactive = true;
+		_isActive = true;
 		// Spawn Manager
-		_npc = recordSpawn(_start_npc, 18429, 145861, -3090, 0, false, 0);
+		_npc = recordSpawn(START_NPC, 18429, 145861, -3090, 0, false, 0);
 		
 		// Announce event start
 		Broadcast.toAllOnlinePlayers("* Race Event started! *");
-		Broadcast.toAllOnlinePlayers("Visit Event Manager in Dion village and signup, you have " + _time_register + " min before Race Start...");
+		Broadcast.toAllOnlinePlayers("Visit Event Manager in Dion village and signup, you have " + TIME_REGISTER + " min before Race Start...");
 		
 		// Schedule Event end
-		_eventTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> StartRace(), _time_register * 60 * 1000);
+		_eventTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> StartRace(), TIME_REGISTER * 60 * 1000);
 		
 		return true;
 		
 	}
 	
-	protected void StartRace()
-	{
+	protected void StartRace() {
 		// Abort race if no players signup
-		if (_players.isEmpty())
-		{
+		if (_players.isEmpty()) {
 			Broadcast.toAllOnlinePlayers("Race aborted, nobody signup.");
 			eventStop();
 			return;
@@ -158,66 +150,56 @@ public final class Race extends Event
 		// Announce
 		Broadcast.toAllOnlinePlayers("Race started!");
 		// Get random Finish
-		int location = getRandom(0, _locations.length - 1);
-		_randspawn = _coords[location];
+		int location = getRandom(0, LOCATIONS.length - 1);
+		_randspawn = COORDS[location];
 		// And spawn NPC
-		recordSpawn(_stop_npc, _randspawn[0], _randspawn[1], _randspawn[2], _randspawn[3], false, 0);
+		recordSpawn(STOP_NPC, _randspawn[0], _randspawn[1], _randspawn[2], _randspawn[3], false, 0);
 		// Transform players and send message
-		for (L2PcInstance player : _players)
-		{
-			if (player.isOnline())
-			{
-				if (player.isInsideRadius(_npc, 500, false, false))
-				{
-					sendMessage(player, "Race started! Go find Finish NPC as fast as you can... He is located near " + _locations[location]);
+		for (L2PcInstance player : _players) {
+			if (player.isOnline()) {
+				if (player.isInsideRadius(_npc, 500, false, false)) {
+					sendMessage(player, "Race started! Go find Finish NPC as fast as you can... He is located near " + LOCATIONS[location]);
 					transformPlayer(player);
 					player.getRadar().addMarker(_randspawn[0], _randspawn[1], _randspawn[2]);
 				}
-				else
-				{
+				else {
 					sendMessage(player, "I told you stay near me right? Distance was too high, you are excluded from race");
 					_players.remove(player);
 				}
 			}
 		}
 		// Schedule timeup for Race
-		_eventTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> timeUp(), _time_race * 60 * 1000);
+		_eventTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> timeUp(), TIME_RACE * 60 * 1000);
 	}
 	
 	@Override
-	public boolean eventStop()
-	{
+	public boolean eventStop() {
 		// Don't stop inactive event
-		if (!_isactive)
-		{
+		if (!_isActive) {
 			return false;
 		}
 		
 		// Set inactive
-		_isactive = false;
+		_isActive = false;
 		_isRaceStarted = false;
 		
 		// Cancel task if any
-		if (_eventTask != null)
-		{
+		if (_eventTask != null) {
 			_eventTask.cancel(true);
 			_eventTask = null;
 		}
 		// Untransform players
 		// Teleport to event start point
-		for (L2PcInstance player : _players)
-		{
-			if (player.isOnline())
-			{
+		for (L2PcInstance player : _players) {
+			if (player.isOnline()) {
 				player.untransform();
 				player.teleToLocation(_npc.getX(), _npc.getY(), _npc.getZ(), true);
 			}
 		}
 		_players.clear();
 		// Despawn NPCs
-		for (L2Npc _npc : _npcs)
-		{
-			_npc.deleteMe();
+		for (L2Npc npc : _npcs) {
+			npc.deleteMe();
 		}
 		_npcs.clear();
 		// Announce event end
@@ -227,39 +209,30 @@ public final class Race extends Event
 	}
 	
 	@Override
-	public boolean eventBypass(L2PcInstance activeChar, String bypass)
-	{
-		if (bypass.startsWith("skill"))
-		{
-			if (_isRaceStarted)
-			{
+	public boolean eventBypass(L2PcInstance activeChar, String bypass) {
+		if (bypass.startsWith("skill")) {
+			if (_isRaceStarted) {
 				activeChar.sendMessage("Race already started, you cannot change transform skill now");
 			}
-			else
-			{
+			else {
 				int _number = Integer.valueOf(bypass.substring(5));
 				Skill _sk = SkillData.getInstance().getSkill(_number, 1);
-				if (_sk != null)
-				{
+				if (_sk != null) {
 					_skill = _number;
 					activeChar.sendMessage("Transform skill set to:");
 					activeChar.sendMessage(_sk.getName());
 				}
-				else
-				{
+				else {
 					activeChar.sendMessage("Error while changing transform skill");
 				}
 			}
 			
 		}
-		else if (bypass.startsWith("tele"))
-		{
-			if ((Integer.valueOf(bypass.substring(4)) > 0) && (_randspawn != null))
-			{
+		else if (bypass.startsWith("tele")) {
+			if ((Integer.valueOf(bypass.substring(4)) > 0) && (_randspawn != null)) {
 				activeChar.teleToLocation(_randspawn[0], _randspawn[1], _randspawn[2]);
 			}
-			else
-			{
+			else {
 				activeChar.teleToLocation(18429, 145861, -3090);
 			}
 		}
@@ -268,52 +241,41 @@ public final class Race extends Event
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
-		if (event.equalsIgnoreCase("transform"))
-		{
+		if (event.equalsIgnoreCase("transform")) {
 			transformPlayer(player);
 			return null;
 		}
-		else if (event.equalsIgnoreCase("untransform"))
-		{
+		else if (event.equalsIgnoreCase("untransform")) {
 			player.untransform();
 			return null;
 		}
-		else if (event.equalsIgnoreCase("showfinish"))
-		{
+		else if (event.equalsIgnoreCase("showfinish")) {
 			player.getRadar().addMarker(_randspawn[0], _randspawn[1], _randspawn[2]);
 			return null;
 		}
-		else if (event.equalsIgnoreCase("signup"))
-		{
-			if (_players.contains(player))
-			{
+		else if (event.equalsIgnoreCase("signup")) {
+			if (_players.contains(player)) {
 				return "900103-onlist.htm";
 			}
 			_players.add(player);
 			return "900103-signup.htm";
 		}
-		else if (event.equalsIgnoreCase("quit"))
-		{
+		else if (event.equalsIgnoreCase("quit")) {
 			player.untransform();
-			if (_players.contains(player))
-			{
+			if (_players.contains(player)) {
 				_players.remove(player);
 			}
 			return "900103-quit.htm";
 		}
-		else if (event.equalsIgnoreCase("finish"))
-		{
-			if (player.isAffectedBySkill(_skill))
-			{
+		else if (event.equalsIgnoreCase("finish")) {
+			if (player.isAffectedBySkill(_skill)) {
 				winRace(player);
 				return "900104-winner.htm";
 			}
@@ -323,45 +285,36 @@ public final class Race extends Event
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		getQuestState(player, true);
 		
-		if (npc.getId() == _start_npc)
-		{
-			if (_isRaceStarted)
-			{
-				return _start_npc + "-started-" + isRacing(player) + ".htm";
+		if (npc.getId() == START_NPC) {
+			if (_isRaceStarted) {
+				return START_NPC + "-started-" + isRacing(player) + ".htm";
 			}
-			return _start_npc + "-" + isRacing(player) + ".htm";
+			return START_NPC + "-" + isRacing(player) + ".htm";
 		}
-		else if ((npc.getId() == _stop_npc) && _isRaceStarted)
-		{
-			return _stop_npc + "-" + isRacing(player) + ".htm";
+		else if ((npc.getId() == STOP_NPC) && _isRaceStarted) {
+			return STOP_NPC + "-" + isRacing(player) + ".htm";
 		}
 		return npc.getId() + ".htm";
 	}
 	
-	private int isRacing(L2PcInstance player)
-	{
+	private int isRacing(L2PcInstance player) {
 		return _players.contains(player) ? 1 : 0;
 	}
 	
-	private L2Npc recordSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffSet, long despawnDelay)
-	{
+	private L2Npc recordSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffSet, long despawnDelay) {
 		final L2Npc npc = addSpawn(npcId, x, y, z, heading, randomOffSet, despawnDelay);
 		_npcs.add(npc);
 		return npc;
 	}
 	
-	private void transformPlayer(L2PcInstance player)
-	{
-		if (player.isTransformed() || player.isInStance())
-		{
+	private void transformPlayer(L2PcInstance player) {
+		if (player.isTransformed() || player.isInStance()) {
 			player.untransform();
 		}
-		if (player.isSitting())
-		{
+		if (player.isSitting()) {
 			player.standUp();
 		}
 		
@@ -371,35 +324,30 @@ public final class Race extends Event
 		SkillData.getInstance().getSkill(_skill, 1).applyEffects(player, player);
 	}
 	
-	private void sendMessage(L2PcInstance player, String text)
-	{
+	private void sendMessage(L2PcInstance player, String text) {
 		player.sendPacket(new CreatureSay(_npc.getObjectId(), 20, _npc.getName(), text));
 	}
 	
-	private void showMenu(L2PcInstance activeChar)
-	{
+	private void showMenu(L2PcInstance activeChar) {
 		final NpcHtmlMessage html = new NpcHtmlMessage();
 		String content = getHtm(activeChar.getHtmlPrefix(), "admin_menu.htm");
 		html.setHtml(content);
 		activeChar.sendPacket(html);
 	}
 	
-	protected void timeUp()
-	{
+	protected void timeUp() {
 		Broadcast.toAllOnlinePlayers("Time up, nobody wins!");
 		eventStop();
 	}
 	
-	private void winRace(L2PcInstance player)
-	{
-		int[] _reward = _rewards[getRandom(_rewards.length - 1)];
+	private void winRace(L2PcInstance player) {
+		int[] _reward = REWARDS[getRandom(REWARDS.length - 1)];
 		player.addItem("eventModRace", _reward[0], _reward[1], _npc, true);
 		Broadcast.toAllOnlinePlayers(player.getName() + " is a winner!");
 		eventStop();
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Race();
 	}
 }
