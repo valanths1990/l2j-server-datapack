@@ -35,8 +35,7 @@ import com.l2jserver.gameserver.util.Util;
  * @author Zealar
  * @since 2.6.0.0
  */
-public final class Q00384_WarehouseKeepersPastime extends Quest
-{
+public final class Q00384_WarehouseKeepersPastime extends Quest {
 	// NPCs
 	private static final int CLIFF = 30182;
 	private static final int WAREHOUSE_CHIEF_BAXT = 30685;
@@ -89,8 +88,7 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 	private static final int BLESSED_GLOVES = 2463;
 	private static final int CRAFTED_LEATHER = 1894;
 	
-	public Q00384_WarehouseKeepersPastime()
-	{
+	public Q00384_WarehouseKeepersPastime() {
 		super(384, Q00384_WarehouseKeepersPastime.class.getSimpleName(), "Warehouse Keeper's Pastime");
 		addStartNpc(CLIFF);
 		addTalkId(CLIFF, WAREHOUSE_CHIEF_BAXT);
@@ -99,31 +97,24 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case CLIFF:
-				if (qs.isCreated())
-				{
-					if (player.getLevel() >= 40)
-					{
+				if (qs.isCreated()) {
+					if (player.getLevel() >= 40) {
 						return "30182-01.htm";
 					}
 					return "30182-04.html";
 				}
-				if (qs.getQuestItemsCount(Q_IRONGATE_MEDAL) < 10)
-				{
+				if (qs.getQuestItemsCount(Q_IRONGATE_MEDAL) < 10) {
 					return "30182-06.html";
 				}
 				return "30182-07.html";
 			case WAREHOUSE_CHIEF_BAXT:
-				if (qs.hasMemoState())
-				{
-					if (qs.getQuestItemsCount(Q_IRONGATE_MEDAL) < 10)
-					{
+				if (qs.hasMemoState()) {
+					if (qs.getQuestItemsCount(Q_IRONGATE_MEDAL) < 10) {
 						return "30685-06.html";
 					}
 					return "30685-07.html";
@@ -133,23 +124,16 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null))
-		{
-			if (event.contains(".htm"))
-			{
+		if ((qs != null)) {
+			if (event.contains(".htm")) {
 				return event;
 			}
 			
-			final int ask = Integer.parseInt(event);
-			switch (npc.getId())
-			{
-				case CLIFF:
-				{
-					if (event.equals("QUEST_ACCEPTED"))
-					{
+			switch (npc.getId()) {
+				case CLIFF: {
+					if (event.equals("QUEST_ACCEPTED")) {
 						qs.playSound(Sound.ITEMSOUND_QUEST_ACCEPT);
 						qs.setMemoState(384);
 						qs.startQuest();
@@ -157,29 +141,26 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30182-05.htm";
 					}
-					switch (ask)
-					{
+					
+					final int ask = Integer.parseInt(event);
+					switch (ask) {
 						case 3:
 							return "30182-09a.htm";
 						case 4:
 							return "30182-02.htm";
 						case 5:
-							if (npc.getId() != CLIFF)
-							{
+							if (npc.getId() != CLIFF) {
 								return getNoQuestMsg(player);
 							}
 							return "30182-03.htm";
-						case 6:
-						{
+						case 6: {
 							qs.exitQuest(true);
 							return "30182-08.html";
 						}
 						case 9:
 							return "30182-09.html";
-						case 7:
-						{
-							if (qs.getQuestItemsCount(Q_IRONGATE_MEDAL) >= 10)
-							{
+						case 7: {
+							if (qs.getQuestItemsCount(Q_IRONGATE_MEDAL) >= 10) {
 								qs.takeItems(Q_IRONGATE_MEDAL, 10);
 								qs.setMemoState(10);
 								createBingoBoard(qs);
@@ -187,10 +168,8 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 							}
 							return "30182-11.html";
 						}
-						case 8:
-						{
-							if (qs.getQuestItemsCount(Q_IRONGATE_MEDAL) >= 100)
-							{
+						case 8: {
+							if (qs.getQuestItemsCount(Q_IRONGATE_MEDAL) >= 100) {
 								qs.takeItems(Q_IRONGATE_MEDAL, 100);
 								qs.setMemoState(20);
 								createBingoBoard(qs);
@@ -206,8 +185,7 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 						case 15:
 						case 16:
 						case 17:
-						case 18:
-						{
+						case 18: {
 							selectBingoNumber(qs, (ask - 10) + 1);
 							return fillBoard(player, qs, getHtm(player.getHtmlPrefix(), "30182-13.html"));
 						}
@@ -219,8 +197,7 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 						case 24:
 						case 25:
 						case 26:
-						case 27:
-						{
+						case 27: {
 							return takeHtml(player, qs, (ask - 18), CLIFF);
 						}
 						case 55:
@@ -231,16 +208,15 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 						case 60:
 						case 61:
 						case 62:
-						case 63:
-						{
+						case 63: {
 							return beforeReward(player, qs, (ask - 54), CLIFF);
 						}
 					}
 					break;
 				}
 				case WAREHOUSE_CHIEF_BAXT:
-					switch (ask)
-					{
+					final int ask = Integer.parseInt(event);
+					switch (ask) {
 						case 3:
 							return "30685-09a.html";
 						case 6:
@@ -249,8 +225,7 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 						case 9:
 							return "30685-09.html";
 						case 7:
-							if (qs.getQuestItemsCount(Q_IRONGATE_MEDAL) >= 10)
-							{
+							if (qs.getQuestItemsCount(Q_IRONGATE_MEDAL) >= 10) {
 								qs.takeItems(Q_IRONGATE_MEDAL, 10);
 								qs.setMemoState(10);
 								createBingoBoard(qs);
@@ -258,8 +233,7 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 							}
 							return "30685-11.html";
 						case 8:
-							if (qs.getQuestItemsCount(Q_IRONGATE_MEDAL) >= 100)
-							{
+							if (qs.getQuestItemsCount(Q_IRONGATE_MEDAL) >= 100) {
 								qs.takeItems(Q_IRONGATE_MEDAL, 100);
 								qs.setMemoState(20);
 								createBingoBoard(qs);
@@ -274,8 +248,7 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 						case 15:
 						case 16:
 						case 17:
-						case 18:
-						{
+						case 18: {
 							selectBingoNumber(qs, (ask - 9));
 							return fillBoard(player, qs, getHtm(player.getHtmlPrefix(), "30685-13.html"));
 						}
@@ -287,8 +260,7 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 						case 24:
 						case 25:
 						case 26:
-						case 27:
-						{
+						case 27: {
 							return takeHtml(player, qs, (ask - 18), WAREHOUSE_CHIEF_BAXT);
 						}
 						case 55:
@@ -299,8 +271,7 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 						case 60:
 						case 61:
 						case 62:
-						case 63:
-						{
+						case 63: {
 							return beforeReward(player, qs, (ask - 54), WAREHOUSE_CHIEF_BAXT);
 						}
 					}
@@ -309,74 +280,51 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	private String takeHtml(L2PcInstance player, QuestState qs, int num, int npcId)
-	{
+	private String takeHtml(L2PcInstance player, QuestState qs, int num, int npcId) {
 		String html = null;
 		int i3;
-		if (!isSelectedBingoNumber(qs, num))
-		{
+		if (!isSelectedBingoNumber(qs, num)) {
 			selectBingoNumber(qs, num);
 			i3 = getBingoSelectCount(qs);
 			
-			if (i3 == 2)
-			{
+			if (i3 == 2) {
 				html = getHtm(player.getHtmlPrefix(), npcId + "-14.html");
-			}
-			else if (i3 == 3)
-			{
+			} else if (i3 == 3) {
 				html = getHtm(player.getHtmlPrefix(), npcId + "-16.html");
-			}
-			else if (i3 == 4)
-			{
+			} else if (i3 == 4) {
 				html = getHtm(player.getHtmlPrefix(), npcId + "-18.html");
-			}
-			else if (i3 == 5)
-			{
+			} else if (i3 == 5) {
 				html = getHtm(player.getHtmlPrefix(), npcId + "-20.html");
 			}
 			return fillBoard(player, qs, html);
 		}
 		i3 = getBingoSelectCount(qs);
-		if (i3 == 1)
-		{
+		if (i3 == 1) {
 			html = getHtm(player.getHtmlPrefix(), npcId + "-15.html");
-		}
-		else if (i3 == 2)
-		{
+		} else if (i3 == 2) {
 			html = getHtm(player.getHtmlPrefix(), npcId + "-17.html");
-		}
-		else if (i3 == 3)
-		{
+		} else if (i3 == 3) {
 			html = getHtm(player.getHtmlPrefix(), npcId + "-19.html");
-		}
-		else if (i3 == 4)
-		{
+		} else if (i3 == 4) {
 			html = getHtm(player.getHtmlPrefix(), npcId + "-21.html");
 		}
 		return fillBoard(player, qs, html);
 	}
 	
-	private String fillBoard(L2PcInstance player, QuestState qs, String html)
-	{
-		for (int i0 = 0; i0 < 9; i0 = i0 + 1)
-		{
+	private String fillBoard(L2PcInstance player, QuestState qs, String html) {
+		for (int i0 = 0; i0 < 9; i0 = i0 + 1) {
 			int i1 = getNumberFromBingoBoard(qs, i0);
-			if (isSelectedBingoNumber(qs, i1))
-			{
+			if (isSelectedBingoNumber(qs, i1)) {
 				html = html.replace("<?Cell" + (i0 + 1) + "?>", i1 + "");
-			}
-			else
-			{
+			} else {
 				html = html.replace("<?Cell" + (i0 + 1) + "?>", "?");
 			}
 		}
 		return html;
 	}
 	
-	private String colorBoard(L2PcInstance player, QuestState qs, String html)
-	{
-		for (int i0 = 0; i0 < 9; i0 = i0 + 1)
-		{
+	private String colorBoard(L2PcInstance player, QuestState qs, String html) {
+		for (int i0 = 0; i0 < 9; i0 = i0 + 1) {
 			int i1 = getNumberFromBingoBoard(qs, i0);
 			html = html.replace("<?FontColor" + (i0 + 1) + "?>", (isSelectedBingoNumber(qs, i1)) ? "ff0000" : "ffffff");
 			html = html.replace("<?Cell" + (i0 + 1) + "?>", i1 + "");
@@ -384,25 +332,18 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 		return html;
 	}
 	
-	private String beforeReward(L2PcInstance player, QuestState qs, int num, int npcId)
-	{
-		if (!isSelectedBingoNumber(qs, num))
-		{
+	private String beforeReward(L2PcInstance player, QuestState qs, int num, int npcId) {
+		if (!isSelectedBingoNumber(qs, num)) {
 			selectBingoNumber(qs, num);
 			int i3 = getMatchedBingoLineCount(qs);
 			String html;
-			if ((i3 == 3) && ((getBingoSelectCount(qs)) == 6))
-			{
+			if ((i3 == 3) && ((getBingoSelectCount(qs)) == 6)) {
 				reward(player, qs, i3);
 				html = getHtm(player.getHtmlPrefix(), npcId + "-22.html");
-			}
-			else if ((i3 == 0) && (getBingoSelectCount(qs) == 6))
-			{
+			} else if ((i3 == 0) && (getBingoSelectCount(qs) == 6)) {
 				reward(player, qs, i3);
 				html = getHtm(player.getHtmlPrefix(), npcId + "-24.html");
-			}
-			else
-			{
+			} else {
 				html = getHtm(player.getHtmlPrefix(), npcId + "-23.html");
 			}
 			return colorBoard(player, qs, html);
@@ -410,107 +351,63 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 		return fillBoard(player, qs, getHtm(player.getHtmlPrefix(), npcId + "-25.html"));
 	}
 	
-	private void reward(L2PcInstance player, QuestState qs, int i3)
-	{
-		if (i3 == 3)
-		{
-			if (qs.getMemoState() == 10)
-			{
+	private void reward(L2PcInstance player, QuestState qs, int i3) {
+		if (i3 == 3) {
+			if (qs.getMemoState() == 10) {
 				int random = getRandom(100);
-				if (random < 16)
-				{
+				if (random < 16) {
 					qs.giveItems(SYNTHESIS_COKES, 1);
-				}
-				else if (random < 32)
-				{
+				} else if (random < 32) {
 					qs.giveItems(VARNISH_OF_PURITY, 1);
-				}
-				else if (random < 50)
-				{
+				} else if (random < 50) {
 					qs.giveItems(CRAFTED_LEATHER, 1);
-				}
-				else if (random < 80)
-				{
+				} else if (random < 80) {
 					qs.giveItems(SCRL_OF_ENCH_AM_C, 1);
-				}
-				else if (random < 89)
-				{
+				} else if (random < 89) {
 					qs.giveItems(MITHIRL_ALLOY, 1);
-				}
-				else if (random < 98)
-				{
+				} else if (random < 98) {
 					qs.giveItems(ORIHARUKON, 1);
-				}
-				else
-				{
+				} else {
 					qs.giveItems(SCRL_OF_ENCH_WP_C, 1);
 				}
 				
-			}
-			else if (qs.getMemoState() == 20)
-			{
+			} else if (qs.getMemoState() == 20) {
 				int random = getRandom(100);
 				
-				if (random < 50)
-				{
+				if (random < 50) {
 					qs.giveItems(AQUASTONE_RING, 1);
-				}
-				else if (random < 80)
-				{
+				} else if (random < 80) {
 					qs.giveItems(SCRL_OF_ENCH_WP_C, 1);
-				}
-				else if (random < 98)
-				{
+				} else if (random < 98) {
 					qs.giveItems(MOONSTONE_EARING, 1);
-				}
-				else
-				{
+				} else {
 					qs.giveItems(DRAKE_LEATHER_MAIL, 1);
 				}
 			}
-		}
-		else if (i3 == 0)
-		{
-			if (qs.getMemoState() == 10)
-			{
+		} else if (i3 == 0) {
+			if (qs.getMemoState() == 10) {
 				int random = getRandom(100);
 				
-				if (random < 50)
-				{
+				if (random < 50) {
 					qs.giveItems(MOLD_HARDENER, 1);
-				}
-				else if (random < 80)
-				{
+				} else if (random < 80) {
 					qs.giveItems(SCRL_OF_ENCH_AM_C, 1);
-				}
-				else if (random < 98)
-				{
+				} else if (random < 98) {
 					qs.giveItems(BLACKSMITH_S_FRAME, 1);
-				}
-				else
-				{
+				} else {
 					qs.giveItems(NECKLACE_OF_MERMAID, 1);
 				}
-			}
-			else if (qs.getMemoState() == 20)
-			{
+			} else if (qs.getMemoState() == 20) {
 				int random = getRandom(100);
 				
-				if (random < 50)
-				{
+				if (random < 50) {
 					qs.giveItems(SCRL_OF_ENCH_WP_C, 1);
-				}
-				else if (random < 80)
-				{
+				} else if (random < 80) {
 					qs.giveItems(GREAT_HELMET, 1);
-				}
-				else if (random < 98)
-				{
+				} else if (random < 98) {
 					qs.giveItems(DRAKE_LEATHER_BOOTS, 1);
 					qs.giveItems(BLESSED_GLOVES, 1);
-				}
-				else
-				{
+				} else {
 					qs.giveItems(SAMURAI_LONGSWORD, 1);
 				}
 			}
@@ -520,8 +417,7 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 	/**
 	 * @param qs
 	 */
-	private void createBingoBoard(QuestState qs)
-	{
+	private void createBingoBoard(QuestState qs) {
 		//@formatter:off
 		Integer[] arr = {1,2,3,4,5,6,7,8,9};
 		//@formatter:on
@@ -534,43 +430,34 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 	 * @param qs
 	 * @return
 	 */
-	private int getMatchedBingoLineCount(QuestState qs)
-	{
+	private int getMatchedBingoLineCount(QuestState qs) {
 		String[] q = qs.get("selected").split(" ");
 		int found = 0;
 		// Horizontal
-		if ((q[0] + q[1] + q[2]).matches("\\d+"))
-		{
+		if ((q[0] + q[1] + q[2]).matches("\\d+")) {
 			found++;
 		}
-		if ((q[3] + q[4] + q[5]).matches("\\d+"))
-		{
+		if ((q[3] + q[4] + q[5]).matches("\\d+")) {
 			found++;
 		}
-		if ((q[6] + q[7] + q[8]).matches("\\d+"))
-		{
+		if ((q[6] + q[7] + q[8]).matches("\\d+")) {
 			found++;
 		}
 		// Vertical
-		if ((q[0] + q[3] + q[6]).matches("\\d+"))
-		{
+		if ((q[0] + q[3] + q[6]).matches("\\d+")) {
 			found++;
 		}
-		if ((q[1] + q[4] + q[7]).matches("\\d+"))
-		{
+		if ((q[1] + q[4] + q[7]).matches("\\d+")) {
 			found++;
 		}
-		if ((q[2] + q[5] + q[8]).matches("\\d+"))
-		{
+		if ((q[2] + q[5] + q[8]).matches("\\d+")) {
 			found++;
 		}
 		// Diagonal
-		if ((q[0] + q[4] + q[8]).matches("\\d+"))
-		{
+		if ((q[0] + q[4] + q[8]).matches("\\d+")) {
 			found++;
 		}
-		if ((q[2] + q[4] + q[6]).matches("\\d+"))
-		{
+		if ((q[2] + q[4] + q[6]).matches("\\d+")) {
 			found++;
 		}
 		return found;
@@ -580,30 +467,24 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 	 * @param qs
 	 * @param num
 	 */
-	private void selectBingoNumber(QuestState qs, int num)
-	{
+	private void selectBingoNumber(QuestState qs, int num) {
 		String[] numbers = qs.get("numbers").split(" ");
 		int pos = 0;
-		for (int i = 0; i < numbers.length; i++)
-		{
-			if (Integer.parseInt(numbers[i]) == num)
-			{
+		for (int i = 0; i < numbers.length; i++) {
+			if (Integer.parseInt(numbers[i]) == num) {
 				pos = i;
 				break;
 			}
 		}
 		String[] selected = qs.get("selected").split(" ");
-		for (int i = 0; i < selected.length; i++)
-		{
-			if (i == pos)
-			{
+		for (int i = 0; i < selected.length; i++) {
+			if (i == pos) {
 				selected[i] = num + "";
 				continue;
 			}
 		}
 		String result = selected[0];
-		for (int i = 1; i < selected.length; i++)
-		{
+		for (int i = 1; i < selected.length; i++) {
 			result += " " + selected[i];
 		}
 		qs.set("selected", result);
@@ -614,8 +495,7 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 	 * @param num
 	 * @return
 	 */
-	private boolean isSelectedBingoNumber(QuestState qs, int num)
-	{
+	private boolean isSelectedBingoNumber(QuestState qs, int num) {
 		return qs.get("selected").contains(num + "");
 	}
 	
@@ -624,8 +504,7 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 	 * @param num
 	 * @return
 	 */
-	private int getNumberFromBingoBoard(QuestState qs, int num)
-	{
+	private int getNumberFromBingoBoard(QuestState qs, int num) {
 		return Integer.parseInt(qs.get("numbers").split(" ")[num]);
 	}
 	
@@ -633,173 +512,143 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 	 * @param qs
 	 * @return
 	 */
-	private int getBingoSelectCount(QuestState qs)
-	{
+	private int getBingoSelectCount(QuestState qs) {
 		String current = qs.get("selected");
 		return current.replaceAll("\\D", "").length();
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPlayerFromParty(killer, npc);
-		if (qs != null)
-		{
-			switch (npc.getId())
-			{
+		if (qs != null) {
+			switch (npc.getId()) {
 				case HUNTER_GARGOYLE:
-					if (getRandom(1000) < 328)
-					{
+					if (getRandom(1000) < 328) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case DUST_WIND:
-					if (getRandom(100) < 35)
-					{
+					if (getRandom(100) < 35) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case THUNDER_WYRM:
-					if (getRandom(1000) < 312)
-					{
+					if (getRandom(1000) < 312) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case DUST_WIND_HOLD:
-					if (getRandom(100) < 35)
-					{
+					if (getRandom(100) < 35) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case THUNDER_WYRM_HOLD:
-					if (getRandom(1000) < 312)
-					{
+					if (getRandom(1000) < 312) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case HUNTER_GARGOYLE_HOLD:
-					if (getRandom(1000) < 328)
-					{
+					if (getRandom(1000) < 328) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case GIANT_MONSTEREYE:
-					if (getRandom(1000) < 176)
-					{
+					if (getRandom(1000) < 176) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case ROT_GOLEM:
-					if (getRandom(1000) < 226)
-					{
+					if (getRandom(1000) < 226) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case WEIRD_DRAKE:
-					if (getRandom(1000) < 218)
-					{
+					if (getRandom(1000) < 218) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case CARINKAIN:
-					if (getRandom(1000) < 216)
-					{
+					if (getRandom(1000) < 216) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case GRAVE_GUARD:
-					if (getRandom(1000) < 312)
-					{
+					if (getRandom(1000) < 312) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case TULBEN:
-					if (getRandom(1000) < 522)
-					{
+					if (getRandom(1000) < 522) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case DRAGON_BEARER_CHIEF:
-					if (getRandom(100) < 38)
-					{
+					if (getRandom(100) < 38) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case DRAGON_BEARER_WARRIOR:
-					if (getRandom(100) < 39)
-					{
+					if (getRandom(100) < 39) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case DRAGON_BEARER_ARCHER:
-					if (getRandom(1000) < 372)
-					{
+					if (getRandom(1000) < 372) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case CONGERER_LORD:
-					if (getRandom(1000) < 802)
-					{
+					if (getRandom(1000) < 802) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case CONGERER:
-					if (getRandom(1000) < 844)
-					{
+					if (getRandom(1000) < 844) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case NIGHTMARE_GUIDE:
-					if (getRandom(1000) < 118)
-					{
+					if (getRandom(1000) < 118) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case NIGHTMARE_KEEPER:
-					if (getRandom(100) < 17)
-					{
+					if (getRandom(100) < 17) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case NIGHTMARE_LORD:
-					if (getRandom(1000) < 144)
-					{
+					if (getRandom(1000) < 144) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case CADEINE:
-					if (getRandom(1000) < 162)
-					{
+					if (getRandom(1000) < 162) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case SANHIDRO:
-					if (getRandom(100) < 25)
-					{
+					if (getRandom(100) < 25) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case CONNABI:
-					if (getRandom(1000) < 272)
-					{
+					if (getRandom(1000) < 272) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case BARTAL:
-					if (getRandom(100) < 27)
-					{
+					if (getRandom(100) < 27) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case LUMINUN:
-					if (getRandom(100) < 32)
-					{
+					if (getRandom(100) < 32) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
 				case INNERSEN:
-					if (getRandom(1000) < 346)
-					{
+					if (getRandom(1000) < 346) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_IRONGATE_MEDAL, 1, 0, 1, true);
 					}
 					break;
@@ -809,25 +658,20 @@ public final class Q00384_WarehouseKeepersPastime extends Quest
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private QuestState getRandomPlayerFromParty(L2PcInstance player, L2Npc npc)
-	{
+	private QuestState getRandomPlayerFromParty(L2PcInstance player, L2Npc npc) {
 		QuestState qs = getQuestState(player, false);
 		final List<QuestState> candidates = new ArrayList<>();
 		
-		if ((qs != null) && qs.isStarted())
-		{
+		if ((qs != null) && qs.isStarted()) {
 			candidates.add(qs);
 			candidates.add(qs);
 		}
 		
-		if (player.isInParty())
-		{
-			player.getParty().getMembers().stream().forEach(pm ->
-			{
+		if (player.isInParty()) {
+			player.getParty().getMembers().stream().forEach(pm -> {
 				
 				QuestState qss = getQuestState(pm, false);
-				if ((qss != null) && qss.isStarted() && Util.checkIfInRange(1500, npc, pm, true))
-				{
+				if ((qss != null) && qss.isStarted() && Util.checkIfInRange(1500, npc, pm, true)) {
 					candidates.add(qss);
 				}
 			});
