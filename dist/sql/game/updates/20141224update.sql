@@ -1,1 +1,0 @@
-UPDATE `character_variables` SET `val` = '1' WHERE `var` = '2ND_CLASS_DIAMOND_REWARD' AND `val` = 'true';

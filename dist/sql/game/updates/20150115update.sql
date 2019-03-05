@@ -1,1 +1,0 @@
-UPDATE character_quests SET name='Q00023_LidiasHeart' WHERE name='23_LidiasHeart'; 

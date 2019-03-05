@@ -1,1 +1,0 @@
-UPDATE character_quests SET name='Q00337_AudienceWithTheLandDragon' WHERE name='337_AudienceWithTheLandDragon'; 

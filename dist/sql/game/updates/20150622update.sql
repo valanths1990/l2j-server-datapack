@@ -1,1 +1,0 @@
-UPDATE character_quests SET name='Q00422_RepentYourSins' WHERE name='422_RepentYourSins'; 
