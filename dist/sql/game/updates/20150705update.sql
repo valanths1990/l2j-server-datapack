@@ -1,1 +1,0 @@
-ALTER TABLE `characters` CHANGE COLUMN `createDate` `createDate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `vitality_points`;

@@ -1,1 +1,0 @@
-UPDATE character_quests SET name='Q00426_QuestForFishingShot' WHERE name='426_FishingShot'; 
