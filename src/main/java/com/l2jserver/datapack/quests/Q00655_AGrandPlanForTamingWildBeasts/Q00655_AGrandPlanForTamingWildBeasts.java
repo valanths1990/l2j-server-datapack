@@ -23,7 +23,7 @@ import java.util.Calendar;
 
 import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.enums.audio.Sound;
-import com.l2jserver.gameserver.instancemanager.CHSiegeManager;
+import com.l2jserver.gameserver.instancemanager.ClanHallSiegeManager;
 import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -199,7 +199,7 @@ public final class Q00655_AGrandPlanForTamingWildBeasts extends Quest
 	 */
 	private static String getSiegeDate()
 	{
-		final SiegableHall hall = CHSiegeManager.getInstance().getSiegableHall(ClanHallSiegeEngine.BEAST_FARM);
+		final SiegableHall hall = ClanHallSiegeManager.getInstance().getSiegableHall(ClanHallSiegeEngine.BEAST_FARM);
 		if (hall != null)
 		{
 			final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -214,7 +214,7 @@ public final class Q00655_AGrandPlanForTamingWildBeasts extends Quest
 	 */
 	private static long getMinutesToSiege()
 	{
-		final SiegableHall hall = CHSiegeManager.getInstance().getSiegableHall(ClanHallSiegeEngine.BEAST_FARM);
+		final SiegableHall hall = ClanHallSiegeManager.getInstance().getSiegableHall(ClanHallSiegeEngine.BEAST_FARM);
 		if (hall != null)
 		{
 			return (hall.getNextSiegeTime() - Calendar.getInstance().getTimeInMillis()) / 3600;

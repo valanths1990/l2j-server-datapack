@@ -23,6 +23,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -38,7 +40,11 @@ import com.l2jserver.gameserver.util.IXmlReader;
  */
 public final class HellboundSpawns implements IXmlReader
 {
+
+	private static final Logger LOG = LoggerFactory.getLogger(HellboundSpawns.class);
+	
 	private final List<L2Spawn> _spawns = new ArrayList<>();
+	
 	private final Map<Integer, int[]> _spawnLevels = new HashMap<>();
 	
 	public HellboundSpawns()
@@ -51,8 +57,8 @@ public final class HellboundSpawns implements IXmlReader
 	{
 		_spawns.clear();
 		_spawnLevels.clear();
-		parseDatapackFile("data/scripts/hellbound/hellboundSpawns.xml");
-		LOG.info("{}: Loaded {} Hellbound spawns.", getClass().getSimpleName(), _spawns.size());
+		parseDatapackFile("data/hellbound/hellboundSpawns.xml");
+		LOG.info("Loaded {} Hellbound spawns.", _spawns.size());
 	}
 	
 	@Override
@@ -81,7 +87,7 @@ public final class HellboundSpawns implements IXmlReader
 			final Node id = npc.getAttributes().getNamedItem("id");
 			if (id == null)
 			{
-				LOG.error("{}:  Missing NPC ID, skipping record!", getClass().getSimpleName());
+				LOG.warn("Missing NPC Id, skipping record!");
 				return;
 			}
 			
@@ -124,7 +130,7 @@ public final class HellboundSpawns implements IXmlReader
 				spawn.setAmount(1);
 				if (loc == null)
 				{
-					LOG.warn("{}: Hellbound spawn location is null!", getClass().getSimpleName());
+					LOG.warn("Hellbound spawn location is null!");
 				}
 				spawn.setLocation(loc);
 				spawn.setRespawnDelay(delay, randomInterval);
@@ -136,9 +142,9 @@ public final class HellboundSpawns implements IXmlReader
 				SpawnTable.getInstance().addNewSpawn(spawn, false);
 				_spawns.add(spawn);
 			}
-			catch (SecurityException | ClassNotFoundException | NoSuchMethodException e)
+			catch (Exception ex)
 			{
-				LOG.warn("{}: Couldn't load spawns!", getClass().getSimpleName(), e);
+				LOG.warn("Couldn't load spawns!", ex);
 			}
 		}
 	}

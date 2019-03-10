@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.l2jserver.gameserver.enums.audio.Sound;
-import com.l2jserver.gameserver.instancemanager.CHSiegeManager;
+import com.l2jserver.gameserver.instancemanager.ClanHallSiegeManager;
 import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -39,7 +39,7 @@ import com.l2jserver.gameserver.model.quest.State;
 public final class Q00504_CompetitionForTheBanditStronghold extends Quest
 {
 	// Misc
-	private static final SiegableHall BANDIT_STRONGHOLD = CHSiegeManager.getInstance().getSiegableHall(35);
+	private static final SiegableHall BANDIT_STRONGHOLD = ClanHallSiegeManager.getInstance().getSiegableHall(35);
 	// NPC
 	private static final int MESSENGER = 35437;
 	// Monsters

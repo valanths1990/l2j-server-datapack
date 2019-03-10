@@ -23,6 +23,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -36,6 +38,8 @@ import com.l2jserver.gameserver.util.IXmlReader;
  */
 public class NpcBuffersData implements IXmlReader
 {
+	private static final Logger LOG = LoggerFactory.getLogger(NpcBuffersData.class);
+	
 	private final Map<Integer, NpcBufferData> _npcBuffers = new HashMap<>();
 	
 	protected NpcBuffersData()
@@ -46,8 +50,8 @@ public class NpcBuffersData implements IXmlReader
 	@Override
 	public void load()
 	{
-		parseDatapackFile("data/scripts/ai/npc/NpcBuffers/NpcBuffersData.xml");
-		LOG.info("{}: Loaded: {} buffers data.", getClass().getSimpleName(), _npcBuffers.size());
+		parseDatapackFile("data/ai/npc/buffer/NpcBuffersData.xml");
+		LOG.info("Loaded {} buffers data.", _npcBuffers.size());
 	}
 	
 	@Override

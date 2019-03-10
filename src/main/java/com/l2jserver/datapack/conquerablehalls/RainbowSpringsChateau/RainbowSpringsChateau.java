@@ -37,7 +37,7 @@ import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.datatables.SpawnTable;
-import com.l2jserver.gameserver.instancemanager.CHSiegeManager;
+import com.l2jserver.gameserver.instancemanager.ClanHallSiegeManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.L2Object;
@@ -72,7 +72,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 		{
 			if (_rainbow == null)
 			{
-				_rainbow = CHSiegeManager.getInstance().getSiegableHall(RAINBOW_SPRINGS);
+				_rainbow = ClanHallSiegeManager.getInstance().getSiegableHall(RAINBOW_SPRINGS);
 			}
 			
 			int spotLeft = 4;
@@ -137,7 +137,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 		{
 			if (_rainbow == null)
 			{
-				_rainbow = CHSiegeManager.getInstance().getSiegableHall(RAINBOW_SPRINGS);
+				_rainbow = ClanHallSiegeManager.getInstance().getSiegableHall(RAINBOW_SPRINGS);
 			}
 			
 			// XXX _rainbow.siegeStarts();
@@ -169,7 +169,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 		{
 			if (_rainbow == null)
 			{
-				_rainbow = CHSiegeManager.getInstance().getSiegableHall(RAINBOW_SPRINGS);
+				_rainbow = ClanHallSiegeManager.getInstance().getSiegableHall(RAINBOW_SPRINGS);
 			}
 			
 			unSpawnGourds();
@@ -283,7 +283,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 		
 		loadAttackers();
 		
-		_rainbow = CHSiegeManager.getInstance().getSiegableHall(RAINBOW_SPRINGS);
+		_rainbow = ClanHallSiegeManager.getInstance().getSiegableHall(RAINBOW_SPRINGS);
 		if (_rainbow != null)
 		{
 			long delay = _rainbow.getNextSiegeTime();
@@ -910,7 +910,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 	{
 		if (_rainbow == null)
 		{
-			_rainbow = CHSiegeManager.getInstance().getSiegableHall(RAINBOW_SPRINGS);
+			_rainbow = ClanHallSiegeManager.getInstance().getSiegableHall(RAINBOW_SPRINGS);
 		}
 		
 		_rainbow.setNextSiegeDate(date);

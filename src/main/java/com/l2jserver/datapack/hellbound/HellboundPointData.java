@@ -21,6 +21,8 @@ package com.l2jserver.datapack.hellbound;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -33,6 +35,9 @@ import com.l2jserver.gameserver.util.IXmlReader;
  */
 public final class HellboundPointData implements IXmlReader
 {
+
+	private static final Logger LOG = LoggerFactory.getLogger(HellboundPointData.class);
+	
 	private final Map<Integer, int[]> _pointsInfo = new HashMap<>();
 	
 	public HellboundPointData()
@@ -44,8 +49,8 @@ public final class HellboundPointData implements IXmlReader
 	public void load()
 	{
 		_pointsInfo.clear();
-		parseDatapackFile("data/scripts/hellbound/hellboundTrustPoints.xml");
-		LOG.info("{}: Loaded {} trust point reward data.", getClass().getSimpleName(), _pointsInfo.size());
+		parseDatapackFile("data/hellbound/hellboundTrustPoints.xml");
+		LOG.info("Loaded {} trust point reward data.", _pointsInfo.size());
 	}
 	
 	@Override
@@ -75,7 +80,7 @@ public final class HellboundPointData implements IXmlReader
 			Node att = attrs.getNamedItem("id");
 			if (att == null)
 			{
-				LOG.error("{}: Missing NPC ID, skipping record!", getClass().getSimpleName());
+				LOG.warn("Missing NPC Id, skipping record!");
 				return;
 			}
 			
@@ -83,7 +88,7 @@ public final class HellboundPointData implements IXmlReader
 			att = attrs.getNamedItem("points");
 			if (att == null)
 			{
-				LOG.error("{}: Missing reward point info for NPC ID {}, skipping record", getClass().getSimpleName(), npcId);
+				LOG.warn("Missing reward point info for NPC Id {}, skipping record", npcId);
 				return;
 			}
 			
@@ -91,7 +96,7 @@ public final class HellboundPointData implements IXmlReader
 			att = attrs.getNamedItem("minHellboundLvl");
 			if (att == null)
 			{
-				LOG.error("{}: Missing minHellboundLvl info for NPC ID {}, skipping record!", getClass().getSimpleName());
+				LOG.warn("Missing minHellboundLvl info for NPC Id {}, skipping record!");
 				return;
 			}
 			
@@ -99,7 +104,7 @@ public final class HellboundPointData implements IXmlReader
 			att = attrs.getNamedItem("maxHellboundLvl");
 			if (att == null)
 			{
-				LOG.error("{}: Missing maxHellboundLvl info for NPC ID {}, skipping record!", getClass().getSimpleName(), npcId);
+				LOG.warn("Missing maxHellboundLvl info for NPC Id {}, skipping record!", npcId);
 				return;
 			}
 			
