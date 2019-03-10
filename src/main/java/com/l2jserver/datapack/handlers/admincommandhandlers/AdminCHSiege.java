@@ -23,7 +23,7 @@ import java.util.Calendar;
 import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.instancemanager.CHSiegeManager;
+import com.l2jserver.gameserver.instancemanager.ClanHallSiegeManager;
 import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -330,7 +330,7 @@ public final class AdminCHSiege implements IAdminCommandHandler
 			return null;
 		}
 		
-		SiegableHall hall = CHSiegeManager.getInstance().getSiegableHall(ch);
+		SiegableHall hall = ClanHallSiegeManager.getInstance().getSiegableHall(ch);
 		
 		if (hall == null)
 		{

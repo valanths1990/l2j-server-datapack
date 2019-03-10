@@ -18,6 +18,9 @@
  */
 package com.l2jserver.datapack.ai.fantasy_isle;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.instancemanager.HandysBlockCheckerManager;
 import com.l2jserver.gameserver.model.ArenaParticipantsHolder;
@@ -35,6 +38,9 @@ import com.l2jserver.gameserver.network.serverpackets.ExCubeGameTeamList;
  */
 public class HandysBlockCheckerEvent extends Quest
 {
+	
+	private static final Logger LOG = LoggerFactory.getLogger(HandysBlockCheckerEvent.class);
+	
 	// Arena Managers
 	private static final int A_MANAGER_1 = 32521;
 	private static final int A_MANAGER_2 = 32522;
@@ -101,11 +107,11 @@ public class HandysBlockCheckerEvent extends Quest
 		if (Config.ENABLE_BLOCK_CHECKER_EVENT)
 		{
 			new HandysBlockCheckerEvent();
-			_log.info("Handy's Block Checker Event is enabled");
+			LOG.info("Handy's Block Checker event is enabled.");
 		}
 		else
 		{
-			_log.info("Handy's Block Checker Event is disabled");
+			LOG.info("Handy's Block Checker event is disabled.");
 		}
 	}
 }

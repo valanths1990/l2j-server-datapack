@@ -19,7 +19,7 @@
 package com.l2jserver.datapack.handlers.effecthandlers.instant;
 
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
-import com.l2jserver.gameserver.instancemanager.CHSiegeManager;
+import com.l2jserver.gameserver.instancemanager.ClanHallSiegeManager;
 import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.FortManager;
 import com.l2jserver.gameserver.model.StatsSet;
@@ -70,7 +70,7 @@ public final class HeadquarterCreate extends AbstractEffect
 		flag.spawnMe(player.getX(), player.getY(), player.getZ() + 50);
 		final Castle castle = CastleManager.getInstance().getCastle(player);
 		final Fort fort = FortManager.getInstance().getFort(player);
-		final SiegableHall hall = CHSiegeManager.getInstance().getNearbyClanHall(player);
+		final SiegableHall hall = ClanHallSiegeManager.getInstance().getNearbyClanHall(player);
 		if (castle != null)
 		{
 			castle.getSiege().getFlag(player.getClan()).add(flag);

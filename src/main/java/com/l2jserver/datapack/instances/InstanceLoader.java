@@ -18,8 +18,8 @@
  */
 package com.l2jserver.datapack.instances;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.l2jserver.datapack.instances.CastleDungeon.CastleDungeon;
 import com.l2jserver.datapack.instances.CavernOfThePirateCaptain.CavernOfThePirateCaptain;
@@ -56,12 +56,10 @@ import com.l2jserver.datapack.instances.SecretAreaInTheKeucereusFortress1.Secret
  * Instance class-loader.
  * @author FallenAngel
  */
-public final class InstanceLoader
-{
-	private static final Logger _log = Logger.getLogger(InstanceLoader.class.getName());
+public final class InstanceLoader {
+	private static final Logger LOG = LoggerFactory.getLogger(InstanceLoader.class);
 	
-	private static final Class<?>[] SCRIPTS =
-	{
+	private static final Class<?>[] SCRIPTS = {
 		CastleDungeon.class,
 		CavernOfThePirateCaptain.class,
 		CrystalCaverns.class,
@@ -94,18 +92,13 @@ public final class InstanceLoader
 		SecretAreaInTheKeucereusFortress1.class,
 	};
 	
-	public static void main(String[] args)
-	{
-		_log.info(InstanceLoader.class.getSimpleName() + ": Loading Instances scripts.");
-		for (Class<?> script : SCRIPTS)
-		{
-			try
-			{
+	public static void main(String[] args) {
+		LOG.info("Loading Instances scripts.");
+		for (Class<?> script : SCRIPTS) {
+			try {
 				script.getDeclaredConstructor().newInstance();
-			}
-			catch (Exception e)
-			{
-				_log.log(Level.SEVERE, InstanceLoader.class.getSimpleName() + ": Failed loading " + script.getSimpleName() + ":", e);
+			} catch (Exception ex) {
+				LOG.warn("Failed loading {}!", script.getSimpleName(), ex);
 			}
 		}
 	}

@@ -18,7 +18,8 @@
  */
 package com.l2jserver.datapack.handlers;
 
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.l2jserver.datapack.handlers.effecthandlers.consume.ConsumeChameleonRest;
 import com.l2jserver.datapack.handlers.effecthandlers.consume.ConsumeFakeDeath;
@@ -185,11 +186,12 @@ import com.l2jserver.gameserver.model.effects.AbstractEffect;
 
 /**
  * Effect Master handler.
- * @author BiggBoss, Zoey76
+ * @author BiggBoss
+ * @author Zoey76
  */
 public final class EffectMasterHandler
 {
-	private static final Logger _log = Logger.getLogger(EffectMasterHandler.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(EffectMasterHandler.class);
 	
 	private static final Class<?>[] EFFECTS =
 	{
@@ -362,6 +364,6 @@ public final class EffectMasterHandler
 		{
 			EffectHandler.getInstance().registerHandler((Class<? extends AbstractEffect>) c);
 		}
-		_log.info(EffectMasterHandler.class.getSimpleName() + ": Loaded " + EffectHandler.getInstance().size() + " effect handlers.");
+		LOG.info("Loaded {} effect handlers.", EffectHandler.getInstance().size());
 	}
 }

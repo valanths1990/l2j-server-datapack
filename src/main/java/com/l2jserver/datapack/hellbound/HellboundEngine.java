@@ -18,6 +18,9 @@
  */
 package com.l2jserver.datapack.hellbound;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.config.Config;
@@ -35,6 +38,9 @@ import com.l2jserver.gameserver.util.Broadcast;
  */
 public final class HellboundEngine extends AbstractNpcAI
 {
+	
+	private static final Logger LOG = LoggerFactory.getLogger(HellboundEngine.class);
+	
 	// @formatter:off
 	private static final int[][] DOOR_LIST =
 	{
@@ -66,9 +72,9 @@ public final class HellboundEngine extends AbstractNpcAI
 		
 		startQuestTimer(UPDATE_EVENT, 1000, null, null);
 		
-		_log.info(HellboundEngine.class.getSimpleName() + ": Level: " + getLevel());
-		_log.info(HellboundEngine.class.getSimpleName() + ": Trust: " + getTrust());
-		_log.info(HellboundEngine.class.getSimpleName() + ": Status: " + (isLocked() ? "locked." : "unlocked."));
+		LOG.info("Level {}.", getLevel());
+		LOG.info("Trust {}.", getTrust());
+		LOG.info("Status {}.", (isLocked() ? "locked" : "unlocked"));
 	}
 	
 	@Override
@@ -148,11 +154,11 @@ public final class HellboundEngine extends AbstractNpcAI
 		
 		if (added > 0)
 		{
-			_log.info(getClass().getSimpleName() + ": Spawned " + added + " NPCs.");
+			LOG.info("Spawned {} NPCs.", added);
 		}
 		if (deleted > 0)
 		{
-			_log.info(getClass().getSimpleName() + ": Removed " + deleted + " NPCs.");
+			LOG.info("Removed {} NPCs.", deleted);
 		}
 	}
 	
@@ -176,7 +182,7 @@ public final class HellboundEngine extends AbstractNpcAI
 			return;
 		}
 		
-		_log.info(HellboundEngine.class.getSimpleName() + ": Changing level from " + getLevel() + " to " + lvl + ".");
+		LOG.info("Changing level from {} to {}.", getLevel(), lvl);
 		
 		GlobalVariablesManager.getInstance().set("HBLevel", lvl);
 	}
@@ -284,16 +290,16 @@ public final class HellboundEngine extends AbstractNpcAI
 					}
 				}
 			}
-			catch (Exception e)
+			catch (Exception ex)
 			{
-				_log.warning(getClass().getSimpleName() + " : Doors problem!" + e.getMessage());
+				LOG.warn("Doors problem!", ex);
 			}
 		}
 		
 		if (_cachedLevel > 0)
 		{
 			Broadcast.toAllOnlinePlayers(ANNOUNCEMENT.replace("%lvl%", String.valueOf(newLevel)));
-			_log.info(HellboundEngine.class.getSimpleName() + ": New level: " + newLevel);
+			LOG.info("New level {}.", newLevel);
 		}
 		_cachedLevel = newLevel;
 	}
