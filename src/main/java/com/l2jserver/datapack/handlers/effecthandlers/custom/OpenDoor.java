@@ -18,6 +18,7 @@
  */
 package com.l2jserver.datapack.handlers.effecthandlers.custom;
 
+import com.l2jserver.commons.util.Rnd;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -27,7 +28,6 @@ import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.entity.Instance;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.util.Rnd;
 
 /**
  * Open Door effect implementation.

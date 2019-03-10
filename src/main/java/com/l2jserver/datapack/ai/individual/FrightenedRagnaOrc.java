@@ -18,6 +18,7 @@
  */
 package com.l2jserver.datapack.ai.individual;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
@@ -27,8 +28,6 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Frightened Ragna Orc AI.

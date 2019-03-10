@@ -18,13 +18,12 @@
  */
 package com.l2jserver.datapack.village_master.DarkElfChange1;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.enums.CategoryType;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Dark Elf class transfer AI.

@@ -18,8 +18,9 @@
  */
 package com.l2jserver.datapack.handlers.effecthandlers.instant;
 
-import com.l2jserver.gameserver.config.Config;
+import com.l2jserver.commons.util.Rnd;
 import com.l2jserver.gameserver.GeoData;
+import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.StatsSet;
@@ -40,7 +41,6 @@ import com.l2jserver.gameserver.model.zone.type.L2FishingZone;
 import com.l2jserver.gameserver.model.zone.type.L2WaterZone;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.util.Util;
-import com.l2jserver.util.Rnd;
 
 /**
  * Fishing effect implementation.

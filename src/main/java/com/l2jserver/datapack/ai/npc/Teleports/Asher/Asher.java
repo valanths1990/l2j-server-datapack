@@ -18,12 +18,11 @@
  */
 package com.l2jserver.datapack.ai.npc.Teleports.Asher;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Asher AI.

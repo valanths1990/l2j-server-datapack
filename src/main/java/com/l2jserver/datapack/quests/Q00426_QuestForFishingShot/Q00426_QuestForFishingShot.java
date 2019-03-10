@@ -27,10 +27,9 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
-import com.l2jserver.util.Rnd;
 
 /**
- * Quest for Fishing Shot (426)<br>
+ * Fishing Shot (426)
  * @author Zealar
  */
 public class Q00426_QuestForFishingShot extends Quest {
@@ -370,7 +369,7 @@ public class Q00426_QuestForFishingShot extends Quest {
 		final QuestState qs = getRandomPartyMemberState(killer, -1, 2, npc);
 		if (qs != null) {
 			if (MOBS_SPECIAL.containsKey(npc.getId())) {
-				if (Rnd.get(1000) <= MOBS_SPECIAL.get(npc.getId())._chance) {
+				if (getRandom(1000) <= MOBS_SPECIAL.get(npc.getId())._chance) {
 					rewardItems(qs.getPlayer(), SWEET_FLUID, MOBS_SPECIAL.get(npc.getId())._reward + 1);
 				}
 				else {
@@ -379,7 +378,7 @@ public class Q00426_QuestForFishingShot extends Quest {
 				playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 			else {
-				if (Rnd.get(1000) <= MOBS.get(npc.getId())._chance) {
+				if (getRandom(1000) <= MOBS.get(npc.getId())._chance) {
 					rewardItems(qs.getPlayer(), SWEET_FLUID, MOBS.get(npc.getId())._reward);
 					playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 				}

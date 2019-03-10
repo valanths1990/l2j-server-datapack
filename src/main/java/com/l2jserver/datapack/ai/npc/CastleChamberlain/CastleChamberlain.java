@@ -25,8 +25,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-import com.l2jserver.gameserver.config.Config;
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.SevenSigns;
+import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.data.sql.impl.TeleportLocationTable;
 import com.l2jserver.gameserver.instancemanager.CastleManorManager;
@@ -61,8 +62,6 @@ import com.l2jserver.gameserver.network.serverpackets.ExShowSeedInfo;
 import com.l2jserver.gameserver.network.serverpackets.ExShowSeedSetting;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.util.Util;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Castle Chamberlain AI.

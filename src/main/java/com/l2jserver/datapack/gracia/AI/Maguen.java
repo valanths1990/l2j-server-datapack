@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.gracia.AI;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
+import com.l2jserver.datapack.gracia.AI.NPC.Nemo.Nemo;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
 import com.l2jserver.gameserver.model.L2Object;
@@ -28,9 +30,6 @@ import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.datapack.gracia.AI.NPC.Nemo.Nemo;
 
 /**
  * Maguen AI.

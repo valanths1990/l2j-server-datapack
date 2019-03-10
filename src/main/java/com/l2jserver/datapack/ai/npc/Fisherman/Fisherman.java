@@ -20,6 +20,7 @@ package com.l2jserver.datapack.ai.npc.Fisherman;
 
 import java.util.List;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.datatables.SkillData;
@@ -31,8 +32,6 @@ import com.l2jserver.gameserver.model.base.AcquireSkillType;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.AcquireSkillList;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Fisherman AI.

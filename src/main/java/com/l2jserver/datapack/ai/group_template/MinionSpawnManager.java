@@ -21,14 +21,13 @@ package com.l2jserver.datapack.ai.group_template;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.MinionHolder;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Minion Spawn Manager.

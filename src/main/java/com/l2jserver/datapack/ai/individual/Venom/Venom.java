@@ -21,6 +21,7 @@ package com.l2jserver.datapack.ai.individual.Venom;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.GlobalVariablesManager;
@@ -36,8 +37,6 @@ import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.ZoneId;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Venom AI on Rune Castle.

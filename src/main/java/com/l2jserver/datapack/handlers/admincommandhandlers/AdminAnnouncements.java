@@ -20,8 +20,8 @@ package com.l2jserver.datapack.handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.cache.HtmCache;
+import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.sql.impl.AnnouncementsTable;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.PageResult;

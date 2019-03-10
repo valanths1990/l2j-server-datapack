@@ -19,9 +19,8 @@
 package com.l2jserver.datapack.ai.npc.TownPets;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.ai.CtrlIntention;
+import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;

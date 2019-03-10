@@ -20,14 +20,13 @@ package com.l2jserver.datapack.ai.npc.BlackMarketeerOfMammon;
 
 import java.time.LocalTime;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Black Marketeer of Mammon - Exchange Adena for AA.

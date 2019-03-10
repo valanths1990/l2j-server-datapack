@@ -19,7 +19,6 @@
 package com.l2jserver.datapack.gracia.AI.NPC.ZealotOfShilen;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.actor.L2Character;
