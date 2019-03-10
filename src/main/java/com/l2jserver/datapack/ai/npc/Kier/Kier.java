@@ -18,13 +18,12 @@
  */
 package com.l2jserver.datapack.ai.npc.Kier;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.quest.QuestState;
-
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.datapack.quests.Q00115_TheOtherSideOfTruth.Q00115_TheOtherSideOfTruth;
 import com.l2jserver.datapack.quests.Q10283_RequestOfIceMerchant.Q10283_RequestOfIceMerchant;
+import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jserver.gameserver.model.quest.QuestState;
 
 /**
  * Kier AI.

@@ -19,7 +19,6 @@
 package com.l2jserver.datapack.ai.group_template;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.ai.CtrlEvent;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Attackable;

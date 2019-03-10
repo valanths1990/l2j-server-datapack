@@ -21,17 +21,19 @@ package com.l2jserver.datapack.ai.group_template;
 import java.util.logging.Level;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.interfaces.ILocational;
-import com.l2jserver.util.Rnd;
 
 /**
- * @author HorridoJoho, janiko, FinalDestination, lion
+ * Altars Of Sacrifice AI.
+ * @author HorridoJoho
+ * @author janiko
+ * @author FinalDestination
+ * @author lion
  */
 public final class AltarsOfSacrifice extends AbstractNpcAI
 {
@@ -55,12 +57,12 @@ public final class AltarsOfSacrifice extends AbstractNpcAI
 				throw new IllegalStateException();
 			}
 			
-			final L2Spawn spawn = new L2Spawn(_bossNpcIds[Rnd.get(_bossNpcIds.length)]);
+			final L2Spawn spawn = new L2Spawn(_bossNpcIds[getRandom(_bossNpcIds.length)]);
 			spawn.setAmount(1);
-			spawn.setHeading(Rnd.get(65536));
+			spawn.setHeading(getRandom(65536));
 			
-			int radius = Rnd.get(BOSS_MIN_SPAWN_RADIUS, BOSS_MAX_SPAWN_RADIUS);
-			double angleRadians = Rnd.get() * 2 * Math.PI;
+			int radius = getRandom(BOSS_MIN_SPAWN_RADIUS, BOSS_MAX_SPAWN_RADIUS);
+			double angleRadians = getRandom() * 2 * Math.PI;
 			int spawnX = (int) (radius * Math.cos(angleRadians)) + _middlePoint.getX();
 			int spawnY = (int) (radius * Math.sin(angleRadians)) + _middlePoint.getY();
 			

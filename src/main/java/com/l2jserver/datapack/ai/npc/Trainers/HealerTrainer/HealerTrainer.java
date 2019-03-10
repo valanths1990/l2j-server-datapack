@@ -21,7 +21,6 @@ package com.l2jserver.datapack.ai.npc.Trainers.HealerTrainer;
 import java.util.Collection;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.datatables.SkillData;

@@ -21,9 +21,10 @@ package com.l2jserver.datapack.ai.individual;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.l2jserver.gameserver.config.Config;
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ai.CtrlIntention;
+import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.MountType;
 import com.l2jserver.gameserver.enums.audio.Music;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
@@ -40,8 +41,6 @@ import com.l2jserver.gameserver.model.zone.type.L2BossZone;
 import com.l2jserver.gameserver.network.serverpackets.SocialAction;
 import com.l2jserver.gameserver.network.serverpackets.SpecialCamera;
 import com.l2jserver.gameserver.util.Util;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Valakas' AI.

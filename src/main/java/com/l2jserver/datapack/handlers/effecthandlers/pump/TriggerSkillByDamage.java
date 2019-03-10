@@ -18,6 +18,7 @@
  */
 package com.l2jserver.datapack.handlers.effecthandlers.pump;
 
+import com.l2jserver.commons.util.Rnd;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
 import com.l2jserver.gameserver.handler.TargetHandler;
@@ -34,7 +35,6 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 import com.l2jserver.gameserver.util.Util;
-import com.l2jserver.util.Rnd;
 
 /**
  * Trigger Skill By Damage effect implementation.

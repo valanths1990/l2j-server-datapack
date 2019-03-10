@@ -19,7 +19,6 @@
 package com.l2jserver.datapack.ai.npc.Teleports.SteelCitadelTeleport;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;

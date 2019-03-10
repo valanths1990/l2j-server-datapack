@@ -55,8 +55,8 @@ import com.l2jserver.gameserver.network.serverpackets.PartySmallWindowDeleteAll;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.network.serverpackets.UserInfo;
 import com.l2jserver.gameserver.util.HtmlUtil;
+import com.l2jserver.gameserver.util.StringUtil;
 import com.l2jserver.gameserver.util.Util;
-import com.l2jserver.util.StringUtil;
 
 /**
  * EditChar admin command implementation.

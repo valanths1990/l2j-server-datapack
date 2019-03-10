@@ -18,8 +18,8 @@
  */
 package com.l2jserver.datapack.quests.Q00904_DragonTrophyAntharas;
 
-import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.enums.QuestType;
+import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;

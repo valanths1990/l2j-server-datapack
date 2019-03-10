@@ -21,7 +21,6 @@ package com.l2jserver.datapack.custom.listeners;
 import java.util.logging.Level;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.model.actor.L2Attackable;
 import com.l2jserver.gameserver.model.events.Containers;
 import com.l2jserver.gameserver.model.events.EventType;
@@ -41,7 +40,6 @@ import com.l2jserver.gameserver.model.events.impl.sieges.castle.OnCastleSiegeSta
 import com.l2jserver.gameserver.model.events.listeners.ConsumerEventListener;
 import com.l2jserver.gameserver.model.events.returns.TerminateReturn;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
-import com.l2jserver.util.Rnd;
 
 /**
  * An example usage of Listeners.
@@ -133,7 +131,7 @@ public class ListenerTest extends AbstractNpcAI
 	public void OnCreatureKill(OnCreatureKill event)
 	{
 		// 70% chance to drop
-		if (Rnd.get(100) >= 70)
+		if (getRandom(100) >= 70)
 		{
 			return;
 		}
@@ -142,7 +140,7 @@ public class ListenerTest extends AbstractNpcAI
 		if ((event.getAttacker() != null) && event.getAttacker().isPlayable() && event.getTarget().isAttackable())
 		{
 			final L2Attackable monster = (L2Attackable) event.getTarget();
-			monster.dropItem(event.getAttacker().getActingPlayer(), new ItemHolder(57, Rnd.get(100, 1000)));
+			monster.dropItem(event.getAttacker().getActingPlayer(), new ItemHolder(57, getRandom(100, 1000)));
 		}
 	}
 	

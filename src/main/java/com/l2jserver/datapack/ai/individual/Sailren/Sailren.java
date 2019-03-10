@@ -18,6 +18,7 @@
  */
 package com.l2jserver.datapack.ai.individual.Sailren;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.instancemanager.GlobalVariablesManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.TeleportWhereType;
@@ -28,8 +29,6 @@ import com.l2jserver.gameserver.model.actor.instance.L2RaidBossInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.zone.type.L2NoRestartZone;
 import com.l2jserver.gameserver.network.serverpackets.SpecialCamera;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Sailren AI.

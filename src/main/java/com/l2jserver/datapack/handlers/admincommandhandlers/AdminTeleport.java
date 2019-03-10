@@ -42,7 +42,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2RaidBossInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.util.StringUtil;
+import com.l2jserver.gameserver.util.StringUtil;
 
 /**
  * This class handles following admin commands: - show_moves - show_teleport - teleport_to_character - move_to - teleport_character

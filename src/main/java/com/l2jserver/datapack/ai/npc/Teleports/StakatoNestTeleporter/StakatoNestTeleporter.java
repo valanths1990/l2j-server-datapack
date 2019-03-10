@@ -18,12 +18,11 @@
  */
 package com.l2jserver.datapack.ai.npc.Teleports.StakatoNestTeleporter;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
+import com.l2jserver.datapack.quests.Q00240_ImTheOnlyOneYouCanTrust.Q00240_ImTheOnlyOneYouCanTrust;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.datapack.quests.Q00240_ImTheOnlyOneYouCanTrust.Q00240_ImTheOnlyOneYouCanTrust;
 
 /**
  * Stakato Nest Teleport AI.

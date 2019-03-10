@@ -24,9 +24,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.datapack.quests.Q00692_HowtoOpposeEvil.Q00692_HowtoOpposeEvil;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlIntention;
+import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.enums.audio.Sound;

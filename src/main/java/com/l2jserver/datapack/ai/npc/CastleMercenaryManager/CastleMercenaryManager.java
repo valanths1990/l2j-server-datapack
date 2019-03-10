@@ -21,7 +21,6 @@ package com.l2jserver.datapack.ai.npc.CastleMercenaryManager;
 import java.util.StringTokenizer;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.SevenSigns;
 import com.l2jserver.gameserver.model.ClanPrivilege;
 import com.l2jserver.gameserver.model.PcCondOverride;

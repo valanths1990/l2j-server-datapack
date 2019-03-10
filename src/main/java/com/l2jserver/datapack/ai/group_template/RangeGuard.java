@@ -18,6 +18,7 @@
  */
 package com.l2jserver.datapack.ai.group_template;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -27,8 +28,6 @@ import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.util.Util;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Range Guard AI.

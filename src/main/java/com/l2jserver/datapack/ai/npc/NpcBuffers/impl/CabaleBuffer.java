@@ -21,7 +21,6 @@ package com.l2jserver.datapack.ai.npc.NpcBuffers.impl;
 import java.util.Collection;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.SevenSigns;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.datatables.SkillData;

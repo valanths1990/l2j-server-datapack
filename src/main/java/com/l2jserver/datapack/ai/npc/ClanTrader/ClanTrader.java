@@ -19,7 +19,6 @@
 package com.l2jserver.datapack.ai.npc.ClanTrader;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.model.ClanPrivilege;
 import com.l2jserver.gameserver.model.actor.L2Npc;

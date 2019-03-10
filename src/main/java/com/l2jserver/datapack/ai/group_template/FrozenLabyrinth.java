@@ -18,11 +18,10 @@
  */
 package com.l2jserver.datapack.ai.group_template;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Frozen Labyrinth AI.

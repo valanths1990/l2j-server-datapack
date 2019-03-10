@@ -18,6 +18,7 @@
  */
 package com.l2jserver.datapack.features.SkillTransfer;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.ClassListData;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
@@ -32,8 +33,6 @@ import com.l2jserver.gameserver.model.itemcontainer.PcInventory;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.util.Util;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Skill Transfer feature.

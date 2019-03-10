@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.hellbound.AI;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
+import com.l2jserver.datapack.hellbound.HellboundEngine;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
@@ -27,9 +29,6 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.datapack.hellbound.HellboundEngine;
 
 /**
  * Manages Amaskari's and minions' chat and some skill usage.

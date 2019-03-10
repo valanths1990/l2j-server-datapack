@@ -19,7 +19,6 @@
 package com.l2jserver.datapack.hellbound.AI.NPC.Shadai;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.GameTimeController;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Npc;

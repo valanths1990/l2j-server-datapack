@@ -18,12 +18,11 @@
  */
 package com.l2jserver.datapack.ai.npc.Asamah;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
+import com.l2jserver.datapack.quests.Q00111_ElrokianHuntersProof.Q00111_ElrokianHuntersProof;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.QuestState;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.datapack.quests.Q00111_ElrokianHuntersProof.Q00111_ElrokianHuntersProof;
 
 /**
  * Asamah AI.

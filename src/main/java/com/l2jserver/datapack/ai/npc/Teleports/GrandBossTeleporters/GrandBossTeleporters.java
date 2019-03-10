@@ -20,7 +20,6 @@ package com.l2jserver.datapack.ai.npc.Teleports.GrandBossTeleporters;
 
 import com.l2jserver.datapack.ai.individual.Valakas;
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;

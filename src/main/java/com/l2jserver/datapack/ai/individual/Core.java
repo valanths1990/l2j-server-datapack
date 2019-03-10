@@ -21,6 +21,7 @@ package com.l2jserver.datapack.ai.individual;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.audio.Music;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
@@ -32,8 +33,6 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Core AI.

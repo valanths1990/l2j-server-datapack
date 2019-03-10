@@ -18,6 +18,7 @@
  */
 package com.l2jserver.datapack.ai.npc.Summons.Pets;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.L2Summon;
@@ -33,8 +34,6 @@ import com.l2jserver.gameserver.model.skills.AbnormalType;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Util;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Improved Baby Pets AI.

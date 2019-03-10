@@ -26,7 +26,6 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.util.Util;
-import com.l2jserver.util.Rnd;
 
 /**
  * Dig Up the Sea of Spores! (356)
@@ -110,7 +109,7 @@ public final class Q00356_DigUpTheSeaOfSpores extends Quest
 			}
 			case "FINISH":
 			{
-				final int value = Rnd.get(100);
+				final int value = getRandom(100);
 				int adena = 0;
 				if (value < 20)
 				{

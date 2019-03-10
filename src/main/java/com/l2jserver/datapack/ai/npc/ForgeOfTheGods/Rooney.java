@@ -18,14 +18,13 @@
  */
 package com.l2jserver.datapack.ai.npc.ForgeOfTheGods;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Rooney AI

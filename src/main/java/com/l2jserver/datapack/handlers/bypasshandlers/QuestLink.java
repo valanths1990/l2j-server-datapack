@@ -39,7 +39,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.util.StringUtil;
+import com.l2jserver.gameserver.util.StringUtil;
 
 public class QuestLink implements IBypassHandler
 {

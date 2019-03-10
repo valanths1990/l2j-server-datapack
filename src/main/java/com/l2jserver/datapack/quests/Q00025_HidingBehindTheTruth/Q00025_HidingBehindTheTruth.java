@@ -33,7 +33,6 @@ import com.l2jserver.gameserver.model.quest.State;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
-import com.l2jserver.util.Rnd;
 
 /**
  * Hiding Behind the Truth (25)
@@ -261,7 +260,7 @@ public class Q00025_HidingBehindTheTruth extends Quest
 				{
 					htmltext = "31533-03.html";
 				}
-				else if (Rnd.get(60) > qs.getMemoStateEx(1))
+				else if (getRandom(60) > qs.getMemoStateEx(1))
 				{
 					qs.setMemoStateEx(1, qs.getMemoStateEx(1) + 20);
 					qs.setMemoStateEx(npc.getId(), 1);

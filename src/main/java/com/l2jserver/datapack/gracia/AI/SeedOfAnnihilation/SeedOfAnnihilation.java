@@ -22,6 +22,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -32,8 +33,6 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
 import com.l2jserver.gameserver.model.zone.type.L2EffectZone;
 import com.l2jserver.gameserver.util.Util;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Seed Of Annihilation AI.

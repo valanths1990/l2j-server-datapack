@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.InstanceReenterType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
@@ -35,8 +36,6 @@ import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Abstract class for Instances.

@@ -18,6 +18,7 @@
  */
 package com.l2jserver.datapack.handlers.effecthandlers.instant;
 
+import com.l2jserver.commons.util.Rnd;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.L2Seed;
@@ -30,7 +31,6 @@ import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
-import com.l2jserver.util.Rnd;
 
 /**
  * Sow effect implementation.

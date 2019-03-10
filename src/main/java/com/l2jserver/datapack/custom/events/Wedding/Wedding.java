@@ -19,7 +19,6 @@
 package com.l2jserver.datapack.custom.events.Wedding;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
 import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.instancemanager.CoupleManager;
 import com.l2jserver.gameserver.model.L2World;

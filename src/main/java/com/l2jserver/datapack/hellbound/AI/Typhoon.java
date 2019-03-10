@@ -18,13 +18,12 @@
  */
 package com.l2jserver.datapack.hellbound.AI;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2RaidBossInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Typhoon's AI.

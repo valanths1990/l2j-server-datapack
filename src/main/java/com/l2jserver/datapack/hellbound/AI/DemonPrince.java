@@ -21,12 +21,11 @@ package com.l2jserver.datapack.hellbound.AI;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.Skill;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Demon Prince's AI.

@@ -29,7 +29,6 @@ import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
 import com.l2jserver.gameserver.util.Util;
-import com.l2jserver.util.Rnd;
 
 /**
  * A Game of Cards (662)
@@ -720,7 +719,7 @@ public final class Q00662_AGameOfCards extends Quest
 			}
 		}
 		
-		final L2PcInstance player = players.get(Rnd.get(players.size()));
+		final L2PcInstance player = players.get(getRandom(players.size()));
 		if ((player != null) && Util.checkIfInRange(1500, npc, player, false))
 		{
 			if (MONSTERS.get(npc.getId()) < getRandom(1000))

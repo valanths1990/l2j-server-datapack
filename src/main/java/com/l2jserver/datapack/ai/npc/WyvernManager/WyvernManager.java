@@ -22,9 +22,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.SevenSigns;
+import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Fort;

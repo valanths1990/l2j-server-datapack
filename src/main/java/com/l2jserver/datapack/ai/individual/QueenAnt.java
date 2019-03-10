@@ -21,8 +21,9 @@ package com.l2jserver.datapack.ai.individual;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import com.l2jserver.gameserver.config.Config;
+import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.ai.CtrlIntention;
+import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.audio.Music;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
 import com.l2jserver.gameserver.model.Location;
@@ -38,8 +39,6 @@ import com.l2jserver.gameserver.model.skills.CommonSkill;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.type.L2BossZone;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
-
-import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 
 /**
  * Queen Ant's AI
