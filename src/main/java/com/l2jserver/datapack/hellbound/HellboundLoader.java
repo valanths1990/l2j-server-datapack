@@ -18,7 +18,8 @@
  */
 package com.l2jserver.datapack.hellbound;
 
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.l2jserver.datapack.handlers.admincommandhandlers.AdminHellbound;
 import com.l2jserver.datapack.handlers.voicedcommandhandlers.Hellbound;
@@ -66,12 +67,11 @@ import com.l2jserver.gameserver.handler.VoicedCommandHandler;
  * Hellbound class-loader.
  * @author Zoey76
  */
-public final class HellboundLoader
-{
-	private static final Logger _log = Logger.getLogger(HellboundLoader.class.getName());
+public final class HellboundLoader {
 	
-	private static final Class<?>[] SCRIPTS =
-	{
+	private static final Logger LOG = LoggerFactory.getLogger(HellboundLoader.class);
+	
+	private static final Class<?>[] SCRIPTS = {
 		// Commands
 		AdminHellbound.class,
 		Hellbound.class,
@@ -116,31 +116,23 @@ public final class HellboundLoader
 		Q00133_ThatsBloodyHot.class,
 	};
 	
-	public static void main(String[] args)
-	{
-		_log.info(HellboundLoader.class.getSimpleName() + ": Loading Hellbound related scripts:");
+	public static void main(String[] args) {
+		LOG.info("Loading Hellbound scripts...");
 		// Data
 		HellboundPointData.getInstance();
 		HellboundSpawns.getInstance();
 		// Engine
 		HellboundEngine.getInstance();
-		for (Class<?> script : SCRIPTS)
-		{
-			try
-			{
+		for (Class<?> script : SCRIPTS) {
+			try {
 				final Object instance = script.getDeclaredConstructor().newInstance();
-				if (instance instanceof IAdminCommandHandler)
-				{
+				if (instance instanceof IAdminCommandHandler) {
 					AdminCommandHandler.getInstance().registerHandler((IAdminCommandHandler) instance);
-				}
-				else if (Config.L2JMOD_HELLBOUND_STATUS && (instance instanceof IVoicedCommandHandler))
-				{
+				} else if (Config.L2JMOD_HELLBOUND_STATUS && (instance instanceof IVoicedCommandHandler)) {
 					VoicedCommandHandler.getInstance().registerHandler((IVoicedCommandHandler) instance);
 				}
-			}
-			catch (Exception e)
-			{
-				_log.severe(HellboundLoader.class.getSimpleName() + ": Failed loading " + script.getSimpleName() + ":" + e.getMessage());
+			} catch (Exception ex) {
+				LOG.error("Failed loading {}!", script.getSimpleName(), ex);
 			}
 		}
 	}

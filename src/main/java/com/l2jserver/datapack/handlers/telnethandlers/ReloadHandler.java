@@ -24,6 +24,7 @@ import java.net.Socket;
 import java.util.StringTokenizer;
 
 import com.l2jserver.gameserver.cache.HtmCache;
+import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.sql.impl.TeleportLocationTable;
 import com.l2jserver.gameserver.data.xml.impl.MultisellData;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
@@ -118,7 +119,7 @@ public class ReloadHandler implements ITelnetHandler
 					{
 						String questPath = st.hasMoreTokens() ? st.nextToken() : "";
 						
-						File file = new File(ScriptEngineManager.SCRIPT_FOLDER, questPath);
+						File file = new File(Config.SCRIPT_ROOT, "com/l2jserver/datapack/" + questPath);
 						if (file.isFile())
 						{
 							try
