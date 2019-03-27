@@ -4,19 +4,15 @@
 	<groupId>com.l2jserver</groupId>
 	<artifactId>l2j-server-datapack</artifactId>
 	<version>2.6.1.0-SNAPSHOT</version>
-	<name>L2J DataPack Server</name>
+	<name>L2J DataPack</name>
 	<properties>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<slf4j.version>1.7.25</slf4j.version>
-		<log4j.version>2.11.1</log4j.version>
-		<InMemoryJavaCompiler.version>1.3.0</InMemoryJavaCompiler.version>
-		<gson.version>2.8.5</gson.version>
-		<weupnp.version>0.1.4</weupnp.version>
-		<!-- Test -->
-		<testng.version>6.14.3</testng.version>
-		<mockito-core.version>2.24.5</mockito-core.version>
+		<slf4j.version>1.7.26</slf4j.version>
+		<!-- Plugins -->
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+		<maven-assembly-plugin.version>3.1.1</maven-assembly-plugin.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -25,47 +21,48 @@
 			<version>${slf4j.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-slf4j-impl</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mdkt.compiler</groupId>
-			<artifactId>InMemoryJavaCompiler</artifactId>
-			<version>${InMemoryJavaCompiler.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>${gson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.bitlet</groupId>
-			<artifactId>weupnp</artifactId>
-			<version>${weupnp.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>com.l2jserver</groupId>
 			<artifactId>l2j-server-game</artifactId>
 			<version>2.6.1.0-SNAPSHOT</version>
 		</dependency>
-		<!-- Test -->
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>${testng.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>${mockito-core.version}</version>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven-jar-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>default-jar</id>
+						<phase>never</phase>
+						<configuration>
+							<finalName>unwanted</finalName>
+							<classifier>unwanted</classifier>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>${maven-assembly-plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<finalName>${project.artifactId}-${project.version}</finalName>
+							<appendAssemblyId>false</appendAssemblyId>
+							<descriptors>
+								<descriptor>src/main/assembly/zip.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

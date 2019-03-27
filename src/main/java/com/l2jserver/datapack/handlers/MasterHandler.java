@@ -21,6 +21,7 @@ package com.l2jserver.datapack.handlers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.l2jserver.commons.util.Util;
 import com.l2jserver.datapack.handlers.actionhandlers.L2ArtefactInstanceAction;
 import com.l2jserver.datapack.handlers.actionhandlers.L2DecoyAction;
 import com.l2jserver.datapack.handlers.actionhandlers.L2DoorInstanceAction;
@@ -282,12 +283,10 @@ import com.l2jserver.gameserver.handler.VoicedCommandHandler;
  * @author UnAfraid
  * @author Zoey76
  */
-public class MasterHandler
-{
+public class MasterHandler {
 	private static final Logger LOG = LoggerFactory.getLogger(MasterHandler.class);
 	
-	private static final Class<?>[] ACTION_HANDLERS =
-	{
+	private static final Class<?>[] ACTION_HANDLERS = {
 		L2ArtefactInstanceAction.class,
 		L2DecoyAction.class,
 		L2DoorInstanceAction.class,
@@ -300,8 +299,7 @@ public class MasterHandler
 		L2TrapAction.class,
 	};
 	
-	private static final Class<?>[] ACTION_SHIFT_HANDLERS =
-	{
+	private static final Class<?>[] ACTION_SHIFT_HANDLERS = {
 		L2DoorInstanceActionShift.class,
 		L2ItemInstanceActionShift.class,
 		L2NpcActionShift.class,
@@ -310,8 +308,7 @@ public class MasterHandler
 		L2SummonActionShift.class,
 	};
 	
-	private static final Class<?>[] ADMIN_HANDLERS =
-	{
+	private static final Class<?>[] ADMIN_HANDLERS = {
 		AdminAdmin.class,
 		AdminAnnouncements.class,
 		AdminBBS.class,
@@ -386,8 +383,7 @@ public class MasterHandler
 		AdminZone.class,
 	};
 	
-	private static final Class<?>[] BYPASS_HANDLERS =
-	{
+	private static final Class<?>[] BYPASS_HANDLERS = {
 		Augment.class,
 		Buy.class,
 		BuyShadowItem.class,
@@ -421,8 +417,7 @@ public class MasterHandler
 		Wear.class,
 	};
 	
-	private static final Class<?>[] CHAT_HANDLERS =
-	{
+	private static final Class<?>[] CHAT_HANDLERS = {
 		ChatAll.class,
 		ChatAlliance.class,
 		ChatBattlefield.class,
@@ -438,8 +433,7 @@ public class MasterHandler
 		ChatTrade.class,
 	};
 	
-	private static final Class<?>[] COMMUNITY_HANDLERS =
-	{
+	private static final Class<?>[] COMMUNITY_HANDLERS = {
 		ClanBoard.class,
 		FavoriteBoard.class,
 		FriendsBoard.class,
@@ -450,8 +444,7 @@ public class MasterHandler
 		RegionBoard.class,
 	};
 	
-	private static final Class<?>[] ITEM_HANDLERS =
-	{
+	private static final Class<?>[] ITEM_HANDLERS = {
 		BeastSoulShot.class,
 		BeastSpiritShot.class,
 		BlessedSpiritShot.class,
@@ -485,15 +478,13 @@ public class MasterHandler
 		TeleportBookmark.class,
 	};
 	
-	private static final Class<?>[] PUNISHMENT_HANDLERS =
-	{
+	private static final Class<?>[] PUNISHMENT_HANDLERS = {
 		BanHandler.class,
 		ChatBanHandler.class,
 		JailHandler.class,
 	};
 	
-	private static final Class<?>[] USER_COMMAND_HANDLERS =
-	{
+	private static final Class<?>[] USER_COMMAND_HANDLERS = {
 		ClanPenalty.class,
 		ClanWarsList.class,
 		Dismount.class,
@@ -511,8 +502,7 @@ public class MasterHandler
 		SiegeStatus.class,
 	};
 	
-	private static final Class<?>[] TARGET_HANDLERS =
-	{
+	private static final Class<?>[] TARGET_HANDLERS = {
 		Area.class,
 		AreaCorpseMob.class,
 		AreaFriendly.class,
@@ -552,8 +542,7 @@ public class MasterHandler
 		Unlockable.class,
 	};
 	
-	private static final Class<?>[] TELNET_HANDLERS =
-	{
+	private static final Class<?>[] TELNET_HANDLERS = {
 		ChatsHandler.class,
 		DebugHandler.class,
 		HelpHandler.class,
@@ -564,8 +553,7 @@ public class MasterHandler
 		ThreadHandler.class,
 	};
 	
-	private static final Class<?>[] VOICED_COMMAND_HANDLERS =
-	{
+	private static final Class<?>[] VOICED_COMMAND_HANDLERS = {
 		StatsVCmd.class,
 		// TODO: Add configuration options for this voiced commands:
 		// CastleVCmd.class,
@@ -584,8 +572,7 @@ public class MasterHandler
 	// CustomAnnouncePkPvP.class
 	// };
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		LOG.info("Loading Handlers...");
 		loadHandlers(VoicedCommandHandler.getInstance(), VOICED_COMMAND_HANDLERS);
 		loadHandlers(ActionHandler.getInstance(), ACTION_HANDLERS);
@@ -602,24 +589,18 @@ public class MasterHandler
 		LOG.info("Handlers Loaded...");
 	}
 	
-	private static void loadHandlers(IHandler<?, ?> handler, Class<?>[] classes)
-	{
-		for (Class<?> c : classes)
-		{
-			if (c == null)
-			{
+	private static void loadHandlers(IHandler<?, ?> handler, Class<?>[] classes) {
+		for (Class<?> c : classes) {
+			if (c == null) {
 				continue;
 			}
 			
-			try
-			{
+			try {
 				handler.registerByClass(c);
-			}
-			catch (Exception ex)
-			{
+			} catch (Exception ex) {
 				LOG.error("Failed loading handler {}!", c.getSimpleName(), ex);
 			}
 		}
-		LOG.info("{}: Loaded {} handlers.", handler.getClass().getSimpleName(), handler.size());
+		LOG.info("Loaded {} {}.", handler.size(), Util.splitWords(handler.getClass().getSimpleName()));
 	}
 }

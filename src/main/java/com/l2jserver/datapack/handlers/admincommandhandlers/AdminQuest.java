@@ -28,6 +28,7 @@ import javax.script.ScriptException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -122,14 +123,14 @@ public class AdminQuest implements IAdminCommandHandler
 			}
 			else
 			{
-				File file = new File(ScriptEngineManager.SCRIPT_FOLDER, parts[1]);
+				File file = new File(Config.SCRIPT_ROOT, "com/l2jserver/datapack/" + parts[1]);
 				// Trying to reload by script name.
 				if (!file.exists())
 				{
 					Quest quest = QuestManager.getInstance().getQuest(parts[1]);
 					if (quest != null)
 					{
-						file = new File(ScriptEngineManager.SCRIPT_FOLDER, quest.getClass().getName().replaceAll("\\.", "/") + ".java");
+						file = new File(Config.SCRIPT_ROOT, "com/l2jserver/datapack/" + quest.getClass().getName().replaceAll("\\.", "/") + ".java");
 					}
 				}
 				

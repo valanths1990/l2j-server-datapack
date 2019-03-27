@@ -18,8 +18,8 @@
  */
 package com.l2jserver.datapack.gracia;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.l2jserver.datapack.gracia.AI.EnergySeeds;
 import com.l2jserver.datapack.gracia.AI.Lindvior;
@@ -46,12 +46,11 @@ import com.l2jserver.datapack.gracia.vehicles.SoIController.SoIController;
  * Gracia class-loader.
  * @author Pandragon
  */
-public final class GraciaLoader
-{
-	private static final Logger _log = Logger.getLogger(GraciaLoader.class.getName());
+public final class GraciaLoader {
 	
-	private static final Class<?>[] SCRIPTS =
-	{
+	private static final Logger LOG = LoggerFactory.getLogger(GraciaLoader.class);
+	
+	private static final Class<?>[] SCRIPTS = {
 		// AIs
 		EnergySeeds.class,
 		Lindvior.class,
@@ -79,18 +78,13 @@ public final class GraciaLoader
 		SoDController.class,
 	};
 	
-	public static void main(String[] args)
-	{
-		_log.info(GraciaLoader.class.getSimpleName() + ": Loading Gracia related scripts.");
-		for (Class<?> script : SCRIPTS)
-		{
-			try
-			{
+	public static void main(String[] args) {
+		LOG.info("Loading Gracia scripts...");
+		for (Class<?> script : SCRIPTS) {
+			try {
 				script.getDeclaredConstructor().newInstance();
-			}
-			catch (Exception e)
-			{
-				_log.log(Level.SEVERE, GraciaLoader.class.getSimpleName() + ": Failed loading " + script.getSimpleName() + ":", e);
+			} catch (Exception ex) {
+				LOG.error("Failed loading {}!", script.getSimpleName(), ex);
 			}
 		}
 	}

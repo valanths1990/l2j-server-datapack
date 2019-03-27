@@ -205,14 +205,14 @@ public class AdminReload implements IAdminCommandHandler
 				}
 				case "effect":
 				{
-					final File file = new File(ScriptEngineManager.SCRIPT_FOLDER, "handlers/EffectMasterHandler.java");
+					final File file = new File(Config.SCRIPT_ROOT, "com/l2jserver/datapack/handlers/EffectMasterHandler.java");
 					ScriptEngineManager.getInstance().compileScript(file);
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Effects.");
 					break;
 				}
 				case "handler":
 				{
-					final File file = new File(ScriptEngineManager.SCRIPT_FOLDER, "handlers/MasterHandler.java");
+					final File file = new File(Config.SCRIPT_ROOT, "com/l2jserver/datapack/handlers/MasterHandler.java");
 					ScriptEngineManager.getInstance().compileScript(file);
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Handlers.");
 					break;
