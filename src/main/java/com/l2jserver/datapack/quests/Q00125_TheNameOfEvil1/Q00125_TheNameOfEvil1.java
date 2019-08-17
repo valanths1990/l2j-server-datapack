@@ -48,6 +48,8 @@ public class Q00125_TheNameOfEvil1 extends Quest
 	private static final int DEINONYCHUS_BONE = 8780;
 	private static final int EPITAPH_OF_WISDOM = 8781;
 	private static final int GAZKH_FRAGMENT = 8782;
+	// Skills
+	private static final int REPRESENTATION_ENTER_THE_SAILREN_NEST_QUEST_ID = 5089;
 	
 	private static final Map<Integer, Integer> ORNITHOMIMUS = new HashMap<>();
 	private static final Map<Integer, Integer> DEINONYCHUS = new HashMap<>();
@@ -376,112 +378,113 @@ public class Q00125_TheNameOfEvil1 extends Quest
 			case ULU_KAIMU:
 				if (st.isStarted())
 				{
-					switch (st.getCond())
-					{
+					switch (st.getCond()) {
 						case 1:
 						case 2:
 						case 3:
-						case 4:
+						case 4: {
 							htmltext = "32119-01.html";
 							break;
+						}
 						case 5:
-							if (st.get("Memo") == null)
-							{
-								htmltext = "32119-02.html";
-								npc.broadcastPacket(new MagicSkillUse(npc, player, 5089, 1, 1000, 0));
+							if (st.get("Memo") == null) {
+								npc.broadcastPacket(new MagicSkillUse(npc, player, REPRESENTATION_ENTER_THE_SAILREN_NEST_QUEST_ID, 1, 1000, 0));
 								st.unset("T");
 								st.unset("E");
 								st.unset("P");
 								st.unset("U");
-							}
-							else
-							{
+								htmltext = "32119-02.html";
+							} else {
 								htmltext = "32119-09.html";
 							}
 							break;
-						case 6:
+						case 6: {
 							htmltext = "32119-18.html";
 							break;
-						default:
+						}
+						default: {
 							htmltext = "32119-19.html";
 							break;
+						}
 					}
 				}
 				break;
 			case BALU_KAIMU:
 				if (st.isStarted())
 				{
-					switch (st.getCond())
-					{
+					switch (st.getCond()) {
 						case 1:
 						case 2:
 						case 3:
 						case 4:
-						case 5:
+						case 5: {
 							htmltext = "32120-01.html";
 							break;
-						case 6:
-							if (st.get("Memo") == null)
-							{
-								htmltext = "32120-02.html";
-								npc.broadcastPacket(new MagicSkillUse(npc, player, 5089, 1, 1000, 0));
+						}
+						case 6: {
+							if (st.get("Memo") == null) {
+								npc.broadcastPacket(new MagicSkillUse(npc, player, REPRESENTATION_ENTER_THE_SAILREN_NEST_QUEST_ID, 1, 1000, 0));
 								st.unset("T");
 								st.unset("O");
 								st.unset("O2");
 								st.unset("N");
-							}
-							else
-							{
+								htmltext = "32120-02.html";
+							} else {
 								htmltext = "32120-09.html";
 							}
 							break;
-						case 7:
+						}
+						case 7: {
 							htmltext = "32120-17.html";
 							break;
-						default:
+						}
+						default: {
 							htmltext = "32119-18.html";
 							break;
+						}
 					}
 				}
 				break;
 			case CHUTA_KAIMU:
 				if (st.isStarted())
 				{
-					switch (st.getCond())
-					{
+					switch (st.getCond()) {
 						case 1:
 						case 2:
 						case 3:
 						case 4:
 						case 5:
-						case 6:
+						case 6: {
 							htmltext = "32121-01.html";
 							break;
-						case 7:
-							switch (st.getInt("Memo"))
-							{
-								case 0:
-									htmltext = "32121-02.html";
-									npc.broadcastPacket(new MagicSkillUse(npc, player, 5089, 1, 1000, 0));
-									st.unset("W");
-									st.unset("A");
-									st.unset("G");
-									st.unset("U");
-									break;
-								case 1:
-									htmltext = "32121-09.html";
-									break;
-								case 2:
-									htmltext = "32121-19.html";
-									break;
-								case 3:
-									htmltext = "32121-20.html";
-									break;
+						}
+						case 7: {
+							if (st.get("Memo") == null) {
+								npc.broadcastPacket(new MagicSkillUse(npc, player, REPRESENTATION_ENTER_THE_SAILREN_NEST_QUEST_ID, 1, 1000, 0));
+								st.unset("W");
+								st.unset("A");
+								st.unset("G");
+								st.unset("U");
+								htmltext = "32121-02.html";
+							} else {
+								switch (st.getInt("Memo")) {
+									case 1:
+										htmltext = "32121-09.html";
+										break;
+									case 2:
+										htmltext = "32121-19.html";
+										break;
+									case 3:
+										htmltext = "32121-20.html";
+										break;
+								}
 							}
 							break;
-						case 8:
+						}
+						case 8: {
 							htmltext = "32121-21.html";
 							break;
+						}
 					}
 				}
 				break;
