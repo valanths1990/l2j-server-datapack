@@ -9,9 +9,12 @@
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<slf4j.version>1.7.26</slf4j.version>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<slf4j.version>1.7.28</slf4j.version>
+		<!-- L2J -->
+		<l2j-server-game.version>2.6.1.0-SNAPSHOT</l2j-server-game.version>
 		<!-- Plugins -->
-		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+		<maven-jar-plugin.version>3.1.2</maven-jar-plugin.version>
 		<maven-assembly-plugin.version>3.1.1</maven-assembly-plugin.version>
 	</properties>
 	<dependencies>
@@ -23,7 +26,7 @@
 		<dependency>
 			<groupId>com.l2jserver</groupId>
 			<artifactId>l2j-server-game</artifactId>
-			<version>2.6.1.0-SNAPSHOT</version>
+			<version>${l2j-server-game.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -46,7 +49,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>${maven-assembly-plugin.version}</version>
+				<version>${maven-assembly-plugin.version}</version><!--$NO-MVN-MAN-VER$-->
 				<executions>
 					<execution>
 						<phase>package</phase>
