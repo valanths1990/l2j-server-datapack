@@ -18,9 +18,10 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.vitality;
+
 import java.util.StringTokenizer;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.stat.PcStat;
@@ -48,7 +49,7 @@ public class AdminVitality implements IAdminCommandHandler
 			return false;
 		}
 		
-		if (!Config.ENABLE_VITALITY)
+		if (!vitality().enabled())
 		{
 			activeChar.sendMessage("Vitality is not enabled on the server!");
 			return false;

@@ -18,9 +18,10 @@
  */
 package com.l2jserver.datapack.ai.npc.Teleports.GrandBossTeleporters;
 
+import static com.l2jserver.gameserver.config.Configuration.grandBoss;
+
 import com.l2jserver.datapack.ai.individual.Valakas;
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
@@ -119,7 +120,7 @@ public final class GrandBossTeleporters extends AbstractNpcAI
 							if (status == 0)
 							{
 								L2GrandBossInstance valakas = GrandBossManager.getInstance().getBoss(29028);
-								valakasAI().startQuestTimer("beginning", Config.VALAKAS_WAIT_TIME * 60000, valakas, null);
+								valakasAI().startQuestTimer("beginning", grandBoss().getValakasWaitTime(), valakas, null);
 								GrandBossManager.getInstance().setBossStatus(29028, 1);
 							}
 						}

@@ -18,11 +18,12 @@
  */
 package com.l2jserver.datapack.ai.individual;
 
+import static com.l2jserver.gameserver.config.Configuration.grandBoss;
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.audio.Music;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
 import com.l2jserver.gameserver.model.StatsSet;
@@ -195,7 +196,7 @@ public final class Core extends AbstractNpcAI
 			_firstAttacked = false;
 			GrandBossManager.getInstance().setBossStatus(CORE, DEAD);
 			// Calculate Min and Max respawn times randomly.
-			long respawnTime = (Config.CORE_SPAWN_INTERVAL + getRandom(-Config.CORE_SPAWN_RANDOM, Config.CORE_SPAWN_RANDOM)) * 3600000;
+			long respawnTime = (grandBoss().getIntervalOfCoreSpawn() + getRandom(-grandBoss().getRandomOfCoreSpawn(), grandBoss().getRandomOfCoreSpawn())) * 3600000;
 			startQuestTimer("core_unlock", respawnTime, null, null);
 			// also save the respawn time so that the info is maintained past reboots
 			StatsSet info = GrandBossManager.getInstance().getStatsSet(CORE);

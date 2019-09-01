@@ -18,7 +18,8 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
-import com.l2jserver.gameserver.config.Config;
+import static com.l2jserver.gameserver.config.Configuration.tvt;
+
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -107,6 +108,6 @@ public class AdminTvTEvent implements IAdminCommandHandler
 			return;
 		}
 		
-		new TvTEventTeleporter(playerInstance, Config.TVT_EVENT_PARTICIPATION_NPC_COORDINATES, true, true);
+		new TvTEventTeleporter(playerInstance, tvt().getParticipationNpcLoc(), true, true);
 	}
 }

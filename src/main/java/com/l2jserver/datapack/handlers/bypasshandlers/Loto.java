@@ -18,9 +18,10 @@
  */
 package com.l2jserver.datapack.handlers.bypasshandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.text.DateFormat;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IBypassHandler;
 import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.instancemanager.games.Lottery;
@@ -191,7 +192,7 @@ public class Loto implements IBypassHandler
 				return;
 			}
 			
-			long price = Config.ALT_LOTTERY_TICKET_PRICE;
+			long price = general().getLotteryTicketPrice();
 			int lotonumber = Lottery.getInstance().getId();
 			int enchant = 0;
 			int type2 = 0;
@@ -329,11 +330,11 @@ public class Loto implements IBypassHandler
 		html.replace("%objectId%", String.valueOf(npc.getObjectId()));
 		html.replace("%race%", "" + Lottery.getInstance().getId());
 		html.replace("%adena%", "" + Lottery.getInstance().getPrize());
-		html.replace("%ticket_price%", "" + Config.ALT_LOTTERY_TICKET_PRICE);
-		html.replace("%prize5%", "" + (Config.ALT_LOTTERY_5_NUMBER_RATE * 100));
-		html.replace("%prize4%", "" + (Config.ALT_LOTTERY_4_NUMBER_RATE * 100));
-		html.replace("%prize3%", "" + (Config.ALT_LOTTERY_3_NUMBER_RATE * 100));
-		html.replace("%prize2%", "" + Config.ALT_LOTTERY_2_AND_1_NUMBER_PRIZE);
+		html.replace("%ticket_price%", "" +general().getLotteryTicketPrice());
+		html.replace("%prize5%", "" + (general().getLottery5NumberRate() * 100));
+		html.replace("%prize4%", "" + (general().getLottery4NumberRate() * 100));
+		html.replace("%prize3%", "" + (general().getLottery3NumberRate() * 100));
+		html.replace("%prize2%", "" + general().getLottery2and1NumberPrize());
 		html.replace("%enddate%", "" + DateFormat.getDateInstance().format(Lottery.getInstance().getEndDate()));
 		player.sendPacket(html);
 		

@@ -18,10 +18,11 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.util.Collection;
 import java.util.logging.Logger;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.L2World;
@@ -57,7 +58,7 @@ public class AdminHeal implements IAdminCommandHandler
 			}
 			catch (StringIndexOutOfBoundsException e)
 			{
-				if (Config.DEVELOPER)
+				if (general().developer())
 				{
 					_log.warning("Heal error: " + e);
 				}
@@ -129,7 +130,7 @@ public class AdminHeal implements IAdminCommandHandler
 			{
 				target.setCurrentCp(target.getMaxCp());
 			}
-			if (Config.DEBUG)
+			if (general().debug())
 			{
 				_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") healed character " + target.getName());
 			}

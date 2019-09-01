@@ -18,12 +18,13 @@
  */
 package com.l2jserver.datapack.ai.npc.WyvernManager;
 
+import static com.l2jserver.gameserver.config.Configuration.castle;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.SevenSigns;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Fort;
@@ -230,7 +231,7 @@ public final class WyvernManager extends AbstractNpcAI
 				{
 					htmltext = "wyvernmanager-02.html";
 				}
-				else if (Config.ALLOW_WYVERN_ALWAYS)
+				else if (castle().allowRideWyvernAlways())
 				{
 					htmltext = replaceAll(npc, player.getHtmlPrefix());
 				}
@@ -251,9 +252,9 @@ public final class WyvernManager extends AbstractNpcAI
 			}
 			case "RideWyvern":
 			{
-				if (!Config.ALLOW_WYVERN_ALWAYS)
+				if (!castle().allowRideWyvernAlways())
 				{
-					if (!Config.ALLOW_WYVERN_DURING_SIEGE && (isInSiege(npc) || player.isInSiege()))
+					if (!castle().allowRideWyvernDuringSiege() && (isInSiege(npc) || player.isInSiege()))
 					{
 						player.sendMessage("You cannot summon wyvern while in siege.");
 						return null;
@@ -287,7 +288,7 @@ public final class WyvernManager extends AbstractNpcAI
 		}
 		else
 		{
-			if (Config.ALLOW_WYVERN_ALWAYS)
+			if (castle().allowRideWyvernAlways())
 			{
 				htmltext = replaceAll(npc, player.getHtmlPrefix());
 			}

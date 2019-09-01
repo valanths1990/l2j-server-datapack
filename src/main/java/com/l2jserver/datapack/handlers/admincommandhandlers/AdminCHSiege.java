@@ -18,9 +18,10 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.util.Calendar;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.ClanHallSiegeManager;
@@ -61,7 +62,7 @@ public final class AdminCHSiege implements IAdminCommandHandler
 	{
 		final String[] split = command.split(" ");
 		SiegableHall hall = null;
-		if (Config.NO_QUESTS)
+		if (general().noQuests())
 		{
 			activeChar.sendMessage("AltDevNoQuests = true; Clan Hall Sieges are disabled!");
 			return false;

@@ -18,10 +18,11 @@
  */
 package com.l2jserver.datapack.handlers.actionshifthandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.npc;
+
 import java.util.Set;
 
 import com.l2jserver.datapack.handlers.bypasshandlers.NpcViewMod;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.handler.IActionShiftHandler;
 import com.l2jserver.gameserver.instancemanager.WalkingManager;
@@ -180,7 +181,7 @@ public class L2NpcActionShift implements IActionShiftHandler
 			}
 			activeChar.sendPacket(html);
 		}
-		else if (Config.ALT_GAME_VIEWNPC)
+		else if (npc().viewNpc())
 		{
 			if (!target.isNpc())
 			{

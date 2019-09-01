@@ -18,10 +18,11 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.util.StringTokenizer;
 
 import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.sql.impl.AnnouncementsTable;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.PageResult;
@@ -74,7 +75,7 @@ public class AdminAnnouncements implements IAdminCommandHandler
 				}
 				else
 				{
-					if (Config.GM_ANNOUNCER_NAME)
+					if (general().gmShowAnnouncerName())
 					{
 						announce = announce + " [" + activeChar.getName() + "]";
 					}

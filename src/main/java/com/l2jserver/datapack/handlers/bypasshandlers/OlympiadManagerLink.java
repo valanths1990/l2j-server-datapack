@@ -18,11 +18,12 @@
  */
 package com.l2jserver.datapack.handlers.bypasshandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.olympiad;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.logging.Level;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.sql.impl.NpcBufferTable;
 import com.l2jserver.gameserver.data.sql.impl.NpcBufferTable.NpcBufferData;
 import com.l2jserver.gameserver.data.xml.impl.MultisellData;
@@ -59,9 +60,9 @@ public class OlympiadManagerLink implements IBypassHandler
 		"olympiad"
 	};
 	
-	private static final String FEWER_THAN = "Fewer than " + String.valueOf(Config.ALT_OLY_REG_DISPLAY);
-	private static final String MORE_THAN = "More than " + String.valueOf(Config.ALT_OLY_REG_DISPLAY);
-	private static final int GATE_PASS = Config.ALT_OLY_COMP_RITEM;
+	private static final String FEWER_THAN = "Fewer than " + String.valueOf(olympiad().getRegistrationDisplayNumber());
+	private static final String MORE_THAN = "More than " + String.valueOf(olympiad().getRegistrationDisplayNumber());
+	private static final int GATE_PASS = olympiad().getCompetitionRewardItem();
 	
 	private static final int[] BUFFS =
 	{
@@ -157,11 +158,11 @@ public class OlympiadManagerLink implements IBypassHandler
 							}
 						}
 						html.setFile(activeChar.getHtmlPrefix(), Olympiad.OLYMPIAD_HTML_PATH + "noble_registered.htm");
-						if (Config.ALT_OLY_REG_DISPLAY > 0)
+						if (olympiad().getRegistrationDisplayNumber() > 0)
 						{
-							html.replace("%listClassed%", classed < Config.ALT_OLY_REG_DISPLAY ? FEWER_THAN : MORE_THAN);
-							html.replace("%listNonClassedTeam%", teams < Config.ALT_OLY_REG_DISPLAY ? FEWER_THAN : MORE_THAN);
-							html.replace("%listNonClassed%", nonClassed < Config.ALT_OLY_REG_DISPLAY ? FEWER_THAN : MORE_THAN);
+							html.replace("%listClassed%", classed < olympiad().getRegistrationDisplayNumber() ? FEWER_THAN : MORE_THAN);
+							html.replace("%listNonClassedTeam%", teams < olympiad().getRegistrationDisplayNumber() ? FEWER_THAN : MORE_THAN);
+							html.replace("%listNonClassed%", nonClassed < olympiad().getRegistrationDisplayNumber() ? FEWER_THAN : MORE_THAN);
 						}
 						else
 						{
@@ -290,7 +291,7 @@ public class OlympiadManagerLink implements IBypassHandler
 				
 				if (buffCount > 0)
 				{
-					html.setFile(activeChar.getHtmlPrefix(), buffCount == Config.ALT_OLY_MAX_BUFFS ? Olympiad.OLYMPIAD_HTML_PATH + "olympiad_buffs.htm" : Olympiad.OLYMPIAD_HTML_PATH + "olympiad_5buffs.htm");
+					html.setFile(activeChar.getHtmlPrefix(), buffCount == olympiad().getMaxBuffs() ? Olympiad.OLYMPIAD_HTML_PATH + "olympiad_buffs.htm" : Olympiad.OLYMPIAD_HTML_PATH + "olympiad_5buffs.htm");
 					html.replace("%objectId%", String.valueOf(target.getObjectId()));
 					activeChar.sendPacket(html);
 				}

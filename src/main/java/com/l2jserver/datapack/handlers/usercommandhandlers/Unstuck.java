@@ -20,6 +20,7 @@ package com.l2jserver.datapack.handlers.usercommandhandlers;
 
 import static com.l2jserver.gameserver.GameTimeController.MILLIS_IN_TICK;
 import static com.l2jserver.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
+import static com.l2jserver.gameserver.config.Configuration.character;
 import static com.l2jserver.gameserver.model.TeleportWhereType.TOWN;
 import static com.l2jserver.gameserver.network.SystemMessageId.THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT;
 import static com.l2jserver.gameserver.network.serverpackets.ActionFailed.STATIC_PACKET;
@@ -28,7 +29,6 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 
 import com.l2jserver.gameserver.GameTimeController;
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IUserCommandHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.TvTEvent;
@@ -84,7 +84,7 @@ public class Unstuck implements IUserCommandHandler
 			return false;
 		}
 		
-		final int unstuckTimer = (activeChar.isGM() ? 1000 : Config.UNSTUCK_INTERVAL * 1000);
+		final int unstuckTimer = (activeChar.isGM() ? 1000 : character().getUnstuckInterval());
 		activeChar.forceIsCasting(GameTimeController.getInstance().getGameTicks() + (unstuckTimer / MILLIS_IN_TICK));
 		
 		if (activeChar.isGM())
@@ -93,19 +93,19 @@ public class Unstuck implements IUserCommandHandler
 			return true;
 		}
 		
-		if (Config.UNSTUCK_INTERVAL == FIVE_MINUTES)
+		if (character().getUnstuckInterval() == FIVE_MINUTES)
 		{
 			activeChar.doCast(ESCAPE_5_MINUTES);
 			return true;
 		}
 		
-		if (Config.UNSTUCK_INTERVAL > 100)
+		if (character().getUnstuckInterval() > 100)
 		{
-			activeChar.sendMessage("You use Escape: " + SECONDS.toMinutes(Config.UNSTUCK_INTERVAL) + " minutes.");
+			activeChar.sendMessage("You use Escape: " + SECONDS.toMinutes(character().getUnstuckInterval()) + " minutes.");
 		}
 		else
 		{
-			activeChar.sendMessage("You use Escape: " + Config.UNSTUCK_INTERVAL + " seconds.");
+			activeChar.sendMessage("You use Escape: " +character().getUnstuckInterval() + " seconds.");
 		}
 		
 		activeChar.getAI().setIntention(AI_INTENTION_IDLE);

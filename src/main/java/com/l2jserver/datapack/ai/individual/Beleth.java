@@ -18,13 +18,14 @@
  */
 package com.l2jserver.datapack.ai.individual;
 
+import static com.l2jserver.gameserver.config.Configuration.grandBoss;
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
 import com.l2jserver.gameserver.enums.audio.Music;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
@@ -757,7 +758,7 @@ public final class Beleth extends AbstractNpcAI
 			
 			setBelethKiller(killer);
 			GrandBossManager.getInstance().setBossStatus(REAL_BELETH, DEAD);
-			final long respawnTime = (Config.BELETH_SPAWN_INTERVAL + getRandom(-Config.BELETH_SPAWN_RANDOM, Config.BELETH_SPAWN_RANDOM)) * 3600000;
+			final long respawnTime = (grandBoss().getIntervalOfBelethSpawn() + getRandom(-grandBoss().getRandomOfBelethSpawn(), grandBoss().getRandomOfBelethSpawn())) * 3600000;
 			StatsSet info = GrandBossManager.getInstance().getStatsSet(REAL_BELETH);
 			info.set("respawn_time", System.currentTimeMillis() + respawnTime);
 			GrandBossManager.getInstance().setStatsSet(REAL_BELETH, info);

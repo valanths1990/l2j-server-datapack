@@ -18,7 +18,8 @@
  */
 package com.l2jserver.datapack.handlers.voicedcommandhandlers;
 
-import com.l2jserver.gameserver.config.Config;
+import static com.l2jserver.gameserver.config.Configuration.customs;
+
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
@@ -40,40 +41,40 @@ public class Banking implements IVoicedCommandHandler
 	{
 		if (command.equals("bank"))
 		{
-			activeChar.sendMessage(".deposit (" + Config.BANKING_SYSTEM_ADENA + " Adena = " + Config.BANKING_SYSTEM_GOLDBARS + " Goldbar) / .withdraw (" + Config.BANKING_SYSTEM_GOLDBARS + " Goldbar = " + Config.BANKING_SYSTEM_ADENA + " Adena)");
+			activeChar.sendMessage(".deposit (" + customs().getBankingAdenaCount() + " Adena = " + customs().getBankingGoldbarCount() + " Goldbar) / .withdraw (" + customs().getBankingGoldbarCount() + " Goldbar = " + customs().getBankingAdenaCount() + " Adena)");
 		}
 		else if (command.equals("deposit"))
 		{
-			if (activeChar.getInventory().getInventoryItemCount(57, 0) >= Config.BANKING_SYSTEM_ADENA)
+			if (activeChar.getInventory().getInventoryItemCount(57, 0) >= customs().getBankingAdenaCount())
 			{
-				if (!activeChar.reduceAdena("Goldbar", Config.BANKING_SYSTEM_ADENA, activeChar, false))
+				if (!activeChar.reduceAdena("Goldbar", customs().getBankingAdenaCount(), activeChar, false))
 				{
 					return false;
 				}
-				activeChar.getInventory().addItem("Goldbar", 3470, Config.BANKING_SYSTEM_GOLDBARS, activeChar, null);
+				activeChar.getInventory().addItem("Goldbar", 3470, customs().getBankingGoldbarCount(), activeChar, null);
 				activeChar.getInventory().updateDatabase();
-				activeChar.sendMessage("Thank you, you now have " + Config.BANKING_SYSTEM_GOLDBARS + " Goldbar(s), and " + Config.BANKING_SYSTEM_ADENA + " less adena.");
+				activeChar.sendMessage("Thank you, you now have " + customs().getBankingGoldbarCount() + " Goldbar(s), and " + customs().getBankingAdenaCount() + " less adena.");
 			}
 			else
 			{
-				activeChar.sendMessage("You do not have enough Adena to convert to Goldbar(s), you need " + Config.BANKING_SYSTEM_ADENA + " Adena.");
+				activeChar.sendMessage("You do not have enough Adena to convert to Goldbar(s), you need " + customs().getBankingAdenaCount() + " Adena.");
 			}
 		}
 		else if (command.equals("withdraw"))
 		{
-			if (activeChar.getInventory().getInventoryItemCount(3470, 0) >= Config.BANKING_SYSTEM_GOLDBARS)
+			if (activeChar.getInventory().getInventoryItemCount(3470, 0) >= customs().getBankingGoldbarCount())
 			{
-				if (!activeChar.destroyItemByItemId("Adena", 3470, Config.BANKING_SYSTEM_GOLDBARS, activeChar, false))
+				if (!activeChar.destroyItemByItemId("Adena", 3470, customs().getBankingGoldbarCount(), activeChar, false))
 				{
 					return false;
 				}
-				activeChar.getInventory().addAdena("Adena", Config.BANKING_SYSTEM_ADENA, activeChar, null);
+				activeChar.getInventory().addAdena("Adena", customs().getBankingAdenaCount(), activeChar, null);
 				activeChar.getInventory().updateDatabase();
-				activeChar.sendMessage("Thank you, you now have " + Config.BANKING_SYSTEM_ADENA + " Adena, and " + Config.BANKING_SYSTEM_GOLDBARS + " less Goldbar(s).");
+				activeChar.sendMessage("Thank you, you now have " + customs().getBankingAdenaCount() + " Adena, and " + customs().getBankingGoldbarCount() + " less Goldbar(s).");
 			}
 			else
 			{
-				activeChar.sendMessage("You do not have any Goldbars to turn into " + Config.BANKING_SYSTEM_ADENA + " Adena.");
+				activeChar.sendMessage("You do not have any Goldbars to turn into " + customs().getBankingAdenaCount() + " Adena.");
 			}
 		}
 		return true;

@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.instances.CrystalCaverns;
 
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,7 +30,6 @@ import com.l2jserver.datapack.instances.AbstractInstance;
 import com.l2jserver.datapack.quests.Q00131_BirdInACage.Q00131_BirdInACage;
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.TrapAction;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.L2Object;
@@ -1474,7 +1475,7 @@ public final class CrystalCaverns extends AbstractInstance
 	
 	private void giveRewards(L2PcInstance player, int instanceId, int bossCry, boolean isBaylor)
 	{
-		final int num = Math.max((int) Config.RATE_DEATH_DROP_CHANCE_MULTIPLIER, 1);
+		final int num = Math.max(rates().getCorpseDropChanceMultiplier().intValue(), 1);
 		
 		L2Party party = player.getParty();
 		if (party != null)

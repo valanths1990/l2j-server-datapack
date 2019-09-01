@@ -18,11 +18,12 @@
  */
 package com.l2jserver.datapack.quests.Q00125_TheNameOfEvil1;
 
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import com.l2jserver.datapack.quests.Q00124_MeetingTheElroki.Q00124_MeetingTheElroki;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -261,7 +262,7 @@ public class Q00125_TheNameOfEvil1 extends Quest
 		{
 			if (st.getQuestItemsCount(ORNITHOMIMUS_CLAW) < 2)
 			{
-				float chance = ORNITHOMIMUS.get(npcId) * Config.RATE_QUEST_DROP;
+				double chance = ORNITHOMIMUS.get(npcId) * rates().getRateQuestDrop();
 				if (getRandom(1000) < chance)
 				{
 					st.giveItems(ORNITHOMIMUS_CLAW, 1);
@@ -273,7 +274,7 @@ public class Q00125_TheNameOfEvil1 extends Quest
 		{
 			if (st.getQuestItemsCount(DEINONYCHUS_BONE) < 2)
 			{
-				float chance = DEINONYCHUS.get(npcId) * Config.RATE_QUEST_DROP;
+				double chance = DEINONYCHUS.get(npcId) * rates().getRateQuestDrop();
 				if (getRandom(1000) < chance)
 				{
 					st.giveItems(DEINONYCHUS_BONE, 1);

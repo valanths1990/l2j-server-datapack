@@ -18,11 +18,12 @@
  */
 package com.l2jserver.datapack.handlers.usercommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.customs;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.l2jserver.gameserver.GameTimeController;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IUserCommandHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -74,7 +75,7 @@ public class Time implements IUserCommandHandler
 			sm.addString(m);
 		}
 		activeChar.sendPacket(sm);
-		if (Config.L2JMOD_DISPLAY_SERVER_TIME)
+		if (customs().displayServerTime())
 		{
 			activeChar.sendMessage("Server time is " + fmt.format(new Date(System.currentTimeMillis())));
 		}

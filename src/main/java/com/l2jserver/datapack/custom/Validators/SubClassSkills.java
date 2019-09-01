@@ -18,11 +18,13 @@
  */
 package com.l2jserver.datapack.custom.Validators;
 
+import static com.l2jserver.gameserver.config.Configuration.character;
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.ClassListData;
 import com.l2jserver.gameserver.enums.IllegalActionPunishmentType;
 import com.l2jserver.gameserver.model.PcCondOverride;
@@ -97,12 +99,12 @@ public final class SubClassSkills extends Quest
 	@Override
 	public String onEnterWorld(L2PcInstance player)
 	{
-		if (!Config.SKILL_CHECK_ENABLE)
+		if (!general().skillCheckEnable())
 		{
 			return null;
 		}
 		
-		if (player.canOverrideCond(PcCondOverride.SKILL_CONDITIONS) && !Config.SKILL_CHECK_GM)
+		if (player.canOverrideCond(PcCondOverride.SKILL_CONDITIONS) && !general().skillCheckGM())
 		{
 			return null;
 		}
@@ -114,7 +116,7 @@ public final class SubClassSkills extends Quest
 			{
 				Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " has cert skill on subclass :" + s.getName() + "(" + s.getId() + "/" + s.getLevel() + "), class:" + ClassListData.getInstance().getClass(player.getClassId()).getClassName(), IllegalActionPunishmentType.NONE);
 				
-				if (Config.SKILL_CHECK_REMOVE)
+				if (general().skillCheckRemove())
 				{
 					player.removeSkill(s);
 				}
@@ -149,7 +151,7 @@ public final class SubClassSkills extends Quest
 		int id, index;
 		for (int i = VARS.length; --i >= 0;)
 		{
-			for (int j = Config.MAX_SUBCLASS; j > 0; j--)
+			for (int j = character().getMaxSubclass(); j > 0; j--)
 			{
 				qName = VARS[i] + String.valueOf(j);
 				qValue = st.getGlobalQuestVar(qName);
@@ -277,7 +279,7 @@ public final class SubClassSkills extends Quest
 						Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " has invalid cert skill :" + skill.getName() + "(" + skill.getId() + "/" + skill.getLevel() + "), level too high", IllegalActionPunishmentType.NONE);
 					}
 					
-					if (Config.SKILL_CHECK_REMOVE)
+					if (general().skillCheckRemove())
 					{
 						player.removeSkill(skill);
 					}

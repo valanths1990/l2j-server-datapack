@@ -18,8 +18,9 @@
  */
 package com.l2jserver.datapack.ai.npc.ManorManager;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.instancemanager.CastleManorManager;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.L2Npc;
@@ -90,7 +91,7 @@ public final class ManorManager extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		if (Config.ALLOW_MANOR)
+		if (general().allowManor())
 		{
 			final int castleId = npc.getTemplate().getParameters().getInt("manor_id", -1);
 			if (!player.canOverrideCond(PcCondOverride.CASTLE_CONDITIONS) && player.isClanLeader() && (castleId == player.getClan().getCastleId()))

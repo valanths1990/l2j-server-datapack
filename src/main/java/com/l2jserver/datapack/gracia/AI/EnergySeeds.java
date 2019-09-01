@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.gracia.AI;
 
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -26,7 +28,6 @@ import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.datapack.quests.Q00692_HowtoOpposeEvil.Q00692_HowtoOpposeEvil;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.enums.audio.Sound;
@@ -387,7 +388,7 @@ public class EnergySeeds extends AbstractNpcAI
 	
 	private void handleQuestDrop(L2PcInstance player, int itemId)
 	{
-		double chance = HOWTOOPPOSEEVIL_CHANCE * Config.RATE_QUEST_DROP;
+		double chance = HOWTOOPPOSEEVIL_CHANCE * rates().getRateQuestDrop();
 		int numItems = (int) (chance / 100);
 		chance = chance % 100;
 		if (getRandom(100) < chance)

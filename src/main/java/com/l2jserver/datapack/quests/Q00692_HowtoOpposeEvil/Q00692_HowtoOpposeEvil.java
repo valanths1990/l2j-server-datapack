@@ -18,10 +18,11 @@
  */
 package com.l2jserver.datapack.quests.Q00692_HowtoOpposeEvil;
 
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -183,7 +184,7 @@ public final class Q00692_HowtoOpposeEvil extends Quest
 		final int npcId = npc.getId();
 		if ((st != null) && QUEST_MOBS.containsKey(npcId))
 		{
-			int chance = (int) (QUEST_MOBS.get(npcId).getCount() * Config.RATE_QUEST_DROP);
+			int chance = (int) (QUEST_MOBS.get(npcId).getCount() * rates().getRateQuestDrop());
 			int numItems = chance / 1000;
 			chance = chance % 1000;
 			if (getRandom(1000) < chance)

@@ -18,10 +18,11 @@
  */
 package com.l2jserver.datapack.ai.npc.Trainers.HealerTrainer;
 
+import static com.l2jserver.gameserver.config.Configuration.character;
+
 import java.util.Collection;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.model.L2SkillLearn;
@@ -128,7 +129,7 @@ public final class HealerTrainer extends AbstractNpcAI
 					break;
 				}
 				
-				if (player.getAdena() < Config.FEE_DELETE_TRANSFER_SKILLS)
+				if (player.getAdena() < character().getFeeDeleteTransferSkills())
 				{
 					player.sendPacket(SystemMessageId.CANNOT_RESET_SKILL_LINK_BECAUSE_NOT_ENOUGH_ADENA);
 					break;
@@ -160,7 +161,7 @@ public final class HealerTrainer extends AbstractNpcAI
 					// Adena gets reduced once.
 					if (hasSkills)
 					{
-						player.reduceAdena("Cleanse", Config.FEE_DELETE_TRANSFER_SKILLS, npc, true);
+						player.reduceAdena("Cleanse", character().getFeeDeleteTransferSkills(), npc, true);
 					}
 				}
 				break;

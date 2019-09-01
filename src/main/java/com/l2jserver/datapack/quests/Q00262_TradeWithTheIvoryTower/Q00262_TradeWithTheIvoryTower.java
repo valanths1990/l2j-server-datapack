@@ -18,10 +18,11 @@
  */
 package com.l2jserver.datapack.quests.Q00262_TradeWithTheIvoryTower;
 
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -82,7 +83,7 @@ public final class Q00262_TradeWithTheIvoryTower extends Quest
 		}
 		
 		final QuestState st = getQuestState(partyMember, false);
-		float chance = (MOBS_SAC.get(npc.getId()) * Config.RATE_QUEST_DROP);
+		double chance = MOBS_SAC.get(npc.getId()) * rates().getRateQuestDrop();
 		if (getRandom(10) < chance)
 		{
 			st.rewardItems(SPORE_SAC, 1);

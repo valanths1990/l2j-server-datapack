@@ -18,11 +18,12 @@
  */
 package com.l2jserver.datapack.hellbound;
 
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
 import com.l2jserver.gameserver.instancemanager.GlobalVariablesManager;
 import com.l2jserver.gameserver.model.L2Spawn;
@@ -352,7 +353,7 @@ public final class HellboundEngine extends AbstractNpcAI
 		int reward = trust;
 		if (useRates)
 		{
-			reward = (int) (trust * (trust > 0 ? Config.RATE_HB_TRUST_INCREASE : Config.RATE_HB_TRUST_DECREASE));
+			reward = (int) (trust * (trust > 0 ? rates().getRateHellboundTrustIncrease() : rates().getRateHellboundTrustDecrease()));
 		}
 		
 		final int finalTrust = Math.max(getTrust() + reward, _minTrust);

@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.quests.Q00350_EnhanceYourWeapon;
 
+import static com.l2jserver.gameserver.config.Configuration.server;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,7 +36,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.model.AbsorberInfo;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
@@ -415,7 +416,7 @@ public class Q00350_EnhanceYourWeapon extends Quest {
 			factory.setValidating(false);
 			factory.setIgnoringComments(true);
 			
-			File file = new File(Config.DATAPACK_ROOT, "data/levelUpCrystalData.xml");
+			File file = new File(server().getDatapackRoot(), "data/levelUpCrystalData.xml");
 			if (!file.exists()) {
 				LOG.error("Missing levelUpCrystalData.xml. The quest wont work without it!");
 				return;

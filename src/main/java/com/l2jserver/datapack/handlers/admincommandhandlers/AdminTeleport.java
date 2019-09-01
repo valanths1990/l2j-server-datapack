@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -27,7 +29,6 @@ import java.util.logging.Logger;
 
 import com.l2jserver.commons.database.ConnectionFactory;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.MapRegionManager;
@@ -131,7 +132,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				if (Config.DEBUG)
+				if (general().debug())
 				{
 					_log.info("admin_walk: " + e);
 				}
@@ -540,7 +541,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			try
 			{
 				spawn = new L2Spawn(target.getTemplate().getId());
-				if (Config.SAVE_GMSPAWN_ON_CUSTOM)
+				if (general().saveGmSpawnOnCustom())
 				{
 					spawn.setCustom(true);
 				}
@@ -563,7 +564,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				
 				activeChar.sendMessage("Created " + target.getTemplate().getName() + " on " + target.getObjectId() + ".");
 				
-				if (Config.DEBUG)
+				if (general().debug())
 				{
 					_log.fine("Spawn at X=" + spawn.getX() + " Y=" + spawn.getY() + " Z=" + spawn.getZ());
 					_log.warning("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") moved NPC " + target.getObjectId());
@@ -591,7 +592,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			try
 			{
 				final L2Spawn spawnDat = new L2Spawn(target.getId());
-				if (Config.SAVE_GMSPAWN_ON_CUSTOM)
+				if (general().saveGmSpawnOnCustom())
 				{
 					spawn.setCustom(true);
 				}
@@ -615,5 +616,4 @@ public class AdminTeleport implements IAdminCommandHandler
 			activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 		}
 	}
-	
 }

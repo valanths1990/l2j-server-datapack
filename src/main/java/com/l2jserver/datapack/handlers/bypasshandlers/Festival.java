@@ -18,13 +18,14 @@
  */
 package com.l2jserver.datapack.handlers.bypasshandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.sevenSings;
+
 import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Level;
 
 import com.l2jserver.gameserver.SevenSigns;
 import com.l2jserver.gameserver.SevenSignsFestival;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IBypassHandler;
 import com.l2jserver.gameserver.model.L2Party;
 import com.l2jserver.gameserver.model.L2Party.messageType;
@@ -101,7 +102,7 @@ public class Festival implements IBypassHandler
 					}
 					
 					// Check to see if the party has at least 5 members.
-					if (party.getMemberCount() < Config.ALT_FESTIVAL_MIN_PLAYER)
+					if (party.getMemberCount() < sevenSings().getFestivalMinPlayer())
 					{
 						npc.showChatWindow(activeChar, 2, "b", false);
 						return true;
@@ -311,7 +312,7 @@ public class Festival implements IBypassHandler
 					}
 					else
 					{
-						if (party.getMemberCount() > Config.ALT_FESTIVAL_MIN_PLAYER)
+						if (party.getMemberCount() > sevenSings().getFestivalMinPlayer())
 						{
 							party.removePartyMember(activeChar, messageType.Expelled);
 						}

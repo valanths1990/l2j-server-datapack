@@ -18,12 +18,13 @@
  */
 package com.l2jserver.datapack.custom.events.Rabbits;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -97,7 +98,7 @@ public final class Rabbits extends Event
 		}
 		
 		// Check starting conditions
-		if (!Config.CUSTOM_NPC_DATA)
+		if (!general().customNpcData())
 		{
 			_log.info(getName() + ": Event can't be started, because custom NPCs are disabled!");
 			eventMaker.sendMessage("Event " + getName() + " can't be started because custom NPCs are disabled!");

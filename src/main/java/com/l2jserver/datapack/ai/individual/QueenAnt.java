@@ -18,12 +18,14 @@
  */
 package com.l2jserver.datapack.ai.individual;
 
+import static com.l2jserver.gameserver.config.Configuration.grandBoss;
+import static com.l2jserver.gameserver.config.Configuration.npc;
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.audio.Music;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
 import com.l2jserver.gameserver.model.Location;
@@ -293,7 +295,7 @@ public final class QueenAnt extends AbstractNpcAI
 			return null;
 		}
 		
-		if (!Config.RAID_DISABLE_CURSE && ((character.getLevel() - npc.getLevel()) > 8))
+		if (npc().raidCurse() && ((character.getLevel() - npc.getLevel()) > 8))
 		{
 			Skill curse = null;
 			if (isMage)
@@ -333,7 +335,7 @@ public final class QueenAnt extends AbstractNpcAI
 			npc.broadcastPacket(Music.BS02_D_10000.getPacket());
 			GrandBossManager.getInstance().setBossStatus(QUEEN, DEAD);
 			// Calculate Min and Max respawn times randomly.
-			long respawnTime = Config.QUEEN_ANT_SPAWN_INTERVAL + getRandom(-Config.QUEEN_ANT_SPAWN_RANDOM, Config.QUEEN_ANT_SPAWN_RANDOM);
+			long respawnTime = grandBoss().getIntervalOfQueenAntSpawn() + getRandom(-grandBoss().getRandomOfQueenAntSpawn(), grandBoss().getRandomOfQueenAntSpawn());
 			respawnTime *= 3600000;
 			startQuestTimer("queen_unlock", respawnTime, null, null);
 			cancelQuestTimer("action", npc, null);

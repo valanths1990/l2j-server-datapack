@@ -18,10 +18,15 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.character;
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
-import com.l2jserver.gameserver.config.Config;
+import org.aeonbits.owner.Mutable;
+
+import com.l2jserver.gameserver.config.Configuration;
 import com.l2jserver.gameserver.data.xml.impl.AdminData;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -220,66 +225,27 @@ public class AdminAdmin implements IAdminCommandHandler
 			}
 			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
 		}
-		else if (command.startsWith("admin_setconfig"))
-		{
+		else if (command.startsWith("admin_set")) {
 			StringTokenizer st = new StringTokenizer(command);
 			st.nextToken();
-			try
-			{
-				String pName = st.nextToken();
-				String pValue = st.nextToken();
-				if (Config.setParameterValue(pName, pValue))
-				{
-					activeChar.sendMessage("Config parameter " + pName + " set to " + pValue);
-				}
-				else
-				{
-					activeChar.sendMessage("Invalid parameter!");
-				}
-			}
-			catch (Exception e)
-			{
-				activeChar.sendMessage("Usage: //setconfig <parameter> <value>");
-			}
-			finally
-			{
-				showConfigPage(activeChar);
-			}
-		}
-		else if (command.startsWith("admin_set"))
-		{
-			StringTokenizer st = new StringTokenizer(command);
-			String[] cmd = st.nextToken().split("_");
-			try
-			{
-				String[] parameter = st.nextToken().split("=");
-				String pName = parameter[0].trim();
-				String pValue = parameter[1].trim();
-				if (Config.setParameterValue(pName, pValue))
-				{
-					activeChar.sendMessage("parameter " + pName + " succesfully set to " + pValue);
-				}
-				else
-				{
-					activeChar.sendMessage("Invalid parameter!");
-				}
-			}
-			catch (Exception e)
-			{
-				if (cmd.length == 2)
-				{
-					activeChar.sendMessage("Usage: //set parameter=value");
-				}
-			}
-			finally
-			{
-				if (cmd.length == 3)
-				{
-					if (cmd[2].equalsIgnoreCase("mod"))
-					{
-						AdminHtml.showAdminHtml(activeChar, "mods_menu.htm");
+			try {
+				String configName = st.nextToken();
+				String name = st.nextToken();
+				String value = st.nextToken();
+				
+				final var field = Configuration.class.getDeclaredField(configName);
+				if (field.getType().isInstance(Mutable.class)) {
+					try {
+						((Mutable) field.get(Configuration.class)).setProperty(name, value);
+						activeChar.sendMessage("Set " + name + "=" + value + " in " + configName + ".");
+					} catch (Exception ex) {
+						activeChar.sendMessage("Failed to set " + name + "=" + value + " in " + configName + ".");
 					}
 				}
+			} catch (Exception ex) {
+				activeChar.sendMessage("Usage: //setconfig <parameter> <value>");
+			} finally {
+				showConfigPage(activeChar);
 			}
 		}
 		else if (command.startsWith("admin_gmon"))
@@ -343,15 +309,15 @@ public class AdminAdmin implements IAdminCommandHandler
 		replyMSG.append("<center><table width=270><tr><td width=60><button value=\"Main\" action=\"bypass -h admin_admin\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=150>Config Server Panel</td><td width=60><button value=\"Back\" action=\"bypass -h admin_admin4\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table></center><br>");
 		replyMSG.append("<center><table width=260><tr><td width=140></td><td width=40></td><td width=40></td></tr>");
 		replyMSG.append("<tr><td><font color=\"00AA00\">Drop:</font></td><td></td><td></td></tr>");
-		replyMSG.append("<tr><td><font color=\"LEVEL\">Rate EXP</font> = " + Config.RATE_XP + "</td><td><edit var=\"param1\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateXp $param1\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
-		replyMSG.append("<tr><td><font color=\"LEVEL\">Rate SP</font> = " + Config.RATE_SP + "</td><td><edit var=\"param2\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateSp $param2\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
-		replyMSG.append("<tr><td><font color=\"LEVEL\">Rate Drop Spoil</font> = " + Config.RATE_CORPSE_DROP_CHANCE_MULTIPLIER + "</td><td><edit var=\"param4\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateDropSpoil $param4\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+		replyMSG.append("<tr><td><font color=\"LEVEL\">Rate EXP</font> = " + rates().getRateXp() + "</td><td><edit var=\"param1\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateXp $param1\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+		replyMSG.append("<tr><td><font color=\"LEVEL\">Rate SP</font> = " + rates().getRateSp() + "</td><td><edit var=\"param2\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateSp $param2\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+		replyMSG.append("<tr><td><font color=\"LEVEL\">Rate Drop Spoil</font> = " + rates().getCorpseDropChanceMultiplier() + "</td><td><edit var=\"param4\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateDropSpoil $param4\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
 		replyMSG.append("<tr><td width=140></td><td width=40></td><td width=40></td></tr>");
 		replyMSG.append("<tr><td><font color=\"00AA00\">Enchant:</font></td><td></td><td></td></tr>");
-		replyMSG.append("<tr><td><font color=\"LEVEL\">Enchant Element Stone</font> = " + Config.ENCHANT_CHANCE_ELEMENT_STONE + "</td><td><edit var=\"param8\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig EnchantChanceElementStone $param8\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
-		replyMSG.append("<tr><td><font color=\"LEVEL\">Enchant Element Crystal</font> = " + Config.ENCHANT_CHANCE_ELEMENT_CRYSTAL + "</td><td><edit var=\"param9\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig EnchantChanceElementCrystal $param9\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
-		replyMSG.append("<tr><td><font color=\"LEVEL\">Enchant Element Jewel</font> = " + Config.ENCHANT_CHANCE_ELEMENT_JEWEL + "</td><td><edit var=\"param10\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig EnchantChanceElementJewel $param10\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
-		replyMSG.append("<tr><td><font color=\"LEVEL\">Enchant Element Energy</font> = " + Config.ENCHANT_CHANCE_ELEMENT_ENERGY + "</td><td><edit var=\"param11\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig EnchantChanceElementEnergy $param11\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+		replyMSG.append("<tr><td><font color=\"LEVEL\">Enchant Element Stone</font> = " + character().getEnchantChanceElementStone() + "</td><td><edit var=\"param8\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig EnchantChanceElementStone $param8\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+		replyMSG.append("<tr><td><font color=\"LEVEL\">Enchant Element Crystal</font> = " + character().getEnchantChanceElementCrystal() + "</td><td><edit var=\"param9\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig EnchantChanceElementCrystal $param9\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+		replyMSG.append("<tr><td><font color=\"LEVEL\">Enchant Element Jewel</font> = " + character().getEnchantChanceElementJewel() + "</td><td><edit var=\"param10\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig EnchantChanceElementJewel $param10\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+		replyMSG.append("<tr><td><font color=\"LEVEL\">Enchant Element Energy</font> = " + character().getEnchantChanceElementEnergy() + "</td><td><edit var=\"param11\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig EnchantChanceElementEnergy $param11\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
 		
 		replyMSG.append("</table></body></html>");
 		adminReply.setHtml(replyMSG.toString());

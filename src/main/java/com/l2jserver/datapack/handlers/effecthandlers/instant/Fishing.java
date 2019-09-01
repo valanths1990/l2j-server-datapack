@@ -18,9 +18,10 @@
  */
 package com.l2jserver.datapack.handlers.effecthandlers.instant;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import com.l2jserver.commons.util.Rnd;
 import com.l2jserver.gameserver.GeoData;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.StatsSet;
@@ -79,7 +80,7 @@ public final class Fishing extends AbstractEffect
 		
 		final L2PcInstance player = activeChar.getActingPlayer();
 		
-		if (!Config.ALLOWFISHING && !player.canOverrideCond(PcCondOverride.SKILL_CONDITIONS))
+		if (!general().allowFishing() && !player.canOverrideCond(PcCondOverride.SKILL_CONDITIONS))
 		{
 			player.sendMessage("Fishing is disabled!");
 			return;

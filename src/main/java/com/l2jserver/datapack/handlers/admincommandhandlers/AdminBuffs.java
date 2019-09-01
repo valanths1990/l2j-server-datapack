@@ -18,12 +18,13 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.L2Object;
@@ -197,7 +198,7 @@ public class AdminBuffs implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_switch_gm_buffs"))
 		{
-			if (Config.GM_GIVE_SPECIAL_SKILLS != Config.GM_GIVE_SPECIAL_AURA_SKILLS)
+			if (general().gmGiveSpecialSkills() != general().gmGiveSpecialAuraSkills())
 			{
 				final boolean toAuraSkills = activeChar.getKnownSkill(7041) != null;
 				switchSkills(activeChar, toAuraSkills);
@@ -325,7 +326,7 @@ public class AdminBuffs implements IAdminCommandHandler
 		// Send the packet
 		activeChar.sendPacket(new NpcHtmlMessage(html.toString()));
 		
-		if (Config.GMAUDIT)
+		if (general().gmAudit())
 		{
 			GMAudit.auditGMAction(activeChar.getName() + " [" + activeChar.getObjectId() + "]", "getbuffs", target.getName() + " (" + Integer.toString(target.getObjectId()) + ")", "");
 		}
@@ -351,7 +352,7 @@ public class AdminBuffs implements IAdminCommandHandler
 			}
 			
 			showBuffs(activeChar, target, 1, false);
-			if (Config.GMAUDIT)
+			if (general().gmAudit())
 			{
 				GMAudit.auditGMAction(activeChar.getName() + " [" + activeChar.getObjectId() + "]", "stopbuff", target.getName() + " (" + objId + ")", Integer.toString(skillId));
 			}
@@ -374,7 +375,7 @@ public class AdminBuffs implements IAdminCommandHandler
 			target.stopAllEffects();
 			activeChar.sendMessage("Removed all effects from " + target.getName() + " (" + objId + ")");
 			showBuffs(activeChar, target, 1, false);
-			if (Config.GMAUDIT)
+			if (general().gmAudit())
 			{
 				GMAudit.auditGMAction(activeChar.getName() + " [" + activeChar.getObjectId() + "]", "stopallbuffs", target.getName() + " (" + objId + ")", "");
 			}

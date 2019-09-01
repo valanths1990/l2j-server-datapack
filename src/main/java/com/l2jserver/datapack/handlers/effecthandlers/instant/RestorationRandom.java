@@ -18,11 +18,12 @@
  */
 package com.l2jserver.datapack.handlers.effecthandlers.instant;
 
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.commons.util.Rnd;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.model.L2ExtractableProductItem;
 import com.l2jserver.gameserver.model.L2ExtractableSkill;
 import com.l2jserver.gameserver.model.StatsSet;
@@ -110,7 +111,7 @@ public final class RestorationRandom extends AbstractEffect
 			{
 				continue;
 			}
-			player.addItem("Extract", item.getId(), (long) (item.getCount() * Config.RATE_EXTRACTABLE), info.getEffector(), true);
+			player.addItem("Extract", item.getId(), (long) (item.getCount() * rates().getRateExtractable()), info.getEffector(), true);
 		}
 	}
 }

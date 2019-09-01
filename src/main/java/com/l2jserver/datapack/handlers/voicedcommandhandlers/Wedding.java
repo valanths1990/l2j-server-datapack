@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.handlers.voicedcommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.customs;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,7 +31,6 @@ import com.l2jserver.gameserver.GameTimeController;
 import com.l2jserver.gameserver.SevenSigns;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.enums.PlayerAction;
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
@@ -95,14 +96,14 @@ public class Wedding implements IVoicedCommandHandler
 		
 		int _partnerId = activeChar.getPartnerId();
 		int _coupleId = activeChar.getCoupleId();
-		long AdenaAmount = 0;
+		long adenaAmount = 0;
 		
 		if (activeChar.isMarried())
 		{
 			activeChar.sendMessage("You are now divorced.");
 			
-			AdenaAmount = (activeChar.getAdena() / 100) * Config.L2JMOD_WEDDING_DIVORCE_COSTS;
-			activeChar.getInventory().reduceAdena("Wedding", AdenaAmount, activeChar, null);
+			adenaAmount = (activeChar.getAdena() / 100) * customs().getWeddingDivorceCosts();
+			activeChar.getInventory().reduceAdena("Wedding", adenaAmount, activeChar, null);
 			
 		}
 		else
@@ -124,9 +125,9 @@ public class Wedding implements IVoicedCommandHandler
 			}
 			
 			// give adena
-			if (AdenaAmount > 0)
+			if (adenaAmount > 0)
 			{
-				partner.addAdena("WEDDING", AdenaAmount, null, false);
+				partner.addAdena("WEDDING", adenaAmount, null, false);
 			}
 		}
 		CoupleManager.getInstance().deleteCouple(_coupleId);
@@ -148,7 +149,7 @@ public class Wedding implements IVoicedCommandHandler
 		else if (activeChar.getPartnerId() != 0)
 		{
 			activeChar.sendMessage("You are already engaged.");
-			if (Config.L2JMOD_WEDDING_PUNISH_INFIDELITY)
+			if (customs().weddingPunishInfidelity())
 			{
 				activeChar.startAbnormalVisualEffect(true, AbnormalVisualEffect.BIG_HEAD); // give player a Big Head
 				// lets recycle the sevensigns debuffs
@@ -204,7 +205,7 @@ public class Wedding implements IVoicedCommandHandler
 			return false;
 		}
 		
-		if ((ptarget.getAppearance().getSex() == activeChar.getAppearance().getSex()) && !Config.L2JMOD_WEDDING_SAMESEX)
+		if ((ptarget.getAppearance().getSex() == activeChar.getAppearance().getSex()) && !customs().weddingAllowSameSex())
 		{
 			activeChar.sendMessage("Gay marriage is not allowed on this server!");
 			return false;
@@ -456,9 +457,9 @@ public class Wedding implements IVoicedCommandHandler
 			return false;
 		}
 		
-		final int teleportTimer = Config.L2JMOD_WEDDING_TELEPORT_DURATION * 1000;
+		final int teleportTimer = customs().getWeddingTeleportDuration();
 		activeChar.sendMessage("After " + (teleportTimer / 60000) + " min. you will be teleported to your partner.");
-		activeChar.getInventory().reduceAdena("Wedding", Config.L2JMOD_WEDDING_TELEPORT_PRICE, activeChar, null);
+		activeChar.getInventory().reduceAdena("Wedding", customs().getWeddingTeleportPrice(), activeChar, null);
 		
 		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		// SoE Animation section

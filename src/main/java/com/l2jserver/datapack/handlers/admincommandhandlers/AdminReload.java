@@ -18,11 +18,15 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.server;
+
 import java.io.File;
 import java.util.StringTokenizer;
 
+import org.aeonbits.owner.Reloadable;
+
 import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.config.Config;
+import com.l2jserver.gameserver.config.Configuration;
 import com.l2jserver.gameserver.data.sql.impl.CrestTable;
 import com.l2jserver.gameserver.data.sql.impl.TeleportLocationTable;
 import com.l2jserver.gameserver.data.xml.impl.AdminData;
@@ -74,10 +78,34 @@ public class AdminReload implements IAdminCommandHandler
 			final String type = st.nextToken();
 			switch (type.toLowerCase())
 			{
-				case "config":
-				{
-					Config.load();
-					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Configs.");
+				case "config": {
+					if (st.hasMoreElements()) {
+						final var configName = st.nextToken();
+						try {
+							final var field = Configuration.class.getDeclaredField(configName);
+							if (Reloadable.class.isAssignableFrom(field.getType())) {
+								field.setAccessible(true);
+								((Reloadable) field.get(null)).reload();
+								AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded " + configName + " configuration.");
+							} else {
+								activeChar.sendMessage(configName + " configuration cannot be reloaded.");
+							}
+						} catch (Exception ex) {
+							activeChar.sendMessage("Failed to reload configuration " + configName + ".");
+						}
+					} else {
+						for (var field : Configuration.class.getDeclaredFields()) {
+							if (Reloadable.class.isAssignableFrom(field.getType())) {
+								try {
+									field.setAccessible(true);
+									((Reloadable) field.get(null)).reload();
+								} catch (Exception ex) {
+									activeChar.sendMessage("Failed to reload configuration " + field.getName() + ".");
+								}
+							}
+						}
+						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded all configurations.");
+					}
 					break;
 				}
 				case "access":
@@ -130,7 +158,7 @@ public class AdminReload implements IAdminCommandHandler
 					if (st.hasMoreElements())
 					{
 						final String path = st.nextToken();
-						final File file = new File(Config.DATAPACK_ROOT, "data/html/" + path);
+						final File file = new File(server().getDatapackRoot(), "data/html/" + path);
 						if (file.exists())
 						{
 							HtmCache.getInstance().reload(file);
@@ -205,14 +233,14 @@ public class AdminReload implements IAdminCommandHandler
 				}
 				case "effect":
 				{
-					final File file = new File(Config.SCRIPT_ROOT, "com/l2jserver/datapack/handlers/EffectMasterHandler.java");
+					final File file = new File(server().getScriptRoot(), "com/l2jserver/datapack/handlers/EffectMasterHandler.java");
 					ScriptEngineManager.getInstance().compileScript(file);
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Effects.");
 					break;
 				}
 				case "handler":
 				{
-					final File file = new File(Config.SCRIPT_ROOT, "com/l2jserver/datapack/handlers/MasterHandler.java");
+					final File file = new File(server().getScriptRoot(), "com/l2jserver/datapack/handlers/MasterHandler.java");
 					ScriptEngineManager.getInstance().compileScript(file);
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Handlers.");
 					break;

@@ -18,7 +18,8 @@
  */
 package com.l2jserver.datapack.quests.Q00616_MagicalPowerOfFirePart2;
 
-import com.l2jserver.gameserver.config.Config;
+import static com.l2jserver.gameserver.config.Configuration.npc;
+
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -144,8 +145,8 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
 	{
-		final int respawnMinDelay = (int) (43200000 * Config.RAID_MIN_RESPAWN_MULTIPLIER);
-		final int respawnMaxDelay = (int) (129600000 * Config.RAID_MAX_RESPAWN_MULTIPLIER);
+		final int respawnMinDelay = (int) (43200000 * npc().getRaidMinRespawnMultiplier());
+		final int respawnMaxDelay = (int) (129600000 * npc().getRaidMaxRespawnMultiplier());
 		final int respawnDelay = getRandom(respawnMinDelay, respawnMaxDelay);
 		cancelQuestTimer("despawn_nastron", npc, null);
 		saveGlobalQuestVar("Q00616_respawn", String.valueOf(System.currentTimeMillis() + respawnDelay));

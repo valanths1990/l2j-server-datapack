@@ -18,6 +18,9 @@
  */
 package com.l2jserver.datapack.gracia.instances.SeedOfDestruction;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+import static com.l2jserver.gameserver.config.Configuration.server;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,7 +39,6 @@ import org.w3c.dom.Node;
 import com.l2jserver.datapack.instances.AbstractInstance;
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.enums.TrapAction;
 import com.l2jserver.gameserver.instancemanager.GraciaSeedsManager;
@@ -237,7 +239,7 @@ public final class Stage1 extends AbstractInstance
 			factory.setValidating(false);
 			factory.setIgnoringComments(true);
 			
-			File file = new File(Config.DATAPACK_ROOT + "/data/spawnZones/seed_of_destruction.xml");
+			File file = new File(server().getDatapackRoot(), "/data/spawnZones/seed_of_destruction.xml");
 			if (!file.exists())
 			{
 				_log.severe("[Seed of Destruction] Missing seed_of_destruction.xml. The quest wont work without it!");
@@ -444,7 +446,7 @@ public final class Stage1 extends AbstractInstance
 		{
 			_log.log(Level.WARNING, "[Seed of Destruction] Could not parse data.xml file: " + e.getMessage(), e);
 		}
-		if (Config.DEBUG)
+		if (general().debug())
 		{
 			_log.info("[Seed of Destruction] Loaded " + spawnCount + " spawns data.");
 			_log.info("[Seed of Destruction] Loaded " + _spawnZoneList.size() + " spawn zones data.");
