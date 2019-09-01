@@ -425,10 +425,11 @@
 		</effects>
 	</skill>
 	<skill id="4030" levels="3" name="NPC Clan Might">
-		<!-- Freya retail confirmed -->
+		<!-- High Five Confirmed -->
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#magicLvl"> 20 40 70 </table>
-		<table name="#mpConsume2"> 10 18 33 </table>
+		<table name="#mpConsume1"> 2 4 7 </table>
+		<table name="#mpConsume2"> 8 14 26 </table>
 		<table name="#pAtk"> 1.08 1.12 1.15 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="300" />
@@ -439,11 +440,12 @@
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="CLAN" />
+		<set name="targetType" val="ONE" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
