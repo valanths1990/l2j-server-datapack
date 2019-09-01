@@ -285,14 +285,19 @@
 		</effects>
 	</skill>
 	<skill id="5716" levels="1" name="Stun">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="30" />
 		<set name="affectLimit" val="5-12" />
+		<set name="attributeType" val="FIRE" />
+		<set name="attributePower" val="20" />
 		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="1500" />
 		<set name="effectPoint" val="-975" />
+		<set name="effectRange" val="2000" />
 		<set name="fanRange" val="0,0,1500,60" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill0100" />
@@ -304,18 +309,35 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="SHOCK" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="3553" />
+			</effect>
+			<effect name="Stun" />
+		</effects>
 	</skill>
 	<skill id="5717" levels="1" name="Fire Breath">
+		<!-- High Five Confirmed -->
+		<set name="attributeType" val="FIRE" />
+		<set name="attributePower" val="20" />
+		<set name="castRange" val="1500" />
 		<set name="effectPoint" val="-650" />
+		<set name="effectRange" val="2000" />
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="73" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
+		<effects>
+			<effect name="MagicalAttack">
+				<param power="107" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5718" levels="1" name="Anger">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="PA_UP" />
@@ -328,7 +350,13 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="pDef" val="0.75" />
+				<mul stat="pAtk" val="1.50" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5719" levels="1" name="Kamabion Susceptibility">
 		<set name="abnormalLvl" val="1" />
@@ -1195,6 +1223,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5760" levels="9" name="Critical Hit">
+		<!-- High Five Confirmed -->
 		<table name="#abnormalLvls"> 2 3 4 5 6 7 8 9 10 </table>
 		<table name="#skillLevel"> 2 3 4 5 6 7 0 0 0 </table>
 		<table name="#critRate"> 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1 1 </table>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="7000" levels="1" name="NPC Default">
+		<!-- High Five Confirmed -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="7001" levels="1" name="Dispel Buff">
 		<set name="castRange" val="400" />
