@@ -18,10 +18,12 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.customs;
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.L2World;
@@ -135,9 +137,9 @@ public class AdminKill implements IAdminCommandHandler
 			}
 			target.reduceCurrentHp(target.getMaxHp() + target.getMaxCp() + 1, activeChar, null);
 		}
-		else if (Config.L2JMOD_CHAMPION_ENABLE && target.isChampion())
+		else if (customs().championEnable() && target.isChampion())
 		{
-			target.reduceCurrentHp((target.getMaxHp() * Config.L2JMOD_CHAMPION_HP) + 1, activeChar, null);
+			target.reduceCurrentHp((target.getMaxHp() * customs().getChampionHp()) + 1, activeChar, null);
 		}
 		else
 		{
@@ -155,7 +157,7 @@ public class AdminKill implements IAdminCommandHandler
 				target.setIsInvul(true);
 			}
 		}
-		if (Config.DEBUG)
+		if (general().debug())
 		{
 			_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ")" + " killed character " + target.getObjectId());
 		}

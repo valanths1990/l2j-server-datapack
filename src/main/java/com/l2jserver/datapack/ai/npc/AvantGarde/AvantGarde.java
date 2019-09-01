@@ -18,11 +18,12 @@
  */
 package com.l2jserver.datapack.ai.npc.AvantGarde;
 
+import static com.l2jserver.gameserver.config.Configuration.character;
+
 import java.util.List;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.datapack.custom.Validators.SubClassSkills;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.MultisellData;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.datatables.SkillData;
@@ -179,7 +180,7 @@ public class AvantGarde extends AbstractNpcAI
 				{
 					htmltext = "32323-08.html";
 				}
-				else if (player.getAdena() < Config.FEE_DELETE_SUBCLASS_SKILLS)
+				else if (player.getAdena() < character().getFeeDeleteSubClassSkills())
 				{
 					htmltext = "32323-08no.html";
 				}
@@ -194,7 +195,7 @@ public class AvantGarde extends AbstractNpcAI
 					int activeCertifications = 0;
 					for (String varName : QUEST_VAR_NAMES)
 					{
-						for (int i = 1; i <= Config.MAX_SUBCLASS; i++)
+						for (int i = 1; i <= character().getMaxSubclass(); i++)
 						{
 							String qvar = st.getGlobalQuestVar(varName + i);
 							if (!qvar.isEmpty() && (qvar.endsWith(";") || !qvar.equals("0")))
@@ -211,7 +212,7 @@ public class AvantGarde extends AbstractNpcAI
 					{
 						for (String varName : QUEST_VAR_NAMES)
 						{
-							for (int i = 1; i <= Config.MAX_SUBCLASS; i++)
+							for (int i = 1; i <= character().getMaxSubclass(); i++)
 							{
 								final String qvarName = varName + i;
 								final String qvar = st.getGlobalQuestVar(qvarName);
@@ -266,7 +267,7 @@ public class AvantGarde extends AbstractNpcAI
 							}
 						}
 						
-						player.reduceAdena("Cleanse", Config.FEE_DELETE_SUBCLASS_SKILLS, npc, true);
+						player.reduceAdena("Cleanse", character().getFeeDeleteSubClassSkills(), npc, true);
 						htmltext = "32323-09no.html";
 						player.sendSkillList();
 					}

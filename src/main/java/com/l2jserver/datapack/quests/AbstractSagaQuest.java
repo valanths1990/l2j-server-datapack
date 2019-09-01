@@ -18,13 +18,14 @@
  */
 package com.l2jserver.datapack.quests;
 
+import static com.l2jserver.gameserver.config.Configuration.character;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.L2Party;
 import com.l2jserver.gameserver.model.L2World;
@@ -496,7 +497,7 @@ public abstract class AbstractSagaQuest extends Quest {
 					List<QuestState> partyQuestMembers = new ArrayList<>();
 					for (L2PcInstance player1 : party.getMembers()) {
 						QuestState st1 = findQuest(player1);
-						if ((st1 != null) && player1.isInsideRadius(player, Config.ALT_PARTY_RANGE2, false, false)) {
+						if ((st1 != null) && player1.isInsideRadius(player, character().getPartyRange2(), false, false)) {
 							if (st1.isCond(15)) {
 								partyQuestMembers.add(st1);
 							}

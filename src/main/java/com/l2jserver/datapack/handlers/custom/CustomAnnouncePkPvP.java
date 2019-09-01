@@ -18,7 +18,8 @@
  */
 package com.l2jserver.datapack.handlers.custom;
 
-import com.l2jserver.gameserver.config.Config;
+import static com.l2jserver.gameserver.config.Configuration.customs;
+
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.Containers;
 import com.l2jserver.gameserver.model.events.EventType;
@@ -36,16 +37,12 @@ public class CustomAnnouncePkPvP
 	
 	public CustomAnnouncePkPvP()
 	{
-		if (Config.ANNOUNCE_PK_PVP)
+		if (customs().announcePkPvP())
 		{
 			Containers.Players().addListener(new ConsumerEventListener(Containers.Players(), EventType.ON_PLAYER_PVP_KILL, (OnPlayerPvPKill event) -> OnPlayerPvPKill(event), this));
 		}
 	}
 	
-	/**
-	 * @param event
-	 * @return
-	 */
 	private Object OnPlayerPvPKill(OnPlayerPvPKill event)
 	{
 		L2PcInstance pk = event.getActiveChar();
@@ -55,13 +52,13 @@ public class CustomAnnouncePkPvP
 		}
 		L2PcInstance player = event.getTarget();
 		
-		String msg = Config.ANNOUNCE_PVP_MSG;
+		String msg = customs().getAnnouncePvpMsg();
 		if (player.getPvpFlag() == 0)
 		{
-			msg = Config.ANNOUNCE_PK_MSG;
+			msg = customs().getAnnouncePkMsg();
 		}
 		msg = msg.replace("$killer", pk.getName()).replace("$target", player.getName());
-		if (Config.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
+		if (customs().announcePkPvPNormalMessage())
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1);
 			sm.addString(msg);

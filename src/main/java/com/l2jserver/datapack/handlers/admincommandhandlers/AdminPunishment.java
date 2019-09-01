@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.ip;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
@@ -27,7 +29,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.sql.impl.CharNameTable;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.PunishmentManager;
@@ -262,7 +263,7 @@ public class AdminPunishment implements IAdminCommandHandler
 						{
 							throw new UnknownHostException("You cannot ban any local address!");
 						}
-						else if (Config.GAME_SERVER_HOSTS.contains(addr.getHostAddress()))
+						else if (ip().getHosts().contains(addr.getHostAddress()))
 						{
 							throw new UnknownHostException("You cannot ban your gameserver's address!");
 						}

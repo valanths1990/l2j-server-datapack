@@ -18,10 +18,11 @@
  */
 package com.l2jserver.datapack.handlers.actionhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.character;
+
 import com.l2jserver.commons.util.Rnd;
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.handler.IActionHandler;
 import com.l2jserver.gameserver.model.L2Object;
@@ -135,7 +136,8 @@ public class L2NpcAction implements IActionHandler
 							npc.showChatWindow(activeChar);
 						}
 					}
-					if ((Config.PLAYER_MOVEMENT_BLOCK_TIME > 0) && !activeChar.isGM())
+					
+					if ((character().getNpcTalkBlockingTime() > 0) && !activeChar.isGM())
 					{
 						activeChar.updateNotMoveUntil();
 					}

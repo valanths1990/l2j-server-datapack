@@ -13,6 +13,9 @@
 		<slf4j.version>1.7.28</slf4j.version>
 		<!-- L2J -->
 		<l2j-server-game.version>2.6.1.0-SNAPSHOT</l2j-server-game.version>
+		<!-- Test -->
+		<testng.version>7.0.0</testng.version>
+		<mockito.version>3.2.4</mockito.version>
 		<!-- Plugins -->
 		<maven-jar-plugin.version>3.1.2</maven-jar-plugin.version>
 		<maven-assembly-plugin.version>3.1.1</maven-assembly-plugin.version>
@@ -27,6 +30,25 @@
 			<groupId>com.l2jserver</groupId>
 			<artifactId>l2j-server-game</artifactId>
 			<version>${l2j-server-game.version}</version>
+		</dependency>
+		<!-- Test -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${mockito.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-inline</artifactId>
+			<version>${mockito.version}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 	<build>
@@ -49,7 +71,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>${maven-assembly-plugin.version}</version><!--$NO-MVN-MAN-VER$-->
+				<version>${maven-assembly-plugin.version}</version><!--$NO-MVN-MAN-VER$ -->
 				<executions>
 					<execution>
 						<phase>package</phase>

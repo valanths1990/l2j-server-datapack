@@ -18,12 +18,13 @@
  */
 package com.l2jserver.datapack.handlers.bypasshandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IBypassHandler;
 import com.l2jserver.gameserver.instancemanager.ItemAuctionManager;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -50,7 +51,7 @@ public class ItemAuctionLink implements IBypassHandler
 			return false;
 		}
 		
-		if (!Config.ALT_ITEM_AUCTION_ENABLED)
+		if (!general().itemAuctionEnabled())
 		{
 			activeChar.sendPacket(SystemMessageId.NO_AUCTION_PERIOD);
 			return true;

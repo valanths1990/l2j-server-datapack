@@ -18,9 +18,10 @@
  */
 package com.l2jserver.datapack.ai.individual.Baium;
 
+import static com.l2jserver.gameserver.config.Configuration.grandBoss;
+
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.CategoryType;
 import com.l2jserver.gameserver.enums.MountType;
 import com.l2jserver.gameserver.enums.audio.Music;
@@ -554,7 +555,7 @@ public final class Baium extends AbstractNpcAI
 			setStatus(DEAD);
 			addSpawn(TELE_CUBE, TELEPORT_CUBIC_LOC, false, 900000);
 			zone.broadcastPacket(Music.BS01_D_10000.getPacket());
-			long respawnTime = (Config.BAIUM_SPAWN_INTERVAL + getRandom(-Config.BAIUM_SPAWN_RANDOM, Config.BAIUM_SPAWN_RANDOM)) * 3600000;
+			long respawnTime = (grandBoss().getIntervalOfBaiumSpawn() + getRandom(-grandBoss().getRandomOfBaiumSpawn(), grandBoss().getRandomOfBaiumSpawn())) * 3600000;
 			setRespawn(respawnTime);
 			startQuestTimer("CLEAR_STATUS", respawnTime, null, null);
 			startQuestTimer("CLEAR_ZONE", 900000, null, null);

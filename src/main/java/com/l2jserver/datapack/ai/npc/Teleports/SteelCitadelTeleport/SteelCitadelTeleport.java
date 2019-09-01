@@ -18,8 +18,9 @@
  */
 package com.l2jserver.datapack.ai.npc.Teleports.SteelCitadelTeleport;
 
+import static com.l2jserver.gameserver.config.Configuration.grandBoss;
+
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.L2CommandChannel;
@@ -63,7 +64,7 @@ public final class SteelCitadelTeleport extends AbstractNpcAI
 		}
 		
 		final L2CommandChannel channel = player.getParty() == null ? null : player.getParty().getCommandChannel();
-		if ((channel == null) || (channel.getLeader().getObjectId() != player.getObjectId()) || (channel.getMemberCount() < Config.BELETH_MIN_PLAYERS))
+		if ((channel == null) || (channel.getLeader().getObjectId() != player.getObjectId()) || (channel.getMemberCount() < grandBoss().getBelethMinPlayers()))
 		{
 			return "32376-02a.htm";
 		}

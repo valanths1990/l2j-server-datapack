@@ -18,10 +18,11 @@
  */
 package com.l2jserver.datapack.handlers.bypasshandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.BuyListData;
 import com.l2jserver.gameserver.handler.IBypassHandler;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -45,7 +46,7 @@ public class Wear implements IBypassHandler
 			return false;
 		}
 		
-		if (!Config.ALLOW_WEAR)
+		if (!general().allowWear())
 		{
 			return false;
 		}

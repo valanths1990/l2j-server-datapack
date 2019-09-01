@@ -18,11 +18,12 @@
  */
 package com.l2jserver.datapack.hellbound.AI.NPC.Warpgate;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.datapack.hellbound.HellboundEngine;
 import com.l2jserver.datapack.quests.Q00130_PathToHellbound.Q00130_PathToHellbound;
 import com.l2jserver.datapack.quests.Q00133_ThatsBloodyHot.Q00133_ThatsBloodyHot;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -116,7 +117,7 @@ public final class Warpgate extends AbstractNpcAI
 			return false;
 		}
 		
-		if (Config.HELLBOUND_WITHOUT_QUEST)
+		if (general().hellboundWithoutQuest())
 		{
 			return true;
 		}

@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.conquerablehalls.RainbowSpringsChateau;
 
+import static com.l2jserver.gameserver.config.Configuration.clanhall;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,7 +36,6 @@ import java.util.concurrent.ScheduledFuture;
 import com.l2jserver.commons.database.ConnectionFactory;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.instancemanager.ClanHallSiegeManager;
@@ -486,7 +487,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 						{
 							html = "game_manager010.htm";
 						}
-						else if (clan.getLevel() < Config.CHS_CLAN_MINLEVEL)
+						else if (clan.getLevel() < clanhall().getMinClanLevel())
 						{
 							html = "game_manager011.htm";
 						}

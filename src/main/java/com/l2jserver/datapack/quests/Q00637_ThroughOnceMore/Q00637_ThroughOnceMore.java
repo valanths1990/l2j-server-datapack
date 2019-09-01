@@ -18,7 +18,8 @@
  */
 package com.l2jserver.datapack.quests.Q00637_ThroughOnceMore;
 
-import com.l2jserver.gameserver.config.Config;
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -85,7 +86,7 @@ public final class Q00637_ThroughOnceMore extends Quest
 			final long count = st.getQuestItemsCount(NECRO_HEART);
 			if (count < 10)
 			{
-				int chance = (int) (Config.RATE_QUEST_DROP * DROP_CHANCE);
+				int chance = (int) (rates().getRateQuestDrop() * DROP_CHANCE);
 				int numItems = chance / 100;
 				chance = chance % 100;
 				if (getRandom(100) < chance)

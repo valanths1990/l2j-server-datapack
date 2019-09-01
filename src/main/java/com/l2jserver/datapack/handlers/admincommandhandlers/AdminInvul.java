@@ -18,9 +18,10 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.util.logging.Logger;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -71,7 +72,7 @@ public class AdminInvul implements IAdminCommandHandler
 		{
 			activeChar.setIsInvul(false);
 			text = activeChar.getName() + " is now mortal";
-			if (Config.DEBUG)
+			if (general().debug())
 			{
 				_log.fine("GM: Gm removed invul mode from character " + activeChar.getName() + "(" + activeChar.getObjectId() + ")");
 			}
@@ -80,7 +81,7 @@ public class AdminInvul implements IAdminCommandHandler
 		{
 			activeChar.setIsInvul(true);
 			text = activeChar.getName() + " is now invulnerable";
-			if (Config.DEBUG)
+			if (general().debug())
 			{
 				_log.fine("GM: Gm activated invul mode for character " + activeChar.getName() + "(" + activeChar.getObjectId() + ")");
 			}

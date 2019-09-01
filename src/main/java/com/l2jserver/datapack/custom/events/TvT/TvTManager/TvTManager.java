@@ -18,8 +18,9 @@
  */
 package com.l2jserver.datapack.custom.events.TvT.TvTManager;
 
+import static com.l2jserver.gameserver.config.Configuration.tvt;
+
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
 import com.l2jserver.gameserver.handler.VoicedCommandHandler;
 import com.l2jserver.gameserver.instancemanager.AntiFeedManager;
@@ -50,7 +51,7 @@ public final class TvTManager extends AbstractNpcAI implements IVoicedCommandHan
 		addTalkId(MANAGER_ID);
 		addStartNpc(MANAGER_ID);
 		
-		if (Config.TVT_ALLOW_VOICED_COMMAND)
+		if (tvt().allowVoicedInfoCommand())
 		{
 			VoicedCommandHandler.getInstance().registerHandler(this);
 		}
@@ -84,21 +85,21 @@ public final class TvTManager extends AbstractNpcAI implements IVoicedCommandHan
 				{
 					htmltext = getHtm(player.getHtmlPrefix(), "Karma.html");
 				}
-				else if ((playerLevel < Config.TVT_EVENT_MIN_LVL) || (playerLevel > Config.TVT_EVENT_MAX_LVL))
+				else if ((playerLevel < tvt().getMinPlayerLevel()) || (playerLevel > tvt().getMaxPlayerLevel()))
 				{
 					htmltext = getHtm(player.getHtmlPrefix(), "Level.html");
-					htmltext = htmltext.replaceAll("%min%", String.valueOf(Config.TVT_EVENT_MIN_LVL));
-					htmltext = htmltext.replaceAll("%max%", String.valueOf(Config.TVT_EVENT_MAX_LVL));
+					htmltext = htmltext.replaceAll("%min%", String.valueOf(tvt().getMinPlayerLevel()));
+					htmltext = htmltext.replaceAll("%max%", String.valueOf(tvt().getMaxPlayerLevel()));
 				}
-				else if ((team1Count == Config.TVT_EVENT_MAX_PLAYERS_IN_TEAMS) && (team2Count == Config.TVT_EVENT_MAX_PLAYERS_IN_TEAMS))
+				else if ((team1Count == tvt().getMaxPlayersInTeams()) && (team2Count == tvt().getMaxPlayersInTeams()))
 				{
 					htmltext = getHtm(player.getHtmlPrefix(), "TeamsFull.html");
-					htmltext = htmltext.replaceAll("%max%", String.valueOf(Config.TVT_EVENT_MAX_PLAYERS_IN_TEAMS));
+					htmltext = htmltext.replaceAll("%max%", String.valueOf(tvt().getMaxPlayersInTeams()));
 				}
-				else if ((Config.TVT_EVENT_MAX_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.TVT_ID, player, Config.TVT_EVENT_MAX_PARTICIPANTS_PER_IP))
+				else if ((tvt().getMaxParticipantsPerIP() > 0) && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.TVT_ID, player, tvt().getMaxParticipantsPerIP()))
 				{
 					htmltext = getHtm(player.getHtmlPrefix(), "IPRestriction.html");
-					htmltext = htmltext.replaceAll("%max%", String.valueOf(AntiFeedManager.getInstance().getLimit(player, Config.TVT_EVENT_MAX_PARTICIPANTS_PER_IP)));
+					htmltext = htmltext.replaceAll("%max%", String.valueOf(AntiFeedManager.getInstance().getLimit(player, tvt().getMaxParticipantsPerIP())));
 				}
 				else if (TvTEvent.needParticipationFee() && !TvTEvent.hasParticipationFee(player))
 				{
@@ -115,7 +116,7 @@ public final class TvTManager extends AbstractNpcAI implements IVoicedCommandHan
 			{
 				if (TvTEvent.removeParticipant(player.getObjectId()))
 				{
-					if (Config.TVT_EVENT_MAX_PARTICIPANTS_PER_IP > 0)
+					if (tvt().getMaxParticipantsPerIP() > 0)
 					{
 						AntiFeedManager.getInstance().removePlayer(AntiFeedManager.TVT_ID, player);
 					}
@@ -141,9 +142,9 @@ public final class TvTManager extends AbstractNpcAI implements IVoicedCommandHan
 			int[] teamsPlayerCounts = TvTEvent.getTeamsPlayerCounts();
 			htmltext = getHtm(player.getHtmlPrefix(), (!isParticipant ? "Participation.html" : "RemoveParticipation.html"));
 			htmltext = htmltext.replaceAll("%objectId%", String.valueOf(npc.getObjectId()));
-			htmltext = htmltext.replaceAll("%team1name%", Config.TVT_EVENT_TEAM_1_NAME);
+			htmltext = htmltext.replaceAll("%team1name%", tvt().getTeam1Name());
 			htmltext = htmltext.replaceAll("%team1playercount%", String.valueOf(teamsPlayerCounts[0]));
-			htmltext = htmltext.replaceAll("%team2name%", Config.TVT_EVENT_TEAM_2_NAME);
+			htmltext = htmltext.replaceAll("%team2name%", tvt().getTeam2Name());
 			htmltext = htmltext.replaceAll("%team2playercount%", String.valueOf(teamsPlayerCounts[1]));
 			htmltext = htmltext.replaceAll("%playercount%", String.valueOf(teamsPlayerCounts[0] + teamsPlayerCounts[1]));
 			
@@ -201,10 +202,10 @@ public final class TvTManager extends AbstractNpcAI implements IVoicedCommandHan
 		int[] teamsPlayerCounts = TvTEvent.getTeamsPlayerCounts();
 		int[] teamsPointsCounts = TvTEvent.getTeamsPoints();
 		String htmltext = getHtm(player.getHtmlPrefix(), "Status.html");
-		htmltext = htmltext.replaceAll("%team1name%", Config.TVT_EVENT_TEAM_1_NAME);
+		htmltext = htmltext.replaceAll("%team1name%", tvt().getTeam1Name());
 		htmltext = htmltext.replaceAll("%team1playercount%", String.valueOf(teamsPlayerCounts[0]));
 		htmltext = htmltext.replaceAll("%team1points%", String.valueOf(teamsPointsCounts[0]));
-		htmltext = htmltext.replaceAll("%team2name%", Config.TVT_EVENT_TEAM_2_NAME);
+		htmltext = htmltext.replaceAll("%team2name%", tvt().getTeam2Name());
 		htmltext = htmltext.replaceAll("%team2playercount%", String.valueOf(teamsPlayerCounts[1]));
 		htmltext = htmltext.replaceAll("%team2points%", String.valueOf(teamsPointsCounts[1]));
 		return htmltext;

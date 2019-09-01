@@ -18,7 +18,8 @@
  */
 package com.l2jserver.datapack.quests.Q00688_DefeatTheElrokianRaiders;
 
-import com.l2jserver.gameserver.config.Config;
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -131,7 +132,7 @@ public class Q00688_DefeatTheElrokianRaiders extends Quest
 		
 		final QuestState st = getQuestState(partyMember, false);
 		
-		float chance = (DROP_RATE * Config.RATE_QUEST_DROP);
+		double chance = (DROP_RATE * rates().getRateQuestDrop());
 		if (getRandom(1000) < chance)
 		{
 			st.rewardItems(DINOSAUR_FANG_NECKLACE, 1);

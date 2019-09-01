@@ -18,6 +18,11 @@
  */
 package com.l2jserver.datapack.ai.npc.CastleChamberlain;
 
+import static com.l2jserver.gameserver.config.Configuration.castle;
+import static com.l2jserver.gameserver.config.Configuration.character;
+import static com.l2jserver.gameserver.config.Configuration.general;
+import static com.l2jserver.gameserver.config.Configuration.sevenSings;
+
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -27,7 +32,6 @@ import java.util.StringTokenizer;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.SevenSigns;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.data.sql.impl.TeleportLocationTable;
 import com.l2jserver.gameserver.instancemanager.CastleManorManager;
@@ -205,19 +209,19 @@ public final class CastleChamberlain extends AbstractNpcAI
 		switch (func)
 		{
 			case Castle.FUNC_RESTORE_EXP:
-				fee = (level == 45) ? Config.CS_EXPREG1_FEE : Config.CS_EXPREG2_FEE;
+				fee = (level == 45) ? castle().getExpRegenerationFeeLvl1() : castle().getExpRegenerationFeeLvl2();
 				break;
 			case Castle.FUNC_RESTORE_HP:
-				fee = (level == 300) ? Config.CS_HPREG1_FEE : Config.CS_HPREG2_FEE;
+				fee = (level == 300) ? castle().getHpRegenerationFeeLvl1() : castle().getHpRegenerationFeeLvl2();
 				break;
 			case Castle.FUNC_RESTORE_MP:
-				fee = (level == 40) ? Config.CS_MPREG1_FEE : Config.CS_MPREG2_FEE;
+				fee = (level == 40) ? castle().getMpRegenerationFeeLvl1() : castle().getMpRegenerationFeeLvl2();
 				break;
 			case Castle.FUNC_SUPPORT:
-				fee = (level == 5) ? Config.CS_SUPPORT1_FEE : Config.CS_SUPPORT2_FEE;
+				fee = (level == 5) ? castle().getSupportFeeLvl1() : castle().getSupportFeeLvl2();
 				break;
 			case Castle.FUNC_TELEPORT:
-				fee = (level == 1) ? Config.CS_TELE1_FEE : Config.CS_TELE2_FEE;
+				fee = (level == 1) ? castle().getTeleportFunctionFeeLvl1() : castle().getTeleportFunctionFeeLvl2();
 				break;
 		}
 		return fee;
@@ -229,19 +233,19 @@ public final class CastleChamberlain extends AbstractNpcAI
 		switch (func)
 		{
 			case Castle.FUNC_RESTORE_EXP:
-				ratio = Config.CS_EXPREG_FEE_RATIO;
+				ratio = castle().getExpRegenerationFunctionFeeRatio();
 				break;
 			case Castle.FUNC_RESTORE_HP:
-				ratio = Config.CS_HPREG_FEE_RATIO;
+				ratio = castle().getHpRegenerationFunctionFeeRatio();
 				break;
 			case Castle.FUNC_RESTORE_MP:
-				ratio = Config.CS_MPREG_FEE_RATIO;
+				ratio = castle().getMpRegenerationFunctionFeeRatio();
 				break;
 			case Castle.FUNC_SUPPORT:
-				ratio = Config.CS_SUPPORT_FEE_RATIO;
+				ratio = castle().getSupportFunctionFeeRatio();
 				break;
 			case Castle.FUNC_TELEPORT:
-				ratio = Config.CS_TELE_FEE_RATIO;
+				ratio = castle().getTeleportFunctionFeeRatio();
 				break;
 		}
 		return ratio;
@@ -257,13 +261,13 @@ public final class CastleChamberlain extends AbstractNpcAI
 				switch (level)
 				{
 					case 2:
-						price = Config.OUTER_DOOR_UPGRADE_PRICE2;
+						price = castle().getOuterDoorUpgradePriceLvl2();
 						break;
 					case 3:
-						price = Config.OUTER_DOOR_UPGRADE_PRICE3;
+						price = castle().getOuterDoorUpgradePriceLvl3();
 						break;
 					case 5:
-						price = Config.OUTER_DOOR_UPGRADE_PRICE5;
+						price = castle().getOuterDoorUpgradePriceLvl5();
 						break;
 				}
 				break;
@@ -273,13 +277,13 @@ public final class CastleChamberlain extends AbstractNpcAI
 				switch (level)
 				{
 					case 2:
-						price = Config.INNER_DOOR_UPGRADE_PRICE2;
+						price = castle().getInnerDoorUpgradePriceLvl2();
 						break;
 					case 3:
-						price = Config.INNER_DOOR_UPGRADE_PRICE3;
+						price = castle().getInnerDoorUpgradePriceLvl3();
 						break;
 					case 5:
-						price = Config.INNER_DOOR_UPGRADE_PRICE5;
+						price = castle().getInnerDoorUpgradePriceLvl5();
 						break;
 				}
 				break;
@@ -289,13 +293,13 @@ public final class CastleChamberlain extends AbstractNpcAI
 				switch (level)
 				{
 					case 2:
-						price = Config.WALL_UPGRADE_PRICE2;
+						price = castle().getWallUpgradePriceLvl2();
 						break;
 					case 3:
-						price = Config.WALL_UPGRADE_PRICE3;
+						price = castle().getWallUpgradePriceLvl3();
 						break;
 					case 5:
-						price = Config.WALL_UPGRADE_PRICE5;
+						price = castle().getWallUpgradePriceLvl5();
 						break;
 				}
 				break;
@@ -355,16 +359,16 @@ public final class CastleChamberlain extends AbstractNpcAI
 		switch (level)
 		{
 			case 1:
-				price = Config.TRAP_UPGRADE_PRICE1;
+				price = castle().getTrapUpgradePriceLvl1();
 				break;
 			case 2:
-				price = Config.TRAP_UPGRADE_PRICE2;
+				price = castle().getTrapUpgradePriceLvl2();
 				break;
 			case 3:
-				price = Config.TRAP_UPGRADE_PRICE3;
+				price = castle().getTrapUpgradePriceLvl3();
 				break;
 			case 4:
-				price = Config.TRAP_UPGRADE_PRICE4;
+				price = castle().getTrapUpgradePriceLvl4();
 				break;
 		}
 		
@@ -772,7 +776,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 				if (isOwner(player, npc) && player.hasClanPrivilege(ClanPrivilege.CS_TAXES))
 				{
 					long seedIncome = 0;
-					if (Config.ALLOW_MANOR)
+					if (general().allowManor())
 					{
 						for (SeedProduction sp : CastleManorManager.getInstance().getSeedProduction(castle.getResidenceId(), false))
 						{
@@ -801,7 +805,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 				if (isOwner(player, npc) && player.hasClanPrivilege(ClanPrivilege.CS_TAXES))
 				{
 					final long amount = (st.hasMoreTokens()) ? Long.parseLong(st.nextToken()) : 0;
-					if ((amount > 0) && (amount < Inventory.MAX_ADENA))
+					if ((amount > 0) && (amount < character().getMaxAdena()))
 					{
 						if (player.getAdena() >= amount)
 						{
@@ -1161,7 +1165,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 			}
 			case "manor":
 			{
-				if (Config.ALLOW_MANOR)
+				if (general().allowManor())
 				{
 					htmltext = (isOwner(player, npc) && player.hasClanPrivilege(ClanPrivilege.CS_MANOR_ADMIN)) ? "manor.html" : "chamberlain-21.html";
 				}
@@ -1237,12 +1241,12 @@ public final class CastleChamberlain extends AbstractNpcAI
 						if ((SevenSigns.getInstance().getPlayerCabal(player.getObjectId()) == SevenSigns.CABAL_DAWN) && SevenSigns.getInstance().isCompetitionPeriod())
 						{
 							final int ticketCount = castle.getTicketBuyCount();
-							if (ticketCount < (Config.SSQ_DAWN_TICKET_QUANTITY / Config.SSQ_DAWN_TICKET_BUNDLE))
+							if (ticketCount < (sevenSings().getSevenSignsDawnTicketQuantity() / sevenSings().getSevenSignsDawnTicketBundle()))
 							{
 								final NpcHtmlMessage html = getHtmlPacket(player, npc, "ssq_selldawnticket.html");
-								html.replace("%DawnTicketLeft%", String.valueOf(Config.SSQ_DAWN_TICKET_QUANTITY - (ticketCount * Config.SSQ_DAWN_TICKET_BUNDLE)));
-								html.replace("%DawnTicketBundle%", String.valueOf(Config.SSQ_DAWN_TICKET_BUNDLE));
-								html.replace("%DawnTicketPrice%", String.valueOf(Config.SSQ_DAWN_TICKET_PRICE * Config.SSQ_DAWN_TICKET_BUNDLE));
+								html.replace("%DawnTicketLeft%", String.valueOf(sevenSings().getSevenSignsDawnTicketQuantity() - (ticketCount * sevenSings().getSevenSignsDawnTicketBundle())));
+								html.replace("%DawnTicketBundle%", String.valueOf(sevenSings().getSevenSignsDawnTicketBundle()));
+								html.replace("%DawnTicketPrice%", String.valueOf(sevenSings().getSevenSignsDawnTicketPrice() * sevenSings().getSevenSignsDawnTicketBundle()));
 								player.sendPacket(html);
 							}
 							else
@@ -1275,13 +1279,13 @@ public final class CastleChamberlain extends AbstractNpcAI
 						if ((SevenSigns.getInstance().getPlayerCabal(player.getObjectId()) == SevenSigns.CABAL_DAWN) && SevenSigns.getInstance().isCompetitionPeriod())
 						{
 							final int ticketCount = castle.getTicketBuyCount();
-							if (ticketCount < (Config.SSQ_DAWN_TICKET_QUANTITY / Config.SSQ_DAWN_TICKET_BUNDLE))
+							if (ticketCount < (sevenSings().getSevenSignsDawnTicketQuantity() / sevenSings().getSevenSignsDawnTicketBundle()))
 							{
-								final long totalCost = Config.SSQ_DAWN_TICKET_PRICE * Config.SSQ_DAWN_TICKET_BUNDLE;
+								final long totalCost = sevenSings().getSevenSignsDawnTicketPrice() * sevenSings().getSevenSignsDawnTicketBundle();
 								if (player.getAdena() >= totalCost)
 								{
 									takeItems(player, Inventory.ADENA_ID, totalCost);
-									giveItems(player, Config.SSQ_MANORS_AGREEMENT_ID, Config.SSQ_DAWN_TICKET_BUNDLE);
+									giveItems(player, sevenSings().getSevenSignsManorsAgreementId(), sevenSings().getSevenSignsDawnTicketBundle());
 									castle.setTicketBuyCount(ticketCount + 1);
 								}
 								else

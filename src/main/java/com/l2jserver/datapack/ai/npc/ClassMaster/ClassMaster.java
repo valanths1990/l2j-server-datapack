@@ -18,11 +18,7 @@
  */
 package com.l2jserver.datapack.ai.npc.ClassMaster;
 
-import static com.l2jserver.gameserver.config.Config.ALLOW_CLASS_MASTERS;
-import static com.l2jserver.gameserver.config.Config.ALLOW_ENTIRE_TREE;
-import static com.l2jserver.gameserver.config.Config.ALTERNATE_CLASS_MASTER;
-import static com.l2jserver.gameserver.config.Config.AUTO_LEARN_FS_SKILLS;
-import static com.l2jserver.gameserver.config.Config.CLASS_MASTER_SETTINGS;
+import static com.l2jserver.gameserver.config.Configuration.character;
 import static com.l2jserver.gameserver.model.events.EventType.ON_PLAYER_LEVEL_CHANGED;
 import static com.l2jserver.gameserver.network.SystemMessageId.INVENTORY_LESS_THAN_80_PERCENT;
 import static com.l2jserver.gameserver.network.SystemMessageId.NOT_ENOUGH_ITEMS;
@@ -65,14 +61,14 @@ public final class ClassMaster extends AbstractNpcAI
 		addStartNpc(MR_CAT, MISS_QUEEN);
 		addFirstTalkId(MR_CAT, MISS_QUEEN);
 		addTalkId(MR_CAT, MISS_QUEEN);
-		if (ALTERNATE_CLASS_MASTER)
+		if (character().alternateClassMaster())
 		{
 			setOnEnterWorld(true);
 			registerTutorialEvent();
 			registerTutorialQuestionMark();
 		}
 		
-		if (ALLOW_CLASS_MASTERS)
+		if (character().allowClassMasters())
 		{
 			addSpawn(MR_CAT, new Location(147728, 27408, -2198, 16500));
 			addSpawn(MISS_QUEEN, new Location(147761, 27408, -2198, 16500));
@@ -192,7 +188,7 @@ public final class ClassMaster extends AbstractNpcAI
 		}
 		else if (event.startsWith("learn_skills"))
 		{
-			player.giveAvailableSkills(AUTO_LEARN_FS_SKILLS, true);
+			player.giveAvailableSkills(character().autoLearnForgottenScrollSkills(), true);
 		}
 		else if (event.startsWith("increase_clan_level"))
 		{
@@ -221,7 +217,7 @@ public final class ClassMaster extends AbstractNpcAI
 	
 	private void onTutorialLink(L2PcInstance player, String request)
 	{
-		if (!ALTERNATE_CLASS_MASTER || (request == null) || !request.startsWith("CO"))
+		if (!character().alternateClassMaster() || (request == null) || !request.startsWith("CO"))
 		{
 			return;
 		}
@@ -246,7 +242,7 @@ public final class ClassMaster extends AbstractNpcAI
 	@Override
 	public String onTutorialQuestionMark(L2PcInstance player, int number)
 	{
-		if (!ALTERNATE_CLASS_MASTER || (number != CUSTOM_EVENT_ID))
+		if (!character().alternateClassMaster() || (number != CUSTOM_EVENT_ID))
 		{
 			return "";
 		}
@@ -257,7 +253,7 @@ public final class ClassMaster extends AbstractNpcAI
 	
 	private void showQuestionMark(L2PcInstance player)
 	{
-		if (!ALTERNATE_CLASS_MASTER)
+		if (!character().alternateClassMaster())
 		{
 			return;
 		}
@@ -268,7 +264,7 @@ public final class ClassMaster extends AbstractNpcAI
 			return;
 		}
 		
-		if (!CLASS_MASTER_SETTINGS.isAllowed(classId.level() + 1))
+		if (!character().getClassMaster().isAllowed(classId.level() + 1))
 		{
 			return;
 		}
@@ -278,13 +274,13 @@ public final class ClassMaster extends AbstractNpcAI
 	
 	private void showHtmlMenu(L2PcInstance player, int objectId, int level)
 	{
-		if (!ALLOW_CLASS_MASTERS)
+		if (!character().allowClassMasters())
 		{
 			String msg = getHtm(player.getHtmlPrefix(), "disabled.htm");
 			showResult(player, msg);
 			return;
 		}
-		if (!CLASS_MASTER_SETTINGS.isAllowed(level))
+		if (!character().getClassMaster().isAllowed(level))
 		{
 			final NpcHtmlMessage html = new NpcHtmlMessage(objectId);
 			final int jobLevel = player.getClassId().level();
@@ -293,15 +289,15 @@ public final class ClassMaster extends AbstractNpcAI
 			switch (jobLevel)
 			{
 				case 0:
-					if (CLASS_MASTER_SETTINGS.isAllowed(1))
+					if (character().getClassMaster().isAllowed(1))
 					{
 						sb.append("Come back here when you reached level 20 to change your class.<br>");
 					}
-					else if (CLASS_MASTER_SETTINGS.isAllowed(2))
+					else if (character().getClassMaster().isAllowed(2))
 					{
 						sb.append("Come back after your first occupation change.<br>");
 					}
-					else if (CLASS_MASTER_SETTINGS.isAllowed(3))
+					else if (character().getClassMaster().isAllowed(3))
 					{
 						sb.append("Come back after your second occupation change.<br>");
 					}
@@ -311,11 +307,11 @@ public final class ClassMaster extends AbstractNpcAI
 					}
 					break;
 				case 1:
-					if (CLASS_MASTER_SETTINGS.isAllowed(2))
+					if (character().getClassMaster().isAllowed(2))
 					{
 						sb.append("Come back here when you reached level 40 to change your class.<br>");
 					}
-					else if (CLASS_MASTER_SETTINGS.isAllowed(3))
+					else if (character().getClassMaster().isAllowed(3))
 					{
 						sb.append("Come back after your second occupation change.<br>");
 					}
@@ -325,7 +321,7 @@ public final class ClassMaster extends AbstractNpcAI
 					}
 					break;
 				case 2:
-					if (CLASS_MASTER_SETTINGS.isAllowed(3))
+					if (character().getClassMaster().isAllowed(3))
 					{
 						sb.append("Come back here when you reached level 76 to change your class.<br>");
 					}
@@ -354,7 +350,7 @@ public final class ClassMaster extends AbstractNpcAI
 		}
 		
 		final int minLevel = getMinLevel(currentClassId.level());
-		if ((player.getLevel() >= minLevel) || ALLOW_ENTIRE_TREE)
+		if ((player.getLevel() >= minLevel) || character().allowEntireTree())
 		{
 			final StringBuilder menu = new StringBuilder(100);
 			for (ClassId cid : ClassId.values())
@@ -394,7 +390,7 @@ public final class ClassMaster extends AbstractNpcAI
 	private void showTutorialHtml(L2PcInstance player)
 	{
 		final ClassId currentClassId = player.getClassId();
-		if ((getMinLevel(currentClassId.level()) > player.getLevel()) && !ALLOW_ENTIRE_TREE)
+		if ((getMinLevel(currentClassId.level()) > player.getLevel()) && !character().allowEntireTree())
 		{
 			return;
 		}
@@ -423,7 +419,7 @@ public final class ClassMaster extends AbstractNpcAI
 	private boolean checkAndChangeClass(L2PcInstance player, int val)
 	{
 		final ClassId currentClassId = player.getClassId();
-		if ((getMinLevel(currentClassId.level()) > player.getLevel()) && !ALLOW_ENTIRE_TREE)
+		if ((getMinLevel(currentClassId.level()) > player.getLevel()) && !character().allowEntireTree())
 		{
 			return false;
 		}
@@ -436,14 +432,14 @@ public final class ClassMaster extends AbstractNpcAI
 		final int newJobLevel = currentClassId.level() + 1;
 		
 		// Weight/Inventory check
-		if (!CLASS_MASTER_SETTINGS.getRewardItems(newJobLevel).isEmpty() && !player.isInventoryUnder90(false))
+		if (!character().getClassMaster().getRewardItems(newJobLevel).isEmpty() && !player.isInventoryUnder90(false))
 		{
 			player.sendPacket(INVENTORY_LESS_THAN_80_PERCENT);
 			return false;
 		}
 		
 		// check if player have all required items for class transfer
-		for (ItemHolder holder : CLASS_MASTER_SETTINGS.getRequireItems(newJobLevel))
+		for (ItemHolder holder : character().getClassMaster().getRequireItems(newJobLevel))
 		{
 			if (player.getInventory().getInventoryItemCount(holder.getId(), -1) < holder.getCount())
 			{
@@ -453,7 +449,7 @@ public final class ClassMaster extends AbstractNpcAI
 		}
 		
 		// get all required items for class transfer
-		for (ItemHolder holder : CLASS_MASTER_SETTINGS.getRequireItems(newJobLevel))
+		for (ItemHolder holder : character().getClassMaster().getRequireItems(newJobLevel))
 		{
 			if (!player.destroyItemByItemId("ClassMaster", holder.getId(), holder.getCount(), player, true))
 			{
@@ -462,7 +458,7 @@ public final class ClassMaster extends AbstractNpcAI
 		}
 		
 		// reward player with items
-		for (ItemHolder holder : CLASS_MASTER_SETTINGS.getRewardItems(newJobLevel))
+		for (ItemHolder holder : character().getClassMaster().getRewardItems(newJobLevel))
 		{
 			player.addItem("ClassMaster", holder.getId(), holder.getCount(), player, true);
 		}
@@ -480,7 +476,7 @@ public final class ClassMaster extends AbstractNpcAI
 		
 		player.broadcastUserInfo();
 		
-		if (CLASS_MASTER_SETTINGS.isAllowed(player.getClassId().level() + 1) && ALTERNATE_CLASS_MASTER && (((player.getClassId().level() == 1) && (player.getLevel() >= 40)) || ((player.getClassId().level() == 2) && (player.getLevel() >= 76))))
+		if (character().getClassMaster().isAllowed(player.getClassId().level() + 1) && character().alternateClassMaster() && (((player.getClassId().level() == 1) && (player.getLevel() >= 40)) || ((player.getClassId().level() == 2) && (player.getLevel() >= 76))))
 		{
 			showQuestionMark(player);
 		}
@@ -526,17 +522,17 @@ public final class ClassMaster extends AbstractNpcAI
 	 */
 	private static boolean validateClassId(ClassId oldCID, ClassId newCID)
 	{
-		return (newCID != null) && (newCID.getRace() != null) && ((oldCID.equals(newCID.getParent()) || (ALLOW_ENTIRE_TREE && newCID.childOf(oldCID))));
+		return (newCID != null) && (newCID.getRace() != null) && ((oldCID.equals(newCID.getParent()) || (character().allowEntireTree() && newCID.childOf(oldCID))));
 	}
 	
 	private static String getRequiredItems(int level)
 	{
-		if ((CLASS_MASTER_SETTINGS.getRequireItems(level) == null) || CLASS_MASTER_SETTINGS.getRequireItems(level).isEmpty())
+		if ((character().getClassMaster().getRequireItems(level) == null) || character().getClassMaster().getRequireItems(level).isEmpty())
 		{
 			return "<tr><td>none</td></tr>";
 		}
 		final StringBuilder sb = new StringBuilder();
-		for (ItemHolder holder : CLASS_MASTER_SETTINGS.getRequireItems(level))
+		for (ItemHolder holder : character().getClassMaster().getRequireItems(level))
 		{
 			sb.append("<tr><td><font color=\"LEVEL\">");
 			sb.append(holder.getCount());

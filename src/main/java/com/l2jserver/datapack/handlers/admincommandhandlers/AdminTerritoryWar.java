@@ -18,6 +18,9 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.territoryWar;
+import static java.util.concurrent.TimeUnit.MINUTES;
+
 import java.util.Calendar;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -121,7 +124,7 @@ public class AdminTerritoryWar implements IAdminCommandHandler
 		}
 		else if (command.equalsIgnoreCase("admin_territory_war_end"))
 		{
-			TerritoryWarManager.getInstance().setTWStartTimeInMillis(System.currentTimeMillis() - TerritoryWarManager.WARLENGTH);
+			TerritoryWarManager.getInstance().setTWStartTimeInMillis(System.currentTimeMillis() - MINUTES.toMillis(territoryWar().getWarLength()));
 		}
 		else if (command.equalsIgnoreCase("admin_territory_wards_list"))
 		{

@@ -18,9 +18,10 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.geodata;
+
 import java.util.List;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.pathfinding.AbstractNodeLoc;
@@ -69,8 +70,7 @@ public class AdminPathNode implements IAdminCommandHandler
 		}
 		else if (command.equals("admin_find_path"))
 		{
-			if (Config.PATHFINDING == 0)
-			{
+			if (geodata().getPathFinding() == 0) {
 				activeChar.sendMessage("PathFinding is disabled.");
 				return true;
 			}

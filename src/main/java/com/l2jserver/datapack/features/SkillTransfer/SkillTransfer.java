@@ -18,8 +18,9 @@
  */
 package com.l2jserver.datapack.features.SkillTransfer;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.ClassListData;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.enums.IllegalActionPunishmentType;
@@ -56,7 +57,7 @@ public final class SkillTransfer extends AbstractNpcAI
 		super(SkillTransfer.class.getSimpleName(), "features");
 		setPlayerProfessionChangeId(this::onProfessionChange);
 		setPlayerProfessionCancelId(this::onProfessionCancel);
-		setOnEnterWorld(Config.SKILL_CHECK_ENABLE);
+		setOnEnterWorld(general().skillCheckEnable());
 	}
 	
 	public void onProfessionChange(OnPlayerProfessionChange event)
@@ -102,7 +103,7 @@ public final class SkillTransfer extends AbstractNpcAI
 	@Override
 	public String onEnterWorld(L2PcInstance player)
 	{
-		if (!player.canOverrideCond(PcCondOverride.SKILL_CONDITIONS) || Config.SKILL_CHECK_GM)
+		if (!player.canOverrideCond(PcCondOverride.SKILL_CONDITIONS) || general().skillCheckGM())
 		{
 			final int index = getTransferClassIndex(player);
 			if (index < 0)
@@ -127,7 +128,7 @@ public final class SkillTransfer extends AbstractNpcAI
 						{
 							final String className = ClassListData.getInstance().getClass(player.getClassId()).getClassName();
 							Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " has too many transfered skills or items, skill:" + s.getName() + " (" + sk.getId() + "/" + sk.getLevel() + "), class:" + className, IllegalActionPunishmentType.BROADCAST);
-							if (Config.SKILL_CHECK_REMOVE)
+							if (general().skillCheckRemove())
 							{
 								player.removeSkill(sk);
 							}

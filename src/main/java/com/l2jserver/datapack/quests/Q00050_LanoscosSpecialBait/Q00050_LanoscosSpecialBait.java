@@ -18,7 +18,8 @@
  */
 package com.l2jserver.datapack.quests.Q00050_LanoscosSpecialBait;
 
-import com.l2jserver.gameserver.config.Config;
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -90,7 +91,7 @@ public class Q00050_LanoscosSpecialBait extends Quest
 		
 		if (st.getQuestItemsCount(ESSENCE_OF_WIND) < 100)
 		{
-			float chance = 33 * Config.RATE_QUEST_DROP;
+			double chance = 33 * rates().getRateQuestDrop();
 			if (getRandom(100) < chance)
 			{
 				st.rewardItems(ESSENCE_OF_WIND, 1);

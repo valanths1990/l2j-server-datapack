@@ -18,11 +18,12 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.L2Object;
@@ -80,20 +81,15 @@ public class AdminTest implements IAdminCommandHandler
 		}
 		else if (command.equals("admin_known on"))
 		{
-			Config.CHECK_KNOWN = true;
+			general().setProperty("CheckKnownList", "true");
 		}
 		else if (command.equals("admin_known off"))
 		{
-			Config.CHECK_KNOWN = false;
+			general().setProperty("CheckKnownList", "false");
 		}
 		return true;
 	}
 	
-	/**
-	 * @param activeChar
-	 * @param id
-	 * @param msu
-	 */
 	private void adminTestSkill(L2PcInstance activeChar, int id, boolean msu)
 	{
 		L2Character caster;

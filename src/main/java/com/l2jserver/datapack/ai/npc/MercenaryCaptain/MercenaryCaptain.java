@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.ai.npc.MercenaryCaptain;
 
+import static com.l2jserver.gameserver.config.Configuration.territoryWar;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
@@ -106,8 +108,8 @@ public final class MercenaryCaptain extends AbstractNpcAI
 				{
 					final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 					html.setHtml(getHtm(player.getHtmlPrefix(), "36481-03.html"));
-					html.replace("%strider%", String.valueOf(TerritoryWarManager.MINTWBADGEFORSTRIDERS));
-					html.replace("%gstrider%", String.valueOf(TerritoryWarManager.MINTWBADGEFORBIGSTRIDER));
+					html.replace("%strider%", String.valueOf(territoryWar().getMinTerritoryBadgeForStriders()));
+					html.replace("%gstrider%", String.valueOf(territoryWar().getMinTerritoryBadgeForBigStrider()));
 					player.sendPacket(html);
 					break;
 				}
@@ -119,7 +121,7 @@ public final class MercenaryCaptain extends AbstractNpcAI
 				case "strider":
 				{
 					final String type = st.nextToken();
-					final int price = (type.equals("3")) ? TerritoryWarManager.MINTWBADGEFORBIGSTRIDER : TerritoryWarManager.MINTWBADGEFORSTRIDERS;
+					final int price = (type.equals("3")) ? territoryWar().getMinTerritoryBadgeForBigStrider() : territoryWar().getMinTerritoryBadgeForStriders();
 					final int badgeId = NPCS.get(npc.getId());
 					if (getQuestItemsCount(player, badgeId) < price)
 					{

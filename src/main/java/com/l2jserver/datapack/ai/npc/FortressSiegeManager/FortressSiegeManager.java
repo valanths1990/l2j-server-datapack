@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.ai.npc.FortressSiegeManager;
 
+import static com.l2jserver.gameserver.config.Configuration.fortSiege;
+
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.instancemanager.FortSiegeManager;
 import com.l2jserver.gameserver.model.ClanPrivilege;
@@ -107,7 +109,7 @@ public final class FortressSiegeManager extends AbstractNpcAI
 					{
 						htmltext = "FortressSiegeManager-10.html";
 					}
-					else if ((clan.getLevel() < FortSiegeManager.getInstance().getSiegeClanMinLevel()))
+					else if ((clan.getLevel() < fortSiege().getSiegeClanMinLevel()))
 					{
 						htmltext = "FortressSiegeManager-04.html";
 					}
@@ -115,7 +117,7 @@ public final class FortressSiegeManager extends AbstractNpcAI
 					{
 						htmltext = "FortressSiegeManager-18.html";
 					}
-					else if ((clan.getCastleId() != 0) && (clan.getCastleId() != castle.getResidenceId()) && FortSiegeManager.getInstance().canRegisterJustTerritory())
+					else if ((clan.getCastleId() != 0) && (clan.getCastleId() != castle.getResidenceId()) && fortSiege().justToTerritory())
 					{
 						htmltext = "FortressSiegeManager-17.html";
 					}

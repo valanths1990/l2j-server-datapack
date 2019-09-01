@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.hellbound;
 
+import static com.l2jserver.gameserver.config.Configuration.customs;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -57,7 +59,6 @@ import com.l2jserver.datapack.hellbound.Instances.RankuFloor.RankuFloor;
 import com.l2jserver.datapack.hellbound.Instances.UrbanArea.UrbanArea;
 import com.l2jserver.datapack.quests.Q00130_PathToHellbound.Q00130_PathToHellbound;
 import com.l2jserver.datapack.quests.Q00133_ThatsBloodyHot.Q00133_ThatsBloodyHot;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.AdminCommandHandler;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
@@ -128,7 +129,7 @@ public final class HellboundLoader {
 				final Object instance = script.getDeclaredConstructor().newInstance();
 				if (instance instanceof IAdminCommandHandler) {
 					AdminCommandHandler.getInstance().registerHandler((IAdminCommandHandler) instance);
-				} else if (Config.L2JMOD_HELLBOUND_STATUS && (instance instanceof IVoicedCommandHandler)) {
+				} else if (customs().hellboundStatus() && (instance instanceof IVoicedCommandHandler)) {
 					VoicedCommandHandler.getInstance().registerHandler((IVoicedCommandHandler) instance);
 				}
 			} catch (Exception ex) {

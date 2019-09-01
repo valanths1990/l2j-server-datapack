@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.handlers;
 
+import static com.l2jserver.gameserver.config.Configuration.customs;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -263,7 +265,6 @@ import com.l2jserver.datapack.handlers.voicedcommandhandlers.Debug;
 import com.l2jserver.datapack.handlers.voicedcommandhandlers.Lang;
 import com.l2jserver.datapack.handlers.voicedcommandhandlers.StatsVCmd;
 import com.l2jserver.datapack.handlers.voicedcommandhandlers.Wedding;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.ActionHandler;
 import com.l2jserver.gameserver.handler.ActionShiftHandler;
 import com.l2jserver.gameserver.handler.AdminCommandHandler;
@@ -558,12 +559,12 @@ public class MasterHandler {
 		// TODO: Add configuration options for this voiced commands:
 		// CastleVCmd.class,
 		// SetVCmd.class,
-		(Config.L2JMOD_ALLOW_WEDDING ? Wedding.class : null),
-		(Config.BANKING_SYSTEM_ENABLED ? Banking.class : null),
-		(Config.L2JMOD_CHAT_ADMIN ? ChatAdmin.class : null),
-		(Config.L2JMOD_MULTILANG_ENABLE && Config.L2JMOD_MULTILANG_VOICED_ALLOW ? Lang.class : null),
-		(Config.L2JMOD_DEBUG_VOICE_COMMAND ? Debug.class : null),
-		(Config.L2JMOD_ALLOW_CHANGE_PASSWORD ? ChangePassword.class : null),
+		(customs().allowWedding() ? Wedding.class : null),
+		(customs().bankingEnabled() ? Banking.class : null),
+		(customs().chatAdmin() ? ChatAdmin.class : null),
+		(customs().multiLangEnable() && customs().multiLangVoiceCommand() ? Lang.class : null),
+		(customs().debugVoiceCommand() ? Debug.class : null),
+		(customs().allowChangePassword() ? ChangePassword.class : null),
 	};
 	
 	// TODO(Zoey76): Add this handler.

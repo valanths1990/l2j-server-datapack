@@ -18,10 +18,11 @@
  */
 package com.l2jserver.datapack.ai.npc.Fisherman;
 
+import static com.l2jserver.gameserver.config.Configuration.character;
+
 import java.util.List;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.model.L2SkillLearn;
@@ -104,7 +105,7 @@ public class Fisherman extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		if ((player.getKarma() > 0) && !Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP)
+		if ((player.getKarma() > 0) && !character().karmaPlayerCanShop())
 		{
 			return npc.getId() + "-pk.htm";
 		}

@@ -18,7 +18,8 @@
  */
 package com.l2jserver.datapack.handlers.targethandlers;
 
-import com.l2jserver.gameserver.config.Config;
+import static com.l2jserver.gameserver.config.Configuration.npc;
+
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Attackable;
@@ -48,7 +49,7 @@ public class CorpseMob implements ITargetTypeHandler
 			return EMPTY_TARGET_LIST;
 		}
 		
-		if (skill.hasEffectType(L2EffectType.HP_DRAIN) && ((L2Attackable) target).isOldCorpse(activeChar.getActingPlayer(), Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true))
+		if (skill.hasEffectType(L2EffectType.HP_DRAIN) && ((L2Attackable) target).isOldCorpse(activeChar.getActingPlayer(), npc().getCorpseConsumeSkillAllowedTimeBeforeDecay(), true))
 		{
 			return EMPTY_TARGET_LIST;
 		}

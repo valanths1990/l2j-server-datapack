@@ -18,12 +18,12 @@
  */
 package com.l2jserver.datapack.handlers.chathandlers;
 
-import com.l2jserver.gameserver.config.Config;
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import com.l2jserver.gameserver.handler.IChatHandler;
 import com.l2jserver.gameserver.instancemanager.PetitionManager;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.util.Util;
 
 /**
  * A chat handler
@@ -37,13 +37,10 @@ public class ChatPetition implements IChatHandler
 		7
 	};
 	
-	/**
-	 * Handle chat type 'petition player'
-	 */
 	@Override
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
-		if (activeChar.isChatBanned() && Util.contains(Config.BAN_CHAT_CHANNELS, type))
+		if (activeChar.isChatBanned() && general().getBanChatChannels().contains(type))
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 			return;
@@ -58,9 +55,6 @@ public class ChatPetition implements IChatHandler
 		PetitionManager.getInstance().sendActivePetitionMessage(activeChar, text);
 	}
 	
-	/**
-	 * Returns the chat types registered to this handler.
-	 */
 	@Override
 	public int[] getChatTypeList()
 	{

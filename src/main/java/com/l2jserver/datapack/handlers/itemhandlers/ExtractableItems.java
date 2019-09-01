@@ -18,10 +18,11 @@
  */
 package com.l2jserver.datapack.handlers.itemhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import java.util.List;
 
 import com.l2jserver.commons.util.Rnd;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IItemHandler;
 import com.l2jserver.gameserver.model.L2ExtractableProduct;
 import com.l2jserver.gameserver.model.actor.L2Playable;
@@ -65,8 +66,8 @@ public class ExtractableItems implements IItemHandler
 		{
 			if (Rnd.get(100000) <= expi.getChance())
 			{
-				final int min = (int) (expi.getMin() * Config.RATE_EXTRACTABLE);
-				final int max = (int) (expi.getMax() * Config.RATE_EXTRACTABLE);
+				final int min = (int) (expi.getMin() * rates().getRateExtractable());
+				final int max = (int) (expi.getMax() * rates().getRateExtractable());
 				
 				int createItemAmount = (max == min) ? min : (Rnd.get((max - min) + 1) + min);
 				if (createItemAmount == 0)

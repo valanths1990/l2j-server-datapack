@@ -18,7 +18,8 @@
  */
 package com.l2jserver.datapack.handlers.itemhandlers;
 
-import com.l2jserver.gameserver.config.Config;
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import com.l2jserver.gameserver.handler.IItemHandler;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -37,7 +38,7 @@ public final class Harvester implements IItemHandler
 	@Override
 	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{
-		if (!Config.ALLOW_MANOR)
+		if (!general().allowManor())
 		{
 			return false;
 		}

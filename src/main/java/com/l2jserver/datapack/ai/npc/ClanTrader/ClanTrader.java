@@ -18,8 +18,9 @@
  */
 package com.l2jserver.datapack.ai.npc.ClanTrader;
 
+import static com.l2jserver.gameserver.config.Configuration.clan;
+
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.model.ClanPrivilege;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -90,17 +91,17 @@ public final class ClanTrader extends AbstractNpcAI
 			}
 			case "exchange-ba":
 			{
-				htmltext = giveReputation(npc, player, Config.BLOODALLIANCE_POINTS, BLOOD_ALLIANCE, BLOOD_ALLIANCE_COUNT);
+				htmltext = giveReputation(npc, player, clan().getBloodAlliancePoints(), BLOOD_ALLIANCE, BLOOD_ALLIANCE_COUNT);
 				break;
 			}
 			case "exchange-bo":
 			{
-				htmltext = giveReputation(npc, player, Config.BLOODOATH_POINTS, BLOOD_OATH, BLOOD_OATH_COUNT);
+				htmltext = giveReputation(npc, player, clan().getBloodOathPoints(), BLOOD_OATH, BLOOD_OATH_COUNT);
 				break;
 			}
 			case "exchange-ke":
 			{
-				htmltext = giveReputation(npc, player, Config.KNIGHTSEPAULETTE_POINTS, KNIGHTS_EPAULETTE, KNIGHTS_EPAULETTE_COUNT);
+				htmltext = giveReputation(npc, player, clan().getKnightsEpaulettePoints(), KNIGHTS_EPAULETTE, KNIGHTS_EPAULETTE_COUNT);
 				break;
 			}
 		}

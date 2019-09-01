@@ -18,11 +18,12 @@
  */
 package com.l2jserver.datapack.handlers.chathandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.general;
+
 import java.util.Collection;
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IChatHandler;
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
 import com.l2jserver.gameserver.handler.VoicedCommandHandler;
@@ -30,7 +31,6 @@ import com.l2jserver.gameserver.model.BlockList;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
-import com.l2jserver.gameserver.util.Util;
 
 /**
  * A chat handler
@@ -45,9 +45,6 @@ public class ChatAll implements IChatHandler
 		0
 	};
 	
-	/**
-	 * Handle chat type 'all'
-	 */
 	@Override
 	public void handleChat(int type, L2PcInstance activeChar, String params, String text)
 	{
@@ -67,7 +64,7 @@ public class ChatAll implements IChatHandler
 			else
 			{
 				command = text.substring(1);
-				if (Config.DEBUG)
+				if (general().debug())
 				{
 					_log.info("Command: " + command);
 				}
@@ -80,7 +77,7 @@ public class ChatAll implements IChatHandler
 			}
 			else
 			{
-				if (Config.DEBUG)
+				if (general().debug())
 				{
 					_log.warning("No handler registered for bypass '" + command + "'");
 				}
@@ -89,7 +86,7 @@ public class ChatAll implements IChatHandler
 		}
 		if (!vcd_used)
 		{
-			if (activeChar.isChatBanned() && Util.contains(Config.BAN_CHAT_CHANNELS, type))
+			if (activeChar.isChatBanned() && general().getBanChatChannels().contains(type))
 			{
 				activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 				return;
@@ -119,9 +116,6 @@ public class ChatAll implements IChatHandler
 		}
 	}
 	
-	/**
-	 * Returns the chat types registered to this handler.
-	 */
 	@Override
 	public int[] getChatTypeList()
 	{

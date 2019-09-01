@@ -18,11 +18,12 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.server;
+
 import java.io.File;
 import java.util.StringTokenizer;
 
 import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -86,7 +87,7 @@ public class AdminHtml implements IAdminCommandHandler
 	/**
 	 * Shows a html message to activeChar.
 	 * @param activeChar activeChar where html message is shown.
-	 * @param path relative path from Config.DATAPACK_ROOT to html.
+	 * @param path relative path from Configuration.getInstance().server().getDatapackRoot() to html.
 	 * @param reload {@code true} will reload html and show it {@code false} will show it from cache.
 	 */
 	public static void showHtml(L2PcInstance activeChar, String path, boolean reload)
@@ -98,7 +99,7 @@ public class AdminHtml implements IAdminCommandHandler
 		}
 		else
 		{
-			File file = new File(Config.DATAPACK_ROOT, path);
+			File file = new File(server().getDatapackRoot(), path);
 			content = HtmCache.getInstance().loadFile(file);
 		}
 		final NpcHtmlMessage html = new NpcHtmlMessage();

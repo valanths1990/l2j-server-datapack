@@ -3,3 +3,5 @@
 /.settings/
 /.idea/
 /target/
+logs/
+test-output/

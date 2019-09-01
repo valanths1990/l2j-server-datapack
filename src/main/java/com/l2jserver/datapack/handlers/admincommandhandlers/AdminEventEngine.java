@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.server;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,7 +29,6 @@ import java.io.PrintStream;
 import java.util.StringTokenizer;
 
 import com.l2jserver.commons.util.Rnd;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.data.xml.impl.AdminData;
 import com.l2jserver.gameserver.data.xml.impl.TransformData;
 import com.l2jserver.gameserver.enums.audio.Music;
@@ -103,7 +104,6 @@ public class AdminEventEngine implements IAdminCommandHandler
 					showMainPage(activeChar);
 				}
 			}
-			
 			else if (actualCommand.equals("admin_event_new"))
 			{
 				showNewEventPage(activeChar);
@@ -113,7 +113,6 @@ public class AdminEventEngine implements IAdminCommandHandler
 				// There is an exception here for not using the ST. We use spaces (ST delim) for the event info.
 				tempBuffer += command.substring(10);
 				showNewEventPage(activeChar);
-				
 			}
 			else if (actualCommand.startsWith("admin_event_see"))
 			{
@@ -123,7 +122,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 				{
 					final NpcHtmlMessage adminReply = new NpcHtmlMessage();
 					
-					try (FileInputStream fis = new FileInputStream(Config.DATAPACK_ROOT + "/data/events/" + eventName);
+					try (FileInputStream fis = new FileInputStream(server().getDatapackRoot() + "/data/events/" + eventName);
 						InputStreamReader isr = new InputStreamReader(fis);
 						BufferedReader br = new BufferedReader(isr))
 					{
@@ -138,17 +137,14 @@ public class AdminEventEngine implements IAdminCommandHandler
 				}
 				catch (Exception e)
 				{
-					
 					e.printStackTrace();
-					
 				}
-				
 			}
 			else if (actualCommand.startsWith("admin_event_del"))
 			{
 				// There is an exception here for not using the ST. We use spaces (ST delim) for the event name.
 				String eventName = command.substring(16);
-				File file = new File(Config.DATAPACK_ROOT + "/data/events/" + eventName);
+				File file = new File(server().getDatapackRoot() + "/data/events/" + eventName);
 				file.delete();
 				showMainPage(activeChar);
 			}
@@ -167,7 +163,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 			{
 				try
 				{
-					try (FileOutputStream file = new FileOutputStream(new File(Config.DATAPACK_ROOT, "data/events/" + tempName));
+					try (FileOutputStream file = new FileOutputStream(new File(server().getDatapackRoot(), "data/events/" + tempName));
 						PrintStream p = new PrintStream(file))
 					{
 						p.println(activeChar.getName());
@@ -442,7 +438,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 	
 	private String showStoredEvents()
 	{
-		final File dir = new File(Config.DATAPACK_ROOT, "/data/events");
+		final File dir = new File(server().getDatapackRoot(), "/data/events");
 		if (dir.isFile())
 		{
 			return "<font color=\"FF0000\">The directory '" + dir.getAbsolutePath() + "' is a file or is corrupted!</font><br>";

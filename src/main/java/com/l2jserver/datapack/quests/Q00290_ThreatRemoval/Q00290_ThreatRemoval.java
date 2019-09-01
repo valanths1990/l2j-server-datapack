@@ -18,11 +18,12 @@
  */
 package com.l2jserver.datapack.quests.Q00290_ThreatRemoval;
 
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import com.l2jserver.datapack.quests.Q00251_NoSecrets.Q00251_NoSecrets;
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -184,7 +185,7 @@ public class Q00290_ThreatRemoval extends Quest
 		
 		final QuestState st = getQuestState(partyMember, false);
 		int npcId = npc.getId();
-		float chance = (MOBS_TAG.get(npcId) * Config.RATE_QUEST_DROP);
+		double chance = MOBS_TAG.get(npcId) * rates().getRateQuestDrop();
 		if (getRandom(1000) < chance)
 		{
 			st.rewardItems(SEL_MAHUM_ID_TAG, 1);

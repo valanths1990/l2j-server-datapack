@@ -18,10 +18,11 @@
  */
 package com.l2jserver.datapack.handlers.targethandlers;
 
+import static com.l2jserver.gameserver.config.Configuration.character;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -52,7 +53,7 @@ public class PartyNotMe implements ITargetTypeHandler
 				{
 					continue;
 				}
-				else if (!Util.checkIfInRange(Config.ALT_PARTY_RANGE, activeChar, partyMember, true))
+				else if (!Util.checkIfInRange(character().getPartyRange(), activeChar, partyMember, true))
 				{
 					continue;
 				}

@@ -18,10 +18,11 @@
  */
 package com.l2jserver.datapack.quests.Q00691_MatrasSuspiciousRequest;
 
+import static com.l2jserver.gameserver.config.Configuration.rates;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.config.Config;
 import com.l2jserver.gameserver.enums.audio.Sound;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -135,7 +136,7 @@ public final class Q00691_MatrasSuspiciousRequest extends Quest
 		}
 		
 		final QuestState st = getQuestState(pl, false);
-		int chance = (int) (Config.RATE_QUEST_DROP * REWARD_CHANCES.get(npc.getId()));
+		int chance = (int) (rates().getRateQuestDrop() * REWARD_CHANCES.get(npc.getId()));
 		int numItems = Math.max((chance / 1000), 1);
 		chance = chance % 1000;
 		if (getRandom(1000) <= chance)
