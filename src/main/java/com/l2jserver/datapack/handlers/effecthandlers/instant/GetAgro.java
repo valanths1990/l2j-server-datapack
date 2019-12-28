@@ -52,7 +52,7 @@ public final class GetAgro extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		if (info.getEffected() instanceof L2Attackable)
+		if ((info.getEffected() instanceof L2Attackable) && info.getEffected().hasAI() && (((L2Attackable) info.getEffected()).getMostHated() != info.getEffector()))
 		{
 			info.getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, info.getEffector());
 		}
