@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * To Talking Island (45)
  * @author janiko
  */
-public final class Q00045_ToTalkingIsland extends Quest
-{
+public final class Q00045_ToTalkingIsland extends Quest {
 	// Npcs
 	private static final int GALLADUCCI = 30097;
 	private static final int GENTLER = 30094;
@@ -54,15 +53,13 @@ public final class Q00045_ToTalkingIsland extends Quest
 	private static final int SCROLL_OF_ESCAPE_TALKING_ISLAND_VILLAGE = 7554;
 	// Get condition for each npc
 	private static Map<Integer, ItemHolder> NPC_ITEMS = new HashMap<>();
-	static
-	{
+	static {
 		NPC_ITEMS.put(GENTLER, new ItemHolder(1, GALLADUCCIS_ORDER_1));
 		NPC_ITEMS.put(SANDRA, new ItemHolder(3, GALLADUCCIS_ORDER_2));
 		NPC_ITEMS.put(DUSTIN, new ItemHolder(5, GALLADUCCIS_ORDER_3));
 	}
 	
-	public Q00045_ToTalkingIsland()
-	{
+	public Q00045_ToTalkingIsland() {
 		super(45, Q00045_ToTalkingIsland.class.getSimpleName(), "To Talking Island");
 		addStartNpc(GALLADUCCI);
 		addTalkId(GALLADUCCI);
@@ -71,111 +68,82 @@ public final class Q00045_ToTalkingIsland extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
-		switch (event)
-		{
-			case "30097-04.htm":
-			{
-				if (st.isCreated())
-				{
+		switch (event) {
+			case "30097-04.htm": {
+				if (st.isCreated()) {
 					st.startQuest();
 					st.giveItems(GALLADUCCIS_ORDER_1, 1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30094-02.html":
-			{
-				if (st.isCond(1) && st.hasQuestItems(GALLADUCCIS_ORDER_1))
-				{
+			case "30094-02.html": {
+				if (st.isCond(1) && st.hasQuestItems(GALLADUCCIS_ORDER_1)) {
 					st.takeItems(GALLADUCCIS_ORDER_1, 1);
 					st.giveItems(MAGIC_SWORD_HILT, 1);
 					st.setCond(2, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30094-03.html";
 				}
 				break;
 			}
-			case "30097-07.html":
-			{
-				if (st.isCond(2) && st.hasQuestItems(MAGIC_SWORD_HILT))
-				{
+			case "30097-07.html": {
+				if (st.isCond(2) && st.hasQuestItems(MAGIC_SWORD_HILT)) {
 					st.takeItems(MAGIC_SWORD_HILT, 1);
 					st.giveItems(GALLADUCCIS_ORDER_2, 1);
 					st.setCond(3, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30097-08.html";
 				}
 				break;
 			}
-			case "30090-02.html":
-			{
-				if (st.isCond(3) && st.hasQuestItems(GALLADUCCIS_ORDER_2))
-				{
+			case "30090-02.html": {
+				if (st.isCond(3) && st.hasQuestItems(GALLADUCCIS_ORDER_2)) {
 					st.takeItems(GALLADUCCIS_ORDER_2, 1);
 					st.giveItems(GEMSTONE_POWDER, 1);
 					st.setCond(4, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30090-03.html";
 				}
 				break;
 			}
-			case "30097-11.html":
-			{
-				if (st.isCond(4) && st.hasQuestItems(GEMSTONE_POWDER))
-				{
+			case "30097-11.html": {
+				if (st.isCond(4) && st.hasQuestItems(GEMSTONE_POWDER)) {
 					st.takeItems(GEMSTONE_POWDER, 1);
 					st.giveItems(GALLADUCCIS_ORDER_3, 1);
 					st.setCond(5, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30097-12.html";
 				}
 				break;
 			}
-			case "30116-02.html":
-			{
-				if (st.isCond(5) && st.hasQuestItems(GALLADUCCIS_ORDER_3))
-				{
+			case "30116-02.html": {
+				if (st.isCond(5) && st.hasQuestItems(GALLADUCCIS_ORDER_3)) {
 					st.takeItems(GALLADUCCIS_ORDER_3, 1);
 					st.giveItems(PURIFIED_MAGIC_NECKLACE, 1);
 					st.setCond(6, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30116-03.html";
 				}
 				break;
 			}
-			case "30097-15.html":
-			{
-				if (st.isCond(6) && st.hasQuestItems(PURIFIED_MAGIC_NECKLACE))
-				{
+			case "30097-15.html": {
+				if (st.isCond(6) && st.hasQuestItems(PURIFIED_MAGIC_NECKLACE)) {
 					st.giveItems(SCROLL_OF_ESCAPE_TALKING_ISLAND_VILLAGE, 1);
 					st.exitQuest(false, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30097-16.html";
 				}
 				break;
@@ -185,74 +153,52 @@ public final class Q00045_ToTalkingIsland extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		QuestState st = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		switch (npc.getId())
-		{
-			case GALLADUCCI:
-			{
-				switch (st.getState())
-				{
-					case State.CREATED:
-					{
-						if (talker.getLevel() < MIN_LVL)
-						{
+		switch (npc.getId()) {
+			case GALLADUCCI: {
+				switch (st.getState()) {
+					case State.CREATED: {
+						if (talker.getLevel() < MIN_LVL) {
 							htmltext = "30097-03.html";
-						}
-						else
-						{
-							if (talker.hasQuestCompleted(Q00006_StepIntoTheFuture.class.getSimpleName()) && st.hasQuestItems(MARK_OF_TRAVELER))
-							{
+						} else {
+							if (talker.hasQuestCompleted(Q00006_StepIntoTheFuture.class.getSimpleName()) && st.hasQuestItems(MARK_OF_TRAVELER)) {
 								htmltext = "30097-01.htm";
-							}
-							else
-							{
+							} else {
 								htmltext = "30097-02.html";
 							}
 						}
 						break;
 					}
-					case State.STARTED:
-					{
-						switch (st.getCond())
-						{
-							case 1:
-							{
+					case State.STARTED: {
+						switch (st.getCond()) {
+							case 1: {
 								htmltext = "30097-05.html";
 								break;
 							}
-							case 2:
-							{
-								if (st.hasQuestItems(MAGIC_SWORD_HILT))
-								{
+							case 2: {
+								if (st.hasQuestItems(MAGIC_SWORD_HILT)) {
 									htmltext = "30097-06.html";
 								}
 								break;
 							}
-							case 3:
-							{
+							case 3: {
 								htmltext = "30097-09.html";
 								break;
 							}
-							case 4:
-							{
-								if (st.hasQuestItems(GEMSTONE_POWDER))
-								{
+							case 4: {
+								if (st.hasQuestItems(GEMSTONE_POWDER)) {
 									htmltext = "30097-10.html";
 								}
 								break;
 							}
-							case 5:
-							{
+							case 5: {
 								htmltext = "30097-13.html";
 								break;
 							}
-							case 6:
-							{
-								if (st.hasQuestItems(PURIFIED_MAGIC_NECKLACE))
-								{
+							case 6: {
+								if (st.hasQuestItems(PURIFIED_MAGIC_NECKLACE)) {
 									htmltext = "30097-14.html";
 								}
 								break;
@@ -260,8 +206,7 @@ public final class Q00045_ToTalkingIsland extends Quest
 						}
 						break;
 					}
-					case State.COMPLETED:
-					{
+					case State.COMPLETED: {
 						htmltext = getAlreadyCompletedMsg(talker);
 						break;
 					}
@@ -270,22 +215,16 @@ public final class Q00045_ToTalkingIsland extends Quest
 			}
 			case GENTLER:
 			case SANDRA:
-			case DUSTIN:
-			{
-				if (st.isStarted())
-				{
+			case DUSTIN: {
+				if (st.isStarted()) {
 					final ItemHolder i = NPC_ITEMS.get(npc.getId());
 					final int cond = i.getId();
-					if (st.isCond(cond))
-					{
+					if (st.isCond(cond)) {
 						final int itemId = (int) i.getCount();
-						if (st.hasQuestItems(itemId))
-						{
+						if (st.hasQuestItems(itemId)) {
 							htmltext = npc.getId() + "-01.html";
 						}
-					}
-					else if (st.isCond(cond + 1))
-					{
+					} else if (st.isCond(cond + 1)) {
 						htmltext = npc.getId() + "-04.html";
 					}
 				}

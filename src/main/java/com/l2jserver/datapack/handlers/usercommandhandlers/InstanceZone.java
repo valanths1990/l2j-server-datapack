@@ -31,30 +31,24 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Instance Zone user command.
  * @author nille02
  */
-public class InstanceZone implements IUserCommandHandler
-{
-	private static final int[] COMMAND_IDS =
-	{
+public class InstanceZone implements IUserCommandHandler {
+	private static final int[] COMMAND_IDS = {
 		114
 	};
 	
 	@Override
-	public int[] getUserCommandList()
-	{
+	public int[] getUserCommandList() {
 		return COMMAND_IDS;
 	}
 	
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
-		if (id != COMMAND_IDS[0])
-		{
+	public boolean useUserCommand(int id, L2PcInstance activeChar) {
+		if (id != COMMAND_IDS[0]) {
 			return false;
 		}
 		
 		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(activeChar);
-		if ((world != null) && (world.getTemplateId() >= 0))
-		{
+		if ((world != null) && (world.getTemplateId() >= 0)) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_CURRENTLY_INUSE_S1);
 			sm.addInstanceName(world.getTemplateId());
 			activeChar.sendPacket(sm);
@@ -62,15 +56,11 @@ public class InstanceZone implements IUserCommandHandler
 		
 		final Map<Integer, Long> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(activeChar.getObjectId());
 		boolean firstMessage = true;
-		if (instanceTimes != null)
-		{
-			for (int instanceId : instanceTimes.keySet())
-			{
+		if (instanceTimes != null) {
+			for (int instanceId : instanceTimes.keySet()) {
 				long remainingTime = (instanceTimes.get(instanceId) - System.currentTimeMillis()) / 1000;
-				if (remainingTime > 60)
-				{
-					if (firstMessage)
-					{
+				if (remainingTime > 60) {
+					if (firstMessage) {
 						firstMessage = false;
 						activeChar.sendPacket(SystemMessageId.INSTANCE_ZONE_TIME_LIMIT);
 					}
@@ -81,15 +71,12 @@ public class InstanceZone implements IUserCommandHandler
 					sm.addInt(hours);
 					sm.addInt(minutes);
 					activeChar.sendPacket(sm);
-				}
-				else
-				{
+				} else {
 					InstanceManager.getInstance().deleteInstanceTime(activeChar.getObjectId(), instanceId);
 				}
 			}
 		}
-		if (firstMessage)
-		{
+		if (firstMessage) {
 			activeChar.sendPacket(SystemMessageId.NO_INSTANCEZONE_TIME_LIMIT);
 		}
 		return true;

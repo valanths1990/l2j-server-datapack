@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Event;
 import com.l2jserver.gameserver.util.Broadcast;
 
-public final class Elpies extends Event
-{
+public final class Elpies extends Event {
 	// NPC
 	private static final int ELPY = 900100;
 	// Amount of Elpies to spawn when the event starts
@@ -68,30 +67,25 @@ public final class Elpies extends Event
 	private ScheduledFuture<?> _eventTask = null;
 	private final Set<L2Npc> _elpies = ConcurrentHashMap.newKeySet(ELPY_AMOUNT);
 	
-	private Elpies()
-	{
+	private Elpies() {
 		super(Elpies.class.getSimpleName(), "custom/events");
 		addSpawnId(ELPY);
 		addKillId(ELPY);
 	}
 	
 	@Override
-	public boolean eventBypass(L2PcInstance activeChar, String bypass)
-	{
+	public boolean eventBypass(L2PcInstance activeChar, String bypass) {
 		return false;
 	}
 	
 	@Override
-	public boolean eventStart(L2PcInstance eventMaker)
-	{
-		if (EVENT_ACTIVE)
-		{
+	public boolean eventStart(L2PcInstance eventMaker) {
+		if (EVENT_ACTIVE) {
 			return false;
 		}
 		
 		// Check Custom Table - we use custom NPC's
-		if (!general().customNpcData())
-		{
+		if (!general().customNpcData()) {
 			_log.info(getName() + ": Event can't be started because custom NPC table is disabled!");
 			eventMaker.sendMessage("Event " + getName() + " can't be started because custom NPC table is disabled!");
 			return false;
@@ -104,8 +98,7 @@ public final class Elpies extends Event
 		
 		long despawnDelay = EVENT_DURATION_MINUTES * 60000;
 		
-		for (int i = 0; i < ELPY_AMOUNT; i++)
-		{
+		for (int i = 0; i < ELPY_AMOUNT; i++) {
 			_elpies.add(addSpawn(ELPY, randomLoc.getRandomX(), randomLoc.getRandomY(), randomLoc.getZ(), 0, true, despawnDelay));
 		}
 		
@@ -114,8 +107,7 @@ public final class Elpies extends Event
 		Broadcast.toAllOnlinePlayers("Help us exterminate them!");
 		Broadcast.toAllOnlinePlayers("You have " + EVENT_DURATION_MINUTES + " minutes!");
 		
-		_eventTask = ThreadPoolManager.getInstance().scheduleGeneral(() ->
-		{
+		_eventTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> {
 			Broadcast.toAllOnlinePlayers("Time is up!");
 			eventStop();
 		}, despawnDelay);
@@ -123,23 +115,19 @@ public final class Elpies extends Event
 	}
 	
 	@Override
-	public boolean eventStop()
-	{
-		if (!EVENT_ACTIVE)
-		{
+	public boolean eventStop() {
+		if (!EVENT_ACTIVE) {
 			return false;
 		}
 		
 		EVENT_ACTIVE = false;
 		
-		if (_eventTask != null)
-		{
+		if (_eventTask != null) {
 			_eventTask.cancel(true);
 			_eventTask = null;
 		}
 		
-		for (L2Npc npc : _elpies)
-		{
+		for (L2Npc npc : _elpies) {
 			npc.deleteMe();
 		}
 		_elpies.clear();
@@ -150,17 +138,14 @@ public final class Elpies extends Event
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (EVENT_ACTIVE)
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (EVENT_ACTIVE) {
 			_elpies.remove(npc);
 			
 			dropItem(npc, killer, DROPLIST_CONSUMABLES);
 			dropItem(npc, killer, DROPLIST_CRYSTALS);
 			
-			if (_elpies.isEmpty())
-			{
+			if (_elpies.isEmpty()) {
 				Broadcast.toAllOnlinePlayers("All elpies have been killed!");
 				eventStop();
 			}
@@ -170,15 +155,13 @@ public final class Elpies extends Event
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		((L2EventMonsterInstance) npc).eventSetDropOnGround(true);
 		((L2EventMonsterInstance) npc).eventSetBlockOffensiveSkills(true);
 		return super.onSpawn(npc);
 	}
 	
-	private static enum EventLocation
-	{
+	private static enum EventLocation {
 		ADEN("Aden", 146558, 148341, 26622, 28560, -2200),
 		DION("Dion", 18564, 19200, 144377, 145782, -3081),
 		GLUDIN("Gludin", -84040, -81420, 150257, 151175, -3125),
@@ -192,8 +175,7 @@ public final class Elpies extends Event
 		private final int _maxY;
 		private final int _z;
 		
-		EventLocation(String name, int minX, int maxX, int minY, int maxY, int z)
-		{
+		EventLocation(String name, int minX, int maxX, int minY, int maxY, int z) {
 			_name = name;
 			_minX = minX;
 			_maxX = maxX;
@@ -202,43 +184,35 @@ public final class Elpies extends Event
 			_z = z;
 		}
 		
-		public String getName()
-		{
+		public String getName() {
 			return _name;
 		}
 		
-		public int getRandomX()
-		{
+		public int getRandomX() {
 			return getRandom(_minX, _maxX);
 		}
 		
-		public int getRandomY()
-		{
+		public int getRandomY() {
 			return getRandom(_minY, _maxY);
 		}
 		
-		public int getZ()
-		{
+		public int getZ() {
 			return _z;
 		}
 	}
 	
-	private static final void dropItem(L2Npc mob, L2PcInstance player, int[][] droplist)
-	{
+	private static final void dropItem(L2Npc mob, L2PcInstance player, int[][] droplist) {
 		final int chance = getRandom(100);
 		
-		for (int[] drop : droplist)
-		{
-			if (chance >= drop[1])
-			{
+		for (int[] drop : droplist) {
+			if (chance >= drop[1]) {
 				mob.dropItem(player, drop[0], getRandom(drop[2], drop[3]));
 				break;
 			}
 		}
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Elpies();
 	}
 }

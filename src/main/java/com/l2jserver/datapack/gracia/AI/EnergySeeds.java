@@ -52,8 +52,7 @@ import com.l2jserver.gameserver.util.Util;
  * Energy Seeds AI.
  * @author Gigiikun
  */
-public class EnergySeeds extends AbstractNpcAI
-{
+public class EnergySeeds extends AbstractNpcAI {
 	private static final int HOWTOOPPOSEEVIL_CHANCE = 60;
 	private static final int RATE = 1;
 	private static final int RESPAWN = 480000;
@@ -740,28 +739,23 @@ public class EnergySeeds extends AbstractNpcAI
 		//@formatter:on
 	}
 	
-	private class ESSpawn
-	{
+	private class ESSpawn {
 		protected final int _spawnId;
 		protected final GraciaSeeds _seedId;
 		protected final int[] _npcIds;
 		protected final Location _loc;
 		
-		public ESSpawn(int spawnId, GraciaSeeds seedId, Location loc, int[] npcIds)
-		{
+		public ESSpawn(int spawnId, GraciaSeeds seedId, Location loc, int[] npcIds) {
 			_spawnId = spawnId;
 			_seedId = seedId;
 			_loc = loc;
 			_npcIds = npcIds;
 		}
 		
-		public void scheduleRespawn(long waitTime)
-		{
-			ThreadPoolManager.getInstance().scheduleGeneral(() ->
-			{
+		public void scheduleRespawn(long waitTime) {
+			ThreadPoolManager.getInstance().scheduleGeneral(() -> {
 				// if the AI is inactive, do not spawn the NPC
-				if (isSeedActive(_seedId))
-				{
+				if (isSeedActive(_seedId)) {
 					// get a random NPC that should spawn at this location
 					Integer spawnId = _spawnId; // the map uses "Integer", not "int"
 					_spawnedNpcs.put(addSpawn(_npcIds[getRandom(_npcIds.length)], _loc, false, 0), spawnId);

@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Storm Screamer (90)
  * @author Emperorc
  */
-public class Q00090_SagaOfTheStormScreamer extends AbstractSagaQuest
-{
-	public Q00090_SagaOfTheStormScreamer()
-	{
+public class Q00090_SagaOfTheStormScreamer extends AbstractSagaQuest {
+	public Q00090_SagaOfTheStormScreamer() {
 		super(90, Q00090_SagaOfTheStormScreamer.class.getSimpleName(), "Saga of the Storm Screamer");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			30175,
 			31627,
 			31287,
@@ -45,8 +42,7 @@ public class Q00090_SagaOfTheStormScreamer extends AbstractSagaQuest
 			31659,
 			31287
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7531,
 			7081,
@@ -60,28 +56,23 @@ public class Q00090_SagaOfTheStormScreamer extends AbstractSagaQuest
 			7084,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27252,
 			27239,
 			27256
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			110
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x28
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(161719, -92823, -1893),
 			new Location(124376, 82127, -2796),
 			new Location(124355, 82155, -2803)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

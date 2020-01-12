@@ -33,55 +33,44 @@ import com.l2jserver.gameserver.model.stats.Stats;
  * Servitor Share effect implementation. Have effect only on servitor's but not on pets Important: Only one effect can be used on char per time.
  * @author Zealar
  */
-public final class ServitorShare extends AbstractEffect
-{
+public final class ServitorShare extends AbstractEffect {
 	private final Map<Stats, Double> stats = new HashMap<>(9);
 	
-	public ServitorShare(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public ServitorShare(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
-		for (String key : params.getSet().keySet())
-		{
+		for (String key : params.getSet().keySet()) {
 			stats.put(Stats.valueOfXml(key), params.getDouble(key, 1.));
 		}
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		super.onStart(info);
 		info.getEffected().getActingPlayer().setServitorShare(stats);
-		if (info.getEffected().getActingPlayer().getSummon() != null)
-		{
+		if (info.getEffected().getActingPlayer().getSummon() != null) {
 			info.getEffected().getActingPlayer().getSummon().broadcastInfo();
 			info.getEffected().getActingPlayer().getSummon().getStatus().startHpMpRegeneration();
 		}
 	}
 	
 	@Override
-	public int getEffectFlags()
-	{
+	public int getEffectFlags() {
 		return EffectFlag.SERVITOR_SHARE.getMask();
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.BUFF;
 	}
 	
 	@Override
-	public void onExit(BuffInfo info)
-	{
+	public void onExit(BuffInfo info) {
 		info.getEffected().getActingPlayer().setServitorShare(null);
-		if (info.getEffected().getSummon() != null)
-		{
-			if (info.getEffected().getSummon().getCurrentHp() > info.getEffected().getSummon().getMaxHp())
-			{
+		if (info.getEffected().getSummon() != null) {
+			if (info.getEffected().getSummon().getCurrentHp() > info.getEffected().getSummon().getMaxHp()) {
 				info.getEffected().getSummon().setCurrentHp(info.getEffected().getSummon().getMaxHp());
 			}
-			if (info.getEffected().getSummon().getCurrentMp() > info.getEffected().getSummon().getMaxMp())
-			{
+			if (info.getEffected().getSummon().getCurrentMp() > info.getEffected().getSummon().getMaxMp()) {
 				info.getEffected().getSummon().setCurrentMp(info.getEffected().getSummon().getMaxMp());
 			}
 			info.getEffected().getSummon().broadcastInfo();

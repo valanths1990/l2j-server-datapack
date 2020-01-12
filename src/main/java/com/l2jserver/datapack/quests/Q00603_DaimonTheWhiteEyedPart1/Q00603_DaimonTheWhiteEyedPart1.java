@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Daimon the White-Eyed - Part 1 (603)
  * @author Pandragon
  */
-public final class Q00603_DaimonTheWhiteEyedPart1 extends Quest
-{
+public final class Q00603_DaimonTheWhiteEyedPart1 extends Quest {
 	// NPC
 	private static final int EYE_OF_ARGOS = 31683;
 	private static final int TABLET_1 = 31548;
@@ -55,8 +54,7 @@ public final class Q00603_DaimonTheWhiteEyedPart1 extends Quest
 	// Misc
 	private static final int MIN_LVL = 73;
 	
-	public Q00603_DaimonTheWhiteEyedPart1()
-	{
+	public Q00603_DaimonTheWhiteEyedPart1() {
 		super(603, Q00603_DaimonTheWhiteEyedPart1.class.getSimpleName(), "Daimon the White-Eyed - Part 1");
 		addStartNpc(EYE_OF_ARGOS);
 		addTalkId(EYE_OF_ARGOS, TABLET_1, TABLET_2, TABLET_3, TABLET_4, TABLET_5);
@@ -65,21 +63,16 @@ public final class Q00603_DaimonTheWhiteEyedPart1 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "31683-03.htm":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "31683-03.htm": {
+				if (qs.isCreated()) {
 					qs.set("tablet_" + TABLET_1, 0);
 					qs.set("tablet_" + TABLET_2, 0);
 					qs.set("tablet_" + TABLET_3, 0);
@@ -94,10 +87,8 @@ public final class Q00603_DaimonTheWhiteEyedPart1 extends Quest
 			case "31549-02.html":
 			case "31550-02.html":
 			case "31551-02.html":
-			case "31552-02.html":
-			{
-				if (qs.getCond() < 6)
-				{
+			case "31552-02.html": {
+				if (qs.getCond() < 6) {
 					giveItems(player, BROKEN_CRYSTAL, 1);
 					qs.set("TABLET_" + npc.getId(), 1);
 					qs.setCond(qs.getCond() + 1, true);
@@ -105,29 +96,22 @@ public final class Q00603_DaimonTheWhiteEyedPart1 extends Quest
 				}
 				break;
 			}
-			case "31683-06.html":
-			{
-				if (qs.isCond(6) && (getQuestItemsCount(player, BROKEN_CRYSTAL) >= 5))
-				{
+			case "31683-06.html": {
+				if (qs.isCond(6) && (getQuestItemsCount(player, BROKEN_CRYSTAL) >= 5)) {
 					takeItems(player, BROKEN_CRYSTAL, -1);
 					qs.setCond(7, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "31683-10.html":
-			{
-				if (qs.isCond(8))
-				{
-					if (getQuestItemsCount(player, SPIRIT_OF_DARKNESS) >= 200)
-					{
+			case "31683-10.html": {
+				if (qs.isCond(8)) {
+					if (getQuestItemsCount(player, SPIRIT_OF_DARKNESS) >= 200) {
 						takeItems(player, SPIRIT_OF_DARKNESS, -1);
 						giveItems(player, UNFINISHED_CRYSTAL, 1);
 						qs.exitQuest(true, true);
 						htmltext = event;
-					}
-					else
-					{
+					} else {
 						htmltext = "31683-11.html";
 					}
 				}
@@ -138,64 +122,48 @@ public final class Q00603_DaimonTheWhiteEyedPart1 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		switch (qs.getState())
-		{
-			case State.CREATED:
-			{
-				if (npc.getId() == EYE_OF_ARGOS)
-				{
+		switch (qs.getState()) {
+			case State.CREATED: {
+				if (npc.getId() == EYE_OF_ARGOS) {
 					htmltext = ((talker.getLevel() < MIN_LVL) ? "31683-02.html" : "31683-01.htm");
 				}
 				break;
 			}
-			case State.STARTED:
-			{
-				if (npc.getId() == EYE_OF_ARGOS)
-				{
-					switch (qs.getCond())
-					{
+			case State.STARTED: {
+				if (npc.getId() == EYE_OF_ARGOS) {
+					switch (qs.getCond()) {
 						case 1:
 						case 2:
 						case 3:
 						case 4:
-						case 5:
-						{
+						case 5: {
 							htmltext = "31683-04.html";
 							break;
 						}
-						case 6:
-						{
+						case 6: {
 							htmltext = "31683-05.html";
 							break;
 						}
-						case 7:
-						{
+						case 7: {
 							htmltext = "31683-07.html";
 							break;
 						}
-						case 8:
-						{
+						case 8: {
 							htmltext = "31683-08.html";
 							break;
 						}
 					}
-				}
-				else if (qs.getInt("TABLET_" + npc.getId()) == 0)
-				{
+				} else if (qs.getInt("TABLET_" + npc.getId()) == 0) {
 					htmltext = npc.getId() + "-01.html";
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-03.html";
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
+			case State.COMPLETED: {
 				htmltext = getAlreadyCompletedMsg(talker);
 				break;
 			}
@@ -204,13 +172,10 @@ public final class Q00603_DaimonTheWhiteEyedPart1 extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, 7, 3, npc);
-		if (qs != null)
-		{
-			if (giveItemRandomly(qs.getPlayer(), npc, SPIRIT_OF_DARKNESS, 1, 200, MONSTER_CHANCES.get(npc.getId()), true))
-			{
+		if (qs != null) {
+			if (giveItemRandomly(qs.getPlayer(), npc, SPIRIT_OF_DARKNESS, 1, 200, MONSTER_CHANCES.get(npc.getId()), true)) {
 				qs.setCond(8, true);
 			}
 		}

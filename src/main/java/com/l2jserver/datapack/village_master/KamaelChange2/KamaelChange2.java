@@ -35,11 +35,9 @@ import com.l2jserver.gameserver.util.Util;
  * Kamael class transfer AI.
  * @author Adry_85
  */
-public final class KamaelChange2 extends AbstractNpcAI
-{
+public final class KamaelChange2 extends AbstractNpcAI {
 	// NPCs
-	private static int[] NPCS_MALE =
-	{
+	private static int[] NPCS_MALE = {
 		32146, // Valpor
 		32205, // Aetonic
 		32209, // Ferdinand
@@ -50,8 +48,7 @@ public final class KamaelChange2 extends AbstractNpcAI
 		32229, // Hagel
 		32233, // Zoldart
 	};
-	private static int[] NPCS_FEMALE =
-	{
+	private static int[] NPCS_FEMALE = {
 		32145, // Maynard
 		32206, // Pieche
 		32210, // Eddy
@@ -69,8 +66,7 @@ public final class KamaelChange2 extends AbstractNpcAI
 	private static final int KAMAEL_INQUISITOR_MARK = 9782;
 	private static final int SOUL_BREAKER_CERTIFICATE = 9806;
 	
-	private KamaelChange2()
-	{
+	private KamaelChange2() {
 		super(KamaelChange2.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS_MALE);
 		addStartNpc(NPCS_FEMALE);
@@ -79,11 +75,9 @@ public final class KamaelChange2 extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "32145-05.htm": // master_all_kamael003t
 			case "32145-06.htm": // master_all_kamael006ta
 			case "32145-07.htm": // master_all_kamael007ta
@@ -101,8 +95,7 @@ public final class KamaelChange2 extends AbstractNpcAI
 			case "127":
 			case "128":
 			case "129":
-			case "130":
-			{
+			case "130": {
 				htmltext = ClassChangeRequested(player, npc, Integer.valueOf(event));
 				break;
 			}
@@ -110,68 +103,40 @@ public final class KamaelChange2 extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	private String ClassChangeRequested(L2PcInstance player, L2Npc npc, int classId)
-	{
+	private String ClassChangeRequested(L2PcInstance player, L2Npc npc, int classId) {
 		String htmltext = null;
-		if (CategoryData.getInstance().isInCategory(CategoryType.KAMAEL_THIRD_CLASS_GROUP, classId))
-		{
-			if (player.isInCategory(CategoryType.KAMAEL_FIRST_CLASS_GROUP))
-			{
-				if (Util.contains(NPCS_MALE, npc.getId()))
-				{
+		if (CategoryData.getInstance().isInCategory(CategoryType.KAMAEL_THIRD_CLASS_GROUP, classId)) {
+			if (player.isInCategory(CategoryType.KAMAEL_FIRST_CLASS_GROUP)) {
+				if (Util.contains(NPCS_MALE, npc.getId())) {
 					htmltext = "32145-02.htm"; // master_all_kamael012b
-				}
-				else
-				{
+				} else {
 					htmltext = "32145-03.htm"; // master_all_kamael012c
 				}
-			}
-			else if (player.isInCategory(CategoryType.KAMAEL_THIRD_CLASS_GROUP))
-			{
-				if (Util.contains(NPCS_MALE, npc.getId()))
-				{
+			} else if (player.isInCategory(CategoryType.KAMAEL_THIRD_CLASS_GROUP)) {
+				if (Util.contains(NPCS_MALE, npc.getId())) {
 					htmltext = "32145-16.htm"; // master_all_kamael005b
-				}
-				else
-				{
+				} else {
 					htmltext = "32145-17.htm"; // master_all_kamael005c
 				}
-			}
-			else if (player.isInCategory(CategoryType.KAMAEL_FOURTH_CLASS_GROUP))
-			{
-				if (Util.contains(NPCS_MALE, npc.getId()))
-				{
+			} else if (player.isInCategory(CategoryType.KAMAEL_FOURTH_CLASS_GROUP)) {
+				if (Util.contains(NPCS_MALE, npc.getId())) {
 					htmltext = "32145-18.htm"; // master_all_kamael100b
-				}
-				else
-				{
+				} else {
 					htmltext = "32145-19.htm"; // master_all_kamael100c
 				}
-			}
-			else if (player.getClassId() == ClassId.trooper)
-			{
-				if (Util.contains(NPCS_MALE, npc.getId()))
-				{
-					if (classId == 127)
-					{
+			} else if (player.getClassId() == ClassId.trooper) {
+				if (Util.contains(NPCS_MALE, npc.getId())) {
+					if (classId == 127) {
 						QuestState qs = player.getQuestState(Q00064_CertifiedBerserker.class.getSimpleName());
-						if (player.getLevel() < 40)
-						{
-							if ((qs != null) && qs.isCompleted())
-							{
+						if (player.getLevel() < 40) {
+							if ((qs != null) && qs.isCompleted()) {
 								htmltext = "32145-20.htm"; // master_all_kamael008ta
-							}
-							else
-							{
+							} else {
 								htmltext = "32145-21.htm"; // master_all_kamael009ta
 							}
-						}
-						else if ((qs == null) || !qs.isCompleted())
-						{
+						} else if ((qs == null) || !qs.isCompleted()) {
 							htmltext = "32145-22.htm"; // master_all_kamael010ta
-						}
-						else
-						{
+						} else {
 							takeItems(player, ORKURUS_RECOMMENDATION, -1);
 							player.setClassId(127);
 							player.setBaseClass(127);
@@ -180,27 +145,17 @@ public final class KamaelChange2 extends AbstractNpcAI
 							giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
 							htmltext = "32145-23.htm"; // master_all_kamael011ta
 						}
-					}
-					else if (classId == 128)
-					{
+					} else if (classId == 128) {
 						QuestState qs = player.getQuestState(Q00065_CertifiedSoulBreaker.class.getSimpleName());
-						if (player.getLevel() < 40)
-						{
-							if ((qs != null) && qs.isCompleted())
-							{
+						if (player.getLevel() < 40) {
+							if ((qs != null) && qs.isCompleted()) {
 								htmltext = "32145-24.htm"; // master_all_kamael008msa
-							}
-							else
-							{
+							} else {
 								htmltext = "32145-25.htm"; // master_all_kamael009msa
 							}
-						}
-						else if ((qs == null) || !qs.isCompleted())
-						{
+						} else if ((qs == null) || !qs.isCompleted()) {
 							htmltext = "32145-26.htm"; // master_all_kamael010msa
-						}
-						else
-						{
+						} else {
 							takeItems(player, SOUL_BREAKER_CERTIFICATE, -1);
 							player.setClassId(128);
 							player.setBaseClass(128);
@@ -210,40 +165,24 @@ public final class KamaelChange2 extends AbstractNpcAI
 							htmltext = "32145-27.htm"; // master_all_kamael011msa
 						}
 					}
-				}
-				else
-				{
+				} else {
 					htmltext = "32145-10.htm"; // master_all_kamael002c
 				}
-			}
-			else if (player.getClassId() == ClassId.warder)
-			{
-				if (Util.contains(NPCS_MALE, npc.getId()))
-				{
+			} else if (player.getClassId() == ClassId.warder) {
+				if (Util.contains(NPCS_MALE, npc.getId())) {
 					htmltext = "32145-04.htm"; // master_all_kamael002b
-				}
-				else
-				{
-					if (classId == 129)
-					{
+				} else {
+					if (classId == 129) {
 						QuestState qs = player.getQuestState(Q00065_CertifiedSoulBreaker.class.getSimpleName());
-						if (player.getLevel() < 40)
-						{
-							if ((qs != null) && qs.isCompleted())
-							{
+						if (player.getLevel() < 40) {
+							if ((qs != null) && qs.isCompleted()) {
 								htmltext = "32145-28.htm"; // master_all_kamael008fsa
-							}
-							else
-							{
+							} else {
 								htmltext = "32145-29.htm"; // master_all_kamael009fsa
 							}
-						}
-						else if ((qs == null) || !qs.isCompleted())
-						{
+						} else if ((qs == null) || !qs.isCompleted()) {
 							htmltext = "32145-30.htm"; // master_all_kamael010fsa
-						}
-						else
-						{
+						} else {
 							takeItems(player, SOUL_BREAKER_CERTIFICATE, -1);
 							player.setClassId(129);
 							player.setBaseClass(129);
@@ -252,27 +191,17 @@ public final class KamaelChange2 extends AbstractNpcAI
 							giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
 							htmltext = "32145-31.htm"; // master_all_kamael011fsa
 						}
-					}
-					else if (classId == 130)
-					{
+					} else if (classId == 130) {
 						QuestState qs = player.getQuestState(Q00066_CertifiedArbalester.class.getSimpleName());
-						if (player.getLevel() < 40)
-						{
-							if ((qs != null) && qs.isCompleted())
-							{
+						if (player.getLevel() < 40) {
+							if ((qs != null) && qs.isCompleted()) {
 								htmltext = "32145-32.htm"; // master_all_kamael008wa
-							}
-							else
-							{
+							} else {
 								htmltext = "32145-33.htm"; // master_all_kamael009wa
 							}
-						}
-						else if ((qs == null) || !qs.isCompleted())
-						{
+						} else if ((qs == null) || !qs.isCompleted()) {
 							htmltext = "32145-34.htm"; // master_all_kamael010wa
-						}
-						else
-						{
+						} else {
 							takeItems(player, KAMAEL_INQUISITOR_MARK, -1);
 							player.setClassId(130);
 							player.setBaseClass(130);
@@ -289,107 +218,65 @@ public final class KamaelChange2 extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (player.getRace() != Race.KAMAEL)
-		{
+		if (player.getRace() != Race.KAMAEL) {
 			htmltext = "32145-01.htm"; // master_all_kamael002a
-		}
-		else if (player.isInCategory(CategoryType.KAMAEL_FIRST_CLASS_GROUP))
-		{
-			if (player.getClassId() == ClassId.maleSoldier)
-			{
+		} else if (player.isInCategory(CategoryType.KAMAEL_FIRST_CLASS_GROUP)) {
+			if (player.getClassId() == ClassId.maleSoldier) {
 				htmltext = "32145-02.htm"; // master_all_kamael012b
-			}
-			else if (player.getClassId() == ClassId.femaleSoldier)
-			{
+			} else if (player.getClassId() == ClassId.femaleSoldier) {
 				htmltext = "32145-03.htm"; // master_all_kamael012c
 			}
-		}
-		else if (player.isInCategory(CategoryType.KAMAEL_SECOND_CLASS_GROUP))
-		{
-			if (Util.contains(NPCS_MALE, npc.getId()))
-			{
-				if (player.isInCategory(CategoryType.KAMAEL_FEMALE_MAIN_OCCUPATION))
-				{
+		} else if (player.isInCategory(CategoryType.KAMAEL_SECOND_CLASS_GROUP)) {
+			if (Util.contains(NPCS_MALE, npc.getId())) {
+				if (player.isInCategory(CategoryType.KAMAEL_FEMALE_MAIN_OCCUPATION)) {
 					htmltext = "32145-04.htm"; // master_all_kamael002b
 					return htmltext;
 				}
 				
-				if (player.getClassId() == ClassId.trooper)
-				{
+				if (player.getClassId() == ClassId.trooper) {
 					htmltext = "32145-05.htm"; // master_all_kamael003t
-				}
-				else if (player.getClassId() == ClassId.warder)
-				{
+				} else if (player.getClassId() == ClassId.warder) {
 					htmltext = "32145-02.htm"; // master_all_kamael012b
 				}
-			}
-			else
-			{
-				if (player.isInCategory(CategoryType.KAMAEL_MALE_MAIN_OCCUPATION))
-				{
+			} else {
+				if (player.isInCategory(CategoryType.KAMAEL_MALE_MAIN_OCCUPATION)) {
 					htmltext = "32145-10.htm"; // master_all_kamael002c
 					return htmltext;
 				}
 				
-				if (player.getClassId() == ClassId.trooper)
-				{
+				if (player.getClassId() == ClassId.trooper) {
 					htmltext = "32145-03.htm"; // master_all_kamael012c
-				}
-				else if (player.getClassId() == ClassId.warder)
-				{
+				} else if (player.getClassId() == ClassId.warder) {
 					htmltext = "32145-11.htm"; // master_all_kamael003w
 				}
 			}
-		}
-		else if (player.isInCategory(CategoryType.KAMAEL_THIRD_CLASS_GROUP))
-		{
-			if (Util.contains(NPCS_MALE, npc.getId()))
-			{
-				if (player.isInCategory(CategoryType.KAMAEL_MALE_MAIN_OCCUPATION))
-				{
+		} else if (player.isInCategory(CategoryType.KAMAEL_THIRD_CLASS_GROUP)) {
+			if (Util.contains(NPCS_MALE, npc.getId())) {
+				if (player.isInCategory(CategoryType.KAMAEL_MALE_MAIN_OCCUPATION)) {
 					htmltext = "32145-16.htm"; // master_all_kamael005b
-				}
-				else
-				{
+				} else {
 					htmltext = "32145-04.htm"; // master_all_kamael002b
 				}
-			}
-			else
-			{
-				if (player.isInCategory(CategoryType.KAMAEL_FEMALE_MAIN_OCCUPATION))
-				{
+			} else {
+				if (player.isInCategory(CategoryType.KAMAEL_FEMALE_MAIN_OCCUPATION)) {
 					htmltext = "32145-17.htm"; // master_all_kamael005c
-				}
-				else
-				{
+				} else {
 					htmltext = "32145-10.htm"; // master_all_kamael002c
 				}
 			}
-		}
-		else if (player.isInCategory(CategoryType.KAMAEL_FOURTH_CLASS_GROUP))
-		{
-			if (Util.contains(NPCS_MALE, npc.getId()))
-			{
-				if (player.isInCategory(CategoryType.KAMAEL_MALE_MAIN_OCCUPATION))
-				{
+		} else if (player.isInCategory(CategoryType.KAMAEL_FOURTH_CLASS_GROUP)) {
+			if (Util.contains(NPCS_MALE, npc.getId())) {
+				if (player.isInCategory(CategoryType.KAMAEL_MALE_MAIN_OCCUPATION)) {
 					htmltext = "32145-18.htm"; // master_all_kamael100b
-				}
-				else
-				{
+				} else {
 					htmltext = "32145-04.htm"; // master_all_kamael002b
 				}
-			}
-			else
-			{
-				if (player.isInCategory(CategoryType.KAMAEL_FEMALE_MAIN_OCCUPATION))
-				{
+			} else {
+				if (player.isInCategory(CategoryType.KAMAEL_FEMALE_MAIN_OCCUPATION)) {
 					htmltext = "32145-19.htm"; // master_all_kamael100c
-				}
-				else
-				{
+				} else {
 					htmltext = "32145-10.htm"; // master_all_kamael002c
 				}
 			}
@@ -397,8 +284,7 @@ public final class KamaelChange2 extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new KamaelChange2();
 	}
 }

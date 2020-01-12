@@ -53,8 +53,7 @@ import com.l2jserver.gameserver.util.Util;
  * Antharas AI.
  * @author St3eT
  */
-public final class Antharas extends AbstractNpcAI
-{
+public final class Antharas extends AbstractNpcAI {
 	// NPC
 	private static final int ANTHARAS = 29068; // Antharas
 	private static final int BEHEMOTH = 29069; // Behemoth Dragon
@@ -125,8 +124,7 @@ public final class Antharas extends AbstractNpcAI
 	private static int attacker_2_hate = 0;
 	private static int attacker_3_hate = 0;
 	
-	private Antharas()
-	{
+	private Antharas() {
 		super(Antharas.class.getSimpleName(), "ai/individual");
 		addStartNpc(HEART, CUBE);
 		addTalkId(HEART, CUBE);
@@ -148,25 +146,21 @@ public final class Antharas extends AbstractNpcAI
 		final int heading = info.getInt("heading");
 		final long respawnTime = info.getLong("respawn_time");
 		
-		switch (getStatus())
-		{
-			case ALIVE:
-			{
+		switch (getStatus()) {
+			case ALIVE: {
 				_antharas = (L2GrandBossInstance) addSpawn(ANTHARAS, 185708, 114298, -8221, 0, false, 0);
 				_antharas.setCurrentHpMp(curr_hp, curr_mp);
 				addBoss(_antharas);
 				break;
 			}
-			case WAITING:
-			{
+			case WAITING: {
 				_antharas = (L2GrandBossInstance) addSpawn(ANTHARAS, 185708, 114298, -8221, 0, false, 0);
 				_antharas.setCurrentHpMp(curr_hp, curr_mp);
 				addBoss(_antharas);
 				startQuestTimer("SPAWN_ANTHARAS", grandBoss().getAntharasWaitTime(), null, null);
 				break;
 			}
-			case IN_FIGHT:
-			{
+			case IN_FIGHT: {
 				_antharas = (L2GrandBossInstance) addSpawn(ANTHARAS, loc_x, loc_y, loc_z, heading, false, 0);
 				_antharas.setCurrentHpMp(curr_hp, curr_mp);
 				addBoss(_antharas);
@@ -175,15 +169,11 @@ public final class Antharas extends AbstractNpcAI
 				startQuestTimer("SPAWN_MINION", 300000, _antharas, null);
 				break;
 			}
-			case DEAD:
-			{
+			case DEAD: {
 				final long remain = respawnTime - System.currentTimeMillis();
-				if (remain > 0)
-				{
+				if (remain > 0) {
 					startQuestTimer("CLEAR_STATUS", remain, null, null);
-				}
-				else
-				{
+				} else {
 					setStatus(ALIVE);
 					_antharas = (L2GrandBossInstance) addSpawn(ANTHARAS, 185708, 114298, -8221, 0, false, 0);
 					addBoss(_antharas);
@@ -194,70 +184,44 @@ public final class Antharas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "enter":
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "enter": {
 				String htmltext = null;
-				if (getStatus() == DEAD)
-				{
+				if (getStatus() == DEAD) {
 					htmltext = "13001-01.html";
-				}
-				else if (getStatus() == IN_FIGHT)
-				{
+				} else if (getStatus() == IN_FIGHT) {
 					htmltext = "13001-02.html";
-				}
-				else if (zone.getPlayersInside().size() >= MAX_PEOPLE)
-				{
+				} else if (zone.getPlayersInside().size() >= MAX_PEOPLE) {
 					htmltext = "13001-04.html";
-				}
-				else if (player.isInParty())
-				{
+				} else if (player.isInParty()) {
 					final L2Party party = player.getParty();
 					final boolean isInCC = party.isInCommandChannel();
 					final List<L2PcInstance> members = (isInCC) ? party.getCommandChannel().getMembers() : party.getMembers();
 					final boolean isPartyLeader = (isInCC) ? party.getCommandChannel().isLeader(player) : party.isLeader(player);
-					if (!isPartyLeader)
-					{
+					if (!isPartyLeader) {
 						htmltext = "13001-05.html";
-					}
-					else if (!hasQuestItems(player, STONE))
-					{
+					} else if (!hasQuestItems(player, STONE)) {
 						htmltext = "13001-03.html";
-					}
-					else if (members.size() > (MAX_PEOPLE - zone.getPlayersInside().size()))
-					{
+					} else if (members.size() > (MAX_PEOPLE - zone.getPlayersInside().size())) {
 						htmltext = "13001-04.html";
-					}
-					else
-					{
-						for (L2PcInstance member : members)
-						{
-							if (member.isInsideRadius(npc, 1000, true, false))
-							{
+					} else {
+						for (L2PcInstance member : members) {
+							if (member.isInsideRadius(npc, 1000, true, false)) {
 								member.teleToLocation(179700 + getRandom(700), 113800 + getRandom(2100), -7709);
 							}
 						}
-						if (getStatus() != WAITING)
-						{
+						if (getStatus() != WAITING) {
 							setStatus(WAITING);
 							startQuestTimer("SPAWN_ANTHARAS", grandBoss().getAntharasWaitTime(), null, null);
 						}
 					}
-				}
-				else
-				{
-					if (!hasQuestItems(player, STONE))
-					{
+				} else {
+					if (!hasQuestItems(player, STONE)) {
 						htmltext = "13001-03.html";
-					}
-					else
-					{
+					} else {
 						player.teleToLocation(179700 + getRandom(700), 113800 + getRandom(2100), -7709);
-						if (getStatus() != WAITING)
-						{
+						if (getStatus() != WAITING) {
 							setStatus(WAITING);
 							startQuestTimer("SPAWN_ANTHARAS", grandBoss().getAntharasWaitTime(), null, null);
 						}
@@ -265,13 +229,11 @@ public final class Antharas extends AbstractNpcAI
 				}
 				return htmltext;
 			}
-			case "teleportOut":
-			{
+			case "teleportOut": {
 				player.teleToLocation(79800 + getRandom(600), 151200 + getRandom(1100), -3534);
 				break;
 			}
-			case "SPAWN_ANTHARAS":
-			{
+			case "SPAWN_ANTHARAS": {
 				_antharas.teleToLocation(181323, 114850, -7623, 32542);
 				setStatus(IN_FIGHT);
 				_lastAttack = System.currentTimeMillis();
@@ -279,49 +241,40 @@ public final class Antharas extends AbstractNpcAI
 				startQuestTimer("CAMERA_1", 23, _antharas, null);
 				break;
 			}
-			case "CAMERA_1":
-			{
+			case "CAMERA_1": {
 				zone.broadcastPacket(new SpecialCamera(npc, 700, 13, -19, 0, 10000, 20000, 0, 0, 0, 0, 0));
 				startQuestTimer("CAMERA_2", 3000, npc, null);
 				break;
 			}
-			case "CAMERA_2":
-			{
+			case "CAMERA_2": {
 				zone.broadcastPacket(new SpecialCamera(npc, 700, 13, 0, 6000, 10000, 20000, 0, 0, 0, 0, 0));
 				startQuestTimer("CAMERA_3", 10000, npc, null);
 				break;
 			}
-			case "CAMERA_3":
-			{
+			case "CAMERA_3": {
 				zone.broadcastPacket(new SpecialCamera(npc, 3700, 0, -3, 0, 10000, 10000, 0, 0, 0, 0, 0));
 				zone.broadcastPacket(new SocialAction(npc.getObjectId(), 1));
 				startQuestTimer("CAMERA_4", 200, npc, null);
 				startQuestTimer("SOCIAL", 5200, npc, null);
 				break;
 			}
-			case "CAMERA_4":
-			{
+			case "CAMERA_4": {
 				zone.broadcastPacket(new SpecialCamera(npc, 1100, 0, -3, 22000, 10000, 30000, 0, 0, 0, 0, 0));
 				startQuestTimer("CAMERA_5", 10800, npc, null);
 				break;
 			}
-			case "CAMERA_5":
-			{
+			case "CAMERA_5": {
 				zone.broadcastPacket(new SpecialCamera(npc, 1100, 0, -3, 300, 10000, 7000, 0, 0, 0, 0, 0));
 				startQuestTimer("START_MOVE", 1900, npc, null);
 				break;
 			}
-			case "SOCIAL":
-			{
+			case "SOCIAL": {
 				zone.broadcastPacket(new SocialAction(npc.getObjectId(), 2));
 				break;
 			}
-			case "START_MOVE":
-			{
-				for (L2PcInstance players : npc.getKnownList().getKnownPlayersInRadius(4000))
-				{
-					if (players.isHero())
-					{
+			case "START_MOVE": {
+				for (L2PcInstance players : npc.getKnownList().getKnownPlayersInRadius(4000)) {
+					if (players.isHero()) {
 						zone.broadcastPacket(new ExShowScreenMessage(NpcStringId.S1_YOU_CANNOT_HOPE_TO_DEFEAT_ME_WITH_YOUR_MEAGER_STRENGTH, 2, 4000, players.getName()));
 						break;
 					}
@@ -331,80 +284,53 @@ public final class Antharas extends AbstractNpcAI
 				startQuestTimer("SPAWN_MINION", 300000, npc, null);
 				break;
 			}
-			case "SET_REGEN":
-			{
-				if (npc != null)
-				{
-					if (npc.getCurrentHp() < (npc.getMaxHp() * 0.25))
-					{
-						if (!npc.isAffectedBySkill(ANTH_REGEN_4.getSkillId()))
-						{
+			case "SET_REGEN": {
+				if (npc != null) {
+					if (npc.getCurrentHp() < (npc.getMaxHp() * 0.25)) {
+						if (!npc.isAffectedBySkill(ANTH_REGEN_4.getSkillId())) {
 							npc.doCast(ANTH_REGEN_4);
 						}
-					}
-					else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.5))
-					{
-						if (!npc.isAffectedBySkill(ANTH_REGEN_3.getSkillId()))
-						{
+					} else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.5)) {
+						if (!npc.isAffectedBySkill(ANTH_REGEN_3.getSkillId())) {
 							npc.doCast(ANTH_REGEN_3);
 						}
-					}
-					else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.75))
-					{
-						if (!npc.isAffectedBySkill(ANTH_REGEN_2.getSkillId()))
-						{
+					} else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.75)) {
+						if (!npc.isAffectedBySkill(ANTH_REGEN_2.getSkillId())) {
 							npc.doCast(ANTH_REGEN_2);
 						}
-					}
-					else if (!npc.isAffectedBySkill(ANTH_REGEN_1.getSkillId()))
-					{
+					} else if (!npc.isAffectedBySkill(ANTH_REGEN_1.getSkillId())) {
 						npc.doCast(ANTH_REGEN_1);
 					}
 					startQuestTimer("SET_REGEN", 60000, npc, null);
 				}
 				break;
 			}
-			case "CHECK_ATTACK":
-			{
-				if ((npc != null) && ((_lastAttack + 900000) < System.currentTimeMillis()))
-				{
+			case "CHECK_ATTACK": {
+				if ((npc != null) && ((_lastAttack + 900000) < System.currentTimeMillis())) {
 					setStatus(ALIVE);
-					for (L2Character charInside : zone.getCharactersInside())
-					{
-						if (charInside != null)
-						{
-							if (charInside.isNpc())
-							{
-								if (charInside.getId() == ANTHARAS)
-								{
+					for (L2Character charInside : zone.getCharactersInside()) {
+						if (charInside != null) {
+							if (charInside.isNpc()) {
+								if (charInside.getId() == ANTHARAS) {
 									charInside.teleToLocation(185708, 114298, -8221);
-								}
-								else
-								{
+								} else {
 									charInside.deleteMe();
 								}
-							}
-							else if (charInside.isPlayer())
-							{
+							} else if (charInside.isPlayer()) {
 								charInside.teleToLocation(79800 + getRandom(600), 151200 + getRandom(1100), -3534);
 							}
 						}
 					}
 					cancelQuestTimer("CHECK_ATTACK", npc, null);
 					cancelQuestTimer("SPAWN_MINION", npc, null);
-				}
-				else if (npc != null)
-				{
-					if (attacker_1_hate > 10)
-					{
+				} else if (npc != null) {
+					if (attacker_1_hate > 10) {
 						attacker_1_hate -= getRandom(10);
 					}
-					if (attacker_2_hate > 10)
-					{
+					if (attacker_2_hate > 10) {
 						attacker_2_hate -= getRandom(10);
 					}
-					if (attacker_3_hate > 10)
-					{
+					if (attacker_3_hate > 10) {
 						attacker_3_hate -= getRandom(10);
 					}
 					manageSkills(npc);
@@ -412,58 +338,42 @@ public final class Antharas extends AbstractNpcAI
 				}
 				break;
 			}
-			case "SPAWN_MINION":
-			{
-				if ((minionMultipler > 1) && (_minionCount < (100 - (minionMultipler * 2))))
-				{
-					for (int i = 0; i < minionMultipler; i++)
-					{
+			case "SPAWN_MINION": {
+				if ((minionMultipler > 1) && (_minionCount < (100 - (minionMultipler * 2)))) {
+					for (int i = 0; i < minionMultipler; i++) {
 						addSpawn(BEHEMOTH, npc, true);
 						addSpawn(TERASQUE, npc, true);
 					}
 					_minionCount += (minionMultipler * 2);
-				}
-				else if (_minionCount < 98)
-				{
+				} else if (_minionCount < 98) {
 					addSpawn(BEHEMOTH, npc, true);
 					addSpawn(TERASQUE, npc, true);
 					_minionCount += 2;
-				}
-				else if (_minionCount < 99)
-				{
+				} else if (_minionCount < 99) {
 					addSpawn((getRandomBoolean() ? BEHEMOTH : TERASQUE), npc, true);
 					_minionCount++;
 				}
 				
-				if ((getRandom(100) > 10) && (minionMultipler < 4))
-				{
+				if ((getRandom(100) > 10) && (minionMultipler < 4)) {
 					minionMultipler++;
 				}
 				startQuestTimer("SPAWN_MINION", 300000, npc, null);
 				break;
 			}
-			case "CLEAR_ZONE":
-			{
-				for (L2Character charInside : zone.getCharactersInside())
-				{
-					if (charInside != null)
-					{
-						if (charInside.isNpc())
-						{
+			case "CLEAR_ZONE": {
+				for (L2Character charInside : zone.getCharactersInside()) {
+					if (charInside != null) {
+						if (charInside.isNpc()) {
 							charInside.deleteMe();
-						}
-						else if (charInside.isPlayer())
-						{
+						} else if (charInside.isPlayer()) {
 							charInside.teleToLocation(79800 + getRandom(600), 151200 + getRandom(1100), -3534);
 						}
 					}
 				}
 				break;
 			}
-			case "TID_USED_FEAR":
-			{
-				if ((npc != null) && (sandStorm == 0))
-				{
+			case "TID_USED_FEAR": {
+				if ((npc != null) && (sandStorm == 0)) {
 					sandStorm = 1;
 					npc.disableCoreAI(true);
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(177648, 114816, -7735));
@@ -472,82 +382,61 @@ public final class Antharas extends AbstractNpcAI
 				}
 				break;
 			}
-			case "TID_FEAR_COOLTIME":
-			{
+			case "TID_FEAR_COOLTIME": {
 				sandStorm = 0;
 				break;
 			}
-			case "TID_FEAR_MOVE_TIMEOVER":
-			{
-				if ((sandStorm == 1) && (npc.getX() == 177648) && (npc.getY() == 114816))
-				{
+			case "TID_FEAR_MOVE_TIMEOVER": {
+				if ((sandStorm == 1) && (npc.getX() == 177648) && (npc.getY() == 114816)) {
 					sandStorm = 2;
 					moveChance = 0;
 					npc.disableCoreAI(false);
 					INVISIBLE_NPC.entrySet().forEach(entry -> addSpawn(entry.getKey(), entry.getValue()));
-				}
-				else if (sandStorm == 1)
-				{
-					if (moveChance <= 3)
-					{
+				} else if (sandStorm == 1) {
+					if (moveChance <= 3) {
 						moveChance++;
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(177648, 114816, -7735));
 						startQuestTimer("TID_FEAR_MOVE_TIMEOVER", 5000, npc, null);
-					}
-					else
-					{
+					} else {
 						npc.teleToLocation(177648, 114816, -7735, npc.getHeading());
 						startQuestTimer("TID_FEAR_MOVE_TIMEOVER", 1000, npc, null);
 					}
 				}
 				break;
 			}
-			case "CLEAR_STATUS":
-			{
+			case "CLEAR_STATUS": {
 				_antharas = (L2GrandBossInstance) addSpawn(ANTHARAS, 185708, 114298, -8221, 0, false, 0);
 				addBoss(_antharas);
 				Broadcast.toAllOnlinePlayers(new Earthquake(185708, 114298, -8221, 20, 10));
 				setStatus(ALIVE);
 				break;
 			}
-			case "SKIP_WAITING":
-			{
-				if (getStatus() == WAITING)
-				{
+			case "SKIP_WAITING": {
+				if (getStatus() == WAITING) {
 					cancelQuestTimer("SPAWN_ANTHARAS", null, null);
 					notifyEvent("SPAWN_ANTHARAS", null, null);
 					player.sendMessage(getClass().getSimpleName() + ": Skipping waiting time ...");
-				}
-				else
-				{
+				} else {
 					player.sendMessage(getClass().getSimpleName() + ": You can't skip waiting time right now!");
 				}
 				break;
 			}
-			case "RESPAWN_ANTHARAS":
-			{
-				if (getStatus() == DEAD)
-				{
+			case "RESPAWN_ANTHARAS": {
+				if (getStatus() == DEAD) {
 					setRespawn(0);
 					cancelQuestTimer("CLEAR_STATUS", null, null);
 					notifyEvent("CLEAR_STATUS", null, null);
 					player.sendMessage(getClass().getSimpleName() + ": Antharas has been respawned.");
-				}
-				else
-				{
+				} else {
 					player.sendMessage(getClass().getSimpleName() + ": You can't respawn antharas while antharas is alive!");
 				}
 				break;
 			}
-			case "DESPAWN_MINIONS":
-			{
-				if (getStatus() == IN_FIGHT)
-				{
+			case "DESPAWN_MINIONS": {
+				if (getStatus() == IN_FIGHT) {
 					_minionCount = 0;
-					for (L2Character charInside : zone.getCharactersInside())
-					{
-						if ((charInside != null) && charInside.isNpc() && ((charInside.getId() == BEHEMOTH) || (charInside.getId() == TERASQUE)))
-						{
+					for (L2Character charInside : zone.getCharactersInside()) {
+						if ((charInside != null) && charInside.isNpc() && ((charInside.getId() == BEHEMOTH) || (charInside.getId() == TERASQUE))) {
 							charInside.deleteMe();
 						}
 					}
@@ -555,51 +444,37 @@ public final class Antharas extends AbstractNpcAI
 					{
 						player.sendMessage(getClass().getSimpleName() + ": All minions have been deleted!");
 					}
-				}
-				else if (player != null) // Player dont will be null just when is this event called from GM command
+				} else if (player != null) // Player dont will be null just when is this event called from GM command
 				{
 					player.sendMessage(getClass().getSimpleName() + ": You can't despawn minions right now!");
 				}
 				break;
 			}
-			case "ABORT_FIGHT":
-			{
-				if (getStatus() == IN_FIGHT)
-				{
+			case "ABORT_FIGHT": {
+				if (getStatus() == IN_FIGHT) {
 					setStatus(ALIVE);
 					cancelQuestTimer("CHECK_ATTACK", _antharas, null);
 					cancelQuestTimer("SPAWN_MINION", _antharas, null);
-					for (L2Character charInside : zone.getCharactersInside())
-					{
-						if (charInside != null)
-						{
-							if (charInside.isNpc())
-							{
-								if (charInside.getId() == ANTHARAS)
-								{
+					for (L2Character charInside : zone.getCharactersInside()) {
+						if (charInside != null) {
+							if (charInside.isNpc()) {
+								if (charInside.getId() == ANTHARAS) {
 									charInside.teleToLocation(185708, 114298, -8221);
-								}
-								else
-								{
+								} else {
 									charInside.deleteMe();
 								}
-							}
-							else if (charInside.isPlayer() && !charInside.isGM())
-							{
+							} else if (charInside.isPlayer() && !charInside.isGM()) {
 								charInside.teleToLocation(79800 + getRandom(600), 151200 + getRandom(1100), -3534);
 							}
 						}
 					}
 					player.sendMessage(getClass().getSimpleName() + ": Fight has been aborted!");
-				}
-				else
-				{
+				} else {
 					player.sendMessage(getClass().getSimpleName() + ": You can't abort fight right now!");
 				}
 				break;
 			}
-			case "MANAGE_SKILL":
-			{
+			case "MANAGE_SKILL": {
 				manageSkills(npc);
 				break;
 			}
@@ -608,61 +483,43 @@ public final class Antharas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		npc.doCast(DISPEL_BOM);
 		npc.doDie(player);
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill) {
 		_lastAttack = System.currentTimeMillis();
 		
-		if (npc.getId() == BOMBER)
-		{
-			if (npc.calculateDistance(attacker, true, false) < 230)
-			{
+		if (npc.getId() == BOMBER) {
+			if (npc.calculateDistance(attacker, true, false) < 230) {
 				npc.doCast(DISPEL_BOM);
 				npc.doDie(attacker);
 			}
-		}
-		else if (npc.getId() == ANTHARAS)
-		{
-			if (!zone.isCharacterInZone(attacker) || (getStatus() != IN_FIGHT))
-			{
+		} else if (npc.getId() == ANTHARAS) {
+			if (!zone.isCharacterInZone(attacker) || (getStatus() != IN_FIGHT)) {
 				_log.warning(getClass().getSimpleName() + ": Player " + attacker.getName() + " attacked Antharas in invalid conditions!");
 				attacker.teleToLocation(80464, 152294, -3534);
 			}
 			
-			if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTH_ANTI_STRIDER.getSkillId()))
-			{
-				if (npc.checkDoCastConditions(ANTH_ANTI_STRIDER.getSkill()))
-				{
+			if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTH_ANTI_STRIDER.getSkillId())) {
+				if (npc.checkDoCastConditions(ANTH_ANTI_STRIDER.getSkill())) {
 					npc.setTarget(attacker);
 					npc.doCast(ANTH_ANTI_STRIDER);
 				}
 			}
 			
-			if (skill == null)
-			{
+			if (skill == null) {
 				refreshAiParams(attacker, (damage * 1000));
-			}
-			else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.25))
-			{
+			} else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.25)) {
 				refreshAiParams(attacker, ((damage / 3) * 100));
-			}
-			else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.5))
-			{
+			} else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.5)) {
 				refreshAiParams(attacker, (damage * 20));
-			}
-			else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.75))
-			{
+			} else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.75)) {
 				refreshAiParams(attacker, (damage * 10));
-			}
-			else
-			{
+			} else {
 				refreshAiParams(attacker, ((damage / 3) * 20));
 			}
 			manageSkills(npc);
@@ -671,12 +528,9 @@ public final class Antharas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (zone.isCharacterInZone(killer))
-		{
-			if (npc.getId() == ANTHARAS)
-			{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (zone.isCharacterInZone(killer)) {
+			if (npc.getId() == ANTHARAS) {
 				_antharas = null;
 				notifyEvent("DESPAWN_MINIONS", null, null);
 				zone.broadcastPacket(new SpecialCamera(npc, 1200, 20, -10, 0, 10000, 13000, 0, 0, 0, 0, 0));
@@ -690,9 +544,7 @@ public final class Antharas extends AbstractNpcAI
 				cancelQuestTimer("SPAWN_MINION", npc, null);
 				startQuestTimer("CLEAR_ZONE", 900000, null, null);
 				setStatus(DEAD);
-			}
-			else
-			{
+			} else {
 				_minionCount--;
 			}
 		}
@@ -700,25 +552,19 @@ public final class Antharas extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onMoveFinished(L2Npc npc)
-	{
+	public void onMoveFinished(L2Npc npc) {
 		npc.doCast(DISPEL_BOM);
 		npc.doDie(null);
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
-		if (npc.getId() == ANTHARAS)
-		{
+	public String onSpawn(L2Npc npc) {
+		if (npc.getId() == ANTHARAS) {
 			cancelQuestTimer("SET_REGEN", npc, null);
 			startQuestTimer("SET_REGEN", 60000, npc, null);
 			((L2Attackable) npc).setOnKillDelay(0);
-		}
-		else
-		{
-			for (int i = 1; i <= 6; i++)
-			{
+		} else {
+			for (int i = 1; i <= 6; i++) {
 				final int x = npc.getTemplate().getParameters().getInt("suicide" + i + "_x");
 				final int y = npc.getTemplate().getParameters().getInt("suicide" + i + "_y");
 				final L2Attackable bomber = (L2Attackable) addSpawn(BOMBER, npc.getX(), npc.getY(), npc.getZ(), 0, true, 15000, true);
@@ -730,10 +576,8 @@ public final class Antharas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
-	{
-		if ((skill.getId() == ANTH_FEAR.getSkillId()) || (skill.getId() == ANTH_FEAR_SHORT.getSkillId()))
-		{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill) {
+		if ((skill.getId() == ANTH_FEAR.getSkillId()) || (skill.getId() == ANTH_FEAR_SHORT.getSkillId())) {
 			startQuestTimer("TID_USED_FEAR", 7000, npc, null);
 		}
 		startQuestTimer("MANAGE_SKILL", 1000, npc, null);
@@ -741,142 +585,105 @@ public final class Antharas extends AbstractNpcAI
 	}
 	
 	@Override
-	public boolean unload(boolean removeFromList)
-	{
-		if (_antharas != null)
-		{
+	public boolean unload(boolean removeFromList) {
+		if (_antharas != null) {
 			_antharas.deleteMe();
 			_antharas = null;
 		}
 		return super.unload(removeFromList);
 	}
 	
-	private int getStatus()
-	{
+	private int getStatus() {
 		return GrandBossManager.getInstance().getBossStatus(ANTHARAS);
 	}
 	
-	private void addBoss(L2GrandBossInstance grandboss)
-	{
+	private void addBoss(L2GrandBossInstance grandboss) {
 		GrandBossManager.getInstance().addBoss(grandboss);
 	}
 	
-	private void setStatus(int status)
-	{
+	private void setStatus(int status) {
 		GrandBossManager.getInstance().setBossStatus(ANTHARAS, status);
 	}
 	
-	private void setRespawn(long respawnTime)
-	{
+	private void setRespawn(long respawnTime) {
 		GrandBossManager.getInstance().getStatsSet(ANTHARAS).set("respawn_time", (System.currentTimeMillis() + respawnTime));
 	}
 	
-	private final void refreshAiParams(L2PcInstance attacker, int damage)
-	{
-		if ((attacker_1 != null) && (attacker == attacker_1))
-		{
-			if (attacker_1_hate < (damage + 1000))
-			{
+	private final void refreshAiParams(L2PcInstance attacker, int damage) {
+		if ((attacker_1 != null) && (attacker == attacker_1)) {
+			if (attacker_1_hate < (damage + 1000)) {
 				attacker_1_hate = damage + getRandom(3000);
 			}
-		}
-		else if ((attacker_2 != null) && (attacker == attacker_2))
-		{
-			if (attacker_2_hate < (damage + 1000))
-			{
+		} else if ((attacker_2 != null) && (attacker == attacker_2)) {
+			if (attacker_2_hate < (damage + 1000)) {
 				attacker_2_hate = damage + getRandom(3000);
 			}
-		}
-		else if ((attacker_3 != null) && (attacker == attacker_3))
-		{
-			if (attacker_3_hate < (damage + 1000))
-			{
+		} else if ((attacker_3 != null) && (attacker == attacker_3)) {
+			if (attacker_3_hate < (damage + 1000)) {
 				attacker_3_hate = damage + getRandom(3000);
 			}
-		}
-		else
-		{
+		} else {
 			final int i1 = Util.min(attacker_1_hate, attacker_2_hate, attacker_3_hate);
-			if (attacker_1_hate == i1)
-			{
+			if (attacker_1_hate == i1) {
 				attacker_1_hate = damage + getRandom(3000);
 				attacker_1 = attacker;
-			}
-			else if (attacker_2_hate == i1)
-			{
+			} else if (attacker_2_hate == i1) {
 				attacker_2_hate = damage + getRandom(3000);
 				attacker_2 = attacker;
-			}
-			else if (attacker_3_hate == i1)
-			{
+			} else if (attacker_3_hate == i1) {
 				attacker_3_hate = damage + getRandom(3000);
 				attacker_3 = attacker;
 			}
 		}
 	}
 	
-	private void manageSkills(L2Npc npc)
-	{
-		if (npc.isCastingNow() || npc.isCoreAIDisabled() || !npc.isInCombat())
-		{
+	private void manageSkills(L2Npc npc) {
+		if (npc.isCastingNow() || npc.isCoreAIDisabled() || !npc.isInCombat()) {
 			return;
 		}
 		
 		int i1 = 0;
 		int i2 = 0;
 		L2PcInstance c2 = null;
-		if ((attacker_1 == null) || (npc.calculateDistance(attacker_1, true, false) > 9000) || attacker_1.isDead())
-		{
+		if ((attacker_1 == null) || (npc.calculateDistance(attacker_1, true, false) > 9000) || attacker_1.isDead()) {
 			attacker_1_hate = 0;
 		}
 		
-		if ((attacker_2 == null) || (npc.calculateDistance(attacker_2, true, false) > 9000) || attacker_2.isDead())
-		{
+		if ((attacker_2 == null) || (npc.calculateDistance(attacker_2, true, false) > 9000) || attacker_2.isDead()) {
 			attacker_2_hate = 0;
 		}
 		
-		if ((attacker_3 == null) || (npc.calculateDistance(attacker_3, true, false) > 9000) || attacker_3.isDead())
-		{
+		if ((attacker_3 == null) || (npc.calculateDistance(attacker_3, true, false) > 9000) || attacker_3.isDead()) {
 			attacker_3_hate = 0;
 		}
 		
-		if (attacker_1_hate > attacker_2_hate)
-		{
+		if (attacker_1_hate > attacker_2_hate) {
 			i1 = 2;
 			i2 = attacker_1_hate;
 			c2 = attacker_1;
-		}
-		else if (attacker_2_hate > 0)
-		{
+		} else if (attacker_2_hate > 0) {
 			i1 = 3;
 			i2 = attacker_2_hate;
 			c2 = attacker_2;
 		}
 		
-		if (attacker_3_hate > i2)
-		{
+		if (attacker_3_hate > i2) {
 			i1 = 4;
 			i2 = attacker_3_hate;
 			c2 = attacker_3;
 		}
-		if (i2 > 0)
-		{
-			if (getRandom(100) < 70)
-			{
-				switch (i1)
-				{
-					case 2:
-					{
+		if (i2 > 0) {
+			if (getRandom(100) < 70) {
+				switch (i1) {
+					case 2: {
 						attacker_1_hate = 500;
 						break;
 					}
-					case 3:
-					{
+					case 3: {
 						attacker_2_hate = 500;
 						break;
 					}
-					case 4:
-					{
+					case 4: {
 						attacker_3_hate = 500;
 						break;
 					}
@@ -887,166 +694,102 @@ public final class Antharas extends AbstractNpcAI
 			final double direction_c2 = npc.calculateDirectionTo(c2);
 			
 			SkillHolder skillToCast = null;
-			if (npc.getCurrentHp() < (npc.getMaxHp() * 0.25))
-			{
-				if (getRandom(100) < 30)
-				{
+			if (npc.getCurrentHp() < (npc.getMaxHp() * 0.25)) {
+				if (getRandom(100) < 30) {
 					npc.setTarget(c2);
 					skillToCast = ANTH_MOUTH;
-				}
-				else if ((getRandom(100) < 80) && (((distance_c2 < 1423) && (direction_c2 < 188) && (direction_c2 > 172)) || ((distance_c2 < 802) && (direction_c2 < 194) && (direction_c2 > 166))))
-				{
+				} else if ((getRandom(100) < 80) && (((distance_c2 < 1423) && (direction_c2 < 188) && (direction_c2 > 172)) || ((distance_c2 < 802) && (direction_c2 < 194) && (direction_c2 > 166)))) {
 					skillToCast = ANTH_TAIL;
-				}
-				else if ((getRandom(100) < 40) && (((distance_c2 < 850) && (direction_c2 < 210) && (direction_c2 > 150)) || ((distance_c2 < 425) && (direction_c2 < 270) && (direction_c2 > 90))))
-				{
+				} else if ((getRandom(100) < 40) && (((distance_c2 < 850) && (direction_c2 < 210) && (direction_c2 > 150)) || ((distance_c2 < 425) && (direction_c2 < 270) && (direction_c2 > 90)))) {
 					skillToCast = ANTH_DEBUFF;
-				}
-				else if ((getRandom(100) < 10) && (distance_c2 < 1100))
-				{
+				} else if ((getRandom(100) < 10) && (distance_c2 < 1100)) {
 					skillToCast = ANTH_JUMP;
-				}
-				else if (getRandom(100) < 10)
-				{
+				} else if (getRandom(100) < 10) {
 					npc.setTarget(c2);
 					skillToCast = ANTH_METEOR;
-				}
-				else if (getRandom(100) < 6)
-				{
+				} else if (getRandom(100) < 6) {
 					npc.setTarget(c2);
 					skillToCast = ANTH_BREATH;
-				}
-				else if (getRandomBoolean())
-				{
+				} else if (getRandomBoolean()) {
 					npc.setTarget(c2);
 					skillToCast = ANTH_NORM_ATTACK_EX;
-				}
-				else if (getRandom(100) < 5)
-				{
+				} else if (getRandom(100) < 5) {
 					npc.setTarget(c2);
 					skillToCast = getRandomBoolean() ? ANTH_FEAR : ANTH_FEAR_SHORT;
-				}
-				else
-				{
+				} else {
 					npc.setTarget(c2);
 					skillToCast = ANTH_NORM_ATTACK;
 				}
-			}
-			else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.5))
-			{
-				if ((getRandom(100) < 80) && (((distance_c2 < 1423) && (direction_c2 < 188) && (direction_c2 > 172)) || ((distance_c2 < 802) && (direction_c2 < 194) && (direction_c2 > 166))))
-				{
+			} else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.5)) {
+				if ((getRandom(100) < 80) && (((distance_c2 < 1423) && (direction_c2 < 188) && (direction_c2 > 172)) || ((distance_c2 < 802) && (direction_c2 < 194) && (direction_c2 > 166)))) {
 					skillToCast = ANTH_TAIL;
-				}
-				else if ((getRandom(100) < 40) && (((distance_c2 < 850) && (direction_c2 < 210) && (direction_c2 > 150)) || ((distance_c2 < 425) && (direction_c2 < 270) && (direction_c2 > 90))))
-				{
+				} else if ((getRandom(100) < 40) && (((distance_c2 < 850) && (direction_c2 < 210) && (direction_c2 > 150)) || ((distance_c2 < 425) && (direction_c2 < 270) && (direction_c2 > 90)))) {
 					skillToCast = ANTH_DEBUFF;
-				}
-				else if ((getRandom(100) < 10) && (distance_c2 < 1100))
-				{
+				} else if ((getRandom(100) < 10) && (distance_c2 < 1100)) {
 					skillToCast = ANTH_JUMP;
-				}
-				else if (getRandom(100) < 7)
-				{
+				} else if (getRandom(100) < 7) {
 					npc.setTarget(c2);
 					skillToCast = ANTH_METEOR;
-				}
-				else if (getRandom(100) < 6)
-				{
+				} else if (getRandom(100) < 6) {
 					npc.setTarget(c2);
 					skillToCast = ANTH_BREATH;
-				}
-				else if (getRandomBoolean())
-				{
+				} else if (getRandomBoolean()) {
 					npc.setTarget(c2);
 					skillToCast = ANTH_NORM_ATTACK_EX;
-				}
-				else if (getRandom(100) < 5)
-				{
+				} else if (getRandom(100) < 5) {
 					npc.setTarget(c2);
 					skillToCast = getRandomBoolean() ? ANTH_FEAR : ANTH_FEAR_SHORT;
-				}
-				else
-				{
+				} else {
 					npc.setTarget(c2);
 					skillToCast = ANTH_NORM_ATTACK;
 				}
-			}
-			else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.75))
-			{
-				if ((getRandom(100) < 80) && (((distance_c2 < 1423) && (direction_c2 < 188) && (direction_c2 > 172)) || ((distance_c2 < 802) && (direction_c2 < 194) && (direction_c2 > 166))))
-				{
+			} else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.75)) {
+				if ((getRandom(100) < 80) && (((distance_c2 < 1423) && (direction_c2 < 188) && (direction_c2 > 172)) || ((distance_c2 < 802) && (direction_c2 < 194) && (direction_c2 > 166)))) {
 					skillToCast = ANTH_TAIL;
-				}
-				else if ((getRandom(100) < 10) && (distance_c2 < 1100))
-				{
+				} else if ((getRandom(100) < 10) && (distance_c2 < 1100)) {
 					skillToCast = ANTH_JUMP;
-				}
-				else if (getRandom(100) < 5)
-				{
+				} else if (getRandom(100) < 5) {
 					npc.setTarget(c2);
 					skillToCast = ANTH_METEOR;
-				}
-				else if (getRandom(100) < 6)
-				{
+				} else if (getRandom(100) < 6) {
 					npc.setTarget(c2);
 					skillToCast = ANTH_BREATH;
-				}
-				else if (getRandomBoolean())
-				{
+				} else if (getRandomBoolean()) {
 					npc.setTarget(c2);
 					skillToCast = ANTH_NORM_ATTACK_EX;
-				}
-				else if (getRandom(100) < 5)
-				{
+				} else if (getRandom(100) < 5) {
 					npc.setTarget(c2);
 					skillToCast = getRandomBoolean() ? ANTH_FEAR : ANTH_FEAR_SHORT;
-				}
-				else
-				{
+				} else {
 					npc.setTarget(c2);
 					skillToCast = ANTH_NORM_ATTACK;
 				}
-			}
-			else if ((getRandom(100) < 80) && (((distance_c2 < 1423) && (direction_c2 < 188) && (direction_c2 > 172)) || ((distance_c2 < 802) && (direction_c2 < 194) && (direction_c2 > 166))))
-			{
+			} else if ((getRandom(100) < 80) && (((distance_c2 < 1423) && (direction_c2 < 188) && (direction_c2 > 172)) || ((distance_c2 < 802) && (direction_c2 < 194) && (direction_c2 > 166)))) {
 				skillToCast = ANTH_TAIL;
-			}
-			else if (getRandom(100) < 3)
-			{
+			} else if (getRandom(100) < 3) {
 				npc.setTarget(c2);
 				skillToCast = ANTH_METEOR;
-			}
-			else if (getRandom(100) < 6)
-			{
+			} else if (getRandom(100) < 6) {
 				npc.setTarget(c2);
 				skillToCast = ANTH_BREATH;
-			}
-			else if (getRandomBoolean())
-			{
+			} else if (getRandomBoolean()) {
 				npc.setTarget(c2);
 				skillToCast = ANTH_NORM_ATTACK_EX;
-			}
-			else if (getRandom(100) < 5)
-			{
+			} else if (getRandom(100) < 5) {
 				npc.setTarget(c2);
 				skillToCast = getRandomBoolean() ? ANTH_FEAR : ANTH_FEAR_SHORT;
-			}
-			else
-			{
+			} else {
 				npc.setTarget(c2);
 				skillToCast = ANTH_NORM_ATTACK;
 			}
 			
-			if ((skillToCast != null) && npc.checkDoCastConditions(skillToCast.getSkill()))
-			{
+			if ((skillToCast != null) && npc.checkDoCastConditions(skillToCast.getSkill())) {
 				npc.doCast(skillToCast);
 			}
 		}
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Antharas();
 	}
 }

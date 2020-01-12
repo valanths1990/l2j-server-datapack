@@ -27,25 +27,20 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 /**
  * @author UnAfraid
  */
-public class FlagPole implements ITargetTypeHandler
-{
+public class FlagPole implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		if (!activeChar.isPlayer())
-		{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+		if (!activeChar.isPlayer()) {
 			return EMPTY_TARGET_LIST;
 		}
 		
-		return new L2Object[]
-		{
+		return new L2Object[] {
 			target
 		};
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.FLAGPOLE;
 	}
 }

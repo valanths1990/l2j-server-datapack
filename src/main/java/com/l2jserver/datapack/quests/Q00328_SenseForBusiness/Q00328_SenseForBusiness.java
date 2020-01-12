@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Sense for Business (328)
  * @author xban1x
  */
-public class Q00328_SenseForBusiness extends Quest
-{
+public class Q00328_SenseForBusiness extends Quest {
 	// NPCs
 	private static final int SARIEN = 30436;
 	private static final Map<Integer, int[]> MONSTER_EYES = new HashMap<>();
@@ -61,8 +60,7 @@ public class Q00328_SenseForBusiness extends Quest
 	private static final int BONUS_COUNT = 10;
 	private static final int MIN_LVL = 21;
 	
-	public Q00328_SenseForBusiness()
-	{
+	public Q00328_SenseForBusiness() {
 		super(328, Q00328_SenseForBusiness.class.getSimpleName(), "Sense for Business");
 		addStartNpc(SARIEN);
 		addTalkId(SARIEN);
@@ -72,22 +70,17 @@ public class Q00328_SenseForBusiness extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
-				case "30436-03.htm":
-				{
+		if (st != null) {
+			switch (event) {
+				case "30436-03.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
 				}
-				case "30436-06.html":
-				{
+				case "30436-06.html": {
 					st.exitQuest(true, true);
 					htmltext = event;
 					break;
@@ -98,30 +91,23 @@ public class Q00328_SenseForBusiness extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = player.getLevel() < MIN_LVL ? "30436-01.htm" : "30436-02.htm";
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				final long carcass = st.getQuestItemsCount(MONSTER_EYE_CARCASS);
 				final long lens = st.getQuestItemsCount(MONSTER_EYE_LENS);
 				final long gizzards = st.getQuestItemsCount(BASILISK_GIZZARD);
-				if ((carcass + lens + gizzards) > 0)
-				{
+				if ((carcass + lens + gizzards) > 0) {
 					st.giveAdena(((carcass * MONSTER_EYE_CARCASS_ADENA) + (lens * MONSTER_EYE_LENS_ADENA) + (gizzards * BASILISK_GIZZARD_ADENA) + ((carcass + lens + gizzards) >= BONUS_COUNT ? BONUS : 0)), true);
 					takeItems(player, -1, MONSTER_EYE_CARCASS, MONSTER_EYE_LENS, BASILISK_GIZZARD);
 					htmltext = "30436-05.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30436-04.html";
 				}
 				break;
@@ -131,29 +117,20 @@ public class Q00328_SenseForBusiness extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && st.isStarted())
-		{
+		if ((st != null) && st.isStarted()) {
 			final int chance = getRandom(100);
-			if (MONSTER_EYES.containsKey(npc.getId()))
-			{
-				if (chance < MONSTER_EYES.get(npc.getId())[0])
-				{
+			if (MONSTER_EYES.containsKey(npc.getId())) {
+				if (chance < MONSTER_EYES.get(npc.getId())[0]) {
 					st.giveItems(MONSTER_EYE_CARCASS, 1);
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-				}
-				else if (chance < MONSTER_EYES.get(npc.getId())[1])
-				{
+				} else if (chance < MONSTER_EYES.get(npc.getId())[1]) {
 					st.giveItems(MONSTER_EYE_LENS, 1);
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
-			}
-			else if (MONSTER_BASILISKS.containsKey(npc.getId()))
-			{
-				if (chance < MONSTER_BASILISKS.get(npc.getId()))
-				{
+			} else if (MONSTER_BASILISKS.containsKey(npc.getId())) {
+				if (chance < MONSTER_BASILISKS.get(npc.getId())) {
 					st.giveItems(BASILISK_GIZZARD, 1);
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}

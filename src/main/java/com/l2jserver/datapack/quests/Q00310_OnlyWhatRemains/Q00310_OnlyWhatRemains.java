@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Gnacik
  * @author malyelfik
  */
-public class Q00310_OnlyWhatRemains extends Quest
-{
+public class Q00310_OnlyWhatRemains extends Quest {
 	// NPC
 	private static final int KINTAIJIN = 32640;
 	// Items
@@ -45,8 +44,7 @@ public class Q00310_OnlyWhatRemains extends Quest
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
 	
-	static
-	{
+	static {
 		MOBS.put(22617, 646);
 		MOBS.put(22618, 646);
 		MOBS.put(22619, 646);
@@ -66,8 +64,7 @@ public class Q00310_OnlyWhatRemains extends Quest
 		MOBS.put(22633, 638);
 	}
 	
-	public Q00310_OnlyWhatRemains()
-	{
+	public Q00310_OnlyWhatRemains() {
 		super(310, Q00310_OnlyWhatRemains.class.getSimpleName(), "Only What Remains");
 		addStartNpc(KINTAIJIN);
 		addTalkId(KINTAIJIN);
@@ -76,18 +73,15 @@ public class Q00310_OnlyWhatRemains extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "32640-04.htm":
 				st.startQuest();
 				break;
@@ -108,19 +102,16 @@ public class Q00310_OnlyWhatRemains extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(player, 1);
 		
-		if (partyMember == null)
-		{
+		if (partyMember == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		
 		final QuestState st = getQuestState(partyMember, false);
 		
-		if (getRandom(1000) < MOBS.get(npc.getId()))
-		{
+		if (getRandom(1000) < MOBS.get(npc.getId())) {
 			st.giveItems(DIRTY_BEAD, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
@@ -128,26 +119,19 @@ public class Q00310_OnlyWhatRemains extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = ((player.getLevel() >= 81) && player.hasQuestCompleted(Q00240_ImTheOnlyOneYouCanTrust.class.getSimpleName())) ? "32640-01.htm" : "32640-00.htm";
 				break;
 			case State.STARTED:
-				if (!st.hasQuestItems(DIRTY_BEAD))
-				{
+				if (!st.hasQuestItems(DIRTY_BEAD)) {
 					htmltext = "32640-08.html";
-				}
-				else if (st.getQuestItemsCount(DIRTY_BEAD) < 500)
-				{
+				} else if (st.getQuestItemsCount(DIRTY_BEAD) < 500) {
 					htmltext = "32640-09.html";
-				}
-				else
-				{
+				} else {
 					st.takeItems(DIRTY_BEAD, 500);
 					st.giveItems(GROW_ACCELERATOR, 1);
 					st.giveItems(MULTI_COLORED_JEWEL, 1);

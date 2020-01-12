@@ -30,14 +30,12 @@ import com.l2jserver.gameserver.util.Util;
  * No Secrets (251)
  * @author Dumpster
  */
-public class Q00251_NoSecrets extends Quest
-{
+public class Q00251_NoSecrets extends Quest {
 	public static final int PINAPS = 30201;
 	public static final int DIARY = 15508;
 	public static final int TABLE = 15509;
 	
-	private static final int[] MOBS =
-	{
+	private static final int[] MOBS = {
 		22783,
 		22785,
 		22780,
@@ -45,15 +43,13 @@ public class Q00251_NoSecrets extends Quest
 		22784
 	};
 	
-	private static final int[] MOBS2 =
-	{
+	private static final int[] MOBS2 = {
 		22775,
 		22776,
 		22778
 	};
 	
-	public Q00251_NoSecrets()
-	{
+	public Q00251_NoSecrets() {
 		super(251, Q00251_NoSecrets.class.getSimpleName(), "No Secrets");
 		addStartNpc(PINAPS);
 		addTalkId(PINAPS);
@@ -63,50 +59,36 @@ public class Q00251_NoSecrets extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		if (event.equals("30201-03.htm"))
-		{
+		if (event.equals("30201-03.htm")) {
 			st.startQuest();
 		}
 		return event;
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && st.isStarted() && st.isCond(1))
-		{
+		if ((st != null) && st.isStarted() && st.isCond(1)) {
 			final int npcId = npc.getId();
 			
-			if (Util.contains(MOBS, npcId) && (getRandom(100) < 10) && (st.getQuestItemsCount(DIARY) < 10))
-			{
+			if (Util.contains(MOBS, npcId) && (getRandom(100) < 10) && (st.getQuestItemsCount(DIARY) < 10)) {
 				st.giveItems(DIARY, 1);
-				if ((st.getQuestItemsCount(DIARY) >= 10) && (st.getQuestItemsCount(TABLE) >= 5))
-				{
+				if ((st.getQuestItemsCount(DIARY) >= 10) && (st.getQuestItemsCount(TABLE) >= 5)) {
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
-			}
-			else if (Util.contains(MOBS2, npcId) && (getRandom(100) < 5) && (st.getQuestItemsCount(TABLE) < 5))
-			{
+			} else if (Util.contains(MOBS2, npcId) && (getRandom(100) < 5) && (st.getQuestItemsCount(TABLE) < 5)) {
 				st.giveItems(TABLE, 1);
-				if ((st.getQuestItemsCount(DIARY) >= 10) && (st.getQuestItemsCount(TABLE) >= 5))
-				{
+				if ((st.getQuestItemsCount(DIARY) >= 10) && (st.getQuestItemsCount(TABLE) >= 5)) {
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
@@ -115,22 +97,17 @@ public class Q00251_NoSecrets extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() > 81) ? "30201-01.htm" : "30201-00.htm";
 				break;
 			case State.STARTED:
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					htmltext = "30201-05.htm";
-				}
-				else if ((st.isCond(2)) && (st.getQuestItemsCount(DIARY) >= 10) && (st.getQuestItemsCount(TABLE) >= 5))
-				{
+				} else if ((st.isCond(2)) && (st.getQuestItemsCount(DIARY) >= 10) && (st.getQuestItemsCount(TABLE) >= 5)) {
 					htmltext = "30201-04.htm";
 					st.giveAdena(313355, true);
 					st.addExpAndSp(56787, 160578);

@@ -32,16 +32,14 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
  * Magical Power of Fire - Part 1 (615)
  * @author Joxit
  */
-public class Q00615_MagicalPowerOfFirePart1 extends Quest
-{
+public class Q00615_MagicalPowerOfFirePart1 extends Quest {
 	// NPCs
 	private static final int NARAN = 31378;
 	private static final int UDAN = 31379;
 	private static final int ASEFA_BOX = 31559;
 	private static final int ASEFA_EYE = 31684;
 	// Monsters
-	private static final int[] KETRA_MOBS =
-	{
+	private static final int[] KETRA_MOBS = {
 		21324, // Ketra Orc Footman
 		21325, // Ketra's War Hound
 		21327, // Ketra Orc Raider
@@ -69,8 +67,7 @@ public class Q00615_MagicalPowerOfFirePart1 extends Quest
 	private static final int STOLEN_RED_TOTEM = 7242;
 	private static final int WISDOM_STONE = 7081;
 	private static final int RED_TOTEM = 7243;
-	private static final int[] VARKA_MARKS =
-	{
+	private static final int[] VARKA_MARKS = {
 		7221, // Mark of Varka's Alliance - Level 1
 		7222, // Mark of Varka's Alliance - Level 2
 		7223, // Mark of Varka's Alliance - Level 3
@@ -83,8 +80,7 @@ public class Q00615_MagicalPowerOfFirePart1 extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 74;
 	
-	public Q00615_MagicalPowerOfFirePart1()
-	{
+	public Q00615_MagicalPowerOfFirePart1() {
 		super(615, Q00615_MagicalPowerOfFirePart1.class.getSimpleName(), "Magical Power of Fire - Part 1");
 		addStartNpc(NARAN);
 		addTalkId(UDAN, NARAN, ASEFA_BOX);
@@ -93,34 +89,25 @@ public class Q00615_MagicalPowerOfFirePart1 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "31378-02.html":
 				st.startQuest();
 				htmltext = event;
 				break;
 			case "open_box":
-				if (!st.hasQuestItems(KEY))
-				{
+				if (!st.hasQuestItems(KEY)) {
 					htmltext = "31559-02.html";
-				}
-				else if (st.isCond(2))
-				{
-					if (st.isSet("spawned"))
-					{
+				} else if (st.isCond(2)) {
+					if (st.isSet("spawned")) {
 						st.takeItems(KEY, 1);
 						htmltext = "31559-04.html";
-					}
-					else
-					{
+					} else {
 						st.giveItems(STOLEN_RED_TOTEM, 1);
 						st.takeItems(KEY, 1);
 						st.setCond(3, true);
@@ -137,11 +124,9 @@ public class Q00615_MagicalPowerOfFirePart1 extends Quest
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final QuestState st = getQuestState(attacker, false);
-		if ((st != null) && st.isCond(2) && !st.isSet("spawned"))
-		{
+		if ((st != null) && st.isCond(2) && !st.isSet("spawned")) {
 			st.set("spawned", "1");
 			npc.setTarget(attacker);
 			npc.doCast(GOW);
@@ -153,45 +138,36 @@ public class Q00615_MagicalPowerOfFirePart1 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case NARAN:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? (hasAtLeastOneQuestItem(player, VARKA_MARKS)) ? "31378-01.htm" : "31378-00a.html" : "31378-00b.html";
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
-						{
+						if (st.isCond(1)) {
 							htmltext = "31378-03.html";
 						}
 						break;
 				}
 				break;
 			case UDAN:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "31379-01.html";
 							st.setCond(2, true);
 							break;
 						case 2:
-							if (st.isSet("spawned"))
-							{
+							if (st.isSet("spawned")) {
 								st.unset("spawned");
 								npc.setTarget(player);
 								npc.doCast(DISPEL_GOW.getSkill());
 								htmltext = "31379-03.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "31379-02.html";
 							}
 							break;
@@ -205,8 +181,7 @@ public class Q00615_MagicalPowerOfFirePart1 extends Quest
 				}
 				break;
 			case ASEFA_BOX:
-				if (st.isCond(2))
-				{
+				if (st.isCond(2)) {
 					htmltext = "31559-01.html";
 				}
 				break;

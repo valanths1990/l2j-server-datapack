@@ -33,15 +33,13 @@ import com.l2jserver.gameserver.model.quest.State;
  * Curse of the Underground Fortress (162)
  * @author xban1x
  */
-public class Q00162_CurseOfTheUndergroundFortress extends Quest
-{
+public class Q00162_CurseOfTheUndergroundFortress extends Quest {
 	// NPC
 	private static final int UNOREN = 30147;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS_SKULLS = new HashMap<>();
 	private static final Map<Integer, Integer> MONSTERS_BONES = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS_SKULLS.put(20033, 25); // Shade Horror
 		MONSTERS_SKULLS.put(20345, 26); // Dark Terror
 		MONSTERS_SKULLS.put(20371, 23); // Mist Terror
@@ -57,8 +55,7 @@ public class Q00162_CurseOfTheUndergroundFortress extends Quest
 	private static final int MIN_LVL = 12;
 	private static final int REQUIRED_COUNT = 13;
 	
-	public Q00162_CurseOfTheUndergroundFortress()
-	{
+	public Q00162_CurseOfTheUndergroundFortress() {
 		super(162, Q00162_CurseOfTheUndergroundFortress.class.getSimpleName(), "Curse of the Underground Fortress");
 		addStartNpc(UNOREN);
 		addTalkId(UNOREN);
@@ -68,21 +65,16 @@ public class Q00162_CurseOfTheUndergroundFortress extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
-				case "30147-03.htm":
-				{
+		if (st != null) {
+			switch (event) {
+				case "30147-03.htm": {
 					htmltext = event;
 					break;
 				}
-				case "30147-04.htm":
-				{
+				case "30147-04.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
@@ -93,44 +85,29 @@ public class Q00162_CurseOfTheUndergroundFortress extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(1))
-		{
-			if (MONSTERS_SKULLS.containsKey(npc.getId()))
-			{
-				if (getRandom(100) < MONSTERS_SKULLS.get(npc.getId()))
-				{
+		if ((st != null) && st.isCond(1)) {
+			if (MONSTERS_SKULLS.containsKey(npc.getId())) {
+				if (getRandom(100) < MONSTERS_SKULLS.get(npc.getId())) {
 					long skulls = st.getQuestItemsCount(ELF_SKULL);
-					if (skulls < 3)
-					{
+					if (skulls < 3) {
 						st.giveItems(ELF_SKULL, 1);
-						if (((++skulls) >= 3) && (st.getQuestItemsCount(BONE_FRAGMENT) >= 10))
-						{
+						if (((++skulls) >= 3) && (st.getQuestItemsCount(BONE_FRAGMENT) >= 10)) {
 							st.setCond(2, true);
-						}
-						else
-						{
+						} else {
 							st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 				}
-			}
-			else if (MONSTERS_BONES.containsKey(npc.getId()))
-			{
-				if (getRandom(100) < MONSTERS_BONES.get(npc.getId()))
-				{
+			} else if (MONSTERS_BONES.containsKey(npc.getId())) {
+				if (getRandom(100) < MONSTERS_BONES.get(npc.getId())) {
 					long bones = st.getQuestItemsCount(BONE_FRAGMENT);
-					if (bones < 10)
-					{
+					if (bones < 10) {
 						st.giveItems(BONE_FRAGMENT, 1);
-						if (((++bones) >= 10) && (st.getQuestItemsCount(ELF_SKULL) >= 3))
-						{
+						if (((++bones) >= 10) && (st.getQuestItemsCount(ELF_SKULL) >= 3)) {
 							st.setCond(2, true);
-						}
-						else
-						{
+						} else {
 							st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
@@ -141,35 +118,27 @@ public class Q00162_CurseOfTheUndergroundFortress extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getRace() != Race.DARK_ELF) ? (player.getLevel() >= MIN_LVL) ? "30147-02.htm" : "30147-01.htm" : "30147-00.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				if ((st.getQuestItemsCount(BONE_FRAGMENT) + st.getQuestItemsCount(ELF_SKULL)) >= REQUIRED_COUNT)
-				{
+			case State.STARTED: {
+				if ((st.getQuestItemsCount(BONE_FRAGMENT) + st.getQuestItemsCount(ELF_SKULL)) >= REQUIRED_COUNT) {
 					st.giveItems(BONE_SHIELD, 1);
 					st.addExpAndSp(22652, 1004);
 					st.giveAdena(24000, true);
 					st.exitQuest(false, true);
 					htmltext = "30147-06.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30147-05.html";
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
+			case State.COMPLETED: {
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}

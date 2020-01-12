@@ -29,18 +29,15 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Zealot of Shilen AI.
  * @author nonom
  */
-public final class ZealotOfShilen extends AbstractNpcAI
-{
+public final class ZealotOfShilen extends AbstractNpcAI {
 	// NPCs
 	private static final int ZEALOT = 18782;
-	private static final int[] GUARDS =
-	{
+	private static final int[] GUARDS = {
 		32628,
 		32629
 	};
 	
-	public ZealotOfShilen()
-	{
+	public ZealotOfShilen() {
 		super(ZealotOfShilen.class.getSimpleName(), "gracia/AI/NPC");
 		addSpawnId(ZEALOT);
 		addSpawnId(GUARDS);
@@ -48,20 +45,15 @@ public final class ZealotOfShilen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (npc == null)
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (npc == null) {
 			return null;
 		}
 		
 		startQuestTimer("WATCHING", 10000, npc, null, true);
-		if (event.equalsIgnoreCase("WATCHING") && !npc.isAttackingNow())
-		{
-			for (L2Character character : npc.getKnownList().getKnownCharacters())
-			{
-				if (character.isMonster() && !character.isDead() && !((L2Attackable) character).isDecayed())
-				{
+		if (event.equalsIgnoreCase("WATCHING") && !npc.isAttackingNow()) {
+			for (L2Character character : npc.getKnownList().getKnownCharacters()) {
+				if (character.isMonster() && !character.isDead() && !((L2Attackable) character).isDecayed()) {
 					npc.setRunning();
 					((L2Attackable) npc).addDamageHate(character, 0, 999);
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, character, null);
@@ -72,20 +64,15 @@ public final class ZealotOfShilen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return (npc.isAttackingNow()) ? "32628-01.html" : npc.getId() + ".html";
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
-		if (npc.getId() == ZEALOT)
-		{
+	public String onSpawn(L2Npc npc) {
+		if (npc.getId() == ZEALOT) {
 			npc.setIsNoRndWalk(true);
-		}
-		else
-		{
+		} else {
 			npc.setIsInvul(true);
 			((L2Attackable) npc).setCanReturnToSpawnPoint(false);
 			startQuestTimer("WATCHING", 10000, npc, null, true);

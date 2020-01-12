@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Gnacik on 2010-06-29.
  * @author nonom
  */
-public class Q10280_MutatedKaneusSchuttgart extends Quest
-{
+public class Q10280_MutatedKaneusSchuttgart extends Quest {
 	// NPCs
 	private static final int VISHOTSKY = 31981;
 	private static final int ATRAXIA = 31972;
@@ -44,8 +43,7 @@ public class Q10280_MutatedKaneusSchuttgart extends Quest
 	private static final int TISSUE_VS = 13838;
 	private static final int TISSUE_KB = 13839;
 	
-	public Q10280_MutatedKaneusSchuttgart()
-	{
+	public Q10280_MutatedKaneusSchuttgart() {
 		super(10280, Q10280_MutatedKaneusSchuttgart.class.getSimpleName(), "Mutated Kaneus - Schuttgart");
 		addStartNpc(VISHOTSKY);
 		addTalkId(VISHOTSKY, ATRAXIA);
@@ -54,16 +52,13 @@ public class Q10280_MutatedKaneusSchuttgart extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "31981-03.htm":
 				st.startQuest();
 				break;
@@ -76,49 +71,38 @@ public class Q10280_MutatedKaneusSchuttgart extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		QuestState st = getQuestState(killer, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		final int npcId = npc.getId();
-		if (killer.getParty() != null)
-		{
+		if (killer.getParty() != null) {
 			final List<QuestState> PartyMembers = new ArrayList<>();
-			for (L2PcInstance member : killer.getParty().getMembers())
-			{
+			for (L2PcInstance member : killer.getParty().getMembers()) {
 				st = getQuestState(member, false);
-				if ((st != null) && st.isStarted() && (((npcId == VENOMOUS_STORACE) && !st.hasQuestItems(TISSUE_VS)) || ((npcId == KEL_BILETTE) && !st.hasQuestItems(TISSUE_KB))))
-				{
+				if ((st != null) && st.isStarted() && (((npcId == VENOMOUS_STORACE) && !st.hasQuestItems(TISSUE_VS)) || ((npcId == KEL_BILETTE) && !st.hasQuestItems(TISSUE_KB)))) {
 					PartyMembers.add(st);
 				}
 			}
 			
-			if (!PartyMembers.isEmpty())
-			{
+			if (!PartyMembers.isEmpty()) {
 				rewardItem(npcId, PartyMembers.get(getRandom(PartyMembers.size())));
 			}
-		}
-		else if (st.isStarted())
-		{
+		} else if (st.isStarted()) {
 			rewardItem(npcId, st);
 		}
 		return null;
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case VISHOTSKY:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() > 57) ? "31981-01.htm" : "31981-00.htm";
 						break;
@@ -131,8 +115,7 @@ public class Q10280_MutatedKaneusSchuttgart extends Quest
 				}
 				break;
 			case ATRAXIA:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.STARTED:
 						htmltext = (st.hasQuestItems(TISSUE_VS) && st.hasQuestItems(TISSUE_KB)) ? "31972-02.htm" : "31972-01.htm";
 						break;
@@ -151,15 +134,11 @@ public class Q10280_MutatedKaneusSchuttgart extends Quest
 	 * @param npcId the ID of the killed monster
 	 * @param st the quest state of the killer or party member
 	 */
-	private final void rewardItem(int npcId, QuestState st)
-	{
-		if ((npcId == VENOMOUS_STORACE) && !st.hasQuestItems(TISSUE_VS))
-		{
+	private final void rewardItem(int npcId, QuestState st) {
+		if ((npcId == VENOMOUS_STORACE) && !st.hasQuestItems(TISSUE_VS)) {
 			st.giveItems(TISSUE_VS, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-		}
-		else if ((npcId == KEL_BILETTE) && !st.hasQuestItems(TISSUE_KB))
-		{
+		} else if ((npcId == KEL_BILETTE) && !st.hasQuestItems(TISSUE_KB)) {
 			st.giveItems(TISSUE_KB, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}

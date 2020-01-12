@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Matras' Curiosity (132)
  * @author GKR, Gladicek
  */
-public final class Q00132_MatrasCuriosity extends Quest
-{
+public final class Q00132_MatrasCuriosity extends Quest {
 	// NPCs
 	private static final int MATRAS = 32245;
 	private static final int DEMON_PRINCE = 25540;
@@ -44,8 +43,7 @@ public final class Q00132_MatrasCuriosity extends Quest
 	private static final int BLUEPRINT_RANKU = 9800;
 	private static final int BLUEPRINT_PRINCE = 9801;
 	
-	public Q00132_MatrasCuriosity()
-	{
+	public Q00132_MatrasCuriosity() {
 		super(132, Q00132_MatrasCuriosity.class.getSimpleName(), "Matras' Curiosity");
 		addStartNpc(MATRAS);
 		addTalkId(MATRAS);
@@ -54,31 +52,23 @@ public final class Q00132_MatrasCuriosity extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
 		String htmltext = event;
 		
-		if (event.equalsIgnoreCase("32245-03.htm") && (player.getLevel() >= 76) && !st.isCompleted())
-		{
-			if (st.isCreated())
-			{
+		if (event.equalsIgnoreCase("32245-03.htm") && (player.getLevel() >= 76) && !st.isCompleted()) {
+			if (st.isCreated()) {
 				st.startQuest();
 				st.set("rewarded_prince", "1");
 				st.set("rewarded_ranku", "1");
-			}
-			else
-			{
+			} else {
 				htmltext = "32245-03a.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("32245-07.htm") && st.isCond(3) && !st.isCompleted())
-		{
+		} else if (event.equalsIgnoreCase("32245-07.htm") && st.isCond(3) && !st.isCompleted()) {
 			st.giveAdena(65884, true);
 			st.addExpAndSp(50541, 5094);
 			st.giveItems(FIRE, 1);
@@ -93,43 +83,33 @@ public final class Q00132_MatrasCuriosity extends Quest
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		L2PcInstance pl = null;
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case DEMON_PRINCE:
 				pl = getRandomPartyMember(player, "rewarded_prince", "1");
-				if (pl != null)
-				{
+				if (pl != null) {
 					final QuestState st = getQuestState(pl, false);
 					st.giveItems(BLUEPRINT_PRINCE, 1);
 					st.set("rewarded_prince", "2");
 					
-					if (st.hasQuestItems(BLUEPRINT_RANKU))
-					{
+					if (st.hasQuestItems(BLUEPRINT_RANKU)) {
 						st.setCond(2, true);
-					}
-					else
-					{
+					} else {
 						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 				break;
 			case RANKU:
 				pl = getRandomPartyMember(player, "rewarded_ranku", "1");
-				if (pl != null)
-				{
+				if (pl != null) {
 					final QuestState st = getQuestState(pl, false);
 					st.giveItems(BLUEPRINT_RANKU, 1);
 					st.set("rewarded_ranku", "2");
 					
-					if (st.hasQuestItems(BLUEPRINT_PRINCE))
-					{
+					if (st.hasQuestItems(BLUEPRINT_PRINCE)) {
 						st.setCond(2, true);
-					}
-					else
-					{
+					} else {
 						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
@@ -139,33 +119,23 @@ public final class Q00132_MatrasCuriosity extends Quest
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public final String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st.isCreated())
-		{
+		if (st.isCreated()) {
 			htmltext = (player.getLevel() >= 76) ? "32245-01.htm" : "32245-02.htm";
-		}
-		else if (st.isCompleted())
-		{
+		} else if (st.isCompleted()) {
 			htmltext = getAlreadyCompletedMsg(player);
-		}
-		else if (st.isStarted())
-		{
-			switch (st.getCond())
-			{
+		} else if (st.isStarted()) {
+			switch (st.getCond()) {
 				case 1:
 				case 2:
-					if (st.hasQuestItems(BLUEPRINT_RANKU) && st.hasQuestItems(BLUEPRINT_PRINCE))
-					{
+					if (st.hasQuestItems(BLUEPRINT_RANKU) && st.hasQuestItems(BLUEPRINT_PRINCE)) {
 						st.takeItems(BLUEPRINT_RANKU, -1);
 						st.takeItems(BLUEPRINT_PRINCE, -1);
 						st.setCond(3, true);
 						htmltext = "32245-05.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32245-04.htm";
 					}
 					

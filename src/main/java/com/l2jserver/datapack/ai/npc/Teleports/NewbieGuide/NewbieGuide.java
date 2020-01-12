@@ -42,8 +42,7 @@ import com.l2jserver.gameserver.network.NpcStringId;
  * @author Zealar
  * @since 2.6.0.0
  */
-public final class NewbieGuide extends AbstractNpcAI
-{
+public final class NewbieGuide extends AbstractNpcAI {
 	// Suffix
 	private static final String SUFFIX_FIGHTER_5_LEVEL = "-f05.htm";
 	private static final String SUFFIX_FIGHTER_10_LEVEL = "-f10.htm";
@@ -100,8 +99,7 @@ public final class NewbieGuide extends AbstractNpcAI
 	
 	private static final Map<Integer, List<Location>> TELEPORT_MAP = new HashMap<>();
 	
-	static
-	{
+	static {
 		Location TALKING_ISLAND_VILLAGE = new Location(-84081, 243227, -3723);
 		Location DARK_ELF_VILLAGE = new Location(12111, 16686, -4582);
 		Location DWARVEN_VILLAGE = new Location(115632, -177996, -905);
@@ -117,12 +115,10 @@ public final class NewbieGuide extends AbstractNpcAI
 		TELEPORT_MAP.put(NEWBIE_GUIDE_KAMAEL, Arrays.asList(TALKING_ISLAND_VILLAGE, DARK_ELF_VILLAGE, ELVEN_VILLAGE, DWARVEN_VILLAGE, ORC_VILLAGE));
 	}
 	
-	private NewbieGuide()
-	{
+	private NewbieGuide() {
 		super(NewbieGuide.class.getSimpleName(), "ai/npc/Teleports");
 		
-		int[] newbieList =
-		{
+		int[] newbieList = {
 			NEWBIE_GUIDE_HUMAN,
 			NEWBIE_GUIDE_ELF,
 			NEWBIE_GUIDE_DARK_ELF,
@@ -139,13 +135,10 @@ public final class NewbieGuide extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		QuestState qs = player.getQuestState(Q00255_Tutorial.class.getSimpleName());
-		if (qs != null)
-		{
-			if (npc.getId() == ADVENTURERS_GUIDE)
-			{
+		if (qs != null) {
+			if (npc.getId() == ADVENTURERS_GUIDE) {
 				return "32327.htm";
 			}
 			return talkGuide(player, qs);
@@ -154,21 +147,15 @@ public final class NewbieGuide extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance talker)
-	{
-		if (event.endsWith(".htm"))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance talker) {
+		if (event.endsWith(".htm")) {
 			return event;
 		}
-		if (event.startsWith("teleport"))
-		{
+		if (event.startsWith("teleport")) {
 			String[] tel = event.split("_");
-			if (tel.length != 2)
-			{
+			if (tel.length != 2) {
 				teleportRequest(talker, npc, -1);
-			}
-			else
-			{
+			} else {
 				teleportRequest(talker, npc, Integer.parseInt(tel[1]));
 			}
 			return event;
@@ -177,114 +164,64 @@ public final class NewbieGuide extends AbstractNpcAI
 		int ask = Integer.parseInt(event.split(";")[0]);
 		int reply = Integer.parseInt(event.split(";")[1]);
 		
-		switch (ask)
-		{
-			case -7:
-			{
-				switch (reply)
-				{
-					case 1:
-					{
-						if (talker.getRace() == Race.KAMAEL)
-						{
-							if (talker.getRace() != npc.getRace())
-							{
+		switch (ask) {
+			case -7: {
+				switch (reply) {
+					case 1: {
+						if (talker.getRace() == Race.KAMAEL) {
+							if (talker.getRace() != npc.getRace()) {
 								showPage(talker, "32135-003.htm");
-							}
-							else if ((talker.getLevel() > 20) || ((talker.getRace() != Race.KAMAEL) || (talker.getClassId().level() != 0)))
-							{
+							} else if ((talker.getLevel() > 20) || ((talker.getRace() != Race.KAMAEL) || (talker.getClassId().level() != 0))) {
 								showPage(talker, "32135-002.htm");
-							}
-							else if (talker.getClassId() == ClassId.maleSoldier)
-							{
-								if (talker.getLevel() <= 5)
-								{
+							} else if (talker.getClassId() == ClassId.maleSoldier) {
+								if (talker.getLevel() <= 5) {
 									showPage(talker, "32135-kmf05.htm");
-								}
-								else if (talker.getLevel() <= 10)
-								{
+								} else if (talker.getLevel() <= 10) {
 									showPage(talker, "32135-kmf10.htm");
-								}
-								else if (talker.getLevel() <= 15)
-								{
+								} else if (talker.getLevel() <= 15) {
 									showPage(talker, "32135-kmf15.htm");
-								}
-								else
-								{
+								} else {
 									showPage(talker, "32135-kmf20.htm");
 								}
-							}
-							else if (talker.getClassId() == ClassId.femaleSoldier)
-							{
-								if (talker.getLevel() <= 5)
-								{
+							} else if (talker.getClassId() == ClassId.femaleSoldier) {
+								if (talker.getLevel() <= 5) {
 									showPage(talker, "32135-kff05.htm");
-								}
-								else if (talker.getLevel() <= 10)
-								{
+								} else if (talker.getLevel() <= 10) {
 									showPage(talker, "32135-kff10.htm");
-								}
-								else if (talker.getLevel() <= 15)
-								{
+								} else if (talker.getLevel() <= 15) {
 									showPage(talker, "32135-kff15.htm");
-								}
-								else
-								{
+								} else {
 									showPage(talker, "32135-kff20.htm");
 								}
 							}
-						}
-						else if (talker.getRace() != npc.getRace())
-						{
+						} else if (talker.getRace() != npc.getRace()) {
 							showPage(talker, "");
-						}
-						else if ((talker.getLevel() > 20) || (talker.getClassId().level() != 0))
-						{
+						} else if ((talker.getLevel() > 20) || (talker.getClassId().level() != 0)) {
 							showPage(talker, "");
-						}
-						else if (!talker.isMageClass())
-						{
-							if (talker.getLevel() <= 5)
-							{
+						} else if (!talker.isMageClass()) {
+							if (talker.getLevel() <= 5) {
 								showPage(talker, npc.getId() + SUFFIX_FIGHTER_5_LEVEL);
-							}
-							else if (talker.getLevel() <= 10)
-							{
+							} else if (talker.getLevel() <= 10) {
 								showPage(talker, npc.getId() + SUFFIX_FIGHTER_10_LEVEL);
-							}
-							else if (talker.getLevel() <= 15)
-							{
+							} else if (talker.getLevel() <= 15) {
 								showPage(talker, npc.getId() + SUFFIX_FIGHTER_15_LEVEL);
-							}
-							else
-							{
+							} else {
 								showPage(talker, npc.getId() + SUFFIX_FIGHTER_20_LEVEL);
 							}
-						}
-						else if (talker.getLevel() <= 7)
-						{
+						} else if (talker.getLevel() <= 7) {
 							showPage(talker, npc.getId() + SUFFIX_MAGE_7_LEVEL);
-						}
-						else if (talker.getLevel() <= 14)
-						{
+						} else if (talker.getLevel() <= 14) {
 							showPage(talker, npc.getId() + SUFFIX_MAGE_14_LEVEL);
-						}
-						else
-						{
+						} else {
 							showPage(talker, npc.getId() + SUFFIX_MAGE_20_LEVEL);
 						}
 						break;
 					}
-					case 2:
-					{
-						if (talker.getLevel() <= 75)
-						{
-							if (talker.getLevel() < 6)
-							{
+					case 2: {
+						if (talker.getLevel() <= 75) {
+							if (talker.getLevel() < 6) {
 								showPage(talker, "buffs-low-level.htm");
-							}
-							else if (!talker.isMageClass() && (talker.getClassId().level() < 3))
-							{
+							} else if (!talker.isMageClass() && (talker.getClassId().level() < 3)) {
 								npc.setTarget(talker);
 								npc.doCast(WIND_WALK_FOR_BEGINNERS);
 								npc.doCast(WIND_WALK_FOR_BEGINNERS);
@@ -293,21 +230,16 @@ public final class NewbieGuide extends AbstractNpcAI
 								npc.doCast(BLESS_THE_BODY_FOR_BEGINNERS);
 								npc.doCast(VAMPIRIC_RAGE_FOR_BEGINNERS);
 								npc.doCast(REGENERATION_FOR_BEGINNERS);
-								if ((talker.getLevel() >= 6) && (talker.getLevel() <= 39))
-								{
+								if ((talker.getLevel() >= 6) && (talker.getLevel() <= 39)) {
 									npc.doCast(HASTE_FOR_BEGINNERS);
 								}
-								if ((talker.getLevel() >= 40) && (talker.getLevel() <= 75))
-								{
+								if ((talker.getLevel() >= 40) && (talker.getLevel() <= 75)) {
 									npc.doCast(ADVENTURERS_HASTE);
 								}
-								if ((talker.getLevel() >= 16) && (talker.getLevel() <= 34))
-								{
+								if ((talker.getLevel() >= 16) && (talker.getLevel() <= 34)) {
 									npc.doCast(LIFE_CUBIC_FOR_BEGINNERS);
 								}
-							}
-							else if (talker.isMageClass() && (talker.getClassId().level() < 3))
-							{
+							} else if (talker.isMageClass() && (talker.getClassId().level() < 3)) {
 								npc.setTarget(talker);
 								npc.doCast(WIND_WALK_FOR_BEGINNERS);
 								npc.doCast(SHIELD_FOR_BEGINNERS);
@@ -316,42 +248,30 @@ public final class NewbieGuide extends AbstractNpcAI
 								npc.doCast(ACUMEN_FOR_BEGINNERS);
 								npc.doCast(CONCENTRATION_FOR_BEGINNERS);
 								npc.doCast(EMPOWER_FOR_BEGINNERS);
-								if ((talker.getLevel() >= 16) && (talker.getLevel() <= 34))
-								{
+								if ((talker.getLevel() >= 16) && (talker.getLevel() <= 34)) {
 									npc.doCast(LIFE_CUBIC_FOR_BEGINNERS);
 								}
 							}
-						}
-						else
-						{
+						} else {
 							showPage(talker, "buffs-big-level.htm");
 						}
 						break;
 					}
-					case 3:
-					{
-						if ((talker.getLevel() <= 39) && (talker.getClassId().level() < 3))
-						{
+					case 3: {
+						if ((talker.getLevel() <= 39) && (talker.getClassId().level() < 3)) {
 							npc.setTarget(talker);
 							npc.doCast(BLESSING_OF_PROTECTION);
-						}
-						else
-						{
+						} else {
 							showPage(talker, "pk-protection-002.htm");
 						}
 						break;
 					}
-					case 4:
-					{
+					case 4: {
 						L2Summon summon = talker.getSummon();
-						if ((summon != null) && !summon.isPet())
-						{
-							if ((talker.getLevel() < 6) || (talker.getLevel() > 75))
-							{
+						if ((summon != null) && !summon.isPet()) {
+							if ((talker.getLevel() < 6) || (talker.getLevel() > 75)) {
 								showPage(talker, "buffs-big-level.htm");
-							}
-							else
-							{
+							} else {
 								npc.setTarget(talker);
 								npc.doCast(WIND_WALK_FOR_BEGINNERS);
 								npc.doCast(SHIELD_FOR_BEGINNERS);
@@ -363,18 +283,14 @@ public final class NewbieGuide extends AbstractNpcAI
 								npc.doCast(ACUMEN_FOR_BEGINNERS);
 								npc.doCast(CONCENTRATION_FOR_BEGINNERS);
 								npc.doCast(EMPOWER_FOR_BEGINNERS);
-								if ((talker.getLevel() >= 6) && (talker.getLevel() <= 39))
-								{
+								if ((talker.getLevel() >= 6) && (talker.getLevel() <= 39)) {
 									npc.doCast(HASTE_FOR_BEGINNERS);
 								}
-								if ((talker.getLevel() >= 40) && (talker.getLevel() <= 75))
-								{
+								if ((talker.getLevel() >= 40) && (talker.getLevel() <= 75)) {
 									npc.doCast(ADVENTURERS_HASTE);
 								}
 							}
-						}
-						else
-						{
+						} else {
 							showPage(talker, "buffs-no-pet.htm");
 						}
 						break;
@@ -382,64 +298,42 @@ public final class NewbieGuide extends AbstractNpcAI
 				}
 				break;
 			}
-			case -1000:
-			{
-				switch (reply)
-				{
-					case 1:
-					{
-						if (talker.getLevel() > 5)
-						{
-							if ((talker.getLevel() < 20) && (talker.getClassId().level() == 0))
-							{
-								if (getOneTimeQuestFlag(talker, 207) == 0)
-								{
+			case -1000: {
+				switch (reply) {
+					case 1: {
+						if (talker.getLevel() > 5) {
+							if ((talker.getLevel() < 20) && (talker.getClassId().level() == 0)) {
+								if (getOneTimeQuestFlag(talker, 207) == 0) {
 									qs.giveItems(APPRENTICE_ADVENTURERS_WEAPON_EXCHANGE_COUPON, FIRST_COUPON_SIZE);
 									setOneTimeQuestFlag(talker, 207, 1);
 									showPage(talker, "newbie-guide-002.htm");
 									qs.setNRMemoState(talker, GUIDE_MISSION, qs.getNRMemoState(talker, GUIDE_MISSION) + 100);
 									showOnScreenMsg(talker, NpcStringId.ACQUISITION_OF_WEAPON_EXCHANGE_COUPON_FOR_BEGINNERS_COMPLETE_N_GO_SPEAK_WITH_THE_NEWBIE_GUIDE, 2, 5000, "");
-								}
-								else
-								{
+								} else {
 									showPage(talker, "newbie-guide-004.htm");
 								}
-							}
-							else
-							{
+							} else {
 								showPage(talker, "newbie-guide-003.htm");
 							}
-						}
-						else
-						{
+						} else {
 							showPage(talker, "newbie-guide-003.htm");
 						}
 						break;
 					}
-					case 2:
-					{
-						if (talker.getClassId().level() == 2)
-						{
-							if (talker.getLevel() < 40)
-							{
-								if (getOneTimeQuestFlag(talker, 208) == 0)
-								{
+					case 2: {
+						if (talker.getClassId().level() == 2) {
+							if (talker.getLevel() < 40) {
+								if (getOneTimeQuestFlag(talker, 208) == 0) {
 									qs.giveItems(ADVENTURERS_MAGIC_ACCESSORY_EXCHANGE_COUPON, SECOND_COUPON_SIZE);
 									setOneTimeQuestFlag(talker, 208, 1);
 									showPage(talker, "newbie-guide-011.htm");
-								}
-								else
-								{
+								} else {
 									showPage(talker, "newbie-guide-013.htm");
 								}
-							}
-							else
-							{
+							} else {
 								showPage(talker, "newbie-guide-012.htm");
 							}
-						}
-						else
-						{
+						} else {
 							showPage(talker, "newbie-guide-012.htm");
 						}
 						break;
@@ -448,41 +342,27 @@ public final class NewbieGuide extends AbstractNpcAI
 				break;
 				
 			}
-			case -303:
-			{
-				switch (reply)
-				{
+			case -303: {
+				switch (reply) {
 					case 528:
-						if (talker.getLevel() > 5)
-						{
-							if ((talker.getLevel() < 20) && (talker.getClassId().level() == 0))
-							{
+						if (talker.getLevel() > 5) {
+							if ((talker.getLevel() < 20) && (talker.getClassId().level() == 0)) {
 								MultisellData.getInstance().separateAndSend(WEAPON_MULTISELL, talker, npc, false);
-							}
-							else
-							{
+							} else {
 								showPage(talker, "newbie-guide-005.htm");
 							}
-						}
-						else
-						{
+						} else {
 							showPage(talker, "newbie-guide-005.htm");
 						}
 						break;
 					case 529:
-						if (talker.getLevel() > 5)
-						{
-							if ((talker.getLevel() < 40) && (talker.getClassId().level() == 1))
-							{
+						if (talker.getLevel() > 5) {
+							if ((talker.getLevel() < 40) && (talker.getClassId().level() == 1)) {
 								MultisellData.getInstance().separateAndSend(ACCESORIES_MULTISELL, talker, npc, false);
-							}
-							else
-							{
+							} else {
 								showPage(talker, "newbie-guide-014.htm");
 							}
-						}
-						else
-						{
+						} else {
 							showPage(talker, "newbie-guide-014.htm");
 						}
 						break;
@@ -490,58 +370,45 @@ public final class NewbieGuide extends AbstractNpcAI
 				break;
 			}
 		}
-		switch (npc.getId())
-		{
-			case NEWBIE_GUIDE_HUMAN:
-			{
+		switch (npc.getId()) {
+			case NEWBIE_GUIDE_HUMAN: {
 				String ansGuideHumanCnacelot = eventGuideHumanCnacelot(reply, qs);
-				if (!ansGuideHumanCnacelot.isEmpty())
-				{
+				if (!ansGuideHumanCnacelot.isEmpty()) {
 					return ansGuideHumanCnacelot;
 				}
 				break;
 			}
-			case NEWBIE_GUIDE_ELF:
-			{
+			case NEWBIE_GUIDE_ELF: {
 				String ansGuideElfRoios = eventGuideElfRoios(reply, qs);
-				if (!ansGuideElfRoios.isEmpty())
-				{
+				if (!ansGuideElfRoios.isEmpty()) {
 					return ansGuideElfRoios;
 				}
 				break;
 			}
-			case NEWBIE_GUIDE_DARK_ELF:
-			{
+			case NEWBIE_GUIDE_DARK_ELF: {
 				String ansGuideDelfFrankia = eventGuideDelfFrankia(reply, qs);
-				if (!ansGuideDelfFrankia.isEmpty())
-				{
+				if (!ansGuideDelfFrankia.isEmpty()) {
 					return ansGuideDelfFrankia;
 				}
 				break;
 			}
-			case NEWBIE_GUIDE_DWARF:
-			{
+			case NEWBIE_GUIDE_DWARF: {
 				String ansGuideDwarfGullin = eventGuideDwarfGullin(reply, qs);
-				if (!ansGuideDwarfGullin.isEmpty())
-				{
+				if (!ansGuideDwarfGullin.isEmpty()) {
 					return ansGuideDwarfGullin;
 				}
 				break;
 			}
-			case NEWBIE_GUIDE_ORC:
-			{
+			case NEWBIE_GUIDE_ORC: {
 				String ansGuideOrcTanai = eventGuideOrcTanai(reply, qs);
-				if (!ansGuideOrcTanai.isEmpty())
-				{
+				if (!ansGuideOrcTanai.isEmpty()) {
 					return ansGuideOrcTanai;
 				}
 				break;
 			}
-			case NEWBIE_GUIDE_KAMAEL:
-			{
+			case NEWBIE_GUIDE_KAMAEL: {
 				String ansGuideKrenisk = eventGuideKrenisk(reply, qs);
-				if (!ansGuideKrenisk.isEmpty())
-				{
+				if (!ansGuideKrenisk.isEmpty()) {
 					return ansGuideKrenisk;
 				}
 				break;
@@ -550,28 +417,17 @@ public final class NewbieGuide extends AbstractNpcAI
 		return "";
 	}
 	
-	private void teleportRequest(L2PcInstance talker, L2Npc npc, int teleportId)
-	{
-		if (talker.getLevel() >= 20)
-		{
+	private void teleportRequest(L2PcInstance talker, L2Npc npc, int teleportId) {
+		if (talker.getLevel() >= 20) {
 			showPage(talker, "teleport-big-level.htm");
-		}
-		else if ((talker.getTransformationId() == 111) || (talker.getTransformationId() == 112) || (talker.getTransformationId() == 124))
-		{
+		} else if ((talker.getTransformationId() == 111) || (talker.getTransformationId() == 112) || (talker.getTransformationId() == 124)) {
 			showPage(talker, "frog-teleport.htm");
-		}
-		else
-		{
-			if ((teleportId < 0) || (teleportId > 5))
-			{
+		} else {
+			if ((teleportId < 0) || (teleportId > 5)) {
 				showPage(talker, npc.getId() + "-teleport.htm");
-			}
-			else
-			{
-				if (TELEPORT_MAP.containsKey(npc.getId()))
-				{
-					if (TELEPORT_MAP.get(npc.getId()).size() > teleportId)
-					{
+			} else {
+				if (TELEPORT_MAP.containsKey(npc.getId())) {
+					if (TELEPORT_MAP.get(npc.getId()).size() > teleportId) {
 						talker.teleToLocation(TELEPORT_MAP.get(npc.getId()).get(teleportId), false);
 					}
 				}
@@ -579,81 +435,57 @@ public final class NewbieGuide extends AbstractNpcAI
 		}
 	}
 	
-	private String talkGuide(L2PcInstance talker, QuestState tutorialQS)
-	{
+	private String talkGuide(L2PcInstance talker, QuestState tutorialQS) {
 		final QuestState qs = getQuestState(talker, true);
-		if ((tutorialQS.getMemoStateEx(1) < 5) && (getOneTimeQuestFlag(talker, GUIDE_MISSION) == 0))
-		{
-			if (!talker.isMageClass())
-			{
+		if ((tutorialQS.getMemoStateEx(1) < 5) && (getOneTimeQuestFlag(talker, GUIDE_MISSION) == 0)) {
+			if (!talker.isMageClass()) {
 				qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 				qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 				qs.giveItems(SCROLL_RECOVERY_NO_GRADE, 2);
 				tutorialQS.setMemoStateEx(1, 5);
-				if (talker.getLevel() <= 1)
-				{
+				if (talker.getLevel() <= 1) {
 					qs.addExpAndSp(68, 50);
-				}
-				else
-				{
+				} else {
 					qs.addExpAndSp(0, 50);
 				}
 			}
-			if (talker.isMageClass())
-			{
-				if (talker.getClassId() == ClassId.orcMage)
-				{
+			if (talker.isMageClass()) {
+				if (talker.getClassId() == ClassId.orcMage) {
 					qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 					qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
-				}
-				else
-				{
+				} else {
 					qs.playSound(Voice.TUTORIAL_VOICE_027_1000);
 					qs.giveItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS, 100);
 				}
 				qs.giveItems(SCROLL_RECOVERY_NO_GRADE, 2);
 				tutorialQS.setMemoStateEx(1, 5);
-				if (talker.getLevel() <= 1)
-				{
+				if (talker.getLevel() <= 1) {
 					qs.addExpAndSp(68, 50);
-				}
-				else
-				{
+				} else {
 					qs.addExpAndSp(0, 50);
 				}
 			}
-			if (talker.getLevel() < 6)
-			{
-				if ((qs.getNRMemoState(talker, GUIDE_MISSION) % 10) == 1)
-				{
-					if (talker.getLevel() >= 5)
-					{
+			if (talker.getLevel() < 6) {
+				if ((qs.getNRMemoState(talker, GUIDE_MISSION) % 10) == 1) {
+					if (talker.getLevel() >= 5) {
 						qs.giveAdena(695, true);
 						qs.addExpAndSp(3154, 127);
-					}
-					else if (talker.getLevel() >= 4)
-					{
+					} else if (talker.getLevel() >= 4) {
 						qs.giveAdena(1041, true);
 						qs.addExpAndSp(4870, 195);
-					}
-					else if (talker.getLevel() >= 3)
-					{
+					} else if (talker.getLevel() >= 3) {
 						qs.giveAdena(1240, true);
 						qs.addExpAndSp(5970, 239);
 					}
-					if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-					{
+					if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 						qs.setNRMemo(talker, GUIDE_MISSION);
 						qs.setNRMemoState(talker, GUIDE_MISSION, 10);
-					}
-					else
-					{
+					} else {
 						qs.setNRMemoState(talker, GUIDE_MISSION, qs.getNRMemoState(talker, GUIDE_MISSION) + 10);
 					}
 					return "newbie-guide-02.htm";
 				}
-				switch (talker.getRace())
-				{
+				switch (talker.getRace()) {
 					case HUMAN:
 						qs.addRadar(-84436, 242793, -3729);
 						return "newbie-guide-01a.htm";
@@ -673,21 +505,15 @@ public final class NewbieGuide extends AbstractNpcAI
 						qs.addRadar(-119378, 49242, 22);
 						return "newbie-guide-01f.htm";
 				}
-				if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-				{
+				if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 					qs.setNRMemo(talker, GUIDE_MISSION);
 					qs.setNRMemoState(talker, GUIDE_MISSION, 0);
 				}
-			}
-			else if (talker.getLevel() < 10)
-			{
-				if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000) / 100) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 10000) / 100) == 1))
-				{
-					switch (talker.getRace())
-					{
+			} else if (talker.getLevel() < 10) {
+				if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000) / 100) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 10000) / 100) == 1)) {
+					switch (talker.getRace()) {
 						case HUMAN:
-							if (!talker.isMageClass())
-							{
+							if (!talker.isMageClass()) {
 								qs.addRadar(-71384, 258304, -3109);
 								return "newbie-guide-05a.htm";
 							}
@@ -697,8 +523,7 @@ public final class NewbieGuide extends AbstractNpcAI
 							qs.addRadar(47595, 51569, -2996);
 							return "newbie-guide-05c.htm";
 						case DARK_ELF:
-							if (!talker.isMageClass())
-							{
+							if (!talker.isMageClass()) {
 								qs.addRadar(10580, 17574, -4554);
 								return "newbie-guide-05d.htm";
 							}
@@ -714,40 +539,27 @@ public final class NewbieGuide extends AbstractNpcAI
 							qs.addRadar(115717, -183488, -1483);
 							return "newbie-guide-05h.htm";
 					}
-					if (talker.getLevel() >= 9)
-					{
+					if (talker.getLevel() >= 9) {
 						qs.giveAdena(5563, true);
 						qs.addExpAndSp(16851, 711);
-					}
-					else if (talker.getLevel() >= 8)
-					{
+					} else if (talker.getLevel() >= 8) {
 						qs.giveAdena(9290, true);
 						qs.addExpAndSp(28806, 1207);
-					}
-					else if (talker.getLevel() >= 7)
-					{
+					} else if (talker.getLevel() >= 7) {
 						qs.giveAdena(11567, true);
 						qs.addExpAndSp(36942, 1541);
-					}
-					else
-					{
+					} else {
 						qs.giveAdena(12928, true);
 						qs.addExpAndSp(42191, 1753);
 					}
-					if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-					{
+					if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 						qs.setNRMemo(talker, GUIDE_MISSION);
 						qs.setNRMemoState(talker, GUIDE_MISSION, 10000);
-					}
-					else
-					{
+					} else {
 						qs.setNRMemoState(talker, GUIDE_MISSION, qs.getNRMemoState(talker, GUIDE_MISSION) + 10000);
 					}
-				}
-				else if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000) / 100) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 10000) / 100) != 1))
-				{
-					switch (talker.getRace())
-					{
+				} else if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000) / 100) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 10000) / 100) != 1)) {
+					switch (talker.getRace()) {
 						case HUMAN:
 							qs.addRadar(-82236, 241573, -3728);
 							return "newbie-guide-04a.htm";
@@ -767,72 +579,50 @@ public final class NewbieGuide extends AbstractNpcAI
 							qs.addRadar(-119378, 49242, 22);
 							return "newbie-guide-04f.htm";
 					}
-					if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-					{
+					if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 						qs.setNRMemo(talker, GUIDE_MISSION);
 						qs.setNRMemoState(talker, GUIDE_MISSION, 0);
 					}
-				}
-				else
-				{
-					if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-					{
+				} else {
+					if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 						qs.setNRMemo(talker, GUIDE_MISSION);
 						qs.setNRMemoState(talker, GUIDE_MISSION, 0);
 					}
 					return "newbie-guide-03.htm";
 				}
-			}
-			else
-			{
+			} else {
 				setOneTimeQuestFlag(talker, GUIDE_MISSION, 1);
-				if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-				{
+				if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 					qs.setNRMemo(talker, GUIDE_MISSION);
 					qs.setNRMemoState(talker, GUIDE_MISSION, 0);
 				}
 				return "newbie-guide-06.htm";
 			}
-		}
-		else if ((tutorialQS.getMemoStateEx(1) >= 5) && (getOneTimeQuestFlag(talker, GUIDE_MISSION) == 0))
-		{
-			if (talker.getLevel() < 6)
-			{
-				if ((qs.getNRMemoState(talker, GUIDE_MISSION) % 10) == 1)
-				{
-					if (talker.getLevel() >= 5)
-					{
+		} else if ((tutorialQS.getMemoStateEx(1) >= 5) && (getOneTimeQuestFlag(talker, GUIDE_MISSION) == 0)) {
+			if (talker.getLevel() < 6) {
+				if ((qs.getNRMemoState(talker, GUIDE_MISSION) % 10) == 1) {
+					if (talker.getLevel() >= 5) {
 						qs.giveAdena(695, true);
 						qs.addExpAndSp(3154, 127);
-					}
-					else if (talker.getLevel() >= 4)
-					{
+					} else if (talker.getLevel() >= 4) {
 						qs.giveAdena(1041, true);
 						qs.addExpAndSp(4870, 195);
-					}
-					else if (talker.getLevel() >= 3)
-					{
+					} else if (talker.getLevel() >= 3) {
 						qs.giveAdena(1186, true);
 						qs.addExpAndSp(5675, 227);
-					}
-					else
-					{
+					} else {
 						qs.giveAdena(1240, true);
 						qs.addExpAndSp(5970, 239);
 					}
-					if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-					{
+					if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 						qs.setNRMemo(talker, GUIDE_MISSION);
 						qs.setNRMemoState(talker, GUIDE_MISSION, 10);
-					}
-					else
-					{
+					} else {
 						qs.setNRMemoState(talker, GUIDE_MISSION, qs.getNRMemoState(talker, GUIDE_MISSION) + 10);
 					}
 					return "newbie-guide-08.htm";
 				}
-				switch (talker.getRace())
-				{
+				switch (talker.getRace()) {
 					case HUMAN:
 						qs.addRadar(-84436, 242793, -3729);
 						return "newbie-guide-07a.htm";
@@ -852,25 +642,17 @@ public final class NewbieGuide extends AbstractNpcAI
 						qs.addRadar(-119378, 49242, 22);
 						return "newbie-guide-07f.htm";
 				}
-				if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-				{
+				if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 					qs.setNRMemo(talker, GUIDE_MISSION);
 					qs.setNRMemoState(talker, GUIDE_MISSION, 0);
 				}
-			}
-			else if (talker.getLevel() < 10)
-			{
-				if (((qs.getNRMemoState(talker, GUIDE_MISSION) % 100000) / 10000) == 1)
-				{
+			} else if (talker.getLevel() < 10) {
+				if (((qs.getNRMemoState(talker, GUIDE_MISSION) % 100000) / 10000) == 1) {
 					return "newbie-guide-09g.htm";
-				}
-				else if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000) / 100) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 10000) / 1000) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 100000) / 10000) != 1))
-				{
-					switch (talker.getRace())
-					{
+				} else if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000) / 100) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 10000) / 1000) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 100000) / 10000) != 1)) {
+					switch (talker.getRace()) {
 						case HUMAN:
-							if (!talker.isMageClass())
-							{
+							if (!talker.isMageClass()) {
 								qs.addRadar(-71384, 258304, -3109);
 								return "newbie-guide-10a.htm";
 							}
@@ -880,8 +662,7 @@ public final class NewbieGuide extends AbstractNpcAI
 							qs.addRadar(47595, 51569, -2996);
 							return "newbie-guide-10c.htm";
 						case DARK_ELF:
-							if (!talker.isMageClass())
-							{
+							if (!talker.isMageClass()) {
 								qs.addRadar(10580, 17574, -4554);
 								return "newbie-guide-10d.htm";
 							}
@@ -898,40 +679,27 @@ public final class NewbieGuide extends AbstractNpcAI
 							return "newbie-guide-10h.htm";
 						
 					}
-					if (talker.getLevel() >= 9)
-					{
+					if (talker.getLevel() >= 9) {
 						qs.giveAdena(5563, true);
 						qs.addExpAndSp(16851, 711);
-					}
-					else if (talker.getLevel() >= 8)
-					{
+					} else if (talker.getLevel() >= 8) {
 						qs.giveAdena(9290, true);
 						qs.addExpAndSp(28806, 1207);
-					}
-					else if (talker.getLevel() >= 7)
-					{
+					} else if (talker.getLevel() >= 7) {
 						qs.giveAdena(11567, true);
 						qs.addExpAndSp(36942, 1541);
-					}
-					else
-					{
+					} else {
 						qs.giveAdena(12928, true);
 						qs.addExpAndSp(42191, 1753);
 					}
-					if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-					{
+					if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 						qs.setNRMemo(talker, GUIDE_MISSION);
 						qs.setNRMemoState(talker, GUIDE_MISSION, 10000);
-					}
-					else
-					{
+					} else {
 						qs.setNRMemoState(talker, GUIDE_MISSION, qs.getNRMemoState(talker, GUIDE_MISSION) + 10000);
 					}
-				}
-				else if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000) / 100) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 10000) / 1000) != 1))
-				{
-					switch (talker.getRace())
-					{
+				} else if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000) / 100) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 10000) / 1000) != 1)) {
+					switch (talker.getRace()) {
 						case HUMAN:
 							qs.addRadar(-82236, 241573, -3728);
 							return "newbie-guide-09a.htm";
@@ -951,32 +719,22 @@ public final class NewbieGuide extends AbstractNpcAI
 							qs.addRadar(-119378, 49242, 22);
 							return "newbie-guide-09f.htm";
 					}
-					if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-					{
+					if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 						qs.setNRMemo(talker, GUIDE_MISSION);
 						qs.setNRMemoState(talker, GUIDE_MISSION, 0);
 					}
-				}
-				else
-				{
-					if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-					{
+				} else {
+					if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 						qs.setNRMemo(talker, GUIDE_MISSION);
 						qs.setNRMemoState(talker, GUIDE_MISSION, 0);
 					}
 					return "newbie-guide-08.htm";
 				}
-			}
-			else if (talker.getLevel() < 15)
-			{
-				if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000000) / 100000) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 10000000) / 1000000) == 1))
-				{
+			} else if (talker.getLevel() < 15) {
+				if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000000) / 100000) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 10000000) / 1000000) == 1)) {
 					return "newbie-guide-15.htm";
-				}
-				else if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000000) / 100000) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 10000000) / 1000000) != 1))
-				{
-					switch (talker.getRace())
-					{
+				} else if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000000) / 100000) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 10000000) / 1000000) != 1)) {
+					switch (talker.getRace()) {
 						case HUMAN:
 							qs.addRadar(-84057, 242832, -3729);
 							return "newbie-guide-11a.htm";
@@ -996,48 +754,32 @@ public final class NewbieGuide extends AbstractNpcAI
 							qs.addRadar(-125872, 38208, 1251);
 							return "newbie-guide-11f.htm";
 					}
-					if (talker.getLevel() >= 14)
-					{
+					if (talker.getLevel() >= 14) {
 						qs.giveAdena(13002, true);
 						qs.addExpAndSp(62876, 2891);
-					}
-					else if (talker.getLevel() >= 13)
-					{
+					} else if (talker.getLevel() >= 13) {
 						qs.giveAdena(23468, true);
 						qs.addExpAndSp(113137, 5161);
-					}
-					else if (talker.getLevel() >= 12)
-					{
+					} else if (talker.getLevel() >= 12) {
 						qs.giveAdena(31752, true);
 						qs.addExpAndSp(152653, 6914);
-					}
-					else if (talker.getLevel() >= 11)
-					{
+					} else if (talker.getLevel() >= 11) {
 						qs.giveAdena(38180, true);
 						qs.addExpAndSp(183128, 8242);
-					}
-					else
-					{
+					} else {
 						qs.giveAdena(43054, true);
 						qs.addExpAndSp(206101, 9227);
 					}
-					if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-					{
+					if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 						qs.setNRMemo(talker, GUIDE_MISSION);
 						qs.setNRMemoState(talker, GUIDE_MISSION, 1000000);
-					}
-					else
-					{
+					} else {
 						qs.setNRMemoState(talker, GUIDE_MISSION, qs.getNRMemoState(talker, GUIDE_MISSION) + 1000000);
 					}
-				}
-				else if (((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000000) / 100000) != 1)
-				{
-					switch (talker.getRace())
-					{
+				} else if (((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000000) / 100000) != 1) {
+					switch (talker.getRace()) {
 						case HUMAN:
-							if (!talker.isMageClass())
-							{
+							if (!talker.isMageClass()) {
 								qs.addRadar(-71384, 258304, -3109);
 								return "newbie-guide-10a.htm";
 							}
@@ -1047,8 +789,7 @@ public final class NewbieGuide extends AbstractNpcAI
 							qs.addRadar(47595, 51569, -2996);
 							return "newbie-guide-10c.htm";
 						case DARK_ELF:
-							if (!talker.isMageClass())
-							{
+							if (!talker.isMageClass()) {
 								qs.addRadar(10580, 17574, -4554);
 								return "newbie-guide-10d.htm";
 							}
@@ -1064,104 +805,75 @@ public final class NewbieGuide extends AbstractNpcAI
 							qs.addRadar(-118080, 42835, 720);
 							return "newbie-guide-10h.htm";
 					}
-					if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-					{
+					if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 						qs.setNRMemo(talker, GUIDE_MISSION);
 						qs.setNRMemoState(talker, GUIDE_MISSION, 0);
 					}
 				}
-			}
-			else if (talker.getLevel() < 18)
-			{
-				if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 100000000) / 10000000) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000000000) / 100000000) == 1))
-				{
+			} else if (talker.getLevel() < 18) {
+				if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 100000000) / 10000000) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000000000) / 100000000) == 1)) {
 					setOneTimeQuestFlag(talker, GUIDE_MISSION, 1);
 					return "newbie-guide-13.htm";
-				}
-				else if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 100000000) / 10000000) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000000000) / 100000000) != 1))
-				{
-					if (talker.getLevel() >= 17)
-					{
+				} else if ((((qs.getNRMemoState(talker, GUIDE_MISSION) % 100000000) / 10000000) == 1) && (((qs.getNRMemoState(talker, GUIDE_MISSION) % 1000000000) / 100000000) != 1)) {
+					if (talker.getLevel() >= 17) {
 						qs.giveAdena(22996, true);
 						qs.addExpAndSp(113712, 5518);
-					}
-					else if (talker.getLevel() >= 16)
-					{
+					} else if (talker.getLevel() >= 16) {
 						qs.giveAdena(10018, true);
 						qs.addExpAndSp(208133, 42237);
-					}
-					else
-					{
+					} else {
 						qs.giveAdena(13648, true);
 						qs.addExpAndSp(285670, 58155);
 					}
-					if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-					{
+					if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 						qs.setNRMemo(talker, GUIDE_MISSION);
 						qs.setNRMemoState(talker, GUIDE_MISSION, 100000000);
-					}
-					else
-					{
+					} else {
 						qs.setNRMemoState(talker, GUIDE_MISSION, qs.getNRMemoState(talker, GUIDE_MISSION) + 100000000);
 					}
 					setOneTimeQuestFlag(talker, GUIDE_MISSION, 1);
 					return "newbie-guide-12.htm";
-				}
-				else if (((qs.getNRMemoState(talker, GUIDE_MISSION) % 100000000) / 10000000) != 1)
-				{
-					switch (talker.getRace())
-					{
+				} else if (((qs.getNRMemoState(talker, GUIDE_MISSION) % 100000000) / 10000000) != 1) {
+					switch (talker.getRace()) {
 						case HUMAN:
 							qs.addRadar(-84057, 242832, -3729);
 							return "newbie-guide-11a.htm";
-						case ELF:
-						{
+						case ELF: {
 							qs.addRadar(45859, 50827, -3058);
 							return "newbie-guide-11b.htm";
 						}
-						case DARK_ELF:
-						{
+						case DARK_ELF: {
 							qs.addRadar(11258, 14431, -4242);
 							return "newbie-guide-11c.htm";
 						}
-						case ORC:
-						{
+						case ORC: {
 							qs.addRadar(-45863, -112621, -200);
 							return "newbie-guide-11d.htm";
 						}
-						case DWARF:
-						{
+						case DWARF: {
 							qs.addRadar(116268, -177524, -914);
 							return "newbie-guide-11e.htm";
 						}
-						case KAMAEL:
-						{
+						case KAMAEL: {
 							qs.addRadar(-125872, 38208, 1251);
 							return "newbie-guide-11f.htm";
 						}
 					}
 				}
-				if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-				{
+				if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 					qs.setNRMemo(talker, GUIDE_MISSION);
 					qs.setNRMemoState(talker, GUIDE_MISSION, 0);
 				}
-			}
-			else if (talker.getClassId().level() == 1)
-			{
+			} else if (talker.getClassId().level() == 1) {
 				setOneTimeQuestFlag(talker, GUIDE_MISSION, 1);
-				if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-				{
+				if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 					qs.setNRMemo(talker, GUIDE_MISSION);
 					qs.setNRMemoState(talker, GUIDE_MISSION, 0);
 				}
 				return "newbie-guide-13.htm";
-			}
-			else
-			{
+			} else {
 				setOneTimeQuestFlag(talker, GUIDE_MISSION, 1);
-				if (!qs.haveNRMemo(talker, GUIDE_MISSION))
-				{
+				if (!qs.haveNRMemo(talker, GUIDE_MISSION)) {
 					qs.setNRMemo(talker, GUIDE_MISSION);
 					qs.setNRMemoState(talker, GUIDE_MISSION, 0);
 				}
@@ -1171,10 +883,8 @@ public final class NewbieGuide extends AbstractNpcAI
 		return "";
 	}
 	
-	private String eventGuideHumanCnacelot(int event, QuestState qs)
-	{
-		switch (event)
-		{
+	private String eventGuideHumanCnacelot(int event, QuestState qs) {
+		switch (event) {
 			case 10:
 				return "30598-04.htm";
 			case 11:
@@ -1239,146 +949,122 @@ public final class NewbieGuide extends AbstractNpcAI
 				qs.clearRadar();
 				qs.addRadar(-83789, 240799, -3717);
 				return "30598-05.htm";
-			case 42:
-			{
+			case 42: {
 				qs.clearRadar();
 				qs.addRadar(-84204, 240403, -3717);
 				return "30598-05.htm";
 			}
-			case 43:
-			{
+			case 43: {
 				qs.clearRadar();
 				qs.addRadar(-86385, 243267, -3717);
 				return "30598-05.htm";
 			}
-			case 44:
-			{
+			case 44: {
 				qs.clearRadar();
 				qs.addRadar(-86733, 242918, -3717);
 				return "30598-05.htm";
 			}
-			case 45:
-			{
+			case 45: {
 				qs.clearRadar();
 				qs.addRadar(-84516, 245449, -3714);
 				return "30598-05.htm";
 			}
-			case 46:
-			{
+			case 46: {
 				qs.clearRadar();
 				qs.addRadar(-84729, 245001, -3726);
 				return "30598-05.htm";
 			}
-			case 47:
-			{
+			case 47: {
 				qs.clearRadar();
 				qs.addRadar(-84965, 245222, -3726);
 				return "30598-05.htm";
 			}
-			case 48:
-			{
+			case 48: {
 				qs.clearRadar();
 				qs.addRadar(-84981, 244764, -3726);
 				return "30598-05.htm";
 			}
-			case 49:
-			{
+			case 49: {
 				qs.clearRadar();
 				qs.addRadar(-85186, 245001, -3726);
 				return "30598-05.htm";
 			}
-			case 50:
-			{
+			case 50: {
 				qs.clearRadar();
 				qs.addRadar(-83326, 242964, -3718);
 				return "30598-05.htm";
 			}
-			case 51:
-			{
+			case 51: {
 				qs.clearRadar();
 				qs.addRadar(-83020, 242553, -3718);
 				return "30598-05.htm";
 			}
-			case 52:
-			{
+			case 52: {
 				qs.clearRadar();
 				qs.addRadar(-83175, 243065, -3718);
 				return "30598-05.htm";
 			}
-			case 53:
-			{
+			case 53: {
 				qs.clearRadar();
 				qs.addRadar(-82809, 242751, -3718);
 				return "30598-05.htm";
 			}
-			case 54:
-			{
+			case 54: {
 				qs.clearRadar();
 				qs.addRadar(-81895, 243917, -3721);
 				return "30598-05.htm";
 			}
-			case 55:
-			{
+			case 55: {
 				qs.clearRadar();
 				qs.addRadar(-81840, 243534, -3721);
 				return "30598-05.htm";
 			}
-			case 56:
-			{
+			case 56: {
 				qs.clearRadar();
 				qs.addRadar(-81512, 243424, -3720);
 				return "30598-05.htm";
 			}
-			case 57:
-			{
+			case 57: {
 				qs.clearRadar();
 				qs.addRadar(-84436, 242793, -3729);
 				return "30598-05.htm";
 			}
-			case 58:
-			{
+			case 58: {
 				qs.clearRadar();
 				qs.addRadar(-78939, 240305, -3443);
 				return "30598-05.htm";
 			}
-			case 59:
-			{
+			case 59: {
 				qs.clearRadar();
 				qs.addRadar(-85301, 244587, -3725);
 				return "30598-05.htm";
 			}
-			case 60:
-			{
+			case 60: {
 				qs.clearRadar();
 				qs.addRadar(-83163, 243560, -3728);
 				return "30598-05.htm";
 			}
-			case 61:
-			{
+			case 61: {
 				qs.clearRadar();
 				qs.addRadar(-97131, 258946, -3622);
 				return "30598-05.htm";
 			}
-			case 62:
-			{
+			case 62: {
 				qs.clearRadar();
 				qs.addRadar(-114685, 222291, -2925);
 				return "30598-05.htm";
 			}
-			case 63:
-			{
+			case 63: {
 				qs.clearRadar();
 				qs.addRadar(-84057, 242832, -3729);
 				return "30598-05.htm";
 			}
-			case 64:
-			{
+			case 64: {
 				qs.clearRadar();
 				qs.addRadar(-100332, 238019, -3573);
 				return "30598-05.htm";
 			}
-			case 65:
-			{
+			case 65: {
 				qs.clearRadar();
 				qs.addRadar(-82041, 242718, -3725);
 				return "30598-05.htm";
@@ -1387,10 +1073,8 @@ public final class NewbieGuide extends AbstractNpcAI
 		return "";
 	}
 	
-	private String eventGuideElfRoios(int event, QuestState qs)
-	{
-		switch (event)
-		{
+	private String eventGuideElfRoios(int event, QuestState qs) {
+		switch (event) {
 			case 10:
 				return "30599-04.htm";
 			case 11:
@@ -1537,10 +1221,8 @@ public final class NewbieGuide extends AbstractNpcAI
 		return "";
 	}
 	
-	private String eventGuideDelfFrankia(int event, QuestState qs)
-	{
-		switch (event)
-		{
+	private String eventGuideDelfFrankia(int event, QuestState qs) {
+		switch (event) {
 			case 10:
 				return "30600-04.htm";
 			case 11:
@@ -1703,10 +1385,8 @@ public final class NewbieGuide extends AbstractNpcAI
 		return "";
 	}
 	
-	private String eventGuideDwarfGullin(int event, QuestState qs)
-	{
-		switch (event)
-		{
+	private String eventGuideDwarfGullin(int event, QuestState qs) {
+		switch (event) {
 			case 10:
 				return "30601-04.htm";
 			case 11:
@@ -1873,10 +1553,8 @@ public final class NewbieGuide extends AbstractNpcAI
 		return "";
 	}
 	
-	private String eventGuideOrcTanai(int event, QuestState qs)
-	{
-		switch (event)
-		{
+	private String eventGuideOrcTanai(int event, QuestState qs) {
+		switch (event) {
 			case 10:
 				return "30602-04.htm";
 			case 11:
@@ -2005,10 +1683,8 @@ public final class NewbieGuide extends AbstractNpcAI
 		return "";
 	}
 	
-	private String eventGuideKrenisk(int event, QuestState qs)
-	{
-		switch (event)
-		{
+	private String eventGuideKrenisk(int event, QuestState qs) {
+		switch (event) {
 			case 10:
 				return "32135-04.htm";
 			case 11:
@@ -2211,8 +1887,7 @@ public final class NewbieGuide extends AbstractNpcAI
 		return "";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new NewbieGuide();
 	}
 }

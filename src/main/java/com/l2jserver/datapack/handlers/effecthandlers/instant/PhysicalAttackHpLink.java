@@ -34,49 +34,41 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Physical Attack HP Link effect implementation.
  * @author Adry_85
  */
-public final class PhysicalAttackHpLink extends AbstractEffect
-{
+public final class PhysicalAttackHpLink extends AbstractEffect {
 	private final double _power;
 	
-	public PhysicalAttackHpLink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public PhysicalAttackHpLink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
-	{
+	public boolean calcSuccess(BuffInfo info) {
 		return !Formulas.calcPhysicalSkillEvasion(info.getEffector(), info.getEffected(), info.getSkill());
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.PHYSICAL_ATTACK;
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2Character target = info.getEffected();
 		final L2Character activeChar = info.getEffector();
 		final Skill skill = info.getSkill();
 		
-		if (activeChar.isAlikeDead())
-		{
+		if (activeChar.isAlikeDead()) {
 			return;
 		}
 		
-		if (activeChar.isMovementDisabled())
-		{
+		if (activeChar.isMovementDisabled()) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
 			sm.addSkillName(skill);
 			activeChar.sendPacket(sm);
@@ -91,17 +83,14 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		
 		damage = Formulas.calcSkillPhysDam(activeChar, target, skill, shld, false, ss, power);
 		
-		if (damage > 0)
-		{
+		if (damage > 0) {
 			activeChar.sendDamageMessage(target, (int) damage, false, false, false);
 			target.reduceCurrentHp(damage, activeChar, skill);
 			target.notifyDamageReceived(damage, activeChar, skill, false, false, false);
 			
 			// Check if damage should be reflected.
 			Formulas.calcDamageReflected(activeChar, target, skill, false);
-		}
-		else
-		{
+		} else {
 			activeChar.sendPacket(SystemMessageId.ATTACK_FAILED);
 		}
 	}

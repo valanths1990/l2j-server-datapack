@@ -33,24 +33,20 @@ import com.l2jserver.gameserver.util.Util;
  * Dragon Valley AI.
  * @author St3eT
  */
-public final class DragonValley extends AbstractNpcAI
-{
+public final class DragonValley extends AbstractNpcAI {
 	// NPC
 	private static final int DRAKOS_ASSASSIN = 22823;
-	private static final int[] SUMMON_NPC =
-	{
+	private static final int[] SUMMON_NPC = {
 		22824, // Drakos Guardian
 		22862, // Drakos Hunter
 	};
-	private static final int[] SPAWN_ANIMATION =
-	{
+	private static final int[] SPAWN_ANIMATION = {
 		22826, // Scorpion Bones
 		22823, // Drakos Assassin
 		22828, // Parasitic Leech
 	
 	};
-	private static final int[] SPOIL_REACT_MONSTER =
-	{
+	private static final int[] SPOIL_REACT_MONSTER = {
 		22822, // Drakos Warrior
 		22823, // Drakos Assassin
 		22824, // Drakos Guardian
@@ -120,8 +116,7 @@ public final class DragonValley extends AbstractNpcAI
 		CLASS_POINTS.put(ClassId.windRider, 0.2);
 	}
 	
-	private DragonValley()
-	{
+	private DragonValley() {
 		super(DragonValley.class.getSimpleName(), "ai/group_template");
 		addAttackId(SUMMON_NPC);
 		addKillId(SPOIL_REACT_MONSTER);
@@ -129,14 +124,11 @@ public final class DragonValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if ((npc.getCurrentHp() < (npc.getMaxHp() / 2)) && (getRandom(100) < 5) && npc.isScriptValue(0))
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if ((npc.getCurrentHp() < (npc.getMaxHp() / 2)) && (getRandom(100) < 5) && npc.isScriptValue(0)) {
 			npc.setScriptValue(1);
 			final int rnd = getRandom(3, 5);
-			for (int i = 0; i < rnd; i++)
-			{
+			for (int i = 0; i < rnd; i++) {
 				final L2Playable playable = isSummon ? attacker.getSummon() : attacker;
 				final L2Npc minion = addSpawn(DRAKOS_ASSASSIN, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), true, 0, true);
 				addAttackDesire(minion, playable);
@@ -146,10 +138,8 @@ public final class DragonValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (((L2Attackable) npc).isSpoiled())
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (((L2Attackable) npc).isSpoiled()) {
 			npc.dropItem(killer, getRandom(GREATER_HERB_OF_MANA, SUPERIOR_HERB_OF_MANA), 1);
 			manageMoraleBoost(killer, npc);
 		}
@@ -157,49 +147,35 @@ public final class DragonValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
-		if (Util.contains(SPAWN_ANIMATION, npc.getId()))
-		{
+	public String onSpawn(L2Npc npc) {
+		if (Util.contains(SPAWN_ANIMATION, npc.getId())) {
 			npc.setShowSummonAnimation(true);
 		}
 		return super.onSpawn(npc);
 	}
 	
-	private void manageMoraleBoost(L2PcInstance player, L2Npc npc)
-	{
+	private void manageMoraleBoost(L2PcInstance player, L2Npc npc) {
 		double points = 0;
 		int moraleBoostLv = 0;
 		
-		if (player.isInParty() && (player.getParty().getMemberCount() >= MIN_MEMBERS) && (npc != null))
-		{
-			for (L2PcInstance member : player.getParty().getMembers())
-			{
-				if ((member.getLevel() >= MIN_LVL) && (member.getClassId().level() >= CLASS_LVL) && (npc.calculateDistance(member, true, false) < MIN_DISTANCE))
-				{
+		if (player.isInParty() && (player.getParty().getMemberCount() >= MIN_MEMBERS) && (npc != null)) {
+			for (L2PcInstance member : player.getParty().getMembers()) {
+				if ((member.getLevel() >= MIN_LVL) && (member.getClassId().level() >= CLASS_LVL) && (npc.calculateDistance(member, true, false) < MIN_DISTANCE)) {
 					points += CLASS_POINTS.get(member.getClassId());
 				}
 			}
 			
-			if (points >= 3)
-			{
+			if (points >= 3) {
 				moraleBoostLv = 3;
-			}
-			else if (points >= 2)
-			{
+			} else if (points >= 2) {
 				moraleBoostLv = 2;
-			}
-			else if (points >= 1)
-			{
+			} else if (points >= 1) {
 				moraleBoostLv = 1;
 			}
 			
-			for (L2PcInstance member : player.getParty().getMembers())
-			{
-				if (npc.calculateDistance(member, true, false) < MIN_DISTANCE)
-				{
-					switch (moraleBoostLv)
-					{
+			for (L2PcInstance member : player.getParty().getMembers()) {
+				if (npc.calculateDistance(member, true, false) < MIN_DISTANCE) {
+					switch (moraleBoostLv) {
 						case 1:
 							MORALE_BOOST1.getSkill().applyEffects(member, member);
 							break;
@@ -215,8 +191,7 @@ public final class DragonValley extends AbstractNpcAI
 		}
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DragonValley();
 	}
 }

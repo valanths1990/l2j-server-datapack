@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Dreadnought (74)
  * @author Emperorc
  */
-public class Q00074_SagaOfTheDreadnought extends AbstractSagaQuest
-{
-	public Q00074_SagaOfTheDreadnought()
-	{
+public class Q00074_SagaOfTheDreadnought extends AbstractSagaQuest {
+	public Q00074_SagaOfTheDreadnought() {
 		super(74, Q00074_SagaOfTheDreadnought.class.getSimpleName(), "Saga of the Dreadnought");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			30850,
 			31624,
 			31298,
@@ -45,8 +42,7 @@ public class Q00074_SagaOfTheDreadnought extends AbstractSagaQuest
 			31657,
 			31522
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7538,
 			7081,
@@ -60,28 +56,23 @@ public class Q00074_SagaOfTheDreadnought extends AbstractSagaQuest
 			7097,
 			6480
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27290,
 			27223,
 			27282
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			89
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x03
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(191046, -40640, -3042),
 			new Location(46087, -36372, -1685),
 			new Location(46066, -36396, -1685)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

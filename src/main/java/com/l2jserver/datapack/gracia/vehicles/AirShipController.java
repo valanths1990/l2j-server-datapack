@@ -42,33 +42,23 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 
-public abstract class AirShipController extends Quest
-{
-	protected final class DecayTask implements Runnable
-	{
+public abstract class AirShipController extends Quest {
+	protected final class DecayTask implements Runnable {
 		@Override
-		public void run()
-		{
-			if (_dockedShip != null)
-			{
+		public void run() {
+			if (_dockedShip != null) {
 				_dockedShip.deleteMe();
 			}
 		}
 	}
 	
-	protected final class DepartTask implements Runnable
-	{
+	protected final class DepartTask implements Runnable {
 		@Override
-		public void run()
-		{
-			if ((_dockedShip != null) && _dockedShip.isInDock() && !_dockedShip.isMoving())
-			{
-				if (_departPath != null)
-				{
+		public void run() {
+			if ((_dockedShip != null) && _dockedShip.isInDock() && !_dockedShip.isMoving()) {
+				if (_departPath != null) {
 					_dockedShip.executePath(_departPath);
-				}
-				else
-				{
+				} else {
 					_dockedShip.deleteMe();
 				}
 			}
@@ -112,164 +102,117 @@ public abstract class AirShipController extends Quest
 	
 	private static final SystemMessage SM_NEED_MORE = SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_NEED_MORE_S1).addItemName(STARSTONE);
 	
-	public AirShipController(int questId, String name, String descr)
-	{
+	public AirShipController(int questId, String name, String descr) {
 		super(questId, name, descr);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if ("summon".equalsIgnoreCase(event))
-		{
-			if (_dockedShip != null)
-			{
-				if (_dockedShip.isOwner(player))
-				{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if ("summon".equalsIgnoreCase(event)) {
+			if (_dockedShip != null) {
+				if (_dockedShip.isOwner(player)) {
 					player.sendPacket(SystemMessageId.THE_AIRSHIP_IS_ALREADY_EXISTS);
 				}
 				return null;
 			}
-			if (_isBusy)
-			{
+			if (_isBusy) {
 				player.sendPacket(SystemMessageId.ANOTHER_AIRSHIP_ALREADY_SUMMONED);
 				return null;
 			}
-			if (!player.hasClanPrivilege(ClanPrivilege.CL_SUMMON_AIRSHIP))
-			{
+			if (!player.hasClanPrivilege(ClanPrivilege.CL_SUMMON_AIRSHIP)) {
 				player.sendPacket(SystemMessageId.THE_AIRSHIP_NO_PRIVILEGES);
 				return null;
 			}
 			int ownerId = player.getClanId();
-			if (!AirShipManager.getInstance().hasAirShipLicense(ownerId))
-			{
+			if (!AirShipManager.getInstance().hasAirShipLicense(ownerId)) {
 				player.sendPacket(SystemMessageId.THE_AIRSHIP_NEED_LICENSE_TO_SUMMON);
 				return null;
 			}
-			if (AirShipManager.getInstance().hasAirShip(ownerId))
-			{
+			if (AirShipManager.getInstance().hasAirShip(ownerId)) {
 				player.sendPacket(SystemMessageId.THE_AIRSHIP_ALREADY_USED);
 				return null;
 			}
-			if (!player.destroyItemByItemId("AirShipSummon", STARSTONE, SUMMON_COST, npc, true))
-			{
+			if (!player.destroyItemByItemId("AirShipSummon", STARSTONE, SUMMON_COST, npc, true)) {
 				player.sendPacket(SM_NEED_MORE);
 				return null;
 			}
 			
 			_isBusy = true;
 			final L2AirShipInstance ship = AirShipManager.getInstance().getNewAirShip(_shipSpawnX, _shipSpawnY, _shipSpawnZ, _shipHeading, ownerId);
-			if (ship != null)
-			{
-				if (_arrivalPath != null)
-				{
+			if (ship != null) {
+				if (_arrivalPath != null) {
 					ship.executePath(_arrivalPath);
 				}
 				
-				if (_arrivalMessage == null)
-				{
+				if (_arrivalMessage == null) {
 					_arrivalMessage = new NpcSay(npc.getObjectId(), Say2.NPC_SHOUT, npc.getId(), NpcStringId.THE_AIRSHIP_HAS_BEEN_SUMMONED_IT_WILL_AUTOMATICALLY_DEPART_IN_5_MINUTES);
 				}
 				
 				npc.broadcastPacket(_arrivalMessage);
-			}
-			else
-			{
+			} else {
 				_isBusy = false;
 			}
 			
 			return null;
-		}
-		else if ("board".equalsIgnoreCase(event))
-		{
-			if (player.isTransformed())
-			{
+		} else if ("board".equalsIgnoreCase(event)) {
+			if (player.isTransformed()) {
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_TRANSFORMED);
 				return null;
-			}
-			else if (player.isParalyzed())
-			{
+			} else if (player.isParalyzed()) {
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_PETRIFIED);
 				return null;
-			}
-			else if (player.isDead() || player.isFakeDeath())
-			{
+			} else if (player.isDead() || player.isFakeDeath()) {
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_DEAD);
 				return null;
-			}
-			else if (player.isFishing())
-			{
+			} else if (player.isFishing()) {
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_FISHING);
 				return null;
-			}
-			else if (player.isInCombat())
-			{
+			} else if (player.isInCombat()) {
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_IN_BATTLE);
 				return null;
-			}
-			else if (player.isInDuel())
-			{
+			} else if (player.isInDuel()) {
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_IN_A_DUEL);
 				return null;
-			}
-			else if (player.isSitting())
-			{
+			} else if (player.isSitting()) {
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_SITTING);
 				return null;
-			}
-			else if (player.isCastingNow())
-			{
+			} else if (player.isCastingNow()) {
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_CASTING);
 				return null;
-			}
-			else if (player.isCursedWeaponEquipped())
-			{
+			} else if (player.isCursedWeaponEquipped()) {
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_A_CURSED_WEAPON_IS_EQUIPPED);
 				return null;
-			}
-			else if (player.isCombatFlagEquipped())
-			{
+			} else if (player.isCombatFlagEquipped()) {
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_HOLDING_A_FLAG);
 				return null;
-			}
-			else if (player.hasSummon() || player.isMounted())
-			{
+			} else if (player.hasSummon() || player.isMounted()) {
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_A_PET_OR_A_SERVITOR_IS_SUMMONED);
 				return null;
-			}
-			else if (player.isFlyingMounted())
-			{
+			} else if (player.isFlyingMounted()) {
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_NOT_MEET_REQUEIREMENTS);
 				return null;
 			}
 			
-			if (_dockedShip != null)
-			{
+			if (_dockedShip != null) {
 				_dockedShip.addPassenger(player);
 			}
 			
 			return null;
-		}
-		else if ("register".equalsIgnoreCase(event))
-		{
-			if ((player.getClan() == null) || (player.getClan().getLevel() < 5))
-			{
+		} else if ("register".equalsIgnoreCase(event)) {
+			if ((player.getClan() == null) || (player.getClan().getLevel() < 5)) {
 				player.sendPacket(SystemMessageId.THE_AIRSHIP_NEED_CLANLVL_5_TO_SUMMON);
 				return null;
 			}
-			if (!player.isClanLeader())
-			{
+			if (!player.isClanLeader()) {
 				player.sendPacket(SystemMessageId.THE_AIRSHIP_NO_PRIVILEGES);
 				return null;
 			}
 			final int ownerId = player.getClanId();
-			if (AirShipManager.getInstance().hasAirShipLicense(ownerId))
-			{
+			if (AirShipManager.getInstance().hasAirShipLicense(ownerId)) {
 				player.sendPacket(SystemMessageId.THE_AIRSHIP_SUMMON_LICENSE_ALREADY_ACQUIRED);
 				return null;
 			}
-			if (!player.destroyItemByItemId("AirShipLicense", LICENSE, 1, npc, true))
-			{
+			if (!player.destroyItemByItemId("AirShipLicense", LICENSE, 1, npc, true)) {
 				player.sendPacket(SM_NEED_MORE);
 				return null;
 			}
@@ -277,42 +220,31 @@ public abstract class AirShipController extends Quest
 			AirShipManager.getInstance().registerLicense(ownerId);
 			player.sendPacket(SystemMessageId.THE_AIRSHIP_SUMMON_LICENSE_ENTERED);
 			return null;
-		}
-		else
-		{
+		} else {
 			return event;
 		}
 	}
 	
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone)
-	{
-		if (character instanceof L2ControllableAirShipInstance)
-		{
-			if (_dockedShip == null)
-			{
+	public String onEnterZone(L2Character character, L2ZoneType zone) {
+		if (character instanceof L2ControllableAirShipInstance) {
+			if (_dockedShip == null) {
 				_dockedShip = (L2ControllableAirShipInstance) character;
 				_dockedShip.setInDock(_dockZone);
 				_dockedShip.setOustLoc(_oustLoc);
 				
 				// Ship is not empty - display movie to passengers and dock
-				if (!_dockedShip.isEmpty())
-				{
-					if (_movieId != 0)
-					{
-						for (L2PcInstance passenger : _dockedShip.getPassengers())
-						{
-							if (passenger != null)
-							{
+				if (!_dockedShip.isEmpty()) {
+					if (_movieId != 0) {
+						for (L2PcInstance passenger : _dockedShip.getPassengers()) {
+							if (passenger != null) {
 								passenger.showQuestMovie(_movieId);
 							}
 						}
 					}
 					
 					ThreadPoolManager.getInstance().scheduleGeneral(_decayTask, 1000);
-				}
-				else
-				{
+				} else {
 					_departSchedule = ThreadPoolManager.getInstance().scheduleGeneral(_departTask, DEPART_INTERVAL);
 				}
 			}
@@ -321,14 +253,10 @@ public abstract class AirShipController extends Quest
 	}
 	
 	@Override
-	public String onExitZone(L2Character character, L2ZoneType zone)
-	{
-		if (character instanceof L2ControllableAirShipInstance)
-		{
-			if (character.equals(_dockedShip))
-			{
-				if (_departSchedule != null)
-				{
+	public String onExitZone(L2Character character, L2ZoneType zone) {
+		if (character instanceof L2ControllableAirShipInstance) {
+			if (character.equals(_dockedShip)) {
+				if (_departSchedule != null) {
 					_departSchedule.cancel(false);
 					_departSchedule = null;
 				}
@@ -342,81 +270,59 @@ public abstract class AirShipController extends Quest
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return npc.getId() + ".htm";
 	}
 	
-	protected void validityCheck()
-	{
+	protected void validityCheck() {
 		L2ScriptZone zone = ZoneManager.getInstance().getZoneById(_dockZone, L2ScriptZone.class);
-		if (zone == null)
-		{
+		if (zone == null) {
 			_log.log(Level.WARNING, getName() + ": Invalid zone " + _dockZone + ", controller disabled");
 			_isBusy = true;
 			return;
 		}
 		
 		VehiclePathPoint p;
-		if (_arrivalPath != null)
-		{
-			if (_arrivalPath.length == 0)
-			{
+		if (_arrivalPath != null) {
+			if (_arrivalPath.length == 0) {
 				_log.log(Level.WARNING, getName() + ": Zero arrival path length.");
 				_arrivalPath = null;
-			}
-			else
-			{
+			} else {
 				p = _arrivalPath[_arrivalPath.length - 1];
-				if (!zone.isInsideZone(p.getLocation()))
-				{
+				if (!zone.isInsideZone(p.getLocation())) {
 					_log.log(Level.WARNING, getName() + ": Arrival path finish point (" + p.getX() + "," + p.getY() + "," + p.getZ() + ") not in zone " + _dockZone);
 					_arrivalPath = null;
 				}
 			}
 		}
-		if (_arrivalPath == null)
-		{
-			if (!ZoneManager.getInstance().getZoneById(_dockZone, L2ScriptZone.class).isInsideZone(_shipSpawnX, _shipSpawnY, _shipSpawnZ))
-			{
+		if (_arrivalPath == null) {
+			if (!ZoneManager.getInstance().getZoneById(_dockZone, L2ScriptZone.class).isInsideZone(_shipSpawnX, _shipSpawnY, _shipSpawnZ)) {
 				_log.log(Level.WARNING, getName() + ": Arrival path is null and spawn point not in zone " + _dockZone + ", controller disabled");
 				_isBusy = true;
 				return;
 			}
 		}
 		
-		if (_departPath != null)
-		{
-			if (_departPath.length == 0)
-			{
+		if (_departPath != null) {
+			if (_departPath.length == 0) {
 				_log.log(Level.WARNING, getName() + ": Zero depart path length.");
 				_departPath = null;
-			}
-			else
-			{
+			} else {
 				p = _departPath[_departPath.length - 1];
-				if (zone.isInsideZone(p.getLocation()))
-				{
+				if (zone.isInsideZone(p.getLocation())) {
 					_log.log(Level.WARNING, getName() + ": Departure path finish point (" + p.getX() + "," + p.getY() + "," + p.getZ() + ") in zone " + _dockZone);
 					_departPath = null;
 				}
 			}
 		}
 		
-		if (_teleportsTable != null)
-		{
-			if (_fuelTable == null)
-			{
+		if (_teleportsTable != null) {
+			if (_fuelTable == null) {
 				_log.log(Level.WARNING, getName() + ": Fuel consumption not defined.");
-			}
-			else
-			{
-				if (_teleportsTable.length != _fuelTable.length)
-				{
+			} else {
+				if (_teleportsTable.length != _fuelTable.length) {
 					_log.log(Level.WARNING, getName() + ": Fuel consumption not match teleport list.");
-				}
-				else
-				{
+				} else {
 					AirShipManager.getInstance().registerAirShipTeleportList(_dockZone, _locationId, _teleportsTable, _fuelTable);
 				}
 			}

@@ -32,13 +32,11 @@ import com.l2jserver.gameserver.model.skills.Skill;
  * Resurrection Special effect implementation.
  * @author Zealar
  */
-public final class ResurrectionSpecial extends AbstractEffect
-{
+public final class ResurrectionSpecial extends AbstractEffect {
 	private final int _resPower;
 	private final int _resRecovery;
 	
-	public ResurrectionSpecial(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public ResurrectionSpecial(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_resPower = params.getInt("resPower", 0);
@@ -46,35 +44,29 @@ public final class ResurrectionSpecial extends AbstractEffect
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.RESURRECTION_SPECIAL;
 	}
 	
 	@Override
-	public int getEffectFlags()
-	{
+	public int getEffectFlags() {
 		return EffectFlag.RESURRECTION_SPECIAL.getMask();
 	}
 	
 	@Override
-	public void onExit(BuffInfo info)
-	{
-		if (!info.getEffected().isPlayer() && !info.getEffected().isPet())
-		{
+	public void onExit(BuffInfo info) {
+		if (!info.getEffected().isPlayer() && !info.getEffected().isPet()) {
 			return;
 		}
 		L2PcInstance caster = info.getEffector().getActingPlayer();
 		
 		Skill skill = info.getSkill();
 		
-		if (info.getEffected().isPlayer())
-		{
+		if (info.getEffected().isPlayer()) {
 			info.getEffected().getActingPlayer().reviveRequest(caster, skill, false, _resPower, _resRecovery);
 			return;
 		}
-		if (info.getEffected().isPet())
-		{
+		if (info.getEffected().isPet()) {
 			L2PetInstance pet = (L2PetInstance) info.getEffected();
 			info.getEffected().getActingPlayer().reviveRequest(pet.getActingPlayer(), skill, true, _resPower, _resRecovery);
 		}

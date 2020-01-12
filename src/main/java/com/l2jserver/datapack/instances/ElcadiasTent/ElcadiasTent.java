@@ -34,10 +34,8 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Elcadia's Tent instance zone.
  * @author Adry_85
  */
-public final class ElcadiasTent extends AbstractInstance
-{
-	protected class ETWorld extends InstanceWorld
-	{
+public final class ElcadiasTent extends AbstractInstance {
+	protected class ETWorld extends InstanceWorld {
 		
 	}
 	
@@ -50,8 +48,7 @@ public final class ElcadiasTent extends AbstractInstance
 	// Misc
 	private static final int TEMPLATE_ID = 158;
 	
-	public ElcadiasTent()
-	{
+	public ElcadiasTent() {
 		super(ElcadiasTent.class.getSimpleName());
 		addFirstTalkId(GRUFF_LOOKING_MAN, ELCADIA);
 		addStartNpc(GRUFF_LOOKING_MAN, ELCADIA);
@@ -59,10 +56,8 @@ public final class ElcadiasTent extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
-		if (npc.getId() == GRUFF_LOOKING_MAN)
-		{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
+		if (npc.getId() == GRUFF_LOOKING_MAN) {
 			final QuestState Q10292 = talker.getQuestState(Q10292_SevenSignsGirlOfDoubt.class.getSimpleName());
 			final QuestState Q10293 = talker.getQuestState(Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.class.getSimpleName());
 			final QuestState Q10294 = talker.getQuestState(Q10294_SevenSignsToTheMonasteryOfSilence.class.getSimpleName());
@@ -71,17 +66,12 @@ public final class ElcadiasTent extends AbstractInstance
 				|| ((Q10292 != null) && Q10292.isCompleted() && (Q10293 == null)) //
 				|| ((Q10293 != null) && Q10293.isStarted()) //
 				|| ((Q10293 != null) && Q10293.isCompleted() && (Q10294 == null)) //
-				|| ((Q10296 != null) && (Q10296.getMemoState() > 2) && (Q10296.getMemoState() < 4)))
-			{
+				|| ((Q10296 != null) && (Q10296.getMemoState() > 2) && (Q10296.getMemoState() < 4))) {
 				enterInstance(talker, new ETWorld(), "ElcadiasTent.xml", TEMPLATE_ID);
-			}
-			else
-			{
+			} else {
 				return "32862-01.html";
 			}
-		}
-		else
-		{
+		} else {
 			final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(talker);
 			world.removeAllowed(talker.getObjectId());
 			talker.setInstanceId(0);
@@ -91,10 +81,8 @@ public final class ElcadiasTent extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		if (firstEntrance) {
 			world.addAllowed(player.getObjectId());
 		}
 		teleportPlayer(player, START_LOC, world.getInstanceId(), false);

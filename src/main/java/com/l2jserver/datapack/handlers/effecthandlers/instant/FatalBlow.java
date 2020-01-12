@@ -33,14 +33,12 @@ import com.l2jserver.gameserver.model.stats.Formulas;
  * Fatal Blow effect implementation.
  * @author Adry_85
  */
-public final class FatalBlow extends AbstractEffect
-{
+public final class FatalBlow extends AbstractEffect {
 	private final double _power;
 	private final int _blowChance;
 	private final int _criticalChance;
 	
-	public FatalBlow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public FatalBlow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
@@ -49,32 +47,27 @@ public final class FatalBlow extends AbstractEffect
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
-	{
+	public boolean calcSuccess(BuffInfo info) {
 		return !Formulas.calcPhysicalSkillEvasion(info.getEffector(), info.getEffected(), info.getSkill()) && Formulas.calcBlowSuccess(info.getEffector(), info.getEffected(), info.getSkill(), _blowChance);
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.PHYSICAL_ATTACK;
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		L2Character target = info.getEffected();
 		L2Character activeChar = info.getEffector();
 		Skill skill = info.getSkill();
 		
-		if (activeChar.isAlikeDead())
-		{
+		if (activeChar.isAlikeDead()) {
 			return;
 		}
 		
@@ -83,13 +76,11 @@ public final class FatalBlow extends AbstractEffect
 		double damage = Formulas.calcBlowDamage(activeChar, target, skill, shld, ss, _power);
 		
 		boolean crit = false;
-		if (_criticalChance > 0)
-		{
+		if (_criticalChance > 0) {
 			crit = Formulas.calcSkillCrit(activeChar, target, _criticalChance);
 		}
 		
-		if (crit)
-		{
+		if (crit) {
 			damage *= 2;
 		}
 		
@@ -97,14 +88,12 @@ public final class FatalBlow extends AbstractEffect
 		target.notifyDamageReceived(damage, activeChar, skill, crit, false, false);
 		
 		// Manage attack or cast break of the target (calculating rate, sending message...)
-		if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
-		{
+		if (!target.isRaid() && Formulas.calcAtkBreak(target, damage)) {
 			target.breakAttack();
 			target.breakCast();
 		}
 		
-		if (activeChar.isPlayer())
-		{
+		if (activeChar.isPlayer()) {
 			L2PcInstance activePlayer = activeChar.getActingPlayer();
 			activePlayer.sendDamageMessage(target, (int) damage, false, crit, false);
 		}

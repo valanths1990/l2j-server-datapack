@@ -29,11 +29,9 @@ import com.l2jserver.gameserver.model.base.ClassId;
  * Orc class transfer AI.
  * @author Adry_85
  */
-public final class OrcChange1 extends AbstractNpcAI
-{
+public final class OrcChange1 extends AbstractNpcAI {
 	// NPCs
-	private static int[] NPCS =
-	{
+	private static int[] NPCS = {
 		30500, // Osborn
 		30505, // Drikus
 		30508, // Castor
@@ -46,19 +44,16 @@ public final class OrcChange1 extends AbstractNpcAI
 	private static final int KHAVATARI_TOTEM = 1615;
 	private static final int MASK_OF_MEDIUM = 1631;
 	
-	private OrcChange1()
-	{
+	private OrcChange1() {
 		super(OrcChange1.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "30500-01.htm": // high_prefect_osborn003f
 			case "30500-02.htm": // high_prefect_osborn006fa
 			case "30500-03.htm": // high_prefect_osborn007fa
@@ -97,8 +92,7 @@ public final class OrcChange1 extends AbstractNpcAI
 			}
 			case "45":
 			case "47":
-			case "50":
-			{
+			case "50": {
 				htmltext = ClassChangeRequested(player, npc, Integer.valueOf(event));
 				break;
 			}
@@ -106,36 +100,22 @@ public final class OrcChange1 extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	private String ClassChangeRequested(L2PcInstance player, L2Npc npc, int classId)
-	{
+	private String ClassChangeRequested(L2PcInstance player, L2Npc npc, int classId) {
 		String htmltext = null;
-		if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP))
-		{
+		if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP)) {
 			htmltext = npc.getId() + "-09.htm"; // fnYouAreSecondClass
-		}
-		else if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP))
-		{
+		} else if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP)) {
 			htmltext = npc.getId() + "-10.htm"; // fnYouAreThirdClass
-		}
-		else if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
-		{
+		} else if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP)) {
 			htmltext = "30500-24.htm"; // fnYouAreFourthClass
-		}
-		else if ((classId == 45) && (player.getClassId() == ClassId.orcFighter))
-		{
-			if (player.getLevel() < 20)
-			{
-				if (hasQuestItems(player, MARK_OF_RAIDER))
-				{
+		} else if ((classId == 45) && (player.getClassId() == ClassId.orcFighter)) {
+			if (player.getLevel() < 20) {
+				if (hasQuestItems(player, MARK_OF_RAIDER)) {
 					htmltext = npc.getId() + "-11.htm"; // fnLowLevel11
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-12.htm"; // fnLowLevelNoProof11
 				}
-			}
-			else if (hasQuestItems(player, MARK_OF_RAIDER))
-			{
+			} else if (hasQuestItems(player, MARK_OF_RAIDER)) {
 				takeItems(player, MARK_OF_RAIDER, -1);
 				player.setClassId(45);
 				player.setBaseClass(45);
@@ -143,27 +123,17 @@ public final class OrcChange1 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 				htmltext = npc.getId() + "-14.htm"; // fnAfterClassChange11
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-13.htm"; // fnNoProof11
 			}
-		}
-		else if ((classId == 47) && (player.getClassId() == ClassId.orcFighter))
-		{
-			if (player.getLevel() < 20)
-			{
-				if (hasQuestItems(player, KHAVATARI_TOTEM))
-				{
+		} else if ((classId == 47) && (player.getClassId() == ClassId.orcFighter)) {
+			if (player.getLevel() < 20) {
+				if (hasQuestItems(player, KHAVATARI_TOTEM)) {
 					htmltext = npc.getId() + "-15.htm"; // fnLowLevel12
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-16.htm"; // fnLowLevelNoProof12
 				}
-			}
-			else if (hasQuestItems(player, KHAVATARI_TOTEM))
-			{
+			} else if (hasQuestItems(player, KHAVATARI_TOTEM)) {
 				takeItems(player, KHAVATARI_TOTEM, -1);
 				player.setClassId(47);
 				player.setBaseClass(47);
@@ -171,27 +141,17 @@ public final class OrcChange1 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 				htmltext = npc.getId() + "-18.htm"; // fnAfterClassChange12
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-17.htm"; // fnNoProof12
 			}
-		}
-		else if ((classId == 50) && (player.getClassId() == ClassId.orcMage))
-		{
-			if (player.getLevel() < 20)
-			{
-				if (hasQuestItems(player, MASK_OF_MEDIUM))
-				{
+		} else if ((classId == 50) && (player.getClassId() == ClassId.orcMage)) {
+			if (player.getLevel() < 20) {
+				if (hasQuestItems(player, MASK_OF_MEDIUM)) {
 					htmltext = npc.getId() + "-19.htm"; // fnLowLevel21
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-20.htm"; // fnLowLevelNoProof21
 				}
-			}
-			else if (hasQuestItems(player, MASK_OF_MEDIUM))
-			{
+			} else if (hasQuestItems(player, MASK_OF_MEDIUM)) {
 				takeItems(player, MASK_OF_MEDIUM, -1);
 				player.setClassId(50);
 				player.setBaseClass(50);
@@ -199,9 +159,7 @@ public final class OrcChange1 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 				htmltext = npc.getId() + "-22.htm"; // fnAfterClassChange21
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-21.htm"; // fnNoProof21
 			}
 		}
@@ -209,29 +167,21 @@ public final class OrcChange1 extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (player.getRace() == Race.ORC)
-		{
-			if (player.isInCategory(CategoryType.FIGHTER_GROUP))
-			{
+		if (player.getRace() == Race.ORC) {
+			if (player.isInCategory(CategoryType.FIGHTER_GROUP)) {
 				htmltext = npc.getId() + "-01.htm"; // fnClassList1
-			}
-			else if (player.isInCategory(CategoryType.MAGE_GROUP))
-			{
+			} else if (player.isInCategory(CategoryType.MAGE_GROUP)) {
 				htmltext = npc.getId() + "-06.htm"; // fnClassList2
 			}
-		}
-		else
-		{
+		} else {
 			htmltext = npc.getId() + "-23.htm"; // fnClassMismatch
 		}
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new OrcChange1();
 	}
 }

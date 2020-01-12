@@ -38,20 +38,16 @@ import com.l2jserver.gameserver.util.StringUtil;
 /**
  * Small typo fix by Zoey76 24/02/2011
  */
-public class AdminZone implements IAdminCommandHandler
-{
-	private static final String[] ADMIN_COMMANDS =
-	{
+public class AdminZone implements IAdminCommandHandler {
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_zone_check",
 		"admin_zone_visual",
 		"admin_zone_visual_clear"
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (activeChar == null)
-		{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (activeChar == null) {
 			return false;
 		}
 		
@@ -61,8 +57,7 @@ public class AdminZone implements IAdminCommandHandler
 		// String val = "";
 		// if (st.countTokens() >= 1) {val = st.nextToken();}
 		
-		if (actualCommand.equalsIgnoreCase("admin_zone_check"))
-		{
+		if (actualCommand.equalsIgnoreCase("admin_zone_check")) {
 			showHtml(activeChar);
 			activeChar.sendMessage("MapRegion: x:" + MapRegionManager.getInstance().getMapRegionX(activeChar.getX()) + " y:" + MapRegionManager.getInstance().getMapRegionY(activeChar.getY()) + " (" + MapRegionManager.getInstance().getMapRegionLocId(activeChar) + ")");
 			getGeoRegionXY(activeChar);
@@ -81,38 +76,28 @@ public class AdminZone implements IAdminCommandHandler
 			
 			loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.TOWN);
 			activeChar.sendMessage("TeleToLocation (Town): x:" + loc.getX() + " y:" + loc.getY() + " z:" + loc.getZ());
-		}
-		else if (actualCommand.equalsIgnoreCase("admin_zone_visual"))
-		{
+		} else if (actualCommand.equalsIgnoreCase("admin_zone_visual")) {
 			String next = st.nextToken();
-			if (next.equalsIgnoreCase("all"))
-			{
-				for (L2ZoneType zone : ZoneManager.getInstance().getZones(activeChar))
-				{
+			if (next.equalsIgnoreCase("all")) {
+				for (L2ZoneType zone : ZoneManager.getInstance().getZones(activeChar)) {
 					zone.visualizeZone(activeChar.getZ());
 				}
-				for (NpcSpawnTerritory territory : ZoneManager.getInstance().getSpawnTerritories(activeChar))
-				{
+				for (NpcSpawnTerritory territory : ZoneManager.getInstance().getSpawnTerritories(activeChar)) {
 					territory.visualizeZone(activeChar.getZ());
 				}
 				showHtml(activeChar);
-			}
-			else
-			{
+			} else {
 				int zoneId = Integer.parseInt(next);
 				ZoneManager.getInstance().getZoneById(zoneId).visualizeZone(activeChar.getZ());
 			}
-		}
-		else if (actualCommand.equalsIgnoreCase("admin_zone_visual_clear"))
-		{
+		} else if (actualCommand.equalsIgnoreCase("admin_zone_visual_clear")) {
 			ZoneManager.getInstance().clearDebugItems();
 			showHtml(activeChar);
 		}
 		return true;
 	}
 	
-	private static void showHtml(L2PcInstance activeChar)
-	{
+	private static void showHtml(L2PcInstance activeChar) {
 		final String htmContent = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/zone.htm");
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		adminReply.setHtml(htmContent);
@@ -134,35 +119,27 @@ public class AdminZone implements IAdminCommandHandler
 		adminReply.replace("%SCRIPT%", (activeChar.isInsideZone(ZoneId.SCRIPT) ? "<font color=\"LEVEL\">YES</font>" : "NO"));
 		StringBuilder zones = new StringBuilder(100);
 		L2WorldRegion region = L2World.getInstance().getRegion(activeChar.getX(), activeChar.getY());
-		for (L2ZoneType zone : region.getZones())
-		{
-			if (zone.isCharacterInZone(activeChar))
-			{
-				if (zone.getName() != null)
-				{
+		for (L2ZoneType zone : region.getZones()) {
+			if (zone.isCharacterInZone(activeChar)) {
+				if (zone.getName() != null) {
 					StringUtil.append(zones, zone.getName() + "<br1>");
-					if (zone.getId() < 300000)
-					{
+					if (zone.getId() < 300000) {
 						StringUtil.append(zones, "(", String.valueOf(zone.getId()), ")");
 					}
-				}
-				else
-				{
+				} else {
 					StringUtil.append(zones, String.valueOf(zone.getId()));
 				}
 				StringUtil.append(zones, " ");
 			}
 		}
-		for (NpcSpawnTerritory territory : ZoneManager.getInstance().getSpawnTerritories(activeChar))
-		{
+		for (NpcSpawnTerritory territory : ZoneManager.getInstance().getSpawnTerritories(activeChar)) {
 			StringUtil.append(zones, territory.getName() + "<br1>");
 		}
 		adminReply.replace("%ZLIST%", zones.toString());
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private static void getGeoRegionXY(L2PcInstance activeChar)
-	{
+	private static void getGeoRegionXY(L2PcInstance activeChar) {
 		int worldX = activeChar.getX();
 		int worldY = activeChar.getY();
 		int geoX = ((((worldX - (-327680)) >> 4) >> 11) + 10);
@@ -171,8 +148,7 @@ public class AdminZone implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

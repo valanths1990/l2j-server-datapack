@@ -23,25 +23,20 @@ import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 
-public class Link implements IBypassHandler
-{
-	private static final String[] COMMANDS =
-	{
+public class Link implements IBypassHandler {
+	private static final String[] COMMANDS = {
 		"Link"
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
-	{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target) {
 		String htmlPath = command.substring(4).trim();
-		if (htmlPath.isEmpty())
-		{
+		if (htmlPath.isEmpty()) {
 			_log.warning("Player " + activeChar.getName() + " sent empty link html!");
 			return false;
 		}
 		
-		if (htmlPath.contains(".."))
-		{
+		if (htmlPath.contains("..")) {
 			_log.warning("Player " + activeChar.getName() + " sent invalid link html: " + htmlPath);
 			return false;
 		}
@@ -55,8 +50,7 @@ public class Link implements IBypassHandler
 	}
 	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

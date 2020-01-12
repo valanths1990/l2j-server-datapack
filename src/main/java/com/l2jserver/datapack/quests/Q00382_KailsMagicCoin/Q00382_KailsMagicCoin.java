@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.util.Util;
  * Kail's Magic Coin (382)
  * @author Sdw, jurchicks
  */
-public final class Q00382_KailsMagicCoin extends Quest
-{
+public final class Q00382_KailsMagicCoin extends Quest {
 	// NPCs
 	private static final int VERGARA = 30687;
 	// Monsters
@@ -49,8 +48,7 @@ public final class Q00382_KailsMagicCoin extends Quest
 	// Drops
 	private static final double ORC_CAPTAIN_DROP_CHANCE = 0.069;
 	private static final Map<Integer, ItemChanceHolder> MONSTER_DROPS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTER_DROPS.put(FALLEN_ORC, new ItemChanceHolder(KAILS_SILVER_BASILISK, 0.073));
 		MONSTER_DROPS.put(FALLEN_ORC_ARCHER, new ItemChanceHolder(KAILS_GOLD_GOLEM, 0.075));
 		MONSTER_DROPS.put(FALLEN_ORC_SHAMAN, new ItemChanceHolder(KAILS_BLOOD_DRAGON, 0.073));
@@ -58,8 +56,7 @@ public final class Q00382_KailsMagicCoin extends Quest
 	// Misc
 	private static final int MIN_LVL = 55;
 	
-	public Q00382_KailsMagicCoin()
-	{
+	public Q00382_KailsMagicCoin() {
 		super(382, Q00382_KailsMagicCoin.class.getSimpleName(), "Kail's Magic Coin");
 		addStartNpc(VERGARA);
 		addTalkId(VERGARA);
@@ -67,31 +64,24 @@ public final class Q00382_KailsMagicCoin extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "30386-03.htm":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "30386-03.htm": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					htmltext = event;
 				}
 				break;
 			}
 			case "30386-05.htm":
-			case "30386-06.htm":
-			{
-				if (qs.isStarted())
-				{
+			case "30386-06.htm": {
+				if (qs.isStarted()) {
 					htmltext = event;
 				}
 				break;
@@ -101,33 +91,24 @@ public final class Q00382_KailsMagicCoin extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			htmltext = (((talker.getLevel() >= MIN_LVL) && hasQuestItems(talker, ROYAL_MEMBERSHIP)) ? "30687-02.htm" : "30687-01.htm");
-		}
-		else if (qs.isStarted())
-		{
+		} else if (qs.isStarted()) {
 			htmltext = "30687-04.htm";
 		}
 		return htmltext;
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && hasQuestItems(killer, ROYAL_MEMBERSHIP) && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			if (npc.getId() == FALLEN_ORC_CAPTAIN)
-			{
+		if ((qs != null) && hasQuestItems(killer, ROYAL_MEMBERSHIP) && Util.checkIfInRange(1500, npc, killer, true)) {
+			if (npc.getId() == FALLEN_ORC_CAPTAIN) {
 				giveItemRandomly(killer, KAILS_SILVER_BASILISK + getRandom(3), 1, 0, ORC_CAPTAIN_DROP_CHANCE, true);
-			}
-			else
-			{
+			} else {
 				final ItemChanceHolder ih = MONSTER_DROPS.get(npc.getId());
 				giveItemRandomly(killer, ih.getId(), 1, 0, ih.getChance(), true);
 			}

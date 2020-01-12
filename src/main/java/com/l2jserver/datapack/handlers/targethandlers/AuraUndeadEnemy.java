@@ -32,27 +32,20 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public class AuraUndeadEnemy implements ITargetTypeHandler
-{
+public class AuraUndeadEnemy implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<>();
 		int maxTargets = skill.getAffectLimit();
-		for (L2Character obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getAffectRange()))
-		{
-			if (obj.isAttackable() && obj.isUndead())
-			{
-				if (onlyFirst)
-				{
-					return new L2Character[]
-					{
+		for (L2Character obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getAffectRange())) {
+			if (obj.isAttackable() && obj.isUndead()) {
+				if (onlyFirst) {
+					return new L2Character[] {
 						obj
 					};
 				}
 				
-				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
-				{
+				if ((maxTargets > 0) && (targetList.size() >= maxTargets)) {
 					break;
 				}
 				
@@ -63,8 +56,7 @@ public class AuraUndeadEnemy implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.AURA_UNDEAD_ENEMY;
 	}
 }

@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class Q10284_AcquisitionOfDivineSword extends Quest
-{
+public final class Q10284_AcquisitionOfDivineSword extends Quest {
 	// NPCs
 	private static final int RAFFORTY = 32020;
 	private static final int KRUN = 32653;
@@ -46,8 +45,7 @@ public final class Q10284_AcquisitionOfDivineSword extends Quest
 	// Location
 	private static final Location EXIT_LOC = new Location(113793, -109342, -845, 0);
 	
-	public Q10284_AcquisitionOfDivineSword()
-	{
+	public Q10284_AcquisitionOfDivineSword() {
 		super(10284, Q10284_AcquisitionOfDivineSword.class.getSimpleName(), "Acquisition of Divine Sword");
 		addStartNpc(RAFFORTY);
 		addTalkId(RAFFORTY, JINIA, TARUN, KRUN);
@@ -55,19 +53,15 @@ public final class Q10284_AcquisitionOfDivineSword extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "32020-02.html":
-			{
+		switch (event) {
+			case "32020-02.html": {
 				st.startQuest();
 				st.setMemoState(1);
 				st.setMemoStateEx(1, 0); // Custom line
@@ -82,91 +76,64 @@ public final class Q10284_AcquisitionOfDivineSword extends Quest
 			case "32760-03a.html":
 			case "32760-03b.html":
 			case "32760-04a.html":
-			case "32760-04b.html":
-			{
-				if (st.isMemoState(1))
-				{
+			case "32760-04b.html": {
+				if (st.isMemoState(1)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32760-02c.html":
-			{
-				if (st.isMemoState(1))
-				{
+			case "32760-02c.html": {
+				if (st.isMemoState(1)) {
 					st.setMemoStateEx(1, 1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "another_story":
-			{
-				if (st.isMemoState(1))
-				{
+			case "another_story": {
+				if (st.isMemoState(1)) {
 					final int memoStateEx1 = st.getMemoStateEx(1);
 					final int memoStateEx2 = st.getMemoStateEx(2);
 					final int memoStateEx3 = st.getMemoStateEx(3);
-					if ((memoStateEx1 == 1) && (memoStateEx2 == 0) && (memoStateEx3 == 0))
-					{
+					if ((memoStateEx1 == 1) && (memoStateEx2 == 0) && (memoStateEx3 == 0)) {
 						htmltext = "32760-05a.html";
-					}
-					else if ((memoStateEx1 == 0) && (memoStateEx2 == 1) && (memoStateEx3 == 0))
-					{
+					} else if ((memoStateEx1 == 0) && (memoStateEx2 == 1) && (memoStateEx3 == 0)) {
 						htmltext = "32760-05b.html";
-					}
-					else if ((memoStateEx1 == 0) && (memoStateEx2 == 0) && (memoStateEx3 == 1))
-					{
+					} else if ((memoStateEx1 == 0) && (memoStateEx2 == 0) && (memoStateEx3 == 1)) {
 						htmltext = "32760-05c.html";
-					}
-					else if ((memoStateEx1 == 0) && (memoStateEx2 == 1) && (memoStateEx3 == 1))
-					{
+					} else if ((memoStateEx1 == 0) && (memoStateEx2 == 1) && (memoStateEx3 == 1)) {
 						htmltext = "32760-05d.html";
-					}
-					else if ((memoStateEx1 == 1) && (memoStateEx2 == 0) && (memoStateEx3 == 1))
-					{
+					} else if ((memoStateEx1 == 1) && (memoStateEx2 == 0) && (memoStateEx3 == 1)) {
 						htmltext = "32760-05e.html";
-					}
-					else if ((memoStateEx1 == 1) && (memoStateEx2 == 1) && (memoStateEx3 == 0))
-					{
+					} else if ((memoStateEx1 == 1) && (memoStateEx2 == 1) && (memoStateEx3 == 0)) {
 						htmltext = "32760-05f.html";
-					}
-					else if ((memoStateEx1 == 1) && (memoStateEx2 == 1) && (memoStateEx3 == 1))
-					{
+					} else if ((memoStateEx1 == 1) && (memoStateEx2 == 1) && (memoStateEx3 == 1)) {
 						htmltext = "32760-05g.html";
 					}
 				}
 				break;
 			}
-			case "32760-03c.html":
-			{
-				if (st.isMemoState(1))
-				{
+			case "32760-03c.html": {
+				if (st.isMemoState(1)) {
 					st.setMemoStateEx(2, 1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32760-04c.html":
-			{
-				if (st.isMemoState(1))
-				{
+			case "32760-04c.html": {
+				if (st.isMemoState(1)) {
 					st.setMemoStateEx(3, 1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32760-06.html":
-			{
-				if (st.isMemoState(1) && (st.isMemoStateEx(1, 1)) && (st.isMemoStateEx(2, 1)) && (st.isMemoStateEx(3, 1)))
-				{
+			case "32760-06.html": {
+				if (st.isMemoState(1) && (st.isMemoStateEx(1, 1)) && (st.isMemoStateEx(2, 1)) && (st.isMemoStateEx(3, 1))) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32760-07.html":
-			{
-				if (st.isMemoState(1) && (st.isMemoStateEx(1, 1)) && (st.isMemoStateEx(2, 1)) && (st.isMemoStateEx(3, 1)))
-				{
+			case "32760-07.html": {
+				if (st.isMemoState(1) && (st.isMemoStateEx(1, 1)) && (st.isMemoStateEx(2, 1)) && (st.isMemoStateEx(3, 1))) {
 					st.setMemoStateEx(1, 0);
 					st.setMemoStateEx(2, 0);
 					st.setMemoStateEx(3, 0);
@@ -179,10 +146,8 @@ public final class Q10284_AcquisitionOfDivineSword extends Quest
 				}
 				break;
 			}
-			case "exit_instance":
-			{
-				if (st.isMemoState(2))
-				{
+			case "exit_instance": {
+				if (st.isMemoState(2)) {
 					player.teleToLocation(EXIT_LOC, 0);
 				}
 				break;
@@ -190,10 +155,8 @@ public final class Q10284_AcquisitionOfDivineSword extends Quest
 			case "32654-02.html":
 			case "32654-03.html":
 			case "32653-02.html":
-			case "32653-03.html":
-			{
-				if (st.isMemoState(2))
-				{
+			case "32653-03.html": {
+				if (st.isMemoState(2)) {
 					htmltext = event;
 				}
 				break;
@@ -203,95 +166,62 @@ public final class Q10284_AcquisitionOfDivineSword extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st.isCompleted())
-		{
-			if (npc.getId() == RAFFORTY)
-			{
+		if (st.isCompleted()) {
+			if (npc.getId() == RAFFORTY) {
 				htmltext = "32020-05.html";
 			}
-		}
-		else if (st.isCreated())
-		{
+		} else if (st.isCreated()) {
 			htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q10283_RequestOfIceMerchant.class.getSimpleName())) ? "32020-01.htm" : "32020-04.html";
-		}
-		else if (st.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case RAFFORTY:
-				{
-					switch (st.getMemoState())
-					{
-						case 1:
-						{
+		} else if (st.isStarted()) {
+			switch (npc.getId()) {
+				case RAFFORTY: {
+					switch (st.getMemoState()) {
+						case 1: {
 							htmltext = (player.getLevel() >= MIN_LEVEL) ? "32020-06.html" : "32020-08.html";
 							break;
 						}
-						case 2:
-						{
+						case 2: {
 							htmltext = "32020-07.html";
 							break;
 						}
 					}
 					break;
 				}
-				case JINIA:
-				{
-					if (st.isMemoState(1))
-					{
+				case JINIA: {
+					if (st.isMemoState(1)) {
 						final int memoStateEx1 = st.getMemoStateEx(1);
 						final int memoStateEx2 = st.getMemoStateEx(2);
 						final int memoStateEx3 = st.getMemoStateEx(3);
-						if ((memoStateEx1 == 0) && (memoStateEx2 == 0) && (memoStateEx3 == 0))
-						{
+						if ((memoStateEx1 == 0) && (memoStateEx2 == 0) && (memoStateEx3 == 0)) {
 							htmltext = "32760-01.html";
-						}
-						else if ((memoStateEx1 == 1) && (memoStateEx2 == 0) && (memoStateEx3 == 0))
-						{
+						} else if ((memoStateEx1 == 1) && (memoStateEx2 == 0) && (memoStateEx3 == 0)) {
 							htmltext = "32760-01a.html";
-						}
-						else if ((memoStateEx1 == 0) && (memoStateEx2 == 1) && (memoStateEx3 == 0))
-						{
+						} else if ((memoStateEx1 == 0) && (memoStateEx2 == 1) && (memoStateEx3 == 0)) {
 							htmltext = "32760-01b.html";
-						}
-						else if ((memoStateEx1 == 0) && (memoStateEx2 == 0) && (memoStateEx3 == 1))
-						{
+						} else if ((memoStateEx1 == 0) && (memoStateEx2 == 0) && (memoStateEx3 == 1)) {
 							htmltext = "32760-01c.html";
-						}
-						else if ((memoStateEx1 == 0) && (memoStateEx2 == 1) && (memoStateEx3 == 1))
-						{
+						} else if ((memoStateEx1 == 0) && (memoStateEx2 == 1) && (memoStateEx3 == 1)) {
 							htmltext = "32760-01d.html";
-						}
-						else if ((memoStateEx1 == 1) && (memoStateEx2 == 0) && (memoStateEx3 == 1))
-						{
+						} else if ((memoStateEx1 == 1) && (memoStateEx2 == 0) && (memoStateEx3 == 1)) {
 							htmltext = "32760-01e.html";
-						}
-						else if ((memoStateEx1 == 1) && (memoStateEx2 == 1) && (memoStateEx3 == 0))
-						{
+						} else if ((memoStateEx1 == 1) && (memoStateEx2 == 1) && (memoStateEx3 == 0)) {
 							htmltext = "32760-01f.html";
-						}
-						else if ((memoStateEx1 == 1) && (memoStateEx2 == 1) && (memoStateEx3 == 1))
-						{
+						} else if ((memoStateEx1 == 1) && (memoStateEx2 == 1) && (memoStateEx3 == 1)) {
 							htmltext = "32760-01g.html";
 						}
 					}
 					break;
 				}
-				case TARUN:
-				{
-					switch (st.getMemoState())
-					{
-						case 2:
-						{
+				case TARUN: {
+					switch (st.getMemoState()) {
+						case 2: {
 							htmltext = (player.getLevel() >= MIN_LEVEL) ? "32654-01.html" : "32654-05.html";
 							break;
 						}
-						case 3:
-						{
+						case 3: {
 							st.giveAdena(296425, true);
 							st.addExpAndSp(921805, 82230);
 							st.exitQuest(false, true);
@@ -301,17 +231,13 @@ public final class Q10284_AcquisitionOfDivineSword extends Quest
 					}
 					break;
 				}
-				case KRUN:
-				{
-					switch (st.getMemoState())
-					{
-						case 2:
-						{
+				case KRUN: {
+					switch (st.getMemoState()) {
+						case 2: {
 							htmltext = (player.getLevel() >= MIN_LEVEL) ? "32653-01.html" : "32653-05.html";
 							break;
 						}
-						case 3:
-						{
+						case 3: {
 							st.giveAdena(296425, true);
 							st.addExpAndSp(921805, 82230);
 							st.exitQuest(false, true);

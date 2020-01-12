@@ -32,15 +32,13 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Monster Derby Track teleport AI.
  * @author Plim
  */
-public final class TeleportToRaceTrack extends AbstractNpcAI
-{
+public final class TeleportToRaceTrack extends AbstractNpcAI {
 	// NPC
 	private static final int RACE_MANAGER = 30995;
 	// Locations
 	private static final Location TELEPORT = new Location(12661, 181687, -3540);
 	private static final Location DION_CASTLE_TOWN = new Location(15670, 142983, -2700);
-	private static final Location[] RETURN_LOCATIONS =
-	{
+	private static final Location[] RETURN_LOCATIONS = {
 		new Location(-80826, 149775, -3043),
 		new Location(-12672, 122776, -3116),
 		new Location(15670, 142983, -2705),
@@ -56,8 +54,7 @@ public final class TeleportToRaceTrack extends AbstractNpcAI
 	};
 	// Misc
 	private static final Map<Integer, Integer> TELEPORTERS = new HashMap<>();
-	static
-	{
+	static {
 		TELEPORTERS.put(30059, 2); // Trisha
 		TELEPORTERS.put(30080, 3); // Clarissa
 		TELEPORTERS.put(30177, 5); // Valentina
@@ -73,8 +70,7 @@ public final class TeleportToRaceTrack extends AbstractNpcAI
 	// Player Variables
 	private static final String MONSTER_RETURN = "MONSTER_RETURN";
 	
-	private TeleportToRaceTrack()
-	{
+	private TeleportToRaceTrack() {
 		super(TeleportToRaceTrack.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(RACE_MANAGER);
 		addStartNpc(TELEPORTERS.keySet());
@@ -83,33 +79,25 @@ public final class TeleportToRaceTrack extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (npc.getId() == RACE_MANAGER)
-		{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
+		if (npc.getId() == RACE_MANAGER) {
 			final int returnId = player.getVariables().getInt(MONSTER_RETURN, -1);
 			
-			if (returnId != -1)
-			{
+			if (returnId != -1) {
 				player.teleToLocation(RETURN_LOCATIONS[returnId]);
 				player.getVariables().remove(MONSTER_RETURN);
-			}
-			else
-			{
+			} else {
 				broadcastNpcSay(npc, Say2.ALL, NpcStringId.IF_YOUR_MEANS_OF_ARRIVAL_WAS_A_BIT_UNCONVENTIONAL_THEN_ILL_BE_SENDING_YOU_BACK_TO_RUNE_TOWNSHIP_WHICH_IS_THE_NEAREST_TOWN);
 				player.teleToLocation(DION_CASTLE_TOWN);
 			}
-		}
-		else
-		{
+		} else {
 			player.teleToLocation(TELEPORT);
 			player.getVariables().set(MONSTER_RETURN, TELEPORTERS.get(npc.getId()));
 		}
 		return super.onTalk(npc, player);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new TeleportToRaceTrack();
 	}
 }

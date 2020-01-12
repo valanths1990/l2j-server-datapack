@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Silent Valley AI
  * @author malyelfik
  */
-public final class SilentValley extends AbstractNpcAI
-{
+public final class SilentValley extends AbstractNpcAI {
 	// Skills
 	private static final SkillHolder BETRAYAL = new SkillHolder(6033); // Treasure Seeker's Betrayal
 	private static final SkillHolder BLAZE = new SkillHolder(4157, 10); // NPC Blaze - Magic
@@ -46,8 +45,7 @@ public final class SilentValley extends AbstractNpcAI
 	private static final int CHEST = 18693; // Treasure Chest of the Ancient Giants
 	private static final int GUARD1 = 18694; // Treasure Chest Guard
 	private static final int GUARD2 = 18695; // Treasure Chest Guard
-	private static final int[] MOBS =
-	{
+	private static final int[] MOBS = {
 		20965, // Chimera Piece
 		20966, // Changed Creation
 		20967, // Past Creature
@@ -59,8 +57,7 @@ public final class SilentValley extends AbstractNpcAI
 		20973, // Forgotten Ancient People
 	};
 	
-	private SilentValley()
-	{
+	private SilentValley() {
 		super(SilentValley.class.getSimpleName(), "ai/group_template");
 		addAttackId(MOBS);
 		addAttackId(CHEST, GUARD1, GUARD2);
@@ -72,12 +69,9 @@ public final class SilentValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if ((npc != null) && !npc.isDead())
-		{
-			switch (event)
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if ((npc != null) && !npc.isDead()) {
+			switch (event) {
 				case "CLEAR":
 					npc.doDie(null);
 					break;
@@ -94,21 +88,15 @@ public final class SilentValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon)
-	{
-		switch (npc.getId())
-		{
-			case CHEST:
-			{
-				if (!isSummon && npc.isScriptValue(0))
-				{
+	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon) {
+		switch (npc.getId()) {
+			case CHEST: {
+				if (!isSummon && npc.isScriptValue(0)) {
 					npc.setScriptValue(1);
 					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.YOU_WILL_BE_CURSED_FOR_SEEKING_THE_TREASURE);
 					npc.setTarget(player);
 					npc.doCast(BETRAYAL);
-				}
-				else if (isSummon || (getRandom(100) < CHEST_DIE_CHANCE))
-				{
+				} else if (isSummon || (getRandom(100) < CHEST_DIE_CHANCE)) {
 					npc.dropItem(player, SACK, 1);
 					npc.broadcastEvent("CLEAR_ALL", 2000, null);
 					npc.doDie(null);
@@ -117,17 +105,14 @@ public final class SilentValley extends AbstractNpcAI
 				break;
 			}
 			case GUARD1:
-			case GUARD2:
-			{
+			case GUARD2: {
 				npc.setTarget(player);
 				npc.doCast(BLAZE);
 				addAttackDesire(npc, player);
 				break;
 			}
-			default:
-			{
-				if (isSummon)
-				{
+			default: {
+				if (isSummon) {
 					addAttackDesire(npc, player);
 				}
 			}
@@ -136,10 +121,8 @@ public final class SilentValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (getRandom(1000) < SPAWN_CHANCE)
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (getRandom(1000) < SPAWN_CHANCE) {
 			final int newZ = npc.getZ() + 100;
 			addSpawn(GUARD2, npc.getX() + 100, npc.getY(), newZ, 0, false, 0);
 			addSpawn(GUARD1, npc.getX() - 100, npc.getY(), newZ, 0, false, 0);
@@ -150,19 +133,14 @@ public final class SilentValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
-	{
-		if (creature.isPlayable())
-		{
+	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon) {
+		if (creature.isPlayable()) {
 			final L2PcInstance player = (isSummon) ? ((L2Summon) creature).getOwner() : creature.getActingPlayer();
-			if ((npc.getId() == GUARD1) || (npc.getId() == GUARD2))
-			{
+			if ((npc.getId() == GUARD1) || (npc.getId() == GUARD2)) {
 				npc.setTarget(player);
 				npc.doCast(BLAZE);
 				addAttackDesire(npc, player);
-			}
-			else if (creature.isAffectedBySkill(BETRAYAL.getSkillId()))
-			{
+			} else if (creature.isAffectedBySkill(BETRAYAL.getSkillId())) {
 				addAttackDesire(npc, player);
 			}
 		}
@@ -170,27 +148,20 @@ public final class SilentValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
-		if (npc.getId() == CHEST)
-		{
+	public String onSpawn(L2Npc npc) {
+		if (npc.getId() == CHEST) {
 			npc.setIsInvul(true);
 			startQuestTimer("CLEAR_EVENT", 300000, npc, null);
-		}
-		else
-		{
+		} else {
 			startQuestTimer("SPAWN_CHEST", 10000, npc, null);
 		}
 		return super.onSpawn(npc);
 	}
 	
 	@Override
-	public String onEventReceived(String eventName, L2Npc sender, L2Npc receiver, L2Object reference)
-	{
-		if ((receiver != null) && !receiver.isDead())
-		{
-			switch (eventName)
-			{
+	public String onEventReceived(String eventName, L2Npc sender, L2Npc receiver, L2Object reference) {
+		if ((receiver != null) && !receiver.isDead()) {
+			switch (eventName) {
 				case "CLEAR_ALL":
 					startQuestTimer("CLEAR", 60000, receiver, null);
 					break;
@@ -202,8 +173,7 @@ public final class SilentValley extends AbstractNpcAI
 		return super.onEventReceived(eventName, sender, receiver, reference);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new SilentValley();
 	}
 }

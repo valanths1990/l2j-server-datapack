@@ -33,41 +33,34 @@ import com.l2jserver.gameserver.model.stats.Formulas;
 /**
  * Randomize Hate effect implementation.
  */
-public final class RandomizeHate extends AbstractEffect
-{
+public final class RandomizeHate extends AbstractEffect {
 	private final int _chance;
 	
-	public RandomizeHate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public RandomizeHate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_chance = params.getInt("chance", 100);
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
-	{
+	public boolean calcSuccess(BuffInfo info) {
 		return Formulas.calcProbability(_chance, info.getEffector(), info.getEffected(), info.getSkill());
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if ((info.getEffected() == null) || (info.getEffected() == info.getEffector()) || !info.getEffected().isAttackable())
-		{
+	public void onStart(BuffInfo info) {
+		if ((info.getEffected() == null) || (info.getEffected() == info.getEffector()) || !info.getEffected().isAttackable()) {
 			return;
 		}
 		
 		final L2Attackable effectedMob = (L2Attackable) info.getEffected();
 		final List<L2Character> aggroList = effectedMob.getAggroList().keySet().stream().filter(c -> c != info.getEffector()).collect(Collectors.toList());
-		if (aggroList.isEmpty())
-		{
+		if (aggroList.isEmpty()) {
 			return;
 		}
 		

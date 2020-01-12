@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by zerghase.
  * @author malyelfik
  */
-public class Q00044_HelpTheSon extends Quest
-{
+public class Q00044_HelpTheSon extends Quest {
 	// NPCs
 	private static final int LUNDY = 30827;
 	private static final int DRIKUS = 30505;
@@ -45,8 +44,7 @@ public class Q00044_HelpTheSon extends Quest
 	private static final int GEMSTONE = 7553;
 	private static final int PET_TICKET = 7585;
 	
-	public Q00044_HelpTheSon()
-	{
+	public Q00044_HelpTheSon() {
 		super(44, Q00044_HelpTheSon.class.getSimpleName(), "Help The Son!");
 		addStartNpc(LUNDY);
 		addTalkId(LUNDY, DRIKUS);
@@ -55,51 +53,39 @@ public class Q00044_HelpTheSon extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30827-01.htm":
 				st.startQuest();
 				break;
 			case "30827-03.html":
-				if (st.hasQuestItems(WORK_HAMMER))
-				{
+				if (st.hasQuestItems(WORK_HAMMER)) {
 					st.takeItems(WORK_HAMMER, 1);
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "30827-03a.html";
 				}
 				break;
 			case "30827-06.html":
-				if (st.getQuestItemsCount(GEMSTONE_FRAGMENT) == 30)
-				{
+				if (st.getQuestItemsCount(GEMSTONE_FRAGMENT) == 30) {
 					st.takeItems(GEMSTONE_FRAGMENT, -1);
 					st.giveItems(GEMSTONE, 1);
 					st.setCond(4, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "30827-06a.html";
 				}
 				break;
 			case "30505-02.html":
-				if (st.hasQuestItems(GEMSTONE))
-				{
+				if (st.hasQuestItems(GEMSTONE)) {
 					st.takeItems(GEMSTONE, -1);
 					st.setCond(5, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "30505-02a.html";
 				}
 				break;
@@ -113,18 +99,13 @@ public class Q00044_HelpTheSon extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && st.isCond(2))
-		{
+		if ((st != null) && st.isCond(2)) {
 			st.giveItems(GEMSTONE_FRAGMENT, 1);
-			if (st.getQuestItemsCount(GEMSTONE_FRAGMENT) == 30)
-			{
+			if (st.getQuestItemsCount(GEMSTONE_FRAGMENT) == 30) {
 				st.setCond(3, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -132,21 +113,17 @@ public class Q00044_HelpTheSon extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case LUNDY:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= 24) ? "30827-00.htm" : "30827-00a.html";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = (st.hasQuestItems(WORK_HAMMER)) ? "30827-02.html" : "30827-02a.html";
 								break;
@@ -170,10 +147,8 @@ public class Q00044_HelpTheSon extends Quest
 				}
 				break;
 			case DRIKUS:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 4:
 							htmltext = "30505-01.html";
 							break;

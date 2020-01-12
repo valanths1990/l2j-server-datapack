@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * Fire Dragon Destroyer (10291)
  * @author malyelfik
  */
-public class Q10291_FireDragonDestroyer extends Quest
-{
+public class Q10291_FireDragonDestroyer extends Quest {
 	// NPC
 	private static final int KLEIN = 31540;
 	// Monster
@@ -44,8 +43,7 @@ public class Q10291_FireDragonDestroyer extends Quest
 	
 	private static final int VALAKAS_SLAYER_CIRCLET = 8567;
 	
-	public Q10291_FireDragonDestroyer()
-	{
+	public Q10291_FireDragonDestroyer() {
 		super(10291, Q10291_FireDragonDestroyer.class.getSimpleName(), "Fire Dragon Destroyer");
 		addStartNpc(KLEIN);
 		addTalkId(KLEIN);
@@ -54,16 +52,13 @@ public class Q10291_FireDragonDestroyer extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		if (event.equals("31540-05.htm"))
-		{
+		if (event.equals("31540-05.htm")) {
 			st.startQuest();
 			st.giveItems(POOR_NECKLACE, 1);
 		}
@@ -72,21 +67,16 @@ public class Q10291_FireDragonDestroyer extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
-		if (!player.isInParty())
-		{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
+		if (!player.isInParty()) {
 			return super.onKill(npc, player, isSummon);
 		}
 		
-		Function<L2PcInstance, Boolean> rewardCheck = p ->
-		{
-			if (Util.checkIfInRange(8000, npc, p, false))
-			{
+		Function<L2PcInstance, Boolean> rewardCheck = p -> {
+			if (Util.checkIfInRange(8000, npc, p, false)) {
 				QuestState st = getQuestState(p, false);
 				
-				if ((st != null) && st.isCond(1) && st.hasQuestItems(POOR_NECKLACE))
-				{
+				if ((st != null) && st.isCond(1) && st.hasQuestItems(POOR_NECKLACE)) {
 					st.takeItems(POOR_NECKLACE, -1);
 					st.giveItems(VALOR_NECKLACE, 1);
 					st.setCond(2, true);
@@ -96,52 +86,36 @@ public class Q10291_FireDragonDestroyer extends Quest
 		};
 		
 		// Rewards go only to command channel, not to a single party or player.
-		if (player.getParty().isInCommandChannel())
-		{
+		if (player.getParty().isInCommandChannel()) {
 			player.getParty().getCommandChannel().forEachMember(rewardCheck);
-		}
-		else
-		{
+		} else {
 			player.getParty().forEachMember(rewardCheck);
 		}
 		return super.onKill(npc, player, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
-				if (player.getLevel() < 83)
-				{
+		switch (st.getState()) {
+			case State.CREATED: {
+				if (player.getLevel() < 83) {
 					htmltext = "31540-00.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = st.hasQuestItems(FLOATING_STONE) ? "31540-02.htm" : "31540-01.htm";
 				}
 				break;
 			}
-			case State.STARTED:
-			{
-				if (st.isCond(1))
-				{
-					if (st.hasQuestItems(POOR_NECKLACE))
-					{
+			case State.STARTED: {
+				if (st.isCond(1)) {
+					if (st.hasQuestItems(POOR_NECKLACE)) {
 						htmltext = "31540-06.html";
-					}
-					else
-					{
+					} else {
 						st.giveItems(POOR_NECKLACE, 1);
 						htmltext = "31540-07.html";
 					}
-				}
-				else if (st.isCond(2) && st.hasQuestItems(VALOR_NECKLACE))
-				{
+				} else if (st.isCond(2) && st.hasQuestItems(VALOR_NECKLACE)) {
 					htmltext = "31540-08.html";
 					st.giveAdena(126549, true);
 					st.addExpAndSp(717291, 77397);
@@ -150,8 +124,7 @@ public class Q10291_FireDragonDestroyer extends Quest
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
+			case State.COMPLETED: {
 				htmltext = "31540-09.html";
 				break;
 			}

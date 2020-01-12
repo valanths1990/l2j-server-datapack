@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by disKret.
  * @author Joxit
  */
-public class Q00241_PossessorOfAPreciousSoul1 extends Quest
-{
+public class Q00241_PossessorOfAPreciousSoul1 extends Quest {
 	// NPCs
 	private static final int STEDMIEL = 30692;
 	private static final int GABRIELLE = 30753;
@@ -62,8 +61,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 	private static final int CRIMSON_MOSS_CHANCE = 30;
 	private static final int MALRUK_SUCCUBUS_CLAW_CHANCE = 60;
 	
-	public Q00241_PossessorOfAPreciousSoul1()
-	{
+	public Q00241_PossessorOfAPreciousSoul1() {
 		super(241, Q00241_PossessorOfAPreciousSoul1.class.getSimpleName(), "Possessor Of A Precious Soul 1");
 		addStartNpc(TALIEN);
 		addTalkId(TALIEN, STEDMIEL, GABRIELLE, GILMORE, KANTABILON, RAHORAKTI, CARADINE, KASSANDRA, VIRGIL, OGMAR);
@@ -72,119 +70,100 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
-		if (!player.isSubClassActive())
-		{
+		if (!player.isSubClassActive()) {
 			return "no_sub.html";
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "31739-02.html":
 				st.startQuest();
 				break;
 			case "30753-02.html":
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					st.setCond(2, true);
 				}
 				break;
 			case "30754-02.html":
-				if (st.isCond(2))
-				{
+				if (st.isCond(2)) {
 					st.setCond(3, true);
 				}
 				break;
 			case "31739-05.html":
-				if (st.isCond(4) && st.hasQuestItems(LEGEND_OF_SEVENTEEN))
-				{
+				if (st.isCond(4) && st.hasQuestItems(LEGEND_OF_SEVENTEEN)) {
 					st.takeItems(LEGEND_OF_SEVENTEEN, -1);
 					st.setCond(5, true);
 				}
 				break;
 			case "31042-02.html":
-				if (st.isCond(5))
-				{
+				if (st.isCond(5)) {
 					st.setCond(6, true);
 				}
 				break;
 			case "31042-05.html":
-				if (st.isCond(7) && (st.getQuestItemsCount(MALRUK_SUCCUBUS_CLAW) >= 10))
-				{
+				if (st.isCond(7) && (st.getQuestItemsCount(MALRUK_SUCCUBUS_CLAW) >= 10)) {
 					st.takeItems(MALRUK_SUCCUBUS_CLAW, -1);
 					st.giveItems(ECHO_CRYSTAL, 1);
 					st.setCond(8, true);
 				}
 				break;
 			case "31739-08.html":
-				if (st.isCond(8) && st.hasQuestItems(ECHO_CRYSTAL))
-				{
+				if (st.isCond(8) && st.hasQuestItems(ECHO_CRYSTAL)) {
 					st.takeItems(ECHO_CRYSTAL, -1);
 					st.setCond(9, true);
 				}
 				break;
 			case "30692-02.html":
-				if (st.isCond(9) && !st.hasQuestItems(POETRY_BOOK))
-				{
+				if (st.isCond(9) && !st.hasQuestItems(POETRY_BOOK)) {
 					st.giveItems(POETRY_BOOK, 1);
 					st.setCond(10, true);
 				}
 				break;
 			case "31739-11.html":
-				if (st.isCond(10) && st.hasQuestItems(POETRY_BOOK))
-				{
+				if (st.isCond(10) && st.hasQuestItems(POETRY_BOOK)) {
 					st.takeItems(POETRY_BOOK, -1);
 					st.setCond(11, true);
 				}
 				break;
 			case "31742-02.html":
-				if (st.isCond(11))
-				{
+				if (st.isCond(11)) {
 					st.setCond(12, true);
 				}
 				break;
 			case "31744-02.html":
-				if (st.isCond(12))
-				{
+				if (st.isCond(12)) {
 					st.setCond(13, true);
 				}
 				break;
 			case "31336-02.html":
-				if (st.isCond(13))
-				{
+				if (st.isCond(13)) {
 					st.setCond(14, true);
 				}
 				break;
 			case "31336-05.html":
-				if (st.isCond(15) && (st.getQuestItemsCount(CRIMSON_MOSS) >= 5))
-				{
+				if (st.isCond(15) && (st.getQuestItemsCount(CRIMSON_MOSS) >= 5)) {
 					st.takeItems(CRIMSON_MOSS, -1);
 					st.giveItems(RAHORAKTIS_MEDICINE, 1);
 					st.setCond(16, true);
 				}
 				break;
 			case "31743-02.html":
-				if (st.isCond(16) && st.hasQuestItems(RAHORAKTIS_MEDICINE))
-				{
+				if (st.isCond(16) && st.hasQuestItems(RAHORAKTIS_MEDICINE)) {
 					st.takeItems(RAHORAKTIS_MEDICINE, -1);
 					st.setCond(17, true);
 				}
 				break;
 			case "31742-05.html":
-				if (st.isCond(17))
-				{
+				if (st.isCond(17)) {
 					st.setCond(18, true);
 				}
 				break;
 			case "31740-05.html":
-				if (st.getCond() >= 18)
-				{
+				if (st.getCond() >= 18) {
 					st.giveItems(VIRGILS_LETTER, 1);
 					st.addExpAndSp(263043, 0);
 					st.exitQuest(false, true);
@@ -195,16 +174,13 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember;
 		final QuestState st;
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case BARAHAM:
 				partyMember = getRandomPartyMember(player, 3);
-				if (partyMember == null)
-				{
+				if (partyMember == null) {
 					return null;
 				}
 				
@@ -217,40 +193,30 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 			case MALRUK_SUCCUBUS_2:
 			case MALRUK_SUCCUBUS_TUREN_2:
 				partyMember = getRandomPartyMember(player, 6);
-				if (partyMember == null)
-				{
+				if (partyMember == null) {
 					return null;
 				}
 				st = getQuestState(partyMember, false);
-				if ((MALRUK_SUCCUBUS_CLAW_CHANCE >= getRandom(100)) && (st.getQuestItemsCount(MALRUK_SUCCUBUS_CLAW) < 10))
-				{
+				if ((MALRUK_SUCCUBUS_CLAW_CHANCE >= getRandom(100)) && (st.getQuestItemsCount(MALRUK_SUCCUBUS_CLAW) < 10)) {
 					st.giveItems(MALRUK_SUCCUBUS_CLAW, 1);
-					if (st.getQuestItemsCount(MALRUK_SUCCUBUS_CLAW) == 10)
-					{
+					if (st.getQuestItemsCount(MALRUK_SUCCUBUS_CLAW) == 10) {
 						st.setCond(7, true);
-					}
-					else
-					{
+					} else {
 						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 				break;
 			case TAIK_ORC_SUPPLY_LEADER:
 				partyMember = getRandomPartyMember(player, 14);
-				if (partyMember == null)
-				{
+				if (partyMember == null) {
 					return null;
 				}
 				st = getQuestState(partyMember, false);
-				if ((CRIMSON_MOSS_CHANCE >= getRandom(100)) && (st.getQuestItemsCount(CRIMSON_MOSS) < 5))
-				{
+				if ((CRIMSON_MOSS_CHANCE >= getRandom(100)) && (st.getQuestItemsCount(CRIMSON_MOSS) < 5)) {
 					st.giveItems(CRIMSON_MOSS, 1);
-					if (st.getQuestItemsCount(CRIMSON_MOSS) == 5)
-					{
+					if (st.getQuestItemsCount(CRIMSON_MOSS) == 5) {
 						st.setCond(15, true);
-					}
-					else
-					{
+					} else {
 						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
@@ -260,32 +226,26 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
-		if (st.isStarted() && !player.isSubClassActive())
-		{
+		if (st.isStarted() && !player.isSubClassActive()) {
 			return "no_sub.html";
 		}
 		
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case TALIEN:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (((player.getLevel() >= 50) && player.isSubClassActive()) ? "31739-01.htm" : "31739-00.htm");
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "31739-03.html";
 								break;
 							case 4:
-								if (st.hasQuestItems(LEGEND_OF_SEVENTEEN))
-								{
+								if (st.hasQuestItems(LEGEND_OF_SEVENTEEN)) {
 									htmltext = "31739-04.html";
 								}
 								break;
@@ -293,8 +253,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 								htmltext = "31739-06.html";
 								break;
 							case 8:
-								if (st.hasQuestItems(ECHO_CRYSTAL))
-								{
+								if (st.hasQuestItems(ECHO_CRYSTAL)) {
 									htmltext = "31739-07.html";
 								}
 								break;
@@ -302,8 +261,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 								htmltext = "31739-09.html";
 								break;
 							case 10:
-								if (st.hasQuestItems(POETRY_BOOK))
-								{
+								if (st.hasQuestItems(POETRY_BOOK)) {
 									htmltext = "31739-10.html";
 								}
 								break;
@@ -318,8 +276,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				}
 				break;
 			case GABRIELLE:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 1:
 						htmltext = "30753-01.html";
 						break;
@@ -329,8 +286,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				}
 				break;
 			case GILMORE:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 2:
 						htmltext = "30754-01.html";
 						break;
@@ -340,8 +296,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				}
 				break;
 			case KANTABILON:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 5:
 						htmltext = "31042-01.html";
 						break;
@@ -349,8 +304,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 						htmltext = "31042-04.html";
 						break;
 					case 7:
-						if (st.getQuestItemsCount(MALRUK_SUCCUBUS_CLAW) >= 10)
-						{
+						if (st.getQuestItemsCount(MALRUK_SUCCUBUS_CLAW) >= 10) {
 							htmltext = "31042-03.html";
 						}
 						break;
@@ -360,8 +314,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				}
 				break;
 			case STEDMIEL:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 9:
 						htmltext = "30692-01.html";
 						break;
@@ -371,8 +324,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				}
 				break;
 			case VIRGIL:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 11:
 						htmltext = "31742-01.html";
 						break;
@@ -388,8 +340,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				}
 				break;
 			case OGMAR:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 12:
 						htmltext = "31744-01.html";
 						break;
@@ -399,8 +350,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				}
 				break;
 			case RAHORAKTI:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 13:
 						htmltext = "31336-01.html";
 						break;
@@ -408,8 +358,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 						htmltext = "31336-04.html";
 						break;
 					case 15:
-						if (st.getQuestItemsCount(CRIMSON_MOSS) >= 5)
-						{
+						if (st.getQuestItemsCount(CRIMSON_MOSS) >= 5) {
 							htmltext = "31336-03.html";
 						}
 						break;
@@ -419,11 +368,9 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				}
 				break;
 			case KASSANDRA:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 16:
-						if (st.hasQuestItems(RAHORAKTIS_MEDICINE))
-						{
+						if (st.hasQuestItems(RAHORAKTIS_MEDICINE)) {
 							htmltext = "31743-01.html";
 						}
 						break;
@@ -433,8 +380,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				}
 				break;
 			case CARADINE:
-				if (st.getCond() >= 18)
-				{
+				if (st.getCond() >= 18) {
 					htmltext = "31740-01.html";
 				}
 				break;

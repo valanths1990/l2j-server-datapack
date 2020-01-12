@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Expulsion of Evil Spirits (311)
  * @author Zoey76
  */
-public final class Q00311_ExpulsionOfEvilSpirits extends Quest
-{
+public final class Q00311_ExpulsionOfEvilSpirits extends Quest {
 	// NPC
 	private static final int CHAIREN = 32655;
 	// Items
@@ -46,8 +45,7 @@ public final class Q00311_ExpulsionOfEvilSpirits extends Quest
 	private static final int RAGNA_ORCS_AMULET_COUNT = 10;
 	// Monsters
 	private static final Map<Integer, Double> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(22691, 0.694); // Ragna Orc
 		MONSTERS.put(22692, 0.716); // Ragna Orc Warrior
 		MONSTERS.put(22693, 0.736); // Ragna Orc Hero
@@ -61,8 +59,7 @@ public final class Q00311_ExpulsionOfEvilSpirits extends Quest
 		MONSTERS.put(22702, 0.662); // Varangka's Destroyer
 	}
 	
-	public Q00311_ExpulsionOfEvilSpirits()
-	{
+	public Q00311_ExpulsionOfEvilSpirits() {
 		super(311, Q00311_ExpulsionOfEvilSpirits.class.getSimpleName(), "Expulsion of Evil Spirits");
 		addStartNpc(CHAIREN);
 		addTalkId(CHAIREN);
@@ -71,57 +68,43 @@ public final class Q00311_ExpulsionOfEvilSpirits extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		if (player.getLevel() < MIN_LEVEL)
-		{
+		if (player.getLevel() < MIN_LEVEL) {
 			return null;
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "32655-03.htm":
-			case "32655-15.html":
-			{
+			case "32655-15.html": {
 				htmltext = event;
 				break;
 			}
-			case "32655-04.htm":
-			{
+			case "32655-04.htm": {
 				qs.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "32655-11.html":
-			{
-				if (getQuestItemsCount(player, SOUL_CORE_CONTAINING_EVIL_SPIRIT) >= SOUL_CORE_COUNT)
-				{
+			case "32655-11.html": {
+				if (getQuestItemsCount(player, SOUL_CORE_CONTAINING_EVIL_SPIRIT) >= SOUL_CORE_COUNT) {
 					takeItems(player, SOUL_CORE_CONTAINING_EVIL_SPIRIT, SOUL_CORE_COUNT);
 					giveItems(player, PROTECTION_SOULS_PENDANT, 1);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "32655-12.html";
 				}
 				break;
 			}
-			case "32655-13.html":
-			{
-				if (!hasQuestItems(player, SOUL_CORE_CONTAINING_EVIL_SPIRIT) && (getQuestItemsCount(player, RAGNA_ORCS_AMULET) >= RAGNA_ORCS_AMULET_COUNT))
-				{
+			case "32655-13.html": {
+				if (!hasQuestItems(player, SOUL_CORE_CONTAINING_EVIL_SPIRIT) && (getQuestItemsCount(player, RAGNA_ORCS_AMULET) >= RAGNA_ORCS_AMULET_COUNT)) {
 					qs.exitQuest(true, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "32655-14.html";
 				}
 				break;
@@ -131,20 +114,15 @@ public final class Q00311_ExpulsionOfEvilSpirits extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, 1, 2, npc);
-		if (qs != null)
-		{
+		if (qs != null) {
 			final int count = qs.getMemoStateEx(1) + 1;
-			if ((count >= RAGNA_ORCS_KILLS_COUNT) && (getRandom(20) < ((count % 100) + 1)))
-			{
+			if ((count >= RAGNA_ORCS_KILLS_COUNT) && (getRandom(20) < ((count % 100) + 1))) {
 				qs.setMemoStateEx(1, 0);
 				qs.giveItems(SOUL_CORE_CONTAINING_EVIL_SPIRIT, 1);
 				qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-			}
-			else
-			{
+			} else {
 				qs.setMemoStateEx(1, count);
 			}
 			
@@ -154,16 +132,12 @@ public final class Q00311_ExpulsionOfEvilSpirits extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			htmltext = (player.getLevel() >= MIN_LEVEL) ? "32655-01.htm" : "32655-02.htm";
-		}
-		else if (qs.isStarted())
-		{
+		} else if (qs.isStarted()) {
 			htmltext = !hasQuestItems(player, SOUL_CORE_CONTAINING_EVIL_SPIRIT, RAGNA_ORCS_AMULET) ? "32655-05.html" : "32655-06.html";
 		}
 		return htmltext;

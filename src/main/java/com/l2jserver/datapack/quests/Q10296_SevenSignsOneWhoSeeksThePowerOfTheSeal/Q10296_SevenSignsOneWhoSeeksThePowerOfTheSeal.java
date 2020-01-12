@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal extends Quest
-{
+public final class Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal extends Quest {
 	// NPCs
 	private static final int HARDIN = 30832;
 	private static final int WOOD = 32593;
@@ -44,81 +43,62 @@ public final class Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	
-	public Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal()
-	{
+	public Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal() {
 		super(10296, Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal.class.getSimpleName(), "Seven Signs, One Who Seeks the Power of the Seal");
 		addStartNpc(ERISS_EVIL_THOUGHTS, ODD_GLOBE);
 		addTalkId(ERISS_EVIL_THOUGHTS, ODD_GLOBE, HARDIN, WOOD, FRANZ, ELCADIA, ELCADIA_2);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "32792-02.htm":
-			{
+		switch (event) {
+			case "32792-02.htm": {
 				htmltext = event;
 				break;
 			}
-			case "32792-03.htm":
-			{
+			case "32792-03.htm": {
 				st.startQuest();
 				st.setMemoState(1);
 				htmltext = event;
 				break;
 			}
-			case "30832-03.html":
-			{
-				if (st.isMemoState(4))
-				{
+			case "30832-03.html": {
+				if (st.isMemoState(4)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "30832-04.html":
-			{
-				if (st.isMemoState(4))
-				{
+			case "30832-04.html": {
+				if (st.isMemoState(4)) {
 					st.setMemoState(5);
 					st.setCond(5, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32593-03.html":
-			{
-				if (st.isMemoState(5))
-				{
+			case "32593-03.html": {
+				if (st.isMemoState(5)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32597-02.html":
-			{
-				if (st.isMemoState(5))
-				{
+			case "32597-02.html": {
+				if (st.isMemoState(5)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32597-03.html":
-			{
-				if (st.isMemoState(5))
-				{
-					if (player.isSubClassActive())
-					{
+			case "32597-03.html": {
+				if (st.isMemoState(5)) {
+					if (player.isSubClassActive()) {
 						htmltext = event;
-					}
-					else
-					{
+					} else {
 						addExpAndSp(player, 125000000, 12500000);
 						giveItems(player, CERTIFICATE_OF_DAWN, 1);
 						st.exitQuest(false, true);
@@ -127,18 +107,14 @@ public final class Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal extends Quest
 				}
 				break;
 			}
-			case "32784-02.html":
-			{
-				if (st.isMemoState(3))
-				{
+			case "32784-02.html": {
+				if (st.isMemoState(3)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32784-03.html":
-			{
-				if (st.isMemoState(3))
-				{
+			case "32784-03.html": {
+				if (st.isMemoState(3)) {
 					st.setMemoState(4);
 					st.setCond(4, true);
 					htmltext = event;
@@ -150,134 +126,88 @@ public final class Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st.isCompleted())
-		{
-			if (npc.getId() == ERISS_EVIL_THOUGHTS)
-			{
+		if (st.isCompleted()) {
+			if (npc.getId() == ERISS_EVIL_THOUGHTS) {
 				htmltext = "32792-04.html";
 			}
-		}
-		else if (st.isCreated())
-		{
-			if (player.hasQuestCompleted(Q10295_SevenSignsSolinasTomb.class.getSimpleName()))
-			{
-				if ((npc.getId() == ERISS_EVIL_THOUGHTS) && (player.getLevel() >= MIN_LEVEL))
-				{
+		} else if (st.isCreated()) {
+			if (player.hasQuestCompleted(Q10295_SevenSignsSolinasTomb.class.getSimpleName())) {
+				if ((npc.getId() == ERISS_EVIL_THOUGHTS) && (player.getLevel() >= MIN_LEVEL)) {
 					htmltext = "32792-01.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "32815-01.html";
 				}
 			}
-		}
-		else if (st.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case ERISS_EVIL_THOUGHTS:
-				{
-					if (st.isMemoState(1))
-					{
+		} else if (st.isStarted()) {
+			switch (npc.getId()) {
+				case ERISS_EVIL_THOUGHTS: {
+					if (st.isMemoState(1)) {
 						st.setMemoState(2);
 						st.setCond(2, true);
 						htmltext = "32792-05.html";
-					}
-					else if (st.isMemoState(2))
-					{
+					} else if (st.isMemoState(2)) {
 						htmltext = "32792-06.html";
 					}
 					break;
 				}
-				case ODD_GLOBE:
-				{
+				case ODD_GLOBE: {
 					final int memoState = st.getMemoState();
-					if ((memoState > 0) && (memoState <= 2))
-					{
+					if ((memoState > 0) && (memoState <= 2)) {
 						htmltext = "32815-01.html";
-					}
-					else if (memoState > 2)
-					{
+					} else if (memoState > 2) {
 						htmltext = "32815-02.html";
 					}
 					break;
 				}
-				case HARDIN:
-				{
+				case HARDIN: {
 					final int memoState = st.getMemoState();
-					if (memoState < 4)
-					{
+					if (memoState < 4) {
 						htmltext = "30832-01.html";
-					}
-					else if (memoState == 4)
-					{
+					} else if (memoState == 4) {
 						htmltext = "30832-02.html";
-					}
-					else if (memoState > 4)
-					{
+					} else if (memoState > 4) {
 						htmltext = "30832-04.html";
 					}
 					break;
 				}
-				case WOOD:
-				{
+				case WOOD: {
 					final int memoState = st.getMemoState();
-					if (memoState < 5)
-					{
+					if (memoState < 5) {
 						htmltext = "32593-01.html";
-					}
-					else if (memoState == 5)
-					{
+					} else if (memoState == 5) {
 						htmltext = "32593-02.html";
-					}
-					else if (memoState > 5)
-					{
+					} else if (memoState > 5) {
 						htmltext = "32593-04.html";
 					}
 					break;
 				}
-				case FRANZ:
-				{
-					if (st.isMemoState(5))
-					{
+				case FRANZ: {
+					if (st.isMemoState(5)) {
 						htmltext = "32597-01.html";
 					}
 					break;
 				}
-				case ELCADIA:
-				{
+				case ELCADIA: {
 					final int memoState = st.getMemoState();
-					if (memoState == 3)
-					{
+					if (memoState == 3) {
 						htmltext = "32784-01.html";
-					}
-					else if (memoState > 3)
-					{
+					} else if (memoState > 3) {
 						htmltext = "32784-04.html";
 					}
 					break;
 				}
-				case ELCADIA_2:
-				{
+				case ELCADIA_2: {
 					final int memoState = st.getMemoState();
-					if (memoState < 1)
-					{
+					if (memoState < 1) {
 						htmltext = "32787-01.html";
-					}
-					else if (memoState < 2)
-					{
+					} else if (memoState < 2) {
 						htmltext = "32787-02.html";
-					}
-					else if (memoState == 2)
-					{
+					} else if (memoState == 2) {
 						htmltext = "32787-03.html";
-					}
-					else
-					{
+					} else {
 						st.setCond(3, true);
 						htmltext = "32787-04.html";
 					}

@@ -33,33 +33,27 @@ import com.l2jserver.gameserver.util.Util;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public class Q00512_BladeUnderFoot extends Quest
-{
-	private static final class DropInfo
-	{
+public class Q00512_BladeUnderFoot extends Quest {
+	private static final class DropInfo {
 		public final int _firstChance;
 		public final int _secondChance;
 		
-		public DropInfo(int firstChance, int secondChance)
-		{
+		public DropInfo(int firstChance, int secondChance) {
 			_firstChance = firstChance;
 			_secondChance = secondChance;
 		}
 		
-		public int getFirstChance()
-		{
+		public int getFirstChance() {
 			return _firstChance;
 		}
 		
-		public int getSecondChance()
-		{
+		public int getSecondChance() {
 			return _secondChance;
 		}
 	}
 	
 	// NPCs
-	private static final int[] WARDEN =
-	{
+	private static final int[] WARDEN = {
 		36403, // Gludio
 		36404, // Dion
 		36405, // Giran
@@ -79,15 +73,13 @@ public class Q00512_BladeUnderFoot extends Quest
 	private static final int KNIGHTS_EPAULETTE = 9912;
 	// Raid Bosses
 	private static final Map<Integer, DropInfo> RAID_BOSSES = new HashMap<>();
-	static
-	{
+	static {
 		RAID_BOSSES.put(25563, new DropInfo(175, 1443)); // Beautiful Atrielle
 		RAID_BOSSES.put(25566, new DropInfo(176, 1447)); // Nagen the Tomboy
 		RAID_BOSSES.put(25569, new DropInfo(177, 1450)); // Jax the Destroyer
 	}
 	
-	public Q00512_BladeUnderFoot()
-	{
+	public Q00512_BladeUnderFoot() {
 		super(512, Q00512_BladeUnderFoot.class.getSimpleName(), "Blade Under Foot");
 		addStartNpc(WARDEN);
 		addTalkId(WARDEN);
@@ -96,16 +88,13 @@ public class Q00512_BladeUnderFoot extends Quest
 	}
 	
 	@Override
-	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon)
-	{
+	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && Util.checkIfInRange(1500, npc, player, false))
-		{
+		if ((st != null) && Util.checkIfInRange(1500, npc, player, false)) {
 			int playerCount = player.getParty().getMemberCount();
 			int itemCount = RAID_BOSSES.get(npc.getId()).getSecondChance();
 			
-			if (playerCount > 0)
-			{
+			if (playerCount > 0) {
 				itemCount /= playerCount;
 			}
 			
@@ -115,28 +104,20 @@ public class Q00512_BladeUnderFoot extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "36403-02.htm":
-			{
-				if (player.getLevel() >= MIN_LEVEL)
-				{
-					if ((npc.isMyLord(player) || ((npc.getCastle().getResidenceId() == player.getClan().getCastleId()) && (player.getClan().getCastleId() > 0))))
-					{
+		switch (event) {
+			case "36403-02.htm": {
+				if (player.getLevel() >= MIN_LEVEL) {
+					if ((npc.isMyLord(player) || ((npc.getCastle().getResidenceId() == player.getClan().getCastleId()) && (player.getClan().getCastleId() > 0)))) {
 						st.startQuest();
 						htmltext = event;
-					}
-					else
-					{
+					} else {
 						htmltext = "36403-03.htm";
 					}
 				}
@@ -146,13 +127,11 @@ public class Q00512_BladeUnderFoot extends Quest
 			case "36403-05.html":
 			case "36403-06.html":
 			case "36403-07.html":
-			case "36403-10.html":
-			{
+			case "36403-10.html": {
 				htmltext = event;
 				break;
 			}
-			case "36403-11.html":
-			{
+			case "36403-11.html": {
 				st.exitQuest(true, true);
 				htmltext = event;
 				break;
@@ -162,17 +141,12 @@ public class Q00512_BladeUnderFoot extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if (st != null)
-		{
-			if (player.getParty() != null)
-			{
+		if (st != null) {
+			if (player.getParty() != null) {
 				executeForEachPlayer(player, npc, isSummon, true, false);
-			}
-			else
-			{
+			} else {
 				st.giveItems(FRAGMENT_OF_THE_DUNGEON_LEADER_MARK, RAID_BOSSES.get(npc.getId()).getFirstChance());
 				st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 			}
@@ -181,31 +155,21 @@ public class Q00512_BladeUnderFoot extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st.isCreated())
-		{
-			if (player.getLevel() >= MIN_LEVEL)
-			{
+		if (st.isCreated()) {
+			if (player.getLevel() >= MIN_LEVEL) {
 				htmltext = (npc.isMyLord(player) || ((player.getClan() != null) && (npc.getCastle().getResidenceId() == player.getClan().getCastleId()) && (player.getClan().getCastleId() > 0))) ? "36403-01.htm" : "36403-03.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "36403-08.htm";
 			}
-		}
-		else if (st.isStarted())
-		{
-			if (hasQuestItems(player, FRAGMENT_OF_THE_DUNGEON_LEADER_MARK))
-			{
+		} else if (st.isStarted()) {
+			if (hasQuestItems(player, FRAGMENT_OF_THE_DUNGEON_LEADER_MARK)) {
 				giveItems(player, KNIGHTS_EPAULETTE, getQuestItemsCount(player, FRAGMENT_OF_THE_DUNGEON_LEADER_MARK));
 				takeItems(player, FRAGMENT_OF_THE_DUNGEON_LEADER_MARK, -1);
 				htmltext = "36403-09.html";
-			}
-			else
-			{
+			} else {
 				htmltext = "36403-12.html";
 			}
 		}

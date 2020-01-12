@@ -27,8 +27,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Freya's Steward AI.
  * @author Adry_85
  */
-public final class FreyasSteward extends AbstractNpcAI
-{
+public final class FreyasSteward extends AbstractNpcAI {
 	// NPC
 	private static final int FREYAS_STEWARD = 32029;
 	// Location
@@ -36,8 +35,7 @@ public final class FreyasSteward extends AbstractNpcAI
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
-	private FreyasSteward()
-	{
+	private FreyasSteward() {
 		super(FreyasSteward.class.getSimpleName(), "ai/npc");
 		addStartNpc(FREYAS_STEWARD);
 		addFirstTalkId(FREYAS_STEWARD);
@@ -45,24 +43,20 @@ public final class FreyasSteward extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "32029.html";
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (player.getLevel() >= MIN_LEVEL)
-		{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
+		if (player.getLevel() >= MIN_LEVEL) {
 			player.teleToLocation(TELEPORT_LOC);
 			return null;
 		}
 		return "32029-1.html";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new FreyasSteward();
 	}
 }

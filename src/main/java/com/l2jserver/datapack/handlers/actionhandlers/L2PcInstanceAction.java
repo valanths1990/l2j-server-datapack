@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.entity.TvTEvent;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 
-public class L2PcInstanceAction implements IActionHandler
-{
+public class L2PcInstanceAction implements IActionHandler {
 	private static final int CURSED_WEAPON_VICTIM_MIN_LEVEL = 21;
 	
 	/**
@@ -39,12 +38,14 @@ public class L2PcInstanceAction implements IActionHandler
 	 * <BR>
 	 * <B><U> Actions on first click on the L2PcInstance (Select it)</U> :</B><BR>
 	 * <BR>
-	 * <li>Set the target of the player</li> <li>Send a Server->Client packet MyTargetSelected to the player (display the select window)</li><BR>
+	 * <li>Set the target of the player</li>
+	 * <li>Send a Server->Client packet MyTargetSelected to the player (display the select window)</li><BR>
 	 * <BR>
 	 * <B><U> Actions on second click on the L2PcInstance (Follow it/Attack it/Intercat with it)</U> :</B><BR>
 	 * <BR>
-	 * <li>Send a Server->Client packet MyTargetSelected to the player (display the select window)</li> <li>If target L2PcInstance has a Private Store, notify the player AI with AI_INTENTION_INTERACT</li> <li>If target L2PcInstance is autoAttackable, notify the player AI with AI_INTENTION_ATTACK</li>
-	 * <BR>
+	 * <li>Send a Server->Client packet MyTargetSelected to the player (display the select window)</li>
+	 * <li>If target L2PcInstance has a Private Store, notify the player AI with AI_INTENTION_INTERACT</li>
+	 * <li>If target L2PcInstance is autoAttackable, notify the player AI with AI_INTENTION_ATTACK</li> <BR>
 	 * <BR>
 	 * <li>If target L2PcInstance is NOT autoAttackable, notify the player AI with AI_INTENTION_FOLLOW</li><BR>
 	 * <BR>
@@ -55,75 +56,53 @@ public class L2PcInstanceAction implements IActionHandler
 	 * @param activeChar The player that start an action on target L2PcInstance
 	 */
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
 		// See description in TvTEvent.java
-		if (!TvTEvent.onAction(activeChar, target.getObjectId()))
-		{
+		if (!TvTEvent.onAction(activeChar, target.getObjectId())) {
 			return false;
 		}
 		
 		// Check if the L2PcInstance is confused
-		if (activeChar.isOutOfControl())
-		{
+		if (activeChar.isOutOfControl()) {
 			return false;
 		}
 		
 		// Aggression target lock effect
-		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target))
-		{
+		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target)) {
 			activeChar.sendPacket(SystemMessageId.FAILED_CHANGE_TARGET);
 			return false;
 		}
 		
 		// Check if the activeChar already target this L2PcInstance
-		if (activeChar.getTarget() != target)
-		{
+		if (activeChar.getTarget() != target) {
 			// Set the target of the activeChar
 			activeChar.setTarget(target);
-		}
-		else if (interact)
-		{
+		} else if (interact) {
 			final L2PcInstance player = target.getActingPlayer();
 			// Check if this L2PcInstance has a Private Store
-			if (player.getPrivateStoreType() != PrivateStoreType.NONE)
-			{
+			if (player.getPrivateStoreType() != PrivateStoreType.NONE) {
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, player);
-			}
-			else
-			{
+			} else {
 				// Check if this L2PcInstance is autoAttackable
-				if (player.isAutoAttackable(activeChar))
-				{
+				if (player.isAutoAttackable(activeChar)) {
 					if ((player.isCursedWeaponEquipped() && (activeChar.getLevel() < CURSED_WEAPON_VICTIM_MIN_LEVEL)) //
-						|| (activeChar.isCursedWeaponEquipped() && (player.getLevel() < CURSED_WEAPON_VICTIM_MIN_LEVEL)))
-					{
+						|| (activeChar.isCursedWeaponEquipped() && (player.getLevel() < CURSED_WEAPON_VICTIM_MIN_LEVEL))) {
 						activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-					}
-					else
-					{
-						if (GeoData.getInstance().canSeeTarget(activeChar, player))
-						{
+					} else {
+						if (GeoData.getInstance().canSeeTarget(activeChar, player)) {
 							activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
-						}
-						else
-						{
+						} else {
 							final Location destination = GeoData.getInstance().moveCheck(activeChar, player);
 							activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
 						}
 						activeChar.onActionRequest();
 					}
-				}
-				else
-				{
+				} else {
 					// This Action Failed packet avoids activeChar getting stuck when clicking three or more times
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-					if (GeoData.getInstance().canSeeTarget(activeChar, player))
-					{
+					if (GeoData.getInstance().canSeeTarget(activeChar, player)) {
 						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, player);
-					}
-					else
-					{
+					} else {
 						final Location destination = GeoData.getInstance().moveCheck(activeChar, player);
 						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
 					}
@@ -134,8 +113,7 @@ public class L2PcInstanceAction implements IActionHandler
 	}
 	
 	@Override
-	public InstanceType getInstanceType()
-	{
+	public InstanceType getInstanceType() {
 		return InstanceType.L2PcInstance;
 	}
 }

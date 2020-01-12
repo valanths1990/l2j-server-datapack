@@ -30,10 +30,8 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Jinia Guild Hideout instance zone.
  * @author Adry_85
  */
-public final class JiniaGuildHideout2 extends AbstractInstance
-{
-	protected class JGH2World extends InstanceWorld
-	{
+public final class JiniaGuildHideout2 extends AbstractInstance {
+	protected class JGH2World extends InstanceWorld {
 		
 	}
 	
@@ -44,19 +42,16 @@ public final class JiniaGuildHideout2 extends AbstractInstance
 	// Misc
 	private static final int TEMPLATE_ID = 141;
 	
-	public JiniaGuildHideout2()
-	{
+	public JiniaGuildHideout2() {
 		super(JiniaGuildHideout2.class.getSimpleName());
 		addStartNpc(RAFFORTY);
 		addTalkId(RAFFORTY);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = talker.getQuestState(Q10285_MeetingSirra.class.getSimpleName());
-		if ((qs != null) && qs.isMemoState(1))
-		{
+		if ((qs != null) && qs.isMemoState(1)) {
 			enterInstance(talker, new JGH2World(), "JiniaGuildHideout2.xml", TEMPLATE_ID);
 			qs.setCond(2, true);
 		}
@@ -64,10 +59,8 @@ public final class JiniaGuildHideout2 extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		if (firstEntrance) {
 			world.addAllowed(player.getObjectId());
 		}
 		teleportPlayer(player, START_LOC, world.getInstanceId(), false);

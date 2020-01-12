@@ -25,26 +25,22 @@ import com.l2jserver.gameserver.model.actor.L2Npc;
  * Golem Trader AI.
  * @author Zoey76
  */
-public final class GolemTrader extends AbstractNpcAI
-{
+public final class GolemTrader extends AbstractNpcAI {
 	// NPC
 	private static final int GOLEM_TRADER = 13128;
 	
-	private GolemTrader()
-	{
+	private GolemTrader() {
 		super(GolemTrader.class.getSimpleName(), "ai/npc/Summons");
 		addSpawnId(GOLEM_TRADER);
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		npc.scheduleDespawn(180000);
 		return super.onSpawn(npc);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new GolemTrader();
 	}
 }

@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * The Finest Ingredients - Part 1.
  * @author Citizen, jurchiks, xban1x
  */
-public final class Q00624_TheFinestIngredientsPart1 extends Quest
-{
+public final class Q00624_TheFinestIngredientsPart1 extends Quest {
 	// NPC
 	private static final int JEREMY = 31521;
 	// Items
@@ -46,16 +45,14 @@ public final class Q00624_TheFinestIngredientsPart1 extends Quest
 	// Misc
 	private static final int MIN_LVL = 73;
 	private static final Map<Integer, Integer> MONSTER_DROPS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTER_DROPS.put(21314, FOOT_OF_BANDERSNATCHLING); // Hot Springs Bandersnatchling
 		MONSTER_DROPS.put(21317, SECRET_SPICE); // Hot Springs Atroxspawn
 		MONSTER_DROPS.put(21319, TRUNK_OF_NEPENTHES); // Hot Springs Nepenthes
 		MONSTER_DROPS.put(21321, SECRET_SPICE); // Hot Springs Atrox
 	}
 	
-	public Q00624_TheFinestIngredientsPart1()
-	{
+	public Q00624_TheFinestIngredientsPart1() {
 		super(624, Q00624_TheFinestIngredientsPart1.class.getSimpleName(), "The Finest Ingredients - Part 1");
 		addStartNpc(JEREMY);
 		addTalkId(JEREMY);
@@ -64,31 +61,23 @@ public final class Q00624_TheFinestIngredientsPart1 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
-				case "31521-02.htm":
-				{
+		if (st != null) {
+			switch (event) {
+				case "31521-02.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
 				}
-				case "31521-05.html":
-				{
-					if (st.isCond(2) && (getQuestItemsCount(player, getRegisteredItemIds()) == 150))
-					{
+				case "31521-05.html": {
+					if (st.isCond(2) && (getQuestItemsCount(player, getRegisteredItemIds()) == 150)) {
 						st.giveItems(ICE_CRYSTAL, 1);
 						st.giveItems(SOY_SAUCE_JAR, 1);
 						st.exitQuest(true, true);
 						htmltext = "31521-05.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "31521-06.html";
 					}
 					break;
@@ -99,27 +88,20 @@ public final class Q00624_TheFinestIngredientsPart1 extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(killer, 1);
-		if ((partyMember != null) && partyMember.isInsideRadius(npc, 1500, true, false))
-		{
+		if ((partyMember != null) && partyMember.isInsideRadius(npc, 1500, true, false)) {
 			final int item = MONSTER_DROPS.get(npc.getId());
 			final long count = getQuestItemsCount(partyMember, item);
-			if ((count + 1) >= 50)
-			{
-				if (count < 50)
-				{
+			if ((count + 1) >= 50) {
+				if (count < 50) {
 					giveItems(partyMember, item, 50 - count);
 					playSound(partyMember, Sound.ITEMSOUND_QUEST_FANFARE_MIDDLE);
 				}
-				if (getQuestItemsCount(partyMember, getRegisteredItemIds()) == 150)
-				{
+				if (getQuestItemsCount(partyMember, getRegisteredItemIds()) == 150) {
 					getQuestState(partyMember, false).setCond(2, true);
 				}
-			}
-			else
-			{
+			} else {
 				giveItems(partyMember, item, 1);
 				playSound(partyMember, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
@@ -128,28 +110,21 @@ public final class Q00624_TheFinestIngredientsPart1 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() >= MIN_LVL) ? "31521-01.htm" : "31521-00.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
 						htmltext = "31521-03.html";
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						htmltext = "31521-04.html";
 						break;
 					}

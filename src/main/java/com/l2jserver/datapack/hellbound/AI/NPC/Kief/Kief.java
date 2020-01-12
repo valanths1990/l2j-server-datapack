@@ -27,8 +27,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Kief AI.
  * @author DS
  */
-public final class Kief extends AbstractNpcAI
-{
+public final class Kief extends AbstractNpcAI {
 	// NPCs
 	private static final int KIEF = 32354;
 	// Items
@@ -39,8 +38,7 @@ public final class Kief extends AbstractNpcAI
 	private static final int CONTAINED_LIFE_FORCE = 9682; // Contained Life Force
 	private static final int STINGER = 10012; // Scorpion Poison Stinger
 	
-	public Kief()
-	{
+	public Kief() {
 		super(Kief.class.getSimpleName(), "hellbound/AI/NPC");
 		addFirstTalkId(KIEF);
 		addStartNpc(KIEF);
@@ -48,97 +46,70 @@ public final class Kief extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
-			case "Badges":
-			{
-				switch (HellboundEngine.getInstance().getLevel())
-				{
+		switch (event) {
+			case "Badges": {
+				switch (HellboundEngine.getInstance().getLevel()) {
 					case 2:
-					case 3:
-					{
-						if (hasQuestItems(player, DARION_BADGE))
-						{
+					case 3: {
+						if (hasQuestItems(player, DARION_BADGE)) {
 							HellboundEngine.getInstance().updateTrust((int) getQuestItemsCount(player, DARION_BADGE) * 10, true);
 							takeItems(player, DARION_BADGE, -1);
 							return "32354-10.htm";
 						}
 						break;
 					}
-					default:
-					{
+					default: {
 						htmltext = "32354-10a.htm";
 						break;
 					}
 				}
 				break;
 			}
-			case "Bottle":
-			{
-				if (HellboundEngine.getInstance().getLevel() >= 7)
-				{
-					if (getQuestItemsCount(player, STINGER) >= 20)
-					{
+			case "Bottle": {
+				if (HellboundEngine.getInstance().getLevel() >= 7) {
+					if (getQuestItemsCount(player, STINGER) >= 20) {
 						takeItems(player, STINGER, 20);
 						giveItems(player, BOTTLE, 1);
 						htmltext = "32354-11h.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32354-11i.htm";
 					}
 				}
 				break;
 			}
-			case "dlf":
-			{
-				if (HellboundEngine.getInstance().getLevel() == 7)
-				{
-					if (hasQuestItems(player, DIM_LIFE_FORCE))
-					{
+			case "dlf": {
+				if (HellboundEngine.getInstance().getLevel() == 7) {
+					if (hasQuestItems(player, DIM_LIFE_FORCE)) {
 						HellboundEngine.getInstance().updateTrust((int) getQuestItemsCount(player, DIM_LIFE_FORCE) * 20, true);
 						takeItems(player, DIM_LIFE_FORCE, -1);
 						htmltext = "32354-11a.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32354-11b.htm";
 					}
 				}
 				break;
 			}
-			case "lf":
-			{
-				if (HellboundEngine.getInstance().getLevel() == 7)
-				{
-					if (hasQuestItems(player, LIFE_FORCE))
-					{
+			case "lf": {
+				if (HellboundEngine.getInstance().getLevel() == 7) {
+					if (hasQuestItems(player, LIFE_FORCE)) {
 						HellboundEngine.getInstance().updateTrust((int) getQuestItemsCount(player, LIFE_FORCE) * 80, true);
 						takeItems(player, LIFE_FORCE, -1);
 						htmltext = "32354-11c.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32354-11d.htm";
 					}
 				}
 				break;
 			}
-			case "clf":
-			{
-				if (HellboundEngine.getInstance().getLevel() == 7)
-				{
-					if (hasQuestItems(player, CONTAINED_LIFE_FORCE))
-					{
+			case "clf": {
+				if (HellboundEngine.getInstance().getLevel() == 7) {
+					if (hasQuestItems(player, CONTAINED_LIFE_FORCE)) {
 						HellboundEngine.getInstance().updateTrust((int) getQuestItemsCount(player, CONTAINED_LIFE_FORCE) * 200, true);
 						takeItems(player, CONTAINED_LIFE_FORCE, -1);
 						htmltext = "32354-11e.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32354-11f.htm";
 					}
 				}
@@ -149,10 +120,8 @@ public final class Kief extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		switch (HellboundEngine.getInstance().getLevel())
-		{
+	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+		switch (HellboundEngine.getInstance().getLevel()) {
 			case 1:
 				return "32354-01.htm";
 			case 2:

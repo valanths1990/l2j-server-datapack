@@ -31,54 +31,45 @@ import com.l2jserver.gameserver.model.itemcontainer.Inventory;
  * @author Plim, Adry_85
  * @since 2.6.0.0
  */
-public final class EchoCrystals extends AbstractNpcAI
-{
-	private static final class RewardInfo
-	{
+public final class EchoCrystals extends AbstractNpcAI {
+	private static final class RewardInfo {
 		public final int _crystalId;
 		public final String _okMsg;
 		public final String _noAdenaMsg;
 		public final String _noScoreMsg;
 		
-		public RewardInfo(int crystalId, String okMsg, String noAdenaMsg, String noScoreMsg)
-		{
+		public RewardInfo(int crystalId, String okMsg, String noAdenaMsg, String noScoreMsg) {
 			_crystalId = crystalId;
 			_okMsg = okMsg;
 			_noAdenaMsg = noAdenaMsg;
 			_noScoreMsg = noScoreMsg;
 		}
 		
-		public int getCrystalId()
-		{
+		public int getCrystalId() {
 			return _crystalId;
 		}
 		
-		public String getOkMsg()
-		{
+		public String getOkMsg() {
 			return _okMsg;
 		}
 		
-		public String getNoAdenaMsg()
-		{
+		public String getNoAdenaMsg() {
 			return _noAdenaMsg;
 		}
 		
-		public String getNoScoreMsg()
-		{
+		public String getNoScoreMsg() {
 			return _noScoreMsg;
 		}
 	}
 	
 	// NPCs
-	private final static int[] NPCs =
-	{
+	private final static int[] NPCs = {
 		31042, // Kantabilon
 		31043, // Octavia
 	};
 	
 	private static final Map<Integer, RewardInfo> SCORES = new HashMap<>();
-	static
-	{
+	static {
 		SCORES.put(4410, new RewardInfo(4411, "01", "02", "03"));
 		SCORES.put(4409, new RewardInfo(4412, "04", "05", "06"));
 		SCORES.put(4408, new RewardInfo(4413, "07", "08", "09"));
@@ -88,30 +79,22 @@ public final class EchoCrystals extends AbstractNpcAI
 		SCORES.put(4418, new RewardInfo(4416, "17", "02", "03"));
 	}
 	
-	private EchoCrystals()
-	{
+	private EchoCrystals() {
 		super(EchoCrystals.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPCs);
 		addTalkId(NPCs);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
 		final int score = Integer.valueOf(event);
-		if (SCORES.containsKey(score))
-		{
-			if (!hasQuestItems(player, score))
-			{
+		if (SCORES.containsKey(score)) {
+			if (!hasQuestItems(player, score)) {
 				htmltext = npc.getId() + "-" + SCORES.get(score).getNoScoreMsg() + ".htm";
-			}
-			else if (player.getAdena() < 200)
-			{
+			} else if (player.getAdena() < 200) {
 				htmltext = npc.getId() + "-" + SCORES.get(score).getNoAdenaMsg() + ".htm";
-			}
-			else
-			{
+			} else {
 				takeItems(player, Inventory.ADENA_ID, 200);
 				giveItems(player, SCORES.get(score).getCrystalId(), 1);
 				htmltext = npc.getId() + "-" + SCORES.get(score).getOkMsg() + ".htm";
@@ -120,8 +103,7 @@ public final class EchoCrystals extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new EchoCrystals();
 	}
 }

@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.util.Util;
  * Testimony Of Trust (217)
  * @author ivantotov
  */
-public final class Q00217_TestimonyOfTrust extends Quest
-{
+public final class Q00217_TestimonyOfTrust extends Quest {
 	// NPCs
 	private static final int HIGH_PRIEST_BIOTIN = 30031;
 	private static final int HIERARCH_ASTERIOS = 30154;
@@ -99,8 +98,7 @@ public final class Q00217_TestimonyOfTrust extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 37;
 	
-	public Q00217_TestimonyOfTrust()
-	{
+	public Q00217_TestimonyOfTrust() {
 		super(217, Q00217_TestimonyOfTrust.class.getSimpleName(), "Testimony Of Trust");
 		addStartNpc(HIGH_PRIEST_HOLLINT);
 		addTalkId(HIGH_PRIEST_HOLLINT, HIGH_PRIEST_BIOTIN, HIERARCH_ASTERIOS, TETRARCH_THIFIELL, MAGISTER_CLAYTON, SEER_MANAKIA, IRON_GATES_LOCKIRIN, FLAME_LORD_KAKAI, MAESTRO_NIKOLA, CARDINAL_SERESIN);
@@ -109,49 +107,38 @@ public final class Q00217_TestimonyOfTrust extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "ACCEPT": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					qs.setMemoState(1);
 					giveItems(player, LETTER_TO_ELF, 1);
 					giveItems(player, LETTER_TO_DARKELF, 1);
 					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
-					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
-					{
+					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0) {
 						giveItems(player, DIMENSIONAL_DIAMOND, 96);
 						player.getVariables().set("2ND_CLASS_DIAMOND_REWARD", 1);
 						htmltext = "30191-04a.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "30191-04.htm";
 					}
 				}
 				break;
 			}
 			case "30154-02.html":
-			case "30657-02.html":
-			{
+			case "30657-02.html": {
 				htmltext = event;
 				break;
 			}
-			case "30154-03.html":
-			{
-				if (hasQuestItems(player, LETTER_TO_ELF))
-				{
+			case "30154-03.html": {
+				if (hasQuestItems(player, LETTER_TO_ELF)) {
 					takeItems(player, LETTER_TO_ELF, 1);
 					giveItems(player, ORDER_OF_ASTERIOS, 1);
 					qs.setMemoState(2);
@@ -160,10 +147,8 @@ public final class Q00217_TestimonyOfTrust extends Quest
 				}
 				break;
 			}
-			case "30358-02.html":
-			{
-				if (hasQuestItems(player, LETTER_TO_DARKELF))
-				{
+			case "30358-02.html": {
+				if (hasQuestItems(player, LETTER_TO_DARKELF)) {
 					takeItems(player, LETTER_TO_DARKELF, 1);
 					giveItems(player, LETTER_OF_THIFIELL, 1);
 					qs.setMemoState(5);
@@ -172,10 +157,8 @@ public final class Q00217_TestimonyOfTrust extends Quest
 				}
 				break;
 			}
-			case "30515-02.html":
-			{
-				if (hasQuestItems(player, LETTER_TO_MANAKIA))
-				{
+			case "30515-02.html": {
+				if (hasQuestItems(player, LETTER_TO_MANAKIA)) {
 					takeItems(player, LETTER_TO_MANAKIA, 1);
 					qs.setMemoState(11);
 					qs.setCond(14, true);
@@ -183,10 +166,8 @@ public final class Q00217_TestimonyOfTrust extends Quest
 				}
 				break;
 			}
-			case "30531-02.html":
-			{
-				if (hasQuestItems(player, LETTER_TO_DWARF))
-				{
+			case "30531-02.html": {
+				if (hasQuestItems(player, LETTER_TO_DWARF)) {
 					takeItems(player, LETTER_TO_DWARF, 1);
 					giveItems(player, LETTER_TO_NICHOLA, 1);
 					qs.setMemoState(15);
@@ -195,10 +176,8 @@ public final class Q00217_TestimonyOfTrust extends Quest
 				}
 				break;
 			}
-			case "30565-02.html":
-			{
-				if (hasQuestItems(player, LETTER_TO_ORC))
-				{
+			case "30565-02.html": {
+				if (hasQuestItems(player, LETTER_TO_ORC)) {
 					takeItems(player, LETTER_TO_ORC, 1);
 					giveItems(player, LETTER_TO_MANAKIA, 1);
 					qs.setMemoState(10);
@@ -207,10 +186,8 @@ public final class Q00217_TestimonyOfTrust extends Quest
 				}
 				break;
 			}
-			case "30621-02.html":
-			{
-				if (hasQuestItems(player, LETTER_TO_NICHOLA))
-				{
+			case "30621-02.html": {
+				if (hasQuestItems(player, LETTER_TO_NICHOLA)) {
 					takeItems(player, LETTER_TO_NICHOLA, 1);
 					giveItems(player, ORDER_OF_NICHOLA, 1);
 					qs.setMemoState(16);
@@ -219,10 +196,8 @@ public final class Q00217_TestimonyOfTrust extends Quest
 				}
 				break;
 			}
-			case "30657-03.html":
-			{
-				if (qs.isMemoState(8) && hasQuestItems(player, LETTER_TO_SERESIN))
-				{
+			case "30657-03.html": {
+				if (qs.isMemoState(8) && hasQuestItems(player, LETTER_TO_SERESIN)) {
 					giveItems(player, LETTER_TO_DWARF, 1);
 					giveItems(player, LETTER_TO_ORC, 1);
 					takeItems(player, LETTER_TO_SERESIN, 1);
@@ -237,21 +212,15 @@ public final class Q00217_TestimonyOfTrust extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
 				case DRYAD:
-				case DRYAD_ELDER:
-				{
-					if (qs.isMemoState(2))
-					{
+				case DRYAD_ELDER: {
+					if (qs.isMemoState(2)) {
 						final int flag = killer.getVariables().getInt("flag", +1);
-						if (getRandom(100) < (flag * 33))
-						{
+						if (getRandom(100) < (flag * 33)) {
 							addSpawn(ACTEA_OF_VERDANT_WILDS, npc, true, 200000);
 							playSound(killer, Sound.ITEMSOUND_QUEST_BEFORE_BATTLE);
 						}
@@ -259,13 +228,10 @@ public final class Q00217_TestimonyOfTrust extends Quest
 					break;
 				}
 				case LIREIN:
-				case LIREIN_ELDER:
-				{
-					if (qs.isMemoState(2))
-					{
+				case LIREIN_ELDER: {
+					if (qs.isMemoState(2)) {
 						final int flag = killer.getVariables().getInt("flag", +1);
-						if (getRandom(100) < (flag * 33))
-						{
+						if (getRandom(100) < (flag * 33)) {
 							addSpawn(LUELL_OF_ZEPHYR_WINDS, npc, true, 200000);
 							playSound(killer, Sound.ITEMSOUND_QUEST_BEFORE_BATTLE);
 						}
@@ -273,22 +239,16 @@ public final class Q00217_TestimonyOfTrust extends Quest
 					break;
 				}
 				case ANT_RECRUIT:
-				case ANT_GUARD:
-				{
-					if (qs.isMemoState(6) && (getQuestItemsCount(killer, GIANT_APHID) < 5) && hasQuestItems(killer, ORDER_OF_CLAYTON) && !hasQuestItems(killer, HONEY_DEW))
-					{
-						if (getQuestItemsCount(killer, GIANT_APHID) >= 4)
-						{
+				case ANT_GUARD: {
+					if (qs.isMemoState(6) && (getQuestItemsCount(killer, GIANT_APHID) < 5) && hasQuestItems(killer, ORDER_OF_CLAYTON) && !hasQuestItems(killer, HONEY_DEW)) {
+						if (getQuestItemsCount(killer, GIANT_APHID) >= 4) {
 							giveItems(killer, HONEY_DEW, 1);
 							takeItems(killer, GIANT_APHID, -1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							if (hasQuestItems(killer, BASILISK_PLASMA, STAKATO_ICHOR))
-							{
+							if (hasQuestItems(killer, BASILISK_PLASMA, STAKATO_ICHOR)) {
 								qs.setCond(7);
 							}
-						}
-						else
-						{
+						} else {
 							giveItems(killer, GIANT_APHID, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
@@ -297,22 +257,16 @@ public final class Q00217_TestimonyOfTrust extends Quest
 				}
 				case ANT_PATROL:
 				case ANT_SOLDIER:
-				case ANT_WARRIOR_CAPTAIN:
-				{
-					if (qs.isMemoState(6) && (getQuestItemsCount(killer, GIANT_APHID) < 10) && hasQuestItems(killer, ORDER_OF_CLAYTON) && !hasQuestItems(killer, HONEY_DEW))
-					{
-						if (getQuestItemsCount(killer, GIANT_APHID) >= 4)
-						{
+				case ANT_WARRIOR_CAPTAIN: {
+					if (qs.isMemoState(6) && (getQuestItemsCount(killer, GIANT_APHID) < 10) && hasQuestItems(killer, ORDER_OF_CLAYTON) && !hasQuestItems(killer, HONEY_DEW)) {
+						if (getQuestItemsCount(killer, GIANT_APHID) >= 4) {
 							giveItems(killer, HONEY_DEW, 1);
 							takeItems(killer, GIANT_APHID, -1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							if (hasQuestItems(killer, BASILISK_PLASMA, STAKATO_ICHOR))
-							{
+							if (hasQuestItems(killer, BASILISK_PLASMA, STAKATO_ICHOR)) {
 								qs.setCond(7);
 							}
-						}
-						else
-						{
+						} else {
 							giveItems(killer, GIANT_APHID, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
@@ -320,22 +274,16 @@ public final class Q00217_TestimonyOfTrust extends Quest
 					break;
 				}
 				case MARSH_STAKATO:
-				case MARSH_STAKATO_WORKER:
-				{
-					if (qs.isMemoState(6) && (getQuestItemsCount(killer, STAKATOS_FLUIDS) < 10) && hasQuestItems(killer, ORDER_OF_CLAYTON) && !hasQuestItems(killer, STAKATO_ICHOR))
-					{
-						if (getQuestItemsCount(killer, STAKATOS_FLUIDS) >= 4)
-						{
+				case MARSH_STAKATO_WORKER: {
+					if (qs.isMemoState(6) && (getQuestItemsCount(killer, STAKATOS_FLUIDS) < 10) && hasQuestItems(killer, ORDER_OF_CLAYTON) && !hasQuestItems(killer, STAKATO_ICHOR)) {
+						if (getQuestItemsCount(killer, STAKATOS_FLUIDS) >= 4) {
 							giveItems(killer, STAKATO_ICHOR, 1);
 							takeItems(killer, STAKATOS_FLUIDS, -1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							if (hasQuestItems(killer, BASILISK_PLASMA, HONEY_DEW))
-							{
+							if (hasQuestItems(killer, BASILISK_PLASMA, HONEY_DEW)) {
 								qs.setCond(7);
 							}
-						}
-						else
-						{
+						} else {
 							giveItems(killer, STAKATOS_FLUIDS, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
@@ -343,109 +291,79 @@ public final class Q00217_TestimonyOfTrust extends Quest
 					break;
 				}
 				case MARSH_STAKATO_SOLDIER:
-				case MARSH_STAKATO_DRONE:
-				{
-					if (qs.isMemoState(6) && (getQuestItemsCount(killer, STAKATOS_FLUIDS) < 5) && hasQuestItems(killer, ORDER_OF_CLAYTON) && !hasQuestItems(killer, STAKATO_ICHOR))
-					{
-						if (getQuestItemsCount(killer, STAKATOS_FLUIDS) >= 4)
-						{
+				case MARSH_STAKATO_DRONE: {
+					if (qs.isMemoState(6) && (getQuestItemsCount(killer, STAKATOS_FLUIDS) < 5) && hasQuestItems(killer, ORDER_OF_CLAYTON) && !hasQuestItems(killer, STAKATO_ICHOR)) {
+						if (getQuestItemsCount(killer, STAKATOS_FLUIDS) >= 4) {
 							giveItems(killer, STAKATO_ICHOR, 1);
 							takeItems(killer, STAKATOS_FLUIDS, -1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							if (hasQuestItems(killer, BASILISK_PLASMA, HONEY_DEW))
-							{
+							if (hasQuestItems(killer, BASILISK_PLASMA, HONEY_DEW)) {
 								qs.setCond(7);
 							}
-						}
-						else
-						{
+						} else {
 							giveItems(killer, STAKATOS_FLUIDS, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case PORTA:
-				{
-					if (qs.isMemoState(16) && !hasQuestItems(killer, HEART_OF_PORTA))
-					{
+				case PORTA: {
+					if (qs.isMemoState(16) && !hasQuestItems(killer, HEART_OF_PORTA)) {
 						giveItems(killer, HEART_OF_PORTA, 1);
-						if (hasQuestItems(killer, HEART_OF_PORTA))
-						{
+						if (hasQuestItems(killer, HEART_OF_PORTA)) {
 							qs.setCond(20, true);
 						}
 					}
 					break;
 				}
-				case GUARDIAN_BASILISK:
-				{
-					if (qs.isMemoState(6) && (getQuestItemsCount(killer, BLOOD_OF_GUARDIAN_BASILISK) < 10) && hasQuestItems(killer, ORDER_OF_CLAYTON) && !hasQuestItems(killer, BASILISK_PLASMA))
-					{
-						if (getQuestItemsCount(killer, BLOOD_OF_GUARDIAN_BASILISK) >= 4)
-						{
+				case GUARDIAN_BASILISK: {
+					if (qs.isMemoState(6) && (getQuestItemsCount(killer, BLOOD_OF_GUARDIAN_BASILISK) < 10) && hasQuestItems(killer, ORDER_OF_CLAYTON) && !hasQuestItems(killer, BASILISK_PLASMA)) {
+						if (getQuestItemsCount(killer, BLOOD_OF_GUARDIAN_BASILISK) >= 4) {
 							giveItems(killer, BASILISK_PLASMA, 1);
 							takeItems(killer, BLOOD_OF_GUARDIAN_BASILISK, -1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							if (hasQuestItems(killer, STAKATO_ICHOR, HONEY_DEW))
-							{
+							if (hasQuestItems(killer, STAKATO_ICHOR, HONEY_DEW)) {
 								qs.setCond(7);
 							}
-						}
-						else
-						{
+						} else {
 							giveItems(killer, BLOOD_OF_GUARDIAN_BASILISK, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case WINDSUS:
-				{
-					if (qs.isMemoState(11) && (getQuestItemsCount(killer, PARASITE_OF_LOTA) < 10))
-					{
+				case WINDSUS: {
+					if (qs.isMemoState(11) && (getQuestItemsCount(killer, PARASITE_OF_LOTA) < 10)) {
 						giveItems(killer, PARASITE_OF_LOTA, 2);
-						if (getQuestItemsCount(killer, PARASITE_OF_LOTA) == 10)
-						{
+						if (getQuestItemsCount(killer, PARASITE_OF_LOTA) == 10) {
 							qs.setMemoState(12);
 							qs.setCond(15, true);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case LUELL_OF_ZEPHYR_WINDS:
-				{
-					if (qs.isMemoState(2) && !hasQuestItems(killer, BREATH_OF_WINDS))
-					{
-						if (hasQuestItems(killer, SEED_OF_VERDURE))
-						{
+				case LUELL_OF_ZEPHYR_WINDS: {
+					if (qs.isMemoState(2) && !hasQuestItems(killer, BREATH_OF_WINDS)) {
+						if (hasQuestItems(killer, SEED_OF_VERDURE)) {
 							giveItems(killer, BREATH_OF_WINDS, 1);
 							qs.setMemoState(3);
 							qs.setCond(3, true);
-						}
-						else
-						{
+						} else {
 							giveItems(killer, BREATH_OF_WINDS, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case ACTEA_OF_VERDANT_WILDS:
-				{
-					if (qs.isMemoState(2) && !hasQuestItems(killer, SEED_OF_VERDURE))
-					{
-						if (hasQuestItems(killer, BREATH_OF_WINDS))
-						{
+				case ACTEA_OF_VERDANT_WILDS: {
+					if (qs.isMemoState(2) && !hasQuestItems(killer, SEED_OF_VERDURE)) {
+						if (hasQuestItems(killer, BREATH_OF_WINDS)) {
 							giveItems(killer, SEED_OF_VERDURE, 1);
 							qs.setMemoState(3);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
+						} else {
 							giveItems(killer, SEED_OF_VERDURE, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
@@ -458,47 +376,29 @@ public final class Q00217_TestimonyOfTrust extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		final int memoState = qs.getMemoState();
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (npc.getId() == HIGH_PRIEST_HOLLINT)
-			{
-				if ((player.getRace() == Race.HUMAN) && (player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.HUMAN_2ND_GROUP))
-				{
+		if (qs.isCreated()) {
+			if (npc.getId() == HIGH_PRIEST_HOLLINT) {
+				if ((player.getRace() == Race.HUMAN) && (player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.HUMAN_2ND_GROUP)) {
 					htmltext = "30191-03.htm";
-				}
-				else if ((player.getRace() == Race.HUMAN) && (player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.FIRST_CLASS_GROUP))
-				{
+				} else if ((player.getRace() == Race.HUMAN) && (player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.FIRST_CLASS_GROUP)) {
 					htmltext = "30191-01a.html";
-				}
-				else if ((player.getRace() == Race.HUMAN) && (player.getLevel() >= MIN_LEVEL))
-				{
+				} else if ((player.getRace() == Race.HUMAN) && (player.getLevel() >= MIN_LEVEL)) {
 					htmltext = "30191-01b.html";
-				}
-				else if ((player.getRace() == Race.HUMAN))
-				{
+				} else if ((player.getRace() == Race.HUMAN)) {
 					htmltext = "30191-01.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30191-02.html";
 				}
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case HIGH_PRIEST_HOLLINT:
-				{
-					if (memoState == 7)
-					{
-						if (hasQuestItems(player, SCROLL_OF_ELF_TRUST, SCROLL_OF_DARKELF_TRUST))
-						{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case HIGH_PRIEST_HOLLINT: {
+					if (memoState == 7) {
+						if (hasQuestItems(player, SCROLL_OF_ELF_TRUST, SCROLL_OF_DARKELF_TRUST)) {
 							giveItems(player, LETTER_TO_SERESIN, 1);
 							takeItems(player, SCROLL_OF_DARKELF_TRUST, 1);
 							takeItems(player, SCROLL_OF_ELF_TRUST, 1);
@@ -506,11 +406,8 @@ public final class Q00217_TestimonyOfTrust extends Quest
 							qs.setCond(10, true);
 							htmltext = "30191-05.html";
 						}
-					}
-					else if (memoState == 18)
-					{
-						if (hasQuestItems(player, SCROLL_OF_DWARF_TRUST, SCROLL_OF_ORC_TRUST))
-						{
+					} else if (memoState == 18) {
+						if (hasQuestItems(player, SCROLL_OF_DWARF_TRUST, SCROLL_OF_ORC_TRUST)) {
 							takeItems(player, SCROLL_OF_DWARF_TRUST, 1);
 							takeItems(player, SCROLL_OF_ORC_TRUST, 1);
 							giveItems(player, RECOMMENDATION_OF_HOLLIN, 1);
@@ -518,27 +415,18 @@ public final class Q00217_TestimonyOfTrust extends Quest
 							qs.setCond(23, true);
 							htmltext = "30191-06.html";
 						}
-					}
-					else if (memoState == 19)
-					{
+					} else if (memoState == 19) {
 						htmltext = "30191-07.html";
-					}
-					else if (memoState == 1)
-					{
+					} else if (memoState == 1) {
 						htmltext = "30191-08.html";
-					}
-					else if (memoState == 8)
-					{
+					} else if (memoState == 8) {
 						htmltext = "30191-09.html";
 					}
 					break;
 				}
-				case HIGH_PRIEST_BIOTIN:
-				{
-					if (memoState == 19)
-					{
-						if (hasQuestItems(player, RECOMMENDATION_OF_HOLLIN))
-						{
+				case HIGH_PRIEST_BIOTIN: {
+					if (memoState == 19) {
+						if (hasQuestItems(player, RECOMMENDATION_OF_HOLLIN)) {
 							giveAdena(player, 252212, true);
 							giveItems(player, MARK_OF_TRUST, 1);
 							addExpAndSp(player, 1390298, 92782);
@@ -549,26 +437,17 @@ public final class Q00217_TestimonyOfTrust extends Quest
 					}
 					break;
 				}
-				case HIERARCH_ASTERIOS:
-				{
-					if (memoState == 1)
-					{
-						if (hasQuestItems(player, LETTER_TO_ELF))
-						{
+				case HIERARCH_ASTERIOS: {
+					if (memoState == 1) {
+						if (hasQuestItems(player, LETTER_TO_ELF)) {
 							htmltext = "30154-01.html";
 						}
-					}
-					else if (memoState == 2)
-					{
-						if (hasQuestItems(player, ORDER_OF_ASTERIOS))
-						{
+					} else if (memoState == 2) {
+						if (hasQuestItems(player, ORDER_OF_ASTERIOS)) {
 							htmltext = "30154-04.html";
 						}
-					}
-					else if (memoState == 3)
-					{
-						if (hasQuestItems(player, BREATH_OF_WINDS, SEED_OF_VERDURE))
-						{
+					} else if (memoState == 3) {
+						if (hasQuestItems(player, BREATH_OF_WINDS, SEED_OF_VERDURE)) {
 							giveItems(player, SCROLL_OF_ELF_TRUST, 1);
 							takeItems(player, ORDER_OF_ASTERIOS, 1);
 							takeItems(player, BREATH_OF_WINDS, 1);
@@ -577,26 +456,18 @@ public final class Q00217_TestimonyOfTrust extends Quest
 							qs.setCond(4, true);
 							htmltext = "30154-05.html";
 						}
-					}
-					else if (memoState == 4)
-					{
+					} else if (memoState == 4) {
 						htmltext = "30154-06.html";
 					}
 					break;
 				}
-				case TETRARCH_THIFIELL:
-				{
-					if (memoState == 4)
-					{
-						if (hasQuestItems(player, LETTER_TO_DARKELF))
-						{
+				case TETRARCH_THIFIELL: {
+					if (memoState == 4) {
+						if (hasQuestItems(player, LETTER_TO_DARKELF)) {
 							htmltext = "30358-01.html";
 						}
-					}
-					else if (memoState == 6)
-					{
-						if (hasQuestItems(player, ORDER_OF_CLAYTON) && ((getQuestItemsCount(player, STAKATO_ICHOR) + getQuestItemsCount(player, HONEY_DEW) + getQuestItemsCount(player, BASILISK_PLASMA)) == 3))
-						{
+					} else if (memoState == 6) {
+						if (hasQuestItems(player, ORDER_OF_CLAYTON) && ((getQuestItemsCount(player, STAKATO_ICHOR) + getQuestItemsCount(player, HONEY_DEW) + getQuestItemsCount(player, BASILISK_PLASMA)) == 3)) {
 							giveItems(player, SCROLL_OF_DARKELF_TRUST, 1);
 							takeItems(player, BASILISK_PLASMA, -1);
 							takeItems(player, HONEY_DEW, -1);
@@ -606,179 +477,120 @@ public final class Q00217_TestimonyOfTrust extends Quest
 							qs.setCond(9, true);
 							htmltext = "30358-03.html";
 						}
-					}
-					else if (memoState == 7)
-					{
+					} else if (memoState == 7) {
 						htmltext = "30358-04.html";
-					}
-					else if (memoState == 5)
-					{
+					} else if (memoState == 5) {
 						htmltext = "30358-05.html";
 					}
 					break;
 				}
-				case MAGISTER_CLAYTON:
-				{
-					if (memoState == 5)
-					{
-						if (hasQuestItems(player, LETTER_OF_THIFIELL))
-						{
+				case MAGISTER_CLAYTON: {
+					if (memoState == 5) {
+						if (hasQuestItems(player, LETTER_OF_THIFIELL)) {
 							takeItems(player, LETTER_OF_THIFIELL, 1);
 							giveItems(player, ORDER_OF_CLAYTON, 1);
 							qs.setMemoState(6);
 							qs.setCond(6, true);
 							htmltext = "30464-01.html";
 						}
-					}
-					else if (memoState == 6)
-					{
-						if (hasQuestItems(player, ORDER_OF_CLAYTON) && ((getQuestItemsCount(player, STAKATO_ICHOR) + getQuestItemsCount(player, HONEY_DEW) + getQuestItemsCount(player, BASILISK_PLASMA)) < 3))
-						{
+					} else if (memoState == 6) {
+						if (hasQuestItems(player, ORDER_OF_CLAYTON) && ((getQuestItemsCount(player, STAKATO_ICHOR) + getQuestItemsCount(player, HONEY_DEW) + getQuestItemsCount(player, BASILISK_PLASMA)) < 3)) {
 							htmltext = "30464-02.html";
-						}
-						else
-						{
+						} else {
 							qs.setCond(8, true);
 							htmltext = "30464-03.html";
 						}
 					}
 					break;
 				}
-				case SEER_MANAKIA:
-				{
-					if (hasQuestItems(player, LETTER_TO_MANAKIA))
-					{
+				case SEER_MANAKIA: {
+					if (hasQuestItems(player, LETTER_TO_MANAKIA)) {
 						htmltext = "30515-01.html";
-					}
-					else if (memoState == 11)
-					{
+					} else if (memoState == 11) {
 						htmltext = "30515-03.html";
-					}
-					else if (memoState == 12)
-					{
-						if (getQuestItemsCount(player, PARASITE_OF_LOTA) == 10)
-						{
+					} else if (memoState == 12) {
+						if (getQuestItemsCount(player, PARASITE_OF_LOTA) == 10) {
 							takeItems(player, PARASITE_OF_LOTA, -1);
 							giveItems(player, LETTER_OF_MANAKIA, 1);
 							qs.setMemoState(13);
 							qs.setCond(16, true);
 							htmltext = "30515-04.html";
 						}
-					}
-					else if (memoState == 13)
-					{
+					} else if (memoState == 13) {
 						htmltext = "30515-05.html";
 					}
 					break;
 				}
-				case IRON_GATES_LOCKIRIN:
-				{
-					if (memoState == 14)
-					{
-						if (hasQuestItems(player, LETTER_TO_DWARF))
-						{
+				case IRON_GATES_LOCKIRIN: {
+					if (memoState == 14) {
+						if (hasQuestItems(player, LETTER_TO_DWARF)) {
 							htmltext = "30531-01.html";
 						}
-					}
-					else if (memoState == 15)
-					{
+					} else if (memoState == 15) {
 						htmltext = "30531-03.html";
-					}
-					else if (memoState == 17)
-					{
+					} else if (memoState == 17) {
 						giveItems(player, SCROLL_OF_DWARF_TRUST, 1);
 						qs.setMemoState(18);
 						qs.setCond(22, true);
 						htmltext = "30531-04.html";
-					}
-					else if (memoState == 18)
-					{
+					} else if (memoState == 18) {
 						htmltext = "30531-05.html";
 					}
 					break;
 				}
-				case FLAME_LORD_KAKAI:
-				{
-					if (memoState == 9)
-					{
-						if (hasQuestItems(player, LETTER_TO_ORC))
-						{
+				case FLAME_LORD_KAKAI: {
+					if (memoState == 9) {
+						if (hasQuestItems(player, LETTER_TO_ORC)) {
 							htmltext = "30565-01.html";
 						}
-					}
-					else if (memoState == 10)
-					{
+					} else if (memoState == 10) {
 						htmltext = "30565-03.html";
-					}
-					else if (memoState == 13)
-					{
+					} else if (memoState == 13) {
 						giveItems(player, SCROLL_OF_ORC_TRUST, 1);
 						takeItems(player, LETTER_OF_MANAKIA, 1);
 						qs.setMemoState(14);
 						qs.setCond(17, true);
 						htmltext = "30565-04.html";
-					}
-					else if (memoState == 14)
-					{
+					} else if (memoState == 14) {
 						htmltext = "30565-05.html";
 					}
 					break;
 				}
-				case MAESTRO_NIKOLA:
-				{
-					if (memoState == 15)
-					{
-						if (hasQuestItems(player, LETTER_TO_NICHOLA))
-						{
+				case MAESTRO_NIKOLA: {
+					if (memoState == 15) {
+						if (hasQuestItems(player, LETTER_TO_NICHOLA)) {
 							htmltext = "30621-01.html";
 						}
-					}
-					else if (memoState == 16)
-					{
-						if (!hasQuestItems(player, HEART_OF_PORTA))
-						{
+					} else if (memoState == 16) {
+						if (!hasQuestItems(player, HEART_OF_PORTA)) {
 							htmltext = "30621-03.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, ORDER_OF_NICHOLA, 1);
 							takeItems(player, HEART_OF_PORTA, 1);
 							qs.setMemoState(17);
 							qs.setCond(21, true);
 							htmltext = "30621-04.html";
 						}
-					}
-					else if (memoState == 17)
-					{
+					} else if (memoState == 17) {
 						htmltext = "30621-05.html";
 					}
 					break;
 				}
-				case CARDINAL_SERESIN:
-				{
-					if (memoState == 8)
-					{
-						if (hasQuestItems(player, LETTER_TO_SERESIN))
-						{
+				case CARDINAL_SERESIN: {
+					if (memoState == 8) {
+						if (hasQuestItems(player, LETTER_TO_SERESIN)) {
 							htmltext = "30657-01.html";
 						}
-					}
-					else if (memoState == 9)
-					{
+					} else if (memoState == 9) {
 						htmltext = "30657-04.html";
-					}
-					else if (memoState == 18)
-					{
+					} else if (memoState == 18) {
 						htmltext = "30657-05.html";
 					}
 					break;
 				}
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == HIGH_PRIEST_HOLLINT)
-			{
+		} else if (qs.isCompleted()) {
+			if (npc.getId() == HIGH_PRIEST_HOLLINT) {
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}

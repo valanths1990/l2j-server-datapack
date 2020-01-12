@@ -30,13 +30,11 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Run Away effect implementation.
  * @author Zoey76
  */
-public final class RunAway extends AbstractEffect
-{
+public final class RunAway extends AbstractEffect {
 	private final int _power;
 	private final int _time;
 	
-	public RunAway(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public RunAway(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getInt("power", 0);
@@ -45,26 +43,21 @@ public final class RunAway extends AbstractEffect
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (!info.getEffected().isAttackable())
-		{
+	public void onStart(BuffInfo info) {
+		if (!info.getEffected().isAttackable()) {
 			return;
 		}
 		
-		if (Rnd.get(100) > _power)
-		{
+		if (Rnd.get(100) > _power) {
 			return;
 		}
 		
-		if (info.getEffected().isCastingNow() && info.getEffected().canAbortCast())
-		{
+		if (info.getEffected().isCastingNow() && info.getEffected().canAbortCast()) {
 			info.getEffected().abortCast();
 		}
 		

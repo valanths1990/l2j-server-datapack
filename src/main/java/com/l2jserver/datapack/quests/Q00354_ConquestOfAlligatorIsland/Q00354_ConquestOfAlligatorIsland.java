@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Conquest of Alligator Island (354)
  * @author Adry_85
  */
-public final class Q00354_ConquestOfAlligatorIsland extends Quest
-{
+public final class Q00354_ConquestOfAlligatorIsland extends Quest {
 	// NPC
 	private static final int KLUCK = 30895;
 	// Items
@@ -43,8 +42,7 @@ public final class Q00354_ConquestOfAlligatorIsland extends Quest
 	// Mobs
 	private static final Map<Integer, Double> MOB1 = new HashMap<>();
 	private static final Map<Integer, Integer> MOB2 = new HashMap<>();
-	static
-	{
+	static {
 		MOB1.put(20804, 0.84); // crokian_lad
 		MOB1.put(20805, 0.91); // dailaon_lad
 		MOB1.put(20806, 0.88); // crokian_lad_warrior
@@ -53,8 +51,7 @@ public final class Q00354_ConquestOfAlligatorIsland extends Quest
 		MOB2.put(20991, 69); // tribe_of_swamp
 	}
 	
-	public Q00354_ConquestOfAlligatorIsland()
-	{
+	public Q00354_ConquestOfAlligatorIsland() {
 		super(354, Q00354_ConquestOfAlligatorIsland.class.getSimpleName(), "Conquest of Alligator Island");
 		addStartNpc(KLUCK);
 		addTalkId(KLUCK);
@@ -64,68 +61,52 @@ public final class Q00354_ConquestOfAlligatorIsland extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "30895-04.html":
 			case "30895-05.html":
-			case "30895-09.html":
-			{
+			case "30895-09.html": {
 				htmltext = event;
 				break;
 			}
-			case "30895-02.html":
-			{
+			case "30895-02.html": {
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "ADENA":
-			{
+			case "ADENA": {
 				final long count = st.getQuestItemsCount(ALLIGATOR_TOOTH);
-				if (count >= 100)
-				{
+				if (count >= 100) {
 					st.giveAdena((count * 220) + 10700, true);
 					st.takeItems(ALLIGATOR_TOOTH, -1);
 					htmltext = "30895-06.html";
-				}
-				else if (count > 0)
-				{
+				} else if (count > 0) {
 					st.giveAdena((count * 220) + 3100, true);
 					st.takeItems(ALLIGATOR_TOOTH, -1);
 					htmltext = "30895-07.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30895-08.html";
 				}
 				break;
 			}
-			case "30895-10.html":
-			{
+			case "30895-10.html": {
 				st.exitQuest(true, true);
 				htmltext = event;
 				break;
 			}
-			case "REWARD":
-			{
+			case "REWARD": {
 				final long count = st.getQuestItemsCount(MYSTERIOUS_MAP_PIECE);
-				if (count >= 10)
-				{
+				if (count >= 10) {
 					st.giveItems(PIRATES_TREASURE_MAP, 1);
 					st.takeItems(MYSTERIOUS_MAP_PIECE, 10);
 					htmltext = "30895-13.html";
-				}
-				else if (count > 0)
-				{
+				} else if (count > 0) {
 					htmltext = "30895-12.html";
 				}
 				break;
@@ -135,18 +116,13 @@ public final class Q00354_ConquestOfAlligatorIsland extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getRandomPartyMemberState(player, -1, 3, npc);
-		if (st != null)
-		{
+		if (st != null) {
 			int npcId = npc.getId();
-			if (MOB1.containsKey(npcId))
-			{
+			if (MOB1.containsKey(npcId)) {
 				st.giveItemRandomly(npc, ALLIGATOR_TOOTH, 1, 0, MOB1.get(npcId), true);
-			}
-			else
-			{
+			} else {
 				final int itemCount = ((getRandom(100) < MOB2.get(npcId)) ? 2 : 1);
 				st.giveItemRandomly(npc, ALLIGATOR_TOOTH, itemCount, 0, 1.0, true);
 			}
@@ -157,16 +133,12 @@ public final class Q00354_ConquestOfAlligatorIsland extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st.isCreated())
-		{
+		if (st.isCreated()) {
 			htmltext = ((player.getLevel() >= MIN_LEVEL) ? "30895-01.htm" : "30895-03.html");
-		}
-		else if (st.isStarted())
-		{
+		} else if (st.isStarted()) {
 			htmltext = (st.hasQuestItems(MYSTERIOUS_MAP_PIECE) ? "30895-11.html" : "30895-04.html");
 		}
 		return htmltext;

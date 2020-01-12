@@ -31,13 +31,11 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class TickHpFatal extends AbstractEffect
-{
+public final class TickHpFatal extends AbstractEffect {
 	private final double _power;
 	private final EffectCalculationType _mode;
 	
-	public TickHpFatal(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public TickHpFatal(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
@@ -46,30 +44,24 @@ public final class TickHpFatal extends AbstractEffect
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.DMG_OVER_TIME;
 	}
 	
 	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		if (info.getEffected().isDead())
-		{
+	public boolean onActionTime(BuffInfo info) {
+		if (info.getEffected().isDead()) {
 			return false;
 		}
 		
 		final L2Character target = info.getEffected();
 		double damage = 0;
-		switch (_mode)
-		{
-			case DIFF:
-			{
+		switch (_mode) {
+			case DIFF: {
 				damage = _power * getTicksMultiplier();
 				break;
 			}
-			case PER:
-			{
+			case PER: {
 				damage = target.getCurrentHp() * _power * getTicksMultiplier();
 				break;
 			}

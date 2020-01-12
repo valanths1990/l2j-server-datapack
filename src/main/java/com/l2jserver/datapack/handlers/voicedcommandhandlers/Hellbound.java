@@ -26,18 +26,14 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Hellbound voiced command.
  * @author DS
  */
-public class Hellbound implements IVoicedCommandHandler
-{
-	private static final String[] VOICED_COMMANDS =
-	{
+public class Hellbound implements IVoicedCommandHandler {
+	private static final String[] VOICED_COMMANDS = {
 		"hellbound"
 	};
 	
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
-	{
-		if (HellboundEngine.getInstance().isLocked())
-		{
+	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params) {
+		if (HellboundEngine.getInstance().isLocked()) {
 			activeChar.sendMessage("Hellbound is currently locked.");
 			return true;
 		}
@@ -48,8 +44,7 @@ public class Hellbound implements IVoicedCommandHandler
 	}
 	
 	@Override
-	public String[] getVoicedCommandList()
-	{
+	public String[] getVoicedCommandList() {
 		return VOICED_COMMANDS;
 	}
 }

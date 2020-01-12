@@ -26,11 +26,9 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Castle Siege Manager AI.
  * @author St3eT
  */
-public final class CastleSiegeManager extends AbstractNpcAI
-{
+public final class CastleSiegeManager extends AbstractNpcAI {
 	// NPCs
-	private static final int[] SIEGE_MANAGER =
-	{
+	private static final int[] SIEGE_MANAGER = {
 		35104, // Gludio Castle
 		35146, // Dion Castle
 		35188, // Giran Castle
@@ -44,60 +42,42 @@ public final class CastleSiegeManager extends AbstractNpcAI
 		35420, // Devastated Castle
 	};
 	
-	private CastleSiegeManager()
-	{
+	private CastleSiegeManager() {
 		super(CastleSiegeManager.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(SIEGE_MANAGER);
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (player.isClanLeader() && (player.getClanId() == npc.getCastle().getOwnerId()))
-		{
-			if (isInSiege(npc))
-			{
+		if (player.isClanLeader() && (player.getClanId() == npc.getCastle().getOwnerId())) {
+			if (isInSiege(npc)) {
 				htmltext = "CastleSiegeManager.html";
-			}
-			else
-			{
+			} else {
 				htmltext = "CastleSiegeManager-01.html";
 			}
-		}
-		else if (isInSiege(npc))
-		{
+		} else if (isInSiege(npc)) {
 			htmltext = "CastleSiegeManager-02.html";
-		}
-		else
-		{
-			if (npc.getConquerableHall() != null)
-			{
+		} else {
+			if (npc.getConquerableHall() != null) {
 				npc.getConquerableHall().showSiegeInfo(player);
-			}
-			else
-			{
+			} else {
 				npc.getCastle().getSiege().listRegisterClan(player);
 			}
 		}
 		return htmltext;
 	}
 	
-	private boolean isInSiege(L2Npc npc)
-	{
-		if ((npc.getConquerableHall() != null) && npc.getConquerableHall().isInSiege())
-		{
+	private boolean isInSiege(L2Npc npc) {
+		if ((npc.getConquerableHall() != null) && npc.getConquerableHall().isInSiege()) {
 			return true;
-		}
-		else if (npc.getCastle().getSiege().isInProgress())
-		{
+		} else if (npc.getCastle().getSiege().isInProgress()) {
 			return true;
 		}
 		return false;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new CastleSiegeManager();
 	}
 }

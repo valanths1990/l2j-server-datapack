@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.util.Util;
  * @author Zoey76
  * @since 2.6.0.0
  */
-public class ShadowSummoner extends AbstractNpcAI
-{
+public class ShadowSummoner extends AbstractNpcAI {
 	// NPCs
 	private static final int SHADOW_SUMMONER = 25722;
 	private static final int DEMONS_BANQUET_1 = 25730;
@@ -53,23 +52,19 @@ public class ShadowSummoner extends AbstractNpcAI
 	private static final int MAX_CHASE_DIST = 2500;
 	private static final double MIN_HP_PERCENTAGE = 0.25;
 	
-	public ShadowSummoner()
-	{
+	public ShadowSummoner() {
 		super(ShadowSummoner.class.getSimpleName(), "ai/individual");
 		addAttackId(SHADOW_SUMMONER);
 		addSeeCreatureId(SHADOW_SUMMONER);
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if (Util.calculateDistance(npc, npc.getSpawn(), false, false) > MAX_CHASE_DIST)
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if (Util.calculateDistance(npc, npc.getSpawn(), false, false) > MAX_CHASE_DIST) {
 			npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ());
 		}
 		
-		if ((npc.getCurrentHp() < (npc.getMaxHp() * MIN_HP_PERCENTAGE)) && !npc.getVariables().getBoolean(LOW_HP_FLAG, false))
-		{
+		if ((npc.getCurrentHp() < (npc.getMaxHp() * MIN_HP_PERCENTAGE)) && !npc.getVariables().getBoolean(LOW_HP_FLAG, false)) {
 			npc.getVariables().set(LOW_HP_FLAG, true);
 			startQuestTimer(SUMMON_TIMER, 1000, npc, attacker);
 			startQuestTimer(FEED_TIMER, 30000, npc, attacker);
@@ -79,12 +74,9 @@ public class ShadowSummoner extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
-	{
-		if (!creature.isPlayer())
-		{
-			if (creature.getId() == DEMONS_BANQUET_2)
-			{
+	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon) {
+		if (!creature.isPlayer()) {
+			if (creature.getId() == DEMONS_BANQUET_2) {
 				((L2Attackable) npc).clearAggroList();
 				addAttackDesire(npc, creature, 9999999999999999L);
 			}
@@ -93,35 +85,24 @@ public class ShadowSummoner extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (npc.isDead())
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (npc.isDead()) {
 			return super.onAdvEvent(event, npc, player);
 		}
 		
-		if (SUMMON_TIMER.equals(event))
-		{
-			if (!npc.getVariables().getBoolean(LIMIT_FLAG, false))
-			{
+		if (SUMMON_TIMER.equals(event)) {
+			if (!npc.getVariables().getBoolean(LIMIT_FLAG, false)) {
 				startQuestTimer(DELAY_TIMER, 5000, npc, player);
 				startQuestTimer(SUMMON_TIMER, 30000, npc, player);
 			}
-		}
-		else if (FEED_TIMER.equals(event))
-		{
-			if (!npc.getVariables().getBoolean(LIMIT_FLAG, false))
-			{
+		} else if (FEED_TIMER.equals(event)) {
+			if (!npc.getVariables().getBoolean(LIMIT_FLAG, false)) {
 				npc.getAI().setIntention(AI_INTENTION_ATTACK);
 				startQuestTimer(FEED_TIMER, 30000, npc, player);
 			}
-		}
-		else if (LIMIT_TIMER.equals(event))
-		{
+		} else if (LIMIT_TIMER.equals(event)) {
 			npc.getVariables().set(LIMIT_FLAG, true);
-		}
-		else if (DELAY_TIMER.equals(event))
-		{
+		} else if (DELAY_TIMER.equals(event)) {
 			addSkillCastDesire(npc, npc, SUMMON_SKELETON, 9999999999900000L);
 			final L2Npc demonsBanquet = addSpawn(getRandom(2) < 1 ? DEMONS_BANQUET_1 : DEMONS_BANQUET_2, npc.getX() + 150, npc.getY() + 150, npc.getZ(), npc.getHeading(), false, 0);
 			addAttackDesire(demonsBanquet, player, 10000);
@@ -129,8 +110,7 @@ public class ShadowSummoner extends AbstractNpcAI
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new ShadowSummoner();
 	}
 }

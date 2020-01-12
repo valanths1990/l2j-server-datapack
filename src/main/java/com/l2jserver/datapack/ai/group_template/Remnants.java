@@ -28,10 +28,8 @@ import com.l2jserver.gameserver.model.skills.Skill;
  * Remnants AI.
  * @author DS
  */
-public final class Remnants extends AbstractNpcAI
-{
-	private static final int[] NPCS =
-	{
+public final class Remnants extends AbstractNpcAI {
+	private static final int[] NPCS = {
 		18463,
 		18464,
 		18465
@@ -41,8 +39,7 @@ public final class Remnants extends AbstractNpcAI
 	// TODO: Find retail strings.
 	// private static final String MSG = "The holy water affects Remnants Ghost. You have freed his soul.";
 	// private static final String MSG_DEREK = "The holy water affects Derek. You have freed his soul.";
-	private Remnants()
-	{
+	private Remnants() {
 		super(Remnants.class.getSimpleName(), "ai/group_template");
 		addSpawnId(NPCS);
 		addSkillSeeId(NPCS);
@@ -50,21 +47,16 @@ public final class Remnants extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		npc.setIsMortal(false);
 		return super.onSpawn(npc);
 	}
 	
 	@Override
-	public final String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
-	{
-		if (skill.getId() == SKILL_HOLY_WATER)
-		{
-			if (!npc.isDead())
-			{
-				if ((targets.length > 0) && (targets[0] == npc))
-				{
+	public final String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon) {
+		if (skill.getId() == SKILL_HOLY_WATER) {
+			if (!npc.isDead()) {
+				if ((targets.length > 0) && (targets[0] == npc)) {
 					if (npc.getCurrentHp() < (npc.getMaxHp() * 0.02)) // Lower, than 2%
 					{
 						npc.doDie(caster);
@@ -85,8 +77,7 @@ public final class Remnants extends AbstractNpcAI
 		return super.onSkillSee(npc, caster, skill, targets, isSummon);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Remnants();
 	}
 }

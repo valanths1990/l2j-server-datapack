@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * Test Of The Champion (223)
  * @author ivantotov
  */
-public final class Q00223_TestOfTheChampion extends Quest
-{
+public final class Q00223_TestOfTheChampion extends Quest {
 	// NPCs
 	private static final int TRADER_GROOT = 30093;
 	private static final int CAPTAIN_MOUEN = 30196;
@@ -76,8 +75,7 @@ public final class Q00223_TestOfTheChampion extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 39;
 	
-	public Q00223_TestOfTheChampion()
-	{
+	public Q00223_TestOfTheChampion() {
 		super(223, Q00223_TestOfTheChampion.class.getSimpleName(), "Test Of The Champion");
 		addStartNpc(VETERAN_ASCALON);
 		addTalkId(VETERAN_ASCALON, TRADER_GROOT, CAPTAIN_MOUEN, MASON);
@@ -87,39 +85,28 @@ public final class Q00223_TestOfTheChampion extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "ACCEPT": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					giveItems(player, ASCALONS_1ST_LETTER, 1);
-					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
-					{
-						if (player.getClassId() == ClassId.warrior)
-						{
+					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0) {
+						if (player.getClassId() == ClassId.warrior) {
 							giveItems(player, DIMENSIONAL_DIAMOND, 72);
-						}
-						else
-						{
+						} else {
 							giveItems(player, DIMENSIONAL_DIAMOND, 64);
 						}
 						player.getVariables().set("2ND_CLASS_DIAMOND_REWARD", 1);
 						htmltext = "30624-06a.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "30624-06.htm";
 					}
 				}
@@ -127,15 +114,12 @@ public final class Q00223_TestOfTheChampion extends Quest
 			}
 			case "30624-05.htm":
 			case "30196-02.html":
-			case "30625-02.html":
-			{
+			case "30625-02.html": {
 				htmltext = event;
 				break;
 			}
-			case "30624-10.html":
-			{
-				if (hasQuestItems(player, MASONS_LETTER))
-				{
+			case "30624-10.html": {
+				if (hasQuestItems(player, MASONS_LETTER)) {
 					takeItems(player, MASONS_LETTER, 1);
 					giveItems(player, ASCALONS_2ND_LETTER, 1);
 					qs.setCond(5, true);
@@ -143,10 +127,8 @@ public final class Q00223_TestOfTheChampion extends Quest
 				}
 				break;
 			}
-			case "30624-14.html":
-			{
-				if (hasQuestItems(player, GROOTS_LETTER))
-				{
+			case "30624-14.html": {
+				if (hasQuestItems(player, GROOTS_LETTER)) {
 					takeItems(player, GROOTS_LETTER, 1);
 					giveItems(player, ASCALONS_3RD_LETTER, 1);
 					qs.setCond(9, true);
@@ -154,10 +136,8 @@ public final class Q00223_TestOfTheChampion extends Quest
 				}
 				break;
 			}
-			case "30093-02.html":
-			{
-				if (hasQuestItems(player, ASCALONS_2ND_LETTER))
-				{
+			case "30093-02.html": {
+				if (hasQuestItems(player, ASCALONS_2ND_LETTER)) {
 					takeItems(player, ASCALONS_2ND_LETTER, 1);
 					giveItems(player, WHITE_ROSE_INSIGNIA, 1);
 					qs.setCond(6, true);
@@ -165,10 +145,8 @@ public final class Q00223_TestOfTheChampion extends Quest
 				}
 				break;
 			}
-			case "30196-03.html":
-			{
-				if (hasQuestItems(player, ASCALONS_3RD_LETTER))
-				{
+			case "30196-03.html": {
+				if (hasQuestItems(player, ASCALONS_3RD_LETTER)) {
 					takeItems(player, ASCALONS_3RD_LETTER, 1);
 					giveItems(player, MOUENS_1ST_ORDER, 1);
 					qs.setCond(10, true);
@@ -176,10 +154,8 @@ public final class Q00223_TestOfTheChampion extends Quest
 				}
 				break;
 			}
-			case "30196-06.html":
-			{
-				if (getQuestItemsCount(player, ROAD_RATMAN_HEAD) >= 10)
-				{
+			case "30196-06.html": {
+				if (getQuestItemsCount(player, ROAD_RATMAN_HEAD) >= 10) {
 					takeItems(player, MOUENS_1ST_ORDER, 1);
 					giveItems(player, MOUENS_2ND_ORDER, 1);
 					takeItems(player, ROAD_RATMAN_HEAD, -1);
@@ -188,10 +164,8 @@ public final class Q00223_TestOfTheChampion extends Quest
 				}
 				break;
 			}
-			case "30625-03.html":
-			{
-				if (hasQuestItems(player, ASCALONS_1ST_LETTER))
-				{
+			case "30625-03.html": {
+				if (hasQuestItems(player, ASCALONS_1ST_LETTER)) {
 					takeItems(player, ASCALONS_1ST_LETTER, 1);
 					giveItems(player, IRON_ROSE_RING, 1);
 					qs.setCond(2, true);
@@ -204,30 +178,19 @@ public final class Q00223_TestOfTheChampion extends Quest
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final QuestState qs = getQuestState(attacker, false);
-		if ((qs != null) && qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case HARPY:
-				{
-					switch (npc.getScriptValue())
-					{
-						case 0:
-						{
+		if ((qs != null) && qs.isStarted()) {
+			switch (npc.getId()) {
+				case HARPY: {
+					switch (npc.getScriptValue()) {
+						case 0: {
 							npc.getVariables().set("lastAttacker", attacker.getObjectId());
-							if (hasQuestItems(attacker, WHITE_ROSE_INSIGNIA) && (getQuestItemsCount(attacker, HARPYS_EGG) < 30))
-							{
-								if (getRandomBoolean())
-								{
-									if (getRandom(10) < 7)
-									{
+							if (hasQuestItems(attacker, WHITE_ROSE_INSIGNIA) && (getQuestItemsCount(attacker, HARPYS_EGG) < 30)) {
+								if (getRandomBoolean()) {
+									if (getRandom(10) < 7) {
 										addAttackDesire(addSpawn(HARPY_MATRIARCH, npc, true, 0, false), attacker);
-									}
-									else
-									{
+									} else {
 										addAttackDesire(addSpawn(HARPY_MATRIARCH, npc, true, 0, false), attacker);
 										addAttackDesire(addSpawn(HARPY_MATRIARCH, npc, true, 0, false), attacker);
 									}
@@ -236,31 +199,22 @@ public final class Q00223_TestOfTheChampion extends Quest
 							npc.setScriptValue(1);
 							break;
 						}
-						case 1:
-						{
+						case 1: {
 							npc.setScriptValue(2);
 							break;
 						}
 					}
 					break;
 				}
-				case ROAD_SCAVENGER:
-				{
-					switch (npc.getScriptValue())
-					{
-						case 0:
-						{
+				case ROAD_SCAVENGER: {
+					switch (npc.getScriptValue()) {
+						case 0: {
 							npc.getVariables().set("lastAttacker", attacker.getObjectId());
-							if (hasQuestItems(attacker, MOUENS_1ST_ORDER) && (getQuestItemsCount(attacker, ROAD_RATMAN_HEAD) < 10))
-							{
-								if (getRandomBoolean())
-								{
-									if (getRandom(10) < 7)
-									{
+							if (hasQuestItems(attacker, MOUENS_1ST_ORDER) && (getQuestItemsCount(attacker, ROAD_RATMAN_HEAD) < 10)) {
+								if (getRandomBoolean()) {
+									if (getRandom(10) < 7) {
 										addAttackDesire(addSpawn(ROAD_COLLECTOR, npc, true, 0, false), attacker);
-									}
-									else
-									{
+									} else {
 										addAttackDesire(addSpawn(ROAD_COLLECTOR, npc, true, 0, false), attacker);
 										addAttackDesire(addSpawn(ROAD_COLLECTOR, npc, true, 0, false), attacker);
 									}
@@ -269,33 +223,26 @@ public final class Q00223_TestOfTheChampion extends Quest
 							npc.setScriptValue(1);
 							break;
 						}
-						case 1:
-						{
+						case 1: {
 							npc.setScriptValue(2);
 							break;
 						}
 					}
 					break;
 				}
-				case BLOODY_AXE_ELITE:
-				{
-					switch (npc.getScriptValue())
-					{
-						case 0:
-						{
+				case BLOODY_AXE_ELITE: {
+					switch (npc.getScriptValue()) {
+						case 0: {
 							npc.getVariables().set("lastAttacker", attacker.getObjectId());
-							if (hasQuestItems(attacker, IRON_ROSE_RING) && (getQuestItemsCount(attacker, BLOODY_AXE_HEAD) < 10))
-							{
-								if (getRandomBoolean())
-								{
+							if (hasQuestItems(attacker, IRON_ROSE_RING) && (getQuestItemsCount(attacker, BLOODY_AXE_HEAD) < 10)) {
+								if (getRandomBoolean()) {
 									addAttackDesire(addSpawn(BLOODY_AXE_ELITE, npc, true, 0, false), attacker);
 								}
 							}
 							npc.setScriptValue(1);
 							break;
 						}
-						case 1:
-						{
+						case 1: {
 							npc.setScriptValue(2);
 							break;
 						}
@@ -308,71 +255,50 @@ public final class Q00223_TestOfTheChampion extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
 				case HARPY:
-				case HARPY_MATRIARCH:
-				{
-					if (hasQuestItems(killer, WHITE_ROSE_INSIGNIA) && (getQuestItemsCount(killer, HARPYS_EGG) < 30))
-					{
-						if (getQuestItemsCount(killer, HARPYS_EGG) >= 28)
-						{
+				case HARPY_MATRIARCH: {
+					if (hasQuestItems(killer, WHITE_ROSE_INSIGNIA) && (getQuestItemsCount(killer, HARPYS_EGG) < 30)) {
+						if (getQuestItemsCount(killer, HARPYS_EGG) >= 28) {
 							giveItems(killer, HARPYS_EGG, 2);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							if ((getQuestItemsCount(killer, MEDUSA_VENOM) >= 30) && (getQuestItemsCount(killer, WINDSUS_BILE) >= 30))
-							{
+							if ((getQuestItemsCount(killer, MEDUSA_VENOM) >= 30) && (getQuestItemsCount(killer, WINDSUS_BILE) >= 30)) {
 								qs.setCond(7);
 							}
-						}
-						else
-						{
+						} else {
 							giveItems(killer, HARPYS_EGG, 2);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case MEDUSA:
-				{
-					if (hasQuestItems(killer, WHITE_ROSE_INSIGNIA) && (getQuestItemsCount(killer, MEDUSA_VENOM) < 30))
-					{
-						if (getQuestItemsCount(killer, MEDUSA_VENOM) >= 27)
-						{
+				case MEDUSA: {
+					if (hasQuestItems(killer, WHITE_ROSE_INSIGNIA) && (getQuestItemsCount(killer, MEDUSA_VENOM) < 30)) {
+						if (getQuestItemsCount(killer, MEDUSA_VENOM) >= 27) {
 							giveItems(killer, MEDUSA_VENOM, 3);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							if ((getQuestItemsCount(killer, HARPYS_EGG) >= 30) && (getQuestItemsCount(killer, WINDSUS_BILE) >= 30))
-							{
+							if ((getQuestItemsCount(killer, HARPYS_EGG) >= 30) && (getQuestItemsCount(killer, WINDSUS_BILE) >= 30)) {
 								qs.setCond(7);
 							}
-						}
-						else
-						{
+						} else {
 							giveItems(killer, MEDUSA_VENOM, 3);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case WINDSUS:
-				{
-					if (hasQuestItems(killer, WHITE_ROSE_INSIGNIA) && (getQuestItemsCount(killer, WINDSUS_BILE) < 30))
-					{
-						if (getQuestItemsCount(killer, WINDSUS_BILE) >= 27)
-						{
+				case WINDSUS: {
+					if (hasQuestItems(killer, WHITE_ROSE_INSIGNIA) && (getQuestItemsCount(killer, WINDSUS_BILE) < 30)) {
+						if (getQuestItemsCount(killer, WINDSUS_BILE) >= 27) {
 							giveItems(killer, WINDSUS_BILE, 3);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							if ((getQuestItemsCount(killer, HARPYS_EGG) >= 30) && (getQuestItemsCount(killer, MEDUSA_VENOM) >= 30))
-							{
+							if ((getQuestItemsCount(killer, HARPYS_EGG) >= 30) && (getQuestItemsCount(killer, MEDUSA_VENOM) >= 30)) {
 								qs.setCond(7);
 							}
-						}
-						else
-						{
+						} else {
 							giveItems(killer, WINDSUS_BILE, 3);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
@@ -380,17 +306,12 @@ public final class Q00223_TestOfTheChampion extends Quest
 					break;
 				}
 				case ROAD_SCAVENGER:
-				case ROAD_COLLECTOR:
-				{
-					if (hasQuestItems(killer, MOUENS_1ST_ORDER) && (getQuestItemsCount(killer, ROAD_RATMAN_HEAD) < 10))
-					{
-						if (getQuestItemsCount(killer, ROAD_RATMAN_HEAD) >= 9)
-						{
+				case ROAD_COLLECTOR: {
+					if (hasQuestItems(killer, MOUENS_1ST_ORDER) && (getQuestItemsCount(killer, ROAD_RATMAN_HEAD) < 10)) {
+						if (getQuestItemsCount(killer, ROAD_RATMAN_HEAD) >= 9) {
 							giveItems(killer, ROAD_RATMAN_HEAD, 1);
 							qs.setCond(11, true);
-						}
-						else
-						{
+						} else {
 							giveItems(killer, ROAD_RATMAN_HEAD, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
@@ -402,34 +323,24 @@ public final class Q00223_TestOfTheChampion extends Quest
 				case LETO_LIZARDMAN_SOLDIER:
 				case LETO_LIZARDMAN_WARRIOR:
 				case LETO_LIZARDMAN_SHAMAN:
-				case LETO_LIZARDMAN_OCERLORD:
-				{
-					if (hasQuestItems(killer, MOUENS_2ND_ORDER) && (getQuestItemsCount(killer, LETO_LIZARDMAN_FANG) < 10))
-					{
-						if (getQuestItemsCount(killer, LETO_LIZARDMAN_FANG) >= 9)
-						{
+				case LETO_LIZARDMAN_OCERLORD: {
+					if (hasQuestItems(killer, MOUENS_2ND_ORDER) && (getQuestItemsCount(killer, LETO_LIZARDMAN_FANG) < 10)) {
+						if (getQuestItemsCount(killer, LETO_LIZARDMAN_FANG) >= 9) {
 							giveItems(killer, LETO_LIZARDMAN_FANG, 1);
 							qs.setCond(13, true);
-						}
-						else
-						{
+						} else {
 							giveItems(killer, LETO_LIZARDMAN_FANG, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case BLOODY_AXE_ELITE:
-				{
-					if (hasQuestItems(killer, IRON_ROSE_RING) && (getQuestItemsCount(killer, BLOODY_AXE_HEAD) < 10))
-					{
-						if (getQuestItemsCount(killer, BLOODY_AXE_HEAD) >= 9)
-						{
+				case BLOODY_AXE_ELITE: {
+					if (hasQuestItems(killer, IRON_ROSE_RING) && (getQuestItemsCount(killer, BLOODY_AXE_HEAD) < 10)) {
+						if (getQuestItemsCount(killer, BLOODY_AXE_HEAD) >= 9) {
 							giveItems(killer, BLOODY_AXE_HEAD, 1);
 							qs.setCond(3, true);
-						}
-						else
-						{
+						} else {
 							giveItems(killer, BLOODY_AXE_HEAD, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
@@ -442,78 +353,45 @@ public final class Q00223_TestOfTheChampion extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (npc.getId() == VETERAN_ASCALON)
-			{
-				if ((player.getClassId() == ClassId.warrior) || (player.getClassId() == ClassId.orcRaider))
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (player.getClassId() == ClassId.warrior)
-						{
+		if (qs.isCreated()) {
+			if (npc.getId() == VETERAN_ASCALON) {
+				if ((player.getClassId() == ClassId.warrior) || (player.getClassId() == ClassId.orcRaider)) {
+					if (player.getLevel() >= MIN_LEVEL) {
+						if (player.getClassId() == ClassId.warrior) {
 							htmltext = "30624-03.htm";
-						}
-						else
-						{
+						} else {
 							htmltext = "30624-04.html";
 						}
-					}
-					else
-					{
+					} else {
 						htmltext = "30624-01.html";
 					}
-				}
-				else
-				{
+				} else {
 					htmltext = "30624-02.html";
 				}
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case VETERAN_ASCALON:
-				{
-					if (hasQuestItems(player, ASCALONS_1ST_LETTER))
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case VETERAN_ASCALON: {
+					if (hasQuestItems(player, ASCALONS_1ST_LETTER)) {
 						htmltext = "30624-07.html";
-					}
-					else if (hasQuestItems(player, IRON_ROSE_RING))
-					{
+					} else if (hasQuestItems(player, IRON_ROSE_RING)) {
 						htmltext = "30624-08.html";
-					}
-					else if (hasQuestItems(player, MASONS_LETTER))
-					{
+					} else if (hasQuestItems(player, MASONS_LETTER)) {
 						htmltext = "30624-09.html";
-					}
-					else if (hasQuestItems(player, ASCALONS_2ND_LETTER))
-					{
+					} else if (hasQuestItems(player, ASCALONS_2ND_LETTER)) {
 						htmltext = "30624-11.html";
-					}
-					else if (hasQuestItems(player, WHITE_ROSE_INSIGNIA))
-					{
+					} else if (hasQuestItems(player, WHITE_ROSE_INSIGNIA)) {
 						htmltext = "30624-12.html";
-					}
-					else if (hasQuestItems(player, GROOTS_LETTER))
-					{
+					} else if (hasQuestItems(player, GROOTS_LETTER)) {
 						htmltext = "30624-13.html";
-					}
-					else if (hasQuestItems(player, ASCALONS_3RD_LETTER))
-					{
+					} else if (hasQuestItems(player, ASCALONS_3RD_LETTER)) {
 						htmltext = "30624-15.html";
-					}
-					else if (hasAtLeastOneQuestItem(player, MOUENS_1ST_ORDER, MOUENS_2ND_ORDER))
-					{
+					} else if (hasAtLeastOneQuestItem(player, MOUENS_1ST_ORDER, MOUENS_2ND_ORDER)) {
 						htmltext = "30624-16.html";
-					}
-					else if (hasQuestItems(player, MOUENS_LETTER))
-					{
+					} else if (hasQuestItems(player, MOUENS_LETTER)) {
 						giveAdena(player, 229764, true);
 						giveItems(player, MARK_OF_CHAMPION, 1);
 						addExpAndSp(player, 1270742, 87200);
@@ -523,16 +401,11 @@ public final class Q00223_TestOfTheChampion extends Quest
 					}
 					break;
 				}
-				case TRADER_GROOT:
-				{
-					if (hasQuestItems(player, ASCALONS_2ND_LETTER))
-					{
+				case TRADER_GROOT: {
+					if (hasQuestItems(player, ASCALONS_2ND_LETTER)) {
 						htmltext = "30093-01.html";
-					}
-					else if (hasQuestItems(player, WHITE_ROSE_INSIGNIA))
-					{
-						if ((getQuestItemsCount(player, HARPYS_EGG) >= 30) && (getQuestItemsCount(player, MEDUSA_VENOM) >= 30) && (getQuestItemsCount(player, WINDSUS_BILE) >= 30))
-						{
+					} else if (hasQuestItems(player, WHITE_ROSE_INSIGNIA)) {
+						if ((getQuestItemsCount(player, HARPYS_EGG) >= 30) && (getQuestItemsCount(player, MEDUSA_VENOM) >= 30) && (getQuestItemsCount(player, WINDSUS_BILE) >= 30)) {
 							takeItems(player, WHITE_ROSE_INSIGNIA, 1);
 							giveItems(player, GROOTS_LETTER, 1);
 							takeItems(player, HARPYS_EGG, -1);
@@ -540,97 +413,63 @@ public final class Q00223_TestOfTheChampion extends Quest
 							takeItems(player, WINDSUS_BILE, -1);
 							qs.setCond(8, true);
 							htmltext = "30093-04.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30093-03.html";
 						}
-					}
-					else if (hasQuestItems(player, GROOTS_LETTER))
-					{
+					} else if (hasQuestItems(player, GROOTS_LETTER)) {
 						htmltext = "30093-05.html";
-					}
-					else if (hasAtLeastOneQuestItem(player, ASCALONS_3RD_LETTER, MOUENS_1ST_ORDER, MOUENS_2ND_ORDER, MOUENS_LETTER))
-					{
+					} else if (hasAtLeastOneQuestItem(player, ASCALONS_3RD_LETTER, MOUENS_1ST_ORDER, MOUENS_2ND_ORDER, MOUENS_LETTER)) {
 						htmltext = "30093-06.html";
 					}
 					break;
 				}
-				case CAPTAIN_MOUEN:
-				{
-					if (hasQuestItems(player, ASCALONS_3RD_LETTER))
-					{
+				case CAPTAIN_MOUEN: {
+					if (hasQuestItems(player, ASCALONS_3RD_LETTER)) {
 						htmltext = "30196-01.html";
-					}
-					else if (hasQuestItems(player, MOUENS_1ST_ORDER))
-					{
-						if (getQuestItemsCount(player, ROAD_RATMAN_HEAD) < 10)
-						{
+					} else if (hasQuestItems(player, MOUENS_1ST_ORDER)) {
+						if (getQuestItemsCount(player, ROAD_RATMAN_HEAD) < 10) {
 							htmltext = "30196-04.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30196-05.html";
 						}
-					}
-					else if (hasQuestItems(player, MOUENS_2ND_ORDER))
-					{
-						if (getQuestItemsCount(player, LETO_LIZARDMAN_FANG) < 10)
-						{
+					} else if (hasQuestItems(player, MOUENS_2ND_ORDER)) {
+						if (getQuestItemsCount(player, LETO_LIZARDMAN_FANG) < 10) {
 							htmltext = "30196-07.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, MOUENS_2ND_ORDER, 1);
 							giveItems(player, MOUENS_LETTER, 1);
 							takeItems(player, LETO_LIZARDMAN_FANG, -1);
 							qs.setCond(14, true);
 							htmltext = "30196-08.html";
 						}
-					}
-					else if (hasQuestItems(player, MOUENS_LETTER))
-					{
+					} else if (hasQuestItems(player, MOUENS_LETTER)) {
 						htmltext = "30196-09.html";
 					}
 					break;
 				}
-				case MASON:
-				{
-					if (hasQuestItems(player, ASCALONS_1ST_LETTER))
-					{
+				case MASON: {
+					if (hasQuestItems(player, ASCALONS_1ST_LETTER)) {
 						htmltext = "30625-01.html";
-					}
-					else if (hasQuestItems(player, IRON_ROSE_RING))
-					{
-						if (getQuestItemsCount(player, BLOODY_AXE_HEAD) < 10)
-						{
+					} else if (hasQuestItems(player, IRON_ROSE_RING)) {
+						if (getQuestItemsCount(player, BLOODY_AXE_HEAD) < 10) {
 							htmltext = "30625-04.html";
-						}
-						else
-						{
+						} else {
 							giveItems(player, MASONS_LETTER, 1);
 							takeItems(player, IRON_ROSE_RING, 1);
 							takeItems(player, BLOODY_AXE_HEAD, -1);
 							qs.setCond(4, true);
 							htmltext = "30625-05.html";
 						}
-					}
-					else if (hasQuestItems(player, MASONS_LETTER))
-					{
+					} else if (hasQuestItems(player, MASONS_LETTER)) {
 						htmltext = "30625-06.html";
-					}
-					else if (hasAtLeastOneQuestItem(player, ASCALONS_2ND_LETTER, WHITE_ROSE_INSIGNIA, GROOTS_LETTER, ASCALONS_3RD_LETTER, MOUENS_1ST_ORDER, MOUENS_2ND_ORDER, MOUENS_LETTER))
-					{
+					} else if (hasAtLeastOneQuestItem(player, ASCALONS_2ND_LETTER, WHITE_ROSE_INSIGNIA, GROOTS_LETTER, ASCALONS_3RD_LETTER, MOUENS_1ST_ORDER, MOUENS_2ND_ORDER, MOUENS_LETTER)) {
 						htmltext = "30625-07.html";
 					}
 					break;
 				}
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == VETERAN_ASCALON)
-			{
+		} else if (qs.isCompleted()) {
+			if (npc.getId() == VETERAN_ASCALON) {
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}

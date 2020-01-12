@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * Test Of The Searcher (225)
  * @author ivantotov
  */
-public final class Q00225_TestOfTheSearcher extends Quest
-{
+public final class Q00225_TestOfTheSearcher extends Quest {
 	// NPCs
 	private static final int CAPTAIN_ALEX = 30291;
 	private static final int TYRA = 30420;
@@ -82,8 +81,7 @@ public final class Q00225_TestOfTheSearcher extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 39;
 	
-	public Q00225_TestOfTheSearcher()
-	{
+	public Q00225_TestOfTheSearcher() {
 		super(225, Q00225_TestOfTheSearcher.class.getSimpleName(), "Test Of The Searcher");
 		addStartNpc(MASTER_LUTHER);
 		addTalkId(MASTER_LUTHER, CAPTAIN_ALEX, TYRA, TREE, STRONG_WOODEN_CHEST, MILITIAMAN_LEIRYNN, DRUNKARD_BORYS, BODYGUARD_JAX);
@@ -93,40 +91,29 @@ public final class Q00225_TestOfTheSearcher extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "ACCEPT": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					qs.setMemoState(1);
 					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					giveItems(player, LUTHERS_LETTER, 1);
-					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
-					{
-						if (player.getClassId() == ClassId.scavenger)
-						{
+					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0) {
+						if (player.getClassId() == ClassId.scavenger) {
 							giveItems(player, DIMENSIONAL_DIAMOND, 82);
-						}
-						else
-						{
+						} else {
 							giveItems(player, DIMENSIONAL_DIAMOND, 96);
 						}
 						player.getVariables().set("2ND_CLASS_DIAMOND_REWARD", 1);
 						htmltext = "30690-05a.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "30690-05.htm";
 					}
 				}
@@ -140,15 +127,12 @@ public final class Q00225_TestOfTheSearcher extends Quest
 			case "30730-01c.html":
 			case "30730-02.html":
 			case "30730-02a.html":
-			case "30730-02b.html":
-			{
+			case "30730-02b.html": {
 				htmltext = event;
 				break;
 			}
-			case "30291-07.html":
-			{
-				if (hasQuestItems(player, LEIRYNNS_REPORT, STRINGE_MAP))
-				{
+			case "30291-07.html": {
+				if (hasQuestItems(player, LEIRYNNS_REPORT, STRINGE_MAP)) {
 					takeItems(player, LEIRYNNS_REPORT, 1);
 					takeItems(player, STRINGE_MAP, 1);
 					giveItems(player, LAMBERTS_MAP, 1);
@@ -159,10 +143,8 @@ public final class Q00225_TestOfTheSearcher extends Quest
 				}
 				break;
 			}
-			case "30420-01a.html":
-			{
-				if (hasQuestItems(player, WINE_CATALOG))
-				{
+			case "30420-01a.html": {
+				if (hasQuestItems(player, WINE_CATALOG)) {
 					takeItems(player, WINE_CATALOG, 1);
 					giveItems(player, TYRAS_CONTRACT, 1);
 					qs.setCond(10, true);
@@ -170,10 +152,8 @@ public final class Q00225_TestOfTheSearcher extends Quest
 				}
 				break;
 			}
-			case "30627-01a.html":
-			{
-				if (npc.getSummonedNpcCount() < 5)
-				{
+			case "30627-01a.html": {
+				if (npc.getSummonedNpcCount() < 5) {
 					giveItems(player, RUSTED_KEY, 1);
 					addSpawn(npc, STRONG_WOODEN_CHEST, npc, true, 0);
 					qs.setCond(17, true);
@@ -181,8 +161,7 @@ public final class Q00225_TestOfTheSearcher extends Quest
 				}
 				break;
 			}
-			case "30628-01a.html":
-			{
+			case "30628-01a.html": {
 				takeItems(player, RUSTED_KEY, 1);
 				giveItems(player, GOLD_BAR, 20);
 				qs.setCond(18, true);
@@ -190,10 +169,8 @@ public final class Q00225_TestOfTheSearcher extends Quest
 				htmltext = event;
 				break;
 			}
-			case "30730-01d.html":
-			{
-				if (hasQuestItems(player, OLD_ORDER))
-				{
+			case "30730-01d.html": {
+				if (hasQuestItems(player, OLD_ORDER)) {
 					takeItems(player, OLD_ORDER, 1);
 					giveItems(player, JAXS_DIARY, 1);
 					qs.setCond(14, true);
@@ -206,13 +183,10 @@ public final class Q00225_TestOfTheSearcher extends Quest
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final QuestState qs = getQuestState(attacker, false);
-		if ((qs != null) && qs.isStarted())
-		{
-			if (npc.isScriptValue(0) && hasQuestItems(attacker, LEIRYNNS_1ST_ORDER))
-			{
+		if ((qs != null) && qs.isStarted()) {
+			if (npc.isScriptValue(0) && hasQuestItems(attacker, LEIRYNNS_1ST_ORDER)) {
 				npc.setScriptValue(1);
 				addAttackDesire(addSpawn(NEER_BODYGUARD, npc, true, 200000), attacker);
 			}
@@ -221,96 +195,68 @@ public final class Q00225_TestOfTheSearcher extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case HANGMAN_TREE:
-				{
-					if (hasQuestItems(killer, JAXS_DIARY) && !hasQuestItems(killer, MAKELS_MAP) && (getQuestItemsCount(killer, TORN_MAP_PIECE_2ND) < 4))
-					{
-						if (getQuestItemsCount(killer, TORN_MAP_PIECE_2ND) < 3)
-						{
-							if (getRandom(100) < 50)
-							{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
+				case HANGMAN_TREE: {
+					if (hasQuestItems(killer, JAXS_DIARY) && !hasQuestItems(killer, MAKELS_MAP) && (getQuestItemsCount(killer, TORN_MAP_PIECE_2ND) < 4)) {
+						if (getQuestItemsCount(killer, TORN_MAP_PIECE_2ND) < 3) {
+							if (getRandom(100) < 50) {
 								giveItems(killer, TORN_MAP_PIECE_2ND, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
-						}
-						else if (getRandom(100) < 50)
-						{
+						} else if (getRandom(100) < 50) {
 							takeItems(killer, TORN_MAP_PIECE_2ND, -1);
 							giveItems(killer, MAKELS_MAP, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							if (getQuestItemsCount(killer, SOLTS_MAP) >= 1)
-							{
+							if (getQuestItemsCount(killer, SOLTS_MAP) >= 1) {
 								qs.setCond(15);
 							}
 						}
 					}
 					break;
 				}
-				case ROAD_SCAVENGER:
-				{
-					if (hasQuestItems(killer, JAXS_DIARY) && !hasQuestItems(killer, SOLTS_MAP) && (getQuestItemsCount(killer, TORN_MAP_PIECE_1ST) < 4))
-					{
-						if (getQuestItemsCount(killer, TORN_MAP_PIECE_1ST) < 3)
-						{
+				case ROAD_SCAVENGER: {
+					if (hasQuestItems(killer, JAXS_DIARY) && !hasQuestItems(killer, SOLTS_MAP) && (getQuestItemsCount(killer, TORN_MAP_PIECE_1ST) < 4)) {
+						if (getQuestItemsCount(killer, TORN_MAP_PIECE_1ST) < 3) {
 							giveItems(killer, TORN_MAP_PIECE_1ST, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
-						}
-						else
-						{
+						} else {
 							takeItems(killer, TORN_MAP_PIECE_1ST, -1);
 							giveItems(killer, SOLTS_MAP, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							if (getQuestItemsCount(killer, MAKELS_MAP) >= 1)
-							{
+							if (getQuestItemsCount(killer, MAKELS_MAP) >= 1) {
 								qs.setCond(15);
 							}
 						}
 					}
 					break;
 				}
-				case GIANT_FUNGUS:
-				{
-					if (hasQuestItems(killer, TYRAS_CONTRACT) && (getQuestItemsCount(killer, RED_SPORE_DUST) < 10))
-					{
+				case GIANT_FUNGUS: {
+					if (hasQuestItems(killer, TYRAS_CONTRACT) && (getQuestItemsCount(killer, RED_SPORE_DUST) < 10)) {
 						giveItems(killer, RED_SPORE_DUST, 1);
-						if (getQuestItemsCount(killer, RED_SPORE_DUST) >= 10)
-						{
+						if (getQuestItemsCount(killer, RED_SPORE_DUST) >= 10) {
 							qs.setCond(11, true);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case DELU_lIZARDMAN_SHAMAN:
-				{
-					if (hasQuestItems(killer, LEIRYNNS_1ST_ORDER) && (getQuestItemsCount(killer, DELU_TOTEM) < 10))
-					{
+				case DELU_lIZARDMAN_SHAMAN: {
+					if (hasQuestItems(killer, LEIRYNNS_1ST_ORDER) && (getQuestItemsCount(killer, DELU_TOTEM) < 10)) {
 						giveItems(killer, DELU_TOTEM, 1);
-						if (getQuestItemsCount(killer, RED_SPORE_DUST) >= 10)
-						{
+						if (getQuestItemsCount(killer, RED_SPORE_DUST) >= 10) {
 							qs.setCond(4, true);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case DELU_CHIEF_KALKIS:
-				{
-					if (hasQuestItems(killer, LEIRYNNS_2ND_ORDER) && !hasAtLeastOneQuestItem(killer, CHIEF_KALKIS_FANG, STRINGE_MAP))
-					{
+				case DELU_CHIEF_KALKIS: {
+					if (hasQuestItems(killer, LEIRYNNS_2ND_ORDER) && !hasAtLeastOneQuestItem(killer, CHIEF_KALKIS_FANG, STRINGE_MAP)) {
 						giveItems(killer, CHIEF_KALKIS_FANG, 1);
 						giveItems(killer, STRINGE_MAP, 1);
 						qs.setCond(6, true);
@@ -323,54 +269,33 @@ public final class Q00225_TestOfTheSearcher extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (npc.getId() == MASTER_LUTHER)
-			{
-				if ((player.getClassId() == ClassId.rogue) || (player.getClassId() == ClassId.elvenScout) || (player.getClassId() == ClassId.assassin) || (player.getClassId() == ClassId.scavenger))
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (player.getClassId() == ClassId.scavenger)
-						{
+		if (qs.isCreated()) {
+			if (npc.getId() == MASTER_LUTHER) {
+				if ((player.getClassId() == ClassId.rogue) || (player.getClassId() == ClassId.elvenScout) || (player.getClassId() == ClassId.assassin) || (player.getClassId() == ClassId.scavenger)) {
+					if (player.getLevel() >= MIN_LEVEL) {
+						if (player.getClassId() == ClassId.scavenger) {
 							htmltext = "30690-04.htm";
-						}
-						else
-						{
+						} else {
 							htmltext = "30690-03.htm";
 						}
-					}
-					else
-					{
+					} else {
 						htmltext = "30690-02.html";
 					}
-				}
-				else
-				{
+				} else {
 					htmltext = "30690-01.html";
 				}
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case MASTER_LUTHER:
-				{
-					if (hasQuestItems(player, LUTHERS_LETTER) && !hasQuestItems(player, ALEXS_RECOMMEND))
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case MASTER_LUTHER: {
+					if (hasQuestItems(player, LUTHERS_LETTER) && !hasQuestItems(player, ALEXS_RECOMMEND)) {
 						htmltext = "30690-06.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, LUTHERS_LETTER, ALEXS_RECOMMEND))
-					{
+					} else if (!hasAtLeastOneQuestItem(player, LUTHERS_LETTER, ALEXS_RECOMMEND)) {
 						htmltext = "30690-07.html";
-					}
-					else if (!hasQuestItems(player, LUTHERS_LETTER) && hasQuestItems(player, ALEXS_RECOMMEND))
-					{
+					} else if (!hasQuestItems(player, LUTHERS_LETTER) && hasQuestItems(player, ALEXS_RECOMMEND)) {
 						giveAdena(player, 161806, true);
 						giveItems(player, MARK_OF_SEARCHER, 1);
 						addExpAndSp(player, 894888, 61408);
@@ -380,41 +305,25 @@ public final class Q00225_TestOfTheSearcher extends Quest
 					}
 					break;
 				}
-				case CAPTAIN_ALEX:
-				{
-					if (hasQuestItems(player, LUTHERS_LETTER))
-					{
+				case CAPTAIN_ALEX: {
+					if (hasQuestItems(player, LUTHERS_LETTER)) {
 						takeItems(player, LUTHERS_LETTER, 1);
 						giveItems(player, ALEXS_WARRANT, 1);
 						qs.setCond(2, true);
 						htmltext = "30291-01.html";
-					}
-					else if (hasQuestItems(player, ALEXS_WARRANT))
-					{
+					} else if (hasQuestItems(player, ALEXS_WARRANT)) {
 						htmltext = "30291-02.html";
-					}
-					else if (hasAtLeastOneQuestItem(player, LEIRYNNS_1ST_ORDER, LEIRYNNS_2ND_ORDER))
-					{
+					} else if (hasAtLeastOneQuestItem(player, LEIRYNNS_1ST_ORDER, LEIRYNNS_2ND_ORDER)) {
 						htmltext = "30291-03.html";
-					}
-					else if (hasQuestItems(player, LEIRYNNS_REPORT))
-					{
+					} else if (hasQuestItems(player, LEIRYNNS_REPORT)) {
 						htmltext = "30291-04.html";
-					}
-					else if (hasQuestItems(player, ALEXS_ORDER))
-					{
-						if (hasQuestItems(player, ALEXS_LETTER))
-						{
+					} else if (hasQuestItems(player, ALEXS_ORDER)) {
+						if (hasQuestItems(player, ALEXS_LETTER)) {
 							htmltext = "30291-08.html";
-						}
-						else if (hasAtLeastOneQuestItem(player, OLD_ORDER, JAXS_DIARY))
-						{
+						} else if (hasAtLeastOneQuestItem(player, OLD_ORDER, JAXS_DIARY)) {
 							htmltext = "30291-09.html";
-						}
-						else if (hasQuestItems(player, COMBINED_MAP))
-						{
-							if (getQuestItemsCount(player, GOLD_BAR) == 20)
-							{
+						} else if (hasQuestItems(player, COMBINED_MAP)) {
+							if (getQuestItemsCount(player, GOLD_BAR) == 20) {
 								takeItems(player, ALEXS_ORDER, 1);
 								takeItems(player, COMBINED_MAP, 1);
 								takeItems(player, GOLD_BAR, -1);
@@ -422,162 +331,109 @@ public final class Q00225_TestOfTheSearcher extends Quest
 								player.getRadar().removeMarker(10133, 157155, -2383);
 								qs.setCond(19, true);
 								htmltext = "30291-11.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30291-10.html";
 							}
 						}
-					}
-					else if (hasQuestItems(player, ALEXS_RECOMMEND))
-					{
+					} else if (hasQuestItems(player, ALEXS_RECOMMEND)) {
 						htmltext = "30291-12.html";
 					}
 					break;
 				}
-				case TYRA:
-				{
-					if (hasQuestItems(player, WINE_CATALOG))
-					{
+				case TYRA: {
+					if (hasQuestItems(player, WINE_CATALOG)) {
 						htmltext = "30420-01.html";
-					}
-					else if (hasQuestItems(player, TYRAS_CONTRACT))
-					{
-						if (getQuestItemsCount(player, RED_SPORE_DUST) < 10)
-						{
+					} else if (hasQuestItems(player, TYRAS_CONTRACT)) {
+						if (getQuestItemsCount(player, RED_SPORE_DUST) < 10) {
 							htmltext = "30420-02.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, TYRAS_CONTRACT, 1);
 							takeItems(player, RED_SPORE_DUST, -1);
 							giveItems(player, MALRUKIAN_WINE, 1);
 							qs.setCond(12, true);
 							htmltext = "30420-03.html";
 						}
-					}
-					else if (hasAtLeastOneQuestItem(player, JAXS_DIARY, OLD_ORDER, COMBINED_MAP, ALEXS_RECOMMEND, MALRUKIAN_WINE))
-					{
+					} else if (hasAtLeastOneQuestItem(player, JAXS_DIARY, OLD_ORDER, COMBINED_MAP, ALEXS_RECOMMEND, MALRUKIAN_WINE)) {
 						htmltext = "30420-04.html";
 					}
 					break;
 				}
-				case TREE:
-				{
-					if (hasQuestItems(player, COMBINED_MAP))
-					{
-						if (!hasAtLeastOneQuestItem(player, RUSTED_KEY, GOLD_BAR))
-						{
+				case TREE: {
+					if (hasQuestItems(player, COMBINED_MAP)) {
+						if (!hasAtLeastOneQuestItem(player, RUSTED_KEY, GOLD_BAR)) {
 							htmltext = "30627-01.html";
-						}
-						else if (hasQuestItems(player, RUSTED_KEY) && (getQuestItemsCount(player, GOLD_BAR) >= 20))
-						{
+						} else if (hasQuestItems(player, RUSTED_KEY) && (getQuestItemsCount(player, GOLD_BAR) >= 20)) {
 							htmltext = "30627-01.html";
 						}
 					}
 					break;
 				}
-				case STRONG_WOODEN_CHEST:
-				{
-					if (hasQuestItems(player, RUSTED_KEY))
-					{
+				case STRONG_WOODEN_CHEST: {
+					if (hasQuestItems(player, RUSTED_KEY)) {
 						htmltext = "30628-01.html";
 					}
 					break;
 				}
-				case MILITIAMAN_LEIRYNN:
-				{
-					if (hasQuestItems(player, ALEXS_WARRANT))
-					{
+				case MILITIAMAN_LEIRYNN: {
+					if (hasQuestItems(player, ALEXS_WARRANT)) {
 						takeItems(player, ALEXS_WARRANT, 1);
 						giveItems(player, LEIRYNNS_1ST_ORDER, 1);
 						qs.setCond(3, true);
 						htmltext = "30728-01.html";
-					}
-					else if (hasQuestItems(player, LEIRYNNS_1ST_ORDER))
-					{
-						if (getQuestItemsCount(player, DELU_TOTEM) < 10)
-						{
+					} else if (hasQuestItems(player, LEIRYNNS_1ST_ORDER)) {
+						if (getQuestItemsCount(player, DELU_TOTEM) < 10) {
 							htmltext = "30728-02.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, LEIRYNNS_1ST_ORDER, 1);
 							takeItems(player, DELU_TOTEM, -1);
 							giveItems(player, LEIRYNNS_2ND_ORDER, 1);
 							qs.setCond(5, true);
 							htmltext = "30728-03.html";
 						}
-					}
-					else if (hasQuestItems(player, LEIRYNNS_2ND_ORDER))
-					{
-						if (!hasQuestItems(player, CHIEF_KALKIS_FANG))
-						{
+					} else if (hasQuestItems(player, LEIRYNNS_2ND_ORDER)) {
+						if (!hasQuestItems(player, CHIEF_KALKIS_FANG)) {
 							htmltext = "30728-04.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, LEIRYNNS_2ND_ORDER, 1);
 							takeItems(player, CHIEF_KALKIS_FANG, 1);
 							giveItems(player, LEIRYNNS_REPORT, 1);
 							qs.setCond(7, true);
 							htmltext = "30728-05.html";
 						}
-					}
-					else if (hasQuestItems(player, LEIRYNNS_REPORT))
-					{
+					} else if (hasQuestItems(player, LEIRYNNS_REPORT)) {
 						htmltext = "30728-06.html";
-					}
-					else if (hasAtLeastOneQuestItem(player, ALEXS_RECOMMEND, ALEXS_ORDER))
-					{
+					} else if (hasAtLeastOneQuestItem(player, ALEXS_RECOMMEND, ALEXS_ORDER)) {
 						htmltext = "30728-07.html";
 					}
 					break;
 				}
-				case DRUNKARD_BORYS:
-				{
-					if (hasQuestItems(player, ALEXS_LETTER))
-					{
+				case DRUNKARD_BORYS: {
+					if (hasQuestItems(player, ALEXS_LETTER)) {
 						takeItems(player, ALEXS_LETTER, 1);
 						giveItems(player, WINE_CATALOG, 1);
 						qs.setCond(9, true);
 						htmltext = "30729-01.html";
-					}
-					else if (hasQuestItems(player, WINE_CATALOG) && !hasQuestItems(player, MALRUKIAN_WINE))
-					{
+					} else if (hasQuestItems(player, WINE_CATALOG) && !hasQuestItems(player, MALRUKIAN_WINE)) {
 						htmltext = "30729-02.html";
-					}
-					else if (hasQuestItems(player, MALRUKIAN_WINE) && !hasQuestItems(player, WINE_CATALOG))
-					{
+					} else if (hasQuestItems(player, MALRUKIAN_WINE) && !hasQuestItems(player, WINE_CATALOG)) {
 						takeItems(player, MALRUKIAN_WINE, 1);
 						giveItems(player, OLD_ORDER, 1);
 						qs.setCond(13, true);
 						htmltext = "30729-03.html";
-					}
-					else if (hasQuestItems(player, OLD_ORDER))
-					{
+					} else if (hasQuestItems(player, OLD_ORDER)) {
 						htmltext = "30729-04.html";
-					}
-					else if (hasAtLeastOneQuestItem(player, JAXS_DIARY, COMBINED_MAP, ALEXS_RECOMMEND))
-					{
+					} else if (hasAtLeastOneQuestItem(player, JAXS_DIARY, COMBINED_MAP, ALEXS_RECOMMEND)) {
 						htmltext = "30729-05.html";
 					}
 					break;
 				}
-				case BODYGUARD_JAX:
-				{
-					if (hasQuestItems(player, OLD_ORDER))
-					{
+				case BODYGUARD_JAX: {
+					if (hasQuestItems(player, OLD_ORDER)) {
 						htmltext = "30730-01.html";
-					}
-					else if (hasQuestItems(player, JAXS_DIARY))
-					{
-						if (((getQuestItemsCount(player, SOLTS_MAP) + getQuestItemsCount(player, MAKELS_MAP)) < 2))
-						{
+					} else if (hasQuestItems(player, JAXS_DIARY)) {
+						if (((getQuestItemsCount(player, SOLTS_MAP) + getQuestItemsCount(player, MAKELS_MAP)) < 2)) {
 							htmltext = "30730-02.html";
-						}
-						else if (((getQuestItemsCount(player, SOLTS_MAP) + getQuestItemsCount(player, MAKELS_MAP)) == 2))
-						{
+						} else if (((getQuestItemsCount(player, SOLTS_MAP) + getQuestItemsCount(player, MAKELS_MAP)) == 2)) {
 							takeItems(player, LAMBERTS_MAP, 1);
 							takeItems(player, JAXS_DIARY, 1);
 							takeItems(player, SOLTS_MAP, 1);
@@ -586,19 +442,14 @@ public final class Q00225_TestOfTheSearcher extends Quest
 							qs.setCond(16, true);
 							htmltext = "30730-03.html";
 						}
-					}
-					else if (hasAtLeastOneQuestItem(player, COMBINED_MAP, ALEXS_RECOMMEND))
-					{
+					} else if (hasAtLeastOneQuestItem(player, COMBINED_MAP, ALEXS_RECOMMEND)) {
 						htmltext = "30730-04.html";
 					}
 					break;
 				}
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == MASTER_LUTHER)
-			{
+		} else if (qs.isCompleted()) {
+			if (npc.getId() == MASTER_LUTHER) {
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}

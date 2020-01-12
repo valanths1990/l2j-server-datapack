@@ -34,11 +34,9 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
  * Castle Mercenary Manager AI.
  * @author malyelfik
  */
-public final class CastleMercenaryManager extends AbstractNpcAI
-{
+public final class CastleMercenaryManager extends AbstractNpcAI {
 	// NPCs
-	private static final int[] NPCS =
-	{
+	private static final int[] NPCS = {
 		35102, // Greenspan
 		35144, // Sanford
 		35186, // Arvid
@@ -50,8 +48,7 @@ public final class CastleMercenaryManager extends AbstractNpcAI
 		35557, // Kendrew
 	};
 	
-	private CastleMercenaryManager()
-	{
+	private CastleMercenaryManager() {
 		super(CastleMercenaryManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -59,52 +56,38 @@ public final class CastleMercenaryManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
 		final StringTokenizer st = new StringTokenizer(event, " ");
-		switch (st.nextToken())
-		{
-			case "limit":
-			{
+		switch (st.nextToken()) {
+			case "limit": {
 				final Castle castle = npc.getCastle();
 				final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
-				if (castle.getName().equals("aden"))
-				{
+				if (castle.getName().equals("aden")) {
 					html.setHtml(getHtm(player.getHtmlPrefix(), "mercmanager-aden-limit.html"));
-				}
-				else if (castle.getName().equals("rune"))
-				{
+				} else if (castle.getName().equals("rune")) {
 					html.setHtml(getHtm(player.getHtmlPrefix(), "mercmanager-rune-limit.html"));
-				}
-				else
-				{
+				} else {
 					html.setHtml(getHtm(player.getHtmlPrefix(), "mercmanager-limit.html"));
 				}
 				html.replace("%feud_name%", String.valueOf(1001000 + castle.getResidenceId()));
 				player.sendPacket(html);
 				break;
 			}
-			case "buy":
-			{
-				if (SevenSigns.getInstance().isSealValidationPeriod())
-				{
+			case "buy": {
+				if (SevenSigns.getInstance().isSealValidationPeriod()) {
 					final int listId = Integer.parseInt(npc.getId() + st.nextToken());
 					((L2MerchantInstance) npc).showBuyWindow(player, listId, false); // NOTE: Not affected by Castle Taxes, baseTax is 20% (done in merchant buylists)
-				}
-				else
-				{
+				} else {
 					htmltext = "mercmanager-ssq.html";
 				}
 				break;
 			}
-			case "main":
-			{
+			case "main": {
 				htmltext = onFirstTalk(npc, player);
 				break;
 			}
-			case "mercmanager-01.html":
-			{
+			case "mercmanager-01.html": {
 				htmltext = event;
 				break;
 			}
@@ -113,19 +96,13 @@ public final class CastleMercenaryManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final String htmltext;
-		if (player.canOverrideCond(PcCondOverride.CASTLE_CONDITIONS) || ((player.getClanId() == npc.getCastle().getOwnerId()) && player.hasClanPrivilege(ClanPrivilege.CS_MERCENARIES)))
-		{
-			if (npc.getCastle().getSiege().isInProgress())
-			{
+		if (player.canOverrideCond(PcCondOverride.CASTLE_CONDITIONS) || ((player.getClanId() == npc.getCastle().getOwnerId()) && player.hasClanPrivilege(ClanPrivilege.CS_MERCENARIES))) {
+			if (npc.getCastle().getSiege().isInProgress()) {
 				htmltext = "mercmanager-siege.html";
-			}
-			else
-			{
-				switch (SevenSigns.getInstance().getSealOwner(SevenSigns.SEAL_STRIFE))
-				{
+			} else {
+				switch (SevenSigns.getInstance().getSealOwner(SevenSigns.SEAL_STRIFE)) {
 					case SevenSigns.CABAL_DUSK:
 						htmltext = "mercmanager-dusk.html";
 						break;
@@ -136,16 +113,13 @@ public final class CastleMercenaryManager extends AbstractNpcAI
 						htmltext = "mercmanager.html";
 				}
 			}
-		}
-		else
-		{
+		} else {
 			htmltext = "mercmanager-no.html";
 		}
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new CastleMercenaryManager();
 	}
 }

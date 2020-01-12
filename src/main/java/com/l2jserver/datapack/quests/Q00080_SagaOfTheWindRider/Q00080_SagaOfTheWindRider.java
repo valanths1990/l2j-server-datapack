@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Wind Rider (80)
  * @author Emperorc
  */
-public class Q00080_SagaOfTheWindRider extends AbstractSagaQuest
-{
-	public Q00080_SagaOfTheWindRider()
-	{
+public class Q00080_SagaOfTheWindRider extends AbstractSagaQuest {
+	public Q00080_SagaOfTheWindRider() {
 		super(80, Q00080_SagaOfTheWindRider.class.getSimpleName(), "Saga of the Wind Rider");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			31603,
 			31624,
 			31284,
@@ -45,8 +42,7 @@ public class Q00080_SagaOfTheWindRider extends AbstractSagaQuest
 			31659,
 			31616
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7517,
 			7081,
@@ -60,28 +56,23 @@ public class Q00080_SagaOfTheWindRider extends AbstractSagaQuest
 			7103,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27300,
 			27229,
 			27303
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			101
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x17
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(161719, -92823, -1893),
 			new Location(124314, 82155, -2803),
 			new Location(124355, 82155, -2803)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

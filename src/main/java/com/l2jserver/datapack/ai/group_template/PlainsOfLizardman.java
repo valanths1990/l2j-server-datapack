@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
  * Plains of Lizardmen AI.
  * @author Gnacik, malyelfik
  */
-public final class PlainsOfLizardman extends AbstractNpcAI
-{
+public final class PlainsOfLizardman extends AbstractNpcAI {
 	// NPCs
 	private static final int INVISIBLE_NPC = 18919;
 	private static final int TANTA_GUARD = 18862;
@@ -44,8 +43,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	private static final int TANTA_SCOUT = 22768;
 	private static final int TANTA_MAGICIAN = 22773;
 	private static final int TANTA_SUMMONER = 22774;
-	private static final int[] TANTA_LIZARDMEN =
-	{
+	private static final int[] TANTA_LIZARDMEN = {
 		22768, // Tanta Lizardman Scout
 		22769, // Tanta Lizardman Warrior
 		22770, // Tanta Lizardman Soldier
@@ -64,8 +62,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	// Misc
 	private static final double HP_PERCENTAGE = 0.60;
 	// Buffs
-	private static final SkillHolder[] BUFFS =
-	{
+	private static final SkillHolder[] BUFFS = {
 		new SkillHolder(6625, 1), // Energy of Life
 		new SkillHolder(6626, 2), // Energy of Life's Power
 		new SkillHolder(6627, 3), // Energy of Life's Highest Power
@@ -89,23 +86,18 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	};
 	// @formatter:on
 	
-	private PlainsOfLizardman()
-	{
+	private PlainsOfLizardman() {
 		super(PlainsOfLizardman.class.getSimpleName(), "ai/group_template");
 		addAttackId(FANTASY_MUSHROOM, RAINBOW_FROG, STICKY_MUSHROOM, ENERGY_PLANT, TANTA_SUMMONER);
 		addKillId(TANTA_LIZARDMEN);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equals("fantasy_mushroom") && (npc != null) && (player != null))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.equals("fantasy_mushroom") && (npc != null) && (player != null)) {
 			npc.doCast(FANTASY_MUSHROOM_SKILL);
-			for (L2Character target : npc.getKnownList().getKnownCharactersInRadius(200))
-			{
-				if ((target != null) && target.isAttackable())
-				{
+			for (L2Character target : npc.getKnownList().getKnownCharactersInRadius(200)) {
+				if ((target != null) && target.isAttackable()) {
 					final L2Npc monster = (L2Npc) target;
 					npc.setTarget(monster);
 					npc.doCast(STUN_EFFECT);
@@ -118,13 +110,10 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		switch (npc.getId())
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		switch (npc.getId()) {
 			case TANTA_SUMMONER:
-				if ((npc.getCurrentHp() < (npc.getMaxHp() * HP_PERCENTAGE)) && npc.isScriptValue(0))
-				{
+				if ((npc.getCurrentHp() < (npc.getMaxHp() * HP_PERCENTAGE)) && npc.isScriptValue(0)) {
 					npc.setScriptValue(1);
 					npc.doCast(DEMOTIVATION_HEX);
 					addAttackDesire(addSpawn(TANTA_SCOUT, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false), attacker);
@@ -141,17 +130,13 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 				castSkill(npc, attacker, STICKY_MUSHROOM_SKILL);
 				break;
 			case FANTASY_MUSHROOM:
-				if (npc.isScriptValue(0))
-				{
+				if (npc.isScriptValue(0)) {
 					npc.setScriptValue(1);
 					npc.setIsInvul(true);
-					for (L2Character target : npc.getKnownList().getKnownCharactersInRadius(1000))
-					{
-						if ((target != null) && target.isAttackable())
-						{
+					for (L2Character target : npc.getKnownList().getKnownCharactersInRadius(1000)) {
+						if ((target != null) && target.isAttackable()) {
 							final L2Attackable monster = (L2Attackable) target;
-							if ((monster.getId() == TANTA_MAGICIAN) || (monster.getId() == TANTA_SCOUT))
-							{
+							if ((monster.getId() == TANTA_MAGICIAN) || (monster.getId() == TANTA_SCOUT)) {
 								target.setIsRunning(true);
 								target.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(npc.getX(), npc.getY(), npc.getZ(), 0));
 							}
@@ -165,11 +150,9 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		// Tanta Guard
-		if (getRandom(1000) == 0)
-		{
+		if (getRandom(1000) == 0) {
 			addAttackDesire(addSpawn(TANTA_GUARD, npc), killer);
 		}
 		
@@ -178,38 +161,28 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		final L2Npc buffer = addSpawn(INVISIBLE_NPC, npc.getLocation(), false, 6000);
 		buffer.setTarget(killer);
 		
-		if (random <= 42)
-		{
+		if (random <= 42) {
 			castRandomBuff(buffer, 7, 45, BUFFS[0], BUFFS[1], BUFFS[2]);
 		}
-		if (random <= 11)
-		{
+		if (random <= 11) {
 			castRandomBuff(buffer, 8, 60, BUFFS[3], BUFFS[4], BUFFS[5]);
 			castRandomBuff(buffer, 3, 6, BUFFS[9], BUFFS[10], BUFFS[12]);
 		}
-		if (random <= 25)
-		{
+		if (random <= 25) {
 			buffer.doCast(BUFFS[BUFF_LIST[getRandom(BUFF_LIST.length)]]);
 		}
-		if (random <= 10)
-		{
+		if (random <= 10) {
 			buffer.doCast(BUFFS[13].getSkill());
 		}
-		if (random <= 1)
-		{
+		if (random <= 1) {
 			final int i = getRandom(100);
-			if (i <= 34)
-			{
+			if (i <= 34) {
 				buffer.doCast(BUFFS[6]);
 				buffer.doCast(BUFFS[7]);
 				buffer.doCast(BUFFS[8]);
-			}
-			else if (i < 67)
-			{
+			} else if (i < 67) {
 				buffer.doCast(BUFFS[13]);
-			}
-			else
-			{
+			} else {
 				buffer.doCast(BUFFS[2]);
 				buffer.doCast(BUFFS[5]);
 			}
@@ -217,32 +190,24 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private void castRandomBuff(L2Npc npc, int chance1, int chance2, SkillHolder... buffs)
-	{
+	private void castRandomBuff(L2Npc npc, int chance1, int chance2, SkillHolder... buffs) {
 		final int rand = getRandom(100);
-		if (rand <= chance1)
-		{
+		if (rand <= chance1) {
 			npc.doCast(buffs[2]);
-		}
-		else if (rand <= chance2)
-		{
+		} else if (rand <= chance2) {
 			npc.doCast(buffs[1]);
-		}
-		else
-		{
+		} else {
 			npc.doCast(buffs[0]);
 		}
 	}
 	
 	@Override
-	protected void castSkill(L2Npc npc, L2Playable target, SkillHolder skill)
-	{
+	protected void castSkill(L2Npc npc, L2Playable target, SkillHolder skill) {
 		npc.doDie(target);
 		super.castSkill(addSpawn(INVISIBLE_NPC, npc, false, 6000), target, skill);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new PlainsOfLizardman();
 	}
 }

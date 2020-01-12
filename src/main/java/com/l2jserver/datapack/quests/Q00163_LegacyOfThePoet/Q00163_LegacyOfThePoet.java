@@ -30,13 +30,11 @@ import com.l2jserver.gameserver.model.quest.State;
  * Legacy of the Poet (163)
  * @author xban1x
  */
-public class Q00163_LegacyOfThePoet extends Quest
-{
+public class Q00163_LegacyOfThePoet extends Quest {
 	// NPC
 	private static final int STARDEN = 30220;
 	// Monsters
-	private static final int[] MONSTERS =
-	{
+	private static final int[] MONSTERS = {
 		20372, // Baraq Orc Fighter
 		20373, // Baraq Orc Warrior Leader
 	};
@@ -48,8 +46,7 @@ public class Q00163_LegacyOfThePoet extends Quest
 	// Misc
 	private static final int MIN_LVL = 11;
 	
-	public Q00163_LegacyOfThePoet()
-	{
+	public Q00163_LegacyOfThePoet() {
 		super(163, Q00163_LegacyOfThePoet.class.getSimpleName(), "Legacy of the Poet");
 		addStartNpc(STARDEN);
 		addTalkId(STARDEN);
@@ -58,22 +55,17 @@ public class Q00163_LegacyOfThePoet extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
+		if (st != null) {
+			switch (event) {
 				case "30220-03.html":
-				case "30220-04.html":
-				{
+				case "30220-04.html": {
 					htmltext = event;
 					break;
 				}
-				case "30220-05.htm":
-				{
+				case "30220-05.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
@@ -84,56 +76,38 @@ public class Q00163_LegacyOfThePoet extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(1))
-		{
-			if ((getRandom(10) == 0) && !st.hasQuestItems(RUMIELS_1ST_POEM))
-			{
+		if ((st != null) && st.isCond(1)) {
+			if ((getRandom(10) == 0) && !st.hasQuestItems(RUMIELS_1ST_POEM)) {
 				st.giveItems(RUMIELS_1ST_POEM, 1);
-				if (st.hasQuestItems(RUMIELS_2ND_POEM, RUMIELS_3RD_POEM, RUMIELS_4TH_POEM))
-				{
+				if (st.hasQuestItems(RUMIELS_2ND_POEM, RUMIELS_3RD_POEM, RUMIELS_4TH_POEM)) {
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
-			if ((getRandom(10) > 7) && !st.hasQuestItems(RUMIELS_2ND_POEM))
-			{
+			if ((getRandom(10) > 7) && !st.hasQuestItems(RUMIELS_2ND_POEM)) {
 				st.giveItems(RUMIELS_2ND_POEM, 1);
-				if (st.hasQuestItems(RUMIELS_1ST_POEM, RUMIELS_3RD_POEM, RUMIELS_4TH_POEM))
-				{
+				if (st.hasQuestItems(RUMIELS_1ST_POEM, RUMIELS_3RD_POEM, RUMIELS_4TH_POEM)) {
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
-			if ((getRandom(10) > 7) && !st.hasQuestItems(RUMIELS_3RD_POEM))
-			{
+			if ((getRandom(10) > 7) && !st.hasQuestItems(RUMIELS_3RD_POEM)) {
 				st.giveItems(RUMIELS_3RD_POEM, 1);
-				if (st.hasQuestItems(RUMIELS_1ST_POEM, RUMIELS_2ND_POEM, RUMIELS_4TH_POEM))
-				{
+				if (st.hasQuestItems(RUMIELS_1ST_POEM, RUMIELS_2ND_POEM, RUMIELS_4TH_POEM)) {
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
-			if ((getRandom(10) > 5) && !st.hasQuestItems(RUMIELS_4TH_POEM))
-			{
+			if ((getRandom(10) > 5) && !st.hasQuestItems(RUMIELS_4TH_POEM)) {
 				st.giveItems(RUMIELS_4TH_POEM, 1);
-				if (st.hasQuestItems(RUMIELS_1ST_POEM, RUMIELS_2ND_POEM, RUMIELS_3RD_POEM))
-				{
+				if (st.hasQuestItems(RUMIELS_1ST_POEM, RUMIELS_2ND_POEM, RUMIELS_3RD_POEM)) {
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
@@ -142,34 +116,26 @@ public class Q00163_LegacyOfThePoet extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getRace() != Race.DARK_ELF) ? (player.getLevel() >= MIN_LVL) ? "30220-02.htm" : "30220-01.htm" : "30220-00.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (st.hasQuestItems(RUMIELS_1ST_POEM, RUMIELS_2ND_POEM, RUMIELS_3RD_POEM, RUMIELS_4TH_POEM))
-				{
+			case State.STARTED: {
+				if (st.hasQuestItems(RUMIELS_1ST_POEM, RUMIELS_2ND_POEM, RUMIELS_3RD_POEM, RUMIELS_4TH_POEM)) {
 					st.addExpAndSp(21643, 943);
 					st.giveAdena(13890, true);
 					st.exitQuest(false, true);
 					htmltext = "30220-07.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30220-06.html";
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
+			case State.COMPLETED: {
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}

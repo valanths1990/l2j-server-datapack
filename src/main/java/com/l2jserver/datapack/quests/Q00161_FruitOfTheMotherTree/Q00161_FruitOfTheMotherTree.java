@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Fruit of the Mother Tree (161)
  * @author malyelfik
  */
-public class Q00161_FruitOfTheMotherTree extends Quest
-{
+public class Q00161_FruitOfTheMotherTree extends Quest {
 	// NPCs
 	private static final int ANDELLIA = 30362;
 	private static final int THALIA = 30371;
@@ -40,8 +39,7 @@ public class Q00161_FruitOfTheMotherTree extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 3;
 	
-	public Q00161_FruitOfTheMotherTree()
-	{
+	public Q00161_FruitOfTheMotherTree() {
 		super(161, Q00161_FruitOfTheMotherTree.class.getSimpleName(), "Fruit of the Mother Tree");
 		addStartNpc(ANDELLIA);
 		addTalkId(ANDELLIA, THALIA);
@@ -49,17 +47,14 @@ public class Q00161_FruitOfTheMotherTree extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30362-04.htm":
 				st.startQuest();
 				st.giveItems(ANDELLRIAS_LETTER, 1);
@@ -75,25 +70,19 @@ public class Q00161_FruitOfTheMotherTree extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ANDELLIA:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getRace() == Race.ELF) ? (player.getLevel() >= MIN_LEVEL) ? "30362-03.htm" : "30362-02.htm" : "30362-01.htm";
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
-						{
+						if (st.isCond(1)) {
 							htmltext = "30362-05.html";
-						}
-						else if (st.isCond(2) && st.hasQuestItems(MOTHERTREE_FRUIT))
-						{
+						} else if (st.isCond(2) && st.hasQuestItems(MOTHERTREE_FRUIT)) {
 							st.giveAdena(1000, true);
 							st.addExpAndSp(1000, 0);
 							st.exitQuest(false, true);
@@ -106,17 +95,13 @@ public class Q00161_FruitOfTheMotherTree extends Quest
 				}
 				break;
 			case THALIA:
-				if (st.isStarted())
-				{
-					if (st.isCond(1) && st.hasQuestItems(ANDELLRIAS_LETTER))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(1) && st.hasQuestItems(ANDELLRIAS_LETTER)) {
 						st.takeItems(ANDELLRIAS_LETTER, -1);
 						st.giveItems(MOTHERTREE_FRUIT, 1);
 						st.setCond(2, true);
 						htmltext = "30371-01.html";
-					}
-					else if (st.isCond(2) && st.hasQuestItems(MOTHERTREE_FRUIT))
-					{
+					} else if (st.isCond(2) && st.hasQuestItems(MOTHERTREE_FRUIT)) {
 						htmltext = "30371-02.html";
 					}
 				}

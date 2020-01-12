@@ -32,53 +32,38 @@ import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerSummo
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.PetStatusShow;
 
-public class L2PetInstanceAction implements IActionHandler
-{
+public class L2PetInstanceAction implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
 		// Aggression target lock effect
-		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target))
-		{
+		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target)) {
 			activeChar.sendPacket(SystemMessageId.FAILED_CHANGE_TARGET);
 			return false;
 		}
 		
 		boolean isOwner = activeChar.getObjectId() == ((L2PetInstance) target).getOwner().getObjectId();
 		
-		if (isOwner && (activeChar != ((L2PetInstance) target).getOwner()))
-		{
+		if (isOwner && (activeChar != ((L2PetInstance) target).getOwner())) {
 			((L2PetInstance) target).updateRefOwner(activeChar);
 		}
-		if (activeChar.getTarget() != target)
-		{
+		if (activeChar.getTarget() != target) {
 			// Set the target of the L2PcInstance activeChar
 			activeChar.setTarget(target);
-		}
-		else if (interact)
-		{
+		} else if (interact) {
 			// Check if the pet is attackable (without a forced attack) and isn't dead
-			if (target.isAutoAttackable(activeChar) && !isOwner)
-			{
-				if (GeoData.getInstance().canSeeTarget(activeChar, target))
-				{
+			if (target.isAutoAttackable(activeChar) && !isOwner) {
+				if (GeoData.getInstance().canSeeTarget(activeChar, target)) {
 					// Set the L2PcInstance Intention to AI_INTENTION_ATTACK
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 					activeChar.onActionRequest();
 				}
-			}
-			else if (!((L2Character) target).isInsideRadius(activeChar, 150, false, false))
-			{
-				if (GeoData.getInstance().canSeeTarget(activeChar, target))
-				{
+			} else if (!((L2Character) target).isInsideRadius(activeChar, 150, false, false)) {
+				if (GeoData.getInstance().canSeeTarget(activeChar, target)) {
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 					activeChar.onActionRequest();
 				}
-			}
-			else
-			{
-				if (isOwner)
-				{
+			} else {
+				if (isOwner) {
 					activeChar.sendPacket(new PetStatusShow((L2PetInstance) target));
 					
 					// Notify to scripts
@@ -91,8 +76,7 @@ public class L2PetInstanceAction implements IActionHandler
 	}
 	
 	@Override
-	public InstanceType getInstanceType()
-	{
+	public InstanceType getInstanceType() {
 		return InstanceType.L2PetInstance;
 	}
 }

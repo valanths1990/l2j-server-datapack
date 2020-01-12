@@ -28,15 +28,11 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
  * Target Summon handler.
  * @author UnAfraid
  */
-public class Summon implements ITargetTypeHandler
-{
+public class Summon implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		if (activeChar.hasSummon())
-		{
-			return new L2Character[]
-			{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+		if (activeChar.hasSummon()) {
+			return new L2Character[] {
 				activeChar.getSummon()
 			};
 		}
@@ -44,8 +40,7 @@ public class Summon implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.SUMMON;
 	}
 }

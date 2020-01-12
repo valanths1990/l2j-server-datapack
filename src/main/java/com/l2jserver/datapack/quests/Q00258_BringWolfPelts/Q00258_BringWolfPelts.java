@@ -32,22 +32,19 @@ import com.l2jserver.gameserver.model.quest.State;
  * Bring Wolf Pelts (258)
  * @author xban1x
  */
-public final class Q00258_BringWolfPelts extends Quest
-{
+public final class Q00258_BringWolfPelts extends Quest {
 	// Npc
 	private static final int LECTOR = 30001;
 	// Item
 	private static final int WOLF_PELT = 702;
 	// Monsters
-	private static final int[] MONSTERS = new int[]
-	{
+	private static final int[] MONSTERS = new int[] {
 		20120, // Wolf
 		20442, // Elder Wolf
 	};
 	// Rewards
 	private static final Map<Integer, Integer> REWARDS = new HashMap<>();
-	static
-	{
+	static {
 		REWARDS.put(390, 1); // Cotton Shirt
 		REWARDS.put(29, 6); // Leather Pants
 		REWARDS.put(22, 9); // Leather Shirt
@@ -58,8 +55,7 @@ public final class Q00258_BringWolfPelts extends Quest
 	private static final int MIN_LVL = 3;
 	private static final int WOLF_PELT_COUNT = 40;
 	
-	public Q00258_BringWolfPelts()
-	{
+	public Q00258_BringWolfPelts() {
 		super(258, Q00258_BringWolfPelts.class.getSimpleName(), "Bring Wolf Pelts");
 		addStartNpc(LECTOR);
 		addTalkId(LECTOR);
@@ -68,11 +64,9 @@ public final class Q00258_BringWolfPelts extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && event.equalsIgnoreCase("30001-03.html"))
-		{
+		if ((st != null) && event.equalsIgnoreCase("30001-03.html")) {
 			st.startQuest();
 			return event;
 		}
@@ -80,18 +74,13 @@ public final class Q00258_BringWolfPelts extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(1))
-		{
+		if ((st != null) && st.isCond(1)) {
 			st.giveItems(WOLF_PELT, 1);
-			if (st.getQuestItemsCount(WOLF_PELT) >= WOLF_PELT_COUNT)
-			{
+			if (st.getQuestItemsCount(WOLF_PELT) >= WOLF_PELT_COUNT) {
 				st.setCond(2, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -99,35 +88,25 @@ public final class Q00258_BringWolfPelts extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() >= MIN_LVL) ? "30001-02.htm" : "30001-01.html";
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
 						htmltext = "30001-04.html";
 						break;
 					}
-					case 2:
-					{
-						if (st.getQuestItemsCount(WOLF_PELT) >= WOLF_PELT_COUNT)
-						{
+					case 2: {
+						if (st.getQuestItemsCount(WOLF_PELT) >= WOLF_PELT_COUNT) {
 							final int chance = getRandom(16);
-							for (Map.Entry<Integer, Integer> reward : REWARDS.entrySet())
-							{
-								if (chance < reward.getValue())
-								{
+							for (Map.Entry<Integer, Integer> reward : REWARDS.entrySet()) {
+								if (chance < reward.getValue()) {
 									st.giveItems(reward.getKey(), 1);
 									break;
 								}

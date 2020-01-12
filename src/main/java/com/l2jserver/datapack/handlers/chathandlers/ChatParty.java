@@ -29,20 +29,15 @@ import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
  * A chat handler
  * @author durgus
  */
-public class ChatParty implements IChatHandler
-{
-	private static final int[] COMMAND_IDS =
-	{
+public class ChatParty implements IChatHandler {
+	private static final int[] COMMAND_IDS = {
 		3
 	};
 	
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		if (activeChar.isInParty())
-		{
-			if (activeChar.isChatBanned() && general().getBanChatChannels().contains(type))
-			{
+	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+		if (activeChar.isInParty()) {
+			if (activeChar.isChatBanned() && general().getBanChatChannels().contains(type)) {
 				activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 				return;
 			}
@@ -53,8 +48,7 @@ public class ChatParty implements IChatHandler
 	}
 	
 	@Override
-	public int[] getChatTypeList()
-	{
+	public int[] getChatTypeList() {
 		return COMMAND_IDS;
 	}
 }

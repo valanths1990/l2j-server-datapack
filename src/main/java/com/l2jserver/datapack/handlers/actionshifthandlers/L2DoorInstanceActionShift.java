@@ -26,13 +26,10 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.network.serverpackets.StaticObject;
 
-public class L2DoorInstanceActionShift implements IActionShiftHandler
-{
+public class L2DoorInstanceActionShift implements IActionShiftHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
-		if (activeChar.getAccessLevel().isGm())
-		{
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
+		if (activeChar.getAccessLevel().isGm()) {
 			activeChar.setTarget(target);
 			L2DoorInstance door = (L2DoorInstance) target;
 			activeChar.sendPacket(new StaticObject(door, activeChar.isGM()));
@@ -60,8 +57,7 @@ public class L2DoorInstanceActionShift implements IActionShiftHandler
 	}
 	
 	@Override
-	public InstanceType getInstanceType()
-	{
+	public InstanceType getInstanceType() {
 		return InstanceType.L2DoorInstance;
 	}
 }

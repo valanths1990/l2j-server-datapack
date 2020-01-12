@@ -29,16 +29,14 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Gift of Vitality event AI.
  * @author Gnacik, Adry_85
  */
-public final class GiftOfVitality extends LongTimeEvent
-{
+public final class GiftOfVitality extends LongTimeEvent {
 	// NPC
 	private static final int STEVE_SHYAGEL = 4306;
 	// Skills
 	private static final SkillHolder GIFT_OF_VITALITY = new SkillHolder(23179, 1);
 	private static final SkillHolder JOY_OF_VITALITY = new SkillHolder(23180, 1);
 	
-	private static SkillHolder[] FIGHTER_SKILLS =
-	{
+	private static SkillHolder[] FIGHTER_SKILLS = {
 		new SkillHolder(5627), // Wind Walk
 		new SkillHolder(5628), // Shield
 		new SkillHolder(5637), // Magic Barrier
@@ -48,8 +46,7 @@ public final class GiftOfVitality extends LongTimeEvent
 		new SkillHolder(5632), // Haste
 	};
 	
-	private static SkillHolder[] MAGE_SKILLS =
-	{
+	private static SkillHolder[] MAGE_SKILLS = {
 		new SkillHolder(5627), // Wind Walk
 		new SkillHolder(5628), // Shield
 		new SkillHolder(5637), // Magic Barrier
@@ -59,8 +56,7 @@ public final class GiftOfVitality extends LongTimeEvent
 		new SkillHolder(5636), // Empower
 	};
 	
-	private static SkillHolder[] SERVITOR_SKILLS =
-	{
+	private static SkillHolder[] SERVITOR_SKILLS = {
 		new SkillHolder(5627), // Wind Walk
 		new SkillHolder(5628), // Shield
 		new SkillHolder(5637), // Magic Barrier
@@ -79,8 +75,7 @@ public final class GiftOfVitality extends LongTimeEvent
 	private static final int MIN_LEVEL = 75;
 	private static final String REUSE = GiftOfVitality.class.getSimpleName() + "_reuse";
 	
-	private GiftOfVitality()
-	{
+	private GiftOfVitality() {
 		super(GiftOfVitality.class.getSimpleName(), "events");
 		addStartNpc(STEVE_SHYAGEL);
 		addFirstTalkId(STEVE_SHYAGEL);
@@ -88,16 +83,12 @@ public final class GiftOfVitality extends LongTimeEvent
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
-		switch (event)
-		{
-			case "vitality":
-			{
+		switch (event) {
+			case "vitality": {
 				final long reuse = player.getVariables().getLong(REUSE, 0);
-				if (reuse > System.currentTimeMillis())
-				{
+				if (reuse > System.currentTimeMillis()) {
 					long remainingTime = (reuse - System.currentTimeMillis()) / 1000;
 					int hours = (int) (remainingTime / 3600);
 					int minutes = (int) ((remainingTime % 3600) / 60);
@@ -107,9 +98,7 @@ public final class GiftOfVitality extends LongTimeEvent
 					sm.addInt(minutes);
 					player.sendPacket(sm);
 					htmltext = "4306-notime.htm";
-				}
-				else
-				{
+				} else {
 					player.doCast(GIFT_OF_VITALITY);
 					player.doSimultaneousCast(JOY_OF_VITALITY);
 					player.getVariables().set(REUSE, System.currentTimeMillis() + (HOURS * 3600000));
@@ -117,39 +106,27 @@ public final class GiftOfVitality extends LongTimeEvent
 				}
 				break;
 			}
-			case "memories_player":
-			{
-				if (player.getLevel() <= MIN_LEVEL)
-				{
+			case "memories_player": {
+				if (player.getLevel() <= MIN_LEVEL) {
 					htmltext = "4306-nolevel.htm";
-				}
-				else
-				{
+				} else {
 					final SkillHolder[] skills = (player.isMageClass()) ? MAGE_SKILLS : FIGHTER_SKILLS;
 					npc.setTarget(player);
-					for (SkillHolder sk : skills)
-					{
+					for (SkillHolder sk : skills) {
 						npc.doCast(sk);
 					}
 					htmltext = "4306-okbuff.htm";
 				}
 				break;
 			}
-			case "memories_summon":
-			{
-				if (player.getLevel() <= MIN_LEVEL)
-				{
+			case "memories_summon": {
+				if (player.getLevel() <= MIN_LEVEL) {
 					htmltext = "4306-nolevel.htm";
-				}
-				else if (!player.hasServitor())
-				{
+				} else if (!player.hasServitor()) {
 					htmltext = "4306-nosummon.htm";
-				}
-				else
-				{
+				} else {
 					npc.setTarget(player.getSummon());
-					for (SkillHolder sk : SERVITOR_SKILLS)
-					{
+					for (SkillHolder sk : SERVITOR_SKILLS) {
 						npc.doCast(sk);
 					}
 					htmltext = "4306-okbuff.htm";
@@ -161,13 +138,11 @@ public final class GiftOfVitality extends LongTimeEvent
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "4306.htm";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new GiftOfVitality();
 	}
 }

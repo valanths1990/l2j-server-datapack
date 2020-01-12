@@ -24,28 +24,23 @@ import com.l2jserver.gameserver.model.actor.L2Npc;
 /**
  * @author UnAfraid
  */
-public final class NonLethalableNpcs extends AbstractNpcAI
-{
-	private static final int[] NPCS =
-	{
+public final class NonLethalableNpcs extends AbstractNpcAI {
+	private static final int[] NPCS = {
 		35062, // Headquarters
 	};
 	
-	public NonLethalableNpcs()
-	{
+	public NonLethalableNpcs() {
 		super(NonLethalableNpcs.class.getSimpleName(), "ai/group_template");
 		addSpawnId(NPCS);
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		npc.setLethalable(false);
 		return super.onSpawn(npc);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new NonLethalableNpcs();
 	}
 }

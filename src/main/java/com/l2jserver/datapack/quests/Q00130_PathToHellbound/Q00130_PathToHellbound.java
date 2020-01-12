@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Path To Hellbound (130)
  * @author Zoey76
  */
-public class Q00130_PathToHellbound extends Quest
-{
+public class Q00130_PathToHellbound extends Quest {
 	// NPCs
 	private static final int CASIAN = 30612;
 	private static final int GALATE = 32292;
@@ -39,8 +38,7 @@ public class Q00130_PathToHellbound extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 78;
 	
-	public Q00130_PathToHellbound()
-	{
+	public Q00130_PathToHellbound() {
 		super(130, Q00130_PathToHellbound.class.getSimpleName(), "Path To Hellbound");
 		addStartNpc(CASIAN);
 		addTalkId(CASIAN, GALATE);
@@ -48,67 +46,52 @@ public class Q00130_PathToHellbound extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30612-04.htm":
-			{
+		switch (event) {
+			case "30612-04.htm": {
 				htmltext = event;
 				break;
 			}
-			case "32292-02.html":
-			{
-				if (st.isCond(1))
-				{
+			case "32292-02.html": {
+				if (st.isCond(1)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32292-06.html":
-			{
-				if (st.isCond(3))
-				{
+			case "32292-06.html": {
+				if (st.isCond(3)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "30612-05.html":
-			{
+			case "30612-05.html": {
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "30612-08.html":
-			{
-				if (st.isCond(2))
-				{
+			case "30612-08.html": {
+				if (st.isCond(2)) {
 					st.giveItems(CASIANS_BLUE_CRYSTAL, 1);
 					st.setCond(3, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32292-03.html":
-			{
-				if (st.isCond(1))
-				{
+			case "32292-03.html": {
+				if (st.isCond(1)) {
 					st.setCond(2, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32292-07.html":
-			{
-				if (st.isCond(3) && st.hasQuestItems(CASIANS_BLUE_CRYSTAL))
-				{
+			case "32292-07.html": {
+				if (st.isCond(3) && st.hasQuestItems(CASIANS_BLUE_CRYSTAL)) {
 					st.exitQuest(false, true);
 					htmltext = event;
 				}
@@ -119,76 +102,55 @@ public class Q00130_PathToHellbound extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (st.getState())
-		{
-			case State.COMPLETED:
-			{
+		switch (st.getState()) {
+			case State.COMPLETED: {
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
-			case State.CREATED:
-			{
-				if (npc.getId() == CASIAN)
-				{
-					if (!HellboundEngine.getInstance().isLocked())
-					{
+			case State.CREATED: {
+				if (npc.getId() == CASIAN) {
+					if (!HellboundEngine.getInstance().isLocked()) {
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? "30612-01.htm" : "30612-02.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30612-03.html";
 					}
 				}
 				break;
 			}
-			case State.STARTED:
-			{
-				if (npc.getId() == CASIAN)
-				{
-					switch (st.getCond())
-					{
-						case 1:
-						{
+			case State.STARTED: {
+				if (npc.getId() == CASIAN) {
+					switch (st.getCond()) {
+						case 1: {
 							htmltext = "30612-06.html";
 							break;
 						}
-						case 2:
-						{
+						case 2: {
 							htmltext = "30612-07.html";
 							break;
 						}
-						case 3:
-						{
+						case 3: {
 							htmltext = "30612-09.html";
 							break;
 						}
 					}
-				}
-				else if (npc.getId() == GALATE)
-				{
-					switch (st.getCond())
-					{
-						case 1:
-						{
+				} else if (npc.getId() == GALATE) {
+					switch (st.getCond()) {
+						case 1: {
 							htmltext = "32292-01.html";
 							break;
 						}
-						case 2:
-						{
+						case 2: {
 							htmltext = "32292-04.html";
 							break;
 						}
-						case 3:
-						{
+						case 3: {
 							htmltext = "32292-05.html";
 							break;
 						}

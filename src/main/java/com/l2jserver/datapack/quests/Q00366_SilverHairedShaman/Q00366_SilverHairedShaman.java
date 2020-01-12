@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Silver Haired Shaman (366)
  * @author Adry_85, jurchiks
  */
-public final class Q00366_SilverHairedShaman extends Quest
-{
+public final class Q00366_SilverHairedShaman extends Quest {
 	// NPC
 	private static final int DIETER = 30111;
 	// Item
@@ -40,15 +39,13 @@ public final class Q00366_SilverHairedShaman extends Quest
 	private static final int MIN_LEVEL = 48;
 	// Mobs
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
-	static
-	{
+	static {
 		MOBS.put(20986, 80); // saitnn
 		MOBS.put(20987, 73); // saitnn_doll
 		MOBS.put(20988, 80); // saitnn_puppet
 	}
 	
-	public Q00366_SilverHairedShaman()
-	{
+	public Q00366_SilverHairedShaman() {
 		super(366, Q00366_SilverHairedShaman.class.getSimpleName(), "Silver Haired Shaman");
 		addStartNpc(DIETER);
 		addTalkId(DIETER);
@@ -57,38 +54,31 @@ public final class Q00366_SilverHairedShaman extends Quest
 	}
 	
 	@Override
-	public boolean checkPartyMember(L2PcInstance member, L2Npc npc)
-	{
+	public boolean checkPartyMember(L2PcInstance member, L2Npc npc) {
 		final QuestState qs = getQuestState(member, false);
 		return ((qs != null) && qs.isStarted());
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30111-02.htm":
-			{
+		switch (event) {
+			case "30111-02.htm": {
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "30111-05.html":
-			{
+			case "30111-05.html": {
 				st.exitQuest(true, true);
 				htmltext = event;
 				break;
 			}
-			case "30111-06.html":
-			{
+			case "30111-06.html": {
 				htmltext = event;
 				break;
 			}
@@ -97,13 +87,10 @@ public final class Q00366_SilverHairedShaman extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
-		if (getRandom(100) < MOBS.get(npc.getId()))
-		{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
+		if (getRandom(100) < MOBS.get(npc.getId())) {
 			L2PcInstance luckyPlayer = getRandomPartyMember(player, npc);
-			if (luckyPlayer != null)
-			{
+			if (luckyPlayer != null) {
 				giveItemRandomly(luckyPlayer, npc, SAIRONS_SILVER_HAIR, 1, 0, 1.0, true);
 			}
 		}
@@ -111,25 +98,18 @@ public final class Q00366_SilverHairedShaman extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st.isCreated())
-		{
+		if (st.isCreated()) {
 			htmltext = (player.getLevel() >= MIN_LEVEL) ? "30111-01.htm" : "30111-03.html";
-		}
-		else if (st.isStarted())
-		{
-			if (hasQuestItems(player, SAIRONS_SILVER_HAIR))
-			{
+		} else if (st.isStarted()) {
+			if (hasQuestItems(player, SAIRONS_SILVER_HAIR)) {
 				final long itemCount = getQuestItemsCount(player, SAIRONS_SILVER_HAIR);
 				giveAdena(player, (itemCount * 500) + 29000, true);
 				takeItems(player, SAIRONS_SILVER_HAIR, -1);
 				htmltext = "30111-04.html";
-			}
-			else
-			{
+			} else {
 				htmltext = "30111-07.html";
 			}
 		}

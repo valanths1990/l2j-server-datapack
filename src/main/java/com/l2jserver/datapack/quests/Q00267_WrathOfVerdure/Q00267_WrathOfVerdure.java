@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Wrath of Verdure (267)
  * @author xban1x
  */
-public final class Q00267_WrathOfVerdure extends Quest
-{
+public final class Q00267_WrathOfVerdure extends Quest {
 	// NPC
 	private static final int TREANT_BREMEC = 31853;
 	// Item
@@ -43,8 +42,7 @@ public final class Q00267_WrathOfVerdure extends Quest
 	// Misc
 	private static final int MIN_LVL = 4;
 	
-	public Q00267_WrathOfVerdure()
-	{
+	public Q00267_WrathOfVerdure() {
 		super(267, Q00267_WrathOfVerdure.class.getSimpleName(), "Wrath of Verdure");
 		addStartNpc(TREANT_BREMEC);
 		addTalkId(TREANT_BREMEC);
@@ -53,28 +51,22 @@ public final class Q00267_WrathOfVerdure extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
-				case "31853-04.htm":
-				{
+		if (st != null) {
+			switch (event) {
+				case "31853-04.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
 				}
-				case "31853-07.html":
-				{
+				case "31853-07.html": {
 					st.exitQuest(true, true);
 					htmltext = event;
 					break;
 				}
-				case "31853-08.html":
-				{
+				case "31853-08.html": {
 					htmltext = event;
 					break;
 				}
@@ -84,11 +76,9 @@ public final class Q00267_WrathOfVerdure extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && (getRandom(10) < 5))
-		{
+		if ((st != null) && (getRandom(10) < 5)) {
 			st.giveItems(GOBLIN_CLUB, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
@@ -96,32 +86,24 @@ public final class Q00267_WrathOfVerdure extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getRace() == Race.ELF) ? (player.getLevel() >= MIN_LVL) ? "31853-03.htm" : "31853-02.htm" : "31853-01.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (st.hasQuestItems(GOBLIN_CLUB))
-				{
+			case State.STARTED: {
+				if (st.hasQuestItems(GOBLIN_CLUB)) {
 					final long count = st.getQuestItemsCount(GOBLIN_CLUB);
 					st.rewardItems(SILVERY_LEAF, count);
-					if (count >= 10)
-					{
+					if (count >= 10) {
 						st.giveAdena(600, true);
 					}
 					st.takeItems(GOBLIN_CLUB, -1);
 					htmltext = "31853-06.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "31853-05.html";
 				}
 				break;

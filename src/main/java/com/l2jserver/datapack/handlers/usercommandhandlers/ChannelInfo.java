@@ -27,23 +27,18 @@ import com.l2jserver.gameserver.network.serverpackets.ExMultiPartyCommandChannel
  * Channel Info user command.
  * @author chris_00
  */
-public class ChannelInfo implements IUserCommandHandler
-{
-	private static final int[] COMMAND_IDS =
-	{
+public class ChannelInfo implements IUserCommandHandler {
+	private static final int[] COMMAND_IDS = {
 		97
 	};
 	
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
-		if (id != COMMAND_IDS[0])
-		{
+	public boolean useUserCommand(int id, L2PcInstance activeChar) {
+		if (id != COMMAND_IDS[0]) {
 			return false;
 		}
 		
-		if ((activeChar.getParty() == null) || (activeChar.getParty().getCommandChannel() == null))
-		{
+		if ((activeChar.getParty() == null) || (activeChar.getParty().getCommandChannel() == null)) {
 			return false;
 		}
 		
@@ -53,8 +48,7 @@ public class ChannelInfo implements IUserCommandHandler
 	}
 	
 	@Override
-	public int[] getUserCommandList()
-	{
+	public int[] getUserCommandList() {
 		return COMMAND_IDS;
 	}
 }

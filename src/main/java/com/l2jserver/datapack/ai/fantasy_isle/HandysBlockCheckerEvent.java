@@ -37,8 +37,7 @@ import com.l2jserver.gameserver.network.serverpackets.ExCubeGameTeamList;
  * Handys Block Checker Event AI.
  * @authors BiggBoss, Gigiikun
  */
-public class HandysBlockCheckerEvent extends Quest
-{
+public class HandysBlockCheckerEvent extends Quest {
 	
 	private static final Logger LOG = LoggerFactory.getLogger(HandysBlockCheckerEvent.class);
 	
@@ -48,36 +47,30 @@ public class HandysBlockCheckerEvent extends Quest
 	private static final int A_MANAGER_3 = 32523;
 	private static final int A_MANAGER_4 = 32524;
 	
-	public HandysBlockCheckerEvent()
-	{
+	public HandysBlockCheckerEvent() {
 		super(-1, HandysBlockCheckerEvent.class.getSimpleName(), "Handy's Block Checker Event");
 		addFirstTalkId(A_MANAGER_1, A_MANAGER_2, A_MANAGER_3, A_MANAGER_4);
 		HandysBlockCheckerManager.getInstance().startUpParticipantsQueue();
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		if ((npc == null) || (player == null))
-		{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+		if ((npc == null) || (player == null)) {
 			return null;
 		}
 		
 		final int arena = npc.getId() - A_MANAGER_1;
-		if (eventIsFull(arena))
-		{
+		if (eventIsFull(arena)) {
 			player.sendPacket(SystemMessageId.CANNOT_REGISTER_CAUSE_QUEUE_FULL);
 			return null;
 		}
 		
-		if (HandysBlockCheckerManager.getInstance().arenaIsBeingUsed(arena))
-		{
+		if (HandysBlockCheckerManager.getInstance().arenaIsBeingUsed(arena)) {
 			player.sendPacket(SystemMessageId.MATCH_BEING_PREPARED_TRY_LATER);
 			return null;
 		}
 		
-		if (HandysBlockCheckerManager.getInstance().addPlayerToArena(player, arena))
-		{
+		if (HandysBlockCheckerManager.getInstance().addPlayerToArena(player, arena)) {
 			ArenaParticipantsHolder holder = HandysBlockCheckerManager.getInstance().getHolder(arena);
 			
 			final ExCubeGameTeamList tl = new ExCubeGameTeamList(holder.getRedPlayers(), holder.getBluePlayers(), arena);
@@ -88,8 +81,7 @@ public class HandysBlockCheckerEvent extends Quest
 			int countRed = holder.getRedTeamSize();
 			int minMembers = general().getBlockCheckerMinTeamMembers();
 			
-			if ((countBlue >= minMembers) && (countRed >= minMembers))
-			{
+			if ((countBlue >= minMembers) && (countRed >= minMembers)) {
 				holder.updateEvent();
 				holder.broadCastPacketToTeam(new ExCubeGameRequestReady());
 				holder.broadCastPacketToTeam(new ExCubeGameChangeTimeToStart(10));
@@ -98,20 +90,15 @@ public class HandysBlockCheckerEvent extends Quest
 		return null;
 	}
 	
-	private boolean eventIsFull(int arena)
-	{
+	private boolean eventIsFull(int arena) {
 		return HandysBlockCheckerManager.getInstance().getHolder(arena).getAllPlayers().size() == 12;
 	}
 	
-	public static void main(String[] args)
-	{
-		if (general().enableBlockCheckerEvent())
-		{
+	public static void main(String[] args) {
+		if (general().enableBlockCheckerEvent()) {
 			new HandysBlockCheckerEvent();
 			LOG.info("Handy's Block Checker event is enabled.");
-		}
-		else
-		{
+		} else {
 			LOG.info("Handy's Block Checker event is disabled.");
 		}
 	}

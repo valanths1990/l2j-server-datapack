@@ -30,48 +30,37 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class Kier extends AbstractNpcAI
-{
+public final class Kier extends AbstractNpcAI {
 	// NPC
 	private static final int KIER = 32022;
 	
-	private Kier()
-	{
+	private Kier() {
 		super(Kier.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(KIER);
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
 		final QuestState st_Q00115 = player.getQuestState(Q00115_TheOtherSideOfTruth.class.getSimpleName());
-		if (st_Q00115 == null)
-		{
+		if (st_Q00115 == null) {
 			htmltext = "32022-02.html";
-		}
-		else if (!st_Q00115.isCompleted())
-		{
+		} else if (!st_Q00115.isCompleted()) {
 			htmltext = "32022-01.html";
 		}
 		
 		final QuestState st_Q10283 = player.getQuestState(Q10283_RequestOfIceMerchant.class.getSimpleName());
-		if (st_Q10283 != null)
-		{
-			if (st_Q10283.isMemoState(2))
-			{
+		if (st_Q10283 != null) {
+			if (st_Q10283.isMemoState(2)) {
 				htmltext = "32022-03.html";
-			}
-			else if (st_Q10283.isCompleted())
-			{
+			} else if (st_Q10283.isCompleted()) {
 				htmltext = "32022-04.html";
 			}
 		}
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Kier();
 	}
 }

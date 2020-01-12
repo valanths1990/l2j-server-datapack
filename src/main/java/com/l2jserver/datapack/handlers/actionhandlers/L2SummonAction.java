@@ -31,53 +31,37 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.PetStatusShow;
 
-public class L2SummonAction implements IActionHandler
-{
+public class L2SummonAction implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
 		// Aggression target lock effect
-		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target))
-		{
+		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target)) {
 			activeChar.sendPacket(SystemMessageId.FAILED_CHANGE_TARGET);
 			return false;
 		}
 		
-		if ((activeChar == ((L2Summon) target).getOwner()) && (activeChar.getTarget() == target))
-		{
+		if ((activeChar == ((L2Summon) target).getOwner()) && (activeChar.getTarget() == target)) {
 			activeChar.sendPacket(new PetStatusShow((L2Summon) target));
 			activeChar.updateNotMoveUntil();
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			
 			// Notify to scripts
 			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSummonTalk((L2Summon) target), (L2Summon) target);
-		}
-		else if (activeChar.getTarget() != target)
-		{
+		} else if (activeChar.getTarget() != target) {
 			activeChar.setTarget(target);
-		}
-		else if (interact)
-		{
-			if (target.isAutoAttackable(activeChar))
-			{
-				if (GeoData.getInstance().canSeeTarget(activeChar, target))
-				{
+		} else if (interact) {
+			if (target.isAutoAttackable(activeChar)) {
+				if (GeoData.getInstance().canSeeTarget(activeChar, target)) {
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 					activeChar.onActionRequest();
 				}
-			}
-			else
-			{
+			} else {
 				// This Action Failed packet avoids activeChar getting stuck when clicking three or more times
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-				if (((L2Summon) target).isInsideRadius(activeChar, 150, false, false))
-				{
+				if (((L2Summon) target).isInsideRadius(activeChar, 150, false, false)) {
 					activeChar.updateNotMoveUntil();
-				}
-				else
-				{
-					if (GeoData.getInstance().canSeeTarget(activeChar, target))
-					{
+				} else {
+					if (GeoData.getInstance().canSeeTarget(activeChar, target)) {
 						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 					}
 				}
@@ -87,8 +71,7 @@ public class L2SummonAction implements IActionHandler
 	}
 	
 	@Override
-	public InstanceType getInstanceType()
-	{
+	public InstanceType getInstanceType() {
 		return InstanceType.L2Summon;
 	}
 }

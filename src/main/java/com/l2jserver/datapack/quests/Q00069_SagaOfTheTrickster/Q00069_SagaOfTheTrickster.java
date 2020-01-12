@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Trickster (69)
  * @author Emperorc
  */
-public class Q00069_SagaOfTheTrickster extends AbstractSagaQuest
-{
-	public Q00069_SagaOfTheTrickster()
-	{
+public class Q00069_SagaOfTheTrickster extends AbstractSagaQuest {
+	public Q00069_SagaOfTheTrickster() {
 		super(69, Q00069_SagaOfTheTrickster.class.getSimpleName(), "Saga of the Trickster");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			32138,
 			31270,
 			31282,
@@ -45,8 +42,7 @@ public class Q00069_SagaOfTheTrickster extends AbstractSagaQuest
 			31659,
 			31283
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			9761,
 			7081,
@@ -60,28 +56,23 @@ public class Q00069_SagaOfTheTrickster extends AbstractSagaQuest
 			9718,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27333,
 			27334,
 			27335
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			134
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x82
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(164014, -74733, -3093),
 			new Location(124355, 82155, -2803),
 			new Location(124376, 82127, -2796)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

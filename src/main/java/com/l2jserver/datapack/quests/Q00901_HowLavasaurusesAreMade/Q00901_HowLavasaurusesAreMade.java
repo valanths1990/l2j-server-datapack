@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * How Lavasauruses Are Made (901)
  * @author UnAfraid, nonom, malyelfik
  */
-public class Q00901_HowLavasaurusesAreMade extends Quest
-{
+public class Q00901_HowLavasaurusesAreMade extends Quest {
 	// NPC
 	private static final int ROONEY = 32049;
 	// Monsters
@@ -50,8 +49,7 @@ public class Q00901_HowLavasaurusesAreMade extends Quest
 	private static final int TOTEM_OF_COURAGE = 21901;
 	private static final int TOTEM_OF_FORTITUDE = 21902;
 	
-	public Q00901_HowLavasaurusesAreMade()
-	{
+	public Q00901_HowLavasaurusesAreMade() {
 		super(901, Q00901_HowLavasaurusesAreMade.class.getSimpleName(), "How Lavasauruses Are Made");
 		addStartNpc(ROONEY);
 		addTalkId(ROONEY);
@@ -60,17 +58,14 @@ public class Q00901_HowLavasaurusesAreMade extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "32049-03.htm":
 			case "32049-08.html":
 			case "32049-09.html":
@@ -104,13 +99,10 @@ public class Q00901_HowLavasaurusesAreMade extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && st.isCond(1))
-		{
-			switch (npc.getId())
-			{
+		if ((st != null) && st.isCond(1)) {
+			switch (npc.getId()) {
 				case LAVASAURUS_NEWBORN:
 					giveQuestItems(st, FRAGMENT_STONE);
 					break;
@@ -129,44 +121,33 @@ public class Q00901_HowLavasaurusesAreMade extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (st.getPlayer().getLevel() >= 76) ? "32049-01.htm" : "32049-02.htm";
 				break;
 			case State.STARTED:
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					htmltext = "32049-05.html";
-				}
-				else if (st.isCond(2))
-				{
-					if (gotAllQuestItems(st))
-					{
+				} else if (st.isCond(2)) {
+					if (gotAllQuestItems(st)) {
 						st.takeItems(FRAGMENT_STONE, -1);
 						st.takeItems(FRAGMENT_HEAD, -1);
 						st.takeItems(FRAGMENT_BODY, -1);
 						st.takeItems(FRAGMENT_HORN, -1);
 						htmltext = "32049-06.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "32049-07.html";
 					}
 				}
 				break;
 			case State.COMPLETED:
-				if (st.isNowAvailable())
-				{
+				if (st.isNowAvailable()) {
 					st.setState(State.CREATED);
 					htmltext = (st.getPlayer().getLevel() >= 76) ? "32049-01.htm" : "32049-02.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32049-16.html";
 				}
 				break;
@@ -174,21 +155,16 @@ public class Q00901_HowLavasaurusesAreMade extends Quest
 		return htmltext;
 	}
 	
-	public static void giveQuestItems(QuestState st, int itemId)
-	{
-		if (st.getQuestItemsCount(itemId) < 10)
-		{
+	public static void giveQuestItems(QuestState st, int itemId) {
+		if (st.getQuestItemsCount(itemId) < 10) {
 			st.giveItems(itemId, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-		}
-		else if (gotAllQuestItems(st))
-		{
+		} else if (gotAllQuestItems(st)) {
 			st.setCond(2, true);
 		}
 	}
 	
-	public static boolean gotAllQuestItems(QuestState st)
-	{
+	public static boolean gotAllQuestItems(QuestState st) {
 		return (st.getQuestItemsCount(FRAGMENT_STONE) >= 10) && (st.getQuestItemsCount(FRAGMENT_HEAD) >= 10) && (st.getQuestItemsCount(FRAGMENT_BODY) >= 10) && (st.getQuestItemsCount(FRAGMENT_HORN) >= 10);
 	}
 }

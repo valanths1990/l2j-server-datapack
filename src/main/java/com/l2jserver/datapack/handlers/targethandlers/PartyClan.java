@@ -33,24 +33,19 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 /**
  * @author UnAfraid
  */
-public class PartyClan implements ITargetTypeHandler
-{
+public class PartyClan implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<>();
-		if (onlyFirst)
-		{
-			return new L2Character[]
-			{
+		if (onlyFirst) {
+			return new L2Character[] {
 				activeChar
 			};
 		}
 		
 		final L2PcInstance player = activeChar.getActingPlayer();
 		
-		if (player == null)
-		{
+		if (player == null) {
 			return EMPTY_TARGET_LIST;
 		}
 		
@@ -60,94 +55,75 @@ public class PartyClan implements ITargetTypeHandler
 		final boolean hasClan = player.getClan() != null;
 		final boolean hasParty = player.isInParty();
 		
-		if (Skill.addSummon(activeChar, player, radius, false))
-		{
+		if (Skill.addSummon(activeChar, player, radius, false)) {
 			targetList.add(player.getSummon());
 		}
 		
 		// if player in clan and not in party
-		if (!(hasClan || hasParty))
-		{
+		if (!(hasClan || hasParty)) {
 			return targetList.toArray(new L2Character[targetList.size()]);
 		}
 		
 		// Get all visible objects in a spherical area near the L2Character
 		final Collection<L2PcInstance> objs = activeChar.getKnownList().getKnownPlayersInRadius(radius);
 		int maxTargets = skill.getAffectLimit();
-		for (L2PcInstance obj : objs)
-		{
-			if (obj == null)
-			{
+		for (L2PcInstance obj : objs) {
+			if (obj == null) {
 				continue;
 			}
 			
 			// olympiad mode - adding only own side
-			if (player.isInOlympiadMode())
-			{
-				if (!obj.isInOlympiadMode())
-				{
+			if (player.isInOlympiadMode()) {
+				if (!obj.isInOlympiadMode()) {
 					continue;
 				}
-				if (player.getOlympiadGameId() != obj.getOlympiadGameId())
-				{
+				if (player.getOlympiadGameId() != obj.getOlympiadGameId()) {
 					continue;
 				}
-				if (player.getOlympiadSide() != obj.getOlympiadSide())
-				{
+				if (player.getOlympiadSide() != obj.getOlympiadSide()) {
 					continue;
 				}
 			}
 			
-			if (player.isInDuel())
-			{
-				if (player.getDuelId() != obj.getDuelId())
-				{
+			if (player.isInDuel()) {
+				if (player.getDuelId() != obj.getDuelId()) {
 					continue;
 				}
 				
-				if (hasParty && obj.isInParty() && (player.getParty().getLeaderObjectId() != obj.getParty().getLeaderObjectId()))
-				{
+				if (hasParty && obj.isInParty() && (player.getParty().getLeaderObjectId() != obj.getParty().getLeaderObjectId())) {
 					continue;
 				}
 			}
 			
-			if (!((hasClan && (obj.getClanId() == player.getClanId())) || (hasParty && obj.isInParty() && (player.getParty().getLeaderObjectId() == obj.getParty().getLeaderObjectId()))))
-			{
+			if (!((hasClan && (obj.getClanId() == player.getClanId())) || (hasParty && obj.isInParty() && (player.getParty().getLeaderObjectId() == obj.getParty().getLeaderObjectId())))) {
 				continue;
 			}
 			
 			// Don't add this target if this is a Pc->Pc pvp
 			// casting and pvp condition not met
-			if (!player.checkPvpSkill(obj, skill))
-			{
+			if (!player.checkPvpSkill(obj, skill)) {
 				continue;
 			}
 			
-			if (!TvTEvent.checkForTvTSkill(player, obj, skill))
-			{
+			if (!TvTEvent.checkForTvTSkill(player, obj, skill)) {
 				continue;
 			}
 			
-			if (!onlyFirst && Skill.addSummon(activeChar, obj, radius, false))
-			{
+			if (!onlyFirst && Skill.addSummon(activeChar, obj, radius, false)) {
 				targetList.add(obj.getSummon());
 			}
 			
-			if (!Skill.addCharacter(activeChar, obj, radius, false))
-			{
+			if (!Skill.addCharacter(activeChar, obj, radius, false)) {
 				continue;
 			}
 			
-			if (onlyFirst)
-			{
-				return new L2Character[]
-				{
+			if (onlyFirst) {
+				return new L2Character[] {
 					obj
 				};
 			}
 			
-			if ((maxTargets > 0) && (targetList.size() >= maxTargets))
-			{
+			if ((maxTargets > 0) && (targetList.size() >= maxTargets)) {
 				break;
 			}
 			
@@ -157,8 +133,7 @@ public class PartyClan implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.PARTY_CLAN;
 	}
 }

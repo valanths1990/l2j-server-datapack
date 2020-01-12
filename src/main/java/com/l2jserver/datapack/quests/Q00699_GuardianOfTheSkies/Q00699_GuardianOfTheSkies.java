@@ -33,15 +33,13 @@ import com.l2jserver.gameserver.model.quest.State;
  * Guardian of the Skies
  * @author xban1x
  */
-public class Q00699_GuardianOfTheSkies extends Quest
-{
+public class Q00699_GuardianOfTheSkies extends Quest {
 	// NPC
 	private static final int LEKON = 32557;
 	// Monsters
 	private static final int VALDSTONE = 25623;
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(22614, 840); // Vulture Rider lvl 1
 		MONSTERS.put(22615, 857); // Vulture Rider lvl 2
 		MONSTERS.put(25633, 719); // Vulture Rider lvl 3
@@ -54,8 +52,7 @@ public class Q00699_GuardianOfTheSkies extends Quest
 	private static final int BONUS = 8335;
 	private static final int BONUS_COUNT = 10;
 	
-	public Q00699_GuardianOfTheSkies()
-	{
+	public Q00699_GuardianOfTheSkies() {
 		super(699, Q00699_GuardianOfTheSkies.class.getSimpleName(), "Guardian of the Skies");
 		addStartNpc(LEKON);
 		addTalkId(LEKON);
@@ -65,28 +62,22 @@ public class Q00699_GuardianOfTheSkies extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
+		if (st != null) {
+			switch (event) {
 				case "32557-03.htm":
-				case "32557-08.html":
-				{
+				case "32557-08.html": {
 					htmltext = event;
 					break;
 				}
-				case "32557-04.htm":
-				{
+				case "32557-04.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
 				}
-				case "32557-09.html":
-				{
+				case "32557-09.html": {
 					st.exitQuest(true, true);
 					htmltext = event;
 					break;
@@ -97,37 +88,24 @@ public class Q00699_GuardianOfTheSkies extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if (st != null)
-		{
-			if (npc.getId() == VALDSTONE)
-			{
+		if (st != null) {
+			if (npc.getId() == VALDSTONE) {
 				int amount = 0, chance = getRandom(1000);
-				if (chance < 215)
-				{
+				if (chance < 215) {
 					amount = getRandom(10) + 90;
-				}
-				else if (chance < 446)
-				{
+				} else if (chance < 446) {
 					amount = getRandom(10) + 80;
-				}
-				else if (chance < 715)
-				{
+				} else if (chance < 715) {
 					amount = getRandom(10) + 70;
-				}
-				else
-				{
+				} else {
 					amount = getRandom(10) + 60;
 				}
 				st.giveItems(VULTURES_GOLDEN_FEATHER, amount);
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-			}
-			else
-			{
-				if (getRandom(1000) < MONSTERS.get(npc.getId()))
-				{
+			} else {
+				if (getRandom(1000) < MONSTERS.get(npc.getId())) {
 					st.giveItems(VULTURES_GOLDEN_FEATHER, 1);
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
@@ -137,29 +115,22 @@ public class Q00699_GuardianOfTheSkies extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				st = player.getQuestState(Q10273_GoodDayToFly.class.getSimpleName());
 				htmltext = ((st == null) || (!st.isCompleted()) || (player.getLevel() < MIN_LVL)) ? "32557-02.htm" : "32557-01.htm";
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				final long feathers = st.getQuestItemsCount(VULTURES_GOLDEN_FEATHER);
-				if (feathers > 0)
-				{
+				if (feathers > 0) {
 					st.giveAdena(((feathers * VULTURES_GOLDEN_FEATHER_ADENA) + (feathers > BONUS_COUNT ? BONUS : 0)), true);
 					st.takeItems(VULTURES_GOLDEN_FEATHER, -1);
 					htmltext = (feathers > BONUS_COUNT) ? "32557-07.html" : "32557-06.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32557-05.html";
 				}
 				break;

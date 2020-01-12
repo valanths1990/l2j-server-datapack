@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Seven Signs, To the Monastery of Silence (10294)
  * @author Adry_85
  */
-public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
-{
+public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest {
 	// NPCs
 	private static final int ELCADIA = 32784;
 	private static final int ELCADIA_INSTANCE = 32787;
@@ -68,23 +67,20 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 	// Buffs
 	private static final SkillHolder VAMPIRIC_RAGE = new SkillHolder(6727);
 	private static final SkillHolder RESIST_HOLY = new SkillHolder(6729);
-	private static final SkillHolder[] MAGE_BUFFS =
-	{
+	private static final SkillHolder[] MAGE_BUFFS = {
 		new SkillHolder(6714), // Wind Walk of Elcadia
 		new SkillHolder(6721), // Empower of Elcadia
 		new SkillHolder(6722), // Acumen of Elcadia
 		new SkillHolder(6717), // Berserker Spirit of Elcadia
 	};
-	private static final SkillHolder[] WARRIOR_BUFFS =
-	{
+	private static final SkillHolder[] WARRIOR_BUFFS = {
 		new SkillHolder(6714), // Wind Walk of Elcadia
 		new SkillHolder(6715), // Haste of Elcadia
 		new SkillHolder(6716), // Might of Elcadia
 		new SkillHolder(6717), // Berserker Spirit of Elcadia
 	};
 	
-	public Q10294_SevenSignsToTheMonasteryOfSilence()
-	{
+	public Q10294_SevenSignsToTheMonasteryOfSilence() {
 		super(10294, Q10294_SevenSignsToTheMonasteryOfSilence.class.getSimpleName(), "Seven Signs, To the Monastery of Silence");
 		addFirstTalkId(ELCADIA_INSTANCE);
 		addStartNpc(ELCADIA, ODD_GLOBE, ELCADIA_INSTANCE, RELIC_GUARDIAN);
@@ -92,41 +88,32 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "32784-03.htm":
-			case "32784-04.htm":
-			{
+			case "32784-04.htm": {
 				htmltext = event;
 				break;
 			}
-			case "32784-05.html":
-			{
+			case "32784-05.html": {
 				qs.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "32792-02.html":
-			{
-				if (qs.isCond(1))
-				{
+			case "32792-02.html": {
+				if (qs.isCond(1)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32792-03.html":
-			{
-				if (qs.isCond(1))
-				{
+			case "32792-03.html": {
+				if (qs.isCond(1)) {
 					qs.setCond(2, true);
 					htmltext = event;
 				}
@@ -165,18 +152,14 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 			case "32807-07.html":
 			case "32807-08.html":
 			case "32807-09.html":
-			case "32807-10.html":
-			{
-				if (qs.isCond(2))
-				{
+			case "32807-10.html": {
+				if (qs.isCond(2)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32792-08.html":
-			{
-				if (qs.isCond(3))
-				{
+			case "32792-08.html": {
+				if (qs.isCond(3)) {
 					qs.unset("good1");
 					qs.unset("good2");
 					qs.unset("good3");
@@ -187,100 +170,81 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 				}
 				break;
 			}
-			case "BUFF":
-			{
+			case "BUFF": {
 				npc.setTarget(player);
-				if (player.isMageClass())
-				{
-					for (SkillHolder skill : MAGE_BUFFS)
-					{
+				if (player.isMageClass()) {
+					for (SkillHolder skill : MAGE_BUFFS) {
 						npc.doSimultaneousCast(skill);
 					}
-				}
-				else
-				{
-					for (SkillHolder skill : WARRIOR_BUFFS)
-					{
+				} else {
+					for (SkillHolder skill : WARRIOR_BUFFS) {
 						npc.doSimultaneousCast(skill);
 					}
 				}
 				break;
 			}
-			case "RIGHT_BOOK1":
-			{
+			case "RIGHT_BOOK1": {
 				qs.set("good1", "1");
 				npc.setDisplayEffect(1);
 				startQuestTimer("SPAWN_MOBS", 22000, npc, player);
 				htmltext = "32821-02.html";
-				if (hasCheckedAllRightBooks(qs))
-				{
+				if (hasCheckedAllRightBooks(qs)) {
 					player.showQuestMovie(25);
 				}
 				break;
 			}
-			case "RIGHT_BOOK2":
-			{
+			case "RIGHT_BOOK2": {
 				qs.set("good2", "1");
 				npc.setDisplayEffect(1);
 				npc.setTarget(player);
 				npc.doCast(VAMPIRIC_RAGE);
 				htmltext = "32821-02.html";
-				if (hasCheckedAllRightBooks(qs))
-				{
+				if (hasCheckedAllRightBooks(qs)) {
 					player.showQuestMovie(25);
 				}
 				break;
 			}
-			case "RIGHT_BOOK3":
-			{
+			case "RIGHT_BOOK3": {
 				qs.set("good3", "1");
 				npc.setDisplayEffect(1);
 				final L2Npc jude = addSpawn(JUDE_VAN_ETINA, 85783, -253471, -8320, 65, false, 0, false, player.getInstanceId());
 				jude.setTarget(player);
 				jude.doCast(RESIST_HOLY);
 				htmltext = "32821-02.html";
-				if (hasCheckedAllRightBooks(qs))
-				{
+				if (hasCheckedAllRightBooks(qs)) {
 					player.showQuestMovie(25);
 				}
 				break;
 			}
-			case "RIGHT_BOOK4":
-			{
+			case "RIGHT_BOOK4": {
 				qs.set("good4", "1");
 				npc.setDisplayEffect(1);
 				final L2Npc solina = addSpawn(SOLINAS_EVIL_THOUGHTS, 85793, -247581, -8320, 0, false, 0, false, player.getInstanceId());
 				solina.setTarget(player);
 				solina.doCast(RESIST_HOLY);
 				htmltext = "32821-02.html";
-				if (hasCheckedAllRightBooks(qs))
-				{
+				if (hasCheckedAllRightBooks(qs)) {
 					player.showQuestMovie(25);
 				}
 				break;
 			}
-			case "DONE1":
-			{
+			case "DONE1": {
 				htmltext = ((qs.getInt("good1") == 1) ? "32804-05.html" : "32804-03.html");
 				break;
 			}
-			case "DONE2":
-			{
+			case "DONE2": {
 				htmltext = ((qs.getInt("good2") == 1) ? "32805-05.html" : "32805-03.html");
 				break;
 			}
-			case "DONE3":
-			{
+			case "DONE3": {
 				htmltext = ((qs.getInt("good3") == 1) ? "32806-05.html" : "32806-03.html");
 				break;
 			}
-			case "DONE4":
-			{
+			case "DONE4": {
 				htmltext = ((qs.getInt("good4") == 1) ? "32807-05.html" : "32807-03.html");
 				break;
 			}
-			case "SPAWN_MOBS":
-			{
+			case "SPAWN_MOBS": {
 				addSpawn(JUDE_EVIL_THOUGHTS, 88655, -250591, -8320, 144, false, 0, false, player.getInstanceId());
 				addSpawn(GUIDE_SOLINA, 88655, -250591, -8320, 144, false, 0, false, player.getInstanceId());
 				addSpawn(SOLINA_LAY_BROTHER, 88655, -250591, -8320, 144, false, 0, false, player.getInstanceId());
@@ -292,95 +256,67 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "32787.html";
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
-			case ELCADIA:
-			{
-				if (qs.isCompleted())
-				{
+		switch (npc.getId()) {
+			case ELCADIA: {
+				if (qs.isCompleted()) {
 					htmltext = "32784-02.html";
-				}
-				else if (qs.isCreated())
-				{
+				} else if (qs.isCreated()) {
 					htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.class.getSimpleName())) ? "32784-01.htm" : "32784-07.htm";
-				}
-				else if (qs.isStarted())
-				{
-					if (qs.isCond(1))
-					{
+				} else if (qs.isStarted()) {
+					if (qs.isCond(1)) {
 						htmltext = "32784-06.html";
 					}
 				}
 				break;
 			}
-			case ERIS_EVIL_THOUGHTS:
-			{
-				switch (qs.getCond())
-				{
-					case 1:
-					{
+			case ERIS_EVIL_THOUGHTS: {
+				switch (qs.getCond()) {
+					case 1: {
 						htmltext = "32792-01.html";
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						htmltext = "32792-04.html";
 						break;
 					}
-					case 3:
-					{
+					case 3: {
 						htmltext = ((player.isSubClassActive()) ? "32792-09.html" : "32792-07.html");
 						break;
 					}
 				}
 				break;
 			}
-			case RELIC_GUARDIAN:
-			{
-				if (qs.isCond(2))
-				{
-					if (hasCheckedAllRightBooks(qs))
-					{
+			case RELIC_GUARDIAN: {
+				if (qs.isCond(2)) {
+					if (hasCheckedAllRightBooks(qs)) {
 						qs.setCond(3, true);
 						htmltext = "32803-04.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "32803-01.html";
 					}
-				}
-				else if (qs.isCond(3))
-				{
+				} else if (qs.isCond(3)) {
 					htmltext = "32803-05.html";
 				}
 				break;
 			}
-			case ODD_GLOBE:
-			{
-				if (qs.getCond() < 3)
-				{
+			case ODD_GLOBE: {
+				if (qs.getCond() < 3) {
 					htmltext = "32815-01.html";
 				}
 				break;
 			}
-			case ELCADIA_INSTANCE:
-			{
-				if (qs.isCond(1))
-				{
+			case ELCADIA_INSTANCE: {
+				if (qs.isCond(1)) {
 					htmltext = "32787-01.html";
-				}
-				else if (qs.isCond(2))
-				{
+				} else if (qs.isCond(2)) {
 					htmltext = "32787-02.html";
 				}
 				break;
@@ -396,31 +332,25 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 			case READING_DESK12:
 			case READING_DESK14:
 			case READING_DESK15:
-			case READING_DESK16:
-			{
-				if (qs.isCond(2))
-				{
+			case READING_DESK16: {
+				if (qs.isCond(2)) {
 					htmltext = "32822-01.html";
 				}
 				break;
 			}
-			case READING_DESK1:
-			{
+			case READING_DESK1: {
 				htmltext = ((qs.getInt("good1") == 1) ? "32821-03.html" : "32821-01.html");
 				break;
 			}
-			case READING_DESK5:
-			{
+			case READING_DESK5: {
 				htmltext = ((qs.getInt("good2") == 1) ? "32821-03.html" : "32825-01.html");
 				break;
 			}
-			case READING_DESK9:
-			{
+			case READING_DESK9: {
 				htmltext = ((qs.getInt("good3") == 1) ? "32821-03.html" : "32829-01.html");
 				break;
 			}
-			case READING_DESK13:
-			{
+			case READING_DESK13: {
 				htmltext = ((qs.getInt("good4") == 1) ? "32821-03.html" : "32833-01.html");
 				break;
 			}
@@ -429,10 +359,8 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 			case RELIC_WATCHER1:
 			case RELIC_WATCHER2:
 			case RELIC_WATCHER3:
-			case RELIC_WATCHER4:
-			{
-				if (qs.isCond(2))
-				{
+			case RELIC_WATCHER4: {
+				if (qs.isCond(2)) {
 					htmltext = npc.getId() + "-01.html";
 				}
 				break;
@@ -441,8 +369,7 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 		return htmltext;
 	}
 	
-	public boolean hasCheckedAllRightBooks(QuestState qs)
-	{
+	public boolean hasCheckedAllRightBooks(QuestState qs) {
 		return ((qs.getInt("good1") == 1) && (qs.getInt("good2") == 1) && (qs.getInt("good3") == 1) && (qs.getInt("good4") == 1));
 	}
 }

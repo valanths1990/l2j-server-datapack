@@ -43,8 +43,7 @@ import com.l2jserver.gameserver.util.Util;
  * Updated to Freya.
  * @author Fulminus, Gigiikun
  */
-public final class BeastFarm extends AbstractNpcAI
-{
+public final class BeastFarm extends AbstractNpcAI {
 	private static final int GOLDEN_SPICE = 15474;
 	private static final int CRYSTAL_SPICE = 15475;
 	private static final int SKILL_GOLDEN_SPICE = 9049;
@@ -53,23 +52,20 @@ public final class BeastFarm extends AbstractNpcAI
 	private static final int SKILL_BLESSED_CRYSTAL_SPICE = 9052;
 	private static final int SKILL_SGRADE_GOLDEN_SPICE = 9053;
 	private static final int SKILL_SGRADE_CRYSTAL_SPICE = 9054;
-	private static final int[] TAMED_BEASTS =
-	{
+	private static final int[] TAMED_BEASTS = {
 		18869,
 		18870,
 		18871,
 		18872
 	};
 	private static final int TAME_CHANCE = 20;
-	protected static final int[] SPECIAL_SPICE_CHANCES =
-	{
+	protected static final int[] SPECIAL_SPICE_CHANCES = {
 		33,
 		75
 	};
 	
 	// all mobs that can eat...
-	private static final int[] FEEDABLE_BEASTS =
-	{
+	private static final int[] FEEDABLE_BEASTS = {
 		// Kookaburras
 		18873,
 		18874,
@@ -108,8 +104,7 @@ public final class BeastFarm extends AbstractNpcAI
 	private static final Map<Integer, GrowthCapableMob> GROWTH_CAPABLE_MONSTERS = new HashMap<>();
 	private static List<TamedBeast> TAMED_BEAST_DATA = new ArrayList<>();
 	
-	private BeastFarm()
-	{
+	private BeastFarm() {
 		super(BeastFarm.class.getSimpleName(), "ai/group_template");
 		addSkillSeeId(FEEDABLE_BEASTS);
 		addKillId(FEEDABLE_BEASTS);
@@ -229,13 +224,10 @@ public final class BeastFarm extends AbstractNpcAI
 		TAMED_BEAST_DATA.add(new TamedBeast("%name% of Vigor", new SkillHolder(6431, 1), new SkillHolder(6666, 1)));
 	}
 	
-	public void spawnNext(L2Npc npc, L2PcInstance player, int nextNpcId, int food)
-	{
+	public void spawnNext(L2Npc npc, L2PcInstance player, int nextNpcId, int food) {
 		// remove the feedinfo of the mob that got despawned, if any
-		if (FEED_INFO.containsKey(npc.getObjectId()))
-		{
-			if (FEED_INFO.get(npc.getObjectId()) == player.getObjectId())
-			{
+		if (FEED_INFO.containsKey(npc.getObjectId())) {
+			if (FEED_INFO.get(npc.getObjectId()) == player.getObjectId()) {
 				FEED_INFO.remove(npc.getObjectId());
 			}
 		}
@@ -249,14 +241,12 @@ public final class BeastFarm extends AbstractNpcAI
 		
 		// if this is finally a trained mob, then despawn any other trained mobs that the
 		// player might have and initialize the Tamed Beast.
-		if (Util.contains(TAMED_BEASTS, nextNpcId))
-		{
+		if (Util.contains(TAMED_BEASTS, nextNpcId)) {
 			final L2TamedBeastInstance nextNpc = new L2TamedBeastInstance(nextNpcId, player, food, npc.getX(), npc.getY(), npc.getZ(), true);
 			
 			TamedBeast beast = TAMED_BEAST_DATA.get(getRandom(TAMED_BEAST_DATA.size()));
 			String name = beast.getName();
-			switch (nextNpcId)
-			{
+			switch (nextNpcId) {
 				case 18869:
 					name = name.replace("%name%", "Alpine Kookaburra");
 					break;
@@ -275,15 +265,12 @@ public final class BeastFarm extends AbstractNpcAI
 			nextNpc.setRunning();
 			
 			SkillData st = SkillData.getInstance();
-			for (SkillHolder sh : beast.getSkills())
-			{
+			for (SkillHolder sh : beast.getSkills()) {
 				nextNpc.addBeastSkill(st.getSkill(sh.getSkillId(), sh.getSkillLvl()));
 			}
 			
 			Q00020_BringUpWithLove.checkJewelOfInnocence(player);
-		}
-		else
-		{
+		} else {
 			// if not trained, the newly spawned mob will automatically be agro against its feeder
 			// (what happened to "never bite the hand that feeds you" anyway?!)
 			L2Attackable nextNpc = (L2Attackable) addSpawn(nextNpcId, npc);
@@ -299,35 +286,30 @@ public final class BeastFarm extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
-	{
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon) {
 		// this behavior is only run when the target of skill is the passed npc (chest)
 		// i.e. when the player is attempting to open the chest using a skill
-		if (!Util.contains(targets, npc))
-		{
+		if (!Util.contains(targets, npc)) {
 			return super.onSkillSee(npc, caster, skill, targets, isSummon);
 		}
 		// gather some values on local variables
 		int npcId = npc.getId();
 		int skillId = skill.getId();
 		// check if the npc and skills used are valid for this script. Exit if invalid.
-		if (!Util.contains(FEEDABLE_BEASTS, npcId) || ((skillId != SKILL_GOLDEN_SPICE) && (skillId != SKILL_CRYSTAL_SPICE) && (skillId != SKILL_BLESSED_GOLDEN_SPICE) && (skillId != SKILL_BLESSED_CRYSTAL_SPICE) && (skillId != SKILL_SGRADE_GOLDEN_SPICE) && (skillId != SKILL_SGRADE_CRYSTAL_SPICE)))
-		{
+		if (!Util.contains(FEEDABLE_BEASTS, npcId) || ((skillId != SKILL_GOLDEN_SPICE) && (skillId != SKILL_CRYSTAL_SPICE) && (skillId != SKILL_BLESSED_GOLDEN_SPICE) && (skillId != SKILL_BLESSED_CRYSTAL_SPICE) && (skillId != SKILL_SGRADE_GOLDEN_SPICE) && (skillId != SKILL_SGRADE_CRYSTAL_SPICE))) {
 			return super.onSkillSee(npc, caster, skill, targets, isSummon);
 		}
 		
 		// first gather some values on local variables
 		int objectId = npc.getObjectId();
 		int growthLevel = 3; // if a mob is in FEEDABLE_BEASTS but not in _GrowthCapableMobs, then it's at max growth (3)
-		if (GROWTH_CAPABLE_MONSTERS.containsKey(npcId))
-		{
+		if (GROWTH_CAPABLE_MONSTERS.containsKey(npcId)) {
 			growthLevel = GROWTH_CAPABLE_MONSTERS.get(npcId).getGrowthLevel();
 		}
 		
 		// prevent exploit which allows 2 players to simultaneously raise the same 0-growth beast
 		// If the mob is at 0th level (when it still listens to all feeders) lock it to the first feeder!
-		if ((growthLevel == 0) && FEED_INFO.containsKey(objectId))
-		{
+		if ((growthLevel == 0) && FEED_INFO.containsKey(objectId)) {
 			return super.onSkillSee(npc, caster, skill, targets, isSummon);
 		}
 		
@@ -337,41 +319,31 @@ public final class BeastFarm extends AbstractNpcAI
 		npc.broadcastSocialAction(2);
 		
 		int food = 0;
-		if ((skillId == SKILL_GOLDEN_SPICE) || (skillId == SKILL_BLESSED_GOLDEN_SPICE))
-		{
+		if ((skillId == SKILL_GOLDEN_SPICE) || (skillId == SKILL_BLESSED_GOLDEN_SPICE)) {
 			food = GOLDEN_SPICE;
-		}
-		else if ((skillId == SKILL_CRYSTAL_SPICE) || (skillId == SKILL_BLESSED_CRYSTAL_SPICE))
-		{
+		} else if ((skillId == SKILL_CRYSTAL_SPICE) || (skillId == SKILL_BLESSED_CRYSTAL_SPICE)) {
 			food = CRYSTAL_SPICE;
 		}
 		
 		// if this pet can't grow, it's all done.
-		if (GROWTH_CAPABLE_MONSTERS.containsKey(npcId))
-		{
+		if (GROWTH_CAPABLE_MONSTERS.containsKey(npcId)) {
 			// do nothing if this mob doesn't eat the specified food (food gets consumed but has no effect).
 			int newNpcId = GROWTH_CAPABLE_MONSTERS.get(npcId).getLeveledNpcId(skillId);
-			if (newNpcId == -1)
-			{
-				if (growthLevel == 0)
-				{
+			if (newNpcId == -1) {
+				if (growthLevel == 0) {
 					FEED_INFO.remove(objectId);
 					npc.setRunning();
 					((L2Attackable) npc).addDamageHate(caster, 0, 1);
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, caster);
 				}
 				return super.onSkillSee(npc, caster, skill, targets, isSummon);
-			}
-			else if ((growthLevel > 0) && (FEED_INFO.get(objectId) != caster.getObjectId()))
-			{
+			} else if ((growthLevel > 0) && (FEED_INFO.get(objectId) != caster.getObjectId())) {
 				// check if this is the same player as the one who raised it from growth 0.
 				// if no, then do not allow a chance to raise the pet (food gets consumed but has no effect).
 				return super.onSkillSee(npc, caster, skill, targets, isSummon);
 			}
 			spawnNext(npc, caster, newNpcId, food);
-		}
-		else
-		{
+		} else {
 			caster.sendMessage("The beast spit out the feed instead of eating it.");
 			npc.dropItem(caster, food, 1);
 		}
@@ -379,105 +351,78 @@ public final class BeastFarm extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		// remove the feedinfo of the mob that got killed, if any
-		if (FEED_INFO.containsKey(npc.getObjectId()))
-		{
+		if (FEED_INFO.containsKey(npc.getObjectId())) {
 			FEED_INFO.remove(npc.getObjectId());
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	// all mobs that grow by eating
-	private static class GrowthCapableMob
-	{
+	private static class GrowthCapableMob {
 		private final int _chance;
 		private final int _growthLevel;
 		private final int _tameNpcId;
 		private final Map<Integer, Integer> _skillSuccessNpcIdList = new HashMap<>();
 		
-		public GrowthCapableMob(int chance, int growthLevel, int tameNpcId)
-		{
+		public GrowthCapableMob(int chance, int growthLevel, int tameNpcId) {
 			_chance = chance;
 			_growthLevel = growthLevel;
 			_tameNpcId = tameNpcId;
 		}
 		
-		public void addNpcIdForSkillId(int skillId, int npcId)
-		{
+		public void addNpcIdForSkillId(int skillId, int npcId) {
 			_skillSuccessNpcIdList.put(skillId, npcId);
 		}
 		
-		public int getGrowthLevel()
-		{
+		public int getGrowthLevel() {
 			return _growthLevel;
 		}
 		
-		public int getLeveledNpcId(int skillId)
-		{
-			if (!_skillSuccessNpcIdList.containsKey(skillId))
-			{
+		public int getLeveledNpcId(int skillId) {
+			if (!_skillSuccessNpcIdList.containsKey(skillId)) {
 				return -1;
-			}
-			else if ((skillId == SKILL_BLESSED_GOLDEN_SPICE) || (skillId == SKILL_BLESSED_CRYSTAL_SPICE) || (skillId == SKILL_SGRADE_GOLDEN_SPICE) || (skillId == SKILL_SGRADE_CRYSTAL_SPICE))
-			{
-				if (getRandom(100) < SPECIAL_SPICE_CHANCES[0])
-				{
-					if (getRandom(100) < SPECIAL_SPICE_CHANCES[1])
-					{
+			} else if ((skillId == SKILL_BLESSED_GOLDEN_SPICE) || (skillId == SKILL_BLESSED_CRYSTAL_SPICE) || (skillId == SKILL_SGRADE_GOLDEN_SPICE) || (skillId == SKILL_SGRADE_CRYSTAL_SPICE)) {
+				if (getRandom(100) < SPECIAL_SPICE_CHANCES[0]) {
+					if (getRandom(100) < SPECIAL_SPICE_CHANCES[1]) {
 						return _skillSuccessNpcIdList.get(skillId);
-					}
-					else if ((skillId == SKILL_BLESSED_GOLDEN_SPICE) || (skillId == SKILL_SGRADE_GOLDEN_SPICE))
-					{
+					} else if ((skillId == SKILL_BLESSED_GOLDEN_SPICE) || (skillId == SKILL_SGRADE_GOLDEN_SPICE)) {
 						return _skillSuccessNpcIdList.get(SKILL_GOLDEN_SPICE);
-					}
-					else
-					{
+					} else {
 						return _skillSuccessNpcIdList.get(SKILL_CRYSTAL_SPICE);
 					}
 				}
 				return -1;
-			}
-			else if ((_growthLevel == 2) && (getRandom(100) < TAME_CHANCE))
-			{
+			} else if ((_growthLevel == 2) && (getRandom(100) < TAME_CHANCE)) {
 				return _tameNpcId;
-			}
-			else if (getRandom(100) < _chance)
-			{
+			} else if (getRandom(100) < _chance) {
 				return _skillSuccessNpcIdList.get(skillId);
-			}
-			else
-			{
+			} else {
 				return -1;
 			}
 		}
 	}
 	
-	private static class TamedBeast
-	{
+	private static class TamedBeast {
 		private final String name;
 		private final SkillHolder[] sh;
 		
-		public TamedBeast(String beastName, SkillHolder... holders)
-		{
+		public TamedBeast(String beastName, SkillHolder... holders) {
 			name = beastName;
 			sh = holders;
 		}
 		
-		public String getName()
-		{
+		public String getName() {
 			return name;
 		}
 		
-		public SkillHolder[] getSkills()
-		{
+		public SkillHolder[] getSkills() {
 			return sh;
 		}
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new BeastFarm();
 	}
 }

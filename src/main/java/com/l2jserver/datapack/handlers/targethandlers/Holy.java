@@ -28,25 +28,20 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 /**
  * @author UnAfraid
  */
-public class Holy implements ITargetTypeHandler
-{
+public class Holy implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		if (!(target instanceof L2ArtefactInstance))
-		{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+		if (!(target instanceof L2ArtefactInstance)) {
 			return EMPTY_TARGET_LIST;
 		}
 		
-		return new L2Object[]
-		{
+		return new L2Object[] {
 			target
 		};
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.HOLY;
 	}
 }

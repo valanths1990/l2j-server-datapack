@@ -36,8 +36,7 @@ import com.l2jserver.gameserver.util.Util;
  * Sel Mahum Training Ground AI for squads and chefs.
  * @author GKR
  */
-public final class SelMahumSquad extends AbstractNpcAI
-{
+public final class SelMahumSquad extends AbstractNpcAI {
 	// NPC's
 	private static final int CHEF = 18908;
 	private static final int FIRE = 18927;
@@ -53,15 +52,13 @@ public final class SelMahumSquad extends AbstractNpcAI
 	private static final SkillHolder SOUP_OF_FAILURE = new SkillHolder(6688);
 	
 	// Sel Mahum Squad Leaders
-	private static final int[] SQUAD_LEADERS =
-	{
+	private static final int[] SQUAD_LEADERS = {
 		22786,
 		22787,
 		22788
 	};
 	
-	private static final NpcStringId[] CHEF_FSTRINGS =
-	{
+	private static final NpcStringId[] CHEF_FSTRINGS = {
 		NpcStringId.I_BROUGHT_THE_FOOD,
 		NpcStringId.COME_AND_EAT
 	};
@@ -73,8 +70,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 	private static final int MAHUM_EFFECT_SLEEP = 2;
 	private static final int MAHUM_EFFECT_NONE = 3;
 	
-	private SelMahumSquad()
-	{
+	private SelMahumSquad() {
 		super(SelMahumSquad.class.getSimpleName(), "ai/group_template");
 		
 		addAttackId(CHEF);
@@ -92,66 +88,51 @@ public final class SelMahumSquad extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "chef_disable_reward":
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "chef_disable_reward": {
 				npc.getVariables().set("REWARD_TIME_GONE", 1);
 				break;
 			}
-			case "chef_heal_player":
-			{
+			case "chef_heal_player": {
 				healPlayer(npc, player);
 				break;
 			}
-			case "chef_remove_invul":
-			{
-				if (npc.isMonster())
-				{
+			case "chef_remove_invul": {
+				if (npc.isMonster()) {
 					npc.setIsInvul(false);
 					npc.getVariables().remove("INVUL_REMOVE_TIMER_STARTED");
-					if ((player != null) && !player.isDead() && npc.getKnownList().knowsThePlayer(player))
-					{
+					if ((player != null) && !player.isDead() && npc.getKnownList().knowsThePlayer(player)) {
 						addAttackDesire(npc, player);
 					}
 				}
 				break;
 			}
-			case "chef_set_invul":
-			{
-				if (!npc.isDead())
-				{
+			case "chef_set_invul": {
+				if (!npc.isDead()) {
 					npc.setIsInvul(true);
 				}
 				break;
 			}
-			case "fire":
-			{
+			case "fire": {
 				startQuestTimer("fire", 30000 + getRandom(5000), npc, null);
 				npc.setDisplayEffect(FIRE_EFFECT_NONE);
 				
-				if (getRandom(GameTimeController.getInstance().isNight() ? 2 : 4) < 1)
-				{
+				if (getRandom(GameTimeController.getInstance().isNight() ? 2 : 4) < 1) {
 					npc.setDisplayEffect(FIRE_EFFECT_BURN); // fire burns
 					npc.broadcastEvent("SCE_CAMPFIRE_START", 600, null);
-				}
-				else
-				{
+				} else {
 					npc.setDisplayEffect(FIRE_EFFECT_NONE); // fire goes out
 					npc.broadcastEvent("SCE_CAMPFIRE_END", 600, null);
 				}
 				break;
 			}
-			case "fire_arrived":
-			{
+			case "fire_arrived": {
 				// myself.i_quest0 = 1;
 				npc.setIsRunning(false);
 				npc.setTarget(npc);
 				
-				if (npc.isNoRndWalk())
-				{
+				if (npc.isNoRndWalk()) {
 					npc.doCast(CAMP_FIRE_TIRED);
 					npc.setDisplayEffect(MAHUM_EFFECT_SLEEP);
 				}
@@ -164,27 +145,22 @@ public final class SelMahumSquad extends AbstractNpcAI
 				startQuestTimer("remove_effects", 300000, npc, null);
 				break;
 			}
-			case "notify_dinner":
-			{
+			case "notify_dinner": {
 				npc.broadcastEvent("SCE_DINNER_EAT", 600, null);
 				break;
 			}
-			case "remove_effects":
-			{
+			case "remove_effects": {
 				// myself.i_quest0 = 0;
 				npc.setIsRunning(true);
 				npc.setDisplayEffect(MAHUM_EFFECT_NONE);
 				break;
 			}
-			case "reset_full_bottle_prize":
-			{
+			case "reset_full_bottle_prize": {
 				npc.getVariables().remove("FULL_BARREL_REWARDING_PLAYER");
 				break;
 			}
-			case "return_from_fire":
-			{
-				if (npc.isMonster() && !npc.isDead())
-				{
+			case "return_from_fire": {
+				if (npc.isMonster() && !npc.isDead()) {
 					((L2MonsterInstance) npc).returnHome();
 				}
 				break;
@@ -194,12 +170,9 @@ public final class SelMahumSquad extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
-	{
-		if ((npc.getId() == CHEF) && (npc.getVariables().getInt("BUSY_STATE") == 0))
-		{
-			if (npc.getVariables().getInt("INVUL_REMOVE_TIMER_STARTED") == 0)
-			{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill) {
+		if ((npc.getId() == CHEF) && (npc.getVariables().getInt("BUSY_STATE") == 0)) {
+			if (npc.getVariables().getInt("INVUL_REMOVE_TIMER_STARTED") == 0) {
 				startQuestTimer("chef_remove_invul", 180000, npc, attacker);
 				startQuestTimer("chef_disable_reward", 60000, npc, null);
 				npc.getVariables().set("INVUL_REMOVE_TIMER_STARTED", 1);
@@ -207,30 +180,23 @@ public final class SelMahumSquad extends AbstractNpcAI
 			startQuestTimer("chef_heal_player", 1000, npc, attacker);
 			startQuestTimer("chef_set_invul", 60000, npc, null);
 			npc.getVariables().set("BUSY_STATE", 1);
-		}
-		else if (Util.contains(SQUAD_LEADERS, npc.getId()))
-		{
+		} else if (Util.contains(SQUAD_LEADERS, npc.getId())) {
 			handlePreAttackMotion(npc);
 		}
 		return super.onAttack(npc, attacker, damage, isSummon, skill);
 	}
 	
 	@Override
-	public String onFactionCall(L2Npc npc, L2Npc caller, L2PcInstance attacker, boolean isSummon)
-	{
+	public String onFactionCall(L2Npc npc, L2Npc caller, L2PcInstance attacker, boolean isSummon) {
 		handlePreAttackMotion(npc);
 		return super.onFactionCall(npc, caller, attacker, isSummon);
 	}
 	
 	@Override
-	public String onEventReceived(String eventName, L2Npc sender, L2Npc receiver, L2Object reference)
-	{
-		switch (eventName)
-		{
-			case "SCE_DINNER_CHECK":
-			{
-				if (receiver.getId() == FIRE)
-				{
+	public String onEventReceived(String eventName, L2Npc sender, L2Npc receiver, L2Object reference) {
+		switch (eventName) {
+			case "SCE_DINNER_CHECK": {
+				if (receiver.getId() == FIRE) {
 					receiver.setDisplayEffect(FIRE_EFFECT_BURN);
 					final L2Npc stove = addSpawn(STOVE, receiver.getX(), receiver.getY(), receiver.getZ() + 100, 0, false, 0);
 					stove.setSummoner(receiver);
@@ -239,10 +205,8 @@ public final class SelMahumSquad extends AbstractNpcAI
 				}
 				break;
 			}
-			case "SCE_CAMPFIRE_START":
-			{
-				if (!receiver.isNoRndWalk() && !receiver.isDead() && (receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && Util.contains(SQUAD_LEADERS, receiver.getId()))
-				{
+			case "SCE_CAMPFIRE_START": {
+				if (!receiver.isNoRndWalk() && !receiver.isDead() && (receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && Util.contains(SQUAD_LEADERS, receiver.getId())) {
 					receiver.setIsNoRndWalk(true); // Moving to fire - i_ai0 = 1
 					receiver.setIsRunning(true);
 					final Location loc = sender.getPointInRange(100, 200);
@@ -254,14 +218,10 @@ public final class SelMahumSquad extends AbstractNpcAI
 				}
 				break;
 			}
-			case "SCE_CAMPFIRE_END":
-			{
-				if ((receiver.getId() == STOVE) && (receiver.getSummoner() == sender))
-				{
+			case "SCE_CAMPFIRE_END": {
+				if ((receiver.getId() == STOVE) && (receiver.getSummoner() == sender)) {
 					receiver.deleteMe();
-				}
-				else if ((receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && Util.contains(SQUAD_LEADERS, receiver.getId()))
-				{
+				} else if ((receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && Util.contains(SQUAD_LEADERS, receiver.getId())) {
 					receiver.setIsNoRndWalk(false);
 					receiver.getVariables().remove("BUSY_STATE");
 					receiver.setRHandId(THS_Weapon);
@@ -269,10 +229,8 @@ public final class SelMahumSquad extends AbstractNpcAI
 				}
 				break;
 			}
-			case "SCE_DINNER_EAT":
-			{
-				if (!receiver.isDead() && (receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && (receiver.getVariables().getInt("BUSY_STATE", 0) == 0) && Util.contains(SQUAD_LEADERS, receiver.getId()))
-				{
+			case "SCE_DINNER_EAT": {
+				if (!receiver.isDead() && (receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && (receiver.getVariables().getInt("BUSY_STATE", 0) == 0) && Util.contains(SQUAD_LEADERS, receiver.getId())) {
 					if (receiver.isNoRndWalk()) // i_ai0 == 1
 					{
 						receiver.setRHandId(THS_Weapon);
@@ -290,10 +248,8 @@ public final class SelMahumSquad extends AbstractNpcAI
 				}
 				break;
 			}
-			case "SCE_SOUP_FAILURE":
-			{
-				if (Util.contains(SQUAD_LEADERS, receiver.getId()))
-				{
+			case "SCE_SOUP_FAILURE": {
+				if (Util.contains(SQUAD_LEADERS, receiver.getId())) {
 					receiver.getVariables().set("FULL_BARREL_REWARDING_PLAYER", reference.getObjectId()); // TODO: Use it in 289 quest
 					startQuestTimer("reset_full_bottle_prize", 180000, receiver, null);
 				}
@@ -304,10 +260,8 @@ public final class SelMahumSquad extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (npc.isMonster() && (npc.getVariables().getInt("REWARD_TIME_GONE") == 0))
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (npc.isMonster() && (npc.getVariables().getInt("REWARD_TIME_GONE") == 0)) {
 			((L2MonsterInstance) npc).dropItem(killer, 15492, 1);
 		}
 		cancelQuestTimer("chef_remove_invul", npc, null);
@@ -318,27 +272,22 @@ public final class SelMahumSquad extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onMoveFinished(L2Npc npc)
-	{
+	public void onMoveFinished(L2Npc npc) {
 		// Npc moves to fire
-		if (npc.isNoRndWalk() && (npc.getX() == npc.getVariables().getInt("DESTINATION_X")) && (npc.getY() == npc.getVariables().getInt("DESTINATION_Y")))
-		{
+		if (npc.isNoRndWalk() && (npc.getX() == npc.getVariables().getInt("DESTINATION_X")) && (npc.getY() == npc.getVariables().getInt("DESTINATION_Y"))) {
 			npc.setRHandId(OHS_Weapon);
 			startQuestTimer("fire_arrived", 3000, npc, null);
 		}
 	}
 	
 	@Override
-	public void onNodeArrived(L2Npc npc)
-	{
+	public void onNodeArrived(L2Npc npc) {
 		npc.broadcastEvent("SCE_DINNER_CHECK", 300, null);
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
-	{
-		if ((npc.getId() == STOVE) && (skill.getId() == 9075) && Util.contains(targets, npc))
-		{
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon) {
+		if ((npc.getId() == STOVE) && (skill.getId() == 9075) && Util.contains(targets, npc)) {
 			npc.doCast(SOUP_OF_FAILURE);
 			npc.broadcastEvent("SCE_SOUP_FAILURE", 600, caster);
 		}
@@ -346,18 +295,12 @@ public final class SelMahumSquad extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
-		if (npc.getId() == CHEF)
-		{
+	public String onSpawn(L2Npc npc) {
+		if (npc.getId() == CHEF) {
 			npc.setIsInvul(false);
-		}
-		else if (npc.getId() == FIRE)
-		{
+		} else if (npc.getId() == FIRE) {
 			startQuestTimer("fire", 1000, npc, null);
-		}
-		else if (Util.contains(SQUAD_LEADERS, npc.getId()))
-		{
+		} else if (Util.contains(SQUAD_LEADERS, npc.getId())) {
 			npc.setDisplayEffect(3);
 			npc.setIsNoRndWalk(false);
 		}
@@ -365,24 +308,18 @@ public final class SelMahumSquad extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
-	{
-		if ((skill != null) && (skill.getId() == 6330))
-		{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill) {
+		if ((skill != null) && (skill.getId() == 6330)) {
 			healPlayer(npc, player);
 		}
 		return super.onSpellFinished(npc, player, skill);
 	}
 	
-	private void healPlayer(L2Npc npc, L2PcInstance player)
-	{
-		if ((player != null) && !player.isDead() && (npc.getVariables().getInt("INVUL_REMOVE_TIMER_STARTED") != 1) && ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST)))
-		{
+	private void healPlayer(L2Npc npc, L2PcInstance player) {
+		if ((player != null) && !player.isDead() && (npc.getVariables().getInt("INVUL_REMOVE_TIMER_STARTED") != 1) && ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST))) {
 			npc.setTarget(player);
 			npc.doCast(SALMON_PORRIDGE_ATTACK);
-		}
-		else
-		{
+		} else {
 			cancelQuestTimer("chef_set_invul", npc, null);
 			npc.getVariables().remove("BUSY_STATE");
 			npc.getVariables().remove("INVUL_REMOVE_TIMER_STARTED");
@@ -390,21 +327,18 @@ public final class SelMahumSquad extends AbstractNpcAI
 		}
 	}
 	
-	private void handlePreAttackMotion(L2Npc attacked)
-	{
+	private void handlePreAttackMotion(L2Npc attacked) {
 		cancelQuestTimer("remove_effects", attacked, null);
 		attacked.getVariables().remove("BUSY_STATE");
 		attacked.setIsNoRndWalk(false);
 		attacked.setDisplayEffect(MAHUM_EFFECT_NONE);
-		if (attacked.getRightHandItem() == OHS_Weapon)
-		{
+		if (attacked.getRightHandItem() == OHS_Weapon) {
 			attacked.setRHandId(THS_Weapon);
 		}
 		// TODO: Check about i_quest0
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new SelMahumSquad();
 	}
 }

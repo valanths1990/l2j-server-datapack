@@ -40,12 +40,10 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
  * Mercenary Captain AI.
  * @author malyelfik
  */
-public final class MercenaryCaptain extends AbstractNpcAI
-{
+public final class MercenaryCaptain extends AbstractNpcAI {
 	// NPCs
 	private static final Map<Integer, Integer> NPCS = new HashMap<>();
-	static
-	{
+	static {
 		NPCS.put(36481, 13757); // Mercenary Captain (Gludio)
 		NPCS.put(36482, 13758); // Mercenary Captain (Dion)
 		NPCS.put(36483, 13759); // Mercenary Captain (Giran)
@@ -68,22 +66,17 @@ public final class MercenaryCaptain extends AbstractNpcAI
 	private static final int MIN_LEVEL = 40;
 	private static final int CLASS_LEVEL = 2;
 	
-	private MercenaryCaptain()
-	{
+	private MercenaryCaptain() {
 		super(MercenaryCaptain.class.getSimpleName(), "ai/npc");
-		for (int id : NPCS.keySet())
-		{
+		for (int id : NPCS.keySet()) {
 			addStartNpc(id);
 			addFirstTalkId(id);
 			addTalkId(id);
 		}
 		
-		for (Territory terr : TerritoryWarManager.getInstance().getAllTerritories())
-		{
-			for (TerritoryNPCSpawn spawn : terr.getSpawnList())
-			{
-				if (NPCS.keySet().contains(spawn.getId()))
-				{
+		for (Territory terr : TerritoryWarManager.getInstance().getAllTerritories()) {
+			for (TerritoryNPCSpawn spawn : terr.getSpawnList()) {
+				if (NPCS.keySet().contains(spawn.getId())) {
 					startQuestTimer("say", DELAY, spawn.getNpc(), null, true);
 				}
 			}
@@ -91,21 +84,16 @@ public final class MercenaryCaptain extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (player != null)
-		{
+		if (player != null) {
 			final StringTokenizer st = new StringTokenizer(event, " ");
-			switch (st.nextToken())
-			{
-				case "36481-02.html":
-				{
+			switch (st.nextToken()) {
+				case "36481-02.html": {
 					htmltext = event;
 					break;
 				}
-				case "36481-03.html":
-				{
+				case "36481-03.html": {
 					final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 					html.setHtml(getHtm(player.getHtmlPrefix(), "36481-03.html"));
 					html.replace("%strider%", String.valueOf(territoryWar().getMinTerritoryBadgeForStriders()));
@@ -113,46 +101,37 @@ public final class MercenaryCaptain extends AbstractNpcAI
 					player.sendPacket(html);
 					break;
 				}
-				case "territory":
-				{
+				case "territory": {
 					player.sendPacket(new ExShowDominionRegistry(npc.getCastle().getResidenceId(), player));
 					break;
 				}
-				case "strider":
-				{
+				case "strider": {
 					final String type = st.nextToken();
 					final int price = (type.equals("3")) ? territoryWar().getMinTerritoryBadgeForBigStrider() : territoryWar().getMinTerritoryBadgeForStriders();
 					final int badgeId = NPCS.get(npc.getId());
-					if (getQuestItemsCount(player, badgeId) < price)
-					{
+					if (getQuestItemsCount(player, badgeId) < price) {
 						return "36481-07.html";
 					}
 					
 					final int striderId;
-					switch (type)
-					{
-						case "0":
-						{
+					switch (type) {
+						case "0": {
 							striderId = STRIDER_WIND;
 							break;
 						}
-						case "1":
-						{
+						case "1": {
 							striderId = STRIDER_STAR;
 							break;
 						}
-						case "2":
-						{
+						case "2": {
 							striderId = STRIDER_TWILIGHT;
 							break;
 						}
-						case "3":
-						{
+						case "3": {
 							striderId = GUARDIAN_STRIDER;
 							break;
 						}
-						default:
-						{
+						default: {
 							_log.warning(MercenaryCaptain.class.getSimpleName() + ": Unknown strider type: " + type);
 							return null;
 						}
@@ -162,46 +141,31 @@ public final class MercenaryCaptain extends AbstractNpcAI
 					htmltext = "36481-09.html";
 					break;
 				}
-				case "elite":
-				{
-					if (!hasQuestItems(player, ELITE_MERCENARY_CERTIFICATE))
-					{
+				case "elite": {
+					if (!hasQuestItems(player, ELITE_MERCENARY_CERTIFICATE)) {
 						htmltext = "36481-10.html";
-					}
-					else
-					{
+					} else {
 						final int listId = 676 + npc.getCastle().getResidenceId();
 						MultisellData.getInstance().separateAndSend(listId, player, npc, false);
 					}
 					break;
 				}
-				case "top-elite":
-				{
-					if (!hasQuestItems(player, TOP_ELITE_MERCENARY_CERTIFICATE))
-					{
+				case "top-elite": {
+					if (!hasQuestItems(player, TOP_ELITE_MERCENARY_CERTIFICATE)) {
 						htmltext = "36481-10.html";
-					}
-					else
-					{
+					} else {
 						final int listId = 685 + npc.getCastle().getResidenceId();
 						MultisellData.getInstance().separateAndSend(listId, player, npc, false);
 					}
 					break;
 				}
 			}
-		}
-		else if (event.equalsIgnoreCase("say") && !npc.isDecayed())
-		{
-			if (TerritoryWarManager.getInstance().isTWInProgress())
-			{
+		} else if (event.equalsIgnoreCase("say") && !npc.isDecayed()) {
+			if (TerritoryWarManager.getInstance().isTWInProgress()) {
 				broadcastNpcSay(npc, Say2.NPC_SHOUT, NpcStringId.CHARGE_CHARGE_CHARGE);
-			}
-			else if (getRandom(2) == 0)
-			{
+			} else if (getRandom(2) == 0) {
 				broadcastNpcSay(npc, Say2.NPC_SHOUT, NpcStringId.COURAGE_AMBITION_PASSION_MERCENARIES_WHO_WANT_TO_REALIZE_THEIR_DREAM_OF_FIGHTING_IN_THE_TERRITORY_WAR_COME_TO_ME_FORTUNE_AND_GLORY_ARE_WAITING_FOR_YOU);
-			}
-			else
-			{
+			} else {
 				broadcastNpcSay(npc, Say2.NPC_SHOUT, NpcStringId.DO_YOU_WISH_TO_FIGHT_ARE_YOU_AFRAID_NO_MATTER_HOW_HARD_YOU_TRY_YOU_HAVE_NOWHERE_TO_RUN_BUT_IF_YOU_FACE_IT_HEAD_ON_OUR_MERCENARY_TROOP_WILL_HELP_YOU_OUT);
 			}
 		}
@@ -209,26 +173,19 @@ public final class MercenaryCaptain extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final String htmltext;
-		if ((player.getLevel() < MIN_LEVEL) || (player.getClassId().level() < CLASS_LEVEL))
-		{
+		if ((player.getLevel() < MIN_LEVEL) || (player.getClassId().level() < CLASS_LEVEL)) {
 			htmltext = "36481-08.html";
-		}
-		else if (npc.isMyLord(player))
-		{
+		} else if (npc.isMyLord(player)) {
 			htmltext = (npc.getCastle().getSiege().isInProgress() || TerritoryWarManager.getInstance().isTWInProgress()) ? "36481-05.html" : "36481-04.html";
-		}
-		else
-		{
+		} else {
 			htmltext = (npc.getCastle().getSiege().isInProgress() || TerritoryWarManager.getInstance().isTWInProgress()) ? "36481-06.html" : npc.getId() + "-01.html";
 		}
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new MercenaryCaptain();
 	}
 }

@@ -37,26 +37,21 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
  * @author Gnacik, malyelfik
  * @version 2010-08-19 Based on Freya PTS
  */
-public class Q00463_IMustBeaGenius extends Quest
-{
-	private static class DropInfo
-	{
+public class Q00463_IMustBeaGenius extends Quest {
+	private static class DropInfo {
 		private final int _count;
 		private final int _chance;
 		
-		public DropInfo(int count, int chance)
-		{
+		public DropInfo(int count, int chance) {
 			_count = count;
 			_chance = chance;
 		}
 		
-		public int getCount()
-		{
+		public int getCount() {
 			return _count;
 		}
 		
-		public int getSpecialChance()
-		{
+		public int getSpecialChance() {
 			return _chance;
 		}
 	}
@@ -70,8 +65,7 @@ public class Q00463_IMustBeaGenius extends Quest
 	// Mobs
 	private static final Map<Integer, DropInfo> MOBS = new HashMap<>();
 	
-	static
-	{
+	static {
 		MOBS.put(22801, new DropInfo(5, 0));
 		MOBS.put(22802, new DropInfo(5, 0));
 		MOBS.put(22803, new DropInfo(5, 0));
@@ -104,8 +98,7 @@ public class Q00463_IMustBeaGenius extends Quest
 	// Misc @formatter:on
 	private static final int MIN_LEVEL = 70;
 	
-	public Q00463_IMustBeaGenius()
-	{
+	public Q00463_IMustBeaGenius() {
 		super(463, Q00463_IMustBeaGenius.class.getSimpleName(), "I Must Be a Genius");
 		addStartNpc(GUTENHAGEN);
 		addTalkId(GUTENHAGEN);
@@ -114,17 +107,14 @@ public class Q00463_IMustBeaGenius extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "32069-03.htm":
 				st.startQuest();
 				int number = getRandom(51) + 550;
@@ -136,8 +126,7 @@ public class Q00463_IMustBeaGenius extends Quest
 				htmltext = getHtm(player.getHtmlPrefix(), event).replace("%num%", st.get("number"));
 				break;
 			case "reward":
-				if (st.isCond(2))
-				{
+				if (st.isCond(2)) {
 					int rnd = getRandom(REWARD.length);
 					String str = (REWARD[rnd][2] < 10) ? "0" + REWARD[rnd][2] : String.valueOf(REWARD[rnd][2]);
 					
@@ -156,45 +145,36 @@ public class Q00463_IMustBeaGenius extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		
-		if (st.isCond(1))
-		{
+		if (st.isCond(1)) {
 			boolean msg = false;
 			int number = MOBS.get(npc.getId()).getCount();
 			
-			if (MOBS.get(npc.getId()).getSpecialChance() == st.getInt("chance"))
-			{
+			if (MOBS.get(npc.getId()).getSpecialChance() == st.getInt("chance")) {
 				number = getRandom(100) + 1;
 			}
 			
-			if (number > 0)
-			{
+			if (number > 0) {
 				st.giveItems(CORPSE_LOG, number);
 				msg = true;
-			}
-			else if ((number < 0) && ((st.getQuestItemsCount(CORPSE_LOG) + number) > 0))
-			{
+			} else if ((number < 0) && ((st.getQuestItemsCount(CORPSE_LOG) + number) > 0)) {
 				st.takeItems(CORPSE_LOG, Math.abs(number));
 				msg = true;
 			}
 			
-			if (msg)
-			{
+			if (msg) {
 				final NpcSay ns = new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), NpcStringId.ATT_ATTACK_S1_RO_ROGUE_S2);
 				ns.addStringParameter(player.getName());
 				ns.addStringParameter(String.valueOf(number));
 				npc.broadcastPacket(ns);
 				
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-				if (st.getQuestItemsCount(CORPSE_LOG) == st.getInt("number"))
-				{
+				if (st.getQuestItemsCount(CORPSE_LOG) == st.getInt("number")) {
 					st.takeItems(CORPSE_LOG, -1);
 					st.giveItems(COLLECTION, 1);
 					st.setCond(2, true);
@@ -205,15 +185,12 @@ public class Q00463_IMustBeaGenius extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.COMPLETED:
-				if (!st.isNowAvailable())
-				{
+				if (!st.isNowAvailable()) {
 					htmltext = "32069-07.htm";
 					break;
 				}
@@ -222,18 +199,12 @@ public class Q00463_IMustBeaGenius extends Quest
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "32069-01.htm" : "32069-00.htm";
 				break;
 			case State.STARTED:
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					htmltext = "32069-04.html";
-				}
-				else
-				{
-					if (st.getInt("var") == 1)
-					{
+				} else {
+					if (st.getInt("var") == 1) {
 						htmltext = "32069-06a.html";
-					}
-					else
-					{
+					} else {
 						st.takeItems(COLLECTION, -1);
 						st.set("var", "1");
 						htmltext = "32069-06.html";

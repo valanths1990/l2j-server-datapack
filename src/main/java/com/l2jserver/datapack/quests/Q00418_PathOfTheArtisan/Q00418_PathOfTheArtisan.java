@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * Path Of The Artisan (418)
  * @author ivantotov
  */
-public final class Q00418_PathOfTheArtisan extends Quest
-{
+public final class Q00418_PathOfTheArtisan extends Quest {
 	// NPCs
 	private static final int BLACKSMITH_SILVERA = 30527;
 	private static final int BLACKSMITH_PINTER = 30298;
@@ -60,8 +59,7 @@ public final class Q00418_PathOfTheArtisan extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 18;
 	
-	public Q00418_PathOfTheArtisan()
-	{
+	public Q00418_PathOfTheArtisan() {
 		super(418, Q00418_PathOfTheArtisan.class.getSimpleName(), "Path Of The Artisan");
 		addStartNpc(BLACKSMITH_SILVERA);
 		addTalkId(BLACKSMITH_SILVERA, BLACKSMITH_PINTER, BLACKSMITH_KLUTO, IRON_GATES_LOCKIRIN, WAREHOUSE_KEEPER_RYDEL, MINERAL_TRADER_HITCHI, RAILROAD_WORKER_OBI);
@@ -70,56 +68,39 @@ public final class Q00418_PathOfTheArtisan extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (player.getClassId() == ClassId.dwarvenFighter)
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (hasQuestItems(player, FINAL_PASS_CERTIFICATE))
-						{
+		switch (event) {
+			case "ACCEPT": {
+				if (player.getClassId() == ClassId.dwarvenFighter) {
+					if (player.getLevel() >= MIN_LEVEL) {
+						if (hasQuestItems(player, FINAL_PASS_CERTIFICATE)) {
 							htmltext = "30527-04.htm";
-						}
-						else
-						{
+						} else {
 							htmltext = "30527-05.htm";
 						}
-					}
-					else
-					{
+					} else {
 						htmltext = "30527-03.htm";
 					}
-				}
-				else if (player.getClassId() == ClassId.artisan)
-				{
+				} else if (player.getClassId() == ClassId.artisan) {
 					htmltext = "30527-02a.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30527-02.htm";
 				}
 				break;
 			}
-			case "30527-06.htm":
-			{
+			case "30527-06.htm": {
 				qs.startQuest();
 				giveItems(player, SILVERYS_RING, 1);
 				htmltext = event;
 				break;
 			}
-			case "30527-08b.html":
-			{
+			case "30527-08b.html": {
 				takeItems(player, SILVERYS_RING, 1);
 				takeItems(player, BOOGLE_RATMAN_TOOTH, -1);
 				takeItems(player, BOOGLE_RATMAN_LEADERS_TOOTH, -1);
@@ -128,8 +109,7 @@ public final class Q00418_PathOfTheArtisan extends Quest
 				htmltext = event;
 				break;
 			}
-			case "30527-08c.html":
-			{
+			case "30527-08c.html": {
 				takeItems(player, SILVERYS_RING, 1);
 				takeItems(player, BOOGLE_RATMAN_TOOTH, -1);
 				takeItems(player, BOOGLE_RATMAN_LEADERS_TOOTH, -1);
@@ -156,15 +136,12 @@ public final class Q00418_PathOfTheArtisan extends Quest
 			case "32052-06.html":
 			case "32052-10.html":
 			case "32052-11.html":
-			case "32052-12.html":
-			{
+			case "32052-12.html": {
 				htmltext = event;
 				break;
 			}
-			case "30298-03.html":
-			{
-				if (hasQuestItems(player, KLUTOS_LETTER))
-				{
+			case "30298-03.html": {
+				if (hasQuestItems(player, KLUTOS_LETTER)) {
 					takeItems(player, KLUTOS_LETTER, 1);
 					giveItems(player, FOOTPRINT_OF_THIEF, 1);
 					qs.setCond(5, true);
@@ -172,10 +149,8 @@ public final class Q00418_PathOfTheArtisan extends Quest
 				}
 				break;
 			}
-			case "30298-06.html":
-			{
-				if (hasQuestItems(player, FOOTPRINT_OF_THIEF, STOLEN_SECRET_BOX))
-				{
+			case "30298-06.html": {
+				if (hasQuestItems(player, FOOTPRINT_OF_THIEF, STOLEN_SECRET_BOX)) {
 					giveItems(player, PASS_2ND_CERTIFICATE, 1);
 					takeItems(player, FOOTPRINT_OF_THIEF, 1);
 					takeItems(player, STOLEN_SECRET_BOX, 1);
@@ -185,37 +160,28 @@ public final class Q00418_PathOfTheArtisan extends Quest
 				}
 				break;
 			}
-			case "30317-04.html":
-			{
+			case "30317-04.html": {
 				giveItems(player, KLUTOS_LETTER, 1);
 				qs.setCond(4, true);
 				htmltext = event;
 				break;
 			}
-			case "30317-07.html":
-			{
+			case "30317-07.html": {
 				giveItems(player, KLUTOS_LETTER, 1);
 				qs.setCond(4);
 				htmltext = event;
 				break;
 			}
-			case "30317-10.html":
-			{
-				if (hasQuestItems(player, PASS_2ND_CERTIFICATE, SECRET_BOX))
-				{
+			case "30317-10.html": {
+				if (hasQuestItems(player, PASS_2ND_CERTIFICATE, SECRET_BOX)) {
 					giveAdena(player, 163800, true);
 					giveItems(player, FINAL_PASS_CERTIFICATE, 1);
 					final int level = player.getLevel();
-					if (level >= 20)
-					{
+					if (level >= 20) {
 						addExpAndSp(player, 320534, 32452);
-					}
-					else if (level == 19)
-					{
+					} else if (level == 19) {
 						addExpAndSp(player, 456128, 30150);
-					}
-					else
-					{
+					} else {
 						addExpAndSp(player, 591724, 36848);
 					}
 					qs.exitQuest(false, true);
@@ -225,23 +191,16 @@ public final class Q00418_PathOfTheArtisan extends Quest
 				}
 				break;
 			}
-			case "30317-12.html":
-			{
-				if (hasQuestItems(player, PASS_2ND_CERTIFICATE, SECRET_BOX))
-				{
+			case "30317-12.html": {
+				if (hasQuestItems(player, PASS_2ND_CERTIFICATE, SECRET_BOX)) {
 					giveAdena(player, 81900, true);
 					giveItems(player, FINAL_PASS_CERTIFICATE, 1);
 					final int level = player.getLevel();
-					if (level >= 20)
-					{
+					if (level >= 20) {
 						addExpAndSp(player, 160267, 11726);
-					}
-					else if (level == 19)
-					{
+					} else if (level == 19) {
 						addExpAndSp(player, 228064, 15075);
-					}
-					else
-					{
+					} else {
 						addExpAndSp(player, 295862, 18424);
 					}
 					qs.exitQuest(false, true);
@@ -251,23 +210,16 @@ public final class Q00418_PathOfTheArtisan extends Quest
 				}
 				break;
 			}
-			case "30531-05.html":
-			{
-				if (qs.isMemoState(101))
-				{
+			case "30531-05.html": {
+				if (qs.isMemoState(101)) {
 					giveAdena(player, 81900, true);
 					giveItems(player, FINAL_PASS_CERTIFICATE, 1);
 					final int level = player.getLevel();
-					if (level >= 20)
-					{
+					if (level >= 20) {
 						addExpAndSp(player, 160267, 11726);
-					}
-					else if (level == 19)
-					{
+					} else if (level == 19) {
 						addExpAndSp(player, 228064, 15075);
-					}
-					else
-					{
+					} else {
 						addExpAndSp(player, 295862, 18424);
 					}
 					qs.exitQuest(false, true);
@@ -277,23 +229,16 @@ public final class Q00418_PathOfTheArtisan extends Quest
 				}
 				break;
 			}
-			case "31956-04.html":
-			{
-				if (qs.isMemoState(201))
-				{
+			case "31956-04.html": {
+				if (qs.isMemoState(201)) {
 					giveAdena(player, 81900, true);
 					giveItems(player, FINAL_PASS_CERTIFICATE, 1);
 					final int level = player.getLevel();
-					if (level >= 20)
-					{
+					if (level >= 20) {
 						addExpAndSp(player, 160267, 11726);
-					}
-					else if (level == 19)
-					{
+					} else if (level == 19) {
 						addExpAndSp(player, 228064, 15075);
-					}
-					else
-					{
+					} else {
 						addExpAndSp(player, 295862, 18424);
 					}
 					qs.exitQuest(false, true);
@@ -304,70 +249,53 @@ public final class Q00418_PathOfTheArtisan extends Quest
 				break;
 			}
 			case "31963-02.html":
-			case "31963-06.html":
-			{
-				if (qs.isMemoState(100))
-				{
+			case "31963-06.html": {
+				if (qs.isMemoState(100)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "31963-03.html":
-			{
-				if (qs.isMemoState(100))
-				{
+			case "31963-03.html": {
+				if (qs.isMemoState(100)) {
 					qs.setMemoState(101);
 					qs.setCond(10, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "31963-05.html":
-			{
-				if (qs.isMemoState(100))
-				{
+			case "31963-05.html": {
+				if (qs.isMemoState(100)) {
 					qs.setMemoState(102);
 					qs.setCond(11, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "31963-07.html":
-			{
-				if (qs.isMemoState(100))
-				{
+			case "31963-07.html": {
+				if (qs.isMemoState(100)) {
 					qs.setMemoState(201);
 					qs.setCond(12, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "31963-09.html":
-			{
-				if (qs.isMemoState(100))
-				{
+			case "31963-09.html": {
+				if (qs.isMemoState(100)) {
 					qs.setMemoState(202);
 					htmltext = event;
 				}
 				break;
 			}
-			case "31963-10.html":
-			{
-				if (qs.isMemoState(202))
-				{
+			case "31963-10.html": {
+				if (qs.isMemoState(202)) {
 					giveAdena(player, 81900, true);
 					giveItems(player, FINAL_PASS_CERTIFICATE, 1);
 					final int level = player.getLevel();
-					if (level >= 20)
-					{
+					if (level >= 20) {
 						addExpAndSp(player, 160267, 11726);
-					}
-					else if (level == 19)
-					{
+					} else if (level == 19) {
 						addExpAndSp(player, 228064, 15075);
-					}
-					else
-					{
+					} else {
 						addExpAndSp(player, 295862, 18424);
 					}
 					qs.exitQuest(false, true);
@@ -377,33 +305,24 @@ public final class Q00418_PathOfTheArtisan extends Quest
 				}
 				break;
 			}
-			case "32052-07.html":
-			{
-				if (qs.isMemoState(10))
-				{
+			case "32052-07.html": {
+				if (qs.isMemoState(10)) {
 					qs.setMemoState(100);
 					qs.setCond(9, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32052-13.html":
-			{
-				if (qs.isMemoState(102))
-				{
+			case "32052-13.html": {
+				if (qs.isMemoState(102)) {
 					giveAdena(player, 81900, true);
 					giveItems(player, FINAL_PASS_CERTIFICATE, 1);
 					final int level = player.getLevel();
-					if (level >= 20)
-					{
+					if (level >= 20) {
 						addExpAndSp(player, 160267, 11726);
-					}
-					else if (level == 19)
-					{
+					} else if (level == 19) {
 						addExpAndSp(player, 228064, 15075);
-					}
-					else
-					{
+					} else {
 						addExpAndSp(player, 295862, 18424);
 					}
 					qs.exitQuest(false, true);
@@ -418,42 +337,29 @@ public final class Q00418_PathOfTheArtisan extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case VUKU_ORC_FIGHTER:
-				{
-					if (hasQuestItems(killer, FOOTPRINT_OF_THIEF) && !hasQuestItems(killer, STOLEN_SECRET_BOX))
-					{
-						if (getRandom(10) < 2)
-						{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
+				case VUKU_ORC_FIGHTER: {
+					if (hasQuestItems(killer, FOOTPRINT_OF_THIEF) && !hasQuestItems(killer, STOLEN_SECRET_BOX)) {
+						if (getRandom(10) < 2) {
 							giveItems(killer, STOLEN_SECRET_BOX, 1);
 							qs.setCond(6, true);
 						}
 					}
 					break;
 				}
-				case BOOGLE_RATMAN:
-				{
-					if (hasQuestItems(killer, SILVERYS_RING) && (getQuestItemsCount(killer, BOOGLE_RATMAN_TOOTH) < 10))
-					{
-						if (getRandom(10) < 7)
-						{
-							if (getQuestItemsCount(killer, BOOGLE_RATMAN_TOOTH) == 9)
-							{
+				case BOOGLE_RATMAN: {
+					if (hasQuestItems(killer, SILVERYS_RING) && (getQuestItemsCount(killer, BOOGLE_RATMAN_TOOTH) < 10)) {
+						if (getRandom(10) < 7) {
+							if (getQuestItemsCount(killer, BOOGLE_RATMAN_TOOTH) == 9) {
 								giveItems(killer, BOOGLE_RATMAN_TOOTH, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-								if (getQuestItemsCount(killer, BOOGLE_RATMAN_LEADERS_TOOTH) >= 2)
-								{
+								if (getQuestItemsCount(killer, BOOGLE_RATMAN_LEADERS_TOOTH) >= 2) {
 									qs.setCond(2);
 								}
-							}
-							else
-							{
+							} else {
 								giveItems(killer, BOOGLE_RATMAN_TOOTH, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
@@ -461,24 +367,17 @@ public final class Q00418_PathOfTheArtisan extends Quest
 					}
 					break;
 				}
-				case BOOGLE_RATMAN_LEADER:
-				{
-					if (hasQuestItems(killer, SILVERYS_RING) && (getQuestItemsCount(killer, BOOGLE_RATMAN_LEADERS_TOOTH) < 2))
-					{
-						if (getRandom(10) < 5)
-						{
-							if (getQuestItemsCount(killer, BOOGLE_RATMAN_LEADERS_TOOTH) == 1)
-							{
+				case BOOGLE_RATMAN_LEADER: {
+					if (hasQuestItems(killer, SILVERYS_RING) && (getQuestItemsCount(killer, BOOGLE_RATMAN_LEADERS_TOOTH) < 2)) {
+						if (getRandom(10) < 5) {
+							if (getQuestItemsCount(killer, BOOGLE_RATMAN_LEADERS_TOOTH) == 1) {
 								giveItems(killer, BOOGLE_RATMAN_LEADERS_TOOTH, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-								if (getQuestItemsCount(killer, BOOGLE_RATMAN_TOOTH) >= 10)
-								{
+								if (getQuestItemsCount(killer, BOOGLE_RATMAN_TOOTH) >= 10) {
 									qs.setCond(2);
 								}
 							}
-						}
-						else
-						{
+						} else {
 							giveItems(killer, BOOGLE_RATMAN_LEADERS_TOOTH, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
@@ -491,141 +390,97 @@ public final class Q00418_PathOfTheArtisan extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated() || qs.isCompleted())
-		{
-			if (npc.getId() == BLACKSMITH_SILVERA)
-			{
+		if (qs.isCreated() || qs.isCompleted()) {
+			if (npc.getId() == BLACKSMITH_SILVERA) {
 				htmltext = "30527-01.htm";
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case BLACKSMITH_SILVERA:
-				{
-					if (hasQuestItems(player, SILVERYS_RING) && ((getQuestItemsCount(player, BOOGLE_RATMAN_TOOTH) + getQuestItemsCount(player, BOOGLE_RATMAN_LEADERS_TOOTH)) < 12))
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case BLACKSMITH_SILVERA: {
+					if (hasQuestItems(player, SILVERYS_RING) && ((getQuestItemsCount(player, BOOGLE_RATMAN_TOOTH) + getQuestItemsCount(player, BOOGLE_RATMAN_LEADERS_TOOTH)) < 12)) {
 						htmltext = "30527-07.html";
-					}
-					else if (hasQuestItems(player, SILVERYS_RING) && (getQuestItemsCount(player, BOOGLE_RATMAN_TOOTH) >= 10) && (getQuestItemsCount(player, BOOGLE_RATMAN_LEADERS_TOOTH) >= 2))
-					{
+					} else if (hasQuestItems(player, SILVERYS_RING) && (getQuestItemsCount(player, BOOGLE_RATMAN_TOOTH) >= 10) && (getQuestItemsCount(player, BOOGLE_RATMAN_LEADERS_TOOTH) >= 2)) {
 						htmltext = "30527-08a.html";
-					}
-					else if (hasQuestItems(player, PASS_1ST_CERTIFICATE))
-					{
+					} else if (hasQuestItems(player, PASS_1ST_CERTIFICATE)) {
 						htmltext = "30527-09.html";
-					}
-					else if (!hasQuestItems(player, PASS_1ST_CERTIFICATE) && qs.isMemoState(10))
-					{
+					} else if (!hasQuestItems(player, PASS_1ST_CERTIFICATE) && qs.isMemoState(10)) {
 						htmltext = "30527-09a.html";
 					}
 					break;
 				}
-				case BLACKSMITH_PINTER:
-				{
-					if (hasQuestItems(player, PASS_1ST_CERTIFICATE, KLUTOS_LETTER))
-					{
+				case BLACKSMITH_PINTER: {
+					if (hasQuestItems(player, PASS_1ST_CERTIFICATE, KLUTOS_LETTER)) {
 						htmltext = "30298-01.html";
-					}
-					else if (hasQuestItems(player, PASS_1ST_CERTIFICATE, FOOTPRINT_OF_THIEF) && !hasQuestItems(player, STOLEN_SECRET_BOX))
-					{
+					} else if (hasQuestItems(player, PASS_1ST_CERTIFICATE, FOOTPRINT_OF_THIEF) && !hasQuestItems(player, STOLEN_SECRET_BOX)) {
 						htmltext = "30298-04.html";
-					}
-					else if (hasQuestItems(player, PASS_1ST_CERTIFICATE, FOOTPRINT_OF_THIEF, STOLEN_SECRET_BOX))
-					{
+					} else if (hasQuestItems(player, PASS_1ST_CERTIFICATE, FOOTPRINT_OF_THIEF, STOLEN_SECRET_BOX)) {
 						htmltext = "30298-05.html";
-					}
-					else if (hasQuestItems(player, PASS_1ST_CERTIFICATE, PASS_2ND_CERTIFICATE, SECRET_BOX))
-					{
+					} else if (hasQuestItems(player, PASS_1ST_CERTIFICATE, PASS_2ND_CERTIFICATE, SECRET_BOX)) {
 						htmltext = "30298-07.html";
 					}
 					break;
 				}
-				case BLACKSMITH_KLUTO:
-				{
-					if (hasQuestItems(player, PASS_1ST_CERTIFICATE) && !hasAtLeastOneQuestItem(player, FOOTPRINT_OF_THIEF, KLUTOS_LETTER, PASS_2ND_CERTIFICATE, SECRET_BOX))
-					{
+				case BLACKSMITH_KLUTO: {
+					if (hasQuestItems(player, PASS_1ST_CERTIFICATE) && !hasAtLeastOneQuestItem(player, FOOTPRINT_OF_THIEF, KLUTOS_LETTER, PASS_2ND_CERTIFICATE, SECRET_BOX)) {
 						htmltext = "30317-01.html";
-					}
-					else if (hasQuestItems(player, PASS_1ST_CERTIFICATE) && hasAtLeastOneQuestItem(player, KLUTOS_LETTER, FOOTPRINT_OF_THIEF))
-					{
+					} else if (hasQuestItems(player, PASS_1ST_CERTIFICATE) && hasAtLeastOneQuestItem(player, KLUTOS_LETTER, FOOTPRINT_OF_THIEF)) {
 						htmltext = "30317-08.html";
-					}
-					else if (hasQuestItems(player, PASS_1ST_CERTIFICATE, PASS_2ND_CERTIFICATE, SECRET_BOX))
-					{
+					} else if (hasQuestItems(player, PASS_1ST_CERTIFICATE, PASS_2ND_CERTIFICATE, SECRET_BOX)) {
 						htmltext = "30317-09.html";
 					}
 					break;
 				}
-				case IRON_GATES_LOCKIRIN:
-				{
-					if (qs.isMemoState(101))
-					{
+				case IRON_GATES_LOCKIRIN: {
+					if (qs.isMemoState(101)) {
 						htmltext = "30531-01.html";
 					}
 					break;
 				}
-				case WAREHOUSE_KEEPER_RYDEL:
-				{
-					if (qs.isMemoState(201))
-					{
+				case WAREHOUSE_KEEPER_RYDEL: {
+					if (qs.isMemoState(201)) {
 						htmltext = "31956-01.html";
 					}
 					break;
 				}
-				case MINERAL_TRADER_HITCHI:
-				{
-					switch (qs.getMemoState())
-					{
-						case 100:
-						{
+				case MINERAL_TRADER_HITCHI: {
+					switch (qs.getMemoState()) {
+						case 100: {
 							htmltext = "31963-01.html";
 							break;
 						}
-						case 101:
-						{
+						case 101: {
 							htmltext = "31963-04.html";
 							break;
 						}
-						case 102:
-						{
+						case 102: {
 							htmltext = "31963-06a.html";
 							break;
 						}
-						case 201:
-						{
+						case 201: {
 							htmltext = "31963-08.html";
 							break;
 						}
-						case 202:
-						{
+						case 202: {
 							htmltext = "31963-11.html";
 							break;
 						}
 					}
 					break;
 				}
-				case RAILROAD_WORKER_OBI:
-				{
-					switch (qs.getMemoState())
-					{
-						case 10:
-						{
+				case RAILROAD_WORKER_OBI: {
+					switch (qs.getMemoState()) {
+						case 10: {
 							htmltext = "32052-01.html";
 							break;
 						}
-						case 100:
-						{
+						case 100: {
 							htmltext = "32052-08.html";
 							break;
 						}
-						case 102:
-						{
+						case 102: {
 							htmltext = "32052-09.html";
 							break;
 						}

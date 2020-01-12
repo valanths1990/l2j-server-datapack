@@ -28,25 +28,20 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Unsummon Agathion effect implementation.
  * @author Zoey76
  */
-public final class UnsummonAgathion extends AbstractEffect
-{
-	public UnsummonAgathion(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class UnsummonAgathion extends AbstractEffect {
+	public UnsummonAgathion(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2PcInstance player = info.getEffector().getActingPlayer();
-		if (player != null)
-		{
+		if (player != null) {
 			player.setAgathionId(0);
 			player.broadcastUserInfo();
 		}

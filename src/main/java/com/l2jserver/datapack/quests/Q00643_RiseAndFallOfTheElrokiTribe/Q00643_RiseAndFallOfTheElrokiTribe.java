@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.util.Util;
  * Rise and Fall of the Elroki Tribe (643)
  * @author Adry_85
  */
-public class Q00643_RiseAndFallOfTheElrokiTribe extends Quest
-{
+public class Q00643_RiseAndFallOfTheElrokiTribe extends Quest {
 	// NPCs
 	private static final int SINGSING = 32106;
 	private static final int KARAKAWEI = 32117;
@@ -46,8 +45,7 @@ public class Q00643_RiseAndFallOfTheElrokiTribe extends Quest
 	private static final int CHANCE_DEINO = 558;
 	private boolean isFirstTalk = true;
 	// Rewards
-	private static final int[] PIECE =
-	{
+	private static final int[] PIECE = {
 		8712, // Sirra's Blade Edge
 		8713, // Sword of Ipos Blade
 		8714, // Barakiel's Axe Piece
@@ -61,8 +59,7 @@ public class Q00643_RiseAndFallOfTheElrokiTribe extends Quest
 		8722, // Daimon Crystal Fragment
 	};
 	// Mobs
-	private static final int[] MOBS1 =
-	{
+	private static final int[] MOBS1 = {
 		22200, // Ornithomimus
 		22201, // Ornithomimus
 		22202, // Ornithomimus
@@ -84,8 +81,7 @@ public class Q00643_RiseAndFallOfTheElrokiTribe extends Quest
 		22227, // Wild Strider
 	};
 	
-	private static final int[] MOBS2 =
-	{
+	private static final int[] MOBS2 = {
 		22742, // Ornithomimus
 		22743, // Deinonychus
 		22744, // Ornithomimus
@@ -94,8 +90,7 @@ public class Q00643_RiseAndFallOfTheElrokiTribe extends Quest
 	
 	private static final int DEINONYCHUS = 22203;
 	
-	public Q00643_RiseAndFallOfTheElrokiTribe()
-	{
+	public Q00643_RiseAndFallOfTheElrokiTribe() {
 		super(643, Q00643_RiseAndFallOfTheElrokiTribe.class.getSimpleName(), "Rise and Fall of the Elroki Tribe");
 		addStartNpc(SINGSING);
 		addTalkId(SINGSING, KARAKAWEI);
@@ -106,17 +101,14 @@ public class Q00643_RiseAndFallOfTheElrokiTribe extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "32106-02.htm":
 			case "32106-04.htm":
 			case "32106-05.html":
@@ -124,53 +116,39 @@ public class Q00643_RiseAndFallOfTheElrokiTribe extends Quest
 			case "32106-13.html":
 			case "32117-02.html":
 			case "32117-06.html":
-			case "32117-07.html":
-			{
+			case "32117-07.html": {
 				htmltext = event;
 				break;
 			}
-			case "quest_accept":
-			{
-				if (player.getLevel() >= MIN_LEVEL)
-				{
+			case "quest_accept": {
+				if (player.getLevel() >= MIN_LEVEL) {
 					st.startQuest();
 					htmltext = "32106-03.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32106-07.html";
 				}
 				break;
 			}
-			case "32106-09.html":
-			{
+			case "32106-09.html": {
 				st.giveAdena(1374 * st.getQuestItemsCount(BONES_OF_A_PLAINS_DINOSAUR), true);
 				st.takeItems(BONES_OF_A_PLAINS_DINOSAUR, -1);
 				htmltext = event;
 				break;
 			}
-			case "exit":
-			{
-				if (!st.hasQuestItems(BONES_OF_A_PLAINS_DINOSAUR))
-				{
+			case "exit": {
+				if (!st.hasQuestItems(BONES_OF_A_PLAINS_DINOSAUR)) {
 					htmltext = "32106-11.html";
-				}
-				else
-				{
+				} else {
 					st.giveAdena(1374 * st.getQuestItemsCount(BONES_OF_A_PLAINS_DINOSAUR), true);
 					htmltext = "32106-12.html";
 				}
 				st.exitQuest(true, true);
 				break;
 			}
-			case "exchange":
-			{
-				if (st.getQuestItemsCount(BONES_OF_A_PLAINS_DINOSAUR) < 300)
-				{
+			case "exchange": {
+				if (st.getQuestItemsCount(BONES_OF_A_PLAINS_DINOSAUR) < 300) {
 					htmltext = "32117-04.html";
-				}
-				else
-				{
+				} else {
 					st.rewardItems(PIECE[getRandom(PIECE.length)], 5);
 					st.takeItems(BONES_OF_A_PLAINS_DINOSAUR, 300);
 					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
@@ -183,46 +161,36 @@ public class Q00643_RiseAndFallOfTheElrokiTribe extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(player, 1);
-		if (partyMember == null)
-		{
+		if (partyMember == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		
 		final QuestState st = getQuestState(partyMember, false);
 		int npcId = npc.getId();
 		
-		if (Util.contains(MOBS1, npcId))
-		{
+		if (Util.contains(MOBS1, npcId)) {
 			double chance = CHANCE_MOBS1 * rates().getRateQuestDrop();
-			if (getRandom(1000) < chance)
-			{
+			if (getRandom(1000) < chance) {
 				st.rewardItems(BONES_OF_A_PLAINS_DINOSAUR, 2);
-			}
-			else
-			{
+			} else {
 				st.rewardItems(BONES_OF_A_PLAINS_DINOSAUR, 1);
 			}
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		
-		if (Util.contains(MOBS2, npcId))
-		{
+		if (Util.contains(MOBS2, npcId)) {
 			double chance = CHANCE_MOBS2 * rates().getRateQuestDrop();
-			if (getRandom(1000) < chance)
-			{
+			if (getRandom(1000) < chance) {
 				st.rewardItems(BONES_OF_A_PLAINS_DINOSAUR, 1);
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		
-		if (npcId == DEINONYCHUS)
-		{
+		if (npcId == DEINONYCHUS) {
 			double chance = CHANCE_DEINO * rates().getRateQuestDrop();
-			if (getRandom(1000) < chance)
-			{
+			if (getRandom(1000) < chance) {
 				st.rewardItems(BONES_OF_A_PLAINS_DINOSAUR, 1);
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
@@ -231,32 +199,22 @@ public class Q00643_RiseAndFallOfTheElrokiTribe extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "32106-01.htm" : "32106-06.html";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (npc.getId() == SINGSING)
-				{
+			case State.STARTED: {
+				if (npc.getId() == SINGSING) {
 					htmltext = (st.hasQuestItems(BONES_OF_A_PLAINS_DINOSAUR)) ? "32106-08.html" : "32106-14.html";
-				}
-				else if (npc.getId() == KARAKAWEI)
-				{
-					if (isFirstTalk)
-					{
+				} else if (npc.getId() == KARAKAWEI) {
+					if (isFirstTalk) {
 						isFirstTalk = false;
 						htmltext = "32117-01.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "32117-03.html";
 					}
 				}

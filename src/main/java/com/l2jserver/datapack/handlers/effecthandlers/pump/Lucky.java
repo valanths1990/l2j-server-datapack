@@ -27,22 +27,18 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Lucky effect implementation.
  * @author Zoey76
  */
-public final class Lucky extends AbstractEffect
-{
-	public Lucky(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class Lucky extends AbstractEffect {
+	public Lucky(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean canStart(BuffInfo info)
-	{
+	public boolean canStart(BuffInfo info) {
 		return (info.getEffector() != null) && (info.getEffected() != null) && info.getEffected().isPlayer();
 	}
 	
 	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
+	public boolean onActionTime(BuffInfo info) {
 		return info.getSkill().isPassive();
 	}
 }

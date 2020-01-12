@@ -80,10 +80,8 @@ import com.l2jserver.gameserver.util.Util;
  * Use proper zone spawn system.
  * @author Gigiikun
  */
-public final class FinalEmperialTomb extends AbstractInstance
-{
-	protected class FETWorld extends InstanceWorld
-	{
+public final class FinalEmperialTomb extends AbstractInstance {
+	protected class FETWorld extends InstanceWorld {
 		protected Lock lock = new ReentrantLock();
 		protected List<L2Npc> npcList = new CopyOnWriteArrayList<>();
 		protected int darkChoirPlayerCount = 0;
@@ -107,8 +105,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		protected int scarlet_a = 0;
 	}
 	
-	protected static class FETSpawn
-	{
+	protected static class FETSpawn {
 		public boolean isZone = false;
 		public boolean isNeededNextFlag = false;
 		public int npcId;
@@ -120,15 +117,13 @@ public final class FinalEmperialTomb extends AbstractInstance
 		public int count = 0;
 	}
 	
-	private static class FrintezzaSong
-	{
+	private static class FrintezzaSong {
 		public SkillHolder skill;
 		public SkillHolder effectSkill;
 		public NpcStringId songName;
 		public int chance;
 		
-		public FrintezzaSong(SkillHolder sk, SkillHolder esk, NpcStringId sn, int ch)
-		{
+		public FrintezzaSong(SkillHolder sk, SkillHolder esk, NpcStringId sn, int ch) {
 			skill = sk;
 			effectSkill = esk;
 			songName = sn;
@@ -142,13 +137,11 @@ public final class FinalEmperialTomb extends AbstractInstance
 	private static final int SCARLET1 = 29046;
 	private static final int SCARLET2 = 29047;
 	private static final int FRINTEZZA = 29045;
-	private static final int[] PORTRAITS =
-	{
+	private static final int[] PORTRAITS = {
 		29048,
 		29049
 	};
-	private static final int[] DEMONS =
-	{
+	private static final int[] DEMONS = {
 		29050,
 		29051
 	};
@@ -157,8 +150,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	// Items
 	private static final int HALL_KEEPER_SUICIDAL_SOLDIER = 18333;
 	private static final int DARK_CHOIR_PLAYER = 18339;
-	private static final int[] AI_DISABLED_MOBS =
-	{
+	private static final int[] AI_DISABLED_MOBS = {
 		18328
 	};
 	private static final int DEWDROP_OF_DESTRUCTION_ITEM_ID = 8556;
@@ -170,8 +162,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	protected static final SkillHolder INTRO_SKILL = new SkillHolder(5004, 1);
 	private static final SkillHolder FIRST_MORPH_SKILL = new SkillHolder(5017, 1);
 	
-	protected static final FrintezzaSong[] FRINTEZZASONGLIST =
-	{
+	protected static final FrintezzaSong[] FRINTEZZASONGLIST = {
 		new FrintezzaSong(new SkillHolder(5007, 1), new SkillHolder(5008, 1), NpcStringId.REQUIEM_OF_HATRED, 5),
 		new FrintezzaSong(new SkillHolder(5007, 2), new SkillHolder(5008, 2), NpcStringId.RONDO_OF_SOLITUDE, 50),
 		new FrintezzaSong(new SkillHolder(5007, 3), new SkillHolder(5008, 3), NpcStringId.FRENETIC_TOCCATA, 70),
@@ -191,8 +182,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	private final Map<Integer, L2Territory> _spawnZoneList = new HashMap<>();
 	private final Map<Integer, List<FETSpawn>> _spawnList = new HashMap<>();
 	private final List<Integer> _mustKillMobsId = new ArrayList<>();
-	protected static final int[] FIRST_ROOM_DOORS =
-	{
+	protected static final int[] FIRST_ROOM_DOORS = {
 		17130051,
 		17130052,
 		17130053,
@@ -202,8 +192,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		17130057,
 		17130058
 	};
-	protected static final int[] SECOND_ROOM_DOORS =
-	{
+	protected static final int[] SECOND_ROOM_DOORS = {
 		17130061,
 		17130062,
 		17130063,
@@ -215,13 +204,11 @@ public final class FinalEmperialTomb extends AbstractInstance
 		17130069,
 		17130070
 	};
-	protected static final int[] FIRST_ROUTE_DOORS =
-	{
+	protected static final int[] FIRST_ROUTE_DOORS = {
 		17130042,
 		17130043
 	};
-	protected static final int[] SECOND_ROUTE_DOORS =
-	{
+	protected static final int[] SECOND_ROUTE_DOORS = {
 		17130045,
 		17130046
 	};
@@ -235,8 +222,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	};
 	// @formatter:on
 	
-	public FinalEmperialTomb()
-	{
+	public FinalEmperialTomb() {
 		super(FinalEmperialTomb.class.getSimpleName());
 		load();
 		addAttackId(SCARLET1, FRINTEZZA);
@@ -250,47 +236,37 @@ public final class FinalEmperialTomb extends AbstractInstance
 		addSpellFinishedId(HALL_KEEPER_SUICIDAL_SOLDIER);
 	}
 	
-	private void load()
-	{
+	private void load() {
 		@SuppressWarnings("unused")
 		int spawnCount = 0;
-		try
-		{
+		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			factory.setValidating(false);
 			factory.setIgnoringComments(true);
 			
 			File file = new File(server().getDatapackRoot(), "/data/spawnZones/final_emperial_tomb.xml");
-			if (!file.exists())
-			{
+			if (!file.exists()) {
 				_log.severe("[Final Emperial Tomb] Missing final_emperial_tomb.xml. The quest wont work without it!");
 				return;
 			}
 			
 			Document doc = factory.newDocumentBuilder().parse(file);
 			Node first = doc.getFirstChild();
-			if ((first != null) && "list".equalsIgnoreCase(first.getNodeName()))
-			{
-				for (Node n = first.getFirstChild(); n != null; n = n.getNextSibling())
-				{
-					if ("npc".equalsIgnoreCase(n.getNodeName()))
-					{
-						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-						{
-							if ("spawn".equalsIgnoreCase(d.getNodeName()))
-							{
+			if ((first != null) && "list".equalsIgnoreCase(first.getNodeName())) {
+				for (Node n = first.getFirstChild(); n != null; n = n.getNextSibling()) {
+					if ("npc".equalsIgnoreCase(n.getNodeName())) {
+						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling()) {
+							if ("spawn".equalsIgnoreCase(d.getNodeName())) {
 								NamedNodeMap attrs = d.getAttributes();
 								Node att = attrs.getNamedItem("npcId");
-								if (att == null)
-								{
+								if (att == null) {
 									_log.severe("[Final Emperial Tomb] Missing npcId in npc List, skipping");
 									continue;
 								}
 								int npcId = Integer.parseInt(attrs.getNamedItem("npcId").getNodeValue());
 								
 								att = attrs.getNamedItem("flag");
-								if (att == null)
-								{
+								if (att == null) {
 									_log.severe("[Final Emperial Tomb] Missing flag in npc List npcId: " + npcId + ", skipping");
 									continue;
 								}
@@ -298,94 +274,68 @@ public final class FinalEmperialTomb extends AbstractInstance
 								int flag = Integer.parseInt(attrs.getNamedItem("flag").getNodeValue());
 								_spawnList.putIfAbsent(flag, new ArrayList<FETSpawn>());
 								
-								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-								{
-									if ("loc".equalsIgnoreCase(cd.getNodeName()))
-									{
+								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling()) {
+									if ("loc".equalsIgnoreCase(cd.getNodeName())) {
 										attrs = cd.getAttributes();
 										FETSpawn spw = new FETSpawn();
 										spw.npcId = npcId;
 										
 										att = attrs.getNamedItem("x");
-										if (att != null)
-										{
+										if (att != null) {
 											spw.x = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
+										} else {
 											continue;
 										}
 										att = attrs.getNamedItem("y");
-										if (att != null)
-										{
+										if (att != null) {
 											spw.y = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
+										} else {
 											continue;
 										}
 										att = attrs.getNamedItem("z");
-										if (att != null)
-										{
+										if (att != null) {
 											spw.z = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
+										} else {
 											continue;
 										}
 										att = attrs.getNamedItem("heading");
-										if (att != null)
-										{
+										if (att != null) {
 											spw.h = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
+										} else {
 											continue;
 										}
 										att = attrs.getNamedItem("mustKill");
-										if (att != null)
-										{
+										if (att != null) {
 											spw.isNeededNextFlag = Boolean.parseBoolean(att.getNodeValue());
 										}
-										if (spw.isNeededNextFlag)
-										{
+										if (spw.isNeededNextFlag) {
 											_mustKillMobsId.add(npcId);
 										}
 										_spawnList.get(flag).add(spw);
 										spawnCount++;
-									}
-									else if ("zone".equalsIgnoreCase(cd.getNodeName()))
-									{
+									} else if ("zone".equalsIgnoreCase(cd.getNodeName())) {
 										attrs = cd.getAttributes();
 										FETSpawn spw = new FETSpawn();
 										spw.npcId = npcId;
 										spw.isZone = true;
 										
 										att = attrs.getNamedItem("id");
-										if (att != null)
-										{
+										if (att != null) {
 											spw.zone = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
+										} else {
 											continue;
 										}
 										att = attrs.getNamedItem("count");
-										if (att != null)
-										{
+										if (att != null) {
 											spw.count = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
+										} else {
 											continue;
 										}
 										att = attrs.getNamedItem("mustKill");
-										if (att != null)
-										{
+										if (att != null) {
 											spw.isNeededNextFlag = Boolean.parseBoolean(att.getNodeValue());
 										}
-										if (spw.isNeededNextFlag)
-										{
+										if (spw.isNeededNextFlag) {
 											_mustKillMobsId.add(npcId);
 										}
 										_spawnList.get(flag).add(spw);
@@ -394,59 +344,44 @@ public final class FinalEmperialTomb extends AbstractInstance
 								}
 							}
 						}
-					}
-					else if ("spawnZones".equalsIgnoreCase(n.getNodeName()))
-					{
-						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-						{
-							if ("zone".equalsIgnoreCase(d.getNodeName()))
-							{
+					} else if ("spawnZones".equalsIgnoreCase(n.getNodeName())) {
+						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling()) {
+							if ("zone".equalsIgnoreCase(d.getNodeName())) {
 								NamedNodeMap attrs = d.getAttributes();
 								Node att = attrs.getNamedItem("id");
-								if (att == null)
-								{
+								if (att == null) {
 									_log.severe("[Final Emperial Tomb] Missing id in spawnZones List, skipping");
 									continue;
 								}
 								int id = Integer.parseInt(att.getNodeValue());
 								att = attrs.getNamedItem("minZ");
-								if (att == null)
-								{
+								if (att == null) {
 									_log.severe("[Final Emperial Tomb] Missing minZ in spawnZones List id: " + id + ", skipping");
 									continue;
 								}
 								int minz = Integer.parseInt(att.getNodeValue());
 								att = attrs.getNamedItem("maxZ");
-								if (att == null)
-								{
+								if (att == null) {
 									_log.severe("[Final Emperial Tomb] Missing maxZ in spawnZones List id: " + id + ", skipping");
 									continue;
 								}
 								int maxz = Integer.parseInt(att.getNodeValue());
 								L2Territory ter = new L2Territory(id);
 								
-								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-								{
-									if ("point".equalsIgnoreCase(cd.getNodeName()))
-									{
+								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling()) {
+									if ("point".equalsIgnoreCase(cd.getNodeName())) {
 										attrs = cd.getAttributes();
 										int x, y;
 										att = attrs.getNamedItem("x");
-										if (att != null)
-										{
+										if (att != null) {
 											x = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
+										} else {
 											continue;
 										}
 										att = attrs.getNamedItem("y");
-										if (att != null)
-										{
+										if (att != null) {
 											y = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
+										} else {
 											continue;
 										}
 										
@@ -460,71 +395,54 @@ public final class FinalEmperialTomb extends AbstractInstance
 					}
 				}
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			_log.log(Level.WARNING, "[Final Emperial Tomb] Could not parse final_emperial_tomb.xml file: " + e.getMessage(), e);
 		}
-		if (debug)
-		{
+		if (debug) {
 			_log.info("[Final Emperial Tomb] Loaded " + _spawnZoneList.size() + " spawn zones data.");
 			_log.info("[Final Emperial Tomb] Loaded " + spawnCount + " spawns data.");
 		}
 	}
 	
 	@Override
-	protected boolean checkConditions(L2PcInstance player)
-	{
-		if (debug || player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
-		{
+	protected boolean checkConditions(L2PcInstance player) {
+		if (debug || player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS)) {
 			return true;
 		}
 		
 		final L2Party party = player.getParty();
-		if (party == null)
-		{
+		if (party == null) {
 			player.sendPacket(SystemMessageId.NOT_IN_PARTY_CANT_ENTER);
 			return false;
 		}
 		
 		final L2CommandChannel channel = player.getParty().getCommandChannel();
-		if (channel == null)
-		{
+		if (channel == null) {
 			player.sendPacket(SystemMessageId.NOT_IN_COMMAND_CHANNEL_CANT_ENTER);
 			return false;
-		}
-		else if (channel.getLeader() != player)
-		{
+		} else if (channel.getLeader() != player) {
 			player.sendPacket(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER);
 			return false;
-		}
-		else if (player.getInventory().getItemByItemId(8073) == null)
-		{
+		} else if (player.getInventory().getItemByItemId(8073) == null) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ITEM_REQUIREMENT_NOT_SUFFICIENT);
 			sm.addPcName(player);
 			player.sendPacket(sm);
 			return false;
-		}
-		else if ((channel.getMemberCount() < MIN_PLAYERS) || (channel.getMemberCount() > MAX_PLAYERS))
-		{
+		} else if ((channel.getMemberCount() < MIN_PLAYERS) || (channel.getMemberCount() > MAX_PLAYERS)) {
 			player.sendPacket(SystemMessageId.PARTY_EXCEEDED_THE_LIMIT_CANT_ENTER);
 			return false;
 		}
-		for (L2PcInstance channelMember : channel.getMembers())
-		{
-			if (channelMember.getLevel() < 80)
-			{
+		for (L2PcInstance channelMember : channel.getMembers()) {
+			if (channelMember.getLevel() < 80) {
 				party.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED).addPcName(channelMember));
 				return false;
 			}
-			if (!Util.checkIfInRange(1000, player, channelMember, true))
-			{
+			if (!Util.checkIfInRange(1000, player, channelMember, true)) {
 				party.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_A_LOCATION_WHICH_CANNOT_BE_ENTERED_THEREFORE_IT_CANNOT_BE_PROCESSED).addPcName(channelMember));
 				return false;
 			}
 			final Long reentertime = InstanceManager.getInstance().getInstanceTime(channelMember.getObjectId(), TEMPLATE_ID);
-			if (System.currentTimeMillis() < reentertime)
-			{
+			if (System.currentTimeMillis() < reentertime) {
 				party.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_MAY_NOT_RE_ENTER_YET).addPcName(channelMember));
 				return false;
 			}
@@ -533,121 +451,88 @@ public final class FinalEmperialTomb extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		if (firstEntrance) {
 			controlStatus((FETWorld) world);
 			
-			if ((player.getParty() == null) || (player.getParty().getCommandChannel() == null))
-			{
+			if ((player.getParty() == null) || (player.getParty().getCommandChannel() == null)) {
 				player.destroyItemByItemId(getName(), DEWDROP_OF_DESTRUCTION_ITEM_ID, player.getInventory().getInventoryItemCount(DEWDROP_OF_DESTRUCTION_ITEM_ID, -1), null, true);
 				world.addAllowed(player.getObjectId());
 				teleportPlayer(player, ENTER_TELEPORT, world.getInstanceId(), false);
-			}
-			else
-			{
-				for (L2PcInstance channelMember : player.getParty().getCommandChannel().getMembers())
-				{
+			} else {
+				for (L2PcInstance channelMember : player.getParty().getCommandChannel().getMembers()) {
 					channelMember.destroyItemByItemId(getName(), DEWDROP_OF_DESTRUCTION_ITEM_ID, channelMember.getInventory().getInventoryItemCount(DEWDROP_OF_DESTRUCTION_ITEM_ID, -1), null, true);
 					world.addAllowed(channelMember.getObjectId());
 					teleportPlayer(channelMember, ENTER_TELEPORT, world.getInstanceId(), false);
 				}
 			}
-		}
-		else
-		{
+		} else {
 			teleportPlayer(player, ENTER_TELEPORT, world.getInstanceId(), false);
 		}
 	}
 	
-	protected boolean checkKillProgress(L2Npc mob, FETWorld world)
-	{
-		if (world.npcList.contains(mob))
-		{
+	protected boolean checkKillProgress(L2Npc mob, FETWorld world) {
+		if (world.npcList.contains(mob)) {
 			world.npcList.remove(mob);
 		}
 		return world.npcList.isEmpty();
 	}
 	
-	private void spawnFlaggedNPCs(FETWorld world, int flag)
-	{
-		if (world.lock.tryLock())
-		{
-			try
-			{
-				for (FETSpawn spw : _spawnList.get(flag))
-				{
-					if (spw.isZone)
-					{
-						for (int i = 0; i < spw.count; i++)
-						{
-							if (_spawnZoneList.containsKey(spw.zone))
-							{
+	private void spawnFlaggedNPCs(FETWorld world, int flag) {
+		if (world.lock.tryLock()) {
+			try {
+				for (FETSpawn spw : _spawnList.get(flag)) {
+					if (spw.isZone) {
+						for (int i = 0; i < spw.count; i++) {
+							if (_spawnZoneList.containsKey(spw.zone)) {
 								final Location location = _spawnZoneList.get(spw.zone).getRandomPoint();
-								if (location != null)
-								{
+								if (location != null) {
 									spawn(world, spw.npcId, location.getX(), location.getY(), GeoData.getInstance().getSpawnHeight(location), getRandom(65535), spw.isNeededNextFlag);
 								}
-							}
-							else
-							{
+							} else {
 								_log.info("[Final Emperial Tomb] Missing zone: " + spw.zone);
 							}
 						}
-					}
-					else
-					{
+					} else {
 						spawn(world, spw.npcId, spw.x, spw.y, spw.z, spw.h, spw.isNeededNextFlag);
 					}
 				}
-			}
-			finally
-			{
+			} finally {
 				world.lock.unlock();
 			}
 		}
 	}
 	
-	protected boolean controlStatus(FETWorld world)
-	{
-		if (world.lock.tryLock())
-		{
-			try
-			{
-				if (debug)
-				{
+	protected boolean controlStatus(FETWorld world) {
+		if (world.lock.tryLock()) {
+			try {
+				if (debug) {
 					_log.info("[Final Emperial Tomb] Starting " + world.getStatus() + ". status.");
 				}
 				world.npcList.clear();
-				switch (world.getStatus())
-				{
+				switch (world.getStatus()) {
 					case 0:
 						spawnFlaggedNPCs(world, 0);
 						break;
 					case 1:
-						for (int doorId : FIRST_ROUTE_DOORS)
-						{
+						for (int doorId : FIRST_ROUTE_DOORS) {
 							openDoor(doorId, world.getInstanceId());
 						}
 						spawnFlaggedNPCs(world, world.getStatus());
 						break;
 					case 2:
-						for (int doorId : SECOND_ROUTE_DOORS)
-						{
+						for (int doorId : SECOND_ROUTE_DOORS) {
 							openDoor(doorId, world.getInstanceId());
 						}
 						ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 0), 600000);
 						break;
 					case 3: // first morph
-						if (world.songEffectTask != null)
-						{
+						if (world.songEffectTask != null) {
 							world.songEffectTask.cancel(false);
 						}
 						world.songEffectTask = null;
 						world.activeScarlet.setIsInvul(true);
-						if (world.activeScarlet.isCastingNow())
-						{
+						if (world.activeScarlet.isCastingNow()) {
 							world.activeScarlet.abortCast();
 						}
 						handleReenterTime(world);
@@ -657,8 +542,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 					case 4: // second morph
 						world.isVideo = true;
 						broadCastPacket(world, new MagicSkillCanceld(world.frintezza.getObjectId()));
-						if (world.songEffectTask != null)
-						{
+						if (world.songEffectTask != null) {
 							world.songEffectTask.cancel(false);
 						}
 						world.songEffectTask = null;
@@ -668,12 +552,10 @@ public final class FinalEmperialTomb extends AbstractInstance
 					case 5: // raid success
 						world.isVideo = true;
 						broadCastPacket(world, new MagicSkillCanceld(world.frintezza.getObjectId()));
-						if (world.songTask != null)
-						{
+						if (world.songTask != null) {
 							world.songTask.cancel(true);
 						}
-						if (world.songEffectTask != null)
-						{
+						if (world.songEffectTask != null) {
 							world.songEffectTask.cancel(false);
 						}
 						world.songTask = null;
@@ -682,81 +564,63 @@ public final class FinalEmperialTomb extends AbstractInstance
 						break;
 					case 6: // open doors
 						InstanceManager.getInstance().getInstance(world.getInstanceId()).setDuration(300000);
-						for (int doorId : FIRST_ROOM_DOORS)
-						{
+						for (int doorId : FIRST_ROOM_DOORS) {
 							openDoor(doorId, world.getInstanceId());
 						}
-						for (int doorId : FIRST_ROUTE_DOORS)
-						{
+						for (int doorId : FIRST_ROUTE_DOORS) {
 							openDoor(doorId, world.getInstanceId());
 						}
-						for (int doorId : SECOND_ROUTE_DOORS)
-						{
+						for (int doorId : SECOND_ROUTE_DOORS) {
 							openDoor(doorId, world.getInstanceId());
 						}
-						for (int doorId : SECOND_ROOM_DOORS)
-						{
+						for (int doorId : SECOND_ROOM_DOORS) {
 							closeDoor(doorId, world.getInstanceId());
 						}
 						break;
 				}
 				world.incStatus();
 				return true;
-			}
-			finally
-			{
+			} finally {
 				world.lock.unlock();
 			}
 		}
 		return false;
 	}
 	
-	protected void spawn(FETWorld world, int npcId, int x, int y, int z, int h, boolean addToKillTable)
-	{
+	protected void spawn(FETWorld world, int npcId, int x, int y, int z, int h, boolean addToKillTable) {
 		final L2Npc npc = addSpawn(npcId, x, y, z, h, false, 0, false, world.getInstanceId());
-		if (addToKillTable)
-		{
+		if (addToKillTable) {
 			world.npcList.add(npc);
 		}
 		npc.setIsNoRndWalk(true);
-		if (npc.isInstanceTypes(InstanceType.L2Attackable))
-		{
+		if (npc.isInstanceTypes(InstanceType.L2Attackable)) {
 			((L2Attackable) npc).setSeeThroughSilentMove(true);
 		}
-		if (Util.contains(AI_DISABLED_MOBS, npcId))
-		{
+		if (Util.contains(AI_DISABLED_MOBS, npcId)) {
 			npc.disableCoreAI(true);
 		}
-		if (npcId == DARK_CHOIR_PLAYER)
-		{
+		if (npcId == DARK_CHOIR_PLAYER) {
 			world.darkChoirPlayerCount++;
 		}
 	}
 	
-	private class DemonSpawnTask implements Runnable
-	{
+	private class DemonSpawnTask implements Runnable {
 		private final FETWorld _world;
 		
-		DemonSpawnTask(FETWorld world)
-		{
+		DemonSpawnTask(FETWorld world) {
 			_world = world;
 		}
 		
 		@Override
-		public void run()
-		{
-			if ((InstanceManager.getInstance().getWorld(_world.getInstanceId()) != _world) || _world.portraits.isEmpty())
-			{
-				if (debug)
-				{
+		public void run() {
+			if ((InstanceManager.getInstance().getWorld(_world.getInstanceId()) != _world) || _world.portraits.isEmpty()) {
+				if (debug) {
 					_log.info("[Final Emperial Tomb] Instance is deleted or all Portraits is killed.");
 				}
 				return;
 			}
-			for (int i : _world.portraits.values())
-			{
-				if (_world.demons.size() > MAX_DEMONS)
-				{
+			for (int i : _world.portraits.values()) {
+				if (_world.demons.size() > MAX_DEMONS) {
 					break;
 				}
 				L2MonsterInstance demon = (L2MonsterInstance) addSpawn(PORTRAIT_SPAWNS[i][0] + 2, PORTRAIT_SPAWNS[i][5], PORTRAIT_SPAWNS[i][6], PORTRAIT_SPAWNS[i][7], PORTRAIT_SPAWNS[i][8], false, 0, false, _world.getInstanceId());
@@ -767,56 +631,42 @@ public final class FinalEmperialTomb extends AbstractInstance
 		}
 	}
 	
-	private class SoulBreakingArrow implements Runnable
-	{
+	private class SoulBreakingArrow implements Runnable {
 		private final L2Npc _npc;
 		
-		protected SoulBreakingArrow(L2Npc npc)
-		{
+		protected SoulBreakingArrow(L2Npc npc) {
 			_npc = npc;
 		}
 		
 		@Override
-		public void run()
-		{
+		public void run() {
 			_npc.setScriptValue(0);
 		}
 	}
 	
-	private class SongTask implements Runnable
-	{
+	private class SongTask implements Runnable {
 		private final FETWorld _world;
 		private final int _status;
 		
-		SongTask(FETWorld world, int status)
-		{
+		SongTask(FETWorld world, int status) {
 			_world = world;
 			_status = status;
 		}
 		
 		@Override
-		public void run()
-		{
-			if (InstanceManager.getInstance().getWorld(_world.getInstanceId()) != _world)
-			{
+		public void run() {
+			if (InstanceManager.getInstance().getWorld(_world.getInstanceId()) != _world) {
 				return;
 			}
-			switch (_status)
-			{
+			switch (_status) {
 				case 0: // new song play
-					if (_world.isVideo)
-					{
+					if (_world.isVideo) {
 						_world.songTask = ThreadPoolManager.getInstance().scheduleGeneral(new SongTask(_world, 0), 1000);
-					}
-					else if ((_world.frintezza != null) && !_world.frintezza.isDead())
-					{
-						if (_world.frintezza.getScriptValue() != 1)
-						{
+					} else if ((_world.frintezza != null) && !_world.frintezza.isDead()) {
+						if (_world.frintezza.getScriptValue() != 1) {
 							int rnd = getRandom(100);
-							for (FrintezzaSong element : FRINTEZZASONGLIST)
-							{
-								if (rnd < element.chance)
-								{
+							for (FrintezzaSong element : FRINTEZZASONGLIST) {
+								if (rnd < element.chance) {
 									_world.OnSong = element;
 									broadCastPacket(_world, new ExShowScreenMessage(2, -1, 2, 0, 0, 0, 0, true, 4000, false, null, element.songName, null));
 									broadCastPacket(_world, new MagicSkillUse(_world.frintezza, _world.frintezza, element.skill.getSkillId(), element.skill.getSkillLvl(), element.skill.getSkill().getHitTime(), 0));
@@ -825,9 +675,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 									break;
 								}
 							}
-						}
-						else
-						{
+						} else {
 							ThreadPoolManager.getInstance().scheduleGeneral(new SoulBreakingArrow(_world.frintezza), 35000);
 						}
 					}
@@ -835,38 +683,28 @@ public final class FinalEmperialTomb extends AbstractInstance
 				case 1: // Frintezza song effect
 					_world.songEffectTask = null;
 					Skill skill = _world.OnSong.effectSkill.getSkill();
-					if (skill == null)
-					{
+					if (skill == null) {
 						return;
 					}
 					
-					if ((_world.frintezza != null) && !_world.frintezza.isDead() && (_world.activeScarlet != null) && !_world.activeScarlet.isDead())
-					{
+					if ((_world.frintezza != null) && !_world.frintezza.isDead() && (_world.activeScarlet != null) && !_world.activeScarlet.isDead()) {
 						final List<L2Character> targetList = new ArrayList<>();
-						if (skill.hasEffectType(L2EffectType.STUN) || skill.isDebuff())
-						{
-							for (int objId : _world.getAllowed())
-							{
+						if (skill.hasEffectType(L2EffectType.STUN) || skill.isDebuff()) {
+							for (int objId : _world.getAllowed()) {
 								L2PcInstance player = L2World.getInstance().getPlayer(objId);
-								if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId()))
-								{
-									if (!player.isDead())
-									{
+								if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId())) {
+									if (!player.isDead()) {
 										targetList.add(player);
 									}
-									if (player.hasSummon() && !player.getSummon().isDead())
-									{
+									if (player.hasSummon() && !player.getSummon().isDead()) {
 										targetList.add(player.getSummon());
 									}
 								}
 							}
-						}
-						else
-						{
+						} else {
 							targetList.add(_world.activeScarlet);
 						}
-						if (!targetList.isEmpty())
-						{
+						if (!targetList.isEmpty()) {
 							_world.frintezza.doCast(skill, targetList.get(0), targetList.toArray(new L2Character[targetList.size()]));
 						}
 					}
@@ -879,42 +717,34 @@ public final class FinalEmperialTomb extends AbstractInstance
 		}
 	}
 	
-	private class IntroTask implements Runnable
-	{
+	private class IntroTask implements Runnable {
 		private final FETWorld _world;
 		private final int _status;
 		
-		IntroTask(FETWorld world, int status)
-		{
+		IntroTask(FETWorld world, int status) {
 			_world = world;
 			_status = status;
 		}
 		
 		@Override
-		public void run()
-		{
-			switch (_status)
-			{
+		public void run() {
+			switch (_status) {
 				case 0:
 					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 1), 27000);
 					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 2), 30000);
 					broadCastPacket(_world, new Earthquake(-87784, -155083, -9087, 45, 27));
 					break;
 				case 1:
-					for (int doorId : FIRST_ROOM_DOORS)
-					{
+					for (int doorId : FIRST_ROOM_DOORS) {
 						closeDoor(doorId, _world.getInstanceId());
 					}
-					for (int doorId : FIRST_ROUTE_DOORS)
-					{
+					for (int doorId : FIRST_ROUTE_DOORS) {
 						closeDoor(doorId, _world.getInstanceId());
 					}
-					for (int doorId : SECOND_ROOM_DOORS)
-					{
+					for (int doorId : SECOND_ROOM_DOORS) {
 						closeDoor(doorId, _world.getInstanceId());
 					}
-					for (int doorId : SECOND_ROUTE_DOORS)
-					{
+					for (int doorId : SECOND_ROUTE_DOORS) {
 						closeDoor(doorId, _world.getInstanceId());
 					}
 					addSpawn(29061, -87904, -141296, -9168, 0, false, 0, false, _world.getInstanceId());
@@ -956,8 +786,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 					_world.frintezza.disableAllSkills();
 					updateKnownList(_world, _world.frintezza);
 					
-					for (int[] element : PORTRAIT_SPAWNS)
-					{
+					for (int[] element : PORTRAIT_SPAWNS) {
 						L2MonsterInstance demon = (L2MonsterInstance) addSpawn(element[0] + 2, element[5], element[6], element[7], element[8], false, 0, false, _world.getInstanceId());
 						demon.setIsImmobilized(true);
 						demon.disableAllSkills();
@@ -1060,8 +889,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 21), 3000);
 					break;
 				case 21:
-					for (int i = 0; i < PORTRAIT_SPAWNS.length; i++)
-					{
+					for (int i = 0; i < PORTRAIT_SPAWNS.length; i++) {
 						L2MonsterInstance portrait = (L2MonsterInstance) addSpawn(PORTRAIT_SPAWNS[i][0], PORTRAIT_SPAWNS[i][1], PORTRAIT_SPAWNS[i][2], PORTRAIT_SPAWNS[i][3], PORTRAIT_SPAWNS[i][4], false, 0, false, _world.getInstanceId());
 						updateKnownList(_world, portrait);
 						_world.portraits.put(portrait, i);
@@ -1075,8 +903,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 22), 2000);
 					break;
 				case 22:
-					for (L2MonsterInstance demon : _world.demons)
-					{
+					for (L2MonsterInstance demon : _world.demons) {
 						demon.setIsImmobilized(false);
 						demon.enableAllSkills();
 					}
@@ -1120,12 +947,9 @@ public final class FinalEmperialTomb extends AbstractInstance
 					_world.scarlet_y = _world.activeScarlet.getY();
 					_world.scarlet_z = _world.activeScarlet.getZ();
 					_world.scarlet_h = _world.activeScarlet.getHeading();
-					if (_world.scarlet_h < 32768)
-					{
+					if (_world.scarlet_h < 32768) {
 						_world.scarlet_a = Math.abs(180 - (int) (_world.scarlet_h / 182.044444444));
-					}
-					else
-					{
+					} else {
 						_world.scarlet_a = Math.abs(540 - (int) (_world.scarlet_h / 182.044444444));
 					}
 					broadCastPacket(_world, new SpecialCamera(_world.activeScarlet, 250, _world.scarlet_a, 12, 0, 1000, 0, 0, 1, 0, 0));
@@ -1190,13 +1014,10 @@ public final class FinalEmperialTomb extends AbstractInstance
 			}
 		}
 		
-		private void stopPc()
-		{
-			for (int objId : _world.getAllowed())
-			{
+		private void stopPc() {
+			for (int objId : _world.getAllowed()) {
 				L2PcInstance player = L2World.getInstance().getPlayer(objId);
-				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId()))
-				{
+				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId())) {
 					player.abortAttack();
 					player.abortCast();
 					player.disableAllSkills();
@@ -1208,32 +1029,23 @@ public final class FinalEmperialTomb extends AbstractInstance
 			}
 		}
 		
-		private void startPc()
-		{
-			for (int objId : _world.getAllowed())
-			{
+		private void startPc() {
+			for (int objId : _world.getAllowed()) {
 				L2PcInstance player = L2World.getInstance().getPlayer(objId);
-				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId()))
-				{
+				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId())) {
 					player.enableAllSkills();
 					player.setIsImmobilized(false);
 				}
 			}
 		}
 		
-		private void sendPacketX(L2GameServerPacket packet1, L2GameServerPacket packet2, int x)
-		{
-			for (int objId : _world.getAllowed())
-			{
+		private void sendPacketX(L2GameServerPacket packet1, L2GameServerPacket packet2, int x) {
+			for (int objId : _world.getAllowed()) {
 				L2PcInstance player = L2World.getInstance().getPlayer(objId);
-				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId()))
-				{
-					if (player.getX() < x)
-					{
+				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId())) {
+					if (player.getX() < x) {
 						player.sendPacket(packet1);
-					}
-					else
-					{
+					} else {
 						player.sendPacket(packet2);
 					}
 				}
@@ -1241,30 +1053,24 @@ public final class FinalEmperialTomb extends AbstractInstance
 		}
 	}
 	
-	private class StatusTask implements Runnable
-	{
+	private class StatusTask implements Runnable {
 		private final FETWorld _world;
 		private final int _status;
 		
-		StatusTask(FETWorld world, int status)
-		{
+		StatusTask(FETWorld world, int status) {
 			_world = world;
 			_status = status;
 		}
 		
 		@Override
-		public void run()
-		{
-			if (InstanceManager.getInstance().getWorld(_world.getInstanceId()) != _world)
-			{
+		public void run() {
+			if (InstanceManager.getInstance().getWorld(_world.getInstanceId()) != _world) {
 				return;
 			}
-			switch (_status)
-			{
+			switch (_status) {
 				case 0:
 					ThreadPoolManager.getInstance().scheduleGeneral(new StatusTask(_world, 1), 2000);
-					for (int doorId : FIRST_ROOM_DOORS)
-					{
+					for (int doorId : FIRST_ROOM_DOORS) {
 						openDoor(doorId, _world.getInstanceId());
 					}
 					break;
@@ -1273,8 +1079,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 					break;
 				case 2:
 					ThreadPoolManager.getInstance().scheduleGeneral(new StatusTask(_world, 3), 100);
-					for (int doorId : SECOND_ROOM_DOORS)
-					{
+					for (int doorId : SECOND_ROOM_DOORS) {
 						openDoor(doorId, _world.getInstanceId());
 					}
 					break;
@@ -1287,86 +1092,63 @@ public final class FinalEmperialTomb extends AbstractInstance
 			}
 		}
 		
-		private void addAggroToMobs()
-		{
+		private void addAggroToMobs() {
 			L2PcInstance target = L2World.getInstance().getPlayer(_world.getAllowed().get(getRandom(_world.getAllowed().size())));
-			if ((target == null) || (target.getInstanceId() != _world.getInstanceId()) || target.isDead() || target.isFakeDeath())
-			{
-				for (int objId : _world.getAllowed())
-				{
+			if ((target == null) || (target.getInstanceId() != _world.getInstanceId()) || target.isDead() || target.isFakeDeath()) {
+				for (int objId : _world.getAllowed()) {
 					target = L2World.getInstance().getPlayer(objId);
-					if ((target != null) && (target.getInstanceId() == _world.getInstanceId()) && !target.isDead() && !target.isFakeDeath())
-					{
+					if ((target != null) && (target.getInstanceId() == _world.getInstanceId()) && !target.isDead() && !target.isFakeDeath()) {
 						break;
 					}
 					target = null;
 				}
 			}
-			for (L2Npc mob : _world.npcList)
-			{
+			for (L2Npc mob : _world.npcList) {
 				mob.setRunning();
-				if (target != null)
-				{
+				if (target != null) {
 					((L2MonsterInstance) mob).addDamageHate(target, 0, 500);
 					mob.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
-				}
-				else
-				{
+				} else {
 					mob.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, MOVE_TO_CENTER);
 				}
 			}
 		}
 	}
 	
-	protected void broadCastPacket(FETWorld world, L2GameServerPacket packet)
-	{
-		for (int objId : world.getAllowed())
-		{
+	protected void broadCastPacket(FETWorld world, L2GameServerPacket packet) {
+		for (int objId : world.getAllowed()) {
 			L2PcInstance player = L2World.getInstance().getPlayer(objId);
-			if ((player != null) && player.isOnline() && (player.getInstanceId() == world.getInstanceId()))
-			{
+			if ((player != null) && player.isOnline() && (player.getInstanceId() == world.getInstanceId())) {
 				player.sendPacket(packet);
 			}
 		}
 	}
 	
-	protected void updateKnownList(FETWorld world, L2Npc npc)
-	{
+	protected void updateKnownList(FETWorld world, L2Npc npc) {
 		Map<Integer, L2PcInstance> npcKnownPlayers = npc.getKnownList().getKnownPlayers();
-		for (int objId : world.getAllowed())
-		{
+		for (int objId : world.getAllowed()) {
 			L2PcInstance player = L2World.getInstance().getPlayer(objId);
-			if ((player != null) && player.isOnline() && (player.getInstanceId() == world.getInstanceId()))
-			{
+			if ((player != null) && player.isOnline() && (player.getInstanceId() == world.getInstanceId())) {
 				npcKnownPlayers.put(player.getObjectId(), player);
 			}
 		}
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if (tmpworld instanceof FETWorld)
-		{
+		if (tmpworld instanceof FETWorld) {
 			final FETWorld world = (FETWorld) tmpworld;
-			if ((npc.getId() == SCARLET1) && (world.getStatus() == 3) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.80)))
-			{
+			if ((npc.getId() == SCARLET1) && (world.getStatus() == 3) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.80))) {
+				controlStatus(world);
+			} else if ((npc.getId() == SCARLET1) && (world.getStatus() == 4) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.20))) {
 				controlStatus(world);
 			}
-			else if ((npc.getId() == SCARLET1) && (world.getStatus() == 4) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.20)))
-			{
-				controlStatus(world);
-			}
-			if (skill != null)
-			{
+			if (skill != null) {
 				// When Dewdrop of Destruction is used on Portraits they suicide.
-				if (Util.contains(PORTRAITS, npc.getId()) && (skill.getId() == DEWDROP_OF_DESTRUCTION_SKILL_ID))
-				{
+				if (Util.contains(PORTRAITS, npc.getId()) && (skill.getId() == DEWDROP_OF_DESTRUCTION_SKILL_ID)) {
 					npc.doDie(attacker);
-				}
-				else if ((npc.getId() == FRINTEZZA) && (skill.getId() == SOUL_BREAKING_ARROW_SKILL_ID))
-				{
+				} else if ((npc.getId() == FRINTEZZA) && (skill.getId() == SOUL_BREAKING_ARROW_SKILL_ID)) {
 					npc.setScriptValue(1);
 					npc.setTarget(null);
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -1377,67 +1159,46 @@ public final class FinalEmperialTomb extends AbstractInstance
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
-	{
-		if (skill.isSuicideAttack())
-		{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill) {
+		if (skill.isSuicideAttack()) {
 			return onKill(npc, null, false);
 		}
 		return super.onSpellFinished(npc, player, skill);
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if (tmpworld instanceof FETWorld)
-		{
+		if (tmpworld instanceof FETWorld) {
 			FETWorld world = (FETWorld) tmpworld;
-			if (npc.getId() == HALL_ALARM)
-			{
+			if (npc.getId() == HALL_ALARM) {
 				ThreadPoolManager.getInstance().scheduleGeneral(new StatusTask(world, 0), 2000);
-				if (debug)
-				{
+				if (debug) {
 					_log.info("[Final Emperial Tomb] Hall alarm is disabled, doors will open!");
 				}
-			}
-			else if (npc.getId() == DARK_CHOIR_PLAYER)
-			{
+			} else if (npc.getId() == DARK_CHOIR_PLAYER) {
 				world.darkChoirPlayerCount--;
-				if (world.darkChoirPlayerCount < 1)
-				{
+				if (world.darkChoirPlayerCount < 1) {
 					ThreadPoolManager.getInstance().scheduleGeneral(new StatusTask(world, 2), 2000);
-					if (debug)
-					{
+					if (debug) {
 						_log.info("[Final Emperial Tomb] All Dark Choir Players are killed, doors will open!");
 					}
 				}
-			}
-			else if (npc.getId() == SCARLET2)
-			{
+			} else if (npc.getId() == SCARLET2) {
 				controlStatus(world);
-			}
-			else if (world.getStatus() <= 2)
-			{
-				if (npc.getId() == HALL_KEEPER_CAPTAIN)
-				{
-					if (getRandom(100) < 5)
-					{
+			} else if (world.getStatus() <= 2) {
+				if (npc.getId() == HALL_KEEPER_CAPTAIN) {
+					if (getRandom(100) < 5) {
 						npc.dropItem(player, DEWDROP_OF_DESTRUCTION_ITEM_ID, 1);
 					}
 				}
 				
-				if (checkKillProgress(npc, world))
-				{
+				if (checkKillProgress(npc, world)) {
 					controlStatus(world);
 				}
-			}
-			else if (world.demons.contains(npc))
-			{
+			} else if (world.demons.contains(npc)) {
 				world.demons.remove(npc);
-			}
-			else if (world.portraits.containsKey(npc))
-			{
+			} else if (world.portraits.containsKey(npc)) {
 				world.portraits.remove(npc);
 			}
 		}
@@ -1445,16 +1206,12 @@ public final class FinalEmperialTomb extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		int npcId = npc.getId();
 		getQuestState(player, true);
-		if (npcId == GUIDE)
-		{
+		if (npcId == GUIDE) {
 			enterInstance(player, new FETWorld(), "FinalEmperialTomb.xml", TEMPLATE_ID);
-		}
-		else if (npc.getId() == CUBE)
-		{
+		} else if (npc.getId() == CUBE) {
 			int x = -87534 + getRandom(500);
 			int y = -153048 + getRandom(500);
 			player.teleToLocation(x, y, -9165);

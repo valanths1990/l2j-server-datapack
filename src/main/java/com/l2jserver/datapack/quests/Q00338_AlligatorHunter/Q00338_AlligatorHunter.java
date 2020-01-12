@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Alligator Hunter (338)
  * @author malyelfik
  */
-public class Q00338_AlligatorHunter extends Quest
-{
+public class Q00338_AlligatorHunter extends Quest {
 	// NPC
 	private static final int ENVERUN = 30892;
 	// Monster
@@ -41,8 +40,7 @@ public class Q00338_AlligatorHunter extends Quest
 	private static final int MIN_LEVEL = 40;
 	private static final int SECOND_CHANCE = 19;
 	
-	public Q00338_AlligatorHunter()
-	{
+	public Q00338_AlligatorHunter() {
 		super(338, Q00338_AlligatorHunter.class.getSimpleName(), "Alligator Hunter");
 		addStartNpc(ENVERUN);
 		addTalkId(ENVERUN);
@@ -51,23 +49,19 @@ public class Q00338_AlligatorHunter extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30892-03.htm":
 				st.startQuest();
 				break;
 			case "30892-06.html":
-				if (!st.hasQuestItems(ALLIGATOR_LEATHER))
-				{
+				if (!st.hasQuestItems(ALLIGATOR_LEATHER)) {
 					return "30892-05.html";
 				}
 				int amount = (st.getQuestItemsCount(ALLIGATOR_LEATHER) >= 10) ? 3430 : 0;
@@ -90,14 +84,11 @@ public class Q00338_AlligatorHunter extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if (st != null)
-		{
+		if (st != null) {
 			st.giveItems(ALLIGATOR_LEATHER, 1);
-			if (getRandom(100) < SECOND_CHANCE)
-			{
+			if (getRandom(100) < SECOND_CHANCE) {
 				st.giveItems(ALLIGATOR_LEATHER, 1);
 			}
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
@@ -106,12 +97,10 @@ public class Q00338_AlligatorHunter extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "30892-02.htm" : "30892-01.htm";
 				break;

@@ -28,18 +28,13 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 /**
  * @author UnAfraid
  */
-public class OwnerPet implements ITargetTypeHandler
-{
+public class OwnerPet implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		if (activeChar.isSummon())
-		{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+		if (activeChar.isSummon()) {
 			target = ((L2Summon) activeChar).getOwner();
-			if ((target != null) && !target.isDead())
-			{
-				return new L2Character[]
-				{
+			if ((target != null) && !target.isDead()) {
+				return new L2Character[] {
 					target
 				};
 			}
@@ -48,8 +43,7 @@ public class OwnerPet implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.OWNER_PET;
 	}
 }

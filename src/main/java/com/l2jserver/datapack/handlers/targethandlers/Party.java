@@ -31,16 +31,12 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 /**
  * @author UnAfraid
  */
-public class Party implements ITargetTypeHandler
-{
+public class Party implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<>();
-		if (onlyFirst)
-		{
-			return new L2Character[]
-			{
+		if (onlyFirst) {
+			return new L2Character[] {
 				activeChar
 			};
 		}
@@ -49,38 +45,28 @@ public class Party implements ITargetTypeHandler
 		
 		final int radius = skill.getAffectRange();
 		L2PcInstance player = activeChar.getActingPlayer();
-		if (activeChar.isSummon())
-		{
-			if (Skill.addCharacter(activeChar, player, radius, false))
-			{
+		if (activeChar.isSummon()) {
+			if (Skill.addCharacter(activeChar, player, radius, false)) {
 				targetList.add(player);
 			}
-		}
-		else if (activeChar.isPlayer())
-		{
-			if (Skill.addSummon(activeChar, player, radius, false))
-			{
+		} else if (activeChar.isPlayer()) {
+			if (Skill.addSummon(activeChar, player, radius, false)) {
 				targetList.add(player.getSummon());
 			}
 		}
 		
-		if (activeChar.isInParty())
-		{
+		if (activeChar.isInParty()) {
 			// Get a list of Party Members
-			for (L2PcInstance partyMember : activeChar.getParty().getMembers())
-			{
-				if ((partyMember == null) || (partyMember == player))
-				{
+			for (L2PcInstance partyMember : activeChar.getParty().getMembers()) {
+				if ((partyMember == null) || (partyMember == player)) {
 					continue;
 				}
 				
-				if (Skill.addCharacter(activeChar, partyMember, radius, false))
-				{
+				if (Skill.addCharacter(activeChar, partyMember, radius, false)) {
 					targetList.add(partyMember);
 				}
 				
-				if (Skill.addSummon(activeChar, partyMember, radius, false))
-				{
+				if (Skill.addSummon(activeChar, partyMember, radius, false)) {
 					targetList.add(partyMember.getSummon());
 				}
 			}
@@ -89,8 +75,7 @@ public class Party implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.PARTY;
 	}
 }

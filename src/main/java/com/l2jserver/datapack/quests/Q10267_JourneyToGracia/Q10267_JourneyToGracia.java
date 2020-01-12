@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Kerberos.
  * @author nonom
  */
-public class Q10267_JourneyToGracia extends Quest
-{
+public class Q10267_JourneyToGracia extends Quest {
 	// NPCs
 	private static final int ORVEN = 30857;
 	private static final int KEUCEREUS = 32548;
@@ -38,8 +37,7 @@ public class Q10267_JourneyToGracia extends Quest
 	// Item
 	private static final int LETTER = 13810;
 	
-	public Q10267_JourneyToGracia()
-	{
+	public Q10267_JourneyToGracia() {
 		super(10267, Q10267_JourneyToGracia.class.getSimpleName(), "Journey to Gracia");
 		addStartNpc(ORVEN);
 		addTalkId(ORVEN, KEUCEREUS, PAPIKU);
@@ -47,16 +45,13 @@ public class Q10267_JourneyToGracia extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "30857-06.html":
 				st.startQuest();
 				st.giveItems(LETTER, 1);
@@ -74,15 +69,12 @@ public class Q10267_JourneyToGracia extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ORVEN:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() < 75) ? "30857-00.html" : "30857-01.htm";
 						break;
@@ -95,18 +87,14 @@ public class Q10267_JourneyToGracia extends Quest
 				}
 				break;
 			case PAPIKU:
-				if (st.isStarted())
-				{
+				if (st.isStarted()) {
 					htmltext = st.isCond(1) ? "32564-01.html" : "32564-03.html";
 				}
 				break;
 			case KEUCEREUS:
-				if (st.isStarted() && st.isCond(2))
-				{
+				if (st.isStarted() && st.isCond(2)) {
 					htmltext = "32548-01.html";
-				}
-				else if (st.isCompleted())
-				{
+				} else if (st.isCompleted()) {
 					htmltext = "32548-03.html";
 				}
 				break;

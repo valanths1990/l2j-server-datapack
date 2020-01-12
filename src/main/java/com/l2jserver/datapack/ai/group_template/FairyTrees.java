@@ -28,13 +28,11 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
  * Fairy Trees AI.
  * @author Charus
  */
-public class FairyTrees extends AbstractNpcAI
-{
+public class FairyTrees extends AbstractNpcAI {
 	// NPC
 	private static final int SOUL_GUARDIAN = 27189; // Soul of Tree Guardian
 	
-	private static final int[] MOBS =
-	{
+	private static final int[] MOBS = {
 		27185, // Fairy Tree of Wind
 		27186, // Fairy Tree of Star
 		27187, // Fairy Tree of Twilight
@@ -47,25 +45,20 @@ public class FairyTrees extends AbstractNpcAI
 	// Misc
 	private static final int MIN_DISTANCE = 1500;
 	
-	private FairyTrees()
-	{
+	private FairyTrees() {
 		super(FairyTrees.class.getSimpleName(), "ai/group_template");
 		addKillId(MOBS);
 		addSpawnId(MOBS);
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (npc.calculateDistance(killer, true, false) <= MIN_DISTANCE)
-		{
-			for (int i = 0; i < 20; i++)
-			{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (npc.calculateDistance(killer, true, false) <= MIN_DISTANCE) {
+			for (int i = 0; i < 20; i++) {
 				final L2Npc guardian = addSpawn(SOUL_GUARDIAN, npc, false, 30000);
 				final L2Playable attacker = isSummon ? killer.getSummon() : killer;
 				addAttackDesire(guardian, attacker);
-				if (getRandomBoolean())
-				{
+				if (getRandomBoolean()) {
 					guardian.setTarget(attacker);
 					guardian.doCast(VENOMOUS_POISON);
 				}
@@ -75,15 +68,13 @@ public class FairyTrees extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		npc.setIsNoRndWalk(true);
 		npc.setIsImmobilized(true);
 		return super.onSpawn(npc);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new FairyTrees();
 	}
 }

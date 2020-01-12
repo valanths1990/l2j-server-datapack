@@ -34,16 +34,14 @@ import com.l2jserver.gameserver.util.Util;
  * Covert Business (294)
  * @author xban1x
  */
-public final class Q00294_CovertBusiness extends Quest
-{
+public final class Q00294_CovertBusiness extends Quest {
 	// NPC
 	private static final int KEEF = 30534;
 	// Item
 	private static final int BAT_FANG = 1491;
 	// Monsters
 	private static final Map<Integer, List<Integer>> MONSTER_DROP_CHANCE = new HashMap<>();
-	static
-	{
+	static {
 		MONSTER_DROP_CHANCE.put(20370, Arrays.asList(6, 3, 1, -1));
 		MONSTER_DROP_CHANCE.put(20480, Arrays.asList(5, 2, -1));
 	}
@@ -52,8 +50,7 @@ public final class Q00294_CovertBusiness extends Quest
 	// Misc
 	private static final int MIN_LVL = 10;
 	
-	public Q00294_CovertBusiness()
-	{
+	public Q00294_CovertBusiness() {
 		super(294, Q00294_CovertBusiness.class.getSimpleName(), "Covert Business");
 		addStartNpc(KEEF);
 		addTalkId(KEEF);
@@ -62,11 +59,9 @@ public final class Q00294_CovertBusiness extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCreated() && event.equals("30534-03.htm"))
-		{
+		if ((qs != null) && qs.isCreated() && event.equals("30534-03.htm")) {
 			qs.startQuest();
 			return event;
 		}
@@ -74,20 +69,15 @@ public final class Q00294_CovertBusiness extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1) && Util.checkIfInRange(1500, npc, killer, true))
-		{
+		if ((qs != null) && qs.isCond(1) && Util.checkIfInRange(1500, npc, killer, true)) {
 			final int chance = getRandom(10);
 			int count = 0;
-			for (int i : MONSTER_DROP_CHANCE.get(npc.getId()))
-			{
+			for (int i : MONSTER_DROP_CHANCE.get(npc.getId())) {
 				count++;
-				if (chance > i)
-				{
-					if (giveItemRandomly(killer, npc, BAT_FANG, count, 100, 1.0, true))
-					{
+				if (chance > i) {
+					if (giveItemRandomly(killer, npc, BAT_FANG, count, 100, 1.0, true)) {
 						qs.setCond(2);
 					}
 					break;
@@ -98,33 +88,23 @@ public final class Q00294_CovertBusiness extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		String html = getNoQuestMsg(talker);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			html = (talker.getRace() == Race.DWARF) ? (talker.getLevel() >= MIN_LVL) ? "30534-02.htm" : "30534-01.htm" : "30534-00.htm";
-		}
-		else if (qs.isStarted())
-		{
-			if (qs.isCond(2))
-			{
-				if (hasQuestItems(talker, RING_OF_RACCOON))
-				{
+		} else if (qs.isStarted()) {
+			if (qs.isCond(2)) {
+				if (hasQuestItems(talker, RING_OF_RACCOON)) {
 					giveAdena(talker, 2400, true);
 					html = "30534-06.html";
-				}
-				else
-				{
+				} else {
 					giveItems(talker, RING_OF_RACCOON, 1);
 					html = "30534-05.html";
 				}
 				addExpAndSp(talker, 0, 600);
 				qs.exitQuest(true, true);
-			}
-			else
-			{
+			} else {
 				html = "30534-04.html";
 			}
 		}

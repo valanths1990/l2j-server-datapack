@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Fallen Angel - Request of Dawn (142)
  * @author Nono
  */
-public class Q00142_FallenAngelRequestOfDawn extends Quest
-{
+public class Q00142_FallenAngelRequestOfDawn extends Quest {
 	// NPCs
 	private static final int RAYMOND = 30289;
 	private static final int CASIAN = 30612;
@@ -43,8 +42,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 	private static final int FALLEN_ANGEL = 27338;
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
 	
-	static
-	{
+	static {
 		MOBS.put(20079, 338); // Ant
 		MOBS.put(20080, 363); // Ant Captain
 		MOBS.put(20081, 611); // Ant Overseer
@@ -66,8 +64,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 	private static final int FRAGMENT_COUNT = 30;
 	private boolean isAngelSpawned = false;
 	
-	public Q00142_FallenAngelRequestOfDawn()
-	{
+	public Q00142_FallenAngelRequestOfDawn() {
 		super(142, Q00142_FallenAngelRequestOfDawn.class.getSimpleName(), "Fallen Angel - Request of Dawn");
 		addTalkId(NATOOLS, RAYMOND, CASIAN, ROCK);
 		addKillId(MOBS.keySet());
@@ -76,17 +73,14 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30894-02.html":
 			case "30289-03.html":
 			case "30289-04.html":
@@ -114,8 +108,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 				st.setCond(4, true);
 				break;
 			case "32368-04.html":
-				if (isAngelSpawned)
-				{
+				if (isAngelSpawned) {
 					return "32368-03.html";
 				}
 				addSpawn(FALLEN_ANGEL, npc.getX() + 100, npc.getY() + 100, npc.getZ(), 0, false, 120000);
@@ -123,8 +116,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 				startQuestTimer("despawn", 120000, null, player);
 				break;
 			case "despawn":
-				if (isAngelSpawned)
-				{
+				if (isAngelSpawned) {
 					isAngelSpawned = false;
 				}
 			default:
@@ -135,35 +127,25 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st;
-		if ((npc.getId() == FALLEN_ANGEL))
-		{
+		if ((npc.getId() == FALLEN_ANGEL)) {
 			st = getQuestState(player, false);
-			if (st.isCond(5))
-			{
+			if (st.isCond(5)) {
 				st.giveItems(FALLEN_ANGEL_BLOOD, 1);
 				st.setCond(6, true);
 				isAngelSpawned = false;
 			}
-		}
-		else
-		{
+		} else {
 			final L2PcInstance member = getRandomPartyMember(player, 4);
-			if (member != null)
-			{
+			if (member != null) {
 				st = getQuestState(member, false);
-				if (getRandom(1000) < MOBS.get(npc.getId()))
-				{
+				if (getRandom(1000) < MOBS.get(npc.getId())) {
 					st.giveItems(PROPHECY_FRAGMENT, 1);
-					if (st.getQuestItemsCount(PROPHECY_FRAGMENT) >= FRAGMENT_COUNT)
-					{
+					if (st.getQuestItemsCount(PROPHECY_FRAGMENT) >= FRAGMENT_COUNT) {
 						st.takeItems(PROPHECY_FRAGMENT, -1);
 						st.setCond(5, true);
-					}
-					else
-					{
+					} else {
 						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
@@ -173,18 +155,14 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case NATOOLS:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "30894-01.html";
 								break;
@@ -199,20 +177,15 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 				}
 				break;
 			case RAYMOND:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "30289-01.html";
 							break;
 						case 2:
-							if (st.isSet("talk"))
-							{
+							if (st.isSet("talk")) {
 								htmltext = "30289-03.html";
-							}
-							else
-							{
+							} else {
 								st.takeItems(CRYPTOGRAM_OF_THE_ANGEL_SEARCH, -1);
 								st.set("talk", "1");
 								htmltext = "30289-02.html";
@@ -225,8 +198,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 							break;
 						case 6:
 							st.giveAdena(92676, true);
-							if (player.getLevel() <= MAX_REWARD_LEVEL)
-							{
+							if (player.getLevel() <= MAX_REWARD_LEVEL) {
 								st.addExpAndSp(223036, 13091);
 							}
 							st.exitQuest(false, true);
@@ -236,25 +208,18 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 				}
 				break;
 			case CASIAN:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 						case 2:
 							htmltext = "30612-01.html";
 							break;
 						case 3:
-							if (st.getInt("talk") == 1)
-							{
+							if (st.getInt("talk") == 1) {
 								htmltext = "30612-03.html";
-							}
-							else if (st.getInt("talk") == 2)
-							{
+							} else if (st.getInt("talk") == 2) {
 								htmltext = "30612-06.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30612-02.html";
 								st.set("talk", "1");
 							}
@@ -268,10 +233,8 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 				}
 				break;
 			case ROCK:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 5:
 							htmltext = "32368-02.html";
 							break;

@@ -30,11 +30,9 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Separated Soul teleport AI.
  * @author UnAfraid, improved by Adry_85, Zealar
  */
-public final class SeparatedSoul extends AbstractNpcAI
-{
+public final class SeparatedSoul extends AbstractNpcAI {
 	// NPCs
-	private static final int[] SEPARATED_SOULS =
-	{
+	private static final int[] SEPARATED_SOULS = {
 		32864,
 		32865,
 		32866,
@@ -54,8 +52,7 @@ public final class SeparatedSoul extends AbstractNpcAI
 	// Locations
 	private static final Map<Integer, Location> LOCATIONS = new HashMap<>();
 	
-	static
-	{
+	static {
 		LOCATIONS.put(1, new Location(117046, 76798, -2696)); // Hunter's Village
 		LOCATIONS.put(2, new Location(99218, 110283, -3696)); // The Center of Dragon Valley
 		LOCATIONS.put(3, new Location(116992, 113716, -3056)); // Deep inside Dragon Valley(North)
@@ -66,8 +63,7 @@ public final class SeparatedSoul extends AbstractNpcAI
 		LOCATIONS.put(8, new Location(131116, 114333, -3704)); // Entrance of Antharas' Lair
 	}
 	
-	private SeparatedSoul()
-	{
+	private SeparatedSoul() {
 		super(SeparatedSoul.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(SEPARATED_SOULS);
 		addTalkId(SEPARATED_SOULS);
@@ -75,17 +71,14 @@ public final class SeparatedSoul extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return npc.getId() + ".htm";
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final int ask = Integer.parseInt(event);
-		switch (ask)
-		{
+		switch (ask) {
 			case 1:
 			case 2:
 			case 3:
@@ -93,41 +86,31 @@ public final class SeparatedSoul extends AbstractNpcAI
 			case 5:
 			case 6:
 			case 7:
-			case 8:
-			{
-				if (player.getLevel() >= MIN_LEVEL)
-				{
+			case 8: {
+				if (player.getLevel() >= MIN_LEVEL) {
 					player.teleToLocation(LOCATIONS.get(ask), false);
-				}
-				else
-				{
+				} else {
 					return "no-level.htm";
 				}
 				break;
 			}
-			case 23241:
-			{
-				if (hasQuestItems(player, WILL_OF_ANTHARAS, SEALED_BLOOD_CRYSTAL))
-				{
+			case 23241: {
+				if (hasQuestItems(player, WILL_OF_ANTHARAS, SEALED_BLOOD_CRYSTAL)) {
 					takeItems(player, WILL_OF_ANTHARAS, 1);
 					takeItems(player, SEALED_BLOOD_CRYSTAL, 1);
 					giveItems(player, ANTHARAS_BLOOD_CRYSTAL, 1);
-				}
-				else
-				{
+				} else {
 					return "no-items.htm";
 				}
 			}
-			case 23242:
-			{
+			case 23242: {
 				return "separatedsoul.htm";
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new SeparatedSoul();
 	}
 }

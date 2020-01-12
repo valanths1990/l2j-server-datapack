@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Gather the Flames (617)
  * @author malyelfik
  */
-public class Q00617_GatherTheFlames extends Quest
-{
+public class Q00617_GatherTheFlames extends Quest {
 	// NPCs
 	private static final int HILDA = 31271;
 	private static final int VULCAN = 31539;
@@ -40,8 +39,7 @@ public class Q00617_GatherTheFlames extends Quest
 	// Item
 	private static final int TORCH = 7264;
 	// Reward
-	private static final int[] REWARD =
-	{
+	private static final int[] REWARD = {
 		6881,
 		6883,
 		6885,
@@ -57,8 +55,7 @@ public class Q00617_GatherTheFlames extends Quest
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
 	
-	static
-	{
+	static {
 		MOBS.put(22634, 639);
 		MOBS.put(22635, 611);
 		MOBS.put(22636, 649);
@@ -77,8 +74,7 @@ public class Q00617_GatherTheFlames extends Quest
 		MOBS.put(22649, 685);
 	}
 	
-	public Q00617_GatherTheFlames()
-	{
+	public Q00617_GatherTheFlames() {
 		super(617, Q00617_GatherTheFlames.class.getSimpleName(), "Gather the Flames");
 		addStartNpc(HILDA, VULCAN);
 		addTalkId(ROONEY, HILDA, VULCAN);
@@ -87,17 +83,14 @@ public class Q00617_GatherTheFlames extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "31539-03.htm":
 			case "31271-03.htm":
 				st.startQuest();
@@ -107,8 +100,7 @@ public class Q00617_GatherTheFlames extends Quest
 			case "31539-06.html":
 				break;
 			case "31539-07.html":
-				if ((st.getQuestItemsCount(TORCH) < 1000) || !st.isStarted())
-				{
+				if ((st.getQuestItemsCount(TORCH) < 1000) || !st.isStarted()) {
 					return getNoQuestMsg(player);
 				}
 				st.giveItems(REWARD[getRandom(REWARD.length)], 1);
@@ -125,8 +117,7 @@ public class Q00617_GatherTheFlames extends Quest
 			case "6895":
 			case "6897":
 			case "6899":
-				if ((st.getQuestItemsCount(TORCH) < 1200) || !st.isStarted())
-				{
+				if ((st.getQuestItemsCount(TORCH) < 1200) || !st.isStarted()) {
 					return getNoQuestMsg(player);
 				}
 				st.giveItems(Integer.valueOf(event), 1);
@@ -135,8 +126,7 @@ public class Q00617_GatherTheFlames extends Quest
 				break;
 			case "6887":
 			case "6881":
-				if ((st.getQuestItemsCount(TORCH) < 1200) || !st.isStarted())
-				{
+				if ((st.getQuestItemsCount(TORCH) < 1200) || !st.isStarted()) {
 					return getNoQuestMsg(player);
 				}
 				st.giveItems(Integer.valueOf(event), 1);
@@ -151,22 +141,17 @@ public class Q00617_GatherTheFlames extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(player, 1);
-		if (partyMember == null)
-		{
+		if (partyMember == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		
 		final QuestState st = getQuestState(partyMember, false);
 		
-		if (getRandom(1000) < MOBS.get(npc.getId()))
-		{
+		if (getRandom(1000) < MOBS.get(npc.getId())) {
 			st.giveItems(TORCH, 2);
-		}
-		else
-		{
+		} else {
 			st.giveItems(TORCH, 1);
 		}
 		st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
@@ -174,35 +159,26 @@ public class Q00617_GatherTheFlames extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ROONEY:
-				if (st.isStarted())
-				{
+				if (st.isStarted()) {
 					htmltext = (st.getQuestItemsCount(TORCH) >= 1200) ? "32049-02.html" : "32049-01.html";
 				}
 				break;
 			case VULCAN:
-				if (st.isCreated())
-				{
+				if (st.isCreated()) {
 					htmltext = (player.getLevel() >= 74) ? "31539-01.htm" : "31539-02.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = (st.getQuestItemsCount(TORCH) >= 1000) ? "31539-04.html" : "31539-05.html";
 				}
 				break;
 			case HILDA:
-				if (st.isCreated())
-				{
+				if (st.isCreated()) {
 					htmltext = (player.getLevel() >= 74) ? "31271-01.htm" : "31271-02.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "31271-04.html";
 				}
 				break;

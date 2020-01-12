@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.util.Util;
  * @author Zoey76
  * @since 2.6.0.0
  */
-public class EmeraldHorn extends AbstractNpcAI
-{
+public class EmeraldHorn extends AbstractNpcAI {
 	private static final int EMERALD_HORN = 25718;
 	// Skills
 	private static final SkillHolder REFLECT_ATTACK = new SkillHolder(6823, 1);
@@ -49,39 +48,32 @@ public class EmeraldHorn extends AbstractNpcAI
 	// Misc
 	private static final int MAX_CHASE_DIST = 2500;
 	
-	public EmeraldHorn()
-	{
+	public EmeraldHorn() {
 		super(EmeraldHorn.class.getSimpleName(), "ai/individual");
 		addAttackId(EMERALD_HORN);
 		addSpellFinishedId(EMERALD_HORN);
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if (Util.calculateDistance(npc, npc.getSpawn(), false, false) > MAX_CHASE_DIST)
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if (Util.calculateDistance(npc, npc.getSpawn(), false, false) > MAX_CHASE_DIST) {
 			npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ());
 		}
 		
-		if (npc.isAffectedBySkill(REFLECT_ATTACK.getSkillId()))
-		{
-			if (npc.getVariables().getBoolean(CAST_FLAG, false))
-			{
+		if (npc.isAffectedBySkill(REFLECT_ATTACK.getSkillId())) {
+			if (npc.getVariables().getBoolean(CAST_FLAG, false)) {
 				npc.getVariables().set(TOTAL_DAMAGE_COUNT, npc.getVariables().getInt(TOTAL_DAMAGE_COUNT) + damage);
 			}
 		}
 		
-		if (npc.getVariables().getInt(TOTAL_DAMAGE_COUNT) > 5000)
-		{
+		if (npc.getVariables().getInt(TOTAL_DAMAGE_COUNT) > 5000) {
 			addSkillCastDesire(npc, attacker, BLEED_LVL_2, 9999000000000000L);
 			npc.getVariables().set(TOTAL_DAMAGE_COUNT, 0);
 			npc.getVariables().set(CAST_FLAG, false);
 			npc.getVariables().set(HIGH_DAMAGE_FLAG, true);
 		}
 		
-		if (npc.getVariables().getInt(TOTAL_DAMAGE_COUNT) > 10000)
-		{
+		if (npc.getVariables().getInt(TOTAL_DAMAGE_COUNT) > 10000) {
 			addSkillCastDesire(npc, attacker, BLEED_LVL_1, 9999000000000000L);
 			npc.getVariables().set(TOTAL_DAMAGE_COUNT, 0);
 			npc.getVariables().set(CAST_FLAG, false);
@@ -91,10 +83,8 @@ public class EmeraldHorn extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
-	{
-		if (getRandom(5) < 1)
-		{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill) {
+		if (getRandom(5) < 1) {
 			npc.getVariables().set(TOTAL_DAMAGE_COUNT, 0);
 			npc.getVariables().set(CAST_FLAG, true);
 			addSkillCastDesire(npc, npc, REFLECT_ATTACK, 99999000000000000L);
@@ -104,21 +94,14 @@ public class EmeraldHorn extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (DAMAGE_TIMER_15S.equals(event))
-		{
-			if (!npc.getVariables().getBoolean(HIGH_DAMAGE_FLAG, false))
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (DAMAGE_TIMER_15S.equals(event)) {
+			if (!npc.getVariables().getBoolean(HIGH_DAMAGE_FLAG, false)) {
 				final L2Character mostHated = ((L2Attackable) npc).getMostHated();
-				if (mostHated != null)
-				{
-					if (mostHated.isDead())
-					{
+				if (mostHated != null) {
+					if (mostHated.isDead()) {
 						((L2Attackable) npc).stopHating(mostHated);
-					}
-					else
-					{
+					} else {
 						addSkillCastDesire(npc, mostHated, PIERCING_STORM, 9999000000000000L);
 					}
 				}
@@ -128,8 +111,7 @@ public class EmeraldHorn extends AbstractNpcAI
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new EmeraldHorn();
 	}
 }

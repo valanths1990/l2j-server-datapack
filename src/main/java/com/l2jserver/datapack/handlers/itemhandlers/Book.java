@@ -27,13 +27,10 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 
-public class Book implements IItemHandler
-{
+public class Book implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!playable.isPlayer())
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!playable.isPlayer()) {
 			playable.sendPacket(SystemMessageId.ITEM_NOT_FOR_PETS);
 			return false;
 		}
@@ -44,14 +41,11 @@ public class Book implements IItemHandler
 		String filename = "data/html/help/" + itemId + ".htm";
 		String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), filename);
 		
-		if (content == null)
-		{
+		if (content == null) {
 			final NpcHtmlMessage html = new NpcHtmlMessage(0, item.getId());
 			html.setHtml("<html><body>My Text is missing:<br>" + filename + "</body></html>");
 			activeChar.sendPacket(html);
-		}
-		else
-		{
+		} else {
 			final NpcHtmlMessage itemReply = new NpcHtmlMessage(0, item.getId());
 			itemReply.setHtml(content);
 			activeChar.sendPacket(itemReply);

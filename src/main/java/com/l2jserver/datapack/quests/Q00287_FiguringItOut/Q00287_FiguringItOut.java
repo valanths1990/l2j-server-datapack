@@ -34,14 +34,12 @@ import com.l2jserver.gameserver.model.quest.State;
  * Figuring It Out! (287)
  * @author malyelfik
  */
-public class Q00287_FiguringItOut extends Quest
-{
+public class Q00287_FiguringItOut extends Quest {
 	// NPCs
 	private static final int LAKI = 32742;
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
 	
-	static
-	{
+	static {
 		MONSTERS.put(22768, 509); // Tanta Lizardman Scout
 		MONSTERS.put(22769, 689); // Tanta Lizardman Warrior
 		MONSTERS.put(22770, 123); // Tanta Lizardman Soldier
@@ -54,8 +52,7 @@ public class Q00287_FiguringItOut extends Quest
 	// Items
 	private static final int VIAL_OF_TANTA_BLOOD = 15499;
 	// Rewards
-	private static final ItemHolder[] MOIRAI =
-	{
+	private static final ItemHolder[] MOIRAI = {
 		new ItemHolder(15776, 1),
 		new ItemHolder(15779, 1),
 		new ItemHolder(15782, 1),
@@ -74,8 +71,7 @@ public class Q00287_FiguringItOut extends Quest
 		new ItemHolder(15774, 1)
 	};
 	
-	private static final ItemHolder[] ICARUS =
-	{
+	private static final ItemHolder[] ICARUS = {
 		new ItemHolder(10381, 1),
 		new ItemHolder(10405, 1),
 		new ItemHolder(10405, 4),
@@ -86,8 +82,7 @@ public class Q00287_FiguringItOut extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
-	public Q00287_FiguringItOut()
-	{
+	public Q00287_FiguringItOut() {
 		super(287, Q00287_FiguringItOut.class.getSimpleName(), "Figuring It Out!");
 		addStartNpc(LAKI);
 		addTalkId(LAKI);
@@ -96,52 +91,42 @@ public class Q00287_FiguringItOut extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "32742-03.htm":
 				st.startQuest();
 				break;
 			case "Icarus":
-				if (st.getQuestItemsCount(VIAL_OF_TANTA_BLOOD) >= 500)
-				{
+				if (st.getQuestItemsCount(VIAL_OF_TANTA_BLOOD) >= 500) {
 					final ItemHolder holder = ICARUS[getRandom(ICARUS.length)];
 					st.giveItems(holder);
 					st.takeItems(VIAL_OF_TANTA_BLOOD, 500);
 					st.playSound(Sound.ITEMSOUND_QUEST_FINISH);
 					htmltext = "32742-06.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32742-07.html";
 				}
 				break;
 			case "Moirai":
-				if (st.getQuestItemsCount(VIAL_OF_TANTA_BLOOD) >= 100)
-				{
+				if (st.getQuestItemsCount(VIAL_OF_TANTA_BLOOD) >= 100) {
 					final ItemHolder holder = MOIRAI[getRandom(MOIRAI.length)];
 					st.giveItems(holder);
 					st.takeItems(VIAL_OF_TANTA_BLOOD, 100);
 					st.playSound(Sound.ITEMSOUND_QUEST_FINISH);
 					htmltext = "32742-08.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32742-09.html";
 				}
 				break;
 			case "32742-11.html":
-				if (!st.hasQuestItems(VIAL_OF_TANTA_BLOOD))
-				{
+				if (!st.hasQuestItems(VIAL_OF_TANTA_BLOOD)) {
 					st.exitQuest(true, true);
 					htmltext = "32742-12.html";
 				}
@@ -160,17 +145,14 @@ public class Q00287_FiguringItOut extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(player, 1);
-		if (partyMember == null)
-		{
+		if (partyMember == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		final QuestState st = getQuestState(partyMember, false);
 		
-		if (getRandom(1000) < MONSTERS.get(npc.getId()))
-		{
+		if (getRandom(1000) < MONSTERS.get(npc.getId())) {
 			st.giveItems(VIAL_OF_TANTA_BLOOD, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
@@ -178,12 +160,10 @@ public class Q00287_FiguringItOut extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q00250_WatchWhatYouEat.class.getSimpleName())) ? "32742-01.htm" : "32742-14.htm";
 				break;

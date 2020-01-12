@@ -34,14 +34,12 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class FoodForPet extends AbstractEffect
-{
+public final class FoodForPet extends AbstractEffect {
 	private final int _normal;
 	private final int _ride;
 	private final int _wyvern;
 	
-	public FoodForPet(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public FoodForPet(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_normal = params.getInt("normal", 0);
@@ -50,30 +48,22 @@ public final class FoodForPet extends AbstractEffect
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2Character activeChar = info.getEffector();
 		
-		if (activeChar.isPet())
-		{
+		if (activeChar.isPet()) {
 			final L2PetInstance pet = (L2PetInstance) activeChar;
 			pet.setCurrentFed(pet.getCurrentFed() + (_normal * rates().getPetFoodRate()));
-		}
-		else if (activeChar.isPlayer())
-		{
+		} else if (activeChar.isPlayer()) {
 			final L2PcInstance player = activeChar.getActingPlayer();
-			if (player.getMountType() == MountType.WYVERN)
-			{
+			if (player.getMountType() == MountType.WYVERN) {
 				player.setCurrentFeed(player.getCurrentFeed() + _wyvern);
-			}
-			else
-			{
+			} else {
 				player.setCurrentFeed(player.getCurrentFeed() + _ride);
 			}
 		}

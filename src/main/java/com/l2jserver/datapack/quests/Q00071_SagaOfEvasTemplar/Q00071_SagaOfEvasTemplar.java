@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of Eva's Templar (71)
  * @author Emperorc
  */
-public class Q00071_SagaOfEvasTemplar extends AbstractSagaQuest
-{
-	public Q00071_SagaOfEvasTemplar()
-	{
+public class Q00071_SagaOfEvasTemplar extends AbstractSagaQuest {
+	public Q00071_SagaOfEvasTemplar() {
 		super(71, Q00071_SagaOfEvasTemplar.class.getSimpleName(), "Saga of Eva's Templar");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			30852,
 			31624,
 			31278,
@@ -45,8 +42,7 @@ public class Q00071_SagaOfEvasTemplar extends AbstractSagaQuest
 			31658,
 			31281
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7535,
 			7081,
@@ -60,28 +56,23 @@ public class Q00071_SagaOfEvasTemplar extends AbstractSagaQuest
 			7094,
 			6482
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27287,
 			27220,
 			27279
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			99
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x14
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(119518, -28658, -3811),
 			new Location(181215, 36676, -4812),
 			new Location(181227, 36703, -4816)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

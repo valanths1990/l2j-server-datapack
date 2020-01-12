@@ -27,12 +27,10 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Home Security (278)
  * @author malyelfik
  */
-public class Q00278_HomeSecurity extends Quest
-{
+public class Q00278_HomeSecurity extends Quest {
 	// NPC
 	private static final int TUNATUN = 31537;
-	private static final int[] MONSTER =
-	{
+	private static final int[] MONSTER = {
 		18905,
 		18906,
 		18907
@@ -42,8 +40,7 @@ public class Q00278_HomeSecurity extends Quest
 	// Misc
 	private static final int SEL_MAHUM_MANE_COUNT = 300;
 	
-	public Q00278_HomeSecurity()
-	{
+	public Q00278_HomeSecurity() {
 		super(278, Q00278_HomeSecurity.class.getSimpleName(), "Home Security");
 		addStartNpc(TUNATUN);
 		addTalkId(TUNATUN);
@@ -52,81 +49,50 @@ public class Q00278_HomeSecurity extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "31537-02.htm":
-			{
+		switch (event) {
+			case "31537-02.htm": {
 				htmltext = (player.getLevel() >= 82) ? "31537-02.htm" : "31537-03.html";
 				break;
 			}
-			case "31537-04.htm":
-			{
+			case "31537-04.htm": {
 				st.startQuest();
 				break;
 			}
-			case "31537-07.html":
-			{
+			case "31537-07.html": {
 				int i0 = getRandom(100);
 				
-				if (i0 < 10)
-				{
+				if (i0 < 10) {
 					st.giveItems(960, 1);
-				}
-				else if (i0 < 19)
-				{
+				} else if (i0 < 19) {
 					st.giveItems(960, 2);
-				}
-				else if (i0 < 27)
-				{
+				} else if (i0 < 27) {
 					st.giveItems(960, 3);
-				}
-				else if (i0 < 34)
-				{
+				} else if (i0 < 34) {
 					st.giveItems(960, 4);
-				}
-				else if (i0 < 40)
-				{
+				} else if (i0 < 40) {
 					st.giveItems(960, 5);
-				}
-				else if (i0 < 45)
-				{
+				} else if (i0 < 45) {
 					st.giveItems(960, 6);
-				}
-				else if (i0 < 49)
-				{
+				} else if (i0 < 49) {
 					st.giveItems(960, 7);
-				}
-				else if (i0 < 52)
-				{
+				} else if (i0 < 52) {
 					st.giveItems(960, 8);
-				}
-				else if (i0 < 54)
-				{
+				} else if (i0 < 54) {
 					st.giveItems(960, 9);
-				}
-				else if (i0 < 55)
-				{
+				} else if (i0 < 55) {
 					st.giveItems(960, 10);
-				}
-				else if (i0 < 75)
-				{
+				} else if (i0 < 75) {
 					st.giveItems(9553, 1);
-				}
-				else if (i0 < 90)
-				{
+				} else if (i0 < 90) {
 					st.giveItems(9553, 2);
-				}
-				else
-				{
+				} else {
 					st.giveItems(959, 1);
 				}
 				
@@ -139,18 +105,14 @@ public class Q00278_HomeSecurity extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getRandomPartyMemberState(player, 1, 3, npc);
-		if (st != null)
-		{
-			switch (npc.getId())
-			{
+		if (st != null) {
+			switch (npc.getId()) {
 				case 18905: // Farm Ravager (Crazy)
 				{
 					final int itemCount = ((getRandom(1000) < 486) ? getRandom(6) + 1 : getRandom(5) + 1);
-					if (st.giveItemRandomly(npc, SEL_MAHUM_MANE, itemCount, SEL_MAHUM_MANE_COUNT, 1.0, true))
-					{
+					if (st.giveItemRandomly(npc, SEL_MAHUM_MANE, itemCount, SEL_MAHUM_MANE_COUNT, 1.0, true)) {
 						st.setCond(2, true);
 					}
 					break;
@@ -158,8 +120,7 @@ public class Q00278_HomeSecurity extends Quest
 				case 18906: // Farm Bandit
 				case 18907: // Beast Devourer
 				{
-					if (st.giveItemRandomly(npc, SEL_MAHUM_MANE, 1, SEL_MAHUM_MANE_COUNT, 0.85, true))
-					{
+					if (st.giveItemRandomly(npc, SEL_MAHUM_MANE, 1, SEL_MAHUM_MANE_COUNT, 0.85, true)) {
 						st.setCond(2, true);
 					}
 					break;
@@ -170,22 +131,15 @@ public class Q00278_HomeSecurity extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st.isCreated())
-		{
+		if (st.isCreated()) {
 			htmltext = "31537-01.htm";
-		}
-		else if (st.isStarted())
-		{
-			if (st.isCond(1) || (getQuestItemsCount(player, SEL_MAHUM_MANE) < SEL_MAHUM_MANE_COUNT))
-			{
+		} else if (st.isStarted()) {
+			if (st.isCond(1) || (getQuestItemsCount(player, SEL_MAHUM_MANE) < SEL_MAHUM_MANE_COUNT)) {
 				htmltext = "31537-06.html";
-			}
-			else if (st.isCond(2) && (getQuestItemsCount(player, SEL_MAHUM_MANE) >= SEL_MAHUM_MANE_COUNT))
-			{
+			} else if (st.isCond(2) && (getQuestItemsCount(player, SEL_MAHUM_MANE) >= SEL_MAHUM_MANE_COUNT)) {
 				htmltext = "31537-05.html";
 			}
 		}

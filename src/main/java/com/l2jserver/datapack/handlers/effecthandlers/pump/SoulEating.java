@@ -36,42 +36,34 @@ import com.l2jserver.gameserver.network.serverpackets.ExSpawnEmitter;
  * Soul Eating effect implementation.
  * @author UnAfraid
  */
-public final class SoulEating extends AbstractEffect
-{
+public final class SoulEating extends AbstractEffect {
 	private final int _expNeeded;
 	
-	public SoulEating(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public SoulEating(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		_expNeeded = params.getInt("expNeeded");
 	}
 	
 	@Override
-	public void onExit(BuffInfo info)
-	{
-		if (info.getEffected().isPlayer())
-		{
+	public void onExit(BuffInfo info) {
+		if (info.getEffected().isPlayer()) {
 			info.getEffected().removeListenerIf(EventType.ON_PLAYABLE_EXP_CHANGED, listener -> listener.getOwner() == this);
 		}
 	}
 	
-	public void onExperienceReceived(L2Playable playable, long exp)
-	{
+	public void onExperienceReceived(L2Playable playable, long exp) {
 		// TODO: Verify logic.
-		if (playable.isPlayer() && (exp >= _expNeeded))
-		{
+		if (playable.isPlayer() && (exp >= _expNeeded)) {
 			final L2PcInstance player = playable.getActingPlayer();
 			final int maxSouls = (int) player.calcStat(Stats.MAX_SOULS, 0, null, null);
-			if (player.getChargedSouls() >= maxSouls)
-			{
+			if (player.getChargedSouls() >= maxSouls) {
 				playable.sendPacket(SystemMessageId.SOUL_CANNOT_BE_ABSORBED_ANYMORE);
 				return;
 			}
 			
 			player.increaseSouls(1);
 			
-			if ((player.getTarget() != null) && player.getTarget().isNpc())
-			{
+			if ((player.getTarget() != null) && player.getTarget().isNpc()) {
 				final L2Npc npc = (L2Npc) playable.getTarget();
 				player.broadcastPacket(new ExSpawnEmitter(player, npc), 500);
 			}
@@ -79,10 +71,8 @@ public final class SoulEating extends AbstractEffect
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (info.getEffected().isPlayer())
-		{
+	public void onStart(BuffInfo info) {
+		if (info.getEffected().isPlayer()) {
 			info.getEffected().addListener(new ConsumerEventListener(info.getEffected(), EventType.ON_PLAYABLE_EXP_CHANGED, (OnPlayableExpChanged event) -> onExperienceReceived(event.getActiveChar(), (event.getNewExp() - event.getOldExp())), this));
 		}
 	}

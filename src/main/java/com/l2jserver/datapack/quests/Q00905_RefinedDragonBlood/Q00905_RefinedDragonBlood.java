@@ -34,11 +34,9 @@ import com.l2jserver.gameserver.util.Util;
  * Refined Dragon Blood (905)
  * @author Zoey76
  */
-public final class Q00905_RefinedDragonBlood extends Quest
-{
+public final class Q00905_RefinedDragonBlood extends Quest {
 	// NPCs
-	private static final int[] SEPARATED_SOULS =
-	{
+	private static final int[] SEPARATED_SOULS = {
 		32864,
 		32865,
 		32866,
@@ -55,8 +53,7 @@ public final class Q00905_RefinedDragonBlood extends Quest
 	private static final int REFINED_BLUE_DRAGON_BLOOD = 21904;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(22844, UNREFINED_BLUE_DRAGON_BLOOD); // Dragon Knight
 		MONSTERS.put(22845, UNREFINED_BLUE_DRAGON_BLOOD); // Dragon Knight
 		MONSTERS.put(22846, UNREFINED_BLUE_DRAGON_BLOOD); // Elite Dragon Knight
@@ -72,8 +69,7 @@ public final class Q00905_RefinedDragonBlood extends Quest
 	private static final int MIN_LEVEL = 83;
 	private static final int DRAGON_BLOOD_COUNT = 10;
 	
-	public Q00905_RefinedDragonBlood()
-	{
+	public Q00905_RefinedDragonBlood() {
 		super(905, Q00905_RefinedDragonBlood.class.getSimpleName(), "Refined Dragon Blood");
 		addStartNpc(SEPARATED_SOULS);
 		addTalkId(SEPARATED_SOULS);
@@ -82,22 +78,16 @@ public final class Q00905_RefinedDragonBlood extends Quest
 	}
 	
 	@Override
-	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon)
-	{
+	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, player, false))
-		{
+		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, player, false)) {
 			final int itemId = MONSTERS.get(npc.getId());
-			if (st.getQuestItemsCount(itemId) < DRAGON_BLOOD_COUNT)
-			{
+			if (st.getQuestItemsCount(itemId) < DRAGON_BLOOD_COUNT) {
 				st.giveItems(itemId, 1);
 				
-				if ((st.getQuestItemsCount(UNREFINED_RED_DRAGON_BLOOD) >= DRAGON_BLOOD_COUNT) && (st.getQuestItemsCount(UNREFINED_BLUE_DRAGON_BLOOD) >= DRAGON_BLOOD_COUNT))
-				{
+				if ((st.getQuestItemsCount(UNREFINED_RED_DRAGON_BLOOD) >= DRAGON_BLOOD_COUNT) && (st.getQuestItemsCount(UNREFINED_BLUE_DRAGON_BLOOD) >= DRAGON_BLOOD_COUNT)) {
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
@@ -105,42 +95,34 @@ public final class Q00905_RefinedDragonBlood extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		if (player.getLevel() >= MIN_LEVEL)
-		{
-			switch (event)
-			{
+		if (player.getLevel() >= MIN_LEVEL) {
+			switch (event) {
 				case "32864-04.htm":
 				case "32864-09.html":
-				case "32864-10.html":
-				{
+				case "32864-10.html": {
 					htmltext = event;
 					break;
 				}
-				case "32864-05.htm":
-				{
+				case "32864-05.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
 				}
-				case "32864-11.html":
-				{
+				case "32864-11.html": {
 					st.giveItems(REFINED_RED_DRAGON_BLOOD, 1);
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					st.exitQuest(QuestType.DAILY, true);
 					htmltext = event;
 					break;
 				}
-				case "32864-12.html":
-				{
+				case "32864-12.html": {
 					st.giveItems(REFINED_BLUE_DRAGON_BLOOD, 1);
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					st.exitQuest(QuestType.DAILY, true);
@@ -153,42 +135,31 @@ public final class Q00905_RefinedDragonBlood extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		executeForEachPlayer(killer, npc, isSummon, true, false);
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() < MIN_LEVEL) ? "32864-02.html" : "32864-01.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
 						htmltext = "32864-06.html";
 						break;
 					}
-					case 2:
-					{
-						if (!st.isSet("wait"))
-						{
+					case 2: {
+						if (!st.isSet("wait")) {
 							htmltext = "32864-07.html";
 							st.set("wait", 1);
-						}
-						else
-						{
+						} else {
 							htmltext = "32864-08.html";
 						}
 						break;
@@ -196,14 +167,10 @@ public final class Q00905_RefinedDragonBlood extends Quest
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
-				if (!st.isNowAvailable())
-				{
+			case State.COMPLETED: {
+				if (!st.isNowAvailable()) {
 					htmltext = "32864-03.html";
-				}
-				else
-				{
+				} else {
 					st.setState(State.CREATED);
 					htmltext = (player.getLevel() < MIN_LEVEL) ? "32864-02.html" : "32864-01.htm";
 				}

@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.itemcontainer.Inventory;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public class Asher extends AbstractNpcAI
-{
+public class Asher extends AbstractNpcAI {
 	// NPC
 	private static final int ASHER = 32714;
 	// Location
@@ -38,37 +37,28 @@ public class Asher extends AbstractNpcAI
 	// Misc
 	private static final int ADENA = 50000;
 	
-	private Asher()
-	{
+	private Asher() {
 		super(Asher.class.getSimpleName(), "ai/npc/Teleports");
 		addFirstTalkId(ASHER);
 		addStartNpc(ASHER);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equals("teleport"))
-		{
-			if (player.getAdena() >= ADENA)
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.equals("teleport")) {
+			if (player.getAdena() >= ADENA) {
 				player.teleToLocation(LOCATION);
 				takeItems(player, Inventory.ADENA_ID, ADENA);
-			}
-			else
-			{
+			} else {
 				return "32714-02.html";
 			}
-		}
-		else if (event.equals("32714-01.html"))
-		{
+		} else if (event.equals("32714-01.html")) {
 			return event;
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Asher();
 	}
 }

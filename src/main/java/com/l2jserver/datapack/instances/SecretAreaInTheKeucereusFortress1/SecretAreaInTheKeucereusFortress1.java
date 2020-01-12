@@ -31,10 +31,8 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class SecretAreaInTheKeucereusFortress1 extends AbstractInstance
-{
-	protected class SAKF1World extends InstanceWorld
-	{
+public final class SecretAreaInTheKeucereusFortress1 extends AbstractInstance {
+	protected class SAKF1World extends InstanceWorld {
 		
 	}
 	
@@ -45,22 +43,18 @@ public final class SecretAreaInTheKeucereusFortress1 extends AbstractInstance
 	// Misc
 	private static final int TEMPLATE_ID = 117;
 	
-	public SecretAreaInTheKeucereusFortress1()
-	{
+	public SecretAreaInTheKeucereusFortress1() {
 		super(SecretAreaInTheKeucereusFortress1.class.getSimpleName());
 		addStartNpc(GINBY);
 		addTalkId(GINBY);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = player.getQuestState(Q10270_BirthOfTheSeed.class.getSimpleName());
-		if ((st != null) && (st.getMemoState() >= 5) && (st.getMemoState() < 20))
-		{
+		if ((st != null) && (st.getMemoState() >= 5) && (st.getMemoState() < 20)) {
 			enterInstance(player, new SAKF1World(), "SecretAreaInTheKeucereusFortress.xml", TEMPLATE_ID);
-			if (st.isMemoState(5))
-			{
+			if (st.isMemoState(5)) {
 				st.setMemoState(10);
 			}
 			return "32566-01.html";
@@ -69,10 +63,8 @@ public final class SecretAreaInTheKeucereusFortress1 extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		if (firstEntrance) {
 			world.addAllowed(player.getObjectId());
 		}
 		teleportPlayer(player, START_LOC, world.getInstanceId(), false);

@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Maestro (100)
  * @author Emperorc
  */
-public class Q00100_SagaOfTheMaestro extends AbstractSagaQuest
-{
-	public Q00100_SagaOfTheMaestro()
-	{
+public class Q00100_SagaOfTheMaestro extends AbstractSagaQuest {
+	public Q00100_SagaOfTheMaestro() {
 		super(100, Q00100_SagaOfTheMaestro.class.getSimpleName(), "Saga of the Maestro");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			31592,
 			31273,
 			31597,
@@ -45,8 +42,7 @@ public class Q00100_SagaOfTheMaestro extends AbstractSagaQuest
 			31656,
 			31597
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7607,
 			7081,
@@ -60,28 +56,23 @@ public class Q00100_SagaOfTheMaestro extends AbstractSagaQuest
 			7108,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27260,
 			27249,
 			27308
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			118
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x39
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(164650, -74121, -2871),
 			new Location(47429, -56923, -2383),
 			new Location(47391, -56929, -2370)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

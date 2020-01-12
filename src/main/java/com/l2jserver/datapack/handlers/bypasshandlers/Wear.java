@@ -31,51 +31,40 @@ import com.l2jserver.gameserver.model.buylist.L2BuyList;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.ShopPreviewList;
 
-public class Wear implements IBypassHandler
-{
-	private static final String[] COMMANDS =
-	{
+public class Wear implements IBypassHandler {
+	private static final String[] COMMANDS = {
 		"Wear"
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
-	{
-		if (!target.isNpc())
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target) {
+		if (!target.isNpc()) {
 			return false;
 		}
 		
-		if (!general().allowWear())
-		{
+		if (!general().allowWear()) {
 			return false;
 		}
 		
-		try
-		{
+		try {
 			StringTokenizer st = new StringTokenizer(command, " ");
 			st.nextToken();
 			
-			if (st.countTokens() < 1)
-			{
+			if (st.countTokens() < 1) {
 				return false;
 			}
 			
 			showWearWindow(activeChar, Integer.parseInt(st.nextToken()));
 			return true;
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			_log.log(Level.WARNING, "Exception in " + getClass().getSimpleName(), e);
 		}
 		return false;
 	}
 	
-	private static final void showWearWindow(L2PcInstance player, int val)
-	{
+	private static final void showWearWindow(L2PcInstance player, int val) {
 		final L2BuyList buyList = BuyListData.getInstance().getBuyList(val);
-		if (buyList == null)
-		{
+		if (buyList == null) {
 			_log.warning("BuyList not found! BuyListId:" + val);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -87,8 +76,7 @@ public class Wear implements IBypassHandler
 	}
 	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

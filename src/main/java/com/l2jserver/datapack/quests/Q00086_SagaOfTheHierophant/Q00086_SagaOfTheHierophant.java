@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Hierophant (86)
  * @author Emperorc
  */
-public class Q00086_SagaOfTheHierophant extends AbstractSagaQuest
-{
-	public Q00086_SagaOfTheHierophant()
-	{
+public class Q00086_SagaOfTheHierophant extends AbstractSagaQuest {
+	public Q00086_SagaOfTheHierophant() {
 		super(86, Q00086_SagaOfTheHierophant.class.getSimpleName(), "Saga of the Hierophant");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			30191,
 			31626,
 			31588,
@@ -45,8 +42,7 @@ public class Q00086_SagaOfTheHierophant extends AbstractSagaQuest
 			31659,
 			31280
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7523,
 			7081,
@@ -60,28 +56,23 @@ public class Q00086_SagaOfTheHierophant extends AbstractSagaQuest
 			7089,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27269,
 			27235,
 			27275
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			98
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x11
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(161719, -92823, -1893),
 			new Location(124355, 82155, -2803),
 			new Location(124376, 82127, -2796)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.network.serverpackets.SocialAction;
  * Original Jython script by disKret.
  * @author nonom
  */
-public class Q00247_PossessorOfAPreciousSoul4 extends Quest
-{
+public class Q00247_PossessorOfAPreciousSoul4 extends Quest {
 	// NPCs
 	private static final int CARADINE = 31740;
 	private static final int LADY_OF_LAKE = 31745;
@@ -46,42 +45,35 @@ public class Q00247_PossessorOfAPreciousSoul4 extends Quest
 	// Skill
 	private static final SkillHolder MIMIRS_ELIXIR = new SkillHolder(4339);
 	
-	public Q00247_PossessorOfAPreciousSoul4()
-	{
+	public Q00247_PossessorOfAPreciousSoul4() {
 		super(247, Q00247_PossessorOfAPreciousSoul4.class.getSimpleName(), "Possessor Of A Precious Soul 4");
 		addStartNpc(CARADINE);
 		addTalkId(CARADINE, LADY_OF_LAKE);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
-		if (!player.isSubClassActive())
-		{
+		if (!player.isSubClassActive()) {
 			return "no_sub.html";
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "31740-3.html":
 				st.startQuest();
 				st.takeItems(CARADINE_LETTER_LAST, -1);
 				break;
 			case "31740-5.html":
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					st.setCond(2, true);
 					player.teleToLocation(CARADINE_LOC, 0);
 				}
 				break;
 			case "31745-5.html":
-				if (st.isCond(2))
-				{
+				if (st.isCond(2)) {
 					player.setNoble(true);
 					st.addExpAndSp(93836, 0);
 					st.giveItems(NOBLESS_TIARA, 1);
@@ -96,30 +88,23 @@ public class Q00247_PossessorOfAPreciousSoul4 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st.isStarted() && !player.isSubClassActive())
-		{
+		if (st.isStarted() && !player.isSubClassActive()) {
 			return "no_sub.html";
 		}
 		
-		switch (npc.getId())
-		{
-			case CARADINE:
-			{
-				switch (st.getState())
-				{
+		switch (npc.getId()) {
+			case CARADINE: {
+				switch (st.getState()) {
 					case State.CREATED:
-						if (player.hasQuestCompleted(Q00246_PossessorOfAPreciousSoul3.class.getSimpleName()))
-						{
+						if (player.hasQuestCompleted(Q00246_PossessorOfAPreciousSoul3.class.getSimpleName())) {
 							htmltext = ((player.getLevel() >= 75) ? "31740-1.htm" : "31740-2.html");
 						}
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
-						{
+						if (st.isCond(1)) {
 							htmltext = "31740-6.html";
 						}
 						break;
@@ -129,10 +114,8 @@ public class Q00247_PossessorOfAPreciousSoul4 extends Quest
 				}
 				break;
 			}
-			case LADY_OF_LAKE:
-			{
-				if (st.isCond(2))
-				{
+			case LADY_OF_LAKE: {
+				if (st.isCond(2)) {
 					htmltext = "31745-1.html";
 				}
 				break;

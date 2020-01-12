@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Bloodshed.
  * @author Joxit
  */
-public class Q00239_WontYouJoinUs extends Quest
-{
+public class Q00239_WontYouJoinUs extends Quest {
 	// NPC
 	private static final int ATHENIA = 32643;
 	// Mobs
@@ -50,8 +49,7 @@ public class Q00239_WontYouJoinUs extends Quest
 	private static final int CHANCE_FOR_FRAGMENT = 80;
 	private static final int MIN_LEVEL = 82;
 	
-	public Q00239_WontYouJoinUs()
-	{
+	public Q00239_WontYouJoinUs() {
 		super(239, Q00239_WontYouJoinUs.class.getSimpleName(), "Won't You Join Us?");
 		addStartNpc(ATHENIA);
 		addTalkId(ATHENIA);
@@ -60,17 +58,14 @@ public class Q00239_WontYouJoinUs extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "32643-02.htm":
 				htmltext = event;
 				break;
@@ -79,8 +74,7 @@ public class Q00239_WontYouJoinUs extends Quest
 				htmltext = event;
 				break;
 			case "32643-07.html":
-				if (st.isCond(2))
-				{
+				if (st.isCond(2)) {
 					st.setCond(3, true);
 					htmltext = event;
 				}
@@ -90,44 +84,30 @@ public class Q00239_WontYouJoinUs extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (npc.getId() == WASTE_LANDFILL_MACHINE)
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (npc.getId() == WASTE_LANDFILL_MACHINE) {
 			final L2PcInstance partyMember = getRandomPartyMember(killer, 1);
-			if (partyMember != null)
-			{
+			if (partyMember != null) {
 				final QuestState st = getQuestState(partyMember, false);
-				if (st.getQuestItemsCount(DESTROYED_MACHINE_PIECE) < DESTROYED_MACHINE_PIECE_NEEDED)
-				{
+				if (st.getQuestItemsCount(DESTROYED_MACHINE_PIECE) < DESTROYED_MACHINE_PIECE_NEEDED) {
 					st.giveItems(DESTROYED_MACHINE_PIECE, 1);
 				}
-				if (st.getQuestItemsCount(DESTROYED_MACHINE_PIECE) == DESTROYED_MACHINE_PIECE_NEEDED)
-				{
+				if (st.getQuestItemsCount(DESTROYED_MACHINE_PIECE) == DESTROYED_MACHINE_PIECE_NEEDED) {
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
-		}
-		else
-		{
+		} else {
 			final L2PcInstance partyMember = getRandomPartyMember(killer, 3);
-			if ((partyMember != null) && (getRandom(100) < CHANCE_FOR_FRAGMENT))
-			{
+			if ((partyMember != null) && (getRandom(100) < CHANCE_FOR_FRAGMENT)) {
 				final QuestState st = getQuestState(partyMember, false);
-				if (st.getQuestItemsCount(ENCHANTED_GOLEM_FRAGMENT) < ENCHANTED_GOLEM_FRAGMENT_NEEDED)
-				{
+				if (st.getQuestItemsCount(ENCHANTED_GOLEM_FRAGMENT) < ENCHANTED_GOLEM_FRAGMENT_NEEDED) {
 					st.giveItems(ENCHANTED_GOLEM_FRAGMENT, 1);
 				}
-				if (st.getQuestItemsCount(ENCHANTED_GOLEM_FRAGMENT) == ENCHANTED_GOLEM_FRAGMENT_NEEDED)
-				{
+				if (st.getQuestItemsCount(ENCHANTED_GOLEM_FRAGMENT) == ENCHANTED_GOLEM_FRAGMENT_NEEDED) {
 					st.setCond(4, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
@@ -136,39 +116,30 @@ public class Q00239_WontYouJoinUs extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		String htmltext = getNoQuestMsg(talker);
 		final QuestState st = getQuestState(talker, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.COMPLETED:
 				htmltext = "32643-11.html";
 				break;
 			case State.CREATED:
 				
-				if (st.getPlayer().hasQuestCompleted(Q00238_SuccessFailureOfBusiness.class.getSimpleName()))
-				{
+				if (st.getPlayer().hasQuestCompleted(Q00238_SuccessFailureOfBusiness.class.getSimpleName())) {
 					htmltext = "32643-12.html";
-				}
-				else if (st.getPlayer().hasQuestCompleted(Q00237_WindsOfChange.class.getSimpleName()) && (talker.getLevel() >= MIN_LEVEL) && st.hasQuestItems(SUPPORT_CERTIFICATE))
-				{
+				} else if (st.getPlayer().hasQuestCompleted(Q00237_WindsOfChange.class.getSimpleName()) && (talker.getLevel() >= MIN_LEVEL) && st.hasQuestItems(SUPPORT_CERTIFICATE)) {
 					htmltext = "32643-01.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "32643-00.html";
 				}
 				break;
 			case State.STARTED:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 1:
 						htmltext = (st.hasQuestItems(DESTROYED_MACHINE_PIECE)) ? "32643-05.html" : "32643-04.html";
 						break;
 					case 2:
-						if (st.getQuestItemsCount(DESTROYED_MACHINE_PIECE) == DESTROYED_MACHINE_PIECE_NEEDED)
-						{
+						if (st.getQuestItemsCount(DESTROYED_MACHINE_PIECE) == DESTROYED_MACHINE_PIECE_NEEDED) {
 							htmltext = "32643-06.html";
 							st.takeItems(DESTROYED_MACHINE_PIECE, -1);
 						}
@@ -177,8 +148,7 @@ public class Q00239_WontYouJoinUs extends Quest
 						htmltext = (st.hasQuestItems(ENCHANTED_GOLEM_FRAGMENT)) ? "32643-08.html" : "32643-09.html";
 						break;
 					case 4:
-						if (st.getQuestItemsCount(ENCHANTED_GOLEM_FRAGMENT) == ENCHANTED_GOLEM_FRAGMENT_NEEDED)
-						{
+						if (st.getQuestItemsCount(ENCHANTED_GOLEM_FRAGMENT) == ENCHANTED_GOLEM_FRAGMENT_NEEDED) {
 							htmltext = "32643-10.html";
 							st.giveAdena(283346, true);
 							st.takeItems(SUPPORT_CERTIFICATE, 1);

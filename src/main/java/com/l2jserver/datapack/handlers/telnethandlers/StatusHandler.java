@@ -58,14 +58,12 @@ public class StatusHandler implements ITelnetHandler {
 			_uptime = uptime;
 			_print.print(getServerStatus());
 			_print.flush();
-		}
-		else if (command.equals("forcegc")) {
+		} else if (command.equals("forcegc")) {
 			System.gc();
 			StringBuilder sb = new StringBuilder();
 			sb.append("RAM Used: " + ((Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576)); // 1024 * 1024 = 1048576
 			_print.println(sb.toString());
-		}
-		else if (command.startsWith("memusage")) {
+		} else if (command.startsWith("memusage")) {
 			double max = Runtime.getRuntime().maxMemory() / 1024; // maxMemory is the upper
 			// limit the jvm can use
 			double allocated = Runtime.getRuntime().totalMemory() / 1024; // totalMemory the
@@ -91,8 +89,7 @@ public class StatusHandler implements ITelnetHandler {
 			_print.println("|    |= Unused (cached) Memory:" + df2.format(cached) + df.format((cached / max) * 100));
 			_print.println("| Useable Memory:" + df2.format(useable) + df.format((useable / max) * 100)); // ...
 			_print.println("+----");
-		}
-		else if (command.equals("gmlist")) {
+		} else if (command.equals("gmlist")) {
 			int igm = 0;
 			String gmList = "";
 			
@@ -140,34 +137,27 @@ public class StatusHandler implements ITelnetHandler {
 			if (obj instanceof L2ItemInstance) {
 				if (((L2ItemInstance) obj).getItemLocation() == ItemLocation.VOID) {
 					itemVoidCount++;
-				}
-				else {
+				} else {
 					itemCount++;
 				}
-			}
-			else if (obj instanceof L2MonsterInstance) {
+			} else if (obj instanceof L2MonsterInstance) {
 				monsterCount++;
 				if (((L2MonsterInstance) obj).hasMinions()) {
 					minionCount += ((L2MonsterInstance) obj).getMinionList().countSpawnedMinions();
 					minionsGroupCount += ((L2MonsterInstance) obj).getMinionList().lazyCountSpawnedMinionsGroups();
 				}
-			}
-			else if (obj instanceof L2Npc) {
+			} else if (obj instanceof L2Npc) {
 				npcCount++;
-			}
-			else if (obj instanceof L2PcInstance) {
+			} else if (obj instanceof L2PcInstance) {
 				pcCount++;
 				if ((((L2PcInstance) obj).getClient() != null) && ((L2PcInstance) obj).getClient().isDetached()) {
 					detachedCount++;
 				}
-			}
-			else if (obj instanceof L2Summon) {
+			} else if (obj instanceof L2Summon) {
 				summonCount++;
-			}
-			else if (obj instanceof L2DoorInstance) {
+			} else if (obj instanceof L2DoorInstance) {
 				doorCount++;
-			}
-			else if (obj instanceof L2Character) {
+			} else if (obj instanceof L2Character) {
 				charCount++;
 			}
 		}

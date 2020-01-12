@@ -28,33 +28,25 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Call Party effect implementation.
  * @author Adry_85
  */
-public final class CallParty extends AbstractEffect
-{
-	public CallParty(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class CallParty extends AbstractEffect {
+	public CallParty(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (!info.getEffector().isInParty())
-		{
+	public void onStart(BuffInfo info) {
+		if (!info.getEffector().isInParty()) {
 			return;
 		}
 		
-		for (L2PcInstance partyMember : info.getEffector().getParty().getMembers())
-		{
-			if (info.getEffector().getActingPlayer().canSummonTarget(partyMember))
-			{
-				if (info.getEffector() != partyMember)
-				{
+		for (L2PcInstance partyMember : info.getEffector().getParty().getMembers()) {
+			if (info.getEffector().getActingPlayer().canSummonTarget(partyMember)) {
+				if (info.getEffector() != partyMember) {
 					partyMember.teleToLocation(info.getEffector().getLocation(), true);
 				}
 			}

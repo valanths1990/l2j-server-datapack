@@ -36,8 +36,7 @@ import com.l2jserver.gameserver.util.Util;
  * A Broken Dream (650)
  * @author netvirus
  */
-public final class Q00650_ABrokenDream extends Quest
-{
+public final class Q00650_ABrokenDream extends Quest {
 	// Npc
 	private static final int GHOST_OF_A_RAILROAD_ENGINEER = 32054;
 	// Item
@@ -47,14 +46,12 @@ public final class Q00650_ABrokenDream extends Quest
 	// Monsters
 	private static final Map<Integer, Integer> MONSTER_DROP_CHANCES = new HashMap<>();
 	
-	static
-	{
+	static {
 		MONSTER_DROP_CHANCES.put(22027, 575); // Forgotten Crewman
 		MONSTER_DROP_CHANCES.put(22028, 515); // Vagabond of the Ruins
 	}
 	
-	public Q00650_ABrokenDream()
-	{
+	public Q00650_ABrokenDream() {
 		super(650, Q00650_ABrokenDream.class.getSimpleName(), "A Broken Dream");
 		addStartNpc(GHOST_OF_A_RAILROAD_ENGINEER);
 		addTalkId(GHOST_OF_A_RAILROAD_ENGINEER);
@@ -63,39 +60,30 @@ public final class Q00650_ABrokenDream extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "32054-03.htm":
-			{
-				if (st.isCreated())
-				{
+		switch (event) {
+			case "32054-03.htm": {
+				if (st.isCreated()) {
 					st.startQuest();
 					htmltext = event;
 				}
 				break;
 			}
 			case "32054-07.html":
-			case "32054-08.html":
-			{
-				if (st.isStarted())
-				{
+			case "32054-08.html": {
+				if (st.isStarted()) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32054-09.html":
-			{
-				if (st.isStarted())
-				{
+			case "32054-09.html": {
+				if (st.isStarted()) {
 					st.exitQuest(true, true);
 					htmltext = event;
 				}
@@ -106,26 +94,19 @@ public final class Q00650_ABrokenDream extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
-				if (player.getLevel() < MIN_LVL)
-				{
+		switch (st.getState()) {
+			case State.CREATED: {
+				if (player.getLevel() < MIN_LVL) {
 					htmltext = "32054-02.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = player.hasQuestCompleted(Q00117_TheOceanOfDistantStars.class.getSimpleName()) ? "32054-01.htm" : "32054-04.htm";
 				}
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				htmltext = st.hasQuestItems(REMNANTS_OF_OLD_DWARVES_DREAMS) ? "32054-05.html" : "32054-06.html";
 				break;
 			}
@@ -134,34 +115,27 @@ public final class Q00650_ABrokenDream extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final List<L2PcInstance> randomList = new ArrayList<>();
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isStarted())
-		{
+		if ((st != null) && st.isStarted()) {
 			randomList.add(killer);
 			randomList.add(killer);
 		}
 		
 		final int monsterChance = MONSTER_DROP_CHANCES.get(npc.getId());
-		if (killer.isInParty())
-		{
-			for (L2PcInstance member : killer.getParty().getMembers())
-			{
+		if (killer.isInParty()) {
+			for (L2PcInstance member : killer.getParty().getMembers()) {
 				final QuestState qs = getQuestState(member, false);
-				if ((qs != null) && qs.isStarted())
-				{
+				if ((qs != null) && qs.isStarted()) {
 					randomList.add(member);
 				}
 			}
 		}
 		
-		if (!randomList.isEmpty())
-		{
+		if (!randomList.isEmpty()) {
 			final L2PcInstance player = randomList.get(getRandom(randomList.size()));
-			if ((getRandom(1000) < monsterChance) && Util.checkIfInRange(1500, npc, player, true))
-			{
+			if ((getRandom(1000) < monsterChance) && Util.checkIfInRange(1500, npc, player, true)) {
 				giveItems(player, REMNANTS_OF_OLD_DWARVES_DREAMS, 1);
 				playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}

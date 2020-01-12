@@ -37,12 +37,10 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
  * Nevit's Herald AI.
  * @author Sacrifice
  */
-public final class NevitsHerald extends AbstractNpcAI
-{
+public final class NevitsHerald extends AbstractNpcAI {
 	private static final int NEVITS_HERALD = 4326;
 	private static final List<L2Npc> SPAWNS = new ArrayList<>();
-	private static final Location[] NEVITS_HERALD_LOC =
-	{
+	private static final Location[] NEVITS_HERALD_LOC = {
 		new Location(86971, -142772, -1336, 20480), // Town of Schuttgart
 		new Location(44165, -48494, -792, 32768), // Rune Township
 		new Location(148017, -55264, -2728, 49152), // Town of Goddard
@@ -57,8 +55,7 @@ public final class NevitsHerald extends AbstractNpcAI
 	};
 	private static final int ANTHARAS = 29068; // Antharas Strong (85)
 	private static final int VALAKAS = 29028; // Valakas (85)
-	private static final NpcStringId[] SPAM =
-	{
+	private static final NpcStringId[] SPAM = {
 		NpcStringId.SHOW_RESPECT_TO_THE_HEROES_WHO_DEFEATED_THE_EVIL_DRAGON_AND_PROTECTED_THIS_ADEN_WORLD,
 		NpcStringId.SHOUT_TO_CELEBRATE_THE_VICTORY_OF_THE_HEROES,
 		NpcStringId.PRAISE_THE_ACHIEVEMENT_OF_THE_HEROES_AND_RECEIVE_NEVITS_BLESSING
@@ -67,8 +64,7 @@ public final class NevitsHerald extends AbstractNpcAI
 	// Skill
 	private static final SkillHolder FALL_OF_THE_DRAGON = new SkillHolder(23312);
 	
-	private NevitsHerald()
-	{
+	private NevitsHerald() {
 		super(NevitsHerald.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(NEVITS_HERALD);
 		addStartNpc(NEVITS_HERALD);
@@ -77,77 +73,59 @@ public final class NevitsHerald extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "4326.html";
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		
-		if (npc.getId() == NEVITS_HERALD)
-		{
-			if (event.equalsIgnoreCase("buff"))
-			{
-				if (player.getEffectList().getFirstEffect(L2EffectType.NEVIT_HOURGLASS) != null)
-				{
+		if (npc.getId() == NEVITS_HERALD) {
+			if (event.equalsIgnoreCase("buff")) {
+				if (player.getEffectList().getFirstEffect(L2EffectType.NEVIT_HOURGLASS) != null) {
 					return "4326-1.html";
 				}
 				npc.setTarget(player);
 				npc.doCast(FALL_OF_THE_DRAGON);
 				return null;
 			}
-		}
-		else if (event.equalsIgnoreCase("text_spam"))
-		{
+		} else if (event.equalsIgnoreCase("text_spam")) {
 			cancelQuestTimer("text_spam", npc, player);
 			npc.broadcastPacket(new NpcSay(NEVITS_HERALD, Say2.SHOUT, NEVITS_HERALD, SPAM[getRandom(0, SPAM.length - 1)]));
 			startQuestTimer("text_spam", 60000, npc, player);
 			return null;
-		}
-		else if (event.equalsIgnoreCase("despawn"))
-		{
+		} else if (event.equalsIgnoreCase("despawn")) {
 			despawnHeralds();
 		}
 		return htmltext;
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
 		ExShowScreenMessage message = null;
 		
-		if (npc.getId() == VALAKAS)
-		{
+		if (npc.getId() == VALAKAS) {
 			message = new ExShowScreenMessage(NpcStringId.THE_EVIL_FIRE_DRAGON_VALAKAS_HAS_BEEN_DEFEATED, 2, 10000);
-		}
-		else
-		{
+		} else {
 			message = new ExShowScreenMessage(NpcStringId.THE_EVIL_LAND_DRAGON_ANTHARAS_HAS_BEEN_DEFEATED, 2, 10000);
 		}
 		
-		for (L2PcInstance onlinePlayer : L2World.getInstance().getPlayers())
-		{
-			if (onlinePlayer == null)
-			{
+		for (L2PcInstance onlinePlayer : L2World.getInstance().getPlayers()) {
+			if (onlinePlayer == null) {
 				continue;
 			}
 			onlinePlayer.sendPacket(message);
 		}
 		
-		if (!isActive)
-		{
+		if (!isActive) {
 			isActive = true;
 			
 			SPAWNS.clear();
 			
-			for (Location loc : NEVITS_HERALD_LOC)
-			{
+			for (Location loc : NEVITS_HERALD_LOC) {
 				L2Npc herald = addSpawn(NEVITS_HERALD, loc, false, 0);
-				if (herald != null)
-				{
+				if (herald != null) {
 					SPAWNS.add(herald);
 				}
 			}
@@ -157,20 +135,16 @@ public final class NevitsHerald extends AbstractNpcAI
 		return null;
 	}
 	
-	private void despawnHeralds()
-	{
-		if (!SPAWNS.isEmpty())
-		{
-			for (L2Npc npc : SPAWNS)
-			{
+	private void despawnHeralds() {
+		if (!SPAWNS.isEmpty()) {
+			for (L2Npc npc : SPAWNS) {
 				npc.deleteMe();
 			}
 		}
 		SPAWNS.clear();
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new NevitsHerald();
 	}
 }

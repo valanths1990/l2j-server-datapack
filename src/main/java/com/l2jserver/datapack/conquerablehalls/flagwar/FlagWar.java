@@ -53,8 +53,7 @@ import com.l2jserver.gameserver.util.Broadcast;
 /**
  * @author BiggBoss
  */
-public abstract class FlagWar extends ClanHallSiegeEngine
-{
+public abstract class FlagWar extends ClanHallSiegeEngine {
 	private static final String SQL_LOAD_ATTACKERS = "SELECT * FROM siegable_hall_flagwar_attackers WHERE hall_id = ?";
 	private static final String SQL_SAVE_ATTACKER = "INSERT INTO siegable_hall_flagwar_attackers_members VALUES (?,?,?)";
 	private static final String SQL_LOAD_MEMEBERS = "SELECT object_id FROM siegable_hall_flagwar_attackers_members WHERE clan_id = ?";
@@ -94,15 +93,13 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	protected L2Clan _winner;
 	private boolean _firstPhase;
 	
-	public FlagWar(String name, int hallId)
-	{
+	public FlagWar(String name, int hallId) {
 		super(name, "conquerablehalls/flagwar", hallId);
 		addStartNpc(MESSENGER);
 		addFirstTalkId(MESSENGER);
 		addTalkId(MESSENGER);
 		
-		for (int i = 0; i < 6; i++)
-		{
+		for (int i = 0; i < 6; i++) {
 			addFirstTalkId(TELEPORT_1 + i);
 		}
 		
@@ -123,33 +120,23 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		String html = null;
-		if (npc.getId() == MESSENGER)
-		{
-			if (!checkIsAttacker(player.getClan()))
-			{
+		if (npc.getId() == MESSENGER) {
+			if (!checkIsAttacker(player.getClan())) {
 				L2Clan clan = ClanTable.getInstance().getClan(_hall.getOwnerId());
 				String content = getHtm(player.getHtmlPrefix(), "messenger_initial.htm");
 				content = content.replaceAll("%clanName%", (clan == null) ? "no owner" : clan.getName());
 				content = content.replaceAll("%objectId%", String.valueOf(npc.getObjectId()));
 				html = content;
-			}
-			else
-			{
+			} else {
 				html = "messenger_initial.htm";
 			}
-		}
-		else
-		{
+		} else {
 			int index = npc.getId() - TELEPORT_1;
-			if ((index == 0) && _firstPhase)
-			{
+			if ((index == 0) && _firstPhase) {
 				html = "teleporter_notyet.htm";
-			}
-			else
-			{
+			} else {
 				TELE_ZONES[index].checkTeleporTask();
 				html = "teleporter.htm";
 			}
@@ -158,69 +145,47 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public synchronized String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public synchronized String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String html = event;
 		L2Clan clan = player.getClan();
 		
 		if (event.startsWith("register_clan")) // Register the clan for the siege
 		{
-			if (!_hall.isRegistering())
-			{
-				if (_hall.isInSiege())
-				{
+			if (!_hall.isRegistering()) {
+				if (_hall.isInSiege()) {
 					html = "messenger_registrationpassed.htm";
-				}
-				else
-				{
+				} else {
 					sendRegistrationPageDate(player);
 					return null;
 				}
-			}
-			else if ((clan == null) || !player.isClanLeader())
-			{
+			} else if ((clan == null) || !player.isClanLeader()) {
 				html = "messenger_notclannotleader.htm";
-			}
-			else if (getAttackers().size() >= 5)
-			{
+			} else if (getAttackers().size() >= 5) {
 				html = "messenger_attackersqueuefull.htm";
-			}
-			else if (checkIsAttacker(clan))
-			{
+			} else if (checkIsAttacker(clan)) {
 				html = "messenger_clanalreadyregistered.htm";
-			}
-			else if (_hall.getOwnerId() == clan.getId())
-			{
+			} else if (_hall.getOwnerId() == clan.getId()) {
 				html = "messenger_curownermessage.htm";
-			}
-			else
-			{
+			} else {
 				String[] arg = event.split(" ");
-				if (arg.length >= 2)
-				{
+				if (arg.length >= 2) {
 					// Register passing the quest
-					if (arg[1].equals("wQuest"))
-					{
+					if (arg[1].equals("wQuest")) {
 						if (player.destroyItemByItemId(_hall.getName() + " Siege", QUEST_REWARD, 1, npc, false)) // Quest passed
 						{
 							registerClan(clan);
 							html = getFlagHtml(_data.get(clan.getId()).flag);
-						}
-						else
-						{
+						} else {
 							html = "messenger_noquest.htm";
 						}
 					}
 					// Register paying the fee
-					else if (arg[1].equals("wFee") && canPayRegistration())
-					{
+					else if (arg[1].equals("wFee") && canPayRegistration()) {
 						if (player.reduceAdena(getName() + " Siege", 200000, npc, false)) // Fee payed
 						{
 							registerClan(clan);
 							html = getFlagHtml(_data.get(clan.getId()).flag);
-						}
-						else
-						{
+						} else {
 							html = "messenger_nomoney.htm";
 						}
 					}
@@ -228,123 +193,81 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			}
 		}
 		// Select the flag to defend
-		else if (event.startsWith("select_clan_npc"))
-		{
-			if (!player.isClanLeader())
-			{
+		else if (event.startsWith("select_clan_npc")) {
+			if (!player.isClanLeader()) {
 				html = "messenger_onlyleaderselectally.htm";
-			}
-			else if (!_data.containsKey(clan.getId()))
-			{
+			} else if (!_data.containsKey(clan.getId())) {
 				html = "messenger_clannotregistered.htm";
-			}
-			else
-			{
+			} else {
 				String[] var = event.split(" ");
-				if (var.length >= 2)
-				{
+				if (var.length >= 2) {
 					int id = 0;
-					try
-					{
+					try {
 						id = Integer.parseInt(var[1]);
-					}
-					catch (Exception e)
-					{
+					} catch (Exception e) {
 						_log.warn("{}: select_clan_npc->Wrong mahum warrior ID {}!", getName(), var[1], e);
 					}
-					if ((id > 0) && ((html = getAllyHtml(id)) != null))
-					{
+					if ((id > 0) && ((html = getAllyHtml(id)) != null)) {
 						_data.get(clan.getId()).npc = id;
 						saveNpc(id, clan.getId());
 					}
-				}
-				else
-				{
+				} else {
 					_log.warn("{}: Siege: Not enough parameters to save clan npc for clan {}! ", getName(), clan.getName());
 				}
 			}
 		}
 		// View (and change ? ) the current selected mahum warrior
-		else if (event.startsWith("view_clan_npc"))
-		{
+		else if (event.startsWith("view_clan_npc")) {
 			ClanData cd = null;
-			if (clan == null)
-			{
+			if (clan == null) {
 				html = "messenger_clannotregistered.htm";
-			}
-			else if ((cd = _data.get(clan.getId())) == null)
-			{
+			} else if ((cd = _data.get(clan.getId())) == null) {
 				html = "messenger_notclannotleader.htm";
-			}
-			else if (cd.npc == 0)
-			{
+			} else if (cd.npc == 0) {
 				html = "messenger_leaderdidnotchooseyet.htm";
-			}
-			else
-			{
+			} else {
 				html = getAllyHtml(cd.npc);
 			}
 		}
 		// Register a clan member for the fight
-		else if (event.equals("register_member"))
-		{
-			if (clan == null)
-			{
+		else if (event.equals("register_member")) {
+			if (clan == null) {
 				html = "messenger_clannotregistered.htm";
-			}
-			else if (!_hall.isRegistering())
-			{
+			} else if (!_hall.isRegistering()) {
 				html = "messenger_registrationpassed.htm";
-			}
-			else if (!_data.containsKey(clan.getId()))
-			{
+			} else if (!_data.containsKey(clan.getId())) {
 				html = "messenger_notclannotleader.htm";
-			}
-			else if (_data.get(clan.getId()).players.size() >= 18)
-			{
+			} else if (_data.get(clan.getId()).players.size() >= 18) {
 				html = "messenger_clanqueuefull.htm";
-			}
-			else
-			{
+			} else {
 				ClanData data = _data.get(clan.getId());
 				data.players.add(player.getObjectId());
 				saveMember(clan.getId(), player.getObjectId());
-				if (data.npc == 0)
-				{
+				if (data.npc == 0) {
 					html = "messenger_leaderdidnotchooseyet.htm";
-				}
-				else
-				{
+				} else {
 					html = "messenger_clanregistered.htm";
 				}
 			}
 		}
 		// Show cur attacker list
-		else if (event.equals("view_attacker_list"))
-		{
-			if (_hall.isRegistering())
-			{
+		else if (event.equals("view_attacker_list")) {
+			if (_hall.isRegistering()) {
 				sendRegistrationPageDate(player);
-			}
-			else
-			{
+			} else {
 				html = getHtm(player.getHtmlPrefix(), "messenger_registeredclans.htm");
 				int i = 0;
-				for (Entry<Integer, ClanData> clanData : _data.entrySet())
-				{
+				for (Entry<Integer, ClanData> clanData : _data.entrySet()) {
 					L2Clan attacker = ClanTable.getInstance().getClan(clanData.getKey());
-					if (attacker == null)
-					{
+					if (attacker == null) {
 						continue;
 					}
 					html = html.replaceAll("%clan" + i + "%", clan.getName());
 					html = html.replaceAll("%clanMem" + i + "%", String.valueOf(clanData.getValue().players.size()));
 					i++;
 				}
-				if (_data.size() < 5)
-				{
-					for (int c = _data.size(); c < 5; c++)
-					{
+				if (_data.size() < 5) {
+					for (int c = _data.size(); c < 5; c++) {
 						html = html.replaceAll("%clan" + c + "%", "Empty pos. ");
 						html = html.replaceAll("%clanMem" + c + "%", "Empty pos. ");
 					}
@@ -356,71 +279,56 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public synchronized String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (_hall.isInSiege())
-		{
+	public synchronized String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (_hall.isInSiege()) {
 			final int npcId = npc.getId();
-			for (int keys : _data.keySet())
-			{
-				if (_data.get(keys).npc == npcId)
-				{
+			for (int keys : _data.keySet()) {
+				if (_data.get(keys).npc == npcId) {
 					removeParticipant(keys, true);
 				}
 			}
 			
-			synchronized (this)
-			{
+			synchronized (this) {
 				// TODO: Zoey76: previous bad implementation.
 				// Converting map.keySet() to List and map.values() to List doesn't ensure that
 				// first element in the key's List correspond to the first element in the values' List
 				// That's the reason that values aren't copied to a List, instead using _data.get(clanIds.get(0))
 				final List<Integer> clanIds = new ArrayList<>(_data.keySet());
-				if (_firstPhase)
-				{
+				if (_firstPhase) {
 					// Siege ends if just 1 flag is alive
 					// Hall was free before battle or owner didn't set the ally npc
-					if (((clanIds.size() == 1) && (_hall.getOwnerId() <= 0)) || (_data.get(clanIds.get(0)).npc == 0))
-					{
+					if (((clanIds.size() == 1) && (_hall.getOwnerId() <= 0)) || (_data.get(clanIds.get(0)).npc == 0)) {
 						_missionAccomplished = true;
 						// _winner = ClanTable.getInstance().getClan(_data.keySet()[0]);
 						// removeParticipant(_data.keySet()[0], false);
 						cancelSiegeTask();
 						endSiege();
-					}
-					else if ((_data.size() == 2) && (_hall.getOwnerId() > 0)) // Hall has defender (owner)
+					} else if ((_data.size() == 2) && (_hall.getOwnerId() > 0)) // Hall has defender (owner)
 					{
 						cancelSiegeTask(); // No time limit now
 						_firstPhase = false;
 						_hall.getSiegeZone().setIsActive(false);
-						for (int doorId : INNER_DOORS_TO_OPEN)
-						{
+						for (int doorId : INNER_DOORS_TO_OPEN) {
 							_hall.openCloseDoor(doorId, true);
 						}
 						
-						for (ClanData data : _data.values())
-						{
+						for (ClanData data : _data.values()) {
 							doUnSpawns(data);
 						}
 						
-						ThreadPoolManager.getInstance().scheduleGeneral(() ->
-						{
-							for (int doorId : INNER_DOORS_TO_OPEN)
-							{
+						ThreadPoolManager.getInstance().scheduleGeneral(() -> {
+							for (int doorId : INNER_DOORS_TO_OPEN) {
 								_hall.openCloseDoor(doorId, false);
 							}
 							
-							for (Entry<Integer, ClanData> e : _data.entrySet())
-							{
+							for (Entry<Integer, ClanData> e : _data.entrySet()) {
 								doSpawns(e.getKey(), e.getValue());
 							}
 							
 							_hall.getSiegeZone().setIsActive(true);
-						} , 300000);
+						}, 300000);
 					}
-				}
-				else
-				{
+				} else {
 					_missionAccomplished = true;
 					_winner = ClanTable.getInstance().getClan(clanIds.get(0));
 					removeParticipant(clanIds.get(0), false);
@@ -432,23 +340,19 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, CENTER);
 		return null;
 	}
 	
 	@Override
-	public L2Clan getWinner()
-	{
+	public L2Clan getWinner() {
 		return _winner;
 	}
 	
 	@Override
-	public void prepareOwner()
-	{
-		if (_hall.getOwnerId() > 0)
-		{
+	public void prepareOwner() {
+		if (_hall.getOwnerId() > 0) {
 			registerClan(ClanTable.getInstance().getClan(_hall.getOwnerId()));
 		}
 		
@@ -462,10 +366,8 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public void startSiege()
-	{
-		if (getAttackers().size() < 2)
-		{
+	public void startSiege() {
+		if (getAttackers().size() < 2) {
 			onSiegeEnds();
 			getAttackers().clear();
 			_hall.updateNextSiege();
@@ -476,23 +378,18 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		
 		// Open doors for challengers
-		for (int door : OUTTER_DOORS_TO_OPEN)
-		{
+		for (int door : OUTTER_DOORS_TO_OPEN) {
 			_hall.openCloseDoor(door, true);
 		}
 		
 		// Teleport owner inside
-		if (_hall.getOwnerId() > 0)
-		{
+		if (_hall.getOwnerId() > 0) {
 			L2Clan owner = ClanTable.getInstance().getClan(_hall.getOwnerId());
 			final Location loc = _hall.getZone().getSpawns().get(0); // Owner restart point
-			for (L2ClanMember pc : owner.getMembers())
-			{
-				if (pc != null)
-				{
+			for (L2ClanMember pc : owner.getMembers()) {
+				if (pc != null) {
 					final L2PcInstance player = pc.getPlayerInstance();
-					if ((player != null) && player.isOnline())
-					{
+					if ((player != null) && player.isOnline()) {
 						player.teleToLocation(loc, false);
 					}
 				}
@@ -501,33 +398,26 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		
 		// Schedule open doors closement, banish non siege participants and<br>
 		// siege start in 2 minutes
-		ThreadPoolManager.getInstance().scheduleGeneral(() ->
-		{
-			for (int door : OUTTER_DOORS_TO_OPEN)
-			{
+		ThreadPoolManager.getInstance().scheduleGeneral(() -> {
+			for (int door : OUTTER_DOORS_TO_OPEN) {
 				_hall.openCloseDoor(door, false);
 			}
 			
 			_hall.getZone().banishNonSiegeParticipants();
 			
 			startSiege();
-		} , 300000);
+		}, 300000);
 	}
 	
 	@Override
-	public void onSiegeStarts()
-	{
-		for (Entry<Integer, ClanData> clan : _data.entrySet())
-		{
+	public void onSiegeStarts() {
+		for (Entry<Integer, ClanData> clan : _data.entrySet()) {
 			// Spawns challengers flags and npcs
-			try
-			{
+			try {
 				ClanData data = clan.getValue();
 				doSpawns(clan.getKey(), data);
 				fillPlayerList(data);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				endSiege();
 				_log.warn("{}: Problems in siege initialization!", getName(), e);
 			}
@@ -535,10 +425,8 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public void endSiege()
-	{
-		if (_hall.getOwnerId() > 0)
-		{
+	public void endSiege() {
+		if (_hall.getOwnerId() > 0) {
 			L2Clan clan = ClanTable.getInstance().getClan(_hall.getOwnerId());
 			clan.setHideoutId(0);
 			_hall.free();
@@ -547,18 +435,12 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public void onSiegeEnds()
-	{
-		if (_data.size() > 0)
-		{
-			for (int clanId : _data.keySet())
-			{
-				if (_hall.getOwnerId() == clanId)
-				{
+	public void onSiegeEnds() {
+		if (_data.size() > 0) {
+			for (int clanId : _data.keySet()) {
+				if (_hall.getOwnerId() == clanId) {
 					removeParticipant(clanId, false);
-				}
-				else
-				{
+				} else {
 					removeParticipant(clanId, true);
 				}
 			}
@@ -567,25 +449,17 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public final Location getInnerSpawnLoc(final L2PcInstance player)
-	{
+	public final Location getInnerSpawnLoc(final L2PcInstance player) {
 		Location loc = null;
-		if (player.getClanId() == _hall.getOwnerId())
-		{
+		if (player.getClanId() == _hall.getOwnerId()) {
 			loc = _hall.getZone().getSpawns().get(0);
-		}
-		else
-		{
+		} else {
 			ClanData cd = _data.get(player.getClanId());
-			if (cd != null)
-			{
+			if (cd != null) {
 				int index = cd.flag - FLAG_RED;
-				if ((index >= 0) && (index <= 4))
-				{
+				if ((index >= 0) && (index <= 4)) {
 					loc = _hall.getZone().getChallengerSpawns().get(index);
-				}
-				else
-				{
+				} else {
 					throw new ArrayIndexOutOfBoundsException();
 				}
 			}
@@ -594,28 +468,21 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public final boolean canPlantFlag()
-	{
+	public final boolean canPlantFlag() {
 		return false;
 	}
 	
 	@Override
-	public final boolean doorIsAutoAttackable()
-	{
+	public final boolean doorIsAutoAttackable() {
 		return false;
 	}
 	
-	void doSpawns(int clanId, ClanData data)
-	{
-		try
-		{
+	void doSpawns(int clanId, ClanData data) {
+		try {
 			int index = 0;
-			if (_firstPhase)
-			{
+			if (_firstPhase) {
 				index = data.flag - FLAG_RED;
-			}
-			else
-			{
+			} else {
 				index = clanId == _hall.getOwnerId() ? 5 : 6;
 			}
 			Location loc = FLAG_COORDS[index];
@@ -632,27 +499,21 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			data.warrior.setAmount(1);
 			data.warrior.init();
 			((L2SpecialSiegeGuardAI) data.warrior.getLastSpawn().getAI()).getAlly().addAll(data.players);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			_log.warn("{}: Could not make clan spawns!", getName(), e);
 		}
 	}
 	
-	private void fillPlayerList(ClanData data)
-	{
-		for (int objId : data.players)
-		{
+	private void fillPlayerList(ClanData data) {
+		for (int objId : data.players) {
 			L2PcInstance plr = L2World.getInstance().getPlayer(objId);
-			if (plr != null)
-			{
+			if (plr != null) {
 				data.playersInstance.add(plr);
 			}
 		}
 	}
 	
-	private void registerClan(L2Clan clan)
-	{
+	private void registerClan(L2Clan clan) {
 		final int clanId = clan.getId();
 		
 		L2SiegeClan sc = new L2SiegeClan(clanId, SiegeClanType.ATTACKER);
@@ -667,55 +528,43 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		saveMember(clanId, clan.getLeaderId());
 	}
 	
-	private final void doUnSpawns(ClanData data)
-	{
-		if (data.flagInstance != null)
-		{
+	private final void doUnSpawns(ClanData data) {
+		if (data.flagInstance != null) {
 			data.flagInstance.stopRespawn();
 			data.flagInstance.getLastSpawn().deleteMe();
 		}
-		if (data.warrior != null)
-		{
+		if (data.warrior != null) {
 			data.warrior.stopRespawn();
 			data.warrior.getLastSpawn().deleteMe();
 		}
 	}
 	
-	private final void removeParticipant(int clanId, boolean teleport)
-	{
+	private final void removeParticipant(int clanId, boolean teleport) {
 		ClanData dat = _data.remove(clanId);
 		
-		if (dat != null)
-		{
+		if (dat != null) {
 			// Destroy clan flag
-			if (dat.flagInstance != null)
-			{
+			if (dat.flagInstance != null) {
 				dat.flagInstance.stopRespawn();
-				if (dat.flagInstance.getLastSpawn() != null)
-				{
+				if (dat.flagInstance.getLastSpawn() != null) {
 					dat.flagInstance.getLastSpawn().deleteMe();
 				}
 			}
 			
-			if (dat.warrior != null)
-			{
+			if (dat.warrior != null) {
 				// Destroy clan warrior
 				dat.warrior.stopRespawn();
-				if (dat.warrior.getLastSpawn() != null)
-				{
+				if (dat.warrior.getLastSpawn() != null) {
 					dat.warrior.getLastSpawn().deleteMe();
 				}
 			}
 			
 			dat.players.clear();
 			
-			if (teleport)
-			{
+			if (teleport) {
 				// Teleport players outside
-				for (L2PcInstance pc : dat.playersInstance)
-				{
-					if (pc != null)
-					{
+				for (L2PcInstance pc : dat.playersInstance) {
+					if (pc != null) {
 						pc.teleToLocation(TeleportWhereType.TOWN);
 					}
 				}
@@ -725,13 +574,11 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 	}
 	
-	public boolean canPayRegistration()
-	{
+	public boolean canPayRegistration() {
 		return true;
 	}
 	
-	private void sendRegistrationPageDate(L2PcInstance player)
-	{
+	private void sendRegistrationPageDate(L2PcInstance player) {
 		final NpcHtmlMessage msg = new NpcHtmlMessage();
 		msg.setHtml(getHtm(player.getHtmlPrefix(), "siege_date.htm"));
 		msg.replace("%nextSiege%", _hall.getSiegeDate().getTime().toString());
@@ -743,20 +590,15 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	public abstract String getAllyHtml(int ally);
 	
 	@Override
-	public final void loadAttackers()
-	{
+	public final void loadAttackers() {
 		try (Connection con = ConnectionFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement(SQL_LOAD_ATTACKERS))
-		{
+			PreparedStatement ps = con.prepareStatement(SQL_LOAD_ATTACKERS)) {
 			ps.setInt(1, _hall.getId());
-			try (ResultSet rset = ps.executeQuery())
-			{
-				while (rset.next())
-				{
+			try (ResultSet rset = ps.executeQuery()) {
+				while (rset.next()) {
 					final int clanId = rset.getInt("clan_id");
 					
-					if (ClanTable.getInstance().getClan(clanId) == null)
-					{
+					if (ClanTable.getInstance().getClan(clanId) == null) {
 						_log.warn("{}: Loaded an unexistent clan as attacker! Clan ID {}!", getName(), clanId);
 						continue;
 					}
@@ -769,108 +611,82 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 					loadAttackerMembers(clanId);
 				}
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			_log.warn("Could not load attackers for {}!", getName(), e);
 		}
 	}
 	
-	private final void loadAttackerMembers(int clanId)
-	{
+	private final void loadAttackerMembers(int clanId) {
 		final List<Integer> listInstance = _data.get(clanId).players;
-		if (listInstance == null)
-		{
+		if (listInstance == null) {
 			_log.warn(getName() + ": Tried to load unregistered clan with ID " + clanId);
 			return;
 		}
 		
 		try (Connection con = ConnectionFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement(SQL_LOAD_MEMEBERS))
-		{
+			PreparedStatement ps = con.prepareStatement(SQL_LOAD_MEMEBERS)) {
 			ps.setInt(1, clanId);
-			try (ResultSet rset = ps.executeQuery())
-			{
-				while (rset.next())
-				{
+			try (ResultSet rset = ps.executeQuery()) {
+				while (rset.next()) {
 					listInstance.add(rset.getInt("object_id"));
 				}
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			_log.warn("{}: loadAttackerMembers", getName(), e);
 		}
 	}
 	
-	private final void saveClan(int clanId, int flag)
-	{
+	private final void saveClan(int clanId, int flag) {
 		try (Connection con = ConnectionFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement(SQL_SAVE_CLAN))
-		{
+			PreparedStatement ps = con.prepareStatement(SQL_SAVE_CLAN)) {
 			ps.setInt(1, _hall.getId());
 			ps.setInt(2, flag);
 			ps.setInt(3, 0);
 			ps.setInt(4, clanId);
 			ps.execute();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			_log.warn("{}: saveClan", getName(), e);
 		}
 	}
 	
-	private final void saveNpc(int npc, int clanId)
-	{
+	private final void saveNpc(int npc, int clanId) {
 		try (Connection con = ConnectionFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement(SQL_SAVE_NPC))
-		{
+			PreparedStatement ps = con.prepareStatement(SQL_SAVE_NPC)) {
 			ps.setInt(1, npc);
 			ps.setInt(2, clanId);
 			ps.execute();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			_log.warn("{}: saveNpc()", getName(), e);
 		}
 	}
 	
-	private final void saveMember(int clanId, int objectId)
-	{
+	private final void saveMember(int clanId, int objectId) {
 		try (Connection con = ConnectionFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement(SQL_SAVE_ATTACKER))
-		{
+			PreparedStatement ps = con.prepareStatement(SQL_SAVE_ATTACKER)) {
 			ps.setInt(1, _hall.getId());
 			ps.setInt(2, clanId);
 			ps.setInt(3, objectId);
 			ps.execute();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			_log.warn("{}: saveMember", getName(), e);
 		}
 	}
 	
-	private void clearTables()
-	{
+	private void clearTables() {
 		try (Connection con = ConnectionFactory.getInstance().getConnection();
 			PreparedStatement ps1 = con.prepareStatement(SQL_CLEAR_CLAN);
-			PreparedStatement ps2 = con.prepareStatement(SQL_CLEAR_CLAN_ATTACKERS))
-		{
+			PreparedStatement ps2 = con.prepareStatement(SQL_CLEAR_CLAN_ATTACKERS)) {
 			ps1.setInt(1, _hall.getId());
 			ps1.execute();
 			
 			ps2.setInt(1, _hall.getId());
 			ps2.execute();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			_log.warn("Unable to clear data tables for {}!", getName(), e);
 		}
 	}
 	
-	class ClanData
-	{
+	class ClanData {
 		int flag = 0;
 		int npc = 0;
 		List<Integer> players = new ArrayList<>(18);

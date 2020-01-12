@@ -34,13 +34,10 @@ import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Broadcast;
 
-public class SoulShots implements IItemHandler
-{
+public class SoulShots implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!playable.isPlayer())
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!playable.isPlayer()) {
 			playable.sendPacket(SystemMessageId.ITEM_NOT_FOR_PETS);
 			return false;
 		}
@@ -52,17 +49,14 @@ public class SoulShots implements IItemHandler
 		
 		int itemId = item.getId();
 		
-		if (skills == null)
-		{
+		if (skills == null) {
 			_log.log(Level.WARNING, getClass().getSimpleName() + ": is missing skills!");
 			return false;
 		}
 		
 		// Check if Soul shot can be used
-		if ((weaponInst == null) || (weaponItem.getSoulShotCount() == 0))
-		{
-			if (!activeChar.getAutoSoulShot().contains(itemId))
-			{
+		if ((weaponInst == null) || (weaponItem.getSoulShotCount() == 0)) {
+			if (!activeChar.getAutoSoulShot().contains(itemId)) {
 				activeChar.sendPacket(SystemMessageId.CANNOT_USE_SOULSHOTS);
 			}
 			return false;
@@ -70,44 +64,35 @@ public class SoulShots implements IItemHandler
 		
 		boolean gradeCheck = item.isEtcItem() && (item.getEtcItem().getDefaultAction() == ActionType.SOULSHOT) && (weaponInst.getItem().getItemGradeSPlus() == item.getItem().getItemGradeSPlus());
 		
-		if (!gradeCheck)
-		{
-			if (!activeChar.getAutoSoulShot().contains(itemId))
-			{
+		if (!gradeCheck) {
+			if (!activeChar.getAutoSoulShot().contains(itemId)) {
 				activeChar.sendPacket(SystemMessageId.SOULSHOTS_GRADE_MISMATCH);
 			}
 			return false;
 		}
 		
 		activeChar.soulShotLock.lock();
-		try
-		{
+		try {
 			// Check if Soul shot is already active
-			if (activeChar.isChargedShot(ShotType.SOULSHOTS))
-			{
+			if (activeChar.isChargedShot(ShotType.SOULSHOTS)) {
 				return false;
 			}
 			
 			// Consume Soul shots if player has enough of them
 			int SSCount = weaponItem.getSoulShotCount();
-			if ((weaponItem.getReducedSoulShot() > 0) && (Rnd.get(100) < weaponItem.getReducedSoulShotChance()))
-			{
+			if ((weaponItem.getReducedSoulShot() > 0) && (Rnd.get(100) < weaponItem.getReducedSoulShotChance())) {
 				SSCount = weaponItem.getReducedSoulShot();
 			}
 			
-			if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), SSCount, null, false))
-			{
-				if (!activeChar.disableAutoShot(itemId))
-				{
+			if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), SSCount, null, false)) {
+				if (!activeChar.disableAutoShot(itemId)) {
 					activeChar.sendPacket(SystemMessageId.NOT_ENOUGH_SOULSHOTS);
 				}
 				return false;
 			}
 			// Charge soul shot
 			weaponInst.setChargedShot(ShotType.SOULSHOTS, true);
-		}
-		finally
-		{
+		} finally {
 			activeChar.soulShotLock.unlock();
 		}
 		

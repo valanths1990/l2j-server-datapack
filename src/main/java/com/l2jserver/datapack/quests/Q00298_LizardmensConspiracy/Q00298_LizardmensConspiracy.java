@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Lizardmen's Conspiracy (298)
  * @author xban1x
  */
-public final class Q00298_LizardmensConspiracy extends Quest
-{
+public final class Q00298_LizardmensConspiracy extends Quest {
 	// NPCs
 	private static final int GUARD_PRAGA = 30333;
 	private static final int MAGISTER_ROHMER = 30344;
@@ -42,8 +41,7 @@ public final class Q00298_LizardmensConspiracy extends Quest
 	private static final int SHINING_RED_GEM = 7184;
 	// Monsters
 	private static final Map<Integer, ItemChanceHolder> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(20922, new ItemChanceHolder(SHINING_GEM, 0.49, 1));
 		MONSTERS.put(20924, new ItemChanceHolder(SHINING_GEM, 0.75, 1));
 		MONSTERS.put(20926, new ItemChanceHolder(SHINING_RED_GEM, 0.54, 1));
@@ -53,8 +51,7 @@ public final class Q00298_LizardmensConspiracy extends Quest
 	// Misc
 	private static final int MIN_LVL = 25;
 	
-	public Q00298_LizardmensConspiracy()
-	{
+	public Q00298_LizardmensConspiracy() {
 		super(298, Q00298_LizardmensConspiracy.class.getSimpleName(), "Lizardmen's Conspiracy");
 		addStartNpc(GUARD_PRAGA);
 		addTalkId(GUARD_PRAGA, MAGISTER_ROHMER);
@@ -63,49 +60,37 @@ public final class Q00298_LizardmensConspiracy extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String html = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return html;
 		}
 		
-		switch (event)
-		{
-			case "30333-03.htm":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "30333-03.htm": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					giveItems(player, PATROLS_REPORT, 1);
 					html = event;
 				}
 				break;
 			}
-			case "30344-04.html":
-			{
-				if (qs.isCond(1) && hasQuestItems(player, PATROLS_REPORT))
-				{
+			case "30344-04.html": {
+				if (qs.isCond(1) && hasQuestItems(player, PATROLS_REPORT)) {
 					takeItems(player, PATROLS_REPORT, -1);
 					qs.setCond(2, true);
 					html = event;
 				}
 				break;
 			}
-			case "30344-06.html":
-			{
-				if (qs.isStarted())
-				{
-					if (qs.isCond(3))
-					{
+			case "30344-06.html": {
+				if (qs.isStarted()) {
+					if (qs.isCond(3)) {
 						addExpAndSp(player, 0, 42000);
 						qs.exitQuest(true, true);
 						html = event;
-					}
-					else
-					{
+					} else {
 						html = "30344-07.html";
 					}
 				}
@@ -116,16 +101,13 @@ public final class Q00298_LizardmensConspiracy extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, 2, 3, npc);
-		if (qs != null)
-		{
+		if (qs != null) {
 			final ItemChanceHolder item = MONSTERS.get(npc.getId());
 			if (giveItemRandomly(qs.getPlayer(), npc, item.getId(), item.getCount(), 50, item.getChance(), true) //
 				&& (getQuestItemsCount(qs.getPlayer(), SHINING_GEM) >= 50) //
-				&& (getQuestItemsCount(qs.getPlayer(), SHINING_RED_GEM) >= 50))
-			{
+				&& (getQuestItemsCount(qs.getPlayer(), SHINING_RED_GEM) >= 50)) {
 				qs.setCond(3, true);
 			}
 		}
@@ -133,36 +115,25 @@ public final class Q00298_LizardmensConspiracy extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		String html = getNoQuestMsg(talker);
-		if (qs.isCreated() && (npc.getId() == GUARD_PRAGA))
-		{
+		if (qs.isCreated() && (npc.getId() == GUARD_PRAGA)) {
 			html = (talker.getLevel() >= MIN_LVL) ? "30333-01.htm" : "30333-02.htm";
-		}
-		else if (qs.isStarted())
-		{
-			if ((npc.getId() == GUARD_PRAGA) && hasQuestItems(talker, PATROLS_REPORT))
-			{
+		} else if (qs.isStarted()) {
+			if ((npc.getId() == GUARD_PRAGA) && hasQuestItems(talker, PATROLS_REPORT)) {
 				html = "30333-04.html";
-			}
-			else if (npc.getId() == MAGISTER_ROHMER)
-			{
-				switch (qs.getCond())
-				{
-					case 1:
-					{
+			} else if (npc.getId() == MAGISTER_ROHMER) {
+				switch (qs.getCond()) {
+					case 1: {
 						html = "30344-01.html";
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						html = "30344-02.html";
 						break;
 					}
-					case 3:
-					{
+					case 3: {
 						html = "30344-03.html";
 						break;
 					}

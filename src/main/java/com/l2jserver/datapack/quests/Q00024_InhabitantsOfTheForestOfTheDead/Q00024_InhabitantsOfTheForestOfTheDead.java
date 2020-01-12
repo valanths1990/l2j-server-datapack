@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Inhabitants of the Forest of the Dead (24)
  * @author malyelfik
  */
-public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
-{
+public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest {
 	// NPCs
 	private static final int DORIAN = 31389;
 	private static final int MYSTERIOUS_WIZARD = 31522;
@@ -51,8 +50,7 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 	private static final int[] MOBS = { 21557, 21558, 21560, 21563, 21564, 21565, 21566, 21567 };
 	// @formatter:on
 	
-	public Q00024_InhabitantsOfTheForestOfTheDead()
-	{
+	public Q00024_InhabitantsOfTheForestOfTheDead() {
 		super(24, Q00024_InhabitantsOfTheForestOfTheDead.class.getSimpleName(), "Inhabitants of the Forest of the Dead");
 		addStartNpc(DORIAN);
 		addTalkId(DORIAN, MYSTERIOUS_WIZARD, TOMBSTONE, LIDIA_MAID);
@@ -61,21 +59,17 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			// Dorian
 			case "31389-02.htm":
-				if ((player.getLevel() >= 65) && player.hasQuestCompleted(Q00023_LidiasHeart.class.getSimpleName()))
-				{
+				if ((player.getLevel() >= 65) && player.hasQuestCompleted(Q00023_LidiasHeart.class.getSimpleName())) {
 					st.startQuest();
 					st.giveItems(FLOWER_BOUQUET, 1);
 					return "31389-03.htm";
@@ -93,8 +87,7 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 				st.playSound(Sound.INTERFACESOUND_CHARSTAT_OPEN);
 				break;
 			case "31389-19.html":
-				if (!st.hasQuestItems(BROKEN_SILVER_CROSS_OF_EINHASAD))
-				{
+				if (!st.hasQuestItems(BROKEN_SILVER_CROSS_OF_EINHASAD)) {
 					return getNoQuestMsg(player);
 				}
 				st.takeItems(BROKEN_SILVER_CROSS_OF_EINHASAD, -1);
@@ -114,21 +107,16 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 				st.setCond(6, true);
 				break;
 			case "31532-07.html":
-				if (st.isCond(8))
-				{
-					if (!hasQuestItems(player, LIDIA_HAIRPIN, LIDIA_LETTER))
-					{
+				if (st.isCond(8)) {
+					if (!hasQuestItems(player, LIDIA_HAIRPIN, LIDIA_LETTER)) {
 						return getNoQuestMsg(player);
 					}
 					st.takeItems(LIDIA_HAIRPIN, -1);
 					st.takeItems(LIDIA_LETTER, -1);
 					st.set("var", "1");
 					htmltext = "31532-06.html";
-				}
-				else
-				{
-					if (st.isCond(6))
-					{
+				} else {
+					if (st.isCond(6)) {
 						st.setCond(7, true);
 					}
 				}
@@ -155,8 +143,7 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 				break;
 			// Mysterious Wizard
 			case "31522-03.html":
-				if (!st.hasQuestItems(SUSPICIOUS_TOTEM_DOLL))
-				{
+				if (!st.hasQuestItems(SUSPICIOUS_TOTEM_DOLL)) {
 					return getNoQuestMsg(player);
 				}
 				st.takeItems(SUSPICIOUS_TOTEM_DOLL, 1);
@@ -190,8 +177,7 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 				break;
 			// Tombstone
 			case "31531-02.html":
-				if (!st.hasQuestItems(FLOWER_BOUQUET))
-				{
+				if (!st.hasQuestItems(FLOWER_BOUQUET)) {
 					return getNoQuestMsg(player);
 				}
 				st.takeItems(FLOWER_BOUQUET, -1);
@@ -205,12 +191,10 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
 		
-		if ((st != null) && st.isCond(9) && (getRandom(100) < 10))
-		{
+		if ((st != null) && st.isCond(9) && (getRandom(100) < 10)) {
 			st.giveItems(SUSPICIOUS_TOTEM_DOLL, 1);
 			st.setCond(10, true);
 		}
@@ -218,21 +202,17 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case DORIAN:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = "31389-01.htm";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "31389-04.html";
 								break;
@@ -265,45 +245,32 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 				}
 				break;
 			case MYSTERIOUS_WIZARD:
-				if (st.isStarted())
-				{
-					if (st.isCond(10))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(10)) {
 						htmltext = (st.getInt("var") == 0) ? "31522-01.html" : "31522-04.html";
-					}
-					else if (st.isCond(11))
-					{
+					} else if (st.isCond(11)) {
 						htmltext = (st.getInt("var") == 0) ? "31522-09.html" : "31522-18.html";
 					}
-				}
-				else if (st.isCompleted())
-				{
+				} else if (st.isCompleted()) {
 					final QuestState qs = player.getQuestState(Q00025_HidingBehindTheTruth.class.getSimpleName());
-					if (!((qs != null) && (qs.isStarted() || qs.isStarted())))
-					{
+					if (!((qs != null) && (qs.isStarted() || qs.isStarted()))) {
 						htmltext = "31522-22.html";
 					}
 				}
 				break;
 			case TOMBSTONE:
-				if (st.isStarted())
-				{
-					if (st.isCond(1))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(1)) {
 						st.playSound(Sound.AMDSOUND_WIND_LOOT);
 						htmltext = "31531-01.html";
-					}
-					else if (st.isCond(2))
-					{
+					} else if (st.isCond(2)) {
 						htmltext = "31531-03.html";
 					}
 				}
 				break;
 			case LIDIA_MAID:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 5:
 							htmltext = "31532-01.html";
 							break;
@@ -314,8 +281,7 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 							htmltext = "31532-07a.html";
 							break;
 						case 8:
-							switch (st.getInt("var"))
-							{
+							switch (st.getInt("var")) {
 								case 0:
 									htmltext = "31532-07a.html";
 									break;

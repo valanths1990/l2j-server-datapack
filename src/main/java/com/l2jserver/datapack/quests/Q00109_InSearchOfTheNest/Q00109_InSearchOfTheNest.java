@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * In Search of the Nest (109)
  * @author Adry_85
  */
-public class Q00109_InSearchOfTheNest extends Quest
-{
+public class Q00109_InSearchOfTheNest extends Quest {
 	// NPCs
 	private static final int PIERCE = 31553;
 	private static final int SCOUTS_CORPSE = 32015;
@@ -37,8 +36,7 @@ public class Q00109_InSearchOfTheNest extends Quest
 	// Items
 	private static final int SCOUTS_NOTE = 14858;
 	
-	public Q00109_InSearchOfTheNest()
-	{
+	public Q00109_InSearchOfTheNest() {
 		super(109, Q00109_InSearchOfTheNest.class.getSimpleName(), "In Search of the Nest");
 		addStartNpc(PIERCE);
 		addTalkId(PIERCE, SCOUTS_CORPSE, KAHMAN);
@@ -46,16 +44,13 @@ public class Q00109_InSearchOfTheNest extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "31553-0.htm":
 				st.startQuest();
 				break;
@@ -77,21 +72,17 @@ public class Q00109_InSearchOfTheNest extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case PIERCE:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() < 81) ? "31553-0a.htm" : "31553-0b.htm";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "31553-1.html";
 								break;
@@ -109,21 +100,16 @@ public class Q00109_InSearchOfTheNest extends Quest
 				}
 				break;
 			case SCOUTS_CORPSE:
-				if (st.isStarted())
-				{
-					if (st.isCond(1))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(1)) {
 						htmltext = "32015-1.html";
-					}
-					else if (st.isCond(2))
-					{
+					} else if (st.isCond(2)) {
 						htmltext = "32015-3.html";
 					}
 				}
 				break;
 			case KAHMAN:
-				if (st.isStarted() && st.isCond(3))
-				{
+				if (st.isStarted() && st.isCond(3)) {
 					htmltext = "31554-1.html";
 				}
 				break;

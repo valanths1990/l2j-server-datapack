@@ -31,26 +31,21 @@ import com.l2jserver.gameserver.util.Util;
  * Shrieks of Ghosts (371)
  * @author Adry_85
  */
-public final class Q00371_ShrieksOfGhosts extends Quest
-{
-	private static final class DropInfo
-	{
+public final class Q00371_ShrieksOfGhosts extends Quest {
+	private static final class DropInfo {
 		public final int _firstChance;
 		public final int _secondChance;
 		
-		public DropInfo(int firstChance, int secondChance)
-		{
+		public DropInfo(int firstChance, int secondChance) {
 			_firstChance = firstChance;
 			_secondChance = secondChance;
 		}
 		
-		public int getFirstChance()
-		{
+		public int getFirstChance() {
 			return _firstChance;
 		}
 		
-		public int getSecondChance()
-		{
+		public int getSecondChance() {
 			return _secondChance;
 		}
 	}
@@ -69,15 +64,13 @@ public final class Q00371_ShrieksOfGhosts extends Quest
 	private static final int MIN_LEVEL = 59;
 	
 	private static final Map<Integer, DropInfo> MOBS = new HashMap<>();
-	static
-	{
+	static {
 		MOBS.put(20818, new DropInfo(350, 400)); // hallates_warrior
 		MOBS.put(20820, new DropInfo(583, 673)); // hallates_knight
 		MOBS.put(20824, new DropInfo(458, 538)); // hallates_commander
 	}
 	
-	public Q00371_ShrieksOfGhosts()
-	{
+	public Q00371_ShrieksOfGhosts() {
 		super(371, Q00371_ShrieksOfGhosts.class.getSimpleName(), "Shrieks of Ghosts");
 		addStartNpc(REVA);
 		addTalkId(REVA, PATRIN);
@@ -86,39 +79,29 @@ public final class Q00371_ShrieksOfGhosts extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30867-02.htm":
-			{
+		switch (event) {
+			case "30867-02.htm": {
 				qs.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "30867-05.html":
-			{
+			case "30867-05.html": {
 				final long ancientAshUrnCount = getQuestItemsCount(player, ANCIENT_ASH_URN);
 				
-				if (ancientAshUrnCount < 1)
-				{
+				if (ancientAshUrnCount < 1) {
 					htmltext = event;
-				}
-				else if (ancientAshUrnCount < 100)
-				{
+				} else if (ancientAshUrnCount < 100) {
 					giveAdena(player, (ancientAshUrnCount * 1000) + 15000, true);
 					takeItems(player, ANCIENT_ASH_URN, -1);
 					htmltext = "30867-06.html";
-				}
-				else
-				{
+				} else {
 					giveAdena(player, (ancientAshUrnCount * 1000) + 37700, true);
 					takeItems(player, ANCIENT_ASH_URN, -1);
 					htmltext = "30867-07.html";
@@ -127,51 +110,36 @@ public final class Q00371_ShrieksOfGhosts extends Quest
 			}
 			case "30867-08.html":
 			case "30929-01.html":
-			case "30929-02.html":
-			{
+			case "30929-02.html": {
 				htmltext = event;
 				break;
 			}
-			case "30867-09.html":
-			{
+			case "30867-09.html": {
 				giveAdena(player, getQuestItemsCount(player, ANCIENT_ASH_URN) * 1000, true);
 				qs.exitQuest(true, true);
 				htmltext = "30867-09.html";
 				break;
 			}
-			case "30929-03.html":
-			{
-				if (!hasQuestItems(player, ANCIENT_PORCELAIN))
-				{
+			case "30929-03.html": {
+				if (!hasQuestItems(player, ANCIENT_PORCELAIN)) {
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					final int random = getRandom(100);
 					
-					if (random < 2)
-					{
+					if (random < 2) {
 						giveItems(player, ANCIENT_PORCELAIN_EXCELLENT, 1);
 						htmltext = "30929-04.html";
 						
-					}
-					else if (random < 32)
-					{
+					} else if (random < 32) {
 						giveItems(player, ANCIENT_PORCELAIN_HIGH_QUALITY, 1);
 						htmltext = "30929-05.html";
-					}
-					else if (random < 62)
-					{
+					} else if (random < 62) {
 						giveItems(player, ANCIENT_PORCELAIN_LOW_QUALITY, 1);
 						htmltext = "30929-06.html";
-					}
-					else if (random < 77)
-					{
+					} else if (random < 77) {
 						giveItems(player, ANCIENT_PORCELAIN_LOWEST_QUALITY, 1);
 						htmltext = "30929-07.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30929-08.html";
 					}
 					
@@ -184,46 +152,34 @@ public final class Q00371_ShrieksOfGhosts extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
 		
-		if ((qs == null) || !Util.checkIfInRange(1500, npc, killer, true))
-		{
+		if ((qs == null) || !Util.checkIfInRange(1500, npc, killer, true)) {
 			return null;
 		}
 		
 		final DropInfo info = MOBS.get(npc.getId());
 		final int random = getRandom(1000);
 		
-		if (random < info.getFirstChance())
-		{
+		if (random < info.getFirstChance()) {
 			qs.giveItemRandomly(npc, ANCIENT_ASH_URN, 1, 0, 1.0, true);
-		}
-		else if (random < info.getSecondChance())
-		{
+		} else if (random < info.getSecondChance()) {
 			qs.giveItemRandomly(npc, ANCIENT_PORCELAIN, 1, 0, 1.0, true);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			htmltext = (player.getLevel() >= MIN_LEVEL) ? "30867-01.htm" : "30867-03.htm";
-		}
-		else if (qs.isStarted())
-		{
-			if (npc.getId() == REVA)
-			{
+		} else if (qs.isStarted()) {
+			if (npc.getId() == REVA) {
 				htmltext = (hasQuestItems(player, ANCIENT_PORCELAIN)) ? "30867-04.html" : "30867-10.html";
-			}
-			else
-			{
+			} else {
 				htmltext = "30929-01.html";
 			}
 		}

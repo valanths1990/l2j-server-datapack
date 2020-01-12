@@ -29,11 +29,9 @@ import com.l2jserver.gameserver.network.clientpackets.RequestAcquireSkill;
  * Castle Court Magician AI.
  * @author St3eT
  */
-public final class CastleCourtMagician extends AbstractNpcAI
-{
+public final class CastleCourtMagician extends AbstractNpcAI {
 	// NPCs
-	private static final int[] COURT_MAGICIAN =
-	{
+	private static final int[] COURT_MAGICIAN = {
 		35648, // Gludio
 		35649, // Dion
 		35650, // Giran
@@ -67,8 +65,7 @@ public final class CastleCourtMagician extends AbstractNpcAI
 	private static final int RED_LIFE_FORCE = 10518; // Red Talisman - Life Force
 	private static final int BLUE_GREAT_HEAL = 10424; // Blue Talisman - Greater Healing
 	private static final int WHITE_FIRE = 10421; // White Talisman - Fire
-	private static final int[] COMMON_TALISMANS =
-	{
+	private static final int[] COMMON_TALISMANS = {
 		9914, // Blue Talisman of Power
 		9915, // Blue Talisman of Wild Magic
 		9920, // Blue Talisman of Invisibility
@@ -114,8 +111,7 @@ public final class CastleCourtMagician extends AbstractNpcAI
 		10419, // White Talisman - Darkness
 	};
 	
-	private CastleCourtMagician()
-	{
+	private CastleCourtMagician() {
 		super(CastleCourtMagician.class.getSimpleName(), "ai/npc");
 		addStartNpc(COURT_MAGICIAN);
 		addTalkId(COURT_MAGICIAN);
@@ -123,121 +119,74 @@ public final class CastleCourtMagician extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if ((player.getClan() == null) && (player.getClanId() != npc.getCastle().getOwnerId()))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if ((player.getClan() == null) && (player.getClanId() != npc.getCastle().getOwnerId())) {
 			return "courtmagician-01.html";
 		}
 		
 		String htmltext = null;
 		int itemId = 0;
-		switch (event)
-		{
+		switch (event) {
 			case "courtmagician.html":
-			case "courtmagician-03.html":
-			{
+			case "courtmagician-03.html": {
 				htmltext = event;
 				break;
 			}
-			case "giveTalisman":
-			{
-				if (getQuestItemsCount(player, EPAULETTE) < 10)
-				{
+			case "giveTalisman": {
+				if (getQuestItemsCount(player, EPAULETTE) < 10) {
 					htmltext = "courtmagician-06.html";
 					break;
 				}
 				
 				final int categoryChance = getRandom(100);
-				if (categoryChance <= 5)
-				{
+				if (categoryChance <= 5) {
 					final int chance = getRandom(100);
-					if (chance <= 25)
-					{
+					if (chance <= 25) {
 						itemId = RED_MEDITATION;
-					}
-					else if (chance <= 50)
-					{
+					} else if (chance <= 50) {
 						itemId = BLUE_DIV_PROTECTION;
-					}
-					else if (chance <= 75)
-					{
+					} else if (chance <= 75) {
 						itemId = BLUE_EXPLOSION;
-					}
-					else
-					{
+					} else {
 						itemId = BLUE_M_EXPLOSION;
 					}
-				}
-				else if (categoryChance <= 15)
-				{
+				} else if (categoryChance <= 15) {
 					final int chance = getRandom(100);
-					if (chance <= 20)
-					{
+					if (chance <= 20) {
 						itemId = RED_MIN_CLARITY;
-					}
-					else if (chance <= 40)
-					{
+					} else if (chance <= 40) {
 						itemId = RED_MAX_CLARITY;
-					}
-					else if (chance <= 60)
-					{
+					} else if (chance <= 60) {
 						itemId = RED_MENTAL_REG;
-					}
-					else if (chance <= 80)
-					{
+					} else if (chance <= 80) {
 						itemId = BLUE_PROTECTION;
-					}
-					else
-					{
+					} else {
 						itemId = BLUE_INVIS;
 					}
-				}
-				else if (categoryChance <= 30)
-				{
+				} else if (categoryChance <= 30) {
 					final int chance = getRandom(100);
-					if (chance <= 12)
-					{
+					if (chance <= 12) {
 						itemId = BLUE_DEFENSE;
-					}
-					else if (chance <= 25)
-					{
+					} else if (chance <= 25) {
 						itemId = BLACK_ESCAPE;
-					}
-					else if (chance <= 37)
-					{
+					} else if (chance <= 37) {
 						itemId = BLUE_HEALING;
-					}
-					else if (chance <= 50)
-					{
+					} else if (chance <= 50) {
 						itemId = RED_RECOVERY;
-					}
-					else if (chance <= 62)
-					{
+					} else if (chance <= 62) {
 						itemId = BLUE_DEFENSE2;
-					}
-					else if (chance <= 75)
-					{
+					} else if (chance <= 75) {
 						itemId = BLUE_M_DEFENSE;
-					}
-					else if (chance <= 87)
-					{
+					} else if (chance <= 87) {
 						itemId = RED_LIFE_FORCE;
-					}
-					else
-					{
+					} else {
 						itemId = BLUE_GREAT_HEAL;
 					}
-				}
-				else
-				{
+				} else {
 					final int chance = getRandom(46);
-					if (chance <= 42)
-					{
+					if (chance <= 42) {
 						itemId = COMMON_TALISMANS[chance];
-					}
-					else
-					{
+					} else {
 						itemId = WHITE_FIRE;
 					}
 				}
@@ -246,35 +195,26 @@ public final class CastleCourtMagician extends AbstractNpcAI
 				htmltext = "courtmagician-04.html";
 				break;
 			}
-			case "squadSkill":
-			{
-				if (player.isClanLeader() || player.hasClanPrivilege(ClanPrivilege.CL_TROOPS_FAME))
-				{
+			case "squadSkill": {
+				if (player.isClanLeader() || player.hasClanPrivilege(ClanPrivilege.CL_TROOPS_FAME)) {
 					RequestAcquireSkill.showSubUnitSkillList(player);
-				}
-				else
-				{
+				} else {
 					htmltext = "courtmagician-05.html";
 				}
 				break;
 			}
-			case "clanTeleport":
-			{
-				if (player.getClanId() == npc.getCastle().getOwnerId())
-				{
+			case "clanTeleport": {
+				if (player.getClanId() == npc.getCastle().getOwnerId()) {
 					final L2PcInstance clanLeader = player.getClan().getLeader().getPlayerInstance();
 					
-					if ((clanLeader != null) && clanLeader.isAffectedBySkill(CLAN_GATE))
-					{
+					if ((clanLeader != null) && clanLeader.isAffectedBySkill(CLAN_GATE)) {
 						if (clanLeader.canSummonTarget(player)) // TODO: Custom one, retail dont check it but for sure lets check same conditions like when summon player by skill.
 						{
 							npc.setTarget(player);
 							npc.doCast(DISPLAY_CLAN_GATE);
 							player.teleToLocation(clanLeader.getLocation(), true);
 						}
-					}
-					else
-					{
+					} else {
 						htmltext = "courtmagician-02.html";
 					}
 				}
@@ -285,13 +225,11 @@ public final class CastleCourtMagician extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return ((player.getClan() != null) && (player.getClanId() == npc.getCastle().getOwnerId())) ? "courtmagician.html" : "courtmagician-01.html";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new CastleCourtMagician();
 	}
 }

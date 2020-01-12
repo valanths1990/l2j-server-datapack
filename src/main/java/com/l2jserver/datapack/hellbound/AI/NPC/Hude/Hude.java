@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Hude AI.
  * @author DS
  */
-public final class Hude extends AbstractNpcAI
-{
+public final class Hude extends AbstractNpcAI {
 	// NPCs
 	private static final int HUDE = 32298;
 	// Items
@@ -42,8 +41,7 @@ public final class Hude extends AbstractNpcAI
 	private static final int MAP = 9994;
 	private static final int STINGER = 10012;
 	
-	public Hude()
-	{
+	public Hude() {
 		super(Hude.class.getSimpleName(), "hellbound/AI/NPC");
 		addFirstTalkId(HUDE);
 		addStartNpc(HUDE);
@@ -51,16 +49,11 @@ public final class Hude extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "scertif":
-			{
-				if (HellboundEngine.getInstance().getLevel() > 3)
-				{
-					if (hasQuestItems(player, BASIC_CERT) && (getQuestItemsCount(player, MARK_OF_BETRAYAL) >= 30) && (getQuestItemsCount(player, STINGER) >= 60))
-					{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "scertif": {
+				if (HellboundEngine.getInstance().getLevel() > 3) {
+					if (hasQuestItems(player, BASIC_CERT) && (getQuestItemsCount(player, MARK_OF_BETRAYAL) >= 30) && (getQuestItemsCount(player, STINGER) >= 60)) {
 						takeItems(player, MARK_OF_BETRAYAL, 30);
 						takeItems(player, STINGER, 60);
 						takeItems(player, BASIC_CERT, 1);
@@ -70,12 +63,9 @@ public final class Hude extends AbstractNpcAI
 				}
 				return "32298-04b.htm";
 			}
-			case "pcertif":
-			{
-				if (HellboundEngine.getInstance().getLevel() > 6)
-				{
-					if (hasQuestItems(player, STANDART_CERT) && (getQuestItemsCount(player, LIFE_FORCE) >= 56) && (getQuestItemsCount(player, CONTAINED_LIFE_FORCE) >= 14))
-					{
+			case "pcertif": {
+				if (HellboundEngine.getInstance().getLevel() > 6) {
+					if (hasQuestItems(player, STANDART_CERT) && (getQuestItemsCount(player, LIFE_FORCE) >= 56) && (getQuestItemsCount(player, CONTAINED_LIFE_FORCE) >= 14)) {
 						takeItems(player, LIFE_FORCE, 56);
 						takeItems(player, CONTAINED_LIFE_FORCE, 14);
 						takeItems(player, STANDART_CERT, 1);
@@ -86,18 +76,14 @@ public final class Hude extends AbstractNpcAI
 				}
 				return "32298-06b.htm";
 			}
-			case "multisell1":
-			{
-				if (hasQuestItems(player, STANDART_CERT) || hasQuestItems(player, PREMIUM_CERT))
-				{
+			case "multisell1": {
+				if (hasQuestItems(player, STANDART_CERT) || hasQuestItems(player, PREMIUM_CERT)) {
 					MultisellData.getInstance().separateAndSend(322980001, player, npc, false);
 				}
 				break;
 			}
-			case "multisell2":
-			{
-				if (hasQuestItems(player, PREMIUM_CERT))
-				{
+			case "multisell2": {
+				if (hasQuestItems(player, PREMIUM_CERT)) {
 					MultisellData.getInstance().separateAndSend(322980002, player, npc, false);
 				}
 				break;
@@ -107,23 +93,15 @@ public final class Hude extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (!hasAtLeastOneQuestItem(player, BASIC_CERT, STANDART_CERT, PREMIUM_CERT))
-		{
+		if (!hasAtLeastOneQuestItem(player, BASIC_CERT, STANDART_CERT, PREMIUM_CERT)) {
 			htmltext = "32298-01.htm";
-		}
-		else if (hasQuestItems(player, BASIC_CERT) && !hasAtLeastOneQuestItem(player, STANDART_CERT, PREMIUM_CERT))
-		{
+		} else if (hasQuestItems(player, BASIC_CERT) && !hasAtLeastOneQuestItem(player, STANDART_CERT, PREMIUM_CERT)) {
 			htmltext = "32298-03.htm";
-		}
-		else if (hasQuestItems(player, STANDART_CERT) && !hasQuestItems(player, PREMIUM_CERT))
-		{
+		} else if (hasQuestItems(player, STANDART_CERT) && !hasQuestItems(player, PREMIUM_CERT)) {
 			htmltext = "32298-05.htm";
-		}
-		else if (hasQuestItems(player, PREMIUM_CERT))
-		{
+		} else if (hasQuestItems(player, PREMIUM_CERT)) {
 			htmltext = "32298-07.htm";
 		}
 		return htmltext;

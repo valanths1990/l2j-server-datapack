@@ -32,16 +32,13 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 /**
  * @author St3eT
  */
-public class TargetParty implements ITargetTypeHandler
-{
+public class TargetParty implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<>();
 		
 		// Check for null target or any other invalid target
-		if ((target == null) || target.isDead() || (target == activeChar))
-		{
+		if ((target == null) || target.isDead() || (target == activeChar)) {
 			activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 			return EMPTY_TARGET_LIST;
 		}
@@ -49,36 +46,28 @@ public class TargetParty implements ITargetTypeHandler
 		final int radius = skill.getAffectRange();
 		final L2PcInstance player = (L2PcInstance) activeChar.getTarget();
 		
-		if (player.isInParty())
-		{
-			for (L2PcInstance partyMember : player.getParty().getMembers())
-			{
-				if ((partyMember == null))
-				{
+		if (player.isInParty()) {
+			for (L2PcInstance partyMember : player.getParty().getMembers()) {
+				if ((partyMember == null)) {
 					continue;
 				}
 				
-				if (Skill.addCharacter(player, partyMember, radius, false))
-				{
+				if (Skill.addCharacter(player, partyMember, radius, false)) {
 					targetList.add(partyMember);
 				}
 				
-				if (Skill.addSummon(player, partyMember, radius, false))
-				{
+				if (Skill.addSummon(player, partyMember, radius, false)) {
 					targetList.add(partyMember.getSummon());
 				}
 			}
-		}
-		else
-		{
+		} else {
 			targetList.add(target);
 		}
 		return targetList.toArray(new L2Character[targetList.size()]);
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.TARGET_PARTY;
 	}
 }

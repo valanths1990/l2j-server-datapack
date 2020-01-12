@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.util.Util;
  * Original Jython script by Kerberos v1.0 on 2009/05/03.
  * @author nonom
  */
-public class Q10275_ContainingTheAttributePower extends Quest
-{
+public class Q10275_ContainingTheAttributePower extends Quest {
 	// NPCs
 	private static final int HOLLY = 30839;
 	private static final int WEBER = 31307;
@@ -52,8 +51,7 @@ public class Q10275_ContainingTheAttributePower extends Quest
 	private static final SkillHolder BLESSING_OF_FIRE = new SkillHolder(2635, 1);
 	private static final SkillHolder BLESSING_OF_EARTH = new SkillHolder(2636, 1);
 	
-	public Q10275_ContainingTheAttributePower()
-	{
+	public Q10275_ContainingTheAttributePower() {
 		super(10275, Q10275_ContainingTheAttributePower.class.getSimpleName(), "Containing the Attribute Power");
 		addStartNpc(HOLLY, WEBER);
 		addTalkId(HOLLY, WEBER, YIN, YANG);
@@ -62,17 +60,14 @@ public class Q10275_ContainingTheAttributePower extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "30839-02.html":
 			case "31307-02.html":
 				st.startQuest();
@@ -92,16 +87,14 @@ public class Q10275_ContainingTheAttributePower extends Quest
 				st.giveItems(YANGSWORD, 1, AttributeType.EARTH.getId(), 10);
 				break;
 			case "32325-06.html":
-				if (st.hasQuestItems(YINSWORD))
-				{
+				if (st.hasQuestItems(YINSWORD)) {
 					st.takeItems(YINSWORD, 1);
 					htmltext = "32325-07.html";
 				}
 				st.giveItems(YINSWORD, 1, AttributeType.FIRE.getId(), 10);
 				break;
 			case "32326-06.html":
-				if (st.hasQuestItems(YANGSWORD))
-				{
+				if (st.hasQuestItems(YANGSWORD)) {
 					st.takeItems(YANGSWORD, 1);
 					htmltext = "32326-07.html";
 				}
@@ -119,8 +112,7 @@ public class Q10275_ContainingTheAttributePower extends Quest
 				break;
 		}
 		
-		if (Util.isDigit(event))
-		{
+		if (Util.isDigit(event)) {
 			htmltext = Integer.toString(npc.getId()) + "-1" + event + ".html";
 			st.giveItems(10520 + Integer.valueOf(event), 2);
 			st.addExpAndSp(202160, 20375);
@@ -131,40 +123,29 @@ public class Q10275_ContainingTheAttributePower extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case AIR:
-				if ((st.isCond(8) || st.isCond(10)) && (st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == YANGSWORD) && (st.getQuestItemsCount(SOULPIECEAIR) < 6) && (getRandom(100) < 30))
-				{
+				if ((st.isCond(8) || st.isCond(10)) && (st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == YANGSWORD) && (st.getQuestItemsCount(SOULPIECEAIR) < 6) && (getRandom(100) < 30)) {
 					st.giveItems(SOULPIECEAIR, 1);
-					if (st.getQuestItemsCount(SOULPIECEAIR) >= 6)
-					{
+					if (st.getQuestItemsCount(SOULPIECEAIR) >= 6) {
 						st.setCond(st.getCond() + 1, true);
-					}
-					else
-					{
+					} else {
 						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 				break;
 			case WATER:
-				if (((st.getCond() >= 3) || (st.getCond() <= 5)) && (st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == YINSWORD) && (st.getQuestItemsCount(SOULPIECEWATER) < 6) && (getRandom(100) < 30))
-				{
+				if (((st.getCond() >= 3) || (st.getCond() <= 5)) && (st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == YINSWORD) && (st.getQuestItemsCount(SOULPIECEWATER) < 6) && (getRandom(100) < 30)) {
 					st.giveItems(SOULPIECEWATER, 1);
-					if (st.getQuestItemsCount(SOULPIECEWATER) >= 6)
-					{
+					if (st.getQuestItemsCount(SOULPIECEWATER) >= 6) {
 						st.setCond(st.getCond() + 1, true);
-					}
-					else
-					{
+					} else {
 						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
@@ -175,22 +156,17 @@ public class Q10275_ContainingTheAttributePower extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
-			case HOLLY:
-			{
-				switch (st.getState())
-				{
+		switch (npc.getId()) {
+			case HOLLY: {
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() > 75) ? "30839-01.htm" : "30839-00.html";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "30839-03.html";
 								break;
@@ -205,16 +181,13 @@ public class Q10275_ContainingTheAttributePower extends Quest
 				}
 				break;
 			}
-			case WEBER:
-			{
-				switch (st.getState())
-				{
+			case WEBER: {
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() > 75) ? "31307-01.htm" : "31307-00.html";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "31307-03.html";
 								break;
@@ -229,12 +202,9 @@ public class Q10275_ContainingTheAttributePower extends Quest
 				}
 				break;
 			}
-			case YIN:
-			{
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+			case YIN: {
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 2:
 							htmltext = "32325-01.html";
 							break;
@@ -254,12 +224,9 @@ public class Q10275_ContainingTheAttributePower extends Quest
 				}
 				break;
 			}
-			case YANG:
-			{
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+			case YANG: {
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 7:
 							htmltext = "32326-01.html";
 							break;

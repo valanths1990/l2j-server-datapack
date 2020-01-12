@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.util.Util;
  * Hunting Grounds teleport AI.
  * @author Charus
  */
-public final class HuntingGroundsTeleport extends AbstractNpcAI
-{
+public final class HuntingGroundsTeleport extends AbstractNpcAI {
 	// NPCs
 	// @formatter:off
 	private final static int[] PRIESTS =
@@ -46,104 +45,87 @@ public final class HuntingGroundsTeleport extends AbstractNpcAI
 	};
 	// @formatter:on
 	
-	private HuntingGroundsTeleport()
-	{
+	private HuntingGroundsTeleport() {
 		super(HuntingGroundsTeleport.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(PRIESTS);
 		addTalkId(PRIESTS);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final SevenSigns ss = SevenSigns.getInstance();
 		final int playerCabal = ss.getPlayerCabal(player.getObjectId());
 		
-		if (playerCabal == SevenSigns.CABAL_NULL)
-		{
+		if (playerCabal == SevenSigns.CABAL_NULL) {
 			return Util.contains(DAWN_NPCS, npc.getId()) ? "dawn_tele-no.htm" : "dusk_tele-no.htm";
 		}
 		
 		String htmltext = "";
 		final boolean check = ss.isSealValidationPeriod() && (playerCabal == ss.getSealOwner(SevenSigns.SEAL_GNOSIS)) && (ss.getPlayerSeal(player.getObjectId()) == SevenSigns.SEAL_GNOSIS);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case 31078:
-			case 31085:
-			{
+			case 31085: {
 				htmltext = check ? "low_gludin.htm" : "hg_gludin.htm";
 				break;
 			}
 			case 31079:
-			case 31086:
-			{
+			case 31086: {
 				htmltext = check ? "low_gludio.htm" : "hg_gludio.htm";
 				break;
 			}
 			case 31080:
-			case 31087:
-			{
+			case 31087: {
 				htmltext = check ? "low_dion.htm" : "hg_dion.htm";
 				break;
 			}
 			case 31081:
-			case 31088:
-			{
+			case 31088: {
 				htmltext = check ? "low_giran.htm" : "hg_giran.htm";
 				break;
 			}
 			case 31082:
-			case 31089:
-			{
+			case 31089: {
 				htmltext = check ? "low_heine.htm" : "hg_heine.htm";
 				break;
 			}
 			case 31083:
-			case 31090:
-			{
+			case 31090: {
 				htmltext = check ? "low_oren.htm" : "hg_oren.htm";
 				break;
 			}
 			case 31084:
-			case 31091:
-			{
+			case 31091: {
 				htmltext = check ? "low_aden.htm" : "hg_aden.htm";
 				break;
 			}
 			case 31168:
-			case 31169:
-			{
+			case 31169: {
 				htmltext = check ? "low_hw.htm" : "hg_hw.htm";
 				break;
 			}
 			case 31692:
-			case 31693:
-			{
+			case 31693: {
 				htmltext = check ? "low_goddard.htm" : "hg_goddard.htm";
 				break;
 			}
 			case 31694:
-			case 31695:
-			{
+			case 31695: {
 				htmltext = check ? "low_rune.htm" : "hg_rune.htm";
 				break;
 			}
 			case 31997:
-			case 31998:
-			{
+			case 31998: {
 				htmltext = check ? "low_schuttgart.htm" : "hg_schuttgart.htm";
 				break;
 			}
-			default:
-			{
+			default: {
 				break;
 			}
 		}
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new HuntingGroundsTeleport();
 	}
 }

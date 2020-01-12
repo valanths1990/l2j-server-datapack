@@ -107,96 +107,78 @@ public class AdminEditChar implements IAdminCommandHandler {
 	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		if (command.equals("admin_current_player")) {
 			showCharacterInfo(activeChar, activeChar);
-		}
-		else if (command.startsWith("admin_character_info")) {
+		} else if (command.startsWith("admin_character_info")) {
 			String[] data = command.split(" ");
 			if ((data.length > 1)) {
 				showCharacterInfo(activeChar, L2World.getInstance().getPlayer(data[1]));
-			}
-			else if (activeChar.getTarget() instanceof L2PcInstance) {
+			} else if (activeChar.getTarget() instanceof L2PcInstance) {
 				showCharacterInfo(activeChar, activeChar.getTarget().getActingPlayer());
-			}
-			else {
+			} else {
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			}
-		}
-		else if (command.startsWith("admin_character_list")) {
+		} else if (command.startsWith("admin_character_list")) {
 			listCharacters(activeChar, 0);
-		}
-		else if (command.startsWith("admin_show_characters")) {
+		} else if (command.startsWith("admin_show_characters")) {
 			try {
 				String val = command.substring(22);
 				int page = Integer.parseInt(val);
 				listCharacters(activeChar, page);
-			}
-			catch (StringIndexOutOfBoundsException e) {
+			} catch (StringIndexOutOfBoundsException e) {
 				// Case of empty page number
 				activeChar.sendMessage("Usage: //show_characters <page_number>");
 			}
-		}
-		else if (command.startsWith("admin_find_character")) {
+		} else if (command.startsWith("admin_find_character")) {
 			try {
 				String val = command.substring(21);
 				findCharacter(activeChar, val);
-			}
-			catch (StringIndexOutOfBoundsException e) {
+			} catch (StringIndexOutOfBoundsException e) {
 				// Case of empty character name
 				activeChar.sendMessage("Usage: //find_character <character_name>");
 				listCharacters(activeChar, 0);
 			}
-		}
-		else if (command.startsWith("admin_find_ip")) {
+		} else if (command.startsWith("admin_find_ip")) {
 			try {
 				String val = command.substring(14);
 				findCharactersPerIp(activeChar, val);
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				// Case of empty or malformed IP number
 				activeChar.sendMessage("Usage: //find_ip <www.xxx.yyy.zzz>");
 				listCharacters(activeChar, 0);
 			}
-		}
-		else if (command.startsWith("admin_find_account")) {
+		} else if (command.startsWith("admin_find_account")) {
 			try {
 				String val = command.substring(19);
 				findCharactersPerAccount(activeChar, val);
-			}
-			catch (Exception ex) {
+			} catch (Exception ex) {
 				// Case of empty or malformed player name
 				activeChar.sendMessage("Usage: //find_account <player_name>");
 				listCharacters(activeChar, 0);
 			}
-		}
-		else if (command.startsWith("admin_edit_character")) {
+		} else if (command.startsWith("admin_edit_character")) {
 			String[] data = command.split(" ");
 			if ((data.length > 1)) {
 				editCharacter(activeChar, data[1]);
-			}
-			else if (activeChar.getTarget() instanceof L2PcInstance) {
+			} else if (activeChar.getTarget() instanceof L2PcInstance) {
 				editCharacter(activeChar, null);
-			}
-			else {
+			} else {
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			}
 		}
 		// Karma control commands
 		else if (command.equals("admin_nokarma")) {
 			setTargetKarma(activeChar, 0);
-		}
-		else if (command.startsWith("admin_setkarma")) {
+		} else if (command.startsWith("admin_setkarma")) {
 			try {
 				String val = command.substring(15);
 				int karma = Integer.parseInt(val);
 				setTargetKarma(activeChar, karma);
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				if (general().developer()) {
 					_log.warning("Set karma error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setkarma <new_karma_value>");
 			}
-		}
-		else if (command.startsWith("admin_setpk")) {
+		} else if (command.startsWith("admin_setpk")) {
 			try {
 				String val = command.substring(12);
 				int pk = Integer.parseInt(val);
@@ -209,19 +191,16 @@ public class AdminEditChar implements IAdminCommandHandler {
 					player.sendPacket(new ExBrExtraUserInfo(player));
 					player.sendMessage("A GM changed your PK count to " + pk);
 					activeChar.sendMessage(player.getName() + "'s PK count changed to " + pk);
-				}
-				else {
+				} else {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 				}
-			}
-			catch (Exception ex) {
+			} catch (Exception ex) {
 				if (general().developer()) {
 					_log.warning("Set pk error: " + ex);
 				}
 				activeChar.sendMessage("Usage: //setpk <pk_count>");
 			}
-		}
-		else if (command.startsWith("admin_setpvp")) {
+		} else if (command.startsWith("admin_setpvp")) {
 			try {
 				String val = command.substring(13);
 				int pvp = Integer.parseInt(val);
@@ -234,19 +213,16 @@ public class AdminEditChar implements IAdminCommandHandler {
 					player.sendPacket(new ExBrExtraUserInfo(player));
 					player.sendMessage("A GM changed your PVP count to " + pvp);
 					activeChar.sendMessage(player.getName() + "'s PVP count changed to " + pvp);
-				}
-				else {
+				} else {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 				}
-			}
-			catch (Exception ex) {
+			} catch (Exception ex) {
 				if (general().developer()) {
 					_log.warning("Set pvp error: " + ex);
 				}
 				activeChar.sendMessage("Usage: //setpvp <pvp_count>");
 			}
-		}
-		else if (command.startsWith("admin_setfame")) {
+		} else if (command.startsWith("admin_setfame")) {
 			try {
 				String val = command.substring(14);
 				int fame = Integer.parseInt(val);
@@ -259,19 +235,16 @@ public class AdminEditChar implements IAdminCommandHandler {
 					player.sendPacket(new ExBrExtraUserInfo(player));
 					player.sendMessage("A GM changed your Reputation points to " + fame);
 					activeChar.sendMessage(player.getName() + "'s Fame changed to " + fame);
-				}
-				else {
+				} else {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 				}
-			}
-			catch (Exception ex) {
+			} catch (Exception ex) {
 				if (general().developer()) {
 					_log.warning("Set Fame error: " + ex);
 				}
 				activeChar.sendMessage("Usage: //setfame <new_fame_value>");
 			}
-		}
-		else if (command.startsWith("admin_rec")) {
+		} else if (command.startsWith("admin_rec")) {
 			try {
 				String val = command.substring(10);
 				int recVal = Integer.parseInt(val);
@@ -285,16 +258,13 @@ public class AdminEditChar implements IAdminCommandHandler {
 					player.sendPacket(new ExVoteSystemInfo(player));
 					player.sendMessage("A GM changed your Recommend points to " + recVal);
 					activeChar.sendMessage(player.getName() + "'s Recommend changed to " + recVal);
-				}
-				else {
+				} else {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 				}
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //rec number");
 			}
-		}
-		else if (command.startsWith("admin_setclass")) {
+		} else if (command.startsWith("admin_setclass")) {
 			try {
 				String val = command.substring(15).trim();
 				int classidval = Integer.parseInt(val);
@@ -302,8 +272,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 				L2PcInstance player = null;
 				if (target instanceof L2PcInstance) {
 					player = (L2PcInstance) target;
-				}
-				else {
+				} else {
 					return false;
 				}
 				boolean valid = false;
@@ -326,46 +295,38 @@ public class AdminEditChar implements IAdminCommandHandler {
 					activeChar.setTarget(null);
 					activeChar.setTarget(player);
 					activeChar.sendMessage(player.getName() + " is a " + newclass + ".");
-				}
-				else {
+				} else {
 					activeChar.sendMessage("Usage: //setclass <valid_new_classid>");
 				}
-			}
-			catch (StringIndexOutOfBoundsException e) {
+			} catch (StringIndexOutOfBoundsException e) {
 				AdminHtml.showAdminHtml(activeChar, "setclass/human_fighter.htm");
-			}
-			catch (NumberFormatException e) {
+			} catch (NumberFormatException e) {
 				activeChar.sendMessage("Usage: //setclass <valid_new_classid>");
 			}
-		}
-		else if (command.startsWith("admin_settitle")) {
+		} else if (command.startsWith("admin_settitle")) {
 			try {
 				String val = command.substring(15);
 				L2Object target = activeChar.getTarget();
 				L2PcInstance player = null;
 				if (target instanceof L2PcInstance) {
 					player = (L2PcInstance) target;
-				}
-				else {
+				} else {
 					return false;
 				}
 				player.setTitle(val);
 				player.sendMessage("Your title has been changed by a GM");
 				player.broadcastTitleInfo();
-			}
-			catch (StringIndexOutOfBoundsException e) { // Case of empty character title
+			} catch (StringIndexOutOfBoundsException e) { // Case of empty character title
 				activeChar.sendMessage("You need to specify the new title.");
 			}
-		}
-		else if (command.startsWith("admin_changename")) {
+		} else if (command.startsWith("admin_changename")) {
 			try {
 				String val = command.substring(17);
 				L2Object target = activeChar.getTarget();
 				L2PcInstance player = null;
 				if (target instanceof L2PcInstance) {
 					player = (L2PcInstance) target;
-				}
-				else {
+				} else {
 					return false;
 				}
 				if (CharNameTable.getInstance().getIdByName(val) > 0) {
@@ -392,77 +353,65 @@ public class AdminEditChar implements IAdminCommandHandler {
 				if (player.getClan() != null) {
 					player.getClan().broadcastClanStatus();
 				}
-			}
-			catch (StringIndexOutOfBoundsException e) {
+			} catch (StringIndexOutOfBoundsException e) {
 				// Case of empty character name
 				activeChar.sendMessage("Usage: //setname new_name_for_target");
 			}
-		}
-		else if (command.startsWith("admin_setsex")) {
+		} else if (command.startsWith("admin_setsex")) {
 			L2Object target = activeChar.getTarget();
 			L2PcInstance player = null;
 			if (target instanceof L2PcInstance) {
 				player = (L2PcInstance) target;
-			}
-			else {
+			} else {
 				return false;
 			}
 			player.getAppearance().setSex(player.getAppearance().getSex() ? false : true);
 			player.sendMessage("Your gender has been changed by a GM");
 			player.broadcastUserInfo();
-		}
-		else if (command.startsWith("admin_setcolor")) {
+		} else if (command.startsWith("admin_setcolor")) {
 			try {
 				String val = command.substring(15);
 				L2Object target = activeChar.getTarget();
 				L2PcInstance player = null;
 				if (target instanceof L2PcInstance) {
 					player = (L2PcInstance) target;
-				}
-				else {
+				} else {
 					return false;
 				}
 				player.getAppearance().setNameColor(Integer.decode("0x" + val));
 				player.sendMessage("Your name color has been changed by a GM");
 				player.broadcastUserInfo();
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				// Case of empty color or invalid hex string
 				activeChar.sendMessage("You need to specify a valid new color.");
 			}
-		}
-		else if (command.startsWith("admin_settcolor")) {
+		} else if (command.startsWith("admin_settcolor")) {
 			try {
 				String val = command.substring(16);
 				L2Object target = activeChar.getTarget();
 				L2PcInstance player = null;
 				if (target instanceof L2PcInstance) {
 					player = (L2PcInstance) target;
-				}
-				else {
+				} else {
 					return false;
 				}
 				player.getAppearance().setTitleColor(Integer.decode("0x" + val));
 				player.sendMessage("Your title color has been changed by a GM");
 				player.broadcastUserInfo();
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				// Case of empty color or invalid hex string
 				activeChar.sendMessage("You need to specify a valid new color.");
 			}
-		}
-		else if (command.startsWith("admin_fullfood")) {
+		} else if (command.startsWith("admin_fullfood")) {
 			L2Object target = activeChar.getTarget();
 			if (target instanceof L2PetInstance) {
 				L2PetInstance targetPet = (L2PetInstance) target;
 				targetPet.setCurrentFed(targetPet.getMaxFed());
 				targetPet.broadcastStatusUpdate();
-			}
-			else {
+			} else {
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			}
-		}
-		else if (command.startsWith("admin_remove_clan_penalty")) {
+		} else if (command.startsWith("admin_remove_clan_penalty")) {
 			try {
 				StringTokenizer st = new StringTokenizer(command, " ");
 				if (st.countTokens() != 3) {
@@ -485,24 +434,20 @@ public class AdminEditChar implements IAdminCommandHandler {
 						ps.setString(1, playerName);
 						ps.execute();
 					}
-				}
-				else {
+				} else {
 					// removing penalty
 					if (changeCreateExpiryTime) {
 						player.setClanCreateExpiryTime(0);
-					}
-					else {
+					} else {
 						player.setClanJoinExpiryTime(0);
 					}
 				}
 				
 				activeChar.sendMessage("Clan penalty successfully removed to character: " + playerName);
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
-		else if (command.startsWith("admin_find_dualbox")) {
+		} else if (command.startsWith("admin_find_dualbox")) {
 			int multibox = 2;
 			try {
 				String val = command.substring(19);
@@ -511,12 +456,10 @@ public class AdminEditChar implements IAdminCommandHandler {
 					activeChar.sendMessage("Usage: //find_dualbox [number > 0]");
 					return false;
 				}
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 			}
 			findDualbox(activeChar, multibox);
-		}
-		else if (command.startsWith("admin_strict_find_dualbox")) {
+		} else if (command.startsWith("admin_strict_find_dualbox")) {
 			int multibox = 2;
 			try {
 				String val = command.substring(26);
@@ -525,18 +468,15 @@ public class AdminEditChar implements IAdminCommandHandler {
 					activeChar.sendMessage("Usage: //strict_find_dualbox [number > 0]");
 					return false;
 				}
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 			}
 			findDualboxStrict(activeChar, multibox);
-		}
-		else if (command.startsWith("admin_tracert")) {
+		} else if (command.startsWith("admin_tracert")) {
 			String[] data = command.split(" ");
 			L2PcInstance pl = null;
 			if ((data.length > 1)) {
 				pl = L2World.getInstance().getPlayer(data[1]);
-			}
-			else {
+			} else {
 				L2Object target = activeChar.getTarget();
 				if (target instanceof L2PcInstance) {
 					pl = (L2PcInstance) target;
@@ -571,26 +511,21 @@ public class AdminEditChar implements IAdminCommandHandler {
 				}
 				activeChar.sendMessage("Hop" + i + ": " + ip);
 			}
-		}
-		else if (command.startsWith("admin_summon_info")) {
+		} else if (command.startsWith("admin_summon_info")) {
 			L2Object target = activeChar.getTarget();
 			if (target instanceof L2Summon) {
 				gatherSummonInfo((L2Summon) target, activeChar);
-			}
-			else {
+			} else {
 				activeChar.sendMessage("Invalid target.");
 			}
-		}
-		else if (command.startsWith("admin_unsummon")) {
+		} else if (command.startsWith("admin_unsummon")) {
 			L2Object target = activeChar.getTarget();
 			if (target instanceof L2Summon) {
 				((L2Summon) target).unSummon(((L2Summon) target).getOwner());
-			}
-			else {
+			} else {
 				activeChar.sendMessage("Usable only with Pets/Summons");
 			}
-		}
-		else if (command.startsWith("admin_summon_setlvl")) {
+		} else if (command.startsWith("admin_summon_setlvl")) {
 			L2Object target = activeChar.getTarget();
 			if (target instanceof L2PetInstance) {
 				L2PetInstance pet = (L2PetInstance) target;
@@ -602,37 +537,30 @@ public class AdminEditChar implements IAdminCommandHandler {
 					newexp = pet.getStat().getExpForLevel(level);
 					if (oldexp > newexp) {
 						pet.getStat().removeExp(oldexp - newexp);
-					}
-					else if (oldexp < newexp) {
+					} else if (oldexp < newexp) {
 						pet.getStat().addExp(newexp - oldexp);
 					}
+				} catch (Exception e) {
 				}
-				catch (Exception e) {
-				}
-			}
-			else {
+			} else {
 				activeChar.sendMessage("Usable only with Pets");
 			}
-		}
-		else if (command.startsWith("admin_show_pet_inv")) {
+		} else if (command.startsWith("admin_show_pet_inv")) {
 			L2Object target;
 			try {
 				String val = command.substring(19);
 				int objId = Integer.parseInt(val);
 				target = L2World.getInstance().getPet(objId);
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				target = activeChar.getTarget();
 			}
 			
 			if (target instanceof L2PetInstance) {
 				activeChar.sendPacket(new GMViewItemList((L2PetInstance) target));
-			}
-			else {
+			} else {
 				activeChar.sendMessage("Usable only with Pets");
 			}
-		}
-		else if (command.startsWith("admin_partyinfo")) {
+		} else if (command.startsWith("admin_partyinfo")) {
 			L2Object target;
 			try {
 				String val = command.substring(16);
@@ -640,30 +568,25 @@ public class AdminEditChar implements IAdminCommandHandler {
 				if (target == null) {
 					target = activeChar.getTarget();
 				}
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				target = activeChar.getTarget();
 			}
 			
 			if (target instanceof L2PcInstance) {
 				if (((L2PcInstance) target).isInParty()) {
 					gatherPartyInfo((L2PcInstance) target, activeChar);
-				}
-				else {
+				} else {
 					activeChar.sendMessage("Not in party.");
 				}
-			}
-			else {
+			} else {
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			}
 			
-		}
-		else if (command.equals("admin_setnoble")) {
+		} else if (command.equals("admin_setnoble")) {
 			L2PcInstance player = null;
 			if (activeChar.getTarget() == null) {
 				player = activeChar;
-			}
-			else if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2PcInstance)) {
+			} else if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2PcInstance)) {
 				player = (L2PcInstance) activeChar.getTarget();
 			}
 			
@@ -674,8 +597,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 				}
 				player.sendMessage("GM changed your nobless status!");
 			}
-		}
-		else if (command.startsWith("admin_set_hp")) {
+		} else if (command.startsWith("admin_set_hp")) {
 			final String[] data = command.split(" ");
 			try {
 				final L2Object target = activeChar.getTarget();
@@ -684,12 +606,10 @@ public class AdminEditChar implements IAdminCommandHandler {
 					return false;
 				}
 				((L2Character) target).setCurrentHp(Double.parseDouble(data[1]));
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //set_hp 1000");
 			}
-		}
-		else if (command.startsWith("admin_set_mp")) {
+		} else if (command.startsWith("admin_set_mp")) {
 			final String[] data = command.split(" ");
 			try {
 				final L2Object target = activeChar.getTarget();
@@ -698,12 +618,10 @@ public class AdminEditChar implements IAdminCommandHandler {
 					return false;
 				}
 				((L2Character) target).setCurrentMp(Double.parseDouble(data[1]));
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //set_mp 1000");
 			}
-		}
-		else if (command.startsWith("admin_set_cp")) {
+		} else if (command.startsWith("admin_set_cp")) {
 			final String[] data = command.split(" ");
 			try {
 				final L2Object target = activeChar.getTarget();
@@ -712,12 +630,10 @@ public class AdminEditChar implements IAdminCommandHandler {
 					return false;
 				}
 				((L2Character) target).setCurrentCp(Double.parseDouble(data[1]));
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //set_cp 1000");
 			}
-		}
-		else if (command.startsWith("admin_set_pvp_flag")) {
+		} else if (command.startsWith("admin_set_pvp_flag")) {
 			try {
 				final L2Object target = activeChar.getTarget();
 				if ((target == null) || !target.isPlayable()) {
@@ -726,8 +642,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 				}
 				final L2Playable playable = ((L2Playable) target);
 				playable.updatePvPFlag(Math.abs(playable.getPvpFlag() - 1));
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //set_pvp_flag");
 			}
 		}
@@ -758,8 +673,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 		
 		if (result.getPages() > 0) {
 			html.replace("%pages%", "<table width=280 cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table>");
-		}
-		else {
+		} else {
 			html.replace("%pages%", "");
 		}
 		
@@ -772,12 +686,10 @@ public class AdminEditChar implements IAdminCommandHandler {
 			L2Object target = activeChar.getTarget();
 			if (target instanceof L2PcInstance) {
 				player = (L2PcInstance) target;
-			}
-			else {
+			} else {
 				return;
 			}
-		}
-		else {
+		} else {
 			activeChar.setTarget(player);
 		}
 		gatherCharacterInfo(activeChar, player, "charinfo.htm");
@@ -800,11 +712,9 @@ public class AdminEditChar implements IAdminCommandHandler {
 		final L2GameClient client = player.getClient();
 		if (client == null) {
 			activeChar.sendMessage("Client is null.");
-		}
-		else if (client.isDetached()) {
+		} else if (client.isDetached()) {
 			activeChar.sendMessage("Client is detached.");
-		}
-		else {
+		} else {
 			ip = client.getConnection().getInetAddress().getHostAddress();
 		}
 		
@@ -860,8 +770,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 		L2PcInstance player = null;
 		if (target instanceof L2PcInstance) {
 			player = (L2PcInstance) target;
-		}
-		else {
+		} else {
 			return;
 		}
 		
@@ -879,8 +788,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 			if (general().debug()) {
 				_log.fine("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player.getName() + " from (" + oldKarma + ") to (" + newKarma + ").");
 			}
-		}
-		else {
+		} else {
 			// tell admin of mistake
 			activeChar.sendMessage("You must enter a value for karma greater than or equal to 0.");
 			if (general().debug()) {
@@ -893,8 +801,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 		L2Object target = null;
 		if (targetName != null) {
 			target = L2World.getInstance().getPlayer(targetName);
-		}
-		else {
+		} else {
 			target = activeChar.getTarget();
 		}
 		
@@ -927,15 +834,12 @@ public class AdminEditChar implements IAdminCommandHandler {
 		final String replyMSG2;
 		if (CharactersFound == 0) {
 			replyMSG2 = "s. Please try again.";
-		}
-		else if (CharactersFound > 20) {
+		} else if (CharactersFound > 20) {
 			adminReply.replace("%number%", " more than 20");
 			replyMSG2 = "s.<br>Please refine your search to see all of the results.";
-		}
-		else if (CharactersFound == 1) {
+		} else if (CharactersFound == 1) {
 			replyMSG2 = ".";
-		}
-		else {
+		} else {
 			replyMSG2 = "s.";
 		}
 		
@@ -949,8 +853,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 		
 		if (IpAdress.equals("disconnected")) {
 			findDisconnected = true;
-		}
-		else {
+		} else {
 			if (!IpAdress.matches("^(?:(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2(?:[0-4][0-9]|5[0-5]))\\.){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2(?:[0-4][0-9]|5[0-5]))$")) {
 				throw new IllegalArgumentException("Malformed IPv4 number");
 			}
@@ -972,8 +875,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 				if (!findDisconnected) {
 					continue;
 				}
-			}
-			else {
+			} else {
 				if (findDisconnected) {
 					continue;
 				}
@@ -997,15 +899,12 @@ public class AdminEditChar implements IAdminCommandHandler {
 		final String replyMSG2;
 		if (CharactersFound == 0) {
 			replyMSG2 = "s. Maybe they got d/c? :)";
-		}
-		else if (CharactersFound > 20) {
+		} else if (CharactersFound > 20) {
 			adminReply.replace("%number%", " more than " + String.valueOf(CharactersFound));
 			replyMSG2 = "s.<br>In order to avoid you a client crash I won't <br1>display results beyond the 20th character.";
-		}
-		else if (CharactersFound == 1) {
+		} else if (CharactersFound == 1) {
 			replyMSG2 = ".";
-		}
-		else {
+		} else {
 			replyMSG2 = "s.";
 		}
 		adminReply.replace("%ip%", IpAdress);
@@ -1054,8 +953,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 				Integer count = dualboxIPs.get(ip);
 				if (count == null) {
 					dualboxIPs.put(ip, multibox);
-				}
-				else {
+				} else {
 					dualboxIPs.put(ip, count + 1);
 				}
 			}
@@ -1098,8 +996,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 				Integer count = dualboxIPs.get(pack);
 				if (count == null) {
 					dualboxIPs.put(pack, multibox);
-				}
-				else {
+				} else {
 					dualboxIPs.put(pack, count + 1);
 				}
 			}
@@ -1160,8 +1057,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 				if (other._ip != null) {
 					return false;
 				}
-			}
-			else if (!_ip.equals(other._ip)) {
+			} else if (!_ip.equals(other._ip)) {
 				return false;
 			}
 			for (int i = 0; i < _tracert.length; i++) {
@@ -1197,15 +1093,13 @@ public class AdminEditChar implements IAdminCommandHandler {
 		if (target instanceof L2PetInstance) {
 			int objId = target.getActingPlayer().getObjectId();
 			html.replace("%inv%", " <a action=\"bypass admin_show_pet_inv " + objId + "\">view</a>");
-		}
-		else {
+		} else {
 			html.replace("%inv%", "none");
 		}
 		if (target instanceof L2PetInstance) {
 			html.replace("%food%", ((L2PetInstance) target).getCurrentFed() + "/" + ((L2PetInstance) target).getPetLevelData().getPetMaxFeed());
 			html.replace("%load%", ((L2PetInstance) target).getInventory().getTotalWeight() + "/" + ((L2PetInstance) target).getMaxLoad());
-		}
-		else {
+		} else {
 			html.replace("%food%", "N/A");
 			html.replace("%load%", "N/A");
 		}
@@ -1220,8 +1114,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 		for (L2PcInstance member : target.getParty().getMembers()) {
 			if (color) {
 				text.append("<tr><td><table width=270 border=0 bgcolor=131210 cellpadding=2><tr><td width=30 align=right>");
-			}
-			else {
+			} else {
 				text.append("<tr><td><table width=270 border=0 cellpadding=2><tr><td width=30 align=right>");
 			}
 			text.append(member.getLevel() + "</td><td width=130><a action=\"bypass -h admin_character_info " + member.getName() + "\">" + member.getName() + "</a>");

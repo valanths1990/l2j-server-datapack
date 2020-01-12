@@ -35,55 +35,39 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 /**
  * @author UnAfraid
  */
-public class PcBody implements ITargetTypeHandler
-{
+public class PcBody implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<>();
-		if ((target != null) && target.isDead())
-		{
+		if ((target != null) && target.isDead()) {
 			final L2PcInstance player;
-			if (activeChar.isPlayer())
-			{
+			if (activeChar.isPlayer()) {
 				player = activeChar.getActingPlayer();
-			}
-			else
-			{
+			} else {
 				player = null;
 			}
 			
 			final L2PcInstance targetPlayer;
-			if (target.isPlayer())
-			{
+			if (target.isPlayer()) {
 				targetPlayer = target.getActingPlayer();
-			}
-			else
-			{
+			} else {
 				targetPlayer = null;
 			}
 			
 			final L2PetInstance targetPet;
-			if (target.isPet())
-			{
+			if (target.isPet()) {
 				targetPet = (L2PetInstance) target;
-			}
-			else
-			{
+			} else {
 				targetPet = null;
 			}
 			
-			if ((player != null) && ((targetPlayer != null) || (targetPet != null)))
-			{
+			if ((player != null) && ((targetPlayer != null) || (targetPet != null))) {
 				boolean condGood = true;
 				
-				if (skill.hasEffectType(L2EffectType.RESURRECTION))
-				{
-					if (targetPlayer != null)
-					{
+				if (skill.hasEffectType(L2EffectType.RESURRECTION)) {
+					if (targetPlayer != null) {
 						// check target is not in a active siege zone
-						if (targetPlayer.isInsideZone(ZoneId.SIEGE) && !targetPlayer.isInSiege())
-						{
+						if (targetPlayer.isInsideZone(ZoneId.SIEGE) && !targetPlayer.isInSiege()) {
 							condGood = false;
 							activeChar.sendPacket(SystemMessageId.CANNOT_BE_RESURRECTED_DURING_SIEGE);
 						}
@@ -96,15 +80,12 @@ public class PcBody implements ITargetTypeHandler
 					}
 				}
 				
-				if (condGood)
-				{
-					if (!onlyFirst)
-					{
+				if (condGood) {
+					if (!onlyFirst) {
 						targetList.add(target);
 						return targetList.toArray(new L2Object[targetList.size()]);
 					}
-					return new L2Character[]
-					{
+					return new L2Character[] {
 						target
 					};
 				}
@@ -115,8 +96,7 @@ public class PcBody implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.PC_BODY;
 	}
 }

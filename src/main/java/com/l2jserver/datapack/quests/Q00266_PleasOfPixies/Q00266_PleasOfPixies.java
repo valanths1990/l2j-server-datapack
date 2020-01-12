@@ -36,16 +36,14 @@ import com.l2jserver.gameserver.model.quest.State;
  * Pleas of Pixies (266)
  * @author xban1x
  */
-public final class Q00266_PleasOfPixies extends Quest
-{
+public final class Q00266_PleasOfPixies extends Quest {
 	// NPC
 	private static final int PIXY_MURIKA = 31852;
 	// Items
 	private static final int PREDATORS_FANG = 1334;
 	// Monsters
 	private static final Map<Integer, List<ItemHolder>> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(20537, Arrays.asList(new ItemHolder(10, 2))); // Elder Red Keltir
 		MONSTERS.put(20525, Arrays.asList(new ItemHolder(5, 2), new ItemHolder(10, 3))); // Gray Wolf
 		MONSTERS.put(20534, Arrays.asList(new ItemHolder(6, 1))); // Red Keltir
@@ -53,8 +51,7 @@ public final class Q00266_PleasOfPixies extends Quest
 	}
 	// Rewards
 	private static final Map<Integer, List<ItemHolder>> REWARDS = new HashMap<>();
-	static
-	{
+	static {
 		REWARDS.put(0, Arrays.asList(new ItemHolder(1337, 1), new ItemHolder(3032, 1))); // Emerald, Recipe: Spiritshot D
 		REWARDS.put(1, Arrays.asList(new ItemHolder(2176, 1), new ItemHolder(1338, 1))); // Recipe: Leather Boots, Blue Onyx
 		REWARDS.put(2, Arrays.asList(new ItemHolder(1339, 1), new ItemHolder(1061, 1))); // Onyx, Greater Healing Potion
@@ -63,8 +60,7 @@ public final class Q00266_PleasOfPixies extends Quest
 	// Misc
 	private static final int MIN_LVL = 3;
 	
-	public Q00266_PleasOfPixies()
-	{
+	public Q00266_PleasOfPixies() {
 		super(266, Q00266_PleasOfPixies.class.getSimpleName(), "Pleas of Pixies");
 		addStartNpc(PIXY_MURIKA);
 		addTalkId(PIXY_MURIKA);
@@ -73,11 +69,9 @@ public final class Q00266_PleasOfPixies extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && event.equals("31852-04.htm"))
-		{
+		if ((st != null) && event.equals("31852-04.htm")) {
 			st.startQuest();
 			return event;
 		}
@@ -85,18 +79,13 @@ public final class Q00266_PleasOfPixies extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(1))
-		{
+		if ((st != null) && st.isCond(1)) {
 			final int chance = getRandom(10);
-			for (ItemHolder mob : MONSTERS.get(npc.getId()))
-			{
-				if (chance < mob.getId())
-				{
-					if (st.giveItemRandomly(npc, PREDATORS_FANG, mob.getCount(), 100, 1.0, true))
-					{
+			for (ItemHolder mob : MONSTERS.get(npc.getId())) {
+				if (chance < mob.getId()) {
+					if (st.giveItemRandomly(npc, PREDATORS_FANG, mob.getCount(), 100, 1.0, true)) {
 						st.setCond(2);
 					}
 					break;
@@ -107,62 +96,41 @@ public final class Q00266_PleasOfPixies extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
-				if (player.getRace() != Race.ELF)
-				{
+		switch (st.getState()) {
+			case State.CREATED: {
+				if (player.getRace() != Race.ELF) {
 					htmltext = "31852-01.htm";
-				}
-				else if (player.getLevel() < MIN_LVL)
-				{
+				} else if (player.getLevel() < MIN_LVL) {
 					htmltext = "31852-02.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "31852-03.htm";
 				}
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
 						htmltext = "31852-05.html";
 						break;
 					}
-					case 2:
-					{
-						if (st.getQuestItemsCount(PREDATORS_FANG) >= 100)
-						{
+					case 2: {
+						if (st.getQuestItemsCount(PREDATORS_FANG) >= 100) {
 							final int chance = getRandom(100);
 							int reward;
-							if (chance < 2)
-							{
+							if (chance < 2) {
 								reward = 0;
 								st.playSound(Sound.ITEMSOUND_QUEST_JACKPOT);
-							}
-							else if (chance < 20)
-							{
+							} else if (chance < 20) {
 								reward = 1;
-							}
-							else if (chance < 45)
-							{
+							} else if (chance < 45) {
 								reward = 2;
-							}
-							else
-							{
+							} else {
 								reward = 3;
 							}
-							for (ItemHolder item : REWARDS.get(reward))
-							{
+							for (ItemHolder item : REWARDS.get(reward)) {
 								st.rewardItems(item);
 							}
 							st.exitQuest(true, true);

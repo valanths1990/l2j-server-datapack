@@ -39,8 +39,7 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Anomic Foundry.
  * @author GKR
  */
-public final class AnomicFoundry extends AbstractNpcAI
-{
+public final class AnomicFoundry extends AbstractNpcAI {
 	// NPCs
 	private static int LABORER = 22396;
 	private static int FOREMAN = 22397;
@@ -64,8 +63,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	private final int respawnMin = 20000;
 	private final int respawnMax = 300000;
 	
-	private final int[] _spawned =
-	{
+	private final int[] _spawned = {
 		0,
 		0,
 		0,
@@ -73,8 +71,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 		0
 	};
 	
-	public AnomicFoundry()
-	{
+	public AnomicFoundry() {
 		super(AnomicFoundry.class.getSimpleName(), "hellbound/AI/Zones");
 		addAggroRangeEnterId(LABORER);
 		addAttackId(LABORER);
@@ -85,47 +82,33 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equalsIgnoreCase("make_spawn_1"))
-		{
-			if (HellboundEngine.getInstance().getLevel() >= 10)
-			{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.equalsIgnoreCase("make_spawn_1")) {
+			if (HellboundEngine.getInstance().getLevel() >= 10) {
 				int idx = getRandom(3);
-				if (_spawned[idx] < SPAWNS[idx][5])
-				{
+				if (_spawned[idx] < SPAWNS[idx][5]) {
 					addSpawn(SPAWNS[idx][0], SPAWNS[idx][1], SPAWNS[idx][2], SPAWNS[idx][3], SPAWNS[idx][4], false, 0, false);
 					respawnTime += 10000;
 				}
 				startQuestTimer("make_spawn_1", respawnTime, null, null);
 			}
-		}
-		else if (event.equalsIgnoreCase("make_spawn_2"))
-		{
-			if (_spawned[4] < SPAWNS[4][5])
-			{
+		} else if (event.equalsIgnoreCase("make_spawn_2")) {
+			if (_spawned[4] < SPAWNS[4][5]) {
 				addSpawn(SPAWNS[4][0], SPAWNS[4][1], SPAWNS[4][2], SPAWNS[4][3], SPAWNS[4][4], false, 0, false);
 			}
-		}
-		else if (event.equalsIgnoreCase("return_laborer"))
-		{
-			if ((npc != null) && !npc.isDead())
-			{
+		} else if (event.equalsIgnoreCase("return_laborer")) {
+			if ((npc != null) && !npc.isDead()) {
 				((L2Attackable) npc).returnHome();
 			}
-		}
-		else if (event.equalsIgnoreCase("reset_respawn_time"))
-		{
+		} else if (event.equalsIgnoreCase("reset_respawn_time")) {
 			respawnTime = 60000;
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
-		if (getRandom(10000) < 2000)
-		{
+	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon) {
+		if (getRandom(10000) < 2000) {
 			requestHelp(npc, player, 500, FOREMAN);
 			requestHelp(npc, player, 500, LESSER_EVIL);
 			requestHelp(npc, player, 500, GREATER_EVIL);
@@ -135,34 +118,27 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill) {
 		int atkIndex = _atkIndex.containsKey(npc.getObjectId()) ? _atkIndex.get(npc.getObjectId()) : 0;
-		if (atkIndex == 0)
-		{
+		if (atkIndex == 0) {
 			broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.ENEMY_INVASION_HURRY_UP);
 			cancelQuestTimer("return_laborer", npc, null);
 			startQuestTimer("return_laborer", 60000, npc, null);
 			
-			if (respawnTime > respawnMin)
-			{
+			if (respawnTime > respawnMin) {
 				respawnTime -= 5000;
-			}
-			else if ((respawnTime <= respawnMin) && (getQuestTimer("reset_respawn_time", null, null) == null))
-			{
+			} else if ((respawnTime <= respawnMin) && (getQuestTimer("reset_respawn_time", null, null) == null)) {
 				startQuestTimer("reset_respawn_time", 600000, null, null);
 			}
 		}
 		
-		if (getRandom(10000) < 2000)
-		{
+		if (getRandom(10000) < 2000) {
 			atkIndex++;
 			_atkIndex.put(npc.getObjectId(), atkIndex);
 			requestHelp(npc, attacker, 1000 * atkIndex, FOREMAN);
 			requestHelp(npc, attacker, 1000 * atkIndex, LESSER_EVIL);
 			requestHelp(npc, attacker, 1000 * atkIndex, GREATER_EVIL);
-			if (getRandom(10) < 1)
-			{
+			if (getRandom(10) < 1) {
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location((npc.getX() + getRandom(-800, 800)), (npc.getY() + getRandom(-800, 800)), npc.getZ(), npc.getHeading()));
 			}
 		}
@@ -170,24 +146,16 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (getSpawnGroup(npc) >= 0)
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (getSpawnGroup(npc) >= 0) {
 			_spawned[getSpawnGroup(npc)]--;
 			SpawnTable.getInstance().deleteSpawn(npc.getSpawn(), false);
-		}
-		else if (npc.getId() == LABORER)
-		{
-			if (getRandom(10000) < 8000)
-			{
+		} else if (npc.getId() == LABORER) {
+			if (getRandom(10000) < 8000) {
 				broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.PROCESS_SHOULDNT_BE_DELAYED_BECAUSE_OF_ME);
-				if (respawnTime < respawnMax)
-				{
+				if (respawnTime < respawnMax) {
 					respawnTime += 10000;
-				}
-				else if ((respawnTime >= respawnMax) && (getQuestTimer("reset_respawn_time", null, null) == null))
-				{
+				} else if ((respawnTime >= respawnMax) && (getQuestTimer("reset_respawn_time", null, null) == null)) {
 					startQuestTimer("reset_respawn_time", 600000, null, null);
 				}
 			}
@@ -198,36 +166,28 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		SpawnTable.getInstance().addNewSpawn(npc.getSpawn(), false);
-		if (getSpawnGroup(npc) >= 0)
-		{
+		if (getSpawnGroup(npc) >= 0) {
 			_spawned[getSpawnGroup(npc)]++;
 		}
 		
-		if (npc.getId() == LABORER)
-		{
+		if (npc.getId() == LABORER) {
 			npc.setIsNoRndWalk(true);
 		}
 		return super.onSpawn(npc);
 	}
 	
 	@Override
-	protected void onTeleport(L2Npc npc)
-	{
-		if ((getSpawnGroup(npc) >= 0) && (getSpawnGroup(npc) <= 2))
-		{
+	protected void onTeleport(L2Npc npc) {
+		if ((getSpawnGroup(npc) >= 0) && (getSpawnGroup(npc) <= 2)) {
 			_spawned[getSpawnGroup(npc)]--;
 			SpawnTable.getInstance().deleteSpawn(npc.getSpawn(), false);
 			npc.scheduleDespawn(100);
-			if (_spawned[3] < SPAWNS[3][5])
-			{
+			if (_spawned[3] < SPAWNS[3][5]) {
 				addSpawn(SPAWNS[3][0], SPAWNS[3][1], SPAWNS[3][2], SPAWNS[3][3], SPAWNS[3][4], false, 0, false);
 			}
-		}
-		else if (getSpawnGroup(npc) == 3)
-		{
+		} else if (getSpawnGroup(npc) == 3) {
 			startQuestTimer("make_spawn_2", respawnTime * 2, null, null);
 			_spawned[3]--;
 			SpawnTable.getInstance().deleteSpawn(npc.getSpawn(), false);
@@ -235,16 +195,13 @@ public final class AnomicFoundry extends AbstractNpcAI
 		}
 	}
 	
-	private static int getSpawnGroup(L2Npc npc)
-	{
+	private static int getSpawnGroup(L2Npc npc) {
 		final int coordX = npc.getSpawn().getX();
 		final int coordY = npc.getSpawn().getY();
 		final int npcId = npc.getId();
 		
-		for (int i = 0; i < 5; i++)
-		{
-			if ((SPAWNS[i][0] == npcId) && (SPAWNS[i][1] == coordX) && (SPAWNS[i][2] == coordY))
-			{
+		for (int i = 0; i < 5; i++) {
+			if ((SPAWNS[i][0] == npcId) && (SPAWNS[i][1] == coordX) && (SPAWNS[i][2] == coordY)) {
 				return i;
 			}
 		}
@@ -252,13 +209,10 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	// Zoey76: TODO: This should be done with onFactionCall(..)
-	private static void requestHelp(L2Npc requester, L2PcInstance agressor, int range, int helperId)
-	{
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(helperId))
-		{
+	private static void requestHelp(L2Npc requester, L2PcInstance agressor, int range, int helperId) {
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(helperId)) {
 			final L2MonsterInstance monster = (L2MonsterInstance) spawn.getLastSpawn();
-			if ((monster != null) && (agressor != null) && !monster.isDead() && monster.isInsideRadius(requester, range, true, false) && !agressor.isDead())
-			{
+			if ((monster != null) && (agressor != null) && !monster.isDead() && monster.isInsideRadius(requester, range, true, false) && !agressor.isDead()) {
 				monster.addDamageHate(agressor, 0, 1000);
 			}
 		}

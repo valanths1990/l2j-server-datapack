@@ -47,8 +47,7 @@ import com.l2jserver.gameserver.util.Util;
  * Transformation skill learning and transformation scroll sell.
  * @author Zoey76
  */
-public class AvantGarde extends AbstractNpcAI
-{
+public class AvantGarde extends AbstractNpcAI {
 	// NPC
 	private static final int AVANT_GARDE = 32323;
 	// Items
@@ -59,16 +58,14 @@ public class AvantGarde extends AbstractNpcAI
 	};
 	// @formatter:on
 	// Misc
-	private static final String[] QUEST_VAR_NAMES =
-	{
+	private static final String[] QUEST_VAR_NAMES = {
 		"EmergentAbility65-",
 		"EmergentAbility70-",
 		"ClassAbility75-",
 		"ClassAbility80-"
 	};
 	
-	public AvantGarde()
-	{
+	public AvantGarde() {
 		super(AvantGarde.class.getSimpleName(), "ai/npc");
 		addStartNpc(AVANT_GARDE);
 		addTalkId(AVANT_GARDE);
@@ -77,17 +74,13 @@ public class AvantGarde extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAcquireSkill(L2Npc npc, L2PcInstance player, Skill skill, AcquireSkillType type)
-	{
-		switch (type)
-		{
-			case TRANSFORM:
-			{
+	public String onAcquireSkill(L2Npc npc, L2PcInstance player, Skill skill, AcquireSkillType type) {
+		switch (type) {
+			case TRANSFORM: {
 				showTransformSkillList(player);
 				break;
 			}
-			case SUBCLASS:
-			{
+			case SUBCLASS: {
 				showSubClassSkillList(player);
 				break;
 			}
@@ -96,11 +89,9 @@ public class AvantGarde extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "32323-02.html":
 			case "32323-02a.html":
 			case "32323-02b.html":
@@ -109,158 +100,106 @@ public class AvantGarde extends AbstractNpcAI
 			case "32323-05a.html":
 			case "32323-05no.html":
 			case "32323-06.html":
-			case "32323-06no.html":
-			{
+			case "32323-06no.html": {
 				htmltext = event;
 				break;
 			}
-			case "LearnTransformationSkill":
-			{
-				if (RequestAcquireSkill.canTransform(player))
-				{
+			case "LearnTransformationSkill": {
+				if (RequestAcquireSkill.canTransform(player)) {
 					showTransformSkillList(player);
-				}
-				else
-				{
+				} else {
 					htmltext = "32323-03.html";
 				}
 				break;
 			}
-			case "BuyTransformationItems":
-			{
-				if (RequestAcquireSkill.canTransform(player))
-				{
+			case "BuyTransformationItems": {
+				if (RequestAcquireSkill.canTransform(player)) {
 					MultisellData.getInstance().separateAndSend(32323001, player, npc, false);
-				}
-				else
-				{
+				} else {
 					htmltext = "32323-04.html";
 				}
 				break;
 			}
-			case "LearnSubClassSkill":
-			{
-				if (!RequestAcquireSkill.canTransform(player))
-				{
+			case "LearnSubClassSkill": {
+				if (!RequestAcquireSkill.canTransform(player)) {
 					htmltext = "32323-04.html";
 				}
-				if (player.isSubClassActive())
-				{
+				if (player.isSubClassActive()) {
 					htmltext = "32323-08.html";
-				}
-				else
-				{
+				} else {
 					boolean hasItems = false;
-					for (int id : ITEMS)
-					{
-						if (player.getInventory().getItemByItemId(id) != null)
-						{
+					for (int id : ITEMS) {
+						if (player.getInventory().getItemByItemId(id) != null) {
 							hasItems = true;
 							break;
 						}
 					}
-					if (hasItems)
-					{
+					if (hasItems) {
 						showSubClassSkillList(player);
-					}
-					else
-					{
+					} else {
 						htmltext = "32323-08.html";
 					}
 				}
 				break;
 			}
-			case "CancelCertification":
-			{
-				if (player.getSubClasses().size() == 0)
-				{
+			case "CancelCertification": {
+				if (player.getSubClasses().size() == 0) {
 					htmltext = "32323-07.html";
-				}
-				else if (player.isSubClassActive())
-				{
+				} else if (player.isSubClassActive()) {
 					htmltext = "32323-08.html";
-				}
-				else if (player.getAdena() < character().getFeeDeleteSubClassSkills())
-				{
+				} else if (player.getAdena() < character().getFeeDeleteSubClassSkills()) {
 					htmltext = "32323-08no.html";
-				}
-				else
-				{
+				} else {
 					QuestState st = player.getQuestState(SubClassSkills.class.getSimpleName());
-					if (st == null)
-					{
+					if (st == null) {
 						st = QuestManager.getInstance().getQuest(SubClassSkills.class.getSimpleName()).newQuestState(player);
 					}
 					
 					int activeCertifications = 0;
-					for (String varName : QUEST_VAR_NAMES)
-					{
-						for (int i = 1; i <= character().getMaxSubclass(); i++)
-						{
+					for (String varName : QUEST_VAR_NAMES) {
+						for (int i = 1; i <= character().getMaxSubclass(); i++) {
 							String qvar = st.getGlobalQuestVar(varName + i);
-							if (!qvar.isEmpty() && (qvar.endsWith(";") || !qvar.equals("0")))
-							{
+							if (!qvar.isEmpty() && (qvar.endsWith(";") || !qvar.equals("0"))) {
 								activeCertifications++;
 							}
 						}
 					}
-					if (activeCertifications == 0)
-					{
+					if (activeCertifications == 0) {
 						htmltext = "32323-10no.html";
-					}
-					else
-					{
-						for (String varName : QUEST_VAR_NAMES)
-						{
-							for (int i = 1; i <= character().getMaxSubclass(); i++)
-							{
+					} else {
+						for (String varName : QUEST_VAR_NAMES) {
+							for (int i = 1; i <= character().getMaxSubclass(); i++) {
 								final String qvarName = varName + i;
 								final String qvar = st.getGlobalQuestVar(qvarName);
-								if (qvar.endsWith(";"))
-								{
+								if (qvar.endsWith(";")) {
 									final String skillIdVar = qvar.replace(";", "");
-									if (Util.isDigit(skillIdVar))
-									{
+									if (Util.isDigit(skillIdVar)) {
 										int skillId = Integer.parseInt(skillIdVar);
 										final Skill sk = SkillData.getInstance().getSkill(skillId, 1);
-										if (sk != null)
-										{
+										if (sk != null) {
 											player.removeSkill(sk);
 											st.saveGlobalQuestVar(qvarName, "0");
 										}
-									}
-									else
-									{
+									} else {
 										_log.warning("Invalid Sub-Class Skill Id: " + skillIdVar + " for player " + player.getName() + "!");
 									}
-								}
-								else if (!qvar.isEmpty() && !qvar.equals("0"))
-								{
-									if (Util.isDigit(qvar))
-									{
+								} else if (!qvar.isEmpty() && !qvar.equals("0")) {
+									if (Util.isDigit(qvar)) {
 										final int itemObjId = Integer.parseInt(qvar);
 										L2ItemInstance itemInstance = player.getInventory().getItemByObjectId(itemObjId);
-										if (itemInstance != null)
-										{
+										if (itemInstance != null) {
 											player.destroyItem("CancelCertification", itemObjId, 1, player, false);
-										}
-										else
-										{
+										} else {
 											itemInstance = player.getWarehouse().getItemByObjectId(itemObjId);
-											if (itemInstance != null)
-											{
+											if (itemInstance != null) {
 												_log.warning("Somehow " + player.getName() + " put a certification book into warehouse!");
 												player.getWarehouse().destroyItem("CancelCertification", itemInstance, 1, player, false);
-											}
-											else
-											{
+											} else {
 												_log.warning("Somehow " + player.getName() + " deleted a certification book!");
 											}
 										}
 										st.saveGlobalQuestVar(qvarName, "0");
-									}
-									else
-									{
+									} else {
 										_log.warning("Invalid item object Id: " + qvar + " for player " + player.getName() + "!");
 									}
 								}
@@ -273,11 +212,9 @@ public class AvantGarde extends AbstractNpcAI
 					}
 					
 					// Let's consume all certification books, even those not present in database.
-					for (int itemId : ITEMS)
-					{
+					for (int itemId : ITEMS) {
 						L2ItemInstance item = player.getInventory().getItemByItemId(itemId);
-						if (item != null)
-						{
+						if (item != null) {
 							_log.warning(getClass().getName() + ": player " + player + " had 'extra' certification skill books while cancelling sub-class certifications!");
 							player.destroyItem("CancelCertificationExtraBooks", item, npc, false);
 						}
@@ -290,14 +227,12 @@ public class AvantGarde extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "32323-01.html";
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		return "32323-01.html";
 	}
 	
@@ -305,26 +240,20 @@ public class AvantGarde extends AbstractNpcAI
 	 * Display the Sub-Class Skill list to the player.
 	 * @param player the player
 	 */
-	public static void showSubClassSkillList(L2PcInstance player)
-	{
+	public static void showSubClassSkillList(L2PcInstance player) {
 		final List<L2SkillLearn> subClassSkills = SkillTreesData.getInstance().getAvailableSubClassSkills(player);
 		final AcquireSkillList asl = new AcquireSkillList(AcquireSkillType.SUBCLASS);
 		int count = 0;
 		
-		for (L2SkillLearn s : subClassSkills)
-		{
-			if (SkillData.getInstance().getSkill(s.getSkillId(), s.getSkillLevel()) != null)
-			{
+		for (L2SkillLearn s : subClassSkills) {
+			if (SkillData.getInstance().getSkill(s.getSkillId(), s.getSkillLevel()) != null) {
 				count++;
 				asl.addSkill(s.getSkillId(), s.getSkillLevel(), s.getSkillLevel(), 0, 0);
 			}
 		}
-		if (count > 0)
-		{
+		if (count > 0) {
 			player.sendPacket(asl);
-		}
-		else
-		{
+		} else {
 			player.sendPacket(SystemMessageId.NO_MORE_SKILLS_TO_LEARN);
 		}
 	}
@@ -333,44 +262,34 @@ public class AvantGarde extends AbstractNpcAI
 	 * This displays Transformation Skill List to the player.
 	 * @param player the active character.
 	 */
-	public static void showTransformSkillList(L2PcInstance player)
-	{
+	public static void showTransformSkillList(L2PcInstance player) {
 		final List<L2SkillLearn> skills = SkillTreesData.getInstance().getAvailableTransformSkills(player);
 		final AcquireSkillList asl = new AcquireSkillList(AcquireSkillType.TRANSFORM);
 		int counts = 0;
 		
-		for (L2SkillLearn s : skills)
-		{
-			if (SkillData.getInstance().getSkill(s.getSkillId(), s.getSkillLevel()) != null)
-			{
+		for (L2SkillLearn s : skills) {
+			if (SkillData.getInstance().getSkill(s.getSkillId(), s.getSkillLevel()) != null) {
 				counts++;
 				asl.addSkill(s.getSkillId(), s.getSkillLevel(), s.getSkillLevel(), s.getLevelUpSp(), 0);
 			}
 		}
 		
-		if (counts == 0)
-		{
+		if (counts == 0) {
 			final int minlevel = SkillTreesData.getInstance().getMinLevelForNewSkill(player, SkillTreesData.getInstance().getTransformSkillTree());
-			if (minlevel > 0)
-			{
+			if (minlevel > 0) {
 				// No more skills to learn, come back when you level.
 				final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN_S1);
 				sm.addInt(minlevel);
 				player.sendPacket(sm);
-			}
-			else
-			{
+			} else {
 				player.sendPacket(SystemMessageId.NO_MORE_SKILLS_TO_LEARN);
 			}
-		}
-		else
-		{
+		} else {
 			player.sendPacket(asl);
 		}
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new AvantGarde();
 	}
 }

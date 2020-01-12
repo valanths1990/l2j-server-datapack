@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.util.Util;
  * Original Jython script by disKret.
  * @author nonom
  */
-public class Q00246_PossessorOfAPreciousSoul3 extends Quest
-{
+public class Q00246_PossessorOfAPreciousSoul3 extends Quest {
 	// NPCs
 	private static final int LADD = 30721;
 	private static final int CARADINE = 31740;
@@ -41,8 +40,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 	private static final int PILGRIM_OF_SPLENDOR = 21541;
 	private static final int JUDGE_OF_SPLENDOR = 21544;
 	private static final int BARAKIEL = 25325;
-	private static final int[] MOBS =
-	{
+	private static final int[] MOBS = {
 		21535, // Signet of Splendor
 		21536, // Crown of Splendor
 		21537, // Fang of Splendor
@@ -62,8 +60,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 	private static final int CHANCE_FOR_DROP = 30;
 	private static final int CHANCE_FOR_DROP_FRAGMENTS = 60;
 	
-	public Q00246_PossessorOfAPreciousSoul3()
-	{
+	public Q00246_PossessorOfAPreciousSoul3() {
 		super(246, Q00246_PossessorOfAPreciousSoul3.class.getSimpleName(), "Possessor Of A Precious Soul 3");
 		addStartNpc(CARADINE);
 		addTalkId(LADD, CARADINE, OSSIAN);
@@ -73,59 +70,48 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
-		if (!player.isSubClassActive())
-		{
+		if (!player.isSubClassActive()) {
 			return "no_sub.html";
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "31740-4.html":
-				if (st.isCreated())
-				{
+				if (st.isCreated()) {
 					st.takeItems(CARADINE_LETTER, -1);
 					st.startQuest();
 				}
 				break;
 			case "31741-2.html":
-				if (st.isStarted() && st.isCond(1))
-				{
+				if (st.isStarted() && st.isCond(1)) {
 					st.set("awaitsWaterbinder", "1");
 					st.set("awaitsEvergreen", "1");
 					st.setCond(2, true);
 				}
 				break;
 			case "31741-5.html":
-				if (st.isCond(3) && st.hasQuestItems(WATERBINDER) && st.hasQuestItems(EVERGREEN))
-				{
+				if (st.isCond(3) && st.hasQuestItems(WATERBINDER) && st.hasQuestItems(EVERGREEN)) {
 					st.takeItems(WATERBINDER, 1);
 					st.takeItems(EVERGREEN, 1);
 					st.setCond(4, true);
 				}
 				break;
 			case "31741-9.html":
-				if (st.isCond(5) && (st.hasQuestItems(RAIN_SONG) || (st.getQuestItemsCount(FRAGMENTS) >= 100)))
-				{
+				if (st.isCond(5) && (st.hasQuestItems(RAIN_SONG) || (st.getQuestItemsCount(FRAGMENTS) >= 100))) {
 					st.takeItems(RAIN_SONG, -1);
 					st.takeItems(FRAGMENTS, -1);
 					st.giveItems(RELIC_BOX, 1);
 					st.setCond(6, true);
-				}
-				else
-				{
+				} else {
 					return "31741-8.html";
 				}
 				break;
 			case "30721-2.html":
-				if (st.isCond(6) && st.hasQuestItems(RELIC_BOX))
-				{
+				if (st.isCond(6) && st.hasQuestItems(RELIC_BOX)) {
 					st.takeItems(RELIC_BOX, -1);
 					st.giveItems(CARADINE_LETTER_LAST, 1);
 					st.addExpAndSp(719843, 0);
@@ -137,31 +123,23 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember;
 		final QuestState st;
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case PILGRIM_OF_SPLENDOR:
 				partyMember = getRandomPartyMember(player, "awaitsWaterbinder", "1");
-				if (partyMember != null)
-				{
+				if (partyMember != null) {
 					st = getQuestState(partyMember, false);
 					final int chance = getRandom(100);
-					if (st.isCond(2) && !st.hasQuestItems(WATERBINDER))
-					{
-						if (chance < CHANCE_FOR_DROP)
-						{
+					if (st.isCond(2) && !st.hasQuestItems(WATERBINDER)) {
+						if (chance < CHANCE_FOR_DROP) {
 							st.giveItems(WATERBINDER, 1);
 							st.unset("awaitsWaterbinder");
-							if (st.hasQuestItems(EVERGREEN))
-							{
+							if (st.hasQuestItems(EVERGREEN)) {
 								st.setCond(3, true);
 								
-							}
-							else
-							{
+							} else {
 								st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
@@ -170,22 +148,16 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				break;
 			case JUDGE_OF_SPLENDOR:
 				partyMember = getRandomPartyMember(player, "awaitsEvergreen", "1");
-				if (partyMember != null)
-				{
+				if (partyMember != null) {
 					st = getQuestState(partyMember, false);
 					final long chance = getRandom(100);
-					if (st.isCond(2) && !st.hasQuestItems(EVERGREEN))
-					{
-						if (chance < CHANCE_FOR_DROP)
-						{
+					if (st.isCond(2) && !st.hasQuestItems(EVERGREEN)) {
+						if (chance < CHANCE_FOR_DROP) {
 							st.giveItems(EVERGREEN, 1);
 							st.unset("awaitsEvergreen");
-							if (st.hasQuestItems(WATERBINDER))
-							{
+							if (st.hasQuestItems(WATERBINDER)) {
 								st.setCond(3, true);
-							}
-							else
-							{
+							} else {
 								st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
@@ -194,28 +166,20 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				break;
 			case BARAKIEL:
 				QuestState pst;
-				if ((player.getParty() != null) && !player.getParty().getMembers().isEmpty())
-				{
-					for (L2PcInstance member : player.getParty().getMembers())
-					{
+				if ((player.getParty() != null) && !player.getParty().getMembers().isEmpty()) {
+					for (L2PcInstance member : player.getParty().getMembers()) {
 						pst = getQuestState(member, false);
-						if (pst != null)
-						{
-							if (pst.isCond(4) && !pst.hasQuestItems(RAIN_SONG))
-							{
+						if (pst != null) {
+							if (pst.isCond(4) && !pst.hasQuestItems(RAIN_SONG)) {
 								pst.giveItems(RAIN_SONG, 1);
 								pst.setCond(5, true);
 							}
 						}
 					}
-				}
-				else
-				{
+				} else {
 					pst = getQuestState(player, false);
-					if (pst != null)
-					{
-						if (pst.isCond(4) && !pst.hasQuestItems(RAIN_SONG))
-						{
+					if (pst != null) {
+						if (pst.isCond(4) && !pst.hasQuestItems(RAIN_SONG)) {
 							pst.giveItems(RAIN_SONG, 1);
 							pst.setCond(5, true);
 						}
@@ -224,22 +188,16 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				break;
 			default:
 				st = getQuestState(player, false);
-				if ((st == null))
-				{
+				if ((st == null)) {
 					return super.onKill(npc, player, isSummon);
 				}
 				
-				if (Util.contains(MOBS, npc.getId()) && (st.getQuestItemsCount(FRAGMENTS) < 100) && (st.isCond(4)))
-				{
-					if (getRandom(100) < CHANCE_FOR_DROP_FRAGMENTS)
-					{
+				if (Util.contains(MOBS, npc.getId()) && (st.getQuestItemsCount(FRAGMENTS) < 100) && (st.isCond(4))) {
+					if (getRandom(100) < CHANCE_FOR_DROP_FRAGMENTS) {
 						st.giveItems(FRAGMENTS, 1);
-						if (st.getQuestItemsCount(FRAGMENTS) < 100)
-						{
+						if (st.getQuestItemsCount(FRAGMENTS) < 100) {
 							st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-						}
-						else
-						{
+						} else {
 							st.setCond(5, true);
 						}
 					}
@@ -250,20 +208,16 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st.isStarted() && !player.isSubClassActive())
-		{
+		if (st.isStarted() && !player.isSubClassActive()) {
 			return "no_sub.html";
 		}
 		
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case CARADINE:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = ((player.getLevel() >= 65) && player.hasQuestCompleted(Q00242_PossessorOfAPreciousSoul2.class.getSimpleName())) ? "31740-1.htm" : "31740-2.html";
 						break;
@@ -273,11 +227,9 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				}
 				break;
 			case OSSIAN:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "31741-1.html";
 								break;
@@ -285,8 +237,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 								htmltext = "31741-4.html";
 								break;
 							case 3:
-								if (st.hasQuestItems(WATERBINDER) && st.hasQuestItems(EVERGREEN))
-								{
+								if (st.hasQuestItems(WATERBINDER) && st.hasQuestItems(EVERGREEN)) {
 									htmltext = "31741-3.html";
 								}
 								break;
@@ -294,18 +245,14 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 								htmltext = "31741-8.html";
 								break;
 							case 5:
-								if (st.hasQuestItems(RAIN_SONG) || (st.getQuestItemsCount(FRAGMENTS) >= 100))
-								{
+								if (st.hasQuestItems(RAIN_SONG) || (st.getQuestItemsCount(FRAGMENTS) >= 100)) {
 									htmltext = "31741-7.html";
-								}
-								else
-								{
+								} else {
 									htmltext = "31741-8.html";
 								}
 								break;
 							case 6:
-								if (st.getQuestItemsCount(RELIC_BOX) == 1)
-								{
+								if (st.getQuestItemsCount(RELIC_BOX) == 1) {
 									htmltext = "31741-11.html";
 								}
 								break;
@@ -313,11 +260,9 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				}
 				break;
 			case LADD:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.STARTED:
-						if (st.isCond(6))
-						{
+						if (st.isCond(6)) {
 							htmltext = "30721-1.html";
 						}
 						break;

@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * The One Who Ends Silence (270)
  * @author Zoey76
  */
-public class Q00270_TheOneWhoEndsSilence extends Quest
-{
+public class Q00270_TheOneWhoEndsSilence extends Quest {
 	// NPC
 	private static final int FAKE_GREYMORE = 32757;
 	// Monsters
@@ -51,8 +50,7 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
-	public Q00270_TheOneWhoEndsSilence()
-	{
+	public Q00270_TheOneWhoEndsSilence() {
 		super(270, Q00270_TheOneWhoEndsSilence.class.getSimpleName(), "The One Who Ends Silence");
 		addStartNpc(FAKE_GREYMORE);
 		addTalkId(FAKE_GREYMORE);
@@ -61,96 +59,67 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
 		final long ragsCount = st.getQuestItemsCount(TATTERED_MONK_CLOTHES);
-		switch (event)
-		{
-			case "32757-02.htm":
-			{
+		switch (event) {
+			case "32757-02.htm": {
 				final QuestState qs = player.getQuestState(Q10288_SecretMission.class.getSimpleName());
-				if ((player.getLevel() >= MIN_LEVEL) && (qs != null) && qs.isCompleted())
-				{
+				if ((player.getLevel() >= MIN_LEVEL) && (qs != null) && qs.isCompleted()) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32757-04.html":
-			{
+			case "32757-04.html": {
 				final QuestState qs = player.getQuestState(Q10288_SecretMission.class.getSimpleName());
-				if ((player.getLevel() >= MIN_LEVEL) && (qs != null) && qs.isCompleted())
-				{
+				if ((player.getLevel() >= MIN_LEVEL) && (qs != null) && qs.isCompleted()) {
 					st.startQuest();
 					htmltext = event;
 				}
 				break;
 			}
-			case "32757-08.html":
-			{
-				if (st.isCond(1))
-				{
-					if (ragsCount == 0)
-					{
+			case "32757-08.html": {
+				if (st.isCond(1)) {
+					if (ragsCount == 0) {
 						htmltext = "32757-06.html";
-					}
-					else if (ragsCount < 100)
-					{
+					} else if (ragsCount < 100) {
 						htmltext = "32757-07.html";
-					}
-					else
-					{
+					} else {
 						htmltext = event;
 					}
 				}
 				break;
 			}
-			case "rags100":
-			{
-				if (ragsCount >= 100)
-				{
-					if (getRandom(10) < 5)
-					{
-						if (getRandom(1000) < 438)
-						{
+			case "rags100": {
+				if (ragsCount >= 100) {
+					if (getRandom(10) < 5) {
+						if (getRandom(1000) < 438) {
 							st.giveItems(10373 + getRandom(9), 1);
-						}
-						else
-						{
+						} else {
 							st.giveItems(10397 + getRandom(9), 1);
 						}
-					}
-					else
-					{
+					} else {
 						rewardScroll(st, 1);
 					}
 					
 					st.takeItems(TATTERED_MONK_CLOTHES, 100);
 					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "32757-09.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32757-10.html";
 				}
 				break;
 			}
-			case "rags200":
-			{
-				if (ragsCount >= 200)
-				{
-					if (getRandom(1000) < 549)
-					{
+			case "rags200": {
+				if (ragsCount >= 200) {
+					if (getRandom(1000) < 549) {
 						st.giveItems(10373 + getRandom(9), 1);
-					}
-					else
-					{
+					} else {
 						st.giveItems(10397 + getRandom(9), 1);
 					}
 					rewardScroll(st, 2);
@@ -158,17 +127,13 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 					st.takeItems(TATTERED_MONK_CLOTHES, 200);
 					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "32757-09.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32757-10.html";
 				}
 				break;
 			}
-			case "rags300":
-			{
-				if (ragsCount >= 300)
-				{
+			case "rags300": {
+				if (ragsCount >= 300) {
 					st.giveItems(10373 + getRandom(9), 1);
 					st.giveItems(10397 + getRandom(9), 1);
 					rewardScroll(st, 3);
@@ -176,61 +141,44 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 					st.takeItems(TATTERED_MONK_CLOTHES, 300);
 					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "32757-09.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32757-10.html";
 				}
 				break;
 			}
-			case "rags400":
-			{
-				if (ragsCount >= 400)
-				{
+			case "rags400": {
+				if (ragsCount >= 400) {
 					st.giveItems(10373 + getRandom(9), 1);
 					st.giveItems(10397 + getRandom(9), 1);
 					rewardScroll(st, 3);
 					
-					if (getRandom(10) < 5)
-					{
-						if (getRandom(1000) < 438)
-						{
+					if (getRandom(10) < 5) {
+						if (getRandom(1000) < 438) {
 							st.giveItems(10373 + getRandom(9), 1);
-						}
-						else
-						{
+						} else {
 							st.giveItems(10397 + getRandom(9), 1);
 						}
-					}
-					else
-					{
+					} else {
 						rewardScroll(st, 1);
 					}
 					
 					st.takeItems(TATTERED_MONK_CLOTHES, 400);
 					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "32757-09.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32757-10.html";
 				}
 				break;
 			}
-			case "rags500":
-			{
-				if (ragsCount >= 500)
-				{
+			case "rags500": {
+				if (ragsCount >= 500) {
 					st.giveItems(10373 + getRandom(9), 1);
 					st.giveItems(10397 + getRandom(9), 1);
 					rewardScroll(st, 3);
 					
-					if (getRandom(1000) < 549)
-					{
+					if (getRandom(1000) < 549) {
 						st.giveItems(10373 + getRandom(9), 1);
-					}
-					else
-					{
+					} else {
 						st.giveItems(10397 + getRandom(9), 1);
 					}
 					
@@ -238,33 +186,24 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 					st.takeItems(TATTERED_MONK_CLOTHES, 500);
 					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "32757-09.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32757-10.html";
 				}
 				break;
 			}
-			case "exit1":
-			{
-				if (st.isCond(1))
-				{
-					if (ragsCount >= 1)
-					{
+			case "exit1": {
+				if (st.isCond(1)) {
+					if (ragsCount >= 1) {
 						htmltext = "32757-12.html";
-					}
-					else
-					{
+					} else {
 						st.exitQuest(true, true);
 						htmltext = "32757-13.html";
 					}
 				}
 				break;
 			}
-			case "exit2":
-			{
-				if (st.isCond(1))
-				{
+			case "exit2": {
+				if (st.isCond(1)) {
 					st.exitQuest(true, true);
 					htmltext = "32757-13.html";
 				}
@@ -275,57 +214,45 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		switch (npc.getId())
-		{
-			case SEEKER_SOLINA:
-			{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		switch (npc.getId()) {
+			case SEEKER_SOLINA: {
 				giveItem(getRandomPartyMember(killer, 1), npc, 57, false);
 				break;
 			}
-			case SAVIOR_SOLINA:
-			{
+			case SAVIOR_SOLINA: {
 				giveItem(getRandomPartyMember(killer, 1), npc, 55, false);
 				break;
 			}
-			case ASCETIC_SOLINA:
-			{
+			case ASCETIC_SOLINA: {
 				giveItem(getRandomPartyMember(killer, 1), npc, 59, false);
 				break;
 			}
-			case DIVINITY_JUDGE:
-			{
+			case DIVINITY_JUDGE: {
 				giveItem(getRandomPartyMember(killer, 1), npc, 698, false);
 				break;
 			}
-			case DIVINITY_MANAGER:
-			{
+			case DIVINITY_MANAGER: {
 				giveItem(getRandomPartyMember(killer, 1), npc, 735, false);
 				break;
 			}
-			case DIVINITY_SUPERVISOR:
-			{
+			case DIVINITY_SUPERVISOR: {
 				giveItem(getRandomPartyMember(killer, 1), npc, 903, false);
 				break;
 			}
-			case DIVINITY_WORSHIPPER:
-			{
+			case DIVINITY_WORSHIPPER: {
 				giveItem(getRandomPartyMember(killer, 1), npc, 811, false);
 				break;
 			}
-			case DIVINITY_PROTECTOR:
-			{
+			case DIVINITY_PROTECTOR: {
 				giveItem(getRandomPartyMember(killer, 1), npc, 884, true);
 				break;
 			}
-			case DIVINITY_FIGHTER:
-			{
+			case DIVINITY_FIGHTER: {
 				giveItem(getRandomPartyMember(killer, 1), npc, 893, true);
 				break;
 			}
-			case DIVINITY_MAGUS:
-			{
+			case DIVINITY_MAGUS: {
 				giveItem(getRandomPartyMember(killer, 1), npc, 953, true);
 				break;
 			}
@@ -334,18 +261,15 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q10288_SecretMission.class.getSimpleName())) ? "32757-01.htm" : "32757-03.html";
 				break;
 			case State.STARTED:
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					htmltext = "32757-05.html";
 				}
 				break;
@@ -358,66 +282,43 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 	 * @param qs the player's quest state.
 	 * @param type the type.
 	 */
-	private void rewardScroll(QuestState qs, int type)
-	{
+	private void rewardScroll(QuestState qs, int type) {
 		int chance;
 		int scrollId = 5593;
-		switch (type)
-		{
+		switch (type) {
 			case 1:
 				chance = getRandom(100);
-				if (chance < 1)
-				{
+				if (chance < 1) {
 					scrollId = 5593;
-				}
-				else if (chance < 28)
-				{
+				} else if (chance < 28) {
 					scrollId = 5594;
-				}
-				else if (chance < 61)
-				{
+				} else if (chance < 61) {
 					scrollId = 5595;
-				}
-				else
-				{
+				} else {
 					scrollId = 9898;
 				}
 				break;
 			case 2:
 				chance = getRandom(100);
-				if (chance < 20)
-				{
+				if (chance < 20) {
 					scrollId = 5593;
-				}
-				else if (chance < 40)
-				{
+				} else if (chance < 40) {
 					scrollId = 5594;
-				}
-				else if (chance < 70)
-				{
+				} else if (chance < 70) {
 					scrollId = 5595;
-				}
-				else
-				{
+				} else {
 					scrollId = 9898;
 				}
 				break;
 			case 3:
 				chance = getRandom(1000);
-				if (chance < 242)
-				{
+				if (chance < 242) {
 					scrollId = 5593;
-				}
-				else if (chance < 486)
-				{
+				} else if (chance < 486) {
 					scrollId = 5594;
-				}
-				else if (chance < 742)
-				{
+				} else if (chance < 742) {
 					scrollId = 5595;
-				}
-				else
-				{
+				} else {
 					scrollId = 9898;
 				}
 				break;
@@ -432,13 +333,10 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 	 * @param chance the reward chance
 	 * @param atLeastOne if {@code true} it will reward two items if the chance is meet and one if the chance is not meet, if {@code false} if the chance is not meet doesn't reward, otherwise reward one item
 	 */
-	private static void giveItem(L2PcInstance player, L2Npc npc, int chance, boolean atLeastOne)
-	{
-		if ((player != null) && Util.checkIfInRange(1500, npc, player, false))
-		{
+	private static void giveItem(L2PcInstance player, L2Npc npc, int chance, boolean atLeastOne) {
+		if ((player != null) && Util.checkIfInRange(1500, npc, player, false)) {
 			final int count = ((getRandom(1000) < chance) ? 1 : 0) + (atLeastOne ? 1 : 0);
-			if (count > 0)
-			{
+			if (count > 0) {
 				final QuestState qs = player.getQuestState(Q00270_TheOneWhoEndsSilence.class.getSimpleName());
 				qs.giveItems(TATTERED_MONK_CLOTHES, count);
 				qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);

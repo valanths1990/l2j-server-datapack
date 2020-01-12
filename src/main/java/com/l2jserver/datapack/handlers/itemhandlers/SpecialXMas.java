@@ -27,13 +27,10 @@ import com.l2jserver.gameserver.network.serverpackets.ShowXMasSeal;
 /**
  * @author devScarlet, mrTJO
  */
-public class SpecialXMas implements IItemHandler
-{
+public class SpecialXMas implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!playable.isPlayer())
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!playable.isPlayer()) {
 			playable.sendPacket(SystemMessageId.ITEM_NOT_FOR_PETS);
 			return false;
 		}

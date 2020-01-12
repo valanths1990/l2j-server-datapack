@@ -44,8 +44,7 @@ import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 
-public final class Kamaloka extends AbstractInstance
-{
+public final class Kamaloka extends AbstractInstance {
 	/*
 	 * Reset time for all kamaloka Default: 6:30AM on server time
 	 */
@@ -104,8 +103,7 @@ public final class Kamaloka extends AbstractInstance
 	};
 	// @formatter:on
 	// Teleport points into instances x, y, z
-	private static final Location[] TELEPORTS =
-	{
+	private static final Location[] TELEPORTS = {
 		new Location(-88429, -220629, -7903),
 		new Location(-82464, -219532, -7899),
 		new Location(-10700, -174882, -10936), // -76280, -185540, -10936
@@ -136,8 +134,7 @@ public final class Kamaloka extends AbstractInstance
 	 * Default: 5699 (decrease pdef)<br>
 	 * shaman npcId, minions npcId, skillId, skillLvl
 	 */
-	private static final int[][] FIRST_ROOM =
-	{
+	private static final int[][] FIRST_ROOM = {
 		null,
 		null,
 		{
@@ -202,8 +199,7 @@ public final class Kamaloka extends AbstractInstance
 	/*
 	 * First room spawns, null if room not spawned x, y, z
 	 */
-	private static final int[][][] FIRST_ROOM_SPAWNS =
-	{
+	private static final int[][][] FIRST_ROOM_SPAWNS = {
 		null,
 		null,
 		{
@@ -596,8 +592,7 @@ public final class Kamaloka extends AbstractInstance
 	/*
 	 * Second room information, null if room not spawned Skill is casted on the boss when all mobs are defeated Default: 5700 (decrease mdef) npcId, skillId, skillLvl
 	 */
-	private static final int[][] SECOND_ROOM =
-	{
+	private static final int[][] SECOND_ROOM = {
 		null,
 		null,
 		{
@@ -655,8 +650,7 @@ public final class Kamaloka extends AbstractInstance
 	/*
 	 * Spawns for second room, null if room not spawned x, y, z
 	 */
-	private static final int[][][] SECOND_ROOM_SPAWNS =
-	{
+	private static final int[][][] SECOND_ROOM_SPAWNS = {
 		null,
 		null,
 		{
@@ -892,8 +886,7 @@ public final class Kamaloka extends AbstractInstance
 	/*
 	 * Miniboss information, null if miniboss not spawned Skill is casted on the boss when miniboss is defeated Default: 5701 (decrease patk) npcId, x, y, z, skillId, skillLvl
 	 */
-	private static final int[][] MINIBOSS =
-	{
+	private static final int[][] MINIBOSS = {
 		null,
 		null,
 		{
@@ -974,8 +967,7 @@ public final class Kamaloka extends AbstractInstance
 	/*
 	 * Bosses of the kamaloka Instance ends when boss is defeated npcId, x, y, z
 	 */
-	private static final int[][] BOSS =
-	{
+	private static final int[][] BOSS = {
 		{
 			18554,
 			-88998,
@@ -1095,8 +1087,7 @@ public final class Kamaloka extends AbstractInstance
 	/*
 	 * Escape telepoters spawns, null if not spawned x, y, z
 	 */
-	private static final int[][] TELEPORTERS =
-	{
+	private static final int[][] TELEPORTERS = {
 		null,
 		null,
 		{
@@ -1156,8 +1147,7 @@ public final class Kamaloka extends AbstractInstance
 	private static final int TELEPORTER = 32496;
 	
 	/** Kamaloka captains (start npc's) npcIds. */
-	private static final int[] CAPTAINS =
-	{
+	private static final int[] CAPTAINS = {
 		30332,
 		30071,
 		30916,
@@ -1166,8 +1156,7 @@ public final class Kamaloka extends AbstractInstance
 		31340
 	};
 	
-	protected class KamaWorld extends InstanceWorld
-	{
+	protected class KamaWorld extends InstanceWorld {
 		public int index; // 0-18 index of the kama type in arrays
 		public int shaman = 0; // objectId of the shaman
 		public List<L2Spawn> firstRoom; // list of the spawns in the first room (excluding shaman)
@@ -1176,43 +1165,32 @@ public final class Kamaloka extends AbstractInstance
 		public L2Npc boss = null; // boss
 	}
 	
-	public Kamaloka()
-	{
+	public Kamaloka() {
 		super(Kamaloka.class.getSimpleName());
 		addFirstTalkId(TELEPORTER);
 		addTalkId(TELEPORTER);
 		addStartNpc(CAPTAINS);
 		addTalkId(CAPTAINS);
-		for (int[] mob : FIRST_ROOM)
-		{
-			if (mob != null)
-			{
-				if (STEALTH_SHAMAN)
-				{
+		for (int[] mob : FIRST_ROOM) {
+			if (mob != null) {
+				if (STEALTH_SHAMAN) {
 					addKillId(mob[1]);
-				}
-				else
-				{
+				} else {
 					addKillId(mob[0]);
 				}
 			}
 		}
-		for (int[] mob : SECOND_ROOM)
-		{
-			if (mob != null)
-			{
+		for (int[] mob : SECOND_ROOM) {
+			if (mob != null) {
 				addKillId(mob[0]);
 			}
 		}
-		for (int[] mob : MINIBOSS)
-		{
-			if (mob != null)
-			{
+		for (int[] mob : MINIBOSS) {
+			if (mob != null) {
 				addKillId(mob[0]);
 			}
 		}
-		for (int[] mob : BOSS)
-		{
+		for (int[] mob : BOSS) {
 			addKillId(mob[0]);
 		}
 	}
@@ -1223,24 +1201,20 @@ public final class Kamaloka extends AbstractInstance
 	 * @param index (0-18) index of the kamaloka in arrays
 	 * @return true if party allowed to enter
 	 */
-	private static final boolean checkPartyConditions(L2PcInstance player, int index)
-	{
+	private static final boolean checkPartyConditions(L2PcInstance player, int index) {
 		final L2Party party = player.getParty();
 		// player must be in party
-		if (party == null)
-		{
+		if (party == null) {
 			player.sendPacket(SystemMessageId.NOT_IN_PARTY_CANT_ENTER);
 			return false;
 		}
 		// ...and be party leader
-		if (party.getLeader() != player)
-		{
+		if (party.getLeader() != player) {
 			player.sendPacket(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER);
 			return false;
 		}
 		// party must not exceed max size for selected instance
-		if (party.getMemberCount() > MAX_PARTY_SIZE[index])
-		{
+		if (party.getMemberCount() > MAX_PARTY_SIZE[index]) {
 			player.sendPacket(SystemMessageId.PARTY_EXCEEDED_THE_LIMIT_CANT_ENTER);
 			return false;
 		}
@@ -1252,19 +1226,16 @@ public final class Kamaloka extends AbstractInstance
 		
 		Map<Integer, Long> instanceTimes;
 		// for each party member
-		for (L2PcInstance partyMember : party.getMembers())
-		{
+		for (L2PcInstance partyMember : party.getMembers()) {
 			// player level must be in range
-			if (Math.abs(partyMember.getLevel() - level) > MAX_LEVEL_DIFFERENCE)
-			{
+			if (Math.abs(partyMember.getLevel() - level) > MAX_LEVEL_DIFFERENCE) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 				sm.addPcName(partyMember);
 				player.sendPacket(sm);
 				return false;
 			}
 			// player must be near party leader
-			if (!partyMember.isInsideRadius(player, 1000, true, true))
-			{
+			if (!partyMember.isInsideRadius(player, 1000, true, true)) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_A_LOCATION_WHICH_CANNOT_BE_ENTERED_THEREFORE_IT_CANNOT_BE_PROCESSED);
 				sm.addPcName(partyMember);
 				player.sendPacket(sm);
@@ -1272,19 +1243,15 @@ public final class Kamaloka extends AbstractInstance
 			}
 			// get instances reenter times for player
 			instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(partyMember.getObjectId());
-			if (instanceTimes != null)
-			{
-				for (int id : instanceTimes.keySet())
-				{
+			if (instanceTimes != null) {
+				for (int id : instanceTimes.keySet()) {
 					// find instance with same name (kamaloka or labyrinth)
 					// TODO: Zoey76: Don't use instance name, use other system.
-					if (!instanceName.equals(InstanceManager.getInstance().getInstanceIdName(id)))
-					{
+					if (!instanceName.equals(InstanceManager.getInstance().getInstanceIdName(id))) {
 						continue;
 					}
 					// if found instance still can't be reentered - exit
-					if (System.currentTimeMillis() < instanceTimes.get(id))
-					{
+					if (System.currentTimeMillis() < instanceTimes.get(id)) {
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_MAY_NOT_RE_ENTER_YET);
 						sm.addPcName(partyMember);
 						player.sendPacket(sm);
@@ -1300,12 +1267,9 @@ public final class Kamaloka extends AbstractInstance
 	 * Removing all buffs from player and pet except BUFFS_WHITELIST
 	 * @param ch player
 	 */
-	private static final void removeBuffs(L2Character ch)
-	{
-		final Function<BuffInfo, Boolean> removeBuffs = info ->
-		{
-			if ((info != null) && !info.getSkill().isStayAfterDeath() && (Arrays.binarySearch(BUFFS_WHITELIST, info.getSkill().getId()) < 0))
-			{
+	private static final void removeBuffs(L2Character ch) {
+		final Function<BuffInfo, Boolean> removeBuffs = info -> {
+			if ((info != null) && !info.getSkill().isStayAfterDeath() && (Arrays.binarySearch(BUFFS_WHITELIST, info.getSkill().getId()) < 0)) {
 				info.getEffected().getEffectList().stopSkillEffects(true, info.getSkill());
 				return true;
 			}
@@ -1314,8 +1278,7 @@ public final class Kamaloka extends AbstractInstance
 		
 		ch.getEffectList().forEach(removeBuffs, false);
 		
-		if (ch.hasSummon())
-		{
+		if (ch.hasSummon()) {
 			ch.getSummon().getEffectList().forEach(removeBuffs, false);
 		}
 	}
@@ -1325,32 +1288,25 @@ public final class Kamaloka extends AbstractInstance
 	 * @param player party leader
 	 * @param index (0-18) kamaloka index in arrays
 	 */
-	private final synchronized void enterInstance(L2PcInstance player, int index)
-	{
+	private final synchronized void enterInstance(L2PcInstance player, int index) {
 		int templateId;
-		try
-		{
+		try {
 			templateId = TEMPLATE_IDS[index];
-		}
-		catch (ArrayIndexOutOfBoundsException e)
-		{
+		} catch (ArrayIndexOutOfBoundsException e) {
 			throw e;
 		}
 		
 		// check for existing instances for this player
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		// player already in the instance
-		if (world != null)
-		{
+		if (world != null) {
 			// but not in kamaloka
-			if (!(world instanceof KamaWorld) || (world.getTemplateId() != templateId))
-			{
+			if (!(world instanceof KamaWorld) || (world.getTemplateId() != templateId)) {
 				player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
 				return;
 			}
 			// check for level difference again on reenter
-			if (Math.abs(player.getLevel() - LEVEL[((KamaWorld) world).index]) > MAX_LEVEL_DIFFERENCE)
-			{
+			if (Math.abs(player.getLevel() - LEVEL[((KamaWorld) world).index]) > MAX_LEVEL_DIFFERENCE) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 				sm.addPcName(player);
 				player.sendPacket(sm);
@@ -1358,16 +1314,14 @@ public final class Kamaloka extends AbstractInstance
 			}
 			// check what instance still exist
 			Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-			if (inst != null)
-			{
+			if (inst != null) {
 				removeBuffs(player);
 				teleportPlayer(player, TELEPORTS[index], world.getInstanceId());
 			}
 			return;
 		}
 		// Creating new kamaloka instance
-		if (!checkPartyConditions(player, index))
-		{
+		if (!checkPartyConditions(player, index)) {
 			return;
 		}
 		
@@ -1397,8 +1351,7 @@ public final class Kamaloka extends AbstractInstance
 		
 		// and finally teleport party into instance
 		final L2Party party = player.getParty();
-		for (L2PcInstance partyMember : party.getMembers())
-		{
+		for (L2PcInstance partyMember : party.getMembers()) {
 			world.addAllowed(partyMember.getObjectId());
 			removeBuffs(partyMember);
 			teleportPlayer(partyMember, TELEPORTS[index], instanceId);
@@ -1411,15 +1364,12 @@ public final class Kamaloka extends AbstractInstance
 	 * @param world instanceWorld
 	 */
 	@Override
-	protected final void finishInstance(InstanceWorld world)
-	{
-		if (world instanceof KamaWorld)
-		{
+	protected final void finishInstance(InstanceWorld world) {
+		if (world instanceof KamaWorld) {
 			Calendar reenter = Calendar.getInstance();
 			reenter.set(Calendar.MINUTE, RESET_MIN);
 			// if time is >= RESET_HOUR - roll to the next day
-			if (reenter.get(Calendar.HOUR_OF_DAY) >= RESET_HOUR)
-			{
+			if (reenter.get(Calendar.HOUR_OF_DAY) >= RESET_HOUR) {
 				reenter.add(Calendar.DATE, 1);
 			}
 			reenter.set(Calendar.HOUR_OF_DAY, RESET_HOUR);
@@ -1428,11 +1378,9 @@ public final class Kamaloka extends AbstractInstance
 			sm.addInstanceName(world.getTemplateId());
 			
 			// set instance reenter time for all allowed players
-			for (int objectId : world.getAllowed())
-			{
+			for (int objectId : world.getAllowed()) {
 				L2PcInstance obj = L2World.getInstance().getPlayer(objectId);
-				if ((obj != null) && obj.isOnline())
-				{
+				if ((obj != null) && obj.isOnline()) {
 					InstanceManager.getInstance().setInstanceTime(objectId, world.getTemplateId(), reenter.getTimeInMillis());
 					obj.sendPacket(sm);
 				}
@@ -1450,8 +1398,7 @@ public final class Kamaloka extends AbstractInstance
 	 * @param world instanceWorld
 	 */
 	@SuppressWarnings("all")
-	private final void spawnKama(KamaWorld world)
-	{
+	private final void spawnKama(KamaWorld world) {
 		int[] npcs;
 		int[][] spawns;
 		L2Npc npc;
@@ -1460,21 +1407,16 @@ public final class Kamaloka extends AbstractInstance
 		// first room
 		npcs = FIRST_ROOM[index];
 		spawns = FIRST_ROOM_SPAWNS[index];
-		if (npcs != null)
-		{
+		if (npcs != null) {
 			world.firstRoom = new ArrayList<L2Spawn>(spawns.length - 1);
 			int shaman = getRandom(spawns.length); // random position for shaman
 			
-			for (int i = 0; i < spawns.length; i++)
-			{
-				if (i == shaman)
-				{
+			for (int i = 0; i < spawns.length; i++) {
+				if (i == shaman) {
 					// stealth shaman use same npcId as other mobs
 					npc = addSpawn(STEALTH_SHAMAN ? npcs[1] : npcs[0], spawns[i][0], spawns[i][1], spawns[i][2], 0, false, 0, false, world.getInstanceId());
 					world.shaman = npc.getObjectId();
-				}
-				else
-				{
+				} else {
 					npc = addSpawn(npcs[1], spawns[i][0], spawns[i][1], spawns[i][2], 0, false, 0, false, world.getInstanceId());
 					L2Spawn spawn = npc.getSpawn();
 					spawn.setRespawnDelay(FIRST_ROOM_RESPAWN_DELAY);
@@ -1489,12 +1431,10 @@ public final class Kamaloka extends AbstractInstance
 		// second room
 		npcs = SECOND_ROOM[index];
 		spawns = SECOND_ROOM_SPAWNS[index];
-		if (npcs != null)
-		{
+		if (npcs != null) {
 			world.secondRoom = new ArrayList<Integer>(spawns.length);
 			
-			for (int[] spawn : spawns)
-			{
+			for (int[] spawn : spawns) {
 				npc = addSpawn(npcs[0], spawn[0], spawn[1], spawn[2], 0, false, 0, false, world.getInstanceId());
 				npc.setIsNoRndWalk(true);
 				world.secondRoom.add(npc.getObjectId());
@@ -1502,16 +1442,14 @@ public final class Kamaloka extends AbstractInstance
 		}
 		
 		// miniboss
-		if (MINIBOSS[index] != null)
-		{
+		if (MINIBOSS[index] != null) {
 			npc = addSpawn(MINIBOSS[index][0], MINIBOSS[index][1], MINIBOSS[index][2], MINIBOSS[index][3], 0, false, 0, false, world.getInstanceId());
 			npc.setIsNoRndWalk(true);
 			world.miniBoss = npc.getObjectId();
 		}
 		
 		// escape teleporter
-		if (TELEPORTERS[index] != null)
-		{
+		if (TELEPORTERS[index] != null) {
 			addSpawn(TELEPORTER, TELEPORTERS[index][0], TELEPORTERS[index][1], TELEPORTERS[index][2], 0, false, 0, false, world.getInstanceId());
 		}
 		
@@ -1525,19 +1463,14 @@ public final class Kamaloka extends AbstractInstance
 	 * Handles only player's enter, single parameter - integer kamaloka index
 	 */
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (npc == null)
-		{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (npc == null) {
 			return "";
 		}
 		
-		try
-		{
+		try {
 			enterInstance(player, Integer.parseInt(event));
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			_log.log(Level.WARNING, "", e);
 		}
 		return "";
@@ -1547,38 +1480,29 @@ public final class Kamaloka extends AbstractInstance
 	 * Talk with captains and using of the escape teleporter
 	 */
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public final String onTalk(L2Npc npc, L2PcInstance player) {
 		final int npcId = npc.getId();
 		
-		if (npcId == TELEPORTER)
-		{
+		if (npcId == TELEPORTER) {
 			final L2Party party = player.getParty();
 			// only party leader can talk with escape teleporter
-			if ((party != null) && party.isLeader(player))
-			{
+			if ((party != null) && party.isLeader(player)) {
 				final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-				if (world instanceof KamaWorld)
-				{
+				if (world instanceof KamaWorld) {
 					// party members must be in the instance
-					if (world.isAllowed(player.getObjectId()))
-					{
+					if (world.isAllowed(player.getObjectId())) {
 						Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
 						
 						// teleports entire party away
-						for (L2PcInstance partyMember : party.getMembers())
-						{
-							if ((partyMember != null) && (partyMember.getInstanceId() == world.getInstanceId()))
-							{
+						for (L2PcInstance partyMember : party.getMembers()) {
+							if ((partyMember != null) && (partyMember.getInstanceId() == world.getInstanceId())) {
 								teleportPlayer(partyMember, inst.getExitLoc(), 0);
 							}
 						}
 					}
 				}
 			}
-		}
-		else
-		{
+		} else {
 			return npcId + ".htm";
 		}
 		
@@ -1589,12 +1513,9 @@ public final class Kamaloka extends AbstractInstance
 	 * Only escape teleporters first talk handled
 	 */
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (npc.getId() == TELEPORTER)
-		{
-			if (player.isInParty() && player.getParty().isLeader(player))
-			{
+	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+		if (npc.getId() == TELEPORTER) {
+			if (player.isInParty() && player.getParty().isLeader(player)) {
 				return "32496.htm";
 			}
 			return "32496-no.htm";
@@ -1603,41 +1524,32 @@ public final class Kamaloka extends AbstractInstance
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if (tmpWorld instanceof KamaWorld)
-		{
+		if (tmpWorld instanceof KamaWorld) {
 			final KamaWorld world = (KamaWorld) tmpWorld;
 			final int objectId = npc.getObjectId();
 			
 			// first room was spawned ?
-			if (world.firstRoom != null)
-			{
+			if (world.firstRoom != null) {
 				// is shaman killed ?
-				if ((world.shaman != 0) && (world.shaman == objectId))
-				{
+				if ((world.shaman != 0) && (world.shaman == objectId)) {
 					world.shaman = 0;
 					// stop respawn of the minions
-					for (L2Spawn spawn : world.firstRoom)
-					{
-						if (spawn != null)
-						{
+					for (L2Spawn spawn : world.firstRoom) {
+						if (spawn != null) {
 							spawn.stopRespawn();
 						}
 					}
 					world.firstRoom.clear();
 					world.firstRoom = null;
 					
-					if (world.boss != null)
-					{
+					if (world.boss != null) {
 						final int skillId = FIRST_ROOM[world.index][2];
 						final int skillLvl = FIRST_ROOM[world.index][3];
-						if ((skillId != 0) && (skillLvl != 0))
-						{
+						if ((skillId != 0) && (skillLvl != 0)) {
 							final Skill skill = SkillData.getInstance().getSkill(skillId, skillLvl);
-							if (skill != null)
-							{
+							if (skill != null) {
 								skill.applyEffects(world.boss, world.boss);
 							}
 						}
@@ -1648,37 +1560,28 @@ public final class Kamaloka extends AbstractInstance
 			}
 			
 			// second room was spawned ?
-			if (world.secondRoom != null)
-			{
+			if (world.secondRoom != null) {
 				boolean all = true;
 				// check for all mobs in the second room
-				for (int i = 0; i < world.secondRoom.size(); i++)
-				{
+				for (int i = 0; i < world.secondRoom.size(); i++) {
 					// found killed now mob
-					if (world.secondRoom.get(i) == objectId)
-					{
+					if (world.secondRoom.get(i) == objectId) {
 						world.secondRoom.set(i, 0);
-					}
-					else if (world.secondRoom.get(i) != 0)
-					{
+					} else if (world.secondRoom.get(i) != 0) {
 						all = false;
 					}
 				}
 				// all mobs killed ?
-				if (all)
-				{
+				if (all) {
 					world.secondRoom.clear();
 					world.secondRoom = null;
 					
-					if (world.boss != null)
-					{
+					if (world.boss != null) {
 						final int skillId = SECOND_ROOM[world.index][1];
 						final int skillLvl = SECOND_ROOM[world.index][2];
-						if ((skillId != 0) && (skillLvl != 0))
-						{
+						if ((skillId != 0) && (skillLvl != 0)) {
 							final Skill skill = SkillData.getInstance().getSkill(skillId, skillLvl);
-							if (skill != null)
-							{
+							if (skill != null) {
 								skill.applyEffects(world.boss, world.boss);
 							}
 						}
@@ -1689,19 +1592,15 @@ public final class Kamaloka extends AbstractInstance
 			}
 			
 			// miniboss spawned ?
-			if ((world.miniBoss != 0) && (world.miniBoss == objectId))
-			{
+			if ((world.miniBoss != 0) && (world.miniBoss == objectId)) {
 				world.miniBoss = 0;
 				
-				if (world.boss != null)
-				{
+				if (world.boss != null) {
 					final int skillId = MINIBOSS[world.index][4];
 					final int skillLvl = MINIBOSS[world.index][5];
-					if ((skillId != 0) && (skillLvl != 0))
-					{
+					if ((skillId != 0) && (skillLvl != 0)) {
 						final Skill skill = SkillData.getInstance().getSkill(skillId, skillLvl);
-						if (skill != null)
-						{
+						if (skill != null) {
 							skill.applyEffects(world.boss, world.boss);
 						}
 					}
@@ -1711,8 +1610,7 @@ public final class Kamaloka extends AbstractInstance
 			}
 			
 			// boss was killed, finish instance
-			if ((world.boss != null) && (world.boss == npc))
-			{
+			if ((world.boss != null) && (world.boss == npc)) {
 				world.boss = null;
 				finishInstance(world);
 			}
@@ -1721,8 +1619,7 @@ public final class Kamaloka extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
 		
 	}
 }

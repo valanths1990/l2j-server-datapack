@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by disKret.
  * @author malyelfik
  */
-public class Q00601_WatchingEyes extends Quest
-{
+public class Q00601_WatchingEyes extends Quest {
 	// NPC
 	private static final int EYE_OF_ARGOS = 31683;
 	// Item
@@ -42,8 +41,7 @@ public class Q00601_WatchingEyes extends Quest
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
 	
-	static
-	{
+	static {
 		MOBS.put(21308, 790);
 		MOBS.put(21309, 820);
 		MOBS.put(21306, 850);
@@ -52,8 +50,7 @@ public class Q00601_WatchingEyes extends Quest
 	}
 	
 	// Reward
-	private static final int[][] REWARD =
-	{
+	private static final int[][] REWARD = {
 		{
 			6699,
 			90000
@@ -72,8 +69,7 @@ public class Q00601_WatchingEyes extends Quest
 		}
 	};
 	
-	public Q00601_WatchingEyes()
-	{
+	public Q00601_WatchingEyes() {
 		super(601, Q00601_WatchingEyes.class.getSimpleName(), "Watching Eyes");
 		addStartNpc(EYE_OF_ARGOS);
 		addTalkId(EYE_OF_ARGOS);
@@ -82,30 +78,25 @@ public class Q00601_WatchingEyes extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "31683-02.htm":
 				st.startQuest();
 				break;
 			case "31683-05.html":
-				if (st.getQuestItemsCount(PROOF_OF_AVENGER) < 100)
-				{
+				if (st.getQuestItemsCount(PROOF_OF_AVENGER) < 100) {
 					return "31683-06.html";
 				}
 				
 				int i = getRandom(4);
-				if (i < 3)
-				{
+				if (i < 3) {
 					st.giveItems(REWARD[i][0], 5);
 					st.addExpAndSp(120000, 10000);
 				}
@@ -120,19 +111,14 @@ public class Q00601_WatchingEyes extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
 		
-		if ((st != null) && st.isCond(1) && (getRandom(1000) < MOBS.get(npc.getId())))
-		{
+		if ((st != null) && st.isCond(1) && (getRandom(1000) < MOBS.get(npc.getId()))) {
 			st.giveItems(PROOF_OF_AVENGER, 1);
-			if (st.getQuestItemsCount(PROOF_OF_AVENGER) == 100)
-			{
+			if (st.getQuestItemsCount(PROOF_OF_AVENGER) == 100) {
 				st.setCond(2, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -140,12 +126,10 @@ public class Q00601_WatchingEyes extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= 71) ? "31683-01.htm" : "31683-00.htm";
 				break;

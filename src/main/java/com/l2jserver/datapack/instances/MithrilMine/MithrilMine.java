@@ -37,10 +37,8 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Mithril Mine instance zone.
  * @author Adry_85
  */
-public final class MithrilMine extends AbstractInstance
-{
-	protected class MMWorld extends InstanceWorld
-	{
+public final class MithrilMine extends AbstractInstance {
+	protected class MMWorld extends InstanceWorld {
 		protected int _count = 0;
 	}
 	
@@ -56,8 +54,7 @@ public final class MithrilMine extends AbstractInstance
 	// Location
 	private static final Location START_LOC = new Location(186852, -173492, -3763, 0, 0);
 	private static final Location EXIT_LOC = new Location(178823, -184303, -347, 0, 0);
-	private static final Location[] MOB_SPAWNS = new Location[]
-	{
+	private static final Location[] MOB_SPAWNS = new Location[] {
 		new Location(185216, -184112, -3308, -15396),
 		new Location(185456, -184240, -3308, -19668),
 		new Location(185712, -184384, -3308, -26696),
@@ -67,8 +64,7 @@ public final class MithrilMine extends AbstractInstance
 	// Misc
 	private static final int TEMPLATE_ID = 138;
 	
-	public MithrilMine()
-	{
+	public MithrilMine() {
 		super(MithrilMine.class.getSimpleName(), "instances");
 		addFirstTalkId(KEGOR);
 		addKillId(KEGOR, MITHRIL_MILLIPEDE);
@@ -77,28 +73,21 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
-		switch (event)
-		{
-			case "BUFF":
-			{
-				if ((player != null) && npc.isInsideRadius(player, 1000, true, false) && npc.isScriptValue(1) && !player.isDead())
-				{
+		switch (event) {
+			case "BUFF": {
+				if ((player != null) && npc.isInsideRadius(player, 1000, true, false) && npc.isScriptValue(1) && !player.isDead()) {
 					npc.setTarget(player);
 					npc.doCast(BLESS_OF_SWORD);
 				}
 				startQuestTimer("BUFF", 30000, npc, player);
 				break;
 			}
-			case "TIMER":
-			{
-				if (world instanceof MMWorld)
-				{
-					for (Location loc : MOB_SPAWNS)
-					{
+			case "TIMER": {
+				if (world instanceof MMWorld) {
+					for (Location loc : MOB_SPAWNS) {
 						final L2Attackable spawnedMob = (L2Attackable) addSpawn(MITHRIL_MILLIPEDE, loc, false, 0, false, world.getInstanceId());
 						spawnedMob.setScriptValue(1);
 						spawnedMob.setIsRunning(true);
@@ -108,12 +97,9 @@ public final class MithrilMine extends AbstractInstance
 				}
 				break;
 			}
-			case "FINISH":
-			{
-				for (L2Character knownChar : npc.getKnownList().getKnownCharacters())
-				{
-					if ((knownChar != null) && (knownChar.getId() == KEGOR))
-					{
+			case "FINISH": {
+				for (L2Character knownChar : npc.getKnownList().getKnownCharacters()) {
+					if ((knownChar != null) && (knownChar.getId() == KEGOR)) {
 						final L2Npc kegor = (L2Npc) knownChar;
 						kegor.setScriptValue(2);
 						kegor.setWalking();
@@ -130,17 +116,12 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = player.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
-		if ((qs != null))
-		{
-			if (qs.isMemoState(2))
-			{
+		if ((qs != null)) {
+			if (qs.isMemoState(2)) {
 				return npc.isScriptValue(0) ? "18846.html" : "18846-01.html";
-			}
-			else if (qs.isMemoState(3))
-			{
+			} else if (qs.isMemoState(3)) {
 				final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 				world.removeAllowed(player.getObjectId());
 				player.setInstanceId(0);
@@ -155,28 +136,21 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		final MMWorld _world = ((MMWorld) world);
 		
-		if (npc.getId() == KEGOR)
-		{
+		if (npc.getId() == KEGOR) {
 			broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.HOW_COULD_I_FALL_IN_A_PLACE_LIKE_THIS);
 			InstanceManager.getInstance().getInstance(world.getInstanceId()).setDuration(1000);
-		}
-		else
-		{
-			if (npc.isScriptValue(1))
-			{
+		} else {
+			if (npc.isScriptValue(1)) {
 				_world._count++;
 			}
 			
-			if (_world._count >= 5)
-			{
+			if (_world._count >= 5) {
 				final QuestState qs = player.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
-				if ((qs != null) && qs.isMemoState(2))
-				{
+				if ((qs != null) && qs.isMemoState(2)) {
 					cancelQuestTimer("BUFF", npc, player);
 					qs.setMemoState(3);
 					qs.setCond(6, true);
@@ -188,18 +162,13 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
-		switch (npc.getId())
-		{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
+		switch (npc.getId()) {
 			case TARUN:
-			case KRUN:
-			{
+			case KRUN: {
 				final QuestState qs = talker.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
-				if ((qs != null) && qs.isMemoState(2))
-				{
-					if (!hasQuestItems(talker, COLD_RESISTANCE_POTION))
-					{
+				if ((qs != null) && qs.isMemoState(2)) {
+					if (!hasQuestItems(talker, COLD_RESISTANCE_POTION)) {
 						giveItems(talker, COLD_RESISTANCE_POTION, 1);
 					}
 					qs.setCond(4, true);
@@ -207,11 +176,9 @@ public final class MithrilMine extends AbstractInstance
 				}
 				break;
 			}
-			case KEGOR:
-			{
+			case KEGOR: {
 				final QuestState qs = talker.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
-				if ((qs != null) && qs.isMemoState(2) && hasQuestItems(talker, COLD_RESISTANCE_POTION) && npc.isScriptValue(0))
-				{
+				if ((qs != null) && qs.isMemoState(2) && hasQuestItems(talker, COLD_RESISTANCE_POTION) && npc.isScriptValue(0)) {
 					takeItems(talker, COLD_RESISTANCE_POTION, -1);
 					qs.setCond(5, true);
 					npc.setScriptValue(1);
@@ -226,10 +193,8 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		if (firstEntrance) {
 			world.addAllowed(player.getObjectId());
 		}
 		teleportPlayer(player, START_LOC, world.getInstanceId(), false);

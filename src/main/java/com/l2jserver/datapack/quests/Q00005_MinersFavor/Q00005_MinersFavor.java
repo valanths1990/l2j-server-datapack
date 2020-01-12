@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.network.NpcStringId;
  * Miner's Favor (5)
  * @author malyelfik
  */
-public class Q00005_MinersFavor extends Quest
-{
+public class Q00005_MinersFavor extends Quest {
 	// NPCs
 	private static final int BOLTER = 30554;
 	private static final int SHARI = 30517;
@@ -49,8 +48,7 @@ public class Q00005_MinersFavor extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	
-	public Q00005_MinersFavor()
-	{
+	public Q00005_MinersFavor() {
 		super(5, Q00005_MinersFavor.class.getSimpleName(), "Miner's Favor");
 		addStartNpc(BOLTER);
 		addTalkId(BOLTER, SHARI, GARITA, REED, BRUNON);
@@ -58,25 +56,21 @@ public class Q00005_MinersFavor extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30554-03.htm":
 				st.startQuest();
 				giveItems(player, BOLTERS_LIST, 1);
 				giveItems(player, BOLTERS_SMELLY_SOCKS, 1);
 				break;
 			case "30526-02.html":
-				if (!hasQuestItems(player, BOLTERS_SMELLY_SOCKS))
-				{
+				if (!hasQuestItems(player, BOLTERS_SMELLY_SOCKS)) {
 					return "30526-04.html";
 				}
 				takeItems(player, BOLTERS_SMELLY_SOCKS, -1);
@@ -93,25 +87,19 @@ public class Q00005_MinersFavor extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case BOLTER:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? "30554-02.htm" : "30554-01.html";
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
-						{
+						if (st.isCond(1)) {
 							htmltext = "30554-04.html";
-						}
-						else
-						{
+						} else {
 							giveAdena(player, 2466, true);
 							addExpAndSp(player, 5672, 446);
 							giveItems(player, NECKLACE, 1);
@@ -127,8 +115,7 @@ public class Q00005_MinersFavor extends Quest
 				}
 				break;
 			case BRUNON:
-				if (st.isStarted())
-				{
+				if (st.isStarted()) {
 					htmltext = (hasQuestItems(player, MINERS_PICK)) ? "30526-03.html" : "30526-01.html";
 				}
 				break;
@@ -145,22 +132,16 @@ public class Q00005_MinersFavor extends Quest
 		return htmltext;
 	}
 	
-	private static void checkProgress(L2PcInstance player, QuestState st)
-	{
-		if (hasQuestItems(player, BOLTERS_LIST, MINING_BOOTS, MINERS_PICK, BOOMBOOM_POWDER, REDSTONE_BEER))
-		{
+	private static void checkProgress(L2PcInstance player, QuestState st) {
+		if (hasQuestItems(player, BOLTERS_LIST, MINING_BOOTS, MINERS_PICK, BOOMBOOM_POWDER, REDSTONE_BEER)) {
 			st.setCond(2, true);
 		}
 	}
 	
-	private static String giveItem(L2PcInstance player, QuestState st, int npcId, int itemId)
-	{
-		if (!st.isStarted())
-		{
+	private static String giveItem(L2PcInstance player, QuestState st, int npcId, int itemId) {
+		if (!st.isStarted()) {
 			return getNoQuestMsg(st.getPlayer());
-		}
-		else if (hasQuestItems(player, itemId))
-		{
+		} else if (hasQuestItems(player, itemId)) {
 			return npcId + "-02.html";
 		}
 		giveItems(player, itemId, 1);

@@ -31,30 +31,23 @@ import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
  * A chat handler
  * @author Gnacik
  */
-public class ChatPartyMatchRoom implements IChatHandler
-{
-	private static final int[] COMMAND_IDS =
-	{
+public class ChatPartyMatchRoom implements IChatHandler {
+	private static final int[] COMMAND_IDS = {
 		14
 	};
 	
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		if (activeChar.isInPartyMatchRoom())
-		{
+	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+		if (activeChar.isInPartyMatchRoom()) {
 			PartyMatchRoom _room = PartyMatchRoomList.getInstance().getPlayerRoom(activeChar);
-			if (_room != null)
-			{
-				if (activeChar.isChatBanned() && general().getBanChatChannels().contains(type))
-				{
+			if (_room != null) {
+				if (activeChar.isChatBanned() && general().getBanChatChannels().contains(type)) {
 					activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 					return;
 				}
 				
 				CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getName(), text);
-				for (L2PcInstance _member : _room.getPartyMembers())
-				{
+				for (L2PcInstance _member : _room.getPartyMembers()) {
 					_member.sendPacket(cs);
 				}
 			}
@@ -62,8 +55,7 @@ public class ChatPartyMatchRoom implements IChatHandler
 	}
 	
 	@Override
-	public int[] getChatTypeList()
-	{
+	public int[] getChatTypeList() {
 		return COMMAND_IDS;
 	}
 }

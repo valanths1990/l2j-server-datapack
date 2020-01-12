@@ -31,40 +31,33 @@ import com.l2jserver.gameserver.model.stats.Formulas;
  * Delete Hate Of Me effect implementation.
  * @author Adry_85
  */
-public final class DeleteHateOfMe extends AbstractEffect
-{
+public final class DeleteHateOfMe extends AbstractEffect {
 	private final int _chance;
 	
-	public DeleteHateOfMe(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public DeleteHateOfMe(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_chance = params.getInt("chance", 100);
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
-	{
+	public boolean calcSuccess(BuffInfo info) {
 		return Formulas.calcProbability(_chance, info.getEffector(), info.getEffected(), info.getSkill());
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.HATE;
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (!info.getEffected().isAttackable())
-		{
+	public void onStart(BuffInfo info) {
+		if (!info.getEffected().isAttackable()) {
 			return;
 		}
 		

@@ -29,23 +29,19 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class Asamah extends AbstractNpcAI
-{
+public final class Asamah extends AbstractNpcAI {
 	// NPC
 	private static final int ASAMAH = 32115;
 	
-	public Asamah()
-	{
+	public Asamah() {
 		super(Asamah.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(ASAMAH);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (event.equals("32115-03.htm") || event.equals("32115-04.htm"))
-		{
+		if (event.equals("32115-03.htm") || event.equals("32115-04.htm")) {
 			htmltext = event;
 		}
 		
@@ -53,14 +49,12 @@ public final class Asamah extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = player.getQuestState(Q00111_ElrokianHuntersProof.class.getSimpleName());
 		return ((st != null) && (st.isCompleted())) ? "32115-01.htm" : "32115-02.htm";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Asamah();
 	}
 }

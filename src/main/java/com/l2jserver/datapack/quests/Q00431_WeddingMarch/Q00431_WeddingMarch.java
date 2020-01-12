@@ -30,13 +30,11 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by CubicVirtuoso.
  * @author eyjine
  */
-public class Q00431_WeddingMarch extends Quest
-{
+public class Q00431_WeddingMarch extends Quest {
 	// NPC
 	private static final int KANTABILON = 31042;
 	// Monsters
-	private static final int[] MOBS =
-	{
+	private static final int[] MOBS = {
 		20786, // Lienrik
 		20787, // Lienrik Lad
 	};
@@ -47,8 +45,7 @@ public class Q00431_WeddingMarch extends Quest
 	private static final int MIN_LEVEL = 38;
 	private static final int CRYSTAL_COUNT = 50;
 	
-	public Q00431_WeddingMarch()
-	{
+	public Q00431_WeddingMarch() {
 		super(431, Q00431_WeddingMarch.class.getSimpleName(), "Wedding March");
 		addStartNpc(KANTABILON);
 		addTalkId(KANTABILON);
@@ -57,24 +54,18 @@ public class Q00431_WeddingMarch extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		if (event.equalsIgnoreCase("31042-02.htm"))
-		{
+		if (event.equalsIgnoreCase("31042-02.htm")) {
 			st.startQuest();
 			htmltext = event;
-		}
-		else if (event.equalsIgnoreCase("31042-06.html"))
-		{
-			if (st.getQuestItemsCount(SILVER_CRYSTAL) < CRYSTAL_COUNT)
-			{
+		} else if (event.equalsIgnoreCase("31042-06.html")) {
+			if (st.getQuestItemsCount(SILVER_CRYSTAL) < CRYSTAL_COUNT) {
 				return "31042-05.html";
 			}
 			st.giveItems(WEDDING_ECHO_CRYSTAL, 25);
@@ -85,21 +76,15 @@ public class Q00431_WeddingMarch extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance member = getRandomPartyMember(player, 1);
-		if (member != null)
-		{
+		if (member != null) {
 			final QuestState st = getQuestState(member, false);
-			if (getRandomBoolean())
-			{
+			if (getRandomBoolean()) {
 				st.giveItems(SILVER_CRYSTAL, 1);
-				if (st.getQuestItemsCount(SILVER_CRYSTAL) >= CRYSTAL_COUNT)
-				{
+				if (st.getQuestItemsCount(SILVER_CRYSTAL) >= CRYSTAL_COUNT) {
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
@@ -108,12 +93,10 @@ public class Q00431_WeddingMarch extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "31042-01.htm" : "31042-00.htm";
 				break;

@@ -28,11 +28,9 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Forge of the Gods AI
  * @author nonom, malyelfik
  */
-public final class ForgeOfTheGods extends AbstractNpcAI
-{
+public final class ForgeOfTheGods extends AbstractNpcAI {
 	// NPCs
-	private static final int[] FOG_MOBS =
-	{
+	private static final int[] FOG_MOBS = {
 		22634, // Scarlet Stakato Worker
 		22635, // Scarlet Stakato Soldier
 		22636, // Scarlet Stakato Noble
@@ -51,8 +49,7 @@ public final class ForgeOfTheGods extends AbstractNpcAI
 		22649, // Magma Drake
 	};
 	
-	private static final int[] LAVASAURUSES =
-	{
+	private static final int[] LAVASAURUSES = {
 		18799, // Newborn Lavasaurus
 		18800, // Fledgling Lavasaurus
 		18801, // Adult Lavasaurus
@@ -81,8 +78,7 @@ public final class ForgeOfTheGods extends AbstractNpcAI
 	
 	// private static int _npcsAlive = 0; TODO: Require zone spawn support
 	
-	private ForgeOfTheGods()
-	{
+	private ForgeOfTheGods() {
 		super(ForgeOfTheGods.class.getSimpleName(), "ai/npc");
 		addKillId(FOG_MOBS);
 		addSpawnId(LAVASAURUSES);
@@ -90,13 +86,10 @@ public final class ForgeOfTheGods extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
 			case "suicide":
-				if (npc != null)
-				{
+				if (npc != null) {
 					npc.doDie(null);
 				}
 				break;
@@ -108,8 +101,7 @@ public final class ForgeOfTheGods extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		int rand = getRandom(100);
 		L2Npc mob = null;
 		_npcCount++;
@@ -117,53 +109,33 @@ public final class ForgeOfTheGods extends AbstractNpcAI
 		// For monsters at Forge of the Gods - Lower level
 		if (npc.getSpawn().getZ() < -5000) // && (_npcsAlive < 48))
 		{
-			if ((_npcCount > BONUS_LOWER_LV03) && (rand <= FORGE_BONUS02))
-			{
+			if ((_npcCount > BONUS_LOWER_LV03) && (rand <= FORGE_BONUS02)) {
 				mob = addSpawn(LAVASAURUSES[4], npc, true);
-			}
-			else if (_npcCount > BONUS_LOWER_LV02)
-			{
+			} else if (_npcCount > BONUS_LOWER_LV02) {
 				mob = spawnLavasaurus(npc, rand, LAVASAURUSES[4], LAVASAURUSES[3]);
-			}
-			else if (_npcCount > BONUS_LOWER_LV01)
-			{
+			} else if (_npcCount > BONUS_LOWER_LV01) {
 				mob = spawnLavasaurus(npc, rand, LAVASAURUSES[3], LAVASAURUSES[2]);
-			}
-			else if (_npcCount >= MOBCOUNT_BONUS_MIN)
-			{
+			} else if (_npcCount >= MOBCOUNT_BONUS_MIN) {
 				mob = spawnLavasaurus(npc, rand, LAVASAURUSES[2], LAVASAURUSES[1]);
 			}
-		}
-		else
+		} else
 		// if (_npcsAlive < 32)
 		{
-			if ((_npcCount > BONUS_UPPER_LV05) && (rand <= FORGE_BONUS02))
-			{
+			if ((_npcCount > BONUS_UPPER_LV05) && (rand <= FORGE_BONUS02)) {
 				mob = addSpawn(LAVASAURUSES[1], npc, true);
-			}
-			else if (_npcCount > BONUS_UPPER_LV04)
-			{
+			} else if (_npcCount > BONUS_UPPER_LV04) {
 				mob = spawnLavasaurus(npc, rand, LAVASAURUSES[4], LAVASAURUSES[3]);
-			}
-			else if (_npcCount > BONUS_UPPER_LV03)
-			{
+			} else if (_npcCount > BONUS_UPPER_LV03) {
 				mob = spawnLavasaurus(npc, rand, LAVASAURUSES[3], LAVASAURUSES[2]);
-			}
-			else if (_npcCount > BONUS_UPPER_LV02)
-			{
+			} else if (_npcCount > BONUS_UPPER_LV02) {
 				mob = spawnLavasaurus(npc, rand, LAVASAURUSES[2], LAVASAURUSES[1]);
-			}
-			else if (_npcCount > BONUS_UPPER_LV01)
-			{
+			} else if (_npcCount > BONUS_UPPER_LV01) {
 				mob = spawnLavasaurus(npc, rand, LAVASAURUSES[1], LAVASAURUSES[0]);
-			}
-			else if ((_npcCount >= MOBCOUNT_BONUS_MIN) && (rand <= FORGE_BONUS01))
-			{
+			} else if ((_npcCount >= MOBCOUNT_BONUS_MIN) && (rand <= FORGE_BONUS01)) {
 				mob = addSpawn(LAVASAURUSES[0], npc, true);
 			}
 		}
-		if (mob != null)
-		{
+		if (mob != null) {
 			((L2Attackable) mob).addDamageHate(killer, 0, 9999);
 			mob.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK);
 		}
@@ -171,33 +143,26 @@ public final class ForgeOfTheGods extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		startQuestTimer("suicide", 60000, npc, null);
 		return super.onSpawn(npc);
 	}
 	
-	private L2Npc spawnLavasaurus(L2Npc npc, int rand, int... mobs)
-	{
-		if (mobs.length < 2)
-		{
+	private L2Npc spawnLavasaurus(L2Npc npc, int rand, int... mobs) {
+		if (mobs.length < 2) {
 			return null;
 		}
 		
 		L2Npc mob = null;
-		if (rand <= FORGE_BONUS01)
-		{
+		if (rand <= FORGE_BONUS01) {
 			mob = addSpawn(mobs[0], npc, true);
-		}
-		else if (rand <= FORGE_BONUS02)
-		{
+		} else if (rand <= FORGE_BONUS02) {
 			mob = addSpawn(mobs[1], npc, true);
 		}
 		return mob;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new ForgeOfTheGods();
 	}
 }

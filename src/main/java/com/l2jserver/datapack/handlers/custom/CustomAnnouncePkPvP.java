@@ -32,40 +32,31 @@ import com.l2jserver.gameserver.util.Broadcast;
 /**
  * @author Zealar
  */
-public class CustomAnnouncePkPvP
-{
+public class CustomAnnouncePkPvP {
 	
-	public CustomAnnouncePkPvP()
-	{
-		if (customs().announcePkPvP())
-		{
+	public CustomAnnouncePkPvP() {
+		if (customs().announcePkPvP()) {
 			Containers.Players().addListener(new ConsumerEventListener(Containers.Players(), EventType.ON_PLAYER_PVP_KILL, (OnPlayerPvPKill event) -> OnPlayerPvPKill(event), this));
 		}
 	}
 	
-	private Object OnPlayerPvPKill(OnPlayerPvPKill event)
-	{
+	private Object OnPlayerPvPKill(OnPlayerPvPKill event) {
 		L2PcInstance pk = event.getActiveChar();
-		if (pk.isGM())
-		{
+		if (pk.isGM()) {
 			return null;
 		}
 		L2PcInstance player = event.getTarget();
 		
 		String msg = customs().getAnnouncePvpMsg();
-		if (player.getPvpFlag() == 0)
-		{
+		if (player.getPvpFlag() == 0) {
 			msg = customs().getAnnouncePkMsg();
 		}
 		msg = msg.replace("$killer", pk.getName()).replace("$target", player.getName());
-		if (customs().announcePkPvPNormalMessage())
-		{
+		if (customs().announcePkPvPNormalMessage()) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1);
 			sm.addString(msg);
 			Broadcast.toAllOnlinePlayers(sm);
-		}
-		else
-		{
+		} else {
 			Broadcast.toAllOnlinePlayers(msg, false);
 		}
 		return null;

@@ -38,8 +38,7 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 /**
  * @author St3eT
  */
-public class AdminGrandBoss implements IAdminCommandHandler
-{
+public class AdminGrandBoss implements IAdminCommandHandler {
 	private static final int ANTHARAS = 29068; // Antharas
 	private static final int ANTHARAS_ZONE = 70050; // Antharas Nest
 	private static final int VALAKAS = 29028; // Valakas
@@ -49,8 +48,7 @@ public class AdminGrandBoss implements IAdminCommandHandler
 	private static final int ORFEN = 29014; // Orfen
 	private static final int CORE = 29006; // Core
 	
-	private static final String[] ADMIN_COMMANDS =
-	{
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_grandboss",
 		"admin_grandboss_skip",
 		"admin_grandboss_respawn",
@@ -59,21 +57,15 @@ public class AdminGrandBoss implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
-		switch (actualCommand.toLowerCase())
-		{
-			case "admin_grandboss":
-			{
-				if (st.hasMoreTokens())
-				{
+		switch (actualCommand.toLowerCase()) {
+			case "admin_grandboss": {
+				if (st.hasMoreTokens()) {
 					final int grandBossId = Integer.parseInt(st.nextToken());
 					manageHtml(activeChar, grandBossId);
-				}
-				else
-				{
+				} else {
 					NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 					html.setHtml(HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/grandboss.htm"));
 					activeChar.sendPacket(html);
@@ -81,118 +73,87 @@ public class AdminGrandBoss implements IAdminCommandHandler
 				break;
 			}
 			
-			case "admin_grandboss_skip":
-			{
-				if (st.hasMoreTokens())
-				{
+			case "admin_grandboss_skip": {
+				if (st.hasMoreTokens()) {
 					final int grandBossId = Integer.parseInt(st.nextToken());
 					
-					if (grandBossId == ANTHARAS)
-					{
+					if (grandBossId == ANTHARAS) {
 						antharasAi().notifyEvent("SKIP_WAITING", null, activeChar);
 						manageHtml(activeChar, grandBossId);
-					}
-					else
-					{
+					} else {
 						activeChar.sendMessage("Wrong ID!");
 					}
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("Usage: //grandboss_skip Id");
 				}
 				break;
 			}
-			case "admin_grandboss_respawn":
-			{
-				if (st.hasMoreTokens())
-				{
+			case "admin_grandboss_respawn": {
+				if (st.hasMoreTokens()) {
 					final int grandBossId = Integer.parseInt(st.nextToken());
 					
-					switch (grandBossId)
-					{
-						case ANTHARAS:
-						{
+					switch (grandBossId) {
+						case ANTHARAS: {
 							antharasAi().notifyEvent("RESPAWN_ANTHARAS", null, activeChar);
 							manageHtml(activeChar, grandBossId);
 							break;
 						}
-						case BAIUM:
-						{
+						case BAIUM: {
 							baiumAi().notifyEvent("RESPAWN_BAIUM", null, activeChar);
 							manageHtml(activeChar, grandBossId);
 							break;
 						}
-						default:
-						{
+						default: {
 							activeChar.sendMessage("Wrong ID!");
 						}
 					}
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("Usage: //grandboss_respawn Id");
 				}
 				break;
 			}
-			case "admin_grandboss_minions":
-			{
-				if (st.hasMoreTokens())
-				{
+			case "admin_grandboss_minions": {
+				if (st.hasMoreTokens()) {
 					final int grandBossId = Integer.parseInt(st.nextToken());
 					
-					switch (grandBossId)
-					{
-						case ANTHARAS:
-						{
+					switch (grandBossId) {
+						case ANTHARAS: {
 							antharasAi().notifyEvent("DESPAWN_MINIONS", null, activeChar);
 							break;
 						}
-						case BAIUM:
-						{
+						case BAIUM: {
 							baiumAi().notifyEvent("DESPAWN_MINIONS", null, activeChar);
 							break;
 						}
-						default:
-						{
+						default: {
 							activeChar.sendMessage("Wrong ID!");
 						}
 					}
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("Usage: //grandboss_minions Id");
 				}
 				break;
 			}
-			case "admin_grandboss_abort":
-			{
-				if (st.hasMoreTokens())
-				{
+			case "admin_grandboss_abort": {
+				if (st.hasMoreTokens()) {
 					final int grandBossId = Integer.parseInt(st.nextToken());
 					
-					switch (grandBossId)
-					{
-						case ANTHARAS:
-						{
+					switch (grandBossId) {
+						case ANTHARAS: {
 							antharasAi().notifyEvent("ABORT_FIGHT", null, activeChar);
 							manageHtml(activeChar, grandBossId);
 							break;
 						}
-						case BAIUM:
-						{
+						case BAIUM: {
 							baiumAi().notifyEvent("ABORT_FIGHT", null, activeChar);
 							manageHtml(activeChar, grandBossId);
 							break;
 						}
-						default:
-						{
+						default: {
 							activeChar.sendMessage("Wrong ID!");
 						}
 					}
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("Usage: //grandboss_abort Id");
 				}
 			}
@@ -201,10 +162,8 @@ public class AdminGrandBoss implements IAdminCommandHandler
 		return true;
 	}
 	
-	private void manageHtml(L2PcInstance activeChar, int grandBossId)
-	{
-		if (Arrays.asList(ANTHARAS, VALAKAS, BAIUM, QUEENANT, ORFEN, CORE).contains(grandBossId))
-		{
+	private void manageHtml(L2PcInstance activeChar, int grandBossId) {
+		if (Arrays.asList(ANTHARAS, VALAKAS, BAIUM, QUEENANT, ORFEN, CORE).contains(grandBossId)) {
 			final int bossStatus = GrandBossManager.getInstance().getBossStatus(grandBossId);
 			L2NoRestartZone bossZone = null;
 			String textColor = null;
@@ -212,86 +171,68 @@ public class AdminGrandBoss implements IAdminCommandHandler
 			String htmlPatch = null;
 			int deadStatus = 0;
 			
-			switch (grandBossId)
-			{
-				case ANTHARAS:
-				{
+			switch (grandBossId) {
+				case ANTHARAS: {
 					bossZone = ZoneManager.getInstance().getZoneById(ANTHARAS_ZONE, L2NoRestartZone.class);
 					htmlPatch = "data/html/admin/grandboss_antharas.htm";
 					break;
 				}
-				case VALAKAS:
-				{
+				case VALAKAS: {
 					htmlPatch = "data/html/admin/grandboss_valakas.htm";
 					break;
 				}
-				case BAIUM:
-				{
+				case BAIUM: {
 					bossZone = ZoneManager.getInstance().getZoneById(BAIUM_ZONE, L2NoRestartZone.class);
 					htmlPatch = "data/html/admin/grandboss_baium.htm";
 					break;
 				}
-				case QUEENANT:
-				{
+				case QUEENANT: {
 					htmlPatch = "data/html/admin/grandboss_queenant.htm";
 					break;
 				}
-				case ORFEN:
-				{
+				case ORFEN: {
 					htmlPatch = "data/html/admin/grandboss_orfen.htm";
 					break;
 				}
-				case CORE:
-				{
+				case CORE: {
 					htmlPatch = "data/html/admin/grandboss_core.htm";
 					break;
 				}
 			}
 			
-			if (Arrays.asList(ANTHARAS, VALAKAS, BAIUM).contains(grandBossId))
-			{
+			if (Arrays.asList(ANTHARAS, VALAKAS, BAIUM).contains(grandBossId)) {
 				deadStatus = 3;
-				switch (bossStatus)
-				{
-					case 0:
-					{
+				switch (bossStatus) {
+					case 0: {
 						textColor = "00FF00"; // Green
 						text = "Alive";
 						break;
 					}
-					case 1:
-					{
+					case 1: {
 						textColor = "FFFF00"; // Yellow
 						text = "Waiting";
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						textColor = "FF9900"; // Orange
 						text = "In Fight";
 						break;
 					}
-					case 3:
-					{
+					case 3: {
 						textColor = "FF0000"; // Red
 						text = "Dead";
 						break;
 					}
 				}
-			}
-			else
-			{
+			} else {
 				deadStatus = 1;
-				switch (bossStatus)
-				{
-					case 0:
-					{
+				switch (bossStatus) {
+					case 0: {
 						textColor = "00FF00"; // Green
 						text = "Alive";
 						break;
 					}
-					case 1:
-					{
+					case 1: {
 						textColor = "FF0000"; // Red
 						text = "Dead";
 						break;
@@ -309,26 +250,21 @@ public class AdminGrandBoss implements IAdminCommandHandler
 			html.replace("%respawnTime%", bossStatus == deadStatus ? bossRespawn : "Already respawned!");
 			html.replace("%playersInside%", bossZone != null ? String.valueOf(bossZone.getPlayersInside().size()) : "Zone not found!");
 			activeChar.sendPacket(html);
-		}
-		else
-		{
+		} else {
 			activeChar.sendMessage("Wrong ID!");
 		}
 	}
 	
-	private Quest antharasAi()
-	{
+	private Quest antharasAi() {
 		return QuestManager.getInstance().getQuest(Antharas.class.getSimpleName());
 	}
 	
-	private Quest baiumAi()
-	{
+	private Quest baiumAi() {
 		return QuestManager.getInstance().getQuest(Baium.class.getSimpleName());
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

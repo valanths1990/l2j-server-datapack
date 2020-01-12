@@ -26,10 +26,8 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 /**
  * @author
  */
-public class AdminRide implements IAdminCommandHandler
-{
-	private static final String[] ADMIN_COMMANDS =
-	{
+public class AdminRide implements IAdminCommandHandler {
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_ride_horse",
 		"admin_ride_bike",
 		"admin_ride_wyvern",
@@ -47,61 +45,42 @@ public class AdminRide implements IAdminCommandHandler
 	private static final int JET_BIKE_TRANSFORMATION_ID = 20001;
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		L2PcInstance player = getRideTarget(activeChar);
-		if (player == null)
-		{
+		if (player == null) {
 			return false;
 		}
 		
-		if (command.startsWith("admin_ride"))
-		{
-			if (player.isMounted() || player.hasSummon())
-			{
+		if (command.startsWith("admin_ride")) {
+			if (player.isMounted() || player.hasSummon()) {
 				activeChar.sendMessage("Target already have a summon.");
 				return false;
 			}
-			if (command.startsWith("admin_ride_wyvern"))
-			{
+			if (command.startsWith("admin_ride_wyvern")) {
 				_petRideId = 12621;
-			}
-			else if (command.startsWith("admin_ride_strider"))
-			{
+			} else if (command.startsWith("admin_ride_strider")) {
 				_petRideId = 12526;
-			}
-			else if (command.startsWith("admin_ride_wolf"))
-			{
+			} else if (command.startsWith("admin_ride_wolf")) {
 				_petRideId = 16041;
-			}
-			else if (command.startsWith("admin_ride_horse")) // handled using transformation
+			} else if (command.startsWith("admin_ride_horse")) // handled using transformation
 			{
-				if (player.isTransformed() || player.isInStance())
-				{
+				if (player.isTransformed() || player.isInStance()) {
 					activeChar.sendPacket(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN);
-				}
-				else
-				{
+				} else {
 					TransformData.getInstance().transformPlayer(PURPLE_MANED_HORSE_TRANSFORMATION_ID, player);
 				}
 				
 				return true;
-			}
-			else if (command.startsWith("admin_ride_bike")) // handled using transformation
+			} else if (command.startsWith("admin_ride_bike")) // handled using transformation
 			{
-				if (player.isTransformed() || player.isInStance())
-				{
+				if (player.isTransformed() || player.isInStance()) {
 					activeChar.sendPacket(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN);
-				}
-				else
-				{
+				} else {
 					TransformData.getInstance().transformPlayer(JET_BIKE_TRANSFORMATION_ID, player);
 				}
 				
 				return true;
-			}
-			else
-			{
+			} else {
 				activeChar.sendMessage("Command '" + command + "' not recognized");
 				return false;
 			}
@@ -109,36 +88,26 @@ public class AdminRide implements IAdminCommandHandler
 			player.mount(_petRideId, 0, false);
 			
 			return false;
-		}
-		else if (command.startsWith("admin_unride"))
-		{
-			if (player.getTransformationId() == PURPLE_MANED_HORSE_TRANSFORMATION_ID)
-			{
+		} else if (command.startsWith("admin_unride")) {
+			if (player.getTransformationId() == PURPLE_MANED_HORSE_TRANSFORMATION_ID) {
 				player.untransform();
 			}
 			
-			if (player.getTransformationId() == JET_BIKE_TRANSFORMATION_ID)
-			{
+			if (player.getTransformationId() == JET_BIKE_TRANSFORMATION_ID) {
 				player.untransform();
-			}
-			else
-			{
+			} else {
 				player.dismount();
 			}
 		}
 		return true;
 	}
 	
-	private L2PcInstance getRideTarget(L2PcInstance activeChar)
-	{
+	private L2PcInstance getRideTarget(L2PcInstance activeChar) {
 		L2PcInstance player = null;
 		
-		if ((activeChar.getTarget() == null) || (activeChar.getTarget().getObjectId() == activeChar.getObjectId()) || !(activeChar.getTarget() instanceof L2PcInstance))
-		{
+		if ((activeChar.getTarget() == null) || (activeChar.getTarget().getObjectId() == activeChar.getObjectId()) || !(activeChar.getTarget() instanceof L2PcInstance)) {
 			player = activeChar;
-		}
-		else
-		{
+		} else {
 			player = (L2PcInstance) activeChar.getTarget();
 		}
 		
@@ -146,8 +115,7 @@ public class AdminRide implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 	

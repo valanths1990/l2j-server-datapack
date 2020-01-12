@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * Handle With Care (288)
  * @author Zoey76
  */
-public class Q00288_HandleWithCare extends Quest
-{
+public class Q00288_HandleWithCare extends Quest {
 	// NPC
 	private static final int ANKUMI = 32741;
 	// Monster
@@ -43,8 +42,7 @@ public class Q00288_HandleWithCare extends Quest
 	private static final int SCROLL_ENCHANT_WEAPON_S_GRADE = 959;
 	private static final int SCROLL_ENCHANT_ARMOR_S_GRADE = 960;
 	private static final int HOLY_CRYSTAL = 9557;
-	private static final ItemHolder[] REWARDS =
-	{
+	private static final ItemHolder[] REWARDS = {
 		new ItemHolder(SCROLL_ENCHANT_WEAPON_S_GRADE, 1),
 		new ItemHolder(SCROLL_ENCHANT_ARMOR_S_GRADE, 1),
 		new ItemHolder(SCROLL_ENCHANT_ARMOR_S_GRADE, 2),
@@ -55,8 +53,7 @@ public class Q00288_HandleWithCare extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
-	public Q00288_HandleWithCare()
-	{
+	public Q00288_HandleWithCare() {
 		super(288, Q00288_HandleWithCare.class.getSimpleName(), "Handle With Care");
 		addStartNpc(ANKUMI);
 		addTalkId(ANKUMI);
@@ -65,92 +62,61 @@ public class Q00288_HandleWithCare extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "32741-03.htm":
-			{
-				if (player.getLevel() >= MIN_LEVEL)
-				{
+		switch (event) {
+			case "32741-03.htm": {
+				if (player.getLevel() >= MIN_LEVEL) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32741-04.html":
-			{
-				if (player.getLevel() >= MIN_LEVEL)
-				{
+			case "32741-04.html": {
+				if (player.getLevel() >= MIN_LEVEL) {
 					st.startQuest();
 					htmltext = event;
 				}
 				break;
 			}
-			case "32741-08.html":
-			{
-				if (st.isCond(2) || st.isCond(3))
-				{
+			case "32741-08.html": {
+				if (st.isCond(2) || st.isCond(3)) {
 					ItemHolder reward = null;
-					if (st.hasQuestItems(MIDDLE_GRADE_LIZARD_SCALE))
-					{
+					if (st.hasQuestItems(MIDDLE_GRADE_LIZARD_SCALE)) {
 						st.takeItems(MIDDLE_GRADE_LIZARD_SCALE, 1);
 						final int rnd = getRandom(10);
-						if (rnd == 0)
-						{
+						if (rnd == 0) {
 							reward = REWARDS[0];
-						}
-						else if (rnd < 4)
-						{
+						} else if (rnd < 4) {
 							reward = REWARDS[1];
-						}
-						else if (rnd < 6)
-						{
+						} else if (rnd < 6) {
 							reward = REWARDS[2];
-						}
-						else if (rnd < 7)
-						{
+						} else if (rnd < 7) {
 							reward = REWARDS[3];
-						}
-						else if (rnd < 9)
-						{
+						} else if (rnd < 9) {
 							reward = REWARDS[4];
-						}
-						else
-						{
+						} else {
 							reward = REWARDS[5];
 						}
-					}
-					else if (st.hasQuestItems(HIGH_GRADE_LIZARD_SCALE))
-					{
+					} else if (st.hasQuestItems(HIGH_GRADE_LIZARD_SCALE)) {
 						st.takeItems(HIGH_GRADE_LIZARD_SCALE, 1);
 						final int rnd = getRandom(10);
-						if (rnd == 0)
-						{
+						if (rnd == 0) {
 							reward = REWARDS[0];
-						}
-						else if (rnd < 5)
-						{
+						} else if (rnd < 5) {
 							reward = REWARDS[1];
-						}
-						else if (rnd < 8)
-						{
+						} else if (rnd < 8) {
 							reward = REWARDS[2];
-						}
-						else
-						{
+						} else {
 							reward = REWARDS[3];
 						}
 						st.giveItems(REWARDS[4]);
 					}
-					if (reward != null)
-					{
+					if (reward != null) {
 						st.giveItems(reward);
 					}
 					st.exitQuest(true, true);
@@ -163,19 +129,14 @@ public class Q00288_HandleWithCare extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, killer, false))
-		{
-			if (!st.hasQuestItems(MIDDLE_GRADE_LIZARD_SCALE))
-			{
+		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, killer, false)) {
+			if (!st.hasQuestItems(MIDDLE_GRADE_LIZARD_SCALE)) {
 				st.giveItems(MIDDLE_GRADE_LIZARD_SCALE, 1);
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				st.setCond(2, true);
-			}
-			else if (!st.hasQuestItems(HIGH_GRADE_LIZARD_SCALE))
-			{
+			} else if (!st.hasQuestItems(HIGH_GRADE_LIZARD_SCALE)) {
 				st.giveItems(HIGH_GRADE_LIZARD_SCALE, 1);
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				st.setCond(3, true);
@@ -185,27 +146,21 @@ public class Q00288_HandleWithCare extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() < MIN_LEVEL) ? "32741-01.html" : "32741-02.htm";
 				break;
 			case State.STARTED:
-				if (st.isCond(1) && !st.hasQuestItems(HIGH_GRADE_LIZARD_SCALE) && !st.hasQuestItems(MIDDLE_GRADE_LIZARD_SCALE))
-				{
+				if (st.isCond(1) && !st.hasQuestItems(HIGH_GRADE_LIZARD_SCALE) && !st.hasQuestItems(MIDDLE_GRADE_LIZARD_SCALE)) {
 					htmltext = "32741-05.html";
-				}
-				else if (st.isCond(2) && st.hasQuestItems(MIDDLE_GRADE_LIZARD_SCALE))
-				{
+				} else if (st.isCond(2) && st.hasQuestItems(MIDDLE_GRADE_LIZARD_SCALE)) {
 					htmltext = "32741-06.html";
 				}
 				
-				if (st.isCond(2) && st.hasQuestItems(HIGH_GRADE_LIZARD_SCALE))
-				{
+				if (st.isCond(2) && st.hasQuestItems(HIGH_GRADE_LIZARD_SCALE)) {
 					htmltext = "32741-07.html";
 				}
 				break;

@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * To the Isle of Souls (173)
  * @author malyelfik
  */
-public class Q00173_ToTheIsleOfSouls extends Quest
-{
+public class Q00173_ToTheIsleOfSouls extends Quest {
 	// NPCs
 	private static final int GALLADUCCI = 30097;
 	private static final int GENTLER = 30094;
@@ -42,8 +41,7 @@ public class Q00173_ToTheIsleOfSouls extends Quest
 	private static final int MARK_OF_TRAVELER = 7570;
 	private static final int SCROLL_OF_ESCAPE_KAMAEL_VILLAGE = 9716;
 	
-	public Q00173_ToTheIsleOfSouls()
-	{
+	public Q00173_ToTheIsleOfSouls() {
 		super(173, Q00173_ToTheIsleOfSouls.class.getSimpleName(), "To the Isle of Souls");
 		addStartNpc(GALLADUCCI);
 		addTalkId(GALLADUCCI, GENTLER);
@@ -52,17 +50,14 @@ public class Q00173_ToTheIsleOfSouls extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30097-03.htm":
 				st.startQuest();
 				st.giveItems(GALLADUCCIS_ORDER, 1);
@@ -85,15 +80,12 @@ public class Q00173_ToTheIsleOfSouls extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case GALLADUCCI:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.hasQuestCompleted(Q00172_NewHorizons.class.getSimpleName()) && (player.getRace() == Race.KAMAEL) && st.hasQuestItems(MARK_OF_TRAVELER)) ? "30097-01.htm" : "30097-02.htm";
 						break;
@@ -106,8 +98,7 @@ public class Q00173_ToTheIsleOfSouls extends Quest
 				}
 				break;
 			case GENTLER:
-				if (st.isStarted())
-				{
+				if (st.isStarted()) {
 					htmltext = (st.isCond(1)) ? "30094-01.html" : "30094-03.html";
 				}
 				break;

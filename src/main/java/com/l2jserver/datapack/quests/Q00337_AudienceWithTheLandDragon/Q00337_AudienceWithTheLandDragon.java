@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.util.Util;
  * Audience With The Land Dragon (337)
  * @author ivantotov
  */
-public final class Q00337_AudienceWithTheLandDragon extends Quest
-{
+public final class Q00337_AudienceWithTheLandDragon extends Quest {
 	// NPCs
 	private static final int WAREHOUSE_CHIEF_MOKE = 30498;
 	private static final int BLACKSMITH_HELTON = 30678;
@@ -82,8 +81,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 50;
 	
-	public Q00337_AudienceWithTheLandDragon()
-	{
+	public Q00337_AudienceWithTheLandDragon() {
 		super(337, Q00337_AudienceWithTheLandDragon.class.getSimpleName(), "Audience With The Land Dragon");
 		addStartNpc(GABRIELLE);
 		addTalkId(GABRIELLE, WAREHOUSE_CHIEF_MOKE, BLACKSMITH_HELTON, PREFECT_CHAKIRIS, MAGISTER_KAIENA, ANTHARAS_WATCHMAN_GILMORE, ANTHARAS_WATCHMAN_THEODRIC, MASTER_KENDRA, HIGH_PRIEST_ORVEN);
@@ -93,32 +91,24 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if ("DESPAWN".equals(event))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if ("DESPAWN".equals(event)) {
 			npc.deleteMe();
 			return super.onAdvEvent(event, npc, player);
-		}
-		else if ("DESPAWN_240".equals(event))
-		{
+		} else if ("DESPAWN_240".equals(event)) {
 			npc.deleteMe();
 			return super.onAdvEvent(event, npc, player);
 		}
 		
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30753-05.htm":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "30753-05.htm": {
+				if (qs.isCreated()) {
 					giveItems(player, FEATHER_OF_GABRIELLE, 1);
 					qs.startQuest();
 					qs.setMemoState(20000);
@@ -126,25 +116,21 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 				}
 				break;
 			}
-			case "30753-09.html":
-			{
+			case "30753-09.html": {
 				takeItems(player, MARK_OF_WATCHMAN, -1);
 				qs.setMemoState(40000);
 				qs.setCond(2, true);
 				htmltext = event;
 				break;
 			}
-			case "30754-03.html":
-			{
+			case "30754-03.html": {
 				qs.setMemoState(70000);
 				qs.setCond(4, true);
 				htmltext = event;
 				break;
 			}
-			case "30755-05.html":
-			{
-				if (qs.isMemoState(70000) && hasQuestItems(player, FRAGMENT_OF_ABYSS_JEWEL_3RD))
-				{
+			case "30755-05.html": {
+				if (qs.isMemoState(70000) && hasQuestItems(player, FRAGMENT_OF_ABYSS_JEWEL_3RD)) {
 					giveItems(player, PORTAL_STONE, 1);
 					qs.exitQuest(true, true);
 					htmltext = event;
@@ -156,8 +142,7 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 			case "30753-01a.html":
 			case "30753-03.htm":
 			case "30753-04.htm":
-			case "30753-06a.html":
-			{
+			case "30753-06a.html": {
 				htmltext = event;
 				break;
 			}
@@ -166,75 +151,57 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final QuestState qs = getQuestState(attacker, false);
-		if ((qs != null) && qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case ABYSSAL_JEWEL_1:
-				{
-					if (qs.isMemoState(40000) || (qs.isMemoState(40001)))
-					{
-						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.8)) && (npc.getVariables().getInt("i_quest0") == 0))
-						{
-							for (int i = 0; i < 20; i++)
-							{
+		if ((qs != null) && qs.isStarted()) {
+			switch (npc.getId()) {
+				case ABYSSAL_JEWEL_1: {
+					if (qs.isMemoState(40000) || (qs.isMemoState(40001))) {
+						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.8)) && (npc.getVariables().getInt("i_quest0") == 0)) {
+							for (int i = 0; i < 20; i++) {
 								addAttackDesire(addSpawn(JEWEL_GUARDIAN_MARA, npc, true, 180000), attacker);
 							}
 							npc.getVariables().set("i_quest0", 1);
 							startQuestTimer("DESPAWN", 900000, npc, attacker);
 						}
 						
-						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.4)) && !hasQuestItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_1ST))
-						{
+						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.4)) && !hasQuestItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_1ST)) {
 							giveItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_1ST, 1);
 							playSound(attacker, Sound.ITEMSOUND_QUEST_ITEMGET);
 							startQuestTimer("DESPAWN_240", 240000, npc, attacker);
 						}
 					}
 					
-					if (npc.getCurrentHp() < (npc.getMaxHp() * 0.1))
-					{
+					if (npc.getCurrentHp() < (npc.getMaxHp() * 0.1)) {
 						npc.deleteMe();
 					}
 					break;
 				}
-				case ABYSSAL_JEWEL_2:
-				{
-					if (qs.isMemoState(40000) || (qs.isMemoState(40010)))
-					{
-						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.8)) && (npc.getVariables().getInt("i_quest0") == 0))
-						{
-							for (int i = 0; i < 20; i++)
-							{
+				case ABYSSAL_JEWEL_2: {
+					if (qs.isMemoState(40000) || (qs.isMemoState(40010))) {
+						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.8)) && (npc.getVariables().getInt("i_quest0") == 0)) {
+							for (int i = 0; i < 20; i++) {
 								addAttackDesire(addSpawn(JEWEL_GUARDIAN_MUSFEL, npc, true, 180000), attacker);
 							}
 							npc.getVariables().set("i_quest0", 1);
 							startQuestTimer("DESPAWN", 900000, npc, attacker);
 						}
 						
-						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.4)) && !hasQuestItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_2ND))
-						{
+						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.4)) && !hasQuestItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_2ND)) {
 							giveItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_2ND, 1);
 							playSound(attacker, Sound.ITEMSOUND_QUEST_ITEMGET);
 							startQuestTimer("DESPAWN_240", 240000, npc, attacker);
 						}
 					}
 					
-					if (npc.getCurrentHp() < (npc.getMaxHp() * 0.1))
-					{
+					if (npc.getCurrentHp() < (npc.getMaxHp() * 0.1)) {
 						npc.deleteMe();
 					}
 					break;
 				}
-				case ABYSSAL_JEWEL_3:
-				{
-					if (qs.isMemoState(70000))
-					{
-						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.8)) && (npc.getVariables().getInt("i_quest0") == 0))
-						{
+				case ABYSSAL_JEWEL_3: {
+					if (qs.isMemoState(70000)) {
+						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.8)) && (npc.getVariables().getInt("i_quest0") == 0)) {
 							addAttackDesire(addSpawn(JEWEL_GUARDIAN_PYTON, npc, true, 180000), attacker);
 							addAttackDesire(addSpawn(JEWEL_GUARDIAN_PYTON, npc, true, 180000), attacker);
 							addAttackDesire(addSpawn(JEWEL_GUARDIAN_PYTON, npc, true, 180000), attacker);
@@ -242,15 +209,13 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 							npc.getVariables().set("i_quest0", 1);
 						}
 						
-						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.4)) && !hasQuestItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_3RD))
-						{
+						if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.4)) && !hasQuestItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_3RD)) {
 							giveItems(attacker, FRAGMENT_OF_ABYSS_JEWEL_3RD, 1);
 							playSound(attacker, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					
-					if (npc.getCurrentHp() < (npc.getMaxHp() * 0.1))
-					{
+					if (npc.getCurrentHp() < (npc.getMaxHp() * 0.1)) {
 						npc.deleteMe();
 					}
 					break;
@@ -261,17 +226,12 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case BLOOD_QUEEN:
-				{
-					switch (qs.getMemoState())
-					{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
+				case BLOOD_QUEEN: {
+					switch (qs.getMemoState()) {
 						case 21011:
 						case 21010:
 						case 21001:
@@ -279,12 +239,9 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20011:
 						case 20010:
 						case 20001:
-						case 20000:
-						{
-							if (!hasQuestItems(killer, REMAINS_OF_SACRAFICE))
-							{
-								for (int i = 0; i < 8; i++)
-								{
+						case 20000: {
+							if (!hasQuestItems(killer, REMAINS_OF_SACRAFICE)) {
+								for (int i = 0; i < 8; i++) {
 									addSpawn(GHOST_OF_OFFERING, npc, true, 180000);
 								}
 							}
@@ -296,21 +253,16 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 				case CAVE_MAIDEN:
 				case CAVE_KEEPER:
 				case CAVE_KEEPER_HOLD:
-				case CAVE_MAIDEN_HOLD:
-				{
-					if (qs.isMemoState(70000) && !hasQuestItems(killer, FRAGMENT_OF_ABYSS_JEWEL_3RD))
-					{
-						if (getRandom(5) == 0)
-						{
+				case CAVE_MAIDEN_HOLD: {
+					if (qs.isMemoState(70000) && !hasQuestItems(killer, FRAGMENT_OF_ABYSS_JEWEL_3RD)) {
+						if (getRandom(5) == 0) {
 							addSpawn(ABYSSAL_JEWEL_3, npc, true, 180000);
 						}
 					}
 					break;
 				}
-				case HARIT_LIZARDMAN_SHAMAN:
-				{
-					switch (qs.getMemoState())
-					{
+				case HARIT_LIZARDMAN_SHAMAN: {
+					switch (qs.getMemoState()) {
 						case 21110:
 						case 21100:
 						case 21010:
@@ -318,10 +270,8 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20110:
 						case 20100:
 						case 20010:
-						case 20000:
-						{
-							if (!hasQuestItems(killer, TOTEM_OF_LAND_DRAGON))
-							{
+						case 20000: {
+							if (!hasQuestItems(killer, TOTEM_OF_LAND_DRAGON)) {
 								addAttackDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
 								addAttackDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
 								addAttackDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
@@ -331,10 +281,8 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 					}
 					break;
 				}
-				case HARIT_LIZARDMAN_MATRIARCH:
-				{
-					switch (qs.getMemoState())
-					{
+				case HARIT_LIZARDMAN_MATRIARCH: {
+					switch (qs.getMemoState()) {
 						case 21110:
 						case 21100:
 						case 21010:
@@ -342,12 +290,9 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20110:
 						case 20100:
 						case 20010:
-						case 20000:
-						{
-							if (!hasQuestItems(killer, TOTEM_OF_LAND_DRAGON))
-							{
-								if (getRandom(5) == 0)
-								{
+						case 20000: {
+							if (!hasQuestItems(killer, TOTEM_OF_LAND_DRAGON)) {
+								if (getRandom(5) == 0) {
 									addAttackDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
 									addAttackDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
 									addAttackDesire(addSpawn(HARIT_LIZARDMAN_ZEALOT, npc, true, 180000), killer);
@@ -358,10 +303,8 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 					}
 					break;
 				}
-				case HAMRUT:
-				{
-					switch (qs.getMemoState())
-					{
+				case HAMRUT: {
+					switch (qs.getMemoState()) {
 						case 21101:
 						case 21100:
 						case 21001:
@@ -369,10 +312,8 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20101:
 						case 20100:
 						case 20001:
-						case 20000:
-						{
-							if (!hasQuestItems(killer, HAMRUT_LEG))
-							{
+						case 20000: {
+							if (!hasQuestItems(killer, HAMRUT_LEG)) {
 								giveItems(killer, HAMRUT_LEG, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
@@ -381,10 +322,8 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 					}
 					break;
 				}
-				case KRANROT:
-				{
-					switch (qs.getMemoState())
-					{
+				case KRANROT: {
+					switch (qs.getMemoState()) {
 						case 21101:
 						case 21100:
 						case 21001:
@@ -392,10 +331,8 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20101:
 						case 20100:
 						case 20001:
-						case 20000:
-						{
-							if (!hasQuestItems(killer, KRANROT_SKIN))
-							{
+						case 20000: {
+							if (!hasQuestItems(killer, KRANROT_SKIN)) {
 								giveItems(killer, KRANROT_SKIN, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
@@ -404,10 +341,8 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 					}
 					break;
 				}
-				case MARSH_STALKER:
-				{
-					switch (qs.getMemoState())
-					{
+				case MARSH_STALKER: {
+					switch (qs.getMemoState()) {
 						case 20111:
 						case 20110:
 						case 20101:
@@ -415,10 +350,8 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20011:
 						case 20010:
 						case 20001:
-						case 20000:
-						{
-							if (!hasQuestItems(killer, MARSH_STALKER_HORN))
-							{
+						case 20000: {
+							if (!hasQuestItems(killer, MARSH_STALKER_HORN)) {
 								giveItems(killer, MARSH_STALKER_HORN, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
@@ -427,10 +360,8 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 					}
 					break;
 				}
-				case MARSH_DRAKE:
-				{
-					switch (qs.getMemoState())
-					{
+				case MARSH_DRAKE: {
+					switch (qs.getMemoState()) {
 						case 20111:
 						case 20110:
 						case 20101:
@@ -438,10 +369,8 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20011:
 						case 20010:
 						case 20001:
-						case 20000:
-						{
-							if (!hasQuestItems(killer, MARSH_DRAKE_TALONS))
-							{
+						case 20000: {
+							if (!hasQuestItems(killer, MARSH_DRAKE_TALONS)) {
 								giveItems(killer, MARSH_DRAKE_TALONS, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
@@ -450,34 +379,26 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 					}
 					break;
 				}
-				case JEWEL_GUARDIAN_MARA:
-				{
-					if (qs.isMemoState(40000) || (qs.isMemoState(40001)))
-					{
-						if (!hasQuestItems(killer, MARA_FANG))
-						{
+				case JEWEL_GUARDIAN_MARA: {
+					if (qs.isMemoState(40000) || (qs.isMemoState(40001))) {
+						if (!hasQuestItems(killer, MARA_FANG)) {
 							giveItems(killer, MARA_FANG, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case JEWEL_GUARDIAN_MUSFEL:
-				{
-					if (qs.isMemoState(40000) || (qs.isMemoState(40010)))
-					{
-						if (!hasQuestItems(killer, MUSFEL_FANG))
-						{
+				case JEWEL_GUARDIAN_MUSFEL: {
+					if (qs.isMemoState(40000) || (qs.isMemoState(40010))) {
+						if (!hasQuestItems(killer, MUSFEL_FANG)) {
 							giveItems(killer, MUSFEL_FANG, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case GHOST_OF_OFFERING:
-				{
-					switch (qs.getMemoState())
-					{
+				case GHOST_OF_OFFERING: {
+					switch (qs.getMemoState()) {
 						case 21011:
 						case 21010:
 						case 21001:
@@ -485,10 +406,8 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20011:
 						case 20010:
 						case 20001:
-						case 20000:
-						{
-							if (!hasQuestItems(killer, REMAINS_OF_SACRAFICE))
-							{
+						case 20000: {
+							if (!hasQuestItems(killer, REMAINS_OF_SACRAFICE)) {
 								giveItems(killer, REMAINS_OF_SACRAFICE, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
@@ -497,10 +416,8 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 					}
 					break;
 				}
-				case HARIT_LIZARDMAN_ZEALOT:
-				{
-					switch (qs.getMemoState())
-					{
+				case HARIT_LIZARDMAN_ZEALOT: {
+					switch (qs.getMemoState()) {
 						case 21110:
 						case 21100:
 						case 21010:
@@ -508,10 +425,8 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20110:
 						case 20100:
 						case 20010:
-						case 20000:
-						{
-							if (!hasQuestItems(killer, TOTEM_OF_LAND_DRAGON))
-							{
+						case 20000: {
+							if (!hasQuestItems(killer, TOTEM_OF_LAND_DRAGON)) {
 								giveItems(killer, TOTEM_OF_LAND_DRAGON, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
@@ -526,134 +441,87 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		final int memoState = qs.getMemoState();
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (npc.getId() == GABRIELLE)
-			{
-				if (player.getLevel() < MIN_LEVEL)
-				{
+		if (qs.isCreated()) {
+			if (npc.getId() == GABRIELLE) {
+				if (player.getLevel() < MIN_LEVEL) {
 					htmltext = "30753-01.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30753-02.htm";
 				}
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case GABRIELLE:
-				{
-					if ((memoState >= 20000) && (memoState < 30000))
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case GABRIELLE: {
+					if ((memoState >= 20000) && (memoState < 30000)) {
 						htmltext = "30753-06.html";
-					}
-					else if (memoState == 30000)
-					{
+					} else if (memoState == 30000) {
 						htmltext = "30753-08.html";
-					}
-					else if ((memoState >= 40000) && (memoState < 50000))
-					{
+					} else if ((memoState >= 40000) && (memoState < 50000)) {
 						htmltext = "30753-10.html";
-					}
-					else if (memoState == 50000)
-					{
+					} else if (memoState == 50000) {
 						takeItems(player, FEATHER_OF_GABRIELLE, -1);
 						takeItems(player, MARK_OF_WATCHMAN, -1);
 						giveItems(player, HERALD_OF_SLAYER, 1);
 						qs.setMemoState(60000);
 						qs.setCond(3, true);
 						htmltext = "30753-11.html";
-					}
-					else if (memoState == 60000)
-					{
+					} else if (memoState == 60000) {
 						htmltext = "30753-12.html";
-					}
-					else if (memoState == 70000)
-					{
+					} else if (memoState == 70000) {
 						htmltext = "30753-13.html";
 					}
 					break;
 				}
-				case WAREHOUSE_CHIEF_MOKE:
-				{
-					if ((memoState == 40000) || (memoState == 40001))
-					{
-						if (hasQuestItems(player, FRAGMENT_OF_ABYSS_JEWEL_1ST, MARA_FANG))
-						{
+				case WAREHOUSE_CHIEF_MOKE: {
+					if ((memoState == 40000) || (memoState == 40001)) {
+						if (hasQuestItems(player, FRAGMENT_OF_ABYSS_JEWEL_1ST, MARA_FANG)) {
 							takeItems(player, FRAGMENT_OF_ABYSS_JEWEL_1ST, -1);
 							takeItems(player, MARA_FANG, -1);
 							giveItems(player, MARK_OF_WATCHMAN, 1);
-							if (qs.getMemoState() == 40001)
-							{
+							if (qs.getMemoState() == 40001) {
 								qs.setMemoState(50000);
-							}
-							else
-							{
+							} else {
 								qs.setMemoState(40010);
 							}
 							htmltext = "30498-03.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30498-01.html";
 						}
-					}
-					else if (memoState == 40010)
-					{
+					} else if (memoState == 40010) {
 						htmltext = "30498-04.html";
-					}
-					else if (memoState >= 50000)
-					{
+					} else if (memoState >= 50000) {
 						htmltext = "30498-05.html";
 					}
 					break;
 				}
-				case BLACKSMITH_HELTON:
-				{
-					if ((memoState == 40000) || (memoState == 40010))
-					{
-						if (hasQuestItems(player, FRAGMENT_OF_ABYSS_JEWEL_2ND, MUSFEL_FANG))
-						{
+				case BLACKSMITH_HELTON: {
+					if ((memoState == 40000) || (memoState == 40010)) {
+						if (hasQuestItems(player, FRAGMENT_OF_ABYSS_JEWEL_2ND, MUSFEL_FANG)) {
 							takeItems(player, FRAGMENT_OF_ABYSS_JEWEL_2ND, -1);
 							takeItems(player, MUSFEL_FANG, -1);
 							giveItems(player, MARK_OF_WATCHMAN, 1);
-							if (qs.getMemoState() == 40010)
-							{
+							if (qs.getMemoState() == 40010) {
 								qs.setMemoState(50000);
-							}
-							else
-							{
+							} else {
 								qs.setMemoState(40001);
 							}
 							htmltext = "30678-02.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30678-01.html";
 						}
-					}
-					else if (memoState == 40001)
-					{
+					} else if (memoState == 40001) {
 						htmltext = "30678-03.html";
-					}
-					else if (memoState >= 50000)
-					{
+					} else if (memoState >= 50000) {
 						htmltext = "30678-04.html";
 					}
 					break;
 				}
-				case PREFECT_CHAKIRIS:
-				{
-					switch (qs.getMemoState())
-					{
+				case PREFECT_CHAKIRIS: {
+					switch (qs.getMemoState()) {
 						case 21101:
 						case 21000:
 						case 21100:
@@ -661,25 +529,18 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20101:
 						case 20100:
 						case 20001:
-						case 20000:
-						{
-							if (hasQuestItems(player, KRANROT_SKIN, HAMRUT_LEG))
-							{
+						case 20000: {
+							if (hasQuestItems(player, KRANROT_SKIN, HAMRUT_LEG)) {
 								takeItems(player, KRANROT_SKIN, -1);
 								takeItems(player, HAMRUT_LEG, -1);
 								giveItems(player, MARK_OF_WATCHMAN, 1);
-								if ((qs.getMemoState() + 10) == 21111)
-								{
+								if ((qs.getMemoState() + 10) == 21111) {
 									qs.setMemoState(30000);
-								}
-								else
-								{
+								} else {
 									qs.setMemoState(qs.getMemoState() + 10);
 								}
 								htmltext = "30705-02.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30705-01.html";
 							}
 							break;
@@ -690,22 +551,18 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20111:
 						case 20110:
 						case 20011:
-						case 20010:
-						{
+						case 20010: {
 							htmltext = "30705-03.html";
 							break;
 						}
 					}
-					if (memoState >= 30000)
-					{
+					if (memoState >= 30000) {
 						htmltext = "30705-04.html";
 					}
 					break;
 				}
-				case MAGISTER_KAIENA:
-				{
-					switch (qs.getMemoState())
-					{
+				case MAGISTER_KAIENA: {
+					switch (qs.getMemoState()) {
 						case 20111:
 						case 20110:
 						case 20101:
@@ -713,25 +570,18 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20010:
 						case 20011:
 						case 20001:
-						case 20000:
-						{
-							if (hasQuestItems(player, MARSH_STALKER_HORN, MARSH_DRAKE_TALONS))
-							{
+						case 20000: {
+							if (hasQuestItems(player, MARSH_STALKER_HORN, MARSH_DRAKE_TALONS)) {
 								takeItems(player, MARSH_STALKER_HORN, -1);
 								takeItems(player, MARSH_DRAKE_TALONS, -1);
 								giveItems(player, MARK_OF_WATCHMAN, 1);
-								if ((qs.getMemoState() + 1000) == 21111)
-								{
+								if ((qs.getMemoState() + 1000) == 21111) {
 									qs.setMemoState(30000);
-								}
-								else
-								{
+								} else {
 									qs.setMemoState(qs.getMemoState() + 1000);
 								}
 								htmltext = "30720-02.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30720-01.html";
 							}
 							break;
@@ -742,68 +592,46 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 21011:
 						case 21010:
 						case 21001:
-						case 21000:
-						{
+						case 21000: {
 							htmltext = "30720-03.html";
 							break;
 						}
 					}
-					if (memoState >= 30000)
-					{
+					if (memoState >= 30000) {
 						htmltext = "30720-04.html";
 					}
 					break;
 				}
-				case ANTHARAS_WATCHMAN_GILMORE:
-				{
-					if (memoState < 60000)
-					{
+				case ANTHARAS_WATCHMAN_GILMORE: {
+					if (memoState < 60000) {
 						htmltext = "30754-01.html";
-					}
-					else if (memoState == 60000)
-					{
+					} else if (memoState == 60000) {
 						htmltext = "30754-02.html";
-					}
-					else if (memoState == 70000)
-					{
-						if (hasQuestItems(player, FRAGMENT_OF_ABYSS_JEWEL_3RD))
-						{
+					} else if (memoState == 70000) {
+						if (hasQuestItems(player, FRAGMENT_OF_ABYSS_JEWEL_3RD)) {
 							htmltext = "30754-05.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30754-04.html";
 						}
 					}
 					break;
 				}
-				case ANTHARAS_WATCHMAN_THEODRIC:
-				{
-					if (memoState < 60000)
-					{
+				case ANTHARAS_WATCHMAN_THEODRIC: {
+					if (memoState < 60000) {
 						htmltext = "30755-01.html";
-					}
-					else if (memoState == 60000)
-					{
+					} else if (memoState == 60000) {
 						htmltext = "30755-02.html";
-					}
-					else if (memoState == 70000)
-					{
-						if (!hasQuestItems(player, FRAGMENT_OF_ABYSS_JEWEL_3RD))
-						{
+					} else if (memoState == 70000) {
+						if (!hasQuestItems(player, FRAGMENT_OF_ABYSS_JEWEL_3RD)) {
 							htmltext = "30755-03.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30755-04.html";
 						}
 					}
 					break;
 				}
-				case MASTER_KENDRA:
-				{
-					switch (qs.getMemoState())
-					{
+				case MASTER_KENDRA: {
+					switch (qs.getMemoState()) {
 						case 21110:
 						case 21100:
 						case 21010:
@@ -811,22 +639,15 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20110:
 						case 20100:
 						case 20010:
-						case 20000:
-						{
-							if (!hasQuestItems(player, TOTEM_OF_LAND_DRAGON))
-							{
+						case 20000: {
+							if (!hasQuestItems(player, TOTEM_OF_LAND_DRAGON)) {
 								htmltext = "30851-01.html";
-							}
-							else
-							{
+							} else {
 								takeItems(player, TOTEM_OF_LAND_DRAGON, -1);
 								giveItems(player, MARK_OF_WATCHMAN, 1);
-								if ((qs.getMemoState() + 1) == 21111)
-								{
+								if ((qs.getMemoState() + 1) == 21111) {
 									qs.setMemoState(30000);
-								}
-								else
-								{
+								} else {
 									qs.setMemoState(qs.getMemoState() + 1);
 								}
 								htmltext = "30851-02.html";
@@ -839,22 +660,18 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20111:
 						case 20101:
 						case 20011:
-						case 20001:
-						{
+						case 20001: {
 							htmltext = "30851-03.html";
 							break;
 						}
 					}
-					if (memoState >= 30000)
-					{
+					if (memoState >= 30000) {
 						htmltext = "30851-04.html";
 					}
 					break;
 				}
-				case HIGH_PRIEST_ORVEN:
-				{
-					switch (qs.getMemoState())
-					{
+				case HIGH_PRIEST_ORVEN: {
+					switch (qs.getMemoState()) {
 						case 21011:
 						case 21010:
 						case 21001:
@@ -862,22 +679,15 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20011:
 						case 20010:
 						case 20001:
-						case 20000:
-						{
-							if (!hasQuestItems(player, REMAINS_OF_SACRAFICE))
-							{
+						case 20000: {
+							if (!hasQuestItems(player, REMAINS_OF_SACRAFICE)) {
 								htmltext = "30857-01.html";
-							}
-							else
-							{
+							} else {
 								takeItems(player, REMAINS_OF_SACRAFICE, -1);
 								giveItems(player, MARK_OF_WATCHMAN, 1);
-								if ((qs.getMemoState() + 100) == 21111)
-								{
+								if ((qs.getMemoState() + 100) == 21111) {
 									qs.setMemoState(30000);
-								}
-								else
-								{
+								} else {
 									qs.setMemoState(qs.getMemoState() + 100);
 								}
 								htmltext = "30857-02.html";
@@ -890,14 +700,12 @@ public final class Q00337_AudienceWithTheLandDragon extends Quest
 						case 20111:
 						case 20110:
 						case 20101:
-						case 20100:
-						{
+						case 20100: {
 							htmltext = "30857-03.html";
 							break;
 						}
 					}
-					if (memoState >= 30000)
-					{
+					if (memoState >= 30000) {
 						htmltext = "30857-04.html";
 					}
 					break;

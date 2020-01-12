@@ -27,8 +27,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Grand Feast (378)
  * @author Adry_85
  */
-public final class Q00378_GrandFeast extends Quest
-{
+public final class Q00378_GrandFeast extends Quest {
 	// NPC
 	private static final int RANSPO = 30594;
 	// Items
@@ -51,144 +50,110 @@ public final class Q00378_GrandFeast extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 20;
 	
-	public Q00378_GrandFeast()
-	{
+	public Q00378_GrandFeast() {
 		super(378, Q00378_GrandFeast.class.getSimpleName(), "Grand Feast");
 		addStartNpc(RANSPO);
 		addTalkId(RANSPO);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30594-02.htm":
-			{
+		switch (event) {
+			case "30594-02.htm": {
 				qs.setMemoStateEx(1, 0);
 				qs.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "30594-05.html":
-			{
+			case "30594-05.html": {
 				final int i0 = qs.getMemoStateEx(1);
-				if (hasQuestItems(player, OLD_WINE_15_YEAR))
-				{
+				if (hasQuestItems(player, OLD_WINE_15_YEAR)) {
 					takeItems(player, OLD_WINE_15_YEAR, 1);
 					qs.setMemoStateEx(1, i0 + 10);
 					qs.setCond(2, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30594-08.html";
 				}
 				break;
 			}
-			case "30594-06.html":
-			{
+			case "30594-06.html": {
 				final int i0 = qs.getMemoStateEx(1);
-				if (hasQuestItems(player, OLD_WINE_30_YEAR))
-				{
+				if (hasQuestItems(player, OLD_WINE_30_YEAR)) {
 					takeItems(player, OLD_WINE_30_YEAR, 1);
 					qs.setMemoStateEx(1, i0 + 20);
 					qs.setCond(2, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30594-08.html";
 				}
 				break;
 			}
-			case "30594-07.html":
-			{
+			case "30594-07.html": {
 				final int i0 = qs.getMemoStateEx(1);
-				if (hasQuestItems(player, OLD_WINE_60_YEAR))
-				{
+				if (hasQuestItems(player, OLD_WINE_60_YEAR)) {
 					takeItems(player, OLD_WINE_60_YEAR, 1);
 					qs.setMemoStateEx(1, i0 + 30);
 					qs.setCond(2, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30594-08.html";
 				}
 				break;
 			}
 			case "30594-09.html":
-			case "30594-18.html":
-			{
+			case "30594-18.html": {
 				htmltext = event;
 				break;
 			}
-			case "30594-12.html":
-			{
-				if (hasQuestItems(player, THEME_OF_THE_FEAST))
-				{
+			case "30594-12.html": {
+				if (hasQuestItems(player, THEME_OF_THE_FEAST)) {
 					takeItems(player, THEME_OF_THE_FEAST, 1);
 					qs.setCond(3, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30594-08.html";
 				}
 				break;
 			}
-			case "30594-14.html":
-			{
+			case "30594-14.html": {
 				final int i0 = qs.getMemoStateEx(1);
-				if (hasQuestItems(player, JONAS_SALAD_RECIPE))
-				{
+				if (hasQuestItems(player, JONAS_SALAD_RECIPE)) {
 					takeItems(player, JONAS_SALAD_RECIPE, 1);
 					qs.setMemoStateEx(1, i0 + 1);
 					qs.setCond(4, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30594-17.html";
 				}
 				break;
 			}
-			case "30594-15.html":
-			{
+			case "30594-15.html": {
 				final int i0 = qs.getMemoStateEx(1);
-				if (hasQuestItems(player, JONAS_SAUCE_RECIPE))
-				{
+				if (hasQuestItems(player, JONAS_SAUCE_RECIPE)) {
 					takeItems(player, JONAS_SAUCE_RECIPE, 1);
 					qs.setMemoStateEx(1, i0 + 2);
 					qs.setCond(4, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30594-17.html";
 				}
 				break;
 			}
-			case "30594-16.html":
-			{
+			case "30594-16.html": {
 				final int i0 = qs.getMemoStateEx(1);
-				if (hasQuestItems(player, JONAS_STEAK_RECIPE))
-				{
+				if (hasQuestItems(player, JONAS_STEAK_RECIPE)) {
 					takeItems(player, JONAS_STEAK_RECIPE, 1);
 					qs.setMemoStateEx(1, i0 + 3);
 					qs.setCond(4, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30594-17.html";
 				}
 				break;
@@ -198,98 +163,78 @@ public final class Q00378_GrandFeast extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			htmltext = (player.getLevel() >= MIN_LEVEL) ? "30594-01.htm" : "30594-03.html";
-		}
-		else if (qs.isStarted())
-		{
-			switch (qs.getCond())
-			{
-				case 1:
-				{
+		} else if (qs.isStarted()) {
+			switch (qs.getCond()) {
+				case 1: {
 					htmltext = "30594-04.html";
 					break;
 				}
-				case 2:
-				{
+				case 2: {
 					htmltext = (hasQuestItems(player, THEME_OF_THE_FEAST)) ? "30594-11.html" : "30594-10.html";
 					break;
 				}
-				case 3:
-				{
+				case 3: {
 					htmltext = "30594-13.html";
 					break;
 				}
-				case 4:
-				{
-					if (hasQuestItems(player, RITRONS_DESSERT_RECIPE))
-					{
+				case 4: {
+					if (hasQuestItems(player, RITRONS_DESSERT_RECIPE)) {
 						takeItems(player, RITRONS_DESSERT_RECIPE, 1);
 						int item = 0, adena = 0;
 						long quantity = 0;
-						switch (qs.getMemoStateEx(1))
-						{
-							case 11:
-							{
+						switch (qs.getMemoStateEx(1)) {
+							case 11: {
 								item = RED_CRESCENT_EARRING;
 								quantity = 1;
 								adena = 5700;
 								break;
 							}
-							case 12:
-							{
+							case 12: {
 								item = CORAL_EARRING;
 								quantity = 2;
 								adena = 1200;
 								break;
 							}
-							case 13:
-							{
+							case 13: {
 								item = ENCHANTED_RING;
 								quantity = 1;
 								adena = 8100;
 								break;
 							}
-							case 21:
-							{
+							case 21: {
 								item = CORAL_EARRING;
 								quantity = 2;
 								break;
 							}
-							case 22:
-							{
+							case 22: {
 								item = ENCHANTED_RING;
 								quantity = 1;
 								adena = 6900;
 								break;
 							}
-							case 23:
-							{
+							case 23: {
 								item = NECKLACE_OF_DEVOTION;
 								quantity = 1;
 								break;
 							}
-							case 31:
-							{
+							case 31: {
 								item = BLUE_DIAMOND_NECKLACE;
 								quantity = 1;
 								adena = 25400;
 								break;
 							}
-							case 32:
-							{
+							case 32: {
 								item = RING_OF_DEVOTION;
 								quantity = 2;
 								adena = 8500;
 								break;
 							}
-							case 33:
-							{
+							case 33: {
 								item = ENCHANTED_EARRING;
 								quantity = 1;
 								adena = 2200;
@@ -300,9 +245,7 @@ public final class Q00378_GrandFeast extends Quest
 						giveAdena(player, adena, true);
 						qs.exitQuest(true, true);
 						htmltext = "30594-20.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30594-19.html";
 					}
 					break;

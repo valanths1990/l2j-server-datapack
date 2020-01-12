@@ -32,42 +32,34 @@ import com.l2jserver.gameserver.network.serverpackets.UserInfo;
  * Give Recommendation effect implementation.
  * @author NosBit
  */
-public final class GiveRecommendation extends AbstractEffect
-{
+public final class GiveRecommendation extends AbstractEffect {
 	private final int _amount;
 	
-	public GiveRecommendation(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public GiveRecommendation(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_amount = params.getInt("amount", 0);
-		if (_amount == 0)
-		{
+		if (_amount == 0) {
 			_log.warning(getClass().getSimpleName() + ": amount parameter is missing or set to 0. id:" + set.getInt("id", -1));
 		}
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		L2PcInstance target = info.getEffected() instanceof L2PcInstance ? (L2PcInstance) info.getEffected() : null;
-		if (target != null)
-		{
+		if (target != null) {
 			int recommendationsGiven = _amount;
 			
-			if ((target.getRecomHave() + _amount) >= 255)
-			{
+			if ((target.getRecomHave() + _amount) >= 255) {
 				recommendationsGiven = 255 - target.getRecomHave();
 			}
 			
-			if (recommendationsGiven > 0)
-			{
+			if (recommendationsGiven > 0) {
 				target.setRecomHave(target.getRecomHave() + recommendationsGiven);
 				
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_OBTAINED_S1_RECOMMENDATIONS);
@@ -75,12 +67,9 @@ public final class GiveRecommendation extends AbstractEffect
 				target.sendPacket(sm);
 				target.sendPacket(new UserInfo(target));
 				target.sendPacket(new ExVoteSystemInfo(target));
-			}
-			else
-			{
+			} else {
 				L2PcInstance player = info.getEffector() instanceof L2PcInstance ? (L2PcInstance) info.getEffector() : null;
-				if (player != null)
-				{
+				if (player != null) {
 					player.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 				}
 			}

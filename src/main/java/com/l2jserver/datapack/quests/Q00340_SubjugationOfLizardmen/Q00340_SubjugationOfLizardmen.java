@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.util.Util;
  * Subjugation Of Lizardmen (340)
  * @author ivantotov
  */
-public final class Q00340_SubjugationOfLizardmen extends Quest
-{
+public final class Q00340_SubjugationOfLizardmen extends Quest {
 	// NPCs
 	private static final int HIGH_PRIESTESS_LEVIAN = 30037;
 	private static final int PRIEST_ADONIUS = 30375;
@@ -53,8 +52,7 @@ public final class Q00340_SubjugationOfLizardmen extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 17;
 	
-	public Q00340_SubjugationOfLizardmen()
-	{
+	public Q00340_SubjugationOfLizardmen() {
 		super(340, Q00340_SubjugationOfLizardmen.class.getSimpleName(), "Subjugation Of Lizardmen");
 		addStartNpc(GUARD_WEISZ);
 		addTalkId(GUARD_WEISZ, HIGH_PRIESTESS_LEVIAN, PRIEST_ADONIUS, CHEST_OF_BIFRONS);
@@ -63,21 +61,16 @@ public final class Q00340_SubjugationOfLizardmen extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30385-03.htm":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "30385-03.htm": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					qs.setMemoState(1);
 					htmltext = event;
@@ -85,23 +78,19 @@ public final class Q00340_SubjugationOfLizardmen extends Quest
 				break;
 			}
 			case "30385-04.html":
-			case "30385-08.html":
-			{
+			case "30385-08.html": {
 				htmltext = event;
 				break;
 			}
-			case "30385-07.html":
-			{
+			case "30385-07.html": {
 				takeItems(player, TRADE_CARGO, -1);
 				qs.setMemoState(2);
 				qs.setCond(2, true);
 				htmltext = event;
 				break;
 			}
-			case "30385-09.html":
-			{
-				if (getQuestItemsCount(player, TRADE_CARGO) >= 30)
-				{
+			case "30385-09.html": {
+				if (getQuestItemsCount(player, TRADE_CARGO) >= 30) {
 					giveAdena(player, 4090, true);
 					takeItems(player, TRADE_CARGO, -1);
 					qs.setMemoState(1);
@@ -109,10 +98,8 @@ public final class Q00340_SubjugationOfLizardmen extends Quest
 				}
 				break;
 			}
-			case "30385-10.html":
-			{
-				if (getQuestItemsCount(player, TRADE_CARGO) >= 30)
-				{
+			case "30385-10.html": {
+				if (getQuestItemsCount(player, TRADE_CARGO) >= 30) {
 					giveAdena(player, 4090, true);
 					takeItems(player, TRADE_CARGO, -1);
 					qs.exitQuest(false, true);
@@ -120,31 +107,25 @@ public final class Q00340_SubjugationOfLizardmen extends Quest
 				}
 				break;
 			}
-			case "30037-02.html":
-			{
+			case "30037-02.html": {
 				qs.setMemoState(5);
 				qs.setCond(5, true);
 				htmltext = event;
 				break;
 			}
-			case "30375-02.html":
-			{
+			case "30375-02.html": {
 				qs.setMemoState(3);
 				qs.setCond(3, true);
 				htmltext = event;
 				break;
 			}
-			case "30989-02.html":
-			{
-				if (qs.isMemoState(5))
-				{
+			case "30989-02.html": {
+				if (qs.isMemoState(5)) {
 					qs.setMemoState(6);
 					qs.setCond(6, true);
 					giveItems(player, SINISTER_TOTEM, 1);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30989-03.html";
 				}
 				break;
@@ -154,41 +135,29 @@ public final class Q00340_SubjugationOfLizardmen extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
 				case FELIM_LIZARDMAN:
-				case FELIM_LIZARDMAN_SCOUT:
-				{
-					if (qs.isMemoState(1))
-					{
+				case FELIM_LIZARDMAN_SCOUT: {
+					if (qs.isMemoState(1)) {
 						giveItemRandomly(killer, npc, TRADE_CARGO, 1, 30, 0.63, true);
 					}
 					break;
 				}
-				case FELIM_LIZARDMAN_WARRIOR:
-				{
-					if (qs.isMemoState(1))
-					{
+				case FELIM_LIZARDMAN_WARRIOR: {
+					if (qs.isMemoState(1)) {
 						giveItemRandomly(killer, npc, TRADE_CARGO, 1, 30, 0.68, true);
 					}
 					break;
 				}
-				case LANGK_LIZARDMAN_WARRIOR:
-				{
-					if (qs.isMemoState(3))
-					{
-						if (!hasQuestItems(killer, AGNESS_HOLY_SYMBOL) && (getRandom(100) <= 19))
-						{
+				case LANGK_LIZARDMAN_WARRIOR: {
+					if (qs.isMemoState(3)) {
+						if (!hasQuestItems(killer, AGNESS_HOLY_SYMBOL) && (getRandom(100) <= 19)) {
 							giveItems(killer, AGNESS_HOLY_SYMBOL, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
-						}
-						else if (hasQuestItems(killer, AGNESS_HOLY_SYMBOL) && !hasQuestItems(killer, AGNESS_ROSARY) && (getRandom(100) <= 18))
-						{
+						} else if (hasQuestItems(killer, AGNESS_HOLY_SYMBOL) && !hasQuestItems(killer, AGNESS_ROSARY) && (getRandom(100) <= 18)) {
 							giveItems(killer, AGNESS_ROSARY, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
@@ -196,25 +165,19 @@ public final class Q00340_SubjugationOfLizardmen extends Quest
 					break;
 				}
 				case LANGK_LIZARDMAN_SCOUT:
-				case LANGK_LIZARDMAN:
-				{
-					if (qs.isMemoState(3))
-					{
-						if (!hasQuestItems(killer, AGNESS_HOLY_SYMBOL) && (getRandom(100) <= 18))
-						{
+				case LANGK_LIZARDMAN: {
+					if (qs.isMemoState(3)) {
+						if (!hasQuestItems(killer, AGNESS_HOLY_SYMBOL) && (getRandom(100) <= 18)) {
 							giveItems(killer, AGNESS_HOLY_SYMBOL, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
-						}
-						else if (hasQuestItems(killer, AGNESS_HOLY_SYMBOL) && !hasQuestItems(killer, AGNESS_ROSARY) && (getRandom(100) <= 18))
-						{
+						} else if (hasQuestItems(killer, AGNESS_HOLY_SYMBOL) && !hasQuestItems(killer, AGNESS_ROSARY) && (getRandom(100) <= 18)) {
 							giveItems(killer, AGNESS_ROSARY, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case SERPENT_DEMON_BIFRONS:
-				{
+				case SERPENT_DEMON_BIFRONS: {
 					addSpawn(CHEST_OF_BIFRONS, npc, true, 30000);
 					break;
 				}
@@ -224,119 +187,78 @@ public final class Q00340_SubjugationOfLizardmen extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		final int memoState = qs.getMemoState();
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (npc.getId() == GUARD_WEISZ)
-			{
+		if (qs.isCreated()) {
+			if (npc.getId() == GUARD_WEISZ) {
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "30385-02.htm" : "30385-01.htm";
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case GUARD_WEISZ:
-				{
-					if (memoState == 1)
-					{
-						if (getQuestItemsCount(player, TRADE_CARGO) < 30)
-						{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case GUARD_WEISZ: {
+					if (memoState == 1) {
+						if (getQuestItemsCount(player, TRADE_CARGO) < 30) {
 							htmltext = "30385-05.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30385-06.html";
 						}
-					}
-					else if (memoState == 2)
-					{
+					} else if (memoState == 2) {
 						htmltext = "30385-11.html";
-					}
-					else if ((memoState >= 3) && (memoState < 7))
-					{
+					} else if ((memoState >= 3) && (memoState < 7)) {
 						htmltext = "30385-12.html";
-					}
-					else if (memoState == 7)
-					{
+					} else if (memoState == 7) {
 						giveAdena(player, 14700, true);
 						qs.exitQuest(false, true);
 						htmltext = "30385-13.html";
 					}
 					break;
 				}
-				case HIGH_PRIESTESS_LEVIAN:
-				{
-					if (memoState == 4)
-					{
+				case HIGH_PRIESTESS_LEVIAN: {
+					if (memoState == 4) {
 						htmltext = "30037-01.html";
-					}
-					else if (memoState == 5)
-					{
+					} else if (memoState == 5) {
 						htmltext = "30037-03.html";
-					}
-					else if (memoState == 6)
-					{
+					} else if (memoState == 6) {
 						takeItems(player, SINISTER_TOTEM, 1);
 						qs.setMemoState(7);
 						qs.setCond(7, true);
 						htmltext = "30037-04.html";
-					}
-					else if (memoState == 7)
-					{
+					} else if (memoState == 7) {
 						htmltext = "30037-05.html";
 					}
 					break;
 				}
-				case PRIEST_ADONIUS:
-				{
-					if (memoState == 2)
-					{
+				case PRIEST_ADONIUS: {
+					if (memoState == 2) {
 						htmltext = "30375-01.html";
-					}
-					else if (memoState == 3)
-					{
-						if (hasQuestItems(player, AGNESS_HOLY_SYMBOL, AGNESS_ROSARY))
-						{
+					} else if (memoState == 3) {
+						if (hasQuestItems(player, AGNESS_HOLY_SYMBOL, AGNESS_ROSARY)) {
 							takeItems(player, AGNESS_HOLY_SYMBOL, 1);
 							takeItems(player, AGNESS_ROSARY, 1);
 							qs.setMemoState(4);
 							qs.setCond(4, true);
 							htmltext = "30375-04.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30375-03.html";
 						}
-					}
-					else if (memoState == 4)
-					{
+					} else if (memoState == 4) {
 						htmltext = "30375-05.html";
-					}
-					else if (memoState >= 5)
-					{
+					} else if (memoState >= 5) {
 						htmltext = "30375-06.html";
 					}
 					break;
 				}
-				case CHEST_OF_BIFRONS:
-				{
-					if (memoState == 5)
-					{
+				case CHEST_OF_BIFRONS: {
+					if (memoState == 5) {
 						htmltext = "30989-01.html";
 					}
 					break;
 				}
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == GUARD_WEISZ)
-			{
+		} else if (qs.isCompleted()) {
+			if (npc.getId() == GUARD_WEISZ) {
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}

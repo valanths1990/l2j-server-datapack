@@ -32,16 +32,14 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
  * Magical Power of Water - Part 1 (609)
  * @author Joxit
  */
-public class Q00609_MagicalPowerOfWaterPart1 extends Quest
-{
+public class Q00609_MagicalPowerOfWaterPart1 extends Quest {
 	// NPCs
 	private static final int WAHKAN = 31371;
 	private static final int ASEFA = 31372;
 	private static final int UDANS_BOX = 31561;
 	private static final int UDANS_EYE = 31684;
 	// Monsters
-	private static final int[] VARKA_MOBS =
-	{
+	private static final int[] VARKA_MOBS = {
 		21350, // Varka Silenos Recruit
 		21351, // Varka Silenos Footman
 		21353, // Varka Silenos Scout
@@ -69,8 +67,7 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 	private static final int STOLEN_GREEN_TOTEM = 7237;
 	private static final int WISDOM_STONE = 7081;
 	private static final int GREEN_TOTEM = 7238;
-	private static final int[] KETRA_MARKS =
-	{
+	private static final int[] KETRA_MARKS = {
 		7211, // Mark of Ketra's Alliance - Level 1
 		7212, // Mark of Ketra's Alliance - Level 2
 		7213, // Mark of Ketra's Alliance - Level 3
@@ -83,8 +80,7 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 74;
 	
-	public Q00609_MagicalPowerOfWaterPart1()
-	{
+	public Q00609_MagicalPowerOfWaterPart1() {
 		super(609, Q00609_MagicalPowerOfWaterPart1.class.getSimpleName(), "Magical Power of Water - Part 1");
 		addStartNpc(WAHKAN);
 		addTalkId(ASEFA, WAHKAN, UDANS_BOX);
@@ -93,34 +89,25 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "31371-02.html":
 				st.startQuest();
 				htmltext = event;
 				break;
 			case "open_box":
-				if (!st.hasQuestItems(KEY))
-				{
+				if (!st.hasQuestItems(KEY)) {
 					htmltext = "31561-02.html";
-				}
-				else if (st.isCond(2))
-				{
-					if (st.isSet("spawned"))
-					{
+				} else if (st.isCond(2)) {
+					if (st.isSet("spawned")) {
 						st.takeItems(KEY, 1);
 						htmltext = "31561-04.html";
-					}
-					else
-					{
+					} else {
 						st.giveItems(STOLEN_GREEN_TOTEM, 1);
 						st.takeItems(KEY, 1);
 						st.setCond(3, true);
@@ -137,11 +124,9 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final QuestState st = getQuestState(attacker, false);
-		if ((st != null) && st.isCond(2) && !st.isSet("spawned"))
-		{
+		if ((st != null) && st.isCond(2) && !st.isSet("spawned")) {
 			st.set("spawned", "1");
 			npc.setTarget(attacker);
 			npc.doCast(GOW);
@@ -153,45 +138,36 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case WAHKAN:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? (hasAtLeastOneQuestItem(player, KETRA_MARKS)) ? "31371-01.htm" : "31371-00a.html" : "31371-00b.html";
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
-						{
+						if (st.isCond(1)) {
 							htmltext = "31371-03.html";
 						}
 						break;
 				}
 				break;
 			case ASEFA:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "31372-01.html";
 							st.setCond(2, true);
 							break;
 						case 2:
-							if (st.isSet("spawned"))
-							{
+							if (st.isSet("spawned")) {
 								st.unset("spawned");
 								npc.setTarget(player);
 								npc.doCast(DISPEL_GOW);
 								htmltext = "31372-03.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "31372-02.html";
 							}
 							break;
@@ -205,8 +181,7 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 				}
 				break;
 			case UDANS_BOX:
-				if (st.isCond(2))
-				{
+				if (st.isCond(2)) {
 					htmltext = "31561-01.html";
 				}
 				break;

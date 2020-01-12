@@ -33,13 +33,10 @@ import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Broadcast;
 
-public class SpiritShot implements IItemHandler
-{
+public class SpiritShot implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!playable.isPlayer())
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!playable.isPlayer()) {
 			playable.sendPacket(SystemMessageId.ITEM_NOT_FOR_PETS);
 			return false;
 		}
@@ -51,34 +48,28 @@ public class SpiritShot implements IItemHandler
 		
 		int itemId = item.getId();
 		
-		if (skills == null)
-		{
+		if (skills == null) {
 			_log.log(Level.WARNING, getClass().getSimpleName() + ": is missing skills!");
 			return false;
 		}
 		
 		// Check if Spirit shot can be used
-		if ((weaponInst == null) || (weaponItem.getSpiritShotCount() == 0))
-		{
-			if (!activeChar.getAutoSoulShot().contains(itemId))
-			{
+		if ((weaponInst == null) || (weaponItem.getSpiritShotCount() == 0)) {
+			if (!activeChar.getAutoSoulShot().contains(itemId)) {
 				activeChar.sendPacket(SystemMessageId.CANNOT_USE_SPIRITSHOTS);
 			}
 			return false;
 		}
 		
 		// Check if Spirit shot is already active
-		if (activeChar.isChargedShot(ShotType.SPIRITSHOTS))
-		{
+		if (activeChar.isChargedShot(ShotType.SPIRITSHOTS)) {
 			return false;
 		}
 		
 		boolean gradeCheck = item.isEtcItem() && (item.getEtcItem().getDefaultAction() == ActionType.SPIRITSHOT) && (weaponInst.getItem().getItemGradeSPlus() == item.getItem().getItemGradeSPlus());
 		
-		if (!gradeCheck)
-		{
-			if (!activeChar.getAutoSoulShot().contains(itemId))
-			{
+		if (!gradeCheck) {
+			if (!activeChar.getAutoSoulShot().contains(itemId)) {
 				activeChar.sendPacket(SystemMessageId.SPIRITSHOTS_GRADE_MISMATCH);
 			}
 			
@@ -86,10 +77,8 @@ public class SpiritShot implements IItemHandler
 		}
 		
 		// Consume Spirit shot if player has enough of them
-		if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem.getSpiritShotCount(), null, false))
-		{
-			if (!activeChar.disableAutoShot(itemId))
-			{
+		if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem.getSpiritShotCount(), null, false)) {
+			if (!activeChar.disableAutoShot(itemId)) {
 				activeChar.sendPacket(SystemMessageId.NOT_ENOUGH_SPIRITSHOTS);
 			}
 			return false;

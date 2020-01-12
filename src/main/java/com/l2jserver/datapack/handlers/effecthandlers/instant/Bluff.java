@@ -31,36 +31,30 @@ import com.l2jserver.gameserver.network.serverpackets.StopRotation;
  * Bluff effect implementation.
  * @author decad
  */
-public final class Bluff extends AbstractEffect
-{
+public final class Bluff extends AbstractEffect {
 	private final int _chance;
 	
-	public Bluff(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public Bluff(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_chance = params.getInt("chance", 100);
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
-	{
+	public boolean calcSuccess(BuffInfo info) {
 		return Formulas.calcProbability(_chance, info.getEffector(), info.getEffected(), info.getSkill());
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2Character effected = info.getEffected();
 		// Headquarters NPC should not rotate
-		if ((effected.getId() == 35062) || effected.isRaid() || effected.isRaidMinion())
-		{
+		if ((effected.getId() == 35062) || effected.isRaid() || effected.isRaidMinion()) {
 			return;
 		}
 		

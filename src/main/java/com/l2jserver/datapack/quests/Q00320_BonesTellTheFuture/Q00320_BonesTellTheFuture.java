@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Bones Tell The Future (320)
  * @author ivantotov
  */
-public final class Q00320_BonesTellTheFuture extends Quest
-{
+public final class Q00320_BonesTellTheFuture extends Quest {
 	// NPC
 	private static final int TETRACH_KAITAR = 30359;
 	// Item
@@ -40,14 +39,12 @@ public final class Q00320_BonesTellTheFuture extends Quest
 	private static final int REQUIRED_BONE_COUNT = 10;
 	private static final double DROP_CHANCE = 0.18;
 	// Monsters
-	private static final int[] MONSTERS =
-	{
+	private static final int[] MONSTERS = {
 		20517, // Skeleton Hunter
 		20518, // Skeleton Hunter Archer
 	};
 	
-	public Q00320_BonesTellTheFuture()
-	{
+	public Q00320_BonesTellTheFuture() {
 		super(320, Q00320_BonesTellTheFuture.class.getSimpleName(), "Bones Tell The Future");
 		addStartNpc(TETRACH_KAITAR);
 		addTalkId(TETRACH_KAITAR);
@@ -56,11 +53,9 @@ public final class Q00320_BonesTellTheFuture extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && event.equals("30359-04.htm"))
-		{
+		if ((st != null) && event.equals("30359-04.htm")) {
 			st.startQuest();
 			return event;
 		}
@@ -68,38 +63,29 @@ public final class Q00320_BonesTellTheFuture extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, 1, 3, npc);
-		if ((qs != null) && qs.giveItemRandomly(npc, BONE_FRAGMENT, 1, REQUIRED_BONE_COUNT, DROP_CHANCE, true))
-		{
+		if ((qs != null) && qs.giveItemRandomly(npc, BONE_FRAGMENT, 1, REQUIRED_BONE_COUNT, DROP_CHANCE, true)) {
 			qs.setCond(2);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getRace() == Race.DARK_ELF) ? (player.getLevel() >= MIN_LEVEL) ? "30359-03.htm" : "30359-02.htm" : "30359-00.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (st.getQuestItemsCount(BONE_FRAGMENT) >= REQUIRED_BONE_COUNT)
-				{
+			case State.STARTED: {
+				if (st.getQuestItemsCount(BONE_FRAGMENT) >= REQUIRED_BONE_COUNT) {
 					htmltext = "30359-06.html";
 					st.giveAdena(8470, true);
 					st.exitQuest(true, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "30359-05.html";
 				}
 				break;

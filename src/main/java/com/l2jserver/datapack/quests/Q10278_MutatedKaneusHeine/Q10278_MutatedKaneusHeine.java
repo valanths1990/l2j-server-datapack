@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Gnacik on 2010-06-29.
  * @author nonom
  */
-public class Q10278_MutatedKaneusHeine extends Quest
-{
+public class Q10278_MutatedKaneusHeine extends Quest {
 	// NPCs
 	private static final int GOSTA = 30916;
 	private static final int MINEVIA = 30907;
@@ -44,8 +43,7 @@ public class Q10278_MutatedKaneusHeine extends Quest
 	private static final int TISSUE_BO = 13834;
 	private static final int TISSUE_WB = 13835;
 	
-	public Q10278_MutatedKaneusHeine()
-	{
+	public Q10278_MutatedKaneusHeine() {
 		super(10278, Q10278_MutatedKaneusHeine.class.getSimpleName(), "Mutated Kaneus - Heine");
 		addStartNpc(GOSTA);
 		addTalkId(GOSTA, MINEVIA);
@@ -54,16 +52,13 @@ public class Q10278_MutatedKaneusHeine extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "30916-03.htm":
 				st.startQuest();
 				break;
@@ -76,49 +71,38 @@ public class Q10278_MutatedKaneusHeine extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		QuestState st = getQuestState(killer, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		final int npcId = npc.getId();
-		if (killer.getParty() != null)
-		{
+		if (killer.getParty() != null) {
 			final List<QuestState> PartyMembers = new ArrayList<>();
-			for (L2PcInstance member : killer.getParty().getMembers())
-			{
+			for (L2PcInstance member : killer.getParty().getMembers()) {
 				st = getQuestState(member, false);
-				if ((st != null) && st.isStarted() && (((npcId == BLADE_OTIS) && !st.hasQuestItems(TISSUE_BO)) || ((npcId == WEIRD_BUNEI) && !st.hasQuestItems(TISSUE_WB))))
-				{
+				if ((st != null) && st.isStarted() && (((npcId == BLADE_OTIS) && !st.hasQuestItems(TISSUE_BO)) || ((npcId == WEIRD_BUNEI) && !st.hasQuestItems(TISSUE_WB)))) {
 					PartyMembers.add(st);
 				}
 			}
 			
-			if (!PartyMembers.isEmpty())
-			{
+			if (!PartyMembers.isEmpty()) {
 				rewardItem(npcId, PartyMembers.get(getRandom(PartyMembers.size())));
 			}
-		}
-		else if (st.isStarted())
-		{
+		} else if (st.isStarted()) {
 			rewardItem(npcId, st);
 		}
 		return null;
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case GOSTA:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() > 37) ? "30916-01.htm" : "30916-00.htm";
 						break;
@@ -131,8 +115,7 @@ public class Q10278_MutatedKaneusHeine extends Quest
 				}
 				break;
 			case MINEVIA:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.STARTED:
 						htmltext = (st.hasQuestItems(TISSUE_BO) && st.hasQuestItems(TISSUE_WB)) ? "30907-02.htm" : "30907-01.htm";
 						break;
@@ -151,15 +134,11 @@ public class Q10278_MutatedKaneusHeine extends Quest
 	 * @param npcId the ID of the killed monster
 	 * @param st the quest state of the killer or party member
 	 */
-	private final void rewardItem(int npcId, QuestState st)
-	{
-		if ((npcId == BLADE_OTIS) && !st.hasQuestItems(TISSUE_BO))
-		{
+	private final void rewardItem(int npcId, QuestState st) {
+		if ((npcId == BLADE_OTIS) && !st.hasQuestItems(TISSUE_BO)) {
 			st.giveItems(TISSUE_BO, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-		}
-		else if ((npcId == WEIRD_BUNEI) && !st.hasQuestItems(TISSUE_WB))
-		{
+		} else if ((npcId == WEIRD_BUNEI) && !st.hasQuestItems(TISSUE_WB)) {
 			st.giveItems(TISSUE_WB, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}

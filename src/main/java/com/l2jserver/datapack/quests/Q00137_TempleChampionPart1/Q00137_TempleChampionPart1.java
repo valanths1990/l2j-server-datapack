@@ -28,12 +28,10 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Temple Champion - 1 (137)
  * @author nonom
  */
-public class Q00137_TempleChampionPart1 extends Quest
-{
+public class Q00137_TempleChampionPart1 extends Quest {
 	// NPCs
 	private static final int SYLVAIN = 30070;
-	private static final int MOBS[] =
-	{
+	private static final int MOBS[] = {
 		20083, // Granite Golem
 		20144, // Hangman Tree
 		20199, // Amber Basilisk
@@ -46,8 +44,7 @@ public class Q00137_TempleChampionPart1 extends Quest
 	private static final int EXECUTOR = 10334;
 	private static final int MISSIONARY = 10339;
 	
-	public Q00137_TempleChampionPart1()
-	{
+	public Q00137_TempleChampionPart1() {
 		super(137, Q00137_TempleChampionPart1.class.getSimpleName(), "Temple Champion - 1");
 		addStartNpc(SYLVAIN);
 		addTalkId(SYLVAIN);
@@ -56,15 +53,12 @@ public class Q00137_TempleChampionPart1 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
-		switch (event)
-		{
+		switch (event) {
 			case "30070-02.htm":
 				st.startQuest();
 				break;
@@ -79,13 +73,11 @@ public class Q00137_TempleChampionPart1 extends Quest
 				st.setCond(2, true);
 				break;
 			case "30070-16.html":
-				if (st.isCond(3) && (st.hasQuestItems(EXECUTOR) && st.hasQuestItems(MISSIONARY)))
-				{
+				if (st.isCond(3) && (st.hasQuestItems(EXECUTOR) && st.hasQuestItems(MISSIONARY))) {
 					st.takeItems(EXECUTOR, -1);
 					st.takeItems(MISSIONARY, -1);
 					st.giveAdena(69146, true);
-					if (player.getLevel() < 41)
-					{
+					if (player.getLevel() < 41) {
 						st.addExpAndSp(219975, 13047);
 					}
 					st.exitQuest(false, true);
@@ -96,18 +88,13 @@ public class Q00137_TempleChampionPart1 extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && st.isStarted() && st.isCond(2) && (st.getQuestItemsCount(FRAGMENT) < 30))
-		{
+		if ((st != null) && st.isStarted() && st.isCond(2) && (st.getQuestItemsCount(FRAGMENT) < 30)) {
 			st.giveItems(FRAGMENT, 1);
-			if (st.getQuestItemsCount(FRAGMENT) >= 30)
-			{
+			if (st.getQuestItemsCount(FRAGMENT) >= 30) {
 				st.setCond(3, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -115,19 +102,15 @@ public class Q00137_TempleChampionPart1 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st.isCompleted())
-		{
+		if (st.isCompleted()) {
 			return getAlreadyCompletedMsg(player);
 		}
-		switch (st.getCond())
-		{
+		switch (st.getCond()) {
 			case 1:
-				switch (st.getInt("talk"))
-				{
+				switch (st.getInt("talk")) {
 					case 1:
 						htmltext = "30070-05.html";
 						break;
@@ -143,12 +126,9 @@ public class Q00137_TempleChampionPart1 extends Quest
 				htmltext = "30070-08.html";
 				break;
 			case 3:
-				if (st.getInt("talk") == 1)
-				{
+				if (st.getInt("talk") == 1) {
 					htmltext = "30070-10.html";
-				}
-				else if (st.getQuestItemsCount(FRAGMENT) >= 30)
-				{
+				} else if (st.getQuestItemsCount(FRAGMENT) >= 30) {
 					st.set("talk", "1");
 					htmltext = "30070-09.html";
 					st.takeItems(FRAGMENT, -1);

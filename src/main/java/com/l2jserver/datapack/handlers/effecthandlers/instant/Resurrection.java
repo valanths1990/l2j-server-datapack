@@ -31,44 +31,35 @@ import com.l2jserver.gameserver.taskmanager.DecayTaskManager;
  * Resurrection effect implementation.
  * @author Adry_85
  */
-public final class Resurrection extends AbstractEffect
-{
+public final class Resurrection extends AbstractEffect {
 	private final int _power;
 	
-	public Resurrection(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public Resurrection(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getInt("power", 0);
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.RESURRECTION;
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		L2Character target = info.getEffected();
 		L2Character activeChar = info.getEffector();
 		
-		if (activeChar.isPlayer())
-		{
-			if (target.getActingPlayer() != null)
-			{
+		if (activeChar.isPlayer()) {
+			if (target.getActingPlayer() != null) {
 				target.getActingPlayer().reviveRequest(activeChar.getActingPlayer(), info.getSkill(), target.isPet(), _power, 0);
 			}
-		}
-		else
-		{
+		} else {
 			DecayTaskManager.getInstance().cancel(target);
 			target.doRevive(Formulas.calculateSkillResurrectRestorePercent(_power, activeChar));
 		}

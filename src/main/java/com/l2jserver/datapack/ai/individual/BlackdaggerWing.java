@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.util.Util;
  * @author Zoey76
  * @since 2.6.0.0
  */
-public class BlackdaggerWing extends AbstractNpcAI
-{
+public class BlackdaggerWing extends AbstractNpcAI {
 	// NPCs
 	private static final int BLACKDAGGER_WING = 25721;
 	// Skills
@@ -50,8 +49,7 @@ public class BlackdaggerWing extends AbstractNpcAI
 	private static final int MAX_CHASE_DIST = 2500;
 	private static final double MID_HP_PERCENTAGE = 0.50;
 	
-	public BlackdaggerWing()
-	{
+	public BlackdaggerWing() {
 		super(BlackdaggerWing.class.getSimpleName(), "ai/individual");
 		addAttackId(BLACKDAGGER_WING);
 		addSeeCreatureId(BLACKDAGGER_WING);
@@ -59,15 +57,12 @@ public class BlackdaggerWing extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if (Util.calculateDistance(npc, npc.getSpawn(), false, false) > MAX_CHASE_DIST)
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if (Util.calculateDistance(npc, npc.getSpawn(), false, false) > MAX_CHASE_DIST) {
 			npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ());
 		}
 		
-		if ((npc.getCurrentHp() < (npc.getMaxHp() * MID_HP_PERCENTAGE)) && !npc.getVariables().getBoolean(MID_HP_FLAG, false))
-		{
+		if ((npc.getCurrentHp() < (npc.getMaxHp() * MID_HP_PERCENTAGE)) && !npc.getVariables().getBoolean(MID_HP_FLAG, false)) {
 			npc.getVariables().set(MID_HP_FLAG, true);
 			startQuestTimer(DAMAGE_TIMER, 10000, npc, attacker);
 		}
@@ -75,15 +70,11 @@ public class BlackdaggerWing extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
-	{
-		if (npc.getVariables().getBoolean(MID_HP_FLAG, false))
-		{
+	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon) {
+		if (npc.getVariables().getBoolean(MID_HP_FLAG, false)) {
 			final L2Character mostHated = ((L2Attackable) npc).getMostHated();
-			if ((mostHated != null) && mostHated.isPlayer() && (mostHated != creature))
-			{
-				if (getRandom(5) < 1)
-				{
+			if ((mostHated != null) && mostHated.isPlayer() && (mostHated != creature)) {
+				if (getRandom(5) < 1) {
 					addSkillCastDesire(npc, creature, RANGE_MAGIC_ATTACK, 9999900000000000L);
 				}
 			}
@@ -92,13 +83,10 @@ public class BlackdaggerWing extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
-	{
-		if (skill.getId() == POWER_STRIKE.getSkillId())
-		{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill) {
+		if (skill.getId() == POWER_STRIKE.getSkillId()) {
 			npc.getVariables().set(POWER_STRIKE_CAST_COUNT, npc.getVariables().getInt(POWER_STRIKE_CAST_COUNT) + 1);
-			if (npc.getVariables().getInt(POWER_STRIKE_CAST_COUNT) > 3)
-			{
+			if (npc.getVariables().getInt(POWER_STRIKE_CAST_COUNT) > 3) {
 				addSkillCastDesire(npc, player, RANGE_MAGIC_ATTACK, 9999900000000000L);
 				npc.getVariables().set(POWER_STRIKE_CAST_COUNT, 0);
 			}
@@ -107,18 +95,15 @@ public class BlackdaggerWing extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (DAMAGE_TIMER.equals(event))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (DAMAGE_TIMER.equals(event)) {
 			npc.getAI().setIntention(AI_INTENTION_ATTACK);
 			startQuestTimer(DAMAGE_TIMER, 30000, npc, player);
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new BlackdaggerWing();
 	}
 }

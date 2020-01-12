@@ -28,11 +28,9 @@ import com.l2jserver.gameserver.network.clientpackets.RequestAcquireSkill;
  * Support Unit Captain AI.
  * @author St3eT
  */
-public final class SupportUnitCaptain extends AbstractNpcAI
-{
+public final class SupportUnitCaptain extends AbstractNpcAI {
 	// NPCs
-	private static final int[] UNIT_CAPTAIN =
-	{
+	private static final int[] UNIT_CAPTAIN = {
 		35662, // Shanty Fortress
 		35694, // Southern Fortress
 		35731, // Hive Fortress
@@ -75,8 +73,7 @@ public final class SupportUnitCaptain extends AbstractNpcAI
 	private static final int RED_LIFE_FORCE = 10518; // Red Talisman - Life Force
 	private static final int BLUE_GREAT_HEALING = 10424; // Blue Talisman - Greater Healing
 	private static final int WHITE_FIRE = 10421; // White Talisman - Fire
-	private static final int[] COMMON_TALISMANS =
-	{
+	private static final int[] COMMON_TALISMANS = {
 		9914, // Blue Talisman of Power
 		9915, // Blue Talisman of Wild Magic
 		9920, // Blue Talisman of Invisibility
@@ -121,8 +118,7 @@ public final class SupportUnitCaptain extends AbstractNpcAI
 		10423, // Blue Talisman - Self-Destruction
 	};
 	
-	private SupportUnitCaptain()
-	{
+	private SupportUnitCaptain() {
 		super(SupportUnitCaptain.class.getSimpleName(), "ai/npc");
 		addStartNpc(UNIT_CAPTAIN);
 		addTalkId(UNIT_CAPTAIN);
@@ -130,123 +126,76 @@ public final class SupportUnitCaptain extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		
 		final int fortOwner = npc.getFort().getOwnerClan() == null ? 0 : npc.getFort().getOwnerClan().getId();
-		if ((player.getClan() == null) || (player.getClanId() != fortOwner))
-		{
+		if ((player.getClan() == null) || (player.getClanId() != fortOwner)) {
 			return "unitcaptain-04.html";
 		}
 		
 		String htmltext = null;
 		int itemId = 0;
-		switch (event)
-		{
+		switch (event) {
 			case "unitcaptain.html":
-			case "unitcaptain-01.html":
-			{
+			case "unitcaptain-01.html": {
 				htmltext = event;
 				break;
 			}
-			case "giveTalisman":
-			{
-				if (getQuestItemsCount(player, EPAULETTE) < 10)
-				{
+			case "giveTalisman": {
+				if (getQuestItemsCount(player, EPAULETTE) < 10) {
 					htmltext = "unitcaptain-05.html";
 					break;
 				}
 				
 				final int categoryChance = getRandom(100);
-				if (categoryChance <= 5)
-				{
+				if (categoryChance <= 5) {
 					final int chance = getRandom(100);
-					if (chance <= 25)
-					{
+					if (chance <= 25) {
 						itemId = RED_MEDITATION;
-					}
-					else if (chance <= 50)
-					{
+					} else if (chance <= 50) {
 						itemId = BLUE_DIV_PROTECTION;
-					}
-					else if (chance <= 75)
-					{
+					} else if (chance <= 75) {
 						itemId = BLUE_EXPLOSION;
-					}
-					else
-					{
+					} else {
 						itemId = BLUE_M_EXPLOSION;
 					}
-				}
-				else if (categoryChance <= 15)
-				{
+				} else if (categoryChance <= 15) {
 					final int chance = getRandom(100);
-					if (chance <= 20)
-					{
+					if (chance <= 20) {
 						itemId = RED_MIN_CLARITY;
-					}
-					else if (chance <= 40)
-					{
+					} else if (chance <= 40) {
 						itemId = RED_MAX_CLARITY;
-					}
-					else if (chance <= 60)
-					{
+					} else if (chance <= 60) {
 						itemId = RED_MENTAL_REG;
-					}
-					else if (chance <= 80)
-					{
+					} else if (chance <= 80) {
 						itemId = BLUE_PROTECTION;
-					}
-					else
-					{
+					} else {
 						itemId = BLUE_INVIS;
 					}
-				}
-				else if (categoryChance <= 30)
-				{
+				} else if (categoryChance <= 30) {
 					final int chance = getRandom(100);
-					if (chance <= 12)
-					{
+					if (chance <= 12) {
 						itemId = BLUE_DEFENSE;
-					}
-					else if (chance <= 25)
-					{
+					} else if (chance <= 25) {
 						itemId = BLACK_ESCAPE;
-					}
-					else if (chance <= 37)
-					{
+					} else if (chance <= 37) {
 						itemId = BLUE_HEALING;
-					}
-					else if (chance <= 50)
-					{
+					} else if (chance <= 50) {
 						itemId = RED_RECOVERY;
-					}
-					else if (chance <= 62)
-					{
+					} else if (chance <= 62) {
 						itemId = BLUE_DEFENSE2;
-					}
-					else if (chance <= 75)
-					{
+					} else if (chance <= 75) {
 						itemId = BLUE_M_DEFENSE;
-					}
-					else if (chance <= 87)
-					{
+					} else if (chance <= 87) {
 						itemId = RED_LIFE_FORCE;
-					}
-					else
-					{
+					} else {
 						itemId = BLUE_GREAT_HEALING;
 					}
-				}
-				else
-				{
+				} else {
 					final int chance = getRandom(46);
-					if (chance <= 41)
-					{
+					if (chance <= 41) {
 						itemId = COMMON_TALISMANS[chance];
-					}
-					else
-					{
+					} else {
 						itemId = WHITE_FIRE;
 					}
 				}
@@ -255,14 +204,10 @@ public final class SupportUnitCaptain extends AbstractNpcAI
 				htmltext = "unitcaptain-02.html";
 				break;
 			}
-			case "squadSkill":
-			{
-				if (player.isClanLeader() || player.hasClanPrivilege(ClanPrivilege.CL_TROOPS_FAME))
-				{
+			case "squadSkill": {
+				if (player.isClanLeader() || player.hasClanPrivilege(ClanPrivilege.CL_TROOPS_FAME)) {
 					RequestAcquireSkill.showSubUnitSkillList(player);
-				}
-				else
-				{
+				} else {
 					htmltext = "unitcaptain-03.html";
 				}
 				break;
@@ -272,14 +217,12 @@ public final class SupportUnitCaptain extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final int fortOwner = npc.getFort().getOwnerClan() == null ? 0 : npc.getFort().getOwnerClan().getId();
 		return ((player.getClan() != null) && (player.getClanId() == fortOwner)) ? "unitcaptain.html" : "unitcaptain-04.html";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new SupportUnitCaptain();
 	}
 }

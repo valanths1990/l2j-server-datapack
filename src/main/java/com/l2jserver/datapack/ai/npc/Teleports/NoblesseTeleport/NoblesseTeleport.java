@@ -27,13 +27,11 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Original Jython script by Ham Wong.
  * @author Plim
  */
-public final class NoblesseTeleport extends AbstractNpcAI
-{
+public final class NoblesseTeleport extends AbstractNpcAI {
 	// Item
 	private static final int OLYMPIAD_TOKEN = 13722;
 	// NPCs
-	private static final int[] NPCs =
-	{
+	private static final int[] NPCs = {
 		30006,
 		30059,
 		30080,
@@ -55,24 +53,18 @@ public final class NoblesseTeleport extends AbstractNpcAI
 		32163
 	};
 	
-	private NoblesseTeleport()
-	{
+	private NoblesseTeleport() {
 		super(NoblesseTeleport.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(NPCs);
 		addTalkId(NPCs);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if ("teleportWithToken".equals(event))
-		{
-			if (hasQuestItems(player, OLYMPIAD_TOKEN))
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if ("teleportWithToken".equals(event)) {
+			if (hasQuestItems(player, OLYMPIAD_TOKEN)) {
 				npc.showChatWindow(player, 3);
-			}
-			else
-			{
+			} else {
 				return "noble-nopass.htm";
 			}
 		}
@@ -80,13 +72,11 @@ public final class NoblesseTeleport extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		return player.isNoble() ? "nobleteleporter.htm" : "nobleteleporter-no.htm";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new NoblesseTeleport();
 	}
 }

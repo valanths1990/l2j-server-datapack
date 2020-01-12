@@ -37,8 +37,7 @@ import com.l2jserver.gameserver.util.Util;
  * Jumble, Tumble, Diamond Fuss (108)
  * @author Janiko
  */
-public final class Q00108_JumbleTumbleDiamondFuss extends Quest
-{
+public final class Q00108_JumbleTumbleDiamondFuss extends Quest {
 	// NPCs
 	private static final int COLLECTOR_GOUPH = 30523;
 	private static final int TRADER_REEP = 30516;
@@ -66,8 +65,7 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 	private static final int BAT_DIAGRAM = 1570;
 	private static final int STAR_DIAMOND = 1571;
 	// Rewards
-	private static final ItemHolder[] REWARDS =
-	{
+	private static final ItemHolder[] REWARDS = {
 		new ItemHolder(1060, 100), // Lesser Healing Potion
 		new ItemHolder(4412, 10), // Echo Crystal - Theme of Battle
 		new ItemHolder(4413, 10), // Echo Crystal - Theme of Love
@@ -80,14 +78,12 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 	private static final int MIN_LVL = 10;
 	private static final int MAX_GEM_COUNT = 10;
 	private static final Map<Integer, Double> GOBLIN_DROP_CHANCES = new HashMap<>();
-	static
-	{
+	static {
 		GOBLIN_DROP_CHANCES.put(GOBLIN_BRIGAND_LEADER, 0.8);
 		GOBLIN_DROP_CHANCES.put(GOBLIN_BRIGAND_LIEUTENANT, 0.6);
 	}
 	
-	public Q00108_JumbleTumbleDiamondFuss()
-	{
+	public Q00108_JumbleTumbleDiamondFuss() {
 		super(108, Q00108_JumbleTumbleDiamondFuss.class.getSimpleName(), "Jumble, Tumble, Diamond Fuss");
 		addStartNpc(COLLECTOR_GOUPH);
 		addTalkId(COLLECTOR_GOUPH, TRADER_REEP, CARRIER_TOROCCO, MINER_MARON, BLACKSMITH_BRUNON, WAREHOUSE_KEEPER_MURDOC, WAREHOUSE_KEEPER_AIRY);
@@ -96,30 +92,23 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
-		switch (event)
-		{
-			case "30523-04.htm":
-			{
-				if (st.isCreated())
-				{
+		switch (event) {
+			case "30523-04.htm": {
+				if (st.isCreated()) {
 					st.startQuest();
 					st.giveItems(GOUPHS_CONTRACT, 1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30555-02.html":
-			{
-				if (st.isCond(2) && st.hasQuestItems(REEPS_CONTRACT))
-				{
+			case "30555-02.html": {
+				if (st.isCond(2) && st.hasQuestItems(REEPS_CONTRACT)) {
 					st.takeItems(REEPS_CONTRACT, -1);
 					st.giveItems(ELVEN_WINE, 1);
 					st.setCond(3, true);
@@ -127,10 +116,8 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 				}
 				break;
 			}
-			case "30526-02.html":
-			{
-				if (st.isCond(4) && st.hasQuestItems(BRUNONS_DICE))
-				{
+			case "30526-02.html": {
+				if (st.isCond(4) && st.hasQuestItems(BRUNONS_DICE)) {
 					st.takeItems(BRUNONS_DICE, -1);
 					st.giveItems(BRUNONS_CONTRACT, 1);
 					st.setCond(5, true);
@@ -143,40 +130,26 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState st = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		switch (npc.getId())
-		{
-			case COLLECTOR_GOUPH:
-			{
-				switch (st.getState())
-				{
-					case State.CREATED:
-					{
-						if (talker.getRace() != Race.DWARF)
-						{
+		switch (npc.getId()) {
+			case COLLECTOR_GOUPH: {
+				switch (st.getState()) {
+					case State.CREATED: {
+						if (talker.getRace() != Race.DWARF) {
 							htmltext = "30523-01.htm";
-						}
-						else if (talker.getLevel() < MIN_LVL)
-						{
+						} else if (talker.getLevel() < MIN_LVL) {
 							htmltext = "30523-02.htm";
-						}
-						else
-						{
+						} else {
 							htmltext = "30523-03.htm";
 						}
 						break;
 					}
-					case State.STARTED:
-					{
-						switch (st.getCond())
-						{
-							case 1:
-							{
-								if (st.hasQuestItems(GOUPHS_CONTRACT))
-								{
+					case State.STARTED: {
+						switch (st.getCond()) {
+							case 1: {
+								if (st.hasQuestItems(GOUPHS_CONTRACT)) {
 									htmltext = "30523-05.html";
 								}
 								break;
@@ -185,18 +158,14 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 							case 3:
 							case 4:
 							case 5:
-							case 6:
-							{
-								if (hasAtLeastOneQuestItem(talker, REEPS_CONTRACT, ELVEN_WINE, BRUNONS_DICE, BRUNONS_CONTRACT))
-								{
+							case 6: {
+								if (hasAtLeastOneQuestItem(talker, REEPS_CONTRACT, ELVEN_WINE, BRUNONS_DICE, BRUNONS_CONTRACT)) {
 									htmltext = "30523-06.html";
 								}
 								break;
 							}
-							case 7:
-							{
-								if (st.hasQuestItems(GEM_BOX))
-								{
+							case 7: {
+								if (st.hasQuestItems(GEM_BOX)) {
 									st.takeItems(GEM_BOX, -1);
 									st.giveItems(COAL_PIECE, 1);
 									st.setCond(8, true);
@@ -207,23 +176,18 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 							case 8:
 							case 9:
 							case 10:
-							case 11:
-							{
-								if (hasAtLeastOneQuestItem(talker, COAL_PIECE, BRUNONS_LETTER, BERRY_TART, BAT_DIAGRAM))
-								{
+							case 11: {
+								if (hasAtLeastOneQuestItem(talker, COAL_PIECE, BRUNONS_LETTER, BERRY_TART, BAT_DIAGRAM)) {
 									htmltext = "30523-08.html";
 								}
 								break;
 							}
-							case 12:
-							{
-								if (st.hasQuestItems(STAR_DIAMOND))
-								{
+							case 12: {
+								if (st.hasQuestItems(STAR_DIAMOND)) {
 									Q00281_HeadForTheHills.giveNewbieReward(talker);
 									st.addExpAndSp(34565, 2962);
 									st.giveAdena(14666, true);
-									for (ItemHolder reward : REWARDS)
-									{
+									for (ItemHolder reward : REWARDS) {
 										st.giveItems(reward);
 									}
 									st.giveItems(SILVERSMITH_HAMMER, 1);
@@ -237,22 +201,17 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 						}
 						break;
 					}
-					case State.COMPLETED:
-					{
+					case State.COMPLETED: {
 						htmltext = getAlreadyCompletedMsg(talker);
 						break;
 					}
 				}
 				break;
 			}
-			case TRADER_REEP:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
-						if (st.hasQuestItems(GOUPHS_CONTRACT))
-						{
+			case TRADER_REEP: {
+				switch (st.getCond()) {
+					case 1: {
+						if (st.hasQuestItems(GOUPHS_CONTRACT)) {
 							st.takeItems(GOUPHS_CONTRACT, -1);
 							st.giveItems(REEPS_CONTRACT, 1);
 							st.setCond(2, true);
@@ -260,18 +219,14 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 						}
 						break;
 					}
-					case 2:
-					{
-						if (st.hasQuestItems(REEPS_CONTRACT))
-						{
+					case 2: {
+						if (st.hasQuestItems(REEPS_CONTRACT)) {
 							htmltext = "30516-02.html";
 						}
 						break;
 					}
-					default:
-					{
-						if (st.getCond() > 2)
-						{
+					default: {
+						if (st.getCond() > 2) {
 							htmltext = "30516-02.html";
 						}
 						break;
@@ -279,38 +234,28 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 				}
 				break;
 			}
-			case CARRIER_TOROCCO:
-			{
-				switch (st.getCond())
-				{
-					case 2:
-					{
-						if (st.hasQuestItems(REEPS_CONTRACT))
-						{
+			case CARRIER_TOROCCO: {
+				switch (st.getCond()) {
+					case 2: {
+						if (st.hasQuestItems(REEPS_CONTRACT)) {
 							htmltext = "30555-01.html";
 						}
 						break;
 					}
-					case 3:
-					{
-						if (st.hasQuestItems(ELVEN_WINE))
-						{
+					case 3: {
+						if (st.hasQuestItems(ELVEN_WINE)) {
 							htmltext = "30555-03.html";
 						}
 						break;
 					}
-					case 7:
-					{
-						if (st.hasQuestItems(GEM_BOX))
-						{
+					case 7: {
+						if (st.hasQuestItems(GEM_BOX)) {
 							htmltext = "30555-04.html";
 						}
 						break;
 					}
-					default:
-					{
-						if (st.isStarted())
-						{
+					default: {
+						if (st.isStarted()) {
 							htmltext = "30555-05.html";
 						}
 						break;
@@ -318,14 +263,10 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 				}
 				break;
 			}
-			case MINER_MARON:
-			{
-				switch (st.getCond())
-				{
-					case 3:
-					{
-						if (st.hasQuestItems(ELVEN_WINE))
-						{
+			case MINER_MARON: {
+				switch (st.getCond()) {
+					case 3: {
+						if (st.hasQuestItems(ELVEN_WINE)) {
 							st.takeItems(ELVEN_WINE, -1);
 							st.giveItems(BRUNONS_DICE, 1);
 							st.setCond(4, true);
@@ -333,18 +274,14 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 						}
 						break;
 					}
-					case 4:
-					{
-						if (st.hasQuestItems(BRUNONS_DICE))
-						{
+					case 4: {
+						if (st.hasQuestItems(BRUNONS_DICE)) {
 							htmltext = "30529-02.html";
 						}
 						break;
 					}
-					default:
-					{
-						if (st.getCond() > 4)
-						{
+					default: {
+						if (st.getCond() > 4) {
 							htmltext = "30529-03.html";
 						}
 						break;
@@ -352,30 +289,22 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 				}
 				break;
 			}
-			case BLACKSMITH_BRUNON:
-			{
-				switch (st.getCond())
-				{
-					case 4:
-					{
-						if (st.hasQuestItems(BRUNONS_DICE))
-						{
+			case BLACKSMITH_BRUNON: {
+				switch (st.getCond()) {
+					case 4: {
+						if (st.hasQuestItems(BRUNONS_DICE)) {
 							htmltext = "30526-01.html";
 						}
 						break;
 					}
-					case 5:
-					{
-						if (st.hasQuestItems(BRUNONS_CONTRACT))
-						{
+					case 5: {
+						if (st.hasQuestItems(BRUNONS_CONTRACT)) {
 							htmltext = "30526-03.html";
 						}
 						break;
 					}
-					case 6:
-					{
-						if (st.hasQuestItems(BRUNONS_CONTRACT) && (st.getQuestItemsCount(AQUAMARINE) >= MAX_GEM_COUNT) && (st.getQuestItemsCount(CHRYSOBERYL) >= MAX_GEM_COUNT))
-						{
+					case 6: {
+						if (st.hasQuestItems(BRUNONS_CONTRACT) && (st.getQuestItemsCount(AQUAMARINE) >= MAX_GEM_COUNT) && (st.getQuestItemsCount(CHRYSOBERYL) >= MAX_GEM_COUNT)) {
 							takeItems(talker, -1, BRUNONS_CONTRACT, AQUAMARINE, CHRYSOBERYL);
 							st.giveItems(GEM_BOX, 1);
 							st.setCond(7, true);
@@ -383,18 +312,14 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 						}
 						break;
 					}
-					case 7:
-					{
-						if (st.hasQuestItems(GEM_BOX))
-						{
+					case 7: {
+						if (st.hasQuestItems(GEM_BOX)) {
 							htmltext = "30526-05.html";
 						}
 						break;
 					}
-					case 8:
-					{
-						if (st.hasQuestItems(COAL_PIECE))
-						{
+					case 8: {
+						if (st.hasQuestItems(COAL_PIECE)) {
 							st.takeItems(COAL_PIECE, -1);
 							st.giveItems(BRUNONS_LETTER, 1);
 							st.setCond(9, true);
@@ -402,20 +327,16 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 						}
 						break;
 					}
-					case 9:
-					{
-						if (st.hasQuestItems(BRUNONS_LETTER))
-						{
+					case 9: {
+						if (st.hasQuestItems(BRUNONS_LETTER)) {
 							htmltext = "30526-07.html";
 						}
 						break;
 					}
 					case 10:
 					case 11:
-					case 12:
-					{
-						if (hasAtLeastOneQuestItem(talker, BERRY_TART, BAT_DIAGRAM, STAR_DIAMOND))
-						{
+					case 12: {
+						if (hasAtLeastOneQuestItem(talker, BERRY_TART, BAT_DIAGRAM, STAR_DIAMOND)) {
 							htmltext = "30526-08.html";
 						}
 						break;
@@ -423,14 +344,10 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 				}
 				break;
 			}
-			case WAREHOUSE_KEEPER_MURDOC:
-			{
-				switch (st.getCond())
-				{
-					case 9:
-					{
-						if (st.hasQuestItems(BRUNONS_LETTER))
-						{
+			case WAREHOUSE_KEEPER_MURDOC: {
+				switch (st.getCond()) {
+					case 9: {
+						if (st.hasQuestItems(BRUNONS_LETTER)) {
 							st.takeItems(BRUNONS_LETTER, -1);
 							st.giveItems(BERRY_TART, 1);
 							st.setCond(10, true);
@@ -438,31 +355,24 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 						}
 						break;
 					}
-					case 10:
-					{
-						if (st.hasQuestItems(BERRY_TART))
-						{
+					case 10: {
+						if (st.hasQuestItems(BERRY_TART)) {
 							htmltext = "30521-02.html";
 						}
 						break;
 					}
 					case 11:
-					case 12:
-					{
+					case 12: {
 						htmltext = "30521-03.html";
 						break;
 					}
 				}
 				break;
 			}
-			case WAREHOUSE_KEEPER_AIRY:
-			{
-				switch (st.getCond())
-				{
-					case 10:
-					{
-						if (st.hasQuestItems(BERRY_TART))
-						{
+			case WAREHOUSE_KEEPER_AIRY: {
+				switch (st.getCond()) {
+					case 10: {
+						if (st.hasQuestItems(BERRY_TART)) {
 							st.takeItems(BERRY_TART, -1);
 							st.giveItems(BAT_DIAGRAM, 1);
 							st.setCond(11, true);
@@ -470,26 +380,20 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 						}
 						break;
 					}
-					case 11:
-					{
-						if (st.hasQuestItems(BAT_DIAGRAM))
-						{
+					case 11: {
+						if (st.hasQuestItems(BAT_DIAGRAM)) {
 							htmltext = "30522-02.html";
 						}
 						break;
 					}
-					case 12:
-					{
-						if (st.hasQuestItems(STAR_DIAMOND))
-						{
+					case 12: {
+						if (st.hasQuestItems(STAR_DIAMOND)) {
 							htmltext = "30522-03.html";
 						}
 						break;
 					}
-					default:
-					{
-						if (st.isStarted())
-						{
+					default: {
+						if (st.isStarted()) {
 							htmltext = "30522-04.html";
 						}
 						break;
@@ -502,34 +406,25 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
+		if ((st != null) && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
 				case GOBLIN_BRIGAND_LEADER:
-				case GOBLIN_BRIGAND_LIEUTENANT:
-				{
-					if (st.isCond(5) && st.hasQuestItems(BRUNONS_CONTRACT))
-					{
+				case GOBLIN_BRIGAND_LIEUTENANT: {
+					if (st.isCond(5) && st.hasQuestItems(BRUNONS_CONTRACT)) {
 						final double dropChance = GOBLIN_DROP_CHANCES.get(npc.getId());
 						boolean playSound = false;
-						if (st.giveItemRandomly(npc, AQUAMARINE, 1, MAX_GEM_COUNT, dropChance, false))
-						{
-							if (st.getQuestItemsCount(CHRYSOBERYL) >= MAX_GEM_COUNT)
-							{
+						if (st.giveItemRandomly(npc, AQUAMARINE, 1, MAX_GEM_COUNT, dropChance, false)) {
+							if (st.getQuestItemsCount(CHRYSOBERYL) >= MAX_GEM_COUNT) {
 								st.setCond(6, true);
 								break;
 							}
 							
 							playSound = true;
 						}
-						if (st.giveItemRandomly(npc, CHRYSOBERYL, 1, MAX_GEM_COUNT, dropChance, false))
-						{
-							if (st.getQuestItemsCount(AQUAMARINE) >= MAX_GEM_COUNT)
-							{
+						if (st.giveItemRandomly(npc, CHRYSOBERYL, 1, MAX_GEM_COUNT, dropChance, false)) {
+							if (st.getQuestItemsCount(AQUAMARINE) >= MAX_GEM_COUNT) {
 								st.setCond(6, true);
 								break;
 							}
@@ -537,19 +432,15 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 							playSound = true;
 						}
 						
-						if (playSound)
-						{
+						if (playSound) {
 							st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case BLADE_BAT:
-				{
-					if (st.isCond(11) && st.hasQuestItems(BAT_DIAGRAM))
-					{
-						if (st.giveItemRandomly(npc, STAR_DIAMOND, 1, 1, 0.2, true))
-						{
+				case BLADE_BAT: {
+					if (st.isCond(11) && st.hasQuestItems(BAT_DIAGRAM)) {
+						if (st.giveItemRandomly(npc, STAR_DIAMOND, 1, 1, 0.2, true)) {
 							st.takeItems(BAT_DIAGRAM, -1);
 							st.setCond(12);
 						}

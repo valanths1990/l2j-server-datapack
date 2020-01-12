@@ -35,8 +35,7 @@ import com.l2jserver.gameserver.util.Util;
  * Skimirish with Orcs (105)
  * @author janiko
  */
-public final class Q00105_SkirmishWithOrcs extends Quest
-{
+public final class Q00105_SkirmishWithOrcs extends Quest {
 	// NPC
 	private static final int KENDNELL = 30218;
 	// Items
@@ -51,8 +50,7 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 	private static final int KABOO_CHIEFS_1ST_TORQUE = 1844;
 	private static final int KABOO_CHIEFS_2ST_TORQUE = 1845;
 	private static final Map<Integer, Integer> MONSTER_DROP = new HashMap<>();
-	static
-	{
+	static {
 		MONSTER_DROP.put(27059, KENDELLS_1ST_ORDER); // Uoph (Kaboo Chief)
 		MONSTER_DROP.put(27060, KENDELLS_2ND_ORDER); // Kracha (Kaboo Chief)
 		MONSTER_DROP.put(27061, KENDELLS_3RD_ORDER); // Batoh (Kaboo Chief)
@@ -62,8 +60,7 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 		MONSTER_DROP.put(27067, KENDELLS_7TH_ORDER); // Kamut (Kaboo Chief)
 		MONSTER_DROP.put(27068, KENDELLS_8TH_ORDER); // Murtika (Kaboo Chief)
 	}
-	private static final int[] KENDNELLS_ORDERS =
-	{
+	private static final int[] KENDNELLS_ORDERS = {
 		KENDELLS_1ST_ORDER,
 		KENDELLS_2ND_ORDER,
 		KENDELLS_3RD_ORDER,
@@ -76,8 +73,7 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 	// Misc
 	private static final int MIN_LVL = 10;
 	
-	public Q00105_SkirmishWithOrcs()
-	{
+	public Q00105_SkirmishWithOrcs() {
 		super(105, Q00105_SkirmishWithOrcs.class.getSimpleName(), "Skirmish with Orcs");
 		addStartNpc(KENDNELL);
 		addTalkId(KENDNELL);
@@ -86,28 +82,22 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
-		switch (event)
-		{
-			case "30218-04.html":
-			{
-				if (st.isCreated())
-				{
+		switch (event) {
+			case "30218-04.html": {
+				if (st.isCreated()) {
 					st.startQuest();
 					st.giveItems(KENDNELLS_ORDERS[getRandom(0, 3)], 1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30218-05.html":
-			{
+			case "30218-05.html": {
 				htmltext = event;
 				break;
 			}
@@ -116,20 +106,15 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
+		if ((st != null) && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
 				case 27059:
 				case 27060:
 				case 27061:
-				case 27062:
-				{
-					if (st.isCond(1) && st.hasQuestItems(MONSTER_DROP.get(npc.getId())))
-					{
+				case 27062: {
+					if (st.isCond(1) && st.hasQuestItems(MONSTER_DROP.get(npc.getId()))) {
 						st.giveItems(KABOO_CHIEFS_1ST_TORQUE, 1);
 						st.setCond(2, true);
 					}
@@ -138,10 +123,8 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 				case 27064:
 				case 27065:
 				case 27067:
-				case 27068:
-				{
-					if (st.isCond(3) && st.hasQuestItems(MONSTER_DROP.get(npc.getId())))
-					{
+				case 27068: {
+					if (st.isCond(3) && st.hasQuestItems(MONSTER_DROP.get(npc.getId()))) {
 						st.giveItems(KABOO_CHIEFS_2ST_TORQUE, 1);
 						st.setCond(4, true);
 					}
@@ -153,34 +136,24 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState st = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
-				if (talker.getRace() == Race.ELF)
-				{
+		switch (st.getState()) {
+			case State.CREATED: {
+				if (talker.getRace() == Race.ELF) {
 					htmltext = (talker.getLevel() >= MIN_LVL) ? "30218-03.htm" : "30218-02.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30218-01.htm";
 				}
 				break;
 			}
-			case State.STARTED:
-			{
-				if (hasAtLeastOneQuestItem(talker, KENDELLS_1ST_ORDER, KENDELLS_2ND_ORDER, KENDELLS_3RD_ORDER, KENDELLS_4TH_ORDER))
-				{
+			case State.STARTED: {
+				if (hasAtLeastOneQuestItem(talker, KENDELLS_1ST_ORDER, KENDELLS_2ND_ORDER, KENDELLS_3RD_ORDER, KENDELLS_4TH_ORDER)) {
 					htmltext = "30218-06.html";
 				}
-				if (st.isCond(2) && st.hasQuestItems(KABOO_CHIEFS_1ST_TORQUE))
-				{
-					for (int i = 0; i < 4; i++)
-					{
+				if (st.isCond(2) && st.hasQuestItems(KABOO_CHIEFS_1ST_TORQUE)) {
+					for (int i = 0; i < 4; i++) {
 						st.takeItems(KENDNELLS_ORDERS[i], -1);
 					}
 					st.takeItems(KABOO_CHIEFS_1ST_TORQUE, 1);
@@ -188,12 +161,10 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 					st.setCond(3, true);
 					htmltext = "30218-07.html";
 				}
-				if (hasAtLeastOneQuestItem(talker, KENDELLS_5TH_ORDER, KENDELLS_6TH_ORDER, KENDELLS_7TH_ORDER, KENDELLS_8TH_ORDER))
-				{
+				if (hasAtLeastOneQuestItem(talker, KENDELLS_5TH_ORDER, KENDELLS_6TH_ORDER, KENDELLS_7TH_ORDER, KENDELLS_8TH_ORDER)) {
 					htmltext = "30218-08.html";
 				}
-				if (st.isCond(4) && st.hasQuestItems(KABOO_CHIEFS_2ST_TORQUE))
-				{
+				if (st.isCond(4) && st.hasQuestItems(KABOO_CHIEFS_2ST_TORQUE)) {
 					Q00281_HeadForTheHills.giveNewbieReward(talker);
 					talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
 					st.giveAdena(17599, true);
@@ -203,8 +174,7 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
+			case State.COMPLETED: {
 				htmltext = getAlreadyCompletedMsg(talker);
 				break;
 			}

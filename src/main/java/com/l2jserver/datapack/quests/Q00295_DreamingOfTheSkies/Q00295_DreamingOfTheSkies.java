@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.util.Util;
  * Dreaming of the Skies (295)
  * @author xban1x
  */
-public final class Q00295_DreamingOfTheSkies extends Quest
-{
+public final class Q00295_DreamingOfTheSkies extends Quest {
 	// NPC
 	private static final int ARIN = 30536;
 	// Monster
@@ -41,8 +40,7 @@ public final class Q00295_DreamingOfTheSkies extends Quest
 	// Misc
 	private static final int MIN_LVL = 11;
 	
-	public Q00295_DreamingOfTheSkies()
-	{
+	public Q00295_DreamingOfTheSkies() {
 		super(295, Q00295_DreamingOfTheSkies.class.getSimpleName(), "Dreaming of the Skies");
 		addStartNpc(ARIN);
 		addTalkId(ARIN);
@@ -51,11 +49,9 @@ public final class Q00295_DreamingOfTheSkies extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCreated() && event.equals("30536-03.htm"))
-		{
+		if ((qs != null) && qs.isCreated() && event.equals("30536-03.htm")) {
 			qs.startQuest();
 			return event;
 		}
@@ -63,13 +59,10 @@ public final class Q00295_DreamingOfTheSkies extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1) && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			if (giveItemRandomly(killer, npc, FLOATING_STONE, (getRandom(100) > 25) ? 1 : 2, 50, 1.0, true))
-			{
+		if ((qs != null) && qs.isCond(1) && Util.checkIfInRange(1500, npc, killer, true)) {
+			if (giveItemRandomly(killer, npc, FLOATING_STONE, (getRandom(100) > 25) ? 1 : 2, 50, 1.0, true)) {
 				qs.setCond(2);
 			}
 		}
@@ -77,33 +70,23 @@ public final class Q00295_DreamingOfTheSkies extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		String html = getNoQuestMsg(talker);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			html = (talker.getLevel() >= MIN_LVL) ? "30536-02.htm" : "30536-01.htm";
-		}
-		else if (qs.isStarted())
-		{
-			if (qs.isCond(2))
-			{
-				if (hasQuestItems(talker, RING_OF_FIREFLY))
-				{
+		} else if (qs.isStarted()) {
+			if (qs.isCond(2)) {
+				if (hasQuestItems(talker, RING_OF_FIREFLY)) {
 					giveAdena(talker, 2400, true);
 					html = "30536-06.html";
-				}
-				else
-				{
+				} else {
 					giveItems(talker, RING_OF_FIREFLY, 1);
 					html = "30536-05.html";
 				}
 				takeItems(talker, FLOATING_STONE, -1);
 				qs.exitQuest(true, true);
-			}
-			else
-			{
+			} else {
 				html = "30536-04.html";
 			}
 		}

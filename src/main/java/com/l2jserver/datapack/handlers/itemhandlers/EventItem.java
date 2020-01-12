@@ -29,13 +29,10 @@ import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 
-public class EventItem implements IItemHandler
-{
+public class EventItem implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!playable.isPlayer())
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!playable.isPlayer()) {
 			playable.sendPacket(SystemMessageId.ITEM_NOT_FOR_PETS);
 			return false;
 		}
@@ -45,8 +42,7 @@ public class EventItem implements IItemHandler
 		final L2PcInstance activeChar = playable.getActingPlayer();
 		
 		final int itemId = item.getId();
-		switch (itemId)
-		{
+		switch (itemId) {
 			case 13787: // Handy's Block Checker Bond
 				used = useBlockCheckerItem(activeChar, item);
 				break;
@@ -59,11 +55,9 @@ public class EventItem implements IItemHandler
 		return used;
 	}
 	
-	private final boolean useBlockCheckerItem(final L2PcInstance castor, L2ItemInstance item)
-	{
+	private final boolean useBlockCheckerItem(final L2PcInstance castor, L2ItemInstance item) {
 		final int blockCheckerArena = castor.getBlockCheckerArena();
-		if (blockCheckerArena == -1)
-		{
+		if (blockCheckerArena == -1) {
 			SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
 			msg.addItemName(item);
 			castor.sendPacket(msg);
@@ -71,27 +65,22 @@ public class EventItem implements IItemHandler
 		}
 		
 		final Skill sk = item.getEtcItem().getSkills()[0].getSkill();
-		if (sk == null)
-		{
+		if (sk == null) {
 			return false;
 		}
 		
-		if (!castor.destroyItem("Consume", item, 1, castor, true))
-		{
+		if (!castor.destroyItem("Consume", item, 1, castor, true)) {
 			return false;
 		}
 		
 		final L2BlockInstance block = (L2BlockInstance) castor.getTarget();
 		
 		final ArenaParticipantsHolder holder = HandysBlockCheckerManager.getInstance().getHolder(blockCheckerArena);
-		if (holder != null)
-		{
+		if (holder != null) {
 			final int team = holder.getPlayerTeam(castor);
-			for (final L2PcInstance pc : block.getKnownList().getKnownPlayersInRadius(sk.getEffectRange()))
-			{
+			for (final L2PcInstance pc : block.getKnownList().getKnownPlayersInRadius(sk.getEffectRange())) {
 				final int enemyTeam = holder.getPlayerTeam(pc);
-				if ((enemyTeam != -1) && (enemyTeam != team))
-				{
+				if ((enemyTeam != -1) && (enemyTeam != team)) {
 					sk.applyEffects(castor, pc);
 				}
 			}

@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * Priest Of Blessing AI.
  * @author Gnacik
  */
-public final class PriestOfBlessing extends AbstractNpcAI
-{
+public final class PriestOfBlessing extends AbstractNpcAI {
 	// NPC
 	private static final int PRIEST = 32783;
 	// Spawn state
@@ -53,8 +52,7 @@ public final class PriestOfBlessing extends AbstractNpcAI
 	// @formatter:on
 	// Prices
 	private static final int PRICE_VOICE = 100000;
-	private static final int[] PRICE_HOURGLASS =
-	{
+	private static final int[] PRICE_HOURGLASS = {
 		4000,
 		30000,
 		110000,
@@ -64,8 +62,7 @@ public final class PriestOfBlessing extends AbstractNpcAI
 		5000000
 	};
 	// Locations
-	private static final Location[] SPAWNS =
-	{
+	private static final Location[] SPAWNS = {
 		new Location(-84139, 243145, -3704, 8473),
 		new Location(-119702, 44557, 360, 33023),
 		new Location(45413, 48351, -3056, 50020),
@@ -85,17 +82,14 @@ public final class PriestOfBlessing extends AbstractNpcAI
 		new Location(116972, 77255, -2688, 41951)
 	};
 	
-	private PriestOfBlessing()
-	{
+	private PriestOfBlessing() {
 		super(PriestOfBlessing.class.getSimpleName(), "ai/npc");
 		addStartNpc(PRIEST);
 		addFirstTalkId(PRIEST);
 		addTalkId(PRIEST);
 		
-		if (!SPAWNED)
-		{
-			for (Location spawn : SPAWNS)
-			{
+		if (!SPAWNED) {
+			for (Location spawn : SPAWNS) {
 				addSpawn(PRIEST, spawn, false, 0);
 			}
 			SPAWNED = true;
@@ -103,24 +97,18 @@ public final class PriestOfBlessing extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
-		if (event.equalsIgnoreCase("buy_voice"))
-		{
-			if (player.getAdena() >= PRICE_VOICE)
-			{
+		if (event.equalsIgnoreCase("buy_voice")) {
+			if (player.getAdena() >= PRICE_VOICE) {
 				String value = loadGlobalQuestVar(player.getAccountName() + "_voice");
 				long _reuse_time = value == "" ? 0 : Long.parseLong(value);
 				
-				if (System.currentTimeMillis() > _reuse_time)
-				{
+				if (System.currentTimeMillis() > _reuse_time) {
 					takeItems(player, Inventory.ADENA_ID, PRICE_VOICE);
 					giveItems(player, NEVIT_VOICE, 1);
 					saveGlobalQuestVar(player.getAccountName() + "_voice", Long.toString(System.currentTimeMillis() + (20 * 3600000)));
-				}
-				else
-				{
+				} else {
 					long remainingTime = (_reuse_time - System.currentTimeMillis()) / 1000;
 					int hours = (int) (remainingTime / 3600);
 					int minutes = (int) ((remainingTime % 3600) / 60);
@@ -133,27 +121,21 @@ public final class PriestOfBlessing extends AbstractNpcAI
 				return null;
 			}
 			htmltext = "32783-adena.htm";
-		}
-		else if (event.equalsIgnoreCase("buy_hourglass"))
-		{
+		} else if (event.equalsIgnoreCase("buy_hourglass")) {
 			int _index = getHGIndex(player.getLevel());
 			int _price_hourglass = PRICE_HOURGLASS[_index];
 			
-			if (player.getAdena() >= _price_hourglass)
-			{
+			if (player.getAdena() >= _price_hourglass) {
 				String value = loadGlobalQuestVar(player.getAccountName() + "_hg_" + _index);
 				long _reuse_time = value == "" ? 0 : Long.parseLong(value);
 				
-				if (System.currentTimeMillis() > _reuse_time)
-				{
+				if (System.currentTimeMillis() > _reuse_time) {
 					int[] _hg = HOURGLASSES[_index];
 					int _nevit_hourglass = _hg[getRandom(0, _hg.length - 1)];
 					takeItems(player, Inventory.ADENA_ID, _price_hourglass);
 					giveItems(player, _nevit_hourglass, 1);
 					saveGlobalQuestVar(player.getAccountName() + "_hg_" + _index, Long.toString(System.currentTimeMillis() + (20 * 3600000)));
-				}
-				else
-				{
+				} else {
 					long remainingTime = (_reuse_time - System.currentTimeMillis()) / 1000;
 					int hours = (int) (remainingTime / 3600);
 					int minutes = (int) ((remainingTime % 3600) / 60);
@@ -171,49 +153,33 @@ public final class PriestOfBlessing extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		String content = getHtm(player.getHtmlPrefix(), "32783.htm");
 		content = content.replace("%donate%", Util.formatAdena(PRICE_HOURGLASS[getHGIndex(player.getLevel())]));
 		return content;
 	}
 	
-	private int getHGIndex(int lvl)
-	{
+	private int getHGIndex(int lvl) {
 		int index = 0;
-		if (lvl < 20)
-		{
+		if (lvl < 20) {
 			index = 0;
-		}
-		else if (lvl < 40)
-		{
+		} else if (lvl < 40) {
 			index = 1;
-		}
-		else if (lvl < 52)
-		{
+		} else if (lvl < 52) {
 			index = 2;
-		}
-		else if (lvl < 61)
-		{
+		} else if (lvl < 61) {
 			index = 3;
-		}
-		else if (lvl < 76)
-		{
+		} else if (lvl < 76) {
 			index = 4;
-		}
-		else if (lvl < 80)
-		{
+		} else if (lvl < 80) {
 			index = 5;
-		}
-		else if (lvl < 86)
-		{
+		} else if (lvl < 86) {
 			index = 6;
 		}
 		return index;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new PriestOfBlessing();
 	}
 }

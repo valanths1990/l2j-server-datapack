@@ -34,32 +34,25 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Magical Attack MP effect.
  * @author Adry_85
  */
-public final class MagicalAttackMp extends AbstractEffect
-{
+public final class MagicalAttackMp extends AbstractEffect {
 	private final double _power;
 	
-	public MagicalAttackMp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public MagicalAttackMp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
-	{
-		if (info.getEffected().isInvul() || info.getEffected().isMpBlocked())
-		{
+	public boolean calcSuccess(BuffInfo info) {
+		if (info.getEffected().isInvul() || info.getEffected().isMpBlocked()) {
 			return false;
 		}
-		if (!Formulas.calcMagicAffected(info.getEffector(), info.getEffected(), info.getSkill()))
-		{
-			if (info.getEffector().isPlayer())
-			{
+		if (!Formulas.calcMagicAffected(info.getEffector(), info.getEffected(), info.getSkill())) {
+			if (info.getEffector().isPlayer()) {
 				info.getEffector().sendPacket(SystemMessageId.ATTACK_FAILED);
 			}
-			if (info.getEffected().isPlayer())
-			{
+			if (info.getEffected().isPlayer()) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_C2_DRAIN2);
 				sm.addCharName(info.getEffected());
 				sm.addCharName(info.getEffector());
@@ -71,22 +64,18 @@ public final class MagicalAttackMp extends AbstractEffect
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.MAGICAL_ATTACK;
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (info.getEffector().isAlikeDead())
-		{
+	public void onStart(BuffInfo info) {
+		if (info.getEffector().isAlikeDead()) {
 			return;
 		}
 		
@@ -101,8 +90,7 @@ public final class MagicalAttackMp extends AbstractEffect
 		double damage = Formulas.calcManaDam(activeChar, target, skill, shld, sps, bss, mcrit, _power);
 		double mp = (damage > target.getCurrentMp() ? target.getCurrentMp() : damage);
 		
-		if (damage > 0)
-		{
+		if (damage > 0) {
 			target.stopEffectsOnDamage(true);
 			target.setCurrentMp(target.getCurrentMp() - mp);
 		}

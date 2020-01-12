@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Arrow for Vengeance (331)
  * @author xban1x
  */
-public class Q00331_ArrowOfVengeance extends Quest
-{
+public class Q00331_ArrowOfVengeance extends Quest {
 	// NPCs
 	private static final int BELTON = 30125;
 	// Items
@@ -42,8 +41,7 @@ public class Q00331_ArrowOfVengeance extends Quest
 	private static final int WYRMS_TOOTH = 1454;
 	// Monster
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(20145, 59); // Harpy
 		MONSTERS.put(20158, 61); // Medusa
 		MONSTERS.put(20176, 60); // Wyrm
@@ -56,8 +54,7 @@ public class Q00331_ArrowOfVengeance extends Quest
 	private static final int BONUS = 3100;
 	private static final int BONUS_COUNT = 10;
 	
-	public Q00331_ArrowOfVengeance()
-	{
+	public Q00331_ArrowOfVengeance() {
 		super(331, Q00331_ArrowOfVengeance.class.getSimpleName(), "Arrow for Vengeance");
 		addStartNpc(BELTON);
 		addTalkId(BELTON);
@@ -66,28 +63,22 @@ public class Q00331_ArrowOfVengeance extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
-				case "30125-03.htm":
-				{
+		if (st != null) {
+			switch (event) {
+				case "30125-03.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
 				}
-				case "30125-06.html":
-				{
+				case "30125-06.html": {
 					st.exitQuest(true, true);
 					htmltext = event;
 					break;
 				}
-				case "30125-07.html":
-				{
+				case "30125-07.html": {
 					htmltext = event;
 					break;
 				}
@@ -97,30 +88,23 @@ public class Q00331_ArrowOfVengeance extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = player.getLevel() < MIN_LVL ? "30125-01.htm" : "30125-02.htm";
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				final long harpyFeathers = st.getQuestItemsCount(HARPY_FEATHER);
 				final long medusaVenoms = st.getQuestItemsCount(MEDUSA_VENOM);
 				final long wyrmsTeeth = st.getQuestItemsCount(WYRMS_TOOTH);
-				if ((harpyFeathers + medusaVenoms + wyrmsTeeth) > 0)
-				{
+				if ((harpyFeathers + medusaVenoms + wyrmsTeeth) > 0) {
 					st.giveAdena(((harpyFeathers * HARPY_FEATHER_ADENA) + (medusaVenoms * MEDUSA_VENOM_ADENA) + (wyrmsTeeth * WYRMS_TOOTH_ADENA) + ((harpyFeathers + medusaVenoms + wyrmsTeeth) >= BONUS_COUNT ? BONUS : 0)), true);
 					takeItems(player, -1, HARPY_FEATHER, MEDUSA_VENOM, WYRMS_TOOTH);
 					htmltext = "30125-05.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30125-04.html";
 				}
 				break;
@@ -130,27 +114,20 @@ public class Q00331_ArrowOfVengeance extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
 		final QuestState st = getQuestState(player, false);
-		if (st != null)
-		{
-			if (getRandom(100) < MONSTERS.get(npc.getId()))
-			{
-				switch (npc.getId())
-				{
-					case 20145:
-					{
+		if (st != null) {
+			if (getRandom(100) < MONSTERS.get(npc.getId())) {
+				switch (npc.getId()) {
+					case 20145: {
 						st.giveItems(HARPY_FEATHER, 1);
 						break;
 					}
-					case 20158:
-					{
+					case 20158: {
 						st.giveItems(MEDUSA_VENOM, 1);
 						break;
 					}
-					case 20176:
-					{
+					case 20176: {
 						st.giveItems(WYRMS_TOOTH, 1);
 						break;
 					}

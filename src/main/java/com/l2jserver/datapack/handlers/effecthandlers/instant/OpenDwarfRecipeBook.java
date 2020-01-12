@@ -31,30 +31,24 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * Open Dwarf Recipe Book effect implementation.
  * @author Adry_85
  */
-public final class OpenDwarfRecipeBook extends AbstractEffect
-{
-	public OpenDwarfRecipeBook(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class OpenDwarfRecipeBook extends AbstractEffect {
+	public OpenDwarfRecipeBook(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (!info.getEffector().isPlayer())
-		{
+	public void onStart(BuffInfo info) {
+		if (!info.getEffector().isPlayer()) {
 			return;
 		}
 		
 		L2PcInstance player = info.getEffector().getActingPlayer();
-		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
-		{
+		if (player.getPrivateStoreType() != PrivateStoreType.NONE) {
 			player.sendPacket(SystemMessageId.CANNOT_CREATED_WHILE_ENGAGED_IN_TRADING);
 			return;
 		}

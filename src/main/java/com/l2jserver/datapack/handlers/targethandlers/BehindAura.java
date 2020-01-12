@@ -32,40 +32,31 @@ import com.l2jserver.gameserver.model.zone.ZoneId;
 /**
  * @author UnAfraid
  */
-public class BehindAura implements ITargetTypeHandler
-{
+public class BehindAura implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<>();
 		final boolean srcInArena = (activeChar.isInsideZone(ZoneId.PVP) && !activeChar.isInsideZone(ZoneId.SIEGE));
 		final Collection<L2Character> objs = activeChar.getKnownList().getKnownCharactersInRadius(skill.getAffectRange());
 		int maxTargets = skill.getAffectLimit();
-		for (L2Character obj : objs)
-		{
-			if (obj.isAttackable() || obj.isPlayable())
-			{
+		for (L2Character obj : objs) {
+			if (obj.isAttackable() || obj.isPlayable()) {
 				
-				if (!obj.isBehind(activeChar))
-				{
+				if (!obj.isBehind(activeChar)) {
 					continue;
 				}
 				
-				if (!Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena))
-				{
+				if (!Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena)) {
 					continue;
 				}
 				
-				if (onlyFirst)
-				{
-					return new L2Character[]
-					{
+				if (onlyFirst) {
+					return new L2Character[] {
 						obj
 					};
 				}
 				
-				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
-				{
+				if ((maxTargets > 0) && (targetList.size() >= maxTargets)) {
 					break;
 				}
 				
@@ -76,8 +67,7 @@ public class BehindAura implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.BEHIND_AURA;
 	}
 }

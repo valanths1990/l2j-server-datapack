@@ -45,16 +45,13 @@ import com.l2jserver.gameserver.model.holders.ItemHolder;
  * An example usage of Listeners.
  * @author UnAfraid
  */
-public class ListenerTest extends AbstractNpcAI
-{
-	private static final int[] ELPIES =
-	{
+public class ListenerTest extends AbstractNpcAI {
+	private static final int[] ELPIES = {
 		20432,
 		22228
 	};
 	
-	private ListenerTest()
-	{
+	private ListenerTest() {
 		super(ListenerTest.class.getSimpleName(), "ai/npc");
 		
 		// Method preset listener registration
@@ -62,8 +59,7 @@ public class ListenerTest extends AbstractNpcAI
 		setAttackableAttackId(this::onAttackableAttack, ELPIES);
 		
 		// Manual listener registration
-		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_PLAYER_DLG_ANSWER, (OnPlayerDlgAnswer event) ->
-		{
+		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_PLAYER_DLG_ANSWER, (OnPlayerDlgAnswer event) -> {
 			_log.log(Level.INFO, ListenerTest.class.getSimpleName() + ": " + event.getActiveChar() + " OnPlayerDlgAnswer: Answer: " + event.getAnswer() + " MessageId: " + event.getMessageId());
 		}, this));
 	}
@@ -72,8 +68,7 @@ public class ListenerTest extends AbstractNpcAI
 	 * This method will be invoked as soon as an L2Attackable (Rabbits 20432 and 22228) is being attacked from L2PcInstance (a player)
 	 * @param event
 	 */
-	public void onAttackableAttack(OnAttackableAttack event)
-	{
+	public void onAttackableAttack(OnAttackableAttack event) {
 		_log.log(Level.INFO, getClass().getSimpleName() + ": " + event.getClass().getSimpleName() + " invoked attacker: " + event.getAttacker() + " target: " + event.getTarget() + " damage: " + event.getDamage() + " skill: " + event.getSkill());
 	}
 	
@@ -87,8 +82,7 @@ public class ListenerTest extends AbstractNpcAI
 	@RegisterType(ListenerRegisterType.NPC)
 	@Id(20432)
 	@Id(22228)
-	public void onCreatureKill(OnCreatureKill event)
-	{
+	public void onCreatureKill(OnCreatureKill event) {
 		_log.log(Level.INFO, getClass().getSimpleName() + ": " + event.getClass().getSimpleName() + " invoked attacker: " + event.getAttacker() + " target: " + event.getTarget());
 	}
 	
@@ -100,8 +94,7 @@ public class ListenerTest extends AbstractNpcAI
 	@RegisterEvent(EventType.ON_CASTLE_SIEGE_START)
 	@RegisterType(ListenerRegisterType.CASTLE)
 	@Range(from = 1, to = 9)
-	public void onSiegeStart(OnCastleSiegeStart event)
-	{
+	public void onSiegeStart(OnCastleSiegeStart event) {
 		_log.log(Level.INFO, getClass().getSimpleName() + ": The siege of " + event.getSiege().getCastle().getName() + " (" + event.getSiege().getCastle().getResidenceId() + ") has started!");
 	}
 	
@@ -113,8 +106,7 @@ public class ListenerTest extends AbstractNpcAI
 	@RegisterEvent(EventType.ON_ITEM_CREATE)
 	@RegisterType(ListenerRegisterType.ITEM)
 	@Id(5575)
-	public void onItemCreate(OnItemCreate event)
-	{
+	public void onItemCreate(OnItemCreate event) {
 		_log.log(Level.INFO, getClass().getSimpleName() + ": Item [" + event.getItem() + "] has been created actor: " + event.getActiveChar() + " process: " + event.getProcess() + " reference: " + event.getReference());
 	}
 	
@@ -128,17 +120,14 @@ public class ListenerTest extends AbstractNpcAI
 	@RegisterType(ListenerRegisterType.NPC)
 	@NpcLevelRange(from = 1, to = 10)
 	@Priority(100)
-	public void OnCreatureKill(OnCreatureKill event)
-	{
+	public void OnCreatureKill(OnCreatureKill event) {
 		// 70% chance to drop
-		if (getRandom(100) >= 70)
-		{
+		if (getRandom(100) >= 70) {
 			return;
 		}
 		
 		// Make sure a player killed this monster.
-		if ((event.getAttacker() != null) && event.getAttacker().isPlayable() && event.getTarget().isAttackable())
-		{
+		if ((event.getAttacker() != null) && event.getAttacker().isPlayable() && event.getTarget().isAttackable()) {
 			final L2Attackable monster = (L2Attackable) event.getTarget();
 			monster.dropItem(event.getAttacker().getActingPlayer(), new ItemHolder(57, getRandom(100, 1000)));
 		}
@@ -151,8 +140,7 @@ public class ListenerTest extends AbstractNpcAI
 	 */
 	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void onPlayerLogin(OnPlayerLogin event)
-	{
+	public void onPlayerLogin(OnPlayerLogin event) {
 		_log.log(Level.INFO, getClass().getSimpleName() + ": Player: " + event.getActiveChar() + " has logged in!");
 	}
 	
@@ -167,18 +155,15 @@ public class ListenerTest extends AbstractNpcAI
 	@RegisterEvent(EventType.ON_CREATURE_KILL)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	@Priority(Integer.MAX_VALUE)
-	public TerminateReturn onPlayerDeath(OnCreatureKill event)
-	{
-		if (event.getTarget().isGM())
-		{
+	public TerminateReturn onPlayerDeath(OnCreatureKill event) {
+		if (event.getTarget().isGM()) {
 			_log.log(Level.INFO, getClass().getSimpleName() + ": Player: " + event.getTarget() + " was prevented from dying!");
 			return new TerminateReturn(true, true, true);
 		}
 		return null;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new ListenerTest();
 	}
 }

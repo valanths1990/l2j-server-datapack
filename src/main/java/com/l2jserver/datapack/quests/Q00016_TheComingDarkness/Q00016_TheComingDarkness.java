@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * TODO: Zoey76: This quest is still not retail like, Altars AI is incomplete.
  * @author nonom
  */
-public class Q00016_TheComingDarkness extends Quest
-{
+public class Q00016_TheComingDarkness extends Quest {
 	// NPCs
 	private static final int HIERARCH = 31517;
 	private static final int EVIL_ALTAR_1 = 31512;
@@ -43,8 +42,7 @@ public class Q00016_TheComingDarkness extends Quest
 	// Item
 	private static final int CRYSTAL_OF_SEAL = 7167;
 	
-	public Q00016_TheComingDarkness()
-	{
+	public Q00016_TheComingDarkness() {
 		super(16, Q00016_TheComingDarkness.class.getSimpleName(), "The Coming Darkness");
 		addStartNpc(HIERARCH);
 		addTalkId(HIERARCH, EVIL_ALTAR_1, EVIL_ALTAR_2, EVIL_ALTAR_3, EVIL_ALTAR_4, EVIL_ALTAR_5);
@@ -52,18 +50,15 @@ public class Q00016_TheComingDarkness extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
 		final int cond = st.getCond();
-		switch (event)
-		{
+		switch (event) {
 			case "31517-02.htm":
 				st.startQuest();
 				st.giveItems(CRYSTAL_OF_SEAL, 5);
@@ -74,8 +69,7 @@ public class Q00016_TheComingDarkness extends Quest
 			case "31515-01.html":
 			case "31516-01.html":
 				final int npcId = Integer.parseInt(event.replace("-01.html", ""));
-				if ((cond == (npcId - 31511)) && st.hasQuestItems(CRYSTAL_OF_SEAL))
-				{
+				if ((cond == (npcId - 31511)) && st.hasQuestItems(CRYSTAL_OF_SEAL)) {
 					st.takeItems(CRYSTAL_OF_SEAL, 1);
 					st.setCond(cond + 1, true);
 				}
@@ -85,18 +79,15 @@ public class Q00016_TheComingDarkness extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		final QuestState st2 = player.getQuestState(Q00017_LightAndDarkness.class.getSimpleName());
-		if ((st2 != null) && !st2.isCompleted())
-		{
+		if ((st2 != null) && !st2.isCompleted()) {
 			return "31517-04.html";
 		}
 		
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.COMPLETED:
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
@@ -105,25 +96,17 @@ public class Q00016_TheComingDarkness extends Quest
 				break;
 			case State.STARTED:
 				final int npcId = npc.getId();
-				if (npcId == HIERARCH)
-				{
-					if (st.isCond(6))
-					{
+				if (npcId == HIERARCH) {
+					if (st.isCond(6)) {
 						st.addExpAndSp(865187, 69172);
 						st.exitQuest(false, true);
 						htmltext = "31517-03.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "31517-02a.html";
 					}
-				}
-				else if ((npcId - 31511) == st.getCond())
-				{
+				} else if ((npcId - 31511) == st.getCond()) {
 					htmltext = npcId + "-00.html";
-				}
-				else
-				{
+				} else {
 					htmltext = npcId + "-01.html";
 				}
 				break;

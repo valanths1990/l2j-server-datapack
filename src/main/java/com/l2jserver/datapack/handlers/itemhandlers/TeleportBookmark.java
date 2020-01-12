@@ -29,21 +29,17 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Teleport Bookmark Slot Handler
  * @author ShanSoft
  */
-public class TeleportBookmark implements IItemHandler
-{
+public class TeleportBookmark implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!playable.isPlayer())
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!playable.isPlayer()) {
 			playable.sendPacket(SystemMessageId.ITEM_NOT_FOR_PETS);
 			return false;
 		}
 		
 		L2PcInstance player = playable.getActingPlayer();
 		
-		if (player.getBookMarkSlot() >= 9)
-		{
+		if (player.getBookMarkSlot() >= 9) {
 			player.sendPacket(SystemMessageId.YOUR_NUMBER_OF_MY_TELEPORTS_SLOTS_HAS_REACHED_ITS_MAXIMUM_LIMIT);
 			return false;
 		}

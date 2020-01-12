@@ -42,63 +42,47 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
  * This class handles jail punishment.
  * @author UnAfraid
  */
-public class JailHandler implements IPunishmentHandler
-{
-	public JailHandler()
-	{
+public class JailHandler implements IPunishmentHandler {
+	public JailHandler() {
 		// Register global listener
 		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_PLAYER_LOGIN, (OnPlayerLogin event) -> onPlayerLogin(event), this));
 	}
 	
-	public void onPlayerLogin(OnPlayerLogin event)
-	{
+	public void onPlayerLogin(OnPlayerLogin event) {
 		final L2PcInstance activeChar = event.getActiveChar();
-		if (activeChar.isJailed() && !activeChar.isInsideZone(ZoneId.JAIL))
-		{
+		if (activeChar.isJailed() && !activeChar.isInsideZone(ZoneId.JAIL)) {
 			applyToPlayer(null, activeChar);
-		}
-		else if (!activeChar.isJailed() && activeChar.isInsideZone(ZoneId.JAIL) && !activeChar.isGM())
-		{
+		} else if (!activeChar.isJailed() && activeChar.isInsideZone(ZoneId.JAIL) && !activeChar.isGM()) {
 			removeFromPlayer(activeChar);
 		}
 	}
 	
 	@Override
-	public void onStart(PunishmentTask task)
-	{
-		switch (task.getAffect())
-		{
-			case CHARACTER:
-			{
+	public void onStart(PunishmentTask task) {
+		switch (task.getAffect()) {
+			case CHARACTER: {
 				int objectId = Integer.parseInt(String.valueOf(task.getKey()));
 				final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
-				if (player != null)
-				{
+				if (player != null) {
 					applyToPlayer(task, player);
 				}
 				break;
 			}
-			case ACCOUNT:
-			{
+			case ACCOUNT: {
 				String account = String.valueOf(task.getKey());
 				final L2GameClient client = LoginServerThread.getInstance().getClient(account);
-				if (client != null)
-				{
+				if (client != null) {
 					final L2PcInstance player = client.getActiveChar();
-					if (player != null)
-					{
+					if (player != null) {
 						applyToPlayer(task, player);
 					}
 				}
 				break;
 			}
-			case IP:
-			{
+			case IP: {
 				String ip = String.valueOf(task.getKey());
-				for (L2PcInstance player : L2World.getInstance().getPlayers())
-				{
-					if (player.getIPAddress().equals(ip))
-					{
+				for (L2PcInstance player : L2World.getInstance().getPlayers()) {
+					if (player.getIPAddress().equals(ip)) {
 						applyToPlayer(task, player);
 					}
 				}
@@ -108,41 +92,31 @@ public class JailHandler implements IPunishmentHandler
 	}
 	
 	@Override
-	public void onEnd(PunishmentTask task)
-	{
-		switch (task.getAffect())
-		{
-			case CHARACTER:
-			{
+	public void onEnd(PunishmentTask task) {
+		switch (task.getAffect()) {
+			case CHARACTER: {
 				int objectId = Integer.parseInt(String.valueOf(task.getKey()));
 				final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
-				if (player != null)
-				{
+				if (player != null) {
 					removeFromPlayer(player);
 				}
 				break;
 			}
-			case ACCOUNT:
-			{
+			case ACCOUNT: {
 				String account = String.valueOf(task.getKey());
 				final L2GameClient client = LoginServerThread.getInstance().getClient(account);
-				if (client != null)
-				{
+				if (client != null) {
 					final L2PcInstance player = client.getActiveChar();
-					if (player != null)
-					{
+					if (player != null) {
 						removeFromPlayer(player);
 					}
 				}
 				break;
 			}
-			case IP:
-			{
+			case IP: {
 				String ip = String.valueOf(task.getKey());
-				for (L2PcInstance player : L2World.getInstance().getPlayers())
-				{
-					if (player.getIPAddress().equals(ip))
-					{
+				for (L2PcInstance player : L2World.getInstance().getPlayers()) {
+					if (player.getIPAddress().equals(ip)) {
 						removeFromPlayer(player);
 					}
 				}
@@ -156,18 +130,15 @@ public class JailHandler implements IPunishmentHandler
 	 * @param task
 	 * @param player
 	 */
-	private static void applyToPlayer(PunishmentTask task, L2PcInstance player)
-	{
+	private static void applyToPlayer(PunishmentTask task, L2PcInstance player) {
 		player.setInstanceId(0);
 		player.setIsIn7sDungeon(false);
 		
-		if (!TvTEvent.isInactive() && TvTEvent.isPlayerParticipant(player.getObjectId()))
-		{
+		if (!TvTEvent.isInactive() && TvTEvent.isPlayerParticipant(player.getObjectId())) {
 			TvTEvent.removeParticipant(player.getObjectId());
 		}
 		
-		if (OlympiadManager.getInstance().isRegisteredInComp(player))
-		{
+		if (OlympiadManager.getInstance().isRegisteredInComp(player)) {
 			OlympiadManager.getInstance().removeDisconnectedCompetitor(player);
 		}
 		
@@ -176,26 +147,19 @@ public class JailHandler implements IPunishmentHandler
 		// Open a Html message to inform the player
 		final NpcHtmlMessage msg = new NpcHtmlMessage();
 		String content = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/html/jail_in.htm");
-		if (content != null)
-		{
+		if (content != null) {
 			content = content.replaceAll("%reason%", task != null ? task.getReason() : "");
 			content = content.replaceAll("%punishedBy%", task != null ? task.getPunishedBy() : "");
 			msg.setHtml(content);
-		}
-		else
-		{
+		} else {
 			msg.setHtml("<html><body>You have been put in jail by an admin.</body></html>");
 		}
 		player.sendPacket(msg);
-		if (task != null)
-		{
+		if (task != null) {
 			long delay = ((task.getExpirationTime() - System.currentTimeMillis()) / 1000);
-			if (delay > 0)
-			{
+			if (delay > 0) {
 				player.sendMessage("You've been jailed for " + (delay > 60 ? ((delay / 60) + " minutes.") : delay + " seconds."));
-			}
-			else
-			{
+			} else {
 				player.sendMessage("You've been jailed forever.");
 			}
 		}
@@ -205,27 +169,22 @@ public class JailHandler implements IPunishmentHandler
 	 * Removes any punishment effects from the player.
 	 * @param player
 	 */
-	private static void removeFromPlayer(L2PcInstance player)
-	{
+	private static void removeFromPlayer(L2PcInstance player) {
 		ThreadPoolManager.getInstance().scheduleGeneral(new TeleportTask(player, L2JailZone.getLocationOut()), 2000);
 		
 		// Open a Html message to inform the player
 		final NpcHtmlMessage msg = new NpcHtmlMessage();
 		String content = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/html/jail_out.htm");
-		if (content != null)
-		{
+		if (content != null) {
 			msg.setHtml(content);
-		}
-		else
-		{
+		} else {
 			msg.setHtml("<html><body>You are free for now, respect server rules!</body></html>");
 		}
 		player.sendPacket(msg);
 	}
 	
 	@Override
-	public PunishmentType getType()
-	{
+	public PunishmentType getType() {
 		return PunishmentType.JAIL;
 	}
 }

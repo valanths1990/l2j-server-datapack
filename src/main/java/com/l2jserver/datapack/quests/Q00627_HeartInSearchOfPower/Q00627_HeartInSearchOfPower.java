@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Heart in Search of Power (627)
  * @author Citizen
  */
-public class Q00627_HeartInSearchOfPower extends Quest
-{
+public class Q00627_HeartInSearchOfPower extends Quest {
 	// NPCs
 	private static final int MYSTERIOUS_NECROMANCER = 31518;
 	private static final int ENFEUX = 31519;
@@ -45,8 +44,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 	private static final int GEM_OF_SAINTS = 7172;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(21520, 661); // Eye of Splendor
 		MONSTERS.put(21523, 668); // Flash of Splendor
 		MONSTERS.put(21524, 714); // Blade of Splendor
@@ -71,8 +69,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 	private static final int ENRIA = 4042;
 	private static final int MOLD_HARDENER = 4041;
 	
-	public Q00627_HeartInSearchOfPower()
-	{
+	public Q00627_HeartInSearchOfPower() {
 		super(627, Q00627_HeartInSearchOfPower.class.getSimpleName(), "Heart in Search of Power");
 		addStartNpc(MYSTERIOUS_NECROMANCER);
 		addTalkId(MYSTERIOUS_NECROMANCER, ENFEUX);
@@ -81,22 +78,18 @@ public class Q00627_HeartInSearchOfPower extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "31518-02.htm":
 				st.startQuest();
 				break;
 			case "31518-06.html":
-				if (st.getQuestItemsCount(BEAD_OF_OBEDIENCE) < BEAD_OF_OBEDIENCE_COUNT_REQUIRED)
-				{
+				if (st.getQuestItemsCount(BEAD_OF_OBEDIENCE) < BEAD_OF_OBEDIENCE_COUNT_REQUIRED) {
 					return "31518-05.html";
 				}
 				st.giveItems(SEAL_OF_LIGHT, 1);
@@ -108,12 +101,10 @@ public class Q00627_HeartInSearchOfPower extends Quest
 			case "Thons":
 			case "Enrias":
 			case "Mold_Hardener":
-				if (!st.hasQuestItems(GEM_OF_SAINTS))
-				{
+				if (!st.hasQuestItems(GEM_OF_SAINTS)) {
 					return "31518-11.html";
 				}
-				switch (event)
-				{
+				switch (event) {
 					case "Adena":
 						st.giveAdena(100000, true);
 						break;
@@ -138,14 +129,11 @@ public class Q00627_HeartInSearchOfPower extends Quest
 				st.exitQuest(true);
 				break;
 			case "31519-02.html":
-				if (st.hasQuestItems(SEAL_OF_LIGHT) && st.isCond(3))
-				{
+				if (st.hasQuestItems(SEAL_OF_LIGHT) && st.isCond(3)) {
 					st.giveItems(GEM_OF_SAINTS, 1);
 					st.takeItems(SEAL_OF_LIGHT, -1);
 					st.setCond(4);
-				}
-				else
-				{
+				} else {
 					htmltext = getNoQuestMsg(player);
 				}
 				break;
@@ -159,22 +147,16 @@ public class Q00627_HeartInSearchOfPower extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(killer, 1);
-		if (partyMember != null)
-		{
+		if (partyMember != null) {
 			final QuestState st = getQuestState(partyMember, false);
 			final double chance = MONSTERS.get(npc.getId()) * rates().getRateQuestDrop();
-			if (getRandom(1000) < chance)
-			{
+			if (getRandom(1000) < chance) {
 				st.giveItems(BEAD_OF_OBEDIENCE, 1);
-				if (st.getQuestItemsCount(BEAD_OF_OBEDIENCE) < BEAD_OF_OBEDIENCE_COUNT_REQUIRED)
-				{
+				if (st.getQuestItemsCount(BEAD_OF_OBEDIENCE) < BEAD_OF_OBEDIENCE_COUNT_REQUIRED) {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-				}
-				else
-				{
+				} else {
 					st.setCond(2, true);
 				}
 			}
@@ -183,24 +165,19 @@ public class Q00627_HeartInSearchOfPower extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
-				if (npc.getId() == MYSTERIOUS_NECROMANCER)
-				{
+				if (npc.getId() == MYSTERIOUS_NECROMANCER) {
 					htmltext = (player.getLevel() >= MIN_LEVEL_REQUIRED) ? "31518-01.htm" : "31518-00.htm";
 				}
 				break;
 			case State.STARTED:
-				switch (npc.getId())
-				{
+				switch (npc.getId()) {
 					case MYSTERIOUS_NECROMANCER:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "31518-03.html";
 								break;
@@ -216,8 +193,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 						}
 						break;
 					case ENFEUX:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 3:
 								htmltext = "31519-01.html";
 								break;

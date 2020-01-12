@@ -42,8 +42,7 @@ import com.l2jserver.gameserver.util.Util;
  * Servitor AI for quest Test Of The Summoner (230).
  * @author Zoey76
  */
-public final class Servitors extends AbstractNpcAI
-{
+public final class Servitors extends AbstractNpcAI {
 	// Quest Monster
 	private static final int PAKO_THE_CAT = 27102;
 	private static final int UNICORN_RACER = 27103;
@@ -72,8 +71,7 @@ public final class Servitors extends AbstractNpcAI
 	private static final int CRYSTAL_OF_DEFEAT_6TH = 3388;
 	
 	private static final Map<Integer, List<Integer>> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(PAKO_THE_CAT, Arrays.asList(CRYSTAL_OF_STARTING_1ST, CRYSTAL_OF_INPROGRESS_1ST, CRYSTAL_OF_DEFEAT_1ST));
 		MONSTERS.put(UNICORN_RACER, Arrays.asList(CRYSTAL_OF_STARTING_3RD, CRYSTAL_OF_INPROGRESS_3RD, CRYSTAL_OF_DEFEAT_3RD));
 		MONSTERS.put(SHADOW_TUREN, Arrays.asList(CRYSTAL_OF_STARTING_5TH, CRYSTAL_OF_INPROGRESS_5TH, CRYSTAL_OF_DEFEAT_5TH));
@@ -82,8 +80,7 @@ public final class Servitors extends AbstractNpcAI
 		MONSTERS.put(SILHOUETTE_TILFO, Arrays.asList(CRYSTAL_OF_STARTING_6TH, CRYSTAL_OF_INPROGRESS_6TH, CRYSTAL_OF_DEFEAT_6TH));
 	}
 	
-	private Servitors()
-	{
+	private Servitors() {
 		super(Servitors.class.getSimpleName(), "ai/npc/Summons");
 	}
 	
@@ -105,17 +102,14 @@ public final class Servitors extends AbstractNpcAI
 		14527, 14528, 14529, 14530
 	})
 	// @formatter:on
-	public void onCreatureKill(OnCreatureKill event)
-	{
+	public void onCreatureKill(OnCreatureKill event) {
 		if (event.getAttacker().isNpc() && event.getTarget().isServitor() //
-			&& Util.checkIfInRange(1500, event.getAttacker(), event.getTarget(), true))
-		{
+			&& Util.checkIfInRange(1500, event.getAttacker(), event.getTarget(), true)) {
 			final L2ServitorInstance target = (L2ServitorInstance) event.getTarget();
 			final L2PcInstance master = target.getOwner();
 			final QuestState qs = master.getQuestState(Q00230_TestOfTheSummoner.class.getSimpleName());
 			
-			if ((qs != null) && hasQuestItems(master, CRYSTAL_OF_INPROGRESS_3RD))
-			{
+			if ((qs != null) && hasQuestItems(master, CRYSTAL_OF_INPROGRESS_3RD)) {
 				final L2Npc killer = (L2Npc) event.getAttacker();
 				final List<Integer> items = MONSTERS.get(killer.getId());
 				giveItems(master, items.get(2), 1); // Crystal of Defeat
@@ -126,8 +120,7 @@ public final class Servitors extends AbstractNpcAI
 		}
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Servitors();
 	}
 }

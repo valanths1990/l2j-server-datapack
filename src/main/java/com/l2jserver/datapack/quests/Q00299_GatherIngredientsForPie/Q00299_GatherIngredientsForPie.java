@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Gather Ingredients for Pie (299)
  * @author xban1x
  */
-public final class Q00299_GatherIngredientsForPie extends Quest
-{
+public final class Q00299_GatherIngredientsForPie extends Quest {
 	// NPCs
 	private static final int LARS = 30063;
 	private static final int BRIGHT = 30466;
@@ -50,8 +49,7 @@ public final class Q00299_GatherIngredientsForPie extends Quest
 	private static final List<QuestItemHolder> REWARDS = new ArrayList<>(5);
 	// Misc
 	private static final int MIN_LVL = 34;
-	static
-	{
+	static {
 		MONSTERS_CHANCES.put(20934, 700); // Wasp Worker
 		MONSTERS_CHANCES.put(20935, 770); // Wasp Leader
 		REWARDS.add(new QuestItemHolder(57, 400, 2500)); // Adena
@@ -61,8 +59,7 @@ public final class Q00299_GatherIngredientsForPie extends Quest
 		REWARDS.add(new QuestItemHolder(1871, 1000, 50)); // Charcoal
 	}
 	
-	public Q00299_GatherIngredientsForPie()
-	{
+	public Q00299_GatherIngredientsForPie() {
 		super(299, Q00299_GatherIngredientsForPie.class.getSimpleName(), "Gather Ingredients for Pie");
 		addStartNpc(EMILLY);
 		addTalkId(LARS, BRIGHT, EMILLY);
@@ -71,92 +68,69 @@ public final class Q00299_GatherIngredientsForPie extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String html = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return html;
 		}
-		switch (event)
-		{
-			case "30063-02.html":
-			{
-				if (qs.isCond(3))
-				{
+		switch (event) {
+			case "30063-02.html": {
+				if (qs.isCond(3)) {
 					giveItems(player, AVELLAN_SPICE, 1);
 					qs.setCond(4, true);
 					html = event;
 				}
 				break;
 			}
-			case "30466-02.html":
-			{
-				if (qs.isCond(5))
-				{
+			case "30466-02.html": {
+				if (qs.isCond(5)) {
 					giveItems(player, FRUIT_BASKET, 1);
 					qs.setCond(6, true);
 					html = event;
 				}
 				break;
 			}
-			case "30620-03.htm":
-			{
-				if (qs.isCreated())
-				{
+			case "30620-03.htm": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					html = event;
 				}
 				break;
 			}
-			case "30620-06.html":
-			{
-				if (qs.isCond(2) && (getQuestItemsCount(player, HONEY_POUCH) >= 100))
-				{
+			case "30620-06.html": {
+				if (qs.isCond(2) && (getQuestItemsCount(player, HONEY_POUCH) >= 100)) {
 					takeItems(player, HONEY_POUCH, -1);
 					qs.setCond(3, true);
 					html = event;
-				}
-				else
-				{
+				} else {
 					html = "30620-07.html";
 				}
 				break;
 			}
-			case "30620-10.html":
-			{
-				if (qs.isCond(4) && hasQuestItems(player, AVELLAN_SPICE))
-				{
+			case "30620-10.html": {
+				if (qs.isCond(4) && hasQuestItems(player, AVELLAN_SPICE)) {
 					takeItems(player, AVELLAN_SPICE, -1);
 					qs.setCond(5, true);
 					html = event;
-				}
-				else
-				{
+				} else {
 					html = "30620-11.html";
 				}
 				break;
 			}
-			case "30620-14.html":
-			{
-				if (qs.isCond(6) && hasQuestItems(player, FRUIT_BASKET))
-				{
+			case "30620-14.html": {
+				if (qs.isCond(6) && hasQuestItems(player, FRUIT_BASKET)) {
 					takeItems(player, FRUIT_BASKET, -1);
 					final int chance = getRandom(1000);
-					for (QuestItemHolder holder : REWARDS)
-					{
-						if (holder.getChance() > chance)
-						{
+					for (QuestItemHolder holder : REWARDS) {
+						if (holder.getChance() > chance) {
 							rewardItems(player, holder);
 							break;
 						}
 					}
 					qs.exitQuest(true, true);
 					html = event;
-				}
-				else
-				{
+				} else {
 					html = "30620-15.html";
 				}
 				break;
@@ -166,13 +140,10 @@ public final class Q00299_GatherIngredientsForPie extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, 1, 3, npc);
-		if ((qs != null) && (getRandom(1000) < MONSTERS_CHANCES.get(npc.getId())) && (getQuestItemsCount(killer, HONEY_POUCH) < 100))
-		{
-			if (giveItemRandomly(killer, npc, HONEY_POUCH, 1, 2, 100, 1, true))
-			{
+		if ((qs != null) && (getRandom(1000) < MONSTERS_CHANCES.get(npc.getId())) && (getQuestItemsCount(killer, HONEY_POUCH) < 100)) {
+			if (giveItemRandomly(killer, npc, HONEY_POUCH, 1, 2, 100, 1, true)) {
 				qs.setCond(2);
 			}
 		}
@@ -180,94 +151,70 @@ public final class Q00299_GatherIngredientsForPie extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		String html = getNoQuestMsg(talker);
-		switch (npc.getId())
-		{
-			case LARS:
-			{
-				switch (qs.getCond())
-				{
-					case 3:
-					{
+		switch (npc.getId()) {
+			case LARS: {
+				switch (qs.getCond()) {
+					case 3: {
 						html = "30063-01.html";
 						break;
 					}
-					case 4:
-					{
+					case 4: {
 						html = "30063-03.html";
 						break;
 					}
 				}
 				break;
 			}
-			case BRIGHT:
-			{
-				switch (qs.getCond())
-				{
-					case 5:
-					{
+			case BRIGHT: {
+				switch (qs.getCond()) {
+					case 5: {
 						html = "30466-01.html";
 						break;
 					}
-					case 6:
-					{
+					case 6: {
 						html = "30466-03.html";
 						break;
 					}
 				}
 				break;
 			}
-			case EMILLY:
-			{
-				switch (qs.getState())
-				{
-					case State.CREATED:
-					{
+			case EMILLY: {
+				switch (qs.getState()) {
+					case State.CREATED: {
 						html = (talker.getLevel() >= MIN_LVL) ? "30620-01.htm" : "30620-02.htm";
 						break;
 					}
-					case State.STARTED:
-					{
-						switch (qs.getCond())
-						{
-							case 1:
-							{
+					case State.STARTED: {
+						switch (qs.getCond()) {
+							case 1: {
 								html = "30620-05.html";
 								break;
 							}
-							case 2:
-							{
-								if (getQuestItemsCount(talker, HONEY_POUCH) >= 100)
-								{
+							case 2: {
+								if (getQuestItemsCount(talker, HONEY_POUCH) >= 100) {
 									html = "30620-04.html";
 								}
 								break;
 							}
-							case 3:
-							{
+							case 3: {
 								html = "30620-08.html";
 								break;
 							}
-							case 4:
-							{
-								if (hasQuestItems(talker, AVELLAN_SPICE))
-								{
+							case 4: {
+								if (hasQuestItems(talker, AVELLAN_SPICE)) {
 									html = "30620-09.html";
 								}
 								break;
 							}
-							case 5:
-							{
+							case 5: {
 								html = "30620-12.html";
 								break;
 							}
-							case 6:
-							{
-								if (hasQuestItems(talker, FRUIT_BASKET))
-								{
+							case 6: {
+								if (hasQuestItems(talker, FRUIT_BASKET)) {
 									html = "30620-13.html";
 								}
 								break;

@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Dwarven Kinship (167)
  * @author xban1x
  */
-public class Q00167_DwarvenKinship extends Quest
-{
+public class Q00167_DwarvenKinship extends Quest {
 	// NPCs
 	private static final int NORMAN = 30210;
 	private static final int HAPROCK = 30255;
@@ -40,8 +39,7 @@ public class Q00167_DwarvenKinship extends Quest
 	// Misc
 	private static final int MIN_LVL = 15;
 	
-	public Q00167_DwarvenKinship()
-	{
+	public Q00167_DwarvenKinship() {
 		super(167, Q00167_DwarvenKinship.class.getSimpleName(), "Dwarven Kinship");
 		addStartNpc(CARLON);
 		addTalkId(CARLON, NORMAN, HAPROCK);
@@ -49,33 +47,25 @@ public class Q00167_DwarvenKinship extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
-				case "30210-02.html":
-				{
-					if (st.isCond(2) && st.hasQuestItems(NORMANS_LETTER))
-					{
+		if (st != null) {
+			switch (event) {
+				case "30210-02.html": {
+					if (st.isCond(2) && st.hasQuestItems(NORMANS_LETTER)) {
 						st.giveAdena(20000, true);
 						st.exitQuest(false, true);
 						htmltext = event;
 					}
 					break;
 				}
-				case "30255-02.html":
-				{
+				case "30255-02.html": {
 					htmltext = event;
 					break;
 				}
-				case "30255-03.html":
-				{
-					if (st.isCond(1) && st.hasQuestItems(CARLONS_LETTER))
-					{
+				case "30255-03.html": {
+					if (st.isCond(1) && st.hasQuestItems(CARLONS_LETTER)) {
 						st.takeItems(CARLONS_LETTER, -1);
 						st.giveItems(NORMANS_LETTER, 1);
 						st.giveAdena(2000, true);
@@ -84,18 +74,15 @@ public class Q00167_DwarvenKinship extends Quest
 					}
 					break;
 				}
-				case "30255-04.html":
-				{
-					if (st.isCond(1) && st.hasQuestItems(CARLONS_LETTER))
-					{
+				case "30255-04.html": {
+					if (st.isCond(1) && st.hasQuestItems(CARLONS_LETTER)) {
 						st.giveAdena(15000, true);
 						st.exitQuest(false, true);
 						htmltext = event;
 					}
 					break;
 				}
-				case "30350-03.htm":
-				{
+				case "30350-03.htm": {
 					st.startQuest();
 					st.giveItems(CARLONS_LETTER, 1);
 					htmltext = event;
@@ -107,53 +94,39 @@ public class Q00167_DwarvenKinship extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
-			case CARLON:
-			{
-				switch (st.getState())
-				{
-					case State.CREATED:
-					{
+		switch (npc.getId()) {
+			case CARLON: {
+				switch (st.getState()) {
+					case State.CREATED: {
 						htmltext = (player.getLevel() >= MIN_LVL) ? "30350-02.htm" : "30350-01.htm";
 						break;
 					}
-					case State.STARTED:
-					{
-						if (st.isCond(1) && st.hasQuestItems(CARLONS_LETTER))
-						{
+					case State.STARTED: {
+						if (st.isCond(1) && st.hasQuestItems(CARLONS_LETTER)) {
 							htmltext = "30350-04.html";
 						}
 						break;
 					}
-					case State.COMPLETED:
-					{
+					case State.COMPLETED: {
 						htmltext = getAlreadyCompletedMsg(player);
 						break;
 					}
 				}
 				break;
 			}
-			case HAPROCK:
-			{
-				if (st.isCond(1) && st.hasQuestItems(CARLONS_LETTER))
-				{
+			case HAPROCK: {
+				if (st.isCond(1) && st.hasQuestItems(CARLONS_LETTER)) {
 					htmltext = "30255-01.html";
-				}
-				else if (st.isCond(2) && st.hasQuestItems(NORMANS_LETTER))
-				{
+				} else if (st.isCond(2) && st.hasQuestItems(NORMANS_LETTER)) {
 					htmltext = "30255-05.html";
 				}
 				break;
 			}
-			case NORMAN:
-			{
-				if (st.isCond(2) && st.hasQuestItems(NORMANS_LETTER))
-				{
+			case NORMAN: {
+				if (st.isCond(2) && st.hasQuestItems(NORMANS_LETTER)) {
 					htmltext = "30210-01.html";
 				}
 				break;

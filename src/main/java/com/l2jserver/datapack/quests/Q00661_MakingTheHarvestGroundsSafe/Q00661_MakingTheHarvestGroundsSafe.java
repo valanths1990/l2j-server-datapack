@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Making the Harvest Grounds Safe (661)
  * @author Pandragon
  */
-public final class Q00661_MakingTheHarvestGroundsSafe extends Quest
-{
+public final class Q00661_MakingTheHarvestGroundsSafe extends Quest {
 	// NPC
 	private static final int NORMAN = 30210;
 	// Items
@@ -50,8 +49,7 @@ public final class Q00661_MakingTheHarvestGroundsSafe extends Quest
 	// Misc
 	private static final int MIN_LVL = 21;
 	
-	public Q00661_MakingTheHarvestGroundsSafe()
-	{
+	public Q00661_MakingTheHarvestGroundsSafe() {
 		super(661, Q00661_MakingTheHarvestGroundsSafe.class.getSimpleName(), "Making the Harvest Grounds Safe");
 		addStartNpc(NORMAN);
 		addTalkId(NORMAN);
@@ -60,42 +58,34 @@ public final class Q00661_MakingTheHarvestGroundsSafe extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "30210-01.htm":
 			case "30210-02.htm":
 			case "30210-04.html":
-			case "30210-06.html":
-			{
+			case "30210-06.html": {
 				htmltext = event;
 				break;
 			}
-			case "30210-03.htm":
-			{
-				if (qs.isCreated())
-				{
+			case "30210-03.htm": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					htmltext = event;
 				}
 				break;
 			}
-			case "30210-08.html":
-			{
+			case "30210-08.html": {
 				long stingCount = getQuestItemsCount(player, BIG_HORNET_STING);
 				long gemCount = getQuestItemsCount(player, CLOUD_GEM);
 				long clawCount = getQuestItemsCount(player, YOUNG_ARANEID_CLAW);
 				long reward = (57 * stingCount) + (56 * gemCount) + (60 * clawCount);
-				if ((stingCount + gemCount + clawCount) >= 10)
-				{
+				if ((stingCount + gemCount + clawCount) >= 10) {
 					reward += 5773;
 				}
 				takeItems(player, BIG_HORNET_STING, -1);
@@ -105,8 +95,7 @@ public final class Q00661_MakingTheHarvestGroundsSafe extends Quest
 				htmltext = event;
 				break;
 			}
-			case "30210-09.html":
-			{
+			case "30210-09.html": {
 				qs.exitQuest(true, true);
 				htmltext = event;
 				break;
@@ -116,25 +105,18 @@ public final class Q00661_MakingTheHarvestGroundsSafe extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		switch (qs.getState())
-		{
-			case State.CREATED:
-			{
+		switch (qs.getState()) {
+			case State.CREATED: {
 				htmltext = (talker.getLevel() >= MIN_LVL) ? "30210-01.htm" : "30210-02.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (hasQuestItems(talker, BIG_HORNET_STING, CLOUD_GEM, YOUNG_ARANEID_CLAW))
-				{
+			case State.STARTED: {
+				if (hasQuestItems(talker, BIG_HORNET_STING, CLOUD_GEM, YOUNG_ARANEID_CLAW)) {
 					htmltext = "30210-04.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30210-05.html";
 				}
 				break;
@@ -144,11 +126,9 @@ public final class Q00661_MakingTheHarvestGroundsSafe extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, -1, 3, npc);
-		if (qs != null)
-		{
+		if (qs != null) {
 			final ItemChanceHolder item = MONSTER_CHANCES.get(npc.getId());
 			giveItemRandomly(qs.getPlayer(), npc, item.getId(), item.getCount(), 0, item.getChance(), true);
 		}

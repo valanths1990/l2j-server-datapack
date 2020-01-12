@@ -39,8 +39,7 @@ import com.l2jserver.gameserver.util.Util;
  * Chests are hidden at Fantasy Isle and players must use the Rabbit transformation's skills to find and open them.
  * @author Gnacik, Zoey76
  */
-public final class Rabbits extends Event
-{
+public final class Rabbits extends Event {
 	// NPCs
 	private static final int NPC_MANAGER = 900101;
 	private static final int CHEST = 900102;
@@ -77,8 +76,7 @@ public final class Rabbits extends Event
 	};
 	// @formatter:on
 	
-	private Rabbits()
-	{
+	private Rabbits() {
 		super(Rabbits.class.getSimpleName(), "custom/events");
 		addFirstTalkId(NPC_MANAGER, CHEST);
 		addTalkId(NPC_MANAGER);
@@ -88,18 +86,15 @@ public final class Rabbits extends Event
 	}
 	
 	@Override
-	public boolean eventStart(L2PcInstance eventMaker)
-	{
+	public boolean eventStart(L2PcInstance eventMaker) {
 		// Don't start event if its active
-		if (_isActive)
-		{
+		if (_isActive) {
 			eventMaker.sendMessage("Event " + getName() + " is already started!");
 			return false;
 		}
 		
 		// Check starting conditions
-		if (!general().customNpcData())
-		{
+		if (!general().customNpcData()) {
 			_log.info(getName() + ": Event can't be started, because custom NPCs are disabled!");
 			eventMaker.sendMessage("Event " + getName() + " can't be started because custom NPCs are disabled!");
 			return false;
@@ -111,8 +106,7 @@ public final class Rabbits extends Event
 		// Spawn Manager
 		recordSpawn(_npcs, NPC_MANAGER, -59227, -56939, -2039, 64106, false, 0);
 		// Spawn Chests
-		for (int i = 0; i <= TOTAL_CHEST_COUNT; i++)
-		{
+		for (int i = 0; i <= TOTAL_CHEST_COUNT; i++) {
 			recordSpawn(_npcs, CHEST, getRandom(-60653, -58772), getRandom(-55830, -58146), -2030, 0, false, EVENT_TIME * 60000);
 		}
 		
@@ -127,11 +121,9 @@ public final class Rabbits extends Event
 	}
 	
 	@Override
-	public boolean eventStop()
-	{
+	public boolean eventStop() {
 		// Don't stop inactive event
-		if (!_isActive)
-		{
+		if (!_isActive) {
 			return false;
 		}
 		
@@ -142,16 +134,13 @@ public final class Rabbits extends Event
 		cancelQuestTimers("END_RABBITS_EVENT");
 		
 		// Despawn NPCs
-		for (L2Npc npc : _npcs)
-		{
+		for (L2Npc npc : _npcs) {
 			npc.deleteMe();
 		}
 		_npcs.clear();
 		
-		for (L2PcInstance player : _players)
-		{
-			if (player.getTransformationId() == TRANSFORMATION_ID)
-			{
+		for (L2PcInstance player : _players) {
+			if (player.getTransformationId() == TRANSFORMATION_ID) {
 				player.untransform();
 			}
 		}
@@ -164,20 +153,15 @@ public final class Rabbits extends Event
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
-			case "900101-1.htm":
-			{
+		switch (event) {
+			case "900101-1.htm": {
 				htmltext = "900101-1.htm";
 				break;
 			}
-			case "transform":
-			{
-				if (player.isTransformed() || player.isInStance())
-				{
+			case "transform": {
+				if (player.isTransformed() || player.isInStance()) {
 					player.untransform();
 				}
 				
@@ -185,8 +169,7 @@ public final class Rabbits extends Event
 				_players.add(player);
 				break;
 			}
-			case "END_RABBITS_EVENT":
-			{
+			case "END_RABBITS_EVENT": {
 				Broadcast.toAllOnlinePlayers("Rabbits Event: Time up!");
 				eventStop();
 				break;
@@ -196,33 +179,25 @@ public final class Rabbits extends Event
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return npc.getId() + ".htm";
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
-	{
-		if (skill.getId() == RABBIT_TORNADO.getSkillId())
-		{
-			if (!npc.isInvisible() && Util.contains(targets, npc))
-			{
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon) {
+		if (skill.getId() == RABBIT_TORNADO.getSkillId()) {
+			if (!npc.isInvisible() && Util.contains(targets, npc)) {
 				dropItem(npc, caster, DROPLIST);
 				npc.deleteMe();
 				_npcs.remove(npc);
 				
-				if (_npcs.isEmpty())
-				{
+				if (_npcs.isEmpty()) {
 					Broadcast.toAllOnlinePlayers("Rabbits Event: No more chests...");
 					eventStop();
 				}
 			}
-		}
-		else if (skill.getId() == RABBIT_MAGIC_EYE.getSkillId())
-		{
-			if (npc.isInvisible() && npc.isInsideRadius(caster, skill.getAffectRange(), false, false))
-			{
+		} else if (skill.getId() == RABBIT_MAGIC_EYE.getSkillId()) {
+			if (npc.isInvisible() && npc.isInsideRadius(caster, skill.getAffectRange(), false, false)) {
 				npc.setInvisible(false);
 			}
 		}
@@ -230,33 +205,26 @@ public final class Rabbits extends Event
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
-	{
-		if (_isActive && ((skill == null) || (skill.getId() != RABBIT_TORNADO.getSkillId())))
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill) {
+		if (_isActive && ((skill == null) || (skill.getId() != RABBIT_TORNADO.getSkillId()))) {
 			RAID_CURSE.getSkill().applyEffects(npc, attacker);
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
-	private static void dropItem(L2Npc npc, L2PcInstance player, int[][] droplist)
-	{
+	private static void dropItem(L2Npc npc, L2PcInstance player, int[][] droplist) {
 		final int chance = getRandom(100);
-		for (int[] drop : droplist)
-		{
-			if (chance > drop[1])
-			{
+		for (int[] drop : droplist) {
+			if (chance > drop[1]) {
 				npc.dropItem(player, drop[0], getRandom(drop[2], drop[3]));
 				return;
 			}
 		}
 	}
 	
-	private static void recordSpawn(Set<L2Npc> npcs, int npcId, int x, int y, int z, int heading, boolean randomOffSet, long despawnDelay)
-	{
+	private static void recordSpawn(Set<L2Npc> npcs, int npcId, int x, int y, int z, int heading, boolean randomOffSet, long despawnDelay) {
 		final L2Npc npc = addSpawn(npcId, x, y, z, heading, randomOffSet, despawnDelay);
-		if (npc.getId() == CHEST)
-		{
+		if (npc.getId() == CHEST) {
 			npc.setIsImmobilized(true);
 			npc.disableCoreAI(true);
 			npc.setInvisible(true);
@@ -265,13 +233,11 @@ public final class Rabbits extends Event
 	}
 	
 	@Override
-	public boolean eventBypass(L2PcInstance activeChar, String bypass)
-	{
+	public boolean eventBypass(L2PcInstance activeChar, String bypass) {
 		return false;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Rabbits();
 	}
 }

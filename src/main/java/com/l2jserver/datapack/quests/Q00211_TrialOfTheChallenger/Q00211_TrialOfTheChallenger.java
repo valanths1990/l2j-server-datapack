@@ -35,8 +35,7 @@ import com.l2jserver.gameserver.util.Util;
  * Trial of the Challenger (211)
  * @author Pandragon
  */
-public final class Q00211_TrialOfTheChallenger extends Quest
-{
+public final class Q00211_TrialOfTheChallenger extends Quest {
 	// NPCs
 	private static final int FILAUR = 30535;
 	private static final int KASH = 30644;
@@ -69,8 +68,7 @@ public final class Q00211_TrialOfTheChallenger extends Quest
 	// Misc
 	private static final int MIN_LVL = 35;
 	
-	public Q00211_TrialOfTheChallenger()
-	{
+	public Q00211_TrialOfTheChallenger() {
 		super(211, Q00211_TrialOfTheChallenger.class.getSimpleName(), "Trial of the Challenger");
 		addStartNpc(KASH);
 		addTalkId(FILAUR, KASH, MARTIAN, RALDO, CHEST_OF_SHYSLASSYS, MARKETEER_OF_MAMMON);
@@ -79,110 +77,81 @@ public final class Q00211_TrialOfTheChallenger extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
-		switch (event)
-		{
-			case "30644-04.htm":
-			{
+		switch (event) {
+			case "30644-04.htm": {
 				htmltext = event;
 				break;
 			}
 			case "30645-07.html":
 			case "30645-08.html":
 			case "30646-02.html":
-			case "30646-03.html":
-			{
-				if (qs.isStarted())
-				{
+			case "30646-03.html": {
+				if (qs.isStarted()) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "30644-06.htm":
-			{
-				if (qs.isCreated())
-				{
+			case "30644-06.htm": {
+				if (qs.isCreated()) {
 					final PlayerVariables vars = player.getVariables();
-					if (vars.getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
-					{
+					if (vars.getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0) {
 						giveItems(player, DIMENSIONAL_DIAMONDS);
 						vars.set("2ND_CLASS_DIAMOND_REWARD", 1);
 						htmltext = event;
-					}
-					else
-					{
+					} else {
 						htmltext = "30644-05.htm";
 					}
 					qs.startQuest();
 				}
 				break;
 			}
-			case "30647-02.html":
-			{
-				if (qs.isCond(2) && hasQuestItems(player, BROKEN_KEY))
-				{
+			case "30647-02.html": {
+				if (qs.isCond(2) && hasQuestItems(player, BROKEN_KEY)) {
 					takeItems(player, BROKEN_KEY, -1);
-					if (getRandom(10) < 2)
-					{
+					if (getRandom(10) < 2) {
 						playSound(player, Sound.ITEMSOUND_QUEST_JACKPOT);
 						final int random = getRandom(100);
-						if (random > 90)
-						{
+						if (random > 90) {
 							rewardItems(player, MITHRIL_SCALE_GAITERS_MATERIAL, 1);
 							rewardItems(player, BRIGAMDINE_GAUNTLET_PATTERN, 1);
 							rewardItems(player, MANTICOR_SKIN_GAITERS_PATTERN, 1);
 							rewardItems(player, GAUNTLET_OF_REPOSE_PATTERN, 1);
 							rewardItems(player, IRON_BOOTS_DESIGN, 1);
-						}
-						else if (random > 70)
-						{
+						} else if (random > 70) {
 							rewardItems(player, TOME_OF_BLOOD_PAGE, 1);
 							rewardItems(player, ELVEN_NECKLACE_BEADS, 1);
-						}
-						else if (random > 40)
-						{
+						} else if (random > 40) {
 							rewardItems(player, WHITE_TUNIC_PATTERN, 1);
-						}
-						else
-						{
+						} else {
 							rewardItems(player, IRON_BOOTS_DESIGN, 1);
 						}
 						htmltext = "30647-03.html";
-					}
-					else
-					{
+					} else {
 						giveAdena(player, getRandom(1000) + 1, true);
 						htmltext = event;
 					}
-				}
-				else
-				{
+				} else {
 					htmltext = "30647-04.html";
 				}
 				break;
 			}
-			case "30645-02.html":
-			{
-				if (qs.isCond(3) && hasQuestItems(player, LETTER_OF_KASH))
-				{
+			case "30645-02.html": {
+				if (qs.isCond(3) && hasQuestItems(player, LETTER_OF_KASH)) {
 					qs.setCond(4, true);
 					htmltext = event;
 				}
 				break;
 			}
 			case "30646-04.html":
-			case "30646-05.html":
-			{
-				if (qs.isCond(7) && hasQuestItems(player, WATCHERS_EYE2))
-				{
+			case "30646-05.html": {
+				if (qs.isCond(7) && hasQuestItems(player, WATCHERS_EYE2)) {
 					takeItems(player, WATCHERS_EYE2, -1);
 					qs.setCond(8, true);
 					htmltext = event;
@@ -194,42 +163,27 @@ public final class Q00211_TrialOfTheChallenger extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		switch (npc.getId())
-		{
-			case KASH:
-			{
-				if (qs.isCreated())
-				{
-					if (!talker.isInCategory(CategoryType.WARRIOR_GROUP))
-					{
+		switch (npc.getId()) {
+			case KASH: {
+				if (qs.isCreated()) {
+					if (!talker.isInCategory(CategoryType.WARRIOR_GROUP)) {
 						htmltext = "30644-02.html";
-					}
-					else if (talker.getLevel() < MIN_LVL)
-					{
+					} else if (talker.getLevel() < MIN_LVL) {
 						htmltext = "30644-01.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30644-03.htm";
 					}
-				}
-				else if (qs.isStarted())
-				{
-					switch (qs.getCond())
-					{
-						case 1:
-						{
+				} else if (qs.isStarted()) {
+					switch (qs.getCond()) {
+						case 1: {
 							htmltext = "30644-07.html";
 							break;
 						}
-						case 2:
-						{
-							if (hasQuestItems(talker, SCROLL_OF_SHYSLASSYS))
-							{
+						case 2: {
+							if (hasQuestItems(talker, SCROLL_OF_SHYSLASSYS)) {
 								takeItems(talker, SCROLL_OF_SHYSLASSYS, -1);
 								giveItems(talker, LETTER_OF_KASH, 1);
 								qs.setCond(3, true);
@@ -237,110 +191,86 @@ public final class Q00211_TrialOfTheChallenger extends Quest
 							}
 							break;
 						}
-						case 3:
-						{
-							if (hasQuestItems(talker, LETTER_OF_KASH))
-							{
+						case 3: {
+							if (hasQuestItems(talker, LETTER_OF_KASH)) {
 								htmltext = "30644-09.html";
 							}
 							break;
 						}
 						case 8:
 						case 9:
-						case 10:
-						{
+						case 10: {
 							htmltext = "30644-10.html";
 							break;
 						}
 					}
-				}
-				else if (qs.isCompleted())
-				{
+				} else if (qs.isCompleted()) {
 					htmltext = getAlreadyCompletedMsg(talker);
 				}
 				break;
 			}
-			case MARTIAN:
-			{
-				switch (qs.getCond())
-				{
-					case 3:
-					{
-						if (hasQuestItems(talker, LETTER_OF_KASH))
-						{
+			case MARTIAN: {
+				switch (qs.getCond()) {
+					case 3: {
+						if (hasQuestItems(talker, LETTER_OF_KASH)) {
 							htmltext = "30645-01.html";
 						}
 						break;
 					}
-					case 4:
-					{
+					case 4: {
 						htmltext = "30645-03.html";
 						break;
 					}
-					case 5:
-					{
-						if (hasQuestItems(talker, WATCHERS_EYE1))
-						{
+					case 5: {
+						if (hasQuestItems(talker, WATCHERS_EYE1)) {
 							takeItems(talker, WATCHERS_EYE1, -1);
 							qs.setCond(6, true);
 							htmltext = "30645-04.html";
 						}
 						break;
 					}
-					case 6:
-					{
+					case 6: {
 						htmltext = "30645-05.html";
 						break;
 					}
-					case 7:
-					{
+					case 7: {
 						htmltext = "30645-06.html";
 						break;
 					}
 					case 8:
-					case 9:
-					{
+					case 9: {
 						htmltext = "30645-09.html";
 						break;
 					}
 				}
 				break;
 			}
-			case CHEST_OF_SHYSLASSYS:
-			{
-				if (qs.isStarted())
-				{
+			case CHEST_OF_SHYSLASSYS: {
+				if (qs.isStarted()) {
 					htmltext = "30647-01.html";
 				}
 				break;
 			}
-			case RALDO:
-			{
-				switch (qs.getCond())
-				{
-					case 7:
-					{
-						if (hasQuestItems(talker, WATCHERS_EYE2))
-						{
+			case RALDO: {
+				switch (qs.getCond()) {
+					case 7: {
+						if (hasQuestItems(talker, WATCHERS_EYE2)) {
 							htmltext = "30646-01.html";
 						}
 						break;
 					}
-					case 8:
-					{
+					case 8: {
 						htmltext = "30646-06.html";
 						break;
 					}
-					case 10:
-					{
+					case 10: {
 						addExpAndSp(talker, 1067606, 69242);
 						giveAdena(talker, 194556, true);
 						giveItems(talker, MARK_OF_CHALLENGER, 1);
 						
 						// redundant retail check - already rewarded at beginning of quest
 						final PlayerVariables vars = talker.getVariables();
-						if (vars.getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
-						{
+						if (vars.getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0) {
 							giveItems(talker, DIMENSIONAL_DIAMONDS);
 							vars.set("2ND_CLASS_DIAMOND_REWARD", 1);
 						}
@@ -353,24 +283,19 @@ public final class Q00211_TrialOfTheChallenger extends Quest
 				}
 				break;
 			}
-			case FILAUR:
-			{
-				switch (qs.getCond())
-				{
-					case 8:
-					{
+			case FILAUR: {
+				switch (qs.getCond()) {
+					case 8: {
 						htmltext = "30535-01.html";
 						qs.setCond(9, true);
 						break;
 					}
-					case 9:
-					{
+					case 9: {
 						talker.sendPacket(new RadarControl(0, 2, 151589, -174823, -1776));
 						htmltext = "30535-02.html";
 						break;
 					}
-					case 10:
-					{
+					case 10: {
 						htmltext = "30535-03.html";
 						break;
 					}
@@ -382,22 +307,16 @@ public final class Q00211_TrialOfTheChallenger extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs == null) || !Util.checkIfInRange(1500, npc, killer, true))
-		{
+		if ((qs == null) || !Util.checkIfInRange(1500, npc, killer, true)) {
 			return super.onKill(npc, killer, isSummon);
 		}
 		
-		switch (npc.getId())
-		{
-			case SHYSLASSYS:
-			{
-				if (qs.isCond(1))
-				{
-					if (SpawnTable.getInstance().getSpawns(npc.getId()).size() < 10)
-					{
+		switch (npc.getId()) {
+			case SHYSLASSYS: {
+				if (qs.isCond(1)) {
+					if (SpawnTable.getInstance().getSpawns(npc.getId()).size() < 10) {
 						addSpawn(CHEST_OF_SHYSLASSYS, npc, false, 200000);
 					}
 					giveItems(killer, SCROLL_OF_SHYSLASSYS, 1);
@@ -406,21 +325,16 @@ public final class Q00211_TrialOfTheChallenger extends Quest
 				}
 				break;
 			}
-			case GORR:
-			{
-				if (qs.isCond(4))
-				{
+			case GORR: {
+				if (qs.isCond(4)) {
 					giveItems(killer, WATCHERS_EYE1, 1);
 					qs.setCond(5, true);
 				}
 				break;
 			}
-			case BARAHAM:
-			{
-				if (qs.isCond(6))
-				{
-					if (SpawnTable.getInstance().getSpawns(npc.getId()).size() < 10)
-					{
+			case BARAHAM: {
+				if (qs.isCond(6)) {
+					if (SpawnTable.getInstance().getSpawns(npc.getId()).size() < 10) {
 						addSpawn(RALDO, npc, false, 100000);
 					}
 					giveItems(killer, WATCHERS_EYE2, 1);
@@ -428,12 +342,9 @@ public final class Q00211_TrialOfTheChallenger extends Quest
 				}
 				break;
 			}
-			case QUEEN_OF_SUCCUBUS:
-			{
-				if (qs.isCond(9))
-				{
-					if (SpawnTable.getInstance().getSpawns(npc.getId()).size() < 10)
-					{
+			case QUEEN_OF_SUCCUBUS: {
+				if (qs.isCond(9)) {
+					if (SpawnTable.getInstance().getSpawns(npc.getId()).size() < 10) {
 						addSpawn(RALDO, npc, false, 100000);
 					}
 					qs.setCond(10, true);

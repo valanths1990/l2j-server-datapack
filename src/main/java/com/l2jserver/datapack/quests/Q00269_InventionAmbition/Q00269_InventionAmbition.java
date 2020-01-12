@@ -30,16 +30,14 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Invention Ambition (269)
  * @author xban1x
  */
-public final class Q00269_InventionAmbition extends Quest
-{
+public final class Q00269_InventionAmbition extends Quest {
 	// NPC
 	private static final int INVENTOR_MARU = 32486;
 	// Items
 	private static final int ENERGY_ORE = 10866;
 	// Monsters
 	private static final Map<Integer, Double> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(21124, 0.46); // Red Eye Barbed Bat
 		MONSTERS.put(21125, 0.48); // Northern Trimden
 		MONSTERS.put(21126, 0.5); // Kerope Werewolf
@@ -52,8 +50,7 @@ public final class Q00269_InventionAmbition extends Quest
 	// Misc
 	private static final int MIN_LVL = 18;
 	
-	public Q00269_InventionAmbition()
-	{
+	public Q00269_InventionAmbition() {
 		super(269, Q00269_InventionAmbition.class.getSimpleName(), "Invention Ambition");
 		addStartNpc(INVENTOR_MARU);
 		addTalkId(INVENTOR_MARU);
@@ -62,42 +59,33 @@ public final class Q00269_InventionAmbition extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "32486-03.htm":
-			{
-				if (player.getLevel() >= MIN_LVL)
-				{
+		switch (event) {
+			case "32486-03.htm": {
+				if (player.getLevel() >= MIN_LVL) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32486-04.htm":
-			{
-				if (player.getLevel() >= MIN_LVL)
-				{
+			case "32486-04.htm": {
+				if (player.getLevel() >= MIN_LVL) {
 					st.startQuest();
 					htmltext = event;
 				}
 				break;
 			}
-			case "32486-07.html":
-			{
+			case "32486-07.html": {
 				st.exitQuest(true, true);
 				htmltext = event;
 				break;
 			}
-			case "32486-08.html":
-			{
+			case "32486-08.html": {
 				htmltext = event;
 				break;
 			}
@@ -106,36 +94,27 @@ public final class Q00269_InventionAmbition extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getRandomPartyMemberState(killer, -1, 3, npc);
-		if (st != null)
-		{
+		if (st != null) {
 			giveItemRandomly(st.getPlayer(), npc, ENERGY_ORE, 1, 0, MONSTERS.get(npc.getId()), true);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st.isCreated())
-		{
+		if (st.isCreated()) {
 			htmltext = (player.getLevel() >= MIN_LVL) ? "32486-01.htm" : "32486-02.html";
-		}
-		else if (st.isStarted())
-		{
-			if (st.hasQuestItems(ENERGY_ORE))
-			{
+		} else if (st.isStarted()) {
+			if (st.hasQuestItems(ENERGY_ORE)) {
 				final long count = getQuestItemsCount(player, ENERGY_ORE);
 				giveAdena(player, (count * 50) + (count >= 10 ? 2044 : 0), true);
 				takeItems(player, ENERGY_ORE, -1);
 				htmltext = "32486-06.html";
-			}
-			else
-			{
+			} else {
 				htmltext = "32486-05.html";
 			}
 		}

@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Spectral Master (93)
  * @author Emperorc
  */
-public class Q00093_SagaOfTheSpectralMaster extends AbstractSagaQuest
-{
-	public Q00093_SagaOfTheSpectralMaster()
-	{
+public class Q00093_SagaOfTheSpectralMaster extends AbstractSagaQuest {
+	public Q00093_SagaOfTheSpectralMaster() {
 		super(93, Q00093_SagaOfTheSpectralMaster.class.getSimpleName(), "Saga of the Spectral Master");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			30175,
 			31287,
 			31613,
@@ -45,8 +42,7 @@ public class Q00093_SagaOfTheSpectralMaster extends AbstractSagaQuest
 			31656,
 			31613
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7606,
 			7081,
@@ -60,28 +56,23 @@ public class Q00093_SagaOfTheSpectralMaster extends AbstractSagaQuest
 			7112,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27315,
 			27242,
 			27312
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			111
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x29
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(164650, -74121, -2871),
 			new Location(47429, -56923, -2383),
 			new Location(47391, -56929, -2370)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

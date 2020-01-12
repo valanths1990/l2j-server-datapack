@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Millennium Love (156)
  * @author xban1x
  */
-public class Q00156_MillenniumLove extends Quest
-{
+public class Q00156_MillenniumLove extends Quest {
 	// NPCs
 	private static final int LILITH = 30368;
 	private static final int BAENEDES = 30369;
@@ -40,8 +39,7 @@ public class Q00156_MillenniumLove extends Quest
 	// Misc
 	private static final int MIN_LVL = 15;
 	
-	public Q00156_MillenniumLove()
-	{
+	public Q00156_MillenniumLove() {
 		super(156, Q00156_MillenniumLove.class.getSimpleName(), "Millennium Love");
 		addStartNpc(LILITH);
 		addTalkId(LILITH, BAENEDES);
@@ -49,38 +47,28 @@ public class Q00156_MillenniumLove extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
+		if (st != null) {
+			switch (event) {
 				case "30368-02.html":
-				case "30368-03.html":
-				{
+				case "30368-03.html": {
 					htmltext = event;
 					break;
 				}
-				case "30368-05.htm":
-				{
-					if (player.getLevel() >= MIN_LVL)
-					{
+				case "30368-05.htm": {
+					if (player.getLevel() >= MIN_LVL) {
 						st.startQuest();
 						st.giveItems(LILITHS_LETTER, 1);
 						htmltext = event;
-					}
-					else
-					{
+					} else {
 						htmltext = "30368-04.htm";
 					}
 					break;
 				}
-				case "30369-02.html":
-				{
-					if (st.isCond(1) && st.hasQuestItems(LILITHS_LETTER))
-					{
+				case "30369-02.html": {
+					if (st.isCond(1) && st.hasQuestItems(LILITHS_LETTER)) {
 						st.takeItems(LILITHS_LETTER, 1);
 						st.giveItems(THEONS_DIARY, 1);
 						st.setCond(2, true);
@@ -88,10 +76,8 @@ public class Q00156_MillenniumLove extends Quest
 					}
 					break;
 				}
-				case "30369-03.html":
-				{
-					if (st.isCond(1) && st.hasQuestItems(LILITHS_LETTER))
-					{
+				case "30369-03.html": {
+					if (st.isCond(1) && st.hasQuestItems(LILITHS_LETTER)) {
 						st.addExpAndSp(3000, 0);
 						st.exitQuest(false, true);
 						htmltext = event;
@@ -104,29 +90,20 @@ public class Q00156_MillenniumLove extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
-			case LILITH:
-			{
-				switch (st.getState())
-				{
-					case State.CREATED:
-					{
+		switch (npc.getId()) {
+			case LILITH: {
+				switch (st.getState()) {
+					case State.CREATED: {
 						htmltext = "30368-01.htm";
 						break;
 					}
-					case State.STARTED:
-					{
-						if (st.isCond(1) && st.hasQuestItems(LILITHS_LETTER))
-						{
+					case State.STARTED: {
+						if (st.isCond(1) && st.hasQuestItems(LILITHS_LETTER)) {
 							htmltext = "30368-06.html";
-						}
-						else if (st.isCond(2) && st.hasQuestItems(THEONS_DIARY))
-						{
+						} else if (st.isCond(2) && st.hasQuestItems(THEONS_DIARY)) {
 							st.giveItems(GREATER_COMP_SOULSHOUT_PACKAGE_NO_GRADE, 1);
 							st.addExpAndSp(3000, 0);
 							st.exitQuest(false, true);
@@ -134,30 +111,23 @@ public class Q00156_MillenniumLove extends Quest
 						}
 						break;
 					}
-					case State.COMPLETED:
-					{
+					case State.COMPLETED: {
 						htmltext = getAlreadyCompletedMsg(player);
 						break;
 					}
 				}
 				break;
 			}
-			case BAENEDES:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
-						if (st.hasQuestItems(LILITHS_LETTER))
-						{
+			case BAENEDES: {
+				switch (st.getCond()) {
+					case 1: {
+						if (st.hasQuestItems(LILITHS_LETTER)) {
 							htmltext = "30369-01.html";
 						}
 						break;
 					}
-					case 2:
-					{
-						if (st.hasQuestItems(THEONS_DIARY))
-						{
+					case 2: {
+						if (st.hasQuestItems(THEONS_DIARY)) {
 							htmltext = "30369-04.html";
 						}
 						break;

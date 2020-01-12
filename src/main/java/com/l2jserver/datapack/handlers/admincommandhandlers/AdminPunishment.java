@@ -44,12 +44,10 @@ import com.l2jserver.gameserver.util.Util;
 /**
  * @author UnAfraid
  */
-public class AdminPunishment implements IAdminCommandHandler
-{
+public class AdminPunishment implements IAdminCommandHandler {
 	private static final Logger _log = Logger.getLogger(AdminPunishment.class.getName());
 	
-	private static final String[] ADMIN_COMMANDS =
-	{
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_punishment",
 		"admin_punishment_add",
 		"admin_punishment_remove",
@@ -66,77 +64,57 @@ public class AdminPunishment implements IAdminCommandHandler
 	private static SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		final StringTokenizer st = new StringTokenizer(command, " ");
-		if (!st.hasMoreTokens())
-		{
+		if (!st.hasMoreTokens()) {
 			return false;
 		}
 		final String cmd = st.nextToken();
-		switch (cmd)
-		{
-			case "admin_punishment":
-			{
-				if (!st.hasMoreTokens())
-				{
+		switch (cmd) {
+			case "admin_punishment": {
+				if (!st.hasMoreTokens()) {
 					String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/punishment.htm");
-					if (content != null)
-					{
+					if (content != null) {
 						content = content.replaceAll("%punishments%", Util.implode(PunishmentType.values(), ";"));
 						content = content.replaceAll("%affects%", Util.implode(PunishmentAffect.values(), ";"));
 						activeChar.sendPacket(new NpcHtmlMessage(0, 1, content));
-					}
-					else
-					{
+					} else {
 						_log.log(Level.WARNING, getClass().getSimpleName() + ": data/html/admin/punishment.htm is missing");
 					}
-				}
-				else
-				{
+				} else {
 					final String subcmd = st.nextToken();
-					switch (subcmd)
-					{
-						case "info":
-						{
+					switch (subcmd) {
+						case "info": {
 							String key = st.hasMoreTokens() ? st.nextToken() : null;
 							String af = st.hasMoreTokens() ? st.nextToken() : null;
 							String name = key;
 							
-							if ((key == null) || (af == null))
-							{
+							if ((key == null) || (af == null)) {
 								activeChar.sendMessage("Not enough data specified!");
 								break;
 							}
 							final PunishmentAffect affect = PunishmentAffect.getByName(af);
-							if (affect == null)
-							{
+							if (affect == null) {
 								activeChar.sendMessage("Incorrect value specified for affect type!");
 								break;
 							}
 							
 							// Swap the name of the character with it's id.
-							if (affect == PunishmentAffect.CHARACTER)
-							{
+							if (affect == PunishmentAffect.CHARACTER) {
 								key = findCharId(key);
 							}
 							
 							String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/punishment-info.htm");
-							if (content != null)
-							{
+							if (content != null) {
 								StringBuilder sb = new StringBuilder();
-								for (PunishmentType type : PunishmentType.values())
-								{
-									if (PunishmentManager.getInstance().hasPunishment(key, affect, type))
-									{
+								for (PunishmentType type : PunishmentType.values()) {
+									if (PunishmentManager.getInstance().hasPunishment(key, affect, type)) {
 										long expiration = PunishmentManager.getInstance().getPunishmentExpiration(key, affect, type);
 										String expire = "never";
 										
-										if (expiration > 0)
-										{
+										if (expiration > 0) {
 											// Synchronize date formatter since its not thread safe.
-											synchronized (DATE_FORMATTER)
-											{
+											synchronized (DATE_FORMATTER) {
 												expire = DATE_FORMATTER.format(new Date(expiration));
 											}
 										}
@@ -149,46 +127,36 @@ public class AdminPunishment implements IAdminCommandHandler
 								content = content.replaceAll("%affects%", Util.implode(PunishmentAffect.values(), ";"));
 								content = content.replaceAll("%affect_type%", affect.name());
 								activeChar.sendPacket(new NpcHtmlMessage(0, 1, content));
-							}
-							else
-							{
+							} else {
 								_log.log(Level.WARNING, getClass().getSimpleName() + ": data/html/admin/punishment-info.htm is missing");
 							}
 							break;
 						}
-						case "player":
-						{
+						case "player": {
 							L2PcInstance target = null;
-							if (st.hasMoreTokens())
-							{
+							if (st.hasMoreTokens()) {
 								final String playerName = st.nextToken();
-								if (playerName.isEmpty() && ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer()))
-								{
+								if (playerName.isEmpty() && ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer())) {
 									return useAdminCommand("admin_punishment", activeChar);
 								}
 								target = L2World.getInstance().getPlayer(playerName);
 							}
-							if ((target == null) && ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer()))
-							{
+							if ((target == null) && ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer())) {
 								activeChar.sendMessage("You must target player!");
 								break;
 							}
-							if (target == null)
-							{
+							if (target == null) {
 								target = activeChar.getTarget().getActingPlayer();
 							}
 							String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/punishment-player.htm");
-							if (content != null)
-							{
+							if (content != null) {
 								content = content.replaceAll("%player_name%", target.getName());
 								content = content.replaceAll("%punishments%", Util.implode(PunishmentType.values(), ";"));
 								content = content.replaceAll("%acc%", target.getAccountName());
 								content = content.replaceAll("%char%", target.getName());
 								content = content.replaceAll("%ip%", target.getIPAddress());
 								activeChar.sendPacket(new NpcHtmlMessage(0, 1, content));
-							}
-							else
-							{
+							} else {
 								_log.log(Level.WARNING, getClass().getSimpleName() + ": data/html/admin/punishment-player.htm is missing");
 							}
 							break;
@@ -197,8 +165,7 @@ public class AdminPunishment implements IAdminCommandHandler
 				}
 				break;
 			}
-			case "admin_punishment_add":
-			{
+			case "admin_punishment_add": {
 				// Add new punishment
 				String key = st.hasMoreTokens() ? st.nextToken() : null;
 				String af = st.hasMoreTokens() ? st.nextToken() : null;
@@ -207,14 +174,11 @@ public class AdminPunishment implements IAdminCommandHandler
 				String reason = st.hasMoreTokens() ? st.nextToken() : null;
 				
 				// Let's grab the other part of the reason if there is..
-				if (reason != null)
-				{
-					while (st.hasMoreTokens())
-					{
+				if (reason != null) {
+					while (st.hasMoreTokens()) {
 						reason += " " + st.nextToken();
 					}
-					if (!reason.isEmpty())
-					{
+					if (!reason.isEmpty()) {
 						reason = reason.replaceAll("\\$", "\\\\\\$");
 						reason = reason.replaceAll("\r\n", "<br1>");
 						reason = reason.replace("<", "&lt;");
@@ -224,52 +188,39 @@ public class AdminPunishment implements IAdminCommandHandler
 				
 				String name = key;
 				
-				if ((key == null) || (af == null) || (t == null) || (exp == null) || (reason == null))
-				{
+				if ((key == null) || (af == null) || (t == null) || (exp == null) || (reason == null)) {
 					activeChar.sendMessage("Please fill all the fields!");
 					break;
 				}
-				if (!Util.isDigit(exp) && !exp.equals("-1"))
-				{
+				if (!Util.isDigit(exp) && !exp.equals("-1")) {
 					activeChar.sendMessage("Incorrect value specified for expiration time!");
 					break;
 				}
 				
 				long expirationTime = Integer.parseInt(exp);
-				if (expirationTime > 0)
-				{
+				if (expirationTime > 0) {
 					expirationTime = System.currentTimeMillis() + (expirationTime * 60 * 1000);
 				}
 				
 				final PunishmentAffect affect = PunishmentAffect.getByName(af);
 				final PunishmentType type = PunishmentType.getByName(t);
-				if ((affect == null) || (type == null))
-				{
+				if ((affect == null) || (type == null)) {
 					activeChar.sendMessage("Incorrect value specified for affect/punishment type!");
 					break;
 				}
 				
 				// Swap the name of the character with it's id.
-				if (affect == PunishmentAffect.CHARACTER)
-				{
+				if (affect == PunishmentAffect.CHARACTER) {
 					key = findCharId(key);
-				}
-				else if (affect == PunishmentAffect.IP)
-				{
-					try
-					{
+				} else if (affect == PunishmentAffect.IP) {
+					try {
 						InetAddress addr = InetAddress.getByName(key);
-						if (addr.isLoopbackAddress())
-						{
+						if (addr.isLoopbackAddress()) {
 							throw new UnknownHostException("You cannot ban any local address!");
-						}
-						else if (ip().getHosts().contains(addr.getHostAddress()))
-						{
+						} else if (ip().getHosts().contains(addr.getHostAddress())) {
 							throw new UnknownHostException("You cannot ban your gameserver's address!");
 						}
-					}
-					catch (UnknownHostException e)
-					{
+					} catch (UnknownHostException e) {
 						activeChar.sendMessage("You've entered an incorrect IP address!");
 						activeChar.sendMessage(e.getMessage());
 						break;
@@ -277,8 +228,7 @@ public class AdminPunishment implements IAdminCommandHandler
 				}
 				
 				// Check if we already put the same punishment on that guy ^^
-				if (PunishmentManager.getInstance().hasPunishment(key, affect, type))
-				{
+				if (PunishmentManager.getInstance().hasPunishment(key, affect, type)) {
 					activeChar.sendMessage("Target is already affected by that punishment.");
 					break;
 				}
@@ -289,36 +239,31 @@ public class AdminPunishment implements IAdminCommandHandler
 				GMAudit.auditGMAction(activeChar.getName() + " [" + activeChar.getObjectId() + "]", cmd, affect.name(), name);
 				return useAdminCommand("admin_punishment info " + name + " " + affect.name(), activeChar);
 			}
-			case "admin_punishment_remove":
-			{
+			case "admin_punishment_remove": {
 				// Remove punishment.
 				String key = st.hasMoreTokens() ? st.nextToken() : null;
 				String af = st.hasMoreTokens() ? st.nextToken() : null;
 				String t = st.hasMoreTokens() ? st.nextToken() : null;
 				String name = key;
 				
-				if ((key == null) || (af == null) || (t == null))
-				{
+				if ((key == null) || (af == null) || (t == null)) {
 					activeChar.sendMessage("Not enough data specified!");
 					break;
 				}
 				
 				final PunishmentAffect affect = PunishmentAffect.getByName(af);
 				final PunishmentType type = PunishmentType.getByName(t);
-				if ((affect == null) || (type == null))
-				{
+				if ((affect == null) || (type == null)) {
 					activeChar.sendMessage("Incorrect value specified for affect/punishment type!");
 					break;
 				}
 				
 				// Swap the name of the character with it's id.
-				if (affect == PunishmentAffect.CHARACTER)
-				{
+				if (affect == PunishmentAffect.CHARACTER) {
 					key = findCharId(key);
 				}
 				
-				if (!PunishmentManager.getInstance().hasPunishment(key, affect, type))
-				{
+				if (!PunishmentManager.getInstance().hasPunishment(key, affect, type)) {
 					activeChar.sendMessage("Target is not affected by that punishment!");
 					break;
 				}
@@ -328,59 +273,43 @@ public class AdminPunishment implements IAdminCommandHandler
 				GMAudit.auditGMAction(activeChar.getName() + " [" + activeChar.getObjectId() + "]", cmd, affect.name(), name);
 				return useAdminCommand("admin_punishment info " + name + " " + affect.name(), activeChar);
 			}
-			case "admin_ban_char":
-			{
-				if (st.hasMoreTokens())
-				{
+			case "admin_ban_char": {
+				if (st.hasMoreTokens()) {
 					return useAdminCommand(String.format("admin_punishment_add %s %s %s %s %s", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.BAN, 0, "Banned by admin"), activeChar);
 				}
 			}
-			case "admin_unban_char":
-			{
-				if (st.hasMoreTokens())
-				{
+			case "admin_unban_char": {
+				if (st.hasMoreTokens()) {
 					return useAdminCommand(String.format("admin_punishment_remove %s %s %s", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.BAN), activeChar);
 				}
 			}
-			case "admin_ban_acc":
-			{
-				if (st.hasMoreTokens())
-				{
+			case "admin_ban_acc": {
+				if (st.hasMoreTokens()) {
 					return useAdminCommand(String.format("admin_punishment_add %s %s %s %s %s", st.nextToken(), PunishmentAffect.ACCOUNT, PunishmentType.BAN, 0, "Banned by admin"), activeChar);
 				}
 			}
-			case "admin_unban_acc":
-			{
-				if (st.hasMoreTokens())
-				{
+			case "admin_unban_acc": {
+				if (st.hasMoreTokens()) {
 					return useAdminCommand(String.format("admin_punishment_remove %s %s %s", st.nextToken(), PunishmentAffect.ACCOUNT, PunishmentType.BAN), activeChar);
 				}
 			}
-			case "admin_ban_chat":
-			{
-				if (st.hasMoreTokens())
-				{
+			case "admin_ban_chat": {
+				if (st.hasMoreTokens()) {
 					return useAdminCommand(String.format("admin_punishment_add %s %s %s %s %s", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN, 0, "Chat banned by admin"), activeChar);
 				}
 			}
-			case "admin_unban_chat":
-			{
-				if (st.hasMoreTokens())
-				{
+			case "admin_unban_chat": {
+				if (st.hasMoreTokens()) {
 					return useAdminCommand(String.format("admin_punishment_remove %s %s %s", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN), activeChar);
 				}
 			}
-			case "admin_jail":
-			{
-				if (st.hasMoreTokens())
-				{
+			case "admin_jail": {
+				if (st.hasMoreTokens()) {
 					return useAdminCommand(String.format("admin_punishment_add %s %s %s %s %s", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.JAIL, 0, "Jailed by admin"), activeChar);
 				}
 			}
-			case "admin_unjail":
-			{
-				if (st.hasMoreTokens())
-				{
+			case "admin_unjail": {
+				if (st.hasMoreTokens()) {
 					return useAdminCommand(String.format("admin_punishment_remove %s %s %s", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.JAIL), activeChar);
 				}
 			}
@@ -388,8 +317,7 @@ public class AdminPunishment implements IAdminCommandHandler
 		return true;
 	}
 	
-	private static final String findCharId(String key)
-	{
+	private static final String findCharId(String key) {
 		int charId = CharNameTable.getInstance().getIdByName(key);
 		if (charId > 0) // Yeah its a char name!
 		{
@@ -399,8 +327,7 @@ public class AdminPunishment implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

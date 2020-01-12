@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Into the World (10)
  * @author malyelfik
  */
-public class Q00010_IntoTheWorld extends Quest
-{
+public class Q00010_IntoTheWorld extends Quest {
 	// NPCs
 	private static final int REED = 30520;
 	private static final int BALANKI = 30533;
@@ -42,8 +41,7 @@ public class Q00010_IntoTheWorld extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 3;
 	
-	public Q00010_IntoTheWorld()
-	{
+	public Q00010_IntoTheWorld() {
 		super(10, Q00010_IntoTheWorld.class.getSimpleName(), "Into the World");
 		addStartNpc(BALANKI);
 		addTalkId(BALANKI, REED, GERALD);
@@ -51,17 +49,14 @@ public class Q00010_IntoTheWorld extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30533-03.htm":
 				st.startQuest();
 				break;
@@ -78,8 +73,7 @@ public class Q00010_IntoTheWorld extends Quest
 				st.setCond(4, true);
 				break;
 			case "30650-02.html":
-				if (!st.hasQuestItems(VERY_EXPENSIVE_NECKLACE))
-				{
+				if (!st.hasQuestItems(VERY_EXPENSIVE_NECKLACE)) {
 					return "30650-03.html";
 				}
 				st.takeItems(VERY_EXPENSIVE_NECKLACE, -1);
@@ -93,25 +87,19 @@ public class Q00010_IntoTheWorld extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case BALANKI:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = ((player.getLevel() >= MIN_LEVEL) && (player.getRace() == Race.DWARF)) ? "30533-01.htm" : "30533-02.html";
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
-						{
+						if (st.isCond(1)) {
 							htmltext = "30533-04.html";
-						}
-						else if (st.isCond(4))
-						{
+						} else if (st.isCond(4)) {
 							htmltext = "30533-05.html";
 						}
 						break;
@@ -121,10 +109,8 @@ public class Q00010_IntoTheWorld extends Quest
 				}
 				break;
 			case REED:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "30520-01.html";
 							break;
@@ -141,14 +127,10 @@ public class Q00010_IntoTheWorld extends Quest
 				}
 				break;
 			case GERALD:
-				if (st.isStarted())
-				{
-					if (st.isCond(2))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(2)) {
 						htmltext = "30650-01.html";
-					}
-					else if (st.isCond(3))
-					{
+					} else if (st.isCond(3)) {
 						htmltext = "30650-04.html";
 					}
 				}

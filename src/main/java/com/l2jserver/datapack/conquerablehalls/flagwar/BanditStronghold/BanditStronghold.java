@@ -28,10 +28,8 @@ import com.l2jserver.gameserver.model.zone.type.L2ResidenceHallTeleportZone;
 /**
  * @author BiggBoss
  */
-public final class BanditStronghold extends FlagWar
-{
-	static
-	{
+public final class BanditStronghold extends FlagWar {
+	static {
 		ROYAL_FLAG = 35422;
 		FLAG_RED = 35423;
 		FLAG_YELLOW = 35424;
@@ -65,17 +63,14 @@ public final class BanditStronghold extends FlagWar
 		
 		Collection<L2ResidenceHallTeleportZone> zoneList = ZoneManager.getInstance().getAllZones(L2ResidenceHallTeleportZone.class);
 		
-		for (L2ResidenceHallTeleportZone teleZone : zoneList)
-		{
-			if (teleZone.getResidenceId() != BANDIT_STRONGHOLD)
-			{
+		for (L2ResidenceHallTeleportZone teleZone : zoneList) {
+			if (teleZone.getResidenceId() != BANDIT_STRONGHOLD) {
 				continue;
 			}
 			
 			int id = teleZone.getResidenceZoneId();
 			
-			if ((id < 0) || (id >= 6))
-			{
+			if ((id < 0) || (id >= 6)) {
 				continue;
 			}
 			
@@ -86,18 +81,15 @@ public final class BanditStronghold extends FlagWar
 		CENTER = new Location(82882, -16280, -1894, 0);
 	}
 	
-	private BanditStronghold()
-	{
+	private BanditStronghold() {
 		super(BanditStronghold.class.getSimpleName(), BANDIT_STRONGHOLD);
 	}
 	
 	@Override
-	public String getFlagHtml(int flag)
-	{
+	public String getFlagHtml(int flag) {
 		String result = null;
 		
-		switch (flag)
-		{
+		switch (flag) {
 			case 35423:
 				result = "messenger_flag1.htm";
 				break;
@@ -119,12 +111,10 @@ public final class BanditStronghold extends FlagWar
 	}
 	
 	@Override
-	public String getAllyHtml(int ally)
-	{
+	public String getAllyHtml(int ally) {
 		String result = null;
 		
-		switch (ally)
-		{
+		switch (ally) {
 			case 35428:
 				result = "messenger_ally1result.htm";
 				break;
@@ -145,8 +135,7 @@ public final class BanditStronghold extends FlagWar
 		return result;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new BanditStronghold();
 	}
 }

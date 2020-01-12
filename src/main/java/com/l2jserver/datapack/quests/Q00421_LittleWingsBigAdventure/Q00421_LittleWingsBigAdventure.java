@@ -106,15 +106,13 @@ public final class Q00421_LittleWingsBigAdventure extends Quest {
 						
 						if (flute.getEnchantLevel() < MIN_HACHLING_LVL) {
 							htmltext = "30610-06.html";
-						}
-						else {
+						} else {
 							qs.startQuest();
 							qs.setMemoState(100);
 							qs.set("fluteObjectId", flute.getObjectId());
 							htmltext = event;
 						}
-					}
-					else {
+					} else {
 						htmltext = "30610-06.html";
 					}
 				}
@@ -125,11 +123,9 @@ public final class Q00421_LittleWingsBigAdventure extends Quest {
 				
 				if (summon == null) {
 					htmltext = "30747-02.html";
-				}
-				else if (summon.getControlObjectId() != qs.getInt("fluteObjectId")) {
+				} else if (summon.getControlObjectId() != qs.getInt("fluteObjectId")) {
 					htmltext = "30747-03.html";
-				}
-				else {
+				} else {
 					htmltext = event;
 				}
 				break;
@@ -139,11 +135,9 @@ public final class Q00421_LittleWingsBigAdventure extends Quest {
 				
 				if (summon == null) {
 					htmltext = "30747-06.html";
-				}
-				else if (summon.getControlObjectId() != qs.getInt("fluteObjectId")) {
+				} else if (summon.getControlObjectId() != qs.getInt("fluteObjectId")) {
 					htmltext = "30747-06.html";
-				}
-				else {
+				} else {
 					giveItems(player, FAIRY_LEAF, 4);
 					qs.setCond(2, true);
 					qs.setMemoState(0);
@@ -178,14 +172,11 @@ public final class Q00421_LittleWingsBigAdventure extends Quest {
 						
 						if (talker.getLevel() < MIN_PLAYER_LVL) {
 							htmltext = "30610-01.htm";
-						}
-						else if (fluteCount > 1) {
+						} else if (fluteCount > 1) {
 							htmltext = "30610-02.htm";
-						}
-						else if (getFlute(talker).getEnchantLevel() < MIN_HACHLING_LVL) {
+						} else if (getFlute(talker).getEnchantLevel() < MIN_HACHLING_LVL) {
 							htmltext = "30610-03.html";
-						}
-						else {
+						} else {
 							htmltext = "30610-04.htm";
 						}
 						break;
@@ -213,11 +204,9 @@ public final class Q00421_LittleWingsBigAdventure extends Quest {
 						
 						if (summon == null) {
 							htmltext = "30747-02.html";
-						}
-						else if (summon.getControlObjectId() != qs.getInt("fluteObjectId")) {
+						} else if (summon.getControlObjectId() != qs.getInt("fluteObjectId")) {
 							htmltext = "30747-03.html";
-						}
-						else {
+						} else {
 							htmltext = "30747-04.html";
 						}
 						break;
@@ -251,12 +240,10 @@ public final class Q00421_LittleWingsBigAdventure extends Quest {
 							
 							if (summon == null) {
 								htmltext = "30747-12.html";
-							}
-							else if (summon.getControlObjectId() == qs.getInt("fluteObjectId")) {
+							} else if (summon.getControlObjectId() == qs.getInt("fluteObjectId")) {
 								qs.setMemoState(16);
 								htmltext = "30747-13.html";
-							}
-							else {
+							} else {
 								htmltext = "30747-14.html";
 							}
 						}
@@ -266,14 +253,12 @@ public final class Q00421_LittleWingsBigAdventure extends Quest {
 						if (!hasQuestItems(talker, FAIRY_LEAF)) {
 							if (talker.hasSummon()) {
 								htmltext = "30747-15.html";
-							}
-							else {
+							} else {
 								final long fluteCount = getQuestItemsCount(talker, DRAGONFLUTE_OF_WIND, DRAGONFLUTE_OF_STAR, DRAGONFLUTE_OF_TWILIGHT);
 								
 								if (fluteCount > 1) {
 									htmltext = "30747-17.html";
-								}
-								else if (fluteCount == 1) {
+								} else if (fluteCount == 1) {
 									final L2ItemInstance flute = getFlute(talker);
 									
 									if (flute.getObjectId() == qs.getInt("fluteObjectId")) {
@@ -296,8 +281,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest {
 										
 										qs.exitQuest(true, true);
 										htmltext = "30747-16.html";
-									}
-									else {
+									} else {
 										npc.setTarget(talker);
 										npc.doCast(CURSE_OF_MIMYU);
 										htmltext = "30747-18.html";
@@ -330,8 +314,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest {
 								npc.setTarget(attacker);
 								npc.doCast(DRYAD_ROOT);
 							}
-						}
-						else if (getRandom(100) < 2) {
+						} else if (getRandom(100) < 2) {
 							if (hasQuestItems(attacker, FAIRY_LEAF)) {
 								npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.GIVE_ME_A_FAIRY_LEAF));
 								takeItems(attacker, FAIRY_LEAF, 1);
@@ -345,8 +328,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest {
 							}
 						}
 					}
-				}
-				else {
+				} else {
 					switch (getRandom(3)) {
 						case 0:
 							npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.WHY_DO_YOU_BOTHER_ME_AGAIN));
@@ -359,13 +341,11 @@ public final class Q00421_LittleWingsBigAdventure extends Quest {
 							break;
 					}
 				}
-			}
-			else if (getRandom(100) < 30) {
+			} else if (getRandom(100) < 30) {
 				npc.setTarget(attacker);
 				npc.doCast(VICIOUS_POISON);
 			}
-		}
-		else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.67)) && (getRandom(100) < 30)) {
+		} else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.67)) && (getRandom(100) < 30)) {
 			npc.setTarget(attacker);
 			npc.doCast(VICIOUS_POISON);
 		}
@@ -395,11 +375,9 @@ public final class Q00421_LittleWingsBigAdventure extends Quest {
 		final int fluteItemId;
 		if (hasQuestItems(player, DRAGONFLUTE_OF_WIND)) {
 			fluteItemId = DRAGONFLUTE_OF_WIND;
-		}
-		else if (hasQuestItems(player, DRAGONFLUTE_OF_STAR)) {
+		} else if (hasQuestItems(player, DRAGONFLUTE_OF_STAR)) {
 			fluteItemId = DRAGONFLUTE_OF_STAR;
-		}
-		else {
+		} else {
 			fluteItemId = DRAGONFLUTE_OF_TWILIGHT;
 		}
 		return player.getInventory().getItemByItemId(fluteItemId);

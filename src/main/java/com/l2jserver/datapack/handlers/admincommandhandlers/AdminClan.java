@@ -38,10 +38,8 @@ import com.l2jserver.gameserver.util.Util;
 /**
  * @author UnAfraid, Zoey76
  */
-public class AdminClan implements IAdminCommandHandler
-{
-	private static final String[] ADMIN_COMMANDS =
-	{
+public class AdminClan implements IAdminCommandHandler {
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_clan_info",
 		"admin_clan_changeleader",
 		"admin_clan_show_pending",
@@ -49,23 +47,18 @@ public class AdminClan implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		final StringTokenizer st = new StringTokenizer(command);
 		final String cmd = st.nextToken();
-		switch (cmd)
-		{
-			case "admin_clan_info":
-			{
+		switch (cmd) {
+			case "admin_clan_info": {
 				final L2PcInstance player = getPlayer(activeChar, st);
-				if (player == null)
-				{
+				if (player == null) {
 					break;
 				}
 				
 				final L2Clan clan = player.getClan();
-				if (clan == null)
-				{
+				if (clan == null) {
 					activeChar.sendPacket(SystemMessageId.TARGET_MUST_BE_IN_CLAN);
 					return false;
 				}
@@ -86,44 +79,34 @@ public class AdminClan implements IAdminCommandHandler
 				activeChar.sendPacket(html);
 				break;
 			}
-			case "admin_clan_changeleader":
-			{
+			case "admin_clan_changeleader": {
 				final L2PcInstance player = getPlayer(activeChar, st);
-				if (player == null)
-				{
+				if (player == null) {
 					break;
 				}
 				
 				final L2Clan clan = player.getClan();
-				if (clan == null)
-				{
+				if (clan == null) {
 					activeChar.sendPacket(SystemMessageId.TARGET_MUST_BE_IN_CLAN);
 					return false;
 				}
 				
 				final L2ClanMember member = clan.getClanMember(player.getObjectId());
-				if (member != null)
-				{
-					if (player.isAcademyMember())
-					{
+				if (member != null) {
+					if (player.isAcademyMember()) {
 						player.sendPacket(SystemMessageId.RIGHT_CANT_TRANSFERRED_TO_ACADEMY_MEMBER);
-					}
-					else
-					{
+					} else {
 						clan.setNewLeader(member);
 					}
 				}
 				break;
 			}
-			case "admin_clan_show_pending":
-			{
+			case "admin_clan_show_pending": {
 				final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 				html.setHtml(HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/clanchanges.htm"));
 				StringBuilder sb = new StringBuilder();
-				for (L2Clan clan : ClanTable.getInstance().getClans())
-				{
-					if (clan.getNewLeaderId() != 0)
-					{
+				for (L2Clan clan : ClanTable.getInstance().getClans()) {
+					if (clan.getNewLeaderId() != 0) {
 						sb.append("<tr>");
 						sb.append("<td>" + clan.getName() + "</td>");
 						sb.append("<td>" + clan.getNewLeaderName() + "</td>");
@@ -135,26 +118,21 @@ public class AdminClan implements IAdminCommandHandler
 				activeChar.sendPacket(html);
 				break;
 			}
-			case "admin_clan_force_pending":
-			{
-				if (st.hasMoreElements())
-				{
+			case "admin_clan_force_pending": {
+				if (st.hasMoreElements()) {
 					String token = st.nextToken();
-					if (!Util.isDigit(token))
-					{
+					if (!Util.isDigit(token)) {
 						break;
 					}
 					int clanId = Integer.parseInt(token);
 					
 					final L2Clan clan = ClanTable.getInstance().getClan(clanId);
-					if (clan == null)
-					{
+					if (clan == null) {
 						break;
 					}
 					
 					final L2ClanMember member = clan.getClanMember(clan.getNewLeaderId());
-					if (member == null)
-					{
+					if (member == null) {
 						break;
 					}
 					
@@ -172,42 +150,30 @@ public class AdminClan implements IAdminCommandHandler
 	 * @param st
 	 * @return
 	 */
-	private L2PcInstance getPlayer(L2PcInstance activeChar, StringTokenizer st)
-	{
+	private L2PcInstance getPlayer(L2PcInstance activeChar, StringTokenizer st) {
 		String val;
 		L2PcInstance player = null;
-		if (st.hasMoreTokens())
-		{
+		if (st.hasMoreTokens()) {
 			val = st.nextToken();
 			// From the HTML we receive player's object Id.
-			if (Util.isDigit(val))
-			{
+			if (Util.isDigit(val)) {
 				player = L2World.getInstance().getPlayer(Integer.parseInt(val));
-				if (player == null)
-				{
+				if (player == null) {
 					activeChar.sendPacket(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME);
 					return null;
 				}
-			}
-			else
-			{
+			} else {
 				player = L2World.getInstance().getPlayer(val);
-				if (player == null)
-				{
+				if (player == null) {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_NAME_TRY_AGAIN);
 					return null;
 				}
 			}
-		}
-		else
-		{
+		} else {
 			L2Object targetObj = activeChar.getTarget();
-			if (targetObj instanceof L2PcInstance)
-			{
+			if (targetObj instanceof L2PcInstance) {
 				player = targetObj.getActingPlayer();
-			}
-			else
-			{
+			} else {
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 				return null;
 			}
@@ -216,8 +182,7 @@ public class AdminClan implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

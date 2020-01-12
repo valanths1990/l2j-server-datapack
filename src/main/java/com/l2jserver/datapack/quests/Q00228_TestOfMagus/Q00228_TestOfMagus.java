@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.util.Util;
  * Test Of Magus (228)
  * @author ivantotov
  */
-public final class Q00228_TestOfMagus extends Quest
-{
+public final class Q00228_TestOfMagus extends Quest {
 	// NPCs
 	private static final int PARINA = 30391;
 	private static final int EARTH_SNAKE = 30409;
@@ -91,8 +90,7 @@ public final class Q00228_TestOfMagus extends Quest
 	// Misc
 	private static final int MIN_LVL = 39;
 	
-	public Q00228_TestOfMagus()
-	{
+	public Q00228_TestOfMagus() {
 		super(228, Q00228_TestOfMagus.class.getSimpleName(), "Test Of Magus");
 		addStartNpc(BARD_RUKAL);
 		addTalkId(BARD_RUKAL, PARINA, EARTH_SNAKE, FLAME_SALAMANDER, WIND_SYLPH, WATER_UNDINE, ELDER_CASIAN);
@@ -101,47 +99,36 @@ public final class Q00228_TestOfMagus extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "ACCEPT": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					giveItems(player, RUKALS_LETTER, 1);
-					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
-					{
+					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0) {
 						giveItems(player, DIMENSIONAL_DIAMOND, 122);
 						player.getVariables().set("2ND_CLASS_DIAMOND_REWARD", 1);
 						htmltext = "30629-04a.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "30629-04.htm";
 					}
 				}
 				break;
 			}
 			case "30629-09.html":
-			case "30409-02.html":
-			{
+			case "30409-02.html": {
 				htmltext = event;
 				break;
 			}
-			case "30629-10.html":
-			{
-				if (hasQuestItems(player, GOLDEN_SEED_3RD))
-				{
+			case "30629-10.html": {
+				if (hasQuestItems(player, GOLDEN_SEED_3RD)) {
 					takeItems(player, LILAC_CHARM, 1);
 					takeItems(player, GOLDEN_SEED_1ST, 1);
 					takeItems(player, GOLDEN_SEED_2ND, 1);
@@ -152,10 +139,8 @@ public final class Q00228_TestOfMagus extends Quest
 				}
 				break;
 			}
-			case "30391-02.html":
-			{
-				if (hasQuestItems(player, RUKALS_LETTER))
-				{
+			case "30391-02.html": {
+				if (hasQuestItems(player, RUKALS_LETTER)) {
 					takeItems(player, RUKALS_LETTER, 1);
 					giveItems(player, PARINAS_LETTER, 1);
 					qs.setCond(2, true);
@@ -163,20 +148,17 @@ public final class Q00228_TestOfMagus extends Quest
 				}
 				break;
 			}
-			case "30409-03.html":
-			{
+			case "30409-03.html": {
 				giveItems(player, SERPENT_CHARM, 1);
 				htmltext = event;
 				break;
 			}
-			case "30412-02.html":
-			{
+			case "30412-02.html": {
 				giveItems(player, SYLPH_CHARM, 1);
 				htmltext = event;
 				break;
 			}
-			case "30612-02.html":
-			{
+			case "30612-02.html": {
 				takeItems(player, PARINAS_LETTER, 1);
 				giveItems(player, LILAC_CHARM, 1);
 				qs.setCond(3, true);
@@ -188,24 +170,16 @@ public final class Q00228_TestOfMagus extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case HARPY:
-				{
-					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SYLPH_CHARM) && (getQuestItemsCount(killer, HARPYS_FEATHER) < 20))
-					{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
+				case HARPY: {
+					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SYLPH_CHARM) && (getQuestItemsCount(killer, HARPYS_FEATHER) < 20)) {
 						giveItems(killer, HARPYS_FEATHER, 1);
-						if (getQuestItemsCount(killer, HARPYS_FEATHER) >= 20)
-						{
+						if (getQuestItemsCount(killer, HARPYS_FEATHER) >= 20) {
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
@@ -215,163 +189,116 @@ public final class Q00228_TestOfMagus extends Quest
 				case MARSH_STAKATO_WORKER:
 				case TOAD_LORD:
 				case MARSH_STAKATO_SOLDIER:
-				case MARSH_STAKATO_DRONE:
-				{
-					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, UNDINE_CHARM) && (getQuestItemsCount(killer, DAZZLING_DROP) < 20))
-					{
+				case MARSH_STAKATO_DRONE: {
+					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, UNDINE_CHARM) && (getQuestItemsCount(killer, DAZZLING_DROP) < 20)) {
 						giveItems(killer, DAZZLING_DROP, 1);
-						if (getQuestItemsCount(killer, DAZZLING_DROP) >= 20)
-						{
+						if (getQuestItemsCount(killer, DAZZLING_DROP) >= 20) {
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case WYRM:
-				{
-					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SYLPH_CHARM) && (getQuestItemsCount(killer, WYRMS_WINGBONE) < 10))
-					{
-						if (getRandom(100) < 50)
-						{
+				case WYRM: {
+					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SYLPH_CHARM) && (getQuestItemsCount(killer, WYRMS_WINGBONE) < 10)) {
+						if (getRandom(100) < 50) {
 							giveItems(killer, WYRMS_WINGBONE, 1);
-							if (getQuestItemsCount(killer, WYRMS_WINGBONE) >= 10)
-							{
+							if (getQuestItemsCount(killer, WYRMS_WINGBONE) >= 10) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case WINDSUS:
-				{
-					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SYLPH_CHARM) && (getQuestItemsCount(killer, WINDSUS_MANE) < 10))
-					{
-						if (getRandom(100) < 50)
-						{
+				case WINDSUS: {
+					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SYLPH_CHARM) && (getQuestItemsCount(killer, WINDSUS_MANE) < 10)) {
+						if (getRandom(100) < 50) {
 							giveItems(killer, WINDSUS_MANE, 1);
-							if (getQuestItemsCount(killer, WINDSUS_MANE) >= 10)
-							{
+							if (getQuestItemsCount(killer, WINDSUS_MANE) >= 10) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case ENCHANTED_MONSTEREYE:
-				{
-					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SERPENT_CHARM) && (getQuestItemsCount(killer, ENCHANTED_MONSTER_EYE_SHELL) < 10))
-					{
+				case ENCHANTED_MONSTEREYE: {
+					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SERPENT_CHARM) && (getQuestItemsCount(killer, ENCHANTED_MONSTER_EYE_SHELL) < 10)) {
 						giveItems(killer, ENCHANTED_MONSTER_EYE_SHELL, 1);
-						if (getQuestItemsCount(killer, ENCHANTED_MONSTER_EYE_SHELL) >= 10)
-						{
+						if (getQuestItemsCount(killer, ENCHANTED_MONSTER_EYE_SHELL) >= 10) {
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case ENCHANTED_STOLEN_GOLEM:
-				{
-					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SERPENT_CHARM) && (getQuestItemsCount(killer, ENCHANTED_GOLEM_POWDER) < 10))
-					{
+				case ENCHANTED_STOLEN_GOLEM: {
+					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SERPENT_CHARM) && (getQuestItemsCount(killer, ENCHANTED_GOLEM_POWDER) < 10)) {
 						giveItems(killer, ENCHANTED_GOLEM_POWDER, 1);
-						if (getQuestItemsCount(killer, ENCHANTED_GOLEM_POWDER) >= 10)
-						{
+						if (getQuestItemsCount(killer, ENCHANTED_GOLEM_POWDER) >= 10) {
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case ENCHANTED_IRON_GOLEM:
-				{
-					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SERPENT_CHARM) && (getQuestItemsCount(killer, ENCHANTED_IRON_GOLEM_SCRAP) < 10))
-					{
+				case ENCHANTED_IRON_GOLEM: {
+					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SERPENT_CHARM) && (getQuestItemsCount(killer, ENCHANTED_IRON_GOLEM_SCRAP) < 10)) {
 						giveItems(killer, ENCHANTED_IRON_GOLEM_SCRAP, 1);
-						if (getQuestItemsCount(killer, ENCHANTED_IRON_GOLEM_SCRAP) >= 10)
-						{
+						if (getQuestItemsCount(killer, ENCHANTED_IRON_GOLEM_SCRAP) >= 10) {
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case SINGING_FLOWER_PHANTASM:
-				{
-					if (hasQuestItems(killer, LILAC_CHARM) && !hasQuestItems(killer, GOLDEN_SEED_1ST))
-					{
+				case SINGING_FLOWER_PHANTASM: {
+					if (hasQuestItems(killer, LILAC_CHARM) && !hasQuestItems(killer, GOLDEN_SEED_1ST)) {
 						giveItems(killer, GOLDEN_SEED_1ST, 1);
 						npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.I_AM_A_TREE_OF_NOTHING_A_TREE_THAT_KNOWS_WHERE_TO_RETURN));
 						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						if (hasQuestItems(killer, GOLDEN_SEED_2ND, GOLDEN_SEED_3RD))
-						{
+						if (hasQuestItems(killer, GOLDEN_SEED_2ND, GOLDEN_SEED_3RD)) {
 							qs.setCond(4);
 						}
 					}
 					break;
 				}
-				case SINGING_FLOWER_NIGTMATE:
-				{
-					if (hasQuestItems(killer, LILAC_CHARM) && !hasQuestItems(killer, GOLDEN_SEED_2ND))
-					{
+				case SINGING_FLOWER_NIGTMATE: {
+					if (hasQuestItems(killer, LILAC_CHARM) && !hasQuestItems(killer, GOLDEN_SEED_2ND)) {
 						giveItems(killer, GOLDEN_SEED_2ND, 1);
 						npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.I_AM_A_CREATURE_THAT_SHOWS_THE_TRUTH_OF_THE_PLACE_DEEP_IN_MY_HEART));
 						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						if (hasQuestItems(killer, GOLDEN_SEED_1ST, GOLDEN_SEED_3RD))
-						{
+						if (hasQuestItems(killer, GOLDEN_SEED_1ST, GOLDEN_SEED_3RD)) {
 							qs.setCond(4);
 						}
 					}
 					break;
 				}
-				case SINGING_FLOWER_DARKLING:
-				{
-					if (hasQuestItems(killer, LILAC_CHARM) && !hasQuestItems(killer, GOLDEN_SEED_3RD))
-					{
+				case SINGING_FLOWER_DARKLING: {
+					if (hasQuestItems(killer, LILAC_CHARM) && !hasQuestItems(killer, GOLDEN_SEED_3RD)) {
 						giveItems(killer, GOLDEN_SEED_3RD, 1);
 						npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.I_AM_A_MIRROR_OF_DARKNESS_A_VIRTUAL_IMAGE_OF_DARKNESS));
 						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						if (hasQuestItems(killer, GOLDEN_SEED_1ST, GOLDEN_SEED_2ND))
-						{
+						if (hasQuestItems(killer, GOLDEN_SEED_1ST, GOLDEN_SEED_2ND)) {
 							qs.setCond(4);
 						}
 					}
 					break;
 				}
-				case GHOST_FIRE:
-				{
-					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SALAMANDER_CHARM) && (getQuestItemsCount(killer, FLAME_CRYSTAL) < 5))
-					{
-						if (getRandom(100) < 50)
-						{
+				case GHOST_FIRE: {
+					if (hasQuestItems(killer, SCORE_OF_ELEMENTS, SALAMANDER_CHARM) && (getQuestItemsCount(killer, FLAME_CRYSTAL) < 5)) {
+						if (getRandom(100) < 50) {
 							giveItems(killer, FLAME_CRYSTAL, 1);
-							if (getQuestItemsCount(killer, FLAME_CRYSTAL) >= 5)
-							{
+							if (getQuestItemsCount(killer, FLAME_CRYSTAL) >= 5) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
@@ -384,261 +311,171 @@ public final class Q00228_TestOfMagus extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (npc.getId() == BARD_RUKAL)
-			{
-				if ((player.getClassId() == ClassId.wizard) || (player.getClassId() == ClassId.elvenWizard) || ((player.getClassId() == ClassId.darkWizard)))
-				{
-					if (player.getLevel() < MIN_LVL)
-					{
+		if (qs.isCreated()) {
+			if (npc.getId() == BARD_RUKAL) {
+				if ((player.getClassId() == ClassId.wizard) || (player.getClassId() == ClassId.elvenWizard) || ((player.getClassId() == ClassId.darkWizard))) {
+					if (player.getLevel() < MIN_LVL) {
 						htmltext = "30629-02.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30629-03.htm";
 					}
-				}
-				else
-				{
+				} else {
 					htmltext = "30629-01.html";
 				}
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case BARD_RUKAL:
-				{
-					if (hasQuestItems(player, RUKALS_LETTER))
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case BARD_RUKAL: {
+					if (hasQuestItems(player, RUKALS_LETTER)) {
 						htmltext = "30629-05.html";
-					}
-					else if (hasQuestItems(player, PARINAS_LETTER))
-					{
+					} else if (hasQuestItems(player, PARINAS_LETTER)) {
 						htmltext = "30629-06.html";
-					}
-					else if (hasQuestItems(player, LILAC_CHARM))
-					{
-						if (hasQuestItems(player, GOLDEN_SEED_1ST, GOLDEN_SEED_2ND, GOLDEN_SEED_3RD))
-						{
+					} else if (hasQuestItems(player, LILAC_CHARM)) {
+						if (hasQuestItems(player, GOLDEN_SEED_1ST, GOLDEN_SEED_2ND, GOLDEN_SEED_3RD)) {
 							htmltext = "30629-08.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30629-07.html";
 						}
-					}
-					else if (hasQuestItems(player, SCORE_OF_ELEMENTS))
-					{
-						if (hasQuestItems(player, TONE_OF_WATER, TONE_OF_FIRE, TONE_OF_WIND, TONE_OF_EARTH))
-						{
+					} else if (hasQuestItems(player, SCORE_OF_ELEMENTS)) {
+						if (hasQuestItems(player, TONE_OF_WATER, TONE_OF_FIRE, TONE_OF_WIND, TONE_OF_EARTH)) {
 							giveAdena(player, 372154, true);
 							giveItems(player, MARK_OF_MAGUS, 1);
 							addExpAndSp(player, 2058244, 141240);
 							qs.exitQuest(false, true);
 							player.sendPacket(new SocialAction(player.getObjectId(), 3));
 							htmltext = "30629-12.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30629-11.html";
 						}
 					}
 					break;
 				}
-				case PARINA:
-				{
-					if (hasQuestItems(player, RUKALS_LETTER))
-					{
+				case PARINA: {
+					if (hasQuestItems(player, RUKALS_LETTER)) {
 						htmltext = "30391-01.html";
-					}
-					else if (hasQuestItems(player, PARINAS_LETTER))
-					{
+					} else if (hasQuestItems(player, PARINAS_LETTER)) {
 						htmltext = "30391-03.html";
-					}
-					else if (hasQuestItems(player, LILAC_CHARM))
-					{
+					} else if (hasQuestItems(player, LILAC_CHARM)) {
 						htmltext = "30391-04.html";
-					}
-					else if (hasQuestItems(player, SCORE_OF_ELEMENTS))
-					{
+					} else if (hasQuestItems(player, SCORE_OF_ELEMENTS)) {
 						htmltext = "30391-05.html";
 					}
 					break;
 				}
-				case EARTH_SNAKE:
-				{
-					if (hasQuestItems(player, SCORE_OF_ELEMENTS))
-					{
-						if (!hasAtLeastOneQuestItem(player, TONE_OF_EARTH, SERPENT_CHARM))
-						{
+				case EARTH_SNAKE: {
+					if (hasQuestItems(player, SCORE_OF_ELEMENTS)) {
+						if (!hasAtLeastOneQuestItem(player, TONE_OF_EARTH, SERPENT_CHARM)) {
 							htmltext = "30409-01.html";
-						}
-						else if (hasQuestItems(player, SERPENT_CHARM))
-						{
-							if ((getQuestItemsCount(player, ENCHANTED_MONSTER_EYE_SHELL) >= 10) && (getQuestItemsCount(player, ENCHANTED_GOLEM_POWDER) >= 10) && (getQuestItemsCount(player, ENCHANTED_IRON_GOLEM_SCRAP) >= 10))
-							{
+						} else if (hasQuestItems(player, SERPENT_CHARM)) {
+							if ((getQuestItemsCount(player, ENCHANTED_MONSTER_EYE_SHELL) >= 10) && (getQuestItemsCount(player, ENCHANTED_GOLEM_POWDER) >= 10) && (getQuestItemsCount(player, ENCHANTED_IRON_GOLEM_SCRAP) >= 10)) {
 								takeItems(player, ENCHANTED_MONSTER_EYE_SHELL, -1);
 								takeItems(player, ENCHANTED_GOLEM_POWDER, -1);
 								takeItems(player, ENCHANTED_IRON_GOLEM_SCRAP, -1);
 								giveItems(player, TONE_OF_EARTH, 1);
 								takeItems(player, SERPENT_CHARM, 1);
-								if (hasQuestItems(player, TONE_OF_FIRE, TONE_OF_WATER, TONE_OF_WIND))
-								{
+								if (hasQuestItems(player, TONE_OF_FIRE, TONE_OF_WATER, TONE_OF_WIND)) {
 									qs.setCond(6, true);
 								}
 								htmltext = "30409-05.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30409-04.html";
 							}
-						}
-						else if (hasQuestItems(player, TONE_OF_EARTH) && !hasQuestItems(player, SERPENT_CHARM))
-						{
+						} else if (hasQuestItems(player, TONE_OF_EARTH) && !hasQuestItems(player, SERPENT_CHARM)) {
 							htmltext = "30409-06.html";
 						}
 					}
 					break;
 				}
-				case FLAME_SALAMANDER:
-				{
-					if (hasQuestItems(player, SCORE_OF_ELEMENTS))
-					{
-						if (!hasAtLeastOneQuestItem(player, TONE_OF_FIRE, SALAMANDER_CHARM))
-						{
+				case FLAME_SALAMANDER: {
+					if (hasQuestItems(player, SCORE_OF_ELEMENTS)) {
+						if (!hasAtLeastOneQuestItem(player, TONE_OF_FIRE, SALAMANDER_CHARM)) {
 							htmltext = "30411-01.html";
 							giveItems(player, SALAMANDER_CHARM, 1);
-						}
-						else if (hasQuestItems(player, SALAMANDER_CHARM))
-						{
-							if (getQuestItemsCount(player, FLAME_CRYSTAL) < 5)
-							{
+						} else if (hasQuestItems(player, SALAMANDER_CHARM)) {
+							if (getQuestItemsCount(player, FLAME_CRYSTAL) < 5) {
 								htmltext = "30411-02.html";
-							}
-							else
-							{
+							} else {
 								takeItems(player, FLAME_CRYSTAL, -1);
 								giveItems(player, TONE_OF_FIRE, 1);
 								takeItems(player, SALAMANDER_CHARM, 1);
-								if (hasQuestItems(player, TONE_OF_WATER, TONE_OF_WIND, TONE_OF_EARTH))
-								{
+								if (hasQuestItems(player, TONE_OF_WATER, TONE_OF_WIND, TONE_OF_EARTH)) {
 									qs.setCond(6, true);
 								}
 								htmltext = "30411-03.html";
 							}
-						}
-						else if (hasQuestItems(player, TONE_OF_FIRE) && !hasQuestItems(player, SALAMANDER_CHARM))
-						{
+						} else if (hasQuestItems(player, TONE_OF_FIRE) && !hasQuestItems(player, SALAMANDER_CHARM)) {
 							htmltext = "30411-04.html";
 						}
 					}
 					break;
 				}
-				case WIND_SYLPH:
-				{
-					if (hasQuestItems(player, SCORE_OF_ELEMENTS))
-					{
-						if (!hasAtLeastOneQuestItem(player, TONE_OF_WIND, SYLPH_CHARM))
-						{
+				case WIND_SYLPH: {
+					if (hasQuestItems(player, SCORE_OF_ELEMENTS)) {
+						if (!hasAtLeastOneQuestItem(player, TONE_OF_WIND, SYLPH_CHARM)) {
 							htmltext = "30412-01.html";
-						}
-						else if (hasQuestItems(player, SYLPH_CHARM))
-						{
-							if ((getQuestItemsCount(player, HARPYS_FEATHER) >= 20) && (getQuestItemsCount(player, WYRMS_WINGBONE) >= 10) && (getQuestItemsCount(player, WINDSUS_MANE) >= 10))
-							{
+						} else if (hasQuestItems(player, SYLPH_CHARM)) {
+							if ((getQuestItemsCount(player, HARPYS_FEATHER) >= 20) && (getQuestItemsCount(player, WYRMS_WINGBONE) >= 10) && (getQuestItemsCount(player, WINDSUS_MANE) >= 10)) {
 								takeItems(player, HARPYS_FEATHER, -1);
 								takeItems(player, WYRMS_WINGBONE, -1);
 								takeItems(player, WINDSUS_MANE, -1);
 								giveItems(player, TONE_OF_WIND, 1);
 								takeItems(player, SYLPH_CHARM, 1);
-								if (hasQuestItems(player, TONE_OF_WATER, TONE_OF_FIRE, TONE_OF_EARTH))
-								{
+								if (hasQuestItems(player, TONE_OF_WATER, TONE_OF_FIRE, TONE_OF_EARTH)) {
 									qs.setCond(6, true);
 								}
 								htmltext = "30412-04.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30412-03.html";
 							}
-						}
-						else if (hasQuestItems(player, TONE_OF_WIND) && !hasQuestItems(player, SYLPH_CHARM))
-						{
+						} else if (hasQuestItems(player, TONE_OF_WIND) && !hasQuestItems(player, SYLPH_CHARM)) {
 							htmltext = "30412-05.html";
 						}
 					}
 					break;
 				}
-				case WATER_UNDINE:
-				{
-					if (hasQuestItems(player, SCORE_OF_ELEMENTS))
-					{
-						if (!hasAtLeastOneQuestItem(player, TONE_OF_WATER, UNDINE_CHARM))
-						{
+				case WATER_UNDINE: {
+					if (hasQuestItems(player, SCORE_OF_ELEMENTS)) {
+						if (!hasAtLeastOneQuestItem(player, TONE_OF_WATER, UNDINE_CHARM)) {
 							htmltext = "30413-01.html";
 							giveItems(player, UNDINE_CHARM, 1);
-						}
-						else if (hasQuestItems(player, UNDINE_CHARM))
-						{
-							if (getQuestItemsCount(player, DAZZLING_DROP) < 20)
-							{
+						} else if (hasQuestItems(player, UNDINE_CHARM)) {
+							if (getQuestItemsCount(player, DAZZLING_DROP) < 20) {
 								htmltext = "30413-02.html";
-							}
-							else
-							{
+							} else {
 								takeItems(player, DAZZLING_DROP, -1);
 								giveItems(player, TONE_OF_WATER, 1);
 								takeItems(player, UNDINE_CHARM, 1);
-								if (hasQuestItems(player, TONE_OF_FIRE, TONE_OF_WIND, TONE_OF_EARTH))
-								{
+								if (hasQuestItems(player, TONE_OF_FIRE, TONE_OF_WIND, TONE_OF_EARTH)) {
 									qs.setCond(6, true);
 								}
 								htmltext = "30413-03.html";
 							}
-						}
-						else if (hasQuestItems(player, TONE_OF_WATER) && !hasQuestItems(player, UNDINE_CHARM))
-						{
+						} else if (hasQuestItems(player, TONE_OF_WATER) && !hasQuestItems(player, UNDINE_CHARM)) {
 							htmltext = "30413-04.html";
 						}
 					}
 					break;
 				}
-				case ELDER_CASIAN:
-				{
-					if (hasQuestItems(player, PARINAS_LETTER))
-					{
+				case ELDER_CASIAN: {
+					if (hasQuestItems(player, PARINAS_LETTER)) {
 						htmltext = "30612-01.html";
-					}
-					else if (hasQuestItems(player, LILAC_CHARM))
-					{
-						if (hasQuestItems(player, GOLDEN_SEED_1ST, GOLDEN_SEED_2ND, GOLDEN_SEED_3RD))
-						{
+					} else if (hasQuestItems(player, LILAC_CHARM)) {
+						if (hasQuestItems(player, GOLDEN_SEED_1ST, GOLDEN_SEED_2ND, GOLDEN_SEED_3RD)) {
 							htmltext = "30612-04.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30612-03.html";
 						}
-					}
-					else if (hasQuestItems(player, SCORE_OF_ELEMENTS))
-					{
+					} else if (hasQuestItems(player, SCORE_OF_ELEMENTS)) {
 						htmltext = "30612-05.html";
 					}
 					break;
 				}
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == BARD_RUKAL)
-			{
+		} else if (qs.isCompleted()) {
+			if (npc.getId() == BARD_RUKAL) {
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}

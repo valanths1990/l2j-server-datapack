@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Deliver Supplies (168)
  * @author xban1x
  */
-public class Q00168_DeliverSupplies extends Quest
-{
+public class Q00168_DeliverSupplies extends Quest {
 	// NPCs
 	private static final int JENNA = 30349;
 	private static final int ROSELYN = 30355;
@@ -48,14 +47,12 @@ public class Q00168_DeliverSupplies extends Quest
 	// Misc
 	private static final int MIN_LVL = 3;
 	private static final Map<Integer, Integer> SENTRIES = new HashMap<>();
-	static
-	{
+	static {
 		SENTRIES.put(KRISTIN, SENTRY_BLADE3);
 		SENTRIES.put(ROSELYN, SENTRY_BLADE2);
 	}
 	
-	public Q00168_DeliverSupplies()
-	{
+	public Q00168_DeliverSupplies() {
 		super(168, Q00168_DeliverSupplies.class.getSimpleName(), "Deliver Supplies");
 		addStartNpc(JENNA);
 		addTalkId(JENNA, ROSELYN, KRISTIN, HARANT);
@@ -63,11 +60,9 @@ public class Q00168_DeliverSupplies extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && event.equals("30349-03.htm"))
-		{
+		if ((st != null) && event.equals("30349-03.htm")) {
 			st.startQuest();
 			st.giveItems(JENNAS_LETTER, 1);
 			return event;
@@ -76,55 +71,40 @@ public class Q00168_DeliverSupplies extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
-			case JENNA:
-			{
-				switch (st.getState())
-				{
-					case State.CREATED:
-					{
+		switch (npc.getId()) {
+			case JENNA: {
+				switch (st.getState()) {
+					case State.CREATED: {
 						htmltext = (player.getRace() == Race.DARK_ELF) ? (player.getLevel() >= MIN_LVL) ? "30349-02.htm" : "30349-01.htm" : "30349-00.htm";
 						break;
 					}
-					case State.STARTED:
-					{
-						switch (st.getCond())
-						{
-							case 1:
-							{
-								if (st.hasQuestItems(JENNAS_LETTER))
-								{
+					case State.STARTED: {
+						switch (st.getCond()) {
+							case 1: {
+								if (st.hasQuestItems(JENNAS_LETTER)) {
 									htmltext = "30349-04.html";
 								}
 								break;
 							}
-							case 2:
-							{
-								if (st.hasQuestItems(SENTRY_BLADE1, SENTRY_BLADE2, SENTRY_BLADE3))
-								{
+							case 2: {
+								if (st.hasQuestItems(SENTRY_BLADE1, SENTRY_BLADE2, SENTRY_BLADE3)) {
 									st.takeItems(SENTRY_BLADE1, -1);
 									st.setCond(3, true);
 									htmltext = "30349-05.html";
 								}
 								break;
 							}
-							case 3:
-							{
-								if (hasAtLeastOneQuestItem(player, SENTRY_BLADE2, SENTRY_BLADE3))
-								{
+							case 3: {
+								if (hasAtLeastOneQuestItem(player, SENTRY_BLADE2, SENTRY_BLADE3)) {
 									htmltext = "30349-07.html";
 								}
 								break;
 							}
-							case 4:
-							{
-								if (st.getQuestItemsCount(OLD_BRONZE_SWORD) >= 2)
-								{
+							case 4: {
+								if (st.getQuestItemsCount(OLD_BRONZE_SWORD) >= 2) {
 									st.giveAdena(820, true);
 									st.exitQuest(false, true);
 									htmltext = "30349-07.html";
@@ -134,46 +114,36 @@ public class Q00168_DeliverSupplies extends Quest
 						}
 						break;
 					}
-					case State.COMPLETED:
-					{
+					case State.COMPLETED: {
 						htmltext = getAlreadyCompletedMsg(player);
 						break;
 					}
 				}
 				break;
 			}
-			case HARANT:
-			{
-				if (st.isCond(1) && st.hasQuestItems(JENNAS_LETTER))
-				{
+			case HARANT: {
+				if (st.isCond(1) && st.hasQuestItems(JENNAS_LETTER)) {
 					st.takeItems(JENNAS_LETTER, -1);
 					st.giveItems(SENTRY_BLADE1, 1);
 					st.giveItems(SENTRY_BLADE2, 1);
 					st.giveItems(SENTRY_BLADE3, 1);
 					st.setCond(2, true);
 					htmltext = "30360-01.html";
-				}
-				else if (st.isCond(2))
-				{
+				} else if (st.isCond(2)) {
 					htmltext = "30360-02.html";
 				}
 				break;
 			}
 			case ROSELYN:
-			case KRISTIN:
-			{
-				if (st.isCond(3) && st.hasQuestItems(SENTRIES.get(npc.getId())))
-				{
+			case KRISTIN: {
+				if (st.isCond(3) && st.hasQuestItems(SENTRIES.get(npc.getId()))) {
 					st.takeItems(SENTRIES.get(npc.getId()), -1);
 					st.giveItems(OLD_BRONZE_SWORD, 1);
-					if (st.getQuestItemsCount(OLD_BRONZE_SWORD) >= 2)
-					{
+					if (st.getQuestItemsCount(OLD_BRONZE_SWORD) >= 2) {
 						st.setCond(4, true);
 					}
 					htmltext = npc.getId() + "-01.html";
-				}
-				else if (!st.hasQuestItems(SENTRIES.get(npc.getId())) && st.hasQuestItems(OLD_BRONZE_SWORD))
-				{
+				} else if (!st.hasQuestItems(SENTRIES.get(npc.getId())) && st.hasQuestItems(OLD_BRONZE_SWORD)) {
 					htmltext = npc.getId() + "-02.html";
 				}
 				break;

@@ -35,26 +35,21 @@ import com.l2jserver.gameserver.util.Broadcast;
  * Beast SoulShot Handler
  * @author Tempy
  */
-public class BeastSoulShot implements IItemHandler
-{
+public class BeastSoulShot implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!playable.isPlayer())
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!playable.isPlayer()) {
 			playable.sendPacket(SystemMessageId.ITEM_NOT_FOR_PETS);
 			return false;
 		}
 		
 		final L2PcInstance activeOwner = playable.getActingPlayer();
-		if (!activeOwner.hasSummon())
-		{
+		if (!activeOwner.hasSummon()) {
 			activeOwner.sendPacket(SystemMessageId.PETS_ARE_NOT_AVAILABLE_AT_THIS_TIME);
 			return false;
 		}
 		
-		if (activeOwner.getSummon().isDead())
-		{
+		if (activeOwner.getSummon().isDead()) {
 			activeOwner.sendPacket(SystemMessageId.SOULSHOTS_AND_SPIRITSHOTS_ARE_NOT_AVAILABLE_FOR_A_DEAD_PET);
 			return false;
 		}
@@ -64,33 +59,27 @@ public class BeastSoulShot implements IItemHandler
 		final long shotCount = item.getCount();
 		final SkillHolder[] skills = item.getItem().getSkills();
 		
-		if (skills == null)
-		{
+		if (skills == null) {
 			_log.log(Level.WARNING, getClass().getSimpleName() + ": is missing skills!");
 			return false;
 		}
 		
-		if (shotCount < shotConsumption)
-		{
+		if (shotCount < shotConsumption) {
 			// Not enough Soulshots to use.
-			if (!activeOwner.disableAutoShot(itemId))
-			{
+			if (!activeOwner.disableAutoShot(itemId)) {
 				activeOwner.sendPacket(SystemMessageId.NOT_ENOUGH_SOULSHOTS_FOR_PET);
 			}
 			return false;
 		}
 		
-		if (activeOwner.getSummon().isChargedShot(ShotType.SOULSHOTS))
-		{
+		if (activeOwner.getSummon().isChargedShot(ShotType.SOULSHOTS)) {
 			// SoulShots are already active.
 			return false;
 		}
 		
 		// If the player doesn't have enough beast soulshot remaining, remove any auto soulshot task.
-		if (!activeOwner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false))
-		{
-			if (!activeOwner.disableAutoShot(itemId))
-			{
+		if (!activeOwner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false)) {
+			if (!activeOwner.disableAutoShot(itemId)) {
 				activeOwner.sendPacket(SystemMessageId.NOT_ENOUGH_SOULSHOTS_FOR_PET);
 			}
 			return false;

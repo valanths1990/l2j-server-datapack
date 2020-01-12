@@ -28,28 +28,23 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Disarm effect implementation.
  * @author nBd
  */
-public final class Disarm extends AbstractEffect
-{
-	public Disarm(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class Disarm extends AbstractEffect {
+	public Disarm(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean canStart(BuffInfo info)
-	{
+	public boolean canStart(BuffInfo info) {
 		return info.getEffected().isPlayer();
 	}
 	
 	@Override
-	public int getEffectFlags()
-	{
+	public int getEffectFlags() {
 		return EffectFlag.DISARMED.getMask();
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		info.getEffected().getActingPlayer().disarmWeapons();
 	}
 }

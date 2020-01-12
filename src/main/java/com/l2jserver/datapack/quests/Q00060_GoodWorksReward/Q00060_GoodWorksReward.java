@@ -58,8 +58,7 @@ import com.l2jserver.gameserver.util.Util;
  * Good Work's Reward (60)
  * @author ivantotov
  */
-public final class Q00060_GoodWorksReward extends Quest
-{
+public final class Q00060_GoodWorksReward extends Quest {
 	// NPCs
 	private static final int GROCER_HELVERIA = 30081;
 	private static final int BLACK_MARKETEER_OF_MAMMON = 31092;
@@ -100,8 +99,7 @@ public final class Q00060_GoodWorksReward extends Quest
 	private static final int TWO_MILLION = 2000000;
 	private static final int THREE_MILLION = 3000000;
 	
-	public Q00060_GoodWorksReward()
-	{
+	public Q00060_GoodWorksReward() {
 		super(60, Q00060_GoodWorksReward.class.getSimpleName(), "Good Work's Reward");
 		addStartNpc(BLUEPRINT_SELLER_DAEGER);
 		addTalkId(BLUEPRINT_SELLER_DAEGER, GROCER_HELVERIA, BLACK_MARKETEER_OF_MAMMON, MARK);
@@ -111,15 +109,12 @@ public final class Q00060_GoodWorksReward extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		
-		if ("DESPAWN".equals(event))
-		{
+		if ("DESPAWN".equals(event)) {
 			npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.YOU_HAVE_GOOD_LUCK_I_SHALL_RETURN));
 			final L2Npc npc0 = npc.getVariables().getObject("npc0", L2Npc.class);
-			if (npc0 != null)
-			{
+			if (npc0 != null) {
 				npc0.getVariables().set("SPAWNED", false);
 			}
 			npc.deleteMe();
@@ -127,61 +122,48 @@ public final class Q00060_GoodWorksReward extends Quest
 		}
 		
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "31435-07.htm":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "31435-07.htm": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					qs.setMemoState(1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "31435-02.htm":
-			{
+			case "31435-02.htm": {
 				htmltext = event;
 				break;
 			}
-			case "31435-10.html":
-			{
-				if (qs.isMemoState(3))
-				{
+			case "31435-10.html": {
+				if (qs.isMemoState(3)) {
 					qs.setMemoState(4);
 					qs.setCond(4, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "31435-14.html":
-			{
-				if (qs.isMemoState(8))
-				{
+			case "31435-14.html": {
+				if (qs.isMemoState(8)) {
 					qs.setMemoState(9);
 					qs.setCond(9, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30081-02.html":
-			{
-				if (qs.isMemoState(4))
-				{
+			case "30081-02.html": {
+				if (qs.isMemoState(4)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "30081-03.html":
-			{
-				if (qs.isMemoState(4))
-				{
+			case "30081-03.html": {
+				if (qs.isMemoState(4)) {
 					takeItems(player, BLOODY_CLOTH_FRAGMENT, -1);
 					qs.setMemoState(5);
 					qs.setCond(5, true);
@@ -189,21 +171,16 @@ public final class Q00060_GoodWorksReward extends Quest
 				}
 				break;
 			}
-			case "30081-05.html":
-			{
+			case "30081-05.html": {
 				final int memoState = qs.getMemoState();
-				if ((memoState >= 5) && (memoState <= 6))
-				{
-					if (getQuestItemsCount(player, Inventory.ADENA_ID) >= THREE_MILLION)
-					{
+				if ((memoState >= 5) && (memoState <= 6)) {
+					if (getQuestItemsCount(player, Inventory.ADENA_ID) >= THREE_MILLION) {
 						giveItems(player, HELVETIAS_ANTIDOTE, 1);
 						takeItems(player, Inventory.ADENA_ID, THREE_MILLION);
 						qs.setMemoState(7);
 						qs.setCond(7, true);
 						htmltext = event;
-					}
-					else
-					{
+					} else {
 						qs.setMemoState(6);
 						qs.setCond(6, true);
 						htmltext = "30081-06.html";
@@ -211,112 +188,78 @@ public final class Q00060_GoodWorksReward extends Quest
 				}
 				break;
 			}
-			case "30081-07.html":
-			{
-				if (qs.isMemoState(5))
-				{
+			case "30081-07.html": {
+				if (qs.isMemoState(5)) {
 					qs.setMemoState(6);
 					qs.setCond(6, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "REPLY_1":
-			{
-				if (qs.isMemoState(10))
-				{
+			case "REPLY_1": {
+				if (qs.isMemoState(10)) {
 					if (player.hasQuestCompleted(Q00211_TrialOfTheChallenger.class.getSimpleName()) || player.hasQuestCompleted(Q00212_TrialOfDuty.class.getSimpleName()) || player.hasQuestCompleted(Q00213_TrialOfTheSeeker.class.getSimpleName())
-						|| player.hasQuestCompleted(Q00214_TrialOfTheScholar.class.getSimpleName()) || player.hasQuestCompleted(Q00215_TrialOfThePilgrim.class.getSimpleName()) || player.hasQuestCompleted(Q00216_TrialOfTheGuildsman.class.getSimpleName()))
-					{
+						|| player.hasQuestCompleted(Q00214_TrialOfTheScholar.class.getSimpleName()) || player.hasQuestCompleted(Q00215_TrialOfThePilgrim.class.getSimpleName()) || player.hasQuestCompleted(Q00216_TrialOfTheGuildsman.class.getSimpleName())) {
 						if (player.hasQuestCompleted(Q00217_TestimonyOfTrust.class.getSimpleName()) || player.hasQuestCompleted(Q00218_TestimonyOfLife.class.getSimpleName()) || player.hasQuestCompleted(Q00219_TestimonyOfFate.class.getSimpleName())
-							|| player.hasQuestCompleted(Q00220_TestimonyOfGlory.class.getSimpleName()) || player.hasQuestCompleted(Q00221_TestimonyOfProsperity.class.getSimpleName()))
-						{
+							|| player.hasQuestCompleted(Q00220_TestimonyOfGlory.class.getSimpleName()) || player.hasQuestCompleted(Q00221_TestimonyOfProsperity.class.getSimpleName())) {
 							
 							if (player.hasQuestCompleted(Q00222_TestOfTheDuelist.class.getSimpleName()) || player.hasQuestCompleted(Q00223_TestOfTheChampion.class.getSimpleName()) || player.hasQuestCompleted(Q00224_TestOfSagittarius.class.getSimpleName())
 								|| player.hasQuestCompleted(Q00225_TestOfTheSearcher.class.getSimpleName()) || player.hasQuestCompleted(Q00226_TestOfTheHealer.class.getSimpleName()) || player.hasQuestCompleted(Q00227_TestOfTheReformer.class.getSimpleName())
 								|| player.hasQuestCompleted(Q00228_TestOfMagus.class.getSimpleName()) || player.hasQuestCompleted(Q00229_TestOfWitchcraft.class.getSimpleName()) || player.hasQuestCompleted(Q00230_TestOfTheSummoner.class.getSimpleName())
-								|| player.hasQuestCompleted(Q00231_TestOfTheMaestro.class.getSimpleName()) || player.hasQuestCompleted(Q00232_TestOfTheLord.class.getSimpleName()) || player.hasQuestCompleted(Q00233_TestOfTheWarSpirit.class.getSimpleName()))
-							{
+								|| player.hasQuestCompleted(Q00231_TestOfTheMaestro.class.getSimpleName()) || player.hasQuestCompleted(Q00232_TestOfTheLord.class.getSimpleName()) || player.hasQuestCompleted(Q00233_TestOfTheWarSpirit.class.getSimpleName())) {
 								qs.setMemoStateEx(1, 3);
-							}
-							else
-							{
+							} else {
 								qs.setMemoStateEx(1, 2);
 							}
-						}
-						else if (player.hasQuestCompleted(Q00222_TestOfTheDuelist.class.getSimpleName()) || player.hasQuestCompleted(Q00223_TestOfTheChampion.class.getSimpleName()) || player.hasQuestCompleted(Q00224_TestOfSagittarius.class.getSimpleName())
+						} else if (player.hasQuestCompleted(Q00222_TestOfTheDuelist.class.getSimpleName()) || player.hasQuestCompleted(Q00223_TestOfTheChampion.class.getSimpleName()) || player.hasQuestCompleted(Q00224_TestOfSagittarius.class.getSimpleName())
 							|| player.hasQuestCompleted(Q00225_TestOfTheSearcher.class.getSimpleName()) || player.hasQuestCompleted(Q00226_TestOfTheHealer.class.getSimpleName()) || player.hasQuestCompleted(Q00227_TestOfTheReformer.class.getSimpleName())
 							|| player.hasQuestCompleted(Q00228_TestOfMagus.class.getSimpleName()) || player.hasQuestCompleted(Q00229_TestOfWitchcraft.class.getSimpleName()) || player.hasQuestCompleted(Q00230_TestOfTheSummoner.class.getSimpleName())
-							|| player.hasQuestCompleted(Q00231_TestOfTheMaestro.class.getSimpleName()) || player.hasQuestCompleted(Q00232_TestOfTheLord.class.getSimpleName()) || player.hasQuestCompleted(Q00233_TestOfTheWarSpirit.class.getSimpleName()))
-						{
+							|| player.hasQuestCompleted(Q00231_TestOfTheMaestro.class.getSimpleName()) || player.hasQuestCompleted(Q00232_TestOfTheLord.class.getSimpleName()) || player.hasQuestCompleted(Q00233_TestOfTheWarSpirit.class.getSimpleName())) {
 							qs.setMemoStateEx(1, 2);
-						}
-						else
-						{
+						} else {
 							qs.setMemoStateEx(1, 1);
 						}
-					}
-					else if (player.hasQuestCompleted(Q00217_TestimonyOfTrust.class.getSimpleName()) || player.hasQuestCompleted(Q00218_TestimonyOfLife.class.getSimpleName()) || player.hasQuestCompleted(Q00219_TestimonyOfFate.class.getSimpleName())
-						|| player.hasQuestCompleted(Q00220_TestimonyOfGlory.class.getSimpleName()) || player.hasQuestCompleted(Q00221_TestimonyOfProsperity.class.getSimpleName()))
-					{
+					} else if (player.hasQuestCompleted(Q00217_TestimonyOfTrust.class.getSimpleName()) || player.hasQuestCompleted(Q00218_TestimonyOfLife.class.getSimpleName()) || player.hasQuestCompleted(Q00219_TestimonyOfFate.class.getSimpleName())
+						|| player.hasQuestCompleted(Q00220_TestimonyOfGlory.class.getSimpleName()) || player.hasQuestCompleted(Q00221_TestimonyOfProsperity.class.getSimpleName())) {
 						if (player.hasQuestCompleted(Q00222_TestOfTheDuelist.class.getSimpleName()) || player.hasQuestCompleted(Q00223_TestOfTheChampion.class.getSimpleName()) || player.hasQuestCompleted(Q00224_TestOfSagittarius.class.getSimpleName())
 							|| player.hasQuestCompleted(Q00225_TestOfTheSearcher.class.getSimpleName()) || player.hasQuestCompleted(Q00226_TestOfTheHealer.class.getSimpleName()) || player.hasQuestCompleted(Q00227_TestOfTheReformer.class.getSimpleName())
 							|| player.hasQuestCompleted(Q00228_TestOfMagus.class.getSimpleName()) || player.hasQuestCompleted(Q00229_TestOfWitchcraft.class.getSimpleName()) || player.hasQuestCompleted(Q00230_TestOfTheSummoner.class.getSimpleName())
-							|| player.hasQuestCompleted(Q00231_TestOfTheMaestro.class.getSimpleName()) || player.hasQuestCompleted(Q00232_TestOfTheLord.class.getSimpleName()) || player.hasQuestCompleted(Q00233_TestOfTheWarSpirit.class.getSimpleName()))
-						{
+							|| player.hasQuestCompleted(Q00231_TestOfTheMaestro.class.getSimpleName()) || player.hasQuestCompleted(Q00232_TestOfTheLord.class.getSimpleName()) || player.hasQuestCompleted(Q00233_TestOfTheWarSpirit.class.getSimpleName())) {
 							qs.setMemoStateEx(1, 2);
-						}
-						else
-						{
+						} else {
 							qs.setMemoStateEx(1, 1);
 						}
-					}
-					else if (player.hasQuestCompleted(Q00222_TestOfTheDuelist.class.getSimpleName()) || player.hasQuestCompleted(Q00223_TestOfTheChampion.class.getSimpleName()) || player.hasQuestCompleted(Q00224_TestOfSagittarius.class.getSimpleName())
+					} else if (player.hasQuestCompleted(Q00222_TestOfTheDuelist.class.getSimpleName()) || player.hasQuestCompleted(Q00223_TestOfTheChampion.class.getSimpleName()) || player.hasQuestCompleted(Q00224_TestOfSagittarius.class.getSimpleName())
 						|| player.hasQuestCompleted(Q00225_TestOfTheSearcher.class.getSimpleName()) || player.hasQuestCompleted(Q00226_TestOfTheHealer.class.getSimpleName()) || player.hasQuestCompleted(Q00227_TestOfTheReformer.class.getSimpleName())
 						|| player.hasQuestCompleted(Q00228_TestOfMagus.class.getSimpleName()) || player.hasQuestCompleted(Q00229_TestOfWitchcraft.class.getSimpleName()) || player.hasQuestCompleted(Q00230_TestOfTheSummoner.class.getSimpleName())
-						|| player.hasQuestCompleted(Q00231_TestOfTheMaestro.class.getSimpleName()) || player.hasQuestCompleted(Q00232_TestOfTheLord.class.getSimpleName()) || player.hasQuestCompleted(Q00233_TestOfTheWarSpirit.class.getSimpleName()))
-					{
+						|| player.hasQuestCompleted(Q00231_TestOfTheMaestro.class.getSimpleName()) || player.hasQuestCompleted(Q00232_TestOfTheLord.class.getSimpleName()) || player.hasQuestCompleted(Q00233_TestOfTheWarSpirit.class.getSimpleName())) {
 						qs.setMemoStateEx(1, 1);
 					}
 					htmltext = "31092-02.html";
 				}
 				break;
 			}
-			case "REPLY_2":
-			{
-				if (qs.isMemoState(10))
-				{
-					if (qs.getMemoStateEx(1) >= 3)
-					{
+			case "REPLY_2": {
+				if (qs.isMemoState(10)) {
+					if (qs.getMemoStateEx(1) >= 3) {
 						htmltext = "31092-03b.html";
-					}
-					else if (qs.getMemoStateEx(1) >= 1)
-					{
+					} else if (qs.getMemoStateEx(1) >= 1) {
 						htmltext = "31092-03.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "31092-03a.html";
 					}
 				}
 				break;
 			}
-			case "REPLY_3":
-			{
-				if (qs.isMemoState(10))
-				{
-					if (qs.getMemoStateEx(1) >= 3)
-					{
+			case "REPLY_3": {
+				if (qs.isMemoState(10)) {
+					if (qs.getMemoStateEx(1) >= 3) {
 						giveItems(player, Inventory.ADENA_ID, THREE_MILLION);
 						htmltext = "31092-04a.html";
-					}
-					else if (qs.getMemoStateEx(1) == 2)
-					{
+					} else if (qs.getMemoStateEx(1) == 2) {
 						giveItems(player, Inventory.ADENA_ID, TWO_MILLION);
 						htmltext = "31092-04b.html";
-					}
-					else if (qs.getMemoStateEx(1) == 1)
-					{
+					} else if (qs.getMemoStateEx(1) == 1) {
 						giveItems(player, Inventory.ADENA_ID, ONE_MILLION);
 						htmltext = "31092-04b.html";
 					}
@@ -324,12 +267,9 @@ public final class Q00060_GoodWorksReward extends Quest
 				}
 				break;
 			}
-			case "REPLY_4":
-			{
-				if (qs.isMemoState(10))
-				{
-					switch (player.getClassId())
-					{
+			case "REPLY_4": {
+				if (qs.isMemoState(10)) {
+					switch (player.getClassId()) {
 						case warrior:
 							return "31092-05.html";
 						case knight:
@@ -371,12 +311,9 @@ public final class Q00060_GoodWorksReward extends Quest
 				}
 				break;
 			}
-			case "REPLY_5":
-			{
-				if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP))
-				{
-					switch (player.getClassId())
-					{
+			case "REPLY_5": {
+				if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP)) {
+					switch (player.getClassId()) {
 						case warrior:
 							return "31092-05a.html";
 						case knight:
@@ -417,632 +354,474 @@ public final class Q00060_GoodWorksReward extends Quest
 				}
 				break;
 			}
-			case "REPLY_6":
-			{
-				if ((player.getClassId() == ClassId.warrior))
-				{
-					if (!hasQuestItems(player, MARK_OF_CHALLENGER))
-					{
+			case "REPLY_6": {
+				if ((player.getClassId() == ClassId.warrior)) {
+					if (!hasQuestItems(player, MARK_OF_CHALLENGER)) {
 						giveItems(player, MARK_OF_CHALLENGER, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_TRUST))
-					{
+					if (!hasQuestItems(player, MARK_OF_TRUST)) {
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_DUELIST))
-					{
+					if (!hasQuestItems(player, MARK_OF_DUELIST)) {
 						giveItems(player, MARK_OF_DUELIST, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_7":
-			{
-				if ((player.getClassId() == ClassId.warrior))
-				{
-					if (!hasQuestItems(player, MARK_OF_CHALLENGER))
-					{
+			case "REPLY_7": {
+				if ((player.getClassId() == ClassId.warrior)) {
+					if (!hasQuestItems(player, MARK_OF_CHALLENGER)) {
 						giveItems(player, MARK_OF_CHALLENGER, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_TRUST))
-					{
+					if (!hasQuestItems(player, MARK_OF_TRUST)) {
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_CHAMPION))
-					{
+					if (!hasQuestItems(player, MARK_OF_CHAMPION)) {
 						giveItems(player, MARK_OF_CHAMPION, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_8":
-			{
-				if ((player.getClassId() == ClassId.knight))
-				{
-					if (!hasQuestItems(player, MARK_OF_DUTY))
-					{
+			case "REPLY_8": {
+				if ((player.getClassId() == ClassId.knight)) {
+					if (!hasQuestItems(player, MARK_OF_DUTY)) {
 						giveItems(player, MARK_OF_DUTY, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_TRUST))
-					{
+					if (!hasQuestItems(player, MARK_OF_TRUST)) {
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_HEALER))
-					{
+					if (!hasQuestItems(player, MARK_OF_HEALER)) {
 						giveItems(player, MARK_OF_HEALER, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_9":
-			{
-				if ((player.getClassId() == ClassId.knight))
-				{
-					if (!hasQuestItems(player, MARK_OF_DUTY))
-					{
+			case "REPLY_9": {
+				if ((player.getClassId() == ClassId.knight)) {
+					if (!hasQuestItems(player, MARK_OF_DUTY)) {
 						giveItems(player, MARK_OF_DUTY, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_TRUST))
-					{
+					if (!hasQuestItems(player, MARK_OF_TRUST)) {
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_WITCHCRAFT))
-					{
+					if (!hasQuestItems(player, MARK_OF_WITCHCRAFT)) {
 						giveItems(player, MARK_OF_WITCHCRAFT, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_10":
-			{
-				if ((player.getClassId() == ClassId.rogue))
-				{
-					if (!hasQuestItems(player, MARK_OF_SEEKER))
-					{
+			case "REPLY_10": {
+				if ((player.getClassId() == ClassId.rogue)) {
+					if (!hasQuestItems(player, MARK_OF_SEEKER)) {
 						giveItems(player, MARK_OF_SEEKER, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_TRUST))
-					{
+					if (!hasQuestItems(player, MARK_OF_TRUST)) {
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_SEARCHER))
-					{
+					if (!hasQuestItems(player, MARK_OF_SEARCHER)) {
 						giveItems(player, MARK_OF_SEARCHER, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_11":
-			{
-				if ((player.getClassId() == ClassId.rogue))
-				{
-					if (!hasQuestItems(player, MARK_OF_SEEKER))
-					{
+			case "REPLY_11": {
+				if ((player.getClassId() == ClassId.rogue)) {
+					if (!hasQuestItems(player, MARK_OF_SEEKER)) {
 						giveItems(player, MARK_OF_SEEKER, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_TRUST))
-					{
+					if (!hasQuestItems(player, MARK_OF_TRUST)) {
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_SAGITTARIUS))
-					{
+					if (!hasQuestItems(player, MARK_OF_SAGITTARIUS)) {
 						giveItems(player, MARK_OF_SAGITTARIUS, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_12":
-			{
-				if ((player.getClassId() == ClassId.wizard))
-				{
-					if (!hasQuestItems(player, MARK_OF_SCHOLAR))
-					{
+			case "REPLY_12": {
+				if ((player.getClassId() == ClassId.wizard)) {
+					if (!hasQuestItems(player, MARK_OF_SCHOLAR)) {
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_TRUST))
-					{
+					if (!hasQuestItems(player, MARK_OF_TRUST)) {
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_MAGUS))
-					{
+					if (!hasQuestItems(player, MARK_OF_MAGUS)) {
 						giveItems(player, MARK_OF_MAGUS, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_13":
-			{
-				if ((player.getClassId() == ClassId.wizard))
-				{
-					if (!hasQuestItems(player, MARK_OF_SCHOLAR))
-					{
+			case "REPLY_13": {
+				if ((player.getClassId() == ClassId.wizard)) {
+					if (!hasQuestItems(player, MARK_OF_SCHOLAR)) {
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_TRUST))
-					{
+					if (!hasQuestItems(player, MARK_OF_TRUST)) {
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_WITCHCRAFT))
-					{
+					if (!hasQuestItems(player, MARK_OF_WITCHCRAFT)) {
 						giveItems(player, MARK_OF_WITCHCRAFT, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_14":
-			{
-				if ((player.getClassId() == ClassId.wizard))
-				{
-					if (!hasQuestItems(player, MARK_OF_SCHOLAR))
-					{
+			case "REPLY_14": {
+				if ((player.getClassId() == ClassId.wizard)) {
+					if (!hasQuestItems(player, MARK_OF_SCHOLAR)) {
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_TRUST))
-					{
+					if (!hasQuestItems(player, MARK_OF_TRUST)) {
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_SUMMONER))
-					{
+					if (!hasQuestItems(player, MARK_OF_SUMMONER)) {
 						giveItems(player, MARK_OF_SUMMONER, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_15":
-			{
-				if ((player.getClassId() == ClassId.cleric))
-				{
-					if (!hasQuestItems(player, MARK_OF_PILGRIM))
-					{
+			case "REPLY_15": {
+				if ((player.getClassId() == ClassId.cleric)) {
+					if (!hasQuestItems(player, MARK_OF_PILGRIM)) {
 						giveItems(player, MARK_OF_PILGRIM, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_TRUST))
-					{
+					if (!hasQuestItems(player, MARK_OF_TRUST)) {
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_HEALER))
-					{
+					if (!hasQuestItems(player, MARK_OF_HEALER)) {
 						giveItems(player, MARK_OF_HEALER, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_16":
-			{
-				if ((player.getClassId() == ClassId.cleric))
-				{
-					if (!hasQuestItems(player, MARK_OF_PILGRIM))
-					{
+			case "REPLY_16": {
+				if ((player.getClassId() == ClassId.cleric)) {
+					if (!hasQuestItems(player, MARK_OF_PILGRIM)) {
 						giveItems(player, MARK_OF_PILGRIM, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_TRUST))
-					{
+					if (!hasQuestItems(player, MARK_OF_TRUST)) {
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_REFORMER))
-					{
+					if (!hasQuestItems(player, MARK_OF_REFORMER)) {
 						giveItems(player, MARK_OF_REFORMER, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_17":
-			{
-				if ((player.getClassId() == ClassId.elvenKnight))
-				{
-					if (!hasQuestItems(player, MARK_OF_DUTY))
-					{
+			case "REPLY_17": {
+				if ((player.getClassId() == ClassId.elvenKnight)) {
+					if (!hasQuestItems(player, MARK_OF_DUTY)) {
 						giveItems(player, MARK_OF_DUTY, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_LIFE))
-					{
+					if (!hasQuestItems(player, MARK_OF_LIFE)) {
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_HEALER))
-					{
+					if (!hasQuestItems(player, MARK_OF_HEALER)) {
 						giveItems(player, MARK_OF_HEALER, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_18":
-			{
-				if ((player.getClassId() == ClassId.elvenKnight))
-				{
-					if (!hasQuestItems(player, MARK_OF_CHALLENGER))
-					{
+			case "REPLY_18": {
+				if ((player.getClassId() == ClassId.elvenKnight)) {
+					if (!hasQuestItems(player, MARK_OF_CHALLENGER)) {
 						giveItems(player, MARK_OF_CHALLENGER, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_LIFE))
-					{
+					if (!hasQuestItems(player, MARK_OF_LIFE)) {
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_DUELIST))
-					{
+					if (!hasQuestItems(player, MARK_OF_DUELIST)) {
 						giveItems(player, MARK_OF_DUELIST, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_19":
-			{
-				if ((player.getClassId() == ClassId.elvenScout))
-				{
-					if (!hasQuestItems(player, MARK_OF_SEEKER))
-					{
+			case "REPLY_19": {
+				if ((player.getClassId() == ClassId.elvenScout)) {
+					if (!hasQuestItems(player, MARK_OF_SEEKER)) {
 						giveItems(player, MARK_OF_SEEKER, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_LIFE))
-					{
+					if (!hasQuestItems(player, MARK_OF_LIFE)) {
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_SEARCHER))
-					{
+					if (!hasQuestItems(player, MARK_OF_SEARCHER)) {
 						giveItems(player, MARK_OF_SEARCHER, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_20":
-			{
-				if ((player.getClassId() == ClassId.elvenScout))
-				{
-					if (!hasQuestItems(player, MARK_OF_SEEKER))
-					{
+			case "REPLY_20": {
+				if ((player.getClassId() == ClassId.elvenScout)) {
+					if (!hasQuestItems(player, MARK_OF_SEEKER)) {
 						giveItems(player, MARK_OF_SEEKER, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_LIFE))
-					{
+					if (!hasQuestItems(player, MARK_OF_LIFE)) {
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_SAGITTARIUS))
-					{
+					if (!hasQuestItems(player, MARK_OF_SAGITTARIUS)) {
 						giveItems(player, MARK_OF_SAGITTARIUS, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_21":
-			{
-				if ((player.getClassId() == ClassId.elvenWizard))
-				{
-					if (!hasQuestItems(player, MARK_OF_SCHOLAR))
-					{
+			case "REPLY_21": {
+				if ((player.getClassId() == ClassId.elvenWizard)) {
+					if (!hasQuestItems(player, MARK_OF_SCHOLAR)) {
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_LIFE))
-					{
+					if (!hasQuestItems(player, MARK_OF_LIFE)) {
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_MAGUS))
-					{
+					if (!hasQuestItems(player, MARK_OF_MAGUS)) {
 						giveItems(player, MARK_OF_MAGUS, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_22":
-			{
-				if ((player.getClassId() == ClassId.elvenWizard))
-				{
-					if (!hasQuestItems(player, MARK_OF_SCHOLAR))
-					{
+			case "REPLY_22": {
+				if ((player.getClassId() == ClassId.elvenWizard)) {
+					if (!hasQuestItems(player, MARK_OF_SCHOLAR)) {
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_LIFE))
-					{
+					if (!hasQuestItems(player, MARK_OF_LIFE)) {
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_SUMMONER))
-					{
+					if (!hasQuestItems(player, MARK_OF_SUMMONER)) {
 						giveItems(player, MARK_OF_SUMMONER, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_23":
-			{
-				if ((player.getClassId() == ClassId.oracle))
-				{
-					if (!hasQuestItems(player, MARK_OF_PILGRIM))
-					{
+			case "REPLY_23": {
+				if ((player.getClassId() == ClassId.oracle)) {
+					if (!hasQuestItems(player, MARK_OF_PILGRIM)) {
 						giveItems(player, MARK_OF_PILGRIM, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_LIFE))
-					{
+					if (!hasQuestItems(player, MARK_OF_LIFE)) {
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_HEALER))
-					{
+					if (!hasQuestItems(player, MARK_OF_HEALER)) {
 						giveItems(player, MARK_OF_HEALER, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_24":
-			{
-				if ((player.getClassId() == ClassId.palusKnight))
-				{
-					if (!hasQuestItems(player, MARK_OF_DUTY))
-					{
+			case "REPLY_24": {
+				if ((player.getClassId() == ClassId.palusKnight)) {
+					if (!hasQuestItems(player, MARK_OF_DUTY)) {
 						giveItems(player, MARK_OF_DUTY, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_FATE))
-					{
+					if (!hasQuestItems(player, MARK_OF_FATE)) {
 						giveItems(player, MARK_OF_FATE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_WITCHCRAFT))
-					{
+					if (!hasQuestItems(player, MARK_OF_WITCHCRAFT)) {
 						giveItems(player, MARK_OF_WITCHCRAFT, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_25":
-			{
-				if ((player.getClassId() == ClassId.palusKnight))
-				{
-					if (!hasQuestItems(player, MARK_OF_CHALLENGER))
-					{
+			case "REPLY_25": {
+				if ((player.getClassId() == ClassId.palusKnight)) {
+					if (!hasQuestItems(player, MARK_OF_CHALLENGER)) {
 						giveItems(player, MARK_OF_CHALLENGER, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_FATE))
-					{
+					if (!hasQuestItems(player, MARK_OF_FATE)) {
 						giveItems(player, MARK_OF_FATE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_DUELIST))
-					{
+					if (!hasQuestItems(player, MARK_OF_DUELIST)) {
 						giveItems(player, MARK_OF_DUELIST, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_26":
-			{
-				if ((player.getClassId() == ClassId.assassin))
-				{
-					if (!hasQuestItems(player, MARK_OF_SEEKER))
-					{
+			case "REPLY_26": {
+				if ((player.getClassId() == ClassId.assassin)) {
+					if (!hasQuestItems(player, MARK_OF_SEEKER)) {
 						giveItems(player, MARK_OF_SEEKER, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_FATE))
-					{
+					if (!hasQuestItems(player, MARK_OF_FATE)) {
 						giveItems(player, MARK_OF_FATE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_SEARCHER))
-					{
+					if (!hasQuestItems(player, MARK_OF_SEARCHER)) {
 						giveItems(player, MARK_OF_SEARCHER, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_27":
-			{
-				if ((player.getClassId() == ClassId.assassin))
-				{
-					if (!hasQuestItems(player, MARK_OF_SEEKER))
-					{
+			case "REPLY_27": {
+				if ((player.getClassId() == ClassId.assassin)) {
+					if (!hasQuestItems(player, MARK_OF_SEEKER)) {
 						giveItems(player, MARK_OF_SEEKER, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_FATE))
-					{
+					if (!hasQuestItems(player, MARK_OF_FATE)) {
 						giveItems(player, MARK_OF_FATE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_SAGITTARIUS))
-					{
+					if (!hasQuestItems(player, MARK_OF_SAGITTARIUS)) {
 						giveItems(player, MARK_OF_SAGITTARIUS, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_28":
-			{
-				if ((player.getClassId() == ClassId.darkWizard))
-				{
-					if (!hasQuestItems(player, MARK_OF_SCHOLAR))
-					{
+			case "REPLY_28": {
+				if ((player.getClassId() == ClassId.darkWizard)) {
+					if (!hasQuestItems(player, MARK_OF_SCHOLAR)) {
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_FATE))
-					{
+					if (!hasQuestItems(player, MARK_OF_FATE)) {
 						giveItems(player, MARK_OF_FATE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_MAGUS))
-					{
+					if (!hasQuestItems(player, MARK_OF_MAGUS)) {
 						giveItems(player, MARK_OF_MAGUS, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_29":
-			{
-				if ((player.getClassId() == ClassId.darkWizard))
-				{
-					if (!hasQuestItems(player, MARK_OF_SCHOLAR))
-					{
+			case "REPLY_29": {
+				if ((player.getClassId() == ClassId.darkWizard)) {
+					if (!hasQuestItems(player, MARK_OF_SCHOLAR)) {
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_FATE))
-					{
+					if (!hasQuestItems(player, MARK_OF_FATE)) {
 						giveItems(player, MARK_OF_FATE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_SUMMONER))
-					{
+					if (!hasQuestItems(player, MARK_OF_SUMMONER)) {
 						giveItems(player, MARK_OF_SUMMONER, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_30":
-			{
-				if ((player.getClassId() == ClassId.shillienOracle))
-				{
-					if (!hasQuestItems(player, MARK_OF_PILGRIM))
-					{
+			case "REPLY_30": {
+				if ((player.getClassId() == ClassId.shillienOracle)) {
+					if (!hasQuestItems(player, MARK_OF_PILGRIM)) {
 						giveItems(player, MARK_OF_PILGRIM, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_FATE))
-					{
+					if (!hasQuestItems(player, MARK_OF_FATE)) {
 						giveItems(player, MARK_OF_FATE, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_REFORMER))
-					{
+					if (!hasQuestItems(player, MARK_OF_REFORMER)) {
 						giveItems(player, MARK_OF_REFORMER, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_31":
-			{
-				if ((player.getClassId() == ClassId.orcRaider))
-				{
-					if (!hasQuestItems(player, MARK_OF_CHALLENGER))
-					{
+			case "REPLY_31": {
+				if ((player.getClassId() == ClassId.orcRaider)) {
+					if (!hasQuestItems(player, MARK_OF_CHALLENGER)) {
 						giveItems(player, MARK_OF_CHALLENGER, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_GLORY))
-					{
+					if (!hasQuestItems(player, MARK_OF_GLORY)) {
 						giveItems(player, MARK_OF_GLORY, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_CHAMPION))
-					{
+					if (!hasQuestItems(player, MARK_OF_CHAMPION)) {
 						giveItems(player, MARK_OF_CHAMPION, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_32":
-			{
-				if ((player.getClassId() == ClassId.orcMonk))
-				{
-					if (!hasQuestItems(player, MARK_OF_CHALLENGER))
-					{
+			case "REPLY_32": {
+				if ((player.getClassId() == ClassId.orcMonk)) {
+					if (!hasQuestItems(player, MARK_OF_CHALLENGER)) {
 						giveItems(player, MARK_OF_CHALLENGER, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_GLORY))
-					{
+					if (!hasQuestItems(player, MARK_OF_GLORY)) {
 						giveItems(player, MARK_OF_GLORY, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_DUELIST))
-					{
+					if (!hasQuestItems(player, MARK_OF_DUELIST)) {
 						giveItems(player, MARK_OF_DUELIST, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_33":
-			{
-				if ((player.getClassId() == ClassId.orcShaman))
-				{
-					if (!hasQuestItems(player, MARK_OF_PILGRIM))
-					{
+			case "REPLY_33": {
+				if ((player.getClassId() == ClassId.orcShaman)) {
+					if (!hasQuestItems(player, MARK_OF_PILGRIM)) {
 						giveItems(player, MARK_OF_PILGRIM, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_GLORY))
-					{
+					if (!hasQuestItems(player, MARK_OF_GLORY)) {
 						giveItems(player, MARK_OF_GLORY, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_LORD))
-					{
+					if (!hasQuestItems(player, MARK_OF_LORD)) {
 						giveItems(player, MARK_OF_LORD, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_34":
-			{
-				if ((player.getClassId() == ClassId.orcShaman))
-				{
-					if (!hasQuestItems(player, MARK_OF_PILGRIM))
-					{
+			case "REPLY_34": {
+				if ((player.getClassId() == ClassId.orcShaman)) {
+					if (!hasQuestItems(player, MARK_OF_PILGRIM)) {
 						giveItems(player, MARK_OF_PILGRIM, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_GLORY))
-					{
+					if (!hasQuestItems(player, MARK_OF_GLORY)) {
 						giveItems(player, MARK_OF_GLORY, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_WARSPIRIT))
-					{
+					if (!hasQuestItems(player, MARK_OF_WARSPIRIT)) {
 						giveItems(player, MARK_OF_WARSPIRIT, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_35":
-			{
-				if ((player.getClassId() == ClassId.scavenger))
-				{
-					if (!hasQuestItems(player, MARK_OF_GUILDSMAN))
-					{
+			case "REPLY_35": {
+				if ((player.getClassId() == ClassId.scavenger)) {
+					if (!hasQuestItems(player, MARK_OF_GUILDSMAN)) {
 						giveItems(player, MARK_OF_GUILDSMAN, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_PROSPERITY))
-					{
+					if (!hasQuestItems(player, MARK_OF_PROSPERITY)) {
 						giveItems(player, MARK_OF_PROSPERITY, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_SEARCHER))
-					{
+					if (!hasQuestItems(player, MARK_OF_SEARCHER)) {
 						giveItems(player, MARK_OF_SEARCHER, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "REPLY_36":
-			{
-				if ((player.getClassId() == ClassId.artisan))
-				{
-					if (!hasQuestItems(player, MARK_OF_GUILDSMAN))
-					{
+			case "REPLY_36": {
+				if ((player.getClassId() == ClassId.artisan)) {
+					if (!hasQuestItems(player, MARK_OF_GUILDSMAN)) {
 						giveItems(player, MARK_OF_GUILDSMAN, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_PROSPERITY))
-					{
+					if (!hasQuestItems(player, MARK_OF_PROSPERITY)) {
 						giveItems(player, MARK_OF_PROSPERITY, 1);
 					}
-					if (!hasQuestItems(player, MARK_OF_MAESTRO))
-					{
+					if (!hasQuestItems(player, MARK_OF_MAESTRO)) {
 						giveItems(player, MARK_OF_MAESTRO, 1);
 					}
 					htmltext = "31092-25.html";
 				}
 				break;
 			}
-			case "32487-04.html":
-			{
-				if (qs.isMemoState(1))
-				{
-					if (!npc.getVariables().getBoolean("SPAWNED", false))
-					{
+			case "32487-04.html": {
+				if (qs.isMemoState(1)) {
+					if (!npc.getVariables().getBoolean("SPAWNED", false)) {
 						npc.getVariables().set("SPAWNED", true);
 						npc.getVariables().set("PLAYER_ID", player.getObjectId());
 						final L2Npc pursuer = addSpawn(PURSUER, player.getX() + 50, player.getY() + 50, player.getZ(), 0, false, 0);
@@ -1051,23 +830,18 @@ public final class Q00060_GoodWorksReward extends Quest
 						pursuer.getVariables().set("player0", player);
 						addAttackDesire(pursuer, player);
 						htmltext = event;
-					}
-					else
-					{
+					} else {
 						htmltext = "32487-05.html";
 					}
 				}
 				break;
 			}
-			case "32487-10.html":
-			{
-				if (qs.isMemoState(7))
-				{
+			case "32487-10.html": {
+				if (qs.isMemoState(7)) {
 					takeItems(player, HELVETIAS_ANTIDOTE, 1);
 					qs.setMemoState(8);
 					qs.setCond(8, true);
-					if (npc.getVariables().getBoolean("SPAWNED", true))
-					{
+					if (npc.getVariables().getBoolean("SPAWNED", true)) {
 						npc.getVariables().set("SPAWNED", false);
 					}
 					htmltext = event;
@@ -1079,30 +853,22 @@ public final class Q00060_GoodWorksReward extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			if (qs.isMemoState(1))
-			{
-				if (killer.isPlayer())
-				{
-					if (killer.getObjectId() == npc.getVariables().getInt("PLAYER_ID", 0))
-					{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			if (qs.isMemoState(1)) {
+				if (killer.isPlayer()) {
+					if (killer.getObjectId() == npc.getVariables().getInt("PLAYER_ID", 0)) {
 						qs.setMemoState(2);
 						qs.setCond(2, true);
 						npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.YOU_ARE_STRONG_THIS_WAS_A_MISTAKE));
-					}
-					else
-					{
+					} else {
 						npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.WHO_ARE_YOU_TO_JOIN_IN_THE_BATTLE_HOW_UPSETTING));
 					}
 				}
 			}
 			final L2Npc npc0 = npc.getVariables().getObject("npc0", L2Npc.class);
-			if (npc0 != null)
-			{
+			if (npc0 != null) {
 				npc0.getVariables().set("SPAWNED", false);
 			}
 		}
@@ -1110,109 +876,67 @@ public final class Q00060_GoodWorksReward extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		final int memoState = qs.getMemoState();
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (npc.getId() == BLUEPRINT_SELLER_DAEGER)
-			{
-				if (player.getRace() != Race.KAMAEL)
-				{
-					if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP))
-					{
+		if (qs.isCreated()) {
+			if (npc.getId() == BLUEPRINT_SELLER_DAEGER) {
+				if (player.getRace() != Race.KAMAEL) {
+					if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP)) {
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? "31435-01.htm" : "31435-03.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "31435-04.htm";
 					}
-				}
-				else
-				{
+				} else {
 					htmltext = "31435-06.htm";
 				}
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case BLUEPRINT_SELLER_DAEGER:
-				{
-					if (memoState <= 2)
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case BLUEPRINT_SELLER_DAEGER: {
+					if (memoState <= 2) {
 						htmltext = "31435-08.html";
-					}
-					else if (memoState == 3)
-					{
+					} else if (memoState == 3) {
 						htmltext = "31435-09.html";
-					}
-					else if (memoState == 4)
-					{
+					} else if (memoState == 4) {
 						htmltext = "31435-11.html";
-					}
-					else if ((memoState > 4) && (memoState < 8))
-					{
+					} else if ((memoState > 4) && (memoState < 8)) {
 						htmltext = "31435-12.html";
-					}
-					else if (memoState == 8)
-					{
+					} else if (memoState == 8) {
 						htmltext = "31435-13.html";
-					}
-					else if (memoState == 9)
-					{
+					} else if (memoState == 9) {
 						qs.setMemoState(10);
 						qs.setCond(10, true);
 						htmltext = "31435-15.html";
-					}
-					else if (memoState == 10)
-					{
+					} else if (memoState == 10) {
 						htmltext = "31435-16.html";
 					}
 					break;
 				}
-				case GROCER_HELVERIA:
-				{
-					if (memoState == 4)
-					{
+				case GROCER_HELVERIA: {
+					if (memoState == 4) {
 						htmltext = "30081-01.html";
-					}
-					else if (memoState == 5)
-					{
+					} else if (memoState == 5) {
 						htmltext = "30081-04.html";
-					}
-					else if (memoState == 6)
-					{
+					} else if (memoState == 6) {
 						htmltext = "30081-08.html";
-					}
-					else if (memoState == 7)
-					{
-						if (!hasQuestItems(player, HELVETIAS_ANTIDOTE))
-						{
+					} else if (memoState == 7) {
+						if (!hasQuestItems(player, HELVETIAS_ANTIDOTE)) {
 							giveItems(player, HELVETIAS_ANTIDOTE, 1);
 							htmltext = "30081-09.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30081-10.html";
 						}
 					}
 					break;
 				}
-				case BLACK_MARKETEER_OF_MAMMON:
-				{
-					if (memoState == 10)
-					{
-						if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP))
-						{
+				case BLACK_MARKETEER_OF_MAMMON: {
+					if (memoState == 10) {
+						if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP)) {
 							qs.setMemoStateEx(1, 0);
 							htmltext = "31092-01.html";
-						}
-						else
-						{
+						} else {
 							giveItems(player, Inventory.ADENA_ID, THREE_MILLION);
 							qs.exitQuest(false, true);
 							htmltext = "31092-01a.html";
@@ -1220,56 +944,35 @@ public final class Q00060_GoodWorksReward extends Quest
 					}
 					break;
 				}
-				case MARK:
-				{
-					if (memoState == 1)
-					{
-						if (!npc.getVariables().getBoolean("SPAWNED", false))
-						{
+				case MARK: {
+					if (memoState == 1) {
+						if (!npc.getVariables().getBoolean("SPAWNED", false)) {
 							htmltext = "32487-01.html";
-						}
-						else if (npc.getVariables().getBoolean("SPAWNED", true) && (npc.getVariables().getInt("PLAYER_ID", 0) == player.getObjectId()))
-						{
+						} else if (npc.getVariables().getBoolean("SPAWNED", true) && (npc.getVariables().getInt("PLAYER_ID", 0) == player.getObjectId())) {
 							htmltext = "32487-03.html";
-						}
-						else if (npc.getVariables().getBoolean("SPAWNED", true))
-						{
+						} else if (npc.getVariables().getBoolean("SPAWNED", true)) {
 							htmltext = "32487-02.html";
 						}
-					}
-					else if (memoState == 2)
-					{
+					} else if (memoState == 2) {
 						giveItems(player, BLOODY_CLOTH_FRAGMENT, 1);
 						qs.setMemoState(3);
 						qs.setCond(3, true);
 						htmltext = "32487-06.html";
-					}
-					else if ((memoState >= 3) && (memoState < 7))
-					{
+					} else if ((memoState >= 3) && (memoState < 7)) {
 						htmltext = "32487-07.html";
-					}
-					else if (memoState == 7)
-					{
+					} else if (memoState == 7) {
 						htmltext = "32487-09.html";
 					}
 					break;
 				}
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == BLUEPRINT_SELLER_DAEGER)
-			{
+		} else if (qs.isCompleted()) {
+			if (npc.getId() == BLUEPRINT_SELLER_DAEGER) {
 				htmltext = getAlreadyCompletedMsg(player);
-			}
-			else if (npc.getId() == BLACK_MARKETEER_OF_MAMMON)
-			{
-				if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP))
-				{
+			} else if (npc.getId() == BLACK_MARKETEER_OF_MAMMON) {
+				if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP)) {
 					htmltext = "31092-23.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "31092-24.html";
 				}
 			}
@@ -1278,14 +981,11 @@ public final class Q00060_GoodWorksReward extends Quest
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		startQuestTimer("DESPAWN", 60000, npc, null);
 		final L2PcInstance player = npc.getVariables().getObject("player0", L2PcInstance.class);
-		if (player != null)
-		{
-			if (player.isPlayer())
-			{
+		if (player != null) {
+			if (player.isPlayer()) {
 				npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.S1_I_MUST_KILL_YOU_BLAME_YOUR_OWN_CURIOSITY).addStringParameter(player.getAppearance().getVisibleName()));
 			}
 		}

@@ -27,16 +27,13 @@ import com.l2jserver.gameserver.model.effects.EffectFlag;
  * Block Resurrection effect implementation.
  * @author UnAfraid
  */
-public final class BlockResurrection extends AbstractEffect
-{
-	public BlockResurrection(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class BlockResurrection extends AbstractEffect {
+	public BlockResurrection(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public int getEffectFlags()
-	{
+	public int getEffectFlags() {
 		return EffectFlag.BLOCK_RESURRECTION.getMask();
 	}
 }

@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.util.Util;
  * Test Of The Duelist (222)
  * @author ivantotov
  */
-public final class Q00222_TestOfTheDuelist extends Quest
-{
+public final class Q00222_TestOfTheDuelist extends Quest {
 	// NPC
 	private static final int DUELIST_KAIEN = 30623;
 	// Items
@@ -80,8 +79,7 @@ public final class Q00222_TestOfTheDuelist extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 39;
 	
-	public Q00222_TestOfTheDuelist()
-	{
+	public Q00222_TestOfTheDuelist() {
 		super(222, Q00222_TestOfTheDuelist.class.getSimpleName(), "Test Of The Duelist");
 		addStartNpc(DUELIST_KAIEN);
 		addTalkId(DUELIST_KAIEN);
@@ -90,21 +88,16 @@ public final class Q00222_TestOfTheDuelist extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "ACCEPT": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					qs.setMemoState(1);
 					giveItems(player, ORDER_GLUDIO, 1);
@@ -113,34 +106,24 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					giveItems(player, ORDER_OREN, 1);
 					giveItems(player, ORDER_ADEN, 1);
 					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
-					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
-					{
-						if (player.getClassId() == ClassId.palusKnight)
-						{
+					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0) {
+						if (player.getClassId() == ClassId.palusKnight) {
 							giveItems(player, DIMENSIONAL_DIAMOND, 104);
-						}
-						else
-						{
+						} else {
 							giveItems(player, DIMENSIONAL_DIAMOND, 72);
 						}
 						player.getVariables().set("2ND_CLASS_DIAMOND_REWARD", 1);
 						htmltext = "30623-07a.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "30623-07.htm";
 					}
 				}
 				break;
 			}
-			case "30623-04.htm":
-			{
-				if (player.getRace() != Race.ORC)
-				{
+			case "30623-04.htm": {
+				if (player.getRace() != Race.ORC) {
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30623-05.htm";
 				}
 				break;
@@ -151,19 +134,16 @@ public final class Q00222_TestOfTheDuelist extends Quest
 			case "30623-10.html":
 			case "30623-11.html":
 			case "30623-12.html":
-			case "30623-15.html":
-			{
+			case "30623-15.html": {
 				htmltext = event;
 				break;
 			}
-			case "30623-08.html":
-			{
+			case "30623-08.html": {
 				qs.setCond(2, true);
 				htmltext = event;
 				break;
 			}
-			case "30623-16.html":
-			{
+			case "30623-16.html": {
 				takeItems(player, PUNCHERS_SHARD, -1);
 				takeItems(player, NOBLE_ANTS_FEELER, -1);
 				takeItems(player, DEAD_SEEKER_FANG, -1);
@@ -190,23 +170,16 @@ public final class Q00222_TestOfTheDuelist extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case PUNCHER:
-				{
-					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_GLUDIO))
-					{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
+				case PUNCHER: {
+					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_GLUDIO)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, PUNCHERS_SHARD, 1, 10, 1.0, true) && (getQuestItemsCount(killer, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90))
-						{
-							if (i0 >= 9)
-							{
+						if (giveItemRandomly(killer, npc, PUNCHERS_SHARD, 1, 10, 1.0, true) && (getQuestItemsCount(killer, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90)) {
+							if (i0 >= 9) {
 								qs.setCond(3);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -214,16 +187,12 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case NOBLE_ANT_LEADER:
-				{
-					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_GLUDIO))
-					{
+				case NOBLE_ANT_LEADER: {
+					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_GLUDIO)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, NOBLE_ANTS_FEELER, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90))
-						{
-							if (i0 >= 9)
-							{
+						if (giveItemRandomly(killer, npc, NOBLE_ANTS_FEELER, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90)) {
+							if (i0 >= 9) {
 								qs.setCond(3);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -231,16 +200,12 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case DEAD_SEEKER:
-				{
-					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_DION))
-					{
+				case DEAD_SEEKER: {
+					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_DION)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, DEAD_SEEKER_FANG, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90))
-						{
-							if (i0 >= 9)
-							{
+						if (giveItemRandomly(killer, npc, DEAD_SEEKER_FANG, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90)) {
+							if (i0 >= 9) {
 								qs.setCond(3);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -248,17 +213,13 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case EXCURO:
-				{
+				case EXCURO: {
 					
-					if (qs.isMemoState(2) && hasQuestItems(killer, FINAL_ORDER))
-					{
+					if (qs.isMemoState(2) && hasQuestItems(killer, FINAL_ORDER)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, EXCUROS_SKIN, 1, 3, 1.0, true) && (getQuestItemsCount(killer, KRATORS_SHARD, LAKINS_MACE, GRANDIS_SKIN, TIMAK_ORCS_BELT) == 12))
-						{
-							if (i0 >= 5)
-							{
+						if (giveItemRandomly(killer, npc, EXCUROS_SKIN, 1, 3, 1.0, true) && (getQuestItemsCount(killer, KRATORS_SHARD, LAKINS_MACE, GRANDIS_SKIN, TIMAK_ORCS_BELT) == 12)) {
+							if (i0 >= 5) {
 								qs.setCond(5);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -266,16 +227,12 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case KRATOR:
-				{
-					if (qs.isMemoState(2) && hasQuestItems(killer, FINAL_ORDER))
-					{
+				case KRATOR: {
+					if (qs.isMemoState(2) && hasQuestItems(killer, FINAL_ORDER)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, KRATORS_SHARD, 1, 3, 1.0, true) && (getQuestItemsCount(killer, EXCUROS_SKIN, LAKINS_MACE, GRANDIS_SKIN, TIMAK_ORCS_BELT) == 12))
-						{
-							if (i0 >= 5)
-							{
+						if (giveItemRandomly(killer, npc, KRATORS_SHARD, 1, 3, 1.0, true) && (getQuestItemsCount(killer, EXCUROS_SKIN, LAKINS_MACE, GRANDIS_SKIN, TIMAK_ORCS_BELT) == 12)) {
+							if (i0 >= 5) {
 								qs.setCond(5);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -283,16 +240,12 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case MARSH_STAKATO_DRONE:
-				{
-					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_DION))
-					{
+				case MARSH_STAKATO_DRONE: {
+					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_DION)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, DRONES_CHITIN, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90))
-						{
-							if (i0 >= 9)
-							{
+						if (giveItemRandomly(killer, npc, DRONES_CHITIN, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90)) {
+							if (i0 >= 9) {
 								qs.setCond(3);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -300,16 +253,12 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case BREKA_ORC_OVERLORD:
-				{
-					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_GIRAN))
-					{
+				case BREKA_ORC_OVERLORD: {
+					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_GIRAN)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, OVERLORD_NECKLACE, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90))
-						{
-							if (i0 >= 9)
-							{
+						if (giveItemRandomly(killer, npc, OVERLORD_NECKLACE, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90)) {
+							if (i0 >= 9) {
 								qs.setCond(3);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -317,16 +266,12 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case FETTERED_SOUL:
-				{
-					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_GIRAN))
-					{
+				case FETTERED_SOUL: {
+					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_GIRAN)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, FETTERED_SOULS_CHAIN, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90))
-						{
-							if (i0 >= 9)
-							{
+						if (giveItemRandomly(killer, npc, FETTERED_SOULS_CHAIN, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90)) {
+							if (i0 >= 9) {
 								qs.setCond(3);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -334,16 +279,12 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case GRANDIS:
-				{
-					if (qs.isMemoState(2) && hasQuestItems(killer, FINAL_ORDER))
-					{
+				case GRANDIS: {
+					if (qs.isMemoState(2) && hasQuestItems(killer, FINAL_ORDER)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, GRANDIS_SKIN, 1, 3, 1.0, true) && (getQuestItemsCount(killer, EXCUROS_SKIN, KRATORS_SHARD, LAKINS_MACE, TIMAK_ORCS_BELT) == 12))
-						{
-							if (i0 >= 5)
-							{
+						if (giveItemRandomly(killer, npc, GRANDIS_SKIN, 1, 3, 1.0, true) && (getQuestItemsCount(killer, EXCUROS_SKIN, KRATORS_SHARD, LAKINS_MACE, TIMAK_ORCS_BELT) == 12)) {
+							if (i0 >= 5) {
 								qs.setCond(5);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -351,16 +292,12 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case ENCHANTED_MONSTEREYE:
-				{
-					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_OREN))
-					{
+				case ENCHANTED_MONSTEREYE: {
+					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_OREN)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, ENCHANTED_EYE_MEAT, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90))
-						{
-							if (i0 >= 9)
-							{
+						if (giveItemRandomly(killer, npc, ENCHANTED_EYE_MEAT, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90)) {
+							if (i0 >= 9) {
 								qs.setCond(3);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -368,16 +305,12 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case LETO_LIZARDMAN_OVERLORD:
-				{
-					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_OREN))
-					{
+				case LETO_LIZARDMAN_OVERLORD: {
+					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_OREN)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, CHIEDS_AMULET, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90))
-						{
-							if (i0 >= 9)
-							{
+						if (giveItemRandomly(killer, npc, CHIEDS_AMULET, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 90)) {
+							if (i0 >= 9) {
 								qs.setCond(3);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -385,16 +318,12 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case TIMAK_ORC_OVERLORD:
-				{
-					if (qs.isMemoState(2) && hasQuestItems(killer, FINAL_ORDER))
-					{
+				case TIMAK_ORC_OVERLORD: {
+					if (qs.isMemoState(2) && hasQuestItems(killer, FINAL_ORDER)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, TIMAK_ORCS_BELT, 1, 3, 1.0, true) && (getQuestItemsCount(killer, EXCUROS_SKIN, KRATORS_SHARD, LAKINS_MACE, GRANDIS_SKIN) == 12))
-						{
-							if (i0 >= 5)
-							{
+						if (giveItemRandomly(killer, npc, TIMAK_ORCS_BELT, 1, 3, 1.0, true) && (getQuestItemsCount(killer, EXCUROS_SKIN, KRATORS_SHARD, LAKINS_MACE, GRANDIS_SKIN) == 12)) {
+							if (i0 >= 5) {
 								qs.setCond(5);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -402,16 +331,12 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case TAMLIN_ORC:
-				{
-					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_ADEN))
-					{
+				case TAMLIN_ORC: {
+					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_ADEN)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, TAMRIN_ORCS_RING, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_ARROW) == 90))
-						{
-							if (i0 >= 9)
-							{
+						if (giveItemRandomly(killer, npc, TAMRIN_ORCS_RING, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_ARROW) == 90)) {
+							if (i0 >= 9) {
 								qs.setCond(3);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -419,16 +344,12 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case TAMLIN_ORC_ARCHER:
-				{
-					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_ADEN))
-					{
+				case TAMLIN_ORC_ARCHER: {
+					if (qs.isMemoState(1) && hasQuestItems(killer, ORDER_ADEN)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, TAMRIN_ORCS_ARROW, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING) == 90))
-						{
-							if (i0 >= 9)
-							{
+						if (giveItemRandomly(killer, npc, TAMRIN_ORCS_ARROW, 1, 10, 1.0, true) && (getQuestItemsCount(killer, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING) == 90)) {
+							if (i0 >= 9) {
 								qs.setCond(3);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -436,16 +357,12 @@ public final class Q00222_TestOfTheDuelist extends Quest
 					}
 					break;
 				}
-				case LAKIN:
-				{
-					if (qs.isMemoState(2) && hasQuestItems(killer, FINAL_ORDER))
-					{
+				case LAKIN: {
+					if (qs.isMemoState(2) && hasQuestItems(killer, FINAL_ORDER)) {
 						final int i0 = qs.getMemoStateEx(1);
 						qs.setMemoStateEx(1, i0 + 1);
-						if (giveItemRandomly(killer, npc, LAKINS_MACE, 1, 3, 1.0, true) && (getQuestItemsCount(killer, EXCUROS_SKIN, KRATORS_SHARD, GRANDIS_SKIN, TIMAK_ORCS_BELT) == 12))
-						{
-							if (i0 >= 5)
-							{
+						if (giveItemRandomly(killer, npc, LAKINS_MACE, 1, 3, 1.0, true) && (getQuestItemsCount(killer, EXCUROS_SKIN, KRATORS_SHARD, GRANDIS_SKIN, TIMAK_ORCS_BELT) == 12)) {
+							if (i0 >= 5) {
 								qs.setCond(5);
 							}
 							qs.setMemoStateEx(1, 0);
@@ -459,60 +376,39 @@ public final class Q00222_TestOfTheDuelist extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if ((player.getClassId() == ClassId.warrior) || (player.getClassId() == ClassId.elvenKnight) || (player.getClassId() == ClassId.palusKnight) || (player.getClassId() == ClassId.orcMonk))
-			{
-				if (player.getLevel() >= MIN_LEVEL)
-				{
+		if (qs.isCreated()) {
+			if ((player.getClassId() == ClassId.warrior) || (player.getClassId() == ClassId.elvenKnight) || (player.getClassId() == ClassId.palusKnight) || (player.getClassId() == ClassId.orcMonk)) {
+				if (player.getLevel() >= MIN_LEVEL) {
 					htmltext = "30623-03.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30623-01.html";
 				}
-			}
-			else
-			{
+			} else {
 				htmltext = "30623-02.html";
 			}
-		}
-		else if (qs.isStarted())
-		{
-			if (hasQuestItems(player, ORDER_GLUDIO, ORDER_DION, ORDER_GIRAN, ORDER_OREN, ORDER_ADEN))
-			{
-				if (getQuestItemsCount(player, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 100)
-				{
+		} else if (qs.isStarted()) {
+			if (hasQuestItems(player, ORDER_GLUDIO, ORDER_DION, ORDER_GIRAN, ORDER_OREN, ORDER_ADEN)) {
+				if (getQuestItemsCount(player, PUNCHERS_SHARD, NOBLE_ANTS_FEELER, DRONES_CHITIN, DEAD_SEEKER_FANG, OVERLORD_NECKLACE, FETTERED_SOULS_CHAIN, CHIEDS_AMULET, ENCHANTED_EYE_MEAT, TAMRIN_ORCS_RING, TAMRIN_ORCS_ARROW) == 100) {
 					htmltext = "30623-13.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30623-14.html";
 				}
-			}
-			else if (hasQuestItems(player, FINAL_ORDER))
-			{
-				if (getQuestItemsCount(player, EXCUROS_SKIN, KRATORS_SHARD, LAKINS_MACE, GRANDIS_SKIN, TIMAK_ORCS_BELT) == 15)
-				{
+			} else if (hasQuestItems(player, FINAL_ORDER)) {
+				if (getQuestItemsCount(player, EXCUROS_SKIN, KRATORS_SHARD, LAKINS_MACE, GRANDIS_SKIN, TIMAK_ORCS_BELT) == 15) {
 					giveAdena(player, 161806, true);
 					giveItems(player, MARK_OF_DUELIST, 1);
 					addExpAndSp(player, 894888, 61408);
 					qs.exitQuest(false, true);
 					player.sendPacket(new SocialAction(player.getObjectId(), 3));
 					htmltext = "30623-18.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30623-17.html";
 				}
 			}
-		}
-		else if (qs.isCompleted())
-		{
+		} else if (qs.isCompleted()) {
 			htmltext = getAlreadyCompletedMsg(player);
 		}
 		return htmltext;

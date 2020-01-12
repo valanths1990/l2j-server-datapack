@@ -37,11 +37,9 @@ import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
  * Polymorphing on attack monsters AI.
  * @author Slyce
  */
-public final class PolymorphingOnAttack extends AbstractNpcAI
-{
+public final class PolymorphingOnAttack extends AbstractNpcAI {
 	private static final Map<Integer, List<Integer>> MOBSPAWNS = new HashMap<>();
-	static
-	{
+	static {
 		MOBSPAWNS.put(21258, Arrays.asList(21259, 100, 100, -1)); // Fallen Orc Shaman -> Sharp Talon Tiger (always polymorphs)
 		MOBSPAWNS.put(21261, Arrays.asList(21262, 100, 20, 0)); // Ol Mahum Transcender 1st stage
 		MOBSPAWNS.put(21262, Arrays.asList(21263, 100, 10, 1)); // Ol Mahum Transcender 2nd stage
@@ -56,46 +54,36 @@ public final class PolymorphingOnAttack extends AbstractNpcAI
 		MOBSPAWNS.put(21533, Arrays.asList(21534, 100, 30, -1)); // Alliance of Splendor
 		MOBSPAWNS.put(21537, Arrays.asList(21538, 100, 30, -1)); // Fang of Splendor
 	}
-	protected static final NpcStringId[][] MOBTEXTS =
-	{
-		new NpcStringId[]
-		{
+	protected static final NpcStringId[][] MOBTEXTS = {
+		new NpcStringId[] {
 			NpcStringId.ENOUGH_FOOLING_AROUND_GET_READY_TO_DIE,
 			NpcStringId.YOU_IDIOT_IVE_JUST_BEEN_TOYING_WITH_YOU,
 			NpcStringId.NOW_THE_FUN_STARTS
 		},
-		new NpcStringId[]
-		{
+		new NpcStringId[] {
 			NpcStringId.I_MUST_ADMIT_NO_ONE_MAKES_MY_BLOOD_BOIL_QUITE_LIKE_YOU_DO,
 			NpcStringId.NOW_THE_BATTLE_BEGINS,
 			NpcStringId.WITNESS_MY_TRUE_POWER
 		},
-		new NpcStringId[]
-		{
+		new NpcStringId[] {
 			NpcStringId.PREPARE_TO_DIE,
 			NpcStringId.ILL_DOUBLE_MY_STRENGTH,
 			NpcStringId.YOU_HAVE_MORE_SKILL_THAN_I_THOUGHT
 		}
 	};
 	
-	private PolymorphingOnAttack()
-	{
+	private PolymorphingOnAttack() {
 		super(PolymorphingOnAttack.class.getSimpleName(), "ai/group_template");
 		addAttackId(MOBSPAWNS.keySet());
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if (npc.isVisible() && !npc.isDead())
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if (npc.isVisible() && !npc.isDead()) {
 			final List<Integer> tmp = MOBSPAWNS.get(npc.getId());
-			if (tmp != null)
-			{
-				if ((npc.getCurrentHp() <= ((npc.getMaxHp() * tmp.get(1)) / 100.0)) && (getRandom(100) < tmp.get(2)))
-				{
-					if (tmp.get(3) >= 0)
-					{
+			if (tmp != null) {
+				if ((npc.getCurrentHp() <= ((npc.getMaxHp() * tmp.get(1)) / 100.0)) && (getRandom(100) < tmp.get(2))) {
+					if (tmp.get(3) >= 0) {
 						NpcStringId npcString = MOBTEXTS[tmp.get(3)][getRandom(MOBTEXTS[tmp.get(3)].length)];
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), npcString));
 						
@@ -112,8 +100,7 @@ public final class PolymorphingOnAttack extends AbstractNpcAI
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new PolymorphingOnAttack();
 	}
 }

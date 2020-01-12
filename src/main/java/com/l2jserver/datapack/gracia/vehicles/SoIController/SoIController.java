@@ -22,26 +22,22 @@ import com.l2jserver.datapack.gracia.vehicles.AirShipController;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.VehiclePathPoint;
 
-public final class SoIController extends AirShipController
-{
+public final class SoIController extends AirShipController {
 	private static final int DOCK_ZONE = 50600;
 	private static final int LOCATION = 101;
 	private static final int CONTROLLER_ID = 32604;
 	
-	private static final VehiclePathPoint[] ARRIVAL =
-	{
+	private static final VehiclePathPoint[] ARRIVAL = {
 		new VehiclePathPoint(-214422, 211396, 5000, 280, 2000),
 		new VehiclePathPoint(-214422, 211396, 4422, 280, 2000)
 	};
 	
-	private static final VehiclePathPoint[] DEPART =
-	{
+	private static final VehiclePathPoint[] DEPART = {
 		new VehiclePathPoint(-214422, 211396, 5000, 280, 2000),
 		new VehiclePathPoint(-215877, 209709, 5000, 280, 2000)
 	};
 	
-	private static final VehiclePathPoint[][] TELEPORTS =
-	{
+	private static final VehiclePathPoint[][] TELEPORTS = {
 		{
 			new VehiclePathPoint(-214422, 211396, 5000, 280, 2000),
 			new VehiclePathPoint(-215877, 209709, 5000, 280, 2000),
@@ -54,14 +50,12 @@ public final class SoIController extends AirShipController
 		}
 	};
 	
-	private static final int[] FUEL =
-	{
+	private static final int[] FUEL = {
 		0,
 		50
 	};
 	
-	public SoIController()
-	{
+	public SoIController() {
 		super(-1, SoIController.class.getSimpleName(), "gracia/vehicles");
 		addStartNpc(CONTROLLER_ID);
 		addFirstTalkId(CONTROLLER_ID);

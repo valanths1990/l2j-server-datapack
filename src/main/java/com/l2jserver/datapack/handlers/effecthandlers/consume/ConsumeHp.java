@@ -30,12 +30,10 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class ConsumeHp extends AbstractEffect
-{
+public final class ConsumeHp extends AbstractEffect {
 	private final double _power;
 	
-	public ConsumeHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public ConsumeHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
@@ -43,18 +41,15 @@ public final class ConsumeHp extends AbstractEffect
 	}
 	
 	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		if (info.getEffected().isDead())
-		{
+	public boolean onActionTime(BuffInfo info) {
+		if (info.getEffected().isDead()) {
 			return false;
 		}
 		
 		final L2Character target = info.getEffected();
 		final double consume = _power * getTicksMultiplier();
 		double hp = target.getCurrentHp();
-		if ((consume < 0) && ((hp + consume) <= 0))
-		{
+		if ((consume < 0) && ((hp + consume) <= 0)) {
 			target.sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_HP);
 			return false;
 		}

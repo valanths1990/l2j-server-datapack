@@ -35,17 +35,14 @@ import com.l2jserver.gameserver.util.Util;
  * Sel Mahum Training Ground AI for drill groups.
  * @author GKR
  */
-public final class SelMahumDrill extends AbstractNpcAI
-{
-	private static final int[] MAHUM_CHIEFS =
-	{
+public final class SelMahumDrill extends AbstractNpcAI {
+	private static final int[] MAHUM_CHIEFS = {
 		22775, // Sel Mahum Drill Sergeant
 		22776, // Sel Mahum Training Officer
 		22778, // Sel Mahum Drill Sergeant
 	};
 	
-	private static final int[] MAHUM_SOLDIERS =
-	{
+	private static final int[] MAHUM_SOLDIERS = {
 		22780, // Sel Mahum Recruit
 		22782, // Sel Mahum Recruit
 		22783, // Sel Mahum Soldier
@@ -53,30 +50,26 @@ public final class SelMahumDrill extends AbstractNpcAI
 		22785, // Sel Mahum Soldier
 	};
 	
-	private static final int[] CHIEF_SOCIAL_ACTIONS =
-	{
+	private static final int[] CHIEF_SOCIAL_ACTIONS = {
 		1,
 		4,
 		5,
 		7
 	};
 	
-	private static final Actions[] SOLDIER_SOCIAL_ACTIONS =
-	{
+	private static final Actions[] SOLDIER_SOCIAL_ACTIONS = {
 		Actions.SCE_TRAINING_ACTION_A,
 		Actions.SCE_TRAINING_ACTION_B,
 		Actions.SCE_TRAINING_ACTION_C,
 		Actions.SCE_TRAINING_ACTION_D
 	};
 	
-	private static final NpcStringId[] CHIEF_FSTRINGS =
-	{
+	private static final NpcStringId[] CHIEF_FSTRINGS = {
 		NpcStringId.HOW_DARE_YOU_ATTACK_MY_RECRUITS,
 		NpcStringId.WHO_IS_DISRUPTING_THE_ORDER
 	};
 	
-	private static final NpcStringId[] SOLDIER_FSTRINGS =
-	{
+	private static final NpcStringId[] SOLDIER_FSTRINGS = {
 		NpcStringId.THE_DRILLMASTER_IS_DEAD,
 		NpcStringId.LINE_UP_THE_RANKS
 	};
@@ -84,8 +77,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 	// Chiefs event broadcast range
 	private static final int TRAINING_RANGE = 1000;
 	
-	private static enum Actions
-	{
+	private static enum Actions {
 		SCE_TRAINING_ACTION_A(4, -1, 2, 2333),
 		SCE_TRAINING_ACTION_B(1, -1, 2, 4333),
 		SCE_TRAINING_ACTION_C(6, 5, 4, 1000),
@@ -96,37 +88,31 @@ public final class SelMahumDrill extends AbstractNpcAI
 		private final int _repeatCount;
 		private final int _repeatInterval;
 		
-		private Actions(int socialActionId, int altSocialActionId, int repeatCount, int repeatInterval)
-		{
+		private Actions(int socialActionId, int altSocialActionId, int repeatCount, int repeatInterval) {
 			_socialActionId = socialActionId;
 			_altSocialActionId = altSocialActionId;
 			_repeatCount = repeatCount;
 			_repeatInterval = repeatInterval;
 		}
 		
-		protected int getSocialActionId()
-		{
+		protected int getSocialActionId() {
 			return _socialActionId;
 		}
 		
-		protected int getAltSocialActionId()
-		{
+		protected int getAltSocialActionId() {
 			return _altSocialActionId;
 		}
 		
-		protected int getRepeatCount()
-		{
+		protected int getRepeatCount() {
 			return _repeatCount;
 		}
 		
-		protected int getRepeatInterval()
-		{
+		protected int getRepeatInterval() {
 			return _repeatInterval;
 		}
 	}
 	
-	private SelMahumDrill()
-	{
+	private SelMahumDrill() {
 		super(SelMahumDrill.class.getSimpleName(), "ai/group_template");
 		
 		addAttackId(MAHUM_SOLDIERS);
@@ -140,21 +126,14 @@ public final class SelMahumDrill extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "do_social_action":
-			{
-				if ((npc != null) && !npc.isDead())
-				{
-					if (Util.contains(MAHUM_CHIEFS, npc.getId()))
-					{
-						if ((npc.getVariables().getInt("BUSY_STATE") == 0) && (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) && npc.staysInSpawnLoc())
-						{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "do_social_action": {
+				if ((npc != null) && !npc.isDead()) {
+					if (Util.contains(MAHUM_CHIEFS, npc.getId())) {
+						if ((npc.getVariables().getInt("BUSY_STATE") == 0) && (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) && npc.staysInSpawnLoc()) {
 							final int idx = getRandom(6);
-							if (idx <= (CHIEF_SOCIAL_ACTIONS.length - 1))
-							{
+							if (idx <= (CHIEF_SOCIAL_ACTIONS.length - 1)) {
 								npc.broadcastSocialAction(CHIEF_SOCIAL_ACTIONS[idx]);
 								npc.getVariables().set("SOCIAL_ACTION_NEXT_INDEX", idx); // Pass social action index to soldiers via script value
 								npc.broadcastEvent("do_social_action", TRAINING_RANGE, null);
@@ -162,32 +141,25 @@ public final class SelMahumDrill extends AbstractNpcAI
 						}
 						
 						startQuestTimer("do_social_action", 15000, npc, null);
-					}
-					else if (Util.contains(MAHUM_SOLDIERS, npc.getId()))
-					{
+					} else if (Util.contains(MAHUM_SOLDIERS, npc.getId())) {
 						handleSocialAction(npc, SOLDIER_SOCIAL_ACTIONS[npc.getVariables().getInt("SOCIAL_ACTION_NEXT_INDEX")], false);
 					}
 				}
 				break;
 			}
-			case "reset_busy_state":
-			{
-				if (npc != null)
-				{
+			case "reset_busy_state": {
+				if (npc != null) {
 					npc.getVariables().remove("BUSY_STATE");
 					npc.disableCoreAI(false);
 				}
 				break;
 			}
-			case "return_home":
-			{
-				for (int npcId : MAHUM_SOLDIERS)
-				{
-					for (L2Spawn npcSpawn : SpawnTable.getInstance().getSpawns(npcId))
-					{
+			case "return_home": {
+				for (int npcId : MAHUM_SOLDIERS) {
+					for (L2Spawn npcSpawn : SpawnTable.getInstance().getSpawns(npcId)) {
 						final L2Npc soldier = npcSpawn.getLastSpawn();
-						if ((soldier != null) && !soldier.isDead() && (npcSpawn.getName() != null) && npcSpawn.getName().startsWith("smtg_drill_group") && !soldier.staysInSpawnLoc() && ((soldier.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (soldier.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)))
-						{
+						if ((soldier != null) && !soldier.isDead() && (npcSpawn.getName() != null) && npcSpawn.getName().startsWith("smtg_drill_group") && !soldier.staysInSpawnLoc()
+							&& ((soldier.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (soldier.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE))) {
 							soldier.setHeading(npcSpawn.getHeading());
 							soldier.teleToLocation(npcSpawn.getLocation(), false);
 						}
@@ -200,42 +172,31 @@ public final class SelMahumDrill extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if (getRandom(10) < 1)
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if (getRandom(10) < 1) {
 			npc.broadcastEvent("ATTACKED", 1000, null);
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
 	@Override
-	public String onEventReceived(String eventName, L2Npc sender, L2Npc receiver, L2Object reference)
-	{
-		if ((receiver != null) && !receiver.isDead() && receiver.isInMySpawnGroup(sender))
-		{
-			switch (eventName)
-			{
-				case "do_social_action":
-				{
-					if (Util.contains(MAHUM_SOLDIERS, receiver.getId()))
-					{
+	public String onEventReceived(String eventName, L2Npc sender, L2Npc receiver, L2Object reference) {
+		if ((receiver != null) && !receiver.isDead() && receiver.isInMySpawnGroup(sender)) {
+			switch (eventName) {
+				case "do_social_action": {
+					if (Util.contains(MAHUM_SOLDIERS, receiver.getId())) {
 						final int actionIndex = sender.getVariables().getInt("SOCIAL_ACTION_NEXT_INDEX");
 						receiver.getVariables().set("SOCIAL_ACTION_NEXT_INDEX", actionIndex);
 						handleSocialAction(receiver, SOLDIER_SOCIAL_ACTIONS[actionIndex], true);
 					}
 					break;
 				}
-				case "CHIEF_DIED":
-				{
-					if (Util.contains(MAHUM_SOLDIERS, receiver.getId()))
-					{
-						if (getRandom(4) < 1)
-						{
+				case "CHIEF_DIED": {
+					if (Util.contains(MAHUM_SOLDIERS, receiver.getId())) {
+						if (getRandom(4) < 1) {
 							broadcastNpcSay(receiver, Say2.NPC_ALL, SOLDIER_FSTRINGS[getRandom(2)]);
 						}
-						if (receiver.canBeAttacked())
-						{
+						if (receiver.canBeAttacked()) {
 							((L2Attackable) receiver).clearAggroList();
 						}
 						receiver.disableCoreAI(true);
@@ -246,10 +207,8 @@ public final class SelMahumDrill extends AbstractNpcAI
 					}
 					break;
 				}
-				case "ATTACKED":
-				{
-					if (Util.contains(MAHUM_CHIEFS, receiver.getId()))
-					{
+				case "ATTACKED": {
+					if (Util.contains(MAHUM_CHIEFS, receiver.getId())) {
 						broadcastNpcSay(receiver, Say2.NPC_ALL, CHIEF_FSTRINGS[getRandom(2)]);
 					}
 					break;
@@ -260,22 +219,18 @@ public final class SelMahumDrill extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		npc.broadcastEvent("CHIEF_DIED", TRAINING_RANGE, null);
 		return null;
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
-		if (Util.contains(MAHUM_CHIEFS, npc.getId()))
-		{
+	public String onSpawn(L2Npc npc) {
+		if (Util.contains(MAHUM_CHIEFS, npc.getId())) {
 			startQuestTimer("do_social_action", 15000, npc, null);
 		}
 		
-		else if ((getRandom(18) < 1) && Util.contains(MAHUM_SOLDIERS, npc.getId()))
-		{
+		else if ((getRandom(18) < 1) && Util.contains(MAHUM_SOLDIERS, npc.getId())) {
 			npc.getVariables().set("SOCIAL_ACTION_ALT_BEHAVIOR", 1);
 		}
 		
@@ -284,37 +239,31 @@ public final class SelMahumDrill extends AbstractNpcAI
 		return super.onSpawn(npc);
 	}
 	
-	private void handleSocialAction(L2Npc npc, Actions action, boolean firstCall)
-	{
-		if ((npc.getVariables().getInt("BUSY_STATE") != 0) || (npc.getAI().getIntention() != CtrlIntention.AI_INTENTION_ACTIVE) || !npc.staysInSpawnLoc())
-		{
+	private void handleSocialAction(L2Npc npc, Actions action, boolean firstCall) {
+		if ((npc.getVariables().getInt("BUSY_STATE") != 0) || (npc.getAI().getIntention() != CtrlIntention.AI_INTENTION_ACTIVE) || !npc.staysInSpawnLoc()) {
 			return;
 		}
 		
 		final int socialActionId = (npc.getVariables().getInt("SOCIAL_ACTION_ALT_BEHAVIOR") == 0) ? action.getSocialActionId() : action.getAltSocialActionId();
 		
-		if (socialActionId < 0)
-		{
+		if (socialActionId < 0) {
 			return;
 		}
 		
-		if (firstCall)
-		{
+		if (firstCall) {
 			npc.getVariables().set("SOCIAL_ACTION_REMAINED_COUNT", action.getRepeatCount());
 		}
 		
 		npc.broadcastSocialAction(socialActionId);
 		
 		final int remainedCount = npc.getVariables().getInt("SOCIAL_ACTION_REMAINED_COUNT");
-		if (remainedCount > 0)
-		{
+		if (remainedCount > 0) {
 			npc.getVariables().set("SOCIAL_ACTION_REMAINED_COUNT", (remainedCount - 1));
 			startQuestTimer("do_social_action", action.getRepeatInterval(), npc, null);
 		}
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new SelMahumDrill();
 	}
 }

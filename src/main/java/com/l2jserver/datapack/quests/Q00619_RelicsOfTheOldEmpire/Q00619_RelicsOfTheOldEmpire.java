@@ -31,33 +31,27 @@ import com.l2jserver.gameserver.util.Util;
  * Relics of the Old Empire (619)
  * @author Adry_85, jurchiks
  */
-public final class Q00619_RelicsOfTheOldEmpire extends Quest
-{
-	private static final class DropInfo
-	{
+public final class Q00619_RelicsOfTheOldEmpire extends Quest {
+	private static final class DropInfo {
 		public final double _dropChance;
 		public final int _doubleItemChance;
 		public final boolean _dropEntrancePass;
 		
-		public DropInfo(double dropChance, int doubleItemChance, boolean dropEntrancePass)
-		{
+		public DropInfo(double dropChance, int doubleItemChance, boolean dropEntrancePass) {
 			_dropChance = dropChance;
 			_doubleItemChance = doubleItemChance;
 			_dropEntrancePass = dropEntrancePass;
 		}
 		
-		public double getDropChance()
-		{
+		public double getDropChance() {
 			return _dropChance;
 		}
 		
-		public int getDoubleItemChance()
-		{
+		public int getDoubleItemChance() {
 			return _doubleItemChance;
 		}
 		
-		public boolean getDropEntrancePass()
-		{
+		public boolean getDropEntrancePass() {
 			return _dropEntrancePass;
 		}
 	}
@@ -71,8 +65,7 @@ public final class Q00619_RelicsOfTheOldEmpire extends Quest
 	private static final int MIN_LEVEL = 74;
 	private static final int REQUIRED_RELIC_COUNT = 1000;
 	// Reward
-	private static final int[] RECIPES =
-	{
+	private static final int[] RECIPES = {
 		6881, // Recipe: Forgotten Blade (60%)
 		6883, // Recipe: Basalt Battlehammer (60%)
 		6885, // Recipe: Imperial Staff (60%)
@@ -86,8 +79,7 @@ public final class Q00619_RelicsOfTheOldEmpire extends Quest
 	};
 	// Mobs
 	private static final Map<Integer, DropInfo> MOBS = new HashMap<>();
-	static
-	{
+	static {
 		MOBS.put(21396, new DropInfo(0.51, 0, true)); // carrion_scarab
 		MOBS.put(21397, new DropInfo(0.50, 0, true)); // carrion_scarab_a
 		MOBS.put(21398, new DropInfo(0.95, 0, true)); // soldier_scarab
@@ -213,8 +205,7 @@ public final class Q00619_RelicsOfTheOldEmpire extends Quest
 	};
 	// @formatter:on
 	
-	public Q00619_RelicsOfTheOldEmpire()
-	{
+	public Q00619_RelicsOfTheOldEmpire() {
 		super(619, Q00619_RelicsOfTheOldEmpire.class.getSimpleName(), "Relics of the Old Empire");
 		addStartNpc(GHOST_OF_ADVENTURER);
 		addTalkId(GHOST_OF_ADVENTURER);
@@ -224,40 +215,32 @@ public final class Q00619_RelicsOfTheOldEmpire extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "31538-02.htm":
-			{
+		switch (event) {
+			case "31538-02.htm": {
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "31538-05.html":
-			{
+			case "31538-05.html": {
 				htmltext = event;
 				break;
 			}
-			case "31538-06.html":
-			{
-				if (st.getQuestItemsCount(BROKEN_RELIC_PART) >= REQUIRED_RELIC_COUNT)
-				{
+			case "31538-06.html": {
+				if (st.getQuestItemsCount(BROKEN_RELIC_PART) >= REQUIRED_RELIC_COUNT) {
 					st.rewardItems(RECIPES[getRandom(RECIPES.length)], 1);
 					st.takeItems(BROKEN_RELIC_PART, REQUIRED_RELIC_COUNT);
 					htmltext = event;
 				}
 				break;
 			}
-			case "31538-08.html":
-			{
+			case "31538-08.html": {
 				st.exitQuest(true, true);
 				htmltext = event;
 				break;
@@ -267,35 +250,26 @@ public final class Q00619_RelicsOfTheOldEmpire extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getRandomPartyMemberState(player, -1, 3, npc);
-		if (st != null)
-		{
+		if (st != null) {
 			int npcId = npc.getId();
-			if (Util.contains(ARCHON_OF_HALISHA, npcId))
-			{
+			if (Util.contains(ARCHON_OF_HALISHA, npcId)) {
 				final int itemCount = ((getRandom(100) < 79) ? 4 : 3);
 				st.giveItemRandomly(npc, BROKEN_RELIC_PART, itemCount, 0, 1.0, true);
-			}
-			else
-			{
+			} else {
 				final DropInfo info = MOBS.get(npcId);
 				final int itemCount;
 				
-				if (info.getDoubleItemChance() > 0)
-				{
+				if (info.getDoubleItemChance() > 0) {
 					itemCount = ((getRandom(100) < info.getDoubleItemChance()) ? 2 : 1);
-				}
-				else
-				{
+				} else {
 					itemCount = 1;
 				}
 				
 				st.giveItemRandomly(npc, BROKEN_RELIC_PART, itemCount, 0, info.getDropChance(), true);
 				
-				if (info.getDropEntrancePass())
-				{
+				if (info.getDropEntrancePass()) {
 					st.giveItemRandomly(npc, ENTRANCE_PASS_TO_THE_SEPULCHER, 1, 0, 1.0 / 30, false);
 				}
 			}
@@ -304,16 +278,12 @@ public final class Q00619_RelicsOfTheOldEmpire extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st.isCreated())
-		{
+		if (st.isCreated()) {
 			htmltext = ((player.getLevel() >= MIN_LEVEL) ? "31538-01.htm" : "31538-03.html");
-		}
-		else if (st.isStarted())
-		{
+		} else if (st.isStarted()) {
 			htmltext = ((getQuestItemsCount(player, BROKEN_RELIC_PART) >= REQUIRED_RELIC_COUNT) ? "31538-04.html" : "31538-07.html");
 		}
 		return htmltext;

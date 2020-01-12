@@ -32,12 +32,10 @@ import com.l2jserver.gameserver.network.serverpackets.Revive;
  * Consume Fake Death effect implementation.
  * @author mkizub
  */
-public final class ConsumeFakeDeath extends AbstractEffect
-{
+public final class ConsumeFakeDeath extends AbstractEffect {
 	private final double _power;
 	
-	public ConsumeFakeDeath(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public ConsumeFakeDeath(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
@@ -45,24 +43,20 @@ public final class ConsumeFakeDeath extends AbstractEffect
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.FAKE_DEATH;
 	}
 	
 	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		if (info.getEffected().isDead())
-		{
+	public boolean onActionTime(BuffInfo info) {
+		if (info.getEffected().isDead()) {
 			return false;
 		}
 		
 		final L2Character target = info.getEffected();
 		final double manaDam = _power * getTicksMultiplier();
 		
-		if ((manaDam < 0) && ((target.getCurrentMp() + manaDam) <= 0))
-		{
+		if ((manaDam < 0) && ((target.getCurrentMp() + manaDam) <= 0)) {
 			target.sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
 			return false;
 		}
@@ -72,10 +66,8 @@ public final class ConsumeFakeDeath extends AbstractEffect
 	}
 	
 	@Override
-	public void onExit(BuffInfo info)
-	{
-		if (info.getEffected().isPlayer())
-		{
+	public void onExit(BuffInfo info) {
+		if (info.getEffected().isPlayer()) {
 			info.getEffected().getActingPlayer().setIsFakeDeath(false);
 			info.getEffected().getActingPlayer().setRecentFakeDeath(true);
 		}
@@ -85,8 +77,7 @@ public final class ConsumeFakeDeath extends AbstractEffect
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		info.getEffected().startFakeDeath();
 	}
 }

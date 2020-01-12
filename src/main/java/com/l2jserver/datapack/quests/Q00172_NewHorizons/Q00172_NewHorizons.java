@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * New Horizons (172)
  * @author malyelfik
  */
-public class Q00172_NewHorizons extends Quest
-{
+public class Q00172_NewHorizons extends Quest {
 	// NPCs
 	private static final int ZENYA = 32140;
 	private static final int RAGARA = 32163;
@@ -42,25 +41,21 @@ public class Q00172_NewHorizons extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 3;
 	
-	public Q00172_NewHorizons()
-	{
+	public Q00172_NewHorizons() {
 		super(172, Q00172_NewHorizons.class.getSimpleName(), "New Horizons");
 		addStartNpc(ZENYA);
 		addTalkId(ZENYA, RAGARA);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "32140-04.htm":
 				st.startQuest();
 				break;
@@ -77,15 +72,12 @@ public class Q00172_NewHorizons extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ZENYA:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getRace() == Race.KAMAEL) ? (player.getLevel() >= MIN_LEVEL) ? "32140-01.htm" : "32140-02.htm" : "32140-03.htm";
 						break;
@@ -98,8 +90,7 @@ public class Q00172_NewHorizons extends Quest
 				}
 				break;
 			case RAGARA:
-				if (st.isStarted())
-				{
+				if (st.isStarted()) {
 					htmltext = "32163-01.html";
 				}
 				break;

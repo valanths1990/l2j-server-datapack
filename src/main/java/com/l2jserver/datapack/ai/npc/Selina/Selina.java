@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.skills.Skill;
  * Mercenary Medic Selina AI.
  * @author Zoey76
  */
-public final class Selina extends AbstractNpcAI
-{
+public final class Selina extends AbstractNpcAI {
 	// NPC
 	private static final int SELINA = 31556;
 	// Items
@@ -42,8 +41,7 @@ public final class Selina extends AbstractNpcAI
 	// Skills
 	private static final Map<String, BuffHolder> BUFFS = new HashMap<>();
 	
-	static
-	{
+	static {
 		BUFFS.put("4359", new BuffHolder(4359, 2, 2)); // Focus
 		BUFFS.put("4360", new BuffHolder(4360, 2, 2)); // Death Whisper
 		BUFFS.put("4345", new BuffHolder(4345, 3, 3)); // Might
@@ -54,8 +52,7 @@ public final class Selina extends AbstractNpcAI
 		BUFFS.put("4357", new BuffHolder(4357, 2, 6)); // Haste
 	}
 	
-	public Selina()
-	{
+	public Selina() {
 		super(Selina.class.getSimpleName(), "ai/npc");
 		addStartNpc(SELINA);
 		addTalkId(SELINA);
@@ -64,71 +61,54 @@ public final class Selina extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final BuffHolder buff = BUFFS.get(event);
-		if (buff != null)
-		{
-			if ((getQuestItemsCount(player, GOLDEN_RAM_COIN) >= buff.getCost()))
-			{
+		if (buff != null) {
+			if ((getQuestItemsCount(player, GOLDEN_RAM_COIN) >= buff.getCost())) {
 				castSkill(npc, player, buff);
 				return super.onAdvEvent(event, npc, player);
 			}
-		}
-		else
-		{
+		} else {
 			_log.warning(Selina.class.getSimpleName() + " AI: player " + player + " sent invalid bypass: " + event);
 		}
 		return "31556-02.html";
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final String htmltext;
-		if (hasQuestItems(player, GOLDEN_RAM_BADGE_SOLDIER))
-		{
+		if (hasQuestItems(player, GOLDEN_RAM_BADGE_SOLDIER)) {
 			htmltext = "31556-08.html";
-		}
-		else if (hasQuestItems(player, GOLDEN_RAM_BADGE_RECRUIT))
-		{
+		} else if (hasQuestItems(player, GOLDEN_RAM_BADGE_RECRUIT)) {
 			htmltext = "31556-01.html";
-		}
-		else
-		{
+		} else {
 			htmltext = "31556-09.html";
 		}
 		return htmltext;
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
-	{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill) {
 		final BuffHolder buff = BUFFS.get(Integer.toString(skill.getId()));
-		if (buff != null)
-		{
+		if (buff != null) {
 			takeItems(player, GOLDEN_RAM_COIN, buff.getCost());
 		}
 		return super.onSpellFinished(npc, player, skill);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Selina();
 	}
 	
-	private static class BuffHolder extends SkillHolder
-	{
+	private static class BuffHolder extends SkillHolder {
 		private final int _cost;
 		
-		public BuffHolder(int skillId, int skillLvl, int cost)
-		{
+		public BuffHolder(int skillId, int skillLvl, int cost) {
 			super(skillId, skillLvl);
 			_cost = cost;
 		}
 		
-		public int getCost()
-		{
+		public int getCost() {
 			return _cost;
 		}
 	}

@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.network.NpcStringId;
  * What Women Want (2)
  * @author malyelfik
  */
-public class Q00002_WhatWomenWant extends Quest
-{
+public class Q00002_WhatWomenWant extends Quest {
 	// NPCs
 	private static final int ARUJIEN = 30223;
 	private static final int MIRABEL = 30146;
@@ -47,8 +46,7 @@ public class Q00002_WhatWomenWant extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	
-	public Q00002_WhatWomenWant()
-	{
+	public Q00002_WhatWomenWant() {
 		super(2, Q00002_WhatWomenWant.class.getSimpleName(), "What Women Want");
 		addStartNpc(ARUJIEN);
 		addTalkId(ARUJIEN, MIRABEL, HERBIEL, GREENIS);
@@ -56,17 +54,14 @@ public class Q00002_WhatWomenWant extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30223-04.htm":
 				st.startQuest();
 				giveItems(player, ARUJIENS_LETTER1, 1);
@@ -94,21 +89,17 @@ public class Q00002_WhatWomenWant extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ARUJIEN:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = ((player.getRace() != Race.ELF) && (player.getRace() != Race.HUMAN)) ? "30223-00.htm" : (player.getLevel() >= MIN_LEVEL) ? "30223-02.htm" : "30223-01.html";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "30223-05.html";
 								break;
@@ -138,53 +129,39 @@ public class Q00002_WhatWomenWant extends Quest
 				}
 				break;
 			case MIRABEL:
-				if (st.isStarted())
-				{
-					if (st.isCond(1))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(1)) {
 						st.setCond(2, true);
 						takeItems(player, ARUJIENS_LETTER1, -1);
 						giveItems(player, ARUJIENS_LETTER2, 1);
 						htmltext = "30146-01.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30146-02.html";
 					}
 				}
 				break;
 			case HERBIEL:
-				if (st.isStarted() && (st.getCond() > 1))
-				{
-					if (st.isCond(2))
-					{
+				if (st.isStarted() && (st.getCond() > 1)) {
+					if (st.isCond(2)) {
 						st.setCond(3, true);
 						takeItems(player, ARUJIENS_LETTER2, -1);
 						giveItems(player, ARUJIENS_LETTER3, 1);
 						htmltext = "30150-01.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30150-02.html";
 					}
 				}
 				break;
 			case GREENIS:
-				if (st.isStarted())
-				{
-					if (st.isCond(4))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(4)) {
 						st.setCond(5, true);
 						takeItems(player, POETRY_BOOK, -1);
 						giveItems(player, GREENIS_LETTER, 1);
 						htmltext = "30157-02.html";
-					}
-					else if (st.isCond(5))
-					{
+					} else if (st.isCond(5)) {
 						htmltext = "30157-03.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30157-01.html";
 					}
 				}

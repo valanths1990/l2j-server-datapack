@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class DragonVortex extends AbstractNpcAI
-{
+public final class DragonVortex extends AbstractNpcAI {
 	// NPC
 	private static final int DRAGON_VORTEX = 32871;
 	// Raids
@@ -50,8 +49,7 @@ public final class DragonVortex extends AbstractNpcAI
 	private static final Location SPOT_3 = new Location(121637, 113657, -3792);
 	private static final Location SPOT_4 = new Location(109346, 111849, -3040);
 	
-	private DragonVortex()
-	{
+	private DragonVortex() {
 		super(DragonVortex.class.getSimpleName(), "ai/npc");
 		addStartNpc(DRAGON_VORTEX);
 		addFirstTalkId(DRAGON_VORTEX);
@@ -59,68 +57,45 @@ public final class DragonVortex extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "RAIDBOSS":
-			{
-				if (hasQuestItems(player, LARGE_DRAGON_BONE))
-				{
-					if (!npc.getVariables().getBoolean(I_QUEST0, false))
-					{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "RAIDBOSS": {
+				if (hasQuestItems(player, LARGE_DRAGON_BONE)) {
+					if (!npc.getVariables().getBoolean(I_QUEST0, false)) {
 						takeItems(player, LARGE_DRAGON_BONE, 1);
 						final int random = getRandom(100);
 						int raid = 0;
-						if (random < 3)
-						{
+						if (random < 3) {
 							raid = MUSCLE_BOMBER;
-						}
-						else if (random < 8)
-						{
+						} else if (random < 8) {
 							raid = SHADOW_SUMMONER;
-						}
-						else if (random < 15)
-						{
+						} else if (random < 15) {
 							raid = SPIKE_SLASHER;
-						}
-						else if (random < 25)
-						{
+						} else if (random < 25) {
 							raid = BLACKDAGGER_WING;
-						}
-						else if (random < 45)
-						{
+						} else if (random < 45) {
 							raid = BLEEDING_FLY;
-						}
-						else if (random < 67)
-						{
+						} else if (random < 67) {
 							raid = DUST_RIDER;
-						}
-						else
-						{
+						} else {
 							raid = EMERALD_HORN;
 						}
 						
 						Location LOC = null;
-						switch (npc.getX())
-						{
-							case 92225:
-							{
+						switch (npc.getX()) {
+							case 92225: {
 								LOC = SPOT_1;
 								break;
 							}
-							case 110116:
-							{
+							case 110116: {
 								LOC = SPOT_2;
 								break;
 							}
-							case 121172:
-							{
+							case 121172: {
 								LOC = SPOT_3;
 								break;
 							}
-							case 108924:
-							{
+							case 108924: {
 								LOC = SPOT_4;
 								break;
 							}
@@ -129,20 +104,15 @@ public final class DragonVortex extends AbstractNpcAI
 						npc.getVariables().set(I_QUEST0, true);
 						addSpawn(raid, LOC, false, 0, true);
 						startQuestTimer("CANSPAWN", 60000, npc, null);
-					}
-					else
-					{
+					} else {
 						return "32871-02.html";
 					}
-				}
-				else
-				{
+				} else {
 					return "32871-01.html";
 				}
 				break;
 			}
-			case "CANSPAWN":
-			{
+			case "CANSPAWN": {
 				npc.getVariables().set(I_QUEST0, false);
 				break;
 			}
@@ -150,8 +120,7 @@ public final class DragonVortex extends AbstractNpcAI
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DragonVortex();
 	}
 }

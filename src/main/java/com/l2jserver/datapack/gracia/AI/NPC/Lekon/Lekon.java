@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * Lekon AI.
  * @author St3eT
  */
-public final class Lekon extends AbstractNpcAI
-{
+public final class Lekon extends AbstractNpcAI {
 	// NPCs
 	private static final int LEKON = 32557;
 	// Items
@@ -40,8 +39,7 @@ public final class Lekon extends AbstractNpcAI
 	private static final int MIN_CLAN_LV = 5;
 	private static final int STONE_COUNT = 10;
 	
-	public Lekon()
-	{
+	public Lekon() {
 		super(Lekon.class.getSimpleName(), "gracia/AI/NPC");
 		addFirstTalkId(LEKON);
 		addTalkId(LEKON);
@@ -49,38 +47,25 @@ public final class Lekon extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
-			case "32557-01.html":
-			{
+		switch (event) {
+			case "32557-01.html": {
 				htmltext = event;
 				break;
 			}
-			case "licence":
-			{
+			case "licence": {
 				final L2Clan clan = player.getClan();
-				if ((clan == null) || !player.isClanLeader() || (clan.getLevel() < MIN_CLAN_LV))
-				{
+				if ((clan == null) || !player.isClanLeader() || (clan.getLevel() < MIN_CLAN_LV)) {
 					htmltext = "32557-02.html";
-				}
-				else if (hasAtLeastOneQuestItem(player, LICENCE))
-				{
+				} else if (hasAtLeastOneQuestItem(player, LICENCE)) {
 					htmltext = "32557-04.html";
-				}
-				else if (AirShipManager.getInstance().hasAirShipLicense(clan.getId()))
-				{
+				} else if (AirShipManager.getInstance().hasAirShipLicense(clan.getId())) {
 					player.sendPacket(SystemMessageId.THE_AIRSHIP_SUMMON_LICENSE_ALREADY_ACQUIRED);
-				}
-				else if (getQuestItemsCount(player, STONE) >= STONE_COUNT)
-				{
+				} else if (getQuestItemsCount(player, STONE) >= STONE_COUNT) {
 					takeItems(player, STONE, STONE_COUNT);
 					giveItems(player, LICENCE, 1);
-				}
-				else
-				{
+				} else {
 					htmltext = "32557-03.html";
 				}
 				break;

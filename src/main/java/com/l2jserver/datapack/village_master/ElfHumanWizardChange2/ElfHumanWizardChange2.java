@@ -28,11 +28,9 @@ import com.l2jserver.gameserver.model.base.ClassId;
  * Elf Human class transfer AI.
  * @author Adry_85
  */
-public final class ElfHumanWizardChange2 extends AbstractNpcAI
-{
+public final class ElfHumanWizardChange2 extends AbstractNpcAI {
 	// NPCs
-	private static int[] NPCS =
-	{
+	private static int[] NPCS = {
 		30115, // Jurek
 		30174, // Arkenias
 		30176, // Valleria
@@ -58,19 +56,16 @@ public final class ElfHumanWizardChange2 extends AbstractNpcAI
 	private static final int SPELLSINGER = 27;
 	private static final int ELEMENTAL_SUMMONER = 28;
 	
-	private ElfHumanWizardChange2()
-	{
+	private ElfHumanWizardChange2() {
 		super(ElfHumanWizardChange2.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "30115-02.htm": // master_lv3_hew003h
 			case "30115-03.htm": // master_lv3_hew006ha
 			case "30115-04.htm": // master_lv3_hew007ha
@@ -96,8 +91,7 @@ public final class ElfHumanWizardChange2 extends AbstractNpcAI
 			case "13":
 			case "14":
 			case "27":
-			case "28":
-			{
+			case "28": {
 				htmltext = ClassChangeRequested(player, Integer.valueOf(event));
 				break;
 			}
@@ -105,28 +99,18 @@ public final class ElfHumanWizardChange2 extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	private String ClassChangeRequested(L2PcInstance player, int classId)
-	{
+	private String ClassChangeRequested(L2PcInstance player, int classId) {
 		String htmltext = null;
-		if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP))
-		{
+		if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP)) {
 			htmltext = "30115-21.htm"; // fnYouAreThirdClass
-		}
-		else if ((classId == SORCERER) && (player.getClassId() == ClassId.wizard))
-		{
-			if (player.getLevel() < 40)
-			{
-				if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_MAGUS))
-				{
+		} else if ((classId == SORCERER) && (player.getClassId() == ClassId.wizard)) {
+			if (player.getLevel() < 40) {
+				if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_MAGUS)) {
 					htmltext = "30115-22.htm"; // fnLowLevel11
-				}
-				else
-				{
+				} else {
 					htmltext = "30115-23.htm"; // fnLowLevelNoProof11
 				}
-			}
-			else if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_MAGUS))
-			{
+			} else if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_MAGUS)) {
 				takeItems(player, -1, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_MAGUS);
 				player.setClassId(SORCERER);
 				player.setBaseClass(SORCERER);
@@ -134,27 +118,17 @@ public final class ElfHumanWizardChange2 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
 				htmltext = "30115-24.htm"; // fnAfterClassChange11
-			}
-			else
-			{
+			} else {
 				htmltext = "30115-25.htm"; // fnNoProof11
 			}
-		}
-		else if ((classId == NECROMANCER) && (player.getClassId() == ClassId.wizard))
-		{
-			if (player.getLevel() < 40)
-			{
-				if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_WITCHCRAFT))
-				{
+		} else if ((classId == NECROMANCER) && (player.getClassId() == ClassId.wizard)) {
+			if (player.getLevel() < 40) {
+				if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_WITCHCRAFT)) {
 					htmltext = "30115-26.htm"; // fnLowLevel12
-				}
-				else
-				{
+				} else {
 					htmltext = "30115-27.htm"; // fnLowLevelNoProof12
 				}
-			}
-			else if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_WITCHCRAFT))
-			{
+			} else if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_WITCHCRAFT)) {
 				takeItems(player, -1, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_WITCHCRAFT);
 				player.setClassId(NECROMANCER);
 				player.setBaseClass(NECROMANCER);
@@ -162,27 +136,17 @@ public final class ElfHumanWizardChange2 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
 				htmltext = "30115-28.htm"; // fnAfterClassChange12
-			}
-			else
-			{
+			} else {
 				htmltext = "30115-29.htm"; // fnNoProof12
 			}
-		}
-		else if ((classId == WARLOCK) && (player.getClassId() == ClassId.wizard))
-		{
-			if (player.getLevel() < 40)
-			{
-				if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_SUMMONER))
-				{
+		} else if ((classId == WARLOCK) && (player.getClassId() == ClassId.wizard)) {
+			if (player.getLevel() < 40) {
+				if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_SUMMONER)) {
 					htmltext = "30115-30.htm"; // fnLowLevel13
-				}
-				else
-				{
+				} else {
 					htmltext = "30115-31.htm"; // fnLowLevelNoProof13
 				}
-			}
-			else if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_SUMMONER))
-			{
+			} else if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_SUMMONER)) {
 				takeItems(player, -1, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_SUMMONER);
 				player.setClassId(WARLOCK);
 				player.setBaseClass(WARLOCK);
@@ -190,27 +154,17 @@ public final class ElfHumanWizardChange2 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
 				htmltext = "30115-32.htm"; // fnAfterClassChange13
-			}
-			else
-			{
+			} else {
 				htmltext = "30115-33.htm"; // fnNoProof13
 			}
-		}
-		else if ((classId == SPELLSINGER) && (player.getClassId() == ClassId.elvenWizard))
-		{
-			if (player.getLevel() < 40)
-			{
-				if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_LIFE, MARK_OF_MAGUS))
-				{
+		} else if ((classId == SPELLSINGER) && (player.getClassId() == ClassId.elvenWizard)) {
+			if (player.getLevel() < 40) {
+				if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_LIFE, MARK_OF_MAGUS)) {
 					htmltext = "30115-34.htm"; // fnLowLevel21
-				}
-				else
-				{
+				} else {
 					htmltext = "30115-35.htm"; // fnLowLevelNoProof21
 				}
-			}
-			else if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_LIFE, MARK_OF_MAGUS))
-			{
+			} else if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_LIFE, MARK_OF_MAGUS)) {
 				takeItems(player, -1, MARK_OF_SCHOLAR, MARK_OF_LIFE, MARK_OF_MAGUS);
 				player.setClassId(SPELLSINGER);
 				player.setBaseClass(SPELLSINGER);
@@ -218,27 +172,17 @@ public final class ElfHumanWizardChange2 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
 				htmltext = "30115-36.htm"; // fnAfterClassChange21
-			}
-			else
-			{
+			} else {
 				htmltext = "30115-37.htm"; // fnNoProof21
 			}
-		}
-		else if ((classId == ELEMENTAL_SUMMONER) && (player.getClassId() == ClassId.elvenWizard))
-		{
-			if (player.getLevel() < 40)
-			{
-				if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_LIFE, MARK_OF_SUMMONER))
-				{
+		} else if ((classId == ELEMENTAL_SUMMONER) && (player.getClassId() == ClassId.elvenWizard)) {
+			if (player.getLevel() < 40) {
+				if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_LIFE, MARK_OF_SUMMONER)) {
 					htmltext = "30115-38.htm"; // fnLowLevel22
-				}
-				else
-				{
+				} else {
 					htmltext = "30115-39.htm"; // fnLowLevelNoProof22
 				}
-			}
-			else if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_LIFE, MARK_OF_SUMMONER))
-			{
+			} else if (hasQuestItems(player, MARK_OF_SCHOLAR, MARK_OF_LIFE, MARK_OF_SUMMONER)) {
 				takeItems(player, -1, MARK_OF_SCHOLAR, MARK_OF_LIFE, MARK_OF_SUMMONER);
 				player.setClassId(ELEMENTAL_SUMMONER);
 				player.setBaseClass(ELEMENTAL_SUMMONER);
@@ -246,9 +190,7 @@ public final class ElfHumanWizardChange2 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
 				htmltext = "30115-40.htm"; // fnAfterClassChange22
-			}
-			else
-			{
+			} else {
 				htmltext = "30115-41.htm"; // fnNoProof22
 			}
 		}
@@ -256,38 +198,26 @@ public final class ElfHumanWizardChange2 extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (player.isInCategory(CategoryType.WIZARD_GROUP) && player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) && (player.isInCategory(CategoryType.HUMAN_MALL_CLASS) || player.isInCategory(CategoryType.ELF_MALL_CLASS)))
-		{
+		if (player.isInCategory(CategoryType.WIZARD_GROUP) && player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) && (player.isInCategory(CategoryType.HUMAN_MALL_CLASS) || player.isInCategory(CategoryType.ELF_MALL_CLASS))) {
 			htmltext = "30115-01.htm"; // fnYouAreFourthClass
-		}
-		else if (player.isInCategory(CategoryType.WIZARD_GROUP) && (player.isInCategory(CategoryType.HUMAN_MALL_CLASS) || player.isInCategory(CategoryType.ELF_MALL_CLASS)))
-		{
+		} else if (player.isInCategory(CategoryType.WIZARD_GROUP) && (player.isInCategory(CategoryType.HUMAN_MALL_CLASS) || player.isInCategory(CategoryType.ELF_MALL_CLASS))) {
 			final ClassId classId = player.getClassId();
-			if ((classId == ClassId.wizard) || (classId == ClassId.sorceror) || (classId == ClassId.necromancer) || (classId == ClassId.warlock))
-			{
+			if ((classId == ClassId.wizard) || (classId == ClassId.sorceror) || (classId == ClassId.necromancer) || (classId == ClassId.warlock)) {
 				htmltext = "30115-02.htm"; // fnClassList1
-			}
-			else if ((classId == ClassId.elvenWizard) || (classId == ClassId.spellsinger) || (classId == ClassId.elementalSummoner))
-			{
+			} else if ((classId == ClassId.elvenWizard) || (classId == ClassId.spellsinger) || (classId == ClassId.elementalSummoner)) {
 				htmltext = "30115-12.htm"; // fnClassList2
-			}
-			else
-			{
+			} else {
 				htmltext = "30115-19.htm"; // fnYouAreFirstClass
 			}
-		}
-		else
-		{
+		} else {
 			htmltext = "30115-20.htm"; // fnClassMismatch
 		}
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new ElfHumanWizardChange2();
 	}
 }

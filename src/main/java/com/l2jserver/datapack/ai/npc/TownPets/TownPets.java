@@ -30,11 +30,9 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Town Pets AI
  * @author malyelfik
  */
-public final class TownPets extends AbstractNpcAI
-{
+public final class TownPets extends AbstractNpcAI {
 	// Pet IDs
-	private static final int[] PETS =
-	{
+	private static final int[] PETS = {
 		31202, // Maximus
 		31203, // Moon Dancer
 		31204, // Georgio
@@ -49,21 +47,17 @@ public final class TownPets extends AbstractNpcAI
 		31955, // Ruby
 	};
 	
-	private TownPets()
-	{
+	private TownPets() {
 		super(TownPets.class.getSimpleName(), "ai/npc");
 		
-		if (general().allowPetWalkers())
-		{
+		if (general().allowPetWalkers()) {
 			addSpawnId(PETS);
 		}
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equalsIgnoreCase("move"))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.equalsIgnoreCase("move")) {
 			final int locX = (npc.getSpawn().getX() - 50) + getRandom(100);
 			final int locY = (npc.getSpawn().getY() - 50) + getRandom(100);
 			npc.setRunning();
@@ -74,14 +68,12 @@ public final class TownPets extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		startQuestTimer("move", 3000, npc, null);
 		return super.onSpawn(npc);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new TownPets();
 	}
 }

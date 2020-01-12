@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.skills.Skill;
  * Hot Springs AI.
  * @author Pandragon
  */
-public final class HotSprings extends AbstractNpcAI
-{
+public final class HotSprings extends AbstractNpcAI {
 	// NPCs
 	private static final int BANDERSNATCHLING = 21314;
 	private static final int FLAVA = 21316;
@@ -47,39 +46,31 @@ public final class HotSprings extends AbstractNpcAI
 	// Misc
 	private static final int DISEASE_CHANCE = 10;
 	
-	private HotSprings()
-	{
+	private HotSprings() {
 		super(HotSprings.class.getSimpleName(), "ai/group_template");
 		addAttackId(BANDERSNATCHLING, FLAVA, ATROXSPAWN, NEPENTHES, ATROX, BANDERSNATCH);
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if (getRandom(100) < DISEASE_CHANCE)
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if (getRandom(100) < DISEASE_CHANCE) {
 			tryToInfect(npc, attacker, MALARIA);
 		}
 		
-		if (getRandom(100) < DISEASE_CHANCE)
-		{
-			switch (npc.getId())
-			{
+		if (getRandom(100) < DISEASE_CHANCE) {
+			switch (npc.getId()) {
 				case BANDERSNATCHLING:
-				case ATROX:
-				{
+				case ATROX: {
 					tryToInfect(npc, attacker, RHEUMATISM);
 					break;
 				}
 				case FLAVA:
-				case NEPENTHES:
-				{
+				case NEPENTHES: {
 					tryToInfect(npc, attacker, CHOLERA);
 					break;
 				}
 				case ATROXSPAWN:
-				case BANDERSNATCH:
-				{
+				case BANDERSNATCH: {
 					tryToInfect(npc, attacker, FLU);
 					break;
 				}
@@ -88,21 +79,18 @@ public final class HotSprings extends AbstractNpcAI
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
-	private void tryToInfect(L2Npc npc, L2Character player, int diseaseId)
-	{
+	private void tryToInfect(L2Npc npc, L2Character player, int diseaseId) {
 		final BuffInfo info = player.getEffectList().getBuffInfoBySkillId(diseaseId);
 		final int skillLevel = (info == null) ? 1 : (info.getSkill().getLevel() < 10) ? info.getSkill().getLevel() + 1 : 10;
 		final Skill skill = SkillData.getInstance().getSkill(diseaseId, skillLevel);
 		
-		if ((skill != null) && !npc.isCastingNow() && npc.checkDoCastConditions(skill))
-		{
+		if ((skill != null) && !npc.isCastingNow() && npc.checkDoCastConditions(skill)) {
 			npc.setTarget(player);
 			npc.doCast(skill);
 		}
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new HotSprings();
 	}
 }

@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by zerghase.
  * @author malyelfik
  */
-public class Q00043_HelpTheSister extends Quest
-{
+public class Q00043_HelpTheSister extends Quest {
 	// NPCs
 	private static final int COOPER = 30829;
 	private static final int GALLADUCCI = 30097;
@@ -44,8 +43,7 @@ public class Q00043_HelpTheSister extends Quest
 	private static final int MAP = 7551;
 	private static final int PET_TICKET = 7584;
 	
-	public Q00043_HelpTheSister()
-	{
+	public Q00043_HelpTheSister() {
 		super(43, Q00043_HelpTheSister.class.getSimpleName(), "Help The Sister!");
 		addStartNpc(COOPER);
 		addTalkId(COOPER, GALLADUCCI);
@@ -54,51 +52,39 @@ public class Q00043_HelpTheSister extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30829-01.htm":
 				st.startQuest();
 				break;
 			case "30829-03.html":
-				if (st.hasQuestItems(CRAFTED_DAGGER))
-				{
+				if (st.hasQuestItems(CRAFTED_DAGGER)) {
 					st.takeItems(CRAFTED_DAGGER, 1);
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					htmltext = getNoQuestMsg(player);
 				}
 				break;
 			case "30829-06.html":
-				if (st.getQuestItemsCount(MAP_PIECE) == 30)
-				{
+				if (st.getQuestItemsCount(MAP_PIECE) == 30) {
 					st.takeItems(MAP_PIECE, -1);
 					st.giveItems(MAP, 1);
 					st.setCond(4, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "30829-06a.html";
 				}
 				break;
 			case "30097-02.html":
-				if (st.hasQuestItems(MAP))
-				{
+				if (st.hasQuestItems(MAP)) {
 					st.takeItems(MAP, -1);
 					st.setCond(5, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "30097-02a.html";
 				}
 				break;
@@ -111,19 +97,14 @@ public class Q00043_HelpTheSister extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		QuestState st = getQuestState(player, false);
 		
-		if ((st != null) && st.isCond(2))
-		{
+		if ((st != null) && st.isCond(2)) {
 			st.giveItems(MAP_PIECE, 1);
-			if (st.getQuestItemsCount(MAP_PIECE) == 30)
-			{
+			if (st.getQuestItemsCount(MAP_PIECE) == 30) {
 				st.setCond(3, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -131,21 +112,17 @@ public class Q00043_HelpTheSister extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case COOPER:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= 26) ? "30829-00.htm" : "30829-00a.html";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = (st.hasQuestItems(CRAFTED_DAGGER)) ? "30829-02.html" : "30829-02a.html";
 								break;
@@ -169,10 +146,8 @@ public class Q00043_HelpTheSister extends Quest
 				}
 				break;
 			case GALLADUCCI:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 4:
 							htmltext = "30097-01.html";
 							break;

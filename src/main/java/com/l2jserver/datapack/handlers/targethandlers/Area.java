@@ -34,14 +34,11 @@ import com.l2jserver.gameserver.util.Util;
 /**
  * @author UnAfraid
  */
-public class Area implements ITargetTypeHandler
-{
+public class Area implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<>();
-		if ((target == null) || (((target == activeChar) || target.isAlikeDead()) && (skill.getCastRange() >= 0)) || (!(target.isAttackable() || target.isPlayable())))
-		{
+		if ((target == null) || (((target == activeChar) || target.isAlikeDead()) && (skill.getCastRange() >= 0)) || (!(target.isAttackable() || target.isPlayable()))) {
 			activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 			return EMPTY_TARGET_LIST;
 		}
@@ -49,52 +46,40 @@ public class Area implements ITargetTypeHandler
 		final L2Character origin;
 		final boolean srcInArena = (activeChar.isInsideZone(ZoneId.PVP) && !activeChar.isInsideZone(ZoneId.SIEGE));
 		
-		if (skill.getCastRange() >= 0)
-		{
-			if (!Skill.checkForAreaOffensiveSkills(activeChar, target, skill, srcInArena))
-			{
+		if (skill.getCastRange() >= 0) {
+			if (!Skill.checkForAreaOffensiveSkills(activeChar, target, skill, srcInArena)) {
 				return EMPTY_TARGET_LIST;
 			}
 			
-			if (onlyFirst)
-			{
-				return new L2Character[]
-				{
+			if (onlyFirst) {
+				return new L2Character[] {
 					target
 				};
 			}
 			
 			origin = target;
 			targetList.add(origin); // Add target to target list
-		}
-		else
-		{
+		} else {
 			origin = activeChar;
 		}
 		
 		int maxTargets = skill.getAffectLimit();
 		final Collection<L2Character> objs = activeChar.getKnownList().getKnownCharacters();
-		for (L2Character obj : objs)
-		{
-			if (!(obj.isAttackable() || obj.isPlayable()))
-			{
+		for (L2Character obj : objs) {
+			if (!(obj.isAttackable() || obj.isPlayable())) {
 				continue;
 			}
 			
-			if (obj == origin)
-			{
+			if (obj == origin) {
 				continue;
 			}
 			
-			if (Util.checkIfInRange(skill.getAffectRange(), origin, obj, true))
-			{
-				if (!Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena))
-				{
+			if (Util.checkIfInRange(skill.getAffectRange(), origin, obj, true)) {
+				if (!Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena)) {
 					continue;
 				}
 				
-				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
-				{
+				if ((maxTargets > 0) && (targetList.size() >= maxTargets)) {
 					break;
 				}
 				
@@ -102,8 +87,7 @@ public class Area implements ITargetTypeHandler
 			}
 		}
 		
-		if (targetList.isEmpty())
-		{
+		if (targetList.isEmpty()) {
 			return EMPTY_TARGET_LIST;
 		}
 		
@@ -111,8 +95,7 @@ public class Area implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.AREA;
 	}
 }

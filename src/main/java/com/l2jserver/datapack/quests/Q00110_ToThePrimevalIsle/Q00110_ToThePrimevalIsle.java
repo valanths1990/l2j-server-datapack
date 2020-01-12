@@ -28,16 +28,14 @@ import com.l2jserver.gameserver.model.quest.State;
  * To the Primeval Isle (110)
  * @author Adry_85
  */
-public class Q00110_ToThePrimevalIsle extends Quest
-{
+public class Q00110_ToThePrimevalIsle extends Quest {
 	// NPCs
 	private static final int ANTON = 31338;
 	private static final int MARQUEZ = 32113;
 	// Item
 	private static final int ANCIENT_BOOK = 8777;
 	
-	public Q00110_ToThePrimevalIsle()
-	{
+	public Q00110_ToThePrimevalIsle() {
 		super(110, Q00110_ToThePrimevalIsle.class.getSimpleName(), "To the Primeval Isle");
 		addStartNpc(ANTON);
 		addTalkId(ANTON, MARQUEZ);
@@ -45,16 +43,13 @@ public class Q00110_ToThePrimevalIsle extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "31338-1.html":
 				st.giveItems(ANCIENT_BOOK, 1);
 				st.startQuest();
@@ -70,15 +65,12 @@ public class Q00110_ToThePrimevalIsle extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ANTON:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() < 75) ? "31338-0a.htm" : "31338-0b.htm";
 						break;
@@ -91,8 +83,7 @@ public class Q00110_ToThePrimevalIsle extends Quest
 				}
 				break;
 			case MARQUEZ:
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					htmltext = "32113-1.html";
 				}
 				break;

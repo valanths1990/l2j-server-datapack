@@ -28,28 +28,23 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 /**
  * @author UnAfraid
  */
-public class One implements ITargetTypeHandler
-{
+public class One implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		// Check for null target or any other invalid target
-		if ((target == null) || target.isDead() || ((target == activeChar) && skill.isBad()))
-		{
+		if ((target == null) || target.isDead() || ((target == activeChar) && skill.isBad())) {
 			activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 			return EMPTY_TARGET_LIST;
 		}
 		
 		// If a target is found, return it in a table else send a system message TARGET_IS_INCORRECT
-		return new L2Character[]
-		{
+		return new L2Character[] {
 			target
 		};
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.ONE;
 	}
 }

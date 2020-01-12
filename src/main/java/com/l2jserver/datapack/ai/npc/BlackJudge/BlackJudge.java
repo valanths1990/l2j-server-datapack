@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.network.serverpackets.EtcStatusUpdate;
  * Black Judge AI.
  * @author St3eT
  */
-public class BlackJudge extends AbstractNpcAI
-{
+public class BlackJudge extends AbstractNpcAI {
 	// NPC
 	private static final int BLACK_JUDGE = 30981;
 	// Misc
@@ -41,8 +40,7 @@ public class BlackJudge extends AbstractNpcAI
 	};
 	// @formatter:on
 	
-	private BlackJudge()
-	{
+	private BlackJudge() {
 		super(BlackJudge.class.getSimpleName(), "ai/npc");
 		addStartNpc(BLACK_JUDGE);
 		addTalkId(BLACK_JUDGE);
@@ -50,37 +48,27 @@ public class BlackJudge extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
 		final int level = ((player.getExpertiseLevel() < 5) ? player.getExpertiseLevel() : 5);
-		switch (event)
-		{
-			case "remove_info":
-			{
+		switch (event) {
+			case "remove_info": {
 				htmltext = "30981-0" + (level + 1) + ".html";
 				break;
 			}
-			case "remove_dp":
-			{
-				if (player.getDeathPenaltyBuffLevel() > 0)
-				{
+			case "remove_dp": {
+				if (player.getDeathPenaltyBuffLevel() > 0) {
 					int cost = COSTS[level];
 					
-					if (player.getAdena() >= cost)
-					{
+					if (player.getAdena() >= cost) {
 						takeItems(player, Inventory.ADENA_ID, cost);
 						player.setDeathPenaltyBuffLevel(player.getDeathPenaltyBuffLevel() - 1);
 						player.sendPacket(SystemMessageId.DEATH_PENALTY_LIFTED);
 						player.sendPacket(new EtcStatusUpdate(player));
-					}
-					else
-					{
+					} else {
 						htmltext = "30981-07.html";
 					}
-				}
-				else
-				{
+				} else {
 					htmltext = "30981-08.html";
 				}
 				break;
@@ -89,8 +77,7 @@ public class BlackJudge extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new BlackJudge();
 	}
 }

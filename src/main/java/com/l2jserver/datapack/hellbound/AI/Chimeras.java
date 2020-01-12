@@ -31,11 +31,9 @@ import com.l2jserver.gameserver.model.skills.Skill;
  * Chimeras AI.
  * @author DS
  */
-public final class Chimeras extends AbstractNpcAI
-{
+public final class Chimeras extends AbstractNpcAI {
 	// NPCs
-	private static final int[] NPCS =
-	{
+	private static final int[] NPCS = {
 		22349, // Chimera of Earth
 		22350, // Chimera of Darkness
 		22351, // Chimera of Wind
@@ -43,8 +41,7 @@ public final class Chimeras extends AbstractNpcAI
 	};
 	private static final int CELTUS = 22353;
 	// Locations
-	private static final Location[] LOCATIONS =
-	{
+	private static final Location[] LOCATIONS = {
 		new Location(3678, 233418, -3319),
 		new Location(2038, 237125, -3363),
 		new Location(7222, 240617, -2033),
@@ -57,8 +54,7 @@ public final class Chimeras extends AbstractNpcAI
 	private static final int LIFE_FORCE = 9681;
 	private static final int CONTAINED_LIFE_FORCE = 9682;
 	
-	public Chimeras()
-	{
+	public Chimeras() {
 		super(Chimeras.class.getSimpleName(), "hellbound/AI");
 		addSkillSeeId(NPCS);
 		addSpawnId(CELTUS);
@@ -66,13 +62,11 @@ public final class Chimeras extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		if (HellboundEngine.getInstance().getLevel() == 7) // Have random spawn points only in 7 lvl
 		{
 			final Location loc = LOCATIONS[getRandom(LOCATIONS.length)];
-			if (!npc.isInsideRadius(loc, 200, false, false))
-			{
+			if (!npc.isInsideRadius(loc, 200, false, false)) {
 				npc.getSpawn().setLocation(loc);
 				ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(npc, loc), 100);
 			}
@@ -81,32 +75,21 @@ public final class Chimeras extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
-	{
-		if ((skill.getId() == BOTTLE) && !npc.isDead())
-		{
-			if ((targets.length > 0) && (targets[0] == npc))
-			{
-				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.1))
-				{
-					if (HellboundEngine.getInstance().getLevel() == 7)
-					{
+	public final String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon) {
+		if ((skill.getId() == BOTTLE) && !npc.isDead()) {
+			if ((targets.length > 0) && (targets[0] == npc)) {
+				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.1)) {
+					if (HellboundEngine.getInstance().getLevel() == 7) {
 						HellboundEngine.getInstance().updateTrust(3, true);
 					}
 					
 					npc.setIsDead(true);
-					if (npc.getId() == CELTUS)
-					{
+					if (npc.getId() == CELTUS) {
 						npc.dropItem(caster, CONTAINED_LIFE_FORCE, 1);
-					}
-					else
-					{
-						if (getRandom(100) < 80)
-						{
+					} else {
+						if (getRandom(100) < 80) {
 							npc.dropItem(caster, DIM_LIFE_FORCE, 1);
-						}
-						else if (getRandom(100) < 80)
-						{
+						} else if (getRandom(100) < 80) {
 							npc.dropItem(caster, LIFE_FORCE, 1);
 						}
 					}
@@ -117,20 +100,17 @@ public final class Chimeras extends AbstractNpcAI
 		return super.onSkillSee(npc, caster, skill, targets, isSummon);
 	}
 	
-	private static class Teleport implements Runnable
-	{
+	private static class Teleport implements Runnable {
 		private final L2Npc _npc;
 		private final Location _loc;
 		
-		public Teleport(L2Npc npc, Location loc)
-		{
+		public Teleport(L2Npc npc, Location loc) {
 			_npc = npc;
 			_loc = loc;
 		}
 		
 		@Override
-		public void run()
-		{
+		public void run() {
 			_npc.teleToLocation(_loc, false);
 		}
 	}

@@ -34,10 +34,8 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 /**
  * @author NosBit
  */
-public class AdminScan implements IAdminCommandHandler
-{
-	private static final String[] ADMIN_COMMANDS =
-	{
+public class AdminScan implements IAdminCommandHandler {
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_scan",
 		"admin_deleteNpcByObjectId"
 	};
@@ -45,23 +43,16 @@ public class AdminScan implements IAdminCommandHandler
 	private static final int DEFAULT_RADIUS = 500;
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
-		switch (actualCommand.toLowerCase())
-		{
-			case "admin_scan":
-			{
+		switch (actualCommand.toLowerCase()) {
+			case "admin_scan": {
 				int radius = DEFAULT_RADIUS;
-				if (st.hasMoreElements())
-				{
-					try
-					{
+				if (st.hasMoreElements()) {
+					try {
 						radius = Integer.parseInt(st.nextToken());
-					}
-					catch (NumberFormatException e)
-					{
+					} catch (NumberFormatException e) {
 						activeChar.sendMessage("Usage: //scan [radius]");
 						return false;
 					}
@@ -70,22 +61,18 @@ public class AdminScan implements IAdminCommandHandler
 				sendNpcList(activeChar, radius);
 				break;
 			}
-			case "admin_deletenpcbyobjectid":
-			{
-				if (!st.hasMoreElements())
-				{
+			case "admin_deletenpcbyobjectid": {
+				if (!st.hasMoreElements()) {
 					activeChar.sendMessage("Usage: //deletenpcbyobjectid <object_id>");
 					return false;
 				}
 				
-				try
-				{
+				try {
 					int objectId = Integer.parseInt(st.nextToken());
 					
 					final L2Object target = L2World.getInstance().findObject(objectId);
 					final L2Npc npc = target instanceof L2Npc ? (L2Npc) target : null;
-					if (npc == null)
-					{
+					if (npc == null) {
 						activeChar.sendMessage("NPC does not exist or object_id does not belong to an NPC");
 						return false;
 					}
@@ -93,24 +80,18 @@ public class AdminScan implements IAdminCommandHandler
 					npc.deleteMe();
 					
 					final L2Spawn spawn = npc.getSpawn();
-					if (spawn != null)
-					{
+					if (spawn != null) {
 						spawn.stopRespawn();
 						
-						if (RaidBossSpawnManager.getInstance().isDefined(spawn.getId()))
-						{
+						if (RaidBossSpawnManager.getInstance().isDefined(spawn.getId())) {
 							RaidBossSpawnManager.getInstance().deleteSpawn(spawn, true);
-						}
-						else
-						{
+						} else {
 							SpawnTable.getInstance().deleteSpawn(spawn, true);
 						}
 					}
 					
 					activeChar.sendMessage(npc.getName() + " have been deleted.");
-				}
-				catch (NumberFormatException e)
-				{
+				} catch (NumberFormatException e) {
 					activeChar.sendMessage("object_id must be a number.");
 					return false;
 				}
@@ -122,15 +103,12 @@ public class AdminScan implements IAdminCommandHandler
 		return true;
 	}
 	
-	private void sendNpcList(L2PcInstance activeChar, int radius)
-	{
+	private void sendNpcList(L2PcInstance activeChar, int radius) {
 		final NpcHtmlMessage html = new NpcHtmlMessage();
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/scan.htm");
 		final StringBuilder sb = new StringBuilder();
-		for (L2Character character : activeChar.getKnownList().getKnownCharactersInRadius(radius))
-		{
-			if (character instanceof L2Npc)
-			{
+		for (L2Character character : activeChar.getKnownList().getKnownCharactersInRadius(radius)) {
+			if (character instanceof L2Npc) {
 				sb.append("<tr>");
 				sb.append("<td width=\"54\">" + character.getId() + "</td>");
 				sb.append("<td width=\"54\">" + character.getName() + "</td>");
@@ -145,8 +123,7 @@ public class AdminScan implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

@@ -36,8 +36,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.util.Util;
 
-public class L2NpcActionShift implements IActionShiftHandler
-{
+public class L2NpcActionShift implements IActionShiftHandler {
 	/**
 	 * Manage and Display the GM console to modify the L2NpcInstance (GM only).<BR>
 	 * <BR>
@@ -48,14 +47,17 @@ public class L2NpcActionShift implements IActionShiftHandler
 	 * <li>If L2NpcInstance is autoAttackable, send a Server->Client packet StatusUpdate to the L2PcInstance in order to update L2NpcInstance HP bar</li>
 	 * <li>Send a Server->Client NpcHtmlMessage() containing the GM console about this L2NpcInstance</li><BR>
 	 * <BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Each group of Server->Client packet must be terminated by a ActionFailed packet in order to avoid that client wait an other packet</B></FONT><BR> <BR> <B><U> Example of use </U> :</B><BR> <BR> <li>Client packet : Action</li><BR> <BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Each group of Server->Client packet must be terminated by a ActionFailed packet in order to avoid that client wait an other packet</B></FONT><BR>
+	 * <BR>
+	 * <B><U> Example of use </U> :</B><BR>
+	 * <BR>
+	 * <li>Client packet : Action</li><BR>
+	 * <BR>
 	 */
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
 		// Check if the L2PcInstance is a GM
-		if (activeChar.getAccessLevel().isGm())
-		{
+		if (activeChar.getAccessLevel().isGm()) {
 			// Set the target of the L2PcInstance activeChar
 			activeChar.setTarget(target);
 			
@@ -109,37 +111,26 @@ public class L2NpcActionShift implements IActionShiftHandler
 			html.replace("%ele_dholy%", String.valueOf(((L2Character) target).getDefenseElementValue(Elementals.HOLY)));
 			html.replace("%ele_ddark%", String.valueOf(((L2Character) target).getDefenseElementValue(Elementals.DARK)));
 			
-			if (((L2Npc) target).getSpawn() != null)
-			{
+			if (((L2Npc) target).getSpawn() != null) {
 				html.replace("%territory%", ((L2Npc) target).getSpawn().getSpawnTerritory() == null ? "None" : ((L2Npc) target).getSpawn().getSpawnTerritory().getName());
-				if (((L2Npc) target).getSpawn().isTerritoryBased())
-				{
+				if (((L2Npc) target).getSpawn().isTerritoryBased()) {
 					html.replace("%spawntype%", "Random");
 					final Location spawnLoc = ((L2Npc) target).getSpawn().getLocation(target);
 					html.replace("%spawn%", spawnLoc.getX() + " " + spawnLoc.getY() + " " + spawnLoc.getZ());
-				}
-				else
-				{
+				} else {
 					html.replace("%spawntype%", "Fixed");
 					html.replace("%spawn%", ((L2Npc) target).getSpawn().getX() + " " + ((L2Npc) target).getSpawn().getY() + " " + ((L2Npc) target).getSpawn().getZ());
 				}
 				html.replace("%loc2d%", String.valueOf((int) target.calculateDistance(((L2Npc) target).getSpawn().getLocation(target), false, false)));
 				html.replace("%loc3d%", String.valueOf((int) target.calculateDistance(((L2Npc) target).getSpawn().getLocation(target), true, false)));
-				if (((L2Npc) target).getSpawn().getRespawnMinDelay() == 0)
-				{
+				if (((L2Npc) target).getSpawn().getRespawnMinDelay() == 0) {
 					html.replace("%resp%", "None");
-				}
-				else if (((L2Npc) target).getSpawn().hasRespawnRandom())
-				{
+				} else if (((L2Npc) target).getSpawn().hasRespawnRandom()) {
 					html.replace("%resp%", String.valueOf(((L2Npc) target).getSpawn().getRespawnMinDelay() / 1000) + "-" + String.valueOf((((L2Npc) target).getSpawn().getRespawnMaxDelay() / 1000) + " sec"));
-				}
-				else
-				{
+				} else {
 					html.replace("%resp%", String.valueOf(((L2Npc) target).getSpawn().getRespawnMinDelay() / 1000) + " sec");
 				}
-			}
-			else
-			{
+			} else {
 				html.replace("%territory%", "<font color=FF0000>--</font>");
 				html.replace("%spawntype%", "<font color=FF0000>--</font>");
 				html.replace("%spawn%", "<font color=FF0000>null</font>");
@@ -148,8 +139,7 @@ public class L2NpcActionShift implements IActionShiftHandler
 				html.replace("%resp%", "<font color=FF0000>--</font>");
 			}
 			
-			if (((L2Npc) target).hasAI())
-			{
+			if (((L2Npc) target).hasAI()) {
 				Set<Integer> clans = ((L2Npc) target).getTemplate().getClans();
 				Set<Integer> ignoreClanNpcIds = ((L2Npc) target).getTemplate().getIgnoreClanNpcIds();
 				String clansString = clans != null ? Util.implode(clans.toArray(), ", ") : "";
@@ -159,10 +149,9 @@ public class L2NpcActionShift implements IActionShiftHandler
 				html.replace("%ai%", "<tr><td><table width=270 border=0><tr><td width=100><font color=FFAA00>AI</font></td><td align=right width=170>" + ((L2Npc) target).getAI().getClass().getSimpleName() + "</td></tr></table></td></tr>");
 				html.replace("%ai_type%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>AIType</font></td><td align=right width=170>" + String.valueOf(((L2Npc) target).getAiType()) + "</td></tr></table></td></tr>");
 				html.replace("%ai_clan%", "<tr><td><table width=270 border=0><tr><td width=100><font color=FFAA00>Clan & Range:</font></td><td align=right width=170>" + clansString + " " + String.valueOf(((L2Npc) target).getTemplate().getClanHelpRange()) + "</td></tr></table></td></tr>");
-				html.replace("%ai_enemy_clan%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>Ignore & Range:</font></td><td align=right width=170>" + ignoreClanNpcIdsString + " " + String.valueOf(((L2Npc) target).getTemplate().getAggroRange()) + "</td></tr></table></td></tr>");
-			}
-			else
-			{
+				html.replace("%ai_enemy_clan%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>Ignore & Range:</font></td><td align=right width=170>" + ignoreClanNpcIdsString + " " + String.valueOf(((L2Npc) target).getTemplate().getAggroRange())
+					+ "</td></tr></table></td></tr>");
+			} else {
 				html.replace("%ai_intention%", "");
 				html.replace("%ai%", "");
 				html.replace("%ai_type%", "");
@@ -171,20 +160,14 @@ public class L2NpcActionShift implements IActionShiftHandler
 			}
 			
 			final String routeName = WalkingManager.getInstance().getRouteName((L2Npc) target);
-			if (!routeName.isEmpty())
-			{
+			if (!routeName.isEmpty()) {
 				html.replace("%route%", "<tr><td><table width=270 border=0><tr><td width=100><font color=LEVEL>Route:</font></td><td align=right width=170>" + routeName + "</td></tr></table></td></tr>");
-			}
-			else
-			{
+			} else {
 				html.replace("%route%", "");
 			}
 			activeChar.sendPacket(html);
-		}
-		else if (npc().viewNpc())
-		{
-			if (!target.isNpc())
-			{
+		} else if (npc().viewNpc()) {
+			if (!target.isNpc()) {
 				return false;
 			}
 			activeChar.setTarget(target);
@@ -194,8 +177,7 @@ public class L2NpcActionShift implements IActionShiftHandler
 	}
 	
 	@Override
-	public InstanceType getInstanceType()
-	{
+	public InstanceType getInstanceType() {
 		return InstanceType.L2Npc;
 	}
 }

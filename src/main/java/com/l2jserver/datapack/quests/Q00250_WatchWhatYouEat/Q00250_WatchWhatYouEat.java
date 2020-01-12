@@ -30,13 +30,11 @@ import com.l2jserver.gameserver.model.quest.State;
  * @author Gnacik
  * @version 2010-08-05 Based on Freya PTS
  */
-public class Q00250_WatchWhatYouEat extends Quest
-{
+public class Q00250_WatchWhatYouEat extends Quest {
 	// NPCs
 	private static final int SALLY = 32743;
 	// Mobs - Items
-	private static final int[][] MOBS =
-	{
+	private static final int[][] MOBS = {
 		{
 			18864,
 			15493
@@ -51,44 +49,34 @@ public class Q00250_WatchWhatYouEat extends Quest
 		}
 	};
 	
-	public Q00250_WatchWhatYouEat()
-	{
+	public Q00250_WatchWhatYouEat() {
 		super(250, Q00250_WatchWhatYouEat.class.getSimpleName(), "Watch What You Eat");
 		addStartNpc(SALLY);
 		addFirstTalkId(SALLY);
 		addTalkId(SALLY);
-		for (int[] mob : MOBS)
-		{
+		for (int[] mob : MOBS) {
 			addKillId(mob[0]);
 		}
 		registerQuestItems(15493, 15494, 15495);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = getQuestState(player, false);
 		
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		if (npc.getId() == SALLY)
-		{
-			if (event.equalsIgnoreCase("32743-03.htm"))
-			{
+		if (npc.getId() == SALLY) {
+			if (event.equalsIgnoreCase("32743-03.htm")) {
 				st.startQuest();
-			}
-			else if (event.equalsIgnoreCase("32743-end.htm"))
-			{
+			} else if (event.equalsIgnoreCase("32743-end.htm")) {
 				st.giveAdena(135661, true);
 				st.addExpAndSp(698334, 76369);
 				st.exitQuest(false, true);
-			}
-			else if (event.equalsIgnoreCase("32743-22.html") && st.isCompleted())
-			{
+			} else if (event.equalsIgnoreCase("32743-22.html") && st.isCompleted()) {
 				htmltext = "32743-23.html";
 			}
 		}
@@ -96,10 +84,8 @@ public class Q00250_WatchWhatYouEat extends Quest
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (npc.getId() == SALLY)
-		{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+		if (npc.getId() == SALLY) {
 			return "32743-20.html";
 		}
 		
@@ -107,28 +93,21 @@ public class Q00250_WatchWhatYouEat extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
-		if (st.isStarted() && st.isCond(1))
-		{
-			for (int[] mob : MOBS)
-			{
-				if (npc.getId() == mob[0])
-				{
-					if (!st.hasQuestItems(mob[1]))
-					{
+		if (st.isStarted() && st.isCond(1)) {
+			for (int[] mob : MOBS) {
+				if (npc.getId() == mob[0]) {
+					if (!st.hasQuestItems(mob[1])) {
 						st.giveItems(mob[1], 1);
 						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 			}
-			if (st.hasQuestItems(MOBS[0][1]) && st.hasQuestItems(MOBS[1][1]) && st.hasQuestItems(MOBS[2][1]))
-			{
+			if (st.hasQuestItems(MOBS[0][1]) && st.hasQuestItems(MOBS[1][1]) && st.hasQuestItems(MOBS[2][1])) {
 				st.setCond(2, true);
 			}
 		}
@@ -136,34 +115,24 @@ public class Q00250_WatchWhatYouEat extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (npc.getId() == SALLY)
-		{
-			switch (st.getState())
-			{
+		if (npc.getId() == SALLY) {
+			switch (st.getState()) {
 				case State.CREATED:
 					htmltext = (player.getLevel() >= 82) ? "32743-01.htm" : "32743-00.htm";
 					break;
 				case State.STARTED:
-					if (st.isCond(1))
-					{
+					if (st.isCond(1)) {
 						htmltext = "32743-04.htm";
-					}
-					else if (st.isCond(2))
-					{
-						if (st.hasQuestItems(MOBS[0][1]) && st.hasQuestItems(MOBS[1][1]) && st.hasQuestItems(MOBS[2][1]))
-						{
+					} else if (st.isCond(2)) {
+						if (st.hasQuestItems(MOBS[0][1]) && st.hasQuestItems(MOBS[1][1]) && st.hasQuestItems(MOBS[2][1])) {
 							htmltext = "32743-05.htm";
-							for (int items[] : MOBS)
-							{
+							for (int items[] : MOBS) {
 								st.takeItems(items[1], -1);
 							}
-						}
-						else
-						{
+						} else {
 							htmltext = "32743-06.htm";
 						}
 					}

@@ -25,25 +25,20 @@ import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ChooseInventoryItem;
 
-public class EnchantScrolls implements IItemHandler
-{
+public class EnchantScrolls implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!playable.isPlayer())
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!playable.isPlayer()) {
 			playable.sendPacket(SystemMessageId.ITEM_NOT_FOR_PETS);
 			return false;
 		}
 		
 		final L2PcInstance activeChar = playable.getActingPlayer();
-		if (activeChar.isCastingNow())
-		{
+		if (activeChar.isCastingNow()) {
 			return false;
 		}
 		
-		if (activeChar.isEnchanting())
-		{
+		if (activeChar.isEnchanting()) {
 			activeChar.sendPacket(SystemMessageId.ENCHANTMENT_ALREADY_IN_PROGRESS);
 			return false;
 		}

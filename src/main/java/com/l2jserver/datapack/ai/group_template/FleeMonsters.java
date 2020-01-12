@@ -32,11 +32,9 @@ import com.l2jserver.gameserver.util.Util;
  * Flee Monsters AI.
  * @author Pandragon, NosBit
  */
-public final class FleeMonsters extends AbstractNpcAI
-{
+public final class FleeMonsters extends AbstractNpcAI {
 	// NPCs
-	private static final int[] MOBS =
-	{
+	private static final int[] MOBS = {
 		18150, // Victim
 		18151, // Victim
 		18152, // Victim
@@ -53,15 +51,13 @@ public final class FleeMonsters extends AbstractNpcAI
 	// Misc
 	private static final int FLEE_DISTANCE = 500;
 	
-	private FleeMonsters()
-	{
+	private FleeMonsters() {
 		super(FleeMonsters.class.getSimpleName(), "ai/group_template");
 		addAttackId(MOBS);
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		npc.disableCoreAI(true);
 		npc.setRunning();
 		
@@ -77,8 +73,7 @@ public final class FleeMonsters extends AbstractNpcAI
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new FleeMonsters();
 	}
 }

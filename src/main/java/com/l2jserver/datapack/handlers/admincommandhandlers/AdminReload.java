@@ -52,32 +52,26 @@ import com.l2jserver.gameserver.util.Util;
 /**
  * @author NosBit
  */
-public class AdminReload implements IAdminCommandHandler
-{
-	private static final String[] ADMIN_COMMANDS =
-	{
+public class AdminReload implements IAdminCommandHandler {
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_reload"
 	};
 	
 	private static final String RELOAD_USAGE = "Usage: //reload <config|access|npc|quest [quest_id|quest_name]|walker|htm[l] [file|directory]|multisell|buylist|teleport|skill|item|door|effect|handler|enchant|creationpoint>";
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
-		if (actualCommand.equalsIgnoreCase("admin_reload"))
-		{
-			if (!st.hasMoreTokens())
-			{
+		if (actualCommand.equalsIgnoreCase("admin_reload")) {
+			if (!st.hasMoreTokens()) {
 				AdminHtml.showAdminHtml(activeChar, "reload.htm");
 				activeChar.sendMessage(RELOAD_USAGE);
 				return true;
 			}
 			
 			final String type = st.nextToken();
-			switch (type.toLowerCase())
-			{
+			switch (type.toLowerCase()) {
 				case "config": {
 					if (st.hasMoreElements()) {
 						final var configName = st.nextToken();
@@ -108,164 +102,132 @@ public class AdminReload implements IAdminCommandHandler
 					}
 					break;
 				}
-				case "access":
-				{
+				case "access": {
 					AdminData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Access.");
 					break;
 				}
-				case "npc":
-				{
+				case "npc": {
 					NpcData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Npcs.");
 					break;
 				}
-				case "quest":
-				{
-					if (st.hasMoreElements())
-					{
+				case "quest": {
+					if (st.hasMoreElements()) {
 						String value = st.nextToken();
-						if (!Util.isDigit(value))
-						{
+						if (!Util.isDigit(value)) {
 							QuestManager.getInstance().reload(value);
 							AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Quest Name:" + value + ".");
-						}
-						else
-						{
+						} else {
 							final int questId = Integer.parseInt(value);
 							QuestManager.getInstance().reload(questId);
 							AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Quest ID:" + questId + ".");
 						}
-					}
-					else
-					{
+					} else {
 						QuestManager.getInstance().reloadAllScripts();
 						activeChar.sendMessage("All scripts have been reloaded.");
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Quests.");
 					}
 					break;
 				}
-				case "walker":
-				{
+				case "walker": {
 					WalkingManager.getInstance().load();
 					activeChar.sendMessage("All walkers have been reloaded");
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Walkers.");
 					break;
 				}
 				case "htm":
-				case "html":
-				{
-					if (st.hasMoreElements())
-					{
+				case "html": {
+					if (st.hasMoreElements()) {
 						final String path = st.nextToken();
 						final File file = new File(server().getDatapackRoot(), "data/html/" + path);
-						if (file.exists())
-						{
+						if (file.exists()) {
 							HtmCache.getInstance().reload(file);
 							AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Htm File:" + file.getName() + ".");
-						}
-						else
-						{
+						} else {
 							activeChar.sendMessage("File or Directory does not exist.");
 						}
-					}
-					else
-					{
+					} else {
 						HtmCache.getInstance().reload();
 						activeChar.sendMessage("Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " megabytes on " + HtmCache.getInstance().getLoadedFiles() + " files loaded");
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Htms.");
 					}
 					break;
 				}
-				case "multisell":
-				{
+				case "multisell": {
 					MultisellData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Multisells.");
 					break;
 				}
-				case "buylist":
-				{
+				case "buylist": {
 					BuyListData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Buylists.");
 					break;
 				}
-				case "teleport":
-				{
+				case "teleport": {
 					TeleportLocationTable.getInstance().reloadAll();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Teleports.");
 					break;
 				}
-				case "skill":
-				{
+				case "skill": {
 					SkillData.getInstance().reload();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Skills.");
 					break;
 				}
-				case "item":
-				{
+				case "item": {
 					ItemTable.getInstance().reload();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Items.");
 					break;
 				}
-				case "door":
-				{
+				case "door": {
 					DoorData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Doors.");
 					break;
 				}
-				case "zone":
-				{
+				case "zone": {
 					ZoneManager.getInstance().reload();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Zones.");
 					break;
 				}
-				case "cw":
-				{
+				case "cw": {
 					CursedWeaponsManager.getInstance().reload();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Cursed Weapons.");
 					break;
 				}
-				case "crest":
-				{
+				case "crest": {
 					CrestTable.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Crests.");
 					break;
 				}
-				case "effect":
-				{
+				case "effect": {
 					final File file = new File(server().getScriptRoot(), "com/l2jserver/datapack/handlers/EffectMasterHandler.java");
 					ScriptEngineManager.getInstance().compileScript(file);
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Effects.");
 					break;
 				}
-				case "handler":
-				{
+				case "handler": {
 					final File file = new File(server().getScriptRoot(), "com/l2jserver/datapack/handlers/MasterHandler.java");
 					ScriptEngineManager.getInstance().compileScript(file);
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Handlers.");
 					break;
 				}
-				case "enchant":
-				{
+				case "enchant": {
 					EnchantItemGroupsData.getInstance().load();
 					EnchantItemData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded item enchanting data.");
 					break;
 				}
-				case "transform":
-				{
+				case "transform": {
 					TransformData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded transform data.");
 					break;
 				}
-				case "creationpoint":
-				{
+				case "creationpoint": {
 					PlayerCreationPointData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded creation points data.");
 					break;
 				}
-				default:
-				{
+				default: {
 					activeChar.sendMessage(RELOAD_USAGE);
 					return true;
 				}
@@ -276,8 +238,7 @@ public class AdminReload implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 	

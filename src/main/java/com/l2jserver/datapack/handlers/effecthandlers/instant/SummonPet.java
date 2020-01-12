@@ -39,52 +39,43 @@ import com.l2jserver.gameserver.network.serverpackets.PetItemList;
  * Summon Pet effect implementation.
  * @author UnAfraid
  */
-public final class SummonPet extends AbstractEffect
-{
-	public SummonPet(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class SummonPet extends AbstractEffect {
+	public SummonPet(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if ((info.getEffector() == null) || (info.getEffected() == null) || !info.getEffector().isPlayer() || !info.getEffected().isPlayer() || info.getEffected().isAlikeDead())
-		{
+	public void onStart(BuffInfo info) {
+		if ((info.getEffector() == null) || (info.getEffected() == null) || !info.getEffector().isPlayer() || !info.getEffected().isPlayer() || info.getEffected().isAlikeDead()) {
 			return;
 		}
 		
 		final L2PcInstance player = info.getEffector().getActingPlayer();
 		
-		if ((player.hasSummon() || player.isMounted()))
-		{
+		if ((player.hasSummon() || player.isMounted())) {
 			player.sendPacket(SystemMessageId.YOU_ALREADY_HAVE_A_PET);
 			return;
 		}
 		
 		final PetItemHolder holder = player.removeScript(PetItemHolder.class);
-		if (holder == null)
-		{
+		if (holder == null) {
 			_log.log(Level.WARNING, "Summoning pet without attaching PetItemHandler!", new Throwable());
 			return;
 		}
 		
 		final L2ItemInstance item = holder.getItem();
-		if (player.getInventory().getItemByObjectId(item.getObjectId()) != item)
-		{
+		if (player.getInventory().getItemByObjectId(item.getObjectId()) != item) {
 			_log.log(Level.WARNING, "Player: " + player + " is trying to summon pet from item that he doesn't owns.");
 			return;
 		}
 		
 		final L2PetData petData = PetDataTable.getInstance().getPetDataByItemId(item.getId());
-		if ((petData == null) || (petData.getNpcId() == -1))
-		{
+		if ((petData == null) || (petData.getNpcId() == -1)) {
 			return;
 		}
 		
@@ -92,8 +83,7 @@ public final class SummonPet extends AbstractEffect
 		final L2PetInstance pet = L2PetInstance.spawnPet(npcTemplate, player, item);
 		
 		pet.setShowSummonAnimation(true);
-		if (!pet.isRespawned())
-		{
+		if (!pet.isRespawned()) {
 			pet.setCurrentHp(pet.getMaxHp());
 			pet.setCurrentMp(pet.getMaxMp());
 			pet.getStat().setExp(pet.getExpForThisLevel());
@@ -102,8 +92,7 @@ public final class SummonPet extends AbstractEffect
 		
 		pet.setRunning();
 		
-		if (!pet.isRespawned())
-		{
+		if (!pet.isRespawned()) {
 			pet.storeMe();
 		}
 		

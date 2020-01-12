@@ -35,16 +35,14 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by disKret.
  * @author Citizen
  */
-public class Q00626_ADarkTwilight extends Quest
-{
+public class Q00626_ADarkTwilight extends Quest {
 	// NPCs
 	private static final int HIERARCH = 31517;
 	// Items
 	private static final int BLOOD_OF_SAINT = 7169;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(21520, 641); // Eye of Splendor
 		MONSTERS.put(21523, 648); // Flash of Splendor
 		MONSTERS.put(21524, 692); // Blade of Splendor
@@ -68,8 +66,7 @@ public class Q00626_ADarkTwilight extends Quest
 	private static final int XP_COUNT = 162773;
 	private static final int SP_COUNT = 12500;
 	
-	public Q00626_ADarkTwilight()
-	{
+	public Q00626_ADarkTwilight() {
 		super(626, Q00626_ADarkTwilight.class.getSimpleName(), "A Dark Twilight");
 		addStartNpc(HIERARCH);
 		addTalkId(HIERARCH);
@@ -78,24 +75,20 @@ public class Q00626_ADarkTwilight extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "31517-05.html":
 				break;
 			case "31517-02.htm":
 				st.startQuest();
 				break;
 			case "Exp":
-				if (st.getQuestItemsCount(BLOOD_OF_SAINT) < ITEMS_COUNT_REQUIRED)
-				{
+				if (st.getQuestItemsCount(BLOOD_OF_SAINT) < ITEMS_COUNT_REQUIRED) {
 					return "31517-06.html";
 				}
 				st.addExpAndSp(XP_COUNT, SP_COUNT);
@@ -103,8 +96,7 @@ public class Q00626_ADarkTwilight extends Quest
 				htmltext = "31517-07.html";
 				break;
 			case "Adena":
-				if (st.getQuestItemsCount(BLOOD_OF_SAINT) < ITEMS_COUNT_REQUIRED)
-				{
+				if (st.getQuestItemsCount(BLOOD_OF_SAINT) < ITEMS_COUNT_REQUIRED) {
 					return "31517-06.html";
 				}
 				st.giveAdena(ADENA_COUNT, true);
@@ -119,22 +111,16 @@ public class Q00626_ADarkTwilight extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(killer, 1);
-		if (partyMember != null)
-		{
+		if (partyMember != null) {
 			final QuestState st = getQuestState(partyMember, false);
 			final double chance = MONSTERS.get(npc.getId()) * rates().getRateQuestDrop();
-			if (getRandom(1000) < chance)
-			{
+			if (getRandom(1000) < chance) {
 				st.giveItems(BLOOD_OF_SAINT, 1);
-				if (st.getQuestItemsCount(BLOOD_OF_SAINT) < ITEMS_COUNT_REQUIRED)
-				{
+				if (st.getQuestItemsCount(BLOOD_OF_SAINT) < ITEMS_COUNT_REQUIRED) {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-				}
-				else
-				{
+				} else {
 					st.setCond(2, true);
 				}
 			}
@@ -143,18 +129,15 @@ public class Q00626_ADarkTwilight extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= MIN_LEVEL_REQUIRED) ? "31517-01.htm" : "31517-00.htm";
 				break;
 			case State.STARTED:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 1:
 						htmltext = "31517-03.html";
 						break;

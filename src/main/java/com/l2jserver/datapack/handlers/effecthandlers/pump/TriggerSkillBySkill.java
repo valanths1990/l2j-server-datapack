@@ -38,8 +38,7 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
  * Trigger Skill By Skill effect implementation.
  * @author Zealar
  */
-public final class TriggerSkillBySkill extends AbstractEffect
-{
+public final class TriggerSkillBySkill extends AbstractEffect {
 	private final int _castSkillId;
 	private final int _chance;
 	private final SkillHolder _skill;
@@ -52,8 +51,7 @@ public final class TriggerSkillBySkill extends AbstractEffect
 	 * @param params
 	 */
 	
-	public TriggerSkillBySkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public TriggerSkillBySkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_castSkillId = params.getInt("castSkillId", 0);
@@ -62,57 +60,47 @@ public final class TriggerSkillBySkill extends AbstractEffect
 		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.ONE);
 	}
 	
-	public void onSkillUseEvent(OnCreatureSkillUse event)
-	{
-		if ((_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLvl() == 0) || (_castSkillId == 0)))
-		{
+	public void onSkillUseEvent(OnCreatureSkillUse event) {
+		if ((_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLvl() == 0) || (_castSkillId == 0))) {
 			return;
 		}
 		
-		if (_castSkillId != event.getSkill().getId())
-		{
+		if (_castSkillId != event.getSkill().getId()) {
 			return;
 		}
 		
 		final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(_targetType);
-		if (targetHandler == null)
-		{
+		if (targetHandler == null) {
 			_log.warning("Handler for target type: " + _targetType + " does not exist.");
 			return;
 		}
 		
-		if (Rnd.get(100) > _chance)
-		{
+		if (Rnd.get(100) > _chance) {
 			return;
 		}
 		
 		final Skill triggerSkill = _skill.getSkill();
 		final L2Object[] targets = targetHandler.getTargetList(triggerSkill, event.getCaster(), false, event.getTarget());
 		
-		for (L2Object triggerTarget : targets)
-		{
-			if ((triggerTarget == null) || !triggerTarget.isCharacter())
-			{
+		for (L2Object triggerTarget : targets) {
+			if ((triggerTarget == null) || !triggerTarget.isCharacter()) {
 				continue;
 			}
 			
 			final L2Character targetChar = (L2Character) triggerTarget;
-			if (!targetChar.isInvul())
-			{
+			if (!targetChar.isInvul()) {
 				event.getCaster().makeTriggerCast(triggerSkill, targetChar);
 			}
 		}
 	}
 	
 	@Override
-	public void onExit(BuffInfo info)
-	{
+	public void onExit(BuffInfo info) {
 		info.getEffected().removeListenerIf(EventType.ON_CREATURE_SKILL_USE, listener -> listener.getOwner() == this);
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		info.getEffected().addListener(new ConsumerEventListener(info.getEffected(), EventType.ON_CREATURE_SKILL_USE, (OnCreatureSkillUse event) -> onSkillUseEvent(event), this));
 	}
 }

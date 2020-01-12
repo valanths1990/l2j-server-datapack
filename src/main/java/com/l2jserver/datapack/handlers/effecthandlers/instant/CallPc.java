@@ -31,13 +31,11 @@ import com.l2jserver.gameserver.network.serverpackets.ConfirmDlg;
  * Call Pc effect implementation.
  * @author Adry_85
  */
-public final class CallPc extends AbstractEffect
-{
+public final class CallPc extends AbstractEffect {
 	private final int _itemId;
 	private final int _itemCount;
 	
-	public CallPc(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public CallPc(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_itemId = params.getInt("itemId", 0);
@@ -45,23 +43,19 @@ public final class CallPc extends AbstractEffect
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (info.getEffected() == info.getEffector())
-		{
+	public void onStart(BuffInfo info) {
+		if (info.getEffected() == info.getEffector()) {
 			return;
 		}
 		
 		L2PcInstance target = info.getEffected().getActingPlayer();
 		L2PcInstance activeChar = info.getEffector().getActingPlayer();
-		if (activeChar.canSummonTarget(target))
-		{
+		if (activeChar.canSummonTarget(target)) {
 			target.addScript(new SummonRequestHolder(activeChar, _itemId, _itemCount));
 			final ConfirmDlg confirm = new ConfirmDlg(SystemMessageId.C1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId());
 			confirm.addCharName(activeChar);

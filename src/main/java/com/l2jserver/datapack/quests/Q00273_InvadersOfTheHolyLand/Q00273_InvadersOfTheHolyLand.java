@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Invaders of the Holy Land (273)
  * @author xban1x
  */
-public final class Q00273_InvadersOfTheHolyLand extends Quest
-{
+public final class Q00273_InvadersOfTheHolyLand extends Quest {
 	// NPC
 	private static final int VARKEES = 30566;
 	// Items
@@ -43,8 +42,7 @@ public final class Q00273_InvadersOfTheHolyLand extends Quest
 	private static final int RED_SOULSTONE = 1476;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(20311, 90); // Rakeclaw Imp
 		MONSTERS.put(20312, 87); // Rakeclaw Imp Hunter
 		MONSTERS.put(20313, 77); // Rakeclaw Imp Chieftain
@@ -52,8 +50,7 @@ public final class Q00273_InvadersOfTheHolyLand extends Quest
 	// Misc
 	private static final int MIN_LVL = 6;
 	
-	public Q00273_InvadersOfTheHolyLand()
-	{
+	public Q00273_InvadersOfTheHolyLand() {
 		super(273, Q00273_InvadersOfTheHolyLand.class.getSimpleName(), "Invaders of the Holy Land");
 		addStartNpc(VARKEES);
 		addTalkId(VARKEES);
@@ -62,28 +59,22 @@ public final class Q00273_InvadersOfTheHolyLand extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
-				case "30566-04.htm":
-				{
+		if (st != null) {
+			switch (event) {
+				case "30566-04.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
 				}
-				case "30566-08.html":
-				{
+				case "30566-08.html": {
 					st.exitQuest(true, true);
 					htmltext = event;
 					break;
 				}
-				case "30566-09.html":
-				{
+				case "30566-09.html": {
 					htmltext = event;
 					break;
 				}
@@ -93,17 +84,12 @@ public final class Q00273_InvadersOfTheHolyLand extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if (st != null)
-		{
-			if (getRandom(100) <= MONSTERS.get(npc.getId()))
-			{
+		if (st != null) {
+			if (getRandom(100) <= MONSTERS.get(npc.getId())) {
 				st.giveItems(BLACK_SOULSTONE, 1);
-			}
-			else
-			{
+			} else {
 				st.giveItems(RED_SOULSTONE, 1);
 			}
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
@@ -112,30 +98,23 @@ public final class Q00273_InvadersOfTheHolyLand extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = null;
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getRace() == Race.ORC) ? (player.getLevel() >= MIN_LVL) ? "30566-03.htm" : "30566-02.htm" : "30566-01.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (hasAtLeastOneQuestItem(player, BLACK_SOULSTONE, RED_SOULSTONE))
-				{
+			case State.STARTED: {
+				if (hasAtLeastOneQuestItem(player, BLACK_SOULSTONE, RED_SOULSTONE)) {
 					final long black = st.getQuestItemsCount(BLACK_SOULSTONE);
 					final long red = st.getQuestItemsCount(RED_SOULSTONE);
 					st.giveAdena((red * 10) + (black * 3) + ((red > 0) ? (((red + black) >= 10) ? 1800 : 0) : ((black >= 10) ? 1500 : 0)), true);
 					takeItems(player, -1, BLACK_SOULSTONE, RED_SOULSTONE);
 					Q00281_HeadForTheHills.giveNewbieReward(player);
 					htmltext = (red > 0) ? "30566-07.html" : "30566-06.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30566-05.html";
 				}
 				break;

@@ -35,8 +35,7 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
  * Destroy Plague Carriers (316)
  * @author ivantotov
  */
-public final class Q00316_DestroyPlagueCarriers extends Quest
-{
+public final class Q00316_DestroyPlagueCarriers extends Quest {
 	// NPC
 	private static final int ELLENIA = 30155;
 	// Items
@@ -47,15 +46,13 @@ public final class Q00316_DestroyPlagueCarriers extends Quest
 	// Monsters
 	private static final int VAROOL_FOULCLAW = 27020;
 	private static final Map<Integer, ItemHolder> MONSTER_DROPS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTER_DROPS.put(20040, new ItemHolder(WERERAT_FANG, 5)); // Sukar Wererat
 		MONSTER_DROPS.put(20047, new ItemHolder(WERERAT_FANG, 5)); // Sukar Wererat Leader
 		MONSTER_DROPS.put(VAROOL_FOULCLAW, new ItemHolder(VAROOL_FOULCLAW_FANG, 7)); // Varool Foulclaw
 	}
 	
-	public Q00316_DestroyPlagueCarriers()
-	{
+	public Q00316_DestroyPlagueCarriers() {
 		super(316, Q00316_DestroyPlagueCarriers.class.getSimpleName(), "Destroy Plague Carriers");
 		addStartNpc(ELLENIA);
 		addTalkId(ELLENIA);
@@ -65,40 +62,32 @@ public final class Q00316_DestroyPlagueCarriers extends Quest
 	}
 	
 	@Override
-	public boolean checkPartyMember(QuestState qs, L2Npc npc)
-	{
+	public boolean checkPartyMember(QuestState qs, L2Npc npc) {
 		return ((npc.getId() != VAROOL_FOULCLAW) || !qs.hasQuestItems(VAROOL_FOULCLAW_FANG));
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "30155-04.htm":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "30155-04.htm": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					htmltext = event;
 				}
 				break;
 			}
-			case "30155-08.html":
-			{
+			case "30155-08.html": {
 				qs.exitQuest(true, true);
 				htmltext = event;
 				break;
 			}
-			case "30155-09.html":
-			{
+			case "30155-09.html": {
 				htmltext = event;
 				break;
 			}
@@ -107,10 +96,8 @@ public final class Q00316_DestroyPlagueCarriers extends Quest
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if (npc.isScriptValue(0))
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if (npc.isScriptValue(0)) {
 			npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.WHY_DO_YOU_OPPRESS_US_SO));
 			npc.setScriptValue(1);
 		}
@@ -118,11 +105,9 @@ public final class Q00316_DestroyPlagueCarriers extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, -1, 3, npc);
-		if (qs != null)
-		{
+		if (qs != null) {
 			final ItemHolder item = MONSTER_DROPS.get(npc.getId());
 			final int limit = (npc.getId() == VAROOL_FOULCLAW ? 1 : 0);
 			giveItemRandomly(qs.getPlayer(), npc, item.getId(), 1, limit, 10.0 / item.getCount(), true);
@@ -131,37 +116,25 @@ public final class Q00316_DestroyPlagueCarriers extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (player.getRace() != Race.ELF)
-			{
+		if (qs.isCreated()) {
+			if (player.getRace() != Race.ELF) {
 				htmltext = "30155-00.htm";
-			}
-			else if (player.getLevel() < MIN_LEVEL)
-			{
+			} else if (player.getLevel() < MIN_LEVEL) {
 				htmltext = "30155-02.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "30155-03.htm";
 			}
-		}
-		else if (qs.isStarted())
-		{
-			if (hasAtLeastOneQuestItem(player, getRegisteredItemIds()))
-			{
+		} else if (qs.isStarted()) {
+			if (hasAtLeastOneQuestItem(player, getRegisteredItemIds())) {
 				final long wererars = getQuestItemsCount(player, WERERAT_FANG);
 				final long foulclaws = getQuestItemsCount(player, VAROOL_FOULCLAW_FANG);
 				giveAdena(player, ((wererars * 30) + (foulclaws * 10000) + ((wererars + foulclaws) >= 10 ? 5000 : 0)), true);
 				takeItems(player, -1, getRegisteredItemIds());
 				htmltext = "30155-07.html";
-			}
-			else
-			{
+			} else {
 				htmltext = "30155-05.html";
 			}
 		}

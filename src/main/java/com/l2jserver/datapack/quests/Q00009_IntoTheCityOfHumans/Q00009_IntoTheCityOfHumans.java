@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Into the City of Humans (9)
  * @author malyelfik
  */
-public class Q00009_IntoTheCityOfHumans extends Quest
-{
+public class Q00009_IntoTheCityOfHumans extends Quest {
 	// NPCs
 	private static final int PETUKAI = 30583;
 	private static final int TANAPI = 30571;
@@ -41,25 +40,21 @@ public class Q00009_IntoTheCityOfHumans extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 3;
 	
-	public Q00009_IntoTheCityOfHumans()
-	{
+	public Q00009_IntoTheCityOfHumans() {
 		super(9, Q00009_IntoTheCityOfHumans.class.getSimpleName(), "Into the City of Humans");
 		addStartNpc(PETUKAI);
 		addTalkId(PETUKAI, TANAPI, TAMIL);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30583-04.htm":
 				st.startQuest();
 				break;
@@ -79,21 +74,17 @@ public class Q00009_IntoTheCityOfHumans extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case PETUKAI:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? (player.getRace() == Race.ORC) ? "30583-01.htm" : "30583-02.html" : "30583-03.html";
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
-						{
+						if (st.isCond(1)) {
 							htmltext = "30583-05.html";
 						}
 						break;
@@ -103,14 +94,12 @@ public class Q00009_IntoTheCityOfHumans extends Quest
 				}
 				break;
 			case TANAPI:
-				if (st.isStarted())
-				{
+				if (st.isStarted()) {
 					htmltext = (st.isCond(1)) ? "30571-01.html" : "30571-03.html";
 				}
 				break;
 			case TAMIL:
-				if (st.isStarted() && st.isCond(2))
-				{
+				if (st.isStarted() && st.isCond(2)) {
 					htmltext = "30576-01.html";
 				}
 				break;

@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.util.Util;
  * Path Of The Trooper (62)
  * @author ivantotov
  */
-public final class Q00062_PathOfTheTrooper extends Quest
-{
+public final class Q00062_PathOfTheTrooper extends Quest {
 	// NPCs
 	private static final int MASTER_SHUBAIN = 32194;
 	private static final int MASTER_GWAIN = 32197;
@@ -51,8 +50,7 @@ public final class Q00062_PathOfTheTrooper extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 18;
 	
-	public Q00062_PathOfTheTrooper()
-	{
+	public Q00062_PathOfTheTrooper() {
 		super(62, Q00062_PathOfTheTrooper.class.getSimpleName(), "Path Of The Trooper");
 		addStartNpc(MASTER_GWAIN);
 		addTalkId(MASTER_GWAIN, MASTER_SHUBAIN);
@@ -61,31 +59,24 @@ public final class Q00062_PathOfTheTrooper extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "ACCEPT": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					qs.setMemoState(1);
 					htmltext = "32197-06.htm";
 				}
 				break;
 			}
-			case "32194-02.html":
-			{
-				if (qs.isCond(1))
-				{
+			case "32194-02.html": {
+				if (qs.isCond(1)) {
 					qs.setMemoState(2);
 					qs.setCond(2, true);
 					htmltext = event;
@@ -97,49 +88,34 @@ public final class Q00062_PathOfTheTrooper extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case FELIM_LIZARDMAN_WARRIOR:
-				{
-					if (qs.isCond(2) && (getQuestItemsCount(killer, FELIM_LIZARDMAN_HEAD) < 5))
-					{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
+				case FELIM_LIZARDMAN_WARRIOR: {
+					if (qs.isCond(2) && (getQuestItemsCount(killer, FELIM_LIZARDMAN_HEAD) < 5)) {
 						giveItems(killer, FELIM_LIZARDMAN_HEAD, 1);
-						if (getQuestItemsCount(killer, FELIM_LIZARDMAN_HEAD) == 5)
-						{
+						if (getQuestItemsCount(killer, FELIM_LIZARDMAN_HEAD) == 5) {
 							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
+						} else {
 							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case VENOMOUS_SPIDER:
-				{
-					if (qs.isCond(3) && (getQuestItemsCount(killer, VENOMOUS_SPIDERS_LEG) < 10))
-					{
+				case VENOMOUS_SPIDER: {
+					if (qs.isCond(3) && (getQuestItemsCount(killer, VENOMOUS_SPIDERS_LEG) < 10)) {
 						giveItems(killer, VENOMOUS_SPIDERS_LEG, 1);
-						if (getQuestItemsCount(killer, VENOMOUS_SPIDERS_LEG) == 10)
-						{
+						if (getQuestItemsCount(killer, VENOMOUS_SPIDERS_LEG) == 10) {
 							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
+						} else {
 							playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case TUMRAN_BUGBEAR:
-				{
-					if (qs.isCond(5) && !hasQuestItems(killer, TUMRAN_BUGBEAR_HEART) && (getRandom(1000) < 500))
-					{
+				case TUMRAN_BUGBEAR: {
+					if (qs.isCond(5) && !hasQuestItems(killer, TUMRAN_BUGBEAR_HEART) && (getRandom(1000) < 500)) {
 						giveItems(killer, TUMRAN_BUGBEAR_HEART, 1);
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
@@ -151,84 +127,56 @@ public final class Q00062_PathOfTheTrooper extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
 		
-		if (qs.isCreated())
-		{
-			if (npc.getId() == MASTER_GWAIN)
-			{
-				if (player.getRace() == Race.KAMAEL)
-				{
-					if (player.getClassId() == ClassId.maleSoldier)
-					{
-						if (player.getLevel() >= MIN_LEVEL)
-						{
+		if (qs.isCreated()) {
+			if (npc.getId() == MASTER_GWAIN) {
+				if (player.getRace() == Race.KAMAEL) {
+					if (player.getClassId() == ClassId.maleSoldier) {
+						if (player.getLevel() >= MIN_LEVEL) {
 							htmltext = "32197-01.htm";
-						}
-						else
-						{
+						} else {
 							htmltext = "32197-02.html";
 						}
-					}
-					else
-					{
+					} else {
 						htmltext = "32197-03.html";
 					}
-				}
-				else
-				{
+				} else {
 					htmltext = "32197-04.html";
 				}
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case MASTER_GWAIN:
-				{
-					switch (qs.getCond())
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case MASTER_GWAIN: {
+					switch (qs.getCond()) {
 						case 1:
 						case 2:
-						case 3:
-						{
+						case 3: {
 							htmltext = "32197-07.html";
 							break;
 						}
-						case 4:
-						{
+						case 4: {
 							takeItems(player, SHUBAINS_RECOMMENDATION, 1);
 							qs.setMemoState(5);
 							qs.setCond(5, true);
 							htmltext = "32197-08.html";
 							break;
 						}
-						case 5:
-						{
-							if (!hasQuestItems(player, TUMRAN_BUGBEAR_HEART))
-							{
+						case 5: {
+							if (!hasQuestItems(player, TUMRAN_BUGBEAR_HEART)) {
 								htmltext = "32197-09.html";
-							}
-							else
-							{
+							} else {
 								giveAdena(player, 163800, true);
 								takeItems(player, TUMRAN_BUGBEAR_HEART, 1);
 								giveItems(player, GWAINS_RECOMMENDATION, 1);
 								final int level = player.getLevel();
-								if (level >= 20)
-								{
+								if (level >= 20) {
 									addExpAndSp(player, 320534, 20848);
-								}
-								else if (level == 19)
-								{
+								} else if (level == 19) {
 									addExpAndSp(player, 456128, 27546);
-								}
-								else
-								{
+								} else {
 									addExpAndSp(player, 591724, 34244);
 								}
 								qs.exitQuest(false, true);
@@ -241,23 +189,16 @@ public final class Q00062_PathOfTheTrooper extends Quest
 					}
 					break;
 				}
-				case MASTER_SHUBAIN:
-				{
-					switch (qs.getCond())
-					{
-						case 1:
-						{
+				case MASTER_SHUBAIN: {
+					switch (qs.getCond()) {
+						case 1: {
 							htmltext = "32194-01.html";
 							break;
 						}
-						case 2:
-						{
-							if (getQuestItemsCount(player, FELIM_LIZARDMAN_HEAD) < 5)
-							{
+						case 2: {
+							if (getQuestItemsCount(player, FELIM_LIZARDMAN_HEAD) < 5) {
 								htmltext = "32194-03.html";
-							}
-							else
-							{
+							} else {
 								takeItems(player, FELIM_LIZARDMAN_HEAD, -1);
 								qs.setMemoState(3);
 								qs.setCond(3, true);
@@ -265,14 +206,10 @@ public final class Q00062_PathOfTheTrooper extends Quest
 							}
 							break;
 						}
-						case 3:
-						{
-							if (getQuestItemsCount(player, VENOMOUS_SPIDERS_LEG) < 10)
-							{
+						case 3: {
+							if (getQuestItemsCount(player, VENOMOUS_SPIDERS_LEG) < 10) {
 								htmltext = "32194-05.html";
-							}
-							else
-							{
+							} else {
 								takeItems(player, VENOMOUS_SPIDERS_LEG, -1);
 								giveItems(player, SHUBAINS_RECOMMENDATION, 1);
 								qs.setMemoState(4);
@@ -281,8 +218,7 @@ public final class Q00062_PathOfTheTrooper extends Quest
 							}
 							break;
 						}
-						case 4:
-						{
+						case 4: {
 							htmltext = "32194-07.html";
 							break;
 						}
@@ -290,11 +226,8 @@ public final class Q00062_PathOfTheTrooper extends Quest
 					break;
 				}
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == MASTER_GWAIN)
-			{
+		} else if (qs.isCompleted()) {
+			if (npc.getId() == MASTER_GWAIN) {
 				htmltext = "32197-05.html";
 			}
 		}

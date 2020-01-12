@@ -33,62 +33,42 @@ import com.l2jserver.gameserver.util.Util;
  * This class handles following admin commands: - server_shutdown [sec] = shows menu or shuts down server in sec seconds
  * @version $Revision: 1.5.2.1.2.4 $ $Date: 2005/04/11 10:06:06 $
  */
-public class AdminShutdown implements IAdminCommandHandler
-{
+public class AdminShutdown implements IAdminCommandHandler {
 	// private static Logger _log = Logger.getLogger(AdminShutdown.class.getName());
 	
-	private static final String[] ADMIN_COMMANDS =
-	{
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_server_shutdown",
 		"admin_server_restart",
 		"admin_server_abort"
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.startsWith("admin_server_shutdown"))
-		{
-			try
-			{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (command.startsWith("admin_server_shutdown")) {
+			try {
 				final String val = command.substring(22);
-				if (Util.isDigit(val))
-				{
+				if (Util.isDigit(val)) {
 					serverShutdown(activeChar, Integer.valueOf(val), false);
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("Usage: //server_shutdown <seconds>");
 					sendHtmlForm(activeChar);
 				}
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
+			} catch (StringIndexOutOfBoundsException e) {
 				sendHtmlForm(activeChar);
 			}
-		}
-		else if (command.startsWith("admin_server_restart"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_server_restart")) {
+			try {
 				final String val = command.substring(21);
-				if (Util.isDigit(val))
-				{
+				if (Util.isDigit(val)) {
 					serverShutdown(activeChar, Integer.parseInt(val), true);
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("Usage: //server_restart <seconds>");
 					sendHtmlForm(activeChar);
 				}
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
+			} catch (StringIndexOutOfBoundsException e) {
 				sendHtmlForm(activeChar);
 			}
-		}
-		else if (command.startsWith("admin_server_abort"))
-		{
+		} else if (command.startsWith("admin_server_abort")) {
 			serverAbort(activeChar);
 		}
 		
@@ -96,13 +76,11 @@ public class AdminShutdown implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 	
-	private void sendHtmlForm(L2PcInstance activeChar)
-	{
+	private void sendHtmlForm(L2PcInstance activeChar) {
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		int t = GameTimeController.getInstance().getGameTime();
 		int h = t / 60;
@@ -118,13 +96,11 @@ public class AdminShutdown implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private void serverShutdown(L2PcInstance activeChar, int seconds, boolean restart)
-	{
+	private void serverShutdown(L2PcInstance activeChar, int seconds, boolean restart) {
 		Shutdown.getInstance().startShutdown(activeChar, seconds, restart);
 	}
 	
-	private void serverAbort(L2PcInstance activeChar)
-	{
+	private void serverAbort(L2PcInstance activeChar) {
 		Shutdown.getInstance().abort(activeChar);
 	}
 	

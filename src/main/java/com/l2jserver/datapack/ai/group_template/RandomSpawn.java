@@ -30,22 +30,18 @@ import com.l2jserver.gameserver.model.actor.L2Npc;
  * Manages spawn of NPCs having several random spawn points.
  * @author GKR
  */
-public final class RandomSpawn extends AbstractNpcAI
-{
+public final class RandomSpawn extends AbstractNpcAI {
 	private static final Map<Integer, Location[]> SPAWN_POINTS = new HashMap<>();
-	static
-	{
+	static {
 		// Keltas
-		SPAWN_POINTS.put(22341, new Location[]
-		{
+		SPAWN_POINTS.put(22341, new Location[] {
 			new Location(-27136, 250938, -3523),
 			new Location(-29658, 252897, -3523),
 			new Location(-27237, 251943, -3527),
 			new Location(-28868, 250113, -3479)
 		});
 		// Keymaster
-		SPAWN_POINTS.put(22361, new Location[]
-		{
+		SPAWN_POINTS.put(22361, new Location[] {
 			new Location(14091, 250533, -1940),
 			new Location(15762, 252440, -2015),
 			new Location(19836, 256212, -2090),
@@ -53,8 +49,7 @@ public final class RandomSpawn extends AbstractNpcAI
 			new Location(17299, 252943, -2015),
 		});
 		// Typhoon
-		SPAWN_POINTS.put(25539, new Location[]
-		{
+		SPAWN_POINTS.put(25539, new Location[] {
 			new Location(-20641, 255370, -3235),
 			new Location(-16157, 250993, -3058),
 			new Location(-18269, 250721, -3151),
@@ -67,8 +62,7 @@ public final class RandomSpawn extends AbstractNpcAI
 			new Location(-4883, 253171, -3322)
 		});
 		// Mutated Elpy
-		SPAWN_POINTS.put(25604, new Location[]
-		{
+		SPAWN_POINTS.put(25604, new Location[] {
 			new Location(-46080, 246368, -14183),
 			new Location(-44816, 246368, -14183),
 			new Location(-44224, 247440, -14184),
@@ -78,45 +72,38 @@ public final class RandomSpawn extends AbstractNpcAI
 		});
 	}
 	
-	public RandomSpawn()
-	{
+	public RandomSpawn() {
 		super(RandomSpawn.class.getSimpleName(), "ai/group_template");
 		addSpawnId(SPAWN_POINTS.keySet());
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		final Location[] spawnlist = SPAWN_POINTS.get(npc.getId());
 		final Location loc = spawnlist[getRandom(spawnlist.length)];
-		if (!npc.isInsideRadius(loc, 200, false, false))
-		{
+		if (!npc.isInsideRadius(loc, 200, false, false)) {
 			npc.getSpawn().setLocation(loc);
 			ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(npc, loc), 100);
 		}
 		return super.onSpawn(npc);
 	}
 	
-	private static class Teleport implements Runnable
-	{
+	private static class Teleport implements Runnable {
 		private final L2Npc _npc;
 		private final Location _loc;
 		
-		public Teleport(L2Npc npc, Location loc)
-		{
+		public Teleport(L2Npc npc, Location loc) {
 			_npc = npc;
 			_loc = loc;
 		}
 		
 		@Override
-		public void run()
-		{
+		public void run() {
 			_npc.teleToLocation(_loc, false);
 		}
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new RandomSpawn();
 	}
 }

@@ -29,24 +29,19 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Take Castle effect implementation.
  * @author Adry_85
  */
-public final class TakeCastle extends AbstractEffect
-{
-	public TakeCastle(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class TakeCastle extends AbstractEffect {
+	public TakeCastle(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (!info.getEffector().isPlayer())
-		{
+	public void onStart(BuffInfo info) {
+		if (!info.getEffector().isPlayer()) {
 			return;
 		}
 		Castle castle = CastleManager.getInstance().getCastle(info.getEffector());

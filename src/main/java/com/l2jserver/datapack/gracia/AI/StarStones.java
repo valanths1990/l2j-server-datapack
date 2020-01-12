@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * Star Stones AI.
  * @author Gigiikun
  */
-public class StarStones extends AbstractNpcAI
-{
+public class StarStones extends AbstractNpcAI {
 	// @formatter:off
 	private static final int[] MOBS =
 	{
@@ -40,21 +39,17 @@ public class StarStones extends AbstractNpcAI
 	
 	private static final int COLLECTION_RATE = 1;
 	
-	public StarStones()
-	{
+	public StarStones() {
 		super(StarStones.class.getSimpleName(), "gracia/AI");
 		addSkillSeeId(MOBS);
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
-	{
-		if (skill.getId() == 932)
-		{
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon) {
+		if (skill.getId() == 932) {
 			int itemId = 0;
 			
-			switch (npc.getId())
-			{
+			switch (npc.getId()) {
 				case 18684:
 				case 18685:
 				case 18686:
@@ -77,18 +72,13 @@ public class StarStones extends AbstractNpcAI
 					// unknown npc!
 					return super.onSkillSee(npc, caster, skill, targets, isSummon);
 			}
-			if (getRandom(100) < 33)
-			{
+			if (getRandom(100) < 33) {
 				caster.sendPacket(SystemMessageId.THE_COLLECTION_HAS_SUCCEEDED);
 				caster.addItem("StarStone", itemId, getRandom(COLLECTION_RATE + 1, 2 * COLLECTION_RATE), null, true);
-			}
-			else if (((skill.getLevel() == 1) && (getRandom(100) < 15)) || ((skill.getLevel() == 2) && (getRandom(100) < 50)) || ((skill.getLevel() == 3) && (getRandom(100) < 75)))
-			{
+			} else if (((skill.getLevel() == 1) && (getRandom(100) < 15)) || ((skill.getLevel() == 2) && (getRandom(100) < 50)) || ((skill.getLevel() == 3) && (getRandom(100) < 75))) {
 				caster.sendPacket(SystemMessageId.THE_COLLECTION_HAS_SUCCEEDED);
 				caster.addItem("StarStone", itemId, getRandom(1, COLLECTION_RATE), null, true);
-			}
-			else
-			{
+			} else {
 				caster.sendPacket(SystemMessageId.THE_COLLECTION_HAS_FAILED);
 			}
 			npc.deleteMe();

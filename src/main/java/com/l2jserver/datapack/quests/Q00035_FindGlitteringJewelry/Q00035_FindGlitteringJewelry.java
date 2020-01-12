@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Find Glittering Jewelry (35)
  * @author malyelfik
  */
-public class Q00035_FindGlitteringJewelry extends Quest
-{
+public class Q00035_FindGlitteringJewelry extends Quest {
 	// NPCs
 	private static final int ELLIE = 30091;
 	private static final int FELTON = 30879;
@@ -49,8 +48,7 @@ public class Q00035_FindGlitteringJewelry extends Quest
 	private static final int NUGGET_COUNT = 500;
 	private static final int THONS_COUNT = 150;
 	
-	public Q00035_FindGlitteringJewelry()
-	{
+	public Q00035_FindGlitteringJewelry() {
 		super(35, Q00035_FindGlitteringJewelry.class.getSimpleName(), "Find Glittering Jewelry");
 		addStartNpc(ELLIE);
 		addTalkId(ELLIE, FELTON);
@@ -59,17 +57,14 @@ public class Q00035_FindGlitteringJewelry extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30091-03.htm":
 				st.startQuest();
 				break;
@@ -77,24 +72,20 @@ public class Q00035_FindGlitteringJewelry extends Quest
 				st.setCond(2, true);
 				break;
 			case "30091-07.html":
-				if (st.getQuestItemsCount(ROUGH_JEWEL) < JEWEL_COUNT)
-				{
+				if (st.getQuestItemsCount(ROUGH_JEWEL) < JEWEL_COUNT) {
 					return "30091-08.html";
 				}
 				st.takeItems(ROUGH_JEWEL, -1);
 				st.setCond(4, true);
 				break;
 			case "30091-11.html":
-				if ((st.getQuestItemsCount(ORIHARUKON) >= ORIHARUKON_COUNT) && (st.getQuestItemsCount(SILVER_NUGGET) >= NUGGET_COUNT) && (st.getQuestItemsCount(THONS) >= THONS_COUNT))
-				{
+				if ((st.getQuestItemsCount(ORIHARUKON) >= ORIHARUKON_COUNT) && (st.getQuestItemsCount(SILVER_NUGGET) >= NUGGET_COUNT) && (st.getQuestItemsCount(THONS) >= THONS_COUNT)) {
 					st.takeItems(ORIHARUKON, ORIHARUKON_COUNT);
 					st.takeItems(SILVER_NUGGET, NUGGET_COUNT);
 					st.takeItems(THONS, THONS_COUNT);
 					st.giveItems(JEWEL_BOX, 1);
 					st.exitQuest(false, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "30091-12.html";
 				}
 				break;
@@ -106,21 +97,15 @@ public class Q00035_FindGlitteringJewelry extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance member = getRandomPartyMember(player, 2);
-		if (member != null)
-		{
+		if (member != null) {
 			final QuestState st = getQuestState(member, false);
-			if (getRandomBoolean())
-			{
+			if (getRandomBoolean()) {
 				st.giveItems(ROUGH_JEWEL, 1);
-				if (st.getQuestItemsCount(ROUGH_JEWEL) >= JEWEL_COUNT)
-				{
+				if (st.getQuestItemsCount(ROUGH_JEWEL) >= JEWEL_COUNT) {
 					st.setCond(3, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
@@ -129,21 +114,17 @@ public class Q00035_FindGlitteringJewelry extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ELLIE:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? "30091-01.htm" : "30091-02.html";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "30091-04.html";
 								break;
@@ -161,14 +142,10 @@ public class Q00035_FindGlitteringJewelry extends Quest
 				}
 				break;
 			case FELTON:
-				if (st.isStarted())
-				{
-					if (st.isCond(1))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(1)) {
 						htmltext = "30879-01.html";
-					}
-					else if (st.isCond(2))
-					{
+					} else if (st.isCond(2)) {
 						htmltext = "30879-03.html";
 					}
 				}

@@ -371,13 +371,11 @@ public class Q00426_QuestForFishingShot extends Quest {
 			if (MOBS_SPECIAL.containsKey(npc.getId())) {
 				if (getRandom(1000) <= MOBS_SPECIAL.get(npc.getId())._chance) {
 					rewardItems(qs.getPlayer(), SWEET_FLUID, MOBS_SPECIAL.get(npc.getId())._reward + 1);
-				}
-				else {
+				} else {
 					rewardItems(qs.getPlayer(), SWEET_FLUID, MOBS_SPECIAL.get(npc.getId())._reward);
 				}
 				playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
-			}
-			else {
+			} else {
 				if (getRandom(1000) <= MOBS.get(npc.getId())._chance) {
 					rewardItems(qs.getPlayer(), SWEET_FLUID, MOBS.get(npc.getId())._reward);
 					playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);

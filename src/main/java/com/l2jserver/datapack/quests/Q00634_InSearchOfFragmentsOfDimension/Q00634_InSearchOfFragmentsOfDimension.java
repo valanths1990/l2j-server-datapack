@@ -27,11 +27,9 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * In Search of Fragments of Dimension (634)
  * @author Adry_85
  */
-public final class Q00634_InSearchOfFragmentsOfDimension extends Quest
-{
+public final class Q00634_InSearchOfFragmentsOfDimension extends Quest {
 	// NPCs
-	private static final int[] DIMENSIONAL_GATE_KEEPER =
-	{
+	private static final int[] DIMENSIONAL_GATE_KEEPER = {
 		31494,
 		31495,
 		31496,
@@ -53,8 +51,7 @@ public final class Q00634_InSearchOfFragmentsOfDimension extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 20;
 	// Monsters
-	private static final int[] MOBS =
-	{
+	private static final int[] MOBS = {
 		21208, // Hallowed Watchman
 		21209, // Hallowed Seer
 		21210, // Vault Guardian
@@ -106,8 +103,7 @@ public final class Q00634_InSearchOfFragmentsOfDimension extends Quest
 		21256, // Underground Werewolf
 	};
 	
-	public Q00634_InSearchOfFragmentsOfDimension()
-	{
+	public Q00634_InSearchOfFragmentsOfDimension() {
 		super(634, Q00634_InSearchOfFragmentsOfDimension.class.getSimpleName(), "In Search of Fragments of Dimension");
 		addStartNpc(DIMENSIONAL_GATE_KEEPER);
 		addTalkId(DIMENSIONAL_GATE_KEEPER);
@@ -115,36 +111,28 @@ public final class Q00634_InSearchOfFragmentsOfDimension extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "31494-02.htm":
-			{
+		switch (event) {
+			case "31494-02.htm": {
 				qs.startQuest();
 				htmltext = event;
 				break;
 			}
 			case "31494-05.html":
-			case "31494-06.html":
-			{
-				if (qs.isStarted())
-				{
+			case "31494-06.html": {
+				if (qs.isStarted()) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "31494-07.html":
-			{
-				if (qs.isStarted())
-				{
+			case "31494-07.html": {
+				if (qs.isStarted()) {
 					qs.exitQuest(true, true);
 					htmltext = event;
 				}
@@ -155,14 +143,11 @@ public final class Q00634_InSearchOfFragmentsOfDimension extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(player, -1, 3, npc);
-		if (qs != null)
-		{
+		if (qs != null) {
 			final int i0 = (int) ((0.15 * npc.getLevel()) + 1.6);
-			if (getRandom(100) < 10)
-			{
+			if (getRandom(100) < 10) {
 				giveItemRandomly(qs.getPlayer(), npc, DIMENSIONAL_FRAGMENT, i0, 0, 1.0, true);
 			}
 		}
@@ -170,16 +155,12 @@ public final class Q00634_InSearchOfFragmentsOfDimension extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			htmltext = (player.getLevel() >= MIN_LEVEL) ? "31494-01.htm" : "31494-03.htm";
-		}
-		else if (qs.isStarted())
-		{
+		} else if (qs.isStarted()) {
 			htmltext = "31494-04.html";
 		}
 		return htmltext;

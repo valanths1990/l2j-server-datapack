@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.Quest;
 /**
  * @author UnAfraid
  */
-public final class Clan extends Quest
-{
+public final class Clan extends Quest {
 	// @formatter:off
 	private static final int[] NPCS =
 	{
@@ -48,8 +47,7 @@ public final class Clan extends Quest
 	};
 	// @formatter:on
 	private static final Map<String, String> LEADER_REQUIRED = new HashMap<>();
-	static
-	{
+	static {
 		LEADER_REQUIRED.put("9000-03.htm", "9000-03-no.htm");
 		LEADER_REQUIRED.put("9000-04.htm", "9000-04-no.htm");
 		LEADER_REQUIRED.put("9000-05.htm", "9000-05-no.htm");
@@ -63,20 +61,16 @@ public final class Clan extends Quest
 		LEADER_REQUIRED.put("9000-15.htm", "9000-07-no.htm");
 	}
 	
-	private Clan()
-	{
+	private Clan() {
 		super(-1, Clan.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (LEADER_REQUIRED.containsKey(event))
-		{
-			if (!player.isClanLeader())
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (LEADER_REQUIRED.containsKey(event)) {
+			if (!player.isClanLeader()) {
 				return LEADER_REQUIRED.get(event);
 			}
 		}
@@ -84,13 +78,11 @@ public final class Clan extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		return "9000-01.htm";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Clan();
 	}
 }

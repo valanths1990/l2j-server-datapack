@@ -29,15 +29,13 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Temple Champion - 2 (138)
  * @author nonom
  */
-public class Q00138_TempleChampionPart2 extends Quest
-{
+public class Q00138_TempleChampionPart2 extends Quest {
 	// NPCs
 	private static final int SYLVAIN = 30070;
 	private static final int PUPINA = 30118;
 	private static final int ANGUS = 30474;
 	private static final int SLA = 30666;
-	private static final int MOBS[] =
-	{
+	private static final int MOBS[] = {
 		20176, // Wyrm
 		20550, // Guardian Basilisk
 		20551, // Road Scavenger
@@ -49,8 +47,7 @@ public class Q00138_TempleChampionPart2 extends Quest
 	private static final int ANGUS_RECOMMENDATION = 10343;
 	private static final int PUPINAS_RECOMMENDATION = 10344;
 	
-	public Q00138_TempleChampionPart2()
-	{
+	public Q00138_TempleChampionPart2() {
 		super(138, Q00138_TempleChampionPart2.class.getSimpleName(), "Temple Champion - 2");
 		addStartNpc(SYLVAIN);
 		addTalkId(SYLVAIN, PUPINA, ANGUS, SLA);
@@ -59,23 +56,19 @@ public class Q00138_TempleChampionPart2 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
-		switch (event)
-		{
+		switch (event) {
 			case "30070-02.htm":
 				st.startQuest();
 				st.giveItems(TEMPLE_MANIFESTO, 1);
 				break;
 			case "30070-05.html":
 				st.giveAdena(84593, true);
-				if ((player.getLevel() < 42))
-				{
+				if ((player.getLevel() < 42)) {
 					st.addExpAndSp(187062, 11307);
 				}
 				st.exitQuest(false, true);
@@ -94,15 +87,13 @@ public class Q00138_TempleChampionPart2 extends Quest
 				st.setCond(4, true);
 				break;
 			case "30666-02.html":
-				if (st.hasQuestItems(PUPINAS_RECOMMENDATION))
-				{
+				if (st.hasQuestItems(PUPINAS_RECOMMENDATION)) {
 					st.set("talk", "1");
 					st.takeItems(PUPINAS_RECOMMENDATION, -1);
 				}
 				break;
 			case "30666-03.html":
-				if (st.hasQuestItems(TEMPLE_MANIFESTO))
-				{
+				if (st.hasQuestItems(TEMPLE_MANIFESTO)) {
 					st.set("talk", "2");
 					st.takeItems(TEMPLE_MANIFESTO, -1);
 				}
@@ -116,18 +107,13 @@ public class Q00138_TempleChampionPart2 extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && st.isStarted() && st.isCond(4) && (st.getQuestItemsCount(RELICS_OF_THE_DARK_ELF_TRAINEE) < 10))
-		{
+		if ((st != null) && st.isStarted() && st.isCond(4) && (st.getQuestItemsCount(RELICS_OF_THE_DARK_ELF_TRAINEE) < 10)) {
 			st.giveItems(RELICS_OF_THE_DARK_ELF_TRAINEE, 1);
-			if (st.getQuestItemsCount(RELICS_OF_THE_DARK_ELF_TRAINEE) >= 10)
-			{
+			if (st.getQuestItemsCount(RELICS_OF_THE_DARK_ELF_TRAINEE) >= 10) {
 				st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -135,15 +121,12 @@ public class Q00138_TempleChampionPart2 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case SYLVAIN:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 1:
 						htmltext = "30070-02.htm";
 						break;
@@ -158,8 +141,7 @@ public class Q00138_TempleChampionPart2 extends Quest
 						htmltext = "30070-04.html";
 						break;
 					default:
-						if (st.isCompleted())
-						{
+						if (st.isCompleted()) {
 							return getAlreadyCompletedMsg(player);
 						}
 						htmltext = (player.getLevel() >= 36) ? (player.hasQuestCompleted(Q00137_TempleChampionPart1.class.getSimpleName())) ? "30070-01.htm" : "30070-00a.htm" : "30070-00.htm";
@@ -167,8 +149,7 @@ public class Q00138_TempleChampionPart2 extends Quest
 				}
 				break;
 			case PUPINA:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 2:
 						htmltext = "30118-01.html";
 						break;
@@ -178,8 +159,7 @@ public class Q00138_TempleChampionPart2 extends Quest
 						break;
 					case 5:
 						htmltext = "30118-08.html";
-						if (st.hasQuestItems(ANGUS_RECOMMENDATION))
-						{
+						if (st.hasQuestItems(ANGUS_RECOMMENDATION)) {
 							st.takeItems(ANGUS_RECOMMENDATION, -1);
 						}
 						break;
@@ -189,21 +169,17 @@ public class Q00138_TempleChampionPart2 extends Quest
 				}
 				break;
 			case ANGUS:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 3:
 						htmltext = "30474-01.html";
 						break;
 					case 4:
-						if (st.getQuestItemsCount(RELICS_OF_THE_DARK_ELF_TRAINEE) >= 10)
-						{
+						if (st.getQuestItemsCount(RELICS_OF_THE_DARK_ELF_TRAINEE) >= 10) {
 							st.takeItems(RELICS_OF_THE_DARK_ELF_TRAINEE, -1);
 							st.giveItems(ANGUS_RECOMMENDATION, 1);
 							st.setCond(5, true);
 							htmltext = "30474-04.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30474-03.html";
 						}
 						break;
@@ -213,11 +189,9 @@ public class Q00138_TempleChampionPart2 extends Quest
 				}
 				break;
 			case SLA:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 6:
-						switch (st.getInt("talk"))
-						{
+						switch (st.getInt("talk")) {
 							case 1:
 								htmltext = "30666-02.html";
 								break;

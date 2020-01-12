@@ -32,11 +32,9 @@ import com.l2jserver.gameserver.model.zone.type.L2TownZone;
  * Chambers of Delusion teleport AI.
  * @author GKR
  */
-public final class DelusionTeleport extends AbstractNpcAI
-{
+public final class DelusionTeleport extends AbstractNpcAI {
 	// NPCs
-	private static final int[] NPCS =
-	{
+	private static final int[] NPCS = {
 		32484, // Pathfinder Worker
 		32658, // Guardian of Eastern Seal
 		32659, // Guardian of Western Seal
@@ -46,8 +44,7 @@ public final class DelusionTeleport extends AbstractNpcAI
 		32663, // Guardian of Tower of Seal
 	};
 	// Location
-	private static final Location[] HALL_LOCATIONS =
-	{
+	private static final Location[] HALL_LOCATIONS = {
 		new Location(-114597, -152501, -6750),
 		new Location(-114589, -154162, -6750)
 	};
@@ -56,8 +53,7 @@ public final class DelusionTeleport extends AbstractNpcAI
 	
 	private static final Map<Integer, Location> RETURN_LOCATIONS = new HashMap<>();
 	
-	static
-	{
+	static {
 		RETURN_LOCATIONS.put(0, new Location(43835, -47749, -792)); // Undefined origin, return to Rune
 		RETURN_LOCATIONS.put(7, new Location(-14023, 123677, -3112)); // Gludio
 		RETURN_LOCATIONS.put(8, new Location(18101, 145936, -3088)); // Dion
@@ -67,25 +63,21 @@ public final class DelusionTeleport extends AbstractNpcAI
 		RETURN_LOCATIONS.put(17, new Location(85991, -142234, -1336)); // Schuttgart
 	}
 	
-	private DelusionTeleport()
-	{
+	private DelusionTeleport() {
 		super(DelusionTeleport.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		if (npc.getId() == NPCS[0]) // Pathfinder Worker
 		{
 			final L2TownZone town = TownManager.getTown(npc.getX(), npc.getY(), npc.getZ());
 			final int townId = ((town == null) ? 0 : town.getTownId());
 			player.getVariables().set(DELUSION_RETURN, townId);
 			player.teleToLocation(HALL_LOCATIONS[getRandom(HALL_LOCATIONS.length)], false);
-		}
-		else
-		{
+		} else {
 			final int townId = player.getVariables().getInt(DELUSION_RETURN, 0);
 			player.teleToLocation(RETURN_LOCATIONS.get(townId), true);
 			player.getVariables().remove(DELUSION_RETURN);
@@ -93,8 +85,7 @@ public final class DelusionTeleport extends AbstractNpcAI
 		return super.onTalk(npc, player);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DelusionTeleport();
 	}
 }

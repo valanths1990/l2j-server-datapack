@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Sword of Solidarity (101)
  * @author xban1x
  */
-public class Q00101_SwordOfSolidarity extends Quest
-{
+public class Q00101_SwordOfSolidarity extends Quest {
 	// NPCs
 	private static final int ROIEN = 30008;
 	private static final int ALTRAN = 30283;
@@ -45,14 +44,12 @@ public class Q00101_SwordOfSolidarity extends Quest
 	private static final int ROIENS_LETTER = 796;
 	private static final int DIRECTIONS_TO_RUINS = 937;
 	// Monsters
-	private static final int[] MONSTERS =
-	{
+	private static final int[] MONSTERS = {
 		20361, // Tunath Orc Marksman
 		20362, // Tunath Orc Warrior
 	};
 	// Rewards
-	private static final ItemHolder[] REWARDS =
-	{
+	private static final ItemHolder[] REWARDS = {
 		new ItemHolder(738, 1), // Sword of Solidarity
 		new ItemHolder(1060, 100), // Lesser Healing Potion
 		new ItemHolder(4412, 10), // Echo Crystal - Theme of Battle
@@ -64,8 +61,7 @@ public class Q00101_SwordOfSolidarity extends Quest
 	// Misc
 	private static final int MIN_LVL = 9;
 	
-	public Q00101_SwordOfSolidarity()
-	{
+	public Q00101_SwordOfSolidarity() {
 		super(101, Q00101_SwordOfSolidarity.class.getSimpleName(), "Sword of Solidarity");
 		addStartNpc(ROIEN);
 		addKillId(MONSTERS);
@@ -74,31 +70,24 @@ public class Q00101_SwordOfSolidarity extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
+		if (st != null) {
+			switch (event) {
 				case "30008-03.html":
-				case "30008-09.html":
-				{
+				case "30008-09.html": {
 					htmltext = event;
 					break;
 				}
-				case "30008-04.htm":
-				{
+				case "30008-04.htm": {
 					st.startQuest();
 					st.giveItems(ROIENS_LETTER, 1);
 					htmltext = event;
 					break;
 				}
-				case "30283-02.html":
-				{
-					if (st.isCond(1) && st.hasQuestItems(ROIENS_LETTER))
-					{
+				case "30283-02.html": {
+					if (st.isCond(1) && st.hasQuestItems(ROIENS_LETTER)) {
 						st.takeItems(ROIENS_LETTER, -1);
 						st.giveItems(DIRECTIONS_TO_RUINS, 1);
 						st.setCond(2, true);
@@ -106,13 +95,10 @@ public class Q00101_SwordOfSolidarity extends Quest
 					}
 					break;
 				}
-				case "30283-07.html":
-				{
-					if (st.isCond(5) && st.hasQuestItems(BROKEN_SWORD_HANDLE))
-					{
+				case "30283-07.html": {
+					if (st.isCond(5) && st.hasQuestItems(BROKEN_SWORD_HANDLE)) {
 						Q00281_HeadForTheHills.giveNewbieReward(player);
-						for (ItemHolder reward : REWARDS)
-						{
+						for (ItemHolder reward : REWARDS) {
 							st.giveItems(reward);
 						}
 						st.addExpAndSp(25747, 2171);
@@ -128,32 +114,21 @@ public class Q00101_SwordOfSolidarity extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(2) && (getRandom(5) == 0))
-		{
-			if (!st.hasQuestItems(BROKEN_BLADE_TOP))
-			{
+		if ((st != null) && st.isCond(2) && (getRandom(5) == 0)) {
+			if (!st.hasQuestItems(BROKEN_BLADE_TOP)) {
 				st.giveItems(BROKEN_BLADE_TOP, 1);
-				if (st.hasQuestItems(BROKEN_BLADE_BOTTOM))
-				{
+				if (st.hasQuestItems(BROKEN_BLADE_BOTTOM)) {
 					st.setCond(3, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
-			}
-			else if (!st.hasQuestItems(BROKEN_BLADE_BOTTOM))
-			{
+			} else if (!st.hasQuestItems(BROKEN_BLADE_BOTTOM)) {
 				st.giveItems(BROKEN_BLADE_BOTTOM, 1);
-				if (st.hasQuestItems(BROKEN_BLADE_TOP))
-				{
+				if (st.hasQuestItems(BROKEN_BLADE_TOP)) {
 					st.setCond(3, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
@@ -162,57 +137,40 @@ public class Q00101_SwordOfSolidarity extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
-			case ROIEN:
-			{
-				switch (st.getState())
-				{
-					case State.CREATED:
-					{
+		switch (npc.getId()) {
+			case ROIEN: {
+				switch (st.getState()) {
+					case State.CREATED: {
 						htmltext = (player.getRace() == Race.HUMAN) ? (player.getLevel() >= MIN_LVL) ? "30008-02.htm" : "30008-08.htm" : "30008-01.htm";
 						break;
 					}
-					case State.STARTED:
-					{
-						switch (st.getCond())
-						{
-							case 1:
-							{
-								if (st.hasQuestItems(ROIENS_LETTER))
-								{
+					case State.STARTED: {
+						switch (st.getCond()) {
+							case 1: {
+								if (st.hasQuestItems(ROIENS_LETTER)) {
 									htmltext = "30008-05.html";
 								}
 								break;
 							}
-							case 2:
-							{
-								if (hasAtLeastOneQuestItem(player, BROKEN_BLADE_BOTTOM, BROKEN_BLADE_TOP))
-								{
+							case 2: {
+								if (hasAtLeastOneQuestItem(player, BROKEN_BLADE_BOTTOM, BROKEN_BLADE_TOP)) {
 									htmltext = "30008-11.html";
-								}
-								else if (st.hasQuestItems(DIRECTIONS_TO_RUINS))
-								{
+								} else if (st.hasQuestItems(DIRECTIONS_TO_RUINS)) {
 									htmltext = "30008-10.html";
 								}
 								break;
 							}
-							case 3:
-							{
-								if (st.hasQuestItems(BROKEN_BLADE_BOTTOM, BROKEN_BLADE_TOP))
-								{
+							case 3: {
+								if (st.hasQuestItems(BROKEN_BLADE_BOTTOM, BROKEN_BLADE_TOP)) {
 									htmltext = "30008-12.html";
 								}
 								break;
 							}
-							case 4:
-							{
-								if (st.hasQuestItems(ALTRANS_NOTE))
-								{
+							case 4: {
+								if (st.hasQuestItems(ALTRANS_NOTE)) {
 									st.takeItems(ALTRANS_NOTE, -1);
 									st.giveItems(BROKEN_SWORD_HANDLE, 1);
 									st.setCond(5, true);
@@ -220,10 +178,8 @@ public class Q00101_SwordOfSolidarity extends Quest
 								}
 								break;
 							}
-							case 5:
-							{
-								if (st.hasQuestItems(BROKEN_SWORD_HANDLE))
-								{
+							case 5: {
+								if (st.hasQuestItems(BROKEN_SWORD_HANDLE)) {
 									htmltext = "30008-07.html";
 								}
 								break;
@@ -231,42 +187,31 @@ public class Q00101_SwordOfSolidarity extends Quest
 						}
 						break;
 					}
-					case State.COMPLETED:
-					{
+					case State.COMPLETED: {
 						htmltext = getAlreadyCompletedMsg(player);
 						break;
 					}
 				}
 				break;
 			}
-			case ALTRAN:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
-						if (st.hasQuestItems(ROIENS_LETTER))
-						{
+			case ALTRAN: {
+				switch (st.getCond()) {
+					case 1: {
+						if (st.hasQuestItems(ROIENS_LETTER)) {
 							htmltext = "30283-01.html";
 						}
 						break;
 					}
-					case 2:
-					{
-						if (hasAtLeastOneQuestItem(player, BROKEN_BLADE_BOTTOM, BROKEN_BLADE_TOP))
-						{
+					case 2: {
+						if (hasAtLeastOneQuestItem(player, BROKEN_BLADE_BOTTOM, BROKEN_BLADE_TOP)) {
 							htmltext = "30283-08.html";
-						}
-						else if (st.hasQuestItems(DIRECTIONS_TO_RUINS))
-						{
+						} else if (st.hasQuestItems(DIRECTIONS_TO_RUINS)) {
 							htmltext = "30283-03.html";
 						}
 						break;
 					}
-					case 3:
-					{
-						if (st.hasQuestItems(BROKEN_BLADE_BOTTOM, BROKEN_BLADE_TOP))
-						{
+					case 3: {
+						if (st.hasQuestItems(BROKEN_BLADE_BOTTOM, BROKEN_BLADE_TOP)) {
 							takeItems(player, -1, DIRECTIONS_TO_RUINS, BROKEN_BLADE_TOP, BROKEN_BLADE_BOTTOM);
 							st.giveItems(ALTRANS_NOTE, 1);
 							st.setCond(4, true);
@@ -274,18 +219,14 @@ public class Q00101_SwordOfSolidarity extends Quest
 						}
 						break;
 					}
-					case 4:
-					{
-						if (st.hasQuestItems(ALTRANS_NOTE))
-						{
+					case 4: {
+						if (st.hasQuestItems(ALTRANS_NOTE)) {
 							htmltext = "30283-05.html";
 						}
 						break;
 					}
-					case 5:
-					{
-						if (st.hasQuestItems(BROKEN_SWORD_HANDLE))
-						{
+					case 5: {
+						if (st.hasQuestItems(BROKEN_SWORD_HANDLE)) {
 							htmltext = "30283-06.html";
 						}
 						break;

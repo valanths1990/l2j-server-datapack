@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * Dragon Trophy - Valakas (907)
  * @author Zoey76
  */
-public class Q00907_DragonTrophyValakas extends Quest
-{
+public class Q00907_DragonTrophyValakas extends Quest {
 	// NPC
 	private static final int KLEIN = 31540;
 	// Monster
@@ -43,8 +42,7 @@ public class Q00907_DragonTrophyValakas extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 84;
 	
-	public Q00907_DragonTrophyValakas()
-	{
+	public Q00907_DragonTrophyValakas() {
 		super(907, Q00907_DragonTrophyValakas.class.getSimpleName(), "Dragon Trophy - Valakas");
 		addStartNpc(KLEIN);
 		addTalkId(KLEIN);
@@ -52,37 +50,29 @@ public class Q00907_DragonTrophyValakas extends Quest
 	}
 	
 	@Override
-	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon)
-	{
+	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, player, false))
-		{
+		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, player, false)) {
 			st.setCond(2, true);
 		}
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		if ((player.getLevel() >= MIN_LEVEL) && st.hasQuestItems(VACUALITE_FLOATING_STONE))
-		{
-			switch (event)
-			{
+		if ((player.getLevel() >= MIN_LEVEL) && st.hasQuestItems(VACUALITE_FLOATING_STONE)) {
+			switch (event) {
 				case "31540-05.htm":
-				case "31540-06.htm":
-				{
+				case "31540-06.htm": {
 					htmltext = event;
 					break;
 				}
-				case "31540-07.html":
-				{
+				case "31540-07.html": {
 					st.startQuest();
 					htmltext = event;
 					break;
@@ -93,46 +83,33 @@ public class Q00907_DragonTrophyValakas extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		executeForEachPlayer(killer, npc, isSummon, true, true);
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
-				if (player.getLevel() < MIN_LEVEL)
-				{
+		switch (st.getState()) {
+			case State.CREATED: {
+				if (player.getLevel() < MIN_LEVEL) {
 					htmltext = "31540-02.html";
-				}
-				else if (!st.hasQuestItems(VACUALITE_FLOATING_STONE))
-				{
+				} else if (!st.hasQuestItems(VACUALITE_FLOATING_STONE)) {
 					htmltext = "31540-04.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "31540-01.htm";
 				}
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
 						htmltext = "31540-08.html";
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						st.giveItems(MEDAL_OF_GLORY, 30);
 						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 						st.exitQuest(QuestType.DAILY, true);
@@ -142,25 +119,16 @@ public class Q00907_DragonTrophyValakas extends Quest
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
-				if (!st.isNowAvailable())
-				{
+			case State.COMPLETED: {
+				if (!st.isNowAvailable()) {
 					htmltext = "31540-03.html";
-				}
-				else
-				{
+				} else {
 					st.setState(State.CREATED);
-					if (player.getLevel() < MIN_LEVEL)
-					{
+					if (player.getLevel() < MIN_LEVEL) {
 						htmltext = "31540-02.html";
-					}
-					else if (!st.hasQuestItems(VACUALITE_FLOATING_STONE))
-					{
+					} else if (!st.hasQuestItems(VACUALITE_FLOATING_STONE)) {
 						htmltext = "31540-04.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "31540-01.htm";
 					}
 				}

@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Yoke of the Past (385)
  * @author Pandragon
  */
-public final class Q00385_YokeOfThePast extends Quest
-{
+public final class Q00385_YokeOfThePast extends Quest {
 	// NPCs
 	// @formatter:off
 	private static final int[] ZIGGURATS =
@@ -97,8 +96,7 @@ public final class Q00385_YokeOfThePast extends Quest
 	// Misc
 	private static final int MIN_LVL = 20;
 	
-	public Q00385_YokeOfThePast()
-	{
+	public Q00385_YokeOfThePast() {
 		super(385, Q00385_YokeOfThePast.class.getSimpleName(), "Yoke of the Past");
 		addStartNpc(ZIGGURATS);
 		addTalkId(ZIGGURATS);
@@ -107,33 +105,26 @@ public final class Q00385_YokeOfThePast extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
-		if (qs != null)
-		{
-			switch (event)
-			{
+		if (qs != null) {
+			switch (event) {
 				case "ziggurat-03.htm":
 				case "ziggurat-04.htm":
 				case "ziggurat-06.htm":
-				case "ziggurat-07.htm":
-				{
+				case "ziggurat-07.htm": {
 					htmltext = event;
 					break;
 				}
-				case "ziggurat-05.htm":
-				{
-					if (qs.isCreated())
-					{
+				case "ziggurat-05.htm": {
+					if (qs.isCreated()) {
 						qs.startQuest();
 						htmltext = event;
 					}
 					break;
 				}
-				case "ziggurat-10.html":
-				{
+				case "ziggurat-10.html": {
 					qs.exitQuest(true, true);
 					htmltext = event;
 					break;
@@ -144,27 +135,20 @@ public final class Q00385_YokeOfThePast extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		switch (qs.getState())
-		{
-			case State.CREATED:
-			{
+		switch (qs.getState()) {
+			case State.CREATED: {
 				htmltext = (talker.getLevel() >= MIN_LVL) ? "ziggurat-01.htm" : "ziggurat-02.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (hasQuestItems(talker, SCROLL_OF_ANCIENT_MAGIC))
-				{
+			case State.STARTED: {
+				if (hasQuestItems(talker, SCROLL_OF_ANCIENT_MAGIC)) {
 					rewardItems(talker, BLANK_SCROLL, getQuestItemsCount(talker, SCROLL_OF_ANCIENT_MAGIC));
 					takeItems(talker, SCROLL_OF_ANCIENT_MAGIC, -1);
 					htmltext = "ziggurat-09.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "ziggurat-08.html";
 				}
 				break;
@@ -174,11 +158,9 @@ public final class Q00385_YokeOfThePast extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, -1, 3, npc);
-		if (qs != null)
-		{
+		if (qs != null) {
 			giveItemRandomly(qs.getPlayer(), npc, SCROLL_OF_ANCIENT_MAGIC, 1, 0, MONSTER_CHANCES.get(npc.getId()), true);
 		}
 		return super.onKill(npc, killer, isSummon);

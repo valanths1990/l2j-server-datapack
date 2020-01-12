@@ -46,10 +46,8 @@ import com.l2jserver.gameserver.util.Util;
  * Urban Area instance zone.
  * @author GKR
  */
-public final class UrbanArea extends AbstractInstance
-{
-	protected class UrbanAreaWorld extends InstanceWorld
-	{
+public final class UrbanArea extends AbstractInstance {
+	protected class UrbanAreaWorld extends InstanceWorld {
 		protected L2MonsterInstance spawnedAmaskari;
 		protected ScheduledFuture<?> activeAmaskariCall = null;
 		protected boolean isAmaskariDead = false;
@@ -75,21 +73,18 @@ public final class UrbanArea extends AbstractInstance
 	private static final int MIN_LV = 78;
 	private static final int TEMPLATE_ID = 2;
 	
-	private static final NpcStringId[] NPCSTRING_ID =
-	{
+	private static final NpcStringId[] NPCSTRING_ID = {
 		NpcStringId.INVADER,
 		NpcStringId.YOU_HAVE_DONE_WELL_IN_FINDING_ME_BUT_I_CANNOT_JUST_HAND_YOU_THE_KEY
 	};
 	
-	private static final NpcStringId[] NATIVES_NPCSTRING_ID =
-	{
+	private static final NpcStringId[] NATIVES_NPCSTRING_ID = {
 		NpcStringId.THANK_YOU_FOR_SAVING_ME,
 		NpcStringId.GUARDS_ARE_COMING_RUN,
 		NpcStringId.NOW_I_CAN_ESCAPE_ON_MY_OWN
 	};
 	
-	public UrbanArea()
-	{
+	public UrbanArea() {
 		super(UrbanArea.class.getSimpleName(), "hellbound/Instances");
 		addFirstTalkId(DOWNTOWN_NATIVE);
 		addStartNpc(KANAF, DOWNTOWN_NATIVE);
@@ -101,68 +96,49 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (!npc.isAffectedBySkill(STONE.getSkillId()))
-		{
+	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+		if (!npc.isAffectedBySkill(STONE.getSkillId())) {
 			return "32358-02.htm";
 		}
 		return "32358-01.htm";
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (npc.getId() == KANAF)
-		{
-			if (!player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
-			{
-				if (HellboundEngine.getInstance().getLevel() < 10)
-				{
+		if (npc.getId() == KANAF) {
+			if (!player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS)) {
+				if (HellboundEngine.getInstance().getLevel() < 10) {
 					htmltext = "32346-lvl.htm";
 				}
 				
-				if (player.getParty() == null)
-				{
+				if (player.getParty() == null) {
 					htmltext = "32346-party.htm";
 				}
 			}
 			
-			if (htmltext == null)
-			{
+			if (htmltext == null) {
 				enterInstance(player, new UrbanAreaWorld(), "UrbanArea.xml", TEMPLATE_ID);
 			}
-		}
-		else if (npc.getId() == TOMBSTONE)
-		{
+		} else if (npc.getId() == TOMBSTONE) {
 			final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-			if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
-			{
+			if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld)) {
 				final UrbanAreaWorld world = (UrbanAreaWorld) tmpworld;
 				
 				final L2Party party = player.getParty();
 				
-				if (party == null)
-				{
+				if (party == null) {
 					htmltext = "32343-02.htm";
-				}
-				else if (npc.isBusy())
-				{
+				} else if (npc.isBusy()) {
 					htmltext = "32343-02c.htm";
-				}
-				else if (player.getInventory().getInventoryItemCount(KEY, -1, false) >= 1)
-				{
-					for (L2PcInstance partyMember : party.getMembers())
-					{
-						if (!Util.checkIfInRange(300, npc, partyMember, true))
-						{
+				} else if (player.getInventory().getInventoryItemCount(KEY, -1, false) >= 1) {
+					for (L2PcInstance partyMember : party.getMembers()) {
+						if (!Util.checkIfInRange(300, npc, partyMember, true)) {
 							return "32343-02b.htm";
 						}
 					}
 					
-					if (player.destroyItemByItemId("Quest", KEY, 1, npc, true))
-					{
+					if (player.destroyItemByItemId("Quest", KEY, 1, npc, true)) {
 						npc.setBusy(true);
 						// destroy instance after 5 min
 						final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
@@ -171,9 +147,7 @@ public final class UrbanArea extends AbstractInstance
 						ThreadPoolManager.getInstance().scheduleGeneral(new ExitInstance(party, world), 285000);
 						htmltext = "32343-02d.htm";
 					}
-				}
-				else
-				{
+				} else {
 					htmltext = "32343-02a.htm";
 				}
 			}
@@ -182,31 +156,21 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
-		{
+		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld)) {
 			UrbanAreaWorld world = (UrbanAreaWorld) tmpworld;
 			
-			if (npc.getId() == DOWNTOWN_NATIVE)
-			{
-				if (event.equalsIgnoreCase("rebuff") && !world.isAmaskariDead)
-				{
+			if (npc.getId() == DOWNTOWN_NATIVE) {
+				if (event.equalsIgnoreCase("rebuff") && !world.isAmaskariDead) {
 					STONE.getSkill().applyEffects(npc, npc);
-				}
-				else if (event.equalsIgnoreCase("break_chains"))
-				{
-					if (!npc.isAffectedBySkill(STONE.getSkillId()) || world.isAmaskariDead)
-					{
+				} else if (event.equalsIgnoreCase("break_chains")) {
+					if (!npc.isAffectedBySkill(STONE.getSkillId()) || world.isAmaskariDead) {
 						broadcastNpcSay(npc, Say2.NPC_ALL, NATIVES_NPCSTRING_ID[0]);
 						broadcastNpcSay(npc, Say2.NPC_ALL, NATIVES_NPCSTRING_ID[2]);
-					}
-					else
-					{
+					} else {
 						cancelQuestTimer("rebuff", npc, null);
-						if (npc.isAffectedBySkill(STONE.getSkillId()))
-						{
+						if (npc.isAffectedBySkill(STONE.getSkillId())) {
 							npc.stopSkillEffects(false, STONE.getSkillId());
 						}
 						
@@ -215,10 +179,8 @@ public final class UrbanArea extends AbstractInstance
 						HellboundEngine.getInstance().updateTrust(10, true);
 						npc.scheduleDespawn(3000);
 						// Try to call Amaskari
-						if ((world.spawnedAmaskari != null) && !world.spawnedAmaskari.isDead() && (getRandom(1000) < 25) && Util.checkIfInRange(5000, npc, world.spawnedAmaskari, false))
-						{
-							if (world.activeAmaskariCall != null)
-							{
+						if ((world.spawnedAmaskari != null) && !world.spawnedAmaskari.isDead() && (getRandom(1000) < 25) && Util.checkIfInRange(5000, npc, world.spawnedAmaskari, false)) {
+							if (world.activeAmaskariCall != null) {
 								world.activeAmaskariCall.cancel(true);
 							}
 							
@@ -232,17 +194,13 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
-		if (npc.getId() == DOWNTOWN_NATIVE)
-		{
+	public final String onSpawn(L2Npc npc) {
+		if (npc.getId() == DOWNTOWN_NATIVE) {
 			((L2QuestGuardInstance) npc).setPassive(true);
 			((L2QuestGuardInstance) npc).setAutoAttackable(false);
 			STONE.getSkill().applyEffects(npc, npc);
 			startQuestTimer("rebuff", 357000, npc, null);
-		}
-		else if ((npc.getId() == TOWN_GUARD) || (npc.getId() == KEYMASTER))
-		{
+		} else if ((npc.getId() == TOWN_GUARD) || (npc.getId() == KEYMASTER)) {
 			npc.setBusy(false);
 			npc.setBusyMessage("");
 		}
@@ -250,22 +208,17 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
-		{
+		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld)) {
 			final UrbanAreaWorld world = (UrbanAreaWorld) tmpworld;
 			
-			if (!npc.isBusy())
-			{
+			if (!npc.isBusy()) {
 				broadcastNpcSay(npc, Say2.NPC_ALL, NPCSTRING_ID[0]);
 				npc.setBusy(true);
 				
-				if ((world.spawnedAmaskari != null) && !world.spawnedAmaskari.isDead() && (getRandom(1000) < 25) && Util.checkIfInRange(1000, npc, world.spawnedAmaskari, false))
-				{
-					if (world.activeAmaskariCall != null)
-					{
+				if ((world.spawnedAmaskari != null) && !world.spawnedAmaskari.isDead() && (getRandom(1000) < 25) && Util.checkIfInRange(1000, npc, world.spawnedAmaskari, false)) {
+					if (world.activeAmaskariCall != null) {
 						world.activeAmaskariCall.cancel(true);
 					}
 					world.activeAmaskariCall = ThreadPoolManager.getInstance().scheduleGeneral(new CallAmaskari(npc), 25000);
@@ -276,19 +229,15 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
-		{
+		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld)) {
 			final UrbanAreaWorld world = (UrbanAreaWorld) tmpworld;
 			
-			if (!world.isAmaskariDead && !(npc.getBusyMessage().equalsIgnoreCase("atk") || npc.isBusy()))
-			{
+			if (!world.isAmaskariDead && !(npc.getBusyMessage().equalsIgnoreCase("atk") || npc.isBusy())) {
 				int msgId;
 				int range;
-				switch (npc.getId())
-				{
+				switch (npc.getId()) {
 					case TOWN_GUARD:
 						msgId = 0;
 						range = 1000;
@@ -301,17 +250,14 @@ public final class UrbanArea extends AbstractInstance
 						msgId = -1;
 						range = 0;
 				}
-				if (msgId >= 0)
-				{
+				if (msgId >= 0) {
 					broadcastNpcSay(npc, Say2.NPC_ALL, NPCSTRING_ID[msgId], range);
 				}
 				npc.setBusy(true);
 				npc.setBusyMessage("atk");
 				
-				if ((world.spawnedAmaskari != null) && !world.spawnedAmaskari.isDead() && (getRandom(1000) < 25) && Util.checkIfInRange(range, npc, world.spawnedAmaskari, false))
-				{
-					if (world.activeAmaskariCall != null)
-					{
+				if ((world.spawnedAmaskari != null) && !world.spawnedAmaskari.isDead() && (getRandom(1000) < 25) && Util.checkIfInRange(range, npc, world.spawnedAmaskari, false)) {
+					if (world.activeAmaskariCall != null) {
 						world.activeAmaskariCall.cancel(true);
 					}
 					world.activeAmaskariCall = ThreadPoolManager.getInstance().scheduleGeneral(new CallAmaskari(npc), 25000);
@@ -322,11 +268,9 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
-		{
+		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld)) {
 			UrbanAreaWorld world = (UrbanAreaWorld) tmpworld;
 			world.isAmaskariDead = true;
 		}
@@ -334,37 +278,30 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(L2PcInstance player)
-	{
-		if (player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
-		{
+	protected boolean checkConditions(L2PcInstance player) {
+		if (player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS)) {
 			return true;
 		}
 		
 		final L2Party party = player.getParty();
 		
-		if ((party == null) || !party.isLeader(player))
-		{
+		if ((party == null) || !party.isLeader(player)) {
 			player.sendPacket(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER);
 			return false;
 		}
 		
-		for (L2PcInstance partyMember : party.getMembers())
-		{
-			if (partyMember.getLevel() < MIN_LV)
-			{
+		for (L2PcInstance partyMember : party.getMembers()) {
+			if (partyMember.getLevel() < MIN_LV) {
 				party.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED).addPcName(partyMember));
 				return false;
 			}
 			
-			if (!Util.checkIfInRange(1000, player, partyMember, true))
-			{
+			if (!Util.checkIfInRange(1000, player, partyMember, true)) {
 				party.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_A_LOCATION_WHICH_CANNOT_BE_ENTERED_THEREFORE_IT_CANNOT_BE_PROCESSED).addPcName(partyMember));
 				return false;
 			}
 			
-			if (InstanceManager.getInstance().getPlayerWorld(player) != null)
-			{
+			if (InstanceManager.getInstance().getPlayerWorld(player) != null) {
 				party.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON).addPcName(partyMember));
 				return false;
 			}
@@ -373,52 +310,38 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
-			if (player.getParty() == null)
-			{
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		if (firstEntrance) {
+			if (player.getParty() == null) {
 				teleportPlayer(player, ENTRY_POINT, world.getInstanceId());
 				world.addAllowed(player.getObjectId());
-			}
-			else
-			{
-				for (L2PcInstance partyMember : player.getParty().getMembers())
-				{
+			} else {
+				for (L2PcInstance partyMember : player.getParty().getMembers()) {
 					teleportPlayer(partyMember, ENTRY_POINT, world.getInstanceId());
 					world.addAllowed(partyMember.getObjectId());
 				}
 			}
 			((UrbanAreaWorld) world).spawnedAmaskari = (L2MonsterInstance) addSpawn(AMASKARI, AMASKARI_SPAWN_POINT, false, 0, false, world.getInstanceId());
-		}
-		else
-		{
+		} else {
 			teleportPlayer(player, ENTRY_POINT, world.getInstanceId());
 		}
 	}
 	
-	private static class CallAmaskari implements Runnable
-	{
+	private static class CallAmaskari implements Runnable {
 		private final L2Npc _caller;
 		
-		public CallAmaskari(L2Npc caller)
-		{
+		public CallAmaskari(L2Npc caller) {
 			_caller = caller;
 		}
 		
 		@Override
-		public void run()
-		{
-			if ((_caller != null) && !_caller.isDead())
-			{
+		public void run() {
+			if ((_caller != null) && !_caller.isDead()) {
 				InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(_caller.getInstanceId());
-				if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
-				{
+				if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld)) {
 					UrbanAreaWorld world = (UrbanAreaWorld) tmpworld;
 					
-					if ((world.spawnedAmaskari != null) && !world.spawnedAmaskari.isDead())
-					{
+					if ((world.spawnedAmaskari != null) && !world.spawnedAmaskari.isDead()) {
 						world.spawnedAmaskari.teleToLocation(_caller.getLocation());
 						world.spawnedAmaskari.broadcastPacket(new NpcSay(world.spawnedAmaskari.getObjectId(), Say2.NPC_ALL, world.spawnedAmaskari.getId(), NpcStringId.ILL_MAKE_YOU_FEEL_SUFFERING_LIKE_A_FLAME_THAT_IS_NEVER_EXTINGUISHED));
 					}
@@ -427,26 +350,20 @@ public final class UrbanArea extends AbstractInstance
 		}
 	}
 	
-	private class ExitInstance implements Runnable
-	{
+	private class ExitInstance implements Runnable {
 		private final L2Party _party;
 		private final UrbanAreaWorld _world;
 		
-		public ExitInstance(L2Party party, UrbanAreaWorld world)
-		{
+		public ExitInstance(L2Party party, UrbanAreaWorld world) {
 			_party = party;
 			_world = world;
 		}
 		
 		@Override
-		public void run()
-		{
-			if ((_party != null) && (_world != null))
-			{
-				for (L2PcInstance partyMember : _party.getMembers())
-				{
-					if ((partyMember != null) && !partyMember.isDead())
-					{
+		public void run() {
+			if ((_party != null) && (_world != null)) {
+				for (L2PcInstance partyMember : _party.getMembers()) {
+					if ((partyMember != null) && !partyMember.isDead()) {
 						_world.removeAllowed(partyMember.getObjectId());
 						teleportPlayer(partyMember, EXIT_POINT, 0);
 					}

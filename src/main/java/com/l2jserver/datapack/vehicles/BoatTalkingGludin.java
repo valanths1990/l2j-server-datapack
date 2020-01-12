@@ -33,13 +33,11 @@ import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
 /**
  * @author DS
  */
-public class BoatTalkingGludin implements Runnable
-{
+public class BoatTalkingGludin implements Runnable {
 	private static final Logger _log = Logger.getLogger(BoatTalkingGludin.class.getName());
 	
 	// Time: 919s
-	private static final VehiclePathPoint[] TALKING_TO_GLUDIN =
-	{
+	private static final VehiclePathPoint[] TALKING_TO_GLUDIN = {
 		new VehiclePathPoint(-121385, 261660, -3610, 180, 800),
 		new VehiclePathPoint(-127694, 253312, -3610, 200, 800),
 		new VehiclePathPoint(-129274, 237060, -3610, 250, 800),
@@ -52,14 +50,12 @@ public class BoatTalkingGludin implements Runnable
 		new VehiclePathPoint(-95686, 149718, -3610, 150, 800)
 	};
 	
-	private static final VehiclePathPoint[] GLUDIN_DOCK =
-	{
+	private static final VehiclePathPoint[] GLUDIN_DOCK = {
 		new VehiclePathPoint(-95686, 150514, -3610, 150, 800)
 	};
 	
 	// Time: 780s
-	private static final VehiclePathPoint[] GLUDIN_TO_TALKING =
-	{
+	private static final VehiclePathPoint[] GLUDIN_TO_TALKING = {
 		new VehiclePathPoint(-95686, 155514, -3610, 180, 800),
 		new VehiclePathPoint(-95686, 185514, -3610, 250, 800),
 		new VehiclePathPoint(-60136, 238816, -3610, 200, 800),
@@ -71,8 +67,7 @@ public class BoatTalkingGludin implements Runnable
 		new VehiclePathPoint(-94242, 261659, -3610, 150, 1800)
 	};
 	
-	private static final VehiclePathPoint[] TALKING_DOCK =
-	{
+	private static final VehiclePathPoint[] TALKING_DOCK = {
 		new VehiclePathPoint(-96622, 261660, -3610, 150, 1800)
 	};
 	
@@ -103,8 +98,7 @@ public class BoatTalkingGludin implements Runnable
 	private final CreatureSay ARRIVAL_TALKING5;
 	private final CreatureSay ARRIVAL_TALKING1;
 	
-	public BoatTalkingGludin(L2BoatInstance boat)
-	{
+	public BoatTalkingGludin(L2BoatInstance boat) {
 		_boat = boat;
 		_cycle = 0;
 		
@@ -133,12 +127,9 @@ public class BoatTalkingGludin implements Runnable
 	}
 	
 	@Override
-	public void run()
-	{
-		try
-		{
-			switch (_cycle)
-			{
+	public void run() {
+		try {
+			switch (_cycle) {
 				case 0:
 					BoatManager.getInstance().broadcastPacket(TALKING_DOCK[0], GLUDIN_DOCK[0], LEAVE_TALKING5);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 240000);
@@ -171,16 +162,13 @@ public class BoatTalkingGludin implements Runnable
 					BoatManager.getInstance().broadcastPacket(GLUDIN_DOCK[0], TALKING_DOCK[0], ARRIVAL_GLUDIN1);
 					break;
 				case 7:
-					if (BoatManager.getInstance().dockBusy(BoatManager.GLUDIN_HARBOR))
-					{
-						if (_shoutCount == 0)
-						{
+					if (BoatManager.getInstance().dockBusy(BoatManager.GLUDIN_HARBOR)) {
+						if (_shoutCount == 0) {
 							BoatManager.getInstance().broadcastPacket(GLUDIN_DOCK[0], TALKING_DOCK[0], BUSY_GLUDIN);
 						}
 						
 						_shoutCount++;
-						if (_shoutCount > 35)
-						{
+						if (_shoutCount > 35) {
 							_shoutCount = 0;
 						}
 						
@@ -227,16 +215,13 @@ public class BoatTalkingGludin implements Runnable
 					BoatManager.getInstance().broadcastPacket(TALKING_DOCK[0], GLUDIN_DOCK[0], ARRIVAL_TALKING1);
 					break;
 				case 16:
-					if (BoatManager.getInstance().dockBusy(BoatManager.TALKING_ISLAND))
-					{
-						if (_shoutCount == 0)
-						{
+					if (BoatManager.getInstance().dockBusy(BoatManager.TALKING_ISLAND)) {
+						if (_shoutCount == 0) {
 							BoatManager.getInstance().broadcastPacket(TALKING_DOCK[0], GLUDIN_DOCK[0], BUSY_TALKING);
 						}
 						
 						_shoutCount++;
-						if (_shoutCount > 35)
-						{
+						if (_shoutCount > 35) {
 							_shoutCount = 0;
 						}
 						
@@ -254,22 +239,17 @@ public class BoatTalkingGludin implements Runnable
 			}
 			_shoutCount = 0;
 			_cycle++;
-			if (_cycle > 17)
-			{
+			if (_cycle > 17) {
 				_cycle = 0;
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			_log.log(Level.WARNING, e.getMessage());
 		}
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		final L2BoatInstance boat = BoatManager.getInstance().getNewBoat(1, -96622, 261660, -3610, 32768);
-		if (boat != null)
-		{
+		if (boat != null) {
 			boat.registerEngine(new BoatTalkingGludin(boat));
 			boat.runEngine(180000);
 			BoatManager.getInstance().dockShip(BoatManager.TALKING_ISLAND, true);

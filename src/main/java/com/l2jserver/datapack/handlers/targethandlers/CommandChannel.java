@@ -32,15 +32,12 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 /**
  * @author UnAfraid
  */
-public class CommandChannel implements ITargetTypeHandler
-{
+public class CommandChannel implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		final List<L2Character> targetList = new ArrayList<>();
 		final L2PcInstance player = activeChar.getActingPlayer();
-		if (player == null)
-		{
+		if (player == null) {
 			return EMPTY_TARGET_LIST;
 		}
 		
@@ -50,14 +47,12 @@ public class CommandChannel implements ITargetTypeHandler
 		final L2Party party = player.getParty();
 		final boolean hasChannel = (party != null) && party.isInCommandChannel();
 		
-		if (Skill.addSummon(activeChar, player, radius, false))
-		{
+		if (Skill.addSummon(activeChar, player, radius, false)) {
 			targetList.add(player.getSummon());
 		}
 		
 		// if player in not in party
-		if (party == null)
-		{
+		if (party == null) {
 			return targetList.toArray(new L2Character[targetList.size()]);
 		}
 		
@@ -65,18 +60,14 @@ public class CommandChannel implements ITargetTypeHandler
 		int maxTargets = skill.getAffectLimit();
 		final List<L2PcInstance> members = hasChannel ? party.getCommandChannel().getMembers() : party.getMembers();
 		
-		for (L2PcInstance member : members)
-		{
-			if (activeChar == member)
-			{
+		for (L2PcInstance member : members) {
+			if (activeChar == member) {
 				continue;
 			}
 			
-			if (Skill.addCharacter(activeChar, member, radius, false))
-			{
+			if (Skill.addCharacter(activeChar, member, radius, false)) {
 				targetList.add(member);
-				if (targetList.size() >= maxTargets)
-				{
+				if (targetList.size() >= maxTargets) {
 					break;
 				}
 			}
@@ -86,8 +77,7 @@ public class CommandChannel implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.COMMAND_CHANNEL;
 	}
 }

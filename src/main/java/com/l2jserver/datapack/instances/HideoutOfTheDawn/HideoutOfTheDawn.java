@@ -28,10 +28,8 @@ import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
  * Hideout of the Dawn instance zone.
  * @author Adry_85
  */
-public final class HideoutOfTheDawn extends AbstractInstance
-{
-	protected class HotDWorld extends InstanceWorld
-	{
+public final class HideoutOfTheDawn extends AbstractInstance {
+	protected class HotDWorld extends InstanceWorld {
 		
 	}
 	
@@ -44,8 +42,7 @@ public final class HideoutOfTheDawn extends AbstractInstance
 	// Misc
 	private static final int TEMPLATE_ID = 113;
 	
-	public HideoutOfTheDawn()
-	{
+	public HideoutOfTheDawn() {
 		super(HideoutOfTheDawn.class.getSimpleName());
 		addFirstTalkId(JAINA);
 		addStartNpc(WOOD);
@@ -53,26 +50,21 @@ public final class HideoutOfTheDawn extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "32617-01.html":
-			case "32617-02a.html":
-			{
+			case "32617-02a.html": {
 				htmltext = event;
 				break;
 			}
-			case "32617-02.html":
-			{
+			case "32617-02.html": {
 				player.setInstanceId(0);
 				player.teleToLocation(JAINA_LOC, true);
 				htmltext = event;
 				break;
 			}
-			case "32593-01.html":
-			{
+			case "32593-01.html": {
 				enterInstance(player, new HotDWorld(), "HideoutOfTheDawn.xml", TEMPLATE_ID);
 				htmltext = event;
 			}
@@ -81,10 +73,8 @@ public final class HideoutOfTheDawn extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		if (firstEntrance) {
 			world.addAllowed(player.getObjectId());
 		}
 		teleportPlayer(player, WOOD_LOC, world.getInstanceId(), false);

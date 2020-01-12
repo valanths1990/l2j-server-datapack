@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Into The Flame (618)
  * @author St3eT
  */
-public class Q00618_IntoTheFlame extends Quest
-{
+public class Q00618_IntoTheFlame extends Quest {
 	// NPCs
 	private static final int KLEIN = 31540;
 	private static final int HILDA = 31271;
@@ -45,8 +44,7 @@ public class Q00618_IntoTheFlame extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 60;
 	private static final int REQUIRED_COUNT = 50;
-	static
-	{
+	static {
 		MONSTERS.put(21274, 630);
 		MONSTERS.put(21276, 630);
 		MONSTERS.put(21282, 670);
@@ -57,8 +55,7 @@ public class Q00618_IntoTheFlame extends Quest
 		MONSTERS.put(21292, 710);
 	}
 	
-	public Q00618_IntoTheFlame()
-	{
+	public Q00618_IntoTheFlame() {
 		super(618, Q00618_IntoTheFlame.class.getSimpleName(), "Into the Flame");
 		addStartNpc(KLEIN);
 		addTalkId(HILDA, KLEIN);
@@ -67,49 +64,39 @@ public class Q00618_IntoTheFlame extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "31540-03.htm":
 				st.startQuest();
 				htmltext = event;
 				break;
 			case "31540-05.html":
-				if (!st.hasQuestItems(VACUALITE))
-				{
+				if (!st.hasQuestItems(VACUALITE)) {
 					htmltext = "31540-03.htm";
-				}
-				else
-				{
+				} else {
 					st.giveItems(VACUALITE_FLOATING_STONE, 1);
 					st.exitQuest(true, true);
 					htmltext = event;
 				}
 				break;
 			case "31271-02.html":
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					st.setCond(2, true);
 					htmltext = event;
 				}
 				break;
 			case "31271-05.html":
-				if ((st.getQuestItemsCount(VACUALITE_ORE) == REQUIRED_COUNT) && st.isCond(3))
-				{
+				if ((st.getQuestItemsCount(VACUALITE_ORE) == REQUIRED_COUNT) && st.isCond(3)) {
 					st.takeItems(VACUALITE_ORE, -1);
 					st.giveItems(VACUALITE, 1);
 					st.setCond(4, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "31271-03.html";
 				}
 				break;
@@ -118,21 +105,15 @@ public class Q00618_IntoTheFlame extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
 		final L2PcInstance member = getRandomPartyMember(player, 2);
-		if (member != null)
-		{
+		if (member != null) {
 			final QuestState qs = getQuestState(member, false);
-			if ((qs.getQuestItemsCount(VACUALITE_ORE) < REQUIRED_COUNT) && (getRandom(1000) < MONSTERS.get(npc.getId())))
-			{
+			if ((qs.getQuestItemsCount(VACUALITE_ORE) < REQUIRED_COUNT) && (getRandom(1000) < MONSTERS.get(npc.getId()))) {
 				qs.giveItems(VACUALITE_ORE, 1);
-				if (qs.getQuestItemsCount(VACUALITE_ORE) >= REQUIRED_COUNT)
-				{
+				if (qs.getQuestItemsCount(VACUALITE_ORE) >= REQUIRED_COUNT) {
 					qs.setCond(3, true);
-				}
-				else
-				{
+				} else {
 					qs.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
@@ -141,28 +122,20 @@ public class Q00618_IntoTheFlame extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
-			case KLEIN:
-			{
-				if (st.isCreated())
-				{
+		switch (npc.getId()) {
+			case KLEIN: {
+				if (st.isCreated()) {
 					htmltext = (player.getLevel() < MIN_LEVEL) ? "31540-01.html" : "31540-02.htm";
-				}
-				else if (st.isStarted())
-				{
+				} else if (st.isStarted()) {
 					htmltext = st.isCond(4) ? "31540-04.html" : "31540-03.htm";
 				}
 				break;
 			}
-			case HILDA:
-			{
-				switch (st.getCond())
-				{
+			case HILDA: {
+				switch (st.getCond()) {
 					case 1:
 						htmltext = "31271-01.html";
 						break;

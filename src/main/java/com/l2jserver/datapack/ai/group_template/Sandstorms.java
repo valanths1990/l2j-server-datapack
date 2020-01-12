@@ -27,29 +27,25 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
  * Sandstorms AI.
  * @author Ectis
  */
-public class Sandstorms extends AbstractNpcAI
-{
+public class Sandstorms extends AbstractNpcAI {
 	// NPCs
 	private static final int SANDSTORM = 32350;
 	// Skills
 	private static final SkillHolder GUST = new SkillHolder(5435); // Gust
 	
-	public Sandstorms()
-	{
+	public Sandstorms() {
 		super(Sandstorms.class.getSimpleName(), "ai/group_template");
 		addAggroRangeEnterId(SANDSTORM); // Sandstorm
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		npc.setTarget(player);
 		npc.doCast(GUST);
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Sandstorms();
 	}
 }

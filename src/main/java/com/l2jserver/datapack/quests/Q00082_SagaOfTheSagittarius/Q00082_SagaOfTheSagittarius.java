@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Sagittarius (82)
  * @author Emperorc
  */
-public class Q00082_SagaOfTheSagittarius extends AbstractSagaQuest
-{
-	public Q00082_SagaOfTheSagittarius()
-	{
+public class Q00082_SagaOfTheSagittarius extends AbstractSagaQuest {
+	public Q00082_SagaOfTheSagittarius() {
 		super(82, Q00082_SagaOfTheSagittarius.class.getSimpleName(), "Saga of the Sagittarius");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			30702,
 			31627,
 			31604,
@@ -45,8 +42,7 @@ public class Q00082_SagaOfTheSagittarius extends AbstractSagaQuest
 			31657,
 			31641
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7519,
 			7081,
@@ -60,28 +56,23 @@ public class Q00082_SagaOfTheSagittarius extends AbstractSagaQuest
 			7105,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27296,
 			27231,
 			27305
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			92
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x09
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(191046, -40640, -3042),
 			new Location(46066, -36396, -1685),
 			new Location(46066, -36396, -1685)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

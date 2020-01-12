@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Nerupa's Request (160)
  * @author ivantotov
  */
-public final class Q00160_NerupasRequest extends Quest
-{
+public final class Q00160_NerupasRequest extends Quest {
 	// NPCs
 	private static final int NERUPA = 30370;
 	private static final int UNOREN = 30147;
@@ -46,8 +45,7 @@ public final class Q00160_NerupasRequest extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 3;
 	
-	public Q00160_NerupasRequest()
-	{
+	public Q00160_NerupasRequest() {
 		super(160, Q00160_NerupasRequest.class.getSimpleName(), "Nerupa's Request");
 		addStartNpc(NERUPA);
 		addTalkId(NERUPA, UNOREN, CREAMEES, JULIA);
@@ -55,14 +53,11 @@ public final class Q00160_NerupasRequest extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equals("30370-04.htm"))
-		{
+		if ((qs != null) && event.equals("30370-04.htm")) {
 			qs.startQuest();
-			if (!hasQuestItems(player, SILVERY_SPIDERSILK))
-			{
+			if (!hasQuestItems(player, SILVERY_SPIDERSILK)) {
 				giveItems(player, SILVERY_SPIDERSILK, 1);
 			}
 			return event;
@@ -71,48 +66,32 @@ public final class Q00160_NerupasRequest extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
-		{
-			case State.COMPLETED:
-			{
+		switch (qs.getState()) {
+			case State.COMPLETED: {
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
-			case State.CREATED:
-			{
-				if (npc.getId() == NERUPA)
-				{
-					if (player.getRace() != Race.ELF)
-					{
+			case State.CREATED: {
+				if (npc.getId() == NERUPA) {
+					if (player.getRace() != Race.ELF) {
 						htmltext = "30370-01.htm";
-					}
-					else if (player.getLevel() < MIN_LEVEL)
-					{
+					} else if (player.getLevel() < MIN_LEVEL) {
 						htmltext = "30370-02.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "30370-03.htm";
 					}
 				}
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (npc.getId())
-				{
-					case NERUPA:
-					{
-						if (hasAtLeastOneQuestItem(player, SILVERY_SPIDERSILK, UNOS_RECEIPT, CELS_TICKET))
-						{
+			case State.STARTED: {
+				switch (npc.getId()) {
+					case NERUPA: {
+						if (hasAtLeastOneQuestItem(player, SILVERY_SPIDERSILK, UNOS_RECEIPT, CELS_TICKET)) {
 							htmltext = "30370-05.html";
-						}
-						else if (hasQuestItems(player, NIGHTSHADE_LEAF))
-						{
+						} else if (hasQuestItems(player, NIGHTSHADE_LEAF)) {
 							rewardItems(player, LESSER_HEALING_POTION, 5);
 							addExpAndSp(player, 1000, 0);
 							qs.exitQuest(false, true);
@@ -120,65 +99,46 @@ public final class Q00160_NerupasRequest extends Quest
 						}
 						break;
 					}
-					case UNOREN:
-					{
-						if (hasQuestItems(player, SILVERY_SPIDERSILK))
-						{
+					case UNOREN: {
+						if (hasQuestItems(player, SILVERY_SPIDERSILK)) {
 							takeItems(player, SILVERY_SPIDERSILK, -1);
-							if (!hasQuestItems(player, UNOS_RECEIPT))
-							{
+							if (!hasQuestItems(player, UNOS_RECEIPT)) {
 								giveItems(player, UNOS_RECEIPT, 1);
 							}
 							qs.setCond(2, true);
 							htmltext = "30147-01.html";
-						}
-						else if (hasQuestItems(player, UNOS_RECEIPT))
-						{
+						} else if (hasQuestItems(player, UNOS_RECEIPT)) {
 							htmltext = "30147-02.html";
-						}
-						else if (hasQuestItems(player, NIGHTSHADE_LEAF))
-						{
+						} else if (hasQuestItems(player, NIGHTSHADE_LEAF)) {
 							htmltext = "30147-03.html";
 						}
 						break;
 					}
-					case CREAMEES:
-					{
-						if (hasQuestItems(player, UNOS_RECEIPT))
-						{
+					case CREAMEES: {
+						if (hasQuestItems(player, UNOS_RECEIPT)) {
 							takeItems(player, UNOS_RECEIPT, -1);
-							if (!hasQuestItems(player, CELS_TICKET))
-							{
+							if (!hasQuestItems(player, CELS_TICKET)) {
 								giveItems(player, CELS_TICKET, 1);
 							}
 							qs.setCond(3, true);
 							htmltext = "30149-01.html";
-						}
-						else if (hasQuestItems(player, CELS_TICKET))
-						{
+						} else if (hasQuestItems(player, CELS_TICKET)) {
 							htmltext = "30149-02.html";
-						}
-						else if (hasQuestItems(player, NIGHTSHADE_LEAF))
-						{
+						} else if (hasQuestItems(player, NIGHTSHADE_LEAF)) {
 							htmltext = "30149-03.html";
 						}
 						break;
 					}
-					case JULIA:
-					{
-						if (hasQuestItems(player, CELS_TICKET))
-						{
+					case JULIA: {
+						if (hasQuestItems(player, CELS_TICKET)) {
 							takeItems(player, CELS_TICKET, -1);
-							if (!hasQuestItems(player, NIGHTSHADE_LEAF))
-							{
+							if (!hasQuestItems(player, NIGHTSHADE_LEAF)) {
 								giveItems(player, NIGHTSHADE_LEAF, 1);
 							}
 							qs.setCond(4, true);
 							htmltext = "30152-01.html";
 							
-						}
-						else if (hasQuestItems(player, NIGHTSHADE_LEAF))
-						{
+						} else if (hasQuestItems(player, NIGHTSHADE_LEAF)) {
 							htmltext = "30152-02.html";
 						}
 						break;

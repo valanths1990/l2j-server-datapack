@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Defeat the Elrokian Raiders! (688)
  * @author Adry_85
  */
-public class Q00688_DefeatTheElrokianRaiders extends Quest
-{
+public class Q00688_DefeatTheElrokianRaiders extends Quest {
 	// NPCs
 	private static final int ELROKI = 22214;
 	private static final int DINN = 32105;
@@ -42,8 +41,7 @@ public class Q00688_DefeatTheElrokianRaiders extends Quest
 	private static final int MIN_LEVEL = 75;
 	private static final int DROP_RATE = 448;
 	
-	public Q00688_DefeatTheElrokianRaiders()
-	{
+	public Q00688_DefeatTheElrokianRaiders() {
 		super(688, Q00688_DefeatTheElrokianRaiders.class.getSimpleName(), "Defeat the Elrokian Raiders!");
 		addStartNpc(DINN);
 		addTalkId(DINN);
@@ -52,54 +50,40 @@ public class Q00688_DefeatTheElrokianRaiders extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "32105-02.htm":
-			case "32105-10.html":
-			{
+			case "32105-10.html": {
 				htmltext = event;
 				break;
 			}
-			case "32105-03.html":
-			{
+			case "32105-03.html": {
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "32105-06.html":
-			{
-				if (st.hasQuestItems(DINOSAUR_FANG_NECKLACE))
-				{
+			case "32105-06.html": {
+				if (st.hasQuestItems(DINOSAUR_FANG_NECKLACE)) {
 					st.giveAdena(3000 * st.getQuestItemsCount(DINOSAUR_FANG_NECKLACE), true);
 					st.takeItems(DINOSAUR_FANG_NECKLACE, -1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "donation":
-			{
-				if (st.getQuestItemsCount(DINOSAUR_FANG_NECKLACE) < 100)
-				{
+			case "donation": {
+				if (st.getQuestItemsCount(DINOSAUR_FANG_NECKLACE) < 100) {
 					htmltext = "32105-07.html";
-				}
-				else
-				{
-					if (getRandom(1000) < 500)
-					{
+				} else {
+					if (getRandom(1000) < 500) {
 						st.giveAdena(450000, true);
 						htmltext = "32105-08.html";
-					}
-					else
-					{
+					} else {
 						st.giveAdena(150000, true);
 						htmltext = "32105-09.html";
 					}
@@ -107,10 +91,8 @@ public class Q00688_DefeatTheElrokianRaiders extends Quest
 				}
 				break;
 			}
-			case "32105-11.html":
-			{
-				if (st.hasQuestItems(DINOSAUR_FANG_NECKLACE))
-				{
+			case "32105-11.html": {
+				if (st.hasQuestItems(DINOSAUR_FANG_NECKLACE)) {
 					st.giveAdena(3000 * st.getQuestItemsCount(DINOSAUR_FANG_NECKLACE), true);
 				}
 				st.exitQuest(true, true);
@@ -122,19 +104,16 @@ public class Q00688_DefeatTheElrokianRaiders extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(player, 1);
-		if (partyMember == null)
-		{
+		if (partyMember == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		
 		final QuestState st = getQuestState(partyMember, false);
 		
 		double chance = (DROP_RATE * rates().getRateQuestDrop());
-		if (getRandom(1000) < chance)
-		{
+		if (getRandom(1000) < chance) {
 			st.rewardItems(DINOSAUR_FANG_NECKLACE, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
@@ -142,19 +121,15 @@ public class Q00688_DefeatTheElrokianRaiders extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "32105-01.htm" : "32105-04.html";
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				htmltext = (st.hasQuestItems(DINOSAUR_FANG_NECKLACE)) ? "32105-05.html" : "32105-12.html";
 				break;
 			}
