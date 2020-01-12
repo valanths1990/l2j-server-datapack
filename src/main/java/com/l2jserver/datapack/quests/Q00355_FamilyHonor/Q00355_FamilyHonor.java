@@ -31,26 +31,21 @@ import com.l2jserver.gameserver.util.Util;
  * Family Honor (355)
  * @author Adry_85
  */
-public final class Q00355_FamilyHonor extends Quest
-{
-	private static final class DropInfo
-	{
+public final class Q00355_FamilyHonor extends Quest {
+	private static final class DropInfo {
 		public final int _firstChance;
 		public final int _secondChance;
 		
-		public DropInfo(int firstChance, int secondChance)
-		{
+		public DropInfo(int firstChance, int secondChance) {
 			_firstChance = firstChance;
 			_secondChance = secondChance;
 		}
 		
-		public int getFirstChance()
-		{
+		public int getFirstChance() {
 			return _firstChance;
 		}
 		
-		public int getSecondChance()
-		{
+		public int getSecondChance() {
 			return _secondChance;
 		}
 	}
@@ -69,16 +64,14 @@ public final class Q00355_FamilyHonor extends Quest
 	private static final int MIN_LEVEL = 36;
 	
 	private static final Map<Integer, DropInfo> MOBS = new HashMap<>();
-	static
-	{
+	static {
 		MOBS.put(20767, new DropInfo(560, 684)); // timak_orc_troop_leader
 		MOBS.put(20768, new DropInfo(530, 650)); // timak_orc_troop_shaman
 		MOBS.put(20769, new DropInfo(420, 516)); // timak_orc_troop_warrior
 		MOBS.put(20770, new DropInfo(440, 560)); // timak_orc_troop_archer
 	}
 	
-	public Q00355_FamilyHonor()
-	{
+	public Q00355_FamilyHonor() {
 		super(355, Q00355_FamilyHonor.class.getSimpleName(), "Family Honor");
 		addStartNpc(GALIBREDO);
 		addTalkId(GALIBREDO, PATRIN);
@@ -87,59 +80,46 @@ public final class Q00355_FamilyHonor extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "30181-02.htm":
 			case "30181-09.html":
 			case "30929-01.html":
-			case "30929-02.html":
-			{
+			case "30929-02.html": {
 				htmltext = event;
 				break;
 			}
-			case "30181-03.htm":
-			{
+			case "30181-03.htm": {
 				qs.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "30181-06.html":
-			{
+			case "30181-06.html": {
 				final long galfredoRomersBustCount = getQuestItemsCount(player, GALFREDO_ROMERS_BUST);
 				
-				if (galfredoRomersBustCount < 1)
-				{
+				if (galfredoRomersBustCount < 1) {
 					htmltext = event;
-				}
-				else if (galfredoRomersBustCount >= 100)
-				{
+				} else if (galfredoRomersBustCount >= 100) {
 					giveAdena(player, (galfredoRomersBustCount * 120) + 7800, true);
 					takeItems(player, GALFREDO_ROMERS_BUST, -1);
 					htmltext = "30181-07.html";
-				}
-				else
-				{
+				} else {
 					giveAdena(player, (galfredoRomersBustCount * 120) + 2800, true);
 					takeItems(player, GALFREDO_ROMERS_BUST, -1);
 					htmltext = "30181-08.html";
 				}
 				break;
 			}
-			case "30181-10.html":
-			{
+			case "30181-10.html": {
 				final long galfredoRomersBustCount = getQuestItemsCount(player, GALFREDO_ROMERS_BUST);
 				
-				if (galfredoRomersBustCount > 0)
-				{
+				if (galfredoRomersBustCount > 0) {
 					giveAdena(player, galfredoRomersBustCount * 120, true);
 				}
 				
@@ -148,41 +128,28 @@ public final class Q00355_FamilyHonor extends Quest
 				htmltext = event;
 				break;
 			}
-			case "30929-03.html":
-			{
+			case "30929-03.html": {
 				final int random = getRandom(100);
 				
-				if (hasQuestItems(player, SCULPTOR_BERONA))
-				{
-					if (random < 2)
-					{
+				if (hasQuestItems(player, SCULPTOR_BERONA)) {
+					if (random < 2) {
 						giveItems(player, ANCIENT_STATUE_PROTOTYPE, 1);
 						htmltext = event;
-					}
-					else if (random < 32)
-					{
+					} else if (random < 32) {
 						giveItems(player, ANCIENT_STATUE_ORIGINAL, 1);
 						htmltext = "30929-04.html";
-					}
-					else if (random < 62)
-					{
+					} else if (random < 62) {
 						giveItems(player, ANCIENT_STATUE_REPLICA, 1);
 						htmltext = "30929-05.html";
-					}
-					else if (random < 77)
-					{
+					} else if (random < 77) {
 						giveItems(player, ANCIENT_STATUE_FORGERY, 1);
 						htmltext = "30929-06.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30929-07.html";
 					}
 					
 					takeItems(player, SCULPTOR_BERONA, 1);
-				}
-				else
-				{
+				} else {
 					htmltext = "30929-08.html";
 				}
 				break;
@@ -192,53 +159,38 @@ public final class Q00355_FamilyHonor extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
 		
-		if ((qs == null) || !Util.checkIfInRange(1500, npc, killer, true))
-		{
+		if ((qs == null) || !Util.checkIfInRange(1500, npc, killer, true)) {
 			return null;
 		}
 		
 		final DropInfo info = MOBS.get(npc.getId());
 		final int random = getRandom(1000);
 		
-		if (random < info.getFirstChance())
-		{
+		if (random < info.getFirstChance()) {
 			qs.giveItemRandomly(npc, GALFREDO_ROMERS_BUST, 1, 0, 1.0, true);
-		}
-		else if (random < info.getSecondChance())
-		{
+		} else if (random < info.getSecondChance()) {
 			qs.giveItemRandomly(npc, SCULPTOR_BERONA, 1, 0, 1.0, true);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			htmltext = (player.getLevel() >= MIN_LEVEL) ? "30181-01.htm" : "30181-04.html";
-		}
-		else if (qs.isStarted())
-		{
-			if (npc.getId() == GALIBREDO)
-			{
-				if (hasQuestItems(player, SCULPTOR_BERONA))
-				{
+		} else if (qs.isStarted()) {
+			if (npc.getId() == GALIBREDO) {
+				if (hasQuestItems(player, SCULPTOR_BERONA)) {
 					htmltext = "30181-11.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30181-05.html";
 				}
-			}
-			else
-			{
+			} else {
 				htmltext = "30929-01.html";
 			}
 		}

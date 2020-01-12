@@ -40,15 +40,13 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Original Jython script by chris_00, @katmai and DrLecter.
  * @author Adry_85
  */
-public class Q00508_AClansReputation extends Quest
-{
+public class Q00508_AClansReputation extends Quest {
 	// NPC
 	private static final int SIR_ERIC_RODEMAI = 30868;
 	
 	private static final Map<Integer, List<Integer>> REWARD_POINTS = new HashMap<>();
 	
-	static
-	{
+	static {
 		REWARD_POINTS.put(1, Arrays.asList(25252, 8277, 560)); // Palibati Queen Themis
 		REWARD_POINTS.put(2, Arrays.asList(25478, 14883, 584)); // Shilen's Priest Hisilrome
 		REWARD_POINTS.put(3, Arrays.asList(25255, 8280, 602)); // Gargoyle Lord Tiphon
@@ -57,8 +55,7 @@ public class Q00508_AClansReputation extends Quest
 		REWARD_POINTS.put(6, Arrays.asList(25524, 8494, 768)); // Flamestone Giant
 	}
 	
-	private static final int[] RAID_BOSS =
-	{
+	private static final int[] RAID_BOSS = {
 		25252,
 		25478,
 		25255,
@@ -67,8 +64,7 @@ public class Q00508_AClansReputation extends Quest
 		25524
 	};
 	
-	public Q00508_AClansReputation()
-	{
+	public Q00508_AClansReputation() {
 		super(508, Q00508_AClansReputation.class.getSimpleName(), "A Clan's Reputation");
 		addStartNpc(SIR_ERIC_RODEMAI);
 		addTalkId(SIR_ERIC_RODEMAI);
@@ -76,16 +72,13 @@ public class Q00508_AClansReputation extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "30868-0.html":
 				st.startQuest();
 				break;
@@ -121,34 +114,25 @@ public class Q00508_AClansReputation extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
-		if (player.getClan() == null)
-		{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
+		if (player.getClan() == null) {
 			return null;
 		}
 		
 		QuestState st = null;
-		if (player.isClanLeader())
-		{
+		if (player.isClanLeader()) {
 			st = player.getQuestState(getName());
-		}
-		else
-		{
+		} else {
 			L2PcInstance pleader = player.getClan().getLeader().getPlayerInstance();
-			if ((pleader != null) && player.isInsideRadius(pleader, 1500, true, false))
-			{
+			if ((pleader != null) && player.isInsideRadius(pleader, 1500, true, false)) {
 				st = pleader.getQuestState(getName());
 			}
 		}
 		
-		if ((st != null) && st.isStarted())
-		{
+		if ((st != null) && st.isStarted()) {
 			int raid = st.getInt("raid");
-			if (REWARD_POINTS.containsKey(raid))
-			{
-				if ((npc.getId() == REWARD_POINTS.get(raid).get(0)) && !st.hasQuestItems(REWARD_POINTS.get(raid).get(1)))
-				{
+			if (REWARD_POINTS.containsKey(raid)) {
+				if ((npc.getId() == REWARD_POINTS.get(raid).get(0)) && !st.hasQuestItems(REWARD_POINTS.get(raid).get(1))) {
 					st.rewardItems(REWARD_POINTS.get(raid).get(1), 1);
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
@@ -158,29 +142,24 @@ public class Q00508_AClansReputation extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		L2Clan clan = player.getClan();
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = ((clan == null) || !player.isClanLeader() || (clan.getLevel() < 5)) ? "30868-0a.htm" : "30868-0b.htm";
 				break;
 			case State.STARTED:
-				if ((clan == null) || !player.isClanLeader())
-				{
+				if ((clan == null) || !player.isClanLeader()) {
 					st.exitQuest(true);
 					return "30868-8.html";
 				}
 				
 				int raid = st.getInt("raid");
 				
-				if (REWARD_POINTS.containsKey(raid))
-				{
-					if (st.hasQuestItems(REWARD_POINTS.get(raid).get(1)))
-					{
+				if (REWARD_POINTS.containsKey(raid)) {
+					if (st.hasQuestItems(REWARD_POINTS.get(raid).get(1))) {
 						htmltext = "30868-" + raid + "b.html";
 						st.playSound(Sound.ITEMSOUND_QUEST_FANFARE_1);
 						st.takeItems(REWARD_POINTS.get(raid).get(1), -1);
@@ -188,14 +167,10 @@ public class Q00508_AClansReputation extends Quest
 						clan.addReputationScore(rep, true);
 						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLAN_QUEST_COMPLETED_AND_S1_POINTS_GAINED).addInt(rep));
 						clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
-					}
-					else
-					{
+					} else {
 						htmltext = "30868-" + raid + "a.html";
 					}
-				}
-				else
-				{
+				} else {
 					htmltext = "30868-0.html";
 				}
 				break;

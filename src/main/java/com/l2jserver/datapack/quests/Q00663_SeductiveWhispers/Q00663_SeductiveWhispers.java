@@ -37,8 +37,7 @@ import com.l2jserver.gameserver.util.Util;
  * @author Zoey76
  * @since 2.6.0.0
  */
-public class Q00663_SeductiveWhispers extends Quest
-{
+public class Q00663_SeductiveWhispers extends Quest {
 	// NPCs
 	private static final int WILBERT = 30846;
 	// Misc
@@ -93,8 +92,7 @@ public class Q00663_SeductiveWhispers extends Quest
 	private static final int SPITEFUL_SOUL_LEADER_CHANCE = 100;
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
 	
-	static
-	{
+	static {
 		MONSTERS.put(20674, 807);
 		MONSTERS.put(20678, 372);
 		MONSTERS.put(20954, 460);
@@ -123,8 +121,7 @@ public class Q00663_SeductiveWhispers extends Quest
 		MONSTERS.put(21010, 595);
 	}
 	
-	public Q00663_SeductiveWhispers()
-	{
+	public Q00663_SeductiveWhispers() {
 		super(663, Q00663_SeductiveWhispers.class.getSimpleName(), "Seductive Whispers");
 		addStartNpc(WILBERT);
 		addTalkId(WILBERT);
@@ -133,75 +130,54 @@ public class Q00663_SeductiveWhispers extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
-		{
-			case State.CREATED:
-			{
+		switch (qs.getState()) {
+			case State.CREATED: {
 				htmltext = player.getLevel() < MIN_LEVEL ? "30846-02.html" : "30846-01.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				if ((qs.getMemoState() < 4) && (qs.getMemoState() >= 1))
-				{
-					if (hasQuestItems(player, SPIRIT_BEAD))
-					{
+			case State.STARTED: {
+				if ((qs.getMemoState() < 4) && (qs.getMemoState() >= 1)) {
+					if (hasQuestItems(player, SPIRIT_BEAD)) {
 						htmltext = "30846-05.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30846-04.html";
 					}
 				}
 				
-				if ((qs.getMemoState() / 1000) == 0)
-				{
-					switch (qs.getMemoState() % 10)
-					{
-						case 4:
-						{
+				if ((qs.getMemoState() / 1000) == 0) {
+					switch (qs.getMemoState() % 10) {
+						case 4: {
 							htmltext = "30846-05a.html";
 							break;
 						}
-						case 5:
-						{
+						case 5: {
 							htmltext = "30846-11.html";
 							break;
 						}
-						case 6:
-						{
+						case 6: {
 							htmltext = "30846-15.html";
 							break;
 						}
-						case 7:
-						{
-							if (((qs.getMemoState() % 100) / 10) >= 7)
-							{
+						case 7: {
+							if (((qs.getMemoState() % 100) / 10) >= 7) {
 								qs.setMemoState(1);
 								giveAdena(player, 2384000, true);
 								giveItems(player, SCROLL_ENCHANT_WEAPON_A_GRADE);
 								giveItems(player, SCROLL_ENCHANT_ARMOR_A_GRADE);
 								htmltext = "30846-17.html";
-							}
-							else
-							{
+							} else {
 								final int winCount = (qs.getMemoState() / 10) + 1;
 								htmltext = getHtml(player, "30846-16.html", 0, 0, winCount, 0);
 							}
 							break;
 						}
 					}
-				}
-				else if (qs.isMemoState(1005))
-				{
+				} else if (qs.isMemoState(1005)) {
 					htmltext = "30846-23.html";
-				}
-				else if (qs.isMemoState(1006))
-				{
+				} else if (qs.isMemoState(1006)) {
 					htmltext = "30846-26.html";
 				}
 				break;
@@ -211,29 +187,22 @@ public class Q00663_SeductiveWhispers extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30846-01a.htm":
-			{
-				if (player.getLevel() >= MIN_LEVEL)
-				{
+		switch (event) {
+			case "30846-01a.htm": {
+				if (player.getLevel() >= MIN_LEVEL) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "30846-03.htm":
-			{
-				if (qs.isCreated() && (player.getLevel() >= MIN_LEVEL))
-				{
+			case "30846-03.htm": {
+				if (qs.isCreated() && (player.getLevel() >= MIN_LEVEL)) {
 					qs.startQuest();
 					qs.setMemoState(1);
 					htmltext = event;
@@ -242,32 +211,23 @@ public class Q00663_SeductiveWhispers extends Quest
 			}
 			case "30846-06.html":
 			case "30846-07.html":
-			case "30846-08.html":
-			{
+			case "30846-08.html": {
 				htmltext = event;
 				break;
 			}
-			case "30846-09.html":
-			{
-				if (qs.isStarted() && ((qs.getMemoState() % 10) <= 4))
-				{
+			case "30846-09.html": {
+				if (qs.isStarted() && ((qs.getMemoState() % 10) <= 4)) {
 					final int memoState = qs.getMemoState() / 10;
-					if (memoState < 1)
-					{
-						if (getQuestItemsCount(player, SPIRIT_BEAD) >= 50)
-						{
+					if (memoState < 1) {
+						if (getQuestItemsCount(player, SPIRIT_BEAD) >= 50) {
 							takeItems(player, SPIRIT_BEAD, 50);
 							qs.setMemoState(5);
 							qs.setMemoStateEx(1, 0);
 							htmltext = event;
-						}
-						else
-						{
+						} else {
 							htmltext = "30846-10.html";
 						}
-					}
-					else
-					{
+					} else {
 						qs.setMemoState((memoState * 10) + 5);
 						qs.setMemoStateEx(1, 0);
 						htmltext = "30846-09a.html";
@@ -275,10 +235,8 @@ public class Q00663_SeductiveWhispers extends Quest
 				}
 				break;
 			}
-			case "30846-14.html":
-			{
-				if (qs.isStarted() && ((qs.getMemoState() % 10) == 5) && ((qs.getMemoState() / 1000) == 0))
-				{
+			case "30846-14.html": {
+				if (qs.isStarted() && ((qs.getMemoState() % 10) == 5) && ((qs.getMemoState() / 1000) == 0)) {
 					final int card1pic = Math.max(qs.getMemoStateEx(1), 0);
 					final int i1 = card1pic % 10;
 					final int i2 = (card1pic - i1) / 10;
@@ -286,52 +244,37 @@ public class Q00663_SeductiveWhispers extends Quest
 					final int rdn2 = getRandom(5) + 1;
 					final int winCount = (qs.getMemoState() / 10) + 1;
 					final int card2pic = (rdn1 * 10) + rdn2;
-					if (rdn1 == i2)
-					{
+					if (rdn1 == i2) {
 						final int i3 = rdn2 + i1;
-						if (((i3 % 5) == 0) && (i3 != 10))
-						{
-							if (((qs.getMemoState() % 100) / 10) >= 7)
-							{
+						if (((i3 % 5) == 0) && (i3 != 10)) {
+							if (((qs.getMemoState() % 100) / 10) >= 7) {
 								giveAdena(player, 2384000, true);
 								giveItems(player, SCROLL_ENCHANT_WEAPON_A_GRADE);
 								giveItems(player, SCROLL_ENCHANT_ARMOR_A_GRADE);
 								qs.setMemoState(4);
 								htmltext = getHtml(player, "30846-14.html", card1pic, card2pic, winCount, -1);
-							}
-							else
-							{
+							} else {
 								qs.setMemoState(((qs.getMemoState() / 10) * 10) + 7);
 								htmltext = getHtml(player, "30846-13.html", card1pic, card2pic, winCount, -1);
 							}
-						}
-						else
-						{
+						} else {
 							qs.setMemoState(((qs.getMemoState() / 10) * 10) + 6);
 							qs.setMemoStateEx(1, card2pic);
 							htmltext = getHtml(player, "30846-12.html", card1pic, card2pic, winCount, -1);
 						}
-					}
-					else if (rdn1 != i2)
-					{
-						if ((rdn2 == 5) || (i1 == 5))
-						{
-							if (((qs.getMemoState() % 100) / 10) >= 7)
-							{
+					} else if (rdn1 != i2) {
+						if ((rdn2 == 5) || (i1 == 5)) {
+							if (((qs.getMemoState() % 100) / 10) >= 7) {
 								giveAdena(player, 2384000, true);
 								giveItems(player, SCROLL_ENCHANT_WEAPON_A_GRADE);
 								giveItems(player, SCROLL_ENCHANT_ARMOR_A_GRADE);
 								qs.setMemoState(4);
 								htmltext = getHtml(player, "30846-14.html", card1pic, card2pic, winCount, -1);
-							}
-							else
-							{
+							} else {
 								qs.setMemoState(((qs.getMemoState() / 10) * 10) + 7);
 								htmltext = getHtml(player, "30846-13.html", card1pic, card2pic, winCount, -1);
 							}
-						}
-						else
-						{
+						} else {
 							qs.setMemoState(((qs.getMemoState() / 10) * 10) + 6);
 							qs.setMemoStateEx(1, card2pic);
 							htmltext = getHtml(player, "30846-12.html", card1pic, card2pic, winCount, -1);
@@ -340,41 +283,30 @@ public class Q00663_SeductiveWhispers extends Quest
 				}
 				break;
 			}
-			case "30846-19.html":
-			{
-				if (qs.isStarted() && ((qs.getMemoState() % 10) == 6) && ((qs.getMemoState() / 1000) == 0))
-				{
+			case "30846-19.html": {
+				if (qs.isStarted() && ((qs.getMemoState() % 10) == 6) && ((qs.getMemoState() / 1000) == 0)) {
 					final int card1pic = Math.max(qs.getMemoStateEx(1), 0);
 					int i1 = card1pic % 10;
 					int i2 = (card1pic - i1) / 10;
 					int rnd1 = getRandom(2) + 1;
 					int rnd2 = getRandom(5) + 1;
 					int card2pic = (rnd1 * 10) + rnd2;
-					if (rnd1 == i2)
-					{
+					if (rnd1 == i2) {
 						int i3 = rnd2 + i1;
-						if (((i3 % 5) == 0) && (i3 != 10))
-						{
+						if (((i3 % 5) == 0) && (i3 != 10)) {
 							qs.setMemoState(1);
 							qs.setMemoStateEx(1, 0);
 							htmltext = getHtml(player, "30846-19.html", card1pic, card2pic, -1, -1);
-						}
-						else
-						{
+						} else {
 							qs.setMemoState(((qs.getMemoState() / 10) * 10) + 5);
 							qs.setMemoStateEx(1, card2pic);
 							htmltext = getHtml(player, "30846-18.html", card1pic, card2pic, -1, -1);
 						}
-					}
-					else if (rnd1 != i2)
-					{
-						if ((rnd2 == 5) || (i1 == 5))
-						{
+					} else if (rnd1 != i2) {
+						if ((rnd2 == 5) || (i1 == 5)) {
 							qs.setMemoState(1);
 							htmltext = getHtml(player, "30846-19.html", card1pic, card2pic, -1, -1);
-						}
-						else
-						{
+						} else {
 							qs.setMemoState(((qs.getMemoState() / 10) * 10) + 5);
 							qs.setMemoStateEx(1, card2pic);
 							htmltext = getHtml(player, "30846-18.html", card1pic, card2pic, -1, -1);
@@ -383,195 +315,108 @@ public class Q00663_SeductiveWhispers extends Quest
 				}
 				break;
 			}
-			case "30846-20.html":
-			{
-				if (qs.isStarted() && ((qs.getMemoState() % 10) == 7) && ((qs.getMemoState() / 1000) == 0))
-				{
+			case "30846-20.html": {
+				if (qs.isStarted() && ((qs.getMemoState() % 10) == 7) && ((qs.getMemoState() / 1000) == 0)) {
 					qs.setMemoState((((qs.getMemoState() / 10) + 1) * 10) + 4);
 					qs.setMemoStateEx(1, 0);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30846-21.html":
-			{
-				if (qs.isStarted() && ((qs.getMemoState() % 10) == 7) && ((qs.getMemoState() / 1000) == 0))
-				{
+			case "30846-21.html": {
+				if (qs.isStarted() && ((qs.getMemoState() % 10) == 7) && ((qs.getMemoState() / 1000) == 0)) {
 					int i0 = qs.getMemoState() / 10;
-					if (i0 == 0)
-					{
+					if (i0 == 0) {
 						giveAdena(player, 40000, true);
-					}
-					else if (i0 == 1)
-					{
+					} else if (i0 == 1) {
 						giveAdena(player, 80000, true);
-					}
-					else if (i0 == 2)
-					{
+					} else if (i0 == 2) {
 						giveAdena(player, 110000, true);
 						giveItems(player, SCROLL_ENCHANT_WEAPON_D_GRADE, 1);
-					}
-					else if (i0 == 3)
-					{
+					} else if (i0 == 3) {
 						giveAdena(player, 199000, true);
 						giveItems(player, SCROLL_ENCHANT_WEAPON_C_GRADE, 1);
-					}
-					else if (i0 == 4)
-					{
+					} else if (i0 == 4) {
 						giveAdena(player, 388000, true);
 						final int rdn = getRandom(18) + 1;
-						if (rdn == 1)
-						{
+						if (rdn == 1) {
 							giveItems(player, RECIPE_GREAT_SWORD_60);
-						}
-						else if (rdn == 2)
-						{
+						} else if (rdn == 2) {
 							giveItems(player, RECIPE_HEAVY_WAR_AXE_60);
-						}
-						else if (rdn == 3)
-						{
+						} else if (rdn == 3) {
 							giveItems(player, RECIPE_SPRITES_STAFF_60);
-						}
-						else if (rdn == 4)
-						{
+						} else if (rdn == 4) {
 							giveItems(player, RECIPE_KESHANBERK_60);
-						}
-						else if (rdn == 5)
-						{
+						} else if (rdn == 5) {
 							giveItems(player, RECIPE_SWORD_OF_VALHALLA_60);
-						}
-						else if (rdn == 6)
-						{
+						} else if (rdn == 6) {
 							giveItems(player, RECIPE_KRIS_60);
-						}
-						else if (rdn == 7)
-						{
+						} else if (rdn == 7) {
 							giveItems(player, RECIPE_HELL_KNIFE_60);
-						}
-						else if (rdn == 8)
-						{
+						} else if (rdn == 8) {
 							giveItems(player, RECIPE_ARTHRO_NAIL_60);
-						}
-						else if (rdn == 9)
-						{
+						} else if (rdn == 9) {
 							giveItems(player, RECIPE_DARK_ELVEN_LONG_BOW_60);
-						}
-						else if (rdn == 10)
-						{
+						} else if (rdn == 10) {
 							giveItems(player, RECIPE_GREAT_AXE_60);
-						}
-						else if (rdn == 11)
-						{
+						} else if (rdn == 11) {
 							giveItems(player, RECIPE_SWORD_OF_DAMASCUS_60);
-						}
-						else if (rdn == 12)
-						{
+						} else if (rdn == 12) {
 							giveItems(player, RECIPE_LANCE_60);
-						}
-						else if (rdn == 13)
-						{
+						} else if (rdn == 13) {
 							giveItems(player, RECIPE_DEADMANS_GLORY_60);
-						}
-						else if (rdn == 14)
-						{
+						} else if (rdn == 14) {
 							giveItems(player, RECIPE_ART_OF_BATTLE_AXE_60);
-						}
-						else if (rdn == 15)
-						{
+						} else if (rdn == 15) {
 							giveItems(player, RECIPE_TAFF_OF_EVIL_SPIRITS_60);
-						}
-						else if (rdn == 16)
-						{
+						} else if (rdn == 16) {
 							giveItems(player, RECIPE_DEMONS_DAGGER_60);
-						}
-						else if (rdn == 17)
-						{
+						} else if (rdn == 17) {
 							giveItems(player, RECIPE_BELLION_CESTUS_60);
-						}
-						else if (rdn == 18)
-						{
+						} else if (rdn == 18) {
 							giveItems(player, RECIPE_BOW_OF_PERIL_60);
 						}
-					}
-					else if (i0 == 5)
-					{
+					} else if (i0 == 5) {
 						giveAdena(player, 675000, true);
 						final int rnd = getRandom(18) + 1;
-						if (rnd == 1)
-						{
+						if (rnd == 1) {
 							giveItems(player, GREAT_SWORD_BLADE);
-						}
-						else if (rnd == 2)
-						{
+						} else if (rnd == 2) {
 							giveItems(player, GREAT_AXE_HEAD);
-						}
-						else if (rnd == 3)
-						{
+						} else if (rnd == 3) {
 							giveItems(player, DARK_ELVEN_LONGBOW_SHAFT);
-						}
-						else if (rnd == 4)
-						{
+						} else if (rnd == 4) {
 							giveItems(player, SWORD_OF_VALHALLA_BLADE);
-						}
-						else if (rnd == 5)
-						{
+						} else if (rnd == 5) {
 							giveItems(player, ARTHRO_NAIL_BLADE);
-						}
-						else if (rnd == 6)
-						{
+						} else if (rnd == 6) {
 							giveItems(player, SPRITES_STAFF_HEAD);
-						}
-						else if (rnd == 7)
-						{
+						} else if (rnd == 7) {
 							giveItems(player, KRIS_EDGE);
-						}
-						else if (rnd == 8)
-						{
+						} else if (rnd == 8) {
 							giveItems(player, KESHANBERK_BLADE);
-						}
-						else if (rnd == 9)
-						{
+						} else if (rnd == 9) {
 							giveItems(player, HEAVY_WAR_AXE_HEAD);
-						}
-						else if (rnd == 10)
-						{
+						} else if (rnd == 10) {
 							giveItems(player, HELL_KNIFE_EDGE);
-						}
-						else if (rnd == 11)
-						{
+						} else if (rnd == 11) {
 							giveItems(player, SWORD_OF_DAMASCUS_BLADE);
-						}
-						else if (rnd == 12)
-						{
+						} else if (rnd == 12) {
 							giveItems(player, LANCE_BLADE);
-						}
-						else if (rnd == 13)
-						{
+						} else if (rnd == 13) {
 							giveItems(player, BELLION_CESTUS_EDGE);
-						}
-						else if (rnd == 14)
-						{
+						} else if (rnd == 14) {
 							giveItems(player, EVIL_SPIRIT_HEAD);
-						}
-						else if (rnd == 15)
-						{
+						} else if (rnd == 15) {
 							giveItems(player, DEADMANS_GLORY_STONE);
-						}
-						else if (rnd == 16)
-						{
+						} else if (rnd == 16) {
 							giveItems(player, ART_OF_BATTLE_AXE_BLADE);
-						}
-						else if (rnd == 17)
-						{
+						} else if (rnd == 17) {
 							giveItems(player, DEMONS_DAGGER_EDGE);
-						}
-						else if (rnd == 18)
-						{
+						} else if (rnd == 18) {
 							giveItems(player, BOW_OF_PERIL_SHAFT);
 						}
-					}
-					else if (i0 == 6)
-					{
+					} else if (i0 == 6) {
 						giveAdena(player, 1284000, true);
 						giveItems(player, SCROLL_ENCHANT_WEAPON_B_GRADE);
 						giveItems(player, SCROLL_ENCHANT_ARMOR_B_GRADE);
@@ -582,38 +427,28 @@ public class Q00663_SeductiveWhispers extends Quest
 				}
 				break;
 			}
-			case "30846-21a.html":
-			{
-				if (qs.isStarted() && qs.isMemoState(1))
-				{
+			case "30846-21a.html": {
+				if (qs.isStarted() && qs.isMemoState(1)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "30846-22.html":
-			{
-				if (qs.isStarted() && ((qs.getMemoState() % 10) == 1))
-				{
-					if (getQuestItemsCount(player, SPIRIT_BEAD) >= 1)
-					{
+			case "30846-22.html": {
+				if (qs.isStarted() && ((qs.getMemoState() % 10) == 1)) {
+					if (getQuestItemsCount(player, SPIRIT_BEAD) >= 1) {
 						takeItems(player, SPIRIT_BEAD, 1);
 						qs.setMemoState(1005);
 						htmltext = event;
-					}
-					else
-					{
+					} else {
 						htmltext = "30846-22a.html";
 					}
 				}
 				break;
 			}
-			case "30846-25.html":
-			{
-				if (qs.isStarted() && qs.isMemoState(1005))
-				{
+			case "30846-25.html": {
+				if (qs.isStarted() && qs.isMemoState(1005)) {
 					int card1pic = qs.getMemoStateEx(1);
-					if (card1pic < 0)
-					{
+					if (card1pic < 0) {
 						card1pic = 0;
 					}
 					int card1 = card1pic % 10;
@@ -621,34 +456,25 @@ public class Q00663_SeductiveWhispers extends Quest
 					int rnd1 = getRandom(2) + 1;
 					int rnd2 = getRandom(5) + 1;
 					int card2pic = (rnd1 * 10) + rnd2;
-					if (rnd1 == i2)
-					{
+					if (rnd1 == i2) {
 						int i3 = rnd2 + card1;
-						if (((i3 % 5) == 0) && (i3 != 10))
-						{
+						if (((i3 % 5) == 0) && (i3 != 10)) {
 							qs.setMemoState(1);
 							qs.setMemoStateEx(1, 0);
 							giveAdena(player, 800, true);
 							htmltext = getHtml(player, "30846-25.html", card1pic, card2pic, -1, card1);
-						}
-						else
-						{
+						} else {
 							qs.setMemoState(1006);
 							qs.setMemoStateEx(1, card2pic);
 							htmltext = getHtml(player, "30846-24.html", card1pic, card2pic, -1, -1);
 						}
-					}
-					else if (rnd1 != i2)
-					{
-						if ((rnd2 == 5) || (card1 == 5))
-						{
+					} else if (rnd1 != i2) {
+						if ((rnd2 == 5) || (card1 == 5)) {
 							qs.setMemoState(1);
 							qs.setMemoStateEx(1, 0);
 							giveAdena(player, 800, true);
 							htmltext = getHtml(player, "30846-25.html", card1pic, card2pic, -1, -1);
-						}
-						else
-						{
+						} else {
 							qs.setMemoState(1006);
 							qs.setMemoStateEx(1, card2pic);
 							htmltext = getHtml(player, "30846-24.html", card1pic, card2pic, -1, -1);
@@ -657,42 +483,31 @@ public class Q00663_SeductiveWhispers extends Quest
 				}
 				break;
 			}
-			case "30846-29.html":
-			{
-				if (qs.isStarted() && qs.isMemoState(1006))
-				{
+			case "30846-29.html": {
+				if (qs.isStarted() && qs.isMemoState(1006)) {
 					final int card1pic = Math.max(qs.getMemoStateEx(1), 0);
 					int i1 = card1pic % 10;
 					int i2 = (card1pic - i1) / 10;
 					int rnd1 = getRandom(2) + 1;
 					int rnd2 = getRandom(5) + 1;
 					int card2pic = (rnd1 * 10) + rnd2;
-					if (rnd1 == i2)
-					{
+					if (rnd1 == i2) {
 						final int i3 = rnd2 + i1;
-						if (((i3 % 5) == 0) && (i3 != 10))
-						{
+						if (((i3 % 5) == 0) && (i3 != 10)) {
 							qs.setMemoState(1);
 							qs.setMemoStateEx(1, 0);
 							htmltext = getHtml(player, "30846-29.html", card1pic, card2pic, 0, -1);
-						}
-						else
-						{
+						} else {
 							qs.setMemoState(1005);
 							qs.setMemoStateEx(1, card2pic);
 							htmltext = getHtml(player, "30846-28.html", card1pic, card2pic, 0, -1);
 						}
-					}
-					else if (rnd1 != i2)
-					{
-						if ((rnd2 == 5) || (i1 == 5))
-						{
+					} else if (rnd1 != i2) {
+						if ((rnd2 == 5) || (i1 == 5)) {
 							qs.setMemoState(1);
 							qs.setMemoStateEx(1, 0);
 							htmltext = getHtml(player, "30846-29.html", card1pic, card2pic, 0, -1);
-						}
-						else
-						{
+						} else {
 							qs.setMemoState(1005);
 							qs.setMemoStateEx(1, card2pic);
 							htmltext = getHtml(player, "30846-28.html", card1pic, card2pic, 0, -1);
@@ -701,20 +516,16 @@ public class Q00663_SeductiveWhispers extends Quest
 				}
 				break;
 			}
-			case "30846-30.html":
-			{
-				if (qs.isStarted())
-				{
+			case "30846-30.html": {
+				if (qs.isStarted()) {
 					qs.exitQuest(true);
 					htmltext = event;
 				}
 				break;
 			}
 			case "30846-31.html":
-			case "30846-32.html":
-			{
-				if (qs.isStarted())
-				{
+			case "30846-32.html": {
+				if (qs.isStarted()) {
 					htmltext = event;
 				}
 				break;
@@ -724,48 +535,35 @@ public class Q00663_SeductiveWhispers extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final List<L2PcInstance> players = new LinkedList<>();
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && (qs.getMemoState() >= 1) && (qs.getMemoState() <= 4))
-		{
+		if ((qs != null) && qs.isStarted() && (qs.getMemoState() >= 1) && (qs.getMemoState() <= 4)) {
 			players.add(killer);
 			players.add(killer);
 		}
 		
-		if (killer.isInParty())
-		{
-			for (L2PcInstance partyMember : killer.getParty().getMembers())
-			{
+		if (killer.isInParty()) {
+			for (L2PcInstance partyMember : killer.getParty().getMembers()) {
 				final QuestState partyMemberQuestState = getQuestState(partyMember, false);
-				if ((partyMemberQuestState != null) && partyMemberQuestState.isStarted() && (partyMemberQuestState.getMemoState() >= 1) && (partyMemberQuestState.getMemoState() <= 4))
-				{
+				if ((partyMemberQuestState != null) && partyMemberQuestState.isStarted() && (partyMemberQuestState.getMemoState() >= 1) && (partyMemberQuestState.getMemoState() <= 4)) {
 					players.add(partyMember);
 				}
 			}
 		}
 		
-		if (!players.isEmpty())
-		{
+		if (!players.isEmpty()) {
 			final L2PcInstance rewardedPlayer = players.get(getRandom(players.size()));
-			if (Util.checkIfInRange(1500, npc, rewardedPlayer, false))
-			{
+			if (Util.checkIfInRange(1500, npc, rewardedPlayer, false)) {
 				final int rnd = getRandom(1000);
 				
-				if (npc.getId() == SPITEFUL_SOUL_LEADER)
-				{
-					if (rnd <= SPITEFUL_SOUL_LEADER_CHANCE)
-					{
+				if (npc.getId() == SPITEFUL_SOUL_LEADER) {
+					if (rnd <= SPITEFUL_SOUL_LEADER_CHANCE) {
 						giveItems(rewardedPlayer, SPIRIT_BEAD, 2);
-					}
-					else
-					{
+					} else {
 						giveItems(rewardedPlayer, SPIRIT_BEAD, 1);
 					}
-				}
-				else if (rnd < MONSTERS.get(npc.getId()))
-				{
+				} else if (rnd < MONSTERS.get(npc.getId())) {
 					giveItems(rewardedPlayer, SPIRIT_BEAD, 1);
 					playSound(rewardedPlayer, Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
@@ -774,18 +572,15 @@ public class Q00663_SeductiveWhispers extends Quest
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private String getHtml(L2PcInstance player, String htmlName, int card1pic, int card2pic, int winCount, int card1)
-	{
+	private String getHtml(L2PcInstance player, String htmlName, int card1pic, int card2pic, int winCount, int card1) {
 		String html = getHtm(player.getHtmlPrefix(), htmlName);
 		html = html.replace("<?card1pic?>", Integer.toString(card1pic));
 		html = html.replace("<?card2pic?>", Integer.toString(card2pic));
 		html = html.replace("<?name?>", player.getName());
-		if (winCount >= 0)
-		{
+		if (winCount >= 0) {
 			html = html.replace("<?wincount?>", Integer.toString(winCount));
 		}
-		if (card1 >= 0)
-		{
+		if (card1 >= 0) {
 			html = html.replace("<?card1?>", Integer.toString(card1));
 		}
 		return html;

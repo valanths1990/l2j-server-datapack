@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Skeleton.
  * @author nonom
  */
-public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
-{
+public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest {
 	// NPCs
 	private static final int OFULLE = 31572;
 	private static final int KIKI = 31442;
@@ -40,8 +39,7 @@ public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
 	private static final int KIKIS_LETTER = 7626;
 	private static final int ELVEN_RING = 881;
 	
-	public Q00028_ChestCaughtWithABaitOfIcyAir()
-	{
+	public Q00028_ChestCaughtWithABaitOfIcyAir() {
 		super(28, Q00028_ChestCaughtWithABaitOfIcyAir.class.getSimpleName(), "Chest Caught With A Bait Of Icy Air");
 		addStartNpc(OFULLE);
 		addTalkId(OFULLE, KIKI);
@@ -49,23 +47,19 @@ public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "31572-04.htm":
 				st.startQuest();
 				break;
 			case "31572-08.htm":
-				if (st.isCond(1) && st.hasQuestItems(YELLOW_TREASURE_BOX))
-				{
+				if (st.isCond(1) && st.hasQuestItems(YELLOW_TREASURE_BOX)) {
 					st.giveItems(KIKIS_LETTER, 1);
 					st.takeItems(YELLOW_TREASURE_BOX, -1);
 					st.setCond(2, true);
@@ -73,8 +67,7 @@ public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
 				}
 				break;
 			case "31442-03.htm":
-				if (st.isCond(2) && st.hasQuestItems(KIKIS_LETTER))
-				{
+				if (st.isCond(2) && st.hasQuestItems(KIKIS_LETTER)) {
 					st.giveItems(ELVEN_RING, 1);
 					st.exitQuest(false, true);
 					htmltext = "31442-02.htm";
@@ -86,32 +79,26 @@ public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		final int npcId = npc.getId();
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.COMPLETED:
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			case State.CREATED:
-				if (npcId == OFULLE)
-				{
+				if (npcId == OFULLE) {
 					htmltext = ((player.getLevel() >= 36) && player.hasQuestCompleted(Q00051_OFullesSpecialBait.class.getSimpleName())) ? "31572-01.htm" : "31572-02.htm";
 				}
 				break;
 			case State.STARTED:
-				switch (npcId)
-				{
+				switch (npcId) {
 					case OFULLE:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "31572-06.htm";
-								if (st.hasQuestItems(YELLOW_TREASURE_BOX))
-								{
+								if (st.hasQuestItems(YELLOW_TREASURE_BOX)) {
 									htmltext = "31572-05.htm";
 								}
 								break;
@@ -121,8 +108,7 @@ public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
 						}
 						break;
 					case KIKI:
-						if (st.isCond(2))
-						{
+						if (st.isCond(2)) {
 							htmltext = "31442-01.htm";
 						}
 						break;

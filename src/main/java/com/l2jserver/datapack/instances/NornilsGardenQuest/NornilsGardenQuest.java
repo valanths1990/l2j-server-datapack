@@ -31,10 +31,8 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Nornil's Garden Quest instant zone.
  * @author Zoey76
  */
-public final class NornilsGardenQuest extends AbstractInstance
-{
-	protected static final class NornilsGardenQuestWorld extends InstanceWorld
-	{
+public final class NornilsGardenQuest extends AbstractInstance {
+	protected static final class NornilsGardenQuestWorld extends InstanceWorld {
 		protected Location ORIGIN_LOC;
 	}
 	
@@ -46,8 +44,7 @@ public final class NornilsGardenQuest extends AbstractInstance
 	// Misc
 	private static final int TEMPLATE_ID = 12;
 	
-	public NornilsGardenQuest()
-	{
+	public NornilsGardenQuest() {
 		super(NornilsGardenQuest.class.getSimpleName());
 		
 		addStartNpc(RODENPICULA, MOTHER_NORNIL);
@@ -56,39 +53,30 @@ public final class NornilsGardenQuest extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(L2PcInstance player)
-	{
+	protected boolean checkConditions(L2PcInstance player) {
 		final QuestState qs = player.getQuestState(Q00236_SeedsOfChaos.class.getSimpleName());
 		return (qs != null) && (qs.getMemoState() >= 40) && (qs.getMemoState() <= 45);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
 		final QuestState q236 = player.getQuestState(Q00236_SeedsOfChaos.class.getSimpleName());
-		switch (event)
-		{
-			case "enter":
-			{
-				if (checkConditions(player))
-				{
+		switch (event) {
+			case "enter": {
+				if (checkConditions(player)) {
 					final NornilsGardenQuestWorld world = new NornilsGardenQuestWorld();
 					world.ORIGIN_LOC = player.getLocation();
 					enterInstance(player, world, "NornilsGardenQuest.xml", TEMPLATE_ID);
 					q236.setCond(16, true);
 					htmltext = "32190-02.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32190-03.html";
 				}
 				break;
 			}
-			case "exit":
-			{
-				if ((q236 != null) && q236.isCompleted())
-				{
+			case "exit": {
+				if ((q236 != null) && q236.isCompleted()) {
 					final NornilsGardenQuestWorld world = (NornilsGardenQuestWorld) InstanceManager.getInstance().getPlayerWorld(player);
 					world.removeAllowed(player.getObjectId());
 					finishInstance(world, 5000);
@@ -104,29 +92,23 @@ public final class NornilsGardenQuest extends AbstractInstance
 	}
 	
 	@Override
-	protected void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
+	protected void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		if (firstEntrance) {
 			world.addAllowed(player.getObjectId());
 		}
 		teleportPlayer(player, ENTER_LOC, world.getInstanceId(), false);
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
 		final QuestState q236 = player.getQuestState(Q00236_SeedsOfChaos.class.getSimpleName());
-		switch (npc.getId())
-		{
-			case RODENPICULA:
-			{
+		switch (npc.getId()) {
+			case RODENPICULA: {
 				htmltext = (q236 != null) && (q236.isCompleted()) ? "32237-02.html" : "32237-01.html";
 				break;
 			}
-			case MOTHER_NORNIL:
-			{
+			case MOTHER_NORNIL: {
 				htmltext = (q236 != null) && (q236.isCompleted()) ? "32239-02.html" : "32239-01.html";
 				break;
 			}

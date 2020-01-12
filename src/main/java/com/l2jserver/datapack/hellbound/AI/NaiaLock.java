@@ -28,20 +28,17 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Removes minions after master's death.
  * @author GKR
  */
-public final class NaiaLock extends AbstractNpcAI
-{
+public final class NaiaLock extends AbstractNpcAI {
 	// NPCs
 	private static final int LOCK = 18491;
 	
-	public NaiaLock()
-	{
+	public NaiaLock() {
 		super(NaiaLock.class.getSimpleName(), "hellbound/AI");
 		addKillId(LOCK);
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		((L2MonsterInstance) npc).getMinionList().onMasterDie(true);
 		return super.onKill(npc, killer, isSummon);
 	}

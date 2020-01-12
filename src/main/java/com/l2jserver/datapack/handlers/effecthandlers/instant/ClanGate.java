@@ -30,21 +30,16 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Clan Gate effect implementation.
  * @author ZaKaX
  */
-public final class ClanGate extends AbstractEffect
-{
-	public ClanGate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class ClanGate extends AbstractEffect {
+	public ClanGate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (info.getEffected().isPlayer())
-		{
+	public void onStart(BuffInfo info) {
+		if (info.getEffected().isPlayer()) {
 			final L2Clan clan = info.getEffected().getActingPlayer().getClan();
-			if (clan != null)
-			{
+			if (clan != null) {
 				SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.COURT_MAGICIAN_CREATED_PORTAL);
 				clan.broadcastToOtherOnlineMembers(msg, info.getEffected().getActingPlayer());
 			}

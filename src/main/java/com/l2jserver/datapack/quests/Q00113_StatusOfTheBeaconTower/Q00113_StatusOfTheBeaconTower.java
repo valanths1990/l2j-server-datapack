@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Kerberos.
  * @author malyelfik
  */
-public class Q00113_StatusOfTheBeaconTower extends Quest
-{
+public class Q00113_StatusOfTheBeaconTower extends Quest {
 	// NPCs
 	private static final int MOIRA = 31979;
 	private static final int TORRANT = 32016;
@@ -38,8 +37,7 @@ public class Q00113_StatusOfTheBeaconTower extends Quest
 	private static final int FLAME_BOX = 14860;
 	private static final int FIRE_BOX = 8086;
 	
-	public Q00113_StatusOfTheBeaconTower()
-	{
+	public Q00113_StatusOfTheBeaconTower() {
 		super(113, Q00113_StatusOfTheBeaconTower.class.getSimpleName(), "Status of the Beacon Tower");
 		addStartNpc(MOIRA);
 		addTalkId(MOIRA, TORRANT);
@@ -47,30 +45,24 @@ public class Q00113_StatusOfTheBeaconTower extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "31979-02.htm":
 				st.startQuest();
 				st.giveItems(FLAME_BOX, 1);
 				break;
 			case "32016-02.html":
-				if (st.hasQuestItems(FIRE_BOX))
-				{
+				if (st.hasQuestItems(FIRE_BOX)) {
 					st.giveAdena(21578, true);
 					st.addExpAndSp(76665, 5333);
-				}
-				else
-				{
+				} else {
 					st.giveAdena(154800, true);
 					st.addExpAndSp(619300, 44200);
 				}
@@ -84,15 +76,12 @@ public class Q00113_StatusOfTheBeaconTower extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case MOIRA:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= 80) ? "31979-01.htm" : "31979-00.htm";
 						break;
@@ -105,8 +94,7 @@ public class Q00113_StatusOfTheBeaconTower extends Quest
 				}
 				break;
 			case TORRANT:
-				if (st.isStarted())
-				{
+				if (st.isStarted()) {
 					htmltext = "32016-01.html";
 				}
 				break;

@@ -28,12 +28,10 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 /**
  * Consume Mp By Level effect implementation.
  */
-public final class ConsumeMpByLevel extends AbstractEffect
-{
+public final class ConsumeMpByLevel extends AbstractEffect {
 	private final double _power;
 	
-	public ConsumeMpByLevel(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public ConsumeMpByLevel(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
@@ -41,18 +39,15 @@ public final class ConsumeMpByLevel extends AbstractEffect
 	}
 	
 	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		if (info.getEffected().isDead())
-		{
+	public boolean onActionTime(BuffInfo info) {
+		if (info.getEffected().isDead()) {
 			return false;
 		}
 		
 		final L2Character target = info.getEffected();
 		double mp = target.getCurrentMp();
 		final double consume = _power * getTicksMultiplier() * ((target.getLevel() - 1) / 7.5);
-		if ((consume < 0) && ((mp + consume) <= 0))
-		{
+		if ((consume < 0) && ((mp + consume) <= 0)) {
 			target.sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
 			return false;
 		}

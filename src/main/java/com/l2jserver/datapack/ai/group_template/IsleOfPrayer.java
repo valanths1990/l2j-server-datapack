@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.holders.ItemChanceHolder;
  * Isle of Prayer AI.
  * @author Zoey76
  */
-public final class IsleOfPrayer extends AbstractNpcAI
-{
+public final class IsleOfPrayer extends AbstractNpcAI {
 	// Items
 	private static final int YELLOW_SEED_OF_EVIL_SHARD = 9593;
 	private static final int GREEN_SEED_OF_EVIL_SHARD = 9594;
@@ -39,8 +38,7 @@ public final class IsleOfPrayer extends AbstractNpcAI
 	private static final int RED_SEED_OF_EVIL_SHARD = 9596;
 	// Monsters
 	private static final Map<Integer, ItemChanceHolder> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(22257, new ItemChanceHolder(YELLOW_SEED_OF_EVIL_SHARD, 2087)); // Island Guardian
 		MONSTERS.put(22258, new ItemChanceHolder(YELLOW_SEED_OF_EVIL_SHARD, 2147)); // White Sand Mirage
 		MONSTERS.put(22259, new ItemChanceHolder(YELLOW_SEED_OF_EVIL_SHARD, 2642)); // Muddy Coral
@@ -58,25 +56,21 @@ public final class IsleOfPrayer extends AbstractNpcAI
 		MONSTERS.put(22271, new ItemChanceHolder(BLUE_SEED_OF_EVIL_SHARD, 1008)); // Water Dragon Detractor
 	}
 	
-	private IsleOfPrayer()
-	{
+	private IsleOfPrayer() {
 		super(IsleOfPrayer.class.getSimpleName(), "ai/group_template");
 		addKillId(MONSTERS.keySet());
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final ItemChanceHolder holder = MONSTERS.get(npc.getId());
-		if (getRandom(10000) <= holder.getChance())
-		{
+		if (getRandom(10000) <= holder.getChance()) {
 			npc.dropItem(killer, holder);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new IsleOfPrayer();
 	}
 }

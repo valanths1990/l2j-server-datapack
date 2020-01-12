@@ -32,14 +32,12 @@ import com.l2jserver.gameserver.model.quest.State;
  * Take Advantage of the Crisis! (312)
  * @author malyelfik
  */
-public class Q00312_TakeAdvantageOfTheCrisis extends Quest
-{
+public class Q00312_TakeAdvantageOfTheCrisis extends Quest {
 	// NPC
 	private static final int FILAUR = 30535;
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
-	static
-	{
+	static {
 		MOBS.put(22678, 291); // Grave Robber Summoner (Lunatic)
 		MOBS.put(22679, 596); // Grave Robber Magician (Lunatic)
 		MOBS.put(22680, 610); // Grave Robber Worker (Lunatic)
@@ -59,8 +57,7 @@ public class Q00312_TakeAdvantageOfTheCrisis extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 80;
 	
-	public Q00312_TakeAdvantageOfTheCrisis()
-	{
+	public Q00312_TakeAdvantageOfTheCrisis() {
 		super(312, Q00312_TakeAdvantageOfTheCrisis.class.getSimpleName(), "Take Advantage of the Crisis!");
 		addStartNpc(FILAUR);
 		addTalkId(FILAUR);
@@ -69,17 +66,14 @@ public class Q00312_TakeAdvantageOfTheCrisis extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30535-02.html":
 			case "30535-03.html":
 			case "30535-04.html":
@@ -101,11 +95,9 @@ public class Q00312_TakeAdvantageOfTheCrisis extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance member = getRandomPartyMember(player, 1);
-		if ((member != null) && (getRandom(1000) < MOBS.get(npc.getId())))
-		{
+		if ((member != null) && (getRandom(1000) < MOBS.get(npc.getId()))) {
 			final QuestState st = getQuestState(member, false);
 			st.giveItems(MINERAL_FRAGMENT, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
@@ -114,12 +106,10 @@ public class Q00312_TakeAdvantageOfTheCrisis extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "30535-01.htm" : "30535-00.htm";
 				break;

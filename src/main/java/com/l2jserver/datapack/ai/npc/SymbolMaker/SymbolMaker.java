@@ -28,11 +28,9 @@ import com.l2jserver.gameserver.network.serverpackets.HennaRemoveList;
  * Symbol Maker AI.
  * @author Adry_85
  */
-public final class SymbolMaker extends AbstractNpcAI
-{
+public final class SymbolMaker extends AbstractNpcAI {
 	// NPCs
-	private static final int[] NPCS =
-	{
+	private static final int[] NPCS = {
 		31046, // Marsden
 		31047, // Kell
 		31048, // McDermott
@@ -46,8 +44,7 @@ public final class SymbolMaker extends AbstractNpcAI
 		31953, // Rankar
 	};
 	
-	private SymbolMaker()
-	{
+	private SymbolMaker() {
 		super(SymbolMaker.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(NPCS);
 		addStartNpc(NPCS);
@@ -55,26 +52,21 @@ public final class SymbolMaker extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "symbol_maker.htm":
 			case "symbol_maker-1.htm":
 			case "symbol_maker-2.htm":
-			case "symbol_maker-3.htm":
-			{
+			case "symbol_maker-3.htm": {
 				htmltext = event;
 				break;
 			}
-			case "Draw":
-			{
+			case "Draw": {
 				player.sendPacket(new HennaEquipList(player));
 				break;
 			}
-			case "Remove":
-			{
+			case "Remove": {
 				player.sendPacket(new HennaRemoveList(player));
 				break;
 			}
@@ -83,13 +75,11 @@ public final class SymbolMaker extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "symbol_maker.htm";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new SymbolMaker();
 	}
 }

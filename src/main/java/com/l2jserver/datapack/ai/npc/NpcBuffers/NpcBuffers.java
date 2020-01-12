@@ -26,16 +26,13 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author UnAfraid
  */
-public final class NpcBuffers extends AbstractNpcAI
-{
+public final class NpcBuffers extends AbstractNpcAI {
 	private final NpcBuffersData _npcBuffers = new NpcBuffersData();
 	
-	private NpcBuffers()
-	{
+	private NpcBuffers() {
 		super(NpcBuffers.class.getSimpleName(), "ai/npc");
 		
-		for (int npcId : _npcBuffers.getNpcBufferIds())
-		{
+		for (int npcId : _npcBuffers.getNpcBufferIds()) {
 			// TODO: Cleanup once npc rework is finished and default html is configurable.
 			addFirstTalkId(npcId);
 			addSpawnId(npcId);
@@ -44,24 +41,20 @@ public final class NpcBuffers extends AbstractNpcAI
 	
 	// TODO: Cleanup once npc rework is finished and default html is configurable.
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return null;
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		final NpcBufferData data = _npcBuffers.getNpcBuffer(npc.getId());
-		for (NpcBufferSkillData skill : data.getSkills())
-		{
+		for (NpcBufferSkillData skill : data.getSkills()) {
 			ThreadPoolManager.getInstance().scheduleAi(new NpcBufferAI(npc, skill), skill.getInitialDelay());
 		}
 		return super.onSpawn(npc);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new NpcBuffers();
 	}
 }

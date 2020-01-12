@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Last Imperial Prince (119)
  * @author Adry_85
  */
-public class Q00119_LastImperialPrince extends Quest
-{
+public class Q00119_LastImperialPrince extends Quest {
 	// NPCs
 	private static final int NAMELESS_SPIRIT = 31453;
 	private static final int DEVORIN = 32009;
@@ -38,42 +37,34 @@ public class Q00119_LastImperialPrince extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 74;
 	
-	public Q00119_LastImperialPrince()
-	{
+	public Q00119_LastImperialPrince() {
 		super(119, Q00119_LastImperialPrince.class.getSimpleName(), "Last Imperial Prince");
 		addStartNpc(NAMELESS_SPIRIT);
 		addTalkId(NAMELESS_SPIRIT, DEVORIN);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "31453-02.htm":
 			case "31453-03.htm":
-			case "31453-10.html":
-			{
+			case "31453-10.html": {
 				htmltext = event;
 				break;
 			}
-			case "31453-04.html":
-			{
+			case "31453-04.html": {
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "31453-11.html":
-			{
-				if (st.isCond(2))
-				{
+			case "31453-11.html": {
+				if (st.isCond(2)) {
 					st.giveAdena(150292, true);
 					st.addExpAndSp(902439, 90067);
 					st.exitQuest(false, true);
@@ -81,15 +72,12 @@ public class Q00119_LastImperialPrince extends Quest
 				}
 				break;
 			}
-			case "brooch":
-			{
+			case "brooch": {
 				htmltext = (st.hasQuestItems(ANTIQUE_BROOCH)) ? "32009-02.html" : "32009-03.html";
 				break;
 			}
-			case "32009-04.html":
-			{
-				if (st.isCond(1) && st.hasQuestItems(ANTIQUE_BROOCH))
-				{
+			case "32009-04.html": {
+				if (st.isCond(1) && st.hasQuestItems(ANTIQUE_BROOCH)) {
 					st.setCond(2, true);
 					htmltext = event;
 				}
@@ -100,54 +88,36 @@ public class Q00119_LastImperialPrince extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.COMPLETED:
-			{
-				if (npc.getId() == NAMELESS_SPIRIT)
-				{
+		switch (st.getState()) {
+			case State.COMPLETED: {
+				if (npc.getId() == NAMELESS_SPIRIT) {
 					htmltext = "31453-06.html";
 				}
 				break;
 			}
-			case State.CREATED:
-			{
+			case State.CREATED: {
 				htmltext = ((player.getLevel() >= MIN_LEVEL) && st.hasQuestItems(ANTIQUE_BROOCH)) ? "31453-01.htm" : "31453-05.html";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (npc.getId() == NAMELESS_SPIRIT)
-				{
-					if (st.isCond(1))
-					{
-						if (st.hasQuestItems(ANTIQUE_BROOCH))
-						{
+			case State.STARTED: {
+				if (npc.getId() == NAMELESS_SPIRIT) {
+					if (st.isCond(1)) {
+						if (st.hasQuestItems(ANTIQUE_BROOCH)) {
 							htmltext = "31453-07.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "31453-08.html";
 							st.exitQuest(true);
 						}
-					}
-					else if (st.isCond(2))
-					{
+					} else if (st.isCond(2)) {
 						htmltext = "31453-09.html";
 					}
-				}
-				else if (npc.getId() == DEVORIN)
-				{
-					if (st.isCond(1))
-					{
+				} else if (npc.getId() == DEVORIN) {
+					if (st.isCond(1)) {
 						htmltext = "32009-01.html";
-					}
-					else if (st.isCond(2))
-					{
+					} else if (st.isCond(2)) {
 						htmltext = "32009-05.html";
 					}
 				}

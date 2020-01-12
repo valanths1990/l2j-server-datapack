@@ -29,14 +29,12 @@ import com.l2jserver.gameserver.model.skills.Skill;
  * Tar Beetle AI
  * @author nonom, malyelfik
  */
-public final class TarBeetle extends AbstractNpcAI
-{
+public final class TarBeetle extends AbstractNpcAI {
 	// NPC
 	private static final int TAR_BEETLE = 18804;
 	// Skills
 	private static final int TAR_SPITE = 6142;
-	private static SkillHolder[] SKILLS =
-	{
+	private static SkillHolder[] SKILLS = {
 		new SkillHolder(TAR_SPITE, 1),
 		new SkillHolder(TAR_SPITE, 2),
 		new SkillHolder(TAR_SPITE, 3)
@@ -44,25 +42,20 @@ public final class TarBeetle extends AbstractNpcAI
 	
 	private static final TarBeetleSpawn spawn = new TarBeetleSpawn();
 	
-	private TarBeetle()
-	{
+	private TarBeetle() {
 		super(TarBeetle.class.getSimpleName(), "ai/npc");
 		addAggroRangeEnterId(TAR_BEETLE);
 		addSpellFinishedId(TAR_BEETLE);
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
-		if (npc.getScriptValue() > 0)
-		{
+	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon) {
+		if (npc.getScriptValue() > 0) {
 			final BuffInfo info = player.getEffectList().getBuffInfoBySkillId(TAR_SPITE);
 			final int level = (info != null) ? info.getSkill().getAbnormalLvl() : 0;
-			if (level < 3)
-			{
+			if (level < 3) {
 				final Skill skill = SKILLS[level].getSkill();
-				if (!npc.isSkillDisabled(skill))
-				{
+				if (!npc.isSkillDisabled(skill)) {
 					npc.setTarget(player);
 					npc.doCast(skill);
 				}
@@ -72,17 +65,12 @@ public final class TarBeetle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
-	{
-		if ((skill != null) && (skill.getId() == TAR_SPITE))
-		{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill) {
+		if ((skill != null) && (skill.getId() == TAR_SPITE)) {
 			final int val = npc.getScriptValue() - 1;
-			if ((val <= 0) || (SKILLS[0].getSkill().getMpConsume2() > npc.getCurrentMp()))
-			{
+			if ((val <= 0) || (SKILLS[0].getSkill().getMpConsume2() > npc.getCurrentMp())) {
 				spawn.removeBeetle(npc);
-			}
-			else
-			{
+			} else {
 				npc.setScriptValue(val);
 			}
 		}
@@ -90,14 +78,12 @@ public final class TarBeetle extends AbstractNpcAI
 	}
 	
 	@Override
-	public boolean unload()
-	{
+	public boolean unload() {
 		spawn.unload();
 		return super.unload();
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new TarBeetle();
 	}
 }

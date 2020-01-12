@@ -34,41 +34,34 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * This class handles following admin commands: - invul = turns invulnerability on/off
  * @version $Revision: 1.1.6.4 $ $Date: 2007/07/31 10:06:00 $
  */
-public class AdminMonsterRace implements IAdminCommandHandler
-{
+public class AdminMonsterRace implements IAdminCommandHandler {
 	// private static Logger _log = Logger.getLogger(AdminMonsterRace.class.getName());
 	
-	private static final String[] ADMIN_COMMANDS =
-	{
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_mons"
 	};
 	
 	protected static int state = -1;
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.equalsIgnoreCase("admin_mons"))
-		{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (command.equalsIgnoreCase("admin_mons")) {
 			handleSendPacket(activeChar);
 		}
 		return true;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 	
-	private void handleSendPacket(L2PcInstance activeChar)
-	{
+	private void handleSendPacket(L2PcInstance activeChar) {
 		/*
 		 * -1 0 to initialize the race 0 15322 to start race 13765 -1 in middle of race -1 0 to end the race 8003 to 8027
 		 */
 		
-		int[][] codes =
-		{
+		int[][] codes = {
 			{
 				-1,
 				0
@@ -88,17 +81,14 @@ public class AdminMonsterRace implements IAdminCommandHandler
 		};
 		MonsterRace race = MonsterRace.getInstance();
 		
-		if (state == -1)
-		{
+		if (state == -1) {
 			state++;
 			race.newRace();
 			race.newSpeeds();
 			MonRaceInfo spk = new MonRaceInfo(codes[state][0], codes[state][1], race.getMonsters(), race.getSpeeds());
 			activeChar.sendPacket(spk);
 			activeChar.broadcastPacket(spk);
-		}
-		else if (state == 0)
-		{
+		} else if (state == 0) {
 			state++;
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.MONSRACE_RACE_START);
 			sm.addInt(0);
@@ -118,21 +108,18 @@ public class AdminMonsterRace implements IAdminCommandHandler
 		
 	}
 	
-	class RunRace implements Runnable
-	{
+	class RunRace implements Runnable {
 		
 		private final int[][] codes;
 		private final L2PcInstance activeChar;
 		
-		public RunRace(int[][] pCodes, L2PcInstance pActiveChar)
-		{
+		public RunRace(int[][] pCodes, L2PcInstance pActiveChar) {
 			codes = pCodes;
 			activeChar = pActiveChar;
 		}
 		
 		@Override
-		public void run()
-		{
+		public void run() {
 			// int[][] speeds1 = MonsterRace.getInstance().getSpeeds();
 			// MonsterRace.getInstance().newSpeeds();
 			// int[][] speeds2 = MonsterRace.getInstance().getSpeeds();
@@ -147,21 +134,17 @@ public class AdminMonsterRace implements IAdminCommandHandler
 		}
 	}
 	
-	private static class RunEnd implements Runnable
-	{
+	private static class RunEnd implements Runnable {
 		private final L2PcInstance activeChar;
 		
-		public RunEnd(L2PcInstance pActiveChar)
-		{
+		public RunEnd(L2PcInstance pActiveChar) {
 			activeChar = pActiveChar;
 		}
 		
 		@Override
-		public void run()
-		{
+		public void run() {
 			DeleteObject obj = null;
-			for (int i = 0; i < 8; i++)
-			{
+			for (int i = 0; i < 8; i++) {
 				obj = new DeleteObject(MonsterRace.getInstance().getMonsters()[i]);
 				activeChar.sendPacket(obj);
 				activeChar.broadcastPacket(obj);

@@ -33,17 +33,12 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
  * @author Zoey76
  * @since 2.6.0.0
  */
-public class Enemy implements ITargetTypeHandler
-{
+public class Enemy implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		switch (skill.getAffectScope())
-		{
-			case SINGLE:
-			{
-				if (target == null)
-				{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+		switch (skill.getAffectScope()) {
+			case SINGLE: {
+				if (target == null) {
 					return EMPTY_TARGET_LIST;
 				}
 				
@@ -51,14 +46,12 @@ public class Enemy implements ITargetTypeHandler
 				if (target.isDead() || (!target.isAttackable() && //
 					(player != null) && //
 					!player.checkIfPvP(target) && //
-					!player.getCurrentSkill().isCtrlPressed()))
-				{
+					!player.getCurrentSkill().isCtrlPressed())) {
 					activeChar.sendPacket(INCORRECT_TARGET);
 					return EMPTY_TARGET_LIST;
 				}
 				
-				return new L2Character[]
-				{
+				return new L2Character[] {
 					target
 				};
 			}
@@ -67,8 +60,7 @@ public class Enemy implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return ENEMY;
 	}
 }

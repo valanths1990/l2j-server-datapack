@@ -30,10 +30,8 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * Secret Area in the Keucereus Fortress instance zone.
  * @author Gladicek
  */
-public final class SecretArea extends Quest
-{
-	protected class SAWorld extends InstanceWorld
-	{
+public final class SecretArea extends Quest {
+	protected class SAWorld extends InstanceWorld {
 		
 	}
 	
@@ -42,28 +40,23 @@ public final class SecretArea extends Quest
 	private static final int LELRIKIA = 32567;
 	private static final int ENTER = 0;
 	private static final int EXIT = 1;
-	private static final Location[] TELEPORTS =
-	{
+	private static final Location[] TELEPORTS = {
 		new Location(-23758, -8959, -5384),
 		new Location(-185057, 242821, 1576)
 	};
 	
-	public SecretArea()
-	{
+	public SecretArea() {
 		super(-1, SecretArea.class.getSimpleName(), "gracia/instances");
 		addStartNpc(GINBY);
 		addTalkId(GINBY);
 		addTalkId(LELRIKIA);
 	}
 	
-	protected void enterInstance(L2PcInstance player)
-	{
+	protected void enterInstance(L2PcInstance player) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		
-		if (world != null)
-		{
-			if (world instanceof SAWorld)
-			{
+		if (world != null) {
+			if (world instanceof SAWorld) {
 				teleportPlayer(player, TELEPORTS[ENTER], world.getInstanceId());
 				return;
 			}
@@ -81,16 +74,12 @@ public final class SecretArea extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
-		if ((npc.getId() == GINBY) && event.equalsIgnoreCase("enter"))
-		{
+		if ((npc.getId() == GINBY) && event.equalsIgnoreCase("enter")) {
 			enterInstance(player);
 			return "32566-01.html";
-		}
-		else if ((npc.getId() == LELRIKIA) && event.equalsIgnoreCase("exit"))
-		{
+		} else if ((npc.getId() == LELRIKIA) && event.equalsIgnoreCase("exit")) {
 			teleportPlayer(player, TELEPORTS[EXIT], 0);
 			return "32567-01.html";
 		}

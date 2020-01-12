@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Phoenix Knight (70)
  * @author Emperorc
  */
-public class Q00070_SagaOfThePhoenixKnight extends AbstractSagaQuest
-{
-	public Q00070_SagaOfThePhoenixKnight()
-	{
+public class Q00070_SagaOfThePhoenixKnight extends AbstractSagaQuest {
+	public Q00070_SagaOfThePhoenixKnight() {
 		super(70, Q00070_SagaOfThePhoenixKnight.class.getSimpleName(), "Saga of the Phoenix Knight");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			30849,
 			31624,
 			31277,
@@ -45,8 +42,7 @@ public class Q00070_SagaOfThePhoenixKnight extends AbstractSagaQuest
 			31657,
 			31277
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7534,
 			7081,
@@ -60,28 +56,23 @@ public class Q00070_SagaOfThePhoenixKnight extends AbstractSagaQuest
 			7093,
 			6482
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27286,
 			27219,
 			27278
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			90
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x05
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(191046, -40640, -3042),
 			new Location(46087, -36372, -1685),
 			new Location(46066, -36396, -1685)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

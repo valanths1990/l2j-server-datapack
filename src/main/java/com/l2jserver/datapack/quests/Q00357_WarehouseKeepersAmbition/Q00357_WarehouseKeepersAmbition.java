@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Warehouse Keeper's Ambition (357)
  * @author Janiko, Pandragon
  */
-public final class Q00357_WarehouseKeepersAmbition extends Quest
-{
+public final class Q00357_WarehouseKeepersAmbition extends Quest {
 	// NPC
 	private static final int SILVA = 30686;
 	// Item
@@ -47,8 +46,7 @@ public final class Q00357_WarehouseKeepersAmbition extends Quest
 	// Misc
 	private static final int MIN_LVL = 47;
 	
-	public Q00357_WarehouseKeepersAmbition()
-	{
+	public Q00357_WarehouseKeepersAmbition() {
 		super(357, Q00357_WarehouseKeepersAmbition.class.getSimpleName(), "Warehouse Keeper's Ambition");
 		addStartNpc(SILVA);
 		addTalkId(SILVA);
@@ -57,44 +55,33 @@ public final class Q00357_WarehouseKeepersAmbition extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
-		if (qs != null)
-		{
-			switch (event)
-			{
+		if (qs != null) {
+			switch (event) {
 				case "30686-01.htm":
 				case "30686-03.htm":
 				case "30686-04.htm":
-				case "30686-10.html":
-				{
+				case "30686-10.html": {
 					htmltext = event;
 					break;
 				}
-				case "30686-05.htm":
-				{
-					if (qs.isCreated())
-					{
+				case "30686-05.htm": {
+					if (qs.isCreated()) {
 						qs.startQuest();
 						htmltext = event;
 					}
 					break;
 				}
-				case "30686-09.html":
-				{
+				case "30686-09.html": {
 					final long crystalCount = getQuestItemsCount(player, JADE_CRYSTAL);
-					if (crystalCount > 0)
-					{
+					if (crystalCount > 0) {
 						long adenaReward = crystalCount * 425;
-						if (crystalCount < 100)
-						{
+						if (crystalCount < 100) {
 							adenaReward += 13500;
 							htmltext = "30686-08.html";
-						}
-						else
-						{
+						} else {
 							adenaReward += 40500;
 							htmltext = event;
 						}
@@ -103,11 +90,9 @@ public final class Q00357_WarehouseKeepersAmbition extends Quest
 					}
 					break;
 				}
-				case "30686-11.html":
-				{
+				case "30686-11.html": {
 					final long crystalCount = getQuestItemsCount(player, JADE_CRYSTAL);
-					if (crystalCount > 0)
-					{
+					if (crystalCount > 0) {
 						giveAdena(player, (crystalCount * 425) + ((crystalCount >= 100) ? 40500 : 0), true);
 						takeItems(player, JADE_CRYSTAL, -1);
 					}
@@ -121,27 +106,21 @@ public final class Q00357_WarehouseKeepersAmbition extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			htmltext = ((talker.getLevel() < MIN_LVL) ? "30686-01.html" : "30686-02.htm");
-		}
-		else if (qs.isStarted())
-		{
+		} else if (qs.isStarted()) {
 			htmltext = (hasQuestItems(talker, JADE_CRYSTAL)) ? "30686-07.html" : "30686-06.html";
 		}
 		return htmltext;
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, -1, 3, npc);
-		if (qs != null)
-		{
+		if (qs != null) {
 			giveItemRandomly(qs.getPlayer(), npc, JADE_CRYSTAL, 1, 0, DROP_DATA.get(npc.getId()), true);
 		}
 		return super.onKill(npc, killer, isSummon);

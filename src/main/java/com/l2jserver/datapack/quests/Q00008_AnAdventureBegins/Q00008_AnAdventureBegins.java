@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * An Adventure Begins (8)
  * @author malyelfik
  */
-public class Q00008_AnAdventureBegins extends Quest
-{
+public class Q00008_AnAdventureBegins extends Quest {
 	// NPCs
 	private static final int JASMINE = 30134;
 	private static final int ROSELYN = 30355;
@@ -42,8 +41,7 @@ public class Q00008_AnAdventureBegins extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 3;
 	
-	public Q00008_AnAdventureBegins()
-	{
+	public Q00008_AnAdventureBegins() {
 		super(8, Q00008_AnAdventureBegins.class.getSimpleName(), "An Adventure Begins");
 		addStartNpc(JASMINE);
 		addTalkId(JASMINE, ROSELYN, HARNE);
@@ -51,17 +49,14 @@ public class Q00008_AnAdventureBegins extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30134-03.htm":
 				st.startQuest();
 				break;
@@ -75,8 +70,7 @@ public class Q00008_AnAdventureBegins extends Quest
 				st.giveItems(ROSELYNS_NOTE, 1);
 				break;
 			case "30144-02.html":
-				if (!st.hasQuestItems(ROSELYNS_NOTE))
-				{
+				if (!st.hasQuestItems(ROSELYNS_NOTE)) {
 					return "30144-03.html";
 				}
 				st.takeItems(ROSELYNS_NOTE, -1);
@@ -90,25 +84,19 @@ public class Q00008_AnAdventureBegins extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case JASMINE:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = ((player.getRace() == Race.DARK_ELF) && (player.getLevel() >= MIN_LEVEL)) ? "30134-02.htm" : "30134-01.html";
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
-						{
+						if (st.isCond(1)) {
 							htmltext = "30134-04.html";
-						}
-						else if (st.isCond(3))
-						{
+						} else if (st.isCond(3)) {
 							htmltext = "30134-05.html";
 						}
 						break;
@@ -118,27 +106,19 @@ public class Q00008_AnAdventureBegins extends Quest
 				}
 				break;
 			case ROSELYN:
-				if (st.isStarted())
-				{
-					if (st.isCond(1))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(1)) {
 						htmltext = "30355-01.html";
-					}
-					else if (st.isCond(2))
-					{
+					} else if (st.isCond(2)) {
 						htmltext = "30355-03.html";
 					}
 				}
 				break;
 			case HARNE:
-				if (st.isStarted())
-				{
-					if (st.isCond(2))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(2)) {
 						htmltext = "30144-01.html";
-					}
-					else if (st.isCond(3))
-					{
+					} else if (st.isCond(3)) {
 						htmltext = "30144-04.html";
 					}
 				}

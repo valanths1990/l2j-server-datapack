@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Gnacik on 2010-06-29.
  * @author nonom
  */
-public class Q10281_MutatedKaneusRune extends Quest
-{
+public class Q10281_MutatedKaneusRune extends Quest {
 	// NPCs
 	private static final int MATHIAS = 31340;
 	private static final int KAYAN = 31335;
@@ -42,8 +41,7 @@ public class Q10281_MutatedKaneusRune extends Quest
 	// Item
 	private static final int TISSUE_WA = 13840;
 	
-	public Q10281_MutatedKaneusRune()
-	{
+	public Q10281_MutatedKaneusRune() {
 		super(10281, Q10281_MutatedKaneusRune.class.getSimpleName(), "Mutated Kaneus - Rune");
 		addStartNpc(MATHIAS);
 		addTalkId(MATHIAS, KAYAN);
@@ -52,16 +50,13 @@ public class Q10281_MutatedKaneusRune extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "31340-03.htm":
 				st.startQuest();
 				break;
@@ -74,49 +69,38 @@ public class Q10281_MutatedKaneusRune extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		QuestState st = getQuestState(killer, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		final int npcId = npc.getId();
-		if (killer.getParty() != null)
-		{
+		if (killer.getParty() != null) {
 			final List<QuestState> PartyMembers = new ArrayList<>();
-			for (L2PcInstance member : killer.getParty().getMembers())
-			{
+			for (L2PcInstance member : killer.getParty().getMembers()) {
 				st = getQuestState(member, false);
-				if ((st != null) && st.isStarted() && !st.hasQuestItems(TISSUE_WA))
-				{
+				if ((st != null) && st.isStarted() && !st.hasQuestItems(TISSUE_WA)) {
 					PartyMembers.add(st);
 				}
 			}
 			
-			if (!PartyMembers.isEmpty())
-			{
+			if (!PartyMembers.isEmpty()) {
 				rewardItem(npcId, PartyMembers.get(getRandom(PartyMembers.size())));
 			}
-		}
-		else if (st.isStarted() && !st.hasQuestItems(TISSUE_WA))
-		{
+		} else if (st.isStarted() && !st.hasQuestItems(TISSUE_WA)) {
 			rewardItem(npcId, st);
 		}
 		return null;
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case MATHIAS:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() > 67) ? "31340-01.htm" : "31340-00.htm";
 						break;
@@ -129,8 +113,7 @@ public class Q10281_MutatedKaneusRune extends Quest
 				}
 				break;
 			case KAYAN:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.STARTED:
 						htmltext = st.hasQuestItems(TISSUE_WA) ? "31335-02.htm" : "31335-01.htm";
 						break;
@@ -149,8 +132,7 @@ public class Q10281_MutatedKaneusRune extends Quest
 	 * @param npcId the ID of the killed monster
 	 * @param st the quest state of the killer or party member
 	 */
-	private final void rewardItem(int npcId, QuestState st)
-	{
+	private final void rewardItem(int npcId, QuestState st) {
 		st.giveItems(TISSUE_WA, 1);
 		st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 	}

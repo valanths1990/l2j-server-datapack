@@ -37,8 +37,7 @@ import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
  * @author Zoey76
  * @since 2.6.0.0
  */
-public class Q00335_TheSongOfTheHunter extends Quest
-{
+public class Q00335_TheSongOfTheHunter extends Quest {
 	// NPCs
 	private static final int GREY = 30744;
 	private static final int TOR = 30745;
@@ -377,8 +376,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 	
 	// Links
 	private static final Map<Integer, String> LINKS = new HashMap<>();
-	static
-	{
+	static {
 		LINKS.put(33520, "<a action=\"bypass -h Quest Q00335_TheSongOfTheHunter 30745-10a.html\">C: 40 Totems of Kadesh</a><br>");
 		LINKS.put(33521, "<a action=\"bypass -h Quest Q00335_TheSongOfTheHunter 30745-10b.html\">C: 50 Jade Necklaces of Timak</a><br>");
 		LINKS.put(33522, "<a action=\"bypass -h Quest Q00335_TheSongOfTheHunter 30745-10c.html\">C: 50 Enchanted Golem Shards</a><br>");
@@ -420,8 +418,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 		LINKS.put(33558, "<a action=\"bypass -h Quest Q00335_TheSongOfTheHunter 30745-14f.html\">B: Kerunos's Gold Mane</a><br>");
 	}
 	
-	public Q00335_TheSongOfTheHunter()
-	{
+	public Q00335_TheSongOfTheHunter() {
 		super(335, Q00335_TheSongOfTheHunter.class.getSimpleName(), "The Song of the Hunter");
 		addStartNpc(GREY);
 		addTalkId(GREY, TOR, CYBELLIN);
@@ -430,30 +427,20 @@ public class Q00335_TheSongOfTheHunter extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			htmltext = player.getLevel() < MIN_LEVEL ? "30744-01.htm" : "30744-02.htm";
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case GREY:
-				{
-					if (hasQuestItems(player, TEST_INSTRUCTIONS_1))
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case GREY: {
+					if (hasQuestItems(player, TEST_INSTRUCTIONS_1)) {
 						final long count = Arrays.asList(getQuestItemsCount(player, GUARDIAN_BASILISK_SCALE) >= 40, getQuestItemsCount(player, KARUT_WEED) >= 20, (getQuestItemsCount(player, HAKAS_HEAD) + getQuestItemsCount(player, JAKAS_HEAD)
 							+ getQuestItemsCount(player, MARKAS_HEAD)) >= 3, hasQuestItems(player, WINDSUS_ALEPH_SKIN), getQuestItemsCount(player, INDIGO_SPIRIT_ORE) >= 20, getQuestItemsCount(player, SPORESEA_SEED) >= 30).stream().filter(b -> b).count();
-						if (count < 3)
-						{
+						if (count < 3) {
 							htmltext = "30744-05.html";
-						}
-						else
-						{
+						} else {
 							qs.setCond(2, true);
 							giveItems(player, FIRST_CIRCLE_HUNTER_LICENSE, 1);
 							takeItems(player, GUARDIAN_BASILISK_SCALE, -1);
@@ -469,28 +456,20 @@ public class Q00335_TheSongOfTheHunter extends Quest
 						}
 					}
 					
-					if (hasQuestItems(player, FIRST_CIRCLE_HUNTER_LICENSE))
-					{
-						if (player.getLevel() < MAX_LEVEL)
-						{
+					if (hasQuestItems(player, FIRST_CIRCLE_HUNTER_LICENSE)) {
+						if (player.getLevel() < MAX_LEVEL) {
 							htmltext = "30744-07.html";
-						}
-						else if (!hasQuestItems(player, TEST_INSTRUCTIONS_2))
-						{
+						} else if (!hasQuestItems(player, TEST_INSTRUCTIONS_2)) {
 							htmltext = "30744-08.html";
 						}
 					}
 					
-					if (hasQuestItems(player, TEST_INSTRUCTIONS_2))
-					{
+					if (hasQuestItems(player, TEST_INSTRUCTIONS_2)) {
 						final long count = Arrays.asList(getQuestItemsCount(player, TIMAK_ORC_TOTEM) >= 20, getQuestItemsCount(player, TRISALIM_SILK) >= 20, getQuestItemsCount(player, AMBROSIUS_FRUIT) >= 30, getQuestItemsCount(player, BALEFIRE_CRYSTAL) >= 20, getQuestItemsCount(player, IMPERIAL_ARROWHEAD) >= 20, ((getQuestItemsCount(player, ATHUS_HEAD)
 							+ getQuestItemsCount(player, LANKAS_HEAD) + getQuestItemsCount(player, TRISKAS_HEAD) + getQuestItemsCount(player, MOTURAS_HEAD) + getQuestItemsCount(player, KALATHS_HEAD)) >= 5)).stream().filter(b -> b).count();
-						if (count < 3)
-						{
+						if (count < 3) {
 							htmltext = "30744-11.html";
-						}
-						else
-						{
+						} else {
 							qs.setCond(3, true);
 							giveItems(player, SECOND_CIRCLE_HUNTER_LICENSE, 1);
 							takeItems(player, TRISALIM_SILK, -1);
@@ -509,90 +488,56 @@ public class Q00335_TheSongOfTheHunter extends Quest
 						}
 					}
 					
-					if (hasQuestItems(player, SECOND_CIRCLE_HUNTER_LICENSE))
-					{
+					if (hasQuestItems(player, SECOND_CIRCLE_HUNTER_LICENSE)) {
 						htmltext = "30744-14.html";
 					}
 					break;
 				}
-				case CYBELLIN:
-				{
-					if (!hasQuestItems(player, SECOND_CIRCLE_HUNTER_LICENSE) && !hasQuestItems(player, FIRST_CIRCLE_HUNTER_LICENSE))
-					{
+				case CYBELLIN: {
+					if (!hasQuestItems(player, SECOND_CIRCLE_HUNTER_LICENSE) && !hasQuestItems(player, FIRST_CIRCLE_HUNTER_LICENSE)) {
 						htmltext = "30746-01.html";
-					}
-					else if (!hasQuestItems(player, CYBELLINS_REQUEST))
-					{
+					} else if (!hasQuestItems(player, CYBELLINS_REQUEST)) {
 						htmltext = "30746-02.html";
-					}
-					else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_1))
-					{
+					} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_1)) {
 						htmltext = "30746-04.html";
-					}
-					else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_2) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_3) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_4) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_5) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_6)
-						|| hasQuestItems(player, BLOOD_CRYSTAL_PURITY_7) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_8) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_9))
-					{
+					} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_2) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_3) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_4) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_5) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_6)
+						|| hasQuestItems(player, BLOOD_CRYSTAL_PURITY_7) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_8) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_9)) {
 						htmltext = "30746-05.html";
-					}
-					else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_10))
-					{
+					} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_10)) {
 						giveAdena(player, 870400, true);
 						takeItems(player, BLOOD_CRYSTAL_PURITY_10, -1);
 						htmltext = "30746-05a.html";
-					}
-					else if (!hasQuestItems(player, BROKEN_BLOOD_CRYSTAL))
-					{
+					} else if (!hasQuestItems(player, BROKEN_BLOOD_CRYSTAL)) {
 						htmltext = "30746-08.html";
-					}
-					else
-					{
+					} else {
 						takeItems(player, BROKEN_BLOOD_CRYSTAL, -1);
 						htmltext = "30746-09.html";
 					}
 					break;
 				}
-				case TOR:
-				{
-					if (!hasQuestItems(player, SECOND_CIRCLE_HUNTER_LICENSE) && !hasQuestItems(player, FIRST_CIRCLE_HUNTER_LICENSE))
-					{
+				case TOR: {
+					if (!hasQuestItems(player, SECOND_CIRCLE_HUNTER_LICENSE) && !hasQuestItems(player, FIRST_CIRCLE_HUNTER_LICENSE)) {
 						htmltext = "30745-01a.html";
-					}
-					else
-					{
+					} else {
 						final long requestCount = getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_1C, FIRST_CIRCLE_REQUEST_2C, FIRST_CIRCLE_REQUEST_3C, FIRST_CIRCLE_REQUEST_4C, FIRST_CIRCLE_REQUEST_5C, FIRST_CIRCLE_REQUEST_6C, FIRST_CIRCLE_REQUEST_7C, FIRST_CIRCLE_REQUEST_8C, FIRST_CIRCLE_REQUEST_9C, FIRST_CIRCLE_REQUEST_10C, FIRST_CIRCLE_REQUEST_11C, FIRST_CIRCLE_REQUEST_12C, FIRST_CIRCLE_REQUEST_1B, FIRST_CIRCLE_REQUEST_2B, FIRST_CIRCLE_REQUEST_3B, FIRST_CIRCLE_REQUEST_4B, FIRST_CIRCLE_REQUEST_5B, FIRST_CIRCLE_REQUEST_6B, FIRST_CIRCLE_REQUEST_1A, FIRST_CIRCLE_REQUEST_2A, FIRST_CIRCLE_REQUEST_3A, SECOND_CIRCLE_REQUEST_1C, SECOND_CIRCLE_REQUEST_2C, SECOND_CIRCLE_REQUEST_3C, SECOND_CIRCLE_REQUEST_4C, SECOND_CIRCLE_REQUEST_5C, SECOND_CIRCLE_REQUEST_6C, SECOND_CIRCLE_REQUEST_7C, SECOND_CIRCLE_REQUEST_8C, SECOND_CIRCLE_REQUEST_9C, SECOND_CIRCLE_REQUEST_10C, SECOND_CIRCLE_REQUEST_11C, SECOND_CIRCLE_REQUEST_12C, SECOND_CIRCLE_REQUEST_1B, SECOND_CIRCLE_REQUEST_2B, SECOND_CIRCLE_REQUEST_3B, SECOND_CIRCLE_REQUEST_4B, SECOND_CIRCLE_REQUEST_5B, SECOND_CIRCLE_REQUEST_6B, SECOND_CIRCLE_REQUEST_1A, SECOND_CIRCLE_REQUEST_2A, SECOND_CIRCLE_REQUEST_3A);
-						if (hasQuestItems(player, FIRST_CIRCLE_HUNTER_LICENSE))
-						{
-							if (requestCount == 0)
-							{
-								if (player.getLevel() < MAX_LEVEL)
-								{
+						if (hasQuestItems(player, FIRST_CIRCLE_HUNTER_LICENSE)) {
+							if (requestCount == 0) {
+								if (player.getLevel() < MAX_LEVEL) {
 									htmltext = "30745-01b.html";
-								}
-								else
-								{
-									if (hasQuestItems(player, SECOND_CIRCLE_HUNTER_LICENSE))
-									{
+								} else {
+									if (hasQuestItems(player, SECOND_CIRCLE_HUNTER_LICENSE)) {
 										htmltext = "30745-03.html";
-									}
-									else
-									{
+									} else {
 										htmltext = "30745-03a.html";
 									}
 								}
-							}
-							else
-							{
+							} else {
 								htmltext = reward(player, qs, REWARDS);
 							}
-						}
-						else if (hasQuestItems(player, SECOND_CIRCLE_HUNTER_LICENSE))
-						{
-							if (requestCount == 0)
-							{
+						} else if (hasQuestItems(player, SECOND_CIRCLE_HUNTER_LICENSE)) {
+							if (requestCount == 0) {
 								htmltext = "30745-03b.html";
-							}
-							else
-							{
+							} else {
 								htmltext = reward(player, qs, REWARDS);
 							}
 						}
@@ -605,22 +550,17 @@ public class Q00335_TheSongOfTheHunter extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30744-03.htm":
-			{
+		switch (event) {
+			case "30744-03.htm": {
 				qs.startQuest();
-				if (!hasQuestItems(player, TEST_INSTRUCTIONS_1))
-				{
+				if (!hasQuestItems(player, TEST_INSTRUCTIONS_1)) {
 					giveItems(player, TEST_INSTRUCTIONS_1, 1);
 				}
 				qs.setMemoState(0);
@@ -655,62 +595,48 @@ public class Q00335_TheSongOfTheHunter extends Quest
 			case "30746-07.html":
 			case "30745-04.html":
 			case "30745-05a.html":
-			case "30745-05c.html":
-			{
+			case "30745-05c.html": {
 				htmltext = event;
 				break;
 			}
-			case "30744-09.html":
-			{
+			case "30744-09.html": {
 				if ((getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_1C) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_2C) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_3C) + //
 					getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_4C) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_4C) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_6C) + //
 					getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_7C) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_8C) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_9C) + //
 					getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_10C) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_11C) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_12C) + //
 					getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_1B) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_2B) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_3B) + //
 					getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_4B) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_5B) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_6B) + //
-					getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_1A) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_2A) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_3A)) == 0)
-				{
+					getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_1A) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_2A) + getQuestItemsCount(player, FIRST_CIRCLE_REQUEST_3A)) == 0) {
 					giveItems(player, TEST_INSTRUCTIONS_2, 1);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30744-09a.html";
 				}
 				break;
 			}
-			case "30744-16.html":
-			{
+			case "30744-16.html": {
 				qs.exitQuest(true, true);
 				
 				takeItems(player, -1, FIRST_CIRCLE_HUNTER_LICENSE, SECOND_CIRCLE_HUNTER_LICENSE, LAUREL_LEAF_PIN, TEST_INSTRUCTIONS_1, TEST_INSTRUCTIONS_2, CYBELLINS_REQUEST, BLOOD_CRYSTAL_PURITY_1, BLOOD_CRYSTAL_PURITY_2, BLOOD_CRYSTAL_PURITY_3, BLOOD_CRYSTAL_PURITY_4, BLOOD_CRYSTAL_PURITY_5, BLOOD_CRYSTAL_PURITY_6, BLOOD_CRYSTAL_PURITY_7, BLOOD_CRYSTAL_PURITY_8, BLOOD_CRYSTAL_PURITY_9, BLOOD_CRYSTAL_PURITY_10, BROKEN_BLOOD_CRYSTAL, CYBELLINS_DAGGER, GUARDIAN_BASILISK_SCALE, KARUT_WEED, HAKAS_HEAD, JAKAS_HEAD, MARKAS_HEAD, WINDSUS_ALEPH_SKIN, INDIGO_SPIRIT_ORE, SPORESEA_SEED, TIMAK_ORC_TOTEM, TRISALIM_SILK, AMBROSIUS_FRUIT, BALEFIRE_CRYSTAL, IMPERIAL_ARROWHEAD, ATHUS_HEAD, LANKAS_HEAD, TRISKAS_HEAD, MOTURAS_HEAD, KALATHS_HEAD, FIRST_CIRCLE_REQUEST_1C, FIRST_CIRCLE_REQUEST_2C, FIRST_CIRCLE_REQUEST_3C, FIRST_CIRCLE_REQUEST_4C, FIRST_CIRCLE_REQUEST_5C, FIRST_CIRCLE_REQUEST_6C, FIRST_CIRCLE_REQUEST_7C, FIRST_CIRCLE_REQUEST_8C, FIRST_CIRCLE_REQUEST_9C, FIRST_CIRCLE_REQUEST_10C, FIRST_CIRCLE_REQUEST_11C, FIRST_CIRCLE_REQUEST_12C, FIRST_CIRCLE_REQUEST_1B, FIRST_CIRCLE_REQUEST_2B, FIRST_CIRCLE_REQUEST_3B, FIRST_CIRCLE_REQUEST_4B, FIRST_CIRCLE_REQUEST_5B, FIRST_CIRCLE_REQUEST_6B, FIRST_CIRCLE_REQUEST_1A, FIRST_CIRCLE_REQUEST_2A, FIRST_CIRCLE_REQUEST_3A, SECOND_CIRCLE_REQUEST_1C, SECOND_CIRCLE_REQUEST_2C, SECOND_CIRCLE_REQUEST_3C, SECOND_CIRCLE_REQUEST_4C, SECOND_CIRCLE_REQUEST_5C, SECOND_CIRCLE_REQUEST_6C, SECOND_CIRCLE_REQUEST_7C, SECOND_CIRCLE_REQUEST_8C, SECOND_CIRCLE_REQUEST_9C, SECOND_CIRCLE_REQUEST_10C, SECOND_CIRCLE_REQUEST_11C, SECOND_CIRCLE_REQUEST_12C, SECOND_CIRCLE_REQUEST_1B, SECOND_CIRCLE_REQUEST_2B, SECOND_CIRCLE_REQUEST_3B, SECOND_CIRCLE_REQUEST_4B, SECOND_CIRCLE_REQUEST_5B, SECOND_CIRCLE_REQUEST_6B, SECOND_CIRCLE_REQUEST_1A, SECOND_CIRCLE_REQUEST_2A, SECOND_CIRCLE_REQUEST_3A, CHARM_OF_KADESH, TIMAK_JADE_NECKLACE, ENCHANTED_GOLEM_SHARD, GIANT_MONSTER_EYE_MEAT, DIRE_WYRM_EGG, GUARDIAN_BASILISK_TALON, REVENANTS_CHAINS, WINDSUS_TUSK, GRANDISS_SKULL, TAIK_OBSIDIAN_AMULET, KARUL_BUGBEAR_HEAD, TAMLIN_IVORY_CHARM, FANG_OF_NARAK, ENCHANTED_GARGOYLES_HORN, COILED_SERPENT_TOTEM, TOTEM_OF_KADESH, KAIKIS_HEAD, KRONBE_VENOM_SAC, EVAS_CHARM, TITANS_TABLET, BOOK_OF_SHUNAIMAN, ROTTING_TREE_SPORES, TRISALIM_VENOM_SAC, TAIK_ORC_TOTEM, HARIT_BARBED_NECKLACE, COIN_OF_OLD_EMPIRE, SKIN_OF_FARCRAN, TEMPEST_SHARD, TSUNAMI_SHARD, SATYR_MANE, HAMADRYAD_SHARD, VANOR_SILENOS_MANE, TALK_BUGBEAR_TOTEM, OKUNS_HEAD, KAKRANS_HEAD, NARCISSUSS_SOULSTONE, DEPRIVE_EYE, UNICORNS_HORN, KERUNOSS_GOLD_MANE, SKULL_OF_EXECUTED, BUST_OF_TRAVIS, SWORD_OF_CADMUS);
 				
 				// TODO(Zoey76): This is dead code.
-				if (getQuestItemsCount(player, LAUREL_LEAF_PIN) < 20)
-				{
+				if (getQuestItemsCount(player, LAUREL_LEAF_PIN) < 20) {
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					giveAdena(player, 20000, true);
 					htmltext = "30744-17.html";
 				}
 				break;
 			}
-			case "30745-02.html":
-			{
-				if (!hasQuestItems(player, TEST_INSTRUCTIONS_2))
-				{
+			case "30745-02.html": {
+				if (!hasQuestItems(player, TEST_INSTRUCTIONS_2)) {
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30745-03.html";
 				}
 				break;
 			}
-			case "LIST_1":
-			{
+			case "LIST_1": {
 				int i0 = 0;
 				int i1 = 0;
 				int i2 = 0;
@@ -718,32 +644,24 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				int i4 = 0;
 				int i5 = 0;
 				
-				if (qs.isMemoState(0))
-				{
-					while ((i0 == i1) || (i1 == i2) || (i2 == i3) || (i3 == i4) || (i0 == i4) || (i0 == i2) || (i0 == i3) || (i1 == i3) || (i1 == i4) || (i2 == i4))
-					{
-						if (!hasQuestItems(player, LAUREL_LEAF_PIN))
-						{
+				if (qs.isMemoState(0)) {
+					while ((i0 == i1) || (i1 == i2) || (i2 == i3) || (i3 == i4) || (i0 == i4) || (i0 == i2) || (i0 == i3) || (i1 == i3) || (i1 == i4) || (i2 == i4)) {
+						if (!hasQuestItems(player, LAUREL_LEAF_PIN)) {
 							i0 = getRandom(12);
 							i1 = getRandom(12);
 							i2 = getRandom(12);
 							i3 = getRandom(12);
 							i4 = getRandom(12);
 							qs.setMemoState((i0 * 32 * 32 * 32 * 32) + (i1 * 32 * 32 * 32) + (i2 * 32 * 32) + (i3 * 32 * 1) + (i4 * 1 * 1));
-						}
-						else if (getQuestItemsCount(player, LAUREL_LEAF_PIN) < 4)
-						{
-							if (getRandom(100) < 20)
-							{
+						} else if (getQuestItemsCount(player, LAUREL_LEAF_PIN) < 4) {
+							if (getRandom(100) < 20) {
 								i0 = getRandom(6) + 12;
 								i1 = getRandom(12);
 								i2 = getRandom(6);
 								i3 = getRandom(6) + 6;
 								i4 = getRandom(12);
 								qs.setMemoState((i0 * 32 * 32 * 32 * 32) + (i1 * 32 * 32 * 32) + (i2 * 32 * 32) + (i3 * 32 * 1) + (i4 * 1 * 1));
-							}
-							else
-							{
+							} else {
 								i0 = getRandom(12);
 								i1 = getRandom(12);
 								i2 = getRandom(12);
@@ -751,32 +669,22 @@ public class Q00335_TheSongOfTheHunter extends Quest
 								i4 = getRandom(12);
 								qs.setMemoState((i0 * 32 * 32 * 32 * 32) + (i1 * 32 * 32 * 32) + (i2 * 32 * 32) + (i3 * 32 * 1) + (i4 * 1 * 1));
 							}
-						}
-						else if (getRandom(100) < 20)
-						{
+						} else if (getRandom(100) < 20) {
 							i0 = getRandom(6) + 12;
-							if (getRandom(20) == 0)
-							{
+							if (getRandom(20) == 0) {
 								i1 = getRandom(2) + 18;
-							}
-							else
-							{
+							} else {
 								i1 = getRandom(12);
 							}
 							i2 = getRandom(6);
 							i3 = getRandom(6) + 6;
 							i4 = getRandom(12);
 							qs.setMemoState((i0 * 32 * 32 * 32 * 32) + (i1 * 32 * 32 * 32) + (i2 * 32 * 32) + (i3 * 32 * 1) + (i4 * 1 * 1));
-						}
-						else
-						{
+						} else {
 							i0 = getRandom(12);
-							if (getRandom(20) == 0)
-							{
+							if (getRandom(20) == 0) {
 								i1 = getRandom(2) + 18;
-							}
-							else
-							{
+							} else {
 								i1 = getRandom(12);
 							}
 							i2 = getRandom(6);
@@ -793,9 +701,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 					i4 = 33520 + i4;
 					
 					htmltext = getHtml(player, "30745-16.html", i0, i1, i2, i3, i4);
-				}
-				else
-				{
+				} else {
 					i5 = qs.getMemoState();
 					i0 = i5 % 32;
 					i5 = i5 / 32;
@@ -817,8 +723,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				}
 				break;
 			}
-			case "LIST_2":
-			{
+			case "LIST_2": {
 				int i0 = 0;
 				int i1 = 0;
 				int i2 = 0;
@@ -826,32 +731,24 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				int i4 = 0;
 				int i5 = 0;
 				
-				if (qs.isMemoState(0))
-				{
-					while ((i0 == i1) || (i1 == i2) || (i2 == i3) || (i3 == i4) || (i0 == i4) || (i0 == i2) || (i0 == i3) || (i1 == i3) || (i1 == i4) || (i2 == i4))
-					{
-						if (!hasQuestItems(player, LAUREL_LEAF_PIN))
-						{
+				if (qs.isMemoState(0)) {
+					while ((i0 == i1) || (i1 == i2) || (i2 == i3) || (i3 == i4) || (i0 == i4) || (i0 == i2) || (i0 == i3) || (i1 == i3) || (i1 == i4) || (i2 == i4)) {
+						if (!hasQuestItems(player, LAUREL_LEAF_PIN)) {
 							i0 = getRandom(10);
 							i1 = getRandom(10);
 							i2 = getRandom(5);
 							i3 = getRandom(5) + 5;
 							i4 = getRandom(10);
 							qs.setMemoState((i0 * 32 * 32 * 32 * 32) + (i1 * 32 * 32 * 32) + (i2 * 32 * 32) + (i3 * 32 * 1) + (i4 * 1 * 1));
-						}
-						else if (getQuestItemsCount(player, LAUREL_LEAF_PIN) < 4)
-						{
-							if (getRandom(100) < 20)
-							{
+						} else if (getQuestItemsCount(player, LAUREL_LEAF_PIN) < 4) {
+							if (getRandom(100) < 20) {
 								i0 = getRandom(6) + 10;
 								i1 = getRandom(10);
 								i2 = getRandom(5);
 								i3 = getRandom(5) + 5;
 								i4 = getRandom(10);
 								qs.setMemoState((i0 * 32 * 32 * 32 * 32) + (i1 * 32 * 32 * 32) + (i2 * 32 * 32) + (i3 * 32 * 1) + (i4 * 1 * 1));
-							}
-							else
-							{
+							} else {
 								i0 = getRandom(10);
 								i1 = getRandom(10);
 								i2 = getRandom(5);
@@ -859,32 +756,22 @@ public class Q00335_TheSongOfTheHunter extends Quest
 								i4 = getRandom(10);
 								qs.setMemoState((i0 * 32 * 32 * 32 * 32) + (i1 * 32 * 32 * 32) + (i2 * 32 * 32) + (i3 * 32 * 1) + (i4 * 1 * 1));
 							}
-						}
-						else if (getRandom(100) < 20)
-						{
+						} else if (getRandom(100) < 20) {
 							i0 = getRandom(6) + 10;
-							if (getRandom(20) == 0)
-							{
+							if (getRandom(20) == 0) {
 								i1 = getRandom(3) + 16;
-							}
-							else
-							{
+							} else {
 								i1 = getRandom(10);
 							}
 							i2 = getRandom(5);
 							i3 = getRandom(5) + 5;
 							i4 = getRandom(10);
 							qs.setMemoState((i0 * 32 * 32 * 32 * 32) + (i1 * 32 * 32 * 32) + (i2 * 32 * 32) + (i3 * 32 * 1) + (i4 * 1 * 1));
-						}
-						else
-						{
+						} else {
 							i0 = getRandom(10);
-							if (getRandom(20) == 0)
-							{
+							if (getRandom(20) == 0) {
 								i1 = getRandom(3) + 16;
-							}
-							else
-							{
+							} else {
 								i1 = getRandom(10);
 							}
 							i2 = getRandom(5);
@@ -901,9 +788,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 					i4 = 33520 + (i4 + 20);
 					
 					htmltext = getHtml(player, "30745-16.html", i0, i1, i2, i3, i4);
-				}
-				else
-				{
+				} else {
 					i5 = qs.getMemoState();
 					i0 = i5 % 32;
 					i5 = i5 / 32;
@@ -925,60 +810,38 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				}
 				break;
 			}
-			case "30746-03.html":
-			{
-				if (!hasQuestItems(player, CYBELLINS_DAGGER))
-				{
+			case "30746-03.html": {
+				if (!hasQuestItems(player, CYBELLINS_DAGGER)) {
 					giveItems(player, CYBELLINS_DAGGER, 1);
 				}
-				if (getQuestItemsCount(player, CYBELLINS_REQUEST) == 0)
-				{
+				if (getQuestItemsCount(player, CYBELLINS_REQUEST) == 0) {
 					giveItems(player, CYBELLINS_REQUEST, 1);
 				}
 				giveItems(player, BLOOD_CRYSTAL_PURITY_1, 1);
-				if (hasQuestItems(player, BROKEN_BLOOD_CRYSTAL))
-				{
+				if (hasQuestItems(player, BROKEN_BLOOD_CRYSTAL)) {
 					takeItems(player, BROKEN_BLOOD_CRYSTAL, -1);
 				}
 				htmltext = event;
 				break;
 			}
-			case "30746-06.html":
-			{
-				if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_2))
-				{
+			case "30746-06.html": {
+				if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_2)) {
 					giveAdena(player, 3400, true);
-				}
-				else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_3))
-				{
+				} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_3)) {
 					giveAdena(player, 6800, true);
-				}
-				else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_4))
-				{
+				} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_4)) {
 					giveAdena(player, 13600, true);
-				}
-				else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_5))
-				{
+				} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_5)) {
 					giveAdena(player, 27200, true);
-				}
-				else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_6))
-				{
+				} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_6)) {
 					giveAdena(player, 54400, true);
-				}
-				else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_7))
-				{
+				} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_7)) {
 					giveAdena(player, 108800, true);
-				}
-				else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_8))
-				{
+				} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_8)) {
 					giveAdena(player, 217600, true);
-				}
-				else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_9))
-				{
+				} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_9)) {
 					giveAdena(player, 435200, true);
-				}
-				else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_10))
-				{
+				} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_10)) {
 					giveAdena(player, 870400, true);
 				}
 				takeItems(player, BLOOD_CRYSTAL_PURITY_2, -1);
@@ -993,19 +856,16 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				htmltext = event;
 				break;
 			}
-			case "30746-10.html":
-			{
+			case "30746-10.html": {
 				takeItems(player, BLOOD_CRYSTAL_PURITY_1, -1);
 				takeItems(player, CYBELLINS_DAGGER, -1);
 				takeItems(player, CYBELLINS_REQUEST, -1);
 				htmltext = event;
 				break;
 			}
-			case "30745-05b.html":
-			{
+			case "30745-05b.html": {
 				htmltext = event;
-				if (hasQuestItems(player, LAUREL_LEAF_PIN))
-				{
+				if (hasQuestItems(player, LAUREL_LEAF_PIN)) {
 					takeItems(player, LAUREL_LEAF_PIN, 1);
 				}
 				
@@ -1024,230 +884,192 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				takeItems(player, -1, DEPRIVE_EYE, UNICORNS_HORN, KERUNOSS_GOLD_MANE, SKULL_OF_EXECUTED, BUST_OF_TRAVIS, SWORD_OF_CADMUS);
 				break;
 			}
-			case "30745-10a.html":
-			{
+			case "30745-10a.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_1C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-10b.html":
-			{
+			case "30745-10b.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_2C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-10c.html":
-			{
+			case "30745-10c.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_3C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-10d.html":
-			{
+			case "30745-10d.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_4C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-10e.html":
-			{
+			case "30745-10e.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_5C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-10f.html":
-			{
+			case "30745-10f.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_6C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-10g.html":
-			{
+			case "30745-10g.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_7C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-10h.html":
-			{
+			case "30745-10h.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_8C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-10i.html":
-			{
+			case "30745-10i.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_9C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-10j.html":
-			{
+			case "30745-10j.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_10C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-10k.html":
-			{
+			case "30745-10k.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_11C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-10l.html":
-			{
+			case "30745-10l.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_12C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-11a.html":
-			{
+			case "30745-11a.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_1B, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-11b.html":
-			{
+			case "30745-11b.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_2B, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-11c.html":
-			{
+			case "30745-11c.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_3B, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-11d.html":
-			{
+			case "30745-11d.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_4B, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-11e.html":
-			{
+			case "30745-11e.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_5B, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-11f.html":
-			{
+			case "30745-11f.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_6B, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-12a.html":
-			{
+			case "30745-12a.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_1A, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-12b.html":
-			{
+			case "30745-12b.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_2A, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-12c.html":
-			{
+			case "30745-12c.html": {
 				giveItems(player, FIRST_CIRCLE_REQUEST_3A, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-13a.html":
-			{
+			case "30745-13a.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_1C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-13b.html":
-			{
+			case "30745-13b.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_2C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-13c.html":
-			{
+			case "30745-13c.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_3C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-13d.html":
-			{
+			case "30745-13d.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_4C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-13e.html":
-			{
+			case "30745-13e.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_5C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-13f.html":
-			{
+			case "30745-13f.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_6C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-13g.html":
-			{
+			case "30745-13g.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_7C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-13k.html":
-			{
+			case "30745-13k.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_11C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-13i.html":
-			{
+			case "30745-13i.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_9C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-13j.html":
-			{
+			case "30745-13j.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_10C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-13l.html":
-			{
+			case "30745-13l.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_12C, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-14a.html":
-			{
+			case "30745-14a.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_1B, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-14b.html":
-			{
+			case "30745-14b.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_2B, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-14c.html":
-			{
+			case "30745-14c.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_3B, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-14d.html":
-			{
+			case "30745-14d.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_4B, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-14e.html":
-			{
+			case "30745-14e.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_5B, 1);
 				htmltext = event;
 				break;
 			}
-			case "30745-14f.html":
-			{
+			case "30745-14f.html": {
 				giveItems(player, SECOND_CIRCLE_REQUEST_6B, 1);
 				htmltext = event;
 				break;
@@ -1257,251 +1079,185 @@ public class Q00335_TheSongOfTheHunter extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(player, -1, 3, npc);
-		if (qs != null)
-		{
-			for (int i = DROPLIST.length - 1; i >= 0; i--)
-			{
+		if (qs != null) {
+			for (int i = DROPLIST.length - 1; i >= 0; i--) {
 				final int[] droplist = DROPLIST[i];
-				if (npc.getId() == droplist[0])
-				{
-					if (hasQuestItems(qs.getPlayer(), droplist[1]) && giveItemRandomly(qs.getPlayer(), npc, droplist[2], droplist[3], droplist[4], droplist[5] / 100d, true))
-					{
+				if (npc.getId() == droplist[0]) {
+					if (hasQuestItems(qs.getPlayer(), droplist[1]) && giveItemRandomly(qs.getPlayer(), npc, droplist[2], droplist[3], droplist[4], droplist[5] / 100d, true)) {
 						playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 				}
 			}
 			
-			switch (npc.getId())
-			{
-				case BREKA_ORC_WARRIOR:
-				{
-					if (hasQuestItems(qs.getPlayer(), TEST_INSTRUCTIONS_1) && ((getQuestItemsCount(qs.getPlayer(), HAKAS_HEAD) + getQuestItemsCount(qs.getPlayer(), JAKAS_HEAD) + getQuestItemsCount(qs.getPlayer(), MARKAS_HEAD)) < 3))
-					{
-						if (getRandom(10) < 2)
-						{
-							if (!hasQuestItems(qs.getPlayer(), HAKAS_HEAD))
-							{
+			switch (npc.getId()) {
+				case BREKA_ORC_WARRIOR: {
+					if (hasQuestItems(qs.getPlayer(), TEST_INSTRUCTIONS_1) && ((getQuestItemsCount(qs.getPlayer(), HAKAS_HEAD) + getQuestItemsCount(qs.getPlayer(), JAKAS_HEAD) + getQuestItemsCount(qs.getPlayer(), MARKAS_HEAD)) < 3)) {
+						if (getRandom(10) < 2) {
+							if (!hasQuestItems(qs.getPlayer(), HAKAS_HEAD)) {
 								addSpawn(BREKA_OVERLORD_HAKA, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
-							}
-							else if (!hasQuestItems(qs.getPlayer(), JAKAS_HEAD))
-							{
+							} else if (!hasQuestItems(qs.getPlayer(), JAKAS_HEAD)) {
 								addSpawn(BREKA_OVERLORD_JAKA, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
-							}
-							else if (!hasQuestItems(qs.getPlayer(), MARKAS_HEAD))
-							{
+							} else if (!hasQuestItems(qs.getPlayer(), MARKAS_HEAD)) {
 								addSpawn(BREKA_OVERLORD_MARKA, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 							}
 						}
 					}
 					break;
 				}
-				case WINDSUS:
-				{
-					if (hasQuestItems(qs.getPlayer(), TEST_INSTRUCTIONS_1) && !hasQuestItems(qs.getPlayer(), WINDSUS_ALEPH_SKIN) && (getRandom(10) < 2))
-					{
+				case WINDSUS: {
+					if (hasQuestItems(qs.getPlayer(), TEST_INSTRUCTIONS_1) && !hasQuestItems(qs.getPlayer(), WINDSUS_ALEPH_SKIN) && (getRandom(10) < 2)) {
 						addSpawn(WINDSUS_ALEPH, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 					}
 					break;
 				}
-				case GRANDIS:
-				{
-					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_2A) && !hasQuestItems(qs.getPlayer(), TITANS_TABLET) && (getRandom(10) < 2))
-					{
+				case GRANDIS: {
+					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_2A) && !hasQuestItems(qs.getPlayer(), TITANS_TABLET) && (getRandom(10) < 2)) {
 						addSpawn(GOK_MAGOK, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 					}
 					break;
 				}
-				case TARLK_BUGBEAR_WARRIOR:
-				{
+				case TARLK_BUGBEAR_WARRIOR: {
 					if (hasQuestItems(qs.getPlayer(), TEST_INSTRUCTIONS_2)
-						&& ((getQuestItemsCount(qs.getPlayer(), ATHUS_HEAD) + getQuestItemsCount(qs.getPlayer(), LANKAS_HEAD) + getQuestItemsCount(qs.getPlayer(), TRISKAS_HEAD) + getQuestItemsCount(qs.getPlayer(), MOTURAS_HEAD) + getQuestItemsCount(qs.getPlayer(), KALATHS_HEAD)) < 5))
-					{
-						if (getRandom(10) < 2)
-						{
-							if (!hasQuestItems(qs.getPlayer(), ATHUS_HEAD))
-							{
+						&& ((getQuestItemsCount(qs.getPlayer(), ATHUS_HEAD) + getQuestItemsCount(qs.getPlayer(), LANKAS_HEAD) + getQuestItemsCount(qs.getPlayer(), TRISKAS_HEAD) + getQuestItemsCount(qs.getPlayer(), MOTURAS_HEAD) + getQuestItemsCount(qs.getPlayer(), KALATHS_HEAD)) < 5)) {
+						if (getRandom(10) < 2) {
+							if (!hasQuestItems(qs.getPlayer(), ATHUS_HEAD)) {
 								addSpawn(TARLK_RAIDER_ATHU, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
-							}
-							else if (!hasQuestItems(qs.getPlayer(), LANKAS_HEAD))
-							{
+							} else if (!hasQuestItems(qs.getPlayer(), LANKAS_HEAD)) {
 								addSpawn(TARLK_RAIDER_LANKA, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
-							}
-							else if (!hasQuestItems(qs.getPlayer(), TRISKAS_HEAD))
-							{
+							} else if (!hasQuestItems(qs.getPlayer(), TRISKAS_HEAD)) {
 								addSpawn(TARLK_RAIDER_TRISKA, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
-							}
-							else if (!hasQuestItems(qs.getPlayer(), MOTURAS_HEAD))
-							{
+							} else if (!hasQuestItems(qs.getPlayer(), MOTURAS_HEAD)) {
 								addSpawn(TARLK_RAIDER_MOTURA, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
-							}
-							else if (!hasQuestItems(qs.getPlayer(), KALATHS_HEAD))
-							{
+							} else if (!hasQuestItems(qs.getPlayer(), KALATHS_HEAD)) {
 								addSpawn(TARLK_RAIDER_KALATH, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 							}
 						}
 					}
 					break;
 				}
-				case LETO_LIZARDMAN_SHAMAN:
-				{
-					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_4B) && !hasQuestItems(qs.getPlayer(), TOTEM_OF_KADESH) && (getRandom(10) < 2))
-					{
+				case LETO_LIZARDMAN_SHAMAN: {
+					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_4B) && !hasQuestItems(qs.getPlayer(), TOTEM_OF_KADESH) && (getRandom(10) < 2)) {
 						addSpawn(LETO_SHAMAN_KETZ, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 					}
 					
 					evolveBloodCrystal(qs.getPlayer());
 					break;
 				}
-				case LETO_LIZARDMAN_OVERLORD:
-				{
-					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_1B) && !hasQuestItems(qs.getPlayer(), FANG_OF_NARAK) && (getRandom(10) < 2))
-					{
+				case LETO_LIZARDMAN_OVERLORD: {
+					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_1B) && !hasQuestItems(qs.getPlayer(), FANG_OF_NARAK) && (getRandom(10) < 2)) {
 						addSpawn(LETO_CHIEF_NARAK, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 					}
 					
 					evolveBloodCrystal(qs.getPlayer());
 					break;
 				}
-				case TIMAK_ORC_WARRIOR:
-				{
-					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_5B) && !hasQuestItems(qs.getPlayer(), KAIKIS_HEAD) && (getRandom(10) < 2))
-					{
+				case TIMAK_ORC_WARRIOR: {
+					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_5B) && !hasQuestItems(qs.getPlayer(), KAIKIS_HEAD) && (getRandom(10) < 2)) {
 						addSpawn(TIMAK_RAIDER_KAIKEE, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 					}
 					break;
 				}
-				case TIMAK_ORC_OVERLORD:
-				{
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_1B) && !hasQuestItems(qs.getPlayer(), OKUNS_HEAD) && (getRandom(10) == 0))
-					{
+				case TIMAK_ORC_OVERLORD: {
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_1B) && !hasQuestItems(qs.getPlayer(), OKUNS_HEAD) && (getRandom(10) == 0)) {
 						addSpawn(TIMAK_OVERLORD_OKUN, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 					}
 					break;
 				}
 				case FLINE:
-				case LIELE:
-				{
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_7C) && (getQuestItemsCount(qs.getPlayer(), TEMPEST_SHARD) < 40) && (getRandom(20) < 2))
-					{
+				case LIELE: {
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_7C) && (getQuestItemsCount(qs.getPlayer(), TEMPEST_SHARD) < 40) && (getRandom(20) < 2)) {
 						addSpawn(GREMLIN_FILCHER, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.SHOW_ME_THE_PRETTY_SPARKLING_THINGS_THEYRE_ALL_MINE));
 					}
 					break;
 				}
-				case FOREST_RUNNER:
-				{
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_10C) && (getQuestItemsCount(qs.getPlayer(), HAMADRYAD_SHARD) < 40) && (getRandom(20) < 2))
-					{
+				case FOREST_RUNNER: {
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_10C) && (getQuestItemsCount(qs.getPlayer(), HAMADRYAD_SHARD) < 40) && (getRandom(20) < 2)) {
 						addSpawn(GREMLIN_FILCHER, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.SHOW_ME_THE_PRETTY_SPARKLING_THINGS_THEYRE_ALL_MINE));
 					}
 					break;
 				}
-				case KARUL_BUGBEAR:
-				{
-					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_3A) && !hasQuestItems(qs.getPlayer(), BOOK_OF_SHUNAIMAN) && (getRandom(10) < 2))
-					{
+				case KARUL_BUGBEAR: {
+					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_3A) && !hasQuestItems(qs.getPlayer(), BOOK_OF_SHUNAIMAN) && (getRandom(10) < 2)) {
 						addSpawn(KARUL_CHIEF_OROOTO, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 					}
 					break;
 				}
-				case TAIK_ORC_CAPTAIN:
-				{
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_2B) && !hasQuestItems(qs.getPlayer(), KAKRANS_HEAD) && (getRandom(10) < 2))
-					{
+				case TAIK_ORC_CAPTAIN: {
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_2B) && !hasQuestItems(qs.getPlayer(), KAKRANS_HEAD) && (getRandom(10) < 2)) {
 						addSpawn(TAIK_OVERLORD_KAKRAN, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 					}
 					break;
 				}
-				case MIRROR:
-				{
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_3B) && (getQuestItemsCount(qs.getPlayer(), NARCISSUSS_SOULSTONE) < 40) && (getRandom(20) < 2))
-					{
+				case MIRROR: {
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_3B) && (getQuestItemsCount(qs.getPlayer(), NARCISSUSS_SOULSTONE) < 40) && (getRandom(20) < 2)) {
 						addSpawn(GREMLIN_FILCHER, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.SHOW_ME_THE_PRETTY_SPARKLING_THINGS_THEYRE_ALL_MINE));
 					}
 					break;
 				}
-				case HATAR_RATMAN_THIEF:
-				{
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_5C) && (getQuestItemsCount(qs.getPlayer(), COIN_OF_OLD_EMPIRE) < 20) && (getRandom(20) < 2))
-					{
+				case HATAR_RATMAN_THIEF: {
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_5C) && (getQuestItemsCount(qs.getPlayer(), COIN_OF_OLD_EMPIRE) < 20) && (getRandom(20) < 2)) {
 						addSpawn(GREMLIN_FILCHER, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.SHOW_ME_THE_PRETTY_SPARKLING_THINGS_THEYRE_ALL_MINE));
 					}
 					break;
 				}
-				case HATAR_RATMAN_BOSS:
-				{
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_5C) && (getQuestItemsCount(qs.getPlayer(), COIN_OF_OLD_EMPIRE) < 20) && (getRandom(20) < 2))
-					{
+				case HATAR_RATMAN_BOSS: {
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_5C) && (getQuestItemsCount(qs.getPlayer(), COIN_OF_OLD_EMPIRE) < 20) && (getRandom(20) < 2)) {
 						addSpawn(GREMLIN_FILCHER, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.SHOW_ME_THE_PRETTY_SPARKLING_THINGS_THEYRE_ALL_MINE));
 					}
 					
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_2A) && !hasQuestItems(qs.getPlayer(), BUST_OF_TRAVIS) && (getRandom(10) < 2))
-					{
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_2A) && !hasQuestItems(qs.getPlayer(), BUST_OF_TRAVIS) && (getRandom(10) < 2)) {
 						addSpawn(HATAR_CHIEFTAIN_KUBEL, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 					}
 					break;
 				}
-				case VANOR_SILENOS_CHIEFTAIN:
-				{
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_6B) && !hasQuestItems(qs.getPlayer(), KERUNOSS_GOLD_MANE) && (getRandom(10) < 2))
-					{
+				case VANOR_SILENOS_CHIEFTAIN: {
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_6B) && !hasQuestItems(qs.getPlayer(), KERUNOSS_GOLD_MANE) && (getRandom(10) < 2)) {
 						addSpawn(VANOR_ELDER_KERUNOS, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 					}
 					break;
 				}
-				case GREMLIN_FILCHER:
-				{
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_7C) && (getQuestItemsCount(qs.getPlayer(), TEMPEST_SHARD) < 40))
-					{
-						if (giveItemRandomly(qs.getPlayer(), npc, TEMPEST_SHARD, 5, 40, 1.0, true))
-						{
+				case GREMLIN_FILCHER: {
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_7C) && (getQuestItemsCount(qs.getPlayer(), TEMPEST_SHARD) < 40)) {
+						if (giveItemRandomly(qs.getPlayer(), npc, TEMPEST_SHARD, 5, 40, 1.0, true)) {
 							playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.PRETTY_GOOD));
 					}
 					
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_8C) && (getQuestItemsCount(qs.getPlayer(), TSUNAMI_SHARD) < 40))
-					{
-						if (giveItemRandomly(qs.getPlayer(), npc, TSUNAMI_SHARD, 5, 40, 1.0, true))
-						{
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_8C) && (getQuestItemsCount(qs.getPlayer(), TSUNAMI_SHARD) < 40)) {
+						if (giveItemRandomly(qs.getPlayer(), npc, TSUNAMI_SHARD, 5, 40, 1.0, true)) {
 							playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.PRETTY_GOOD));
 					}
 					
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_10C) && (getQuestItemsCount(qs.getPlayer(), HAMADRYAD_SHARD) < 40))
-					{
-						if (giveItemRandomly(qs.getPlayer(), npc, HAMADRYAD_SHARD, 5, 40, 1.0, true))
-						{
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_10C) && (getQuestItemsCount(qs.getPlayer(), HAMADRYAD_SHARD) < 40)) {
+						if (giveItemRandomly(qs.getPlayer(), npc, HAMADRYAD_SHARD, 5, 40, 1.0, true)) {
 							playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.PRETTY_GOOD));
 					}
 					
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_3B) && (getQuestItemsCount(qs.getPlayer(), NARCISSUSS_SOULSTONE) < 40))
-					{
-						if (giveItemRandomly(qs.getPlayer(), npc, NARCISSUSS_SOULSTONE, 5, 40, 1.0, true))
-						{
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_3B) && (getQuestItemsCount(qs.getPlayer(), NARCISSUSS_SOULSTONE) < 40)) {
+						if (giveItemRandomly(qs.getPlayer(), npc, NARCISSUSS_SOULSTONE, 5, 40, 1.0, true)) {
 							playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.PRETTY_GOOD));
 					}
 					
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_5C) && (getQuestItemsCount(qs.getPlayer(), COIN_OF_OLD_EMPIRE) < 20))
-					{
-						if (giveItemRandomly(qs.getPlayer(), npc, COIN_OF_OLD_EMPIRE, 3, 20, 1.0, true))
-						{
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_5C) && (getQuestItemsCount(qs.getPlayer(), COIN_OF_OLD_EMPIRE) < 20)) {
+						if (giveItemRandomly(qs.getPlayer(), npc, COIN_OF_OLD_EMPIRE, 3, 20, 1.0, true)) {
 							playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 						
@@ -1509,30 +1265,24 @@ public class Q00335_TheSongOfTheHunter extends Quest
 					}
 					break;
 				}
-				case GOK_MAGOK:
-				{
-					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_2A) && !hasQuestItems(qs.getPlayer(), TITANS_TABLET) && (getRandom(2) == 0))
-					{
+				case GOK_MAGOK: {
+					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_2A) && !hasQuestItems(qs.getPlayer(), TITANS_TABLET) && (getRandom(2) == 0)) {
 						addSpawn(BLACK_LEGION_STORMTROOPER, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 						addSpawn(BLACK_LEGION_STORMTROOPER, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.WELL_TAKE_THE_PROPERTY_OF_THE_ANCIENT_EMPIRE));
 					}
 					break;
 				}
-				case HATAR_CHIEFTAIN_KUBEL:
-				{
-					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_2A) && !hasQuestItems(qs.getPlayer(), BUST_OF_TRAVIS) && (getRandom(2) == 0))
-					{
+				case HATAR_CHIEFTAIN_KUBEL: {
+					if (hasQuestItems(qs.getPlayer(), SECOND_CIRCLE_REQUEST_2A) && !hasQuestItems(qs.getPlayer(), BUST_OF_TRAVIS) && (getRandom(2) == 0)) {
 						addSpawn(BLACK_LEGION_STORMTROOPER, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 						addSpawn(BLACK_LEGION_STORMTROOPER, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.WELL_TAKE_THE_PROPERTY_OF_THE_ANCIENT_EMPIRE));
 					}
 					break;
 				}
-				case KARUL_CHIEF_OROOTO:
-				{
-					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_3A) && !hasQuestItems(qs.getPlayer(), BOOK_OF_SHUNAIMAN) && (getRandom(2) == 0))
-					{
+				case KARUL_CHIEF_OROOTO: {
+					if (hasQuestItems(qs.getPlayer(), FIRST_CIRCLE_REQUEST_3A) && !hasQuestItems(qs.getPlayer(), BOOK_OF_SHUNAIMAN) && (getRandom(2) == 0)) {
 						addSpawn(BLACK_LEGION_STORMTROOPER, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 						addSpawn(BLACK_LEGION_STORMTROOPER, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.WELL_TAKE_THE_PROPERTY_OF_THE_ANCIENT_EMPIRE));
@@ -1543,8 +1293,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				case LETO_LIZARDMAN_SOLDIER:
 				case HARIT_LIZARDMAN_GRUNT:
 				case HARIT_LIZARDMAN_ARCHER:
-				case HARIT_LIZARDMAN_WARRIOR:
-				{
+				case HARIT_LIZARDMAN_WARRIOR: {
 					evolveBloodCrystal(qs.getPlayer());
 					break;
 				}
@@ -1553,26 +1302,19 @@ public class Q00335_TheSongOfTheHunter extends Quest
 		return super.onKill(npc, player, isSummon);
 	}
 	
-	private String reward(L2PcInstance player, QuestState qs, int[][] rewards)
-	{
-		for (int i = rewards.length - 1; i >= 0; i--)
-		{
+	private String reward(L2PcInstance player, QuestState qs, int[][] rewards) {
+		for (int i = rewards.length - 1; i >= 0; i--) {
 			final int[] reward = rewards[i];
-			if (hasQuestItems(player, reward[0]))
-			{
-				if (getQuestItemsCount(player, reward[1]) >= reward[2])
-				{
+			if (hasQuestItems(player, reward[0])) {
+				if (getQuestItemsCount(player, reward[1]) >= reward[2]) {
 					giveItems(player, LAUREL_LEAF_PIN, 1);
 					giveAdena(player, reward[3], true);
 					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					qs.setMemoState(0);
 					takeItems(player, reward[0], -1);
-					if (reward[1] == GIANT_MONSTER_EYE_MEAT)
-					{
+					if (reward[1] == GIANT_MONSTER_EYE_MEAT) {
 						takeItems(player, reward[1], reward[2]);
-					}
-					else
-					{
+					} else {
 						takeItems(player, reward[1], -1);
 					}
 					return (hasQuestItems(player, FIRST_CIRCLE_HUNTER_LICENSE) ? "30745-06a.html" : "30745-06b.html");
@@ -1583,8 +1325,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 		return null;
 	}
 	
-	private String getHtml(L2PcInstance player, String htmlName, int i0, int i1, int i2, int i3, int i4)
-	{
+	private String getHtml(L2PcInstance player, String htmlName, int i0, int i1, int i2, int i3, int i4) {
 		String html = getHtm(player.getHtmlPrefix(), htmlName);
 		html = html.replace("<?reply1?>", LINKS.get(i0));
 		html = html.replace("<?reply2?>", LINKS.get(i1));
@@ -1594,69 +1335,46 @@ public class Q00335_TheSongOfTheHunter extends Quest
 		return html;
 	}
 	
-	private void evolveBloodCrystal(L2PcInstance player)
-	{
+	private void evolveBloodCrystal(L2PcInstance player) {
 		final L2Weapon weapon = player.getActiveWeaponItem();
-		if ((weapon != null) && (weapon.getId() == CYBELLINS_DAGGER) && (hasQuestItems(player, FIRST_CIRCLE_HUNTER_LICENSE) || hasQuestItems(player, SECOND_CIRCLE_HUNTER_LICENSE)))
-		{
-			if (getRandom(100) < 60)
-			{
-				if (hasQuestItems(player, CYBELLINS_REQUEST))
-				{
-					if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_1))
-					{
+		if ((weapon != null) && (weapon.getId() == CYBELLINS_DAGGER) && (hasQuestItems(player, FIRST_CIRCLE_HUNTER_LICENSE) || hasQuestItems(player, SECOND_CIRCLE_HUNTER_LICENSE))) {
+			if (getRandom(100) < 60) {
+				if (hasQuestItems(player, CYBELLINS_REQUEST)) {
+					if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_1)) {
 						giveItems(player, BLOOD_CRYSTAL_PURITY_2, 1);
 						takeItems(player, BLOOD_CRYSTAL_PURITY_1, -1);
-					}
-					else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_2))
-					{
+					} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_2)) {
 						giveItems(player, BLOOD_CRYSTAL_PURITY_3, 1);
 						takeItems(player, BLOOD_CRYSTAL_PURITY_2, -1);
-					}
-					else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_3))
-					{
+					} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_3)) {
 						giveItems(player, BLOOD_CRYSTAL_PURITY_4, 1);
 						takeItems(player, BLOOD_CRYSTAL_PURITY_3, -1);
-					}
-					else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_4))
-					{
+					} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_4)) {
 						giveItems(player, BLOOD_CRYSTAL_PURITY_5, 1);
 						takeItems(player, BLOOD_CRYSTAL_PURITY_4, -1);
-					}
-					else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_5))
-					{
+					} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_5)) {
 						giveItems(player, BLOOD_CRYSTAL_PURITY_6, 1);
 						takeItems(player, BLOOD_CRYSTAL_PURITY_5, -1);
-					}
-					else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_6))
-					{
+					} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_6)) {
 						giveItems(player, BLOOD_CRYSTAL_PURITY_7, 1);
 						playSound(player, Sound.ITEMSOUND_QUEST_JACKPOT);
 						takeItems(player, BLOOD_CRYSTAL_PURITY_6, -1);
-					}
-					else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_7))
-					{
+					} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_7)) {
 						giveItems(player, BLOOD_CRYSTAL_PURITY_8, 1);
 						playSound(player, Sound.ITEMSOUND_QUEST_JACKPOT);
 						takeItems(player, BLOOD_CRYSTAL_PURITY_7, -1);
-					}
-					else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_8))
-					{
+					} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_8)) {
 						giveItems(player, BLOOD_CRYSTAL_PURITY_9, 1);
 						playSound(player, Sound.ITEMSOUND_QUEST_JACKPOT);
 						takeItems(player, BLOOD_CRYSTAL_PURITY_8, -1);
-					}
-					else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_9))
-					{
+					} else if (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_9)) {
 						giveItems(player, BLOOD_CRYSTAL_PURITY_10, 1);
 						playSound(player, Sound.ITEMSOUND_QUEST_JACKPOT);
 						takeItems(player, BLOOD_CRYSTAL_PURITY_9, -1);
 					}
 				}
-			}
-			else if (hasQuestItems(player, CYBELLINS_REQUEST) && (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_1) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_2) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_3) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_4)
-				|| hasQuestItems(player, BLOOD_CRYSTAL_PURITY_5) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_6) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_7) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_8) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_9)))
-			{
+			} else if (hasQuestItems(player, CYBELLINS_REQUEST) && (hasQuestItems(player, BLOOD_CRYSTAL_PURITY_1) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_2) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_3) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_4)
+				|| hasQuestItems(player, BLOOD_CRYSTAL_PURITY_5) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_6) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_7) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_8) || hasQuestItems(player, BLOOD_CRYSTAL_PURITY_9))) {
 				takeItems(player, -1, BLOOD_CRYSTAL_PURITY_1, BLOOD_CRYSTAL_PURITY_2, BLOOD_CRYSTAL_PURITY_3, BLOOD_CRYSTAL_PURITY_4, BLOOD_CRYSTAL_PURITY_5, BLOOD_CRYSTAL_PURITY_6, BLOOD_CRYSTAL_PURITY_7, BLOOD_CRYSTAL_PURITY_8, BLOOD_CRYSTAL_PURITY_9);
 				giveItems(player, BROKEN_BLOOD_CRYSTAL, 1);
 			}

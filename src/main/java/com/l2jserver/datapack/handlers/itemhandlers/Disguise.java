@@ -28,13 +28,10 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 /**
  * This class provides handling for items that should display a map when double clicked.
  */
-public class Disguise implements IItemHandler
-{
+public class Disguise implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!playable.isPlayer())
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!playable.isPlayer()) {
 			playable.sendPacket(SystemMessageId.ITEM_NOT_FOR_PETS);
 			return false;
 		}
@@ -42,10 +39,8 @@ public class Disguise implements IItemHandler
 		L2PcInstance activeChar = playable.getActingPlayer();
 		
 		int regId = TerritoryWarManager.getInstance().getRegisteredTerritoryId(activeChar);
-		if ((regId > 0) && (regId == (item.getId() - 13596)))
-		{
-			if ((activeChar.getClan() != null) && (activeChar.getClan().getCastleId() > 0))
-			{
+		if ((regId > 0) && (regId == (item.getId() - 13596))) {
+			if ((activeChar.getClan() != null) && (activeChar.getClan().getCastleId() > 0)) {
 				activeChar.sendPacket(SystemMessageId.TERRITORY_OWNING_CLAN_CANNOT_USE_DISGUISE_SCROLL);
 				return false;
 			}
@@ -53,14 +48,10 @@ public class Disguise implements IItemHandler
 			activeChar.broadcastUserInfo();
 			playable.destroyItem("Consume", item.getObjectId(), 1, null, false);
 			return true;
-		}
-		else if (regId > 0)
-		{
+		} else if (regId > 0) {
 			activeChar.sendPacket(SystemMessageId.THE_DISGUISE_SCROLL_MEANT_FOR_DIFFERENT_TERRITORY);
 			return false;
-		}
-		else
-		{
+		} else {
 			activeChar.sendPacket(SystemMessageId.TERRITORY_WAR_SCROLL_CAN_NOT_USED_NOW);
 			return false;
 		}

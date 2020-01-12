@@ -29,15 +29,13 @@ import com.l2jserver.gameserver.model.quest.State;
  * The Enveloping Darkness (10271)
  * @author Gladicek
  */
-public class Q10271_TheEnvelopingDarkness extends Quest
-{
+public class Q10271_TheEnvelopingDarkness extends Quest {
 	private static final int ORBYU = 32560;
 	private static final int EL = 32556;
 	private static final int MEDIBAL_CORPSE = 32528;
 	private static final int MEDIBAL_DOCUMENT = 13852;
 	
-	public Q10271_TheEnvelopingDarkness()
-	{
+	public Q10271_TheEnvelopingDarkness() {
 		super(10271, Q10271_TheEnvelopingDarkness.class.getSimpleName(), "The Enveloping Darkness");
 		addStartNpc(ORBYU);
 		addTalkId(ORBYU, EL, MEDIBAL_CORPSE);
@@ -45,16 +43,13 @@ public class Q10271_TheEnvelopingDarkness extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "32560-05.html":
 				st.startQuest();
 				break;
@@ -62,8 +57,7 @@ public class Q10271_TheEnvelopingDarkness extends Quest
 				st.setCond(2, true);
 				break;
 			case "32556-09.html":
-				if (st.hasQuestItems(MEDIBAL_DOCUMENT))
-				{
+				if (st.hasQuestItems(MEDIBAL_DOCUMENT)) {
 					st.takeItems(MEDIBAL_DOCUMENT, -1);
 					st.setCond(4, true);
 				}
@@ -75,21 +69,17 @@ public class Q10271_TheEnvelopingDarkness extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ORBYU:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = ((player.getLevel() >= 75) && player.hasQuestCompleted(Q10269_ToTheSeedOfDestruction.class.getSimpleName())) ? "32560-01.htm" : "32560-02.html";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "32560-05.html"; // TODO this html should most probably be different
 								break;
@@ -114,14 +104,10 @@ public class Q10271_TheEnvelopingDarkness extends Quest
 				
 				break;
 			case EL:
-				if (st.isCompleted())
-				{
+				if (st.isCompleted()) {
 					htmltext = "32556-02.html";
-				}
-				else if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				} else if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "32556-01.html";
 							break;
@@ -138,14 +124,10 @@ public class Q10271_TheEnvelopingDarkness extends Quest
 				}
 				break;
 			case MEDIBAL_CORPSE:
-				if (st.isCompleted())
-				{
+				if (st.isCompleted()) {
 					htmltext = "32528-02.html";
-				}
-				else if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				} else if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 2:
 							htmltext = "32528-01.html";
 							st.setCond(3, true);

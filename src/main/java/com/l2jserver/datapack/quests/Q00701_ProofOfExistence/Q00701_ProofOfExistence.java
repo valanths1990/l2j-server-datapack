@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Proof of Existence (701)
  * @author malyelfik
  */
-public class Q00701_ProofOfExistence extends Quest
-{
+public class Q00701_ProofOfExistence extends Quest {
 	// NPC
 	private static final int ARTIUS = 32559;
 	// Items
@@ -43,8 +42,7 @@ public class Q00701_ProofOfExistence extends Quest
 	// Monsters
 	private static final int ENIRA = 25625;
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
-	static
-	{
+	static {
 		MOBS.put(22606, 518); // Floating Skull
 		MOBS.put(22607, 858); // Floating Skull
 		MOBS.put(22608, 482); // Floating Zombie
@@ -55,8 +53,7 @@ public class Q00701_ProofOfExistence extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 78;
 	
-	public Q00701_ProofOfExistence()
-	{
+	public Q00701_ProofOfExistence() {
 		super(701, Q00701_ProofOfExistence.class.getSimpleName(), "Proof of Existence");
 		addStartNpc(ARTIUS);
 		addTalkId(ARTIUS);
@@ -66,16 +63,13 @@ public class Q00701_ProofOfExistence extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "32559-03.htm":
 			case "32559-08.html":
 				break;
@@ -93,43 +87,29 @@ public class Q00701_ProofOfExistence extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance member = getRandomPartyMember(player, 1);
-		if (member == null)
-		{
+		if (member == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		final QuestState st = getQuestState(member, false);
-		if (npc.getId() == ENIRA)
-		{
+		if (npc.getId() == ENIRA) {
 			final int chance = getRandom(1000);
 			final int count;
-			if (chance < 708)
-			{
+			if (chance < 708) {
 				count = getRandom(2) + 1;
-			}
-			else if (chance < 978)
-			{
+			} else if (chance < 978) {
 				count = getRandom(3) + 3;
-			}
-			else if (chance < 994)
-			{
+			} else if (chance < 994) {
 				count = getRandom(4) + 6;
-			}
-			else if (chance < 998)
-			{
+			} else if (chance < 998) {
 				count = getRandom(4) + 10;
-			}
-			else
-			{
+			} else {
 				count = getRandom(5) + 14;
 			}
 			st.giveItems(BANSHEE_QUEENS_EYE, count);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-		}
-		else if (getRandom(1000) < MOBS.get(npc.getId()))
-		{
+		} else if (getRandom(1000) < MOBS.get(npc.getId())) {
 			st.giveItems(DEADMANS_REMAINS, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
@@ -137,31 +117,24 @@ public class Q00701_ProofOfExistence extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q10273_GoodDayToFly.class.getSimpleName())) ? "32559-01.htm" : "32559-02.htm";
 				break;
 			case State.STARTED:
-				if (st.hasQuestItems(BANSHEE_QUEENS_EYE))
-				{
+				if (st.hasQuestItems(BANSHEE_QUEENS_EYE)) {
 					st.giveAdena((st.getQuestItemsCount(DEADMANS_REMAINS) * 2500) + (st.getQuestItemsCount(BANSHEE_QUEENS_EYE) * 50000) + 23835, true);
 					st.takeItems(BANSHEE_QUEENS_EYE, -1);
 					st.takeItems(DEADMANS_REMAINS, -1);
 					htmltext = "32559-07.html";
-				}
-				else if (st.hasQuestItems(DEADMANS_REMAINS))
-				{
+				} else if (st.hasQuestItems(DEADMANS_REMAINS)) {
 					st.giveAdena(st.getQuestItemsCount(DEADMANS_REMAINS) * 2500, true);
 					st.takeItems(DEADMANS_REMAINS, -1);
 					htmltext = "32559-06.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32559-05.html";
 				}
 				break;

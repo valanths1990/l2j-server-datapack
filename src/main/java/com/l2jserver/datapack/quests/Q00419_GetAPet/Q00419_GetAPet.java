@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.util.Util;
  * Get A Pet (419)
  * @author ivantotov
  */
-public final class Q00419_GetAPet extends Quest
-{
+public final class Q00419_GetAPet extends Quest {
 	// NPCs
 	private static final int GUARD_METTY = 30072;
 	private static final int ACCESSORY_MERCHANT_ELICE = 30091;
@@ -77,8 +76,7 @@ public final class Q00419_GetAPet extends Quest
 	// Links
 	private static final Map<Integer, String> LINKS = new HashMap<>();
 	
-	static
-	{
+	static {
 		LINKS.put(1110001, "<a action=\"bypass -h Quest Q00419_GetAPet 30731-14.html\">Can be used for item transportation.</a><br>");
 		LINKS.put(1110002, "<a action=\"bypass -h Quest Q00419_GetAPet 30731-14.html\">Can help during hunting by assisting in attacks.</a><br>");
 		LINKS.put(1110003, "<a action=\"bypass -h Quest Q00419_GetAPet QUESTIONS\">Can be sent to the village to buy items.</a><br>");
@@ -151,8 +149,7 @@ public final class Q00419_GetAPet extends Quest
 		LINKS.put(1110070, "<a action=\"bypass -h Quest Q00419_GetAPet 30731-14.html\">None of the above.</a><br>");
 	}
 	
-	public Q00419_GetAPet()
-	{
+	public Q00419_GetAPet() {
 		super(419, Q00419_GetAPet.class.getSimpleName(), "Get A Pet");
 		addStartNpc(PET_MENAGER_MARTIN);
 		addTalkId(PET_MENAGER_MARTIN, GUARD_METTY, ACCESSORY_MERCHANT_ELICE, GATEKEEPER_BELLA);
@@ -161,49 +158,33 @@ public final class Q00419_GetAPet extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "ACCEPT": {
+				if (qs.isCreated()) {
 					qs.startQuest();
-					if (player.getRace() == Race.HUMAN)
-					{
+					if (player.getRace() == Race.HUMAN) {
 						giveItems(player, ANIMAL_SLAYERS_1ST_LIST, 1);
 						htmltext = "30731-04.htm";
-					}
-					else if (player.getRace() == Race.ELF)
-					{
+					} else if (player.getRace() == Race.ELF) {
 						giveItems(player, ANIMAL_SLAYERS_2ND_LIST, 1);
 						htmltext = "30731-05.htm";
-					}
-					else if (player.getRace() == Race.DARK_ELF)
-					{
+					} else if (player.getRace() == Race.DARK_ELF) {
 						giveItems(player, ANIMAL_SLAYERS_3RD_LIST, 1);
 						htmltext = "30731-06.htm";
-					}
-					else if (player.getRace() == Race.ORC)
-					{
+					} else if (player.getRace() == Race.ORC) {
 						giveItems(player, ANIMAL_SLAYERS_4TH_LIST, 1);
 						htmltext = "30731-07.htm";
-					}
-					else if (player.getRace() == Race.DWARF)
-					{
+					} else if (player.getRace() == Race.DWARF) {
 						giveItems(player, ANIMAL_SLAYERS_5TH_LIST, 1);
 						htmltext = "30731-08.htm";
-					}
-					else if (player.getRace() == Race.KAMAEL)
-					{
+					} else if (player.getRace() == Race.KAMAEL) {
 						giveItems(player, ANIMAL_SLAYERS_LIST, 1);
 						htmltext = "30731-08a.htm";
 					}
@@ -214,62 +195,43 @@ public final class Q00419_GetAPet extends Quest
 			case "30072-02.html":
 			case "30091-02.html":
 			case "30256-02.html":
-			case "30256-03.html":
-			{
+			case "30256-03.html": {
 				htmltext = event;
 				break;
 			}
-			case "30731-12.html":
-			{
-				if (player.getRace() == Race.HUMAN)
-				{
-					if (hasQuestItems(player, ANIMAL_SLAYERS_1ST_LIST) && (getQuestItemsCount(player, BLOODY_FANG) >= 50))
-					{
+			case "30731-12.html": {
+				if (player.getRace() == Race.HUMAN) {
+					if (hasQuestItems(player, ANIMAL_SLAYERS_1ST_LIST) && (getQuestItemsCount(player, BLOODY_FANG) >= 50)) {
 						takeItems(player, ANIMAL_SLAYERS_1ST_LIST, -1);
 						takeItems(player, BLOODY_FANG, -1);
 						giveItems(player, ANIMAL_LOVERS_LIST, 1);
 					}
-				}
-				else if (player.getRace() == Race.ELF)
-				{
-					if (hasQuestItems(player, ANIMAL_SLAYERS_2ND_LIST) && (getQuestItemsCount(player, BLOODY_CLAW) >= 50))
-					{
+				} else if (player.getRace() == Race.ELF) {
+					if (hasQuestItems(player, ANIMAL_SLAYERS_2ND_LIST) && (getQuestItemsCount(player, BLOODY_CLAW) >= 50)) {
 						takeItems(player, ANIMAL_SLAYERS_2ND_LIST, -1);
 						takeItems(player, BLOODY_CLAW, -1);
 						giveItems(player, ANIMAL_LOVERS_LIST, 1);
 					}
-				}
-				else if (player.getRace() == Race.DARK_ELF)
-				{
-					if (hasQuestItems(player, ANIMAL_SLAYERS_3RD_LIST) && (getQuestItemsCount(player, BLOODY_NAIL) >= 50))
-					{
+				} else if (player.getRace() == Race.DARK_ELF) {
+					if (hasQuestItems(player, ANIMAL_SLAYERS_3RD_LIST) && (getQuestItemsCount(player, BLOODY_NAIL) >= 50)) {
 						takeItems(player, ANIMAL_SLAYERS_3RD_LIST, -1);
 						takeItems(player, BLOODY_NAIL, -1);
 						giveItems(player, ANIMAL_LOVERS_LIST, 1);
 					}
-				}
-				else if (player.getRace() == Race.ORC)
-				{
-					if (hasQuestItems(player, ANIMAL_SLAYERS_4TH_LIST) && (getQuestItemsCount(player, BLOODY_KASHA_FANG) >= 50))
-					{
+				} else if (player.getRace() == Race.ORC) {
+					if (hasQuestItems(player, ANIMAL_SLAYERS_4TH_LIST) && (getQuestItemsCount(player, BLOODY_KASHA_FANG) >= 50)) {
 						takeItems(player, ANIMAL_SLAYERS_4TH_LIST, -1);
 						takeItems(player, BLOODY_KASHA_FANG, -1);
 						giveItems(player, ANIMAL_LOVERS_LIST, 1);
 					}
-				}
-				else if (player.getRace() == Race.DWARF)
-				{
-					if (hasQuestItems(player, ANIMAL_SLAYERS_5TH_LIST) && (getQuestItemsCount(player, BLOODY_TARANTULA_NAIL) >= 50))
-					{
+				} else if (player.getRace() == Race.DWARF) {
+					if (hasQuestItems(player, ANIMAL_SLAYERS_5TH_LIST) && (getQuestItemsCount(player, BLOODY_TARANTULA_NAIL) >= 50)) {
 						takeItems(player, ANIMAL_SLAYERS_5TH_LIST, -1);
 						takeItems(player, BLOODY_TARANTULA_NAIL, -1);
 						giveItems(player, ANIMAL_LOVERS_LIST, 1);
 					}
-				}
-				else if (player.getRace() == Race.KAMAEL)
-				{
-					if (hasQuestItems(player, ANIMAL_SLAYERS_LIST) && (getQuestItemsCount(player, BLOODY_RED_CLAW) >= 50))
-					{
+				} else if (player.getRace() == Race.KAMAEL) {
+					if (hasQuestItems(player, ANIMAL_SLAYERS_LIST) && (getQuestItemsCount(player, BLOODY_RED_CLAW) >= 50)) {
 						takeItems(player, ANIMAL_SLAYERS_LIST, -1);
 						takeItems(player, BLOODY_RED_CLAW, -1);
 						giveItems(player, ANIMAL_LOVERS_LIST, 1);
@@ -280,30 +242,23 @@ public final class Q00419_GetAPet extends Quest
 				break;
 			}
 			
-			case "QUESTIONS":
-			{
-				if (((qs.getMemoState() & 15) == 10) && hasQuestItems(player, ANIMAL_LOVERS_LIST))
-				{
+			case "QUESTIONS": {
+				if (((qs.getMemoState() & 15) == 10) && hasQuestItems(player, ANIMAL_LOVERS_LIST)) {
 					takeItems(player, ANIMAL_LOVERS_LIST, -1);
 					giveItems(player, WOLF_COLLAR, 1);
 					qs.exitQuest(true, true);
 					htmltext = "30731-15.html";
-				}
-				else
-				{
+				} else {
 					boolean findResponse = false;
 					int linkId = 0;
-					while (!findResponse)
-					{
+					while (!findResponse) {
 						final int randomLinkOffset = getRandom(14) + 4;
 						int i7 = 1;
-						for (int i = 1; i <= randomLinkOffset; i++)
-						{
+						for (int i = 1; i <= randomLinkOffset; i++) {
 							i7 = i7 * 2;
 						}
 						
-						if (((i7 & qs.getMemoState()) == 0) && (randomLinkOffset < 18))
-						{
+						if (((i7 & qs.getMemoState()) == 0) && (randomLinkOffset < 18)) {
 							findResponse = true;
 							qs.setMemoState((qs.getMemoState() + 1) | i7);
 							linkId = 1110000 + (5 * (randomLinkOffset - 4));
@@ -317,31 +272,21 @@ public final class Q00419_GetAPet extends Quest
 					int replyOffset3 = 0;
 					int replyOffset4 = 0;
 					int i8 = 0;
-					while (linkCount < 5)
-					{
+					while (linkCount < 5) {
 						final int randomReplyOffset = getRandom(4) + 1;
 						int i7 = 1;
-						for (int i = 1; i <= randomReplyOffset; i++)
-						{
+						for (int i = 1; i <= randomReplyOffset; i++) {
 							i7 = i7 * 2;
 						}
 						
-						if (((i7 & i8) == 0) && (randomReplyOffset < 5))
-						{
-							if (linkCount == 1)
-							{
+						if (((i7 & i8) == 0) && (randomReplyOffset < 5)) {
+							if (linkCount == 1) {
 								replyOffset1 = randomReplyOffset;
-							}
-							else if (linkCount == 2)
-							{
+							} else if (linkCount == 2) {
 								replyOffset2 = randomReplyOffset;
-							}
-							else if (linkCount == 3)
-							{
+							} else if (linkCount == 3) {
 								replyOffset3 = randomReplyOffset;
-							}
-							else if (linkCount == 4)
-							{
+							} else if (linkCount == 4) {
 								replyOffset4 = randomReplyOffset;
 							}
 							linkCount++;
@@ -358,8 +303,7 @@ public final class Q00419_GetAPet extends Quest
 				}
 				break;
 			}
-			case "30731-14.html":
-			{
+			case "30731-14.html": {
 				qs.setMemoState(0);
 				htmltext = event;
 				break;
@@ -369,292 +313,199 @@ public final class Q00419_GetAPet extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case LESSER_DARK_HORROR:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_3RD_LIST) && (getQuestItemsCount(killer, BLOODY_NAIL) < 50))
-					{
-						if (getRandom(100) < 60)
-						{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
+				case LESSER_DARK_HORROR: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_3RD_LIST) && (getQuestItemsCount(killer, BLOODY_NAIL) < 50)) {
+						if (getRandom(100) < 60) {
 							giveItems(killer, BLOODY_NAIL, 1);
-							if (getQuestItemsCount(killer, BLOODY_NAIL) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_NAIL) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case PROWLER:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_3RD_LIST) && (getQuestItemsCount(killer, BLOODY_NAIL) < 50))
-					{
-						if (getRandom(100) < 100)
-						{
+				case PROWLER: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_3RD_LIST) && (getQuestItemsCount(killer, BLOODY_NAIL) < 50)) {
+						if (getRandom(100) < 100) {
 							giveItems(killer, BLOODY_NAIL, 1);
-							if (getQuestItemsCount(killer, BLOODY_NAIL) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_NAIL) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case GIANT_SPIDER:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_1ST_LIST))
-					{
-						if ((getQuestItemsCount(killer, BLOODY_FANG) < 50) && (getRandom(100) < 60))
-						{
+				case GIANT_SPIDER: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_1ST_LIST)) {
+						if ((getQuestItemsCount(killer, BLOODY_FANG) < 50) && (getRandom(100) < 60)) {
 							giveItems(killer, BLOODY_FANG, 1);
-							if (getQuestItemsCount(killer, BLOODY_FANG) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_FANG) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case DARK_HORROR:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_3RD_LIST))
-					{
-						if ((getQuestItemsCount(killer, BLOODY_NAIL) < 50) && (getRandom(100) < 75))
-						{
+				case DARK_HORROR: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_3RD_LIST)) {
+						if ((getQuestItemsCount(killer, BLOODY_NAIL) < 50) && (getRandom(100) < 75)) {
 							giveItems(killer, BLOODY_NAIL, 1);
-							if (getQuestItemsCount(killer, BLOODY_NAIL) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_NAIL) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case TALON_SPIDER:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_1ST_LIST))
-					{
-						if ((getQuestItemsCount(killer, BLOODY_FANG) < 50) && (getRandom(100) < 75))
-						{
+				case TALON_SPIDER: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_1ST_LIST)) {
+						if ((getQuestItemsCount(killer, BLOODY_FANG) < 50) && (getRandom(100) < 75)) {
 							giveItems(killer, BLOODY_FANG, 1);
-							if (getQuestItemsCount(killer, BLOODY_FANG) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_FANG) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case BLADE_SPIDER:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_1ST_LIST))
-					{
-						if ((getQuestItemsCount(killer, BLOODY_FANG) < 50) && (getRandom(100) < 100))
-						{
+				case BLADE_SPIDER: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_1ST_LIST)) {
+						if ((getQuestItemsCount(killer, BLOODY_FANG) < 50) && (getRandom(100) < 100)) {
 							giveItems(killer, BLOODY_FANG, 1);
-							if (getQuestItemsCount(killer, BLOODY_FANG) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_FANG) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case HOOK_SPIDER:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_2ND_LIST))
-					{
-						if ((getQuestItemsCount(killer, BLOODY_CLAW) < 50) && (getRandom(100) < 75))
-						{
+				case HOOK_SPIDER: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_2ND_LIST)) {
+						if ((getQuestItemsCount(killer, BLOODY_CLAW) < 50) && (getRandom(100) < 75)) {
 							giveItems(killer, BLOODY_CLAW, 1);
-							if (getQuestItemsCount(killer, BLOODY_CLAW) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_CLAW) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case HUNTER_TARANTULA:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_5TH_LIST))
-					{
-						if ((getQuestItemsCount(killer, BLOODY_TARANTULA_NAIL) < 50) && (getRandom(100) < 75))
-						{
+				case HUNTER_TARANTULA: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_5TH_LIST)) {
+						if ((getQuestItemsCount(killer, BLOODY_TARANTULA_NAIL) < 50) && (getRandom(100) < 75)) {
 							giveItems(killer, BLOODY_TARANTULA_NAIL, 1);
-							if (getQuestItemsCount(killer, BLOODY_TARANTULA_NAIL) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_TARANTULA_NAIL) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case CRIMSON_SPIDER:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_2ND_LIST) && (getQuestItemsCount(killer, BLOODY_CLAW) < 50))
-					{
-						if (getRandom(100) < 60)
-						{
+				case CRIMSON_SPIDER: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_2ND_LIST) && (getQuestItemsCount(killer, BLOODY_CLAW) < 50)) {
+						if (getRandom(100) < 60) {
 							giveItems(killer, BLOODY_CLAW, 1);
-							if (getQuestItemsCount(killer, BLOODY_CLAW) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_CLAW) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case PINCER_SPIDER:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_2ND_LIST))
-					{
-						if ((getQuestItemsCount(killer, BLOODY_CLAW) < 50) && (getRandom(100) < 100))
-						{
+				case PINCER_SPIDER: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_2ND_LIST)) {
+						if ((getQuestItemsCount(killer, BLOODY_CLAW) < 50) && (getRandom(100) < 100)) {
 							giveItems(killer, BLOODY_CLAW, 1);
-							if (getQuestItemsCount(killer, BLOODY_CLAW) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_CLAW) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case KASHA_SPIDER:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_4TH_LIST))
-					{
-						if ((getQuestItemsCount(killer, BLOODY_KASHA_FANG) < 50) && (getRandom(100) < 60))
-						{
+				case KASHA_SPIDER: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_4TH_LIST)) {
+						if ((getQuestItemsCount(killer, BLOODY_KASHA_FANG) < 50) && (getRandom(100) < 60)) {
 							giveItems(killer, BLOODY_KASHA_FANG, 1);
-							if (getQuestItemsCount(killer, BLOODY_KASHA_FANG) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_KASHA_FANG) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case KASHA_FANG_SPIDER:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_4TH_LIST) && (getQuestItemsCount(killer, BLOODY_KASHA_FANG) < 50))
-					{
-						if (getRandom(100) < 75)
-						{
+				case KASHA_FANG_SPIDER: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_4TH_LIST) && (getQuestItemsCount(killer, BLOODY_KASHA_FANG) < 50)) {
+						if (getRandom(100) < 75) {
 							giveItems(killer, BLOODY_KASHA_FANG, 1);
-							if (getQuestItemsCount(killer, BLOODY_KASHA_FANG) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_KASHA_FANG) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case KASHA_BLADE_SPIDER:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_4TH_LIST))
-					{
-						if ((getQuestItemsCount(killer, BLOODY_KASHA_FANG) < 50) && (getRandom(100) < 100))
-						{
+				case KASHA_BLADE_SPIDER: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_4TH_LIST)) {
+						if ((getQuestItemsCount(killer, BLOODY_KASHA_FANG) < 50) && (getRandom(100) < 100)) {
 							giveItems(killer, BLOODY_KASHA_FANG, 1);
-							if (getQuestItemsCount(killer, BLOODY_KASHA_FANG) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_KASHA_FANG) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case PLUNDER_TARANTULA:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_5TH_LIST))
-					{
-						if ((getQuestItemsCount(killer, BLOODY_TARANTULA_NAIL) < 50) && (getRandom(100) < 100))
-						{
+				case PLUNDER_TARANTULA: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_5TH_LIST)) {
+						if ((getQuestItemsCount(killer, BLOODY_TARANTULA_NAIL) < 50) && (getRandom(100) < 100)) {
 							giveItems(killer, BLOODY_TARANTULA_NAIL, 1);
-							if (getQuestItemsCount(killer, BLOODY_TARANTULA_NAIL) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_TARANTULA_NAIL) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case CRIMSON_SPIDER2:
-				{
-					if (hasQuestItems(killer, ANIMAL_SLAYERS_LIST))
-					{
-						if ((getQuestItemsCount(killer, BLOODY_RED_CLAW) < 50) && (getRandom(100) < 75))
-						{
+				case CRIMSON_SPIDER2: {
+					if (hasQuestItems(killer, ANIMAL_SLAYERS_LIST)) {
+						if ((getQuestItemsCount(killer, BLOODY_RED_CLAW) < 50) && (getRandom(100) < 75)) {
 							giveItems(killer, BLOODY_RED_CLAW, 1);
-							if (getQuestItemsCount(killer, BLOODY_RED_CLAW) >= 50)
-							{
+							if (getQuestItemsCount(killer, BLOODY_RED_CLAW) >= 50) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
@@ -667,146 +518,84 @@ public final class Q00419_GetAPet extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (npc.getId() == PET_MENAGER_MARTIN)
-			{
-				if (player.getLevel() < MIN_LEVEL)
-				{
+		if (qs.isCreated()) {
+			if (npc.getId() == PET_MENAGER_MARTIN) {
+				if (player.getLevel() < MIN_LEVEL) {
 					htmltext = "30731-01.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30731-02.htm";
 				}
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case PET_MENAGER_MARTIN:
-				{
-					if (hasQuestItems(player, ANIMAL_SLAYERS_LIST))
-					{
-						if (getQuestItemsCount(player, BLOODY_RED_CLAW) < 50)
-						{
-							if (!hasQuestItems(player, BLOODY_RED_CLAW))
-							{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case PET_MENAGER_MARTIN: {
+					if (hasQuestItems(player, ANIMAL_SLAYERS_LIST)) {
+						if (getQuestItemsCount(player, BLOODY_RED_CLAW) < 50) {
+							if (!hasQuestItems(player, BLOODY_RED_CLAW)) {
 								htmltext = "30731-09.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30731-10.html";
 							}
-						}
-						else
-						{
+						} else {
 							htmltext = "30731-11.html";
 						}
-					}
-					else if (hasQuestItems(player, ANIMAL_SLAYERS_1ST_LIST))
-					{
-						if (getQuestItemsCount(player, BLOODY_FANG) < 50)
-						{
-							if (!hasQuestItems(player, BLOODY_FANG))
-							{
+					} else if (hasQuestItems(player, ANIMAL_SLAYERS_1ST_LIST)) {
+						if (getQuestItemsCount(player, BLOODY_FANG) < 50) {
+							if (!hasQuestItems(player, BLOODY_FANG)) {
 								htmltext = "30731-09.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30731-10.html";
 							}
-						}
-						else
-						{
+						} else {
 							htmltext = "30731-11.html";
 						}
-					}
-					else if (hasQuestItems(player, ANIMAL_SLAYERS_2ND_LIST))
-					{
-						if (getQuestItemsCount(player, BLOODY_CLAW) < 50)
-						{
-							if (!hasQuestItems(player, BLOODY_CLAW))
-							{
+					} else if (hasQuestItems(player, ANIMAL_SLAYERS_2ND_LIST)) {
+						if (getQuestItemsCount(player, BLOODY_CLAW) < 50) {
+							if (!hasQuestItems(player, BLOODY_CLAW)) {
 								htmltext = "30731-09.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30731-10.html";
 							}
-						}
-						else
-						{
+						} else {
 							htmltext = "30731-11.html";
 						}
-					}
-					else if (hasQuestItems(player, ANIMAL_SLAYERS_3RD_LIST))
-					{
-						if (getQuestItemsCount(player, BLOODY_NAIL) < 50)
-						{
-							if (!hasQuestItems(player, BLOODY_NAIL))
-							{
+					} else if (hasQuestItems(player, ANIMAL_SLAYERS_3RD_LIST)) {
+						if (getQuestItemsCount(player, BLOODY_NAIL) < 50) {
+							if (!hasQuestItems(player, BLOODY_NAIL)) {
 								htmltext = "30731-09.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30731-10.html";
 							}
-						}
-						else
-						{
+						} else {
 							htmltext = "30731-11.html";
 						}
-					}
-					else if (hasQuestItems(player, ANIMAL_SLAYERS_4TH_LIST))
-					{
-						if (getQuestItemsCount(player, BLOODY_KASHA_FANG) < 50)
-						{
-							if (!hasQuestItems(player, BLOODY_KASHA_FANG))
-							{
+					} else if (hasQuestItems(player, ANIMAL_SLAYERS_4TH_LIST)) {
+						if (getQuestItemsCount(player, BLOODY_KASHA_FANG) < 50) {
+							if (!hasQuestItems(player, BLOODY_KASHA_FANG)) {
 								htmltext = "30731-09.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30731-10.html";
 							}
-						}
-						else
-						{
+						} else {
 							htmltext = "30731-11.html";
 						}
-					}
-					else if (hasQuestItems(player, ANIMAL_SLAYERS_5TH_LIST))
-					{
-						if (getQuestItemsCount(player, BLOODY_TARANTULA_NAIL) < 50)
-						{
-							if (!hasQuestItems(player, BLOODY_TARANTULA_NAIL))
-							{
+					} else if (hasQuestItems(player, ANIMAL_SLAYERS_5TH_LIST)) {
+						if (getQuestItemsCount(player, BLOODY_TARANTULA_NAIL) < 50) {
+							if (!hasQuestItems(player, BLOODY_TARANTULA_NAIL)) {
 								htmltext = "30731-09.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30731-10.html";
 							}
-						}
-						else
-						{
+						} else {
 							htmltext = "30731-11.html";
 						}
-					}
-					else if (hasQuestItems(player, ANIMAL_LOVERS_LIST))
-					{
-						if ((qs.getMemoState() != 14) && (qs.getMemoState() != 1879048192))
-						{
+					} else if (hasQuestItems(player, ANIMAL_LOVERS_LIST)) {
+						if ((qs.getMemoState() != 14) && (qs.getMemoState() != 1879048192)) {
 							htmltext = "30731-16.html";
-						}
-						else
-						{
+						} else {
 							qs.setMemoState(1879048192);
 							htmltext = "30731-13.html";
 						}
@@ -814,28 +603,22 @@ public final class Q00419_GetAPet extends Quest
 					}
 					break;
 				}
-				case GUARD_METTY:
-				{
-					if (hasQuestItems(player, ANIMAL_LOVERS_LIST))
-					{
+				case GUARD_METTY: {
+					if (hasQuestItems(player, ANIMAL_LOVERS_LIST)) {
 						qs.setMemoState(qs.getMemoState() | 4);
 						htmltext = "30072-01.html";
 					}
 					break;
 				}
-				case ACCESSORY_MERCHANT_ELICE:
-				{
-					if (hasQuestItems(player, ANIMAL_LOVERS_LIST))
-					{
+				case ACCESSORY_MERCHANT_ELICE: {
+					if (hasQuestItems(player, ANIMAL_LOVERS_LIST)) {
 						qs.setMemoState(qs.getMemoState() | 8);
 						htmltext = "30091-01.html";
 					}
 					break;
 				}
-				case GATEKEEPER_BELLA:
-				{
-					if (hasQuestItems(player, ANIMAL_LOVERS_LIST))
-					{
+				case GATEKEEPER_BELLA: {
+					if (hasQuestItems(player, ANIMAL_LOVERS_LIST)) {
 						qs.setMemoState(qs.getMemoState() | 2);
 						htmltext = "30256-01.html";
 					}

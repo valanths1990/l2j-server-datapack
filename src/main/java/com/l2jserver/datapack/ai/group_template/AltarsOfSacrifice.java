@@ -35,25 +35,20 @@ import com.l2jserver.gameserver.model.interfaces.ILocational;
  * @author FinalDestination
  * @author lion
  */
-public final class AltarsOfSacrifice extends AbstractNpcAI
-{
-	private final class Altar
-	{
+public final class AltarsOfSacrifice extends AbstractNpcAI {
+	private final class Altar {
 		private final ILocational _middlePoint;
 		private final int[] _bossNpcIds;
 		private L2Npc _spawnedBoss;
 		
-		protected Altar(final ILocational middlePoint, final int... bossNpcIds)
-		{
+		protected Altar(final ILocational middlePoint, final int... bossNpcIds) {
 			_middlePoint = middlePoint;
 			_bossNpcIds = bossNpcIds;
 			_spawnedBoss = null;
 		}
 		
-		protected void spawnBoss() throws Exception
-		{
-			if (!hasBosses() || (_spawnedBoss != null))
-			{
+		protected void spawnBoss() throws Exception {
+			if (!hasBosses() || (_spawnedBoss != null)) {
 				throw new IllegalStateException();
 			}
 			
@@ -71,27 +66,22 @@ public final class AltarsOfSacrifice extends AbstractNpcAI
 			_spawnedBoss = spawn.spawnOne(false);
 		}
 		
-		protected void despawnBoss()
-		{
-			if (_spawnedBoss != null)
-			{
+		protected void despawnBoss() {
+			if (_spawnedBoss != null) {
 				_spawnedBoss.deleteMe();
 				_spawnedBoss = null;
 			}
 		}
 		
-		protected void unload()
-		{
+		protected void unload() {
 			despawnBoss();
 		}
 		
-		protected boolean hasBosses()
-		{
+		protected boolean hasBosses() {
 			return _bossNpcIds.length > 0;
 		}
 		
-		protected boolean isBossFighting()
-		{
+		protected boolean isBossFighting() {
 			return (_spawnedBoss != null) && _spawnedBoss.isInCombat();
 		}
 	}
@@ -212,61 +202,49 @@ public final class AltarsOfSacrifice extends AbstractNpcAI
 	};
 	// @formatter:on
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new AltarsOfSacrifice();
 	}
 	
-	private AltarsOfSacrifice()
-	{
+	private AltarsOfSacrifice() {
 		super("AltarsOfSacrifice", "ai/group_template");
 		
-		for (int i = 0; i < _altars.length; ++i)
-		{
-			if (_altars[i].hasBosses())
-			{
+		for (int i = 0; i < _altars.length; ++i) {
+			if (_altars[i].hasBosses()) {
 				startQuestTimer(makeSpawnBossEvt(i), ALTAR_STATE_CHANGE_DELAY, null, null);
 			}
 		}
 	}
 	
-	private String makeSpawnBossEvt(int altarIndex)
-	{
+	private String makeSpawnBossEvt(int altarIndex) {
 		return EVT_SPAWN_BOSS_PRE + altarIndex;
 	}
 	
-	private String makeDespawnBossEvt(int altarIndex)
-	{
+	private String makeDespawnBossEvt(int altarIndex) {
 		return EVT_DESPAWN_BOSS_PRE + altarIndex;
 	}
 	
-	private boolean isSpawnBossEvt(String event)
-	{
+	private boolean isSpawnBossEvt(String event) {
 		return event.startsWith(EVT_SPAWN_BOSS_PRE);
 	}
 	
-	private boolean isDespawnBossEvt(String event)
-	{
+	private boolean isDespawnBossEvt(String event) {
 		return event.startsWith(EVT_DESPAWN_BOSS_PRE);
 	}
 	
-	private int getSpawnBossIndex(String event)
-	{
+	private int getSpawnBossIndex(String event) {
 		return Integer.parseInt(event.substring(EVT_SPAWN_BOSS_PRE.length()));
 	}
 	
-	private int getDespawnBossIndex(String event)
-	{
+	private int getDespawnBossIndex(String event) {
 		return Integer.parseInt(event.substring(EVT_DESPAWN_BOSS_PRE.length()));
 	}
 	
 	@Override
-	public boolean unload(boolean removeFromList)
-	{
+	public boolean unload(boolean removeFromList) {
 		_log.info(getClass().getSimpleName() + ": Unloading altars due to script unloading.");
 		
-		for (final Altar altar : _altars)
-		{
+		for (final Altar altar : _altars) {
 			altar.unload();
 		}
 		
@@ -274,35 +252,25 @@ public final class AltarsOfSacrifice extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (isSpawnBossEvt(event))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (isSpawnBossEvt(event)) {
 			final int altarIndex = getSpawnBossIndex(event);
 			final Altar altar = _altars[altarIndex];
-			try
-			{
+			try {
 				altar.spawnBoss();
 				startQuestTimer(makeDespawnBossEvt(altarIndex), ALTAR_STATE_CHANGE_DELAY, null, null);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				_log.log(Level.WARNING, getClass().getSimpleName() + ": Failed to spawn altar boss.", e);
 				// let's try again to spawn it in 5 seconds
 				startQuestTimer(event, 5000, null, null);
 			}
-		}
-		else if (isDespawnBossEvt(event))
-		{
+		} else if (isDespawnBossEvt(event)) {
 			final int altarIndex = getDespawnBossIndex(event);
 			final Altar altar = _altars[altarIndex];
-			if (altar.isBossFighting())
-			{
+			if (altar.isBossFighting()) {
 				// periodically check if the altar boss is fighting, only despawn when not fighting anymore
 				startQuestTimer(event, 5000, null, null);
-			}
-			else
-			{
+			} else {
 				altar.despawnBoss();
 				startQuestTimer(makeSpawnBossEvt(altarIndex), ALTAR_STATE_CHANGE_DELAY, null, null);
 			}

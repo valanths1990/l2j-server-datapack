@@ -33,10 +33,8 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
  * Manages Sin Wardens disappearing and chat.
  * @author GKR
  */
-public final class SinWardens extends AbstractNpcAI
-{
-	private static final int[] SIN_WARDEN_MINIONS =
-	{
+public final class SinWardens extends AbstractNpcAI {
+	private static final int[] SIN_WARDEN_MINIONS = {
 		22424,
 		22425,
 		22426,
@@ -55,31 +53,24 @@ public final class SinWardens extends AbstractNpcAI
 	
 	private final Map<Integer, Integer> killedMinionsCount = new ConcurrentHashMap<>();
 	
-	private SinWardens()
-	{
+	private SinWardens() {
 		super(SinWardens.class.getSimpleName(), "ai/individual");
 		addKillId(SIN_WARDEN_MINIONS);
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (npc.isMinion())
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (npc.isMinion()) {
 			final L2MonsterInstance master = ((L2MonsterInstance) npc).getLeader();
-			if ((master != null) && !master.isDead())
-			{
+			if ((master != null) && !master.isDead()) {
 				int killedCount = killedMinionsCount.containsKey(master.getObjectId()) ? killedMinionsCount.get(master.getObjectId()) : 0;
 				killedCount++;
 				
-				if ((killedCount) == 5)
-				{
+				if ((killedCount) == 5) {
 					master.broadcastPacket(new NpcSay(master.getObjectId(), Say2.NPC_ALL, master.getId(), NpcStringId.WE_MIGHT_NEED_NEW_SLAVES_ILL_BE_BACK_SOON_SO_WAIT));
 					master.doDie(killer);
 					killedMinionsCount.remove(master.getObjectId());
-				}
-				else
-				{
+				} else {
 					killedMinionsCount.put(master.getObjectId(), killedCount);
 				}
 			}
@@ -87,8 +78,7 @@ public final class SinWardens extends AbstractNpcAI
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new SinWardens();
 	}
 }

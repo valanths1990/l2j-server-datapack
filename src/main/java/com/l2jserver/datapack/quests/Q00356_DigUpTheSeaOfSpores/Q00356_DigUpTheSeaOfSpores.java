@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * Dig Up the Sea of Spores! (356)
  * @author Adry_85
  */
-public final class Q00356_DigUpTheSeaOfSpores extends Quest
-{
+public final class Q00356_DigUpTheSeaOfSpores extends Quest {
 	// NPC
 	private static final int GAUEN = 30717;
 	// Items
@@ -44,14 +43,12 @@ public final class Q00356_DigUpTheSeaOfSpores extends Quest
 	private static final int ROTTING_TREE = 20558;
 	private static final int SPORE_ZOMBIE = 20562;
 	private static final Map<Integer, Double> MONSTER_DROP_CHANCES = new HashMap<>();
-	static
-	{
+	static {
 		MONSTER_DROP_CHANCES.put(ROTTING_TREE, 0.73);
 		MONSTER_DROP_CHANCES.put(SPORE_ZOMBIE, 0.94);
 	}
 	
-	public Q00356_DigUpTheSeaOfSpores()
-	{
+	public Q00356_DigUpTheSeaOfSpores() {
 		super(356, Q00356_DigUpTheSeaOfSpores.class.getSimpleName(), "Dig Up the Sea of Spores!");
 		addStartNpc(GAUEN);
 		addTalkId(GAUEN);
@@ -60,69 +57,55 @@ public final class Q00356_DigUpTheSeaOfSpores extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "30717-02.htm":
 			case "30717-03.htm":
 			case "30717-04.htm":
 			case "30717-10.html":
-			case "30717-18.html":
-			{
+			case "30717-18.html": {
 				htmltext = event;
 				break;
 			}
-			case "30717-05.htm":
-			{
+			case "30717-05.htm": {
 				qs.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "30717-09.html":
-			{
+			case "30717-09.html": {
 				addExpAndSp(player, 31850, 0);
 				takeItems(player, CARNIVORE_SPORE, -1);
 				takeItems(player, HERBIVOROUS_SPORE, -1);
 				htmltext = event;
 				break;
 			}
-			case "30717-11.html":
-			{
+			case "30717-11.html": {
 				qs.exitQuest(true, true);
 				htmltext = event;
 				break;
 			}
-			case "30717-14.html":
-			{
+			case "30717-14.html": {
 				addExpAndSp(player, 45500, 2600);
 				qs.exitQuest(true, true);
 				htmltext = event;
 				break;
 			}
-			case "FINISH":
-			{
+			case "FINISH": {
 				final int value = getRandom(100);
 				int adena = 0;
-				if (value < 20)
-				{
+				if (value < 20) {
 					adena = 44000;
 					htmltext = "30717-15.html";
-				}
-				else if (value < 70)
-				{
+				} else if (value < 70) {
 					adena = 20950;
 					htmltext = "30717-16.html";
-				}
-				else
-				{
+				} else {
 					adena = 10400;
 					htmltext = "30717-17.html";
 				}
@@ -135,26 +118,20 @@ public final class Q00356_DigUpTheSeaOfSpores extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
 		
-		if ((qs == null) || !Util.checkIfInRange(1500, npc, killer, true))
-		{
+		if ((qs == null) || !Util.checkIfInRange(1500, npc, killer, true)) {
 			return null;
 		}
 		
 		final int dropItem = ((npc.getId() == ROTTING_TREE) ? HERBIVOROUS_SPORE : CARNIVORE_SPORE);
 		final int otherItem = ((dropItem == HERBIVOROUS_SPORE) ? CARNIVORE_SPORE : HERBIVOROUS_SPORE);
 		
-		if (giveItemRandomly(qs.getPlayer(), npc, dropItem, 1, 50, MONSTER_DROP_CHANCES.get(npc.getId()), true))
-		{
-			if (getQuestItemsCount(killer, otherItem) >= 50)
-			{
+		if (giveItemRandomly(qs.getPlayer(), npc, dropItem, 1, 50, MONSTER_DROP_CHANCES.get(npc.getId()), true)) {
+			if (getQuestItemsCount(killer, otherItem) >= 50) {
 				qs.setCond(3);
-			}
-			else
-			{
+			} else {
 				qs.setCond(2);
 			}
 		}
@@ -162,33 +139,22 @@ public final class Q00356_DigUpTheSeaOfSpores extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			htmltext = (player.getLevel() >= MIN_LEVEL) ? "30717-01.htm" : "30717-06.htm";
-		}
-		else if (qs.isStarted())
-		{
+		} else if (qs.isStarted()) {
 			final boolean hasAllHerbSpores = (getQuestItemsCount(player, HERBIVOROUS_SPORE) >= 50);
 			final boolean hasAllCarnSpores = (getQuestItemsCount(player, CARNIVORE_SPORE) >= 50);
 			
-			if (hasAllHerbSpores && hasAllCarnSpores)
-			{
+			if (hasAllHerbSpores && hasAllCarnSpores) {
 				htmltext = "30717-13.html";
-			}
-			else if (hasAllCarnSpores)
-			{
+			} else if (hasAllCarnSpores) {
 				htmltext = "30717-12.html";
-			}
-			else if (hasAllHerbSpores)
-			{
+			} else if (hasAllHerbSpores) {
 				htmltext = "30717-08.html";
-			}
-			else
-			{
+			} else {
 				htmltext = "30717-07.html";
 			}
 		}

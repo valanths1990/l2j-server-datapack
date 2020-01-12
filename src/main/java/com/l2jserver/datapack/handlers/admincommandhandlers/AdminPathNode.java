@@ -27,10 +27,8 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.pathfinding.AbstractNodeLoc;
 import com.l2jserver.gameserver.pathfinding.PathFinding;
 
-public class AdminPathNode implements IAdminCommandHandler
-{
-	private static final String[] ADMIN_COMMANDS =
-	{
+public class AdminPathNode implements IAdminCommandHandler {
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_pn_info",
 		"admin_show_path",
 		"admin_path_debug",
@@ -39,56 +37,37 @@ public class AdminPathNode implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.equals("admin_pn_info"))
-		{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (command.equals("admin_pn_info")) {
 			final String[] info = PathFinding.getInstance().getStat();
-			if (info == null)
-			{
+			if (info == null) {
 				activeChar.sendMessage("Not supported");
-			}
-			else
-			{
-				for (String msg : info)
-				{
+			} else {
+				for (String msg : info) {
 					activeChar.sendMessage(msg);
 				}
 			}
-		}
-		else if (command.equals("admin_show_path"))
-		{
+		} else if (command.equals("admin_show_path")) {
 			
-		}
-		else if (command.equals("admin_path_debug"))
-		{
+		} else if (command.equals("admin_path_debug")) {
 			
-		}
-		else if (command.equals("admin_show_pn"))
-		{
+		} else if (command.equals("admin_show_pn")) {
 			
-		}
-		else if (command.equals("admin_find_path"))
-		{
+		} else if (command.equals("admin_find_path")) {
 			if (geodata().getPathFinding() == 0) {
 				activeChar.sendMessage("PathFinding is disabled.");
 				return true;
 			}
-			if (activeChar.getTarget() != null)
-			{
+			if (activeChar.getTarget() != null) {
 				List<AbstractNodeLoc> path = PathFinding.getInstance().findPath(activeChar.getX(), activeChar.getY(), (short) activeChar.getZ(), activeChar.getTarget().getX(), activeChar.getTarget().getY(), (short) activeChar.getTarget().getZ(), activeChar.getInstanceId(), true);
-				if (path == null)
-				{
+				if (path == null) {
 					activeChar.sendMessage("No Route!");
 					return true;
 				}
-				for (AbstractNodeLoc a : path)
-				{
+				for (AbstractNodeLoc a : path) {
 					activeChar.sendMessage("x:" + a.getX() + " y:" + a.getY() + " z:" + a.getZ());
 				}
-			}
-			else
-			{
+			} else {
 				activeChar.sendMessage("No Target!");
 			}
 		}
@@ -96,8 +75,7 @@ public class AdminPathNode implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Vanquish Remnants (326)
  * @author xban1x
  */
-public final class Q00326_VanquishRemnants extends Quest
-{
+public final class Q00326_VanquishRemnants extends Quest {
 	// NPC
 	private static final int LEOPOLD = 30435;
 	// Items
@@ -60,8 +59,7 @@ public final class Q00326_VanquishRemnants extends Quest
 	// Misc
 	private static final int MIN_LVL = 21;
 	
-	public Q00326_VanquishRemnants()
-	{
+	public Q00326_VanquishRemnants() {
 		super(326, Q00326_VanquishRemnants.class.getSimpleName(), "Vanquish Remnants");
 		addStartNpc(LEOPOLD);
 		addTalkId(LEOPOLD);
@@ -70,28 +68,22 @@ public final class Q00326_VanquishRemnants extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
-				case "30435-03.htm":
-				{
+		if (st != null) {
+			switch (event) {
+				case "30435-03.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
 				}
-				case "30435-07.html":
-				{
+				case "30435-07.html": {
 					st.exitQuest(true, true);
 					htmltext = event;
 					break;
 				}
-				case "30435-08.html":
-				{
+				case "30435-08.html": {
 					htmltext = event;
 					break;
 				}
@@ -101,11 +93,9 @@ public final class Q00326_VanquishRemnants extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isStarted() && (getRandom(100) < MONSTERS.get(npc.getId())[0]))
-		{
+		if ((st != null) && st.isStarted() && (getRandom(100) < MONSTERS.get(npc.getId())[0])) {
 			st.giveItems(MONSTERS.get(npc.getId())[1], 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
@@ -113,35 +103,27 @@ public final class Q00326_VanquishRemnants extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() >= MIN_LVL) ? "30435-02.htm" : "30435-01.htm";
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				final long red_badges = st.getQuestItemsCount(RED_CROSS_BADGE);
 				final long blue_badges = st.getQuestItemsCount(BLUE_CROSS_BADGE);
 				final long black_badges = st.getQuestItemsCount(BLACK_CROSS_BADGE);
 				final long sum = red_badges + blue_badges + black_badges;
-				if (sum > 0)
-				{
-					if ((sum >= 100) && !st.hasQuestItems(BLACK_LION_MARK))
-					{
+				if (sum > 0) {
+					if ((sum >= 100) && !st.hasQuestItems(BLACK_LION_MARK)) {
 						st.giveItems(BLACK_LION_MARK, 1);
 					}
 					st.giveAdena(((red_badges * 46) + (blue_badges * 52) + (black_badges * 58) + ((sum >= 10) ? 4320 : 0)), true);
 					takeItems(player, -1, RED_CROSS_BADGE, BLUE_CROSS_BADGE, BLACK_CROSS_BADGE);
 					htmltext = (sum >= 100) ? (st.hasQuestItems(BLACK_LION_MARK)) ? "30435-09.html" : "30435-06.html" : "30435-05.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30435-04.html";
 				}
 				break;

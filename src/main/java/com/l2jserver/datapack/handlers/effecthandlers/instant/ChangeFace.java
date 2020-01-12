@@ -28,28 +28,23 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Change Face effect implementation.
  * @author Zoey76
  */
-public final class ChangeFace extends AbstractEffect
-{
+public final class ChangeFace extends AbstractEffect {
 	private final int _value;
 	
-	public ChangeFace(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public ChangeFace(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_value = params.getInt("value", 0);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if ((info.getEffector() == null) || (info.getEffected() == null) || !info.getEffector().isPlayer() || !info.getEffected().isPlayer() || info.getEffected().isAlikeDead())
-		{
+	public void onStart(BuffInfo info) {
+		if ((info.getEffector() == null) || (info.getEffected() == null) || !info.getEffector().isPlayer() || !info.getEffected().isPlayer() || info.getEffected().isAlikeDead()) {
 			return;
 		}
 		

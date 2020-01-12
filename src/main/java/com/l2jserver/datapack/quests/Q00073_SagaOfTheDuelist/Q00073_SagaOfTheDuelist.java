@@ -28,19 +28,16 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Saga of the Duelist (73)
  * @author Emperorc
  */
-public class Q00073_SagaOfTheDuelist extends AbstractSagaQuest
-{
+public class Q00073_SagaOfTheDuelist extends AbstractSagaQuest {
 	/**
 	 * Third Class Transfer Quest - Duelist: The quest asks for "Top-grade Meat" which can now be acquired directly through NPC Tunatun, instead of through an additional quest from NPC Tunatun.
 	 */
 	private final int TUNATUN = 31537;
 	private final int TOPQUALITYMEAT = 7546;
 	
-	public Q00073_SagaOfTheDuelist()
-	{
+	public Q00073_SagaOfTheDuelist() {
 		super(73, Q00073_SagaOfTheDuelist.class.getSimpleName(), "Saga of the Duelist");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			30849,
 			31624,
 			31226,
@@ -54,8 +51,7 @@ public class Q00073_SagaOfTheDuelist extends AbstractSagaQuest
 			31656,
 			31277
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7537,
 			7081,
@@ -69,28 +65,23 @@ public class Q00073_SagaOfTheDuelist extends AbstractSagaQuest
 			7096,
 			7546
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27289,
 			27222,
 			27281
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			88
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x02
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(164650, -74121, -2871),
 			new Location(47429, -56923, -2383),
 			new Location(47391, -56929, -2370)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",
@@ -116,16 +107,12 @@ public class Q00073_SagaOfTheDuelist extends AbstractSagaQuest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (npc.getId() == TUNATUN)
-		{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
+		if (npc.getId() == TUNATUN) {
 			String htmltext = getNoQuestMsg(player);
 			QuestState st = getQuestState(player, false);
-			if ((st != null) && st.isCond(3))
-			{
-				if (!st.hasQuestItems(TOPQUALITYMEAT))
-				{
+			if ((st != null) && st.isCond(3)) {
+				if (!st.hasQuestItems(TOPQUALITYMEAT)) {
 					st.giveItems(TOPQUALITYMEAT, 1);
 					return "tunatun_01.htm";
 				}

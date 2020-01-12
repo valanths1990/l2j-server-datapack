@@ -29,13 +29,10 @@ import com.l2jserver.gameserver.network.serverpackets.Dice;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Broadcast;
 
-public class RollingDice implements IItemHandler
-{
+public class RollingDice implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!playable.isPlayer())
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!playable.isPlayer()) {
 			playable.sendPacket(SystemMessageId.ITEM_NOT_FOR_PETS);
 			return false;
 		}
@@ -43,15 +40,13 @@ public class RollingDice implements IItemHandler
 		L2PcInstance activeChar = playable.getActingPlayer();
 		int itemId = item.getId();
 		
-		if (activeChar.isInOlympiadMode())
-		{
+		if (activeChar.isInOlympiadMode()) {
 			activeChar.sendPacket(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT);
 			return false;
 		}
 		
 		int number = rollDice(activeChar);
-		if (number == 0)
-		{
+		if (number == 0) {
 			activeChar.sendPacket(SystemMessageId.YOU_MAY_NOT_THROW_THE_DICE_AT_THIS_TIME_TRY_AGAIN_LATER);
 			return false;
 		}
@@ -63,11 +58,9 @@ public class RollingDice implements IItemHandler
 		sm.addInt(number);
 		
 		activeChar.sendPacket(sm);
-		if (activeChar.isInsideZone(ZoneId.PEACE))
-		{
+		if (activeChar.isInsideZone(ZoneId.PEACE)) {
 			Broadcast.toKnownPlayers(activeChar, sm);
-		}
-		else if (activeChar.isInParty()) // TODO: Verify this!
+		} else if (activeChar.isInParty()) // TODO: Verify this!
 		{
 			activeChar.getParty().broadcastToPartyMembers(activeChar, sm);
 		}
@@ -79,11 +72,9 @@ public class RollingDice implements IItemHandler
 	 * @param player
 	 * @return
 	 */
-	private int rollDice(L2PcInstance player)
-	{
+	private int rollDice(L2PcInstance player) {
 		// Check if the dice is ready
-		if (!player.getFloodProtectors().getRollDice().tryPerformAction("roll dice"))
-		{
+		if (!player.getFloodProtectors().getRollDice().tryPerformAction("roll dice")) {
 			return 0;
 		}
 		return Rnd.get(1, 6);

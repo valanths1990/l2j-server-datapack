@@ -38,53 +38,42 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * Area Friendly target handler implementation.
  * @author Adry_85, Zoey76
  */
-public class AreaFriendly implements ITargetTypeHandler
-{
+public class AreaFriendly implements ITargetTypeHandler {
 	private static final CharComparator CHAR_COMPARATOR = new CharComparator();
 	
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		L2PcInstance player = activeChar.getActingPlayer();
 		
-		if (!checkTarget(player, target) && (skill.getCastRange() >= 0))
-		{
+		if (!checkTarget(player, target) && (skill.getCastRange() >= 0)) {
 			player.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 			return EMPTY_TARGET_LIST;
 		}
 		
-		if (onlyFirst)
-		{
-			return new L2Character[]
-			{
+		if (onlyFirst) {
+			return new L2Character[] {
 				target
 			};
 		}
 		
-		if (player.getActingPlayer().isInOlympiadMode())
-		{
-			return new L2Character[]
-			{
+		if (player.getActingPlayer().isInOlympiadMode()) {
+			return new L2Character[] {
 				player
 			};
 		}
 		
 		final List<L2Character> targetList = new LinkedList<>();
-		if (target != null)
-		{
+		if (target != null) {
 			// Add target to target list.
 			targetList.add(target);
 			
 			final int maxTargets = skill.getAffectLimit();
-			for (L2Character obj : target.getKnownList().getKnownCharactersInRadius(skill.getAffectRange()))
-			{
-				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
-				{
+			for (L2Character obj : target.getKnownList().getKnownCharactersInRadius(skill.getAffectRange())) {
+				if ((maxTargets > 0) && (targetList.size() >= maxTargets)) {
 					break;
 				}
 				
-				if (!checkTarget(player, obj) || (obj == activeChar))
-				{
+				if (!checkTarget(player, obj) || (obj == activeChar)) {
 					continue;
 				}
 				
@@ -95,91 +84,74 @@ public class AreaFriendly implements ITargetTypeHandler
 			Collections.sort(targetList, CHAR_COMPARATOR);
 		}
 		
-		if (targetList.isEmpty())
-		{
+		if (targetList.isEmpty()) {
 			return EMPTY_TARGET_LIST;
 		}
 		return targetList.toArray(new L2Character[targetList.size()]);
 	}
 	
-	private boolean checkTarget(L2PcInstance activeChar, L2Character target)
-	{
-		if (!GeoData.getInstance().canSeeTarget(activeChar, target))
-		{
+	private boolean checkTarget(L2PcInstance activeChar, L2Character target) {
+		if (!GeoData.getInstance().canSeeTarget(activeChar, target)) {
 			return false;
 		}
 		
-		if ((target == null) || target.isAlikeDead() || target.isDoor() || (target instanceof L2SiegeFlagInstance) || target.isMonster())
-		{
+		if ((target == null) || target.isAlikeDead() || target.isDoor() || (target instanceof L2SiegeFlagInstance) || target.isMonster()) {
 			return false;
 		}
 		
 		// GMs and hidden creatures.
-		if (target.isInvisible())
-		{
+		if (target.isInvisible()) {
 			return false;
 		}
 		
-		if (target.isPlayable())
-		{
+		if (target.isPlayable()) {
 			L2PcInstance targetPlayer = target.getActingPlayer();
 			
-			if (activeChar == targetPlayer)
-			{
+			if (activeChar == targetPlayer) {
 				return true;
 			}
 			
-			if (targetPlayer.inObserverMode() || targetPlayer.isInOlympiadMode())
-			{
+			if (targetPlayer.inObserverMode() || targetPlayer.isInOlympiadMode()) {
 				return false;
 			}
 			
-			if (activeChar.isInDuelWith(target))
-			{
+			if (activeChar.isInDuelWith(target)) {
 				return false;
 			}
 			
-			if (activeChar.isInPartyWith(target))
-			{
+			if (activeChar.isInPartyWith(target)) {
 				return true;
 			}
 			
 			// Only siege allies.
-			if (activeChar.isInSiege() && !activeChar.isOnSameSiegeSideWith(targetPlayer))
-			{
+			if (activeChar.isInSiege() && !activeChar.isOnSameSiegeSideWith(targetPlayer)) {
 				return false;
 			}
 			
-			if (target.isInsideZone(ZoneId.PVP))
-			{
+			if (target.isInsideZone(ZoneId.PVP)) {
 				return false;
 			}
 			
-			if (activeChar.isInClanWith(target) || activeChar.isInAllyWith(target) || activeChar.isInCommandChannelWith(target))
-			{
+			if (activeChar.isInClanWith(target) || activeChar.isInAllyWith(target) || activeChar.isInCommandChannelWith(target)) {
 				return true;
 			}
 			
-			if ((targetPlayer.getPvpFlag() > 0) || (targetPlayer.getKarma() > 0))
-			{
+			if ((targetPlayer.getPvpFlag() > 0) || (targetPlayer.getKarma() > 0)) {
 				return false;
 			}
 		}
 		return true;
 	}
 	
-	public static class CharComparator implements Comparator<L2Character>
-	{
+	public static class CharComparator implements Comparator<L2Character> {
 		@Override
-		public int compare(L2Character char1, L2Character char2)
-		{
+		public int compare(L2Character char1, L2Character char2) {
 			return Double.compare((char1.getCurrentHp() / char1.getMaxHp()), (char2.getCurrentHp() / char2.getMaxHp()));
 		}
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.AREA_FRIENDLY;
 	}
 }

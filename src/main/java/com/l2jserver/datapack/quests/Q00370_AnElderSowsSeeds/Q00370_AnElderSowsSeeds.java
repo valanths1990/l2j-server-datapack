@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * An Elder Sows Seeds (370)
  * @author Adry_85
  */
-public final class Q00370_AnElderSowsSeeds extends Quest
-{
+public final class Q00370_AnElderSowsSeeds extends Quest {
 	// NPC
 	private static final int CASIAN = 30612;
 	// Items
@@ -46,8 +45,7 @@ public final class Q00370_AnElderSowsSeeds extends Quest
 	// Mobs
 	private static final Map<Integer, Integer> MOBS1 = new HashMap<>();
 	private static final Map<Integer, Double> MOBS2 = new HashMap<>();
-	static
-	{
+	static {
 		MOBS1.put(20082, 9); // ant_recruit
 		MOBS1.put(20086, 9); // ant_guard
 		MOBS1.put(20090, 22); // noble_ant_leader
@@ -55,8 +53,7 @@ public final class Q00370_AnElderSowsSeeds extends Quest
 		MOBS2.put(20089, 0.100); // noble_ant
 	}
 	
-	public Q00370_AnElderSowsSeeds()
-	{
+	public Q00370_AnElderSowsSeeds() {
 		super(370, Q00370_AnElderSowsSeeds.class.getSimpleName(), "An Elder Sows Seeds");
 		addStartNpc(CASIAN);
 		addTalkId(CASIAN);
@@ -65,58 +62,45 @@ public final class Q00370_AnElderSowsSeeds extends Quest
 	}
 	
 	@Override
-	public boolean checkPartyMember(L2PcInstance member, L2Npc npc)
-	{
+	public boolean checkPartyMember(L2PcInstance member, L2Npc npc) {
 		final QuestState st = getQuestState(member, false);
 		return ((st != null) && st.isStarted());
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "30612-02.htm":
 			case "30612-03.htm":
 			case "30612-06.html":
 			case "30612-07.html":
-			case "30612-09.html":
-			{
+			case "30612-09.html": {
 				htmltext = event;
 				break;
 			}
-			case "30612-04.htm":
-			{
+			case "30612-04.htm": {
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "REWARD":
-			{
-				if (st.isStarted())
-				{
-					if (exchangeChapters(player, false))
-					{
+			case "REWARD": {
+				if (st.isStarted()) {
+					if (exchangeChapters(player, false)) {
 						htmltext = "30612-08.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30612-11.html";
 					}
 				}
 				break;
 			}
-			case "30612-10.html":
-			{
-				if (st.isStarted())
-				{
+			case "30612-10.html": {
+				if (st.isStarted()) {
 					exchangeChapters(player, true);
 					st.exitQuest(true, true);
 					htmltext = event;
@@ -128,25 +112,18 @@ public final class Q00370_AnElderSowsSeeds extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		int npcId = npc.getId();
-		if (MOBS1.containsKey(npcId))
-		{
-			if (getRandom(100) < MOBS1.get(npcId))
-			{
+		if (MOBS1.containsKey(npcId)) {
+			if (getRandom(100) < MOBS1.get(npcId)) {
 				L2PcInstance luckyPlayer = getRandomPartyMember(player, npc);
-				if (luckyPlayer != null)
-				{
+				if (luckyPlayer != null) {
 					giveItemRandomly(luckyPlayer, npc, SPELLBOOK_PAGE, 1, 0, 1.0, true);
 				}
 			}
-		}
-		else
-		{
+		} else {
 			final QuestState st = getRandomPartyMemberState(player, -1, 3, npc);
-			if (st != null)
-			{
+			if (st != null) {
 				giveItemRandomly(st.getPlayer(), npc, SPELLBOOK_PAGE, 1, 0, MOBS2.get(npcId), true);
 			}
 		}
@@ -154,30 +131,24 @@ public final class Q00370_AnElderSowsSeeds extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st.isCreated())
-		{
+		if (st.isCreated()) {
 			htmltext = (player.getLevel() >= MIN_LEVEL) ? "30612-01.htm" : "30612-05.html";
-		}
-		else if (st.isStarted())
-		{
+		} else if (st.isStarted()) {
 			htmltext = "30612-06.html";
 		}
 		return htmltext;
 	}
 	
-	private final boolean exchangeChapters(L2PcInstance player, boolean takeAllItems)
-	{
+	private final boolean exchangeChapters(L2PcInstance player, boolean takeAllItems) {
 		final long waterChapters = getQuestItemsCount(player, CHAPTER_OF_WATER);
 		final long earthChapters = getQuestItemsCount(player, CHAPTER_OF_EARTH);
 		final long windChapters = getQuestItemsCount(player, CHAPTER_OF_WIND);
 		final long fireChapters = getQuestItemsCount(player, CHAPTER_OF_FIRE);
 		final long minCount = Util.min(waterChapters, earthChapters, windChapters, fireChapters);
-		if (minCount > 0)
-		{
+		if (minCount > 0) {
 			giveAdena(player, minCount * 3600, true);
 		}
 		final long countToTake = (takeAllItems ? -1 : minCount);

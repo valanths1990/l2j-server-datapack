@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.util.Util;
  * Path Of The Warrior (401)
  * @author ivantotov
  */
-public final class Q00401_PathOfTheWarrior extends Quest
-{
+public final class Q00401_PathOfTheWarrior extends Quest {
 	// NPCs
 	private static final int MASTER_AURON = 30010;
 	private static final int TRADER_SIMPLON = 30253;
@@ -55,8 +54,7 @@ public final class Q00401_PathOfTheWarrior extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 18;
 	
-	public Q00401_PathOfTheWarrior()
-	{
+	public Q00401_PathOfTheWarrior() {
 		super(401, Q00401_PathOfTheWarrior.class.getSimpleName(), "Path Of The Warrior");
 		addStartNpc(MASTER_AURON);
 		addTalkId(MASTER_AURON, TRADER_SIMPLON);
@@ -66,67 +64,47 @@ public final class Q00401_PathOfTheWarrior extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (player.getClassId() == ClassId.fighter)
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (hasQuestItems(player, MEDALLION_OF_WARRIOR))
-						{
+		switch (event) {
+			case "ACCEPT": {
+				if (player.getClassId() == ClassId.fighter) {
+					if (player.getLevel() >= MIN_LEVEL) {
+						if (hasQuestItems(player, MEDALLION_OF_WARRIOR)) {
 							htmltext = "30010-04.htm";
-						}
-						else
-						{
+						} else {
 							htmltext = "30010-05.htm";
 						}
-					}
-					else
-					{
+					} else {
 						htmltext = "30010-02.htm";
 					}
-				}
-				else if (player.getClassId() == ClassId.warrior)
-				{
+				} else if (player.getClassId() == ClassId.warrior) {
 					htmltext = "30010-02a.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30010-03.htm";
 				}
 				break;
 			}
-			case "30010-06.htm":
-			{
-				if (!hasQuestItems(player, AURONS_LETTER))
-				{
+			case "30010-06.htm": {
+				if (!hasQuestItems(player, AURONS_LETTER)) {
 					qs.startQuest();
 					giveItems(player, AURONS_LETTER, 1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30010-10.html":
-			{
+			case "30010-10.html": {
 				htmltext = event;
 				break;
 			}
-			case "30010-11.html":
-			{
-				if (hasQuestItems(player, SIMPLONS_LETTER, RUSTED_BRONZE_SWORD2))
-				{
+			case "30010-11.html": {
+				if (hasQuestItems(player, SIMPLONS_LETTER, RUSTED_BRONZE_SWORD2)) {
 					takeItems(player, RUSTED_BRONZE_SWORD2, 1);
 					giveItems(player, RUSTED_BRONZE_SWORD3, 1);
 					takeItems(player, SIMPLONS_LETTER, 1);
@@ -135,10 +113,8 @@ public final class Q00401_PathOfTheWarrior extends Quest
 				}
 				break;
 			}
-			case "30253-02.html":
-			{
-				if (hasQuestItems(player, AURONS_LETTER))
-				{
+			case "30253-02.html": {
+				if (hasQuestItems(player, AURONS_LETTER)) {
 					takeItems(player, AURONS_LETTER, 1);
 					giveItems(player, WARRIOR_GUILD_MARK, 1);
 					qs.setCond(2, true);
@@ -151,34 +127,23 @@ public final class Q00401_PathOfTheWarrior extends Quest
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final QuestState qs = getQuestState(attacker, false);
-		if ((qs != null) && qs.isStarted())
-		{
-			switch (npc.getScriptValue())
-			{
-				case 0:
-				{
+		if ((qs != null) && qs.isStarted()) {
+			switch (npc.getScriptValue()) {
+				case 0: {
 					npc.getVariables().set("lastAttacker", attacker.getObjectId());
-					if (!checkWeapon(attacker))
-					{
+					if (!checkWeapon(attacker)) {
 						npc.setScriptValue(2);
-					}
-					else
-					{
+					} else {
 						npc.setScriptValue(1);
 					}
 					break;
 				}
-				case 1:
-				{
-					if (!checkWeapon(attacker))
-					{
+				case 1: {
+					if (!checkWeapon(attacker)) {
 						npc.setScriptValue(2);
-					}
-					else if (npc.getVariables().getInt("lastAttacker") != attacker.getObjectId())
-					{
+					} else if (npc.getVariables().getInt("lastAttacker") != attacker.getObjectId()) {
 						npc.setScriptValue(2);
 					}
 					break;
@@ -189,27 +154,18 @@ public final class Q00401_PathOfTheWarrior extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
 				case TRACKER_SKELETON:
-				case TRACKER_SKELETON_LIDER:
-				{
-					if (hasQuestItems(killer, WARRIOR_GUILD_MARK) && (getQuestItemsCount(killer, RUSTED_BRONZE_SWORD1) < 10))
-					{
-						if (getRandom(10) < 4)
-						{
+				case TRACKER_SKELETON_LIDER: {
+					if (hasQuestItems(killer, WARRIOR_GUILD_MARK) && (getQuestItemsCount(killer, RUSTED_BRONZE_SWORD1) < 10)) {
+						if (getRandom(10) < 4) {
 							giveItems(killer, RUSTED_BRONZE_SWORD1, 1);
-							if (getQuestItemsCount(killer, RUSTED_BRONZE_SWORD1) == 10)
-							{
+							if (getQuestItemsCount(killer, RUSTED_BRONZE_SWORD1) == 10) {
 								qs.setCond(3, true);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
@@ -217,17 +173,12 @@ public final class Q00401_PathOfTheWarrior extends Quest
 					break;
 				}
 				case VENOMOUS_SPIDERS:
-				case ARACHNID_TRACKER:
-				{
-					if ((getQuestItemsCount(killer, VENOMOUS_SPIDERS_LEG) < 20) && npc.isScriptValue(1))
-					{
+				case ARACHNID_TRACKER: {
+					if ((getQuestItemsCount(killer, VENOMOUS_SPIDERS_LEG) < 20) && npc.isScriptValue(1)) {
 						giveItems(killer, VENOMOUS_SPIDERS_LEG, 1);
-						if (getQuestItemsCount(killer, VENOMOUS_SPIDERS_LEG) == 20)
-						{
+						if (getQuestItemsCount(killer, VENOMOUS_SPIDERS_LEG) == 20) {
 							qs.setCond(6, true);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
@@ -239,56 +190,34 @@ public final class Q00401_PathOfTheWarrior extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated() || qs.isCompleted())
-		{
-			if (npc.getId() == MASTER_AURON)
-			{
+		if (qs.isCreated() || qs.isCompleted()) {
+			if (npc.getId() == MASTER_AURON) {
 				htmltext = "30010-01.htm";
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case MASTER_AURON:
-				{
-					if (hasQuestItems(player, AURONS_LETTER))
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case MASTER_AURON: {
+					if (hasQuestItems(player, AURONS_LETTER)) {
 						htmltext = "30010-07.html";
-					}
-					else if (hasQuestItems(player, WARRIOR_GUILD_MARK))
-					{
+					} else if (hasQuestItems(player, WARRIOR_GUILD_MARK)) {
 						htmltext = "30010-08.html";
-					}
-					else if (hasQuestItems(player, SIMPLONS_LETTER, RUSTED_BRONZE_SWORD2) && !hasAtLeastOneQuestItem(player, WARRIOR_GUILD_MARK, AURONS_LETTER))
-					{
+					} else if (hasQuestItems(player, SIMPLONS_LETTER, RUSTED_BRONZE_SWORD2) && !hasAtLeastOneQuestItem(player, WARRIOR_GUILD_MARK, AURONS_LETTER)) {
 						htmltext = "30010-09.html";
-					}
-					else if (hasQuestItems(player, RUSTED_BRONZE_SWORD3) && !hasAtLeastOneQuestItem(player, WARRIOR_GUILD_MARK, AURONS_LETTER))
-					{
-						if (getQuestItemsCount(player, VENOMOUS_SPIDERS_LEG) < 20)
-						{
+					} else if (hasQuestItems(player, RUSTED_BRONZE_SWORD3) && !hasAtLeastOneQuestItem(player, WARRIOR_GUILD_MARK, AURONS_LETTER)) {
+						if (getQuestItemsCount(player, VENOMOUS_SPIDERS_LEG) < 20) {
 							htmltext = "30010-12.html";
-						}
-						else
-						{
+						} else {
 							giveAdena(player, 163800, true);
 							giveItems(player, MEDALLION_OF_WARRIOR, 1);
 							final int level = player.getLevel();
-							if (level >= 20)
-							{
+							if (level >= 20) {
 								addExpAndSp(player, 320534, 21012);
-							}
-							else if (level == 19)
-							{
+							} else if (level == 19) {
 								addExpAndSp(player, 456128, 27710);
-							}
-							else
-							{
+							} else {
 								addExpAndSp(player, 160267, 34408);
 							}
 							qs.exitQuest(false, true);
@@ -299,24 +228,15 @@ public final class Q00401_PathOfTheWarrior extends Quest
 					}
 					break;
 				}
-				case TRADER_SIMPLON:
-				{
-					if (hasQuestItems(player, AURONS_LETTER))
-					{
+				case TRADER_SIMPLON: {
+					if (hasQuestItems(player, AURONS_LETTER)) {
 						htmltext = "30253-01.html";
-					}
-					else if (hasQuestItems(player, WARRIOR_GUILD_MARK))
-					{
-						if (!hasQuestItems(player, RUSTED_BRONZE_SWORD1))
-						{
+					} else if (hasQuestItems(player, WARRIOR_GUILD_MARK)) {
+						if (!hasQuestItems(player, RUSTED_BRONZE_SWORD1)) {
 							htmltext = "30253-03.html";
-						}
-						else if (getQuestItemsCount(player, RUSTED_BRONZE_SWORD1) < 10)
-						{
+						} else if (getQuestItemsCount(player, RUSTED_BRONZE_SWORD1) < 10) {
 							htmltext = "30253-04.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, WARRIOR_GUILD_MARK, 1);
 							takeItems(player, RUSTED_BRONZE_SWORD1, -1);
 							giveItems(player, RUSTED_BRONZE_SWORD2, 1);
@@ -324,9 +244,7 @@ public final class Q00401_PathOfTheWarrior extends Quest
 							qs.setCond(4, true);
 							htmltext = "30253-05.html";
 						}
-					}
-					else if (hasQuestItems(player, SIMPLONS_LETTER))
-					{
+					} else if (hasQuestItems(player, SIMPLONS_LETTER)) {
 						htmltext = "30253-06.html";
 					}
 					break;
@@ -336,8 +254,7 @@ public final class Q00401_PathOfTheWarrior extends Quest
 		return htmltext;
 	}
 	
-	private static boolean checkWeapon(L2PcInstance player)
-	{
+	private static boolean checkWeapon(L2PcInstance player) {
 		L2ItemInstance weapon = player.getActiveWeaponInstance();
 		return ((weapon != null) && ((weapon.getId() == RUSTED_BRONZE_SWORD3)));
 	}

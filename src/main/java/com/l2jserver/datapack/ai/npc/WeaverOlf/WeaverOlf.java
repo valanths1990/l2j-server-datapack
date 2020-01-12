@@ -30,33 +30,28 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
  * Weaver Olf - Pins And Pouch Unseal AI.
  * @author Gigiikun, Bloodshed, Adry_85
  */
-public final class WeaverOlf extends AbstractNpcAI
-{
+public final class WeaverOlf extends AbstractNpcAI {
 	// NPCs
-	private static final int[] NPCs =
-	{
+	private static final int[] NPCs = {
 		32610, // Olf Kanore
 		32612, // Olf Adams
 	};
 	
-	private static final int[] UNSEAL_PRICE =
-	{
+	private static final int[] UNSEAL_PRICE = {
 		3200,
 		11800,
 		26500,
 		136600
 	};
 	
-	private static final int[] CHANCES =
-	{
+	private static final int[] CHANCES = {
 		1, // top
 		10, // high
 		40, // mid
 		100, // low
 	};
 	
-	private static final int[][] PINS =
-	{
+	private static final int[][] PINS = {
 		{
 			13898, // Sealed Magic Pin (C-Grade)
 			13905, // Top-Grade Magic Pin (C-Grade)
@@ -87,8 +82,7 @@ public final class WeaverOlf extends AbstractNpcAI
 		}
 	};
 	
-	private static final int[][] POUCHS =
-	{
+	private static final int[][] POUCHS = {
 		{
 			13918, // Sealed Magic Pouch (C-Grade)
 			13925, // Top-Grade Magic Pouch (C-Grade)
@@ -119,8 +113,7 @@ public final class WeaverOlf extends AbstractNpcAI
 		}
 	};
 	
-	private static final int[][] CLIPS_ORNAMENTS =
-	{
+	private static final int[][] CLIPS_ORNAMENTS = {
 		{
 			14902, // Sealed Magic Rune Clip (A-Grade)
 			14909, // Top-level Magic Rune Clip (A-Grade)
@@ -151,81 +144,54 @@ public final class WeaverOlf extends AbstractNpcAI
 		}
 	};
 	
-	private WeaverOlf()
-	{
+	private WeaverOlf() {
 		super(WeaverOlf.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPCs);
 		addTalkId(NPCs);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.contains("_grade_"))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.contains("_grade_")) {
 			int grade = Integer.parseInt(event.substring(0, 1));
 			int price;
 			int[] itemIds;
-			if (event.endsWith("_pin"))
-			{
+			if (event.endsWith("_pin")) {
 				price = UNSEAL_PRICE[grade];
 				itemIds = PINS[grade];
-			}
-			else if (event.endsWith("_pouch"))
-			{
+			} else if (event.endsWith("_pouch")) {
 				price = UNSEAL_PRICE[grade];
 				itemIds = POUCHS[grade];
-			}
-			else if (event.endsWith("_clip"))
-			{
+			} else if (event.endsWith("_clip")) {
 				price = UNSEAL_PRICE[grade];
 				itemIds = CLIPS_ORNAMENTS[grade - 2];
-			}
-			else if (event.endsWith("_ornament"))
-			{
+			} else if (event.endsWith("_ornament")) {
 				price = UNSEAL_PRICE[grade];
 				itemIds = CLIPS_ORNAMENTS[grade];
-			}
-			else
-			{
+			} else {
 				return super.onAdvEvent(event, npc, player);
 			}
 			
-			if (hasQuestItems(player, itemIds[0]))
-			{
-				if (player.getAdena() > price)
-				{
+			if (hasQuestItems(player, itemIds[0])) {
+				if (player.getAdena() > price) {
 					takeItems(player, Inventory.ADENA_ID, price);
 					takeItems(player, itemIds[0], 1);
 					int rand = getRandom(200);
-					if (rand <= CHANCES[0])
-					{
+					if (rand <= CHANCES[0]) {
 						giveItems(player, itemIds[1], 1);
-					}
-					else if (rand <= CHANCES[1])
-					{
+					} else if (rand <= CHANCES[1]) {
 						giveItems(player, itemIds[2], 1);
-					}
-					else if (rand <= CHANCES[2])
-					{
+					} else if (rand <= CHANCES[2]) {
 						giveItems(player, itemIds[3], 1);
-					}
-					else if (rand <= CHANCES[3])
-					{
+					} else if (rand <= CHANCES[3]) {
 						giveItems(player, itemIds[4], 1);
-					}
-					else
-					{
+					} else {
 						npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), NpcStringId.WHAT_A_PREDICAMENT_MY_ATTEMPTS_WERE_UNSUCCESSFUL));
 					}
-				}
-				else
-				{
+				} else {
 					return npc.getId() + "-low.htm";
 				}
-			}
-			else
-			{
+			} else {
 				return npc.getId() + "-no.htm";
 			}
 			return super.onAdvEvent(event, npc, player);
@@ -234,13 +200,11 @@ public final class WeaverOlf extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		return npc.getId() + "-1.htm";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new WeaverOlf();
 	}
 }

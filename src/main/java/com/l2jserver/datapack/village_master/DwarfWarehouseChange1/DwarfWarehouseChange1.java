@@ -28,11 +28,9 @@ import com.l2jserver.gameserver.model.base.ClassId;
  * Dwarf class transfer AI.
  * @author Adry_85
  */
-public final class DwarfWarehouseChange1 extends AbstractNpcAI
-{
+public final class DwarfWarehouseChange1 extends AbstractNpcAI {
 	// NPCs
-	private static int[] NPCS =
-	{
+	private static int[] NPCS = {
 		30498, // Moke
 		30503, // Rikadio
 		30594, // Ranspo
@@ -45,19 +43,16 @@ public final class DwarfWarehouseChange1 extends AbstractNpcAI
 	// Class
 	private static final int SCAVENGER = 54;
 	
-	private DwarfWarehouseChange1()
-	{
+	private DwarfWarehouseChange1() {
 		super(DwarfWarehouseChange1.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "30498-01.htm": // warehouse_chief_moke003f
 			case "30498-02.htm": // warehouse_chief_moke006fa
 			case "30498-03.htm": // warehouse_chief_moke007fa
@@ -78,8 +73,7 @@ public final class DwarfWarehouseChange1 extends AbstractNpcAI
 				htmltext = event;
 				break;
 			}
-			case "54":
-			{
+			case "54": {
 				htmltext = ClassChangeRequested(player, npc, Integer.valueOf(event));
 				break;
 			}
@@ -87,36 +81,22 @@ public final class DwarfWarehouseChange1 extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	private String ClassChangeRequested(L2PcInstance player, L2Npc npc, int classId)
-	{
+	private String ClassChangeRequested(L2PcInstance player, L2Npc npc, int classId) {
 		String htmltext = null;
-		if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP))
-		{
+		if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP)) {
 			htmltext = npc.getId() + "-06.htm"; // fnYouAreSecondClass
-		}
-		else if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP))
-		{
+		} else if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP)) {
 			htmltext = npc.getId() + "-07.htm"; // fnYouAreThirdClass
-		}
-		else if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
-		{
+		} else if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP)) {
 			htmltext = "30498-12.htm"; // fnYouAreFourthClass
-		}
-		else if ((classId == SCAVENGER) && (player.getClassId() == ClassId.dwarvenFighter))
-		{
-			if (player.getLevel() < 20)
-			{
-				if (hasQuestItems(player, RING_OF_RAVEN))
-				{
+		} else if ((classId == SCAVENGER) && (player.getClassId() == ClassId.dwarvenFighter)) {
+			if (player.getLevel() < 20) {
+				if (hasQuestItems(player, RING_OF_RAVEN)) {
 					htmltext = npc.getId() + "-08.htm"; // fnLowLevel11
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-09.htm"; // fnLowLevelNoProof11
 				}
-			}
-			else if (hasQuestItems(player, RING_OF_RAVEN))
-			{
+			} else if (hasQuestItems(player, RING_OF_RAVEN)) {
 				takeItems(player, RING_OF_RAVEN, -1);
 				player.setClassId(SCAVENGER);
 				player.setBaseClass(SCAVENGER);
@@ -124,9 +104,7 @@ public final class DwarfWarehouseChange1 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 				htmltext = npc.getId() + "-10.htm"; // fnAfterClassChange11
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-11.htm"; // fnNoProof11
 			}
 		}
@@ -134,22 +112,17 @@ public final class DwarfWarehouseChange1 extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (player.isInCategory(CategoryType.BOUNTY_HUNTER_GROUP))
-		{
+		if (player.isInCategory(CategoryType.BOUNTY_HUNTER_GROUP)) {
 			htmltext = npc.getId() + "-01.htm"; // fnClassList1
-		}
-		else
-		{
+		} else {
 			htmltext = npc.getId() + "-05.htm"; // fnClassMismatch
 		}
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DwarfWarehouseChange1();
 	}
 }

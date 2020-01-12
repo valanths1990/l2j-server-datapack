@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.util.Util;
  * Path Of The Scavenger (417)
  * @author ivantotov
  */
-public final class Q00417_PathOfTheScavenger extends Quest
-{
+public final class Q00417_PathOfTheScavenger extends Quest {
 	// NPCs
 	private static final int WAREHOUSE_KEEPER_RAUT = 30316;
 	private static final int TRADER_SHARI = 30517;
@@ -76,8 +75,7 @@ public final class Q00417_PathOfTheScavenger extends Quest
 	private static final String FIRST_ATTACKER = "FIRST_ATTACKER";
 	private static final String FLAG = "FLAG";
 	
-	public Q00417_PathOfTheScavenger()
-	{
+	public Q00417_PathOfTheScavenger() {
 		super(417, Q00417_PathOfTheScavenger.class.getSimpleName(), "Path Of The Scavenger");
 		addStartNpc(COLLECTOR_PIPI);
 		addTalkId(COLLECTOR_PIPI, WAREHOUSE_KEEPER_RAUT, TRADER_MION, TRADER_SHARI, HEAD_BLACKSMITH_BRONK, PRIEST_OF_THE_EARTH_ZIMENF, MASTER_TOMA, TORAI, WAREHOUSE_CHIEF_YASENI);
@@ -87,78 +85,56 @@ public final class Q00417_PathOfTheScavenger extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (player.getClassId() == ClassId.dwarvenFighter)
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (hasQuestItems(player, RING_OF_RAVEN))
-						{
+		switch (event) {
+			case "ACCEPT": {
+				if (player.getClassId() == ClassId.dwarvenFighter) {
+					if (player.getLevel() >= MIN_LEVEL) {
+						if (hasQuestItems(player, RING_OF_RAVEN)) {
 							htmltext = "30524-04.htm";
-						}
-						else
-						{
+						} else {
 							qs.startQuest();
 							qs.setMemoStateEx(1, 0);
 							giveItems(player, PIPPIS_LETTER_OF_RECOMMENDATION, 1);
 							htmltext = "30524-05.htm";
 						}
-					}
-					else
-					{
+					} else {
 						htmltext = "30524-02.htm";
 					}
-				}
-				else if (player.getClassId() == ClassId.scavenger)
-				{
+				} else if (player.getClassId() == ClassId.scavenger) {
 					htmltext = "30524-02a.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30524-08.htm";
 				}
 				break;
 			}
 			case "30524-03.html":
 			case "30557-02.html":
-			case "30519-06.html":
-			{
+			case "30519-06.html": {
 				htmltext = event;
 				break;
 			}
-			case "reply_1":
-			{
-				if (hasQuestItems(player, PIPPIS_LETTER_OF_RECOMMENDATION))
-				{
+			case "reply_1": {
+				if (hasQuestItems(player, PIPPIS_LETTER_OF_RECOMMENDATION)) {
 					takeItems(player, PIPPIS_LETTER_OF_RECOMMENDATION, 1);
-					switch (getRandom(3))
-					{
-						case 0:
-						{
+					switch (getRandom(3)) {
+						case 0: {
 							giveItems(player, ZIMENFS_POTION, 1);
 							htmltext = "30519-02.html";
 							break;
 						}
-						case 1:
-						{
+						case 1: {
 							giveItems(player, SHARIS_AXE, 1);
 							htmltext = "30519-03.html";
 							break;
 						}
-						case 2:
-						{
+						case 2: {
 							giveItems(player, BRONKS_INGOT, 1);
 							htmltext = "30519-04.html";
 							break;
@@ -167,47 +143,34 @@ public final class Q00417_PathOfTheScavenger extends Quest
 				}
 				break;
 			}
-			case "30519-07.html":
-			{
+			case "30519-07.html": {
 				qs.setMemoStateEx(1, qs.getMemoStateEx(1) + 1);
 				htmltext = event;
 				break;
 			}
-			case "reply_2":
-			{
-				switch (getRandom(2))
-				{
-					case 0:
-					{
+			case "reply_2": {
+				switch (getRandom(2)) {
+					case 0: {
 						htmltext = "30519-06.html";
 						break;
 					}
-					case 1:
-					{
+					case 1: {
 						htmltext = "30519-11.html";
 						break;
 					}
 				}
 				break;
 			}
-			case "reply_3":
-			{
-				if ((qs.getMemoStateEx(1) % 10) < 2)
-				{
+			case "reply_3": {
+				if ((qs.getMemoStateEx(1) % 10) < 2) {
 					qs.setMemoStateEx(1, qs.getMemoStateEx(1) + 1);
 					htmltext = "30519-07.html";
-				}
-				else if (((qs.getMemoStateEx(1) % 10) == 2) && qs.isMemoState(0))
-				{
+				} else if (((qs.getMemoStateEx(1) % 10) == 2) && qs.isMemoState(0)) {
 					htmltext = "30519-07.html";
-				}
-				else if (((qs.getMemoStateEx(1) % 10) == 2) && qs.isMemoState(1))
-				{
+				} else if (((qs.getMemoStateEx(1) % 10) == 2) && qs.isMemoState(1)) {
 					qs.setMemoStateEx(1, qs.getMemoStateEx(1) + 1);
 					htmltext = "30519-09.html";
-				}
-				else if (((qs.getMemoStateEx(1) % 10) >= 3) && qs.isMemoState(1))
-				{
+				} else if (((qs.getMemoStateEx(1) % 10) >= 3) && qs.isMemoState(1)) {
 					giveItems(player, MIONS_LETTER, 1);
 					takeItems(player, SHARIS_AXE, 1);
 					takeItems(player, ZIMENFS_POTION, 1);
@@ -217,27 +180,22 @@ public final class Q00417_PathOfTheScavenger extends Quest
 				}
 				break;
 			}
-			case "reply_4":
-			{
+			case "reply_4": {
 				takeItems(player, ZIMENFS_PAY, 1);
 				takeItems(player, SHARIS_PAY, 1);
 				takeItems(player, BRONKS_PAY, 1);
-				switch (getRandom(3))
-				{
-					case 0:
-					{
+				switch (getRandom(3)) {
+					case 0: {
 						giveItems(player, ZIMENFS_POTION, 1);
 						htmltext = "30519-02.html";
 						break;
 					}
-					case 1:
-					{
+					case 1: {
 						giveItems(player, SHARIS_AXE, 1);
 						htmltext = "30519-03.html";
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						giveItems(player, BRONKS_INGOT, 1);
 						htmltext = "30519-04.html";
 						break;
@@ -245,10 +203,8 @@ public final class Q00417_PathOfTheScavenger extends Quest
 				}
 				break;
 			}
-			case "30556-05b.html":
-			{
-				if (hasQuestItems(player, TARANTULA_PICTURE) && (getQuestItemsCount(player, BEAD) >= 20))
-				{
+			case "30556-05b.html": {
+				if (hasQuestItems(player, TARANTULA_PICTURE) && (getQuestItemsCount(player, BEAD) >= 20)) {
 					takeItems(player, TARANTULA_PICTURE, 1);
 					takeItems(player, BEAD, -1);
 					giveItems(player, BEAD_PARCEL, 1);
@@ -257,10 +213,8 @@ public final class Q00417_PathOfTheScavenger extends Quest
 				}
 				break;
 			}
-			case "30556-06b.html":
-			{
-				if (hasQuestItems(player, TARANTULA_PICTURE) && (getQuestItemsCount(player, BEAD) >= 20))
-				{
+			case "30556-06b.html": {
+				if (hasQuestItems(player, TARANTULA_PICTURE) && (getQuestItemsCount(player, BEAD) >= 20)) {
 					takeItems(player, TARANTULA_PICTURE, 1);
 					takeItems(player, BEAD, -1);
 					giveItems(player, BEAD_PARCEL2, 1);
@@ -270,10 +224,8 @@ public final class Q00417_PathOfTheScavenger extends Quest
 				}
 				break;
 			}
-			case "30316-02.html":
-			{
-				if (hasQuestItems(player, BEAD_PARCEL))
-				{
+			case "30316-02.html": {
+				if (hasQuestItems(player, BEAD_PARCEL)) {
 					takeItems(player, BEAD_PARCEL, 1);
 					giveItems(player, ROUTS_TELEPORT_SCROLL, 1);
 					qs.setCond(10, true);
@@ -281,10 +233,8 @@ public final class Q00417_PathOfTheScavenger extends Quest
 				}
 				break;
 			}
-			case "30316-03.html":
-			{
-				if (hasQuestItems(player, BEAD_PARCEL))
-				{
+			case "30316-03.html": {
+				if (hasQuestItems(player, BEAD_PARCEL)) {
 					giveItems(player, ROUTS_TELEPORT_SCROLL, 1);
 					takeItems(player, BEAD_PARCEL, 1);
 					qs.setCond(10, true);
@@ -292,10 +242,8 @@ public final class Q00417_PathOfTheScavenger extends Quest
 				}
 				break;
 			}
-			case "30557-03.html":
-			{
-				if (hasQuestItems(player, ROUTS_TELEPORT_SCROLL))
-				{
+			case "30557-03.html": {
+				if (hasQuestItems(player, ROUTS_TELEPORT_SCROLL)) {
 					takeItems(player, ROUTS_TELEPORT_SCROLL, 1);
 					giveItems(player, SUCCUBUS_UNDIES, 1);
 					qs.setCond(11, true);
@@ -304,23 +252,16 @@ public final class Q00417_PathOfTheScavenger extends Quest
 				}
 				break;
 			}
-			case "31958-02.html":
-			{
-				if (qs.isMemoState(2) && hasQuestItems(player, BEAD_PARCEL2))
-				{
+			case "31958-02.html": {
+				if (qs.isMemoState(2) && hasQuestItems(player, BEAD_PARCEL2)) {
 					giveAdena(player, 163800, true);
 					giveItems(player, RING_OF_RAVEN, 1);
 					final int level = player.getLevel();
-					if (level >= 20)
-					{
+					if (level >= 20) {
 						addExpAndSp(player, 320534, 35412);
-					}
-					else if (level == 19)
-					{
+					} else if (level == 19) {
 						addExpAndSp(player, 456128, 42110);
-					}
-					else
-					{
+					} else {
 						addExpAndSp(player, 591724, 48808);
 					}
 					qs.exitQuest(false, true);
@@ -335,28 +276,20 @@ public final class Q00417_PathOfTheScavenger extends Quest
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill) {
 		final QuestState qs = getQuestState(attacker, false);
-		if ((qs != null) && qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-			
-				case HUNTER_BEAR:
-				{
-					switch (npc.getScriptValue())
-					{
-						case 0:
-						{
+		if ((qs != null) && qs.isStarted()) {
+			switch (npc.getId()) {
+				
+				case HUNTER_BEAR: {
+					switch (npc.getScriptValue()) {
+						case 0: {
 							npc.setScriptValue(1);
 							npc.getVariables().set(FIRST_ATTACKER, attacker.getObjectId());
 							break;
 						}
-						case 1:
-						{
-							if (npc.getVariables().getInt(FIRST_ATTACKER) != attacker.getObjectId())
-							{
+						case 1: {
+							if (npc.getVariables().getInt(FIRST_ATTACKER) != attacker.getObjectId()) {
 								npc.setScriptValue(2);
 							}
 							break;
@@ -366,17 +299,14 @@ public final class Q00417_PathOfTheScavenger extends Quest
 				}
 				case HUNTER_TARANTULA:
 				case PLUNDER_TARANTULA:
-				case HONEY_BEAR:
-				{
-					if (npc.isScriptValue(0))
-					{
+				case HONEY_BEAR: {
+					if (npc.isScriptValue(0)) {
 						npc.setScriptValue(1);
 						npc.getVariables().set(FIRST_ATTACKER, attacker.getObjectId());
 					}
 					
 					// TODO: This should be skill parameter and not last skill casted.
-					if ((attacker.getLastSkillCast() != null) && (attacker.getLastSkillCast().getId() == SPOIL))
-					{
+					if ((attacker.getLastSkillCast() != null) && (attacker.getLastSkillCast().getId() == SPOIL)) {
 						npc.setScriptValue(2);
 						attacker.setLastSkillCast(null); // Reset last skill cast.
 					}
@@ -388,49 +318,35 @@ public final class Q00417_PathOfTheScavenger extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true) && npc.isAttackable())
-		{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true) && npc.isAttackable()) {
 			final boolean firstAttacker = (killer.getObjectId() == npc.getVariables().getInt(FIRST_ATTACKER));
-			switch (npc.getId())
-			{
-				case HUNTER_BEAR:
-				{
-					if (npc.isScriptValue(1) && firstAttacker && hasQuestItems(killer, BEAR_PICTURE) && (getQuestItemsCount(killer, HONEY_JAR) < 5))
-					{
+			switch (npc.getId()) {
+				case HUNTER_BEAR: {
+					if (npc.isScriptValue(1) && firstAttacker && hasQuestItems(killer, BEAR_PICTURE) && (getQuestItemsCount(killer, HONEY_JAR) < 5)) {
 						final int flag = qs.getInt(FLAG);
-						if ((flag > 0) && (getRandom(100) < (20 * flag)))
-						{
+						if ((flag > 0) && (getRandom(100) < (20 * flag))) {
 							addSpawn(HONEY_BEAR, npc, true, 0, true);
 							qs.set(FLAG, 0);
-						}
-						else
-						{
+						} else {
 							qs.set(FLAG, flag + 1);
 						}
 					}
 					break;
 				}
-				case HONEY_BEAR:
-				{
-					if (npc.isScriptValue(2) && firstAttacker && ((L2Attackable) npc).isSpoiled() && hasQuestItems(killer, BEAR_PICTURE))
-					{
-						if (giveItemRandomly(killer, npc, HONEY_JAR, 1, 5, 1.0, true))
-						{
+				case HONEY_BEAR: {
+					if (npc.isScriptValue(2) && firstAttacker && ((L2Attackable) npc).isSpoiled() && hasQuestItems(killer, BEAR_PICTURE)) {
+						if (giveItemRandomly(killer, npc, HONEY_JAR, 1, 5, 1.0, true)) {
 							qs.setCond(6);
 						}
 					}
 					break;
 				}
 				case HUNTER_TARANTULA:
-				case PLUNDER_TARANTULA:
-				{
-					if (npc.isScriptValue(2) && firstAttacker && ((L2Attackable) npc).isSpoiled() && hasQuestItems(killer, TARANTULA_PICTURE))
-					{
-						if (giveItemRandomly(killer, npc, BEAD, 1, 20, 1.0, true))
-						{
+				case PLUNDER_TARANTULA: {
+					if (npc.isScriptValue(2) && firstAttacker && ((L2Attackable) npc).isSpoiled() && hasQuestItems(killer, TARANTULA_PICTURE)) {
+						if (giveItemRandomly(killer, npc, BEAD, 1, 20, 1.0, true)) {
 							qs.setCond(8);
 						}
 					}
@@ -442,59 +358,37 @@ public final class Q00417_PathOfTheScavenger extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated() || qs.isCompleted())
-		{
-			if (npc.getId() == COLLECTOR_PIPI)
-			{
+		if (qs.isCreated() || qs.isCompleted()) {
+			if (npc.getId() == COLLECTOR_PIPI) {
 				htmltext = "30524-01.htm";
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case COLLECTOR_PIPI:
-				{
-					if (hasQuestItems(player, PIPPIS_LETTER_OF_RECOMMENDATION))
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case COLLECTOR_PIPI: {
+					if (hasQuestItems(player, PIPPIS_LETTER_OF_RECOMMENDATION)) {
 						htmltext = "30524-06.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30524-07.html";
 					}
 					break;
 				}
-				case TRADER_MION:
-				{
-					if (hasQuestItems(player, PIPPIS_LETTER_OF_RECOMMENDATION))
-					{
+				case TRADER_MION: {
+					if (hasQuestItems(player, PIPPIS_LETTER_OF_RECOMMENDATION)) {
 						qs.setCond(2, true);
 						htmltext = "30519-01.html";
-					}
-					else if ((getQuestItemsCount(player, SHARIS_AXE) + getQuestItemsCount(player, BRONKS_INGOT) + getQuestItemsCount(player, ZIMENFS_POTION)) == 1)
-					{
-						if ((qs.getMemoStateEx(1) % 10) == 0)
-						{
+					} else if ((getQuestItemsCount(player, SHARIS_AXE) + getQuestItemsCount(player, BRONKS_INGOT) + getQuestItemsCount(player, ZIMENFS_POTION)) == 1) {
+						if ((qs.getMemoStateEx(1) % 10) == 0) {
 							htmltext = "30519-05.html";
-						}
-						else if ((qs.getMemoStateEx(1) % 10) > 0)
-						{
+						} else if ((qs.getMemoStateEx(1) % 10) > 0) {
 							htmltext = "30519-08.html";
 						}
-					}
-					else if ((getQuestItemsCount(player, SHARIS_PAY) + getQuestItemsCount(player, BRONKS_PAY) + getQuestItemsCount(player, ZIMENFS_PAY)) == 1)
-					{
-						if (qs.getMemoStateEx(1) < 50)
-						{
+					} else if ((getQuestItemsCount(player, SHARIS_PAY) + getQuestItemsCount(player, BRONKS_PAY) + getQuestItemsCount(player, ZIMENFS_PAY)) == 1) {
+						if (qs.getMemoStateEx(1) < 50) {
 							htmltext = "30519-12.html";
-						}
-						else
-						{
+						} else {
 							giveItems(player, MIONS_LETTER, 1);
 							takeItems(player, SHARIS_PAY, 1);
 							takeItems(player, ZIMENFS_PAY, 1);
@@ -502,30 +396,21 @@ public final class Q00417_PathOfTheScavenger extends Quest
 							qs.setCond(4, true);
 							htmltext = "30519-15.html";
 						}
-					}
-					else if (hasQuestItems(player, MIONS_LETTER))
-					{
+					} else if (hasQuestItems(player, MIONS_LETTER)) {
 						htmltext = "30519-13.html";
-					}
-					else if (hasAtLeastOneQuestItem(player, BEAR_PICTURE, TARANTULA_PICTURE, BEAD_PARCEL, ROUTS_TELEPORT_SCROLL, SUCCUBUS_UNDIES))
-					{
+					} else if (hasAtLeastOneQuestItem(player, BEAR_PICTURE, TARANTULA_PICTURE, BEAD_PARCEL, ROUTS_TELEPORT_SCROLL, SUCCUBUS_UNDIES)) {
 						htmltext = "30519-14.html";
 					}
 					break;
 				}
-				case TRADER_SHARI:
-				{
-					if (hasQuestItems(player, SHARIS_AXE))
-					{
-						if (qs.getMemoStateEx(1) < 20)
-						{
+				case TRADER_SHARI: {
+					if (hasQuestItems(player, SHARIS_AXE)) {
+						if (qs.getMemoStateEx(1) < 20) {
 							takeItems(player, SHARIS_AXE, 1);
 							giveItems(player, SHARIS_PAY, 1);
 							qs.setMemoStateEx(1, qs.getMemoStateEx(1) + 10);
 							htmltext = "30517-01.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, SHARIS_AXE, 1);
 							giveItems(player, SHARIS_PAY, 1);
 							qs.setMemoState(1);
@@ -533,26 +418,19 @@ public final class Q00417_PathOfTheScavenger extends Quest
 							qs.setCond(3, true);
 							htmltext = "30517-02.html";
 						}
-					}
-					else if (hasQuestItems(player, SHARIS_PAY))
-					{
+					} else if (hasQuestItems(player, SHARIS_PAY)) {
 						htmltext = "30517-03.html";
 					}
 					break;
 				}
-				case HEAD_BLACKSMITH_BRONK:
-				{
-					if (hasQuestItems(player, BRONKS_INGOT))
-					{
-						if (qs.getMemoStateEx(1) < 20)
-						{
+				case HEAD_BLACKSMITH_BRONK: {
+					if (hasQuestItems(player, BRONKS_INGOT)) {
+						if (qs.getMemoStateEx(1) < 20) {
 							takeItems(player, BRONKS_INGOT, 1);
 							giveItems(player, BRONKS_PAY, 1);
 							qs.setMemoStateEx(1, qs.getMemoStateEx(1) + 10);
 							htmltext = "30525-01.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, BRONKS_INGOT, 1);
 							giveItems(player, BRONKS_PAY, 1);
 							qs.setMemoState(1);
@@ -560,26 +438,19 @@ public final class Q00417_PathOfTheScavenger extends Quest
 							qs.setCond(3, true);
 							htmltext = "30525-02.html";
 						}
-					}
-					else if (hasQuestItems(player, BRONKS_PAY))
-					{
+					} else if (hasQuestItems(player, BRONKS_PAY)) {
 						htmltext = "30525-03.html";
 					}
 					break;
 				}
-				case PRIEST_OF_THE_EARTH_ZIMENF:
-				{
-					if (hasQuestItems(player, ZIMENFS_POTION))
-					{
-						if (qs.getMemoStateEx(1) < 20)
-						{
+				case PRIEST_OF_THE_EARTH_ZIMENF: {
+					if (hasQuestItems(player, ZIMENFS_POTION)) {
+						if (qs.getMemoStateEx(1) < 20) {
 							takeItems(player, ZIMENFS_POTION, 1);
 							giveItems(player, ZIMENFS_PAY, 1);
 							qs.setMemoStateEx(1, qs.getMemoStateEx(1) + 10);
 							htmltext = "30538-01.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, ZIMENFS_POTION, 1);
 							giveItems(player, ZIMENFS_PAY, 1);
 							qs.setMemoState(1);
@@ -587,88 +458,57 @@ public final class Q00417_PathOfTheScavenger extends Quest
 							qs.setCond(3, true);
 							htmltext = "30538-02.html";
 						}
-					}
-					else if (hasQuestItems(player, ZIMENFS_PAY))
-					{
+					} else if (hasQuestItems(player, ZIMENFS_PAY)) {
 						htmltext = "30538-03.html";
 					}
 					break;
 				}
-				case MASTER_TOMA:
-				{
-					if (hasQuestItems(player, MIONS_LETTER))
-					{
+				case MASTER_TOMA: {
+					if (hasQuestItems(player, MIONS_LETTER)) {
 						takeItems(player, MIONS_LETTER, 1);
 						giveItems(player, BEAR_PICTURE, 1);
 						qs.setCond(5, true);
 						qs.set(FLAG, 0);
 						htmltext = "30556-01.html";
-					}
-					else if (hasQuestItems(player, BEAR_PICTURE))
-					{
-						if (getQuestItemsCount(player, HONEY_JAR) < 5)
-						{
+					} else if (hasQuestItems(player, BEAR_PICTURE)) {
+						if (getQuestItemsCount(player, HONEY_JAR) < 5) {
 							htmltext = "30556-02.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, BEAR_PICTURE, 1);
 							giveItems(player, TARANTULA_PICTURE, 1);
 							takeItems(player, HONEY_JAR, -1);
 							qs.setCond(7, true);
 							htmltext = "30556-03.html";
 						}
-					}
-					else if (hasQuestItems(player, TARANTULA_PICTURE))
-					{
-						if (getQuestItemsCount(player, BEAD) < 20)
-						{
+					} else if (hasQuestItems(player, TARANTULA_PICTURE)) {
+						if (getQuestItemsCount(player, BEAD) < 20) {
 							htmltext = "30556-04.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30556-05a.html";
 						}
-					}
-					else if (hasQuestItems(player, BEAD_PARCEL) && !hasQuestItems(player, BEAD_PARCEL2))
-					{
+					} else if (hasQuestItems(player, BEAD_PARCEL) && !hasQuestItems(player, BEAD_PARCEL2)) {
 						htmltext = "30556-06a.html";
-					}
-					else if (hasQuestItems(player, BEAD_PARCEL2) && !hasQuestItems(player, BEAD_PARCEL) && qs.isMemoState(2))
-					{
+					} else if (hasQuestItems(player, BEAD_PARCEL2) && !hasQuestItems(player, BEAD_PARCEL) && qs.isMemoState(2)) {
 						htmltext = "30556-06c.html";
-					}
-					else if (hasAtLeastOneQuestItem(player, ROUTS_TELEPORT_SCROLL, SUCCUBUS_UNDIES))
-					{
+					} else if (hasAtLeastOneQuestItem(player, ROUTS_TELEPORT_SCROLL, SUCCUBUS_UNDIES)) {
 						htmltext = "30556-07.html";
 					}
 					break;
 				}
-				case WAREHOUSE_KEEPER_RAUT:
-				{
-					if (hasQuestItems(player, BEAD_PARCEL))
-					{
+				case WAREHOUSE_KEEPER_RAUT: {
+					if (hasQuestItems(player, BEAD_PARCEL)) {
 						htmltext = "30316-01.html";
-					}
-					else if (hasQuestItems(player, ROUTS_TELEPORT_SCROLL))
-					{
+					} else if (hasQuestItems(player, ROUTS_TELEPORT_SCROLL)) {
 						htmltext = "30316-04.html";
-					}
-					else if (hasQuestItems(player, SUCCUBUS_UNDIES))
-					{
+					} else if (hasQuestItems(player, SUCCUBUS_UNDIES)) {
 						giveAdena(player, 81900, true);
 						giveItems(player, RING_OF_RAVEN, 1);
 						final int level = player.getLevel();
-						if (level >= 20)
-						{
+						if (level >= 20) {
 							addExpAndSp(player, 160267, 17706);
-						}
-						else if (level == 19)
-						{
+						} else if (level == 19) {
 							addExpAndSp(player, 228064, 21055);
-						}
-						else
-						{
+						} else {
 							addExpAndSp(player, 295862, 24404);
 						}
 						qs.exitQuest(false, true);
@@ -678,18 +518,14 @@ public final class Q00417_PathOfTheScavenger extends Quest
 					}
 					break;
 				}
-				case TORAI:
-				{
-					if (hasQuestItems(player, ROUTS_TELEPORT_SCROLL))
-					{
+				case TORAI: {
+					if (hasQuestItems(player, ROUTS_TELEPORT_SCROLL)) {
 						htmltext = "30557-01.html";
 					}
 					break;
 				}
-				case WAREHOUSE_CHIEF_YASENI:
-				{
-					if (hasQuestItems(player, BEAD_PARCEL2) && !hasQuestItems(player, BEAD_PARCEL) && qs.isMemoState(2))
-					{
+				case WAREHOUSE_CHIEF_YASENI: {
+					if (hasQuestItems(player, BEAD_PARCEL2) && !hasQuestItems(player, BEAD_PARCEL) && qs.isMemoState(2)) {
 						htmltext = "31958-01.html";
 					}
 					break;

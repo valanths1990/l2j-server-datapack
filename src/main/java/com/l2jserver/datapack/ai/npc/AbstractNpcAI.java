@@ -33,10 +33,8 @@ import com.l2jserver.gameserver.util.Broadcast;
  * Abstract NPC AI class for datapack based AIs.
  * @author UnAfraid, Zoey76
  */
-public abstract class AbstractNpcAI extends Quest
-{
-	public AbstractNpcAI(String name, String descr)
-	{
+public abstract class AbstractNpcAI extends Quest {
+	public AbstractNpcAI(String name, String descr) {
 		super(-1, name, descr);
 	}
 	
@@ -44,8 +42,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * Simple on first talk event handler.
 	 */
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return npc.getId() + ".html";
 	}
 	
@@ -62,8 +59,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * </ul>
 	 * @param mobs
 	 */
-	public void registerMobs(int... mobs)
-	{
+	public void registerMobs(int... mobs) {
 		addAttackId(mobs);
 		addKillId(mobs);
 		addSpawnId(mobs);
@@ -79,8 +75,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param type
 	 * @param text
 	 */
-	protected void broadcastNpcSay(L2Npc npc, int type, String text)
-	{
+	protected void broadcastNpcSay(L2Npc npc, int type, String text) {
 		Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), text));
 	}
 	
@@ -90,8 +85,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param type
 	 * @param stringId
 	 */
-	protected void broadcastNpcSay(L2Npc npc, int type, NpcStringId stringId)
-	{
+	protected void broadcastNpcSay(L2Npc npc, int type, NpcStringId stringId) {
 		Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), stringId));
 	}
 	
@@ -102,13 +96,10 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param stringId
 	 * @param parameters
 	 */
-	protected void broadcastNpcSay(L2Npc npc, int type, NpcStringId stringId, String... parameters)
-	{
+	protected void broadcastNpcSay(L2Npc npc, int type, NpcStringId stringId, String... parameters) {
 		final NpcSay say = new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), stringId);
-		if (parameters != null)
-		{
-			for (String parameter : parameters)
-			{
+		if (parameters != null) {
+			for (String parameter : parameters) {
 				say.addStringParameter(parameter);
 			}
 		}
@@ -122,8 +113,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param text
 	 * @param radius
 	 */
-	protected void broadcastNpcSay(L2Npc npc, int type, String text, int radius)
-	{
+	protected void broadcastNpcSay(L2Npc npc, int type, String text, int radius) {
 		Broadcast.toKnownPlayersInRadius(npc, new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), text), radius);
 	}
 	
@@ -134,8 +124,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param stringId
 	 * @param radius
 	 */
-	protected void broadcastNpcSay(L2Npc npc, int type, NpcStringId stringId, int radius)
-	{
+	protected void broadcastNpcSay(L2Npc npc, int type, NpcStringId stringId, int radius) {
 		Broadcast.toKnownPlayersInRadius(npc, new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), stringId), radius);
 	}
 	
@@ -144,8 +133,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param character
 	 * @param actionId
 	 */
-	protected void broadcastSocialAction(L2Character character, int actionId)
-	{
+	protected void broadcastSocialAction(L2Character character, int actionId) {
 		Broadcast.toSelfAndKnownPlayers(character, new SocialAction(character.getObjectId(), actionId));
 	}
 	
@@ -155,15 +143,12 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param actionId
 	 * @param radius
 	 */
-	protected void broadcastSocialAction(L2Character character, int actionId, int radius)
-	{
+	protected void broadcastSocialAction(L2Character character, int actionId, int radius) {
 		Broadcast.toSelfAndKnownPlayersInRadius(character, new SocialAction(character.getObjectId(), actionId), radius);
 	}
 	
-	public void spawnMinions(final L2Npc npc, final String spawnName)
-	{
-		for (MinionHolder is : npc.getTemplate().getParameters().getMinionList(spawnName))
-		{
+	public void spawnMinions(final L2Npc npc, final String spawnName) {
+		for (MinionHolder is : npc.getTemplate().getParameters().getMinionList(spawnName)) {
 			addMinion((L2MonsterInstance) npc, is.getId());
 		}
 	}

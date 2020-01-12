@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Shadow Fox - 2 (140)
  * @author Nono
  */
-public class Q00140_ShadowFoxPart2 extends Quest
-{
+public class Q00140_ShadowFoxPart2 extends Quest {
 	// NPCs
 	private static final int KLUCK = 30895;
 	private static final int XENOVIA = 30912;
@@ -44,8 +43,7 @@ public class Q00140_ShadowFoxPart2 extends Quest
 	private static final int CRYPTOGRAM_OF_THE_GODDESS_SWORD = 10349;
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
-	static
-	{
+	static {
 		MOBS.put(20789, 45); // Crokian
 		MOBS.put(20790, 58); // Dailaon
 		MOBS.put(20791, 100);// Crokian Warrior
@@ -58,8 +56,7 @@ public class Q00140_ShadowFoxPart2 extends Quest
 	private static final int CRYSTAL_COUNT = 5;
 	private static final int OXYDE_COUNT = 2;
 	
-	public Q00140_ShadowFoxPart2()
-	{
+	public Q00140_ShadowFoxPart2() {
 		super(140, Q00140_ShadowFoxPart2.class.getSimpleName(), "Shadow Fox - 2");
 		addStartNpc(KLUCK);
 		addTalkId(KLUCK, XENOVIA);
@@ -68,17 +65,14 @@ public class Q00140_ShadowFoxPart2 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30895-05.html":
 			case "30895-06.html":
 			case "30912-03.html":
@@ -101,10 +95,8 @@ public class Q00140_ShadowFoxPart2 extends Quest
 				st.setCond(3, true);
 				break;
 			case "30912-14.html":
-				if (getRandom(10) < CHANCE)
-				{
-					if (st.getQuestItemsCount(DARK_OXYDE) < OXYDE_COUNT)
-					{
+				if (getRandom(10) < CHANCE) {
+					if (st.getQuestItemsCount(DARK_OXYDE) < OXYDE_COUNT) {
 						st.giveItems(DARK_OXYDE, 1);
 						st.takeItems(DARK_CRYSTAL, 5);
 						return "30912-12.html";
@@ -119,8 +111,7 @@ public class Q00140_ShadowFoxPart2 extends Quest
 				break;
 			case "30895-11.html":
 				st.giveAdena(18775, true);
-				if (player.getLevel() <= MAX_REWARD_LEVEL)
-				{
+				if (player.getLevel() <= MAX_REWARD_LEVEL) {
 					st.addExpAndSp(30000, 2000);
 				}
 				st.exitQuest(false, true);
@@ -133,16 +124,13 @@ public class Q00140_ShadowFoxPart2 extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance member = getRandomPartyMember(player, 3);
-		if (member == null)
-		{
+		if (member == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		final QuestState st = getQuestState(member, false);
-		if (getRandom(100) < MOBS.get(npc.getId()))
-		{
+		if (getRandom(100) < MOBS.get(npc.getId())) {
 			st.giveItems(DARK_CRYSTAL, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
@@ -150,21 +138,17 @@ public class Q00140_ShadowFoxPart2 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case KLUCK:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? (player.hasQuestCompleted(Q00139_ShadowFoxPart1.class.getSimpleName())) ? "30895-01.htm" : "30895-00.htm" : "30895-02.htm";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "30895-04.html";
 								break;
@@ -173,12 +157,9 @@ public class Q00140_ShadowFoxPart2 extends Quest
 								htmltext = "30895-08.html";
 								break;
 							case 4:
-								if (st.isSet("talk"))
-								{
+								if (st.isSet("talk")) {
 									htmltext = "30895-10.html";
-								}
-								else
-								{
+								} else {
 									st.takeItems(CRYPTOGRAM_OF_THE_GODDESS_SWORD, -1);
 									st.set("talk", "1");
 									htmltext = "30895-09.html";
@@ -193,10 +174,8 @@ public class Q00140_ShadowFoxPart2 extends Quest
 				break;
 			
 			case XENOVIA:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "30912-01.html";
 							break;

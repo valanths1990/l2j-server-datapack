@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Ethernaly.
  * @author nonom
  */
-public class Q00030_ChestCaughtWithABaitOfFire extends Quest
-{
+public class Q00030_ChestCaughtWithABaitOfFire extends Quest {
 	// NPCs
 	private static final int LINNAEUS = 31577;
 	private static final int RUKAL = 30629;
@@ -40,8 +39,7 @@ public class Q00030_ChestCaughtWithABaitOfFire extends Quest
 	private static final int RUKAL_MUSICAL = 7628;
 	private static final int PROTECTION_NECKLACE = 916;
 	
-	public Q00030_ChestCaughtWithABaitOfFire()
-	{
+	public Q00030_ChestCaughtWithABaitOfFire() {
 		super(30, Q00030_ChestCaughtWithABaitOfFire.class.getSimpleName(), "Chest Caught With A Bait Of Fire");
 		addStartNpc(LINNAEUS);
 		addTalkId(LINNAEUS, RUKAL);
@@ -49,23 +47,19 @@ public class Q00030_ChestCaughtWithABaitOfFire extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "31577-02.htm":
 				st.startQuest();
 				break;
 			case "31577-04a.htm":
-				if (st.isCond(1) && st.hasQuestItems(RED_TREASURE_BOX))
-				{
+				if (st.isCond(1) && st.hasQuestItems(RED_TREASURE_BOX)) {
 					st.giveItems(RUKAL_MUSICAL, 1);
 					st.takeItems(RED_TREASURE_BOX, -1);
 					st.setCond(2, true);
@@ -73,8 +67,7 @@ public class Q00030_ChestCaughtWithABaitOfFire extends Quest
 				}
 				break;
 			case "30629-02.htm":
-				if (st.isCond(2) && st.hasQuestItems(RUKAL_MUSICAL))
-				{
+				if (st.isCond(2) && st.hasQuestItems(RUKAL_MUSICAL)) {
 					st.giveItems(PROTECTION_NECKLACE, 1);
 					st.exitQuest(false, true);
 					htmltext = "30629-03.htm";
@@ -85,32 +78,26 @@ public class Q00030_ChestCaughtWithABaitOfFire extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		final int npcId = npc.getId();
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.COMPLETED:
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			case State.CREATED:
-				if (npcId == LINNAEUS)
-				{
+				if (npcId == LINNAEUS) {
 					htmltext = ((player.getLevel() >= 61) && player.hasQuestCompleted(Q00053_LinnaeusSpecialBait.class.getSimpleName())) ? "31577-01.htm" : "31577-00.htm";
 				}
 				break;
 			case State.STARTED:
-				switch (npcId)
-				{
+				switch (npcId) {
 					case LINNAEUS:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "31577-03a.htm";
-								if (st.hasQuestItems(RED_TREASURE_BOX))
-								{
+								if (st.hasQuestItems(RED_TREASURE_BOX)) {
 									htmltext = "31577-03.htm";
 								}
 								break;
@@ -120,8 +107,7 @@ public class Q00030_ChestCaughtWithABaitOfFire extends Quest
 						}
 						break;
 					case RUKAL:
-						if (st.isCond(2))
-						{
+						if (st.isCond(2)) {
 							htmltext = "30629-01.htm";
 						}
 						break;

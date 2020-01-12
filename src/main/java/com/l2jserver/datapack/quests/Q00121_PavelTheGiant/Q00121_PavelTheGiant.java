@@ -29,30 +29,25 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Ethernaly.
  * @author malyelfik
  */
-public class Q00121_PavelTheGiant extends Quest
-{
+public class Q00121_PavelTheGiant extends Quest {
 	// NPCs
 	private static final int NEWYEAR = 31961;
 	private static final int YUMI = 32041;
 	
-	public Q00121_PavelTheGiant()
-	{
+	public Q00121_PavelTheGiant() {
 		super(121, Q00121_PavelTheGiant.class.getSimpleName(), "Pavel the Giant");
 		addStartNpc(NEWYEAR);
 		addTalkId(NEWYEAR, YUMI);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "31961-02.htm":
 				st.startQuest();
 				break;
@@ -65,15 +60,12 @@ public class Q00121_PavelTheGiant extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case NEWYEAR:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= 70) ? "31961-01.htm" : "31961-00.htm";
 						break;
@@ -86,8 +78,7 @@ public class Q00121_PavelTheGiant extends Quest
 				}
 				break;
 			case YUMI:
-				if (st.isStarted())
-				{
+				if (st.isStarted()) {
 					htmltext = "32041-01.html";
 				}
 				break;

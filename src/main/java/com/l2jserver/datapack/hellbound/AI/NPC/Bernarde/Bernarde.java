@@ -27,8 +27,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Bernarde AI.
  * @author DS
  */
-public final class Bernarde extends AbstractNpcAI
-{
+public final class Bernarde extends AbstractNpcAI {
 	// NPCs
 	private static final int BERNARDE = 32300;
 	// Misc
@@ -38,8 +37,7 @@ public final class Bernarde extends AbstractNpcAI
 	private static final int DARION_BADGE = 9674;
 	private static final int TREASURE = 9684;
 	
-	public Bernarde()
-	{
+	public Bernarde() {
 		super(Bernarde.class.getSimpleName(), "hellbound/AI/NPC");
 		addFirstTalkId(BERNARDE);
 		addStartNpc(BERNARDE);
@@ -47,18 +45,12 @@ public final class Bernarde extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "HolyWater":
-			{
-				if (HellboundEngine.getInstance().getLevel() == 2)
-				{
-					if (player.getInventory().getInventoryItemCount(DARION_BADGE, -1, false) >= 5)
-					{
-						if (player.exchangeItemsById("Quest", npc, DARION_BADGE, 5, HOLY_WATER, 1, true))
-						{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "HolyWater": {
+				if (HellboundEngine.getInstance().getLevel() == 2) {
+					if (player.getInventory().getInventoryItemCount(DARION_BADGE, -1, false) >= 5) {
+						if (player.exchangeItemsById("Quest", npc, DARION_BADGE, 5, HOLY_WATER, 1, true)) {
 							return "32300-02b.htm";
 						}
 					}
@@ -66,10 +58,8 @@ public final class Bernarde extends AbstractNpcAI
 				event = "32300-02c.htm";
 				break;
 			}
-			case "Treasure":
-			{
-				if ((HellboundEngine.getInstance().getLevel() == 3) && hasQuestItems(player, TREASURE))
-				{
+			case "Treasure": {
+				if ((HellboundEngine.getInstance().getLevel() == 3) && hasQuestItems(player, TREASURE)) {
 					HellboundEngine.getInstance().updateTrust((int) (getQuestItemsCount(player, TREASURE) * 1000), true);
 					takeItems(player, TREASURE, -1);
 					return "32300-02d.htm";
@@ -77,8 +67,7 @@ public final class Bernarde extends AbstractNpcAI
 				event = "32300-02e.htm";
 				break;
 			}
-			case "rumors":
-			{
+			case "rumors": {
 				event = "32300-" + HellboundEngine.getInstance().getLevel() + "r.htm";
 				break;
 			}
@@ -87,10 +76,8 @@ public final class Bernarde extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		switch (HellboundEngine.getInstance().getLevel())
-		{
+	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+		switch (HellboundEngine.getInstance().getLevel()) {
 			case 0:
 			case 1:
 				return isTransformed(player) ? "32300-01a.htm" : "32300-01.htm";
@@ -105,8 +92,7 @@ public final class Bernarde extends AbstractNpcAI
 		}
 	}
 	
-	private static final boolean isTransformed(L2PcInstance player)
-	{
+	private static final boolean isTransformed(L2PcInstance player) {
 		return player.isTransformed() && (player.getTransformation().getId() == NATIVE_TRANSFORM);
 	}
 }

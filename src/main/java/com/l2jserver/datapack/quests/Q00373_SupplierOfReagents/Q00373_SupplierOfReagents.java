@@ -217,14 +217,12 @@ public final class Q00373_SupplierOfReagents extends Quest {
 					qs.setMemoState(qs.getMemoState() + memoState);
 					htmltext = event;
 					playSound(player, Sound.SKILLSOUND_LIQUID_MIX);
-				}
-				else {
+				} else {
 					// If the player has not the chosen catalyst, we take the ingredient previously saved (if not null)
 					takeItem(player, MEMO_STATE_TO_ITEM.get(qs.getMemoState()));
 					if (event.equals("31149-19.html")) {
 						htmltext = "31149-25.html";
-					}
-					else {
+					} else {
 						htmltext = "31149-17.html";
 					}
 				}
@@ -233,8 +231,7 @@ public final class Q00373_SupplierOfReagents extends Quest {
 			case "31149-26.html": {
 				if (qs.isMemoState(1324)) {
 					htmltext = "31149-26a.html";
-				}
-				else {
+				} else {
 					htmltext = event;
 				}
 				break;
@@ -247,8 +244,7 @@ public final class Q00373_SupplierOfReagents extends Quest {
 			case "31149-28a.html": {
 				if (getRandom(100) < 33) {
 					qs.setMemoStateEx(1, 3); // Temperature Ifrit
-				}
-				else {
+				} else {
 					qs.setMemoStateEx(1, 0);
 				}
 				htmltext = event;
@@ -257,8 +253,7 @@ public final class Q00373_SupplierOfReagents extends Quest {
 			case "31149-29a.html": {
 				if (getRandom(100) < 20) {
 					qs.setMemoStateEx(1, 5); // Temperature Phoenix
-				}
-				else {
+				} else {
 					qs.setMemoStateEx(1, 0);
 				}
 				htmltext = event;
@@ -275,8 +270,7 @@ public final class Q00373_SupplierOfReagents extends Quest {
 					takeItem(player, item2);
 					htmltext = (reward == null) ? "31149-44.html" : "31149-45.html";
 					playSound(player, Sound.SKILLSOUND_LIQUID_FAIL);
-				}
-				else if ((memoState != 1324) || ((memoState == 1324) && (q235 != null) && q235.isStarted() && !hasQuestItems(player, reward.getItem()))) {
+				} else if ((memoState != 1324) || ((memoState == 1324) && (q235 != null) && q235.isStarted() && !hasQuestItems(player, reward.getItem()))) {
 					if ((item1 != null) && (item2 != null) && hasItem(player, item1) && hasItem(player, item2)) {
 						takeItem(player, item1);
 						takeItem(player, item2);
@@ -285,13 +279,11 @@ public final class Q00373_SupplierOfReagents extends Quest {
 						qs.setMemoStateEx(1, 0);
 						htmltext = reward.getHtml();
 						playSound(player, Sound.SKILLSOUND_LIQUID_SUCCESS);
-					}
-					else {
+					} else {
 						htmltext = "31149-44.html";
 						playSound(player, Sound.SKILLSOUND_LIQUID_FAIL);
 					}
-				}
-				else {
+				} else {
 					htmltext = "31149-44.html";
 				}
 				break;
@@ -309,8 +301,7 @@ public final class Q00373_SupplierOfReagents extends Quest {
 					final int chance = getRandom(1000);
 					if (chance < 766) {
 						giveItemRandomly(qs.getPlayer(), npc, DEMONS_BLOOD, 3, 0, 1, true);
-					}
-					else if (chance < 876) {
+					} else if (chance < 876) {
 						giveItemRandomly(qs.getPlayer(), npc, MOONSTONE_SHARD, 1, 0, 1, true);
 					}
 					break;
@@ -319,8 +310,7 @@ public final class Q00373_SupplierOfReagents extends Quest {
 					final int chance = getRandom(100);
 					if (chance < 45) {
 						giveItemRandomly(qs.getPlayer(), npc, REAGENT_POUNCH1, 1, 0, 1, true);
-					}
-					else if (chance < 65) {
+					} else if (chance < 65) {
 						giveItemRandomly(qs.getPlayer(), npc, VOLCANIC_ASH, 1, 0, 1, true);
 					}
 					break;
@@ -335,8 +325,7 @@ public final class Q00373_SupplierOfReagents extends Quest {
 					final int chance = getRandom(1000);
 					if (chance < 666) {
 						giveItemRandomly(qs.getPlayer(), npc, WYRM_BLOOD, 1, 0, 1, true);
-					}
-					else if (chance < 989) {
+					} else if (chance < 989) {
 						giveItemRandomly(qs.getPlayer(), npc, LAVA_STONE, 1, 0, 1, true);
 					}
 					break;
@@ -344,8 +333,7 @@ public final class Q00373_SupplierOfReagents extends Quest {
 				case CRENDION: {
 					if (getRandom(1000) < 618) {
 						giveItemRandomly(qs.getPlayer(), npc, ROTTEN_BONE, 1, 0, 1, true);
-					}
-					else {
+					} else {
 						giveItemRandomly(qs.getPlayer(), npc, QUICKSILVER, 1, 0, 1, true);
 					}
 					break;
@@ -359,8 +347,7 @@ public final class Q00373_SupplierOfReagents extends Quest {
 				case PLATINUM_TRIBE_SHAMAN: {
 					if (getRandom(1000) < 658) {
 						giveItemRandomly(qs.getPlayer(), npc, REAGENT_POUNCH2, 1, 0, 1, true);
-					}
-					else {
+					} else {
 						giveItemRandomly(qs.getPlayer(), npc, QUICKSILVER, 2, 0, 1, true);
 					}
 					break;
@@ -377,16 +364,13 @@ public final class Q00373_SupplierOfReagents extends Quest {
 		if (qs.isCreated()) {
 			if (talker.getLevel() < MIN_LVL) {
 				htmltext = "30166-01.html";
-			}
-			else {
+			} else {
 				htmltext = "30166-02.htm";
 			}
-		}
-		else if (qs.isStarted()) {
+		} else if (qs.isStarted()) {
 			if (npc.getId() == WESLEY) {
 				htmltext = "30166-05.html";
-			}
-			else {
+			} else {
 				htmltext = "31149-01.html";
 			}
 		}

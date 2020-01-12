@@ -33,11 +33,9 @@ import com.l2jserver.gameserver.model.actor.instance.L2VillageMasterPriestInstan
  * None of them provide actual class transfers, they only talk about it.
  * @author jurchiks, xban1x
  */
-public final class FirstClassTransferTalk extends AbstractNpcAI
-{
+public final class FirstClassTransferTalk extends AbstractNpcAI {
 	private static final Map<Integer, Race> MASTERS = new HashMap<>();
-	static
-	{
+	static {
 		MASTERS.put(30026, Race.HUMAN); // Blitz, TI Fighter Guild Head Master
 		MASTERS.put(30031, Race.HUMAN); // Biotin, TI Einhasad Temple High Priest
 		MASTERS.put(30154, Race.ELF); // Asterios, Elven Village Tetrarch
@@ -56,103 +54,71 @@ public final class FirstClassTransferTalk extends AbstractNpcAI
 		MASTERS.put(32154, Race.HUMAN); // Aldenia, Human Guild Grand Master
 	}
 	
-	private FirstClassTransferTalk()
-	{
+	private FirstClassTransferTalk() {
 		super(FirstClassTransferTalk.class.getSimpleName(), "ai/npc/VillageMasters");
 		addStartNpc(MASTERS.keySet());
 		addTalkId(MASTERS.keySet());
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		return event;
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = npc.getId() + "_";
 		
-		if (MASTERS.get(npc.getId()) != player.getRace())
-		{
+		if (MASTERS.get(npc.getId()) != player.getRace()) {
 			return htmltext += "no.html";
 		}
 		
-		switch (MASTERS.get(npc.getId()))
-		{
-			case HUMAN:
-			{
-				if (player.getClassId().level() == 0)
-				{
-					if (player.isMageClass())
-					{
-						if (npc instanceof L2VillageMasterPriestInstance)
-						{
+		switch (MASTERS.get(npc.getId())) {
+			case HUMAN: {
+				if (player.getClassId().level() == 0) {
+					if (player.isMageClass()) {
+						if (npc instanceof L2VillageMasterPriestInstance) {
 							htmltext += "mystic.html";
 						}
-					}
-					else
-					{
-						if (npc instanceof L2VillageMasterFighterInstance)
-						{
+					} else {
+						if (npc instanceof L2VillageMasterFighterInstance) {
 							htmltext += "fighter.html";
 						}
 					}
-				}
-				else if (player.getClassId().level() == 1)
-				{
+				} else if (player.getClassId().level() == 1) {
 					htmltext += "transfer_1.html";
-				}
-				else
-				{
+				} else {
 					htmltext += "transfer_2.html";
 				}
 				break;
 			}
 			case ELF:
 			case DARK_ELF:
-			case ORC:
-			{
-				if (player.getClassId().level() == 0)
-				{
-					if (player.isMageClass())
-					{
+			case ORC: {
+				if (player.getClassId().level() == 0) {
+					if (player.isMageClass()) {
 						htmltext += "mystic.html";
-					}
-					else
-					{
+					} else {
 						htmltext += "fighter.html";
 					}
-				}
-				else if (player.getClassId().level() == 1)
-				{
+				} else if (player.getClassId().level() == 1) {
 					htmltext += "transfer_1.html";
-				}
-				else
-				{
+				} else {
 					htmltext += "transfer_2.html";
 				}
 				break;
 			}
-			case DWARF:
-			{
-				if (player.getClassId().level() == 0)
-				{
+			case DWARF: {
+				if (player.getClassId().level() == 0) {
 					htmltext += "fighter.html";
-				}
-				else if (player.getClassId().level() == 1)
-				{
+				} else if (player.getClassId().level() == 1) {
 					htmltext += "transfer_1.html";
-				}
-				else
-				{
+				} else {
 					htmltext += "transfer_2.html";
 				}
 				break;
 			}
-			default:
-			{
+			default: {
 				htmltext += "no.html";
 				break;
 			}
@@ -160,8 +126,7 @@ public final class FirstClassTransferTalk extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new FirstClassTransferTalk();
 	}
 }

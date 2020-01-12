@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Beast Herder Tunatun AI.
  * @author Adry_85
  */
-public final class Tunatun extends AbstractNpcAI
-{
+public final class Tunatun extends AbstractNpcAI {
 	// NPC
 	private static final int TUNATUN = 31537;
 	// Item
@@ -37,8 +36,7 @@ public final class Tunatun extends AbstractNpcAI
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
-	private Tunatun()
-	{
+	private Tunatun() {
 		super(Tunatun.class.getSimpleName(), "ai/npc");
 		addStartNpc(TUNATUN);
 		addFirstTalkId(TUNATUN);
@@ -46,22 +44,16 @@ public final class Tunatun extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if ("Whip".equals(event))
-		{
-			if (hasQuestItems(player, BEAST_HANDLERS_WHIP))
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if ("Whip".equals(event)) {
+			if (hasQuestItems(player, BEAST_HANDLERS_WHIP)) {
 				return "31537-01.html";
 			}
 			
 			QuestState st = player.getQuestState(Q00020_BringUpWithLove.class.getSimpleName());
-			if ((st == null) && (player.getLevel() < MIN_LEVEL))
-			{
+			if ((st == null) && (player.getLevel() < MIN_LEVEL)) {
 				return "31537-02.html";
-			}
-			else if ((st != null) || (player.getLevel() >= MIN_LEVEL))
-			{
+			} else if ((st != null) || (player.getLevel() >= MIN_LEVEL)) {
 				giveItems(player, BEAST_HANDLERS_WHIP, 1);
 				return "31537-03.html";
 			}
@@ -69,8 +61,7 @@ public final class Tunatun extends AbstractNpcAI
 		return event;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Tunatun();
 	}
 }

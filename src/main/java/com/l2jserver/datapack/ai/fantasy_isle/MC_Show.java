@@ -40,8 +40,7 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
  * MC Show AI.
  * @author Kerberos
  */
-public class MC_Show extends AbstractNpcAI
-{
+public class MC_Show extends AbstractNpcAI {
 	private static int MC = 32433;
 	// @formatter:off
 	private static int[] SINGERS =
@@ -62,8 +61,7 @@ public class MC_Show extends AbstractNpcAI
 	};
 	// @formatter:on
 	private static boolean IS_STARTED = false;
-	private static NpcStringId[] MESSAGES =
-	{
+	private static NpcStringId[] MESSAGES = {
 		NpcStringId.HOW_COME_PEOPLE_ARE_NOT_HERE_WE_ARE_ABOUT_TO_START_THE_SHOW_HMM,
 		NpcStringId.UGH_I_HAVE_BUTTERFLIES_IN_MY_STOMACH_THE_SHOW_STARTS_SOON,
 		NpcStringId.THANK_YOU_ALL_FOR_COMING_HERE_TONIGHT,
@@ -90,14 +88,12 @@ public class MC_Show extends AbstractNpcAI
 		NpcStringId.WE_LOVE_YOU
 	};
 	
-	private class ShoutInfo
-	{
+	private class ShoutInfo {
 		private final NpcStringId _npcStringId;
 		private final String _nextEvent;
 		private final int _time;
 		
-		public ShoutInfo(NpcStringId npcStringId, String nextEvent, int time)
-		{
+		public ShoutInfo(NpcStringId npcStringId, String nextEvent, int time) {
 			_npcStringId = npcStringId;
 			_nextEvent = nextEvent;
 			_time = time;
@@ -106,36 +102,31 @@ public class MC_Show extends AbstractNpcAI
 		/**
 		 * @return the _npcStringId
 		 */
-		public NpcStringId getNpcStringId()
-		{
+		public NpcStringId getNpcStringId() {
 			return _npcStringId;
 		}
 		
 		/**
 		 * @return the _nextEvent
 		 */
-		public String getNextEvent()
-		{
+		public String getNextEvent() {
 			return _nextEvent;
 		}
 		
 		/**
 		 * @return the _time
 		 */
-		public int getTime()
-		{
+		public int getTime() {
 			return _time;
 		}
 	}
 	
-	private class WalkInfo
-	{
+	private class WalkInfo {
 		private final Location _charPos;
 		private final String _nextEvent;
 		private final int _time;
 		
-		public WalkInfo(Location charPos, String nextEvent, int time)
-		{
+		public WalkInfo(Location charPos, String nextEvent, int time) {
 			_charPos = charPos;
 			_nextEvent = nextEvent;
 			_time = time;
@@ -144,24 +135,21 @@ public class MC_Show extends AbstractNpcAI
 		/**
 		 * @return the _charPos
 		 */
-		public Location getCharPos()
-		{
+		public Location getCharPos() {
 			return _charPos;
 		}
 		
 		/**
 		 * @return the _nextEvent
 		 */
-		public String getNextEvent()
-		{
+		public String getNextEvent() {
 			return _nextEvent;
 		}
 		
 		/**
 		 * @return the _time
 		 */
-		public int getTime()
-		{
+		public int getTime() {
 			return _time;
 		}
 	}
@@ -169,16 +157,14 @@ public class MC_Show extends AbstractNpcAI
 	private static final Map<String, ShoutInfo> TALKS = new HashMap<>();
 	private static final Map<String, WalkInfo> WALKS = new HashMap<>();
 	
-	private MC_Show()
-	{
+	private MC_Show() {
 		super(MC_Show.class.getSimpleName(), "ai/fantasy_isle");
 		addSpawnId(32433, 32431, 32432, 32442, 32443, 32444, 32445, 32446, 32424, 32425, 32426, 32427, 32428);
 		load();
 		scheduleTimer();
 	}
 	
-	private void load()
-	{
+	private void load() {
 		// TODO put this stuff in Routes.xml
 		TALKS.put("1", new ShoutInfo(MESSAGES[1], "2", 1000));
 		TALKS.put("2", new ShoutInfo(MESSAGES[2], "3", 6000));
@@ -288,28 +274,24 @@ public class MC_Show extends AbstractNpcAI
 		WALKS.put("27", new WalkInfo(new Location(-56702, -56340, -2008, 0), "29", 1800));
 	}
 	
-	private void scheduleTimer()
-	{
+	private void scheduleTimer() {
 		int gameTime = GameTimeController.getInstance().getGameTime();
 		int hours = (gameTime / 60) % 24;
 		int minutes = gameTime % 60;
 		int hourDiff, minDiff;
 		hourDiff = (20 - hours);
-		if (hourDiff < 0)
-		{
+		if (hourDiff < 0) {
 			hourDiff = 24 - (hourDiff *= -1);
 		}
 		minDiff = (30 - minutes);
-		if (minDiff < 0)
-		{
+		if (minDiff < 0) {
 			minDiff = 60 - (minDiff *= -1);
 		}
 		long diff;
 		hourDiff *= 3600000;
 		minDiff *= 60000;
 		diff = hourDiff + minDiff;
-		if (general().debug())
-		{
+		if (general().debug()) {
 			SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 			_log.info("Fantasy Isle: MC show script starting at " + format.format(System.currentTimeMillis() + diff) + " and is scheduled each next 4 hours.");
 		}
@@ -318,18 +300,14 @@ public class MC_Show extends AbstractNpcAI
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new StartMCShow(), diff, 14400000L);
 	}
 	
-	private void autoChat(L2Npc npc, NpcStringId npcString, int type)
-	{
+	private void autoChat(L2Npc npc, NpcStringId npcString, int type) {
 		npc.broadcastPacket(new NpcSay(npc.getObjectId(), type, npc.getId(), npcString));
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
-		if (IS_STARTED)
-		{
-			switch (npc.getId())
-			{
+	public String onSpawn(L2Npc npc) {
+		if (IS_STARTED) {
+			switch (npc.getId()) {
 				case 32433:
 					autoChat(npc, MESSAGES[0], Say2.NPC_SHOUT);
 					startQuestTimer("1", 30000, npc, null);
@@ -365,24 +343,18 @@ public class MC_Show extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if ((event == null) || event.isEmpty())
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if ((event == null) || event.isEmpty()) {
 			_log.warning("MC_Show: Null/Empty event for npc " + npc + " and player " + player + "!");
 			return null;
 		}
 		
-		if (event.equalsIgnoreCase("Start"))
-		{
+		if (event.equalsIgnoreCase("Start")) {
 			IS_STARTED = true;
 			addSpawn(MC, -56698, -56430, -2008, 32768, false, 0);
-		}
-		else if ((npc != null) && IS_STARTED)
-		{
+		} else if ((npc != null) && IS_STARTED) {
 			// TODO switch on event
-			if (event.equalsIgnoreCase("6"))
-			{
+			if (event.equalsIgnoreCase("6")) {
 				autoChat(npc, MESSAGES[6], Say2.NPC_SHOUT);
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(-56511, -56647, -2008, 36863));
 				npc.broadcastPacket(Music.NS22_F.getPacket());
@@ -394,11 +366,8 @@ public class MC_Show extends AbstractNpcAI
 				addSpawn(SINGERS[1], -56580, -56203, -2008, 36863, false, 224000);
 				addSpawn(SINGERS[1], -56606, -56157, -2008, 36863, false, 224000);
 				startQuestTimer("7", 215000, npc, null);
-			}
-			else if (event.equalsIgnoreCase("7"))
-			{
-				switch (npc.getId())
-				{
+			} else if (event.equalsIgnoreCase("7")) {
+				switch (npc.getId()) {
 					case 32433:
 						autoChat(npc, MESSAGES[7], Say2.NPC_SHOUT);
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(-56698, -56430, -2008, 32768));
@@ -409,9 +378,7 @@ public class MC_Show extends AbstractNpcAI
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(-56594, -56064, -2008, 32768));
 						break;
 				}
-			}
-			else if (event.equalsIgnoreCase("10"))
-			{
+			} else if (event.equalsIgnoreCase("10")) {
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(-56483, -56665, -2034, 32768));
 				npc.broadcastPacket(Music.TP05_F.getPacket());
 				startQuestTimer("npc1_1", 3000, addSpawn(CIRCUS[0], -56495, -56375, -2008, 32768, false, 101000), null);
@@ -424,11 +391,8 @@ public class MC_Show extends AbstractNpcAI
 				startQuestTimer("npc8_1", 3000, addSpawn(CIRCUS[4], -56493, -56473, -2008, 32768, false, 101000), null);
 				startQuestTimer("npc9_1", 3000, addSpawn(CIRCUS[4], -56504, -56201, -2008, 32768, false, 101000), null);
 				startQuestTimer("11", 100000, npc, null);
-			}
-			else if (event.equalsIgnoreCase("11"))
-			{
-				switch (npc.getId())
-				{
+			} else if (event.equalsIgnoreCase("11")) {
+				switch (npc.getId()) {
 					case 32433:
 						autoChat(npc, MESSAGES[11], Say2.NPC_SHOUT);
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(-56698, -56430, -2008, 32768));
@@ -438,25 +402,17 @@ public class MC_Show extends AbstractNpcAI
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(-56343, -56330, -2008, 32768));
 						break;
 				}
-			}
-			else if (event.equalsIgnoreCase("14"))
-			{
+			} else if (event.equalsIgnoreCase("14")) {
 				startQuestTimer("social1", 2000, addSpawn(INDIVIDUALS[0], -56700, -56385, -2008, 32768, false, 49000), null);
 				startQuestTimer("15", 7000, npc, null);
-			}
-			else if (event.equalsIgnoreCase("17"))
-			{
+			} else if (event.equalsIgnoreCase("17")) {
 				autoChat(npc, MESSAGES[16], Say2.NPC_SHOUT);
 				startQuestTimer("social1", 2000, addSpawn(INDIVIDUALS[1], -56700, -56340, -2008, 32768, false, 32000), null);
 				startQuestTimer("18", 9000, npc, null);
-			}
-			else if (event.equalsIgnoreCase("20"))
-			{
+			} else if (event.equalsIgnoreCase("20")) {
 				startQuestTimer("social1", 2000, addSpawn(INDIVIDUALS[2], -56703, -56296, -2008, 32768, false, 13000), null);
 				startQuestTimer("21", 8000, npc, null);
-			}
-			else if (event.equalsIgnoreCase("23"))
-			{
+			} else if (event.equalsIgnoreCase("23")) {
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(-56702, -56340, -2008, 32768));
 				startQuestTimer("24", 2800, npc, null);
 				addSpawn(SHOWSTUFF[0], -56672, -56406, -2000, 32768, false, 20900);
@@ -464,43 +420,28 @@ public class MC_Show extends AbstractNpcAI
 				addSpawn(SHOWSTUFF[2], -56608, -56338, -2000, 32768, false, 20900);
 				addSpawn(SHOWSTUFF[3], -56652, -56307, -2000, 32768, false, 20900);
 				addSpawn(SHOWSTUFF[4], -56672, -56272, -2000, 32768, false, 20900);
-			}
-			else if (event.equalsIgnoreCase("28"))
-			{
+			} else if (event.equalsIgnoreCase("28")) {
 				autoChat(npc, MESSAGES[23], Say2.NPC_ALL);
 				startQuestTimer("social1", 1, npc, null);
-			}
-			else if (event.equalsIgnoreCase("29"))
-			{
+			} else if (event.equalsIgnoreCase("29")) {
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(-56730, -56340, -2008, 32768));
 				startQuestTimer("clean_npc", 4100, npc, null);
 				startQuestTimer("timer_check", 60000, null, null, true);
-			}
-			else if (event.equalsIgnoreCase("social1"))
-			{
+			} else if (event.equalsIgnoreCase("social1")) {
 				npc.broadcastSocialAction(1);
-			}
-			else if (event.equalsIgnoreCase("clean_npc"))
-			{
+			} else if (event.equalsIgnoreCase("clean_npc")) {
 				IS_STARTED = false;
 				npc.deleteMe();
-			}
-			else
-			{
-				if (TALKS.containsKey(event))
-				{
+			} else {
+				if (TALKS.containsKey(event)) {
 					final ShoutInfo si = TALKS.get(event);
-					if (si != null)
-					{
+					if (si != null) {
 						autoChat(npc, si.getNpcStringId(), Say2.NPC_SHOUT);
 						startQuestTimer(si.getNextEvent(), si.getTime(), npc, null);
 					}
-				}
-				else if (WALKS.containsKey(event))
-				{
+				} else if (WALKS.containsKey(event)) {
 					final WalkInfo wi = WALKS.get(event);
-					if (wi != null)
-					{
+					if (wi != null) {
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, wi.getCharPos());
 						startQuestTimer(wi.getNextEvent(), wi.getTime(), npc, null);
 					}
@@ -510,8 +451,7 @@ public class MC_Show extends AbstractNpcAI
 		return null;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new MC_Show();
 	}
 }

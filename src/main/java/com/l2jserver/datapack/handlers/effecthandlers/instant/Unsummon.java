@@ -32,26 +32,21 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * Unsummon effect implementation.
  * @author Adry_85
  */
-public final class Unsummon extends AbstractEffect
-{
+public final class Unsummon extends AbstractEffect {
 	private final int _chance;
 	
-	public Unsummon(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public Unsummon(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_chance = params.getInt("chance", 100);
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
-	{
+	public boolean calcSuccess(BuffInfo info) {
 		int magicLevel = info.getSkill().getMagicLevel();
-		if ((magicLevel <= 0) || ((info.getEffected().getLevel() - 9) <= magicLevel))
-		{
+		if ((magicLevel <= 0) || ((info.getEffected().getLevel() - 9) <= magicLevel)) {
 			double chance = _chance * Formulas.calcAttributeBonus(info.getEffector(), info.getEffected(), info.getSkill()) * Formulas.calcGeneralTraitBonus(info.getEffector(), info.getEffected(), info.getSkill().getTraitType(), false);
-			if (chance > (Rnd.nextDouble() * 100))
-			{
+			if (chance > (Rnd.nextDouble() * 100)) {
 				return true;
 			}
 		}
@@ -59,17 +54,14 @@ public final class Unsummon extends AbstractEffect
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2Summon summon = info.getEffected().getSummon();
-		if (summon != null)
-		{
+		if (summon != null) {
 			final L2PcInstance summonOwner = summon.getOwner();
 			
 			summon.abortAttack();

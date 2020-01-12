@@ -35,16 +35,14 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * Treasure Chest AI.
  * @author ivantotov
  */
-public final class TreasureChest extends AbstractNpcAI
-{
+public final class TreasureChest extends AbstractNpcAI {
 	private static final String TIMER_1 = "5001";
 	private static final String TIMER_2 = "5002";
 	private static final int MAX_SPAWN_TIME = 14400000;
 	private static final int ATTACK_SPAWN_TIME = 5000;
 	private static final int PLAYER_LEVEL_THRESHOLD = 78;
 	private static final int MAESTROS_KEY_SKILL_ID = 22271;
-	private static final SkillHolder[] TREASURE_BOMBS = new SkillHolder[]
-	{
+	private static final SkillHolder[] TREASURE_BOMBS = new SkillHolder[] {
 		new SkillHolder(4143, 1),
 		new SkillHolder(4143, 2),
 		new SkillHolder(4143, 3),
@@ -59,8 +57,7 @@ public final class TreasureChest extends AbstractNpcAI
 	
 	private static final Map<Integer, List<ItemChanceHolder>> DROPS = new HashMap<>();
 	
-	static
-	{
+	static {
 		DROPS.put(18265, Arrays.asList( // Treasure Chest
 			new ItemChanceHolder(736, 2703, 7), // Scroll of Escape
 			new ItemChanceHolder(1061, 2365, 4), // Major Healing Potion
@@ -828,8 +825,7 @@ public final class TreasureChest extends AbstractNpcAI
 			new ItemChanceHolder(21749, 29, 1))); // Great Adventurer's Treasure Sack
 	}
 	
-	private TreasureChest()
-	{
+	private TreasureChest() {
 		super(TreasureChest.class.getSimpleName(), "ai/group_template");
 		
 		addSpawnId(DROPS.keySet());
@@ -837,13 +833,10 @@ public final class TreasureChest extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
 			case TIMER_1:
-			case TIMER_2:
-			{
+			case TIMER_2: {
 				npc.deleteMe();
 				break;
 			}
@@ -852,8 +845,7 @@ public final class TreasureChest extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		// TODO(Zoey76): Disable Core AI.
 		npc.getVariables().set("MAESTRO_SKILL_USED", 0);
 		startQuestTimer(TIMER_2, MAX_SPAWN_TIME, npc, null);
@@ -861,60 +853,40 @@ public final class TreasureChest extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
-	{
-		if (attacker.getLevel() < PLAYER_LEVEL_THRESHOLD)
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill) {
+		if (attacker.getLevel() < PLAYER_LEVEL_THRESHOLD) {
 			npc.getVariables().set("MAX_LEVEL_DIFFERENCE", 6);
-		}
-		else
-		{
+		} else {
 			npc.getVariables().set("MAX_LEVEL_DIFFERENCE", 5);
 		}
 		
-		if (npc.getVariables().getInt("MAESTRO_SKILL_USED") == 0)
-		{
-			if ((skill != null) && (skill.getId() == MAESTROS_KEY_SKILL_ID))
-			{
+		if (npc.getVariables().getInt("MAESTRO_SKILL_USED") == 0) {
+			if ((skill != null) && (skill.getId() == MAESTROS_KEY_SKILL_ID)) {
 				npc.getVariables().set("MAESTRO_SKILL_USED", 1);
 				startQuestTimer(TIMER_1, ATTACK_SPAWN_TIME, npc, null);
 				
-				if ((npc.getLevel() - npc.getVariables().getInt("MAX_LEVEL_DIFFERENCE")) > attacker.getLevel())
-				{
+				if ((npc.getLevel() - npc.getVariables().getInt("MAX_LEVEL_DIFFERENCE")) > attacker.getLevel()) {
 					addSkillCastDesire(npc, attacker, TREASURE_BOMBS[npc.getLevel() / 10], 1000000);
-				}
-				else
-				{
-					if (getRandom(100) < 10)
-					{
+				} else {
+					if (getRandom(100) < 10) {
 						npc.doDie(null);
 						
 						final List<ItemChanceHolder> items = DROPS.get(npc.getId());
-						if (items == null)
-						{
+						if (items == null) {
 							_log.warning("Tresure Chest ID " + npc.getId() + " doesn't have a drop list!");
-						}
-						else
-						{
-							for (ItemChanceHolder item : items)
-							{
-								if (getRandom(10000) < item.getChance())
-								{
+						} else {
+							for (ItemChanceHolder item : items) {
+								if (getRandom(10000) < item.getChance()) {
 									npc.dropItem(attacker, item.getId(), item.getCount());
 								}
 							}
 						}
-					}
-					else
-					{
+					} else {
 						addSkillCastDesire(npc, attacker, TREASURE_BOMBS[npc.getLevel() / 10], 1000000);
 					}
 				}
-			}
-			else
-			{
-				if (getRandom(100) < 30)
-				{
+			} else {
+				if (getRandom(100) < 30) {
 					attacker.sendPacket(SystemMessageId.IF_YOU_HAVE_A_MAESTROS_KEY_YOU_CAN_USE_IT_TO_OPEN_THE_TREASURE_CHEST);
 				}
 			}
@@ -922,8 +894,7 @@ public final class TreasureChest extends AbstractNpcAI
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new TreasureChest();
 	}
 }

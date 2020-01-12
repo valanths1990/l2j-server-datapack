@@ -29,16 +29,14 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Gnacik 2010-08-13 Based on Freya PTS.
  * @author nonom
  */
-public class Q10282_ToTheSeedOfAnnihilation extends Quest
-{
+public class Q10282_ToTheSeedOfAnnihilation extends Quest {
 	// NPCs
 	private static final int KBALDIR = 32733;
 	private static final int KLEMIS = 32734;
 	// Item
 	private static final int SOA_ORDERS = 15512;
 	
-	public Q10282_ToTheSeedOfAnnihilation()
-	{
+	public Q10282_ToTheSeedOfAnnihilation() {
 		super(10282, Q10282_ToTheSeedOfAnnihilation.class.getSimpleName(), "To the Seed of Annihilation");
 		addStartNpc(KBALDIR);
 		addTalkId(KBALDIR, KLEMIS);
@@ -46,17 +44,14 @@ public class Q10282_ToTheSeedOfAnnihilation extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "32733-07.htm":
 				st.startQuest();
 				st.giveItems(SOA_ORDERS, 1);
@@ -70,20 +65,15 @@ public class Q10282_ToTheSeedOfAnnihilation extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		final int npcId = npc.getId();
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.COMPLETED:
-				if (npcId == KBALDIR)
-				{
+				if (npcId == KBALDIR) {
 					htmltext = "32733-09.htm";
-				}
-				else if (npcId == KLEMIS)
-				{
+				} else if (npcId == KLEMIS) {
 					htmltext = "32734-03.htm";
 				}
 				break;
@@ -91,14 +81,10 @@ public class Q10282_ToTheSeedOfAnnihilation extends Quest
 				htmltext = (player.getLevel() < 84) ? "32733-00.htm" : "32733-01.htm";
 				break;
 			case State.STARTED:
-				if (st.isCond(1))
-				{
-					if (npcId == KBALDIR)
-					{
+				if (st.isCond(1)) {
+					if (npcId == KBALDIR) {
 						htmltext = "32733-08.htm";
-					}
-					else if (npcId == KLEMIS)
-					{
+					} else if (npcId == KLEMIS) {
 						htmltext = "32734-01.htm";
 					}
 				}

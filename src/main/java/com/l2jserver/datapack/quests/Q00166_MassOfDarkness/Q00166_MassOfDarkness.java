@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.network.NpcStringId;
  * Mass of Darkness (166)
  * @author xban1x
  */
-public class Q00166_MassOfDarkness extends Quest
-{
+public class Q00166_MassOfDarkness extends Quest {
 	// NPCs
 	private static final int UNDRIAS = 30130;
 	private static final int IRIA = 30135;
@@ -48,15 +47,13 @@ public class Q00166_MassOfDarkness extends Quest
 	// Misc
 	private static final int MIN_LVL = 2;
 	private static final Map<Integer, Integer> NPCs = new HashMap<>();
-	static
-	{
+	static {
 		NPCs.put(IRIA, CEREMONIAL_DAGGER);
 		NPCs.put(DORANKUS, DREVIANT_WINE);
 		NPCs.put(TRUDY, GARMIELS_SCRIPTURE);
 	}
 	
-	public Q00166_MassOfDarkness()
-	{
+	public Q00166_MassOfDarkness() {
 		super(166, Q00166_MassOfDarkness.class.getSimpleName(), "Mass of Darkness");
 		addStartNpc(UNDRIAS);
 		addTalkId(UNDRIAS, IRIA, DORANKUS, TRUDY);
@@ -64,11 +61,9 @@ public class Q00166_MassOfDarkness extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && event.equals("30130-03.htm"))
-		{
+		if ((st != null) && event.equals("30130-03.htm")) {
 			st.startQuest();
 			st.giveItems(UNDRIAS_LETTER, 1);
 			return event;
@@ -77,39 +72,29 @@ public class Q00166_MassOfDarkness extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
-			case UNDRIAS:
-			{
-				switch (st.getState())
-				{
-					case State.CREATED:
-					{
+		switch (npc.getId()) {
+			case UNDRIAS: {
+				switch (st.getState()) {
+					case State.CREATED: {
 						htmltext = (player.getRace() == Race.DARK_ELF) ? (player.getLevel() >= MIN_LVL) ? "30130-02.htm" : "30130-01.htm" : "30130-00.htm";
 						break;
 					}
-					case State.STARTED:
-					{
-						if (st.isCond(2) && st.hasQuestItems(UNDRIAS_LETTER, CEREMONIAL_DAGGER, DREVIANT_WINE, GARMIELS_SCRIPTURE))
-						{
+					case State.STARTED: {
+						if (st.isCond(2) && st.hasQuestItems(UNDRIAS_LETTER, CEREMONIAL_DAGGER, DREVIANT_WINE, GARMIELS_SCRIPTURE)) {
 							showOnScreenMsg(player, NpcStringId.DELIVERY_DUTY_COMPLETE_N_GO_FIND_THE_NEWBIE_GUIDE, 2, 5000); // TODO: Newbie Guide
 							st.addExpAndSp(5672, 466);
 							st.giveAdena(2966, true);
 							st.exitQuest(false, true);
 							htmltext = "30130-05.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30130-04.html";
 						}
 						break;
 					}
-					case State.COMPLETED:
-					{
+					case State.COMPLETED: {
 						htmltext = getAlreadyCompletedMsg(player);
 						break;
 					}
@@ -118,23 +103,17 @@ public class Q00166_MassOfDarkness extends Quest
 			}
 			case IRIA:
 			case DORANKUS:
-			case TRUDY:
-			{
-				if (st.isStarted())
-				{
+			case TRUDY: {
+				if (st.isStarted()) {
 					final int npcId = npc.getId();
 					final int itemId = NPCs.get(npcId);
-					if (st.isCond(1) && !st.hasQuestItems(itemId))
-					{
+					if (st.isCond(1) && !st.hasQuestItems(itemId)) {
 						st.giveItems(itemId, 1);
-						if (st.hasQuestItems(CEREMONIAL_DAGGER, DREVIANT_WINE, GARMIELS_SCRIPTURE))
-						{
+						if (st.hasQuestItems(CEREMONIAL_DAGGER, DREVIANT_WINE, GARMIELS_SCRIPTURE)) {
 							st.setCond(2, true);
 						}
 						htmltext = npcId + "-01.html";
-					}
-					else
-					{
+					} else {
 						htmltext = npcId + "-02.html";
 					}
 					break;

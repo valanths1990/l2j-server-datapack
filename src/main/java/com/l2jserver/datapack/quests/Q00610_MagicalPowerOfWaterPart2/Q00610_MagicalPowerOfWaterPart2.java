@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.util.Util;
  * Magical Power of Water - Part 2 (610)
  * @author Joxit
  */
-public class Q00610_MagicalPowerOfWaterPart2 extends Quest
-{
+public class Q00610_MagicalPowerOfWaterPart2 extends Quest {
 	// NPCs
 	private static final int ASEFA = 31372;
 	private static final int VARKA_TOTEM = 31560;
@@ -47,8 +46,7 @@ public class Q00610_MagicalPowerOfWaterPart2 extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 75;
 	
-	public Q00610_MagicalPowerOfWaterPart2()
-	{
+	public Q00610_MagicalPowerOfWaterPart2() {
 		super(610, Q00610_MagicalPowerOfWaterPart2.class.getSimpleName(), "Magical Power of Water - Part 2");
 		addStartNpc(ASEFA);
 		addTalkId(ASEFA, VARKA_TOTEM);
@@ -57,31 +55,23 @@ public class Q00610_MagicalPowerOfWaterPart2 extends Quest
 		
 		final String test = loadGlobalQuestVar("Q00610_respawn");
 		final long remain = (!test.isEmpty()) ? (Long.parseLong(test) - System.currentTimeMillis()) : 0;
-		if (remain > 0)
-		{
+		if (remain > 0) {
 			startQuestTimer("spawn_npc", remain, null, null);
-		}
-		else
-		{
+		} else {
 			addSpawn(VARKA_TOTEM, 105452, -36775, -1050, 34000, false, 0, true);
 		}
 	}
 	
 	@Override
-	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon)
-	{
+	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && Util.checkIfInRange(1500, npc, player, false))
-		{
-			if (npc.getId() == ASHUTAR)
-			{
-				switch (st.getCond())
-				{
+		if ((st != null) && Util.checkIfInRange(1500, npc, player, false)) {
+			if (npc.getId() == ASHUTAR) {
+				switch (st.getCond()) {
 					case 1: // take the item and give the heart
 						st.takeItems(GREEN_TOTEM, 1);
 					case 2:
-						if (!st.hasQuestItems(ASHUTAR_HEART))
-						{
+						if (!st.hasQuestItems(ASHUTAR_HEART)) {
 							st.giveItems(ASHUTAR_HEART, 1);
 						}
 						st.setCond(3, true);
@@ -92,32 +82,25 @@ public class Q00610_MagicalPowerOfWaterPart2 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (player != null)
-		{
+		if (player != null) {
 			final QuestState st = getQuestState(player, false);
-			if (st == null)
-			{
+			if (st == null) {
 				return null;
 			}
 			
-			switch (event)
-			{
+			switch (event) {
 				case "31372-02.html":
 					st.startQuest();
 					htmltext = event;
 					break;
 				case "give_heart":
-					if (st.hasQuestItems(ASHUTAR_HEART))
-					{
+					if (st.hasQuestItems(ASHUTAR_HEART)) {
 						st.addExpAndSp(10000, 0);
 						st.exitQuest(true, true);
 						htmltext = "31372-06.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "31372-07.html";
 					}
 					break;
@@ -125,17 +108,12 @@ public class Q00610_MagicalPowerOfWaterPart2 extends Quest
 					htmltext = (st.hasQuestItems(GREEN_TOTEM)) ? spawnAshutar(npc, st) : "31560-04.html";
 					break;
 			}
-		}
-		else
-		{
-			if (event.equals("despawn_ashutar"))
-			{
+		} else {
+			if (event.equals("despawn_ashutar")) {
 				npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.THE_POWER_OF_CONSTRAINT_IS_GETTING_WEAKER_YOUR_RITUAL_HAS_FAILED));
 				npc.deleteMe();
 				addSpawn(VARKA_TOTEM, 105452, -36775, -1050, 34000, false, 0, true);
-			}
-			else if (event.equals("spawn_npc"))
-			{
+			} else if (event.equals("spawn_npc")) {
 				addSpawn(VARKA_TOTEM, 105452, -36775, -1050, 34000, false, 0, true);
 			}
 		}
@@ -143,8 +121,7 @@ public class Q00610_MagicalPowerOfWaterPart2 extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final int respawnMinDelay = (int) (43200000 * npc().getRaidMinRespawnMultiplier());
 		final int respawnMaxDelay = (int) (129600000 * npc().getRaidMaxRespawnMultiplier());
 		final int respawnDelay = getRandom(respawnMinDelay, respawnMaxDelay);
@@ -156,15 +133,12 @@ public class Q00610_MagicalPowerOfWaterPart2 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ASEFA:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? (st.hasQuestItems(GREEN_TOTEM)) ? "31372-01.htm" : "31372-00a.html" : "31372-00b.html";
 						break;
@@ -174,10 +148,8 @@ public class Q00610_MagicalPowerOfWaterPart2 extends Quest
 				}
 				break;
 			case VARKA_TOTEM:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "31560-01.html";
 							break;
@@ -194,14 +166,11 @@ public class Q00610_MagicalPowerOfWaterPart2 extends Quest
 		return htmltext;
 	}
 	
-	private String spawnAshutar(L2Npc npc, QuestState st)
-	{
-		if (getQuestTimer("spawn_npc", null, null) != null)
-		{
+	private String spawnAshutar(L2Npc npc, QuestState st) {
+		if (getQuestTimer("spawn_npc", null, null) != null) {
 			return "31560-03.html";
 		}
-		if (st.isCond(1))
-		{
+		if (st.isCond(1)) {
 			st.takeItems(GREEN_TOTEM, 1);
 			st.setCond(2, true);
 		}

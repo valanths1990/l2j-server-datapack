@@ -29,31 +29,26 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
  * Typhoon's AI.
  * @author GKR
  */
-public final class Typhoon extends AbstractNpcAI
-{
+public final class Typhoon extends AbstractNpcAI {
 	// NPCs
 	private static final int TYPHOON = 25539;
 	// Skills
 	private static final SkillHolder STORM = new SkillHolder(5434); // Gust
 	
-	public Typhoon()
-	{
+	public Typhoon() {
 		super(Typhoon.class.getSimpleName(), "hellbound/AI");
 		addAggroRangeEnterId(TYPHOON);
 		addSpawnId(TYPHOON);
 		
 		final L2RaidBossInstance boss = RaidBossSpawnManager.getInstance().getBosses().get(TYPHOON);
-		if (boss != null)
-		{
+		if (boss != null) {
 			onSpawn(boss);
 		}
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equalsIgnoreCase("CAST") && (npc != null) && !npc.isDead())
-		{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.equalsIgnoreCase("CAST") && (npc != null) && !npc.isDead()) {
 			npc.doSimultaneousCast(STORM);
 			startQuestTimer("CAST", 5000, npc, null);
 		}
@@ -61,15 +56,13 @@ public final class Typhoon extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		npc.doSimultaneousCast(STORM);
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		startQuestTimer("CAST", 5000, npc, null);
 		return super.onSpawn(npc);
 	}

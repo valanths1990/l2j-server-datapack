@@ -32,13 +32,11 @@ import com.l2jserver.gameserver.model.stats.Formulas;
  * HP Drain effect implementation.
  * @author Adry_85
  */
-public final class HpDrain extends AbstractEffect
-{
+public final class HpDrain extends AbstractEffect {
 	private final double _power;
 	private final double _drain;
 	
-	public HpDrain(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public HpDrain(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
@@ -46,27 +44,23 @@ public final class HpDrain extends AbstractEffect
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.HP_DRAIN;
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2Character target = info.getEffected();
 		final L2Character activeChar = info.getEffector();
 		final Skill skill = info.getSkill();
 		
 		// TODO: Unhardcode Cubic Skill to avoid double damage
-		if (activeChar.isAlikeDead() || (skill.getId() == 4050))
-		{
+		if (activeChar.isAlikeDead() || (skill.getId() == 4050)) {
 			return;
 		}
 		
@@ -80,16 +74,11 @@ public final class HpDrain extends AbstractEffect
 		double cp = target.getCurrentCp();
 		double hp = target.getCurrentHp();
 		
-		if (cp > 0)
-		{
+		if (cp > 0) {
 			drain = (damage < cp) ? 0 : (damage - cp);
-		}
-		else if (damage > hp)
-		{
+		} else if (damage > hp) {
 			drain = hp;
-		}
-		else
-		{
+		} else {
 			drain = damage;
 		}
 		
@@ -97,11 +86,9 @@ public final class HpDrain extends AbstractEffect
 		final double hpFinal = ((activeChar.getCurrentHp() + hpAdd) > activeChar.getMaxHp() ? activeChar.getMaxHp() : (activeChar.getCurrentHp() + hpAdd));
 		activeChar.setCurrentHp(hpFinal);
 		
-		if (damage > 0)
-		{
+		if (damage > 0) {
 			// Manage attack or cast break of the target (calculating rate, sending message...)
-			if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
-			{
+			if (!target.isRaid() && Formulas.calcAtkBreak(target, damage)) {
 				target.breakAttack();
 				target.breakCast();
 			}

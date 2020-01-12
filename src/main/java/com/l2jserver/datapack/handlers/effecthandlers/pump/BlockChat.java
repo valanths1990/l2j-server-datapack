@@ -32,34 +32,28 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Block Chat effect implementation.
  * @author BiggBoss
  */
-public final class BlockChat extends AbstractEffect
-{
-	public BlockChat(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class BlockChat extends AbstractEffect {
+	public BlockChat(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean canStart(BuffInfo info)
-	{
+	public boolean canStart(BuffInfo info) {
 		return (info.getEffected() != null) && info.getEffected().isPlayer();
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.CHAT_BLOCK;
 	}
 	
 	@Override
-	public void onExit(BuffInfo info)
-	{
+	public void onExit(BuffInfo info) {
 		PunishmentManager.getInstance().stopPunishment(info.getEffected().getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN);
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, info.getEffected().getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN, 0, "Chat banned bot report", "system", true));
 	}
 }

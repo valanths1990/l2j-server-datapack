@@ -28,40 +28,33 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Crystal Grade Modify effect implementation.
  * @author Zoey76
  */
-public final class CrystalGradeModify extends AbstractEffect
-{
+public final class CrystalGradeModify extends AbstractEffect {
 	private final int _grade;
 	
-	public CrystalGradeModify(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public CrystalGradeModify(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_grade = params.getInt("grade", 0);
 	}
 	
 	@Override
-	public boolean canStart(BuffInfo info)
-	{
+	public boolean canStart(BuffInfo info) {
 		return info.getEffected().isPlayer();
 	}
 	
 	@Override
-	public void onExit(BuffInfo info)
-	{
+	public void onExit(BuffInfo info) {
 		final L2PcInstance player = info.getEffected().getActingPlayer();
-		if (player != null)
-		{
+		if (player != null) {
 			player.setExpertisePenaltyBonus(0);
 			player.refreshExpertisePenalty();
 		}
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2PcInstance player = info.getEffected().getActingPlayer();
-		if (player != null)
-		{
+		if (player != null) {
 			player.setExpertisePenaltyBonus(_grade);
 			player.refreshExpertisePenalty();
 		}

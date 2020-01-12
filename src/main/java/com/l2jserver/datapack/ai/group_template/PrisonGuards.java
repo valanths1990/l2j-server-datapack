@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Prison Guards AI.
  * @author St3eT
  */
-public final class PrisonGuards extends AbstractNpcAI
-{
+public final class PrisonGuards extends AbstractNpcAI {
 	// NPCs
 	private static final int GUARD_HEAD = 18367; // Prison Guard
 	private static final int GUARD = 18368; // Prison Guard
@@ -44,8 +43,7 @@ public final class PrisonGuards extends AbstractNpcAI
 	private static final SkillHolder STONE = new SkillHolder(4578); // Petrification
 	private static final SkillHolder SILENCE = new SkillHolder(4098, 9); // Silence
 	
-	private PrisonGuards()
-	{
+	private PrisonGuards() {
 		super(PrisonGuards.class.getSimpleName(), "ai/group_template");
 		addAttackId(GUARD_HEAD, GUARD);
 		addSpawnId(GUARD_HEAD, GUARD);
@@ -55,16 +53,11 @@ public final class PrisonGuards extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equals("CLEAR_STATUS"))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.equals("CLEAR_STATUS")) {
 			npc.setScriptValue(0);
-		}
-		else if (event.equals("CHECK_HOME"))
-		{
-			if ((npc.calculateDistance(npc.getSpawn().getLocation(), false, false) > 10) && !npc.isInCombat() && !npc.isDead())
-			{
+		} else if (event.equals("CHECK_HOME")) {
+			if ((npc.calculateDistance(npc.getSpawn().getLocation(), false, false) > 10) && !npc.isInCombat() && !npc.isDead()) {
 				npc.teleToLocation(npc.getSpawn().getLocation());
 			}
 			startQuestTimer("CHECK_HOME", 30000, npc, null);
@@ -73,33 +66,23 @@ public final class PrisonGuards extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon)
-	{
-		if (npc.getId() == GUARD_HEAD)
-		{
-			if (player.isAffectedBySkill(TIMER))
-			{
-				if ((getRandom(100) < 10) && (npc.calculateDistance(player, true, false) < 100))
-				{
-					if ((getQuestItemsCount(player, STAMP) <= 3) && npc.isScriptValue(0))
-					{
+	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon) {
+		if (npc.getId() == GUARD_HEAD) {
+			if (player.isAffectedBySkill(TIMER)) {
+				if ((getRandom(100) < 10) && (npc.calculateDistance(player, true, false) < 100)) {
+					if ((getQuestItemsCount(player, STAMP) <= 3) && npc.isScriptValue(0)) {
 						giveItems(player, STAMP, 1);
 						npc.setScriptValue(1);
 						startQuestTimer("CLEAR_STATUS", 600000, npc, null);
 					}
 				}
-			}
-			else
-			{
+			} else {
 				npc.setTarget(player);
 				npc.doCast(STONE);
 				broadcastNpcSay(npc, Say2.ALL, NpcStringId.ITS_NOT_EASY_TO_OBTAIN);
 			}
-		}
-		else
-		{
-			if (!player.isAffectedBySkill(TIMER) && (npc.calculateDistance(npc.getSpawn().getLocation(), false, false) < 2000))
-			{
+		} else {
+			if (!player.isAffectedBySkill(TIMER) && (npc.calculateDistance(npc.getSpawn().getLocation(), false, false) < 2000)) {
 				npc.setTarget(player);
 				npc.doCast(STONE);
 				broadcastNpcSay(npc, Say2.ALL, NpcStringId.YOURE_OUT_OF_YOUR_MIND_COMING_HERE);
@@ -109,10 +92,8 @@ public final class PrisonGuards extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
-	{
-		if (!caster.isAffectedBySkill(TIMER))
-		{
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon) {
+		if (!caster.isAffectedBySkill(TIMER)) {
 			npc.setTarget(caster);
 			npc.doCast(SILENCE);
 		}
@@ -120,10 +101,8 @@ public final class PrisonGuards extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
-	{
-		if ((skill == SILENCE.getSkill()) || (skill == STONE.getSkill()))
-		{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill) {
+		if ((skill == SILENCE.getSkill()) || (skill == STONE.getSkill())) {
 			((L2Attackable) npc).clearAggroList();
 			npc.setTarget(npc);
 		}
@@ -131,21 +110,16 @@ public final class PrisonGuards extends AbstractNpcAI
 	}
 	
 	@Override
-	public boolean onNpcHate(L2Attackable mob, L2PcInstance player, boolean isSummon)
-	{
+	public boolean onNpcHate(L2Attackable mob, L2PcInstance player, boolean isSummon) {
 		return player.isAffectedBySkill(TIMER);
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
-		if (npc.getId() == GUARD_HEAD)
-		{
+	public String onSpawn(L2Npc npc) {
+		if (npc.getId() == GUARD_HEAD) {
 			npc.setIsImmobilized(true);
 			npc.setIsInvul(true);
-		}
-		else
-		{
+		} else {
 			npc.setIsNoRndWalk(true);
 			cancelQuestTimer("CHECK_HOME", npc, null);
 			startQuestTimer("CHECK_HOME", 30000, npc, null);
@@ -153,8 +127,7 @@ public final class PrisonGuards extends AbstractNpcAI
 		return super.onSpawn(npc);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new PrisonGuards();
 	}
 }

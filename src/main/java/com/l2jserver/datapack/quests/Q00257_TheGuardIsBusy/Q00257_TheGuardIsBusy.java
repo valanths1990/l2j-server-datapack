@@ -36,22 +36,18 @@ import com.l2jserver.gameserver.model.quest.State;
  * The Guard is Busy (257)
  * @author xban1x
  */
-public final class Q00257_TheGuardIsBusy extends Quest
-{
-	public final static class MobDrop extends ItemHolder
-	{
+public final class Q00257_TheGuardIsBusy extends Quest {
+	public final static class MobDrop extends ItemHolder {
 		private final int _chance;
 		private final int _random;
 		
-		public MobDrop(int random, int chance, int id, long count)
-		{
+		public MobDrop(int random, int chance, int id, long count) {
 			super(id, count);
 			_random = random;
 			_chance = chance;
 		}
 		
-		public boolean getDrop()
-		{
+		public boolean getDrop() {
 			return (getRandom(_random) < _chance);
 		}
 	}
@@ -68,8 +64,7 @@ public final class Q00257_TheGuardIsBusy extends Quest
 	private static final int ORC_NECKLACE = 1085;
 	private static final int WEREWOLF_FANG = 1086;
 	
-	static
-	{
+	static {
 		MONSTERS.put(20006, Arrays.asList(new MobDrop(10, 2, ORC_AMULET, 2), new MobDrop(10, 10, ORC_AMULET, 1))); // Orc Archer
 		MONSTERS.put(20093, Arrays.asList(new MobDrop(100, 85, ORC_NECKLACE, 1))); // Orc Fighter
 		MONSTERS.put(20096, Arrays.asList(new MobDrop(100, 95, ORC_NECKLACE, 1))); // Orc Fighter Sub Leader
@@ -81,8 +76,7 @@ public final class Q00257_TheGuardIsBusy extends Quest
 		MONSTERS.put(20343, Arrays.asList(new MobDrop(100, 85, WEREWOLF_FANG, 1))); // Werewolf Hunter
 	}
 	
-	public Q00257_TheGuardIsBusy()
-	{
+	public Q00257_TheGuardIsBusy() {
 		super(257, Q00257_TheGuardIsBusy.class.getSimpleName(), "The Guard is Busy");
 		addStartNpc(GILBERT);
 		addTalkId(GILBERT);
@@ -91,32 +85,26 @@ public final class Q00257_TheGuardIsBusy extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "30039-03.htm":
-			{
+		switch (event) {
+			case "30039-03.htm": {
 				st.startQuest();
 				st.giveItems(GLUDIO_LORDS_MARK, 1);
 				htmltext = event;
 				break;
 			}
-			case "30039-05.html":
-			{
+			case "30039-05.html": {
 				st.exitQuest(true, true);
 				htmltext = event;
 				break;
 			}
-			case "30039-06.html":
-			{
+			case "30039-06.html": {
 				htmltext = event;
 				break;
 			}
@@ -125,18 +113,14 @@ public final class Q00257_TheGuardIsBusy extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return super.onKill(npc, killer, isSummon);
 		}
 		
-		for (MobDrop drop : MONSTERS.get(npc.getId()))
-		{
-			if (drop.getDrop())
-			{
+		for (MobDrop drop : MONSTERS.get(npc.getId())) {
+			if (drop.getDrop()) {
 				st.giveItems(drop);
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				break;
@@ -146,30 +130,23 @@ public final class Q00257_TheGuardIsBusy extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() >= MIN_LVL) ? "30039-02.htm" : "30039-01.html";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (hasAtLeastOneQuestItem(player, ORC_AMULET, ORC_NECKLACE, WEREWOLF_FANG))
-				{
+			case State.STARTED: {
+				if (hasAtLeastOneQuestItem(player, ORC_AMULET, ORC_NECKLACE, WEREWOLF_FANG)) {
 					final long amulets = st.getQuestItemsCount(ORC_AMULET);
 					final long common = getQuestItemsCount(player, ORC_NECKLACE, WEREWOLF_FANG);
 					st.giveAdena(((amulets * 10) + (common * 20) + (((amulets + common) >= 10) ? 1000 : 0)), true);
 					takeItems(player, -1, ORC_AMULET, ORC_NECKLACE, WEREWOLF_FANG);
 					Q00281_HeadForTheHills.giveNewbieReward(player);
 					htmltext = "30039-07.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30039-04.html";
 				}
 				break;

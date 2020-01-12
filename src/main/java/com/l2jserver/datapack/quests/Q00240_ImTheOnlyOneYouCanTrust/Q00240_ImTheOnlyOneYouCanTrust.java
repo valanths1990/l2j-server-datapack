@@ -29,13 +29,11 @@ import com.l2jserver.gameserver.model.quest.State;
  * I'm the Only One You Can Trust (240)
  * @author malyelfik
  */
-public class Q00240_ImTheOnlyOneYouCanTrust extends Quest
-{
+public class Q00240_ImTheOnlyOneYouCanTrust extends Quest {
 	// NPC
 	private static final int KINTAIJIN = 32640;
 	// Monster
-	private static final int[] MOBS =
-	{
+	private static final int[] MOBS = {
 		22617,
 		22618,
 		22619,
@@ -57,8 +55,7 @@ public class Q00240_ImTheOnlyOneYouCanTrust extends Quest
 	// Item
 	private static final int STAKATO_FANG = 14879;
 	
-	public Q00240_ImTheOnlyOneYouCanTrust()
-	{
+	public Q00240_ImTheOnlyOneYouCanTrust() {
 		super(240, Q00240_ImTheOnlyOneYouCanTrust.class.getSimpleName(), "I'm the Only One You Can Trust");
 		addStartNpc(KINTAIJIN);
 		addTalkId(KINTAIJIN);
@@ -67,62 +64,50 @@ public class Q00240_ImTheOnlyOneYouCanTrust extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		if (event.equalsIgnoreCase("32640-3.htm"))
-		{
+		if (event.equalsIgnoreCase("32640-3.htm")) {
 			st.startQuest();
 		}
 		return event;
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(player, 1);
-		if (partyMember == null)
-		{
+		if (partyMember == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		
 		final QuestState st = getQuestState(partyMember, false);
 		st.giveItems(STAKATO_FANG, 1);
-		if (st.getQuestItemsCount(STAKATO_FANG) >= 25)
-		{
+		if (st.getQuestItemsCount(STAKATO_FANG) >= 25) {
 			st.setCond(2, true);
-		}
-		else
-		{
+		} else {
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return super.onKill(npc, player, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= 81) ? "32640-1.htm" : "32640-0.htm";
 				break;
 			case State.STARTED:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 1:
 						htmltext = (!st.hasQuestItems(STAKATO_FANG)) ? "32640-8.html" : "32640-9.html";
 						break;
 					case 2:
-						if (st.getQuestItemsCount(STAKATO_FANG) >= 25)
-						{
+						if (st.getQuestItemsCount(STAKATO_FANG) >= 25) {
 							st.giveAdena(147200, true);
 							st.takeItems(STAKATO_FANG, -1);
 							st.addExpAndSp(589542, 36800);

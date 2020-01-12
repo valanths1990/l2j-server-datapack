@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.util.Util;
  * Test Of The War Spirit (233)
  * @author ivantotov
  */
-public final class Q00233_TestOfTheWarSpirit extends Quest
-{
+public final class Q00233_TestOfTheWarSpirit extends Quest {
 	// NPCs
 	private static final int PRIESTESS_VIVYAN = 30030;
 	private static final int TRADER_SARIEN = 30436;
@@ -98,8 +97,7 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 39;
 	
-	public Q00233_TestOfTheWarSpirit()
-	{
+	public Q00233_TestOfTheWarSpirit() {
 		super(233, Q00233_TestOfTheWarSpirit.class.getSimpleName(), "Test Of The War Spirit");
 		addStartNpc(SEER_SOMAK);
 		addTalkId(SEER_SOMAK, PRIESTESS_VIVYAN, TRADER_SARIEN, SEER_RACOY, SEER_MANAKIA, SHADOW_ORIM, ANCESTOR_MARTANKUS, SEER_PEKIRON);
@@ -108,30 +106,22 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "ACCEPT": {
+				if (qs.isCreated()) {
 					qs.startQuest();
-					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
-					{
+					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0) {
 						giveItems(player, DIMENSIONAL_DIAMOND, 92);
 						player.getVariables().set("2ND_CLASS_DIAMOND_REWARD", 1);
 						htmltext = "30510-05e.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "30510-05.htm";
 					}
 				}
@@ -146,39 +136,32 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 			case "30030-03.html":
 			case "30630-02.html":
 			case "30630-03.html":
-			case "30649-02.html":
-			{
+			case "30649-02.html": {
 				htmltext = event;
 				break;
 			}
-			case "30030-04.html":
-			{
+			case "30030-04.html": {
 				giveItems(player, VIVIANTES_LETTER, 1);
 				htmltext = event;
 				break;
 			}
-			case "30507-02.html":
-			{
+			case "30507-02.html": {
 				giveItems(player, RACOYS_TOTEM, 1);
 				htmltext = event;
 				break;
 			}
-			case "30515-02.html":
-			{
+			case "30515-02.html": {
 				giveItems(player, MANAKIAS_TOTEM, 1);
 				htmltext = event;
 				break;
 			}
-			case "30630-04.html":
-			{
+			case "30630-04.html": {
 				giveItems(player, ORIMS_CONTRACT, 1);
 				htmltext = event;
 				break;
 			}
-			case "30649-03.html":
-			{
-				if (hasQuestItems(player, TONARS_REMAINS2))
-				{
+			case "30649-03.html": {
+				if (hasQuestItems(player, TONARS_REMAINS2)) {
 					giveAdena(player, 161806, true);
 					giveItems(player, MARK_OF_WARSPIRIT, 1);
 					addExpAndSp(player, 894888, 61408);
@@ -188,8 +171,7 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 				}
 				break;
 			}
-			case "30682-02.html":
-			{
+			case "30682-02.html": {
 				giveItems(player, PEKIRONS_TOTEM, 1);
 				htmltext = event;
 				break;
@@ -199,49 +181,32 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
 				case NOBLE_ANT:
-				case NOBLE_ANT_LEADER:
-				{
-					if (hasQuestItems(killer, RACOYS_TOTEM, INSECT_DIAGRAM_BOOK))
-					{
+				case NOBLE_ANT_LEADER: {
+					if (hasQuestItems(killer, RACOYS_TOTEM, INSECT_DIAGRAM_BOOK)) {
 						final int i0 = getRandom(100);
-						if (i0 > 65)
-						{
-							if (!hasQuestItems(killer, KIRUNAS_THIGH_BONE))
-							{
+						if (i0 > 65) {
+							if (!hasQuestItems(killer, KIRUNAS_THIGH_BONE)) {
 								giveItems(killer, KIRUNAS_THIGH_BONE, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else if (!hasQuestItems(killer, KIRUNAS_ARM_BONE))
-							{
+							} else if (!hasQuestItems(killer, KIRUNAS_ARM_BONE)) {
 								giveItems(killer, KIRUNAS_ARM_BONE, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
-						}
-						else if (i0 > 30)
-						{
-							if (!hasQuestItems(killer, KIRUNAS_SPINE))
-							{
+						} else if (i0 > 30) {
+							if (!hasQuestItems(killer, KIRUNAS_SPINE)) {
 								giveItems(killer, KIRUNAS_SPINE, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else if (!hasQuestItems(killer, KIRUNAS_RIB_BONE))
-							{
+							} else if (!hasQuestItems(killer, KIRUNAS_RIB_BONE)) {
 								giveItems(killer, KIRUNAS_RIB_BONE, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
-						}
-						else if (i0 > 0)
-						{
-							if (!hasQuestItems(killer, KIRUNAS_SKULL))
-							{
+						} else if (i0 > 0) {
+							if (!hasQuestItems(killer, KIRUNAS_SKULL)) {
 								giveItems(killer, KIRUNAS_SKULL, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
@@ -249,84 +214,58 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 					}
 					break;
 				}
-				case MEDUSA:
-				{
-					if (hasQuestItems(killer, MANAKIAS_TOTEM))
-					{
-						if (!hasQuestItems(killer, HERMODTS_RIB_BONE))
-						{
+				case MEDUSA: {
+					if (hasQuestItems(killer, MANAKIAS_TOTEM)) {
+						if (!hasQuestItems(killer, HERMODTS_RIB_BONE)) {
 							giveItems(killer, HERMODTS_RIB_BONE, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else if (!hasQuestItems(killer, HERMODTS_SPINE))
-						{
+						} else if (!hasQuestItems(killer, HERMODTS_SPINE)) {
 							giveItems(killer, HERMODTS_SPINE, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else if (!hasQuestItems(killer, HERMODTS_ARM_BONE))
-						{
+						} else if (!hasQuestItems(killer, HERMODTS_ARM_BONE)) {
 							giveItems(killer, HERMODTS_ARM_BONE, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else if (!hasQuestItems(killer, HERMODTS_THIGH_BONE))
-						{
+						} else if (!hasQuestItems(killer, HERMODTS_THIGH_BONE)) {
 							giveItems(killer, HERMODTS_THIGH_BONE, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
 					}
 					break;
 				}
-				case PORTA:
-				{
-					if (hasQuestItems(killer, ORIMS_CONTRACT))
-					{
+				case PORTA: {
+					if (hasQuestItems(killer, ORIMS_CONTRACT)) {
 						giveItemRandomly(killer, npc, PORTAS_EYE, 2, 10, 1.0, true);
 					}
 					break;
 				}
-				case EXCURO:
-				{
-					if (hasQuestItems(killer, ORIMS_CONTRACT))
-					{
+				case EXCURO: {
+					if (hasQuestItems(killer, ORIMS_CONTRACT)) {
 						giveItemRandomly(killer, npc, EXCUROS_SCALE, 5, 10, 1.0, true);
 					}
 					break;
 				}
-				case MORDERO:
-				{
-					if (hasQuestItems(killer, ORIMS_CONTRACT))
-					{
+				case MORDERO: {
+					if (hasQuestItems(killer, ORIMS_CONTRACT)) {
 						giveItemRandomly(killer, npc, MORDEOS_TALON, 5, 10, 1.0, true);
 					}
 					break;
 				}
 				case LETO_LIZARDMAN_SHAMAN:
-				case LETO_LIZARDMAN_OVERLORD:
-				{
-					if (hasQuestItems(killer, PEKIRONS_TOTEM))
-					{
-						if (!hasQuestItems(killer, TONARS_SKULL))
-						{
+				case LETO_LIZARDMAN_OVERLORD: {
+					if (hasQuestItems(killer, PEKIRONS_TOTEM)) {
+						if (!hasQuestItems(killer, TONARS_SKULL)) {
 							giveItems(killer, TONARS_SKULL, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else if (!hasQuestItems(killer, TONARS_RIB_BONE))
-						{
+						} else if (!hasQuestItems(killer, TONARS_RIB_BONE)) {
 							giveItems(killer, TONARS_RIB_BONE, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else if (!hasQuestItems(killer, TONARS_SPINE))
-						{
+						} else if (!hasQuestItems(killer, TONARS_SPINE)) {
 							giveItems(killer, TONARS_SPINE, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else if (!hasQuestItems(killer, TONARS_ARM_BONE))
-						{
+						} else if (!hasQuestItems(killer, TONARS_ARM_BONE)) {
 							giveItems(killer, TONARS_ARM_BONE, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else if (!hasQuestItems(killer, TONARS_THIGH_BONE))
-						{
+						} else if (!hasQuestItems(killer, TONARS_THIGH_BONE)) {
 							giveItems(killer, TONARS_THIGH_BONE, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 						}
@@ -334,21 +273,16 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 					break;
 				}
 				case TAMLIN_ORC:
-				case TAMLIN_ORC_ARCHER:
-				{
-					if (hasQuestItems(killer, VENDETTA_TOTEM))
-					{
-						if (giveItemRandomly(killer, npc, TAMLIN_ORC_HEAD, 1, 13, 1.0, true))
-						{
+				case TAMLIN_ORC_ARCHER: {
+					if (hasQuestItems(killer, VENDETTA_TOTEM)) {
+						if (giveItemRandomly(killer, npc, TAMLIN_ORC_HEAD, 1, 13, 1.0, true)) {
 							qs.setCond(4, true);
 						}
 					}
 					break;
 				}
-				case STENOA_GORGON_QUEEN:
-				{
-					if (hasQuestItems(killer, MANAKIAS_TOTEM) && !hasQuestItems(killer, HERMODTS_SKULL))
-					{
+				case STENOA_GORGON_QUEEN: {
+					if (hasQuestItems(killer, MANAKIAS_TOTEM) && !hasQuestItems(killer, HERMODTS_SKULL)) {
 						giveItems(killer, HERMODTS_SKULL, 1);
 						playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
@@ -360,48 +294,30 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (npc.getId() == SEER_SOMAK)
-			{
-				if (player.getRace() == Race.ORC)
-				{
-					if (player.getClassId() == ClassId.orcShaman)
-					{
-						if (player.getLevel() < MIN_LEVEL)
-						{
+		if (qs.isCreated()) {
+			if (npc.getId() == SEER_SOMAK) {
+				if (player.getRace() == Race.ORC) {
+					if (player.getClassId() == ClassId.orcShaman) {
+						if (player.getLevel() < MIN_LEVEL) {
 							htmltext = "30510-03.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30510-04.htm";
 						}
-					}
-					else
-					{
+					} else {
 						htmltext = "30510-02.html";
 					}
-				}
-				else
-				{
+				} else {
 					htmltext = "30510-01.html";
 				}
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case SEER_SOMAK:
-				{
-					if (!hasAtLeastOneQuestItem(player, VENDETTA_TOTEM, WARSPIRIT_TOTEM))
-					{
-						if (hasQuestItems(player, BRAKIS_REMAINS1, HERMODTS_REMAINS1, KIRUNAS_REMAINS1, TONARS_REMAINS1))
-						{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case SEER_SOMAK: {
+					if (!hasAtLeastOneQuestItem(player, VENDETTA_TOTEM, WARSPIRIT_TOTEM)) {
+						if (hasQuestItems(player, BRAKIS_REMAINS1, HERMODTS_REMAINS1, KIRUNAS_REMAINS1, TONARS_REMAINS1)) {
 							giveItems(player, VENDETTA_TOTEM, 1);
 							takeItems(player, BRAKIS_REMAINS1, 1);
 							takeItems(player, TONARS_REMAINS1, 1);
@@ -409,20 +325,13 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 							takeItems(player, KIRUNAS_REMAINS1, 1);
 							qs.setCond(3);
 							htmltext = "30510-07.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30510-06.html";
 						}
-					}
-					else if (hasQuestItems(player, VENDETTA_TOTEM))
-					{
-						if (getQuestItemsCount(player, TAMLIN_ORC_HEAD) < 13)
-						{
+					} else if (hasQuestItems(player, VENDETTA_TOTEM)) {
+						if (getQuestItemsCount(player, TAMLIN_ORC_HEAD) < 13) {
 							htmltext = "30510-08.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, VENDETTA_TOTEM, 1);
 							giveItems(player, WARSPIRIT_TOTEM, 1);
 							giveItems(player, BRAKIS_REMAINS2, 1);
@@ -432,69 +341,44 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 							qs.setCond(5);
 							htmltext = "30510-09.html";
 						}
-					}
-					else if (hasQuestItems(player, WARSPIRIT_TOTEM))
-					{
+					} else if (hasQuestItems(player, WARSPIRIT_TOTEM)) {
 						htmltext = "30510-10.html";
 					}
 					break;
 				}
-				case PRIESTESS_VIVYAN:
-				{
-					if (hasQuestItems(player, RACOYS_TOTEM) && !hasAtLeastOneQuestItem(player, VIVIANTES_LETTER, INSECT_DIAGRAM_BOOK))
-					{
+				case PRIESTESS_VIVYAN: {
+					if (hasQuestItems(player, RACOYS_TOTEM) && !hasAtLeastOneQuestItem(player, VIVIANTES_LETTER, INSECT_DIAGRAM_BOOK)) {
 						htmltext = "30030-01.html";
-					}
-					else if (hasQuestItems(player, RACOYS_TOTEM, VIVIANTES_LETTER) && !hasQuestItems(player, INSECT_DIAGRAM_BOOK))
-					{
+					} else if (hasQuestItems(player, RACOYS_TOTEM, VIVIANTES_LETTER) && !hasQuestItems(player, INSECT_DIAGRAM_BOOK)) {
 						htmltext = "30030-05.html";
-					}
-					else if (hasQuestItems(player, RACOYS_TOTEM, INSECT_DIAGRAM_BOOK) && !hasQuestItems(player, VIVIANTES_LETTER))
-					{
+					} else if (hasQuestItems(player, RACOYS_TOTEM, INSECT_DIAGRAM_BOOK) && !hasQuestItems(player, VIVIANTES_LETTER)) {
 						htmltext = "30030-06.html";
-					}
-					else if (!hasQuestItems(player, RACOYS_TOTEM) && hasAtLeastOneQuestItem(player, KIRUNAS_REMAINS1, KIRUNAS_REMAINS2, VENDETTA_TOTEM))
-					{
+					} else if (!hasQuestItems(player, RACOYS_TOTEM) && hasAtLeastOneQuestItem(player, KIRUNAS_REMAINS1, KIRUNAS_REMAINS2, VENDETTA_TOTEM)) {
 						htmltext = "30030-07.html";
 					}
 					break;
 				}
-				case TRADER_SARIEN:
-				{
-					if (hasQuestItems(player, RACOYS_TOTEM, VIVIANTES_LETTER) && !hasQuestItems(player, INSECT_DIAGRAM_BOOK))
-					{
+				case TRADER_SARIEN: {
+					if (hasQuestItems(player, RACOYS_TOTEM, VIVIANTES_LETTER) && !hasQuestItems(player, INSECT_DIAGRAM_BOOK)) {
 						takeItems(player, VIVIANTES_LETTER, 1);
 						giveItems(player, INSECT_DIAGRAM_BOOK, 1);
 						htmltext = "30436-01.html";
-					}
-					else if (hasQuestItems(player, RACOYS_TOTEM, INSECT_DIAGRAM_BOOK) && !hasQuestItems(player, VIVIANTES_LETTER))
-					{
+					} else if (hasQuestItems(player, RACOYS_TOTEM, INSECT_DIAGRAM_BOOK) && !hasQuestItems(player, VIVIANTES_LETTER)) {
 						htmltext = "30436-02.html";
-					}
-					else if (!hasQuestItems(player, RACOYS_TOTEM) && hasAtLeastOneQuestItem(player, KIRUNAS_REMAINS1, KIRUNAS_REMAINS2, VENDETTA_TOTEM))
-					{
+					} else if (!hasQuestItems(player, RACOYS_TOTEM) && hasAtLeastOneQuestItem(player, KIRUNAS_REMAINS1, KIRUNAS_REMAINS2, VENDETTA_TOTEM)) {
 						htmltext = "30436-03.html";
 					}
 					break;
 				}
-				case SEER_RACOY:
-				{
-					if (!hasAtLeastOneQuestItem(player, RACOYS_TOTEM, KIRUNAS_REMAINS1, KIRUNAS_REMAINS2, VENDETTA_TOTEM))
-					{
+				case SEER_RACOY: {
+					if (!hasAtLeastOneQuestItem(player, RACOYS_TOTEM, KIRUNAS_REMAINS1, KIRUNAS_REMAINS2, VENDETTA_TOTEM)) {
 						htmltext = "30507-01.html";
-					}
-					else if (hasQuestItems(player, RACOYS_TOTEM) && !hasAtLeastOneQuestItem(player, VIVIANTES_LETTER, INSECT_DIAGRAM_BOOK))
-					{
+					} else if (hasQuestItems(player, RACOYS_TOTEM) && !hasAtLeastOneQuestItem(player, VIVIANTES_LETTER, INSECT_DIAGRAM_BOOK)) {
 						htmltext = "30507-03.html";
-					}
-					else if (hasQuestItems(player, RACOYS_TOTEM, VIVIANTES_LETTER) && !hasQuestItems(player, INSECT_DIAGRAM_BOOK))
-					{
+					} else if (hasQuestItems(player, RACOYS_TOTEM, VIVIANTES_LETTER) && !hasQuestItems(player, INSECT_DIAGRAM_BOOK)) {
 						htmltext = "30507-04.html";
-					}
-					else if (hasQuestItems(player, RACOYS_TOTEM, INSECT_DIAGRAM_BOOK) && !hasQuestItems(player, VIVIANTES_LETTER))
-					{
-						if (hasQuestItems(player, KIRUNAS_SKULL, KIRUNAS_RIB_BONE, KIRUNAS_SPINE, KIRUNAS_ARM_BONE, KIRUNAS_THIGH_BONE))
-						{
+					} else if (hasQuestItems(player, RACOYS_TOTEM, INSECT_DIAGRAM_BOOK) && !hasQuestItems(player, VIVIANTES_LETTER)) {
+						if (hasQuestItems(player, KIRUNAS_SKULL, KIRUNAS_RIB_BONE, KIRUNAS_SPINE, KIRUNAS_ARM_BONE, KIRUNAS_THIGH_BONE)) {
 							takeItems(player, RACOYS_TOTEM, 1);
 							takeItems(player, INSECT_DIAGRAM_BOOK, 1);
 							takeItems(player, KIRUNAS_SKULL, 1);
@@ -503,33 +387,23 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 							takeItems(player, KIRUNAS_ARM_BONE, 1);
 							takeItems(player, KIRUNAS_THIGH_BONE, 1);
 							giveItems(player, KIRUNAS_REMAINS1, 1);
-							if (hasQuestItems(player, BRAKIS_REMAINS1, HERMODTS_REMAINS1, TONARS_REMAINS1))
-							{
+							if (hasQuestItems(player, BRAKIS_REMAINS1, HERMODTS_REMAINS1, TONARS_REMAINS1)) {
 								qs.setCond(2);
 							}
 							htmltext = "30507-06.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30507-05.html";
 						}
-					}
-					else if (!hasQuestItems(player, RACOYS_TOTEM) && hasAtLeastOneQuestItem(player, KIRUNAS_REMAINS1, KIRUNAS_REMAINS2, VENDETTA_TOTEM))
-					{
+					} else if (!hasQuestItems(player, RACOYS_TOTEM) && hasAtLeastOneQuestItem(player, KIRUNAS_REMAINS1, KIRUNAS_REMAINS2, VENDETTA_TOTEM)) {
 						htmltext = "30507-07.html";
 					}
 					break;
 				}
-				case SEER_MANAKIA:
-				{
-					if (!hasAtLeastOneQuestItem(player, MANAKIAS_TOTEM, HERMODTS_REMAINS2, VENDETTA_TOTEM, HERMODTS_REMAINS1))
-					{
+				case SEER_MANAKIA: {
+					if (!hasAtLeastOneQuestItem(player, MANAKIAS_TOTEM, HERMODTS_REMAINS2, VENDETTA_TOTEM, HERMODTS_REMAINS1)) {
 						htmltext = "30515-01.html";
-					}
-					else if (hasQuestItems(player, MANAKIAS_TOTEM))
-					{
-						if (hasQuestItems(player, HERMODTS_SKULL, HERMODTS_RIB_BONE, HERMODTS_SPINE, HERMODTS_ARM_BONE, HERMODTS_THIGH_BONE))
-						{
+					} else if (hasQuestItems(player, MANAKIAS_TOTEM)) {
+						if (hasQuestItems(player, HERMODTS_SKULL, HERMODTS_RIB_BONE, HERMODTS_SPINE, HERMODTS_ARM_BONE, HERMODTS_THIGH_BONE)) {
 							takeItems(player, MANAKIAS_TOTEM, 1);
 							takeItems(player, HERMODTS_SKULL, 1);
 							takeItems(player, HERMODTS_RIB_BONE, 1);
@@ -537,73 +411,51 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 							takeItems(player, HERMODTS_ARM_BONE, 1);
 							takeItems(player, HERMODTS_THIGH_BONE, 1);
 							giveItems(player, HERMODTS_REMAINS1, 1);
-							if (hasQuestItems(player, BRAKIS_REMAINS1, KIRUNAS_REMAINS1, TONARS_REMAINS1))
-							{
+							if (hasQuestItems(player, BRAKIS_REMAINS1, KIRUNAS_REMAINS1, TONARS_REMAINS1)) {
 								qs.setCond(2);
 							}
 							htmltext = "30515-04.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30515-03.html";
 						}
-					}
-					else if (!hasQuestItems(player, MANAKIAS_TOTEM) && hasAtLeastOneQuestItem(player, HERMODTS_REMAINS1, HERMODTS_REMAINS2, VENDETTA_TOTEM))
-					{
+					} else if (!hasQuestItems(player, MANAKIAS_TOTEM) && hasAtLeastOneQuestItem(player, HERMODTS_REMAINS1, HERMODTS_REMAINS2, VENDETTA_TOTEM)) {
 						htmltext = "30515-05.html";
 					}
 					break;
 				}
-				case SHADOW_ORIM:
-				{
-					if (!hasAtLeastOneQuestItem(player, ORIMS_CONTRACT, BRAKIS_REMAINS1, BRAKIS_REMAINS2, VENDETTA_TOTEM))
-					{
+				case SHADOW_ORIM: {
+					if (!hasAtLeastOneQuestItem(player, ORIMS_CONTRACT, BRAKIS_REMAINS1, BRAKIS_REMAINS2, VENDETTA_TOTEM)) {
 						htmltext = "30630-01.html";
-					}
-					else if (hasQuestItems(player, ORIMS_CONTRACT))
-					{
-						if ((getQuestItemsCount(player, PORTAS_EYE) + getQuestItemsCount(player, EXCUROS_SCALE) + getQuestItemsCount(player, MORDEOS_TALON)) < 30)
-						{
+					} else if (hasQuestItems(player, ORIMS_CONTRACT)) {
+						if ((getQuestItemsCount(player, PORTAS_EYE) + getQuestItemsCount(player, EXCUROS_SCALE) + getQuestItemsCount(player, MORDEOS_TALON)) < 30) {
 							htmltext = "30630-05.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, ORIMS_CONTRACT, 1);
 							takeItems(player, PORTAS_EYE, -1);
 							takeItems(player, EXCUROS_SCALE, -1);
 							takeItems(player, MORDEOS_TALON, -1);
 							giveItems(player, BRAKIS_REMAINS1, 1);
-							if (hasQuestItems(player, HERMODTS_REMAINS1, KIRUNAS_REMAINS1, TONARS_REMAINS1))
-							{
+							if (hasQuestItems(player, HERMODTS_REMAINS1, KIRUNAS_REMAINS1, TONARS_REMAINS1)) {
 								qs.setCond(2);
 							}
 							htmltext = "30630-06.html";
 						}
-					}
-					else if (!hasQuestItems(player, ORIMS_CONTRACT) && hasAtLeastOneQuestItem(player, BRAKIS_REMAINS1, BRAKIS_REMAINS2, VENDETTA_TOTEM))
-					{
+					} else if (!hasQuestItems(player, ORIMS_CONTRACT) && hasAtLeastOneQuestItem(player, BRAKIS_REMAINS1, BRAKIS_REMAINS2, VENDETTA_TOTEM)) {
 						htmltext = "30630-07.html";
 					}
 					break;
 				}
-				case ANCESTOR_MARTANKUS:
-				{
-					if (hasQuestItems(player, WARSPIRIT_TOTEM))
-					{
+				case ANCESTOR_MARTANKUS: {
+					if (hasQuestItems(player, WARSPIRIT_TOTEM)) {
 						htmltext = "30649-01.html";
 					}
 					break;
 				}
-				case SEER_PEKIRON:
-				{
-					if (!hasAtLeastOneQuestItem(player, PEKIRONS_TOTEM, TONARS_REMAINS1, TONARS_REMAINS2, VENDETTA_TOTEM))
-					{
+				case SEER_PEKIRON: {
+					if (!hasAtLeastOneQuestItem(player, PEKIRONS_TOTEM, TONARS_REMAINS1, TONARS_REMAINS2, VENDETTA_TOTEM)) {
 						htmltext = "30682-01.html";
-					}
-					else if (hasQuestItems(player, PEKIRONS_TOTEM))
-					{
-						if (hasQuestItems(player, TONARS_SKULL, TONARS_RIB_BONE, TONARS_SPINE, TONARS_ARM_BONE, TONARS_THIGH_BONE))
-						{
+					} else if (hasQuestItems(player, PEKIRONS_TOTEM)) {
+						if (hasQuestItems(player, TONARS_SKULL, TONARS_RIB_BONE, TONARS_SPINE, TONARS_ARM_BONE, TONARS_THIGH_BONE)) {
 							takeItems(player, PEKIRONS_TOTEM, 1);
 							takeItems(player, TONARS_SKULL, 1);
 							takeItems(player, TONARS_RIB_BONE, 1);
@@ -611,29 +463,21 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 							takeItems(player, TONARS_ARM_BONE, 1);
 							takeItems(player, TONARS_THIGH_BONE, 1);
 							giveItems(player, TONARS_REMAINS1, 1);
-							if (hasQuestItems(player, BRAKIS_REMAINS1, HERMODTS_REMAINS1, KIRUNAS_REMAINS1))
-							{
+							if (hasQuestItems(player, BRAKIS_REMAINS1, HERMODTS_REMAINS1, KIRUNAS_REMAINS1)) {
 								qs.setCond(2);
 							}
 							htmltext = "30682-04.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30682-03.html";
 						}
-					}
-					else if (!hasQuestItems(player, PEKIRONS_TOTEM) && hasAtLeastOneQuestItem(player, TONARS_REMAINS1, TONARS_REMAINS2, VENDETTA_TOTEM))
-					{
+					} else if (!hasQuestItems(player, PEKIRONS_TOTEM) && hasAtLeastOneQuestItem(player, TONARS_REMAINS1, TONARS_REMAINS2, VENDETTA_TOTEM)) {
 						htmltext = "30682-05.html";
 					}
 					break;
 				}
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == SEER_SOMAK)
-			{
+		} else if (qs.isCompleted()) {
+			if (npc.getId() == SEER_SOMAK) {
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}

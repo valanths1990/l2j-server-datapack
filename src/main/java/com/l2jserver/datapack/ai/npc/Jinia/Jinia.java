@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Jinia AI.
  * @author Adry_85
  */
-public final class Jinia extends AbstractNpcAI
-{
+public final class Jinia extends AbstractNpcAI {
 	// NPC
 	private static final int JINIA = 32781;
 	// Items
@@ -38,8 +37,7 @@ public final class Jinia extends AbstractNpcAI
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
-	private Jinia()
-	{
+	private Jinia() {
 		super(Jinia.class.getSimpleName(), "ai/npc");
 		addStartNpc(JINIA);
 		addFirstTalkId(JINIA);
@@ -47,32 +45,22 @@ public final class Jinia extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "32781-10.html":
-			case "32781-11.html":
-			{
+			case "32781-11.html": {
 				htmltext = event;
 				break;
 			}
-			case "check":
-			{
-				if (hasAtLeastOneQuestItem(player, FROZEN_CORE, BLACK_FROZEN_CORE))
-				{
+			case "check": {
+				if (hasAtLeastOneQuestItem(player, FROZEN_CORE, BLACK_FROZEN_CORE)) {
 					htmltext = "32781-03.html";
-				}
-				else
-				{
+				} else {
 					final QuestState st = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
-					if ((st != null) && st.isCompleted())
-					{
+					if ((st != null) && st.isCompleted()) {
 						giveItems(player, FROZEN_CORE, 1);
-					}
-					else
-					{
+					} else {
 						giveItems(player, BLACK_FROZEN_CORE, 1);
 					}
 					htmltext = "32781-04.html";
@@ -84,25 +72,19 @@ public final class Jinia extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
-		if ((st != null) && (player.getLevel() >= MIN_LEVEL))
-		{
-			if (st.isCompleted())
-			{
+		if ((st != null) && (player.getLevel() >= MIN_LEVEL)) {
+			if (st.isCompleted()) {
 				return "32781-02.html";
-			}
-			else if (st.isCond(5) || st.isCond(6))
-			{
+			} else if (st.isCond(5) || st.isCond(6)) {
 				return "32781-09.html";
 			}
 		}
 		return "32781-01.html";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Jinia();
 	}
 }

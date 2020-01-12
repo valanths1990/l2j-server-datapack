@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Love Your Gatekeeper event.
  * @author Gladicek
  */
-public final class LoveYourGatekeeper extends LongTimeEvent
-{
+public final class LoveYourGatekeeper extends LongTimeEvent {
 	// NPC
 	private static final int GATEKEEPER = 32477;
 	// Item
@@ -43,8 +42,7 @@ public final class LoveYourGatekeeper extends LongTimeEvent
 	private static final int PRICE = 10000;
 	private static final String REUSE = LoveYourGatekeeper.class.getSimpleName() + "_reuse";
 	
-	private LoveYourGatekeeper()
-	{
+	private LoveYourGatekeeper() {
 		super(LoveYourGatekeeper.class.getSimpleName(), "events");
 		addStartNpc(GATEKEEPER);
 		addFirstTalkId(GATEKEEPER);
@@ -52,17 +50,12 @@ public final class LoveYourGatekeeper extends LongTimeEvent
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "transform_stick":
-			{
-				if (player.getAdena() >= PRICE)
-				{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "transform_stick": {
+				if (player.getAdena() >= PRICE) {
 					final long reuse = player.getVariables().getLong(REUSE, 0);
-					if (reuse > System.currentTimeMillis())
-					{
+					if (reuse > System.currentTimeMillis()) {
 						final long remainingTime = (reuse - System.currentTimeMillis()) / 1000;
 						final int hours = (int) (remainingTime / 3600);
 						final int minutes = (int) ((remainingTime % 3600) / 60);
@@ -71,24 +64,18 @@ public final class LoveYourGatekeeper extends LongTimeEvent
 						sm.addInt(hours);
 						sm.addInt(minutes);
 						player.sendPacket(sm);
-					}
-					else
-					{
+					} else {
 						takeItems(player, Inventory.ADENA_ID, PRICE);
 						giveItems(player, GATEKEEPER_TRANSFORMATION_STICK, 1);
 						player.getVariables().set(REUSE, System.currentTimeMillis() + (HOURS * 3600000));
 					}
-				}
-				else
-				{
+				} else {
 					return "32477-3.htm";
 				}
 				return null;
 			}
-			case "transform":
-			{
-				if (!player.isTransformed())
-				{
+			case "transform": {
+				if (!player.isTransformed()) {
 					player.doCast(TELEPORTER_TRANSFORM);
 				}
 				return null;
@@ -98,13 +85,11 @@ public final class LoveYourGatekeeper extends LongTimeEvent
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "32477.htm";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new LoveYourGatekeeper();
 	}
 }

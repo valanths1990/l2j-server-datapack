@@ -27,33 +27,26 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Simple AI that manages special conditions for Divine Beast summon.
  * @author UnAfraid
  */
-public final class DivineBeast extends AbstractNpcAI
-{
+public final class DivineBeast extends AbstractNpcAI {
 	private static final int DIVINE_BEAST = 14870;
 	private static final int TRANSFORMATION_ID = 258;
 	private static final int CHECK_TIME = 2 * 1000;
 	
-	private DivineBeast()
-	{
+	private DivineBeast() {
 		super(DivineBeast.class.getSimpleName(), "ai");
 		addSummonSpawnId(DIVINE_BEAST);
 	}
 	
 	@Override
-	public void onSummonSpawn(L2Summon summon)
-	{
+	public void onSummonSpawn(L2Summon summon) {
 		startQuestTimer("VALIDATE_TRANSFORMATION", CHECK_TIME, null, summon.getActingPlayer(), true);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if ((player == null) || !player.hasServitor())
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if ((player == null) || !player.hasServitor()) {
 			cancelQuestTimer(event, npc, player);
-		}
-		else if (player.getTransformationId() != TRANSFORMATION_ID)
-		{
+		} else if (player.getTransformationId() != TRANSFORMATION_ID) {
 			cancelQuestTimer(event, npc, player);
 			player.getSummon().unSummon(player);
 		}
@@ -61,8 +54,7 @@ public final class DivineBeast extends AbstractNpcAI
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DivineBeast();
 	}
 }

@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.util.Util;
  * Plunder Supplies (360)
  * @author netvirus
  */
-public final class Q00360_PlunderTheirSupplies extends Quest
-{
+public final class Q00360_PlunderTheirSupplies extends Quest {
 	// Npc
 	private static final int COLEMAN = 30873;
 	// Misc
@@ -46,14 +45,12 @@ public final class Q00360_PlunderTheirSupplies extends Quest
 	private static final int SUPPLY_ITEMS = 5872;
 	private static final int SUSPICIOUS_DOCUMENT_PIECE = 5871;
 	
-	static
-	{
+	static {
 		MONSTER_DROP_CHANCES.put(20666, 50); // Taik Orc Seeker
 		MONSTER_DROP_CHANCES.put(20669, 75); // Taik Orc Supply Leader
 	}
 	
-	public Q00360_PlunderTheirSupplies()
-	{
+	public Q00360_PlunderTheirSupplies() {
 		super(360, Q00360_PlunderTheirSupplies.class.getSimpleName(), "Plunder Their Supplies");
 		addStartNpc(COLEMAN);
 		addTalkId(COLEMAN);
@@ -62,31 +59,25 @@ public final class Q00360_PlunderTheirSupplies extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "30873-03.htm":
-			case "30873-09.html":
-			{
+			case "30873-09.html": {
 				htmltext = event;
 				break;
 			}
-			case "30873-04.htm":
-			{
+			case "30873-04.htm": {
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "30873-10.html":
-			{
+			case "30873-10.html": {
 				st.exitQuest(false, true);
 				htmltext = event;
 				break;
@@ -96,28 +87,21 @@ public final class Q00360_PlunderTheirSupplies extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st == null) || !Util.checkIfInRange(1500, npc, killer, false))
-		{
+		if ((st == null) || !Util.checkIfInRange(1500, npc, killer, false)) {
 			return super.onKill(npc, killer, isPet);
 		}
 		
-		if (getRandom(100) < MONSTER_DROP_CHANCES.get(npc.getId()))
-		{
+		if (getRandom(100) < MONSTER_DROP_CHANCES.get(npc.getId())) {
 			st.giveItems(SUPPLY_ITEMS, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		
-		if (getRandom(100) < 10)
-		{
-			if (st.getQuestItemsCount(SUSPICIOUS_DOCUMENT_PIECE) < 4)
-			{
+		if (getRandom(100) < 10) {
+			if (st.getQuestItemsCount(SUSPICIOUS_DOCUMENT_PIECE) < 4) {
 				st.giveItems(SUSPICIOUS_DOCUMENT_PIECE, 1);
-			}
-			else
-			{
+			} else {
 				st.giveItems(RECIPE_OF_SUPPLY, 1);
 				st.takeItems(SUSPICIOUS_DOCUMENT_PIECE, -1);
 			}
@@ -127,44 +111,31 @@ public final class Q00360_PlunderTheirSupplies extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() >= MIN_LVL) ? "30873-02.htm" : "30873-01.html";
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				final long supplyCount = st.getQuestItemsCount(SUPPLY_ITEMS);
 				final long recipeCount = st.getQuestItemsCount(RECIPE_OF_SUPPLY);
-				if (supplyCount == 0)
-				{
-					if (recipeCount == 0)
-					{
+				if (supplyCount == 0) {
+					if (recipeCount == 0) {
 						htmltext = "30873-05.html";
-					}
-					else
-					{
+					} else {
 						st.giveAdena((recipeCount * 6000), true);
 						st.takeItems(RECIPE_OF_SUPPLY, -1);
 						htmltext = "30873-08.html";
 					}
-				}
-				else
-				{
-					if (recipeCount == 0)
-					{
+				} else {
+					if (recipeCount == 0) {
 						st.giveAdena(((supplyCount * 100) + 6000), true);
 						st.takeItems(SUPPLY_ITEMS, -1);
 						htmltext = "30873-06.html";
-					}
-					else
-					{
+					} else {
 						st.giveAdena((((supplyCount * 100) + 6000) + (recipeCount * 6000)), true);
 						st.takeItems(SUPPLY_ITEMS, -1);
 						st.takeItems(RECIPE_OF_SUPPLY, -1);

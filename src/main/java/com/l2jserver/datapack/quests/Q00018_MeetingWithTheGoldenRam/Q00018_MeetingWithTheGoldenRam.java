@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original jython script by disKret.
  * @author nonom
  */
-public class Q00018_MeetingWithTheGoldenRam extends Quest
-{
+public class Q00018_MeetingWithTheGoldenRam extends Quest {
 	// NPCs
 	private static final int DONAL = 31314;
 	private static final int DAISY = 31315;
@@ -38,8 +37,7 @@ public class Q00018_MeetingWithTheGoldenRam extends Quest
 	// Item
 	private static final int BOX = 7245;
 	
-	public Q00018_MeetingWithTheGoldenRam()
-	{
+	public Q00018_MeetingWithTheGoldenRam() {
 		super(18, Q00018_MeetingWithTheGoldenRam.class.getSimpleName(), "Meeting With The Golden Ram");
 		addStartNpc(DONAL);
 		addTalkId(DONAL, DAISY, ABERCROMBIE);
@@ -47,24 +45,18 @@ public class Q00018_MeetingWithTheGoldenRam extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "31314-03.html":
-				if (player.getLevel() >= 66)
-				{
+				if (player.getLevel() >= 66) {
 					st.startQuest();
-				}
-				else
-				{
+				} else {
 					htmltext = "31314-02.html";
 				}
 				break;
@@ -73,8 +65,7 @@ public class Q00018_MeetingWithTheGoldenRam extends Quest
 				st.giveItems(BOX, 1);
 				break;
 			case "31555-02.html":
-				if (st.hasQuestItems(BOX))
-				{
+				if (st.hasQuestItems(BOX)) {
 					st.giveAdena(40000, true);
 					st.addExpAndSp(126668, 11731);
 					st.exitQuest(false, true);
@@ -85,33 +76,25 @@ public class Q00018_MeetingWithTheGoldenRam extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		final int npcId = npc.getId();
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.COMPLETED:
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			case State.CREATED:
-				if (npcId == DONAL)
-				{
+				if (npcId == DONAL) {
 					htmltext = "31314-01.htm";
 				}
 				break;
 			case State.STARTED:
-				if (npcId == DONAL)
-				{
+				if (npcId == DONAL) {
 					htmltext = "31314-04.html";
-				}
-				else if (npcId == DAISY)
-				{
+				} else if (npcId == DAISY) {
 					htmltext = (st.getCond() < 2) ? "31315-01.html" : "31315-03.html";
-				}
-				else if ((npcId == ABERCROMBIE) && st.isCond(2) && st.hasQuestItems(BOX))
-				{
+				} else if ((npcId == ABERCROMBIE) && st.isCond(2) && st.hasQuestItems(BOX)) {
 					htmltext = "31555-01.html";
 				}
 				break;

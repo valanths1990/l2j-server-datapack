@@ -36,8 +36,7 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
  * Seven Signs, Dying Message (193)
  * @author Adry_85
  */
-public final class Q00193_SevenSignsDyingMessage extends Quest
-{
+public final class Q00193_SevenSignsDyingMessage extends Quest {
 	// NPCs
 	private static final int SHILENS_EVIL_THOUGHTS = 27343;
 	private static final int HOLLINT = 30191;
@@ -54,8 +53,7 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 	// Skill
 	private static final SkillHolder NPC_HEAL = new SkillHolder(4065, 8);
 	
-	public Q00193_SevenSignsDyingMessage()
-	{
+	public Q00193_SevenSignsDyingMessage() {
 		super(193, Q00193_SevenSignsDyingMessage.class.getSimpleName(), "Seven Signs, Dying Message");
 		addStartNpc(HOLLINT);
 		addTalkId(HOLLINT, CAIN, ERIC, SIR_GUSTAV_ATHEBALDT);
@@ -64,12 +62,9 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if ((npc.getId() == SHILENS_EVIL_THOUGHTS) && "despawn".equals(event))
-		{
-			if (!npc.isDead())
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if ((npc.getId() == SHILENS_EVIL_THOUGHTS) && "despawn".equals(event)) {
+			if (!npc.isDead()) {
 				isBusy = false;
 				npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), NpcStringId.NEXT_TIME_YOU_WILL_NOT_ESCAPE));
 				npc.deleteMe();
@@ -78,16 +73,13 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 		}
 		
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30191-02.html":
-			{
+		switch (event) {
+			case "30191-02.html": {
 				st.giveItems(JACOBS_NECKLACE, 1);
 				st.startQuest();
 				htmltext = event;
@@ -95,28 +87,22 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 			}
 			case "32569-02.html":
 			case "32569-03.html":
-			case "32569-04.html":
-			{
-				if (st.isCond(1) && st.hasQuestItems(JACOBS_NECKLACE))
-				{
+			case "32569-04.html": {
+				if (st.isCond(1) && st.hasQuestItems(JACOBS_NECKLACE)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32569-05.html":
-			{
-				if (st.isCond(1) && st.hasQuestItems(JACOBS_NECKLACE))
-				{
+			case "32569-05.html": {
+				if (st.isCond(1) && st.hasQuestItems(JACOBS_NECKLACE)) {
 					st.takeItems(JACOBS_NECKLACE, -1);
 					st.setCond(2, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "showmovie":
-			{
-				if (st.isCond(3) && st.hasQuestItems(DEADMANS_HERB))
-				{
+			case "showmovie": {
+				if (st.isCond(3) && st.hasQuestItems(DEADMANS_HERB)) {
 					st.takeItems(DEADMANS_HERB, -1);
 					st.setCond(4, true);
 					player.showQuestMovie(9);
@@ -125,39 +111,31 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 				break;
 			}
 			case "32569-10.html":
-			case "32569-11.html":
-			{
-				if (st.isCond(5) && st.hasQuestItems(SCULPTURE_OF_DOUBT))
-				{
+			case "32569-11.html": {
+				if (st.isCond(5) && st.hasQuestItems(SCULPTURE_OF_DOUBT)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32569-12.html":
-			{
-				if (st.isCond(5) && st.hasQuestItems(SCULPTURE_OF_DOUBT))
-				{
+			case "32569-12.html": {
+				if (st.isCond(5) && st.hasQuestItems(SCULPTURE_OF_DOUBT)) {
 					st.takeItems(SCULPTURE_OF_DOUBT, -1);
 					st.setCond(6, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32570-02.html":
-			{
-				if (st.isCond(2))
-				{
+			case "32570-02.html": {
+				if (st.isCond(2)) {
 					st.giveItems(DEADMANS_HERB, 1);
 					st.setCond(3, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "fight":
-			{
+			case "fight": {
 				htmltext = "32569-14.html";
-				if (st.isCond(4))
-				{
+				if (st.isCond(4)) {
 					isBusy = true;
 					NpcSay ns = new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), NpcStringId.S1_THAT_STRANGER_MUST_BE_DEFEATED_HERE_IS_THE_ULTIMATE_HELP);
 					ns.addStringParameter(player.getName());
@@ -172,34 +150,25 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 				}
 				break;
 			}
-			case "heal":
-			{
-				if (!npc.isInsideRadius(player, 600, true, false))
-				{
+			case "heal": {
+				if (!npc.isInsideRadius(player, 600, true, false)) {
 					NpcSay ns = new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), NpcStringId.LOOK_HERE_S1_DONT_FALL_TOO_FAR_BEHIND);
 					ns.addStringParameter(player.getName());
 					npc.broadcastPacket(ns);
-				}
-				else if (!player.isDead())
-				{
+				} else if (!player.isDead()) {
 					npc.setTarget(player);
 					npc.doCast(NPC_HEAL);
 				}
 				startQuestTimer("heal", 30000 - getRandom(20000), npc, player);
 				break;
 			}
-			case "reward":
-			{
-				if (st.isCond(6))
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
+			case "reward": {
+				if (st.isCond(6)) {
+					if (player.getLevel() >= MIN_LEVEL) {
 						st.addExpAndSp(52518015, 5817677);
 						st.exitQuest(false, true);
 						htmltext = "30760-02.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "level_check.html";
 					}
 				}
@@ -210,17 +179,14 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(player, 4);
-		if (partyMember == null)
-		{
+		if (partyMember == null) {
 			return null;
 		}
 		
 		final QuestState st = getQuestState(partyMember, false);
-		if (npc.isInsideRadius(partyMember, 1500, true, false))
-		{
+		if (npc.isInsideRadius(partyMember, 1500, true, false)) {
 			st.giveItems(SCULPTURE_OF_DOUBT, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_FINISH);
 			st.setCond(5);
@@ -234,78 +200,56 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.COMPLETED:
-			{
+		switch (st.getState()) {
+			case State.COMPLETED: {
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
-			case State.CREATED:
-			{
-				if (npc.getId() == HOLLINT)
-				{
+			case State.CREATED: {
+				if (npc.getId() == HOLLINT) {
 					htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q00192_SevenSignsSeriesOfDoubt.class.getSimpleName())) ? "30191-01.htm" : "30191-03.html";
 				}
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (npc.getId())
-				{
-					case HOLLINT:
-					{
-						if (st.isCond(1) && st.hasQuestItems(JACOBS_NECKLACE))
-						{
+			case State.STARTED: {
+				switch (npc.getId()) {
+					case HOLLINT: {
+						if (st.isCond(1) && st.hasQuestItems(JACOBS_NECKLACE)) {
 							htmltext = "30191-04.html";
 						}
 						break;
 					}
-					case CAIN:
-					{
-						switch (st.getCond())
-						{
-							case 1:
-							{
-								if (st.hasQuestItems(JACOBS_NECKLACE))
-								{
+					case CAIN: {
+						switch (st.getCond()) {
+							case 1: {
+								if (st.hasQuestItems(JACOBS_NECKLACE)) {
 									htmltext = "32569-01.html";
 								}
 								break;
 							}
-							case 2:
-							{
+							case 2: {
 								htmltext = "32569-06.html";
 								break;
 							}
-							case 3:
-							{
-								if (st.hasQuestItems(DEADMANS_HERB))
-								{
+							case 3: {
+								if (st.hasQuestItems(DEADMANS_HERB)) {
 									htmltext = "32569-07.html";
 								}
 								break;
 							}
-							case 4:
-							{
-								if (isBusy)
-								{
+							case 4: {
+								if (isBusy) {
 									htmltext = "32569-13.html";
-								}
-								else
-								{
+								} else {
 									htmltext = "32569-08.html";
 								}
 								break;
 							}
-							case 5:
-							{
-								if (st.hasQuestItems(SCULPTURE_OF_DOUBT))
-								{
+							case 5: {
+								if (st.hasQuestItems(SCULPTURE_OF_DOUBT)) {
 									htmltext = "32569-09.html";
 								}
 								break;
@@ -313,27 +257,21 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 						}
 						break;
 					}
-					case ERIC:
-					{
-						switch (st.getCond())
-						{
-							case 2:
-							{
+					case ERIC: {
+						switch (st.getCond()) {
+							case 2: {
 								htmltext = "32570-01.html";
 								break;
 							}
-							case 3:
-							{
+							case 3: {
 								htmltext = "32570-03.html";
 								break;
 							}
 						}
 						break;
 					}
-					case SIR_GUSTAV_ATHEBALDT:
-					{
-						if (st.isCond(6))
-						{
+					case SIR_GUSTAV_ATHEBALDT: {
+						if (st.isCond(6)) {
 							htmltext = "30760-01.html";
 						}
 						break;

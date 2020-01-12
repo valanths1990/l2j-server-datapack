@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Original Jython script by Gnacik.
  * @author nonom
  */
-public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
-{
+public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest {
 	// NPC
 	private static final int SOBLING = 31147;
 	// Items
@@ -45,8 +44,7 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 	// Mobs
 	private static final Map<Integer, Integer> MOBS1 = new HashMap<>();
 	private static final Map<Integer, Double> MOBS2 = new HashMap<>();
-	static
-	{
+	static {
 		MOBS1.put(22660, 366); // lesser_giant_re
 		MOBS1.put(22661, 424); // lesser_giant_soldier_re
 		MOBS1.put(22662, 304); // lesser_giant_shooter_re
@@ -59,8 +57,7 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 		MOBS2.put(22669, 0.240); // leogul_re
 	}
 	
-	public Q00377_ExplorationOfTheGiantsCavePart2()
-	{
+	public Q00377_ExplorationOfTheGiantsCavePart2() {
 		super(377, Q00377_ExplorationOfTheGiantsCavePart2.class.getSimpleName(), "Exploration of the Giants' Cave - Part 2");
 		addStartNpc(SOBLING);
 		addTalkId(SOBLING);
@@ -70,31 +67,25 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "31147-02.htm":
-			{
+		switch (event) {
+			case "31147-02.htm": {
 				qs.startQuest();
 				htmltext = event;
 				break;
 			}
 			case "31147-04.html":
-			case "31147-cont.html":
-			{
+			case "31147-cont.html": {
 				htmltext = event;
 				break;
 			}
-			case "31147-quit.html":
-			{
+			case "31147-quit.html": {
 				qs.exitQuest(true, true);
 				htmltext = event;
 				break;
@@ -104,19 +95,14 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(player, -1, 3, npc);
-		if (qs != null)
-		{
+		if (qs != null) {
 			int npcId = npc.getId();
-			if (MOBS1.containsKey(npcId))
-			{
+			if (MOBS1.containsKey(npcId)) {
 				final int itemCount = ((getRandom(1000) < MOBS1.get(npcId)) ? 3 : 2);
 				giveItemRandomly(qs.getPlayer(), npc, TITAN_ANCIENT_BOOK, itemCount, 0, 1.0, true);
-			}
-			else
-			{
+			} else {
 				giveItemRandomly(qs.getPlayer(), npc, TITAN_ANCIENT_BOOK, 1, 0, MOBS2.get(npcId), true);
 			}
 		}
@@ -124,16 +110,12 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			htmltext = ((player.getLevel() >= 79) ? "31147-01.htm" : "31147-00.html");
-		}
-		else if (qs.isStarted())
-		{
+		} else if (qs.isStarted()) {
 			htmltext = (hasQuestItems(player, BOOK1, BOOK2, BOOK3, BOOK4, BOOK5) ? "31147-03.html" : "31147-02a.html");
 		}
 		return htmltext;

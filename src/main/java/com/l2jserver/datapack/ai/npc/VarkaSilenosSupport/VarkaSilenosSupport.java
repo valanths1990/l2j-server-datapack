@@ -33,26 +33,21 @@ import com.l2jserver.gameserver.util.Util;
  * Original Jython script by Emperorc and Kerberos_20.
  * @author Nyaran
  */
-public final class VarkaSilenosSupport extends AbstractNpcAI
-{
-	private static class BuffsData
-	{
+public final class VarkaSilenosSupport extends AbstractNpcAI {
+	private static class BuffsData {
 		private final int _skill;
 		private final int _cost;
 		
-		public BuffsData(int skill, int cost)
-		{
+		public BuffsData(int skill, int cost) {
 			_skill = skill;
 			_cost = cost;
 		}
 		
-		public Skill getSkill()
-		{
+		public Skill getSkill() {
 			return SkillData.getInstance().getSkill(_skill, 1);
 		}
 		
-		public int getCost()
-		{
+		public int getCost() {
 			return _cost;
 		}
 	}
@@ -67,8 +62,7 @@ public final class VarkaSilenosSupport extends AbstractNpcAI
 	private static final int TERANU = 31383; // Teleporter
 	// Items
 	private static final int SEED = 7187;
-	private static final int[] VARKA_MARKS =
-	{
+	private static final int[] VARKA_MARKS = {
 		7221, // Mark of Varka's Alliance - Level 1
 		7222, // Mark of Varka's Alliance - Level 2
 		7223, // Mark of Varka's Alliance - Level 3
@@ -77,8 +71,7 @@ public final class VarkaSilenosSupport extends AbstractNpcAI
 	};
 	// Misc
 	private static final Map<Integer, BuffsData> BUFF = new HashMap<>();
-	static
-	{
+	static {
 		BUFF.put(1, new BuffsData(4359, 2)); // Focus: Requires 2 Nepenthese Seeds
 		BUFF.put(2, new BuffsData(4360, 2)); // Death Whisper: Requires 2 Nepenthese Seeds
 		BUFF.put(3, new BuffsData(4345, 3)); // Might: Requires 3 Nepenthese Seeds
@@ -89,20 +82,16 @@ public final class VarkaSilenosSupport extends AbstractNpcAI
 		BUFF.put(8, new BuffsData(4357, 6)); // Haste: Requires 6 Nepenthese Seeds
 	}
 	
-	private VarkaSilenosSupport()
-	{
+	private VarkaSilenosSupport() {
 		super(VarkaSilenosSupport.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(ASHAS, NARAN, UDAN, DIYABU, HAGOS, SHIKON, TERANU);
 		addTalkId(UDAN, HAGOS, TERANU);
 		addStartNpc(HAGOS, TERANU);
 	}
 	
-	private int getAllianceLevel(L2PcInstance player)
-	{
-		for (int i = 0; i < VARKA_MARKS.length; i++)
-		{
-			if (hasQuestItems(player, VARKA_MARKS[i]))
-			{
+	private int getAllianceLevel(L2PcInstance player) {
+		for (int i = 0; i < VARKA_MARKS.length; i++) {
+			if (hasQuestItems(player, VARKA_MARKS[i])) {
 				return -(i + 1);
 			}
 		}
@@ -110,33 +99,23 @@ public final class VarkaSilenosSupport extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (Util.isDigit(event) && BUFF.containsKey(Integer.parseInt(event)))
-		{
+		if (Util.isDigit(event) && BUFF.containsKey(Integer.parseInt(event))) {
 			final BuffsData buff = BUFF.get(Integer.parseInt(event));
-			if (getQuestItemsCount(player, SEED) >= buff.getCost())
-			{
+			if (getQuestItemsCount(player, SEED) >= buff.getCost()) {
 				takeItems(player, SEED, buff.getCost());
 				npc.setTarget(player);
 				npc.doCast(buff.getSkill());
 				npc.setCurrentHpMp(npc.getMaxHp(), npc.getMaxMp());
-			}
-			else
-			{
+			} else {
 				htmltext = "31379-02.html";
 			}
-		}
-		else if (event.equals("Teleport"))
-		{
+		} else if (event.equals("Teleport")) {
 			final int AllianceLevel = getAllianceLevel(player);
-			if (AllianceLevel == -4)
-			{
+			if (AllianceLevel == -4) {
 				htmltext = "31383-04.html";
-			}
-			else if (AllianceLevel == -5)
-			{
+			} else if (AllianceLevel == -5) {
 				htmltext = "31383-05.html";
 			}
 		}
@@ -144,12 +123,10 @@ public final class VarkaSilenosSupport extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final int AllianceLevel = getAllianceLevel(player);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ASHAS:
 				htmltext = (AllianceLevel < 0) ? "31377-friend.html" : "31377-no.html";
 				break;
@@ -166,8 +143,7 @@ public final class VarkaSilenosSupport extends AbstractNpcAI
 				htmltext = (AllianceLevel < 0) ? (AllianceLevel == -1) ? "31381-01.html" : "31381-02.html" : "31381-no.html";
 				break;
 			case SHIKON:
-				switch (AllianceLevel)
-				{
+				switch (AllianceLevel) {
 					case -1:
 					case -2:
 						htmltext = "31382-01.html";
@@ -185,8 +161,7 @@ public final class VarkaSilenosSupport extends AbstractNpcAI
 				}
 				break;
 			case TERANU:
-				switch (AllianceLevel)
-				{
+				switch (AllianceLevel) {
 					case -1:
 					case -2:
 					case -3:
@@ -207,8 +182,7 @@ public final class VarkaSilenosSupport extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	public static void main(String args[])
-	{
+	public static void main(String args[]) {
 		new VarkaSilenosSupport();
 	}
 }

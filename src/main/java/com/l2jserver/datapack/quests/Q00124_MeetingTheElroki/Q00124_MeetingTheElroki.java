@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Meeting the Elroki (124)
  * @author Adry_85
  */
-public class Q00124_MeetingTheElroki extends Quest
-{
+public class Q00124_MeetingTheElroki extends Quest {
 	// NPCs
 	private static final int MARQUEZ = 32113;
 	private static final int MUSHIKA = 32114;
@@ -39,8 +38,7 @@ public class Q00124_MeetingTheElroki extends Quest
 	// Item
 	private static final int MANTARASA_EGG = 8778;
 	
-	public Q00124_MeetingTheElroki()
-	{
+	public Q00124_MeetingTheElroki() {
 		super(124, Q00124_MeetingTheElroki.class.getSimpleName(), "Meeting the Elroki");
 		addStartNpc(MARQUEZ);
 		addTalkId(MARQUEZ, MUSHIKA, ASAMAH, KARAKAWEI, MANTARASA);
@@ -48,46 +46,38 @@ public class Q00124_MeetingTheElroki extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "32113-03.html":
 				st.startQuest();
 				break;
 			case "32113-04.html":
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					st.setCond(2, true);
 				}
 				break;
 			case "32114-04.html":
-				if (st.isCond(2))
-				{
+				if (st.isCond(2)) {
 					st.setCond(3, true);
 				}
 				break;
 			case "32115-06.html":
-				if (st.isCond(3))
-				{
+				if (st.isCond(3)) {
 					st.setCond(4, true);
 				}
 				break;
 			case "32117-05.html":
-				if (st.isCond(4))
-				{
+				if (st.isCond(4)) {
 					st.setCond(5, true);
 				}
 				break;
 			case "32118-04.html":
-				if (st.isCond(5))
-				{
+				if (st.isCond(5)) {
 					st.giveItems(MANTARASA_EGG, 1);
 					st.setCond(6, true);
 				}
@@ -97,21 +87,17 @@ public class Q00124_MeetingTheElroki extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case MARQUEZ:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() < 75) ? "32113-01a.htm" : "32113-01.htm";
 						break;
 					case State.STARTED:
-						switch (st.getInt("cond"))
-						{
+						switch (st.getInt("cond")) {
 							case 1:
 								htmltext = "32113-05.html";
 								break;
@@ -131,10 +117,8 @@ public class Q00124_MeetingTheElroki extends Quest
 				}
 				break;
 			case MUSHIKA:
-				if (st.isStarted())
-				{
-					switch (st.getInt("cond"))
-					{
+				if (st.isStarted()) {
+					switch (st.getInt("cond")) {
 						case 1:
 							htmltext = "32114-01.html";
 							break;
@@ -149,10 +133,8 @@ public class Q00124_MeetingTheElroki extends Quest
 				}
 				break;
 			case ASAMAH:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 						case 2:
 							htmltext = "32115-01.html";
@@ -167,8 +149,7 @@ public class Q00124_MeetingTheElroki extends Quest
 							htmltext = "32115-08.html";
 							break;
 						case 6:
-							if (st.hasQuestItems(MANTARASA_EGG))
-							{
+							if (st.hasQuestItems(MANTARASA_EGG)) {
 								htmltext = "32115-09.html";
 								st.giveAdena(100013, true);
 								st.addExpAndSp(301922, 30294);
@@ -179,10 +160,8 @@ public class Q00124_MeetingTheElroki extends Quest
 				}
 				break;
 			case KARAKAWEI:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 						case 2:
 						case 3:
@@ -201,10 +180,8 @@ public class Q00124_MeetingTheElroki extends Quest
 				}
 				break;
 			case MANTARASA:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 						case 2:
 						case 3:

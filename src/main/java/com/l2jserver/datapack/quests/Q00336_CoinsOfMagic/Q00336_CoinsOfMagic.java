@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.util.Util;
  * Coin Of Magic (336)
  * @author Zealar
  */
-public final class Q00336_CoinsOfMagic extends Quest
-{
+public final class Q00336_CoinsOfMagic extends Quest {
 	// NPCs
 	private static final int PANO = 30078;
 	private static final int COLLOB = 30092;
@@ -151,8 +150,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 	private static final String PARAM_3 = "param3";
 	private static final String FLAG = "flag";
 	
-	public Q00336_CoinsOfMagic()
-	{
+	public Q00336_CoinsOfMagic() {
 		super(336, Q00336_CoinsOfMagic.class.getSimpleName(), "Coins of Magic");
 		addStartNpc(WAREHOUSE_KEEPER_SORINT);
 		addTalkId(PANO, COLLOB, RAPIN, HAGGER, STAN, RESEARCHER_LORAIN, BLACKSMITH_DUNING, MAGISTER_PAGE, UNION_PRESIDENT_BERNARD, HEAD_BLACKSMITH_FERRIS);
@@ -161,86 +159,66 @@ public final class Q00336_CoinsOfMagic extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case PANO:
 			case COLLOB:
-			case HEAD_BLACKSMITH_FERRIS:
-			{
-				if (qs.hasQuestItems(Q_CC_MEMBERSHIP_1))
-				{
+			case HEAD_BLACKSMITH_FERRIS: {
+				if (qs.hasQuestItems(Q_CC_MEMBERSHIP_1)) {
 					resetParams(qs);
 					return npc.getId() + "-01.html";
 				}
-				if (qs.hasQuestItems(Q_CC_MEMBERSHIP_2) || qs.hasQuestItems(Q_CC_MEMBERSHIP_3))
-				{
+				if (qs.hasQuestItems(Q_CC_MEMBERSHIP_2) || qs.hasQuestItems(Q_CC_MEMBERSHIP_3)) {
 					return npc.getId() + "-54.html";
 				}
 				break;
 			}
 			case RAPIN:
 			case STAN:
-			case BLACKSMITH_DUNING:
-			{
-				if (qs.hasQuestItems(Q_CC_MEMBERSHIP_1) || qs.hasQuestItems(Q_CC_MEMBERSHIP_2))
-				{
+			case BLACKSMITH_DUNING: {
+				if (qs.hasQuestItems(Q_CC_MEMBERSHIP_1) || qs.hasQuestItems(Q_CC_MEMBERSHIP_2)) {
 					resetParams(qs);
 					return npc.getId() + "-01.html";
 				}
-				if (qs.hasQuestItems(Q_CC_MEMBERSHIP_3))
-				{
+				if (qs.hasQuestItems(Q_CC_MEMBERSHIP_3)) {
 					return npc.getId() + "-54.html";
 				}
 				break;
 			}
 			case HAGGER:
 			case MAGISTER_PAGE:
-			case RESEARCHER_LORAIN:
-			{
-				if (qs.hasQuestItems(Q_CC_MEMBERSHIP_1) || qs.hasQuestItems(Q_CC_MEMBERSHIP_2) || qs.hasQuestItems(Q_CC_MEMBERSHIP_3))
-				{
+			case RESEARCHER_LORAIN: {
+				if (qs.hasQuestItems(Q_CC_MEMBERSHIP_1) || qs.hasQuestItems(Q_CC_MEMBERSHIP_2) || qs.hasQuestItems(Q_CC_MEMBERSHIP_3)) {
 					resetParams(qs);
 					return npc.getId() + "-01.html";
 				}
 				break;
 			}
-			case UNION_PRESIDENT_BERNARD:
-			{
-				if ((qs.getMemoState() == 1) && qs.hasQuestItems(Q_COIN_DIAGRAM))
-				{
+			case UNION_PRESIDENT_BERNARD: {
+				if ((qs.getMemoState() == 1) && qs.hasQuestItems(Q_COIN_DIAGRAM)) {
 					return "30702-01.html";
 				}
-				if (qs.getMemoState() >= 3)
-				{
+				if (qs.getMemoState() >= 3) {
 					return "30702-05.html";
 				}
-				if (qs.getMemoState() == 2)
-				{
+				if (qs.getMemoState() == 2) {
 					return "30702-02a.html";
 				}
 			}
-			case WAREHOUSE_KEEPER_SORINT:
-			{
-				if (qs.isCreated())
-				{
-					if (player.getLevel() < 40)
-					{
+			case WAREHOUSE_KEEPER_SORINT: {
+				if (qs.isCreated()) {
+					if (player.getLevel() < 40) {
 						return "30232-01.htm";
 					}
 					return "30232-02.htm";
 				}
-				if (qs.isStarted())
-				{
-					if (!qs.hasQuestItems(Q_KALDIS_GOLD_DRAGON) && ((qs.getMemoState() == 1) || (qs.getMemoState() == 2)))
-					{
+				if (qs.isStarted()) {
+					if (!qs.hasQuestItems(Q_KALDIS_GOLD_DRAGON) && ((qs.getMemoState() == 1) || (qs.getMemoState() == 2))) {
 						return "30232-06.html";
 					}
-					if (qs.hasQuestItems(Q_KALDIS_GOLD_DRAGON) && ((qs.getMemoState() == 1) || (qs.getMemoState() == 2)))
-					{
+					if (qs.hasQuestItems(Q_KALDIS_GOLD_DRAGON) && ((qs.getMemoState() == 1) || (qs.getMemoState() == 2))) {
 						qs.giveItems(Q_CC_MEMBERSHIP_3, 1);
 						qs.takeItems(Q_COIN_DIAGRAM, -1);
 						qs.takeItems(Q_KALDIS_GOLD_DRAGON, 1);
@@ -250,16 +228,13 @@ public final class Q00336_CoinsOfMagic extends Quest
 						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30232-07.html";
 					}
-					if (qs.hasQuestItems(Q_CC_MEMBERSHIP_3) && (qs.getMemoState() == 3))
-					{
+					if (qs.hasQuestItems(Q_CC_MEMBERSHIP_3) && (qs.getMemoState() == 3)) {
 						return "30232-10.html";
 					}
-					if (qs.hasQuestItems(Q_CC_MEMBERSHIP_2) && (qs.getMemoState() == 3))
-					{
+					if (qs.hasQuestItems(Q_CC_MEMBERSHIP_2) && (qs.getMemoState() == 3)) {
 						return "30232-11.html";
 					}
-					if (qs.hasQuestItems(Q_CC_MEMBERSHIP_1) && (qs.getMemoState() == 3))
-					{
+					if (qs.hasQuestItems(Q_CC_MEMBERSHIP_1) && (qs.getMemoState() == 3)) {
 						return "30232-12.html";
 					}
 				}
@@ -269,21 +244,17 @@ public final class Q00336_CoinsOfMagic extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
 		
-		if (event.equals("QUEST_ACCEPTED"))
-		{
+		if (event.equals("QUEST_ACCEPTED")) {
 			qs.playSound(Sound.ITEMSOUND_QUEST_ACCEPT);
-			if (!qs.hasQuestItems(Q_COIN_DIAGRAM))
-			{
+			if (!qs.hasQuestItems(Q_COIN_DIAGRAM)) {
 				qs.giveItems(Q_COIN_DIAGRAM, 1);
 			}
 			qs.setMemoState(1);
@@ -292,15 +263,13 @@ public final class Q00336_CoinsOfMagic extends Quest
 			qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 			return "30232-05.htm";
 		}
-		if (event.contains(".htm"))
-		{
+		if (event.contains(".htm")) {
 			return event;
 		}
 		int npcId = npc.getId();
 		int eventID = Integer.parseInt(event);
 		
-		switch (npcId)
-		{
+		switch (npcId) {
 			case PANO:
 			case COLLOB:
 			case RAPIN:
@@ -309,502 +278,378 @@ public final class Q00336_CoinsOfMagic extends Quest
 			case RESEARCHER_LORAIN:
 			case BLACKSMITH_DUNING:
 			case MAGISTER_PAGE:
-			case HEAD_BLACKSMITH_FERRIS:
-			{
-				switch (eventID)
-				{
-					case 1:
-					{
+			case HEAD_BLACKSMITH_FERRIS: {
+				switch (eventID) {
+					case 1: {
 						qs.set(PARAM_2, 11);
 						return npcId + "-02.html";
 					}
-					case 2:
-					{
+					case 2: {
 						qs.set(PARAM_2, 21);
 						return npcId + "-03.html";
 					}
-					case 3:
-					{
+					case 3: {
 						qs.set(PARAM_2, 31);
 						return npcId + "-04.html";
 					}
-					case 4:
-					{
+					case 4: {
 						qs.set(PARAM_2, 42);
 						return npcId + "-05.html";
 					}
-					case 5:
-					{
+					case 5: {
 						return npcId + "-06.html";
 					}
-					case 9:
-					{
+					case 9: {
 						return npcId + "-53.html";
 					}
-					case 13:
-					{
-						if (qs.getInt(FLAG) == 1)
-						{
+					case 13: {
+						if (qs.getInt(FLAG) == 1) {
 							qs.set(FLAG, 16);
 							return npcId + "-14.html";
 						}
 						break;
 					}
-					case 14:
-					{
-						if (qs.getInt(FLAG) == 1)
-						{
+					case 14: {
+						if (qs.getInt(FLAG) == 1) {
 							qs.set(FLAG, 32);
 							return npcId + "-15.html";
 						}
 						break;
 					}
-					case 15:
-					{
-						if (qs.getInt(FLAG) == 1)
-						{
+					case 15: {
+						if (qs.getInt(FLAG) == 1) {
 							qs.set(FLAG, 48);
 							return npcId + "-16.html";
 						}
 						break;
 					}
-					case 16:
-					{
+					case 16: {
 						qs.set(FLAG, qs.getInt(FLAG) + 4);
 						return npcId + "-17.html";
 					}
-					case 17:
-					{
+					case 17: {
 						qs.set(FLAG, qs.getInt(FLAG) + 8);
 						return npcId + "-18.html";
 					}
-					case 18:
-					{
+					case 18: {
 						qs.set(FLAG, qs.getInt(FLAG) + 12);
 						return npcId + "-19.html";
 					}
-					case 22:
-					{
+					case 22: {
 						return npcId + "-01.html";
 					}
 				}
 			}
 		}
-		switch (npcId)
-		{
-			case PANO:
-			{
-				switch (eventID)
-				{
-					case 6:
-					{
+		switch (npcId) {
+			case PANO: {
+				switch (eventID) {
+					case 6: {
 						return shortFirstSteps(qs, PANO, 1, 4, Q_SILVER_DRYAD, Q_SILVER_UNDINE, 1, Q_GOLD_GIANT, Q_SILVER_DRYAD, Q_BLOOD_BASILISK);
 					}
-					case 7:
-					{
+					case 7: {
 						return shortFirstSteps(qs, PANO, 2, 8, Q_SILVER_DRYAD, Q_SILVER_UNDINE, 1, Q_GOLD_GIANT, Q_SILVER_DRYAD, Q_BLOOD_BASILISK);
 					}
-					case 8:
-					{
+					case 8: {
 						return shortFirstSteps(qs, PANO, 3, 9, Q_SILVER_DRYAD, Q_SILVER_UNDINE, 1, Q_GOLD_GIANT, Q_SILVER_DRYAD, Q_BLOOD_BASILISK);
 					}
-					case 10:
-					{
+					case 10: {
 						return shortSecondStepTwoItems(qs, PANO, 1, Q_SILVER_DRYAD, Q_SILVER_UNDINE, Q_BERETHS_SILVER_DRAGON, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_GOLD_DRAGON, Q_SILVER_DRYAD, Q_SILVER_UNDINE, Q_SILVER_DRAGON, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_BLOOD_DRAGON);
 					}
-					case 11:
-					{
+					case 11: {
 						return shortSecondStepTwoItems(qs, PANO, 5, Q_SILVER_DRYAD, Q_SILVER_UNDINE, Q_BERETHS_SILVER_DRAGON, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_GOLD_DRAGON, Q_SILVER_DRYAD, Q_SILVER_UNDINE, Q_SILVER_DRAGON, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_BLOOD_DRAGON);
 					}
-					case 12:
-					{
+					case 12: {
 						return shortSecondStepTwoItems(qs, PANO, 10, Q_SILVER_DRYAD, Q_SILVER_UNDINE, Q_BERETHS_SILVER_DRAGON, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_GOLD_DRAGON, Q_SILVER_DRYAD, Q_SILVER_UNDINE, Q_SILVER_DRAGON, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_BLOOD_DRAGON);
 					}
-					case 19:
-					{
+					case 19: {
 						return shortThirdStep(qs, PANO, 1, Q_BERETHS_SILVER_DRAGON, Q_GOLD_DRAGON, Q_SILVER_DRAGON, Q_SILVER_DRAGON);
 					}
-					case 20:
-					{
+					case 20: {
 						return shortThirdStep(qs, PANO, 2, Q_BERETHS_SILVER_DRAGON, Q_GOLD_DRAGON, Q_SILVER_DRAGON, Q_SILVER_DRAGON);
 					}
-					case 21:
-					{
+					case 21: {
 						return shortThirdStep(qs, PANO, 3, Q_BERETHS_SILVER_DRAGON, Q_GOLD_DRAGON, Q_SILVER_DRAGON, Q_SILVER_DRAGON);
 					}
 				}
 				break;
 			}
-			case COLLOB:
-			{
-				switch (eventID)
-				{
-					case 6:
-					{
+			case COLLOB: {
+				switch (eventID) {
+					case 6: {
 						return shortFirstSteps(qs, COLLOB, 1, 4, Q_GOLD_WYRM, Q_GOLD_GIANT, 1, Q_GOLD_WYRM, Q_SILVER_UNDINE, Q_BLOOD_SUCCUBUS);
 					}
-					case 7:
-					{
+					case 7: {
 						return shortFirstSteps(qs, COLLOB, 2, 8, Q_GOLD_WYRM, Q_GOLD_GIANT, 1, Q_GOLD_WYRM, Q_SILVER_UNDINE, Q_BLOOD_SUCCUBUS);
 					}
-					case 8:
-					{
+					case 8: {
 						return shortFirstSteps(qs, COLLOB, 3, 9, Q_GOLD_WYRM, Q_GOLD_GIANT, 1, Q_GOLD_WYRM, Q_SILVER_UNDINE, Q_BLOOD_SUCCUBUS);
 					}
-					case 10:
-					{
+					case 10: {
 						return shortSecondStepTwoItems(qs, COLLOB, 1, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_BERETHS_GOLD_DRAGON, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_GOLD_DRAGON, Q_SILVER_DRYAD, Q_SILVER_UNDINE, Q_SILVER_DRAGON, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_BLOOD_DRAGON);
 					}
-					case 11:
-					{
+					case 11: {
 						return shortSecondStepTwoItems(qs, COLLOB, 5, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_BERETHS_GOLD_DRAGON, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_GOLD_DRAGON, Q_SILVER_DRYAD, Q_SILVER_UNDINE, Q_SILVER_DRAGON, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_BLOOD_DRAGON);
 					}
-					case 12:
-					{
+					case 12: {
 						return shortSecondStepTwoItems(qs, COLLOB, 10, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_BERETHS_GOLD_DRAGON, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_GOLD_DRAGON, Q_SILVER_DRYAD, Q_SILVER_UNDINE, Q_SILVER_DRAGON, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_BLOOD_DRAGON);
 					}
-					case 19:
-					{
+					case 19: {
 						return shortThirdStep(qs, COLLOB, 1, Q_BERETHS_GOLD_DRAGON, Q_GOLD_DRAGON, Q_SILVER_DRAGON, Q_BLOOD_DRAGON);
 					}
-					case 20:
-					{
+					case 20: {
 						return shortThirdStep(qs, COLLOB, 2, Q_BERETHS_GOLD_DRAGON, Q_GOLD_DRAGON, Q_SILVER_DRAGON, Q_BLOOD_DRAGON);
 					}
-					case 21:
-					{
+					case 21: {
 						return shortThirdStep(qs, COLLOB, 3, Q_BERETHS_GOLD_DRAGON, Q_GOLD_DRAGON, Q_SILVER_DRAGON, Q_BLOOD_DRAGON);
 					}
 				}
 				break;
 			}
-			case RAPIN:
-			{
-				switch (eventID)
-				{
-					case 6:
-					{
+			case RAPIN: {
+				switch (eventID) {
+					case 6: {
 						return shortFirstSteps(qs, RAPIN, 1, 3, Q_BLOOD_WEREWOLF, Q_BLOOD_DREVANUL, 1, Q_SILVER_GOLEM, Q_SILVER_FAIRY, Q_GOLD_DRAKE);
 					}
-					case 7:
-					{
+					case 7: {
 						return shortFirstSteps(qs, RAPIN, 2, 7, Q_BLOOD_WEREWOLF, Q_BLOOD_DREVANUL, 1, Q_SILVER_GOLEM, Q_SILVER_FAIRY, Q_GOLD_DRAKE);
 					}
-					case 8:
-					{
+					case 8: {
 						return shortFirstSteps(qs, RAPIN, 3, 9, Q_BLOOD_WEREWOLF, Q_BLOOD_DREVANUL, 1, Q_SILVER_GOLEM, Q_SILVER_FAIRY, Q_GOLD_DRAKE);
 					}
-					case 10:
-					{
+					case 10: {
 						return shortSecondStepTwoItems(qs, RAPIN, 1, Q_BLOOD_WEREWOLF, Q_BLOOD_DREVANUL, Q_MANAKS_BLOOD_WEREWOLF, Q_SILVER_GOLEM, Q_SILVER_FAIRY, Q_SILVER_UNDINE, Q_SILVER_GOLEM, Q_SILVER_FAIRY, Q_SILVER_DRYAD, Q_GOLD_DRAKE, Q_GOLD_KNIGHT, Q_GOLD_WYRM);
 					}
-					case 11:
-					{
+					case 11: {
 						return shortSecondStepTwoItems(qs, RAPIN, 5, Q_BLOOD_WEREWOLF, Q_BLOOD_DREVANUL, Q_MANAKS_BLOOD_WEREWOLF, Q_SILVER_GOLEM, Q_SILVER_FAIRY, Q_SILVER_UNDINE, Q_SILVER_GOLEM, Q_SILVER_FAIRY, Q_SILVER_DRYAD, Q_GOLD_DRAKE, Q_GOLD_KNIGHT, Q_GOLD_WYRM);
 					}
-					case 12:
-					{
+					case 12: {
 						return shortSecondStepTwoItems(qs, RAPIN, 10, Q_BLOOD_WEREWOLF, Q_BLOOD_DREVANUL, Q_MANAKS_BLOOD_WEREWOLF, Q_SILVER_GOLEM, Q_SILVER_FAIRY, Q_SILVER_UNDINE, Q_SILVER_GOLEM, Q_SILVER_FAIRY, Q_SILVER_DRYAD, Q_GOLD_DRAKE, Q_GOLD_KNIGHT, Q_GOLD_WYRM);
 					}
-					case 19:
-					{
+					case 19: {
 						return shortThirdStep(qs, RAPIN, 1, Q_MANAKS_BLOOD_WEREWOLF, Q_SILVER_UNDINE, Q_SILVER_DRYAD, Q_GOLD_WYRM);
 					}
-					case 20:
-					{
+					case 20: {
 						return shortThirdStep(qs, RAPIN, 2, Q_MANAKS_BLOOD_WEREWOLF, Q_SILVER_UNDINE, Q_SILVER_DRYAD, Q_GOLD_WYRM);
 					}
-					case 21:
-					{
+					case 21: {
 						return shortThirdStep(qs, RAPIN, 3, Q_MANAKS_BLOOD_WEREWOLF, Q_SILVER_UNDINE, Q_SILVER_DRYAD, Q_GOLD_WYRM);
 					}
 				}
 				break;
 			}
-			case HAGGER:
-			{
-				switch (eventID)
-				{
-					case 6:
-					{
+			case HAGGER: {
+				switch (eventID) {
+					case 6: {
 						return shortFirstSteps(qs, HAGGER, 1, 4, Q_SILVER_UNICORN, 0, 2, Q_BLOOD_MEDUSA, Q_SILVER_UNICORN, Q_GOLD_WYVERN);
 					}
-					case 7:
-					{
+					case 7: {
 						return shortFirstSteps(qs, HAGGER, 2, 8, Q_SILVER_UNICORN, 0, 2, Q_BLOOD_MEDUSA, Q_SILVER_UNICORN, Q_GOLD_WYVERN);
 					}
-					case 8:
-					{
+					case 8: {
 						return shortFirstSteps(qs, HAGGER, 3, 9, Q_SILVER_UNICORN, 0, 2, Q_BLOOD_MEDUSA, Q_SILVER_UNICORN, Q_GOLD_WYVERN);
 					}
-					case 10:
-					{
+					case 10: {
 						return shortSecondStepOneItem(qs, HAGGER, 1, Q_SILVER_UNICORN, 2, Q_NIAS_SILVER_FAIRY, Q_BLOOD_MEDUSA, Q_BLOOD_WEREWOLF, Q_SILVER_UNICORN, Q_SILVER_GOLEM, Q_GOLD_WYVERN, Q_GOLD_DRAKE);
 					}
-					case 11:
-					{
+					case 11: {
 						return shortSecondStepOneItem(qs, HAGGER, 5, Q_SILVER_UNICORN, 2, Q_NIAS_SILVER_FAIRY, Q_BLOOD_MEDUSA, Q_BLOOD_WEREWOLF, Q_SILVER_UNICORN, Q_SILVER_GOLEM, Q_GOLD_WYVERN, Q_GOLD_DRAKE);
 					}
-					case 12:
-					{
+					case 12: {
 						return shortSecondStepOneItem(qs, HAGGER, 10, Q_SILVER_UNICORN, 2, Q_NIAS_SILVER_FAIRY, Q_BLOOD_MEDUSA, Q_BLOOD_WEREWOLF, Q_SILVER_UNICORN, Q_SILVER_GOLEM, Q_GOLD_WYVERN, Q_GOLD_DRAKE);
 					}
-					case 19:
-					{
+					case 19: {
 						return shortThirdStep(qs, HAGGER, 1, Q_NIAS_SILVER_FAIRY, Q_BLOOD_WEREWOLF, Q_SILVER_GOLEM, Q_GOLD_DRAKE);
 					}
-					case 20:
-					{
+					case 20: {
 						return shortThirdStep(qs, HAGGER, 2, Q_NIAS_SILVER_FAIRY, Q_BLOOD_WEREWOLF, Q_SILVER_GOLEM, Q_GOLD_DRAKE);
 					}
-					case 21:
-					{
+					case 21: {
 						return shortThirdStep(qs, HAGGER, 3, Q_NIAS_SILVER_FAIRY, Q_BLOOD_WEREWOLF, Q_SILVER_GOLEM, Q_GOLD_DRAKE);
 					}
 				}
 				break;
 			}
-			case STAN:
-			{
-				switch (eventID)
-				{
-					case 6:
-					{
+			case STAN: {
+				switch (eventID) {
+					case 6: {
 						return shortFirstSteps(qs, STAN, 1, 3, Q_SILVER_FAIRY, Q_SILVER_GOLEM, 1, Q_SILVER_FAIRY, Q_BLOOD_WEREWOLF, Q_GOLD_KNIGHT);
 					}
-					case 7:
-					{
+					case 7: {
 						return shortFirstSteps(qs, STAN, 2, 7, Q_SILVER_FAIRY, Q_SILVER_GOLEM, 1, Q_SILVER_FAIRY, Q_BLOOD_WEREWOLF, Q_GOLD_KNIGHT);
 					}
-					case 8:
-					{
+					case 8: {
 						return shortFirstSteps(qs, STAN, 3, 9, Q_SILVER_FAIRY, Q_SILVER_GOLEM, 1, Q_SILVER_FAIRY, Q_BLOOD_WEREWOLF, Q_GOLD_KNIGHT);
 					}
-					case 10:
-					{
+					case 10: {
 						return shortSecondStepTwoItems(qs, STAN, 1, Q_SILVER_FAIRY, Q_SILVER_GOLEM, Q_MANAKS_SILVER_DRYAD, Q_SILVER_FAIRY, Q_SILVER_GOLEM, Q_SILVER_DRYAD, Q_BLOOD_WEREWOLF, Q_BLOOD_DREVANUL, Q_BLOOD_BASILISK, Q_GOLD_KNIGHT, Q_GOLD_DRAKE, Q_GOLD_GIANT);
 					}
-					case 11:
-					{
+					case 11: {
 						return shortSecondStepTwoItems(qs, STAN, 5, Q_SILVER_FAIRY, Q_SILVER_GOLEM, Q_MANAKS_SILVER_DRYAD, Q_SILVER_FAIRY, Q_SILVER_GOLEM, Q_SILVER_DRYAD, Q_BLOOD_WEREWOLF, Q_BLOOD_DREVANUL, Q_BLOOD_BASILISK, Q_GOLD_KNIGHT, Q_GOLD_DRAKE, Q_GOLD_GIANT);
 					}
-					case 12:
-					{
+					case 12: {
 						return shortSecondStepTwoItems(qs, STAN, 10, Q_SILVER_FAIRY, Q_SILVER_GOLEM, Q_MANAKS_SILVER_DRYAD, Q_SILVER_FAIRY, Q_SILVER_GOLEM, Q_SILVER_DRYAD, Q_BLOOD_WEREWOLF, Q_BLOOD_DREVANUL, Q_BLOOD_BASILISK, Q_GOLD_KNIGHT, Q_GOLD_DRAKE, Q_GOLD_GIANT);
 					}
-					case 19:
-					{
+					case 19: {
 						return shortThirdStep(qs, STAN, 1, Q_MANAKS_SILVER_DRYAD, Q_SILVER_DRYAD, Q_BLOOD_BASILISK, Q_GOLD_GIANT);
 					}
-					case 20:
-					{
+					case 20: {
 						return shortThirdStep(qs, STAN, 2, Q_MANAKS_SILVER_DRYAD, Q_SILVER_DRYAD, Q_BLOOD_BASILISK, Q_GOLD_GIANT);
 					}
-					case 21:
-					{
+					case 21: {
 						return shortThirdStep(qs, STAN, 3, Q_MANAKS_SILVER_DRYAD, Q_SILVER_DRYAD, Q_BLOOD_BASILISK, Q_GOLD_GIANT);
 					}
 				}
 				break;
 			}
-			case RESEARCHER_LORAIN:
-			{
-				switch (eventID)
-				{
-					case 6:
-					{
+			case RESEARCHER_LORAIN: {
+				switch (eventID) {
+					case 6: {
 						return shortFirstSteps(qs, RESEARCHER_LORAIN, 1, 4, Q_GOLD_WYVERN, 0, 2, Q_BLOOD_MEDUSA, Q_SILVER_UNICORN, Q_GOLD_WYVERN);
 					}
-					case 7:
-					{
+					case 7: {
 						return shortFirstSteps(qs, RESEARCHER_LORAIN, 2, 8, Q_GOLD_WYVERN, 0, 2, Q_BLOOD_MEDUSA, Q_SILVER_UNICORN, Q_GOLD_WYVERN);
 					}
-					case 8:
-					{
+					case 8: {
 						return shortFirstSteps(qs, RESEARCHER_LORAIN, 3, 9, Q_GOLD_WYVERN, 0, 2, Q_BLOOD_MEDUSA, Q_SILVER_UNICORN, Q_GOLD_WYVERN);
 					}
-					case 10:
-					{
+					case 10: {
 						return shortSecondStepOneItem(qs, RESEARCHER_LORAIN, 1, Q_GOLD_WYVERN, 2, Q_NIAS_GOLD_WYVERN, Q_BLOOD_MEDUSA, Q_BLOOD_DREVANUL, Q_SILVER_UNICORN, Q_SILVER_GOLEM, Q_GOLD_WYVERN, Q_GOLD_KNIGHT);
 					}
-					case 11:
-					{
+					case 11: {
 						return shortSecondStepOneItem(qs, RESEARCHER_LORAIN, 5, Q_GOLD_WYVERN, 2, Q_NIAS_GOLD_WYVERN, Q_BLOOD_MEDUSA, Q_BLOOD_DREVANUL, Q_SILVER_UNICORN, Q_SILVER_GOLEM, Q_GOLD_WYVERN, Q_GOLD_KNIGHT);
 					}
-					case 12:
-					{
+					case 12: {
 						return shortSecondStepOneItem(qs, RESEARCHER_LORAIN, 10, Q_GOLD_WYVERN, 2, Q_NIAS_GOLD_WYVERN, Q_BLOOD_MEDUSA, Q_BLOOD_DREVANUL, Q_SILVER_UNICORN, Q_SILVER_GOLEM, Q_GOLD_WYVERN, Q_GOLD_KNIGHT);
 					}
-					case 19:
-					{
+					case 19: {
 						return shortThirdStep(qs, RESEARCHER_LORAIN, 1, Q_NIAS_GOLD_WYVERN, Q_BLOOD_DREVANUL, Q_SILVER_GOLEM, Q_GOLD_KNIGHT);
 					}
-					case 20:
-					{
+					case 20: {
 						return shortThirdStep(qs, RESEARCHER_LORAIN, 2, Q_NIAS_GOLD_WYVERN, Q_BLOOD_DREVANUL, Q_SILVER_GOLEM, Q_GOLD_KNIGHT);
 					}
-					case 21:
-					{
+					case 21: {
 						return shortThirdStep(qs, RESEARCHER_LORAIN, 3, Q_NIAS_GOLD_WYVERN, Q_BLOOD_DREVANUL, Q_SILVER_GOLEM, Q_GOLD_KNIGHT);
 					}
 				}
 				break;
 			}
-			case BLACKSMITH_DUNING:
-			{
-				switch (eventID)
-				{
-					case 6:
-					{
+			case BLACKSMITH_DUNING: {
+				switch (eventID) {
+					case 6: {
 						return shortFirstSteps(qs, BLACKSMITH_DUNING, 1, 3, Q_GOLD_DRAKE, Q_GOLD_KNIGHT, 1, Q_SILVER_GOLEM, Q_BLOOD_DREVANUL, Q_GOLD_DRAKE);
 					}
-					case 7:
-					{
+					case 7: {
 						return shortFirstSteps(qs, BLACKSMITH_DUNING, 2, 7, Q_GOLD_DRAKE, Q_GOLD_KNIGHT, 1, Q_SILVER_GOLEM, Q_BLOOD_DREVANUL, Q_GOLD_DRAKE);
 					}
-					case 8:
-					{
+					case 8: {
 						return shortFirstSteps(qs, BLACKSMITH_DUNING, 3, 9, Q_GOLD_DRAKE, Q_GOLD_KNIGHT, 1, Q_SILVER_GOLEM, Q_BLOOD_DREVANUL, Q_GOLD_DRAKE);
 					}
-					case 10:
-					{
+					case 10: {
 						return shortSecondStepTwoItems(qs, BLACKSMITH_DUNING, 1, Q_GOLD_KNIGHT, Q_GOLD_DRAKE, Q_MANAKS_GOLD_GIANT, Q_SILVER_GOLEM, Q_SILVER_FAIRY, Q_SILVER_UNDINE, Q_BLOOD_DREVANUL, Q_BLOOD_WEREWOLF, Q_BLOOD_SUCCUBUS, Q_GOLD_DRAKE, Q_GOLD_KNIGHT, Q_GOLD_GIANT);
 					}
-					case 11:
-					{
+					case 11: {
 						return shortSecondStepTwoItems(qs, BLACKSMITH_DUNING, 5, Q_GOLD_KNIGHT, Q_GOLD_DRAKE, Q_MANAKS_GOLD_GIANT, Q_SILVER_GOLEM, Q_SILVER_FAIRY, Q_SILVER_UNDINE, Q_BLOOD_DREVANUL, Q_BLOOD_WEREWOLF, Q_BLOOD_SUCCUBUS, Q_GOLD_DRAKE, Q_GOLD_KNIGHT, Q_GOLD_GIANT);
 					}
-					case 12:
-					{
+					case 12: {
 						return shortSecondStepTwoItems(qs, BLACKSMITH_DUNING, 10, Q_GOLD_KNIGHT, Q_GOLD_DRAKE, Q_MANAKS_GOLD_GIANT, Q_SILVER_GOLEM, Q_SILVER_FAIRY, Q_SILVER_UNDINE, Q_BLOOD_DREVANUL, Q_BLOOD_WEREWOLF, Q_BLOOD_SUCCUBUS, Q_GOLD_DRAKE, Q_GOLD_KNIGHT, Q_GOLD_GIANT);
 					}
-					case 19:
-					{
+					case 19: {
 						return shortThirdStep(qs, BLACKSMITH_DUNING, 1, Q_MANAKS_GOLD_GIANT, Q_SILVER_UNDINE, Q_BLOOD_SUCCUBUS, Q_GOLD_GIANT);
 					}
-					case 20:
-					{
+					case 20: {
 						return shortThirdStep(qs, BLACKSMITH_DUNING, 2, Q_MANAKS_GOLD_GIANT, Q_SILVER_UNDINE, Q_BLOOD_SUCCUBUS, Q_GOLD_GIANT);
 					}
-					case 21:
-					{
+					case 21: {
 						return shortThirdStep(qs, BLACKSMITH_DUNING, 3, Q_MANAKS_GOLD_GIANT, Q_SILVER_UNDINE, Q_BLOOD_SUCCUBUS, Q_GOLD_GIANT);
 					}
 				}
 				break;
 			}
-			case MAGISTER_PAGE:
-			{
-				switch (eventID)
-				{
-					case 6:
-					{
+			case MAGISTER_PAGE: {
+				switch (eventID) {
+					case 6: {
 						return shortFirstSteps(qs, MAGISTER_PAGE, 1, 4, Q_BLOOD_MEDUSA, 0, 2, Q_BLOOD_MEDUSA, Q_SILVER_UNICORN, Q_GOLD_WYVERN);
 					}
-					case 7:
-					{
+					case 7: {
 						return shortFirstSteps(qs, MAGISTER_PAGE, 2, 8, Q_BLOOD_MEDUSA, 0, 2, Q_BLOOD_MEDUSA, Q_SILVER_UNICORN, Q_GOLD_WYVERN);
 					}
-					case 8:
-					{
+					case 8: {
 						return shortFirstSteps(qs, MAGISTER_PAGE, 3, 9, Q_BLOOD_MEDUSA, 0, 2, Q_BLOOD_MEDUSA, Q_SILVER_UNICORN, Q_GOLD_WYVERN);
 					}
-					case 10:
-					{
+					case 10: {
 						return shortSecondStepOneItem(qs, MAGISTER_PAGE, 1, Q_BLOOD_MEDUSA, 2, Q_NIAS_BLOOD_MEDUSA, Q_BLOOD_MEDUSA, Q_BLOOD_WEREWOLF, Q_SILVER_UNICORN, Q_SILVER_FAIRY, Q_GOLD_WYVERN, Q_GOLD_KNIGHT);
 					}
-					case 11:
-					{
+					case 11: {
 						return shortSecondStepOneItem(qs, MAGISTER_PAGE, 5, Q_BLOOD_MEDUSA, 2, Q_NIAS_BLOOD_MEDUSA, Q_BLOOD_MEDUSA, Q_BLOOD_WEREWOLF, Q_SILVER_UNICORN, Q_SILVER_FAIRY, Q_GOLD_WYVERN, Q_GOLD_KNIGHT);
 					}
-					case 12:
-					{
+					case 12: {
 						return shortSecondStepOneItem(qs, MAGISTER_PAGE, 10, Q_BLOOD_MEDUSA, 2, Q_NIAS_BLOOD_MEDUSA, Q_BLOOD_MEDUSA, Q_BLOOD_WEREWOLF, Q_SILVER_UNICORN, Q_SILVER_FAIRY, Q_GOLD_WYVERN, Q_GOLD_KNIGHT);
 					}
-					case 19:
-					{
+					case 19: {
 						return shortThirdStep(qs, MAGISTER_PAGE, 1, Q_NIAS_BLOOD_MEDUSA, Q_BLOOD_WEREWOLF, Q_SILVER_FAIRY, Q_GOLD_KNIGHT);
 					}
-					case 20:
-					{
+					case 20: {
 						return shortThirdStep(qs, MAGISTER_PAGE, 2, Q_NIAS_BLOOD_MEDUSA, Q_BLOOD_WEREWOLF, Q_SILVER_FAIRY, Q_GOLD_KNIGHT);
 					}
-					case 21:
-					{
+					case 21: {
 						return shortThirdStep(qs, MAGISTER_PAGE, 3, Q_NIAS_BLOOD_MEDUSA, Q_BLOOD_WEREWOLF, Q_SILVER_FAIRY, Q_GOLD_KNIGHT);
 					}
 				}
 				break;
 			}
-			case HEAD_BLACKSMITH_FERRIS:
-			{
-				switch (Integer.parseInt(event))
-				{
-					case 6:
-					{
+			case HEAD_BLACKSMITH_FERRIS: {
+				switch (Integer.parseInt(event)) {
+					case 6: {
 						return shortFirstSteps(qs, HEAD_BLACKSMITH_FERRIS, 1, 4, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, 1, Q_GOLD_GIANT, Q_SILVER_DRYAD, Q_BLOOD_BASILISK);
 					}
-					case 7:
-					{
+					case 7: {
 						return shortFirstSteps(qs, HEAD_BLACKSMITH_FERRIS, 2, 8, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, 1, Q_GOLD_GIANT, Q_SILVER_DRYAD, Q_BLOOD_BASILISK);
 					}
-					case 8:
-					{
+					case 8: {
 						return shortFirstSteps(qs, HEAD_BLACKSMITH_FERRIS, 3, 9, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, 1, Q_GOLD_GIANT, Q_SILVER_DRYAD, Q_BLOOD_BASILISK);
 					}
-					case 10:
-					{
+					case 10: {
 						return shortSecondStepTwoItems(qs, HEAD_BLACKSMITH_FERRIS, 1, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_BERETHS_BLOOD_DRAGON, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_GOLD_DRAGON, Q_SILVER_DRYAD, Q_SILVER_UNDINE, Q_SILVER_DRAGON, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_BLOOD_DRAGON);
 					}
-					case 11:
-					{
+					case 11: {
 						return shortSecondStepTwoItems(qs, HEAD_BLACKSMITH_FERRIS, 5, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_BERETHS_BLOOD_DRAGON, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_GOLD_DRAGON, Q_SILVER_DRYAD, Q_SILVER_UNDINE, Q_SILVER_DRAGON, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_BLOOD_DRAGON);
 					}
-					case 12:
-					{
+					case 12: {
 						return shortSecondStepTwoItems(qs, HEAD_BLACKSMITH_FERRIS, 10, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_BERETHS_BLOOD_DRAGON, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_GOLD_DRAGON, Q_SILVER_DRYAD, Q_SILVER_UNDINE, Q_SILVER_DRAGON, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_BLOOD_DRAGON);
 					}
-					case 19:
-					{
+					case 19: {
 						return shortThirdStep(qs, HEAD_BLACKSMITH_FERRIS, 1, Q_BERETHS_BLOOD_DRAGON, Q_GOLD_DRAGON, Q_SILVER_DRAGON, Q_BLOOD_DRAGON);
 					}
-					case 20:
-					{
+					case 20: {
 						return shortThirdStep(qs, HEAD_BLACKSMITH_FERRIS, 2, Q_BERETHS_BLOOD_DRAGON, Q_GOLD_DRAGON, Q_SILVER_DRAGON, Q_BLOOD_DRAGON);
 					}
-					case 21:
-					{
+					case 21: {
 						return shortThirdStep(qs, HEAD_BLACKSMITH_FERRIS, 3, Q_BERETHS_BLOOD_DRAGON, Q_GOLD_DRAGON, Q_SILVER_DRAGON, Q_BLOOD_DRAGON);
 					}
 				}
 				break;
 			}
-			case UNION_PRESIDENT_BERNARD:
-			{
-				switch (eventID)
-				{
-					case 1:
-					{
+			case UNION_PRESIDENT_BERNARD: {
+				switch (eventID) {
+					case 1: {
 						return "30702-02.html";
 					}
-					case 2:
-					{
+					case 2: {
 						qs.setMemoState(2);
 						qs.setCond(2);
 						qs.showQuestionMark(336);
 						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30702-03.html";
 					}
-					case 3:
-					{
+					case 3: {
 						qs.setMemoState(2);
 						qs.setCond(2);
 						qs.showQuestionMark(336);
 						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30702-04.html";
 					}
-					case 4:
-					{
+					case 4: {
 						qs.setCond(7);
 						qs.showQuestionMark(336);
 						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
@@ -813,32 +658,23 @@ public final class Q00336_CoinsOfMagic extends Quest
 				}
 				break;
 			}
-			case WAREHOUSE_KEEPER_SORINT:
-			{
-				switch (eventID)
-				{
-					case 1:
-					{
+			case WAREHOUSE_KEEPER_SORINT: {
+				switch (eventID) {
+					case 1: {
 						return "30232-03.html";
 					}
-					case 2:
-					{
+					case 2: {
 						return "30232-04.html";
 					}
-					case 3:
-					{
+					case 3: {
 						return "30232-08.html";
 					}
-					case 4:
-					{
+					case 4: {
 						return "30232-09.html";
 					}
-					case 5:
-					{
-						if (qs.hasQuestItems(Q_CC_MEMBERSHIP_3))
-						{
-							if (qs.hasQuestItems(Q_BLOOD_DREVANUL, Q_BLOOD_WEREWOLF, Q_GOLD_KNIGHT, Q_GOLD_DRAKE, Q_SILVER_FAIRY, Q_SILVER_GOLEM))
-							{
+					case 5: {
+						if (qs.hasQuestItems(Q_CC_MEMBERSHIP_3)) {
+							if (qs.hasQuestItems(Q_BLOOD_DREVANUL, Q_BLOOD_WEREWOLF, Q_GOLD_KNIGHT, Q_GOLD_DRAKE, Q_SILVER_FAIRY, Q_SILVER_GOLEM)) {
 								qs.setCond(9);
 								qs.showQuestionMark(336);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
@@ -857,10 +693,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-13.html";
 						}
-						if (qs.hasQuestItems(Q_CC_MEMBERSHIP_2))
-						{
-							if (qs.hasQuestItems(Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_SILVER_UNDINE, Q_SILVER_DRYAD))
-							{
+						if (qs.hasQuestItems(Q_CC_MEMBERSHIP_2)) {
+							if (qs.hasQuestItems(Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_SILVER_UNDINE, Q_SILVER_DRYAD)) {
 								qs.setCond(11);
 								qs.showQuestionMark(336);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
@@ -879,46 +713,37 @@ public final class Q00336_CoinsOfMagic extends Quest
 							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-14.html";
 						}
-						if (qs.hasQuestItems(Q_CC_MEMBERSHIP_1))
-						{
+						if (qs.hasQuestItems(Q_CC_MEMBERSHIP_1)) {
 							return "30232-15.html";
 						}
 						break;
 					}
-					case 6:
-					{
+					case 6: {
 						return "30232-18.html";
 					}
-					case 7:
-					{
+					case 7: {
 						return "30232-19.html";
 					}
-					case 8:
-					{
+					case 8: {
 						return "30232-20.html";
 					}
-					case 9:
-					{
+					case 9: {
 						return "30232-21.html";
 					}
-					case 10:
-					{
+					case 10: {
 						qs.setCond(6);
 						qs.showQuestionMark(336);
 						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30232-22.html";
 					}
-					case 11:
-					{
+					case 11: {
 						qs.setCond(5);
 						qs.showQuestionMark(336);
 						qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 						return "30232-23.html";
 					}
-					case 20:
-					{
-						if (qs.hasQuestItems(Q_BERETHS_BLOOD_DRAGON) && qs.hasQuestItems(Q_SILVER_DRAGON) && (qs.getQuestItemsCount(Q_GOLD_WYRM) >= 13))
-						{
+					case 20: {
+						if (qs.hasQuestItems(Q_BERETHS_BLOOD_DRAGON) && qs.hasQuestItems(Q_SILVER_DRAGON) && (qs.getQuestItemsCount(Q_GOLD_WYRM) >= 13)) {
 							qs.takeItems(Q_BERETHS_BLOOD_DRAGON, 1);
 							qs.takeItems(Q_SILVER_DRAGON, 1);
 							qs.takeItems(Q_GOLD_WYRM, 13);
@@ -928,10 +753,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 						}
 						return "30232-24.html";
 					}
-					case 21:
-					{
-						if (qs.hasQuestItems(Q_BERETHS_GOLD_DRAGON) && qs.hasQuestItems(Q_BLOOD_DRAGON) && qs.hasQuestItems(Q_SILVER_DRYAD) && qs.hasQuestItems(Q_GOLD_GIANT))
-						{
+					case 21: {
+						if (qs.hasQuestItems(Q_BERETHS_GOLD_DRAGON) && qs.hasQuestItems(Q_BLOOD_DRAGON) && qs.hasQuestItems(Q_SILVER_DRYAD) && qs.hasQuestItems(Q_GOLD_GIANT)) {
 							qs.takeItems(Q_BERETHS_GOLD_DRAGON, 1);
 							qs.takeItems(Q_BLOOD_DRAGON, 1);
 							qs.takeItems(Q_SILVER_DRYAD, 1);
@@ -942,10 +765,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 						}
 						return "30232-24.html";
 					}
-					case 22:
-					{
-						if (qs.hasQuestItems(Q_BERETHS_SILVER_DRAGON) && qs.hasQuestItems(Q_GOLD_DRAGON) && qs.hasQuestItems(Q_BLOOD_SUCCUBUS) && (qs.getQuestItemsCount(Q_BLOOD_BASILISK) >= 2))
-						{
+					case 22: {
+						if (qs.hasQuestItems(Q_BERETHS_SILVER_DRAGON) && qs.hasQuestItems(Q_GOLD_DRAGON) && qs.hasQuestItems(Q_BLOOD_SUCCUBUS) && (qs.getQuestItemsCount(Q_BLOOD_BASILISK) >= 2)) {
 							qs.takeItems(Q_BERETHS_SILVER_DRAGON, 1);
 							qs.takeItems(Q_GOLD_DRAGON, 1);
 							qs.takeItems(Q_BLOOD_SUCCUBUS, 1);
@@ -956,10 +777,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 						}
 						return "30232-24.html";
 					}
-					case 23:
-					{
-						if (qs.hasQuestItems(Q_GOLD_DRAGON) && qs.hasQuestItems(Q_SILVER_DRAGON) && qs.hasQuestItems(Q_BLOOD_DRAGON) && qs.hasQuestItems(Q_SILVER_UNDINE))
-						{
+					case 23: {
+						if (qs.hasQuestItems(Q_GOLD_DRAGON) && qs.hasQuestItems(Q_SILVER_DRAGON) && qs.hasQuestItems(Q_BLOOD_DRAGON) && qs.hasQuestItems(Q_SILVER_UNDINE)) {
 							qs.takeItems(Q_GOLD_DRAGON, 1);
 							qs.takeItems(Q_SILVER_DRAGON, 1);
 							qs.takeItems(Q_BLOOD_DRAGON, 1);
@@ -970,10 +789,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 						}
 						return "30232-24.html";
 					}
-					case 24:
-					{
-						if (qs.hasQuestItems(Q_MANAKS_GOLD_GIANT))
-						{
+					case 24: {
+						if (qs.hasQuestItems(Q_MANAKS_GOLD_GIANT)) {
 							qs.takeItems(Q_MANAKS_GOLD_GIANT, 1);
 							qs.giveItems(DEMONS_BOOTS, 1);
 							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
@@ -981,10 +798,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 						}
 						return "30232-24.html";
 					}
-					case 25:
-					{
-						if (qs.hasQuestItems(Q_MANAKS_SILVER_DRYAD) && qs.hasQuestItems(Q_SILVER_DRYAD))
-						{
+					case 25: {
+						if (qs.hasQuestItems(Q_MANAKS_SILVER_DRYAD) && qs.hasQuestItems(Q_SILVER_DRYAD)) {
 							qs.takeItems(Q_MANAKS_SILVER_DRYAD, 1);
 							qs.takeItems(Q_SILVER_DRYAD, 1);
 							qs.giveItems(DEMONS_HOSE, 1);
@@ -993,10 +808,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 						}
 						return "30232-24.html";
 					}
-					case 26:
-					{
-						if (qs.hasQuestItems(Q_MANAKS_GOLD_GIANT))
-						{
+					case 26: {
+						if (qs.hasQuestItems(Q_MANAKS_GOLD_GIANT)) {
 							qs.takeItems(Q_MANAKS_GOLD_GIANT, 1);
 							qs.giveItems(DEMONS_GLOVES, 1);
 							qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
@@ -1004,10 +817,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 						}
 						return "30232-24.html";
 					}
-					case 27:
-					{
-						if (qs.hasQuestItems(Q_MANAKS_BLOOD_WEREWOLF) && qs.hasQuestItems(Q_GOLD_GIANT) && qs.hasQuestItems(Q_GOLD_WYRM))
-						{
+					case 27: {
+						if (qs.hasQuestItems(Q_MANAKS_BLOOD_WEREWOLF) && qs.hasQuestItems(Q_GOLD_GIANT) && qs.hasQuestItems(Q_GOLD_WYRM)) {
 							qs.takeItems(Q_MANAKS_BLOOD_WEREWOLF, 1);
 							qs.takeItems(Q_GOLD_GIANT, 1);
 							qs.takeItems(Q_GOLD_WYRM, 1);
@@ -1017,10 +828,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 						}
 						return "30232-24.html";
 					}
-					case 28:
-					{
-						if ((qs.getQuestItemsCount(Q_NIAS_BLOOD_MEDUSA) >= 2) && (qs.getQuestItemsCount(Q_GOLD_DRAKE) >= 2) && (qs.getQuestItemsCount(Q_BLOOD_DREVANUL) >= 2) && (qs.getQuestItemsCount(Q_GOLD_KNIGHT) >= 3))
-						{
+					case 28: {
+						if ((qs.getQuestItemsCount(Q_NIAS_BLOOD_MEDUSA) >= 2) && (qs.getQuestItemsCount(Q_GOLD_DRAKE) >= 2) && (qs.getQuestItemsCount(Q_BLOOD_DREVANUL) >= 2) && (qs.getQuestItemsCount(Q_GOLD_KNIGHT) >= 3)) {
 							qs.takeItems(Q_NIAS_BLOOD_MEDUSA, 2);
 							qs.takeItems(Q_GOLD_DRAKE, 2);
 							qs.takeItems(Q_BLOOD_DREVANUL, 2);
@@ -1031,10 +840,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 						}
 						return "30232-24.html";
 					}
-					case 29:
-					{
-						if ((qs.getQuestItemsCount(Q_NIAS_BLOOD_MEDUSA) >= 7) && (qs.getQuestItemsCount(Q_GOLD_KNIGHT) >= 5) && (qs.getQuestItemsCount(Q_BLOOD_DREVANUL) >= 5) && (qs.getQuestItemsCount(Q_SILVER_GOLEM) >= 5))
-						{
+					case 29: {
+						if ((qs.getQuestItemsCount(Q_NIAS_BLOOD_MEDUSA) >= 7) && (qs.getQuestItemsCount(Q_GOLD_KNIGHT) >= 5) && (qs.getQuestItemsCount(Q_BLOOD_DREVANUL) >= 5) && (qs.getQuestItemsCount(Q_SILVER_GOLEM) >= 5)) {
 							qs.takeItems(Q_NIAS_BLOOD_MEDUSA, 7);
 							qs.takeItems(Q_GOLD_KNIGHT, 5);
 							qs.takeItems(Q_BLOOD_DREVANUL, 5);
@@ -1045,10 +852,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 						}
 						return "30232-24.html";
 					}
-					case 30:
-					{
-						if ((qs.getQuestItemsCount(Q_NIAS_GOLD_WYVERN) >= 5) && (qs.getQuestItemsCount(Q_SILVER_GOLEM) >= 4) && (qs.getQuestItemsCount(Q_GOLD_DRAKE) >= 4) && (qs.getQuestItemsCount(Q_BLOOD_DREVANUL) >= 4))
-						{
+					case 30: {
+						if ((qs.getQuestItemsCount(Q_NIAS_GOLD_WYVERN) >= 5) && (qs.getQuestItemsCount(Q_SILVER_GOLEM) >= 4) && (qs.getQuestItemsCount(Q_GOLD_DRAKE) >= 4) && (qs.getQuestItemsCount(Q_BLOOD_DREVANUL) >= 4)) {
 							qs.takeItems(Q_NIAS_GOLD_WYVERN, 5);
 							qs.takeItems(Q_SILVER_GOLEM, 4);
 							qs.takeItems(Q_GOLD_DRAKE, 4);
@@ -1059,10 +864,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 						}
 						return "30232-24.html";
 					}
-					case 31:
-					{
-						if ((qs.getQuestItemsCount(Q_NIAS_SILVER_FAIRY) >= 5) && (qs.getQuestItemsCount(Q_SILVER_FAIRY) >= 3) && (qs.getQuestItemsCount(Q_GOLD_KNIGHT) >= 3) && (qs.getQuestItemsCount(Q_BLOOD_DREVANUL) >= 3))
-						{
+					case 31: {
+						if ((qs.getQuestItemsCount(Q_NIAS_SILVER_FAIRY) >= 5) && (qs.getQuestItemsCount(Q_SILVER_FAIRY) >= 3) && (qs.getQuestItemsCount(Q_GOLD_KNIGHT) >= 3) && (qs.getQuestItemsCount(Q_BLOOD_DREVANUL) >= 3)) {
 							qs.takeItems(Q_NIAS_SILVER_FAIRY, 5);
 							qs.takeItems(Q_SILVER_FAIRY, 3);
 							qs.takeItems(Q_GOLD_KNIGHT, 3);
@@ -1073,8 +876,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 						}
 						return "30232-24.html";
 					}
-					case 100:
-					{
+					case 100: {
 						qs.takeItems(Q_CC_MEMBERSHIP_1, -1);
 						qs.takeItems(Q_CC_MEMBERSHIP_2, -1);
 						qs.takeItems(Q_CC_MEMBERSHIP_3, -1);
@@ -1090,19 +892,14 @@ public final class Q00336_CoinsOfMagic extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case HARIT_LIZARDMAN_SHAMAN:
-			case HARIT_LIZARDM_MATRIARCH:
-			{
+			case HARIT_LIZARDM_MATRIARCH: {
 				QuestState qs = getRandomPlayerFromPartyCoin(killer, npc, 2);
-				if (qs != null)
-				{
-					if (getRandom(1000) < 63)
-					{
+				if (qs != null) {
+					if (getRandom(1000) < 63) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_KALDIS_GOLD_DRAGON, 1, 0, 1, true);
 						qs.setCond(3);
 						qs.showQuestionMark(336);
@@ -1112,32 +909,24 @@ public final class Q00336_CoinsOfMagic extends Quest
 			}
 		}
 		final QuestState qs = getRandomPlayerFromParty(killer, npc, 3);
-		if (qs != null)
-		{
-			switch (npc.getId())
-			{
+		if (qs != null) {
+			switch (npc.getId()) {
 				case SHACKLE:
-				case SHACKLE_HOLD:
-				{
-					if (getRandom(1000) < 70)
-					{
+				case SHACKLE_HOLD: {
+					if (getRandom(1000) < 70) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_GOLD_WYVERN, 1, 0, 1, true);
 					}
 					break;
 				}
 				case HEADLESS_KNIGHT:
-				case TIMAK_ORC:
-				{
-					if (getRandom(1000) < 80)
-					{
+				case TIMAK_ORC: {
+					if (getRandom(1000) < 80) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_GOLD_WYVERN, 1, 0, 1, true);
 					}
 					break;
 				}
-				case HEADLESS_KNIGHT_HOLD:
-				{
-					if (getRandom(1000) < 85)
-					{
+				case HEADLESS_KNIGHT_HOLD: {
+					if (getRandom(1000) < 85) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_GOLD_WYVERN, 1, 0, 1, true);
 					}
 					break;
@@ -1149,10 +938,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 				case ANTELOPE:
 				case ANTELOPE_A:
 				case ANTELOPE_B:
-				case H_MALRUK_SUCCUBUS_TUREN:
-				{
-					if (getRandom(1000) < 100)
-					{
+				case H_MALRUK_SUCCUBUS_TUREN: {
+					if (getRandom(1000) < 100) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_GOLD_WYVERN, 1, 0, 1, true);
 					}
 					break;
@@ -1161,170 +948,130 @@ public final class Q00336_CoinsOfMagic extends Quest
 				case BUFFALO_A:
 				case BUFFALO_B:
 				case KUKABURO:
-				case KUKABURO_A:
-				{
-					if (getRandom(1000) < 110)
-					{
+				case KUKABURO_A: {
+					if (getRandom(1000) < 110) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_GOLD_WYVERN, 1, 0, 1, true);
 					}
 					break;
 				}
-				case DOOM_SERVANT:
-				{
-					if (getRandom(1000) < 140)
-					{
+				case DOOM_SERVANT: {
+					if (getRandom(1000) < 140) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_GOLD_WYVERN, 1, 0, 1, true);
 					}
 					break;
 				}
-				case DOOM_KNIGHT:
-				{
-					if (getRandom(1000) < 210)
-					{
+				case DOOM_KNIGHT: {
+					if (getRandom(1000) < 210) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_GOLD_WYVERN, 1, 0, 1, true);
 					}
 					break;
 				}
-				case VANOR_SILENOS_SHAMAN:
-				{
-					if (getRandom(1000) < 70)
-					{
+				case VANOR_SILENOS_SHAMAN: {
+					if (getRandom(1000) < 70) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_SILVER_UNICORN, 1, 0, 1, true);
 					}
 					break;
 				}
 				case BLOODY_GHOST:
 				case TARLK_BUGBEAR_BOSS:
-				case OEL_MAHUM:
-				{
-					if (getRandom(1000) < 80)
-					{
+				case OEL_MAHUM: {
+					if (getRandom(1000) < 80) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_SILVER_UNICORN, 1, 0, 1, true);
 					}
 					break;
 				}
-				case OEL_MAHUM_WARRIOR:
-				{
-					if (getRandom(1000) < 90)
-					{
+				case OEL_MAHUM_WARRIOR: {
+					if (getRandom(1000) < 90) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_SILVER_UNICORN, 1, 0, 1, true);
 					}
 					break;
 				}
-				case HUNGRY_CORPSE:
-				{
-					if (getRandom(1000) < 100)
-					{
+				case HUNGRY_CORPSE: {
+					if (getRandom(1000) < 100) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_SILVER_UNICORN, 1, 0, 1, true);
 					}
 					break;
 				}
-				case BYFOOT:
-				{
-					if (getRandom(1000) < 110)
-					{
+				case BYFOOT: {
+					if (getRandom(1000) < 110) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_SILVER_UNICORN, 1, 0, 1, true);
 					}
 					break;
 				}
-				case BYFOOT_SIGEL:
-				{
-					if (getRandom(1000) < 120)
-					{
+				case BYFOOT_SIGEL: {
+					if (getRandom(1000) < 120) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_SILVER_UNICORN, 1, 0, 1, true);
 					}
 					break;
 				}
 				case DARK_GUARD:
 				case BRILLIANT_CLAW:
-				case BRILLIANT_CLAW_1:
-				{
-					if (getRandom(1000) < 150)
-					{
+				case BRILLIANT_CLAW_1: {
+					if (getRandom(1000) < 150) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_SILVER_UNICORN, 1, 0, 1, true);
 					}
 					break;
 				}
-				case OEL_MAHUM_WITCH_DOCTOR:
-				{
-					if (getRandom(1000) < 200)
-					{
+				case OEL_MAHUM_WITCH_DOCTOR: {
+					if (getRandom(1000) < 200) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_SILVER_UNICORN, 1, 0, 1, true);
 					}
 					break;
 				}
 				case BRILLIANT_ANGUISH:
-				case BRILLIANT_ANGUISH_1:
-				{
-					if (getRandom(1000) < 210)
-					{
+				case BRILLIANT_ANGUISH_1: {
+					if (getRandom(1000) < 210) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_SILVER_UNICORN, 1, 0, 1, true);
 					}
 					break;
 				}
-				case LAKIN:
-				{
-					if (getRandom(1000) < 60)
-					{
+				case LAKIN: {
+					if (getRandom(1000) < 60) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_BLOOD_MEDUSA, 1, 0, 1, true);
 					}
 					break;
 				}
-				case HATAR_HANISHEE:
-				{
-					if (getRandom(1000) < 70)
-					{
+				case HATAR_HANISHEE: {
+					if (getRandom(1000) < 70) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_BLOOD_MEDUSA, 1, 0, 1, true);
 					}
 					break;
 				}
-				case PUNISHMENT_OF_UNDEAD:
-				{
-					if (getRandom(1000) < 80)
-					{
+				case PUNISHMENT_OF_UNDEAD: {
+					if (getRandom(1000) < 80) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_BLOOD_MEDUSA, 1, 0, 1, true);
 					}
 					break;
 				}
 				case FLOAT_OF_GRAVE:
 				case BANDERSNATCH_A:
-				case BANDERSNATCH_B:
-				{
-					if (getRandom(1000) < 90)
-					{
+				case BANDERSNATCH_B: {
+					if (getRandom(1000) < 90) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_BLOOD_MEDUSA, 1, 0, 1, true);
 					}
 					break;
 				}
-				case BANDERSNATCH:
-				{
-					if (getRandom(1000) < 100)
-					{
+				case BANDERSNATCH: {
+					if (getRandom(1000) < 100) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_BLOOD_MEDUSA, 1, 0, 1, true);
 					}
 					break;
 				}
-				case NIHIL_INVADER:
-				{
-					if (getRandom(1000) < 110)
-					{
+				case NIHIL_INVADER: {
+					if (getRandom(1000) < 110) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_BLOOD_MEDUSA, 1, 0, 1, true);
 					}
 					break;
 				}
-				case TIMAK_ORC_SHAMAN:
-				{
-					if (getRandom(1000) < 130)
-					{
+				case TIMAK_ORC_SHAMAN: {
+					if (getRandom(1000) < 130) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_BLOOD_MEDUSA, 1, 0, 1, true);
 					}
 					break;
 				}
 				case TIMAK_ORC_ARCHER:
-				case TIMAK_ORC_SOLDIER:
-				{
-					if (getRandom(1000) < 140)
-					{
+				case TIMAK_ORC_SOLDIER: {
+					if (getRandom(1000) < 140) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_BLOOD_MEDUSA, 1, 0, 1, true);
 					}
 					break;
@@ -1332,10 +1079,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 				case DOOM_ARCHER:
 				case BRILLIANT_WISDOM:
 				case BRILLIANT_VENGEANCE:
-				case BRILLIANT_VENGEANCE_1:
-				{
-					if (getRandom(1000) < 160)
-					{
+				case BRILLIANT_VENGEANCE_1: {
+					if (getRandom(1000) < 160) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_BLOOD_MEDUSA, 1, 0, 1, true);
 					}
 					break;
@@ -1349,8 +1094,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 	/**
 	 * @param qs
 	 */
-	private void resetParams(QuestState qs)
-	{
+	private void resetParams(QuestState qs) {
 		qs.set(WEIGHT_POINT, 0);
 		qs.set(PARAM_1, 0);
 		qs.set(PARAM_2, 0);
@@ -1371,18 +1115,13 @@ public final class Q00336_CoinsOfMagic extends Quest
 	 * @param ITEM_4
 	 * @return
 	 */
-	private String shortFirstSteps(QuestState qs, int npcId, int weightPoint, int base, int ITEM_1_1, int ITEM_1_2, int ITEM_1_MUL, int ITEM_2, int ITEM_3, int ITEM_4)
-	{
-		switch (qs.getInt(PARAM_2))
-		{
-			case 42:
-			{
-				if ((qs.getQuestItemsCount(ITEM_1_1) >= (base * ITEM_1_MUL)) && ((ITEM_1_2 == 0) || (qs.getQuestItemsCount(ITEM_1_2) >= base)))
-				{
+	private String shortFirstSteps(QuestState qs, int npcId, int weightPoint, int base, int ITEM_1_1, int ITEM_1_2, int ITEM_1_MUL, int ITEM_2, int ITEM_3, int ITEM_4) {
+		switch (qs.getInt(PARAM_2)) {
+			case 42: {
+				if ((qs.getQuestItemsCount(ITEM_1_1) >= (base * ITEM_1_MUL)) && ((ITEM_1_2 == 0) || (qs.getQuestItemsCount(ITEM_1_2) >= base))) {
 					qs.set(FLAG, 1);
 					qs.takeItems(ITEM_1_1, base * ITEM_1_MUL);
-					if (ITEM_1_2 > 0)
-					{
+					if (ITEM_1_2 > 0) {
 						qs.takeItems(ITEM_1_2, base);
 					}
 					qs.set(WEIGHT_POINT, weightPoint);
@@ -1394,10 +1133,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 				}
 				break;
 			}
-			case 31:
-			{
-				if (qs.getQuestItemsCount(ITEM_2) >= base)
-				{
+			case 31: {
+				if (qs.getQuestItemsCount(ITEM_2) >= base) {
 					qs.set(FLAG, 1);
 					qs.takeItems(ITEM_2, base);
 					qs.set(WEIGHT_POINT, weightPoint);
@@ -1409,10 +1146,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 				}
 				break;
 			}
-			case 21:
-			{
-				if (qs.getQuestItemsCount(ITEM_3) >= base)
-				{
+			case 21: {
+				if (qs.getQuestItemsCount(ITEM_3) >= base) {
 					qs.set(FLAG, 1);
 					qs.takeItems(ITEM_3, base);
 					qs.set(WEIGHT_POINT, weightPoint);
@@ -1424,10 +1159,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 				}
 				break;
 			}
-			case 11:
-			{
-				if (qs.getQuestItemsCount(ITEM_4) >= base)
-				{
+			case 11: {
+				if (qs.getQuestItemsCount(ITEM_4) >= base) {
 					qs.set(FLAG, 1);
 					qs.takeItems(ITEM_4, base);
 					qs.set(WEIGHT_POINT, weightPoint);
@@ -1458,14 +1191,10 @@ public final class Q00336_CoinsOfMagic extends Quest
 	 * @param REWARD_4
 	 * @return
 	 */
-	private String shortSecondStepOneItem(QuestState qs, int npcId, int mul, int ITEM_1, int ITEM_1_MUL, int REWARD_1, int ITEM_2, int REWARD_2, int ITEM_3, int REWARD_3, int ITEM_4, int REWARD_4)
-	{
-		switch (qs.getInt(PARAM_2))
-		{
-			case 42:
-			{
-				if ((qs.getQuestItemsCount(ITEM_1) >= (10 * mul * ITEM_1_MUL)))
-				{
+	private String shortSecondStepOneItem(QuestState qs, int npcId, int mul, int ITEM_1, int ITEM_1_MUL, int REWARD_1, int ITEM_2, int REWARD_2, int ITEM_3, int REWARD_3, int ITEM_4, int REWARD_4) {
+		switch (qs.getInt(PARAM_2)) {
+			case 42: {
+				if ((qs.getQuestItemsCount(ITEM_1) >= (10 * mul * ITEM_1_MUL))) {
 					qs.takeItems(ITEM_1, 10 * mul * ITEM_1_MUL);
 					qs.giveItems(REWARD_1, 1 * mul);
 					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
@@ -1473,10 +1202,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 				}
 				break;
 			}
-			case 31:
-			{
-				if (qs.getQuestItemsCount(ITEM_2) >= (5 * mul))
-				{
+			case 31: {
+				if (qs.getQuestItemsCount(ITEM_2) >= (5 * mul)) {
 					qs.takeItems(ITEM_2, 5 * mul);
 					qs.giveItems(REWARD_2, 1 * mul);
 					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
@@ -1484,10 +1211,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 				}
 				break;
 			}
-			case 21:
-			{
-				if (qs.getQuestItemsCount(ITEM_3) >= (5 * mul))
-				{
+			case 21: {
+				if (qs.getQuestItemsCount(ITEM_3) >= (5 * mul)) {
 					qs.takeItems(ITEM_3, 5 * mul);
 					qs.giveItems(REWARD_3, 1 * mul);
 					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
@@ -1495,10 +1220,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 				}
 				break;
 			}
-			case 11:
-			{
-				if (qs.getQuestItemsCount(ITEM_4) >= (5 * mul))
-				{
+			case 11: {
+				if (qs.getQuestItemsCount(ITEM_4) >= (5 * mul)) {
 					qs.takeItems(ITEM_4, 5 * mul);
 					qs.giveItems(REWARD_4, 1 * mul);
 					qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
@@ -1528,14 +1251,10 @@ public final class Q00336_CoinsOfMagic extends Quest
 	 * @param REWARD_4
 	 * @return
 	 */
-	private String shortSecondStepTwoItems(QuestState qs, int npcId, int mul, int ITEM_1_1, int ITEM_1_2, int REWARD_1, int ITEM_2_1, int ITEM_2_2, int REWARD_2, int ITEM_3_1, int ITEM_3_2, int REWARD_3, int ITEM_4_1, int ITEM_4_2, int REWARD_4)
-	{
-		switch (qs.getInt(PARAM_2))
-		{
-			case 42:
-			{
-				if ((qs.getQuestItemsCount(ITEM_1_1) >= (10 * mul)) && (qs.getQuestItemsCount(ITEM_1_2) >= (10 * mul)))
-				{
+	private String shortSecondStepTwoItems(QuestState qs, int npcId, int mul, int ITEM_1_1, int ITEM_1_2, int REWARD_1, int ITEM_2_1, int ITEM_2_2, int REWARD_2, int ITEM_3_1, int ITEM_3_2, int REWARD_3, int ITEM_4_1, int ITEM_4_2, int REWARD_4) {
+		switch (qs.getInt(PARAM_2)) {
+			case 42: {
+				if ((qs.getQuestItemsCount(ITEM_1_1) >= (10 * mul)) && (qs.getQuestItemsCount(ITEM_1_2) >= (10 * mul))) {
 					qs.takeItems(ITEM_1_1, 10 * mul);
 					qs.takeItems(ITEM_1_2, 10 * mul);
 					qs.giveItems(REWARD_1, 1 * mul);
@@ -1544,10 +1263,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 				}
 				break;
 			}
-			case 31:
-			{
-				if ((qs.getQuestItemsCount(ITEM_2_1) >= (5 * mul)) && (qs.getQuestItemsCount(ITEM_2_2) >= (5 * mul)))
-				{
+			case 31: {
+				if ((qs.getQuestItemsCount(ITEM_2_1) >= (5 * mul)) && (qs.getQuestItemsCount(ITEM_2_2) >= (5 * mul))) {
 					qs.takeItems(ITEM_2_1, 5 * mul);
 					qs.takeItems(ITEM_2_2, 5 * mul);
 					qs.giveItems(REWARD_2, 1 * mul);
@@ -1556,10 +1273,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 				}
 				break;
 			}
-			case 21:
-			{
-				if ((qs.getQuestItemsCount(ITEM_3_1) >= (5 * mul)) && (qs.getQuestItemsCount(ITEM_3_2) >= (5 * mul)))
-				{
+			case 21: {
+				if ((qs.getQuestItemsCount(ITEM_3_1) >= (5 * mul)) && (qs.getQuestItemsCount(ITEM_3_2) >= (5 * mul))) {
 					qs.takeItems(ITEM_3_1, 5 * mul);
 					qs.takeItems(ITEM_3_2, 5 * mul);
 					qs.giveItems(REWARD_3, 1 * mul);
@@ -1568,10 +1283,8 @@ public final class Q00336_CoinsOfMagic extends Quest
 				}
 				break;
 			}
-			case 11:
-			{
-				if ((qs.getQuestItemsCount(ITEM_4_1) >= (5 * mul)) && (qs.getQuestItemsCount(ITEM_4_2) >= (5 * mul)))
-				{
+			case 11: {
+				if ((qs.getQuestItemsCount(ITEM_4_1) >= (5 * mul)) && (qs.getQuestItemsCount(ITEM_4_2) >= (5 * mul))) {
 					qs.takeItems(ITEM_4_1, 5 * mul);
 					qs.takeItems(ITEM_4_2, 5 * mul);
 					qs.giveItems(REWARD_4, 1 * mul);
@@ -1594,156 +1307,117 @@ public final class Q00336_CoinsOfMagic extends Quest
 	 * @param ITEM_4
 	 * @return
 	 */
-	private String shortThirdStep(QuestState qs, int npcId, int flag, int ITEM_1, int ITEM_2, int ITEM_3, int ITEM_4)
-	{
+	private String shortThirdStep(QuestState qs, int npcId, int flag, int ITEM_1, int ITEM_2, int ITEM_3, int ITEM_4) {
 		qs.set(PARAM_3, 0);
 		qs.set(FLAG, qs.getInt(FLAG) + flag);
-		if ((qs.getInt(PARAM_1) == qs.getInt(FLAG)) && (qs.getInt(WEIGHT_POINT) >= 0))
-		{
+		if ((qs.getInt(PARAM_1) == qs.getInt(FLAG)) && (qs.getInt(WEIGHT_POINT) >= 0)) {
 			qs.set(WEIGHT_POINT, 0);
-			switch (qs.getInt(PARAM_2))
-			{
-				case 42:
-				{
+			switch (qs.getInt(PARAM_2)) {
+				case 42: {
 					qs.giveItems(ITEM_1, 1);
 					break;
 				}
-				case 31:
-				{
+				case 31: {
 					qs.giveItems(ITEM_2, 1);
 					break;
 				}
-				case 21:
-				{
+				case 21: {
 					qs.giveItems(ITEM_3, 1);
 					break;
 				}
-				case 11:
-				{
+				case 11: {
 					qs.giveItems(ITEM_4, 1);
 					break;
 				}
 			}
 			qs.set(PARAM_1, 0);
 			return npcId + "-20.html";
-		}
-		else if (qs.getInt(WEIGHT_POINT) == 0)
-		{
-			switch (qs.getInt(PARAM_1))
-			{
-				case 21:
-				{
+		} else if (qs.getInt(WEIGHT_POINT) == 0) {
+			switch (qs.getInt(PARAM_1)) {
+				case 21: {
 					return npcId + "-23.html";
 				}
-				case 25:
-				{
+				case 25: {
 					return npcId + "-24.html";
 				}
-				case 37:
-				{
+				case 37: {
 					return npcId + "-25.html";
 				}
-				case 41:
-				{
+				case 41: {
 					return npcId + "-26.html";
 				}
-				case 61:
-				{
+				case 61: {
 					return npcId + "-27.html";
 				}
-				case 29:
-				{
+				case 29: {
 					return npcId + "-28.html";
 				}
-				case 45:
-				{
+				case 45: {
 					return npcId + "-29.html";
 				}
-				case 53:
-				{
+				case 53: {
 					return npcId + "-30.html";
 				}
-				case 57:
-				{
+				case 57: {
 					return npcId + "-31.html";
 				}
-				case 22:
-				{
+				case 22: {
 					return npcId + "-32.html";
 				}
-				case 26:
-				{
+				case 26: {
 					return npcId + "-33.html";
 				}
-				case 38:
-				{
+				case 38: {
 					return npcId + "-34.html";
 				}
-				case 42:
-				{
+				case 42: {
 					return npcId + "-35.html";
 				}
-				case 62:
-				{
+				case 62: {
 					return npcId + "-36.html";
 				}
-				case 30:
-				{
+				case 30: {
 					return npcId + "-37.html";
 				}
-				case 46:
-				{
+				case 46: {
 					return npcId + "-38.html";
 				}
-				case 54:
-				{
+				case 54: {
 					return npcId + "-39.html";
 				}
-				case 58:
-				{
+				case 58: {
 					return npcId + "-40.html";
 				}
-				case 23:
-				{
+				case 23: {
 					return npcId + "-41.html";
 				}
-				case 27:
-				{
+				case 27: {
 					return npcId + "-42.html";
 				}
-				case 39:
-				{
+				case 39: {
 					return npcId + "-43.html";
 				}
-				case 43:
-				{
+				case 43: {
 					return npcId + "-44.html";
 				}
-				case 63:
-				{
+				case 63: {
 					return npcId + "-45.html";
 				}
-				case 31:
-				{
+				case 31: {
 					return npcId + "-46.html";
 				}
-				case 47:
-				{
+				case 47: {
 					return npcId + "-47.html";
 				}
-				case 55:
-				{
+				case 55: {
 					return npcId + "-48.html";
 				}
-				case 59:
-				{
+				case 59: {
 					return npcId + "-49.html";
 				}
 			}
 			qs.set(PARAM_1, 0);
-		}
-		else
-		{
+		} else {
 			int i0 = qs.getInt(PARAM_1) % 4;
 			int i1 = qs.getInt(PARAM_1) / 4;
 			int i2 = i1 / 4;
@@ -1754,32 +1428,25 @@ public final class Q00336_CoinsOfMagic extends Quest
 			int i5 = i4 / 4;
 			i4 = i4 % 4;
 			
-			if (i0 == i3)
-			{
+			if (i0 == i3) {
 				qs.set(PARAM_3, qs.getInt(PARAM_3) + 1);
 			}
-			if (i1 == i4)
-			{
+			if (i1 == i4) {
 				qs.set(PARAM_3, qs.getInt(PARAM_3) + 1);
 			}
-			if (i2 == i5)
-			{
+			if (i2 == i5) {
 				qs.set(PARAM_3, qs.getInt(PARAM_3) + 1);
 			}
 			qs.set(FLAG, 1);
 			qs.set(WEIGHT_POINT, qs.getInt(WEIGHT_POINT) - 1);
-			switch (qs.getInt(PARAM_3))
-			{
-				case 0:
-				{
+			switch (qs.getInt(PARAM_3)) {
+				case 0: {
 					return npcId + "-52.html";
 				}
-				case 1:
-				{
+				case 1: {
 					return npcId + "-50.html";
 				}
-				case 2:
-				{
+				case 2: {
 					return npcId + "-51.html";
 				}
 			}
@@ -1787,25 +1454,20 @@ public final class Q00336_CoinsOfMagic extends Quest
 		return null;
 	}
 	
-	private QuestState getRandomPlayerFromParty(L2PcInstance player, L2Npc npc, int memoState)
-	{
+	private QuestState getRandomPlayerFromParty(L2PcInstance player, L2Npc npc, int memoState) {
 		QuestState qs = getQuestState(player, false);
 		final List<QuestState> candidates = new ArrayList<>();
 		
-		if ((qs != null) && qs.isStarted() && (qs.getMemoState() == memoState))
-		{
+		if ((qs != null) && qs.isStarted() && (qs.getMemoState() == memoState)) {
 			candidates.add(qs);
 			candidates.add(qs);
 		}
 		
-		if (player.isInParty())
-		{
-			player.getParty().getMembers().stream().forEach(pm ->
-			{
+		if (player.isInParty()) {
+			player.getParty().getMembers().stream().forEach(pm -> {
 				
 				QuestState qss = getQuestState(pm, false);
-				if ((qss != null) && qss.isStarted() && (qss.getMemoState() == memoState) && Util.checkIfInRange(1500, npc, pm, true))
-				{
+				if ((qss != null) && qss.isStarted() && (qss.getMemoState() == memoState) && Util.checkIfInRange(1500, npc, pm, true)) {
 					candidates.add(qss);
 				}
 			});
@@ -1813,24 +1475,19 @@ public final class Q00336_CoinsOfMagic extends Quest
 		return candidates.isEmpty() ? null : candidates.get(getRandom(candidates.size()));
 	}
 	
-	private QuestState getRandomPlayerFromPartyCoin(L2PcInstance player, L2Npc npc, int memoState)
-	{
+	private QuestState getRandomPlayerFromPartyCoin(L2PcInstance player, L2Npc npc, int memoState) {
 		QuestState qs = getQuestState(player, false);
 		final List<QuestState> candidates = new ArrayList<>();
-		if ((qs != null) && qs.isStarted() && (qs.getMemoState() == memoState) && !qs.hasQuestItems(Q_KALDIS_GOLD_DRAGON))
-		{
+		if ((qs != null) && qs.isStarted() && (qs.getMemoState() == memoState) && !qs.hasQuestItems(Q_KALDIS_GOLD_DRAGON)) {
 			candidates.add(qs);
 			candidates.add(qs);
 		}
 		
-		if (player.isInParty())
-		{
-			player.getParty().getMembers().stream().forEach(pm ->
-			{
+		if (player.isInParty()) {
+			player.getParty().getMembers().stream().forEach(pm -> {
 				
 				QuestState qss = getQuestState(pm, false);
-				if ((qss != null) && qss.isStarted() && (qss.getMemoState() == memoState) && !qss.hasQuestItems(Q_KALDIS_GOLD_DRAGON) && Util.checkIfInRange(1500, npc, pm, true))
-				{
+				if ((qss != null) && qss.isStarted() && (qss.getMemoState() == memoState) && !qss.hasQuestItems(Q_KALDIS_GOLD_DRAGON) && Util.checkIfInRange(1500, npc, pm, true)) {
 					candidates.add(qss);
 				}
 			});

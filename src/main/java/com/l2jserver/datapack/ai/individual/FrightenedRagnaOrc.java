@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Frightened Ragna Orc AI.
  * @author Gladicek, malyelfik
  */
-public final class FrightenedRagnaOrc extends AbstractNpcAI
-{
+public final class FrightenedRagnaOrc extends AbstractNpcAI {
 	// NPC ID
 	private static final int MOB_ID = 18807;
 	// Chances
@@ -45,23 +44,18 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 	// Skill
 	private static final SkillHolder SKILL = new SkillHolder(6234);
 	
-	private FrightenedRagnaOrc()
-	{
+	private FrightenedRagnaOrc() {
 		super(FrightenedRagnaOrc.class.getSimpleName(), "ai/individual");
 		addAttackId(MOB_ID);
 		addKillId(MOB_ID);
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if (npc.isScriptValue(0))
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if (npc.isScriptValue(0)) {
 			npc.setScriptValue(1);
 			startQuestTimer("say", (getRandom(5) + 3) * 1000, npc, null, true);
-		}
-		else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.2)) && npc.isScriptValue(1))
-		{
+		} else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.2)) && npc.isScriptValue(1)) {
 			startQuestTimer("reward", 10000, npc, attacker);
 			broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.WAIT_WAIT_STOP_SAVE_ME_AND_ILL_GIVE_YOU_10000000_ADENA);
 			npc.setScriptValue(2);
@@ -70,8 +64,7 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final NpcStringId msg = getRandomBoolean() ? NpcStringId.UGH_A_CURSE_UPON_YOU : NpcStringId.I_REALLY_DIDNT_WANT_TO_FIGHT;
 		broadcastNpcSay(npc, Say2.NPC_ALL, msg);
 		cancelQuestTimer("say", npc, null);
@@ -80,14 +73,10 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "say":
-			{
-				if (npc.isDead() || !npc.isScriptValue(1))
-				{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "say": {
+				if (npc.isDead() || !npc.isScriptValue(1)) {
 					cancelQuestTimer("say", npc, null);
 					return null;
 				}
@@ -95,34 +84,25 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 				broadcastNpcSay(npc, Say2.NPC_ALL, msg);
 				break;
 			}
-			case "reward":
-			{
-				if (!npc.isDead() && npc.isScriptValue(2))
-				{
-					if (getRandom(100000) < CHANCE2)
-					{
+			case "reward": {
+				if (!npc.isDead() && npc.isScriptValue(2)) {
+					if (getRandom(100000) < CHANCE2) {
 						final NpcStringId msg = getRandomBoolean() ? NpcStringId.TH_THANKS_I_COULD_HAVE_BECOME_GOOD_FRIENDS_WITH_YOU : NpcStringId.ILL_GIVE_YOU_10000000_ADENA_LIKE_I_PROMISED_I_MIGHT_BE_AN_ORC_WHO_KEEPS_MY_PROMISES;
 						broadcastNpcSay(npc, Say2.NPC_ALL, msg);
 						npc.setScriptValue(3);
 						npc.doCast(SKILL);
-						for (int i = 0; i < 10; i++)
-						{
+						for (int i = 0; i < 10; i++) {
 							npc.dropItem(player, Inventory.ADENA_ID, ADENA2);
 						}
-					}
-					else if (getRandom(100000) < CHANCE)
-					{
+					} else if (getRandom(100000) < CHANCE) {
 						final NpcStringId msg = getRandomBoolean() ? NpcStringId.TH_THANKS_I_COULD_HAVE_BECOME_GOOD_FRIENDS_WITH_YOU : NpcStringId.SORRY_BUT_THIS_IS_ALL_I_HAVE_GIVE_ME_A_BREAK;
 						broadcastNpcSay(npc, Say2.NPC_ALL, msg);
 						npc.setScriptValue(3);
 						npc.doCast(SKILL);
-						for (int i = 0; i < 10; i++)
-						{
+						for (int i = 0; i < 10; i++) {
 							((L2Attackable) npc).dropItem(player, Inventory.ADENA_ID, ADENA);
 						}
-					}
-					else
-					{
+					} else {
 						final NpcStringId msg = getRandomBoolean() ? NpcStringId.THANKS_BUT_THAT_THING_ABOUT_10000000_ADENA_WAS_A_LIE_SEE_YA : NpcStringId.YOURE_PRETTY_DUMB_TO_BELIEVE_ME;
 						broadcastNpcSay(npc, Say2.NPC_ALL, msg);
 					}
@@ -130,8 +110,7 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 				}
 				break;
 			}
-			case "despawn":
-			{
+			case "despawn": {
 				npc.setRunning();
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location((npc.getX() + getRandom(-800, 800)), (npc.getY() + getRandom(-800, 800)), npc.getZ(), npc.getHeading()));
 				npc.deleteMe();
@@ -141,8 +120,7 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 		return null;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new FrightenedRagnaOrc();
 	}
 }

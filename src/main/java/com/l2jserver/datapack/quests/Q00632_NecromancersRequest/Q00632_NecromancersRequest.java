@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Necromancer's Request (632)
  * @author Zoey76
  */
-public final class Q00632_NecromancersRequest extends Quest
-{
+public final class Q00632_NecromancersRequest extends Quest {
 	// NPC
 	private static final int MYSTERIOUS_WIZARD = 31522;
 	// Items
@@ -44,8 +43,7 @@ public final class Q00632_NecromancersRequest extends Quest
 	// Monsters
 	private static final Map<Integer, Double> BRAIN_MONSTERS = new HashMap<>();
 	private static final Map<Integer, Double> HEART_MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		BRAIN_MONSTERS.put(21547, 0.565); // Corrupted Knight
 		BRAIN_MONSTERS.put(21548, 0.484); // Resurrected Knight
 		BRAIN_MONSTERS.put(21549, 0.585); // Corrupted Guard
@@ -77,8 +75,7 @@ public final class Q00632_NecromancersRequest extends Quest
 		HEART_MONSTERS.put(21595, 0.392); // Vampire Warlord
 	}
 	
-	public Q00632_NecromancersRequest()
-	{
+	public Q00632_NecromancersRequest() {
 		super(632, Q00632_NecromancersRequest.class.getSimpleName(), "Necromancer's Request");
 		addStartNpc(MYSTERIOUS_WIZARD);
 		addTalkId(MYSTERIOUS_WIZARD);
@@ -88,49 +85,38 @@ public final class Q00632_NecromancersRequest extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "31522-104.htm":
-			{
-				if (player.getLevel() >= MIN_LEVEL)
-				{
+		switch (event) {
+			case "31522-104.htm": {
+				if (player.getLevel() >= MIN_LEVEL) {
 					qs.startQuest();
 					qs.setMemoState(11);
 					htmltext = event;
 				}
 				break;
 			}
-			case "31522-201.html":
-			{
+			case "31522-201.html": {
 				htmltext = event;
 				break;
 			}
-			case "31522-202.html":
-			{
-				if (getQuestItemsCount(player, VAMPIRES_HEART) >= REQUIRED_ITEM_COUNT)
-				{
+			case "31522-202.html": {
+				if (getQuestItemsCount(player, VAMPIRES_HEART) >= REQUIRED_ITEM_COUNT) {
 					takeItems(player, VAMPIRES_HEART, -1);
 					giveAdena(player, ADENA_REWARD, true);
 					qs.setMemoState(11);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "31522-203.html";
 				}
 				break;
 			}
-			case "31522-204.html":
-			{
+			case "31522-204.html": {
 				takeItems(player, VAMPIRES_HEART, -1);
 				qs.exitQuest(true, true);
 				htmltext = event;
@@ -141,21 +127,15 @@ public final class Q00632_NecromancersRequest extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(player, -1, 3, npc);
-		if (qs != null)
-		{
-			if (BRAIN_MONSTERS.containsKey(npc.getId()))
-			{
+		if (qs != null) {
+			if (BRAIN_MONSTERS.containsKey(npc.getId())) {
 				qs.giveItemRandomly(npc, ZOMBIES_BRAIN, 1, 0, BRAIN_MONSTERS.get(npc.getId()), true);
-			}
-			else
-			{
+			} else {
 				qs.giveItemRandomly(npc, VAMPIRES_HEART, 1, 0, HEART_MONSTERS.get(npc.getId()), true);
 				
-				if (getQuestItemsCount(player, VAMPIRES_HEART) >= REQUIRED_ITEM_COUNT)
-				{
+				if (getQuestItemsCount(player, VAMPIRES_HEART) >= REQUIRED_ITEM_COUNT) {
 					qs.setCond(2);
 					qs.setMemoState(12);
 				}
@@ -165,22 +145,15 @@ public final class Q00632_NecromancersRequest extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			htmltext = player.getLevel() >= MIN_LEVEL ? "31522-101.htm" : "31522-103.htm";
-		}
-		else if (qs.isStarted())
-		{
-			if (qs.isMemoState(11))
-			{
+		} else if (qs.isStarted()) {
+			if (qs.isMemoState(11)) {
 				htmltext = "31522-106.html";
-			}
-			else if (qs.isMemoState(12) && (getQuestItemsCount(player, VAMPIRES_HEART) >= REQUIRED_ITEM_COUNT))
-			{
+			} else if (qs.isMemoState(12) && (getQuestItemsCount(player, VAMPIRES_HEART) >= REQUIRED_ITEM_COUNT)) {
 				htmltext = "31522-105.html";
 			}
 		}

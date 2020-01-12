@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * More Than Meets the Eye (136)
  * @author malyelfik
  */
-public class Q00136_MoreThanMeetsTheEye extends Quest
-{
+public class Q00136_MoreThanMeetsTheEye extends Quest {
 	// NPCs
 	private static final int HARDIN = 30832;
 	private static final int ERRICKIN = 30701;
@@ -55,16 +54,14 @@ public class Q00136_MoreThanMeetsTheEye extends Quest
 	private static final int MIN_LEVEL = 50;
 	private static final int ECTOPLASM_COUNT = 35;
 	private static final int CRYSTAL_COUNT = 5;
-	private static final int[] CHANCES =
-	{
+	private static final int[] CHANCES = {
 		0,
 		40,
 		90,
 		290
 	};
 	
-	public Q00136_MoreThanMeetsTheEye()
-	{
+	public Q00136_MoreThanMeetsTheEye() {
 		super(136, Q00136_MoreThanMeetsTheEye.class.getSimpleName(), "More Than Meets the Eye");
 		addStartNpc(HARDIN);
 		addTalkId(HARDIN, ERRICKIN, CLAYTON);
@@ -73,31 +70,24 @@ public class Q00136_MoreThanMeetsTheEye extends Quest
 		registerQuestItems(ECTOPLASM, STABILIZED_ECTOPLASM, ORDER, GLASS_JAGUAR_CRYSTAL, BOOK_OF_SEAL);
 	}
 	
-	private void giveItem(QuestState st, int itemId, int count, int maxCount, int cond)
-	{
+	private void giveItem(QuestState st, int itemId, int count, int maxCount, int cond) {
 		st.giveItems(itemId, count);
-		if (st.getQuestItemsCount(itemId) >= maxCount)
-		{
+		if (st.getQuestItemsCount(itemId) >= maxCount) {
 			st.setCond(cond, true);
-		}
-		else
-		{
+		} else {
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30832-05.html":
 			case "30832-06.html":
 			case "30832-12.html":
@@ -141,49 +131,39 @@ public class Q00136_MoreThanMeetsTheEye extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return super.onKill(npc, killer, isSummon);
 		}
 		
 		final int npcId = npc.getId();
-		if ((npcId != GLASS_JAGUAR) && st.isCond(3))
-		{
+		if ((npcId != GLASS_JAGUAR) && st.isCond(3)) {
 			final int count = ((npcId == MIRROR) && ((st.getQuestItemsCount(ECTOPLASM) + 2) < ECTOPLASM_COUNT)) ? 2 : 1;
 			final int index = npcId - GHOST1;
 			
-			if ((getRandom(1000) < CHANCES[index]) && ((st.getQuestItemsCount(ECTOPLASM) + count) < ECTOPLASM_COUNT))
-			{
+			if ((getRandom(1000) < CHANCES[index]) && ((st.getQuestItemsCount(ECTOPLASM) + count) < ECTOPLASM_COUNT)) {
 				st.giveItems(ECTOPLASM, 1);
 			}
 			giveItem(st, ECTOPLASM, count, ECTOPLASM_COUNT, 4);
-		}
-		else if ((npcId == GLASS_JAGUAR) && st.isCond(7))
-		{
+		} else if ((npcId == GLASS_JAGUAR) && st.isCond(7)) {
 			giveItem(st, GLASS_JAGUAR_CRYSTAL, 1, CRYSTAL_COUNT, 8);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case HARDIN:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? "30832-01.htm" : "30832-02.htm";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "30832-04.html";
 								break;
@@ -193,22 +173,15 @@ public class Q00136_MoreThanMeetsTheEye extends Quest
 								htmltext = "30832-08.html";
 								break;
 							case 5:
-								if (st.getInt("talked") == 1)
-								{
+								if (st.getInt("talked") == 1) {
 									htmltext = "30832-10.html";
-								}
-								else if (st.getInt("talked") == 2)
-								{
+								} else if (st.getInt("talked") == 2) {
 									htmltext = "30832-12.html";
-								}
-								else if (st.hasQuestItems(STABILIZED_ECTOPLASM))
-								{
+								} else if (st.hasQuestItems(STABILIZED_ECTOPLASM)) {
 									st.takeItems(STABILIZED_ECTOPLASM, -1);
 									st.set("talked", "1");
 									htmltext = "30832-09.html";
-								}
-								else
-								{
+								} else {
 									htmltext = "30832-08.html";
 								}
 								break;
@@ -218,17 +191,12 @@ public class Q00136_MoreThanMeetsTheEye extends Quest
 								htmltext = "30832-15.html";
 								break;
 							case 9:
-								if (st.getInt("talked") == 1)
-								{
+								if (st.getInt("talked") == 1) {
 									st.set("talked", "2");
 									htmltext = "30832-17.html";
-								}
-								else if (st.getInt("talked") == 2)
-								{
+								} else if (st.getInt("talked") == 2) {
 									htmltext = "30832-18.html";
-								}
-								else
-								{
+								} else {
 									st.takeItems(BOOK_OF_SEAL, -1);
 									st.set("talked", "1");
 									htmltext = "30832-16.html";
@@ -242,10 +210,8 @@ public class Q00136_MoreThanMeetsTheEye extends Quest
 				}
 				break;
 			case ERRICKIN:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "30701-01.html";
 							break;
@@ -256,14 +222,11 @@ public class Q00136_MoreThanMeetsTheEye extends Quest
 							htmltext = "30701-04.html";
 							break;
 						case 4:
-							if (st.getQuestItemsCount(ECTOPLASM) < ECTOPLASM_COUNT)
-							{
+							if (st.getQuestItemsCount(ECTOPLASM) < ECTOPLASM_COUNT) {
 								st.giveItems(STABILIZED_ECTOPLASM, 1);
 								st.setCond(5, true);
 								htmltext = "30701-06.html";
-							}
-							else
-							{
+							} else {
 								st.takeItems(ECTOPLASM, -1);
 								htmltext = "30701-05.html";
 							}
@@ -275,10 +238,8 @@ public class Q00136_MoreThanMeetsTheEye extends Quest
 				}
 				break;
 			case CLAYTON:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 						case 2:
 						case 3:

@@ -34,13 +34,11 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * How to Oppose Evil (692)
  * @author Gigiikun
  */
-public final class Q00692_HowtoOpposeEvil extends Quest
-{
+public final class Q00692_HowtoOpposeEvil extends Quest {
 	private static final int DILIOS = 32549;
 	private static final int KIRKLAN = 32550;
 	private static final int LEKONS_CERTIFICATE = 13857;
-	private static final int[] QUEST_ITEMS =
-	{
+	private static final int[] QUEST_ITEMS = {
 		13863,
 		13864,
 		13865,
@@ -51,8 +49,7 @@ public final class Q00692_HowtoOpposeEvil extends Quest
 	};
 	
 	private static final Map<Integer, ItemHolder> QUEST_MOBS = new HashMap<>();
-	static
-	{
+	static {
 		// Seed of Infinity
 		QUEST_MOBS.put(22509, new ItemHolder(13863, 500));
 		QUEST_MOBS.put(22510, new ItemHolder(13863, 500));
@@ -103,8 +100,7 @@ public final class Q00692_HowtoOpposeEvil extends Quest
 		QUEST_MOBS.put(22765, new ItemHolder(15536, 125));
 	}
 	
-	public Q00692_HowtoOpposeEvil()
-	{
+	public Q00692_HowtoOpposeEvil() {
 		super(692, Q00692_HowtoOpposeEvil.class.getSimpleName(), "How to Oppose Evil");
 		addStartNpc(DILIOS);
 		addTalkId(DILIOS, KIRKLAN);
@@ -112,60 +108,37 @@ public final class Q00692_HowtoOpposeEvil extends Quest
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
-		if (event.equalsIgnoreCase("32549-03.htm"))
-		{
+		if (event.equalsIgnoreCase("32549-03.htm")) {
 			st.startQuest();
-		}
-		else if (event.equalsIgnoreCase("32550-04.htm"))
-		{
+		} else if (event.equalsIgnoreCase("32550-04.htm")) {
 			st.setCond(3);
-		}
-		else if (event.equalsIgnoreCase("32550-07.htm"))
-		{
-			if (!giveReward(st, 13863, 5, 13796, 1))
-			{
+		} else if (event.equalsIgnoreCase("32550-07.htm")) {
+			if (!giveReward(st, 13863, 5, 13796, 1)) {
 				return "32550-08.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("32550-09.htm"))
-		{
-			if (!giveReward(st, 13798, 1, 57, 5000))
-			{
+		} else if (event.equalsIgnoreCase("32550-09.htm")) {
+			if (!giveReward(st, 13798, 1, 57, 5000)) {
 				return "32550-10.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("32550-12.htm"))
-		{
-			if (!giveReward(st, 13865, 5, 13841, 1))
-			{
+		} else if (event.equalsIgnoreCase("32550-12.htm")) {
+			if (!giveReward(st, 13865, 5, 13841, 1)) {
 				return "32550-13.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("32550-14.htm"))
-		{
-			if (!giveReward(st, 13867, 1, 57, 5000))
-			{
+		} else if (event.equalsIgnoreCase("32550-14.htm")) {
+			if (!giveReward(st, 13867, 1, 57, 5000)) {
 				return "32550-15.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("32550-17.htm"))
-		{
-			if (!giveReward(st, 15536, 5, 15486, 1))
-			{
+		} else if (event.equalsIgnoreCase("32550-17.htm")) {
+			if (!giveReward(st, 15536, 5, 15486, 1)) {
 				return "32550-18.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("32550-19.htm"))
-		{
-			if (!giveReward(st, 15535, 1, 57, 5000))
-			{
+		} else if (event.equalsIgnoreCase("32550-19.htm")) {
+			if (!giveReward(st, 15535, 1, 57, 5000)) {
 				return "32550-20.htm";
 			}
 		}
@@ -173,26 +146,21 @@ public final class Q00692_HowtoOpposeEvil extends Quest
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(player, 3);
-		if (partyMember == null)
-		{
+		if (partyMember == null) {
 			return null;
 		}
 		final QuestState st = getQuestState(partyMember, false);
 		final int npcId = npc.getId();
-		if ((st != null) && QUEST_MOBS.containsKey(npcId))
-		{
+		if ((st != null) && QUEST_MOBS.containsKey(npcId)) {
 			int chance = (int) (QUEST_MOBS.get(npcId).getCount() * rates().getRateQuestDrop());
 			int numItems = chance / 1000;
 			chance = chance % 1000;
-			if (getRandom(1000) < chance)
-			{
+			if (getRandom(1000) < chance) {
 				numItems++;
 			}
-			if (numItems > 0)
-			{
+			if (numItems > 0) {
 				st.giveItems(QUEST_MOBS.get(npcId).getId(), numItems);
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
@@ -201,41 +169,26 @@ public final class Q00692_HowtoOpposeEvil extends Quest
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public final String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st.isCreated())
-		{
+		if (st.isCreated()) {
 			htmltext = (player.getLevel() >= 75) ? "32549-01.htm" : "32549-00.htm";
-		}
-		else
-		{
-			if (npc.getId() == DILIOS)
-			{
-				if (st.isCond(1) && st.hasQuestItems(LEKONS_CERTIFICATE))
-				{
+		} else {
+			if (npc.getId() == DILIOS) {
+				if (st.isCond(1) && st.hasQuestItems(LEKONS_CERTIFICATE)) {
 					htmltext = "32549-04.htm";
 					st.takeItems(LEKONS_CERTIFICATE, -1);
 					st.setCond(2);
-				}
-				else if (st.isCond(2))
-				{
+				} else if (st.isCond(2)) {
 					htmltext = "32549-05.htm";
 				}
-			}
-			else
-			{
-				if (st.isCond(2))
-				{
+			} else {
+				if (st.isCond(2)) {
 					htmltext = "32550-01.htm";
-				}
-				else if (st.isCond(3))
-				{
-					for (int i : QUEST_ITEMS)
-					{
-						if (st.getQuestItemsCount(i) > 0)
-						{
+				} else if (st.isCond(3)) {
+					for (int i : QUEST_ITEMS) {
+						if (st.getQuestItemsCount(i) > 0) {
 							return "32550-05.htm";
 						}
 					}
@@ -246,11 +199,9 @@ public final class Q00692_HowtoOpposeEvil extends Quest
 		return htmltext;
 	}
 	
-	private static final boolean giveReward(QuestState st, int itemId, int minCount, int rewardItemId, long rewardCount)
-	{
+	private static final boolean giveReward(QuestState st, int itemId, int minCount, int rewardItemId, long rewardCount) {
 		long count = st.getQuestItemsCount(itemId);
-		if (count < minCount)
-		{
+		if (count < minCount) {
 			return false;
 		}
 		

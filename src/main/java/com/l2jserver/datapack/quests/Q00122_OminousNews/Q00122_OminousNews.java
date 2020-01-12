@@ -29,30 +29,25 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Polo.
  * @author malyelfik
  */
-public class Q00122_OminousNews extends Quest
-{
+public class Q00122_OminousNews extends Quest {
 	// NPCs
 	private static final int MOIRA = 31979;
 	private static final int KARUDA = 32017;
 	
-	public Q00122_OminousNews()
-	{
+	public Q00122_OminousNews() {
 		super(122, Q00122_OminousNews.class.getSimpleName(), "Ominous News");
 		addStartNpc(MOIRA);
 		addTalkId(MOIRA, KARUDA);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "31979-02.htm":
 				st.startQuest();
 				break;
@@ -66,15 +61,12 @@ public class Q00122_OminousNews extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case MOIRA:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= 20) ? "31979-01.htm" : "31979-00.htm";
 						break;
@@ -87,8 +79,7 @@ public class Q00122_OminousNews extends Quest
 				}
 				break;
 			case KARUDA:
-				if (st.isStarted())
-				{
+				if (st.isStarted()) {
 					htmltext = "32017-01.html";
 				}
 				break;

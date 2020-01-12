@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by zerghase.
  * @author malyelfik
  */
-public class Q00042_HelpTheUncle extends Quest
-{
+public class Q00042_HelpTheUncle extends Quest {
 	// NPCs
 	private static final int WATERS = 30828;
 	private static final int SOPHYA = 30735;
@@ -44,8 +43,7 @@ public class Q00042_HelpTheUncle extends Quest
 	private static final int MAP = 7549;
 	private static final int PET_TICKET = 7583;
 	
-	public Q00042_HelpTheUncle()
-	{
+	public Q00042_HelpTheUncle() {
 		super(42, Q00042_HelpTheUncle.class.getSimpleName(), "Help The Uncle!");
 		addStartNpc(WATERS);
 		addTalkId(WATERS, SOPHYA);
@@ -54,51 +52,39 @@ public class Q00042_HelpTheUncle extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30828-01.htm":
 				st.startQuest();
 				break;
 			case "30828-03.html":
-				if (st.hasQuestItems(TRIDENT))
-				{
+				if (st.hasQuestItems(TRIDENT)) {
 					st.takeItems(TRIDENT, 1);
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "30828-03a.html";
 				}
 				break;
 			case "30828-06.html":
-				if (st.getQuestItemsCount(MAP_PIECE) == 30)
-				{
+				if (st.getQuestItemsCount(MAP_PIECE) == 30) {
 					st.takeItems(MAP_PIECE, -1);
 					st.giveItems(MAP, 1);
 					st.setCond(4, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "30828-06a.html";
 				}
 				break;
 			case "30735-02.html":
-				if (st.hasQuestItems(MAP))
-				{
+				if (st.hasQuestItems(MAP)) {
 					st.takeItems(MAP, -1);
 					st.setCond(5, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "30735-02a.html";
 				}
 				break;
@@ -111,19 +97,14 @@ public class Q00042_HelpTheUncle extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		QuestState st = getQuestState(player, false);
 		
-		if ((st != null) && st.isCond(2))
-		{
+		if ((st != null) && st.isCond(2)) {
 			st.giveItems(MAP_PIECE, 1);
-			if (st.getQuestItemsCount(MAP_PIECE) == 30)
-			{
+			if (st.getQuestItemsCount(MAP_PIECE) == 30) {
 				st.setCond(3, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -131,21 +112,17 @@ public class Q00042_HelpTheUncle extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case WATERS:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= 25) ? "30828-00.htm" : "30828-00a.html";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = (st.hasQuestItems(TRIDENT)) ? "30828-02.html" : "30828-02a.html";
 								break;
@@ -169,10 +146,8 @@ public class Q00042_HelpTheUncle extends Quest
 				}
 				break;
 			case SOPHYA:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 4:
 							htmltext = "30735-01.html";
 							break;

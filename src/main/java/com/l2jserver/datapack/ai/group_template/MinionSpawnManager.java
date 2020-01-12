@@ -33,12 +33,10 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Minion Spawn Manager.
  * @author Zealar
  */
-public final class MinionSpawnManager extends AbstractNpcAI
-{
+public final class MinionSpawnManager extends AbstractNpcAI {
 	private static final Set<Integer> NPC = new HashSet<>(354);
 	
-	static
-	{
+	static {
 		NPC.add(18344); // Ancient Egg
 		NPC.add(18352); // Kamael Guard
 		NPC.add(18353); // Guardian of Records
@@ -396,21 +394,18 @@ public final class MinionSpawnManager extends AbstractNpcAI
 		NPC.add(29147); // Lost Captain
 	}
 	
-	private static final NpcStringId[] ON_ATTACK_MSG =
-	{
+	private static final NpcStringId[] ON_ATTACK_MSG = {
 		NpcStringId.COME_OUT_YOU_CHILDREN_OF_DARKNESS,
 		NpcStringId.SHOW_YOURSELVES,
 		NpcStringId.DESTROY_THE_ENEMY_MY_BROTHERS,
 		NpcStringId.FORCES_OF_DARKNESS_FOLLOW_ME
 	};
 	
-	private static final int[] ON_ATTACK_NPC =
-	{
+	private static final int[] ON_ATTACK_NPC = {
 		20767, // Timak Orc Troop Leader
 	};
 	
-	private MinionSpawnManager()
-	{
+	private MinionSpawnManager() {
 		super(MinionSpawnManager.class.getSimpleName(), "ai/group_template");
 		
 		addSpawnId(NPC);
@@ -418,32 +413,23 @@ public final class MinionSpawnManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
-		if (npc.getTemplate().getParameters().getSet().get("SummonPrivateRate") == null)
-		{
+	public String onSpawn(L2Npc npc) {
+		if (npc.getTemplate().getParameters().getSet().get("SummonPrivateRate") == null) {
 			((L2MonsterInstance) npc).getMinionList().spawnMinions(npc.getTemplate().getParameters().getMinionList("Privates"));
 			npc.setScriptValue(1);
-		}
-		else
-		{
+		} else {
 			npc.setScriptValue(0);
 		}
 		return super.onSpawn(npc);
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if (npc.isMonster())
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if (npc.isMonster()) {
 			final L2MonsterInstance monster = (L2MonsterInstance) npc;
-			if (!monster.isTeleporting())
-			{
-				if ((getRandom(1, 100) <= npc.getTemplate().getParameters().getInt("SummonPrivateRate", 0)) && npc.isScriptValue(0))
-				{
-					for (MinionHolder is : npc.getTemplate().getParameters().getMinionList("Privates"))
-					{
+			if (!monster.isTeleporting()) {
+				if ((getRandom(1, 100) <= npc.getTemplate().getParameters().getInt("SummonPrivateRate", 0)) && npc.isScriptValue(0)) {
+					for (MinionHolder is : npc.getTemplate().getParameters().getMinionList("Privates")) {
 						addMinion((L2MonsterInstance) npc, is.getId());
 					}
 					broadcastNpcSay(npc, Say2.NPC_ALL, ON_ATTACK_MSG[getRandom(ON_ATTACK_MSG.length)]);
@@ -454,8 +440,7 @@ public final class MinionSpawnManager extends AbstractNpcAI
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new MinionSpawnManager();
 	}
 }

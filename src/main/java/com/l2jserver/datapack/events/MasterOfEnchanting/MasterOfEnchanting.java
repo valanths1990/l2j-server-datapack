@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Master of Enchanting event AI.
  * @author Gnacik
  */
-public final class MasterOfEnchanting extends LongTimeEvent
-{
+public final class MasterOfEnchanting extends LongTimeEvent {
 	// NPC
 	private static final int MASTER_YOGI = 32599;
 	// Items
@@ -45,20 +44,17 @@ public final class MasterOfEnchanting extends LongTimeEvent
 	private static final int SCROLL_1_PRICE = 500000;
 	private static final int SCROLL_10_PRICE = 5000000;
 	
-	private static final int[] HAT_SHADOW_REWARD =
-	{
+	private static final int[] HAT_SHADOW_REWARD = {
 		13074,
 		13075,
 		13076
 	};
-	private static final int[] HAT_EVENT_REWARD =
-	{
+	private static final int[] HAT_EVENT_REWARD = {
 		13518,
 		13519,
 		13522
 	};
-	private static final int[] CRYSTAL_REWARD =
-	{
+	private static final int[] CRYSTAL_REWARD = {
 		9570,
 		9571,
 		9572
@@ -67,8 +63,7 @@ public final class MasterOfEnchanting extends LongTimeEvent
 	@SuppressWarnings("deprecation")
 	private static final Date EVENT_START = new Date(2011, 7, 1);
 	
-	private MasterOfEnchanting()
-	{
+	private MasterOfEnchanting() {
 		super(MasterOfEnchanting.class.getSimpleName(), "events");
 		addStartNpc(MASTER_YOGI);
 		addFirstTalkId(MASTER_YOGI);
@@ -76,116 +71,80 @@ public final class MasterOfEnchanting extends LongTimeEvent
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
-		if (event.equalsIgnoreCase("buy_staff"))
-		{
-			if (!hasQuestItems(player, MASTER_YOGI_STAFF) && (getQuestItemsCount(player, Inventory.ADENA_ID) > STAFF_PRICE))
-			{
+		if (event.equalsIgnoreCase("buy_staff")) {
+			if (!hasQuestItems(player, MASTER_YOGI_STAFF) && (getQuestItemsCount(player, Inventory.ADENA_ID) > STAFF_PRICE)) {
 				takeItems(player, Inventory.ADENA_ID, STAFF_PRICE);
 				giveItems(player, MASTER_YOGI_STAFF, 1);
 				htmltext = "32599-staffbuyed.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "32599-staffcant.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("buy_scroll_24"))
-		{
+		} else if (event.equalsIgnoreCase("buy_scroll_24")) {
 			long curTime = System.currentTimeMillis();
 			String value = loadGlobalQuestVar(player.getAccountName());
 			long reuse = value == "" ? 0 : Long.parseLong(value);
-			if (player.getCreateDate().after(EVENT_START))
-			{
+			if (player.getCreateDate().after(EVENT_START)) {
 				return "32599-bidth.htm";
 			}
 			
-			if (curTime > reuse)
-			{
-				if (getQuestItemsCount(player, Inventory.ADENA_ID) > SCROLL_24_PRICE)
-				{
+			if (curTime > reuse) {
+				if (getQuestItemsCount(player, Inventory.ADENA_ID) > SCROLL_24_PRICE) {
 					takeItems(player, Inventory.ADENA_ID, SCROLL_24_PRICE);
 					giveItems(player, MASTER_YOGI_SCROLL, 24);
 					saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + (SCROLL_24_TIME * 3600000)));
 					htmltext = "32599-scroll24.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "32599-s24-no.htm";
 				}
-			}
-			else
-			{
+			} else {
 				long remainingTime = (reuse - curTime) / 1000;
 				int hours = (int) remainingTime / 3600;
 				int minutes = ((int) remainingTime % 3600) / 60;
-				if (hours > 0)
-				{
+				if (hours > 0) {
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.ITEM_PURCHASABLE_IN_S1_HOURS_S2_MINUTES);
 					sm.addInt(hours);
 					sm.addInt(minutes);
 					player.sendPacket(sm);
 					htmltext = "32599-scroll24.htm";
-				}
-				else if (minutes > 0)
-				{
+				} else if (minutes > 0) {
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.ITEM_PURCHASABLE_IN_S1_MINUTES);
 					sm.addInt(minutes);
 					player.sendPacket(sm);
 					htmltext = "32599-scroll24.htm";
-				}
-				else
-				{
+				} else {
 					// Little glitch. There is no SystemMessage with seconds only.
 					// If time is less than 1 minute player can buy scrolls
-					if (getQuestItemsCount(player, Inventory.ADENA_ID) > SCROLL_24_PRICE)
-					{
+					if (getQuestItemsCount(player, Inventory.ADENA_ID) > SCROLL_24_PRICE) {
 						takeItems(player, Inventory.ADENA_ID, SCROLL_24_PRICE);
 						giveItems(player, MASTER_YOGI_SCROLL, 24);
 						saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + (SCROLL_24_TIME * 3600000)));
 						htmltext = "32599-scroll24.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32599-s24-no.htm";
 					}
 				}
 			}
-		}
-		else if (event.equalsIgnoreCase("buy_scroll_1"))
-		{
-			if (getQuestItemsCount(player, Inventory.ADENA_ID) > SCROLL_1_PRICE)
-			{
+		} else if (event.equalsIgnoreCase("buy_scroll_1")) {
+			if (getQuestItemsCount(player, Inventory.ADENA_ID) > SCROLL_1_PRICE) {
 				takeItems(player, Inventory.ADENA_ID, SCROLL_1_PRICE);
 				giveItems(player, MASTER_YOGI_SCROLL, 1);
 				htmltext = "32599-scroll-ok.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "32599-s1-no.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("buy_scroll_10"))
-		{
-			if (getQuestItemsCount(player, Inventory.ADENA_ID) > SCROLL_10_PRICE)
-			{
+		} else if (event.equalsIgnoreCase("buy_scroll_10")) {
+			if (getQuestItemsCount(player, Inventory.ADENA_ID) > SCROLL_10_PRICE) {
 				takeItems(player, Inventory.ADENA_ID, SCROLL_10_PRICE);
 				giveItems(player, MASTER_YOGI_SCROLL, 10);
 				htmltext = "32599-scroll-ok.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "32599-s10-no.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("receive_reward"))
-		{
-			if ((getItemEquipped(player, Inventory.PAPERDOLL_RHAND) == MASTER_YOGI_STAFF) && (getEnchantLevel(player, MASTER_YOGI_STAFF) > 3))
-			{
-				switch (getEnchantLevel(player, MASTER_YOGI_STAFF))
-				{
+		} else if (event.equalsIgnoreCase("receive_reward")) {
+			if ((getItemEquipped(player, Inventory.PAPERDOLL_RHAND) == MASTER_YOGI_STAFF) && (getEnchantLevel(player, MASTER_YOGI_STAFF) > 3)) {
+				switch (getEnchantLevel(player, MASTER_YOGI_STAFF)) {
 					case 4:
 						giveItems(player, 6406, 1); // Firework
 						break;
@@ -252,17 +211,14 @@ public final class MasterOfEnchanting extends LongTimeEvent
 					case 23:
 						giveItems(player, 13988, 1); // S80 Grade Weapon Chest (Event)
 					default:
-						if (getEnchantLevel(player, MASTER_YOGI_STAFF) > 23)
-						{
+						if (getEnchantLevel(player, MASTER_YOGI_STAFF) > 23) {
 							giveItems(player, 13988, 1); // S80 Grade Weapon Chest (Event)
 						}
 						break;
 				}
 				takeItems(player, MASTER_YOGI_STAFF, 1);
 				htmltext = "32599-rewardok.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "32599-rewardnostaff.htm";
 			}
 		}
@@ -270,13 +226,11 @@ public final class MasterOfEnchanting extends LongTimeEvent
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return npc.getId() + ".htm";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new MasterOfEnchanting();
 	}
 }

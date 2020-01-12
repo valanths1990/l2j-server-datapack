@@ -35,8 +35,7 @@ import com.l2jserver.gameserver.util.Util;
  * Totem of the Hestui (276)
  * @author xban1x
  */
-public final class Q00276_TotemOfTheHestui extends Quest
-{
+public final class Q00276_TotemOfTheHestui extends Quest {
 	// Npc
 	private static final int TANAPI = 30571;
 	// Items
@@ -46,8 +45,7 @@ public final class Q00276_TotemOfTheHestui extends Quest
 	private static final int KASHA_BEAR = 20479;
 	private static final int KASHA_BEAR_TOTEM = 27044;
 	// Rewards
-	private static final int[] REWARDS = new int[]
-	{
+	private static final int[] REWARDS = new int[] {
 		29,
 		1500,
 	};
@@ -55,8 +53,7 @@ public final class Q00276_TotemOfTheHestui extends Quest
 	private static final List<ItemHolder> SPAWN_CHANCES = new ArrayList<>();
 	private static final int MIN_LVL = 15;
 	
-	static
-	{
+	static {
 		SPAWN_CHANCES.add(new ItemHolder(79, 100));
 		SPAWN_CHANCES.add(new ItemHolder(69, 20));
 		SPAWN_CHANCES.add(new ItemHolder(59, 15));
@@ -64,8 +61,7 @@ public final class Q00276_TotemOfTheHestui extends Quest
 		SPAWN_CHANCES.add(new ItemHolder(39, 2));
 	}
 	
-	public Q00276_TotemOfTheHestui()
-	{
+	public Q00276_TotemOfTheHestui() {
 		super(276, Q00276_TotemOfTheHestui.class.getSimpleName(), "Totem of the Hestui");
 		addStartNpc(TANAPI);
 		addTalkId(TANAPI);
@@ -74,11 +70,9 @@ public final class Q00276_TotemOfTheHestui extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && event.equals("30571-03.htm"))
-		{
+		if ((st != null) && event.equals("30571-03.htm")) {
 			st.startQuest();
 			return event;
 		}
@@ -86,38 +80,29 @@ public final class Q00276_TotemOfTheHestui extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, killer, npc, true))
-		{
-			switch (npc.getId())
-			{
-				case KASHA_BEAR:
-				{
+		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, killer, npc, true)) {
+			switch (npc.getId()) {
+				case KASHA_BEAR: {
 					final long chance1 = st.getQuestItemsCount(KASHA_PARASITE);
 					final int chance2 = getRandom(100);
 					boolean chance3 = true;
-					for (ItemHolder spawnChance : SPAWN_CHANCES)
-					{
-						if ((chance1 >= spawnChance.getId()) && (chance2 <= spawnChance.getCount()))
-						{
+					for (ItemHolder spawnChance : SPAWN_CHANCES) {
+						if ((chance1 >= spawnChance.getId()) && (chance2 <= spawnChance.getCount())) {
 							st.addSpawn(KASHA_BEAR_TOTEM);
 							st.takeItems(KASHA_PARASITE, -1);
 							chance3 = false;
 							break;
 						}
 					}
-					if (chance3)
-					{
+					if (chance3) {
 						st.giveItemRandomly(KASHA_PARASITE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case KASHA_BEAR_TOTEM:
-				{
-					if (st.giveItemRandomly(KASHA_CRYSTAL, 1, 1, 1, true))
-					{
+				case KASHA_BEAR_TOTEM: {
+					if (st.giveItemRandomly(KASHA_CRYSTAL, 1, 1, 1, true)) {
 						st.setCond(2);
 					}
 					break;
@@ -128,33 +113,24 @@ public final class Q00276_TotemOfTheHestui extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getRace() == Race.ORC) ? (player.getLevel() >= MIN_LVL) ? "30571-02.htm" : "30571-01.htm" : "30571-00.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
 						htmltext = "30571-04.html";
 						break;
 					}
-					case 2:
-					{
-						if (st.hasQuestItems(KASHA_CRYSTAL))
-						{
+					case 2: {
+						if (st.hasQuestItems(KASHA_CRYSTAL)) {
 							Q00261_CollectorsDream.giveNewbieReward(player);
-							for (int reward : REWARDS)
-							{
+							for (int reward : REWARDS) {
 								st.rewardItems(reward, 1);
 							}
 							st.exitQuest(true, true);

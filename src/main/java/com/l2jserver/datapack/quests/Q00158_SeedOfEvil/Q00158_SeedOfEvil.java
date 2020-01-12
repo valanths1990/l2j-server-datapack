@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
  * Seed of Evil (158)
  * @author malyelfik
  */
-public class Q00158_SeedOfEvil extends Quest
-{
+public class Q00158_SeedOfEvil extends Quest {
 	// NPC
 	private static final int BIOTIN = 30031;
 	// Monster
@@ -43,8 +42,7 @@ public class Q00158_SeedOfEvil extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 21;
 	
-	public Q00158_SeedOfEvil()
-	{
+	public Q00158_SeedOfEvil() {
 		super(158, Q00158_SeedOfEvil.class.getSimpleName(), "Seed of Evil");
 		addStartNpc(BIOTIN);
 		addTalkId(BIOTIN);
@@ -54,11 +52,9 @@ public class Q00158_SeedOfEvil extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && event.equalsIgnoreCase("30031-03.htm"))
-		{
+		if ((st != null) && event.equalsIgnoreCase("30031-03.htm")) {
 			st.startQuest();
 			return event;
 		}
@@ -66,10 +62,8 @@ public class Q00158_SeedOfEvil extends Quest
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if (npc.isScriptValue(0))
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if (npc.isScriptValue(0)) {
 			npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId._HOW_DARE_YOU_CHALLENGE_ME));
 			npc.setScriptValue(1);
 		}
@@ -77,11 +71,9 @@ public class Q00158_SeedOfEvil extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && !st.hasQuestItems(CLAY_TABLET))
-		{
+		if ((st != null) && !st.hasQuestItems(CLAY_TABLET)) {
 			st.giveItems(CLAY_TABLET, 1);
 			st.setCond(2, true);
 		}
@@ -90,22 +82,17 @@ public class Q00158_SeedOfEvil extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "30031-02.htm" : "30031-01.html";
 				break;
 			case State.STARTED:
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					htmltext = "30031-04.html";
-				}
-				else if (st.isCond(2) && st.hasQuestItems(CLAY_TABLET))
-				{
+				} else if (st.isCond(2) && st.hasQuestItems(CLAY_TABLET)) {
 					st.giveItems(ENCHANT_ARMOR_D, 1);
 					st.addExpAndSp(17818, 927);
 					st.giveAdena(1495, true);

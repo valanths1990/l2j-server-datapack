@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Oath (464)
  * @author malyelfik
  */
-public class Q00464_Oath extends Quest
-{
+public class Q00464_Oath extends Quest {
 	// NPCs @formatter:off
 	private static final int[][] NPC =
 	{
@@ -61,8 +60,7 @@ public class Q00464_Oath extends Quest
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
 	
-	static
-	{
+	static {
 		MOBS.put(22799, 9);
 		MOBS.put(22794, 6);
 		MOBS.put(22800, 10);
@@ -77,11 +75,9 @@ public class Q00464_Oath extends Quest
 		MOBS.put(22793, 5);
 	}
 	
-	public Q00464_Oath()
-	{
+	public Q00464_Oath() {
 		super(464, Q00464_Oath.class.getSimpleName(), "Oath");
-		for (int[] npc : NPC)
-		{
+		for (int[] npc : NPC) {
 			addTalkId(npc[0]);
 		}
 		addKillId(MOBS.keySet());
@@ -90,20 +86,16 @@ public class Q00464_Oath extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "32596-04.html":
-				if (!st.hasQuestItems(BOOK))
-				{
+				if (!st.hasQuestItems(BOOK)) {
 					return getNoQuestMsg(player);
 				}
 				
@@ -112,8 +104,7 @@ public class Q00464_Oath extends Quest
 				st.setCond(cond, true);
 				st.takeItems(BOOK, 1);
 				st.giveItems(BOOK2, 1);
-				switch (cond)
-				{
+				switch (cond) {
 					case 2:
 						htmltext = "32596-04.html";
 						break;
@@ -141,8 +132,7 @@ public class Q00464_Oath extends Quest
 				}
 				break;
 			case "end_quest":
-				if (!st.hasQuestItems(BOOK2))
-				{
+				if (!st.hasQuestItems(BOOK2)) {
 					return getNoQuestMsg(player);
 				}
 				
@@ -163,14 +153,12 @@ public class Q00464_Oath extends Quest
 	}
 	
 	@Override
-	public String onItemTalk(L2ItemInstance item, L2PcInstance player)
-	{
+	public String onItemTalk(L2ItemInstance item, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		
 		boolean startQuest = false;
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				startQuest = true;
 				break;
@@ -178,29 +166,22 @@ public class Q00464_Oath extends Quest
 				htmltext = "strongbox-02.html";
 				break;
 			case State.COMPLETED:
-				if (st.isNowAvailable())
-				{
+				if (st.isNowAvailable()) {
 					st.setState(State.CREATED);
 					startQuest = true;
-				}
-				else
-				{
+				} else {
 					htmltext = "strongbox-03.html";
 				}
 				break;
 		}
 		
-		if (startQuest)
-		{
-			if (player.getLevel() >= MIN_LEVEL)
-			{
+		if (startQuest) {
+			if (player.getLevel() >= MIN_LEVEL) {
 				st.startQuest();
 				st.takeItems(STRONGBOX, 1);
 				st.giveItems(BOOK, 1);
 				htmltext = "strongbox-01.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "strongbox-00.htm";
 			}
 		}
@@ -208,10 +189,8 @@ public class Q00464_Oath extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (getRandom(1000) < MOBS.get(npc.getId()))
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (getRandom(1000) < MOBS.get(npc.getId())) {
 			npc.dropItem(killer, STRONGBOX, 1);
 		}
 		
@@ -219,17 +198,13 @@ public class Q00464_Oath extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st.isStarted())
-		{
+		if (st.isStarted()) {
 			int npcId = npc.getId();
-			if (npcId == NPC[0][0])
-			{
-				switch (st.getCond())
-				{
+			if (npcId == NPC[0][0]) {
+				switch (st.getCond()) {
 					case 1:
 						htmltext = "32596-01.html";
 						break;
@@ -258,9 +233,7 @@ public class Q00464_Oath extends Quest
 						htmltext = "32596-05g.html";
 						break;
 				}
-			}
-			else if ((st.getCond() > 1) && (st.getInt("npc") == npcId))
-			{
+			} else if ((st.getCond() > 1) && (st.getInt("npc") == npcId)) {
 				htmltext = npcId + "-01.html";
 			}
 		}

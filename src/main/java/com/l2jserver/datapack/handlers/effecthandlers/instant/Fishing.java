@@ -47,53 +47,42 @@ import com.l2jserver.gameserver.util.Util;
  * Fishing effect implementation.
  * @author UnAfraid
  */
-public final class Fishing extends AbstractEffect
-{
+public final class Fishing extends AbstractEffect {
 	private static final int MIN_BAIT_DISTANCE = 90;
 	private static final int MAX_BAIT_DISTANCE = 250;
 	
-	public Fishing(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public Fishing(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.FISHING_START;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2Character activeChar = info.getEffector();
-		if (!activeChar.isPlayer())
-		{
+		if (!activeChar.isPlayer()) {
 			return;
 		}
 		
 		final L2PcInstance player = activeChar.getActingPlayer();
 		
-		if (!general().allowFishing() && !player.canOverrideCond(PcCondOverride.SKILL_CONDITIONS))
-		{
+		if (!general().allowFishing() && !player.canOverrideCond(PcCondOverride.SKILL_CONDITIONS)) {
 			player.sendMessage("Fishing is disabled!");
 			return;
 		}
 		
-		if (player.isFishing())
-		{
-			if (player.getFishCombat() != null)
-			{
+		if (player.isFishing()) {
+			if (player.getFishCombat() != null) {
 				player.getFishCombat().doDie(false);
-			}
-			else
-			{
+			} else {
 				player.endFishing(false);
 			}
 			
@@ -103,36 +92,30 @@ public final class Fishing extends AbstractEffect
 		
 		// check for equiped fishing rod
 		L2Weapon equipedWeapon = player.getActiveWeaponItem();
-		if (((equipedWeapon == null) || (equipedWeapon.getItemType() != WeaponType.FISHINGROD)))
-		{
+		if (((equipedWeapon == null) || (equipedWeapon.getItemType() != WeaponType.FISHINGROD))) {
 			player.sendPacket(SystemMessageId.FISHING_POLE_NOT_EQUIPPED);
 			return;
 		}
 		
 		// check for equiped lure
 		L2ItemInstance equipedLeftHand = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-		if ((equipedLeftHand == null) || (equipedLeftHand.getItemType() != EtcItemType.LURE))
-		{
+		if ((equipedLeftHand == null) || (equipedLeftHand.getItemType() != EtcItemType.LURE)) {
 			player.sendPacket(SystemMessageId.BAIT_ON_HOOK_BEFORE_FISHING);
 			return;
 		}
 		
-		if (!player.isGM())
-		{
-			if (player.isInBoat())
-			{
+		if (!player.isGM()) {
+			if (player.isInBoat()) {
 				player.sendPacket(SystemMessageId.CANNOT_FISH_ON_BOAT);
 				return;
 			}
 			
-			if (player.isInCraftMode() || player.isInStoreMode())
-			{
+			if (player.isInCraftMode() || player.isInStoreMode()) {
 				player.sendPacket(SystemMessageId.CANNOT_FISH_WHILE_USING_RECIPE_BOOK);
 				return;
 			}
 			
-			if (player.isInsideZone(ZoneId.WATER))
-			{
+			if (player.isInsideZone(ZoneId.WATER)) {
 				player.sendPacket(SystemMessageId.CANNOT_FISH_UNDER_WATER);
 				return;
 			}
@@ -150,74 +133,56 @@ public final class Fishing extends AbstractEffect
 		// search for fishing and water zone
 		L2FishingZone fishingZone = null;
 		L2WaterZone waterZone = null;
-		for (final L2ZoneType zone : ZoneManager.getInstance().getZones(baitX, baitY))
-		{
-			if (zone instanceof L2FishingZone)
-			{
+		for (final L2ZoneType zone : ZoneManager.getInstance().getZones(baitX, baitY)) {
+			if (zone instanceof L2FishingZone) {
 				fishingZone = (L2FishingZone) zone;
-			}
-			else if (zone instanceof L2WaterZone)
-			{
+			} else if (zone instanceof L2WaterZone) {
 				waterZone = (L2WaterZone) zone;
 			}
 			
-			if ((fishingZone != null) && (waterZone != null))
-			{
+			if ((fishingZone != null) && (waterZone != null)) {
 				break;
 			}
 		}
 		
 		int baitZ = computeBaitZ(player, baitX, baitY, fishingZone, waterZone);
-		if (baitZ == Integer.MIN_VALUE)
-		{
-			for (distance = MAX_BAIT_DISTANCE; distance >= MIN_BAIT_DISTANCE; --distance)
-			{
+		if (baitZ == Integer.MIN_VALUE) {
+			for (distance = MAX_BAIT_DISTANCE; distance >= MIN_BAIT_DISTANCE; --distance) {
 				baitX = (int) (player.getX() + (cos * distance));
 				baitY = (int) (player.getY() + (sin * distance));
 				
 				// search for fishing and water zone again
 				fishingZone = null;
 				waterZone = null;
-				for (final L2ZoneType zone : ZoneManager.getInstance().getZones(baitX, baitY))
-				{
-					if (zone instanceof L2FishingZone)
-					{
+				for (final L2ZoneType zone : ZoneManager.getInstance().getZones(baitX, baitY)) {
+					if (zone instanceof L2FishingZone) {
 						fishingZone = (L2FishingZone) zone;
-					}
-					else if (zone instanceof L2WaterZone)
-					{
+					} else if (zone instanceof L2WaterZone) {
 						waterZone = (L2WaterZone) zone;
 					}
 					
-					if ((fishingZone != null) && (waterZone != null))
-					{
+					if ((fishingZone != null) && (waterZone != null)) {
 						break;
 					}
 				}
 				
 				baitZ = computeBaitZ(player, baitX, baitY, fishingZone, waterZone);
-				if (baitZ != Integer.MIN_VALUE)
-				{
+				if (baitZ != Integer.MIN_VALUE) {
 					break;
 				}
 			}
 			
-			if (baitZ == Integer.MIN_VALUE)
-			{
-				if (player.isGM())
-				{
+			if (baitZ == Integer.MIN_VALUE) {
+				if (player.isGM()) {
 					baitZ = player.getZ();
-				}
-				else
-				{
+				} else {
 					player.sendPacket(SystemMessageId.CANNOT_FISH_HERE);
 					return;
 				}
 			}
 		}
 		
-		if (!player.destroyItem("Fishing", equipedLeftHand, 1, null, false))
-		{
+		if (!player.destroyItem("Fishing", equipedLeftHand, 1, null, false)) {
 			player.sendPacket(SystemMessageId.NOT_ENOUGH_BAIT);
 			return;
 		}
@@ -235,35 +200,28 @@ public final class Fishing extends AbstractEffect
 	 * @param waterZone the water zone
 	 * @return the bait z or {@link Integer#MIN_VALUE} when you cannot fish here
 	 */
-	private static int computeBaitZ(final L2PcInstance player, final int baitX, final int baitY, final L2FishingZone fishingZone, final L2WaterZone waterZone)
-	{
-		if ((fishingZone == null))
-		{
+	private static int computeBaitZ(final L2PcInstance player, final int baitX, final int baitY, final L2FishingZone fishingZone, final L2WaterZone waterZone) {
+		if ((fishingZone == null)) {
 			return Integer.MIN_VALUE;
 		}
 		
-		if ((waterZone == null))
-		{
+		if ((waterZone == null)) {
 			return Integer.MIN_VALUE;
 		}
 		
 		// always use water zone, fishing zone high z is high in the air...
 		int baitZ = waterZone.getWaterZ();
 		
-		if (!GeoData.getInstance().canSeeTarget(player.getX(), player.getY(), player.getZ(), baitX, baitY, baitZ))
-		{
+		if (!GeoData.getInstance().canSeeTarget(player.getX(), player.getY(), player.getZ(), baitX, baitY, baitZ)) {
 			return Integer.MIN_VALUE;
 		}
 		
-		if (GeoData.getInstance().hasGeo(baitX, baitY))
-		{
-			if (GeoData.getInstance().getHeight(baitX, baitY, baitZ) > baitZ)
-			{
+		if (GeoData.getInstance().hasGeo(baitX, baitY)) {
+			if (GeoData.getInstance().getHeight(baitX, baitY, baitZ) > baitZ) {
 				return Integer.MIN_VALUE;
 			}
 			
-			if (GeoData.getInstance().getHeight(baitX, baitY, player.getZ()) > baitZ)
-			{
+			if (GeoData.getInstance().getHeight(baitX, baitY, player.getZ()) > baitZ) {
 				return Integer.MIN_VALUE;
 			}
 		}

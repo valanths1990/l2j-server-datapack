@@ -35,8 +35,7 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class Q10286_ReunionWithSirra extends Quest
-{
+public final class Q10286_ReunionWithSirra extends Quest {
 	// NPCs
 	private static final int RAFFORTY = 32020;
 	private static final int JINIA = 32760;
@@ -49,8 +48,7 @@ public final class Q10286_ReunionWithSirra extends Quest
 	// Location
 	private static final Location EXIT_LOC = new Location(113793, -109342, -845, 0);
 	
-	public Q10286_ReunionWithSirra()
-	{
+	public Q10286_ReunionWithSirra() {
 		super(10286, Q10286_ReunionWithSirra.class.getSimpleName(), "Reunion with Sirra");
 		addStartNpc(RAFFORTY);
 		addTalkId(RAFFORTY, JINIA, SIRRA, JINIA2);
@@ -58,28 +56,22 @@ public final class Q10286_ReunionWithSirra extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "32020-02.htm":
-			{
+		switch (event) {
+			case "32020-02.htm": {
 				st.startQuest();
 				st.setMemoState(1);
 				htmltext = event;
 				break;
 			}
-			case "32020-03.html":
-			{
-				if (st.isMemoState(1))
-				{
+			case "32020-03.html": {
+				if (st.isMemoState(1)) {
 					st.setMemoStateEx(1, 0);
 					htmltext = event;
 				}
@@ -87,18 +79,14 @@ public final class Q10286_ReunionWithSirra extends Quest
 			}
 			case "32760-02.html":
 			case "32760-03.html":
-			case "32760-04.html":
-			{
-				if (st.isMemoState(1))
-				{
+			case "32760-04.html": {
+				if (st.isMemoState(1)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32760-05.html":
-			{
-				if (st.isMemoState(1))
-				{
+			case "32760-05.html": {
+				if (st.isMemoState(1)) {
 					final L2Npc sirra = addSpawn(SIRRA, -23905, -8790, -5384, 56238, false, 0, false, npc.getInstanceId());
 					sirra.broadcastPacket(new NpcSay(sirra.getObjectId(), Say2.NPC_ALL, sirra.getId(), NpcStringId.YOU_ADVANCED_BRAVELY_BUT_GOT_SUCH_A_TINY_RESULT_HOHOHO));
 					st.setMemoStateEx(1, 1);
@@ -107,10 +95,8 @@ public final class Q10286_ReunionWithSirra extends Quest
 				}
 				break;
 			}
-			case "32760-07.html":
-			{
-				if (st.isMemoState(1) && st.isMemoStateEx(1, 2))
-				{
+			case "32760-07.html": {
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 2)) {
 					st.setMemoState(2);
 					final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 					world.removeAllowed(player.getObjectId());
@@ -119,10 +105,8 @@ public final class Q10286_ReunionWithSirra extends Quest
 				}
 				break;
 			}
-			case "32760-08.html":
-			{
-				if (st.isMemoState(2))
-				{
+			case "32760-08.html": {
+				if (st.isMemoState(2)) {
 					st.setCond(5, true);
 					player.teleToLocation(EXIT_LOC, 0);
 					htmltext = event; // TODO: missing "jinia_npc_q10286_10.htm"
@@ -130,20 +114,15 @@ public final class Q10286_ReunionWithSirra extends Quest
 				break;
 			}
 			case "32762-02.html":
-			case "32762-03.html":
-			{
-				if (st.isMemoState(1) && st.isMemoStateEx(1, 1))
-				{
+			case "32762-03.html": {
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 1)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32762-04.html":
-			{
-				if (st.isMemoState(1) && st.isMemoStateEx(1, 1))
-				{
-					if (!st.hasQuestItems(BLACK_FROZEN_CORE))
-					{
+			case "32762-04.html": {
+				if (st.isMemoState(1) && st.isMemoStateEx(1, 1)) {
+					if (!st.hasQuestItems(BLACK_FROZEN_CORE)) {
 						st.giveItems(BLACK_FROZEN_CORE, 5);
 					}
 					st.setMemoStateEx(1, 2);
@@ -153,10 +132,8 @@ public final class Q10286_ReunionWithSirra extends Quest
 				break;
 			}
 			case "32781-02.html":
-			case "32781-03.html":
-			{
-				if (st.isMemoState(2))
-				{
+			case "32781-03.html": {
+				if (st.isMemoState(2)) {
 					htmltext = event;
 				}
 				break;
@@ -166,55 +143,37 @@ public final class Q10286_ReunionWithSirra extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st.isCompleted())
-		{
-			if (npc.getId() == RAFFORTY)
-			{
+		if (st.isCompleted()) {
+			if (npc.getId() == RAFFORTY) {
 				htmltext = "32020-05.html";
 			}
-		}
-		else if (st.isCreated())
-		{
+		} else if (st.isCreated()) {
 			htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q10285_MeetingSirra.class.getSimpleName())) ? "32020-01.htm" : "32020-04.htm";
-		}
-		else if (st.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case RAFFORTY:
-				{
-					if (st.isMemoState(1))
-					{
+		} else if (st.isStarted()) {
+			switch (npc.getId()) {
+				case RAFFORTY: {
+					if (st.isMemoState(1)) {
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? "32020-06.html" : "32020-08.html";
-					}
-					else if (st.isMemoState(2))
-					{
+					} else if (st.isMemoState(2)) {
 						htmltext = "32020-07.html";
 					}
 					break;
 				}
-				case JINIA:
-				{
-					if (st.isMemoState(1))
-					{
-						switch (st.getMemoStateEx(1))
-						{
-							case 0:
-							{
+				case JINIA: {
+					if (st.isMemoState(1)) {
+						switch (st.getMemoStateEx(1)) {
+							case 0: {
 								htmltext = "32760-01.html";
 								break;
 							}
-							case 1:
-							{
+							case 1: {
 								htmltext = "32760-05.html";
 								break;
 							}
-							case 2:
-							{
+							case 2: {
 								htmltext = "32760-06.html";
 								break;
 							}
@@ -222,25 +181,18 @@ public final class Q10286_ReunionWithSirra extends Quest
 					}
 					break;
 				}
-				case SIRRA:
-				{
-					if (st.isMemoState(1))
-					{
-						if (st.isMemoStateEx(1, 1))
-						{
+				case SIRRA: {
+					if (st.isMemoState(1)) {
+						if (st.isMemoStateEx(1, 1)) {
 							htmltext = "32762-01.html";
-						}
-						else if (st.isMemoStateEx(1, 2))
-						{
+						} else if (st.isMemoStateEx(1, 2)) {
 							htmltext = "32762-05.html";
 						}
 					}
 					break;
 				}
-				case JINIA2:
-				{
-					if (st.isMemoState(10))
-					{
+				case JINIA2: {
+					if (st.isMemoState(10)) {
 						st.addExpAndSp(2152200, 181070);
 						st.exitQuest(false, true);
 						htmltext = "32781-01.html";

@@ -35,8 +35,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Threat Removal (290)
  * @author Adry_85
  */
-public class Q00290_ThreatRemoval extends Quest
-{
+public class Q00290_ThreatRemoval extends Quest {
 	// NPC
 	private static final int PINAPS = 30201;
 	// Items
@@ -49,8 +48,7 @@ public class Q00290_ThreatRemoval extends Quest
 	
 	private static final Map<Integer, Integer> MOBS_TAG = new HashMap<>();
 	
-	static
-	{
+	static {
 		MOBS_TAG.put(22775, 932); // Sel Mahum Drill Sergeant
 		MOBS_TAG.put(22776, 397); // Sel Mahum Training Officer
 		MOBS_TAG.put(22777, 932); // Sel Mahum Drill Sergeant
@@ -63,8 +61,7 @@ public class Q00290_ThreatRemoval extends Quest
 		MOBS_TAG.put(22785, 169); // Sel Mahum Soldier
 	}
 	
-	public Q00290_ThreatRemoval()
-	{
+	public Q00290_ThreatRemoval() {
 		super(290, Q00290_ThreatRemoval.class.getSimpleName(), "Threat Removal");
 		addStartNpc(PINAPS);
 		addTalkId(PINAPS);
@@ -73,62 +70,49 @@ public class Q00290_ThreatRemoval extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30201-02.html":
-			{
+		switch (event) {
+			case "30201-02.html": {
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "30201-06.html":
-			{
-				if (st.isCond(1))
-				{
+			case "30201-06.html": {
+				if (st.isCond(1)) {
 					st.takeItems(SEL_MAHUM_ID_TAG, 400);
-					switch (getRandom(10))
-					{
-						case 0:
-						{
+					switch (getRandom(10)) {
+						case 0: {
 							st.rewardItems(ENCHANT_WEAPON_S, 1);
 							break;
 						}
 						case 1:
 						case 2:
-						case 3:
-						{
+						case 3: {
 							st.rewardItems(ENCHANT_ARMOR_S, 1);
 							break;
 						}
 						case 4:
-						case 5:
-						{
+						case 5: {
 							st.rewardItems(ENCHANT_ARMOR_S, 2);
 							break;
 						}
-						case 6:
-						{
+						case 6: {
 							st.rewardItems(ENCHANT_ARMOR_S, 3);
 							break;
 						}
 						case 7:
-						case 8:
-						{
+						case 8: {
 							st.rewardItems(FIRE_CRYSTAL, 1);
 							break;
 						}
 						case 9:
-						case 10:
-						{
+						case 10: {
 							st.rewardItems(FIRE_CRYSTAL, 2);
 							break;
 						}
@@ -137,34 +121,25 @@ public class Q00290_ThreatRemoval extends Quest
 				}
 				break;
 			}
-			case "30201-07.html":
-			{
-				if (st.isCond(1))
-				{
+			case "30201-07.html": {
+				if (st.isCond(1)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "exit":
-			{
-				if (st.isCond(1))
-				{
-					if (st.hasQuestItems(SEL_MAHUM_ID_TAG))
-					{
+			case "exit": {
+				if (st.isCond(1)) {
+					if (st.hasQuestItems(SEL_MAHUM_ID_TAG)) {
 						htmltext = "30201-08.html";
-					}
-					else
-					{
+					} else {
 						st.exitQuest(true, true);
 						htmltext = "30201-09.html";
 					}
 				}
 				break;
 			}
-			case "30201-10.html":
-			{
-				if (st.isCond(1))
-				{
+			case "30201-10.html": {
+				if (st.isCond(1)) {
 					st.exitQuest(true, true);
 					htmltext = event;
 				}
@@ -175,19 +150,16 @@ public class Q00290_ThreatRemoval extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(player, 1);
-		if (partyMember == null)
-		{
+		if (partyMember == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		
 		final QuestState st = getQuestState(partyMember, false);
 		int npcId = npc.getId();
 		double chance = MOBS_TAG.get(npcId) * rates().getRateQuestDrop();
-		if (getRandom(1000) < chance)
-		{
+		if (getRandom(1000) < chance) {
 			st.rewardItems(SEL_MAHUM_ID_TAG, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
@@ -195,21 +167,16 @@ public class Q00290_ThreatRemoval extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q00251_NoSecrets.class.getSimpleName())) ? "30201-01.htm" : "30201-03.html";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (st.isCond(1))
-				{
+			case State.STARTED: {
+				if (st.isCond(1)) {
 					htmltext = (st.getQuestItemsCount(SEL_MAHUM_ID_TAG) < 400) ? "30201-04.html" : "30201-05.html";
 				}
 				break;

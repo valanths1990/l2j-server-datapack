@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Sorrowful Sound of Flute (363)
  * @author Adry_85
  */
-public final class Q00363_SorrowfulSoundOfFlute extends Quest
-{
+public final class Q00363_SorrowfulSoundOfFlute extends Quest {
 	// NPCs
 	private static final int ALDO = 30057;
 	private static final int HOLVAS = 30058;
@@ -47,8 +46,7 @@ public final class Q00363_SorrowfulSoundOfFlute extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	
-	public Q00363_SorrowfulSoundOfFlute()
-	{
+	public Q00363_SorrowfulSoundOfFlute() {
 		super(363, Q00363_SorrowfulSoundOfFlute.class.getSimpleName(), "Sorrowful Sound of Flute");
 		addStartNpc(NANARIN);
 		addTalkId(NANARIN, POITAN, RANSPO, ALDO, HOLVAS, OPIX, BARBADO);
@@ -56,49 +54,39 @@ public final class Q00363_SorrowfulSoundOfFlute extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "START":
-			{
-				if (player.getLevel() >= MIN_LEVEL)
-				{
+		switch (event) {
+			case "START": {
+				if (player.getLevel() >= MIN_LEVEL) {
 					st.startQuest();
 					st.setMemoState(2);
 					htmltext = "30956-02.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30956-03.htm";
 				}
 				break;
 			}
-			case "30956-05.html":
-			{
+			case "30956-05.html": {
 				st.giveItems(EVENT_CLOTHES, 1);
 				st.setMemoState(4);
 				st.setCond(3, true);
 				htmltext = event;
 				break;
 			}
-			case "30956-06.html":
-			{
+			case "30956-06.html": {
 				st.giveItems(NANARINS_FLUTE, 1);
 				st.setMemoState(4);
 				st.setCond(3, true);
 				htmltext = event;
 				break;
 			}
-			case "30956-07.html":
-			{
+			case "30956-07.html": {
 				st.giveItems(SABRINS_BLACK_BEER, 1);
 				st.setMemoState(4);
 				st.setCond(3, true);
@@ -110,47 +98,35 @@ public final class Q00363_SorrowfulSoundOfFlute extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
-				if (npc.getId() == NANARIN)
-				{
+		switch (st.getState()) {
+			case State.CREATED: {
+				if (npc.getId() == NANARIN) {
 					htmltext = "30956-01.htm";
 				}
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (npc.getId())
-				{
-					case NANARIN:
-					{
-						switch (st.getMemoState())
-						{
-							case 2:
-							{
+			case State.STARTED: {
+				switch (npc.getId()) {
+					case NANARIN: {
+						switch (st.getMemoState()) {
+							case 2: {
 								htmltext = "30956-04.html";
 								break;
 							}
-							case 4:
-							{
+							case 4: {
 								htmltext = "30956-08.html";
 								break;
 							}
-							case 5:
-							{
+							case 5: {
 								st.rewardItems(THEME_OF_SOLITUDE, 1);
 								st.exitQuest(true, true);
 								htmltext = "30956-09.html";
 								break;
 							}
-							case 6:
-							{
+							case 6: {
 								st.exitQuest(true, false);
 								st.playSound(Sound.ITEMSOUND_QUEST_GIVEUP);
 								htmltext = "30956-10.html";
@@ -159,198 +135,146 @@ public final class Q00363_SorrowfulSoundOfFlute extends Quest
 						}
 						break;
 					}
-					case POITAN:
-					{
-						if (st.isMemoState(2) && ((st.getInt("ex") % 100) < 10))
-						{
+					case POITAN: {
+						if (st.isMemoState(2) && ((st.getInt("ex") % 100) < 10)) {
 							int ex = st.getInt("ex");
 							st.set("ex", ex + 11);
-							switch (getRandom(3))
-							{
-								case 0:
-								{
+							switch (getRandom(3)) {
+								case 0: {
 									htmltext = "30458-01.html";
 									break;
 								}
-								case 1:
-								{
+								case 1: {
 									htmltext = "30458-02.html";
 									break;
 								}
-								case 2:
-								{
+								case 2: {
 									htmltext = "30458-03.html";
 									break;
 								}
 							}
 							st.setCond(2, true);
-						}
-						else if ((st.getMemoState() >= 2) && ((st.getInt("ex") % 100) >= 10))
-						{
+						} else if ((st.getMemoState() >= 2) && ((st.getInt("ex") % 100) >= 10)) {
 							htmltext = "30458-04.html";
 						}
 						break;
 					}
-					case RANSPO:
-					{
-						if (st.isMemoState(2) && ((st.getInt("ex") % 10000) < 1000))
-						{
+					case RANSPO: {
+						if (st.isMemoState(2) && ((st.getInt("ex") % 10000) < 1000)) {
 							int ex = st.getInt("ex");
 							st.set("ex", ex + 1001);
-							switch (getRandom(3))
-							{
-								case 0:
-								{
+							switch (getRandom(3)) {
+								case 0: {
 									htmltext = "30594-01.html";
 									break;
 								}
-								case 1:
-								{
+								case 1: {
 									htmltext = "30594-02.html";
 									break;
 								}
-								case 2:
-								{
+								case 2: {
 									htmltext = "30594-03.html";
 									break;
 								}
 							}
 							st.setCond(2, true);
-						}
-						else if ((st.getMemoState() >= 2) && ((st.getInt("ex") % 10000) >= 1000))
-						{
+						} else if ((st.getMemoState() >= 2) && ((st.getInt("ex") % 10000) >= 1000)) {
 							htmltext = "30594-04.html";
 						}
 						break;
 					}
-					case ALDO:
-					{
-						if (st.isMemoState(2) && ((st.getInt("ex") % 100000) < 10000))
-						{
+					case ALDO: {
+						if (st.isMemoState(2) && ((st.getInt("ex") % 100000) < 10000)) {
 							int ex = st.getInt("ex");
 							st.set("ex", ex + 10001);
-							switch (getRandom(3))
-							{
-								case 0:
-								{
+							switch (getRandom(3)) {
+								case 0: {
 									htmltext = "30057-01.html";
 									break;
 								}
-								case 1:
-								{
+								case 1: {
 									htmltext = "30057-02.html";
 									break;
 								}
-								case 2:
-								{
+								case 2: {
 									htmltext = "30057-03.html";
 									break;
 								}
 							}
 							st.setCond(2, true);
-						}
-						else if ((st.getMemoState() >= 2) && ((st.getInt("ex") % 100000) >= 10000))
-						{
+						} else if ((st.getMemoState() >= 2) && ((st.getInt("ex") % 100000) >= 10000)) {
 							htmltext = "30057-04.html";
 						}
 						break;
 					}
-					case HOLVAS:
-					{
-						if (st.isMemoState(2) && ((st.getInt("ex") % 1000) < 100))
-						{
+					case HOLVAS: {
+						if (st.isMemoState(2) && ((st.getInt("ex") % 1000) < 100)) {
 							int ex = st.getInt("ex");
 							st.set("ex", ex + 101);
-							switch (getRandom(3))
-							{
-								case 0:
-								{
+							switch (getRandom(3)) {
+								case 0: {
 									htmltext = "30058-01.html";
 									break;
 								}
-								case 1:
-								{
+								case 1: {
 									htmltext = "30058-02.html";
 									break;
 								}
-								case 2:
-								{
+								case 2: {
 									htmltext = "30058-03.html";
 									break;
 								}
 							}
 							st.setCond(2, true);
-						}
-						else if ((st.getMemoState() >= 2) && ((st.getInt("ex") % 1000) >= 100))
-						{
+						} else if ((st.getMemoState() >= 2) && ((st.getInt("ex") % 1000) >= 100)) {
 							htmltext = "30058-04.html";
 						}
 						break;
 					}
-					case OPIX:
-					{
-						if (st.isMemoState(2) && (st.getInt("ex") < 100000))
-						{
+					case OPIX: {
+						if (st.isMemoState(2) && (st.getInt("ex") < 100000)) {
 							int ex = st.getInt("ex");
 							st.set("ex", ex + 100001);
-							switch (getRandom(3))
-							{
-								case 0:
-								{
+							switch (getRandom(3)) {
+								case 0: {
 									htmltext = "30595-01.html";
 									break;
 								}
-								case 1:
-								{
+								case 1: {
 									htmltext = "30595-02.html";
 									break;
 								}
-								case 2:
-								{
+								case 2: {
 									htmltext = "30595-03.html";
 									break;
 								}
 							}
 							st.setCond(2, true);
-						}
-						else if ((st.getMemoState() >= 2) && (st.getInt("ex") >= 100000))
-						{
+						} else if ((st.getMemoState() >= 2) && (st.getInt("ex") >= 100000)) {
 							htmltext = "30595-04.html";
 						}
 						break;
 					}
-					case BARBADO:
-					{
-						if (st.isMemoState(4))
-						{
+					case BARBADO: {
+						if (st.isMemoState(4)) {
 							int ex = (st.getInt("ex") % 10) * 20;
-							if (getRandom(100) < ex)
-							{
-								if (st.hasQuestItems(EVENT_CLOTHES))
-								{
+							if (getRandom(100) < ex) {
+								if (st.hasQuestItems(EVENT_CLOTHES)) {
 									st.takeItems(EVENT_CLOTHES, -1);
-								}
-								else if (st.hasQuestItems(NANARINS_FLUTE))
-								{
+								} else if (st.hasQuestItems(NANARINS_FLUTE)) {
 									st.takeItems(NANARINS_FLUTE, -1);
-								}
-								else if (st.hasQuestItems(SABRINS_BLACK_BEER))
-								{
+								} else if (st.hasQuestItems(SABRINS_BLACK_BEER)) {
 									st.takeItems(SABRINS_BLACK_BEER, -1);
 								}
 								st.setMemoState(5);
 								st.setCond(4, true);
 								htmltext = "30959-01.html";
-							}
-							else
-							{
+							} else {
 								st.setMemoState(6);
 								st.setCond(4, true);
 								htmltext = "30959-02.html";
 							}
-						}
-						else if (st.getMemoState() >= 5)
-						{
+						} else if (st.getMemoState() >= 5) {
 							htmltext = "30959-03.html";
 						}
 						break;

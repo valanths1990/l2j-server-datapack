@@ -37,55 +37,41 @@ import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 /**
  * @author l3x
  */
-public class Seed implements IItemHandler
-{
+public class Seed implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!general().allowManor())
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!general().allowManor()) {
 			return false;
-		}
-		else if (!playable.isPlayer())
-		{
+		} else if (!playable.isPlayer()) {
 			playable.sendPacket(SystemMessageId.ITEM_NOT_FOR_PETS);
 			return false;
 		}
 		
 		final L2Object tgt = playable.getTarget();
-		if (tgt == null)
-		{
+		if (tgt == null) {
 			return false;
 		}
-		if (!tgt.isNpc())
-		{
+		if (!tgt.isNpc()) {
 			playable.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			return false;
-		}
-		else if (!tgt.isMonster() || ((L2MonsterInstance) tgt).isRaid() || (tgt instanceof L2ChestInstance))
-		{
+		} else if (!tgt.isMonster() || ((L2MonsterInstance) tgt).isRaid() || (tgt instanceof L2ChestInstance)) {
 			playable.sendPacket(SystemMessageId.THE_TARGET_IS_UNAVAILABLE_FOR_SEEDING);
 			return false;
 		}
 		
 		final L2MonsterInstance target = (L2MonsterInstance) tgt;
-		if (target.isDead())
-		{
+		if (target.isDead()) {
 			playable.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			return false;
-		}
-		else if (target.isSeeded())
-		{
+		} else if (target.isSeeded()) {
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		
 		final L2Seed seed = CastleManorManager.getInstance().getSeed(item.getId());
-		if (seed == null)
-		{
+		if (seed == null) {
 			return false;
-		}
-		else if (seed.getCastleId() != MapRegionManager.getInstance().getAreaCastle(playable)) // TODO: replace me with tax zone
+		} else if (seed.getCastleId() != MapRegionManager.getInstance().getAreaCastle(playable)) // TODO: replace me with tax zone
 		{
 			playable.sendPacket(SystemMessageId.THIS_SEED_MAY_NOT_BE_SOWN_HERE);
 			return false;
@@ -95,10 +81,8 @@ public class Seed implements IItemHandler
 		target.setSeeded(seed, activeChar);
 		
 		final SkillHolder[] skills = item.getItem().getSkills();
-		if (skills != null)
-		{
-			for (SkillHolder sk : skills)
-			{
+		if (skills != null) {
+			for (SkillHolder sk : skills) {
 				activeChar.useMagic(sk.getSkill(), false, false);
 			}
 		}

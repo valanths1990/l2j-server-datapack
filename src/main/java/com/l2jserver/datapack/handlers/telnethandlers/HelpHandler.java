@@ -26,18 +26,14 @@ import com.l2jserver.gameserver.handler.ITelnetHandler;
 /**
  * @author UnAfraid
  */
-public class HelpHandler implements ITelnetHandler
-{
-	private final String[] _commands =
-	{
+public class HelpHandler implements ITelnetHandler {
+	private final String[] _commands = {
 		"help"
 	};
 	
 	@Override
-	public boolean useCommand(String command, PrintWriter _print, Socket _cSocket, int _uptime)
-	{
-		if (command.equals("help"))
-		{
+	public boolean useCommand(String command, PrintWriter _print, Socket _cSocket, int _uptime) {
+		if (command.equals("help")) {
 			_print.println("The following is a list of all available commands: ");
 			_print.println("help                  - shows this help.");
 			_print.println("status                - displays basic server statistics.");
@@ -61,9 +57,7 @@ public class HelpHandler implements ITelnetHandler
 			_print.println("jail <player> [time]");
 			_print.println("unjail <player>");
 			_print.println("quit                  - closes telnet session.");
-		}
-		else if (command.equals("help debug"))
-		{
+		} else if (command.equals("help debug")) {
 			_print.println("The following is a list of all available debug commands: ");
 			_print.println("full                - Dumps complete debug information to an file (recommended)");
 			_print.println("decay               - prints info about the DecayManager");
@@ -76,8 +70,7 @@ public class HelpHandler implements ITelnetHandler
 	}
 	
 	@Override
-	public String[] getCommandList()
-	{
+	public String[] getCommandList() {
 		return _commands;
 	}
 }

@@ -28,11 +28,9 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Stakato Nest Teleport AI.
  * @author Charus
  */
-public final class StakatoNestTeleporter extends AbstractNpcAI
-{
+public final class StakatoNestTeleporter extends AbstractNpcAI {
 	// Locations
-	private final static Location[] LOCS =
-	{
+	private final static Location[] LOCS = {
 		new Location(80456, -52322, -5640),
 		new Location(88718, -46214, -4640),
 		new Location(87464, -54221, -5120),
@@ -42,28 +40,22 @@ public final class StakatoNestTeleporter extends AbstractNpcAI
 	// NPC
 	private final static int KINTAIJIN = 32640;
 	
-	private StakatoNestTeleporter()
-	{
+	private StakatoNestTeleporter() {
 		super(StakatoNestTeleporter.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(KINTAIJIN);
 		addTalkId(KINTAIJIN);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		int index = Integer.parseInt(event) - 1;
 		
-		if (LOCS.length > index)
-		{
+		if (LOCS.length > index) {
 			Location loc = LOCS[index];
 			
-			if (player.getParty() != null)
-			{
-				for (L2PcInstance partyMember : player.getParty().getMembers())
-				{
-					if (partyMember.isInsideRadius(player, 1000, true, true))
-					{
+			if (player.getParty() != null) {
+				for (L2PcInstance partyMember : player.getParty().getMembers()) {
+					if (partyMember.isInsideRadius(player, 1000, true, true)) {
 						partyMember.teleToLocation(loc, true);
 					}
 				}
@@ -74,13 +66,11 @@ public final class StakatoNestTeleporter extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		return (player.hasQuestCompleted(Q00240_ImTheOnlyOneYouCanTrust.class.getSimpleName()) ? "32640.htm" : "32640-no.htm");
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new StakatoNestTeleporter();
 	}
 }

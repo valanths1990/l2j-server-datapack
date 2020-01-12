@@ -39,46 +39,38 @@ import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
  * Reeling effect implementation.
  * @author UnAfraid
  */
-public final class Reeling extends AbstractEffect
-{
+public final class Reeling extends AbstractEffect {
 	private final double _power;
 	
-	public Reeling(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public Reeling(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
-		if (params.getString("power", null) == null)
-		{
+		if (params.getString("power", null) == null) {
 			throw new IllegalArgumentException(getClass().getSimpleName() + ": effect without power!");
 		}
 		_power = params.getDouble("power");
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.FISHING;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2Character activeChar = info.getEffector();
-		if (!activeChar.isPlayer())
-		{
+		if (!activeChar.isPlayer()) {
 			return;
 		}
 		
 		final L2PcInstance player = activeChar.getActingPlayer();
 		final L2Fishing fish = player.getFishCombat();
-		if (fish == null)
-		{
+		if (fish == null) {
 			// Reeling skill is available only while fishing
 			player.sendPacket(SystemMessageId.CAN_USE_REELING_ONLY_WHILE_FISHING);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -86,14 +78,12 @@ public final class Reeling extends AbstractEffect
 		}
 		final L2Weapon weaponItem = player.getActiveWeaponItem();
 		final L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-		if ((weaponInst == null) || (weaponItem == null))
-		{
+		if ((weaponInst == null) || (weaponItem == null)) {
 			return;
 		}
 		int SS = 1;
 		int pen = 0;
-		if (activeChar.isChargedShot(ShotType.FISH_SOULSHOTS))
-		{
+		if (activeChar.isChargedShot(ShotType.FISH_SOULSHOTS)) {
 			SS = 2;
 		}
 		final L2FishingRod fishingRod = FishingRodsData.getInstance().getFishingRod(weaponItem.getId());
@@ -106,8 +96,7 @@ public final class Reeling extends AbstractEffect
 			pen = (int) (dmg * 0.05);
 			dmg = dmg - pen;
 		}
-		if (SS > 1)
-		{
+		if (SS > 1) {
 			weaponInst.setChargedShot(ShotType.FISH_SOULSHOTS, false);
 		}
 		

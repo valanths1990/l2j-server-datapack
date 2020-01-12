@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by DooMIta.
  * @author nonom
  */
-public class Q00027_ChestCaughtWithABaitOfWind extends Quest
-{
+public class Q00027_ChestCaughtWithABaitOfWind extends Quest {
 	// NPCs
 	private static final int LANOSCO = 31570;
 	private static final int SHALING = 31434;
@@ -40,8 +39,7 @@ public class Q00027_ChestCaughtWithABaitOfWind extends Quest
 	private static final int STRANGE_BLUESPRINT = 7625;
 	private static final int BLACK_PEARL_RING = 880;
 	
-	public Q00027_ChestCaughtWithABaitOfWind()
-	{
+	public Q00027_ChestCaughtWithABaitOfWind() {
 		super(27, Q00027_ChestCaughtWithABaitOfWind.class.getSimpleName(), "Chest Caught With A Bait Of Wind");
 		addStartNpc(LANOSCO);
 		addTalkId(LANOSCO, SHALING);
@@ -49,23 +47,19 @@ public class Q00027_ChestCaughtWithABaitOfWind extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "31570-03.htm":
 				st.startQuest();
 				break;
 			case "31570-05.htm":
-				if (st.isCond(1) && st.hasQuestItems(BLUE_TREASURE_BOX))
-				{
+				if (st.isCond(1) && st.hasQuestItems(BLUE_TREASURE_BOX)) {
 					htmltext = "31570-06.htm";
 					st.setCond(2, true);
 					st.giveItems(STRANGE_BLUESPRINT, 1);
@@ -73,8 +67,7 @@ public class Q00027_ChestCaughtWithABaitOfWind extends Quest
 				}
 				break;
 			case "31434-02.htm":
-				if (st.isCond(2) && st.hasQuestItems(STRANGE_BLUESPRINT))
-				{
+				if (st.isCond(2) && st.hasQuestItems(STRANGE_BLUESPRINT)) {
 					st.giveItems(BLACK_PEARL_RING, 1);
 					st.exitQuest(false, true);
 					htmltext = "31434-01.htm";
@@ -86,44 +79,33 @@ public class Q00027_ChestCaughtWithABaitOfWind extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.COMPLETED:
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			case State.CREATED:
-				if (npc.getId() == LANOSCO)
-				{
+				if (npc.getId() == LANOSCO) {
 					htmltext = ((player.getLevel() >= 27) && player.hasQuestCompleted(Q00050_LanoscosSpecialBait.class.getSimpleName())) ? "31570-01.htm" : "31570-02.htm";
 				}
 				break;
 			case State.STARTED:
-				switch (npc.getId())
-				{
+				switch (npc.getId()) {
 					case LANOSCO:
-						if (st.isCond(1))
-						{
-							if (st.hasQuestItems(BLUE_TREASURE_BOX))
-							{
+						if (st.isCond(1)) {
+							if (st.hasQuestItems(BLUE_TREASURE_BOX)) {
 								htmltext = "31570-04.htm";
-							}
-							else
-							{
+							} else {
 								htmltext = "31570-05.htm";
 							}
-						}
-						else
-						{
+						} else {
 							htmltext = "31570-07.htm";
 						}
 						break;
 					case SHALING:
-						if (st.isCond(2))
-						{
+						if (st.isCond(2)) {
 							htmltext = "31434-00.htm";
 						}
 						break;

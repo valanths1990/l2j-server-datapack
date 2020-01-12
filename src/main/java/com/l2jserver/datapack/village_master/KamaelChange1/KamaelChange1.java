@@ -33,11 +33,9 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Kamael class transfer AI.
  * @author Adry_85
  */
-public final class KamaelChange1 extends AbstractNpcAI
-{
+public final class KamaelChange1 extends AbstractNpcAI {
 	// NPCs
-	private static int[] NPCS =
-	{
+	private static int[] NPCS = {
 		32191, // Hanarin
 		32193, // Yeniche
 		32196, // Gershwin
@@ -50,19 +48,16 @@ public final class KamaelChange1 extends AbstractNpcAI
 	private static final int GWAINS_RECOMMENDATION = 9753;
 	private static final int STEELRAZOR_EVALUATION = 9772;
 	
-	private KamaelChange1()
-	{
+	private KamaelChange1() {
 		super(KamaelChange1.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "32191-02.htm": // master_all_kamael003m
 			case "32191-03.htm": // master_all_kamael006ma
 			case "32191-04.htm": // master_all_kamael007ma
@@ -76,8 +71,7 @@ public final class KamaelChange1 extends AbstractNpcAI
 				break;
 			}
 			case "125":
-			case "126":
-			{
+			case "126": {
 				htmltext = ClassChangeRequested(player, Integer.valueOf(event));
 				break;
 			}
@@ -85,43 +79,26 @@ public final class KamaelChange1 extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	private String ClassChangeRequested(L2PcInstance player, int classId)
-	{
+	private String ClassChangeRequested(L2PcInstance player, int classId) {
 		String htmltext = null;
-		if (CategoryData.getInstance().isInCategory(CategoryType.KAMAEL_SECOND_CLASS_GROUP, classId))
-		{
-			if (player.isInCategory(CategoryType.KAMAEL_SECOND_CLASS_GROUP))
-			{
+		if (CategoryData.getInstance().isInCategory(CategoryType.KAMAEL_SECOND_CLASS_GROUP, classId)) {
+			if (player.isInCategory(CategoryType.KAMAEL_SECOND_CLASS_GROUP)) {
 				htmltext = "32191-10.htm"; // master_all_kamael004a
-			}
-			else if (player.isInCategory(CategoryType.KAMAEL_THIRD_CLASS_GROUP))
-			{
+			} else if (player.isInCategory(CategoryType.KAMAEL_THIRD_CLASS_GROUP)) {
 				htmltext = "32191-11.htm"; // master_all_kamael005a
-			}
-			else if (player.isInCategory(CategoryType.KAMAEL_FOURTH_CLASS_GROUP))
-			{
+			} else if (player.isInCategory(CategoryType.KAMAEL_FOURTH_CLASS_GROUP)) {
 				htmltext = "32191-12.htm"; // master_all_kamael100a
-			}
-			else if ((classId == 125) && (player.getClassId() == ClassId.maleSoldier))
-			{
+			} else if ((classId == 125) && (player.getClassId() == ClassId.maleSoldier)) {
 				QuestState qs = player.getQuestState(Q00062_PathOfTheTrooper.class.getSimpleName());
-				if (player.getLevel() < 20)
-				{
-					if ((qs != null) && qs.isCompleted())
-					{
+				if (player.getLevel() < 20) {
+					if ((qs != null) && qs.isCompleted()) {
 						htmltext = "32191-13.htm"; // master_all_kamael009ma
-					}
-					else
-					{
+					} else {
 						htmltext = "32191-14.htm"; // master_all_kamael008ma
 					}
-				}
-				else if ((qs == null) || !qs.isCompleted())
-				{
+				} else if ((qs == null) || !qs.isCompleted()) {
 					htmltext = "32191-15.htm"; // master_all_kamael010ma
-				}
-				else
-				{
+				} else {
 					takeItems(player, GWAINS_RECOMMENDATION, -1);
 					player.setClassId(125);
 					player.setBaseClass(125);
@@ -130,27 +107,17 @@ public final class KamaelChange1 extends AbstractNpcAI
 					giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 					htmltext = "32191-16.htm"; // master_all_kamael011ma
 				}
-			}
-			else if ((classId == 126) && (player.getClassId() == ClassId.femaleSoldier))
-			{
+			} else if ((classId == 126) && (player.getClassId() == ClassId.femaleSoldier)) {
 				QuestState qs = player.getQuestState(Q00063_PathOfTheWarder.class.getSimpleName());
-				if (player.getLevel() < 20)
-				{
-					if ((qs != null) && qs.isCompleted())
-					{
+				if (player.getLevel() < 20) {
+					if ((qs != null) && qs.isCompleted()) {
 						htmltext = "32191-17.htm"; // master_all_kamael008fa
-					}
-					else
-					{
+					} else {
 						htmltext = "32191-18.htm"; // master_all_kamael009fa
 					}
-				}
-				else if ((qs == null) || !qs.isCompleted())
-				{
+				} else if ((qs == null) || !qs.isCompleted()) {
 					htmltext = "32191-19.htm"; // master_all_kamael010fa
-				}
-				else
-				{
+				} else {
 					takeItems(player, STEELRAZOR_EVALUATION, -1);
 					player.setClassId(126);
 					player.setBaseClass(126);
@@ -165,41 +132,27 @@ public final class KamaelChange1 extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (player.getRace() != Race.KAMAEL)
-		{
+		if (player.getRace() != Race.KAMAEL) {
 			htmltext = "32191-01.htm"; // master_all_kamael002a
-		}
-		else if (player.isInCategory(CategoryType.KAMAEL_FIRST_CLASS_GROUP))
-		{
-			if (player.getClassId() == ClassId.maleSoldier)
-			{
+		} else if (player.isInCategory(CategoryType.KAMAEL_FIRST_CLASS_GROUP)) {
+			if (player.getClassId() == ClassId.maleSoldier) {
 				htmltext = "32191-02.htm"; // master_all_kamael003m
-			}
-			else if (player.getClassId() == ClassId.femaleSoldier)
-			{
+			} else if (player.getClassId() == ClassId.femaleSoldier) {
 				htmltext = "32191-06.htm"; // master_all_kamael003f
 			}
-		}
-		else if (player.isInCategory(CategoryType.KAMAEL_SECOND_CLASS_GROUP))
-		{
+		} else if (player.isInCategory(CategoryType.KAMAEL_SECOND_CLASS_GROUP)) {
 			htmltext = "32191-10.htm"; // master_all_kamael004a
-		}
-		else if (player.isInCategory(CategoryType.KAMAEL_THIRD_CLASS_GROUP))
-		{
+		} else if (player.isInCategory(CategoryType.KAMAEL_THIRD_CLASS_GROUP)) {
 			htmltext = "32191-11.htm"; // master_all_kamael005a
-		}
-		else
-		{
+		} else {
 			htmltext = "32191-12.htm"; // master_all_kamael100a
 		}
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new KamaelChange1();
 	}
 }

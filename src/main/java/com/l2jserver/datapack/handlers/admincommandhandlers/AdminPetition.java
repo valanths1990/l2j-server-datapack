@@ -28,10 +28,8 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * This class handles commands for GMs to respond to petitions.
  * @author Tempy
  */
-public class AdminPetition implements IAdminCommandHandler
-{
-	private static final String[] ADMIN_COMMANDS =
-	{
+public class AdminPetition implements IAdminCommandHandler {
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_view_petitions",
 		"admin_view_petition",
 		"admin_accept_petition",
@@ -41,70 +39,48 @@ public class AdminPetition implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		int petitionId = -1;
 		
-		try
-		{
+		try {
 			petitionId = Integer.parseInt(command.split(" ")[1]);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 		}
 		
-		if (command.equals("admin_view_petitions"))
-		{
+		if (command.equals("admin_view_petitions")) {
 			PetitionManager.getInstance().sendPendingPetitionList(activeChar);
-		}
-		else if (command.startsWith("admin_view_petition"))
-		{
+		} else if (command.startsWith("admin_view_petition")) {
 			PetitionManager.getInstance().viewPetition(activeChar, petitionId);
-		}
-		else if (command.startsWith("admin_accept_petition"))
-		{
-			if (PetitionManager.getInstance().isPlayerInConsultation(activeChar))
-			{
+		} else if (command.startsWith("admin_accept_petition")) {
+			if (PetitionManager.getInstance().isPlayerInConsultation(activeChar)) {
 				activeChar.sendPacket(SystemMessageId.ONLY_ONE_ACTIVE_PETITION_AT_TIME);
 				return true;
 			}
 			
-			if (PetitionManager.getInstance().isPetitionInProcess(petitionId))
-			{
+			if (PetitionManager.getInstance().isPetitionInProcess(petitionId)) {
 				activeChar.sendPacket(SystemMessageId.PETITION_UNDER_PROCESS);
 				return true;
 			}
 			
-			if (!PetitionManager.getInstance().acceptPetition(activeChar, petitionId))
-			{
+			if (!PetitionManager.getInstance().acceptPetition(activeChar, petitionId)) {
 				activeChar.sendPacket(SystemMessageId.NOT_UNDER_PETITION_CONSULTATION);
 			}
-		}
-		else if (command.startsWith("admin_reject_petition"))
-		{
-			if (!PetitionManager.getInstance().rejectPetition(activeChar, petitionId))
-			{
+		} else if (command.startsWith("admin_reject_petition")) {
+			if (!PetitionManager.getInstance().rejectPetition(activeChar, petitionId)) {
 				activeChar.sendPacket(SystemMessageId.FAILED_CANCEL_PETITION_TRY_LATER);
 			}
 			PetitionManager.getInstance().sendPendingPetitionList(activeChar);
-		}
-		else if (command.equals("admin_reset_petitions"))
-		{
-			if (PetitionManager.getInstance().isPetitionInProcess())
-			{
+		} else if (command.equals("admin_reset_petitions")) {
+			if (PetitionManager.getInstance().isPetitionInProcess()) {
 				activeChar.sendPacket(SystemMessageId.PETITION_UNDER_PROCESS);
 				return false;
 			}
 			PetitionManager.getInstance().clearPendingPetitions();
 			PetitionManager.getInstance().sendPendingPetitionList(activeChar);
-		}
-		else if (command.startsWith("admin_force_peti"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_force_peti")) {
+			try {
 				L2Object targetChar = activeChar.getTarget();
-				if ((targetChar == null) || !(targetChar instanceof L2PcInstance))
-				{
+				if ((targetChar == null) || !(targetChar instanceof L2PcInstance)) {
 					activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 					return false;
 				}
@@ -114,9 +90,7 @@ public class AdminPetition implements IAdminCommandHandler
 				
 				petitionId = PetitionManager.getInstance().submitPetition(targetPlayer, val, 9);
 				PetitionManager.getInstance().acceptPetition(activeChar, petitionId);
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
+			} catch (StringIndexOutOfBoundsException e) {
 				activeChar.sendMessage("Usage: //force_peti text");
 				return false;
 			}
@@ -125,8 +99,7 @@ public class AdminPetition implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.util.Util;
  * Magical Power of Fire - Part 2 (616)
  * @author Joxit
  */
-public class Q00616_MagicalPowerOfFirePart2 extends Quest
-{
+public class Q00616_MagicalPowerOfFirePart2 extends Quest {
 	// NPCs
 	private static final int UDAN = 31379;
 	private static final int KETRA_TOTEM = 31558;
@@ -47,8 +46,7 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 75;
 	
-	public Q00616_MagicalPowerOfFirePart2()
-	{
+	public Q00616_MagicalPowerOfFirePart2() {
 		super(616, Q00616_MagicalPowerOfFirePart2.class.getSimpleName(), "Magical Power of Fire - Part 2");
 		addStartNpc(UDAN);
 		addTalkId(UDAN, KETRA_TOTEM);
@@ -57,31 +55,23 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 		
 		final String test = loadGlobalQuestVar("Q00616_respawn");
 		final long remain = (!test.isEmpty()) ? (Long.parseLong(test) - System.currentTimeMillis()) : 0;
-		if (remain > 0)
-		{
+		if (remain > 0) {
 			startQuestTimer("spawn_npc", remain, null, null);
-		}
-		else
-		{
+		} else {
 			addSpawn(KETRA_TOTEM, 142368, -82512, -6487, 58000, false, 0, true);
 		}
 	}
 	
 	@Override
-	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon)
-	{
+	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && Util.checkIfInRange(1500, npc, player, false))
-		{
-			if (npc.getId() == NASTRON)
-			{
-				switch (st.getCond())
-				{
+		if ((st != null) && Util.checkIfInRange(1500, npc, player, false)) {
+			if (npc.getId() == NASTRON) {
+				switch (st.getCond()) {
 					case 1: // take the item and give the heart
 						st.takeItems(RED_TOTEM, 1);
 					case 2:
-						if (!st.hasQuestItems(NASTRON_HEART))
-						{
+						if (!st.hasQuestItems(NASTRON_HEART)) {
 							st.giveItems(NASTRON_HEART, 1);
 						}
 						st.setCond(3, true);
@@ -92,32 +82,25 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (player != null)
-		{
+		if (player != null) {
 			final QuestState st = getQuestState(player, false);
-			if (st == null)
-			{
+			if (st == null) {
 				return null;
 			}
 			
-			switch (event)
-			{
+			switch (event) {
 				case "31379-02.html":
 					st.startQuest();
 					htmltext = event;
 					break;
 				case "give_heart":
-					if (st.hasQuestItems(NASTRON_HEART))
-					{
+					if (st.hasQuestItems(NASTRON_HEART)) {
 						st.addExpAndSp(10000, 0);
 						st.exitQuest(true, true);
 						htmltext = "31379-06.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "31379-07.html";
 					}
 					break;
@@ -125,17 +108,12 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 					htmltext = (st.hasQuestItems(RED_TOTEM)) ? spawnNastron(npc, st) : "31558-04.html";
 					break;
 			}
-		}
-		else
-		{
-			if (event.equals("despawn_nastron"))
-			{
+		} else {
+			if (event.equals("despawn_nastron")) {
 				npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.THE_POWER_OF_CONSTRAINT_IS_GETTING_WEAKER_YOUR_RITUAL_HAS_FAILED));
 				npc.deleteMe();
 				addSpawn(KETRA_TOTEM, 142368, -82512, -6487, 58000, false, 0, true);
-			}
-			else if (event.equals("spawn_npc"))
-			{
+			} else if (event.equals("spawn_npc")) {
 				addSpawn(KETRA_TOTEM, 142368, -82512, -6487, 58000, false, 0, true);
 			}
 		}
@@ -143,8 +121,7 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final int respawnMinDelay = (int) (43200000 * npc().getRaidMinRespawnMultiplier());
 		final int respawnMaxDelay = (int) (129600000 * npc().getRaidMaxRespawnMultiplier());
 		final int respawnDelay = getRandom(respawnMinDelay, respawnMaxDelay);
@@ -156,15 +133,12 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case UDAN:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? (st.hasQuestItems(RED_TOTEM)) ? "31379-01.htm" : "31379-00a.html" : "31379-00b.html";
 						break;
@@ -174,10 +148,8 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 				}
 				break;
 			case KETRA_TOTEM:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "31558-01.html";
 							break;
@@ -194,14 +166,11 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 		return htmltext;
 	}
 	
-	private String spawnNastron(L2Npc npc, QuestState st)
-	{
-		if (getQuestTimer("spawn_npc", null, null) != null)
-		{
+	private String spawnNastron(L2Npc npc, QuestState st) {
+		if (getQuestTimer("spawn_npc", null, null) != null) {
 			return "31558-03.html";
 		}
-		if (st.isCond(1))
-		{
+		if (st.isCond(1)) {
 			st.takeItems(RED_TOTEM, 1);
 			st.setCond(2, true);
 		}

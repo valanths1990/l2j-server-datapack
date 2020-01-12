@@ -34,21 +34,16 @@ import com.l2jserver.gameserver.util.Util;
 /**
  * @author UnAfraid
  */
-public class AreaCorpseMob implements ITargetTypeHandler
-{
+public class AreaCorpseMob implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		if ((target == null) || !target.isAttackable() || !target.isDead())
-		{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+		if ((target == null) || !target.isAttackable() || !target.isDead()) {
 			activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 			return EMPTY_TARGET_LIST;
 		}
 		
-		if (onlyFirst)
-		{
-			return new L2Character[]
-			{
+		if (onlyFirst) {
+			return new L2Character[] {
 				target
 			};
 		}
@@ -58,31 +53,26 @@ public class AreaCorpseMob implements ITargetTypeHandler
 		
 		final boolean srcInArena = activeChar.isInsideZone(ZoneId.PVP) && !activeChar.isInsideZone(ZoneId.SIEGE);
 		final Collection<L2Character> objs = activeChar.getKnownList().getKnownCharacters();
-		for (L2Character obj : objs)
-		{
-			if (!(obj.isAttackable() || obj.isPlayable()) || !Util.checkIfInRange(skill.getAffectRange(), target, obj, true))
-			{
+		for (L2Character obj : objs) {
+			if (!(obj.isAttackable() || obj.isPlayable()) || !Util.checkIfInRange(skill.getAffectRange(), target, obj, true)) {
 				continue;
 			}
 			
-			if (!Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena))
-			{
+			if (!Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena)) {
 				continue;
 			}
 			
 			targetList.add(obj);
 		}
 		
-		if (targetList.isEmpty())
-		{
+		if (targetList.isEmpty()) {
 			return EMPTY_TARGET_LIST;
 		}
 		return targetList.toArray(new L2Character[targetList.size()]);
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.AREA_CORPSE_MOB;
 	}
 }

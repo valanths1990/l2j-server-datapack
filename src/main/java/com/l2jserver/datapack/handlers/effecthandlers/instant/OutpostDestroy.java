@@ -30,33 +30,26 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Outpost Destroy effect implementation.
  * @author UnAfraid
  */
-public final class OutpostDestroy extends AbstractEffect
-{
-	public OutpostDestroy(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class OutpostDestroy extends AbstractEffect {
+	public OutpostDestroy(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2PcInstance player = info.getEffector().getActingPlayer();
-		if (!player.isClanLeader())
-		{
+		if (!player.isClanLeader()) {
 			return;
 		}
 		
-		if (TerritoryWarManager.getInstance().isTWInProgress())
-		{
+		if (TerritoryWarManager.getInstance().isTWInProgress()) {
 			final L2SiegeFlagInstance flag = TerritoryWarManager.getInstance().getHQForClan(player.getClan());
-			if (flag != null)
-			{
+			if (flag != null) {
 				flag.deleteMe();
 			}
 			TerritoryWarManager.getInstance().setHQForClan(player.getClan(), null);

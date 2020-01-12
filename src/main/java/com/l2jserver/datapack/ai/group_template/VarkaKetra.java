@@ -41,11 +41,9 @@ import com.l2jserver.gameserver.util.Util;
  * Varka Silenos Barracks and Ketra Orc Outpost AI.
  * @author malyelfik
  */
-public class VarkaKetra extends AbstractNpcAI
-{
+public class VarkaKetra extends AbstractNpcAI {
 	// Monsters
-	private static final int[] KETRA =
-	{
+	private static final int[] KETRA = {
 		21324, // Ketra Orc Footman
 		21325, // Ketra's War Hound
 		21327, // Ketra Orc Raider
@@ -72,8 +70,7 @@ public class VarkaKetra extends AbstractNpcAI
 		25305, // Ketra's Chief Brakki (Raid Boss)
 		25306, // Soul of Fire Nastron (Raid Boss)
 	};
-	private static final int[] VARKA =
-	{
+	private static final int[] VARKA = {
 		21350, // Varka Silenos Recruit
 		21351, // Varka Silenos Footman
 		21353, // Varka Silenos Scout
@@ -101,16 +98,14 @@ public class VarkaKetra extends AbstractNpcAI
 		25316, // Soul of Water Ashutar (Raid Boss)
 	};
 	// Items
-	private static final int[] KETRA_MARKS =
-	{
+	private static final int[] KETRA_MARKS = {
 		7211, // Mark of Ketra's Alliance - Level 1
 		7212, // Mark of Ketra's Alliance - Level 2
 		7213, // Mark of Ketra's Alliance - Level 3
 		7214, // Mark of Ketra's Alliance - Level 4
 		7215, // Mark of Ketra's Alliance - Level 5
 	};
-	private static final int[] VARKA_MARKS =
-	{
+	private static final int[] VARKA_MARKS = {
 		7221, // Mark of Varka's Alliance - Level 1
 		7222, // Mark of Varka's Alliance - Level 2
 		7223, // Mark of Varka's Alliance - Level 3
@@ -118,8 +113,7 @@ public class VarkaKetra extends AbstractNpcAI
 		7225, // Mark of Varka's Alliance - Level 5
 	};
 	// Quests
-	private static final String[] KETRA_QUESTS =
-	{
+	private static final String[] KETRA_QUESTS = {
 		Q00605_AllianceWithKetraOrcs.class.getSimpleName(),
 		Q00606_BattleAgainstVarkaSilenos.class.getSimpleName(),
 		Q00607_ProveYourCourageKetra.class.getSimpleName(),
@@ -127,8 +121,7 @@ public class VarkaKetra extends AbstractNpcAI
 		Q00609_MagicalPowerOfWaterPart1.class.getSimpleName(),
 		Q00610_MagicalPowerOfWaterPart2.class.getSimpleName()
 	};
-	private static final String[] VARKA_QUESTS =
-	{
+	private static final String[] VARKA_QUESTS = {
 		Q00611_AllianceWithVarkaSilenos.class.getSimpleName(),
 		Q00612_BattleAgainstKetraOrcs.class.getSimpleName(),
 		Q00613_ProveYourCourageVarka.class.getSimpleName(),
@@ -137,8 +130,7 @@ public class VarkaKetra extends AbstractNpcAI
 		Q00616_MagicalPowerOfFirePart2.class.getSimpleName()
 	};
 	
-	private VarkaKetra()
-	{
+	private VarkaKetra() {
 		super(VarkaKetra.class.getSimpleName(), "ai/group_template");
 		addKillId(KETRA);
 		addKillId(VARKA);
@@ -147,32 +139,23 @@ public class VarkaKetra extends AbstractNpcAI
 	}
 	
 	@Override
-	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon)
-	{
-		if (Util.checkIfInRange(1500, player, npc, false))
-		{
-			if (Util.contains(KETRA, npc.getId()) && hasAtLeastOneQuestItem(player, KETRA_MARKS))
-			{
+	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon) {
+		if (Util.checkIfInRange(1500, player, npc, false)) {
+			if (Util.contains(KETRA, npc.getId()) && hasAtLeastOneQuestItem(player, KETRA_MARKS)) {
 				decreaseAlliance(player, KETRA_MARKS);
 				exitQuests(player, KETRA_QUESTS);
-			}
-			else if (Util.contains(VARKA, npc.getId()) && hasAtLeastOneQuestItem(player, VARKA_MARKS))
-			{
+			} else if (Util.contains(VARKA, npc.getId()) && hasAtLeastOneQuestItem(player, VARKA_MARKS)) {
 				decreaseAlliance(player, VARKA_MARKS);
 				exitQuests(player, VARKA_QUESTS);
 			}
 		}
 	}
 	
-	private final void decreaseAlliance(L2PcInstance player, int[] marks)
-	{
-		for (int i = 0; i < marks.length; i++)
-		{
-			if (hasQuestItems(player, marks[i]))
-			{
+	private final void decreaseAlliance(L2PcInstance player, int[] marks) {
+		for (int i = 0; i < marks.length; i++) {
+			if (hasQuestItems(player, marks[i])) {
 				takeItems(player, marks[i], -1);
-				if (i > 0)
-				{
+				if (i > 0) {
 					giveItems(player, marks[i - 1], 1);
 				}
 				return;
@@ -180,37 +163,30 @@ public class VarkaKetra extends AbstractNpcAI
 		}
 	}
 	
-	private final void exitQuests(L2PcInstance player, String[] quests)
-	{
-		for (String quest : quests)
-		{
+	private final void exitQuests(L2PcInstance player, String[] quests) {
+		for (String quest : quests) {
 			final QuestState qs = player.getQuestState(quest);
-			if ((qs != null) && qs.isStarted())
-			{
+			if ((qs != null) && qs.isStarted()) {
 				qs.exitQuest(true);
 			}
 		}
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		executeForEachPlayer(killer, npc, isSummon, true, false);
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public boolean onNpcHate(L2Attackable mob, L2PcInstance player, boolean isSummon)
-	{
-		if (Util.contains(KETRA, mob.getId()))
-		{
+	public boolean onNpcHate(L2Attackable mob, L2PcInstance player, boolean isSummon) {
+		if (Util.contains(KETRA, mob.getId())) {
 			return !hasAtLeastOneQuestItem(player, KETRA_MARKS);
 		}
 		return !hasAtLeastOneQuestItem(player, VARKA_MARKS);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new VarkaKetra();
 	}
 }

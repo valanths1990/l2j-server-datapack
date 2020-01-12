@@ -34,52 +34,42 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Fear effect implementation.
  * @author littlecrow
  */
-public final class Fear extends AbstractEffect
-{
-	public Fear(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class Fear extends AbstractEffect {
+	public Fear(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean canStart(BuffInfo info)
-	{
-		return info.getEffected().isPlayer() || info.getEffected().isSummon()
-			|| (info.getEffected().isAttackable() && //
-				!((info.getEffected() instanceof L2DefenderInstance) || (info.getEffected() instanceof L2FortCommanderInstance) || //
-					(info.getEffected() instanceof L2SiegeFlagInstance) || (info.getEffected().getTemplate().getRace() == Race.SIEGE_WEAPON)));
+	public boolean canStart(BuffInfo info) {
+		return info.getEffected().isPlayer() || info.getEffected().isSummon() || (info.getEffected().isAttackable() && //
+			!((info.getEffected() instanceof L2DefenderInstance) || (info.getEffected() instanceof L2FortCommanderInstance) || //
+				(info.getEffected() instanceof L2SiegeFlagInstance) || (info.getEffected().getTemplate().getRace() == Race.SIEGE_WEAPON)));
 	}
 	
 	@Override
-	public int getEffectFlags()
-	{
+	public int getEffectFlags() {
 		return EffectFlag.FEAR.getMask();
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.FEAR;
 	}
 	
 	@Override
-	public int getTicks()
-	{
+	public int getTicks() {
 		return 5;
 	}
 	
 	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
+	public boolean onActionTime(BuffInfo info) {
 		info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_AFRAID, info.getEffector(), false);
 		return false;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (info.getEffected().isCastingNow() && info.getEffected().canAbortCast())
-		{
+	public void onStart(BuffInfo info) {
+		if (info.getEffected().isCastingNow() && info.getEffected().canAbortCast()) {
 			info.getEffected().abortCast();
 		}
 		

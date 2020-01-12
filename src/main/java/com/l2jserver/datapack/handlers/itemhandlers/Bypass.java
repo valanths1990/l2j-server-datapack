@@ -28,13 +28,10 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 /**
  * @author JIV
  */
-public class Bypass implements IItemHandler
-{
+public class Bypass implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!(playable instanceof L2PcInstance)) {
 			return false;
 		}
 		L2PcInstance activeChar = (L2PcInstance) playable;
@@ -43,13 +40,10 @@ public class Bypass implements IItemHandler
 		String filename = "data/html/item/" + itemId + ".htm";
 		String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), filename);
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, item.getId());
-		if (content == null)
-		{
+		if (content == null) {
 			html.setHtml("<html><body>My Text is missing:<br>" + filename + "</body></html>");
 			activeChar.sendPacket(html);
-		}
-		else
-		{
+		} else {
 			html.setHtml(content);
 			html.replace("%itemId%", String.valueOf(item.getObjectId()));
 			activeChar.sendPacket(html);

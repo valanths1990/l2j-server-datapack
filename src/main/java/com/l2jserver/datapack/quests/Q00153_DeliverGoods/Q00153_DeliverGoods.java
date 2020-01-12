@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * @author Zoey76
  * @version 1.0 Freya (11/16/2010), Based on Naia (EURO)
  */
-public class Q00153_DeliverGoods extends Quest
-{
+public class Q00153_DeliverGoods extends Quest {
 	// NPCs
 	private static final int JACKSON_ID = 30002;
 	private static final int SILVIA_ID = 30003;
@@ -49,8 +48,7 @@ public class Q00153_DeliverGoods extends Quest
 	private static final int RING_OF_KNOWLEDGE_ID = 875;
 	private static final int XP_REWARD_AMOUNT = 600;
 	
-	public Q00153_DeliverGoods()
-	{
+	public Q00153_DeliverGoods() {
 		super(153, Q00153_DeliverGoods.class.getSimpleName(), "Deliver Goods");
 		addStartNpc(ARNOLD_ID);
 		addTalkId(JACKSON_ID, SILVIA_ID, ARNOLD_ID, RANT_ID);
@@ -58,13 +56,10 @@ public class Q00153_DeliverGoods extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && (npc.getId() == ARNOLD_ID))
-		{
-			if (event.equalsIgnoreCase("30041-02.html"))
-			{
+		if ((st != null) && (npc.getId() == ARNOLD_ID)) {
+			if (event.equalsIgnoreCase("30041-02.html")) {
 				st.startQuest();
 				st.giveItems(DELIVERY_LIST_ID, 1);
 				st.giveItems(HEAVY_WOOD_BOX_ID, 1);
@@ -76,24 +71,18 @@ public class Q00153_DeliverGoods extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (npc.getId() == ARNOLD_ID)
-		{
-			switch (st.getState())
-			{
+		if (npc.getId() == ARNOLD_ID) {
+			switch (st.getState()) {
 				case State.CREATED:
 					htmltext = (player.getLevel() >= 2) ? "30041-01.htm" : "30041-00.htm";
 					break;
 				case State.STARTED:
-					if (st.isCond(1))
-					{
+					if (st.isCond(1)) {
 						htmltext = "30041-03.html";
-					}
-					else if (st.isCond(2))
-					{
+					} else if (st.isCond(2)) {
 						st.takeItems(DELIVERY_LIST_ID, -1);
 						st.takeItems(JACKSONS_RECEIPT_ID, -1);
 						st.takeItems(SILVIAS_RECEIPT_ID, -1);
@@ -110,52 +99,35 @@ public class Q00153_DeliverGoods extends Quest
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
 			}
-		}
-		else
-		{
-			if (npc.getId() == JACKSON_ID)
-			{
-				if (st.hasQuestItems(HEAVY_WOOD_BOX_ID))
-				{
+		} else {
+			if (npc.getId() == JACKSON_ID) {
+				if (st.hasQuestItems(HEAVY_WOOD_BOX_ID)) {
 					st.takeItems(HEAVY_WOOD_BOX_ID, -1);
 					st.giveItems(JACKSONS_RECEIPT_ID, 1);
 					htmltext = "30002-01.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30002-02.html";
 				}
-			}
-			else if (npc.getId() == SILVIA_ID)
-			{
-				if (st.hasQuestItems(CLOTH_BUNDLE_ID))
-				{
+			} else if (npc.getId() == SILVIA_ID) {
+				if (st.hasQuestItems(CLOTH_BUNDLE_ID)) {
 					st.takeItems(CLOTH_BUNDLE_ID, -1);
 					st.giveItems(SILVIAS_RECEIPT_ID, 1);
 					st.giveItems(SOULSHOT_NO_GRADE_ID, 3);
 					htmltext = "30003-01.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30003-02.html";
 				}
-			}
-			else if (npc.getId() == RANT_ID)
-			{
-				if (st.hasQuestItems(CLAY_POT_ID))
-				{
+			} else if (npc.getId() == RANT_ID) {
+				if (st.hasQuestItems(CLAY_POT_ID)) {
 					st.takeItems(CLAY_POT_ID, -1);
 					st.giveItems(RANTS_RECEIPT_ID, 1);
 					htmltext = "30054-01.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30054-02.html";
 				}
 			}
 			
-			if (st.isCond(1) && st.hasQuestItems(JACKSONS_RECEIPT_ID) && st.hasQuestItems(SILVIAS_RECEIPT_ID) && st.hasQuestItems(RANTS_RECEIPT_ID))
-			{
+			if (st.isCond(1) && st.hasQuestItems(JACKSONS_RECEIPT_ID) && st.hasQuestItems(SILVIAS_RECEIPT_ID) && st.hasQuestItems(RANTS_RECEIPT_ID)) {
 				st.setCond(2, true);
 			}
 		}

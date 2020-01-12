@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Bring Out the Flavor of Ingredients! (380)
  * @author Pandragon
  */
-public final class Q00380_BringOutTheFlavorOfIngredients extends Quest
-{
+public final class Q00380_BringOutTheFlavorOfIngredients extends Quest {
 	// NPC
 	private static final int ROLLAND = 30069;
 	// Items
@@ -56,8 +55,7 @@ public final class Q00380_BringOutTheFlavorOfIngredients extends Quest
 	// Misc
 	private static final int MIN_LVL = 24;
 	
-	public Q00380_BringOutTheFlavorOfIngredients()
-	{
+	public Q00380_BringOutTheFlavorOfIngredients() {
 		super(380, Q00380_BringOutTheFlavorOfIngredients.class.getSimpleName(), "Bring Out the Flavor of Ingredients!");
 		addStartNpc(ROLLAND);
 		addTalkId(ROLLAND);
@@ -66,34 +64,26 @@ public final class Q00380_BringOutTheFlavorOfIngredients extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
-		if (qs != null)
-		{
-			switch (event)
-			{
+		if (qs != null) {
+			switch (event) {
 				case "30069-03.htm":
 				case "30069-04.htm":
-				case "30069-06.html":
-				{
+				case "30069-06.html": {
 					htmltext = event;
 					break;
 				}
-				case "30069-05.htm":
-				{
-					if (qs.isCreated())
-					{
+				case "30069-05.htm": {
+					if (qs.isCreated()) {
 						qs.startQuest();
 						htmltext = event;
 					}
 					break;
 				}
-				case "30069-13.html":
-				{
-					if (qs.isCond(9))
-					{
+				case "30069-13.html": {
+					if (qs.isCond(9)) {
 						rewardItems(player, RITRON_RECIPE, 1);
 						qs.exitQuest(true, true);
 						htmltext = event;
@@ -106,82 +96,64 @@ public final class Q00380_BringOutTheFlavorOfIngredients extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		switch (qs.getState())
-		{
-			case State.CREATED:
-			{
+		switch (qs.getState()) {
+			case State.CREATED: {
 				htmltext = (talker.getLevel() >= MIN_LVL) ? "30069-02.htm" : "30069-01.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (qs.getCond())
-				{
+			case State.STARTED: {
+				switch (qs.getCond()) {
 					case 1:
 					case 2:
 					case 3:
-					case 4:
-					{
-						if ((getQuestItemsCount(talker, ANTIDOTE) >= 2) && (getQuestItemsCount(talker, RITRON_FRUIT) >= 4) && (getQuestItemsCount(talker, MOON_FLOWER) >= 20) && (getQuestItemsCount(talker, LEECH_FLUIDS) >= 10))
-						{
+					case 4: {
+						if ((getQuestItemsCount(talker, ANTIDOTE) >= 2) && (getQuestItemsCount(talker, RITRON_FRUIT) >= 4) && (getQuestItemsCount(talker, MOON_FLOWER) >= 20) && (getQuestItemsCount(talker, LEECH_FLUIDS) >= 10)) {
 							takeItems(talker, ANTIDOTE, 2);
 							takeItems(talker, -1, RITRON_FRUIT, MOON_FLOWER, LEECH_FLUIDS);
 							qs.setCond(5, true);
 							htmltext = "30069-08.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30069-07.html";
 						}
 						break;
 					}
-					case 5:
-					{
+					case 5: {
 						qs.setCond(6, true);
 						htmltext = "30069-09.html";
 						break;
 					}
-					case 6:
-					{
+					case 6: {
 						qs.setCond(7, true);
 						htmltext = "30069-10.html";
 						break;
 					}
-					case 7:
-					{
+					case 7: {
 						qs.setCond(8, true);
 						htmltext = "30069-11.html";
 						break;
 					}
-					case 8:
-					{
+					case 8: {
 						rewardItems(talker, RITRON_DESSERT, 1);
-						if (getRandom(100) < 56)
-						{
+						if (getRandom(100) < 56) {
 							htmltext = "30069-15.html";
 							qs.exitQuest(true, true);
-						}
-						else
-						{
+						} else {
 							qs.setCond(9, true);
 							htmltext = "30069-12.html";
 						}
 						break;
 					}
-					case 9:
-					{
+					case 9: {
 						htmltext = "30069-12.html";
 						break;
 					}
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
+			case State.COMPLETED: {
 				htmltext = getAlreadyCompletedMsg(talker);
 				break;
 			}
@@ -190,11 +162,9 @@ public final class Q00380_BringOutTheFlavorOfIngredients extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, -1, 3, npc);
-		if ((qs != null) && (qs.getCond() < 4))
-		{
+		if ((qs != null) && (qs.getCond() < 4)) {
 			final ItemChanceHolder item = MONSTER_CHANCES.get(npc.getId());
 			if (giveItemRandomly(qs.getPlayer(), npc, item.getId(), 1, item.getCount(), item.getChance(), false)) {
 				if ((getQuestItemsCount(killer, RITRON_FRUIT) >= 3) && (getQuestItemsCount(killer, MOON_FLOWER) >= 20) && (getQuestItemsCount(killer, LEECH_FLUIDS) >= 10)) {

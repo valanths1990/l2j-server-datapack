@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
  * Dangerous Seduction (170)
  * @author malyelfik
  */
-public class Q00170_DangerousSeduction extends Quest
-{
+public class Q00170_DangerousSeduction extends Quest {
 	// NPC
 	private static final int VELLIOR = 30305;
 	
@@ -46,8 +45,7 @@ public class Q00170_DangerousSeduction extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 21;
 	
-	public Q00170_DangerousSeduction()
-	{
+	public Q00170_DangerousSeduction() {
 		super(170, Q00170_DangerousSeduction.class.getSimpleName(), "Dangerous Seduction");
 		addStartNpc(VELLIOR);
 		addTalkId(VELLIOR);
@@ -57,16 +55,13 @@ public class Q00170_DangerousSeduction extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
-		if (event.equalsIgnoreCase("30305-04.htm"))
-		{
+		if (event.equalsIgnoreCase("30305-04.htm")) {
 			st.startQuest();
 			return event;
 		}
@@ -74,11 +69,9 @@ public class Q00170_DangerousSeduction extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && st.isCond(1))
-		{
+		if ((st != null) && st.isCond(1)) {
 			st.setCond(2, true);
 			st.giveItems(NIGHTMARE_CRYSTAL, 1);
 			npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), NpcStringId.SEND_MY_SOUL_TO_LICH_KING_ICARUS));
@@ -87,22 +80,17 @@ public class Q00170_DangerousSeduction extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getRace() == Race.DARK_ELF) ? (player.getLevel() >= MIN_LEVEL) ? "30305-01.htm" : "30305-02.htm" : "30305-03.htm";
 				break;
 			case State.STARTED:
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					htmltext = "30305-05.html";
-				}
-				else
-				{
+				} else {
 					st.giveAdena(102680, true);
 					st.addExpAndSp(38607, 4018);
 					st.exitQuest(false, true);

@@ -32,14 +32,12 @@ import com.l2jserver.gameserver.model.quest.State;
  * Battle against Varka Silenos (606)
  * @author malyelfik
  */
-public class Q00606_BattleAgainstVarkaSilenos extends Quest
-{
+public class Q00606_BattleAgainstVarkaSilenos extends Quest {
 	// NPC
 	private static final int KADUN = 31370;
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
-	static
-	{
+	static {
 		MOBS.put(21350, 500); // Varka Silenos Recruit
 		MOBS.put(21353, 510); // Varka Silenos Scout
 		MOBS.put(21354, 522); // Varka Silenos Hunter
@@ -63,8 +61,7 @@ public class Q00606_BattleAgainstVarkaSilenos extends Quest
 	private static final int MIN_LEVEL = 74;
 	private static final int MANE_COUNT = 100;
 	
-	public Q00606_BattleAgainstVarkaSilenos()
-	{
+	public Q00606_BattleAgainstVarkaSilenos() {
 		super(606, Q00606_BattleAgainstVarkaSilenos.class.getSimpleName(), "Battle against Varka Silenos");
 		addStartNpc(KADUN);
 		addTalkId(KADUN);
@@ -73,25 +70,21 @@ public class Q00606_BattleAgainstVarkaSilenos extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "31370-03.htm":
 				st.startQuest();
 				break;
 			case "31370-06.html":
 				break;
 			case "31370-07.html":
-				if (st.getQuestItemsCount(MANE) < MANE_COUNT)
-				{
+				if (st.getQuestItemsCount(MANE) < MANE_COUNT) {
 					return "31370-08.html";
 				}
 				st.takeItems(MANE, MANE_COUNT);
@@ -108,11 +101,9 @@ public class Q00606_BattleAgainstVarkaSilenos extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final L2PcInstance member = getRandomPartyMember(killer, 1);
-		if ((member != null) && (getRandom(1000) < MOBS.get(npc.getId())))
-		{
+		if ((member != null) && (getRandom(1000) < MOBS.get(npc.getId()))) {
 			final QuestState st = getQuestState(member, false);
 			st.giveItems(MANE, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
@@ -121,12 +112,10 @@ public class Q00606_BattleAgainstVarkaSilenos extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "31370-01.htm" : "31370-02.htm";
 				break;

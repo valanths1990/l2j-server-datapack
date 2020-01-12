@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * Path Of The Palus Knight (410)
  * @author ivantotov
  */
-public final class Q00410_PathOfThePalusKnight extends Quest
-{
+public final class Q00410_PathOfThePalusKnight extends Quest {
 	// NPCs
 	private static final int MASTER_VIRGIL = 30329;
 	private static final int KALINTA = 30422;
@@ -53,8 +52,7 @@ public final class Q00410_PathOfThePalusKnight extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 18;
 	
-	public Q00410_PathOfThePalusKnight()
-	{
+	public Q00410_PathOfThePalusKnight() {
 		super(410, Q00410_PathOfThePalusKnight.class.getSimpleName(), "Path Of The Palus Knight");
 		addStartNpc(MASTER_VIRGIL);
 		addTalkId(MASTER_VIRGIL, KALINTA);
@@ -63,58 +61,40 @@ public final class Q00410_PathOfThePalusKnight extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (player.getClassId() == ClassId.darkFighter)
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (hasQuestItems(player, GAZE_OF_ABYSS))
-						{
+		switch (event) {
+			case "ACCEPT": {
+				if (player.getClassId() == ClassId.darkFighter) {
+					if (player.getLevel() >= MIN_LEVEL) {
+						if (hasQuestItems(player, GAZE_OF_ABYSS)) {
 							htmltext = "30329-04.htm";
-						}
-						else
-						{
+						} else {
 							htmltext = "30329-05.htm";
 						}
-					}
-					else
-					{
+					} else {
 						htmltext = "30329-02.htm";
 					}
-				}
-				else if (player.getClassId() == ClassId.palusKnight)
-				{
+				} else if (player.getClassId() == ClassId.palusKnight) {
 					htmltext = "30329-02a.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30329-03.htm";
 				}
 				break;
 			}
-			case "30329-06.htm":
-			{
+			case "30329-06.htm": {
 				qs.startQuest();
 				giveItems(player, PALLUS_TALISMAN, 1);
 				htmltext = event;
 				break;
 			}
-			case "30329-10.html":
-			{
-				if (hasQuestItems(player, PALLUS_TALISMAN, LYCANTHROPE_SKULL))
-				{
+			case "30329-10.html": {
+				if (hasQuestItems(player, PALLUS_TALISMAN, LYCANTHROPE_SKULL)) {
 					takeItems(player, PALLUS_TALISMAN, 1);
 					takeItems(player, LYCANTHROPE_SKULL, -1);
 					giveItems(player, VIRGILS_LETTER, 1);
@@ -123,10 +103,8 @@ public final class Q00410_PathOfThePalusKnight extends Quest
 				}
 				break;
 			}
-			case "30422-02.html":
-			{
-				if (hasQuestItems(player, VIRGILS_LETTER))
-				{
+			case "30422-02.html": {
+				if (hasQuestItems(player, VIRGILS_LETTER)) {
 					takeItems(player, VIRGILS_LETTER, 1);
 					giveItems(player, MORTE_TALISMAN, 1);
 					qs.setCond(4, true);
@@ -134,10 +112,8 @@ public final class Q00410_PathOfThePalusKnight extends Quest
 				}
 				break;
 			}
-			case "30422-06.html":
-			{
-				if (hasQuestItems(player, MORTE_TALISMAN, ARACHNID_TRACKER_SILK, VENOMOUS_SPIDERS_CARAPACE))
-				{
+			case "30422-06.html": {
+				if (hasQuestItems(player, MORTE_TALISMAN, ARACHNID_TRACKER_SILK, VENOMOUS_SPIDERS_CARAPACE)) {
 					takeItems(player, MORTE_TALISMAN, 1);
 					takeItems(player, VENOMOUS_SPIDERS_CARAPACE, 1);
 					takeItems(player, ARACHNID_TRACKER_SILK, -1);
@@ -152,55 +128,38 @@ public final class Q00410_PathOfThePalusKnight extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case VENOMOUS_SPIDER:
-				{
-					if (hasQuestItems(killer, MORTE_TALISMAN) && (getQuestItemsCount(killer, VENOMOUS_SPIDERS_CARAPACE) < 1))
-					{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
+				case VENOMOUS_SPIDER: {
+					if (hasQuestItems(killer, MORTE_TALISMAN) && (getQuestItemsCount(killer, VENOMOUS_SPIDERS_CARAPACE) < 1)) {
 						giveItems(killer, VENOMOUS_SPIDERS_CARAPACE, 1);
-						if (getQuestItemsCount(killer, ARACHNID_TRACKER_SILK) >= 5)
-						{
+						if (getQuestItemsCount(killer, ARACHNID_TRACKER_SILK) >= 5) {
 							qs.setCond(5, true);
 						}
 					}
 					break;
 				}
-				case ARACHNID_TRACKER:
-				{
-					if (hasQuestItems(killer, MORTE_TALISMAN) && (getQuestItemsCount(killer, ARACHNID_TRACKER_SILK) < 5))
-					{
+				case ARACHNID_TRACKER: {
+					if (hasQuestItems(killer, MORTE_TALISMAN) && (getQuestItemsCount(killer, ARACHNID_TRACKER_SILK) < 5)) {
 						giveItems(killer, ARACHNID_TRACKER_SILK, 1);
-						if (getQuestItemsCount(killer, ARACHNID_TRACKER_SILK) == 5)
-						{
-							if ((getQuestItemsCount(killer, ARACHNID_TRACKER_SILK) >= 4) && hasQuestItems(killer, VENOMOUS_SPIDERS_CARAPACE))
-							{
+						if (getQuestItemsCount(killer, ARACHNID_TRACKER_SILK) == 5) {
+							if ((getQuestItemsCount(killer, ARACHNID_TRACKER_SILK) >= 4) && hasQuestItems(killer, VENOMOUS_SPIDERS_CARAPACE)) {
 								qs.setCond(5, true);
 							}
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case LYCANTHROPE:
-				{
-					if (hasQuestItems(killer, PALLUS_TALISMAN) && (getQuestItemsCount(killer, LYCANTHROPE_SKULL) < 13))
-					{
+				case LYCANTHROPE: {
+					if (hasQuestItems(killer, PALLUS_TALISMAN) && (getQuestItemsCount(killer, LYCANTHROPE_SKULL) < 13)) {
 						giveItems(killer, LYCANTHROPE_SKULL, 1);
-						if (getQuestItemsCount(killer, LYCANTHROPE_SKULL) == 13)
-						{
+						if (getQuestItemsCount(killer, LYCANTHROPE_SKULL) == 13) {
 							qs.setCond(2, true);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
@@ -212,93 +171,58 @@ public final class Q00410_PathOfThePalusKnight extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated() || qs.isCompleted())
-		{
-			if (npc.getId() == MASTER_VIRGIL)
-			{
+		if (qs.isCreated() || qs.isCompleted()) {
+			if (npc.getId() == MASTER_VIRGIL) {
 				htmltext = "30329-01.htm";
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case MASTER_VIRGIL:
-				{
-					if (hasQuestItems(player, PALLUS_TALISMAN))
-					{
-						if (!hasQuestItems(player, LYCANTHROPE_SKULL))
-						{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case MASTER_VIRGIL: {
+					if (hasQuestItems(player, PALLUS_TALISMAN)) {
+						if (!hasQuestItems(player, LYCANTHROPE_SKULL)) {
 							htmltext = "30329-07.html";
-						}
-						else if (hasQuestItems(player, LYCANTHROPE_SKULL) && (getQuestItemsCount(player, LYCANTHROPE_SKULL) < 13))
-						{
+						} else if (hasQuestItems(player, LYCANTHROPE_SKULL) && (getQuestItemsCount(player, LYCANTHROPE_SKULL) < 13)) {
 							htmltext = "30329-08.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30329-09.html";
 						}
-					}
-					else if (hasQuestItems(player, COFFIN_OF_ETERNAL_REST))
-					{
+					} else if (hasQuestItems(player, COFFIN_OF_ETERNAL_REST)) {
 						giveAdena(player, 163800, true);
 						giveItems(player, GAZE_OF_ABYSS, 1);
 						final int level = player.getLevel();
-						if (level >= 20)
-						{
+						if (level >= 20) {
 							addExpAndSp(player, 320534, 26212);
-						}
-						else if (level == 19)
-						{
+						} else if (level == 19) {
 							addExpAndSp(player, 456128, 32910);
-						}
-						else
-						{
+						} else {
 							addExpAndSp(player, 591724, 39608);
 						}
 						qs.exitQuest(false, true);
 						player.sendPacket(new SocialAction(player.getObjectId(), 3));
 						qs.saveGlobalQuestVar("1ClassQuestFinished", "1");
 						htmltext = "30329-11.html";
-					}
-					else if (hasAtLeastOneQuestItem(player, VIRGILS_LETTER, MORTE_TALISMAN))
-					{
+					} else if (hasAtLeastOneQuestItem(player, VIRGILS_LETTER, MORTE_TALISMAN)) {
 						htmltext = "30329-12.html";
 					}
 					break;
 				}
-				case KALINTA:
-				{
-					if (hasQuestItems(player, VIRGILS_LETTER))
-					{
+				case KALINTA: {
+					if (hasQuestItems(player, VIRGILS_LETTER)) {
 						htmltext = "30422-01.html";
-					}
-					else if (hasQuestItems(player, MORTE_TALISMAN))
-					{
-						if (!hasQuestItems(player, ARACHNID_TRACKER_SILK, VENOMOUS_SPIDERS_CARAPACE))
-						{
+					} else if (hasQuestItems(player, MORTE_TALISMAN)) {
+						if (!hasQuestItems(player, ARACHNID_TRACKER_SILK, VENOMOUS_SPIDERS_CARAPACE)) {
 							htmltext = "30422-03.html";
-						}
-						else if (!hasQuestItems(player, ARACHNID_TRACKER_SILK) && hasQuestItems(player, VENOMOUS_SPIDERS_CARAPACE))
-						{
+						} else if (!hasQuestItems(player, ARACHNID_TRACKER_SILK) && hasQuestItems(player, VENOMOUS_SPIDERS_CARAPACE)) {
 							htmltext = "30422-04.html";
-						}
-						else if ((getQuestItemsCount(player, ARACHNID_TRACKER_SILK) >= 5) && hasQuestItems(player, VENOMOUS_SPIDERS_CARAPACE))
-						{
+						} else if ((getQuestItemsCount(player, ARACHNID_TRACKER_SILK) >= 5) && hasQuestItems(player, VENOMOUS_SPIDERS_CARAPACE)) {
 							htmltext = "30422-05.html";
-						}
-						else if (hasQuestItems(player, ARACHNID_TRACKER_SILK, VENOMOUS_SPIDERS_CARAPACE))
-						{
+						} else if (hasQuestItems(player, ARACHNID_TRACKER_SILK, VENOMOUS_SPIDERS_CARAPACE)) {
 							htmltext = "30422-04.html";
 						}
-					}
-					else if (hasQuestItems(player, COFFIN_OF_ETERNAL_REST))
-					{
+					} else if (hasQuestItems(player, COFFIN_OF_ETERNAL_REST)) {
 						htmltext = "30422-06.html";
 					}
 					break;

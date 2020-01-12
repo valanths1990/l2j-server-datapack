@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Elemental Master (92)
  * @author Emperorc
  */
-public class Q00092_SagaOfTheElementalMaster extends AbstractSagaQuest
-{
-	public Q00092_SagaOfTheElementalMaster()
-	{
+public class Q00092_SagaOfTheElementalMaster extends AbstractSagaQuest {
+	public Q00092_SagaOfTheElementalMaster() {
 		super(92, Q00092_SagaOfTheElementalMaster.class.getSimpleName(), "Saga of the Elemental Master");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			30174,
 			31281,
 			31614,
@@ -45,8 +42,7 @@ public class Q00092_SagaOfTheElementalMaster extends AbstractSagaQuest
 			31659,
 			31614
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7605,
 			7081,
@@ -60,28 +56,23 @@ public class Q00092_SagaOfTheElementalMaster extends AbstractSagaQuest
 			7111,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27314,
 			27241,
 			27311
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			104
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x1c
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(161719, -92823, -1893),
 			new Location(124376, 82127, -2796),
 			new Location(124355, 82155, -2803)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

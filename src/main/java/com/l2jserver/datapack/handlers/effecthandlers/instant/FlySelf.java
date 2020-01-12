@@ -32,28 +32,23 @@ import com.l2jserver.gameserver.network.serverpackets.ValidateLocation;
 /**
  * Fly Self effect implementation.
  */
-public final class FlySelf extends AbstractEffect
-{
+public final class FlySelf extends AbstractEffect {
 	private final int _flyRadius;
 	
-	public FlySelf(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public FlySelf(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_flyRadius = params.getInt("flyRadius", 0);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (info.getEffected().isMovementDisabled())
-		{
+	public void onStart(BuffInfo info) {
+		if (info.getEffected().isMovementDisabled()) {
 			return;
 		}
 		
@@ -70,8 +65,7 @@ public final class FlySelf extends AbstractEffect
 		double dy = target.getY() - curY;
 		double dz = target.getZ() - curZ;
 		double distance = Math.hypot(dx, dy);
-		if (distance > 2000)
-		{
+		if (distance > 2000) {
 			_log.info("EffectEnemyCharge was going to use invalid coordinates for characters, getEffector: " + curX + "," + curY + " and getEffected: " + target.getX() + "," + target.getY());
 			return;
 		}
@@ -81,14 +75,12 @@ public final class FlySelf extends AbstractEffect
 		// approximation for moving closer when z coordinates are different
 		// TODO: handle Z axis movement better
 		offset -= Math.abs(dz);
-		if (offset < 5)
-		{
+		if (offset < 5) {
 			offset = 5;
 		}
 		
 		// If no distance
-		if ((distance < 1) || ((distance - offset) <= 0))
-		{
+		if ((distance < 1) || ((distance - offset) <= 0)) {
 			return;
 		}
 		

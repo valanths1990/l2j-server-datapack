@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.skills.Skill;
  * Summon the player to the NPC on attack.
  * @author Zoey76
  */
-public final class SummonPc extends AbstractNpcAI
-{
+public final class SummonPc extends AbstractNpcAI {
 	// NPCs
 	private static final int PORTA = 20213;
 	private static final int PERUM = 20221;
@@ -41,38 +40,29 @@ public final class SummonPc extends AbstractNpcAI
 	private static final int MIN_DISTANCE = 300;
 	private static final int MIN_DISTANCE_MOST_HATED = 100;
 	
-	private SummonPc()
-	{
+	private SummonPc() {
 		super(SummonPc.class.getSimpleName(), "ai/group_template");
 		addAttackId(PORTA, PERUM);
 		addSpellFinishedId(PORTA, PERUM);
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final boolean attacked = npc.getVariables().getBoolean("attacked", false);
-		if (attacked)
-		{
+		if (attacked) {
 			return super.onAttack(npc, attacker, damage, isSummon);
 		}
 		
 		final int chance = getRandom(100);
 		final double distance = npc.calculateDistance(attacker, true, false);
-		if (distance > MIN_DISTANCE)
-		{
-			if (chance < 50)
-			{
+		if (distance > MIN_DISTANCE) {
+			if (chance < 50) {
 				doSummonPc(npc, attacker);
 			}
-		}
-		else if (distance > MIN_DISTANCE_MOST_HATED)
-		{
+		} else if (distance > MIN_DISTANCE_MOST_HATED) {
 			final L2Attackable monster = (L2Attackable) npc;
-			if (monster.getMostHated() != null)
-			{
-				if (((monster.getMostHated() == attacker) && (chance < 50)) || (chance < 10))
-				{
+			if (monster.getMostHated() != null) {
+				if (((monster.getMostHated() == attacker) && (chance < 50)) || (chance < 10)) {
 					doSummonPc(npc, attacker);
 				}
 			}
@@ -81,10 +71,8 @@ public final class SummonPc extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
-	{
-		if ((skill.getId() == SUMMON_PC.getSkillId()) && !npc.isDead() && npc.getVariables().getBoolean("attacked", false))
-		{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill) {
+		if ((skill.getId() == SUMMON_PC.getSkillId()) && !npc.isDead() && npc.getVariables().getBoolean("attacked", false)) {
 			player.teleToLocation(npc);
 			npc.getVariables().set("attacked", false);
 			
@@ -94,18 +82,15 @@ public final class SummonPc extends AbstractNpcAI
 		return super.onSpellFinished(npc, player, skill);
 	}
 	
-	private static void doSummonPc(L2Npc npc, L2PcInstance attacker)
-	{
-		if ((SUMMON_PC.getSkill().getMpConsume2() < npc.getCurrentMp()) && (SUMMON_PC.getSkill().getHpConsume() < npc.getCurrentHp()) && !npc.isSkillDisabled(SUMMON_PC.getSkill()))
-		{
+	private static void doSummonPc(L2Npc npc, L2PcInstance attacker) {
+		if ((SUMMON_PC.getSkill().getMpConsume2() < npc.getCurrentMp()) && (SUMMON_PC.getSkill().getHpConsume() < npc.getCurrentHp()) && !npc.isSkillDisabled(SUMMON_PC.getSkill())) {
 			npc.setTarget(attacker);
 			npc.doCast(SUMMON_PC);
 			npc.getVariables().set("attacked", true);
 		}
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new SummonPc();
 	}
 }

@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Queen Shyeed AI
  * @author malyelfik
  */
-public final class QueenShyeed extends AbstractNpcAI
-{
+public final class QueenShyeed extends AbstractNpcAI {
 	// NPC
 	private static final int SHYEED = 25671;
 	private static final Location SHYEED_LOC = new Location(79634, -55428, -6104, 0);
@@ -47,16 +46,13 @@ public final class QueenShyeed extends AbstractNpcAI
 	private static final L2EffectZone PC_BUFF_ZONE = ZoneManager.getInstance().getZoneById(200105, L2EffectZone.class);
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
 			case "respawn":
 				spawnShyeed();
 				break;
 			case "despawn":
-				if (!npc.isDead())
-				{
+				if (!npc.isDead()) {
 					npc.deleteMe();
 					startRespawn();
 				}
@@ -66,27 +62,23 @@ public final class QueenShyeed extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.SHYEEDS_CRY_IS_STEADILY_DYING_DOWN);
 		startRespawn();
 		PC_BUFF_ZONE.setEnabled(true);
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private QueenShyeed()
-	{
+	private QueenShyeed() {
 		super(QueenShyeed.class.getSimpleName(), "ai/individual");
 		addKillId(SHYEED);
 		spawnShyeed();
 	}
 	
-	private void spawnShyeed()
-	{
+	private void spawnShyeed() {
 		final String respawn = loadGlobalQuestVar("Respawn");
 		final long remain = (!respawn.isEmpty()) ? Long.parseLong(respawn) - System.currentTimeMillis() : 0;
-		if (remain > 0)
-		{
+		if (remain > 0) {
 			startQuestTimer("respawn", remain, null, null);
 			return;
 		}
@@ -97,8 +89,7 @@ public final class QueenShyeed extends AbstractNpcAI
 		MOB_BUFF_DISPLAY_ZONE.setEnabled(true);
 	}
 	
-	private void startRespawn()
-	{
+	private void startRespawn() {
 		final int respawnTime = RESPAWN - getRandom(RANDOM_RESPAWN);
 		saveGlobalQuestVar("Respawn", Long.toString(System.currentTimeMillis() + respawnTime));
 		startQuestTimer("respawn", respawnTime, null, null);
@@ -106,8 +97,7 @@ public final class QueenShyeed extends AbstractNpcAI
 		MOB_BUFF_DISPLAY_ZONE.setEnabled(false);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new QueenShyeed();
 	}
 }

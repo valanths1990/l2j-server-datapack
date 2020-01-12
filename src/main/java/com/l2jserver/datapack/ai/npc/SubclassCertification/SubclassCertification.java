@@ -37,8 +37,7 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Subclass certification
  * @author xban1x, jurchiks
  */
-public final class SubclassCertification extends AbstractNpcAI
-{
+public final class SubclassCertification extends AbstractNpcAI {
 	// @formatter:off
 	private static final int[] NPCS =
 	{
@@ -60,8 +59,7 @@ public final class SubclassCertification extends AbstractNpcAI
 	private static final int CERTIFICATE_MASTER_ABILITY = 10612;
 	private static final Map<Integer, Integer> ABILITY_CERTIFICATES = new HashMap<>();
 	private static final Map<Integer, Integer> TRANSFORMATION_SEALBOOKS = new HashMap<>();
-	static
-	{
+	static {
 		ABILITY_CERTIFICATES.put(0, 10281); // Certificate - Warrior Ability
 		ABILITY_CERTIFICATES.put(1, 10283); // Certificate - Rogue Ability
 		ABILITY_CERTIFICATES.put(2, 10282); // Certificate - Knight Ability
@@ -81,20 +79,17 @@ public final class SubclassCertification extends AbstractNpcAI
 	
 	private static final int MIN_LVL = 65;
 	
-	private SubclassCertification()
-	{
+	private SubclassCertification() {
 		super(SubclassCertification.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st != null)
-		{
+		if (st != null) {
 			st.setState(State.STARTED);
 			htmltext = "Main.html";
 		}
@@ -102,86 +97,65 @@ public final class SubclassCertification extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "GetCertified":
-			{
-				if (!player.isSubClassActive())
-				{
+		switch (event) {
+			case "GetCertified": {
+				if (!player.isSubClassActive()) {
 					htmltext = "NotSubclass.html";
-				}
-				else if (player.getLevel() < MIN_LVL)
-				{
+				} else if (player.getLevel() < MIN_LVL) {
 					htmltext = "NotMinLevel.html";
-				}
-				else if (((L2VillageMasterInstance) npc).checkVillageMaster(player.getActiveClass()))
-				{
+				} else if (((L2VillageMasterInstance) npc).checkVillageMaster(player.getActiveClass())) {
 					htmltext = "CertificationList.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "WrongVillageMaster.html";
 				}
 				break;
 			}
-			case "Obtain65":
-			{
+			case "Obtain65": {
 				htmltext = replaceHtml(player, "EmergentAbility.html", true, null).replace("%level%", "65").replace("%skilltype%", "common skill").replace("%event%", "lvl65Emergent");
 				break;
 			}
-			case "Obtain70":
-			{
+			case "Obtain70": {
 				htmltext = replaceHtml(player, "EmergentAbility.html", true, null).replace("%level%", "70").replace("%skilltype%", "common skill").replace("%event%", "lvl70Emergent");
 				break;
 			}
-			case "Obtain75":
-			{
+			case "Obtain75": {
 				htmltext = replaceHtml(player, "ClassAbility.html", true, null);
 				break;
 			}
-			case "Obtain80":
-			{
+			case "Obtain80": {
 				htmltext = replaceHtml(player, "EmergentAbility.html", true, null).replace("%level%", "80").replace("%skilltype%", "transformation skill").replace("%event%", "lvl80Class");
 				break;
 			}
-			case "lvl65Emergent":
-			{
+			case "lvl65Emergent": {
 				htmltext = doCertification(player, st, "EmergentAbility", CERTIFICATE_EMERGENT_ABILITY, 65);
 				break;
 			}
-			case "lvl70Emergent":
-			{
+			case "lvl70Emergent": {
 				htmltext = doCertification(player, st, "EmergentAbility", CERTIFICATE_EMERGENT_ABILITY, 70);
 				break;
 			}
-			case "lvl75Master":
-			{
+			case "lvl75Master": {
 				htmltext = doCertification(player, st, "ClassAbility", CERTIFICATE_MASTER_ABILITY, 75);
 				break;
 			}
-			case "lvl75Class":
-			{
+			case "lvl75Class": {
 				htmltext = doCertification(player, st, "ClassAbility", ABILITY_CERTIFICATES.get(getClassIndex(player)), 75);
 				break;
 			}
-			case "lvl80Class":
-			{
+			case "lvl80Class": {
 				htmltext = doCertification(player, st, "ClassAbility", TRANSFORMATION_SEALBOOKS.get(getClassIndex(player)), 80);
 				break;
 			}
 			case "Main.html":
 			case "Explanation.html":
-			case "NotObtain.html":
-			{
+			case "NotObtain.html": {
 				htmltext = event;
 				break;
 			}
@@ -189,58 +163,39 @@ public final class SubclassCertification extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	private String replaceHtml(L2PcInstance player, String htmlFile, boolean replaceClass, String levelToReplace)
-	{
+	private String replaceHtml(L2PcInstance player, String htmlFile, boolean replaceClass, String levelToReplace) {
 		String htmltext = getHtm(player.getHtmlPrefix(), htmlFile);
-		if (replaceClass)
-		{
+		if (replaceClass) {
 			htmltext = htmltext.replace("%class%", String.valueOf(ClassListData.getInstance().getClass(player.getActiveClass()).getClientCode()));
 		}
-		if (levelToReplace != null)
-		{
+		if (levelToReplace != null) {
 			htmltext = htmltext.replace("%level%", levelToReplace);
 		}
 		return htmltext;
 	}
 	
-	private static int getClassIndex(L2PcInstance player)
-	{
-		if (player.isInCategory(CategoryType.SUB_GROUP_WARRIOR))
-		{
+	private static int getClassIndex(L2PcInstance player) {
+		if (player.isInCategory(CategoryType.SUB_GROUP_WARRIOR)) {
 			return 0;
-		}
-		else if (player.isInCategory(CategoryType.SUB_GROUP_ROGUE))
-		{
+		} else if (player.isInCategory(CategoryType.SUB_GROUP_ROGUE)) {
 			return 1;
-		}
-		else if (player.isInCategory(CategoryType.SUB_GROUP_KNIGHT))
-		{
+		} else if (player.isInCategory(CategoryType.SUB_GROUP_KNIGHT)) {
 			return 2;
-		}
-		else if (player.isInCategory(CategoryType.SUB_GROUP_SUMMONER))
-		{
+		} else if (player.isInCategory(CategoryType.SUB_GROUP_SUMMONER)) {
 			return 3;
-		}
-		else if (player.isInCategory(CategoryType.SUB_GROUP_WIZARD))
-		{
+		} else if (player.isInCategory(CategoryType.SUB_GROUP_WIZARD)) {
 			return 4;
-		}
-		else if (player.isInCategory(CategoryType.SUB_GROUP_HEALER))
-		{
+		} else if (player.isInCategory(CategoryType.SUB_GROUP_HEALER)) {
 			return 5;
-		}
-		else if (player.isInCategory(CategoryType.SUB_GROUP_ENCHANTER))
-		{
+		} else if (player.isInCategory(CategoryType.SUB_GROUP_ENCHANTER)) {
 			return 6;
 		}
 		
 		return -1;
 	}
 	
-	private String doCertification(L2PcInstance player, QuestState qs, String variable, Integer itemId, int level)
-	{
-		if (itemId == null)
-		{
+	private String doCertification(L2PcInstance player, QuestState qs, String variable, Integer itemId, int level) {
+		if (itemId == null) {
 			return null;
 		}
 		
@@ -248,20 +203,14 @@ public final class SubclassCertification extends AbstractNpcAI
 		String tmp = variable + level + "-" + player.getClassIndex();
 		String globalVariable = qs.getGlobalQuestVar(tmp);
 		
-		if (!globalVariable.equals("") && !globalVariable.equals("0"))
-		{
+		if (!globalVariable.equals("") && !globalVariable.equals("0")) {
 			htmltext = "AlreadyReceived.html";
-		}
-		else if (player.getLevel() < level)
-		{
+		} else if (player.getLevel() < level) {
 			htmltext = replaceHtml(player, "LowLevel.html", false, Integer.toString(level));
-		}
-		else
-		{
+		} else {
 			// Add items to player's inventory
 			final L2ItemInstance item = player.getInventory().addItem("Quest", itemId, 1, player, player.getTarget());
-			if (item == null)
-			{
+			if (item == null) {
 				return null;
 			}
 			
@@ -275,8 +224,7 @@ public final class SubclassCertification extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new SubclassCertification();
 	}
 }

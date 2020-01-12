@@ -33,10 +33,8 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Pailaka Song of Ice and Fire Instance zone.
  * @author Gnacik, St3eT
  */
-public final class PailakaSongOfIceAndFire extends AbstractInstance
-{
-	protected class PSoIWorld extends InstanceWorld
-	{
+public final class PailakaSongOfIceAndFire extends AbstractInstance {
+	protected class PSoIWorld extends InstanceWorld {
 		
 	}
 	
@@ -57,8 +55,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	private static final int TEMPLATE_ID = 43;
 	private static final int ZONE = 20108;
 	
-	public PailakaSongOfIceAndFire()
-	{
+	public PailakaSongOfIceAndFire() {
 		super(PailakaSongOfIceAndFire.class.getSimpleName());
 		addStartNpc(ADLER1);
 		addTalkId(ADLER1);
@@ -70,50 +67,39 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		if (firstEntrance) {
 			world.addAllowed(player.getObjectId());
 		}
 		teleportPlayer(player, TELEPORT, world.getInstanceId());
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "enter":
-			{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "enter": {
 				enterInstance(player, new PSoIWorld(), "PailakaSongOfIceAndFire.xml", TEMPLATE_ID);
 				break;
 			}
-			case "GARGOS_LAUGH":
-			{
+			case "GARGOS_LAUGH": {
 				broadcastNpcSay(npc, Say2.NPC_SHOUT, NpcStringId.OHHOHOH);
 				break;
 			}
-			case "TELEPORT":
-			{
+			case "TELEPORT": {
 				teleportPlayer(player, TELEPORT, player.getInstanceId());
 				break;
 			}
-			case "DELETE":
-			{
-				if (npc != null)
-				{
+			case "DELETE": {
+				if (npc != null) {
 					npc.deleteMe();
 				}
 				break;
 			}
-			case "BLOOM_TIMER":
-			{
+			case "BLOOM_TIMER": {
 				startQuestTimer("BLOOM_TIMER2", getRandom(2, 4) * 60 * 1000, npc, null);
 				break;
 			}
-			case "BLOOM_TIMER2":
-			{
+			case "BLOOM_TIMER2": {
 				npc.setInvisible(!npc.isInvisible());
 				startQuestTimer("BLOOM_TIMER", 5000, npc, null);
 				break;
@@ -123,37 +109,28 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon)
-	{
-		if ((damage > 0) && npc.isScriptValue(0))
-		{
-			switch (getRandom(6))
-			{
-				case 0:
-				{
-					if (npc.getId() == BOTTLE)
-					{
+	public final String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon) {
+		if ((damage > 0) && npc.isScriptValue(0)) {
+			switch (getRandom(6)) {
+				case 0: {
+					if (npc.getId() == BOTTLE) {
 						npc.dropItem(player, WATER_ENHANCER, getRandom(1, 6));
 					}
 					break;
 				}
-				case 1:
-				{
-					if (npc.getId() == BRAZIER)
-					{
+				case 1: {
+					if (npc.getId() == BRAZIER) {
 						npc.dropItem(player, FIRE_ENHANCER, getRandom(1, 6));
 					}
 					break;
 				}
 				case 2:
-				case 3:
-				{
+				case 3: {
 					npc.dropItem(player, SHIELD_POTION, getRandom(1, 10));
 					break;
 				}
 				case 4:
-				case 5:
-				{
+				case 5: {
 					npc.dropItem(player, HEAL_POTION, getRandom(1, 10));
 					break;
 				}
@@ -165,20 +142,16 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		npc.dropItem(player, getRandomBoolean() ? SHIELD_POTION : HEAL_POTION, getRandom(1, 7));
 		return super.onKill(npc, player, isSummon);
 	}
 	
 	@Override
-	public String onExitZone(L2Character character, L2ZoneType zone)
-	{
-		if ((character.isPlayer()) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
-		{
+	public String onExitZone(L2Character character, L2ZoneType zone) {
+		if ((character.isPlayer()) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline()) {
 			final InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
-			if ((world != null) && (world.getTemplateId() == TEMPLATE_ID))
-			{
+			if ((world != null) && (world.getTemplateId() == TEMPLATE_ID)) {
 				startQuestTimer("TELEPORT", 1000, null, (L2PcInstance) character);
 			}
 		}
@@ -186,10 +159,8 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
-	{
-		if (npc.isScriptValue(0) && creature.isPlayer())
-		{
+	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon) {
+		if (npc.isScriptValue(0) && creature.isPlayer()) {
 			npc.setScriptValue(1);
 			startQuestTimer("GARGOS_LAUGH", 1000, npc, creature.getActingPlayer());
 		}
@@ -197,8 +168,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		npc.setInvisible(true);
 		startQuestTimer("BLOOM_TIMER", 1000, npc, null);
 		return super.onSpawn(npc);

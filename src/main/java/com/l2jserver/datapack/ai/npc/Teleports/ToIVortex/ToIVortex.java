@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.model.itemcontainer.Inventory;
  * Reworked by xban1x.
  * @author Plim
  */
-public final class ToIVortex extends AbstractNpcAI
-{
+public final class ToIVortex extends AbstractNpcAI {
 	// NPCs
 	private static final int KEPLON = 30949;
 	private static final int EUCLIE = 30950;
@@ -51,8 +50,7 @@ public final class ToIVortex extends AbstractNpcAI
 	private static final Map<String, Location> TOI_FLOORS = new HashMap<>();
 	// Misc
 	private static final Map<String, Integer> DIMENSION_TRADE = new HashMap<>();
-	static
-	{
+	static {
 		TOI_FLOORS.put("1", new Location(114356, 13423, -5096));
 		TOI_FLOORS.put("2", new Location(114666, 13380, -3608));
 		TOI_FLOORS.put("3", new Location(111982, 16028, -2120));
@@ -80,20 +78,17 @@ public final class ToIVortex extends AbstractNpcAI
 		DIMENSION_TRADE.put("RED", RED_DIMENSION_STONE);
 	}
 	
-	private ToIVortex()
-	{
+	private ToIVortex() {
 		super(ToIVortex.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(KEPLON, EUCLIE, PITHGON, DIMENSION_VORTEX_1, DIMENSION_VORTEX_2, DIMENSION_VORTEX_3);
 		addTalkId(KEPLON, EUCLIE, PITHGON, DIMENSION_VORTEX_1, DIMENSION_VORTEX_2, DIMENSION_VORTEX_3);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		int npcId = npc.getId();
 		
-		switch (event)
-		{
+		switch (event) {
 			case "1":
 			case "2":
 			case "3":
@@ -103,32 +98,24 @@ public final class ToIVortex extends AbstractNpcAI
 			case "7":
 			case "8":
 			case "9":
-			case "10":
-			{
+			case "10": {
 				final Location loc = TOI_FLOORS.get(event);
 				final int itemId = TOI_FLOOR_ITEMS.get(event);
-				if (hasQuestItems(player, itemId))
-				{
+				if (hasQuestItems(player, itemId)) {
 					takeItems(player, itemId, 1);
 					player.teleToLocation(loc, true);
-				}
-				else
-				{
+				} else {
 					return "no-stones.htm";
 				}
 				break;
 			}
 			case "GREEN":
 			case "BLUE":
-			case "RED":
-			{
-				if (player.getAdena() >= 10000)
-				{
+			case "RED": {
+				if (player.getAdena() >= 10000) {
 					takeItems(player, Inventory.ADENA_ID, 10000);
 					giveItems(player, DIMENSION_TRADE.get(event), 1);
-				}
-				else
-				{
+				} else {
 					return npcId + "no-adena.htm";
 				}
 				break;
@@ -137,8 +124,7 @@ public final class ToIVortex extends AbstractNpcAI
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new ToIVortex();
 	}
 }

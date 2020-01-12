@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.network.NpcStringId;
  * Long Live the Pa'agrio Lord (4)
  * @author malyelfik
  */
-public class Q00004_LongLiveThePaagrioLord extends Quest
-{
+public class Q00004_LongLiveThePaagrioLord extends Quest {
 	// NPCs
 	private static final int KUNAI = 30559;
 	private static final int USKA = 30560;
@@ -52,8 +51,7 @@ public class Q00004_LongLiveThePaagrioLord extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	
-	public Q00004_LongLiveThePaagrioLord()
-	{
+	public Q00004_LongLiveThePaagrioLord() {
 		super(4, Q00004_LongLiveThePaagrioLord.class.getSimpleName(), "Long Live the Pa'agrio Lord");
 		addStartNpc(NAKUSIN);
 		addTalkId(NAKUSIN, VARKEES, URUTU, HESTUI, KUNAI, USKA, GROOKIN);
@@ -61,17 +59,14 @@ public class Q00004_LongLiveThePaagrioLord extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30578-03.htm":
 				st.startQuest();
 				break;
@@ -85,25 +80,19 @@ public class Q00004_LongLiveThePaagrioLord extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case NAKUSIN:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getRace() != Race.ORC) ? "30578-00.htm" : (player.getLevel() >= MIN_LEVEL) ? "30578-02.htm" : "30578-01.htm";
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
-						{
+						if (st.isCond(1)) {
 							htmltext = "30578-04.html";
-						}
-						else
-						{
+						} else {
 							giveItems(player, CLUB, 1);
 							// Newbie Guide
 							showOnScreenMsg(player, NpcStringId.DELIVERY_DUTY_COMPLETE_N_GO_FIND_THE_NEWBIE_GUIDE, 2, 5000);
@@ -140,20 +129,15 @@ public class Q00004_LongLiveThePaagrioLord extends Quest
 		return htmltext;
 	}
 	
-	private static String giveItem(L2PcInstance player, QuestState st, int npcId, int itemId, int... items)
-	{
-		if (!st.isStarted())
-		{
+	private static String giveItem(L2PcInstance player, QuestState st, int npcId, int itemId, int... items) {
+		if (!st.isStarted()) {
 			return getNoQuestMsg(player);
-		}
-		else if (hasQuestItems(player, itemId))
-		{
+		} else if (hasQuestItems(player, itemId)) {
 			return npcId + "-02.html";
 		}
 		giveItems(player, itemId, 1);
 		playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
-		if (hasQuestItems(player, items))
-		{
+		if (hasQuestItems(player, items)) {
 			st.setCond(2, true);
 		}
 		return npcId + "-01.html";

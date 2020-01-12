@@ -36,14 +36,12 @@ import com.l2jserver.gameserver.model.stats.Stats;
  * Energy Attack effect implementation.
  * @author NosBit
  */
-public final class EnergyAttack extends AbstractEffect
-{
+public final class EnergyAttack extends AbstractEffect {
 	private final double _power;
 	private final int _criticalChance;
 	private final boolean _ignoreShieldDefence;
 	
-	public EnergyAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public EnergyAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
@@ -52,30 +50,25 @@ public final class EnergyAttack extends AbstractEffect
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
-	{
+	public boolean calcSuccess(BuffInfo info) {
 		// TODO: Verify this on retail
 		return !Formulas.calcPhysicalSkillEvasion(info.getEffector(), info.getEffected(), info.getSkill());
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.PHYSICAL_ATTACK;
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2PcInstance attacker = info.getEffector() instanceof L2PcInstance ? (L2PcInstance) info.getEffector() : null;
-		if (attacker == null)
-		{
+		if (attacker == null) {
 			return;
 		}
 		
@@ -85,22 +78,17 @@ public final class EnergyAttack extends AbstractEffect
 		double attack = attacker.getPAtk(target);
 		double defence = target.getPDef(attacker);
 		
-		if (!_ignoreShieldDefence)
-		{
+		if (!_ignoreShieldDefence) {
 			byte shield = Formulas.calcShldUse(attacker, target, skill, true);
-			switch (shield)
-			{
-				case Formulas.SHIELD_DEFENSE_FAILED:
-				{
+			switch (shield) {
+				case Formulas.SHIELD_DEFENSE_FAILED: {
 					break;
 				}
-				case Formulas.SHIELD_DEFENSE_SUCCEED:
-				{
+				case Formulas.SHIELD_DEFENSE_SUCCEED: {
 					defence += target.getShldDef();
 					break;
 				}
-				case Formulas.SHIELD_DEFENSE_PERFECT_BLOCK:
-				{
+				case Formulas.SHIELD_DEFENSE_PERFECT_BLOCK: {
 					defence = -1;
 					break;
 				}
@@ -110,8 +98,7 @@ public final class EnergyAttack extends AbstractEffect
 		double damage = 1;
 		boolean critical = false;
 		
-		if (defence != -1)
-		{
+		if (defence != -1) {
 			double damageMultiplier = Formulas.calcWeaponTraitBonus(attacker, target) * Formulas.calcAttributeBonus(attacker, target, skill) * Formulas.calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true);
 			
 			boolean ss = info.getSkill().useSoulShot() && attacker.isChargedShot(ShotType.SOULSHOTS);
@@ -119,12 +106,9 @@ public final class EnergyAttack extends AbstractEffect
 			
 			double weaponTypeBoost;
 			L2Weapon weapon = attacker.getActiveWeaponItem();
-			if ((weapon != null) && ((weapon.getItemType() == WeaponType.BOW) || (weapon.getItemType() == WeaponType.CROSSBOW)))
-			{
+			if ((weapon != null) && ((weapon.getItemType() == WeaponType.BOW) || (weapon.getItemType() == WeaponType.CROSSBOW))) {
 				weaponTypeBoost = 70;
-			}
-			else
-			{
+			} else {
 				weaponTypeBoost = 77;
 			}
 			
@@ -139,26 +123,22 @@ public final class EnergyAttack extends AbstractEffect
 			
 			damage = attack / defence;
 			damage *= damageMultiplier;
-			if (target instanceof L2PcInstance)
-			{
+			if (target instanceof L2PcInstance) {
 				damage *= attacker.getStat().calcStat(Stats.PVP_PHYS_SKILL_DMG, 1.0);
 				damage *= target.getStat().calcStat(Stats.PVP_PHYS_SKILL_DEF, 1.0);
 				damage = attacker.getStat().calcStat(Stats.PHYSICAL_SKILL_POWER, damage);
 			}
 			
-			if (_criticalChance > 0)
-			{
+			if (_criticalChance > 0) {
 				critical = Formulas.calcSkillCrit(attacker, target, _criticalChance);
 			}
 			
-			if (critical)
-			{
+			if (critical) {
 				damage *= 2;
 			}
 		}
 		
-		if (damage > 0)
-		{
+		if (damage > 0) {
 			attacker.sendDamageMessage(target, (int) damage, false, critical, false);
 			target.reduceCurrentHp(damage, attacker, skill);
 			target.notifyDamageReceived(damage, attacker, skill, critical, false, false);

@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * No More Soup For You (289)
  * @author kostantinos
  */
-public class Q00289_NoMoreSoupForYou extends Quest
-{
+public class Q00289_NoMoreSoupForYou extends Quest {
 	// NPC
 	public static final int STAN = 30200;
 	// Item
@@ -40,8 +39,7 @@ public class Q00289_NoMoreSoupForYou extends Quest
 	// Misc
 	public static final int RATE = 5;
 	
-	private static final int[] MOBS =
-	{
+	private static final int[] MOBS = {
 		18908,
 		22779,
 		22786,
@@ -49,8 +47,7 @@ public class Q00289_NoMoreSoupForYou extends Quest
 		22788
 	};
 	
-	private static final int[][] WEAPONS =
-	{
+	private static final int[][] WEAPONS = {
 		{
 			10377,
 			1
@@ -81,8 +78,7 @@ public class Q00289_NoMoreSoupForYou extends Quest
 		}
 	};
 	
-	private static final int[][] ARMORS =
-	{
+	private static final int[][] ARMORS = {
 		{
 			15812,
 			1
@@ -157,8 +153,7 @@ public class Q00289_NoMoreSoupForYou extends Quest
 		}
 	};
 	
-	public Q00289_NoMoreSoupForYou()
-	{
+	public Q00289_NoMoreSoupForYou() {
 		super(289, Q00289_NoMoreSoupForYou.class.getSimpleName(), "No More Soup For You");
 		addStartNpc(STAN);
 		addTalkId(STAN);
@@ -166,48 +161,34 @@ public class Q00289_NoMoreSoupForYou extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		int b = getRandom(18);
 		int c = getRandom(7);
 		
-		if (npc.getId() == STAN)
-		{
-			if (event.equalsIgnoreCase("30200-03.htm"))
-			{
+		if (npc.getId() == STAN) {
+			if (event.equalsIgnoreCase("30200-03.htm")) {
 				st.startQuest();
-			}
-			else if (event.equalsIgnoreCase("30200-05.htm"))
-			{
-				if (st.getQuestItemsCount(SOUP) >= 500)
-				{
+			} else if (event.equalsIgnoreCase("30200-05.htm")) {
+				if (st.getQuestItemsCount(SOUP) >= 500) {
 					st.giveItems(WEAPONS[c][0], WEAPONS[c][1]);
 					st.takeItems(SOUP, 500);
 					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "30200-04.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30200-07.htm";
 				}
-			}
-			else if (event.equalsIgnoreCase("30200-06.htm"))
-			{
-				if (st.getQuestItemsCount(SOUP) >= 100)
-				{
+			} else if (event.equalsIgnoreCase("30200-06.htm")) {
+				if (st.getQuestItemsCount(SOUP) >= 100) {
 					st.giveItems(ARMORS[b][0], ARMORS[b][1]);
 					st.takeItems(SOUP, 100);
 					st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "30200-04.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30200-07.htm";
 				}
 			}
@@ -216,16 +197,13 @@ public class Q00289_NoMoreSoupForYou extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		QuestState st = getQuestState(player, false);
 		int npcId = npc.getId();
-		if ((st == null) || (st.getState() != State.STARTED))
-		{
+		if ((st == null) || (st.getState() != State.STARTED)) {
 			return null;
 		}
-		if (Util.contains(MOBS, npcId))
-		{
+		if (Util.contains(MOBS, npcId)) {
 			st.giveItems(SOUP, 1 * RATE);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
@@ -233,20 +211,16 @@ public class Q00289_NoMoreSoupForYou extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (npc.getId() == STAN)
-		{
-			switch (st.getState())
-			{
+		if (npc.getId() == STAN) {
+			switch (st.getState()) {
 				case State.CREATED:
 					htmltext = (player.hasQuestCompleted(Q00252_ItSmellsDelicious.class.getSimpleName()) && (player.getLevel() >= 82)) ? "30200-01.htm" : "30200-00.htm";
 					break;
 				case State.STARTED:
-					if (st.isCond(1))
-					{
+					if (st.isCond(1)) {
 						htmltext = (st.getQuestItemsCount(SOUP) >= 100) ? "30200-04.htm" : "30200-03.htm";
 					}
 					break;

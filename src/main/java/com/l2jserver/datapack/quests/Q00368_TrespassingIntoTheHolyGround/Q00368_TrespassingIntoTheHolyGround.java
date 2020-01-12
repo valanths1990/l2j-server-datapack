@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Trespassing into the Holy Ground (368)
  * @author Adry_85
  */
-public final class Q00368_TrespassingIntoTheHolyGround extends Quest
-{
+public final class Q00368_TrespassingIntoTheHolyGround extends Quest {
 	// NPC
 	private static final int RESTINA = 30926;
 	// Item
@@ -40,16 +39,14 @@ public final class Q00368_TrespassingIntoTheHolyGround extends Quest
 	private static final int MIN_LEVEL = 36;
 	// Mobs
 	private static final Map<Integer, Double> MOBS = new HashMap<>();
-	static
-	{
+	static {
 		MOBS.put(20794, 0.60); // blade_stakato
 		MOBS.put(20795, 0.57); // blade_stakato_worker
 		MOBS.put(20796, 0.61); // blade_stakato_soldier
 		MOBS.put(20797, 0.93); // blade_stakato_drone
 	}
 	
-	public Q00368_TrespassingIntoTheHolyGround()
-	{
+	public Q00368_TrespassingIntoTheHolyGround() {
 		super(368, Q00368_TrespassingIntoTheHolyGround.class.getSimpleName(), "Trespassing into the Holy Ground");
 		addStartNpc(RESTINA);
 		addTalkId(RESTINA);
@@ -58,31 +55,25 @@ public final class Q00368_TrespassingIntoTheHolyGround extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30926-02.htm":
-			{
+		switch (event) {
+			case "30926-02.htm": {
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "30926-05.html":
-			{
+			case "30926-05.html": {
 				st.exitQuest(true, true);
 				htmltext = event;
 				break;
 			}
-			case "30926-06.html":
-			{
+			case "30926-06.html": {
 				htmltext = event;
 				break;
 			}
@@ -91,53 +82,41 @@ public final class Q00368_TrespassingIntoTheHolyGround extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final int i;
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case 20795:
-			case 20797:
-			{
+			case 20797: {
 				i = 1;
 				break;
 			}
-			default:
-			{
+			default: {
 				i = 3;
 				break;
 			}
 		}
 		
 		final QuestState st = getRandomPartyMemberState(player, -1, i, npc);
-		if (st != null)
-		{
+		if (st != null) {
 			st.giveItemRandomly(npc, BLADE_STAKATO_FANG, 1, 0, MOBS.get(npc.getId()), true);
 		}
 		return super.onKill(npc, player, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st.isCreated())
-		{
+		if (st.isCreated()) {
 			htmltext = ((player.getLevel() >= MIN_LEVEL) ? "30926-01.htm" : "30926-03.html");
-		}
-		else if (st.isStarted())
-		{
-			if (hasQuestItems(player, BLADE_STAKATO_FANG))
-			{
+		} else if (st.isStarted()) {
+			if (hasQuestItems(player, BLADE_STAKATO_FANG)) {
 				final long count = getQuestItemsCount(player, BLADE_STAKATO_FANG);
 				final long bonus = (count >= 10 ? 9450 : 2000);
 				giveAdena(player, (count * 250) + bonus, true);
 				takeItems(player, BLADE_STAKATO_FANG, -1);
 				htmltext = "30926-04.html";
-			}
-			else
-			{
+			} else {
 				htmltext = "30926-07.html";
 			}
 		}

@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.util.Util;
  * Dark Winged Spies (275)
  * @author xban1x
  */
-public final class Q00275_DarkWingedSpies extends Quest
-{
+public final class Q00275_DarkWingedSpies extends Quest {
 	// Npc
 	private static final int NERUGA_CHIEF_TANTUS = 30567;
 	// Items
@@ -48,8 +47,7 @@ public final class Q00275_DarkWingedSpies extends Quest
 	private static final int FANG_PRICE = 60;
 	private static final int MAX_BAT_FANG_COUNT = 70;
 	
-	public Q00275_DarkWingedSpies()
-	{
+	public Q00275_DarkWingedSpies() {
 		super(275, Q00275_DarkWingedSpies.class.getSimpleName(), "Dark Winged Spies");
 		addStartNpc(NERUGA_CHIEF_TANTUS);
 		addTalkId(NERUGA_CHIEF_TANTUS);
@@ -59,11 +57,9 @@ public final class Q00275_DarkWingedSpies extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && event.equals("30567-03.htm"))
-		{
+		if ((st != null) && event.equals("30567-03.htm")) {
 			st.startQuest();
 			return event;
 		}
@@ -71,35 +67,25 @@ public final class Q00275_DarkWingedSpies extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
 		
-		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, killer, true))
-		{
+		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, killer, true)) {
 			final long count = st.getQuestItemsCount(DARKWING_BAT_FANG);
 			
-			switch (npc.getId())
-			{
-				case DARKWING_BAT:
-				{
-					if (st.giveItemRandomly(DARKWING_BAT_FANG, 1, MAX_BAT_FANG_COUNT, 1, true))
-					{
+			switch (npc.getId()) {
+				case DARKWING_BAT: {
+					if (st.giveItemRandomly(DARKWING_BAT_FANG, 1, MAX_BAT_FANG_COUNT, 1, true)) {
 						st.setCond(2);
-					}
-					else if ((count > 10) && (count < 66) && (getRandom(100) < 10))
-					{
+					} else if ((count > 10) && (count < 66) && (getRandom(100) < 10)) {
 						st.addSpawn(VARANGKAS_TRACKER);
 						st.giveItems(VARANGKAS_PARASITE, 1);
 					}
 					break;
 				}
-				case VARANGKAS_TRACKER:
-				{
-					if ((count < 66) && st.hasQuestItems(VARANGKAS_PARASITE))
-					{
-						if (st.giveItemRandomly(DARKWING_BAT_FANG, 5, MAX_BAT_FANG_COUNT, 1, true))
-						{
+				case VARANGKAS_TRACKER: {
+					if ((count < 66) && st.hasQuestItems(VARANGKAS_PARASITE)) {
+						if (st.giveItemRandomly(DARKWING_BAT_FANG, 5, MAX_BAT_FANG_COUNT, 1, true)) {
 							st.setCond(2);
 						}
 						st.takeItems(VARANGKAS_PARASITE, -1);
@@ -113,10 +99,8 @@ public final class Q00275_DarkWingedSpies extends Quest
 	}
 	
 	@Override
-	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
-	{
-		if (creature.isPlayer())
-		{
+	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon) {
+		if (creature.isPlayer()) {
 			npc.setRunning();
 			((L2Attackable) npc).addDamageHate(creature, 0, 1);
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, creature);
@@ -125,31 +109,23 @@ public final class Q00275_DarkWingedSpies extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState st = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (talker.getRace() == Race.ORC) ? (talker.getLevel() >= MIN_LVL) ? "30567-02.htm" : "30567-01.htm" : "30567-00.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
 						htmltext = "30567-05.html";
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						final long count = st.getQuestItemsCount(DARKWING_BAT_FANG);
-						if (count >= MAX_BAT_FANG_COUNT)
-						{
+						if (count >= MAX_BAT_FANG_COUNT) {
 							st.giveAdena(count * FANG_PRICE, true);
 							st.exitQuest(true, true);
 							htmltext = "30567-05.html";

@@ -42,8 +42,7 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Venom AI on Rune Castle.
  * @author nonom, MELERIX
  */
-public final class Venom extends AbstractNpcAI
-{
+public final class Venom extends AbstractNpcAI {
 	private static final int CASTLE = 8; // Rune
 	
 	private static final int VENOM = 29054;
@@ -55,8 +54,7 @@ public final class Venom extends AbstractNpcAI
 	
 	private static final int HOURS_BEFORE = 24;
 	
-	private static final Location[] TARGET_TELEPORTS =
-	{
+	private static final Location[] TARGET_TELEPORTS = {
 		new Location(12860, -49158, 976),
 		new Location(14878, -51339, 1024),
 		new Location(15674, -49970, 864),
@@ -98,8 +96,7 @@ public final class Venom extends AbstractNpcAI
 	
 	private static List<L2PcInstance> _targets = new ArrayList<>();
 	
-	private Venom()
-	{
+	private Venom() {
 		super(Venom.class.getSimpleName(), "ai/individual");
 		addStartNpc(DUNGEON_KEEPER, TELEPORT_CUBE);
 		addFirstTalkId(DUNGEON_KEEPER, TELEPORT_CUBE);
@@ -115,30 +112,22 @@ public final class Venom extends AbstractNpcAI
 		final long currentTime = System.currentTimeMillis();
 		final long startSiegeDate = CastleManager.getInstance().getCastleById(CASTLE).getSiegeDate().getTimeInMillis();
 		final long openingDungeonDate = startSiegeDate - (HOURS_BEFORE * 360000);
-		if ((currentTime > openingDungeonDate) && (currentTime < startSiegeDate))
-		{
+		if ((currentTime > openingDungeonDate) && (currentTime < startSiegeDate)) {
 			_prisonIsOpen = true;
 		}
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
-		switch (npc.getId())
-		{
-			case TELEPORT_CUBE:
-			{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
+		switch (npc.getId()) {
+			case TELEPORT_CUBE: {
 				talker.teleToLocation(TeleportWhereType.TOWN);
 				break;
 			}
-			case DUNGEON_KEEPER:
-			{
-				if (_prisonIsOpen)
-				{
+			case DUNGEON_KEEPER: {
+				if (_prisonIsOpen) {
 					talker.teleToLocation(TELEPORT);
-				}
-				else
-				{
+				} else {
 					return "35506-02.html";
 				}
 				break;
@@ -148,13 +137,10 @@ public final class Venom extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
 			case "tower_check":
-				if (CastleManager.getInstance().getCastleById(CASTLE).getSiege().getControlTowerCount() <= 1)
-				{
+				if (CastleManager.getInstance().getCastleById(CASTLE).getSiege().getControlTowerCount() <= 1) {
 					changeLocation(MoveTo.THRONE);
 					broadcastNpcSay(_massymore, Say2.NPC_SHOUT, NpcStringId.OH_NO_THE_DEFENSES_HAVE_FAILED_IT_IS_TOO_DANGEROUS_TO_REMAIN_INSIDE_THE_CASTLE_FLEE_EVERY_MAN_FOR_HIMSELF);
 					cancelQuestTimer("tower_check", npc, null);
@@ -162,14 +148,12 @@ public final class Venom extends AbstractNpcAI
 				}
 				break;
 			case "raid_check":
-				if (!npc.isInsideZone(ZoneId.SIEGE) && !npc.isTeleporting())
-				{
+				if (!npc.isInsideZone(ZoneId.SIEGE) && !npc.isTeleporting()) {
 					npc.teleToLocation(_loc);
 				}
 				break;
 			case "cube_despawn":
-				if (npc != null)
-				{
+				if (npc != null) {
 					npc.deleteMe();
 				}
 				break;
@@ -178,26 +162,21 @@ public final class Venom extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
-		if (isSummon)
-		{
+	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon) {
+		if (isSummon) {
 			return super.onAggroRangeEnter(npc, player, isSummon);
 		}
 		
-		if (_aggroMode && (_targets.size() < 10) && (getRandom(3) < 1) && !player.isDead())
-		{
+		if (_aggroMode && (_targets.size() < 10) && (getRandom(3) < 1) && !player.isDead()) {
 			_targets.add(player);
 		}
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
 	
-	public void onSiegeStart(OnCastleSiegeStart event)
-	{
+	public void onSiegeStart(OnCastleSiegeStart event) {
 		_aggroMode = true;
 		_prisonIsOpen = false;
-		if ((_venom != null) && !_venom.isDead())
-		{
+		if ((_venom != null) && !_venom.isDead()) {
 			_venom.setCurrentHp(_venom.getMaxHp());
 			_venom.setCurrentMp(_venom.getMaxMp());
 			_venom.enableSkill(VENOM_TELEPORT.getSkill());
@@ -206,11 +185,9 @@ public final class Venom extends AbstractNpcAI
 		}
 	}
 	
-	public void onSiegeFinish(OnCastleSiegeFinish event)
-	{
+	public void onSiegeFinish(OnCastleSiegeFinish event) {
 		_aggroMode = false;
-		if ((_venom != null) && !_venom.isDead())
-		{
+		if ((_venom != null) && !_venom.isDead()) {
 			changeLocation(MoveTo.PRISON);
 			_venom.disableSkill(VENOM_TELEPORT.getSkill(), -1);
 			_venom.disableSkill(RANGE_TELEPORT.getSkill(), -1);
@@ -221,10 +198,8 @@ public final class Venom extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
-	{
-		switch (skill.getId())
-		{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill) {
+		switch (skill.getId()) {
 			case 4222:
 				npc.teleToLocation(_loc);
 				break;
@@ -235,16 +210,13 @@ public final class Venom extends AbstractNpcAI
 			case 4996:
 				teleportTarget(player);
 				((L2Attackable) npc).stopHating(player);
-				if ((_targets != null) && (_targets.size() > 0))
-				{
-					for (L2PcInstance target : _targets)
-					{
+				if ((_targets != null) && (_targets.size() > 0)) {
+					for (L2PcInstance target : _targets) {
 						final long x = player.getX() - target.getX();
 						final long y = player.getY() - target.getY();
 						final long z = player.getZ() - target.getZ();
 						final long range = 250;
-						if (((x * x) + (y * y) + (z * z)) <= (range * range))
-						{
+						if (((x * x) + (y * y) + (z * z)) <= (range * range)) {
 							teleportTarget(target);
 							((L2Attackable) npc).stopHating(target);
 						}
@@ -257,17 +229,13 @@ public final class Venom extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
-		switch (npc.getId())
-		{
-			case DUNGEON_KEEPER:
-			{
+	public final String onSpawn(L2Npc npc) {
+		switch (npc.getId()) {
+			case DUNGEON_KEEPER: {
 				_massymore = npc;
 				break;
 			}
-			case VENOM:
-			{
+			case VENOM: {
 				_venom = npc;
 				
 				_loc = _venom.getLocation();
@@ -276,19 +244,15 @@ public final class Venom extends AbstractNpcAI
 				_venom.doRevive();
 				broadcastNpcSay(npc, Say2.NPC_SHOUT, NpcStringId.WHO_DARES_TO_COVET_THE_THRONE_OF_OUR_CASTLE_LEAVE_IMMEDIATELY_OR_YOU_WILL_PAY_THE_PRICE_OF_YOUR_AUDACITY_WITH_YOUR_VERY_OWN_BLOOD);
 				((L2Attackable) _venom).setCanReturnToSpawnPoint(false);
-				if (checkStatus() == DEAD)
-				{
+				if (checkStatus() == DEAD) {
 					_venom.deleteMe();
 				}
 				break;
 			}
 		}
-		if (checkStatus() == DEAD)
-		{
+		if (checkStatus() == DEAD) {
 			npc.deleteMe();
-		}
-		else
-		{
+		} else {
 			npc.doRevive();
 			
 		}
@@ -296,26 +260,18 @@ public final class Venom extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final double distance = npc.calculateDistance(attacker, false, false);
-		if (_aggroMode && (getRandom(100) < 25))
-		{
+		if (_aggroMode && (getRandom(100) < 25)) {
 			npc.setTarget(attacker);
 			npc.doCast(VENOM_TELEPORT);
-		}
-		else if (_aggroMode && (npc.getCurrentHp() < (npc.getMaxHp() / 3)) && (getRandom(100) < 25) && !npc.isCastingNow())
-		{
+		} else if (_aggroMode && (npc.getCurrentHp() < (npc.getMaxHp() / 3)) && (getRandom(100) < 25) && !npc.isCastingNow()) {
 			npc.setTarget(attacker);
 			npc.doCast(RANGE_TELEPORT);
-		}
-		else if ((distance > 300) && (getRandom(100) < 10) && !npc.isCastingNow())
-		{
+		} else if ((distance > 300) && (getRandom(100) < 10) && !npc.isCastingNow()) {
 			npc.setTarget(attacker);
 			npc.doCast(VENOM_STRIKE);
-		}
-		else if ((getRandom(100) < 10) && !npc.isCastingNow())
-		{
+		} else if ((getRandom(100) < 10) && !npc.isCastingNow()) {
 			npc.setTarget(attacker);
 			npc.doCast(SONIC_STORM);
 		}
@@ -323,12 +279,10 @@ public final class Venom extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		updateStatus(DEAD);
 		broadcastNpcSay(npc, Say2.NPC_SHOUT, NpcStringId.ITS_NOT_OVER_YET_IT_WONT_BE_OVER_LIKE_THIS_NEVER);
-		if (!CastleManager.getInstance().getCastleById(CASTLE).getSiege().isInProgress())
-		{
+		if (!CastleManager.getInstance().getCastleById(CASTLE).getSiege().isInProgress()) {
 			L2Npc cube = addSpawn(TELEPORT_CUBE, CUBE, false, 0);
 			startQuestTimer("cube_despawn", 120000, cube, null);
 		}
@@ -340,20 +294,15 @@ public final class Venom extends AbstractNpcAI
 	 * Alters the Venom location
 	 * @param loc enum
 	 */
-	private void changeLocation(MoveTo loc)
-	{
-		switch (loc)
-		{
+	private void changeLocation(MoveTo loc) {
+		switch (loc) {
 			case THRONE:
 				_venom.teleToLocation(TRHONE, false);
 				break;
 			case PRISON:
-				if ((_venom == null) || _venom.isDead() || _venom.isDecayed())
-				{
+				if ((_venom == null) || _venom.isDead() || _venom.isDecayed()) {
 					_venom = addSpawn(VENOM, DUNGEON, false, 0);
-				}
-				else
-				{
+				} else {
 					_venom.teleToLocation(DUNGEON, false);
 				}
 				cancelQuestTimer("raid_check", _venom, null);
@@ -363,10 +312,8 @@ public final class Venom extends AbstractNpcAI
 		_loc.setLocation(_venom.getLocation());
 	}
 	
-	private void teleportTarget(L2PcInstance player)
-	{
-		if ((player != null) && !player.isDead())
-		{
+	private void teleportTarget(L2PcInstance player) {
+		if ((player != null) && !player.isDead()) {
 			final int rnd = getRandom(11);
 			player.teleToLocation(TARGET_TELEPORTS[rnd], TARGET_TELEPORTS_OFFSET[rnd]);
 			player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -377,15 +324,11 @@ public final class Venom extends AbstractNpcAI
 	 * Checks if Venom is Alive or Dead
 	 * @return status
 	 */
-	private int checkStatus()
-	{
+	private int checkStatus() {
 		int checkStatus = ALIVE;
-		if (GlobalVariablesManager.getInstance().hasVariable("VenomStatus"))
-		{
+		if (GlobalVariablesManager.getInstance().hasVariable("VenomStatus")) {
 			checkStatus = GlobalVariablesManager.getInstance().getInt("VenomStatus");
-		}
-		else
-		{
+		} else {
 			GlobalVariablesManager.getInstance().set("VenomStatus", 0);
 		}
 		return checkStatus;
@@ -395,19 +338,16 @@ public final class Venom extends AbstractNpcAI
 	 * Update the Venom status
 	 * @param status the new status. 0 = ALIVE, 1 = DEAD.
 	 */
-	private void updateStatus(int status)
-	{
+	private void updateStatus(int status) {
 		GlobalVariablesManager.getInstance().set("VenomStatus", Integer.toString(status));
 	}
 	
-	private enum MoveTo
-	{
+	private enum MoveTo {
 		THRONE,
 		PRISON
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Venom();
 	}
 }

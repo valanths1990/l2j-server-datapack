@@ -30,22 +30,19 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by disKret.
  * @author malyelfik
  */
-public class Q00602_ShadowOfLight extends Quest
-{
+public class Q00602_ShadowOfLight extends Quest {
 	// NPC
 	private static final int EYE_OF_ARGOS = 31683;
 	// Item
 	private static final int EYE_OF_DARKNESS = 7189;
 	// Monsters
-	private static final int[] MOBS =
-	{
+	private static final int[] MOBS = {
 		21299,
 		21304
 	};
 	
 	// Reward
-	private static final int[][] REWARD =
-	{
+	private static final int[][] REWARD = {
 		{
 			6699,
 			40000,
@@ -72,8 +69,7 @@ public class Q00602_ShadowOfLight extends Quest
 		}
 	};
 	
-	public Q00602_ShadowOfLight()
-	{
+	public Q00602_ShadowOfLight() {
 		super(602, Q00602_ShadowOfLight.class.getSimpleName(), "Shadow of Light");
 		addStartNpc(EYE_OF_ARGOS);
 		addTalkId(EYE_OF_ARGOS);
@@ -82,30 +78,25 @@ public class Q00602_ShadowOfLight extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "31683-02.htm":
 				st.startQuest();
 				break;
 			case "31683-05.html":
-				if (st.getQuestItemsCount(EYE_OF_DARKNESS) < 100)
-				{
+				if (st.getQuestItemsCount(EYE_OF_DARKNESS) < 100) {
 					return "31683-06.html";
 				}
 				
 				int i = getRandom(4);
-				if (i < 3)
-				{
+				if (i < 3) {
 					st.giveItems(REWARD[i][0], 3);
 				}
 				st.giveAdena(REWARD[i][1], true);
@@ -120,26 +111,20 @@ public class Q00602_ShadowOfLight extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
 		
-		if (st == null)
-		{
+		if (st == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		
 		int chance = (npc.getId() == MOBS[0]) ? 560 : 800;
 		
-		if (st.isCond(1) && (getRandom(1000) < chance))
-		{
+		if (st.isCond(1) && (getRandom(1000) < chance)) {
 			st.giveItems(EYE_OF_DARKNESS, 1);
-			if (st.getQuestItemsCount(EYE_OF_DARKNESS) == 100)
-			{
+			if (st.getQuestItemsCount(EYE_OF_DARKNESS) == 100) {
 				st.setCond(2, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -147,12 +132,10 @@ public class Q00602_ShadowOfLight extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= 68) ? "31683-01.htm" : "31683-00.htm";
 				break;

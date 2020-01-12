@@ -37,13 +37,10 @@ import com.l2jserver.gameserver.util.Broadcast;
 /**
  * @author -Nemesiss-
  */
-public class FishShots implements IItemHandler
-{
+public class FishShots implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!playable.isPlayer())
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!playable.isPlayer()) {
 			playable.sendPacket(SystemMessageId.ITEM_NOT_FOR_PETS);
 			return false;
 		}
@@ -52,35 +49,30 @@ public class FishShots implements IItemHandler
 		final L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		final L2Weapon weaponItem = activeChar.getActiveWeaponItem();
 		
-		if ((weaponInst == null) || (weaponItem.getItemType() != WeaponType.FISHINGROD))
-		{
+		if ((weaponInst == null) || (weaponItem.getItemType() != WeaponType.FISHINGROD)) {
 			return false;
 		}
 		
-		if (activeChar.isChargedShot(ShotType.FISH_SOULSHOTS))
-		{
+		if (activeChar.isChargedShot(ShotType.FISH_SOULSHOTS)) {
 			return false;
 		}
 		
 		final long count = item.getCount();
 		final SkillHolder[] skills = item.getItem().getSkills();
 		
-		if (skills == null)
-		{
+		if (skills == null) {
 			_log.log(Level.WARNING, getClass().getSimpleName() + ": is missing skills!");
 			return false;
 		}
 		
 		boolean gradeCheck = item.isEtcItem() && (item.getEtcItem().getDefaultAction() == ActionType.FISHINGSHOT) && (weaponInst.getItem().getItemGradeSPlus() == item.getItem().getItemGradeSPlus());
 		
-		if (!gradeCheck)
-		{
+		if (!gradeCheck) {
 			activeChar.sendPacket(SystemMessageId.WRONG_FISHINGSHOT_GRADE);
 			return false;
 		}
 		
-		if (count < 1)
-		{
+		if (count < 1) {
 			return false;
 		}
 		

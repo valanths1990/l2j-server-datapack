@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Make Formal Wear (37)
  * @author malyelfik
  */
-public class Q00037_MakeFormalWear extends Quest
-{
+public class Q00037_MakeFormalWear extends Quest {
 	// NPCs
 	private static final int ALEXIS = 30842;
 	private static final int LEIKAR = 31520;
@@ -47,8 +46,7 @@ public class Q00037_MakeFormalWear extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 60;
 	
-	public Q00037_MakeFormalWear()
-	{
+	public Q00037_MakeFormalWear() {
 		super(37, Q00037_MakeFormalWear.class.getSimpleName(), "Make Formal Wear");
 		addStartNpc(ALEXIS);
 		addTalkId(ALEXIS, JEREMY, LEIKAR, MIST);
@@ -56,17 +54,14 @@ public class Q00037_MakeFormalWear extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30842-03.htm":
 				st.startQuest();
 				break;
@@ -79,8 +74,7 @@ public class Q00037_MakeFormalWear extends Quest
 				st.setCond(3, true);
 				break;
 			case "31627-02.html":
-				if (!st.hasQuestItems(ICE_WINE))
-				{
+				if (!st.hasQuestItems(ICE_WINE)) {
 					return getNoQuestMsg(player);
 				}
 				st.takeItems(ICE_WINE, 1);
@@ -91,16 +85,14 @@ public class Q00037_MakeFormalWear extends Quest
 				st.setCond(5, true);
 				break;
 			case "31520-05.html":
-				if (!st.hasQuestItems(BOX_OF_COOKIES))
-				{
+				if (!st.hasQuestItems(BOX_OF_COOKIES)) {
 					return getNoQuestMsg(player);
 				}
 				st.takeItems(BOX_OF_COOKIES, 1);
 				st.setCond(6, true);
 				break;
 			case "31520-08.html":
-				if (!st.hasQuestItems(SEWING_KIT, JEWEL_BOX, MYSTERIOUS_CLOTH))
-				{
+				if (!st.hasQuestItems(SEWING_KIT, JEWEL_BOX, MYSTERIOUS_CLOTH)) {
 					return "31520-09.html";
 				}
 				st.takeItems(SEWING_KIT, 1);
@@ -109,8 +101,7 @@ public class Q00037_MakeFormalWear extends Quest
 				st.setCond(7, true);
 				break;
 			case "31520-12.html":
-				if (!st.hasQuestItems(DRESS_SHOES_BOX))
-				{
+				if (!st.hasQuestItems(DRESS_SHOES_BOX)) {
 					return "31520-13.html";
 				}
 				st.takeItems(DRESS_SHOES_BOX, 1);
@@ -125,21 +116,17 @@ public class Q00037_MakeFormalWear extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ALEXIS:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? "30842-01.htm" : "30842-02.html";
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
-						{
+						if (st.isCond(1)) {
 							htmltext = "30842-04.html";
 						}
 						break;
@@ -149,10 +136,8 @@ public class Q00037_MakeFormalWear extends Quest
 				}
 				break;
 			case LEIKAR:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "31520-01.html";
 							break;
@@ -173,10 +158,8 @@ public class Q00037_MakeFormalWear extends Quest
 				}
 				break;
 			case JEREMY:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 2:
 							htmltext = "31521-01.html";
 							break;
@@ -193,10 +176,8 @@ public class Q00037_MakeFormalWear extends Quest
 				}
 				break;
 			case MIST:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 3:
 							htmltext = "31627-01.html";
 							break;

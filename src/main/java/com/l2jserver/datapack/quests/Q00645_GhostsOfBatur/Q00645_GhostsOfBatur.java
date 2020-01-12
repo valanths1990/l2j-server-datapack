@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.util.Util;
  * Ghosts of Batur (645)
  * @author Zoey76
  */
-public class Q00645_GhostsOfBatur extends Quest
-{
+public class Q00645_GhostsOfBatur extends Quest {
 	// NPC
 	private static final int KARUDA = 32017;
 	// Monsters
@@ -43,15 +42,13 @@ public class Q00645_GhostsOfBatur extends Quest
 	private static final int CURSED_BURIAL_ITEMS = 14861; // New item
 	// Misc
 	private static final int MIN_LEVEL = 80;
-	private static final int[] CHANCES =
-	{
+	private static final int[] CHANCES = {
 		516,
 		664,
 		686
 	};
 	
-	public Q00645_GhostsOfBatur()
-	{
+	public Q00645_GhostsOfBatur() {
 		super(645, Q00645_GhostsOfBatur.class.getSimpleName(), "Ghosts of Batur");
 		addStartNpc(KARUDA);
 		addTalkId(KARUDA);
@@ -60,33 +57,26 @@ public class Q00645_GhostsOfBatur extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		if (player.getLevel() >= MIN_LEVEL)
-		{
-			switch (event)
-			{
-				case "32017-03.htm":
-				{
+		if (player.getLevel() >= MIN_LEVEL) {
+			switch (event) {
+				case "32017-03.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
 				}
 				case "32017-06.html":
-				case "32017-08.html":
-				{
+				case "32017-08.html": {
 					htmltext = event;
 					break;
 				}
-				case "32017-09.html":
-				{
+				case "32017-09.html": {
 					st.exitQuest(true, true);
 					htmltext = event;
 					break;
@@ -97,21 +87,15 @@ public class Q00645_GhostsOfBatur extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final L2PcInstance player = getRandomPartyMember(killer, 1);
-		if ((player != null) && Util.checkIfInRange(1500, npc, player, false))
-		{
-			if (getRandom(1000) < CHANCES[npc.getId() - CONTAMINATED_MOREK_WARRIOR])
-			{
+		if ((player != null) && Util.checkIfInRange(1500, npc, player, false)) {
+			if (getRandom(1000) < CHANCES[npc.getId() - CONTAMINATED_MOREK_WARRIOR]) {
 				final QuestState st = getQuestState(player, false);
 				st.giveItems(CURSED_BURIAL_ITEMS, 1);
-				if (st.isCond(1) && (st.getQuestItemsCount(CURSED_BURIAL_ITEMS) >= 500))
-				{
+				if (st.isCond(1) && (st.getQuestItemsCount(CURSED_BURIAL_ITEMS) >= 500)) {
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
@@ -120,30 +104,23 @@ public class Q00645_GhostsOfBatur extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "32017-01.htm" : "32017-02.html";
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				// Support for old quest reward.
 				final long count = st.getQuestItemsCount(CURSED_GRAVE_GOODS);
-				if ((count > 0) && (count < 180))
-				{
+				if ((count > 0) && (count < 180)) {
 					st.giveAdena(56000 + (count * 64), false);
 					st.addExpAndSp(138000, 7997);
 					st.exitQuest(true, true);
 					htmltext = "32017-07.html";
-				}
-				else
-				{
+				} else {
 					htmltext = st.hasQuestItems(CURSED_BURIAL_ITEMS) ? "32017-04.html" : "32017-05.html";
 				}
 				break;

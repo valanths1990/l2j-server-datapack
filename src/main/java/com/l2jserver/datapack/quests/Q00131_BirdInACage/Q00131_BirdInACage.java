@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Bird in a Cage (131)
  * @author Zoey76
  */
-public class Q00131_BirdInACage extends Quest
-{
+public class Q00131_BirdInACage extends Quest {
 	// NPCs
 	private static final int KANIS = 32264;
 	private static final int PARME = 32271;
@@ -43,8 +42,7 @@ public class Q00131_BirdInACage extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 78;
 	
-	public Q00131_BirdInACage()
-	{
+	public Q00131_BirdInACage() {
 		super(131, Q00131_BirdInACage.class.getSimpleName(), "Bird in a Cage");
 		addStartNpc(KANIS);
 		addTalkId(KANIS, PARME);
@@ -52,38 +50,29 @@ public class Q00131_BirdInACage extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "32264-04.html":
-			{
-				if (player.getLevel() >= MIN_LEVEL)
-				{
+		switch (event) {
+			case "32264-04.html": {
+				if (player.getLevel() >= MIN_LEVEL) {
 					st.startQuest();
 					htmltext = event;
 				}
 				break;
 			}
-			case "32264-06.html":
-			{
-				if (st.isCond(1))
-				{
+			case "32264-06.html": {
+				if (st.isCond(1)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32264-07.html":
-			{
-				if (st.isCond(1))
-				{
+			case "32264-07.html": {
+				if (st.isCond(1)) {
 					st.setCond(2);
 					htmltext = event;
 				}
@@ -91,18 +80,14 @@ public class Q00131_BirdInACage extends Quest
 			}
 			case "32264-09.html":
 			case "32264-10.html":
-			case "32264-11.html":
-			{
-				if (st.isCond(2))
-				{
+			case "32264-11.html": {
+				if (st.isCond(2)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32264-12.html":
-			{
-				if (st.isCond(2))
-				{
+			case "32264-12.html": {
+				if (st.isCond(2)) {
 					st.giveItems(ECHO_CRYSTAL_OF_FREE_THOUGHT, 1);
 					st.setCond(3, true);
 					htmltext = event;
@@ -110,28 +95,22 @@ public class Q00131_BirdInACage extends Quest
 				break;
 			}
 			case "32264-14.html":
-			case "32264-15.html":
-			{
-				if (st.isCond(3))
-				{
+			case "32264-15.html": {
+				if (st.isCond(3)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32264-17.html":
-			{
-				if (st.isCond(4) && st.hasQuestItems(PARMES_LETTER))
-				{
+			case "32264-17.html": {
+				if (st.isCond(4) && st.hasQuestItems(PARMES_LETTER)) {
 					st.takeItems(PARMES_LETTER, -1);
 					st.setCond(5);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32264-19.html":
-			{
-				if (st.isCond(5) && st.hasQuestItems(ECHO_CRYSTAL_OF_FREE_THOUGHT))
-				{
+			case "32264-19.html": {
+				if (st.isCond(5) && st.hasQuestItems(ECHO_CRYSTAL_OF_FREE_THOUGHT)) {
 					st.addExpAndSp(250677, 25019);
 					st.giveItems(FIRE_STONE + getRandom(4), 4);
 					st.exitQuest(false, true);
@@ -139,18 +118,14 @@ public class Q00131_BirdInACage extends Quest
 				}
 				break;
 			}
-			case "32271-03.html":
-			{
-				if (st.isCond(3))
-				{
+			case "32271-03.html": {
+				if (st.isCond(3)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32271-04.html":
-			{
-				if (st.isCond(3))
-				{
+			case "32271-04.html": {
+				if (st.isCond(3)) {
 					st.giveItems(PARMES_LETTER, 1);
 					st.setCond(4, true);
 					player.setInstanceId(0);
@@ -164,66 +139,48 @@ public class Q00131_BirdInACage extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.COMPLETED:
-			{
+		switch (st.getState()) {
+			case State.COMPLETED: {
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
-			case State.CREATED:
-			{
-				if (npc.getId() == KANIS)
-				{
+			case State.CREATED: {
+				if (npc.getId() == KANIS) {
 					htmltext = (player.getLevel() >= MIN_LEVEL) ? "32264-01.htm" : "32264-02.html";
 				}
 				break;
 			}
-			case State.STARTED:
-			{
-				if (npc.getId() == KANIS)
-				{
-					switch (st.getCond())
-					{
-						case 1:
-						{
+			case State.STARTED: {
+				if (npc.getId() == KANIS) {
+					switch (st.getCond()) {
+						case 1: {
 							htmltext = "32264-05.html";
 							break;
 						}
-						case 2:
-						{
+						case 2: {
 							htmltext = "32264-08.html";
 							break;
 						}
-						case 3:
-						{
+						case 3: {
 							htmltext = "32264-13.html";
 							break;
 						}
-						case 4:
-						{
+						case 4: {
 							htmltext = "32264-16.html";
 							break;
 						}
-						case 5:
-						{
+						case 5: {
 							htmltext = "32264-18.html";
 							break;
 						}
 					}
-				}
-				else if (npc.getId() == PARME)
-				{
-					if (st.getCond() < 3)
-					{
+				} else if (npc.getId() == PARME) {
+					if (st.getCond() < 3) {
 						htmltext = "32271-01.html";
-					}
-					else if (st.isCond(3))
-					{
+					} else if (st.isCond(3)) {
 						htmltext = "32271-02.html";
 					}
 				}

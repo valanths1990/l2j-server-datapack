@@ -37,33 +37,29 @@ import com.l2jserver.gameserver.util.Util;
  * Fortress of Resistance clan hall siege Script.
  * @author BiggBoss
  */
-public final class FortressOfResistance extends ClanHallSiegeEngine
-{
+public final class FortressOfResistance extends ClanHallSiegeEngine {
 	private final int MESSENGER = 35382;
 	private final int BLOODY_LORD_NURKA = 35375;
 	
-	private final Location[] NURKA_COORDS =
-	{
+	private final Location[] NURKA_COORDS = {
 		new Location(45109, 112124, -1900), // 30%
 		new Location(47653, 110816, -2110), // 40%
 		new Location(47247, 109396, -2000)
-	// 30%
+		// 30%
 	};
 	
 	private L2Spawn _nurka;
 	private final Map<Integer, Long> _damageToNurka = new HashMap<>();
 	private NpcHtmlMessage _messengerMsg;
 	
-	private FortressOfResistance()
-	{
+	private FortressOfResistance() {
 		super(FortressOfResistance.class.getSimpleName(), "conquerablehalls", FORTRESS_RESSISTANCE);
 		addFirstTalkId(MESSENGER);
 		addKillId(BLOODY_LORD_NURKA);
 		addAttackId(BLOODY_LORD_NURKA);
 		buildMessengerMessage();
 		
-		try
-		{
+		try {
 			_nurka = new L2Spawn(BLOODY_LORD_NURKA);
 			_nurka.setAmount(1);
 			_nurka.setRespawnDelay(10800);
@@ -83,18 +79,14 @@ public final class FortressOfResistance extends ClanHallSiegeEngine
 //			}
 //			@formatter:on
 			_nurka.setLocation(NURKA_COORDS[0]);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			_log.warn("{}: Couldnt set the Bloody Lord Nurka spawn!", getName(), e);
 		}
 	}
 	
-	private final void buildMessengerMessage()
-	{
+	private final void buildMessengerMessage() {
 		String html = HtmCache.getInstance().getHtm(null, "data/scripts/conquerablehalls/FortressOfResistance/partisan_ordery_brakel001.htm");
-		if (html != null)
-		{
+		if (html != null) {
 			// FIXME: We don't have an object id to put in here :(
 			_messengerMsg = new NpcHtmlMessage();
 			_messengerMsg.setHtml(html);
@@ -103,23 +95,19 @@ public final class FortressOfResistance extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		player.sendPacket(_messengerMsg);
 		return null;
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon)
-	{
-		if (!_hall.isInSiege())
-		{
+	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon) {
+		if (!_hall.isInSiege()) {
 			return null;
 		}
 		
 		int clanId = player.getClanId();
-		if (clanId > 0)
-		{
+		if (clanId > 0) {
 			long clanDmg = (_damageToNurka.containsKey(clanId)) ? _damageToNurka.get(clanId) + damage : damage;
 			_damageToNurka.put(clanId, clanDmg);
 			
@@ -128,17 +116,14 @@ public final class FortressOfResistance extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (!_hall.isInSiege())
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (!_hall.isInSiege()) {
 			return null;
 		}
 		
 		_missionAccomplished = true;
 		
-		synchronized (this)
-		{
+		synchronized (this) {
 			npc.getSpawn().stopRespawn();
 			npc.deleteMe();
 			cancelSiegeTask();
@@ -148,15 +133,12 @@ public final class FortressOfResistance extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public L2Clan getWinner()
-	{
+	public L2Clan getWinner() {
 		int winnerId = 0;
 		long counter = 0;
-		for (Entry<Integer, Long> e : _damageToNurka.entrySet())
-		{
+		for (Entry<Integer, Long> e : _damageToNurka.entrySet()) {
 			long dam = e.getValue();
-			if (dam > counter)
-			{
+			if (dam > counter) {
 				winnerId = e.getKey();
 				counter = dam;
 			}
@@ -165,19 +147,16 @@ public final class FortressOfResistance extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public void onSiegeStarts()
-	{
+	public void onSiegeStarts() {
 		_nurka.init();
 	}
 	
 	@Override
-	public void onSiegeEnds()
-	{
+	public void onSiegeEnds() {
 		buildMessengerMessage();
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new FortressOfResistance();
 	}
 }

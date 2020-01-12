@@ -33,14 +33,12 @@ import com.l2jserver.gameserver.model.stats.Formulas;
  * Steal Abnormal effect implementation.
  * @author Adry_85, Zoey76
  */
-public final class StealAbnormal extends AbstractEffect
-{
+public final class StealAbnormal extends AbstractEffect {
 	private final DispelCategory _slot;
 	private final int _rate;
 	private final int _max;
 	
-	public StealAbnormal(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public StealAbnormal(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_slot = params.getEnum("slot", DispelCategory.class, DispelCategory.BUFF);
@@ -49,30 +47,24 @@ public final class StealAbnormal extends AbstractEffect
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.STEAL_ABNORMAL;
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if ((info.getEffected() != null) && info.getEffected().isPlayer() && (info.getEffector() != info.getEffected()))
-		{
+	public void onStart(BuffInfo info) {
+		if ((info.getEffected() != null) && info.getEffected().isPlayer() && (info.getEffector() != info.getEffected())) {
 			final List<BuffInfo> toSteal = Formulas.calcStealEffects(info.getEffector(), info.getEffected(), info.getSkill(), _slot, _rate, _max);
-			if (toSteal.isEmpty())
-			{
+			if (toSteal.isEmpty()) {
 				return;
 			}
 			
-			for (BuffInfo infoToSteal : toSteal)
-			{
+			for (BuffInfo infoToSteal : toSteal) {
 				// Invert effected and effector.
 				final BuffInfo stolen = new BuffInfo(info.getEffected(), info.getEffector(), infoToSteal.getSkill());
 				stolen.setAbnormalTime(infoToSteal.getTime()); // Copy the remaining time.

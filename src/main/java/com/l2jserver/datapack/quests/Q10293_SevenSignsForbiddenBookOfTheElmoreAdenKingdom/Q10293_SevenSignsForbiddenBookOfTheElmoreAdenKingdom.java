@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Seven Signs, Forbidden Book of the Elmore-Aden Kingdom (10293)
  * @author Adry_85
  */
-public final class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends Quest
-{
+public final class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends Quest {
 	// NPCs
 	private static final int SOPHIA1 = 32596;
 	private static final int ELCADIA = 32784;
@@ -46,8 +45,7 @@ public final class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends 
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	
-	public Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom()
-	{
+	public Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom() {
 		super(10293, Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.class.getSimpleName(), "Seven Signs, Forbidden Book of the Elmore-Aden Kingdom");
 		addFirstTalkId(SOPHIA3);
 		addStartNpc(ELCADIA);
@@ -56,129 +54,100 @@ public final class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends 
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "32784-03.htm":
 			case "32784-05.html":
 			case "32861-13.html":
 			case "32863-02.html":
-			case "32863-03.html":
-			{
+			case "32863-03.html": {
 				htmltext = event;
 				break;
 			}
-			case "32784-04.html":
-			{
+			case "32784-04.html": {
 				qs.startQuest();
 				htmltext = event;
 				break;
 			}
 			case "32784-07.html":
-			case "32784-08.html":
-			{
-				if (qs.isCond(8))
-				{
+			case "32784-08.html": {
+				if (qs.isCond(8)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "REWARD":
-			{
-				if (player.isSubClassActive())
-				{
+			case "REWARD": {
+				if (player.isSubClassActive()) {
 					htmltext = "32784-10.html";
-				}
-				else
-				{
+				} else {
 					addExpAndSp(player, 15000000, 1500000);
 					qs.exitQuest(false, true);
 					htmltext = "32784-09.html";
 				}
 				break;
 			}
-			case "32785-02.html":
-			{
-				if (qs.isCond(1))
-				{
+			case "32785-02.html": {
+				if (qs.isCond(1)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32785-07.html":
-			{
-				if (qs.isCond(4))
-				{
+			case "32785-07.html": {
+				if (qs.isCond(4)) {
 					qs.setCond(5, true);
 					htmltext = event;
 				}
 				break;
 			}
 			case "32596-03.html":
-			case "32596-04.html":
-			{
-				if ((qs.getCond() >= 1) && (qs.getCond() < 8))
-				{
+			case "32596-04.html": {
+				if ((qs.getCond() >= 1) && (qs.getCond() < 8)) {
 					htmltext = event;
 				}
 				break;
 			}
 			case "32861-02.html":
-			case "32861-03.html":
-			{
-				if (qs.isCond(1))
-				{
+			case "32861-03.html": {
+				if (qs.isCond(1)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32861-04.html":
-			{
-				if (qs.isCond(1))
-				{
+			case "32861-04.html": {
+				if (qs.isCond(1)) {
 					qs.setCond(2, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32861-07.html":
-			{
-				if (qs.isCond(3))
-				{
+			case "32861-07.html": {
+				if (qs.isCond(3)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32861-08.html":
-			{
-				if (qs.isCond(3))
-				{
+			case "32861-08.html": {
+				if (qs.isCond(3)) {
 					qs.setCond(4, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32861-11.html":
-			{
-				if (qs.isCond(5))
-				{
+			case "32861-11.html": {
+				if (qs.isCond(5)) {
 					qs.setCond(6, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32809-02.html":
-			{
-				if (qs.isCond(6))
-				{
+			case "32809-02.html": {
+				if (qs.isCond(6)) {
 					qs.setCond(7, true);
 					giveItems(player, SOLINAS_BIOGRAPHY, 1);
 					htmltext = event;
@@ -188,10 +157,8 @@ public final class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends 
 			case "32810-02.html":
 			case "32811-02.html":
 			case "32812-02.html":
-			case "32813-02.html":
-			{
-				if (qs.isCond(6))
-				{
+			case "32813-02.html": {
+				if (qs.isCond(6)) {
 					htmltext = event;
 				}
 				break;
@@ -201,194 +168,145 @@ public final class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends 
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if ((qs.getCond() >= 1) && (qs.getCond() < 8))
-		{
+		if ((qs.getCond() >= 1) && (qs.getCond() < 8)) {
 			htmltext = "32863-01.html";
-		}
-		else
-		{
+		} else {
 			htmltext = "32863-04.html";
 		}
 		return htmltext;
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
-			case ELCADIA:
-			{
-				if (qs.isCompleted())
-				{
+		switch (npc.getId()) {
+			case ELCADIA: {
+				if (qs.isCompleted()) {
 					htmltext = "32784-02.html";
-				}
-				else if (qs.isCreated())
-				{
+				} else if (qs.isCreated()) {
 					htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q10292_SevenSignsGirlOfDoubt.class.getSimpleName())) ? "32784-01.htm" : "32784-11.htm";
-				}
-				else if (qs.isStarted())
-				{
-					if (qs.isCond(1))
-					{
+				} else if (qs.isStarted()) {
+					if (qs.isCond(1)) {
 						htmltext = "32784-06.html";
-					}
-					else if (qs.isCond(8))
-					{
+					} else if (qs.isCond(8)) {
 						htmltext = "32784-07.html";
 					}
 				}
 				break;
 			}
-			case ELCADIA_INSTANCE:
-			{
-				switch (qs.getCond())
-				{
-					case 1:
-					{
+			case ELCADIA_INSTANCE: {
+				switch (qs.getCond()) {
+					case 1: {
 						htmltext = "32785-01.html";
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						htmltext = "32785-04.html";
 						qs.setCond(3, true);
 						break;
 					}
-					case 3:
-					{
+					case 3: {
 						htmltext = "32785-05.html";
 						break;
 					}
-					case 4:
-					{
+					case 4: {
 						htmltext = "32785-06.html";
 						break;
 					}
-					case 5:
-					{
+					case 5: {
 						htmltext = "32785-08.html";
 						break;
 					}
-					case 6:
-					{
+					case 6: {
 						htmltext = "32785-09.html";
 						break;
 					}
-					case 7:
-					{
+					case 7: {
 						qs.setCond(8, true);
 						htmltext = "32785-11.html";
 						break;
 					}
-					case 8:
-					{
+					case 8: {
 						htmltext = "32785-12.html";
 						break;
 					}
 				}
 				break;
 			}
-			case SOPHIA1:
-			{
-				if (qs.isStarted())
-				{
-					if ((qs.getCond() >= 1) && (qs.getCond() < 8))
-					{
+			case SOPHIA1: {
+				if (qs.isStarted()) {
+					if ((qs.getCond() >= 1) && (qs.getCond() < 8)) {
 						htmltext = "32596-01.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "32596-05.html";
 					}
 				}
 				break;
 			}
-			case SOPHIA2:
-			{
-				switch (qs.getCond())
-				{
-					case 1:
-					{
+			case SOPHIA2: {
+				switch (qs.getCond()) {
+					case 1: {
 						htmltext = "32861-01.html";
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						htmltext = "32861-05.html";
 						break;
 					}
-					case 3:
-					{
+					case 3: {
 						htmltext = "32861-06.html";
 						break;
 					}
-					case 4:
-					{
+					case 4: {
 						htmltext = "32861-09.html";
 						break;
 					}
-					case 5:
-					{
+					case 5: {
 						htmltext = "32861-10.html";
 						break;
 					}
 					case 6:
-					case 7:
-					{
+					case 7: {
 						htmltext = "32861-12.html";
 						break;
 					}
-					case 8:
-					{
+					case 8: {
 						htmltext = "32861-14.html";
 						break;
 					}
 				}
 				break;
 			}
-			case PILE_OF_BOOKS1:
-			{
-				if (qs.isCond(6))
-				{
+			case PILE_OF_BOOKS1: {
+				if (qs.isCond(6)) {
 					htmltext = "32809-01.html";
 				}
 				break;
 			}
-			case PILE_OF_BOOKS2:
-			{
-				if (qs.isCond(6))
-				{
+			case PILE_OF_BOOKS2: {
+				if (qs.isCond(6)) {
 					htmltext = "32810-01.html";
 				}
 				break;
 			}
-			case PILE_OF_BOOKS3:
-			{
-				if (qs.isCond(6))
-				{
+			case PILE_OF_BOOKS3: {
+				if (qs.isCond(6)) {
 					htmltext = "32811-01.html";
 				}
 				break;
 			}
-			case PILE_OF_BOOKS4:
-			{
-				if (qs.isCond(6))
-				{
+			case PILE_OF_BOOKS4: {
+				if (qs.isCond(6)) {
 					htmltext = "32812-01.html";
 				}
 				break;
 			}
-			case PILE_OF_BOOKS5:
-			{
-				if (qs.isCond(6))
-				{
+			case PILE_OF_BOOKS5: {
+				if (qs.isCond(6)) {
 					htmltext = "32813-01.html";
 				}
 				break;

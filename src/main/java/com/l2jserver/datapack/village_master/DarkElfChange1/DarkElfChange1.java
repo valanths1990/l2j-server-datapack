@@ -30,11 +30,9 @@ import com.l2jserver.gameserver.model.base.ClassId;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class DarkElfChange1 extends AbstractNpcAI
-{
+public final class DarkElfChange1 extends AbstractNpcAI {
 	// NPCs
-	private static int[] NPCS =
-	{
+	private static int[] NPCS = {
 		30290, // Xenos
 		30297, // Tobias
 		30462, // Tronix
@@ -56,19 +54,16 @@ public final class DarkElfChange1 extends AbstractNpcAI
 	// Misc
 	private static final int MIN_LEVEL = 20;
 	
-	private DarkElfChange1()
-	{
+	private DarkElfChange1() {
 		super(DarkElfChange1.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "30290-01.htm":
 			case "30290-02.htm":
 			case "30290-03.htm":
@@ -124,16 +119,14 @@ public final class DarkElfChange1 extends AbstractNpcAI
 			case "32096-11.htm":
 			case "32096-12.htm":
 			case "32096-13.htm":
-			case "32096-14.htm":
-			{
+			case "32096-14.htm": {
 				htmltext = event;
 				break;
 			}
 			case "32":
 			case "35":
 			case "39":
-			case "42":
-			{
+			case "42": {
 				htmltext = ClassChangeRequested(player, npc, Integer.valueOf(event));
 				break;
 			}
@@ -141,36 +134,22 @@ public final class DarkElfChange1 extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	private String ClassChangeRequested(L2PcInstance player, L2Npc npc, int classId)
-	{
+	private String ClassChangeRequested(L2PcInstance player, L2Npc npc, int classId) {
 		String htmltext = null;
-		if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP))
-		{
+		if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP)) {
 			htmltext = npc.getId() + "-15.htm";
-		}
-		else if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP))
-		{
+		} else if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP)) {
 			htmltext = npc.getId() + "-16.htm";
-		}
-		else if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
-		{
+		} else if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP)) {
 			htmltext = "30290-34.htm";
-		}
-		else if ((classId == PALUS_KNIGHT) && (player.getClassId() == ClassId.darkFighter))
-		{
-			if (player.getLevel() < MIN_LEVEL)
-			{
-				if (hasQuestItems(player, GAZE_OF_ABYSS))
-				{
+		} else if ((classId == PALUS_KNIGHT) && (player.getClassId() == ClassId.darkFighter)) {
+			if (player.getLevel() < MIN_LEVEL) {
+				if (hasQuestItems(player, GAZE_OF_ABYSS)) {
 					htmltext = npc.getId() + "-17.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-18.htm";
 				}
-			}
-			else if (hasQuestItems(player, GAZE_OF_ABYSS))
-			{
+			} else if (hasQuestItems(player, GAZE_OF_ABYSS)) {
 				takeItems(player, GAZE_OF_ABYSS, -1);
 				player.setClassId(PALUS_KNIGHT);
 				player.setBaseClass(PALUS_KNIGHT);
@@ -178,27 +157,17 @@ public final class DarkElfChange1 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 				htmltext = npc.getId() + "-19.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-20.htm";
 			}
-		}
-		else if ((classId == ASSASSIN) && (player.getClassId() == ClassId.darkFighter))
-		{
-			if (player.getLevel() < MIN_LEVEL)
-			{
-				if (hasQuestItems(player, IRON_HEART))
-				{
+		} else if ((classId == ASSASSIN) && (player.getClassId() == ClassId.darkFighter)) {
+			if (player.getLevel() < MIN_LEVEL) {
+				if (hasQuestItems(player, IRON_HEART)) {
 					htmltext = npc.getId() + "-21.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-22.htm";
 				}
-			}
-			else if (hasQuestItems(player, IRON_HEART))
-			{
+			} else if (hasQuestItems(player, IRON_HEART)) {
 				takeItems(player, IRON_HEART, -1);
 				player.setClassId(ASSASSIN);
 				player.setBaseClass(ASSASSIN);
@@ -206,27 +175,17 @@ public final class DarkElfChange1 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 				htmltext = npc.getId() + "-23.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-24.htm";
 			}
-		}
-		else if ((classId == DARK_WIZARD) && (player.getClassId() == ClassId.darkMage))
-		{
-			if (player.getLevel() < MIN_LEVEL)
-			{
-				if (hasQuestItems(player, DARK_JEWEL))
-				{
+		} else if ((classId == DARK_WIZARD) && (player.getClassId() == ClassId.darkMage)) {
+			if (player.getLevel() < MIN_LEVEL) {
+				if (hasQuestItems(player, DARK_JEWEL)) {
 					htmltext = npc.getId() + "-25.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-26.htm";
 				}
-			}
-			else if (hasQuestItems(player, DARK_JEWEL))
-			{
+			} else if (hasQuestItems(player, DARK_JEWEL)) {
 				takeItems(player, DARK_JEWEL, -1);
 				player.setClassId(DARK_WIZARD);
 				player.setBaseClass(DARK_WIZARD);
@@ -234,27 +193,17 @@ public final class DarkElfChange1 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 				htmltext = npc.getId() + "-27.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-28.htm";
 			}
-		}
-		else if ((classId == SHILLIEN_ORACLE) && (player.getClassId() == ClassId.darkMage))
-		{
-			if (player.getLevel() < MIN_LEVEL)
-			{
-				if (hasQuestItems(player, ORB_OF_ABYSS))
-				{
+		} else if ((classId == SHILLIEN_ORACLE) && (player.getClassId() == ClassId.darkMage)) {
+			if (player.getLevel() < MIN_LEVEL) {
+				if (hasQuestItems(player, ORB_OF_ABYSS)) {
 					htmltext = npc.getId() + "-29.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-30.htm";
 				}
-			}
-			else if (hasQuestItems(player, ORB_OF_ABYSS))
-			{
+			} else if (hasQuestItems(player, ORB_OF_ABYSS)) {
 				takeItems(player, ORB_OF_ABYSS, -1);
 				player.setClassId(SHILLIEN_ORACLE);
 				player.setBaseClass(SHILLIEN_ORACLE);
@@ -262,9 +211,7 @@ public final class DarkElfChange1 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 				htmltext = npc.getId() + "-31.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-32.htm";
 			}
 		}
@@ -272,29 +219,21 @@ public final class DarkElfChange1 extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (player.getRace() == Race.DARK_ELF)
-		{
-			if (player.isInCategory(CategoryType.FIGHTER_GROUP))
-			{
+		if (player.getRace() == Race.DARK_ELF) {
+			if (player.isInCategory(CategoryType.FIGHTER_GROUP)) {
 				htmltext = npc.getId() + "-01.htm";
-			}
-			else if ((player.isInCategory(CategoryType.MAGE_GROUP)))
-			{
+			} else if ((player.isInCategory(CategoryType.MAGE_GROUP))) {
 				htmltext = npc.getId() + "-08.htm";
 			}
-		}
-		else
-		{
+		} else {
 			htmltext = npc.getId() + "-33.htm";
 		}
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DarkElfChange1();
 	}
 }

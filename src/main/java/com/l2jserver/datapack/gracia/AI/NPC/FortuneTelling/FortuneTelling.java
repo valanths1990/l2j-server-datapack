@@ -28,30 +28,24 @@ import com.l2jserver.gameserver.model.itemcontainer.Inventory;
  * Original Jython script by Kerberos.
  * @author Nyaran
  */
-public class FortuneTelling extends AbstractNpcAI
-{
+public class FortuneTelling extends AbstractNpcAI {
 	// NPC
 	private static final int MINE = 32616;
 	// Misc
 	private static final int COST = 1000;
 	
-	public FortuneTelling()
-	{
+	public FortuneTelling() {
 		super(FortuneTelling.class.getSimpleName(), "gracia/AI/NPC");
 		addStartNpc(MINE);
 		addTalkId(MINE);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
-		if (player.getAdena() < COST)
-		{
+		if (player.getAdena() < COST) {
 			htmltext = "lowadena.htm";
-		}
-		else
-		{
+		} else {
 			takeItems(player, Inventory.ADENA_ID, COST);
 			htmltext = getHtm(player.getHtmlPrefix(), "fortune.htm").replace("%fortune%", String.valueOf(getRandom(1800309, 1800695)));
 		}

@@ -26,11 +26,9 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Fortress Archer Captain AI.
  * @author St3eT
  */
-public final class FortressArcherCaptain extends AbstractNpcAI
-{
+public final class FortressArcherCaptain extends AbstractNpcAI {
 	// NPCs
-	private static final int[] ARCHER_CAPTAIN =
-	{
+	private static final int[] ARCHER_CAPTAIN = {
 		35661, // Shanty Fortress
 		35692, // Southern Fortress
 		35730, // Hive Fortress
@@ -54,22 +52,19 @@ public final class FortressArcherCaptain extends AbstractNpcAI
 		36358, // Monastic Fortress
 	};
 	
-	private FortressArcherCaptain()
-	{
+	private FortressArcherCaptain() {
 		super(FortressArcherCaptain.class.getSimpleName(), "ai/npc");
 		addStartNpc(ARCHER_CAPTAIN);
 		addFirstTalkId(ARCHER_CAPTAIN);
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final int fortOwner = npc.getFort().getOwnerClan() == null ? 0 : npc.getFort().getOwnerClan().getId();
 		return ((player.getClan() != null) && (player.getClanId() == fortOwner)) ? "FortressArcherCaptain.html" : "FortressArcherCaptain-01.html";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new FortressArcherCaptain();
 	}
 }

@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Will the Seal be Broken? (3)
  * @author malyelfik
  */
-public class Q00003_WillTheSealBeBroken extends Quest
-{
+public class Q00003_WillTheSealBeBroken extends Quest {
 	// NPC
 	private static final int TALLOTH = 30141;
 	// Monsters
@@ -49,8 +48,7 @@ public class Q00003_WillTheSealBeBroken extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 16;
 	
-	public Q00003_WillTheSealBeBroken()
-	{
+	public Q00003_WillTheSealBeBroken() {
 		super(3, Q00003_WillTheSealBeBroken.class.getSimpleName(), "Will the Seal be Broken?");
 		addStartNpc(TALLOTH);
 		addTalkId(TALLOTH);
@@ -59,17 +57,14 @@ public class Q00003_WillTheSealBeBroken extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30141-03.htm":
 				st.startQuest();
 				break;
@@ -83,16 +78,13 @@ public class Q00003_WillTheSealBeBroken extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance member = getRandomPartyMember(player, 1);
-		if (member == null)
-		{
+		if (member == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		final QuestState st = getQuestState(member, false);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case OMEN_BEAST:
 				giveItem(member, st, OMEN_BEAST_EYE, getRegisteredItemIds());
 				break;
@@ -110,22 +102,17 @@ public class Q00003_WillTheSealBeBroken extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getRace() != Race.DARK_ELF) ? "30141-00.htm" : (player.getLevel() >= MIN_LEVEL) ? "30141-02.htm" : "30141-01.html";
 				break;
 			case State.STARTED:
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					htmltext = "30141-04.html";
-				}
-				else
-				{
+				} else {
 					giveItems(player, ENCHANT, 1);
 					st.exitQuest(false, true);
 					htmltext = "30141-06.html";
@@ -138,14 +125,11 @@ public class Q00003_WillTheSealBeBroken extends Quest
 		return htmltext;
 	}
 	
-	private static void giveItem(L2PcInstance player, QuestState st, int item, int... items)
-	{
-		if (!hasQuestItems(player, item))
-		{
+	private static void giveItem(L2PcInstance player, QuestState st, int item, int... items) {
+		if (!hasQuestItems(player, item)) {
 			giveItems(player, item, 1);
 			playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
-			if (hasQuestItems(player, items))
-			{
+			if (hasQuestItems(player, items)) {
 				st.setCond(2, true);
 			}
 		}

@@ -24,13 +24,10 @@ import com.l2jserver.gameserver.network.NpcStringId;
  * Make Spears Dull! (735)
  * @author Gigiikun
  */
-public final class Q00735_MakeSpearsDull extends TerritoryWarSuperClass
-{
-	public Q00735_MakeSpearsDull()
-	{
+public final class Q00735_MakeSpearsDull extends TerritoryWarSuperClass {
+	public Q00735_MakeSpearsDull() {
 		super(735, Q00735_MakeSpearsDull.class.getSimpleName(), "Make Spears Dull");
-		CLASS_IDS = new int[]
-		{
+		CLASS_IDS = new int[] {
 			23,
 			101,
 			36,
@@ -70,8 +67,7 @@ public final class Q00735_MakeSpearsDull extends TerritoryWarSuperClass
 		};
 		RANDOM_MIN = 15;
 		RANDOM_MAX = 20;
-		npcString = new NpcStringId[]
-		{
+		npcString = new NpcStringId[] {
 			NpcStringId.YOU_HAVE_DEFEATED_S2_OF_S1_WARRIORS_AND_ROGUES,
 			NpcStringId.YOU_WEAKENED_THE_ENEMYS_ATTACK
 		};

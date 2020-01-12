@@ -26,11 +26,9 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Castle Warehouse Keeper AI.
  * @author malyelfik
  */
-public final class CastleWarehouse extends AbstractNpcAI
-{
+public final class CastleWarehouse extends AbstractNpcAI {
 	// NPCs
-	private static final int[] NPCS =
-	{
+	private static final int[] NPCS = {
 		35099, // Warehouse Keeper (Gludio)
 		35141, // Warehouse Keeper (Dion)
 		35183, // Warehouse Keeper (Giran)
@@ -45,8 +43,7 @@ public final class CastleWarehouse extends AbstractNpcAI
 	private static final int BLOOD_OATH = 9910;
 	private static final int BLOOD_ALLIANCE = 9911;
 	
-	private CastleWarehouse()
-	{
+	private CastleWarehouse() {
 		super(CastleWarehouse.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -54,11 +51,9 @@ public final class CastleWarehouse extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "warehouse-01.html":
 			case "warehouse-02.html":
 			case "warehouse-03.html":
@@ -67,32 +62,22 @@ public final class CastleWarehouse extends AbstractNpcAI
 				htmltext = (!npc.isMyLord(player)) ? "warehouse-no.html" : getHtm(player.getHtmlPrefix(), "warehouse-04.html").replace("%blood%", Integer.toString(player.getClan().getBloodAllianceCount()));
 				break;
 			case "Receive":
-				if (!npc.isMyLord(player))
-				{
+				if (!npc.isMyLord(player)) {
 					htmltext = "warehouse-no.html";
-				}
-				else if (player.getClan().getBloodAllianceCount() == 0)
-				{
+				} else if (player.getClan().getBloodAllianceCount() == 0) {
 					htmltext = "warehouse-05.html";
-				}
-				else
-				{
+				} else {
 					giveItems(player, BLOOD_ALLIANCE, player.getClan().getBloodAllianceCount());
 					player.getClan().resetBloodAllianceCount();
 					htmltext = "warehouse-06.html";
 				}
 				break;
 			case "Exchange":
-				if (!npc.isMyLord(player))
-				{
+				if (!npc.isMyLord(player)) {
 					htmltext = "warehouse-no.html";
-				}
-				else if (!hasQuestItems(player, BLOOD_ALLIANCE))
-				{
+				} else if (!hasQuestItems(player, BLOOD_ALLIANCE)) {
 					htmltext = "warehouse-08.html";
-				}
-				else
-				{
+				} else {
 					takeItems(player, BLOOD_ALLIANCE, 1);
 					giveItems(player, BLOOD_OATH, 30);
 					htmltext = "warehouse-07.html";
@@ -106,13 +91,11 @@ public final class CastleWarehouse extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "warehouse-01.html";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new CastleWarehouse();
 	}
 }

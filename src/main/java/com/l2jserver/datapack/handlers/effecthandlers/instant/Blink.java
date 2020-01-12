@@ -43,13 +43,11 @@ import com.l2jserver.gameserver.util.Util;
  * By the way, if flyCourse = 360 or 0, player will be moved in in front of him. <br>
  * @author DrHouse
  */
-public final class Blink extends AbstractEffect
-{
+public final class Blink extends AbstractEffect {
 	private final int _flyCourse;
 	private final int _flyRadius;
 	
-	public Blink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public Blink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_flyCourse = params.getInt("flyCourse", 0);
@@ -57,14 +55,12 @@ public final class Blink extends AbstractEffect
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2Character effected = info.getEffected();
 		final double angle = Util.convertHeadingToDegree(effected.getHeading());
 		final double radian = Math.toRadians(angle);

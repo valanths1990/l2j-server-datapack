@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Soultaker (94)
  * @author Emperorc
  */
-public class Q00094_SagaOfTheSoultaker extends AbstractSagaQuest
-{
-	public Q00094_SagaOfTheSoultaker()
-	{
+public class Q00094_SagaOfTheSoultaker extends AbstractSagaQuest {
+	public Q00094_SagaOfTheSoultaker() {
 		super(94, Q00094_SagaOfTheSoultaker.class.getSimpleName(), "Saga of the Soultaker");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			30832,
 			31623,
 			31279,
@@ -45,8 +42,7 @@ public class Q00094_SagaOfTheSoultaker extends AbstractSagaQuest
 			31657,
 			31279
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7533,
 			7081,
@@ -60,28 +56,23 @@ public class Q00094_SagaOfTheSoultaker extends AbstractSagaQuest
 			7085,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27257,
 			27243,
 			27265
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			95
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x0d
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(191046, -40640, -3042),
 			new Location(46066, -36396, -1685),
 			new Location(46087, -36372, -1685)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

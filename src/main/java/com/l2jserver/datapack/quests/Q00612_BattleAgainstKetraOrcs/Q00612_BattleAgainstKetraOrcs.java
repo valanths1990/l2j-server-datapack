@@ -32,14 +32,12 @@ import com.l2jserver.gameserver.model.quest.State;
  * Battle against Ketra Orcs (612)
  * @author malyelfik
  */
-public class Q00612_BattleAgainstKetraOrcs extends Quest
-{
+public class Q00612_BattleAgainstKetraOrcs extends Quest {
 	// NPC
 	private static final int ASHAS = 31377;
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
-	static
-	{
+	static {
 		MOBS.put(21324, 500); // Ketra Orc Footman
 		MOBS.put(21327, 510); // Ketra Orc Raider
 		MOBS.put(21328, 522); // Ketra Orc Scout
@@ -63,8 +61,7 @@ public class Q00612_BattleAgainstKetraOrcs extends Quest
 	private static final int MIN_LEVEL = 74;
 	private static final int MOLAR_COUNT = 100;
 	
-	public Q00612_BattleAgainstKetraOrcs()
-	{
+	public Q00612_BattleAgainstKetraOrcs() {
 		super(612, Q00612_BattleAgainstKetraOrcs.class.getSimpleName(), "Battle against Ketra Orcs");
 		addStartNpc(ASHAS);
 		addTalkId(ASHAS);
@@ -73,25 +70,21 @@ public class Q00612_BattleAgainstKetraOrcs extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "31377-03.htm":
 				st.startQuest();
 				break;
 			case "31377-06.html":
 				break;
 			case "31377-07.html":
-				if (st.getQuestItemsCount(MOLAR) < MOLAR_COUNT)
-				{
+				if (st.getQuestItemsCount(MOLAR) < MOLAR_COUNT) {
 					return "31377-08.html";
 				}
 				st.takeItems(MOLAR, MOLAR_COUNT);
@@ -108,11 +101,9 @@ public class Q00612_BattleAgainstKetraOrcs extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final L2PcInstance member = getRandomPartyMember(killer, 1);
-		if ((member != null) && (getRandom(1000) < MOBS.get(npc.getId())))
-		{
+		if ((member != null) && (getRandom(1000) < MOBS.get(npc.getId()))) {
 			final QuestState st = getQuestState(member, false);
 			st.giveItems(MOLAR, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
@@ -121,12 +112,10 @@ public class Q00612_BattleAgainstKetraOrcs extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "31377-01.htm" : "31377-02.htm";
 				break;

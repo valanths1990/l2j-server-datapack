@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Orc Hunting (260)
  * @author xban1x
  */
-public final class Q00260_OrcHunting extends Quest
-{
+public final class Q00260_OrcHunting extends Quest {
 	// NPC
 	private static final int RAYEN = 30221;
 	// Items
@@ -43,8 +42,7 @@ public final class Q00260_OrcHunting extends Quest
 	private static final int ORC_NECKLACE = 1115;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(20468, ORC_AMULET); // Kaboo Orc
 		MONSTERS.put(20469, ORC_AMULET); // Kaboo Orc Archer
 		MONSTERS.put(20470, ORC_AMULET); // Kaboo Orc Grunt
@@ -55,8 +53,7 @@ public final class Q00260_OrcHunting extends Quest
 	// Misc
 	private static final int MIN_LVL = 6;
 	
-	public Q00260_OrcHunting()
-	{
+	public Q00260_OrcHunting() {
 		super(260, Q00260_OrcHunting.class.getSimpleName(), "Orc Hunting");
 		addStartNpc(RAYEN);
 		addTalkId(RAYEN);
@@ -65,31 +62,25 @@ public final class Q00260_OrcHunting extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "30221-04.htm":
-			{
+		switch (event) {
+			case "30221-04.htm": {
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "30221-07.html":
-			{
+			case "30221-07.html": {
 				st.exitQuest(true, true);
 				htmltext = event;
 				break;
 			}
-			case "30221-08.html":
-			{
+			case "30221-08.html": {
 				htmltext = event;
 				break;
 			}
@@ -98,11 +89,9 @@ public final class Q00260_OrcHunting extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && (getRandom(10) > 4))
-		{
+		if ((st != null) && (getRandom(10) > 4)) {
 			st.giveItems(MONSTERS.get(npc.getId()), 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
@@ -110,30 +99,23 @@ public final class Q00260_OrcHunting extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getRace() == Race.ELF) ? (player.getLevel() >= MIN_LVL) ? "30221-03.htm" : "30221-02.html" : "30221-01.html";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (hasAtLeastOneQuestItem(player, getRegisteredItemIds()))
-				{
+			case State.STARTED: {
+				if (hasAtLeastOneQuestItem(player, getRegisteredItemIds())) {
 					final long amulets = st.getQuestItemsCount(ORC_AMULET);
 					final long necklaces = st.getQuestItemsCount(ORC_NECKLACE);
 					st.giveAdena(((amulets * 12) + (necklaces * 30) + ((amulets + necklaces) >= 10 ? 1000 : 0)), true);
 					takeItems(player, -1, getRegisteredItemIds());
 					Q00281_HeadForTheHills.giveNewbieReward(player);
 					htmltext = "30221-06.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30221-05.html";
 				}
 				break;

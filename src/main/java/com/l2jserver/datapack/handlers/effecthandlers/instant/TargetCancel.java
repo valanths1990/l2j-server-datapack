@@ -29,32 +29,27 @@ import com.l2jserver.gameserver.model.stats.Formulas;
  * Target Cancel effect implementation.
  * @author -Nemesiss-, Adry_85
  */
-public final class TargetCancel extends AbstractEffect
-{
+public final class TargetCancel extends AbstractEffect {
 	private final int _chance;
 	
-	public TargetCancel(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public TargetCancel(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_chance = params.getInt("chance", 100);
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
-	{
+	public boolean calcSuccess(BuffInfo info) {
 		return Formulas.calcProbability(_chance, info.getEffector(), info.getEffected(), info.getSkill());
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		info.getEffected().setTarget(null);
 		info.getEffected().abortAttack();
 		info.getEffected().abortCast();

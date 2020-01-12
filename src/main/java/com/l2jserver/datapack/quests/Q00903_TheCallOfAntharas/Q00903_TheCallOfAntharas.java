@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * The Call of Antharas (903)
  * @author Zoey76
  */
-public class Q00903_TheCallOfAntharas extends Quest
-{
+public class Q00903_TheCallOfAntharas extends Quest {
 	// NPC
 	private static final int THEODRIC = 30755;
 	// Monsters
@@ -46,8 +45,7 @@ public class Q00903_TheCallOfAntharas extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 83;
 	
-	public Q00903_TheCallOfAntharas()
-	{
+	public Q00903_TheCallOfAntharas() {
 		super(903, Q00903_TheCallOfAntharas.class.getSimpleName(), "The Call of Antharas");
 		addStartNpc(THEODRIC);
 		addTalkId(THEODRIC);
@@ -56,55 +54,43 @@ public class Q00903_TheCallOfAntharas extends Quest
 	}
 	
 	@Override
-	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon)
-	{
+	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && Util.checkIfInRange(1500, npc, player, false))
-		{
-			switch (npc.getId())
-			{
-				case BEHEMOTH_DRAGON:
-				{
+		if ((st != null) && Util.checkIfInRange(1500, npc, player, false)) {
+			switch (npc.getId()) {
+				case BEHEMOTH_DRAGON: {
 					st.giveItems(BEHEMOTH_DRAGON_LEATHER, 1);
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					break;
 				}
-				case TARASK_DRAGON:
-				{
+				case TARASK_DRAGON: {
 					st.giveItems(TARASK_DRAGONS_LEATHER_FRAGMENT, 1);
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 					break;
 				}
 			}
 			
-			if (st.hasQuestItems(BEHEMOTH_DRAGON_LEATHER) && st.hasQuestItems(TARASK_DRAGONS_LEATHER_FRAGMENT))
-			{
+			if (st.hasQuestItems(BEHEMOTH_DRAGON_LEATHER) && st.hasQuestItems(TARASK_DRAGONS_LEATHER_FRAGMENT)) {
 				st.setCond(2, true);
 			}
 		}
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		if ((player.getLevel() >= MIN_LEVEL) && st.hasQuestItems(PORTAL_STONE))
-		{
-			switch (event)
-			{
-				case "30755-05.htm":
-				{
+		if ((player.getLevel() >= MIN_LEVEL) && st.hasQuestItems(PORTAL_STONE)) {
+			switch (event) {
+				case "30755-05.htm": {
 					htmltext = event;
 					break;
 				}
-				case "30755-06.html":
-				{
+				case "30755-06.html": {
 					st.startQuest();
 					htmltext = event;
 					break;
@@ -115,46 +101,33 @@ public class Q00903_TheCallOfAntharas extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		executeForEachPlayer(killer, npc, isSummon, true, false);
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
-				if (player.getLevel() < MIN_LEVEL)
-				{
+		switch (st.getState()) {
+			case State.CREATED: {
+				if (player.getLevel() < MIN_LEVEL) {
 					htmltext = "30755-03.html";
-				}
-				else if (!st.hasQuestItems(PORTAL_STONE))
-				{
+				} else if (!st.hasQuestItems(PORTAL_STONE)) {
 					htmltext = "30755-04.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30755-01.htm";
 				}
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
 						htmltext = "30755-07.html";
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						st.giveItems(SCROLL_ANTHARAS_CALL, 1);
 						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 						st.exitQuest(QuestType.DAILY, true);
@@ -164,25 +137,16 @@ public class Q00903_TheCallOfAntharas extends Quest
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
-				if (!st.isNowAvailable())
-				{
+			case State.COMPLETED: {
+				if (!st.isNowAvailable()) {
 					htmltext = "30755-02.html";
-				}
-				else
-				{
+				} else {
 					st.setState(State.CREATED);
-					if (player.getLevel() < MIN_LEVEL)
-					{
+					if (player.getLevel() < MIN_LEVEL) {
 						htmltext = "30755-03.html";
-					}
-					else if (!st.hasQuestItems(PORTAL_STONE))
-					{
+					} else if (!st.hasQuestItems(PORTAL_STONE)) {
 						htmltext = "30755-04.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30755-01.htm";
 					}
 				}

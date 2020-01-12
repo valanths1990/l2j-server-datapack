@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.util.Util;
  * @author Zoey76
  * @since 2.6.0.0
  */
-public class MuscleBomber extends AbstractNpcAI
-{
+public class MuscleBomber extends AbstractNpcAI {
 	// NPC
 	private static final int MUSCLE_BOMBER = 25724;
 	private static final int DRAKOS_ASSASSIN = 22823;
@@ -49,28 +48,23 @@ public class MuscleBomber extends AbstractNpcAI
 	private static final double HIGH_HP_PERCENTAGE = 0.80;
 	private static final double MED_HP_PERCENTAGE = 0.50;
 	
-	public MuscleBomber()
-	{
+	public MuscleBomber() {
 		super(MuscleBomber.class.getSimpleName(), "ai/individual");
 		addAttackId(MUSCLE_BOMBER);
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if (Util.calculateDistance(npc, npc.getSpawn(), false, false) > MAX_CHASE_DIST)
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if (Util.calculateDistance(npc, npc.getSpawn(), false, false) > MAX_CHASE_DIST) {
 			npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ());
 		}
 		
-		if ((npc.getCurrentHp() < (npc.getMaxHp() * HIGH_HP_PERCENTAGE)) && !npc.getVariables().getBoolean(HIGH_HP_FLAG, false))
-		{
+		if ((npc.getCurrentHp() < (npc.getMaxHp() * HIGH_HP_PERCENTAGE)) && !npc.getVariables().getBoolean(HIGH_HP_FLAG, false)) {
 			npc.getVariables().set(HIGH_HP_FLAG, true);
 			addSkillCastDesire(npc, npc, ENHANCE_LVL_1, 999999999000000000L);
 		}
 		
-		if ((npc.getCurrentHp() < (npc.getMaxHp() * MED_HP_PERCENTAGE)) && !npc.getVariables().getBoolean(MED_HP_FLAG, false))
-		{
+		if ((npc.getCurrentHp() < (npc.getMaxHp() * MED_HP_PERCENTAGE)) && !npc.getVariables().getBoolean(MED_HP_FLAG, false)) {
 			npc.getVariables().set(MED_HP_FLAG, true);
 			addSkillCastDesire(npc, npc, ENHANCE_LVL_2, 999999999000000000L);
 			startQuestTimer(TIMER_SUMMON, 60000, npc, attacker);
@@ -80,21 +74,15 @@ public class MuscleBomber extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case TIMER_LIMIT:
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case TIMER_LIMIT: {
 				npc.getVariables().set(LIMIT_FLAG, true);
 				break;
 			}
-			case TIMER_SUMMON:
-			{
-				if (!npc.isDead() && !npc.getVariables().getBoolean(LIMIT_FLAG, false))
-				{
-					if (player != null)
-					{
+			case TIMER_SUMMON: {
+				if (!npc.isDead() && !npc.getVariables().getBoolean(LIMIT_FLAG, false)) {
+					if (player != null) {
 						addAttackDesire(addSpawn(DRAKOS_ASSASSIN, npc.getX() + getRandom(100), npc.getY() + getRandom(10), npc.getZ(), npc.getHeading(), false, 0), player);
 						addAttackDesire(addSpawn(DRAKOS_ASSASSIN, npc.getX() + getRandom(100), npc.getY() + getRandom(10), npc.getZ(), npc.getHeading(), false, 0), player);
 					}
@@ -106,8 +94,7 @@ public class MuscleBomber extends AbstractNpcAI
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new MuscleBomber();
 	}
 }

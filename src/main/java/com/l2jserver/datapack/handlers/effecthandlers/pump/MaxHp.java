@@ -34,65 +34,52 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 /**
  * @author Zealar
  */
-public final class MaxHp extends AbstractEffect
-{
+public final class MaxHp extends AbstractEffect {
 	private final double _power;
 	private final EffectCalculationType _type;
 	private final boolean _heal;
 	
-	public MaxHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public MaxHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_type = params.getEnum("type", EffectCalculationType.class, EffectCalculationType.DIFF);
-		switch (_type)
-		{
-			case DIFF:
-			{
+		switch (_type) {
+			case DIFF: {
 				_power = params.getDouble("power", 0);
 				break;
 			}
-			default:
-			{
+			default: {
 				_power = 1 + (params.getDouble("power", 0) / 100.0);
 			}
 		}
 		_heal = params.getBoolean("heal", false);
 		
-		if (params.isEmpty())
-		{
+		if (params.isEmpty()) {
 			_log.warning(getClass().getSimpleName() + ": must have parameters.");
 		}
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2Character effected = info.getEffected();
 		final CharStat charStat = effected.getStat();
 		final double currentHp = effected.getCurrentHp();
 		double amount = _power;
 		
-		synchronized (charStat)
-		{
-			switch (_type)
-			{
-				case DIFF:
-				{
+		synchronized (charStat) {
+			switch (_type) {
+				case DIFF: {
 					
 					charStat.getActiveChar().addStatFunc(new FuncAdd(Stats.MAX_HP, 1, this, _power, null));
-					if (_heal)
-					{
+					if (_heal) {
 						effected.setCurrentHp((currentHp + _power));
 					}
 					break;
 				}
-				case PER:
-				{
+				case PER: {
 					final double maxHp = effected.getMaxHp();
 					charStat.getActiveChar().addStatFunc(new FuncMul(Stats.MAX_HP, 1, this, _power, null));
-					if (_heal)
-					{
+					if (_heal) {
 						amount = (_power - 1) * maxHp;
 						effected.setCurrentHp(currentHp + amount);
 					}
@@ -100,18 +87,15 @@ public final class MaxHp extends AbstractEffect
 				}
 			}
 		}
-		if (_heal)
-		{
+		if (_heal) {
 			effected.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_HP_HAS_BEEN_RESTORED).addInt((int) amount));
 		}
 	}
 	
 	@Override
-	public void onExit(BuffInfo info)
-	{
+	public void onExit(BuffInfo info) {
 		final CharStat charStat = info.getEffected().getStat();
-		synchronized (charStat)
-		{
+		synchronized (charStat) {
 			charStat.getActiveChar().removeStatsOwner(this);
 		}
 	}

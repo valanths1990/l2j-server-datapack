@@ -28,27 +28,21 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Party Info user command.
  * @author Tempy
  */
-public class PartyInfo implements IUserCommandHandler
-{
-	private static final int[] COMMAND_IDS =
-	{
+public class PartyInfo implements IUserCommandHandler {
+	private static final int[] COMMAND_IDS = {
 		81
 	};
 	
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
-		if (id != COMMAND_IDS[0])
-		{
+	public boolean useUserCommand(int id, L2PcInstance activeChar) {
+		if (id != COMMAND_IDS[0]) {
 			return false;
 		}
 		
 		activeChar.sendPacket(SystemMessageId.PARTY_INFORMATION);
-		if (activeChar.isInParty())
-		{
+		if (activeChar.isInParty()) {
 			final L2Party party = activeChar.getParty();
-			switch (party.getDistributionType())
-			{
+			switch (party.getDistributionType()) {
 				case FINDERS_KEEPERS:
 					activeChar.sendPacket(SystemMessageId.LOOTING_FINDERS_KEEPERS);
 					break;
@@ -66,8 +60,7 @@ public class PartyInfo implements IUserCommandHandler
 					break;
 			}
 			
-			if (!party.isLeader(activeChar))
-			{
+			if (!party.isLeader(activeChar)) {
 				final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PARTY_LEADER_C1);
 				sm.addPcName(party.getLeader());
 				activeChar.sendPacket(sm);
@@ -79,8 +72,7 @@ public class PartyInfo implements IUserCommandHandler
 	}
 	
 	@Override
-	public int[] getUserCommandList()
-	{
+	public int[] getUserCommandList() {
 		return COMMAND_IDS;
 	}
 }

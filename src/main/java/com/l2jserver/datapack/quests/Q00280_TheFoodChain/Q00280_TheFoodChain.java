@@ -35,8 +35,7 @@ import com.l2jserver.gameserver.util.Util;
  * The Food Chain (280)
  * @author xban1x
  */
-public final class Q00280_TheFoodChain extends Quest
-{
+public final class Q00280_TheFoodChain extends Quest {
 	// Npc
 	private static final int BIXON = 32175;
 	// Items
@@ -45,8 +44,7 @@ public final class Q00280_TheFoodChain extends Quest
 	// Monsters
 	private static final Map<Integer, Integer> MONSTER_ITEM = new HashMap<>();
 	private static final Map<Integer, List<ItemHolder>> MONSTER_CHANCE = new HashMap<>();
-	static
-	{
+	static {
 		MONSTER_ITEM.put(22229, GREY_KELTIR_TOOTH);
 		MONSTER_ITEM.put(22230, GREY_KELTIR_TOOTH);
 		MONSTER_ITEM.put(22231, GREY_KELTIR_TOOTH);
@@ -59,8 +57,7 @@ public final class Q00280_TheFoodChain extends Quest
 		MONSTER_CHANCE.put(22233, Arrays.asList(new ItemHolder(500, 3), new ItemHolder(1000, 4)));
 	}
 	// Rewards
-	private static final int[] REWARDS = new int[]
-	{
+	private static final int[] REWARDS = new int[] {
 		28,
 		35,
 		41,
@@ -71,8 +68,7 @@ public final class Q00280_TheFoodChain extends Quest
 	private static final int MIN_LVL = 3;
 	private static final int TEETH_COUNT = 25;
 	
-	public Q00280_TheFoodChain()
-	{
+	public Q00280_TheFoodChain() {
 		super(280, Q00280_TheFoodChain.class.getSimpleName(), "The Food Chain");
 		addStartNpc(BIXON);
 		addTalkId(BIXON);
@@ -81,69 +77,52 @@ public final class Q00280_TheFoodChain extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "32175-03.htm":
-			{
+		switch (event) {
+			case "32175-03.htm": {
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "32175-06.html":
-			{
-				if (hasAtLeastOneQuestItem(player, getRegisteredItemIds()))
-				{
+			case "32175-06.html": {
+				if (hasAtLeastOneQuestItem(player, getRegisteredItemIds())) {
 					final long greyTeeth = st.getQuestItemsCount(GREY_KELTIR_TOOTH);
 					final long blackTeeth = st.getQuestItemsCount(BLACK_WOLF_TOOTH);
 					st.giveAdena(2 * (greyTeeth + blackTeeth), true);
 					takeItems(player, -1, GREY_KELTIR_TOOTH, BLACK_WOLF_TOOTH);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "32175-07.html";
 				}
 			}
-			case "32175-08.html":
-			{
+			case "32175-08.html": {
 				htmltext = event;
 				break;
 			}
-			case "32175-09.html":
-			{
+			case "32175-09.html": {
 				st.exitQuest(true, true);
 				htmltext = event;
 				break;
 			}
-			case "32175-11.html":
-			{
+			case "32175-11.html": {
 				final long greyTeeth = st.getQuestItemsCount(GREY_KELTIR_TOOTH);
 				final long blackTeeth = st.getQuestItemsCount(BLACK_WOLF_TOOTH);
-				if ((greyTeeth + blackTeeth) >= TEETH_COUNT)
-				{
-					if (greyTeeth >= TEETH_COUNT)
-					{
+				if ((greyTeeth + blackTeeth) >= TEETH_COUNT) {
+					if (greyTeeth >= TEETH_COUNT) {
 						st.takeItems(GREY_KELTIR_TOOTH, TEETH_COUNT);
-					}
-					else
-					{
+					} else {
 						st.takeItems(GREY_KELTIR_TOOTH, greyTeeth);
 						st.takeItems(BLACK_WOLF_TOOTH, TEETH_COUNT - greyTeeth);
 					}
 					st.rewardItems(REWARDS[getRandom(5)], 1);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "32175-10.html";
 				}
 				break;
@@ -153,16 +132,12 @@ public final class Q00280_TheFoodChain extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && Util.checkIfInRange(1500, npc, killer, true))
-		{
+		if ((st != null) && Util.checkIfInRange(1500, npc, killer, true)) {
 			final int chance = getRandom(1000);
-			for (ItemHolder dropChance : MONSTER_CHANCE.get(npc.getId()))
-			{
-				if (chance < dropChance.getId())
-				{
+			for (ItemHolder dropChance : MONSTER_CHANCE.get(npc.getId())) {
+				if (chance < dropChance.getId()) {
 					st.giveItemRandomly(MONSTER_ITEM.get(npc.getId()), dropChance.getCount(), 0, 1, true);
 					break;
 				}
@@ -172,25 +147,18 @@ public final class Q00280_TheFoodChain extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState st = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (talker.getLevel() >= MIN_LVL) ? "32175-01.htm" : "32175-02.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (hasAtLeastOneQuestItem(talker, getRegisteredItemIds()))
-				{
+			case State.STARTED: {
+				if (hasAtLeastOneQuestItem(talker, getRegisteredItemIds())) {
 					htmltext = "32175-05.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32175-04.html";
 				}
 				break;

@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.network.serverpackets.SpecialCamera;
  * DrChaos' AI.
  * @author Kerberos
  */
-public final class DrChaos extends Quest
-{
+public final class DrChaos extends Quest {
 	private static final int DR_CHAOS = 32033;
 	private static final int STRANGE_MACHINE = 32032;
 	private static final int CHAOS_GOLEM = 25703;
@@ -41,8 +40,7 @@ public final class DrChaos extends Quest
 	private static final Location PLAYER_TELEPORT = new Location(94832, -112624, -3304);
 	private static final Location NPC_LOCATION = new Location(-113091, -243942, -15536);
 	
-	private DrChaos()
-	{
+	private DrChaos() {
 		// TODO extends AbstractNpcAI
 		super(-1, "Doctor Chaos", "ai/individual");
 		addFirstTalkId(DR_CHAOS);
@@ -50,63 +48,49 @@ public final class DrChaos extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "1":
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "1": {
 				L2Npc machine = null;
-				for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(STRANGE_MACHINE))
-				{
-					if (spawn != null)
-					{
+				for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(STRANGE_MACHINE)) {
+					if (spawn != null) {
 						machine = spawn.getLastSpawn();
 					}
 				}
-				if (machine != null)
-				{
+				if (machine != null) {
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, machine);
 					machine.broadcastPacket(new SpecialCamera(machine, 1, -200, 15, 10000, 1000, 20000, 0, 0, 0, 0, 0));
-				}
-				else
-				{
+				} else {
 					startQuestTimer("2", 2000, npc, player);
 				}
 				startQuestTimer("3", 10000, npc, player);
 				break;
 			}
-			case "2":
-			{
+			case "2": {
 				npc.broadcastSocialAction(3);
 				break;
 			}
-			case "3":
-			{
+			case "3": {
 				npc.broadcastPacket(new SpecialCamera(npc, 1, -150, 10, 3000, 1000, 20000, 0, 0, 0, 0, 0));
 				startQuestTimer("4", 2500, npc, player);
 				break;
 			}
-			case "4":
-			{
+			case "4": {
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(96055, -110759, -3312, 0));
 				startQuestTimer("5", 2000, npc, player);
 				break;
 			}
-			case "5":
-			{
+			case "5": {
 				player.teleToLocation(PLAYER_TELEPORT);
 				npc.teleToLocation(NPC_LOCATION);
-				if (!_IsGolemSpawned)
-				{
+				if (!_IsGolemSpawned) {
 					L2Npc golem = addSpawn(CHAOS_GOLEM, 94640, -112496, -3336, 0, false, 0);
 					_IsGolemSpawned = true;
 					startQuestTimer("6", 1000, golem, player);
 				}
 				break;
 			}
-			case "6":
-			{
+			case "6": {
 				npc.broadcastPacket(new SpecialCamera(npc, 30, -200, 20, 6000, 700, 8000, 0, 0, 0, 0, 0));
 				break;
 			}
@@ -115,18 +99,15 @@ public final class DrChaos extends Quest
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (npc.getId() == DR_CHAOS)
-		{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+		if (npc.getId() == DR_CHAOS) {
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(96323, -110914, -3328, 0));
 			this.startQuestTimer("1", 3000, npc, player);
 		}
 		return "";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DrChaos();
 	}
 }

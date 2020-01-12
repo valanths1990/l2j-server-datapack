@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Make a Sewing Kit (36)
  * @author malyelfik
  */
-public class Q00036_MakeASewingKit extends Quest
-{
+public class Q00036_MakeASewingKit extends Quest {
 	// NPC
 	private static final int FERRIS = 30847;
 	// Monster
@@ -45,8 +44,7 @@ public class Q00036_MakeASewingKit extends Quest
 	private static final int IRON_COUNT = 5;
 	private static final int COUNT = 10;
 	
-	public Q00036_MakeASewingKit()
-	{
+	public Q00036_MakeASewingKit() {
 		super(36, Q00036_MakeASewingKit.class.getSimpleName(), "Make a Sewing Kit");
 		addStartNpc(FERRIS);
 		addTalkId(FERRIS);
@@ -55,38 +53,31 @@ public class Q00036_MakeASewingKit extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30847-03.htm":
 				st.startQuest();
 				break;
 			case "30847-06.html":
-				if (st.getQuestItemsCount(ENCHANTED_IRON) < IRON_COUNT)
-				{
+				if (st.getQuestItemsCount(ENCHANTED_IRON) < IRON_COUNT) {
 					return getNoQuestMsg(player);
 				}
 				st.takeItems(ENCHANTED_IRON, -1);
 				st.setCond(3, true);
 				break;
 			case "30847-09.html":
-				if ((st.getQuestItemsCount(ARTISANS_FRAME) >= COUNT) && (st.getQuestItemsCount(ORIHARUKON) >= COUNT))
-				{
+				if ((st.getQuestItemsCount(ARTISANS_FRAME) >= COUNT) && (st.getQuestItemsCount(ORIHARUKON) >= COUNT)) {
 					st.takeItems(ARTISANS_FRAME, 10);
 					st.takeItems(ORIHARUKON, 10);
 					st.giveItems(SEWING_KIT, 1);
 					st.exitQuest(false, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "30847-10.html";
 				}
 				break;
@@ -98,21 +89,15 @@ public class Q00036_MakeASewingKit extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance member = getRandomPartyMember(player, 1);
-		if (member != null)
-		{
+		if (member != null) {
 			final QuestState st = getQuestState(member, false);
-			if (getRandomBoolean())
-			{
+			if (getRandomBoolean()) {
 				st.giveItems(ENCHANTED_IRON, 1);
-				if (st.getQuestItemsCount(ENCHANTED_IRON) >= IRON_COUNT)
-				{
+				if (st.getQuestItemsCount(ENCHANTED_IRON) >= IRON_COUNT) {
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
@@ -121,18 +106,15 @@ public class Q00036_MakeASewingKit extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "30847-01.htm" : "30847-02.html";
 				break;
 			case State.STARTED:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 1:
 						htmltext = "30847-04.html";
 						break;

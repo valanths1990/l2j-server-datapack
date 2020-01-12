@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.util.Util;
  * Frintezza Embroidered Soul Cloak (10503)
  * @author Zoey76
  */
-public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
-{
+public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest {
 	// NPC
 	private static final int OLF_ADAMS = 32612;
 	// Monster
@@ -44,8 +43,7 @@ public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
 	private static final int MIN_LEVEL = 80;
 	private static final int FRAGMENT_COUNT = 20;
 	
-	public Q10503_FrintezzaEmbroideredSoulCloak()
-	{
+	public Q10503_FrintezzaEmbroideredSoulCloak() {
 		super(10503, Q10503_FrintezzaEmbroideredSoulCloak.class.getSimpleName(), "Frintezza Embroidered Soul Cloak");
 		addStartNpc(OLF_ADAMS);
 		addTalkId(OLF_ADAMS);
@@ -54,20 +52,15 @@ public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
 	}
 	
 	@Override
-	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon)
-	{
+	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, player, false))
-		{
+		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, player, false)) {
 			final long currentCount = getQuestItemsCount(player, FRINTEZZAS_SOUL_FRAGMENT);
 			final long count = getRandom(1, 3);
-			if (count >= (FRAGMENT_COUNT - currentCount))
-			{
+			if (count >= (FRAGMENT_COUNT - currentCount)) {
 				giveItems(player, FRINTEZZAS_SOUL_FRAGMENT, FRAGMENT_COUNT - currentCount);
 				st.setCond(2, true);
-			}
-			else
-			{
+			} else {
 				giveItems(player, FRINTEZZAS_SOUL_FRAGMENT, count);
 				playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
@@ -75,11 +68,9 @@ public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && (player.getLevel() >= MIN_LEVEL) && event.equals("32612-04.html"))
-		{
+		if ((st != null) && (player.getLevel() >= MIN_LEVEL) && event.equals("32612-04.html")) {
 			st.startQuest();
 			return event;
 		}
@@ -87,37 +78,28 @@ public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		executeForEachPlayer(killer, npc, isSummon, true, true);
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() < MIN_LEVEL) ? "32612-02.html" : "32612-01.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
 						htmltext = "32612-05.html";
 						break;
 					}
-					case 2:
-					{
-						if (getQuestItemsCount(player, FRINTEZZAS_SOUL_FRAGMENT) >= FRAGMENT_COUNT)
-						{
+					case 2: {
+						if (getQuestItemsCount(player, FRINTEZZAS_SOUL_FRAGMENT) >= FRAGMENT_COUNT) {
 							giveItems(player, SOUL_CLOAK_OF_FRINTEZZA, 1);
 							playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 							st.exitQuest(false, true);
@@ -128,8 +110,7 @@ public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
+			case State.COMPLETED: {
 				htmltext = "32612-03.html";
 				break;
 			}

@@ -162,8 +162,7 @@ public final class Race extends Event {
 					sendMessage(player, "Race started! Go find Finish NPC as fast as you can... He is located near " + LOCATIONS[location]);
 					transformPlayer(player);
 					player.getRadar().addMarker(_randspawn[0], _randspawn[1], _randspawn[2]);
-				}
-				else {
+				} else {
 					sendMessage(player, "I told you stay near me right? Distance was too high, you are excluded from race");
 					_players.remove(player);
 				}
@@ -214,26 +213,22 @@ public final class Race extends Event {
 		if (bypass.startsWith("skill")) {
 			if (_isRaceStarted) {
 				activeChar.sendMessage("Race already started, you cannot change transform skill now");
-			}
-			else {
+			} else {
 				int _number = Integer.valueOf(bypass.substring(5));
 				Skill _sk = SkillData.getInstance().getSkill(_number, 1);
 				if (_sk != null) {
 					_skill = _number;
 					activeChar.sendMessage("Transform skill set to:");
 					activeChar.sendMessage(_sk.getName());
-				}
-				else {
+				} else {
 					activeChar.sendMessage("Error while changing transform skill");
 				}
 			}
 			
-		}
-		else if (bypass.startsWith("tele")) {
+		} else if (bypass.startsWith("tele")) {
 			if ((Integer.valueOf(bypass.substring(4)) > 0) && (_randspawn != null)) {
 				activeChar.teleToLocation(_randspawn[0], _randspawn[1], _randspawn[2]);
-			}
-			else {
+			} else {
 				activeChar.teleToLocation(18429, 145861, -3090);
 			}
 		}
@@ -252,30 +247,25 @@ public final class Race extends Event {
 		if (event.equalsIgnoreCase("transform")) {
 			transformPlayer(player);
 			return null;
-		}
-		else if (event.equalsIgnoreCase("untransform")) {
+		} else if (event.equalsIgnoreCase("untransform")) {
 			player.untransform();
 			return null;
-		}
-		else if (event.equalsIgnoreCase("showfinish")) {
+		} else if (event.equalsIgnoreCase("showfinish")) {
 			player.getRadar().addMarker(_randspawn[0], _randspawn[1], _randspawn[2]);
 			return null;
-		}
-		else if (event.equalsIgnoreCase("signup")) {
+		} else if (event.equalsIgnoreCase("signup")) {
 			if (_players.contains(player)) {
 				return "900103-onlist.htm";
 			}
 			_players.add(player);
 			return "900103-signup.htm";
-		}
-		else if (event.equalsIgnoreCase("quit")) {
+		} else if (event.equalsIgnoreCase("quit")) {
 			player.untransform();
 			if (_players.contains(player)) {
 				_players.remove(player);
 			}
 			return "900103-quit.htm";
-		}
-		else if (event.equalsIgnoreCase("finish")) {
+		} else if (event.equalsIgnoreCase("finish")) {
 			if (player.isAffectedBySkill(_skill)) {
 				winRace(player);
 				return "900104-winner.htm";
@@ -294,8 +284,7 @@ public final class Race extends Event {
 				return START_NPC + "-started-" + isRacing(player) + ".htm";
 			}
 			return START_NPC + "-" + isRacing(player) + ".htm";
-		}
-		else if ((npc.getId() == STOP_NPC) && _isRaceStarted) {
+		} else if ((npc.getId() == STOP_NPC) && _isRaceStarted) {
 			return STOP_NPC + "-" + isRacing(player) + ".htm";
 		}
 		return npc.getId() + ".htm";

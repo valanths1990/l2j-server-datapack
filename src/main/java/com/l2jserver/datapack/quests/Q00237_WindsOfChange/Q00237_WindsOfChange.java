@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Bloodshed.
  * @author Joxit
  */
-public class Q00237_WindsOfChange extends Quest
-{
+public class Q00237_WindsOfChange extends Quest {
 	// NPCs
 	private static final int FLAUEN = 30899;
 	private static final int IASON = 30969;
@@ -49,8 +48,7 @@ public class Q00237_WindsOfChange extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
-	public Q00237_WindsOfChange()
-	{
+	public Q00237_WindsOfChange() {
 		super(237, Q00237_WindsOfChange.class.getSimpleName(), "Winds of Change");
 		addStartNpc(FLAUEN);
 		addTalkId(FLAUEN, IASON, ROMAN, MORELYN, HELVETICA, ATHENIA);
@@ -58,17 +56,14 @@ public class Q00237_WindsOfChange extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "30899-02.htm":// FLAUEN
 			case "30899-03.htm":
 			case "30899-04.htm":
@@ -95,37 +90,32 @@ public class Q00237_WindsOfChange extends Quest
 				htmltext = event;
 				break;
 			case "30969-05.html":
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					st.setCond(2, true);
 					htmltext = event;
 				}
 				break;
 			case "30897-03.html":
-				if (st.isCond(2))
-				{
+				if (st.isCond(2)) {
 					st.setCond(3, true);
 					htmltext = event;
 				}
 				break;
 			case "30925-03.html":
-				if (st.isCond(3))
-				{
+				if (st.isCond(3)) {
 					st.setCond(4, true);
 					htmltext = event;
 				}
 				break;
 			case "30969-09.html":
-				if (st.isCond(4))
-				{
+				if (st.isCond(4)) {
 					st.giveItems(DOSKOZER_LETTER, 1);
 					st.setCond(5, true);
 					htmltext = event;
 				}
 				break;
 			case "30969-10.html":
-				if (st.isCond(4))
-				{
+				if (st.isCond(4)) {
 					st.giveItems(ATHENIA_LETTER, 1);
 					st.setCond(6, true);
 					htmltext = event;
@@ -150,15 +140,12 @@ public class Q00237_WindsOfChange extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		String htmltext = getNoQuestMsg(talker);
 		final QuestState st = getQuestState(talker, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case FLAUEN:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.COMPLETED:
 						htmltext = "30899-09.html";
 						break;
@@ -166,8 +153,7 @@ public class Q00237_WindsOfChange extends Quest
 						htmltext = (talker.getLevel() >= MIN_LEVEL) ? "30899-01.htm" : "30899-00.html";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 							case 4:
 								htmltext = "30899-07.html";
@@ -186,14 +172,10 @@ public class Q00237_WindsOfChange extends Quest
 				}
 				break;
 			case IASON:
-				if (st.isCompleted())
-				{
+				if (st.isCompleted()) {
 					htmltext = Quest.getNoQuestMsg(talker);
-				}
-				else
-				{
-					switch (st.getCond())
-					{
+				} else {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "30969-01.html";
 							break;
@@ -211,8 +193,7 @@ public class Q00237_WindsOfChange extends Quest
 				}
 				break;
 			case ROMAN:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 2:
 						htmltext = "30897-01.html";
 						break;
@@ -223,8 +204,7 @@ public class Q00237_WindsOfChange extends Quest
 				}
 				break;
 			case MORELYN:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 3:
 						htmltext = "30925-01.html";
 						break;
@@ -234,30 +214,20 @@ public class Q00237_WindsOfChange extends Quest
 				}
 				break;
 			case HELVETICA:
-				if (st.isCompleted())
-				{
+				if (st.isCompleted()) {
 					htmltext = (st.hasQuestItems(VICINITY_OF_FOS) || st.getPlayer().hasQuestCompleted(Q00238_SuccessFailureOfBusiness.class.getSimpleName())) ? "32641-03.html" : "32641-05.html";
-				}
-				else if (st.isCond(5))
-				{
+				} else if (st.isCond(5)) {
 					htmltext = "32641-01.html";
-				}
-				else if (st.isCond(6))
-				{
+				} else if (st.isCond(6)) {
 					htmltext = "32641-04.html";
 				}
 				break;
 			case ATHENIA:
-				if (st.isCompleted())
-				{
+				if (st.isCompleted()) {
 					htmltext = (st.hasQuestItems(SUPPORT_CERTIFICATE) || st.getPlayer().hasQuestCompleted(Q00239_WontYouJoinUs.class.getSimpleName())) ? "32643-03.html" : "32643-05.html";
-				}
-				else if (st.isCond(5))
-				{
+				} else if (st.isCond(5)) {
 					htmltext = "32643-04.html";
-				}
-				else if (st.isCond(6))
-				{
+				} else if (st.isCond(6)) {
 					htmltext = "32643-01.html";
 				}
 				break;

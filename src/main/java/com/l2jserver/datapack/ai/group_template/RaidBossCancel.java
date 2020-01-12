@@ -31,11 +31,9 @@ import com.l2jserver.gameserver.util.Util;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class RaidBossCancel extends AbstractNpcAI
-{
+public final class RaidBossCancel extends AbstractNpcAI {
 	// Raid Bosses
-	private static final int[] RAID_BOSSES =
-	{
+	private static final int[] RAID_BOSSES = {
 		25019, // Pan Dryad
 		25050, // Verfa
 		25063, // Chertuba of Great Soul
@@ -103,37 +101,31 @@ public final class RaidBossCancel extends AbstractNpcAI
 		29095, // Gordon
 	};
 	
-	public RaidBossCancel()
-	{
+	public RaidBossCancel() {
 		super(RaidBossCancel.class.getSimpleName(), "ai/group_template");
 		addAttackId(RAID_BOSSES);
 		addSkillSeeId(RAID_BOSSES);
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final SkillHolder selfRangeCancel = npc.getTemplate().getParameters().getObject("SelfRangeCancel_a", SkillHolder.class);
-		if (Util.checkIfInRange(150, npc, attacker, true) && (getRandom(750) < 1))
-		{
+		if (Util.checkIfInRange(150, npc, attacker, true) && (getRandom(750) < 1)) {
 			addSkillCastDesire(npc, attacker, selfRangeCancel, 1000000L);
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance player, Skill skill, L2Object[] targets, boolean isSummon)
-	{
+	public String onSkillSee(L2Npc npc, L2PcInstance player, Skill skill, L2Object[] targets, boolean isSummon) {
 		final SkillHolder selfRangeCancel = npc.getTemplate().getParameters().getObject("SelfRangeCancel_a", SkillHolder.class);
-		if (Util.checkIfInRange(150, npc, player, true) && (getRandom(750) < 1))
-		{
+		if (Util.checkIfInRange(150, npc, player, true) && (getRandom(750) < 1)) {
 			addSkillCastDesire(npc, player, selfRangeCancel, 1000000L);
 		}
 		return super.onSkillSee(npc, player, skill, targets, isSummon);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new RaidBossCancel();
 	}
 }

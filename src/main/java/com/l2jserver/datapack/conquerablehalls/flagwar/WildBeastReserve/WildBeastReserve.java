@@ -28,10 +28,8 @@ import com.l2jserver.gameserver.model.zone.type.L2ResidenceHallTeleportZone;
 /**
  * @author BiggBoss
  */
-public final class WildBeastReserve extends FlagWar
-{
-	static
-	{
+public final class WildBeastReserve extends FlagWar {
+	static {
 		ROYAL_FLAG = 35606;
 		FLAG_RED = 35607; // White flag
 		FLAG_YELLOW = 35608; // Red flag
@@ -65,17 +63,14 @@ public final class WildBeastReserve extends FlagWar
 		
 		Collection<L2ResidenceHallTeleportZone> zoneList = ZoneManager.getInstance().getAllZones(L2ResidenceHallTeleportZone.class);
 		
-		for (L2ResidenceHallTeleportZone teleZone : zoneList)
-		{
-			if (teleZone.getResidenceId() != BEAST_FARM)
-			{
+		for (L2ResidenceHallTeleportZone teleZone : zoneList) {
+			if (teleZone.getResidenceId() != BEAST_FARM) {
 				continue;
 			}
 			
 			int id = teleZone.getResidenceZoneId();
 			
-			if ((id < 0) || (id >= 6))
-			{
+			if ((id < 0) || (id >= 6)) {
 				continue;
 			}
 			
@@ -86,18 +81,15 @@ public final class WildBeastReserve extends FlagWar
 		CENTER = new Location(57762, -92696, -1359, 0);
 	}
 	
-	private WildBeastReserve()
-	{
+	private WildBeastReserve() {
 		super(WildBeastReserve.class.getSimpleName(), BEAST_FARM);
 	}
 	
 	@Override
-	public String getFlagHtml(int flag)
-	{
+	public String getFlagHtml(int flag) {
 		String result = null;
 		
-		switch (flag)
-		{
+		switch (flag) {
 			case 35607:
 				result = "messenger_flag1.htm";
 				break;
@@ -119,12 +111,10 @@ public final class WildBeastReserve extends FlagWar
 	}
 	
 	@Override
-	public String getAllyHtml(int ally)
-	{
+	public String getAllyHtml(int ally) {
 		String result = null;
 		
-		switch (ally)
-		{
+		switch (ally) {
 			case 35618:
 				result = "messenger_ally1result.htm";
 				break;
@@ -146,13 +136,11 @@ public final class WildBeastReserve extends FlagWar
 	}
 	
 	@Override
-	public boolean canPayRegistration()
-	{
+	public boolean canPayRegistration() {
 		return false;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new WildBeastReserve();
 	}
 }

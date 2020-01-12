@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.util.Util;
  * Trial Of The Guildsman (216)
  * @author ivantotov
  */
-public final class Q00216_TrialOfTheGuildsman extends Quest
-{
+public final class Q00216_TrialOfTheGuildsman extends Quest {
 	private static final int WAREHOUSE_KEEPER_VALKON = 30103;
 	private static final int WAREHOUSE_KEEPER_NORMAN = 30210;
 	private static final int BLACKSMITH_ALTRAN = 30283;
@@ -86,8 +85,7 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 	// Misc
 	private static final int MIN_LVL = 35;
 	
-	public Q00216_TrialOfTheGuildsman()
-	{
+	public Q00216_TrialOfTheGuildsman() {
 		super(216, Q00216_TrialOfTheGuildsman.class.getSimpleName(), "Trial Of The Guildsman");
 		addStartNpc(WAREHOUSE_KEEPER_VALKON);
 		addTalkId(WAREHOUSE_KEEPER_VALKON, WAREHOUSE_KEEPER_NORMAN, BLACKSMITH_ALTRAN, BLACKSMITH_PINTER, BLACKSMITH_DUNING);
@@ -96,41 +94,30 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (getQuestItemsCount(player, Inventory.ADENA_ID) >= 2000)
-				{
+		switch (event) {
+			case "ACCEPT": {
+				if (getQuestItemsCount(player, Inventory.ADENA_ID) >= 2000) {
 					qs.startQuest();
 					takeItems(player, Inventory.ADENA_ID, 2000);
-					if (!hasQuestItems(player, VALKONS_RECOMMENDATION))
-					{
+					if (!hasQuestItems(player, VALKONS_RECOMMENDATION)) {
 						giveItems(player, VALKONS_RECOMMENDATION, 1);
 					}
 					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
-					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0)
-					{
+					if (player.getVariables().getInt("2ND_CLASS_DIAMOND_REWARD", 0) == 0) {
 						giveItems(player, DIMENSIONAL_DIAMOND, 85);
 						player.getVariables().set("2ND_CLASS_DIAMOND_REWARD", 1);
 						htmltext = "30103-06d.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "30103-06.htm";
 					}
-				}
-				else
-				{
+				} else {
 					htmltext = "30103-05b.htm";
 				}
 				break;
@@ -153,15 +140,12 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 			case "30283-03b.html":
 			case "30283-04.html":
 			case "30298-03.html":
-			case "30298-05a.html":
-			{
+			case "30298-05a.html": {
 				htmltext = event;
 				break;
 			}
-			case "30103-09a.html":
-			{
-				if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS) && (getQuestItemsCount(player, JOURNEYMAN_RING) >= 7))
-				{
+			case "30103-09a.html": {
+				if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS) && (getQuestItemsCount(player, JOURNEYMAN_RING) >= 7)) {
 					giveAdena(player, 187606, true);
 					giveItems(player, MARK_OF_GUILDSMAN, 1);
 					addExpAndSp(player, 1029478, 66768);
@@ -171,10 +155,8 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 				}
 				break;
 			}
-			case "30103-09b.html":
-			{
-				if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS) && (getQuestItemsCount(player, JOURNEYMAN_RING) >= 7))
-				{
+			case "30103-09b.html": {
+				if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS) && (getQuestItemsCount(player, JOURNEYMAN_RING) >= 7)) {
 					giveAdena(player, 93803, true);
 					giveItems(player, MARK_OF_GUILDSMAN, 1);
 					addExpAndSp(player, 514739, 33384);
@@ -184,10 +166,8 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 				}
 				break;
 			}
-			case "30210-04.html":
-			{
-				if (hasQuestItems(player, ALLTRANS_1ST_RECOMMENDATION))
-				{
+			case "30210-04.html": {
+				if (hasQuestItems(player, ALLTRANS_1ST_RECOMMENDATION)) {
 					takeItems(player, ALLTRANS_1ST_RECOMMENDATION, 1);
 					giveItems(player, NORMANS_INSTRUCTIONS, 1);
 					giveItems(player, NORMANS_RECEIPT, 1);
@@ -195,10 +175,8 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 				}
 				break;
 			}
-			case "30210-10.html":
-			{
-				if (hasQuestItems(player, NORMANS_INSTRUCTIONS))
-				{
+			case "30210-10.html": {
+				if (hasQuestItems(player, NORMANS_INSTRUCTIONS)) {
 					takeItems(player, NORMANS_INSTRUCTIONS, 1);
 					takeItems(player, DUNINGS_KEY, -1);
 					giveItems(player, NORMANS_LIST, 1);
@@ -206,10 +184,8 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 				}
 				break;
 			}
-			case "30283-03.html":
-			{
-				if (hasQuestItems(player, VALKONS_RECOMMENDATION, MANDRAGORA_BERRY))
-				{
+			case "30283-03.html": {
+				if (hasQuestItems(player, VALKONS_RECOMMENDATION, MANDRAGORA_BERRY)) {
 					giveItems(player, RECIPE_JOURNEYMAN_RING, 1);
 					takeItems(player, VALKONS_RECOMMENDATION, 1);
 					takeItems(player, MANDRAGORA_BERRY, 1);
@@ -221,19 +197,14 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 				}
 				break;
 			}
-			case "30298-04.html":
-			{
-				if (player.getClassId() == ClassId.scavenger)
-				{
-					if (hasQuestItems(player, ALLTRANS_2ND_RECOMMENDATION))
-					{
+			case "30298-04.html": {
+				if (player.getClassId() == ClassId.scavenger) {
+					if (hasQuestItems(player, ALLTRANS_2ND_RECOMMENDATION)) {
 						takeItems(player, ALLTRANS_2ND_RECOMMENDATION, 1);
 						giveItems(player, PINTERS_INSTRUCTIONS, 1);
 						htmltext = event;
 					}
-				}
-				else if (hasQuestItems(player, ALLTRANS_2ND_RECOMMENDATION))
-				{
+				} else if (hasQuestItems(player, ALLTRANS_2ND_RECOMMENDATION)) {
 					giveItems(player, RECIPE_AMBER_BEAD, 1);
 					takeItems(player, ALLTRANS_2ND_RECOMMENDATION, 1);
 					giveItems(player, PINTERS_INSTRUCTIONS, 1);
@@ -241,10 +212,8 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 				}
 				break;
 			}
-			case "30688-02.html":
-			{
-				if (hasQuestItems(player, NORMANS_RECEIPT))
-				{
+			case "30688-02.html": {
+				if (hasQuestItems(player, NORMANS_RECEIPT)) {
 					takeItems(player, NORMANS_RECEIPT, 1);
 					giveItems(player, DUNINGS_INSTRUCTIONS, 1);
 					htmltext = event;
@@ -256,53 +225,40 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		switch (npc.getId())
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		switch (npc.getId()) {
 			case ANT:
 			case ANT_CAPTAIN:
-			case ANT_OVERSEER:
-			{
+			case ANT_OVERSEER: {
 				final QuestState qs = getRandomPartyMemberState(killer, -1, 2, npc);
-				if (qs != null)
-				{
+				if (qs != null) {
 					int count = 0;
-					if ((qs.getPlayer().getClassId() == ClassId.scavenger) && npc.isSweepActive())
-					{
+					if ((qs.getPlayer().getClassId() == ClassId.scavenger) && npc.isSweepActive()) {
 						count += 5;
 					}
 					
-					if (getRandomBoolean() && (qs.getPlayer().getClassId() == ClassId.artisan))
-					{
+					if (getRandomBoolean() && (qs.getPlayer().getClassId() == ClassId.artisan)) {
 						giveItems(qs.getPlayer(), AMBER_LUMP, 1);
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					
-					if ((getQuestItemsCount(qs.getPlayer(), AMBER_BEAD) + count) < 70)
-					{
+					if ((getQuestItemsCount(qs.getPlayer(), AMBER_BEAD) + count) < 70) {
 						count += 5;
 					}
 					
-					if (count > 0)
-					{
+					if (count > 0) {
 						giveItemRandomly(qs.getPlayer(), npc, AMBER_BEAD, count, 70, 1.0, true);
 					}
 				}
 				break;
 			}
-			case GRANITE_GOLEM:
-			{
+			case GRANITE_GOLEM: {
 				final QuestState qs = getRandomPartyMemberState(killer, -1, 2, npc);
-				if (qs != null)
-				{
+				if (qs != null) {
 					giveItems(qs.getPlayer(), GRANITE_WHETSTONE, 7);
-					if (getQuestItemsCount(qs.getPlayer(), GRANITE_WHETSTONE) == 70)
-					{
+					if (getQuestItemsCount(qs.getPlayer(), GRANITE_WHETSTONE) == 70) {
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
-					}
-					else
-					{
+					} else {
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
@@ -311,66 +267,48 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 			case MANDRAGORA_SPROUT1:
 			case MANDRAGORA_SAPLONG:
 			case MANDRAGORA_BLOSSOM:
-			case MANDRAGORA_SPROUT2:
-			{
+			case MANDRAGORA_SPROUT2: {
 				final QuestState qs = getQuestState(killer, false);
-				if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-				{
-					if (hasQuestItems(killer, VALKONS_RECOMMENDATION) && !hasQuestItems(killer, MANDRAGORA_BERRY))
-					{
+				if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+					if (hasQuestItems(killer, VALKONS_RECOMMENDATION) && !hasQuestItems(killer, MANDRAGORA_BERRY)) {
 						giveItems(killer, MANDRAGORA_BERRY, 1);
 						qs.setCond(4, true);
 					}
 				}
 				break;
 			}
-			case SILENOS:
-			{
+			case SILENOS: {
 				final QuestState qs = getRandomPartyMemberState(killer, -1, 2, npc);
-				if (qs != null)
-				{
+				if (qs != null) {
 					giveItems(qs.getPlayer(), BRAIDED_YARN, 10);
-					if (getQuestItemsCount(qs.getPlayer(), BRAIDED_YARN) == 70)
-					{
+					if (getQuestItemsCount(qs.getPlayer(), BRAIDED_YARN) == 70) {
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
-					}
-					else
-					{
+					} else {
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 				break;
 			}
 			case STRAIN:
-			case GHOUL:
-			{
+			case GHOUL: {
 				final QuestState qs = getRandomPartyMemberState(killer, -1, 2, npc);
-				if (qs != null)
-				{
+				if (qs != null) {
 					giveItems(qs.getPlayer(), GRAY_BONE_POWDER, 5);
-					if (getQuestItemsCount(qs.getPlayer(), GRAY_BONE_POWDER) == 70)
-					{
+					if (getQuestItemsCount(qs.getPlayer(), GRAY_BONE_POWDER) == 70) {
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
-					}
-					else
-					{
+					} else {
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 				break;
 			}
-			case DEAD_SEEKER:
-			{
+			case DEAD_SEEKER: {
 				final QuestState qs = getRandomPartyMemberState(killer, -1, 2, npc);
-				if (qs != null)
-				{
+				if (qs != null) {
 					giveItems(qs.getPlayer(), RED_PIGMENT, 7);
-					if (getQuestItemsCount(qs.getPlayer(), RED_PIGMENT) == 70)
-					{
+					if (getQuestItemsCount(qs.getPlayer(), RED_PIGMENT) == 70) {
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
-					}
-					else
-					{
+					} else {
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
@@ -380,19 +318,14 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 			case BREKA_ORC_ARCHER:
 			case BREKA_ORC_SHAMAN:
 			case BREKA_ORC_OVERLORD:
-			case BREKA_ORC_WARRIOR:
-			{
+			case BREKA_ORC_WARRIOR: {
 				final QuestState qs = getRandomPartyMemberState(killer, -1, 2, npc);
-				if (qs != null)
-				{
-					if (getQuestItemsCount(qs.getPlayer(), DUNINGS_KEY) >= 29)
-					{
+				if (qs != null) {
+					if (getQuestItemsCount(qs.getPlayer(), DUNINGS_KEY) >= 29) {
 						giveItems(qs.getPlayer(), DUNINGS_KEY, 1);
 						takeItems(qs.getPlayer(), DUNINGS_INSTRUCTIONS, 1);
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_MIDDLE);
-					}
-					else
-					{
+					} else {
 						giveItems(qs.getPlayer(), DUNINGS_KEY, 1);
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
@@ -404,194 +337,126 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (npc.getId() == WAREHOUSE_KEEPER_VALKON)
-			{
-				if ((player.getClassId() == ClassId.artisan) || (player.getClassId() == ClassId.scavenger))
-				{
-					if (player.getLevel() < MIN_LVL)
-					{
+		if (qs.isCreated()) {
+			if (npc.getId() == WAREHOUSE_KEEPER_VALKON) {
+				if ((player.getClassId() == ClassId.artisan) || (player.getClassId() == ClassId.scavenger)) {
+					if (player.getLevel() < MIN_LVL) {
 						htmltext = "30103-02.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30103-03.htm";
 					}
-				}
-				else
-				{
+				} else {
 					htmltext = "30103-01.html";
 				}
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case WAREHOUSE_KEEPER_VALKON:
-				{
-					if (hasQuestItems(player, VALKONS_RECOMMENDATION))
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case WAREHOUSE_KEEPER_VALKON: {
+					if (hasQuestItems(player, VALKONS_RECOMMENDATION)) {
 						qs.setCond(3, true);
 						htmltext = "30103-07.html";
-					}
-					else if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS))
-					{
-						if (getQuestItemsCount(player, JOURNEYMAN_RING) < 7)
-						{
+					} else if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS)) {
+						if (getQuestItemsCount(player, JOURNEYMAN_RING) < 7) {
 							htmltext = "30103-08.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30103-09.html";
 						}
 					}
 					break;
 				}
-				case WAREHOUSE_KEEPER_NORMAN:
-				{
-					if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS))
-					{
-						if (hasQuestItems(player, ALLTRANS_1ST_RECOMMENDATION))
-						{
+				case WAREHOUSE_KEEPER_NORMAN: {
+					if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS)) {
+						if (hasQuestItems(player, ALLTRANS_1ST_RECOMMENDATION)) {
 							htmltext = "30210-01.html";
-						}
-						else if (hasQuestItems(player, NORMANS_INSTRUCTIONS, NORMANS_RECEIPT))
-						{
+						} else if (hasQuestItems(player, NORMANS_INSTRUCTIONS, NORMANS_RECEIPT)) {
 							htmltext = "30210-05.html";
-						}
-						else if (hasQuestItems(player, NORMANS_INSTRUCTIONS, DUNINGS_INSTRUCTIONS))
-						{
+						} else if (hasQuestItems(player, NORMANS_INSTRUCTIONS, DUNINGS_INSTRUCTIONS)) {
 							htmltext = "30210-06.html";
-						}
-						else if (hasQuestItems(player, NORMANS_INSTRUCTIONS) && (getQuestItemsCount(player, DUNINGS_KEY) >= 30))
-						{
+						} else if (hasQuestItems(player, NORMANS_INSTRUCTIONS) && (getQuestItemsCount(player, DUNINGS_KEY) >= 30)) {
 							htmltext = "30210-07.html";
-						}
-						else if (hasQuestItems(player, NORMANS_LIST))
-						{
-							if ((getQuestItemsCount(player, GRAY_BONE_POWDER) >= 70) && (getQuestItemsCount(player, GRANITE_WHETSTONE) >= 70) && (getQuestItemsCount(player, RED_PIGMENT) >= 70) && (getQuestItemsCount(player, BRAIDED_YARN) >= 70))
-							{
+						} else if (hasQuestItems(player, NORMANS_LIST)) {
+							if ((getQuestItemsCount(player, GRAY_BONE_POWDER) >= 70) && (getQuestItemsCount(player, GRANITE_WHETSTONE) >= 70) && (getQuestItemsCount(player, RED_PIGMENT) >= 70) && (getQuestItemsCount(player, BRAIDED_YARN) >= 70)) {
 								takeItems(player, NORMANS_LIST, 1);
 								takeItems(player, GRAY_BONE_POWDER, -1);
 								takeItems(player, GRANITE_WHETSTONE, -1);
 								takeItems(player, RED_PIGMENT, -1);
 								takeItems(player, BRAIDED_YARN, -1);
 								giveItems(player, JOURNEYMAN_GEM, 7);
-								if (getQuestItemsCount(player, JOURNEYMAN_DECO_BEADS) >= 7)
-								{
+								if (getQuestItemsCount(player, JOURNEYMAN_DECO_BEADS) >= 7) {
 									qs.setCond(6, true);
 								}
 								htmltext = "30210-12.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30210-11.html";
 							}
-						}
-						else if (!hasAtLeastOneQuestItem(player, NORMANS_INSTRUCTIONS, NORMANS_LIST) && hasAtLeastOneQuestItem(player, JOURNEYMAN_GEM, JOURNEYMAN_RING))
-						{
+						} else if (!hasAtLeastOneQuestItem(player, NORMANS_INSTRUCTIONS, NORMANS_LIST) && hasAtLeastOneQuestItem(player, JOURNEYMAN_GEM, JOURNEYMAN_RING)) {
 							htmltext = "30210-13.html";
 						}
 					}
 					break;
 				}
-				case BLACKSMITH_ALTRAN:
-				{
-					if (hasQuestItems(player, VALKONS_RECOMMENDATION))
-					{
-						if (!hasQuestItems(player, MANDRAGORA_BERRY))
-						{
+				case BLACKSMITH_ALTRAN: {
+					if (hasQuestItems(player, VALKONS_RECOMMENDATION)) {
+						if (!hasQuestItems(player, MANDRAGORA_BERRY)) {
 							qs.setCond(2, true);
 							htmltext = "30283-01.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30283-02.html";
 						}
-					}
-					else if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS))
-					{
-						if (getQuestItemsCount(player, JOURNEYMAN_RING) < 7)
-						{
+					} else if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS)) {
+						if (getQuestItemsCount(player, JOURNEYMAN_RING) < 7) {
 							htmltext = "30283-04.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30283-05.html";
 						}
 					}
 					break;
 				}
-				case BLACKSMITH_PINTER:
-				{
-					if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS))
-					{
-						if (hasQuestItems(player, ALLTRANS_2ND_RECOMMENDATION))
-						{
+				case BLACKSMITH_PINTER: {
+					if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS)) {
+						if (hasQuestItems(player, ALLTRANS_2ND_RECOMMENDATION)) {
 							htmltext = "30298-02.html";
-						}
-						else if (hasQuestItems(player, PINTERS_INSTRUCTIONS))
-						{
-							if (getQuestItemsCount(player, AMBER_BEAD) < 70)
-							{
+						} else if (hasQuestItems(player, PINTERS_INSTRUCTIONS)) {
+							if (getQuestItemsCount(player, AMBER_BEAD) < 70) {
 								htmltext = "30298-06.html";
-							}
-							else
-							{
+							} else {
 								takeItems(player, RECIPE_AMBER_BEAD, 1);
 								takeItems(player, PINTERS_INSTRUCTIONS, 1);
 								takeItems(player, AMBER_BEAD, -1);
 								takeItems(player, AMBER_LUMP, -1);
 								giveItems(player, JOURNEYMAN_DECO_BEADS, 7);
-								if (getQuestItemsCount(player, JOURNEYMAN_GEM) >= 7)
-								{
+								if (getQuestItemsCount(player, JOURNEYMAN_GEM) >= 7) {
 									qs.setCond(6, true);
 								}
 								htmltext = "30298-07.html";
 							}
-						}
-						else if (!hasQuestItems(player, PINTERS_INSTRUCTIONS) && hasAtLeastOneQuestItem(player, JOURNEYMAN_DECO_BEADS, JOURNEYMAN_RING))
-						{
+						} else if (!hasQuestItems(player, PINTERS_INSTRUCTIONS) && hasAtLeastOneQuestItem(player, JOURNEYMAN_DECO_BEADS, JOURNEYMAN_RING)) {
 							htmltext = "30298-08.html";
 						}
 					}
 					break;
 				}
-				case BLACKSMITH_DUNING:
-				{
-					if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS, NORMANS_INSTRUCTIONS))
-					{
-						if (hasQuestItems(player, NORMANS_RECEIPT) && !hasQuestItems(player, DUNINGS_INSTRUCTIONS))
-						{
+				case BLACKSMITH_DUNING: {
+					if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS, NORMANS_INSTRUCTIONS)) {
+						if (hasQuestItems(player, NORMANS_RECEIPT) && !hasQuestItems(player, DUNINGS_INSTRUCTIONS)) {
 							htmltext = "30688-01.html";
 						}
-						if (hasQuestItems(player, DUNINGS_INSTRUCTIONS) && !hasQuestItems(player, NORMANS_RECEIPT) && (getQuestItemsCount(player, DUNINGS_KEY) < 30))
-						{
+						if (hasQuestItems(player, DUNINGS_INSTRUCTIONS) && !hasQuestItems(player, NORMANS_RECEIPT) && (getQuestItemsCount(player, DUNINGS_KEY) < 30)) {
 							htmltext = "30688-03.html";
-						}
-						else if ((getQuestItemsCount(player, DUNINGS_KEY) >= 30) && !hasQuestItems(player, DUNINGS_INSTRUCTIONS))
-						{
+						} else if ((getQuestItemsCount(player, DUNINGS_KEY) >= 30) && !hasQuestItems(player, DUNINGS_INSTRUCTIONS)) {
 							htmltext = "30688-04.html";
 						}
-					}
-					else if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS) && !hasAtLeastOneQuestItem(player, NORMANS_INSTRUCTIONS, DUNINGS_INSTRUCTIONS))
-					{
+					} else if (hasQuestItems(player, ALLTRANS_INSTRUCTIONS) && !hasAtLeastOneQuestItem(player, NORMANS_INSTRUCTIONS, DUNINGS_INSTRUCTIONS)) {
 						htmltext = "30688-05.html";
 					}
 					break;
 				}
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == WAREHOUSE_KEEPER_VALKON)
-			{
+		} else if (qs.isCompleted()) {
+			if (npc.getId() == WAREHOUSE_KEEPER_VALKON) {
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
@@ -599,36 +464,29 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 	}
 	
 	@Override
-	public boolean checkPartyMember(L2PcInstance player, L2Npc npc)
-	{
+	public boolean checkPartyMember(L2PcInstance player, L2Npc npc) {
 		boolean check = false;
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ANT:
 			case ANT_CAPTAIN:
-			case ANT_OVERSEER:
-			{
+			case ANT_OVERSEER: {
 				check = hasQuestItems(player, ALLTRANS_INSTRUCTIONS, PINTERS_INSTRUCTIONS) && (getQuestItemsCount(player, AMBER_BEAD) < 70);
 				break;
 			}
-			case GRANITE_GOLEM:
-			{
+			case GRANITE_GOLEM: {
 				check = hasQuestItems(player, ALLTRANS_INSTRUCTIONS, NORMANS_LIST) && (getQuestItemsCount(player, GRANITE_WHETSTONE) < 70);
 				break;
 			}
-			case SILENOS:
-			{
+			case SILENOS: {
 				check = hasQuestItems(player, ALLTRANS_INSTRUCTIONS, NORMANS_LIST) && (getQuestItemsCount(player, BRAIDED_YARN) < 70);
 				break;
 			}
 			case STRAIN:
-			case GHOUL:
-			{
+			case GHOUL: {
 				check = hasQuestItems(player, ALLTRANS_INSTRUCTIONS, NORMANS_LIST) && (getQuestItemsCount(player, GRAY_BONE_POWDER) < 70);
 				break;
 			}
-			case DEAD_SEEKER:
-			{
+			case DEAD_SEEKER: {
 				check = hasQuestItems(player, ALLTRANS_INSTRUCTIONS, NORMANS_LIST) && (getQuestItemsCount(player, RED_PIGMENT) < 70);
 				break;
 			}
@@ -636,8 +494,7 @@ public final class Q00216_TrialOfTheGuildsman extends Quest
 			case BREKA_ORC_ARCHER:
 			case BREKA_ORC_SHAMAN:
 			case BREKA_ORC_OVERLORD:
-			case BREKA_ORC_WARRIOR:
-			{
+			case BREKA_ORC_WARRIOR: {
 				check = hasQuestItems(player, ALLTRANS_INSTRUCTIONS, NORMANS_INSTRUCTIONS, DUNINGS_INSTRUCTIONS) && (getQuestItemsCount(player, DUNINGS_KEY) < 30);
 				break;
 			}

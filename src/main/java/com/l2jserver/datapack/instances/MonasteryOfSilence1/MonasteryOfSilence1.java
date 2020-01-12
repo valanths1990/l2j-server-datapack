@@ -38,10 +38,8 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Monastery of Silence instance zone.
  * @author Adry_85
  */
-public final class MonasteryOfSilence1 extends AbstractInstance
-{
-	protected static final class MoSWorld extends InstanceWorld
-	{
+public final class MonasteryOfSilence1 extends AbstractInstance {
+	protected static final class MoSWorld extends InstanceWorld {
 		protected L2Npc elcadia = null;
 		protected int deadTombGuardianCount = 0;
 		protected int deadSolinaGuardianCount = 0;
@@ -79,8 +77,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	private static final int SWORD_OF_HOLY_SPIRIT = 17230;
 	private static final int STAFF_OF_BLESSING = 17231;
 	// Skills
-	private static final SkillHolder[] BUFFS =
-	{
+	private static final SkillHolder[] BUFFS = {
 		new SkillHolder(6725), // Bless the Blood of Elcadia
 		new SkillHolder(6728), // Recharge of Elcadia
 		new SkillHolder(6730), // Greater Battle Heal of Elcadia
@@ -109,44 +106,38 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	private static final Location ELCADIA_LOC = new Location(115927, -87005, -3392);
 	private static final Location SPACE_LOC = new Location(76736, -241021, -10780);
 	private static final Location ETIS_VAN_ETINA_LOC = new Location(76625, -240824, -10832, 0);
-	private static final Location[] SLAVE_SPAWN_1_LOC =
-	{
+	private static final Location[] SLAVE_SPAWN_1_LOC = {
 		new Location(55680, -252832, -6752),
 		new Location(55825, -252792, -6752),
 		new Location(55687, -252718, -6752),
 		new Location(55824, -252679, -6752),
 	};
-	private static final Location[] SLAVE_SPAWN_2_LOC =
-	{
+	private static final Location[] SLAVE_SPAWN_2_LOC = {
 		new Location(55672, -252099, -6751),
 		new Location(55810, -252262, -6752),
 		new Location(55824, -252112, -6752),
 		new Location(55669, -252227, -6752),
 	};
-	private static final Location[] SLAVE_SPAWN_3_LOC =
-	{
+	private static final Location[] SLAVE_SPAWN_3_LOC = {
 		new Location(56480, -252833, -6751),
 		new Location(56481, -252725, -6752),
 		new Location(56368, -252787, -6752),
 		new Location(56368, -252669, -6752),
 	};
-	private static final Location[] SLAVE_SPAWN_4_LOC =
-	{
+	private static final Location[] SLAVE_SPAWN_4_LOC = {
 		new Location(56463, -252225, -6751),
 		new Location(56469, -252108, -6752),
 		new Location(56336, -252168, -6752),
 		new Location(56336, -252288, -6752),
 	};
 	// NpcString
-	private static final NpcStringId[] ELCADIA_DIALOGS_Q010294 =
-	{
+	private static final NpcStringId[] ELCADIA_DIALOGS_Q010294 = {
 		NpcStringId.WE_MUST_SEARCH_HIGH_AND_LOW_IN_EVERY_ROOM_FOR_THE_READING_DESK_THAT_CONTAINS_THE_BOOK_WE_SEEK,
 		NpcStringId.REMEMBER_THE_CONTENT_OF_THE_BOOKS_THAT_YOU_FOUND_YOU_CANT_TAKE_THEM_OUT_WITH_YOU,
 		NpcStringId.IT_SEEMS_THAT_YOU_CANNOT_REMEMBER_TO_THE_ROOM_OF_THE_WATCHER_WHO_FOUND_THE_BOOK
 	};
 	
-	private static final NpcStringId[] ELCADIA_DIALOGS_Q010295 =
-	{
+	private static final NpcStringId[] ELCADIA_DIALOGS_Q010295 = {
 		NpcStringId.THE_GUARDIAN_OF_THE_SEAL_DOESNT_SEEM_TO_GET_INJURED_AT_ALL_UNTIL_THE_BARRIER_IS_DESTROYED,
 		NpcStringId.THE_DEVICE_LOCATED_IN_THE_ROOM_IN_FRONT_OF_THE_GUARDIAN_OF_THE_SEAL_IS_DEFINITELY_THE_BARRIER_THAT_CONTROLS_THE_GUARDIANS_POWER,
 		NpcStringId.TO_REMOVE_THE_BARRIER_YOU_MUST_FIND_THE_RELICS_THAT_FIT_THE_BARRIER_AND_ACTIVATE_THE_DEVICE
@@ -155,8 +146,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	private static final int TEMPLATE_ID = 151;
 	// Doors
 	private static final int TOMB_DOOR = 21100018;
-	private static final int[] DOORS =
-	{
+	private static final int[] DOORS = {
 		21100014,
 		21100001,
 		21100006,
@@ -175,16 +165,14 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 		21100011
 	};
 	
-	private static final int[] FAKE_TOMB_DOORS =
-	{
+	private static final int[] FAKE_TOMB_DOORS = {
 		21100101,
 		21100102,
 		21100103,
 		21100104
 	};
 	
-	public MonasteryOfSilence1()
-	{
+	public MonasteryOfSilence1() {
 		super(MonasteryOfSilence1.class.getSimpleName());
 		addFirstTalkId(TELEPORT_CONTROL_DEVICE1, TELEPORT_CONTROL_DEVICE2, TELEPORT_CONTROL_DEVICE3, TELEPORT_CONTROL_DEVICE4);
 		addKillId(SOLINAS_GUARDIAN_1, SOLINAS_GUARDIAN_2, SOLINAS_GUARDIAN_3, SOLINAS_GUARDIAN_4, GUARDIAN_OF_THE_TOMB_1, GUARDIAN_OF_THE_TOMB_2, GUARDIAN_OF_THE_TOMB_3, GUARDIAN_OF_THE_TOMB_4, ETIS_VAN_ETINA);
@@ -194,10 +182,8 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		if (firstEntrance) {
 			world.addAllowed(player.getObjectId());
 		}
 		teleportPlayer(player, START_LOC, world.getInstanceId(), false);
@@ -205,200 +191,162 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if (tmpworld instanceof MoSWorld)
-		{
+		if (tmpworld instanceof MoSWorld) {
 			final MoSWorld world = (MoSWorld) tmpworld;
-			switch (event)
-			{
-				case "TELE2":
-				{
+			switch (event) {
+				case "TELE2": {
 					teleportPlayer(player, CENTRAL_ROOM_LOC, world.getInstanceId());
 					world.elcadia.teleToLocation(CENTRAL_ROOM_LOC, world.getInstanceId(), 0);
 					startQuestTimer("START_MOVIE", 2000, npc, player);
 					break;
 				}
-				case "EXIT":
-				{
+				case "EXIT": {
 					cancelQuestTimer("FOLLOW", npc, player);
 					cancelQuestTimer("DIALOG", npc, player);
 					teleportPlayer(player, EXIT_LOC, 0);
 					world.elcadia.deleteMe();
 					break;
 				}
-				case "START_MOVIE":
-				{
+				case "START_MOVIE": {
 					player.showQuestMovie(24);
 					break;
 				}
-				case "BACK":
-				{
+				case "BACK": {
 					teleportPlayer(player, BACK_LOC, world.getInstanceId());
 					world.elcadia.teleToLocation(BACK_LOC, world.getInstanceId(), 0);
 					break;
 				}
-				case "EAST":
-				{
+				case "EAST": {
 					teleportPlayer(player, EAST_WATCHERS_ROOM_LOC, world.getInstanceId());
 					world.elcadia.teleToLocation(EAST_WATCHERS_ROOM_LOC, world.getInstanceId(), 0);
 					break;
 				}
-				case "WEST":
-				{
+				case "WEST": {
 					teleportPlayer(player, WEST_WATCHERS_ROOM_LOC, world.getInstanceId());
 					world.elcadia.teleToLocation(WEST_WATCHERS_ROOM_LOC, world.getInstanceId(), 0);
 					break;
 				}
-				case "NORTH":
-				{
+				case "NORTH": {
 					teleportPlayer(player, NORTH_WATCHERS_ROOM_LOC, world.getInstanceId());
 					world.elcadia.teleToLocation(NORTH_WATCHERS_ROOM_LOC, world.getInstanceId(), 0);
 					break;
 				}
-				case "SOUTH":
-				{
+				case "SOUTH": {
 					teleportPlayer(player, SOUTH_WATCHERS_ROOM_LOC, world.getInstanceId());
 					world.elcadia.teleToLocation(SOUTH_WATCHERS_ROOM_LOC, world.getInstanceId(), 0);
 					break;
 				}
-				case "CENTER":
-				{
+				case "CENTER": {
 					teleportPlayer(player, CENTRAL_ROOM_LOC, world.getInstanceId());
 					world.elcadia.teleToLocation(CENTRAL_ROOM_LOC, world.getInstanceId(), 0);
 					break;
 				}
-				case "FOLLOW":
-				{
+				case "FOLLOW": {
 					npc.setIsRunning(true);
 					npc.getAI().startFollow(player);
-					if (player.isInCombat())
-					{
+					if (player.isInCombat()) {
 						npc.doCast(BUFFS[getRandom(BUFFS.length)]);
 					}
 					startQuestTimer("FOLLOW", 5000, npc, player);
 					break;
 				}
-				case "DIALOG":
-				{
+				case "DIALOG": {
 					final QuestState st_Q10294 = player.getQuestState(Q10294_SevenSignsToTheMonasteryOfSilence.class.getSimpleName());
 					final QuestState st_Q10295 = player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName());
-					if ((st_Q10294 != null) && st_Q10294.isStarted())
-					{
+					if ((st_Q10294 != null) && st_Q10294.isStarted()) {
 						broadcastNpcSay(npc, Say2.NPC_ALL, ELCADIA_DIALOGS_Q010294[getRandom(ELCADIA_DIALOGS_Q010294.length)]);
 					}
 					
-					if ((st_Q10295 != null) && st_Q10295.isMemoState(1))
-					{
+					if ((st_Q10295 != null) && st_Q10295.isMemoState(1)) {
 						broadcastNpcSay(npc, Say2.NPC_ALL, ELCADIA_DIALOGS_Q010295[getRandom(ELCADIA_DIALOGS_Q010295.length)]);
 					}
 					startQuestTimer("DIALOG", 10000, npc, player);
 					break;
 				}
-				case "ENTER_Q10295":
-				{
+				case "ENTER_Q10295": {
 					teleportPlayer(player, START_LOC_Q10295, world.getInstanceId());
 					world.elcadia.teleToLocation(START_LOC_Q10295, world.getInstanceId(), 0);
 					startQuestTimer("START_MOVIE_Q10295", 2000, npc, player);
 					break;
 				}
-				case "START_MOVIE_Q10295":
-				{
+				case "START_MOVIE_Q10295": {
 					player.showQuestMovie(26);
 					break;
 				}
-				case "CASKET_ROOM":
-				{
+				case "CASKET_ROOM": {
 					teleportPlayer(player, CASKET_ROOM_LOC, world.getInstanceId());
 					world.elcadia.teleToLocation(CASKET_ROOM_LOC, world.getInstanceId(), 0);
 					break;
 				}
-				case "SOLINAS_RESTING_PLACE":
-				{
+				case "SOLINAS_RESTING_PLACE": {
 					teleportPlayer(player, SOLINAS_RESTING_PLACE_LOC, world.getInstanceId());
 					world.elcadia.teleToLocation(SOLINAS_RESTING_PLACE_LOC, world.getInstanceId(), 0);
 					break;
 				}
-				case "ERIS_OFFICE":
-				{
+				case "ERIS_OFFICE": {
 					teleportPlayer(player, START_LOC, world.getInstanceId());
 					world.elcadia.teleToLocation(START_LOC, world.getInstanceId(), 0);
 					break;
 				}
-				case "OPEN_DOORS":
-				{
-					for (int doorId : DOORS)
-					{
+				case "OPEN_DOORS": {
+					for (int doorId : DOORS) {
 						openDoor(doorId, world.getInstanceId());
 					}
 					break;
 				}
-				case "DIRECTORS_ROOM":
-				{
+				case "DIRECTORS_ROOM": {
 					teleportPlayer(player, DIRECTORS_ROOM_LOC, world.getInstanceId());
 					world.elcadia.teleToLocation(DIRECTORS_ROOM_LOC, world.getInstanceId(), 0);
 					break;
 				}
-				case "USE_SCROLL":
-				{
+				case "USE_SCROLL": {
 					// TODO (Adry_85): Missing area debuff
-					if (hasQuestItems(player, SCROLL_OF_ABSTINENCE))
-					{
+					if (hasQuestItems(player, SCROLL_OF_ABSTINENCE)) {
 						takeItems(player, SCROLL_OF_ABSTINENCE, 1);
 						addSpawn(SOLINAS_GUARDIAN_1, SOLINAS_GUARDIAN_1_LOC, false, 0, false, world.getInstanceId());
 					}
 					break;
 				}
-				case "USE_SHIELD":
-				{
+				case "USE_SHIELD": {
 					// TODO (Adry_85): Missing area debuff
-					if (hasQuestItems(player, SHIELD_OF_SACRIFICE))
-					{
+					if (hasQuestItems(player, SHIELD_OF_SACRIFICE)) {
 						takeItems(player, SHIELD_OF_SACRIFICE, 1);
 						addSpawn(SOLINAS_GUARDIAN_2, SOLINAS_GUARDIAN_2_LOC, false, 0, false, world.getInstanceId());
 					}
 					break;
 				}
-				case "USE_SWORD":
-				{
+				case "USE_SWORD": {
 					// TODO (Adry_85): Missing area debuff
-					if (hasQuestItems(player, SWORD_OF_HOLY_SPIRIT))
-					{
+					if (hasQuestItems(player, SWORD_OF_HOLY_SPIRIT)) {
 						takeItems(player, SWORD_OF_HOLY_SPIRIT, 1);
 						addSpawn(SOLINAS_GUARDIAN_3, SOLINAS_GUARDIAN_3_LOC, false, 0, false, world.getInstanceId());
 					}
 					break;
 				}
-				case "USE_STAFF":
-				{
+				case "USE_STAFF": {
 					// TODO (Adry_85): Missing area debuff
-					if (hasQuestItems(player, STAFF_OF_BLESSING))
-					{
+					if (hasQuestItems(player, STAFF_OF_BLESSING)) {
 						takeItems(player, STAFF_OF_BLESSING, 1);
 						addSpawn(SOLINAS_GUARDIAN_4, SOLINAS_GUARDIAN_4_LOC, false, 0, false, world.getInstanceId());
 					}
 					break;
 				}
-				case "CLOSE_TOMB_DOORS":
-				{
-					for (int doorId : FAKE_TOMB_DOORS)
-					{
+				case "CLOSE_TOMB_DOORS": {
+					for (int doorId : FAKE_TOMB_DOORS) {
 						closeDoor(doorId, world.getInstanceId());
 					}
 					break;
 				}
-				case "TOMB_GUARDIAN_SPAWN":
-				{
-					for (int doorId : FAKE_TOMB_DOORS)
-					{
+				case "TOMB_GUARDIAN_SPAWN": {
+					for (int doorId : FAKE_TOMB_DOORS) {
 						openDoor(doorId, world.getInstanceId());
 					}
 					
 					addSpawn(GUARDIAN_OF_THE_TOMB_1, GUARDIAN_OF_THE_TOMB_1_LOC, false, 0, false, world.getInstanceId());
 					
-					for (Location LOC : SLAVE_SPAWN_1_LOC)
-					{
+					for (Location LOC : SLAVE_SPAWN_1_LOC) {
 						L2Attackable mob = (L2Attackable) addSpawn(TRAINEE_OF_REST, LOC, false, 0, false, world.getInstanceId());
 						mob.setIsRunning(true);
 						mob.addDamageHate(player, 0, 999);
@@ -407,8 +355,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 					
 					addSpawn(GUARDIAN_OF_THE_TOMB_2, GUARDIAN_OF_THE_TOMB_2_LOC, false, 0, false, world.getInstanceId());
 					
-					for (Location LOC : SLAVE_SPAWN_2_LOC)
-					{
+					for (Location LOC : SLAVE_SPAWN_2_LOC) {
 						L2Attackable mob = (L2Attackable) addSpawn(TRAINEE_OF_REST, LOC, false, 0, false, world.getInstanceId());
 						mob.setIsRunning(true);
 						mob.addDamageHate(player, 0, 999);
@@ -417,8 +364,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 					
 					addSpawn(GUARDIAN_OF_THE_TOMB_3, GUARDIAN_OF_THE_TOMB_3_LOC, false, 0, false, world.getInstanceId());
 					
-					for (Location LOC : SLAVE_SPAWN_3_LOC)
-					{
+					for (Location LOC : SLAVE_SPAWN_3_LOC) {
 						L2Attackable mob = (L2Attackable) addSpawn(SUPPLICANT_OF_REST, LOC, false, 0, false, world.getInstanceId());
 						mob.setIsRunning(true);
 						mob.addDamageHate(player, 0, 999);
@@ -427,8 +373,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 					
 					addSpawn(GUARDIAN_OF_THE_TOMB_4, GUARDIAN_OF_THE_TOMB_4_LOC, false, 0, false, world.getInstanceId());
 					
-					for (Location LOC : SLAVE_SPAWN_4_LOC)
-					{
+					for (Location LOC : SLAVE_SPAWN_4_LOC) {
 						L2Attackable mob = (L2Attackable) addSpawn(SUPPLICANT_OF_REST, LOC, false, 0, false, world.getInstanceId());
 						mob.setIsRunning(true);
 						mob.addDamageHate(player, 0, 999);
@@ -436,22 +381,19 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 					}
 					return "32843-01.html";
 				}
-				case "START_MOVIE_Q10296":
-				{
+				case "START_MOVIE_Q10296": {
 					player.showQuestMovie(29);
 					startQuestTimer("TELEPORT_SPACE", 60000, npc, player);
 					world.elcadia.teleToLocation(ELCADIA_LOC, world.getInstanceId(), 0);
 					break;
 				}
-				case "TELEPORT_SPACE":
-				{
+				case "TELEPORT_SPACE": {
 					teleportPlayer(player, SPACE_LOC, world.getInstanceId());
 					world.elcadia.teleToLocation(SPACE_LOC, world.getInstanceId(), 0);
 					addSpawn(ETIS_VAN_ETINA, ETIS_VAN_ETINA_LOC, false, 0, false, world.getInstanceId());
 					break;
 				}
-				case "TELEPORT_TO_PLAYER":
-				{
+				case "TELEPORT_TO_PLAYER": {
 					world.elcadia.teleToLocation(player.getX(), player.getY(), player.getZ(), 0, world.getInstanceId());
 					break;
 				}
@@ -461,26 +403,20 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if (tmpworld instanceof MoSWorld)
-		{
+		if (tmpworld instanceof MoSWorld) {
 			MoSWorld world = (MoSWorld) tmpworld;
-			switch (npc.getId())
-			{
+			switch (npc.getId()) {
 				case GUARDIAN_OF_THE_TOMB_1:
 				case GUARDIAN_OF_THE_TOMB_2:
 				case GUARDIAN_OF_THE_TOMB_3:
-				case GUARDIAN_OF_THE_TOMB_4:
-				{
+				case GUARDIAN_OF_THE_TOMB_4: {
 					world.deadTombGuardianCount++;
-					if (world.deadTombGuardianCount == 4)
-					{
+					if (world.deadTombGuardianCount == 4) {
 						openDoor(TOMB_DOOR, world.getInstanceId());
 						final QuestState st = player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName());
-						if ((st != null) && st.isMemoState(2))
-						{
+						if ((st != null) && st.isMemoState(2)) {
 							st.setMemoState(3);
 						}
 					}
@@ -489,28 +425,23 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 				case SOLINAS_GUARDIAN_1:
 				case SOLINAS_GUARDIAN_2:
 				case SOLINAS_GUARDIAN_3:
-				case SOLINAS_GUARDIAN_4:
-				{
+				case SOLINAS_GUARDIAN_4: {
 					world.deadSolinaGuardianCount++;
-					if (world.deadSolinaGuardianCount == 4)
-					{
+					if (world.deadSolinaGuardianCount == 4) {
 						player.showQuestMovie(27);
 						final QuestState st = player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName());
-						if ((st != null) && st.isMemoState(1))
-						{
+						if ((st != null) && st.isMemoState(1)) {
 							st.setMemoState(2);
 						}
 					}
 					break;
 				}
-				case ETIS_VAN_ETINA:
-				{
+				case ETIS_VAN_ETINA: {
 					player.showQuestMovie(30);
 					world.elcadia.teleToLocation(ELCADIA_LOC, world.getInstanceId(), 0);
 					startQuestTimer("TELEPORT_TO_PLAYER", 63000, npc, player);
 					final QuestState st = player.getQuestState(Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal.class.getSimpleName());
-					if ((st != null) && st.isMemoState(2))
-					{
+					if ((st != null) && st.isMemoState(2)) {
 						st.setMemoState(3);
 					}
 					break;
@@ -522,17 +453,13 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
-		switch (npc.getId())
-		{
-			case ERIS_EVIL_THOUGHTS:
-			{
+	public String onSpawn(L2Npc npc) {
+		switch (npc.getId()) {
+			case ERIS_EVIL_THOUGHTS: {
 				startQuestTimer("OPEN_DOORS", 1000, npc, null);
 				break;
 			}
-			case TOMB_OF_THE_SAINTESS:
-			{
+			case TOMB_OF_THE_SAINTESS: {
 				startQuestTimer("CLOSE_TOMB_DOORS", 1000, npc, null);
 				break;
 			}
@@ -541,19 +468,15 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
-		if (npc.getId() == ODD_GLOBE)
-		{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
+		if (npc.getId() == ODD_GLOBE) {
 			enterInstance(talker, new MoSWorld(), "MonasteryOfSilence.xml", TEMPLATE_ID);
 		}
 		return super.onTalk(npc, talker);
 	}
 	
-	protected void spawnElcadia(L2PcInstance player, MoSWorld world)
-	{
-		if (world.elcadia != null)
-		{
+	protected void spawnElcadia(L2PcInstance player, MoSWorld world) {
+		if (world.elcadia != null) {
 			world.elcadia.deleteMe();
 		}
 		world.elcadia = addSpawn(ELCADIA_INSTANCE, player.getX(), player.getY(), player.getZ(), 0, false, 0, false, world.getInstanceId());

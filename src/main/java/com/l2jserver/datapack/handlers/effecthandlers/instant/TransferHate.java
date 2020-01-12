@@ -31,48 +31,39 @@ import com.l2jserver.gameserver.util.Util;
  * Transfer Hate effect implementation.
  * @author Adry_85
  */
-public final class TransferHate extends AbstractEffect
-{
+public final class TransferHate extends AbstractEffect {
 	private final int _chance;
 	
-	public TransferHate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public TransferHate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_chance = params.getInt("chance", 100);
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
-	{
+	public boolean calcSuccess(BuffInfo info) {
 		return Formulas.calcProbability(_chance, info.getEffector(), info.getEffected(), info.getSkill());
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (!Util.checkIfInRange(info.getSkill().getEffectRange(), info.getEffector(), info.getEffected(), true))
-		{
+	public void onStart(BuffInfo info) {
+		if (!Util.checkIfInRange(info.getSkill().getEffectRange(), info.getEffector(), info.getEffected(), true)) {
 			return;
 		}
 		
-		for (L2Character obj : info.getEffector().getKnownList().getKnownCharactersInRadius(info.getSkill().getAffectRange()))
-		{
-			if ((obj == null) || !obj.isAttackable() || obj.isDead())
-			{
+		for (L2Character obj : info.getEffector().getKnownList().getKnownCharactersInRadius(info.getSkill().getAffectRange())) {
+			if ((obj == null) || !obj.isAttackable() || obj.isDead()) {
 				continue;
 			}
 			
 			final L2Attackable hater = ((L2Attackable) obj);
 			final long hate = hater.getHating(info.getEffector());
-			if (hate <= 0)
-			{
+			if (hate <= 0) {
 				continue;
 			}
 			

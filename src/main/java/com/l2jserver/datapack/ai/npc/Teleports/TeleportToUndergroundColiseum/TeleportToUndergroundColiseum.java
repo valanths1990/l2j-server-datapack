@@ -28,13 +28,11 @@ import com.l2jserver.gameserver.util.Util;
  * Underground Coliseum teleport AI
  * @author malyelfik
  */
-public final class TeleportToUndergroundColiseum extends AbstractNpcAI
-{
+public final class TeleportToUndergroundColiseum extends AbstractNpcAI {
 	// NPCs
 	private static final int COLISEUM_HELPER = 32491;
 	private static final int PADDIES = 32378;
-	private static final int[] MANAGERS =
-	{
+	private static final int[] MANAGERS = {
 		32377,
 		32513,
 		32514,
@@ -43,16 +41,14 @@ public final class TeleportToUndergroundColiseum extends AbstractNpcAI
 	};
 	
 	// Locations
-	private static final Location[] COLISEUM_LOCS =
-	{
+	private static final Location[] COLISEUM_LOCS = {
 		new Location(-81896, -49589, -10352),
 		new Location(-82271, -49196, -10352),
 		new Location(-81886, -48784, -10352),
 		new Location(-81490, -49167, -10352)
 	};
 	
-	private static final Location[] RETURN_LOCS =
-	{
+	private static final Location[] RETURN_LOCS = {
 		new Location(-59161, -56954, -2036),
 		new Location(-59155, -56831, -2036),
 		new Location(-59299, -56955, -2036),
@@ -60,8 +56,7 @@ public final class TeleportToUndergroundColiseum extends AbstractNpcAI
 		new Location(-59134, -56899, -2036)
 	};
 	
-	private static final Location[][] MANAGERS_LOCS =
-	{
+	private static final Location[][] MANAGERS_LOCS = {
 		{
 			new Location(-84451, -45452, -10728),
 			new Location(-84580, -45587, -10728)
@@ -84,8 +79,7 @@ public final class TeleportToUndergroundColiseum extends AbstractNpcAI
 		}
 	};
 	
-	private TeleportToUndergroundColiseum()
-	{
+	private TeleportToUndergroundColiseum() {
 		super(TeleportToUndergroundColiseum.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(MANAGERS);
 		addStartNpc(COLISEUM_HELPER, PADDIES);
@@ -95,18 +89,12 @@ public final class TeleportToUndergroundColiseum extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.endsWith(".htm"))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.endsWith(".htm")) {
 			return event;
-		}
-		else if (event.equals("return"))
-		{
+		} else if (event.equals("return")) {
 			player.teleToLocation(RETURN_LOCS[getRandom(RETURN_LOCS.length)], false);
-		}
-		else if (Util.isDigit(event))
-		{
+		} else if (Util.isDigit(event)) {
 			int val = Integer.parseInt(event) - 1;
 			player.teleToLocation(MANAGERS_LOCS[val][getRandom(MANAGERS_LOCS[val].length)], false);
 		}
@@ -114,27 +102,21 @@ public final class TeleportToUndergroundColiseum extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (Util.contains(MANAGERS, npc.getId()))
-		{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
+		if (Util.contains(MANAGERS, npc.getId())) {
 			player.teleToLocation(RETURN_LOCS[getRandom(RETURN_LOCS.length)], false);
-		}
-		else
-		{
+		} else {
 			player.teleToLocation(COLISEUM_LOCS[getRandom(COLISEUM_LOCS.length)], false);
 		}
 		return null;
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "32491.htm";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new TeleportToUndergroundColiseum();
 	}
 }

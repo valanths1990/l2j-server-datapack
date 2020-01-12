@@ -33,15 +33,13 @@ import com.l2jserver.gameserver.model.quest.State;
  * NOTE: This quest is used for start quest 142 or 143
  * @author Nono
  */
-public class Q00998_FallenAngelSelect extends Quest
-{
+public class Q00998_FallenAngelSelect extends Quest {
 	// NPCs
 	private static final int NATOOLS = 30894;
 	// Misc
 	private static final int MIN_LEVEL = 38;
 	
-	public Q00998_FallenAngelSelect()
-	{
+	public Q00998_FallenAngelSelect() {
 		super(998, Q00998_FallenAngelSelect.class.getSimpleName(), "Fallen Angel - Select");
 		setIsCustom(true);
 		addStartNpc(NATOOLS);
@@ -49,16 +47,13 @@ public class Q00998_FallenAngelSelect extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "30894-01.html":
 			case "30894-02.html":
 			case "30894-03.html":
@@ -73,11 +68,9 @@ public class Q00998_FallenAngelSelect extends Quest
 		return null;
 	}
 	
-	private void startQuest(String name, L2PcInstance player)
-	{
+	private void startQuest(String name, L2PcInstance player) {
 		final Quest q = QuestManager.getInstance().getQuest(name);
-		if (q != null)
-		{
+		if (q != null) {
 			q.newQuestState(player);
 			q.notifyEvent("30894-01.html", null, player);
 			player.getQuestState(getName()).setState(State.COMPLETED);
@@ -85,12 +78,10 @@ public class Q00998_FallenAngelSelect extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		final QuestState qs = player.getQuestState(Q00141_ShadowFoxPart3.class.getSimpleName());
-		if ((st == null) || !st.isStarted())
-		{
+		if ((st == null) || !st.isStarted()) {
 			return getNoQuestMsg(player);
 		}
 		return ((player.getLevel() >= MIN_LEVEL) && (qs != null) && qs.isCompleted()) ? "30894-01.html" : "30894-00.html";

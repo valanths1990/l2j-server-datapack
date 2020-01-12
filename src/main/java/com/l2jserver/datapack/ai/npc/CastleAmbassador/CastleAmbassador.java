@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
  * Castle Ambassador AI.
  * @author St3eT
  */
-public final class CastleAmbassador extends AbstractNpcAI
-{
+public final class CastleAmbassador extends AbstractNpcAI {
 	// NPCs
 	// @formatter:off
 	private static final int[] CASTLE_AMBASSADOR =
@@ -48,8 +47,7 @@ public final class CastleAmbassador extends AbstractNpcAI
 	};
 	// @formatter:on
 	
-	private CastleAmbassador()
-	{
+	private CastleAmbassador() {
 		super(CastleAmbassador.class.getSimpleName(), "ai/npc");
 		addStartNpc(CASTLE_AMBASSADOR);
 		addTalkId(CASTLE_AMBASSADOR);
@@ -59,49 +57,36 @@ public final class CastleAmbassador extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (npc != null)
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (npc != null) {
 			final Fort fortresss = npc.getFort();
 			String htmltext = null;
 			
-			switch (event)
-			{
-				case "signed":
-				{
-					if (fortresss.getFortState() == 0)
-					{
+			switch (event) {
+				case "signed": {
+					if (fortresss.getFortState() == 0) {
 						fortresss.setFortState(2, fortresss.getCastleIdByAmbassador(npc.getId()));
 						cancelQuestTimer("DESPAWN", npc, null);
 						startQuestTimer("DESPAWN", 3000, npc, null);
 						htmltext = "ambassador-05.html";
-					}
-					else if (fortresss.getFortState() == 1)
-					{
+					} else if (fortresss.getFortState() == 1) {
 						htmltext = "ambassador-04.html";
 					}
 					break;
 				}
-				case "rejected":
-				{
-					if (fortresss.getFortState() == 0)
-					{
+				case "rejected": {
+					if (fortresss.getFortState() == 0) {
 						fortresss.setFortState(1, fortresss.getCastleIdByAmbassador(npc.getId()));
 						cancelQuestTimer("DESPAWN", npc, null);
 						startQuestTimer("DESPAWN", 3000, npc, null);
 						htmltext = "ambassador-02.html";
-					}
-					else if (fortresss.getFortState() == 2)
-					{
+					} else if (fortresss.getFortState() == 2) {
 						htmltext = "ambassador-02.html";
 					}
 					break;
 				}
-				case "DESPAWN":
-				{
-					if (fortresss.getFortState() == 0)
-					{
+				case "DESPAWN": {
+					if (fortresss.getFortState() == 0) {
 						fortresss.setFortState(1, fortresss.getCastleIdByAmbassador(npc.getId()));
 					}
 					cancelQuestTimer("DESPAWN", npc, null);
@@ -111,8 +96,7 @@ public final class CastleAmbassador extends AbstractNpcAI
 				}
 			}
 			
-			if (htmltext != null)
-			{
+			if (htmltext != null) {
 				final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 				packet.setHtml(getHtm(player.getHtmlPrefix(), htmltext));
 				packet.replace("%castleName%", String.valueOf(fortresss.getCastleByAmbassador(npc.getId()).getName()));
@@ -123,28 +107,22 @@ public final class CastleAmbassador extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onEventReceived(String eventName, L2Npc sender, L2Npc receiver, L2Object reference)
-	{
-		if (receiver != null)
-		{
+	public String onEventReceived(String eventName, L2Npc sender, L2Npc receiver, L2Object reference) {
+		if (receiver != null) {
 			receiver.deleteMe();
 		}
 		return super.onEventReceived(eventName, sender, receiver, reference);
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final Fort fortresss = npc.getFort();
 		final int fortOwner = fortresss.getOwnerClan() == null ? 0 : fortresss.getOwnerClan().getId();
 		String htmltext = null;
 		
-		if (player.isClanLeader() && (player.getClanId() == fortOwner))
-		{
+		if (player.isClanLeader() && (player.getClanId() == fortOwner)) {
 			htmltext = (fortresss.isBorderFortress()) ? "ambassador-01.html" : "ambassador.html";
-		}
-		else
-		{
+		} else {
 			htmltext = "ambassador-03.html";
 		}
 		
@@ -156,22 +134,17 @@ public final class CastleAmbassador extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		final Castle castle = npc.getFort().getCastleByAmbassador(npc.getId());
-		if (castle.getOwnerId() == 0)
-		{
+		if (castle.getOwnerId() == 0) {
 			npc.deleteMe();
-		}
-		else
-		{
+		} else {
 			startQuestTimer("DESPAWN", 3600000, npc, null);
 		}
 		return super.onSpawn(npc);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new CastleAmbassador();
 	}
 }

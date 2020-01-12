@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 /**
  * Dark Water Dragon's AI.
  */
-public final class DarkWaterDragon extends AbstractNpcAI
-{
+public final class DarkWaterDragon extends AbstractNpcAI {
 	private static final int DRAGON = 22267;
 	private static final int SHADE1 = 22268;
 	private static final int SHADE2 = 22269;
@@ -45,11 +44,9 @@ public final class DarkWaterDragon extends AbstractNpcAI
 	private static Set<Integer> MY_TRACKING_SET = ConcurrentHashMap.newKeySet(); // Used to track instances of npcs
 	private static Map<Integer, L2PcInstance> ID_MAP = new ConcurrentHashMap<>(); // Used to track instances of npcs
 	
-	private DarkWaterDragon()
-	{
+	private DarkWaterDragon() {
 		super(DarkWaterDragon.class.getSimpleName(), "ai/individual");
-		int[] mobs =
-		{
+		int[] mobs = {
 			DRAGON,
 			SHADE1,
 			SHADE2,
@@ -65,43 +62,33 @@ public final class DarkWaterDragon extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (npc != null)
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (npc != null) {
 			if (event.equalsIgnoreCase("first_spawn")) // timer to start timer "1"
 			{
 				startQuestTimer("1", 40000, npc, null, true); // spawns detractor every 40 seconds
-			}
-			else if (event.equalsIgnoreCase("second_spawn")) // timer to start timer "2"
+			} else if (event.equalsIgnoreCase("second_spawn")) // timer to start timer "2"
 			{
 				startQuestTimer("2", 40000, npc, null, true); // spawns detractor every 40 seconds
-			}
-			else if (event.equalsIgnoreCase("third_spawn")) // timer to start timer "3"
+			} else if (event.equalsIgnoreCase("third_spawn")) // timer to start timer "3"
 			{
 				startQuestTimer("3", 40000, npc, null, true); // spawns detractor every 40 seconds
-			}
-			else if (event.equalsIgnoreCase("fourth_spawn")) // timer to start timer "4"
+			} else if (event.equalsIgnoreCase("fourth_spawn")) // timer to start timer "4"
 			{
 				startQuestTimer("4", 40000, npc, null, true); // spawns detractor every 40 seconds
-			}
-			else if (event.equalsIgnoreCase("1")) // spawns a detractor
+			} else if (event.equalsIgnoreCase("1")) // spawns a detractor
 			{
 				addSpawn(DETRACTOR1, (npc.getX() + 100), (npc.getY() + 100), npc.getZ(), 0, false, 40000);
-			}
-			else if (event.equalsIgnoreCase("2")) // spawns a detractor
+			} else if (event.equalsIgnoreCase("2")) // spawns a detractor
 			{
 				addSpawn(DETRACTOR2, (npc.getX() + 100), (npc.getY() - 100), npc.getZ(), 0, false, 40000);
-			}
-			else if (event.equalsIgnoreCase("3")) // spawns a detractor
+			} else if (event.equalsIgnoreCase("3")) // spawns a detractor
 			{
 				addSpawn(DETRACTOR1, (npc.getX() - 100), (npc.getY() + 100), npc.getZ(), 0, false, 40000);
-			}
-			else if (event.equalsIgnoreCase("4")) // spawns a detractor
+			} else if (event.equalsIgnoreCase("4")) // spawns a detractor
 			{
 				addSpawn(DETRACTOR2, (npc.getX() - 100), (npc.getY() - 100), npc.getZ(), 0, false, 40000);
-			}
-			else if (event.equalsIgnoreCase("fafurion_despawn")) // Fafurion Kindred disappears and drops reward
+			} else if (event.equalsIgnoreCase("fafurion_despawn")) // Fafurion Kindred disappears and drops reward
 			{
 				cancelQuestTimer("fafurion_poison", npc, null);
 				cancelQuestTimer("1", npc, null);
@@ -111,17 +98,14 @@ public final class DarkWaterDragon extends AbstractNpcAI
 				
 				MY_TRACKING_SET.remove(npc.getObjectId());
 				player = ID_MAP.remove(npc.getObjectId());
-				if (player != null)
-				{
+				if (player != null) {
 					((L2Attackable) npc).doItemDrop(NpcData.getInstance().getTemplate(18485), player);
 				}
 				
 				npc.deleteMe();
-			}
-			else if (event.equalsIgnoreCase("fafurion_poison")) // Reduces Fafurions hp like it is poisoned
+			} else if (event.equalsIgnoreCase("fafurion_poison")) // Reduces Fafurions hp like it is poisoned
 			{
-				if (npc.getCurrentHp() <= 500)
-				{
+				if (npc.getCurrentHp() <= 500) {
 					cancelQuestTimer("fafurion_despawn", npc, null);
 					cancelQuestTimer("first_spawn", npc, null);
 					cancelQuestTimer("second_spawn", npc, null);
@@ -141,12 +125,10 @@ public final class DarkWaterDragon extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		int npcId = npc.getId();
 		int npcObjId = npc.getObjectId();
-		if (npcId == DRAGON)
-		{
+		if (npcId == DRAGON) {
 			if (!MY_TRACKING_SET.contains(npcObjId)) // this allows to handle multiple instances of npc
 			{
 				MY_TRACKING_SET.add(npcObjId);
@@ -157,9 +139,7 @@ public final class DarkWaterDragon extends AbstractNpcAI
 				spawnShade(originalAttacker, SHADE1, npc.getX() - 100, npc.getY() + 100, npc.getZ());
 				spawnShade(originalAttacker, SHADE2, npc.getX() - 100, npc.getY() - 100, npc.getZ());
 				spawnShade(originalAttacker, SHADE1, npc.getX() - 150, npc.getY() + 150, npc.getZ());
-			}
-			else if ((npc.getCurrentHp() < (npc.getMaxHp() / 2.0)) && !(SECOND_SPAWN.contains(npcObjId)))
-			{
+			} else if ((npc.getCurrentHp() < (npc.getMaxHp() / 2.0)) && !(SECOND_SPAWN.contains(npcObjId))) {
 				SECOND_SPAWN.add(npcObjId);
 				// Spawn second 5 shades on half hp of on Dark Water Dragon
 				L2Character originalAttacker = isSummon ? attacker.getSummon() : attacker;
@@ -174,19 +154,15 @@ public final class DarkWaterDragon extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		int npcId = npc.getId();
 		int npcObjId = npc.getObjectId();
-		if (npcId == DRAGON)
-		{
+		if (npcId == DRAGON) {
 			MY_TRACKING_SET.remove(npcObjId);
 			SECOND_SPAWN.remove(npcObjId);
 			L2Attackable faf = (L2Attackable) addSpawn(FAFURION, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0); // spawns Fafurion Kindred when Dard Water Dragon is dead
 			ID_MAP.put(faf.getObjectId(), killer);
-		}
-		else if (npcId == FAFURION)
-		{
+		} else if (npcId == FAFURION) {
 			cancelQuestTimer("fafurion_poison", npc, null);
 			cancelQuestTimer("fafurion_despawn", npc, null);
 			cancelQuestTimer("first_spawn", npc, null);
@@ -204,14 +180,11 @@ public final class DarkWaterDragon extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		int npcId = npc.getId();
 		int npcObjId = npc.getObjectId();
-		if (npcId == FAFURION)
-		{
-			if (!MY_TRACKING_SET.contains(npcObjId))
-			{
+		if (npcId == FAFURION) {
+			if (!MY_TRACKING_SET.contains(npcObjId)) {
 				MY_TRACKING_SET.add(npcObjId);
 				// Spawn 4 Detractors on spawn of Fafurion
 				int x = npc.getX();
@@ -231,16 +204,14 @@ public final class DarkWaterDragon extends AbstractNpcAI
 		return super.onSpawn(npc);
 	}
 	
-	public void spawnShade(L2Character attacker, int npcId, int x, int y, int z)
-	{
+	public void spawnShade(L2Character attacker, int npcId, int x, int y, int z) {
 		final L2Npc shade = addSpawn(npcId, x, y, z, 0, false, 0);
 		shade.setRunning();
 		((L2Attackable) shade).addDamageHate(attacker, 0, 999);
 		shade.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DarkWaterDragon();
 	}
 }

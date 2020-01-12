@@ -30,43 +30,33 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Hide effect implementation.
  * @author ZaKaX, nBd
  */
-public final class Hide extends AbstractEffect
-{
-	public Hide(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class Hide extends AbstractEffect {
+	public Hide(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public void onExit(BuffInfo info)
-	{
-		if (info.getEffected().isPlayer())
-		{
+	public void onExit(BuffInfo info) {
+		if (info.getEffected().isPlayer()) {
 			L2PcInstance activeChar = info.getEffected().getActingPlayer();
-			if (!activeChar.inObserverMode())
-			{
+			if (!activeChar.inObserverMode()) {
 				activeChar.setInvisible(false);
 			}
 		}
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (info.getEffected().isPlayer())
-		{
+	public void onStart(BuffInfo info) {
+		if (info.getEffected().isPlayer()) {
 			L2PcInstance activeChar = info.getEffected().getActingPlayer();
 			activeChar.setInvisible(true);
 			
-			if ((activeChar.getAI().getNextIntention() != null) && (activeChar.getAI().getNextIntention().getCtrlIntention() == CtrlIntention.AI_INTENTION_ATTACK))
-			{
+			if ((activeChar.getAI().getNextIntention() != null) && (activeChar.getAI().getNextIntention().getCtrlIntention() == CtrlIntention.AI_INTENTION_ATTACK)) {
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			}
 			
-			for (L2Character target : activeChar.getKnownList().getKnownCharacters())
-			{
-				if ((target != null) && (target.getTarget() == activeChar))
-				{
+			for (L2Character target : activeChar.getKnownList().getKnownCharacters()) {
+				if ((target != null) && (target.getTarget() == activeChar)) {
 					target.setTarget(null);
 					target.abortAttack();
 					target.abortCast();

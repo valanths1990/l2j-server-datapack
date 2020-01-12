@@ -32,14 +32,12 @@ import com.l2jserver.gameserver.model.quest.State;
  * Hunting for Wild Beasts (341)
  * @author xban1x
  */
-public class Q00341_HuntingForWildBeasts extends Quest
-{
+public class Q00341_HuntingForWildBeasts extends Quest {
 	// NPCs
 	private static final int PANO = 30078;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(20203, 99);
 		MONSTERS.put(20310, 87);
 		MONSTERS.put(20021, 83);
@@ -52,8 +50,7 @@ public class Q00341_HuntingForWildBeasts extends Quest
 	private static final int ADENA_COUNT = 3710;
 	private static final int REQUIRED_COUNT = 20;
 	
-	public Q00341_HuntingForWildBeasts()
-	{
+	public Q00341_HuntingForWildBeasts() {
 		super(341, Q00341_HuntingForWildBeasts.class.getSimpleName(), "Hunting for Wild Beasts");
 		addStartNpc(PANO);
 		addTalkId(PANO);
@@ -62,21 +59,16 @@ public class Q00341_HuntingForWildBeasts extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
-				case "30078-03.htm":
-				{
+		if (st != null) {
+			switch (event) {
+				case "30078-03.htm": {
 					htmltext = event;
 					break;
 				}
-				case "30078-04.htm":
-				{
+				case "30078-04.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
@@ -87,27 +79,20 @@ public class Q00341_HuntingForWildBeasts extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
-		{
-			case State.CREATED:
-			{
+		switch (qs.getState()) {
+			case State.CREATED: {
 				htmltext = player.getLevel() >= MIN_LVL ? "30078-01.html" : "30078-02.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (qs.isCond(2) && (qs.getQuestItemsCount(BEAR_SKIN) >= REQUIRED_COUNT))
-				{
+			case State.STARTED: {
+				if (qs.isCond(2) && (qs.getQuestItemsCount(BEAR_SKIN) >= REQUIRED_COUNT)) {
 					qs.giveAdena(ADENA_COUNT, true);
 					qs.exitQuest(true, true);
 					htmltext = "30078-05.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30078-06.html";
 				}
 				break;
@@ -117,23 +102,16 @@ public class Q00341_HuntingForWildBeasts extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && st.isCond(1))
-		{
+		if ((st != null) && st.isCond(1)) {
 			long skins = st.getQuestItemsCount(BEAR_SKIN);
-			if (skins < REQUIRED_COUNT)
-			{
-				if (getRandom(100) < MONSTERS.get(npc.getId()))
-				{
+			if (skins < REQUIRED_COUNT) {
+				if (getRandom(100) < MONSTERS.get(npc.getId())) {
 					st.giveItems(BEAR_SKIN, 1);
-					if ((++skins) < REQUIRED_COUNT)
-					{
+					if ((++skins) < REQUIRED_COUNT) {
 						st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else
-					{
+					} else {
 						st.setCond(2, true);
 					}
 				}

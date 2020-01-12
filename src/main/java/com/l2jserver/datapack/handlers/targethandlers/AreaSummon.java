@@ -33,22 +33,17 @@ import com.l2jserver.gameserver.util.Util;
 /**
  * @author UnAfraid
  */
-public class AreaSummon implements ITargetTypeHandler
-{
+public class AreaSummon implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<>();
 		target = activeChar.getSummon();
-		if ((target == null) || !target.isServitor() || target.isDead())
-		{
+		if ((target == null) || !target.isServitor() || target.isDead()) {
 			return EMPTY_TARGET_LIST;
 		}
 		
-		if (onlyFirst)
-		{
-			return new L2Character[]
-			{
+		if (onlyFirst) {
+			return new L2Character[] {
 				target
 			};
 		}
@@ -57,38 +52,31 @@ public class AreaSummon implements ITargetTypeHandler
 		final Collection<L2Character> objs = target.getKnownList().getKnownCharacters();
 		int maxTargets = skill.getAffectLimit();
 		
-		for (L2Character obj : objs)
-		{
-			if ((obj == null) || (obj == target) || (obj == activeChar))
-			{
+		for (L2Character obj : objs) {
+			if ((obj == null) || (obj == target) || (obj == activeChar)) {
 				continue;
 			}
 			
-			if (!Util.checkIfInRange(skill.getAffectRange(), target, obj, true))
-			{
+			if (!Util.checkIfInRange(skill.getAffectRange(), target, obj, true)) {
 				continue;
 			}
 			
-			if (!(obj.isAttackable() || obj.isPlayable()))
-			{
+			if (!(obj.isAttackable() || obj.isPlayable())) {
 				continue;
 			}
 			
-			if (!Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena))
-			{
+			if (!Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena)) {
 				continue;
 			}
 			
-			if ((maxTargets > 0) && (targetList.size() >= maxTargets))
-			{
+			if ((maxTargets > 0) && (targetList.size() >= maxTargets)) {
 				break;
 			}
 			
 			targetList.add(obj);
 		}
 		
-		if (targetList.isEmpty())
-		{
+		if (targetList.isEmpty()) {
 			return EMPTY_TARGET_LIST;
 		}
 		
@@ -96,8 +84,7 @@ public class AreaSummon implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.AREA_SUMMON;
 	}
 }

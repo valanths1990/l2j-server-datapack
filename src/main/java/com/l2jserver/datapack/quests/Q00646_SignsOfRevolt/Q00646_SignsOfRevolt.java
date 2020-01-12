@@ -28,26 +28,22 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * NOTE: This quest is no longer available since Gracia Epilogue
  * @author malyelfik
  */
-public class Q00646_SignsOfRevolt extends Quest
-{
+public class Q00646_SignsOfRevolt extends Quest {
 	// NPC
 	private static final int TORRANT = 32016;
 	// Misc
 	private static final int MIN_LEVEL = 80;
 	
-	public Q00646_SignsOfRevolt()
-	{
+	public Q00646_SignsOfRevolt() {
 		super(646, Q00646_SignsOfRevolt.class.getSimpleName(), "Signs of Revolt");
 		addStartNpc(TORRANT);
 		addTalkId(TORRANT);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
-		if (st != null)
-		{
+		if (st != null) {
 			st.exitQuest(true);
 		}
 		return (player.getLevel() >= MIN_LEVEL) ? "32016-01.html" : "32016-02.html";

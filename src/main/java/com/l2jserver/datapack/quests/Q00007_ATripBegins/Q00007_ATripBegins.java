@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * A Trip Begins (7)
  * @author malyelfik
  */
-public class Q00007_ATripBegins extends Quest
-{
+public class Q00007_ATripBegins extends Quest {
 	// NPCs
 	private static final int MIRABEL = 30146;
 	private static final int ARIEL = 30148;
@@ -42,8 +41,7 @@ public class Q00007_ATripBegins extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 3;
 	
-	public Q00007_ATripBegins()
-	{
+	public Q00007_ATripBegins() {
 		super(7, Q00007_ATripBegins.class.getSimpleName(), "A Trip Begins");
 		addStartNpc(MIRABEL);
 		addTalkId(MIRABEL, ARIEL, ASTERIOS);
@@ -51,17 +49,14 @@ public class Q00007_ATripBegins extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30146-03.htm":
 				st.startQuest();
 				break;
@@ -75,8 +70,7 @@ public class Q00007_ATripBegins extends Quest
 				st.giveItems(ARIELS_RECOMMENDATION, 1);
 				break;
 			case "30154-02.html":
-				if (!st.hasQuestItems(ARIELS_RECOMMENDATION))
-				{
+				if (!st.hasQuestItems(ARIELS_RECOMMENDATION)) {
 					return "30154-03.html";
 				}
 				st.takeItems(ARIELS_RECOMMENDATION, -1);
@@ -90,25 +84,19 @@ public class Q00007_ATripBegins extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case MIRABEL:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = ((player.getRace() == Race.ELF) && (player.getLevel() >= MIN_LEVEL)) ? "30146-01.htm" : "30146-02.html";
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
-						{
+						if (st.isCond(1)) {
 							htmltext = "30146-04.html";
-						}
-						else if (st.isCond(3))
-						{
+						} else if (st.isCond(3)) {
 							htmltext = "30146-05.html";
 						}
 						break;
@@ -118,27 +106,19 @@ public class Q00007_ATripBegins extends Quest
 				}
 				break;
 			case ARIEL:
-				if (st.isStarted())
-				{
-					if (st.isCond(1))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(1)) {
 						htmltext = "30148-01.html";
-					}
-					else if (st.isCond(2))
-					{
+					} else if (st.isCond(2)) {
 						htmltext = "30148-03.html";
 					}
 				}
 				break;
 			case ASTERIOS:
-				if (st.isStarted())
-				{
-					if (st.isCond(2))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(2)) {
 						htmltext = "30154-01.html";
-					}
-					else if (st.isCond(3))
-					{
+					} else if (st.isCond(3)) {
 						htmltext = "30154-04.html";
 					}
 				}

@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.model.quest.QuestTimer;
  * Anais AI.
  * @author nonom
  */
-public final class Anais extends AbstractNpcAI
-{
+public final class Anais extends AbstractNpcAI {
 	// NPCs
 	private static final int ANAIS = 25701;
 	private static final int DIVINE_BURNER = 18915;
@@ -48,52 +47,41 @@ public final class Anais extends AbstractNpcAI
 	private L2Npc _current = null;
 	private int _pot = 0;
 	
-	private Anais()
-	{
+	private Anais() {
 		super(Anais.class.getSimpleName(), "ai/individual");
 		addAttackId(ANAIS);
 		addSpawnId(DIVINE_BURNER);
 		addKillId(GRAIL_WARD);
 	}
 	
-	private void burnerOnAttack(int pot, L2Npc anais)
-	{
+	private void burnerOnAttack(int pot, L2Npc anais) {
 		L2Npc npc = _divineBurners.get(pot);
 		npc.setDisplayEffect(1);
 		npc.setIsRunning(false);
-		if (pot < 4)
-		{
+		if (pot < 4) {
 			_current = npc;
 			QuestTimer checkAround = getQuestTimer("CHECK", anais, null);
 			if (checkAround == null) // || !checkAround.getIsActive()
 			{
 				startQuestTimer("CHECK", 3000, anais, null);
 			}
-		}
-		else
-		{
+		} else {
 			cancelQuestTimer("CHECK", anais, null);
 		}
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "CHECK":
-			{
-				if (!npc.isAttackingNow())
-				{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "CHECK": {
+				if (!npc.isAttackingNow()) {
 					cancelQuestTimer("CHECK", npc, null);
 				}
-				if ((_current != null) || (_pot < 4))
-				{
+				if ((_current != null) || (_pot < 4)) {
 					final Map<Integer, L2PcInstance> players = npc.getKnownList().getKnownPlayers();
 					final L2PcInstance target = players.get(getRandom(players.size() - 1));
 					_nextTarget = target;
-					if (_nextTarget == null)
-					{
+					if (_nextTarget == null) {
 						_nextTarget = (L2PcInstance) npc.getTarget();
 					}
 					final L2Npc b = _divineBurners.get(_pot);
@@ -110,29 +98,22 @@ public final class Anais extends AbstractNpcAI
 				}
 				break;
 			}
-			case "GUARD_ATTACK":
-			{
-				if (_nextTarget != null)
-				{
+			case "GUARD_ATTACK": {
+				if (_nextTarget != null) {
 					final double distance = npc.calculateDistance(_nextTarget, false, false);
-					if (distance < 100)
-					{
+					if (distance < 100) {
 						npc.doCast(DIVINE_NOVA);
-					}
-					else if (distance > 2000)
-					{
+					} else if (distance > 2000) {
 						npc.doDie(null);
 						cancelQuestTimer("GUARD_ATTACK", npc, player);
 					}
 				}
 				break;
 			}
-			case "SUICIDE":
-			{
+			case "SUICIDE": {
 				npc.doCast(DIVINE_NOVA);
 				cancelQuestTimer("GUARD_ATTACK", npc, _nextTarget);
-				if (_current != null)
-				{
+				if (_current != null) {
 					_current.setDisplayEffect(2);
 					_current.setIsRunning(false);
 					_current = null;
@@ -145,22 +126,14 @@ public final class Anais extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if (_pot == 0)
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if (_pot == 0) {
 			burnerOnAttack(0, npc);
-		}
-		else if ((npc.getCurrentHp() <= (npc.getMaxRecoverableHp() * 0.75)) && (_pot == 1))
-		{
+		} else if ((npc.getCurrentHp() <= (npc.getMaxRecoverableHp() * 0.75)) && (_pot == 1)) {
 			burnerOnAttack(1, npc);
-		}
-		else if ((npc.getCurrentHp() <= (npc.getMaxRecoverableHp() * 0.5)) && (_pot == 2))
-		{
+		} else if ((npc.getCurrentHp() <= (npc.getMaxRecoverableHp() * 0.5)) && (_pot == 2)) {
 			burnerOnAttack(2, npc);
-		}
-		else if ((npc.getCurrentHp() <= (npc.getMaxRecoverableHp() * 0.25)) && (_pot == 3))
-		{
+		} else if ((npc.getCurrentHp() <= (npc.getMaxRecoverableHp() * 0.25)) && (_pot == 3)) {
 			burnerOnAttack(3, npc);
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
@@ -171,20 +144,17 @@ public final class Anais extends AbstractNpcAI
 	 * @see com.l2jserver.gameserver.model.quest.Quest#onSpawn(com.l2jserver.gameserver.model.actor.L2Npc)
 	 */
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		_divineBurners.add(npc);
 		return super.onSpawn(npc);
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		npc.doCast(DIVINE_NOVA.getSkill());
 		cancelQuestTimer("GUARD_ATTACK", npc, _nextTarget);
 		cancelQuestTimer("CHECK", npc, null);
-		if (_current != null)
-		{
+		if (_current != null) {
 			_current.setDisplayEffect(2);
 			_current.setIsRunning(false);
 			_current = null;
@@ -192,8 +162,7 @@ public final class Anais extends AbstractNpcAI
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Anais();
 	}
 }

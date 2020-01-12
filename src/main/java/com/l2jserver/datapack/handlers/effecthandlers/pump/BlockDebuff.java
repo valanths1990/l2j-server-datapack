@@ -26,16 +26,13 @@ import com.l2jserver.gameserver.model.effects.EffectFlag;
 /**
  * @author Zealar
  */
-public final class BlockDebuff extends AbstractEffect
-{
-	public BlockDebuff(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class BlockDebuff extends AbstractEffect {
+	public BlockDebuff(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public int getEffectFlags()
-	{
+	public int getEffectFlags() {
 		return EffectFlag.BLOCK_DEBUFF.getMask();
 	}
 }

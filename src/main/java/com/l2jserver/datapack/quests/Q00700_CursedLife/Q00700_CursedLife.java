@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Cursed Life (700)
  * @author xban1x
  */
-public class Q00700_CursedLife extends Quest
-{
+public class Q00700_CursedLife extends Quest {
 	// NPC
 	private static final int ORBYU = 32560;
 	// Monsters
@@ -62,8 +61,7 @@ public class Q00700_CursedLife extends Quest
 	private static final int SWALLOWED_SKULL_ADENA = 50000;
 	private static final int BONUS = 16670;
 	
-	public Q00700_CursedLife()
-	{
+	public Q00700_CursedLife() {
 		super(700, Q00700_CursedLife.class.getSimpleName(), "Cursed Life");
 		addStartNpc(ORBYU);
 		addTalkId(ORBYU);
@@ -73,34 +71,27 @@ public class Q00700_CursedLife extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
-				case "32560-02.htm":
-				{
+		if (st != null) {
+			switch (event) {
+				case "32560-02.htm": {
 					st = player.getQuestState(Q10273_GoodDayToFly.class.getSimpleName());
 					htmltext = ((player.getLevel() < MIN_LVL) || (st == null) || (!st.isCompleted())) ? "32560-03.htm" : event;
 					break;
 				}
 				case "32560-04.htm":
-				case "32560-09.html":
-				{
+				case "32560-09.html": {
 					htmltext = event;
 					break;
 				}
-				case "32560-05.htm":
-				{
+				case "32560-05.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
 				}
-				case "32560-10.html":
-				{
+				case "32560-10.html": {
 					st.exitQuest(true, true);
 					htmltext = event;
 					break;
@@ -111,31 +102,24 @@ public class Q00700_CursedLife extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = "32560-01.htm";
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				long bones = st.getQuestItemsCount(SWALLOWED_BONES);
 				long ribs = st.getQuestItemsCount(SWALLOWED_STERNUM);
 				long skulls = st.getQuestItemsCount(SWALLOWED_SKULL);
 				long sum = bones + ribs + skulls;
-				if (sum > 0)
-				{
+				if (sum > 0) {
 					st.giveAdena(((bones * SWALLOWED_BONES_ADENA) + (ribs * SWALLOWED_STERNUM_ADENA) + (skulls * SWALLOWED_SKULL_ADENA) + (sum >= 10 ? BONUS : 0)), true);
 					takeItems(player, -1, SWALLOWED_BONES, SWALLOWED_STERNUM, SWALLOWED_SKULL);
 					htmltext = sum < 10 ? "32560-07.html" : "32560-08.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32560-06.html";
 				}
 				break;
@@ -145,117 +129,70 @@ public class Q00700_CursedLife extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if (st != null)
-		{
-			if (npc.getId() == ROK)
-			{
+		if (st != null) {
+			if (npc.getId() == ROK) {
 				int amount = 0, chance = getRandom(1000);
-				if (chance < 700)
-				{
+				if (chance < 700) {
 					amount = 1;
-				}
-				else if (chance < 885)
-				{
+				} else if (chance < 885) {
 					amount = 2;
-				}
-				else if (chance < 949)
-				{
+				} else if (chance < 949) {
 					amount = 3;
-				}
-				else if (chance < 966)
-				{
+				} else if (chance < 966) {
 					amount = getRandom(5) + 4;
-				}
-				else if (chance < 985)
-				{
+				} else if (chance < 985) {
 					amount = getRandom(9) + 4;
-				}
-				else if (chance < 993)
-				{
+				} else if (chance < 993) {
 					amount = getRandom(7) + 13;
-				}
-				else if (chance < 997)
-				{
+				} else if (chance < 997) {
 					amount = getRandom(15) + 9;
-				}
-				else if (chance < 999)
-				{
+				} else if (chance < 999) {
 					amount = getRandom(23) + 53;
-				}
-				else
-				{
+				} else {
 					amount = getRandom(49) + 76;
 				}
 				st.giveItems(SWALLOWED_BONES, amount);
 				chance = getRandom(1000);
-				if (chance < 520)
-				{
+				if (chance < 520) {
 					amount = 1;
-				}
-				else if (chance < 771)
-				{
+				} else if (chance < 771) {
 					amount = 2;
-				}
-				else if (chance < 836)
-				{
+				} else if (chance < 836) {
 					amount = 3;
-				}
-				else if (chance < 985)
-				{
+				} else if (chance < 985) {
 					amount = getRandom(2) + 4;
-				}
-				else if (chance < 995)
-				{
+				} else if (chance < 995) {
 					amount = getRandom(4) + 5;
-				}
-				else
-				{
+				} else {
 					amount = getRandom(8) + 6;
 				}
 				st.giveItems(SWALLOWED_STERNUM, amount);
 				chance = getRandom(1000);
-				if (chance < 185)
-				{
+				if (chance < 185) {
 					amount = getRandom(2) + 1;
-				}
-				else if (chance < 370)
-				{
+				} else if (chance < 370) {
 					amount = getRandom(6) + 2;
-				}
-				else if (chance < 570)
-				{
+				} else if (chance < 570) {
 					amount = getRandom(6) + 7;
-				}
-				else if (chance < 850)
-				{
+				} else if (chance < 850) {
 					amount = getRandom(6) + 12;
-				}
-				else
-				{
+				} else {
 					amount = getRandom(6) + 17;
 				}
 				st.giveItems(SWALLOWED_SKULL, amount);
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-			}
-			else
-			{
+			} else {
 				Integer[] chances = MONSTERS.get(npc.getId());
 				int chance = getRandom(1000);
-				if (chance < chances[0])
-				{
+				if (chance < chances[0]) {
 					st.giveItems(SWALLOWED_BONES, 1);
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-				}
-				else if (chance < chances[1])
-				{
+				} else if (chance < chances[1]) {
 					st.giveItems(SWALLOWED_STERNUM, 1);
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-				}
-				else if (chance < chances[2])
-				{
+				} else if (chance < chances[2]) {
 					st.giveItems(SWALLOWED_SKULL, 1);
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}

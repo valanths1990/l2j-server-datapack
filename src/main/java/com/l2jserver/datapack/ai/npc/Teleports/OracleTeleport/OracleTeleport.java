@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.util.Util;
  * Oracle teleport AI.
  * @author Charus
  */
-public final class OracleTeleport extends AbstractNpcAI
-{
+public final class OracleTeleport extends AbstractNpcAI {
 	// @formatter:off
 	private final static int[] TOWN_DAWN =
 	{
@@ -67,8 +66,7 @@ public final class OracleTeleport extends AbstractNpcAI
 		31122, 31123, 31124, 31125
 	};
 	// @formatter:on
-	private final static Location[] RETURN_LOCS =
-	{
+	private final static Location[] RETURN_LOCS = {
 		new Location(-80555, 150337, -3040),
 		new Location(-13953, 121404, -2984),
 		new Location(16354, 142820, -2696),
@@ -138,8 +136,7 @@ public final class OracleTeleport extends AbstractNpcAI
 	// Item
 	private static final int DIMENSIONAL_FRAGMENT = 7079;
 	
-	private OracleTeleport()
-	{
+	private OracleTeleport() {
 		super(OracleTeleport.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(RIFT_POSTERS);
 		addStartNpc(TELEPORTERS);
@@ -154,67 +151,47 @@ public final class OracleTeleport extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = "";
 		QuestState st = getQuestState(player, false);
 		
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		final int npcId = npc.getId();
-		if (event.equalsIgnoreCase("Return"))
-		{
-			if (Util.contains(TEMPLE_PRIEST, npcId) && (st.getState() == State.STARTED))
-			{
+		if (event.equalsIgnoreCase("Return")) {
+			if (Util.contains(TEMPLE_PRIEST, npcId) && (st.getState() == State.STARTED)) {
 				player.teleToLocation(RETURN_LOCS[st.getInt("id")]);
 				player.setIsIn7sDungeon(false);
 				st.exitQuest(true);
-			}
-			else if (Util.contains(RIFT_POSTERS, npcId) && (st.getState() == State.STARTED))
-			{
+			} else if (Util.contains(RIFT_POSTERS, npcId) && (st.getState() == State.STARTED)) {
 				player.teleToLocation(RETURN_LOCS[st.getInt("id")]);
 				htmltext = "rift_back.htm";
 				st.exitQuest(true);
 			}
-		}
-		else if (event.equalsIgnoreCase("Festival"))
-		{
+		} else if (event.equalsIgnoreCase("Festival")) {
 			int id = st.getInt("id");
-			if (Util.contains(TOWN_DAWN, id))
-			{
+			if (Util.contains(TOWN_DAWN, id)) {
 				player.teleToLocation(new Location(-80157, 111344, -4901));
 				player.setIsIn7sDungeon(true);
-			}
-			else if (Util.contains(TOWN_DUSK, id))
-			{
+			} else if (Util.contains(TOWN_DUSK, id)) {
 				player.teleToLocation(new Location(-81261, 86531, -5157));
 				player.setIsIn7sDungeon(true);
-			}
-			else
-			{
+			} else {
 				htmltext = "oracle1.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("Dimensional"))
-		{
+		} else if (event.equalsIgnoreCase("Dimensional")) {
 			htmltext = "oracle.htm";
 			player.teleToLocation(new Location(-114755, -179466, -6752));
-		}
-		else if (event.equalsIgnoreCase("5.htm"))
-		{
+		} else if (event.equalsIgnoreCase("5.htm")) {
 			int id = st.getInt("id");
-			if (id > -1)
-			{
+			if (id > -1) {
 				htmltext = "5a.htm";
 			}
 			int i = 0;
-			for (int id1 : TELEPORTERS)
-			{
-				if (id1 == npcId)
-				{
+			for (int id1 : TELEPORTERS) {
+				if (id1 == npcId) {
 					break;
 				}
 				i++;
@@ -222,44 +199,27 @@ public final class OracleTeleport extends AbstractNpcAI
 			st.set("id", Integer.toString(i));
 			st.setState(State.STARTED);
 			player.teleToLocation(new Location(-114755, -179466, -6752));
-		}
-		else if (event.equalsIgnoreCase("6.htm"))
-		{
+		} else if (event.equalsIgnoreCase("6.htm")) {
 			htmltext = "6.htm";
 			st.exitQuest(true);
-		}
-		else if (event.equalsIgnoreCase("zigurratDimensional"))
-		{
+		} else if (event.equalsIgnoreCase("zigurratDimensional")) {
 			int playerLevel = player.getLevel();
-			if ((playerLevel >= 20) && (playerLevel < 30))
-			{
+			if ((playerLevel >= 20) && (playerLevel < 30)) {
 				takeItems(player, Inventory.ADENA_ID, 2000);
-			}
-			else if ((playerLevel >= 30) && (playerLevel < 40))
-			{
+			} else if ((playerLevel >= 30) && (playerLevel < 40)) {
 				takeItems(player, Inventory.ADENA_ID, 4500);
-			}
-			else if ((playerLevel >= 40) && (playerLevel < 50))
-			{
+			} else if ((playerLevel >= 40) && (playerLevel < 50)) {
 				takeItems(player, Inventory.ADENA_ID, 8000);
-			}
-			else if ((playerLevel >= 50) && (playerLevel < 60))
-			{
+			} else if ((playerLevel >= 50) && (playerLevel < 60)) {
 				takeItems(player, Inventory.ADENA_ID, 12500);
-			}
-			else if ((playerLevel >= 60) && (playerLevel < 70))
-			{
+			} else if ((playerLevel >= 60) && (playerLevel < 70)) {
 				takeItems(player, Inventory.ADENA_ID, 18000);
-			}
-			else if (playerLevel >= 70)
-			{
+			} else if (playerLevel >= 70) {
 				takeItems(player, Inventory.ADENA_ID, 24500);
 			}
 			int i = 0;
-			for (int ziggurat : TELEPORTERS)
-			{
-				if (ziggurat == npcId)
-				{
+			for (int ziggurat : TELEPORTERS) {
+				if (ziggurat == npcId) {
 					break;
 				}
 				i++;
@@ -274,20 +234,16 @@ public final class OracleTeleport extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = "";
 		QuestState st = getQuestState(player, true);
 		
 		int npcId = npc.getId();
-		if (Util.contains(TOWN_DAWN, npcId))
-		{
+		if (Util.contains(TOWN_DAWN, npcId)) {
 			st.setState(State.STARTED);
 			int i = 0;
-			for (int dawn : TELEPORTERS)
-			{
-				if (dawn == npcId)
-				{
+			for (int dawn : TELEPORTERS) {
+				if (dawn == npcId) {
 					break;
 				}
 				i++;
@@ -297,14 +253,11 @@ public final class OracleTeleport extends AbstractNpcAI
 			player.teleToLocation(new Location(-80157, 111344, -4901));
 			player.setIsIn7sDungeon(true);
 		}
-		if (Util.contains(TOWN_DUSK, npcId))
-		{
+		if (Util.contains(TOWN_DUSK, npcId)) {
 			st.setState(State.STARTED);
 			int i = 0;
-			for (int dusk : TELEPORTERS)
-			{
-				if (dusk == npcId)
-				{
+			for (int dusk : TELEPORTERS) {
+				if (dusk == npcId) {
 					break;
 				}
 				i++;
@@ -313,87 +266,56 @@ public final class OracleTeleport extends AbstractNpcAI
 			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			player.teleToLocation(new Location(-81261, 86531, -5157));
 			player.setIsIn7sDungeon(true);
-		}
-		else if ((npcId >= 31494) && (npcId <= 31507))
-		{
-			if (player.getLevel() < 20)
-			{
+		} else if ((npcId >= 31494) && (npcId <= 31507)) {
+			if (player.getLevel() < 20) {
 				htmltext = "1.htm";
 				st.exitQuest(true);
-			}
-			else if (player.getAllActiveQuests().size() > 23)
-			{
+			} else if (player.getAllActiveQuests().size() > 23) {
 				htmltext = "1a.htm";
 				st.exitQuest(true);
-			}
-			else if (!hasQuestItems(player, DIMENSIONAL_FRAGMENT))
-			{
+			} else if (!hasQuestItems(player, DIMENSIONAL_FRAGMENT)) {
 				htmltext = "3.htm";
-			}
-			else
-			{
+			} else {
 				st.setState(State.CREATED);
 				htmltext = "4.htm";
 			}
-		}
-		else if (((npcId >= 31095) && (npcId <= 31111)) || ((npcId >= 31114) && (npcId <= 31126)))
-		{
+		} else if (((npcId >= 31095) && (npcId <= 31111)) || ((npcId >= 31114) && (npcId <= 31126))) {
 			int playerLevel = player.getLevel();
-			if (playerLevel < 20)
-			{
+			if (playerLevel < 20) {
 				htmltext = "ziggurat_lowlevel.htm";
 				st.exitQuest(true);
-			}
-			else if (player.getAllActiveQuests().size() > 40)
-			{
+			} else if (player.getAllActiveQuests().size() > 40) {
 				player.sendPacket(SystemMessageId.TOO_MANY_QUESTS);
 				st.exitQuest(true);
-			}
-			else if (!hasQuestItems(player, DIMENSIONAL_FRAGMENT))
-			{
+			} else if (!hasQuestItems(player, DIMENSIONAL_FRAGMENT)) {
 				htmltext = "ziggurat_nofrag.htm";
 				st.exitQuest(true);
-			}
-			else if ((playerLevel >= 20) && (playerLevel < 30) && (player.getAdena() < 2000))
-			{
+			} else if ((playerLevel >= 20) && (playerLevel < 30) && (player.getAdena() < 2000)) {
 				htmltext = "ziggurat_noadena.htm";
 				st.exitQuest(true);
-			}
-			else if ((playerLevel >= 30) && (playerLevel < 40) && (player.getAdena() < 4500))
-			{
+			} else if ((playerLevel >= 30) && (playerLevel < 40) && (player.getAdena() < 4500)) {
 				htmltext = "ziggurat_noadena.htm";
 				st.exitQuest(true);
-			}
-			else if ((playerLevel >= 40) && (playerLevel < 50) && (player.getAdena() < 8000))
-			{
+			} else if ((playerLevel >= 40) && (playerLevel < 50) && (player.getAdena() < 8000)) {
 				htmltext = "ziggurat_noadena.htm";
 				st.exitQuest(true);
-			}
-			else if ((playerLevel >= 50) && (playerLevel < 60) && (player.getAdena() < 12500))
-			{
+			} else if ((playerLevel >= 50) && (playerLevel < 60) && (player.getAdena() < 12500)) {
 				htmltext = "ziggurat_noadena.htm";
 				st.exitQuest(true);
-			}
-			else if ((playerLevel >= 60) && (playerLevel < 70) && (player.getAdena() < 18000))
-			{
+			} else if ((playerLevel >= 60) && (playerLevel < 70) && (player.getAdena() < 18000)) {
 				htmltext = "ziggurat_noadena.htm";
 				st.exitQuest(true);
-			}
-			else if ((playerLevel >= 70) && (player.getAdena() < 24500))
-			{
+			} else if ((playerLevel >= 70) && (player.getAdena() < 24500)) {
 				htmltext = "ziggurat_noadena.htm";
 				st.exitQuest(true);
-			}
-			else
-			{
+			} else {
 				htmltext = "ziggurat.htm";
 			}
 		}
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new OracleTeleport();
 	}
 }

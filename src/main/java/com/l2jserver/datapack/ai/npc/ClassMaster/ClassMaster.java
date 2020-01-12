@@ -47,29 +47,25 @@ import com.l2jserver.gameserver.util.StringUtil;
  * @author Zealar
  * @since 2.6.0.0
  */
-public final class ClassMaster extends AbstractNpcAI
-{
+public final class ClassMaster extends AbstractNpcAI {
 	// NPCs
 	private static final int MR_CAT = 31756;
 	private static final int MISS_QUEEN = 31757;
 	// Vars
 	private static final int CUSTOM_EVENT_ID = 1001;
 	
-	private ClassMaster()
-	{
+	private ClassMaster() {
 		super(ClassMaster.class.getSimpleName(), "ai/npc");
 		addStartNpc(MR_CAT, MISS_QUEEN);
 		addFirstTalkId(MR_CAT, MISS_QUEEN);
 		addTalkId(MR_CAT, MISS_QUEEN);
-		if (character().alternateClassMaster())
-		{
+		if (character().alternateClassMaster()) {
 			setOnEnterWorld(true);
 			registerTutorialEvent();
 			registerTutorialQuestionMark();
 		}
 		
-		if (character().allowClassMasters())
-		{
+		if (character().allowClassMasters()) {
 			addSpawn(MR_CAT, new Location(147728, 27408, -2198, 16500));
 			addSpawn(MISS_QUEEN, new Location(147761, 27408, -2198, 16500));
 			addSpawn(MR_CAT, new Location(148560, -57952, -2974, 53000));
@@ -126,21 +122,17 @@ public final class ClassMaster extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onTutorialEvent(L2PcInstance player, String command)
-	{
-		if (command.startsWith("CO"))
-		{
+	public void onTutorialEvent(L2PcInstance player, String command) {
+		if (command.startsWith("CO")) {
 			onTutorialLink(player, command);
 		}
 		super.onTutorialEvent(player, command);
 	}
 	
 	@Override
-	public String onEnterWorld(L2PcInstance player)
-	{
+	public String onEnterWorld(L2PcInstance player) {
 		showQuestionMark(player);
-		Containers.Players().addListener(new ConsumerEventListener(Containers.Players(), ON_PLAYER_LEVEL_CHANGED, (OnPlayerLevelChanged event) ->
-		{
+		Containers.Players().addListener(new ConsumerEventListener(Containers.Players(), ON_PLAYER_LEVEL_CHANGED, (OnPlayerLevelChanged event) -> {
 			showQuestionMark(event.getActiveChar());
 		}, this));
 		
@@ -148,102 +140,72 @@ public final class ClassMaster extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.endsWith(".htm"))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.endsWith(".htm")) {
 			return event;
 		}
-		if (event.startsWith("1stClass"))
-		{
+		if (event.startsWith("1stClass")) {
 			showHtmlMenu(player, npc.getObjectId(), 1);
-		}
-		else if (event.startsWith("2ndClass"))
-		{
+		} else if (event.startsWith("2ndClass")) {
 			showHtmlMenu(player, npc.getObjectId(), 2);
-		}
-		else if (event.startsWith("3rdClass"))
-		{
+		} else if (event.startsWith("3rdClass")) {
 			showHtmlMenu(player, npc.getObjectId(), 3);
-		}
-		else if (event.startsWith("change_class"))
-		{
+		} else if (event.startsWith("change_class")) {
 			int val = Integer.parseInt(event.substring(13));
-			if (checkAndChangeClass(player, val))
-			{
+			if (checkAndChangeClass(player, val)) {
 				String msg = getHtm(player.getHtmlPrefix(), "ok.htm").replace("%name%", ClassListData.getInstance().getClass(val).getClientCode());
 				showResult(player, msg);
 				return "";
 			}
-		}
-		else if (event.startsWith("become_noble"))
-		{
-			if (!player.isNoble())
-			{
+		} else if (event.startsWith("become_noble")) {
+			if (!player.isNoble()) {
 				player.setNoble(true);
 				player.sendPacket(new UserInfo(player));
 				player.sendPacket(new ExBrExtraUserInfo(player));
 				return "nobleok.htm";
 			}
-		}
-		else if (event.startsWith("learn_skills"))
-		{
+		} else if (event.startsWith("learn_skills")) {
 			player.giveAvailableSkills(character().autoLearnForgottenScrollSkills(), true);
-		}
-		else if (event.startsWith("increase_clan_level"))
-		{
-			if (!player.isClanLeader())
-			{
+		} else if (event.startsWith("increase_clan_level")) {
+			if (!player.isClanLeader()) {
 				return "noclanleader.htm";
 			}
-			if (player.getClan().getLevel() >= 5)
-			{
+			if (player.getClan().getLevel() >= 5) {
 				return "noclanlevel.htm";
 			}
 			player.getClan().changeLevel(5);
-		}
-		else
-		{
+		} else {
 			_log.warning("Player " + player + " send invalid request [" + event + "]");
 		}
 		return "";
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return npc.getId() + ".htm";
 	}
 	
-	private void onTutorialLink(L2PcInstance player, String request)
-	{
-		if (!character().alternateClassMaster() || (request == null) || !request.startsWith("CO"))
-		{
+	private void onTutorialLink(L2PcInstance player, String request) {
+		if (!character().alternateClassMaster() || (request == null) || !request.startsWith("CO")) {
 			return;
 		}
 		
-		if (!player.getFloodProtectors().getServerBypass().tryPerformAction("changeclass"))
-		{
+		if (!player.getFloodProtectors().getServerBypass().tryPerformAction("changeclass")) {
 			return;
 		}
 		
-		try
-		{
+		try {
 			int val = Integer.parseInt(request.substring(2));
 			checkAndChangeClass(player, val);
-		}
-		catch (NumberFormatException e)
-		{
+		} catch (NumberFormatException e) {
 			_log.warning("Player " + player + " send invalid class change request [" + request + "]!");
 		}
 		player.sendPacket(STATIC_PACKET);
 	}
 	
 	@Override
-	public String onTutorialQuestionMark(L2PcInstance player, int number)
-	{
-		if (!character().alternateClassMaster() || (number != CUSTOM_EVENT_ID))
-		{
+	public String onTutorialQuestionMark(L2PcInstance player, int number) {
+		if (!character().alternateClassMaster() || (number != CUSTOM_EVENT_ID)) {
 			return "";
 		}
 		
@@ -251,82 +213,59 @@ public final class ClassMaster extends AbstractNpcAI
 		return "";
 	}
 	
-	private void showQuestionMark(L2PcInstance player)
-	{
-		if (!character().alternateClassMaster())
-		{
+	private void showQuestionMark(L2PcInstance player) {
+		if (!character().alternateClassMaster()) {
 			return;
 		}
 		
 		final ClassId classId = player.getClassId();
-		if (getMinLevel(classId.level()) > player.getLevel())
-		{
+		if (getMinLevel(classId.level()) > player.getLevel()) {
 			return;
 		}
 		
-		if (!character().getClassMaster().isAllowed(classId.level() + 1))
-		{
+		if (!character().getClassMaster().isAllowed(classId.level() + 1)) {
 			return;
 		}
 		
 		player.sendPacket(new TutorialShowQuestionMark(CUSTOM_EVENT_ID));
 	}
 	
-	private void showHtmlMenu(L2PcInstance player, int objectId, int level)
-	{
-		if (!character().allowClassMasters())
-		{
+	private void showHtmlMenu(L2PcInstance player, int objectId, int level) {
+		if (!character().allowClassMasters()) {
 			String msg = getHtm(player.getHtmlPrefix(), "disabled.htm");
 			showResult(player, msg);
 			return;
 		}
-		if (!character().getClassMaster().isAllowed(level))
-		{
+		if (!character().getClassMaster().isAllowed(level)) {
 			final NpcHtmlMessage html = new NpcHtmlMessage(objectId);
 			final int jobLevel = player.getClassId().level();
 			final StringBuilder sb = new StringBuilder(100);
 			sb.append("<html><body>");
-			switch (jobLevel)
-			{
+			switch (jobLevel) {
 				case 0:
-					if (character().getClassMaster().isAllowed(1))
-					{
+					if (character().getClassMaster().isAllowed(1)) {
 						sb.append("Come back here when you reached level 20 to change your class.<br>");
-					}
-					else if (character().getClassMaster().isAllowed(2))
-					{
+					} else if (character().getClassMaster().isAllowed(2)) {
 						sb.append("Come back after your first occupation change.<br>");
-					}
-					else if (character().getClassMaster().isAllowed(3))
-					{
+					} else if (character().getClassMaster().isAllowed(3)) {
 						sb.append("Come back after your second occupation change.<br>");
-					}
-					else
-					{
+					} else {
 						sb.append("I can't change your occupation.<br>");
 					}
 					break;
 				case 1:
-					if (character().getClassMaster().isAllowed(2))
-					{
+					if (character().getClassMaster().isAllowed(2)) {
 						sb.append("Come back here when you reached level 40 to change your class.<br>");
-					}
-					else if (character().getClassMaster().isAllowed(3))
-					{
+					} else if (character().getClassMaster().isAllowed(3)) {
 						sb.append("Come back after your second occupation change.<br>");
-					}
-					else
-					{
+					} else {
 						sb.append("I can't change your occupation.<br>");
 					}
 					break;
 				case 2:
-					if (character().getClassMaster().isAllowed(3))
-					{
+					if (character().getClassMaster().isAllowed(3)) {
 						sb.append("Come back here when you reached level 76 to change your class.<br>");
-					}
-					else
-					{
+					} else {
 						sb.append("I can't change your occupation.<br>");
 					}
 					break;
@@ -342,31 +281,25 @@ public final class ClassMaster extends AbstractNpcAI
 		}
 		
 		final ClassId currentClassId = player.getClassId();
-		if (currentClassId.level() >= level)
-		{
+		if (currentClassId.level() >= level) {
 			String msg = getHtm(player.getHtmlPrefix(), "nomore.htm");
 			showResult(player, msg);
 			return;
 		}
 		
 		final int minLevel = getMinLevel(currentClassId.level());
-		if ((player.getLevel() >= minLevel) || character().allowEntireTree())
-		{
+		if ((player.getLevel() >= minLevel) || character().allowEntireTree()) {
 			final StringBuilder menu = new StringBuilder(100);
-			for (ClassId cid : ClassId.values())
-			{
-				if ((cid == ClassId.inspector) && (player.getTotalSubClasses() < 2))
-				{
+			for (ClassId cid : ClassId.values()) {
+				if ((cid == ClassId.inspector) && (player.getTotalSubClasses() < 2)) {
 					continue;
 				}
-				if (validateClassId(currentClassId, cid) && (cid.level() == level))
-				{
+				if (validateClassId(currentClassId, cid) && (cid.level() == level)) {
 					StringUtil.append(menu, "<a action=\"bypass -h Quest ClassMaster change_class ", String.valueOf(cid.getId()), "\">", ClassListData.getInstance().getClass(cid).getClientCode(), "</a><br>");
 				}
 			}
 			
-			if (menu.length() > 0)
-			{
+			if (menu.length() > 0) {
 				String msg = getHtm(player.getHtmlPrefix(), "template.htm").replace("%name%", ClassListData.getInstance().getClass(currentClassId).getClientCode()).replace("%menu%", menu.toString());
 				showResult(player, msg);
 				return;
@@ -377,8 +310,7 @@ public final class ClassMaster extends AbstractNpcAI
 			return;
 		}
 		
-		if (minLevel < Integer.MAX_VALUE)
-		{
+		if (minLevel < Integer.MAX_VALUE) {
 			String msg = getHtm(player.getHtmlPrefix(), "comebacklater.htm").replace("%level%", String.valueOf(minLevel));
 			showResult(player, msg);
 			return;
@@ -387,11 +319,9 @@ public final class ClassMaster extends AbstractNpcAI
 		showResult(player, getHtm(player.getHtmlPrefix(), "nomore.htm"));
 	}
 	
-	private void showTutorialHtml(L2PcInstance player)
-	{
+	private void showTutorialHtml(L2PcInstance player) {
 		final ClassId currentClassId = player.getClassId();
-		if ((getMinLevel(currentClassId.level()) > player.getLevel()) && !character().allowEntireTree())
-		{
+		if ((getMinLevel(currentClassId.level()) > player.getLevel()) && !character().allowEntireTree()) {
 			return;
 		}
 		
@@ -399,14 +329,11 @@ public final class ClassMaster extends AbstractNpcAI
 		msg = msg.replaceAll("%name%", ClassListData.getInstance().getClass(currentClassId).getEscapedClientCode());
 		
 		final StringBuilder menu = new StringBuilder(100);
-		for (ClassId cid : ClassId.values())
-		{
-			if ((cid == ClassId.inspector) && (player.getTotalSubClasses() < 2))
-			{
+		for (ClassId cid : ClassId.values()) {
+			if ((cid == ClassId.inspector) && (player.getTotalSubClasses() < 2)) {
 				continue;
 			}
-			if (validateClassId(currentClassId, cid))
-			{
+			if (validateClassId(currentClassId, cid)) {
 				StringUtil.append(menu, "<a action=\"link CO", String.valueOf(cid.getId()), "\">", ClassListData.getInstance().getClass(cid).getEscapedClientCode(), "</a><br>");
 			}
 		}
@@ -416,68 +343,55 @@ public final class ClassMaster extends AbstractNpcAI
 		player.sendPacket(new TutorialShowHtml(msg));
 	}
 	
-	private boolean checkAndChangeClass(L2PcInstance player, int val)
-	{
+	private boolean checkAndChangeClass(L2PcInstance player, int val) {
 		final ClassId currentClassId = player.getClassId();
-		if ((getMinLevel(currentClassId.level()) > player.getLevel()) && !character().allowEntireTree())
-		{
+		if ((getMinLevel(currentClassId.level()) > player.getLevel()) && !character().allowEntireTree()) {
 			return false;
 		}
 		
-		if (!validateClassId(currentClassId, val))
-		{
+		if (!validateClassId(currentClassId, val)) {
 			return false;
 		}
 		
 		final int newJobLevel = currentClassId.level() + 1;
 		
 		// Weight/Inventory check
-		if (!character().getClassMaster().getRewardItems(newJobLevel).isEmpty() && !player.isInventoryUnder90(false))
-		{
+		if (!character().getClassMaster().getRewardItems(newJobLevel).isEmpty() && !player.isInventoryUnder90(false)) {
 			player.sendPacket(INVENTORY_LESS_THAN_80_PERCENT);
 			return false;
 		}
 		
 		// check if player have all required items for class transfer
-		for (ItemHolder holder : character().getClassMaster().getRequireItems(newJobLevel))
-		{
-			if (player.getInventory().getInventoryItemCount(holder.getId(), -1) < holder.getCount())
-			{
+		for (ItemHolder holder : character().getClassMaster().getRequireItems(newJobLevel)) {
+			if (player.getInventory().getInventoryItemCount(holder.getId(), -1) < holder.getCount()) {
 				player.sendPacket(NOT_ENOUGH_ITEMS);
 				return false;
 			}
 		}
 		
 		// get all required items for class transfer
-		for (ItemHolder holder : character().getClassMaster().getRequireItems(newJobLevel))
-		{
-			if (!player.destroyItemByItemId("ClassMaster", holder.getId(), holder.getCount(), player, true))
-			{
+		for (ItemHolder holder : character().getClassMaster().getRequireItems(newJobLevel)) {
+			if (!player.destroyItemByItemId("ClassMaster", holder.getId(), holder.getCount(), player, true)) {
 				return false;
 			}
 		}
 		
 		// reward player with items
-		for (ItemHolder holder : character().getClassMaster().getRewardItems(newJobLevel))
-		{
+		for (ItemHolder holder : character().getClassMaster().getRewardItems(newJobLevel)) {
 			player.addItem("ClassMaster", holder.getId(), holder.getCount(), player, true);
 		}
 		
 		player.setClassId(val);
 		
-		if (player.isSubClassActive())
-		{
+		if (player.isSubClassActive()) {
 			player.getSubClasses().get(player.getClassIndex()).setClassId(player.getActiveClass());
-		}
-		else
-		{
+		} else {
 			player.setBaseClass(player.getActiveClass());
 		}
 		
 		player.broadcastUserInfo();
 		
-		if (character().getClassMaster().isAllowed(player.getClassId().level() + 1) && character().alternateClassMaster() && (((player.getClassId().level() == 1) && (player.getLevel() >= 40)) || ((player.getClassId().level() == 2) && (player.getLevel() >= 76))))
-		{
+		if (character().getClassMaster().isAllowed(player.getClassId().level() + 1) && character().alternateClassMaster() && (((player.getClassId().level() == 1) && (player.getLevel() >= 40)) || ((player.getClassId().level() == 2) && (player.getLevel() >= 76)))) {
 			showQuestionMark(player);
 		}
 		
@@ -488,10 +402,8 @@ public final class ClassMaster extends AbstractNpcAI
 	 * @param level - current skillId level (0 - start, 1 - first, etc)
 	 * @return minimum player level required for next class transfer
 	 */
-	private static int getMinLevel(int level)
-	{
-		switch (level)
-		{
+	private static int getMinLevel(int level) {
+		switch (level) {
 			case 0:
 				return 20;
 			case 1:
@@ -509,8 +421,7 @@ public final class ClassMaster extends AbstractNpcAI
 	 * @param val new class index
 	 * @return {@code true} if the class ID is valid
 	 */
-	private static boolean validateClassId(ClassId oldCID, int val)
-	{
+	private static boolean validateClassId(ClassId oldCID, int val) {
 		return validateClassId(oldCID, ClassId.getClassId(val));
 	}
 	
@@ -520,20 +431,16 @@ public final class ClassMaster extends AbstractNpcAI
 	 * @param newCID new ClassId
 	 * @return true if class change is possible
 	 */
-	private static boolean validateClassId(ClassId oldCID, ClassId newCID)
-	{
+	private static boolean validateClassId(ClassId oldCID, ClassId newCID) {
 		return (newCID != null) && (newCID.getRace() != null) && ((oldCID.equals(newCID.getParent()) || (character().allowEntireTree() && newCID.childOf(oldCID))));
 	}
 	
-	private static String getRequiredItems(int level)
-	{
-		if ((character().getClassMaster().getRequireItems(level) == null) || character().getClassMaster().getRequireItems(level).isEmpty())
-		{
+	private static String getRequiredItems(int level) {
+		if ((character().getClassMaster().getRequireItems(level) == null) || character().getClassMaster().getRequireItems(level).isEmpty()) {
 			return "<tr><td>none</td></tr>";
 		}
 		final StringBuilder sb = new StringBuilder();
-		for (ItemHolder holder : character().getClassMaster().getRequireItems(level))
-		{
+		for (ItemHolder holder : character().getClassMaster().getRequireItems(level)) {
 			sb.append("<tr><td><font color=\"LEVEL\">");
 			sb.append(holder.getCount());
 			sb.append("</font></td><td>");
@@ -543,8 +450,7 @@ public final class ClassMaster extends AbstractNpcAI
 		return sb.toString();
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new ClassMaster();
 	}
 }

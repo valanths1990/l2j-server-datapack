@@ -39,8 +39,7 @@ import com.l2jserver.gameserver.util.Util;
  * Path Of The Rogue (403)
  * @author ivantotov
  */
-public final class Q00403_PathOfTheRogue extends Quest
-{
+public final class Q00403_PathOfTheRogue extends Quest {
 	// NPCs
 	private static final int CAPTAIN_BEZIQUE = 30379;
 	private static final int NETI = 30425;
@@ -55,8 +54,7 @@ public final class Q00403_PathOfTheRogue extends Quest
 	private static final int STOLEN_TOMES = 1187;
 	private static final int STOLEN_RING = 1188;
 	private static final int STOLEN_NECKLACE = 1189;
-	private static final int[] STOLEN_ITEMS =
-	{
+	private static final int[] STOLEN_ITEMS = {
 		STOLEN_JEWELRY,
 		STOLEN_TOMES,
 		STOLEN_RING,
@@ -71,8 +69,7 @@ public final class Q00403_PathOfTheRogue extends Quest
 	private static final int CATS_EYE_BANDIT = 27038;
 	// Monster
 	private static final Map<Integer, ItemChanceHolder> MONSTER_DROPS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTER_DROPS.put(20035, new ItemChanceHolder(SPARTOIS_BONES, 2)); // Tracker Skeleton
 		MONSTER_DROPS.put(20042, new ItemChanceHolder(SPARTOIS_BONES, 3)); // Tracker Skeleton Leader
 		MONSTER_DROPS.put(20045, new ItemChanceHolder(SPARTOIS_BONES, 2)); // Skeleton Scout
@@ -81,8 +78,7 @@ public final class Q00403_PathOfTheRogue extends Quest
 		MONSTER_DROPS.put(20060, new ItemChanceHolder(SPARTOIS_BONES, 8)); // Raging Spartoi
 	}
 	
-	public Q00403_PathOfTheRogue()
-	{
+	public Q00403_PathOfTheRogue() {
 		super(403, Q00403_PathOfTheRogue.class.getSimpleName(), "Path Of The Rogue");
 		addStartNpc(CAPTAIN_BEZIQUE);
 		addTalkId(CAPTAIN_BEZIQUE, NETI);
@@ -94,49 +90,33 @@ public final class Q00403_PathOfTheRogue extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (player.getClassId() == ClassId.fighter)
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (hasQuestItems(player, BEZIQUES_RECOMMENDATION))
-						{
+		switch (event) {
+			case "ACCEPT": {
+				if (player.getClassId() == ClassId.fighter) {
+					if (player.getLevel() >= MIN_LEVEL) {
+						if (hasQuestItems(player, BEZIQUES_RECOMMENDATION)) {
 							htmltext = "30379-04.htm";
-						}
-						else
-						{
+						} else {
 							htmltext = "30379-05.htm";
 						}
-					}
-					else
-					{
+					} else {
 						htmltext = "30379-03.htm";
 					}
-				}
-				else if (player.getClassId() == ClassId.rogue)
-				{
+				} else if (player.getClassId() == ClassId.rogue) {
 					htmltext = "30379-02a.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30379-02.htm";
 				}
 				break;
 			}
-			case "30379-06.htm":
-			{
+			case "30379-06.htm": {
 				qs.startQuest();
 				giveItems(player, BEZIQUES_LETTER, 1);
 				htmltext = event;
@@ -144,22 +124,17 @@ public final class Q00403_PathOfTheRogue extends Quest
 			}
 			case "30425-02.html":
 			case "30425-03.html":
-			case "30425-04.html":
-			{
+			case "30425-04.html": {
 				htmltext = event;
 				break;
 			}
-			case "30425-05.html":
-			{
-				if (hasQuestItems(player, BEZIQUES_LETTER))
-				{
+			case "30425-05.html": {
+				if (hasQuestItems(player, BEZIQUES_LETTER)) {
 					takeItems(player, BEZIQUES_LETTER, 1);
-					if (!hasQuestItems(player, NETIS_BOW))
-					{
+					if (!hasQuestItems(player, NETIS_BOW)) {
 						giveItems(player, NETIS_BOW, 1);
 					}
-					if (!hasQuestItems(player, NETIS_DAGGER))
-					{
+					if (!hasQuestItems(player, NETIS_DAGGER)) {
 						giveItems(player, NETIS_DAGGER, 1);
 					}
 					qs.setCond(2, true);
@@ -172,38 +147,26 @@ public final class Q00403_PathOfTheRogue extends Quest
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final QuestState qs = getQuestState(attacker, false);
-		if ((qs != null) && qs.isStarted())
-		{
-			switch (npc.getScriptValue())
-			{
-				case 0:
-				{
+		if ((qs != null) && qs.isStarted()) {
+			switch (npc.getScriptValue()) {
+				case 0: {
 					npc.getVariables().set("lastAttacker", attacker.getObjectId());
-					if (!checkWeapon(attacker))
-					{
+					if (!checkWeapon(attacker)) {
 						npc.setScriptValue(2);
-					}
-					else
-					{
-						if (npc.getId() == CATS_EYE_BANDIT)
-						{
+					} else {
+						if (npc.getId() == CATS_EYE_BANDIT) {
 							attacker.sendPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.YOU_CHILDISH_FOOL_DO_YOU_THINK_YOU_CAN_CATCH_ME));
 						}
 						npc.setScriptValue(1);
 					}
 					break;
 				}
-				case 1:
-				{
-					if (!checkWeapon(attacker))
-					{
+				case 1: {
+					if (!checkWeapon(attacker)) {
 						npc.setScriptValue(2);
-					}
-					else if (npc.getVariables().getInt("lastAttacker") != attacker.getObjectId())
-					{
+					} else if (npc.getVariables().getInt("lastAttacker") != attacker.getObjectId()) {
 						npc.setScriptValue(2);
 					}
 					break;
@@ -214,44 +177,30 @@ public final class Q00403_PathOfTheRogue extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && npc.isScriptValue(1) && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			if (npc.getId() == CATS_EYE_BANDIT)
-			{
+		if ((qs != null) && qs.isStarted() && npc.isScriptValue(1) && Util.checkIfInRange(1500, npc, killer, true)) {
+			if (npc.getId() == CATS_EYE_BANDIT) {
 				npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.I_MUST_DO_SOMETHING_ABOUT_THIS_SHAMEFUL_INCIDENT));
-				if (hasQuestItems(killer, MOST_WANTED_LIST))
-				{
+				if (hasQuestItems(killer, MOST_WANTED_LIST)) {
 					int randomItem = STOLEN_ITEMS[getRandom(STOLEN_ITEMS.length)];
-					if (!hasQuestItems(killer, randomItem))
-					{
+					if (!hasQuestItems(killer, randomItem)) {
 						giveItems(killer, randomItem, 1);
 						
-						if (hasQuestItems(killer, STOLEN_ITEMS))
-						{
+						if (hasQuestItems(killer, STOLEN_ITEMS)) {
 							qs.setCond(6, true);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 				}
-			}
-			else
-			{
+			} else {
 				final ItemChanceHolder reward = MONSTER_DROPS.get(npc.getId());
-				if ((getQuestItemsCount(killer, reward.getId()) < REQUIRED_ITEM_COUNT) && npc.isScriptValue(1) && (getRandom(REQUIRED_ITEM_COUNT) < reward.getChance()))
-				{
+				if ((getQuestItemsCount(killer, reward.getId()) < REQUIRED_ITEM_COUNT) && npc.isScriptValue(1) && (getRandom(REQUIRED_ITEM_COUNT) < reward.getChance())) {
 					giveItems(killer, reward.getId(), reward.getCount());
-					if (getQuestItemsCount(killer, reward.getId()) >= REQUIRED_ITEM_COUNT)
-					{
+					if (getQuestItemsCount(killer, reward.getId()) >= REQUIRED_ITEM_COUNT) {
 						qs.setCond(3, true);
-					}
-					else
-					{
+					} else {
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
@@ -260,32 +209,23 @@ public final class Q00403_PathOfTheRogue extends Quest
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private boolean checkWeapon(L2PcInstance player)
-	{
+	private boolean checkWeapon(L2PcInstance player) {
 		L2ItemInstance weapon = player.getActiveWeaponInstance();
 		return ((weapon != null) && ((weapon.getId() == NETIS_BOW) || (weapon.getId() == NETIS_DAGGER)));
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated() || qs.isCompleted())
-		{
-			if (npc.getId() == CAPTAIN_BEZIQUE)
-			{
+		if (qs.isCreated() || qs.isCompleted()) {
+			if (npc.getId() == CAPTAIN_BEZIQUE) {
 				htmltext = "30379-01.htm";
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case CAPTAIN_BEZIQUE:
-				{
-					if (hasQuestItems(player, STOLEN_JEWELRY, STOLEN_TOMES, STOLEN_RING, STOLEN_NECKLACE))
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case CAPTAIN_BEZIQUE: {
+					if (hasQuestItems(player, STOLEN_JEWELRY, STOLEN_TOMES, STOLEN_RING, STOLEN_NECKLACE)) {
 						giveAdena(player, 163800, true);
 						takeItems(player, NETIS_BOW, 1);
 						takeItems(player, NETIS_DAGGER, 1);
@@ -296,70 +236,46 @@ public final class Q00403_PathOfTheRogue extends Quest
 						takeItems(player, STOLEN_NECKLACE, 1);
 						giveItems(player, BEZIQUES_RECOMMENDATION, 1);
 						final int level = player.getLevel();
-						if (level >= 20)
-						{
+						if (level >= 20) {
 							addExpAndSp(player, 320534, 20232);
-						}
-						else if (level == 19)
-						{
+						} else if (level == 19) {
 							addExpAndSp(player, 456128, 26930);
-						}
-						else
-						{
+						} else {
 							addExpAndSp(player, 591724, 33628);
 						}
 						qs.exitQuest(false, true);
 						player.sendPacket(new SocialAction(player.getObjectId(), 3));
 						qs.saveGlobalQuestVar("1ClassQuestFinished", "1");
 						htmltext = "30379-09.html";
-					}
-					else if (!hasQuestItems(player, HORSESHOE_OF_LIGHT) && hasQuestItems(player, BEZIQUES_LETTER))
-					{
+					} else if (!hasQuestItems(player, HORSESHOE_OF_LIGHT) && hasQuestItems(player, BEZIQUES_LETTER)) {
 						htmltext = "30379-07.html";
-					}
-					else if (hasQuestItems(player, HORSESHOE_OF_LIGHT))
-					{
+					} else if (hasQuestItems(player, HORSESHOE_OF_LIGHT)) {
 						takeItems(player, HORSESHOE_OF_LIGHT, 1);
 						giveItems(player, MOST_WANTED_LIST, 1);
 						qs.setCond(5, true);
 						htmltext = "30379-08.html";
-					}
-					else if (hasQuestItems(player, NETIS_BOW, NETIS_DAGGER) && !hasQuestItems(player, MOST_WANTED_LIST))
-					{
+					} else if (hasQuestItems(player, NETIS_BOW, NETIS_DAGGER) && !hasQuestItems(player, MOST_WANTED_LIST)) {
 						htmltext = "30379-10.html";
-					}
-					else if (hasQuestItems(player, MOST_WANTED_LIST))
-					{
+					} else if (hasQuestItems(player, MOST_WANTED_LIST)) {
 						htmltext = "30379-11.html";
 					}
 					break;
 				}
-				case NETI:
-				{
-					if (hasQuestItems(player, BEZIQUES_LETTER))
-					{
+				case NETI: {
+					if (hasQuestItems(player, BEZIQUES_LETTER)) {
 						htmltext = "30425-01.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, HORSESHOE_OF_LIGHT, BEZIQUES_LETTER))
-					{
-						if (hasQuestItems(player, MOST_WANTED_LIST))
-						{
+					} else if (!hasAtLeastOneQuestItem(player, HORSESHOE_OF_LIGHT, BEZIQUES_LETTER)) {
+						if (hasQuestItems(player, MOST_WANTED_LIST)) {
 							htmltext = "30425-08.html";
-						}
-						else if (getQuestItemsCount(player, SPARTOIS_BONES) < REQUIRED_ITEM_COUNT)
-						{
+						} else if (getQuestItemsCount(player, SPARTOIS_BONES) < REQUIRED_ITEM_COUNT) {
 							htmltext = "30425-06.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, SPARTOIS_BONES, REQUIRED_ITEM_COUNT);
 							giveItems(player, HORSESHOE_OF_LIGHT, 1);
 							qs.setCond(4, true);
 							htmltext = "30425-07.html";
 						}
-					}
-					else if (hasQuestItems(player, HORSESHOE_OF_LIGHT))
-					{
+					} else if (hasQuestItems(player, HORSESHOE_OF_LIGHT)) {
 						htmltext = "30425-08.html";
 					}
 					break;

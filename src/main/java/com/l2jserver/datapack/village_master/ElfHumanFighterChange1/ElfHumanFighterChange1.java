@@ -29,11 +29,9 @@ import com.l2jserver.gameserver.model.base.ClassId;
  * Elf Human class transfer AI
  * @author Adry_85
  */
-public final class ElfHumanFighterChange1 extends AbstractNpcAI
-{
+public final class ElfHumanFighterChange1 extends AbstractNpcAI {
 	// NPCs
-	private static int[] NPCS =
-	{
+	private static int[] NPCS = {
 		30066, // Pabris
 		30288, // Rains
 		30373, // Ramos
@@ -54,19 +52,16 @@ public final class ElfHumanFighterChange1 extends AbstractNpcAI
 	private static final int ELVEN_KNIGHT = 19;
 	private static final int ELVEN_SCOUT = 22;
 	
-	private ElfHumanFighterChange1()
-	{
+	private ElfHumanFighterChange1() {
 		super(ElfHumanFighterChange1.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "30066-01.htm": // pabris003h
 			case "30066-02.htm": // pabris006ha
 			case "30066-03.htm": // pabris007ha
@@ -143,8 +138,7 @@ public final class ElfHumanFighterChange1 extends AbstractNpcAI
 			case "4":
 			case "7":
 			case "19":
-			case "22":
-			{
+			case "22": {
 				htmltext = ClassChangeRequested(player, npc, Integer.valueOf(event));
 				break;
 			}
@@ -152,36 +146,22 @@ public final class ElfHumanFighterChange1 extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	private String ClassChangeRequested(L2PcInstance player, L2Npc npc, int classId)
-	{
+	private String ClassChangeRequested(L2PcInstance player, L2Npc npc, int classId) {
 		String htmltext = null;
-		if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP))
-		{
+		if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP)) {
 			htmltext = npc.getId() + "-19.htm"; // fnYouAreSecondClass
-		}
-		else if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP))
-		{
+		} else if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP)) {
 			htmltext = npc.getId() + "-20.htm"; // fnYouAreThirdClass
-		}
-		else if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
-		{
+		} else if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP)) {
 			htmltext = "30066-41.htm"; // fnYouAreFourthClass
-		}
-		else if ((classId == WARRIOR) && (player.getClassId() == ClassId.fighter))
-		{
-			if (player.getLevel() < 20)
-			{
-				if (hasQuestItems(player, MEDALLION_OF_WARRIOR))
-				{
+		} else if ((classId == WARRIOR) && (player.getClassId() == ClassId.fighter)) {
+			if (player.getLevel() < 20) {
+				if (hasQuestItems(player, MEDALLION_OF_WARRIOR)) {
 					htmltext = npc.getId() + "-21.htm"; // fnLowLevel11
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-22.htm"; // fnLowLevelNoProof11
 				}
-			}
-			else if (hasQuestItems(player, MEDALLION_OF_WARRIOR))
-			{
+			} else if (hasQuestItems(player, MEDALLION_OF_WARRIOR)) {
 				takeItems(player, MEDALLION_OF_WARRIOR, -1);
 				player.setClassId(WARRIOR);
 				player.setBaseClass(WARRIOR);
@@ -189,27 +169,17 @@ public final class ElfHumanFighterChange1 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 				htmltext = npc.getId() + "-23.htm"; // fnAfterClassChange11
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-24.htm"; // fnNoProof11
 			}
-		}
-		else if ((classId == KNIGHT) && (player.getClassId() == ClassId.fighter))
-		{
-			if (player.getLevel() < 20)
-			{
-				if (hasQuestItems(player, SWORD_OF_RITUAL))
-				{
+		} else if ((classId == KNIGHT) && (player.getClassId() == ClassId.fighter)) {
+			if (player.getLevel() < 20) {
+				if (hasQuestItems(player, SWORD_OF_RITUAL)) {
 					htmltext = npc.getId() + "-25.htm"; // fnLowLevel12
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-26.htm"; // fnLowLevelNoProof12
 				}
-			}
-			else if (hasQuestItems(player, SWORD_OF_RITUAL))
-			{
+			} else if (hasQuestItems(player, SWORD_OF_RITUAL)) {
 				takeItems(player, SWORD_OF_RITUAL, -1);
 				player.setClassId(KNIGHT);
 				player.setBaseClass(KNIGHT);
@@ -217,27 +187,17 @@ public final class ElfHumanFighterChange1 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 				htmltext = npc.getId() + "-27.htm"; // fnAfterClassChange12
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-28.htm"; // fnNoProof12
 			}
-		}
-		else if ((classId == ROGUE) && (player.getClassId() == ClassId.fighter))
-		{
-			if (player.getLevel() < 20)
-			{
-				if (hasQuestItems(player, BEZIQUES_RECOMMENDATION))
-				{
+		} else if ((classId == ROGUE) && (player.getClassId() == ClassId.fighter)) {
+			if (player.getLevel() < 20) {
+				if (hasQuestItems(player, BEZIQUES_RECOMMENDATION)) {
 					htmltext = npc.getId() + "-29.htm"; // fnLowLevel13
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-30.htm"; // fnLowLevelNoProof13
 				}
-			}
-			else if (hasQuestItems(player, BEZIQUES_RECOMMENDATION))
-			{
+			} else if (hasQuestItems(player, BEZIQUES_RECOMMENDATION)) {
 				takeItems(player, BEZIQUES_RECOMMENDATION, -1);
 				player.setClassId(ROGUE);
 				player.setBaseClass(ROGUE);
@@ -245,27 +205,17 @@ public final class ElfHumanFighterChange1 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 				htmltext = npc.getId() + "-31.htm"; // fnAfterClassChange13
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-32.htm"; // fnNoProof13
 			}
-		}
-		else if ((classId == ELVEN_KNIGHT) && (player.getClassId() == ClassId.elvenFighter))
-		{
-			if (player.getLevel() < 20)
-			{
-				if (hasQuestItems(player, ELVEN_KNIGHT_BROOCH))
-				{
+		} else if ((classId == ELVEN_KNIGHT) && (player.getClassId() == ClassId.elvenFighter)) {
+			if (player.getLevel() < 20) {
+				if (hasQuestItems(player, ELVEN_KNIGHT_BROOCH)) {
 					htmltext = npc.getId() + "-33.htm"; // fnLowLevel21
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-34.htm"; // fnLowLevelNoProof21
 				}
-			}
-			else if (hasQuestItems(player, ELVEN_KNIGHT_BROOCH))
-			{
+			} else if (hasQuestItems(player, ELVEN_KNIGHT_BROOCH)) {
 				takeItems(player, ELVEN_KNIGHT_BROOCH, -1);
 				player.setClassId(ELVEN_KNIGHT);
 				player.setBaseClass(ELVEN_KNIGHT);
@@ -273,27 +223,17 @@ public final class ElfHumanFighterChange1 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 				htmltext = npc.getId() + "-35.htm"; // fnAfterClassChange21
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-36.htm"; // fnNoProof21
 			}
-		}
-		else if ((classId == ELVEN_SCOUT) && (player.getClassId() == ClassId.elvenFighter))
-		{
-			if (player.getLevel() < 20)
-			{
-				if (hasQuestItems(player, REISAS_RECOMMENDATION))
-				{
+		} else if ((classId == ELVEN_SCOUT) && (player.getClassId() == ClassId.elvenFighter)) {
+			if (player.getLevel() < 20) {
+				if (hasQuestItems(player, REISAS_RECOMMENDATION)) {
 					htmltext = npc.getId() + "-37.htm"; // fnLowLevel22
-				}
-				else
-				{
+				} else {
 					htmltext = npc.getId() + "-38.htm"; // fnLowLevelNoProof22
 				}
-			}
-			else if (hasQuestItems(player, REISAS_RECOMMENDATION))
-			{
+			} else if (hasQuestItems(player, REISAS_RECOMMENDATION)) {
 				takeItems(player, REISAS_RECOMMENDATION, -1);
 				player.setClassId(ELVEN_SCOUT);
 				player.setBaseClass(ELVEN_SCOUT);
@@ -301,9 +241,7 @@ public final class ElfHumanFighterChange1 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
 				htmltext = npc.getId() + "-39.htm"; // fnAfterClassChange22
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-40.htm"; // fnNoProof22
 			}
 		}
@@ -311,30 +249,22 @@ public final class ElfHumanFighterChange1 extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
 		final Race playerRace = player.getRace();
-		if (player.isInCategory(CategoryType.FIGHTER_GROUP) && ((playerRace == Race.HUMAN) || (playerRace == Race.ELF)))
-		{
-			if (playerRace == Race.HUMAN)
-			{
+		if (player.isInCategory(CategoryType.FIGHTER_GROUP) && ((playerRace == Race.HUMAN) || (playerRace == Race.ELF))) {
+			if (playerRace == Race.HUMAN) {
 				htmltext = npc.getId() + "-01.htm"; // fnClassList1
-			}
-			else
-			{
+			} else {
 				htmltext = npc.getId() + "-11.htm"; // fnClassList2
 			}
-		}
-		else
-		{
+		} else {
 			htmltext = npc.getId() + "-18.htm"; // fnClassMismatch
 		}
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new ElfHumanFighterChange1();
 	}
 }

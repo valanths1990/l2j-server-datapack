@@ -29,13 +29,11 @@ import com.l2jserver.gameserver.model.skills.Skill;
  * Set Skill effect implementation.
  * @author Zoey76
  */
-public final class SetSkill extends AbstractEffect
-{
+public final class SetSkill extends AbstractEffect {
 	private final int _skillId;
 	private final int _skillLvl;
 	
-	public SetSkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public SetSkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_skillId = params.getInt("skillId", 0);
@@ -43,22 +41,18 @@ public final class SetSkill extends AbstractEffect
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if ((info.getEffected() == null) || !info.getEffected().isPlayer())
-		{
+	public void onStart(BuffInfo info) {
+		if ((info.getEffected() == null) || !info.getEffected().isPlayer()) {
 			return;
 		}
 		
 		final Skill skill = SkillData.getInstance().getSkill(_skillId, _skillLvl);
-		if (skill == null)
-		{
+		if (skill == null) {
 			return;
 		}
 		

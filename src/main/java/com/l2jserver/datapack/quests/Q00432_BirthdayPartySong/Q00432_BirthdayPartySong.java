@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by CubicVirtuoso.
  * @author malyelfik
  */
-public class Q00432_BirthdayPartySong extends Quest
-{
+public class Q00432_BirthdayPartySong extends Quest {
 	// NPC
 	private static final int OCTAVIA = 31043;
 	// Monster
@@ -41,8 +40,7 @@ public class Q00432_BirthdayPartySong extends Quest
 	// Reward
 	private static final int ECHO_CRYSTAL = 7061;
 	
-	public Q00432_BirthdayPartySong()
-	{
+	public Q00432_BirthdayPartySong() {
 		super(432, Q00432_BirthdayPartySong.class.getSimpleName(), "Birthday Party Song");
 		addStartNpc(OCTAVIA);
 		addTalkId(OCTAVIA);
@@ -51,24 +49,20 @@ public class Q00432_BirthdayPartySong extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "31043-02.htm":
 				st.startQuest();
 				break;
 			case "31043-05.html":
-				if (st.getQuestItemsCount(RED_CRYSTAL) < 50)
-				{
+				if (st.getQuestItemsCount(RED_CRYSTAL) < 50) {
 					return "31043-06.html";
 				}
 				
@@ -83,19 +77,14 @@ public class Q00432_BirthdayPartySong extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
 		
-		if ((st != null) && st.isCond(1) && getRandomBoolean())
-		{
+		if ((st != null) && st.isCond(1) && getRandomBoolean()) {
 			st.giveItems(RED_CRYSTAL, 1);
-			if (st.getQuestItemsCount(RED_CRYSTAL) == 50)
-			{
+			if (st.getQuestItemsCount(RED_CRYSTAL) == 50) {
 				st.setCond(2, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -103,12 +92,10 @@ public class Q00432_BirthdayPartySong extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= 31) ? "31043-01.htm" : "31043-00.htm";
 				break;

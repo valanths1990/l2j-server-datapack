@@ -30,10 +30,8 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 /**
  * @author Tryskell
  */
-public class SiegeStatus implements IUserCommandHandler
-{
-	private static final int[] COMMAND_IDS =
-	{
+public class SiegeStatus implements IUserCommandHandler {
+	private static final int[] COMMAND_IDS = {
 		99
 	};
 	
@@ -41,36 +39,29 @@ public class SiegeStatus implements IUserCommandHandler
 	private static final String OUTSIDE_SIEGE_ZONE = "No Castle Siege Area";
 	
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
-		if (id != COMMAND_IDS[0])
-		{
+	public boolean useUserCommand(int id, L2PcInstance activeChar) {
+		if (id != COMMAND_IDS[0]) {
 			return false;
 		}
 		
-		if (!activeChar.isNoble() || !activeChar.isClanLeader())
-		{
+		if (!activeChar.isNoble() || !activeChar.isClanLeader()) {
 			activeChar.sendPacket(SystemMessageId.ONLY_NOBLESSE_LEADER_CAN_VIEW_SIEGE_STATUS_WINDOW);
 			return false;
 		}
 		
-		for (Siege siege : SiegeManager.getInstance().getSieges())
-		{
-			if (!siege.isInProgress())
-			{
+		for (Siege siege : SiegeManager.getInstance().getSieges()) {
+			if (!siege.isInProgress()) {
 				continue;
 			}
 			
 			final L2Clan clan = activeChar.getClan();
-			if (!siege.checkIsAttacker(clan) && !siege.checkIsDefender(clan))
-			{
+			if (!siege.checkIsAttacker(clan) && !siege.checkIsDefender(clan)) {
 				continue;
 			}
 			
 			final L2SiegeZone siegeZone = siege.getCastle().getZone();
 			final StringBuilder sb = new StringBuilder();
-			for (L2PcInstance member : clan.getOnlineMembers(0))
-			{
+			for (L2PcInstance member : clan.getOnlineMembers(0)) {
 				sb.append("<tr><td width=170>");
 				sb.append(member.getName());
 				sb.append("</td><td width=100>");
@@ -94,8 +85,7 @@ public class SiegeStatus implements IUserCommandHandler
 	}
 	
 	@Override
-	public int[] getUserCommandList()
-	{
+	public int[] getUserCommandList() {
 		return COMMAND_IDS;
 	}
 	

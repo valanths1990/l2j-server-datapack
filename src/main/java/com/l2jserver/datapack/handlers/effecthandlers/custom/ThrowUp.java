@@ -33,32 +33,27 @@ import com.l2jserver.gameserver.network.serverpackets.ValidateLocation;
 /**
  * Throw Up effect implementation.
  */
-public final class ThrowUp extends AbstractEffect
-{
+public final class ThrowUp extends AbstractEffect {
 	private final int _flyRadius;
 	
-	public ThrowUp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public ThrowUp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_flyRadius = params.getInt("flyRadius", 0);
 	}
 	
 	@Override
-	public int getEffectFlags()
-	{
+	public int getEffectFlags() {
 		return EffectFlag.STUNNED.getMask();
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		L2Character target = info.getEffected();
 		L2Character activeChar = info.getEffector();
 		
@@ -72,8 +67,7 @@ public final class ThrowUp extends AbstractEffect
 		double dy = activeChar.getY() - curY;
 		double dz = activeChar.getZ() - curZ;
 		double distance = Math.hypot(dx, dy);
-		if (distance > 2000)
-		{
+		if (distance > 2000) {
 			_log.info("EffectThrow was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " + activeChar.getX() + "," + activeChar.getY());
 			return;
 		}
@@ -82,14 +76,12 @@ public final class ThrowUp extends AbstractEffect
 		// approximation for moving futher when z coordinates are different
 		// TODO: handle Z axis movement better
 		offset += Math.abs(dz);
-		if (offset < 5)
-		{
+		if (offset < 5) {
 			offset = 5;
 		}
 		
 		// If no distance
-		if (distance < 1)
-		{
+		if (distance < 1) {
 			return;
 		}
 		

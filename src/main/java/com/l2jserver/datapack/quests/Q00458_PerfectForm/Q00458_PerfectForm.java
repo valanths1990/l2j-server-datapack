@@ -32,29 +32,24 @@ import com.l2jserver.gameserver.network.serverpackets.ExQuestNpcLogList;
  * Perfect Form (458)
  * @author jurchiks
  */
-public class Q00458_PerfectForm extends Quest
-{
+public class Q00458_PerfectForm extends Quest {
 	// NPCs
 	private static final int KELLEYIA = 32768;
 	// Monsters
 	// Level 4 (full grown) feedable beasts
-	private static final int[] KOOKABURRAS =
-	{
+	private static final int[] KOOKABURRAS = {
 		18878,
 		18879
 	};
-	private static final int[] COUGARS =
-	{
+	private static final int[] COUGARS = {
 		18885,
 		18886
 	};
-	private static final int[] BUFFALOS =
-	{
+	private static final int[] BUFFALOS = {
 		18892,
 		18893
 	};
-	private static final int[] GRENDELS =
-	{
+	private static final int[] GRENDELS = {
 		18899,
 		18900
 	};
@@ -73,8 +68,7 @@ public class Q00458_PerfectForm extends Quest
 	};
 	// @formatter:on
 	
-	public Q00458_PerfectForm()
-	{
+	public Q00458_PerfectForm() {
 		super(458, Q00458_PerfectForm.class.getSimpleName(), "Perfect Form");
 		addStartNpc(KELLEYIA);
 		addTalkId(KELLEYIA);
@@ -85,12 +79,10 @@ public class Q00458_PerfectForm extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String noQuest = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return noQuest;
 		}
 		
@@ -98,99 +90,68 @@ public class Q00458_PerfectForm extends Quest
 		int overHits = 0;
 		boolean overHitHtml = false;
 		
-		switch (event)
-		{
+		switch (event) {
 			case "32768-10.htm":
 				st.startQuest();
 				break;
 			case "results1":
-				if (st.isCond(2))
-				{
+				if (st.isCond(2)) {
 					final int overhitsTotal = st.getInt("overhitsTotal");
-					if (overhitsTotal >= 35)
-					{
+					if (overhitsTotal >= 35) {
 						htmltext = "32768-14a.html";
-					}
-					else if (overhitsTotal >= 10)
-					{
+					} else if (overhitsTotal >= 10) {
 						htmltext = "32768-14b.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "32768-14c.html";
 					}
 					overHits = overhitsTotal;
 					overHitHtml = true;
-				}
-				else
-				{
+				} else {
 					htmltext = noQuest;
 				}
 				break;
 			case "results2":
-				if (st.isCond(2))
-				{
+				if (st.isCond(2)) {
 					final int overhitsCritical = st.getInt("overhitsCritical");
-					if (overhitsCritical >= 30)
-					{
+					if (overhitsCritical >= 30) {
 						htmltext = "32768-15a.html";
-					}
-					else if (overhitsCritical >= 5)
-					{
+					} else if (overhitsCritical >= 5) {
 						htmltext = "32768-15b.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "32768-15c.html";
 					}
 					overHits = overhitsCritical;
 					overHitHtml = true;
-				}
-				else
-				{
+				} else {
 					htmltext = noQuest;
 				}
 				break;
 			case "results3":
-				if (st.isCond(2))
-				{
+				if (st.isCond(2)) {
 					final int overhitsConsecutive = st.getInt("overhitsConsecutive");
-					if (overhitsConsecutive >= 20)
-					{
+					if (overhitsConsecutive >= 20) {
 						htmltext = "32768-16a.html";
-					}
-					else if (overhitsConsecutive >= 7)
-					{
+					} else if (overhitsConsecutive >= 7) {
 						htmltext = "32768-16b.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "32768-16c.html";
 					}
 					overHits = overhitsConsecutive;
 					overHitHtml = true;
-				}
-				else
-				{
+				} else {
 					htmltext = noQuest;
 				}
 				break;
 			case "32768-17.html":
-				if (st.isCond(2))
-				{
+				if (st.isCond(2)) {
 					int overhitsConsecutive = st.getInt("overhitsConsecutive");
-					if (overhitsConsecutive >= 20)
-					{
+					if (overhitsConsecutive >= 20) {
 						int rnd = getRandom(ICARUS_WEAPON_RECIPES.length);
 						st.rewardItems(ICARUS_WEAPON_RECIPES[rnd], 1);
-					}
-					else if (overhitsConsecutive >= 7)
-					{
+					} else if (overhitsConsecutive >= 7) {
 						int rnd = getRandom(ICARUS_WEAPON_PIECES.length);
 						st.rewardItems(ICARUS_WEAPON_PIECES[rnd], 5);
-					}
-					else
-					{
+					} else {
 						int rnd = getRandom(ICARUS_WEAPON_PIECES.length);
 						st.rewardItems(ICARUS_WEAPON_PIECES[rnd], 2);
 						// not sure if this should use rewardItems
@@ -198,16 +159,13 @@ public class Q00458_PerfectForm extends Quest
 						st.giveItems(15483, 10); // Crystal Spice Crate
 					}
 					st.exitQuest(QuestType.DAILY, true);
-				}
-				else
-				{
+				} else {
 					htmltext = noQuest;
 				}
 				break;
 		}
 		
-		if (overHitHtml)
-		{
+		if (overHitHtml) {
 			htmltext = getHtm(player.getHtmlPrefix(), htmltext);
 			htmltext = htmltext.replace("<?number?>", String.valueOf(overHits));
 		}
@@ -215,32 +173,26 @@ public class Q00458_PerfectForm extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && st.isCond(1))
-		{
+		if ((st != null) && st.isCond(1)) {
 			int npcId = npc.getId();
-			if ((npcId == KOOKABURRAS[0]) || (npcId == COUGARS[0]) || (npcId == BUFFALOS[0]) || (npcId == GRENDELS[0]))
-			{
+			if ((npcId == KOOKABURRAS[0]) || (npcId == COUGARS[0]) || (npcId == BUFFALOS[0]) || (npcId == GRENDELS[0])) {
 				npcId++;
 			}
 			
 			String variable = String.valueOf(npcId); // i3
 			int currentValue = st.getInt(variable);
-			if (currentValue < 10)
-			{
+			if (currentValue < 10) {
 				st.set(variable, String.valueOf(currentValue + 1)); // IncreaseNPCLogByID
 				
 				L2Attackable mob = (L2Attackable) npc;
-				if (mob.isOverhit())
-				{
+				if (mob.isOverhit()) {
 					st.set("overhitsTotal", String.valueOf(st.getInt("overhitsTotal") + 1)); // memoStateEx 1
 					int maxHp = mob.getMaxHp();
 					// L2Attackable#calculateOverhitExp() way of calculating overhit % seems illogical
 					double overhitPercentage = (maxHp + mob.getOverhitDamage()) / maxHp;
-					if (overhitPercentage >= 1.2)
-					{
+					if (overhitPercentage >= 1.2) {
 						st.set("overhitsCritical", String.valueOf(st.getInt("overhitsCritical") + 1)); // memoStateEx 2
 					}
 					int overhitsConsecutive = st.getInt("overhitsConsecutive") + 1;
@@ -248,24 +200,18 @@ public class Q00458_PerfectForm extends Quest
 					/*
 					 * Retail logic (makes for a long/messy string in database): int i0 = overhitsConsecutive % 100; int i1 = overhitsConsecutive - (i0 * 100); if (i0 < i1) { st.set("overhitsConsecutive", String.valueOf((i1 * 100) + i1)); }
 					 */
-				}
-				else
-				{
+				} else {
 					// st.set("overhitsConsecutive", String.valueOf((st.getInt("overhitsConsecutive") % 100) * 100));
-					if (st.getInt("overhitsConsecutive") > 0)
-					{
+					if (st.getInt("overhitsConsecutive") > 0) {
 						// avoid writing to database if variable is already zero
 						st.set("overhitsConsecutive", "0");
 					}
 				}
 				
-				if ((st.getInt("18879") == 10) && (st.getInt("18886") == 10) && (st.getInt("18893") == 10) && (st.getInt("18900") == 10))
-				{
+				if ((st.getInt("18879") == 10) && (st.getInt("18886") == 10) && (st.getInt("18893") == 10) && (st.getInt("18900") == 10)) {
 					st.setCond(2, true);
 					// st.set("overhitsConsecutive", String.valueOf(st.getInt("overhitsConsecutive") % 100));
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				
@@ -282,15 +228,12 @@ public class Q00458_PerfectForm extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.COMPLETED:
-				if (!st.isNowAvailable())
-				{
+				if (!st.isNowAvailable()) {
 					htmltext = "32768-18.htm";
 					break;
 				}
@@ -300,15 +243,11 @@ public class Q00458_PerfectForm extends Quest
 				htmltext = (player.getLevel() > 81) ? "32768-01.htm" : "32768-00.htm";
 				break;
 			case State.STARTED:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 1:
-						if ((st.getInt("18879") == 0) && (st.getInt("18886") == 0) && (st.getInt("18893") == 0) && (st.getInt("18900") == 0))
-						{
+						if ((st.getInt("18879") == 0) && (st.getInt("18886") == 0) && (st.getInt("18893") == 0) && (st.getInt("18900") == 0)) {
 							htmltext = "32768-11.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "32768-12.html";
 						}
 						break;

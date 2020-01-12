@@ -30,73 +30,54 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 /**
  * @author Nik
  */
-public class ChangePassword implements IVoicedCommandHandler
-{
-	private static final String[] _voicedCommands =
-	{
+public class ChangePassword implements IVoicedCommandHandler {
+	private static final String[] _voicedCommands = {
 		"changepassword"
 	};
 	
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String target)
-	{
-		if (target != null)
-		{
+	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String target) {
+		if (target != null) {
 			final StringTokenizer st = new StringTokenizer(target);
-			try
-			{
+			try {
 				String curpass = null, newpass = null, repeatnewpass = null;
-				if (st.hasMoreTokens())
-				{
+				if (st.hasMoreTokens()) {
 					curpass = st.nextToken();
 				}
-				if (st.hasMoreTokens())
-				{
+				if (st.hasMoreTokens()) {
 					newpass = st.nextToken();
 				}
-				if (st.hasMoreTokens())
-				{
+				if (st.hasMoreTokens()) {
 					repeatnewpass = st.nextToken();
 				}
 				
-				if (!((curpass == null) || (newpass == null) || (repeatnewpass == null)))
-				{
-					if (!newpass.equals(repeatnewpass))
-					{
+				if (!((curpass == null) || (newpass == null) || (repeatnewpass == null))) {
+					if (!newpass.equals(repeatnewpass)) {
 						activeChar.sendMessage("The new password doesn't match with the repeated one!");
 						return false;
 					}
-					if (newpass.length() < 3)
-					{
+					if (newpass.length() < 3) {
 						activeChar.sendMessage("The new password is shorter than 3 chars! Please try with a longer one.");
 						return false;
 					}
-					if (newpass.length() > 30)
-					{
+					if (newpass.length() > 30) {
 						activeChar.sendMessage("The new password is longer than 30 chars! Please try with a shorter one.");
 						return false;
 					}
 					
 					LoginServerThread.getInstance().sendChangePassword(activeChar.getAccountName(), activeChar.getName(), curpass, newpass);
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("Invalid password data! You have to fill all boxes.");
 					return false;
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				activeChar.sendMessage("A problem occured while changing password!");
 				_log.log(Level.WARNING, "", e);
 			}
-		}
-		else
-		{
+		} else {
 			// showHTML(activeChar);
 			String html = HtmCache.getInstance().getHtm("en", "data/html/mods/ChangePassword.htm");
-			if (html == null)
-			{
+			if (html == null) {
 				html = "<html><body><br><br><center><font color=LEVEL>404:</font> File Not Found</center></body></html>";
 			}
 			activeChar.sendPacket(new NpcHtmlMessage(html));
@@ -106,8 +87,7 @@ public class ChangePassword implements IVoicedCommandHandler
 	}
 	
 	@Override
-	public String[] getVoicedCommandList()
-	{
+	public String[] getVoicedCommandList() {
 		return _voicedCommands;
 	}
 }

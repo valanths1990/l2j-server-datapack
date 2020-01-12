@@ -37,8 +37,7 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
  * Original Jython script by Kerberos
  * @author malyelfik
  */
-public class Q00114_ResurrectionOfAnOldManager extends Quest
-{
+public class Q00114_ResurrectionOfAnOldManager extends Quest {
 	// NPCs
 	private static final int NEWYEAR = 31961;
 	private static final int YUMI = 32041;
@@ -56,8 +55,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 	
 	private static L2Attackable golem = null;
 	
-	public Q00114_ResurrectionOfAnOldManager()
-	{
+	public Q00114_ResurrectionOfAnOldManager() {
 		super(114, Q00114_ResurrectionOfAnOldManager.class.getSimpleName(), "Resurrection of an Old Manager");
 		addStartNpc(YUMI);
 		addTalkId(YUMI, WENDY, BOX, STONES, NEWYEAR);
@@ -67,18 +65,15 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			// Yumi
 			case "32041-04.htm":
 				st.startQuest();
@@ -91,8 +86,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				st.unset("talk");
 				break;
 			case "32041-12.html":
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 3:
 						htmltext = "32041-12.html";
 						break;
@@ -123,8 +117,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				st.takeItems(DETCTOR2, 1);
 				break;
 			case "32041-38.html":
-				if (st.getInt("choice") == 2)
-				{
+				if (st.getInt("choice") == 2) {
 					htmltext = "32041-37.html";
 				}
 				break;
@@ -147,20 +140,17 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				break;
 			// Wendy
 			case "32047-02.html":
-				if (st.getInt("talk") == 0)
-				{
+				if (st.getInt("talk") == 0) {
 					st.set("talk", "1");
 				}
 				break;
 			case "32047-03.html":
-				if (st.getInt("talk1") == 0)
-				{
+				if (st.getInt("talk1") == 0) {
 					st.set("talk1", "1");
 				}
 				break;
 			case "32047-05.html":
-				if ((st.getInt("talk") == 0) || (st.getInt("talk1") == 0))
-				{
+				if ((st.getInt("talk") == 0) || (st.getInt("talk1") == 0)) {
 					htmltext = "32047-04.html";
 				}
 				break;
@@ -190,8 +180,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				st.setCond(10, true);
 				break;
 			case "32047-15b.html":
-				if ((golem == null) || ((golem != null) && golem.isDead()))
-				{
+				if ((golem == null) || ((golem != null) && golem.isDead())) {
 					golem = (L2Attackable) addSpawn(GUARDIAN, 96977, -110625, -3280, 0, false, 0);
 					golem.broadcastPacket(new NpcSay(golem.getObjectId(), Say2.NPC_ALL, golem.getId(), NpcStringId.YOU_S1_YOU_ATTACKED_WENDY_PREPARE_TO_DIE).addStringParameter(player.getName()));
 					golem.setRunning();
@@ -199,13 +188,9 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 					golem.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 					st.set("spawned", "1");
 					startQuestTimer("golem_despawn", 300000, null, player);
-				}
-				else if (st.getInt("spawned") == 1)
-				{
+				} else if (st.getInt("spawned") == 1) {
 					htmltext = "32047-17b.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32047-16b.html";
 				}
 				break;
@@ -229,15 +214,12 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				st.setCond(15, true);
 				break;
 			case "32047-29c.html":
-				if (player.getAdena() >= 3000)
-				{
+				if (player.getAdena() >= 3000) {
 					st.giveItems(STARSTONE2, 1);
 					st.takeItems(Inventory.ADENA_ID, 3000);
 					st.unset("talk");
 					st.setCond(26, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "32047-29ca.html";
 				}
 				break;
@@ -322,12 +304,10 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
 		
-		if ((st != null) && st.isCond(10) && (st.getInt("spawned") == 1))
-		{
+		if ((st != null) && st.isCond(10) && (st.getInt("spawned") == 1)) {
 			npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), NpcStringId.THIS_ENEMY_IS_FAR_TOO_POWERFUL_FOR_ME_TO_FIGHT_I_MUST_WITHDRAW));
 			st.setCond(11, true);
 			st.unset("spawned");
@@ -337,13 +317,10 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 	}
 	
 	@Override
-	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
-	{
-		if (creature.isPlayer())
-		{
+	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon) {
+		if (creature.isPlayer()) {
 			final QuestState st = getQuestState(creature.getActingPlayer(), false);
-			if ((st != null) && st.isCond(17))
-			{
+			if ((st != null) && st.isCond(17)) {
 				st.takeItems(DETCTOR, 1);
 				st.giveItems(DETCTOR2, 1);
 				st.setCond(18, true);
@@ -354,29 +331,22 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		int talk = st.getInt("talk");
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case YUMI:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
-						if (player.hasQuestCompleted(Q00121_PavelTheGiant.class.getSimpleName()))
-						{
+						if (player.hasQuestCompleted(Q00121_PavelTheGiant.class.getSimpleName())) {
 							htmltext = (player.getLevel() >= 70) ? "32041-02.htm" : "32041-03.htm";
-						}
-						else
-						{
+						} else {
 							htmltext = "32041-01.htm";
 						}
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = (talk == 1) ? "32041-08.html" : "32041-04.htm";
 								break;
@@ -386,8 +356,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 							case 3:
 							case 4:
 							case 5:
-								switch (talk)
-								{
+								switch (talk) {
 									case 0:
 										htmltext = "32041-11.html";
 										break;
@@ -444,10 +413,8 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				}
 				break;
 			case WENDY:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 2:
 							htmltext = ((talk == 1) && (st.getInt("talk1") == 1)) ? "32047-05.html" : "32047-01.html";
 							break;
@@ -461,8 +428,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 							htmltext = "32047-10.html";
 							break;
 						case 6:
-							switch (st.getInt("choice"))
-							{
+							switch (st.getInt("choice")) {
 								case 1:
 									htmltext = "32047-11a.html";
 									break;
@@ -502,12 +468,9 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 							htmltext = "32047-24c.html";
 							break;
 						case 20:
-							if (st.getInt("choice") == 1)
-							{
+							if (st.getInt("choice") == 1) {
 								htmltext = "32047-22a.html";
-							}
-							else
-							{
+							} else {
 								htmltext = (talk == 1) ? "32047-31c.html" : "32047-26c.html";
 							}
 							break;
@@ -528,10 +491,8 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				}
 				break;
 			case NEWYEAR:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 21:
 							htmltext = "31961-01.html";
 							break;
@@ -542,10 +503,8 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				}
 				break;
 			case BOX:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 13:
 							htmltext = (talk == 1) ? "32050-02.html" : "32050-01.html";
 							break;
@@ -562,10 +521,8 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				}
 				break;
 			case STONES:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 18:
 							htmltext = "32046-02.html";
 							break;

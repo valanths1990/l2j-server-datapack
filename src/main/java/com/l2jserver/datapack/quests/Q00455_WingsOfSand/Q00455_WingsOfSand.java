@@ -34,11 +34,9 @@ import com.l2jserver.gameserver.util.Util;
  * Wings of Sand (455)
  * @author Zoey76
  */
-public class Q00455_WingsOfSand extends Quest
-{
+public class Q00455_WingsOfSand extends Quest {
 	// NPCs
-	private static final int[] SEPARATED_SOULS =
-	{
+	private static final int[] SEPARATED_SOULS = {
 		32864,
 		32865,
 		32866,
@@ -63,8 +61,7 @@ public class Q00455_WingsOfSand extends Quest
 	private static final int MIN_LEVEL = 80;
 	private static final int CHANCE = 350;
 	
-	public Q00455_WingsOfSand()
-	{
+	public Q00455_WingsOfSand() {
 		super(455, Q00455_WingsOfSand.class.getSimpleName(), "Wings of Sand");
 		addStartNpc(SEPARATED_SOULS);
 		addTalkId(SEPARATED_SOULS);
@@ -73,47 +70,36 @@ public class Q00455_WingsOfSand extends Quest
 	}
 	
 	@Override
-	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon)
-	{
+	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && Util.checkIfInRange(1500, npc, player, false) && (getRandom(1000) < CHANCE))
-		{
+		if ((st != null) && Util.checkIfInRange(1500, npc, player, false) && (getRandom(1000) < CHANCE)) {
 			st.giveItems(LARGE_BABY_DRAGON, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-			if (st.getQuestItemsCount(LARGE_BABY_DRAGON) == 1)
-			{
+			if (st.getQuestItemsCount(LARGE_BABY_DRAGON) == 1) {
 				st.setCond(2, true);
-			}
-			else if (st.getQuestItemsCount(LARGE_BABY_DRAGON) == 2)
-			{
+			} else if (st.getQuestItemsCount(LARGE_BABY_DRAGON) == 2) {
 				st.setCond(3, true);
 			}
 		}
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		if (player.getLevel() >= MIN_LEVEL)
-		{
-			switch (event)
-			{
+		if (player.getLevel() >= MIN_LEVEL) {
+			switch (event) {
 				case "32864-02.htm":
 				case "32864-03.htm":
-				case "32864-04.htm":
-				{
+				case "32864-04.htm": {
 					htmltext = event;
 					break;
 				}
-				case "32864-05.htm":
-				{
+				case "32864-05.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
@@ -124,44 +110,34 @@ public class Q00455_WingsOfSand extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		executeForEachPlayer(killer, npc, isSummon, true, false);
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
-				if (player.getLevel() >= MIN_LEVEL)
-				{
+		switch (st.getState()) {
+			case State.CREATED: {
+				if (player.getLevel() >= MIN_LEVEL) {
 					htmltext = "32864-01.htm";
 				}
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
 						htmltext = "32864-06.html";
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						giveItems(st);
 						htmltext = "32864-07.html";
 						break;
 					}
-					case 3:
-					{
+					case 3: {
 						giveItems(st);
 						htmltext = "32864-07.html";
 						break;
@@ -169,17 +145,12 @@ public class Q00455_WingsOfSand extends Quest
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
-				if (!st.isNowAvailable())
-				{
+			case State.COMPLETED: {
+				if (!st.isNowAvailable()) {
 					htmltext = "32864-08.html";
-				}
-				else
-				{
+				} else {
 					st.setState(State.CREATED);
-					if (player.getLevel() >= MIN_LEVEL)
-					{
+					if (player.getLevel() >= MIN_LEVEL) {
 						htmltext = "32864-01.htm";
 					}
 				}
@@ -193,48 +164,29 @@ public class Q00455_WingsOfSand extends Quest
 	 * Reward the player.
 	 * @param st the quest state of the player to reward
 	 */
-	private static final void giveItems(QuestState st)
-	{
+	private static final void giveItems(QuestState st) {
 		int chance;
 		int parts;
-		for (int i = 1; i <= (st.getCond() - 1); i++)
-		{
+		for (int i = 1; i <= (st.getCond() - 1); i++) {
 			chance = getRandom(1000);
 			parts = getRandom(1, 2);
-			if (chance < 50)
-			{
+			if (chance < 50) {
 				st.giveItems(getRandom(15815, 15825), 1); // Weapon Recipes
-			}
-			else if (chance < 100)
-			{
+			} else if (chance < 100) {
 				st.giveItems(getRandom(15792, 15808), parts); // Armor Recipes
-			}
-			else if (chance < 150)
-			{
+			} else if (chance < 150) {
 				st.giveItems(getRandom(15809, 15811), parts); // Jewelry Recipes
-			}
-			else if (chance < 250)
-			{
+			} else if (chance < 250) {
 				st.giveItems(ARMOR_PARTS.get(getRandom(ARMOR_PARTS.size())), parts); // Armor Parts
-			}
-			else if (chance < 500)
-			{
+			} else if (chance < 500) {
 				st.giveItems(getRandom(15634, 15644), parts); // Weapon Parts
-			}
-			else if (chance < 750)
-			{
+			} else if (chance < 750) {
 				st.giveItems(getRandom(15769, 15771), parts); // Jewelry Parts
-			}
-			else if (chance < 900)
-			{
+			} else if (chance < 900) {
 				st.giveItems(getRandom(9552, 9557), 1); // Crystals
-			}
-			else if (chance < 970)
-			{
+			} else if (chance < 970) {
 				st.giveItems(6578, 1); // Blessed Scroll: Enchant Armor (S-Grade)
-			}
-			else
-			{
+			} else {
 				st.giveItems(6577, 1); // Blessed Scroll: Enchant Weapon (S-Grade)
 			}
 		}

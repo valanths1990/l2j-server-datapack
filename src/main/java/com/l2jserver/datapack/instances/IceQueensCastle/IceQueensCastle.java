@@ -39,10 +39,8 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Ice Queen's Castle instance zone.
  * @author Adry_85
  */
-public final class IceQueensCastle extends AbstractInstance
-{
-	protected class IQCWorld extends InstanceWorld
-	{
+public final class IceQueensCastle extends AbstractInstance {
+	protected class IQCWorld extends InstanceWorld {
 		L2PcInstance player = null;
 	}
 	
@@ -64,8 +62,7 @@ public final class IceQueensCastle extends AbstractInstance
 	private static final int ICE_QUEEN_DOOR = 23140101;
 	private static final int MIN_LV = 82;
 	
-	public IceQueensCastle()
-	{
+	public IceQueensCastle() {
 		super(IceQueensCastle.class.getSimpleName());
 		addStartNpc(JINIA);
 		addTalkId(JINIA);
@@ -75,16 +72,11 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "ATTACK_KNIGHT":
-			{
-				for (L2Character character : npc.getKnownList().getKnownCharacters())
-				{
-					if ((character.getId() == ARCHERY_KNIGHT) && !character.isDead() && !((L2Attackable) character).isDecayed())
-					{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "ATTACK_KNIGHT": {
+				for (L2Character character : npc.getKnownList().getKnownCharacters()) {
+					if ((character.getId() == ARCHERY_KNIGHT) && !character.isDead() && !((L2Attackable) character).isDecayed()) {
 						npc.setIsRunning(true);
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, character);
 						((L2Attackable) npc).addDamageHate(character, 0, 999999);
@@ -93,37 +85,30 @@ public final class IceQueensCastle extends AbstractInstance
 				startQuestTimer("ATTACK_KNIGHT", 3000, npc, null);
 				break;
 			}
-			case "TIMER_MOVING":
-			{
-				if (npc != null)
-				{
+			case "TIMER_MOVING": {
+				if (npc != null) {
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, FREYA_LOC);
 				}
 				break;
 			}
-			case "TIMER_BLIZZARD":
-			{
+			case "TIMER_BLIZZARD": {
 				broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.I_CAN_NO_LONGER_STAND_BY);
 				npc.stopMove(null);
 				npc.setTarget(player);
 				npc.doCast(ETHERNAL_BLIZZARD);
 				break;
 			}
-			case "TIMER_SCENE_21":
-			{
-				if (npc != null)
-				{
+			case "TIMER_SCENE_21": {
+				if (npc != null) {
 					player.showQuestMovie(21);
 					npc.deleteMe();
 					startQuestTimer("TIMER_PC_LEAVE", 24000, npc, player);
 				}
 				break;
 			}
-			case "TIMER_PC_LEAVE":
-			{
+			case "TIMER_PC_LEAVE": {
 				final QuestState qs = player.getQuestState(Q10285_MeetingSirra.class.getSimpleName());
-				if ((qs != null))
-				{
+				if ((qs != null)) {
 					qs.setMemoState(3);
 					qs.setCond(10, true);
 					final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
@@ -138,14 +123,10 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
-	{
-		if (creature.isPlayer() && npc.isScriptValue(0))
-		{
-			for (L2Character character : npc.getKnownList().getKnownCharacters())
-			{
-				if ((character.getId() == ARCHERY_KNIGHT) && !character.isDead() && !((L2Attackable) character).isDecayed())
-				{
+	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon) {
+		if (creature.isPlayer() && npc.isScriptValue(0)) {
+			for (L2Character character : npc.getKnownList().getKnownCharacters()) {
+				if ((character.getId() == ARCHERY_KNIGHT) && !character.isDead() && !((L2Attackable) character).isDecayed()) {
 					npc.setIsRunning(true);
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, character);
 					((L2Attackable) npc).addDamageHate(character, 0, 999999);
@@ -159,24 +140,20 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		startQuestTimer("TIMER_MOVING", 60000, npc, null);
 		startQuestTimer("TIMER_BLIZZARD", 180000, npc, null);
 		return super.onSpawn(npc);
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
-	{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
-		if ((tmpworld != null) && (tmpworld instanceof IQCWorld))
-		{
+		if ((tmpworld != null) && (tmpworld instanceof IQCWorld)) {
 			final IQCWorld world = (IQCWorld) tmpworld;
 			
-			if ((skill == ETHERNAL_BLIZZARD.getSkill()) && (world.player != null))
-			{
+			if ((skill == ETHERNAL_BLIZZARD.getSkill()) && (world.player != null)) {
 				startQuestTimer("TIMER_SCENE_21", 1000, npc, world.player);
 			}
 		}
@@ -184,17 +161,14 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		enterInstance(talker, new IQCWorld(), "IceQueensCastle.xml", TEMPLATE_ID);
 		return super.onTalk(npc, talker);
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		if (firstEntrance) {
 			world.addAllowed(player.getObjectId());
 			((IQCWorld) world).player = player;
 			openDoor(ICE_QUEEN_DOOR, world.getInstanceId());
@@ -203,10 +177,8 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(L2PcInstance player)
-	{
-		if (player.getLevel() < MIN_LV)
-		{
+	protected boolean checkConditions(L2PcInstance player) {
+		if (player.getLevel() < MIN_LV) {
 			player.sendPacket(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 			return false;
 		}

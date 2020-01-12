@@ -30,13 +30,11 @@ import com.l2jserver.gameserver.model.quest.State;
  * Skirmish with the Werewolves (274)
  * @author xban1x
  */
-public final class Q00274_SkirmishWithTheWerewolves extends Quest
-{
+public final class Q00274_SkirmishWithTheWerewolves extends Quest {
 	// NPC
 	private static final int BRUKURSE = 30569;
 	// Monsters
-	private static final int[] MONSTERS = new int[]
-	{
+	private static final int[] MONSTERS = new int[] {
 		20363, // Maraku Werewolf
 		20364, // Maraku Werewolf Chieftain
 	};
@@ -48,8 +46,7 @@ public final class Q00274_SkirmishWithTheWerewolves extends Quest
 	// Misc
 	private static final int MIN_LVL = 9;
 	
-	public Q00274_SkirmishWithTheWerewolves()
-	{
+	public Q00274_SkirmishWithTheWerewolves() {
 		super(274, Q00274_SkirmishWithTheWerewolves.class.getSimpleName(), "Skirmish with the Werewolves");
 		addStartNpc(BRUKURSE);
 		addTalkId(BRUKURSE);
@@ -58,11 +55,9 @@ public final class Q00274_SkirmishWithTheWerewolves extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && event.equalsIgnoreCase("30569-04.htm"))
-		{
+		if ((st != null) && event.equalsIgnoreCase("30569-04.htm")) {
 			st.startQuest();
 			return event;
 		}
@@ -70,22 +65,16 @@ public final class Q00274_SkirmishWithTheWerewolves extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(1))
-		{
+		if ((st != null) && st.isCond(1)) {
 			st.giveItems(WEREWOLF_HEAD, 1);
-			if (getRandom(100) <= 5)
-			{
+			if (getRandom(100) <= 5) {
 				st.giveItems(WEREWOLF_TOTEM, 1);
 			}
-			if (st.getQuestItemsCount(WEREWOLF_HEAD) >= 40)
-			{
+			if (st.getQuestItemsCount(WEREWOLF_HEAD) >= 40) {
 				st.setCond(2, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -93,38 +82,27 @@ public final class Q00274_SkirmishWithTheWerewolves extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
-				if (hasAtLeastOneQuestItem(player, NECKLACE_OF_VALOR, NECKLACE_OF_COURAGE))
-				{
+		switch (st.getState()) {
+			case State.CREATED: {
+				if (hasAtLeastOneQuestItem(player, NECKLACE_OF_VALOR, NECKLACE_OF_COURAGE)) {
 					htmltext = (player.getRace() == Race.ORC) ? (player.getLevel() >= MIN_LVL) ? "30569-03.htm" : "30569-02.html" : "30569-01.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30569-08.html";
 				}
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
 						htmltext = "30569-05.html";
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						final long heads = st.getQuestItemsCount(WEREWOLF_HEAD);
-						if (heads >= 40)
-						{
+						if (heads >= 40) {
 							final long totems = st.getQuestItemsCount(WEREWOLF_TOTEM);
 							st.giveAdena((heads * 30) + (totems * 600) + 2300, true);
 							st.exitQuest(true, true);

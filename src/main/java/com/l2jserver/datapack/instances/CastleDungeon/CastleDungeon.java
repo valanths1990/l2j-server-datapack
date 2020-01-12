@@ -40,16 +40,13 @@ import com.l2jserver.gameserver.util.Util;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class CastleDungeon extends AbstractInstance
-{
-	protected class CDWorld extends InstanceWorld
-	{
+public final class CastleDungeon extends AbstractInstance {
+	protected class CDWorld extends InstanceWorld {
 		
 	}
 	
 	// Locations
-	private static final Location[] ENTER_LOC =
-	{
+	private static final Location[] ENTER_LOC = {
 		new Location(12188, -48770, -3008),
 		new Location(12218, -48770, -3008),
 		new Location(12248, -48770, -3008),
@@ -59,8 +56,7 @@ public final class CastleDungeon extends AbstractInstance
 	// Misc
 	private static final Map<Integer, Integer> CASTLE_DUNGEON = new HashMap<>();
 	private static final Map<Integer, List<Integer>> FORTRESS = new HashMap<>();
-	static
-	{
+	static {
 		CASTLE_DUNGEON.put(36403, 13); // Gludio
 		CASTLE_DUNGEON.put(36404, 14); // Dion
 		CASTLE_DUNGEON.put(36405, 15); // Giran
@@ -82,28 +78,24 @@ public final class CastleDungeon extends AbstractInstance
 	}
 	
 	// Raid Bosses
-	protected static final int[] RAIDS1 =
-	{
+	protected static final int[] RAIDS1 = {
 		25546, // Rhianna the Traitor
 		25549, // Tesla the Deceiver
 		25552, // Soul Hunter Chakundel
 	};
-	protected static final int[] RAIDS2 =
-	{
+	protected static final int[] RAIDS2 = {
 		25553, // Durango the Crusher
 		25554, // Brutus the Obstinate
 		25557, // Ranger Karankawa
 		25560, // Sargon the Mad
 	};
-	protected static final int[] RAIDS3 =
-	{
+	protected static final int[] RAIDS3 = {
 		25563, // Beautiful Atrielle
 		25566, // Nagen the Tomboy
 		25569, // Jax the Destroyer
 	};
 	
-	public CastleDungeon()
-	{
+	public CastleDungeon() {
 		super(CastleDungeon.class.getSimpleName());
 		addFirstTalkId(CASTLE_DUNGEON.keySet());
 		addStartNpc(CASTLE_DUNGEON.keySet());
@@ -114,19 +106,13 @@ public final class CastleDungeon extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
-			if (player.getParty() == null)
-			{
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		if (firstEntrance) {
+			if (player.getParty() == null) {
 				teleportPlayer(player, ENTER_LOC[getRandom(ENTER_LOC.length)], world.getInstanceId());
 				world.addAllowed(player.getObjectId());
-			}
-			else
-			{
-				for (L2PcInstance partyMember : player.getParty().getMembers())
-				{
+			} else {
+				for (L2PcInstance partyMember : player.getParty().getMembers()) {
 					teleportPlayer(partyMember, ENTER_LOC[getRandom(ENTER_LOC.length)], world.getInstanceId());
 					world.addAllowed(partyMember.getObjectId());
 				}
@@ -134,32 +120,24 @@ public final class CastleDungeon extends AbstractInstance
 			
 			world.setStatus(0);
 			spawnRaid((CDWorld) world);
-		}
-		else
-		{
+		} else {
 			teleportPlayer(player, ENTER_LOC[getRandom(ENTER_LOC.length)], world.getInstanceId());
 		}
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "36403.html";
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if (tmpworld instanceof CDWorld)
-		{
+		if (tmpworld instanceof CDWorld) {
 			CDWorld world = (CDWorld) tmpworld;
-			if (Util.contains(RAIDS3, npc.getId()))
-			{
+			if (Util.contains(RAIDS3, npc.getId())) {
 				finishInstance(world);
-			}
-			else
-			{
+			} else {
 				world.incStatus();
 				spawnRaid(world);
 			}
@@ -168,43 +146,34 @@ public final class CastleDungeon extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final L2Party party = player.getParty();
-		if (party == null)
-		{
+		if (party == null) {
 			return "36403-01.html";
 		}
 		
 		final Castle castle = npc.getCastle();
-		if (castle.getSiege().isInProgress())
-		{
+		if (castle.getSiege().isInProgress()) {
 			return "36403-04.html";
 		}
 		
-		if ((npc.isMyLord(player) || ((player.getClan() != null) && (npc.getCastle().getResidenceId() == player.getClan().getCastleId()) && (player.getClan().getCastleId() > 0))))
-		{
+		if ((npc.isMyLord(player) || ((player.getClan() != null) && (npc.getCastle().getResidenceId() == player.getClan().getCastleId()) && (player.getClan().getCastleId() > 0)))) {
 			final int numFort = ((castle.getResidenceId() == 1) || (castle.getResidenceId() == 5)) ? 2 : 1;
 			final List<Integer> fort = FORTRESS.get(castle.getResidenceId());
-			for (int i = 0; i < numFort; i++)
-			{
+			for (int i = 0; i < numFort; i++) {
 				final Fort fortress = FortManager.getInstance().getFortById(fort.get(i));
-				if (fortress.getFortState() == 0)
-				{
+				if (fortress.getFortState() == 0) {
 					return "36403-05.html";
 				}
 			}
 		}
 		
-		for (L2PcInstance partyMember : party.getMembers())
-		{
-			if ((partyMember.getClan() == null) || (partyMember.getClan().getCastleId() != castle.getResidenceId()))
-			{
+		for (L2PcInstance partyMember : party.getMembers()) {
+			if ((partyMember.getClan() == null) || (partyMember.getClan().getCastleId() != castle.getResidenceId())) {
 				return "36403-02.html";
 			}
 			
-			if (System.currentTimeMillis() < InstanceManager.getInstance().getInstanceTime(partyMember.getObjectId(), CASTLE_DUNGEON.get(npc.getId())))
-			{
+			if (System.currentTimeMillis() < InstanceManager.getInstance().getInstanceTime(partyMember.getObjectId(), CASTLE_DUNGEON.get(npc.getId()))) {
 				return "36403-03.html";
 			}
 		}
@@ -213,19 +182,13 @@ public final class CastleDungeon extends AbstractInstance
 		return super.onTalk(npc, player);
 	}
 	
-	protected void spawnRaid(CDWorld world)
-	{
+	protected void spawnRaid(CDWorld world) {
 		int spawnId;
-		if (world.getStatus() == 0)
-		{
+		if (world.getStatus() == 0) {
 			spawnId = RAIDS1[getRandom(RAIDS1.length)];
-		}
-		else if (world.getStatus() == 1)
-		{
+		} else if (world.getStatus() == 1) {
 			spawnId = RAIDS2[getRandom(RAIDS2.length)];
-		}
-		else
-		{
+		} else {
 			spawnId = RAIDS3[getRandom(RAIDS3.length)];
 		}
 		

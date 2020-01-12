@@ -31,37 +31,30 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * Spoil effect implementation.
  * @author _drunk_, Ahmed, Zoey76
  */
-public final class Spoil extends AbstractEffect
-{
-	public Spoil(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class Spoil extends AbstractEffect {
+	public Spoil(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
-	{
+	public boolean calcSuccess(BuffInfo info) {
 		return Formulas.calcMagicSuccess(info.getEffector(), info.getEffected(), info.getSkill());
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (!info.getEffected().isMonster() || info.getEffected().isDead())
-		{
+	public void onStart(BuffInfo info) {
+		if (!info.getEffected().isMonster() || info.getEffected().isDead()) {
 			info.getEffector().sendPacket(SystemMessageId.INCORRECT_TARGET);
 			return;
 		}
 		
 		final L2MonsterInstance target = (L2MonsterInstance) info.getEffected();
-		if (target.isSpoiled())
-		{
+		if (target.isSpoiled()) {
 			info.getEffector().sendPacket(SystemMessageId.ALREADY_SPOILED);
 			return;
 		}

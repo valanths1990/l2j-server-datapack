@@ -39,10 +39,8 @@ import com.l2jserver.gameserver.model.zone.L2ZoneType;
  * Pailaka Devil's Legacy Instance zone.
  * @author St3eT
  */
-public final class PailakaDevilsLegacy extends AbstractInstance
-{
-	protected class DIWorld extends InstanceWorld
-	{
+public final class PailakaDevilsLegacy extends AbstractInstance {
+	protected class DIWorld extends InstanceWorld {
 		protected L2Attackable _lematanNpc = null;
 		protected List<L2Attackable> _followerslist = new CopyOnWriteArrayList<>();
 	}
@@ -71,8 +69,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	private static final Location LEMATAN_PORT_POINT = new Location(86116, -209117, -3774);
 	private static final Location LEMATAN_PORT = new Location(85000, -208699, -3336);
 	private static final Location ADVENTURER_LOC = new Location(84983, -208736, -3336, 49915);
-	private static final Location[] FOLLOWERS_LOC =
-	{
+	private static final Location[] FOLLOWERS_LOC = {
 		new Location(85067, -208943, -3336, 20106),
 		new Location(84904, -208944, -3336, 10904),
 		new Location(85062, -208538, -3336, 44884),
@@ -86,8 +83,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	private static final int TEMPLATE_ID = 44;
 	private static final int ZONE = 20109;
 	
-	public PailakaDevilsLegacy()
-	{
+	public PailakaDevilsLegacy() {
 		super(PailakaDevilsLegacy.class.getSimpleName());
 		addTalkId(SURVIVOR);
 		addAttackId(POWDER_KEG, TREASURE_BOX, LEMATAN);
@@ -98,37 +94,26 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		String htmltext = null;
 		
-		if (event.equals("enter"))
-		{
+		if (event.equals("enter")) {
 			final QuestState qs = player.getQuestState(Q00129_PailakaDevilsLegacy.class.getSimpleName());
 			enterInstance(player, new DIWorld(), "PailakaDevilsLegacy.xml", TEMPLATE_ID);
-			if (qs.isCond(1))
-			{
+			if (qs.isCond(1)) {
 				qs.setCond(2, true);
 				htmltext = "32498-01.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "32498-02.htm";
 			}
-		}
-		else if ((tmpworld != null) && (tmpworld instanceof DIWorld))
-		{
+		} else if ((tmpworld != null) && (tmpworld instanceof DIWorld)) {
 			final DIWorld world = (DIWorld) tmpworld;
 			
-			switch (event)
-			{
-				case "FOLLOWER_CAST":
-				{
-					if ((world._lematanNpc != null) && !world._lematanNpc.isDead())
-					{
-						for (L2Attackable follower : world._followerslist)
-						{
+			switch (event) {
+				case "FOLLOWER_CAST": {
+					if ((world._lematanNpc != null) && !world._lematanNpc.isDead()) {
+						for (L2Attackable follower : world._followerslist) {
 							follower.setTarget(world._lematanNpc);
 							follower.doCast(ENERGY);
 						}
@@ -136,15 +121,13 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 					}
 					break;
 				}
-				case "LEMATAN_TELEPORT":
-				{
+				case "LEMATAN_TELEPORT": {
 					((L2Attackable) npc).clearAggroList();
 					npc.disableCoreAI(false);
 					npc.teleToLocation(LEMATAN_PORT);
 					npc.getVariables().set("ON_SHIP", 1);
 					npc.getSpawn().setLocation(LEMATAN_PORT);
-					for (Location loc : FOLLOWERS_LOC)
-					{
+					for (Location loc : FOLLOWERS_LOC) {
 						final L2Attackable follower = (L2Attackable) addSpawn(FOLLOWERS, loc, false, 0, false, world.getInstanceId());
 						follower.disableCoreAI(true);
 						follower.setIsImmobilized(true);
@@ -153,13 +136,11 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 					startQuestTimer("FOLLOWER_CAST", 4000, world._lematanNpc, null);
 					break;
 				}
-				case "TELEPORT":
-				{
+				case "TELEPORT": {
 					player.teleToLocation(TELEPORT);
 					break;
 				}
-				case "DELETE":
-				{
+				case "DELETE": {
 					npc.deleteMe();
 					break;
 				}
@@ -169,22 +150,15 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
-		if ((tmpworld != null) && (tmpworld instanceof DIWorld))
-		{
-			switch (npc.getId())
-			{
-				case POWDER_KEG:
-				{
-					if ((damage > 0) && npc.isScriptValue(0))
-					{
-						for (L2Character characters : npc.getKnownList().getKnownCharactersInRadius(600))
-						{
-							if ((characters != null) && characters.isMonster())
-							{
+		if ((tmpworld != null) && (tmpworld instanceof DIWorld)) {
+			switch (npc.getId()) {
+				case POWDER_KEG: {
+					if ((damage > 0) && npc.isScriptValue(0)) {
+						for (L2Character characters : npc.getKnownList().getKnownCharactersInRadius(600)) {
+							if ((characters != null) && characters.isMonster()) {
 								final L2Attackable monster = (L2Attackable) characters;
 								monster.addDamageHate(npc, 0, 999);
 								monster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, npc);
@@ -197,10 +171,8 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 					}
 					break;
 				}
-				case LEMATAN:
-				{
-					if (npc.isScriptValue(0) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.5)))
-					{
+				case LEMATAN: {
+					if (npc.isScriptValue(0) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.5))) {
 						npc.disableCoreAI(true);
 						npc.setScriptValue(1);
 						npc.setIsRunning(true);
@@ -208,40 +180,31 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 					}
 					break;
 				}
-				case TREASURE_BOX:
-				{
-					if (npc.isScriptValue(0))
-					{
-						switch (getRandom(7))
-						{
+				case TREASURE_BOX: {
+					if (npc.isScriptValue(0)) {
+						switch (getRandom(7)) {
 							case 0:
-							case 1:
-							{
+							case 1: {
 								npc.dropItem(attacker, ANTIDOTE_POTION, getRandom(1, 10));
 								break;
 							}
-							case 2:
-							{
+							case 2: {
 								npc.dropItem(attacker, DIVINE_POTION, getRandom(1, 5));
 								break;
 							}
-							case 3:
-							{
+							case 3: {
 								npc.dropItem(attacker, PAILAKA_KEY, getRandom(1, 2));
 								break;
 							}
-							case 4:
-							{
+							case 4: {
 								npc.dropItem(attacker, DEFENCE_POTION, getRandom(1, 7));
 								break;
 							}
-							case 5:
-							{
+							case 5: {
 								npc.dropItem(attacker, SHIELD, getRandom(1, 10));
 								break;
 							}
-							case 6:
-							{
+							case 6: {
 								npc.dropItem(attacker, HEALING_POTION, getRandom(1, 10));
 								break;
 							}
@@ -257,18 +220,14 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
-		if ((tmpworld != null) && (tmpworld instanceof DIWorld))
-		{
+		if ((tmpworld != null) && (tmpworld instanceof DIWorld)) {
 			final DIWorld world = (DIWorld) tmpworld;
 			
-			if (world._followerslist != null)
-			{
-				for (L2Npc _follower : world._followerslist)
-				{
+			if (world._followerslist != null) {
+				for (L2Npc _follower : world._followerslist) {
 					_follower.deleteMe();
 				}
 				world._followerslist.clear();
@@ -279,13 +238,10 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	}
 	
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone)
-	{
-		if ((character.isPlayer()) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
-		{
+	public String onEnterZone(L2Character character, L2ZoneType zone) {
+		if ((character.isPlayer()) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline()) {
 			final InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
-			if ((world != null) && (world.getTemplateId() == TEMPLATE_ID))
-			{
+			if ((world != null) && (world.getTemplateId() == TEMPLATE_ID)) {
 				startQuestTimer("TELEPORT", 1000, ((DIWorld) world)._lematanNpc, (L2PcInstance) character);
 			}
 		}
@@ -293,28 +249,23 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	}
 	
 	@Override
-	public void onMoveFinished(L2Npc npc)
-	{
-		if (npc.getLocation() == LEMATAN_PORT_POINT)
-		{
+	public void onMoveFinished(L2Npc npc) {
+		if (npc.getLocation() == LEMATAN_PORT_POINT) {
 			npc.doCast(AV_TELEPORT);
 			startQuestTimer("LEMATAN_TELEPORT", 2000, npc, null);
 		}
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		if (firstEntrance) {
 			world.addAllowed(player.getObjectId());
 			((DIWorld) world)._lematanNpc = (L2Attackable) addSpawn(LEMATAN, LEMATAN_SPAWN, false, 0, false, world.getInstanceId());
 		}
 		teleportPlayer(player, TELEPORT, world.getInstanceId());
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new PailakaDevilsLegacy();
 	}
 }

@@ -39,8 +39,7 @@ import com.l2jserver.gameserver.util.Util;
  * Trigger Skill By Avoid effect implementation.
  * @author Zealar
  */
-public final class TriggerSkillByAvoid extends AbstractEffect
-{
+public final class TriggerSkillByAvoid extends AbstractEffect {
 	private final int _chance;
 	private final SkillHolder _skill;
 	private final L2TargetType _targetType;
@@ -51,8 +50,7 @@ public final class TriggerSkillByAvoid extends AbstractEffect
 	 * @param set
 	 * @param params
 	 */
-	public TriggerSkillByAvoid(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public TriggerSkillByAvoid(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_chance = params.getInt("chance", 100);
@@ -60,57 +58,47 @@ public final class TriggerSkillByAvoid extends AbstractEffect
 		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.ONE);
 	}
 	
-	public void onAvoidEvent(OnCreatureAttackAvoid event)
-	{
-		if (event.isDamageOverTime() || (_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLvl() == 0)))
-		{
+	public void onAvoidEvent(OnCreatureAttackAvoid event) {
+		if (event.isDamageOverTime() || (_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLvl() == 0))) {
 			return;
 		}
 		
-		if (((_targetType == L2TargetType.SELF) && (_skill.getSkill().getCastRange() > 0)) && (Util.calculateDistance(event.getAttacker(), event.getTarget(), true, false) > _skill.getSkill().getCastRange()))
-		{
+		if (((_targetType == L2TargetType.SELF) && (_skill.getSkill().getCastRange() > 0)) && (Util.calculateDistance(event.getAttacker(), event.getTarget(), true, false) > _skill.getSkill().getCastRange())) {
 			return;
 		}
 		
 		final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(_targetType);
-		if (targetHandler == null)
-		{
+		if (targetHandler == null) {
 			_log.warning("Handler for target type: " + _targetType + " does not exist.");
 			return;
 		}
 		
-		if (Rnd.get(100) > _chance)
-		{
+		if (Rnd.get(100) > _chance) {
 			return;
 		}
 		
 		final Skill triggerSkill = _skill.getSkill();
 		final L2Object[] targets = targetHandler.getTargetList(triggerSkill, event.getTarget(), false, event.getAttacker());
 		
-		for (L2Object triggerTarget : targets)
-		{
-			if ((triggerTarget == null) || !triggerTarget.isCharacter())
-			{
+		for (L2Object triggerTarget : targets) {
+			if ((triggerTarget == null) || !triggerTarget.isCharacter()) {
 				continue;
 			}
 			
 			final L2Character targetChar = (L2Character) triggerTarget;
-			if (!targetChar.isInvul())
-			{
+			if (!targetChar.isInvul()) {
 				event.getTarget().makeTriggerCast(triggerSkill, targetChar);
 			}
 		}
 	}
 	
 	@Override
-	public void onExit(BuffInfo info)
-	{
+	public void onExit(BuffInfo info) {
 		info.getEffected().removeListenerIf(EventType.ON_CREATURE_ATTACK_AVOID, listener -> listener.getOwner() == this);
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		info.getEffected().addListener(new ConsumerEventListener(info.getEffected(), EventType.ON_CREATURE_ATTACK_AVOID, (OnCreatureAttackAvoid event) -> onAvoidEvent(event), this));
 	}
 }

@@ -75,8 +75,7 @@ public class DebugHandler implements ITelnetHandler {
 				
 				if (dbg.equals("decay")) {
 					_print.print(DecayTaskManager.getInstance().toString());
-				}
-				else if (dbg.equals("packetsend")) {
+				} else if (dbg.equals("packetsend")) {
 					if (st.countTokens() < 2) {
 						_print.println("Usage: debug packetsend <charName> <packetData>");
 						return false;
@@ -99,8 +98,7 @@ public class DebugHandler implements ITelnetHandler {
 					
 					targetPlayer.sendPacket(sp);
 					_print.println("Packet sent to player " + charName);
-				}
-				else if (dbg.equals("PacketTP")) {
+				} else if (dbg.equals("PacketTP")) {
 					String str = ThreadPoolManager.getInstance().getPacketStats();
 					_print.println(str);
 					int i = 0;
@@ -113,8 +111,7 @@ public class DebugHandler implements ITelnetHandler {
 					fos = new FileOutputStream(f);
 					out = new OutputStreamWriter(fos, "UTF-8");
 					out.write(str);
-				}
-				else if (dbg.equals("IOPacketTP")) {
+				} else if (dbg.equals("IOPacketTP")) {
 					String str = ThreadPoolManager.getInstance().getIOPacketStats();
 					_print.println(str);
 					int i = 0;
@@ -127,8 +124,7 @@ public class DebugHandler implements ITelnetHandler {
 					fos = new FileOutputStream(f);
 					out = new OutputStreamWriter(fos, "UTF-8");
 					out.write(str);
-				}
-				else if (dbg.equals("GeneralTP")) {
+				} else if (dbg.equals("GeneralTP")) {
 					String str = ThreadPoolManager.getInstance().getGeneralStats();
 					_print.println(str);
 					int i = 0;
@@ -141,8 +137,7 @@ public class DebugHandler implements ITelnetHandler {
 					fos = new FileOutputStream(f);
 					out = new OutputStreamWriter(fos, "UTF-8");
 					out.write(str);
-				}
-				else if (dbg.equals("full")) {
+				} else if (dbg.equals("full")) {
 					_uptime = uptime;
 					
 					final Calendar cal = Calendar.getInstance();
@@ -248,24 +243,20 @@ public class DebugHandler implements ITelnetHandler {
 					_print.println("Debug output saved to log/" + f.getName());
 					_print.flush();
 				}
-			}
-			catch (Exception e) {
-			}
-			finally {
+			} catch (Exception e) {
+			} finally {
 				try {
 					if (out != null) {
 						out.close();
 					}
-				}
-				catch (Exception e) {
+				} catch (Exception e) {
 				}
 				
 				try {
 					if (fos != null) {
 						fos.close();
 					}
-				}
-				catch (Exception e) {
+				} catch (Exception e) {
 				}
 			}
 			
@@ -323,34 +314,27 @@ public class DebugHandler implements ITelnetHandler {
 			if (obj instanceof L2ItemInstance) {
 				if (((L2ItemInstance) obj).getItemLocation() == ItemLocation.VOID) {
 					itemVoidCount++;
-				}
-				else {
+				} else {
 					itemCount++;
 				}
-			}
-			else if (obj instanceof L2MonsterInstance) {
+			} else if (obj instanceof L2MonsterInstance) {
 				monsterCount++;
 				if (((L2MonsterInstance) obj).hasMinions()) {
 					minionCount += ((L2MonsterInstance) obj).getMinionList().countSpawnedMinions();
 					minionsGroupCount += ((L2MonsterInstance) obj).getMinionList().lazyCountSpawnedMinionsGroups();
 				}
-			}
-			else if (obj instanceof L2Npc) {
+			} else if (obj instanceof L2Npc) {
 				npcCount++;
-			}
-			else if (obj instanceof L2PcInstance) {
+			} else if (obj instanceof L2PcInstance) {
 				pcCount++;
 				if ((((L2PcInstance) obj).getClient() != null) && ((L2PcInstance) obj).getClient().isDetached()) {
 					detachedCount++;
 				}
-			}
-			else if (obj instanceof L2Summon) {
+			} else if (obj instanceof L2Summon) {
 				summonCount++;
-			}
-			else if (obj instanceof L2DoorInstance) {
+			} else if (obj instanceof L2DoorInstance) {
 				doorCount++;
-			}
-			else if (obj instanceof L2Character) {
+			} else if (obj instanceof L2Character) {
 				charCount++;
 			}
 		}

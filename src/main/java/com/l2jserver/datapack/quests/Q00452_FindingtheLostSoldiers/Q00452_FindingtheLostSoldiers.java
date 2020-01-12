@@ -30,20 +30,17 @@ import com.l2jserver.gameserver.model.quest.State;
  * @author Gigiikun
  * @version 2012-08-10
  */
-public class Q00452_FindingtheLostSoldiers extends Quest
-{
+public class Q00452_FindingtheLostSoldiers extends Quest {
 	private static final int JAKAN = 32773;
 	private static final int TAG_ID = 15513;
-	private static final int[] SOLDIER_CORPSES =
-	{
+	private static final int[] SOLDIER_CORPSES = {
 		32769,
 		32770,
 		32771,
 		32772
 	};
 	
-	public Q00452_FindingtheLostSoldiers()
-	{
+	public Q00452_FindingtheLostSoldiers() {
 		super(452, Q00452_FindingtheLostSoldiers.class.getSimpleName(), "Finding the Lost Soldiers");
 		addStartNpc(JAKAN);
 		addTalkId(JAKAN);
@@ -52,40 +49,28 @@ public class Q00452_FindingtheLostSoldiers extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
 		String htmltext = event;
 		
-		if (npc.getId() == JAKAN)
-		{
-			if (event.equals("32773-3.htm"))
-			{
+		if (npc.getId() == JAKAN) {
+			if (event.equals("32773-3.htm")) {
 				st.startQuest();
 			}
-		}
-		else
-		{
-			if (st.isCond(1))
-			{
-				if (getRandom(10) < 5)
-				{
+		} else {
+			if (st.isCond(1)) {
+				if (getRandom(10) < 5) {
 					st.giveItems(TAG_ID, 1);
-				}
-				else
-				{
+				} else {
 					htmltext = "corpse-3.html";
 				}
 				st.setCond(2, true);
 				npc.deleteMe();
-			}
-			else
-			{
+			} else {
 				htmltext = "corpse-3.html";
 			}
 		}
@@ -93,24 +78,18 @@ public class Q00452_FindingtheLostSoldiers extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (npc.getId() == JAKAN)
-		{
-			switch (st.getState())
-			{
+		if (npc.getId() == JAKAN) {
+			switch (st.getState()) {
 				case State.CREATED:
 					htmltext = (player.getLevel() < 84) ? "32773-0.html" : "32773-1.htm";
 					break;
 				case State.STARTED:
-					if (st.isCond(1))
-					{
+					if (st.isCond(1)) {
 						htmltext = "32773-4.html";
-					}
-					else if (st.isCond(2))
-					{
+					} else if (st.isCond(2)) {
 						htmltext = "32773-5.html";
 						st.takeItems(TAG_ID, -1);
 						st.giveAdena(95200, true);
@@ -119,22 +98,16 @@ public class Q00452_FindingtheLostSoldiers extends Quest
 					}
 					break;
 				case State.COMPLETED:
-					if (st.isNowAvailable())
-					{
+					if (st.isNowAvailable()) {
 						st.setState(State.CREATED);
 						htmltext = (player.getLevel() < 84) ? "32773-0.html" : "32773-1.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32773-6.html";
 					}
 					break;
 			}
-		}
-		else
-		{
-			if (st.isCond(1))
-			{
+		} else {
+			if (st.isCond(1)) {
 				htmltext = "corpse-1.html";
 			}
 		}

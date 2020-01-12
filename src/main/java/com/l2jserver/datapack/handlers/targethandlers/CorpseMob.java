@@ -33,36 +33,29 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * Corpse Mob target handler.
  * @author UnAfraid, Zoey76
  */
-public class CorpseMob implements ITargetTypeHandler
-{
+public class CorpseMob implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		if ((target == null) || !target.isAttackable() || !target.isDead())
-		{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+		if ((target == null) || !target.isAttackable() || !target.isDead()) {
 			activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 			return EMPTY_TARGET_LIST;
 		}
 		
-		if (skill.hasEffectType(L2EffectType.SUMMON) && target.isServitor() && (target.getActingPlayer() != null) && (target.getActingPlayer().getObjectId() == activeChar.getObjectId()))
-		{
+		if (skill.hasEffectType(L2EffectType.SUMMON) && target.isServitor() && (target.getActingPlayer() != null) && (target.getActingPlayer().getObjectId() == activeChar.getObjectId())) {
 			return EMPTY_TARGET_LIST;
 		}
 		
-		if (skill.hasEffectType(L2EffectType.HP_DRAIN) && ((L2Attackable) target).isOldCorpse(activeChar.getActingPlayer(), npc().getCorpseConsumeSkillAllowedTimeBeforeDecay(), true))
-		{
+		if (skill.hasEffectType(L2EffectType.HP_DRAIN) && ((L2Attackable) target).isOldCorpse(activeChar.getActingPlayer(), npc().getCorpseConsumeSkillAllowedTimeBeforeDecay(), true)) {
 			return EMPTY_TARGET_LIST;
 		}
 		
-		return new L2Character[]
-		{
+		return new L2Character[] {
 			target
 		};
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.CORPSE_MOB;
 	}
 }

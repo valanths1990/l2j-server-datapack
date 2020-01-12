@@ -27,15 +27,13 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Jude AI.
  * @author DS
  */
-public final class Jude extends AbstractNpcAI
-{
+public final class Jude extends AbstractNpcAI {
 	// NPCs
 	private static final int JUDE = 32356;
 	private static final int NATIVE_TREASURE = 9684;
 	private static final int RING_OF_WIND_MASTERY = 9677;
 	
-	public Jude()
-	{
+	public Jude() {
 		super(Jude.class.getSimpleName(), "hellbound/AI/NPC");
 		addFirstTalkId(JUDE);
 		addStartNpc(JUDE);
@@ -43,14 +41,10 @@ public final class Jude extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if ("TreasureSacks".equalsIgnoreCase(event))
-		{
-			if (HellboundEngine.getInstance().getLevel() == 3)
-			{
-				if (getQuestItemsCount(player, NATIVE_TREASURE) >= 40)
-				{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if ("TreasureSacks".equalsIgnoreCase(event)) {
+			if (HellboundEngine.getInstance().getLevel() == 3) {
+				if (getQuestItemsCount(player, NATIVE_TREASURE) >= 40) {
 					takeItems(player, NATIVE_TREASURE, 40);
 					giveItems(player, RING_OF_WIND_MASTERY, 1);
 					return "32356-02.htm";
@@ -62,10 +56,8 @@ public final class Jude extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		switch (HellboundEngine.getInstance().getLevel())
-		{
+	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+		switch (HellboundEngine.getInstance().getLevel()) {
 			case 0:
 			case 1:
 			case 2:

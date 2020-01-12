@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Hunt of the Golden Ram Mercenary Force (628)
  * @author netvirus, Zoey76
  */
-public final class Q00628_HuntGoldenRam extends Quest
-{
+public final class Q00628_HuntGoldenRam extends Quest {
 	// NPCs
 	private static final int KAHMAN = 31554;
 	// Items
@@ -47,8 +46,7 @@ public final class Q00628_HuntGoldenRam extends Quest
 	// Mobs
 	private static final Map<Integer, ItemChanceHolder> MOBS_DROP_CHANCES = new HashMap<>();
 	
-	static
-	{
+	static {
 		MOBS_DROP_CHANCES.put(21508, new ItemChanceHolder(SPLINTER_STAKATO_CHITIN, 0.500, 1)); // splinter_stakato
 		MOBS_DROP_CHANCES.put(21509, new ItemChanceHolder(SPLINTER_STAKATO_CHITIN, 0.430, 1)); // splinter_stakato_worker
 		MOBS_DROP_CHANCES.put(21510, new ItemChanceHolder(SPLINTER_STAKATO_CHITIN, 0.521, 1)); // splinter_stakato_soldier
@@ -61,8 +59,7 @@ public final class Q00628_HuntGoldenRam extends Quest
 		MOBS_DROP_CHANCES.put(21517, new ItemChanceHolder(NEEDLE_STAKATO_CHITIN, 0.744, 2)); // needle_stakato_drone_a
 	}
 	
-	public Q00628_HuntGoldenRam()
-	{
+	public Q00628_HuntGoldenRam() {
 		super(628, Q00628_HuntGoldenRam.class.getSimpleName(), "Hunt of the Golden Ram Mercenary Force");
 		addStartNpc(KAHMAN);
 		addTalkId(KAHMAN);
@@ -71,43 +68,31 @@ public final class Q00628_HuntGoldenRam extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "accept":
-			{
-				if (qs.isCreated() && (player.getLevel() >= MIN_LVL))
-				{
+		switch (event) {
+			case "accept": {
+				if (qs.isCreated() && (player.getLevel() >= MIN_LVL)) {
 					qs.startQuest();
-					if (hasQuestItems(player, GOLDEN_RAM_BADGE_SOLDIER))
-					{
+					if (hasQuestItems(player, GOLDEN_RAM_BADGE_SOLDIER)) {
 						qs.setCond(3);
 						htmltext = "31554-05.htm";
-					}
-					else if (hasQuestItems(player, GOLDEN_RAM_BADGE_RECRUIT))
-					{
+					} else if (hasQuestItems(player, GOLDEN_RAM_BADGE_RECRUIT)) {
 						qs.setCond(2);
 						htmltext = "31554-04.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "31554-03.htm";
 					}
 				}
 				break;
 			}
-			case "31554-08.html":
-			{
-				if (getQuestItemsCount(player, SPLINTER_STAKATO_CHITIN) >= REQUIRED_ITEM_COUNT)
-				{
+			case "31554-08.html": {
+				if (getQuestItemsCount(player, SPLINTER_STAKATO_CHITIN) >= REQUIRED_ITEM_COUNT) {
 					giveItems(player, GOLDEN_RAM_BADGE_RECRUIT, 1);
 					takeItems(player, SPLINTER_STAKATO_CHITIN, -1);
 					qs.setCond(2, true);
@@ -116,18 +101,14 @@ public final class Q00628_HuntGoldenRam extends Quest
 				break;
 			}
 			case "31554-12.html":
-			case "31554-13.html":
-			{
-				if (qs.isStarted())
-				{
+			case "31554-13.html": {
+				if (qs.isStarted()) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "31554-14.html":
-			{
-				if (qs.isStarted())
-				{
+			case "31554-14.html": {
+				if (qs.isStarted()) {
 					qs.exitQuest(true, true);
 					htmltext = event;
 				}
@@ -138,14 +119,11 @@ public final class Q00628_HuntGoldenRam extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, -1, 1, npc);
-		if (qs != null)
-		{
+		if (qs != null) {
 			final ItemChanceHolder item = MOBS_DROP_CHANCES.get(npc.getId());
-			if ((item.getCount() <= qs.getCond()) && !qs.isCond(3))
-			{
+			if ((item.getCount() <= qs.getCond()) && !qs.isCond(3)) {
 				giveItemRandomly(qs.getPlayer(), npc, item.getId(), 1, REQUIRED_ITEM_COUNT, item.getChance(), true);
 			}
 		}
@@ -153,61 +131,44 @@ public final class Q00628_HuntGoldenRam extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
-		{
-			case State.CREATED:
-			{
+		switch (qs.getState()) {
+			case State.CREATED: {
 				htmltext = ((player.getLevel() >= MIN_LVL) ? "31554-01.htm" : "31554-02.htm");
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				final long itemCountSplinter = getQuestItemsCount(player, SPLINTER_STAKATO_CHITIN);
 				final long itemCountNeedle = getQuestItemsCount(player, NEEDLE_STAKATO_CHITIN);
-				switch (qs.getCond())
-				{
-					case 1:
-					{
+				switch (qs.getCond()) {
+					case 1: {
 						htmltext = ((itemCountSplinter >= REQUIRED_ITEM_COUNT) ? "31554-07.html" : "31554-06.html");
 						break;
 					}
-					case 2:
-					{
-						if (hasQuestItems(player, GOLDEN_RAM_BADGE_RECRUIT))
-						{
-							if ((itemCountSplinter >= REQUIRED_ITEM_COUNT) && (itemCountNeedle >= REQUIRED_ITEM_COUNT))
-							{
+					case 2: {
+						if (hasQuestItems(player, GOLDEN_RAM_BADGE_RECRUIT)) {
+							if ((itemCountSplinter >= REQUIRED_ITEM_COUNT) && (itemCountNeedle >= REQUIRED_ITEM_COUNT)) {
 								takeItems(player, GOLDEN_RAM_BADGE_RECRUIT, -1);
 								takeItems(player, SPLINTER_STAKATO_CHITIN, -1);
 								takeItems(player, NEEDLE_STAKATO_CHITIN, -1);
 								giveItems(player, GOLDEN_RAM_BADGE_SOLDIER, 1);
 								qs.setCond(3, true);
 								htmltext = "31554-10.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "31554-09.html";
 							}
-						}
-						else
-						{
+						} else {
 							qs.setCond(1);
 							htmltext = ((itemCountSplinter >= REQUIRED_ITEM_COUNT) ? "31554-07.html" : "31554-06.html");
 						}
 						break;
 					}
-					case 3:
-					{
-						if (hasQuestItems(player, GOLDEN_RAM_BADGE_SOLDIER))
-						{
+					case 3: {
+						if (hasQuestItems(player, GOLDEN_RAM_BADGE_SOLDIER)) {
 							htmltext = "31554-11.html";
-						}
-						else
-						{
+						} else {
 							qs.setCond(1);
 							htmltext = ((itemCountSplinter >= REQUIRED_ITEM_COUNT) ? "31554-07.html" : "31554-06.html");
 						}

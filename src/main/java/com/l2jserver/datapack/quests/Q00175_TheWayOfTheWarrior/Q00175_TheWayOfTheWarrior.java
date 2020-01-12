@@ -35,8 +35,7 @@ import com.l2jserver.gameserver.network.serverpackets.SocialAction;
  * The Way of the Warrior (175)
  * @author ivantotov
  */
-public final class Q00175_TheWayOfTheWarrior extends Quest
-{
+public final class Q00175_TheWayOfTheWarrior extends Quest {
 	// NPCs
 	private static final int PERWAN = 32133;
 	private static final int KEKROPUS = 32138;
@@ -52,8 +51,7 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 	// Rewards
 	private static final int WARRIORS_SWORD = 9720;
 	private static final ItemHolder SOULSHOTS_NO_GRADE_FOR_ROOKIES = new ItemHolder(5789, 7000);
-	private static final ItemHolder[] REWARDS =
-	{
+	private static final ItemHolder[] REWARDS = {
 		new ItemHolder(1060, 100), // Lesser Healing Potion
 		new ItemHolder(4412, 10), // Echo Crystal - Theme of Battle
 		new ItemHolder(4413, 10), // Echo Crystal - Theme of Love
@@ -63,8 +61,7 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 	};
 	// Monsters
 	private static final int MOUNTAIN_WEREWOLF = 22235;
-	private static final int[] MONSTERS =
-	{
+	private static final int[] MONSTERS = {
 		22236, // Muertos Archer
 		22239, // Muertos Guard
 		22240, // Muertos Scout
@@ -74,8 +71,7 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 		22246, // Muertos Commander
 	};
 	
-	public Q00175_TheWayOfTheWarrior()
-	{
+	public Q00175_TheWayOfTheWarrior() {
 		super(175, Q00175_TheWayOfTheWarrior.class.getSimpleName(), "The Way of the Warrior");
 		addStartNpc(KEKROPUS);
 		addTalkId(KEKROPUS, PERWAN);
@@ -85,46 +81,36 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		String htmltext = null;
-		switch (event)
-		{
-			case "32138-02.htm":
-			{
+		switch (event) {
+			case "32138-02.htm": {
 				htmltext = event;
 				break;
 			}
-			case "32138-05.htm":
-			{
-				if (qs.isCreated())
-				{
+			case "32138-05.htm": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					qs.setMemoState(1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32138-10.html":
-			{
+			case "32138-10.html": {
 				qs.setMemoState(6);
 				qs.setCond(7, true);
 				htmltext = event;
 				break;
 			}
-			case "32138-13.html":
-			{
-				if (hasItem(player, MUERTOS_CLAW))
-				{
+			case "32138-13.html": {
+				if (hasItem(player, MUERTOS_CLAW)) {
 					takeItem(player, MUERTOS_CLAW);
 					giveAdena(player, 8799, true);
-					for (ItemHolder reward : REWARDS)
-					{
+					for (ItemHolder reward : REWARDS) {
 						giveItems(player, reward);
 					}
 					giveNewbieReward(player);
@@ -136,8 +122,7 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 				}
 				break;
 			}
-			case "32133-06.html":
-			{
+			case "32133-06.html": {
 				qs.setMemoState(5);
 				qs.setCond(6, true);
 				npc.setTarget(player);
@@ -150,21 +135,15 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
-		if (npc.getId() == MOUNTAIN_WEREWOLF)
-		{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
+		if (npc.getId() == MOUNTAIN_WEREWOLF) {
 			final QuestState qs = getRandomPartyMemberState(player, 2, 3, npc);
-			if ((qs != null) && giveItemRandomly(qs.getPlayer(), npc, WOLF_TAIL.getId(), 1, WOLF_TAIL.getCount(), 0.5, true))
-			{
+			if ((qs != null) && giveItemRandomly(qs.getPlayer(), npc, WOLF_TAIL.getId(), 1, WOLF_TAIL.getCount(), 0.5, true)) {
 				qs.setCond(3, true);
 			}
-		}
-		else
-		{
+		} else {
 			final QuestState qs = getRandomPartyMemberState(player, 7, 3, npc);
-			if ((qs != null) && giveItemRandomly(qs.getPlayer(), npc, MUERTOS_CLAW.getId(), 1, MUERTOS_CLAW.getCount(), 1.0, true))
-			{
+			if ((qs != null) && giveItemRandomly(qs.getPlayer(), npc, MUERTOS_CLAW.getId(), 1, MUERTOS_CLAW.getCount(), 1.0, true)) {
 				qs.setCond(8, true);
 			}
 		}
@@ -172,102 +151,75 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
-			case KEKROPUS:
-			{
-				if (qs.isCreated())
-				{
-					if (player.getRace() != Race.KAMAEL)
-					{
+		switch (npc.getId()) {
+			case KEKROPUS: {
+				if (qs.isCreated()) {
+					if (player.getRace() != Race.KAMAEL) {
 						htmltext = "32138-04.htm";
-					}
-					else if (player.getLevel() >= MIN_LEVEL)
-					{
+					} else if (player.getLevel() >= MIN_LEVEL) {
 						htmltext = "32138-01.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32138-03.htm";
 					}
 					break;
-				}
-				else if (qs.isStarted())
-				{
-					switch (qs.getCond())
-					{
+				} else if (qs.isStarted()) {
+					switch (qs.getCond()) {
 						case 1:
 						case 2:
-						case 3:
-						{
+						case 3: {
 							htmltext = "32138-06.html";
 							break;
 						}
-						case 4:
-						{
+						case 4: {
 							qs.setMemoState(4);
 							qs.setCond(5, true);
 							htmltext = "32138-07.html";
 							break;
 						}
-						case 5:
-						{
+						case 5: {
 							htmltext = "32138-08.html";
 							break;
 						}
-						case 6:
-						{
+						case 6: {
 							htmltext = "32138-09.html";
 							break;
 						}
-						case 7:
-						{
+						case 7: {
 							htmltext = "32138-11.html";
 							break;
 						}
-						case 8:
-						{
-							if (hasItem(player, MUERTOS_CLAW))
-							{
+						case 8: {
+							if (hasItem(player, MUERTOS_CLAW)) {
 								htmltext = "32138-12.html";
 							}
 							break;
 						}
 					}
 					break;
-				}
-				else if (qs.isCompleted())
-				{
+				} else if (qs.isCompleted()) {
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
 				}
 				
 				break;
 			}
-			case PERWAN:
-			{
-				switch (qs.getCond())
-				{
-					case 1:
-					{
+			case PERWAN: {
+				switch (qs.getCond()) {
+					case 1: {
 						qs.setMemoState(2);
 						qs.setCond(2, true);
 						htmltext = "32133-01.html";
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						htmltext = "32133-02.html";
 						break;
 					}
-					case 3:
-					{
-						if (hasItem(player, WOLF_TAIL))
-						{
+					case 3: {
+						if (hasItem(player, WOLF_TAIL)) {
 							takeItem(player, WOLF_TAIL);
 							qs.setMemoState(3);
 							qs.setCond(4, true);
@@ -275,18 +227,15 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 						}
 						break;
 					}
-					case 4:
-					{
+					case 4: {
 						htmltext = "32133-04.html";
 						break;
 					}
-					case 5:
-					{
+					case 5: {
 						htmltext = "32133-05.html";
 						break;
 					}
-					case 6:
-					{
+					case 6: {
 						htmltext = "32133-07.html";
 						break;
 					}
@@ -297,22 +246,17 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 		return htmltext;
 	}
 	
-	public static final void giveNewbieReward(L2PcInstance player)
-	{
+	public static final void giveNewbieReward(L2PcInstance player) {
 		final PlayerVariables vars = player.getVariables();
-		if ((player.getLevel() < 25) && !vars.getBoolean("NEWBIE_SHOTS", false))
-		{
+		if ((player.getLevel() < 25) && !vars.getBoolean("NEWBIE_SHOTS", false)) {
 			playSound(player, Voice.TUTORIAL_VOICE_026_1000);
 			giveItems(player, SOULSHOTS_NO_GRADE_FOR_ROOKIES);
 			vars.set("NEWBIE_SHOTS", true);
 		}
-		if (vars.getString("GUIDE_MISSION", null) == null)
-		{
+		if (vars.getString("GUIDE_MISSION", null) == null) {
 			vars.set("GUIDE_MISSION", 100000);
 			player.sendPacket(MESSAGE);
-		}
-		else if (((vars.getInt("GUIDE_MISSION") % 1000000) / 100000) != 1)
-		{
+		} else if (((vars.getInt("GUIDE_MISSION") % 1000000) / 100000) != 1) {
 			vars.set("GUIDE_MISSION", vars.getInt("GUIDE_MISSION") + 100000);
 			player.sendPacket(MESSAGE);
 		}

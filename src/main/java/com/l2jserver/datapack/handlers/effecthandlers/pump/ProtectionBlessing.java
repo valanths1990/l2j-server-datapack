@@ -28,22 +28,18 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Protection Blessing effect implementation.
  * @author kerberos_20
  */
-public final class ProtectionBlessing extends AbstractEffect
-{
-	public ProtectionBlessing(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class ProtectionBlessing extends AbstractEffect {
+	public ProtectionBlessing(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean canStart(BuffInfo info)
-	{
+	public boolean canStart(BuffInfo info) {
 		return (info.getEffector() != null) && (info.getEffected() != null) && info.getEffected().isPlayer();
 	}
 	
 	@Override
-	public int getEffectFlags()
-	{
+	public int getEffectFlags() {
 		return EffectFlag.PROTECTION_BLESSING.getMask();
 	}
 }

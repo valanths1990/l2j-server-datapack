@@ -45,8 +45,7 @@ import com.l2jserver.gameserver.util.Util;
  * Don't Know, Don't Care (456)
  * @author lion, ivantotov, jurchiks
  */
-public final class Q00456_DontKnowDontCare extends Quest
-{
+public final class Q00456_DontKnowDontCare extends Quest {
 	// NPCs
 	// @formatter:off
 	private static final int[] SEPARATED_SOUL =
@@ -68,8 +67,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 	private static final Map<Integer, Integer> MONSTER_ESSENCES = new HashMap<>();
 	private static final String TIMER_UNSPAWN_RAID_CORPSE = "TIMER_UNSPAWN_RAID_CORPSE";
 	
-	static
-	{
+	static {
 		MONSTER_NPCS.put(25725, DRAKE_LORD_CORPSE);
 		MONSTER_NPCS.put(25726, BEHEMOTH_LEADER_CORPSE);
 		MONSTER_NPCS.put(25727, DRAGON_BEAST_CORPSE);
@@ -79,8 +77,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 	}
 	
 	// Rewards
-	private static final int[] WEAPONS =
-	{
+	private static final int[] WEAPONS = {
 		15558, // Periel Sword
 		15559, // Skull Edge
 		15560, // Vigwik Axe
@@ -96,8 +93,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 		15570, // Finale Blade
 		15571, // Dominion Crossbow
 	};
-	private static final int[] ARMOR =
-	{
+	private static final int[] ARMOR = {
 		15743, // Sealed Vorpal Helmet
 		15746, // Sealed Vorpal Breastplate
 		15749, // Sealed Vorpal Gaiters
@@ -116,14 +112,12 @@ public final class Q00456_DontKnowDontCare extends Quest
 		15757, // Sealed Vorpal Shoes
 		15759, // Sealed Vorpal Sigil
 	};
-	private static final int[] ACCESSORIES =
-	{
+	private static final int[] ACCESSORIES = {
 		15763, // Sealed Vorpal Ring
 		15764, // Sealed Vorpal Earring
 		15765, // Sealed Vorpal Necklace
 	};
-	private static final int[] ATTRIBUTE_CRYSTALS =
-	{
+	private static final int[] ATTRIBUTE_CRYSTALS = {
 		9552, // Fire Crystal
 		9553, // Water Crystal
 		9554, // Earth Crystal
@@ -137,8 +131,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 	private static final int GEMSTONE_S = 2134;
 	private final Map<Integer, Set<Integer>> allowedPlayerMap = new ConcurrentHashMap<>();
 	
-	public Q00456_DontKnowDontCare()
-	{
+	public Q00456_DontKnowDontCare() {
 		super(456, Q00456_DontKnowDontCare.class.getSimpleName(), "Don't Know, Don't Care");
 		addStartNpc(SEPARATED_SOUL);
 		addTalkId(SEPARATED_SOUL);
@@ -149,34 +142,26 @@ public final class Q00456_DontKnowDontCare extends Quest
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		final Set<Integer> allowedPlayers = allowedPlayerMap.get(npc.getObjectId());
 		
-		if ((qs == null) || !qs.isCond(1) || (allowedPlayers == null) || !allowedPlayers.contains(player.getObjectId()))
-		{
+		if ((qs == null) || !qs.isCond(1) || (allowedPlayers == null) || !allowedPlayers.contains(player.getObjectId())) {
 			return npc.getId() + "-02.html";
 		}
 		
 		final int essence = MONSTER_ESSENCES.get(npc.getId());
 		final String htmltext;
 		
-		if (hasQuestItems(player, essence))
-		{
+		if (hasQuestItems(player, essence)) {
 			htmltext = npc.getId() + "-03.html";
-		}
-		else
-		{
+		} else {
 			giveItems(player, essence, 1);
 			htmltext = npc.getId() + "-01.html";
 			
-			if (hasQuestItems(player, getRegisteredItemIds()))
-			{
+			if (hasQuestItems(player, getRegisteredItemIds())) {
 				qs.setCond(2, true);
-			}
-			else
-			{
+			} else {
 				playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -185,17 +170,13 @@ public final class Q00456_DontKnowDontCare extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (Util.contains(SEPARATED_SOUL, npc.getId()))
-		{
-			switch (qs.getState())
-			{
+		if (Util.contains(SEPARATED_SOUL, npc.getId())) {
+			switch (qs.getState()) {
 				case State.COMPLETED:
-					if (!qs.isNowAvailable())
-					{
+					if (!qs.isNowAvailable()) {
 						htmltext = "32864-02.html";
 						break;
 					}
@@ -205,17 +186,13 @@ public final class Q00456_DontKnowDontCare extends Quest
 					htmltext = ((player.getLevel() >= MIN_LEVEL) ? "32864-01.htm" : "32864-03.html");
 					break;
 				case State.STARTED:
-					switch (qs.getCond())
-					{
-						case 1:
-						{
+					switch (qs.getCond()) {
+						case 1: {
 							htmltext = (hasAtLeastOneQuestItem(player, getRegisteredItemIds()) ? "32864-09.html" : "32864-08.html");
 							break;
 						}
-						case 2:
-						{
-							if (hasQuestItems(player, getRegisteredItemIds()))
-							{
+						case 2: {
+							if (hasQuestItems(player, getRegisteredItemIds())) {
 								rewardPlayer(player, npc);
 								qs.exitQuest(QuestType.DAILY, true);
 								htmltext = "32864-10.html";
@@ -230,33 +207,26 @@ public final class Q00456_DontKnowDontCare extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = player != null ? getQuestState(player, false) : null;
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "32864-04.htm":
 			case "32864-05.htm":
-			case "32864-06.htm":
-			{
-				if ((qs != null) && qs.isCreated())
-				{
+			case "32864-06.htm": {
+				if ((qs != null) && qs.isCreated()) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32864-07.htm":
-			{
-				if ((qs != null) && qs.isCreated())
-				{
+			case "32864-07.htm": {
+				if ((qs != null) && qs.isCreated()) {
 					qs.startQuest();
 					htmltext = event;
 				}
 				break;
 			}
-			case TIMER_UNSPAWN_RAID_CORPSE:
-			{
+			case TIMER_UNSPAWN_RAID_CORPSE: {
 				allowedPlayerMap.remove(npc.getObjectId());
 				npc.deleteMe();
 				break;
@@ -267,27 +237,22 @@ public final class Q00456_DontKnowDontCare extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (!killer.isInParty() || !killer.getParty().isInCommandChannel())
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (!killer.isInParty() || !killer.getParty().isInCommandChannel()) {
 			// only the killing cc gets the quest
 			return super.onKill(npc, killer, isSummon);
 		}
 		
 		final L2CommandChannel cc = killer.getParty().getCommandChannel();
 		
-		if (cc.getMemberCount() < MIN_PLAYERS)
-		{
+		if (cc.getMemberCount() < MIN_PLAYERS) {
 			return super.onKill(npc, killer, isSummon);
 		}
 		
 		Set<Integer> allowedPlayers = new HashSet<>();
 		
-		for (AggroInfo aggro : ((L2Attackable) npc).getAggroList().values())
-		{
-			if ((aggro.getAttacker() == null) || !aggro.getAttacker().isPlayer())
-			{
+		for (AggroInfo aggro : ((L2Attackable) npc).getAggroList().values()) {
+			if ((aggro.getAttacker() == null) || !aggro.getAttacker().isPlayer()) {
 				continue;
 			}
 			
@@ -296,14 +261,12 @@ public final class Q00456_DontKnowDontCare extends Quest
 			if (attacker.isInParty() //
 				&& attacker.getParty().isInCommandChannel() //
 				&& attacker.getParty().getCommandChannel().equals(cc) // only players from the same cc are allowed
-				&& Util.checkIfInRange(1500, npc, attacker, true))
-			{
+				&& Util.checkIfInRange(1500, npc, attacker, true)) {
 				allowedPlayers.add(attacker.getObjectId());
 			}
 		}
 		
-		if (!allowedPlayers.isEmpty())
-		{
+		if (!allowedPlayers.isEmpty()) {
 			// This depends on the boss respawn delay being at least 5 minutes.
 			final L2Npc spawned = addSpawn(MONSTER_NPCS.get(npc.getId()), npc, true, 0);
 			allowedPlayerMap.put(spawned.getObjectId(), allowedPlayers);
@@ -313,42 +276,26 @@ public final class Q00456_DontKnowDontCare extends Quest
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private static void rewardPlayer(L2PcInstance player, L2Npc npc)
-	{
+	private static void rewardPlayer(L2PcInstance player, L2Npc npc) {
 		int chance = getRandom(10000);
 		final int reward;
 		int count = 1;
 		
-		if (chance < 170)
-		{
+		if (chance < 170) {
 			reward = ARMOR[getRandom(ARMOR.length)];
-		}
-		else if (chance < 200)
-		{
+		} else if (chance < 200) {
 			reward = ACCESSORIES[getRandom(ACCESSORIES.length)];
-		}
-		else if (chance < 270)
-		{
+		} else if (chance < 270) {
 			reward = WEAPONS[getRandom(WEAPONS.length)];
-		}
-		else if (chance < 325)
-		{
+		} else if (chance < 325) {
 			reward = BLESSED_SCROLL_ENCHANT_WEAPON_S;
-		}
-		else if (chance < 425)
-		{
+		} else if (chance < 425) {
 			reward = BLESSED_SCROLL_ENCHANT_ARMOR_S;
-		}
-		else if (chance < 925)
-		{
+		} else if (chance < 925) {
 			reward = ATTRIBUTE_CRYSTALS[getRandom(ATTRIBUTE_CRYSTALS.length)];
-		}
-		else if (chance < 1100)
-		{
+		} else if (chance < 1100) {
 			reward = SCROLL_ENCHANT_WEAPON_S;
-		}
-		else
-		{
+		} else {
 			reward = GEMSTONE_S;
 			count = 3;
 		}

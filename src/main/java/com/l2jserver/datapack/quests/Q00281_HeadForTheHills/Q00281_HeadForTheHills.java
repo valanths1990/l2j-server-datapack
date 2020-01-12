@@ -37,8 +37,7 @@ import com.l2jserver.gameserver.network.serverpackets.ExShowScreenMessage;
  * Head for the Hills! (281)
  * @author xban1x
  */
-public final class Q00281_HeadForTheHills extends Quest
-{
+public final class Q00281_HeadForTheHills extends Quest {
 	// Item
 	private static final int CLAWS = 9796;
 	// NPC
@@ -50,8 +49,7 @@ public final class Q00281_HeadForTheHills extends Quest
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
 	// Rewards
-	private static final int[] REWARDS = new int[]
-	{
+	private static final int[] REWARDS = new int[] {
 		115, // Earring of Wisdom
 		876, // Ring of Anguish
 		907, // Necklace of Anguish
@@ -66,8 +64,7 @@ public final class Q00281_HeadForTheHills extends Quest
 	private static final ItemHolder SOULSHOTS_NO_GRADE_FOR_ROOKIES = new ItemHolder(5789, 6000);
 	private static final ItemHolder SPIRITSHOTS_NO_GRADE_FOR_ROOKIES = new ItemHolder(5790, 3000);
 	
-	static
-	{
+	static {
 		MONSTERS.put(22234, 390); // Green Goblin
 		MONSTERS.put(22235, 450); // Mountain Werewolf
 		MONSTERS.put(22236, 650); // Muertos Archer
@@ -76,8 +73,7 @@ public final class Q00281_HeadForTheHills extends Quest
 		MONSTERS.put(22239, 990); // Muertos Guard
 	}
 	
-	public Q00281_HeadForTheHills()
-	{
+	public Q00281_HeadForTheHills() {
 		super(281, Q00281_HeadForTheHills.class.getSimpleName(), "Head for the Hills!");
 		addStartNpc(MERCELA);
 		addTalkId(MERCELA);
@@ -86,68 +82,51 @@ public final class Q00281_HeadForTheHills extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "32173-03.htm":
-			{
+		switch (event) {
+			case "32173-03.htm": {
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "32173-06.html":
-			{
-				if (st.hasQuestItems(CLAWS))
-				{
+			case "32173-06.html": {
+				if (st.hasQuestItems(CLAWS)) {
 					final long claws = st.getQuestItemsCount(CLAWS);
 					st.giveAdena(((claws * 23) + (claws >= 10 ? 400 : 0)), true);
 					st.takeItems(CLAWS, -1);
 					giveNewbieReward(player);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "32173-07.html";
 				}
 				break;
 			}
-			case "32173-08.html":
-			{
+			case "32173-08.html": {
 				htmltext = event;
 				break;
 			}
-			case "32173-09.html":
-			{
+			case "32173-09.html": {
 				st.exitQuest(true, true);
 				htmltext = event;
 				break;
 			}
-			case "32173-11.html":
-			{
-				if (st.getQuestItemsCount(CLAWS) >= 50)
-				{
-					if (getRandom(1000) <= 360)
-					{
+			case "32173-11.html": {
+				if (st.getQuestItemsCount(CLAWS) >= 50) {
+					if (getRandom(1000) <= 360) {
 						st.giveItems(REWARDS[getRandom(9)], 1);
-					}
-					else
-					{
+					} else {
 						st.giveItems(REWARDS[9], 1);
 					}
 					st.takeItems(CLAWS, 50);
 					giveNewbieReward(player);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "32173-10.html";
 				}
 				break;
@@ -157,11 +136,9 @@ public final class Q00281_HeadForTheHills extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && (getRandom(1000) <= MONSTERS.get(npc.getId())))
-		{
+		if ((st != null) && (getRandom(1000) <= MONSTERS.get(npc.getId()))) {
 			st.giveItems(CLAWS, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
@@ -169,19 +146,15 @@ public final class Q00281_HeadForTheHills extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() >= MIN_LVL) ? "32173-01.htm" : "32173-02.htm";
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				htmltext = st.hasQuestItems(CLAWS) ? "32173-05.html" : "32173-04.html";
 				break;
 			}
@@ -193,30 +166,22 @@ public final class Q00281_HeadForTheHills extends Quest
 	 * Give basic newbie reward.
 	 * @param player the player to reward
 	 */
-	public static final void giveNewbieReward(L2PcInstance player)
-	{
+	public static final void giveNewbieReward(L2PcInstance player) {
 		final PlayerVariables vars = player.getVariables();
-		if ((player.getLevel() < 25) && !vars.getBoolean("NEWBIE_SHOTS", false))
-		{
-			if (player.isMageClass())
-			{
+		if ((player.getLevel() < 25) && !vars.getBoolean("NEWBIE_SHOTS", false)) {
+			if (player.isMageClass()) {
 				giveItems(player, SPIRITSHOTS_NO_GRADE_FOR_ROOKIES);
 				playSound(player, Voice.TUTORIAL_VOICE_027_1000);
-			}
-			else
-			{
+			} else {
 				giveItems(player, SOULSHOTS_NO_GRADE_FOR_ROOKIES);
 				playSound(player, Voice.TUTORIAL_VOICE_026_1000);
 			}
 			vars.set("NEWBIE_SHOTS", true);
 		}
-		if (vars.getString("GUIDE_MISSION", null) == null)
-		{
+		if (vars.getString("GUIDE_MISSION", null) == null) {
 			vars.set("GUIDE_MISSION", 1000);
 			player.sendPacket(MESSAGE);
-		}
-		else if (((vars.getInt("GUIDE_MISSION") % 10000) / 1000) != 1)
-		{
+		} else if (((vars.getInt("GUIDE_MISSION") % 10000) / 1000) != 1) {
 			vars.set("GUIDE_MISSION", vars.getInt("GUIDE_MISSION") + 1000);
 			player.sendPacket(MESSAGE);
 		}

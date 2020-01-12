@@ -36,8 +36,7 @@ import com.l2jserver.gameserver.util.Broadcast;
  * Hellbound Engine.
  * @author Zoey76
  */
-public final class HellboundEngine extends AbstractNpcAI
-{
+public final class HellboundEngine extends AbstractNpcAI {
 	
 	private static final Logger LOG = LoggerFactory.getLogger(HellboundEngine.class);
 	
@@ -64,8 +63,7 @@ public final class HellboundEngine extends AbstractNpcAI
 	private int _maxTrust = 0;
 	private int _minTrust = 0;
 	
-	public HellboundEngine()
-	{
+	public HellboundEngine() {
 		super(HellboundEngine.class.getSimpleName(), "hellbound");
 		
 		addKillId(HellboundPointData.getInstance().getPointsInfo().keySet());
@@ -78,22 +76,17 @@ public final class HellboundEngine extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equals(UPDATE_EVENT))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.equals(UPDATE_EVENT)) {
 			int level = getLevel();
-			if ((level > 0) && (level == getCachedLevel()))
-			{
+			if ((level > 0) && (level == getCachedLevel())) {
 				if ((getTrust() == getMaxTrust()) && (level != 4)) // Only exclusion is kill of Derek.
 				{
 					level++;
 					setLevel(level);
 					onLevelChange(level);
 				}
-			}
-			else
-			{
+			} else {
 				onLevelChange(level); // First run or changed by administrator.
 			}
 			startQuestTimer(UPDATE_EVENT, UPDATE_INTERVAL, null, null);
@@ -104,44 +97,32 @@ public final class HellboundEngine extends AbstractNpcAI
 	/**
 	 * Adds and removes spawns for Hellbound given the conditions for spawn.
 	 */
-	private void doSpawn()
-	{
+	private void doSpawn() {
 		int added = 0;
 		int deleted = 0;
 		final HellboundSpawns hellboundSpawns = HellboundSpawns.getInstance();
-		for (L2Spawn spawn : hellboundSpawns.getSpawns())
-		{
+		for (L2Spawn spawn : hellboundSpawns.getSpawns()) {
 			final L2Npc npc = spawn.getLastSpawn();
-			if ((getLevel() < hellboundSpawns.getSpawnMinLevel(spawn.getId())) || (getLevel() > hellboundSpawns.getSpawnMaxLevel(spawn.getId())))
-			{
+			if ((getLevel() < hellboundSpawns.getSpawnMinLevel(spawn.getId())) || (getLevel() > hellboundSpawns.getSpawnMaxLevel(spawn.getId()))) {
 				spawn.stopRespawn();
 				
-				if ((npc != null) && npc.isVisible())
-				{
+				if ((npc != null) && npc.isVisible()) {
 					npc.deleteMe();
 					deleted++;
 				}
-			}
-			else
-			{
+			} else {
 				spawn.startRespawn();
-				if (npc == null)
-				{
+				if (npc == null) {
 					spawn.doSpawn();
 					added++;
-				}
-				else
-				{
-					if (npc.isDecayed())
-					{
+				} else {
+					if (npc.isDecayed()) {
 						npc.setDecayed(false);
 					}
-					if (npc.isDead())
-					{
+					if (npc.isDead()) {
 						npc.doRevive();
 					}
-					if (!npc.isVisible())
-					{
+					if (!npc.isVisible()) {
 						npc.setIsVisible(true);
 						added++;
 					}
@@ -152,12 +133,10 @@ public final class HellboundEngine extends AbstractNpcAI
 			}
 		}
 		
-		if (added > 0)
-		{
+		if (added > 0) {
 			LOG.info("Spawned {} NPCs.", added);
 		}
-		if (deleted > 0)
-		{
+		if (deleted > 0) {
 			LOG.info("Removed {} NPCs.", deleted);
 		}
 	}
@@ -166,8 +145,7 @@ public final class HellboundEngine extends AbstractNpcAI
 	 * Gets the Hellbound level.
 	 * @return the level
 	 */
-	public int getLevel()
-	{
+	public int getLevel() {
 		return GlobalVariablesManager.getInstance().getInt("HBLevel", 0);
 	}
 	
@@ -175,10 +153,8 @@ public final class HellboundEngine extends AbstractNpcAI
 	 * Sets the Hellbound level.
 	 * @param lvl the level to set
 	 */
-	public void setLevel(int lvl)
-	{
-		if (lvl == getLevel())
-		{
+	public void setLevel(int lvl) {
+		if (lvl == getLevel()) {
 			return;
 		}
 		
@@ -187,18 +163,15 @@ public final class HellboundEngine extends AbstractNpcAI
 		GlobalVariablesManager.getInstance().set("HBLevel", lvl);
 	}
 	
-	public int getCachedLevel()
-	{
+	public int getCachedLevel() {
 		return _cachedLevel;
 	}
 	
-	public int getMaxTrust()
-	{
+	public int getMaxTrust() {
 		return _maxTrust;
 	}
 	
-	public int getMinTrust()
-	{
+	public int getMinTrust() {
 		return _minTrust;
 	}
 	
@@ -206,8 +179,7 @@ public final class HellboundEngine extends AbstractNpcAI
 	 * Gets the trust.
 	 * @return the trust
 	 */
-	public int getTrust()
-	{
+	public int getTrust() {
 		return GlobalVariablesManager.getInstance().getInt("HBTrust", 0);
 	}
 	
@@ -215,8 +187,7 @@ public final class HellboundEngine extends AbstractNpcAI
 	 * Sets the truest.
 	 * @param trust the trust to set
 	 */
-	private void setTrust(int trust)
-	{
+	private void setTrust(int trust) {
 		GlobalVariablesManager.getInstance().set("HBTrust", trust);
 	}
 	
@@ -224,25 +195,20 @@ public final class HellboundEngine extends AbstractNpcAI
 	 * Verifies if Hellbound is locked.
 	 * @return {@code true} if Hellbound is locked, {@code false} otherwise
 	 */
-	public boolean isLocked()
-	{
+	public boolean isLocked() {
 		return getLevel() <= 0;
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final int npcId = npc.getId();
 		final HellboundPointData hellboundPointData = HellboundPointData.getInstance();
-		if (hellboundPointData.getPointsInfo().containsKey(npcId))
-		{
-			if ((getLevel() >= hellboundPointData.getMinHbLvl(npcId)) && (getLevel() <= hellboundPointData.getMaxHbLvl(npcId)) && ((hellboundPointData.getLowestTrustLimit(npcId) == 0) || (getTrust() > hellboundPointData.getLowestTrustLimit(npcId))))
-			{
+		if (hellboundPointData.getPointsInfo().containsKey(npcId)) {
+			if ((getLevel() >= hellboundPointData.getMinHbLvl(npcId)) && (getLevel() <= hellboundPointData.getMaxHbLvl(npcId)) && ((hellboundPointData.getLowestTrustLimit(npcId) == 0) || (getTrust() > hellboundPointData.getLowestTrustLimit(npcId)))) {
 				updateTrust(hellboundPointData.getPointsAmount(npcId), true);
 			}
 			
-			if ((npcId == DEREK) && (getLevel() == 4))
-			{
+			if ((npcId == DEREK) && (getLevel() == 4)) {
 				setLevel(5);
 			}
 		}
@@ -253,15 +219,11 @@ public final class HellboundEngine extends AbstractNpcAI
 	 * Called on every level change.
 	 * @param newLevel the new level
 	 */
-	public void onLevelChange(int newLevel)
-	{
-		try
-		{
+	public void onLevelChange(int newLevel) {
+		try {
 			setMaxTrust(MAX_TRUST[newLevel]);
 			setMinTrust(MAX_TRUST[newLevel - 1]);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			setMaxTrust(0);
 			setMinTrust(0);
 		}
@@ -270,34 +232,24 @@ public final class HellboundEngine extends AbstractNpcAI
 		
 		doSpawn();
 		
-		for (int[] doorData : DOOR_LIST)
-		{
-			try
-			{
+		for (int[] doorData : DOOR_LIST) {
+			try {
 				L2DoorInstance door = DoorData.getInstance().getDoor(doorData[0]);
-				if (door.getOpen())
-				{
-					if (newLevel < doorData[1])
-					{
+				if (door.getOpen()) {
+					if (newLevel < doorData[1]) {
 						door.closeMe();
 					}
-				}
-				else
-				{
-					if (newLevel >= doorData[1])
-					{
+				} else {
+					if (newLevel >= doorData[1]) {
 						door.openMe();
 					}
 				}
-			}
-			catch (Exception ex)
-			{
+			} catch (Exception ex) {
 				LOG.warn("Doors problem!", ex);
 			}
 		}
 		
-		if (_cachedLevel > 0)
-		{
+		if (_cachedLevel > 0) {
 			Broadcast.toAllOnlinePlayers(ANNOUNCEMENT.replace("%lvl%", String.valueOf(newLevel)));
 			LOG.info("New level {}.", newLevel);
 		}
@@ -308,11 +260,9 @@ public final class HellboundEngine extends AbstractNpcAI
 	 * Sets the maximum trust for the current level.
 	 * @param trust the maximum trust
 	 */
-	private void setMaxTrust(int trust)
-	{
+	private void setMaxTrust(int trust) {
 		_maxTrust = trust;
-		if ((_maxTrust > 0) && (getTrust() > _maxTrust))
-		{
+		if ((_maxTrust > 0) && (getTrust() > _maxTrust)) {
 			setTrust(_maxTrust);
 		}
 	}
@@ -321,19 +271,16 @@ public final class HellboundEngine extends AbstractNpcAI
 	 * Sets the minimum trust for the current level.
 	 * @param trust the minimum trust
 	 */
-	private void setMinTrust(int trust)
-	{
+	private void setMinTrust(int trust) {
 		_minTrust = trust;
 		
-		if (getTrust() >= _maxTrust)
-		{
+		if (getTrust() >= _maxTrust) {
 			setTrust(_minTrust);
 		}
 	}
 	
 	@Override
-	public boolean unload()
-	{
+	public boolean unload() {
 		cancelQuestTimers(UPDATE_EVENT);
 		return true;
 	}
@@ -343,37 +290,29 @@ public final class HellboundEngine extends AbstractNpcAI
 	 * @param trust the trust
 	 * @param useRates if {@code true} it will use Hellbound trust rates
 	 */
-	public synchronized void updateTrust(int trust, boolean useRates)
-	{
-		if (isLocked())
-		{
+	public synchronized void updateTrust(int trust, boolean useRates) {
+		if (isLocked()) {
 			return;
 		}
 		
 		int reward = trust;
-		if (useRates)
-		{
+		if (useRates) {
 			reward = (int) (trust * (trust > 0 ? rates().getRateHellboundTrustIncrease() : rates().getRateHellboundTrustDecrease()));
 		}
 		
 		final int finalTrust = Math.max(getTrust() + reward, _minTrust);
-		if (_maxTrust > 0)
-		{
+		if (_maxTrust > 0) {
 			setTrust(Math.min(finalTrust, _maxTrust));
-		}
-		else
-		{
+		} else {
 			setTrust(finalTrust);
 		}
 	}
 	
-	public static HellboundEngine getInstance()
-	{
+	public static HellboundEngine getInstance() {
 		return SingletonHolder.INSTANCE;
 	}
 	
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final HellboundEngine INSTANCE = new HellboundEngine();
 	}
 }

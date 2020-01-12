@@ -36,11 +36,9 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Fortress Siege Manager AI.
  * @author St3eT
  */
-public final class FortressSiegeManager extends AbstractNpcAI
-{
+public final class FortressSiegeManager extends AbstractNpcAI {
 	// NPCs
-	private static final int[] MANAGERS =
-	{
+	private static final int[] MANAGERS = {
 		35659, // Shanty Fortress
 		35690, // Southern Fortress
 		35728, // Hive Fortress
@@ -64,8 +62,7 @@ public final class FortressSiegeManager extends AbstractNpcAI
 		36356, // Monastic Fortress
 	};
 	
-	private FortressSiegeManager()
-	{
+	private FortressSiegeManager() {
 		super(FortressSiegeManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(MANAGERS);
 		addTalkId(MANAGERS);
@@ -73,79 +70,54 @@ public final class FortressSiegeManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "FortressSiegeManager-11.html":
 			case "FortressSiegeManager-13.html":
 			case "FortressSiegeManager-14.html":
 			case "FortressSiegeManager-15.html":
-			case "FortressSiegeManager-16.html":
-			{
+			case "FortressSiegeManager-16.html": {
 				return htmltext = event;
 			}
-			case "register":
-			{
-				if (player.getClan() == null)
-				{
+			case "register": {
+				if (player.getClan() == null) {
 					htmltext = "FortressSiegeManager-02.html";
-				}
-				else
-				{
+				} else {
 					final L2Clan clan = player.getClan();
 					final Fort fortress = npc.getFort();
 					final Castle castle = npc.getCastle();
 					
-					if (clan.getFortId() == fortress.getResidenceId())
-					{
+					if (clan.getFortId() == fortress.getResidenceId()) {
 						final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 						html.setHtml(getHtm(player.getHtmlPrefix(), "FortressSiegeManager-12.html"));
 						html.replace("%clanName%", fortress.getOwnerClan().getName());
 						return html.getHtml();
-					}
-					else if (!player.hasClanPrivilege(ClanPrivilege.CS_MANAGE_SIEGE))
-					{
+					} else if (!player.hasClanPrivilege(ClanPrivilege.CS_MANAGE_SIEGE)) {
 						htmltext = "FortressSiegeManager-10.html";
-					}
-					else if ((clan.getLevel() < fortSiege().getSiegeClanMinLevel()))
-					{
+					} else if ((clan.getLevel() < fortSiege().getSiegeClanMinLevel())) {
 						htmltext = "FortressSiegeManager-04.html";
-					}
-					else if ((player.getClan().getCastleId() == castle.getResidenceId()) && (fortress.getFortState() == 2))
-					{
+					} else if ((player.getClan().getCastleId() == castle.getResidenceId()) && (fortress.getFortState() == 2)) {
 						htmltext = "FortressSiegeManager-18.html";
-					}
-					else if ((clan.getCastleId() != 0) && (clan.getCastleId() != castle.getResidenceId()) && fortSiege().justToTerritory())
-					{
+					} else if ((clan.getCastleId() != 0) && (clan.getCastleId() != castle.getResidenceId()) && fortSiege().justToTerritory()) {
 						htmltext = "FortressSiegeManager-17.html";
-					}
-					else if ((fortress.getTimeTillRebelArmy() > 0) && (fortress.getTimeTillRebelArmy() <= 7200))
-					{
+					} else if ((fortress.getTimeTillRebelArmy() > 0) && (fortress.getTimeTillRebelArmy() <= 7200)) {
 						htmltext = "FortressSiegeManager-19.html";
-					}
-					else
-					{
-						switch (npc.getFort().getSiege().addAttacker(player, true))
-						{
-							case 1:
-							{
+					} else {
+						switch (npc.getFort().getSiege().addAttacker(player, true)) {
+							case 1: {
 								htmltext = "FortressSiegeManager-03.html";
 								break;
 							}
-							case 2:
-							{
+							case 2: {
 								htmltext = "FortressSiegeManager-07.html";
 								break;
 							}
-							case 3:
-							{
+							case 3: {
 								htmltext = "FortressSiegeManager-06.html";
 								break;
 							}
-							case 4:
-							{
+							case 4: {
 								final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.REGISTERED_TO_S1_FORTRESS_BATTLE);
 								sm.addString(npc.getFort().getName());
 								player.sendPacket(sm);
@@ -157,42 +129,30 @@ public final class FortressSiegeManager extends AbstractNpcAI
 				}
 				break;
 			}
-			case "cancel":
-			{
-				if (player.getClan() == null)
-				{
+			case "cancel": {
+				if (player.getClan() == null) {
 					htmltext = "FortressSiegeManager-02.html";
-				}
-				else
-				{
+				} else {
 					final L2Clan clan = player.getClan();
 					final Fort fortress = npc.getFort();
 					
-					if (clan.getFortId() == fortress.getResidenceId())
-					{
+					if (clan.getFortId() == fortress.getResidenceId()) {
 						final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 						html.setHtml(getHtm(player.getHtmlPrefix(), "FortressSiegeManager-12.html"));
 						html.replace("%clanName%", fortress.getOwnerClan().getName());
 						return html.getHtml();
-					}
-					else if (!player.hasClanPrivilege(ClanPrivilege.CS_MANAGE_SIEGE))
-					{
+					} else if (!player.hasClanPrivilege(ClanPrivilege.CS_MANAGE_SIEGE)) {
 						htmltext = "FortressSiegeManager-10.html";
-					}
-					else if (!FortSiegeManager.getInstance().checkIsRegistered(clan, fortress.getResidenceId()))
-					{
+					} else if (!FortSiegeManager.getInstance().checkIsRegistered(clan, fortress.getResidenceId())) {
 						htmltext = "FortressSiegeManager-09.html";
-					}
-					else
-					{
+					} else {
 						fortress.getSiege().removeAttacker(player.getClan());
 						htmltext = "FortressSiegeManager-08.html";
 					}
 				}
 				break;
 			}
-			case "warInfo":
-			{
+			case "warInfo": {
 				htmltext = npc.getFort().getSiege().getAttackerClans().isEmpty() ? "FortressSiegeManager-20.html" : "FortressSiegeManager-21.html";
 			}
 		}
@@ -200,12 +160,10 @@ public final class FortressSiegeManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final Fort fortress = npc.getFort();
 		final int fortOwner = fortress.getOwnerClan() == null ? 0 : fortress.getOwnerClan().getId();
-		if (fortOwner == 0)
-		{
+		if (fortOwner == 0) {
 			return "FortressSiegeManager.html";
 		}
 		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
@@ -215,8 +173,7 @@ public final class FortressSiegeManager extends AbstractNpcAI
 		return html.getHtml();
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new FortressSiegeManager();
 	}
 }

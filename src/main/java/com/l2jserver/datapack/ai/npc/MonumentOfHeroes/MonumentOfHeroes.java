@@ -27,11 +27,9 @@ import com.l2jserver.gameserver.util.Util;
  * Monument of Heroes AI.
  * @author Adry_85
  */
-public final class MonumentOfHeroes extends AbstractNpcAI
-{
+public final class MonumentOfHeroes extends AbstractNpcAI {
 	// NPCs
-	private static final int[] MONUMENTS =
-	{
+	private static final int[] MONUMENTS = {
 		31690,
 		31769,
 		31770,
@@ -40,8 +38,7 @@ public final class MonumentOfHeroes extends AbstractNpcAI
 	};
 	// Items
 	private static final int WINGS_OF_DESTINY_CIRCLET = 6842;
-	private static final int[] WEAPONS =
-	{
+	private static final int[] WEAPONS = {
 		6611, // Infinity Blade
 		6612, // Infinity Cleaver
 		6613, // Infinity Axe
@@ -58,50 +55,36 @@ public final class MonumentOfHeroes extends AbstractNpcAI
 		9390, // Infinity Shooter
 	};
 	
-	private MonumentOfHeroes()
-	{
+	private MonumentOfHeroes() {
 		super(MonumentOfHeroes.class.getSimpleName(), "ai/npc");
 		addStartNpc(MONUMENTS);
 		addTalkId(MONUMENTS);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "HeroWeapon":
-			{
-				if (player.isHero())
-				{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "HeroWeapon": {
+				if (player.isHero()) {
 					return hasAtLeastOneQuestItem(player, WEAPONS) ? "already_have_weapon.htm" : "weapon_list.htm";
 				}
 				return "no_hero_weapon.htm";
 			}
-			case "HeroCirclet":
-			{
-				if (player.isHero())
-				{
-					if (!hasQuestItems(player, WINGS_OF_DESTINY_CIRCLET))
-					{
+			case "HeroCirclet": {
+				if (player.isHero()) {
+					if (!hasQuestItems(player, WINGS_OF_DESTINY_CIRCLET)) {
 						giveItems(player, WINGS_OF_DESTINY_CIRCLET, 1);
-					}
-					else
-					{
+					} else {
 						return "already_have_circlet.htm";
 					}
-				}
-				else
-				{
+				} else {
 					return "no_hero_circlet.htm";
 				}
 				break;
 			}
-			default:
-			{
+			default: {
 				int weaponId = Integer.parseInt(event);
-				if (Util.contains(WEAPONS, weaponId))
-				{
+				if (Util.contains(WEAPONS, weaponId)) {
 					giveItems(player, weaponId, 1);
 				}
 				break;
@@ -110,8 +93,7 @@ public final class MonumentOfHeroes extends AbstractNpcAI
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new MonumentOfHeroes();
 	}
 }

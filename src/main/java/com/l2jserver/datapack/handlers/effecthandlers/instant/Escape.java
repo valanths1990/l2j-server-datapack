@@ -30,34 +30,28 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Escape effect implementation.
  * @author Adry_85
  */
-public final class Escape extends AbstractEffect
-{
+public final class Escape extends AbstractEffect {
 	private final TeleportWhereType _escapeType;
 	
-	public Escape(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public Escape(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_escapeType = params.getEnum("escapeType", TeleportWhereType.class, null);
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.TELEPORT;
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (_escapeType == null)
-		{
+	public void onStart(BuffInfo info) {
+		if (_escapeType == null) {
 			return;
 		}
 		

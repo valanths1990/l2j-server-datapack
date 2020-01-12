@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Step Into the Future (6)
  * @author malyelfik
  */
-public class Q00006_StepIntoTheFuture extends Quest
-{
+public class Q00006_StepIntoTheFuture extends Quest {
 	// NPCs
 	private static final int ROXXY = 30006;
 	private static final int BAULRO = 30033;
@@ -42,8 +41,7 @@ public class Q00006_StepIntoTheFuture extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 3;
 	
-	public Q00006_StepIntoTheFuture()
-	{
+	public Q00006_StepIntoTheFuture() {
 		super(6, Q00006_StepIntoTheFuture.class.getSimpleName(), "Step Into the Future");
 		addStartNpc(ROXXY);
 		addTalkId(ROXXY, BAULRO, SIR_COLLIN);
@@ -51,17 +49,14 @@ public class Q00006_StepIntoTheFuture extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30006-03.htm":
 				st.startQuest();
 				break;
@@ -75,8 +70,7 @@ public class Q00006_StepIntoTheFuture extends Quest
 				st.giveItems(BAULRO_LETTER, 1);
 				break;
 			case "30311-02.html":
-				if (!st.hasQuestItems(BAULRO_LETTER))
-				{
+				if (!st.hasQuestItems(BAULRO_LETTER)) {
 					return "30311-03.html";
 				}
 				st.takeItems(BAULRO_LETTER, -1);
@@ -90,25 +84,19 @@ public class Q00006_StepIntoTheFuture extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ROXXY:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = ((player.getRace() == Race.HUMAN) && (player.getLevel() >= MIN_LEVEL)) ? "30006-02.htm" : "30006-01.html";
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
-						{
+						if (st.isCond(1)) {
 							htmltext = "30006-04.html";
-						}
-						else if (st.isCond(3))
-						{
+						} else if (st.isCond(3)) {
 							htmltext = "30006-05.html";
 						}
 						break;
@@ -118,27 +106,19 @@ public class Q00006_StepIntoTheFuture extends Quest
 				}
 				break;
 			case BAULRO:
-				if (st.isStarted())
-				{
-					if (st.isCond(1))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(1)) {
 						htmltext = "30033-01.html";
-					}
-					else if (st.isCond(2))
-					{
+					} else if (st.isCond(2)) {
 						htmltext = "30033-03.html";
 					}
 				}
 				break;
 			case SIR_COLLIN:
-				if (st.isStarted())
-				{
-					if (st.isCond(2))
-					{
+				if (st.isStarted()) {
+					if (st.isCond(2)) {
 						htmltext = "30311-01.html";
-					}
-					else if (st.isCond(3))
-					{
+					} else if (st.isCond(3)) {
 						htmltext = "30311-04.html";
 					}
 				}

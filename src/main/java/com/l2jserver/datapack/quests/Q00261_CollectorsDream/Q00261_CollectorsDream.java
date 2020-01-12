@@ -32,13 +32,11 @@ import com.l2jserver.gameserver.util.Util;
  * Collector's Dream (261)
  * @author xban1x
  */
-public final class Q00261_CollectorsDream extends Quest
-{
+public final class Q00261_CollectorsDream extends Quest {
 	// Npc
 	private static final int ALSHUPES = 30222;
 	// Monsters
-	private static final int[] MONSTERS = new int[]
-	{
+	private static final int[] MONSTERS = new int[] {
 		20308, // Hook Spider
 		20460, // Crimson Spider
 		20466, // Pincer Spider
@@ -51,8 +49,7 @@ public final class Q00261_CollectorsDream extends Quest
 	// Message
 	private static final ExShowScreenMessage MESSAGE = new ExShowScreenMessage(NpcStringId.LAST_DUTY_COMPLETE_N_GO_FIND_THE_NEWBIE_GUIDE, 2, 5000);
 	
-	public Q00261_CollectorsDream()
-	{
+	public Q00261_CollectorsDream() {
 		super(261, Q00261_CollectorsDream.class.getSimpleName(), "Collector's Dream");
 		addStartNpc(ALSHUPES);
 		addTalkId(ALSHUPES);
@@ -61,11 +58,9 @@ public final class Q00261_CollectorsDream extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && event.equals("30222-03.htm"))
-		{
+		if ((st != null) && event.equals("30222-03.htm")) {
 			st.startQuest();
 			return event;
 		}
@@ -73,13 +68,10 @@ public final class Q00261_CollectorsDream extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			if (st.giveItemRandomly(SPIDER_LEG, 1, MAX_LEG_COUNT, 1, true))
-			{
+		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, killer, true)) {
+			if (st.giveItemRandomly(SPIDER_LEG, 1, MAX_LEG_COUNT, 1, true)) {
 				st.setCond(2);
 			}
 		}
@@ -87,30 +79,22 @@ public final class Q00261_CollectorsDream extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() >= MIN_LVL) ? "30222-02.htm" : "30222-01.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
 						htmltext = "30222-04.html";
 						break;
 					}
-					case 2:
-					{
-						if (st.getQuestItemsCount(SPIDER_LEG) >= MAX_LEG_COUNT)
-						{
+					case 2: {
+						if (st.getQuestItemsCount(SPIDER_LEG) >= MAX_LEG_COUNT) {
 							giveNewbieReward(player);
 							st.giveAdena(1000, true);
 							st.addExpAndSp(2000, 0);
@@ -126,16 +110,12 @@ public final class Q00261_CollectorsDream extends Quest
 		return htmltext;
 	}
 	
-	public static void giveNewbieReward(L2PcInstance player)
-	{
+	public static void giveNewbieReward(L2PcInstance player) {
 		final PlayerVariables vars = player.getVariables();
-		if (vars.getString("GUIDE_MISSION", null) == null)
-		{
+		if (vars.getString("GUIDE_MISSION", null) == null) {
 			vars.set("GUIDE_MISSION", 100000);
 			player.sendPacket(MESSAGE);
-		}
-		else if (((vars.getInt("GUIDE_MISSION") % 100000000) / 10000000) != 1)
-		{
+		} else if (((vars.getInt("GUIDE_MISSION") % 100000000) / 10000000) != 1) {
 			vars.set("GUIDE_MISSION", vars.getInt("GUIDE_MISSION") + 10000000);
 			player.sendPacket(MESSAGE);
 		}

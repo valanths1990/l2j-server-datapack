@@ -33,13 +33,11 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * Open Door effect implementation.
  * @author Adry_85
  */
-public final class OpenDoor extends AbstractEffect
-{
+public final class OpenDoor extends AbstractEffect {
 	private final int _chance;
 	private final boolean _isItem;
 	
-	public OpenDoor(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public OpenDoor(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_chance = params.getInt("chance", 0);
@@ -47,57 +45,46 @@ public final class OpenDoor extends AbstractEffect
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (!info.getEffected().isDoor())
-		{
+	public void onStart(BuffInfo info) {
+		if (!info.getEffected().isDoor()) {
 			return;
 		}
 		
 		final L2Character effector = info.getEffector();
 		L2DoorInstance door = (L2DoorInstance) info.getEffected();
 		// Check if door in the different instance
-		if (effector.getInstanceId() != door.getInstanceId())
-		{
+		if (effector.getInstanceId() != door.getInstanceId()) {
 			// Search for the instance
 			final Instance inst = InstanceManager.getInstance().getInstance(effector.getInstanceId());
-			if (inst == null)
-			{
+			if (inst == null) {
 				// Instance not found
 				return;
 			}
 			final L2DoorInstance instanceDoor = inst.getDoor(door.getId());
-			if (instanceDoor != null)
-			{
+			if (instanceDoor != null) {
 				// Door found
 				door = instanceDoor;
 			}
 			
 			// Checking instance again
-			if (effector.getInstanceId() != door.getInstanceId())
-			{
+			if (effector.getInstanceId() != door.getInstanceId()) {
 				return;
 			}
 		}
 		
-		if ((!door.isOpenableBySkill() && !_isItem) || (door.getFort() != null))
-		{
+		if ((!door.isOpenableBySkill() && !_isItem) || (door.getFort() != null)) {
 			effector.sendPacket(SystemMessageId.UNABLE_TO_UNLOCK_DOOR);
 			return;
 		}
 		
-		if ((Rnd.get(100) < _chance) && !door.getOpen())
-		{
+		if ((Rnd.get(100) < _chance) && !door.getOpen()) {
 			door.openMe();
-		}
-		else
-		{
+		} else {
 			effector.sendPacket(SystemMessageId.FAILED_TO_UNLOCK_DOOR);
 		}
 	}

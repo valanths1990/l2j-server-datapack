@@ -30,53 +30,37 @@ import com.l2jserver.gameserver.network.serverpackets.WareHouseWithdrawalList;
 /**
  * @author UnAfraid
  */
-public class Freight implements IBypassHandler
-{
-	private static final String[] COMMANDS =
-	{
+public class Freight implements IBypassHandler {
+	private static final String[] COMMANDS = {
 		"package_withdraw",
 		"package_deposit"
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
-	{
-		if (!target.isNpc())
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target) {
+		if (!target.isNpc()) {
 			return false;
 		}
 		
-		if (command.equalsIgnoreCase(COMMANDS[0]))
-		{
+		if (command.equalsIgnoreCase(COMMANDS[0])) {
 			PcFreight freight = activeChar.getFreight();
-			if (freight != null)
-			{
-				if (freight.getSize() > 0)
-				{
+			if (freight != null) {
+				if (freight.getSize() > 0) {
 					activeChar.setActiveWarehouse(freight);
-					for (L2ItemInstance i : activeChar.getActiveWarehouse().getItems())
-					{
-						if (i.isTimeLimitedItem() && (i.getRemainingTime() <= 0))
-						{
+					for (L2ItemInstance i : activeChar.getActiveWarehouse().getItems()) {
+						if (i.isTimeLimitedItem() && (i.getRemainingTime() <= 0)) {
 							activeChar.getActiveWarehouse().destroyItem("L2ItemInstance", i, activeChar, null);
 						}
 					}
 					activeChar.sendPacket(new WareHouseWithdrawalList(activeChar, WareHouseWithdrawalList.FREIGHT));
-				}
-				else
-				{
+				} else {
 					activeChar.sendPacket(SystemMessageId.NO_ITEM_DEPOSITED_IN_WH);
 				}
 			}
-		}
-		else if (command.equalsIgnoreCase(COMMANDS[1]))
-		{
-			if (activeChar.getAccountChars().size() < 1)
-			{
+		} else if (command.equalsIgnoreCase(COMMANDS[1])) {
+			if (activeChar.getAccountChars().size() < 1) {
 				activeChar.sendPacket(SystemMessageId.CHARACTER_DOES_NOT_EXIST);
-			}
-			else
-			{
+			} else {
 				activeChar.sendPacket(new PackageToList(activeChar.getAccountChars()));
 			}
 		}
@@ -84,8 +68,7 @@ public class Freight implements IBypassHandler
 	}
 	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.util.Util;
  * Revenge of the Redbonnet (291).
  * @author xban1x
  */
-public final class Q00291_RevengeOfTheRedbonnet extends Quest
-{
+public final class Q00291_RevengeOfTheRedbonnet extends Quest {
 	// NPC
 	private static final int MARYSE_REDBONNET = 30553;
 	// Item
@@ -46,8 +45,7 @@ public final class Q00291_RevengeOfTheRedbonnet extends Quest
 	// Misc
 	private static final int MIN_LVL = 4;
 	
-	public Q00291_RevengeOfTheRedbonnet()
-	{
+	public Q00291_RevengeOfTheRedbonnet() {
 		super(291, Q00291_RevengeOfTheRedbonnet.class.getSimpleName(), "Revenge of the Redbonnet");
 		addStartNpc(MARYSE_REDBONNET);
 		addTalkId(MARYSE_REDBONNET);
@@ -56,11 +54,9 @@ public final class Q00291_RevengeOfTheRedbonnet extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equals("30553-03.htm"))
-		{
+		if ((qs != null) && event.equals("30553-03.htm")) {
 			qs.startQuest();
 			return event;
 		}
@@ -68,13 +64,10 @@ public final class Q00291_RevengeOfTheRedbonnet extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1) && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			if (giveItemRandomly(qs.getPlayer(), npc, BLACK_WOLF_PELT.getId(), 1, BLACK_WOLF_PELT.getCount(), 1.0, true))
-			{
+		if ((qs != null) && qs.isCond(1) && Util.checkIfInRange(1500, npc, killer, true)) {
+			if (giveItemRandomly(qs.getPlayer(), npc, BLACK_WOLF_PELT.getId(), 1, BLACK_WOLF_PELT.getCount(), 1.0, true)) {
 				qs.setCond(2);
 			}
 		}
@@ -82,42 +75,28 @@ public final class Q00291_RevengeOfTheRedbonnet extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String html = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			html = ((player.getLevel() >= MIN_LVL) ? "30553-02.htm" : "30553-01.htm");
-		}
-		else if (qs.isStarted())
-		{
-			if (qs.isCond(2) && hasItem(player, BLACK_WOLF_PELT))
-			{
+		} else if (qs.isStarted()) {
+			if (qs.isCond(2) && hasItem(player, BLACK_WOLF_PELT)) {
 				takeItem(player, BLACK_WOLF_PELT);
 				final int chance = getRandom(100);
-				if (chance <= 2)
-				{
+				if (chance <= 2) {
 					giveItems(player, GRANDMAS_PEARL, 1);
-				}
-				else if (chance <= 20)
-				{
+				} else if (chance <= 20) {
 					giveItems(player, GRANDMAS_MIRROR, 1);
-				}
-				else if (chance <= 45)
-				{
+				} else if (chance <= 45) {
 					giveItems(player, GRANDMAS_NECKLACE, 1);
-				}
-				else
-				{
+				} else {
 					giveItems(player, GRANDMAS_HAIRPIN, 1);
 					giveItems(player, SCROLL_OF_ESCAPE, 1);
 				}
 				qs.exitQuest(true, true);
 				html = "30553-05.html";
-			}
-			else
-			{
+			} else {
 				html = "30553-04.html";
 			}
 		}

@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Collect Arrowheads (303)
  * @author ivantotov
  */
-public final class Q00303_CollectArrowheads extends Quest
-{
+public final class Q00303_CollectArrowheads extends Quest {
 	// NPC
 	private static final int MINIA = 30029;
 	// Item
@@ -40,8 +39,7 @@ public final class Q00303_CollectArrowheads extends Quest
 	// Monster
 	private static final int TUNATH_ORC_MARKSMAN = 20361;
 	
-	public Q00303_CollectArrowheads()
-	{
+	public Q00303_CollectArrowheads() {
 		super(303, Q00303_CollectArrowheads.class.getSimpleName(), "Collect Arrowheads");
 		addStartNpc(MINIA);
 		addTalkId(MINIA);
@@ -50,11 +48,9 @@ public final class Q00303_CollectArrowheads extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && event.equals("30029-04.htm"))
-		{
+		if ((st != null) && event.equals("30029-04.htm")) {
 			st.startQuest();
 			return event;
 		}
@@ -62,14 +58,11 @@ public final class Q00303_CollectArrowheads extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(player, 1);
-		if (partyMember != null)
-		{
+		if (partyMember != null) {
 			final QuestState st = getQuestState(partyMember, false);
-			if (st.giveItemRandomly(npc, ORCISH_ARROWHEAD, 1, REQUIRED_ITEM_COUNT, 0.4, true))
-			{
+			if (st.giveItemRandomly(npc, ORCISH_ARROWHEAD, 1, REQUIRED_ITEM_COUNT, 0.4, true)) {
 				st.setCond(2);
 			}
 		}
@@ -77,33 +70,24 @@ public final class Q00303_CollectArrowheads extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = player.getLevel() >= MIN_LEVEL ? "30029-03.htm" : "30029-02.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
-						if (st.getQuestItemsCount(ORCISH_ARROWHEAD) < REQUIRED_ITEM_COUNT)
-						{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
+						if (st.getQuestItemsCount(ORCISH_ARROWHEAD) < REQUIRED_ITEM_COUNT) {
 							htmltext = "30029-05.html";
 						}
 						break;
 					}
-					case 2:
-					{
-						if (st.getQuestItemsCount(ORCISH_ARROWHEAD) >= REQUIRED_ITEM_COUNT)
-						{
+					case 2: {
+						if (st.getQuestItemsCount(ORCISH_ARROWHEAD) >= REQUIRED_ITEM_COUNT) {
 							st.giveAdena(1000, true);
 							st.addExpAndSp(2000, 0);
 							st.exitQuest(true, true);

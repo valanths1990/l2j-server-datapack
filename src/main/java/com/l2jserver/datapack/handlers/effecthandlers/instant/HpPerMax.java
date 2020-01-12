@@ -31,35 +31,29 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Hp Per Max effect implementation.
  * @author UnAfraid
  */
-public final class HpPerMax extends AbstractEffect
-{
+public final class HpPerMax extends AbstractEffect {
 	private final int _power;
 	
-	public HpPerMax(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public HpPerMax(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getInt("power", 0);
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.HP;
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		L2Character target = info.getEffected();
-		if ((target == null) || target.isDead() || target.isDoor())
-		{
+		if ((target == null) || target.isDead() || target.isDoor()) {
 			return;
 		}
 		
@@ -70,18 +64,14 @@ public final class HpPerMax extends AbstractEffect
 		amount = full ? target.getMaxHp() : (target.getMaxHp() * power) / 100.0;
 		// Prevents overheal and negative amount
 		amount = Math.max(Math.min(amount, target.getMaxRecoverableHp() - target.getCurrentHp()), 0);
-		if (amount != 0)
-		{
+		if (amount != 0) {
 			target.setCurrentHp(amount + target.getCurrentHp());
 		}
 		SystemMessage sm;
-		if (info.getEffector().getObjectId() != target.getObjectId())
-		{
+		if (info.getEffector().getObjectId() != target.getObjectId()) {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_HAS_BEEN_RESTORED_BY_C1);
 			sm.addCharName(info.getEffector());
-		}
-		else
-		{
+		} else {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_HAS_BEEN_RESTORED);
 		}
 		sm.addInt((int) amount);

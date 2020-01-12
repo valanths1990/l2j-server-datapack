@@ -33,16 +33,13 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * Trap Remove effect implementation.
  * @author UnAfraid
  */
-public final class TrapRemove extends AbstractEffect
-{
+public final class TrapRemove extends AbstractEffect {
 	private final int _power;
 	
-	public TrapRemove(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public TrapRemove(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
-		if (params.isEmpty())
-		{
+		if (params.isEmpty()) {
 			throw new IllegalArgumentException(getClass().getSimpleName() + ": effect without power!");
 		}
 		
@@ -50,37 +47,30 @@ public final class TrapRemove extends AbstractEffect
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2Character target = info.getEffected();
-		if (!target.isTrap())
-		{
+		if (!target.isTrap()) {
 			return;
 		}
 		
-		if (target.isAlikeDead())
-		{
+		if (target.isAlikeDead()) {
 			return;
 		}
 		
 		final L2TrapInstance trap = (L2TrapInstance) target;
-		if (!trap.canBeSeen(info.getEffector()))
-		{
-			if (info.getEffector().isPlayer())
-			{
+		if (!trap.canBeSeen(info.getEffector())) {
+			if (info.getEffector().isPlayer()) {
 				info.getEffector().sendPacket(SystemMessageId.INCORRECT_TARGET);
 			}
 			return;
 		}
 		
-		if (trap.getLevel() > _power)
-		{
+		if (trap.getLevel() > _power) {
 			return;
 		}
 		
@@ -88,8 +78,7 @@ public final class TrapRemove extends AbstractEffect
 		EventDispatcher.getInstance().notifyEventAsync(new OnTrapAction(trap, info.getEffector(), TrapAction.TRAP_DISARMED), trap);
 		
 		trap.unSummon();
-		if (info.getEffector().isPlayer())
-		{
+		if (info.getEffector().isPlayer()) {
 			info.getEffector().sendPacket(SystemMessageId.A_TRAP_DEVICE_HAS_BEEN_STOPPED);
 		}
 	}

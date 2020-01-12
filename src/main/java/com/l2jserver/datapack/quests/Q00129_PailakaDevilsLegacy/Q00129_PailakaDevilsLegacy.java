@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Pailaka - Devil's Legacy (129)
  * @author Gnacik, St3eT
  */
-public final class Q00129_PailakaDevilsLegacy extends Quest
-{
+public final class Q00129_PailakaDevilsLegacy extends Quest {
 	// NPCs
 	private static final int KAMS = 18629; // Kams (Panuka)
 	private static final int ALKASO = 18631; // Alkaso (Panuka)
@@ -63,8 +62,7 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 	private static final int MAX_LEVEL = 67;
 	private static final int EXIT_TIME = 5;
 	
-	public Q00129_PailakaDevilsLegacy()
-	{
+	public Q00129_PailakaDevilsLegacy() {
 		super(129, Q00129_PailakaDevilsLegacy.class.getSimpleName(), "Pailaka - Devil's Legacy");
 		addStartNpc(SURVIVOR);
 		addFirstTalkId(SURVIVOR, SUPPORTER, ADVENTURER1, ADVENTURER2);
@@ -74,44 +72,35 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
 		
-		if (qs == null)
-		{
+		if (qs == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "32498-02.htm":
 			case "32498-03.htm":
-			case "32498-04.htm":
-			{
+			case "32498-04.htm": {
 				htmltext = event;
 				break;
 			}
-			case "32498-05.htm":
-			{
-				if (!qs.isStarted())
-				{
+			case "32498-05.htm": {
+				if (!qs.isStarted()) {
 					htmltext = event;
 					qs.startQuest();
 				}
 				break;
 			}
 			case "32501-02.htm":
-			case "32501-04.htm":
-			{
+			case "32501-04.htm": {
 				htmltext = event;
 				break;
 			}
-			case "32501-03.htm":
-			{
-				if (qs.isCond(2))
-				{
+			case "32501-03.htm": {
+				if (qs.isCond(2)) {
 					giveItems(player, SWORD, 1);
 					qs.setCond(3, true);
 					htmltext = event;
@@ -123,144 +112,101 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if ((npc.getId() != ADVENTURER2) || (qs == null) || !qs.isCompleted())
-		{
+		if ((npc.getId() != ADVENTURER2) || (qs == null) || !qs.isCompleted()) {
 			return npc.getId() + ".htm";
 		}
 		return "32511-03.htm";
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public final String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState qs = getQuestState(player, true);
-		switch (npc.getId())
-		{
-			case SURVIVOR:
-			{
-				switch (qs.getState())
-				{
-					case State.CREATED:
-					{
-						if (player.getLevel() < MIN_LEVEL)
-						{
+		switch (npc.getId()) {
+			case SURVIVOR: {
+				switch (qs.getState()) {
+					case State.CREATED: {
+						if (player.getLevel() < MIN_LEVEL) {
 							htmltext = "32498-11.htm";
-						}
-						else if (player.getLevel() > MAX_LEVEL)
-						{
+						} else if (player.getLevel() > MAX_LEVEL) {
 							htmltext = "32498-12.htm";
-						}
-						else
-						{
+						} else {
 							htmltext = "32498-01.htm";
 						}
 						break;
 					}
-					case State.STARTED:
-					{
-						if (qs.getCond() > 1)
-						{
+					case State.STARTED: {
+						if (qs.getCond() > 1) {
 							htmltext = "32498-08.htm";
-						}
-						else
-						{
+						} else {
 							htmltext = "32498-06.htm";
 						}
 						break;
 					}
-					case State.COMPLETED:
-					{
+					case State.COMPLETED: {
 						htmltext = "32498-10.htm";
 						break;
 					}
-					default:
-					{
+					default: {
 						htmltext = "32498-01.htm";
 						break;
 					}
 				}
 				break;
 			}
-			case SUPPORTER:
-			{
-				if (qs.getCond() > 2)
-				{
+			case SUPPORTER: {
+				if (qs.getCond() > 2) {
 					htmltext = "32501-04.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "32501-01.htm";
 				}
 				break;
 			}
-			case ADVENTURER1:
-			{
-				if (player.hasSummon())
-				{
+			case ADVENTURER1: {
+				if (player.hasSummon()) {
 					htmltext = "32508-07.htm";
-				}
-				else if (hasQuestItems(player, SWORD))
-				{
-					if (hasQuestItems(player, SCROLL_1))
-					{
+				} else if (hasQuestItems(player, SWORD)) {
+					if (hasQuestItems(player, SCROLL_1)) {
 						takeItems(player, SWORD, -1);
 						takeItems(player, SCROLL_1, -1);
 						giveItems(player, ENH_SWORD1, 1);
 						htmltext = "32508-03.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32508-02.htm";
 					}
-				}
-				else if (hasQuestItems(player, ENH_SWORD1))
-				{
-					if (hasQuestItems(player, SCROLL_2))
-					{
+				} else if (hasQuestItems(player, ENH_SWORD1)) {
+					if (hasQuestItems(player, SCROLL_2)) {
 						takeItems(player, ENH_SWORD1, -1);
 						takeItems(player, SCROLL_2, -1);
 						giveItems(player, ENH_SWORD2, 1);
 						htmltext = "32508-05.htm";
 					}
 					htmltext = "32508-04.htm";
-				}
-				else if (hasQuestItems(player, ENH_SWORD2))
-				{
+				} else if (hasQuestItems(player, ENH_SWORD2)) {
 					htmltext = "32508-06.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "32508-00.htm";
 				}
 				
 				break;
 			}
-			case ADVENTURER2:
-			{
-				if (player.hasSummon())
-				{
+			case ADVENTURER2: {
+				if (player.hasSummon()) {
 					htmltext = "32511-02.htm";
-				}
-				else
-				{
+				} else {
 					final Instance inst = InstanceManager.getInstance().getInstance(npc.getInstanceId());
 					qs.exitQuest(false, true);
 					inst.setDuration(EXIT_TIME * 60000);
 					inst.setEmptyDestroyTime(0);
-					if (inst.containsPlayer(player.getObjectId()))
-					{
+					if (inst.containsPlayer(player.getObjectId())) {
 						npc.setTarget(player);
 						npc.doCast(VITALITY_REPLENISHING);
 						addExpAndSp(player, 10800000, 950000);
 						rewardItems(player, BRACELET, 1);
 						rewardItems(player, ESCAPE, 1);
-					}
-					else
-					{
+					} else {
 						htmltext = "32511-01.htm";
 					}
 				}
@@ -271,36 +217,27 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState qs = getQuestState(player, false);
 		
-		if ((qs != null) && qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case KAMS:
-				{
-					if (hasQuestItems(player, SWORD))
-					{
+		if ((qs != null) && qs.isStarted()) {
+			switch (npc.getId()) {
+				case KAMS: {
+					if (hasQuestItems(player, SWORD)) {
 						giveItems(player, SCROLL_1, 1);
 						playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;
 				}
-				case ALKASO:
-				{
-					if (hasQuestItems(player, ENH_SWORD1))
-					{
+				case ALKASO: {
+					if (hasQuestItems(player, ENH_SWORD1)) {
 						giveItems(player, SCROLL_2, 1);
 						playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;
 				}
-				case LEMATAN:
-				{
-					if (qs.isCond(3))
-					{
+				case LEMATAN: {
+					if (qs.isCond(3)) {
 						qs.setCond(4, true);
 					}
 					break;

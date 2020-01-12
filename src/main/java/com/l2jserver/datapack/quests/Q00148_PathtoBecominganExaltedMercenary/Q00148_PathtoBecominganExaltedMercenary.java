@@ -30,11 +30,9 @@ import com.l2jserver.gameserver.model.quest.State;
  * @author Gnacik
  * @version 2010-09-30 Based on official server Franz
  */
-public class Q00148_PathtoBecominganExaltedMercenary extends Quest
-{
+public class Q00148_PathtoBecominganExaltedMercenary extends Quest {
 	// NPCs
-	private static final int[] MERC =
-	{
+	private static final int[] MERC = {
 		36481,
 		36482,
 		36483,
@@ -49,62 +47,46 @@ public class Q00148_PathtoBecominganExaltedMercenary extends Quest
 	private static final int ELITE_CERTIFICATE = 13767;
 	private static final int TOP_ELITE_CERTIFICATE = 13768;
 	
-	public Q00148_PathtoBecominganExaltedMercenary()
-	{
+	public Q00148_PathtoBecominganExaltedMercenary() {
 		super(148, Q00148_PathtoBecominganExaltedMercenary.class.getSimpleName(), "Path to Becoming an Exalted Mercenary");
 		addStartNpc(MERC);
 		addTalkId(MERC);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		if (event.equalsIgnoreCase("exalted-00b.htm"))
-		{
+		if (event.equalsIgnoreCase("exalted-00b.htm")) {
 			st.giveItems(ELITE_CERTIFICATE, 1);
-		}
-		else if (event.equalsIgnoreCase("exalted-03.htm"))
-		{
+		} else if (event.equalsIgnoreCase("exalted-03.htm")) {
 			st.startQuest();
 		}
 		return htmltext;
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
-				if ((player.getClan() != null) && (player.getClan().getCastleId() > 0))
-				{
+				if ((player.getClan() != null) && (player.getClan().getCastleId() > 0)) {
 					htmltext = "castle.htm";
-				}
-				else if (st.hasQuestItems(ELITE_CERTIFICATE))
-				{
+				} else if (st.hasQuestItems(ELITE_CERTIFICATE)) {
 					htmltext = "exalted-01.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = (player.hasQuestCompleted(Q00147_PathtoBecominganEliteMercenary.class.getSimpleName())) ? "exalted-00a.htm" : "exalted-00.htm";
 				}
 				break;
 			case State.STARTED:
-				if (st.getCond() < 4)
-				{
+				if (st.getCond() < 4) {
 					htmltext = "exalted-04.htm";
-				}
-				else if (st.isCond(4))
-				{
+				} else if (st.isCond(4)) {
 					st.takeItems(ELITE_CERTIFICATE, -1);
 					st.giveItems(TOP_ELITE_CERTIFICATE, 1);
 					st.exitQuest(false);

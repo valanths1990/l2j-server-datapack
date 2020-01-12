@@ -48,12 +48,10 @@ import com.l2jserver.gameserver.util.Util;
 /**
  * @author UnAfraid
  */
-public class PlayerHandler implements ITelnetHandler
-{
+public class PlayerHandler implements ITelnetHandler {
 	private static final Logger LOGGER = LoggerFactory.getLogger(PlayerHandler.class);
 	
-	private final String[] _commands =
-	{
+	private final String[] _commands = {
 		"kick",
 		"give",
 		"enchant",
@@ -62,38 +60,28 @@ public class PlayerHandler implements ITelnetHandler
 	};
 	
 	@Override
-	public boolean useCommand(String command, PrintWriter _print, Socket _cSocket, int _uptime)
-	{
-		if (command.startsWith("kick"))
-		{
-			try
-			{
+	public boolean useCommand(String command, PrintWriter _print, Socket _cSocket, int _uptime) {
+		if (command.startsWith("kick")) {
+			try {
 				command = command.substring(5);
 				L2PcInstance player = L2World.getInstance().getPlayer(command);
-				if (player != null)
-				{
+				if (player != null) {
 					player.sendMessage("You are kicked by gm");
 					player.logout();
 					_print.println("Player kicked");
 				}
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
+			} catch (StringIndexOutOfBoundsException e) {
 				_print.println("Please enter player name to kick");
 			}
-		}
-		else if (command.startsWith("give"))
-		{
+		} else if (command.startsWith("give")) {
 			StringTokenizer st = new StringTokenizer(command.substring(5));
 			
-			try
-			{
+			try {
 				L2PcInstance player = L2World.getInstance().getPlayer(st.nextToken());
 				int itemId = Integer.parseInt(st.nextToken());
 				int amount = Integer.parseInt(st.nextToken());
 				
-				if (player != null)
-				{
+				if (player != null) {
 					L2ItemInstance item = player.getInventory().addItem("Status-Give", itemId, amount, null, null);
 					InventoryUpdate iu = new InventoryUpdate();
 					iu.addItem(item);
@@ -104,30 +92,22 @@ public class PlayerHandler implements ITelnetHandler
 					player.sendPacket(sm);
 					_print.println("ok");
 					GMAudit.auditGMAction("Telnet Admin", "Give Item", player.getName(), "item: " + itemId + " amount: " + amount);
-				}
-				else
-				{
+				} else {
 					_print.println("Player not found");
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				
 			}
-		}
-		else if (command.startsWith("enchant"))
-		{
+		} else if (command.startsWith("enchant")) {
 			StringTokenizer st = new StringTokenizer(command.substring(8), " ");
 			int enchant = 0, itemType = 0;
 			
-			try
-			{
+			try {
 				L2PcInstance player = L2World.getInstance().getPlayer(st.nextToken());
 				itemType = Integer.parseInt(st.nextToken());
 				enchant = Integer.parseInt(st.nextToken());
 				
-				switch (itemType)
-				{
+				switch (itemType) {
 					case 1:
 						itemType = Inventory.PAPERDOLL_HEAD;
 						break;
@@ -177,135 +157,96 @@ public class PlayerHandler implements ITelnetHandler
 						itemType = 0;
 				}
 				
-				if (enchant > 65535)
-				{
+				if (enchant > 65535) {
 					enchant = 65535;
-				}
-				else if (enchant < 0)
-				{
+				} else if (enchant < 0) {
 					enchant = 0;
 				}
 				
 				boolean success = false;
 				
-				if ((player != null) && (itemType > 0))
-				{
+				if ((player != null) && (itemType > 0)) {
 					success = setEnchant(player, enchant, itemType);
-					if (success)
-					{
+					if (success) {
 						_print.println("Item enchanted successfully.");
 					}
-				}
-				else if (!success)
-				{
+				} else if (!success) {
 					_print.println("Item failed to enchant.");
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				
 			}
-		}
-		else if (command.startsWith("jail"))
-		{
+		} else if (command.startsWith("jail")) {
 			StringTokenizer st = new StringTokenizer(command.substring(5));
-			try
-			{
+			try {
 				String name = st.nextToken();
 				int charId = CharNameTable.getInstance().getIdByName(name);
 				int delay = 0;
 				String reason = "";
-				if (st.hasMoreTokens())
-				{
+				if (st.hasMoreTokens()) {
 					String token = st.nextToken();
-					if (Util.isDigit(token))
-					{
+					if (Util.isDigit(token)) {
 						delay = Integer.parseInt(token);
 					}
-					while (st.hasMoreTokens())
-					{
+					while (st.hasMoreTokens()) {
 						reason += st.nextToken() + " ";
 					}
-					if (!reason.isEmpty())
-					{
+					if (!reason.isEmpty()) {
 						reason = reason.substring(0, reason.length() - 1);
 					}
 				}
 				
-				if (charId > 0)
-				{
+				if (charId > 0) {
 					long expirationTime = delay > 0 ? System.currentTimeMillis() + (delay * 60 * 1000) : -1;
 					PunishmentManager.getInstance().startPunishment(new PunishmentTask(charId, PunishmentAffect.CHARACTER, PunishmentType.JAIL, expirationTime, reason, "Telnet Admin: " + _cSocket.getInetAddress().getHostAddress()));
 					_print.println("Character " + name + " jailed for " + (delay > 0 ? delay + " minutes." : "ever!"));
-				}
-				else
-				{
+				} else {
 					_print.println("Character with name: " + name + " was not found!");
 				}
-			}
-			catch (NoSuchElementException nsee)
-			{
+			} catch (NoSuchElementException nsee) {
 				_print.println("Specify a character name.");
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				LOGGER.debug("Could not jail player via telnet!", e);
 			}
-		}
-		else if (command.startsWith("unjail"))
-		{
+		} else if (command.startsWith("unjail")) {
 			StringTokenizer st = new StringTokenizer(command.substring(7));
-			try
-			{
+			try {
 				String name = st.nextToken();
 				int charId = CharNameTable.getInstance().getIdByName(name);
 				
-				if (charId > 0)
-				{
+				if (charId > 0) {
 					PunishmentManager.getInstance().stopPunishment(charId, PunishmentAffect.CHARACTER, PunishmentType.JAIL);
 					_print.println("Character " + name + " have been unjailed");
-				}
-				else
-				{
+				} else {
 					_print.println("Character with name: " + name + " was not found!");
 				}
-			}
-			catch (NoSuchElementException nsee)
-			{
+			} catch (NoSuchElementException nsee) {
 				_print.println("Specify a character name.");
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				LOGGER.debug("Could not unjail player via telnet!", e);
 			}
 		}
 		return false;
 	}
 	
-	private boolean setEnchant(L2PcInstance activeChar, int ench, int armorType)
-	{
+	private boolean setEnchant(L2PcInstance activeChar, int ench, int armorType) {
 		// now we need to find the equipped weapon of the targeted character...
 		int curEnchant = 0; // display purposes only
 		L2ItemInstance itemInstance = null;
 		
 		// only attempt to enchant if there is a weapon equipped
 		L2ItemInstance parmorInstance = activeChar.getInventory().getPaperdollItem(armorType);
-		if ((parmorInstance != null) && (parmorInstance.getLocationSlot() == armorType))
-		{
+		if ((parmorInstance != null) && (parmorInstance.getLocationSlot() == armorType)) {
 			itemInstance = parmorInstance;
-		}
-		else
-		{
+		} else {
 			// for bows/crossbows and double handed weapons
 			parmorInstance = activeChar.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
-			if ((parmorInstance != null) && (parmorInstance.getLocationSlot() == Inventory.PAPERDOLL_RHAND))
-			{
+			if ((parmorInstance != null) && (parmorInstance.getLocationSlot() == Inventory.PAPERDOLL_RHAND)) {
 				itemInstance = parmorInstance;
 			}
 		}
 		
-		if (itemInstance != null)
-		{
+		if (itemInstance != null) {
 			curEnchant = itemInstance.getEnchantLevel();
 			
 			// set enchant value
@@ -333,8 +274,7 @@ public class PlayerHandler implements ITelnetHandler
 	}
 	
 	@Override
-	public String[] getCommandList()
-	{
+	public String[] getCommandList() {
 		return _commands;
 	}
 }

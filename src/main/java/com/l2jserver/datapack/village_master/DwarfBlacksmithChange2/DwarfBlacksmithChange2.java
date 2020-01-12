@@ -28,11 +28,9 @@ import com.l2jserver.gameserver.model.base.ClassId;
  * Dwarf class transfer AI.
  * @author Adry_85
  */
-public final class DwarfBlacksmithChange2 extends AbstractNpcAI
-{
+public final class DwarfBlacksmithChange2 extends AbstractNpcAI {
 	// NPCs
-	private static int[] NPCS =
-	{
+	private static int[] NPCS = {
 		30512, // Kusto
 		30677, // Flutter
 		30687, // Vergara
@@ -51,19 +49,16 @@ public final class DwarfBlacksmithChange2 extends AbstractNpcAI
 	// Class
 	private static final int WARSMITH = 57;
 	
-	private DwarfBlacksmithChange2()
-	{
+	private DwarfBlacksmithChange2() {
 		super(DwarfBlacksmithChange2.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "30512-03.htm": // master_lv3_black006fa
 			case "30512-04.htm": // master_lv3_black007fa
 			case "30512-05.htm": // master_lv3_black007fat
@@ -71,8 +66,7 @@ public final class DwarfBlacksmithChange2 extends AbstractNpcAI
 				htmltext = event;
 				break;
 			}
-			case "57":
-			{
+			case "57": {
 				htmltext = ClassChangeRequested(player, Integer.valueOf(event));
 				break;
 			}
@@ -80,28 +74,18 @@ public final class DwarfBlacksmithChange2 extends AbstractNpcAI
 		return htmltext;
 	}
 	
-	private String ClassChangeRequested(L2PcInstance player, int classId)
-	{
+	private String ClassChangeRequested(L2PcInstance player, int classId) {
 		String htmltext = null;
-		if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP))
-		{
+		if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP)) {
 			htmltext = "30512-08.htm"; // fnYouAreThirdClass
-		}
-		else if ((classId == WARSMITH) && (player.getClassId() == ClassId.artisan))
-		{
-			if (player.getLevel() < 40)
-			{
-				if (hasQuestItems(player, MARK_OF_GUILDSMAN, MARK_OF_PROSPERITY, MARK_OF_MAESTRO))
-				{
+		} else if ((classId == WARSMITH) && (player.getClassId() == ClassId.artisan)) {
+			if (player.getLevel() < 40) {
+				if (hasQuestItems(player, MARK_OF_GUILDSMAN, MARK_OF_PROSPERITY, MARK_OF_MAESTRO)) {
 					htmltext = "30512-09.htm"; // fnLowLevel11
-				}
-				else
-				{
+				} else {
 					htmltext = "30512-10.htm"; // fnLowLevelNoProof11
 				}
-			}
-			else if (hasQuestItems(player, MARK_OF_GUILDSMAN, MARK_OF_PROSPERITY, MARK_OF_MAESTRO))
-			{
+			} else if (hasQuestItems(player, MARK_OF_GUILDSMAN, MARK_OF_PROSPERITY, MARK_OF_MAESTRO)) {
 				takeItems(player, -1, MARK_OF_GUILDSMAN, MARK_OF_PROSPERITY, MARK_OF_MAESTRO);
 				player.setClassId(WARSMITH);
 				player.setBaseClass(WARSMITH);
@@ -109,9 +93,7 @@ public final class DwarfBlacksmithChange2 extends AbstractNpcAI
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
 				htmltext = "30512-11.htm"; // fnAfterClassChange11
-			}
-			else
-			{
+			} else {
 				htmltext = "30512-12.htm"; // fnNoProof11
 			}
 		}
@@ -119,34 +101,24 @@ public final class DwarfBlacksmithChange2 extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
-		{
+		if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP)) {
 			htmltext = "30512-01.htm"; // fnYouAreFourthClass
-		}
-		else if (player.isInCategory(CategoryType.WARSMITH_GROUP))
-		{
+		} else if (player.isInCategory(CategoryType.WARSMITH_GROUP)) {
 			final ClassId classId = player.getClassId();
-			if ((classId == ClassId.artisan) || (classId == ClassId.warsmith))
-			{
+			if ((classId == ClassId.artisan) || (classId == ClassId.warsmith)) {
 				htmltext = "30512-02.htm"; // fnClassList1
-			}
-			else
-			{
+			} else {
 				htmltext = "30512-06.htm"; // fnYouAreFirstClass
 			}
-		}
-		else
-		{
+		} else {
 			htmltext = "30512-07.htm"; // fnClassMismatch
 		}
 		return htmltext;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DwarfBlacksmithChange2();
 	}
 }

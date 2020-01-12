@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.util.Util;
  * Acts Of Evil (171)
  * @author ivantotov
  */
-public final class Q00171_ActsOfEvil extends Quest
-{
+public final class Q00171_ActsOfEvil extends Quest {
 	// NPCs
 	private final static int TRADER_ARODIN = 30207;
 	private static final int GUARD_ALVAH = 30381;
@@ -67,8 +66,7 @@ public final class Q00171_ActsOfEvil extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 27;
 	
-	public Q00171_ActsOfEvil()
-	{
+	public Q00171_ActsOfEvil() {
 		super(171, Q00171_ActsOfEvil.class.getSimpleName(), "Acts Of Evil");
 		addStartNpc(GUARD_ALVAH);
 		addTalkId(GUARD_ALVAH, TRADER_ARODIN, TYRA, NETI, TRADER_ROLENTO, TUREK_CHIEF_BURAI);
@@ -78,12 +76,9 @@ public final class Q00171_ActsOfEvil extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if ("DESPAWN".equals(event))
-		{
-			if (npc != null)
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if ("DESPAWN".equals(event)) {
+			if (npc != null) {
 				npc.broadcastPacket(new NpcSay(npc, Say2.NPC_ALL, NpcStringId.YOU_SHOULD_CONSIDER_GOING_BACK));
 				npc.deleteMe();
 			}
@@ -91,40 +86,33 @@ public final class Q00171_ActsOfEvil extends Quest
 		}
 		
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30381-03.htm":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "30381-03.htm": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					qs.setMemoState(1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30381-07.html":
-			{
+			case "30381-07.html": {
 				qs.setMemoState(5);
 				qs.setCond(5, true);
 				htmltext = event;
 				break;
 			}
-			case "30381-12.html":
-			{
+			case "30381-12.html": {
 				qs.setMemoState(7);
 				qs.setCond(7, true);
 				htmltext = event;
 				break;
 			}
-			case "30437-04.html":
-			{
+			case "30437-04.html": {
 				takeItems(player, WEAPONS_TRADE_CONTRACT, 1);
 				giveItems(player, CERTIFICATE_OF_THE_SILVER_GUILD, 1);
 				giveItems(player, ROLENTOS_CARGOBOX, 1);
@@ -137,13 +125,11 @@ public final class Q00171_ActsOfEvil extends Quest
 			case "30437-02.html":
 			case "30437-03.html":
 			case "30617-03.html":
-			case "30617-04.html":
-			{
+			case "30617-04.html": {
 				htmltext = event;
 				break;
 			}
-			case "30617-05.html":
-			{
+			case "30617-05.html": {
 				takeItems(player, ATTACK_DIRECTIVES, 1);
 				takeItems(player, CERTIFICATE_OF_THE_SILVER_GUILD, 1);
 				takeItems(player, ROLENTOS_CARGOBOX, 1);
@@ -157,43 +143,28 @@ public final class Q00171_ActsOfEvil extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
 				case TUMRAN_BUGBEAR:
-				case TUMRAN_BUGBEAR_WARRIOR:
-				{
-					if (qs.isMemoState(5))
-					{
-						if (!hasQuestItems(killer, RANGERS_REPORT1))
-						{
+				case TUMRAN_BUGBEAR_WARRIOR: {
+					if (qs.isMemoState(5)) {
+						if (!hasQuestItems(killer, RANGERS_REPORT1)) {
 							giveItems(killer, RANGERS_REPORT1, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
-						}
-						else if (hasQuestItems(killer, RANGERS_REPORT1) && !hasQuestItems(killer, RANGERS_REPORT2))
-						{
-							if (getRandom(100) <= 19)
-							{
+						} else if (hasQuestItems(killer, RANGERS_REPORT1) && !hasQuestItems(killer, RANGERS_REPORT2)) {
+							if (getRandom(100) <= 19) {
 								giveItems(killer, RANGERS_REPORT2, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
-						}
-						else if (hasQuestItems(killer, RANGERS_REPORT1, RANGERS_REPORT2) && !hasQuestItems(killer, RANGERS_REPORT3))
-						{
-							if (getRandom(100) <= 19)
-							{
+						} else if (hasQuestItems(killer, RANGERS_REPORT1, RANGERS_REPORT2) && !hasQuestItems(killer, RANGERS_REPORT3)) {
+							if (getRandom(100) <= 19) {
 								giveItems(killer, RANGERS_REPORT3, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
-						}
-						else if (hasQuestItems(killer, RANGERS_REPORT1, RANGERS_REPORT2, RANGERS_REPORT3) && !hasQuestItems(killer, RANGERS_REPORT4))
-						{
-							if (getRandom(100) <= 19)
-							{
+						} else if (hasQuestItems(killer, RANGERS_REPORT1, RANGERS_REPORT2, RANGERS_REPORT3) && !hasQuestItems(killer, RANGERS_REPORT4)) {
+							if (getRandom(100) <= 19) {
 								giveItems(killer, RANGERS_REPORT4, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
@@ -201,38 +172,27 @@ public final class Q00171_ActsOfEvil extends Quest
 					}
 					break;
 				}
-				case OL_MAHUM_CAPTAIN:
-				{
-					if (qs.isMemoState(10) && (getQuestItemsCount(killer, OL_MAHUM_CAPTAINS_HEAD) < 30))
-					{
-						if (getRandom(100) <= 49)
-						{
+				case OL_MAHUM_CAPTAIN: {
+					if (qs.isMemoState(10) && (getQuestItemsCount(killer, OL_MAHUM_CAPTAINS_HEAD) < 30)) {
+						if (getRandom(100) <= 49) {
 							giveItems(killer, OL_MAHUM_CAPTAINS_HEAD, 1);
-							if (getQuestItemsCount(killer, OL_MAHUM_CAPTAINS_HEAD) == 30)
-							{
+							if (getQuestItemsCount(killer, OL_MAHUM_CAPTAINS_HEAD) == 30) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case OL_MAHUM_GENERAL:
-				{
-					if (qs.isMemoState(6))
-					{
-						if (getRandom(100) <= 9)
-						{
-							if (!hasQuestItems(killer, WEAPONS_TRADE_CONTRACT))
-							{
+				case OL_MAHUM_GENERAL: {
+					if (qs.isMemoState(6)) {
+						if (getRandom(100) <= 9) {
+							if (!hasQuestItems(killer, WEAPONS_TRADE_CONTRACT)) {
 								giveItems(killer, WEAPONS_TRADE_CONTRACT, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
-							if (!hasQuestItems(killer, ATTACK_DIRECTIVES))
-							{
+							if (!hasQuestItems(killer, ATTACK_DIRECTIVES)) {
 								giveItems(killer, ATTACK_DIRECTIVES, 1);
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
@@ -240,120 +200,84 @@ public final class Q00171_ActsOfEvil extends Quest
 					}
 					break;
 				}
-				case TUREK_ORC_ARCHER:
-				{
-					if (qs.isMemoState(2) && (getQuestItemsCount(killer, BLADE_MOLD) < 20))
-					{
-						if (getRandom(100) < 53)
-						{
+				case TUREK_ORC_ARCHER: {
+					if (qs.isMemoState(2) && (getQuestItemsCount(killer, BLADE_MOLD) < 20)) {
+						if (getRandom(100) < 53) {
 							giveItems(killer, BLADE_MOLD, 1);
-							if (getQuestItemsCount(killer, BLADE_MOLD) == 20)
-							{
+							if (getQuestItemsCount(killer, BLADE_MOLD) == 20) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
-						if (getQuestItemsCount(killer, BLADE_MOLD) == 5)
-						{
+						if (getQuestItemsCount(killer, BLADE_MOLD) == 5) {
 							addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
 						}
-						if (getQuestItemsCount(killer, BLADE_MOLD) >= 10)
-						{
-							if (getRandom(100) <= 24)
-							{
+						if (getQuestItemsCount(killer, BLADE_MOLD) >= 10) {
+							if (getRandom(100) <= 24) {
 								addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
 							}
 						}
 					}
 					break;
 				}
-				case TUREK_ORC_SKIRMISHER:
-				{
-					if (qs.isMemoState(2) && (getQuestItemsCount(killer, BLADE_MOLD) < 20))
-					{
-						if (getRandom(100) < 55)
-						{
+				case TUREK_ORC_SKIRMISHER: {
+					if (qs.isMemoState(2) && (getQuestItemsCount(killer, BLADE_MOLD) < 20)) {
+						if (getRandom(100) < 55) {
 							giveItems(killer, BLADE_MOLD, 1);
-							if (getQuestItemsCount(killer, BLADE_MOLD) == 20)
-							{
+							if (getQuestItemsCount(killer, BLADE_MOLD) == 20) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
-						if (getQuestItemsCount(killer, BLADE_MOLD) == 5)
-						{
+						if (getQuestItemsCount(killer, BLADE_MOLD) == 5) {
 							addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
 						}
-						if (getQuestItemsCount(killer, BLADE_MOLD) >= 10)
-						{
-							if (getRandom(100) <= 24)
-							{
+						if (getQuestItemsCount(killer, BLADE_MOLD) >= 10) {
+							if (getRandom(100) <= 24) {
 								addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
 							}
 						}
 					}
 					break;
 				}
-				case TUREK_ORC_SUPPLIER:
-				{
-					if (qs.isMemoState(2) && (getQuestItemsCount(killer, BLADE_MOLD) < 20))
-					{
-						if (getRandom(100) < 51)
-						{
+				case TUREK_ORC_SUPPLIER: {
+					if (qs.isMemoState(2) && (getQuestItemsCount(killer, BLADE_MOLD) < 20)) {
+						if (getRandom(100) < 51) {
 							giveItems(killer, BLADE_MOLD, 1);
-							if (getQuestItemsCount(killer, BLADE_MOLD) == 20)
-							{
+							if (getQuestItemsCount(killer, BLADE_MOLD) == 20) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
-						if (getQuestItemsCount(killer, BLADE_MOLD) == 5)
-						{
+						if (getQuestItemsCount(killer, BLADE_MOLD) == 5) {
 							addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
 						}
-						if (getQuestItemsCount(killer, BLADE_MOLD) >= 10)
-						{
-							if (getRandom(100) <= 24)
-							{
+						if (getQuestItemsCount(killer, BLADE_MOLD) >= 10) {
+							if (getRandom(100) <= 24) {
 								addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
 							}
 						}
 					}
 					break;
 				}
-				case TUREK_ORC_FOOTMAN:
-				{
-					if (qs.isMemoState(2) && (getQuestItemsCount(killer, BLADE_MOLD) < 20))
-					{
-						if (getRandom(2) < 1)
-						{
+				case TUREK_ORC_FOOTMAN: {
+					if (qs.isMemoState(2) && (getQuestItemsCount(killer, BLADE_MOLD) < 20)) {
+						if (getRandom(2) < 1) {
 							giveItems(killer, BLADE_MOLD, 1);
-							if (getQuestItemsCount(killer, BLADE_MOLD) == 20)
-							{
+							if (getQuestItemsCount(killer, BLADE_MOLD) == 20) {
 								playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
-						if (getQuestItemsCount(killer, BLADE_MOLD) == 5)
-						{
+						if (getQuestItemsCount(killer, BLADE_MOLD) == 5) {
 							addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
 						}
-						if (getQuestItemsCount(killer, BLADE_MOLD) >= 10)
-						{
-							if (getRandom(100) <= 24)
-							{
+						if (getQuestItemsCount(killer, BLADE_MOLD) >= 10) {
+							if (getRandom(100) <= 24) {
 								addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
 							}
 						}
@@ -366,53 +290,37 @@ public final class Q00171_ActsOfEvil extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		final int memoState = qs.getMemoState();
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (npc.getId() == GUARD_ALVAH)
-			{
-				if (player.getLevel() < MIN_LEVEL)
-				{
+		if (qs.isCreated()) {
+			if (npc.getId() == GUARD_ALVAH) {
+				if (player.getLevel() < MIN_LEVEL) {
 					htmltext = "30381-01.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30381-02.htm";
 				}
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case GUARD_ALVAH:
-				{
-					switch (qs.getCond())
-					{
-						case 1:
-						{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case GUARD_ALVAH: {
+					switch (qs.getCond()) {
+						case 1: {
 							htmltext = "30381-04.html";
 							break;
 						}
 						case 2:
-						case 3:
-						{
+						case 3: {
 							htmltext = "30381-05.html";
 							break;
 						}
-						case 4:
-						{
+						case 4: {
 							htmltext = "30381-06.html";
 							break;
 						}
-						case 5:
-						{
-							if (hasQuestItems(player, RANGERS_REPORT1, RANGERS_REPORT2, RANGERS_REPORT3, RANGERS_REPORT4))
-							{
+						case 5: {
+							if (hasQuestItems(player, RANGERS_REPORT1, RANGERS_REPORT2, RANGERS_REPORT3, RANGERS_REPORT4)) {
 								takeItems(player, RANGERS_REPORT1, 1);
 								takeItems(player, RANGERS_REPORT2, 1);
 								takeItems(player, RANGERS_REPORT3, 1);
@@ -420,47 +328,36 @@ public final class Q00171_ActsOfEvil extends Quest
 								qs.setMemoState(6);
 								qs.setCond(6, true);
 								htmltext = "30381-09.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30381-08.html";
 							}
 							break;
 						}
-						case 6:
-						{
-							if (hasQuestItems(player, WEAPONS_TRADE_CONTRACT, ATTACK_DIRECTIVES))
-							{
+						case 6: {
+							if (hasQuestItems(player, WEAPONS_TRADE_CONTRACT, ATTACK_DIRECTIVES)) {
 								htmltext = "30381-11.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "30381-10.html";
 							}
 							break;
 						}
-						case 7:
-						{
+						case 7: {
 							htmltext = "30381-13.html";
 							break;
 						}
-						case 8:
-						{
+						case 8: {
 							htmltext = "30381-14.html";
 							break;
 						}
-						case 9:
-						{
+						case 9: {
 							htmltext = "30381-15.html";
 							break;
 						}
-						case 10:
-						{
+						case 10: {
 							htmltext = "30381-16.html";
 							break;
 						}
-						case 11:
-						{
+						case 11: {
 							giveAdena(player, 95000, true);
 							addExpAndSp(player, 159820, 9182);
 							htmltext = "30381-17.html";
@@ -470,136 +367,90 @@ public final class Q00171_ActsOfEvil extends Quest
 					}
 					break;
 				}
-				case TRADER_ARODIN:
-				{
-					if (memoState == 1)
-					{
+				case TRADER_ARODIN: {
+					if (memoState == 1) {
 						qs.setMemoState(2);
 						qs.setCond(2, true);
 						htmltext = "30207-01.html";
-					}
-					else if (memoState == 2)
-					{
-						if (getQuestItemsCount(player, BLADE_MOLD) < 20)
-						{
+					} else if (memoState == 2) {
+						if (getQuestItemsCount(player, BLADE_MOLD) < 20) {
 							htmltext = "30207-02.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30207-03.html";
 						}
-					}
-					else if (memoState == 3)
-					{
+					} else if (memoState == 3) {
 						takeItems(player, TYRAS_BILL, 1);
 						qs.setMemoState(4);
 						qs.setCond(4, true);
 						htmltext = "30207-04.html";
-					}
-					else if (memoState >= 4)
-					{
+					} else if (memoState >= 4) {
 						htmltext = "30207-05.html";
 					}
 					break;
 				}
-				case TYRA:
-				{
-					if (memoState == 2)
-					{
-						if (getQuestItemsCount(player, BLADE_MOLD) < 20)
-						{
+				case TYRA: {
+					if (memoState == 2) {
+						if (getQuestItemsCount(player, BLADE_MOLD) < 20) {
 							htmltext = "30420-01.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, BLADE_MOLD, -1);
 							giveItems(player, TYRAS_BILL, 1);
 							qs.setMemoState(3);
 							qs.setCond(3, true);
 							htmltext = "30420-02.html";
 						}
-					}
-					else if (memoState == 3)
-					{
+					} else if (memoState == 3) {
 						htmltext = "30420-03.html";
-					}
-					else if (memoState >= 4)
-					{
+					} else if (memoState >= 4) {
 						htmltext = "30420-04.html";
 					}
 					break;
 				}
-				case NETI:
-				{
-					if (memoState == 7)
-					{
+				case NETI: {
+					if (memoState == 7) {
 						qs.setMemoState(8);
 						qs.setCond(8, true);
 						htmltext = "30425-01.html";
-					}
-					else if (memoState == 8)
-					{
+					} else if (memoState == 8) {
 						htmltext = "30425-02.html";
-					}
-					else if (memoState >= 9)
-					{
+					} else if (memoState >= 9) {
 						htmltext = "30425-03.html";
 					}
 					break;
 				}
-				case TRADER_ROLENTO:
-				{
-					if (memoState == 8)
-					{
+				case TRADER_ROLENTO: {
+					if (memoState == 8) {
 						htmltext = "30437-02.html";
-					}
-					else if (memoState == 9)
-					{
+					} else if (memoState == 9) {
 						htmltext = "30437-05.html";
-					}
-					else if (memoState >= 10)
-					{
+					} else if (memoState >= 10) {
 						htmltext = "30437-06.html";
 					}
 					break;
 				}
-				case TUREK_CHIEF_BURAI:
-				{
-					if (memoState < 9)
-					{
+				case TUREK_CHIEF_BURAI: {
+					if (memoState < 9) {
 						htmltext = "30617-01.html";
-					}
-					else if (memoState == 9)
-					{
+					} else if (memoState == 9) {
 						htmltext = "30617-02.html";
-					}
-					else if (memoState == 10)
-					{
-						if (getQuestItemsCount(player, OL_MAHUM_CAPTAINS_HEAD) < 30)
-						{
+					} else if (memoState == 10) {
+						if (getQuestItemsCount(player, OL_MAHUM_CAPTAINS_HEAD) < 30) {
 							htmltext = "30617-06.html";
-						}
-						else
-						{
+						} else {
 							giveAdena(player, 8000, true);
 							takeItems(player, OL_MAHUM_CAPTAINS_HEAD, -1);
 							qs.setMemoState(11);
 							qs.setCond(11, true);
 							htmltext = "30617-07.html";
 						}
-					}
-					else if (memoState == 11)
-					{
+					} else if (memoState == 11) {
 						htmltext = "30617-08.html";
 					}
 					break;
 				}
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == GUARD_ALVAH)
-			{
+		} else if (qs.isCompleted()) {
+			if (npc.getId() == GUARD_ALVAH) {
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
@@ -607,8 +458,7 @@ public final class Q00171_ActsOfEvil extends Quest
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		startQuestTimer("DESPAWN", 200000, npc, null);
 		return super.onSpawn(npc);
 	}

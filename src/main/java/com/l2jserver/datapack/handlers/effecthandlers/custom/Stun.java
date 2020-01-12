@@ -29,34 +29,28 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Stun effect implementation.
  * @author mkizub
  */
-public final class Stun extends AbstractEffect
-{
-	public Stun(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class Stun extends AbstractEffect {
+	public Stun(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public int getEffectFlags()
-	{
+	public int getEffectFlags() {
 		return EffectFlag.STUNNED.getMask();
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.STUN;
 	}
 	
 	@Override
-	public void onExit(BuffInfo info)
-	{
+	public void onExit(BuffInfo info) {
 		info.getEffected().stopStunning(false);
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		info.getEffected().startStunning();
 	}
 }

@@ -35,26 +35,21 @@ import com.l2jserver.gameserver.util.Broadcast;
  * Beast SpiritShot Handler
  * @author Tempy
  */
-public class BeastSpiritShot implements IItemHandler
-{
+public class BeastSpiritShot implements IItemHandler {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!playable.isPlayer())
-		{
+	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!playable.isPlayer()) {
 			playable.sendPacket(SystemMessageId.ITEM_NOT_FOR_PETS);
 			return false;
 		}
 		
 		final L2PcInstance activeOwner = playable.getActingPlayer();
-		if (!activeOwner.hasSummon())
-		{
+		if (!activeOwner.hasSummon()) {
 			activeOwner.sendPacket(SystemMessageId.PETS_ARE_NOT_AVAILABLE_AT_THIS_TIME);
 			return false;
 		}
 		
-		if (activeOwner.getSummon().isDead())
-		{
+		if (activeOwner.getSummon().isDead()) {
 			activeOwner.sendPacket(SystemMessageId.SOULSHOTS_AND_SPIRITSHOTS_ARE_NOT_AVAILABLE_FOR_A_DEAD_PET);
 			return false;
 		}
@@ -64,33 +59,27 @@ public class BeastSpiritShot implements IItemHandler
 		final short shotConsumption = activeOwner.getSummon().getSpiritShotsPerHit();
 		final SkillHolder[] skills = item.getItem().getSkills();
 		
-		if (skills == null)
-		{
+		if (skills == null) {
 			_log.log(Level.WARNING, getClass().getSimpleName() + ": is missing skills!");
 			return false;
 		}
 		
 		long shotCount = item.getCount();
-		if (shotCount < shotConsumption)
-		{
+		if (shotCount < shotConsumption) {
 			// Not enough SpiritShots to use.
-			if (!activeOwner.disableAutoShot(itemId))
-			{
+			if (!activeOwner.disableAutoShot(itemId)) {
 				activeOwner.sendPacket(SystemMessageId.NOT_ENOUGH_SPIRITHOTS_FOR_PET);
 			}
 			return false;
 		}
 		
-		if (activeOwner.getSummon().isChargedShot(isBlessed ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS))
-		{
+		if (activeOwner.getSummon().isChargedShot(isBlessed ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS)) {
 			// shots are already active.
 			return false;
 		}
 		
-		if (!activeOwner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false))
-		{
-			if (!activeOwner.disableAutoShot(itemId))
-			{
+		if (!activeOwner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false)) {
+			if (!activeOwner.disableAutoShot(itemId)) {
 				activeOwner.sendPacket(SystemMessageId.NOT_ENOUGH_SPIRITHOTS_FOR_PET);
 			}
 			return false;

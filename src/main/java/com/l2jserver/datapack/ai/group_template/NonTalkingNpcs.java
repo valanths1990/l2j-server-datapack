@@ -25,8 +25,7 @@ import com.l2jserver.gameserver.model.actor.L2Npc;
  * AI for handle Non-Talking NPCs.
  * @author St3eT
  */
-public final class NonTalkingNpcs extends AbstractNpcAI
-{
+public final class NonTalkingNpcs extends AbstractNpcAI {
 	// @formatter:off
 	private static final int[] NONTALKINGNPCS =
 	{
@@ -53,21 +52,18 @@ public final class NonTalkingNpcs extends AbstractNpcAI
 	};
 	// @formatter:on
 	
-	public NonTalkingNpcs()
-	{
+	public NonTalkingNpcs() {
 		super(NonTalkingNpcs.class.getSimpleName(), "ai/group_template");
 		addSpawnId(NONTALKINGNPCS);
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		npc.setTalking(false);
 		return super.onSpawn(npc);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new NonTalkingNpcs();
 	}
 }

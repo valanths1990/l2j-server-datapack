@@ -36,8 +36,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Spirit of Mirrors (104)
  * @author xban1x
  */
-public final class Q00104_SpiritOfMirrors extends Quest
-{
+public final class Q00104_SpiritOfMirrors extends Quest {
 	// NPCs
 	private static final int GALLINT = 30017;
 	private static final int ARNOLD = 30041;
@@ -50,15 +49,13 @@ public final class Q00104_SpiritOfMirrors extends Quest
 	private static final int SPIRITBOUND_WAND3 = 1137;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
+	static {
 		MONSTERS.put(27003, SPIRITBOUND_WAND1); // Spirit Of Mirrors
 		MONSTERS.put(27004, SPIRITBOUND_WAND2); // Spirit Of Mirrors
 		MONSTERS.put(27005, SPIRITBOUND_WAND3); // Spirit Of Mirrors
 	}
 	// Rewards
-	private static final ItemHolder[] REWARDS =
-	{
+	private static final ItemHolder[] REWARDS = {
 		new ItemHolder(1060, 100), // Lesser Healing Potion
 		new ItemHolder(4412, 10), // Echo Crystal - Theme of Battle
 		new ItemHolder(4413, 10), // Echo Crystal - Theme of Love
@@ -70,8 +67,7 @@ public final class Q00104_SpiritOfMirrors extends Quest
 	// Misc
 	private static final int MIN_LVL = 10;
 	
-	public Q00104_SpiritOfMirrors()
-	{
+	public Q00104_SpiritOfMirrors() {
 		super(104, Q00104_SpiritOfMirrors.class.getSimpleName(), "Spirit of Mirrors");
 		addStartNpc(GALLINT);
 		addTalkId(ARNOLD, GALLINT, JOHNSTONE, KENYOS);
@@ -80,11 +76,9 @@ public final class Q00104_SpiritOfMirrors extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && event.equalsIgnoreCase("30017-04.htm"))
-		{
+		if ((st != null) && event.equalsIgnoreCase("30017-04.htm")) {
 			st.startQuest();
 			st.giveItems(GALLINTS_OAK_WAND, 3);
 			return event;
@@ -93,19 +87,14 @@ public final class Q00104_SpiritOfMirrors extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && (st.isCond(1) || st.isCond(2)) && (st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == GALLINTS_OAK_WAND) && !st.hasQuestItems(MONSTERS.get(npc.getId())))
-		{
+		if ((st != null) && (st.isCond(1) || st.isCond(2)) && (st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == GALLINTS_OAK_WAND) && !st.hasQuestItems(MONSTERS.get(npc.getId()))) {
 			st.takeItems(GALLINTS_OAK_WAND, 1);
 			st.giveItems(MONSTERS.get(npc.getId()), 1);
-			if (st.hasQuestItems(SPIRITBOUND_WAND1, SPIRITBOUND_WAND2, SPIRITBOUND_WAND3))
-			{
+			if (st.hasQuestItems(SPIRITBOUND_WAND1, SPIRITBOUND_WAND2, SPIRITBOUND_WAND3)) {
 				st.setCond(3, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -113,43 +102,32 @@ public final class Q00104_SpiritOfMirrors extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
-			case GALLINT:
-			{
-				switch (st.getState())
-				{
-					case State.CREATED:
-					{
+		switch (npc.getId()) {
+			case GALLINT: {
+				switch (st.getState()) {
+					case State.CREATED: {
 						htmltext = (player.getRace() == Race.HUMAN) ? (player.getLevel() >= MIN_LVL) ? "30017-03.htm" : "30017-02.htm" : "30017-01.htm";
 						break;
 					}
-					case State.STARTED:
-					{
-						if (st.isCond(3) && st.hasQuestItems(SPIRITBOUND_WAND1, SPIRITBOUND_WAND2, SPIRITBOUND_WAND3))
-						{
+					case State.STARTED: {
+						if (st.isCond(3) && st.hasQuestItems(SPIRITBOUND_WAND1, SPIRITBOUND_WAND2, SPIRITBOUND_WAND3)) {
 							Q00281_HeadForTheHills.giveNewbieReward(player);
-							for (ItemHolder reward : REWARDS)
-							{
+							for (ItemHolder reward : REWARDS) {
 								st.giveItems(reward);
 							}
 							st.addExpAndSp(39750, 3407);
 							st.giveAdena(16866, true);
 							st.exitQuest(false, true);
 							htmltext = "30017-06.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30017-05.html";
 						}
 						break;
 					}
-					case State.COMPLETED:
-					{
+					case State.COMPLETED: {
 						htmltext = getAlreadyCompletedMsg(player);
 						break;
 					}
@@ -158,16 +136,12 @@ public final class Q00104_SpiritOfMirrors extends Quest
 			}
 			case ARNOLD:
 			case JOHNSTONE:
-			case KENYOS:
-			{
-				if (st.isCond(1))
-				{
-					if (!st.isSet(npc.getName()))
-					{
+			case KENYOS: {
+				if (st.isCond(1)) {
+					if (!st.isSet(npc.getName())) {
 						st.set(npc.getName(), "1");
 					}
-					if (st.isSet("Arnold") && st.isSet("Johnstone") && st.isSet("Kenyos"))
-					{
+					if (st.isSet("Arnold") && st.isSet("Johnstone") && st.isSet("Kenyos")) {
 						st.setCond(2, true);
 					}
 				}

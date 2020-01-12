@@ -38,15 +38,13 @@ import com.l2jserver.gameserver.util.Util;
  * @author nonom, Zoey76, Joxit
  * @version 2011/09/30 based on official server Naia
  */
-public class Q00309_ForAGoodCause extends Quest
-{
+public class Q00309_ForAGoodCause extends Quest {
 	// NPC
 	private static final int ATRA = 32647;
 	// Mobs
 	private static final int CORRUPTED_MUCROKIAN = 22654;
 	private static final Map<Integer, Integer> MUCROKIANS = new HashMap<>();
-	static
-	{
+	static {
 		MUCROKIANS.put(22650, 218); // Mucrokian Fanatic
 		MUCROKIANS.put(22651, 258); // Mucrokian Ascetic
 		MUCROKIANS.put(22652, 248); // Mucrokian Savior
@@ -64,8 +62,7 @@ public class Q00309_ForAGoodCause extends Quest
 	private static final int REC_DYNASTY_RING_70 = 9987;
 	private static final int REC_DYNASTY_SIGIL_60 = 10115;
 	
-	private static final int[] MOIRAI_RECIPES =
-	{
+	private static final int[] MOIRAI_RECIPES = {
 		15777,
 		15780,
 		15783,
@@ -77,8 +74,7 @@ public class Q00309_ForAGoodCause extends Quest
 		15812
 	};
 	
-	private static final int[] MOIRAI_PIECES =
-	{
+	private static final int[] MOIRAI_PIECES = {
 		15647,
 		15650,
 		15653,
@@ -93,34 +89,26 @@ public class Q00309_ForAGoodCause extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
-	public Q00309_ForAGoodCause()
-	{
+	public Q00309_ForAGoodCause() {
 		super(309, Q00309_ForAGoodCause.class.getSimpleName(), "For A Good Cause");
 		addStartNpc(ATRA);
 		addTalkId(ATRA);
 		addKillId(MUCROKIANS.keySet());
 	}
 	
-	private boolean canGiveItem(QuestState st, int quanty)
-	{
+	private boolean canGiveItem(QuestState st, int quanty) {
 		long mucrokian = st.getQuestItemsCount(MUCROKIAN_HIDE);
 		long fallen = st.getQuestItemsCount(FALLEN_MUCROKIAN_HIDE);
-		if (fallen > 0)
-		{
-			if (fallen >= (quanty / 2))
-			{
+		if (fallen > 0) {
+			if (fallen >= (quanty / 2)) {
 				st.takeItems(FALLEN_MUCROKIAN_HIDE, (quanty / 2));
 				return true;
-			}
-			else if (mucrokian >= (quanty - (fallen * 2)))
-			{
+			} else if (mucrokian >= (quanty - (fallen * 2))) {
 				st.takeItems(FALLEN_MUCROKIAN_HIDE, fallen);
 				st.takeItems(MUCROKIAN_HIDE, (quanty - (fallen * 2)));
 				return true;
 			}
-		}
-		else if (mucrokian >= quanty)
-		{
+		} else if (mucrokian >= quanty) {
 			st.takeItems(MUCROKIAN_HIDE, quanty);
 			return true;
 		}
@@ -128,17 +116,14 @@ public class Q00309_ForAGoodCause extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "32647-02.htm":
 			case "32647-03.htm":
 			case "32647-04.htm":
@@ -189,46 +174,33 @@ public class Q00309_ForAGoodCause extends Quest
 		return htmltext;
 	}
 	
-	private String onItemExchangeRequest(QuestState st, int item, int quanty)
-	{
+	private String onItemExchangeRequest(QuestState st, int item, int quanty) {
 		String htmltext;
-		if (canGiveItem(st, quanty))
-		{
-			if (Util.contains(MOIRAI_PIECES, item))
-			{
+		if (canGiveItem(st, quanty)) {
+			if (Util.contains(MOIRAI_PIECES, item)) {
 				st.giveItems(item, getRandom(1, 4));
-			}
-			else
-			{
+			} else {
 				st.giveItems(item, 1);
 			}
 			st.playSound(Sound.ITEMSOUND_QUEST_FINISH);
 			htmltext = "32646-16.htm";
-		}
-		else
-		{
+		} else {
 			htmltext = "32646-15.htm";
 		}
 		return htmltext;
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(killer, 1);
-		if (partyMember != null)
-		{
+		if (partyMember != null) {
 			final QuestState st = getQuestState(partyMember, false);
 			double chance = MUCROKIANS.get(npc.getId()) * rates().getRateQuestDrop();
-			if (getRandom(1000) < chance)
-			{
-				if (npc.getId() == CORRUPTED_MUCROKIAN)
-				{
+			if (getRandom(1000) < chance) {
+				if (npc.getId() == CORRUPTED_MUCROKIAN) {
 					st.giveItems(FALLEN_MUCROKIAN_HIDE, 1);
 					st.rewardItems(FALLEN_MUCROKIAN_HIDE, 1);
-				}
-				else
-				{
+				} else {
 					st.giveItems(MUCROKIAN_HIDE, 1);
 				}
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
@@ -238,21 +210,15 @@ public class Q00309_ForAGoodCause extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		String htmltext = getNoQuestMsg(talker);
 		final QuestState st = getQuestState(talker, true);
 		final QuestState q308 = talker.getQuestState(Q00308_ReedFieldMaintenance.class.getSimpleName());
-		if ((q308 != null) && q308.isStarted())
-		{
+		if ((q308 != null) && q308.isStarted()) {
 			htmltext = "32647-17.html";
-		}
-		else if (st.isStarted())
-		{
+		} else if (st.isStarted()) {
 			htmltext = (st.hasQuestItems(MUCROKIAN_HIDE) || st.hasQuestItems(FALLEN_MUCROKIAN_HIDE)) ? "32647-08.html" : "32647-06.html";
-		}
-		else
-		{
+		} else {
 			htmltext = (talker.getLevel() >= MIN_LEVEL) ? "32647-01.htm" : "32647-00.html";
 		}
 		return htmltext;

@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.skills.Skill;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public class NecromancerOfTheValley extends AbstractNpcAI
-{
+public class NecromancerOfTheValley extends AbstractNpcAI {
 	// NPCs
 	private static final int EXPLODING_ORC_GHOST = 22818;
 	private static final int WRATHFUL_ORC_GHOST = 22819;
@@ -40,28 +39,21 @@ public class NecromancerOfTheValley extends AbstractNpcAI
 	// Misc
 	private static final double HP_PERCENTAGE = 0.60;
 	
-	public NecromancerOfTheValley()
-	{
+	public NecromancerOfTheValley() {
 		super(NecromancerOfTheValley.class.getSimpleName(), "ai/individual");
 		addAttackId(NECROMANCER_OF_THE_VALLEY);
 		addSpellFinishedId(EXPLODING_ORC_GHOST);
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if ((npc.getCurrentHp() < (npc.getMaxHp() * HP_PERCENTAGE)))
-		{
-			if (getRandom(10) < 1)
-			{
-				if (getRandomBoolean())
-				{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if ((npc.getCurrentHp() < (npc.getMaxHp() * HP_PERCENTAGE))) {
+			if (getRandom(10) < 1) {
+				if (getRandomBoolean()) {
 					final L2Npc explodingOrcGhost = addSpawn(EXPLODING_ORC_GHOST, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false);
 					addAttackDesire(explodingOrcGhost, attacker, 10000);
 					addSkillCastDesire(npc, attacker, SELF_DESTRUCTION, 999999999L);
-				}
-				else
-				{
+				} else {
 					final L2Npc wrathfulOrcGhost = addSpawn(WRATHFUL_ORC_GHOST, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false);
 					addAttackDesire(wrathfulOrcGhost, attacker, 10000);
 				}
@@ -71,17 +63,14 @@ public class NecromancerOfTheValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
-	{
-		if ((skill == SELF_DESTRUCTION.getSkill()) && (npc != null) && !npc.isDead())
-		{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill) {
+		if ((skill == SELF_DESTRUCTION.getSkill()) && (npc != null) && !npc.isDead()) {
 			npc.doDie(player);
 		}
 		return super.onSpellFinished(npc, player, skill);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new NecromancerOfTheValley();
 	}
 }

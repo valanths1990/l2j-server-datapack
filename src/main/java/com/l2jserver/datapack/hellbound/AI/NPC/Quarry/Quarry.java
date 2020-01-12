@@ -38,13 +38,11 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Quarry AI.
  * @author DS, GKR
  */
-public final class Quarry extends AbstractNpcAI
-{
+public final class Quarry extends AbstractNpcAI {
 	// NPCs
 	private static final int SLAVE = 32299;
 	// Items
-	protected static final ItemChanceHolder[] DROP_LIST =
-	{
+	protected static final ItemChanceHolder[] DROP_LIST = {
 		new ItemChanceHolder(9628, 261), // Leonard
 		new ItemChanceHolder(9630, 175), // Orichalcum
 		new ItemChanceHolder(9629, 145), // Adamantine
@@ -57,8 +55,7 @@ public final class Quarry extends AbstractNpcAI
 	// Misc
 	private static final int TRUST = 50;
 	
-	public Quarry()
-	{
+	public Quarry() {
 		super(Quarry.class.getSimpleName(), "hellbound/AI/NPC");
 		addSpawnId(SLAVE);
 		addFirstTalkId(SLAVE);
@@ -69,32 +66,25 @@ public final class Quarry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
-		switch (event)
-		{
-			case "FollowMe":
-			{
+		switch (event) {
+			case "FollowMe": {
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, player);
 				npc.setTarget(player);
 				npc.setAutoAttackable(true);
 				npc.setRHandId(9136);
 				npc.setWalking();
 				
-				if (getQuestTimer("TIME_LIMIT", npc, null) == null)
-				{
+				if (getQuestTimer("TIME_LIMIT", npc, null) == null) {
 					startQuestTimer("TIME_LIMIT", 900000, npc, null); // 15 min limit for save
 				}
 				htmltext = "32299-02.htm";
 				break;
 			}
-			case "TIME_LIMIT":
-			{
-				for (L2ZoneType zone : ZoneManager.getInstance().getZones(npc))
-				{
-					if (zone.getId() == 40108)
-					{
+			case "TIME_LIMIT": {
+				for (L2ZoneType zone : ZoneManager.getInstance().getZones(npc)) {
+					if (zone.getId() == 40108) {
 						npc.setTarget(null);
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 						npc.setAutoAttackable(false);
@@ -107,16 +97,11 @@ public final class Quarry extends AbstractNpcAI
 				npc.doDie(npc);
 				break;
 			}
-			case "DECAY":
-			{
-				if ((npc != null) && !npc.isDead())
-				{
-					if (npc.getTarget().isPlayer())
-					{
-						for (ItemChanceHolder item : DROP_LIST)
-						{
-							if (getRandom(10000) < item.getChance())
-							{
+			case "DECAY": {
+				if ((npc != null) && !npc.isDead()) {
+					if (npc.getTarget().isPlayer()) {
+						for (ItemChanceHolder item : DROP_LIST) {
+							if (getRandom(10000) < item.getChance()) {
 								npc.dropItem((L2PcInstance) npc.getTarget(), item.getId(), (int) (item.getCount() * rates().getRateQuestDrop()));
 								break;
 							}
@@ -134,52 +119,39 @@ public final class Quarry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		npc.setAutoAttackable(false);
-		if (npc instanceof L2QuestGuardInstance)
-		{
+		if (npc instanceof L2QuestGuardInstance) {
 			((L2QuestGuardInstance) npc).setPassive(true);
 		}
 		return super.onSpawn(npc);
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (HellboundEngine.getInstance().getLevel() != 5)
-		{
+	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+		if (HellboundEngine.getInstance().getLevel() != 5) {
 			return "32299.htm";
 		}
 		return "32299-01.htm";
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public final String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		npc.setAutoAttackable(false);
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone)
-	{
-		if (character.isAttackable())
-		{
+	public final String onEnterZone(L2Character character, L2ZoneType zone) {
+		if (character.isAttackable()) {
 			final L2Attackable npc = (L2Attackable) character;
-			if (npc.getId() == SLAVE)
-			{
-				if (!npc.isDead() && !npc.isDecayed() && (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_FOLLOW))
-				{
-					if (HellboundEngine.getInstance().getLevel() == 5)
-					{
+			if (npc.getId() == SLAVE) {
+				if (!npc.isDead() && !npc.isDecayed() && (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_FOLLOW)) {
+					if (HellboundEngine.getInstance().getLevel() == 5) {
 						startQuestTimer("DECAY", 1000, npc, null);
-						try
-						{
+						try {
 							broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.THANK_YOU_FOR_THE_RESCUE_ITS_A_SMALL_GIFT);
-						}
-						catch (Exception e)
-						{
+						} catch (Exception e) {
 							//
 						}
 					}

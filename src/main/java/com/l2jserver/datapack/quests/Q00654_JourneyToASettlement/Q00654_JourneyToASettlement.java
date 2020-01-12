@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Journey to a Settlement (654)
  * @author Adry_85
  */
-public final class Q00654_JourneyToASettlement extends Quest
-{
+public final class Q00654_JourneyToASettlement extends Quest {
 	// NPC
 	private static final int NAMELESS_SPIRIT = 31453;
 	// Items
@@ -42,14 +41,12 @@ public final class Q00654_JourneyToASettlement extends Quest
 	private static final int MIN_LEVEL = 74;
 	
 	private static final Map<Integer, Double> MOBS_SKIN = new HashMap<>();
-	static
-	{
+	static {
 		MOBS_SKIN.put(21294, 0.840); // Canyon Antelope
 		MOBS_SKIN.put(21295, 0.893); // Canyon Antelope Slave
 	}
 	
-	public Q00654_JourneyToASettlement()
-	{
+	public Q00654_JourneyToASettlement() {
 		super(654, Q00654_JourneyToASettlement.class.getSimpleName(), "Journey to a Settlement");
 		addStartNpc(NAMELESS_SPIRIT);
 		addTalkId(NAMELESS_SPIRIT);
@@ -58,37 +55,29 @@ public final class Q00654_JourneyToASettlement extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "31453-02.htm":
-			{
+		switch (event) {
+			case "31453-02.htm": {
 				st.startQuest();
 				st.setMemoState(1);
 				htmltext = event;
 				break;
 			}
-			case "31453-03.html":
-			{
-				if (st.isMemoState(1))
-				{
+			case "31453-03.html": {
+				if (st.isMemoState(1)) {
 					st.setMemoState(2);
 					st.setCond(2, true);
 					htmltext = event;
 				}
 			}
-			case "31453-07.html":
-			{
-				if (st.isMemoState(2) && st.hasQuestItems(ANTELOPE_SKIN))
-				{
+			case "31453-07.html": {
+				if (st.isMemoState(2) && st.hasQuestItems(ANTELOPE_SKIN)) {
 					giveItems(player, FRINTEZZAS_SCROLL, 1);
 					st.exitQuest(true, true);
 					htmltext = event;
@@ -99,35 +88,26 @@ public final class Q00654_JourneyToASettlement extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getRandomPartyMemberState(player, 2, 3, npc);
-		if ((st != null) && giveItemRandomly(st.getPlayer(), npc, ANTELOPE_SKIN, 1, 1, MOBS_SKIN.get(npc.getId()), true))
-		{
+		if ((st != null) && giveItemRandomly(st.getPlayer(), npc, ANTELOPE_SKIN, 1, 1, MOBS_SKIN.get(npc.getId()), true)) {
 			st.setCond(3);
 		}
 		return super.onKill(npc, player, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st.isCreated())
-		{
+		if (st.isCreated()) {
 			htmltext = ((player.getLevel() >= MIN_LEVEL) && player.hasQuestCompleted(Q00119_LastImperialPrince.class.getSimpleName())) ? "31453-01.htm" : "31453-04.htm";
-		}
-		else if (st.isStarted())
-		{
-			if (st.isMemoState(1))
-			{
+		} else if (st.isStarted()) {
+			if (st.isMemoState(1)) {
 				st.setMemoState(2);
 				st.setCond(2, true);
 				htmltext = "31453-03.html";
-			}
-			else if (st.isMemoState(2))
-			{
+			} else if (st.isMemoState(2)) {
 				htmltext = (hasQuestItems(player, ANTELOPE_SKIN) ? "31453-06.html" : "31453-05.html");
 			}
 		}

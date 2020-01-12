@@ -67,10 +67,8 @@ import com.l2jserver.gameserver.util.Util;
  * <li>play_sound/play_sounds = Music broadcasting related commands
  * <li>atmosphere = sky change related commands.
  */
-public class AdminEffects implements IAdminCommandHandler
-{
-	private static final String[] ADMIN_COMMANDS =
-	{
+public class AdminEffects implements IAdminCommandHandler {
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_invis",
 		"admin_invisible",
 		"admin_setinvis",
@@ -114,23 +112,18 @@ public class AdminEffects implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		StringTokenizer st = new StringTokenizer(command);
 		st.nextToken();
 		
-		if (command.equals("admin_invis_menu"))
-		{
-			if (!activeChar.isInvisible())
-			{
+		if (command.equals("admin_invis_menu")) {
+			if (!activeChar.isInvisible()) {
 				activeChar.setInvisible(true);
 				activeChar.broadcastUserInfo();
 				activeChar.decayMe();
 				activeChar.spawnMe();
 				activeChar.sendMessage("You are now invisible.");
-			}
-			else
-			{
+			} else {
 				activeChar.setInvisible(false);
 				activeChar.broadcastUserInfo();
 				activeChar.sendMessage("You are now visible.");
@@ -138,25 +131,18 @@ public class AdminEffects implements IAdminCommandHandler
 			
 			command = "";
 			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
-		}
-		else if (command.startsWith("admin_invis"))
-		{
+		} else if (command.startsWith("admin_invis")) {
 			activeChar.setInvisible(true);
 			activeChar.broadcastUserInfo();
 			activeChar.decayMe();
 			activeChar.spawnMe();
 			activeChar.sendMessage("You are now invisible.");
-		}
-		else if (command.startsWith("admin_vis"))
-		{
+		} else if (command.startsWith("admin_vis")) {
 			activeChar.setInvisible(false);
 			activeChar.broadcastUserInfo();
 			activeChar.sendMessage("You are now visible.");
-		}
-		else if (command.startsWith("admin_setinvis"))
-		{
-			if ((activeChar.getTarget() == null) || !activeChar.getTarget().isCharacter())
-			{
+		} else if (command.startsWith("admin_setinvis")) {
+			if ((activeChar.getTarget() == null) || !activeChar.getTarget().isCharacter()) {
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 				return false;
 			}
@@ -164,225 +150,145 @@ public class AdminEffects implements IAdminCommandHandler
 			target.setInvisible(!target.isInvisible());
 			activeChar.sendMessage("You've made " + target.getName() + " " + (target.isInvisible() ? "invisible" : "visible") + ".");
 			
-			if (target.isPlayer())
-			{
+			if (target.isPlayer()) {
 				((L2PcInstance) target).broadcastUserInfo();
 			}
-		}
-		else if (command.startsWith("admin_earthquake"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_earthquake")) {
+			try {
 				String val1 = st.nextToken();
 				int intensity = Integer.parseInt(val1);
 				String val2 = st.nextToken();
 				int duration = Integer.parseInt(val2);
 				Earthquake eq = new Earthquake(activeChar.getX(), activeChar.getY(), activeChar.getZ(), intensity, duration);
 				activeChar.broadcastPacket(eq);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //earthquake <intensity> <duration>");
 			}
-		}
-		else if (command.startsWith("admin_atmosphere"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_atmosphere")) {
+			try {
 				String type = st.nextToken();
 				String state = st.nextToken();
 				int duration = Integer.parseInt(st.nextToken());
 				adminAtmosphere(type, state, duration, activeChar);
-			}
-			catch (Exception ex)
-			{
+			} catch (Exception ex) {
 				activeChar.sendMessage("Usage: //atmosphere <signsky dawn|dusk>|<sky day|night|red> <duration>");
 			}
-		}
-		else if (command.equals("admin_play_sounds"))
-		{
+		} else if (command.equals("admin_play_sounds")) {
 			AdminHtml.showAdminHtml(activeChar, "songs/songs.htm");
-		}
-		else if (command.startsWith("admin_play_sounds"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_play_sounds")) {
+			try {
 				AdminHtml.showAdminHtml(activeChar, "songs/songs" + command.substring(18) + ".htm");
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
+			} catch (StringIndexOutOfBoundsException e) {
 				activeChar.sendMessage("Usage: //play_sounds <pagenumber>");
 			}
-		}
-		else if (command.startsWith("admin_play_sound"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_play_sound")) {
+			try {
 				playAdminSound(activeChar, command.substring(17));
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
+			} catch (StringIndexOutOfBoundsException e) {
 				activeChar.sendMessage("Usage: //play_sound <soundname>");
 			}
-		}
-		else if (command.equals("admin_para_all"))
-		{
-			try
-			{
+		} else if (command.equals("admin_para_all")) {
+			try {
 				Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
-				for (L2PcInstance player : plrs)
-				{
-					if (!player.isGM())
-					{
+				for (L2PcInstance player : plrs) {
+					if (!player.isGM()) {
 						player.startAbnormalVisualEffect(true, AbnormalVisualEffect.PARALYZE);
 						player.setIsParalyzed(true);
 						player.startParalyze();
 					}
 				}
+			} catch (Exception e) {
 			}
-			catch (Exception e)
-			{
-			}
-		}
-		else if (command.equals("admin_unpara_all"))
-		{
-			try
-			{
+		} else if (command.equals("admin_unpara_all")) {
+			try {
 				Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
-				for (L2PcInstance player : plrs)
-				{
+				for (L2PcInstance player : plrs) {
 					player.stopAbnormalVisualEffect(true, AbnormalVisualEffect.PARALYZE);
 					player.setIsParalyzed(false);
 				}
+			} catch (Exception e) {
 			}
-			catch (Exception e)
-			{
-			}
-		}
-		else if (command.startsWith("admin_para")) // || command.startsWith("admin_para_menu"))
+		} else if (command.startsWith("admin_para")) // || command.startsWith("admin_para_menu"))
 		{
 			String type = "1";
-			try
-			{
+			try {
 				type = st.nextToken();
+			} catch (Exception e) {
 			}
-			catch (Exception e)
-			{
-			}
-			try
-			{
+			try {
 				L2Object target = activeChar.getTarget();
 				L2Character player = null;
-				if (target instanceof L2Character)
-				{
+				if (target instanceof L2Character) {
 					player = (L2Character) target;
-					if (type.equals("1"))
-					{
+					if (type.equals("1")) {
 						player.startAbnormalVisualEffect(true, AbnormalVisualEffect.PARALYZE);
-					}
-					else
-					{
+					} else {
 						player.startAbnormalVisualEffect(true, AbnormalVisualEffect.FLESH_STONE);
 					}
 					player.setIsParalyzed(true);
 					player.startParalyze();
 				}
+			} catch (Exception e) {
 			}
-			catch (Exception e)
-			{
-			}
-		}
-		else if (command.startsWith("admin_unpara")) // || command.startsWith("admin_unpara_menu"))
+		} else if (command.startsWith("admin_unpara")) // || command.startsWith("admin_unpara_menu"))
 		{
 			String type = "1";
-			try
-			{
+			try {
 				type = st.nextToken();
+			} catch (Exception e) {
 			}
-			catch (Exception e)
-			{
-			}
-			try
-			{
+			try {
 				L2Object target = activeChar.getTarget();
 				L2Character player = null;
-				if (target instanceof L2Character)
-				{
+				if (target instanceof L2Character) {
 					player = (L2Character) target;
-					if (type.equals("1"))
-					{
+					if (type.equals("1")) {
 						player.stopAbnormalVisualEffect(true, AbnormalVisualEffect.PARALYZE);
-					}
-					else
-					{
+					} else {
 						player.stopAbnormalVisualEffect(true, AbnormalVisualEffect.FLESH_STONE);
 					}
 					player.setIsParalyzed(false);
 				}
+			} catch (Exception e) {
 			}
-			catch (Exception e)
-			{
-			}
-		}
-		else if (command.startsWith("admin_bighead"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_bighead")) {
+			try {
 				L2Object target = activeChar.getTarget();
 				L2Character player = null;
-				if (target instanceof L2Character)
-				{
+				if (target instanceof L2Character) {
 					player = (L2Character) target;
 					player.startAbnormalVisualEffect(true, AbnormalVisualEffect.BIG_HEAD);
 				}
+			} catch (Exception e) {
 			}
-			catch (Exception e)
-			{
-			}
-		}
-		else if (command.startsWith("admin_shrinkhead"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_shrinkhead")) {
+			try {
 				L2Object target = activeChar.getTarget();
 				L2Character player = null;
-				if (target instanceof L2Character)
-				{
+				if (target instanceof L2Character) {
 					player = (L2Character) target;
 					player.stopAbnormalVisualEffect(true, AbnormalVisualEffect.BIG_HEAD);
 				}
+			} catch (Exception e) {
 			}
-			catch (Exception e)
-			{
-			}
-		}
-		else if (command.startsWith("admin_gmspeed"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_gmspeed")) {
+			try {
 				int val = Integer.parseInt(st.nextToken());
 				boolean sendMessage = activeChar.isAffectedBySkill(7029);
 				activeChar.stopSkillEffects((val == 0) && sendMessage, 7029);
-				if ((val >= 1) && (val <= 4))
-				{
+				if ((val >= 1) && (val <= 4)) {
 					Skill gmSpeedSkill = SkillData.getInstance().getSkill(7029, val);
 					activeChar.doSimultaneousCast(gmSpeedSkill);
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //gmspeed <value> (0=off...4=max)");
 			}
-			if (command.contains("_menu"))
-			{
+			if (command.contains("_menu")) {
 				command = "";
 				AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
 			}
-		}
-		else if (command.startsWith("admin_polyself"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_polyself")) {
+			try {
 				String id = st.nextToken();
 				activeChar.getPoly().setPolyInfo("npc", id);
 				activeChar.teleToLocation(activeChar.getLocation());
@@ -391,14 +297,10 @@ public class AdminEffects implements IAdminCommandHandler
 				UserInfo info2 = new UserInfo(activeChar);
 				activeChar.sendPacket(info2);
 				activeChar.broadcastPacket(new ExBrExtraUserInfo(activeChar));
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //polyself <npcId>");
 			}
-		}
-		else if (command.startsWith("admin_unpolyself"))
-		{
+		} else if (command.startsWith("admin_unpolyself")) {
 			activeChar.getPoly().setPolyInfo(null, "1");
 			activeChar.decayMe();
 			activeChar.spawnMe(activeChar.getX(), activeChar.getY(), activeChar.getZ());
@@ -407,254 +309,172 @@ public class AdminEffects implements IAdminCommandHandler
 			UserInfo info2 = new UserInfo(activeChar);
 			activeChar.sendPacket(info2);
 			activeChar.broadcastPacket(new ExBrExtraUserInfo(activeChar));
-		}
-		else if (command.equals("admin_clearteams"))
-		{
-			try
-			{
+		} else if (command.equals("admin_clearteams")) {
+			try {
 				Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
-				for (L2PcInstance player : plrs)
-				{
+				for (L2PcInstance player : plrs) {
 					player.setTeam(Team.NONE);
 					player.broadcastUserInfo();
 				}
+			} catch (Exception e) {
 			}
-			catch (Exception e)
-			{
-			}
-		}
-		else if (command.startsWith("admin_setteam_close"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_setteam_close")) {
+			try {
 				String val = st.nextToken();
 				int radius = 400;
-				if (st.hasMoreTokens())
-				{
+				if (st.hasMoreTokens()) {
 					radius = Integer.parseInt(st.nextToken());
 				}
 				Team team = Team.valueOf(val.toUpperCase());
 				Collection<L2Character> plrs = activeChar.getKnownList().getKnownCharactersInRadius(radius);
 				
-				for (L2Character player : plrs)
-				{
+				for (L2Character player : plrs) {
 					player.setTeam(team);
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //setteam_close <none|blue|red> [radius]");
 			}
-		}
-		else if (command.startsWith("admin_setteam"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_setteam")) {
+			try {
 				Team team = Team.valueOf(st.nextToken().toUpperCase());
 				L2Character target = null;
-				if (activeChar.getTarget() instanceof L2Character)
-				{
+				if (activeChar.getTarget() instanceof L2Character) {
 					target = (L2Character) activeChar.getTarget();
-				}
-				else
-				{
+				} else {
 					return false;
 				}
 				target.setTeam(team);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //setteam <none|blue|red>");
 			}
-		}
-		else if (command.startsWith("admin_social"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_social")) {
+			try {
 				String target = null;
 				L2Object obj = activeChar.getTarget();
-				if (st.countTokens() == 2)
-				{
+				if (st.countTokens() == 2) {
 					int social = Integer.parseInt(st.nextToken());
 					target = st.nextToken();
-					if (target != null)
-					{
+					if (target != null) {
 						L2PcInstance player = L2World.getInstance().getPlayer(target);
-						if (player != null)
-						{
-							if (performSocial(social, player, activeChar))
-							{
+						if (player != null) {
+							if (performSocial(social, player, activeChar)) {
 								activeChar.sendMessage(player.getName() + " was affected by your request.");
 							}
-						}
-						else
-						{
-							try
-							{
+						} else {
+							try {
 								int radius = Integer.parseInt(target);
 								Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
-								for (L2Object object : objs)
-								{
-									if (activeChar.isInsideRadius(object, radius, false, false))
-									{
+								for (L2Object object : objs) {
+									if (activeChar.isInsideRadius(object, radius, false, false)) {
 										performSocial(social, object, activeChar);
 									}
 								}
 								activeChar.sendMessage(radius + " units radius affected by your request.");
-							}
-							catch (NumberFormatException nbe)
-							{
+							} catch (NumberFormatException nbe) {
 								activeChar.sendMessage("Incorrect parameter");
 							}
 						}
 					}
-				}
-				else if (st.countTokens() == 1)
-				{
+				} else if (st.countTokens() == 1) {
 					int social = Integer.parseInt(st.nextToken());
-					if (obj == null)
-					{
+					if (obj == null) {
 						obj = activeChar;
 					}
 					
-					if (performSocial(social, obj, activeChar))
-					{
+					if (performSocial(social, obj, activeChar)) {
 						activeChar.sendMessage(obj.getName() + " was affected by your request.");
-					}
-					else
-					{
+					} else {
 						activeChar.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 					}
-				}
-				else if (!command.contains("menu"))
-				{
+				} else if (!command.contains("menu")) {
 					activeChar.sendMessage("Usage: //social <social_id> [player_name|radius]");
 				}
-			}
-			catch (Exception e)
-			{
-				if (general().debug())
-				{
+			} catch (Exception e) {
+				if (general().debug()) {
 					e.printStackTrace();
 				}
 			}
-		}
-		else if (command.startsWith("admin_ave_abnormal") || command.startsWith("admin_ave_special") || command.startsWith("admin_ave_event"))
-		{
-			if (st.countTokens() > 0)
-			{
+		} else if (command.startsWith("admin_ave_abnormal") || command.startsWith("admin_ave_special") || command.startsWith("admin_ave_event")) {
+			if (st.countTokens() > 0) {
 				final String param1 = st.nextToken();
 				AbnormalVisualEffect ave;
 				
-				try
-				{
+				try {
 					ave = AbnormalVisualEffect.valueOf(param1);
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					
 					return false;
 				}
 				
 				int radius = 0;
 				String param2 = null;
-				if (st.countTokens() == 1)
-				{
+				if (st.countTokens() == 1) {
 					param2 = st.nextToken();
-					if (Util.isDigit(param2))
-					{
+					if (Util.isDigit(param2)) {
 						radius = Integer.parseInt(param2);
 					}
 				}
 				
-				if (radius > 0)
-				{
-					for (L2Object object : activeChar.getKnownList().getKnownObjects().values())
-					{
-						if (activeChar.isInsideRadius(object, radius, false, false))
-						{
+				if (radius > 0) {
+					for (L2Object object : activeChar.getKnownList().getKnownObjects().values()) {
+						if (activeChar.isInsideRadius(object, radius, false, false)) {
 							performAbnormalVisualEffect(ave, object);
 						}
 					}
 					activeChar.sendMessage("Affected all characters in radius " + param2 + " by " + param1 + " abnormal visual effect.");
-				}
-				else
-				{
+				} else {
 					final L2Object obj = activeChar.getTarget() != null ? activeChar.getTarget() : activeChar;
-					if (performAbnormalVisualEffect(ave, obj))
-					{
+					if (performAbnormalVisualEffect(ave, obj)) {
 						activeChar.sendMessage(obj.getName() + " affected by " + param1 + " abnormal visual effect.");
-					}
-					else
-					{
+					} else {
 						activeChar.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 					}
 				}
-			}
-			else
-			{
+			} else {
 				activeChar.sendMessage("Usage: //" + command.replace("admin_", "") + " <AbnormalVisualEffect> [radius]");
 			}
-		}
-		else if (command.startsWith("admin_effect"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_effect")) {
+			try {
 				L2Object obj = activeChar.getTarget();
 				int level = 1, hittime = 1;
 				int skill = Integer.parseInt(st.nextToken());
-				if (st.hasMoreTokens())
-				{
+				if (st.hasMoreTokens()) {
 					level = Integer.parseInt(st.nextToken());
 				}
-				if (st.hasMoreTokens())
-				{
+				if (st.hasMoreTokens()) {
 					hittime = Integer.parseInt(st.nextToken());
 				}
-				if (obj == null)
-				{
+				if (obj == null) {
 					obj = activeChar;
 				}
-				if (!(obj instanceof L2Character))
-				{
+				if (!(obj instanceof L2Character)) {
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
-				}
-				else
-				{
+				} else {
 					L2Character target = (L2Character) obj;
 					target.broadcastPacket(new MagicSkillUse(target, activeChar, skill, level, hittime, 0));
 					activeChar.sendMessage(obj.getName() + " performs MSU " + skill + "/" + level + " by your request.");
 				}
 				
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //effect skill [level | level hittime]");
 			}
-		}
-		else if (command.startsWith("admin_set_displayeffect"))
-		{
+		} else if (command.startsWith("admin_set_displayeffect")) {
 			L2Object target = activeChar.getTarget();
-			if (!(target instanceof L2Npc))
-			{
+			if (!(target instanceof L2Npc)) {
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 				return false;
 			}
 			L2Npc npc = (L2Npc) target;
-			try
-			{
+			try {
 				String type = st.nextToken();
 				int diplayeffect = Integer.parseInt(type);
 				npc.setDisplayEffect(diplayeffect);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //set_displayeffect <id>");
 			}
 		}
 		
-		if (command.contains("menu") || command.contains("ave_"))
-		{
+		if (command.contains("menu") || command.contains("ave_")) {
 			showMainPage(activeChar, command);
 		}
 		return true;
@@ -665,17 +485,12 @@ public class AdminEffects implements IAdminCommandHandler
 	 * @param target the target
 	 * @return {@code true} if target's abnormal state was affected, {@code false} otherwise.
 	 */
-	private boolean performAbnormalVisualEffect(AbnormalVisualEffect ave, L2Object target)
-	{
-		if (target instanceof L2Character)
-		{
+	private boolean performAbnormalVisualEffect(AbnormalVisualEffect ave, L2Object target) {
+		if (target instanceof L2Character) {
 			final L2Character character = (L2Character) target;
-			if (character.hasAbnormalVisualEffect(ave))
-			{
+			if (character.hasAbnormalVisualEffect(ave)) {
 				character.stopAbnormalVisualEffect(true, ave);
-			}
-			else
-			{
+			} else {
 				character.startAbnormalVisualEffect(true, ave);
 			}
 			return true;
@@ -683,37 +498,27 @@ public class AdminEffects implements IAdminCommandHandler
 		return false;
 	}
 	
-	private boolean performSocial(int action, L2Object target, L2PcInstance activeChar)
-	{
-		try
-		{
-			if (target instanceof L2Character)
-			{
-				if (target instanceof L2ChestInstance)
-				{
+	private boolean performSocial(int action, L2Object target, L2PcInstance activeChar) {
+		try {
+			if (target instanceof L2Character) {
+				if (target instanceof L2ChestInstance) {
 					activeChar.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 					return false;
 				}
-				if ((target instanceof L2Npc) && ((action < 1) || (action > 3)))
-				{
+				if ((target instanceof L2Npc) && ((action < 1) || (action > 3))) {
 					activeChar.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 					return false;
 				}
-				if ((target instanceof L2PcInstance) && ((action < 2) || ((action > 18) && (action != SocialAction.LEVEL_UP))))
-				{
+				if ((target instanceof L2PcInstance) && ((action < 2) || ((action > 18) && (action != SocialAction.LEVEL_UP)))) {
 					activeChar.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 					return false;
 				}
 				L2Character character = (L2Character) target;
 				character.broadcastPacket(new SocialAction(character.getObjectId(), action));
-			}
-			else
-			{
+			} else {
 				return false;
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 		}
 		return true;
 	}
@@ -724,55 +529,36 @@ public class AdminEffects implements IAdminCommandHandler
 	 * @param duration
 	 * @param activeChar
 	 */
-	private void adminAtmosphere(String type, String state, int duration, L2PcInstance activeChar)
-	{
+	private void adminAtmosphere(String type, String state, int duration, L2PcInstance activeChar) {
 		L2GameServerPacket packet = null;
 		
-		if (type.equals("signsky"))
-		{
-			if (state.equals("dawn"))
-			{
+		if (type.equals("signsky")) {
+			if (state.equals("dawn")) {
 				packet = new SSQInfo(2);
-			}
-			else if (state.equals("dusk"))
-			{
+			} else if (state.equals("dusk")) {
 				packet = new SSQInfo(1);
 			}
-		}
-		else if (type.equals("sky"))
-		{
-			if (state.equals("night"))
-			{
+		} else if (type.equals("sky")) {
+			if (state.equals("night")) {
 				packet = SunSet.STATIC_PACKET;
-			}
-			else if (state.equals("day"))
-			{
+			} else if (state.equals("day")) {
 				packet = SunRise.STATIC_PACKET;
-			}
-			else if (state.equals("red"))
-			{
-				if (duration != 0)
-				{
+			} else if (state.equals("red")) {
+				if (duration != 0) {
 					packet = new ExRedSky(duration);
-				}
-				else
-				{
+				} else {
 					packet = new ExRedSky(10);
 				}
 			}
-		}
-		else
-		{
+		} else {
 			activeChar.sendMessage("Usage: //atmosphere <signsky dawn|dusk>|<sky day|night|red> <duration>");
 		}
-		if (packet != null)
-		{
+		if (packet != null) {
 			Broadcast.toAllOnlinePlayers(packet);
 		}
 	}
 	
-	private void playAdminSound(L2PcInstance activeChar, String sound)
-	{
+	private void playAdminSound(L2PcInstance activeChar, String sound) {
 		PlaySound _snd = PlaySound.createSound(sound);
 		activeChar.sendPacket(_snd);
 		activeChar.broadcastPacket(_snd);
@@ -780,28 +566,19 @@ public class AdminEffects implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 	
-	private void showMainPage(L2PcInstance activeChar, String command)
-	{
+	private void showMainPage(L2PcInstance activeChar, String command) {
 		String filename = "effects_menu";
-		if (command.contains("ave_abnormal"))
-		{
+		if (command.contains("ave_abnormal")) {
 			filename = "ave_abnormal";
-		}
-		else if (command.contains("ave_special"))
-		{
+		} else if (command.contains("ave_special")) {
 			filename = "ave_special";
-		}
-		else if (command.contains("ave_event"))
-		{
+		} else if (command.contains("ave_event")) {
 			filename = "ave_event";
-		}
-		else if (command.contains("social"))
-		{
+		} else if (command.contains("social")) {
 			filename = "social";
 		}
 		AdminHtml.showAdminHtml(activeChar, filename + ".htm");

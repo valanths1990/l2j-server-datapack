@@ -26,33 +26,26 @@ import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 
-public class TerritoryStatus implements IBypassHandler
-{
-	private static final String[] COMMANDS =
-	{
+public class TerritoryStatus implements IBypassHandler {
+	private static final String[] COMMANDS = {
 		"TerritoryStatus"
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
-	{
-		if (!target.isNpc())
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target) {
+		if (!target.isNpc()) {
 			return false;
 		}
 		
 		final L2Npc npc = (L2Npc) target;
 		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 		{
-			if (npc.getCastle().getOwnerId() > 0)
-			{
+			if (npc.getCastle().getOwnerId() > 0) {
 				html.setFile(activeChar.getHtmlPrefix(), "data/html/territorystatus.htm");
 				L2Clan clan = ClanTable.getInstance().getClan(npc.getCastle().getOwnerId());
 				html.replace("%clanname%", clan.getName());
 				html.replace("%clanleadername%", clan.getLeaderName());
-			}
-			else
-			{
+			} else {
 				html.setFile(activeChar.getHtmlPrefix(), "data/html/territorynoclan.htm");
 			}
 		}
@@ -60,12 +53,9 @@ public class TerritoryStatus implements IBypassHandler
 		html.replace("%taxpercent%", "" + npc.getCastle().getTaxPercent());
 		html.replace("%objectId%", String.valueOf(npc.getObjectId()));
 		{
-			if (npc.getCastle().getResidenceId() > 6)
-			{
+			if (npc.getCastle().getResidenceId() > 6) {
 				html.replace("%territory%", "The Kingdom of Elmore");
-			}
-			else
-			{
+			} else {
 				html.replace("%territory%", "The Kingdom of Aden");
 			}
 		}
@@ -74,8 +64,7 @@ public class TerritoryStatus implements IBypassHandler
 	}
 	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

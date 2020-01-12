@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * The Zero Hour (146)
  * @author Gnacik, malyelfik
  */
-public class Q00146_TheZeroHour extends Quest
-{
+public class Q00146_TheZeroHour extends Quest {
 	// NPCs
 	private static final int KAHMAN = 31554;
 	private static final int QUEEN_SHYEED = 25671;
@@ -38,8 +37,7 @@ public class Q00146_TheZeroHour extends Quest
 	private static final int KAHMANS_SUPPLY_BOX = 14849;
 	private static final int FANG = 14859;
 	
-	public Q00146_TheZeroHour()
-	{
+	public Q00146_TheZeroHour() {
 		super(146, Q00146_TheZeroHour.class.getSimpleName(), "The Zero Hour");
 		addStartNpc(KAHMAN);
 		addTalkId(KAHMAN);
@@ -48,30 +46,24 @@ public class Q00146_TheZeroHour extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		if (event.equalsIgnoreCase("31554-03.htm"))
-		{
+		if (event.equalsIgnoreCase("31554-03.htm")) {
 			st.startQuest();
 		}
 		return event;
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(killer, 1);
-		if (partyMember != null)
-		{
+		if (partyMember != null) {
 			final QuestState st = getQuestState(partyMember, false);
-			if (!st.hasQuestItems(FANG))
-			{
+			if (!st.hasQuestItems(FANG)) {
 				st.giveItems(FANG, 1);
 				st.setCond(2, true);
 			}
@@ -80,29 +72,21 @@ public class Q00146_TheZeroHour extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
-				if (player.getLevel() < 81)
-				{
+				if (player.getLevel() < 81) {
 					htmltext = "31554-02.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = (player.hasQuestCompleted(Q00109_InSearchOfTheNest.class.getSimpleName())) ? "31554-01a.htm" : "31554-04.html";
 				}
 				break;
 			case State.STARTED:
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					htmltext = "31554-06.html";
-				}
-				else
-				{
+				} else {
 					st.giveItems(KAHMANS_SUPPLY_BOX, 1);
 					st.addExpAndSp(154616, 12500);
 					st.exitQuest(false, true);

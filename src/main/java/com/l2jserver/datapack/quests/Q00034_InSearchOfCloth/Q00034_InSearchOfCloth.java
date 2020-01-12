@@ -29,15 +29,13 @@ import com.l2jserver.gameserver.model.quest.State;
  * In Search of Cloth (34)
  * @author malyelfik
  */
-public class Q00034_InSearchOfCloth extends Quest
-{
+public class Q00034_InSearchOfCloth extends Quest {
 	// NPCs
 	private static final int RADIA = 30088;
 	private static final int RALFORD = 30165;
 	private static final int VARAN = 30294;
 	// Monsters
-	private static final int[] MOBS =
-	{
+	private static final int[] MOBS = {
 		20560, // Trisalim Spider
 		20561, // Trisalim Tarantula
 	};
@@ -53,8 +51,7 @@ public class Q00034_InSearchOfCloth extends Quest
 	private static final int SUEDE_COUNT = 3000;
 	private static final int THREAD_COUNT = 5000;
 	
-	public Q00034_InSearchOfCloth()
-	{
+	public Q00034_InSearchOfCloth() {
 		super(34, Q00034_InSearchOfCloth.class.getSimpleName(), "In Search of Cloth");
 		addStartNpc(RADIA);
 		addTalkId(RADIA, RALFORD, VARAN);
@@ -63,17 +60,14 @@ public class Q00034_InSearchOfCloth extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30088-03.htm":
 				st.startQuest();
 				break;
@@ -87,8 +81,7 @@ public class Q00034_InSearchOfCloth extends Quest
 				st.setCond(4, true);
 				break;
 			case "30165-05.html":
-				if (st.getQuestItemsCount(SPINNERET) < SPINNERET_COUNT)
-				{
+				if (st.getQuestItemsCount(SPINNERET) < SPINNERET_COUNT) {
 					return getNoQuestMsg(player);
 				}
 				st.takeItems(SPINNERET, SPINNERET_COUNT);
@@ -96,16 +89,13 @@ public class Q00034_InSearchOfCloth extends Quest
 				st.setCond(6, true);
 				break;
 			case "30088-10.html":
-				if ((st.getQuestItemsCount(SUEDE) >= SUEDE_COUNT) && (st.getQuestItemsCount(THREAD) >= THREAD_COUNT) && st.hasQuestItems(SKEIN_OF_YARN))
-				{
+				if ((st.getQuestItemsCount(SUEDE) >= SUEDE_COUNT) && (st.getQuestItemsCount(THREAD) >= THREAD_COUNT) && st.hasQuestItems(SKEIN_OF_YARN)) {
 					st.takeItems(SKEIN_OF_YARN, 1);
 					st.takeItems(SUEDE, SUEDE_COUNT);
 					st.takeItems(THREAD, THREAD_COUNT);
 					st.giveItems(MYSTERIOUS_CLOTH, 1);
 					st.exitQuest(false, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "30088-11.html";
 				}
 				break;
@@ -117,19 +107,14 @@ public class Q00034_InSearchOfCloth extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance member = getRandomPartyMember(player, 4);
-		if ((member != null) && getRandomBoolean())
-		{
+		if ((member != null) && getRandomBoolean()) {
 			final QuestState st = getQuestState(member, false);
 			st.giveItems(SPINNERET, 1);
-			if (st.getQuestItemsCount(SPINNERET) >= SPINNERET_COUNT)
-			{
+			if (st.getQuestItemsCount(SPINNERET) >= SPINNERET_COUNT) {
 				st.setCond(5, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -137,21 +122,17 @@ public class Q00034_InSearchOfCloth extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case RADIA:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? "30088-01.htm" : "30088-02.html";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "30088-04.html";
 								break;
@@ -172,10 +153,8 @@ public class Q00034_InSearchOfCloth extends Quest
 				}
 				break;
 			case VARAN:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "30294-01.html";
 							break;
@@ -186,10 +165,8 @@ public class Q00034_InSearchOfCloth extends Quest
 				}
 				break;
 			case RALFORD:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 3:
 							htmltext = "30165-01.html";
 							break;

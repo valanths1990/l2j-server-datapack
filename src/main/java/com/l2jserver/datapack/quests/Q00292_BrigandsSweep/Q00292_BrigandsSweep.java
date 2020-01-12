@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.util.Util;
  * Brigands Sweep (292)
  * @author xban1x
  */
-public final class Q00292_BrigandsSweep extends Quest
-{
+public final class Q00292_BrigandsSweep extends Quest {
 	// NPC's
 	private static final int SPIRON = 30532;
 	private static final int BALANKI = 30533;
@@ -47,8 +46,7 @@ public final class Q00292_BrigandsSweep extends Quest
 	private static final int SUSPICIOUS_CONTRACT = 1487;
 	// Monsters
 	private static final Map<Integer, Integer> MOB_ITEM_DROP = new HashMap<>();
-	static
-	{
+	static {
 		MOB_ITEM_DROP.put(20322, GOBLIN_NECKLACE); // Goblin Brigand
 		MOB_ITEM_DROP.put(20323, GOBLIN_PENDANT); // Goblin Brigand Leader
 		MOB_ITEM_DROP.put(20324, GOBLIN_NECKLACE); // Goblin Brigand Lieutenant
@@ -58,8 +56,7 @@ public final class Q00292_BrigandsSweep extends Quest
 	// Misc
 	private static final int MIN_LVL = 5;
 	
-	public Q00292_BrigandsSweep()
-	{
+	public Q00292_BrigandsSweep() {
 		super(292, Q00292_BrigandsSweep.class.getSimpleName(), "Brigands Sweep");
 		addStartNpc(SPIRON);
 		addTalkId(SPIRON, BALANKI);
@@ -68,39 +65,30 @@ public final class Q00292_BrigandsSweep extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String html = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return html;
 		}
 		
-		switch (event)
-		{
-			case "30532-03.htm":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "30532-03.htm": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					html = event;
 				}
 				break;
 			}
-			case "30532-06.html":
-			{
-				if (qs.isStarted())
-				{
+			case "30532-06.html": {
+				if (qs.isStarted()) {
 					qs.exitQuest(true, true);
 					html = event;
 				}
 				break;
 			}
-			case "30532-07.html":
-			{
-				if (qs.isStarted())
-				{
+			case "30532-07.html": {
+				if (qs.isStarted()) {
 					html = event;
 				}
 				break;
@@ -110,30 +98,21 @@ public final class Q00292_BrigandsSweep extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
 			final int chance = getRandom(10);
-			if (chance > 5)
-			{
+			if (chance > 5) {
 				giveItemRandomly(killer, npc, MOB_ITEM_DROP.get(npc.getId()), 1, 0, 1.0, true);
-			}
-			else if (qs.isCond(1) && (chance > 4) && !hasQuestItems(killer, SUSPICIOUS_CONTRACT))
-			{
+			} else if (qs.isCond(1) && (chance > 4) && !hasQuestItems(killer, SUSPICIOUS_CONTRACT)) {
 				final long memos = getQuestItemsCount(killer, SUSPICIOUS_MEMO);
-				if (memos < 3)
-				{
-					if (giveItemRandomly(killer, npc, SUSPICIOUS_MEMO, 1, 3, 1.0, false))
-					{
+				if (memos < 3) {
+					if (giveItemRandomly(killer, npc, SUSPICIOUS_MEMO, 1, 3, 1.0, false)) {
 						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						giveItems(killer, SUSPICIOUS_CONTRACT, 1);
 						takeItems(killer, SUSPICIOUS_MEMO, -1);
 						qs.setCond(2, true);
-					}
-					else
-					{
+					} else {
 						playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
@@ -143,59 +122,40 @@ public final class Q00292_BrigandsSweep extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		String html = getNoQuestMsg(talker);
-		switch (npc.getId())
-		{
-			case SPIRON:
-			{
-				switch (qs.getState())
-				{
-					case State.CREATED:
-					{
+		switch (npc.getId()) {
+			case SPIRON: {
+				switch (qs.getState()) {
+					case State.CREATED: {
 						html = (talker.getRace() == Race.DWARF) ? (talker.getLevel() >= MIN_LVL) ? "30532-02.htm" : "30532-01.htm" : "30532-00.htm";
 						break;
 					}
-					case State.STARTED:
-					{
-						if (!hasAtLeastOneQuestItem(talker, getRegisteredItemIds()))
-						{
+					case State.STARTED: {
+						if (!hasAtLeastOneQuestItem(talker, getRegisteredItemIds())) {
 							html = "30532-04.html";
-						}
-						else
-						{
+						} else {
 							final long necklaces = getQuestItemsCount(talker, GOBLIN_NECKLACE);
 							final long pendants = getQuestItemsCount(talker, GOBLIN_PENDANT);
 							final long lordPendants = getQuestItemsCount(talker, GOBLIN_LORD_PENDANT);
 							final long sum = necklaces + pendants + lordPendants;
-							if (sum > 0)
-							{
+							if (sum > 0) {
 								giveAdena(talker, (necklaces * 12) + (pendants * 36) + (lordPendants * 33) + (sum >= 10 ? 1000 : 0), true);
 								takeItems(talker, -1, GOBLIN_NECKLACE, GOBLIN_PENDANT, GOBLIN_LORD_PENDANT);
 							}
-							if ((sum > 0) && !hasAtLeastOneQuestItem(talker, SUSPICIOUS_MEMO, SUSPICIOUS_CONTRACT))
-							{
+							if ((sum > 0) && !hasAtLeastOneQuestItem(talker, SUSPICIOUS_MEMO, SUSPICIOUS_CONTRACT)) {
 								html = "30532-05.html";
-							}
-							else
-							{
+							} else {
 								final long memos = getQuestItemsCount(talker, SUSPICIOUS_MEMO);
-								if ((memos == 0) && hasQuestItems(talker, SUSPICIOUS_CONTRACT))
-								{
+								if ((memos == 0) && hasQuestItems(talker, SUSPICIOUS_CONTRACT)) {
 									giveAdena(talker, 1120, true);
 									takeItems(talker, -1, SUSPICIOUS_CONTRACT); // Retail like, reward is given in 2 pieces if both conditions are meet.
 									html = "30532-10.html";
-								}
-								else
-								{
-									if (memos == 1)
-									{
+								} else {
+									if (memos == 1) {
 										html = "30532-08.html";
-									}
-									else if (memos >= 2)
-									{
+									} else if (memos >= 2) {
 										html = "30532-09.html";
 									}
 								}
@@ -205,18 +165,13 @@ public final class Q00292_BrigandsSweep extends Quest
 				}
 				break;
 			}
-			case BALANKI:
-			{
-				if (qs.isStarted())
-				{
-					if (hasQuestItems(talker, SUSPICIOUS_CONTRACT))
-					{
+			case BALANKI: {
+				if (qs.isStarted()) {
+					if (hasQuestItems(talker, SUSPICIOUS_CONTRACT)) {
 						giveAdena(talker, 620, true);
 						takeItems(talker, 1487, -1);
 						html = "30533-02.html";
-					}
-					else
-					{
+					} else {
 						html = "30533-01.html";
 					}
 				}

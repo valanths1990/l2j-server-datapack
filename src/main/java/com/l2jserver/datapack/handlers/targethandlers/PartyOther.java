@@ -28,42 +28,31 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 /**
  * @author UnAfraid
  */
-public class PartyOther implements ITargetTypeHandler
-{
+public class PartyOther implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		if ((target != null) && (target != activeChar) && activeChar.isInParty() && target.isInParty() && (activeChar.getParty().getLeaderObjectId() == target.getParty().getLeaderObjectId()))
-		{
-			if (!target.isDead())
-			{
-				if (target.isPlayer())
-				{
-					switch (skill.getId())
-					{
-					// FORCE BUFFS may cancel here but there should be a proper condition
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+		if ((target != null) && (target != activeChar) && activeChar.isInParty() && target.isInParty() && (activeChar.getParty().getLeaderObjectId() == target.getParty().getLeaderObjectId())) {
+			if (!target.isDead()) {
+				if (target.isPlayer()) {
+					switch (skill.getId()) {
+						// FORCE BUFFS may cancel here but there should be a proper condition
 						case 426:
-							if (!target.getActingPlayer().isMageClass())
-							{
-								return new L2Character[]
-								{
+							if (!target.getActingPlayer().isMageClass()) {
+								return new L2Character[] {
 									target
 								};
 							}
 							return EMPTY_TARGET_LIST;
 						case 427:
-							if (target.getActingPlayer().isMageClass())
-							{
-								return new L2Character[]
-								{
+							if (target.getActingPlayer().isMageClass()) {
+								return new L2Character[] {
 									target
 								};
 							}
 							return EMPTY_TARGET_LIST;
 					}
 				}
-				return new L2Character[]
-				{
+				return new L2Character[] {
 					target
 				};
 			}
@@ -74,8 +63,7 @@ public class PartyOther implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.PARTY_OTHER;
 	}
 }

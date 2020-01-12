@@ -31,17 +31,14 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.ItemList;
 
-public class Observation implements IBypassHandler
-{
-	private static final String[] COMMANDS =
-	{
+public class Observation implements IBypassHandler {
+	private static final String[] COMMANDS = {
 		"observesiege",
 		"observeoracle",
 		"observe"
 	};
 	
-	private static final int[][] LOCATIONS = new int[][]
-	{
+	private static final int[][] LOCATIONS = new int[][] {
 		//@formatter:off
 		// Gludio
 		{-18347, 114000, -2360, 500},
@@ -90,38 +87,30 @@ public class Observation implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
-	{
-		if (!(target instanceof L2ObservationInstance))
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target) {
+		if (!(target instanceof L2ObservationInstance)) {
 			return false;
 		}
 		
-		if (activeChar.hasSummon())
-		{
+		if (activeChar.hasSummon()) {
 			activeChar.sendPacket(SystemMessageId.NO_OBSERVE_WITH_PET);
 			return false;
 		}
-		if (activeChar.isOnEvent())
-		{
+		if (activeChar.isOnEvent()) {
 			activeChar.sendMessage("Cannot use while current Event");
 			return false;
 		}
 		
 		String _command = command.split(" ")[0].toLowerCase();
 		final int param;
-		try
-		{
+		try {
 			param = Integer.parseInt(command.split(" ")[1]);
-		}
-		catch (NumberFormatException nfe)
-		{
+		} catch (NumberFormatException nfe) {
 			_log.log(Level.WARNING, "Exception in " + getClass().getSimpleName(), nfe);
 			return false;
 		}
 		
-		if ((param < 0) || (param > (LOCATIONS.length - 1)))
-		{
+		if ((param < 0) || (param > (LOCATIONS.length - 1))) {
 			return false;
 		}
 		final int[] locCost = LOCATIONS[param];
@@ -129,16 +118,11 @@ public class Observation implements IBypassHandler
 		Location loc = new Location(locCost[0], locCost[1], locCost[2]);
 		final long cost = locCost[3];
 		
-		switch (_command)
-		{
-			case "observesiege":
-			{
-				if (SiegeManager.getInstance().getSiege(loc) != null)
-				{
+		switch (_command) {
+			case "observesiege": {
+				if (SiegeManager.getInstance().getSiege(loc) != null) {
 					doObserve(activeChar, (L2Npc) target, loc, cost);
-				}
-				else
-				{
+				} else {
 					activeChar.sendPacket(SystemMessageId.ONLY_VIEW_SIEGE);
 				}
 				return true;
@@ -157,10 +141,8 @@ public class Observation implements IBypassHandler
 		return false;
 	}
 	
-	private static final void doObserve(final L2PcInstance player, final L2Npc npc, final Location pos, final long cost)
-	{
-		if (player.reduceAdena("Broadcast", cost, npc, true))
-		{
+	private static final void doObserve(final L2PcInstance player, final L2Npc npc, final Location pos, final long cost) {
+		if (player.reduceAdena("Broadcast", cost, npc, true)) {
 			// enter mode
 			player.enterObserverMode(pos);
 			player.sendPacket(new ItemList(player, false));
@@ -169,8 +151,7 @@ public class Observation implements IBypassHandler
 	}
 	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.util.Util;
  * A Looter And A Railroad Man (649)
  * @author netvirus
  */
-public final class Q00649_ALooterAndARailroadMan extends Quest
-{
+public final class Q00649_ALooterAndARailroadMan extends Quest {
 	// Npc
 	private static final int RAILMAN_OBI = 32052;
 	// Item
@@ -44,8 +43,7 @@ public final class Q00649_ALooterAndARailroadMan extends Quest
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
 	
-	static
-	{
+	static {
 		MONSTERS.put(22017, 529); // Bandit Sweeper
 		MONSTERS.put(22018, 452); // Bandit Hound
 		MONSTERS.put(22019, 606); // Bandit Watchman
@@ -56,8 +54,7 @@ public final class Q00649_ALooterAndARailroadMan extends Quest
 		MONSTERS.put(22026, 1000); // Bandit Captain
 	}
 	
-	public Q00649_ALooterAndARailroadMan()
-	{
+	public Q00649_ALooterAndARailroadMan() {
 		super(649, Q00649_ALooterAndARailroadMan.class.getSimpleName(), "A Looter and a Railroad Man");
 		addStartNpc(RAILMAN_OBI);
 		addTalkId(RAILMAN_OBI);
@@ -66,30 +63,23 @@ public final class Q00649_ALooterAndARailroadMan extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "32052-03.htm":
-			{
-				if (st.isCreated())
-				{
+		switch (event) {
+			case "32052-03.htm": {
+				if (st.isCreated()) {
 					st.startQuest();
 					htmltext = event;
 				}
 				break;
 			}
-			case "32052-06.html":
-			{
-				if (st.isCond(2) && st.hasQuestItems(THIEF_GUILD_MARK))
-				{
+			case "32052-06.html": {
+				if (st.isCond(2) && st.hasQuestItems(THIEF_GUILD_MARK)) {
 					st.giveAdena(21698, true);
 					st.exitQuest(true, true);
 					htmltext = event;
@@ -100,19 +90,15 @@ public final class Q00649_ALooterAndARailroadMan extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() >= MIN_LVL) ? "32052-01.htm" : "32052-02.htm";
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				htmltext = (st.getQuestItemsCount(THIEF_GUILD_MARK) == 200) ? "32052-04.html" : "32052-05.html";
 				break;
 			}
@@ -121,18 +107,13 @@ public final class Q00649_ALooterAndARailroadMan extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, killer, false) && (getRandom(1000) < MONSTERS.get(npc.getId())))
-		{
+		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, killer, false) && (getRandom(1000) < MONSTERS.get(npc.getId()))) {
 			st.giveItems(THIEF_GUILD_MARK, 1);
-			if (st.getQuestItemsCount(THIEF_GUILD_MARK) == 200)
-			{
+			if (st.getQuestItemsCount(THIEF_GUILD_MARK) == 200) {
 				st.setCond(2, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}

@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.util.Util;
  * Stolen Dignity (386)
  * @author Zealar
  */
-public final class Q00386_StolenDignity extends Quest
-{
+public final class Q00386_StolenDignity extends Quest {
 	// NPCs
 	private static final int WAREHOUSE_KEEPER_ROMP = 30843;
 	
@@ -103,8 +102,7 @@ public final class Q00386_StolenDignity extends Quest
 	private static final int HAND_OF_CABRIO_HEAD = 8721;
 	private static final int CRYSTAL_OF_DEAMON_PIECE = 8722;
 	
-	public Q00386_StolenDignity()
-	{
+	public Q00386_StolenDignity() {
 		super(386, Q00386_StolenDignity.class.getSimpleName(), "Stolen Dignity");
 		addStartNpc(WAREHOUSE_KEEPER_ROMP);
 		addTalkId(WAREHOUSE_KEEPER_ROMP);
@@ -112,22 +110,17 @@ public final class Q00386_StolenDignity extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (npc.getId() == WAREHOUSE_KEEPER_ROMP)
-		{
-			if (qs.isCreated())
-			{
-				if (player.getLevel() >= 58)
-				{
+		if (npc.getId() == WAREHOUSE_KEEPER_ROMP) {
+			if (qs.isCreated()) {
+				if (player.getLevel() >= 58) {
 					return "30843-01.htm";
 				}
 				return "30843-04.html";
 			}
-			if (qs.getQuestItemsCount(Q_STOLEN_INF_ORE) < 100)
-			{
+			if (qs.getQuestItemsCount(Q_STOLEN_INF_ORE) < 100) {
 				return "30843-06.html";
 			}
 			return "30843-07.html";
@@ -136,13 +129,10 @@ public final class Q00386_StolenDignity extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && (npc.getId() == WAREHOUSE_KEEPER_ROMP))
-		{
-			if (event.equals("QUEST_ACCEPTED"))
-			{
+		if ((qs != null) && (npc.getId() == WAREHOUSE_KEEPER_ROMP)) {
+			if (event.equals("QUEST_ACCEPTED")) {
 				qs.playSound(Sound.ITEMSOUND_QUEST_ACCEPT);
 				qs.setMemoState(386);
 				qs.startQuest();
@@ -150,28 +140,23 @@ public final class Q00386_StolenDignity extends Quest
 				qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 				return "30843-05.htm";
 			}
-			if (event.contains(".html"))
-			{
+			if (event.contains(".html")) {
 				return event;
 			}
 			int ask = Integer.parseInt(event);
-			switch (ask)
-			{
+			switch (ask) {
 				case 3:
 					return "30843-09a.html";
 				case 5:
 					return "30843-03.html";
-				case 6:
-				{
+				case 6: {
 					qs.exitQuest(true);
 					return "30843-08.html";
 				}
 				case 9:
 					return "30843-09.htm";
-				case 8:
-				{
-					if (qs.getQuestItemsCount(Q_STOLEN_INF_ORE) >= 100)
-					{
+				case 8: {
+					if (qs.getQuestItemsCount(Q_STOLEN_INF_ORE) >= 100) {
 						qs.takeItems(Q_STOLEN_INF_ORE, 100);
 						createBingoBoard(qs);
 						return "30843-12.html";
@@ -186,8 +171,7 @@ public final class Q00386_StolenDignity extends Quest
 				case 15:
 				case 16:
 				case 17:
-				case 18:
-				{
+				case 18: {
 					selectBingoNumber(qs, (ask - 9));
 					return fillBoard(player, qs, getHtm(player.getHtmlPrefix(), "30843-13.html"));
 				}
@@ -199,8 +183,7 @@ public final class Q00386_StolenDignity extends Quest
 				case 24:
 				case 25:
 				case 26:
-				case 27:
-				{
+				case 27: {
 					return takeHtml(player, qs, (ask - 18));
 				}
 				case 55:
@@ -211,8 +194,7 @@ public final class Q00386_StolenDignity extends Quest
 				case 60:
 				case 61:
 				case 62:
-				case 63:
-				{
+				case 63: {
 					return beforeReward(player, qs, (ask - 54));
 				}
 			}
@@ -220,74 +202,51 @@ public final class Q00386_StolenDignity extends Quest
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	private String takeHtml(L2PcInstance player, QuestState qs, int num)
-	{
+	private String takeHtml(L2PcInstance player, QuestState qs, int num) {
 		String html = null;
 		int i3;
-		if (!isSelectedBingoNumber(qs, num))
-		{
+		if (!isSelectedBingoNumber(qs, num)) {
 			selectBingoNumber(qs, num);
 			i3 = getBingoSelectCount(qs);
 			
-			if (i3 == 2)
-			{
+			if (i3 == 2) {
 				html = getHtm(player.getHtmlPrefix(), "30843-14.html");
-			}
-			else if (i3 == 3)
-			{
+			} else if (i3 == 3) {
 				html = getHtm(player.getHtmlPrefix(), "30843-16.html");
-			}
-			else if (i3 == 4)
-			{
+			} else if (i3 == 4) {
 				html = getHtm(player.getHtmlPrefix(), "30843-18.html");
-			}
-			else if (i3 == 5)
-			{
+			} else if (i3 == 5) {
 				html = getHtm(player.getHtmlPrefix(), "30843-20.html");
 			}
 			return fillBoard(player, qs, html);
 		}
 		i3 = getBingoSelectCount(qs);
-		if (i3 == 1)
-		{
+		if (i3 == 1) {
 			html = getHtm(player.getHtmlPrefix(), "30843-15.html");
-		}
-		else if (i3 == 2)
-		{
+		} else if (i3 == 2) {
 			html = getHtm(player.getHtmlPrefix(), "30843-17.html");
-		}
-		else if (i3 == 3)
-		{
+		} else if (i3 == 3) {
 			html = getHtm(player.getHtmlPrefix(), "30843-19.html");
-		}
-		else if (i3 == 4)
-		{
+		} else if (i3 == 4) {
 			html = getHtm(player.getHtmlPrefix(), "30843-21.html");
 		}
 		return fillBoard(player, qs, html);
 	}
 	
-	private String fillBoard(L2PcInstance player, QuestState qs, String html)
-	{
-		for (int i0 = 0; i0 < 9; i0 = i0 + 1)
-		{
+	private String fillBoard(L2PcInstance player, QuestState qs, String html) {
+		for (int i0 = 0; i0 < 9; i0 = i0 + 1) {
 			int i1 = getNumberFromBingoBoard(qs, i0);
-			if (isSelectedBingoNumber(qs, i1))
-			{
+			if (isSelectedBingoNumber(qs, i1)) {
 				html = html.replace("<?Cell" + (i0 + 1) + "?>", i1 + "");
-			}
-			else
-			{
+			} else {
 				html = html.replace("<?Cell" + (i0 + 1) + "?>", "?");
 			}
 		}
 		return html;
 	}
 	
-	private String colorBoard(L2PcInstance player, QuestState qs, String html)
-	{
-		for (int i0 = 0; i0 < 9; i0 = i0 + 1)
-		{
+	private String colorBoard(L2PcInstance player, QuestState qs, String html) {
+		for (int i0 = 0; i0 < 9; i0 = i0 + 1) {
 			int i1 = getNumberFromBingoBoard(qs, i0);
 			html = html.replace("<?FontColor" + (i0 + 1) + "?>", (isSelectedBingoNumber(qs, i1)) ? "ff0000" : "ffffff");
 			html = html.replace("<?Cell" + (i0 + 1) + "?>", i1 + "");
@@ -295,25 +254,18 @@ public final class Q00386_StolenDignity extends Quest
 		return html;
 	}
 	
-	private String beforeReward(L2PcInstance player, QuestState qs, int num)
-	{
-		if (!isSelectedBingoNumber(qs, num))
-		{
+	private String beforeReward(L2PcInstance player, QuestState qs, int num) {
+		if (!isSelectedBingoNumber(qs, num)) {
 			selectBingoNumber(qs, num);
 			int i3 = getMatchedBingoLineCount(qs);
 			String html;
-			if ((i3 == 3) && ((getBingoSelectCount(qs)) == 6))
-			{
+			if ((i3 == 3) && ((getBingoSelectCount(qs)) == 6)) {
 				reward(player, qs, 4);
 				html = getHtm(player.getHtmlPrefix(), "30843-22.html");
-			}
-			else if ((i3 == 0) && (getBingoSelectCount(qs) == 6))
-			{
+			} else if ((i3 == 0) && (getBingoSelectCount(qs) == 6)) {
 				reward(player, qs, 10);
 				html = getHtm(player.getHtmlPrefix(), "30843-24.html");
-			}
-			else
-			{
+			} else {
 				html = getHtm(player.getHtmlPrefix(), "30843-23.html");
 			}
 			return colorBoard(player, qs, html);
@@ -321,172 +273,137 @@ public final class Q00386_StolenDignity extends Quest
 		return fillBoard(player, qs, getHtm(player.getHtmlPrefix(), "30843-25.html"));
 	}
 	
-	private void reward(L2PcInstance player, QuestState qs, int count)
-	{
-		switch (getRandom(33))
-		{
-			case 0:
-			{
+	private void reward(L2PcInstance player, QuestState qs, int count) {
+		switch (getRandom(33)) {
+			case 0: {
 				qs.giveItems(DRAGON_SLAYER_EDGE, count);
 				break;
 			}
-			case 1:
-			{
+			case 1: {
 				qs.giveItems(METEOR_SHOWER_HEAD, count);
 				break;
 			}
-			case 2:
-			{
+			case 2: {
 				qs.giveItems(ELYSIAN_HEAD, count);
 				break;
 			}
-			case 3:
-			{
+			case 3: {
 				qs.giveItems(SOUL_BOW_SHAFT, count);
 				break;
 			}
-			case 4:
-			{
+			case 4: {
 				qs.giveItems(CARNIUM_BOW_SHAFT, count);
 				break;
 			}
-			case 5:
-			{
+			case 5: {
 				qs.giveItems(BLOODY_ORCHID_HEAD, count);
 				break;
 			}
-			case 6:
-			{
+			case 6: {
 				qs.giveItems(SOUL_SEPARATOR_HEAD, count);
 				break;
 			}
-			case 7:
-			{
+			case 7: {
 				qs.giveItems(DRAGON_GRINDER_EDGE, count);
 				break;
 			}
-			case 8:
-			{
+			case 8: {
 				qs.giveItems(BLOOD_TORNADO_EDGE, count);
 				break;
 			}
-			case 9:
-			{
+			case 9: {
 				qs.giveItems(TALLUM_GLAIVE_EDGE, count);
 				break;
 			}
-			case 10:
-			{
+			case 10: {
 				qs.giveItems(HALBARD_EDGE, count);
 				break;
 			}
-			case 11:
-			{
+			case 11: {
 				qs.giveItems(DASPARIONS_STAFF_HEAD, count);
 				break;
 			}
-			case 12:
-			{
+			case 12: {
 				qs.giveItems(WORLDTREES_BRANCH_HEAD, count);
 				break;
 			}
-			case 13:
-			{
+			case 13: {
 				qs.giveItems(DARK_LEGIONS_EDGE_EDGE, count);
 				break;
 			}
-			case 14:
-			{
+			case 14: {
 				qs.giveItems(SWORD_OF_MIRACLE_EDGE, count);
 				break;
 			}
-			case 15:
-			{
+			case 15: {
 				qs.giveItems(ELEMENTAL_SWORD_EDGE, count);
 				break;
 			}
-			case 16:
-			{
+			case 16: {
 				qs.giveItems(TALLUM_BLADE_EDGE, count);
 				break;
 			}
-			case 17:
-			{
+			case 17: {
 				qs.giveItems(INFERNO_MASTER_BLADE, count);
 				break;
 			}
-			case 18:
-			{
+			case 18: {
 				qs.giveItems(EYE_OF_SOUL_PIECE, count);
 				break;
 			}
-			case 19:
-			{
+			case 19: {
 				qs.giveItems(DRAGON_FLAME_HEAD_PIECE, count);
 				break;
 			}
-			case 20:
-			{
+			case 20: {
 				qs.giveItems(DOOM_CRUSHER_HEAD, count);
 				break;
 			}
-			case 21:
-			{
+			case 21: {
 				qs.giveItems(HAMMER_OF_DESTROYER_PIECE, count);
 				break;
 			}
-			case 22:
-			{
+			case 22: {
 				qs.giveItems(SIRR_BLADE_BLADE, count);
 				break;
 			}
-			case 23:
-			{
+			case 23: {
 				qs.giveItems(SWORD_OF_IPOS_BLADE, count);
 				break;
 			}
-			case 24:
-			{
+			case 24: {
 				qs.giveItems(BARAKIEL_AXE_PIECE, count);
 				break;
 			}
-			case 25:
-			{
+			case 25: {
 				qs.giveItems(TUNING_FORK_OF_BEHEMOTH_PIECE, count);
 				break;
 			}
-			case 26:
-			{
+			case 26: {
 				qs.giveItems(NAGA_STORM_PIECE, count);
 				break;
 			}
-			case 27:
-			{
+			case 27: {
 				qs.giveItems(TIPHON_SPEAR_EDGE, count);
 				break;
 			}
-			case 28:
-			{
+			case 28: {
 				qs.giveItems(SHYID_BOW_SHAFT, count);
 				break;
 			}
-			case 29:
-			{
+			case 29: {
 				qs.giveItems(SOBEKK_HURRICANE_EDGE, count);
 				break;
 			}
-			case 30:
-			{
+			case 30: {
 				qs.giveItems(TONGUE_OF_THEMIS_PIECE, count);
 				break;
 			}
-			case 31:
-			{
+			case 31: {
 				qs.giveItems(HAND_OF_CABRIO_HEAD, count);
 				break;
 			}
-			case 32:
-			{
+			case 32: {
 				qs.giveItems(CRYSTAL_OF_DEAMON_PIECE, count);
 				break;
 			}
@@ -496,8 +413,7 @@ public final class Q00386_StolenDignity extends Quest
 	/**
 	 * @param qs
 	 */
-	private void createBingoBoard(QuestState qs)
-	{
+	private void createBingoBoard(QuestState qs) {
 		//@formatter:off
 		Integer[] arr = {1,2,3,4,5,6,7,8,9};
 		//@formatter:on
@@ -510,43 +426,34 @@ public final class Q00386_StolenDignity extends Quest
 	 * @param qs
 	 * @return
 	 */
-	private int getMatchedBingoLineCount(QuestState qs)
-	{
+	private int getMatchedBingoLineCount(QuestState qs) {
 		String[] q = qs.get("selected").split(" ");
 		int found = 0;
 		// Horizontal
-		if ((q[0] + q[1] + q[2]).matches("\\d+"))
-		{
+		if ((q[0] + q[1] + q[2]).matches("\\d+")) {
 			found++;
 		}
-		if ((q[3] + q[4] + q[5]).matches("\\d+"))
-		{
+		if ((q[3] + q[4] + q[5]).matches("\\d+")) {
 			found++;
 		}
-		if ((q[6] + q[7] + q[8]).matches("\\d+"))
-		{
+		if ((q[6] + q[7] + q[8]).matches("\\d+")) {
 			found++;
 		}
 		// Vertical
-		if ((q[0] + q[3] + q[6]).matches("\\d+"))
-		{
+		if ((q[0] + q[3] + q[6]).matches("\\d+")) {
 			found++;
 		}
-		if ((q[1] + q[4] + q[7]).matches("\\d+"))
-		{
+		if ((q[1] + q[4] + q[7]).matches("\\d+")) {
 			found++;
 		}
-		if ((q[2] + q[5] + q[8]).matches("\\d+"))
-		{
+		if ((q[2] + q[5] + q[8]).matches("\\d+")) {
 			found++;
 		}
 		// Diagonal
-		if ((q[0] + q[4] + q[8]).matches("\\d+"))
-		{
+		if ((q[0] + q[4] + q[8]).matches("\\d+")) {
 			found++;
 		}
-		if ((q[2] + q[4] + q[6]).matches("\\d+"))
-		{
+		if ((q[2] + q[4] + q[6]).matches("\\d+")) {
 			found++;
 		}
 		return found;
@@ -556,30 +463,24 @@ public final class Q00386_StolenDignity extends Quest
 	 * @param qs
 	 * @param num
 	 */
-	private void selectBingoNumber(QuestState qs, int num)
-	{
+	private void selectBingoNumber(QuestState qs, int num) {
 		String[] numbers = qs.get("numbers").split(" ");
 		int pos = 0;
-		for (int i = 0; i < numbers.length; i++)
-		{
-			if (Integer.parseInt(numbers[i]) == num)
-			{
+		for (int i = 0; i < numbers.length; i++) {
+			if (Integer.parseInt(numbers[i]) == num) {
 				pos = i;
 				break;
 			}
 		}
 		String[] selected = qs.get("selected").split(" ");
-		for (int i = 0; i < selected.length; i++)
-		{
-			if (i == pos)
-			{
+		for (int i = 0; i < selected.length; i++) {
+			if (i == pos) {
 				selected[i] = num + "";
 				continue;
 			}
 		}
 		String result = selected[0];
-		for (int i = 1; i < selected.length; i++)
-		{
+		for (int i = 1; i < selected.length; i++) {
 			result += " " + selected[i];
 		}
 		qs.set("selected", result);
@@ -590,8 +491,7 @@ public final class Q00386_StolenDignity extends Quest
 	 * @param num
 	 * @return
 	 */
-	private boolean isSelectedBingoNumber(QuestState qs, int num)
-	{
+	private boolean isSelectedBingoNumber(QuestState qs, int num) {
 		return qs.get("selected").contains(num + "");
 	}
 	
@@ -600,8 +500,7 @@ public final class Q00386_StolenDignity extends Quest
 	 * @param num
 	 * @return
 	 */
-	private int getNumberFromBingoBoard(QuestState qs, int num)
-	{
+	private int getNumberFromBingoBoard(QuestState qs, int num) {
 		return Integer.parseInt(qs.get("numbers").split(" ")[num]);
 	}
 	
@@ -609,210 +508,158 @@ public final class Q00386_StolenDignity extends Quest
 	 * @param qs
 	 * @return
 	 */
-	private int getBingoSelectCount(QuestState qs)
-	{
+	private int getBingoSelectCount(QuestState qs) {
 		String current = qs.get("selected");
 		return current.replaceAll("\\D", "").length();
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPlayerFromParty(killer, npc);
-		if (qs != null)
-		{
-			switch (npc.getId())
-			{
-				case CRIMSON_DRAKE:
-				{
-					if (getRandom(1000) < 20.200001)
-					{
+		if (qs != null) {
+			switch (npc.getId()) {
+				case CRIMSON_DRAKE: {
+					if (getRandom(1000) < 20.200001) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case KADIOS:
-				{
-					if (getRandom(1000) < 211)
-					{
+				case KADIOS: {
+					if (getRandom(1000) < 211) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case HUNGRY_CORPSE:
-				{
-					if (getRandom(1000) < 184)
-					{
+				case HUNGRY_CORPSE: {
+					if (getRandom(1000) < 184) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case PAST_KNIGHT:
-				{
-					if (getRandom(1000) < 216)
-					{
+				case PAST_KNIGHT: {
+					if (getRandom(1000) < 216) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case BLADE_DEATH:
-				{
-					if (getRandom(100) < 17)
-					{
+				case BLADE_DEATH: {
+					if (getRandom(100) < 17) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case DARK_GUARD:
-				{
-					if (getRandom(1000) < 273)
-					{
+				case DARK_GUARD: {
+					if (getRandom(1000) < 273) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case BLOODY_GHOST:
-				{
-					if (getRandom(1000) < 149)
-					{
+				case BLOODY_GHOST: {
+					if (getRandom(1000) < 149) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case BLOODY_LORD:
-				{
-					if (getRandom(1000) < 199)
-					{
+				case BLOODY_LORD: {
+					if (getRandom(1000) < 199) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case PAST_CREATURE:
-				{
-					if (getRandom(1000) < 257)
-					{
+				case PAST_CREATURE: {
+					if (getRandom(1000) < 257) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case GIANT_SHADOW:
-				{
-					if (getRandom(1000) < 205)
-					{
+				case GIANT_SHADOW: {
+					if (getRandom(1000) < 205) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case ANCIENTS_SOLDIER:
-				{
-					if (getRandom(1000) < 208)
-					{
+				case ANCIENTS_SOLDIER: {
+					if (getRandom(1000) < 208) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case ANCIENTS_WARRIOR:
-				{
-					if (getRandom(1000) < 299)
-					{
+				case ANCIENTS_WARRIOR: {
+					if (getRandom(1000) < 299) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case SPITE_SOUL_LEADER:
-				{
-					if (getRandom(100) < 44)
-					{
+				case SPITE_SOUL_LEADER: {
+					if (getRandom(100) < 44) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case SPITE_SOUL_WIZARD:
-				{
-					if (getRandom(100) < 39)
-					{
+				case SPITE_SOUL_WIZARD: {
+					if (getRandom(100) < 39) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case WRECKED_ARCHER:
-				{
-					if (getRandom(1000) < 214)
-					{
+				case WRECKED_ARCHER: {
+					if (getRandom(1000) < 214) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case FLOAT_OF_GRAVE:
-				{
-					if (getRandom(1000) < 173)
-					{
+				case FLOAT_OF_GRAVE: {
+					if (getRandom(1000) < 173) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case GRAVE_PREDATOR:
-				{
-					if (getRandom(1000) < 211)
-					{
+				case GRAVE_PREDATOR: {
+					if (getRandom(1000) < 211) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case FALLEN_ORC_SHAMAN:
-				{
-					if (getRandom(1000) < 478)
-					{
+				case FALLEN_ORC_SHAMAN: {
+					if (getRandom(1000) < 478) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case SHARP_TALON_TIGER:
-				{
-					if (getRandom(1000) < 234)
-					{
+				case SHARP_TALON_TIGER: {
+					if (getRandom(1000) < 234) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case GLOW_WISP:
-				{
-					if (getRandom(1000) < 245)
-					{
+				case GLOW_WISP: {
+					if (getRandom(1000) < 245) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case MARSH_PREDATOR:
-				{
-					if (getRandom(100) < 26)
-					{
+				case MARSH_PREDATOR: {
+					if (getRandom(100) < 26) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case HAMES_ORC_SNIPER:
-				{
-					if (getRandom(100) < 37)
-					{
+				case HAMES_ORC_SNIPER: {
+					if (getRandom(100) < 37) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
-				case CURSED_GUARDIAN:
-				{
-					if (getRandom(1000) < 352)
-					{
+				case CURSED_GUARDIAN: {
+					if (getRandom(1000) < 352) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
 				}
 				case HAMES_ORC_CHIEFTAIN:
 				case FALLEN_ORC_SHAMAN_TRANS:
-				case SHARP_TALON_TIGER_TRANS:
-				{
-					if (getRandom(1000) < 487)
-					{
+				case SHARP_TALON_TIGER_TRANS: {
+					if (getRandom(1000) < 487) {
 						giveItemRandomly(qs.getPlayer(), npc, Q_STOLEN_INF_ORE, 1, 0, 1, true);
 					}
 					break;
@@ -823,25 +670,20 @@ public final class Q00386_StolenDignity extends Quest
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private QuestState getRandomPlayerFromParty(L2PcInstance player, L2Npc npc)
-	{
+	private QuestState getRandomPlayerFromParty(L2PcInstance player, L2Npc npc) {
 		QuestState qs = getQuestState(player, false);
 		final List<QuestState> candidates = new ArrayList<>();
 		
-		if ((qs != null) && qs.isStarted())
-		{
+		if ((qs != null) && qs.isStarted()) {
 			candidates.add(qs);
 			candidates.add(qs);
 		}
 		
-		if (player.isInParty())
-		{
-			player.getParty().getMembers().stream().forEach(pm ->
-			{
+		if (player.isInParty()) {
+			player.getParty().getMembers().stream().forEach(pm -> {
 				
 				QuestState qss = getQuestState(pm, false);
-				if ((qss != null) && qss.isStarted() && Util.checkIfInRange(1500, npc, pm, true))
-				{
+				if ((qss != null) && qss.isStarted() && Util.checkIfInRange(1500, npc, pm, true)) {
 					candidates.add(qss);
 				}
 			});

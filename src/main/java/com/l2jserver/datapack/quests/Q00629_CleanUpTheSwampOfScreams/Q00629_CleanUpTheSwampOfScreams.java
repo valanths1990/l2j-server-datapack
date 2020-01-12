@@ -30,8 +30,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Clean Up The Swamp Of Screams (629)
  * @author netvirus
  */
-public final class Q00629_CleanUpTheSwampOfScreams extends Quest
-{
+public final class Q00629_CleanUpTheSwampOfScreams extends Quest {
 	// NPC
 	private static final int PIERCE = 31553;
 	// Items
@@ -43,8 +42,7 @@ public final class Q00629_CleanUpTheSwampOfScreams extends Quest
 	// Mobs
 	private static final Map<Integer, Double> MOBS_DROP_CHANCES = new HashMap<>();
 	
-	static
-	{
+	static {
 		MOBS_DROP_CHANCES.put(21508, 0.599); // splinter_stakato
 		MOBS_DROP_CHANCES.put(21509, 0.524); // splinter_stakato_worker
 		MOBS_DROP_CHANCES.put(21510, 0.640); // splinter_stakato_soldier
@@ -57,8 +55,7 @@ public final class Q00629_CleanUpTheSwampOfScreams extends Quest
 		MOBS_DROP_CHANCES.put(21517, 0.999); // needle_stakato_drone_a
 	}
 	
-	public Q00629_CleanUpTheSwampOfScreams()
-	{
+	public Q00629_CleanUpTheSwampOfScreams() {
 		super(629, Q00629_CleanUpTheSwampOfScreams.class.getSimpleName(), "Clean Up The Swamp Of Screams");
 		addStartNpc(PIERCE);
 		addTalkId(PIERCE);
@@ -67,53 +64,40 @@ public final class Q00629_CleanUpTheSwampOfScreams extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "31553-03.htm":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "31553-03.htm": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					htmltext = event;
 				}
 				break;
 			}
 			case "31553-04.html":
-			case "31553-06.html":
-			{
-				if (qs.isStarted())
-				{
+			case "31553-06.html": {
+				if (qs.isStarted()) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "31553-07.html":
-			{
-				if (qs.isStarted() && (getQuestItemsCount(player, TALON_OF_STAKATO) >= REQUIRED_TALON_COUNT))
-				{
+			case "31553-07.html": {
+				if (qs.isStarted() && (getQuestItemsCount(player, TALON_OF_STAKATO) >= REQUIRED_TALON_COUNT)) {
 					rewardItems(player, GOLDEN_RAM_COIN, 20);
 					takeItems(player, TALON_OF_STAKATO, 100);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "31553-08.html";
 				}
 				break;
 			}
-			case "31553-09.html":
-			{
-				if (qs.isStarted())
-				{
+			case "31553-09.html": {
+				if (qs.isStarted()) {
 					qs.exitQuest(true, true);
 					htmltext = event;
 				}
@@ -124,27 +108,21 @@ public final class Q00629_CleanUpTheSwampOfScreams extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, -1, 2, npc);
-		if (qs != null)
-		{
+		if (qs != null) {
 			giveItemRandomly(qs.getPlayer(), npc, TALON_OF_STAKATO, 1, 0, MOBS_DROP_CHANCES.get(npc.getId()), true);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			htmltext = ((player.getLevel() >= MIN_LVL) ? "31553-01.htm" : "31553-02.htm");
-		}
-		else if (qs.isStarted())
-		{
+		} else if (qs.isStarted()) {
 			htmltext = ((getQuestItemsCount(player, TALON_OF_STAKATO) >= REQUIRED_TALON_COUNT) ? "31553-04.html" : "31553-05.html");
 		}
 		return htmltext;

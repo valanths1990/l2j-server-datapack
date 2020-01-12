@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.holders.ItemHolder;
  * Eva's Gift Box AI.
  * @author St3eT
  */
-public final class EvasGiftBox extends AbstractNpcAI
-{
+public final class EvasGiftBox extends AbstractNpcAI {
 	// NPC
 	private static final int BOX = 32342; // Eva's Gift Box
 	// Skill
@@ -38,25 +37,20 @@ public final class EvasGiftBox extends AbstractNpcAI
 	private static final ItemHolder CORAL = new ItemHolder(9692, 1); // Red Coral
 	private static final ItemHolder CRYSTAL = new ItemHolder(9693, 1); // Crystal Fragment
 	
-	private EvasGiftBox()
-	{
+	private EvasGiftBox() {
 		super(EvasGiftBox.class.getSimpleName(), "ai/individual");
 		addKillId(BOX);
 		addSpawnId(BOX);
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		if (killer.isAffectedBySkill(BUFF))
-		{
-			if (getRandomBoolean())
-			{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		if (killer.isAffectedBySkill(BUFF)) {
+			if (getRandomBoolean()) {
 				npc.dropItem(killer, CRYSTAL);
 			}
 			
-			if (getRandom(100) < 33)
-			{
+			if (getRandom(100) < 33) {
 				npc.dropItem(killer, CORAL);
 			}
 		}
@@ -64,15 +58,13 @@ public final class EvasGiftBox extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		npc.setIsNoRndWalk(true);
 		((L2Attackable) npc).setOnKillDelay(0);
 		return super.onSpawn(npc);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new EvasGiftBox();
 	}
 }

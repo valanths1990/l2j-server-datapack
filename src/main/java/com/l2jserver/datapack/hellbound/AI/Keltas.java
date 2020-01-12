@@ -35,15 +35,13 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * Manages Darion's Enforcer's and Darion's Executioner spawn/despawn
  * @author GKR
  */
-public final class Keltas extends AbstractNpcAI
-{
+public final class Keltas extends AbstractNpcAI {
 	// NPCs
 	private static final int KELTAS = 22341;
 	private static final int ENFORCER = 22342;
 	private static final int EXECUTIONER = 22343;
 	// Locations
-	private static final Location[] ENFORCER_SPAWN_POINTS =
-	{
+	private static final Location[] ENFORCER_SPAWN_POINTS = {
 		new Location(-24540, 251404, -3320),
 		new Location(-24100, 252578, -3060),
 		new Location(-24607, 252443, -3074),
@@ -71,8 +69,7 @@ public final class Keltas extends AbstractNpcAI
 		new Location(-25376, 252368, -3257),
 		new Location(-25376, 252208, -3257)
 	};
-	private static final Location[] EXECUTIONER_SPAWN_POINTS =
-	{
+	private static final Location[] EXECUTIONER_SPAWN_POINTS = {
 		new Location(-24419, 251395, -3340),
 		new Location(-24912, 252160, -3310),
 		new Location(-25027, 251941, -3300),
@@ -103,17 +100,14 @@ public final class Keltas extends AbstractNpcAI
 	private L2MonsterInstance _spawnedKeltas = null;
 	private final Set<L2Spawn> _spawnedMonsters = Collections.newSetFromMap(new ConcurrentHashMap<L2Spawn, Boolean>());
 	
-	public Keltas()
-	{
+	public Keltas() {
 		super(Keltas.class.getSimpleName(), "hellbound/AI");
 		addKillId(KELTAS);
 		addSpawnId(KELTAS);
 	}
 	
-	private void spawnMinions()
-	{
-		for (Location loc : ENFORCER_SPAWN_POINTS)
-		{
+	private void spawnMinions() {
+		for (Location loc : ENFORCER_SPAWN_POINTS) {
 			final L2MonsterInstance minion = (L2MonsterInstance) addSpawn(ENFORCER, loc, false, 0, false);
 			final L2Spawn spawn = minion.getSpawn();
 			spawn.setRespawnDelay(60);
@@ -122,8 +116,7 @@ public final class Keltas extends AbstractNpcAI
 			_spawnedMonsters.add(spawn);
 		}
 		
-		for (Location loc : EXECUTIONER_SPAWN_POINTS)
-		{
+		for (Location loc : EXECUTIONER_SPAWN_POINTS) {
 			final L2MonsterInstance minion = (L2MonsterInstance) addSpawn(EXECUTIONER, loc, false, 0, false);
 			final L2Spawn spawn = minion.getSpawn();
 			spawn.setRespawnDelay(80);
@@ -133,19 +126,15 @@ public final class Keltas extends AbstractNpcAI
 		}
 	}
 	
-	private void despawnMinions()
-	{
-		if (_spawnedMonsters.isEmpty())
-		{
+	private void despawnMinions() {
+		if (_spawnedMonsters.isEmpty()) {
 			return;
 		}
 		
-		for (L2Spawn spawn : _spawnedMonsters)
-		{
+		for (L2Spawn spawn : _spawnedMonsters) {
 			spawn.stopRespawn();
 			L2Npc minion = spawn.getLastSpawn();
-			if ((minion != null) && !minion.isDead())
-			{
+			if ((minion != null) && !minion.isDead()) {
 				minion.deleteMe();
 			}
 		}
@@ -153,13 +142,10 @@ public final class Keltas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equalsIgnoreCase("despawn"))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.equalsIgnoreCase("despawn")) {
 			final L2Npc keltas = _spawnedKeltas;
-			if ((keltas != null) && !keltas.isDead())
-			{
+			if ((keltas != null) && !keltas.isDead()) {
 				broadcastNpcSay(keltas, Say2.NPC_SHOUT, NpcStringId.THAT_IS_IT_FOR_TODAYLETS_RETREAT_EVERYONE_PULL_BACK);
 				keltas.deleteMe();
 				keltas.getSpawn().decreaseCount(keltas);
@@ -170,16 +156,14 @@ public final class Keltas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		cancelQuestTimers("despawn");
 		despawnMinions();
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		_spawnedKeltas = (L2MonsterInstance) npc;
 		broadcastNpcSay(_spawnedKeltas, Say2.NPC_SHOUT, NpcStringId.GUYS_SHOW_THEM_OUR_POWER);
 		spawnMinions();

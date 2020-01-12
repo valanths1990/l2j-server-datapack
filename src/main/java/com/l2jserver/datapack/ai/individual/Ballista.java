@@ -32,11 +32,9 @@ import com.l2jserver.gameserver.network.SystemMessageId;
  * Ballista AI.
  * @author St3eT
  */
-public final class Ballista extends AbstractNpcAI
-{
+public final class Ballista extends AbstractNpcAI {
 	// NPCs
-	private static final int[] BALLISTA =
-	{
+	private static final int[] BALLISTA = {
 		35685, // Shanty Fortress
 		35723, // Southern Fortress
 		35754, // Hive Fortress
@@ -64,22 +62,17 @@ public final class Ballista extends AbstractNpcAI
 	// Misc
 	private static final int MIN_CLAN_LV = 5;
 	
-	private Ballista()
-	{
+	private Ballista() {
 		super(Ballista.class.getSimpleName(), "ai/individual");
 		addSkillSeeId(BALLISTA);
 		addSpawnId(BALLISTA);
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
-	{
-		if ((skill != null) && (caster.getTarget() == npc) && (getRandom(100) < 40) && (skill == BOMB.getSkill()))
-		{
-			if (npc.getFort().getSiege().isInProgress())
-			{
-				if ((caster.getClan() != null) && (caster.getClan().getLevel() >= MIN_CLAN_LV))
-				{
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon) {
+		if ((skill != null) && (caster.getTarget() == npc) && (getRandom(100) < 40) && (skill == BOMB.getSkill())) {
+			if (npc.getFort().getSiege().isInProgress()) {
+				if ((caster.getClan() != null) && (caster.getClan().getLevel() >= MIN_CLAN_LV)) {
 					caster.getClan().addReputationScore(clan().getKillBallistaPoints(), true);
 					caster.sendPacket(SystemMessageId.BALLISTA_DESTROYED_CLAN_REPU_INCREASED);
 				}
@@ -90,15 +83,13 @@ public final class Ballista extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		npc.disableCoreAI(true);
 		npc.setIsMortal(false);
 		return super.onSpawn(npc);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Ballista();
 	}
 }

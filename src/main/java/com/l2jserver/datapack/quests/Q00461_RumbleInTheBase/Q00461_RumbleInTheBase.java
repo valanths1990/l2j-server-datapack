@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Rumble in the Base (461)
  * @author malyelfik
  */
-public class Q00461_RumbleInTheBase extends Quest
-{
+public class Q00461_RumbleInTheBase extends Quest {
 	// NPC
 	private static final int STAN = 30200;
 	// Items
@@ -44,8 +43,7 @@ public class Q00461_RumbleInTheBase extends Quest
 	// Mobs
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
 	
-	static
-	{
+	static {
 		MONSTERS.put(22780, 581);
 		MONSTERS.put(22781, 772);
 		MONSTERS.put(22782, 581);
@@ -55,8 +53,7 @@ public class Q00461_RumbleInTheBase extends Quest
 		MONSTERS.put(18908, 782);
 	}
 	
-	public Q00461_RumbleInTheBase()
-	{
+	public Q00461_RumbleInTheBase() {
 		super(461, Q00461_RumbleInTheBase.class.getSimpleName(), "Rumble in the Base");
 		addStartNpc(STAN);
 		addTalkId(STAN);
@@ -65,64 +62,49 @@ public class Q00461_RumbleInTheBase extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 		
-		if (event.equalsIgnoreCase("30200-05.htm"))
-		{
+		if (event.equalsIgnoreCase("30200-05.htm")) {
 			st.startQuest();
 			htmltext = event;
-		}
-		else if (event.equalsIgnoreCase("30200-04.htm"))
-		{
+		} else if (event.equalsIgnoreCase("30200-04.htm")) {
 			htmltext = event;
 		}
 		return htmltext;
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		QuestState st = null;
-		if (getRandom(1000) >= MONSTERS.get(npc.getId()))
-		{
+		if (getRandom(1000) >= MONSTERS.get(npc.getId())) {
 			return super.onKill(npc, player, isSummon);
 		}
 		
-		if (npc.getId() == 18908)
-		{
+		if (npc.getId() == 18908) {
 			st = getQuestState(player, false);
-			if ((st != null) && st.isCond(1) && (st.getQuestItemsCount(SHINY_SALMON) < 5))
-			{
+			if ((st != null) && st.isCond(1) && (st.getQuestItemsCount(SHINY_SALMON) < 5)) {
 				st.giveItems(SHINY_SALMON, 1);
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-				if ((st.getQuestItemsCount(SHINY_SALMON) >= 5) && (st.getQuestItemsCount(SHOES_STRING_OF_SEL_MAHUM) >= 10))
-				{
+				if ((st.getQuestItemsCount(SHINY_SALMON) >= 5) && (st.getQuestItemsCount(SHOES_STRING_OF_SEL_MAHUM) >= 10)) {
 					st.setCond(2, true);
 				}
 			}
-		}
-		else
-		{
+		} else {
 			final L2PcInstance member = getRandomPartyMember(player, 1);
-			if (member == null)
-			{
+			if (member == null) {
 				return super.onKill(npc, player, isSummon);
 			}
 			
 			st = getQuestState(member, false);
-			if (st.getQuestItemsCount(SHOES_STRING_OF_SEL_MAHUM) < 10)
-			{
+			if (st.getQuestItemsCount(SHOES_STRING_OF_SEL_MAHUM) < 10) {
 				st.giveItems(SHOES_STRING_OF_SEL_MAHUM, 1);
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
-				if ((st.getQuestItemsCount(SHINY_SALMON) >= 5) && (st.getQuestItemsCount(SHOES_STRING_OF_SEL_MAHUM) >= 10))
-				{
+				if ((st.getQuestItemsCount(SHINY_SALMON) >= 5) && (st.getQuestItemsCount(SHOES_STRING_OF_SEL_MAHUM) >= 10)) {
 					st.setCond(2, true);
 				}
 			}
@@ -131,34 +113,26 @@ public class Q00461_RumbleInTheBase extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = ((player.getLevel() >= 82) && player.hasQuestCompleted(Q00252_ItSmellsDelicious.class.getSimpleName())) ? "30200-01.htm" : "30200-02.htm";
 				break;
 			case State.STARTED:
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					htmltext = "30200-06.html";
-				}
-				else
-				{
+				} else {
 					st.addExpAndSp(224784, 342528);
 					st.exitQuest(QuestType.DAILY, true);
 					htmltext = "30200-07.html";
 				}
 				break;
 			case State.COMPLETED:
-				if (!st.isNowAvailable())
-				{
+				if (!st.isNowAvailable()) {
 					htmltext = "30200-03.htm";
-				}
-				else
-				{
+				} else {
 					st.setState(State.CREATED);
 					htmltext = ((player.getLevel() >= 82) && player.hasQuestCompleted(Q00252_ItSmellsDelicious.class.getSimpleName())) ? "30200-01.htm" : "30200-02.htm";
 				}

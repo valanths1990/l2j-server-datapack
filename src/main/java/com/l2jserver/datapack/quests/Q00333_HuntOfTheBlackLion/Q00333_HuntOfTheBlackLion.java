@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * Hunt Of The Black Lion (333)
  * @author ivantotov
  */
-public final class Q00333_HuntOfTheBlackLion extends Quest
-{
+public final class Q00333_HuntOfTheBlackLion extends Quest {
 	// NPCs
 	private static final int ABYSSAL_CELEBRANT_UNDRIAS = 30130;
 	private static final int BLACKSMITH_RUPIO = 30471;
@@ -111,8 +110,7 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 25;
 	
-	public Q00333_HuntOfTheBlackLion()
-	{
+	public Q00333_HuntOfTheBlackLion() {
 		super(333, Q00333_HuntOfTheBlackLion.class.getSimpleName(), "Hunt Of The Black Lion");
 		addStartNpc(MERCENARY_CAPTAIN_SOPHYA);
 		addTalkId(MERCENARY_CAPTAIN_SOPHYA, ABYSSAL_CELEBRANT_UNDRIAS, BLACKSMITH_RUPIO, IRON_GATES_LOCKIRIN, MERCENARY_REEDFOOT, GUILDSMAN_MORGON);
@@ -121,23 +119,18 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		final int chance = getRandom(100);
 		final int chance1 = getRandom(100);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30735-04.htm":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "30735-04.htm": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					htmltext = event;
 				}
@@ -155,135 +148,88 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 			case "30735-25b.html":
 			case "30736-06.html":
 			case "30736-09.html":
-			case "30737-07.html":
-			{
+			case "30737-07.html": {
 				htmltext = event;
 				break;
 			}
-			case "30735-10.html":
-			{
-				if (!hasQuestItems(player, SOPHYAS_1ST_ORDER))
-				{
+			case "30735-10.html": {
+				if (!hasQuestItems(player, SOPHYAS_1ST_ORDER)) {
 					giveItems(player, SOPHYAS_1ST_ORDER, 1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30735-11.html":
-			{
-				if (!hasQuestItems(player, SOPHYAS_2ND_ORDER))
-				{
+			case "30735-11.html": {
+				if (!hasQuestItems(player, SOPHYAS_2ND_ORDER)) {
 					giveItems(player, SOPHYAS_2ND_ORDER, 1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30735-12.html":
-			{
-				if (!hasQuestItems(player, SOPHYAS_3RD_ORDER))
-				{
+			case "30735-12.html": {
+				if (!hasQuestItems(player, SOPHYAS_3RD_ORDER)) {
 					giveItems(player, SOPHYAS_3RD_ORDER, 1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30735-13.html":
-			{
-				if (!hasQuestItems(player, SOPHYAS_4TH_ORDER))
-				{
+			case "30735-13.html": {
+				if (!hasQuestItems(player, SOPHYAS_4TH_ORDER)) {
 					giveItems(player, SOPHYAS_4TH_ORDER, 1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30735-16.html":
-			{
-				if (getQuestItemsCount(player, LIONS_CLAW) < 10)
-				{
+			case "30735-16.html": {
+				if (getQuestItemsCount(player, LIONS_CLAW) < 10) {
 					htmltext = event;
-				}
-				else if ((getQuestItemsCount(player, LIONS_CLAW) >= 10) && (getQuestItemsCount(player, LIONS_EYE) < 4))
-				{
+				} else if ((getQuestItemsCount(player, LIONS_CLAW) >= 10) && (getQuestItemsCount(player, LIONS_EYE) < 4)) {
 					giveItems(player, LIONS_EYE, 1);
-					if (chance < 25)
-					{
+					if (chance < 25) {
 						giveItems(player, HEALING_POTION, 20);
-					}
-					else if (chance < 50)
-					{
-						if (player.isInCategory(CategoryType.FIGHTER_GROUP))
-						{
+					} else if (chance < 50) {
+						if (player.isInCategory(CategoryType.FIGHTER_GROUP)) {
 							giveItems(player, SOULSHOT_D_GRADE, 100);
-						}
-						else if (player.isInCategory(CategoryType.MAGE_GROUP))
-						{
+						} else if (player.isInCategory(CategoryType.MAGE_GROUP)) {
 							giveItems(player, SPIRITSHOT_D_GRADE, 50);
 						}
-					}
-					else if (chance < 75)
-					{
+					} else if (chance < 75) {
 						giveItems(player, SCROLL_OF_ESCAPE, 20);
-					}
-					else
-					{
+					} else {
 						giveItems(player, ALACRITY_POTION, 3);
 					}
 					takeItems(player, LIONS_CLAW, 10);
 					htmltext = "30735-17a.html";
-				}
-				else if ((getQuestItemsCount(player, LIONS_CLAW) >= 10) && (getQuestItemsCount(player, LIONS_EYE) >= 4) && (getQuestItemsCount(player, LIONS_EYE) <= 7))
-				{
+				} else if ((getQuestItemsCount(player, LIONS_CLAW) >= 10) && (getQuestItemsCount(player, LIONS_EYE) >= 4) && (getQuestItemsCount(player, LIONS_EYE) <= 7)) {
 					giveItems(player, LIONS_EYE, 1);
-					if (chance < 25)
-					{
+					if (chance < 25) {
 						giveItems(player, HEALING_POTION, 25);
-					}
-					else if (chance < 50)
-					{
-						if (player.isInCategory(CategoryType.FIGHTER_GROUP))
-						{
+					} else if (chance < 50) {
+						if (player.isInCategory(CategoryType.FIGHTER_GROUP)) {
 							giveItems(player, SOULSHOT_D_GRADE, 200);
-						}
-						else if (player.isInCategory(CategoryType.MAGE_GROUP))
-						{
+						} else if (player.isInCategory(CategoryType.MAGE_GROUP)) {
 							giveItems(player, SPIRITSHOT_D_GRADE, 100);
 						}
-					}
-					else if (chance < 75)
-					{
+					} else if (chance < 75) {
 						giveItems(player, SCROLL_OF_ESCAPE, 20);
-					}
-					else
-					{
+					} else {
 						giveItems(player, ALACRITY_POTION, 3);
 					}
 					takeItems(player, LIONS_CLAW, 10);
 					htmltext = "30735-18b.html";
-				}
-				else if ((getQuestItemsCount(player, LIONS_CLAW) >= 10) && (getQuestItemsCount(player, LIONS_EYE) >= 8))
-				{
+				} else if ((getQuestItemsCount(player, LIONS_CLAW) >= 10) && (getQuestItemsCount(player, LIONS_EYE) >= 8)) {
 					takeItems(player, LIONS_EYE, 8);
-					if (chance < 25)
-					{
+					if (chance < 25) {
 						giveItems(player, HEALING_POTION, 50);
-					}
-					else if (chance < 50)
-					{
-						if (player.isInCategory(CategoryType.FIGHTER_GROUP))
-						{
+					} else if (chance < 50) {
+						if (player.isInCategory(CategoryType.FIGHTER_GROUP)) {
 							giveItems(player, SOULSHOT_D_GRADE, 400);
-						}
-						else if (player.isInCategory(CategoryType.MAGE_GROUP))
-						{
+						} else if (player.isInCategory(CategoryType.MAGE_GROUP)) {
 							giveItems(player, SPIRITSHOT_D_GRADE, 200);
 						}
-					}
-					else if (chance < 75)
-					{
+					} else if (chance < 75) {
 						giveItems(player, SCROLL_OF_ESCAPE, 30);
-					}
-					else
-					{
+					} else {
 						giveItems(player, ALACRITY_POTION, 4);
 					}
 					takeItems(player, LIONS_CLAW, 10);
@@ -291,8 +237,7 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 				}
 				break;
 			}
-			case "30735-20.html":
-			{
+			case "30735-20.html": {
 				takeItems(player, SOPHYAS_1ST_ORDER, -1);
 				takeItems(player, SOPHYAS_2ND_ORDER, -1);
 				takeItems(player, SOPHYAS_3RD_ORDER, -1);
@@ -300,45 +245,34 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 				htmltext = event;
 				break;
 			}
-			case "30735-26.html":
-			{
-				if (hasQuestItems(player, BLACK_LION_MARK))
-				{
+			case "30735-26.html": {
+				if (hasQuestItems(player, BLACK_LION_MARK)) {
 					giveAdena(player, 12400, true);
 					qs.exitQuest(true, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30130-04.html":
-			{
-				if (hasQuestItems(player, COMPLETE_STATUE_OF_SHILEN))
-				{
+			case "30130-04.html": {
+				if (hasQuestItems(player, COMPLETE_STATUE_OF_SHILEN)) {
 					giveAdena(player, 30000, true);
 					takeItems(player, COMPLETE_STATUE_OF_SHILEN, 1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30471-03.html":
-			{
-				if (!hasQuestItems(player, STATUE_OF_SHILEN_HEAD, STATUE_OF_SHILEN_TORSO, STATUE_OF_SHILEN_ARM, STATUE_OF_SHILEN_LEG))
-				{
+			case "30471-03.html": {
+				if (!hasQuestItems(player, STATUE_OF_SHILEN_HEAD, STATUE_OF_SHILEN_TORSO, STATUE_OF_SHILEN_ARM, STATUE_OF_SHILEN_LEG)) {
 					htmltext = event;
-				}
-				else
-				{
-					if (getRandom(100) < 50)
-					{
+				} else {
+					if (getRandom(100) < 50) {
 						giveItems(player, COMPLETE_STATUE_OF_SHILEN, 1);
 						takeItems(player, STATUE_OF_SHILEN_HEAD, 1);
 						takeItems(player, STATUE_OF_SHILEN_TORSO, 1);
 						takeItems(player, STATUE_OF_SHILEN_ARM, 1);
 						takeItems(player, STATUE_OF_SHILEN_LEG, 1);
 						htmltext = "30471-04.html";
-					}
-					else
-					{
+					} else {
 						takeItems(player, STATUE_OF_SHILEN_HEAD, 1);
 						takeItems(player, STATUE_OF_SHILEN_TORSO, 1);
 						takeItems(player, STATUE_OF_SHILEN_ARM, 1);
@@ -348,25 +282,18 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 				}
 				break;
 			}
-			case "30471-06.html":
-			{
-				if (!hasQuestItems(player, FRAGMENT_OF_ANCIENT_TABLET_1ST_PIECE, FRAGMENT_OF_ANCIENT_TABLET_2ND_PIECE, FRAGMENT_OF_ANCIENT_TABLET_3RD_PIECE, FRAGMENT_OF_ANCIENT_TABLET_4TH_PIECE))
-				{
+			case "30471-06.html": {
+				if (!hasQuestItems(player, FRAGMENT_OF_ANCIENT_TABLET_1ST_PIECE, FRAGMENT_OF_ANCIENT_TABLET_2ND_PIECE, FRAGMENT_OF_ANCIENT_TABLET_3RD_PIECE, FRAGMENT_OF_ANCIENT_TABLET_4TH_PIECE)) {
 					htmltext = event;
-				}
-				else
-				{
-					if (getRandom(100) < 50)
-					{
+				} else {
+					if (getRandom(100) < 50) {
 						giveItems(player, COMPLETE_ANCIENT_TABLET, 1);
 						takeItems(player, FRAGMENT_OF_ANCIENT_TABLET_1ST_PIECE, 1);
 						takeItems(player, FRAGMENT_OF_ANCIENT_TABLET_2ND_PIECE, 1);
 						takeItems(player, FRAGMENT_OF_ANCIENT_TABLET_3RD_PIECE, 1);
 						takeItems(player, FRAGMENT_OF_ANCIENT_TABLET_4TH_PIECE, 1);
 						htmltext = "30471-07.html";
-					}
-					else
-					{
+					} else {
 						takeItems(player, FRAGMENT_OF_ANCIENT_TABLET_1ST_PIECE, 1);
 						takeItems(player, FRAGMENT_OF_ANCIENT_TABLET_2ND_PIECE, 1);
 						takeItems(player, FRAGMENT_OF_ANCIENT_TABLET_3RD_PIECE, 1);
@@ -376,256 +303,149 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 				}
 				break;
 			}
-			case "30531-04.html":
-			{
-				if (hasQuestItems(player, COMPLETE_ANCIENT_TABLET))
-				{
+			case "30531-04.html": {
+				if (hasQuestItems(player, COMPLETE_ANCIENT_TABLET)) {
 					giveAdena(player, 30000, true);
 					takeItems(player, COMPLETE_ANCIENT_TABLET, 1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30736-03.html":
-			{
-				if ((getQuestItemsCount(player, Inventory.ADENA_ID) < 650) && ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1))
-				{
+			case "30736-03.html": {
+				if ((getQuestItemsCount(player, Inventory.ADENA_ID) < 650) && ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1)) {
 					htmltext = event;
-				}
-				else if ((getQuestItemsCount(player, Inventory.ADENA_ID) >= 650) && ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1))
-				{
+				} else if ((getQuestItemsCount(player, Inventory.ADENA_ID) >= 650) && ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1)) {
 					takeItems(player, Inventory.ADENA_ID, 650);
-					if (hasQuestItems(player, CARGO_BOX_1ST))
-					{
+					if (hasQuestItems(player, CARGO_BOX_1ST)) {
 						takeItems(player, CARGO_BOX_1ST, 1);
-					}
-					else if (hasQuestItems(player, CARGO_BOX_2ND))
-					{
+					} else if (hasQuestItems(player, CARGO_BOX_2ND)) {
 						takeItems(player, CARGO_BOX_2ND, 1);
-					}
-					else if (hasQuestItems(player, CARGO_BOX_3RD))
-					{
+					} else if (hasQuestItems(player, CARGO_BOX_3RD)) {
 						takeItems(player, CARGO_BOX_3RD, 1);
-					}
-					else if (hasQuestItems(player, CARGO_BOX_4TH))
-					{
+					} else if (hasQuestItems(player, CARGO_BOX_4TH)) {
 						takeItems(player, CARGO_BOX_4TH, 1);
 					}
 					
-					if (chance < 40)
-					{
-						if (chance1 < 33)
-						{
+					if (chance < 40) {
+						if (chance1 < 33) {
 							giveItems(player, GLUDIO_APPLES, 1);
 							htmltext = "30736-04a.html";
-						}
-						else if (chance1 < 66)
-						{
+						} else if (chance1 < 66) {
 							giveItems(player, DION_CORN_MEAL, 1);
 							htmltext = "30736-04b.html";
-						}
-						else
-						{
+						} else {
 							giveItems(player, DIRE_WOLF_PELTS, 1);
 							htmltext = "30736-04c.html";
 						}
-					}
-					else if (chance < 60)
-					{
-						if (chance1 < 33)
-						{
+					} else if (chance < 60) {
+						if (chance1 < 33) {
 							giveItems(player, MOONSTONE, 1);
 							htmltext = "30736-04d.html";
-						}
-						else if (chance1 < 66)
-						{
+						} else if (chance1 < 66) {
 							giveItems(player, GLUDIO_WHEAT_FLOUR, 1);
 							htmltext = "30736-04e.html";
-						}
-						else
-						{
+						} else {
 							giveItems(player, SPIDERSILK_ROPE, 1);
 							htmltext = "30736-04f.html";
 						}
-					}
-					else if (chance < 70)
-					{
-						if (chance1 < 33)
-						{
+					} else if (chance < 70) {
+						if (chance1 < 33) {
 							giveItems(player, ALEXANDRITE, 1);
 							htmltext = "30736-04g.html";
-						}
-						else if (chance1 < 66)
-						{
+						} else if (chance1 < 66) {
 							giveItems(player, SILVER_TEA_SERVICE, 1);
 							htmltext = "30736-04h.html";
-						}
-						else
-						{
+						} else {
 							giveItems(player, MECHANIC_GOLEM_SPACE_PARTS, 1);
 							htmltext = "30736-04i.html";
 						}
-					}
-					else if (chance < 75)
-					{
-						if (chance1 < 33)
-						{
+					} else if (chance < 75) {
+						if (chance1 < 33) {
 							giveItems(player, FIRE_EMERALD, 1);
 							htmltext = "30736-04j.html";
-						}
-						else if (chance1 < 66)
-						{
+						} else if (chance1 < 66) {
 							giveItems(player, AVELLAN_SILK_FROCK, 1);
 							htmltext = "30736-04k.html";
-						}
-						else
-						{
+						} else {
 							giveItems(player, FERIOTIC_PORCELAIN_URM, 1);
 							htmltext = "30736-04l.html";
 						}
-					}
-					else if (chance < 76)
-					{
+					} else if (chance < 76) {
 						giveItems(player, IMPERIAL_DIAMOND, 1);
 						htmltext = "30736-04m.html";
-					}
-					else if (getRandom(100) < 50)
-					{
-						if (chance1 < 25)
-						{
+					} else if (getRandom(100) < 50) {
+						if (chance1 < 25) {
 							giveItems(player, STATUE_OF_SHILEN_HEAD, 1);
-						}
-						else if (chance1 < 50)
-						{
+						} else if (chance1 < 50) {
 							giveItems(player, STATUE_OF_SHILEN_TORSO, 1);
-						}
-						else if (chance1 < 75)
-						{
+						} else if (chance1 < 75) {
 							giveItems(player, STATUE_OF_SHILEN_ARM, 1);
-						}
-						else
-						{
+						} else {
 							giveItems(player, STATUE_OF_SHILEN_LEG, 1);
 						}
 						htmltext = "30736-04n.html";
-					}
-					else
-					{
-						if (chance1 < 25)
-						{
+					} else {
+						if (chance1 < 25) {
 							giveItems(player, FRAGMENT_OF_ANCIENT_TABLET_1ST_PIECE, 1);
-						}
-						else if (chance1 < 50)
-						{
+						} else if (chance1 < 50) {
 							giveItems(player, FRAGMENT_OF_ANCIENT_TABLET_2ND_PIECE, 1);
-						}
-						else if (chance1 < 75)
-						{
+						} else if (chance1 < 75) {
 							giveItems(player, FRAGMENT_OF_ANCIENT_TABLET_3RD_PIECE, 1);
-						}
-						else
-						{
+						} else {
 							giveItems(player, FRAGMENT_OF_ANCIENT_TABLET_4TH_PIECE, 1);
 						}
 						htmltext = "30736-04o.html";
 					}
-				}
-				else if ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) < 1)
-				{
+				} else if ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) < 1) {
 					htmltext = "30736-05.html";
 				}
 				break;
 			}
-			case "30736-07.html":
-			{
-				if (player.getAdena() < (200 + (qs.getMemoState() * 200)))
-				{
+			case "30736-07.html": {
+				if (player.getAdena() < (200 + (qs.getMemoState() * 200))) {
 					htmltext = event;
-				}
-				else if ((qs.getMemoState() * 100) > 200)
-				{
+				} else if ((qs.getMemoState() * 100) > 200) {
 					htmltext = "30736-08.html";
-				}
-				else
-				{
-					if (chance < 5)
-					{
+				} else {
+					if (chance < 5) {
 						htmltext = "30736-08a.html";
-					}
-					else if (chance < 10)
-					{
+					} else if (chance < 10) {
 						htmltext = "30736-08b.html";
-					}
-					else if (chance < 15)
-					{
+					} else if (chance < 15) {
 						htmltext = "30736-08c.html";
-					}
-					else if (chance < 20)
-					{
+					} else if (chance < 20) {
 						htmltext = "30736-08d.html";
-					}
-					else if (chance < 25)
-					{
+					} else if (chance < 25) {
 						htmltext = "30736-08e.html";
-					}
-					else if (chance < 30)
-					{
+					} else if (chance < 30) {
 						htmltext = "30736-08f.html";
-					}
-					else if (chance < 35)
-					{
+					} else if (chance < 35) {
 						htmltext = "30736-08g.html";
-					}
-					else if (chance < 40)
-					{
+					} else if (chance < 40) {
 						htmltext = "30736-08h.html";
-					}
-					else if (chance < 45)
-					{
+					} else if (chance < 45) {
 						htmltext = "30736-08i.html";
-					}
-					else if (chance < 50)
-					{
+					} else if (chance < 50) {
 						htmltext = "30736-08j.html";
-					}
-					else if (chance < 55)
-					{
+					} else if (chance < 55) {
 						htmltext = "30736-08k.html";
-					}
-					else if (chance < 60)
-					{
+					} else if (chance < 60) {
 						htmltext = "30736-08l.html";
-					}
-					else if (chance < 65)
-					{
+					} else if (chance < 65) {
 						htmltext = "30736-08m.html";
-					}
-					else if (chance < 70)
-					{
+					} else if (chance < 70) {
 						htmltext = "30736-08n.html";
-					}
-					else if (chance < 75)
-					{
+					} else if (chance < 75) {
 						htmltext = "30736-08o.html";
-					}
-					else if (chance < 80)
-					{
+					} else if (chance < 80) {
 						htmltext = "30736-08p.html";
-					}
-					else if (chance < 85)
-					{
+					} else if (chance < 85) {
 						htmltext = "30736-08q.html";
-					}
-					else if (chance < 90)
-					{
+					} else if (chance < 90) {
 						htmltext = "30736-08r.html";
-					}
-					else if (chance < 95)
-					{
+					} else if (chance < 95) {
 						htmltext = "30736-08s.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30736-08t.html";
 					}
 					takeItems(player, Inventory.ADENA_ID, 200 + (qs.getMemoState() * 200));
@@ -633,52 +453,33 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 				}
 				break;
 			}
-			case "30737-06.html":
-			{
-				if ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) < 1)
-				{
+			case "30737-06.html": {
+				if ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) < 1) {
 					htmltext = event;
-				}
-				else
-				{
-					if (hasQuestItems(player, CARGO_BOX_1ST))
-					{
+				} else {
+					if (hasQuestItems(player, CARGO_BOX_1ST)) {
 						takeItems(player, CARGO_BOX_1ST, 1);
-					}
-					else if (hasQuestItems(player, CARGO_BOX_2ND))
-					{
+					} else if (hasQuestItems(player, CARGO_BOX_2ND)) {
 						takeItems(player, CARGO_BOX_2ND, 1);
-					}
-					else if (hasQuestItems(player, CARGO_BOX_3RD))
-					{
+					} else if (hasQuestItems(player, CARGO_BOX_3RD)) {
 						takeItems(player, CARGO_BOX_3RD, 1);
-					}
-					else if (hasQuestItems(player, CARGO_BOX_4TH))
-					{
+					} else if (hasQuestItems(player, CARGO_BOX_4TH)) {
 						takeItems(player, CARGO_BOX_4TH, 1);
 					}
 					
-					if (getQuestItemsCount(player, GUILD_COIN) < 80)
-					{
+					if (getQuestItemsCount(player, GUILD_COIN) < 80) {
 						giveItems(player, GUILD_COIN, 1);
-					}
-					else
-					{
+					} else {
 						takeItems(player, GUILD_COIN, 80);
 					}
 					
-					if (getQuestItemsCount(player, GUILD_COIN) < 40)
-					{
+					if (getQuestItemsCount(player, GUILD_COIN) < 40) {
 						giveAdena(player, 100, true);
 						htmltext = "30737-03.html";
-					}
-					else if ((getQuestItemsCount(player, GUILD_COIN) >= 40) && (getQuestItemsCount(player, GUILD_COIN) < 80))
-					{
+					} else if ((getQuestItemsCount(player, GUILD_COIN) >= 40) && (getQuestItemsCount(player, GUILD_COIN) < 80)) {
 						giveAdena(player, 200, true);
 						htmltext = "30737-04.html";
-					}
-					else
-					{
+					} else {
 						giveAdena(player, 300, true);
 						htmltext = "30737-05.html";
 					}
@@ -690,308 +491,227 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case MARSH_STAKATO:
-				{
-					if (hasQuestItems(killer, SOPHYAS_4TH_ORDER))
-					{
-						if (getRandom(100) < 55)
-						{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
+				case MARSH_STAKATO: {
+					if (hasQuestItems(killer, SOPHYAS_4TH_ORDER)) {
+						if (getRandom(100) < 55) {
 							giveItems(killer, STAKATO_TALON, 1);
 						}
-						if (getRandom(100) < 12)
-						{
+						if (getRandom(100) < 12) {
 							giveItems(killer, CARGO_BOX_4TH, 1);
 						}
-						if ((getRandom(100) < 2) && hasQuestItems(killer, SOPHYAS_4TH_ORDER))
-						{
+						if ((getRandom(100) < 2) && hasQuestItems(killer, SOPHYAS_4TH_ORDER)) {
 							addSpawn(MARSH_STAKATO_MARQUESS, npc, true, 0, false);
 						}
 					}
 					break;
 				}
-				case NEER_CRAWLER:
-				{
-					if (hasQuestItems(killer, SOPHYAS_1ST_ORDER))
-					{
-						if (getRandom(2) == 0)
-						{
+				case NEER_CRAWLER: {
+					if (hasQuestItems(killer, SOPHYAS_1ST_ORDER)) {
+						if (getRandom(2) == 0) {
 							giveItems(killer, UNDEAD_ASH, 1);
 						}
-						if (getRandom(100) < 11)
-						{
+						if (getRandom(100) < 11) {
 							giveItems(killer, CARGO_BOX_1ST, 1);
 						}
 					}
 					break;
 				}
-				case SPECTER:
-				{
-					if (hasQuestItems(killer, SOPHYAS_1ST_ORDER))
-					{
-						if (getRandom(100) < 60)
-						{
+				case SPECTER: {
+					if (hasQuestItems(killer, SOPHYAS_1ST_ORDER)) {
+						if (getRandom(100) < 60) {
 							giveItems(killer, UNDEAD_ASH, 1);
 						}
-						if (getRandom(100) < 8)
-						{
+						if (getRandom(100) < 8) {
 							giveItems(killer, CARGO_BOX_1ST, 1);
 						}
 					}
 					break;
 				}
-				case SORROW_MAIDEN:
-				{
-					if (hasQuestItems(killer, SOPHYAS_1ST_ORDER))
-					{
-						if (getRandom(100) < 60)
-						{
+				case SORROW_MAIDEN: {
+					if (hasQuestItems(killer, SOPHYAS_1ST_ORDER)) {
+						if (getRandom(100) < 60) {
 							giveItems(killer, UNDEAD_ASH, 1);
 						}
-						if (getRandom(100) < 9)
-						{
+						if (getRandom(100) < 9) {
 							giveItems(killer, CARGO_BOX_1ST, 1);
 						}
 					}
 					break;
 				}
-				case NEER_CRAWLER_BERSERKER:
-				{
-					if (hasQuestItems(killer, SOPHYAS_1ST_ORDER))
-					{
-						if (getRandom(2) == 0)
-						{
+				case NEER_CRAWLER_BERSERKER: {
+					if (hasQuestItems(killer, SOPHYAS_1ST_ORDER)) {
+						if (getRandom(2) == 0) {
 							giveItems(killer, UNDEAD_ASH, 1);
 						}
-						if (getRandom(100) < 12)
-						{
+						if (getRandom(100) < 12) {
 							giveItems(killer, CARGO_BOX_1ST, 1);
 						}
 					}
 					break;
 				}
-				case STRAIN:
-				{
-					if (hasQuestItems(killer, SOPHYAS_1ST_ORDER))
-					{
-						if (getRandom(2) == 0)
-						{
+				case STRAIN: {
+					if (hasQuestItems(killer, SOPHYAS_1ST_ORDER)) {
+						if (getRandom(2) == 0) {
 							giveItems(killer, UNDEAD_ASH, 1);
 						}
-						if (getRandom(100) < 13)
-						{
+						if (getRandom(100) < 13) {
 							giveItems(killer, CARGO_BOX_1ST, 1);
 						}
 					}
 					break;
 				}
-				case GHOUL:
-				{
-					if (hasQuestItems(killer, SOPHYAS_1ST_ORDER))
-					{
-						if (getRandom(2) == 0)
-						{
+				case GHOUL: {
+					if (hasQuestItems(killer, SOPHYAS_1ST_ORDER)) {
+						if (getRandom(2) == 0) {
 							giveItems(killer, UNDEAD_ASH, 1);
 						}
-						if (getRandom(100) < 15)
-						{
+						if (getRandom(100) < 15) {
 							giveItems(killer, CARGO_BOX_1ST, 1);
 						}
 					}
 					break;
 				}
-				case OL_MAHUM_GUERILLA:
-				{
-					if (hasQuestItems(killer, SOPHYAS_2ND_ORDER))
-					{
-						if (getRandom(2) == 0)
-						{
+				case OL_MAHUM_GUERILLA: {
+					if (hasQuestItems(killer, SOPHYAS_2ND_ORDER)) {
+						if (getRandom(2) == 0) {
 							giveItems(killer, BLOODY_AXE_INSIGNIA, 1);
 						}
-						if (getRandom(100) < 9)
-						{
+						if (getRandom(100) < 9) {
 							giveItems(killer, CARGO_BOX_2ND, 1);
 						}
 					}
 					break;
 				}
-				case OL_MAHUM_RAIDER:
-				{
-					if (hasQuestItems(killer, SOPHYAS_2ND_ORDER))
-					{
-						if (getRandom(2) == 0)
-						{
+				case OL_MAHUM_RAIDER: {
+					if (hasQuestItems(killer, SOPHYAS_2ND_ORDER)) {
+						if (getRandom(2) == 0) {
 							giveItems(killer, BLOODY_AXE_INSIGNIA, 1);
 						}
-						if (getRandom(100) < 10)
-						{
+						if (getRandom(100) < 10) {
 							giveItems(killer, CARGO_BOX_2ND, 1);
 						}
 					}
 					break;
 				}
-				case OL_MAHUM_MARKSMAN:
-				{
-					if (hasQuestItems(killer, SOPHYAS_2ND_ORDER))
-					{
-						if (getRandom(2) == 0)
-						{
+				case OL_MAHUM_MARKSMAN: {
+					if (hasQuestItems(killer, SOPHYAS_2ND_ORDER)) {
+						if (getRandom(2) == 0) {
 							giveItems(killer, BLOODY_AXE_INSIGNIA, 1);
 						}
-						if (getRandom(100) < 11)
-						{
+						if (getRandom(100) < 11) {
 							giveItems(killer, CARGO_BOX_2ND, 1);
 						}
 					}
 					break;
 				}
-				case OL_MAHUM_SERGEANT:
-				{
-					if (hasQuestItems(killer, SOPHYAS_2ND_ORDER))
-					{
-						if (getRandom(2) == 0)
-						{
+				case OL_MAHUM_SERGEANT: {
+					if (hasQuestItems(killer, SOPHYAS_2ND_ORDER)) {
+						if (getRandom(2) == 0) {
 							giveItems(killer, BLOODY_AXE_INSIGNIA, 1);
 						}
-						if (getRandom(100) < 12)
-						{
+						if (getRandom(100) < 12) {
 							giveItems(killer, CARGO_BOX_2ND, 1);
 						}
 					}
 					break;
 				}
-				case OL_MAHUM_CAPTAIN:
-				{
-					if (hasQuestItems(killer, SOPHYAS_2ND_ORDER))
-					{
-						if (getRandom(2) == 0)
-						{
+				case OL_MAHUM_CAPTAIN: {
+					if (hasQuestItems(killer, SOPHYAS_2ND_ORDER)) {
+						if (getRandom(2) == 0) {
 							giveItems(killer, BLOODY_AXE_INSIGNIA, 1);
 						}
-						if (getRandom(100) < 13)
-						{
+						if (getRandom(100) < 13) {
 							giveItems(killer, CARGO_BOX_2ND, 1);
 						}
 					}
 					break;
 				}
-				case MARSH_STAKATO_WORKER:
-				{
-					if (hasQuestItems(killer, SOPHYAS_4TH_ORDER))
-					{
-						if (getRandom(100) < 60)
-						{
+				case MARSH_STAKATO_WORKER: {
+					if (hasQuestItems(killer, SOPHYAS_4TH_ORDER)) {
+						if (getRandom(100) < 60) {
 							giveItems(killer, STAKATO_TALON, 1);
 						}
-						if (getRandom(100) < 13)
-						{
+						if (getRandom(100) < 13) {
 							giveItems(killer, CARGO_BOX_4TH, 1);
 						}
-						if ((getRandom(100) < 2) && hasQuestItems(killer, SOPHYAS_4TH_ORDER))
-						{
+						if ((getRandom(100) < 2) && hasQuestItems(killer, SOPHYAS_4TH_ORDER)) {
 							addSpawn(MARSH_STAKATO_MARQUESS, npc, true, 0, false);
 						}
 					}
 					break;
 				}
-				case MARSH_STAKATO_SOLDIER:
-				{
-					if (hasQuestItems(killer, SOPHYAS_4TH_ORDER))
-					{
-						if (getRandom(100) < 56)
-						{
+				case MARSH_STAKATO_SOLDIER: {
+					if (hasQuestItems(killer, SOPHYAS_4TH_ORDER)) {
+						if (getRandom(100) < 56) {
 							giveItems(killer, STAKATO_TALON, 1);
 						}
-						if (getRandom(100) < 14)
-						{
+						if (getRandom(100) < 14) {
 							giveItems(killer, CARGO_BOX_4TH, 1);
 						}
-						if ((getRandom(100) < 2) && hasQuestItems(killer, SOPHYAS_4TH_ORDER))
-						{
+						if ((getRandom(100) < 2) && hasQuestItems(killer, SOPHYAS_4TH_ORDER)) {
 							addSpawn(MARSH_STAKATO_MARQUESS, npc, true, 0, false);
 						}
 					}
 					break;
 				}
-				case MARSH_STAKATO_DRONE:
-				{
-					if (hasQuestItems(killer, SOPHYAS_4TH_ORDER))
-					{
-						if (getRandom(100) < 60)
-						{
+				case MARSH_STAKATO_DRONE: {
+					if (hasQuestItems(killer, SOPHYAS_4TH_ORDER)) {
+						if (getRandom(100) < 60) {
 							giveItems(killer, STAKATO_TALON, 1);
 						}
-						if (getRandom(100) < 15)
-						{
+						if (getRandom(100) < 15) {
 							giveItems(killer, CARGO_BOX_4TH, 1);
 						}
-						if ((getRandom(100) < 2) && hasQuestItems(killer, SOPHYAS_4TH_ORDER))
-						{
+						if ((getRandom(100) < 2) && hasQuestItems(killer, SOPHYAS_4TH_ORDER)) {
 							addSpawn(MARSH_STAKATO_MARQUESS, npc, true, 0, false);
 						}
 					}
 					break;
 				}
 				case DELU_LIZARDMAN:
-				case DELU_LIZARDMAN_SCOUT:
-				{
-					if (hasQuestItems(killer, SOPHYAS_3RD_ORDER))
-					{
-						if (getRandom(2) == 0)
-						{
+				case DELU_LIZARDMAN_SCOUT: {
+					if (hasQuestItems(killer, SOPHYAS_3RD_ORDER)) {
+						if (getRandom(2) == 0) {
 							giveItems(killer, DELU_LIZARDMAN_FANG, 1);
 						}
-						if (getRandom(100) < 14)
-						{
+						if (getRandom(100) < 14) {
 							giveItems(killer, CARGO_BOX_3RD, 1);
 						}
 					}
-					if ((getRandom(100) < 3) && hasQuestItems(killer, SOPHYAS_3RD_ORDER))
-					{
+					if ((getRandom(100) < 3) && hasQuestItems(killer, SOPHYAS_3RD_ORDER)) {
 						addSpawn(DELU_LIZARDMAN_HEADHUNTER, npc, true, 0, false);
 						addSpawn(DELU_LIZARDMAN_HEADHUNTER, npc, true, 0, false);
 					}
 					break;
 				}
-				case DELU_LIZARDMAN_WARRIOR:
-				{
-					if (hasQuestItems(killer, SOPHYAS_3RD_ORDER))
-					{
-						if (getRandom(2) == 0)
-						{
+				case DELU_LIZARDMAN_WARRIOR: {
+					if (hasQuestItems(killer, SOPHYAS_3RD_ORDER)) {
+						if (getRandom(2) == 0) {
 							giveItems(killer, DELU_LIZARDMAN_FANG, 1);
 						}
-						if (getRandom(100) < 15)
-						{
+						if (getRandom(100) < 15) {
 							giveItems(killer, CARGO_BOX_3RD, 1);
 						}
 					}
-					if ((getRandom(100) < 3) && hasQuestItems(killer, SOPHYAS_3RD_ORDER))
-					{
+					if ((getRandom(100) < 3) && hasQuestItems(killer, SOPHYAS_3RD_ORDER)) {
 						addSpawn(DELU_LIZARDMAN_HEADHUNTER, npc, true, 0, false);
 						addSpawn(DELU_LIZARDMAN_HEADHUNTER, npc, true, 0, false);
 					}
 					break;
 				}
-				case DELU_LIZARDMAN_HEADHUNTER:
-				{
-					if (hasQuestItems(killer, SOPHYAS_3RD_ORDER))
-					{
+				case DELU_LIZARDMAN_HEADHUNTER: {
+					if (hasQuestItems(killer, SOPHYAS_3RD_ORDER)) {
 						giveItems(killer, DELU_LIZARDMAN_FANG, 4);
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;
 				}
-				case MARSH_STAKATO_MARQUESS:
-				{
-					if (hasQuestItems(killer, SOPHYAS_4TH_ORDER))
-					{
+				case MARSH_STAKATO_MARQUESS: {
+					if (hasQuestItems(killer, SOPHYAS_4TH_ORDER)) {
 						giveItems(killer, STAKATO_TALON, 8);
 						playSound(qs.getPlayer(), Sound.ITEMSOUND_QUEST_ITEMGET);
 					}
@@ -1003,72 +723,45 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (npc.getId() == MERCENARY_CAPTAIN_SOPHYA)
-			{
-				if (player.getLevel() < MIN_LEVEL)
-				{
+		if (qs.isCreated()) {
+			if (npc.getId() == MERCENARY_CAPTAIN_SOPHYA) {
+				if (player.getLevel() < MIN_LEVEL) {
 					htmltext = "30735-01.htm";
-				}
-				else
-				{
-					if (!hasQuestItems(player, BLACK_LION_MARK))
-					{
+				} else {
+					if (!hasQuestItems(player, BLACK_LION_MARK)) {
 						htmltext = "30735-02.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "30735-03.htm";
 					}
 				}
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case MERCENARY_CAPTAIN_SOPHYA:
-				{
-					if ((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 0)
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case MERCENARY_CAPTAIN_SOPHYA: {
+					if ((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 0) {
 						htmltext = "30735-14.html";
-					}
-					else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1)
+					} else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1)
 						&& ((getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON)) < 1)
-						&& ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) < 1))
-					{
+						&& ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) < 1)) {
 						htmltext = "30735-15.html";
-					}
-					else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1)
+					} else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1)
 						&& ((getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON)) < 1)
-						&& ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1))
-					{
+						&& ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1)) {
 						htmltext = "30735-15a.html";
-					}
-					else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1)
+					} else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1)
 						&& ((getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON)) >= 1)
-						&& ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) == 0))
-					{
+						&& ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) == 0)) {
 						final long itemcount = getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON);
-						if (itemcount < 20)
-						{
-						
-						}
-						else if (itemcount < 50)
-						{
+						if (itemcount < 20) {
+							
+						} else if (itemcount < 50) {
 							giveItems(player, LIONS_CLAW, 1);
-						}
-						else if (itemcount < 100)
-						{
+						} else if (itemcount < 100) {
 							giveItems(player, LIONS_CLAW, 2);
-						}
-						else
-						{
+						} else {
 							giveItems(player, LIONS_CLAW, 3);
 						}
 						final long ash = getQuestItemsCount(player, UNDEAD_ASH);
@@ -1082,26 +775,17 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 						takeItems(player, STAKATO_TALON, -1);
 						qs.setMemoState(0);
 						htmltext = "30735-22.html";
-					}
-					else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1)
+					} else if (((getQuestItemsCount(player, SOPHYAS_1ST_ORDER) + getQuestItemsCount(player, SOPHYAS_2ND_ORDER) + getQuestItemsCount(player, SOPHYAS_3RD_ORDER) + getQuestItemsCount(player, SOPHYAS_4TH_ORDER)) == 1)
 						&& ((getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON)) >= 1)
-						&& ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1))
-					{
+						&& ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1)) {
 						final long itemcount = getQuestItemsCount(player, UNDEAD_ASH) + getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) + getQuestItemsCount(player, DELU_LIZARDMAN_FANG) + getQuestItemsCount(player, STAKATO_TALON);
-						if (itemcount < 20)
-						{
-						
-						}
-						else if (itemcount < 50)
-						{
+						if (itemcount < 20) {
+							
+						} else if (itemcount < 50) {
 							giveItems(player, LIONS_CLAW, 1);
-						}
-						else if (itemcount < 100)
-						{
+						} else if (itemcount < 100) {
 							giveItems(player, LIONS_CLAW, 2);
-						}
-						else
-						{
+						} else {
 							giveItems(player, LIONS_CLAW, 3);
 						}
 						giveAdena(player, (getQuestItemsCount(player, UNDEAD_ASH) * 35), true);
@@ -1117,79 +801,53 @@ public final class Q00333_HuntOfTheBlackLion extends Quest
 					}
 					break;
 				}
-				case ABYSSAL_CELEBRANT_UNDRIAS:
-				{
-					if (!hasQuestItems(player, COMPLETE_STATUE_OF_SHILEN))
-					{
-						if ((getQuestItemsCount(player, STATUE_OF_SHILEN_HEAD) + getQuestItemsCount(player, STATUE_OF_SHILEN_TORSO) + getQuestItemsCount(player, STATUE_OF_SHILEN_ARM) + getQuestItemsCount(player, STATUE_OF_SHILEN_LEG)) >= 1)
-						{
+				case ABYSSAL_CELEBRANT_UNDRIAS: {
+					if (!hasQuestItems(player, COMPLETE_STATUE_OF_SHILEN)) {
+						if ((getQuestItemsCount(player, STATUE_OF_SHILEN_HEAD) + getQuestItemsCount(player, STATUE_OF_SHILEN_TORSO) + getQuestItemsCount(player, STATUE_OF_SHILEN_ARM) + getQuestItemsCount(player, STATUE_OF_SHILEN_LEG)) >= 1) {
 							htmltext = "30130-02.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30130-01.html";
 						}
-					}
-					else
-					{
+					} else {
 						htmltext = "30130-03.html";
 					}
 					break;
 				}
-				case BLACKSMITH_RUPIO:
-				{
+				case BLACKSMITH_RUPIO: {
 					if (((getQuestItemsCount(player, STATUE_OF_SHILEN_HEAD) + getQuestItemsCount(player, STATUE_OF_SHILEN_TORSO) + getQuestItemsCount(player, STATUE_OF_SHILEN_ARM) + getQuestItemsCount(player, STATUE_OF_SHILEN_LEG)) >= 1)
 						|| ((getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_1ST_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_2ND_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_3RD_PIECE)
-							+ getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_4TH_PIECE)) >= 1))
-					{
+							+ getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_4TH_PIECE)) >= 1)) {
 						htmltext = "30471-02.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30471-01.html";
 					}
 					break;
 				}
-				case IRON_GATES_LOCKIRIN:
-				{
-					if (!hasQuestItems(player, COMPLETE_ANCIENT_TABLET))
-					{
+				case IRON_GATES_LOCKIRIN: {
+					if (!hasQuestItems(player, COMPLETE_ANCIENT_TABLET)) {
 						if ((getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_1ST_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_2ND_PIECE) + getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_3RD_PIECE)
-							+ getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_4TH_PIECE)) >= 1)
-						{
+							+ getQuestItemsCount(player, FRAGMENT_OF_ANCIENT_TABLET_4TH_PIECE)) >= 1) {
 							htmltext = "30531-02.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30531-01.html";
 						}
-					}
-					else
-					{
+					} else {
 						htmltext = "30531-03.html";
 					}
 					break;
 				}
-				case MERCENARY_REEDFOOT:
-				{
-					if ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1)
-					{
+				case MERCENARY_REEDFOOT: {
+					if ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1) {
 						htmltext = "30736-02.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30736-01.html";
 					}
 					break;
 				}
-				case GUILDSMAN_MORGON:
-				{
-					if ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1)
-					{
+				case GUILDSMAN_MORGON: {
+					if ((getQuestItemsCount(player, CARGO_BOX_1ST) + getQuestItemsCount(player, CARGO_BOX_2ND) + getQuestItemsCount(player, CARGO_BOX_3RD) + getQuestItemsCount(player, CARGO_BOX_4TH)) >= 1) {
 						htmltext = "30737-02.html";
-					}
-					else
-					{
+					} else {
 						htmltext = "30737-01.html";
 					}
 					break;

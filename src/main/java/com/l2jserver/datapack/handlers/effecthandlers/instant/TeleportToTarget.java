@@ -35,26 +35,21 @@ import com.l2jserver.gameserver.util.Util;
  * Teleport To Target effect implementation.
  * @author Didldak, Adry_85
  */
-public final class TeleportToTarget extends AbstractEffect
-{
-	public TeleportToTarget(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class TeleportToTarget extends AbstractEffect {
+	public TeleportToTarget(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		L2Character activeChar = info.getEffector();
 		L2Character target = info.getEffected();
-		if (target == null)
-		{
+		if (target == null) {
 			return;
 		}
 		
@@ -63,8 +58,7 @@ public final class TeleportToTarget extends AbstractEffect
 		double ph = Util.convertHeadingToDegree(target.getHeading());
 		
 		ph += 180;
-		if (ph > 360)
-		{
+		if (ph > 360) {
 			ph -= 360;
 		}
 		

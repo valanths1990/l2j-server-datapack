@@ -33,13 +33,11 @@ import com.l2jserver.gameserver.network.serverpackets.ExRegenMax;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class TickHp extends AbstractEffect
-{
+public final class TickHp extends AbstractEffect {
 	private final double _power;
 	private final EffectCalculationType _mode;
 	
-	public TickHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public TickHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
@@ -48,54 +46,43 @@ public final class TickHp extends AbstractEffect
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.DMG_OVER_TIME;
 	}
 	
 	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		if (info.getEffected().isDead())
-		{
+	public boolean onActionTime(BuffInfo info) {
+		if (info.getEffected().isDead()) {
 			return false;
 		}
 		
 		final L2Character target = info.getEffected();
 		double power = 0;
 		double hp = target.getCurrentHp();
-		switch (_mode)
-		{
-			case DIFF:
-			{
+		switch (_mode) {
+			case DIFF: {
 				power = _power * getTicksMultiplier();
 				break;
 			}
-			case PER:
-			{
+			case PER: {
 				power = hp * _power * getTicksMultiplier();
 				break;
 			}
 		}
 		
-		if (power < 0)
-		{
+		if (power < 0) {
 			power = Math.abs(power);
-			if (power >= (target.getCurrentHp() - 1))
-			{
+			if (power >= (target.getCurrentHp() - 1)) {
 				power = target.getCurrentHp() - 1;
 			}
 			
 			info.getEffected().reduceCurrentHpByDOT(power, info.getEffector(), info.getSkill());
 			info.getEffected().notifyDamageReceived(power, info.getEffector(), info.getSkill(), false, true, false);
-		}
-		else
-		{
+		} else {
 			final double maxHp = target.getMaxRecoverableHp();
 			
 			// Not needed to set the HP and send update packet if player is already at max HP
-			if (hp > maxHp)
-			{
+			if (hp > maxHp) {
 				return true;
 			}
 			
@@ -105,10 +92,8 @@ public final class TickHp extends AbstractEffect
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (info.getEffected().isPlayer() && (getTicks() > 0) && (info.getSkill().getAbnormalType() == AbnormalType.HP_RECOVER))
-		{
+	public void onStart(BuffInfo info) {
+		if (info.getEffected().isPlayer() && (getTicks() > 0) && (info.getSkill().getAbnormalType() == AbnormalType.HP_RECOVER)) {
 			info.getEffected().sendPacket(new ExRegenMax(info.getAbnormalTime(), getTicks(), _power));
 		}
 	}

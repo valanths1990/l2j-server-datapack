@@ -33,42 +33,33 @@ import com.l2jserver.gameserver.model.zone.ZoneId;
 /**
  * @author St3eT
  */
-public class Ground implements ITargetTypeHandler
-{
+public class Ground implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		final List<L2Character> targetList = new ArrayList<>();
 		final L2PcInstance player = (L2PcInstance) activeChar;
 		final int maxTargets = skill.getAffectLimit();
 		final boolean srcInArena = (activeChar.isInsideZone(ZoneId.PVP) && !activeChar.isInsideZone(ZoneId.SIEGE));
 		
-		for (L2Character character : activeChar.getKnownList().getKnownCharacters())
-		{
-			if ((character != null) && character.isInsideRadius(player.getCurrentSkillWorldPosition(), skill.getAffectRange(), false, false))
-			{
-				if (!Skill.checkForAreaOffensiveSkills(activeChar, character, skill, srcInArena))
-				{
+		for (L2Character character : activeChar.getKnownList().getKnownCharacters()) {
+			if ((character != null) && character.isInsideRadius(player.getCurrentSkillWorldPosition(), skill.getAffectRange(), false, false)) {
+				if (!Skill.checkForAreaOffensiveSkills(activeChar, character, skill, srcInArena)) {
 					continue;
 				}
 				
-				if (character.isDoor())
-				{
+				if (character.isDoor()) {
 					continue;
 				}
 				
-				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
-				{
+				if ((maxTargets > 0) && (targetList.size() >= maxTargets)) {
 					break;
 				}
 				targetList.add(character);
 			}
 		}
 		
-		if (targetList.isEmpty())
-		{
-			if (skill.hasEffectType(L2EffectType.SUMMON_NPC))
-			{
+		if (targetList.isEmpty()) {
+			if (skill.hasEffectType(L2EffectType.SUMMON_NPC)) {
 				targetList.add(activeChar);
 			}
 		}
@@ -76,8 +67,7 @@ public class Ground implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.GROUND;
 	}
 }

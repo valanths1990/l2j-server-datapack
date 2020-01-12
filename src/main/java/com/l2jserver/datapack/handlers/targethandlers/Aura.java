@@ -33,41 +33,31 @@ import com.l2jserver.gameserver.model.zone.ZoneId;
  * Aura target handler.
  * @author UnAfraid
  */
-public class Aura implements ITargetTypeHandler
-{
+public class Aura implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		final List<L2Character> targetList = new ArrayList<>();
 		final boolean srcInArena = (activeChar.isInsideZone(ZoneId.PVP) && !activeChar.isInsideZone(ZoneId.SIEGE));
-		for (L2Character obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getAffectRange()))
-		{
-			if (obj.isDoor() || obj.isAttackable() || obj.isPlayable() || obj.isTrap())
-			{
+		for (L2Character obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getAffectRange())) {
+			if (obj.isDoor() || obj.isAttackable() || obj.isPlayable() || obj.isTrap()) {
 				// Stealth door targeting.
-				if (obj.isDoor())
-				{
+				if (obj.isDoor()) {
 					final L2DoorInstance door = (L2DoorInstance) obj;
-					if (!door.getTemplate().isStealth())
-					{
+					if (!door.getTemplate().isStealth()) {
 						continue;
 					}
 				}
 				
-				if (!Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena))
-				{
+				if (!Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena)) {
 					continue;
 				}
 				
-				if (activeChar.isPlayable() && obj.isAttackable() && !skill.isBad())
-				{
+				if (activeChar.isPlayable() && obj.isAttackable() && !skill.isBad()) {
 					continue;
 				}
 				
-				if (onlyFirst)
-				{
-					return new L2Character[]
-					{
+				if (onlyFirst) {
+					return new L2Character[] {
 						obj
 					};
 				}
@@ -79,8 +69,7 @@ public class Aura implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.AURA;
 	}
 }

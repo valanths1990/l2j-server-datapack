@@ -40,8 +40,7 @@ import com.l2jserver.gameserver.util.Util;
  * Growth-capable mobs: Polymorphing upon successful feeding.
  * @author Fulminus
  */
-public final class FeedableBeasts extends AbstractNpcAI
-{
+public final class FeedableBeasts extends AbstractNpcAI {
 	private static final int GOLDEN_SPICE = 6643;
 	private static final int CRYSTAL_SPICE = 6644;
 	private static final int SKILL_GOLDEN_SPICE = 2188;
@@ -76,8 +75,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 	// @formatter:on
 	
 	private static final Map<Integer, Integer> MAD_COW_POLYMORPH = new HashMap<>();
-	static
-	{
+	static {
 		MAD_COW_POLYMORPH.put(21824, 21468);
 		MAD_COW_POLYMORPH.put(21825, 21469);
 		MAD_COW_POLYMORPH.put(21826, 21487);
@@ -86,8 +84,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 		MAD_COW_POLYMORPH.put(21829, 21507);
 	}
 	
-	private static final NpcStringId[][] TEXT =
-	{
+	private static final NpcStringId[][] TEXT = {
 		{
 			NpcStringId.WHAT_DID_YOU_JUST_DO_TO_ME,
 			NpcStringId.ARE_YOU_TRYING_TO_TAME_ME_DONT_DO_THAT,
@@ -116,8 +113,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 		}
 	};
 	
-	private static final NpcStringId[] TAMED_TEXT =
-	{
+	private static final NpcStringId[] TAMED_TEXT = {
 		NpcStringId.S1_SO_WHAT_DO_YOU_THINK_IT_IS_LIKE_TO_BE_TAMED,
 		NpcStringId.S1_WHENEVER_I_SEE_SPICE_I_THINK_I_WILL_MISS_YOUR_HAND_THAT_USED_TO_FEED_IT_TO_ME,
 		NpcStringId.S1_DONT_GO_TO_THE_VILLAGE_I_DONT_HAVE_THE_STRENGTH_TO_FOLLOW_YOU,
@@ -132,54 +128,45 @@ public final class FeedableBeasts extends AbstractNpcAI
 	private static final Map<Integer, GrowthCapableMob> GROWTH_CAPABLE_MONSTERS = new HashMap<>();
 	
 	// all mobs that grow by eating
-	private static class GrowthCapableMob
-	{
+	private static class GrowthCapableMob {
 		private final int _growthLevel;
 		private final int _chance;
 		
 		private final Map<Integer, int[][]> _spiceToMob = new HashMap<>();
 		
-		public GrowthCapableMob(int growthLevel, int chance)
-		{
+		public GrowthCapableMob(int growthLevel, int chance) {
 			_growthLevel = growthLevel;
 			_chance = chance;
 		}
 		
-		public void addMobs(int spice, int[][] Mobs)
-		{
+		public void addMobs(int spice, int[][] Mobs) {
 			_spiceToMob.put(spice, Mobs);
 		}
 		
-		public Integer getMob(int spice, int mobType, int classType)
-		{
-			if (_spiceToMob.containsKey(spice))
-			{
+		public Integer getMob(int spice, int mobType, int classType) {
+			if (_spiceToMob.containsKey(spice)) {
 				return _spiceToMob.get(spice)[mobType][classType];
 			}
 			return null;
 		}
 		
-		public Integer getRandomMob(int spice)
-		{
+		public Integer getRandomMob(int spice) {
 			int[][] temp;
 			temp = _spiceToMob.get(spice);
 			int rand = getRandom(temp[0].length);
 			return temp[0][rand];
 		}
 		
-		public Integer getChance()
-		{
+		public Integer getChance() {
 			return _chance;
 		}
 		
-		public Integer getGrowthLevel()
-		{
+		public Integer getGrowthLevel() {
 			return _growthLevel;
 		}
 	}
 	
-	private FeedableBeasts()
-	{
+	private FeedableBeasts() {
 		super(FeedableBeasts.class.getSimpleName(), "ai/group_template");
 		addKillId(FEEDABLE_BEASTS);
 		addSkillSeeId(FEEDABLE_BEASTS);
@@ -355,51 +342,36 @@ public final class FeedableBeasts extends AbstractNpcAI
 		GROWTH_CAPABLE_MONSTERS.put(21505, temp);
 	}
 	
-	private void spawnNext(L2Npc npc, int growthLevel, L2PcInstance player, int food)
-	{
+	private void spawnNext(L2Npc npc, int growthLevel, L2PcInstance player, int food) {
 		int npcId = npc.getId();
 		int nextNpcId = 0;
 		
 		// find the next mob to spawn, based on the current npcId, growthlevel, and food.
-		if (growthLevel == 2)
-		{
+		if (growthLevel == 2) {
 			// if tamed, the mob that will spawn depends on the class type (fighter/mage) of the player!
-			if (getRandom(2) == 0)
-			{
-				if (player.getClassId().isMage())
-				{
+			if (getRandom(2) == 0) {
+				if (player.getClassId().isMage()) {
 					nextNpcId = GROWTH_CAPABLE_MONSTERS.get(npcId).getMob(food, 1, 1);
-				}
-				else
-				{
+				} else {
 					nextNpcId = GROWTH_CAPABLE_MONSTERS.get(npcId).getMob(food, 1, 0);
 				}
-			}
-			else
-			{
+			} else {
 				// if not tamed, there is a small chance that have "mad cow" disease.
 				// that is a stronger-than-normal animal that attacks its feeder
-				if (getRandom(5) == 0)
-				{
+				if (getRandom(5) == 0) {
 					nextNpcId = GROWTH_CAPABLE_MONSTERS.get(npcId).getMob(food, 0, 1);
-				}
-				else
-				{
+				} else {
 					nextNpcId = GROWTH_CAPABLE_MONSTERS.get(npcId).getMob(food, 0, 0);
 				}
 			}
-		}
-		else
-		{
+		} else {
 			// all other levels of growth are straight-forward
 			nextNpcId = GROWTH_CAPABLE_MONSTERS.get(npcId).getRandomMob(food);
 		}
 		
 		// remove the feedinfo of the mob that got despawned, if any
-		if (FEED_INFO.containsKey(npc.getObjectId()))
-		{
-			if (FEED_INFO.get(npc.getObjectId()) == player.getObjectId())
-			{
+		if (FEED_INFO.containsKey(npc.getObjectId())) {
+			if (FEED_INFO.get(npc.getObjectId()) == player.getObjectId()) {
 				FEED_INFO.remove(npc.getObjectId());
 			}
 		}
@@ -420,10 +392,8 @@ public final class FeedableBeasts extends AbstractNpcAI
 		
 		// if this is finally a trained mob, then despawn any other trained mobs that the
 		// player might have and initialize the Tamed Beast.
-		if (Util.contains(TAMED_BEASTS, nextNpcId))
-		{
-			for (L2TamedBeastInstance oldTrained : player.getTamedBeasts())
-			{
+		if (Util.contains(TAMED_BEASTS, nextNpcId)) {
+			for (L2TamedBeastInstance oldTrained : player.getTamedBeasts()) {
 				oldTrained.deleteMe();
 			}
 			
@@ -435,8 +405,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 			Q00655_AGrandPlanForTamingWildBeasts.reward(player, nextNpc);
 			
 			// also, perform a rare random chat
-			if (getRandom(20) == 0)
-			{
+			if (getRandom(20) == 0) {
 				NpcStringId message = NpcStringId.getNpcStringId(getRandom(2024, 2029));
 				NpcSay packet = new NpcSay(nextNpc, 0, message);
 				if (message.getParamCount() > 0) // player name, $s1
@@ -459,15 +428,12 @@ public final class FeedableBeasts extends AbstractNpcAI
 			}
 			*/
 			// @formatter:on
-		}
-		else
-		{
+		} else {
 			// if not trained, the newly spawned mob will automatically be aggro against its feeder
 			// (what happened to "never bite the hand that feeds you" anyway?!)
 			L2Attackable nextNpc = (L2Attackable) addSpawn(nextNpcId, npc);
 			
-			if (MAD_COW_POLYMORPH.containsKey(nextNpcId))
-			{
+			if (MAD_COW_POLYMORPH.containsKey(nextNpcId)) {
 				this.startQuestTimer("polymorph Mad Cow", 10000, nextNpc, player);
 			}
 			
@@ -480,15 +446,11 @@ public final class FeedableBeasts extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equalsIgnoreCase("polymorph Mad Cow") && (npc != null) && (player != null))
-		{
-			if (MAD_COW_POLYMORPH.containsKey(npc.getId()))
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.equalsIgnoreCase("polymorph Mad Cow") && (npc != null) && (player != null)) {
+			if (MAD_COW_POLYMORPH.containsKey(npc.getId())) {
 				// remove the feed info from the previous mob
-				if (FEED_INFO.get(npc.getObjectId()) == player.getObjectId())
-				{
+				if (FEED_INFO.get(npc.getObjectId()) == player.getObjectId()) {
 					FEED_INFO.remove(npc.getObjectId());
 				}
 				// despawn the mad cow
@@ -507,47 +469,39 @@ public final class FeedableBeasts extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
-	{
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon) {
 		// this behavior is only run when the target of skill is the passed npc (chest)
 		// i.e. when the player is attempting to open the chest using a skill
-		if (!Util.contains(targets, npc))
-		{
+		if (!Util.contains(targets, npc)) {
 			return super.onSkillSee(npc, caster, skill, targets, isSummon);
 		}
 		// gather some values on local variables
 		int npcId = npc.getId();
 		int skillId = skill.getId();
 		// check if the npc and skills used are valid for this script. Exit if invalid.
-		if ((skillId != SKILL_GOLDEN_SPICE) && (skillId != SKILL_CRYSTAL_SPICE))
-		{
+		if ((skillId != SKILL_GOLDEN_SPICE) && (skillId != SKILL_CRYSTAL_SPICE)) {
 			return super.onSkillSee(npc, caster, skill, targets, isSummon);
 		}
 		
 		// first gather some values on local variables
 		int objectId = npc.getObjectId();
 		int growthLevel = 3; // if a mob is in FEEDABLE_BEASTS but not in _GrowthCapableMobs, then it's at max growth (3)
-		if (GROWTH_CAPABLE_MONSTERS.containsKey(npcId))
-		{
+		if (GROWTH_CAPABLE_MONSTERS.containsKey(npcId)) {
 			growthLevel = GROWTH_CAPABLE_MONSTERS.get(npcId).getGrowthLevel();
 		}
 		
 		// prevent exploit which allows 2 players to simultaneously raise the same 0-growth beast
 		// If the mob is at 0th level (when it still listens to all feeders) lock it to the first feeder!
-		if ((growthLevel == 0) && FEED_INFO.containsKey(objectId))
-		{
+		if ((growthLevel == 0) && FEED_INFO.containsKey(objectId)) {
 			return super.onSkillSee(npc, caster, skill, targets, isSummon);
 		}
 		
 		FEED_INFO.put(objectId, caster.getObjectId());
 		
 		int food = 0;
-		if (skillId == SKILL_GOLDEN_SPICE)
-		{
+		if (skillId == SKILL_GOLDEN_SPICE) {
 			food = GOLDEN_SPICE;
-		}
-		else if (skillId == SKILL_CRYSTAL_SPICE)
-		{
+		} else if (skillId == SKILL_CRYSTAL_SPICE) {
 			food = CRYSTAL_SPICE;
 		}
 		
@@ -555,17 +509,14 @@ public final class FeedableBeasts extends AbstractNpcAI
 		npc.broadcastSocialAction(2);
 		
 		// if this pet can't grow, it's all done.
-		if (GROWTH_CAPABLE_MONSTERS.containsKey(npcId))
-		{
+		if (GROWTH_CAPABLE_MONSTERS.containsKey(npcId)) {
 			// do nothing if this mob doesn't eat the specified food (food gets consumed but has no effect).
-			if (GROWTH_CAPABLE_MONSTERS.get(npcId).getMob(food, 0, 0) == null)
-			{
+			if (GROWTH_CAPABLE_MONSTERS.get(npcId).getMob(food, 0, 0) == null) {
 				return super.onSkillSee(npc, caster, skill, targets, isSummon);
 			}
 			
 			// rare random talk...
-			if (getRandom(20) == 0)
-			{
+			if (getRandom(20) == 0) {
 				NpcStringId message = TEXT[growthLevel][getRandom(TEXT[growthLevel].length)];
 				NpcSay packet = new NpcSay(npc, 0, message);
 				if (message.getParamCount() > 0) // player name, $s1
@@ -575,29 +526,23 @@ public final class FeedableBeasts extends AbstractNpcAI
 				npc.broadcastPacket(packet);
 			}
 			
-			if ((growthLevel > 0) && (FEED_INFO.get(objectId) != caster.getObjectId()))
-			{
+			if ((growthLevel > 0) && (FEED_INFO.get(objectId) != caster.getObjectId())) {
 				// check if this is the same player as the one who raised it from growth 0.
 				// if no, then do not allow a chance to raise the pet (food gets consumed but has no effect).
 				return super.onSkillSee(npc, caster, skill, targets, isSummon);
 			}
 			
 			// Polymorph the mob, with a certain chance, given its current growth level
-			if (getRandom(100) < GROWTH_CAPABLE_MONSTERS.get(npcId).getChance())
-			{
+			if (getRandom(100) < GROWTH_CAPABLE_MONSTERS.get(npcId).getChance()) {
 				spawnNext(npc, growthLevel, caster, food);
 			}
-		}
-		else if (Util.contains(TAMED_BEASTS, npcId) && (npc instanceof L2TamedBeastInstance))
-		{
+		} else if (Util.contains(TAMED_BEASTS, npcId) && (npc instanceof L2TamedBeastInstance)) {
 			L2TamedBeastInstance beast = ((L2TamedBeastInstance) npc);
-			if (skillId == beast.getFoodType())
-			{
+			if (skillId == beast.getFoodType()) {
 				beast.onReceiveFood();
 				NpcStringId message = TAMED_TEXT[getRandom(TAMED_TEXT.length)];
 				NpcSay packet = new NpcSay(npc, 0, message);
-				if (message.getParamCount() > 0)
-				{
+				if (message.getParamCount() > 0) {
 					packet.addStringParameter(caster.getName());
 				}
 				beast.broadcastPacket(packet);
@@ -607,18 +552,15 @@ public final class FeedableBeasts extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		// remove the feedinfo of the mob that got killed, if any
-		if (FEED_INFO.containsKey(npc.getObjectId()))
-		{
+		if (FEED_INFO.containsKey(npc.getObjectId())) {
 			FEED_INFO.remove(npc.getObjectId());
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new FeedableBeasts();
 	}
 }

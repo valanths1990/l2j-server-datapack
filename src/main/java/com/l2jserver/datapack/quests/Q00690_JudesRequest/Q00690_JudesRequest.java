@@ -31,16 +31,14 @@ import com.l2jserver.gameserver.model.quest.State;
  * Jude's Request (690)
  * @author malyelfik
  */
-public class Q00690_JudesRequest extends Quest
-{
+public class Q00690_JudesRequest extends Quest {
 	// NPCs
 	private static final int JUDE = 32356;
 	private static final int LESSER_EVIL = 22398;
 	private static final int GREATER_EVIL = 22399;
 	// Items
 	private static final int EVIL_WEAPON = 10327;
-	private static final int[][] REWARDS =
-	{
+	private static final int[][] REWARDS = {
 		{
 			10373,
 			10374,
@@ -65,8 +63,7 @@ public class Q00690_JudesRequest extends Quest
 		}
 	};
 	
-	public Q00690_JudesRequest()
-	{
+	public Q00690_JudesRequest() {
 		super(690, Q00690_JudesRequest.class.getSimpleName(), "Jude's Request");
 		addStartNpc(JUDE);
 		addTalkId(JUDE);
@@ -74,50 +71,35 @@ public class Q00690_JudesRequest extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = getQuestState(player, false);
 		
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		if (event.equalsIgnoreCase("32356-03.htm"))
-		{
+		if (event.equalsIgnoreCase("32356-03.htm")) {
 			st.startQuest();
-		}
-		else if (event.equalsIgnoreCase("32356-07.htm"))
-		{
-			if (st.getQuestItemsCount(EVIL_WEAPON) >= 200)
-			{
+		} else if (event.equalsIgnoreCase("32356-07.htm")) {
+			if (st.getQuestItemsCount(EVIL_WEAPON) >= 200) {
 				st.giveItems(REWARDS[0][getRandom(REWARDS[0].length)], 1);
 				st.takeItems(EVIL_WEAPON, 200);
 				st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 				htmltext = "32356-07.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "32356-07a.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("32356-08.htm"))
-		{
+		} else if (event.equalsIgnoreCase("32356-08.htm")) {
 			st.takeItems(EVIL_WEAPON, -1);
 			st.exitQuest(true, true);
-		}
-		else if (event.equalsIgnoreCase("32356-09.htm"))
-		{
-			if (st.getQuestItemsCount(EVIL_WEAPON) >= 5)
-			{
+		} else if (event.equalsIgnoreCase("32356-09.htm")) {
+			if (st.getQuestItemsCount(EVIL_WEAPON) >= 5) {
 				st.giveItems(REWARDS[1][getRandom(REWARDS[1].length)], 1);
 				st.takeItems(EVIL_WEAPON, 5);
 				st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 				htmltext = "32356-09.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "32356-09a.htm";
 			}
 		}
@@ -125,23 +107,18 @@ public class Q00690_JudesRequest extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		L2PcInstance partyMember = getRandomPartyMember(player, 1);
-		if (partyMember == null)
-		{
+		if (partyMember == null) {
 			return null;
 		}
 		final QuestState st = getQuestState(partyMember, false);
 		
 		final int npcId = npc.getId();
 		int chance = 0;
-		if (npcId == LESSER_EVIL)
-		{
+		if (npcId == LESSER_EVIL) {
 			chance = 173;
-		}
-		else if (npcId == GREATER_EVIL)
-		{
+		} else if (npcId == GREATER_EVIL) {
 			chance = 246;
 		}
 		// Apply the quest drop rate:
@@ -149,8 +126,7 @@ public class Q00690_JudesRequest extends Quest
 		// Normalize
 		chance %= 1000;
 		
-		if (getRandom(1000) <= chance)
-		{
+		if (getRandom(1000) <= chance) {
 			st.giveItems(EVIL_WEAPON, Math.max(chance / 1000, 1));
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
@@ -158,33 +134,23 @@ public class Q00690_JudesRequest extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
-				if (player.getLevel() >= 78)
-				{
+				if (player.getLevel() >= 78) {
 					htmltext = "32356-01.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "32356-02.htm";
 				}
 				break;
 			case State.STARTED:
-				if (st.getQuestItemsCount(EVIL_WEAPON) >= 200)
-				{
+				if (st.getQuestItemsCount(EVIL_WEAPON) >= 200) {
 					htmltext = "32356-04.htm";
-				}
-				else if (st.getQuestItemsCount(EVIL_WEAPON) < 5)
-				{
+				} else if (st.getQuestItemsCount(EVIL_WEAPON) < 5) {
 					htmltext = "32356-05a.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "32356-05.htm";
 				}
 				break;

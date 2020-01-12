@@ -42,8 +42,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * @author Zealar
  * @since 2.6.0.0
  */
-public class Q00255_Tutorial extends Quest
-{
+public class Q00255_Tutorial extends Quest {
 	// Npc
 	private static final int ROIEN = 30008;
 	private static final int NEWBIE_HELPER_HUMAN_FIGHTER = 30009;
@@ -128,19 +127,16 @@ public class Q00255_Tutorial extends Quest
 	private static final int Q728_TERRITORY_WAR = 728;
 	
 	// Quests
-	public Q00255_Tutorial()
-	{
+	public Q00255_Tutorial() {
 		super(255, Q00255_Tutorial.class.getSimpleName(), "Tutorial");
-		if (character().tutorial())
-		{
+		if (character().tutorial()) {
 			setOnEnterWorld(true);
 			registerTutorialEvent();
 			registerTutorialClientEvent();
 			registerTutorialQuestionMark();
 			registerTutorialCmd();
 			
-			int[] list =
-			{
+			int[] list = {
 				ROIEN,
 				NEWBIE_HELPER_HUMAN_FIGHTER,
 				GALLINT,
@@ -167,17 +163,14 @@ public class Q00255_Tutorial extends Quest
 	 * Handle only tutorial_close_
 	 */
 	@Override
-	public void onTutorialEvent(L2PcInstance player, String event)
-	{
+	public void onTutorialEvent(L2PcInstance player, String event) {
 		// Prevent codes from custom class master
-		if (event.startsWith("CO"))
-		{
+		if (event.startsWith("CO")) {
 			return;
 		}
 		
 		int pass = Integer.parseInt(event.substring(15));
-		if (pass < 302)
-		{
+		if (pass < 302) {
 			pass = -pass;
 		}
 		tutorialEvent(player, pass);
@@ -187,106 +180,80 @@ public class Q00255_Tutorial extends Quest
 	 * Handle client events 1, 2, 8
 	 */
 	@Override
-	public void onTutorialClientEvent(L2PcInstance player, int event)
-	{
+	public void onTutorialClientEvent(L2PcInstance player, int event) {
 		tutorialEvent(player, event);
 	}
 	
 	@Override
-	public String onTutorialQuestionMark(L2PcInstance player, int number)
-	{
+	public String onTutorialQuestionMark(L2PcInstance player, int number) {
 		questionMarkClicked(player, number);
 		return super.onTutorialQuestionMark(player, number);
 	}
 	
 	@Override
-	public String onTutorialCmd(L2PcInstance player, String command)
-	{
+	public String onTutorialCmd(L2PcInstance player, String command) {
 		selectFromMenu(player, Integer.parseInt(command));
 		return super.onTutorialCmd(player, command);
 	}
 	
 	@Override
-	public String onEnterWorld(L2PcInstance player)
-	{
+	public String onEnterWorld(L2PcInstance player) {
 		userConnected(player);
-		player.addListener(new ConsumerEventListener(player, EventType.ON_PLAYER_LEVEL_CHANGED, (OnPlayerLevelChanged event) ->
-		{
+		player.addListener(new ConsumerEventListener(player, EventType.ON_PLAYER_LEVEL_CHANGED, (OnPlayerLevelChanged event) -> {
 			levelUp(event.getActiveChar(), event.getNewLevel());
 		}, player));
 		
 		return super.onEnterWorld(player);
 	}
 	
-	private void enableTutorialEvent(QuestState qs, int eventStatus)
-	{
+	private void enableTutorialEvent(QuestState qs, int eventStatus) {
 		L2PcInstance player = qs.getPlayer();
 		
-		if (((eventStatus & (1048576 | 2097152)) != 0))
-		{
-			if (!player.hasListener(EventType.ON_PLAYER_ITEM_PICKUP))
-			{
-				player.addListener(new ConsumerEventListener(player, EventType.ON_PLAYER_ITEM_PICKUP, (OnPlayerItemPickup event) ->
-				{
-					if ((event.getItem().getId() == BLUE_GEMSTONE) && ((qs.getMemoState() & 1048576) != 0))
-					{
+		if (((eventStatus & (1048576 | 2097152)) != 0)) {
+			if (!player.hasListener(EventType.ON_PLAYER_ITEM_PICKUP)) {
+				player.addListener(new ConsumerEventListener(player, EventType.ON_PLAYER_ITEM_PICKUP, (OnPlayerItemPickup event) -> {
+					if ((event.getItem().getId() == BLUE_GEMSTONE) && ((qs.getMemoState() & 1048576) != 0)) {
 						tutorialEvent(event.getActiveChar(), 1048576);
 					}
 					
-					if ((event.getItem().getId() == 57) && ((qs.getMemoState() & 2097152) != 0))
-					{
+					if ((event.getItem().getId() == 57) && ((qs.getMemoState() & 2097152) != 0)) {
 						tutorialEvent(event.getActiveChar(), 2097152);
 					}
 				}, player));
 			}
-		}
-		else if (player.hasListener(EventType.ON_PLAYER_ITEM_PICKUP))
-		{
+		} else if (player.hasListener(EventType.ON_PLAYER_ITEM_PICKUP)) {
 			player.removeListenerIf(EventType.ON_PLAYER_ITEM_PICKUP, listener -> listener.getOwner() == player);
 		}
 		
-		if ((eventStatus & 8388608) != 0)
-		{
-			if (!player.hasListener(EventType.ON_PLAYER_SIT))
-			{
-				player.addListener(new ConsumerEventListener(player, EventType.ON_PLAYER_SIT, (OnPlayerSit event) ->
-				{
+		if ((eventStatus & 8388608) != 0) {
+			if (!player.hasListener(EventType.ON_PLAYER_SIT)) {
+				player.addListener(new ConsumerEventListener(player, EventType.ON_PLAYER_SIT, (OnPlayerSit event) -> {
 					tutorialEvent(player, 8388608);
 				}, player));
 			}
-		}
-		else if (player.hasListener(EventType.ON_PLAYER_SIT))
-		{
+		} else if (player.hasListener(EventType.ON_PLAYER_SIT)) {
 			player.removeListenerIf(EventType.ON_PLAYER_SIT, listener -> listener.getOwner() == player);
 		}
 		
-		if ((eventStatus & 256) != 0)
-		{
-			if (!player.hasListener(EventType.ON_CREATURE_ATTACKED))
-			{
-				player.addListener(new ConsumerEventListener(player, EventType.ON_CREATURE_ATTACKED, (OnCreatureAttacked event) ->
-				{
+		if ((eventStatus & 256) != 0) {
+			if (!player.hasListener(EventType.ON_CREATURE_ATTACKED)) {
+				player.addListener(new ConsumerEventListener(player, EventType.ON_CREATURE_ATTACKED, (OnCreatureAttacked event) -> {
 					L2PcInstance pp = event.getTarget().getActingPlayer();
-					if ((pp != null) && (pp.getCurrentHp() <= (pp.getStat().getMaxHp() * 0.3)))
-					{
+					if ((pp != null) && (pp.getCurrentHp() <= (pp.getStat().getMaxHp() * 0.3))) {
 						tutorialEvent(pp, 256);
 					}
 				}, player));
 			}
-		}
-		else
-		{
+		} else {
 			player.removeListenerIf(EventType.ON_CREATURE_ATTACKED, listener -> listener.getOwner() == player);
 		}
 		qs.enableTutorialEvent(player, eventStatus);
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance talker)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case ROIEN:
 				talkRoien(talker, qs);
 				break;
@@ -320,16 +287,14 @@ public class Q00255_Tutorial extends Quest
 			case VULKUS:
 				talkGuardianVullkus(talker, qs);
 				break;
-			case NEWBIE_HELPER_ORC:
-			{
+			case NEWBIE_HELPER_ORC: {
 				talkShelaPriestess(npc, talker, qs);
 				break;
 			}
 			case PERWAN:
 				talkSubelderPerwan(talker, qs);
 				break;
-			case NEWBIE_HELPER_KAMAEL:
-			{
+			case NEWBIE_HELPER_KAMAEL: {
 				talkHelperKrenisk(npc, talker, qs);
 				break;
 			}
@@ -338,28 +303,22 @@ public class Q00255_Tutorial extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance talker)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance talker) {
 		final int eventId = Integer.parseInt(event);
 		
-		if (eventId > 1000000)
-		{
+		if (eventId > 1000000) {
 			fireEvent(eventId, talker);
 			return super.onAdvEvent(event, npc, talker);
 		}
 		
-		if (talker.isDead())
-		{
+		if (talker.isDead()) {
 			return super.onAdvEvent(event, npc, talker);
 		}
 		
 		final QuestState qs = getQuestState(talker, true);
-		switch (npc.getId())
-		{
-			case NEWBIE_HELPER_HUMAN_FIGHTER:
-			{
-				switch (qs.getMemoStateEx(1))
-				{
+		switch (npc.getId()) {
+			case NEWBIE_HELPER_HUMAN_FIGHTER: {
+				switch (qs.getMemoStateEx(1)) {
 					case 0:
 						qs.playSound(Voice.TUTORIAL_VOICE_009A);
 						qs.setMemoStateEx(1, 1);
@@ -369,10 +328,8 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			}
-			case NEWBIE_HELPER_HUMAN_MAGE:
-			{
-				switch (qs.getMemoStateEx(1))
-				{
+			case NEWBIE_HELPER_HUMAN_MAGE: {
+				switch (qs.getMemoStateEx(1)) {
 					case 0:
 						qs.playSound(Voice.TUTORIAL_VOICE_009B);
 						qs.setMemoStateEx(1, 1);
@@ -382,17 +339,12 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			}
-			case NEWBIE_HELPER_DARK_ELF:
-			{
-				switch (qs.getMemoStateEx(1))
-				{
+			case NEWBIE_HELPER_DARK_ELF: {
+				switch (qs.getMemoStateEx(1)) {
 					case 0:
-						if (!talker.isMageClass())
-						{
+						if (!talker.isMageClass()) {
 							qs.playSound(Voice.TUTORIAL_VOICE_009A);
-						}
-						else
-						{
+						} else {
 							qs.playSound(Voice.TUTORIAL_VOICE_009B);
 						}
 						qs.setMemoStateEx(1, 1);
@@ -402,17 +354,12 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			}
-			case NEWBIE_HELPER_ELF:
-			{
-				switch (qs.getMemoStateEx(1))
-				{
+			case NEWBIE_HELPER_ELF: {
+				switch (qs.getMemoStateEx(1)) {
 					case 0:
-						if (!talker.isMageClass())
-						{
+						if (!talker.isMageClass()) {
 							qs.playSound(Voice.TUTORIAL_VOICE_009A);
-						}
-						else
-						{
+						} else {
 							qs.playSound(Voice.TUTORIAL_VOICE_009B);
 						}
 						qs.setMemoStateEx(1, 1);
@@ -422,10 +369,8 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			}
-			case NEWBIE_HELPER_DWARF:
-			{
-				switch (qs.getMemoStateEx(1))
-				{
+			case NEWBIE_HELPER_DWARF: {
+				switch (qs.getMemoStateEx(1)) {
 					case 0:
 						qs.playSound(Voice.TUTORIAL_VOICE_009A);
 						qs.setMemoStateEx(1, 1);
@@ -435,17 +380,12 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			}
-			case NEWBIE_HELPER_ORC:
-			{
-				switch (qs.getMemoStateEx(1))
-				{
+			case NEWBIE_HELPER_ORC: {
+				switch (qs.getMemoStateEx(1)) {
 					case 0:
-						if (!talker.isMageClass())
-						{
+						if (!talker.isMageClass()) {
 							qs.playSound(Voice.TUTORIAL_VOICE_009A);
-						}
-						else
-						{
+						} else {
 							qs.playSound(Voice.TUTORIAL_VOICE_009C);
 						}
 						qs.setMemoStateEx(1, 1);
@@ -455,10 +395,8 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			}
-			case NEWBIE_HELPER_KAMAEL:
-			{
-				switch (qs.getMemoStateEx(1))
-				{
+			case NEWBIE_HELPER_KAMAEL: {
+				switch (qs.getMemoStateEx(1)) {
 					case 0:
 						qs.playSound(Voice.TUTORIAL_VOICE_009A);
 						qs.setMemoStateEx(1, 1);
@@ -468,12 +406,9 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			}
-			case ROIEN:
-			{
-				if (eventId == ROIEN)
-				{
-					if (qs.getMemoStateEx(1) >= 4)
-					{
+			case ROIEN: {
+				if (eventId == ROIEN) {
+					if (qs.getMemoStateEx(1) >= 4) {
 						qs.showQuestionMark(talker, 7);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 						qs.playSound(Voice.TUTORIAL_VOICE_025_1000);
@@ -483,17 +418,13 @@ public class Q00255_Tutorial extends Quest
 				eventRoien(eventId, talker, npc, qs);
 				break;
 			}
-			case GALLINT:
-			{
+			case GALLINT: {
 				eventGallin(eventId, talker, npc, qs);
 				break;
 			}
-			case MITRAELL:
-			{
-				if (eventId == MITRAELL)
-				{
-					if (qs.getMemoStateEx(1) >= 4)
-					{
+			case MITRAELL: {
+				if (eventId == MITRAELL) {
+					if (qs.getMemoStateEx(1) >= 4) {
 						qs.showQuestionMark(talker, 7);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 						qs.playSound(Voice.TUTORIAL_VOICE_025_1000);
@@ -503,12 +434,9 @@ public class Q00255_Tutorial extends Quest
 				eventJundin(eventId, talker, npc, qs);
 				break;
 			}
-			case NERUPA:
-			{
-				if (eventId == NERUPA)
-				{
-					if (qs.getMemoStateEx(1) >= 4)
-					{
+			case NERUPA: {
+				if (eventId == NERUPA) {
+					if (qs.getMemoStateEx(1) >= 4) {
 						qs.showQuestionMark(talker, 7);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 						qs.playSound(Voice.TUTORIAL_VOICE_025_1000);
@@ -518,12 +446,9 @@ public class Q00255_Tutorial extends Quest
 				eventNerupa(eventId, talker, npc, qs);
 				break;
 			}
-			case LAFERON:
-			{
-				if (eventId == LAFERON)
-				{
-					if (qs.getMemoStateEx(1) >= 4)
-					{
+			case LAFERON: {
+				if (eventId == LAFERON) {
+					if (qs.getMemoStateEx(1) >= 4) {
 						qs.showQuestionMark(talker, 7);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 						qs.playSound(Voice.TUTORIAL_VOICE_025_1000);
@@ -533,12 +458,9 @@ public class Q00255_Tutorial extends Quest
 				eventForemanLaferon(eventId, talker, npc, qs);
 				break;
 			}
-			case VULKUS:
-			{
-				if (eventId == VULKUS)
-				{
-					if (qs.getMemoStateEx(1) >= 4)
-					{
+			case VULKUS: {
+				if (eventId == VULKUS) {
+					if (qs.getMemoStateEx(1) >= 4) {
 						qs.showQuestionMark(talker, 7);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 						qs.playSound(Voice.TUTORIAL_VOICE_025_1000);
@@ -548,12 +470,9 @@ public class Q00255_Tutorial extends Quest
 				eventGuardianVullkus(eventId, talker, npc, qs);
 				break;
 			}
-			case PERWAN:
-			{
-				if (eventId == PERWAN)
-				{
-					if (qs.getMemoStateEx(1) >= 4)
-					{
+			case PERWAN: {
+				if (eventId == PERWAN) {
+					if (qs.getMemoStateEx(1) >= 4) {
 						qs.showQuestionMark(talker, 7);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 						qs.playSound(Voice.TUTORIAL_VOICE_025_1000);
@@ -567,21 +486,16 @@ public class Q00255_Tutorial extends Quest
 		return "";
 	}
 	
-	private void fireEvent(int timer_id, L2PcInstance talker)
-	{
-		if ((talker == null) || talker.isDead() || !talker.isPlayer() || (timer_id <= 1000000))
-		{
+	private void fireEvent(int timer_id, L2PcInstance talker) {
+		if ((talker == null) || talker.isDead() || !talker.isPlayer() || (timer_id <= 1000000)) {
 			return;
 		}
 		
 		final QuestState qs = talker.getQuestState(Q00255_Tutorial.class.getSimpleName());
 		
-		switch (qs.getMemoStateEx(1))
-		{
-			case -2:
-			{
-				switch (talker.getClassId())
-				{
+		switch (qs.getMemoStateEx(1)) {
+			case -2: {
+				switch (talker.getClassId()) {
 					case fighter:
 						qs.playSound(Voice.TUTORIAL_VOICE_001A_2000);
 						showTutorialHTML(talker, "tutorial-human-fighter-001.htm");
@@ -624,8 +538,7 @@ public class Q00255_Tutorial extends Quest
 						showTutorialHTML(talker, "tutorial-kamael-001.htm");
 						break;
 				}
-				if (!qs.hasQuestItems(TUTORIAL_GUIDE))
-				{
+				if (!qs.hasQuestItems(TUTORIAL_GUIDE)) {
 					qs.giveItems(TUTORIAL_GUIDE, 1);
 				}
 				qs.startQuestTimer((talker.getObjectId() + 1000000) + "", 30000);
@@ -642,16 +555,13 @@ public class Q00255_Tutorial extends Quest
 		}
 	}
 	
-	private void tutorialEvent(L2PcInstance talker, int event_id)
-	{
+	private void tutorialEvent(L2PcInstance talker, int event_id) {
 		final QuestState qs = talker.getQuestState(this.getClass().getSimpleName());
-		if (qs == null)
-		{
+		if (qs == null) {
 			return;
 		}
 		// TODO is custom!
-		if (event_id == 0)
-		{
+		if (event_id == 0) {
 			qs.closeTutorialHtml(talker);
 			return;
 		}
@@ -659,18 +569,15 @@ public class Q00255_Tutorial extends Quest
 		int memoState = qs.getMemoState();
 		int memoFlag = memoState & 2147483632;
 		
-		if (event_id < 0)
-		{
-			switch (Math.abs(event_id))
-			{
+		if (event_id < 0) {
+			switch (Math.abs(event_id)) {
 				case 1:
 					qs.closeTutorialHtml(talker);
 					qs.playSound(Voice.TUTORIAL_VOICE_006_3500);
 					qs.showQuestionMark(talker, 1);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					qs.startQuestTimer((talker.getObjectId() + 1000000) + "", 30000);
-					if (qs.getMemoStateEx(1) < 0)
-					{
+					if (qs.getMemoStateEx(1) < 0) {
 						qs.setMemoStateEx(1, -4);
 					}
 					break;
@@ -679,8 +586,7 @@ public class Q00255_Tutorial extends Quest
 					showTutorialHTML(talker, "tutorial-02.htm");
 					enableTutorialEvent(qs, memoFlag | 1);
 					
-					if (qs.getMemoStateEx(1) < 0)
-					{
+					if (qs.getMemoStateEx(1) < 0) {
 						qs.setMemoStateEx(1, -5);
 					}
 					break;
@@ -726,11 +632,9 @@ public class Q00255_Tutorial extends Quest
 			}
 			return;
 		}
-		switch (event_id)
-		{
+		switch (event_id) {
 			case 1:
-				if (talker.getLevel() < 6)
-				{
+				if (talker.getLevel() < 6) {
 					qs.playSound(Voice.TUTORIAL_VOICE_004_5000);
 					showTutorialHTML(talker, "tutorial-03.htm");
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
@@ -738,8 +642,7 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			case 2:
-				if (talker.getLevel() < 6)
-				{
+				if (talker.getLevel() < 6) {
 					qs.playSound(Voice.TUTORIAL_VOICE_005_5000);
 					showTutorialHTML(talker, "tutorial-05.htm");
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
@@ -747,12 +650,10 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			case 8:
-				if (talker.getLevel() < 6)
-				{
+				if (talker.getLevel() < 6) {
 					showTutorialHTML(talker, "tutorial-human-fighter-007.htm");
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
-					switch (talker.getClassId())
-					{
+					switch (talker.getClassId()) {
 						case fighter:
 							qs.addRadar(-71424, 258336, -3109);
 							break;
@@ -781,15 +682,13 @@ public class Q00255_Tutorial extends Quest
 					}
 					qs.playSound(Voice.TUTORIAL_VOICE_007_3500);
 					qs.setMemoState(memoFlag | 2);
-					if (qs.getMemoStateEx(1) < 0)
-					{
+					if (qs.getMemoStateEx(1) < 0) {
 						qs.setMemoStateEx(1, -5);
 					}
 				}
 				break;
 			case 256:
-				if (talker.getLevel() < 6)
-				{
+				if (talker.getLevel() < 6) {
 					qs.playSound(Voice.TUTORIAL_VOICE_017_1000);
 					qs.showQuestionMark(talker, 10);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
@@ -805,8 +704,7 @@ public class Q00255_Tutorial extends Quest
 				break;
 			case 1024:
 				qs.setMemoState(memoState & ~1024);
-				switch (talker.getClassId())
-				{
+				switch (talker.getClassId()) {
 					case fighter:
 						qs.addRadar(-83020, 242553, -3718);
 						break;
@@ -827,8 +725,7 @@ public class Q00255_Tutorial extends Quest
 						qs.addRadar(-118132, 42788, 723);
 						break;
 				}
-				if (!talker.isMageClass())
-				{
+				if (!talker.isMageClass()) {
 					qs.playSound(Voice.TUTORIAL_VOICE_014_1000);
 					qs.showQuestionMark(talker, 9);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
@@ -845,13 +742,11 @@ public class Q00255_Tutorial extends Quest
 				enableTutorialEvent(qs, memoFlag | 2048);
 				break;
 			case 2048:
-				if (talker.isMageClass())
-				{
+				if (talker.isMageClass()) {
 					qs.playSound(Voice.TUTORIAL_VOICE_019_1000);
 					qs.showQuestionMark(talker, 11);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
-					switch (talker.getClassId())
-					{
+					switch (talker.getClassId()) {
 						case mage:
 							qs.addRadar(-84981, 244764, -3726);
 							break;
@@ -870,8 +765,7 @@ public class Q00255_Tutorial extends Quest
 				enableTutorialEvent(qs, memoFlag | 268435456);
 				break;
 			case 268435456:
-				if (talker.getClassId() == ClassId.fighter)
-				{
+				if (talker.getClassId() == ClassId.fighter) {
 					qs.playSound(Voice.TUTORIAL_VOICE_021_1000);
 					qs.showQuestionMark(talker, 25);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
@@ -880,8 +774,7 @@ public class Q00255_Tutorial extends Quest
 				enableTutorialEvent(qs, memoFlag | 536870912);
 				break;
 			case 536870912:
-				switch (talker.getClassId())
-				{
+				switch (talker.getClassId()) {
 					case dwarvenFighter:
 					case mage:
 					case elvenFighter:
@@ -904,8 +797,7 @@ public class Q00255_Tutorial extends Quest
 				enableTutorialEvent(qs, memoFlag | 1073741824);
 				break;
 			case 1073741824:
-				switch (talker.getClassId())
-				{
+				switch (talker.getClassId()) {
 					case orcFighter:
 					case orcMage:
 						qs.playSound(Voice.TUTORIAL_VOICE_021_1000);
@@ -928,8 +820,7 @@ public class Q00255_Tutorial extends Quest
 				enableTutorialEvent(qs, memoFlag | 16777216);
 				break;
 			case 16777216:
-				if (talker.getClassId().getRace() != Race.KAMAEL)
-				{
+				if (talker.getClassId().getRace() != Race.KAMAEL) {
 					qs.playSound(Voice.TUTORIAL_VOICE_023_1000);
 					qs.showQuestionMark(talker, 15);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
@@ -937,10 +828,8 @@ public class Q00255_Tutorial extends Quest
 				}
 				enableTutorialEvent(qs, memoFlag | 32);
 				break;
-			case 16384:
-			{
-				if ((talker.getClassId().getRace() == Race.KAMAEL) && (talker.getClassId().level() == 1))
-				{
+			case 16384: {
+				if ((talker.getClassId().getRace() == Race.KAMAEL) && (talker.getClassId().level() == 1)) {
 					qs.playSound(Voice.TUTORIAL_VOICE_028_1000);
 					qs.showQuestionMark(talker, 15);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
@@ -949,10 +838,8 @@ public class Q00255_Tutorial extends Quest
 				enableTutorialEvent(qs, memoFlag | 64);
 				break;
 			}
-			case 33554432:
-			{
-				if (getOneTimeQuestFlag(talker, Q234_FATES_WHISPER) == 0)
-				{
+			case 33554432: {
+				if (getOneTimeQuestFlag(talker, Q234_FATES_WHISPER) == 0) {
 					qs.playSound(Voice.TUTORIAL_VOICE_024_1000);
 					qs.showQuestionMark(talker, 16);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
@@ -961,20 +848,16 @@ public class Q00255_Tutorial extends Quest
 				enableTutorialEvent(qs, memoFlag | 32768);
 				break;
 			}
-			case 32768:
-			{
-				if (getOneTimeQuestFlag(talker, Q234_FATES_WHISPER) == 1)
-				{
+			case 32768: {
+				if (getOneTimeQuestFlag(talker, Q234_FATES_WHISPER) == 1) {
 					qs.showQuestionMark(talker, 29);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					qs.setMemoState(memoState & ~32768);
 				}
 				break;
 			}
-			case 32:
-			{
-				if (getOneTimeQuestFlag(talker, Q128_PAILAKA_SONG_OF_ICE_AND_FIRE) == 0)
-				{
+			case 32: {
+				if (getOneTimeQuestFlag(talker, Q128_PAILAKA_SONG_OF_ICE_AND_FIRE) == 0) {
 					qs.showQuestionMark(talker, 30);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					qs.setMemoState(memoState & ~32);
@@ -982,10 +865,8 @@ public class Q00255_Tutorial extends Quest
 				enableTutorialEvent(qs, memoFlag | 16384);
 				break;
 			}
-			case 64:
-			{
-				if (getOneTimeQuestFlag(talker, Q129_PAILAKA_DEVILS_LEGACY) == 0)
-				{
+			case 64: {
+				if (getOneTimeQuestFlag(talker, Q129_PAILAKA_DEVILS_LEGACY) == 0) {
 					qs.showQuestionMark(talker, 31);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					qs.setMemoState(memoState & ~64);
@@ -993,10 +874,8 @@ public class Q00255_Tutorial extends Quest
 				enableTutorialEvent(qs, memoFlag | 128);
 				break;
 			}
-			case 128:
-			{
-				if (getOneTimeQuestFlag(talker, Q144_PAIRAKA_WOUNDED_DRAGON) == 0)
-				{
+			case 128: {
+				if (getOneTimeQuestFlag(talker, Q144_PAIRAKA_WOUNDED_DRAGON) == 0) {
 					qs.showQuestionMark(talker, 32);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					qs.setMemoState(memoState & ~128);
@@ -1004,10 +883,8 @@ public class Q00255_Tutorial extends Quest
 				enableTutorialEvent(qs, memoFlag | 33554432);
 				break;
 			}
-			case 2097152:
-			{
-				if (talker.getLevel() < 6)
-				{
+			case 2097152: {
+				if (talker.getLevel() < 6) {
 					qs.showQuestionMark(talker, 23);
 					qs.playSound(Voice.TUTORIAL_VOICE_012_1000);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
@@ -1015,10 +892,8 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			}
-			case 1048576:
-			{
-				if (talker.getLevel() < 6)
-				{
+			case 1048576: {
+				if (talker.getLevel() < 6) {
 					qs.showQuestionMark(talker, 5);
 					qs.playSound(Voice.TUTORIAL_VOICE_013_1000);
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
@@ -1026,10 +901,8 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			}
-			case 8388608:
-			{
-				if (talker.getLevel() < 6)
-				{
+			case 8388608: {
+				if (talker.getLevel() < 6) {
 					qs.playSound(Voice.TUTORIAL_VOICE_018_1000);
 					showTutorialHTML(talker, "tutorial-21z.htm");
 					qs.setMemoState(memoState & ~8388608);
@@ -1040,10 +913,8 @@ public class Q00255_Tutorial extends Quest
 		}
 	}
 	
-	private void levelUp(L2PcInstance player, int level)
-	{
-		switch (level)
-		{
+	private void levelUp(L2PcInstance player, int level) {
+		switch (level) {
 			case 5:
 				tutorialEvent(player, 1024);
 				break;
@@ -1067,16 +938,14 @@ public class Q00255_Tutorial extends Quest
 				break;
 			case 18:
 				tutorialEvent(player, 4096);
-				if (!haveMemo(player, Q10276_MUTATED_KANEUS_GLUDIO) || (getOneTimeQuestFlag(player, Q10276_MUTATED_KANEUS_GLUDIO) == 0))
-				{
+				if (!haveMemo(player, Q10276_MUTATED_KANEUS_GLUDIO) || (getOneTimeQuestFlag(player, Q10276_MUTATED_KANEUS_GLUDIO) == 0)) {
 					showTutorialHTML(player, "tw-gludio.htm");
 					playSound(player, Sound.ITEMSOUND_QUEST_TUTORIAL);
 					showRadar(player, -13900, 123822, -3112, 2);
 				}
 				break;
 			case 28:
-				if (!haveMemo(player, Q10277_MUTATED_KANEUS_DION) || (getOneTimeQuestFlag(player, Q10277_MUTATED_KANEUS_DION) == 0))
-				{
+				if (!haveMemo(player, Q10277_MUTATED_KANEUS_DION) || (getOneTimeQuestFlag(player, Q10277_MUTATED_KANEUS_DION) == 0)) {
 					showTutorialHTML(player, "tw-dion.htm");
 					playSound(player, Sound.ITEMSOUND_QUEST_TUTORIAL);
 					showRadar(player, 18199, 146081, -3080, 2);
@@ -1089,30 +958,26 @@ public class Q00255_Tutorial extends Quest
 				tutorialEvent(player, 32);
 				break;
 			case 38:
-				if (!haveMemo(player, Q10278_MUTATED_KANEUS_HEINE) || (getOneTimeQuestFlag(player, Q10278_MUTATED_KANEUS_HEINE) == 0))
-				{
+				if (!haveMemo(player, Q10278_MUTATED_KANEUS_HEINE) || (getOneTimeQuestFlag(player, Q10278_MUTATED_KANEUS_HEINE) == 0)) {
 					showTutorialHTML(player, "tw-heine.htm");
 					playSound(player, Sound.ITEMSOUND_QUEST_TUTORIAL);
 					showRadar(player, 108384, 221563, -3592, 2);
 				}
 				break;
 			case 39:
-				if (player.getRace() == Race.KAMAEL)
-				{
+				if (player.getRace() == Race.KAMAEL) {
 					tutorialEvent(player, 16384);
 				}
 				break;
 			case 48:
-				if (!haveMemo(player, Q10279_MUTATED_KANEUS_OREN) || (getOneTimeQuestFlag(player, Q10279_MUTATED_KANEUS_OREN) == 0))
-				{
+				if (!haveMemo(player, Q10279_MUTATED_KANEUS_OREN) || (getOneTimeQuestFlag(player, Q10279_MUTATED_KANEUS_OREN) == 0)) {
 					showTutorialHTML(player, "tw-oren.htm");
 					playSound(player, Sound.ITEMSOUND_QUEST_TUTORIAL);
 					showRadar(player, 81023, 56456, -1552, 2);
 				}
 				break;
 			case 58:
-				if (!haveMemo(player, Q10280_MUTATED_KANEUS_SCHUTTGART) || (getOneTimeQuestFlag(player, Q10280_MUTATED_KANEUS_SCHUTTGART) == 0))
-				{
+				if (!haveMemo(player, Q10280_MUTATED_KANEUS_SCHUTTGART) || (getOneTimeQuestFlag(player, Q10280_MUTATED_KANEUS_SCHUTTGART) == 0)) {
 					showTutorialHTML(player, "tw-schuttgart.htm");
 					playSound(player, Sound.ITEMSOUND_QUEST_TUTORIAL);
 					showRadar(player, 85868, -142164, -1342, 2);
@@ -1122,8 +987,7 @@ public class Q00255_Tutorial extends Quest
 				tutorialEvent(player, 64);
 				break;
 			case 68:
-				if (!haveMemo(player, Q10281_MUTATED_KANEUS_RUNE) || (getOneTimeQuestFlag(player, Q10281_MUTATED_KANEUS_RUNE) == 0))
-				{
+				if (!haveMemo(player, Q10281_MUTATED_KANEUS_RUNE) || (getOneTimeQuestFlag(player, Q10281_MUTATED_KANEUS_RUNE) == 0)) {
 					showTutorialHTML(player, "tw-rune.htm");
 					playSound(player, Sound.ITEMSOUND_QUEST_TUTORIAL);
 					showRadar(player, 42596, -47988, -800, 2);
@@ -1133,16 +997,14 @@ public class Q00255_Tutorial extends Quest
 				tutorialEvent(player, 128);
 				break;
 			case 79:
-				if (!haveMemo(player, Q192_SEVEN_SIGNS_SERIES_OF_DOUBT) || (getOneTimeQuestFlag(player, Q192_SEVEN_SIGNS_SERIES_OF_DOUBT) == 0))
-				{
+				if (!haveMemo(player, Q192_SEVEN_SIGNS_SERIES_OF_DOUBT) || (getOneTimeQuestFlag(player, Q192_SEVEN_SIGNS_SERIES_OF_DOUBT) == 0)) {
 					showTutorialHTML(player, "tutorial-ss-79.htm");
 					playSound(player, Sound.ITEMSOUND_QUEST_TUTORIAL);
 					showRadar(player, 81655, 54736, -1509, 2);
 				}
 				break;
 			case 81:
-				if (!haveMemo(player, Q10292_SEVEN_SIGNS_GIRL_OF_DOUBT) || (getOneTimeQuestFlag(player, Q10292_SEVEN_SIGNS_GIRL_OF_DOUBT) == 0))
-				{
+				if (!haveMemo(player, Q10292_SEVEN_SIGNS_GIRL_OF_DOUBT) || (getOneTimeQuestFlag(player, Q10292_SEVEN_SIGNS_GIRL_OF_DOUBT) == 0)) {
 					showTutorialHTML(player, "tutorial-ss-81.htm");
 					playSound(player, Sound.ITEMSOUND_QUEST_TUTORIAL);
 					showRadar(player, 146995, 23755, -1984, 2);
@@ -1151,10 +1013,8 @@ public class Q00255_Tutorial extends Quest
 		}
 	}
 	
-	private void selectFromMenu(L2PcInstance talker, int reply)
-	{
-		switch (reply)
-		{
+	private void selectFromMenu(L2PcInstance talker, int reply) {
+		switch (reply) {
 			case 1:
 				showTutorialHTML(talker, "tutorial-22g.htm");
 				break;
@@ -1231,8 +1091,7 @@ public class Q00255_Tutorial extends Quest
 				showTutorialHTML(talker, "tutorial-22pp.htm");
 				break;
 			case 26:
-				switch (talker.getClassId())
-				{
+				switch (talker.getClassId()) {
 					case warrior:
 						showTutorialHTML(talker, "tutorial-22.htm");
 						break;
@@ -1304,8 +1163,7 @@ public class Q00255_Tutorial extends Quest
 				showTutorialHTML(talker, "tutorial-07b.htm");
 				break;
 			case 31:
-				switch (talker.getClassId())
-				{
+				switch (talker.getClassId()) {
 					case trooper:
 						showTutorialHTML(talker, "tutorial-28a.htm");
 						break;
@@ -1318,8 +1176,7 @@ public class Q00255_Tutorial extends Quest
 				showTutorialHTML(talker, "tutorial-22qa.htm");
 				break;
 			case 33:
-				switch (talker.getClassId())
-				{
+				switch (talker.getClassId()) {
 					case trooper:
 						showTutorialHTML(talker, "tutorial-22qb.htm");
 						break;
@@ -1334,21 +1191,17 @@ public class Q00255_Tutorial extends Quest
 		}
 	}
 	
-	private void questionMarkClicked(L2PcInstance talker, int question_id)
-	{
+	private void questionMarkClicked(L2PcInstance talker, int question_id) {
 		QuestState qs = talker.getQuestState(this.getClass().getSimpleName());
 		
 		final int memoFlag = qs.getMemoState() & 2147483392;
-		switch (question_id)
-		{
+		switch (question_id) {
 			case 1:
 				qs.playSound(Voice.TUTORIAL_VOICE_007_3500);
-				if (qs.getMemoStateEx(1) < 0)
-				{
+				if (qs.getMemoStateEx(1) < 0) {
 					qs.setMemoStateEx(1, -5);
 				}
-				switch (talker.getClassId())
-				{
+				switch (talker.getClassId()) {
 					case fighter:
 						showTutorialHTML(talker, "tutorial-human-fighter-007.htm");
 						qs.addRadar(-71424, 258336, -3109);
@@ -1385,8 +1238,7 @@ public class Q00255_Tutorial extends Quest
 				qs.setMemoState(memoFlag | 2);
 				break;
 			case 2:
-				switch (talker.getClassId())
-				{
+				switch (talker.getClassId()) {
 					case fighter:
 						showTutorialHTML(talker, "tutorial-human-fighter-008.htm");
 						break;
@@ -1424,8 +1276,7 @@ public class Q00255_Tutorial extends Quest
 				showTutorialHTML(talker, "tutorial-10.htm");
 				break;
 			case 5:
-				switch (talker.getClassId())
-				{
+				switch (talker.getClassId()) {
 					case fighter:
 						qs.addRadar(-71424, 258336, -3109);
 						break;
@@ -1462,10 +1313,8 @@ public class Q00255_Tutorial extends Quest
 				showTutorialHTML(talker, "tutorial-18.htm");
 				break;
 			case 9:
-				if (!talker.isMageClass())
-				{
-					switch (talker.getRace())
-					{
+				if (!talker.isMageClass()) {
+					switch (talker.getRace()) {
 						case HUMAN:
 						case ELF:
 						case DARK_ELF:
@@ -1486,8 +1335,7 @@ public class Q00255_Tutorial extends Quest
 				showTutorialHTML(talker, "tutorial-19.htm");
 				break;
 			case 11:
-				switch (talker.getRace())
-				{
+				switch (talker.getRace()) {
 					case HUMAN:
 						showTutorialHTML(talker, "tutorial-mage-020.htm");
 						break;
@@ -1504,8 +1352,7 @@ public class Q00255_Tutorial extends Quest
 				showTutorialHTML(talker, "tutorial-15.htm");
 				break;
 			case 13:
-				switch (talker.getClassId())
-				{
+				switch (talker.getClassId()) {
 					case fighter:
 						showTutorialHTML(talker, "tutorial-21.htm");
 						break;
@@ -1542,16 +1389,11 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			case 15:
-				if (talker.getRace() != Race.KAMAEL)
-				{
+				if (talker.getRace() != Race.KAMAEL) {
 					showTutorialHTML(talker, "tutorial-28.htm");
-				}
-				else if (talker.getClassId() == ClassId.trooper)
-				{
+				} else if (talker.getClassId() == ClassId.trooper) {
 					showTutorialHTML(talker, "tutorial-28a.htm");
-				}
-				else if (talker.getClassId() == ClassId.warder)
-				{
+				} else if (talker.getClassId() == ClassId.warder) {
 					showTutorialHTML(talker, "tutorial-28b.htm");
 				}
 				break;
@@ -1577,8 +1419,7 @@ public class Q00255_Tutorial extends Quest
 				showTutorialHTML(talker, "tutorial-24.htm");
 				break;
 			case 24:
-				switch (talker.getRace())
-				{
+				switch (talker.getRace()) {
 					case HUMAN:
 						showTutorialHTML(talker, "tutorial-newbie-003a.htm");
 						break;
@@ -1599,8 +1440,7 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			case 25:
-				switch (talker.getClassId())
-				{
+				switch (talker.getClassId()) {
 					case fighter:
 						showTutorialHTML(talker, "tutorial-newbie-002a.htm");
 						break;
@@ -1631,18 +1471,14 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			case 26:
-				if (!talker.isMageClass() || (talker.getClassId() == ClassId.orcMage))
-				{
+				if (!talker.isMageClass() || (talker.getClassId() == ClassId.orcMage)) {
 					showTutorialHTML(talker, "tutorial-newbie-004a.htm");
-				}
-				else
-				{
+				} else {
 					showTutorialHTML(talker, "tutorial-newbie-004b.htm");
 				}
 				break;
 			case 27:
-				switch (talker.getClassId())
-				{
+				switch (talker.getClassId()) {
 					case fighter:
 					case orcMage:
 					case orcFighter:
@@ -1665,8 +1501,7 @@ public class Q00255_Tutorial extends Quest
 				showTutorialHTML(talker, "tutorial-35.htm");
 				break;
 			case 33:
-				switch (talker.getLevel())
-				{
+				switch (talker.getLevel()) {
 					case 18:
 						showTutorialHTML(talker, "tw-gludio.htm");
 						break;
@@ -1688,54 +1523,43 @@ public class Q00255_Tutorial extends Quest
 				}
 				break;
 			case 34:
-				if (talker.getLevel() == 79)
-				{
+				if (talker.getLevel() == 79) {
 					showTutorialHTML(talker, "tutorial-ss-79.htm");
 				}
 				break;
 		}
 	}
 	
-	private void userConnected(L2PcInstance talker)
-	{
+	private void userConnected(L2PcInstance talker) {
 		final QuestState qs = getQuestState(talker, true);
 		
-		if (qs == null)
-		{
+		if (qs == null) {
 			return;
 		}
-		if (!qs.isStarted())
-		{
+		if (!qs.isStarted()) {
 			qs.setState(State.STARTED);
 		}
 		
-		if (talker.getLevel() < 6)
-		{
-			if (getOneTimeQuestFlag(talker, 255) != 0)
-			{
+		if (talker.getLevel() < 6) {
+			if (getOneTimeQuestFlag(talker, 255) != 0) {
 				return;
 			}
 			int memoState = qs.getMemoState();
 			int memoFlag;
-			if (memoState == -1)
-			{
+			if (memoState == -1) {
 				memoState = 0;
 				memoFlag = 0;
-			}
-			else
-			{
+			} else {
 				memoFlag = memoState & 255;
 				memoState = memoState & 2147483392;
 			}
 			
-			switch (memoFlag)
-			{
+			switch (memoFlag) {
 				case 0:
 					qs.startQuestTimer((talker.getObjectId() + 1000000) + "", 10000);
 					memoState = 2147483392 & ~(8388608 | 1048576);
 					qs.setMemoState(1 | memoState);
-					if (qs.getMemoStateEx(1) < 0)
-					{
+					if (qs.getMemoStateEx(1) < 0) {
 						qs.setMemoStateEx(1, -2);
 					}
 					break;
@@ -1745,30 +1569,23 @@ public class Q00255_Tutorial extends Quest
 					qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					break;
 				case 2:
-					if (haveMemo(talker, Q201_TUTORIAL_HUMAN_FIGHTER) || haveMemo(talker, Q202_TUTORIAL_HUMAN_MAGE) || haveMemo(talker, Q203_TUTORIAL_ELF) || haveMemo(talker, Q204_TUTORIAL_DARK_ELF) || haveMemo(talker, Q205_TUTORIAL_ORC) || haveMemo(talker, Q206_TUTORIAL_DWARF))
-					{
+					if (haveMemo(talker, Q201_TUTORIAL_HUMAN_FIGHTER) || haveMemo(talker, Q202_TUTORIAL_HUMAN_MAGE) || haveMemo(talker, Q203_TUTORIAL_ELF) || haveMemo(talker, Q204_TUTORIAL_DARK_ELF) || haveMemo(talker, Q205_TUTORIAL_ORC) || haveMemo(talker, Q206_TUTORIAL_DWARF)) {
 						qs.showQuestionMark(talker, 6);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
-					}
-					else
-					{
+					} else {
 						qs.showQuestionMark(talker, 2);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					}
 					break;
 				case 3:
 					int stateMark = 1;
-					if (qs.getQuestItemsCount(BLUE_GEMSTONE) == 1)
-					{
+					if (qs.getQuestItemsCount(BLUE_GEMSTONE) == 1) {
 						stateMark = 3;
-					}
-					else if (qs.getMemoStateEx(1) == 2)
-					{
+					} else if (qs.getMemoStateEx(1) == 2) {
 						stateMark = 2;
 					}
 					
-					switch (stateMark)
-					{
+					switch (stateMark) {
 						case 1:
 							qs.showQuestionMark(talker, 3);
 							break;
@@ -1787,56 +1604,46 @@ public class Q00255_Tutorial extends Quest
 					break;
 			}
 			enableTutorialEvent(qs, memoState);
-		}
-		else
-		{
-			switch (talker.getLevel())
-			{
+		} else {
+			switch (talker.getLevel()) {
 				case 18:
-					if (haveMemo(talker, 10276) && (getOneTimeQuestFlag(talker, 10276) == 0))
-					{
+					if (haveMemo(talker, 10276) && (getOneTimeQuestFlag(talker, 10276) == 0)) {
 						qs.showQuestionMark(talker, 33);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					}
 					break;
 				case 28:
-					if (haveMemo(talker, 10277) && (getOneTimeQuestFlag(talker, 10277) == 0))
-					{
+					if (haveMemo(talker, 10277) && (getOneTimeQuestFlag(talker, 10277) == 0)) {
 						qs.showQuestionMark(talker, 33);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					}
 					break;
 				case 38:
-					if (haveMemo(talker, 10278) && (getOneTimeQuestFlag(talker, 10278) == 0))
-					{
+					if (haveMemo(talker, 10278) && (getOneTimeQuestFlag(talker, 10278) == 0)) {
 						qs.showQuestionMark(talker, 33);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					}
 					break;
 				case 48:
-					if (haveMemo(talker, 10279) && (getOneTimeQuestFlag(talker, 10279) == 0))
-					{
+					if (haveMemo(talker, 10279) && (getOneTimeQuestFlag(talker, 10279) == 0)) {
 						qs.showQuestionMark(talker, 33);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					}
 					break;
 				case 58:
-					if (haveMemo(talker, 10280) && (getOneTimeQuestFlag(talker, 10280) == 0))
-					{
+					if (haveMemo(talker, 10280) && (getOneTimeQuestFlag(talker, 10280) == 0)) {
 						qs.showQuestionMark(talker, 33);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					}
 					break;
 				case 68:
-					if (haveMemo(talker, 10281) && (getOneTimeQuestFlag(talker, 10281) == 0))
-					{
+					if (haveMemo(talker, 10281) && (getOneTimeQuestFlag(talker, 10281) == 0)) {
 						qs.showQuestionMark(talker, 33);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					}
 					break;
 				case 79:
-					if (haveMemo(talker, 192) && (getOneTimeQuestFlag(talker, 192) == 0))
-					{
+					if (haveMemo(talker, 192) && (getOneTimeQuestFlag(talker, 192) == 0)) {
 						qs.showQuestionMark(talker, 34);
 						qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 					}
@@ -1846,222 +1653,170 @@ public class Q00255_Tutorial extends Quest
 			int territoryWarId = qs.getDominionSiegeID(talker);
 			int territoryWarState = qs.getNRMemoStateEx(talker, 728, 1);
 			
-			if ((territoryWarId > 0) && (qs.getDominionWarState(territoryWarId) == 5))
-			{
-				if (!qs.haveNRMemo(talker, 728))
-				{
+			if ((territoryWarId > 0) && (qs.getDominionWarState(territoryWarId) == 5)) {
+				if (!qs.haveNRMemo(talker, 728)) {
 					qs.setNRMemo(talker, 728);
 					qs.setNRMemoState(talker, 728, 0);
 					qs.setNRMemoStateEx(talker, 728, 1, territoryWarId);
-				}
-				else if (territoryWarId != territoryWarState)
-				{
+				} else if (territoryWarId != territoryWarState) {
 					qs.setNRMemoState(talker, 728, 0);
 					qs.setNRMemoStateEx(talker, 728, 1, territoryWarId);
 				}
-				switch (territoryWarId)
-				{
+				switch (territoryWarId) {
 					case 81:
-						if (qs.getDominionWarState(TW_GLUDIO) == 5)
-						{
-							if (!qs.haveNRMemo(talker, Q717_FOR_THE_SAKE_OF_THE_TERRITORY_GLUDIO))
-							{
+						if (qs.getDominionWarState(TW_GLUDIO) == 5) {
+							if (!qs.haveNRMemo(talker, Q717_FOR_THE_SAKE_OF_THE_TERRITORY_GLUDIO)) {
 								qs.setNRMemo(talker, Q717_FOR_THE_SAKE_OF_THE_TERRITORY_GLUDIO);
 								qs.setNRMemoState(talker, Q717_FOR_THE_SAKE_OF_THE_TERRITORY_GLUDIO, 0);
 								qs.setNRFlagJournal(talker, Q717_FOR_THE_SAKE_OF_THE_TERRITORY_GLUDIO, 1);
 								qs.showQuestionMark(talker, Q717_FOR_THE_SAKE_OF_THE_TERRITORY_GLUDIO);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								qs.showQuestionMark(talker, Q717_FOR_THE_SAKE_OF_THE_TERRITORY_GLUDIO);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 						}
 						break;
 					case 82:
-						if (qs.getDominionWarState(TW_DION) == 5)
-						{
-							if (!qs.haveNRMemo(talker, Q718_FOR_THE_SAKE_OF_THE_TERRITORY_DION))
-							{
+						if (qs.getDominionWarState(TW_DION) == 5) {
+							if (!qs.haveNRMemo(talker, Q718_FOR_THE_SAKE_OF_THE_TERRITORY_DION)) {
 								qs.setNRMemo(talker, Q718_FOR_THE_SAKE_OF_THE_TERRITORY_DION);
 								qs.setNRMemoState(talker, Q718_FOR_THE_SAKE_OF_THE_TERRITORY_DION, 0);
 								qs.setNRFlagJournal(talker, Q718_FOR_THE_SAKE_OF_THE_TERRITORY_DION, 1);
 								qs.showQuestionMark(talker, Q718_FOR_THE_SAKE_OF_THE_TERRITORY_DION);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								qs.showQuestionMark(talker, Q718_FOR_THE_SAKE_OF_THE_TERRITORY_DION);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 						}
 						break;
 					case 83:
-						if (qs.getDominionWarState(TW_GIRAN) == 5)
-						{
-							if (!qs.haveNRMemo(talker, Q719_FOR_THE_SAKE_OF_THE_TERRITORY_GIRAN))
-							{
+						if (qs.getDominionWarState(TW_GIRAN) == 5) {
+							if (!qs.haveNRMemo(talker, Q719_FOR_THE_SAKE_OF_THE_TERRITORY_GIRAN)) {
 								qs.setNRMemo(talker, Q719_FOR_THE_SAKE_OF_THE_TERRITORY_GIRAN);
 								qs.setNRMemoState(talker, Q719_FOR_THE_SAKE_OF_THE_TERRITORY_GIRAN, 0);
 								qs.setNRFlagJournal(talker, Q719_FOR_THE_SAKE_OF_THE_TERRITORY_GIRAN, 1);
 								qs.showQuestionMark(talker, Q719_FOR_THE_SAKE_OF_THE_TERRITORY_GIRAN);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								qs.showQuestionMark(talker, Q719_FOR_THE_SAKE_OF_THE_TERRITORY_GIRAN);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 						}
 						break;
 					case 84:
-						if (qs.getDominionWarState(TW_OREN) == 5)
-						{
-							if (!qs.haveNRMemo(talker, Q720_FOR_THE_SAKE_OF_THE_TERRITORY_OREN))
-							{
+						if (qs.getDominionWarState(TW_OREN) == 5) {
+							if (!qs.haveNRMemo(talker, Q720_FOR_THE_SAKE_OF_THE_TERRITORY_OREN)) {
 								qs.setNRMemo(talker, Q720_FOR_THE_SAKE_OF_THE_TERRITORY_OREN);
 								qs.setNRMemoState(talker, Q720_FOR_THE_SAKE_OF_THE_TERRITORY_OREN, 0);
 								qs.setNRFlagJournal(talker, Q720_FOR_THE_SAKE_OF_THE_TERRITORY_OREN, 1);
 								qs.showQuestionMark(talker, Q720_FOR_THE_SAKE_OF_THE_TERRITORY_OREN);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								qs.showQuestionMark(talker, Q720_FOR_THE_SAKE_OF_THE_TERRITORY_OREN);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 						}
 						break;
 					case 85:
-						if (qs.getDominionWarState(TW_ADEN) == 5)
-						{
-							if (!qs.haveNRMemo(talker, Q721_FOR_THE_SAKE_OF_THE_TERRITORY_ADEN))
-							{
+						if (qs.getDominionWarState(TW_ADEN) == 5) {
+							if (!qs.haveNRMemo(talker, Q721_FOR_THE_SAKE_OF_THE_TERRITORY_ADEN)) {
 								qs.setNRMemo(talker, Q721_FOR_THE_SAKE_OF_THE_TERRITORY_ADEN);
 								qs.setNRMemoState(talker, Q721_FOR_THE_SAKE_OF_THE_TERRITORY_ADEN, 0);
 								qs.setNRFlagJournal(talker, Q721_FOR_THE_SAKE_OF_THE_TERRITORY_ADEN, 1);
 								qs.showQuestionMark(talker, Q721_FOR_THE_SAKE_OF_THE_TERRITORY_ADEN);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								qs.showQuestionMark(talker, Q721_FOR_THE_SAKE_OF_THE_TERRITORY_ADEN);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 						}
 						break;
 					case 86:
-						if (qs.getDominionWarState(TW_HEINE) == 5)
-						{
-							if (!qs.haveNRMemo(talker, Q722_FOR_THE_SAKE_OF_THE_TERRITORY_INNADRIL))
-							{
+						if (qs.getDominionWarState(TW_HEINE) == 5) {
+							if (!qs.haveNRMemo(talker, Q722_FOR_THE_SAKE_OF_THE_TERRITORY_INNADRIL)) {
 								qs.setNRMemo(talker, Q722_FOR_THE_SAKE_OF_THE_TERRITORY_INNADRIL);
 								qs.setNRMemoState(talker, Q722_FOR_THE_SAKE_OF_THE_TERRITORY_INNADRIL, 0);
 								qs.setNRFlagJournal(talker, Q722_FOR_THE_SAKE_OF_THE_TERRITORY_INNADRIL, 1);
 								qs.showQuestionMark(talker, Q722_FOR_THE_SAKE_OF_THE_TERRITORY_INNADRIL);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								qs.showQuestionMark(talker, Q722_FOR_THE_SAKE_OF_THE_TERRITORY_INNADRIL);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 						}
 						break;
 					case 87:
-						if (qs.getDominionWarState(TW_GODDARD) == 5)
-						{
-							if (!qs.haveNRMemo(talker, Q723_FOR_THE_SAKE_OF_THE_TERRITORY_GODDARD))
-							{
+						if (qs.getDominionWarState(TW_GODDARD) == 5) {
+							if (!qs.haveNRMemo(talker, Q723_FOR_THE_SAKE_OF_THE_TERRITORY_GODDARD)) {
 								qs.setNRMemo(talker, Q723_FOR_THE_SAKE_OF_THE_TERRITORY_GODDARD);
 								qs.setNRMemoState(talker, Q723_FOR_THE_SAKE_OF_THE_TERRITORY_GODDARD, 0);
 								qs.setNRFlagJournal(talker, Q723_FOR_THE_SAKE_OF_THE_TERRITORY_GODDARD, 1);
 								qs.showQuestionMark(talker, Q723_FOR_THE_SAKE_OF_THE_TERRITORY_GODDARD);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								qs.showQuestionMark(talker, Q723_FOR_THE_SAKE_OF_THE_TERRITORY_GODDARD);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 						}
 						break;
 					case 88:
-						if (qs.getDominionWarState(TW_RUNE) == 5)
-						{
-							if (!qs.haveNRMemo(talker, Q724_FOR_THE_SAKE_OF_THE_TERRITORY_RUNE))
-							{
+						if (qs.getDominionWarState(TW_RUNE) == 5) {
+							if (!qs.haveNRMemo(talker, Q724_FOR_THE_SAKE_OF_THE_TERRITORY_RUNE)) {
 								qs.setNRMemo(talker, Q724_FOR_THE_SAKE_OF_THE_TERRITORY_RUNE);
 								qs.setNRMemoState(talker, Q724_FOR_THE_SAKE_OF_THE_TERRITORY_RUNE, 0);
 								qs.setNRFlagJournal(talker, Q724_FOR_THE_SAKE_OF_THE_TERRITORY_RUNE, 1);
 								qs.showQuestionMark(talker, Q724_FOR_THE_SAKE_OF_THE_TERRITORY_RUNE);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								qs.showQuestionMark(talker, Q724_FOR_THE_SAKE_OF_THE_TERRITORY_RUNE);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 						}
 						break;
 					case 89:
-						if (qs.getDominionWarState(TW_SCHUTTGART) == 5)
-						{
-							if (!qs.haveNRMemo(talker, Q725_FOR_THE_SAKE_OF_THE_TERRITORY_SCHUTTGART))
-							{
+						if (qs.getDominionWarState(TW_SCHUTTGART) == 5) {
+							if (!qs.haveNRMemo(talker, Q725_FOR_THE_SAKE_OF_THE_TERRITORY_SCHUTTGART)) {
 								qs.setNRMemo(talker, Q725_FOR_THE_SAKE_OF_THE_TERRITORY_SCHUTTGART);
 								qs.setNRMemoState(talker, Q725_FOR_THE_SAKE_OF_THE_TERRITORY_SCHUTTGART, 0);
 								qs.setNRFlagJournal(talker, Q725_FOR_THE_SAKE_OF_THE_TERRITORY_SCHUTTGART, 1);
 								qs.showQuestionMark(talker, Q725_FOR_THE_SAKE_OF_THE_TERRITORY_SCHUTTGART);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
+							} else {
 								qs.showQuestionMark(talker, Q725_FOR_THE_SAKE_OF_THE_TERRITORY_SCHUTTGART);
 								qs.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 							}
 						}
 						break;
 				}
-			}
-			else
-			{
-				if (qs.haveNRMemo(talker, Q728_TERRITORY_WAR))
-				{
-					if ((territoryWarState >= 81) && (territoryWarState <= 89))
-					{
+			} else {
+				if (qs.haveNRMemo(talker, Q728_TERRITORY_WAR)) {
+					if ((territoryWarState >= 81) && (territoryWarState <= 89)) {
 						int twNRState = qs.getNRMemoState(talker, Q728_TERRITORY_WAR);
 						int twNRStateForCurrentWar = qs.getNRMemoState(talker, 636 + territoryWarState);
-						if (twNRStateForCurrentWar >= 0)
-						{
+						if (twNRStateForCurrentWar >= 0) {
 							qs.setNRMemoState(talker, Q728_TERRITORY_WAR, twNRStateForCurrentWar + twNRState);
 							qs.removeNRMemo(talker, 636 + territoryWarState);
 						}
 					}
 				}
-				if (qs.haveNRMemo(talker, 739) && (qs.getNRMemoState(talker, 739) > 0))
-				{
+				if (qs.haveNRMemo(talker, 739) && (qs.getNRMemoState(talker, 739) > 0)) {
 					qs.setNRMemoState(talker, 739, 0);
 				}
-				if (qs.haveNRMemo(talker, Q729_PROTECT_THE_TERRITORY_CATAPULT))
-				{
+				if (qs.haveNRMemo(talker, Q729_PROTECT_THE_TERRITORY_CATAPULT)) {
 					qs.removeNRMemo(talker, 729);
 				}
-				if (qs.haveNRMemo(talker, Q730_PROTECT_THE_SUPPLIES_SAFE))
-				{
+				if (qs.haveNRMemo(talker, Q730_PROTECT_THE_SUPPLIES_SAFE)) {
 					qs.removeNRMemo(talker, 730);
 				}
-				if (qs.haveNRMemo(talker, Q731_PROTECT_THE_MILITARY_ASSOCIATION_LEADER))
-				{
+				if (qs.haveNRMemo(talker, Q731_PROTECT_THE_MILITARY_ASSOCIATION_LEADER)) {
 					qs.removeNRMemo(talker, 731);
 				}
-				if (qs.haveNRMemo(talker, Q732_PROTECT_THE_RELIGIOUS_ASSOCIATION_LEADER))
-				{
+				if (qs.haveNRMemo(talker, Q732_PROTECT_THE_RELIGIOUS_ASSOCIATION_LEADER)) {
 					qs.removeNRMemo(talker, 732);
 				}
-				if (qs.haveNRMemo(talker, Q733_PROTECT_THE_ECONOMIC_ASSOCIATION_LEADER))
-				{
+				if (qs.haveNRMemo(talker, Q733_PROTECT_THE_ECONOMIC_ASSOCIATION_LEADER)) {
 					qs.removeNRMemo(talker, 733);
 				}
 			}
@@ -2070,29 +1825,21 @@ public class Q00255_Tutorial extends Quest
 	
 	// ---------------------------------- Event
 	
-	private void eventRoien(int event, L2PcInstance talker, L2Npc npc, QuestState qs)
-	{
-		switch (event)
-		{
+	private void eventRoien(int event, L2PcInstance talker, L2Npc npc, QuestState qs) {
+		switch (event) {
 			case 31:
-				if (qs.hasQuestItems(RECOMMENDATION_1))
-				{
-					if (!talker.isMageClass() && (qs.getMemoStateEx(1) <= 3))
-					{
+				if (qs.hasQuestItems(RECOMMENDATION_1)) {
+					if (!talker.isMageClass() && (qs.getMemoStateEx(1) <= 3)) {
 						qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 						qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 						qs.addExpAndSp(0, 50);
 						qs.setMemoStateEx(1, 4);
 					}
-					if (talker.isMageClass() && (qs.getMemoStateEx(1) <= 3))
-					{
-						if (talker.getClassId() == ClassId.orcMage)
-						{
+					if (talker.isMageClass() && (qs.getMemoStateEx(1) <= 3)) {
+						if (talker.getClassId() == ClassId.orcMage) {
 							qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 							qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
-						}
-						else
-						{
+						} else {
 							qs.giveItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS, 100);
 							qs.playSound(Voice.TUTORIAL_VOICE_027_1000);
 						}
@@ -2114,28 +1861,20 @@ public class Q00255_Tutorial extends Quest
 		}
 	}
 	
-	private void eventGallin(int event, L2PcInstance talker, L2Npc npc, QuestState qs)
-	{
-		switch (event)
-		{
+	private void eventGallin(int event, L2PcInstance talker, L2Npc npc, QuestState qs) {
+		switch (event) {
 			case 31:
-				if (qs.hasQuestItems(RECOMMENDATION_2))
-				{
-					if (!talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200))
-					{
+				if (qs.hasQuestItems(RECOMMENDATION_2)) {
+					if (!talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200)) {
 						qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 						qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 						qs.addExpAndSp(0, 50);
 					}
-					if (talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200) && (qs.getQuestItemsCount(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS) <= 100))
-					{
-						if (talker.getClassId() == ClassId.orcMage)
-						{
+					if (talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200) && (qs.getQuestItemsCount(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS) <= 100)) {
+						if (talker.getClassId() == ClassId.orcMage) {
 							qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 							qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
-						}
-						else
-						{
+						} else {
 							qs.playSound(Voice.TUTORIAL_VOICE_027_1000);
 							qs.giveItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 						}
@@ -2143,8 +1882,7 @@ public class Q00255_Tutorial extends Quest
 					}
 					qs.takeItems(RECOMMENDATION_2, 1);
 					startQuestTimer(npc.getId() + "", 60000, npc, talker);
-					if (qs.getMemoStateEx(1) <= 3)
-					{
+					if (qs.getMemoStateEx(1) <= 3) {
 						qs.setMemoStateEx(1, 4);
 					}
 					showPage(talker, "30017-002.htm");
@@ -2161,28 +1899,20 @@ public class Q00255_Tutorial extends Quest
 		}
 	}
 	
-	private void eventJundin(int event, L2PcInstance talker, L2Npc npc, QuestState qs)
-	{
-		switch (event)
-		{
+	private void eventJundin(int event, L2PcInstance talker, L2Npc npc, QuestState qs) {
+		switch (event) {
 			case 31:
-				if (qs.hasQuestItems(BLOOD_OF_MITRAELL))
-				{
-					if (!talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200))
-					{
+				if (qs.hasQuestItems(BLOOD_OF_MITRAELL)) {
+					if (!talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200)) {
 						qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 						qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 						qs.addExpAndSp(0, 50);
 					}
-					if (talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200) && (qs.getQuestItemsCount(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS) <= 100))
-					{
-						if (talker.getClassId() == ClassId.orcMage)
-						{
+					if (talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200) && (qs.getQuestItemsCount(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS) <= 100)) {
+						if (talker.getClassId() == ClassId.orcMage) {
 							qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 							qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
-						}
-						else
-						{
+						} else {
 							qs.playSound(Voice.TUTORIAL_VOICE_027_1000);
 							qs.giveItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 						}
@@ -2190,8 +1920,7 @@ public class Q00255_Tutorial extends Quest
 					}
 					qs.takeItems(BLOOD_OF_MITRAELL, 1);
 					startQuestTimer(npc.getId() + "", 60000, npc, talker);
-					if (qs.getMemoStateEx(1) <= 3)
-					{
+					if (qs.getMemoStateEx(1) <= 3) {
 						qs.setMemoStateEx(1, 4);
 					}
 					showPage(talker, "30129-002.htm");
@@ -2208,30 +1937,24 @@ public class Q00255_Tutorial extends Quest
 		}
 	}
 	
-	private void eventNerupa(int event, L2PcInstance talker, L2Npc npc, QuestState qs)
-	{
-		switch (event)
-		{
+	private void eventNerupa(int event, L2PcInstance talker, L2Npc npc, QuestState qs) {
+		switch (event) {
 			case 31:
-				if (qs.hasQuestItems(LEAF_OF_THE_MOTHER_TREE))
-				{
-					if (!talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200))
-					{
+				if (qs.hasQuestItems(LEAF_OF_THE_MOTHER_TREE)) {
+					if (!talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200)) {
 						
 						qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 						qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 						qs.addExpAndSp(0, 50);
 					}
-					if (talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200) && (qs.getQuestItemsCount(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS) <= 100))
-					{
+					if (talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200) && (qs.getQuestItemsCount(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS) <= 100)) {
 						qs.playSound(Voice.TUTORIAL_VOICE_027_1000);
 						qs.giveItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 						qs.addExpAndSp(0, 50);
 					}
 					qs.takeItems(LEAF_OF_THE_MOTHER_TREE, 1);
 					startQuestTimer(npc.getId() + "", 60000, npc, talker);
-					if (qs.getMemoStateEx(1) <= 3)
-					{
+					if (qs.getMemoStateEx(1) <= 3) {
 						qs.setMemoStateEx(1, 4);
 					}
 					showPage(talker, "30370-002.htm");
@@ -2249,30 +1972,24 @@ public class Q00255_Tutorial extends Quest
 		}
 	}
 	
-	private void eventForemanLaferon(int event, L2PcInstance talker, L2Npc npc, QuestState qs)
-	{
-		switch (event)
-		{
+	private void eventForemanLaferon(int event, L2PcInstance talker, L2Npc npc, QuestState qs) {
+		switch (event) {
 			case 31:
-				if (qs.hasQuestItems(LICENSE_OF_MINER))
-				{
-					if (!talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200))
-					{
+				if (qs.hasQuestItems(LICENSE_OF_MINER)) {
+					if (!talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200)) {
 						
 						qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 						qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 						qs.addExpAndSp(0, 50);
 					}
-					if (talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200) && (qs.getQuestItemsCount(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS) <= 100))
-					{
+					if (talker.isMageClass() && (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200) && (qs.getQuestItemsCount(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS) <= 100)) {
 						qs.playSound(Voice.TUTORIAL_VOICE_027_1000);
 						qs.giveItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS, 100);
 						qs.addExpAndSp(0, 50);
 					}
 					qs.takeItems(LICENSE_OF_MINER, 1);
 					startQuestTimer(npc.getId() + "", 60000, npc, talker);
-					if (qs.getMemoStateEx(1) <= 3)
-					{
+					if (qs.getMemoStateEx(1) <= 3) {
 						qs.setMemoStateEx(1, 4);
 					}
 					showPage(talker, "30528-002.htm");
@@ -2290,21 +2007,16 @@ public class Q00255_Tutorial extends Quest
 		}
 	}
 	
-	private void eventGuardianVullkus(int event, L2PcInstance talker, L2Npc npc, QuestState qs)
-	{
-		switch (event)
-		{
+	private void eventGuardianVullkus(int event, L2PcInstance talker, L2Npc npc, QuestState qs) {
+		switch (event) {
 			case 31:
-				if (qs.hasQuestItems(VOUCHER_OF_FLAME))
-				{
+				if (qs.hasQuestItems(VOUCHER_OF_FLAME)) {
 					qs.takeItems(VOUCHER_OF_FLAME, 1);
 					startQuestTimer(npc.getId() + "", 60000, npc, talker);
-					if (qs.getMemoStateEx(1) <= 3)
-					{
+					if (qs.getMemoStateEx(1) <= 3) {
 						qs.setMemoStateEx(1, 4);
 					}
-					if (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200)
-					{
+					if (qs.getQuestItemsCount(SOULSHOT_NO_GRADE_FOR_BEGINNERS) <= 200) {
 						qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 						qs.addExpAndSp(0, 50);
 					}
@@ -2322,12 +2034,9 @@ public class Q00255_Tutorial extends Quest
 		}
 	}
 	
-	private void eventSubelderPerwan(int event, L2PcInstance talker, L2Npc npc, QuestState qs)
-	{
-		if ((event == 31) && qs.hasQuestItems(DIPLOMA))
-		{
-			if ((talker.getRace() == Race.KAMAEL) && (talker.getClassId().level() == 0) && (qs.getMemoStateEx(1) <= 3))
-			{
+	private void eventSubelderPerwan(int event, L2PcInstance talker, L2Npc npc, QuestState qs) {
+		if ((event == 31) && qs.hasQuestItems(DIPLOMA)) {
+			if ((talker.getRace() == Race.KAMAEL) && (talker.getClassId().level() == 0) && (qs.getMemoStateEx(1) <= 3)) {
 				qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 				qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 				qs.addExpAndSp(0, 50);
@@ -2342,223 +2051,151 @@ public class Q00255_Tutorial extends Quest
 	
 	// ---------------------------------- Talks
 	
-	private void talkRoien(L2PcInstance talker, QuestState qs)
-	{
-		if (qs.hasQuestItems(RECOMMENDATION_1))
-		{
+	private void talkRoien(L2PcInstance talker, QuestState qs) {
+		if (qs.hasQuestItems(RECOMMENDATION_1)) {
 			showPage(talker, "30008-001.htm", true);
-		}
-		else
-		{
-			if (qs.getMemoStateEx(1) > 3)
-			{
+		} else {
+			if (qs.getMemoStateEx(1) > 3) {
 				showPage(talker, "30008-004.htm", true);
-			}
-			else if (qs.getMemoStateEx(1) <= 3)
-			{
+			} else if (qs.getMemoStateEx(1) <= 3) {
 				showPage(talker, "30008-003.htm", true);
 			}
 		}
 	}
 	
-	private void talkCarl(L2Npc npc, L2PcInstance talker, QuestState qs)
-	{
-		if (qs.getMemoStateEx(1) < 0)
-		{
-			if ((talker.getClassId() == ClassId.fighter) && (talker.getRace() == Race.HUMAN))
-			{
+	private void talkCarl(L2Npc npc, L2PcInstance talker, QuestState qs) {
+		if (qs.getMemoStateEx(1) < 0) {
+			if ((talker.getClassId() == ClassId.fighter) && (talker.getRace() == Race.HUMAN)) {
 				qs.removeRadar(-71424, 258336, -3109);
 				startQuestTimer(npc.getId() + "", 30000, npc, talker);
 				qs.setMemoStateEx(1, 0);
 				enableTutorialEvent(qs, (qs.getMemoState() & 2147483392) | 1048576);
 				showPage(talker, "30009-001.htm");
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30009-006.htm");
 			}
-		}
-		else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE))
-		{
+		} else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE)) {
 			showPage(talker, "30009-002.htm");
-		}
-		else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE))
-		{
+		} else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE)) {
 			qs.takeItems(BLUE_GEMSTONE, -1);
 			qs.setMemoStateEx(1, 3);
 			qs.giveItems(RECOMMENDATION_1, 1);
 			
 			startQuestTimer(npc.getId() + "", 30000, npc, talker);
 			qs.setMemoState((qs.getMemoState() & 2147483392) | 4);
-			if (!talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS))
-			{
+			if (!talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS)) {
 				qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 				qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 				
 			}
-			if (talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS) && !qs.hasQuestItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS))
-			{
-				if (talker.getClassId() == ClassId.orcMage)
-				{
+			if (talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS) && !qs.hasQuestItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS)) {
+				if (talker.getClassId() == ClassId.orcMage) {
 					qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 					qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
-				}
-				else
-				{
+				} else {
 					qs.playSound(Voice.TUTORIAL_VOICE_027_1000);
 					qs.giveItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS, 100);
 				}
 			}
 			showPage(talker, "30009-003.htm");
-		}
-		else if (qs.getMemoStateEx(1) == 3)
-		{
+		} else if (qs.getMemoStateEx(1) == 3) {
 			showPage(talker, "30009-004.htm");
-		}
-		else if (qs.getMemoStateEx(1) > 3)
-		{
+		} else if (qs.getMemoStateEx(1) > 3) {
 			showPage(talker, "30009-005.htm");
 		}
 	}
 	
-	private void talkGallin(L2PcInstance talker, QuestState qs)
-	{
-		if (qs.hasQuestItems(RECOMMENDATION_2))
-		{
+	private void talkGallin(L2PcInstance talker, QuestState qs) {
+		if (qs.hasQuestItems(RECOMMENDATION_2)) {
 			showPage(talker, "30017-001.htm", true);
-		}
-		else if (!qs.hasQuestItems(RECOMMENDATION_2) && (qs.getMemoStateEx(1) > 3))
-		{
+		} else if (!qs.hasQuestItems(RECOMMENDATION_2) && (qs.getMemoStateEx(1) > 3)) {
 			showPage(talker, "30017-004.htm", true);
-		}
-		else if (!qs.hasQuestItems(RECOMMENDATION_2) && (qs.getMemoStateEx(1) <= 3))
-		{
+		} else if (!qs.hasQuestItems(RECOMMENDATION_2) && (qs.getMemoStateEx(1) <= 3)) {
 			showPage(talker, "30017-003.htm", true);
 		}
 	}
 	
-	private void talkDoff(L2Npc npc, L2PcInstance talker, QuestState qs)
-	{
-		if (qs.getMemoStateEx(1) < 0)
-		{
-			if ((talker.getClassId() == ClassId.mage) && (talker.getRace() == Race.HUMAN))
-			{
+	private void talkDoff(L2Npc npc, L2PcInstance talker, QuestState qs) {
+		if (qs.getMemoStateEx(1) < 0) {
+			if ((talker.getClassId() == ClassId.mage) && (talker.getRace() == Race.HUMAN)) {
 				qs.removeRadar(-91036, 248044, -3568);
 				startQuestTimer(npc.getId() + "", 30000, npc, talker);
 				qs.setMemoStateEx(1, 0);
 				enableTutorialEvent(qs, (qs.getMemoState() & 2147483392) | 1048576);
 				showPage(talker, "30019-001.htm");
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30009-006.htm");
 			}
-		}
-		else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE))
-		{
+		} else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE)) {
 			showPage(talker, "30019-002.htm");
 		}
-		if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE))
-		{
+		if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE)) {
 			qs.takeItems(BLUE_GEMSTONE, -1);
 			qs.setMemoStateEx(1, 3);
 			qs.giveItems(RECOMMENDATION_2, 1);
 			
 			startQuestTimer(npc.getId() + "", 30000, npc, talker);
 			qs.setMemoState((qs.getMemoState() & 2147483392) | 4);
-			if (!talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS))
-			{
+			if (!talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS)) {
 				qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 				qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 				
 			}
-			if (talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS) && !qs.hasQuestItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS))
-			{
-				if (talker.getClassId() == ClassId.orcMage)
-				{
+			if (talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS) && !qs.hasQuestItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS)) {
+				if (talker.getClassId() == ClassId.orcMage) {
 					qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 					qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
-				}
-				else
-				{
+				} else {
 					qs.playSound(Voice.TUTORIAL_VOICE_027_1000);
 					qs.giveItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS, 100);
 				}
 			}
 			showPage(talker, "30019-003.htm");
-		}
-		else if (qs.getMemoStateEx(1) == 3)
-		{
+		} else if (qs.getMemoStateEx(1) == 3) {
 			showPage(talker, "30019-004.htm");
-		}
-		else if (qs.getMemoStateEx(1) > 3)
-		{
+		} else if (qs.getMemoStateEx(1) > 3) {
 			showPage(talker, "30009-005.htm");
 		}
 	}
 	
-	private void talkJundin(L2PcInstance talker, QuestState qs)
-	{
-		if (qs.hasQuestItems(BLOOD_OF_MITRAELL))
-		{
+	private void talkJundin(L2PcInstance talker, QuestState qs) {
+		if (qs.hasQuestItems(BLOOD_OF_MITRAELL)) {
 			showPage(talker, "30129-001.htm", true);
-		}
-		else if (!qs.hasQuestItems(BLOOD_OF_MITRAELL) && (qs.getMemoStateEx(1) > 3))
-		{
+		} else if (!qs.hasQuestItems(BLOOD_OF_MITRAELL) && (qs.getMemoStateEx(1) > 3)) {
 			showPage(talker, "30129-004.htm", true);
-		}
-		else if (!qs.hasQuestItems(BLOOD_OF_MITRAELL) && (qs.getMemoStateEx(1) <= 3))
-		{
+		} else if (!qs.hasQuestItems(BLOOD_OF_MITRAELL) && (qs.getMemoStateEx(1) <= 3)) {
 			showPage(talker, "30129-003.htm", true);
 		}
 	}
 	
-	private void talkPoeny(L2Npc npc, L2PcInstance talker, QuestState qs)
-	{
-		if (qs.getMemoStateEx(1) < 0)
-		{
-			if (talker.getRace() == Race.DARK_ELF)
-			{
+	private void talkPoeny(L2Npc npc, L2PcInstance talker, QuestState qs) {
+		if (qs.getMemoStateEx(1) < 0) {
+			if (talker.getRace() == Race.DARK_ELF) {
 				qs.removeRadar(28384, 11056, -4233);
 				startQuestTimer(npc.getId() + "", 30000, npc, talker);
 				
-				if (!talker.isMageClass())
-				{
+				if (!talker.isMageClass()) {
 					showPage(talker, "30009-001.htm");
-				}
-				else
-				{
+				} else {
 					showPage(talker, "30019-001.htm");
 				}
 				
 				qs.setMemoStateEx(1, 0);
 				enableTutorialEvent(qs, (qs.getMemoState() & 2147483392) | 1048576);
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30009-006.htm");
 			}
-		}
-		else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE))
-		{
-			if (!talker.isMageClass())
-			{
+		} else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE)) {
+			if (!talker.isMageClass()) {
 				showPage(talker, "30009-002.htm");
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30019-002.htm");
 			}
-		}
-		else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE))
-		{
+		} else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE)) {
 			
-			if (!talker.isMageClass())
-			{
+			if (!talker.isMageClass()) {
 				showPage(talker, "30131-003f.htm");
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30131-003m.htm");
 			}
 			
@@ -2569,279 +2206,183 @@ public class Q00255_Tutorial extends Quest
 			
 			qs.setMemoState((qs.getMemoState() & 2147483392) | 4);
 			
-			if (!talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS))
-			{
+			if (!talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS)) {
 				qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 				qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 			}
-			if (talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS) && !qs.hasQuestItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS))
-			{
-				if (talker.getClassId() == ClassId.orcMage)
-				{
+			if (talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS) && !qs.hasQuestItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS)) {
+				if (talker.getClassId() == ClassId.orcMage) {
 					
 					qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 					qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 100);
-				}
-				else
-				{
+				} else {
 					qs.playSound(Voice.TUTORIAL_VOICE_027_1000);
 					qs.giveItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS, 100);
 				}
 			}
-		}
-		else if (qs.getMemoStateEx(1) == 3)
-		{
+		} else if (qs.getMemoStateEx(1) == 3) {
 			showPage(talker, "30131-004.htm");
-		}
-		else if (qs.getMemoStateEx(1) > 3)
-		{
+		} else if (qs.getMemoStateEx(1) > 3) {
 			showPage(talker, "30009-005.htm");
 		}
 	}
 	
-	private void talkNerupa(L2PcInstance talker, QuestState qs)
-	{
-		if (qs.hasQuestItems(LEAF_OF_THE_MOTHER_TREE))
-		{
+	private void talkNerupa(L2PcInstance talker, QuestState qs) {
+		if (qs.hasQuestItems(LEAF_OF_THE_MOTHER_TREE)) {
 			showPage(talker, "30370-001.htm", true);
-		}
-		else if (!qs.hasQuestItems(LEAF_OF_THE_MOTHER_TREE) && (qs.getMemoStateEx(1) > 3))
-		{
+		} else if (!qs.hasQuestItems(LEAF_OF_THE_MOTHER_TREE) && (qs.getMemoStateEx(1) > 3)) {
 			showPage(talker, "30370-004.htm", true);
-		}
-		else if (!qs.hasQuestItems(LEAF_OF_THE_MOTHER_TREE) && (qs.getMemoStateEx(1) <= 3))
-		{
+		} else if (!qs.hasQuestItems(LEAF_OF_THE_MOTHER_TREE) && (qs.getMemoStateEx(1) <= 3)) {
 			showPage(talker, "30370-003.htm", true);
 		}
 	}
 	
-	private void talkMotherTemp(L2Npc npc, L2PcInstance talker, QuestState qs)
-	{
-		if (qs.getMemoStateEx(1) < 0)
-		{
-			if (talker.getRace() == Race.ELF)
-			{
+	private void talkMotherTemp(L2Npc npc, L2PcInstance talker, QuestState qs) {
+		if (qs.getMemoStateEx(1) < 0) {
+			if (talker.getRace() == Race.ELF) {
 				qs.removeRadar(46112, 41200, -3504);
 				startQuestTimer(npc.getId() + "", 30000, npc, talker);
 				qs.setMemoStateEx(1, 0);
 				enableTutorialEvent(qs, (qs.getMemoState() & 2147483392) | 1048576);
-				if (!talker.isMageClass())
-				{
+				if (!talker.isMageClass()) {
 					showPage(talker, "30009-001.htm");
-				}
-				else
-				{
+				} else {
 					showPage(talker, "30019-001.htm");
 				}
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30009-006.htm");
 			}
-		}
-		else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE))
-		{
-			if (!talker.isMageClass())
-			{
+		} else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE)) {
+			if (!talker.isMageClass()) {
 				showPage(talker, "30009-002.htm");
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30019-002.htm");
 			}
-		}
-		else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE))
-		{
+		} else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE)) {
 			qs.takeItems(BLUE_GEMSTONE, -1);
 			qs.setMemoStateEx(1, 3);
 			qs.giveItems(LEAF_OF_THE_MOTHER_TREE, 1);
 			startQuestTimer(npc.getId() + "", 30000, npc, talker);
 			qs.setMemoState((qs.getMemoState() & 2147483392) | 4);
-			if (!talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS))
-			{
+			if (!talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS)) {
 				qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 				qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 			}
-			if (talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS) && !qs.hasQuestItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS))
-			{
-				if (talker.getClassId() == ClassId.orcMage)
-				{
+			if (talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS) && !qs.hasQuestItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS)) {
+				if (talker.getClassId() == ClassId.orcMage) {
 					qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 					qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
-				}
-				else
-				{
+				} else {
 					qs.playSound(Voice.TUTORIAL_VOICE_027_1000);
 					qs.giveItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS, 100);
 				}
 			}
 			
-			if (!talker.isMageClass())
-			{
+			if (!talker.isMageClass()) {
 				showPage(talker, "30400-003f.htm");
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30400-003m.htm");
 			}
-		}
-		else if (qs.getMemoStateEx(1) == 3)
-		{
+		} else if (qs.getMemoStateEx(1) == 3) {
 			showPage(talker, "30400-004.htm");
-		}
-		else if (qs.getMemoStateEx(1) > 3)
-		{
+		} else if (qs.getMemoStateEx(1) > 3) {
 			showPage(talker, "30009-005.htm");
 		}
 	}
 	
-	private void talkForemanLaferon(L2PcInstance talker, QuestState qs)
-	{
-		if (qs.hasQuestItems(LICENSE_OF_MINER))
-		{
+	private void talkForemanLaferon(L2PcInstance talker, QuestState qs) {
+		if (qs.hasQuestItems(LICENSE_OF_MINER)) {
 			showPage(talker, "30528-001.htm", true);
-		}
-		else if (!qs.hasQuestItems(LICENSE_OF_MINER) && (qs.getMemoStateEx(1) > 3))
-		{
+		} else if (!qs.hasQuestItems(LICENSE_OF_MINER) && (qs.getMemoStateEx(1) > 3)) {
 			showPage(talker, "30528-004.htm", true);
-		}
-		else if (!qs.hasQuestItems(LICENSE_OF_MINER) && (qs.getMemoStateEx(1) <= 3))
-		{
+		} else if (!qs.hasQuestItems(LICENSE_OF_MINER) && (qs.getMemoStateEx(1) <= 3)) {
 			showPage(talker, "30528-003.htm", true);
 		}
 	}
 	
-	private void talkMinerMai(L2Npc npc, L2PcInstance talker, QuestState qs)
-	{
-		if (qs.getMemoStateEx(1) < 0)
-		{
-			if (talker.getRace() == Race.DWARF)
-			{
+	private void talkMinerMai(L2Npc npc, L2PcInstance talker, QuestState qs) {
+		if (qs.getMemoStateEx(1) < 0) {
+			if (talker.getRace() == Race.DWARF) {
 				qs.removeRadar(108567, -173994, -406);
 				startQuestTimer(npc.getId() + "", 30000, npc, talker);
 				
 				qs.setMemoStateEx(1, 0);
 				enableTutorialEvent(qs, (qs.getMemoState() & 2147483392) | 1048576);
-				if (!talker.isMageClass())
-				{
+				if (!talker.isMageClass()) {
 					showPage(talker, "30009-001.htm");
-				}
-				else
-				{
+				} else {
 					showPage(talker, "30019-001.htm");
 				}
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30009-006.htm");
 			}
-		}
-		else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE))
-		{
+		} else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE)) {
 			showPage(talker, "30009-002.htm");
-		}
-		else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE))
-		{
+		} else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE)) {
 			qs.takeItems(BLUE_GEMSTONE, -1);
 			qs.setMemoStateEx(1, 3);
 			qs.giveItems(LICENSE_OF_MINER, 1);
 			startQuestTimer(npc.getId() + "", 30000, npc, talker);
 			qs.setMemoState((qs.getMemoState() & 2147483392) | 4);
-			if (!talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS))
-			{
+			if (!talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS)) {
 				qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 				qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 			}
-			if (talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS) && !qs.hasQuestItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS))
-			{
-				if (talker.getClassId() == ClassId.orcMage)
-				{
+			if (talker.isMageClass() && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS) && !qs.hasQuestItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS)) {
+				if (talker.getClassId() == ClassId.orcMage) {
 					qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 					qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
-				}
-				else
-				{
+				} else {
 					qs.playSound(Voice.TUTORIAL_VOICE_027_1000);
 					qs.giveItems(SPIRITSHOT_NO_GRADE_FOR_BEGINNERS, 100);
 				}
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30530-003.htm");
 			}
-		}
-		else if (qs.getMemoStateEx(1) == 3)
-		{
+		} else if (qs.getMemoStateEx(1) == 3) {
 			showPage(talker, "30530-004.htm");
-		}
-		else if (qs.getMemoStateEx(1) > 3)
-		{
+		} else if (qs.getMemoStateEx(1) > 3) {
 			showPage(talker, "30009-005.htm");
 		}
 	}
 	
-	private void talkGuardianVullkus(L2PcInstance talker, QuestState qs)
-	{
-		if (qs.hasQuestItems(VOUCHER_OF_FLAME))
-		{
+	private void talkGuardianVullkus(L2PcInstance talker, QuestState qs) {
+		if (qs.hasQuestItems(VOUCHER_OF_FLAME)) {
 			showPage(talker, "30573-001.htm", true);
-		}
-		else
-		{
-			if (qs.getMemoStateEx(1) > 3)
-			{
+		} else {
+			if (qs.getMemoStateEx(1) > 3) {
 				showPage(talker, "30573-004.htm", true);
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30573-003.htm", true);
 			}
 		}
 	}
 	
-	private void talkShelaPriestess(L2Npc npc, L2PcInstance talker, QuestState qs)
-	{
-		if (qs.getMemoStateEx(1) < 0)
-		{
-			if (talker.getRace() == Race.ORC)
-			{
+	private void talkShelaPriestess(L2Npc npc, L2PcInstance talker, QuestState qs) {
+		if (qs.getMemoStateEx(1) < 0) {
+			if (talker.getRace() == Race.ORC) {
 				qs.removeRadar(-56736, -113680, -672);
 				startQuestTimer(npc.getId() + "", 30000, npc, talker);
 				qs.setMemoStateEx(1, 0);
 				enableTutorialEvent(qs, (qs.getMemoState() & 2147483392) | 1048576);
-				if (!talker.isMageClass())
-				{
+				if (!talker.isMageClass()) {
 					showPage(talker, "30009-001.htm");
-				}
-				else
-				{
+				} else {
 					showPage(talker, "30575-001.htm");
 				}
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30009-006.htm");
 			}
-		}
-		else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE))
-		{
-			if (!talker.isMageClass())
-			{
+		} else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE)) {
+			if (!talker.isMageClass()) {
 				showPage(talker, "30009-002.htm");
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30575-002.htm");
 			}
-		}
-		else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE))
-		{
-			if (!talker.isMageClass())
-			{
+		} else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE)) {
+			if (!talker.isMageClass()) {
 				showPage(talker, "30575-003f.htm");
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30575-003m.htm");
 			}
 			
@@ -2850,101 +2391,71 @@ public class Q00255_Tutorial extends Quest
 			qs.giveItems(VOUCHER_OF_FLAME, 1);
 			startQuestTimer(npc.getId() + "", 30000, npc, talker);
 			qs.setMemoState((qs.getMemoState() & 2147483392) | 4);
-			if (!qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS))
-			{
+			if (!qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS)) {
 				qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 			}
 			qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
-		}
-		else if (qs.getMemoStateEx(1) == 3)
-		{
+		} else if (qs.getMemoStateEx(1) == 3) {
 			showPage(talker, "30575-004.htm");
-		}
-		else if (qs.getMemoStateEx(1) > 3)
-		{
+		} else if (qs.getMemoStateEx(1) > 3) {
 			showPage(talker, "30009-005.htm");
 		}
 	}
 	
-	private void talkSubelderPerwan(L2PcInstance talker, QuestState qs)
-	{
-		if (qs.hasQuestItems(DIPLOMA))
-		{
+	private void talkSubelderPerwan(L2PcInstance talker, QuestState qs) {
+		if (qs.hasQuestItems(DIPLOMA)) {
 			showPage(talker, "32133-001.htm", true);
-		}
-		else
-		{
-			if ((qs.getMemoStateEx(1) > 3))
-			{
+		} else {
+			if ((qs.getMemoStateEx(1) > 3)) {
 				showPage(talker, "32133-004.htm", true);
-			}
-			else if (qs.getMemoStateEx(1) <= 3)
-			{
+			} else if (qs.getMemoStateEx(1) <= 3) {
 				showPage(talker, "32133-003.htm", true);
 			}
 		}
 	}
 	
-	private void talkHelperKrenisk(L2Npc npc, L2PcInstance talker, QuestState qs)
-	{
-		if (qs.getMemoStateEx(1) < 0)
-		{
-			if (talker.getRace() == Race.KAMAEL)
-			{
+	private void talkHelperKrenisk(L2Npc npc, L2PcInstance talker, QuestState qs) {
+		if (qs.getMemoStateEx(1) < 0) {
+			if (talker.getRace() == Race.KAMAEL) {
 				qs.removeRadar(-125872, 38016, 1251);
 				qs.setMemoStateEx(1, 0);
 				startQuestTimer(npc.getId() + "", 30000, npc, talker);
 				enableTutorialEvent(qs, (qs.getMemoState() & 2147483392) | 1048576);
 				showPage(talker, "32134-001.htm");
-			}
-			else
-			{
+			} else {
 				showPage(talker, "30009-006.htm");
 			}
-		}
-		else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE))
-		{
+		} else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && !qs.hasQuestItems(BLUE_GEMSTONE)) {
 			showPage(talker, "32134-002.htm");
-		}
-		else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE))
-		{
+		} else if (((qs.getMemoStateEx(1) == 0) || (qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2)) && qs.hasQuestItems(BLUE_GEMSTONE)) {
 			showPage(talker, "32134-003.htm");
 			qs.takeItems(BLUE_GEMSTONE, -1);
 			qs.setMemoStateEx(1, 3);
 			qs.giveItems(DIPLOMA, 1);
 			startQuestTimer(npc.getId() + "", 30000, npc, talker);
 			qs.setMemoState((qs.getMemoState() & 2147483392) | 4);
-			if ((talker.getRace() == Race.KAMAEL) && (talker.getClassId().level() == 0) && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS))
-			{
+			if ((talker.getRace() == Race.KAMAEL) && (talker.getClassId().level() == 0) && !qs.hasQuestItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS)) {
 				qs.giveItems(SOULSHOT_NO_GRADE_FOR_BEGINNERS, 200);
 				qs.playSound(Voice.TUTORIAL_VOICE_026_1000);
 			}
-		}
-		else if (qs.getMemoStateEx(1) == 3)
-		{
+		} else if (qs.getMemoStateEx(1) == 3) {
 			showPage(talker, "32134-004.htm");
-		}
-		else if (qs.getMemoStateEx(1) > 3)
-		{
+		} else if (qs.getMemoStateEx(1) > 3) {
 			showPage(talker, "32134-005.htm");
 		}
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if (npc.getId() == TUTORIAL_GREMLIN)
-		{
-			if ((qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 0))
-			{
+		if (npc.getId() == TUTORIAL_GREMLIN) {
+			if ((qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 0)) {
 				qs.playSound(Voice.TUTORIAL_VOICE_011_1000);
 				qs.showQuestionMark(killer.getActingPlayer(), 3);
 				qs.setMemoStateEx(1, 2);
 			}
 			
-			if (((qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2) || (qs.getMemoStateEx(1) == 0)) && !qs.hasQuestItems(BLUE_GEMSTONE) && (getRandom(2) <= 1))
-			{
+			if (((qs.getMemoStateEx(1) == 1) || (qs.getMemoStateEx(1) == 2) || (qs.getMemoStateEx(1) == 0)) && !qs.hasQuestItems(BLUE_GEMSTONE) && (getRandom(2) <= 1)) {
 				npc.dropItem(killer, BLUE_GEMSTONE, 1);
 				qs.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL);
 			}
@@ -2953,8 +2464,7 @@ public class Q00255_Tutorial extends Quest
 	}
 	
 	@Override
-	public boolean isVisibleInQuestWindow()
-	{
+	public boolean isVisibleInQuestWindow() {
 		return false;
 	}
 }

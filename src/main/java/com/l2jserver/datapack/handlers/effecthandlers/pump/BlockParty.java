@@ -31,28 +31,23 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Block Party effect implementation.
  * @author BiggBoss
  */
-public final class BlockParty extends AbstractEffect
-{
-	public BlockParty(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class BlockParty extends AbstractEffect {
+	public BlockParty(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean canStart(BuffInfo info)
-	{
+	public boolean canStart(BuffInfo info) {
 		return (info.getEffected() != null) && info.getEffected().isPlayer();
 	}
 	
 	@Override
-	public void onExit(BuffInfo info)
-	{
+	public void onExit(BuffInfo info) {
 		PunishmentManager.getInstance().stopPunishment(info.getEffected().getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.PARTY_BAN);
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, info.getEffected().getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.PARTY_BAN, 0, "Party banned by bot report", "system", true));
 	}
 }

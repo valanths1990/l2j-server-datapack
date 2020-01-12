@@ -43,12 +43,10 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.scripting.ScriptEngineManager;
 import com.l2jserver.gameserver.util.Util;
 
-public class AdminQuest implements IAdminCommandHandler
-{
+public class AdminQuest implements IAdminCommandHandler {
 	private static final Logger LOG = LoggerFactory.getLogger(AdminQuest.class);
 	
-	private static final String[] ADMIN_COMMANDS =
-	{
+	private static final String[] ADMIN_COMMANDS = {
 		"admin_quest_reload",
 		"admin_script_load",
 		"admin_script_unload",
@@ -57,10 +55,8 @@ public class AdminQuest implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (activeChar == null)
-		{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (activeChar == null) {
 			return false;
 		}
 		
@@ -73,36 +69,23 @@ public class AdminQuest implements IAdminCommandHandler
 		// Example: //quest_reload chests
 		// Example: //quest_reload SagasSuperclass
 		// Example: //quest_reload 12
-		if (command.startsWith("admin_quest_reload"))
-		{
+		if (command.startsWith("admin_quest_reload")) {
 			String[] parts = command.split(" ");
-			if (parts.length < 2)
-			{
+			if (parts.length < 2) {
 				activeChar.sendMessage("Usage: //quest_reload <questFolder>.<questSubFolders...>.questName> or //quest_reload <id>");
-			}
-			else
-			{
+			} else {
 				// try the first param as id
-				try
-				{
+				try {
 					int questId = Integer.parseInt(parts[1]);
-					if (QuestManager.getInstance().reload(questId))
-					{
+					if (QuestManager.getInstance().reload(questId)) {
 						activeChar.sendMessage("Quest Reloaded Successfully.");
-					}
-					else
-					{
+					} else {
 						activeChar.sendMessage("Quest Reloaded Failed");
 					}
-				}
-				catch (NumberFormatException e)
-				{
-					if (QuestManager.getInstance().reload(parts[1]))
-					{
+				} catch (NumberFormatException e) {
+					if (QuestManager.getInstance().reload(parts[1])) {
 						activeChar.sendMessage("Quest Reloaded Successfully.");
-					}
-					else
-					{
+					} else {
 						activeChar.sendMessage("Quest Reloaded Failed");
 					}
 				}
@@ -114,106 +97,70 @@ public class AdminQuest implements IAdminCommandHandler
 		// did not at all exist during server boot. Using script_load to re-load a previously
 		// loaded script may cause unpredictable script flow, minor loss of data, and more.
 		// This provides a way to load new scripts without having to reboot the server.
-		else if (command.startsWith("admin_script_load"))
-		{
+		else if (command.startsWith("admin_script_load")) {
 			String[] parts = command.split(" ");
-			if (parts.length < 2)
-			{
+			if (parts.length < 2) {
 				// activeChar.sendMessage("Example: //script_load <questFolder>/<questSubFolders...>/<filename>.<ext> ");
 				activeChar.sendMessage("Example: //script_load quests/SagasSuperclass/__init__.py");
-			}
-			else
-			{
+			} else {
 				File file = new File(server().getScriptRoot(), "com/l2jserver/datapack/" + parts[1]);
 				// Trying to reload by script name.
-				if (!file.exists())
-				{
+				if (!file.exists()) {
 					Quest quest = QuestManager.getInstance().getQuest(parts[1]);
-					if (quest != null)
-					{
+					if (quest != null) {
 						file = new File(server().getScriptRoot(), "com/l2jserver/datapack/" + quest.getClass().getName().replaceAll("\\.", "/") + ".java");
 					}
 				}
 				
 				// Reloading by full path
-				if (file.isFile())
-				{
-					try
-					{
+				if (file.isFile()) {
+					try {
 						ScriptEngineManager.getInstance().executeScript(file);
 						
 						// This part should be called only when the script is successfully loaded.
 						activeChar.sendMessage("Script Successfully Loaded.");
-					}
-					catch (ScriptException ex)
-					{
+					} catch (ScriptException ex) {
 						activeChar.sendMessage("Failed loading: " + parts[1]);
 						LOG.error("Failed loading {}!", parts[1], ex);
-					}
-					catch (Exception e)
-					{
+					} catch (Exception e) {
 						activeChar.sendMessage("Failed loading: " + parts[1]);
 					}
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("File Not Found: " + parts[1]);
 				}
 			}
 			
-		}
-		else if (command.startsWith("admin_script_unload"))
-		{
+		} else if (command.startsWith("admin_script_unload")) {
 			String[] parts = command.split(" ");
-			if (parts.length < 2)
-			{
+			if (parts.length < 2) {
 				activeChar.sendMessage("Example: //script_unload questName/questId");
-			}
-			else
-			{
+			} else {
 				Quest q = Util.isDigit(parts[1]) ? QuestManager.getInstance().getQuest(Integer.parseInt(parts[1])) : QuestManager.getInstance().getQuest(parts[1]);
 				
-				if (q != null)
-				{
-					if (q.unload())
-					{
+				if (q != null) {
+					if (q.unload()) {
 						activeChar.sendMessage("Script Successfully Unloaded [" + q.getName() + "/" + q.getId() + "]");
-					}
-					else
-					{
+					} else {
 						activeChar.sendMessage("Failed unloading [" + q.getName() + "/" + q.getId() + "].");
 					}
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("The quest [" + parts[1] + "] was not found!.");
 				}
 			}
-		}
-		else if (command.startsWith("admin_show_quests"))
-		{
-			if (activeChar.getTarget() == null)
-			{
+		} else if (command.startsWith("admin_show_quests")) {
+			if (activeChar.getTarget() == null) {
 				activeChar.sendMessage("Get a target first.");
-			}
-			else if (!activeChar.getTarget().isCharacter())
-			{
+			} else if (!activeChar.getTarget().isCharacter()) {
 				activeChar.sendMessage("Invalid Target.");
-			}
-			else
-			{
+			} else {
 				final L2Character character = (L2Character) activeChar.getTarget();
 				final StringBuilder sb = new StringBuilder();
 				final Set<String> questNames = new TreeSet<>();
-				for (EventType type : EventType.values())
-				{
-					for (AbstractEventListener listener : character.getListeners(type))
-					{
-						if (listener.getOwner() instanceof Quest)
-						{
+				for (EventType type : EventType.values()) {
+					for (AbstractEventListener listener : character.getListeners(type)) {
+						if (listener.getOwner() instanceof Quest) {
 							final Quest quest = (Quest) listener.getOwner();
-							if (questNames.contains(quest.getName()))
-							{
+							if (questNames.contains(quest.getName())) {
 								continue;
 							}
 							sb.append("<tr><td colspan=\"4\"><font color=\"LEVEL\"><a action=\"bypass -h admin_quest_info " + quest.getName() + "\">" + quest.getName() + "</a></font></td></tr>");
@@ -229,65 +176,52 @@ public class AdminQuest implements IAdminCommandHandler
 				msg.replace("%questName%", "");
 				activeChar.sendPacket(msg);
 			}
-		}
-		else if (command.startsWith("admin_quest_info "))
-		{
+		} else if (command.startsWith("admin_quest_info ")) {
 			final String questName = command.substring("admin_quest_info ".length());
 			final Quest quest = QuestManager.getInstance().getQuest(questName);
 			String events = "", npcs = "", items = "", timers = "";
 			int counter = 0;
-			if (quest == null)
-			{
+			if (quest == null) {
 				activeChar.sendMessage("Couldn't find quest or script with name " + questName + " !");
 				return false;
 			}
 			
 			final Set<EventType> listenerTypes = new TreeSet<>();
-			for (AbstractEventListener listener : quest.getListeners())
-			{
-				if (!listenerTypes.contains(listener.getType()))
-				{
+			for (AbstractEventListener listener : quest.getListeners()) {
+				if (!listenerTypes.contains(listener.getType())) {
 					events += ", " + listener.getType().name();
 					listenerTypes.add(listener.getType());
 					counter++;
 				}
-				if (counter > 10)
-				{
+				if (counter > 10) {
 					counter = 0;
 					break;
 				}
 			}
 			
 			final Set<Integer> npcIds = new TreeSet<>(quest.getRegisteredIds(ListenerRegisterType.NPC));
-			for (int npcId : npcIds)
-			{
+			for (int npcId : npcIds) {
 				npcs += ", " + npcId;
 				counter++;
-				if (counter > 50)
-				{
+				if (counter > 50) {
 					counter = 0;
 					break;
 				}
 			}
 			
-			if (!events.isEmpty())
-			{
+			if (!events.isEmpty()) {
 				events = listenerTypes.size() + ": " + events.substring(2);
 			}
 			
-			if (!npcs.isEmpty())
-			{
+			if (!npcs.isEmpty()) {
 				npcs = npcIds.size() + ": " + npcs.substring(2);
 			}
 			
-			if (quest.getRegisteredItemIds() != null)
-			{
-				for (int itemId : quest.getRegisteredItemIds())
-				{
+			if (quest.getRegisteredItemIds() != null) {
+				for (int itemId : quest.getRegisteredItemIds()) {
 					items += ", " + itemId;
 					counter++;
-					if (counter > 20)
-					{
+					if (counter > 20) {
 						counter = 0;
 						break;
 					}
@@ -295,15 +229,12 @@ public class AdminQuest implements IAdminCommandHandler
 				items = quest.getRegisteredItemIds().length + ":" + items.substring(2);
 			}
 			
-			for (List<QuestTimer> list : quest.getQuestTimers().values())
-			{
-				for (QuestTimer timer : list)
-				{
+			for (List<QuestTimer> list : quest.getQuestTimers().values()) {
+				for (QuestTimer timer : list) {
 					timers += "<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">" + timer.getName() + ":</font> <font color=00FF00>Active: " + timer.getIsActive() + " Repeatable: " + timer.getIsRepeating() + " Player: " + timer.getPlayer()
 						+ " Npc: " + timer.getNpc() + "</font></td></tr></table></td></tr>";
 					counter++;
-					if (counter > 10)
-					{
+					if (counter > 10) {
 						break;
 					}
 				}
@@ -316,16 +247,13 @@ public class AdminQuest implements IAdminCommandHandler
 			sb.append("<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">Path:</font> <font color=00FF00>" + quest.getClass().getName().substring(0, quest.getClass().getName().lastIndexOf('.')).replaceAll("\\.", "/")
 				+ "</font></td></tr></table></td></tr>");
 			sb.append("<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">Events:</font> <font color=00FF00>" + events + "</font></td></tr></table></td></tr>");
-			if (!npcs.isEmpty())
-			{
+			if (!npcs.isEmpty()) {
 				sb.append("<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">NPCs:</font> <font color=00FF00>" + npcs + "</font></td></tr></table></td></tr>");
 			}
-			if (!items.isEmpty())
-			{
+			if (!items.isEmpty()) {
 				sb.append("<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">Items:</font> <font color=00FF00>" + items + "</font></td></tr></table></td></tr>");
 			}
-			if (!timers.isEmpty())
-			{
+			if (!timers.isEmpty()) {
 				sb.append("<tr><td colspan=\"4\"><table width=270 border=0 bgcolor=131210><tr><td width=270><font color=\"LEVEL\">Timers:</font> <font color=00FF00></font></td></tr></table></td></tr>");
 				sb.append(timers);
 			}
@@ -341,8 +269,7 @@ public class AdminQuest implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

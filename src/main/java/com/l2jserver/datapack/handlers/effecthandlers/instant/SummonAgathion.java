@@ -28,16 +28,13 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Summon Agathion effect implementation.
  * @author Zoey76
  */
-public final class SummonAgathion extends AbstractEffect
-{
+public final class SummonAgathion extends AbstractEffect {
 	private final int _npcId;
 	
-	public SummonAgathion(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public SummonAgathion(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
-		if (params.isEmpty())
-		{
+		if (params.isEmpty()) {
 			_log.warning(getClass().getSimpleName() + ": must have parameters.");
 		}
 		
@@ -45,16 +42,13 @@ public final class SummonAgathion extends AbstractEffect
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if ((info.getEffected() == null) || !info.getEffected().isPlayer())
-		{
+	public void onStart(BuffInfo info) {
+		if ((info.getEffected() == null) || !info.getEffected().isPlayer()) {
 			return;
 		}
 		

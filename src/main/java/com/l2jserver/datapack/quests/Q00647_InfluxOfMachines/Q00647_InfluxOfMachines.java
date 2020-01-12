@@ -32,14 +32,12 @@ import com.l2jserver.gameserver.model.quest.State;
  * Influx of Machines (647)
  * @author malyelfik
  */
-public class Q00647_InfluxOfMachines extends Quest
-{
+public class Q00647_InfluxOfMachines extends Quest {
 	// NPC
 	private static final int GUTENHAGEN = 32069;
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
-	static
-	{
+	static {
 		MOBS.put(22801, 280); // Cruel Pincer Golem
 		MOBS.put(22802, 227); // Cruel Pincer Golem
 		MOBS.put(22803, 286); // Cruel Pincer Golem
@@ -55,8 +53,7 @@ public class Q00647_InfluxOfMachines extends Quest
 	}
 	// Item
 	private static final int BROKEN_GOLEM_FRAGMENT = 15521;
-	private static final int[] RECIPES =
-	{
+	private static final int[] RECIPES = {
 		6881, // Recipe: Forgotten Blade (60%)
 		6883, // Recipe: Basalt Battlehammer (60%)
 		6885, // Recipe: Imperial Staff (60%)
@@ -72,8 +69,7 @@ public class Q00647_InfluxOfMachines extends Quest
 	private static final int MIN_LEVEL = 70;
 	private static final int FRAGMENT_COUNT = 500;
 	
-	public Q00647_InfluxOfMachines()
-	{
+	public Q00647_InfluxOfMachines() {
 		super(647, Q00647_InfluxOfMachines.class.getSimpleName(), "Influx of Machines");
 		addStartNpc(GUTENHAGEN);
 		addTalkId(GUTENHAGEN);
@@ -82,30 +78,24 @@ public class Q00647_InfluxOfMachines extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
+		switch (event) {
 			case "32069-03.htm":
 				st.startQuest();
 				htmltext = event;
 				break;
 			case "32069-06.html":
-				if (st.isCond(2) && (st.getQuestItemsCount(BROKEN_GOLEM_FRAGMENT) >= FRAGMENT_COUNT))
-				{
+				if (st.isCond(2) && (st.getQuestItemsCount(BROKEN_GOLEM_FRAGMENT) >= FRAGMENT_COUNT)) {
 					st.giveItems(RECIPES[getRandom(RECIPES.length)], 1);
 					st.exitQuest(true, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "32069-07.html";
 				}
 				break;
@@ -114,21 +104,15 @@ public class Q00647_InfluxOfMachines extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance member = getRandomPartyMember(player, 1);
-		if (member != null)
-		{
+		if (member != null) {
 			final QuestState st = getQuestState(member, false);
-			if (st.isCond(1) && (getRandom(1000) < MOBS.get(npc.getId())))
-			{
+			if (st.isCond(1) && (getRandom(1000) < MOBS.get(npc.getId()))) {
 				st.giveItems(BROKEN_GOLEM_FRAGMENT, 1);
-				if (st.getQuestItemsCount(BROKEN_GOLEM_FRAGMENT) >= FRAGMENT_COUNT)
-				{
+				if (st.getQuestItemsCount(BROKEN_GOLEM_FRAGMENT) >= FRAGMENT_COUNT) {
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
@@ -137,22 +121,17 @@ public class Q00647_InfluxOfMachines extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "32069-01.htm" : "32069-02.htm";
 				break;
 			case State.STARTED:
-				if (st.isCond(1))
-				{
+				if (st.isCond(1)) {
 					htmltext = "32069-04.html";
-				}
-				else if (st.isCond(2) && (st.getQuestItemsCount(BROKEN_GOLEM_FRAGMENT) >= FRAGMENT_COUNT))
-				{
+				} else if (st.isCond(2) && (st.getQuestItemsCount(BROKEN_GOLEM_FRAGMENT) >= FRAGMENT_COUNT)) {
 					htmltext = "32069-05.html";
 				}
 				break;

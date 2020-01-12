@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.util.Util;
  * Path Of The Elven Wizard (408)
  * @author ivantotov
  */
-public final class Q00408_PathOfTheElvenWizard extends Quest
-{
+public final class Q00408_PathOfTheElvenWizard extends Quest {
 	// NPCs
 	private static final int ROSSELA = 30414;
 	private static final int GREENIS = 30157;
@@ -61,8 +60,7 @@ public final class Q00408_PathOfTheElvenWizard extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 18;
 	
-	public Q00408_PathOfTheElvenWizard()
-	{
+	public Q00408_PathOfTheElvenWizard() {
 		super(408, Q00408_PathOfTheElvenWizard.class.getSimpleName(), "Path Of The Elven Wizard");
 		addStartNpc(ROSSELA);
 		addTalkId(ROSSELA, GREENIS, THALIA, NORTHWIND);
@@ -71,42 +69,27 @@ public final class Q00408_PathOfTheElvenWizard extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (player.getClassId() != ClassId.elvenMage)
-				{
-					if (player.getClassId() == ClassId.elvenWizard)
-					{
+		switch (event) {
+			case "ACCEPT": {
+				if (player.getClassId() != ClassId.elvenMage) {
+					if (player.getClassId() == ClassId.elvenWizard) {
 						htmltext = "30414-02a.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "30414-03.htm";
 					}
-				}
-				else if (player.getLevel() < MIN_LEVEL)
-				{
+				} else if (player.getLevel() < MIN_LEVEL) {
 					htmltext = "30414-04.htm";
-				}
-				else if (hasQuestItems(player, ETERNITY_DIAMOND))
-				{
+				} else if (hasQuestItems(player, ETERNITY_DIAMOND)) {
 					htmltext = "30414-05.htm";
-				}
-				else
-				{
-					if (!hasQuestItems(player, FERTILITY_PERIDOT))
-					{
+				} else {
+					if (!hasQuestItems(player, FERTILITY_PERIDOT)) {
 						giveItems(player, FERTILITY_PERIDOT, 1);
 					}
 					qs.startQuest();
@@ -114,79 +97,57 @@ public final class Q00408_PathOfTheElvenWizard extends Quest
 				}
 				break;
 			}
-			case "30414-02.htm":
-			{
+			case "30414-02.htm": {
 				htmltext = event;
 				break;
 			}
-			case "30414-10.html":
-			{
-				if (hasQuestItems(player, MAGICAL_POWERS_RUBY))
-				{
+			case "30414-10.html": {
+				if (hasQuestItems(player, MAGICAL_POWERS_RUBY)) {
 					htmltext = event;
-				}
-				else if (!hasQuestItems(player, MAGICAL_POWERS_RUBY) && hasQuestItems(player, FERTILITY_PERIDOT))
-				{
-					if (!hasQuestItems(player, ROSELLAS_LETTER))
-					{
+				} else if (!hasQuestItems(player, MAGICAL_POWERS_RUBY) && hasQuestItems(player, FERTILITY_PERIDOT)) {
+					if (!hasQuestItems(player, ROSELLAS_LETTER)) {
 						giveItems(player, ROSELLAS_LETTER, 1);
 					}
 					htmltext = "30414-07.html";
 				}
 				break;
 			}
-			case "30414-12.html":
-			{
-				if (hasQuestItems(player, PURE_AQUAMARINE))
-				{
+			case "30414-12.html": {
+				if (hasQuestItems(player, PURE_AQUAMARINE)) {
 					htmltext = event;
-				}
-				else if (!hasQuestItems(player, PURE_AQUAMARINE) && hasQuestItems(player, FERTILITY_PERIDOT))
-				{
-					if (!hasQuestItems(player, APPETIZING_APPLE))
-					{
+				} else if (!hasQuestItems(player, PURE_AQUAMARINE) && hasQuestItems(player, FERTILITY_PERIDOT)) {
+					if (!hasQuestItems(player, APPETIZING_APPLE)) {
 						giveItems(player, APPETIZING_APPLE, 1);
 					}
 					htmltext = "30414-13.html";
 				}
 				break;
 			}
-			case "30414-16.html":
-			{
-				if (hasQuestItems(player, NOBILITY_AMETHYST))
-				{
+			case "30414-16.html": {
+				if (hasQuestItems(player, NOBILITY_AMETHYST)) {
 					htmltext = event;
-				}
-				else if (!hasQuestItems(player, NOBILITY_AMETHYST) && hasQuestItems(player, FERTILITY_PERIDOT))
-				{
-					if (!hasQuestItems(player, IMMORTAL_LOVE))
-					{
+				} else if (!hasQuestItems(player, NOBILITY_AMETHYST) && hasQuestItems(player, FERTILITY_PERIDOT)) {
+					if (!hasQuestItems(player, IMMORTAL_LOVE)) {
 						giveItems(player, IMMORTAL_LOVE, 1);
 					}
 					htmltext = "30414-17.html";
 				}
 				break;
 			}
-			case "30157-02.html":
-			{
-				if (hasQuestItems(player, ROSELLAS_LETTER))
-				{
+			case "30157-02.html": {
+				if (hasQuestItems(player, ROSELLAS_LETTER)) {
 					takeItems(player, ROSELLAS_LETTER, 1);
-					if (!hasQuestItems(player, GREENISS_CHARM))
-					{
+					if (!hasQuestItems(player, GREENISS_CHARM)) {
 						giveItems(player, GREENISS_CHARM, 1);
 					}
 				}
 				htmltext = event;
 				break;
 			}
-			case "30371-02.html":
-			{
-				if (hasQuestItems(player, APPETIZING_APPLE))
-				{
+			case "30371-02.html": {
+				if (hasQuestItems(player, APPETIZING_APPLE)) {
 					takeItems(player, APPETIZING_APPLE, 1);
-					if (!hasQuestItems(player, SAP_OF_THE_MOTHER_TREE))
-					{
+					if (!hasQuestItems(player, SAP_OF_THE_MOTHER_TREE)) {
 						giveItems(player, SAP_OF_THE_MOTHER_TREE, 1);
 					}
 				}
@@ -198,56 +159,38 @@ public final class Q00408_PathOfTheElvenWizard extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case DRYAD_ELDER:
-				{
-					if (hasQuestItems(killer, SAP_OF_THE_MOTHER_TREE) && (getQuestItemsCount(killer, GOLD_LEAVES) < 5) && (getRandom(100) < 40))
-					{
+		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true)) {
+			switch (npc.getId()) {
+				case DRYAD_ELDER: {
+					if (hasQuestItems(killer, SAP_OF_THE_MOTHER_TREE) && (getQuestItemsCount(killer, GOLD_LEAVES) < 5) && (getRandom(100) < 40)) {
 						giveItems(killer, GOLD_LEAVES, 1);
-						if (getQuestItemsCount(killer, GOLD_LEAVES) == 5)
-						{
+						if (getQuestItemsCount(killer, GOLD_LEAVES) == 5) {
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case SUKAR_WERERAT_LEADER:
-				{
-					if (hasQuestItems(killer, LUCKY_POTPOURRI) && (getQuestItemsCount(killer, AMETHYST) < 2) && (getRandom(100) < 40))
-					{
+				case SUKAR_WERERAT_LEADER: {
+					if (hasQuestItems(killer, LUCKY_POTPOURRI) && (getQuestItemsCount(killer, AMETHYST) < 2) && (getRandom(100) < 40)) {
 						giveItems(killer, AMETHYST, 1);
-						if (getQuestItemsCount(killer, AMETHYST) == 2)
-						{
+						if (getQuestItemsCount(killer, AMETHYST) == 2) {
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case PINCER_SPIDER:
-				{
-					if (hasQuestItems(killer, GREENISS_CHARM) && (getQuestItemsCount(killer, RED_DOWN) < 5) && (getRandom(100) < 70))
-					{
+				case PINCER_SPIDER: {
+					if (hasQuestItems(killer, GREENISS_CHARM) && (getQuestItemsCount(killer, RED_DOWN) < 5) && (getRandom(100) < 70)) {
 						giveItems(killer, RED_DOWN, 1);
-						if (getQuestItemsCount(killer, RED_DOWN) == 5)
-						{
+						if (getQuestItemsCount(killer, RED_DOWN) == 5) {
 							playSound(killer, Sound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
+						} else {
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
@@ -259,92 +202,54 @@ public final class Q00408_PathOfTheElvenWizard extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated() || qs.isCompleted())
-		{
-			if (npc.getId() == ROSSELA)
-			{
+		if (qs.isCreated() || qs.isCompleted()) {
+			if (npc.getId() == ROSSELA) {
 				htmltext = "30414-01.htm";
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case ROSSELA:
-				{
-					if (!hasAtLeastOneQuestItem(player, ROSELLAS_LETTER, APPETIZING_APPLE, IMMORTAL_LOVE, GREENISS_CHARM, SAP_OF_THE_MOTHER_TREE, LUCKY_POTPOURRI) && hasQuestItems(player, FERTILITY_PERIDOT) && !hasQuestItems(player, MAGICAL_POWERS_RUBY, NOBILITY_AMETHYST, PURE_AQUAMARINE))
-					{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case ROSSELA: {
+					if (!hasAtLeastOneQuestItem(player, ROSELLAS_LETTER, APPETIZING_APPLE, IMMORTAL_LOVE, GREENISS_CHARM, SAP_OF_THE_MOTHER_TREE, LUCKY_POTPOURRI) && hasQuestItems(player, FERTILITY_PERIDOT) && !hasQuestItems(player, MAGICAL_POWERS_RUBY, NOBILITY_AMETHYST, PURE_AQUAMARINE)) {
 						htmltext = "30414-11.html";
-					}
-					else if (hasQuestItems(player, ROSELLAS_LETTER))
-					{
+					} else if (hasQuestItems(player, ROSELLAS_LETTER)) {
 						htmltext = "30414-08.html";
-					}
-					else if (hasQuestItems(player, GREENISS_CHARM))
-					{
-						if (getQuestItemsCount(player, RED_DOWN) < 5)
-						{
+					} else if (hasQuestItems(player, GREENISS_CHARM)) {
+						if (getQuestItemsCount(player, RED_DOWN) < 5) {
 							htmltext = "30414-09.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30414-21.html";
 						}
-					}
-					else if (hasQuestItems(player, APPETIZING_APPLE))
-					{
+					} else if (hasQuestItems(player, APPETIZING_APPLE)) {
 						htmltext = "30414-14.html";
-					}
-					else if (hasQuestItems(player, SAP_OF_THE_MOTHER_TREE))
-					{
-						if (getQuestItemsCount(player, GOLD_LEAVES) < 5)
-						{
+					} else if (hasQuestItems(player, SAP_OF_THE_MOTHER_TREE)) {
+						if (getQuestItemsCount(player, GOLD_LEAVES) < 5) {
 							htmltext = "30414-15.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30414-22.html";
 						}
-					}
-					else if (hasQuestItems(player, IMMORTAL_LOVE))
-					{
+					} else if (hasQuestItems(player, IMMORTAL_LOVE)) {
 						htmltext = "30414-18.html";
-					}
-					else if (hasQuestItems(player, LUCKY_POTPOURRI))
-					{
-						if (getQuestItemsCount(player, AMETHYST) < 2)
-						{
+					} else if (hasQuestItems(player, LUCKY_POTPOURRI)) {
+						if (getQuestItemsCount(player, AMETHYST) < 2) {
 							htmltext = "30414-19.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "30414-23.html";
 						}
-					}
-					else
-					{
-						if (!hasAtLeastOneQuestItem(player, ROSELLAS_LETTER, APPETIZING_APPLE, IMMORTAL_LOVE, GREENISS_CHARM, SAP_OF_THE_MOTHER_TREE, LUCKY_POTPOURRI) && hasQuestItems(player, FERTILITY_PERIDOT, MAGICAL_POWERS_RUBY, NOBILITY_AMETHYST, PURE_AQUAMARINE))
-						{
+					} else {
+						if (!hasAtLeastOneQuestItem(player, ROSELLAS_LETTER, APPETIZING_APPLE, IMMORTAL_LOVE, GREENISS_CHARM, SAP_OF_THE_MOTHER_TREE, LUCKY_POTPOURRI) && hasQuestItems(player, FERTILITY_PERIDOT, MAGICAL_POWERS_RUBY, NOBILITY_AMETHYST, PURE_AQUAMARINE)) {
 							giveAdena(player, 163800, true);
-							if (!hasQuestItems(player, ETERNITY_DIAMOND))
-							{
+							if (!hasQuestItems(player, ETERNITY_DIAMOND)) {
 								giveItems(player, ETERNITY_DIAMOND, 1);
 							}
 							final int level = player.getLevel();
-							if (level >= 20)
-							{
+							if (level >= 20) {
 								addExpAndSp(player, 320534, 22532);
-							}
-							else if (level == 19)
-							{
+							} else if (level == 19) {
 								addExpAndSp(player, 456128, 29230);
-							}
-							else
-							{
+							} else {
 								addExpAndSp(player, 591724, 35928);
 							}
 							qs.exitQuest(false, true);
@@ -355,23 +260,15 @@ public final class Q00408_PathOfTheElvenWizard extends Quest
 					}
 					break;
 				}
-				case GREENIS:
-				{
-					if (hasQuestItems(player, ROSELLAS_LETTER))
-					{
+				case GREENIS: {
+					if (hasQuestItems(player, ROSELLAS_LETTER)) {
 						htmltext = "30157-01.html";
-					}
-					else if (hasQuestItems(player, GREENISS_CHARM))
-					{
-						if (getQuestItemsCount(player, RED_DOWN) < 5)
-						{
+					} else if (hasQuestItems(player, GREENISS_CHARM)) {
+						if (getQuestItemsCount(player, RED_DOWN) < 5) {
 							htmltext = "30157-03.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, RED_DOWN, -1);
-							if (!hasQuestItems(player, MAGICAL_POWERS_RUBY))
-							{
+							if (!hasQuestItems(player, MAGICAL_POWERS_RUBY)) {
 								giveItems(player, MAGICAL_POWERS_RUBY, 1);
 							}
 							takeItems(player, GREENISS_CHARM, 1);
@@ -380,22 +277,14 @@ public final class Q00408_PathOfTheElvenWizard extends Quest
 					}
 					break;
 				}
-				case THALIA:
-				{
-					if (hasQuestItems(player, APPETIZING_APPLE))
-					{
+				case THALIA: {
+					if (hasQuestItems(player, APPETIZING_APPLE)) {
 						htmltext = "30371-01.html";
-					}
-					else if (hasQuestItems(player, SAP_OF_THE_MOTHER_TREE))
-					{
-						if (getQuestItemsCount(player, GOLD_LEAVES) < 5)
-						{
+					} else if (hasQuestItems(player, SAP_OF_THE_MOTHER_TREE)) {
+						if (getQuestItemsCount(player, GOLD_LEAVES) < 5) {
 							htmltext = "30371-03.html";
-						}
-						else
-						{
-							if (!hasQuestItems(player, PURE_AQUAMARINE))
-							{
+						} else {
+							if (!hasQuestItems(player, PURE_AQUAMARINE)) {
 								giveItems(player, PURE_AQUAMARINE, 1);
 							}
 							takeItems(player, GOLD_LEAVES, -1);
@@ -405,28 +294,19 @@ public final class Q00408_PathOfTheElvenWizard extends Quest
 					}
 					break;
 				}
-				case NORTHWIND:
-				{
-					if (hasQuestItems(player, IMMORTAL_LOVE))
-					{
+				case NORTHWIND: {
+					if (hasQuestItems(player, IMMORTAL_LOVE)) {
 						takeItems(player, IMMORTAL_LOVE, 1);
-						if (!hasQuestItems(player, LUCKY_POTPOURRI))
-						{
+						if (!hasQuestItems(player, LUCKY_POTPOURRI)) {
 							giveItems(player, LUCKY_POTPOURRI, 1);
 						}
 						htmltext = "30423-01.html";
-					}
-					else if (hasQuestItems(player, LUCKY_POTPOURRI))
-					{
-						if (getQuestItemsCount(player, AMETHYST) < 2)
-						{
+					} else if (hasQuestItems(player, LUCKY_POTPOURRI)) {
+						if (getQuestItemsCount(player, AMETHYST) < 2) {
 							htmltext = "30423-02.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, AMETHYST, -1);
-							if (!hasQuestItems(player, NOBILITY_AMETHYST))
-							{
+							if (!hasQuestItems(player, NOBILITY_AMETHYST)) {
 								giveItems(player, NOBILITY_AMETHYST, 1);
 							}
 							takeItems(player, LUCKY_POTPOURRI, 1);

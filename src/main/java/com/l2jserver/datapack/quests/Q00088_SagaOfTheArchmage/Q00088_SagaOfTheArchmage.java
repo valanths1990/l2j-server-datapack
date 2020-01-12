@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Archmage (88)
  * @author Emperorc
  */
-public class Q00088_SagaOfTheArchmage extends AbstractSagaQuest
-{
-	public Q00088_SagaOfTheArchmage()
-	{
+public class Q00088_SagaOfTheArchmage extends AbstractSagaQuest {
+	public Q00088_SagaOfTheArchmage() {
 		super(88, Q00088_SagaOfTheArchmage.class.getSimpleName(), "Saga of the Archmage");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			30176,
 			31627,
 			31282,
@@ -45,8 +42,7 @@ public class Q00088_SagaOfTheArchmage extends AbstractSagaQuest
 			31657,
 			31282
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7529,
 			7081,
@@ -60,28 +56,23 @@ public class Q00088_SagaOfTheArchmage extends AbstractSagaQuest
 			7082,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27250,
 			27237,
 			27254
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			94
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x0c
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(191046, -40640, -3042),
 			new Location(46066, -36396, -1685),
 			new Location(46087, -36372, -1685)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

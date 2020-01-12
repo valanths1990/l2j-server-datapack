@@ -35,8 +35,7 @@ import com.l2jserver.gameserver.util.Util;
  * Freya Celebration event AI.
  * @author Gnacik
  */
-public final class FreyaCelebration extends LongTimeEvent
-{
+public final class FreyaCelebration extends LongTimeEvent {
 	// NPC
 	private static final int FREYA = 13296;
 	// Items
@@ -45,8 +44,7 @@ public final class FreyaCelebration extends LongTimeEvent
 	// Misc
 	private static final int HOURS = 20;
 	
-	private static final int[] SKILLS =
-	{
+	private static final int[] SKILLS = {
 		9150,
 		9151,
 		9152,
@@ -56,8 +54,7 @@ public final class FreyaCelebration extends LongTimeEvent
 		9156
 	};
 	
-	private static final NpcStringId[] FREYA_TEXT =
-	{
+	private static final NpcStringId[] FREYA_TEXT = {
 		NpcStringId.EVEN_THOUGH_YOU_BRING_SOMETHING_CALLED_A_GIFT_AMONG_YOUR_HUMANS_IT_WOULD_JUST_BE_PROBLEMATIC_FOR_ME,
 		NpcStringId.I_JUST_DONT_KNOW_WHAT_EXPRESSION_I_SHOULD_HAVE_IT_APPEARED_ON_ME_ARE_HUMANS_EMOTIONS_LIKE_THIS_FEELING,
 		NpcStringId.THE_FEELING_OF_THANKS_IS_JUST_TOO_MUCH_DISTANT_MEMORY_FOR_ME,
@@ -65,8 +62,7 @@ public final class FreyaCelebration extends LongTimeEvent
 		NpcStringId.I_AM_ICE_QUEEN_FREYA_THIS_FEELING_AND_EMOTION_ARE_NOTHING_BUT_A_PART_OF_MELISSAA_MEMORIES
 	};
 	
-	private FreyaCelebration()
-	{
+	private FreyaCelebration() {
 		super(FreyaCelebration.class.getSimpleName(), "events");
 		addStartNpc(FREYA);
 		addFirstTalkId(FREYA);
@@ -75,24 +71,18 @@ public final class FreyaCelebration extends LongTimeEvent
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equalsIgnoreCase("give_potion"))
-		{
-			if (getQuestItemsCount(player, Inventory.ADENA_ID) > 1)
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.equalsIgnoreCase("give_potion")) {
+			if (getQuestItemsCount(player, Inventory.ADENA_ID) > 1) {
 				long _curr_time = System.currentTimeMillis();
 				String value = loadGlobalQuestVar(player.getAccountName());
 				long _reuse_time = value == "" ? 0 : Long.parseLong(value);
 				
-				if (_curr_time > _reuse_time)
-				{
+				if (_curr_time > _reuse_time) {
 					takeItems(player, Inventory.ADENA_ID, 1);
 					giveItems(player, FREYA_POTION, 1);
 					saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + (HOURS * 3600000)));
-				}
-				else
-				{
+				} else {
 					long remainingTime = (_reuse_time - System.currentTimeMillis()) / 1000;
 					int hours = (int) (remainingTime / 3600);
 					int minutes = (int) ((remainingTime % 3600) / 60);
@@ -102,9 +92,7 @@ public final class FreyaCelebration extends LongTimeEvent
 					sm.addInt(minutes);
 					player.sendPacket(sm);
 				}
-			}
-			else
-			{
+			} else {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_UNIT_OF_THE_ITEM_S1_REQUIRED);
 				sm.addItemName(Inventory.ADENA_ID);
 				sm.addInt(1);
@@ -115,28 +103,21 @@ public final class FreyaCelebration extends LongTimeEvent
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
-	{
-		if ((caster == null) || (npc == null))
-		{
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon) {
+		if ((caster == null) || (npc == null)) {
 			return null;
 		}
 		
-		if ((npc.getId() == FREYA) && Util.contains(targets, npc) && Util.contains(SKILLS, skill.getId()))
-		{
-			if (getRandom(100) < 5)
-			{
+		if ((npc.getId() == FREYA) && Util.contains(targets, npc) && Util.contains(SKILLS, skill.getId())) {
+			if (getRandom(100) < 5) {
 				CreatureSay cs = new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), NpcStringId.DEAR_S1_THINK_OF_THIS_AS_MY_APPRECIATION_FOR_THE_GIFT_TAKE_THIS_WITH_YOU_THERES_NOTHING_STRANGE_ABOUT_IT_ITS_JUST_A_BIT_OF_MY_CAPRICIOUSNESS);
 				cs.addStringParameter(caster.getName());
 				
 				npc.broadcastPacket(cs);
 				
 				caster.addItem("FreyaCelebration", FREYA_GIFT, 1, npc, true);
-			}
-			else
-			{
-				if (getRandom(10) < 2)
-				{
+			} else {
+				if (getRandom(10) < 2) {
 					npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.NPC_ALL, npc.getName(), FREYA_TEXT[getRandom(FREYA_TEXT.length - 1)]));
 				}
 			}
@@ -145,13 +126,11 @@ public final class FreyaCelebration extends LongTimeEvent
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "13296.htm";
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new FreyaCelebration();
 	}
 }

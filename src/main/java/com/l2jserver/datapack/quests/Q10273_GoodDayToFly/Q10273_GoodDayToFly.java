@@ -31,13 +31,11 @@ import com.l2jserver.gameserver.model.quest.State;
  * Original Jython script by Kerberos v1.0 on 2009/04/25
  * @author nonom
  */
-public class Q10273_GoodDayToFly extends Quest
-{
+public class Q10273_GoodDayToFly extends Quest {
 	// NPC
 	private static final int LEKON = 32557;
 	// Monsters
-	private static final int[] MOBS =
-	{
+	private static final int[] MOBS = {
 		22614, // Vulture Rider
 		22615, // Vulture Rider
 	};
@@ -48,8 +46,7 @@ public class Q10273_GoodDayToFly extends Quest
 	private static final SkillHolder AURA_BIRD_FALCON = new SkillHolder(5982, 1);
 	private static final SkillHolder AURA_BIRD_OWL = new SkillHolder(5983, 1);
 	
-	public Q10273_GoodDayToFly()
-	{
+	public Q10273_GoodDayToFly() {
 		super(10273, Q10273_GoodDayToFly.class.getSimpleName(), "Good Day to Fly");
 		addStartNpc(LEKON);
 		addTalkId(LEKON);
@@ -58,16 +55,13 @@ public class Q10273_GoodDayToFly extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		switch (event)
-		{
+		switch (event) {
 			case "32557-06.htm":
 				st.startQuest();
 				break;
@@ -80,8 +74,7 @@ public class Q10273_GoodDayToFly extends Quest
 				AURA_BIRD_OWL.getSkill().applyEffects(player, player);
 				break;
 			case "32557-13.html":
-				switch (st.getInt("transform"))
-				{
+				switch (st.getInt("transform")) {
 					case 1:
 						AURA_BIRD_FALCON.getSkill().applyEffects(player, player);
 						break;
@@ -95,24 +88,18 @@ public class Q10273_GoodDayToFly extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st == null) || !st.isStarted())
-		{
+		if ((st == null) || !st.isStarted()) {
 			return null;
 		}
 		
 		final long count = st.getQuestItemsCount(MARK);
-		if (st.isCond(1) && (count < 5))
-		{
+		if (st.isCond(1) && (count < 5)) {
 			st.giveItems(MARK, 1);
-			if (count == 4)
-			{
+			if (count == 4) {
 				st.setCond(2, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -120,13 +107,11 @@ public class Q10273_GoodDayToFly extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		final int transform = st.getInt("transform");
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.COMPLETED:
 				htmltext = "32557-0a.html";
 				break;
@@ -134,27 +119,19 @@ public class Q10273_GoodDayToFly extends Quest
 				htmltext = (player.getLevel() < 75) ? "32557-00.html" : "32557-01.htm";
 				break;
 			default:
-				if (st.getQuestItemsCount(MARK) >= 5)
-				{
+				if (st.getQuestItemsCount(MARK) >= 5) {
 					htmltext = "32557-14.html";
-					if (transform == 1)
-					{
+					if (transform == 1) {
 						st.giveItems(13553, 1);
-					}
-					else if (transform == 2)
-					{
+					} else if (transform == 2) {
 						st.giveItems(13554, 1);
 					}
 					st.giveItems(13857, 1);
 					st.addExpAndSp(25160, 2525);
 					st.exitQuest(false, true);
-				}
-				else if (transform == 0)
-				{
+				} else if (transform == 0) {
 					htmltext = "32557-07.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "32557-11.html";
 				}
 				break;

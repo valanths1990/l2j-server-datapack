@@ -30,13 +30,11 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * @author Adry_85
  * @since 2.6.0.0
  */
-public final class TickMp extends AbstractEffect
-{
+public final class TickMp extends AbstractEffect {
 	private final double _power;
 	private final EffectCalculationType _mode;
 	
-	public TickMp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public TickMp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
@@ -45,41 +43,32 @@ public final class TickMp extends AbstractEffect
 	}
 	
 	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		if (info.getEffected().isDead())
-		{
+	public boolean onActionTime(BuffInfo info) {
+		if (info.getEffected().isDead()) {
 			return false;
 		}
 		
 		final L2Character target = info.getEffected();
 		double power = 0;
 		double mp = target.getCurrentMp();
-		switch (_mode)
-		{
-			case DIFF:
-			{
+		switch (_mode) {
+			case DIFF: {
 				power = _power * getTicksMultiplier();
 				break;
 			}
-			case PER:
-			{
+			case PER: {
 				power = mp * _power * getTicksMultiplier();
 				break;
 			}
 		}
 		
-		if (power < 0)
-		{
+		if (power < 0) {
 			target.reduceCurrentMp(Math.abs(power));
-		}
-		else
-		{
+		} else {
 			double maxMp = target.getMaxRecoverableMp();
 			
 			// Not needed to set the MP and send update packet if player is already at max MP
-			if (mp >= maxMp)
-			{
+			if (mp >= maxMp) {
 				return true;
 			}
 			

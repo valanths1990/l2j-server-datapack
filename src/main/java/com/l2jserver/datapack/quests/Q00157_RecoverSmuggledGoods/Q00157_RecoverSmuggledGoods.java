@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Recover Smuggled Goods (157)
  * @author xban1x
  */
-public class Q00157_RecoverSmuggledGoods extends Quest
-{
+public class Q00157_RecoverSmuggledGoods extends Quest {
 	// NPC
 	private static final int WILFORD = 30005;
 	// Monster
@@ -41,8 +40,7 @@ public class Q00157_RecoverSmuggledGoods extends Quest
 	// Misc
 	private static final int MIN_LVL = 5;
 	
-	public Q00157_RecoverSmuggledGoods()
-	{
+	public Q00157_RecoverSmuggledGoods() {
 		super(157, Q00157_RecoverSmuggledGoods.class.getSimpleName(), "Recover Smuggled Goods");
 		addStartNpc(WILFORD);
 		addTalkId(WILFORD);
@@ -51,21 +49,16 @@ public class Q00157_RecoverSmuggledGoods extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
-		if (st != null)
-		{
-			switch (event)
-			{
-				case "30005-03.htm":
-				{
+		if (st != null) {
+			switch (event) {
+				case "30005-03.htm": {
 					htmltext = event;
 					break;
 				}
-				case "30005-04.htm":
-				{
+				case "30005-04.htm": {
 					st.startQuest();
 					htmltext = event;
 					break;
@@ -76,18 +69,13 @@ public class Q00157_RecoverSmuggledGoods extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(1) && (getRandom(10) < 4) && (st.getQuestItemsCount(ADAMANTITE_ORE) < 20))
-		{
+		if ((st != null) && st.isCond(1) && (getRandom(10) < 4) && (st.getQuestItemsCount(ADAMANTITE_ORE) < 20)) {
 			st.giveItems(ADAMANTITE_ORE, 1);
-			if (st.getQuestItemsCount(ADAMANTITE_ORE) >= 20)
-			{
+			if (st.getQuestItemsCount(ADAMANTITE_ORE) >= 20) {
 				st.setCond(2, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -95,33 +83,25 @@ public class Q00157_RecoverSmuggledGoods extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = player.getLevel() >= MIN_LVL ? "30005-02.htm" : "30005-01.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				if (st.isCond(2) && (st.getQuestItemsCount(ADAMANTITE_ORE) >= 20))
-				{
+			case State.STARTED: {
+				if (st.isCond(2) && (st.getQuestItemsCount(ADAMANTITE_ORE) >= 20)) {
 					st.giveItems(BUCKLER, 1);
 					st.exitQuest(false, true);
 					htmltext = "30005-06.html";
-				}
-				else
-				{
+				} else {
 					htmltext = "30005-05.html";
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
+			case State.COMPLETED: {
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}

@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Treasure Hunt (383)
  * @author Adry_85
  */
-public final class Q00383_TreasureHunt extends Quest
-{
+public final class Q00383_TreasureHunt extends Quest {
 	// NPCs
 	private static final int ESPEN = 30890;
 	private static final int PIRATES_CHEST = 31148;
@@ -67,49 +66,39 @@ public final class Q00383_TreasureHunt extends Quest
 	private static final ItemHolder DYE_W1I3_C = new ItemHolder(4491, 1); // Greater Dye of WIT <Wit+1 Int-3>
 	private static final ItemHolder DYE_W1M3_C = new ItemHolder(4492, 1); // Greater Dye of WIT <Wit+1 Men-3>
 	
-	public Q00383_TreasureHunt()
-	{
+	public Q00383_TreasureHunt() {
 		super(383, Q00383_TreasureHunt.class.getSimpleName(), "Treasure Hunt");
 		addStartNpc(ESPEN);
 		addTalkId(ESPEN, PIRATES_CHEST);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "30890-04.htm":
-			{
+		switch (event) {
+			case "30890-04.htm": {
 				htmltext = event;
 				break;
 			}
-			case "30890-05.htm":
-			{
-				if (hasQuestItems(player, PIRATES_TREASURE_MAP))
-				{
+			case "30890-05.htm": {
+				if (hasQuestItems(player, PIRATES_TREASURE_MAP)) {
 					giveAdena(player, 1000, false);
 					takeItems(player, PIRATES_TREASURE_MAP, -1);
 					htmltext = event;
 				}
 				break;
 			}
-			case "30890-06.htm":
-			{
+			case "30890-06.htm": {
 				htmltext = (hasQuestItems(player, PIRATES_TREASURE_MAP)) ? event : "30890-12.html";
 				break;
 			}
-			case "30890-07.htm":
-			{
-				if (hasQuestItems(player, PIRATES_TREASURE_MAP))
-				{
+			case "30890-07.htm": {
+				if (hasQuestItems(player, PIRATES_TREASURE_MAP)) {
 					qs.startQuest();
 					takeItems(player, PIRATES_TREASURE_MAP, -1);
 					htmltext = event;
@@ -118,29 +107,22 @@ public final class Q00383_TreasureHunt extends Quest
 			}
 			case "30890-08.html":
 			case "30890-09.html":
-			case "30890-10.html":
-			{
-				if (qs.isCond(1))
-				{
+			case "30890-10.html": {
+				if (qs.isCond(1)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "30890-11.html":
-			{
-				if (qs.isCond(1))
-				{
+			case "30890-11.html": {
+				if (qs.isCond(1)) {
 					qs.setCond(2, true);
 					htmltext = event;
 				}
 				break;
 			}
-			case "31148-02.html":
-			{
-				if (qs.isCond(2))
-				{
-					if (hasQuestItems(player, THIEF_KEY))
-					{
+			case "31148-02.html": {
+				if (qs.isCond(2)) {
+					if (hasQuestItems(player, THIEF_KEY)) {
 						takeItems(player, THIEF_KEY, 1);
 						qs.exitQuest(true, true);
 						htmltext = event;
@@ -148,144 +130,84 @@ public final class Q00383_TreasureHunt extends Quest
 						int bonus = 0;
 						int random = getRandom(100);
 						
-						if (random < 5)
-						{
+						if (random < 5) {
 							rewardItems(player, MITHRIL_GLOVES);
-						}
-						else if (random < 6)
-						{
+						} else if (random < 6) {
 							rewardItems(player, SAGES_WORN_GLOVES);
-						}
-						else if (random < 18)
-						{
+						} else if (random < 18) {
 							rewardItems(player, SCROLL_ENCHANT_ARMOR_D);
-						}
-						else if (random < 28)
-						{
+						} else if (random < 28) {
 							rewardItems(player, SCROLL_ENCHANT_ARMOR_C);
-						}
-						else
-						{
+						} else {
 							bonus += 500;
 						}
 						
 						random = getRandom(1000);
 						
-						if (random < 25)
-						{
+						if (random < 25) {
 							rewardItems(player, DYE_S1C3_C);
-						}
-						else if (random < 50)
-						{
+						} else if (random < 50) {
 							rewardItems(player, DYE_S1D3_C);
-						}
-						else if (random < 75)
-						{
+						} else if (random < 75) {
 							rewardItems(player, DYE_C1S3_C);
-						}
-						else if (random < 100)
-						{
+						} else if (random < 100) {
 							rewardItems(player, DYE_C1C3_C);
-						}
-						else if (random < 125)
-						{
+						} else if (random < 125) {
 							rewardItems(player, DYE_D1S3_C);
-						}
-						else if (random < 150)
-						{
+						} else if (random < 150) {
 							rewardItems(player, DYE_D1C3_C);
-						}
-						else if (random < 175)
-						{
+						} else if (random < 175) {
 							rewardItems(player, DYE_I1M3_C);
-						}
-						else if (random < 200)
-						{
+						} else if (random < 200) {
 							rewardItems(player, DYE_I1W3_C);
-						}
-						else if (random < 225)
-						{
+						} else if (random < 225) {
 							rewardItems(player, DYE_M1I3_C);
-						}
-						else if (random < 250)
-						{
+						} else if (random < 250) {
 							rewardItems(player, DYE_M1W3_C);
-						}
-						else if (random < 275)
-						{
+						} else if (random < 275) {
 							rewardItems(player, DYE_W1I3_C);
-						}
-						else if (random < 300)
-						{
+						} else if (random < 300) {
 							rewardItems(player, DYE_W1M3_C);
-						}
-						else
-						{
+						} else {
 							bonus += 300;
 						}
 						
 						random = getRandom(100);
 						
-						if (random < 4)
-						{
+						if (random < 4) {
 							rewardItems(player, EMERALD);
-						}
-						else if (random < 8)
-						{
+						} else if (random < 8) {
 							rewardItems(player, BLUE_ONYX);
-						}
-						else if (random < 12)
-						{
+						} else if (random < 12) {
 							rewardItems(player, ONYX);
-						}
-						else if (random < 16)
-						{
+						} else if (random < 16) {
 							rewardItems(player, MOONSTONE);
-						}
-						else if (random < 20)
-						{
+						} else if (random < 20) {
 							rewardItems(player, ALEXANDRITE);
-						}
-						else if (random < 25)
-						{
+						} else if (random < 25) {
 							rewardItems(player, FIRE_EMERALD);
-						}
-						else if (random < 27)
-						{
+						} else if (random < 27) {
 							rewardItems(player, IMPERIAL_DIAMOND);
-						}
-						else
-						{
+						} else {
 							bonus += 500;
 						}
 						
 						random = getRandom(100);
 						
-						if (random < 20)
-						{
+						if (random < 20) {
 							rewardItems(player, MUSICAL_SCORE_THEME_OF_LOVE);
-						}
-						else if (random < 40)
-						{
+						} else if (random < 40) {
 							rewardItems(player, MUSICAL_SCORE_THEME_OF_BATTLE);
-						}
-						else if (random < 60)
-						{
+						} else if (random < 60) {
 							rewardItems(player, MUSICAL_SCORE_THEME_OF_CELEBRATION);
-						}
-						else if (random < 80)
-						{
+						} else if (random < 80) {
 							rewardItems(player, MUSICAL_SCORE_THEME_OF_COMEDY);
-						}
-						else
-						{
+						} else {
 							bonus += 500;
 						}
 						
 						giveAdena(player, bonus, true);
-					}
-					else
-					{
+					} else {
 						htmltext = "31148-03.html";
 					}
 				}
@@ -296,42 +218,26 @@ public final class Q00383_TreasureHunt extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			if (player.getLevel() < MIN_LEVEL)
-			{
+		if (qs.isCreated()) {
+			if (player.getLevel() < MIN_LEVEL) {
 				htmltext = "30890-01.html";
-			}
-			else if (!hasQuestItems(player, PIRATES_TREASURE_MAP))
-			{
+			} else if (!hasQuestItems(player, PIRATES_TREASURE_MAP)) {
 				htmltext = "30890-02.html";
-			}
-			else
-			{
+			} else {
 				htmltext = "30890-03.htm";
 			}
-		}
-		else if (qs.isStarted())
-		{
-			if (npc.getId() == ESPEN)
-			{
-				if (qs.isCond(1))
-				{
+		} else if (qs.isStarted()) {
+			if (npc.getId() == ESPEN) {
+				if (qs.isCond(1)) {
 					htmltext = "30890-13.html";
-				}
-				else if (qs.isCond(2))
-				{
+				} else if (qs.isCond(2)) {
 					htmltext = "30890-14.html";
 				}
-			}
-			else
-			{
-				if (qs.isCond(2))
-				{
+			} else {
+				if (qs.isCond(2)) {
 					htmltext = "31148-01.html";
 				}
 			}

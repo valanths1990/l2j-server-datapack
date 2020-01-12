@@ -31,16 +31,14 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * Fabulous Feathers (286).
  * @author xban1x
  */
-public final class Q00286_FabulousFeathers extends Quest
-{
+public final class Q00286_FabulousFeathers extends Quest {
 	// NPC
 	private static final int ERINU = 32164;
 	// Item
 	private static final ItemHolder COMMANDERS_FEATHER = new ItemHolder(9746, 80);
 	// Monsters
 	private static final Map<Integer, Double> MOB_DROP_CHANCES = new HashMap<>();
-	static
-	{
+	static {
 		MOB_DROP_CHANCES.put(22251, 0.748); // Shady Muertos Captain
 		MOB_DROP_CHANCES.put(22253, 0.772); // Shady Muertos Warrior
 		MOB_DROP_CHANCES.put(22254, 0.772); // Shady Muertos Archer
@@ -50,8 +48,7 @@ public final class Q00286_FabulousFeathers extends Quest
 	// Misc
 	private static final int MIN_LVL = 17;
 	
-	public Q00286_FabulousFeathers()
-	{
+	public Q00286_FabulousFeathers() {
 		super(286, Q00286_FabulousFeathers.class.getSimpleName(), "Fabulous Feathers");
 		addStartNpc(ERINU);
 		addTalkId(ERINU);
@@ -60,33 +57,25 @@ public final class Q00286_FabulousFeathers extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String html = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return html;
 		}
-		switch (event)
-		{
-			case "32164-03.htm":
-			{
+		switch (event) {
+			case "32164-03.htm": {
 				qs.startQuest();
 				html = event;
 				break;
 			}
-			case "32164-06.html":
-			{
-				if (qs.isCond(2) && hasItem(player, COMMANDERS_FEATHER))
-				{
+			case "32164-06.html": {
+				if (qs.isCond(2) && hasItem(player, COMMANDERS_FEATHER)) {
 					takeItem(player, COMMANDERS_FEATHER);
 					giveAdena(player, 4160, true);
 					qs.exitQuest(true, true);
 					html = event;
-				}
-				else
-				{
+				} else {
 					html = "32164-07.html";
 				}
 				break;
@@ -96,13 +85,10 @@ public final class Q00286_FabulousFeathers extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, 1, 3, npc);
-		if (qs != null)
-		{
-			if (giveItemRandomly(qs.getPlayer(), npc, COMMANDERS_FEATHER.getId(), 1, COMMANDERS_FEATHER.getCount(), MOB_DROP_CHANCES.get(npc.getId()), true))
-			{
+		if (qs != null) {
+			if (giveItemRandomly(qs.getPlayer(), npc, COMMANDERS_FEATHER.getId(), 1, COMMANDERS_FEATHER.getCount(), MOB_DROP_CHANCES.get(npc.getId()), true)) {
 				qs.setCond(2);
 			}
 		}
@@ -110,16 +96,12 @@ public final class Q00286_FabulousFeathers extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String html = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			html = ((player.getLevel() >= MIN_LVL) ? "32164-01.htm" : "32164-02.htm");
-		}
-		else if (qs.isStarted())
-		{
+		} else if (qs.isStarted()) {
 			html = ((qs.isCond(2) && hasItem(player, COMMANDERS_FEATHER)) ? "32164-04.html" : "32164-05.html");
 		}
 		return html;

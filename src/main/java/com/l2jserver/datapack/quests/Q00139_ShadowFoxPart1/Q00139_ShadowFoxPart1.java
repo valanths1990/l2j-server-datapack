@@ -30,13 +30,11 @@ import com.l2jserver.gameserver.model.quest.State;
  * Shadow Fox - 1 (139)
  * @author Nono
  */
-public class Q00139_ShadowFoxPart1 extends Quest
-{
+public class Q00139_ShadowFoxPart1 extends Quest {
 	// NPC
 	private static final int MIA = 30896;
 	// Monsters
-	private static final int MOBS[] =
-	{
+	private static final int MOBS[] = {
 		20784, // Tasaba Lizardman
 		20785, // Tasaba Lizardman Shaman
 		21639, // Tasaba Lizardman
@@ -50,8 +48,7 @@ public class Q00139_ShadowFoxPart1 extends Quest
 	private static final int MAX_REWARD_LEVEL = 42;
 	private static final int DROP_CHANCE = 68;
 	
-	public Q00139_ShadowFoxPart1()
-	{
+	public Q00139_ShadowFoxPart1() {
 		super(139, Q00139_ShadowFoxPart1.class.getSimpleName(), "Shadow Fox - 1");
 		addStartNpc(MIA);
 		addTalkId(MIA);
@@ -60,20 +57,16 @@ public class Q00139_ShadowFoxPart1 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30896-02.htm":
-				if (player.getLevel() < MIN_LEVEL)
-				{
+				if (player.getLevel() < MIN_LEVEL) {
 					htmltext = "30896-03.htm";
 				}
 				break;
@@ -88,8 +81,7 @@ public class Q00139_ShadowFoxPart1 extends Quest
 				st.unset("talk");
 				break;
 			case "30896-17.html":
-				if (getRandom(20) < 3)
-				{
+				if (getRandom(20) < 3) {
 					st.takeItems(FRAGMENT, 10);
 					st.takeItems(CHEST, 1);
 					return "30896-16.html";
@@ -100,8 +92,7 @@ public class Q00139_ShadowFoxPart1 extends Quest
 				break;
 			case "30896-19.html":
 				st.giveAdena(14050, true);
-				if (player.getLevel() <= MAX_REWARD_LEVEL)
-				{
+				if (player.getLevel() <= MAX_REWARD_LEVEL) {
 					st.addExpAndSp(30000, 2000);
 				}
 				st.exitQuest(false, true);
@@ -122,16 +113,13 @@ public class Q00139_ShadowFoxPart1 extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance member = getRandomPartyMember(player, 2);
-		if (member == null)
-		{
+		if (member == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		final QuestState st = getQuestState(member, false);
-		if (!st.isSet("talk") && (getRandom(100) < DROP_CHANCE))
-		{
+		if (!st.isSet("talk") && (getRandom(100) < DROP_CHANCE)) {
 			int itemId = (getRandom(11) == 0) ? CHEST : FRAGMENT;
 			st.giveItems(itemId, 1);
 			st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
@@ -140,18 +128,15 @@ public class Q00139_ShadowFoxPart1 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.hasQuestCompleted(Q00138_TempleChampionPart2.class.getSimpleName())) ? "30896-01.htm" : "30896-00.html";
 				break;
 			case State.STARTED:
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 1:
 						htmltext = (st.isSet("talk")) ? "30896-11.html" : "30896-05.html";
 						break;

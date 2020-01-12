@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Doomcryer (78)
  * @author Emperorc
  */
-public class Q00078_SagaOfTheDoomcryer extends AbstractSagaQuest
-{
-	public Q00078_SagaOfTheDoomcryer()
-	{
+public class Q00078_SagaOfTheDoomcryer extends AbstractSagaQuest {
+	public Q00078_SagaOfTheDoomcryer() {
 		super(78, Q00078_SagaOfTheDoomcryer.class.getSimpleName(), "Saga of the Doomcryer");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			31336,
 			31624,
 			31589,
@@ -45,8 +42,7 @@ public class Q00078_SagaOfTheDoomcryer extends AbstractSagaQuest
 			31657,
 			31290
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7539,
 			7081,
@@ -60,28 +56,23 @@ public class Q00078_SagaOfTheDoomcryer extends AbstractSagaQuest
 			7101,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27295,
 			27227,
 			27285
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			116
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x34
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(191046, -40640, -3042),
 			new Location(46087, -36372, -1685),
 			new Location(46066, -36396, -1685)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

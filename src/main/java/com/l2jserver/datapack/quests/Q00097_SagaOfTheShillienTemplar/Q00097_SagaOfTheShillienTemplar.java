@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Shillien Templar (97)
  * @author Emperorc
  */
-public class Q00097_SagaOfTheShillienTemplar extends AbstractSagaQuest
-{
-	public Q00097_SagaOfTheShillienTemplar()
-	{
+public class Q00097_SagaOfTheShillienTemplar extends AbstractSagaQuest {
+	public Q00097_SagaOfTheShillienTemplar() {
 		super(97, Q00097_SagaOfTheShillienTemplar.class.getSimpleName(), "Saga of the Shillien Templar");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			31580,
 			31623,
 			31285,
@@ -45,8 +42,7 @@ public class Q00097_SagaOfTheShillienTemplar extends AbstractSagaQuest
 			31659,
 			31285
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7526,
 			7081,
@@ -60,28 +56,23 @@ public class Q00097_SagaOfTheShillienTemplar extends AbstractSagaQuest
 			7091,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27271,
 			27246,
 			27273
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			106
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x21
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(161719, -92823, -1893),
 			new Location(124355, 82155, -2803),
 			new Location(124376, 82127, -2796)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

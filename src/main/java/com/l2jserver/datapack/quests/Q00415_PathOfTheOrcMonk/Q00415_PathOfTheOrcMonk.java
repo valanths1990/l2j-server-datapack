@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.util.Util;
  * Path Of The Orc Monk (415)
  * @author ivantotov
  */
-public final class Q00415_PathOfTheOrcMonk extends Quest
-{
+public final class Q00415_PathOfTheOrcMonk extends Quest {
 	// NPCs
 	private static final int PREFECT_KASMAN = 30501;
 	private static final int GANTAKI_ZU_URUTU = 30587;
@@ -82,8 +81,7 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 18;
 	
-	public Q00415_PathOfTheOrcMonk()
-	{
+	public Q00415_PathOfTheOrcMonk() {
 		super(415, Q00415_PathOfTheOrcMonk.class.getSimpleName(), "Path Of The Orc Monk");
 		addStartNpc(GANTAKI_ZU_URUTU);
 		addTalkId(GANTAKI_ZU_URUTU, PREFECT_KASMAN, KHAVATARI_ROSHEEK, KHAVATARI_TORUKU, SEER_MOIRA, KHAVATARI_AREN);
@@ -93,59 +91,41 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		
-		if (qs == null)
-		{
+		if (qs == null) {
 			return null;
 		}
 		
 		String htmltext = null;
-		switch (event)
-		{
-			case "ACCEPT":
-			{
-				if (player.getClassId() == ClassId.orcFighter)
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (hasQuestItems(player, KHAVATARI_TOTEM))
-						{
+		switch (event) {
+			case "ACCEPT": {
+				if (player.getClassId() == ClassId.orcFighter) {
+					if (player.getLevel() >= MIN_LEVEL) {
+						if (hasQuestItems(player, KHAVATARI_TOTEM)) {
 							htmltext = "30587-04.htm";
-						}
-						else
-						{
+						} else {
 							htmltext = "30587-05.htm";
 						}
-					}
-					else
-					{
+					} else {
 						htmltext = "30587-03.htm";
 					}
-				}
-				else if (player.getClassId() == ClassId.orcMonk)
-				{
+				} else if (player.getClassId() == ClassId.orcMonk) {
 					htmltext = "30587-02a.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "30587-02.htm";
 				}
 				break;
 			}
-			case "30587-06.htm":
-			{
+			case "30587-06.htm": {
 				qs.startQuest();
 				giveItems(player, POMEGRANATE, 1);
 				htmltext = event;
 				break;
 			}
-			case "30587-09b.html":
-			{
-				if (hasQuestItems(player, FIERY_SPIRIT_SCROLL, ROSHEEKS_LETTER))
-				{
+			case "30587-09b.html": {
+				if (hasQuestItems(player, FIERY_SPIRIT_SCROLL, ROSHEEKS_LETTER)) {
 					takeItems(player, ROSHEEKS_LETTER, 1);
 					giveItems(player, GANTAKIS_LETTRT_OF_RECOMMENDATION, 1);
 					qs.setCond(9);
@@ -153,10 +133,8 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 				}
 				break;
 			}
-			case "30587-09c.html":
-			{
-				if (hasQuestItems(player, FIERY_SPIRIT_SCROLL, ROSHEEKS_LETTER))
-				{
+			case "30587-09c.html": {
+				if (hasQuestItems(player, FIERY_SPIRIT_SCROLL, ROSHEEKS_LETTER)) {
 					takeItems(player, ROSHEEKS_LETTER, 1);
 					qs.setMemoState(2);
 					qs.setCond(14);
@@ -164,31 +142,22 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 				}
 				break;
 			}
-			case "31979-02.html":
-			{
-				if (qs.isMemoState(5))
-				{
+			case "31979-02.html": {
+				if (qs.isMemoState(5)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "31979-03.html":
-			{
-				if (qs.isMemoState(5))
-				{
+			case "31979-03.html": {
+				if (qs.isMemoState(5)) {
 					giveAdena(player, 81900, true);
 					giveItems(player, KHAVATARI_TOTEM, 1);
 					final int level = player.getLevel();
-					if (level >= 20)
-					{
+					if (level >= 20) {
 						addExpAndSp(player, 160267, 12646);
-					}
-					else if (level == 19)
-					{
+					} else if (level == 19) {
 						addExpAndSp(player, 228064, 15995);
-					}
-					else
-					{
+					} else {
 						addExpAndSp(player, 295862, 19344);
 					}
 					qs.exitQuest(false, true);
@@ -198,37 +167,29 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 				}
 				break;
 			}
-			case "31979-04.html":
-			{
-				if (qs.isMemoState(5))
-				{
+			case "31979-04.html": {
+				if (qs.isMemoState(5)) {
 					qs.setCond(20);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32056-02.html":
-			{
-				if (qs.isMemoState(2))
-				{
+			case "32056-02.html": {
+				if (qs.isMemoState(2)) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "32056-03.html":
-			{
-				if (qs.isMemoState(2))
-				{
+			case "32056-03.html": {
+				if (qs.isMemoState(2)) {
 					qs.setMemoState(3);
 					qs.setCond(15);
 					htmltext = event;
 				}
 				break;
 			}
-			case "32056-08.html":
-			{
-				if (qs.isMemoState(4) && (getQuestItemsCount(player, HORN_OF_BAAR_DRE_VANUL) >= 1))
-				{
+			case "32056-08.html": {
+				if (qs.isMemoState(4) && (getQuestItemsCount(player, HORN_OF_BAAR_DRE_VANUL) >= 1)) {
 					takeItems(player, HORN_OF_BAAR_DRE_VANUL, -1);
 					qs.setMemoState(5);
 					qs.setCond(19);
@@ -241,30 +202,21 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final QuestState qs = getQuestState(attacker, false);
-		if ((qs != null) && qs.isStarted())
-		{
-			switch (npc.getScriptValue())
-			{
-				case 0:
-				{
-					if (!checkWeapon(attacker))
-					{
+		if ((qs != null) && qs.isStarted()) {
+			switch (npc.getScriptValue()) {
+				case 0: {
+					if (!checkWeapon(attacker)) {
 						npc.setScriptValue(2);
-					}
-					else
-					{
+					} else {
 						npc.setScriptValue(1);
 						npc.getVariables().set("Q00415_last_attacker", attacker.getObjectId());
 					}
 					break;
 				}
-				case 1:
-				{
-					if ((npc.getVariables().getInt("Q00415_last_attacker") != attacker.getObjectId()) || !checkWeapon(attacker))
-					{
+				case 1: {
+					if ((npc.getVariables().getInt("Q00415_last_attacker") != attacker.getObjectId()) || !checkWeapon(attacker)) {
 						npc.setScriptValue(2);
 					}
 					break;
@@ -275,20 +227,14 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && npc.isScriptValue(1) && Util.checkIfInRange(1500, npc, killer, true))
-		{
+		if ((qs != null) && qs.isStarted() && npc.isScriptValue(1) && Util.checkIfInRange(1500, npc, killer, true)) {
 			final long ItemCount = getQuestItemsCount(killer, RATMAN_FANG, LANGK_LIZARDMAN_TOOTH, FELIM_LIZARDMAN_TOOTH, VUKU_ORK_TUSK);
-			switch (npc.getId())
-			{
-				case FELIM_LIZARDMAN_WARRIOR:
-				{
-					if (hasQuestItems(killer, LEATHER_POUCH_4TF) && (getQuestItemsCount(killer, FELIM_LIZARDMAN_TOOTH) < 3))
-					{
-						if (ItemCount >= 11)
-						{
+			switch (npc.getId()) {
+				case FELIM_LIZARDMAN_WARRIOR: {
+					if (hasQuestItems(killer, LEATHER_POUCH_4TF) && (getQuestItemsCount(killer, FELIM_LIZARDMAN_TOOTH) < 3)) {
+						if (ItemCount >= 11) {
 							takeItems(killer, LEATHER_POUCH_4TF, 1);
 							giveItems(killer, LEATHER_POUCH_4TF_FULL, 1);
 							takeItems(killer, VUKU_ORK_TUSK, -1);
@@ -296,21 +242,16 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 							takeItems(killer, LANGK_LIZARDMAN_TOOTH, -1);
 							takeItems(killer, FELIM_LIZARDMAN_TOOTH, -1);
 							qs.setCond(12, true);
-						}
-						else
-						{
+						} else {
 							giveItems(killer, FELIM_LIZARDMAN_TOOTH, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case VUKU_ORC_FIGHTER:
-				{
-					if (hasQuestItems(killer, LEATHER_POUCH_4TF) && (getQuestItemsCount(killer, VUKU_ORK_TUSK) < 3))
-					{
-						if (ItemCount >= 11)
-						{
+				case VUKU_ORC_FIGHTER: {
+					if (hasQuestItems(killer, LEATHER_POUCH_4TF) && (getQuestItemsCount(killer, VUKU_ORK_TUSK) < 3)) {
+						if (ItemCount >= 11) {
 							takeItems(killer, LEATHER_POUCH_4TF, 1);
 							giveItems(killer, LEATHER_POUCH_4TF_FULL, 1);
 							takeItems(killer, VUKU_ORK_TUSK, -1);
@@ -318,21 +259,16 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 							takeItems(killer, LANGK_LIZARDMAN_TOOTH, -1);
 							takeItems(killer, FELIM_LIZARDMAN_TOOTH, -1);
 							qs.setCond(12, true);
-						}
-						else
-						{
+						} else {
 							giveItems(killer, VUKU_ORK_TUSK, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case LANGK_LIZZARDMAN_WARRIOR:
-				{
-					if (hasQuestItems(killer, LEATHER_POUCH_4TF) && (getQuestItemsCount(killer, LANGK_LIZARDMAN_TOOTH) < 3))
-					{
-						if (ItemCount >= 11)
-						{
+				case LANGK_LIZZARDMAN_WARRIOR: {
+					if (hasQuestItems(killer, LEATHER_POUCH_4TF) && (getQuestItemsCount(killer, LANGK_LIZARDMAN_TOOTH) < 3)) {
+						if (ItemCount >= 11) {
 							takeItems(killer, LEATHER_POUCH_4TF, 1);
 							giveItems(killer, LEATHER_POUCH_4TF_FULL, 1);
 							takeItems(killer, VUKU_ORK_TUSK, -1);
@@ -340,21 +276,16 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 							takeItems(killer, LANGK_LIZARDMAN_TOOTH, -1);
 							takeItems(killer, FELIM_LIZARDMAN_TOOTH, -1);
 							qs.setCond(12, true);
-						}
-						else
-						{
+						} else {
 							giveItems(killer, LANGK_LIZARDMAN_TOOTH, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case RATMAN_WARRIOR:
-				{
-					if (hasQuestItems(killer, LEATHER_POUCH_4TF) && (getQuestItemsCount(killer, RATMAN_FANG) < 3))
-					{
-						if (ItemCount >= 11)
-						{
+				case RATMAN_WARRIOR: {
+					if (hasQuestItems(killer, LEATHER_POUCH_4TF) && (getQuestItemsCount(killer, RATMAN_FANG) < 3)) {
+						if (ItemCount >= 11) {
 							takeItems(killer, LEATHER_POUCH_4TF, 1);
 							giveItems(killer, LEATHER_POUCH_4TF_FULL, 1);
 							takeItems(killer, VUKU_ORK_TUSK, -1);
@@ -362,112 +293,80 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 							takeItems(killer, LANGK_LIZARDMAN_TOOTH, -1);
 							takeItems(killer, FELIM_LIZARDMAN_TOOTH, -1);
 							qs.setCond(12, true);
-						}
-						else
-						{
+						} else {
 							giveItems(killer, RATMAN_FANG, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case SCARLET_SALAMANDER:
-				{
-					if (hasQuestItems(killer, LEATHER_POUCH_3RD))
-					{
-						if (getQuestItemsCount(killer, SCARLET_SALAMANDER_SCALE) == 4)
-						{
+				case SCARLET_SALAMANDER: {
+					if (hasQuestItems(killer, LEATHER_POUCH_3RD)) {
+						if (getQuestItemsCount(killer, SCARLET_SALAMANDER_SCALE) == 4) {
 							takeItems(killer, LEATHER_POUCH_3RD, 1);
 							giveItems(killer, LEATHER_POUCH_3RD_FULL, 1);
 							takeItems(killer, SCARLET_SALAMANDER_SCALE, -1);
 							qs.setCond(7, true);
-						}
-						else
-						{
+						} else {
 							giveItems(killer, SCARLET_SALAMANDER_SCALE, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case KASHA_FANG_SPIDER:
-				{
-					if (qs.isMemoState(3) && (getQuestItemsCount(killer, KASHA_SPIDERS_TOOTH) < 6))
-					{
-						if (getRandom(100) < 70)
-						{
+				case KASHA_FANG_SPIDER: {
+					if (qs.isMemoState(3) && (getQuestItemsCount(killer, KASHA_SPIDERS_TOOTH) < 6)) {
+						if (getRandom(100) < 70) {
 							giveItems(killer, KASHA_SPIDERS_TOOTH, 1);
-							if (getQuestItemsCount(killer, KASHA_SPIDERS_TOOTH) >= 6)
-							{
+							if (getQuestItemsCount(killer, KASHA_SPIDERS_TOOTH) >= 6) {
 								qs.setCond(16, true);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case KASHA_BLADE_SPIDER:
-				{
-					if (hasQuestItems(killer, LEATHER_POUCH_2ND))
-					{
-						if (getQuestItemsCount(killer, KASHA_BLADE_SPIDER_TALON) == 4)
-						{
+				case KASHA_BLADE_SPIDER: {
+					if (hasQuestItems(killer, LEATHER_POUCH_2ND)) {
+						if (getQuestItemsCount(killer, KASHA_BLADE_SPIDER_TALON) == 4) {
 							takeItems(killer, LEATHER_POUCH_2ND, 1);
 							giveItems(killer, LEATHER_POUCH_2ND_FULL, 1);
 							takeItems(killer, KASHA_BLADE_SPIDER_TALON, -1);
 							qs.setCond(5, true);
-						}
-						else
-						{
+						} else {
 							giveItems(killer, KASHA_BLADE_SPIDER_TALON, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
-					}
-					else if (qs.isMemoState(3) && (getQuestItemsCount(killer, KASHA_SPIDERS_TOOTH) < 6))
-					{
-						if (getRandom(100) < 70)
-						{
+					} else if (qs.isMemoState(3) && (getQuestItemsCount(killer, KASHA_SPIDERS_TOOTH) < 6)) {
+						if (getRandom(100) < 70) {
 							giveItems(killer, KASHA_SPIDERS_TOOTH, 1);
-							if (getQuestItemsCount(killer, KASHA_SPIDERS_TOOTH) == 6)
-							{
+							if (getQuestItemsCount(killer, KASHA_SPIDERS_TOOTH) == 6) {
 								qs.setCond(16, true);
-							}
-							else
-							{
+							} else {
 								playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
 					}
 					break;
 				}
-				case KASHA_BEAR:
-				{
-					if (hasQuestItems(killer, LEATHER_POUCH_1ST))
-					{
-						if (getQuestItemsCount(killer, KASHA_BEAR_CLAW) == 4)
-						{
+				case KASHA_BEAR: {
+					if (hasQuestItems(killer, LEATHER_POUCH_1ST)) {
+						if (getQuestItemsCount(killer, KASHA_BEAR_CLAW) == 4) {
 							takeItems(killer, LEATHER_POUCH_1ST, 1);
 							giveItems(killer, LEATHER_POUCH_1ST_FULL, 1);
 							takeItems(killer, KASHA_BEAR_CLAW, -1);
 							qs.setCond(3, true);
-						}
-						else
-						{
+						} else {
 							giveItems(killer, KASHA_BEAR_CLAW, 1);
 							playSound(killer, Sound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
 					break;
 				}
-				case BAAR_DRE_VANUL:
-				{
-					if (qs.isMemoState(4) && !hasQuestItems(killer, HORN_OF_BAAR_DRE_VANUL))
-					{
-						if (getRandom(100) < 90)
-						{
+				case BAAR_DRE_VANUL: {
+					if (qs.isMemoState(4) && !hasQuestItems(killer, HORN_OF_BAAR_DRE_VANUL)) {
+						if (getRandom(100) < 90) {
 							giveItems(killer, HORN_OF_BAAR_DRE_VANUL, 1);
 							qs.setCond(18, true);
 						}
@@ -480,86 +379,54 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		final int memoState = qs.getMemoState();
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated() || qs.isCompleted())
-		{
-			if (npc.getId() == GANTAKI_ZU_URUTU)
-			{
+		if (qs.isCreated() || qs.isCompleted()) {
+			if (npc.getId() == GANTAKI_ZU_URUTU) {
 				htmltext = "30587-01.htm";
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case GANTAKI_ZU_URUTU:
-				{
+		} else if (qs.isStarted()) {
+			switch (npc.getId()) {
+				case GANTAKI_ZU_URUTU: {
 					final long letterCount = getQuestItemsCount(player, LEATHER_POUCH_1ST, LEATHER_POUCH_2ND, LEATHER_POUCH_3RD, LEATHER_POUCH_1ST_FULL, LEATHER_POUCH_2ND_FULL, LEATHER_POUCH_3RD_FULL);
-					if (memoState == 2)
-					{
+					if (memoState == 2) {
 						htmltext = "30587-09c.html";
-					}
-					else if (hasQuestItems(player, POMEGRANATE) && !hasAtLeastOneQuestItem(player, FIERY_SPIRIT_SCROLL, GANTAKIS_LETTRT_OF_RECOMMENDATION, ROSHEEKS_LETTER) && (letterCount == 0))
-					{
+					} else if (hasQuestItems(player, POMEGRANATE) && !hasAtLeastOneQuestItem(player, FIERY_SPIRIT_SCROLL, GANTAKIS_LETTRT_OF_RECOMMENDATION, ROSHEEKS_LETTER) && (letterCount == 0)) {
 						htmltext = "30587-07.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, FIERY_SPIRIT_SCROLL, POMEGRANATE, GANTAKIS_LETTRT_OF_RECOMMENDATION, ROSHEEKS_LETTER) && (letterCount == 1))
-					{
+					} else if (!hasAtLeastOneQuestItem(player, FIERY_SPIRIT_SCROLL, POMEGRANATE, GANTAKIS_LETTRT_OF_RECOMMENDATION, ROSHEEKS_LETTER) && (letterCount == 1)) {
 						htmltext = "30587-08.html";
-					}
-					else if (hasQuestItems(player, FIERY_SPIRIT_SCROLL, ROSHEEKS_LETTER) && !hasAtLeastOneQuestItem(player, POMEGRANATE, GANTAKIS_LETTRT_OF_RECOMMENDATION) && (letterCount == 0))
-					{
+					} else if (hasQuestItems(player, FIERY_SPIRIT_SCROLL, ROSHEEKS_LETTER) && !hasAtLeastOneQuestItem(player, POMEGRANATE, GANTAKIS_LETTRT_OF_RECOMMENDATION) && (letterCount == 0)) {
 						htmltext = "30587-09a.html";
-					}
-					else if (memoState < 2)
-					{
-						if (hasQuestItems(player, FIERY_SPIRIT_SCROLL, GANTAKIS_LETTRT_OF_RECOMMENDATION) && !hasAtLeastOneQuestItem(player, POMEGRANATE, ROSHEEKS_LETTER) && (letterCount == 0))
-						{
+					} else if (memoState < 2) {
+						if (hasQuestItems(player, FIERY_SPIRIT_SCROLL, GANTAKIS_LETTRT_OF_RECOMMENDATION) && !hasAtLeastOneQuestItem(player, POMEGRANATE, ROSHEEKS_LETTER) && (letterCount == 0)) {
 							htmltext = "30587-10.html";
-						}
-						else if (hasQuestItems(player, FIERY_SPIRIT_SCROLL) && !hasAtLeastOneQuestItem(player, POMEGRANATE, GANTAKIS_LETTRT_OF_RECOMMENDATION, ROSHEEKS_LETTER) && (letterCount == 0))
-						{
+						} else if (hasQuestItems(player, FIERY_SPIRIT_SCROLL) && !hasAtLeastOneQuestItem(player, POMEGRANATE, GANTAKIS_LETTRT_OF_RECOMMENDATION, ROSHEEKS_LETTER) && (letterCount == 0)) {
 							htmltext = "30587-11.html";
 						}
 					}
 					break;
 				}
-				case PREFECT_KASMAN:
-				{
-					if (hasQuestItems(player, GANTAKIS_LETTRT_OF_RECOMMENDATION))
-					{
+				case PREFECT_KASMAN: {
+					if (hasQuestItems(player, GANTAKIS_LETTRT_OF_RECOMMENDATION)) {
 						takeItems(player, GANTAKIS_LETTRT_OF_RECOMMENDATION, 1);
 						giveItems(player, FIG, 1);
 						qs.setCond(10);
 						htmltext = "30501-01.html";
-					}
-					else if (hasQuestItems(player, FIG) && !hasAtLeastOneQuestItem(player, LEATHER_POUCH_4TF, LEATHER_POUCH_4TF_FULL))
-					{
+					} else if (hasQuestItems(player, FIG) && !hasAtLeastOneQuestItem(player, LEATHER_POUCH_4TF, LEATHER_POUCH_4TF_FULL)) {
 						htmltext = "30501-02.html";
-					}
-					else if (!hasQuestItems(player, FIG) && hasAtLeastOneQuestItem(player, LEATHER_POUCH_4TF, LEATHER_POUCH_4TF_FULL))
-					{
+					} else if (!hasQuestItems(player, FIG) && hasAtLeastOneQuestItem(player, LEATHER_POUCH_4TF, LEATHER_POUCH_4TF_FULL)) {
 						htmltext = "30501-03.html";
-					}
-					else if (hasQuestItems(player, IRON_WILL_SCROLL))
-					{
+					} else if (hasQuestItems(player, IRON_WILL_SCROLL)) {
 						giveAdena(player, 163800, true);
 						giveItems(player, KHAVATARI_TOTEM, 1);
 						final int level = player.getLevel();
-						if (level >= 20)
-						{
+						if (level >= 20) {
 							addExpAndSp(player, 320534, 25292);
-						}
-						else if (level == 19)
-						{
+						} else if (level == 19) {
 							addExpAndSp(player, 456128, 31990);
-						}
-						else
-						{
+						} else {
 							addExpAndSp(player, 591724, 38688);
 						}
 						qs.exitQuest(false, true);
@@ -569,127 +436,85 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 					}
 					break;
 				}
-				case KHAVATARI_ROSHEEK:
-				{
-					if (hasQuestItems(player, POMEGRANATE))
-					{
+				case KHAVATARI_ROSHEEK: {
+					if (hasQuestItems(player, POMEGRANATE)) {
 						takeItems(player, POMEGRANATE, 1);
 						giveItems(player, LEATHER_POUCH_1ST, 1);
 						qs.setCond(2);
 						htmltext = "30590-01.html";
-					}
-					else if (hasQuestItems(player, LEATHER_POUCH_1ST) && !hasQuestItems(player, LEATHER_POUCH_1ST_FULL))
-					{
+					} else if (hasQuestItems(player, LEATHER_POUCH_1ST) && !hasQuestItems(player, LEATHER_POUCH_1ST_FULL)) {
 						htmltext = "30590-02.html";
-					}
-					else if (!hasQuestItems(player, LEATHER_POUCH_1ST) && hasQuestItems(player, LEATHER_POUCH_1ST_FULL))
-					{
+					} else if (!hasQuestItems(player, LEATHER_POUCH_1ST) && hasQuestItems(player, LEATHER_POUCH_1ST_FULL)) {
 						giveItems(player, LEATHER_POUCH_2ND, 1);
 						takeItems(player, LEATHER_POUCH_1ST_FULL, 1);
 						qs.setCond(4);
 						htmltext = "30590-03.html";
-					}
-					else if (hasQuestItems(player, LEATHER_POUCH_2ND) && !hasQuestItems(player, LEATHER_POUCH_2ND_FULL))
-					{
+					} else if (hasQuestItems(player, LEATHER_POUCH_2ND) && !hasQuestItems(player, LEATHER_POUCH_2ND_FULL)) {
 						htmltext = "30590-04.html";
-					}
-					else if (!hasQuestItems(player, LEATHER_POUCH_2ND) && hasQuestItems(player, LEATHER_POUCH_2ND_FULL))
-					{
+					} else if (!hasQuestItems(player, LEATHER_POUCH_2ND) && hasQuestItems(player, LEATHER_POUCH_2ND_FULL)) {
 						giveItems(player, LEATHER_POUCH_3RD, 1);
 						takeItems(player, LEATHER_POUCH_2ND_FULL, 1);
 						qs.setCond(6);
 						htmltext = "30590-05.html";
-					}
-					else if (hasQuestItems(player, LEATHER_POUCH_3RD) && !hasQuestItems(player, LEATHER_POUCH_3RD_FULL))
-					{
+					} else if (hasQuestItems(player, LEATHER_POUCH_3RD) && !hasQuestItems(player, LEATHER_POUCH_3RD_FULL)) {
 						htmltext = "30590-06.html";
-					}
-					else if (!hasQuestItems(player, LEATHER_POUCH_3RD) && hasQuestItems(player, LEATHER_POUCH_3RD_FULL))
-					{
+					} else if (!hasQuestItems(player, LEATHER_POUCH_3RD) && hasQuestItems(player, LEATHER_POUCH_3RD_FULL)) {
 						takeItems(player, LEATHER_POUCH_3RD_FULL, 1);
 						giveItems(player, FIERY_SPIRIT_SCROLL, 1);
 						giveItems(player, ROSHEEKS_LETTER, 1);
 						qs.setCond(8);
 						htmltext = "30590-07.html";
-					}
-					else if (hasQuestItems(player, ROSHEEKS_LETTER, FIERY_SPIRIT_SCROLL))
-					{
+					} else if (hasQuestItems(player, ROSHEEKS_LETTER, FIERY_SPIRIT_SCROLL)) {
 						htmltext = "30590-08.html";
-					}
-					else if (!hasQuestItems(player, ROSHEEKS_LETTER) && hasQuestItems(player, FIERY_SPIRIT_SCROLL))
-					{
+					} else if (!hasQuestItems(player, ROSHEEKS_LETTER) && hasQuestItems(player, FIERY_SPIRIT_SCROLL)) {
 						htmltext = "30590-09.html";
 					}
 					break;
 				}
-				case KHAVATARI_TORUKU:
-				{
-					if (hasQuestItems(player, FIG))
-					{
+				case KHAVATARI_TORUKU: {
+					if (hasQuestItems(player, FIG)) {
 						takeItems(player, FIG, 1);
 						giveItems(player, LEATHER_POUCH_4TF, 1);
 						qs.setCond(11);
 						htmltext = "30591-01.html";
-					}
-					else if (hasQuestItems(player, LEATHER_POUCH_4TF) && !hasQuestItems(player, LEATHER_POUCH_4TF_FULL))
-					{
+					} else if (hasQuestItems(player, LEATHER_POUCH_4TF) && !hasQuestItems(player, LEATHER_POUCH_4TF_FULL)) {
 						htmltext = "30591-02.html";
-					}
-					else if (!hasQuestItems(player, LEATHER_POUCH_4TF) && hasQuestItems(player, LEATHER_POUCH_4TF_FULL))
-					{
+					} else if (!hasQuestItems(player, LEATHER_POUCH_4TF) && hasQuestItems(player, LEATHER_POUCH_4TF_FULL)) {
 						takeItems(player, LEATHER_POUCH_4TF_FULL, 1);
 						giveItems(player, IRON_WILL_SCROLL, 1);
 						giveItems(player, TORUKUS_LETTER, 1);
 						qs.setCond(13);
 						htmltext = "30591-03.html";
-					}
-					else if (hasQuestItems(player, IRON_WILL_SCROLL, TORUKUS_LETTER))
-					{
+					} else if (hasQuestItems(player, IRON_WILL_SCROLL, TORUKUS_LETTER)) {
 						htmltext = "30591-04.html";
 					}
 					break;
 				}
-				case SEER_MOIRA:
-				{
-					if (memoState == 5)
-					{
+				case SEER_MOIRA: {
+					if (memoState == 5) {
 						htmltext = "31979-01.html";
 					}
 					break;
 				}
-				case KHAVATARI_AREN:
-				{
-					if (memoState == 2)
-					{
+				case KHAVATARI_AREN: {
+					if (memoState == 2) {
 						htmltext = "32056-01.html";
-					}
-					else if (memoState == 3)
-					{
-						if (getQuestItemsCount(player, KASHA_SPIDERS_TOOTH) < 6)
-						{
+					} else if (memoState == 3) {
+						if (getQuestItemsCount(player, KASHA_SPIDERS_TOOTH) < 6) {
 							htmltext = "32056-04.html";
-						}
-						else
-						{
+						} else {
 							takeItems(player, KASHA_SPIDERS_TOOTH, -1);
 							qs.setMemoState(4);
 							qs.setCond(17);
 							htmltext = "32056-05.html";
 						}
-					}
-					else if (memoState == 4)
-					{
-						if (!hasQuestItems(player, HORN_OF_BAAR_DRE_VANUL))
-						{
+					} else if (memoState == 4) {
+						if (!hasQuestItems(player, HORN_OF_BAAR_DRE_VANUL)) {
 							htmltext = "32056-06.html";
-						}
-						else
-						{
+						} else {
 							htmltext = "32056-07.html";
 						}
-					}
-					else if (memoState == 5)
-					{
+					} else if (memoState == 5) {
 						htmltext = "32056-09.html";
 					}
 					break;
@@ -699,8 +524,7 @@ public final class Q00415_PathOfTheOrcMonk extends Quest
 		return htmltext;
 	}
 	
-	private static boolean checkWeapon(L2PcInstance player)
-	{
+	private static boolean checkWeapon(L2PcInstance player) {
 		L2ItemInstance weapon = player.getActiveWeaponInstance();
 		return ((weapon == null) || (weapon.getItemType() == WeaponType.FIST) || (weapon.getItemType() == WeaponType.DUALFIST));
 	}

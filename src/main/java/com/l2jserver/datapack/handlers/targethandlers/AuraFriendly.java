@@ -35,75 +35,60 @@ import com.l2jserver.gameserver.model.zone.ZoneId;
  * Aura Friendly target handler implementation.
  * @author Sahar
  */
-public class AuraFriendly implements ITargetTypeHandler
-{
+public class AuraFriendly implements ITargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<>();
 		L2PcInstance player = activeChar.getActingPlayer();
 		int maxTargets = skill.getAffectLimit();
-		for (L2Character obj : player.getKnownList().getKnownCharactersInRadius(skill.getAffectRange()))
-		{
-			if ((obj == activeChar) || !checkTarget(player, obj))
-			{
+		for (L2Character obj : player.getKnownList().getKnownCharactersInRadius(skill.getAffectRange())) {
+			if ((obj == activeChar) || !checkTarget(player, obj)) {
 				continue;
 			}
 			
-			if ((maxTargets > 0) && (targetList.size() >= maxTargets))
-			{
+			if ((maxTargets > 0) && (targetList.size() >= maxTargets)) {
 				break;
 			}
 			
 			targetList.add(obj);
 		}
 		
-		if (targetList.isEmpty())
-		{
+		if (targetList.isEmpty()) {
 			return EMPTY_TARGET_LIST;
 		}
 		
 		return targetList.toArray(new L2Character[targetList.size()]);
 	}
 	
-	private boolean checkTarget(L2PcInstance activeChar, L2Character target)
-	{
-		if ((target == null) || !GeoData.getInstance().canSeeTarget(activeChar, target))
-		{
+	private boolean checkTarget(L2PcInstance activeChar, L2Character target) {
+		if ((target == null) || !GeoData.getInstance().canSeeTarget(activeChar, target)) {
 			return false;
 		}
 		
-		if (target.isAlikeDead() || target.isDoor() || (target instanceof L2SiegeFlagInstance) || target.isMonster())
-		{
+		if (target.isAlikeDead() || target.isDoor() || (target instanceof L2SiegeFlagInstance) || target.isMonster()) {
 			return false;
 		}
 		
-		if (target.isPlayable())
-		{
+		if (target.isPlayable()) {
 			L2PcInstance targetPlayer = target.getActingPlayer();
 			
-			if (activeChar.isInDuelWith(target))
-			{
+			if (activeChar.isInDuelWith(target)) {
 				return false;
 			}
 			
-			if (activeChar.isInPartyWith(target))
-			{
+			if (activeChar.isInPartyWith(target)) {
 				return true;
 			}
 			
-			if (target.isInsideZone(ZoneId.PVP))
-			{
+			if (target.isInsideZone(ZoneId.PVP)) {
 				return false;
 			}
 			
-			if (activeChar.isInClanWith(target) || activeChar.isInAllyWith(target) || activeChar.isInCommandChannelWith(target))
-			{
+			if (activeChar.isInClanWith(target) || activeChar.isInAllyWith(target) || activeChar.isInCommandChannelWith(target)) {
 				return true;
 			}
 			
-			if ((targetPlayer.getPvpFlag() > 0) || (targetPlayer.getKarma() > 0))
-			{
+			if ((targetPlayer.getPvpFlag() > 0) || (targetPlayer.getKarma() > 0)) {
 				return false;
 			}
 		}
@@ -112,8 +97,7 @@ public class AuraFriendly implements ITargetTypeHandler
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
+	public Enum<L2TargetType> getTargetType() {
 		return L2TargetType.AURA_FRIENDLY;
 	}
 }

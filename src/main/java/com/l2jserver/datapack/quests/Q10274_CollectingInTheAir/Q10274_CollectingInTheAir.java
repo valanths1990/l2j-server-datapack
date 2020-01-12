@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.model.skills.Skill;
  * Original Jython script by Kerberos v1.0 on 2009/04/26.
  * @author nonom
  */
-public class Q10274_CollectingInTheAir extends Quest
-{
+public class Q10274_CollectingInTheAir extends Quest {
 	// NPC
 	private static final int LEKON = 32557;
 	// Items
@@ -43,8 +42,7 @@ public class Q10274_CollectingInTheAir extends Quest
 	private static final int BLUE = 13859;
 	private static final int GREEN = 13860;
 	// Monsters
-	private static final int MOBS[] =
-	{
+	private static final int MOBS[] = {
 		18684, // Red Star Stone
 		18685, // Red Star Stone
 		18686, // Red Star Stone
@@ -56,8 +54,7 @@ public class Q10274_CollectingInTheAir extends Quest
 		18692, // Green Star Stone
 	};
 	
-	public Q10274_CollectingInTheAir()
-	{
+	public Q10274_CollectingInTheAir() {
 		super(10274, Q10274_CollectingInTheAir.class.getSimpleName(), "Collecting in the Air");
 		addStartNpc(LEKON);
 		addTalkId(LEKON);
@@ -66,16 +63,13 @@ public class Q10274_CollectingInTheAir extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return getNoQuestMsg(player);
 		}
 		
-		if (event.equals("32557-03.html"))
-		{
+		if (event.equals("32557-03.html")) {
 			st.startQuest();
 			st.giveItems(SCROLL, 8);
 		}
@@ -83,18 +77,14 @@ public class Q10274_CollectingInTheAir extends Quest
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
-	{
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon) {
 		final QuestState st = getQuestState(caster, false);
-		if ((st == null) || !st.isStarted())
-		{
+		if ((st == null) || !st.isStarted()) {
 			return null;
 		}
 		
-		if (st.isCond(1) && (skill.getId() == 2630))
-		{
-			switch (npc.getId())
-			{
+		if (st.isCond(1) && (skill.getId() == 2630)) {
+			switch (npc.getId()) {
 				case 18684:
 				case 18685:
 				case 18686:
@@ -118,12 +108,10 @@ public class Q10274_CollectingInTheAir extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.COMPLETED:
 				htmltext = "32557-0a.html";
 				break;
@@ -131,15 +119,12 @@ public class Q10274_CollectingInTheAir extends Quest
 				htmltext = ((player.getLevel() >= 75) && player.hasQuestCompleted(Q10273_GoodDayToFly.class.getSimpleName())) ? "32557-01.htm" : "32557-00.html";
 				break;
 			case State.STARTED:
-				if ((st.getQuestItemsCount(RED) + st.getQuestItemsCount(BLUE) + st.getQuestItemsCount(GREEN)) >= 8)
-				{
+				if ((st.getQuestItemsCount(RED) + st.getQuestItemsCount(BLUE) + st.getQuestItemsCount(GREEN)) >= 8) {
 					htmltext = "32557-05.html";
 					st.giveItems(13728, 1);
 					st.addExpAndSp(25160, 2525);
 					st.exitQuest(false, true);
-				}
-				else
-				{
+				} else {
 					htmltext = "32557-04.html";
 				}
 				break;

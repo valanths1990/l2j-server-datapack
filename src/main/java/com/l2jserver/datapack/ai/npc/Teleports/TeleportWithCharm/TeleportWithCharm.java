@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * Original Jython script by DraX.
  * @author Plim
  */
-public final class TeleportWithCharm extends AbstractNpcAI
-{
+public final class TeleportWithCharm extends AbstractNpcAI {
 	// NPCs
 	private final static int WHIRPY = 30540;
 	private final static int TAMIL = 30576;
@@ -40,40 +39,29 @@ public final class TeleportWithCharm extends AbstractNpcAI
 	private final static Location ORC_TELEPORT = new Location(-80826, 149775, -3043);
 	private final static Location DWARF_TELEPORT = new Location(-80826, 149775, -3043);
 	
-	private TeleportWithCharm()
-	{
+	private TeleportWithCharm() {
 		super(TeleportWithCharm.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(WHIRPY, TAMIL);
 		addTalkId(WHIRPY, TAMIL);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
-		switch (npc.getId())
-		{
-			case WHIRPY:
-			{
-				if (hasQuestItems(player, DWARF_GATEKEEPER_TOKEN))
-				{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
+		switch (npc.getId()) {
+			case WHIRPY: {
+				if (hasQuestItems(player, DWARF_GATEKEEPER_TOKEN)) {
 					takeItems(player, DWARF_GATEKEEPER_TOKEN, 1);
 					player.teleToLocation(DWARF_TELEPORT);
-				}
-				else
-				{
+				} else {
 					return "30540-01.htm";
 				}
 				break;
 			}
-			case TAMIL:
-			{
-				if (hasQuestItems(player, ORC_GATEKEEPER_CHARM))
-				{
+			case TAMIL: {
+				if (hasQuestItems(player, ORC_GATEKEEPER_CHARM)) {
 					takeItems(player, ORC_GATEKEEPER_CHARM, 1);
 					player.teleToLocation(ORC_TELEPORT);
-				}
-				else
-				{
+				} else {
 					return "30576-01.htm";
 				}
 				break;
@@ -82,8 +70,7 @@ public final class TeleportWithCharm extends AbstractNpcAI
 		return super.onTalk(npc, player);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new TeleportWithCharm();
 	}
 }

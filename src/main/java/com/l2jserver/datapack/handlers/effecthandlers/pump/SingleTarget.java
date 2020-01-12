@@ -26,16 +26,13 @@ import com.l2jserver.gameserver.model.effects.EffectFlag;
 /**
  * @author Zealar
  */
-public final class SingleTarget extends AbstractEffect
-{
-	public SingleTarget(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class SingleTarget extends AbstractEffect {
+	public SingleTarget(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public int getEffectFlags()
-	{
+	public int getEffectFlags() {
 		return EffectFlag.SINGLE_TARGET.getMask();
 	}
 }

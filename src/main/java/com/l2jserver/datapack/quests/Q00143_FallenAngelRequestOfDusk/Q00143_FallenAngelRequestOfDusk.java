@@ -28,8 +28,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Fallen Angel - Request of Dusk (143)
  * @author Nono
  */
-public class Q00143_FallenAngelRequestOfDusk extends Quest
-{
+public class Q00143_FallenAngelRequestOfDusk extends Quest {
 	// NPCs
 	private static final int TOBIAS = 30297;
 	private static final int CASIAN = 30612;
@@ -46,25 +45,21 @@ public class Q00143_FallenAngelRequestOfDusk extends Quest
 	private static final int MAX_REWARD_LEVEL = 43;
 	private boolean isAngelSpawned = false;
 	
-	public Q00143_FallenAngelRequestOfDusk()
-	{
+	public Q00143_FallenAngelRequestOfDusk() {
 		super(143, Q00143_FallenAngelRequestOfDusk.class.getSimpleName(), "Fallen Angel - Request of Dusk");
 		addTalkId(NATOOLS, TOBIAS, CASIAN, ROCK, ANGEL);
 		registerQuestItems(SEALED_PROPHECY_PATH_OF_THE_GOD, PROPHECY_PATH_OF_THE_GOD, EMPTY_SOUND_CRYSTAL, ANGEL_MEDICINE, ANGELS_MESSAGE);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30894-02.html":
 			case "30297-04.html":
 			case "30612-05.html":
@@ -105,8 +100,7 @@ public class Q00143_FallenAngelRequestOfDusk extends Quest
 				st.giveItems(ANGEL_MEDICINE, 1);
 				break;
 			case "32368-04.html":
-				if (isAngelSpawned)
-				{
+				if (isAngelSpawned) {
 					return "32368-03.html";
 				}
 				addSpawn(ANGEL, npc.getX() + 100, npc.getY() + 100, npc.getZ(), 0, false, 120000);
@@ -129,8 +123,7 @@ public class Q00143_FallenAngelRequestOfDusk extends Quest
 				isAngelSpawned = false;
 				break;
 			case "despawn":
-				if (isAngelSpawned)
-				{
+				if (isAngelSpawned) {
 					isAngelSpawned = false;
 				}
 			default:
@@ -141,18 +134,14 @@ public class Q00143_FallenAngelRequestOfDusk extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case NATOOLS:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "30894-01.html";
 								break;
@@ -167,10 +156,8 @@ public class Q00143_FallenAngelRequestOfDusk extends Quest
 				}
 				break;
 			case TOBIAS:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "30297-01.html";
 							break;
@@ -183,8 +170,7 @@ public class Q00143_FallenAngelRequestOfDusk extends Quest
 							break;
 						case 5:
 							st.giveAdena(89046, true);
-							if (player.getLevel() <= MAX_REWARD_LEVEL)
-							{
+							if (player.getLevel() <= MAX_REWARD_LEVEL) {
 								st.addExpAndSp(223036, 13901);
 							}
 							st.exitQuest(false, true);
@@ -194,10 +180,8 @@ public class Q00143_FallenAngelRequestOfDusk extends Quest
 				}
 				break;
 			case CASIAN:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 						case 2:
 							htmltext = "30612-01.html";
@@ -212,10 +196,8 @@ public class Q00143_FallenAngelRequestOfDusk extends Quest
 				}
 				break;
 			case ROCK:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 						case 2:
 						case 3:
@@ -231,26 +213,19 @@ public class Q00143_FallenAngelRequestOfDusk extends Quest
 				}
 				break;
 			case ANGEL:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 						case 2:
 						case 3:
 							htmltext = "32369-01.html";
 							break;
 						case 4:
-							if (st.getInt("talk") == 1)
-							{
+							if (st.getInt("talk") == 1) {
 								htmltext = "32369-04.html";
-							}
-							else if (st.getInt("talk") == 2)
-							{
+							} else if (st.getInt("talk") == 2) {
 								htmltext = "32369-07.html";
-							}
-							else
-							{
+							} else {
 								htmltext = "32369-02.html";
 							}
 							break;

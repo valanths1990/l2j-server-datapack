@@ -31,32 +31,26 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Outpost Create effect implementation.
  * @author UnAfraid
  */
-public final class OutpostCreate extends AbstractEffect
-{
+public final class OutpostCreate extends AbstractEffect {
 	private static final int HQ_NPC_ID = 36590;
 	
-	public OutpostCreate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public OutpostCreate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2PcInstance player = info.getEffector().getActingPlayer();
-		if (!player.isClanLeader())
-		{
+		if (!player.isClanLeader()) {
 			return;
 		}
 		
-		if (TerritoryWarManager.getInstance().isTWInProgress())
-		{
+		if (TerritoryWarManager.getInstance().isTWInProgress()) {
 			// Spawn a new flag
 			final L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, NpcData.getInstance().getTemplate(HQ_NPC_ID), true, true);
 			flag.setTitle(player.getClan().getName());

@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Fortune Seeker (99)
  * @author Emperorc
  */
-public class Q00099_SagaOfTheFortuneSeeker extends AbstractSagaQuest
-{
-	public Q00099_SagaOfTheFortuneSeeker()
-	{
+public class Q00099_SagaOfTheFortuneSeeker extends AbstractSagaQuest {
+	public Q00099_SagaOfTheFortuneSeeker() {
 		super(99, Q00099_SagaOfTheFortuneSeeker.class.getSimpleName(), "Saga of the Fortune Seeker");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			31594,
 			31623,
 			31600,
@@ -45,8 +42,7 @@ public class Q00099_SagaOfTheFortuneSeeker extends AbstractSagaQuest
 			31657,
 			31600
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7608,
 			7081,
@@ -60,28 +56,23 @@ public class Q00099_SagaOfTheFortuneSeeker extends AbstractSagaQuest
 			7109,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27259,
 			27248,
 			27309
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			117
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x37
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(191046, -40640, -3042),
 			new Location(46066, -36396, -1685),
 			new Location(46087, -36372, -1685)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

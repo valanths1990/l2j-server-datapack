@@ -33,29 +33,23 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Take Fort Start effect implementation.
  * @author UnAfraid
  */
-public final class TakeFortStart extends AbstractEffect
-{
-	public TakeFortStart(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class TakeFortStart extends AbstractEffect {
+	public TakeFortStart(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (info.getEffector().isPlayer())
-		{
+	public void onStart(BuffInfo info) {
+		if (info.getEffector().isPlayer()) {
 			final L2PcInstance player = info.getEffector().getActingPlayer();
 			final Fort fort = FortManager.getInstance().getFort(player);
 			final L2Clan clan = player.getClan();
-			if ((fort != null) && (clan != null))
-			{
+			if ((fort != null) && (clan != null)) {
 				fort.getSiege().announceToPlayer(SystemMessage.getSystemMessage(SystemMessageId.S1_TRYING_RAISE_FLAG), clan.getName());
 			}
 		}

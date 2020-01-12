@@ -25,10 +25,8 @@ import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 
-public class SupportMagic implements IBypassHandler
-{
-	private static final String[] COMMANDS =
-	{
+public class SupportMagic implements IBypassHandler {
+	private static final String[] COMMANDS = {
 		"supportmagicservitor",
 		"supportmagic"
 	};
@@ -37,8 +35,7 @@ public class SupportMagic implements IBypassHandler
 	private static final SkillHolder HASTE_1 = new SkillHolder(4327, 1);
 	private static final SkillHolder HASTE_2 = new SkillHolder(5632, 1);
 	private static final SkillHolder CUBIC = new SkillHolder(4338, 1);
-	private static final SkillHolder[] FIGHTER_BUFFS =
-	{
+	private static final SkillHolder[] FIGHTER_BUFFS = {
 		new SkillHolder(4322, 1), // Wind Walk
 		new SkillHolder(4323, 1), // Shield
 		new SkillHolder(5637, 1), // Magic Barrier
@@ -46,8 +43,7 @@ public class SupportMagic implements IBypassHandler
 		new SkillHolder(4325, 1), // Vampiric Rage
 		new SkillHolder(4326, 1), // Regeneration
 	};
-	private static final SkillHolder[] MAGE_BUFFS =
-	{
+	private static final SkillHolder[] MAGE_BUFFS = {
 		new SkillHolder(4322, 1), // Wind Walk
 		new SkillHolder(4323, 1), // Shield
 		new SkillHolder(5637, 1), // Magic Barrier
@@ -56,8 +52,7 @@ public class SupportMagic implements IBypassHandler
 		new SkillHolder(4330, 1), // Concentration
 		new SkillHolder(4331, 1), // Empower
 	};
-	private static final SkillHolder[] SUMMON_BUFFS =
-	{
+	private static final SkillHolder[] SUMMON_BUFFS = {
 		new SkillHolder(4322, 1), // Wind Walk
 		new SkillHolder(4323, 1), // Shield
 		new SkillHolder(5637, 1), // Magic Barrier
@@ -78,102 +73,72 @@ public class SupportMagic implements IBypassHandler
 	private static final int HASTE_LEVEL_2 = 40;
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
-	{
-		if (!target.isNpc() || activeChar.isCursedWeaponEquipped())
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target) {
+		if (!target.isNpc() || activeChar.isCursedWeaponEquipped()) {
 			return false;
 		}
 		
-		if (command.equalsIgnoreCase(COMMANDS[0]))
-		{
+		if (command.equalsIgnoreCase(COMMANDS[0])) {
 			makeSupportMagic(activeChar, (L2Npc) target, true);
-		}
-		else if (command.equalsIgnoreCase(COMMANDS[1]))
-		{
+		} else if (command.equalsIgnoreCase(COMMANDS[1])) {
 			makeSupportMagic(activeChar, (L2Npc) target, false);
 		}
 		return true;
 	}
 	
-	private static void makeSupportMagic(L2PcInstance player, L2Npc npc, boolean isSummon)
-	{
+	private static void makeSupportMagic(L2PcInstance player, L2Npc npc, boolean isSummon) {
 		final int level = player.getLevel();
-		if (isSummon && !player.hasServitor())
-		{
+		if (isSummon && !player.hasServitor()) {
 			npc.showChatWindow(player, "data/html/default/SupportMagicNoSummon.htm");
 			return;
-		}
-		else if (level > HIGHEST_LEVEL)
-		{
+		} else if (level > HIGHEST_LEVEL) {
 			npc.showChatWindow(player, "data/html/default/SupportMagicHighLevel.htm");
 			return;
-		}
-		else if (level < LOWEST_LEVEL)
-		{
+		} else if (level < LOWEST_LEVEL) {
 			npc.showChatWindow(player, "data/html/default/SupportMagicLowLevel.htm");
 			return;
-		}
-		else if (player.getClassId().level() == 3)
-		{
+		} else if (player.getClassId().level() == 3) {
 			player.sendMessage("Only adventurers who have not completed their 3rd class transfer may receive these buffs."); // Custom message
 			return;
 		}
 		
-		if (isSummon)
-		{
+		if (isSummon) {
 			npc.setTarget(player.getSummon());
-			for (SkillHolder skill : SUMMON_BUFFS)
-			{
+			for (SkillHolder skill : SUMMON_BUFFS) {
 				npc.doCast(skill.getSkill());
 			}
 			
-			if (level >= HASTE_LEVEL_2)
-			{
+			if (level >= HASTE_LEVEL_2) {
 				npc.doCast(HASTE_2.getSkill());
-			}
-			else
-			{
+			} else {
 				npc.doCast(HASTE_1.getSkill());
 			}
-		}
-		else
-		{
+		} else {
 			npc.setTarget(player);
-			if (player.isInCategory(CategoryType.BEGINNER_MAGE))
-			{
-				for (SkillHolder skill : MAGE_BUFFS)
-				{
+			if (player.isInCategory(CategoryType.BEGINNER_MAGE)) {
+				for (SkillHolder skill : MAGE_BUFFS) {
 					npc.doCast(skill.getSkill());
 				}
-			}
-			else
-			{
-				for (SkillHolder skill : FIGHTER_BUFFS)
-				{
+			} else {
+				for (SkillHolder skill : FIGHTER_BUFFS) {
 					npc.doCast(skill.getSkill());
 				}
 				
-				if (level >= HASTE_LEVEL_2)
-				{
+				if (level >= HASTE_LEVEL_2) {
 					npc.doCast(HASTE_2.getSkill());
-				}
-				else
-				{
+				} else {
 					npc.doCast(HASTE_1.getSkill());
 				}
 			}
 			
-			if ((level >= CUBIC_LOWEST) && (level <= CUBIC_HIGHEST))
-			{
+			if ((level >= CUBIC_LOWEST) && (level <= CUBIC_HIGHEST)) {
 				player.doSimultaneousCast(CUBIC.getSkill());
 			}
 		}
 	}
 	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

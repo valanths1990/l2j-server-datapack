@@ -32,35 +32,27 @@ import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
  * Hero chat handler.
  * @author durgus
  */
-public class ChatHeroVoice implements IChatHandler
-{
-	private static final int[] COMMAND_IDS =
-	{
+public class ChatHeroVoice implements IChatHandler {
+	private static final int[] COMMAND_IDS = {
 		17
 	};
 	
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		if (activeChar.isHero() || activeChar.canOverrideCond(PcCondOverride.CHAT_CONDITIONS))
-		{
-			if (activeChar.isChatBanned() && general().getBanChatChannels().contains(type))
-			{
+	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+		if (activeChar.isHero() || activeChar.canOverrideCond(PcCondOverride.CHAT_CONDITIONS)) {
+			if (activeChar.isChatBanned() && general().getBanChatChannels().contains(type)) {
 				activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 				return;
 			}
 			
-			if (!activeChar.getFloodProtectors().getHeroVoice().tryPerformAction("hero voice"))
-			{
+			if (!activeChar.getFloodProtectors().getHeroVoice().tryPerformAction("hero voice")) {
 				activeChar.sendMessage("Action failed. Heroes are only able to speak in the global channel once every 10 seconds.");
 				return;
 			}
 			
 			CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getName(), text);
-			for (L2PcInstance player : L2World.getInstance().getPlayers())
-			{
-				if ((player != null) && !BlockList.isBlocked(player, activeChar))
-				{
+			for (L2PcInstance player : L2World.getInstance().getPlayers()) {
+				if ((player != null) && !BlockList.isBlocked(player, activeChar)) {
 					player.sendPacket(cs);
 				}
 			}
@@ -68,8 +60,7 @@ public class ChatHeroVoice implements IChatHandler
 	}
 	
 	@Override
-	public int[] getChatTypeList()
-	{
+	public int[] getChatTypeList() {
 		return COMMAND_IDS;
 	}
 }

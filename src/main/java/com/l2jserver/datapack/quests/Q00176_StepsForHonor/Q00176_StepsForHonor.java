@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Steps for Honor (176)
  * @author malyelfik
  */
-public class Q00176_StepsForHonor extends Quest
-{
+public class Q00176_StepsForHonor extends Quest {
 	// NPC
 	private static final int RAPIDUS = 36479;
 	// Item
@@ -38,19 +37,16 @@ public class Q00176_StepsForHonor extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 80;
 	
-	public Q00176_StepsForHonor()
-	{
+	public Q00176_StepsForHonor() {
 		super(176, Q00176_StepsForHonor.class.getSimpleName(), "Steps for Honor");
 		addStartNpc(RAPIDUS);
 		addTalkId(RAPIDUS);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && event.equalsIgnoreCase("36479-04.html"))
-		{
+		if ((st != null) && event.equalsIgnoreCase("36479-04.html")) {
 			st.startQuest();
 			return event;
 		}
@@ -58,22 +54,18 @@ public class Q00176_StepsForHonor extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
+		switch (st.getState()) {
 			case State.CREATED:
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "36479-03.html" : "36479-02.html";
 				break;
 			case State.STARTED:
-				if (TerritoryWarManager.getInstance().isTWInProgress())
-				{
+				if (TerritoryWarManager.getInstance().isTWInProgress()) {
 					return "36479-05.html";
 				}
-				switch (st.getCond())
-				{
+				switch (st.getCond()) {
 					case 1:
 						htmltext = "36479-06.html";
 						break;

@@ -70,12 +70,10 @@ public class NpcViewMod implements IBypassHandler {
 				if (st.hasMoreElements()) {
 					try {
 						target = L2World.getInstance().findObject(Integer.parseInt(st.nextToken()));
-					}
-					catch (NumberFormatException e) {
+					} catch (NumberFormatException e) {
 						return false;
 					}
-				}
-				else {
+				} else {
 					target = activeChar.getTarget();
 				}
 				
@@ -103,11 +101,9 @@ public class NpcViewMod implements IBypassHandler {
 					}
 					final int page = st.hasMoreElements() ? Integer.parseInt(st.nextToken()) : 0;
 					sendNpcDropList(activeChar, npc, dropListScope, page);
-				}
-				catch (NumberFormatException e) {
+				} catch (NumberFormatException e) {
 					return false;
-				}
-				catch (IllegalArgumentException e) {
+				} catch (IllegalArgumentException e) {
 					_log.warning("Bypass[NpcViewMod] unknown drop list scope: " + dropListScopeString);
 					return false;
 				}
@@ -133,8 +129,7 @@ public class NpcViewMod implements IBypassHandler {
 		final L2Spawn npcSpawn = npc.getSpawn();
 		if ((npcSpawn == null) || (npcSpawn.getRespawnMinDelay() == 0)) {
 			html.replace("%respawn%", "None");
-		}
-		else {
+		} else {
 			TimeUnit timeUnit = TimeUnit.MILLISECONDS;
 			long min = Long.MAX_VALUE;
 			for (TimeUnit tu : TimeUnit.values()) {
@@ -152,8 +147,7 @@ public class NpcViewMod implements IBypassHandler {
 			final String timeUnitName = timeUnit.name().charAt(0) + timeUnit.name().toLowerCase().substring(1);
 			if (npcSpawn.hasRespawnRandom()) {
 				html.replace("%respawn%", minRespawnDelay + "-" + maxRespawnDelay + " " + timeUnitName);
-			}
-			else {
+			} else {
 				html.replace("%respawn%", minRespawnDelay + " " + timeUnitName);
 			}
 		}
@@ -252,15 +246,13 @@ public class NpcViewMod implements IBypassHandler {
 			final IDropItem dropItem = dropList.get(i);
 			if (dropItem instanceof GeneralDropItem) {
 				addGeneralDropItem(activeChar, npc, amountFormat, chanceFormat, sb, (GeneralDropItem) dropItem);
-			}
-			else if (dropItem instanceof GroupedGeneralDropItem) {
+			} else if (dropItem instanceof GroupedGeneralDropItem) {
 				final GroupedGeneralDropItem generalGroupedDropItem = (GroupedGeneralDropItem) dropItem;
 				if (generalGroupedDropItem.getItems().size() == 1) {
 					final GeneralDropItem generalDropItem = generalGroupedDropItem.getItems().get(0);
 					addGeneralDropItem(activeChar, npc, amountFormat, chanceFormat, sb, new GeneralDropItem(generalDropItem.getItemId(), generalDropItem.getMin(), generalDropItem.getMax(), (generalDropItem.getChance() * generalGroupedDropItem.getChance())
 						/ 100, generalDropItem.getAmountStrategy(), generalDropItem.getChanceStrategy(), generalGroupedDropItem.getPreciseStrategy(), generalGroupedDropItem.getKillerChanceModifierStrategy(), generalDropItem.getDropCalculationStrategy()));
-				}
-				else {
+				} else {
 					GroupedGeneralDropItem normalized = generalGroupedDropItem.normalizeMe(npc, activeChar);
 					sb.append("<table width=332 cellpadding=2 cellspacing=0 background=\"L2UI_CT1.Windows.Windows_DF_TooltipBG\">");
 					sb.append("<tr><td width=32 valign=top><img src=\"L2UI_CT1.ICON_DF_premiumItem\" width=32 height=32></td>");
@@ -289,8 +281,7 @@ public class NpcViewMod implements IBypassHandler {
 						final long max = minMax._max;
 						if (min == max) {
 							sb.append(amountFormat.format(min));
-						}
-						else {
+						} else {
 							sb.append(amountFormat.format(min));
 							sb.append(" - ");
 							sb.append(amountFormat.format(max));
@@ -311,8 +302,7 @@ public class NpcViewMod implements IBypassHandler {
 			if (leftHeight >= (rightHeight + height)) {
 				rightSb.append(sb);
 				rightHeight += height;
-			}
-			else {
+			} else {
 				leftSb.append(sb);
 				leftHeight += height;
 			}
@@ -363,8 +353,7 @@ public class NpcViewMod implements IBypassHandler {
 		final long max = minMax._max;
 		if (min == max) {
 			sb.append(amountFormat.format(min));
-		}
-		else {
+		} else {
 			sb.append(amountFormat.format(min));
 			sb.append(" - ");
 			sb.append(amountFormat.format(max));

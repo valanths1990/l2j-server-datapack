@@ -33,8 +33,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * @author GKR
  */
 
-public final class Q00327_RecoverTheFarmland extends Quest
-{
+public final class Q00327_RecoverTheFarmland extends Quest {
 	// NPCs
 	private static final int IRIS = 30034;
 	private static final int ASHA = 30313;
@@ -73,16 +72,14 @@ public final class Q00327_RecoverTheFarmland extends Quest
 	private static final int MIN_LVL = 25;
 	private static final Map<String, ItemHolder> FRAGMENTS_REWARD_DATA = new HashMap<>(4);
 	private static final Map<Integer, Integer> FRAGMENTS_DROP_PROB = new HashMap<>(7);
-	private static final ItemHolder[] FULL_REWARD_DATA =
-	{
+	private static final ItemHolder[] FULL_REWARD_DATA = {
 		new ItemHolder(ANCIENT_CLAY_URN, 2766),
 		new ItemHolder(ANCIENT_BRASS_TIARA, 3227),
 		new ItemHolder(ANCIENT_BRONZE_MIRROR, 3227),
 		new ItemHolder(ANCIENT_JADE_NECKLACE, 3919)
 	};
 	
-	static
-	{
+	static {
 		FRAGMENTS_REWARD_DATA.put("30034-03.html", new ItemHolder(CLAY_URN_FRAGMENT, 307));
 		FRAGMENTS_REWARD_DATA.put("30034-04.html", new ItemHolder(BRASS_TRINKET_PIECE, 368));
 		FRAGMENTS_REWARD_DATA.put("30034-05.html", new ItemHolder(BRONZE_MIRROR_PIECE, 368));
@@ -97,8 +94,7 @@ public final class Q00327_RecoverTheFarmland extends Quest
 		FRAGMENTS_DROP_PROB.put(TUREK_ORK_WARLORD, 26);
 	}
 	
-	public Q00327_RecoverTheFarmland()
-	{
+	public Q00327_RecoverTheFarmland() {
 		super(327, Q00327_RecoverTheFarmland.class.getSimpleName(), "Recover the Farmland");
 		addStartNpc(LEIKAN, PIOTUR);
 		addTalkId(LEIKAN, PIOTUR, IRIS, ASHA, NESTLE);
@@ -107,18 +103,15 @@ public final class Q00327_RecoverTheFarmland extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String html = null;
 		
-		switch (event)
-		{
+		switch (event) {
 			case "30034-01.html":
 			case "30313-01.html":
 			case "30314-02.html":
@@ -127,27 +120,23 @@ public final class Q00327_RecoverTheFarmland extends Quest
 			case "30382-05a.html":
 			case "30382-05b.html":
 			case "30597-03.html":
-			case "30597-07.html":
-			{
+			case "30597-07.html": {
 				html = event;
 				break;
 			}
-			case "30382-03.htm":
-			{
+			case "30382-03.htm": {
 				st.startQuest();
 				giveItems(player, LEIKANS_LETTER, 1);
 				st.setCond(2);
 				html = event;
 				break;
 			}
-			case "30597-03.htm":
-			{
+			case "30597-03.htm": {
 				st.startQuest();
 				html = event;
 				break;
 			}
-			case "30597-06.html":
-			{
+			case "30597-06.html": {
 				st.exitQuest(true, true);
 				html = event;
 				break;
@@ -155,15 +144,11 @@ public final class Q00327_RecoverTheFarmland extends Quest
 			case "30034-03.html":
 			case "30034-04.html":
 			case "30034-05.html":
-			case "30034-06.html":
-			{
+			case "30034-06.html": {
 				final ItemHolder item = FRAGMENTS_REWARD_DATA.get(event);
-				if (!hasQuestItems(player, item.getId()))
-				{
+				if (!hasQuestItems(player, item.getId())) {
 					html = "30034-02.html";
-				}
-				else
-				{
+				} else {
 					addExpAndSp(player, getQuestItemsCount(player, item.getId()) * item.getCount(), 0);
 					takeItems(player, item.getId(), -1);
 					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
@@ -171,13 +156,10 @@ public final class Q00327_RecoverTheFarmland extends Quest
 				}
 				break;
 			}
-			case "30034-07.html":
-			{
+			case "30034-07.html": {
 				boolean rewarded = false;
-				for (ItemHolder it : FULL_REWARD_DATA)
-				{
-					if (hasQuestItems(player, it.getId()))
-					{
+				for (ItemHolder it : FULL_REWARD_DATA) {
+					if (hasQuestItems(player, it.getId())) {
 						addExpAndSp(player, getQuestItemsCount(player, it.getId()) * it.getCount(), 0);
 						takeItems(player, it.getId(), -1);
 						playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
@@ -187,123 +169,82 @@ public final class Q00327_RecoverTheFarmland extends Quest
 				html = rewarded ? event : "30034-02.html";
 				break;
 			}
-			case "30313-03.html":
-			{
-				if (getQuestItemsCount(player, CLAY_URN_FRAGMENT) < 5)
-				{
+			case "30313-03.html": {
+				if (getQuestItemsCount(player, CLAY_URN_FRAGMENT) < 5) {
 					html = "30313-02.html";
-				}
-				else
-				{
+				} else {
 					takeItems(player, CLAY_URN_FRAGMENT, 5);
-					if (getRandom(6) < 5)
-					{
+					if (getRandom(6) < 5) {
 						giveItems(player, ANCIENT_CLAY_URN, 1);
 						html = event;
-					}
-					else
-					{
+					} else {
 						html = "30313-10.html";
 					}
 				}
 				break;
 			}
-			case "30313-05.html":
-			{
-				if (getQuestItemsCount(player, BRASS_TRINKET_PIECE) < 5)
-				{
+			case "30313-05.html": {
+				if (getQuestItemsCount(player, BRASS_TRINKET_PIECE) < 5) {
 					html = "30313-04.html";
-				}
-				else
-				{
+				} else {
 					takeItems(player, BRASS_TRINKET_PIECE, 5);
-					if (getRandom(7) < 6)
-					{
+					if (getRandom(7) < 6) {
 						giveItems(player, ANCIENT_BRASS_TIARA, 1);
 						html = event;
-					}
-					else
-					{
+					} else {
 						html = "30313-10.html";
 					}
 				}
 				break;
 			}
-			case "30313-07.html":
-			{
-				if (getQuestItemsCount(player, BRONZE_MIRROR_PIECE) < 5)
-				{
+			case "30313-07.html": {
+				if (getQuestItemsCount(player, BRONZE_MIRROR_PIECE) < 5) {
 					html = "30313-06.html";
-				}
-				else
-				{
+				} else {
 					takeItems(player, BRONZE_MIRROR_PIECE, 5);
-					if (getRandom(7) < 6)
-					{
+					if (getRandom(7) < 6) {
 						giveItems(player, ANCIENT_BRONZE_MIRROR, 1);
 						html = event;
-					}
-					else
-					{
+					} else {
 						html = "30313-10.html";
 					}
 				}
 				break;
 			}
-			case "30313-09.html":
-			{
-				if (getQuestItemsCount(player, JADE_NECKLACE_BEAD) < 5)
-				{
+			case "30313-09.html": {
+				if (getQuestItemsCount(player, JADE_NECKLACE_BEAD) < 5) {
 					html = "30313-08.html";
-				}
-				else
-				{
+				} else {
 					takeItems(player, JADE_NECKLACE_BEAD, 5);
-					if (getRandom(8) < 7)
-					{
+					if (getRandom(8) < 7) {
 						giveItems(player, ANCIENT_JADE_NECKLACE, 1);
 						html = event;
-					}
-					else
-					{
+					} else {
 						html = "30313-10.html";
 					}
 				}
 				break;
 			}
-			case "30314-03.html":
-			{
-				if (!hasQuestItems(player, ANCIENT_CLAY_URN))
-				{
+			case "30314-03.html": {
+				if (!hasQuestItems(player, ANCIENT_CLAY_URN)) {
 					html = "30314-07.html";
-				}
-				else
-				{
+				} else {
 					rewardItems(player, SOULSHOT_D, getRandom(70, 110));
 					takeItems(player, ANCIENT_CLAY_URN, 1);
 					html = event;
 				}
 				break;
 			}
-			case "30314-04.html":
-			{
-				if (!hasQuestItems(player, ANCIENT_BRASS_TIARA))
-				{
+			case "30314-04.html": {
+				if (!hasQuestItems(player, ANCIENT_BRASS_TIARA)) {
 					html = "30314-07.html";
-				}
-				else
-				{
+				} else {
 					final int rnd = getRandom(100);
-					if (rnd < 40)
-					{
+					if (rnd < 40) {
 						rewardItems(player, HEALING_POTION, 1);
-					}
-					else if (rnd < 84)
-					{
+					} else if (rnd < 84) {
 						rewardItems(player, QUICK_STEP_POTION, 1);
-					}
-					else
-					{
+					} else {
 						rewardItems(player, SWIFT_ATTACK_POTION, 1);
 					}
 					takeItems(player, ANCIENT_BRASS_TIARA, 1);
@@ -311,28 +252,20 @@ public final class Q00327_RecoverTheFarmland extends Quest
 				}
 				break;
 			}
-			case "30314-05.html":
-			{
-				if (!hasQuestItems(player, ANCIENT_BRONZE_MIRROR))
-				{
+			case "30314-05.html": {
+				if (!hasQuestItems(player, ANCIENT_BRONZE_MIRROR)) {
 					html = "30314-07.html";
-				}
-				else
-				{
+				} else {
 					rewardItems(player, (getRandom(100) < 59) ? SCROLL_OF_ESCAPE : SCROLL_OF_RESURRECTION, 1);
 					takeItems(player, ANCIENT_BRONZE_MIRROR, 1);
 					html = event;
 				}
 				break;
 			}
-			case "30314-06.html":
-			{
-				if (!hasQuestItems(player, ANCIENT_JADE_NECKLACE))
-				{
+			case "30314-06.html": {
+				if (!hasQuestItems(player, ANCIENT_JADE_NECKLACE)) {
 					html = "30314-07.html";
-				}
-				else
-				{
+				} else {
 					rewardItems(player, SPIRITSHOT_D, getRandom(50, 90));
 					takeItems(player, ANCIENT_JADE_NECKLACE, 1);
 					html = event;
@@ -345,22 +278,16 @@ public final class Q00327_RecoverTheFarmland extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if (st != null)
-		{
-			if ((npc.getId() == TUREK_ORK_SHAMAN) || (npc.getId() == TUREK_ORK_WARLORD))
-			{
+		if (st != null) {
+			if ((npc.getId() == TUREK_ORK_SHAMAN) || (npc.getId() == TUREK_ORK_WARLORD)) {
 				giveItems(killer, TUREK_MEDALLION, 1);
-			}
-			else
-			{
+			} else {
 				giveItems(killer, TUREK_DOG_TAG, 1);
 			}
 			
-			if (getRandom(100) < FRAGMENTS_DROP_PROB.get(npc.getId()))
-			{
+			if (getRandom(100) < FRAGMENTS_DROP_PROB.get(npc.getId())) {
 				giveItems(killer, getRandom(CLAY_URN_FRAGMENT, JADE_NECKLACE_BEAD), 1);
 			}
 		}
@@ -368,54 +295,35 @@ public final class Q00327_RecoverTheFarmland extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		String html = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
-			case LEIKAN:
-			{
-				if (st.isCreated())
-				{
+		switch (npc.getId()) {
+			case LEIKAN: {
+				if (st.isCreated()) {
 					html = ((player.getLevel() >= MIN_LVL) ? "30382-02.htm" : "30382-01.htm");
-				}
-				else if (st.isStarted())
-				{
-					if (hasQuestItems(player, LEIKANS_LETTER))
-					{
+				} else if (st.isStarted()) {
+					if (hasQuestItems(player, LEIKANS_LETTER)) {
 						html = "30382-04.html";
-					}
-					else
-					{
+					} else {
 						html = "30382-05.html";
 						st.setCond(5, true);
 					}
 				}
 				break;
 			}
-			case PIOTUR:
-			{
-				if (st.isCreated())
-				{
+			case PIOTUR: {
+				if (st.isCreated()) {
 					html = ((player.getLevel() >= MIN_LVL) ? "30597-02.htm" : "30597-01.htm");
-				}
-				else if (st.isStarted())
-				{
-					if (hasQuestItems(player, LEIKANS_LETTER))
-					{
+				} else if (st.isStarted()) {
+					if (hasQuestItems(player, LEIKANS_LETTER)) {
 						html = "30597-03a.htm";
 						takeItems(player, LEIKANS_LETTER, -1);
 						st.setCond(3, true);
-					}
-					else
-					{
-						if (!hasQuestItems(player, TUREK_DOG_TAG) && !hasQuestItems(player, TUREK_MEDALLION))
-						{
+					} else {
+						if (!hasQuestItems(player, TUREK_DOG_TAG) && !hasQuestItems(player, TUREK_MEDALLION)) {
 							html = "30597-04.html";
-						}
-						else
-						{
+						} else {
 							html = "30597-05.html";
 							final long dogTags = getQuestItemsCount(player, TUREK_DOG_TAG);
 							final long medallions = getQuestItemsCount(player, TUREK_MEDALLION);
@@ -429,26 +337,20 @@ public final class Q00327_RecoverTheFarmland extends Quest
 				}
 				break;
 			}
-			case IRIS:
-			{
-				if (st.isStarted())
-				{
+			case IRIS: {
+				if (st.isStarted()) {
 					html = "30034-01.html";
 				}
 				break;
 			}
-			case ASHA:
-			{
-				if (st.isStarted())
-				{
+			case ASHA: {
+				if (st.isStarted()) {
 					html = "30313-01.html";
 				}
 				break;
 			}
-			case NESTLE:
-			{
-				if (st.isStarted())
-				{
+			case NESTLE: {
+				if (st.isStarted()) {
 					html = "30314-01.html";
 				}
 				break;

@@ -31,44 +31,33 @@ import com.l2jserver.gameserver.network.serverpackets.EtcStatusUpdate;
  * This class handles chat ban punishment.
  * @author UnAfraid
  */
-public class ChatBanHandler implements IPunishmentHandler
-{
+public class ChatBanHandler implements IPunishmentHandler {
 	@Override
-	public void onStart(PunishmentTask task)
-	{
-		switch (task.getAffect())
-		{
-			case CHARACTER:
-			{
+	public void onStart(PunishmentTask task) {
+		switch (task.getAffect()) {
+			case CHARACTER: {
 				int objectId = Integer.parseInt(String.valueOf(task.getKey()));
 				final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
-				if (player != null)
-				{
+				if (player != null) {
 					applyToPlayer(task, player);
 				}
 				break;
 			}
-			case ACCOUNT:
-			{
+			case ACCOUNT: {
 				String account = String.valueOf(task.getKey());
 				final L2GameClient client = LoginServerThread.getInstance().getClient(account);
-				if (client != null)
-				{
+				if (client != null) {
 					final L2PcInstance player = client.getActiveChar();
-					if (player != null)
-					{
+					if (player != null) {
 						applyToPlayer(task, player);
 					}
 				}
 				break;
 			}
-			case IP:
-			{
+			case IP: {
 				String ip = String.valueOf(task.getKey());
-				for (L2PcInstance player : L2World.getInstance().getPlayers())
-				{
-					if (player.getIPAddress().equals(ip))
-					{
+				for (L2PcInstance player : L2World.getInstance().getPlayers()) {
+					if (player.getIPAddress().equals(ip)) {
 						applyToPlayer(task, player);
 					}
 				}
@@ -78,41 +67,31 @@ public class ChatBanHandler implements IPunishmentHandler
 	}
 	
 	@Override
-	public void onEnd(PunishmentTask task)
-	{
-		switch (task.getAffect())
-		{
-			case CHARACTER:
-			{
+	public void onEnd(PunishmentTask task) {
+		switch (task.getAffect()) {
+			case CHARACTER: {
 				int objectId = Integer.parseInt(String.valueOf(task.getKey()));
 				final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
-				if (player != null)
-				{
+				if (player != null) {
 					removeFromPlayer(player);
 				}
 				break;
 			}
-			case ACCOUNT:
-			{
+			case ACCOUNT: {
 				String account = String.valueOf(task.getKey());
 				final L2GameClient client = LoginServerThread.getInstance().getClient(account);
-				if (client != null)
-				{
+				if (client != null) {
 					final L2PcInstance player = client.getActiveChar();
-					if (player != null)
-					{
+					if (player != null) {
 						removeFromPlayer(player);
 					}
 				}
 				break;
 			}
-			case IP:
-			{
+			case IP: {
 				String ip = String.valueOf(task.getKey());
-				for (L2PcInstance player : L2World.getInstance().getPlayers())
-				{
-					if (player.getIPAddress().equals(ip))
-					{
+				for (L2PcInstance player : L2World.getInstance().getPlayers()) {
+					if (player.getIPAddress().equals(ip)) {
 						removeFromPlayer(player);
 					}
 				}
@@ -126,15 +105,11 @@ public class ChatBanHandler implements IPunishmentHandler
 	 * @param task
 	 * @param player
 	 */
-	private static void applyToPlayer(PunishmentTask task, L2PcInstance player)
-	{
+	private static void applyToPlayer(PunishmentTask task, L2PcInstance player) {
 		long delay = ((task.getExpirationTime() - System.currentTimeMillis()) / 1000);
-		if (delay > 0)
-		{
+		if (delay > 0) {
 			player.sendMessage("You've been chat banned for " + (delay > 60 ? ((delay / 60) + " minutes.") : delay + " seconds."));
-		}
-		else
-		{
+		} else {
 			player.sendMessage("You've been chat banned forever.");
 		}
 		player.sendPacket(new EtcStatusUpdate(player));
@@ -144,15 +119,13 @@ public class ChatBanHandler implements IPunishmentHandler
 	 * Removes any punishment effects from the player.
 	 * @param player
 	 */
-	private static void removeFromPlayer(L2PcInstance player)
-	{
+	private static void removeFromPlayer(L2PcInstance player) {
 		player.sendMessage("Your Chat ban has been lifted");
 		player.sendPacket(new EtcStatusUpdate(player));
 	}
 	
 	@Override
-	public PunishmentType getType()
-	{
+	public PunishmentType getType() {
 		return PunishmentType.CHAT_BAN;
 	}
 }

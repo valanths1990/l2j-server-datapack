@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.quest.QuestState;
  * In The Forgotten Village (633)
  * @author netvirus
  */
-public final class Q00633_InTheForgottenVillage extends Quest
-{
+public final class Q00633_InTheForgottenVillage extends Quest {
 	// NPC
 	private static final int MINA = 31388;
 	// Items
@@ -43,8 +42,7 @@ public final class Q00633_InTheForgottenVillage extends Quest
 	private static final int RIB_BONE_REQUIRED_COUNT = 200;
 	// Mobs
 	private static final Map<Integer, ItemChanceHolder> MOBS_DROP_CHANCES = new HashMap<>();
-	static
-	{
+	static {
 		MOBS_DROP_CHANCES.put(21553, new ItemChanceHolder(ZOMBIES_LIVER, 0.417)); // Trampled Man
 		MOBS_DROP_CHANCES.put(21554, new ItemChanceHolder(ZOMBIES_LIVER, 0.417)); // Trampled Man
 		MOBS_DROP_CHANCES.put(21557, new ItemChanceHolder(RIB_BONE_OF_A_BLACK_MAGUS, 0.394)); // Bone Snatcher
@@ -74,8 +72,7 @@ public final class Q00633_InTheForgottenVillage extends Quest
 		MOBS_DROP_CHANCES.put(21601, new ItemChanceHolder(RIB_BONE_OF_A_BLACK_MAGUS, 0.677)); // Requiem Behemoth
 	}
 	
-	public Q00633_InTheForgottenVillage()
-	{
+	public Q00633_InTheForgottenVillage() {
 		super(633, Q00633_InTheForgottenVillage.class.getSimpleName(), "In The Forgotten Village");
 		addStartNpc(MINA);
 		addTalkId(MINA);
@@ -84,21 +81,16 @@ public final class Q00633_InTheForgottenVillage extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
-		if (qs == null)
-		{
+		if (qs == null) {
 			return htmltext;
 		}
 		
-		switch (event)
-		{
-			case "31388-03.htm":
-			{
-				if (qs.isCreated())
-				{
+		switch (event) {
+			case "31388-03.htm": {
+				if (qs.isCreated()) {
 					qs.startQuest();
 					htmltext = event;
 				}
@@ -106,37 +98,28 @@ public final class Q00633_InTheForgottenVillage extends Quest
 			}
 			case "31388-04.html":
 			case "31388-05.html":
-			case "31388-06.html":
-			{
-				if (qs.isStarted())
-				{
+			case "31388-06.html": {
+				if (qs.isStarted()) {
 					htmltext = event;
 				}
 				break;
 			}
-			case "31388-07.html":
-			{
-				if (qs.isCond(2))
-				{
-					if (getQuestItemsCount(player, RIB_BONE_OF_A_BLACK_MAGUS) >= RIB_BONE_REQUIRED_COUNT)
-					{
+			case "31388-07.html": {
+				if (qs.isCond(2)) {
+					if (getQuestItemsCount(player, RIB_BONE_OF_A_BLACK_MAGUS) >= RIB_BONE_REQUIRED_COUNT) {
 						giveAdena(player, 25000, true);
 						addExpAndSp(player, 305235, 0);
 						takeItems(player, RIB_BONE_OF_A_BLACK_MAGUS, -1);
 						qs.setCond(1, true);
 						htmltext = event;
-					}
-					else
-					{
+					} else {
 						htmltext = "31388-08.html";
 					}
 				}
 				break;
 			}
-			case "31388-09.html":
-			{
-				if (qs.isStarted())
-				{
+			case "31388-09.html": {
+				if (qs.isStarted()) {
 					qs.exitQuest(true, true);
 					htmltext = event;
 				}
@@ -147,24 +130,18 @@ public final class Q00633_InTheForgottenVillage extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState qs = getRandomPartyMemberState(killer, -1, 3, npc);
-		if (qs != null)
-		{
+		if (qs != null) {
 			final ItemChanceHolder info = MOBS_DROP_CHANCES.get(npc.getId());
-			switch (info.getId())
-			{
-				case RIB_BONE_OF_A_BLACK_MAGUS:
-				{
-					if (qs.isCond(1) && giveItemRandomly(qs.getPlayer(), npc, RIB_BONE_OF_A_BLACK_MAGUS, 1, RIB_BONE_REQUIRED_COUNT, info.getChance(), true))
-					{
+			switch (info.getId()) {
+				case RIB_BONE_OF_A_BLACK_MAGUS: {
+					if (qs.isCond(1) && giveItemRandomly(qs.getPlayer(), npc, RIB_BONE_OF_A_BLACK_MAGUS, 1, RIB_BONE_REQUIRED_COUNT, info.getChance(), true)) {
 						qs.setCond(2);
 					}
 					break;
 				}
-				case ZOMBIES_LIVER:
-				{
+				case ZOMBIES_LIVER: {
 					giveItemRandomly(qs.getPlayer(), npc, ZOMBIES_LIVER, 1, 0, info.getChance(), true);
 					break;
 				}
@@ -174,16 +151,12 @@ public final class Q00633_InTheForgottenVillage extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
+		if (qs.isCreated()) {
 			htmltext = ((player.getLevel() >= MIN_LVL) ? "31388-01.htm" : "31388-02.htm");
-		}
-		else if (qs.isStarted())
-		{
+		} else if (qs.isStarted()) {
 			htmltext = ((getQuestItemsCount(player, RIB_BONE_OF_A_BLACK_MAGUS) >= RIB_BONE_REQUIRED_COUNT) ? "31388-04.html" : "31388-05.html");
 		}
 		return htmltext;

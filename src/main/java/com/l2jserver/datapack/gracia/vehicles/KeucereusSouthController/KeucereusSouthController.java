@@ -22,26 +22,22 @@ import com.l2jserver.datapack.gracia.vehicles.AirShipController;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.VehiclePathPoint;
 
-public final class KeucereusSouthController extends AirShipController
-{
+public final class KeucereusSouthController extends AirShipController {
 	private static final int DOCK_ZONE = 50603;
 	private static final int LOCATION = 100;
 	private static final int CONTROLLER_ID = 32517;
 	
-	private static final VehiclePathPoint[] ARRIVAL =
-	{
+	private static final VehiclePathPoint[] ARRIVAL = {
 		new VehiclePathPoint(-185312, 246544, 2500),
 		new VehiclePathPoint(-185312, 246544, 1336)
 	};
 	
-	private static final VehiclePathPoint[] DEPART =
-	{
+	private static final VehiclePathPoint[] DEPART = {
 		new VehiclePathPoint(-185312, 246544, 1700, 280, 2000),
 		new VehiclePathPoint(-186900, 251699, 1700, 280, 2000)
 	};
 	
-	private static final VehiclePathPoint[][] TELEPORTS =
-	{
+	private static final VehiclePathPoint[][] TELEPORTS = {
 		{
 			new VehiclePathPoint(-185312, 246544, 1700, 280, 2000),
 			new VehiclePathPoint(-186900, 251699, 1700, 280, 2000),
@@ -59,15 +55,13 @@ public final class KeucereusSouthController extends AirShipController
 		}
 	};
 	
-	private static final int[] FUEL =
-	{
+	private static final int[] FUEL = {
 		0,
 		50,
 		100
 	};
 	
-	public KeucereusSouthController()
-	{
+	public KeucereusSouthController() {
 		super(-1, KeucereusSouthController.class.getSimpleName(), "gracia/vehicles");
 		addStartNpc(CONTROLLER_ID);
 		addFirstTalkId(CONTROLLER_ID);

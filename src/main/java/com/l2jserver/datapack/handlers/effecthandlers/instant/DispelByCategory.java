@@ -32,14 +32,12 @@ import com.l2jserver.gameserver.model.stats.Formulas;
  * Dispel By Category effect implementation.
  * @author DS, Adry_85
  */
-public final class DispelByCategory extends AbstractEffect
-{
+public final class DispelByCategory extends AbstractEffect {
 	private final DispelCategory _slot;
 	private final int _rate;
 	private final int _max;
 	
-	public DispelByCategory(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public DispelByCategory(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_slot = params.getEnum("slot", DispelCategory.class, DispelCategory.BUFF);
@@ -48,28 +46,23 @@ public final class DispelByCategory extends AbstractEffect
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.DISPEL;
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (info.getEffected().isDead())
-		{
+	public void onStart(BuffInfo info) {
+		if (info.getEffected().isDead()) {
 			return;
 		}
 		
 		final List<BuffInfo> canceled = Formulas.calcCancelEffects(info.getEffector(), info.getEffected(), info.getSkill(), _slot, _rate, _max);
-		for (BuffInfo can : canceled)
-		{
+		for (BuffInfo can : canceled) {
 			info.getEffected().getEffectList().stopSkillEffects(true, can.getSkill());
 		}
 	}

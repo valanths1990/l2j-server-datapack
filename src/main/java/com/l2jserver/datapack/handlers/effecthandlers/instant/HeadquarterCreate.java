@@ -36,30 +36,25 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * Headquarter Create effect implementation.
  * @author Adry_85
  */
-public final class HeadquarterCreate extends AbstractEffect
-{
+public final class HeadquarterCreate extends AbstractEffect {
 	private static final int HQ_NPC_ID = 35062;
 	private final boolean _isAdvanced;
 	
-	public HeadquarterCreate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+	public HeadquarterCreate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
 		_isAdvanced = params.getBoolean("isAdvanced", false);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
+	public void onStart(BuffInfo info) {
 		final L2PcInstance player = info.getEffector().getActingPlayer();
-		if (!player.isClanLeader())
-		{
+		if (!player.isClanLeader()) {
 			return;
 		}
 		
@@ -71,16 +66,11 @@ public final class HeadquarterCreate extends AbstractEffect
 		final Castle castle = CastleManager.getInstance().getCastle(player);
 		final Fort fort = FortManager.getInstance().getFort(player);
 		final SiegableHall hall = ClanHallSiegeManager.getInstance().getNearbyClanHall(player);
-		if (castle != null)
-		{
+		if (castle != null) {
 			castle.getSiege().getFlag(player.getClan()).add(flag);
-		}
-		else if (fort != null)
-		{
+		} else if (fort != null) {
 			fort.getSiege().getFlag(player.getClan()).add(flag);
-		}
-		else
-		{
+		} else {
 			hall.getSiege().getFlag(player.getClan()).add(flag);
 		}
 	}

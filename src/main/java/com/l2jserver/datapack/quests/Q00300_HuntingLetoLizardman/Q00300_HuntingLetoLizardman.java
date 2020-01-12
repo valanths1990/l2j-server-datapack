@@ -34,8 +34,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Hunting Leto Lizardman (300)
  * @author ivantotov
  */
-public final class Q00300_HuntingLetoLizardman extends Quest
-{
+public final class Q00300_HuntingLetoLizardman extends Quest {
 	// NPCs
 	private static final int RATH = 30126;
 	// Items
@@ -49,8 +48,7 @@ public final class Q00300_HuntingLetoLizardman extends Quest
 	// Monsters
 	private static final Map<Integer, Integer> MOBS_SAC = new HashMap<>();
 	
-	static
-	{
+	static {
 		MOBS_SAC.put(20577, 360); // Leto Lizardman
 		MOBS_SAC.put(20578, 390); // Leto Lizardman Archer
 		MOBS_SAC.put(20579, 410); // Leto Lizardman Soldier
@@ -58,8 +56,7 @@ public final class Q00300_HuntingLetoLizardman extends Quest
 		MOBS_SAC.put(20582, 890); // Leto Lizardman Overlord
 	}
 	
-	public Q00300_HuntingLetoLizardman()
-	{
+	public Q00300_HuntingLetoLizardman() {
 		super(300, Q00300_HuntingLetoLizardman.class.getSimpleName(), "Hunting Leto Lizardman");
 		addStartNpc(RATH);
 		addTalkId(RATH);
@@ -68,48 +65,34 @@ public final class Q00300_HuntingLetoLizardman extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		String htmltext = null;
-		switch (event)
-		{
-			case "30126-03.htm":
-			{
-				if (st.isCreated())
-				{
+		switch (event) {
+			case "30126-03.htm": {
+				if (st.isCreated()) {
 					st.startQuest();
 					htmltext = event;
 				}
 				break;
 			}
-			case "30126-06.html":
-			{
-				if (st.getQuestItemsCount(BRACELET_OF_LIZARDMAN) >= REQUIRED_BRACELET_COUNT)
-				{
+			case "30126-06.html": {
+				if (st.getQuestItemsCount(BRACELET_OF_LIZARDMAN) >= REQUIRED_BRACELET_COUNT) {
 					st.takeItems(BRACELET_OF_LIZARDMAN, -1);
 					int rand = getRandom(1000);
-					if (rand < 500)
-					{
+					if (rand < 500) {
 						giveItems(player, REWARD_ADENA);
-					}
-					else if (rand < 750)
-					{
+					} else if (rand < 750) {
 						giveItems(player, REWARD_ANIMAL_SKIN);
-					}
-					else if (rand < 1000)
-					{
+					} else if (rand < 1000) {
 						giveItems(player, REWARD_ANIMAL_BONE);
 					}
 					st.exitQuest(true, true);
 					htmltext = event;
-				}
-				else
-				{
+				} else {
 					htmltext = "30126-07.html";
 				}
 				break;
@@ -119,21 +102,15 @@ public final class Q00300_HuntingLetoLizardman extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(player, 1);
-		if (partyMember != null)
-		{
+		if (partyMember != null) {
 			final QuestState st = getQuestState(partyMember, false);
-			if (st.isCond(1) && (getRandom(1000) < MOBS_SAC.get(npc.getId())))
-			{
+			if (st.isCond(1) && (getRandom(1000) < MOBS_SAC.get(npc.getId()))) {
 				st.giveItems(BRACELET_OF_LIZARDMAN, 1);
-				if (st.getQuestItemsCount(BRACELET_OF_LIZARDMAN) == REQUIRED_BRACELET_COUNT)
-				{
+				if (st.getQuestItemsCount(BRACELET_OF_LIZARDMAN) == REQUIRED_BRACELET_COUNT) {
 					st.setCond(2, true);
-				}
-				else
-				{
+				} else {
 					st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
@@ -142,30 +119,22 @@ public final class Q00300_HuntingLetoLizardman extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = (player.getLevel() >= MIN_LEVEL) ? "30126-01.htm" : "30126-02.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
 						htmltext = "30126-04.html";
 						break;
 					}
-					case 2:
-					{
-						if (st.getQuestItemsCount(BRACELET_OF_LIZARDMAN) >= REQUIRED_BRACELET_COUNT)
-						{
+					case 2: {
+						if (st.getQuestItemsCount(BRACELET_OF_LIZARDMAN) >= REQUIRED_BRACELET_COUNT) {
 							htmltext = "30126-05.html";
 						}
 						break;

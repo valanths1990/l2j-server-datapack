@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Titan (75)
  * @author Emperorc
  */
-public class Q00075_SagaOfTheTitan extends AbstractSagaQuest
-{
-	public Q00075_SagaOfTheTitan()
-	{
+public class Q00075_SagaOfTheTitan extends AbstractSagaQuest {
+	public Q00075_SagaOfTheTitan() {
 		super(75, Q00075_SagaOfTheTitan.class.getSimpleName(), "Saga of the Titan");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			31327,
 			31624,
 			31289,
@@ -45,8 +42,7 @@ public class Q00075_SagaOfTheTitan extends AbstractSagaQuest
 			31658,
 			31290
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7539,
 			7081,
@@ -60,28 +56,23 @@ public class Q00075_SagaOfTheTitan extends AbstractSagaQuest
 			7098,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27292,
 			27224,
 			27283
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			113
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x2e
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(119518, -28658, -3811),
 			new Location(181215, 36676, -4812),
 			new Location(181227, 36703, -4816)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

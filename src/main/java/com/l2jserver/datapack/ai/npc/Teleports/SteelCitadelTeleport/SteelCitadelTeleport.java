@@ -34,57 +34,46 @@ import com.l2jserver.gameserver.model.zone.type.L2BossZone;
  * Steel Citadel teleport AI.
  * @author GKR
  */
-public final class SteelCitadelTeleport extends AbstractNpcAI
-{
+public final class SteelCitadelTeleport extends AbstractNpcAI {
 	// NPCs
 	private static final int BELETH = 29118;
 	private static final int NAIA_CUBE = 32376;
 	// Location
 	private static final Location TELEPORT_CITADEL = new Location(16342, 209557, -9352);
 	
-	private SteelCitadelTeleport()
-	{
+	private SteelCitadelTeleport() {
 		super(SteelCitadelTeleport.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(NAIA_CUBE);
 		addTalkId(NAIA_CUBE);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final int belethStatus = GrandBossManager.getInstance().getBossStatus(BELETH);
-		if (belethStatus == 3)
-		{
+		if (belethStatus == 3) {
 			return "32376-02.htm";
 		}
 		
-		if (belethStatus > 0)
-		{
+		if (belethStatus > 0) {
 			return "32376-03.htm";
 		}
 		
 		final L2CommandChannel channel = player.getParty() == null ? null : player.getParty().getCommandChannel();
-		if ((channel == null) || (channel.getLeader().getObjectId() != player.getObjectId()) || (channel.getMemberCount() < grandBoss().getBelethMinPlayers()))
-		{
+		if ((channel == null) || (channel.getLeader().getObjectId() != player.getObjectId()) || (channel.getMemberCount() < grandBoss().getBelethMinPlayers())) {
 			return "32376-02a.htm";
 		}
 		
 		final L2BossZone zone = (L2BossZone) ZoneManager.getInstance().getZoneById(12018);
-		if (zone != null)
-		{
+		if (zone != null) {
 			GrandBossManager.getInstance().setBossStatus(BELETH, 1);
 			
-			for (L2Party party : channel.getPartys())
-			{
-				if (party == null)
-				{
+			for (L2Party party : channel.getPartys()) {
+				if (party == null) {
 					continue;
 				}
 				
-				for (L2PcInstance pl : party.getMembers())
-				{
-					if (pl.isInsideRadius(npc.getX(), npc.getY(), npc.getZ(), 3000, true, false))
-					{
+				for (L2PcInstance pl : party.getMembers()) {
+					if (pl.isInsideRadius(npc.getX(), npc.getY(), npc.getZ(), 3000, true, false)) {
 						zone.allowPlayerEntry(pl, 30);
 						pl.teleToLocation(TELEPORT_CITADEL, true);
 					}
@@ -94,8 +83,7 @@ public final class SteelCitadelTeleport extends AbstractNpcAI
 		return null;
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new SteelCitadelTeleport();
 	}
 }

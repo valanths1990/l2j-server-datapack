@@ -29,8 +29,7 @@ import com.l2jserver.gameserver.util.Util;
  * Collect Spores (313)
  * @author ivantotov
  */
-public final class Q00313_CollectSpores extends Quest
-{
+public final class Q00313_CollectSpores extends Quest {
 	// NPC
 	private static final int HERBIEL = 30150;
 	// Item
@@ -41,8 +40,7 @@ public final class Q00313_CollectSpores extends Quest
 	// Monster
 	private static final int SPORE_FUNGUS = 20509;
 	
-	public Q00313_CollectSpores()
-	{
+	public Q00313_CollectSpores() {
 		super(313, Q00313_CollectSpores.class.getSimpleName(), "Collect Spores");
 		addStartNpc(HERBIEL);
 		addTalkId(HERBIEL);
@@ -51,27 +49,21 @@ public final class Q00313_CollectSpores extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		String htmltext = null;
-		switch (event)
-		{
-			case "30150-05.htm":
-			{
-				if (st.isCreated())
-				{
+		switch (event) {
+			case "30150-05.htm": {
+				if (st.isCreated()) {
 					st.startQuest();
 					htmltext = event;
 				}
 				break;
 			}
-			case "30150-04.htm":
-			{
+			case "30150-04.htm": {
 				htmltext = event;
 				break;
 			}
@@ -80,13 +72,10 @@ public final class Q00313_CollectSpores extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, killer, false))
-		{
-			if (st.giveItemRandomly(npc, SPORE_SAC, 1, REQUIRED_SAC_COUNT, 0.4, true))
-			{
+		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, killer, false)) {
+			if (st.giveItemRandomly(npc, SPORE_SAC, 1, REQUIRED_SAC_COUNT, 0.4, true)) {
 				st.setCond(2);
 			}
 		}
@@ -94,33 +83,24 @@ public final class Q00313_CollectSpores extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
+		switch (st.getState()) {
+			case State.CREATED: {
 				htmltext = player.getLevel() >= MIN_LEVEL ? "30150-03.htm" : "30150-02.htm";
 				break;
 			}
-			case State.STARTED:
-			{
-				switch (st.getCond())
-				{
-					case 1:
-					{
-						if (st.getQuestItemsCount(SPORE_SAC) < REQUIRED_SAC_COUNT)
-						{
+			case State.STARTED: {
+				switch (st.getCond()) {
+					case 1: {
+						if (st.getQuestItemsCount(SPORE_SAC) < REQUIRED_SAC_COUNT) {
 							htmltext = "30150-06.html";
 						}
 						break;
 					}
-					case 2:
-					{
-						if (st.getQuestItemsCount(SPORE_SAC) >= REQUIRED_SAC_COUNT)
-						{
+					case 2: {
+						if (st.getQuestItemsCount(SPORE_SAC) >= REQUIRED_SAC_COUNT) {
 							st.giveAdena(3500, true);
 							st.exitQuest(true, true);
 							htmltext = "30150-07.html";

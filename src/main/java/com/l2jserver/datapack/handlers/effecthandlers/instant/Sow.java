@@ -36,60 +36,47 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * Sow effect implementation.
  * @author Adry_85, l3x
  */
-public final class Sow extends AbstractEffect
-{
-	public Sow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
+public final class Sow extends AbstractEffect {
+	public Sow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
+	public boolean isInstant() {
 		return true;
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (!info.getEffector().isPlayer() || !info.getEffected().isMonster())
-		{
+	public void onStart(BuffInfo info) {
+		if (!info.getEffector().isPlayer() || !info.getEffected().isMonster()) {
 			return;
 		}
 		
 		final L2PcInstance player = info.getEffector().getActingPlayer();
 		final L2MonsterInstance target = (L2MonsterInstance) info.getEffected();
 		
-		if (target.isDead() || (!target.getTemplate().canBeSown()) || target.isSeeded() || (target.getSeederId() != player.getObjectId()))
-		{
+		if (target.isDead() || (!target.getTemplate().canBeSown()) || target.isSeeded() || (target.getSeederId() != player.getObjectId())) {
 			return;
 		}
 		
 		// Consuming used seed
 		final L2Seed seed = target.getSeed();
-		if (!player.destroyItemByItemId("Consume", seed.getSeedId(), 1, target, false))
-		{
+		if (!player.destroyItemByItemId("Consume", seed.getSeedId(), 1, target, false)) {
 			return;
 		}
 		
 		final SystemMessage sm;
-		if (calcSuccess(player, target, seed))
-		{
+		if (calcSuccess(player, target, seed)) {
 			player.sendPacket(Sound.ITEMSOUND_QUEST_ITEMGET.getPacket());
 			target.setSeeded(player.getActingPlayer());
 			sm = SystemMessage.getSystemMessage(SystemMessageId.THE_SEED_WAS_SUCCESSFULLY_SOWN);
-		}
-		else
-		{
+		} else {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.THE_SEED_WAS_NOT_SOWN);
 		}
 		
-		if (player.isInParty())
-		{
+		if (player.isInParty()) {
 			player.getParty().broadcastPacket(sm);
-		}
-		else
-		{
+		} else {
 			player.sendPacket(sm);
 		}
 		
@@ -97,8 +84,7 @@ public final class Sow extends AbstractEffect
 		target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 	}
 	
-	private static boolean calcSuccess(L2Character activeChar, L2Character target, L2Seed seed)
-	{
+	private static boolean calcSuccess(L2Character activeChar, L2Character target, L2Seed seed) {
 		// TODO: check all the chances
 		final int minlevelSeed = seed.getLevel() - 5;
 		final int maxlevelSeed = seed.getLevel() + 5;
@@ -107,24 +93,20 @@ public final class Sow extends AbstractEffect
 		int basicSuccess = seed.isAlternative() ? 20 : 90;
 		
 		// seed level
-		if (levelTarget < minlevelSeed)
-		{
+		if (levelTarget < minlevelSeed) {
 			basicSuccess -= 5 * (minlevelSeed - levelTarget);
 		}
-		if (levelTarget > maxlevelSeed)
-		{
+		if (levelTarget > maxlevelSeed) {
 			basicSuccess -= 5 * (levelTarget - maxlevelSeed);
 		}
 		
 		// 5% decrease in chance if player level
 		// is more than +/- 5 levels to _target's_ level
 		int diff = (levelPlayer - levelTarget);
-		if (diff < 0)
-		{
+		if (diff < 0) {
 			diff = -diff;
 		}
-		if (diff > 5)
-		{
+		if (diff > 5) {
 			basicSuccess -= 5 * (diff - 5);
 		}
 		

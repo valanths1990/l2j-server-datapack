@@ -25,13 +25,10 @@ import com.l2jserver.gameserver.model.Location;
  * Saga of the Ghost Sentinel (84)
  * @author Emperorc
  */
-public class Q00084_SagaOfTheGhostSentinel extends AbstractSagaQuest
-{
-	public Q00084_SagaOfTheGhostSentinel()
-	{
+public class Q00084_SagaOfTheGhostSentinel extends AbstractSagaQuest {
+	public Q00084_SagaOfTheGhostSentinel() {
 		super(84, Q00084_SagaOfTheGhostSentinel.class.getSimpleName(), "Saga of the Ghost Sentinel");
-		_npc = new int[]
-		{
+		_npc = new int[] {
 			30702,
 			31587,
 			31604,
@@ -45,8 +42,7 @@ public class Q00084_SagaOfTheGhostSentinel extends AbstractSagaQuest
 			31659,
 			31641
 		};
-		_items = new int[]
-		{
+		_items = new int[] {
 			7080,
 			7521,
 			7081,
@@ -60,28 +56,23 @@ public class Q00084_SagaOfTheGhostSentinel extends AbstractSagaQuest
 			7107,
 			0
 		};
-		_mob = new int[]
-		{
+		_mob = new int[] {
 			27298,
 			27233,
 			27307
 		};
-		_classId = new int[]
-		{
+		_classId = new int[] {
 			109
 		};
-		_previousClass = new int[]
-		{
+		_previousClass = new int[] {
 			0x25
 		};
-		_npcSpawnLocations = new Location[]
-		{
+		_npcSpawnLocations = new Location[] {
 			new Location(161719, -92823, -1893),
 			new Location(124376, 82127, -2796),
 			new Location(124376, 82127, -2796)
 		};
-		_text = new String[]
-		{
+		_text = new String[] {
 			"PLAYERNAME! Pursued to here! However, I jumped out of the Banshouren boundaries! You look at the giant as the sign of power!",
 			"... Oh ... good! So it was ... let's begin!",
 			"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",

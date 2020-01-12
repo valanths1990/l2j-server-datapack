@@ -32,8 +32,7 @@ import com.l2jserver.gameserver.model.quest.State;
  * Temple Missionary (134)
  * @author malyelfik
  */
-public class Q00134_TempleMissionary extends Quest
-{
+public class Q00134_TempleMissionary extends Quest {
 	// NPCs
 	private static final int GLYVKA = 30067;
 	private static final int ROUKE = 31418;
@@ -46,8 +45,7 @@ public class Q00134_TempleMissionary extends Quest
 	// Monsters
 	private static final int CRUMA_MARSHLANDS_TRAITOR = 27339;
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
-	static
-	{
+	static {
 		MOBS.put(20157, 78); // Marsh Stakato
 		MOBS.put(20229, 75); // Stinger Wasp
 		MOBS.put(20230, 86); // Marsh Stakato Worker
@@ -62,8 +60,7 @@ public class Q00134_TempleMissionary extends Quest
 	private static final int FRAGMENT_COUNT = 10;
 	private static final int REPORT_COUNT = 3;
 	
-	public Q00134_TempleMissionary()
-	{
+	public Q00134_TempleMissionary() {
 		super(134, Q00134_TempleMissionary.class.getSimpleName(), "Temple Missionary");
 		addStartNpc(GLYVKA);
 		addTalkId(GLYVKA, ROUKE);
@@ -73,17 +70,14 @@ public class Q00134_TempleMissionary extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 		
 		String htmltext = event;
-		switch (event)
-		{
+		switch (event) {
 			case "30067-05.html":
 			case "30067-09.html":
 			case "31418-07.html":
@@ -105,8 +99,7 @@ public class Q00134_TempleMissionary extends Quest
 			case "30067-10.html":
 				st.giveItems(BADGE_TEMPLE_MISSIONARY, 1);
 				st.giveAdena(15100, true);
-				if (player.getLevel() < MAX_REWARD_LEVEL)
-				{
+				if (player.getLevel() < MAX_REWARD_LEVEL) {
 					st.addExpAndSp(30000, 2000);
 				}
 				st.exitQuest(false, true);
@@ -119,38 +112,26 @@ public class Q00134_TempleMissionary extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance member = getRandomPartyMember(player, 3);
-		if (member == null)
-		{
+		if (member == null) {
 			return super.onKill(npc, player, isSummon);
 		}
 		final QuestState st = getQuestState(member, false);
-		if (npc.getId() == CRUMA_MARSHLANDS_TRAITOR)
-		{
+		if (npc.getId() == CRUMA_MARSHLANDS_TRAITOR) {
 			st.giveItems(GIANTS_TECHNOLOGY_REPORT, 1);
-			if (st.getQuestItemsCount(GIANTS_TECHNOLOGY_REPORT) >= REPORT_COUNT)
-			{
+			if (st.getQuestItemsCount(GIANTS_TECHNOLOGY_REPORT) >= REPORT_COUNT) {
 				st.setCond(4, true);
-			}
-			else
-			{
+			} else {
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
-		}
-		else
-		{
-			if (st.hasQuestItems(GIANTS_EXPERIMENTAL_TOOL))
-			{
+		} else {
+			if (st.hasQuestItems(GIANTS_EXPERIMENTAL_TOOL)) {
 				st.takeItems(GIANTS_EXPERIMENTAL_TOOL, 1);
-				if (getRandom(100) != 0)
-				{
+				if (getRandom(100) != 0) {
 					addSpawn(CRUMA_MARSHLANDS_TRAITOR, npc.getX() + 20, npc.getY() + 20, npc.getZ(), npc.getHeading(), false, 60000);
 				}
-			}
-			else if (getRandom(100) < MOBS.get(npc.getId()))
-			{
+			} else if (getRandom(100) < MOBS.get(npc.getId())) {
 				st.giveItems(GIANTS_EXPERIMENTAL_TOOL_FRAGMENT, 1);
 				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
@@ -159,21 +140,17 @@ public class Q00134_TempleMissionary extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		switch (npc.getId())
-		{
+		switch (npc.getId()) {
 			case GLYVKA:
-				switch (st.getState())
-				{
+				switch (st.getState()) {
 					case State.CREATED:
 						htmltext = (player.getLevel() >= MIN_LEVEL) ? "30067-01.htm" : "30067-02.htm";
 						break;
 					case State.STARTED:
-						switch (st.getCond())
-						{
+						switch (st.getCond()) {
 							case 1:
 								htmltext = "30067-04.html";
 								break;
@@ -183,12 +160,9 @@ public class Q00134_TempleMissionary extends Quest
 								htmltext = "30067-07.html";
 								break;
 							case 5:
-								if (st.isSet("talk"))
-								{
+								if (st.isSet("talk")) {
 									htmltext = "30067-09.html";
-								}
-								else
-								{
+								} else {
 									st.takeItems(ROUKES_REPOT, -1);
 									st.set("talk", "1");
 									htmltext = "30067-08.html";
@@ -202,10 +176,8 @@ public class Q00134_TempleMissionary extends Quest
 				}
 				break;
 			case ROUKE:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
+				if (st.isStarted()) {
+					switch (st.getCond()) {
 						case 1:
 							htmltext = "31418-01.html";
 							break;
@@ -213,12 +185,9 @@ public class Q00134_TempleMissionary extends Quest
 							htmltext = "31418-02.html";
 							break;
 						case 3:
-							if ((st.getQuestItemsCount(GIANTS_EXPERIMENTAL_TOOL_FRAGMENT) < FRAGMENT_COUNT) && (st.getQuestItemsCount(GIANTS_TECHNOLOGY_REPORT) < REPORT_COUNT))
-							{
+							if ((st.getQuestItemsCount(GIANTS_EXPERIMENTAL_TOOL_FRAGMENT) < FRAGMENT_COUNT) && (st.getQuestItemsCount(GIANTS_TECHNOLOGY_REPORT) < REPORT_COUNT)) {
 								htmltext = "31418-04.html";
-							}
-							else if (st.getQuestItemsCount(GIANTS_EXPERIMENTAL_TOOL_FRAGMENT) >= FRAGMENT_COUNT)
-							{
+							} else if (st.getQuestItemsCount(GIANTS_EXPERIMENTAL_TOOL_FRAGMENT) >= FRAGMENT_COUNT) {
 								final int count = (int) (st.getQuestItemsCount(GIANTS_EXPERIMENTAL_TOOL_FRAGMENT) / 10);
 								st.takeItems(GIANTS_EXPERIMENTAL_TOOL_FRAGMENT, count * 10);
 								st.giveItems(GIANTS_EXPERIMENTAL_TOOL, count);
@@ -226,12 +195,9 @@ public class Q00134_TempleMissionary extends Quest
 							}
 							break;
 						case 4:
-							if (st.isSet("talk"))
-							{
+							if (st.isSet("talk")) {
 								htmltext = "31418-07.html";
-							}
-							else if (st.getQuestItemsCount(GIANTS_TECHNOLOGY_REPORT) >= REPORT_COUNT)
-							{
+							} else if (st.getQuestItemsCount(GIANTS_TECHNOLOGY_REPORT) >= REPORT_COUNT) {
 								st.takeItems(GIANTS_EXPERIMENTAL_TOOL_FRAGMENT, -1);
 								st.takeItems(GIANTS_EXPERIMENTAL_TOOL, -1);
 								st.takeItems(GIANTS_TECHNOLOGY_REPORT, -1);
