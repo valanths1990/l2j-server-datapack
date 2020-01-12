@@ -18,6 +18,8 @@
  */
 package com.l2jserver.datapack.quests.Q00380_BringOutTheFlavorOfIngredients;
 
+import static com.l2jserver.gameserver.enums.audio.Sound.ITEMSOUND_QUEST_ITEMGET;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -194,9 +196,12 @@ public final class Q00380_BringOutTheFlavorOfIngredients extends Quest
 		if ((qs != null) && (qs.getCond() < 4))
 		{
 			final ItemChanceHolder item = MONSTER_CHANCES.get(npc.getId());
-			if (giveItemRandomly(qs.getPlayer(), npc, item.getId(), 1, item.getCount(), item.getChance(), true))
-			{
-				qs.setCond(qs.getCond() + 1, true);
+			if (giveItemRandomly(qs.getPlayer(), npc, item.getId(), 1, item.getCount(), item.getChance(), false)) {
+				if ((getQuestItemsCount(killer, RITRON_FRUIT) >= 3) && (getQuestItemsCount(killer, MOON_FLOWER) >= 20) && (getQuestItemsCount(killer, LEECH_FLUIDS) >= 10)) {
+					qs.setCond(qs.getCond() + 1, true);
+				} else {
+					playSound(killer, ITEMSOUND_QUEST_ITEMGET);
+				}
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
