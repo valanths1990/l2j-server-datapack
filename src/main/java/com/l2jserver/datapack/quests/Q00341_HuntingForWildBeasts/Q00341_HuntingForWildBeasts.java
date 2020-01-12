@@ -89,9 +89,9 @@ public class Q00341_HuntingForWildBeasts extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		final QuestState st = getQuestState(player, false);
+		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (st.getState())
+		switch (qs.getState())
 		{
 			case State.CREATED:
 			{
@@ -100,10 +100,10 @@ public class Q00341_HuntingForWildBeasts extends Quest
 			}
 			case State.STARTED:
 			{
-				if (st.isCond(2) && (st.getQuestItemsCount(BEAR_SKIN) >= REQUIRED_COUNT))
+				if (qs.isCond(2) && (qs.getQuestItemsCount(BEAR_SKIN) >= REQUIRED_COUNT))
 				{
-					st.giveAdena(ADENA_COUNT, true);
-					st.exitQuest(true, true);
+					qs.giveAdena(ADENA_COUNT, true);
+					qs.exitQuest(true, true);
 					htmltext = "30078-05.html";
 				}
 				else
