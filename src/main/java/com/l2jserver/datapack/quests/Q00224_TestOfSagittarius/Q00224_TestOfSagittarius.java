@@ -1,5 +1,5 @@
 /*
- * Copyright  (C) 2004-2015 L2J DataPack
+ * Copyright © 2004-2020 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
