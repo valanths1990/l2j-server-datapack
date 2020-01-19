@@ -392,11 +392,11 @@ public abstract class Chamber extends AbstractInstance {
 			// Change room from dialog
 			if (event.equals("next_room")) {
 				if (player.getParty() == null) {
-					htmltext = getHtm(player.getHtmlPrefix(), "data/scripts/instances/ChambersOfDelusion/no_party.html");
+					htmltext = getHtm(player.getHtmlPrefix(), "com/l2jserver/datapack/instances/ChambersOfDelusion/no_party.html");
 				}
 				
 				else if (player.getParty().getLeaderObjectId() != player.getObjectId()) {
-					htmltext = getHtm(player.getHtmlPrefix(), "data/scripts/instances/ChambersOfDelusion/no_leader.html");
+					htmltext = getHtm(player.getHtmlPrefix(), "com/l2jserver/datapack/instances/ChambersOfDelusion/no_leader.html");
 				}
 				
 				else if (hasQuestItems(player, DELUSION_MARK)) {
@@ -406,13 +406,13 @@ public abstract class Chamber extends AbstractInstance {
 				}
 				
 				else {
-					htmltext = getHtm(player.getHtmlPrefix(), "data/scripts/instances/ChambersOfDelusion/no_item.html");
+					htmltext = getHtm(player.getHtmlPrefix(), "com/l2jserver/datapack/instances/ChambersOfDelusion/no_item.html");
 				}
 			} else if (event.equals("go_out")) {
 				if (player.getParty() == null) {
-					htmltext = getHtm(player.getHtmlPrefix(), "data/scripts/instances/ChambersOfDelusion/no_party.html");
+					htmltext = getHtm(player.getHtmlPrefix(), "com/l2jserver/datapack/instances/ChambersOfDelusion/no_party.html");
 				} else if (player.getParty().getLeaderObjectId() != player.getObjectId()) {
-					htmltext = getHtm(player.getHtmlPrefix(), "data/scripts/instances/ChambersOfDelusion/no_leader.html");
+					htmltext = getHtm(player.getHtmlPrefix(), "com/l2jserver/datapack/instances/ChambersOfDelusion/no_leader.html");
 				} else {
 					final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
 					

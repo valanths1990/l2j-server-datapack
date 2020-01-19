@@ -140,7 +140,7 @@ public class QuestLink implements IBypassHandler {
 	 * Open a quest window on client with the text of the L2NpcInstance.<br>
 	 * <b><u>Actions</u>:</b><br>
 	 * <ul>
-	 * <li>Get the text of the quest state in the folder data/scripts/quests/questId/stateId.htm</li>
+	 * <li>Get the text of the quest state in the folder com/l2jserver/datapack/quests/questId/stateId.htm</li>
 	 * <li>Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance</li>
 	 * <li>Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet</li>
 	 * </ul>
