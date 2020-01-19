@@ -40,10 +40,11 @@ import com.l2jserver.gameserver.network.serverpackets.UserInfo;
 /**
  * Retail AI for Territory Managers.
  * @author Zoey76
- * @version 1.1
+ * @version 2.6.1.0
  */
 public final class TerritoryManagers extends AbstractNpcAI {
-	private static final int[] preciousSoul1ItemIds = {
+	
+	private static final int[] PRECIOUS_SOUL_1_ITEM_IDS = {
 		7587,
 		7588,
 		7589,
@@ -51,10 +52,12 @@ public final class TerritoryManagers extends AbstractNpcAI {
 		7598,
 		7599
 	};
-	private static final int[] preciousSoul2ItemIds = {
+	
+	private static final int[] PRECIOUS_SOUL_2_ITEM_IDS = {
 		7595
 	};
-	private static final int[] preciousSoul3ItemIds = {
+	
+	private static final int[] PRECIOUS_SOUL_3_ITEM_IDS = {
 		7678,
 		7591,
 		7592,
@@ -73,8 +76,8 @@ public final class TerritoryManagers extends AbstractNpcAI {
 	
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+		// If the player does not have the second class transfer or is under level 40, it cannot continue.
 		if ((player.getClassId().level() < 2) || (player.getLevel() < 40)) {
-			// If the player does not have the second class transfer or is under level 40, it cannot continue.
 			return "36490-08.html";
 		}
 		return npc.getId() + ".html";
@@ -90,7 +93,7 @@ public final class TerritoryManagers extends AbstractNpcAI {
 			case "36490-04.html": {
 				// L2J Custom for minimum badges required.
 				final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
-				html.setFile(player.getHtmlPrefix(), "data/scripts/ai/npc/TerritoryManagers/36490-04.html");
+				html.setFile(player.getHtmlPrefix(), "com/l2jserver/datapack/ai/npc/TerritoryManagers/36490-04.html");
 				html.replace("%badge%", String.valueOf(territoryWar().getMinTerritoryBadgeForNobless()));
 				player.sendPacket(html);
 				break;
@@ -119,11 +122,11 @@ public final class TerritoryManagers extends AbstractNpcAI {
 				} else {
 					// Complete the Noblesse related quests.
 					// Possessor of a Precious Soul - 1 (241)
-					processNoblesseQuest(player, 241, preciousSoul1ItemIds);
+					processNoblesseQuest(player, 241, PRECIOUS_SOUL_1_ITEM_IDS);
 					// Possessor of a Precious Soul - 2 (242)
-					processNoblesseQuest(player, 242, preciousSoul2ItemIds);
+					processNoblesseQuest(player, 242, PRECIOUS_SOUL_2_ITEM_IDS);
 					// Possessor of a Precious Soul - 3 (246)
-					processNoblesseQuest(player, 246, preciousSoul3ItemIds);
+					processNoblesseQuest(player, 246, PRECIOUS_SOUL_3_ITEM_IDS);
 					// Possessor of a Precious Soul - 4 (247)
 					processNoblesseQuest(player, 247, null);
 					
@@ -167,14 +170,14 @@ public final class TerritoryManagers extends AbstractNpcAI {
 				final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 				final String prefix = player.getHtmlPrefix();
 				if (TerritoryWarManager.getInstance().isTWInProgress() || (reward[0] == 0)) {
-					html.setFile(prefix, "data/scripts/ai/npc/TerritoryManagers/reward-0a.html");
+					html.setFile(prefix, "com/l2jserver/datapack/ai/npc/TerritoryManagers/reward-0a.html");
 				} else if (reward[0] != territoryId) {
-					html.setFile(prefix, "data/scripts/ai/npc/TerritoryManagers/reward-0b.html");
+					html.setFile(prefix, "com/l2jserver/datapack/ai/npc/TerritoryManagers/reward-0b.html");
 					html.replace("%castle%", CastleManager.getInstance().getCastleById(reward[0] - 80).getName());
 				} else if (reward[1] == 0) {
-					html.setFile(prefix, "data/scripts/ai/npc/TerritoryManagers/reward-0a.html");
+					html.setFile(prefix, "com/l2jserver/datapack/ai/npc/TerritoryManagers/reward-0a.html");
 				} else {
-					html.setFile(prefix, "data/scripts/ai/npc/TerritoryManagers/reward-1.html");
+					html.setFile(prefix, "com/l2jserver/datapack/ai/npc/TerritoryManagers/reward-1.html");
 					html.replace("%castle%", CastleManager.getInstance().getCastleById(reward[0] - 80).getName());
 					html.replace("%badge%", String.valueOf(reward[1]));
 					html.replace("%adena%", String.valueOf(reward[1] * 5000));
@@ -193,14 +196,14 @@ public final class TerritoryManagers extends AbstractNpcAI {
 				int[] reward = TerritoryWarManager.getInstance().calcReward(player);
 				final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 				if (TerritoryWarManager.getInstance().isTWInProgress() || (reward[0] == 0)) {
-					html.setFile(player.getHtmlPrefix(), "data/scripts/ai/npc/TerritoryManagers/reward-0a.html");
+					html.setFile(player.getHtmlPrefix(), "com/l2jserver/datapack/ai/npc/TerritoryManagers/reward-0a.html");
 				} else if (reward[0] != territoryId) {
-					html.setFile(player.getHtmlPrefix(), "data/scripts/ai/npc/TerritoryManagers/reward-0b.html");
+					html.setFile(player.getHtmlPrefix(), "com/l2jserver/datapack/ai/npc/TerritoryManagers/reward-0b.html");
 					html.replace("%castle%", CastleManager.getInstance().getCastleById(reward[0] - 80).getName());
 				} else if (reward[1] == 0) {
-					html.setFile(player.getHtmlPrefix(), "data/scripts/ai/npc/TerritoryManagers/reward-0a.html");
+					html.setFile(player.getHtmlPrefix(), "com/l2jserver/datapack/ai/npc/TerritoryManagers/reward-0a.html");
 				} else {
-					html.setFile(player.getHtmlPrefix(), "data/scripts/ai/npc/TerritoryManagers/reward-2.html");
+					html.setFile(player.getHtmlPrefix(), "com/l2jserver/datapack/ai/npc/TerritoryManagers/reward-2.html");
 					player.addItem("ReceiveRewards", badgeId, reward[1], npc, true);
 					player.addAdena("ReceiveRewards", reward[1] * 5000, npc, true);
 					TerritoryWarManager.getInstance().resetReward(player);
