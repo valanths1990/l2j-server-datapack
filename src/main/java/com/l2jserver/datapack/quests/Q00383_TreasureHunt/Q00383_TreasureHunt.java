@@ -88,7 +88,7 @@ public final class Q00383_TreasureHunt extends Quest {
 			case "30890-05.htm": {
 				if (hasQuestItems(player, PIRATES_TREASURE_MAP)) {
 					giveAdena(player, 1000, false);
-					takeItems(player, PIRATES_TREASURE_MAP, -1);
+					takeItems(player, PIRATES_TREASURE_MAP, 1);
 					htmltext = event;
 				}
 				break;
@@ -100,7 +100,7 @@ public final class Q00383_TreasureHunt extends Quest {
 			case "30890-07.htm": {
 				if (hasQuestItems(player, PIRATES_TREASURE_MAP)) {
 					qs.startQuest();
-					takeItems(player, PIRATES_TREASURE_MAP, -1);
+					takeItems(player, PIRATES_TREASURE_MAP, 1);
 					htmltext = event;
 				}
 				break;
