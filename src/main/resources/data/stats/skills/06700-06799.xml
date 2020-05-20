@@ -592,9 +592,40 @@
 		</effects>
 	</skill>
 	<skill id="6744" levels="1" name="Dark Storm">
-		<!-- Casting Spd. decreases by 90% and Atk. Spd. decreases by 30%. -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+ 		<!-- Casting Spd. decreases by 90% and Atk. Spd. decreases by 30%. -->
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="120" />
+		<set name="abnormalType" val="CASTING_TIME_UP" />
+		<set name="affectRange" val="200" />
+		<set name="castRange" val="900" />
+		<set name="basicProperty" val="MEN" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="1200" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributePower" val="120" />
+		<set name="hitTime" val="2000" />
+		<set name="isDebuff" val="true" />
+		<set name="icon" val="icon.skill1386" />
+		<set name="lvlBonusRate" val="2" />
+		<set name="magicLvl" val="85" />
+		<set name="mpConsume2" val="20" />
+		<set name="mpConsume1" val="5" />
+		<set name="operateType" val="A2" />
+		<set name="reuseDelay" val="1000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="AREA" />
+		<effects>
+			<effect name="MagicalAttack">
+				<param power="200" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mAtkSpd" val="0.1" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.7" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6745" levels="1" name="Dark Space">
 		<!-- none -->
@@ -607,9 +638,26 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6747" levels="1" name="Dark Blade">
-		<!-- none -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="castRange" val="60" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="150" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributePower" val="120" />
+		<set name="hitTime" val="1500" />
+		<set name="icon" val="icon.skill1445" />
+		<set name="magicLvl" val="85" />
+		<set name="mpConsume2" val="80" />
+		<set name="operateType" val="A1" />
+		<set name="reuseDelay" val="1000" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="ONE" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="11600" />
+				<param criticalChance="30" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6748" levels="1" name="Stun Attack">
 		<!-- High Five Confirmed -->
