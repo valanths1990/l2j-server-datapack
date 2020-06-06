@@ -3,22 +3,22 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.l2jserver</groupId>
 	<artifactId>l2j-server-datapack</artifactId>
-	<version>2.6.1.0-SNAPSHOT</version>
+	<version>2.6.2.0-SNAPSHOT</version>
 	<name>L2J DataPack</name>
 	<properties>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<slf4j.version>1.7.28</slf4j.version>
+		<slf4j.version>1.7.30</slf4j.version>
 		<!-- L2J -->
-		<l2j-server-game.version>2.6.1.0-SNAPSHOT</l2j-server-game.version>
+		<l2j-server-game.version>2.6.2.0-SNAPSHOT</l2j-server-game.version>
 		<!-- Test -->
-		<testng.version>7.0.0</testng.version>
+		<testng.version>7.1.0</testng.version>
 		<mockito.version>3.2.4</mockito.version>
 		<!-- Plugins -->
-		<maven-jar-plugin.version>3.1.2</maven-jar-plugin.version>
-		<maven-assembly-plugin.version>3.1.1</maven-assembly-plugin.version>
+		<maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
+		<maven-assembly-plugin.version>3.2.0</maven-assembly-plugin.version>
 	</properties>
 	<dependencies>
 		<dependency>

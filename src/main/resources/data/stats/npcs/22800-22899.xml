@@ -4932,7 +4932,6 @@
 			<skill id="4416" level="6" /> <!--Humanoids -->
 			<skill id="5467" level="1" /> <!--Dark Attacks -->
 			<skill id="5598" level="12" /> <!--Flash Resistance -->
-			<skill id="6743" level="1" /> <!--Dark Wind -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="500" clanHelpRange="300" />
