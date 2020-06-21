@@ -75,7 +75,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		switch (event) {
 			case "enter": {
 				enterInstance(player, new PSoIWorld(), "PailakaSongOfIceAndFire.xml", TEMPLATE_ID);
@@ -109,7 +109,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance {
 	}
 	
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon) {
+	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon) {
 		if ((damage > 0) && npc.isScriptValue(0)) {
 			switch (getRandom(6)) {
 				case 0: {
@@ -142,7 +142,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance {
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		npc.dropItem(player, getRandomBoolean() ? SHIELD_POTION : HEAL_POTION, getRandom(1, 7));
 		return super.onKill(npc, player, isSummon);
 	}

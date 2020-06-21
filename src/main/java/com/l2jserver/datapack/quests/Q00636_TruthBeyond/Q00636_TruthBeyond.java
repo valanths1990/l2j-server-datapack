@@ -47,7 +47,7 @@ public final class Q00636_TruthBeyond extends Quest {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		if (st == null) {
 			return null;
@@ -63,7 +63,7 @@ public final class Q00636_TruthBeyond extends Quest {
 	}
 	
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone) {
+	public String onEnterZone(L2Character character, L2ZoneType zone) {
 		// QuestState already null on enter because quest is finished
 		if (character.isPlayer()) {
 			if (character.getActingPlayer().destroyItemByItemId("Mark", VISITOR_MARK, 1, character, false)) {
@@ -74,7 +74,7 @@ public final class Q00636_TruthBeyond extends Quest {
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		if (st == null) {
 			return getNoQuestMsg(player);

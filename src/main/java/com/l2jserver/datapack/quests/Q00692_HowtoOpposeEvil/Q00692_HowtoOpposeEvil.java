@@ -108,7 +108,7 @@ public final class Q00692_HowtoOpposeEvil extends Quest {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		QuestState st = getQuestState(player, false);
 		if (st == null) {
 			return getNoQuestMsg(player);
@@ -146,7 +146,7 @@ public final class Q00692_HowtoOpposeEvil extends Quest {
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final L2PcInstance partyMember = getRandomPartyMember(player, 3);
 		if (partyMember == null) {
 			return null;
@@ -169,7 +169,7 @@ public final class Q00692_HowtoOpposeEvil extends Quest {
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		if (st.isCreated()) {
@@ -199,7 +199,7 @@ public final class Q00692_HowtoOpposeEvil extends Quest {
 		return htmltext;
 	}
 	
-	private static final boolean giveReward(QuestState st, int itemId, int minCount, int rewardItemId, long rewardCount) {
+	private static boolean giveReward(QuestState st, int itemId, int minCount, int rewardItemId, long rewardCount) {
 		long count = st.getQuestItemsCount(itemId);
 		if (count < minCount) {
 			return false;

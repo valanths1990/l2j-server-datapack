@@ -45,7 +45,7 @@ public final class Bernarde extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		switch (event) {
 			case "HolyWater": {
 				if (HellboundEngine.getInstance().getLevel() == 2) {
@@ -76,7 +76,7 @@ public final class Bernarde extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		switch (HellboundEngine.getInstance().getLevel()) {
 			case 0:
 			case 1:
@@ -92,7 +92,7 @@ public final class Bernarde extends AbstractNpcAI {
 		}
 	}
 	
-	private static final boolean isTransformed(L2PcInstance player) {
+	private static boolean isTransformed(L2PcInstance player) {
 		return player.isTransformed() && (player.getTransformation().getId() == NATIVE_TRANSFORM);
 	}
 }

@@ -78,7 +78,7 @@ public final class RandomSpawn extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public String onSpawn(L2Npc npc) {
 		final Location[] spawnlist = SPAWN_POINTS.get(npc.getId());
 		final Location loc = spawnlist[getRandom(spawnlist.length)];
 		if (!npc.isInsideRadius(loc, 200, false, false)) {

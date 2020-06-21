@@ -55,7 +55,7 @@ public final class Q00637_ThroughOnceMore extends Quest {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, false);
 		if (st == null) {
 			return null;
@@ -70,7 +70,7 @@ public final class Q00637_ThroughOnceMore extends Quest {
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
 		if ((st != null) && (st.getState() == State.STARTED)) {
 			final long count = st.getQuestItemsCount(NECRO_HEART);
@@ -97,7 +97,7 @@ public final class Q00637_ThroughOnceMore extends Quest {
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		if (st == null) {
 			return getNoQuestMsg(player);

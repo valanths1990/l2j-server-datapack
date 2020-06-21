@@ -84,7 +84,7 @@ public final class FortressOfResistance extends ClanHallSiegeEngine {
 		}
 	}
 	
-	private final void buildMessengerMessage() {
+	private void buildMessengerMessage() {
 		String html = HtmCache.getInstance().getHtm(null, "com/l2jserver/datapack/conquerablehalls/FortressOfResistance/partisan_ordery_brakel001.htm");
 		if (html != null) {
 			// FIXME: We don't have an object id to put in here :(

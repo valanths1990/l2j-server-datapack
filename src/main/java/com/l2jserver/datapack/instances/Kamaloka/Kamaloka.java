@@ -1201,7 +1201,7 @@ public final class Kamaloka extends AbstractInstance {
 	 * @param index (0-18) index of the kamaloka in arrays
 	 * @return true if party allowed to enter
 	 */
-	private static final boolean checkPartyConditions(L2PcInstance player, int index) {
+	private static boolean checkPartyConditions(L2PcInstance player, int index) {
 		final L2Party party = player.getParty();
 		// player must be in party
 		if (party == null) {
@@ -1267,7 +1267,7 @@ public final class Kamaloka extends AbstractInstance {
 	 * Removing all buffs from player and pet except BUFFS_WHITELIST
 	 * @param ch player
 	 */
-	private static final void removeBuffs(L2Character ch) {
+	private static void removeBuffs(L2Character ch) {
 		final Function<BuffInfo, Boolean> removeBuffs = info -> {
 			if ((info != null) && !info.getSkill().isStayAfterDeath() && (Arrays.binarySearch(BUFFS_WHITELIST, info.getSkill().getId()) < 0)) {
 				info.getEffected().getEffectList().stopSkillEffects(true, info.getSkill());
@@ -1288,7 +1288,7 @@ public final class Kamaloka extends AbstractInstance {
 	 * @param player party leader
 	 * @param index (0-18) kamaloka index in arrays
 	 */
-	private final synchronized void enterInstance(L2PcInstance player, int index) {
+	private synchronized void enterInstance(L2PcInstance player, int index) {
 		int templateId;
 		try {
 			templateId = TEMPLATE_IDS[index];
@@ -1364,7 +1364,7 @@ public final class Kamaloka extends AbstractInstance {
 	 * @param world instanceWorld
 	 */
 	@Override
-	protected final void finishInstance(InstanceWorld world) {
+	protected void finishInstance(InstanceWorld world) {
 		if (world instanceof KamaWorld) {
 			Calendar reenter = Calendar.getInstance();
 			reenter.set(Calendar.MINUTE, RESET_MIN);
@@ -1398,7 +1398,7 @@ public final class Kamaloka extends AbstractInstance {
 	 * @param world instanceWorld
 	 */
 	@SuppressWarnings("all")
-	private final void spawnKama(KamaWorld world) {
+	private void spawnKama(KamaWorld world) {
 		int[] npcs;
 		int[][] spawns;
 		L2Npc npc;
@@ -1408,7 +1408,7 @@ public final class Kamaloka extends AbstractInstance {
 		npcs = FIRST_ROOM[index];
 		spawns = FIRST_ROOM_SPAWNS[index];
 		if (npcs != null) {
-			world.firstRoom = new ArrayList<L2Spawn>(spawns.length - 1);
+			world.firstRoom = new ArrayList<>(spawns.length - 1);
 			int shaman = getRandom(spawns.length); // random position for shaman
 			
 			for (int i = 0; i < spawns.length; i++) {
@@ -1432,7 +1432,7 @@ public final class Kamaloka extends AbstractInstance {
 		npcs = SECOND_ROOM[index];
 		spawns = SECOND_ROOM_SPAWNS[index];
 		if (npcs != null) {
-			world.secondRoom = new ArrayList<Integer>(spawns.length);
+			world.secondRoom = new ArrayList<>(spawns.length);
 			
 			for (int[] spawn : spawns) {
 				npc = addSpawn(npcs[0], spawn[0], spawn[1], spawn[2], 0, false, 0, false, world.getInstanceId());
@@ -1463,7 +1463,7 @@ public final class Kamaloka extends AbstractInstance {
 	 * Handles only player's enter, single parameter - integer kamaloka index
 	 */
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		if (npc == null) {
 			return "";
 		}
@@ -1480,7 +1480,7 @@ public final class Kamaloka extends AbstractInstance {
 	 * Talk with captains and using of the escape teleporter
 	 */
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final int npcId = npc.getId();
 		
 		if (npcId == TELEPORTER) {
@@ -1513,7 +1513,7 @@ public final class Kamaloka extends AbstractInstance {
 	 * Only escape teleporters first talk handled
 	 */
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		if (npc.getId() == TELEPORTER) {
 			if (player.isInParty() && player.getParty().isLeader(player)) {
 				return "32496.htm";
@@ -1524,7 +1524,7 @@ public final class Kamaloka extends AbstractInstance {
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpWorld instanceof KamaWorld) {
 			final KamaWorld world = (KamaWorld) tmpWorld;

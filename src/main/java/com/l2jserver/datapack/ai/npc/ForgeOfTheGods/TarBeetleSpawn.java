@@ -137,14 +137,14 @@ public class TarBeetleSpawn implements IXmlReader {
 			return location;
 		}
 		
-		public final void addBannedZone(Zone bZone) {
+		public void addBannedZone(Zone bZone) {
 			if (_bannedZones == null) {
 				_bannedZones = new ArrayList<>();
 			}
 			_bannedZones.add(bZone);
 		}
 		
-		private final boolean isInsideBannedZone(Location location) {
+		private boolean isInsideBannedZone(Location location) {
 			if (_bannedZones != null) {
 				for (Zone z : _bannedZones) {
 					if (z.isInside(location.getX(), location.getY())) {
@@ -167,21 +167,21 @@ public class TarBeetleSpawn implements IXmlReader {
 			_index = index;
 		}
 		
-		public final void addZone(Zone zone) {
+		public void addZone(Zone zone) {
 			_zones.add(zone);
 		}
 		
-		public final void removeSpawn(L2Npc obj) {
+		public void removeSpawn(L2Npc obj) {
 			_spawn.remove(obj);
 		}
 		
-		public final void unload() {
+		public void unload() {
 			_spawn.forEach(L2Npc::deleteMe);
 			_spawn.clear();
 			_zones.clear();
 		}
 		
-		public final void refreshSpawn() {
+		public void refreshSpawn() {
 			try {
 				while (_spawn.size() < _maxNpcCount) {
 					final Location location = _zones.get(Rnd.get(_zones.size())).getRandomPoint();
@@ -207,7 +207,7 @@ public class TarBeetleSpawn implements IXmlReader {
 			}
 		}
 		
-		public final void refreshShots() {
+		public void refreshShots() {
 			if (_spawn.size() > 0) {
 				for (L2Npc npc : _spawn) {
 					final int val = npc.getScriptValue();

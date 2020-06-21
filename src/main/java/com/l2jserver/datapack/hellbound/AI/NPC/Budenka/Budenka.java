@@ -41,7 +41,7 @@ public final class Budenka extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
 		switch (event) {
 			case "Budenka-02.html":
@@ -56,7 +56,7 @@ public final class Budenka extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
 		if (hasQuestItems(player, STANDART_CERT, PREMIUM_CERT)) {
 			htmltext = "Budenka-07.html";

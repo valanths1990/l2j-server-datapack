@@ -163,7 +163,7 @@ public final class Keltas extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public String onSpawn(L2Npc npc) {
 		_spawnedKeltas = (L2MonsterInstance) npc;
 		broadcastNpcSay(_spawnedKeltas, Say2.NPC_SHOUT, NpcStringId.GUYS_SHOW_THEM_OUR_POWER);
 		spawnMinions();

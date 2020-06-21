@@ -162,7 +162,7 @@ public final class NornilsGarden extends AbstractInstance {
 	};
 	// @formatter:on
 	
-	private static final void dropHerb(L2Npc mob, L2PcInstance player, int[][] drop) {
+	private static void dropHerb(L2Npc mob, L2PcInstance player, int[][] drop) {
 		final int chance = getRandom(100);
 		for (int[] element : drop) {
 			if (chance < element[2]) {
@@ -171,7 +171,7 @@ public final class NornilsGarden extends AbstractInstance {
 		}
 	}
 	
-	private static final void giveBuffs(L2Character ch) {
+	private static void giveBuffs(L2Character ch) {
 		if (ADVENTURERS_WIND_WALK.getSkill() != null) {
 			ADVENTURERS_WIND_WALK.getSkill().applyEffects(ch, ch);
 		}
@@ -203,7 +203,7 @@ public final class NornilsGarden extends AbstractInstance {
 	}
 	
 	@Override
-	public final void teleportPlayer(L2PcInstance player, Location loc, int instanceId) {
+	public void teleportPlayer(L2PcInstance player, Location loc, int instanceId) {
 		giveBuffs(player);
 		if (player.hasSummon()) {
 			giveBuffs(player.getSummon());
@@ -220,7 +220,7 @@ public final class NornilsGarden extends AbstractInstance {
 		}
 	}
 	
-	private final synchronized String enterInstance(L2Npc npc, L2PcInstance player) {
+	private synchronized String enterInstance(L2Npc npc, L2PcInstance player) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof NornilsWorld) || (world.getTemplateId() != TEMPLATE_ID)) {
@@ -348,7 +348,7 @@ public final class NornilsGarden extends AbstractInstance {
 		}
 	}
 	
-	private static final String checkConditions(L2Npc npc, L2PcInstance player) {
+	private static String checkConditions(L2Npc npc, L2PcInstance player) {
 		final L2Party party = player.getParty();
 		// player must be in party
 		if (party == null) {
@@ -429,7 +429,7 @@ public final class NornilsGarden extends AbstractInstance {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = getQuestState(player, false);
 		if (st == null) {
@@ -471,7 +471,7 @@ public final class NornilsGarden extends AbstractInstance {
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		if (Util.contains(_final_gates, npc.getId())) {
 			QuestState cst = player.getQuestState(Q00179_IntoTheLargeCavern.class.getSimpleName());
 			if ((cst != null) && (cst.getState() == State.STARTED)) {
@@ -484,13 +484,13 @@ public final class NornilsGarden extends AbstractInstance {
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		getQuestState(player, true);
 		return npc.getId() + ".html";
 	}
 	
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		if ((npc.getId() == _herb_jar) && !npc.isDead()) {
 			dropHerb(npc, attacker, HP_HERBS_DROPLIST);
 			dropHerb(npc, attacker, MP_HERBS_DROPLIST);
@@ -502,7 +502,7 @@ public final class NornilsGarden extends AbstractInstance {
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState st = getQuestState(player, false);
 		if (st == null) {
 			return null;

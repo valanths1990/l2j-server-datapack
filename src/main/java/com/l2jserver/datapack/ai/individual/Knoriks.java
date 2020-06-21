@@ -36,8 +36,7 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * @author Maneco2
  * @version 2.6.2.0
  */
-public class Knoriks extends AbstractNpcAI
-{
+public class Knoriks extends AbstractNpcAI {
 	// NPC
 	private static final int KNORIKS = 22857;
 	// Skills
@@ -49,8 +48,7 @@ public class Knoriks extends AbstractNpcAI
 	private static final int MAX_CHASE_DIST = 3000;
 	private static int SpawnCount = 0;
 	
-	public Knoriks()
-	{
+	public Knoriks() {
 		super(Knoriks.class.getSimpleName(), "ai/individual");
 		addAggroRangeEnterId(KNORIKS);
 		addSkillSeeId(KNORIKS);
@@ -61,28 +59,21 @@ public class Knoriks extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "CORE_AI":
-			{
-				if (npc != null)
-				{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "CORE_AI": {
+				if (npc != null) {
 					((L2Attackable) npc).clearAggroList();
 					npc.disableCoreAI(false);
 				}
 				break;
 			}
-			case "CHECK_ROUTE":
-			{
+			case "CHECK_ROUTE": {
 				WalkingManager.getInstance().onSpawn(npc);
 				break;
 			}
-			case "KNORIKS_SPAWN":
-			{
-				if (SpawnCount < 3)
-				{
+			case "KNORIKS_SPAWN": {
+				if (SpawnCount < 3) {
 					SpawnCount++;
 					addSpawn(KNORIKS, 140641, 114525, -3755, 0, false, 0);
 					addSpawn(KNORIKS, 143789, 110205, -3968, 0, false, 0);
@@ -97,30 +88,23 @@ public class Knoriks extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final L2Character mostHated = ((L2Attackable) npc).getMostHated();
-		if ((mostHated != null) && (npc.isInsideRadius(attacker, 250, false, false)))
-		{
-			if ((getRandom(100) < 10) && (!npc.isCastingNow()))
-			{
+		if ((mostHated != null) && (npc.isInsideRadius(attacker, 250, false, false))) {
+			if ((getRandom(100) < 10) && (!npc.isCastingNow())) {
 				npc.doCast(getRandomBoolean() ? DARK_STORM : DARK_BLADE);
 			}
 			
-			for (L2Character obj : npc.getKnownList().getKnownCharactersInRadius(200))
-			{
-				if ((obj != null) && (obj.isMonster()))
-				{
-					if ((getRandom(100) < 10) && (obj.isInCombat()) && (!obj.isCastingNow()))
-					{
+			for (L2Character obj : npc.getKnownList().getKnownCharactersInRadius(200)) {
+				if ((obj != null) && (obj.isMonster())) {
+					if ((getRandom(100) < 10) && (obj.isInCombat()) && (!obj.isCastingNow())) {
 						obj.doCast(getRandomBoolean() ? DARK_STORM : DARK_BLADE);
 					}
 				}
 			}
 		}
 		
-		if ((npc.calculateDistance(npc.getSpawn().getLocation(), false, false) > MAX_CHASE_DIST) || (Math.abs(npc.getZ() - npc.getSpawn().getZ()) > 450))
-		{
+		if ((npc.calculateDistance(npc.getSpawn().getLocation(), false, false) > MAX_CHASE_DIST) || (Math.abs(npc.getZ() - npc.getSpawn().getZ()) > 450)) {
 			npc.disableCoreAI(true);
 			npc.teleToLocation(npc.getSpawn().getLocation());
 		}
@@ -128,18 +112,15 @@ public class Knoriks extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance player, Skill skill, L2Object[] targets, boolean isSummon)
-	{
-		if ((getRandom(100) < 10) && (!npc.isCastingNow()) && (!npc.isInsideRadius(player, 250, false, false)))
-		{
+	public String onSkillSee(L2Npc npc, L2PcInstance player, Skill skill, L2Object[] targets, boolean isSummon) {
+		if ((getRandom(100) < 10) && (!npc.isCastingNow()) && (!npc.isInsideRadius(player, 250, false, false))) {
 			addSkillCastDesire(npc, player, DARK_WIND, 1000000L);
 		}
 		return super.onSkillSee(npc, player, skill, targets, isSummon);
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		final L2Spawn spawn = npc.getSpawn();
 		spawn.setAmount(1);
 		spawn.setRespawnDelay(1800);
@@ -148,10 +129,8 @@ public class Knoriks extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
-		if ((getRandom(100) < 50) && (!npc.getVariables().getBoolean(SHOUT_FLAG, false)))
-		{
+	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon) {
+		if ((getRandom(100) < 50) && (!npc.getVariables().getBoolean(SHOUT_FLAG, false))) {
 			npc.getVariables().set(SHOUT_FLAG, true);
 			broadcastNpcSay(npc, Say2.NPC_SHOUT, NpcStringId.WHOS_THERE_IF_YOU_DISTURB_THE_TEMPER_OF_THE_GREAT_LAND_DRAGON_ANTHARAS_I_WILL_NEVER_FORGIVE_YOU);
 		}
@@ -159,15 +138,13 @@ public class Knoriks extends AbstractNpcAI
 	}
 	
 	@Override
-	protected void onTeleport(L2Npc npc)
-	{
+	protected void onTeleport(L2Npc npc) {
 		WalkingManager.getInstance().cancelMoving(npc);
 		startQuestTimer("CORE_AI", 100, npc, null);
 		notifyEvent("CHECK_ROUTE", npc, null);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Knoriks();
 	}
 }

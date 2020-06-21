@@ -276,7 +276,7 @@ public final class Q00660_AidingTheFloranVillage extends Quest {
 		return htmltext;
 	}
 	
-	private static final void tradeItems(L2PcInstance player, long required, long itemCount1, long itemCount2, long itemCount3) {
+	private static void tradeItems(L2PcInstance player, long required, long itemCount1, long itemCount2, long itemCount3) {
 		if (itemCount1 < required) {
 			takeItems(player, WATCHING_EYES, itemCount1);
 			required -= itemCount1;

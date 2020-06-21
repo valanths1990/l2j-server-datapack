@@ -146,7 +146,7 @@ public final class CastleChamberlain extends AbstractNpcAI {
 		return packet;
 	}
 	
-	private final String funcConfirmHtml(final L2PcInstance player, final L2Npc npc, final Castle castle, final int func, final int level) {
+	private String funcConfirmHtml(final L2PcInstance player, final L2Npc npc, final Castle castle, final int func, final int level) {
 		if (isOwner(player, npc) && player.hasClanPrivilege(ClanPrivilege.CS_SET_FUNCTIONS)) {
 			final NpcHtmlMessage html;
 			final String fstring = (func == Castle.FUNC_TELEPORT) ? "9" : "10";
@@ -168,7 +168,7 @@ public final class CastleChamberlain extends AbstractNpcAI {
 		return "chamberlain-21.html";
 	}
 	
-	private final void funcReplace(final Castle castle, final NpcHtmlMessage html, final int func, final String str) {
+	private void funcReplace(final Castle castle, final NpcHtmlMessage html, final int func, final String str) {
 		final CastleFunction function = castle.getFunction(func);
 		if (function == null) {
 			html.replace("%" + str + "Depth%", "<fstring>4</fstring>");
@@ -186,7 +186,7 @@ public final class CastleChamberlain extends AbstractNpcAI {
 		}
 	}
 	
-	private final int getFunctionFee(final int func, final int level) {
+	private int getFunctionFee(final int func, final int level) {
 		int fee = 0;
 		switch (func) {
 			case Castle.FUNC_RESTORE_EXP:
@@ -208,7 +208,7 @@ public final class CastleChamberlain extends AbstractNpcAI {
 		return fee;
 	}
 	
-	private final long getFunctionRatio(final int func) {
+	private long getFunctionRatio(final int func) {
 		long ratio = 0;
 		switch (func) {
 			case Castle.FUNC_RESTORE_EXP:
@@ -230,7 +230,7 @@ public final class CastleChamberlain extends AbstractNpcAI {
 		return ratio;
 	}
 	
-	private final int getDoorUpgradePrice(final int type, final int level) {
+	private int getDoorUpgradePrice(final int type, final int level) {
 		int price = 0;
 		switch (type) {
 			case 1: // Outer Door
@@ -290,7 +290,7 @@ public final class CastleChamberlain extends AbstractNpcAI {
 		return price;
 	}
 	
-	private final String getSealOwner(final int seal) {
+	private String getSealOwner(final int seal) {
 		String npcString;
 		switch (SevenSigns.getInstance().getSealOwner(seal)) {
 			case SevenSigns.CABAL_DAWN:
@@ -306,7 +306,7 @@ public final class CastleChamberlain extends AbstractNpcAI {
 		return npcString;
 	}
 	
-	private final int getTaxLimit() {
+	private int getTaxLimit() {
 		final int taxLimit;
 		switch (SevenSigns.getInstance().getSealOwner(SevenSigns.SEAL_STRIFE)) {
 			case SevenSigns.CABAL_DAWN:
@@ -322,7 +322,7 @@ public final class CastleChamberlain extends AbstractNpcAI {
 		return taxLimit;
 	}
 	
-	private final int getTrapUpgradePrice(final int level) {
+	private int getTrapUpgradePrice(final int level) {
 		int price = 0;
 		switch (level) {
 			case 1:
@@ -350,7 +350,7 @@ public final class CastleChamberlain extends AbstractNpcAI {
 		return price;
 	}
 	
-	private final boolean isDomainFortressInContractStatus(final int castleId) {
+	private boolean isDomainFortressInContractStatus(final int castleId) {
 		final int numFort = ((castleId == 1) || (castleId == 5)) ? 2 : 1;
 		final List<Integer> fortList = FORTRESS.get(castleId);
 		for (int i = 0; i < numFort; i++) {
@@ -362,7 +362,7 @@ public final class CastleChamberlain extends AbstractNpcAI {
 		return false;
 	}
 	
-	private final boolean isOwner(final L2PcInstance player, final L2Npc npc) {
+	private boolean isOwner(final L2PcInstance player, final L2Npc npc) {
 		return player.canOverrideCond(PcCondOverride.CASTLE_CONDITIONS) || ((player.getClan() != null) && (player.getClanId() == npc.getCastle().getOwnerId()));
 	}
 	
@@ -1019,7 +1019,7 @@ public final class CastleChamberlain extends AbstractNpcAI {
 	@RegisterType(ListenerRegisterType.NPC)
 	@Id({35100, 35142, 35184, 35226, 35274,	35316, 35363, 35509, 35555})
 	// @formatter:on
-	public final void onNpcManorBypass(OnNpcManorBypass evt) {
+	public void onNpcManorBypass(OnNpcManorBypass evt) {
 		final L2PcInstance player = evt.getActiveChar();
 		final L2Npc npc = evt.getTarget();
 		if (isOwner(player, npc)) {

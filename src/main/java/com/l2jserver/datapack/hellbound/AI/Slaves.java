@@ -53,14 +53,14 @@ public final class Slaves extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public String onSpawn(L2Npc npc) {
 		((L2MonsterInstance) npc).enableMinions(HellboundEngine.getInstance().getLevel() < 5);
 		((L2MonsterInstance) npc).setOnKillDelay(1000);
 		return super.onSpawn(npc);
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		if (((L2MonsterInstance) npc).getMinionList() != null) {
 			final List<L2MonsterInstance> slaves = ((L2MonsterInstance) npc).getMinionList().getSpawnedMinions();
 			if ((slaves != null) && !slaves.isEmpty()) {

@@ -132,7 +132,7 @@ public final class Q00306_CrystalOfFireAndIce extends Quest {
 		return htmltext;
 	}
 	
-	private static final void giveKillReward(L2PcInstance player, L2Npc npc) {
+	private static void giveKillReward(L2PcInstance player, L2Npc npc) {
 		if (Util.checkIfInRange(1500, npc, player, false)) {
 			final ItemHolder item = MONSTER_DROPS.get(npc.getId());
 			giveItemRandomly(player, npc, item.getId(), 1, 0, 1000.0 / item.getCount(), true);

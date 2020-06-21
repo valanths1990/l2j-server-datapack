@@ -42,7 +42,7 @@ public final class Buron extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		if ("Rumor".equalsIgnoreCase(event)) {
 			htmltext = "32345-" + HellboundEngine.getInstance().getLevel() + "r.htm";
@@ -69,7 +69,7 @@ public final class Buron extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		getQuestState(player, true);
 		switch (HellboundEngine.getInstance().getLevel()) {
 			case 1:

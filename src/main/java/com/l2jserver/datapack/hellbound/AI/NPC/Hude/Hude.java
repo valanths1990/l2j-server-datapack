@@ -49,7 +49,7 @@ public final class Hude extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		switch (event) {
 			case "scertif": {
 				if (HellboundEngine.getInstance().getLevel() > 3) {
@@ -93,7 +93,7 @@ public final class Hude extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = null;
 		if (!hasAtLeastOneQuestItem(player, BASIC_CERT, STANDART_CERT, PREMIUM_CERT)) {
 			htmltext = "32298-01.htm";

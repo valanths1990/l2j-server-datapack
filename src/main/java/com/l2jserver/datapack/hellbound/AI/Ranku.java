@@ -49,7 +49,7 @@ public final class Ranku extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		if (event.equalsIgnoreCase("checkup") && (npc.getId() == RANKU) && !npc.isDead()) {
 			for (L2MonsterInstance minion : ((L2MonsterInstance) npc).getMinionList().getSpawnedMinions()) {
 				if ((minion != null) && !minion.isDead() && MY_TRACKING_SET.contains(minion.getObjectId())) {

@@ -32,20 +32,17 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * @author Maneco2
  * @version 2.6.2.0
  */
-public class BloodyKarinness extends AbstractNpcAI
-{
+public class BloodyKarinness extends AbstractNpcAI {
 	// NPCs
 	private static final int BLOODY_KARINNESS = 22856;
 	
-	private static final int[] BLOODY_FAMILY =
-	{
+	private static final int[] BLOODY_FAMILY = {
 		22854, // Bloody Karik
 		22855, // Bloody Berserker
 		22856, // Bloody Karinness
 	};
 	
-	public BloodyKarinness()
-	{
+	public BloodyKarinness() {
 		super(BloodyKarinness.class.getSimpleName(), "ai/individual");
 		addKillId(BLOODY_KARINNESS);
 		addAttackId(BLOODY_KARINNESS);
@@ -54,24 +51,18 @@ public class BloodyKarinness extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		switch (event)
-		{
-			case "CORE_AI":
-			{
-				if (npc != null)
-				{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		switch (event) {
+			case "CORE_AI": {
+				if (npc != null) {
 					((L2Attackable) npc).clearAggroList();
 					npc.disableCoreAI(false);
 					startQuestTimer("RETURN_SPAWN", 300000, npc, null);
 				}
 				break;
 			}
-			case "RETURN_SPAWN":
-			{
-				if (npc != null)
-				{
+			case "RETURN_SPAWN": {
+				if (npc != null) {
 					((L2Attackable) npc).setCanReturnToSpawnPoint(true);
 				}
 				break;
@@ -81,33 +72,21 @@ public class BloodyKarinness extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		switch (npc.getId())
-		{
-			case BLOODY_KARINNESS:
-			{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		switch (npc.getId()) {
+			case BLOODY_KARINNESS: {
 				final double DistSpawn = npc.calculateDistance(npc.getSpawn().getLocation(), false, false);
-				if (DistSpawn > 3000)
-				{
+				if (DistSpawn > 3000) {
 					npc.disableCoreAI(true);
 					npc.teleToLocation(npc.getSpawn().getLocation());
-				}
-				else
-				{
-					if ((DistSpawn > 500) && (getRandom(100) < 1) && (npc.isInCombat()) && (!npc.isCastingNow()))
-					{
-						for (int object : BLOODY_FAMILY)
-						{
-							for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(object))
-							{
+				} else {
+					if ((DistSpawn > 500) && (getRandom(100) < 1) && (npc.isInCombat()) && (!npc.isCastingNow())) {
+						for (int object : BLOODY_FAMILY) {
+							for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(object)) {
 								final L2Npc obj = spawn.getLastSpawn();
-								if ((obj != null) && !obj.isDead() && (Math.abs(npc.getZ() - obj.getZ()) < 150))
-								{
-									if (npc.calculateDistance(obj, false, false) > obj.getTemplate().getClanHelpRange())
-									{
-										if ((npc.calculateDistance(obj, false, false) < 3000) && GeoData.getInstance().canSeeTarget(npc, obj))
-										{
+								if ((obj != null) && !obj.isDead() && (Math.abs(npc.getZ() - obj.getZ()) < 150)) {
+									if (npc.calculateDistance(obj, false, false) > obj.getTemplate().getClanHelpRange()) {
+										if ((npc.calculateDistance(obj, false, false) < 3000) && GeoData.getInstance().canSeeTarget(npc, obj)) {
 											npc.disableCoreAI(true);
 											((L2Attackable) npc).setCanReturnToSpawnPoint(false);
 											addMoveToDesire(npc, new Location(obj.getX() + getRandom(-100, 100), obj.getY() + getRandom(-100, 100), obj.getZ() + 20, 0), 0);
@@ -125,14 +104,10 @@ public class BloodyKarinness extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		switch (npc.getId())
-		{
-			case BLOODY_KARINNESS:
-			{
-				if (getRandom(100) < 5)
-				{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+		switch (npc.getId()) {
+			case BLOODY_KARINNESS: {
+				if (getRandom(100) < 5) {
 					final int newZ = npc.getZ() + 20;
 					addAttackDesire(addSpawn(npc.getId(), npc.getX(), npc.getY(), newZ, npc.getHeading(), false, 0), killer);
 					addAttackDesire(addSpawn(npc.getId(), npc.getX(), npc.getY() - 10, newZ, npc.getHeading(), false, 0), killer);
@@ -147,19 +122,16 @@ public class BloodyKarinness extends AbstractNpcAI
 	}
 	
 	@Override
-	protected void onTeleport(L2Npc npc)
-	{
+	protected void onTeleport(L2Npc npc) {
 		startQuestTimer("CORE_AI", 100, npc, null);
 	}
 	
 	@Override
-	public void onMoveFinished(L2Npc npc)
-	{
+	public void onMoveFinished(L2Npc npc) {
 		startQuestTimer("CORE_AI", 100, npc, null);
 	}
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new BloodyKarinness();
 	}
 }

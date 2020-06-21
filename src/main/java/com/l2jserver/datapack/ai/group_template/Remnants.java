@@ -47,13 +47,13 @@ public final class Remnants extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public String onSpawn(L2Npc npc) {
 		npc.setIsMortal(false);
 		return super.onSpawn(npc);
 	}
 	
 	@Override
-	public final String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon) {
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon) {
 		if (skill.getId() == SKILL_HOLY_WATER) {
 			if (!npc.isDead()) {
 				if ((targets.length > 0) && (targets[0] == npc)) {

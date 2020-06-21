@@ -41,7 +41,7 @@ public final class Jude extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		if ("TreasureSacks".equalsIgnoreCase(event)) {
 			if (HellboundEngine.getInstance().getLevel() == 3) {
 				if (getQuestItemsCount(player, NATIVE_TREASURE) >= 40) {
@@ -56,7 +56,7 @@ public final class Jude extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		switch (HellboundEngine.getInstance().getLevel()) {
 			case 0:
 			case 1:

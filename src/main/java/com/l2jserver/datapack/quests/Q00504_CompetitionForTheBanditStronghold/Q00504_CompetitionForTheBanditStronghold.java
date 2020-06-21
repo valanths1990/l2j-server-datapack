@@ -76,7 +76,7 @@ public final class Q00504_CompetitionForTheBanditStronghold extends Quest {
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final QuestState st = getQuestState(killer, false);
 		if ((st == null) || !st.hasQuestItems(CONTEST_CERTIFICATE) || !st.isStarted()) {
 			return null;
@@ -94,7 +94,7 @@ public final class Q00504_CompetitionForTheBanditStronghold extends Quest {
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = getQuestState(player, true);
 		final L2Clan clan = player.getClan();
 		String htmltext = getNoQuestMsg(player);

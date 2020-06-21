@@ -161,7 +161,7 @@ public final class Elpies extends Event {
 		return super.onSpawn(npc);
 	}
 	
-	private static enum EventLocation {
+	private enum EventLocation {
 		ADEN("Aden", 146558, 148341, 26622, 28560, -2200),
 		DION("Dion", 18564, 19200, 144377, 145782, -3081),
 		GLUDIN("Gludin", -84040, -81420, 150257, 151175, -3125),
@@ -201,7 +201,7 @@ public final class Elpies extends Event {
 		}
 	}
 	
-	private static final void dropItem(L2Npc mob, L2PcInstance player, int[][] droplist) {
+	private static void dropItem(L2Npc mob, L2PcInstance player, int[][] droplist) {
 		final int chance = getRandom(100);
 		
 		for (int[] drop : droplist) {

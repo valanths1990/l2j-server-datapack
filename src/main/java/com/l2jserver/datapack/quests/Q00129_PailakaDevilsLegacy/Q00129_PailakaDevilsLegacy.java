@@ -72,7 +72,7 @@ public final class Q00129_PailakaDevilsLegacy extends Quest {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
 		
@@ -112,7 +112,7 @@ public final class Q00129_PailakaDevilsLegacy extends Quest {
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState qs = getQuestState(player, false);
 		if ((npc.getId() != ADVENTURER2) || (qs == null) || !qs.isCompleted()) {
 			return npc.getId() + ".htm";
@@ -121,7 +121,7 @@ public final class Q00129_PailakaDevilsLegacy extends Quest {
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState qs = getQuestState(player, true);
 		switch (npc.getId()) {
@@ -217,7 +217,7 @@ public final class Q00129_PailakaDevilsLegacy extends Quest {
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final QuestState qs = getQuestState(player, false);
 		
 		if ((qs != null) && qs.isStarted()) {

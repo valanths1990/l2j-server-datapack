@@ -62,7 +62,7 @@ public final class Warpgate extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		if (event.equals("enter")) {
 			if (canEnter(player)) {
 				player.teleToLocation(ENTER_LOC, true);
@@ -81,7 +81,7 @@ public final class Warpgate extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone) {
+	public String onEnterZone(L2Character character, L2ZoneType zone) {
 		if (character.isPlayer()) {
 			final L2PcInstance player = character.getActingPlayer();
 			

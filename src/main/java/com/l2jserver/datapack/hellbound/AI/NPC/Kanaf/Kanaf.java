@@ -38,7 +38,7 @@ public final class Kanaf extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		if (event.equals("info")) {
 			return "32346-0" + getRandom(1, 3) + ".htm";
 		}

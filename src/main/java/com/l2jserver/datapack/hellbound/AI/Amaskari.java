@@ -68,7 +68,7 @@ public final class Amaskari extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		if (event.equalsIgnoreCase("stop_toggle")) {
 			broadcastNpcSay(npc, Say2.NPC_ALL, AMASKARI_NPCSTRING_ID[2]);
 			((L2MonsterInstance) npc).clearAggroList();
@@ -139,7 +139,7 @@ public final class Amaskari extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public String onSpawn(L2Npc npc) {
 		startQuestTimer("onspawn_msg", (getRandom(3) + 1) * 30000, npc, null);
 		return super.onSpawn(npc);
 	}

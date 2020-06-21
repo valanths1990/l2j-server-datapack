@@ -143,7 +143,7 @@ public final class ForgeOfTheGods extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public String onSpawn(L2Npc npc) {
 		startQuestTimer("suicide", 60000, npc, null);
 		return super.onSpawn(npc);
 	}

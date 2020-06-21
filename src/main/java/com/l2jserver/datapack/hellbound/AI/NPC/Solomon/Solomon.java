@@ -37,7 +37,7 @@ public final class Solomon extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		if (HellboundEngine.getInstance().getLevel() == 5) {
 			return "32355-01.htm";
 		} else if (HellboundEngine.getInstance().getLevel() > 5) {

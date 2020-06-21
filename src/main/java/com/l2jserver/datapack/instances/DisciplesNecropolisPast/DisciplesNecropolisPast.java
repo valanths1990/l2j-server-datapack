@@ -343,7 +343,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance {
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public String onSpawn(L2Npc npc) {
 		npc.setIsMortal(false);
 		return super.onSpawn(npc);
 	}

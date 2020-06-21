@@ -115,7 +115,7 @@ public final class AirShipGludioGracia extends Quest implements Runnable {
 		_ship.runEngine(60000);
 	}
 	
-	private final void broadcastInGludio(NpcStringId npcString) {
+	private void broadcastInGludio(NpcStringId npcString) {
 		if (!_foundAtcGludio) {
 			_foundAtcGludio = true;
 			_atcGludio = findController();
@@ -125,7 +125,7 @@ public final class AirShipGludioGracia extends Quest implements Runnable {
 		}
 	}
 	
-	private final void broadcastInGracia(NpcStringId npcStringId) {
+	private void broadcastInGracia(NpcStringId npcStringId) {
 		if (!_foundAtcGracia) {
 			_foundAtcGracia = true;
 			_atcGracia = findController();
@@ -135,7 +135,7 @@ public final class AirShipGludioGracia extends Quest implements Runnable {
 		}
 	}
 	
-	private final L2Npc findController() {
+	private L2Npc findController() {
 		// check objects around the ship
 		for (L2Object obj : L2World.getInstance().getVisibleObjects(_ship, 600)) {
 			if (obj.isNpc()) {
@@ -150,7 +150,7 @@ public final class AirShipGludioGracia extends Quest implements Runnable {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		if (player.isTransformed()) {
 			player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_TRANSFORMED);
 			return null;
@@ -192,7 +192,7 @@ public final class AirShipGludioGracia extends Quest implements Runnable {
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return npc.getId() + ".htm";
 	}
 	

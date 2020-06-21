@@ -94,7 +94,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		String htmltext = null;
 		
@@ -150,7 +150,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance {
 	}
 	
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
 		if ((tmpworld != null) && (tmpworld instanceof DIWorld)) {
@@ -220,7 +220,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance {
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
 		if ((tmpworld != null) && (tmpworld instanceof DIWorld)) {

@@ -172,7 +172,7 @@ public final class StakatoNest extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		if ((npc == null) || (player == null) || npc.isDead()) {
 			return null;
 		}

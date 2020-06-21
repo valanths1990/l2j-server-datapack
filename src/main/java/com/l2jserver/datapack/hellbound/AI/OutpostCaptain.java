@@ -55,7 +55,7 @@ public final class OutpostCaptain extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		if (HellboundEngine.getInstance().getLevel() == 8) {
 			addSpawn(DOORKEEPER, npc.getSpawn().getLocation(), false, 0, false);
 		}
@@ -63,7 +63,7 @@ public final class OutpostCaptain extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public String onSpawn(L2Npc npc) {
 		npc.setIsNoRndWalk(true);
 		
 		if (npc.getId() == CAPTAIN) {

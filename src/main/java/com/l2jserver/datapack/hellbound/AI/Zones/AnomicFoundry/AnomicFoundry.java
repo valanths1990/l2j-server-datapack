@@ -82,7 +82,7 @@ public final class AnomicFoundry extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		if (event.equalsIgnoreCase("make_spawn_1")) {
 			if (HellboundEngine.getInstance().getLevel() >= 10) {
 				int idx = getRandom(3);
@@ -166,7 +166,7 @@ public final class AnomicFoundry extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public String onSpawn(L2Npc npc) {
 		SpawnTable.getInstance().addNewSpawn(npc.getSpawn(), false);
 		if (getSpawnGroup(npc) >= 0) {
 			_spawned[getSpawnGroup(npc)]++;

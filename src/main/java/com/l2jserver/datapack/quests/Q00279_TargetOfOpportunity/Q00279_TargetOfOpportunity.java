@@ -82,7 +82,7 @@ public final class Q00279_TargetOfOpportunity extends Quest {
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon) {
 		L2PcInstance pl = getRandomPartyMember(player, "progress", "1");
 		final int idx = Arrays.binarySearch(MONSTERS, npc.getId());
 		if ((pl == null) || (idx < 0)) {
@@ -104,7 +104,7 @@ public final class Q00279_TargetOfOpportunity extends Quest {
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
 		if (st.getState() == State.CREATED) {
@@ -115,7 +115,7 @@ public final class Q00279_TargetOfOpportunity extends Quest {
 		return htmltext;
 	}
 	
-	private static final boolean haveAllExceptThis(QuestState st, int idx) {
+	private static boolean haveAllExceptThis(QuestState st, int idx) {
 		for (int i = 0; i < SEAL_COMPONENTS.length; i++) {
 			if (i == idx) {
 				continue;

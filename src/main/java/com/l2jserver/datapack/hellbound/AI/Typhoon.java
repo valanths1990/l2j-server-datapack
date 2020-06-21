@@ -47,7 +47,7 @@ public final class Typhoon extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		if (event.equalsIgnoreCase("CAST") && (npc != null) && !npc.isDead()) {
 			npc.doSimultaneousCast(STORM);
 			startQuestTimer("CAST", 5000, npc, null);
@@ -62,7 +62,7 @@ public final class Typhoon extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public String onSpawn(L2Npc npc) {
 		startQuestTimer("CAST", 5000, npc, null);
 		return super.onSpawn(npc);
 	}

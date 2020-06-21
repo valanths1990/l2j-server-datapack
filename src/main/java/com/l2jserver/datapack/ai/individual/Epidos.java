@@ -63,7 +63,7 @@ public final class Epidos extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		if (event.equalsIgnoreCase("check_minions")) {
 			if ((getRandom(1000) > 250) && _lastHp.containsKey(npc.getObjectId())) {
 				int hpDecreasePercent = (int) (((_lastHp.get(npc.getObjectId()) - npc.getCurrentHp()) * 100) / npc.getMaxHp());
@@ -107,7 +107,7 @@ public final class Epidos extends AbstractNpcAI {
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public String onSpawn(L2Npc npc) {
 		startQuestTimer("check_minions", 10000, npc, null);
 		startQuestTimer("check_idle", 600000, npc, null);
 		_lastHp.put(npc.getObjectId(), (double) npc.getMaxHp());
