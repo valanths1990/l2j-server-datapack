@@ -56,8 +56,4 @@ public class DustRider extends AbstractNpcAI {
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
-	
-	public static void main(String[] args) {
-		new DustRider();
-	}
 }

@@ -51,7 +51,7 @@ public final class ImprovedBabyPets extends AbstractNpcAI {
 	// Skill
 	private static final int BUFF_CONTROL = 5771;
 	
-	private ImprovedBabyPets() {
+	public ImprovedBabyPets() {
 		super(ImprovedBabyPets.class.getSimpleName(), "ai/npc/Summons/Pets");
 		addSummonSpawnId(IMPROVED_BABY_PETS);
 	}
@@ -177,9 +177,5 @@ public final class ImprovedBabyPets extends AbstractNpcAI {
 	
 	private static boolean hasAbnormal(L2PcInstance player, AbnormalType type) {
 		return player.getEffectList().getBuffInfoByAbnormalType(type) != null;
-	}
-	
-	public static void main(String[] args) {
-		new ImprovedBabyPets();
 	}
 }

@@ -41,7 +41,7 @@ public final class LairOfAntharas extends AbstractNpcAI {
 	// Misc
 	final private static int KNIGHT_CHANCE = 30;
 	
-	private LairOfAntharas() {
+	public LairOfAntharas() {
 		super(LairOfAntharas.class.getSimpleName(), "ai/group_template");
 		addKillId(DRAGON_KNIGHT, DRAGON_KNIGHT2, DRAGON_GUARD, DRAGON_MAGE);
 		addSpawnId(DRAGON_KNIGHT, DRAGON_KNIGHT2, DRAGON_GUARD, DRAGON_MAGE);
@@ -100,9 +100,5 @@ public final class LairOfAntharas extends AbstractNpcAI {
 			startQuestTimer("CHECK_HOME", 10000, npc, null, true);
 		}
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args) {
-		new LairOfAntharas();
 	}
 }

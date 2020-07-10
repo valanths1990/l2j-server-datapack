@@ -110,8 +110,4 @@ public class EmeraldHorn extends AbstractNpcAI {
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
-	
-	public static void main(String[] args) {
-		new EmeraldHorn();
-	}
 }

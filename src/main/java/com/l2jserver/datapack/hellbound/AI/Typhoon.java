@@ -19,10 +19,8 @@
 package com.l2jserver.datapack.hellbound.AI;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
-import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2RaidBossInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 
 /**
@@ -39,11 +37,6 @@ public final class Typhoon extends AbstractNpcAI {
 		super(Typhoon.class.getSimpleName(), "hellbound/AI");
 		addAggroRangeEnterId(TYPHOON);
 		addSpawnId(TYPHOON);
-		
-		final L2RaidBossInstance boss = RaidBossSpawnManager.getInstance().getBosses().get(TYPHOON);
-		if (boss != null) {
-			onSpawn(boss);
-		}
 	}
 	
 	@Override

@@ -64,7 +64,7 @@ public final class TerritoryManagers extends AbstractNpcAI {
 		7593
 	};
 	
-	private TerritoryManagers() {
+	public TerritoryManagers() {
 		super(TerritoryManagers.class.getSimpleName(), "ai/npc");
 		
 		for (int i = 0; i < 9; i++) {
@@ -264,9 +264,5 @@ public final class TerritoryManagers extends AbstractNpcAI {
 		if (item != null) {
 			player.destroyItem(event, item, npc, true);
 		}
-	}
-	
-	public static void main(String[] args) {
-		new TerritoryManagers();
 	}
 }

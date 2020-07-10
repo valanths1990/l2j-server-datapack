@@ -37,7 +37,7 @@ public class Asher extends AbstractNpcAI {
 	// Misc
 	private static final int ADENA = 50000;
 	
-	private Asher() {
+	public Asher() {
 		super(Asher.class.getSimpleName(), "ai/npc/Teleports");
 		addFirstTalkId(ASHER);
 		addStartNpc(ASHER);
@@ -56,9 +56,5 @@ public class Asher extends AbstractNpcAI {
 			return event;
 		}
 		return super.onAdvEvent(event, npc, player);
-	}
-	
-	public static void main(String[] args) {
-		new Asher();
 	}
 }

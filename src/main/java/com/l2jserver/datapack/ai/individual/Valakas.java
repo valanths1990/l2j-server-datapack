@@ -114,7 +114,7 @@ public final class Valakas extends AbstractNpcAI {
 	private L2Playable _actualVictim; // Actual target of Valakas.
 	private static L2BossZone ZONE;
 	
-	private Valakas() {
+	public Valakas() {
 		super(Valakas.class.getSimpleName(), "ai/individual");
 		registerMobs(VALAKAS);
 		
@@ -467,9 +467,5 @@ public final class Valakas extends AbstractNpcAI {
 		}
 		
 		return (result.isEmpty()) ? null : result.get(getRandom(result.size()));
-	}
-	
-	public static void main(String[] args) {
-		new Valakas();
 	}
 }

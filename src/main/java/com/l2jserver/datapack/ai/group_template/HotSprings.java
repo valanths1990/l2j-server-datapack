@@ -46,7 +46,7 @@ public final class HotSprings extends AbstractNpcAI {
 	// Misc
 	private static final int DISEASE_CHANCE = 10;
 	
-	private HotSprings() {
+	public HotSprings() {
 		super(HotSprings.class.getSimpleName(), "ai/group_template");
 		addAttackId(BANDERSNATCHLING, FLAVA, ATROXSPAWN, NEPENTHES, ATROX, BANDERSNATCH);
 	}
@@ -88,9 +88,5 @@ public final class HotSprings extends AbstractNpcAI {
 			npc.setTarget(player);
 			npc.doCast(skill);
 		}
-	}
-	
-	public static void main(String[] args) {
-		new HotSprings();
 	}
 }

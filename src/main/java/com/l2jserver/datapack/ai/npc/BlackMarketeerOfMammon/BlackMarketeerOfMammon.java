@@ -38,7 +38,7 @@ public final class BlackMarketeerOfMammon extends AbstractNpcAI {
 	// Misc
 	private static final int MIN_LEVEL = 60;
 	
-	private BlackMarketeerOfMammon() {
+	public BlackMarketeerOfMammon() {
 		super(BlackMarketeerOfMammon.class.getSimpleName(), "ai/npc");
 		addStartNpc(BLACK_MARKETEER);
 		addTalkId(BLACK_MARKETEER);
@@ -83,9 +83,5 @@ public final class BlackMarketeerOfMammon extends AbstractNpcAI {
 	private boolean exchangeAvailable() {
 		LocalTime localTime = LocalTime.now();
 		return (localTime.isAfter(LocalTime.parse("20:00:00")) && localTime.isBefore(LocalTime.MAX));
-	}
-	
-	public static void main(String[] args) {
-		new BlackMarketeerOfMammon();
 	}
 }

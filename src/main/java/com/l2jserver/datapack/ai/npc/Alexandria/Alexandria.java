@@ -69,7 +69,7 @@ public final class Alexandria extends AbstractNpcAI {
 		AGATHIONS.put("littleDevil", Arrays.asList(LITTLE_DEVILS));
 	}
 	
-	private Alexandria() {
+	public Alexandria() {
 		super(Alexandria.class.getSimpleName(), "ai/npc");
 		addStartNpc(ALEXANDRIA);
 		addTalkId(ALEXANDRIA);
@@ -118,9 +118,5 @@ public final class Alexandria extends AbstractNpcAI {
 		public int getAdditionalId() {
 			return _additionalId;
 		}
-	}
-	
-	public static void main(String[] args) {
-		new Alexandria();
 	}
 }

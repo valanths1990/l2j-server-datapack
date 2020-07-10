@@ -62,7 +62,7 @@ public final class FortressSiegeManager extends AbstractNpcAI {
 		36356, // Monastic Fortress
 	};
 	
-	private FortressSiegeManager() {
+	public FortressSiegeManager() {
 		super(FortressSiegeManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(MANAGERS);
 		addTalkId(MANAGERS);
@@ -171,9 +171,5 @@ public final class FortressSiegeManager extends AbstractNpcAI {
 		html.replace("%clanName%", fortress.getOwnerClan().getName());
 		html.replace("%objectId%", npc.getObjectId());
 		return html.getHtml();
-	}
-	
-	public static void main(String[] args) {
-		new FortressSiegeManager();
 	}
 }

@@ -112,7 +112,7 @@ public final class SelMahumDrill extends AbstractNpcAI {
 		}
 	}
 	
-	private SelMahumDrill() {
+	public SelMahumDrill() {
 		super(SelMahumDrill.class.getSimpleName(), "ai/group_template");
 		
 		addAttackId(MAHUM_SOLDIERS);
@@ -261,9 +261,5 @@ public final class SelMahumDrill extends AbstractNpcAI {
 			npc.getVariables().set("SOCIAL_ACTION_REMAINED_COUNT", (remainedCount - 1));
 			startQuestTimer("do_social_action", action.getRepeatInterval(), npc, null);
 		}
-	}
-	
-	public static void main(String[] args) {
-		new SelMahumDrill();
 	}
 }

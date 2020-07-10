@@ -70,7 +70,7 @@ public final class DarkElfChange2 extends AbstractNpcAI {
 	// Misc
 	private static final int MIN_LEVEL = 40;
 	
-	private DarkElfChange2() {
+	public DarkElfChange2() {
 		super(DarkElfChange2.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -278,9 +278,5 @@ public final class DarkElfChange2 extends AbstractNpcAI {
 			htmltext = "30195-28.htm";
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new DarkElfChange2();
 	}
 }

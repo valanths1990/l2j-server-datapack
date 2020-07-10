@@ -43,7 +43,7 @@ public final class DwarfWarehouseChange1 extends AbstractNpcAI {
 	// Class
 	private static final int SCAVENGER = 54;
 	
-	private DwarfWarehouseChange1() {
+	public DwarfWarehouseChange1() {
 		super(DwarfWarehouseChange1.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -120,9 +120,5 @@ public final class DwarfWarehouseChange1 extends AbstractNpcAI {
 			htmltext = npc.getId() + "-05.htm"; // fnClassMismatch
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new DwarfWarehouseChange1();
 	}
 }

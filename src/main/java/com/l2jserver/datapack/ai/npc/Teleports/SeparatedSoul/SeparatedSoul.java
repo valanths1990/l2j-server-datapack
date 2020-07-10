@@ -28,7 +28,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * Separated Soul teleport AI.
- * @author UnAfraid, improved by Adry_85, Zealar
+ * @author UnAfraid, Adry_85, Zealar
  */
 public final class SeparatedSoul extends AbstractNpcAI {
 	// NPCs
@@ -63,7 +63,7 @@ public final class SeparatedSoul extends AbstractNpcAI {
 		LOCATIONS.put(8, new Location(131116, 114333, -3704)); // Entrance of Antharas' Lair
 	}
 	
-	private SeparatedSoul() {
+	public SeparatedSoul() {
 		super(SeparatedSoul.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(SEPARATED_SOULS);
 		addTalkId(SEPARATED_SOULS);
@@ -108,9 +108,5 @@ public final class SeparatedSoul extends AbstractNpcAI {
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
-	}
-	
-	public static void main(String[] args) {
-		new SeparatedSoul();
 	}
 }

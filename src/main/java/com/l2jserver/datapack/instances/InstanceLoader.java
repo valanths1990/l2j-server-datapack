@@ -93,13 +93,15 @@ public final class InstanceLoader {
 	};
 	
 	public static void main(String[] args) {
-		LOG.info("Loading Instances scripts.");
-		for (Class<?> script : SCRIPTS) {
+		int n = 0;
+		for (var script : SCRIPTS) {
 			try {
 				script.getDeclaredConstructor().newInstance();
+				n++;
 			} catch (Exception ex) {
 				LOG.warn("Failed loading {}!", script.getSimpleName(), ex);
 			}
 		}
+		LOG.info("Loaded {} instnaces.", n);
 	}
 }

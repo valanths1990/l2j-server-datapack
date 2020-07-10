@@ -97,7 +97,7 @@ public final class Baium extends AbstractNpcAI {
 	private L2GrandBossInstance _baium = null;
 	private static long _lastAttack = 0;
 	
-	private Baium() {
+	public Baium() {
 		super(Baium.class.getSimpleName(), "ai/individual");
 		addFirstTalkId(ANG_VORTEX);
 		addTalkId(ANG_VORTEX, TELE_CUBE, BAIUM_STONE);
@@ -603,9 +603,5 @@ public final class Baium extends AbstractNpcAI {
 			}
 		}
 		return null;
-	}
-	
-	public static void main(String[] args) {
-		new Baium();
 	}
 }

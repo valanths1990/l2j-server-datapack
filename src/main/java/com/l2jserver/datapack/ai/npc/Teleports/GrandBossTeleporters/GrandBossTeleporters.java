@@ -56,7 +56,7 @@ public final class GrandBossTeleporters extends AbstractNpcAI {
 	
 	private static int playerCount = 0;
 	
-	private GrandBossTeleporters() {
+	public GrandBossTeleporters() {
 		super(GrandBossTeleporters.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(NPCs);
 		addTalkId(NPCs);
@@ -155,9 +155,5 @@ public final class GrandBossTeleporters extends AbstractNpcAI {
 	
 	private Quest valakasAI() {
 		return QuestManager.getInstance().getQuest(Valakas.class.getSimpleName());
-	}
-	
-	public static void main(String[] args) {
-		new GrandBossTeleporters();
 	}
 }

@@ -115,7 +115,7 @@ public final class NewbieGuide extends AbstractNpcAI {
 		TELEPORT_MAP.put(NEWBIE_GUIDE_KAMAEL, Arrays.asList(TALKING_ISLAND_VILLAGE, DARK_ELF_VILLAGE, ELVEN_VILLAGE, DWARVEN_VILLAGE, ORC_VILLAGE));
 	}
 	
-	private NewbieGuide() {
+	public NewbieGuide() {
 		super(NewbieGuide.class.getSimpleName(), "ai/npc/Teleports");
 		
 		int[] newbieList = {
@@ -1885,9 +1885,5 @@ public final class NewbieGuide extends AbstractNpcAI {
 				return "32135-05.htm";
 		}
 		return "";
-	}
-	
-	public static void main(String[] args) {
-		new NewbieGuide();
 	}
 }

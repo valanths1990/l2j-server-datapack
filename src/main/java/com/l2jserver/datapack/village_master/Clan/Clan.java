@@ -61,7 +61,7 @@ public final class Clan extends Quest {
 		LEADER_REQUIRED.put("9000-15.htm", "9000-07-no.htm");
 	}
 	
-	private Clan() {
+	public Clan() {
 		super(-1, Clan.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -80,9 +80,5 @@ public final class Clan extends Quest {
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		return "9000-01.htm";
-	}
-	
-	public static void main(String[] args) {
-		new Clan();
 	}
 }

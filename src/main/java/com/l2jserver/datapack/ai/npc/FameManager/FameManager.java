@@ -41,7 +41,7 @@ public final class FameManager extends AbstractNpcAI {
 	private static final int MIN_CLAN_LVL = 5;
 	private static final int CLASS_LVL = 2;
 	
-	private FameManager() {
+	public FameManager() {
 		super(FameManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(FAME_MANAGER);
 		addTalkId(FAME_MANAGER);
@@ -99,9 +99,5 @@ public final class FameManager extends AbstractNpcAI {
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return ((player.getFame() > 0) && (player.getLevel() >= MIN_LVL) && (player.getClassId().level() >= CLASS_LVL)) ? npc.getId() + ".html" : npc.getId() + "-01.html";
-	}
-	
-	public static void main(String[] args) {
-		new FameManager();
 	}
 }

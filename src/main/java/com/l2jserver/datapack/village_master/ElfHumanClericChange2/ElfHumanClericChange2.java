@@ -52,7 +52,7 @@ public final class ElfHumanClericChange2 extends AbstractNpcAI {
 	private static final int PROPHET = 17;
 	private static final int ELDER = 30;
 	
-	private ElfHumanClericChange2() {
+	public ElfHumanClericChange2() {
 		super(ElfHumanClericChange2.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -166,9 +166,5 @@ public final class ElfHumanClericChange2 extends AbstractNpcAI {
 			htmltext = "30120-14.htm"; // fnClassMismatch
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new ElfHumanClericChange2();
 	}
 }

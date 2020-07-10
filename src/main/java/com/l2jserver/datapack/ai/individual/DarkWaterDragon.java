@@ -44,7 +44,7 @@ public final class DarkWaterDragon extends AbstractNpcAI {
 	private static Set<Integer> MY_TRACKING_SET = ConcurrentHashMap.newKeySet(); // Used to track instances of npcs
 	private static Map<Integer, L2PcInstance> ID_MAP = new ConcurrentHashMap<>(); // Used to track instances of npcs
 	
-	private DarkWaterDragon() {
+	public DarkWaterDragon() {
 		super(DarkWaterDragon.class.getSimpleName(), "ai/individual");
 		int[] mobs = {
 			DRAGON,
@@ -209,9 +209,5 @@ public final class DarkWaterDragon extends AbstractNpcAI {
 		shade.setRunning();
 		((L2Attackable) shade).addDamageHate(attacker, 0, 999);
 		shade.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
-	}
-	
-	public static void main(String[] args) {
-		new DarkWaterDragon();
 	}
 }

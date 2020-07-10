@@ -37,7 +37,7 @@ public final class Jinia extends AbstractNpcAI {
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
-	private Jinia() {
+	public Jinia() {
 		super(Jinia.class.getSimpleName(), "ai/npc");
 		addStartNpc(JINIA);
 		addFirstTalkId(JINIA);
@@ -82,9 +82,5 @@ public final class Jinia extends AbstractNpcAI {
 			}
 		}
 		return "32781-01.html";
-	}
-	
-	public static void main(String[] args) {
-		new Jinia();
 	}
 }

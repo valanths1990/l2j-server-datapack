@@ -49,7 +49,7 @@ public final class DwarfWarehouseChange2 extends AbstractNpcAI {
 	// Class
 	private static final int BOUNTY_HUNTER = 55;
 	
-	private DwarfWarehouseChange2() {
+	public DwarfWarehouseChange2() {
 		super(DwarfWarehouseChange2.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -116,9 +116,5 @@ public final class DwarfWarehouseChange2 extends AbstractNpcAI {
 			htmltext = "30511-07.htm"; // fnClassMismatch
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new DwarfWarehouseChange2();
 	}
 }

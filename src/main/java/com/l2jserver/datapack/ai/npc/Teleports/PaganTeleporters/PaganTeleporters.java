@@ -52,7 +52,7 @@ public final class PaganTeleporters extends AbstractNpcAI {
 	private static final int FADED_VISITORS_MARK = 8065;
 	private static final int PAGANS_MARK = 8067;
 	
-	private PaganTeleporters() {
+	public PaganTeleporters() {
 		super(PaganTeleporters.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -116,9 +116,5 @@ public final class PaganTeleporters extends AbstractNpcAI {
 			}
 		}
 		return super.onTalk(npc, player);
-	}
-	
-	public static void main(String[] args) {
-		new PaganTeleporters();
 	}
 }

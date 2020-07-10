@@ -40,7 +40,7 @@ public class BlackJudge extends AbstractNpcAI {
 	};
 	// @formatter:on
 	
-	private BlackJudge() {
+	public BlackJudge() {
 		super(BlackJudge.class.getSimpleName(), "ai/npc");
 		addStartNpc(BLACK_JUDGE);
 		addTalkId(BLACK_JUDGE);
@@ -75,9 +75,5 @@ public class BlackJudge extends AbstractNpcAI {
 			}
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new BlackJudge();
 	}
 }

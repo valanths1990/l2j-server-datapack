@@ -79,13 +79,15 @@ public final class GraciaLoader {
 	};
 	
 	public static void main(String[] args) {
-		LOG.info("Loading Gracia scripts...");
-		for (Class<?> script : SCRIPTS) {
+		int n = 0;
+		for (var script : SCRIPTS) {
 			try {
 				script.getDeclaredConstructor().newInstance();
+				n++;
 			} catch (Exception ex) {
 				LOG.error("Failed loading {}!", script.getSimpleName(), ex);
 			}
 		}
+		LOG.info("Loaded {} Gracia scripts.", n);
 	}
 }

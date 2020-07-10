@@ -82,7 +82,7 @@ public final class VarkaSilenosSupport extends AbstractNpcAI {
 		BUFF.put(8, new BuffsData(4357, 6)); // Haste: Requires 6 Nepenthese Seeds
 	}
 	
-	private VarkaSilenosSupport() {
+	public VarkaSilenosSupport() {
 		super(VarkaSilenosSupport.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(ASHAS, NARAN, UDAN, DIYABU, HAGOS, SHIKON, TERANU);
 		addTalkId(UDAN, HAGOS, TERANU);
@@ -180,9 +180,5 @@ public final class VarkaSilenosSupport extends AbstractNpcAI {
 				break;
 		}
 		return htmltext;
-	}
-	
-	public static void main(String args[]) {
-		new VarkaSilenosSupport();
 	}
 }

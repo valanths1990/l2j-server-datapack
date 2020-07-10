@@ -96,10 +96,6 @@ public final class Selina extends AbstractNpcAI {
 		return super.onSpellFinished(npc, player, skill);
 	}
 	
-	public static void main(String[] args) {
-		new Selina();
-	}
-	
 	private static class BuffHolder extends SkillHolder {
 		private final int _cost;
 		

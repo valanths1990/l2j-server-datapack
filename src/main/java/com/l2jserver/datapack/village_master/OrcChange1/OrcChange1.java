@@ -44,7 +44,7 @@ public final class OrcChange1 extends AbstractNpcAI {
 	private static final int KHAVATARI_TOTEM = 1615;
 	private static final int MASK_OF_MEDIUM = 1631;
 	
-	private OrcChange1() {
+	public OrcChange1() {
 		super(OrcChange1.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -179,9 +179,5 @@ public final class OrcChange1 extends AbstractNpcAI {
 			htmltext = npc.getId() + "-23.htm"; // fnClassMismatch
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new OrcChange1();
 	}
 }

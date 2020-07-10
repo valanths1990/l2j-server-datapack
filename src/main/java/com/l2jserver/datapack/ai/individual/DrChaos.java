@@ -40,7 +40,7 @@ public final class DrChaos extends Quest {
 	private static final Location PLAYER_TELEPORT = new Location(94832, -112624, -3304);
 	private static final Location NPC_LOCATION = new Location(-113091, -243942, -15536);
 	
-	private DrChaos() {
+	public DrChaos() {
 		// TODO extends AbstractNpcAI
 		super(-1, "Doctor Chaos", "ai/individual");
 		addFirstTalkId(DR_CHAOS);
@@ -105,9 +105,5 @@ public final class DrChaos extends Quest {
 			this.startQuestTimer("1", 3000, npc, player);
 		}
 		return "";
-	}
-	
-	public static void main(String[] args) {
-		new DrChaos();
 	}
 }

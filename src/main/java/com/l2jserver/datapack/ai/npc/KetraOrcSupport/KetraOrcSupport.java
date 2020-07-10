@@ -82,7 +82,7 @@ public final class KetraOrcSupport extends AbstractNpcAI {
 		BUFF.put(8, new BuffsData(4357, 6)); // Haste: Requires 6 Buffalo Horns
 	}
 	
-	private KetraOrcSupport() {
+	public KetraOrcSupport() {
 		super(KetraOrcSupport.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(KADUN, WAHKAN, ASEFA, ATAN, JAFF, JUMARA, KURFA);
 		addTalkId(ASEFA, KURFA, JAFF);
@@ -180,9 +180,5 @@ public final class KetraOrcSupport extends AbstractNpcAI {
 				break;
 		}
 		return htmltext;
-	}
-	
-	public static void main(String args[]) {
-		new KetraOrcSupport();
 	}
 }

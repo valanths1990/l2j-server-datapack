@@ -38,7 +38,7 @@ public class Rignos extends AbstractNpcAI {
 	// Misc
 	private static final int MIN_LV = 78;
 	
-	private Rignos() {
+	public Rignos() {
 		super(Rignos.class.getSimpleName(), "ai/npc");
 		addStartNpc(RIGNOS);
 		addTalkId(RIGNOS);
@@ -88,9 +88,5 @@ public class Rignos extends AbstractNpcAI {
 			htmltext = "32349-01.html";
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new Rignos();
 	}
 }

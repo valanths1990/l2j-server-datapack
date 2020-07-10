@@ -35,7 +35,7 @@ public final class ElrokiTeleporters extends AbstractNpcAI {
 	private static final Location TELEPORT_ORAHOCIN = new Location(5171, -1889, -3165);
 	private static final Location TELEPORT_GARIACHIN = new Location(7651, -5416, -3155);
 	
-	private ElrokiTeleporters() {
+	public ElrokiTeleporters() {
 		super(ElrokiTeleporters.class.getSimpleName(), "ai/npc/Teleports");
 		addFirstTalkId(ORAHOCHIN, GARIACHIN);
 		addStartNpc(ORAHOCHIN, GARIACHIN);
@@ -50,9 +50,5 @@ public final class ElrokiTeleporters extends AbstractNpcAI {
 			return npc.getId() + "-no.html";
 		}
 		return super.onTalk(npc, talker);
-	}
-	
-	public static void main(String[] args) {
-		new ElrokiTeleporters();
 	}
 }

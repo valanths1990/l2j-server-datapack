@@ -35,7 +35,7 @@ public final class FreyasSteward extends AbstractNpcAI {
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
-	private FreyasSteward() {
+	public FreyasSteward() {
 		super(FreyasSteward.class.getSimpleName(), "ai/npc");
 		addStartNpc(FREYAS_STEWARD);
 		addFirstTalkId(FREYAS_STEWARD);
@@ -54,9 +54,5 @@ public final class FreyasSteward extends AbstractNpcAI {
 			return null;
 		}
 		return "32029-1.html";
-	}
-	
-	public static void main(String[] args) {
-		new FreyasSteward();
 	}
 }

@@ -31,7 +31,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 public final class Gordon extends AbstractNpcAI {
 	private static final int GORDON = 29095;
 	
-	private Gordon() {
+	public Gordon() {
 		super(Gordon.class.getSimpleName(), "ai/individual");
 		addSpawnId(GORDON);
 		addSeeCreatureId(GORDON);
@@ -49,9 +49,5 @@ public final class Gordon extends AbstractNpcAI {
 	public String onSpawn(L2Npc npc) {
 		((L2Attackable) npc).setCanReturnToSpawnPoint(false);
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args) {
-		new Gordon();
 	}
 }

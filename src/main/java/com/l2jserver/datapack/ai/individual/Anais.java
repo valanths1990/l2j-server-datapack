@@ -47,7 +47,7 @@ public final class Anais extends AbstractNpcAI {
 	private L2Npc _current = null;
 	private int _pot = 0;
 	
-	private Anais() {
+	public Anais() {
 		super(Anais.class.getSimpleName(), "ai/individual");
 		addAttackId(ANAIS);
 		addSpawnId(DIVINE_BURNER);
@@ -139,10 +139,6 @@ public final class Anais extends AbstractNpcAI {
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * @see com.l2jserver.gameserver.model.quest.Quest#onSpawn(com.l2jserver.gameserver.model.actor.L2Npc)
-	 */
 	@Override
 	public String onSpawn(L2Npc npc) {
 		_divineBurners.add(npc);
@@ -160,9 +156,5 @@ public final class Anais extends AbstractNpcAI {
 			_current = null;
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new Anais();
 	}
 }

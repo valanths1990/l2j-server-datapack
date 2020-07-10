@@ -39,7 +39,7 @@ public class GhostChamberlainOfElmoreden extends AbstractNpcAI {
 	private static final Location FOUR_SEPULCHERS_LOC = new Location(178127, -84435, -7215);
 	private static final Location IMPERIAL_TOMB_LOC = new Location(186699, -75915, -2826);
 	
-	private GhostChamberlainOfElmoreden() {
+	public GhostChamberlainOfElmoreden() {
 		super(GhostChamberlainOfElmoreden.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(GHOST_CHAMBERLAIN_OF_ELMOREDEN_1, GHOST_CHAMBERLAIN_OF_ELMOREDEN_2);
 		addTalkId(GHOST_CHAMBERLAIN_OF_ELMOREDEN_1, GHOST_CHAMBERLAIN_OF_ELMOREDEN_2);
@@ -68,9 +68,5 @@ public class GhostChamberlainOfElmoreden extends AbstractNpcAI {
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
-	}
-	
-	public static void main(String[] args) {
-		new GhostChamberlainOfElmoreden();
 	}
 }

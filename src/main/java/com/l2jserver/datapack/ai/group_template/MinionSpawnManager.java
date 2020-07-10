@@ -405,7 +405,7 @@ public final class MinionSpawnManager extends AbstractNpcAI {
 		20767, // Timak Orc Troop Leader
 	};
 	
-	private MinionSpawnManager() {
+	public MinionSpawnManager() {
 		super(MinionSpawnManager.class.getSimpleName(), "ai/group_template");
 		
 		addSpawnId(NPC);
@@ -438,9 +438,5 @@ public final class MinionSpawnManager extends AbstractNpcAI {
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new MinionSpawnManager();
 	}
 }

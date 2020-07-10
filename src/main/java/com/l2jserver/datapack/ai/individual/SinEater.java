@@ -35,13 +35,13 @@ import com.l2jserver.gameserver.network.serverpackets.NpcSay;
 
 /**
  * Sin Eater AI.
- * @author St3eT.
+ * @author St3eT
  */
 public final class SinEater extends AbstractNpcAI {
 	// NPCs
 	private static final int SIN_EATER = 12564;
 	
-	private SinEater() {
+	public SinEater() {
 		super(SinEater.class.getSimpleName(), "ai/individual");
 		addSummonSpawnId(SIN_EATER);
 		addSummonTalkId(SIN_EATER);
@@ -130,9 +130,5 @@ public final class SinEater extends AbstractNpcAI {
 	
 	private void broadcastSummonSay(L2Summon summon, NpcStringId npcstringId) {
 		summon.broadcastPacket(new NpcSay(summon.getObjectId(), Say2.NPC_ALL, summon.getId(), npcstringId));
-	}
-	
-	public static void main(String[] args) {
-		new SinEater();
 	}
 }

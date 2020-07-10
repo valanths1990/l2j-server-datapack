@@ -80,7 +80,7 @@ public final class Orfen extends AbstractNpcAI {
 	private static final SkillHolder NPC_MORTAL_BLOW = new SkillHolder(4067, 4);
 	private static final SkillHolder ORFEN_HEAL = new SkillHolder(4516);
 	
-	private Orfen() {
+	public Orfen() {
 		super(Orfen.class.getSimpleName(), "ai/individual");
 		int[] mobs = {
 			ORFEN,
@@ -289,9 +289,5 @@ public final class Orfen extends AbstractNpcAI {
 			startQuestTimer("spawn_minion", 360000, npc, null);
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new Orfen();
 	}
 }

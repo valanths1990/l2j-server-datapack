@@ -52,7 +52,7 @@ public final class ElfHumanFighterChange1 extends AbstractNpcAI {
 	private static final int ELVEN_KNIGHT = 19;
 	private static final int ELVEN_SCOUT = 22;
 	
-	private ElfHumanFighterChange1() {
+	public ElfHumanFighterChange1() {
 		super(ElfHumanFighterChange1.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -262,9 +262,5 @@ public final class ElfHumanFighterChange1 extends AbstractNpcAI {
 			htmltext = npc.getId() + "-18.htm"; // fnClassMismatch
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new ElfHumanFighterChange1();
 	}
 }

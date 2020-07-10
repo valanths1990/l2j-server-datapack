@@ -116,7 +116,7 @@ public final class DragonValley extends AbstractNpcAI {
 		CLASS_POINTS.put(ClassId.windRider, 0.2);
 	}
 	
-	private DragonValley() {
+	public DragonValley() {
 		super(DragonValley.class.getSimpleName(), "ai/group_template");
 		addAttackId(SUMMON_NPC);
 		addKillId(SPOIL_REACT_MONSTER);
@@ -189,9 +189,5 @@ public final class DragonValley extends AbstractNpcAI {
 				}
 			}
 		}
-	}
-	
-	public static void main(String[] args) {
-		new DragonValley();
 	}
 }

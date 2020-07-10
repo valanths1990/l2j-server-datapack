@@ -30,13 +30,13 @@ import com.l2jserver.gameserver.network.clientpackets.Say2;
  * @author Gladicek
  */
 public final class CrimsonHatuOtis extends AbstractNpcAI {
-	// Npc
+	// NPC
 	private static final int CRIMSON_HATU_OTIS = 18558;
 	// Skills
 	private static final SkillHolder BOSS_SPINING_SLASH = new SkillHolder(4737);
 	private static final SkillHolder BOSS_HASTE = new SkillHolder(4175);
 	
-	private CrimsonHatuOtis() {
+	public CrimsonHatuOtis() {
 		super(CrimsonHatuOtis.class.getSimpleName(), "ai/individual");
 		addAttackId(CRIMSON_HATU_OTIS);
 		addKillId(CRIMSON_HATU_OTIS);
@@ -84,9 +84,5 @@ public final class CrimsonHatuOtis extends AbstractNpcAI {
 		cancelQuestTimer("SKILL", npc, null);
 		cancelQuestTimer("BUFF", npc, null);
 		return super.onKill(npc, player, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new CrimsonHatuOtis();
 	}
 }

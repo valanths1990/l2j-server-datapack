@@ -39,7 +39,7 @@ public final class TeleportWithCharm extends AbstractNpcAI {
 	private final static Location ORC_TELEPORT = new Location(-80826, 149775, -3043);
 	private final static Location DWARF_TELEPORT = new Location(-80826, 149775, -3043);
 	
-	private TeleportWithCharm() {
+	public TeleportWithCharm() {
 		super(TeleportWithCharm.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(WHIRPY, TAMIL);
 		addTalkId(WHIRPY, TAMIL);
@@ -68,9 +68,5 @@ public final class TeleportWithCharm extends AbstractNpcAI {
 			}
 		}
 		return super.onTalk(npc, player);
-	}
-	
-	public static void main(String[] args) {
-		new TeleportWithCharm();
 	}
 }

@@ -70,7 +70,7 @@ public final class TeleportToRaceTrack extends AbstractNpcAI {
 	// Player Variables
 	private static final String MONSTER_RETURN = "MONSTER_RETURN";
 	
-	private TeleportToRaceTrack() {
+	public TeleportToRaceTrack() {
 		super(TeleportToRaceTrack.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(RACE_MANAGER);
 		addStartNpc(TELEPORTERS.keySet());
@@ -95,9 +95,5 @@ public final class TeleportToRaceTrack extends AbstractNpcAI {
 			player.getVariables().set(MONSTER_RETURN, TELEPORTERS.get(npc.getId()));
 		}
 		return super.onTalk(npc, player);
-	}
-	
-	public static void main(String[] args) {
-		new TeleportToRaceTrack();
 	}
 }

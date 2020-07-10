@@ -75,7 +75,7 @@ public final class TeleportToFantasy extends AbstractNpcAI {
 	// Player Variables
 	private static final String FANTASY_RETURN = "FANTASY_RETURN";
 	
-	private TeleportToFantasy() {
+	public TeleportToFantasy() {
 		super(TeleportToFantasy.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(PADDIES);
 		addStartNpc(TELEPORTERS.keySet());
@@ -100,9 +100,5 @@ public final class TeleportToFantasy extends AbstractNpcAI {
 			player.getVariables().set(FANTASY_RETURN, String.valueOf(TELEPORTERS.get(npc.getId())));
 		}
 		return super.onTalk(npc, player);
-	}
-	
-	public static void main(String[] args) {
-		new TeleportToFantasy();
 	}
 }

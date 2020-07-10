@@ -43,7 +43,7 @@ public final class PrisonGuards extends AbstractNpcAI {
 	private static final SkillHolder STONE = new SkillHolder(4578); // Petrification
 	private static final SkillHolder SILENCE = new SkillHolder(4098, 9); // Silence
 	
-	private PrisonGuards() {
+	public PrisonGuards() {
 		super(PrisonGuards.class.getSimpleName(), "ai/group_template");
 		addAttackId(GUARD_HEAD, GUARD);
 		addSpawnId(GUARD_HEAD, GUARD);
@@ -125,9 +125,5 @@ public final class PrisonGuards extends AbstractNpcAI {
 			startQuestTimer("CHECK_HOME", 30000, npc, null);
 		}
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args) {
-		new PrisonGuards();
 	}
 }

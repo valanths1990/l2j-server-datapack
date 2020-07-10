@@ -166,7 +166,7 @@ public final class FeedableBeasts extends AbstractNpcAI {
 		}
 	}
 	
-	private FeedableBeasts() {
+	public FeedableBeasts() {
 		super(FeedableBeasts.class.getSimpleName(), "ai/group_template");
 		addKillId(FEEDABLE_BEASTS);
 		addSkillSeeId(FEEDABLE_BEASTS);
@@ -558,9 +558,5 @@ public final class FeedableBeasts extends AbstractNpcAI {
 			FEED_INFO.remove(npc.getObjectId());
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new FeedableBeasts();
 	}
 }

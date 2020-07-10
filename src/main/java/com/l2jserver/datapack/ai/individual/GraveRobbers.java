@@ -33,7 +33,7 @@ public final class GraveRobbers extends AbstractNpcAI {
 	private static final int GRAVE_ROBBER_SUMMONER = 22678;
 	private static final int GRAVE_ROBBER_MEGICIAN = 22679;
 	
-	private GraveRobbers() {
+	public GraveRobbers() {
 		super(GraveRobbers.class.getSimpleName(), "ai/individual");
 		addSpawnId(GRAVE_ROBBER_SUMMONER, GRAVE_ROBBER_MEGICIAN);
 	}
@@ -42,9 +42,5 @@ public final class GraveRobbers extends AbstractNpcAI {
 	public String onSpawn(L2Npc npc) {
 		spawnMinions(npc, "Privates" + getRandom(1, 2));
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args) {
-		new GraveRobbers();
 	}
 }

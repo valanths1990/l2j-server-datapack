@@ -82,7 +82,7 @@ public final class QueenAnt extends AbstractNpcAI {
 	private L2MonsterInstance _larva = null;
 	private final List<L2MonsterInstance> _nurses = new CopyOnWriteArrayList<>();
 	
-	private QueenAnt() {
+	public QueenAnt() {
 		super(QueenAnt.class.getSimpleName(), "ai/individual");
 		addSpawnId(MOBS);
 		addKillId(MOBS);
@@ -308,9 +308,5 @@ public final class QueenAnt extends AbstractNpcAI {
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new QueenAnt();
 	}
 }

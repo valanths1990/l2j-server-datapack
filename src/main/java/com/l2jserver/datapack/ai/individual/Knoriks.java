@@ -143,8 +143,4 @@ public class Knoriks extends AbstractNpcAI {
 		startQuestTimer("CORE_AI", 100, npc, null);
 		notifyEvent("CHECK_ROUTE", npc, null);
 	}
-	
-	public static void main(String[] args) {
-		new Knoriks();
-	}
 }

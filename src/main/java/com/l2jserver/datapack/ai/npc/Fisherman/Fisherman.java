@@ -131,8 +131,4 @@ public class Fisherman extends AbstractNpcAI {
 			}
 		}
 	}
-	
-	public static void main(String[] args) {
-		new Fisherman();
-	}
 }

@@ -136,7 +136,7 @@ public final class OracleTeleport extends AbstractNpcAI {
 	// Item
 	private static final int DIMENSIONAL_FRAGMENT = 7079;
 	
-	private OracleTeleport() {
+	public OracleTeleport() {
 		super(OracleTeleport.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(RIFT_POSTERS);
 		addStartNpc(TELEPORTERS);
@@ -313,9 +313,5 @@ public final class OracleTeleport extends AbstractNpcAI {
 			}
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new OracleTeleport();
 	}
 }

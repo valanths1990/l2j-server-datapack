@@ -45,7 +45,7 @@ public class FairyTrees extends AbstractNpcAI {
 	// Misc
 	private static final int MIN_DISTANCE = 1500;
 	
-	private FairyTrees() {
+	public FairyTrees() {
 		super(FairyTrees.class.getSimpleName(), "ai/group_template");
 		addKillId(MOBS);
 		addSpawnId(MOBS);
@@ -72,9 +72,5 @@ public class FairyTrees extends AbstractNpcAI {
 		npc.setIsNoRndWalk(true);
 		npc.setIsImmobilized(true);
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args) {
-		new FairyTrees();
 	}
 }

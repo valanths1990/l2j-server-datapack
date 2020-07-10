@@ -44,7 +44,7 @@ public final class SymbolMaker extends AbstractNpcAI {
 		31953, // Rankar
 	};
 	
-	private SymbolMaker() {
+	public SymbolMaker() {
 		super(SymbolMaker.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(NPCS);
 		addStartNpc(NPCS);
@@ -77,9 +77,5 @@ public final class SymbolMaker extends AbstractNpcAI {
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "symbol_maker.htm";
-	}
-	
-	public static void main(String[] args) {
-		new SymbolMaker();
 	}
 }

@@ -70,7 +70,7 @@ public final class SelMahumSquad extends AbstractNpcAI {
 	private static final int MAHUM_EFFECT_SLEEP = 2;
 	private static final int MAHUM_EFFECT_NONE = 3;
 	
-	private SelMahumSquad() {
+	public SelMahumSquad() {
 		super(SelMahumSquad.class.getSimpleName(), "ai/group_template");
 		
 		addAttackId(CHEF);
@@ -336,9 +336,5 @@ public final class SelMahumSquad extends AbstractNpcAI {
 			attacked.setRHandId(THS_Weapon);
 		}
 		// TODO: Check about i_quest0
-	}
-	
-	public static void main(String[] args) {
-		new SelMahumSquad();
 	}
 }

@@ -57,15 +57,13 @@ import com.l2jserver.datapack.hellbound.AI.Zones.TullyWorkshop.TullyWorkshop;
 import com.l2jserver.datapack.hellbound.Instances.DemonPrinceFloor.DemonPrinceFloor;
 import com.l2jserver.datapack.hellbound.Instances.RankuFloor.RankuFloor;
 import com.l2jserver.datapack.hellbound.Instances.UrbanArea.UrbanArea;
-import com.l2jserver.datapack.quests.Q00130_PathToHellbound.Q00130_PathToHellbound;
-import com.l2jserver.datapack.quests.Q00133_ThatsBloodyHot.Q00133_ThatsBloodyHot;
 import com.l2jserver.gameserver.handler.AdminCommandHandler;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
 import com.l2jserver.gameserver.handler.VoicedCommandHandler;
 
 /**
- * Hellbound class-loader.
+ * Hellbound loader.
  * @author Zoey76
  */
 public final class HellboundLoader {
@@ -112,29 +110,28 @@ public final class HellboundLoader {
 		DemonPrinceFloor.class,
 		UrbanArea.class,
 		RankuFloor.class,
-		// Quests
-		Q00130_PathToHellbound.class,
-		Q00133_ThatsBloodyHot.class,
 	};
 	
 	public static void main(String[] args) {
-		LOG.info("Loading Hellbound scripts...");
 		// Data
 		HellboundPointData.getInstance();
 		HellboundSpawns.getInstance();
 		// Engine
 		HellboundEngine.getInstance();
-		for (Class<?> script : SCRIPTS) {
+		int n = 0;
+		for (var clazz : SCRIPTS) {
 			try {
-				final Object instance = script.getDeclaredConstructor().newInstance();
-				if (instance instanceof IAdminCommandHandler) {
-					AdminCommandHandler.getInstance().registerHandler((IAdminCommandHandler) instance);
-				} else if (customs().hellboundStatus() && (instance instanceof IVoicedCommandHandler)) {
-					VoicedCommandHandler.getInstance().registerHandler((IVoicedCommandHandler) instance);
+				final var script = clazz.getDeclaredConstructor().newInstance();
+				if (script instanceof IAdminCommandHandler) {
+					AdminCommandHandler.getInstance().registerHandler((IAdminCommandHandler) script);
+				} else if (customs().hellboundStatus() && (script instanceof IVoicedCommandHandler)) {
+					VoicedCommandHandler.getInstance().registerHandler((IVoicedCommandHandler) script);
 				}
+				n++;
 			} catch (Exception ex) {
-				LOG.error("Failed loading {}!", script.getSimpleName(), ex);
+				LOG.error("Failed loading {}!", clazz.getSimpleName(), ex);
 			}
 		}
+		LOG.info("Loaded {} Hellbound scripts.", n);
 	}
 }

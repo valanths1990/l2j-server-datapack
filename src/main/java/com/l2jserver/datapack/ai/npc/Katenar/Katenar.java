@@ -36,7 +36,7 @@ public final class Katenar extends AbstractNpcAI {
 	// Item
 	private static final int SEALED_DOCUMENT = 9803;
 	
-	private Katenar() {
+	public Katenar() {
 		super(Katenar.class.getSimpleName(), "ai/npc");
 		addStartNpc(KATENAR);
 		addTalkId(KATENAR);
@@ -111,9 +111,5 @@ public final class Katenar extends AbstractNpcAI {
 			broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.I_AM_LATE);
 		}
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args) {
-		new Katenar();
 	}
 }

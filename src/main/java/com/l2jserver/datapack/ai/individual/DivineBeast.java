@@ -32,7 +32,7 @@ public final class DivineBeast extends AbstractNpcAI {
 	private static final int TRANSFORMATION_ID = 258;
 	private static final int CHECK_TIME = 2 * 1000;
 	
-	private DivineBeast() {
+	public DivineBeast() {
 		super(DivineBeast.class.getSimpleName(), "ai");
 		addSummonSpawnId(DIVINE_BEAST);
 	}
@@ -52,9 +52,5 @@ public final class DivineBeast extends AbstractNpcAI {
 		}
 		
 		return super.onAdvEvent(event, npc, player);
-	}
-	
-	public static void main(String[] args) {
-		new DivineBeast();
 	}
 }

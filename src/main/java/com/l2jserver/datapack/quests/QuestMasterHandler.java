@@ -152,8 +152,10 @@ import com.l2jserver.datapack.quests.Q00125_TheNameOfEvil1.Q00125_TheNameOfEvil1
 import com.l2jserver.datapack.quests.Q00126_TheNameOfEvil2.Q00126_TheNameOfEvil2;
 import com.l2jserver.datapack.quests.Q00128_PailakaSongOfIceAndFire.Q00128_PailakaSongOfIceAndFire;
 import com.l2jserver.datapack.quests.Q00129_PailakaDevilsLegacy.Q00129_PailakaDevilsLegacy;
+import com.l2jserver.datapack.quests.Q00130_PathToHellbound.Q00130_PathToHellbound;
 import com.l2jserver.datapack.quests.Q00131_BirdInACage.Q00131_BirdInACage;
 import com.l2jserver.datapack.quests.Q00132_MatrasCuriosity.Q00132_MatrasCuriosity;
+import com.l2jserver.datapack.quests.Q00133_ThatsBloodyHot.Q00133_ThatsBloodyHot;
 import com.l2jserver.datapack.quests.Q00134_TempleMissionary.Q00134_TempleMissionary;
 import com.l2jserver.datapack.quests.Q00135_TempleExecutor.Q00135_TempleExecutor;
 import com.l2jserver.datapack.quests.Q00136_MoreThanMeetsTheEye.Q00136_MoreThanMeetsTheEye;
@@ -522,6 +524,7 @@ import com.l2jserver.datapack.quests.Q10504_JewelOfAntharas.Q10504_JewelOfAnthar
 import com.l2jserver.datapack.quests.Q10505_JewelOfValakas.Q10505_JewelOfValakas;
 
 /**
+ * Quest loader.
  * @author NosBit
  */
 public class QuestMasterHandler {
@@ -649,8 +652,10 @@ public class QuestMasterHandler {
 		Q00126_TheNameOfEvil2.class,
 		Q00128_PailakaSongOfIceAndFire.class,
 		Q00129_PailakaDevilsLegacy.class,
+		Q00130_PathToHellbound.class,
 		Q00131_BirdInACage.class,
 		Q00132_MatrasCuriosity.class,
+		Q00133_ThatsBloodyHot.class,
 		Q00134_TempleMissionary.class,
 		Q00135_TempleExecutor.class,
 		Q00136_MoreThanMeetsTheEye.class,

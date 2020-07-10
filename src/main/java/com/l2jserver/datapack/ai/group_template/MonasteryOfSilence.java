@@ -68,7 +68,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI {
 		NpcStringId.WE_RAISE_OUR_BLADES_FOR_THE_GLORY_OF_SOLINA
 	};
 	
-	private MonasteryOfSilence() {
+	public MonasteryOfSilence() {
 		super(MonasteryOfSilence.class.getSimpleName(), "ai/group_template");
 		addSkillSeeId(DIVINITY_CLAN);
 		addAttackId(KNIGHT, CAPTAIN, GUIDE, SEEKER, ASCETIC);
@@ -237,9 +237,5 @@ public final class MonasteryOfSilence extends AbstractNpcAI {
 		npc.disableCoreAI(true);
 		startQuestTimer("TRAINING", 30000, npc, null, true);
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args) {
-		new MonasteryOfSilence();
 	}
 }

@@ -57,7 +57,7 @@ public final class Core extends AbstractNpcAI {
 	
 	private final List<L2Attackable> _minions = new CopyOnWriteArrayList<>();
 	
-	private Core() {
+	public Core() {
 		super(Core.class.getSimpleName(), "ai/individual");
 		registerMobs(CORE, DEATH_KNIGHT, DOOM_WRAITH, SUSCEPTOR);
 		
@@ -190,9 +190,5 @@ public final class Core extends AbstractNpcAI {
 			npc.setIsImmobilized(true);
 		}
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args) {
-		new Core();
 	}
 }

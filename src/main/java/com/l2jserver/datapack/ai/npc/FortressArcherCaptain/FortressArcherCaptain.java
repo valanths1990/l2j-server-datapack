@@ -52,7 +52,7 @@ public final class FortressArcherCaptain extends AbstractNpcAI {
 		36358, // Monastic Fortress
 	};
 	
-	private FortressArcherCaptain() {
+	public FortressArcherCaptain() {
 		super(FortressArcherCaptain.class.getSimpleName(), "ai/npc");
 		addStartNpc(ARCHER_CAPTAIN);
 		addFirstTalkId(ARCHER_CAPTAIN);
@@ -62,9 +62,5 @@ public final class FortressArcherCaptain extends AbstractNpcAI {
 	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final int fortOwner = npc.getFort().getOwnerClan() == null ? 0 : npc.getFort().getOwnerClan().getId();
 		return ((player.getClan() != null) && (player.getClanId() == fortOwner)) ? "FortressArcherCaptain.html" : "FortressArcherCaptain-01.html";
-	}
-	
-	public static void main(String[] args) {
-		new FortressArcherCaptain();
 	}
 }

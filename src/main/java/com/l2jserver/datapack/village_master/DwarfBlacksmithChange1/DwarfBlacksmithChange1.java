@@ -43,7 +43,7 @@ public final class DwarfBlacksmithChange1 extends AbstractNpcAI {
 	// Class
 	private static final int ARTISAN = 56;
 	
-	private DwarfBlacksmithChange1() {
+	public DwarfBlacksmithChange1() {
 		super(DwarfBlacksmithChange1.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -120,9 +120,5 @@ public final class DwarfBlacksmithChange1 extends AbstractNpcAI {
 			htmltext = npc.getId() + "-05.htm"; // fnClassMismatch
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new DwarfBlacksmithChange1();
 	}
 }

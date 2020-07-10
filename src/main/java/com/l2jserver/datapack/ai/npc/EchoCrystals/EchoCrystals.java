@@ -79,7 +79,7 @@ public final class EchoCrystals extends AbstractNpcAI {
 		SCORES.put(4418, new RewardInfo(4416, "17", "02", "03"));
 	}
 	
-	private EchoCrystals() {
+	public EchoCrystals() {
 		super(EchoCrystals.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPCs);
 		addTalkId(NPCs);
@@ -101,9 +101,5 @@ public final class EchoCrystals extends AbstractNpcAI {
 			}
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new EchoCrystals();
 	}
 }

@@ -37,7 +37,7 @@ public final class Survivor extends AbstractNpcAI {
 	// Location
 	private static final Location TELEPORT = new Location(-149406, 255247, -80);
 	
-	private Survivor() {
+	public Survivor() {
 		super(Survivor.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(SURVIVOR);
 		addTalkId(SURVIVOR);
@@ -62,9 +62,5 @@ public final class Survivor extends AbstractNpcAI {
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player) {
 		return "32632-1.htm";
-	}
-	
-	public static void main(String[] args) {
-		new Survivor();
 	}
 }

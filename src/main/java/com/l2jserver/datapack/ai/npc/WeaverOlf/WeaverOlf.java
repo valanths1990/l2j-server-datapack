@@ -144,7 +144,7 @@ public final class WeaverOlf extends AbstractNpcAI {
 		}
 	};
 	
-	private WeaverOlf() {
+	public WeaverOlf() {
 		super(WeaverOlf.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPCs);
 		addTalkId(NPCs);
@@ -202,9 +202,5 @@ public final class WeaverOlf extends AbstractNpcAI {
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player) {
 		return npc.getId() + "-1.htm";
-	}
-	
-	public static void main(String[] args) {
-		new WeaverOlf();
 	}
 }

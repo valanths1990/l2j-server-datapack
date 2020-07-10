@@ -130,7 +130,7 @@ public class VarkaKetra extends AbstractNpcAI {
 		Q00616_MagicalPowerOfFirePart2.class.getSimpleName()
 	};
 	
-	private VarkaKetra() {
+	public VarkaKetra() {
 		super(VarkaKetra.class.getSimpleName(), "ai/group_template");
 		addKillId(KETRA);
 		addKillId(VARKA);
@@ -184,9 +184,5 @@ public class VarkaKetra extends AbstractNpcAI {
 			return !hasAtLeastOneQuestItem(player, KETRA_MARKS);
 		}
 		return !hasAtLeastOneQuestItem(player, VARKA_MARKS);
-	}
-	
-	public static void main(String[] args) {
-		new VarkaKetra();
 	}
 }

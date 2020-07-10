@@ -52,7 +52,7 @@ public final class PlainsOfDion extends AbstractNpcAI {
 		NpcStringId.WHAT_ARE_YOU_LOOKING_AT
 	};
 	
-	private PlainsOfDion() {
+	public PlainsOfDion() {
 		super(PlainsOfDion.class.getSimpleName(), "ai/group_template");
 		addAttackId(DELU_LIZARDMEN);
 	}
@@ -77,9 +77,5 @@ public final class PlainsOfDion extends AbstractNpcAI {
 			npc.setScriptValue(1);
 		}
 		return super.onAttack(npc, player, damage, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new PlainsOfDion();
 	}
 }

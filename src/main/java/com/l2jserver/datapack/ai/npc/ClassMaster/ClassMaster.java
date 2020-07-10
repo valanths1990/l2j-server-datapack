@@ -54,7 +54,7 @@ public final class ClassMaster extends AbstractNpcAI {
 	// Vars
 	private static final int CUSTOM_EVENT_ID = 1001;
 	
-	private ClassMaster() {
+	public ClassMaster() {
 		super(ClassMaster.class.getSimpleName(), "ai/npc");
 		addStartNpc(MR_CAT, MISS_QUEEN);
 		addFirstTalkId(MR_CAT, MISS_QUEEN);
@@ -448,9 +448,5 @@ public final class ClassMaster extends AbstractNpcAI {
 			sb.append("</td></tr>");
 		}
 		return sb.toString();
-	}
-	
-	public static void main(String[] args) {
-		new ClassMaster();
 	}
 }

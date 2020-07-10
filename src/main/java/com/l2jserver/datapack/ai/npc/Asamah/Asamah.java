@@ -44,7 +44,6 @@ public final class Asamah extends AbstractNpcAI {
 		if (event.equals("32115-03.htm") || event.equals("32115-04.htm")) {
 			htmltext = event;
 		}
-		
 		return htmltext;
 	}
 	
@@ -52,9 +51,5 @@ public final class Asamah extends AbstractNpcAI {
 	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final QuestState st = player.getQuestState(Q00111_ElrokianHuntersProof.class.getSimpleName());
 		return ((st != null) && (st.isCompleted())) ? "32115-01.htm" : "32115-02.htm";
-	}
-	
-	public static void main(String[] args) {
-		new Asamah();
 	}
 }

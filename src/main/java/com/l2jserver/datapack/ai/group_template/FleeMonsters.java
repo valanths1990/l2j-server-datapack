@@ -51,7 +51,7 @@ public final class FleeMonsters extends AbstractNpcAI {
 	// Misc
 	private static final int FLEE_DISTANCE = 500;
 	
-	private FleeMonsters() {
+	public FleeMonsters() {
 		super(FleeMonsters.class.getSimpleName(), "ai/group_template");
 		addAttackId(MOBS);
 	}
@@ -71,9 +71,5 @@ public final class FleeMonsters extends AbstractNpcAI {
 		final Location destination = GeoData.getInstance().moveCheck(npc.getX(), npc.getY(), npc.getZ(), posX, posY, posZ, attacker.getInstanceId());
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
 		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new FleeMonsters();
 	}
 }

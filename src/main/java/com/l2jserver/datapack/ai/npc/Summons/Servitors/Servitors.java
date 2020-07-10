@@ -80,7 +80,7 @@ public final class Servitors extends AbstractNpcAI {
 		MONSTERS.put(SILHOUETTE_TILFO, Arrays.asList(CRYSTAL_OF_STARTING_6TH, CRYSTAL_OF_INPROGRESS_6TH, CRYSTAL_OF_DEFEAT_6TH));
 	}
 	
-	private Servitors() {
+	public Servitors() {
 		super(Servitors.class.getSimpleName(), "ai/npc/Summons");
 	}
 	
@@ -118,9 +118,5 @@ public final class Servitors extends AbstractNpcAI {
 				takeItems(master, items.get(0), -1); // Crystal of Starting
 			}
 		}
-	}
-	
-	public static void main(String[] args) {
-		new Servitors();
 	}
 }

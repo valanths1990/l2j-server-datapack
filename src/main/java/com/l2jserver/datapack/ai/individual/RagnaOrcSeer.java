@@ -28,7 +28,7 @@ import com.l2jserver.gameserver.model.actor.L2Npc;
 public final class RagnaOrcSeer extends AbstractNpcAI {
 	private static final int RAGNA_ORC_SEER = 22697;
 	
-	private RagnaOrcSeer() {
+	public RagnaOrcSeer() {
 		super(RagnaOrcSeer.class.getSimpleName(), "ai/individual");
 		addSpawnId(RAGNA_ORC_SEER);
 	}
@@ -37,9 +37,5 @@ public final class RagnaOrcSeer extends AbstractNpcAI {
 	public String onSpawn(L2Npc npc) {
 		spawnMinions(npc, "Privates" + getRandom(1, 2));
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args) {
-		new RagnaOrcSeer();
 	}
 }

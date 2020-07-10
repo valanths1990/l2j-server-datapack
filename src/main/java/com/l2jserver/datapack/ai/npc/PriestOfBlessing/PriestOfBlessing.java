@@ -82,7 +82,7 @@ public final class PriestOfBlessing extends AbstractNpcAI {
 		new Location(116972, 77255, -2688, 41951)
 	};
 	
-	private PriestOfBlessing() {
+	public PriestOfBlessing() {
 		super(PriestOfBlessing.class.getSimpleName(), "ai/npc");
 		addStartNpc(PRIEST);
 		addFirstTalkId(PRIEST);
@@ -177,9 +177,5 @@ public final class PriestOfBlessing extends AbstractNpcAI {
 			index = 6;
 		}
 		return index;
-	}
-	
-	public static void main(String[] args) {
-		new PriestOfBlessing();
 	}
 }

@@ -69,8 +69,4 @@ public class NecromancerOfTheValley extends AbstractNpcAI {
 		}
 		return super.onSpellFinished(npc, player, skill);
 	}
-	
-	public static void main(String[] args) {
-		new NecromancerOfTheValley();
-	}
 }

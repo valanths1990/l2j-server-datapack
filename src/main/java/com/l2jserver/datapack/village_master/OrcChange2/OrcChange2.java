@@ -57,7 +57,7 @@ public final class OrcChange2 extends AbstractNpcAI {
 	private static final int OVERLORD = 51;
 	private static final int WARCRYER = 52;
 	
-	private OrcChange2() {
+	public OrcChange2() {
 		super(OrcChange2.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -195,9 +195,5 @@ public final class OrcChange2 extends AbstractNpcAI {
 			htmltext = "30513-18.htm"; // fnClassMismatch
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new OrcChange2();
 	}
 }

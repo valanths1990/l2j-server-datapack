@@ -35,7 +35,7 @@ public final class Sirra extends AbstractNpcAI {
 	private static final int FREYA_INSTID = 139;
 	private static final int FREYA_HARD_INSTID = 144;
 	
-	private Sirra() {
+	public Sirra() {
 		super(Sirra.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(SIRRA);
 	}
@@ -50,9 +50,5 @@ public final class Sirra extends AbstractNpcAI {
 			return (world.isStatus(0)) ? "32762-hard.html" : "32762-hardfight.html";
 		}
 		return "32762.html";
-	}
-	
-	public static void main(String[] args) {
-		new Sirra();
 	}
 }

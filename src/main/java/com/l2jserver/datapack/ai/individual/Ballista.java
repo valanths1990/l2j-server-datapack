@@ -62,7 +62,7 @@ public final class Ballista extends AbstractNpcAI {
 	// Misc
 	private static final int MIN_CLAN_LV = 5;
 	
-	private Ballista() {
+	public Ballista() {
 		super(Ballista.class.getSimpleName(), "ai/individual");
 		addSkillSeeId(BALLISTA);
 		addSpawnId(BALLISTA);
@@ -87,9 +87,5 @@ public final class Ballista extends AbstractNpcAI {
 		npc.disableCoreAI(true);
 		npc.setIsMortal(false);
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args) {
-		new Ballista();
 	}
 }

@@ -41,7 +41,7 @@ public final class SteelCitadelTeleport extends AbstractNpcAI {
 	// Location
 	private static final Location TELEPORT_CITADEL = new Location(16342, 209557, -9352);
 	
-	private SteelCitadelTeleport() {
+	public SteelCitadelTeleport() {
 		super(SteelCitadelTeleport.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(NAIA_CUBE);
 		addTalkId(NAIA_CUBE);
@@ -81,9 +81,5 @@ public final class SteelCitadelTeleport extends AbstractNpcAI {
 			}
 		}
 		return null;
-	}
-	
-	public static void main(String[] args) {
-		new SteelCitadelTeleport();
 	}
 }

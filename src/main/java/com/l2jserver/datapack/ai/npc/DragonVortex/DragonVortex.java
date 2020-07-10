@@ -49,7 +49,7 @@ public final class DragonVortex extends AbstractNpcAI {
 	private static final Location SPOT_3 = new Location(121637, 113657, -3792);
 	private static final Location SPOT_4 = new Location(109346, 111849, -3040);
 	
-	private DragonVortex() {
+	public DragonVortex() {
 		super(DragonVortex.class.getSimpleName(), "ai/npc");
 		addStartNpc(DRAGON_VORTEX);
 		addFirstTalkId(DRAGON_VORTEX);
@@ -118,9 +118,5 @@ public final class DragonVortex extends AbstractNpcAI {
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
-	}
-	
-	public static void main(String[] args) {
-		new DragonVortex();
 	}
 }

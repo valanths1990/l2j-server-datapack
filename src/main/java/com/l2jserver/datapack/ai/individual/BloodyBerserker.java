@@ -130,8 +130,4 @@ public class BloodyBerserker extends AbstractNpcAI {
 	public void onMoveFinished(L2Npc npc) {
 		startQuestTimer("CORE_AI", 100, npc, null);
 	}
-	
-	public static void main(String[] args) {
-		new BloodyBerserker();
-	}
 }

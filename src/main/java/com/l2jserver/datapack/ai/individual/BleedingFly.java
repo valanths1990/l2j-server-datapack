@@ -113,8 +113,4 @@ public class BleedingFly extends AbstractNpcAI {
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
-	
-	public static void main(String[] args) {
-		new BleedingFly();
-	}
 }

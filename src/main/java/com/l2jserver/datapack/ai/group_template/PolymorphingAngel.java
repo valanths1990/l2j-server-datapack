@@ -39,7 +39,7 @@ public final class PolymorphingAngel extends AbstractNpcAI {
 		ANGELSPAWNS.put(21070, 21071);
 	}
 	
-	private PolymorphingAngel() {
+	public PolymorphingAngel() {
 		super(PolymorphingAngel.class.getSimpleName(), "ai/group_template");
 		addKillId(ANGELSPAWNS.keySet());
 	}
@@ -49,9 +49,5 @@ public final class PolymorphingAngel extends AbstractNpcAI {
 		final L2Attackable newNpc = (L2Attackable) addSpawn(ANGELSPAWNS.get(npc.getId()), npc);
 		newNpc.setRunning();
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new PolymorphingAngel();
 	}
 }

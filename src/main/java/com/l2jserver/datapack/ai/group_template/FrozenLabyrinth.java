@@ -34,7 +34,7 @@ public final class FrozenLabyrinth extends AbstractNpcAI {
 	private static final int LOST_BUFFALO = 22093;
 	private static final int FROST_BUFFALO = 22094;
 	
-	private FrozenLabyrinth() {
+	public FrozenLabyrinth() {
 		super(FrozenLabyrinth.class.getSimpleName(), "ai/group_template");
 		addAttackId(PRONGHORN, FROST_BUFFALO);
 	}
@@ -56,9 +56,5 @@ public final class FrozenLabyrinth extends AbstractNpcAI {
 			npc.deleteMe();
 		}
 		return super.onAttack(npc, attacker, damage, isSummon, skill);
-	}
-	
-	public static void main(String[] args) {
-		new FrozenLabyrinth();
 	}
 }

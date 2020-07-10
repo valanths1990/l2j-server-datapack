@@ -78,7 +78,7 @@ public final class RangeGuard extends AbstractNpcAI {
 	// Misc
 	private static final int MIN_DISTANCE = 150;
 	
-	private RangeGuard() {
+	public RangeGuard() {
 		super(RangeGuard.class.getSimpleName(), "ai/group_template");
 		
 		for (L2NpcTemplate template : NpcData.getInstance().getAllNpcOfClassType("L2Monster")) {
@@ -103,9 +103,5 @@ public final class RangeGuard extends AbstractNpcAI {
 			npc.setTarget(target);
 		}
 		return super.onAttack(npc, attacker, damage, isSummon, skill);
-	}
-	
-	public static void main(String[] args) {
-		new RangeGuard();
 	}
 }

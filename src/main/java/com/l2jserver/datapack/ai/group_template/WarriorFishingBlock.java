@@ -116,8 +116,4 @@ public final class WarriorFishingBlock extends AbstractNpcAI {
 		startQuestTimer("SPAWN", 2000, npc, null);
 		return super.onSpawn(npc);
 	}
-	
-	public static void main(String[] args) {
-		new WarriorFishingBlock();
-	}
 }

@@ -62,8 +62,4 @@ public final class NonTalkingNpcs extends AbstractNpcAI {
 		npc.setTalking(false);
 		return super.onSpawn(npc);
 	}
-	
-	public static void main(String[] args) {
-		new NonTalkingNpcs();
-	}
 }

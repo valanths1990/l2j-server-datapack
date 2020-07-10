@@ -57,7 +57,7 @@ public final class SilentValley extends AbstractNpcAI {
 		20973, // Forgotten Ancient People
 	};
 	
-	private SilentValley() {
+	public SilentValley() {
 		super(SilentValley.class.getSimpleName(), "ai/group_template");
 		addAttackId(MOBS);
 		addAttackId(CHEST, GUARD1, GUARD2);
@@ -171,9 +171,5 @@ public final class SilentValley extends AbstractNpcAI {
 			}
 		}
 		return super.onEventReceived(eventName, sender, receiver, reference);
-	}
-	
-	public static void main(String[] args) {
-		new SilentValley();
 	}
 }

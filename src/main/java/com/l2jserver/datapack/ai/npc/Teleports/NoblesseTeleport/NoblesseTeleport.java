@@ -53,7 +53,7 @@ public final class NoblesseTeleport extends AbstractNpcAI {
 		32163
 	};
 	
-	private NoblesseTeleport() {
+	public NoblesseTeleport() {
 		super(NoblesseTeleport.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(NPCs);
 		addTalkId(NPCs);
@@ -74,9 +74,5 @@ public final class NoblesseTeleport extends AbstractNpcAI {
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player) {
 		return player.isNoble() ? "nobleteleporter.htm" : "nobleteleporter-no.htm";
-	}
-	
-	public static void main(String[] args) {
-		new NoblesseTeleport();
 	}
 }

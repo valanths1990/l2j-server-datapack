@@ -66,7 +66,7 @@ public final class MercenaryCaptain extends AbstractNpcAI {
 	private static final int MIN_LEVEL = 40;
 	private static final int CLASS_LEVEL = 2;
 	
-	private MercenaryCaptain() {
+	public MercenaryCaptain() {
 		super(MercenaryCaptain.class.getSimpleName(), "ai/npc");
 		for (int id : NPCS.keySet()) {
 			addStartNpc(id);
@@ -183,9 +183,5 @@ public final class MercenaryCaptain extends AbstractNpcAI {
 			htmltext = (npc.getCastle().getSiege().isInProgress() || TerritoryWarManager.getInstance().isTWInProgress()) ? "36481-06.html" : npc.getId() + "-01.html";
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new MercenaryCaptain();
 	}
 }

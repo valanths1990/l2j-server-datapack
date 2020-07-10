@@ -31,11 +31,11 @@ public class Sandstorms extends AbstractNpcAI {
 	// NPCs
 	private static final int SANDSTORM = 32350;
 	// Skills
-	private static final SkillHolder GUST = new SkillHolder(5435); // Gust
+	private static final SkillHolder GUST = new SkillHolder(5435);
 	
 	public Sandstorms() {
 		super(Sandstorms.class.getSimpleName(), "ai/group_template");
-		addAggroRangeEnterId(SANDSTORM); // Sandstorm
+		addAggroRangeEnterId(SANDSTORM);
 	}
 	
 	@Override
@@ -43,9 +43,5 @@ public class Sandstorms extends AbstractNpcAI {
 		npc.setTarget(player);
 		npc.doCast(GUST);
 		return super.onAggroRangeEnter(npc, player, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new Sandstorms();
 	}
 }

@@ -29,7 +29,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 public final class NpcBuffers extends AbstractNpcAI {
 	private final NpcBuffersData _npcBuffers = new NpcBuffersData();
 	
-	private NpcBuffers() {
+	public NpcBuffers() {
 		super(NpcBuffers.class.getSimpleName(), "ai/npc");
 		
 		for (int npcId : _npcBuffers.getNpcBufferIds()) {
@@ -52,9 +52,5 @@ public final class NpcBuffers extends AbstractNpcAI {
 			ThreadPoolManager.getInstance().scheduleAi(new NpcBufferAI(npc, skill), skill.getInitialDelay());
 		}
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args) {
-		new NpcBuffers();
 	}
 }

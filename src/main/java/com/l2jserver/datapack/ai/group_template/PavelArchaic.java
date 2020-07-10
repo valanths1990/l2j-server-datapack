@@ -33,7 +33,7 @@ public final class PavelArchaic extends AbstractNpcAI {
 	private static final int PINCER_GOLEM3 = 22803; // Cruel Pincer Golem
 	private static final int JACKHAMMER_GOLEM = 22804; // Horrifying Jackhammer Golem
 	
-	private PavelArchaic() {
+	public PavelArchaic() {
 		super(PavelArchaic.class.getSimpleName(), "ai/group_template");
 		addKillId(SAFETY_DEVICE, PINCER_GOLEM, JACKHAMMER_GOLEM);
 	}
@@ -48,9 +48,5 @@ public final class PavelArchaic extends AbstractNpcAI {
 			addAttackDesire(golem2, killer);
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new PavelArchaic();
 	}
 }

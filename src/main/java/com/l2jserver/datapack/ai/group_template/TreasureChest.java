@@ -825,7 +825,7 @@ public final class TreasureChest extends AbstractNpcAI {
 			new ItemChanceHolder(21749, 29, 1))); // Great Adventurer's Treasure Sack
 	}
 	
-	private TreasureChest() {
+	public TreasureChest() {
 		super(TreasureChest.class.getSimpleName(), "ai/group_template");
 		
 		addSpawnId(DROPS.keySet());
@@ -892,9 +892,5 @@ public final class TreasureChest extends AbstractNpcAI {
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new TreasureChest();
 	}
 }

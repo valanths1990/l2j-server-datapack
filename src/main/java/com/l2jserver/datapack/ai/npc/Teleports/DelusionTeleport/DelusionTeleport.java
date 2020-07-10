@@ -63,7 +63,7 @@ public final class DelusionTeleport extends AbstractNpcAI {
 		RETURN_LOCATIONS.put(17, new Location(85991, -142234, -1336)); // Schuttgart
 	}
 	
-	private DelusionTeleport() {
+	public DelusionTeleport() {
 		super(DelusionTeleport.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -83,9 +83,5 @@ public final class DelusionTeleport extends AbstractNpcAI {
 			player.getVariables().remove(DELUSION_RETURN);
 		}
 		return super.onTalk(npc, player);
-	}
-	
-	public static void main(String[] args) {
-		new DelusionTeleport();
 	}
 }

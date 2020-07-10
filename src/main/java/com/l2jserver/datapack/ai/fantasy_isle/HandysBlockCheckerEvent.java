@@ -49,8 +49,14 @@ public class HandysBlockCheckerEvent extends Quest {
 	
 	public HandysBlockCheckerEvent() {
 		super(-1, HandysBlockCheckerEvent.class.getSimpleName(), "Handy's Block Checker Event");
+		if (!general().enableBlockCheckerEvent()) {
+			LOG.info("Handy's Block Checker event is disabled.");
+			return;
+		}
+		
 		addFirstTalkId(A_MANAGER_1, A_MANAGER_2, A_MANAGER_3, A_MANAGER_4);
 		HandysBlockCheckerManager.getInstance().startUpParticipantsQueue();
+		LOG.info("Loaded Handy's Block Checker event.");
 	}
 	
 	@Override
@@ -92,14 +98,5 @@ public class HandysBlockCheckerEvent extends Quest {
 	
 	private boolean eventIsFull(int arena) {
 		return HandysBlockCheckerManager.getInstance().getHolder(arena).getAllPlayers().size() == 12;
-	}
-	
-	public static void main(String[] args) {
-		if (general().enableBlockCheckerEvent()) {
-			new HandysBlockCheckerEvent();
-			LOG.info("Handy's Block Checker event is enabled.");
-		} else {
-			LOG.info("Handy's Block Checker event is disabled.");
-		}
 	}
 }

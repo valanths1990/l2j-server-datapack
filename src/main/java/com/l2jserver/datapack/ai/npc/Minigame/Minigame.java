@@ -59,7 +59,7 @@ public final class Minigame extends AbstractNpcAI {
 	
 	private final List<MinigameRoom> _rooms = new ArrayList<>(2);
 	
-	private Minigame() {
+	public Minigame() {
 		super(Minigame.class.getSimpleName(), "ai/npc");
 		addStartNpc(SUMIEL);
 		addFirstTalkId(SUMIEL);
@@ -468,9 +468,5 @@ public final class Minigame extends AbstractNpcAI {
 			setAttemptNumber(1);
 			setCurrentPot(0);
 		}
-	}
-	
-	public static void main(String[] args) {
-		new Minigame();
 	}
 }

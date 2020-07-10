@@ -79,7 +79,7 @@ public final class SubclassCertification extends AbstractNpcAI {
 	
 	private static final int MIN_LVL = 65;
 	
-	private SubclassCertification() {
+	public SubclassCertification() {
 		super(SubclassCertification.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -190,7 +190,6 @@ public final class SubclassCertification extends AbstractNpcAI {
 		} else if (player.isInCategory(CategoryType.SUB_GROUP_ENCHANTER)) {
 			return 6;
 		}
-		
 		return -1;
 	}
 	
@@ -222,9 +221,5 @@ public final class SubclassCertification extends AbstractNpcAI {
 			htmltext = "GetAbility.html";
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new SubclassCertification();
 	}
 }

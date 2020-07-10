@@ -39,7 +39,7 @@ public final class Remnants extends AbstractNpcAI {
 	// TODO: Find retail strings.
 	// private static final String MSG = "The holy water affects Remnants Ghost. You have freed his soul.";
 	// private static final String MSG_DEREK = "The holy water affects Derek. You have freed his soul.";
-	private Remnants() {
+	public Remnants() {
 		super(Remnants.class.getSimpleName(), "ai/group_template");
 		addSpawnId(NPCS);
 		addSkillSeeId(NPCS);
@@ -75,9 +75,5 @@ public final class Remnants extends AbstractNpcAI {
 			}
 		}
 		return super.onSkillSee(npc, caster, skill, targets, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new Remnants();
 	}
 }

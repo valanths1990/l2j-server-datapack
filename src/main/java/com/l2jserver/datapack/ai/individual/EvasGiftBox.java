@@ -37,7 +37,7 @@ public final class EvasGiftBox extends AbstractNpcAI {
 	private static final ItemHolder CORAL = new ItemHolder(9692, 1); // Red Coral
 	private static final ItemHolder CRYSTAL = new ItemHolder(9693, 1); // Crystal Fragment
 	
-	private EvasGiftBox() {
+	public EvasGiftBox() {
 		super(EvasGiftBox.class.getSimpleName(), "ai/individual");
 		addKillId(BOX);
 		addSpawnId(BOX);
@@ -62,9 +62,5 @@ public final class EvasGiftBox extends AbstractNpcAI {
 		npc.setIsNoRndWalk(true);
 		((L2Attackable) npc).setOnKillDelay(0);
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args) {
-		new EvasGiftBox();
 	}
 }

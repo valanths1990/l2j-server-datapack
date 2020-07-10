@@ -66,7 +66,7 @@ public final class KamaelChange2 extends AbstractNpcAI {
 	private static final int KAMAEL_INQUISITOR_MARK = 9782;
 	private static final int SOUL_BREAKER_CERTIFICATE = 9806;
 	
-	private KamaelChange2() {
+	public KamaelChange2() {
 		super(KamaelChange2.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS_MALE);
 		addStartNpc(NPCS_FEMALE);
@@ -282,9 +282,5 @@ public final class KamaelChange2 extends AbstractNpcAI {
 			}
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new KamaelChange2();
 	}
 }

@@ -39,7 +39,7 @@ public final class Alarm extends AbstractNpcAI {
 	private static final int ART_OF_PERSUASION_ID = 184;
 	private static final int NIKOLAS_COOPERATION_ID = 185;
 	
-	private Alarm() {
+	public Alarm() {
 		super(Alarm.class.getSimpleName(), "ai/npc");
 		addStartNpc(ALARM);
 		addTalkId(ALARM);
@@ -280,9 +280,5 @@ public final class Alarm extends AbstractNpcAI {
 		if (qs != null) {
 			qs.setMemoStateEx(slot, memoStateEx);
 		}
-	}
-	
-	public static void main(String[] args) {
-		new Alarm();
 	}
 }

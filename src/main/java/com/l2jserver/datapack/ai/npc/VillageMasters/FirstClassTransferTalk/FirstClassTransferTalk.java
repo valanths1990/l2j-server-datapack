@@ -54,7 +54,7 @@ public final class FirstClassTransferTalk extends AbstractNpcAI {
 		MASTERS.put(32154, Race.HUMAN); // Aldenia, Human Guild Grand Master
 	}
 	
-	private FirstClassTransferTalk() {
+	public FirstClassTransferTalk() {
 		super(FirstClassTransferTalk.class.getSimpleName(), "ai/npc/VillageMasters");
 		addStartNpc(MASTERS.keySet());
 		addTalkId(MASTERS.keySet());
@@ -124,9 +124,5 @@ public final class FirstClassTransferTalk extends AbstractNpcAI {
 			}
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new FirstClassTransferTalk();
 	}
 }

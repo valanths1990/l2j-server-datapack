@@ -79,7 +79,7 @@ public final class TeleportToUndergroundColiseum extends AbstractNpcAI {
 		}
 	};
 	
-	private TeleportToUndergroundColiseum() {
+	public TeleportToUndergroundColiseum() {
 		super(TeleportToUndergroundColiseum.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(MANAGERS);
 		addStartNpc(COLISEUM_HELPER, PADDIES);
@@ -114,9 +114,5 @@ public final class TeleportToUndergroundColiseum extends AbstractNpcAI {
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "32491.htm";
-	}
-	
-	public static void main(String[] args) {
-		new TeleportToUndergroundColiseum();
 	}
 }

@@ -97,7 +97,7 @@ public final class Beleth extends AbstractNpcAI {
 	private long _lastAttack;
 	private final List<L2Npc> _minions = new CopyOnWriteArrayList<>();
 	
-	private Beleth() {
+	public Beleth() {
 		super(Beleth.class.getSimpleName(), "ai/individual");
 		addEnterZoneId(ZONE.getId());
 		registerMobs(REAL_BELETH, FAKE_BELETH);
@@ -718,9 +718,5 @@ public final class Beleth extends AbstractNpcAI {
 			n.deleteMe();
 		});
 		_allowedObjId = 0;
-	}
-	
-	public static void main(String[] args) {
-		new Beleth();
 	}
 }

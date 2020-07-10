@@ -53,7 +53,7 @@ public final class SinWardens extends AbstractNpcAI {
 	
 	private final Map<Integer, Integer> killedMinionsCount = new ConcurrentHashMap<>();
 	
-	private SinWardens() {
+	public SinWardens() {
 		super(SinWardens.class.getSimpleName(), "ai/individual");
 		addKillId(SIN_WARDEN_MINIONS);
 	}
@@ -76,9 +76,5 @@ public final class SinWardens extends AbstractNpcAI {
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	public static void main(String[] args) {
-		new SinWardens();
 	}
 }

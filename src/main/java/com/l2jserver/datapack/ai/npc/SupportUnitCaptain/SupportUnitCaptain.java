@@ -118,7 +118,7 @@ public final class SupportUnitCaptain extends AbstractNpcAI {
 		10423, // Blue Talisman - Self-Destruction
 	};
 	
-	private SupportUnitCaptain() {
+	public SupportUnitCaptain() {
 		super(SupportUnitCaptain.class.getSimpleName(), "ai/npc");
 		addStartNpc(UNIT_CAPTAIN);
 		addTalkId(UNIT_CAPTAIN);
@@ -220,9 +220,5 @@ public final class SupportUnitCaptain extends AbstractNpcAI {
 	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final int fortOwner = npc.getFort().getOwnerClan() == null ? 0 : npc.getFort().getOwnerClan().getId();
 		return ((player.getClan() != null) && (player.getClanId() == fortOwner)) ? "unitcaptain.html" : "unitcaptain-04.html";
-	}
-	
-	public static void main(String[] args) {
-		new SupportUnitCaptain();
 	}
 }

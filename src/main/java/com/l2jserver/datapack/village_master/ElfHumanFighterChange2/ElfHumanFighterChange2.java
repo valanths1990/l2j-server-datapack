@@ -67,7 +67,7 @@ public final class ElfHumanFighterChange2 extends AbstractNpcAI {
 	private static final int PLAINS_WALKER = 23;
 	private static final int SILVER_RANGER = 24;
 	
-	private ElfHumanFighterChange2() {
+	public ElfHumanFighterChange2() {
 		super(ElfHumanFighterChange2.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -345,9 +345,5 @@ public final class ElfHumanFighterChange2 extends AbstractNpcAI {
 			htmltext = "30109-38.htm"; // fnClassMismatch
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new ElfHumanFighterChange2();
 	}
 }

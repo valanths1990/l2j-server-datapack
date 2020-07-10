@@ -50,7 +50,7 @@ public final class BabyPets extends AbstractNpcAI {
 	private static final int HEAL_TRICK = 4717;
 	private static final int GREATER_HEAL_TRICK = 4718;
 	
-	private BabyPets() {
+	public BabyPets() {
 		super(BabyPets.class.getSimpleName(), "ai/npc/Summons/Pets");
 		addSummonSpawnId(BABY_PETS);
 	}
@@ -108,9 +108,5 @@ public final class BabyPets extends AbstractNpcAI {
 	private int getHealLevel(L2Summon summon) {
 		final int summonLevel = summon.getLevel();
 		return Util.constrain(summonLevel < 70 ? (summonLevel / 10) : (7 + ((summonLevel - 70) / 5)), 1, 12);
-	}
-	
-	public static void main(String[] args) {
-		new BabyPets();
 	}
 }

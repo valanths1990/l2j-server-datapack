@@ -124,8 +124,4 @@ public final class RaidBossCancel extends AbstractNpcAI {
 		}
 		return super.onSkillSee(npc, player, skill, targets, isSummon);
 	}
-	
-	public static void main(String[] args) {
-		new RaidBossCancel();
-	}
 }

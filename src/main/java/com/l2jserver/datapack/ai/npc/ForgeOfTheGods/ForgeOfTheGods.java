@@ -78,7 +78,7 @@ public final class ForgeOfTheGods extends AbstractNpcAI {
 	
 	// private static int _npcsAlive = 0; TODO: Require zone spawn support
 	
-	private ForgeOfTheGods() {
+	public ForgeOfTheGods() {
 		super(ForgeOfTheGods.class.getSimpleName(), "ai/npc");
 		addKillId(FOG_MOBS);
 		addSpawnId(LAVASAURUSES);
@@ -160,9 +160,5 @@ public final class ForgeOfTheGods extends AbstractNpcAI {
 			mob = addSpawn(mobs[1], npc, true);
 		}
 		return mob;
-	}
-	
-	public static void main(String[] args) {
-		new ForgeOfTheGods();
 	}
 }

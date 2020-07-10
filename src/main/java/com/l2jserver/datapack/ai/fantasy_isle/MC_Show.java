@@ -99,23 +99,14 @@ public class MC_Show extends AbstractNpcAI {
 			_time = time;
 		}
 		
-		/**
-		 * @return the _npcStringId
-		 */
 		public NpcStringId getNpcStringId() {
 			return _npcStringId;
 		}
 		
-		/**
-		 * @return the _nextEvent
-		 */
 		public String getNextEvent() {
 			return _nextEvent;
 		}
 		
-		/**
-		 * @return the _time
-		 */
 		public int getTime() {
 			return _time;
 		}
@@ -132,23 +123,14 @@ public class MC_Show extends AbstractNpcAI {
 			_time = time;
 		}
 		
-		/**
-		 * @return the _charPos
-		 */
 		public Location getCharPos() {
 			return _charPos;
 		}
 		
-		/**
-		 * @return the _nextEvent
-		 */
 		public String getNextEvent() {
 			return _nextEvent;
 		}
 		
-		/**
-		 * @return the _time
-		 */
 		public int getTime() {
 			return _time;
 		}
@@ -157,7 +139,7 @@ public class MC_Show extends AbstractNpcAI {
 	private static final Map<String, ShoutInfo> TALKS = new HashMap<>();
 	private static final Map<String, WalkInfo> WALKS = new HashMap<>();
 	
-	private MC_Show() {
+	public MC_Show() {
 		super(MC_Show.class.getSimpleName(), "ai/fantasy_isle");
 		addSpawnId(32433, 32431, 32432, 32442, 32443, 32444, 32445, 32446, 32424, 32425, 32426, 32427, 32428);
 		load();
@@ -449,9 +431,5 @@ public class MC_Show extends AbstractNpcAI {
 			}
 		}
 		return null;
-	}
-	
-	public static void main(String[] args) {
-		new MC_Show();
 	}
 }

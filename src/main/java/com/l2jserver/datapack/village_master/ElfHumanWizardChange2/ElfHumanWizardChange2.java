@@ -56,7 +56,7 @@ public final class ElfHumanWizardChange2 extends AbstractNpcAI {
 	private static final int SPELLSINGER = 27;
 	private static final int ELEMENTAL_SUMMONER = 28;
 	
-	private ElfHumanWizardChange2() {
+	public ElfHumanWizardChange2() {
 		super(ElfHumanWizardChange2.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -215,9 +215,5 @@ public final class ElfHumanWizardChange2 extends AbstractNpcAI {
 			htmltext = "30115-20.htm"; // fnClassMismatch
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new ElfHumanWizardChange2();
 	}
 }

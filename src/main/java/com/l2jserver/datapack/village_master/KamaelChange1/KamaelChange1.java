@@ -48,7 +48,7 @@ public final class KamaelChange1 extends AbstractNpcAI {
 	private static final int GWAINS_RECOMMENDATION = 9753;
 	private static final int STEELRAZOR_EVALUATION = 9772;
 	
-	private KamaelChange1() {
+	public KamaelChange1() {
 		super(KamaelChange1.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -150,9 +150,5 @@ public final class KamaelChange1 extends AbstractNpcAI {
 			htmltext = "32191-12.htm"; // master_all_kamael100a
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new KamaelChange1();
 	}
 }

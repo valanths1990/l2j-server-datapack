@@ -40,7 +40,7 @@ public final class SummonPc extends AbstractNpcAI {
 	private static final int MIN_DISTANCE = 300;
 	private static final int MIN_DISTANCE_MOST_HATED = 100;
 	
-	private SummonPc() {
+	public SummonPc() {
 		super(SummonPc.class.getSimpleName(), "ai/group_template");
 		addAttackId(PORTA, PERUM);
 		addSpellFinishedId(PORTA, PERUM);
@@ -88,9 +88,5 @@ public final class SummonPc extends AbstractNpcAI {
 			npc.doCast(SUMMON_PC);
 			npc.getVariables().set("attacked", true);
 		}
-	}
-	
-	public static void main(String[] args) {
-		new SummonPc();
 	}
 }

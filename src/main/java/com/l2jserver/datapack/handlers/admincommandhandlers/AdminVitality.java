@@ -110,8 +110,4 @@ public class AdminVitality implements IAdminCommandHandler {
 	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
-	
-	public static void main(String[] args) {
-		new AdminVitality();
-	}
 }

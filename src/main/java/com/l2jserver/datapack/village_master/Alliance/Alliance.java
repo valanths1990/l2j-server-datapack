@@ -44,7 +44,7 @@ public final class Alliance extends Quest {
 	};
 	// @formatter:on
 	
-	private Alliance() {
+	public Alliance() {
 		super(-1, Alliance.class.getSimpleName(), "village_master");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
@@ -61,9 +61,5 @@ public final class Alliance extends Quest {
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance talker) {
 		return "9001-01.htm";
-	}
-	
-	public static void main(String[] args) {
-		new Alliance();
 	}
 }

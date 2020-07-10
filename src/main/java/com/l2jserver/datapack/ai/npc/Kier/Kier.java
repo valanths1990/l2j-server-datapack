@@ -34,7 +34,7 @@ public final class Kier extends AbstractNpcAI {
 	// NPC
 	private static final int KIER = 32022;
 	
-	private Kier() {
+	public Kier() {
 		super(Kier.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(KIER);
 	}
@@ -58,9 +58,5 @@ public final class Kier extends AbstractNpcAI {
 			}
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args) {
-		new Kier();
 	}
 }
