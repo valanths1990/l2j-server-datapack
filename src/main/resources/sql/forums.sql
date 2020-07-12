@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `forums` (
-  `forum_id` int(8) NOT NULL DEFAULT '0',
+  `forum_id` int(8) NOT NULL AUTO_INCREMENT,
   `forum_name` varchar(255) NOT NULL DEFAULT '',
   `forum_parent` int(8) NOT NULL DEFAULT '0',
   `forum_post` int(8) NOT NULL DEFAULT '0',

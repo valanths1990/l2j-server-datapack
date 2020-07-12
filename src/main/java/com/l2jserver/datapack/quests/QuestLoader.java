@@ -18,8 +18,8 @@
  */
 package com.l2jserver.datapack.quests;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.l2jserver.datapack.quests.Dummy.Q00201_HumanFighterTutorial;
 import com.l2jserver.datapack.quests.Dummy.Q00202_HumanMageTutorial;
@@ -526,9 +526,10 @@ import com.l2jserver.datapack.quests.Q10505_JewelOfValakas.Q10505_JewelOfValakas
 /**
  * Quest loader.
  * @author NosBit
+ * @author Zoey76
  */
-public class QuestMasterHandler {
-	private static final Logger _log = Logger.getLogger(QuestMasterHandler.class.getName());
+public class QuestLoader {
+	private static final Logger LOG = LoggerFactory.getLogger(QuestLoader.class);
 	
 	private static final Class<?>[] QUESTS = {
 		Q00001_LettersOfLove.class,
@@ -1035,12 +1036,15 @@ public class QuestMasterHandler {
 	};
 	
 	public static void main(String[] args) {
-		for (Class<?> quest : QUESTS) {
+		int n = 0;
+		for (var quest : QUESTS) {
 			try {
 				quest.getDeclaredConstructor().newInstance();
-			} catch (Exception e) {
-				_log.log(Level.SEVERE, QuestMasterHandler.class.getSimpleName() + ": Failed loading " + quest.getSimpleName() + ":", e);
+				n++;
+			} catch (Exception ex) {
+				LOG.error("Failed loading quest {}!", quest.getSimpleName(), ex);
 			}
 		}
+		LOG.info("Loaded {} quests.", n);
 	}
 }
