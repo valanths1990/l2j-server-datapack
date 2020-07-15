@@ -15,10 +15,10 @@
 		<l2j-server-game.version>2.6.2.0-SNAPSHOT</l2j-server-game.version>
 		<!-- Test -->
 		<testng.version>7.1.0</testng.version>
-		<mockito.version>3.2.4</mockito.version>
+		<mockito.version>3.4.0</mockito.version>
 		<!-- Plugins -->
 		<maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
-		<maven-assembly-plugin.version>3.2.0</maven-assembly-plugin.version>
+		<maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
 	</properties>
 	<dependencies>
 		<dependency>

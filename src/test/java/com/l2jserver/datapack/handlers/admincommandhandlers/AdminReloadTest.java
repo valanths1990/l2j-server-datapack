@@ -43,7 +43,7 @@ public class AdminReloadTest {
 	
 	@BeforeMethod
 	public void setup() {
-		MockitoAnnotations.initMocks(this);
+		MockitoAnnotations.openMocks(this);
 	}
 	
 	@Test
