@@ -73,13 +73,13 @@ import com.l2jserver.datapack.ai.individual.Core;
 import com.l2jserver.datapack.ai.individual.CrimsonHatuOtis;
 import com.l2jserver.datapack.ai.individual.DarkWaterDragon;
 import com.l2jserver.datapack.ai.individual.DivineBeast;
-import com.l2jserver.datapack.ai.individual.DrChaos;
 import com.l2jserver.datapack.ai.individual.DrakosWarrior;
 import com.l2jserver.datapack.ai.individual.DustRider;
 import com.l2jserver.datapack.ai.individual.EmeraldHorn;
 import com.l2jserver.datapack.ai.individual.Epidos;
 import com.l2jserver.datapack.ai.individual.EvasGiftBox;
 import com.l2jserver.datapack.ai.individual.FrightenedRagnaOrc;
+import com.l2jserver.datapack.ai.individual.GiganticGolem;
 import com.l2jserver.datapack.ai.individual.Gordon;
 import com.l2jserver.datapack.ai.individual.GraveRobbers;
 import com.l2jserver.datapack.ai.individual.Knoriks;
@@ -356,12 +356,12 @@ public class AILoader {
 		DarkWaterDragon.class,
 		DivineBeast.class,
 		DrakosWarrior.class,
-		DrChaos.class,
 		DustRider.class,
 		EmeraldHorn.class,
 		Epidos.class,
 		EvasGiftBox.class,
 		FrightenedRagnaOrc.class,
+		GiganticGolem.class,
 		Gordon.class,
 		GraveRobbers.class,
 		Knoriks.class,
