@@ -117,34 +117,32 @@ public final class Q00325_GrimCollector extends Quest {
 			}
 			case "30434-06.html":
 			case "30434-07.html": {
-				if (hasQuestItems(player, getRegisteredItemIds())) {
-					final long head = st.getQuestItemsCount(ZOMBIE_HEAD);
-					final long heart = st.getQuestItemsCount(ZOMBIE_HEART);
-					final long liver = st.getQuestItemsCount(ZOMBIE_LIVER);
-					final long skull = st.getQuestItemsCount(SKULL);
-					final long rib = st.getQuestItemsCount(RIB_BONE);
-					final long spine = st.getQuestItemsCount(SPINE);
-					final long arm = st.getQuestItemsCount(ARM_BONE);
-					final long thigh = st.getQuestItemsCount(THIGH_BONE);
-					final long complete = st.getQuestItemsCount(COMPLETE_SKELETON);
-					final long totalCount = (head + heart + liver + skull + rib + spine + arm + thigh + complete);
-					if (totalCount > 0) {
-						long sum = ((head * 30) + (heart * 20) + (liver * 20) + (skull * 100) + (rib * 40) + (spine * 14) + (arm * 14) + (thigh * 14));
+				final long head = st.getQuestItemsCount(ZOMBIE_HEAD);
+				final long heart = st.getQuestItemsCount(ZOMBIE_HEART);
+				final long liver = st.getQuestItemsCount(ZOMBIE_LIVER);
+				final long skull = st.getQuestItemsCount(SKULL);
+				final long rib = st.getQuestItemsCount(RIB_BONE);
+				final long spine = st.getQuestItemsCount(SPINE);
+				final long arm = st.getQuestItemsCount(ARM_BONE);
+				final long thigh = st.getQuestItemsCount(THIGH_BONE);
+				final long complete = st.getQuestItemsCount(COMPLETE_SKELETON);
+				final long totalCount = (head + heart + liver + skull + rib + spine + arm + thigh + complete);
+				if (totalCount > 0) {
+					long sum = ((head * 30) + (heart * 20) + (liver * 20) + (skull * 100) + (rib * 40) + (spine * 14) + (arm * 14) + (thigh * 14));
 						
-						if (totalCount >= 10) {
-							sum += 1629;
-						}
-						
-						if (complete > 0) {
-							sum += 543 + (complete * 341);
-						}
-						
-						st.giveAdena(sum, true);
+					if (totalCount >= 10) {
+						sum += 1629;
 					}
-					
-					takeItems(player, -1, getRegisteredItemIds());
+						
+					if (complete > 0) {
+						sum += 543 + (complete * 341);
+					}
+						
+					st.giveAdena(sum, true);
 				}
-				
+					
+				takeItems(player, -1, ZOMBIE_HEAD, ZOMBIE_HEART, ZOMBIE_LIVER, SKULL, RIB_BONE, SPINE, ARM_BONE, THIGH_BONE, COMPLETE_SKELETON);
+								
 				if (event.equals("30434-06.html")) {
 					st.exitQuest(true, true);
 				}
