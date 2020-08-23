@@ -17,7 +17,7 @@ Links
 
 - [Forums](http://www.l2jserver.com/forum/)
 
-- [Live Support](https://gitter.im/L2J/L2J_Server)
+- [Discord](https://discord.gg/jMnKZA)
 
 - [Trello](https://trello.com/b/qjLoH966)
 
