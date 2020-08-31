@@ -206,6 +206,9 @@
 			</minions>
 			<param name="Party_Type" value="2" />
 			<param name="Party_Loyalty" value="2" />
+			<param name="Skill01_Probablity" value="0" />
+			<skill name="Skill01_ID" id="6263" level="1" /> <!-- EMP Shock -->
+			<skill name="Skill02_ID" id="6608" level="10" /> <!-- NPC earth shot -->
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -238,6 +241,8 @@
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
 			<skill id="4494" level="1" /> <!--Raid Boss -->
 			<skill id="5465" level="1" /> <!--Earth Attacks -->
+			<skill id="6263" level="1" /> <!--EMP Shock -->
+			<skill id="6608" level="10" /> <!--NPC earth shot -->
 			<skill id="6663" level="1" /> <!--Level 76 Raid Boss -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
@@ -311,6 +316,10 @@
 	</npc>
 	<npc id="25705" level="74" type="L2Monster" name="Gigantic Boom Golem" title="Chaos">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6265" level="1" /> <!-- Smoke -->
+			<skill name="Skill02_ID" id="6264" level="1" /> <!-- Golem Boom -->
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
@@ -337,6 +346,8 @@
 			<skill id="4414" level="2" /> <!--Standard Type -->
 			<skill id="4415" level="3" /> <!--One-handed Sword -->
 			<skill id="4416" level="2" /> <!--Magic Creatures -->
+			<skill id="6264" level="1" /> <!--Golem Boom -->
+			<skill id="6265" level="1" /> <!--Smoke -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
