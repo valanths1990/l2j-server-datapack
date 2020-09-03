@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+import com.l2jserver.datapack.ai.individual.QueenAnt;
 import com.l2jserver.datapack.ai.individual.Antharas.Antharas;
 import com.l2jserver.datapack.ai.individual.Baium.Baium;
 import com.l2jserver.gameserver.cache.HtmCache;
@@ -78,7 +79,7 @@ public class AdminGrandBoss implements IAdminCommandHandler {
 					final int grandBossId = Integer.parseInt(st.nextToken());
 					
 					if (grandBossId == ANTHARAS) {
-						antharasAi().notifyEvent("SKIP_WAITING", null, activeChar);
+						getAntharasAI().notifyEvent("SKIP_WAITING", null, activeChar);
 						manageHtml(activeChar, grandBossId);
 					} else {
 						activeChar.sendMessage("Wrong ID!");
@@ -94,12 +95,17 @@ public class AdminGrandBoss implements IAdminCommandHandler {
 					
 					switch (grandBossId) {
 						case ANTHARAS: {
-							antharasAi().notifyEvent("RESPAWN_ANTHARAS", null, activeChar);
+							getAntharasAI().notifyEvent("RESPAWN_ANTHARAS", null, activeChar);
 							manageHtml(activeChar, grandBossId);
 							break;
 						}
 						case BAIUM: {
-							baiumAi().notifyEvent("RESPAWN_BAIUM", null, activeChar);
+							getBaiumAI().notifyEvent("RESPAWN_BAIUM", null, activeChar);
+							manageHtml(activeChar, grandBossId);
+							break;
+						}
+						case QUEENANT: {
+							getQueenAntAI().notifyEvent("RESPAWN_QUEEN", null, activeChar);
 							manageHtml(activeChar, grandBossId);
 							break;
 						}
@@ -118,11 +124,11 @@ public class AdminGrandBoss implements IAdminCommandHandler {
 					
 					switch (grandBossId) {
 						case ANTHARAS: {
-							antharasAi().notifyEvent("DESPAWN_MINIONS", null, activeChar);
+							getAntharasAI().notifyEvent("DESPAWN_MINIONS", null, activeChar);
 							break;
 						}
 						case BAIUM: {
-							baiumAi().notifyEvent("DESPAWN_MINIONS", null, activeChar);
+							getBaiumAI().notifyEvent("DESPAWN_MINIONS", null, activeChar);
 							break;
 						}
 						default: {
@@ -140,12 +146,12 @@ public class AdminGrandBoss implements IAdminCommandHandler {
 					
 					switch (grandBossId) {
 						case ANTHARAS: {
-							antharasAi().notifyEvent("ABORT_FIGHT", null, activeChar);
+							getAntharasAI().notifyEvent("ABORT_FIGHT", null, activeChar);
 							manageHtml(activeChar, grandBossId);
 							break;
 						}
 						case BAIUM: {
-							baiumAi().notifyEvent("ABORT_FIGHT", null, activeChar);
+							getBaiumAI().notifyEvent("ABORT_FIGHT", null, activeChar);
 							manageHtml(activeChar, grandBossId);
 							break;
 						}
@@ -255,12 +261,16 @@ public class AdminGrandBoss implements IAdminCommandHandler {
 		}
 	}
 	
-	private Quest antharasAi() {
+	private Quest getAntharasAI() {
 		return QuestManager.getInstance().getQuest(Antharas.class.getSimpleName());
 	}
 	
-	private Quest baiumAi() {
+	private Quest getBaiumAI() {
 		return QuestManager.getInstance().getQuest(Baium.class.getSimpleName());
+	}
+	
+	private Quest getQueenAntAI() {
+		return QuestManager.getInstance().getQuest(QueenAnt.class.getSimpleName());
 	}
 	
 	@Override
