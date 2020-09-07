@@ -1789,79 +1789,109 @@
 		<set name="trait" val="ETC" />
 	</skill>
 	<skill id="23092" levels="1" name="Jack O'Lantern Card">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="coolTime" val="500" />
+		<set name="hitTime" val="2000" />
 		<set name="icon" val="BranchSys.icon.br_jack_ghost_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23093" levels="1" name="Rotten Jack O'Lantern Card">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="coolTime" val="500" />
+		<set name="hitTime" val="2000" />
 		<set name="icon" val="BranchSys.icon.br_rotten_jack_ghost_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23094" levels="1" name="Jack O'Lantern Card - Confirm Skill">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-1" />
+		<set name="effectRange" val="500" />
 		<set name="icon" val="BranchSys.icon.br_jack_ghost_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="23095" levels="1" name="Rotten Jack O'Lantern Card - Confirm Skill">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-1" />
+		<set name="effectRange" val="500" />
 		<set name="icon" val="BranchSys.icon.br_rotten_jack_ghost_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="23096" levels="1" name="Halloween Defeat">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="effectRange" val="500" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
 	</skill>
-	<skill id="23097" levels="1" name="First Consecutive Win">
+	<skill id="23097" levels="1" name="First win">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="effectRange" val="550" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="23098" levels="1" name="2nd Consecutive Win">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="effectRange" val="550" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
 	</skill>
-	<skill id="23099" levels="1" name="Third Consecutive Win">
+	<skill id="23099" levels="1" name="3rd Consecutive Win">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="effectRange" val="550" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
 	</skill>
 </list>

@@ -148,6 +148,9 @@
 				<xs:attribute type="xs:string" name="class_id_restriction" use="optional" />
 				<xs:attribute type="xs:short" name="siegeZone" use="optional" />
 				<xs:attribute type="xs:byte" name="siegeSide" use="optional" />
+				<xs:attribute type="xs:string" name="categoryType" use="optional" />
+				<xs:attribute type="xs:boolean" name="hasAgathion" use="optional" />
+				<xs:attribute type="xs:int" name="agathionEnergy" use="optional" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -230,6 +233,8 @@
 				<xs:attribute type="xs:string" name="mAtkSpd" use="optional" />
 				<xs:attribute type="xs:string" name="chance" use="optional" />
 				<xs:attribute type="xs:string" name="power" use="optional" />
+				<xs:attribute type="xs:string" name="ticks" use="optional" />
+				<xs:attribute type="xs:string" name="energy" use="optional" />
 				<xs:attribute type="operation" name="type" use="optional" />
 				<xs:attribute type="operation" name="mode" use="optional" />
 				<xs:attribute type="xs:boolean" name="heal" use="optional" />
@@ -330,6 +335,7 @@
 				<xs:attribute type="xs:short" name="skillId3" use="optional" />
 				<xs:attribute type="xs:string" name="time" use="optional" />
 				<xs:attribute type="xs:string" name="flyRadius" use="optional" />
+				<xs:attribute type="xs:int" name="flyCourse" use="optional" />
 				<xs:attribute type="xs:string" name="normal" use="optional" />
 				<xs:attribute type="xs:string" name="ride" use="optional" />
 				<xs:attribute type="xs:string" name="wyvern" use="optional" />
@@ -516,6 +522,7 @@
 					<xs:enumeration value="ChangeHairStyle" />
 					<xs:enumeration value="ClanGate" />
 					<xs:enumeration value="Confuse" />
+					<xs:enumeration value="ConsumeAgathionEnergy" />
 					<xs:enumeration value="ConsumeBody" />
 					<xs:enumeration value="ConsumeChameleonRest" />
 					<xs:enumeration value="ConsumeFakeDeath" />
@@ -565,6 +572,7 @@
 					<xs:enumeration value="HpPerMax" />
 					<xs:enumeration value="ImmobileBuff" />
 					<xs:enumeration value="ImmobilePetBuff" />
+					<xs:enumeration value="InstantAgathionEnergy" />
 					<xs:enumeration value="Lethal" />
 					<xs:enumeration value="Lucky" />
 					<xs:enumeration value="MagicalAttack" />
@@ -694,6 +702,7 @@
 			<xs:element name="enchant2Effects" type="effectsType" />
 			<xs:element name="enchant2pvpEffects" type="effectsType" />
 			<xs:element name="enchant2pveEffects" type="effectsType" />
+			<xs:element name="enchant8Effects" type="effectsType" />
 			<xs:element name="enchant7Effects" type="effectsType" />
 			<xs:element name="enchant3pvpEffects" type="effectsType" />
 			<xs:element name="enchant3pveEffects" type="effectsType" />

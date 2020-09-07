@@ -102,21 +102,34 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="21104" levels="1" name="Instinct of Destruction">
-		<!-- For 30 seconds, awakens destruction instinct and increases P.Atk./Critical rate/Critical damage by 50%. -->
+	<skill id="21104" levels="1" name="Appetite for Destruction">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="INSTINCT" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="BranchSys.icon.br_gatekeeper_of_hat_i00" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="critDmg" val="1.5" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="critRate" val="1.5" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.5" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="21105" levels="1" name="Agathion Seal Cancel - Chon-chon">
 		<!-- Confirmed CT2.5 -->
@@ -1532,260 +1545,559 @@
 		</effects>
 	</skill>
 	<skill id="21172" levels="1" name="Enhanced Authority - CON+1 STR+1">
-		<!-- Enhanced authority grants CON+1 / STR+1 for 2 minutes. Consumes 240 energy. Reuse delay 3 minutes. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="BR_EVENT_BUF10" />
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="hitTime" val="1000" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_stat_i00" />
 		<set name="irreplaceableBuff" val="true" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="180000" />
-		<set name="rideState" val="NONE" />
 		<set name="reuseDelayLock" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="240" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="InstantAgathionEnergy">
+				<param energy="-240" />
+				<param type="DIFF" />
+			</effect>
+			<effect name="Buff">
+				<add stat="STR" val="1" />
+			</effect>
+			<effect name="Buff">
+				<add stat="CON" val="1" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="21173" levels="1" name="Enhanced Authority - WIT+1 INT+1">
-		<!-- Enhanced authority grants WIT+1 / INT+1 for 2 minutes. Consumes 240 energy. Reuse delay 3 minutes. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="BR_EVENT_BUF10" />
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="hitTime" val="1000" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_stat_i00" />
 		<set name="irreplaceableBuff" val="true" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="180000" />
-		<set name="rideState" val="NONE" />
 		<set name="reuseDelayLock" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="240" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="InstantAgathionEnergy">
+				<param energy="-240" />
+				<param type="DIFF" />
+			</effect>
+			<effect name="Buff">
+				<add stat="INT" val="1" />
+			</effect>
+			<effect name="Buff">
+				<add stat="WIT" val="1" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="21174" levels="1" name="Enhanced Authority - WIT+1 MEN+1">
-		<!-- Enhanced authority grants WIT+1 / MEN+1 for 2 minutes. Consumes 240 energy. Reuse delay 3 minutes. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="BR_EVENT_BUF10" />
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="hitTime" val="1000" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_stat_i00" />
 		<set name="irreplaceableBuff" val="true" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="180000" />
-		<set name="rideState" val="NONE" />
 		<set name="reuseDelayLock" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="240" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="InstantAgathionEnergy">
+				<param energy="-240" />
+				<param type="DIFF" />
+			</effect>
+			<effect name="Buff">
+				<add stat="MEN" val="1" />
+			</effect>
+			<effect name="Buff">
+				<add stat="WIT" val="1" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="21175" levels="1" name="Enhanced Authority - CON+1 DEX+1">
-		<!-- Enhanced authority grants CON+1 / DEX+1 for 2 minutes. Consumes 240 energy. Reuse delay 3 minutes. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="BR_EVENT_BUF10" />
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="hitTime" val="1000" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_stat_i00" />
 		<set name="irreplaceableBuff" val="true" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="180000" />
-		<set name="rideState" val="NONE" />
 		<set name="reuseDelayLock" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="240" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="InstantAgathionEnergy">
+				<param energy="-240" />
+				<param type="DIFF" />
+			</effect>
+			<effect name="Buff">
+				<add stat="DEX" val="1" />
+			</effect>
+			<effect name="Buff">
+				<add stat="CON" val="1" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="21176" levels="1" name="Divine Protection - Divinity">
-		<!-- Increases divinity type P. Atk. and P. Def. by 10 each. Continuously consumes energy. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_attr_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
+			<effect name="Buff">
+				<add stat="holyPower" val="10" />
+			</effect>
+			<effect name="Buff">
+				<add stat="holyRes" val="10" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="21177" levels="1" name="Divine Protection - Water">
-		<!-- Increases water type P. Atk. and P. Def. by 10 each. Continuously consumes energy. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_attr_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
+			<effect name="Buff">
+				<add stat="waterPower" val="10" />
+			</effect>
+			<effect name="Buff">
+				<add stat="waterRes" val="10" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="21178" levels="1" name="Divine Protection - Fire">
-		<!-- Increases fire type P. Atk. and P. Def. by 10 each. Continuously consumes energy. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_attr_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
+			<effect name="Buff">
+				<add stat="firePower" val="10" />
+			</effect>
+			<effect name="Buff">
+				<add stat="fireRes" val="10" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="21179" levels="1" name="Divine Protection - Wind">
-		<!-- Increases wind type P. Atk. and P. Def. by 10 each. Continuously consumes energy. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_attr_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
+			<effect name="Buff">
+				<add stat="windPower" val="10" />
+			</effect>
+			<effect name="Buff">
+				<add stat="windRes" val="10" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="21180" levels="1" name="Divine Protection - Earth">
-		<!-- Increases earth type P. Atk. and P. Def. by 10 each. Continuously consumes energy. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_attr_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
+			<effect name="Buff">
+				<add stat="earthPower" val="10" />
+			</effect>
+			<effect name="Buff">
+				<add stat="earthRes" val="10" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="21181" levels="1" name="Divine Protection - Darkness">
-		<!-- Increases darkness type P. Atk. and P. Def. by 10 each. Continuously consumes energy. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_attr_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
+			<effect name="Buff">
+				<add stat="darkPower" val="10" />
+			</effect>
+			<effect name="Buff">
+				<add stat="darkRes" val="10" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="21182" levels="1" name="Blessing of Resistance - Hold">
-		<!-- TODO: Implement me! -->
-		<!-- Raises resistance to hold by 40%. Continuously consumes energy. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_resist_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
 		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param HOLD="40" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="21183" levels="1" name="Blessing of Resistance - Paralysis">
-		<!-- TODO: Implement me! -->
-		<!-- Raises resistance to paralysis by 40%. Continuously consumes energy. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_resist_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
 		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param PARALYZE="40" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="21184" levels="1" name="Blessing of Resistance - Sleep">
-		<!-- TODO: Implement me! -->
-		<!-- Raises resistance to sleep by 40%. Continuously consumes energy. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_resist_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
 		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="40" />
 			</effect>
 		</effects>
 	</skill>
-	<skill id="21185" levels="1" name="Blessing of Resistance - Movement Speed Decrease">
-		<!-- Raises resistance to decreased moving speed by 40%. Continuously consumes energy. -->
+	<skill id="21185" levels="1" name="Blessing of Resistance - Decrease Speed">
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_resist_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="debuffVuln" val="0.6" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="21186" levels="1" name="Blessing of Resistance - Bleed">
-		<!-- TODO: Implement me! -->
-		<!-- Raises resistance to bleed by 40%. Continuously consumes energy. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_resist_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
 		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param BLEED="40" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="21187" levels="1" name="Blessing of Resistance - Stun">
-		<!-- TODO: Implement me! -->
-		<!-- Raises resistance to stun by 40%. Continuously consumes energy. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_resist_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
 		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="40" />
 			</effect>
 		</effects>
 	</skill>
-	<skill id="21188" levels="1" name="Recovery Power - HP">
-		<!-- Increases HP recovery bonus by 20%. Continuously consumes energy. -->
+	<skill id="21188" levels="1" name="Recovery Ability - HP">
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_regen_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="regHp" val="1.2" />
+			</effect>
+		</effects>
 	</skill>
-	<skill id="21189" levels="1" name="Recovery Power - MP">
-		<!-- Increases MP recovery bonus by 20%. Continuously consumes energy. -->
+	<skill id="21189" levels="1" name="Recovery Ability - MP">
+		<!-- High Five Confirmed -->
 		<set name="abnormalVisualEffect" val="BR_SOUL_AVATAR" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_regen_i00" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="2" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="ConsumeAgathionEnergy">
+				<param energy="-2" />
+				<param ticks="2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="regMp" val="1.2" />
+			</effect>
+		</effects>
 	</skill>
-	<skill id="21190" levels="1" name="Soul Shield">
-		<!-- Physical/Magic P. Def is increased by 60% for 10 seconds. Consumed 500 energy. Cooldown takes 20 minutes. -->
+	<skill id="21190" levels="1" name="Soul's Shield">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="hitTime" val="1000" />
 		<set name="icon" val="BranchSys2.icon.br_soulavatar_active_i00" />
 		<set name="irreplaceableBuff" val="true" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1200000" />
-		<set name="rideState" val="NONE" />
 		<set name="reuseDelayLock" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player hasAgathion="true" />
+				<player agathionEnergy="500" />
+			</and>
+		</cond>
+		<effects>
+			<effect name="InstantAgathionEnergy">
+				<param energy="-500" />
+				<param type="DIFF" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.6" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.6" />
+			</effect>
+		</effects>
 	</skill>
-	<skill id="21191" levels="1" name="Agathion Seal Cancel - Phoenix">
-		<!-- Confirmed CT2.5 -->
+	<skill id="21191" levels="1" name="Release Seal on Agathion - Phoenix">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1797,48 +2109,59 @@
 		</effects>
 	</skill>
 	<skill id="21192" levels="1" name="Silent Move">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="STEALTH" />
 		<set name="abnormalVisualEffect" val="STEALTH" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="BranchSys2.icon.br_fox_japan_cap_i00" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelayLock" val="true" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
-			<effect name="SilentMove">
+			<effect name="SilentMove" />
+			<effect name="Buff">
 				<mul stat="runSpd" val="0.6" />
 			</effect>
 		</effects>
 	</skill>
-	<skill id="21193" levels="1" name="Power of Guardian Deity">
-		<!-- Increases Critical attack power by 35% for 10 minutes. Cooldown takes 1 hour. -->
+	<skill id="21193" levels="1" name="Guardian Deity's Strength">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="CRITICAL_DMG_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="hitTime" val="4000" />
 		<set name="icon" val="BranchSys2.icon.br_paiwan_cap_i00" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelayLock" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="critDmg" val="1.35" />
+			</effect>
+		</effects>
 	</skill>
-	<skill id="21194" levels="1" name="Agathion Seal Cancel - Three-headed Dragon">
-		<!-- Confirmed CT2.5 -->
+	<skill id="21194" levels="1" name="Release Seal on Agathion - Three Heads">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1850,19 +2173,21 @@
 		</effects>
 	</skill>
 	<skill id="21195" levels="1" name="Blessed Child Transformation Skill - Trejuo">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="TRANSFORM" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<cond>
@@ -1871,24 +2196,28 @@
 		<effects>
 			<effect name="Transformation">
 				<param id="20002" />
+			</effect>
+			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="1" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="21196" levels="1" name="Blessed Child Transformation Skill - Sujin">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="TRANSFORM" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<cond>
@@ -1897,59 +2226,89 @@
 		<effects>
 			<effect name="Transformation">
 				<param id="20003" />
+			</effect>
+			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="1" />
 			</effect>
 		</effects>
 	</skill>
-	<skill id="21197" levels="1" name="Buff of Virtue">
-		<!-- Recovers all HP, MP, and CP with the power of virtue. Reuse delay 30 minutes. It can only be used when HP, MP, and CP are all below 30%. When you use the skill, 1 Proof of a Warrior is consumed. -->
+	<skill id="21197" levels="1" name="Induk's Buff">
+		<!-- Restores all HP, MP, and CP using the strength of Induk. Reuse delay 30 minutes. Can only be used when HP, MP, and CP are all below 30%. Consumes 1 Proof of a Warrior upon skill use. -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="BranchSys2.icon.br_pekingopera_mask_a_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20976" /> <!-- Proof of a Warrior -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1800000" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
-	<skill id="21198" levels="1" name="Silence of Fidelity">
-		<!-- Through the power of loyalty, raises party members' physical P. Def., M. Def. by 30%, physical P. Atk. by 20%, M. Atk. by 45%, and moving speed by 30 for 5 minutes. Reuse delay 30 minutes. Consumes 1 Proof of a Warrior upon skill use. -->
+	<skill id="21198" levels="1" name="Silence of Loyalty">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="activateRate" val="0" />
+		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="PARTY" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="castRange" val="600" />
 		<set name="effectPoint" val="486" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="BranchSys2.icon.br_pekingopera_mask_b_i00" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20976" /> <!-- Proof of a Warrior -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1800000" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="PARTY" />
 		<set name="trait" val="ETC" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.45" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.3" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.3" />
+			</effect>
+			<effect name="Buff">
+				<add stat="runSpd" val="30.0" />
+			</effect>
+		</effects>
 	</skill>
-	<skill id="21199" levels="1" name="Vitality of Courage">
-		<!-- Confirmed CT2.5 -->
+	<skill id="21199" levels="1" name="Vitality of Excellence">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="VP_KEEP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="icon" val="BranchSys2.icon.br_pekingopera_mask_c_i00" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20976" /> <!-- Proof of a Warrior -->
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1800000" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<effects>
