@@ -19,14 +19,16 @@
 package com.l2jserver.datapack.handlers.admincommandhandlers;
 
 import static com.l2jserver.gameserver.config.Configuration.general;
+import static org.easymock.EasyMock.anyString;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.expectLastCall;
+import static org.powermock.api.easymock.PowerMock.replay;
 import static org.testng.Assert.assertFalse;
 
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.testng.annotations.BeforeMethod;
+import org.powermock.api.easymock.annotation.Mock;
 import org.testng.annotations.Test;
 
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
+import com.l2jserver.datapack.test.AbstractTest;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -34,22 +36,22 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  * @author Zoey76
  * @version 2.6.1.0
  */
-public class AdminReloadTest {
-	
-	private final IAdminCommandHandler cmd = new AdminReload();
+public class AdminReloadTest extends AbstractTest {
 	
 	@Mock
-	private L2PcInstance activeChar;
+	private L2PcInstance player;
 	
-	@BeforeMethod
-	public void setup() {
-		MockitoAnnotations.openMocks(this);
-	}
+	private final AdminReload adminReload = new AdminReload();
 	
 	@Test
 	public void useAdminCommandTest() {
 		general().setProperty("EverybodyHasAdminRights", "true");
-		cmd.useAdminCommand("admin_reload config general", activeChar);
+		expect(player.getName()).andReturn("Zoey76");
+		player.sendMessage(anyString());
+		expectLastCall();
+		replay(player);
+		
+		adminReload.useAdminCommand("admin_reload config general", player);
 		assertFalse(general().everybodyHasAdminRights());
 	}
 }
