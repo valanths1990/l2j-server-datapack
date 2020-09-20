@@ -103,7 +103,7 @@ public final class Q00637_ThroughOnceMore extends Quest {
 			return getNoQuestMsg(player);
 		}
 		
-		final byte id = st.getState();
+		final int id = st.getState();
 		if (id == State.CREATED) {
 			if (player.getLevel() > 72) {
 				if (st.hasQuestItems(FADED_MARK)) {

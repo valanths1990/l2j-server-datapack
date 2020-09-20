@@ -56,11 +56,11 @@ public final class BufferServiceRepository {
 	private static final String SELECT_UNIQUE_BUFF_LIST = "SELECT ulist_buff_ident FROM custom_buffer_service_ulist_buffs WHERE ulist_id=?";
 	
 	private static final String INSERT_UNIQUE_BUFF_LIST = "INSERT INTO custom_buffer_service_ulists (ulist_char_id, ulist_name) VALUES(?, ?)";
-
+	
 	private static final String DELETE_UNIQUE_BUFF_LIST = "DELETE FROM custom_buffer_service_ulists WHERE ulist_char_id=? AND ulist_id=?";
-
+	
 	private static final String INSERT_BUFF_TO_UNIQUE_BUFF_LIST = "INSERT INTO custom_buffer_service_ulist_buffs VALUES(?, ?)";
-
+	
 	private static final String DELETE_BUFF_FROM_BUFF_LIST = "DELETE FROM custom_buffer_service_ulist_buffs WHERE ulist_id=? AND ulist_buff_ident=?";
 	
 	private final BufferConfig config;

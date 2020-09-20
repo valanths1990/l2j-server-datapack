@@ -66,7 +66,7 @@ import com.l2jserver.gameserver.network.serverpackets.AbstractNpcInfo.NpcInfo;
 import com.l2jserver.gameserver.network.serverpackets.Earthquake;
 import com.l2jserver.gameserver.network.serverpackets.ExShowScreenMessage;
 import com.l2jserver.gameserver.network.serverpackets.L2GameServerPacket;
-import com.l2jserver.gameserver.network.serverpackets.MagicSkillCanceld;
+import com.l2jserver.gameserver.network.serverpackets.MagicSkillCanceled;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
 import com.l2jserver.gameserver.network.serverpackets.SocialAction;
 import com.l2jserver.gameserver.network.serverpackets.SpecialCamera;
@@ -541,7 +541,7 @@ public final class FinalEmperialTomb extends AbstractInstance {
 						break;
 					case 4: // second morph
 						world.isVideo = true;
-						broadCastPacket(world, new MagicSkillCanceld(world.frintezza.getObjectId()));
+						broadCastPacket(world, new MagicSkillCanceled(world.frintezza.getObjectId()));
 						if (world.songEffectTask != null) {
 							world.songEffectTask.cancel(false);
 						}
@@ -551,7 +551,7 @@ public final class FinalEmperialTomb extends AbstractInstance {
 						break;
 					case 5: // raid success
 						world.isVideo = true;
-						broadCastPacket(world, new MagicSkillCanceld(world.frintezza.getObjectId()));
+						broadCastPacket(world, new MagicSkillCanceled(world.frintezza.getObjectId()));
 						if (world.songTask != null) {
 							world.songTask.cancel(true);
 						}

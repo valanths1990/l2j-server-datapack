@@ -2,14 +2,14 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="rift">
 		<xs:complexType>
-			<xs:sequence minOccurs="1" maxOccurs="1">
-				<xs:element name="area" minOccurs="1" maxOccurs="6">
+			<xs:sequence>
+				<xs:element name="area" maxOccurs="6">
 					<xs:complexType>
-						<xs:sequence minOccurs="1" maxOccurs="1">
-							<xs:element name="room" minOccurs="1" maxOccurs="9">
+						<xs:sequence>
+							<xs:element name="room" maxOccurs="9">
 								<xs:complexType>
-									<xs:sequence minOccurs="1" maxOccurs="1">
-										<xs:element name="spawn" minOccurs="1" maxOccurs="3">
+									<xs:sequence>
+										<xs:element name="spawn" maxOccurs="3">
 											<xs:complexType>
 												<xs:attribute name="count" type="xs:positiveInteger" use="required" />
 												<xs:attribute name="delay" type="xs:positiveInteger" use="required" />

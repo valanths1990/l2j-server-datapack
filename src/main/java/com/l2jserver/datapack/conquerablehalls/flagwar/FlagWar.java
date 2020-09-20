@@ -137,7 +137,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine {
 			if ((index == 0) && _firstPhase) {
 				html = "teleporter_notyet.htm";
 			} else {
-				TELE_ZONES[index].checkTeleporTask();
+				TELE_ZONES[index].checkTeleportTask();
 				html = "teleporter.htm";
 			}
 		}

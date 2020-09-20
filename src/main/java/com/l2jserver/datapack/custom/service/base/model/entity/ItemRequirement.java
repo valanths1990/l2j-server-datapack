@@ -32,7 +32,7 @@ public class ItemRequirement {
 	private long amount;
 	
 	private final transient HTMLTemplatePlaceholder placeholder;
-
+	
 	public ItemRequirement() {
 		id = 0;
 		amount = 0;

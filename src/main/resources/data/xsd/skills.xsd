@@ -3,14 +3,14 @@
 	<xs:complexType name="tableType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute type="xs:string" name="name" use="optional" />
+				<xs:attribute type="xs:string" name="name" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="setType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute name="name" use="optional">
+				<xs:attribute name="name">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:enumeration value="abnormalInstant" />
@@ -74,98 +74,98 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
-				<xs:attribute type="xs:string" name="val" use="optional" />
+				<xs:attribute type="xs:string" name="val" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="enchantType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute type="xs:string" name="name" use="optional" />
-				<xs:attribute type="xs:string" name="val" use="optional" />
+				<xs:attribute type="xs:string" name="name" />
+				<xs:attribute type="xs:string" name="val" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="usingType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute type="xs:string" name="kind" use="optional" />
-				<xs:attribute type="xs:string" name="slot" use="optional" />
-				<xs:attribute type="xs:string" name="weaponChange" use="optional" />
+				<xs:attribute type="xs:string" name="kind" />
+				<xs:attribute type="xs:string" name="slot" />
+				<xs:attribute type="xs:string" name="weaponChange" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="playerType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute type="xs:string" name="Charges" use="optional" />
-				<xs:attribute type="xs:string" name="canSummon" use="optional" />
-				<xs:attribute type="xs:string" name="canResurrect" use="optional" />
-				<xs:attribute type="xs:string" name="canSweep" use="optional" />
-				<xs:attribute type="xs:string" name="canSummonSiegeGolem" use="optional" />
-				<xs:attribute type="xs:byte" name="invSize" use="optional" />
-				<xs:attribute type="xs:byte" name="weight" use="optional" />
-				<xs:attribute type="xs:byte" name="hp" use="optional" />
-				<xs:attribute type="xs:byte" name="cp" use="optional" />
-				<xs:attribute type="xs:byte" name="mp" use="optional" />
-				<xs:attribute type="xs:boolean" name="hasServitor" use="optional" />
-				<xs:attribute type="xs:byte" name="souls" use="optional" />
-				<xs:attribute type="xs:string" name="canTransform" use="optional" />
-				<xs:attribute type="xs:string" name="canUntransform" use="optional" />
-				<xs:attribute type="xs:byte" name="transformationId" use="optional" />
-				<xs:attribute type="xs:string" name="canCreateBase" use="optional" />
-				<xs:attribute type="xs:string" name="canCreateOutpost" use="optional" />
-				<xs:attribute type="xs:string" name="canTakeCastle" use="optional" />
-				<xs:attribute type="xs:string" name="canTakeFort" use="optional" />
-				<xs:attribute type="xs:byte" name="canRefuelAirship" use="optional" />
-				<xs:attribute type="xs:string" name="canEscape" use="optional" />
-				<xs:attribute type="xs:string" name="active_effect_id_lvl" use="optional" />
-				<xs:attribute type="xs:string" name="active_skill_id" use="optional" />
-				<xs:attribute type="xs:string" name="active_skill_id_lvl" use="optional" />
-				<xs:attribute type="xs:string" name="checkAbnormal" use="optional" />
-				<xs:attribute type="xs:byte" name="SiegeZone" use="optional" />
-				<xs:attribute type="xs:string" name="callPc" use="optional" />
-				<xs:attribute type="xs:byte" name="clanHall" use="optional" />
-				<xs:attribute type="xs:byte" name="sex" use="optional" />
-				<xs:attribute type="xs:string" name="npcIdRadius" use="optional" />
-				<xs:attribute type="xs:string" name="landingZone" use="optional" />
-				<xs:attribute type="xs:string" name="insideZoneId" use="optional" />
-				<xs:attribute type="xs:string" name="chaotic" use="optional" />
-				<xs:attribute type="xs:string" name="resting" use="optional" />
-				<xs:attribute type="xs:string" name="standing" use="optional" />
-				<xs:attribute type="xs:string" name="moving" use="optional" />
-				<xs:attribute type="xs:string" name="running" use="optional" />
-				<xs:attribute type="xs:string" name="flying" use="optional" />
-				<xs:attribute type="xs:string" name="front" use="optional" />
-				<xs:attribute type="xs:string" name="behind" use="optional" />
-				<xs:attribute type="xs:string" name="levelRange" use="optional" />
-				<xs:attribute type="xs:byte" name="instanceId" use="optional" />
-				<xs:attribute type="xs:string" name="flyMounted" use="optional" />
-				<xs:attribute type="xs:string" name="active_effect_id" use="optional" />
-				<xs:attribute type="xs:string" name="agathionId" use="optional" />
-				<xs:attribute type="xs:byte" name="fort" use="optional" />
-				<xs:attribute type="xs:byte" name="level" use="optional" />
-				<xs:attribute type="xs:string" name="class_id_restriction" use="optional" />
-				<xs:attribute type="xs:short" name="siegeZone" use="optional" />
-				<xs:attribute type="xs:byte" name="siegeSide" use="optional" />
-				<xs:attribute type="xs:string" name="categoryType" use="optional" />
-				<xs:attribute type="xs:boolean" name="hasAgathion" use="optional" />
-				<xs:attribute type="xs:int" name="agathionEnergy" use="optional" />
+				<xs:attribute type="xs:string" name="Charges" />
+				<xs:attribute type="xs:string" name="canSummon" />
+				<xs:attribute type="xs:string" name="canResurrect" />
+				<xs:attribute type="xs:string" name="canSweep" />
+				<xs:attribute type="xs:string" name="canSummonSiegeGolem" />
+				<xs:attribute type="xs:byte" name="invSize" />
+				<xs:attribute type="xs:byte" name="weight" />
+				<xs:attribute type="xs:byte" name="hp" />
+				<xs:attribute type="xs:byte" name="cp" />
+				<xs:attribute type="xs:byte" name="mp" />
+				<xs:attribute type="xs:boolean" name="hasServitor" />
+				<xs:attribute type="xs:byte" name="souls" />
+				<xs:attribute type="xs:string" name="canTransform" />
+				<xs:attribute type="xs:string" name="canUntransform" />
+				<xs:attribute type="xs:byte" name="transformationId" />
+				<xs:attribute type="xs:string" name="canCreateBase" />
+				<xs:attribute type="xs:string" name="canCreateOutpost" />
+				<xs:attribute type="xs:string" name="canTakeCastle" />
+				<xs:attribute type="xs:string" name="canTakeFort" />
+				<xs:attribute type="xs:byte" name="canRefuelAirship" />
+				<xs:attribute type="xs:string" name="canEscape" />
+				<xs:attribute type="xs:string" name="active_effect_id_lvl" />
+				<xs:attribute type="xs:string" name="active_skill_id" />
+				<xs:attribute type="xs:string" name="active_skill_id_lvl" />
+				<xs:attribute type="xs:string" name="checkAbnormal" />
+				<xs:attribute type="xs:byte" name="SiegeZone" />
+				<xs:attribute type="xs:string" name="callPc" />
+				<xs:attribute type="xs:byte" name="clanHall" />
+				<xs:attribute type="xs:byte" name="sex" />
+				<xs:attribute type="xs:string" name="npcIdRadius" />
+				<xs:attribute type="xs:string" name="landingZone" />
+				<xs:attribute type="xs:string" name="insideZoneId" />
+				<xs:attribute type="xs:string" name="chaotic" />
+				<xs:attribute type="xs:string" name="resting" />
+				<xs:attribute type="xs:string" name="standing" />
+				<xs:attribute type="xs:string" name="moving" />
+				<xs:attribute type="xs:string" name="running" />
+				<xs:attribute type="xs:string" name="flying" />
+				<xs:attribute type="xs:string" name="front" />
+				<xs:attribute type="xs:string" name="behind" />
+				<xs:attribute type="xs:string" name="levelRange" />
+				<xs:attribute type="xs:byte" name="instanceId" />
+				<xs:attribute type="xs:string" name="flyMounted" />
+				<xs:attribute type="xs:string" name="active_effect_id" />
+				<xs:attribute type="xs:string" name="agathionId" />
+				<xs:attribute type="xs:byte" name="fort" />
+				<xs:attribute type="xs:byte" name="level" />
+				<xs:attribute type="xs:string" name="class_id_restriction" />
+				<xs:attribute type="xs:short" name="siegeZone" />
+				<xs:attribute type="xs:byte" name="siegeSide" />
+				<xs:attribute type="xs:string" name="categoryType" />
+				<xs:attribute type="xs:boolean" name="hasAgathion" />
+				<xs:attribute type="xs:int" name="agathionEnergy" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="targetType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute type="xs:short" name="mindistance" use="optional" />
-				<xs:attribute type="xs:byte" name="abnormal" use="optional" />
-				<xs:attribute type="xs:short" name="active_effect_id" use="optional" />
-				<xs:attribute type="xs:short" name="active_skill_id" use="optional" />
-				<xs:attribute type="xs:string" name="class_id_restriction" use="optional" />
-				<xs:attribute type="xs:string" name="myPartyExceptMe" use="optional" />
-				<xs:attribute type="xs:string" name="race" use="optional" />
-				<xs:attribute type="xs:string" name="npcId" use="optional" />
-				<xs:attribute type="xs:string" name="npcType" use="optional" />
+				<xs:attribute type="xs:short" name="mindistance" />
+				<xs:attribute type="xs:byte" name="abnormal" />
+				<xs:attribute type="xs:short" name="active_effect_id" />
+				<xs:attribute type="xs:short" name="active_skill_id" />
+				<xs:attribute type="xs:string" name="class_id_restriction" />
+				<xs:attribute type="xs:string" name="myPartyExceptMe" />
+				<xs:attribute type="xs:string" name="race" />
+				<xs:attribute type="xs:string" name="npcId" />
+				<xs:attribute type="xs:string" name="npcType" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -201,9 +201,9 @@
 			<xs:element name="player" type="playerType" />
 			<xs:element name="target" type="targetType" />
 		</xs:choice>
-		<xs:attribute type="xs:short" name="msgId" use="optional" />
-		<xs:attribute type="xs:byte" name="addName" use="optional" />
-		<xs:attribute type="xs:string" name="msg" use="optional" />
+		<xs:attribute type="xs:short" name="msgId" />
+		<xs:attribute type="xs:byte" name="addName" />
+		<xs:attribute type="xs:string" name="msg" />
 	</xs:complexType>
 	<xs:simpleType name="operation">
 		<xs:restriction base="xs:string">
@@ -214,7 +214,7 @@
 	<xs:complexType name="paramType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute name="block" use="optional">
+				<xs:attribute name="block">
 					<xs:simpleType>
 						<xs:restriction base="xs:token">
 							<xs:enumeration value="HP" />
@@ -222,123 +222,123 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
-				<xs:attribute type="xs:string" name="pAtk" use="optional" />
-				<xs:attribute type="xs:string" name="mAtk" use="optional" />
-				<xs:attribute type="xs:string" name="pDef" use="optional" />
-				<xs:attribute type="xs:string" name="mDef" use="optional" />
-				<xs:attribute type="xs:string" name="maxHp" use="optional" />
-				<xs:attribute type="xs:string" name="maxMp" use="optional" />
-				<xs:attribute type="xs:string" name="critRate" use="optional" />
-				<xs:attribute type="xs:string" name="pAtkSpd" use="optional" />
-				<xs:attribute type="xs:string" name="mAtkSpd" use="optional" />
-				<xs:attribute type="xs:string" name="chance" use="optional" />
-				<xs:attribute type="xs:string" name="power" use="optional" />
-				<xs:attribute type="xs:string" name="ticks" use="optional" />
-				<xs:attribute type="xs:string" name="energy" use="optional" />
-				<xs:attribute type="operation" name="type" use="optional" />
-				<xs:attribute type="operation" name="mode" use="optional" />
-				<xs:attribute type="xs:boolean" name="heal" use="optional" />
-				<xs:attribute type="xs:string" name="criticalChance" use="optional" />
-				<xs:attribute type="xs:byte" name="blowChance" use="optional" />
-				<xs:attribute type="xs:string" name="drain" use="optional" />
-				<xs:attribute type="xs:byte" name="resPower" use="optional" />
-				<xs:attribute type="xs:byte" name="resRecovery" use="optional" />
-				<xs:attribute type="xs:string" name="charge" use="optional" />
-				<xs:attribute type="xs:byte" name="cubicId" use="optional" />
-				<xs:attribute type="xs:byte" name="cubicDelay" use="optional" />
-				<xs:attribute type="xs:short" name="cubicDuration" use="optional" />
-				<xs:attribute type="xs:short" name="cubicMaxCount" use="optional" />
-				<xs:attribute type="xs:byte" name="cubicSkillChance" use="optional" />
-				<xs:attribute type="xs:string" name="cubicPower" use="optional" />
-				<xs:attribute type="xs:string" name="npcId" use="optional" />
-				<xs:attribute type="xs:string" name="consumeItemId" use="optional" />
-				<xs:attribute type="xs:string" name="consumeItemCount" use="optional" />
-				<xs:attribute type="xs:string" name="lifeTime" use="optional" />
-				<xs:attribute type="xs:string" name="dispel" use="optional" />
-				<xs:attribute type="xs:string" name="expMultiplier" use="optional" />
-				<xs:attribute type="xs:string" name="halfLethal" use="optional" />
-				<xs:attribute type="xs:byte" name="cubicSkill1Chance" use="optional" />
-				<xs:attribute type="xs:byte" name="cubicSkill2Chance" use="optional" />
-				<xs:attribute type="xs:byte" name="cubicSkill3Chance" use="optional" />
-				<xs:attribute type="xs:string" name="BUG_WEAKNESS" use="optional" />
-				<xs:attribute type="xs:string" name="BEAST_WEAKNESS" use="optional" />
-				<xs:attribute type="xs:string" name="ANIMAL_WEAKNESS" use="optional" />
-				<xs:attribute type="xs:string" name="DRAGON_WEAKNESS" use="optional" />
-				<xs:attribute type="xs:string" name="PLANT_WEAKNESS" use="optional" />
-				<xs:attribute type="xs:string" name="ROOT_PHYSICALLY" use="optional" />
-				<xs:attribute type="xs:string" name="HOLD" use="optional" />
-				<xs:attribute type="xs:string" name="BOW" use="optional" />
-				<xs:attribute type="xs:string" name="CROSSBOW" use="optional" />
-				<xs:attribute type="xs:string" name="SLEEP" use="optional" />
-				<xs:attribute type="xs:string" name="POISON" use="optional" />
-				<xs:attribute type="xs:string" name="cubicCount" use="optional" />
-				<xs:attribute type="xs:string" name="SHOCK" use="optional" />
-				<xs:attribute type="xs:string" name="ignoreShieldDefence" use="optional" />
-				<xs:attribute type="xs:string" name="POLE" use="optional" />
-				<xs:attribute type="xs:string" name="PARALYZE" use="optional" />
-				<xs:attribute type="xs:string" name="isAdvanced" use="optional" />
-				<xs:attribute type="xs:string" name="DERANGEMENT" use="optional" />
-				<xs:attribute type="xs:string" name="BLEED" use="optional" />
-				<xs:attribute type="xs:string" name="slot" use="optional" />
-				<xs:attribute type="xs:string" name="rate" use="optional" />
-				<xs:attribute type="xs:string" name="max" use="optional" />
-				<xs:attribute type="xs:string" name="CONSTRUCT_WEAKNESS" use="optional" />
-				<xs:attribute type="xs:string" name="GIANT_WEAKNESS" use="optional" />
-				<xs:attribute type="xs:string" name="SWORD" use="optional" />
-				<xs:attribute type="xs:string" name="BLUNT" use="optional" />
-				<xs:attribute type="xs:string" name="DAGGER" use="optional" />
-				<xs:attribute type="xs:string" name="DUAL" use="optional" />
-				<xs:attribute type="xs:string" name="DUALFIST" use="optional" />
-				<xs:attribute type="xs:string" name="ANCIENTSWORD" use="optional" />
-				<xs:attribute type="xs:string" name="RAPIER" use="optional" />
-				<xs:attribute type="xs:string" name="DUALDAGGER" use="optional" />
-				<xs:attribute type="xs:string" name="fullLethal" use="optional" />
-				<xs:attribute type="xs:string" name="attackerType" use="optional" />
-				<xs:attribute type="xs:byte" name="minAttackerLevel" use="optional" />
-				<xs:attribute type="xs:byte" name="maxAttackerLevel" use="optional" />
-				<xs:attribute type="xs:boolean" name="isCritical" use="optional" />
-				<xs:attribute type="xs:string" name="minDamage" use="optional" />
-				<xs:attribute type="xs:short" name="castSkillId" use="optional" />
-				<xs:attribute type="xs:byte" name="blockedActions" use="optional" />
-				<xs:attribute type="xs:string" name="skillId" use="optional" />
-				<xs:attribute type="xs:string" name="skillLevel" use="optional" />
-				<xs:attribute type="xs:string" name="allowWeapons" use="optional" />
-				<xs:attribute type="xs:string" name="targetType" use="optional" />
-				<xs:attribute type="xs:byte" name="npcCount" use="optional" />
-				<xs:attribute type="xs:string" name="expNeeded" use="optional" />
-				<xs:attribute type="xs:string" name="itemId" use="optional" />
-				<xs:attribute type="xs:string" name="itemCount" use="optional" />
-				<xs:attribute type="xs:short" name="id" use="optional" />
-				<xs:attribute type="xs:string" name="amount" use="optional" />
-				<xs:attribute type="xs:int" name="despawnDelay" use="optional" />
-				<xs:attribute type="xs:string" name="isSummonSpawn" use="optional" />
-				<xs:attribute type="xs:string" name="escapeType" use="optional" />
-				<xs:attribute type="xs:string" name="slots" use="optional" />
-				<xs:attribute type="xs:string" name="value" use="optional" />
-				<xs:attribute type="xs:string" name="sp" use="optional" />
-				<xs:attribute type="xs:string" name="x" use="optional" />
-				<xs:attribute type="xs:string" name="y" use="optional" />
-				<xs:attribute type="xs:string" name="z" use="optional" />
-				<xs:attribute type="xs:string" name="grade" use="optional" />
-				<xs:attribute type="xs:byte" name="VALAKAS" use="optional" />
-				<xs:attribute type="xs:string" name="isItem" use="optional" />
-				<xs:attribute type="xs:byte" name="skillLvl" use="optional" />
-				<xs:attribute type="xs:byte" name="GUST" use="optional" />
-				<xs:attribute type="xs:byte" name="BOSS" use="optional" />
-				<xs:attribute type="xs:byte" name="PHYSICAL_BLOCKADE" use="optional" />
-				<xs:attribute type="xs:string" name="canKill" use="optional" />
-				<xs:attribute type="xs:string" name="TURN_STONE" use="optional" />
-				<xs:attribute type="xs:byte" name="FIST" use="optional" />
-				<xs:attribute type="xs:byte" name="randomOffset" use="optional" />
-				<xs:attribute type="xs:short" name="skillId1" use="optional" />
-				<xs:attribute type="xs:short" name="skillId2" use="optional" />
-				<xs:attribute type="xs:short" name="skillId3" use="optional" />
-				<xs:attribute type="xs:string" name="time" use="optional" />
-				<xs:attribute type="xs:string" name="flyRadius" use="optional" />
-				<xs:attribute type="xs:int" name="flyCourse" use="optional" />
-				<xs:attribute type="xs:string" name="normal" use="optional" />
-				<xs:attribute type="xs:string" name="ride" use="optional" />
-				<xs:attribute type="xs:string" name="wyvern" use="optional" />
+				<xs:attribute type="xs:string" name="pAtk" />
+				<xs:attribute type="xs:string" name="mAtk" />
+				<xs:attribute type="xs:string" name="pDef" />
+				<xs:attribute type="xs:string" name="mDef" />
+				<xs:attribute type="xs:string" name="maxHp" />
+				<xs:attribute type="xs:string" name="maxMp" />
+				<xs:attribute type="xs:string" name="critRate" />
+				<xs:attribute type="xs:string" name="pAtkSpd" />
+				<xs:attribute type="xs:string" name="mAtkSpd" />
+				<xs:attribute type="xs:string" name="chance" />
+				<xs:attribute type="xs:string" name="power" />
+				<xs:attribute type="xs:string" name="ticks" />
+				<xs:attribute type="xs:string" name="energy" />
+				<xs:attribute type="operation" name="type" />
+				<xs:attribute type="operation" name="mode" />
+				<xs:attribute type="xs:boolean" name="heal" />
+				<xs:attribute type="xs:string" name="criticalChance" />
+				<xs:attribute type="xs:byte" name="blowChance" />
+				<xs:attribute type="xs:string" name="drain" />
+				<xs:attribute type="xs:byte" name="resPower" />
+				<xs:attribute type="xs:byte" name="resRecovery" />
+				<xs:attribute type="xs:string" name="charge" />
+				<xs:attribute type="xs:byte" name="cubicId" />
+				<xs:attribute type="xs:byte" name="cubicDelay" />
+				<xs:attribute type="xs:short" name="cubicDuration" />
+				<xs:attribute type="xs:short" name="cubicMaxCount" />
+				<xs:attribute type="xs:byte" name="cubicSkillChance" />
+				<xs:attribute type="xs:string" name="cubicPower" />
+				<xs:attribute type="xs:string" name="npcId" />
+				<xs:attribute type="xs:string" name="consumeItemId" />
+				<xs:attribute type="xs:string" name="consumeItemCount" />
+				<xs:attribute type="xs:string" name="lifeTime" />
+				<xs:attribute type="xs:string" name="dispel" />
+				<xs:attribute type="xs:string" name="expMultiplier" />
+				<xs:attribute type="xs:string" name="halfLethal" />
+				<xs:attribute type="xs:byte" name="cubicSkill1Chance" />
+				<xs:attribute type="xs:byte" name="cubicSkill2Chance" />
+				<xs:attribute type="xs:byte" name="cubicSkill3Chance" />
+				<xs:attribute type="xs:string" name="BUG_WEAKNESS" />
+				<xs:attribute type="xs:string" name="BEAST_WEAKNESS" />
+				<xs:attribute type="xs:string" name="ANIMAL_WEAKNESS" />
+				<xs:attribute type="xs:string" name="DRAGON_WEAKNESS" />
+				<xs:attribute type="xs:string" name="PLANT_WEAKNESS" />
+				<xs:attribute type="xs:string" name="ROOT_PHYSICALLY" />
+				<xs:attribute type="xs:string" name="HOLD" />
+				<xs:attribute type="xs:string" name="BOW" />
+				<xs:attribute type="xs:string" name="CROSSBOW" />
+				<xs:attribute type="xs:string" name="SLEEP" />
+				<xs:attribute type="xs:string" name="POISON" />
+				<xs:attribute type="xs:string" name="cubicCount" />
+				<xs:attribute type="xs:string" name="SHOCK" />
+				<xs:attribute type="xs:string" name="ignoreShieldDefence" />
+				<xs:attribute type="xs:string" name="POLE" />
+				<xs:attribute type="xs:string" name="PARALYZE" />
+				<xs:attribute type="xs:string" name="isAdvanced" />
+				<xs:attribute type="xs:string" name="DERANGEMENT" />
+				<xs:attribute type="xs:string" name="BLEED" />
+				<xs:attribute type="xs:string" name="slot" />
+				<xs:attribute type="xs:string" name="rate" />
+				<xs:attribute type="xs:string" name="max" />
+				<xs:attribute type="xs:string" name="CONSTRUCT_WEAKNESS" />
+				<xs:attribute type="xs:string" name="GIANT_WEAKNESS" />
+				<xs:attribute type="xs:string" name="SWORD" />
+				<xs:attribute type="xs:string" name="BLUNT" />
+				<xs:attribute type="xs:string" name="DAGGER" />
+				<xs:attribute type="xs:string" name="DUAL" />
+				<xs:attribute type="xs:string" name="DUALFIST" />
+				<xs:attribute type="xs:string" name="ANCIENTSWORD" />
+				<xs:attribute type="xs:string" name="RAPIER" />
+				<xs:attribute type="xs:string" name="DUALDAGGER" />
+				<xs:attribute type="xs:string" name="fullLethal" />
+				<xs:attribute type="xs:string" name="attackerType" />
+				<xs:attribute type="xs:byte" name="minAttackerLevel" />
+				<xs:attribute type="xs:byte" name="maxAttackerLevel" />
+				<xs:attribute type="xs:boolean" name="isCritical" />
+				<xs:attribute type="xs:string" name="minDamage" />
+				<xs:attribute type="xs:short" name="castSkillId" />
+				<xs:attribute type="xs:byte" name="blockedActions" />
+				<xs:attribute type="xs:string" name="skillId" />
+				<xs:attribute type="xs:string" name="skillLevel" />
+				<xs:attribute type="xs:string" name="allowWeapons" />
+				<xs:attribute type="xs:string" name="targetType" />
+				<xs:attribute type="xs:byte" name="npcCount" />
+				<xs:attribute type="xs:string" name="expNeeded" />
+				<xs:attribute type="xs:string" name="itemId" />
+				<xs:attribute type="xs:string" name="itemCount" />
+				<xs:attribute type="xs:short" name="id" />
+				<xs:attribute type="xs:string" name="amount" />
+				<xs:attribute type="xs:int" name="despawnDelay" />
+				<xs:attribute type="xs:string" name="isSummonSpawn" />
+				<xs:attribute type="xs:string" name="escapeType" />
+				<xs:attribute type="xs:string" name="slots" />
+				<xs:attribute type="xs:string" name="value" />
+				<xs:attribute type="xs:string" name="sp" />
+				<xs:attribute type="xs:string" name="x" />
+				<xs:attribute type="xs:string" name="y" />
+				<xs:attribute type="xs:string" name="z" />
+				<xs:attribute type="xs:string" name="grade" />
+				<xs:attribute type="xs:byte" name="VALAKAS" />
+				<xs:attribute type="xs:string" name="isItem" />
+				<xs:attribute type="xs:byte" name="skillLvl" />
+				<xs:attribute type="xs:byte" name="GUST" />
+				<xs:attribute type="xs:byte" name="BOSS" />
+				<xs:attribute type="xs:byte" name="PHYSICAL_BLOCKADE" />
+				<xs:attribute type="xs:string" name="canKill" />
+				<xs:attribute type="xs:string" name="TURN_STONE" />
+				<xs:attribute type="xs:byte" name="FIST" />
+				<xs:attribute type="xs:byte" name="randomOffset" />
+				<xs:attribute type="xs:short" name="skillId1" />
+				<xs:attribute type="xs:short" name="skillId2" />
+				<xs:attribute type="xs:short" name="skillId3" />
+				<xs:attribute type="xs:string" name="time" />
+				<xs:attribute type="xs:string" name="flyRadius" />
+				<xs:attribute type="xs:int" name="flyCourse" />
+				<xs:attribute type="xs:string" name="normal" />
+				<xs:attribute type="xs:string" name="ride" />
+				<xs:attribute type="xs:string" name="wyvern" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -472,16 +472,16 @@
 			<xs:element name="player" minOccurs="0" type="playerType" />
 			<xs:element name="game" minOccurs="0" type="gameType" />
 		</xs:all>
-		<xs:attribute name="order" type="xs:byte" use="optional" />
+		<xs:attribute name="order" type="xs:byte" />
 		<xs:attribute name="stat" use="required" type="statType" />
 		<xs:attribute name="val" type="xs:string" use="required" />
 	</xs:complexType>
 	<xs:complexType name="shareType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute name="order" type="xs:byte" use="optional" />
+				<xs:attribute name="order" type="xs:byte" />
 				<xs:attribute name="stat" type="statType" />
-				<xs:attribute type="xs:float" name="val" use="optional" />
+				<xs:attribute type="xs:float" name="val" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -663,14 +663,14 @@
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
-		<xs:attribute type="xs:string" name="ticks" use="optional" />
-		<xs:attribute type="xs:string" name="abnormalTime" use="optional" />
-		<xs:attribute type="xs:string" name="activationChance" use="optional" />
-		<xs:attribute type="xs:string" name="chanceType" use="optional" />
-		<xs:attribute type="xs:string" name="triggeredId" use="optional" />
-		<xs:attribute type="xs:string" name="triggeredLevel" use="optional" />
-		<xs:attribute type="xs:string" name="activationMinDamage" use="optional" />
-		<xs:attribute type="xs:short" name="activationSkills" use="optional" />
+		<xs:attribute type="xs:string" name="ticks" />
+		<xs:attribute type="xs:string" name="abnormalTime" />
+		<xs:attribute type="xs:string" name="activationChance" />
+		<xs:attribute type="xs:string" name="chanceType" />
+		<xs:attribute type="xs:string" name="triggeredId" />
+		<xs:attribute type="xs:string" name="triggeredLevel" />
+		<xs:attribute type="xs:string" name="activationMinDamage" />
+		<xs:attribute type="xs:short" name="activationSkills" />
 	</xs:complexType>
 	<xs:complexType name="effectsType" mixed="true">
 		<xs:choice maxOccurs="unbounded" minOccurs="0">
@@ -681,8 +681,8 @@
 			<xs:element name="set" type="addType" />
 			<xs:element name="effect" type="effectType" />
 		</xs:choice>
-		<xs:attribute type="xs:string" name="name" use="optional" />
-		<xs:attribute type="xs:byte" name="val" use="optional" />
+		<xs:attribute type="xs:string" name="name" />
+		<xs:attribute type="xs:byte" name="val" />
 	</xs:complexType>
 	<xs:complexType name="skillType">
 		<xs:choice maxOccurs="unbounded" minOccurs="0">
@@ -728,22 +728,22 @@
 			<xs:element name="channelingEffects" type="effectsType" />
 			<xs:element name="startEffects" type="effectsType" />
 		</xs:choice>
-		<xs:attribute type="xs:short" name="id" use="optional" />
-		<xs:attribute type="xs:byte" name="levels" use="optional" />
-		<xs:attribute type="xs:string" name="name" use="optional" />
-		<xs:attribute type="xs:byte" name="enchantGroup1" use="optional" />
-		<xs:attribute type="xs:byte" name="enchantGroup2" use="optional" />
-		<xs:attribute type="xs:byte" name="enchantGroup3" use="optional" />
-		<xs:attribute type="xs:byte" name="enchantGroup4" use="optional" />
-		<xs:attribute type="xs:byte" name="enchantGroup5" use="optional" />
-		<xs:attribute type="xs:byte" name="enchantGroup6" use="optional" />
-		<xs:attribute type="xs:byte" name="enchantGroup7" use="optional" />
-		<xs:attribute type="xs:byte" name="enchantGroup8" use="optional" />
+		<xs:attribute type="xs:short" name="id" />
+		<xs:attribute type="xs:byte" name="levels" />
+		<xs:attribute type="xs:string" name="name" />
+		<xs:attribute type="xs:byte" name="enchantGroup1" />
+		<xs:attribute type="xs:byte" name="enchantGroup2" />
+		<xs:attribute type="xs:byte" name="enchantGroup3" />
+		<xs:attribute type="xs:byte" name="enchantGroup4" />
+		<xs:attribute type="xs:byte" name="enchantGroup5" />
+		<xs:attribute type="xs:byte" name="enchantGroup6" />
+		<xs:attribute type="xs:byte" name="enchantGroup7" />
+		<xs:attribute type="xs:byte" name="enchantGroup8" />
 	</xs:complexType>
 	<xs:element name="list">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="skill" type="skillType" minOccurs="1" maxOccurs="unbounded" />
+				<xs:element name="skill" type="skillType" maxOccurs="unbounded" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

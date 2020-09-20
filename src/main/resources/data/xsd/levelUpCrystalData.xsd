@@ -2,10 +2,10 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="list">
 		<xs:complexType>
-			<xs:sequence minOccurs="1" maxOccurs="1">
-				<xs:element name="crystal" minOccurs="1" maxOccurs="1">
+			<xs:sequence>
+				<xs:element name="crystal">
 					<xs:complexType>
-						<xs:sequence minOccurs="1" maxOccurs="1">
+						<xs:sequence>
 							<xs:element name="item" minOccurs="54" maxOccurs="54">
 								<xs:complexType>
 									<xs:attribute name="itemId" type="xs:positiveInteger" use="required" />
@@ -23,13 +23,13 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="npc" minOccurs="1" maxOccurs="1">
+				<xs:element name="npc">
 					<xs:complexType>
-						<xs:sequence minOccurs="1" maxOccurs="1">
-							<xs:element name="item" minOccurs="1" maxOccurs="unbounded">
+						<xs:sequence>
+							<xs:element name="item" maxOccurs="unbounded">
 								<xs:complexType>
-									<xs:sequence minOccurs="1" maxOccurs="1">
-										<xs:element name="detail" minOccurs="1" maxOccurs="unbounded">
+									<xs:sequence>
+										<xs:element name="detail" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:attribute name="absorbType">
 													<xs:simpleType>

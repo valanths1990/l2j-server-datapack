@@ -2,11 +2,11 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="list">
 		<xs:complexType>
-			<xs:sequence minOccurs="1" maxOccurs="1">
-				<xs:element name="region" minOccurs="1" maxOccurs="unbounded">
+			<xs:sequence>
+				<xs:element name="region" maxOccurs="unbounded">
 					<xs:complexType>
-						<xs:sequence minOccurs="1" maxOccurs="1">
-							<xs:element name="respawnPoint" minOccurs="1" maxOccurs="unbounded">
+						<xs:sequence>
+							<xs:element name="respawnPoint" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:attribute name="isChaotic" type="xs:boolean" />
 									<xs:attribute name="X" type="xs:integer" use="required" />

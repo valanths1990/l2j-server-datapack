@@ -2,41 +2,40 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="instance">
 		<xs:complexType>
-			<xs:sequence minOccurs="1" maxOccurs="1">
-				<xs:element name="activityTime" minOccurs="0" maxOccurs="1">
+			<xs:sequence>
+				<xs:element name="activityTime" minOccurs="0">
 					<xs:complexType>
 						<xs:attribute name="val" type="xs:positiveInteger"
 							use="required" />
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="allowSummon" minOccurs="0" maxOccurs="1">
+				<xs:element name="allowSummon" minOccurs="0">
 					<xs:complexType>
 						<xs:attribute name="val" type="xs:boolean" use="required" />
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="emptyDestroyTime" minOccurs="0"
-					maxOccurs="1">
+				<xs:element name="emptyDestroyTime" minOccurs="0">
 					<xs:complexType>
 						<xs:attribute name="val" type="xs:positiveInteger"
 							use="required" />
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="PvPInstance" minOccurs="0" maxOccurs="1">
+				<xs:element name="PvPInstance" minOccurs="0">
 					<xs:complexType>
 						<xs:attribute name="val" type="xs:boolean" use="required" />
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="showTimer" minOccurs="0" maxOccurs="1">
+				<xs:element name="showTimer" minOccurs="0">
 					<xs:complexType>
 						<xs:attribute name="val" type="xs:boolean" use="required" />
-						<xs:attribute name="increase" type="xs:boolean" use="optional" />
-						<xs:attribute name="text" type="xs:normalizedString" use="optional" />
+						<xs:attribute name="increase" type="xs:boolean" />
+						<xs:attribute name="text" type="xs:normalizedString" />
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="spawnPoints" minOccurs="0" maxOccurs="1">
+				<xs:element name="spawnPoints" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="Location" minOccurs="1" maxOccurs="unbounded">
+							<xs:element name="Location" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:attribute name="x" type="xs:int" use="required" />
 									<xs:attribute name="y" type="xs:int" use="required" />
@@ -54,14 +53,14 @@
 						</xs:attribute>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="exitPoint" minOccurs="0" maxOccurs="1">
+				<xs:element name="exitPoint" minOccurs="0">
 					<xs:complexType>
 						<xs:attribute name="x" type="xs:int" use="required" />
 						<xs:attribute name="y" type="xs:int" use="required" />
 						<xs:attribute name="z" type="xs:int" use="required" />
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="reenter" minOccurs="0" maxOccurs="1">
+				<xs:element name="reenter" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="reset" minOccurs="0" maxOccurs="unbounded">
@@ -96,7 +95,7 @@
 						</xs:attribute>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="removeBuffs" minOccurs="0" maxOccurs="1">
+				<xs:element name="removeBuffs" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="skill" minOccurs="0" maxOccurs="unbounded">
@@ -116,10 +115,10 @@
 						</xs:attribute>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="doorlist" minOccurs="0" maxOccurs="1">
+				<xs:element name="doorlist" minOccurs="0">
 					<xs:complexType>
-						<xs:sequence minOccurs="1" maxOccurs="1">
-							<xs:element name="door" minOccurs="1" maxOccurs="unbounded">
+						<xs:sequence>
+							<xs:element name="door" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:attribute name="doorId" type="xs:positiveInteger"
 										use="required" />
@@ -144,13 +143,13 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="spawnlist" minOccurs="0" maxOccurs="1">
+				<xs:element name="spawnlist" minOccurs="0">
 					<xs:complexType>
-						<xs:sequence minOccurs="1" maxOccurs="unbounded">
-							<xs:element name="group" minOccurs="1" maxOccurs="unbounded">
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="group" maxOccurs="unbounded">
 								<xs:complexType>
-									<xs:sequence minOccurs="1" maxOccurs="1">
-										<xs:element name="spawn" minOccurs="1" maxOccurs="unbounded">
+									<xs:sequence>
+										<xs:element name="spawn" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:attribute name="amount" type="xs:positiveInteger" />
 												<xs:attribute name="heading" type="xs:integer"
@@ -177,14 +176,8 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="showTimer" minOccurs="0" maxOccurs="1">
-					<xs:complexType>
-						<xs:attribute name="val" type="xs:boolean" use="optional" />
-					</xs:complexType>
-				</xs:element>
 			</xs:sequence>
-			<xs:attribute name="name" type="xs:normalizedString"
-				use="required" />
+			<xs:attribute name="name" type="xs:normalizedString" use="required" />
 			<xs:attribute name="ejectTime" type="xs:positiveInteger" />
 			<xs:attribute name="allowRandomWalk" type="xs:boolean" />
 		</xs:complexType>

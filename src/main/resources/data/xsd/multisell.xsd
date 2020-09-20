@@ -2,11 +2,11 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="list">
 		<xs:complexType>
-			<xs:sequence minOccurs="1" maxOccurs="1">
-				<xs:element name="npcs" minOccurs="0" maxOccurs="1">
+			<xs:sequence>
+				<xs:element name="npcs" minOccurs="0">
 					<xs:complexType>
-						<xs:sequence minOccurs="1" maxOccurs="1">
-							<xs:element name="npc" minOccurs="1" maxOccurs="unbounded">
+						<xs:sequence>
+							<xs:element name="npc" maxOccurs="unbounded">
 								<xs:simpleType>
 									<xs:restriction base="xs:positiveInteger">
 										<xs:minInclusive value="1" />
@@ -17,9 +17,9 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="item" minOccurs="1" maxOccurs="unbounded">
+				<xs:element name="item" maxOccurs="unbounded">
 					<xs:complexType>
-						<xs:sequence minOccurs="1" maxOccurs="1">
+						<xs:sequence>
 							<xs:element name="ingredient" minOccurs="0" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:attribute name="count" type="xs:positiveInteger" use="required" />
@@ -27,7 +27,7 @@
 									<xs:attribute name="maintainIngredient" type="xs:boolean" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="production" minOccurs="1" maxOccurs="unbounded">
+							<xs:element name="production" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:attribute name="count" type="xs:positiveInteger" use="required" />
 									<xs:attribute name="id" type="xs:integer" use="required" />

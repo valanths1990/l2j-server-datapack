@@ -2,8 +2,8 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="list">
 		<xs:complexType>
-			<xs:sequence maxOccurs="1" minOccurs="1">
-				<xs:element name="admin" maxOccurs="unbounded" minOccurs="1">
+			<xs:sequence>
+				<xs:element name="admin" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:attribute name="accessLevel" use="required">
 							<xs:simpleType>

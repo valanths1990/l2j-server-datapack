@@ -28,7 +28,7 @@ import com.l2jserver.datapack.custom.service.base.util.htmltmpls.HTMLTemplateUti
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- * If function.
+ * If function.<br>
  * This class implements the following function syntax:<br>
  * [IF(placeholder_name == "text in string" THEN text when the condition matches)ENDIF]<br>
  * [IF(placeholder_name == another_placeholder_name THEN text when the condition matches)ENDIF]<br>

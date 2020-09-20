@@ -2,14 +2,14 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="list">
 		<xs:complexType>
-			<xs:sequence minOccurs="1" maxOccurs="1">
-				<xs:element name="spawnZones" minOccurs="1" maxOccurs="1">
+			<xs:sequence>
+				<xs:element name="spawnZones">
 					<xs:complexType>
-						<xs:sequence minOccurs="1" maxOccurs="1">
-							<xs:element name="zone" minOccurs="1" maxOccurs="unbounded">
+						<xs:sequence>
+							<xs:element name="zone" maxOccurs="unbounded">
 								<xs:complexType>
-									<xs:sequence minOccurs="1" maxOccurs="1">
-										<xs:element name="point" maxOccurs="unbounded" minOccurs="1">
+									<xs:sequence>
+										<xs:element name="point" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:attribute name="x" type="xs:integer" use="required" />
 												<xs:attribute name="y" type="xs:integer" use="required" />
@@ -24,13 +24,13 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="npc" minOccurs="1" maxOccurs="1">
+				<xs:element name="npc">
 					<xs:complexType>
-						<xs:sequence minOccurs="1" maxOccurs="1">
-							<xs:element name="spawn" minOccurs="1" maxOccurs="unbounded">
+						<xs:sequence>
+							<xs:element name="spawn" maxOccurs="unbounded">
 								<xs:complexType>
-									<xs:choice minOccurs="1" maxOccurs="1">
-										<xs:element name="loc" minOccurs="1" maxOccurs="1">
+									<xs:choice>
+										<xs:element name="loc">
 											<xs:complexType>
 												<xs:attribute name="heading" type="xs:nonNegativeInteger" use="required" />
 												<xs:attribute name="mustKill" type="xs:boolean" />
@@ -39,7 +39,7 @@
 												<xs:attribute name="z" type="xs:integer" use="required" />
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="zone" minOccurs="1" maxOccurs="1">
+										<xs:element name="zone">
 											<xs:complexType>
 												<xs:attribute name="count" type="xs:positiveInteger" use="required" />
 												<xs:attribute name="id" type="xs:positiveInteger" use="required" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<event name="Gift of Vitality" active="27 02 2008-28 02 2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/eventConfig.xsd">
+<event name="Gift of Vitality" active="27 02 2008-28 02 2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/eventConfig.xsd">
 	<spawnlist>
 		<add npc="4306" x="87116" y="-141332" z="-1336" heading="52193" />
 		<add npc="4306" x="-13869" y="122063" z="-2984" heading="18270" />

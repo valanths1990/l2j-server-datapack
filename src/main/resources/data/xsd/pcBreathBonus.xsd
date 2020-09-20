@@ -2,8 +2,8 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="pcBreathBonus">
 		<xs:complexType>
-			<xs:sequence minOccurs="1" maxOccurs="1">
-				<xs:element name="breathBonus" minOccurs="1" maxOccurs="20">
+			<xs:sequence>
+				<xs:element name="breathBonus" maxOccurs="20">
 					<xs:complexType>
 						<xs:attribute name="classId" use="required">
 							<xs:simpleType>

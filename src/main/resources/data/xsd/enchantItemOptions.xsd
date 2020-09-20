@@ -2,11 +2,11 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="list">
 		<xs:complexType>
-			<xs:sequence maxOccurs="1" minOccurs="1">
-				<xs:element name="item" maxOccurs="unbounded" minOccurs="1">
+			<xs:sequence>
+				<xs:element name="item" maxOccurs="unbounded">
 					<xs:complexType>
-						<xs:sequence maxOccurs="1" minOccurs="1">
-							<xs:element name="options" maxOccurs="51" minOccurs="1">
+						<xs:sequence>
+							<xs:element name="options" maxOccurs="51">
 								<xs:complexType>
 									<xs:attribute name="level" use="required">
 										<xs:simpleType>

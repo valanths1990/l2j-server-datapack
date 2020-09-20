@@ -3,27 +3,27 @@
 	<xs:element name="list">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="npc" type="npcType" minOccurs="1" maxOccurs="unbounded" />
+				<xs:element name="npc" type="npcType" maxOccurs="unbounded" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="npcType">
 		<xs:choice maxOccurs="unbounded" minOccurs="0">
-			<xs:element name="acquire" type="acquireType" minOccurs="0" maxOccurs="1" />
-			<xs:element name="ai" type="aiType" minOccurs="0" maxOccurs="1" />
-			<xs:element name="collision" type="collisionType" minOccurs="0" maxOccurs="1" />
-			<xs:element name="corpseTime" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1" />
-			<xs:element name="dropLists" type="dropListsType" minOccurs="0" maxOccurs="1" />
-			<xs:element name="equipment" type="equipmentType" minOccurs="0" maxOccurs="1" />
-			<xs:element name="exCrtEffect" type="xs:boolean" minOccurs="0" maxOccurs="1" />
-			<xs:element name="parameters" type="parametersType" minOccurs="0" maxOccurs="1" />
-			<xs:element name="race" type="xs:token" minOccurs="0" maxOccurs="1" />
-			<xs:element name="sNpcPropHpRate" type="xs:decimal" minOccurs="0" maxOccurs="1" />
-			<xs:element name="sex" type="xs:token" minOccurs="0" maxOccurs="1" />
-			<xs:element name="shots" type="shotsType" minOccurs="0" maxOccurs="1" />
-			<xs:element name="skillList" type="skillType" minOccurs="0" maxOccurs="1" />
-			<xs:element name="stats" type="statsType" minOccurs="0" maxOccurs="1" />
-			<xs:element name="status" type="statusType" minOccurs="0" maxOccurs="1" />
+			<xs:element name="acquire" type="acquireType" minOccurs="0" />
+			<xs:element name="ai" type="aiType" minOccurs="0" />
+			<xs:element name="collision" type="collisionType" minOccurs="0" />
+			<xs:element name="corpseTime" type="xs:nonNegativeInteger" minOccurs="0" />
+			<xs:element name="dropLists" type="dropListsType" minOccurs="0" />
+			<xs:element name="equipment" type="equipmentType" minOccurs="0" />
+			<xs:element name="exCrtEffect" type="xs:boolean" minOccurs="0" />
+			<xs:element name="parameters" type="parametersType" minOccurs="0" />
+			<xs:element name="race" type="xs:token" minOccurs="0" />
+			<xs:element name="sNpcPropHpRate" type="xs:decimal" minOccurs="0" />
+			<xs:element name="sex" type="xs:token" minOccurs="0" />
+			<xs:element name="shots" type="shotsType" minOccurs="0" />
+			<xs:element name="skillList" type="skillType" minOccurs="0" />
+			<xs:element name="stats" type="statsType" minOccurs="0" />
+			<xs:element name="status" type="statusType" minOccurs="0" />
 		</xs:choice>
 		<xs:attribute name="id" type="xs:positiveInteger" use="required" />
 		<xs:attribute name="displayId" type="xs:positiveInteger" />
@@ -43,7 +43,7 @@
 	
 	<xs:complexType name="aiType">
 		<xs:all>
-			<xs:element name="skill" minOccurs="0" maxOccurs="1">
+			<xs:element name="skill" minOccurs="0">
 				<xs:complexType>
 					<xs:attribute name="minChance" type="xs:nonNegativeInteger" />
 					<xs:attribute name="maxChance" type="xs:nonNegativeInteger" />
@@ -54,9 +54,9 @@
 					<xs:attribute name="longRangeChance" type="xs:nonNegativeInteger" />
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="clanList" minOccurs="0" maxOccurs="1">
+			<xs:element name="clanList" minOccurs="0">
 				<xs:complexType>
-					<xs:choice minOccurs="1" maxOccurs="unbounded">
+					<xs:choice maxOccurs="unbounded">
 						<xs:element name="clan" type="xs:token" />
 						<xs:element name="ignoreNpcId" type="xs:nonNegativeInteger" />
 					</xs:choice>
@@ -73,8 +73,8 @@
 	
 	<xs:complexType name="collisionType">
 		<xs:all>
-			<xs:element name="radius" type="size" minOccurs="0" maxOccurs="1" />
-			<xs:element name="height" type="size" minOccurs="0" maxOccurs="1" />
+			<xs:element name="radius" type="size" minOccurs="0" />
+			<xs:element name="height" type="size" minOccurs="0" />
 		</xs:all>
 	</xs:complexType>
 	
@@ -85,18 +85,18 @@
 	
 		<xs:complexType name="dropListsType">
 		<xs:all>
-			<xs:element name="death" type="dropList" minOccurs="0" maxOccurs="1" />
-			<xs:element name="corpse" type="dropList" minOccurs="0" maxOccurs="1" />
+			<xs:element name="death" type="dropList" minOccurs="0" />
+			<xs:element name="corpse" type="dropList" minOccurs="0" />
 		</xs:all>
 	</xs:complexType>
 	
 	<xs:complexType name="dropList">
-		<xs:choice minOccurs="1" maxOccurs="unbounded">
+		<xs:choice maxOccurs="unbounded">
 			<xs:element name="item" type="dropListItem" />
 			<xs:element name="group">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="item" type="dropListItem" minOccurs="1" maxOccurs="unbounded" />
+						<xs:element name="item" type="dropListItem" maxOccurs="unbounded" />
 					</xs:sequence>
 					<xs:attribute name="chance" type="xs:decimal" />
 				</xs:complexType>
@@ -119,7 +119,7 @@
 	</xs:complexType>
 	
 	<xs:complexType name="parametersType">
-		<xs:choice minOccurs="1" maxOccurs="unbounded">
+		<xs:choice maxOccurs="unbounded">
 			<xs:element name="param">
 				<xs:complexType>
 					<xs:attribute name="name" type="xs:token" use="required" />
@@ -136,7 +136,7 @@
 			<xs:element name="minions">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="npc" minOccurs="1" maxOccurs="unbounded">
+						<xs:element name="npc" maxOccurs="unbounded">
 							<xs:complexType>
 								<xs:attribute name="id" type="xs:positiveInteger" use="required" />
 								<xs:attribute name="count" type="xs:positiveInteger" use="required" />
@@ -160,7 +160,7 @@
 
 	<xs:complexType name="skillType">
 		<xs:sequence>
-			<xs:element name="skill" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="skill" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:attribute name="id" type="xs:nonNegativeInteger" use="required" />
 					<xs:attribute name="level" type="xs:nonNegativeInteger" use="required" />
@@ -171,7 +171,7 @@
 	
 	<xs:complexType name="statsType">
 		<xs:choice maxOccurs="unbounded" minOccurs="0">
-			<xs:element name="vitals" minOccurs="0" maxOccurs="1">
+			<xs:element name="vitals" minOccurs="0">
 				<xs:complexType>
 					<xs:attribute name="hp" type="xs:decimal" />
 					<xs:attribute name="hpRegen" type="xs:decimal" />
@@ -179,7 +179,7 @@
 					<xs:attribute name="mpRegen" type="xs:decimal" />
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="attack" minOccurs="0" maxOccurs="1">
+			<xs:element name="attack" minOccurs="0">
 				<xs:complexType>
 					<xs:attribute name="physical" type="xs:decimal" />
 					<xs:attribute name="magical" type="xs:decimal" />
@@ -207,7 +207,7 @@
 					<xs:attribute name="width" type="xs:nonNegativeInteger" />
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="defence" minOccurs="0" maxOccurs="1">
+			<xs:element name="defence" minOccurs="0">
 				<xs:complexType>
 					<xs:attribute name="physical" type="xs:decimal" />
 					<xs:attribute name="magical" type="xs:decimal" />
@@ -216,10 +216,10 @@
 					<xs:attribute name="shieldRate" type="xs:nonNegativeInteger" />
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="attribute" minOccurs="0" maxOccurs="1">
+			<xs:element name="attribute" minOccurs="0">
 				<xs:complexType>
 					<xs:all>
-						<xs:element name="attack" minOccurs="0" maxOccurs="1">
+						<xs:element name="attack" minOccurs="0">
 							<xs:complexType>
 								<xs:attribute name="type">
 									<xs:simpleType>
@@ -236,7 +236,7 @@
 								<xs:attribute name="value" type="xs:nonNegativeInteger" />
 							</xs:complexType>
 						</xs:element>
-						<xs:element name="defence" minOccurs="0" maxOccurs="1">
+						<xs:element name="defence" minOccurs="0">
 							<xs:complexType>
 								<xs:attribute name="fire" type="xs:integer" />
 								<xs:attribute name="water" type="xs:integer" />
@@ -250,17 +250,17 @@
 					</xs:all>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="speed" minOccurs="0" maxOccurs="1">
+			<xs:element name="speed" minOccurs="0">
 				<xs:complexType>
 					<xs:all>
-						<xs:element name="walk" minOccurs="0" maxOccurs="1">
+						<xs:element name="walk" minOccurs="0">
 							<xs:complexType>
 								<xs:attribute name="ground" type="xs:decimal" />
 								<xs:attribute name="swim" type="xs:decimal" />
 								<xs:attribute name="fly" type="xs:decimal" />
 							</xs:complexType>
 						</xs:element>
-						<xs:element name="run" minOccurs="0" maxOccurs="1">
+						<xs:element name="run" minOccurs="0">
 							<xs:complexType>
 								<xs:attribute name="ground" type="xs:decimal" />
 								<xs:attribute name="swim" type="xs:decimal" />
@@ -270,7 +270,7 @@
 					</xs:all>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="hitTime" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1" />
+			<xs:element name="hitTime" type="xs:nonNegativeInteger" minOccurs="0" />
 		</xs:choice>
 		<xs:attribute name="str" type="xs:nonNegativeInteger" />
 		<xs:attribute name="int" type="xs:nonNegativeInteger" />
