@@ -1,4 +1,4 @@
-CREATE TABLE `custom_buffer_service_ulist_buffs` (
+CREATE TABLE IF NOT EXISTS `custom_buffer_service_ulist_buffs` (
   `ulist_id` int(10) unsigned NOT NULL,
   `ulist_buff_ident` varchar(255) NOT NULL,
   PRIMARY KEY (`ulist_id`,`ulist_buff_ident`),
