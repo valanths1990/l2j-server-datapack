@@ -18,9 +18,13 @@
  */
 package com.l2jserver.datapack.instances.IceQueensCastleNormalBattle;
 
+import static com.l2jserver.gameserver.model.events.EventType.ON_PLAYER_LOGOUT;
+import static com.l2jserver.gameserver.model.events.ListenerRegisterType.GLOBAL;
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.l2jserver.datapack.instances.AbstractInstance;
@@ -40,6 +44,9 @@ import com.l2jserver.gameserver.model.actor.instance.L2NpcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2QuestGuardInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2RaidBossInstance;
+import com.l2jserver.gameserver.model.events.annotations.RegisterEvent;
+import com.l2jserver.gameserver.model.events.annotations.RegisterType;
+import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -62,7 +69,7 @@ import com.l2jserver.gameserver.util.Util;
  */
 public final class IceQueensCastleNormalBattle extends AbstractInstance {
 	protected class IQCNBWorld extends InstanceWorld {
-		protected List<L2PcInstance> playersInside = new ArrayList<>();
+		protected Set<L2PcInstance> playersInside = ConcurrentHashMap.newKeySet();
 		protected List<L2Npc> knightStatues = new ArrayList<>();
 		protected List<L2Attackable> spawnedMobs = new CopyOnWriteArrayList<>();
 		protected L2NpcInstance controller = null;
@@ -150,7 +157,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 		new Location(116501, -115145, -10960, 32724),
 		new Location(116502, -115473, -10960, 32724),
 	};
-	private static Location[] KNIGHTS_LOC = {
+	private static final Location[] KNIGHTS_LOC = {
 		new Location(114502, -115315, -11205, 15451),
 		new Location(114937, -115323, -11205, 18106),
 		new Location(114722, -115185, -11205, 16437),
@@ -199,8 +206,9 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 							}
 							
 							if (!world.isHardMode) {
-								for (L2PcInstance players : world.playersInside) {
-									if ((players != null) && !players.isDead() && (players.getInstanceId() == world.getInstanceId())) {
+								for (var players : world.playersInside) {
+									if (!players.isDead() && (players.getInstanceId() == world.getInstanceId())) {
+										// TODO(Zoey76): Check if this should be over player or players variable.
 										final QuestState qs = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
 										if ((qs != null) && (qs.getState() == State.STARTED) && qs.isCond(5)) {
 											qs.setCond(6, true);
@@ -316,10 +324,8 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 						break;
 					}
 					case "STAGE_3_START": {
-						for (L2PcInstance players : world.playersInside) {
-							if (players != null) {
-								players.broadcastPacket(ExChangeClientEffectInfo.STATIC_FREYA_DESTROYED);
-							}
+						for (var players : world.playersInside) {
+							players.broadcastPacket(ExChangeClientEffectInfo.STATIC_FREYA_DESTROYED);
 						}
 						world.setStatus(4);
 						world.freya.deleteMe();
@@ -375,7 +381,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 						break;
 					}
 					case "SPAWN_SUPPORT": {
-						for (L2PcInstance players : world.playersInside) {
+						for (var players : world.playersInside) {
 							players.setIsInvul(false);
 						}
 						world.freya.setIsInvul(false);
@@ -536,10 +542,8 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 							world.freya.decayMe();
 						}
 						
-						for (L2PcInstance players : world.playersInside) {
-							if ((players != null)) {
-								players.broadcastPacket(ExChangeClientEffectInfo.STATIC_FREYA_DEFAULT);
-							}
+						for (var players : world.playersInside) {
+							players.broadcastPacket(ExChangeClientEffectInfo.STATIC_FREYA_DEFAULT);
 						}
 						InstanceManager.getInstance().destroyInstance(world.getInstanceId());
 						break;
@@ -641,7 +645,9 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 			if (npc.getId() == SUPP_JINIA) {
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 				return null;
-			} else if (npc.getId() == SUPP_KEGOR) {
+			}
+			
+			if (npc.getId() == SUPP_KEGOR) {
 				if (world.isSupportActive) {
 					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return null;
@@ -727,7 +733,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 						world.isSupportActive = true;
 						world.freya.setIsInvul(true);
 						world.freya.disableCoreAI(true);
-						for (L2PcInstance players : world.playersInside) {
+						for (var players : world.playersInside) {
 							players.setIsInvul(true);
 							players.abortAttack();
 						}
@@ -985,8 +991,8 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 	
 	@Override
 	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance) {
+		final IQCNBWorld curworld = (IQCNBWorld) world;
 		if (firstEntrance) {
-			final IQCNBWorld curworld = (IQCNBWorld) world;
 			curworld.isHardMode = curworld.getTemplateId() == TEMPLATE_ID_ULTIMATE;
 			if (!player.isInParty()) {
 				managePlayerEnter(player, curworld);
@@ -1000,7 +1006,19 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 				}
 			}
 		} else {
+			curworld.playersInside.add(player);
 			teleportPlayer(player, world.isStatus(4) ? BATTLE_PORT : ENTER_LOC[getRandom(ENTER_LOC.length)], world.getInstanceId());
+			
+		}
+	}
+	
+	@RegisterType(GLOBAL)
+	@RegisterEvent(ON_PLAYER_LOGOUT)
+	public void onPlayerLogout(OnPlayerLogout event) {
+		final var instanceWorld = InstanceManager.getInstance().getWorld(event.getActiveChar().getInstanceId());
+		if (instanceWorld instanceof IQCNBWorld) {
+			final var world = (IQCNBWorld) instanceWorld;
+			world.playersInside.remove(event.getActiveChar());
 		}
 	}
 	
@@ -1060,15 +1078,14 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 	
 	private void manageRandomAttack(IQCNBWorld world, L2Attackable mob) {
 		final List<L2PcInstance> players = new ArrayList<>();
-		for (L2PcInstance player : world.playersInside) {
-			if ((player != null) && !player.isDead() && (player.getInstanceId() == world.getInstanceId()) && !player.isInvisible()) {
+		for (var player : world.playersInside) {
+			if (!player.isDead() && (player.getInstanceId() == world.getInstanceId()) && !player.isInvisible()) {
 				players.add(player);
 			}
 		}
 		
-		Collections.shuffle(players);
-		final L2PcInstance target = (!players.isEmpty()) ? players.get(0) : null;
-		if (target != null) {
+		if (!players.isEmpty()) {
+			final var target = players.get(getRandom(players.size()));
 			mob.addDamageHate(target, 0, 999);
 			mob.setIsRunning(true);
 			mob.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
@@ -1088,7 +1105,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 	
 	private void manageTimer(IQCNBWorld world, int time, NpcStringId npcStringId) {
 		for (L2PcInstance players : world.playersInside) {
-			if ((players != null) && (players.getInstanceId() == world.getInstanceId())) {
+			if (players.getInstanceId() == world.getInstanceId()) {
 				players.sendPacket(new ExSendUIEvent(players, false, false, time, 0, npcStringId));
 			}
 		}
@@ -1096,7 +1113,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 	
 	private void manageScreenMsg(IQCNBWorld world, NpcStringId stringId) {
 		for (L2PcInstance players : world.playersInside) {
-			if ((players != null) && (players.getInstanceId() == world.getInstanceId())) {
+			if (players.getInstanceId() == world.getInstanceId()) {
 				showOnScreenMsg(players, stringId, 2, 6000);
 			}
 		}
@@ -1104,7 +1121,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 	
 	private void manageMovie(IQCNBWorld world, int movie) {
 		for (L2PcInstance players : world.playersInside) {
-			if ((players != null) && (players.getInstanceId() == world.getInstanceId())) {
+			if (players.getInstanceId() == world.getInstanceId()) {
 				players.showQuestMovie(movie);
 			}
 		}
