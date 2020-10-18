@@ -156,7 +156,7 @@ public final class QueenAnt extends AbstractNpcAI {
 			case "CORE_MOVEMENT": {
 				if (npc != null) {
 					final L2Object obj = npc.getTarget();
-					if ((obj != null) && (obj.isPlayer()) && (_zone.isInsideZone(obj))) {
+					if ((obj != null) && (_queen != null) && (obj.isPlayer()) && (_zone.isInsideZone(obj))) {
 						_queen.setIsImmobilized(false);
 					}
 					npc.getVariables().set(ATTACK_FLAG, false);
@@ -290,7 +290,7 @@ public final class QueenAnt extends AbstractNpcAI {
 				}
 			}
 		}
-		if ((!npc.getVariables().getBoolean(ATTACK_FLAG, false)) && !npc.isCoreAIDisabled()) {
+		if ((!npc.getVariables().getBoolean(ATTACK_FLAG, false)) && (npc != null) && (_queen != null) && !npc.isCoreAIDisabled()) {
 			if (npc.calculateDistance(attacker, false, false) > 150) {
 				_queen.setIsImmobilized(true);
 			}
