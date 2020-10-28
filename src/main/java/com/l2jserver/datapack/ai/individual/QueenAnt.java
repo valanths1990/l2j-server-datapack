@@ -290,7 +290,7 @@ public final class QueenAnt extends AbstractNpcAI {
 				}
 			}
 		}
-		if ((!npc.getVariables().getBoolean(ATTACK_FLAG, false)) && (npc != null) && (_queen != null) && !npc.isCoreAIDisabled()) {
+		if ((!npc.getVariables().getBoolean(ATTACK_FLAG, false)) && (_queen != null) && !npc.isCoreAIDisabled()) {
 			if (npc.calculateDistance(attacker, false, false) > 150) {
 				_queen.setIsImmobilized(true);
 			}
