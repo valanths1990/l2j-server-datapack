@@ -479,6 +479,7 @@ import com.l2jserver.datapack.quests.Q00699_GuardianOfTheSkies.Q00699_GuardianOf
 import com.l2jserver.datapack.quests.Q00700_CursedLife.Q00700_CursedLife;
 import com.l2jserver.datapack.quests.Q00701_ProofOfExistence.Q00701_ProofOfExistence;
 import com.l2jserver.datapack.quests.Q00702_ATrapForRevenge.Q00702_ATrapForRevenge;
+import com.l2jserver.datapack.quests.Q00708_PathToBecomingALordGludio.Q00708_PathToBecomingALordGludio;
 import com.l2jserver.datapack.quests.Q00901_HowLavasaurusesAreMade.Q00901_HowLavasaurusesAreMade;
 import com.l2jserver.datapack.quests.Q00902_ReclaimOurEra.Q00902_ReclaimOurEra;
 import com.l2jserver.datapack.quests.Q00903_TheCallOfAntharas.Q00903_TheCallOfAntharas;
@@ -989,6 +990,7 @@ public class QuestLoader {
 		Q00700_CursedLife.class,
 		Q00701_ProofOfExistence.class,
 		Q00702_ATrapForRevenge.class,
+		Q00708_PathToBecomingALordGludio.class,
 		Q00728_TerritoryWar.class,
 		Q00901_HowLavasaurusesAreMade.class,
 		Q00902_ReclaimOurEra.class,
