@@ -7,7 +7,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -20,7 +20,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -33,7 +33,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -46,7 +46,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -59,7 +59,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -72,7 +72,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -85,7 +85,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -98,7 +98,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -111,7 +111,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -124,7 +124,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -137,7 +137,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -150,7 +150,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -163,7 +163,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -176,7 +176,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -189,7 +189,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -202,7 +202,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -215,7 +215,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -228,7 +228,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -241,7 +241,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -254,7 +254,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -267,7 +267,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -280,7 +280,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -291,7 +291,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -364,7 +364,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -509,7 +509,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="85" />
@@ -528,7 +528,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="85" />
@@ -547,7 +547,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="85" />
@@ -566,7 +566,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="85" />
@@ -585,7 +585,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="85" />
@@ -604,7 +604,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="85" />
@@ -623,7 +623,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="85" />
@@ -642,7 +642,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="85" />
@@ -661,7 +661,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="85" />
@@ -676,7 +676,7 @@
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -689,7 +689,7 @@
 		<set name="weight" val="180" />
 		<set name="reuse_delay" val="500" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
@@ -711,7 +711,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="8324-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="pDef" val="28" />
@@ -727,7 +727,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8292-1" />
 		<set name="time" val="86400" />
@@ -745,7 +745,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8294-1" />
 		<set name="time" val="86400" />
@@ -763,7 +763,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8293-1" />
 		<set name="time" val="86400" />
@@ -786,7 +786,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<set stat="pAtk" val="24" />
@@ -803,7 +803,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="8275-1;3267-1" />
@@ -813,7 +813,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -824,7 +824,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -835,7 +835,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -846,7 +846,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -857,7 +857,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -868,7 +868,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -879,7 +879,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -890,7 +890,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -901,7 +901,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -912,7 +912,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
@@ -922,7 +922,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
@@ -932,7 +932,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
@@ -944,7 +944,7 @@
 		<set name="material" val="STEEL" />
 		<set name="reuse_delay" val="500" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -965,7 +965,7 @@
 		<set name="weight" val="1300" />
 		<set name="reuse_delay" val="500" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8276-1" />
 		<set name="duration" val="60" />
@@ -1067,7 +1067,7 @@
 		<set name="weight" val="120" />
 		<set name="reuse_delay" val="500" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1083,7 +1083,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1096,7 +1096,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1109,7 +1109,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1122,7 +1122,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1135,7 +1135,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1148,7 +1148,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1161,7 +1161,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1174,7 +1174,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1187,7 +1187,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1200,7 +1200,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1341,7 +1341,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1354,7 +1354,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1367,7 +1367,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1378,7 +1378,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1398,7 +1398,7 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="60" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />

@@ -315,7 +315,7 @@
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3633-1" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{6}}}" />
@@ -336,7 +336,7 @@
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3633-1" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{2}}}" />
@@ -357,7 +357,7 @@
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3633-1" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{7}}}" />
@@ -378,7 +378,7 @@
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3633-1" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{4}}}" />
@@ -399,7 +399,7 @@
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3633-1" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{1}}}" />
@@ -420,7 +420,7 @@
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3633-1" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{3}}}" />
@@ -441,7 +441,7 @@
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3633-2" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{5}}}" />
@@ -461,7 +461,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3632-1" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_clan_leader;1}}" />
@@ -481,7 +481,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<cond msgId="1518">

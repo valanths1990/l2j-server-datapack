@@ -4,7 +4,7 @@
 		<set name="icon" val="icon.blessed_feather_i00" />
 		<set name="material" val="LIQUID" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -17,7 +17,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="5" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -31,7 +31,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="5" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -44,7 +44,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="handler" val="SummonItems" />
@@ -61,7 +61,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="handler" val="SummonItems" />
@@ -78,7 +78,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="handler" val="SummonItems" />
@@ -95,7 +95,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="handler" val="SummonItems" />
@@ -112,7 +112,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="5" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -127,7 +127,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="unequip_skill" val="619-1" />
@@ -142,7 +142,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="unequip_skill" val="3267-1" />
@@ -157,7 +157,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -170,7 +170,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -183,7 +183,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -196,7 +196,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -209,7 +209,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -222,7 +222,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -235,7 +235,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -248,7 +248,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -261,7 +261,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -277,7 +277,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -299,7 +299,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -321,7 +321,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -343,7 +343,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -365,7 +365,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="43200" />
@@ -387,7 +387,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="unequip_skill" val="839-1" />
@@ -408,7 +408,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -421,7 +421,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -434,7 +434,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -447,7 +447,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -460,7 +460,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -473,7 +473,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -486,7 +486,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -499,7 +499,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -512,7 +512,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -528,7 +528,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -550,7 +550,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -572,7 +572,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -594,7 +594,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -616,7 +616,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="time" val="10080" />
@@ -638,7 +638,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="unequip_skill" val="839-1" />
@@ -659,7 +659,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="unequip_skill" val="3267-1" />
@@ -673,7 +673,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -687,7 +687,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -701,7 +701,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -715,7 +715,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -729,7 +729,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -743,7 +743,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -757,7 +757,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -771,7 +771,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -785,7 +785,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -799,7 +799,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -813,7 +813,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -827,7 +827,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -841,7 +841,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -855,7 +855,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -869,7 +869,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -883,7 +883,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -897,7 +897,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -911,7 +911,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -925,7 +925,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -939,7 +939,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -953,7 +953,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -967,7 +967,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -981,7 +981,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -995,7 +995,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1009,7 +1009,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1023,7 +1023,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1037,7 +1037,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1051,7 +1051,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1065,7 +1065,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1079,7 +1079,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1093,7 +1093,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1107,7 +1107,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1121,7 +1121,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1135,7 +1135,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1149,7 +1149,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1163,7 +1163,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1177,7 +1177,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1191,7 +1191,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1205,7 +1205,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1219,7 +1219,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1233,7 +1233,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1246,7 +1246,7 @@
 		<set name="etcitem_type" val="ELIXIR" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
@@ -1260,7 +1260,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1273,7 +1273,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1287,7 +1287,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
@@ -1303,7 +1303,7 @@
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="1000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1318,7 +1318,7 @@
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="1000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1333,7 +1333,7 @@
 		<set name="weight" val="10" />
 		<set name="reuse_delay" val="1000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1350,7 +1350,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3453-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="pDef" val="23" />
@@ -1368,7 +1368,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3459-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="pDef" val="28" />
@@ -1386,7 +1386,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3477-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="pDef" val="26" />
@@ -1404,7 +1404,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3483-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="pDef" val="30" />
@@ -1419,7 +1419,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="100" />
 	</item>
@@ -1431,7 +1431,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="100" />
 	</item>
@@ -1441,7 +1441,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1456,7 +1456,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1471,7 +1471,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1486,7 +1486,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1501,7 +1501,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />

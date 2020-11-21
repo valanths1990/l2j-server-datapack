@@ -18,7 +18,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="oncrit_skill" val="3571-1" />
 		<set name="item_skill" val="3883-1;3651-1;3652-1;3552-3" />
@@ -52,7 +52,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3867-1;3655-1;3552-3" />
 		<set name="reduced_mp_consume" val="26,1" />
@@ -86,7 +86,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3867-1;3655-1;3552-1;3567-1" />
 		<for>
@@ -119,7 +119,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="oncrit_skill" val="3574-1" />
 		<set name="item_skill" val="3867-1;3655-1;3552-3" />
@@ -151,7 +151,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3894-1;3653-1;3552-1;3569-1" />
 		<for>
@@ -182,7 +182,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3894-1;3653-1;3552-1;3013-3" />
 		<for>
@@ -213,7 +213,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3894-1;3653-1;3552-1;3568-1" />
 		<for>
@@ -245,7 +245,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3833-1;3650-1;3552-1;3564-1" />
 		<cond msgId="1518">
@@ -280,7 +280,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3833-1;3650-1;3552-1;3013-3" />
 		<cond msgId="1518">
@@ -315,7 +315,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3833-1;3650-1;3552-1;3566-1" />
 		<cond msgId="1518">
@@ -349,7 +349,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3888-1;3650-1;3552-1;3568-1" />
 		<for>
@@ -380,7 +380,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3888-1;3650-1;3552-1;3013-3" />
 		<for>
@@ -411,7 +411,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3888-1;3650-1;3552-1;3569-1" />
 		<for>
@@ -443,7 +443,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3872-1;3552-3;3360-1;3655-1" />
 		<cond msgId="1518">
@@ -478,7 +478,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3872-1;3655-1;3552-1;3567-1" />
 		<cond msgId="1518">
@@ -513,7 +513,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="oncrit_skill" val="3574-1" />
 		<set name="item_skill" val="3872-1;3655-1;3552-3" />
@@ -548,7 +548,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3878-1;3653-1;3552-1;3013-4" />
 		<for>
@@ -579,7 +579,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3878-1;3653-1;3552-1;3602-9" />
 		<for>
@@ -610,7 +610,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3878-1;3653-1;3552-1;3601-9" />
 		<for>
@@ -641,7 +641,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3890-1;3654-1;3552-1;3047-2" />
@@ -673,7 +673,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3890-1;3654-1;3552-1;3576-1" />
@@ -705,7 +705,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3890-1;3654-1;3552-1;3014-2" />
@@ -737,7 +737,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3862-1;3651-1;3652-1;3552-1;3572-1" />
 		<for>
@@ -768,7 +768,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3862-1;3651-1;3652-1;3552-1;3568-1" />
 		<for>
@@ -799,7 +799,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3862-1;3651-1;3652-1;3552-1;3564-1" />
 		<for>
@@ -830,7 +830,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3901-2;3654-1;3552-1;3575-1" />
@@ -862,7 +862,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3901-2;3654-1;3552-1;3576-1" />
@@ -894,7 +894,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="20" />
@@ -929,7 +929,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3570-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3838-1;3656-1;3552-3" />
 		<for>
@@ -959,7 +959,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3828-1;3650-1;3552-1;3564-1" />
 		<for>
@@ -989,7 +989,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3828-1;3650-1;3552-1;3013-3" />
 		<for>
@@ -1019,7 +1019,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3828-1;3650-1;3552-1;3566-1" />
 		<for>
@@ -1049,7 +1049,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3844-1;3653-1;3552-1;3564-1" />
 		<for>
@@ -1079,7 +1079,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3844-1;3653-1;3552-1;3013-3" />
 		<for>
@@ -1109,7 +1109,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3844-1;3653-1;3552-1;3566-1" />
 		<for>
@@ -1139,7 +1139,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3846-2;3653-1;3552-1;3566-2" />
 		<cond msgId="1518">
@@ -1173,7 +1173,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3846-2;3653-1;3552-1;3013-3" />
 		<cond msgId="1518">
@@ -1207,7 +1207,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3846-2;3552-3;3498-1;3653-1" />
 		<cond msgId="1518">
@@ -1241,7 +1241,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3859-2;3651-1;3652-1;3552-1;3567-2" />
 		<for>
@@ -1272,7 +1272,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3859-2;3009-8;3552-3;3651-1;3652-1" />
 		<for>
@@ -1303,7 +1303,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3859-2;3651-1;3652-1;3552-1;3066-4" />
 		<for>
@@ -1335,7 +1335,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3411-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3836-2;3656-1;3552-3" />
 		<for>
@@ -1366,7 +1366,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3831-2;3650-1;3552-1;3566-2" />
 		<cond msgId="1518">
@@ -1401,7 +1401,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3831-2;3650-1;3552-1;3013-3" />
 		<cond msgId="1518">
@@ -1436,7 +1436,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3831-2;3650-1;3552-3;3498-1" />
 		<cond msgId="1518">
@@ -1470,7 +1470,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3891-2;3654-1;3552-1;3014-2" />
@@ -1502,7 +1502,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3891-2;3654-1;3552-1;3048-2" />
@@ -1534,7 +1534,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3891-2;3654-1;3552-1;3047-2" />
@@ -1566,7 +1566,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3880-2;3069-1;3552-3;3651-1;3652-1" />
 		<for>
@@ -1597,7 +1597,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3880-2;3651-1;3652-1;3552-1;3565-2" />
 		<for>
@@ -1628,7 +1628,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3880-2;3651-1;3652-1;3552-1;3564-2" />
 		<for>
@@ -1661,7 +1661,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3864-2;3655-1;3552-3;8312-1" />
 		<for>
@@ -1694,7 +1694,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3864-2;3655-1;3552-1;3573-2" />
 		<for>
@@ -1727,7 +1727,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3864-2;3655-1;3552-1;3567-2" />
 		<for>
@@ -1758,7 +1758,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3840-2;3653-1;3552-1;3566-2" />
 		<for>
@@ -1788,7 +1788,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3840-2;3653-1;3552-1;3013-3" />
 		<for>
@@ -1818,7 +1818,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3840-2;3653-1;3552-3;3498-1" />
 		<for>
@@ -1848,7 +1848,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3826-2;3650-1;3552-1;3566-2" />
 		<for>
@@ -1878,7 +1878,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3826-2;3650-1;3552-1;3013-3" />
 		<for>
@@ -1908,7 +1908,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3826-2;3650-1;3552-3;3498-1" />
 		<for>
@@ -1938,7 +1938,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3900-2;3654-1;3552-1;3014-2" />
@@ -1970,7 +1970,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3900-2;3654-1;3552-1;3048-2" />
@@ -2002,7 +2002,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3900-2;3654-1;3552-1;3047-2" />
@@ -2034,7 +2034,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3885-2;3650-1;3552-1;3057-4" />
 		<for>
@@ -2065,7 +2065,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3885-2;3650-1;3552-1;3013-3" />
 		<for>
@@ -2096,7 +2096,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3885-2;3650-1;3552-1;3027-7" />
 		<for>
@@ -2127,7 +2127,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3896-2;3653-1;3552-1;3057-4" />
 		<for>
@@ -2158,7 +2158,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3896-2;3653-1;3552-1;3013-3" />
 		<for>
@@ -2189,7 +2189,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3896-2;3653-1;3552-1;3027-7" />
 		<for>
@@ -2221,7 +2221,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3869-2;3552-3;3360-1;3655-1" />
 		<cond msgId="1518">
@@ -2256,7 +2256,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3869-2;3655-1;3552-1;3573-2" />
 		<cond msgId="1518">
@@ -2291,7 +2291,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3869-2;3655-1;3552-1;3567-2" />
 		<cond msgId="1518">
@@ -2325,7 +2325,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3852-2;3654-1;3552-1;3047-2" />
@@ -2356,7 +2356,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3852-2;3654-1;3552-1;3014-2" />
@@ -2387,7 +2387,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3852-2;3654-1;3552-1;3048-2" />
@@ -2418,7 +2418,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3877-2;3653-1;3552-1;3600-10" />
 		<for>
@@ -2449,7 +2449,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="oncrit_skill" val="3070-4" />
 		<set name="item_skill" val="3877-2;3653-1;3552-4" />
@@ -2481,7 +2481,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3877-2;3552-4;3498-1;3653-1" />
 		<for>

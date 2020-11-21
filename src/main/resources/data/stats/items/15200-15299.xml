@@ -6,7 +6,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -19,7 +19,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -32,7 +32,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -45,7 +45,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -58,7 +58,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -71,7 +71,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -84,7 +84,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -97,7 +97,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -111,7 +111,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="item_skill" val="8329-1" />
@@ -124,7 +124,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
@@ -140,7 +140,7 @@
 		<set name="material" val="PAPER" />
 		<set name="reuse_delay" val="10000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="handler" val="ItemSkills" />
@@ -154,7 +154,7 @@
 		<set name="material" val="PAPER" />
 		<set name="reuse_delay" val="10000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="handler" val="ItemSkills" />
@@ -168,7 +168,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
@@ -184,7 +184,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -198,7 +198,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
@@ -214,7 +214,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -228,7 +228,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
@@ -244,7 +244,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -258,7 +258,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
@@ -274,7 +274,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -289,7 +289,7 @@
 		<set name="material" val="SILVER" />
 		<set name="equip_reuse_delay" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="unequip_skill" val="3267-1" />
@@ -304,7 +304,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 	</item>
@@ -315,7 +315,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -329,7 +329,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -343,7 +343,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -357,7 +357,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -371,7 +371,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -385,7 +385,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -399,7 +399,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -413,7 +413,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -427,7 +427,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -441,7 +441,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -455,7 +455,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -469,7 +469,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -483,7 +483,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -497,7 +497,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -511,7 +511,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -525,7 +525,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -539,7 +539,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -553,7 +553,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -567,7 +567,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -581,7 +581,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -595,7 +595,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -609,7 +609,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -623,7 +623,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -637,7 +637,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -651,7 +651,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -665,7 +665,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -679,7 +679,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -693,7 +693,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -707,7 +707,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -721,7 +721,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -735,7 +735,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -749,7 +749,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -763,7 +763,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -777,7 +777,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -791,7 +791,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -805,7 +805,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -819,7 +819,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -833,7 +833,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -847,7 +847,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -861,7 +861,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -875,7 +875,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -889,7 +889,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -903,7 +903,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -917,7 +917,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -931,7 +931,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -945,7 +945,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -959,7 +959,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -973,7 +973,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -987,7 +987,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -1001,7 +1001,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -1015,7 +1015,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -1029,7 +1029,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
@@ -1043,7 +1043,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -1057,7 +1057,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -1071,7 +1071,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -1085,7 +1085,7 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
@@ -1098,7 +1098,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
@@ -1109,7 +1109,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1169,7 +1169,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="106" />
@@ -1188,7 +1188,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="106" />
@@ -1207,7 +1207,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="106" />
@@ -1226,7 +1226,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="106" />
@@ -1245,7 +1245,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="106" />
@@ -1264,7 +1264,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="106" />
@@ -1283,7 +1283,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="106" />
@@ -1302,7 +1302,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="106" />
@@ -1321,7 +1321,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="106" />
@@ -1340,7 +1340,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8379-2" />
 		<for>
@@ -1360,7 +1360,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8380-2" />
 		<for>
@@ -1380,7 +1380,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8381-2" />
 		<for>
@@ -1400,7 +1400,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8382-2" />
 		<for>
@@ -1420,7 +1420,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8383-2" />
 		<for>
@@ -1440,7 +1440,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8384-2" />
 		<for>
@@ -1460,7 +1460,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8385-2" />
 		<for>
@@ -1480,7 +1480,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8386-2" />
 		<for>
@@ -1500,7 +1500,7 @@
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8387-2" />
 		<for>

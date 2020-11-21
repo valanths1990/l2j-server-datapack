@@ -13,7 +13,7 @@
 		<set name="price" val="15577000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="pDef" val="249" />
@@ -33,7 +33,7 @@
 		<set name="price" val="15577000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -57,7 +57,7 @@
 		<set name="price" val="24398000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -80,7 +80,7 @@
 		<set name="price" val="24398000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -106,7 +106,7 @@
 		<set name="price" val="24398000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -132,7 +132,7 @@
 		<set name="price" val="24398000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -158,7 +158,7 @@
 		<set name="price" val="24398000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -184,7 +184,7 @@
 		<set name="price" val="18298000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="pDef" val="170" />
@@ -204,7 +204,7 @@
 		<set name="price" val="18298000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="DAGGER_MASTER" />
@@ -227,7 +227,7 @@
 		<set name="price" val="18298000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="BOW_MASTER" />
@@ -250,7 +250,7 @@
 		<set name="price" val="18298000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -274,7 +274,7 @@
 		<set name="price" val="18298000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -301,7 +301,7 @@
 		<set name="price" val="18298000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -328,7 +328,7 @@
 		<set name="price" val="18298000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -355,7 +355,7 @@
 		<set name="price" val="18298000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -382,7 +382,7 @@
 		<set name="price" val="18298000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -408,7 +408,7 @@
 		<set name="price" val="18298000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="WEAPON_MASTER" />
@@ -431,7 +431,7 @@
 		<set name="price" val="18298000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="BUFF_MASTER" />
@@ -454,7 +454,7 @@
 		<set name="price" val="18298000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="SUMMON_MASTER" />
@@ -477,7 +477,7 @@
 		<set name="price" val="33673000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -500,7 +500,7 @@
 		<set name="price" val="33673000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -526,7 +526,7 @@
 		<set name="price" val="33673000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -552,7 +552,7 @@
 		<set name="price" val="33673000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -578,7 +578,7 @@
 		<set name="price" val="33673000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -604,7 +604,7 @@
 		<set name="price" val="25255000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="pDef" val="170" />
@@ -624,7 +624,7 @@
 		<set name="price" val="25255000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="DAGGER_MASTER" />
@@ -647,7 +647,7 @@
 		<set name="price" val="25255000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="BOW_MASTER" />
@@ -670,7 +670,7 @@
 		<set name="price" val="25255000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -694,7 +694,7 @@
 		<set name="price" val="25255000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -721,7 +721,7 @@
 		<set name="price" val="25255000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -748,7 +748,7 @@
 		<set name="price" val="25255000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -775,7 +775,7 @@
 		<set name="price" val="25255000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -802,7 +802,7 @@
 		<set name="price" val="25255000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="FORCE_MASTER" />
@@ -825,7 +825,7 @@
 		<set name="price" val="25255000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="WEAPON_MASTER" />
@@ -848,7 +848,7 @@
 		<set name="price" val="25255000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="BUFF_MASTER" />
@@ -871,7 +871,7 @@
 		<set name="price" val="25255000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
 			<player categoryType="SUMMON_MASTER" />
@@ -888,7 +888,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -902,7 +902,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -916,7 +916,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -930,7 +930,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -944,7 +944,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -958,7 +958,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -972,7 +972,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -986,7 +986,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1000,7 +1000,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1014,7 +1014,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1028,7 +1028,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1042,7 +1042,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1056,7 +1056,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1070,7 +1070,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1084,7 +1084,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1098,7 +1098,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1112,7 +1112,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1126,7 +1126,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1140,7 +1140,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1154,7 +1154,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1168,7 +1168,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1182,7 +1182,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1196,7 +1196,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1210,7 +1210,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1224,7 +1224,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1238,7 +1238,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1252,7 +1252,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1266,7 +1266,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1280,7 +1280,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1294,7 +1294,7 @@
 		<set name="material" val="FISH" />
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1306,7 +1306,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1317,7 +1317,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1328,7 +1328,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -1339,7 +1339,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />

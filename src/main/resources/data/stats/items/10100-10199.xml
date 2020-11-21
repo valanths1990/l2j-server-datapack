@@ -102,7 +102,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -112,7 +112,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="6" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -255,7 +255,7 @@
 		<set name="weight" val="150" />
 		<set name="price" val="20700" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="24" />
@@ -272,7 +272,7 @@
 		<set name="weight" val="150" />
 		<set name="price" val="27600" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="32" />
@@ -289,7 +289,7 @@
 		<set name="weight" val="150" />
 		<set name="price" val="13800" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="16" />
@@ -310,7 +310,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<for>
@@ -516,7 +516,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="5414-1;3269-1;3267-1" />
@@ -532,7 +532,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="item_skill" val="3408-1" />
@@ -553,7 +553,7 @@
 		<set name="price" val="50000" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="unequip_skill" val="3499-1" />
 		<set name="item_skill" val="3335-1" />
@@ -570,7 +570,7 @@
 		<set name="price" val="50000" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="unequip_skill" val="3499-1" />
 		<set name="item_skill" val="3336-1" />
@@ -826,7 +826,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3315-1" />
 		<set name="duration" val="60" />
@@ -895,7 +895,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
@@ -905,7 +905,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
@@ -935,7 +935,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="unequip_skill" val="839-1" />
 		<set name="item_skill" val="3418-1" />
@@ -1051,7 +1051,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="10176" type="Armor" name="White Half Mask">
@@ -1062,7 +1062,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="10177" type="Armor" name="Black Half Mask">
@@ -1073,7 +1073,7 @@
 		<set name="material" val="STEEL" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="10178" type="EtcItem" name="Sweet Fruit Cocktail">
@@ -1085,7 +1085,7 @@
 		<set name="weight" val="5" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
@@ -1102,7 +1102,7 @@
 		<set name="weight" val="5" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />

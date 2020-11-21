@@ -8,7 +8,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<for>
 			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
@@ -19,7 +19,7 @@
 		<set name="icon" val="BranchSys2.icon.br_cheer_symbol_i00" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="17202" type="EtcItem" name="Proof of Cheers 10 Pack">
@@ -27,7 +27,7 @@
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="17203" type="Armor" name="Agathion Seal Bracelet - Ball Trapping Gnosian">
@@ -38,7 +38,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="8515-1;23236-1;23237-1;3267-1" />
@@ -51,7 +51,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="8516-1;23236-1;23237-1;3267-1" />
@@ -64,7 +64,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="8517-1;23236-1;23237-1;3267-1" />
@@ -74,7 +74,7 @@
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="material" val="LIQUID" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="17207" type="EtcItem" name="Nevit's Hourglass - 1.5 hour">
@@ -82,7 +82,7 @@
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="material" val="LIQUID" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="17208" type="EtcItem" name="Nevit's Hourglass - 2 hour">
@@ -90,7 +90,7 @@
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="material" val="LIQUID" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="17209" type="EtcItem" name="Nevit's Hourglass - 2.5 hour">
@@ -98,7 +98,7 @@
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="material" val="LIQUID" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="17210" type="EtcItem" name="Nevit's Hourglass - 3 hour">
@@ -106,7 +106,7 @@
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="material" val="LIQUID" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="17211" type="EtcItem" name="Nevit's Hourglass - 4 hour">
@@ -114,7 +114,7 @@
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="material" val="LIQUID" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="17212" type="EtcItem" name="Nevit's Voice">
@@ -122,7 +122,7 @@
 		<set name="icon" val="icon.etc_fish_scale_i01" />
 		<set name="material" val="LIQUID" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="17213" type="EtcItem" name="Solina's Biography">
@@ -131,7 +131,7 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -210,7 +210,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
@@ -221,7 +221,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
@@ -232,7 +232,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
@@ -242,7 +242,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
@@ -252,7 +252,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
@@ -262,7 +262,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
@@ -271,7 +271,7 @@
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -280,7 +280,7 @@
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -289,7 +289,7 @@
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -316,7 +316,7 @@
 		<set name="icon" val="icon.mercenary_certification_i00" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -327,7 +327,7 @@
 		<set name="icon" val="icon.mercenary_certification_i01" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -338,7 +338,7 @@
 		<set name="icon" val="icon.mercenary_certification_i02" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -349,7 +349,7 @@
 		<set name="icon" val="icon.scroll_of_verification_i01" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -360,7 +360,7 @@
 		<set name="icon" val="icon.scroll_of_verification_i03" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -371,7 +371,7 @@
 		<set name="icon" val="icon.scroll_of_verification_i00" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -382,7 +382,7 @@
 		<set name="icon" val="icon.etc_charm_of_courage_i01" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -393,7 +393,7 @@
 		<set name="icon" val="icon.etc_charm_of_courage_i02" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -404,7 +404,7 @@
 		<set name="icon" val="icon.etc_charm_of_courage_i03" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -426,7 +426,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -438,7 +438,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -450,7 +450,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_questitem" val="true" />
@@ -461,7 +461,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_questitem" val="true" />
@@ -472,7 +472,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_questitem" val="true" />
@@ -559,7 +559,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
@@ -597,7 +597,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 	</item>
 	<item id="17270" type="Armor" name="Agathion Seal Bracelet - Nevit's Messenger Kanna">
 		<!-- Description: Bracelet that summons a Nevit's messenger Kanna Agathion. Cannot be exchanged or dropped. -->
@@ -607,7 +607,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 	</item>
 	<item id="17271" type="Armor" name="Agathion Seal Bracelet - Guardian of the Dawn Kallesin">
 		<!-- Description: Bracelet that summons a Guardian of the Dawn Kallesin Agathion. Cannot be exchanged or dropped. -->
@@ -617,7 +617,7 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 	</item>
 	<item id="17272" type="EtcItem" name="Antharas Agathion PAck">
 		<!-- Description: Special gift that commemorates the conquest of Dragon Valley. When used, you can obtain an Antharas Agathion seal bracelet. -->
@@ -643,7 +643,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="20" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="17276" type="EtcItem" name="5,000,000 SP scroll">
@@ -673,7 +673,7 @@
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -682,7 +682,7 @@
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -691,7 +691,7 @@
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -700,7 +700,7 @@
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -711,7 +711,7 @@
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="17283" type="EtcItem" name="Nevit's Hourglass - 4 hour">
@@ -720,7 +720,7 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="true" />
 	</item>
@@ -730,7 +730,7 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="true" />
 	</item>
@@ -740,7 +740,7 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="17286" type="EtcItem" name="Freya's Refreshing Breeze - Event">
@@ -749,7 +749,7 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -758,7 +758,7 @@
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -770,7 +770,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 	</item>
 	<item id="17289" type="Armor" name="Ice Watermelon Hat">
@@ -781,7 +781,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 	</item>
 </list>

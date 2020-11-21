@@ -31,7 +31,7 @@
 					<xs:enumeration value="immediate_effect" />
 					<xs:enumeration value="is_depositable" />
 					<xs:enumeration value="is_destroyable" />
-					<xs:enumeration value="is_dropable" />
+					<xs:enumeration value="is_droppable" />
 					<xs:enumeration value="is_freightable" />
 					<xs:enumeration value="is_magic_weapon" />
 					<xs:enumeration value="is_oly_restricted" />

@@ -15,7 +15,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -40,7 +40,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -65,7 +65,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -91,7 +91,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="600" />
@@ -118,7 +118,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -143,7 +143,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="600" />
@@ -169,7 +169,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -195,7 +195,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -223,7 +223,7 @@
 		<set name="mp_consume" val="3" />
 		<set name="reuse_delay" val="820" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -249,7 +249,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -274,7 +274,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3599-1" />
 		<set name="duration" val="600" />
@@ -301,7 +301,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -326,7 +326,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3599-1" />
 		<set name="duration" val="600" />
@@ -353,7 +353,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="600" />
@@ -380,7 +380,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -406,7 +406,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -434,7 +434,7 @@
 		<set name="mp_consume" val="4" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -460,7 +460,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -485,7 +485,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -511,7 +511,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -537,7 +537,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant4_skill" val="3013-1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -562,7 +562,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -587,7 +587,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="600" />
@@ -613,7 +613,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -639,7 +639,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="600" />
@@ -666,7 +666,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -692,7 +692,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -720,7 +720,7 @@
 		<set name="mp_consume" val="5" />
 		<set name="reuse_delay" val="820" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -746,7 +746,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3599-1" />
 		<set name="duration" val="600" />
@@ -773,7 +773,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -792,7 +792,7 @@
 		<set name="material" val="BRONZE" />
 		<set name="weight" val="2973" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -811,7 +811,7 @@
 		<set name="material" val="BRONZE" />
 		<set name="weight" val="1320" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -830,7 +830,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1573" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -846,7 +846,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="537" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -862,7 +862,7 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="693" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -882,7 +882,7 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="343" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -901,7 +901,7 @@
 		<set name="material" val="BONE" />
 		<set name="weight" val="460" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -921,7 +921,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="213" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -936,7 +936,7 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="437" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -951,7 +951,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="217" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -968,7 +968,7 @@
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="2890" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -988,7 +988,7 @@
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="1277" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1007,7 +1007,7 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="213" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1023,7 +1023,7 @@
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="427" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1039,7 +1039,7 @@
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="447" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1061,7 +1061,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1523" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1078,7 +1078,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="523" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1094,7 +1094,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="213" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1110,7 +1110,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="427" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1127,7 +1127,7 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="673" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1148,7 +1148,7 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="333" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1168,7 +1168,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="213" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1184,7 +1184,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="423" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1200,7 +1200,7 @@
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="213" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1217,7 +1217,7 @@
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="3660" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1236,7 +1236,7 @@
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="407" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1252,7 +1252,7 @@
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="410" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1273,7 +1273,7 @@
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="203" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1290,7 +1290,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1457" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1307,7 +1307,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="510" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1323,7 +1323,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="403" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1339,7 +1339,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="200" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1356,7 +1356,7 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="663" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1377,7 +1377,7 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="327" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1397,7 +1397,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="407" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1413,7 +1413,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="203" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1429,7 +1429,7 @@
 		<set name="material" val="STEEL" />
 		<set name="weight" val="200" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1446,7 +1446,7 @@
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="2657" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1466,7 +1466,7 @@
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="1190" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1485,7 +1485,7 @@
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="197" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1501,7 +1501,7 @@
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="403" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1522,7 +1522,7 @@
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="197" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1541,7 +1541,7 @@
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="393" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1561,7 +1561,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1443" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1578,7 +1578,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="493" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1594,7 +1594,7 @@
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="197" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1610,7 +1610,7 @@
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="393" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1627,7 +1627,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="653" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1648,7 +1648,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="313" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1668,7 +1668,7 @@
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="197" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1687,7 +1687,7 @@
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="393" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1707,7 +1707,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="weight" val="2567" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1727,7 +1727,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="weight" val="1107" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1746,7 +1746,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="weight" val="190" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1762,7 +1762,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="weight" val="397" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1783,7 +1783,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="193" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1802,7 +1802,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="weight" val="370" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1822,7 +1822,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1433" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1839,7 +1839,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="493" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1855,7 +1855,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="193" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1871,7 +1871,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="weight" val="370" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1888,7 +1888,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="817" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1908,7 +1908,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="193" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1927,7 +1927,7 @@
 		<set name="material" val="CRYSTAL" />
 		<set name="weight" val="370" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1947,7 +1947,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="3067" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -1966,7 +1966,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="183" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -1982,7 +1982,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="180" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -2001,7 +2001,7 @@
 		<set name="material" val="BLOOD_STEEL" />
 		<set name="weight" val="370" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
@@ -2021,7 +2021,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1783" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
@@ -2037,7 +2037,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="180" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>

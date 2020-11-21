@@ -10,7 +10,7 @@
 		<set name="price" val="25" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3407-1" />
 		<set name="duration" val="400" />
@@ -220,7 +220,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="5458-1;3361-1;3267-1" />
@@ -232,7 +232,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -242,7 +242,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -262,7 +262,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="60" />
 	</item>
@@ -275,7 +275,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3271-1" />
 		<set name="duration" val="65" />
@@ -290,7 +290,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3277-1" />
 		<set name="duration" val="75" />
@@ -305,7 +305,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3285-1" />
 		<set name="duration" val="65" />
@@ -320,7 +320,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3281-1" />
 		<set name="duration" val="65" />
@@ -335,7 +335,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3282-1" />
 		<set name="duration" val="74" />
@@ -350,7 +350,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3410-1" />
 		<set name="duration" val="65" />
@@ -365,7 +365,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3280-1" />
 		<set name="duration" val="64" />
@@ -380,7 +380,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3274-1" />
 		<set name="duration" val="65" />
@@ -395,7 +395,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3286-1" />
 		<set name="duration" val="65" />
@@ -410,7 +410,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3289-1" />
 		<set name="duration" val="65" />
@@ -425,7 +425,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3283-1" />
 		<set name="duration" val="64" />
@@ -440,7 +440,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3273-1" />
 		<set name="duration" val="64" />
@@ -455,7 +455,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3272-1" />
 		<set name="duration" val="65" />
@@ -470,7 +470,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3276-1" />
 		<set name="duration" val="65" />
@@ -485,7 +485,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3278-1" />
 		<set name="duration" val="65" />
@@ -500,7 +500,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3275-1" />
 		<set name="duration" val="65" />
@@ -515,7 +515,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3321-1" />
 		<set name="duration" val="65" />
@@ -530,7 +530,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3279-1" />
 		<set name="duration" val="74" />
@@ -545,7 +545,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3284-1" />
 		<set name="duration" val="74" />
@@ -559,7 +559,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3293-1" />
 		<set name="duration" val="60" />
@@ -573,7 +573,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3301-1" />
 		<set name="duration" val="60" />
@@ -587,7 +587,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3296-1" />
 		<set name="duration" val="60" />
@@ -601,7 +601,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3294-1" />
 		<set name="duration" val="60" />
@@ -615,7 +615,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3302-1" />
 		<set name="duration" val="60" />
@@ -629,7 +629,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3297-1" />
 		<set name="duration" val="60" />
@@ -643,7 +643,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3295-1" />
 		<set name="duration" val="60" />
@@ -657,7 +657,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3313-1" />
 		<set name="duration" val="60" />
@@ -671,7 +671,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3300-1" />
 		<set name="duration" val="60" />
@@ -685,7 +685,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3317-1" />
 		<set name="duration" val="60" />
@@ -699,7 +699,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3299-1" />
 		<set name="duration" val="60" />
@@ -713,7 +713,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3316-1" />
 		<set name="duration" val="60" />
@@ -727,7 +727,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3298-1" />
 		<set name="duration" val="60" />
@@ -741,7 +741,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3312-1" />
 		<set name="duration" val="60" />
@@ -755,7 +755,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3311-1" />
 		<set name="duration" val="60" />
@@ -769,7 +769,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3310-1" />
 		<set name="duration" val="60" />
@@ -783,7 +783,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3320-1" />
 		<set name="duration" val="60" />
@@ -797,7 +797,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3314-1" />
 		<set name="duration" val="60" />
@@ -811,7 +811,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3315-1" />
 		<set name="duration" val="60" />
@@ -827,7 +827,7 @@
 		<set name="price" val="15000" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3332-1" />
 		<set name="duration" val="64" />
@@ -842,7 +842,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3333-1" />
 		<set name="duration" val="64" />
@@ -857,7 +857,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3334-1" />
 		<set name="duration" val="65" />
@@ -872,7 +872,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3291-1" />
 		<set name="duration" val="65" />
@@ -887,7 +887,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3288-1" />
 		<set name="duration" val="65" />
@@ -902,7 +902,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3287-1" />
 		<set name="duration" val="65" />
@@ -917,7 +917,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3290-1" />
 		<set name="duration" val="65" />
@@ -932,7 +932,7 @@
 		<set name="weight" val="150" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3292-1" />
 		<set name="duration" val="65" />
@@ -946,7 +946,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3306-1" />
 		<set name="duration" val="60" />
@@ -960,7 +960,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3307-1" />
 		<set name="duration" val="60" />
@@ -974,7 +974,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3305-1" />
 		<set name="duration" val="60" />
@@ -988,7 +988,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3304-1" />
 		<set name="duration" val="60" />
@@ -1002,7 +1002,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3303-1" />
 		<set name="duration" val="60" />
@@ -1016,7 +1016,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3309-1" />
 		<set name="duration" val="60" />
@@ -1030,7 +1030,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3308-1" />
 		<set name="duration" val="60" />
@@ -1344,7 +1344,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
