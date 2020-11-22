@@ -161,4 +161,11 @@
 		<node X="176460" Y="-74019" />
 		<node X="172089" Y="-74076" />
 	</zone>
+	<!-- Antharas' Nest -->
+    <zone name="25_21_boss_area_antharas" type="NoSummonFriendZone" shape="NPoly" minZ="-8380" maxZ="-4880">
+        <node X="173469" Y="110431" />
+        <node X="188081" Y="110284" />
+        <node X="188132" Y="119249" />
+        <node X="173386" Y="119391" />
+    </zone>
 </list>
