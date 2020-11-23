@@ -72,7 +72,7 @@ public final class ConsumeFakeDeath extends AbstractEffect {
 			info.getEffected().getActingPlayer().setRecentFakeDeath(true);
 		}
 		
-		info.getEffected().broadcastPacket(new ChangeWaitType(info.getEffected(), ChangeWaitType.WT_STOP_FAKEDEATH));
+		info.getEffected().broadcastPacket(new ChangeWaitType(info.getEffected(), ChangeWaitType.WT_STOP_FAKE_DEATH));
 		info.getEffected().broadcastPacket(new Revive(info.getEffected()));
 	}
 	

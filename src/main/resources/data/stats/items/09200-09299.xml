@@ -9,7 +9,7 @@
 		<set name="weight" val="10" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
@@ -24,7 +24,7 @@
 		<set name="weight" val="10" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
@@ -39,7 +39,7 @@
 		<set name="weight" val="10" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
@@ -54,7 +54,7 @@
 		<set name="weight" val="10" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
@@ -69,7 +69,7 @@
 		<set name="weight" val="10" />
 		<set name="equip_reuse_delay" val="30" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
@@ -126,7 +126,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="9209" type="Weapon" name="Rapier">

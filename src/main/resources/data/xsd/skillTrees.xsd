@@ -2,13 +2,13 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="list">
 		<xs:complexType>
-			<xs:sequence minOccurs="1" maxOccurs="1">
-				<xs:element name="skillTree" minOccurs="1" maxOccurs="unbounded">
+			<xs:sequence>
+				<xs:element name="skillTree" maxOccurs="unbounded">
 					<xs:complexType>
-						<xs:sequence minOccurs="1" maxOccurs="1">
-							<xs:element name="skill" minOccurs="1" maxOccurs="unbounded">
+						<xs:sequence>
+							<xs:element name="skill" maxOccurs="unbounded">
 								<xs:complexType>
-									<xs:sequence minOccurs="1" maxOccurs="1">
+									<xs:sequence>
 										<xs:element name="subClassConditions" minOccurs="0" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:attribute name="slot" use="required">
@@ -29,7 +29,7 @@
 												</xs:attribute>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="socialClass" minOccurs="0" maxOccurs="1">
+										<xs:element name="socialClass" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:token">
 													<xs:enumeration value="VAGABOND" />

@@ -39,8 +39,7 @@ public final class Elpies extends Event {
 	// Event duration in minutes
 	private static final int EVENT_DURATION_MINUTES = 2;
 	// @formatter:off
-	private static final int[][] DROPLIST_CONSUMABLES =
-	{
+	private static final int[][] DROPLIST_CONSUMABLES = {
 		// itemId, chance, min amount, max amount
 		{  1540, 80, 10, 15 },	// Quick Healing Potion
 		{  1538, 60,  5, 10 },	// Blessed Scroll of Escape
@@ -53,8 +52,7 @@ public final class Elpies extends Event {
 		{ 20004,  0,  1, 1 }	// Energy Ginseng
 	};
 	
-	private static final int[][] DROPLIST_CRYSTALS =
-	{
+	private static final int[][] DROPLIST_CRYSTALS = {
 		{ 1458, 80, 50, 100 },	// Crystal D-Grade
 		{ 1459, 60, 40,  80 },	// Crystal C-Grade
 		{ 1460, 40, 30,  60 },	// Crystal B-Grade

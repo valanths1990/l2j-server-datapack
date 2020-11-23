@@ -18,7 +18,7 @@
  */
 package com.l2jserver.datapack.handlers.bypasshandlers;
 
-import static com.l2jserver.gameserver.config.Configuration.sevenSings;
+import static com.l2jserver.gameserver.config.Configuration.sevenSigns;
 
 import java.util.Calendar;
 import java.util.List;
@@ -91,7 +91,7 @@ public class Festival implements IBypassHandler {
 					}
 					
 					// Check to see if the party has at least 5 members.
-					if (party.getMemberCount() < sevenSings().getFestivalMinPlayer()) {
+					if (party.getMemberCount() < sevenSigns().getFestivalMinPlayer()) {
 						npc.showChatWindow(activeChar, 2, "b", false);
 						return true;
 					}
@@ -263,7 +263,7 @@ public class Festival implements IBypassHandler {
 					if (party.isLeader(activeChar)) {
 						SevenSignsFestival.getInstance().updateParticipants(activeChar, null);
 					} else {
-						if (party.getMemberCount() > sevenSings().getFestivalMinPlayer()) {
+						if (party.getMemberCount() > sevenSigns().getFestivalMinPlayer()) {
 							party.removePartyMember(activeChar, messageType.Expelled);
 						} else {
 							activeChar.sendMessage("Only the party leader can leave a festival when a party has minimum number of members.");

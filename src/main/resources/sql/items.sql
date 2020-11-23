@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `custom_type2` INT DEFAULT 0,
   `mana_left` decimal(5,0) NOT NULL DEFAULT -1,
   `time` decimal(13) NOT NULL DEFAULT 0,
+  `agathion_energy` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT 0,
   PRIMARY KEY (`object_id`),
   KEY `owner_id` (`owner_id`),
   KEY `item_id` (`item_id`),

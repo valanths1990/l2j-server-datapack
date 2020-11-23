@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<event name="Love Your Gatekeeper" active="27 02 2008-28 02 2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/eventConfig.xsd">
+<event name="Love Your Gatekeeper" active="27 02 2008-28 02 2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/eventConfig.xsd">
 	<spawnlist>
 		<add npc="32477" x="-80762" y="151118" z="-3043" heading="28672" />
 		<add npc="32477" x="-84046" y="150193" z="-3129" heading="4096" />

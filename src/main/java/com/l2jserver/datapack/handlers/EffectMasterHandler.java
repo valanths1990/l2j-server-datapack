@@ -21,6 +21,7 @@ package com.l2jserver.datapack.handlers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.l2jserver.datapack.handlers.effecthandlers.consume.ConsumeAgathionEnergy;
 import com.l2jserver.datapack.handlers.effecthandlers.consume.ConsumeChameleonRest;
 import com.l2jserver.datapack.handlers.effecthandlers.consume.ConsumeFakeDeath;
 import com.l2jserver.datapack.handlers.effecthandlers.consume.ConsumeHp;
@@ -87,6 +88,7 @@ import com.l2jserver.datapack.handlers.effecthandlers.instant.Hp;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.HpByLevel;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.HpDrain;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.HpPerMax;
+import com.l2jserver.datapack.handlers.effecthandlers.instant.InstantAgathionEnergy;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.Lethal;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalAttack;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalAttackByAbnormal;
@@ -217,6 +219,7 @@ public final class EffectMasterHandler {
 		ChangeHairStyle.class,
 		ClanGate.class,
 		Confuse.class,
+		ConsumeAgathionEnergy.class,
 		ConsumeBody.class,
 		ConsumeChameleonRest.class,
 		ConsumeFakeDeath.class,
@@ -266,6 +269,7 @@ public final class EffectMasterHandler {
 		HpPerMax.class,
 		ImmobileBuff.class,
 		ImmobilePetBuff.class,
+		InstantAgathionEnergy.class,
 		Lethal.class,
 		Lucky.class,
 		MagicalAttack.class,

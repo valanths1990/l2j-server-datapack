@@ -2,16 +2,16 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="list">
 		<xs:complexType>
-			<xs:sequence maxOccurs="1" minOccurs="1">
-				<xs:element name="option" maxOccurs="100" minOccurs="1">
+			<xs:sequence>
+				<xs:element name="option" maxOccurs="100">
 					<xs:complexType>
-						<xs:sequence maxOccurs="1" minOccurs="1">
-							<xs:element name="for" minOccurs="0" maxOccurs="1">
+						<xs:sequence>
+							<xs:element name="for" minOccurs="0">
 								<xs:complexType>
-									<xs:sequence maxOccurs="unbounded" minOccurs="1">
+									<xs:sequence maxOccurs="unbounded">
 										<xs:element name="add" maxOccurs="unbounded" minOccurs="0">
 											<xs:complexType>
-												<xs:attribute name="order" type="xs:byte" use="optional" />
+												<xs:attribute name="order" type="xs:byte" />
 												<xs:attribute name="stat" use="required">
 													<xs:simpleType>
 														<xs:restriction base="xs:token">
@@ -52,7 +52,7 @@
 										</xs:element>
 										<xs:element name="mul" maxOccurs="unbounded" minOccurs="0">
 											<xs:complexType>
-												<xs:attribute name="order" type="xs:byte" use="optional" />
+												<xs:attribute name="order" type="xs:byte" />
 												<xs:attribute name="stat" use="required">
 													<xs:simpleType>
 														<xs:restriction base="xs:token">

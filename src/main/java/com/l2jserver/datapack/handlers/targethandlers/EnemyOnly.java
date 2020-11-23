@@ -18,13 +18,15 @@
  */
 package com.l2jserver.datapack.handlers.targethandlers;
 
+import static com.l2jserver.gameserver.model.skills.targets.AffectScope.SINGLE;
 import static com.l2jserver.gameserver.model.skills.targets.L2TargetType.ENEMY_ONLY;
+import static com.l2jserver.gameserver.model.zone.ZoneId.PVP;
 import static com.l2jserver.gameserver.network.SystemMessageId.INCORRECT_TARGET;
 
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
+import com.l2jserver.gameserver.instancemanager.DuelManager;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 
@@ -36,30 +38,100 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 public class EnemyOnly implements ITargetTypeHandler {
 	@Override
 	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		switch (skill.getAffectScope()) {
-			case SINGLE: {
-				if (target == null) {
-					return EMPTY_TARGET_LIST;
-				}
-				
-				final L2PcInstance player = activeChar.getActingPlayer();
-				if (target.isDead() || (!target.isAttackable() && //
-					(player != null) && //
-					!player.isInPartyWith(target) && //
-					!player.isInClanWith(target) && //
-					!player.isInAllyWith(target) && // TODO(Zoey76): Confirm.
-					!player.isInCommandChannelWith(target) && // TODO(Zoey76): Confirm.
-					!player.checkIfPvP(target))) {
-					activeChar.sendPacket(INCORRECT_TARGET);
-					return EMPTY_TARGET_LIST;
-				}
-				
+		if (skill.getAffectScope() != SINGLE) {
+			return EMPTY_TARGET_LIST;
+		}
+		
+		if (target == null) {
+			return EMPTY_TARGET_LIST;
+		}
+		
+		if (target.isDead()) {
+			activeChar.sendPacket(INCORRECT_TARGET);
+			return EMPTY_TARGET_LIST;
+		}
+		
+		if (target.isAttackable()) {
+			return new L2Character[] {
+				target
+			};
+		}
+		
+		final var player = activeChar.getActingPlayer();
+		if (player == null) {
+			return EMPTY_TARGET_LIST;
+		}
+		
+		// In Olympiad, different sides.
+		if (player.isInOlympiadMode()) {
+			final var targetPlayer = target.getActingPlayer();
+			if ((targetPlayer != null) && (player.getOlympiadSide() != targetPlayer.getOlympiadSide())) {
 				return new L2Character[] {
 					target
 				};
 			}
+			player.sendPacket(INCORRECT_TARGET);
+			return EMPTY_TARGET_LIST;
 		}
-		return EMPTY_TARGET_LIST;
+		
+		// In Duel, different sides.
+		if (player.isInDuelWith(target)) {
+			final var targetPlayer = target.getActingPlayer();
+			final var duel = DuelManager.getInstance().getDuel(player.getDuelId());
+			final var teamA = duel.getTeamA();
+			final var teamB = duel.getTeamB();
+			if (teamA.contains(player) && teamB.contains(targetPlayer) || //
+				teamB.contains(player) && teamA.contains(targetPlayer)) {
+				return new L2Character[] {
+					target
+				};
+			}
+			player.sendPacket(INCORRECT_TARGET);
+			return EMPTY_TARGET_LIST;
+		}
+		
+		// Not in same party.
+		if (player.isInPartyWith(target)) {
+			player.sendPacket(INCORRECT_TARGET);
+			return EMPTY_TARGET_LIST;
+		}
+		
+		// In PVP Zone.
+		if (player.isInsideZone(PVP)) {
+			return new L2Character[] {
+				target
+			};
+		}
+		
+		// Not in same clan.
+		if (player.isInClanWith(target)) {
+			player.sendPacket(INCORRECT_TARGET);
+			return EMPTY_TARGET_LIST;
+		}
+		
+		// TODO(Zoey76): Validate.
+		// Not in same alliance.
+		if (player.isInAllyWith(target)) {
+			player.sendPacket(INCORRECT_TARGET);
+			return EMPTY_TARGET_LIST;
+		}
+		
+		// TODO(Zoey76): Validate.
+		// Not in same command channel.
+		if (player.isInCommandChannelWith(target)) {
+			player.sendPacket(INCORRECT_TARGET);
+			return EMPTY_TARGET_LIST;
+		}
+		
+		// Cannot PvP.
+		if (!player.checkIfPvP(target)) {
+			player.sendPacket(INCORRECT_TARGET);
+			return EMPTY_TARGET_LIST;
+		}
+		
+		return new L2Character[] {
+			target
+		};
 	}
 	
 	@Override

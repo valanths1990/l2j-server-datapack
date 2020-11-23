@@ -8,12 +8,12 @@
 						<xs:sequence>
 							<xs:element name="current" maxOccurs="unbounded" minOccurs="0">
 								<xs:complexType>
-									<xs:attribute type="xs:string" name="enchant" use="optional" />
-									<xs:attribute type="xs:float" name="chance" use="optional" />
+									<xs:attribute type="xs:string" name="enchant" />
+									<xs:attribute type="xs:float" name="chance" />
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
-						<xs:attribute type="xs:string" name="name" use="optional" />
+						<xs:attribute type="xs:string" name="name" />
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="enchantScrollGroup" maxOccurs="unbounded">
@@ -24,9 +24,9 @@
 									<xs:sequence>
 										<xs:element name="item" maxOccurs="unbounded" minOccurs="0">
 											<xs:complexType>
-												<xs:attribute type="xs:string" name="slot" use="optional" />
-												<xs:attribute type="xs:boolean" name="magicWeapon" use="optional" />
-												<xs:attribute type="xs:int" name="itemId" use="optional" />
+												<xs:attribute type="xs:string" name="slot" />
+												<xs:attribute type="xs:boolean" name="magicWeapon" />
+												<xs:attribute type="xs:int" name="itemId" />
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>

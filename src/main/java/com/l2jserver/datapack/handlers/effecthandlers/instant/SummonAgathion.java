@@ -29,16 +29,12 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * @author Zoey76
  */
 public final class SummonAgathion extends AbstractEffect {
-	private final int _npcId;
+	
+	private final int npcId;
 	
 	public SummonAgathion(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
-		
-		if (params.isEmpty()) {
-			_log.warning(getClass().getSimpleName() + ": must have parameters.");
-		}
-		
-		_npcId = params.getInt("npcId", 0);
+		npcId = params.getInt("npcId", 0);
 	}
 	
 	@Override
@@ -48,13 +44,12 @@ public final class SummonAgathion extends AbstractEffect {
 	
 	@Override
 	public void onStart(BuffInfo info) {
-		if ((info.getEffected() == null) || !info.getEffected().isPlayer()) {
+		if (!info.getEffected().isPlayer()) {
 			return;
 		}
 		
 		final L2PcInstance player = info.getEffected().getActingPlayer();
-		
-		player.setAgathionId(_npcId);
+		player.setAgathionId(npcId);
 		player.broadcastUserInfo();
 	}
 }

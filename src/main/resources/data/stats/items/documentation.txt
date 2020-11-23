@@ -113,7 +113,7 @@
     	
     is_questitem
 	is_tradable
-	is_dropable
+	is_droppable
 	is_destroyable
 	is_sellable
 	is_magic_weapon

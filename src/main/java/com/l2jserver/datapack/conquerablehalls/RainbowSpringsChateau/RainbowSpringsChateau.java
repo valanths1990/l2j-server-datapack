@@ -126,7 +126,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine {
 			// XXX _rainbow.siegeStarts();
 			
 			spawnGourds();
-			_siegeEnd = ThreadPoolManager.getInstance().scheduleGeneral(new SiegeEnd(null), _rainbow.getSiegeLenght() - 120000);
+			_siegeEnd = ThreadPoolManager.getInstance().scheduleGeneral(new SiegeEnd(null), _rainbow.getSiegeLength() - 120000);
 		}
 	}
 	

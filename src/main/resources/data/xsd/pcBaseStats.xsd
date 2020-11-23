@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="pcBaseStats">
 		<xs:complexType>
-			<xs:sequence minOccurs="1" maxOccurs="1">
+			<xs:sequence>
 				<xs:element name="basePatk" minOccurs="20" maxOccurs="20">
 					<xs:complexType>
 						<xs:attribute name="classId" use="required">

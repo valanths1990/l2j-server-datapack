@@ -5,7 +5,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
@@ -16,7 +16,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
@@ -1697,7 +1697,7 @@
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
 	</item>
@@ -1710,7 +1710,7 @@
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3633-2" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{8}}}" />
@@ -1731,7 +1731,7 @@
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3633-1" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{9}}}" />
@@ -1809,7 +1809,7 @@
 		<set name="weight" val="1840" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
@@ -1847,7 +1847,7 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="3" />
 		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
-		<set name="is_dropable" val="false" />
+		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2234-1" />

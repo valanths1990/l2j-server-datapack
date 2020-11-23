@@ -2,8 +2,8 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="list">
 		<xs:complexType>
-			<xs:sequence maxOccurs="1" minOccurs="1">
-				<xs:element name="access" maxOccurs="10" minOccurs="1">
+			<xs:sequence>
+				<xs:element name="access" maxOccurs="10">
 					<xs:complexType>
 						<xs:attribute name="allowAltg" type="xs:boolean" use="required" />
 						<xs:attribute name="allowFixedRes" type="xs:boolean" use="required" />

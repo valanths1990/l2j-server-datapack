@@ -1,4 +1,4 @@
-image: maven:3.6.3-jdk-11-slim
+image: openjdk:14-alpine
 
 pipelines:
    branches:
@@ -7,17 +7,17 @@ pipelines:
             caches:
              - maven
             script:
-             - apt-get update -y
-             - apt-get install -y git
+             - apk update
+             - apk add git
              - git clone --depth=1 https://bitbucket.org/l2jserver/l2j-server-game.git
              - cd l2j-server-game
-             - mvn install -DskipTests
+             - /bin/sh mvnw install -DskipTests
              - cd ..
          - step:
             caches:
              - maven
             script:
-             - mvn install
+             - /bin/sh mvnw install
             artifacts:
              - target/*.zip
          - step:

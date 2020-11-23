@@ -21,7 +21,7 @@ package com.l2jserver.datapack.ai.npc.CastleChamberlain;
 import static com.l2jserver.gameserver.config.Configuration.castle;
 import static com.l2jserver.gameserver.config.Configuration.character;
 import static com.l2jserver.gameserver.config.Configuration.general;
-import static com.l2jserver.gameserver.config.Configuration.sevenSings;
+import static com.l2jserver.gameserver.config.Configuration.sevenSigns;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -959,11 +959,11 @@ public final class CastleChamberlain extends AbstractNpcAI {
 					} else {
 						if ((SevenSigns.getInstance().getPlayerCabal(player.getObjectId()) == SevenSigns.CABAL_DAWN) && SevenSigns.getInstance().isCompetitionPeriod()) {
 							final int ticketCount = castle.getTicketBuyCount();
-							if (ticketCount < (sevenSings().getSevenSignsDawnTicketQuantity() / sevenSings().getSevenSignsDawnTicketBundle())) {
+							if (ticketCount < (sevenSigns().getSevenSignsDawnTicketQuantity() / sevenSigns().getSevenSignsDawnTicketBundle())) {
 								final NpcHtmlMessage html = getHtmlPacket(player, npc, "ssq_selldawnticket.html");
-								html.replace("%DawnTicketLeft%", String.valueOf(sevenSings().getSevenSignsDawnTicketQuantity() - (ticketCount * sevenSings().getSevenSignsDawnTicketBundle())));
-								html.replace("%DawnTicketBundle%", String.valueOf(sevenSings().getSevenSignsDawnTicketBundle()));
-								html.replace("%DawnTicketPrice%", String.valueOf(sevenSings().getSevenSignsDawnTicketPrice() * sevenSings().getSevenSignsDawnTicketBundle()));
+								html.replace("%DawnTicketLeft%", String.valueOf(sevenSigns().getSevenSignsDawnTicketQuantity() - (ticketCount * sevenSigns().getSevenSignsDawnTicketBundle())));
+								html.replace("%DawnTicketBundle%", String.valueOf(sevenSigns().getSevenSignsDawnTicketBundle()));
+								html.replace("%DawnTicketPrice%", String.valueOf(sevenSigns().getSevenSignsDawnTicketPrice() * sevenSigns().getSevenSignsDawnTicketBundle()));
 								player.sendPacket(html);
 							} else {
 								htmltext = "ssq_notenoughticket.html";
@@ -984,11 +984,11 @@ public final class CastleChamberlain extends AbstractNpcAI {
 					} else {
 						if ((SevenSigns.getInstance().getPlayerCabal(player.getObjectId()) == SevenSigns.CABAL_DAWN) && SevenSigns.getInstance().isCompetitionPeriod()) {
 							final int ticketCount = castle.getTicketBuyCount();
-							if (ticketCount < (sevenSings().getSevenSignsDawnTicketQuantity() / sevenSings().getSevenSignsDawnTicketBundle())) {
-								final long totalCost = sevenSings().getSevenSignsDawnTicketPrice() * sevenSings().getSevenSignsDawnTicketBundle();
+							if (ticketCount < (sevenSigns().getSevenSignsDawnTicketQuantity() / sevenSigns().getSevenSignsDawnTicketBundle())) {
+								final long totalCost = sevenSigns().getSevenSignsDawnTicketPrice() * sevenSigns().getSevenSignsDawnTicketBundle();
 								if (player.getAdena() >= totalCost) {
 									takeItems(player, Inventory.ADENA_ID, totalCost);
-									giveItems(player, sevenSings().getSevenSignsManorsAgreementId(), sevenSings().getSevenSignsDawnTicketBundle());
+									giveItems(player, sevenSigns().getSevenSignsManorsAgreementId(), sevenSigns().getSevenSignsDawnTicketBundle());
 									castle.setTicketBuyCount(ticketCount + 1);
 								} else {
 									htmltext = "chamberlain-09.html";

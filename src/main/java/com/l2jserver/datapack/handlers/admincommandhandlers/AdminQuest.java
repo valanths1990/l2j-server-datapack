@@ -25,11 +25,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import javax.script.ScriptException;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -44,8 +39,6 @@ import com.l2jserver.gameserver.scripting.ScriptEngineManager;
 import com.l2jserver.gameserver.util.Util;
 
 public class AdminQuest implements IAdminCommandHandler {
-	private static final Logger LOG = LoggerFactory.getLogger(AdminQuest.class);
-	
 	private static final String[] ADMIN_COMMANDS = {
 		"admin_quest_reload",
 		"admin_script_load",
@@ -119,10 +112,7 @@ public class AdminQuest implements IAdminCommandHandler {
 						
 						// This part should be called only when the script is successfully loaded.
 						activeChar.sendMessage("Script Successfully Loaded.");
-					} catch (ScriptException ex) {
-						activeChar.sendMessage("Failed loading: " + parts[1]);
-						LOG.error("Failed loading {}!", parts[1], ex);
-					} catch (Exception e) {
+					} catch (Exception ex) {
 						activeChar.sendMessage("Failed loading: " + parts[1]);
 					}
 				} else {

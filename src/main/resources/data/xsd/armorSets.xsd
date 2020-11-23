@@ -2,11 +2,11 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="list">
 		<xs:complexType>
-			<xs:sequence maxOccurs="1" minOccurs="1">
-				<xs:element name="set" maxOccurs="unbounded" minOccurs="1">
+			<xs:sequence>
+				<xs:element name="set" maxOccurs="unbounded">
 					<xs:complexType>
-						<xs:sequence maxOccurs="1" minOccurs="1">
-							<xs:element name="chest" maxOccurs="1" minOccurs="1">
+						<xs:sequence>
+							<xs:element name="chest">
 								<xs:complexType>
 									<xs:attribute name="id" type="xs:positiveInteger" use="required" />
 								</xs:complexType>
@@ -36,7 +36,7 @@
 									<xs:attribute name="id" type="xs:positiveInteger" use="required" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="skill" maxOccurs="unbounded" minOccurs="1">
+							<xs:element name="skill" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:attribute name="id" type="xs:positiveInteger" use="required" />
 									<xs:attribute name="level" type="xs:positiveInteger" use="required" />
@@ -48,38 +48,38 @@
 									<xs:attribute name="level" type="xs:positiveInteger" use="required" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="enchant6skill" maxOccurs="1" minOccurs="0">
+							<xs:element name="enchant6skill" minOccurs="0">
 								<xs:complexType>
 									<xs:attribute name="id" type="xs:positiveInteger" use="required" />
 									<xs:attribute name="level" type="xs:positiveInteger" use="required" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="int" maxOccurs="1" minOccurs="0">
+							<xs:element name="int" minOccurs="0">
 								<xs:complexType>
 									<xs:attribute name="val" type="xs:integer" use="required" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="str" maxOccurs="1" minOccurs="0">
+							<xs:element name="str" minOccurs="0">
 								<xs:complexType>
 									<xs:attribute name="val" type="xs:integer" use="required" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="con" maxOccurs="1" minOccurs="0">
+							<xs:element name="con" minOccurs="0">
 								<xs:complexType>
 									<xs:attribute name="val" type="xs:integer" use="required" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="men" maxOccurs="1" minOccurs="0">
+							<xs:element name="men" minOccurs="0">
 								<xs:complexType>
 									<xs:attribute name="val" type="xs:integer" use="required" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="dex" maxOccurs="1" minOccurs="0">
+							<xs:element name="dex" minOccurs="0">
 								<xs:complexType>
 									<xs:attribute name="val" type="xs:integer" use="required" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="wit" maxOccurs="1" minOccurs="0">
+							<xs:element name="wit" minOccurs="0">
 								<xs:complexType>
 									<xs:attribute name="val" type="xs:integer" use="required" />
 								</xs:complexType>

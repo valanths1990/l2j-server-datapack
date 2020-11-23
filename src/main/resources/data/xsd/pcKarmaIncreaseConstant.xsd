@@ -2,28 +2,28 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="pcKarmaIncreaseConstant">
 		<xs:complexType>
-			<xs:sequence minOccurs="1" maxOccurs="1">
-				<xs:element name="penaltyStartKarma" minOccurs="1" maxOccurs="1">
+			<xs:sequence>
+				<xs:element name="penaltyStartKarma">
 					<xs:complexType>
 						<xs:attribute name="val" type="xs:nonNegativeInteger" use="required" />
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="penaltyDurationDefault" minOccurs="1" maxOccurs="1">
+				<xs:element name="penaltyDurationDefault">
 					<xs:complexType>
 						<xs:attribute name="val" type="xs:nonNegativeInteger" use="required" />
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="penaltyDurationIncrease" minOccurs="1" maxOccurs="1">
+				<xs:element name="penaltyDurationIncrease">
 					<xs:complexType>
 						<xs:attribute name="val" type="xs:decimal" use="required" />
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="downTimeMultiple" minOccurs="1" maxOccurs="1">
+				<xs:element name="downTimeMultiple">
 					<xs:complexType>
 						<xs:attribute name="val" type="xs:nonNegativeInteger" use="required" />
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="criminalDurationMultiple" minOccurs="1" maxOccurs="1">
+				<xs:element name="criminalDurationMultiple">
 					<xs:complexType>
 						<xs:attribute name="val" type="xs:nonNegativeInteger" use="required" />
 					</xs:complexType>
