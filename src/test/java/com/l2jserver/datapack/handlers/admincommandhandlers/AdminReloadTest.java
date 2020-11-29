@@ -45,13 +45,13 @@ public class AdminReloadTest extends AbstractTest {
 	
 	@Test
 	public void useAdminCommandTest() {
-		general().setProperty("EverybodyHasAdminRights", "true");
+		general().setProperty("ServerListBrackets", "True");
 		expect(player.getName()).andReturn("Zoey76");
 		player.sendMessage(anyString());
 		expectLastCall();
 		replay(player);
 		
 		adminReload.useAdminCommand("admin_reload config general", player);
-		assertFalse(general().everybodyHasAdminRights());
+		assertFalse(general().getServerListBrackets());
 	}
 }
