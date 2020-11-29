@@ -24,6 +24,7 @@ import java.awt.Color;
 
 import javax.security.auth.login.LoginException;
 
+import com.l2jserver.datapack.custom.service.discord.commands.OnlineCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,7 +48,12 @@ public class DiscordBot {
 	private static final Logger LOG = LoggerFactory.getLogger(DiscordBot.class);
 	
 	private static JDA jda;
-	
+
+	private static final Object[] COMMANDS = {
+		new StartListener(),
+		new OnlineCommand(),
+	};
+
 	public static void main(String[] args) {
 		if (!discord().enableBot()) {
 			LOG.info("Discord Bot is Disabled.");
@@ -56,7 +62,7 @@ public class DiscordBot {
 		try {
 			jda = JDABuilder.createDefault(discord().getBotToken()) //
 				.setAutoReconnect(true) //
-				.addEventListeners(new StartListener()) //
+				.addEventListeners(COMMANDS) //
 				.enableIntents(GatewayIntent.GUILD_MEMBERS) //
 				.enableIntents(GatewayIntent.GUILD_MESSAGES) //
 				.setMemberCachePolicy(MemberCachePolicy.ALL) //

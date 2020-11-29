@@ -18,25 +18,16 @@
  */
 package com.l2jserver.datapack.custom.service.discord;
 
-import static com.l2jserver.gameserver.config.Configuration.discord;
-
-import java.awt.Color;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.l2jserver.gameserver.data.xml.impl.AdminData;
-import com.l2jserver.gameserver.model.L2World;
-
-import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.DisconnectEvent;
 import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.events.ReconnectedEvent;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 /**
- * Basic command Listener
+ * Basic Listener
  * @author Stalitsa
  * @version 2.6.2.0
  */
@@ -58,24 +49,5 @@ public class StartListener extends ListenerAdapter {
 	@Override
 	public void onReconnect(ReconnectedEvent event) {
 		LOG.info(event.getJDA().getSelfUser().getName() + " has reconnected.");
-	}
-	
-	@Override
-	public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
-		if (event.getAuthor().isBot()) {
-			return;
-		}
-		
-		final int playersCount = L2World.getInstance().getAllPlayersCount();
-		final int gmCount = AdminData.getInstance().getAllGms(true).size();
-		// Basic command that the bot listens to and responds in an embed with online players and Gms
-		if (event.getMessage().getContentRaw().startsWith(discord().getPrefix() + "online")) {
-			EmbedBuilder eb = new EmbedBuilder().setColor(Color.CYAN);
-			eb.setTitle(event.getAuthor().getName());
-			eb.addField("Online Players", String.valueOf(playersCount), false);
-			eb.addBlankField(false);
-			eb.addField("Online GM's", String.valueOf(gmCount), false);
-			event.getChannel().sendMessage(eb.build()).queue(); // this actually sends the information to discord.
-		}
 	}
 }
