@@ -40,10 +40,16 @@ import com.l2jserver.gameserver.config.Configuration;
 import com.l2jserver.gameserver.handler.BypassHandler;
 import com.l2jserver.gameserver.handler.ItemHandler;
 import com.l2jserver.gameserver.handler.VoicedCommandHandler;
+import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.L2Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jserver.gameserver.model.entity.TvTEvent;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
+import com.l2jserver.gameserver.model.zone.ZoneId;
+import com.l2jserver.gameserver.network.SystemMessageId;
+import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+import com.l2jserver.gameserver.taskmanager.AttackStanceTaskManager;
 
 /**
  * Buffer Service.
@@ -483,7 +489,7 @@ public final class BufferService extends CustomServiceScript {
 	public boolean executeHtmlCommand(L2PcInstance player, L2Npc npc, CommandProcessor command) {
 		AbstractBuffer buffer = BufferServiceRepository.getInstance().getConfig().determineBuffer(npc, player);
 		if (buffer == null) {
-			player.sendMessage("No authorization!");
+			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_NOT_FOUND).addString("Buffer"));
 			return false;
 		}
 		
@@ -509,9 +515,37 @@ public final class BufferService extends CustomServiceScript {
 	
 	@Override
 	public boolean executeActionCommand(L2PcInstance player, L2Npc npc, CommandProcessor command) {
-		AbstractBuffer buffer = BufferServiceRepository.getInstance().getConfig().determineBuffer(npc, player);
-		if (buffer == null) {
-			player.sendMessage("No authorization!");
+		SystemMessage abortSysMsg = null;
+		AbstractBuffer buffer = null;
+		
+		if (isInsideAnyZoneOf(player, Configuration.bufferService().getForbidInZones())) {
+			abortSysMsg = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			abortSysMsg.addString("Buffer");
+		} else if (Configuration.bufferService().getForbidInEvents() && ((player.getEventStatus() != null) || (player.getBlockCheckerArena() != -1) || player.isOnEvent() || player.isInOlympiadMode() || TvTEvent.isPlayerParticipant(player.getObjectId()))) {
+			abortSysMsg = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			abortSysMsg.addString("Buffer");
+		} else if (Configuration.bufferService().getForbidInDuell() && player.isInDuel()) {
+			abortSysMsg = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			abortSysMsg.addString("Buffer");
+		} else if (Configuration.bufferService().getForbidInFight() && AttackStanceTaskManager.getInstance().hasAttackStanceTask(player)) {
+			abortSysMsg = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			abortSysMsg.addString("Buffer");
+		} else if (Configuration.bufferService().getForbidInPvp() && (player.getPvpFlag() == 1)) {
+			abortSysMsg = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			abortSysMsg.addString("Buffer");
+		} else if (Configuration.bufferService().getForbidForChaoticPlayers() && player.getKarma() > 0) {
+			abortSysMsg = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			abortSysMsg.addString("Buffer");
+		} else {
+			buffer = BufferServiceRepository.getInstance().getConfig().determineBuffer(npc, player);
+			if (buffer == null) {
+				abortSysMsg = SystemMessage.getSystemMessage(SystemMessageId.S1_NOT_FOUND);
+				abortSysMsg.addString("Buffer");
+			}
+		}
+		
+		if (abortSysMsg != null) {
+			player.sendPacket(abortSysMsg);
 			return false;
 		}
 		
