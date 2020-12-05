@@ -48,12 +48,12 @@ public class DiscordBot {
 	private static final Logger LOG = LoggerFactory.getLogger(DiscordBot.class);
 	
 	private static JDA jda;
-
+	
 	private static final Object[] COMMANDS = {
 		new StartListener(),
 		new OnlineCommand(),
 	};
-
+	
 	public static void main(String[] args) {
 		if (!discord().enableBot()) {
 			LOG.info("Discord Bot is Disabled.");

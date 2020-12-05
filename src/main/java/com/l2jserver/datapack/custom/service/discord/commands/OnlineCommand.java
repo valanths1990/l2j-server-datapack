@@ -34,33 +34,33 @@ import java.util.List;
  * @version 2.6.2.0
  */
 public class OnlineCommand extends AbstractCommand {
-
-    @Override
-    public List<String> getCommands() {
-        List<String> commands = new ArrayList<>();
-        commands.add("online");
-        commands.add("on");
-        return commands;
-    }
-
-    @Override
-    public void executeCommand(MessageReceivedEvent event, String[] args, String prefix) {
-
-        if(args.length > 1) {
-            event.getTextChannel().sendMessage(new EmbedBuilder().setColor(Color.RED).setDescription("Please  use the command without any Arguments").build()).queue();
-            event.getMessage().addReaction("\u274C").queue(); // Bot reacts with X mark.
-            return;
-        }
-        event.getMessage().addReaction("\u2705").queue(); // Bot reacts with check mark.
-        final int playersCount = L2World.getInstance().getAllPlayersCount();
-        final int gmCount = AdminData.getInstance().getAllGms(true).size();
-        // A command that the bot listens to and responds in an embed with online players and Gms
-        EmbedBuilder eb = new EmbedBuilder().setColor(Color.CYAN);
-        eb.setTitle(event.getAuthor().getName(), event.getAuthor().getEffectiveAvatarUrl());
-        eb.setDescription("***___GAME INFO___***");
-        eb.addField("Online Players", String.valueOf(playersCount), false);
-        eb.addBlankField(false);
-        eb.addField("Online GM's", String.valueOf(gmCount), false);
-        event.getChannel().sendMessage(eb.build()).queue(); // this actually sends the information to discord.
-    }
+	
+	@Override
+	public List<String> getCommands() {
+		List<String> commands = new ArrayList<>();
+		commands.add("online");
+		commands.add("on");
+		return commands;
+	}
+	
+	@Override
+	public void executeCommand(MessageReceivedEvent event, String[] args, String prefix) {
+		
+		if (args.length > 1) {
+			event.getTextChannel().sendMessage(new EmbedBuilder().setColor(Color.RED).setDescription("Please  use the command without any Arguments").build()).queue();
+			event.getMessage().addReaction("\u274C").queue(); // Bot reacts with X mark.
+			return;
+		}
+		event.getMessage().addReaction("\u2705").queue(); // Bot reacts with check mark.
+		final int playersCount = L2World.getInstance().getAllPlayersCount();
+		final int gmCount = AdminData.getInstance().getAllGms(true).size();
+		// A command that the bot listens to and responds in an embed with online players and Gms
+		EmbedBuilder eb = new EmbedBuilder().setColor(Color.CYAN);
+		eb.setTitle(event.getAuthor().getName(), event.getAuthor().getEffectiveAvatarUrl());
+		eb.setDescription("***___GAME INFO___***");
+		eb.addField("Online Players", String.valueOf(playersCount), false);
+		eb.addBlankField(false);
+		eb.addField("Online GM's", String.valueOf(gmCount), false);
+		event.getChannel().sendMessage(eb.build()).queue(); // this actually sends the information to discord.
+	}
 }

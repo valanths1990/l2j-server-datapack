@@ -33,29 +33,28 @@ import static com.l2jserver.gameserver.config.Configuration.discord;
  * @version 2.6.2.0
  */
 public abstract class AbstractCommand extends ListenerAdapter {
-
-    public abstract List<String> getCommands();
-
-    public abstract void executeCommand(MessageReceivedEvent event, String[] args, String prefix);
-
-    @Override
-    public void onMessageReceived(MessageReceivedEvent event) {
-        if (event.getAuthor().isBot() || event.getChannelType().equals(ChannelType.PRIVATE))
-        {
-            return;
-        }
-        String[] args = event.getMessage().getContentRaw().split(" ");
-        if (isCommand(args, discord().getPrefix())) {
-            executeCommand(event, args, discord().getPrefix());
-        }
-    }
-
-    private boolean isCommand(String[] args, String prefix) {
-        List<String> commands = new ArrayList<>();
-        for (String cmd : getCommands()) {
-            commands.add(prefix + cmd);
-        }
-        return commands.contains(args[0]);
-    }
-
+	
+	public abstract List<String> getCommands();
+	
+	public abstract void executeCommand(MessageReceivedEvent event, String[] args, String prefix);
+	
+	@Override
+	public void onMessageReceived(MessageReceivedEvent event) {
+		if (event.getAuthor().isBot() || event.getChannelType().equals(ChannelType.PRIVATE)) {
+			return;
+		}
+		String[] args = event.getMessage().getContentRaw().split(" ");
+		if (isCommand(args, discord().getPrefix())) {
+			executeCommand(event, args, discord().getPrefix());
+		}
+	}
+	
+	private boolean isCommand(String[] args, String prefix) {
+		List<String> commands = new ArrayList<>();
+		for (String cmd : getCommands()) {
+			commands.add(prefix + cmd);
+		}
+		return commands.contains(args[0]);
+	}
+	
 }
