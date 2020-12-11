@@ -516,7 +516,10 @@ public final class BufferService extends CustomServiceScript {
 		SystemMessage abortSysMsg = null;
 		AbstractBuffer buffer = null;
 		
-		if (isInsideAnyZoneOf(player, Configuration.bufferService().getForbidInZones())) {
+		if (player.isDead()) {
+			abortSysMsg = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			abortSysMsg.addString("Buffer");
+		} else if (isInsideAnyZoneOf(player, Configuration.bufferService().getForbidInZones())) {
 			abortSysMsg = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
 			abortSysMsg.addString("Buffer");
 		} else if (Configuration.bufferService().getForbidInEvents() && ((player.getEventStatus() != null) || (player.getBlockCheckerArena() != -1) || player.isOnEvent() || player.isInOlympiadMode() || TvTEvent.isPlayerParticipant(player.getObjectId()))) {
