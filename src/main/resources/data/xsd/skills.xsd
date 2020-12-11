@@ -20,6 +20,7 @@
 							<xs:enumeration value="abnormalVisualEffect" />
 							<xs:enumeration value="activateRate" />
 							<xs:enumeration value="affectLimit" />
+							<xs:enumeration value="affectObject" />
 							<xs:enumeration value="affectRange" />
 							<xs:enumeration value="affectScope" />
 							<xs:enumeration value="afterEffectId" />
@@ -41,6 +42,7 @@
 							<xs:enumeration value="excludedFromCheck" />
 							<xs:enumeration value="fanRange" />
 							<xs:enumeration value="hitTime" />
+							<xs:enumeration value="hitCancelTime" />
 							<xs:enumeration value="hpConsume" />
 							<xs:enumeration value="icon" />
 							<xs:enumeration value="irreplaceableBuff" />
@@ -339,6 +341,7 @@
 				<xs:attribute type="xs:string" name="normal" />
 				<xs:attribute type="xs:string" name="ride" />
 				<xs:attribute type="xs:string" name="wyvern" />
+				<xs:attribute type="xs:string" name="shieldDefensePercent" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -578,6 +581,7 @@
 					<xs:enumeration value="MagicalAttack" />
 					<xs:enumeration value="MagicalAttackByAbnormal" />
 					<xs:enumeration value="MagicalAttackMp" />
+					<xs:enumeration value="MagicalAttackRange" />
 					<xs:enumeration value="MagicalSoulAttack" />
 					<xs:enumeration value="ManaHealByLevel" />
 					<xs:enumeration value="MaxCp" />

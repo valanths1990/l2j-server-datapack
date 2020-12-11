@@ -42,11 +42,19 @@ public class Enemy implements ITargetTypeHandler {
 					return EMPTY_TARGET_LIST;
 				}
 				
+				if (target.isDead()) {
+					activeChar.sendPacket(INCORRECT_TARGET);
+					return EMPTY_TARGET_LIST;
+				}
+				
+				if (target.isAttackable()) {
+					return new L2Character[] {
+						target
+					};
+				}
+				
 				final L2PcInstance player = activeChar.getActingPlayer();
-				if (target.isDead() || (!target.isAttackable() && //
-					(player != null) && //
-					!player.checkIfPvP(target) && //
-					!player.getCurrentSkill().isCtrlPressed())) {
+				if ((player == null) || !player.checkIfPvP(target) && !player.getCurrentSkill().isCtrlPressed()) {
 					activeChar.sendPacket(INCORRECT_TARGET);
 					return EMPTY_TARGET_LIST;
 				}

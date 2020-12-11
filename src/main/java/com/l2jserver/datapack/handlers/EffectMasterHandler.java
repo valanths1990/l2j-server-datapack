@@ -93,6 +93,7 @@ import com.l2jserver.datapack.handlers.effecthandlers.instant.Lethal;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalAttack;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalAttackByAbnormal;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalAttackMp;
+import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalAttackRange;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalSoulAttack;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.ManaHealByLevel;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.Mp;
@@ -202,11 +203,11 @@ public final class EffectMasterHandler {
 		Blink.class,
 		BlockAction.class,
 		BlockBuff.class,
+		BlockBuffSlot.class,
 		BlockChat.class,
 		BlockDamage.class,
 		BlockDebuff.class,
 		BlockParty.class,
-		BlockBuffSlot.class,
 		BlockResurrection.class,
 		Bluff.class,
 		Buff.class,
@@ -275,6 +276,7 @@ public final class EffectMasterHandler {
 		MagicalAttack.class,
 		MagicalAttackByAbnormal.class,
 		MagicalAttackMp.class,
+		MagicalAttackRange.class,
 		MagicalSoulAttack.class,
 		ManaHealByLevel.class,
 		MaxCp.class,
@@ -285,7 +287,6 @@ public final class EffectMasterHandler {
 		Mute.class,
 		NoblesseBless.class,
 		OpenChest.class,
-		Unsummon.class,
 		OpenCommonRecipeBook.class,
 		OpenDoor.class,
 		OpenDwarfRecipeBook.class,
@@ -298,8 +299,8 @@ public final class EffectMasterHandler {
 		PhysicalAttackMute.class,
 		PhysicalMute.class,
 		PhysicalSoulAttack.class,
-		Pumping.class,
 		ProtectionBlessing.class,
+		Pumping.class,
 		RandomizeHate.class,
 		RebalanceHP.class,
 		Recovery.class,
@@ -355,6 +356,7 @@ public final class EffectMasterHandler {
 		TriggerSkillByAvoid.class,
 		TriggerSkillByDamage.class,
 		TriggerSkillBySkill.class,
+		Unsummon.class,
 		UnsummonAgathion.class,
 		VitalityPointUp.class,
 	};
