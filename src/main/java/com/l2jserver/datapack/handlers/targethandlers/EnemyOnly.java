@@ -51,10 +51,14 @@ public class EnemyOnly implements ITargetTypeHandler {
 			return EMPTY_TARGET_LIST;
 		}
 		
-		if (target.isAttackable()) {
-			return new L2Character[] {
-				target
-			};
+		if (target.isNpc()) {
+			if (target.isAttackable()) {
+				return new L2Character[] {
+					target
+				};
+			}
+			activeChar.sendPacket(INCORRECT_TARGET);
+			return EMPTY_TARGET_LIST;
 		}
 		
 		final var player = activeChar.getActingPlayer();
