@@ -408,4 +408,74 @@
 		<skill id="3506" level="1" /> <!-- Brigandine Heavy Armor Set -->
 		<shield_skill id="3544" level="1" /> <!-- Equipped with Shield -->
 	</set>
+	<set id="212">
+		<chest id="21775" /> <!-- Imperial Crusader Breastplate of Fortune - 90-day limited period -->
+		<legs id="21776" /> <!-- Imperial Crusader Gaiters of Fortune - 90-day limited period -->
+		<head id="21779" /> <!-- Imperial Crusader Helmet of Fortune - 90-day limited period -->
+		<gloves id="21777" /> <!-- Imperial Crusader Gauntlet of Fortune - 90-day limited period -->
+		<feet id="21778" /> <!-- Imperial Crusader Boots of Fortune - 90-day limited period -->
+		<shield id="21780" /> <!-- Imperial Crusader Shield of Fortune - 90-day limited period -->
+		<skill id="3006" level="1" /> <!-- Equip Set Items -->
+		<skill id="3553" level="1" /> <!-- Imperial Crusader Heavy Armor Set -->
+		<skill id="3554" level="1" /> <!-- Equipped with Shield -->
+		<str val="2" />
+		<dex val="-2" />
+	</set>
+	<set id="213">
+		<chest id="21782" /> <!-- Draconic Leather Armor of Fortune - 90-day limited period -->
+		<head id="21785" /> <!-- Draconic Leather Helmet of Fortune - 90-day limited period -->
+		<gloves id="21783" /> <!-- Draconic Leather Gloves of Fortune - 90-day limited period -->
+		<feet id="21784" /> <!-- Draconic Leather Boots of Fortune - 90-day limited period -->
+		<skill id="3006" level="1" /> <!-- Equip Set Items -->
+		<skill id="3555" level="1" /> <!-- Draconic Light Armor Set -->
+		<str val="1" />
+		<con val="-2" />
+		<dex val="1" />
+	</set>
+	<set id="214">
+		<chest id="21787" /> <!-- Major Arcana Robe of Fortune - 90-day limited period -->
+		<head id="21790" /> <!-- Major Arcana Circlet of Fortune - 90-day limited period -->
+		<gloves id="21788" /> <!-- Major Arcana Gloves of Fortune - 90-day limited period -->
+		<feet id="21789" /> <!-- Major Arcana Boots of Fortune - 90-day limited period -->
+		<skill id="3006" level="1" /> <!-- Equip Set Items -->
+		<skill id="3556" level="1" /> <!-- Major Arcana Robe Set -->
+		<int val="1" />
+		<men val="-2" />
+		<wit val="1" />
+	</set>
+	<set id="215">
+		<chest id="21793" /> <!-- Dynasty Breastplate of Fortune - 90-day limited period -->
+		<legs id="21794" /> <!-- Dynasty Gaiters of Fortune - 90-day limited period -->
+		<head id="21797" /> <!-- Dynasty Helmet of Fortune - 90-day limited period -->
+		<gloves id="21795" /> <!-- Dynasty Gauntlet of Fortune - 90-day limited period -->
+		<feet id="21796" /> <!-- Dynasty Boots of Fortune - 90-day limited period -->
+		<shield id="21798" /> <!-- Dynasty Shield of Fortune - 90-day limited period -->
+		<skill id="3006" level="1" /> <!-- Equip Set Items -->
+		<skill id="3412" level="1" /> <!-- Dynasty Breastplate -->
+		<skill id="3417" level="1" /> <!-- Equipped with Shield -->
+		<str val="1" />
+		<con val="-1" />
+	</set>
+	<set id="216">
+		<chest id="21800" /> <!-- Dynasty Leather Armor of Fortune - 90-day limited period -->
+		<legs id="21801" /> <!-- Dynasty Leather Leggings of Fortune - 90-day limited period -->
+		<head id="21802" /> <!-- Dynasty Leather Helmet of Fortune - 90-day limited period -->
+		<gloves id="21803" /> <!-- Dynasty Leather Gloves of Fortune - 90-day limited period -->
+		<feet id="21804" /> <!-- Dynasty Leather Boots of Fortune - 90-day limited period -->
+		<skill id="3006" level="1" /> <!-- Equip Set Items -->
+		<skill id="3413" level="1" /> <!-- Dynasty Leather Armor -->
+		<con val="-1" />
+		<dex val="1" />
+	</set>
+	<set id="217">
+		<chest id="21806" /> <!-- Dynasty Tunic of Fortune - 90-day limited period -->
+		<legs id="21807" /> <!-- Dynasty Stockings of Fortune - 90-day limited period -->
+		<head id="21808" /> <!-- Dynasty Circlet of Fortune - 90-day limited period -->
+		<gloves id="21809" /> <!-- Dynasty Gloves of Fortune - 90-day limited period -->
+		<feet id="21810" /> <!-- Dynasty Shoes of Fortune - 90-day limited period -->
+		<skill id="3006" level="1" /> <!-- Equip Set Items -->
+		<skill id="3416" level="1" /> <!-- Dynasty Tunic -->
+		<int val="-1" />
+		<men val="1" />
+	</set>
 </list>
