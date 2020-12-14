@@ -54,8 +54,12 @@ public class Enemy implements ITargetTypeHandler {
 				}
 				
 				final L2PcInstance player = activeChar.getActingPlayer();
-				if ((player == null) || !player.checkIfPvP(target) && !player.getCurrentSkill().isCtrlPressed()) {
-					activeChar.sendPacket(INCORRECT_TARGET);
+				if (player == null) {
+					return EMPTY_TARGET_LIST;
+				}
+				
+				if (!player.checkIfPvP(target) && !player.getCurrentSkill().isCtrlPressed()) {
+					player.sendPacket(INCORRECT_TARGET);
 					return EMPTY_TARGET_LIST;
 				}
 				

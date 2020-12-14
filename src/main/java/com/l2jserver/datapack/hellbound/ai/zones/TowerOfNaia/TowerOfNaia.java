@@ -158,7 +158,7 @@ public final class TowerOfNaia extends AbstractNpcAI {
 	private final Set<L2Npc> _sporeSpawn = ConcurrentHashMap.newKeySet();
 	static {
 		// Format: entrance_door, exit_door
-		DOORS.put(18494, new int[] {
+		DOORS.put(ROOM_MANAGER_FIRST, new int[] {
 			18250001,
 			18250002
 		});
@@ -202,12 +202,12 @@ public final class TowerOfNaia extends AbstractNpcAI {
 			18250021,
 			18250022
 		});
-		DOORS.put(18505, new int[] {
+		DOORS.put(ROOM_MANAGER_LAST, new int[] {
 			18250023,
 			18250024
 		});
 		
-		ZONES.put(18494, 200020);
+		ZONES.put(ROOM_MANAGER_FIRST, 200020);
 		ZONES.put(18495, 200021);
 		ZONES.put(18496, 200022);
 		ZONES.put(18497, 200023);
@@ -218,9 +218,9 @@ public final class TowerOfNaia extends AbstractNpcAI {
 		ZONES.put(18502, 200028);
 		ZONES.put(18503, 200029);
 		ZONES.put(18504, 200030);
-		ZONES.put(18505, 200031);
+		ZONES.put(ROOM_MANAGER_LAST, 200031);
 		//@formatter:off
-		SPAWNS.put(18494, new int[][]
+		SPAWNS.put(ROOM_MANAGER_FIRST, new int[][]
 		{
 			{22393, -46371, 246400, -9120, 0},
 			{22394, -46435, 245830, -9120, 0},
@@ -309,7 +309,7 @@ public final class TowerOfNaia extends AbstractNpcAI {
 			{22413, -51500, 245781, -12568, 0},
 			{22413, -51941, 246045, -12568, 0},
 		});
-		SPAWNS.put(18505, new int[][]
+		SPAWNS.put(ROOM_MANAGER_LAST, new int[][]
 		{
 			{18490, -48238, 243347, -13376, 0},
 			{18490, -48462, 244022, -13376, 0},
@@ -362,15 +362,12 @@ public final class TowerOfNaia extends AbstractNpcAI {
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		final int npcId = npc.getId();
-		
 		if (npcId == CONTROLLER) {
 			if (_lock == null) {
 				return "18492-02.htm";
 			}
 			return "18492-01.htm";
-		}
-		
-		else if ((npcId >= ROOM_MANAGER_FIRST) && (npcId <= ROOM_MANAGER_LAST)) {
+		} else if ((npcId >= ROOM_MANAGER_FIRST) && (npcId <= ROOM_MANAGER_LAST)) {
 			if (_activeRooms.containsKey(npcId) && !_activeRooms.get(npcId)) {
 				if (player.getParty() == null) {
 					player.sendPacket(SystemMessageId.CAN_OPERATE_MACHINE_WHEN_IN_PARTY);
