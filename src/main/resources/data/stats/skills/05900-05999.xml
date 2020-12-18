@@ -1469,7 +1469,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
-		<effects/>
 	</skill>
 	<skill id="5992" levels="12" name="NPC Hate">
 		<!-- High Five Confirmed -->

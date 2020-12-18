@@ -894,7 +894,6 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<effects/>
 	</skill>
 	<skill id="6266" levels="1" name="Shock">
 		<!-- High Five Confirmed -->

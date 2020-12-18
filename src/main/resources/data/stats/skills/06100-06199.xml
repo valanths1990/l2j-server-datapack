@@ -349,7 +349,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<effects/>
 	</skill>
 	<skill id="6129" levels="1" name="Shock">
 		<!-- High Five Confirmed -->
