@@ -28,6 +28,7 @@
 							<xs:enumeration value="attributeType" />
 							<xs:enumeration value="basicProperty" />
 							<xs:enumeration value="blockedInOlympiad" />
+							<xs:enumeration value="buffProtectLevel" />
 							<xs:enumeration value="capsuled_items_skill" />
 							<xs:enumeration value="castRange" />
 							<xs:enumeration value="channelingSkillId" />
@@ -163,6 +164,7 @@
 				<xs:attribute type="xs:byte" name="abnormal" />
 				<xs:attribute type="xs:short" name="active_effect_id" />
 				<xs:attribute type="xs:short" name="active_skill_id" />
+				<xs:attribute type="xs:string" name="checkAbnormal" />
 				<xs:attribute type="xs:string" name="class_id_restriction" />
 				<xs:attribute type="xs:string" name="myPartyExceptMe" />
 				<xs:attribute type="xs:string" name="race" />
@@ -240,7 +242,9 @@
 				<xs:attribute type="operation" name="type" />
 				<xs:attribute type="operation" name="mode" />
 				<xs:attribute type="xs:boolean" name="heal" />
+				<xs:attribute type="xs:boolean" name="critical" />
 				<xs:attribute type="xs:string" name="criticalChance" />
+				<xs:attribute type="xs:int" name="criticalLimit" />
 				<xs:attribute type="xs:byte" name="blowChance" />
 				<xs:attribute type="xs:string" name="drain" />
 				<xs:attribute type="xs:byte" name="resPower" />
@@ -576,6 +580,7 @@
 					<xs:enumeration value="ImmobileBuff" />
 					<xs:enumeration value="ImmobilePetBuff" />
 					<xs:enumeration value="InstantAgathionEnergy" />
+					<xs:enumeration value="InstantBetray" />
 					<xs:enumeration value="Lethal" />
 					<xs:enumeration value="Lucky" />
 					<xs:enumeration value="MagicalAttack" />

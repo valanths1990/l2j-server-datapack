@@ -5,7 +5,7 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />

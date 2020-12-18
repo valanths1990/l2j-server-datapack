@@ -1658,24 +1658,38 @@
 		<set name="targetType" val="FRONT_AREA" />
 	</skill>
 	<skill id="5795" levels="1" name="Poison">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="9" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="activateRate" val="70" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-684" />
+		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill4035" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="83" />
+		<set name="mpConsume1" val="15" />
+		<set name="mpConsume2" val="59" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
+		<effects>
+			<effect name="TickHp">
+				<param power="-66" />
+				<param ticks="5" />
+				<param mode="DIFF" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5796" levels="1" name="Decrease Spd.">
 		<set name="abnormalLvl" val="3" />

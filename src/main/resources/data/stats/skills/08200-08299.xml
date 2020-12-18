@@ -1080,7 +1080,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
-			<player checkAbnormal="SEED_OF_CRITICAL,#abnormalLvl" />
+			<player checkAbnormal="SEED_OF_CRITICAL;#abnormalLvl;true" />
 		</cond>
 		<effects>
 			<effect name="PhysicalAttack">

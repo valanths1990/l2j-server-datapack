@@ -160,7 +160,7 @@
 		<set name="castRange" val="750" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1250" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="#magicLvl" />

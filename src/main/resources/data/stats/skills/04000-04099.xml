@@ -33,7 +33,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->

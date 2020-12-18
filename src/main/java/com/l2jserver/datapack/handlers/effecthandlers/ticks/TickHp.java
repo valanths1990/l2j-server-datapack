@@ -41,8 +41,8 @@ public final class TickHp extends AbstractEffect {
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
-		_mode = params.getEnum("mode", EffectCalculationType.class, EffectCalculationType.DIFF);
 		setTicks(params.getInt("ticks"));
+		_mode = params.getEnum("mode", EffectCalculationType.class, EffectCalculationType.DIFF);
 	}
 	
 	@Override

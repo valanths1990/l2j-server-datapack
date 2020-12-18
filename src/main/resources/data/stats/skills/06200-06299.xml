@@ -664,132 +664,184 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6253" levels="1" name="Heatstroke Prevention Effect - Gludio">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill1184" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="6254" levels="1" name="Heatstroke Prevention Effect - Dion">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill1184" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="6255" levels="1" name="Heatstroke Prevention Effect - Giran">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill1184" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="6256" levels="1" name="Heatstroke Prevention Effect - Oren">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill1184" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="6257" levels="1" name="Heatstroke Prevention Effect - Aden">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill1184" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="6258" levels="1" name="Heatstroke Prevention Effect - Innadril">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill1184" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="6259" levels="1" name="Heatstroke Prevention Effect - Goddard">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill1184" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="6260" levels="1" name="Heatstroke Prevention Effect - Rune">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill1184" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="6261" levels="1" name="Heatstroke Prevention Effect - Schuttgart">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill1184" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="6262" levels="1" name="EMP Power">
+		<!-- High Five Confirmed -->
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="150" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="76" />
+		<set name="mpConsume2" val="78" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="2959" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6263" levels="1" name="EMP Shock">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="100" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="basicProperty" val="CON" />
 		<set name="coolTime" val="500" />
-		<set name="affectRange" val="100" />
 		<set name="effectPoint" val="-100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
@@ -809,83 +861,168 @@
 		</effects>
 	</skill>
 	<skill id="6264" levels="1" name="Golem Boom">
+		<!-- High Five Confirmed -->
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="150" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-689" />
-		<set name="magicLvl" val="75" />
-		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="3000" />
-		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
-	</skill>
-	<skill id="6265" levels="1" name="Smoke">
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-689" />
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="5627" />
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6265" levels="1" name="Smoke">
+		<!-- High Five Confirmed -->
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="affectRange" val="50" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-689" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1000" />
+		<set name="magicLvl" val="75" />
+		<set name="operateType" val="A1" />
+		<set name="reuseDelay" val="3000" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="AURA" />
+		<effects/>
 	</skill>
 	<skill id="6266" levels="1" name="Shock">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="2500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="2500" />
+		<set name="hitCancelTime" val="500" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="84" />
+		<set name="mpConsume2" val="82" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="SHOCK" />
+		<effects>
+			<effect name="Stun" />
+		</effects>
 	</skill>
 	<skill id="6267" levels="1" name="Power Attack">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="EARTH" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-574" />
+		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="84" />
+		<set name="mpConsume2" val="123" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6268" levels="1" name="Power Attack">
+		<!-- High Five Confirmed -->
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectScope" val="FAN" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="EARTH" />
+		<set name="castRange" val="250" />
 		<set name="effectPoint" val="-273" />
+		<set name="effectRange" val="600" />
 		<set name="fanRange" val="0,0,300,90" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="5000" />
 		<set name="magicLvl" val="84" />
+		<set name="mpConsume2" val="164" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="2282" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6269" levels="1" name="Poison Gas">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="10" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="1100" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="1500" />
+		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill4036" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="-1" />
+		<set name="mpConsume1" val="24" />
+		<set name="mpConsume2" val="93" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="4563" />
+			</effect>
+			<effect name="TickHp">
+				<param power="-345" />
+				<param ticks="5" />
+				<param mode="DIFF" />
+			</effect>
+		</effects>
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="6269" skillLevel="1" />
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="6270" levels="1" name="Grima Power Up">
+		<!-- High Five Confirmed -->
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill4036" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
 		<set name="trait" val="POISON" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="2282" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6271" levels="5" name="Grima Power Up">
 		<table name="#abnormalLvls"> 1 2 3 4 5 </table>

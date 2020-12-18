@@ -1148,11 +1148,20 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5483" levels="1" name="Counter Aggression">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-662" />
+		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="76" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="TargetMeProbability">
+				<param chance="80" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5484" levels="1" name="Endurance Defense Up">
 		<!-- Increases P. Def. Effect 1. -->
@@ -1191,11 +1200,20 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5487" levels="1" name="Counter Delete Aggression">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-662" />
+		<set name="effectRange" val="1000" />
 		<set name="magicLvl" val="76" />
 		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="DeleteHate">
+				<param chance="60" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5488" levels="1" name="Counter Critical Power Up">
 		<!-- Increases critical attack power. Effect 1. -->
@@ -1369,7 +1387,7 @@
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1500" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="180" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill0100" />
@@ -1414,7 +1432,7 @@
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="180" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->

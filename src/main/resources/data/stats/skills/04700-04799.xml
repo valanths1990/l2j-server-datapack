@@ -147,7 +147,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="900" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1333" />
@@ -189,7 +189,7 @@
 		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="#effectPoints" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1333" />

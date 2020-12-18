@@ -1472,7 +1472,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1100" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3123" />
@@ -1920,7 +1920,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill3123" />
@@ -2133,7 +2133,7 @@
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1000" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill3123" />
@@ -2336,7 +2336,7 @@
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="200" />
 		<set name="effectPoint" val="#effectPoints" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill3123" />

@@ -1296,12 +1296,13 @@
 		</effects>
 	</skill>
 	<skill id="23069" levels="1" name="Threatening Roar">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="600" />
@@ -1309,103 +1310,155 @@
 		<set name="icon" val="icon.skill1289" />
 		<set name="irreplaceableBuff" val="true" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ENEMY_ONLY" />
-		<!-- TODO: Add new operate condition check_abnormal -->
+		<cond msgId="113" addName="1">
+			<target checkAbnormal="BR_EVENT_BUF2;1;false" />
+		</cond>
 		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.2" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="runSpd" val="0.2" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="23070" levels="1" name="Red Flame">
-		<!-- Cannot damage the spirit for 10 seconds. Exclusive use for the Reckless Spirit of Fire. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill0211" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<cond msgId="113" addName="1">
+			<target checkAbnormal="BR_EVENT_BUF2;1;false" />
+		</cond>
 	</skill>
 	<skill id="23071" levels="1" name="Blue Flame">
-		<!-- Cannot damage the spirit for 8 seconds. Exclusive use for the Spirit of Fire. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="8" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill0213" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<cond msgId="113" addName="1">
+			<target checkAbnormal="BR_EVENT_BUF2;1;false" />
+		</cond>
 	</skill>
-	<skill id="23072" levels="1" name="Eva's Wrath">
-		<!-- You are endowed with the spirit of Eva's Wrath for the next 70 seconds. This allows you to do damage to a Spirit of Fire. -->
+	<skill id="23072" levels="1" name="Eva's Authority">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="70" />
 		<set name="abnormalType" val="BR_EVENT_BUF2" />
 		<set name="abnormalVisualEffect" val="BR_POWER_OF_EVA" />
+		<set name="affectObject" val="ALL" />
 		<set name="affectRange" val="600" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="icon" val="BranchSys.icon.br_power_of_eva_i00" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<effects>
-			<effect name="Buff" />
-		</effects>
 	</skill>
-	<skill id="23073" levels="1" name="Switch Mode">
-		<!-- State to switch the spirit's mode. Switches to counter-attack mode or deadly mode. -->
+	<skill id="23073" levels="1" name="Switch State">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalType" val="BR_EVENT_BUF3" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill1528" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
+		<cond msgId="113" addName="1">
+			<target checkAbnormal="BR_EVENT_BUF2;1;false" />
+		</cond>
 	</skill>
 	<skill id="23074" levels="1" name="Icy Air Explosion">
-		<!-- For 4 seconds, damage inflicted on the spirit doubles. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="4" />
 		<set name="abnormalType" val="BR_EVENT_BUF3" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill0279" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
+		<cond msgId="113" addName="1">
+			<target checkAbnormal="BR_EVENT_BUF2;1;false" />
+		</cond>
 	</skill>
 	<skill id="23075" levels="1" name="Flame Shock">
-		<!-- Loses the target. -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY" />
+		<cond msgId="113" addName="1">
+			<target checkAbnormal="BR_EVENT_BUF2;1;false" />
+		</cond>
+		<effects>
+			<effect name="TargetCancel">
+				<param chance="100" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23076" levels="1" name="Weaver Agathion Cute Trick">
 		<!-- Confirmed CT2.5 -->

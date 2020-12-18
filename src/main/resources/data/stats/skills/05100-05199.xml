@@ -623,7 +623,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<effects>
 			<effect name="MagicalAttack">
@@ -639,7 +639,7 @@
 		<set name="affectRange" val="200" />
 		<set name="affectScope" val="POINT_BLANK" />
 		<set name="basicProperty" val="CON" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="icon" val="icon.skill1424" />
 		<set name="isDebuff" val="true" />

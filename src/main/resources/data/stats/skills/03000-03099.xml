@@ -1060,28 +1060,31 @@
 		</effects>
 	</skill>
 	<skill id="3062" levels="2" name="Special Ability: Critical Poison">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<table name="#magicLvl"> 64 67 </table>
 		<set name="abnormalLvl" val="7" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="activateRate" val="18" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="icon" val="icon.skill1168" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
 		<effects>
 			<effect name="TickHp">
-				<param power="-224" />
-				<param ticks="3" />
+				<param power="-92" />
+				<param ticks="5" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

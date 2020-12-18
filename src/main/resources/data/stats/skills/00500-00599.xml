@@ -329,7 +329,7 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
-		<enchant3 name="attributeType" val="DARK" />
+		<enchant3 name="attributeType" val="UNHOLY" />
 		<enchant3 name="attributePower" val="#enchAttributePower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />

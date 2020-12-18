@@ -340,7 +340,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="650" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -871,22 +871,50 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
-	<skill id="5855" levels="1" name="Shock">
+	<skill id="5855" levels="2" name="Shock">
+		<!-- High Five Confirmed -->
+		<table name="#abnormalTime"> 15 3 </table>
+		<table name="#affectScope"> SINGLE FAN </table>
+		<table name="#castRange"> 600 40 </table>
+		<table name="#effectRange"> 1100 400 </table>
+		<table name="#magicLvl"> 80 85 </table>
+		<table name="#physicalAttackPower"> 0 18664 </table>
+		<table name="#targetCancelChance"> 80 0 </table>
+		<table name="#targetType"> ENEMY_ONLY FRONT_AREA </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="80" />
+		<set name="affectLimit" val="5-15" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectScope" val="#affectScope" />
+		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="#castRange" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="#effectRange" />
 		<set name="fanRange" val="0,0,300,90" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
-		<set name="magicLvl" val="80" />
+		<set name="lvlBonusRate" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="165" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="targetType" val="#targetType" />
 		<set name="trait" val="SHOCK" />
+		<effects>
+			<effect name="TargetCancel">
+				<param chance="#targetCancelChance" />
+			</effect>
+			<effect name="PhysicalAttack">
+				<param chance="#physicalAttackPower" />
+			</effect>
+			<effect name="Stun" />
+		</effects>
 	</skill>
 	<skill id="5856" levels="1" name="Transform Tow">
 		<!-- Confirmed CT2.5 -->
@@ -977,194 +1005,410 @@
 		</effects>
 	</skill>
 	<skill id="5860" levels="1" name="Wrath of Valakas">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="SILENCE" />
 		<set name="abnormalVisualEffect" val="SILENCE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
+		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="1500" />
 		<set name="icon" val="icon.skill5860" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="-1" />
+		<set name="mpConsume1" val="15" />
+		<set name="mpConsume2" val="60" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="DERANGEMENT" />
+		<effects>
+			<effect name="Mute" />
+			<effect name="Buff">
+				<mul stat="runSpd" val="0.5" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5861" levels="1" name="Authority of Valakas">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="SILENCE" />
 		<set name="abnormalVisualEffect" val="SILENCE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
+		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="1500" />
 		<set name="icon" val="icon.skill5861" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="-1" />
+		<set name="mpConsume1" val="15" />
+		<set name="mpConsume2" val="60" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="DERANGEMENT" />
+		<effects>
+			<effect name="Mute" />
+			<effect name="Buff">
+				<mul stat="runSpd" val="0.5" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5862" levels="1" name="Destruction of the Body">
+		<!-- High Five Confirmed -->
 		<set name="affectLimit" val="10-10" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="700" />
+		<set name="affectScope" val="RANGE" />
+		<set name="castRange" val="2000" />
 		<set name="effectPoint" val="-1000" />
+		<set name="effectRange" val="2500" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AREA" />
+		<effects>
+			<effect name="Hp">
+				<param amount="-99" />
+				<param mode="PER" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5863" levels="1" name="Destruction of the Soul">
+		<!-- High Five Confirmed -->
 		<set name="affectLimit" val="10-10" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="700" />
+		<set name="affectScope" val="RANGE" />
+		<set name="castRange" val="2000" />
 		<set name="effectPoint" val="-1000" />
+		<set name="effectRange" val="2500" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AREA" />
+		<effects>
+			<effect name="Mp">
+				<param amount="-99" />
+				<param mode="PER" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5864" levels="1" name="Decrease Valakas Defense">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="PD_DOWN" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
-		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="hitCancelTime" val="1500" />
+		<set name="hitTime" val="4000" />
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="80" />
+		<set name="mpConsume1" val="15" />
+		<set name="mpConsume2" val="60" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Debuff">
+				<mul stat="mDef" val="0.5" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.7" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5865" levels="1" name="Wide-bodied Valakas">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="BERSERKER" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
-		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="hitCancelTime" val="1500" />
+		<set name="hitTime" val="4000" />
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="80" />
+		<set name="mpConsume1" val="15" />
+		<set name="mpConsume2" val="60" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.3" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.8" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5866" levels="10" name="Soul Worm">
-		<table name="#abnormalLvls"> 8 8 8 9 9 9 9 10 10 10 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 8 8 8 9 9 9 9 10 10 10 </table>
 		<table name="#magicLvl"> 76 77 78 79 80 81 82 83 84 85 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#magicalAttackMpPower"> 110 111 113 114 115 116 118 119 120 121 </table>
+		<table name="#tickHpPower"> -126 -126 -126 -126 -132 -132 -132 -132 -132 -132 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="activateRate" val="70" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="1100" />
 		<set name="icon" val="icon.skill4035" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="POISON" />
+		<effects>
+			<effect name="MagicalAttackMp">
+				<param power="#magicalAttackMpPower" />
+				<param critical="true" />
+				<param criticalLimit="1600" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="-10" />
+				<param type="PER" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="regMp" val="0.9" />
+			</effect>
+			<effect name="TickHp">
+				<param power="#tickHpPower" />
+				<param ticks="5" />
+				<param mode="DIFF" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5867" levels="10" name="Soul Worm">
-		<table name="#abnormalLvls"> 8 8 8 9 9 9 9 10 10 10 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 8 8 8 9 9 9 9 10 10 10 </table>
 		<table name="#magicLvl"> 76 77 78 79 80 81 82 83 84 85 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#magicalAttackMpPower"> 110 111 113 114 115 116 118 119 120 121 </table>
+		<table name="#tickHpPower"> -126 -126 -126 -126 -132 -132 -132 -132 -132 -132 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="activateRate" val="70" />
 		<set name="affectLimit" val="5-15" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectScope" val="FAN" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="200" />
 		<set name="fanRange" val="0,0,150,90" />
 		<set name="icon" val="icon.skill4035" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="POISON" />
+		<effects>
+			<effect name="MagicalAttackMp">
+				<param power="#tickHpPower" />
+				<param critical="true" />
+				<param criticalLimit="1600" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="-10" />
+				<param type="PER" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="regMp" val="0.9" />
+			</effect>
+			<effect name="TickHp">
+				<param power="#tickHpPower" />
+				<param ticks="5" />
+				<param mode="DIFF" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5868" levels="10" name="Soul Worm">
-		<table name="#abnormalLvls"> 8 8 8 9 9 9 9 10 10 10 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 8 8 8 9 9 9 9 10 10 10 </table>
 		<table name="#magicLvl"> 76 77 78 79 80 81 82 83 84 85 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#magicalAttackMpPower"> 110 111 113 114 115 116 118 119 120 121 </table>
+		<table name="#tickHpPower"> -126 -126 -126 -126 -132 -132 -132 -132 -132 -132 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="activateRate" val="70" />
 		<set name="affectLimit" val="10-10" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="300" />
+		<set name="affectScope" val="RANGE" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="1200" />
 		<set name="icon" val="icon.skill4035" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AREA" />
 		<set name="trait" val="POISON" />
+		<effects>
+			<effect name="MagicalAttackMp">
+				<param power="#tickHpPower" />
+				<param critical="true" />
+				<param criticalLimit="1600" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="-10" />
+				<param type="PER" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="regMp" val="0.9" />
+			</effect>
+			<effect name="TickHp">
+				<param power="#tickHpPower" />
+				<param ticks="5" />
+				<param mode="DIFF" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5869" levels="10" name="Soul Worm">
-		<table name="#abnormalLvls"> 8 8 8 9 9 9 9 10 10 10 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 8 8 8 9 9 9 9 10 10 10 </table>
 		<table name="#magicLvl"> 76 77 78 79 80 81 82 83 84 85 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#magicalAttackMpPower"> 110 111 113 114 115 116 118 119 120 121 </table>
+		<table name="#tickHpPower"> -126 -126 -126 -126 -132 -132 -132 -132 -132 -132 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="activateRate" val="70" />
 		<set name="affectLimit" val="10-10" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill4035" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
 		<set name="trait" val="POISON" />
+		<effects>
+			<effect name="MagicalAttackMp">
+				<param power="#tickHpPower" />
+				<param critical="true" />
+				<param criticalLimit="1600" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="-10" />
+				<param type="PER" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="regMp" val="0.9" />
+			</effect>
+			<effect name="TickHp">
+				<param power="#tickHpPower" />
+				<param ticks="5" />
+				<param mode="DIFF" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5870" levels="10" name="Flash Worm">
-		<table name="#abnormalLvls"> 8 8 8 9 9 9 9 10 10 10 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 8 8 8 9 9 9 9 10 10 10 </table>
 		<table name="#magicLvl"> 76 77 78 79 80 81 82 83 84 85 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#tickHpPower"> -56 -56 -56 -56 -58 -58 -58 -58 -58 -58 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="EARTH" />
 		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="200" />
 		<set name="icon" val="icon.skill0096" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="BLEED" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="pDef" val="0.9" />
+			</effect>
+			<effect name="MaxHp">
+				<param power="-10" />
+				<param type="PER" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="regHp" val="0.9" />
+			</effect>
+			<effect name="TickHp">
+				<param power="#tickHpPower" />
+				<param ticks="5" />
+				<param mode="DIFF" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5871" levels="10" name="Flash Worm">
-		<table name="#abnormalLvls"> 8 8 8 9 9 9 9 10 10 10 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 8 8 8 9 9 9 9 10 10 10 </table>
 		<table name="#magicLvl"> 76 77 78 79 80 81 82 83 84 85 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#tickHpPower"> -56 -56 -56 -56 -58 -58 -58 -58 -58 -58 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="80" />
 		<set name="affectLimit" val="5-15" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectScope" val="FAN" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="EARTH" />
 		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="200" />
 		<set name="fanRange" val="0,0,150,90" />
 		<set name="icon" val="icon.skill0096" />
 		<set name="isDebuff" val="true" />
@@ -1174,16 +1418,40 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="BLEED" />
+		<effects>
+			<effect name="Debuff">
+				<mul stat="regHp" val="0.9" />
+			</effect>
+			<effect name="MaxHp">
+				<param power="-10" />
+				<param type="PER" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.9" />
+			</effect>
+			<effect name="TickHp">
+				<param power="#tickHpPower" />
+				<param ticks="5" />
+				<param mode="DIFF" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5872" levels="10" name="Flash Worm">
-		<table name="#abnormalLvls"> 8 8 8 9 9 9 9 10 10 10 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 8 8 8 9 9 9 9 10 10 10 </table>
 		<table name="#magicLvl"> 76 77 78 79 80 81 82 83 84 85 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#tickHpPower"> -56 -56 -56 -56 -58 -58 -58 -58 -58 -58 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="80" />
 		<set name="affectLimit" val="10-10" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="EARTH" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill0096" />
@@ -1192,33 +1460,106 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
 		<set name="trait" val="BLEED" />
+		<effects>
+			<effect name="Debuff">
+				<mul stat="regHp" val="0.9" />
+			</effect>
+			<effect name="MaxHp">
+				<param power="-10" />
+				<param type="PER" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.9" />
+			</effect>
+			<effect name="TickHp">
+				<param power="#tickHpPower" />
+				<param ticks="5" />
+				<param mode="DIFF" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5873" levels="5" name="Death Worm">
-		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
+		<table name="#accCombat"> 17 29 42 46 50 </table>
+		<table name="#mAtk"> 0.66 0.51 0.38 0.32 0.25 </table>
+		<table name="#mAtkSpd"> 0.66 0.51 0.38 0.32 0.25 </table>
+		<table name="#mDef"> 0.72 0.62 0.5 0.44 0.4 </table>
+		<table name="#pAtk"> 0.66 0.51 0.38 0.32 0.25 </table>
+		<table name="#pAtkSpd"> 0.66 0.51 0.38 0.32 0.25 </table>
+		<table name="#pDef"> 0.72 0.62 0.5 0.44 0.4 </table>
+		<table name="#rEvas"> 17 29 42 46 50 </table>
+		<table name="#runSpd"> 0.83 0.74 0.64 0.62 0.6 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="DEATHWORM" />
 		<set name="activateRate" val="80" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="200" />
 		<set name="icon" val="icon.skill5873" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="#pAtkSpd" />
+			</effect>
+			<effect name="Debuff">
+				<sub stat="rEvas" val="#rEvas" />
+			</effect>
+			<effect name="Debuff">
+				<sub stat="accCombat" val="#accCombat" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mAtkSpd" val="#mAtkSpd" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5874" levels="5" name="Death Worm">
-		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
+		<table name="#accCombat"> 17 29 42 46 50 </table>
+		<table name="#mAtk"> 0.66 0.51 0.38 0.32 0.25 </table>
+		<table name="#mAtkSpd"> 0.66 0.51 0.38 0.32 0.25 </table>
+		<table name="#mDef"> 0.72 0.62 0.5 0.44 0.4 </table>
+		<table name="#pAtk"> 0.66 0.51 0.38 0.32 0.25 </table>
+		<table name="#pAtkSpd"> 0.66 0.51 0.38 0.32 0.25 </table>
+		<table name="#pDef"> 0.72 0.62 0.5 0.44 0.4 </table>
+		<table name="#rEvas"> 17 29 42 46 50 </table>
+		<table name="#runSpd"> 0.83 0.74 0.64 0.62 0.6 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="DEATHWORM" />
 		<set name="activateRate" val="80" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectScope" val="FAN" />
 		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="200" />
 		<set name="fanRange" val="0,0,150,90" />
 		<set name="icon" val="icon.skill5873" />
 		<set name="isDebuff" val="true" />
@@ -1227,15 +1568,56 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
+		<effects>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="#pAtkSpd" />
+			</effect>
+			<effect name="Debuff">
+				<sub stat="rEvas" val="#rEvas" />
+			</effect>
+			<effect name="Debuff">
+				<sub stat="accCombat" val="#accCombat" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mAtkSpd" val="#mAtkSpd" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5875" levels="5" name="Death Worm">
-		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
-		<table name="#affectLimits"> 0-0 10-10 10-10 10-10 10-10 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
+		<table name="#affectLimit"> 0-0 10-10 10-10 10-10 10-10 </table>
+		<table name="#accCombat"> 17 29 42 46 50 </table>
+		<table name="#mAtk"> 0.66 0.51 0.38 0.32 0.25 </table>
+		<table name="#mAtkSpd"> 0.66 0.51 0.38 0.32 0.25 </table>
+		<table name="#mDef"> 0.72 0.62 0.5 0.44 0.4 </table>
+		<table name="#pAtk"> 0.66 0.51 0.38 0.32 0.25 </table>
+		<table name="#pAtkSpd"> 0.66 0.51 0.38 0.32 0.25 </table>
+		<table name="#pDef"> 0.72 0.62 0.5 0.44 0.4 </table>
+		<table name="#rEvas"> 17 29 42 46 50 </table>
+		<table name="#runSpd"> 0.83 0.74 0.64 0.62 0.6 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="DEATHWORM" />
 		<set name="activateRate" val="80" />
-		<set name="affectLimit" val="#affectLimits" />
+		<set name="affectLimit" val="#affectLimit" />
+		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill5873" />
@@ -1244,7 +1626,36 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
+		<effects>
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="#pAtkSpd" />
+			</effect>
+			<effect name="Debuff">
+				<sub stat="rEvas" val="#rEvas" />
+			</effect>
+			<effect name="Debuff">
+				<sub stat="accCombat" val="#accCombat" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mAtkSpd" val="#mAtkSpd" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5876" levels="1" name="Begrudged Haunting">
 		<set name="abnormalLvl" val="1" />

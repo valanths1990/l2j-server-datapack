@@ -10,7 +10,7 @@
 		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1000" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3200" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -146,7 +146,7 @@
 		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="200" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="830" />
 		<set name="icon" val="icon.skill1170" />
@@ -214,7 +214,7 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-100" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill1170" />
@@ -634,7 +634,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -659,7 +659,7 @@
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1000" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -682,7 +682,7 @@
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
 		<set name="affectRange" val="200" />
 		<set name="effectPoint" val="-100" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -703,7 +703,7 @@
 		<table name="#mpConsume2"> 69 72 73 75 77 77 78 78 79 </table>
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -726,7 +726,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -1112,7 +1112,7 @@
 		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="200" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="830" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1133,7 +1133,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4500" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1153,7 +1153,7 @@
 		<set name="affectRange" val="150" />
 		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-100" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1000" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1298,7 +1298,7 @@
 		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="200" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="830" />
 		<set name="icon" val="icon.skill1170" />
@@ -1366,7 +1366,7 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-100" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill1170" />
@@ -1731,7 +1731,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -1756,7 +1756,7 @@
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1000" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -1779,7 +1779,7 @@
 		<table name="#power"> 96 99 101 103 104 106 107 107 107 </table>
 		<set name="affectRange" val="200" />
 		<set name="effectPoint" val="-100" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -1803,7 +1803,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -1828,7 +1828,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->

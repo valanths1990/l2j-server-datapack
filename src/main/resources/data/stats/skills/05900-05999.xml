@@ -591,7 +591,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1500" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="180" />
 		<set name="fanRange" val="0,0,300,160" />
 		<set name="hitTime" val="1500" />
@@ -651,7 +651,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1500" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="180" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
@@ -1436,39 +1436,65 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5990" levels="3" name="Lesser Heal">
-		<table name="#effectPoints"> 595 610 631 </table>
-		<set name="effectPoint" val="#effectPoints" />
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> 595 610 631 </table>
+		<table name="#healPower"> 817 839 867 </table>
+		<table name="#magicLvl"> 70 72 74 </table>
+		<table name="#mpConsume1"> 17 18 19 </table>
+		<table name="#mpConsume2"> 68 70 73 </table>
+		<set name="affectScope" val="SINGLE" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="70" />
+		<set name="isMagic" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Heal">
+				<param power="#healPower" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5991" levels="1" name="Presentation - Summon Tiat">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="11760" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects/>
 	</skill>
 	<skill id="5992" levels="12" name="NPC Hate">
-		<table name="#effectPoints"> -1371 -2031 -2850 -3787 -4761 -5657 -6349 -6582 -6752 -6887 -6997 -7082 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -1371 -2031 -2850 -3787 -4761 -5657 -6349 -6582 -6752 -6887 -6997 -7082 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="activateRate" val="90" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="castRange" val="900" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1400" />
 		<set name="icon" val="icon.skill0028" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="10" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="GetAgro" />
+			<effect name="TargetMe" />
+		</effects>
 	</skill>
 	<skill id="5993" levels="1" name="Command of Anger">
 		<!-- Confirmed CT2.5 -->

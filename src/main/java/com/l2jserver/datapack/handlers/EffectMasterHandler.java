@@ -89,6 +89,7 @@ import com.l2jserver.datapack.handlers.effecthandlers.instant.HpByLevel;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.HpDrain;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.HpPerMax;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.InstantAgathionEnergy;
+import com.l2jserver.datapack.handlers.effecthandlers.instant.InstantBetray;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.Lethal;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalAttack;
 import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalAttackByAbnormal;
@@ -271,6 +272,7 @@ public final class EffectMasterHandler {
 		ImmobileBuff.class,
 		ImmobilePetBuff.class,
 		InstantAgathionEnergy.class,
+		InstantBetray.class,
 		Lethal.class,
 		Lucky.class,
 		MagicalAttack.class,

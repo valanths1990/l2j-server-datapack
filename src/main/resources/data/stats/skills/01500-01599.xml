@@ -1105,7 +1105,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1148" />
@@ -1573,7 +1573,7 @@
 		<set name="channelingTickInterval" val="2" />
 		<set name="effectPoint" val="-676" />
 		<set name="effectRange" val="1000" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="15000" />
 		<set name="icon" val="icon.skill1472" />

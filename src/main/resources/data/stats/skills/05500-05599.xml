@@ -10,7 +10,7 @@
 		<set name="activateRate" val="90" />
 		<set name="affectRange" val="600" />
 		<set name="attributePower" val="180" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-100" />
@@ -423,7 +423,7 @@
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-1063" />
 		<set name="effectRange" val="900" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="80" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->

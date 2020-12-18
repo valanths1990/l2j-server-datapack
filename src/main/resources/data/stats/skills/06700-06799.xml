@@ -531,30 +531,76 @@
 		</effects>
 	</skill>
 	<skill id="6738" levels="1" name="Hold">
-		<!-- Temporarily inflicted with hold and unable to move. -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
+		<set name="abnormalVisualEffect" val="ROOT" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="basicProperty" val="MEN" />
+		<set name="castRange" val="2000" />
+		<set name="effectPoint" val="-1000" />
+		<set name="effectRange" val="2000" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="2000" />
+		<set name="icon" val="icon.skill4047" />
+		<set name="isDebuff" val="true" />
+		<set name="isMagic" val="1" />
+		<set name="lvlBonusRate" val="2" />
+		<set name="magicLvl" val="85" />
+		<set name="mpConsume1" val="16" />
+		<set name="mpConsume2" val="64" />
+		<set name="operateType" val="A2" />
+		<set name="reuseDelay" val="1000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<set name="trait" val="HOLD" />
+		<effects>
+			<effect name="Root" />
+		</effects>
 	</skill>
 	<skill id="6739" levels="1" name="Presentation - Behemoth Leader Casting Preparation">
-		<!-- none -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="45000" />
+		<set name="magicLvl" val="85" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6740" levels="1" name="Presentation - Behemoth Leader Casting">
-		<!-- none -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="effectPoint" val="100" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="85" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6741" levels="1" name="Presentation - Behemoth Leader Casting Failure">
-		<!-- none -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="effectPoint" val="100" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="85" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6742" levels="1" name="Presentation - Behemoth Object Channeling">
-		<!-- none -->
-		<set name="blockedInOlympiad" val="true" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="2000" />
+		<set name="effectPoint" val="100" />
+		<set name="effectRange" val="2000" />
+		<set name="hitTime" val="90000" />
+		<set name="magicLvl" val="85" />
+		<set name="operateType" val="CA1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="6743" levels="1" name="Dark Wind">
 		<!-- High Five Confirmed -->
@@ -568,7 +614,7 @@
 		<set name="castRange" val="1500" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="2000" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill0096" />
@@ -602,7 +648,7 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="1200" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="2000" />
 		<set name="isDebuff" val="true" />
@@ -628,21 +674,82 @@
 		</effects>
 	</skill>
 	<skill id="6745" levels="1" name="Dark Space">
-		<!-- none -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="120" />
+		<set name="abnormalType" val="ARMOR_UNHOLY" />
+		<set name="affectObject" val="FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="RANGE" />
+		<set name="attributePower" val="120" />
+		<set name="attributeType" val="UNHOLY" />
+		<set name="basicProperty" val="MEN" />
+		<set name="castRange" val="900" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="2000" />
+		<set name="icon" val="icon.skill1445" />
+		<set name="isMagic" val="1" />
+		<set name="lvlBonusRate" val="2" />
+		<set name="magicLvl" val="85" />
+		<set name="mpConsume1" val="5" />
+		<set name="mpConsume2" val="20" />
+		<set name="operateType" val="A2" />
+		<set name="reuseDelay" val="1000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="AREA" />
+		<effects>
+			<effect name="Buff">
+				<add stat="darkPower" val="200" />
+			</effect>
+			<effect name="Buff">
+				<add stat="holyRes" val="400" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="physicalSkillPower" val="4" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6746" levels="1" name="Dark Space">
-		<!-- Darkness attribute is weakened. -->
-		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Confirmed -->
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="120" />
+		<set name="abnormalType" val="ARMOR_UNHOLY" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="RANGE" />
+		<set name="attributePower" val="120" />
+		<set name="attributeType" val="UNHOLY" />
+		<set name="basicProperty" val="MEN" />
+		<set name="castRange" val="900" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="2000" />
+		<set name="icon" val="icon.skill1445" />
+		<set name="isDebuff" val="true" />
+		<set name="isMagic" val="1" />
+		<set name="lvlBonusRate" val="2" />
+		<set name="magicLvl" val="85" />
+		<set name="mpConsume1" val="5" />
+		<set name="mpConsume2" val="20" />
+		<set name="operateType" val="A2" />
+		<set name="reuseDelay" val="1000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="AREA" />
+		<effects>
+			<effect name="Buff">
+				<sub stat="darkRes" val="300" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6747" levels="1" name="Dark Blade">
 		<!-- High Five Confirmed -->
 		<set name="castRange" val="60" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="150" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1445" />
@@ -670,7 +777,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="300" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill0100" />
@@ -695,7 +802,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="300" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
@@ -714,7 +821,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-1000" />
 		<set name="effectRange" val="300" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
@@ -760,7 +867,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-337" />
 		<set name="effectRange" val="300" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
@@ -788,7 +895,7 @@
 		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="-10000" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill0096" />
@@ -823,7 +930,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="1400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -843,7 +950,7 @@
 		<!-- High Five Confirmed -->
 		<set name="affectRange" val="200" />
 		<set name="effectPoint" val="-10000" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -870,7 +977,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-655" />
 		<set name="effectRange" val="1400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1160" />
@@ -1167,7 +1274,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="300" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
@@ -1186,7 +1293,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-1000" />
 		<set name="effectRange" val="300" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
@@ -1240,7 +1347,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="300" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill0100" />
@@ -1267,7 +1374,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-1000" />
 		<set name="effectRange" val="200" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="fanRange" val="0,0,150,60" />
 		<set name="hitTime" val="1500" />
@@ -1294,7 +1401,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill1170" />
@@ -1324,7 +1431,7 @@
 		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="-323" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill0096" />
@@ -1358,7 +1465,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="300" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />

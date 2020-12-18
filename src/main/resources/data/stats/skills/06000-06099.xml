@@ -1134,7 +1134,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-475" />
 		<set name="effectRange" val="400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1445" />

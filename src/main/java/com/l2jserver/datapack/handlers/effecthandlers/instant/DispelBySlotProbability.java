@@ -38,18 +38,17 @@ import com.l2jserver.gameserver.model.skills.BuffInfo;
  * @author Adry_85, Zoey76
  */
 public final class DispelBySlotProbability extends AbstractEffect {
-	private final String _dispel;
 	private final Map<AbnormalType, Short> _dispelAbnormals;
 	private final int _rate;
 	
 	public DispelBySlotProbability(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
 		
-		_dispel = params.getString("dispel", null);
+		final var dispel = params.getString("dispel", null);
 		_rate = params.getInt("rate", 0);
-		if ((_dispel != null) && !_dispel.isEmpty()) {
+		if ((dispel != null) && !dispel.isEmpty()) {
 			_dispelAbnormals = new EnumMap<>(AbnormalType.class);
-			for (String ngtStack : _dispel.split(";")) {
+			for (String ngtStack : dispel.split(";")) {
 				String[] ngt = ngtStack.split(",");
 				_dispelAbnormals.put(AbnormalType.valueOf(ngt[0]), (ngt.length > 1) ? Short.parseShort(ngt[1]) : Short.MAX_VALUE);
 			}

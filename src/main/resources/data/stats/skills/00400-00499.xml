@@ -133,7 +133,7 @@
 		<set name="coolTime" val="700" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1300" />
 		<set name="icon" val="icon.skill0401" />
@@ -1937,7 +1937,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="650" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill0450" />
@@ -1953,7 +1953,7 @@
 		<enchant1 name="mpConsume2" val="#ench1Cost" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="attributeType" val="DARK" />
+		<enchant4 name="attributeType" val="UNHOLY" />
 		<enchant4 name="attributePower" val="#ench4DarkAttack" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<cond msgId="113" addName="1">
@@ -2703,7 +2703,7 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
-		<enchant3 name="attributeType" val="DARK" />
+		<enchant3 name="attributeType" val="UNHOLY" />
 		<enchant3 name="attributePower" val="#enchAttributePower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant4 name="effectPoint" val="#ench4EffectPoints" />

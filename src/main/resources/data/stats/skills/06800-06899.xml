@@ -915,7 +915,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="82" />
@@ -1068,7 +1068,7 @@
 		<set name="castRange" val="80" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="83" />
@@ -1097,7 +1097,7 @@
 		<set name="castRange" val="80" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="83" />
@@ -1759,7 +1759,7 @@
 		<set name="castRange" val="200" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="84" />
@@ -1779,7 +1779,7 @@
 		<set name="castRange" val="2000" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="2000" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="84" />
@@ -1798,7 +1798,7 @@
 		<set name="castRange" val="200" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="84" />
@@ -1818,7 +1818,7 @@
 		<set name="castRange" val="2000" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="2000" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="84" />
@@ -1837,7 +1837,7 @@
 		<set name="castRange" val="200" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="84" />
@@ -1857,7 +1857,7 @@
 		<set name="castRange" val="2000" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="2000" />
-		<set name="attributeType" val="DARK" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="120" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="84" />

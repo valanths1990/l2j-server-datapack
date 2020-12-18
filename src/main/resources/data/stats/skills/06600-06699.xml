@@ -1,103 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="6600" levels="28" name="NPC earth attack">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
-	</skill>
-	<skill id="6601" levels="28" name="NPC earth attack">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
-	</skill>
-	<skill id="6602" levels="28" name="NPC earth attack">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
 		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
-		<table name="#power"> 46 105 219 417 722 1136 1327 1525 1727 1827 1925 2020 2112 2156 2200 2241 2282 2320 2358 2393 2426 2458 2487 2515 2540 2565 2591 2617 </table>
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
+		<table name="#physicalAttackPower"> 46 105 219 417 722 1136 1327 1525 1727 1827 1925 2020 2112 2156 2200 2241 2282 2320 2358 2393 2426 2458 2487 2515 2540 2565 2591 2617 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="affectRange" val="200" />
-		<set name="hitTime" val="1500" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="attributePower" val="20" />
 		<set name="attributeType" val="EARTH" />
-		<set name="attributePower" val="180" />
+		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="AURA" />
 		<effects>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<param power="#physicalAttackPower" />
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6601" levels="28" name="NPC earth attack">
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<table name="#physicalAttackPower"> 46 105 219 417 722 1136 1327 1525 1727 1827 1925 2020 2112 2156 2200 2241 2282 2320 2358 2393 2426 2458 2487 2515 2540 2565 2591 2617 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="attributePower" val="100" />
+		<set name="attributeType" val="EARTH" />
+		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1500" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="AURA" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="#physicalAttackPower" />
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6602" levels="28" name="NPC earth attack">
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<table name="#physicalAttackPower"> 46 105 219 417 722 1136 1327 1525 1727 1827 1925 2020 2112 2156 2200 2241 2282 2320 2358 2393 2426 2458 2487 2515 2540 2565 2591 2617 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="attributePower" val="180" />
+		<set name="attributeType" val="EARTH" />
+		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1500" />
+										  
+										 
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="AURA" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="#physicalAttackPower" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6603" levels="28" name="NPC earth shot">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
-	</skill>
-	<skill id="6604" levels="28" name="NPC earth shot">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
-	</skill>
-	<skill id="6605" levels="28" name="NPC earth shot">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
-	</skill>
-	<skill id="6606" levels="28" name="NPC earth shot">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
-	</skill>
-	<skill id="6607" levels="28" name="NPC earth shot">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
-	</skill>
-	<skill id="6608" levels="28" name="NPC earth shot">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
 		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
-		<table name="#power"> 46 105 219 417 722 1136 1327 1525 1727 1827 1925 2020 2112 2156 2200 2241 2282 2320 2358 2393 2426 2458 2487 2515 2540 2565 2591 2617 </table>
+		<table name="#physicalAttackPower"> 46 105 219 417 722 1136 1327 1525 1727 1827 1925 2020 2112 2156 2200 2241 2282 2320 2358 2393 2426 2458 2487 2515 2540 2565 2591 2617 </table>
+		<set name="affectScope" val="SINGLE" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="EARTH" />
 		<set name="castRange" val="700" />
 		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1200" />
-		<set name="affectRange" val="200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="#physicalAttackPower" />
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6604" levels="28" name="NPC earth shot">
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<table name="#physicalAttackPower"> 46 105 219 417 722 1136 1327 1525 1727 1827 1925 2020 2112 2156 2200 2241 2282 2320 2358 2393 2426 2458 2487 2515 2540 2565 2591 2617 </table>
+		<set name="affectScope" val="SINGLE" />
+		<set name="attributePower" val="100" />
 		<set name="attributeType" val="EARTH" />
+		<set name="castRange" val="700" />
+		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="#physicalAttackPower" />
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6605" levels="28" name="NPC earth shot">
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<table name="#physicalAttackPower"> 46 105 219 417 722 1136 1327 1525 1727 1827 1925 2020 2112 2156 2200 2241 2282 2320 2358 2393 2426 2458 2487 2515 2540 2565 2591 2617 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="attributePower" val="180" />
+		<set name="attributeType" val="EARTH" />
+		<set name="castRange" val="700" />
+		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="#physicalAttackPower" />
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6606" levels="28" name="NPC earth shot">
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<table name="#physicalAttackPower"> 46 105 219 417 722 1136 1327 1525 1727 1827 1925 2020 2112 2156 2200 2241 2282 2320 2358 2393 2426 2458 2487 2515 2540 2565 2591 2617 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="RANGE" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="EARTH" />
+		<set name="castRange" val="700" />
+		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
@@ -105,104 +182,323 @@
 		<set name="targetType" val="AREA" />
 		<effects>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<param power="#physicalAttackPower" />
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6607" levels="28" name="NPC earth shot">
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<table name="#physicalAttackPower"> 46 105 219 417 722 1136 1327 1525 1727 1827 1925 2020 2112 2156 2200 2241 2282 2320 2358 2393 2426 2458 2487 2515 2540 2565 2591 2617 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="RANGE" />
+		<set name="attributePower" val="100" />
+		<set name="attributeType" val="EARTH" />
+		<set name="castRange" val="700" />
+		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="AREA" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="#physicalAttackPower" />
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6608" levels="28" name="NPC earth shot">
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<table name="#physicalAttackPower"> 46 105 219 417 722 1136 1327 1525 1727 1827 1925 2020 2112 2156 2200 2241 2282 2320 2358 2393 2426 2458 2487 2515 2540 2565 2591 2617 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="RANGE" />
+		<set name="attributePower" val="180" />
+		<set name="attributeType" val="EARTH" />
+		<set name="castRange" val="700" />
+		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
+										  
+										 
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="AREA" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="#physicalAttackPower" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6609" levels="28" name="NPC earth magic">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#magicalAttackPower"> 18 26 38 52 68 85 92 99 105 108 111 114 116 117 119 120 121 122 123 124 124 125 126 127 127 128 129 129 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<set name="affectScope" val="SINGLE" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="EARTH" />
+		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1400" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="MagicalAttack">
+				<param power="#magicalAttackPower" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6610" levels="28" name="NPC earth magic">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#magicalAttackPower"> 18 26 38 52 68 85 92 99 105 108 111 114 116 117 119 120 121 122 123 124 124 125 126 127 127 128 129 129 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<set name="affectScope" val="SINGLE" />
+		<set name="attributePower" val="100" />
+		<set name="attributeType" val="EARTH" />
+		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1400" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="MagicalAttack">
+				<param power="#magicalAttackPower" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6611" levels="28" name="NPC earth magic">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#magicalAttackPower"> 18 26 38 52 68 85 92 99 105 108 111 114 116 117 119 120 121 122 123 124 124 125 126 127 127 128 129 129 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<set name="affectScope" val="SINGLE" />
+		<set name="attributePower" val="180" />
+		<set name="attributeType" val="EARTH" />
+		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1400" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="MagicalAttack">
+				<param power="#magicalAttackPower" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6612" levels="28" name="NPC earth magic">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#magicalAttackPower"> 18 26 38 52 68 85 92 99 105 108 111 114 116 117 119 120 121 122 123 124 124 125 126 127 127 128 129 129 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="RANGE" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="EARTH" />
+		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1400" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AREA" />
+		<effects>
+			<effect name="MagicalAttack">
+				<param power="#magicalAttackPower" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6613" levels="28" name="NPC earth magic">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#magicalAttackPower"> 18 26 38 52 68 85 92 99 105 108 111 114 116 117 119 120 121 122 123 124 124 125 126 127 127 128 129 129 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="RANGE" />
+		<set name="attributePower" val="100" />
+		<set name="attributeType" val="EARTH" />
+		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1400" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AREA" />
+		<effects>
+			<effect name="MagicalAttack">
+				<param power="#magicalAttackPower" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6614" levels="28" name="NPC earth magic">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#magicalAttackPower"> 18 26 38 52 68 85 92 99 105 108 111 114 116 117 119 120 121 122 123 124 124 125 126 127 127 128 129 129 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="RANGE" />
+		<set name="attributePower" val="180" />
+		<set name="attributeType" val="EARTH" />
+		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1400" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AREA" />
+		<effects>
+			<effect name="MagicalAttack">
+				<param power="#magicalAttackPower" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6615" levels="28" name="NPC earth magic">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#magicalAttackPower"> 18 26 38 52 68 85 92 99 105 108 111 114 116 117 119 120 121 122 123 124 124 125 126 127 127 128 129 129 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="EARTH" />
 		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
+		<effects>
+			<effect name="MagicalAttack">
+				<param power="#magicalAttackPower" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6616" levels="28" name="NPC earth magic">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#magicalAttackPower"> 18 26 38 52 68 85 92 99 105 108 111 114 116 117 119 120 121 122 123 124 124 125 126 127 127 128 129 129 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="attributePower" val="100" />
+		<set name="attributeType" val="EARTH" />
 		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
+		<effects>
+			<effect name="MagicalAttack">
+				<param power="#magicalAttackPower" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6617" levels="28" name="NPC earth magic">
-		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -138 -204 -285 -379 -477 -566 -597 -624 -646 -655 -662 -669 -676 -679 -681 -684 -687 -689 -692 -694 -696 -698 -700 -702 -704 -706 -707 -709 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 64 68 72 74 76 78 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#magicalAttackPower"> 18 26 38 52 68 85 92 99 105 108 111 114 116 117 119 120 121 122 123 124 124 125 126 127 127 128 129 129 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 65 69 73 75 77 78 80 80 81 82 82 83 83 84 84 84 84 85 85 85 85 85 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="attributePower" val="180" />
+		<set name="attributeType" val="EARTH" />
 		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="10" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
+		<effects>
+			<effect name="MagicalAttack">
+				<param power="#magicalAttackPower" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6618" levels="7" name="Maguen Strike">
-		<!-- Moving Spd. Is decreased by 50% for 10 seconds. -->
+		<!-- High Five Confirmed -->
 		<table name="#magicLvl"> 55 60 65 70 75 80 85 </table>
 		<table name="#mpConsume2"> 109 121 131 142 151 159 165 </table>
-		<table name="#power"> 1832 2272 2751 3252 3752 4224 4640 </table>
+		<table name="#physicalAttackPower"> 1832 2272 2751 3252 3752 4224 4640 </table>
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="30" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="500" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1160" />
 		<set name="isDebuff" val="true" />
@@ -212,10 +508,10 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<effects>
 			<effect name="PhysicalAttack">
-				<param power="#power" />
+				<param power="#physicalAttackPower" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.5" />
@@ -806,28 +1102,48 @@
 		</effects>
 	</skill>
 	<skill id="6650" levels="1" name="Tacrakahn's Alienation">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="99" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="SILENCE_ALL" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="1500" />
+		<set name="effectRange" val="2000" />
 		<set name="icon" val="icon.skill4111" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="Stun" />
+			<effect name="BlockBuff" />
+			<effect name="PhysicalMute" />
+			<effect name="Mute" />
+		</effects>
 	</skill>
 	<skill id="6651" levels="1" name="Dopagen's Alienation">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="99" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="SILENCE_ALL" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="1500" />
+		<set name="effectRange" val="2000" />
 		<set name="icon" val="icon.skill4111" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="Stun" />
+			<effect name="BlockBuff" />
+			<effect name="PhysicalMute" />
+			<effect name="Mute" />
+		</effects>
 	</skill>
 	<skill id="6652" levels="1" name="Level 85 Raid Boss">
 		<set name="icon" val="icon.skillraid" />
@@ -942,11 +1258,20 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6665" levels="1" name="NPC Hate">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="TargetMeProbability">
+				<param chance="100" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6666" levels="1" name="Feral Shield">
 		<!-- Increases P. Def. by 18% by 5 minutes. -->
@@ -1169,40 +1494,62 @@
 		</effects>
 	</skill>
 	<skill id="6677" levels="1" name="Hold">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
+		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill4047" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="95" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="HOLD" />
+		<effects>
+			<effect name="Root" />
+		</effects>
 	</skill>
 	<skill id="6678" levels="1" name="Hold Cancel">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="2500" />
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="95" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="DispelBySlotProbability">
+				<param dispel="ROOT_MAGICALLY" rate="100" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6679" levels="1" name="Summoner's Strike">
+		<!-- High Five Confirmed -->
 		<set name="affectScope" val="SINGLE" />
+		<set name="attributePower" val="180" />
+		<set name="attributeType" val="EARTH" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-684" />
 		<set name="effectRange" val="1200" />
-		<set name="attributeType" val="EARTH" />
-		<set name="attributePower" val="180" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume2" val="82" />
@@ -1216,12 +1563,23 @@
 		</effects>
 	</skill>
 	<skill id="6680" levels="1" name="Faint Plus">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-684" />
+		<set name="effectRange" val="2200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="magicLvl" val="83" />
+		<set name="mpConsume2" val="82" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="2240" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6681" levels="1" name="Maguen Speed Walk">
 		<!-- Moving Spd. increases by 40 for 20 minutes. -->
@@ -1412,69 +1770,154 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6690" levels="1" name="Hold">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="activateRate" val="95" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
+		<set name="castRange" val="800" />
 		<set name="coolTime" val="2000" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="1300" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1201" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="HOLD" />
+		<effects>
+			<effect name="Root" />
+		</effects>
 	</skill>
 	<skill id="6691" levels="1" name="Dualsword Deadly Move">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="50" />
 		<set name="coolTime" val="900" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="200" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="2100" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="12231" />
+				<param ignoreShieldDefence="50" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6692" levels="1" name="Dualsword Range Deadly Move">
+		<!-- High Five Confirmed -->
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="100" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="coolTime" val="1500" />
 		<set name="effectPoint" val="-100" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="6602" />
+				<param ignoreShieldDefence="50" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6693" levels="12" name="NPC Strike">
+		<!-- High Five Confirmed -->
+		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
+		<table name="#mpConsume2"> 13 20 28 38 50 61 71 76 80 83 84 85 </table>
+		<table name="#physicalAttackPower"> 46 105 219 417 722 1136 1626 1876 2112 2320 2487 2617 </table>
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="40" />
 		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-100" />
-		<set name="magicLvl" val="10" />
+		<set name="effectRange" val="200" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1000" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="#physicalAttackPower" />
+				<param ignoreShieldDefence="50" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6694" levels="12" name="BOSS Strike">
+		<!-- High Five Confirmed -->
+		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#physicalAttackPower"> 45 120 330 858 2218 4344 6724 7942 9228 10625 12093 13512 </table>
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="40" />
 		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
-		<set name="magicLvl" val="14" />
+		<set name="effectRange" val="200" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="830" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="#physicalAttackPower" />
+				<param ignoreShieldDefence="50" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6695" levels="12" name="BOSS Spinning Slasher">
+		<!-- High Five Confirmed -->
+		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
+		<table name="#mpConsume2"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
+		<table name="#physicalAttackPower"> 23 60 165 429 1109 2172 3362 3971 4614 5313 6047 6756 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
-		<set name="magicLvl" val="14" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="830" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
+		<effects>
+			<effect name="PhysicalAttack">
+				<param power="#physicalAttackPower" />
+				<param ignoreShieldDefence="50" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6696" levels="1" name="Presentation - Quest Done">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1200" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
 		<set name="trait" val="HOLD" />
 	</skill>
 	<skill id="6697" levels="1" name="Eternal Blizzard">

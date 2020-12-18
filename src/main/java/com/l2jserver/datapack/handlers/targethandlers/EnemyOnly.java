@@ -46,6 +46,11 @@ public class EnemyOnly implements ITargetTypeHandler {
 			return EMPTY_TARGET_LIST;
 		}
 		
+		if (target.getObjectId() == activeChar.getObjectId()) {
+			activeChar.sendPacket(INCORRECT_TARGET);
+			return EMPTY_TARGET_LIST;
+		}
+		
 		if (target.isDead()) {
 			activeChar.sendPacket(INCORRECT_TARGET);
 			return EMPTY_TARGET_LIST;
@@ -125,6 +130,19 @@ public class EnemyOnly implements ITargetTypeHandler {
 		if (player.isInCommandChannelWith(target)) {
 			player.sendPacket(INCORRECT_TARGET);
 			return EMPTY_TARGET_LIST;
+		}
+		
+		// Not on same Siege Side.
+		if (player.isOnSameSiegeSideWith(target)) {
+			player.sendPacket(INCORRECT_TARGET);
+			return EMPTY_TARGET_LIST;
+		}
+		
+		// At Clan War.
+		if (player.isAtWarWith(target)) {
+			return new L2Character[] {
+				target
+			};
 		}
 		
 		// Cannot PvP.

@@ -1278,17 +1278,42 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6376" levels="9" name="Sonic Strike">
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
+		<table name="#maxHpPower"> -10 -20 -30 -40 -50 -60 -70 -80 -90 </table>
+		<table name="#maxMpPower"> -10 -20 -30 -40 -50 -60 -70 -80 -90 </table>
+		<table name="#tickHpPower"> -20 -40 -60 -80 -100 -120 -140 -160 -180 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="MAX_HP_DOWN" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="2000" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="2200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="icon" val="icon.skill1417" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-1" />
+		<set name="mpConsume1" val="22" />
+		<set name="mpConsume2" val="88" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
+		<effects>
+			<effect name="MaxHp">
+				<param power="#maxHpPower" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="#maxMpPower" />
+				<param type="PER" />
+			</effect>
+			<effect name="TickHp">
+				<param power="#tickHpPower" />
+				<param ticks="5" />
+				<param mode="DIFF" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6377" levels="10" name="Assault Boost">
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 10 </table>
