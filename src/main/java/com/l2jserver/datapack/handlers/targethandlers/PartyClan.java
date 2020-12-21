@@ -61,7 +61,7 @@ public class PartyClan implements ITargetTypeHandler {
 		
 		// if player in clan and not in party
 		if (!(hasClan || hasParty)) {
-			return targetList.toArray(new L2Character[targetList.size()]);
+			return targetList.toArray(EMPTY_TARGET_LIST);
 		}
 		
 		// Get all visible objects in a spherical area near the L2Character
@@ -129,7 +129,7 @@ public class PartyClan implements ITargetTypeHandler {
 			
 			targetList.add(obj);
 		}
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(EMPTY_TARGET_LIST);
 	}
 	
 	@Override

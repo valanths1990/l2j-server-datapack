@@ -87,7 +87,7 @@ public class AreaFriendly implements ITargetTypeHandler {
 		if (targetList.isEmpty()) {
 			return EMPTY_TARGET_LIST;
 		}
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(EMPTY_TARGET_LIST);
 	}
 	
 	private boolean checkTarget(L2PcInstance activeChar, L2Character target) {

@@ -65,7 +65,7 @@ public class Aura implements ITargetTypeHandler {
 				targetList.add(obj);
 			}
 		}
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(EMPTY_TARGET_LIST);
 	}
 	
 	@Override

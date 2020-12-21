@@ -53,7 +53,7 @@ public class CommandChannel implements ITargetTypeHandler {
 		
 		// if player in not in party
 		if (party == null) {
-			return targetList.toArray(new L2Character[targetList.size()]);
+			return targetList.toArray(EMPTY_TARGET_LIST);
 		}
 		
 		// Get all visible objects in a spherical area near the L2Character
@@ -73,7 +73,7 @@ public class CommandChannel implements ITargetTypeHandler {
 			}
 		}
 		
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(EMPTY_TARGET_LIST);
 	}
 	
 	@Override

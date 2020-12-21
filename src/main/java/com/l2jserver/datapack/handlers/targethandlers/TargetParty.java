@@ -63,7 +63,7 @@ public class TargetParty implements ITargetTypeHandler {
 		} else {
 			targetList.add(target);
 		}
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(EMPTY_TARGET_LIST);
 	}
 	
 	@Override

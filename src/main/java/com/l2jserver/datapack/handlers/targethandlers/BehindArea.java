@@ -95,7 +95,7 @@ public class BehindArea implements ITargetTypeHandler {
 			return EMPTY_TARGET_LIST;
 		}
 		
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(EMPTY_TARGET_LIST);
 	}
 	
 	@Override

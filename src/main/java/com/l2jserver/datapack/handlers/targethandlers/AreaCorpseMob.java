@@ -68,7 +68,7 @@ public class AreaCorpseMob implements ITargetTypeHandler {
 		if (targetList.isEmpty()) {
 			return EMPTY_TARGET_LIST;
 		}
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(EMPTY_TARGET_LIST);
 	}
 	
 	@Override

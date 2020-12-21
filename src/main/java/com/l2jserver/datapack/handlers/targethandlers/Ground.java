@@ -63,7 +63,7 @@ public class Ground implements ITargetTypeHandler {
 				targetList.add(activeChar);
 			}
 		}
-		return targetList.isEmpty() ? EMPTY_TARGET_LIST : targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(EMPTY_TARGET_LIST);
 	}
 	
 	@Override

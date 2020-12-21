@@ -58,7 +58,7 @@ public class PartyNotMe implements ITargetTypeHandler {
 				}
 			}
 		}
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(EMPTY_TARGET_LIST);
 	}
 	
 	@Override
