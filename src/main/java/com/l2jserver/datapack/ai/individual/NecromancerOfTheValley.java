@@ -31,8 +31,7 @@ import com.l2jserver.gameserver.model.skills.Skill;
  * @author Maneco2
  * @since 2.6.2.0
  */
-public class NecromancerOfTheValley extends AbstractNpcAI
-{
+public class NecromancerOfTheValley extends AbstractNpcAI {
 	// NPCs
 	private static final int EXPLODING_ORC_GHOST = 22818;
 	private static final int WRATHFUL_ORC_GHOST = 22819;
@@ -44,8 +43,7 @@ public class NecromancerOfTheValley extends AbstractNpcAI
 	// Misc
 	private static final double HP_PERCENTAGE = 0.60;
 	
-	public NecromancerOfTheValley()
-	{
+	public NecromancerOfTheValley() {
 		super(NecromancerOfTheValley.class.getSimpleName(), "ai/individual");
 		addAttackId(NECROMANCER_OF_THE_VALLEY);
 		addSpawnId(EXPLODING_ORC_GHOST);
@@ -53,12 +51,9 @@ public class NecromancerOfTheValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
-	{
-		if (npc.getCurrentHp() < (npc.getMaxHp() * HP_PERCENTAGE))
-		{
-			if ((getRandom(100) < 10) && !npc.getVariables().getBoolean(MID_HP_FLAG, false))
-			{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon) {
+		if (npc.getCurrentHp() < (npc.getMaxHp() * HP_PERCENTAGE)) {
+			if ((getRandom(100) < 10) && !npc.getVariables().getBoolean(MID_HP_FLAG, false)) {
 				npc.getVariables().set(MID_HP_FLAG, true);
 				addAttackDesire(addSpawn((getRandomBoolean() ? EXPLODING_ORC_GHOST : WRATHFUL_ORC_GHOST), npc, true), attacker);
 			}
@@ -67,12 +62,9 @@ public class NecromancerOfTheValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
-		for (L2Character obj : npc.getKnownList().getKnownCharactersInRadius(200))
-		{
-			if (obj.isPlayer() && !obj.isDead())
-			{
+	public String onSpawn(L2Npc npc) {
+		for (L2Character obj : npc.getKnownList().getKnownCharactersInRadius(200)) {
+			if (obj.isPlayer() && !obj.isDead()) {
 				addSkillCastDesire(npc, obj, SELF_DESTRUCTION, 1000000L);
 			}
 		}
@@ -80,10 +72,8 @@ public class NecromancerOfTheValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
-	{
-		if ((skill == SELF_DESTRUCTION.getSkill()) && (npc != null) && !npc.isDead())
-		{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill) {
+		if ((skill == SELF_DESTRUCTION.getSkill()) && (npc != null) && !npc.isDead()) {
 			npc.doDie(player);
 		}
 		return super.onSpellFinished(npc, player, skill);
