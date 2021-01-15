@@ -104,21 +104,22 @@
 		</effects>
 	</skill>
 	<skill id="5005" levels="1" name="Frintezza's Ghost Summoning">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Frintezza Skills -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalType" val="PARALYZE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1400" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<effect name="Paralyze" />
+			<effect name="Stun" />
 		</effects>
 	</skill>
 	<skill id="5006" levels="1" name="Frintezza's Melody">
@@ -649,43 +650,48 @@
 		</effects>
 	</skill>
 	<skill id="5039" levels="1" name="NPC - Ultra Bomb">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5040" levels="12" name="NPC - Healing Potion">
-		<!-- CT2.5 retail confirmed -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
-		<table name="#hot"> 7 12 18 27 37 46 55 58 61 64 66 67 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume2"> 1 1 1 1 1 1 1 193 201 207 209 209 </table>
 		<table name="#mpConsume1"> 1 1 1 1 1 1 1 49 51 52 53 53 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume2"> 1 1 1 1 1 1 1 193 201 207 209 209 </table>
+		<table name="#tickHpPower"> 7 12 18 27 37 46 55 58 61 64 66 67 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
-		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="TickHp">
-				<param power="#hot" />
+				<param power="#tickHpPower" />
 				<param ticks="1" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5041" levels="1" name="Charm of Courage">
+		<!-- High Five Confirmed -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.skill5041" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
@@ -1225,12 +1231,19 @@
 		</effects>
 	</skill>
 	<skill id="5077" levels="1" name="NPC Remove Death Penalty">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
+		<effects>
+			<effect name="Recovery" />
+		</effects>
 	</skill>
 	<skill id="5078" levels="1" name="Frintezza Critical Power">
 		<!-- CT2.5 retail confirmed -->
@@ -1476,7 +1489,8 @@
 		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="5089" levels="1" name="Representation - Enter the Sailren Nest Quest">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
@@ -1484,7 +1498,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5090" levels="1" name="Sailren Production">
 		<!-- Confirmed CT2.5 -->
@@ -1511,12 +1525,15 @@
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
 		<set name="activateRate" val="90" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="affectRange" val="400" />
+		<set name="affectScope" val="RANGE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="2700" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill4108" />
 		<set name="isDebuff" val="true" />

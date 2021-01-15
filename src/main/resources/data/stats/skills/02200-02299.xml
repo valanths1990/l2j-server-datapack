@@ -864,55 +864,61 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2239" levels="1" name="Petrification Scroll">
-		<!-- Confirmed CT2.5 -->
+	<skill id="2239" levels="1" name="Petrifaction Scroll">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="TURN_STONE" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
+		<set name="affectObject" val="FRIEND" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
 		<set name="icon" val="icon.ect_piece_of_paper_white_i00" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8379" /> <!-- Petrification Scroll -->
 		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="TARGET" />
 		<cond msgId="113" addName="1">
-			<player insideZoneId="2239" />
+			<and>
+				<target myParty="INCLUDE_ME" />
+				<player insideZoneId="2239" />
+			</and>
 		</cond>
 		<effects>
 			<effect name="Stun" />
-			<effect name="BlockDamage">
-				<param block="HP"/>
-			</effect>
-			<effect name="BlockDamage">
-				<param block="MP"/>
-			</effect>
 			<effect name="BlockBuff" />
 			<effect name="BlockDebuff" />
+			<effect name="BlockDamage">
+				<param block="HP" />
+			</effect>
+			<effect name="BlockDamage">
+				<param block="MP" />
+			</effect>
 			<effect name="Buff">
 				<mul stat="regHp" val="0" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="2240" levels="1" name="Hot Spring Nectar">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="300" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8030" /> <!-- Hot Spring Nectar -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<cond msgId="113" addName="1">
 			<and>
 				<player insideZoneId="2240123" />
@@ -921,18 +927,19 @@
 		</cond>
 	</skill>
 	<skill id="2241" levels="1" name="Hot Spring Mineral Water">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="300" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8031" /> <!-- Hot Spring Mineral Water -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<cond msgId="113" addName="1">
 			<and>
 				<player insideZoneId="2240123" />
@@ -941,18 +948,19 @@
 		</cond>
 	</skill>
 	<skill id="2242" levels="1" name="Hot Spring Fountain Water">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="300" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8032" /> <!-- Hot Spring Water -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<cond msgId="113" addName="1">
 			<and>
 				<player insideZoneId="2240123" />
@@ -961,18 +969,19 @@
 		</cond>
 	</skill>
 	<skill id="2243" levels="1" name="Hot Spring Sulfur">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="300" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8033" /> <!-- Hot Spring Sulfur -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<cond msgId="113" addName="1">
 			<and>
 				<player insideZoneId="2240123" />

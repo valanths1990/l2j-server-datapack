@@ -28,7 +28,8 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5103" levels="1" name="Production - Clan / Transfer">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
@@ -36,7 +37,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5104" levels="3" name="Battle Force">
 		<!-- Not Used Anymore -->
@@ -124,16 +125,16 @@
 		</effects>
 	</skill>
 	<skill id="5109" levels="1" name="Production - Clan Gate">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
-		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5110" levels="1" name="Cannon Fodder">
 		<!-- Confirmed CT2.5 -->
@@ -196,18 +197,22 @@
 		</effects>
 	</skill>
 	<skill id="5112" levels="12" name="Stun">
-		<!-- Lvl 1-12 - Temporarily Immobilized and in a state of shock. -->
-		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 80 90 95 </table>
+		<!-- High Five Confirmed -->
+		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 7 10 14 19 25 31 36 38 40 42 42 43 </table>
+		<table name="#physicalAttackPower"> 16 35 73 139 241 379 542 626 704 774 829 873 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="30" />
-		<set name="affectRange" val="200" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="150" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="basicProperty" val="CON" />
 		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
@@ -217,9 +222,12 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="TARGET" />
 		<set name="trait" val="SHOCK" />
 		<effects>
+			<effect name="PhysicalAttack">
+				<param power="#physicalAttackPower" />
+			</effect>
 			<effect name="Stun" />
 		</effects>
 	</skill>
@@ -1544,10 +1552,10 @@
 		<effects>
 			<effect name="Stun" />
 			<effect name="BlockDamage">
-				<param block="HP"/>
+				<param block="HP" />
 			</effect>
 			<effect name="BlockDamage">
-				<param block="MP"/>
+				<param block="MP" />
 			</effect>
 			<effect name="BlockBuff" />
 			<effect name="BlockDebuff" />
@@ -1746,18 +1754,20 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5182" levels="1" name="Blessing of Protection">
+		<!-- High Five Confirmed -->
 		<!-- Newbie Guide Buff -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="7200" />
 		<set name="abnormalType" val="PK_PROTECT" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="700" />
+		<set name="effectRange" val="1200" />
 		<set name="icon" val="icon.skill0194" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="ProtectionBlessing" />
 		</effects>
@@ -1812,27 +1822,30 @@
 		</effects>
 	</skill>
 	<skill id="5186" levels="2" name="Pet Haste">
-		<table name="#abnormalLvls"> 1 2 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 </table>
 		<table name="#magicLvl"> 44 52 </table>
-		<table name="#mpConsume2"> 16 19 </table>
 		<table name="#mpConsume1"> 4 5 </table>
+		<table name="#mpConsume2"> 16 19 </table>
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="495" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1086" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="OWNER_PET" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
@@ -1840,27 +1853,30 @@
 		</effects>
 	</skill>
 	<skill id="5187" levels="4" name="Pet Vampiric Rage">
-		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#absorbDam"> 6 7 8 9 </table>
 		<table name="#magicLvl"> 30 44 58 72 </table>
-		<table name="#mpConsume2"> 11 16 22 27 </table>
 		<table name="#mpConsume1"> 3 4 6 7 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume2"> 11 16 22 27 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="VAMPIRIC_ATTACK" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="549" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1268" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="OWNER_PET" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<add stat="absorbDam" val="#absorbDam" />
@@ -1868,117 +1884,129 @@
 		</effects>
 	</skill>
 	<skill id="5188" levels="3" name="Pet Regeneration">
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#effectPoints"> 331 457 532 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#effectPoint"> 331 457 532 </table>
 		<table name="#magicLvl"> 35 48 56 </table>
-		<table name="#mpConsume2"> 12 18 21 </table>
 		<table name="#mpConsume1"> 3 5 6 </table>
-		<table name="#rate"> 1.1 1.15 1.2 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume2"> 12 18 21 </table>
+		<table name="#regHp"> 1.1 1.15 1.2 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="HP_REGEN_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1044" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="OWNER_PET" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="regHp" val="#rate" />
+				<mul stat="regHp" val="#regHp" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5189" levels="6" name="Pet Blessed Body">
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
-		<table name="#effectPoints"> 597 457 495 532 597 646 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
+		<table name="#effectPoint"> 597 457 495 532 597 646 </table>
 		<table name="#magicLvl"> 44 48 52 56 64 72 </table>
-		<table name="#maxHp"> 10 15 20 25 30 35 </table>
-		<table name="#mpConsume2"> 16 18 19 21 24 27 </table>
+		<table name="#maxHpPower"> 10 15 20 25 30 35 </table>
 		<table name="#mpConsume1"> 4 5 5 6 6 7 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume2"> 16 18 19 21 24 27 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="MAX_HP_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1045" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="OWNER_PET" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="MaxHp">
-				<param power="#maxHp" />
+				<param power="#maxHpPower" />
 				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5190" levels="6" name="Pet Blessed Soul">
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
-		<table name="#effectPoints"> 418 457 495 532 582 635 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
+		<table name="#effectPoint"> 418 457 495 532 582 635 </table>
 		<table name="#magicLvl"> 44 48 52 56 62 70 </table>
-		<table name="#maxMp"> 10 15 20 25 30 35 </table>
-		<table name="#mpConsume2"> 16 18 19 21 23 26 </table>
+		<table name="#maxMpPower"> 10 15 20 25 30 35 </table>
 		<table name="#mpConsume1"> 4 5 5 6 6 7 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume2"> 16 18 19 21 23 26 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="MAX_MP_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1048" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="OWNER_PET" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="MaxMp">
-				<param power="#maxMp" />
+				<param power="#maxMpPower" />
 				<param type="PER" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5191" levels="3" name="Pet Guidance">
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#accCombat"> 2 3 4 </table>
-		<table name="#effectPoints"> 379 457 532 </table>
+		<table name="#effectPoint"> 379 457 532 </table>
 		<table name="#magicLvl"> 40 48 56 </table>
-		<table name="#mpConsume2"> 14 18 21 </table>
 		<table name="#mpConsume1"> 4 5 6 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume2"> 14 18 21 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="HIT_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1240" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="OWNER_PET" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="#accCombat" />
@@ -1986,28 +2014,31 @@
 		</effects>
 	</skill>
 	<skill id="5192" levels="2" name="Pet Wind Walk">
-		<table name="#abnormalLvls"> 1 2 </table>
-		<table name="#effectPoints"> 204 285 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 </table>
+		<table name="#effectPoint"> 204 285 </table>
 		<table name="#magicLvl"> 20 30 </table>
-		<table name="#mpConsume2"> 8 11 </table>
 		<table name="#mpConsume1"> 2 3 </table>
+		<table name="#mpConsume2"> 8 11 </table>
 		<table name="#runSpd"> 20 33 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="SPEED_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1204" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="OWNER_PET" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<add stat="runSpd" val="#runSpd" />
@@ -2015,28 +2046,31 @@
 		</effects>
 	</skill>
 	<skill id="5193" levels="3" name="Pet Acumen">
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#effectPoints"> 204 331 457 </table>
-		<table name="#magicLvl"> 20 35 48 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#effectPoint"> 204 331 457 </table>
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
-		<table name="#mpConsume2"> 8 12 18 </table>
+		<table name="#magicLvl"> 20 35 48 </table>
 		<table name="#mpConsume1"> 2 3 5 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume2"> 8 12 18 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="CASTING_TIME_DOWN" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1085" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="OWNER_PET" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
@@ -2044,28 +2078,31 @@
 		</effects>
 	</skill>
 	<skill id="5194" levels="3" name="Pet Empower">
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#effectPoints"> 243 418 495 </table>
-		<table name="#magicLvl"> 25 44 52 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#effectPoint"> 243 418 495 </table>
 		<table name="#mAtk"> 1.55 1.65 1.75 </table>
-		<table name="#mpConsume2"> 9 16 19 </table>
+		<table name="#magicLvl"> 25 44 52 </table>
 		<table name="#mpConsume1"> 3 4 5 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume2"> 9 16 19 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="MA_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1059" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="OWNER_PET" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="#mAtk" />
@@ -2075,19 +2112,21 @@
 	<skill id="5195" levels="12" name="Pet Greater Heal">
 		<!-- High Five Confirmed -->
 		<table name="#abnormalLvl"> 1 1 2 2 4 6 7 7 7 7 7 7 </table>
-		<table name="#amount"> 58 92 148 219 299 380 450 477 500 525 542 550 </table>
 		<table name="#effectPoint"> 83 151 245 362 494 628 743 789 826 867 895 913 </table>
-		<table name="#healOverTime"> 4 7 10 15 20 26 30 32 32 32 32 32 </table>
+		<table name="#healPower"> 50 92 148 219 299 380 450 477 500 525 542 553 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume1"> 2 3 5 7 8 10 12 13 13 13 14 14 </table>
 		<table name="#mpConsume2"> 7 12 18 25 32 39 46 49 51 52 53 53 </table>
+		<table name="#tickHpPower"> 4 7 10 15 20 26 30 32 32 32 32 32 </table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
+		<set name="activateRate" val="0" />
 		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill1217" />
 		<set name="isMagic" val="1" />
@@ -2097,22 +2136,24 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="OWNER_PET" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 			<effect name="TickHp">
-				<param power="#healOverTime" />
+				<param power="#tickHpPower" />
 				<param ticks="1" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5196" levels="3" name="Pet Wind Shackle">
-		<table name="#effectPoints"> -597 -611 -624 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -597 -611 -624 </table>
 		<table name="#magicLvl"> 64 66 68 </table>
-		<table name="#mpConsume2"> 48 49 51 </table>
 		<table name="#mpConsume1"> 12 13 13 </table>
+		<table name="#mpConsume2"> 48 49 51 </table>
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ATTACK_TIME_UP" />
@@ -2120,16 +2161,17 @@
 		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1206" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -2141,10 +2183,11 @@
 		</effects>
 	</skill>
 	<skill id="5197" levels="3" name="Pet Hex">
-		<table name="#effectPoints"> -299 -306 -312 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -299 -306 -312 </table>
 		<table name="#magicLvl"> 64 66 68 </table>
-		<table name="#mpConsume2"> 24 25 26  </table>
 		<table name="#mpConsume1"> 6 7 7 </table>
+		<table name="#mpConsume2"> 24 25 26 </table>
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="PD_DOWN" />
@@ -2152,16 +2195,17 @@
 		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1200" />
 		<set name="icon" val="icon.skill0122" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -2173,10 +2217,11 @@
 		</effects>
 	</skill>
 	<skill id="5198" levels="3" name="Pet Slow">
-		<table name="#effectPoints"> -597 -611 -624 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -597 -611 -624 </table>
 		<table name="#magicLvl"> 64 66 68 </table>
-		<table name="#mpConsume2"> 48 49 51 </table>
 		<table name="#mpConsume1"> 12 13 13 </table>
+		<table name="#mpConsume2"> 48 49 51 </table>
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SPEED_DOWN" />
@@ -2184,16 +2229,17 @@
 		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1160" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -2205,10 +2251,11 @@
 		</effects>
 	</skill>
 	<skill id="5199" levels="3" name="Pet Curse Gloom">
-		<table name="#effectPoints"> -299 -306 -312 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -299 -306 -312 </table>
 		<table name="#magicLvl"> 64 66 68 </table>
-		<table name="#mpConsume2"> 48 49 51 </table>
 		<table name="#mpConsume1"> 12 13 13 </table>
+		<table name="#mpConsume2"> 48 49 51 </table>
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="MD_DOWN" />
@@ -2216,16 +2263,17 @@
 		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="900" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1400" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1263" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

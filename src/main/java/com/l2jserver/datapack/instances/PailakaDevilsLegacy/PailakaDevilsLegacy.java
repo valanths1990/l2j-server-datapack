@@ -251,7 +251,12 @@ public final class PailakaDevilsLegacy extends AbstractInstance {
 	@Override
 	public void onMoveFinished(L2Npc npc) {
 		if (npc.getLocation() == LEMATAN_PORT_POINT) {
-			npc.doCast(AV_TELEPORT);
+			final var target = npc.getTarget();
+			if (target != null) {
+				npc.doCast(AV_TELEPORT);
+				npc.teleToLocation(target);
+				((L2Character) target).setTarget(npc);
+			}
 			startQuestTimer("LEMATAN_TELEPORT", 2000, npc, null);
 		}
 	}

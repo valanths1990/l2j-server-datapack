@@ -24,7 +24,7 @@ import static com.l2jserver.gameserver.model.skills.targets.AffectScope.SINGLE;
 import static com.l2jserver.gameserver.network.SystemMessageId.INCORRECT_TARGET;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.expectLastCall;
-import static org.powermock.api.easymock.PowerMock.replay;
+import static org.powermock.api.easymock.PowerMock.replayAll;
 import static org.testng.Assert.assertEquals;
 
 import org.powermock.api.easymock.annotation.Mock;
@@ -59,7 +59,7 @@ public class EnemyTest extends AbstractTest {
 	@Test
 	public void test_invalid_affect_scope_should_return_empty_target_list() {
 		expect(skill.getAffectScope()).andReturn(NONE);
-		replay(skill);
+		replayAll();
 		
 		final var actual = enemy.getTargetList(skill, activeChar, false, target);
 		assertEquals(EMPTY_TARGET_LIST, actual);
@@ -68,7 +68,7 @@ public class EnemyTest extends AbstractTest {
 	@Test
 	public void test_null_target_should_return_empty_target_list() {
 		expect(skill.getAffectScope()).andReturn(SINGLE);
-		replay(skill);
+		replayAll();
 		
 		final var actual = enemy.getTargetList(skill, activeChar, false, null);
 		assertEquals(EMPTY_TARGET_LIST, actual);
@@ -80,7 +80,7 @@ public class EnemyTest extends AbstractTest {
 		expect(target.isDead()).andReturn(true);
 		activeChar.sendPacket(INCORRECT_TARGET);
 		expectLastCall().once();
-		replay(skill, target, activeChar);
+		replayAll();
 		
 		final var actual = enemy.getTargetList(skill, activeChar, false, target);
 		assertEquals(EMPTY_TARGET_LIST, actual);
@@ -91,7 +91,7 @@ public class EnemyTest extends AbstractTest {
 		expect(skill.getAffectScope()).andReturn(SINGLE);
 		expect(target.isDead()).andReturn(false);
 		expect(target.isAttackable()).andReturn(true);
-		replay(skill, target);
+		replayAll();
 		
 		final var actual = enemy.getTargetList(skill, activeChar, false, target);
 		assertEquals(target, actual[0]);
@@ -103,7 +103,7 @@ public class EnemyTest extends AbstractTest {
 		expect(target.isDead()).andReturn(false);
 		expect(target.isAttackable()).andReturn(false);
 		expect(activeChar.getActingPlayer()).andReturn(null);
-		replay(skill, target, activeChar);
+		replayAll();
 		
 		final var actual = enemy.getTargetList(skill, activeChar, false, target);
 		assertEquals(EMPTY_TARGET_LIST, actual);
@@ -120,7 +120,7 @@ public class EnemyTest extends AbstractTest {
 		expect(skillUseHolder.isCtrlPressed()).andReturn(false);
 		player.sendPacket(INCORRECT_TARGET);
 		expectLastCall().once();
-		replay(skill, target, activeChar, player, skillUseHolder);
+		replayAll();
 		
 		final var actual = enemy.getTargetList(skill, activeChar, false, target);
 		assertEquals(EMPTY_TARGET_LIST, actual);
@@ -135,7 +135,7 @@ public class EnemyTest extends AbstractTest {
 		expect(player.checkIfPvP(target)).andReturn(false);
 		expect(player.getCurrentSkill()).andReturn(skillUseHolder);
 		expect(skillUseHolder.isCtrlPressed()).andReturn(true);
-		replay(skill, target, activeChar, player, skillUseHolder);
+		replayAll();
 		
 		final var actual = enemy.getTargetList(skill, activeChar, false, target);
 		assertEquals(target, actual[0]);
@@ -148,7 +148,7 @@ public class EnemyTest extends AbstractTest {
 		expect(target.isAttackable()).andReturn(false);
 		expect(activeChar.getActingPlayer()).andReturn(player);
 		expect(player.checkIfPvP(target)).andReturn(true);
-		replay(skill, target, activeChar, player);
+		replayAll();
 		
 		final var actual = enemy.getTargetList(skill, activeChar, false, target);
 		assertEquals(target, actual[0]);

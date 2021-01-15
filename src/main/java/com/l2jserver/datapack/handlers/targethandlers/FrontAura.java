@@ -1,5 +1,5 @@
 /*
- * Copyright © 2004-2020 L2J DataPack
+ * Copyright © 2004-2021 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -26,7 +26,7 @@ import com.l2jserver.gameserver.handler.ITargetTypeHandler;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
+import com.l2jserver.gameserver.model.skills.targets.TargetType;
 import com.l2jserver.gameserver.model.zone.ZoneId;
 
 /**
@@ -67,7 +67,7 @@ public class FrontAura implements ITargetTypeHandler {
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType() {
-		return L2TargetType.FRONT_AURA;
+	public Enum<TargetType> getTargetType() {
+		return TargetType.FRONT_AURA;
 	}
 }

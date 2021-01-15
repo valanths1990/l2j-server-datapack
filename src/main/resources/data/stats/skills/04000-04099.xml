@@ -254,16 +254,18 @@
 		</effects>
 	</skill>
 	<skill id="4020" levels="1" name="Heal Queen Ant1">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="3000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="35" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
 				<param power="10846" />
@@ -271,8 +273,8 @@
 		</effects>
 	</skill>
 	<skill id="4021" levels="1" name="Queen Ant">
-		<!-- Confirmed CT2.5 -->
-		<!-- Queen Ant Skills -->
+		<!-- High Five Confirmed -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.skillboss" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="P" />
@@ -283,31 +285,33 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4022" levels="1" name="Body Of Nurse Ant">
-		<!-- Confirmer CT2.5 -->
-		<!-- This Skill Is Only For Description In The Client -->
+	<skill id="4022" levels="1" name="Body of Nurse Ant">
+		<!-- High Five Confirmed -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="magicLvl" val="35" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 	</skill>
-	<skill id="4023" levels="1" name="Body Of Royal Guard Ant">
-		<!-- Confirmer CT2.5 -->
-		<!-- This Skill Is Only For Description In The Client -->
+	<skill id="4023" levels="1" name="Body of Royal Guard Ant">
+		<!-- High Five Confirmed -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="magicLvl" val="35" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="4024" levels="1" name="Heal Queen Ant2">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="3000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="35" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
 				<param power="10846" />
@@ -315,40 +319,48 @@
 		</effects>
 	</skill>
 	<skill id="4025" levels="12" name="Master Recharge">
-		<!-- Freya retail confirmed -->
-		<table name="#amount"> 23 38 52 70 90 110 129 138 144 149 153 155 </table>
-		<table name="#effectPoints"> 138 204 285 379 477 566 635 659 676 689 700 709 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> 138 204 285 379 477 566 635 659 676 689 700 709 </table>
 		<table name="#magicLvl"> 17 27 37 47 57 67 77 82 87 92 97 102 </table>
-		<table name="#mpConsume2"> 24 39 53 70 90 110 130 138 145 150 153 155 </table>
+		<table name="#manaHealByLevelPower"> 23 38 52 70 90 110 129 138 144 149 153 155 </table>
+		<table name="#mpConsume1"> 5 8 11 14 18 22 26 28 29 30 31 31 </table>
+		<table name="#mpConsume2"> 19 31 42 56 72 88 104 110 116 120 122 124 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="OWNER_PET" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="ManaHealByLevel">
-				<param power="#amount" />
+				<param power="#manaHealByLevelPower" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4026" levels="1" name="Gludio Flame">
-		<!-- Freya retail confirmed -->
+		<!-- High Five Confirmed -->
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="affectRange" val="200" />
+		<set name="affectScope" val="RANGE" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="FIRE" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1400" />
-		<set name="attributeType" val="FIRE" />
-		<set name="attributePower" val="20" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="60" />
-		<set name="mpConsume2" val="28" />
+		<set name="mpConsume1" val="6" />
+		<set name="mpConsume2" val="22" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -360,18 +372,21 @@
 		</effects>
 	</skill>
 	<skill id="4027" levels="1" name="Gludio Heal">
-		<!-- Freya retail confirmed -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="5000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="60" />
-		<set name="mpConsume2" val="98" />
+		<set name="mpConsume1" val="20" />
+		<set name="mpConsume2" val="78" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
 				<param power="628" />
@@ -379,23 +394,25 @@
 		</effects>
 	</skill>
 	<skill id="4028" levels="3" name="NPC Might">
-		<!-- Freya retail confirmed -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#magicLvl"> 20 40 70 </table>
 		<table name="#mpConsume2"> 10 18 33 </table>
 		<table name="#pAtk"> 1.08 1.12 1.15 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="PA_UP" />
 		<set name="abnormalVisualEffect" val="BIG_BODY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1800" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Grow">
 				<mul stat="pAtk" val="#pAtk" />
@@ -403,21 +420,24 @@
 		</effects>
 	</skill>
 	<skill id="4029" levels="3" name="NPC Shield">
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#magicLvl"> 20 40 70 </table>
 		<table name="#mpConsume2"> 10 18 33 </table>
 		<table name="#pDef"> 1.08 1.12 1.15 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="PD_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1800" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
@@ -426,26 +446,28 @@
 	</skill>
 	<skill id="4030" levels="3" name="NPC Clan Might">
 		<!-- High Five Confirmed -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#magicLvl"> 20 40 70 </table>
 		<table name="#mpConsume1"> 2 4 7 </table>
 		<table name="#mpConsume2"> 8 14 26 </table>
 		<table name="#pAtk"> 1.08 1.12 1.15 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="PA_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
@@ -453,26 +475,30 @@
 		</effects>
 	</skill>
 	<skill id="4031" levels="3" name="NPC Clan Aegis">
-		<!-- Freya retail confirmed -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#magicLvl"> 20 40 70 </table>
-		<table name="#mpConsume2"> 10 18 33 </table>
+		<table name="#mpConsume1"> 2 4 7 </table>
+		<table name="#mpConsume2"> 8 14 26 </table>
 		<table name="#pDef"> 1.08 1.12 1.15 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="PD_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill4031" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="CLAN" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
@@ -711,7 +737,7 @@
 		<effects>
 			<effect name="Mp">
 				<param amount="#amount" />
- 			</effect>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="4040" levels="12" name="NPC Bow Attack">
@@ -801,18 +827,21 @@
 		</effects>
 	</skill>
 	<skill id="4044" levels="1" name="Partisan Heal">
-		<!-- Freya retail confirmed -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="5000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="45" />
-		<set name="mpConsume2" val="70" />
+		<set name="mpConsume1" val="14" />
+		<set name="mpConsume2" val="56" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
 				<param power="427" />
@@ -899,18 +928,19 @@
 		</effects>
 	</skill>
 	<skill id="4048" levels="3" name="NPC Dash">
-		<!-- Freya retail confirmed -->
-		<table name="#magicLvl"> 10 10 10 </table>
+		<!-- High Five Confirmed -->
 		<table name="#runSpd"> 1.5 1.8 2 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="-1" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="hitTime" val="1000" />
+		<set name="magicLvl" val="10" />
 		<set name="mpConsume2" val="12" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="runSpd" val="#runSpd" />
@@ -955,22 +985,23 @@
 	</skill>
 	<skill id="4051" levels="20" name="Cubic Heal">
 		<!-- Cubic Skill -->
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Levels 17, 18 and 19 doesn't exist in client. -->
-		<table name="#amount"> 201 241 281 314 339 361 382 390 398 405 413 418 422 426 430 434 0 0 0 68 </table>
-		<table name="#effectPoints"> 408 467 523 566 597 624 646 653 660 667 674 677 679 682 685 687 0 0 0 1 </table>
+		<table name="#effectPoint"> 408 467 523 566 597 624 646 653 660 667 674 677 679 682 685 687 0 0 0 1 </table>
+		<table name="#healPower"> 201 241 281 314 339 361 382 390 398 405 413 418 422 426 430 434 0 0 0 68 </table>
 		<table name="#magicLvl"> 43 49 55 60 64 68 72 74 76 78 80 81 82 83 84 85 0 0 0 18 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1100" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
@@ -1205,26 +1236,28 @@
 		</effects>
 	</skill>
 	<skill id="4065" levels="12" name="NPC Heal">
-		<!-- Freya retail confirmed -->
-		<table name="#amount"> 83 151 245 362 494 628 743 789 826 867 895 913 </table>
+		<!-- High Five Confirmed -->
+		<table name="#healPower"> 83 151 245 362 494 628 743 789 826 867 895 913 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume2"> 13 24 35 49 64 78 91 97 101 104 105 105 </table>
 		<table name="#mpConsume1"> 4 6 9 13 16 20 23 25 26 26 27 27 </table>
+		<table name="#mpConsume2"> 13 24 35 49 64 78 91 97 101 104 105 105 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
@@ -1320,12 +1353,13 @@
 		</effects>
 	</skill>
 	<skill id="4070" levels="1" name="Decrease Atk. Spd.">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Zone Skill -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="ATTACK_TIME_UP" />
 		<set name="activateRate" val="10" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill1206" />
@@ -1334,7 +1368,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.77" />
@@ -1420,26 +1454,30 @@
 		</effects>
 	</skill>
 	<skill id="4074" levels="2" name="NPC Haste">
-		<!-- Freya retail confirmed -->
-		<table name="#abnormalLvls"> 1 2 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 </table>
 		<table name="#magicLvl"> 30 70 </table>
-		<table name="#mpConsume2"> 14 33 </table>
+		<table name="#mpConsume1"> 3 7 </table>
+		<table name="#mpConsume2"> 11 26 </table>
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1086" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
@@ -1575,17 +1613,20 @@
 		</effects>
 	</skill>
 	<skill id="4080" levels="1" name="Dark Heal">
-		<!-- Freya retail confirmed -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="5000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="60" />
-		<set name="mpConsume2" val="98" />
+		<set name="mpConsume1" val="20" />
+		<set name="mpConsume2" val="78" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
 				<param power="628" />
@@ -1746,38 +1787,44 @@
 		</effects>
 	</skill>
 	<skill id="4089" levels="1" name="NPC Bear Spirit Totem">
-		<!-- Freya retail confirmed -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="POSSESSION" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="-100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="40" />
 		<set name="mpConsume2" val="18" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="runSpd" val="0.85" />
 				<mul stat="pAtk" val="1.15" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="runSpd" val="0.85" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4090" levels="1" name="NPC Wolf Spirit Totem">
-		<!-- Freya retail confirmed -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="POSSESSION" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="-100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="40" />
 		<set name="mpConsume2" val="18" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="runSpd" val="1.4" />
@@ -1785,10 +1832,10 @@
 		</effects>
 	</skill>
 	<skill id="4091" levels="3" name="NPC Ogre Spirit Totem">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<table name="#accCombat"> 3 7 7 </table>
 		<table name="#magicLvl"> 40 60 75 </table>
-		<table name="#MaxHp"> 14 21 21 </table>
+		<table name="#maxHpPower"> 14 21 21 </table>
 		<table name="#mpConsume2"> 18 18 19 </table>
 		<table name="#pAtk"> 1.05 1.15 1.15 </table>
 		<table name="#pDef"> 1.1 1.3 1.3 </table>
@@ -1798,46 +1845,62 @@
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="POSSESSION" />
 		<set name="abnormalVisualEffect" val="BIG_BODY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="-100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Grow">
-				<mul stat="runSpd" val="#runSpd" />
-				<mul stat="pAtk" val="#pAtk" />
-				<mul stat="pDef" val="#pDef" />
 				<sub stat="rEvas" val="#rEvas" />
+			</effect>
+			<effect name="Buff">
 				<add stat="accCombat" val="#accCombat" />
 			</effect>
 			<effect name="MaxHp">
-				<param power="#MaxHp" />
+				<param power="#maxHpPower" />
 				<param type="PER" />
 				<param heal="true" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="#runSpd" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4092" levels="1" name="NPC Puma Spirit Totem">
-		<!-- Freya retail confirmed -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="POSSESSION" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="-100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="40" />
 		<set name="mpConsume2" val="18" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.3" />
+			</effect>
+			<effect name="Buff">
 				<add stat="rEvas" val="4" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="pDef" val="0.8" />
 			</effect>
 		</effects>
@@ -1888,61 +1951,71 @@
 		</effects>
 	</skill>
 	<skill id="4096" levels="3" name="NPC Hawkeye">
-		<!-- Freya retail confirmed -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#accCombat"> 6 8 10 </table>
 		<table name="#magicLvl"> 20 40 70 </table>
 		<table name="#mpConsume2"> 10 18 33 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="AB_HAWK_EYE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="#accCombat" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="pDef" val="0.9" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4097" levels="12" name="NPC Chant of Life">
-		<!-- Freya retail confirmed -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
-		<table name="#hot"> 7 12 18 27 37 46 55 23 32 42 51 58 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume2"> 33 59 88 122 159 195 228 242 252 259 262 262 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume1"> 7 12 18 25 32 39 46 49 51 52 53 53 </table>
+		<table name="#mpConsume2"> 26 47 70 97 127 156 182 193 201 207 209 209 </table>
+		<table name="#tickHpPower"> 7 12 18 27 37 46 55 23 32 42 51 58 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1229" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="TickHp">
-				<param power="#hot" />
+				<param power="#tickHpPower" />
 				<param ticks="1" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4098" levels="12" name="Magic Skill Block">
-		<!-- Freya retail confirmed -->
+	<skill id="4098" levels="12" name="Silence">
+		<!-- High Five Confirmed -->
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume2"> 13 20 27 35 45 55 65 69 73 75 77 78 </table>
+		<table name="#mpConsume1"> 3 4 6 7 9 11 13 14 15 15 16 16 </table>
+		<table name="#mpConsume2"> 10 16 21 28 36 44 52 55 58 60 61 62 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SILENCE" />
@@ -1953,12 +2026,14 @@
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="1500" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1064" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
@@ -1970,43 +2045,61 @@
 		</effects>
 	</skill>
 	<skill id="4099" levels="2" name="NPC Berserk">
-		<!-- Freya retail confirmed -->
-		<table name="#abnormalLvls"> 1 2 </table>
-		<table name="#magicLvl"> 40 70 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 </table>
 		<table name="#mAtk"> 1.1 1.16 </table>
 		<table name="#mAtkSpd"> 1.05 1.08 </table>
 		<table name="#mDef"> 0.9 0.84 </table>
-		<table name="#mpConsume2"> 18 33 </table>
+		<table name="#magicLvl"> 40 70 </table>
+		<table name="#mpConsume1"> 4 7 </table>
+		<table name="#mpConsume2"> 14 26 </table>
 		<table name="#pAtk"> 1.05 1.08 </table>
 		<table name="#pAtkSpd"> 1.05 1.08 </table>
 		<table name="#pDef"> 0.95 0.92 </table>
-		<table name="#rEvas"> 5 8 </table>
+		<table name="#rEvas"> 2 4 </table>
 		<table name="#runSpd"> 5 8 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="BERSERKER" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1062" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="mAtk" val="#mAtk" />
-				<mul stat="mAtkSpd" val="#pAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
-				<mul stat="pDef" val="#pDef" />
-				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="Buff">
 				<sub stat="rEvas" val="#rEvas" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtkSpd" val="#mAtkSpd" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="Buff">
+				<add stat="runSpd" val="#runSpd" />
 			</effect>
 		</effects>
 	</skill>

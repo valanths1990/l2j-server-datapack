@@ -1925,26 +1925,29 @@
 		</effects>
 	</skill>
 	<skill id="69" levels="25" name="Sacrifice" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">
-		<table name="#amount"> 741 762 782 802 822 843 863 882 902 922 941 960 979 997 1015 1033 1050 1067 1083 1099 1115 1129 1144 1157 1170 </table>
-		<table name="#effectPoints"> 494 508 521 535 549 562 575 589 602 615 628 640 653 665 677 689 700 711 722 733 743 753 763 772 780 </table>
-		<table name="#hpConsume"> 988 1015 1042 1069 1096 1123 1150 1176 1203 1229 1254 1280 1305 1329 1353 1377 1400 1422 1444 1465 1486 1506 1525 1543 1560 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> 494 508 521 535 549 562 575 589 602 615 628 640 653 665 677 689 700 711 722 733 743 753 763 772 780 </table>
+		<table name="#healPower"> 741 762 782 802 823 843 863 883 902 922 941 960 979 997 1015 1033 1050 1067 1083 1099 1115 1129 1144 1157 1170 </table>
+		<table name="#hpConsume"> 988 1015 1042 1070 1097 1123 1150 1177 1203 1229 1255 1280 1305 1329 1353 1377 1400 1422 1444 1465 1486 1506 1525 1543 1560 </table>
 		<table name="#magicLvl"> 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#ench1amount"> 1231 1292 1353 1415 1476 1537 1598 1659 1720 1781 1842 1903 1964 2025 2086 2147 2208 2269 2331 2392 2453 2514 2575 2636 2697 2758 2819 2880 2941 3002 </table>
 		<table name="#ench2HpConsume"> 1534 1508 1482 1456 1430 1404 1378 1352 1326 1300 1274 1248 1222 1196 1170 1144 1118 1092 1066 1040 1014 988 962 936 910 884 858 832 806 780 </table>
 		<table name="#ench34HpConsume"> 1544 1528 1513 1497 1482 1466 1450 1435 1419 1404 1388 1372 1357 1341 1326 1310 1294 1279 1263 1248 1232 1216 1201 1185 1170 1154 1138 1123 1107 1092 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1500" />
 		<set name="hpConsume" val="#hpConsume" />
 		<set name="icon" val="icon.skill0069" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="hpConsume" val="#ench2HpConsume" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
@@ -1954,7 +1957,7 @@
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 		<enchant1Effects>

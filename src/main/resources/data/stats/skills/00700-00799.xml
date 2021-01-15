@@ -1,40 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="700" levels="1" name="Divine Healer Group Heal">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
 		<set name="activateRate" val="0" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="PARTY" />
 		<set name="effectPoint" val="661" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="7000" />
 		<set name="icon" val="icon.skill_transform_buff" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="80" />
-		<set name="mpConsume2" val="252" />
+		<set name="mpConsume1" val="51" />
+		<set name="mpConsume2" val="201" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
 		<effects>
+			<effect name="Heal">
+				<param power="400" />
+			</effect>
 			<effect name="TickHp">
 				<param power="27" />
 				<param ticks="1" />
-			</effect>
-			<effect name="Heal">
-				<param power="400" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="701" levels="1" name="Divine Healer Resurrection">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="661" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="6000" />
 		<set name="icon" val="icon.skill_transform_etc" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="80" />
-		<set name="mpConsume2" val="252" />
+		<set name="mpConsume1" val="51" />
+		<set name="mpConsume2" val="201" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -48,19 +58,23 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="702" levels="1" name="Divine Healer Cleanse">
+	<skill id="702" levels="1" name="Divine Healer Clans">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="676" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_etc" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="80" />
-		<set name="mpConsume2" val="59" />
+		<set name="mpConsume1" val="12" />
+		<set name="mpConsume2" val="47" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="DispelByCategory">
 				<param slot="DEBUFF" rate="100" max="10" />
@@ -68,17 +82,20 @@
 		</effects>
 	</skill>
 	<skill id="703" levels="1" name="Sacrifice Healer">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectObject" val="FRIEND" />
 		<set name="affectRange" val="300" />
+		<set name="affectScope" val="PARTY" />
 		<set name="effectPoint" val="676" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_etc" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1800000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelayLock" val="true" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<player mp="10" />
@@ -98,150 +115,260 @@
 		</selfEffects>
 	</skill>
 	<skill id="704" levels="1" name="Divine Enchanter Water Spirit">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="MULTI_BUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="669" />
-		<set name="effectRange" val="900" />
+		<set name="effectRange" val="600" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_buff" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="itemConsumeCount" val="10" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="magicLvl" val="80" />
-		<set name="mpConsume2" val="73" />
+		<set name="mpConsume1" val="15" />
+		<set name="mpConsume2" val="58" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="PARTY_MEMBER" />
+		<set name="targetType" val="TARGET" />
+		<cond msgId="113" addName="1">
+			<target myParty="INCLUDE_ME" />
+		</cond>
 		<effects>
 			<effect name="Buff">
-				<add stat="mCritRate" val="2" />
-				<mul stat="regMp" val="1.2" />
-				<mul stat="pAtk" val="1.1" />
-				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
-				<mul stat="mDef" val="1.2" />
-				<mul stat="mAtkSpd" val="1.2" />
-				<sub stat="debuffVuln" val="10" />
-				<mul stat="runSpd" val="0.8" />
+			</effect>
+			<effect name="Buff">
+				<add stat="mCritRate" val="2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="physicalMpConsumeRate" val="0.95" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="magicalMpConsumeRate" val="0.95" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="danceMpConsumeRate" val="0.95" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtkSpd" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="regMp" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.1" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.2" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="debuffVuln" val="0.9" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="705" levels="1" name="Divine Enchanter Fire Spirit">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="MULTI_BUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="669" />
-		<set name="effectRange" val="900" />
+		<set name="effectRange" val="600" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_buff" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="itemConsumeCount" val="10" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="magicLvl" val="80" />
-		<set name="mpConsume2" val="73" />
+		<set name="mpConsume1" val="15" />
+		<set name="mpConsume2" val="58" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="PARTY_MEMBER" />
+		<set name="targetType" val="TARGET" />
+		<cond msgId="113" addName="1">
+			<target myParty="INCLUDE_ME" />
+		</cond>
 		<effects>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="critDmg" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="regHp" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<add stat="mCritRate" val="2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtkSpd" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.2" />
+			</effect>
 			<effect name="MaxMp">
 				<param power="20" />
 				<param type="PER" />
 			</effect>
 			<effect name="Buff">
-				<mul stat="regHp" val="1.2" />
-				<add stat="mCritRate" val="2" />
-				<mul stat="critDmg" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="pDef" val="1.2" />
-				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
-				<mul stat="mDef" val="1.2" />
-				<mul stat="mAtkSpd" val="1.2" />
-				<add stat="accCombat" val="4" />
-				<sub stat="debuffVuln" val="10" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="debuffVuln" val="0.9" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="706" levels="1" name="Divine Enchanter Wind Spirit">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="MULTI_BUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="669" />
-		<set name="effectRange" val="900" />
+		<set name="effectRange" val="600" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_buff" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="itemConsumeCount" val="10" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="magicLvl" val="80" />
-		<set name="mpConsume2" val="73" />
+		<set name="mpConsume1" val="15" />
+		<set name="mpConsume2" val="58" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="PARTY_MEMBER" />
+		<set name="targetType" val="TARGET" />
+		<cond msgId="113" addName="1">
+			<target myParty="INCLUDE_ME" />
+		</cond>
 		<effects>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="critRate" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mCritPower" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtkSpd" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.2" />
+			</effect>
 			<effect name="MaxHp">
 				<param power="20" />
 				<param type="PER" />
 			</effect>
 			<effect name="Buff">
-				<mul stat="critRate" val="1.2" />
-				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="pDef" val="1.2" />
-				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
-				<mul stat="mDef" val="1.2" />
-				<mul stat="mAtkSpd" val="1.2" />
-				<sub stat="debuffVuln" val="10" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="debuffVuln" val="0.9" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="runSpd" val="0.8" />
-				<add stat="absorbDam" val="5" /> <!-- absorb 5% HP from damage inflicted on enemies -->
+			</effect>
+			<effect name="Buff">
+				<add stat="absorbDam" val="5" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="707" levels="1" name="Divine Enchanter Hero Spirit">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="MULTI_BUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="669" />
-		<set name="effectRange" val="900" />
+		<set name="effectRange" val="600" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill_transform_buff" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="itemConsumeCount" val="10" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="magicLvl" val="80" />
-		<set name="mpConsume2" val="73" />
+		<set name="mpConsume1" val="15" />
+		<set name="mpConsume2" val="58" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="PARTY_MEMBER" />
+		<set name="targetType" val="TARGET" />
+		<cond msgId="113" addName="1">
+			<target myParty="INCLUDE_ME" />
+		</cond>
 		<effects>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="critDmg" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<add stat="mCritRate" val="2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtkSpd" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.2" />
+			</effect>
 			<effect name="MaxHp">
 				<param power="20" />
 				<param type="PER" />
 			</effect>
 			<effect name="Buff">
-				<add stat="mCritRate" val="2" />
-				<mul stat="critDmg" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="pDef" val="1.2" />
-				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="mAtk" val="1.2" />
-				<mul stat="mDef" val="1.2" />
-				<mul stat="mAtkSpd" val="1.2" />
-				<sub stat="debuffVuln" val="10" />
-				<add stat="accCombat" val="4" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="debuffVuln" val="0.9" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</effects>
@@ -473,7 +600,7 @@
 			</effect>
 			<effect name="Mp">
 				<param amount="#amount" />
- 			</effect>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="716" levels="4" name="Zaken Hold">
@@ -556,26 +683,28 @@
 		</effects>
 	</skill>
 	<skill id="719" levels="1" name="Zaken Vampiric Rage">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="VAMPIRIC_ATTACK" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="604" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_buff" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="65" />
-		<set name="mpConsume2" val="48" />
 		<set name="mpConsume1" val="12" />
+		<set name="mpConsume2" val="48" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
+				<add stat="absorbDam" val="15" />
 			</effect>
 		</effects>
 	</skill>
@@ -1018,51 +1147,55 @@
 		</effects>
 	</skill>
 	<skill id="738" levels="3" name="Heretic Heal">
-		<!-- Confirmed CT2.5 -->
-		<table name="#amount"> 892 926 956 </table>
+		<!-- High Five Confirmed -->
+		<table name="#healPower"> 892 926 956 </table>
 		<table name="#magicLvl"> 70 73 76 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="575" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill_transform_etc" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="48" />
 		<set name="mpConsume1" val="12" />
+		<set name="mpConsume2" val="48" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="739" levels="3" name="Heretic Battle Heal">
-		<!-- Confirmed CT2.5 -->
-		<table name="#amount"> 743 772 796 </table>
-		<table name="#effectPoints"> 595 617 637 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> 595 617 637 </table>
+		<table name="#healPower"> 743 772 796 </table>
 		<table name="#magicLvl"> 70 73 76 </table>
-		<table name="#mpConsume2"> 136 142 146 </table>
 		<table name="#mpConsume1"> 34 36 37 </table>
+		<table name="#mpConsume2"> 136 142 146 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill_transform_etc" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
@@ -1216,25 +1349,26 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="745" levels="3" name="Vale Master Dark Cure">
-		<!-- Confirmed CT2.5 -->
-		<table name="#effectPoints"> 635 650 662 </table>
+	<skill id="745" levels="3" name="Veil Master Dark Cure">
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> 635 650 662 </table>
 		<table name="#magicLvl"> 70 73 76 </table>
 		<table name="#mpConsume2"> 21 22 23 </table>
-		<table name="#mpConsume1"> 6 6 6 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_etc" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="6" />
 		<set name="mpConsume2" val="#mpConsume2" />
-		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="DispelByCategory">
 				<param slot="DEBUFF" rate="100" max="10" />
@@ -1474,23 +1608,25 @@
 		</effects>
 	</skill>
 	<skill id="754" levels="1" name="Doll Blader Clairvoyance">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="CRITICAL_PROB_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="635" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_buff" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="70" />
-		<set name="mpConsume2" val="52" />
 		<set name="mpConsume1" val="13" />
+		<set name="mpConsume2" val="52" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="critRate" val="1.3" />
@@ -2002,10 +2138,12 @@
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
 		<set name="activateRate" val="90" />
 		<set name="affectLimit" val="10-10" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="affectRange" val="200" />
 		<set name="affectScope" val="POINT_BLANK" />
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="-655" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill0774" />
 		<set name="isDebuff" val="true" />
@@ -2018,12 +2156,12 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
 		<effects>
+			<effect name="Debuff">
+				<sub stat="rEvas" val="10" />
+			</effect>
 			<effect name="Fear" />
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.67" />
-			</effect>
-			<effect name="Debuff">
-				<sub stat="rEvas" val="10" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.67" />

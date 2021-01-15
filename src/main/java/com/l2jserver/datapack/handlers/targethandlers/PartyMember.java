@@ -22,7 +22,7 @@ import com.l2jserver.gameserver.handler.ITargetTypeHandler;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
+import com.l2jserver.gameserver.model.skills.targets.TargetType;
 import com.l2jserver.gameserver.network.SystemMessageId;
 
 /**
@@ -47,7 +47,7 @@ public class PartyMember implements ITargetTypeHandler {
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType() {
-		return L2TargetType.PARTY_MEMBER;
+	public Enum<TargetType> getTargetType() {
+		return TargetType.PARTY_MEMBER;
 	}
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright © 2004-2020 L2J DataPack
+ * Copyright © 2004-2021 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -32,7 +32,7 @@ import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
-import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
+import com.l2jserver.gameserver.model.skills.targets.TargetType;
 
 /**
  * Summon Npc effect implementation.
@@ -108,7 +108,7 @@ public final class SummonNpc extends AbstractEffect {
 				int y = player.getY();
 				int z = player.getZ();
 				
-				if (info.getSkill().getTargetType() == L2TargetType.GROUND) {
+				if (info.getSkill().getTargetType() == TargetType.GROUND) {
 					final Location wordPosition = player.getActingPlayer().getCurrentSkillWorldPosition();
 					if (wordPosition != null) {
 						x = wordPosition.getX();

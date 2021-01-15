@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="4600" levels="12" name="Reducing P. Def Stun">
-		<table name="#abnormalLvls"> 11 12 12 13 13 13 13 13 13 13 13 13 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 11 12 12 13 13 13 13 13 13 13 13 13 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume2"> 24 39 54 73 94 116 136 144 152 158 161 163 </table>
+		<table name="#mpConsume2"> 24 39 54 73 94 116 136 144 152 157 161 163 </table>
 		<table name="#pDef"> 0.83 0.8 0.8 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#physicalAttackPower"> 16 35 73 139 241 379 542 626 704 774 829 873 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="9" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="40" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="affectRange" val="150" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="-100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1800" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
@@ -22,13 +27,14 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="TARGET" />
 		<set name="trait" val="SHOCK" />
 		<effects>
 			<effect name="PhysicalAttack">
-				<param power="16" />
+				<param power="#physicalAttackPower" />
 			</effect>
-			<effect name="Stun">
+			<effect name="Stun" />
+			<effect name="Debuff">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
 		</effects>
@@ -456,44 +462,49 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4616" levels="1" name="Fake Petrification">
+	<skill id="4616" levels="1" name="Fake Petrificiation">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="360" />
 		<set name="abnormalType" val="TURN_STONE" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="EARTH" />
 		<set name="effectPoint" val="100" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="80" />
-		<set name="mpConsume2" val="58" />
 		<set name="mpConsume1" val="15" />
+		<set name="mpConsume2" val="58" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Stun" />
-			<effect name="BlockDamage">
-				<param block="HP"/>
-			</effect>
-			<effect name="BlockDamage">
-				<param block="MP"/>
-			</effect>
 			<effect name="BlockBuff" />
 			<effect name="BlockDebuff" />
-			<effect name="Buff">
+			<effect name="BlockDamage">
+				<param block="HP" />
+			</effect>
+			<effect name="BlockDamage">
+				<param block="MP" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="regHp" val="0" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4617" levels="1" name="Dispel Petrification">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="80" />
-		<set name="mpConsume2" val="58" />
 		<set name="mpConsume1" val="15" />
+		<set name="mpConsume2" val="58" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="TURN_STONE,2" />
@@ -520,16 +531,19 @@
 		</effects>
 	</skill>
 	<skill id="4619" levels="1" name="NPC Dispel Sleep">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
-		<set name="mpConsume2" val="35" />
+		<set name="mpConsume1" val="7" />
+		<set name="mpConsume2" val="28" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="SLEEP,1" />
@@ -637,23 +651,24 @@
 		</effects>
 	</skill>
 	<skill id="4624" levels="12" name="Decrease HP Regeneration Rate">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Zone Skill -->
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="HEAL_EFFECT_DOWN" />
 		<set name="activateRate" val="10" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill1269" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="healEffect" val="0" />
@@ -661,25 +676,26 @@
 		</effects>
 	</skill>
 	<skill id="4625" levels="12" name="Decrease Speed">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvls"> 1 2 2 3 3 3 3 3 3 3 3 3 </table>
+		<table name="#abnormalLvl"> 1 2 2 3 3 3 3 3 3 3 3 3 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#runSpd"> 0.9 0.8 0.8 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="10" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill1160" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="#runSpd" />
@@ -687,22 +703,27 @@
 		</effects>
 	</skill>
 	<skill id="4626" levels="12" name="NPC Buff - Physical Barrier">
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume2"> 7 10 14 18 23 28 33 35 37 38 39 39 </table>
-		<table name="#pDef"> 1.05 1.11 1.17 1.25 1.33 1.43 1.67 2 2.33 2.67 3 3.33 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume1"> 2 2 3 4 5 6 7 7 8 8 8 8 </table>
+		<table name="#mpConsume2"> 5 8 11 14 18 22 26 28 29 30 31 31 </table>
+		<table name="#pDef"> 1.05 1.11 1.17 1.25 1.33 1.43 1.67 2 3.33 10 10 10 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="PD_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
@@ -710,22 +731,27 @@
 		</effects>
 	</skill>
 	<skill id="4627" levels="12" name="NPC Buff - Magical Barrier">
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
+		<table name="#mDef"> 1.05 1.11 1.17 1.25 1.33 1.43 1.67 2 3.33 10 10 10 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mDef"> 1.05 1.11 1.17 1.25 1.33 1.43 1.67 2 2.33 2.67 3 3.33 </table>
-		<table name="#mpConsume2"> 7 10 14 18 23 28 33 35 37 38 39 39 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume1"> 2 2 3 4 5 6 7 7 8 8 8 8 </table>
+		<table name="#mpConsume2"> 5 8 11 14 18 22 26 28 29 30 31 31 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="MD_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="mDef" val="#mDef" />
@@ -733,273 +759,388 @@
 		</effects>
 	</skill>
 	<skill id="4628" levels="1" name="Mysterious Aura">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="4629" levels="12" name="NPC MR - HP Drain">
+		<!-- High Five Confirmed -->
+		<table name="#hpDrainPower"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume2"> 18 29 40 53 68 83 98 104 109 113 115 117 </table>
-		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
+		<table name="#mpConsume1"> 4 6 8 10 13 16 19 20 21 21 22 22 </table>
+		<table name="#mpConsume2"> 13 22 30 39 50 62 73 77 81 84 86 87 </table>
+		<set name="affectScope" val="SINGLE" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
-		<set name="attributeType" val="UNHOLY" />
-		<set name="attributePower" val="20" />
+		<set name="hitCancelTime" val="2500" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<effects>
 			<effect name="HpDrain">
-				<param power="#power" />
-				<param drain="0.2" />
+				<param power="#hpDrainPower" />
+				<param drain="0.20" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4630" levels="12" name="NPC MR - Twister">
+		<!-- High Five Confirmed -->
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume2"> 13 20 27 35 45 55 65 69 73 75 77 78 </table>
-		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
+		<table name="#magicalAttackPower"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
+		<table name="#mpConsume1"> 3 4 6 7 9 11 13 14 15 15 16 16 </table>
+		<table name="#mpConsume2"> 10 16 21 28 36 44 52 55 58 60 61 62 </table>
+		<set name="affectScope" val="SINGLE" />
+		<set name="attributePower" val="20" />
+		<set name="attributeType" val="WIND" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="900" />
-		<set name="attributeType" val="WIND" />
-		<set name="attributePower" val="20" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<effects>
 			<effect name="MagicalAttack">
-				<param power="#power" />
+				<param power="#magicalAttackPower" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4631" levels="3" name="NPC Buff - Acumen Shield WildMagic">
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
 		<table name="#mCritRate"> 3 4 4 </table>
-		<table name="#mpConsume2"> 29 53 83 </table>
-		<table name="#pDef"> 1.8 1.12 1.15 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#magicLvl"> 20 40 60 </table>
+		<table name="#mpConsume1"> 6 11 17 </table>
+		<table name="#mpConsume2"> 23 42 66 </table>
+		<table name="#pDef"> 1.08 1.12 1.15 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="MULTI_BUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="pDef" val="#pDef" />
-				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="mCritRate" val="#mCritRate" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtkSpd" val="#mAtkSpd" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="#pDef" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4632" levels="3" name="NPC Buff - Acumen Empower WildMagic">
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#mAtk"> 1.55 1.65 1.75 </table>
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
 		<table name="#mCritRate"> 3 4 4 </table>
-		<table name="#mpConsume2"> 29 53 83 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#magicLvl"> 20 40 60 </table>
+		<table name="#mpConsume1"> 6 11 17 </table>
+		<table name="#mpConsume2"> 23 42 66 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="MULTI_BUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="mAtk" val="#mAtk" />
-				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="mCritRate" val="#mCritRate" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtkSpd" val="#mAtkSpd" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="#mAtk" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4633" levels="3" name="NPC Buff - Acumen Empower Berserk">
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#mAtk"> 1.71 1.82 2.03 </table>
 		<table name="#mAtkSpd"> 1.21 1.29 1.4 </table>
 		<table name="#mDef"> 0.9 0.9 0.84 </table>
-		<table name="#mpConsume2"> 29 53 83 </table>
+		<table name="#magicLvl"> 20 40 60 </table>
+		<table name="#mpConsume1"> 6 11 17 </table>
+		<table name="#mpConsume2"> 23 42 66 </table>
 		<table name="#pAtk"> 1.05 1.05 1.08 </table>
 		<table name="#pAtkSpd"> 1.05 1.05 1.08 </table>
 		<table name="#pDef"> 0.95 0.95 0.92 </table>
+		<table name="#rEvas"> 2 2 4 </table>
 		<table name="#runSpd"> 5 5 8 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="MULTI_BUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="Debuff">
+				<sub stat="rEvas" val="#rEvas" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
-				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="Buff">
+				<add stat="runSpd" val="#runSpd" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4634" levels="3" name="NPC Buff - Acumen Empower DamageShield">
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#mAtk"> 1.55 1.65 1.75 </table>
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
-		<table name="#mpConsume2"> 29 53 83 </table>
-		<table name="#reflect"> 10 15 20 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#magicLvl"> 20 40 60 </table>
+		<table name="#mpConsume1"> 6 11 17 </table>
+		<table name="#mpConsume2"> 23 42 66 </table>
+		<table name="#reflectDam"> 10 15 20 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="MULTI_BUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="mAtk" val="#mAtk" />
+				<add stat="reflectDam" val="#reflectDam" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="reflectDam" val="#reflect" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="#mAtk" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4635" levels="3" name="NPC Buff - Acumen Berserk WildMagic">
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#mAtk"> 1.1 1.1 1.16 </table>
 		<table name="#mAtkSpd"> 1.21 1.29 1.4 </table>
 		<table name="#mCritRate"> 3 4 4 </table>
 		<table name="#mDef"> 0.9 0.9 0.84 </table>
-		<table name="#mpConsume2"> 29 53 83 </table>
+		<table name="#magicLvl"> 20 40 60 </table>
+		<table name="#mpConsume1"> 6 11 17 </table>
+		<table name="#mpConsume2"> 23 42 66 </table>
 		<table name="#pAtk"> 1.05 1.05 1.08 </table>
 		<table name="#pAtkSpd"> 1.05 1.05 1.08 </table>
 		<table name="#pDef"> 0.95 0.95 0.92 </table>
+		<table name="#rEvas"> 2 2 4 </table>
 		<table name="#runSpd"> 5 5 8 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="MULTI_BUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="mAtk" val="#mAtk" />
-				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
-				<mul stat="pDef" val="#pDef" />
-				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="Debuff">
+				<sub stat="rEvas" val="#rEvas" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="mCritRate" val="#mCritRate" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtkSpd" val="#mAtkSpd" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="Buff">
+				<add stat="runSpd" val="#runSpd" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4636" levels="3" name="NPC Buff - Acumen Berserk DamageShield">
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#mAtk"> 1.1 1.1 1.16 </table>
 		<table name="#mAtkSpd"> 1.21 1.29 1.4 </table>
 		<table name="#mDef"> 0.9 0.9 0.84 </table>
-		<table name="#mpConsume2"> 29 53 83 </table>
+		<table name="#magicLvl"> 20 40 60 </table>
+		<table name="#mpConsume1"> 6 11 17 </table>
+		<table name="#mpConsume2"> 23 42 66 </table>
 		<table name="#pAtk"> 1.05 1.05 1.08 </table>
 		<table name="#pAtkSpd"> 1.05 1.05 1.08 </table>
 		<table name="#pDef"> 0.95 0.95 0.92 </table>
-		<table name="#reflect"> 10 15 20 </table>
+		<table name="#rEvas"> 2 2 4 </table>
+		<table name="#reflectDam"> 10 15 20 </table>
 		<table name="#runSpd"> 5 5 8 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="MULTI_BUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="Debuff">
+				<sub stat="rEvas" val="#rEvas" />
+			</effect>
+			<effect name="Buff">
+				<add stat="reflectDam" val="#reflectDam" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
-				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="mDef" val="#mDef" />
-				<add stat="reflectDam" val="#reflect" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="#pDef" />
+			</effect>
+			<effect name="Buff">
+				<add stat="runSpd" val="#runSpd" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4637" levels="3" name="NPC Buff - Acumen WildMagic DamageShield">
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#magicLvl"> 20 40 60 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
 		<table name="#mCritRate"> 3 4 4 </table>
-		<table name="#mpConsume2"> 29 53 83 </table>
-		<table name="#reflect"> 10 15 20 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#magicLvl"> 20 40 60 </table>
+		<table name="#mpConsume1"> 6 11 17 </table>
+		<table name="#mpConsume2"> 23 42 66 </table>
+		<table name="#reflectDam"> 10 15 20 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="MULTI_BUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="#mAtkSpd" />
+				<add stat="reflectDam" val="#reflectDam" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="mCritRate" val="#mCritRate" />
-				<add stat="reflectDam" val="#reflect" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
 		</effects>
 	</skill>
@@ -1161,19 +1302,20 @@
 		</effects>
 	</skill>
 	<skill id="4644" levels="2" name="Area Buff - Haste">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
 		<table name="#magicLvl"> 30 70 </table>
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
@@ -1181,59 +1323,62 @@
 		</effects>
 	</skill>
 	<skill id="4645" levels="3" name="Area Buff - Focus">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#critRate"> 1.2 1.25 1.3 </table>
 		<table name="#magicLvl"> 20 40 60 </table>
-		<table name="#rCrit"> 1.15 1.25 1.3 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="CRITICAL_PROB_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="critRate" val="#rCrit" />
+				<mul stat="critRate" val="#critRate" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4646" levels="3" name="Area Buff - Death Whisper">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#cAtk"> 1.25 1.3 1.35 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#critDmg"> 1.25 1.3 1.35 </table>
 		<table name="#magicLvl"> 20 40 60 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="CRITICAL_DMG_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="critDmg" val="#cAtk" />
+				<mul stat="critDmg" val="#critDmg" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4647" levels="3" name="Area Buff - Might">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#pAtk"> 1.08 1.12 1.15 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="PA_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
@@ -1241,19 +1386,20 @@
 		</effects>
 	</skill>
 	<skill id="4648" levels="3" name="Area Buff - Shield">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#pDef"> 1.08 1.12 1.15 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="PD_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
@@ -1826,25 +1972,26 @@
 		</effects>
 	</skill>
 	<skill id="4671" levels="1" name="AV - Teleport">
-		<set name="castRange" val="1500" />
-		<set name="effectRange" val="2000" />
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
-		<effects>
-			<effect name="TeleportToTarget" />
-			<effect name="TargetMe" />
-		</effects>
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="4672" levels="1" name="NPC Corpse Remove">
-		<!-- TODO: Needs to be done -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="effectRange" val="1500" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CORPSE_MOB" />
+		<effects>
+			<effect name="ConsumeBody" />
+		</effects>
 	</skill>
 	<skill id="4673" levels="12" name="NPC Dispel Offensive Buff">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1993,20 +2140,24 @@
 		</effects>
 	</skill>
 	<skill id="4680" levels="1" name="Valakas Lava Skin">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Valakas Skills -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="3300" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="pDef" val="10" />
 				<mul stat="mDef" val="10" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="10" />
 			</effect>
 		</effects>
 	</skill>
@@ -2172,14 +2323,15 @@
 		</effects>
 	</skill>
 	<skill id="4687" levels="1" name="Valakas Tail Stomp">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Valakas Skills -->
-		<!-- Valakas Tail Stomp Visual -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="4688" levels="1" name="Valakas Stun">
 		<!-- Confirmed CT2.5 -->
@@ -2270,46 +2422,50 @@
 		</effects>
 	</skill>
 	<skill id="4691" levels="5" name="Valakas Regeneration">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Valakas Skills -->
-		<table name="#abnormalLvls"> 11 12 13 14 15 </table>
+		<table name="#abnormalLvl"> 11 12 13 14 15 </table>
 		<table name="#regHp"> 0.15 0.3 0.5 0.8 1 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="HP_REGEN_DOWN" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<effect name="Buff">
+			<effect name="Debuff">
 				<mul stat="regHp" val="#regHp" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4692" levels="1" name="Quest BOSS Big Body">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="BIG_BODY" />
 		<set name="abnormalVisualEffect" val="BIG_BODY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="76" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Grow" />
 		</effects>
 	</skill>
 	<skill id="4693" levels="1" name="Quest BOSS Dispel Big Body">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="76" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="DispelBySlot">
 				<param dispel="BIG_BODY,1" />
@@ -2317,37 +2473,53 @@
 		</effects>
 	</skill>
 	<skill id="4694" levels="1" name="Ultimate Debuff">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ULTIMATE_DEBUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="60" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="0.55" />
-				<sub stat="accCombat" val="4" />
-				<sub stat="rEvas" val="4" />
-				<mul stat="pDef" val="0.55" />
 				<mul stat="pAtkSpd" val="0.75" />
+			</effect>
+			<effect name="Debuff">
+				<sub stat="rEvas" val="4" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="critRate" val="0.77" />
+			</effect>
+			<effect name="Debuff">
+				<sub stat="accCombat" val="6" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="mDef" val="0.2" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pAtk" val="0.55" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.55" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4695" levels="1" name="Ultimate Debuff">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ULTIMATE_DEBUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="60" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.2" />
@@ -2355,50 +2527,60 @@
 		</effects>
 	</skill>
 	<skill id="4696" levels="1" name="Ultimate Debuff">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ULTIMATE_DEBUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="60" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.2" />
 				<mul stat="mDef" val="0.2" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.2" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4697" levels="12" name="NPC Monster Hate">
-		<!-- TODO: Needs to be done -->
-		<table name="#effectPoints"> -410 -608 -853 -1134 -1427 -1695 -1903 -1973 -2024 -2064 -2097 -2123 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> -410 -608 -853 -1134 -1427 -1695 -1903 -1973 -2024 -2064 -2097 -2123 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume2"> 18 29 40 53 68 83 100 104 109 113 115 117 </table>
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<table name="#mpConsume1"> 4 6 8 11 14 17 22 21 22 23 23 24 </table>
+		<table name="#mpConsume2"> 14 23 32 42 54 66 78 83 87 90 92 93 </table>
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="4698" levels="12" name="Area Buff - HP Regeneration">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Zone Skill -->
-		<table name="#abnormalLvls"> 3 4 5 6 7 8 9 10 11 12 13 14 </table>
+		<table name="#abnormalLvl"> 3 4 5 6 7 8 9 10 11 12 13 14 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#regHp"> 1.2 1.3 1.4 1.5 1.75 2 3 4 5 6 8.5 11 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="HP_REGEN_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="regHp" val="#regHp" />
@@ -2406,34 +2588,39 @@
 		</effects>
 	</skill>
 	<skill id="4699" levels="13" name="Blessing of Queen">
-		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 2 3 3 3 3 3 3 3 3 3 3 3 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 3 3 3 3 3 3 3 3 3 3 </table>
 		<table name="#abnormalTime"> 120 120 120 150 165 180 195 210 225 240 255 270 285 </table>
-		<table name="#cAtk"> 1.2 1.22 1.25 1.25 1.25 1.25 1.25 1.25 1.25 1.25 1.25 1.25 1.25 </table>
-		<table name="#effectPoints"> 541 611 659 666 669 673 676 679 681 684 687 689 692 </table>
+		<table name="#critDmg"> 1.2 1.22 1.25 1.25 1.25 1.25 1.25 1.25 1.25 1.25 1.25 1.25 1.25 </table>
+		<table name="#critRate"> 1.25 1.27 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 </table>
+		<table name="#effectPoint"> 541 611 659 666 669 673 676 679 681 684 687 689 692 </table>
 		<table name="#magicLvl"> 57 66 75 77 78 79 80 81 82 83 84 85 86 </table>
-		<table name="#mpConsume2"> 97 125 155 161 165 169 172 176 179 183 186 189 193 </table>
 		<table name="#mpConsume1"> 25 32 39 41 42 43 43 44 45 46 47 48 49 </table>
-		<table name="#rCrit"> 1.25 1.27 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume2"> 97 125 155 161 165 169 172 176 179 183 186 189 193 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="BUFF_QUEEN_OF_CAT" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="affectRange" val="1000" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="affectScope" val="PARTY" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1331" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="critRate" val="#rCrit" />
-				<mul stat="critDmg" val="#cAtk" />
+				<mul stat="critDmg" val="#critDmg" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="critRate" val="#critRate" />
 			</effect>
 		</effects>
 	</skill>

@@ -18,6 +18,9 @@
  */
 package com.l2jserver.datapack.handlers.targethandlers;
 
+import static com.l2jserver.gameserver.model.skills.targets.TargetType.TARGET;
+import static com.l2jserver.gameserver.network.SystemMessageId.INCORRECT_TARGET;
+
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Character;
@@ -25,22 +28,28 @@ import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.TargetType;
 
 /**
- * Target Pet handler.
- * @author UnAfraid
+ * Target target type handler.
+ * @author Zoey76
+ * @version 2.6.2.0
  */
-public class Pet implements ITargetTypeHandler {
+public class Target implements ITargetTypeHandler {
 	@Override
 	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		if (activeChar.hasPet()) {
-			return new L2Character[] {
-				activeChar.getSummon()
-			};
+		if (target == null) {
+			return EMPTY_TARGET_LIST;
 		}
-		return EMPTY_TARGET_LIST;
+		
+		final var player = activeChar.getActingPlayer();
+		if ((player != null) && !player.getCurrentSkill().isCtrlPressed() && target.isAutoAttackable(activeChar)) {
+			activeChar.sendPacket(INCORRECT_TARGET);
+			return EMPTY_TARGET_LIST;
+		}
+		
+		return skill.getAffectScope().affectTargets(activeChar, target, skill).toArray(EMPTY_TARGET_LIST);
 	}
 	
 	@Override
 	public Enum<TargetType> getTargetType() {
-		return TargetType.PET;
+		return TARGET;
 	}
 }

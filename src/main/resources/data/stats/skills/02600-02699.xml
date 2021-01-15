@@ -361,15 +361,18 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2630" levels="1" name="Presentation - Collect Items">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
-		<set name="effectRange" val="1200" />
+		<set name="effectRange" val="1500" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="3000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<cond msgId="113" addName="1">
 			<and>
 				<player flyMounted="true" />

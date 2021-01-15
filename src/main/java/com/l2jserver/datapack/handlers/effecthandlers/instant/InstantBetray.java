@@ -76,9 +76,10 @@ public final class InstantBetray extends AbstractEffect {
 			return;
 		}
 		
-		effected.getAI().setIntention(AI_INTENTION_ATTACK, target);
+		final var effectedAI = effected.getAI();
+		effectedAI.setIntention(AI_INTENTION_ATTACK, target);
 		
-		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(() -> effected.getAI().setIntention(AI_INTENTION_IDLE, target), 0, time, SECONDS);
+		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(() -> effectedAI.setIntention(AI_INTENTION_IDLE, target), 0, time, SECONDS);
 	}
 	
 	@Override

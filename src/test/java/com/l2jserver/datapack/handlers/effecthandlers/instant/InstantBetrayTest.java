@@ -5,11 +5,11 @@ import static com.l2jserver.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.expectLastCall;
 import static org.powermock.api.easymock.PowerMock.mockStatic;
-import static org.powermock.api.easymock.PowerMock.replay;
+import static org.powermock.api.easymock.PowerMock.replayAll;
 
 import java.util.Map;
 
-import org.easymock.Mock;
+import org.powermock.api.easymock.annotation.Mock;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -29,7 +29,10 @@ import com.l2jserver.gameserver.model.stats.Formulas;
  * @author Zoey76
  * @version 2.6.2.0
  */
-@PrepareForTest(Formulas.class)
+@PrepareForTest({
+	BuffInfo.class,
+	Formulas.class
+})
 public class InstantBetrayTest extends AbstractTest {
 	
 	@Mock
@@ -67,7 +70,7 @@ public class InstantBetrayTest extends AbstractTest {
 	public void test_effected_is_raid() {
 		expect(buffInfo.getEffected()).andReturn(effected);
 		expect(effected.isRaid()).andReturn(true);
-		replay(buffInfo, effected);
+		replayAll();
 		
 		effect.onStart(buffInfo);
 	}
@@ -79,7 +82,7 @@ public class InstantBetrayTest extends AbstractTest {
 		expect(effected.isServitor()).andReturn(false);
 		expect(effected.isSummon()).andReturn(false);
 		expect(effected.isRaidMinion()).andReturn(false);
-		replay(buffInfo, effected);
+		replayAll();
 		
 		effect.onStart(buffInfo);
 	}
@@ -95,7 +98,7 @@ public class InstantBetrayTest extends AbstractTest {
 		expect(effected.getActingPlayer()).andReturn(masterPlayer);
 		expect(Formulas.calcProbability(80, effector, effected, skill)).andReturn(false);
 		expect(effected.getAI()).andReturn(creatureAI);
-		replay(buffInfo, effected, effector, skill, masterPlayer, Formulas.class);
+		replayAll();
 		
 		effect.onStart(buffInfo);
 	}
@@ -115,7 +118,7 @@ public class InstantBetrayTest extends AbstractTest {
 		expectLastCall();
 		creatureAI.setIntention(AI_INTENTION_IDLE, masterPlayer);
 		expectLastCall();
-		replay(buffInfo, effected, effector, skill, masterPlayer, creatureAI, Formulas.class);
+		replayAll();
 		
 		effect.onStart(buffInfo);
 	}
@@ -136,7 +139,7 @@ public class InstantBetrayTest extends AbstractTest {
 		expectLastCall();
 		creatureAI.setIntention(AI_INTENTION_IDLE, masterPlayer);
 		expectLastCall();
-		replay(buffInfo, effected, effector, skill, masterPlayer, creatureAI, Formulas.class);
+		replayAll();
 		
 		effect.onStart(buffInfo);
 	}
@@ -158,7 +161,7 @@ public class InstantBetrayTest extends AbstractTest {
 		expectLastCall();
 		creatureAI.setIntention(AI_INTENTION_IDLE, effectedLeader);
 		expectLastCall();
-		replay(buffInfo, effectedMinion, effectedLeader, effector, skill, creatureAI, Formulas.class);
+		replayAll();
 		
 		effect.onStart(buffInfo);
 	}

@@ -325,24 +325,44 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="23017" levels="1" name="Holiday Festival">
+	<skill id="23017" levels="1" name="Christmas Festival">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="BR_EVENT_BUF1" />
+		<set name="abnormalType" val="BR_EVENT_BUF10" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
 		<set name="icon" val="BranchSys.icon.br_xmas_reward_buff_i00" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<effect name="MaxHp">
+			<effect name="Buff">
+				<mul stat="physicalMpConsumeRate" val="0.95" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="magicalMpConsumeRate" val="0.95" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="danceMpConsumeRate" val="0.95" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.15" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.2" />
+			</effect>
+			<effect name="MaxCp">
 				<param power="40" />
 				<param type="PER" />
 			</effect>
-			<effect name="MaxCp">
+			<effect name="MaxHp">
 				<param power="40" />
 				<param type="PER" />
 			</effect>
@@ -352,13 +372,12 @@
 			</effect>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.1" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="pDef" val="1.2" />
-				<mul stat="mDef" val="1.2" />
-				<mul stat="mAtk" val="1.15" />
+			</effect>
+			<effect name="Buff">
 				<add stat="runSpd" val="20" />
-				<mul stat="magicalMpConsumeRate" val="0.95" />
-				<mul stat="physicalMpConsumeRate" val="0.95" />
-				<mul stat="danceMpConsumeRate" val="0.95" />
 			</effect>
 		</effects>
 	</skill>
@@ -401,72 +420,94 @@
 		</effects>
 	</skill>
 	<skill id="23019" levels="3" name="Scissors">
-		<table name="#icons"> BranchSys.icon.br_xmas_gawi_i00 BranchSys.icon.br_xmas_bawi_i00 BranchSys.icon.br_xmas_bo_i00 </table>
+		<!-- High Five Confirmed -->
+		<table name="#icon"> BranchSys.icon.br_xmas_gawi_i00 BranchSys.icon.br_xmas_bawi_i00 BranchSys.icon.br_xmas_bo_i00 </table>
 		<table name="#magicLvl"> 1 2 3 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="BR_EVENT_BUF2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
 		<set name="castRange" val="500" />
 		<set name="effectRange" val="550" />
-		<set name="icon" val="#icons" />
+		<set name="icon" val="#icon" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="stayAfterDeath" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<effect name="ImmobileBuff" />
+			<effect name="Root" />
 		</effects>
 	</skill>
-	<skill id="23020" levels="1" name="Challenge the Turkey">
+	<skill id="23020" levels="1" name="Start attacking the Turkey">
+		<!-- High Five Confirmed -->
+		<set name="affectObject" val="ALL" />
 		<set name="affectRange" val="500" />
+		<set name="affectScope" val="RANGE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="coolTime" val="500" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="8000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="23021" levels="3" name="Turkey's Attack Scissors">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 	</skill>
-	<skill id="23022" levels="10" name="First Win">
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<table name="#icons"> BranchSys.icon.br_xmas_pcwin1_i00 BranchSys.icon.br_xmas_pcwin2_i00 BranchSys.icon.br_xmas_pcwin3_i00 BranchSys.icon.br_xmas_pcwin4_i00 BranchSys.icon.br_xmas_pcwin5_i00 BranchSys.icon.br_xmas_pcwin6_i00 BranchSys.icon.br_xmas_pcwin7_i00 BranchSys.icon.br_xmas_pcwin8_i00 BranchSys.icon.br_xmas_pcwin9_i00 BranchSys.icon.br_xmas_pcwin10_i00 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+	<skill id="23022" levels="10" name="First win">
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 </table>
+		<table name="#icon"> BranchSys.icon.br_xmas_pcwin1_i00 BranchSys.icon.br_xmas_pcwin2_i00 BranchSys.icon.br_xmas_pcwin3_i00 BranchSys.icon.br_xmas_pcwin4_i00 BranchSys.icon.br_xmas_pcwin5_i00 BranchSys.icon.br_xmas_pcwin6_i00 BranchSys.icon.br_xmas_pcwin7_i00 BranchSys.icon.br_xmas_pcwin8_i00 BranchSys.icon.br_xmas_pcwin9_i00 BranchSys.icon.br_xmas_pcwin10_i00 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="BR_EVENT_BUF3" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="icon" val="#icons" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="500" />
+		<set name="effectRange" val="550" />
+		<set name="icon" val="#icon" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="stayAfterDeath" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff" />
 		</effects>
 	</skill>
 	<skill id="23023" levels="1" name="Reset Consecutive Wins">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="castRange" val="500" />
+		<set name="effectRange" val="550" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
+		<effects>
+			<effect name="DispelBySlot">
+				<param dispel="BR_EVENT_BUF3,10" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23024" levels="1" name="Agathion of Love Special Skill - Energy Recovery Ability">
 		<!-- Recovers energy when acquiring Exp. for 20 minutes. Reuse Delay 12 hours -->
@@ -1412,7 +1453,7 @@
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<cond msgId="113" addName="1">
 			<target checkAbnormal="BR_EVENT_BUF2;1;false" />
 		</cond>
@@ -1434,7 +1475,7 @@
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<cond msgId="113" addName="1">
 			<target checkAbnormal="BR_EVENT_BUF2;1;false" />
 		</cond>
@@ -1514,10 +1555,10 @@
 				<mul stat="pDef" val="1.3" />
 				<mul stat="mDef" val="1.3" />
 				<add stat="runSpd" val="30" />
-				<mul stat="pAtk" val="1.2"/>
-				<mul stat="physicalMpConsumeRate" val="0.9"/>
+				<mul stat="pAtk" val="1.2" />
+				<mul stat="physicalMpConsumeRate" val="0.9" />
 				<mul stat="magicalMpConsumeRate" val="0.9" />
-				<mul stat="danceMpConsumeRate" val="0.9"/>
+				<mul stat="danceMpConsumeRate" val="0.9" />
 			</effect>
 		</effects>
 	</skill>
@@ -1563,9 +1604,9 @@
 				<mul stat="mDef" val="1.3" />
 				<add stat="runSpd" val="20" />
 				<mul stat="mAtk" val="1.45" />
-				<mul stat="physicalMpConsumeRate" val="0.9"/>
+				<mul stat="physicalMpConsumeRate" val="0.9" />
 				<mul stat="magicalMpConsumeRate" val="0.85" />
-				<mul stat="danceMpConsumeRate" val="0.9"/>
+				<mul stat="danceMpConsumeRate" val="0.9" />
 			</effect>
 		</effects>
 	</skill>
@@ -1602,9 +1643,9 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.2"/>
+				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="pDef" val="1.2" />
-				<mul stat="pAtk" val="1.1"/>
+				<mul stat="pAtk" val="1.1" />
 				<mul stat="critRate" val="1.2" />
 				<mul stat="critDmg" val="1.2" />
 			</effect>
@@ -1692,9 +1733,9 @@
 				<param type="PER" />
 			</effect>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.2"/>
-				<mul stat="runSpd" val="1.2"/>
-				<mul stat="regHp" val="1.2"/>
+				<mul stat="regMp" val="1.2" />
+				<mul stat="runSpd" val="1.2" />
+				<mul stat="regHp" val="1.2" />
 			</effect>
 		</effects>
 	</skill>
@@ -1772,9 +1813,9 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.2"/>
+				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="pDef" val="1.2" />
-				<mul stat="pAtk" val="1.1"/>
+				<mul stat="pAtk" val="1.1" />
 				<mul stat="critRate" val="1.2" />
 				<mul stat="critDmg" val="1.2" />
 			</effect>
@@ -1821,9 +1862,9 @@
 				<param type="PER" />
 			</effect>
 			<effect name="Buff">
-				<mul stat="regMp" val="1.2"/>
-				<mul stat="runSpd" val="1.2"/>
-				<mul stat="regHp" val="1.2"/>
+				<mul stat="regMp" val="1.2" />
+				<mul stat="runSpd" val="1.2" />
+				<mul stat="regHp" val="1.2" />
 			</effect>
 		</effects>
 	</skill>
@@ -1879,7 +1920,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23095" levels="1" name="Rotten Jack O'Lantern Card - Confirm Skill">
 		<!-- High Five Confirmed -->
@@ -1893,7 +1934,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23096" levels="1" name="Halloween Defeat">
 		<!-- High Five Confirmed -->
@@ -1906,7 +1947,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23097" levels="1" name="First win">
 		<!-- High Five Confirmed -->
@@ -1919,7 +1960,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23098" levels="1" name="2nd Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -1932,7 +1973,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23099" levels="1" name="3rd Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -1945,6 +1986,6 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 </list>

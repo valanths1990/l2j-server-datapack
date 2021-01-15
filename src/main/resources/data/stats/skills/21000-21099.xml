@@ -1609,10 +1609,10 @@
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="BlockDamage">
-				<param block="HP"/>
+				<param block="HP" />
 			</effect>
 			<effect name="BlockDamage">
-				<param block="MP"/>
+				<param block="MP" />
 			</effect>
 			<effect name="BlockDebuff" />
 			<effect name="Buff">
@@ -1664,7 +1664,7 @@
 		<set name="targetType" val="ONE" />
 		<cond>
 			<and>
-				<target myPartyExceptMe="true" />
+				<target myParty="EXCEPT_ME" />
 				<player callPc="true" />
 			</and>
 		</cond>
@@ -1820,7 +1820,7 @@
 		<set name="targetType" val="ONE" />
 		<cond>
 			<and>
-				<target myPartyExceptMe="true" />
+				<target myParty="EXCEPT_ME" />
 				<player callPc="true" />
 			</and>
 		</cond>

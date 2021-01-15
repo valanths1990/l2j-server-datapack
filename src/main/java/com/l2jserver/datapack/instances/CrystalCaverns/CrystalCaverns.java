@@ -50,7 +50,6 @@ import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -937,12 +936,7 @@ public final class CrystalCaverns extends AbstractInstance {
 				} else if (world.tears != npc) {
 					return "";
 				} else if (!world.copys.isEmpty()) {
-					boolean notAOE = true;
-					if ((skill != null) && ((skill.getTargetType() == L2TargetType.AREA) || (skill.getTargetType() == L2TargetType.FRONT_AREA) || (skill.getTargetType() == L2TargetType.BEHIND_AREA) || (skill.getTargetType() == L2TargetType.AURA) || (skill.getTargetType() == L2TargetType.FRONT_AURA)
-						|| (skill.getTargetType() == L2TargetType.BEHIND_AURA))) {
-						notAOE = false;
-					}
-					if (notAOE) {
+					if ((skill == null) || !skill.isAOE()) {
 						for (L2Npc copy : world.copys) {
 							copy.onDecay();
 						}

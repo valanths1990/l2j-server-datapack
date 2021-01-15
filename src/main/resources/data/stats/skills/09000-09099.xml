@@ -1294,19 +1294,21 @@
 		</effects>
 	</skill>
 	<skill id="9075" levels="1" name="Awful Soup">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="300" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="15507" /> <!-- Foul Fruit -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="9076" levels="1" name="Secret Door Key">
 		<!-- Confirmed CT2.5 -->

@@ -11,7 +11,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23101" levels="1" name="5th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -24,7 +24,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23102" levels="1" name="6th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -37,7 +37,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23103" levels="1" name="7th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -50,7 +50,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23104" levels="1" name="8th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -63,7 +63,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23105" levels="1" name="9th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -76,7 +76,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23106" levels="1" name="10th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -89,7 +89,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23107" levels="1" name="11th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -102,7 +102,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23108" levels="1" name="12th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -115,7 +115,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23109" levels="1" name="13th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -128,7 +128,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23110" levels="1" name="14th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -141,7 +141,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23111" levels="1" name="15th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -154,7 +154,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23112" levels="1" name="16th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -167,7 +167,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23113" levels="1" name="17th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -180,7 +180,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23114" levels="1" name="18th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -193,7 +193,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23115" levels="1" name="19th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -206,7 +206,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23116" levels="1" name="20th Consecutive Win">
 		<!-- High Five Confirmed -->
@@ -219,7 +219,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="23117" levels="1" name="Frozen Corpse Agathion Cute Trick">
 		<!-- High Five Confirmed -->
@@ -242,6 +242,8 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="irreplaceableBuff" val="true" />
@@ -295,9 +297,10 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
-	<skill id="23122" levels="1" name="Jack Game - Target">
+	<skill id="23122" levels="1" name="Jack's game - Target">
+		<!-- High Five Confirmed -->
 		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="600" />
@@ -308,7 +311,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
+		<effects>
+			<effect name="TargetMeProbability">
+				<param chance="100" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23123" levels="1" name="Gwangong Agathion Cute Trick">
 		<!-- High Five Confirmed -->
@@ -331,10 +339,12 @@
 		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="activateRate" val="0" />
 		<set name="affectScope" val="SINGLE" />
+		<set name="buffProtectLevel" val="1" />
 		<set name="castRange" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-1" />
 		<set name="effectRange" val="1300" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="700" />
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="irreplaceableBuff" val="true" />
@@ -344,6 +354,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="60000" />
 		<set name="reuseDelayLock" val="true" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ENEMY_ONLY" />
 		<cond msgId="2292">
@@ -369,6 +380,7 @@
 		</cond>
 	</skill>
 	<skill id="23126" levels="1" name="Gwanseum Nyang Nyang Agathion Special Skill - Blessing of Mercy">
+		<!-- High Five Confirmed -->
 		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="600" />
@@ -377,10 +389,15 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 		<cond msgId="2292">
 			<player agathionId="1552" />
 		</cond>
+		<effects>
+			<effect name="Heal">
+				<param power="201" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23127" levels="1" name="Blue Opera Agathion Cute Trick">
 		<!-- High Five Confirmed -->
@@ -397,6 +414,7 @@
 		</cond>
 	</skill>
 	<skill id="23128" levels="1" name="Blue Opera Agathion Special Skill - Sword of Recovery">
+		<!-- High Five Confirmed -->
 		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="600" />
@@ -406,22 +424,33 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 		<cond msgId="2292">
 			<player agathionId="1553" />
 		</cond>
+		<effects>
+			<effect name="Heal">
+				<param power="201" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23129" levels="1" name="Blue Opera Agathion Special Skill - Sword of Water">
+		<!-- High Five Confirmed -->
 		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY" />
 		<cond msgId="2292">
 			<player agathionId="1553" />
 		</cond>
+		<effects>
+			<effect name="MagicalAttack">
+				<param power="236" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23130" levels="1" name="Red Opera Agathion Cute Trick">
 		<!-- High Five Confirmed -->
@@ -438,16 +467,22 @@
 		</cond>
 	</skill>
 	<skill id="23131" levels="1" name="Red Opera Agathion Special Skill - Spear of Flames">
+		<!-- High Five Confirmed -->
 		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY" />
 		<cond msgId="2292">
 			<player agathionId="1554" />
 		</cond>
+		<effects>
+			<effect name="MagicalAttack">
+				<param power="236" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23132" levels="1" name="Opera Agathion Cute Trick">
 		<!-- High Five Confirmed -->
@@ -586,9 +621,11 @@
 		</effects>
 	</skill>
 	<skill id="23139" levels="1" name="Ladder Snow Agathion Cute Trick">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -792,130 +829,356 @@
 		</cond>
 	</skill>
 	<skill id="23153" levels="1" name="Prominent Outsider Adventurer's Ability">
-		<!-- For 20 minutes, raises HP by 20%, Max MP by 20%, and moving speed by 20%. Increases HP recovery bonus by 20% and MP recovery bonus by 20%. Increases resistance to de-buffs by 10%. Reuse delay is 4 hours. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="MULTI_BUFF" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
+		<set name="reuseDelayLock" val="true" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="2292">
+			<player hasAgathion="true" />
+		</cond>
+		<effects>
+			<effect name="Buff">
+				<mul stat="regHp" val="1.2" />
+			</effect>
+			<effect name="MaxHp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="regMp" val="1.2" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="debuffVuln" val="0.9" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="runSpd" val="1.2" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23154" levels="1" name="Kadomas Special Skill - Fireworks">
-		<set name="hitTime" val="4000" />
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="hitTime" val="6300" />
 		<set name="icon" val="BranchSys.icon.br_kadomatsu_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="60000" />
+		<set name="reuseDelayLock" val="true" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 	</skill>
-	<skill id="23155" levels="1" name="Reindeer Scratch">
-		<!-- Raises affection level. For 10 minutes, raises physical critical rate by 30% and chance of magical critical rate by 2. -->
+	<skill id="23155" levels="1" name="Hand of Warmth">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="BR_EVENT_BUF3" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill0436" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="critRate" val="1.3" />
+			</effect>
+			<effect name="Buff">
+				<add stat="mCritRate" val="2" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23156" levels="1" name="Gift of Thanks">
-		<!-- Energy level is maintained for 10 minutes. Reuse delay is 2 hours. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="VP_UP" />
 		<set name="abnormalVisualEffect" val="VP_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1086" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="7200000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="vitalityConsumeRate" val="0" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23157" levels="1" name="Donateloph's Blessing">
-		<!-- For 1 hour, increases Max HP, MP, and CP by 40%. Increases physical P. Def. and magic M. Def. by 20%. Increases moving speed by 20%. Increases physical P. Atk. by 10%. Increases physical Atk. Spd. by 20%. Bestows the ability to recover as HP 10% of the standard short-range physical damage inflicted on the enemy. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="BranchSys.icon.br_xmas_present_luck_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.2" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="40" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxHp">
+				<param power="40" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="40" />
+				<param type="PER" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.1" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="runSpd" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<add stat="absorbDam" val="10" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23158" levels="1" name="Raphaeloph's Blessing">
-		<!-- For 1 hour, increases Max HP, MP, and CP by 40%. Increasesw physical P. Def. and magic M. Def. by 20%. Increases moving speed by 20%. Increases physical P. Atk. by 10%. Increases the rate of Critical attack by 30%. Increases the power of Critical attack by 10%. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="BranchSys.icon.br_xmas_present_joy_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="critDmg" val="1.1" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="critRate" val="1.3" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.2" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="40" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxHp">
+				<param power="40" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="40" />
+				<param type="PER" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.1" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="runSpd" val="1.2" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23159" levels="1" name="Leonardoph's Blessing">
-		<!-- For 1 hour, increases Max HP, MP, and CP by 40%. Increases physical P. Def. and magic M. Def. by 20%. Increases moving speed by 20%. Increases magic M. Atk. by 10%. Increases magic Casting Spd. by 20%. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="BranchSys.icon.br_xmas_reward_buff_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="mAtkSpd" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.1" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.2" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="40" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxHp">
+				<param power="40" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="40" />
+				<param type="PER" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="runSpd" val="1.2" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23160" levels="1" name="Michelangeloph's Blessing">
-		<!-- For 1 hour, increases Max HP, MP, and CP by 40%. Increases physical P. Def. and magic M. Def. by 20%. Increases moving speed by 20%. Increases magical critical power by 20% and the chance of magical critical rate by 2. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="BranchSys.icon.br_xmas_weapon_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="mCritPower" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<add stat="mCritRate" val="2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.2" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="40" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxHp">
+				<param power="40" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="40" />
+				<param type="PER" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="runSpd" val="1.2" />
+			</effect>
+		</effects>
 	</skill>
-	<skill id="23161" levels="1" name="Rudolphina's Blessing - Maintain Vitality">
+	<skill id="23161" levels="1" name="Rudolph Girl's Blessing - Maintain Vitality">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="VP_UP" />
 		<set name="abnormalVisualEffect" val="VP_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="BranchSys.icon.br_xmas_miracle_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="vitalityConsumeRate" val="0" />
+			</effect>
+		</effects>
 	</skill>
-	<skill id="23162" levels="1" name="Rudolphina's Blessing - Replenish Vitality">
-		<!-- Confirmed CT2.5 -->
-		<!-- <set name="castRange" val="600" /> -->
-		<!-- <set name="effectRange" val="600" /> -->
+	<skill id="23162" levels="1" name="Rudolph Girl's Blessing - Replenish Energy">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="600" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -927,129 +1190,289 @@
 		</effects>
 	</skill>
 	<skill id="23163" levels="1" name="Turkey's Big Mistake">
-		<!-- For 1 hour, increases Max HP, MP, and CP by 50%. Increases physical P. Atk., magic M. Atk., physical P. Def., and magic M. Def. by 20%. Increases moving speed by 30%. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="BranchSys.icon.br_turkey_buff_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.2" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxHp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="50" />
+				<param type="PER" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="runSpd" val="1.3" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23164" levels="1" name="Opera Agathion Special Skill - Sword of Life">
-		<!-- Can use the ability of Blessed Resurrection through the power of life. Reuse delay is 12 hours. -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
+		<set name="effectRange" val="600" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="43200000" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="PC_BODY" />
 		<cond msgId="2292">
-			<player agathionId="1555" />
+			<and>
+				<player canResurrect="true" />
+				<player agathionId="1555" />
+			</and>
 		</cond>
+		<effects>
+			<effect name="Resurrection">
+				<param power="200" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23165" levels="1" name="Inadequate Affection">
-		<!-- For 10 seconds, moving speed decreases by 2%, and your head gets bigger. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="BIG_HEAD" />
 		<set name="abnormalVisualEffect" val="BIG_HEAD" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill4443" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="ETC" />
+		<effects>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="0.98" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23166" levels="1" name="Energized Rose Spirit">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="6000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<!-- TODO: Need new effect i_dispel_by_name. -->
+			<effect name="InstantDispelByName">
+				<param id="22158" />
+			</effect>
 			<effect name="VitalityPointUp">
 				<param value="5000" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="23167" levels="1" name="Rosy Seduction">
-		<!-- Increases Max HP by 20%, Max MP by 20%, and the moving speed by 20% for 5 minutes. Increases the resistance to de-buffs by 10%. Reuse delay 10 minutes. Consumes 3 Rose Essence during skill use. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="BR_EVENT_BUF5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
+		<set name="effectRange" val="1400" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="BranchSys2.icon.br_rosalia_rose_red_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="-1" />
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
+		<set name="itemConsumeCount" val="3" />
+		<set name="itemConsumeId" val="20904" />
+		<set name="magicLvl" val="-3" />
 		<set name="operateType" val="A2" />
+		<set name="reuseDelay" val="600000" />
+		<set name="reuseDelayLock" val="true" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
+		<effects>
+			<effect name="CallSkill">
+				<param skillId="23170" />
+			</effect>
+			<effect name="MaxHp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="20" />
+				<param type="PER" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="debuffVuln" val="0.9" />
+			</effect>
+			<effect name="Buff">
+				<add stat="runSpd" val="20" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23168" levels="1" name="Critical Seduction">
-		<!-- Increases party members' Max HP by 30%, Max MP by 30%, Max CP by 30%, physical P. Def. by 30%, magic M. Def. by 30%, moving speed by 20%, and physical P. Atk. by 10%, and decreases MP consumption during skill use by 15% for 20 minutes. Reuse delay 40 minutes. Consumes 10 Rose Essence during skill use. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="BR_EVENT_BUF5" />
+		<set name="affectObject" val="FRIEND" />
+		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="PARTY" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
+		<set name="effectRange" val="1400" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="BranchSys2.icon.br_rosalia_rose_red_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="-1" />
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
+		<set name="itemConsumeCount" val="10" />
+		<set name="itemConsumeId" val="20904" />
+		<set name="magicLvl" val="-3" />
 		<set name="operateType" val="A2" />
+		<set name="reuseDelay" val="2400000" />
+		<set name="reuseDelayLock" val="true" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="trait" val="ETC" />
+		<effects>
+			<effect name="CallSkill">
+				<param skillId="23169" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="physicalMpConsumeRate" val="0.85" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="magicalMpConsumeRate" val="0.85" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="danceMpConsumeRate" val="0.85" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.2" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.3" />
+			</effect>
+			<effect name="MaxCp">
+				<param power="30" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxHp">
+				<param power="30" />
+				<param type="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param power="30" />
+				<param type="PER" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.1" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.3" />
+			</effect>
+			<effect name="Buff">
+				<add stat="runSpd" val="20" />
+			</effect>
+		</effects>
 	</skill>
-	<skill id="23169" levels="1" name="Mesmerized">
-		<!-- Critical Seduction has left you mesmerized. You cannot be buffed with Critical Seduction again during the next 40 minutes. -->
+	<skill id="23169" levels="1" name="Mesmerization">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2400" />
 		<set name="abnormalType" val="BR_EVENT_BUF6" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="buffProtectLevel" val="2" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
+		<set name="effectRange" val="1400" />
 		<set name="icon" val="BranchSys2.icon.br_rosalia_rose_blue_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="-1" />
+		<set name="isMagic" val="1" />
+		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="trait" val="ETC" />
 	</skill>
-	<skill id="23170" levels="1" name="Mesmerized">
-		<!-- Rosy Seduction has left you mesmerized. You cannot be buffed with Rosy Seduction again during the next 10 minutes. -->
+	<skill id="23170" levels="1" name="Mesmerization">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="BR_EVENT_BUF7" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="buffProtectLevel" val="2" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
+		<set name="effectRange" val="1400" />
 		<set name="icon" val="BranchSys2.icon.br_rosalia_rose_white_i00" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="-1" />
+		<set name="isMagic" val="1" />
+		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="trait" val="ETC" />
 	</skill>
 	<skill id="23171" levels="1" name="Phoenix Agathion Cute Trick">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1058,21 +1481,24 @@
 			<player agathionId="1574" />
 		</cond>
 	</skill>
-	<skill id="23172" levels="1" name="Phoenix Agathion Special Skill - Nirvana Rebirth">
-		<!-- All HP, MP, CP are recovered, and becomes invincible for 5 seconds with the power of Phoenix. Possible to use under HP 30% only. Cooldown of 12 hours. -->
+	<skill id="23172" levels="1" name="Phoenix Agathion Special Skill - Nirvana Cycle">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="activateRate" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
-		<set name="hitTime" val="2000" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="43200000" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
@@ -1082,13 +1508,6 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="BlockDamage">
-				<param block="HP"/>
-			</effect>
-			<effect name="BlockDamage">
-				<param block="MP"/>
-			</effect>
-			<effect name="BlockDebuff" />
 			<effect name="Cp">
 				<param amount="9000" />
 			</effect>
@@ -1098,18 +1517,27 @@
 			<effect name="MpPerMax">
 				<param power="100" />
 			</effect>
+			<effect name="BlockDebuff" />
+			<effect name="BlockDamage">
+				<param block="HP" />
+			</effect>
+			<effect name="BlockDamage">
+				<param block="MP" />
+			</effect>
 		</effects>
 	</skill>
-	<skill id="23173" levels="1" name="Phoenix Agathion Special Skill - Oriental Phoenix">
-		<!-- All Debuff is canceled with the power of Phoenix. Cooldown of 4 hours. -->
+	<skill id="23173" levels="1" name="Phoenix Agathion Special Skill - Mountain Echoes">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
-		<set name="hitTime" val="2000" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill_agathion_special" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="14400000" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
@@ -1117,25 +1545,34 @@
 		</cond>
 		<effects>
 			<effect name="DispelByCategory">
-				<param slot="DEBUFF" rate="100" max="20" />
+				<param slot="DEBUFF" rate="100" max="10" />
 			</effect>
 		</effects>
 	</skill>
-	<skill id="23174" levels="1" name="Narrow Escape from Death">
-		<!-- Revives from death with completely recovered status. Buff/de-buff doesn't disappear at death but is maintained, though the Blessing of Noblesse and the Amulet of Luck will both be lost. Cooldown of 12 hours. -->
+	<skill id="23174" levels="1" name="Narrow Escape">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="RESURRECTION_SPECIAL" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
 		<set name="effectPoint" val="1" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="43200000" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
+		<cond msgId="2292">
+			<player hasAgathion="true" />
+		</cond>
 		<effects>
 			<effect name="ResurrectionSpecial">
 				<param resPower="100" />
@@ -1144,69 +1581,129 @@
 		</effects>
 	</skill>
 	<skill id="23175" levels="1" name="Soul Stealth">
-		<!-- Hides for 5 seconds, then bestows the ability not to provoke preemptive attacks from monsters for 2 minutes. Decreases moving speed by 50% while the skill is in effect. Reuse delay is 12 hours. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="HIDE" />
 		<set name="abnormalVisualEffect" val="STEALTH" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
 		<set name="effectPoint" val="1" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill_agathion_special" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="43200000" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="SilentMove" />
+			<effect name="Hide" />
+			<effect name="Buff">
+				<mul stat="runSpd" val="0.5" />
+			</effect>
+		</effects>
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="23177" skillLevel="1" />
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="23176" levels="1" name="Hide">
-		<!-- Hides for 5 seconds. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="HIDE" />
 		<set name="abnormalVisualEffect" val="STEALTH" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
 		<set name="effectPoint" val="1" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill0922" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="SilentMove" />
+			<effect name="Hide" />
+		</effects>
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="23178" skillLevel="1" />
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="23177" levels="1" name="Soul Stealth">
-		<!-- For 2 minutes, bestows the ability not to provoke preemptive attacks from monsters. Decreases moving speed by 50% while the skill is in effect. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="STEALTH" />
 		<set name="abnormalVisualEffect" val="STEALTH" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
 		<set name="effectPoint" val="1" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill_agathion_special" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="SilentMove" />
+			<effect name="Buff">
+				<mul stat="runSpd" val="0.5" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23178" levels="1" name="Soul Stealth">
-		<!-- For 2 minutes, bestows the ability not to provoke preemptive attacks from monsters. Decreases moving speed by 50% while the skill is in effect. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="STEALTH" />
 		<set name="abnormalVisualEffect" val="STEALTH" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="buffProtectLevel" val="1" />
+		<set name="castRange" val="600" />
 		<set name="effectPoint" val="1" />
+		<set name="effectRange" val="600" />
+		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill0411" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="irreplaceableBuff" val="true" />
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelayLock" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="TARGET" />
+		<effects>
+			<effect name="SilentMove" />
+			<effect name="Debuff">
+				<mul stat="runSpd" val="0.5" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23179" levels="1" name="Blessing of Vitality">
 		<!-- Confirmed CT2.5 -->

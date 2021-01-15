@@ -215,27 +215,28 @@
 		</effects>
 	</skill>
 	<skill id="4707" levels="13" name="Shade Sacrifice">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Summon Nightshade Skill -->
-		<table name="#amount"> 541 611 659 666 669 673 676 679 681 684 687 689 692 </table>
-		<table name="#effectPoints"> 589 700 789 804 810 816 826 835 844 852 860 867 874 </table>
+		<table name="#effectPoint"> 589 700 789 804 810 816 826 835 844 852 860 867 874 </table>
+		<table name="#healPower"> 541 611 659 666 669 673 676 679 681 684 687 689 692 </table>
 		<table name="#hpConsume"> 706 840 946 964 972 979 991 1002 1013 1023 1032 1041 1049 </table>
 		<table name="#magicLvl"> 57 66 75 77 78 79 80 81 82 83 84 85 86 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
 		<set name="hpConsume" val="#hpConsume" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<!-- NOTE: skill description mention party members, but is client typo, it could affect any single target -->
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
@@ -328,16 +329,19 @@
 		</effects>
 	</skill>
 	<skill id="4711" levels="12" name="Wild Defense">
-		<table name="#activateRates"> -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 15 </table>
-		<table name="#effectPoints"> 138 204 285 379 477 566 635 659 676 689 700 709 </table>
+		<!-- High Five Confirmed -->
+		<table name="#activateRate"> -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 15 </table>
+		<table name="#effectPoint"> 138 204 285 379 477 566 635 659 676 689 700 709 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume2"> 46 76 104 139 179 220 258 275 288 298 305 309 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ULTIMATE_BUFF" />
-		<set name="activateRate" val="#activateRates" />
+		<set name="activateRate" val="#activateRate" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="coolTime" val="400" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1100" />
 		<set name="icon" val="icon.skill0110" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -345,12 +349,18 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1200000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="ImmobileBuff">
-				<mul stat="mDef" val="5" />
-				<mul stat="pDef" val="5" />
 				<mul stat="pAtkSpd" val="0.3" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="5" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="5" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="runSpd" val="0.1" />
 			</effect>
 		</effects>
@@ -379,24 +389,29 @@
 		</effects>
 	</skill>
 	<skill id="4713" levels="12" name="Bright Heal">
-		<table name="#amount"> 33 61 98 145 198 251 298 316 330 338 341 342 </table>
-		<table name="#effectPoints"> 33 61 98 145 198 251 298 316 331 347 358 366 </table>
+		<!-- High Five Confirmed -->
+		<table name="#effectPoint"> 33 61 98 145 198 251 298 316 331 347 358 366 </table>
+		<table name="#healPower"> 33 61 98 145 198 251 298 316 331 347 358 366 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
-		<table name="#mpConsume2"> 5 9 11 15 19 23 27 28 30 30 32 32 </table>
+		<table name="#mpConsume1"> 1 2 3 3 4 5 6 6 6 6 7 7 </table>
+		<table name="#mpConsume2"> 4 7 9 12 15 18 21 22 24 24 25 25 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="coolTime" val="1000" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="hitCancelTime" val="1000" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill4713" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="12000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
@@ -424,6 +439,7 @@
 	<skill id="4717" levels="12" name="Heal Trick">
 		<!-- High Five Confirmed -->
 		<table name="#effectPoint"> 9 16 25 37 50 63 75 79 83 87 90 92 </table>
+		<table name="#healPower"> 9 16 25 37 50 63 75 79 83 87 90 92 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume1"> 1 2 3 4 4 5 6 7 7 7 7 7 </table>
 		<table name="#mpConsume2"> 4 6 9 13 16 20 23 25 26 26 27 27 </table>
@@ -431,6 +447,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill4717" />
 		<set name="isMagic" val="1" />
@@ -440,24 +457,25 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="OWNER_PET" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#effectPoint" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4718" levels="12" name="Greater Heal Trick">
 		<!-- High Five Confirmed -->
 		<table name="#effectPoint"> 62 113 184 272 371 471 558 592 620 651 672 685 </table>
+		<table name="#healPower"> 37 64 99 139 171 205 236 266 300 332 355 368 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume1"> 7 12 18 25 32 39 46 49 51 52 53 53 </table>
 		<table name="#mpConsume2"> 26 47 70 97 127 156 182 193 201 207 209 209 </table>
-		<table name="#power"> 37 64 99 139 171 205 236 266 300 332 355 368 </table>
 		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill4718" />
 		<set name="isMagic" val="1" />
@@ -467,10 +485,10 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="OWNER_PET" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#power" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
@@ -1895,242 +1913,292 @@
 		</effects>
 	</skill>
 	<skill id="4779" levels="12" name="BOSS Heal">
-		<!-- Boss Skill -->
-		<table name="#amount"> 1640 2824 4501 6612 9334 11649 12865 13406 13624 13544 13303 13157 </table>
+		<!-- High Five Confirmed -->
+		<table name="#healPower"> 2335 2929 4397 7086 10972 14364 16726 17954 19008 19977 13303 13157 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume2"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="CLAN_MEMBER" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4780" levels="12" name="BOSS Heal">
-		<!-- Boss Skill -->
-		<table name="#amount"> 1382 2381 3802 5590 7881 9832 10862 11314 11553 11661 11640 11578 </table>
+		<!-- High Five Confirmed -->
+		<table name="#healPower"> 1968 2469 3714 5990 9264 12124 14121 15152 16119 17200 11640 11578 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume2"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="CLAN_MEMBER" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4781" levels="12" name="BOSS Heal">
-		<!-- Boss Skill -->
-		<table name="#amount"> 736 1267 2024 2983 4204 5247 5787 6022 6144 6203 6199 6158 </table>
+		<!-- High Five Confirmed -->
+		<table name="#healPower"> 1047 1314 1978 3197 4942 6470 7524 8064 8573 9150 6199 6158 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume2"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="CLAN_MEMBER" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4782" levels="12" name="BOSS Heal">
-		<!-- Boss Skill -->
-		<table name="#amount"> 691 1191 1899 2799 3941 4922 5431 5657 5777 5838 5813 5789 </table>
+		<!-- High Five Confirmed -->
+		<table name="#healPower"> 984 1235 1855 2999 4632 6070 7061 7576 8060 8610 5813 5789 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume2"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="CLAN_MEMBER" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4783" levels="12" name="BOSS Heal">
-		<!-- Boss Skill -->
-		<table name="#amount"> 647 1115 1778 2607 3677 4597 5075 5293 5409 5458 5441 5421 </table>
+		<!-- High Five Confirmed -->
+		<table name="#healPower"> 921 1156 1737 2794 4323 5669 6598 7088 7546 8051 5441 5421 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume2"> 21 34 50 67 86 104 119 125 129 131 131 132 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="CLAN_MEMBER" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4784" levels="12" name="BOSS Chant of Life">
-		<!-- Boss Skill -->
-		<table name="#abnormalLvls"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
-		<table name="#hot"> 167 210 315 507 784 1026 1195 1283 1358 1427 951 940 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume2"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume1"> 9 14 20 27 35 42 48 50 52 53 53 53 </table>
+		<table name="#mpConsume2"> 34 55 79 107 138 165 191 200 206 209 209 210 </table>
+		<table name="#tickHpPower"> 167 210 315 507 784 1026 1195 1283 1358 1427 951 940 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="CLAN_MEMBER" />
+		<set name="targetType" val="TARGET" />
 		<effects>
+			<effect name="HpPerMax">
+				<param power="3" />
+			</effect>
 			<effect name="TickHp">
-				<param power="#hot" />
+				<param power="#tickHpPower" />
 				<param ticks="1" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4785" levels="12" name="BOSS Chant of Life">
-		<!-- Boss Skill -->
-		<table name="#abnormalLvls"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
-		<table name="#hot"> 141 177 266 428 662 866 1009 1083 1152 1229 832 827 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume2"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume1"> 9 14 20 27 35 42 48 50 52 53 53 53 </table>
+		<table name="#mpConsume2"> 34 55 79 107 138 165 191 200 206 209 209 210 </table>
+		<table name="#tickHpPower"> 141 177 266 428 662 866 1009 1083 1152 1229 832 827 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="CLAN_MEMBER" />
+		<set name="targetType" val="TARGET" />
 		<effects>
+			<effect name="HpPerMax">
+				<param power="3" />
+			</effect>
 			<effect name="TickHp">
-				<param power="#hot" />
+				<param power="#tickHpPower" />
 				<param ticks="1" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4786" levels="12" name="BOSS Chant of Life">
-		<!-- Boss Skill -->
-		<table name="#abnormalLvls"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
-		<table name="#hot"> 75 94 142 229 353 463 538 576 613 654 443 440 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume2"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume1"> 9 14 20 27 35 42 48 50 52 53 53 53 </table>
+		<table name="#mpConsume2"> 34 55 79 107 138 165 191 200 206 209 209 210 </table>
+		<table name="#tickHpPower"> 75 94 142 229 353 463 538 576 613 654 443 440 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="CLAN_MEMBER" />
+		<set name="targetType" val="TARGET" />
 		<effects>
+			<effect name="HpPerMax">
+				<param power="3" />
+			</effect>
 			<effect name="TickHp">
-				<param power="#hot" />
+				<param power="#tickHpPower" />
 				<param ticks="1" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4787" levels="12" name="BOSS Chant of Life">
-		<!-- Boss Skill -->
-		<table name="#abnormalLvls"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
-		<table name="#hot"> 71 89 133 215 331 434 505 542 576 615 416 414 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume2"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume1"> 9 14 20 27 35 42 48 50 52 53 53 53 </table>
+		<table name="#mpConsume2"> 34 55 79 107 138 165 191 200 206 209 209 210 </table>
+		<table name="#tickHpPower"> 71 89 133 215 331 434 505 542 576 615 416 414 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="CLAN_MEMBER" />
+		<set name="targetType" val="TARGET" />
 		<effects>
+			<effect name="HpPerMax">
+				<param power="3" />
+			</effect>
 			<effect name="TickHp">
-				<param power="#hot" />
+				<param power="#tickHpPower" />
 				<param ticks="1" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4788" levels="12" name="BOSS Chant of Life">
-		<!-- Boss Skill -->
-		<table name="#abnormalLvls"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
-		<table name="#hot"> 66 83 125 200 309 405 472 507 539 576 389 388 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 11 12 13 14 15 16 17 17 18 18 19 19 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
-		<table name="#mpConsume2"> 43 69 99 134 173 207 239 250 258 262 262 263 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#mpConsume1"> 9 14 20 27 35 42 48 50 52 53 53 53 </table>
+		<table name="#mpConsume2"> 34 55 79 107 138 165 191 200 206 209 209 210 </table>
+		<table name="#tickHpPower"> 66 83 125 200 309 405 472 507 539 576 389 388 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="CLAN_MEMBER" />
+		<set name="targetType" val="TARGET" />
 		<effects>
+			<effect name="HpPerMax">
+				<param power="3" />
+			</effect>
 			<effect name="TickHp">
-				<param power="#hot" />
+				<param power="#tickHpPower" />
 				<param ticks="1" />
+				<param mode="DIFF" />
 			</effect>
 		</effects>
 	</skill>

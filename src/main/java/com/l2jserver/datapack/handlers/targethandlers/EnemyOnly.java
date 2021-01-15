@@ -19,7 +19,7 @@
 package com.l2jserver.datapack.handlers.targethandlers;
 
 import static com.l2jserver.gameserver.model.skills.targets.AffectScope.SINGLE;
-import static com.l2jserver.gameserver.model.skills.targets.L2TargetType.ENEMY_ONLY;
+import static com.l2jserver.gameserver.model.skills.targets.TargetType.ENEMY_ONLY;
 import static com.l2jserver.gameserver.model.zone.ZoneId.PVP;
 import static com.l2jserver.gameserver.network.SystemMessageId.INCORRECT_TARGET;
 
@@ -28,7 +28,7 @@ import com.l2jserver.gameserver.instancemanager.DuelManager;
 import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
+import com.l2jserver.gameserver.model.skills.targets.TargetType;
 
 /**
  * Enemy Only target type handler.
@@ -157,7 +157,7 @@ public class EnemyOnly implements ITargetTypeHandler {
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType() {
+	public Enum<TargetType> getTargetType() {
 		return ENEMY_ONLY;
 	}
 }

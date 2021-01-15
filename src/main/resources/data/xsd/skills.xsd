@@ -67,6 +67,7 @@
 							<xs:enumeration value="resetQuest" />
 							<xs:enumeration value="reuseDelay" />
 							<xs:enumeration value="reuseDelayLock" />
+							<xs:enumeration value="reuseDelayType" />
 							<xs:enumeration value="rideState" />
 							<xs:enumeration value="simultaneousCast" />
 							<xs:enumeration value="soulMaxConsumeCount" />
@@ -166,7 +167,7 @@
 				<xs:attribute type="xs:short" name="active_skill_id" />
 				<xs:attribute type="xs:string" name="checkAbnormal" />
 				<xs:attribute type="xs:string" name="class_id_restriction" />
-				<xs:attribute type="xs:string" name="myPartyExceptMe" />
+				<xs:attribute type="xs:string" name="myParty" />
 				<xs:attribute type="xs:string" name="race" />
 				<xs:attribute type="xs:string" name="npcId" />
 				<xs:attribute type="xs:string" name="npcType" />
@@ -581,6 +582,7 @@
 					<xs:enumeration value="ImmobilePetBuff" />
 					<xs:enumeration value="InstantAgathionEnergy" />
 					<xs:enumeration value="InstantBetray" />
+					<xs:enumeration value="InstantDispelByName" />
 					<xs:enumeration value="Lethal" />
 					<xs:enumeration value="Lucky" />
 					<xs:enumeration value="MagicalAttack" />

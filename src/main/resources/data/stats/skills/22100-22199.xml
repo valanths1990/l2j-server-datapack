@@ -595,17 +595,18 @@
 		</effects>
 	</skill>
 	<skill id="22126" levels="1" name="Baby Food Skill">
-		<!-- TODO: Implement. -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="500" />
 		<set name="icon" val="BranchSys.br_baby_food_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20769" /> <!-- Rudolph Baby Food -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
+		<set name="reuseDelayLock" val="true" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<cond msgId="109">
 			<target npcId="1538" />
 		</cond>

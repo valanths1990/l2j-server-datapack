@@ -18,7 +18,7 @@
  */
 package com.l2jserver.datapack.handlers.targethandlers;
 
-import static com.l2jserver.gameserver.model.skills.targets.L2TargetType.ENEMY;
+import static com.l2jserver.gameserver.model.skills.targets.TargetType.ENEMY;
 import static com.l2jserver.gameserver.network.SystemMessageId.INCORRECT_TARGET;
 
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
@@ -26,12 +26,12 @@ import com.l2jserver.gameserver.model.L2Object;
 import com.l2jserver.gameserver.model.actor.L2Character;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
+import com.l2jserver.gameserver.model.skills.targets.TargetType;
 
 /**
  * Enemy target type handler.
  * @author Zoey76
- * @since 2.6.0.0
+ * @version 2.6.2.0
  */
 public class Enemy implements ITargetTypeHandler {
 	@Override
@@ -72,7 +72,7 @@ public class Enemy implements ITargetTypeHandler {
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType() {
+	public Enum<TargetType> getTargetType() {
 		return ENEMY;
 	}
 }

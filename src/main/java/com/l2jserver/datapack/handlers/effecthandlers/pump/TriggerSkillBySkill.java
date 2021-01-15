@@ -1,5 +1,5 @@
 /*
- * Copyright © 2004-2020 L2J DataPack
+ * Copyright © 2004-2021 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -32,7 +32,7 @@ import com.l2jserver.gameserver.model.events.listeners.ConsumerEventListener;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
+import com.l2jserver.gameserver.model.skills.targets.TargetType;
 
 /**
  * Trigger Skill By Skill effect implementation.
@@ -42,14 +42,7 @@ public final class TriggerSkillBySkill extends AbstractEffect {
 	private final int _castSkillId;
 	private final int _chance;
 	private final SkillHolder _skill;
-	private final L2TargetType _targetType;
-	
-	/**
-	 * @param attachCond
-	 * @param applyCond
-	 * @param set
-	 * @param params
-	 */
+	private final TargetType _targetType;
 	
 	public TriggerSkillBySkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) {
 		super(attachCond, applyCond, set, params);
@@ -57,7 +50,7 @@ public final class TriggerSkillBySkill extends AbstractEffect {
 		_castSkillId = params.getInt("castSkillId", 0);
 		_chance = params.getInt("chance", 100);
 		_skill = new SkillHolder(params.getInt("skillId", 0), params.getInt("skillLevel", 0));
-		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.ONE);
+		_targetType = params.getEnum("targetType", TargetType.class, TargetType.ONE);
 	}
 	
 	public void onSkillUseEvent(OnCreatureSkillUse event) {

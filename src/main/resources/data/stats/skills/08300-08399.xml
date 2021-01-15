@@ -1107,16 +1107,24 @@
 		</effects>
 	</skill>
 	<skill id="8362" levels="1" name="Beast Training - Release">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectObject" val="FRIEND" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1200" />
+		<set name="hitCancelTime" val="500" />
 		<set name="icon" val="icon.skill8362" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
+		<set name="reuseDelayLock" val="true" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<cond msgId="113" addName="1">
+			<target npcId="18869,18870,18871,18872" />
+		</cond>
 	</skill>
 	<skill id="8363" levels="1" name="Beast Training - Accompany">
 		<!-- Confirmed CT2.5 -->

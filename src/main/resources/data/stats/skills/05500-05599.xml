@@ -359,74 +359,96 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5519" levels="1" name="Chain Buff - Power Up">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="PA_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.15" />
-				<mul stat="mAtk" val="1.75" />
 				<mul stat="pAtkSpd" val="1.33" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.75" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.15" />
+			</effect>
+			<effect name="Buff">
 				<add stat="runSpd" val="33" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5520" levels="1" name="Chain Buff - Vampiric Shield">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="VAMPIRIC_ATTACK" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb HP from damage inflicted on enemies -->
 				<add stat="reflectDam" val="60" />
+			</effect>
+			<effect name="Buff">
+				<add stat="absorbDam" val="9" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5521" levels="1" name="Chain Buff - Critical Sense">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="CRITICAL_DMG_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="critDmg" val="1.35" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="critRate" val="1.3" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="mCritRate" val="4" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5522" levels="1" name="Chain Magic - Dark Explosion">
+		<!-- High Five Confirmed -->
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="affectRange" val="600" />
+		<set name="affectScope" val="RANGE" />
+		<set name="attributePower" val="80" />
+		<set name="attributeType" val="UNHOLY" />
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-1063" />
 		<set name="effectRange" val="900" />
-		<set name="attributeType" val="UNHOLY" />
-		<set name="attributePower" val="80" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -438,103 +460,134 @@
 		</effects>
 	</skill>
 	<skill id="5523" levels="1" name="Chain Magic - Unholy Castle">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="ARMOR_UNHOLY" />
 		<set name="activateRate" val="100" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="600" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill1056" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<effect name="BlockBuff">
-				<sub stat="darkRes" val="50" />
-			</effect>
 			<effect name="DispelByCategory">
 				<param slot="BUFF" rate="100" max="3" />
+			</effect>
+			<effect name="BlockBuff" />
+			<effect name="Debuff">
+				<sub stat="darkRes" val="50" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5524" levels="1" name="Chain Buff - Resistance to Bow and Magic attacks">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="MD_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
+			<effect name="DefenceTrait">
+				<param BOW="40" />
+			</effect>
 			<effect name="Buff">
-				<sub stat="cancelVuln" val="100" />
 				<!-- TODO: Missing support to resist category "multi_buff". -->
 				<mul stat="mDef" val="1.3" />
 			</effect>
-			<effect name="DefenceTrait">
-				<param BOW="40" />
+			<effect name="Debuff">
+				<mul stat="cancelVuln" val="0" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5525" levels="1" name="Chain Buff - Resistance to Melee Attacks">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="PD_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<effect name="Buff">
-				<mul stat="pDef" val="1.15" />
-			</effect>
 			<effect name="DefenceTrait">
 				<param SWORD="25" />
+			</effect>
+			<effect name="DefenceTrait">
 				<param POLE="25" />
+			</effect>
+			<effect name="DefenceTrait">
 				<param BLUNT="25" />
+			</effect>
+			<effect name="DefenceTrait">
 				<param DAGGER="25" />
+			</effect>
+			<effect name="DefenceTrait">
 				<param FIST="25" />
+			</effect>
+			<effect name="DefenceTrait">
 				<param DUAL="25" />
+			</effect>
+			<effect name="DefenceTrait">
 				<param DUALFIST="25" />
+			</effect>
+			<effect name="DefenceTrait">
 				<param DUALDAGGER="25" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.15" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5526" levels="1" name="Challenger's Blessing">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="SHIELD_PROB_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill1442" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume2" val="66" />
 		<set name="mpConsume1" val="17" />
+		<set name="mpConsume2" val="66" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="rShld" val="1.9" />
-				<add stat="pDef" val="1000" />
 				<add stat="darkRes" val="50" />
+			</effect>
+			<effect name="Buff">
+				<add stat="pDef" val="1000" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="rShld" val="1.9" />
 			</effect>
 		</effects>
 	</skill>
@@ -1247,38 +1300,42 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5567" levels="1" name="Flame Armor">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="icon" val="icon.skill1492" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="83" />
+		<set name="isMagic" val="2" />
+		<set name="magicLvl" val="81" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="MagicalAttack">
-				<param power="47" />
+				<param power="71" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5568" levels="1" name="Frost Armor">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="80" />
+		<set name="activateRate" val="100" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="icon" val="icon.skill1493" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="81" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.7" />
@@ -1440,10 +1497,10 @@
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="BlockDamage">
-				<param block="HP"/>
+				<param block="HP" />
 			</effect>
 			<effect name="BlockDamage">
-				<param block="MP"/>
+				<param block="MP" />
 			</effect>
 			<effect name="BlockDebuff" />
 		</effects>

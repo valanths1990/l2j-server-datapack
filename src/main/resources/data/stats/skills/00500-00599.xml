@@ -2302,27 +2302,29 @@
 		</effects>
 	</skill>
 	<skill id="567" levels="4" name="Light of Heal">
-		<!-- Confirmed CT2.5 -->
-		<table name="#amount"> 690 731 770 806 </table>
+		<!-- High Five Confirmed -->
+		<table name="#healPower"> 690 731 770 806 </table>
 		<table name="#magicLvl"> 60 63 66 69 </table>
-		<table name="#mpConsume2"> 64 72 80 90 </table>
 		<table name="#mpConsume1"> 16 18 20 23 </table>
+		<table name="#mpConsume2"> 64 72 80 90 </table>
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill_transform_etc" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Heal">
-				<param power="#amount" />
+				<param power="#healPower" />
 			</effect>
 		</effects>
 	</skill>
