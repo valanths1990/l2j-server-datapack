@@ -59,7 +59,7 @@
 		<set name="affectRange" val="200" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.totem_of_body" />
-		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
+		<set name="isMagic" val="4" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -76,7 +76,7 @@
 		<set name="affectRange" val="200" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.totem_of_mind" />
-		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
+		<set name="isMagic" val="4" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -92,7 +92,7 @@
 		<set name="affectRange" val="200" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.totem_of_bravery" />
-		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
+		<set name="isMagic" val="4" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -108,7 +108,7 @@
 		<set name="affectRange" val="200" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys2.icon.totem_of_fortitude" />
-		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
+		<set name="isMagic" val="4" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -126,7 +126,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="BranchSys2.icon.the_fall_of_dragon" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -179,7 +179,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="BranchSys2.icon.br_wp_Caladbulg_i00" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
@@ -208,7 +208,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="BranchSys2.icon.br_wp_habus_knife_i00" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
@@ -237,7 +237,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="BranchSys2.icon.br_wp_tiatenon_i00" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
@@ -262,7 +262,7 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1500" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
@@ -289,7 +289,7 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1500" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
@@ -316,7 +316,7 @@
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="BranchSys2.icon.br_wp_wind_of_mardil_i00" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />

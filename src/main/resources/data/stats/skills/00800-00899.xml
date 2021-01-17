@@ -167,7 +167,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill0810" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="mpConsume2" val="31" />
 		<set name="operateType" val="A2" />
@@ -198,7 +198,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill0810" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="mpConsume2" val="31" />
 		<set name="operateType" val="A2" />
@@ -229,7 +229,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill0810" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="mpConsume2" val="31" />
 		<set name="operateType" val="A2" />
@@ -260,7 +260,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill0810" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="mpConsume2" val="31" />
 		<set name="operateType" val="A2" />
@@ -749,7 +749,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="hitTime" val="15000" />
 		<set name="icon" val="icon.skill0831" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="1458" /> <!-- Crystal (D-Grade) -->
 		<set name="magicLvl" val="52" />
@@ -985,7 +985,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill0841" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-2" />
 		<set name="mpConsume2" val="72" />
 		<set name="operateType" val="A2" />
@@ -1018,7 +1018,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill0842" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-2" />
 		<set name="mpConsume2" val="72" />
 		<set name="operateType" val="A2" />
@@ -1064,7 +1064,7 @@
 	<skill id="844" levels="1" name="Outpost Construction">
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill0247" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="120" />
 		<set name="itemConsumeId" val="2132" /> <!-- Gemstone B -->
 		<set name="isOutpost" val="true" />
@@ -1086,7 +1086,7 @@
 		<set name="effectRange" val="600" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill0247" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="600000" />
@@ -1121,7 +1121,7 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="180000" />
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="CA1" />
 		<set name="reuseDelay" val="1000" />
@@ -1259,7 +1259,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
@@ -1283,7 +1283,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
@@ -1307,7 +1307,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
@@ -1331,7 +1331,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
@@ -1355,7 +1355,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
@@ -1379,7 +1379,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
@@ -1403,7 +1403,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
@@ -1427,7 +1427,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
@@ -1451,7 +1451,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
@@ -1475,7 +1475,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
@@ -1499,7 +1499,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
@@ -1523,7 +1523,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
@@ -1673,7 +1673,7 @@
 		<set name="attributePower" val="#elementPower" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1181" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="32" />
 		<set name="mpConsume1" val="8" />
@@ -1812,7 +1812,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1169" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="56" />
@@ -1861,7 +1861,7 @@
 		<set name="attributePower" val="#elementPower" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1178" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="56" />
 		<set name="mpConsume1" val="14" />
@@ -1887,7 +1887,7 @@
 		<set name="attributePower" val="#elementPower" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1220" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="56" />
 		<set name="mpConsume1" val="14" />
@@ -1916,7 +1916,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1208" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="56" />
@@ -2038,7 +2038,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill_transform_debuff" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
@@ -2134,7 +2134,7 @@
 		<set name="effectRange" val="1800" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_transform_etc" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
@@ -2158,7 +2158,7 @@
 		<set name="effectRange" val="1800" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_transform_etc" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
@@ -2182,7 +2182,7 @@
 		<set name="effectRange" val="1800" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_s_attack" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
@@ -2202,7 +2202,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill_transform_buff" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume2" val="69" />
 		<set name="operateType" val="A2" />
@@ -2228,7 +2228,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill_transform_buff" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume2" val="70" />
 		<set name="operateType" val="A2" />

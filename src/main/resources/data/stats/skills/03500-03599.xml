@@ -1186,7 +1186,7 @@
 		<set name="effectRange" val="1500" />
 		<set name="icon" val="icon.skill1201" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />

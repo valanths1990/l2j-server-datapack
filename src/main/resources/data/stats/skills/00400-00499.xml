@@ -1248,7 +1248,7 @@
 		<set name="effectRange" val="600" />
 		<set name="hitTime" val="15000" />
 		<set name="icon" val="icon.skill0426" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="77" />
 		<set name="mpPerChanneling" val="15" />
 		<set name="operateType" val="CA5" />
@@ -1266,7 +1266,7 @@
 		<set name="effectRange" val="600" />
 		<set name="hitTime" val="15000" />
 		<set name="icon" val="icon.skill0427" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="77" />
 		<set name="mpPerChanneling" val="15" />
 		<set name="operateType" val="CA5" />
@@ -1617,7 +1617,7 @@
 		<set name="effectPoint" val="673" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill0438" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8873" /> <!-- Phoenix Blood -->
 		<set name="magicLvl" val="79" />
@@ -1858,7 +1858,7 @@
 		<table name="#ench1npcId"> 14840 14841 14842 14843 14844 14845 14846 14847 14848 14849 14850 14851 14852 14853 14854 14855 14856 14857 14858 14859 14860 14861 14862 14863 14864 14865 14866 14867 14868 14869 </table>
 		<set name="hitTime" val="10000" />
 		<set name="icon" val="icon.skill0448" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="27" />
 		<set name="itemConsumeId" val="1461" /> <!-- Crystal (A-Grade) -->
 		<set name="itemConsumeSteps" val="60" />
@@ -1899,7 +1899,7 @@
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="hitTime" val="6000" />
 		<set name="icon" val="icon.skill0449" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="itemConsumeCount" val="#itemConsumeCount" />
 		<set name="itemConsumeId" val="3031" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -2086,7 +2086,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill0454" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8875" /> <!-- Battle Symbol -->
 		<set name="magicLvl" val="80" />
@@ -2107,7 +2107,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill0455" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8875" /> <!-- Battle Symbol -->
 		<set name="magicLvl" val="80" />
@@ -2127,7 +2127,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill0456" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8875" /> <!-- Battle Symbol -->
 		<set name="magicLvl" val="80" />
@@ -2147,7 +2147,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill0457" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8875" /> <!-- Battle Symbol -->
 		<set name="magicLvl" val="80" />
@@ -2167,7 +2167,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill0458" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8875" /> <!-- Battle Symbol -->
 		<set name="magicLvl" val="80" />
@@ -2187,7 +2187,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill0459" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8875" /> <!-- Battle Symbol -->
 		<set name="magicLvl" val="80" />
@@ -2207,7 +2207,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="5000" />
 		<set name="icon" val="icon.skill0460" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8875" /> <!-- Battle Symbol -->
 		<set name="magicLvl" val="80" />
@@ -2443,7 +2443,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill0469" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="10" />
 		<set name="mpConsume2" val="11" />
 		<set name="mpConsume1" val="3" />
@@ -3054,7 +3054,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill0491" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="1461" /> <!-- Crystal (A-Grade) -->
 		<set name="magicLvl" val="36" />

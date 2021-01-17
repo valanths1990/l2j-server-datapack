@@ -127,7 +127,7 @@
 		<!-- Frintezza Skills -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="34000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -139,7 +139,7 @@
 		<table name="#hitTime"> 32000 32000 32000 31000 35000 </table>
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="#hitTime" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -222,7 +222,7 @@
 		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="180" />
 		<set name="hitTime" val="2500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -285,7 +285,7 @@
 		<set name="effectRange" val="400" />
 		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="180" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -393,7 +393,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -473,7 +473,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="3200" />
 		<set name="icon" val="icon.skill1043" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -492,7 +492,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill1160" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -509,7 +509,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill4047" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="10" />
 		<set name="operateType" val="A2" />
@@ -528,7 +528,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill4038" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -841,7 +841,7 @@
 	<skill id="5050" levels="12" name="Castle DD Fire">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -858,7 +858,7 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
@@ -884,7 +884,7 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
@@ -907,7 +907,7 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
@@ -922,7 +922,7 @@
 	<skill id="5054" levels="12" name="Castle Self AE Water">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -931,7 +931,7 @@
 	<skill id="5055" levels="12" name="Castle Long AE Water">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -949,7 +949,7 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
@@ -965,7 +965,7 @@
 	<skill id="5057" levels="12" name="Castle Self AE Wind">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -974,7 +974,7 @@
 	<skill id="5058" levels="12" name="Castle Long AE Wind">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -983,7 +983,7 @@
 	<skill id="5059" levels="12" name="Castle DD Earth">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -992,7 +992,7 @@
 	<skill id="5060" levels="12" name="Castle Self AE Earth">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1001,7 +1001,7 @@
 	<skill id="5061" levels="12" name="Castle Long AE Earth">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1010,7 +1010,7 @@
 	<skill id="5062" levels="12" name="Castle DD Holy">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1019,7 +1019,7 @@
 	<skill id="5063" levels="12" name="Castle Self AE Holy">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1028,7 +1028,7 @@
 	<skill id="5064" levels="12" name="Castle Long AE Holy">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1044,7 +1044,7 @@
 		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
@@ -1059,7 +1059,7 @@
 	<skill id="5066" levels="12" name="Castle Self AE Unholy">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1068,7 +1068,7 @@
 	<skill id="5067" levels="12" name="Castle Long AE Unholy">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1084,7 +1084,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1160" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A2" />
@@ -1102,7 +1102,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill4038" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A2" />
@@ -1120,7 +1120,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1206" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A2" />
@@ -1138,7 +1138,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill4037" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A2" />
@@ -1155,7 +1155,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="2000" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A2" />
@@ -1421,7 +1421,7 @@
 		<set name="hitTime" val="3300" />
 		<set name="icon" val="icon.skill5085" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="23" />
 		<set name="operateType" val="A2" />
@@ -1444,7 +1444,7 @@
 		<set name="hitTime" val="3300" />
 		<set name="icon" val="icon.skill5086" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="mpConsume2" val="23" />
@@ -1557,7 +1557,7 @@
 		<set name="attributeType" val="EARTH" />
 		<set name="attributePower" val="180" />
 		<set name="hitTime" val="8000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
@@ -1660,7 +1660,7 @@
 	<skill id="5099" levels="1" name="Cancel Capture A">
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

@@ -542,7 +542,7 @@
 		<set name="effectRange" val="500" />
 		<set name="hitTime" val="25000" />
 		<set name="icon" val="icon.weapon_seize_mace_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8764" /> <!-- Trap Stone -->
 		<set name="magicLvl" val="85" />
@@ -564,7 +564,7 @@
 		<set name="effectRange" val="500" />
 		<set name="hitTime" val="25000" />
 		<set name="icon" val="icon.weapon_seize_mace_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8764" /> <!-- Trap Stone -->
 		<set name="magicLvl" val="85" />
@@ -586,7 +586,7 @@
 		<set name="effectRange" val="500" />
 		<set name="hitTime" val="25000" />
 		<set name="icon" val="icon.weapon_seize_mace_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8764" /> <!-- Trap Stone -->
 		<set name="magicLvl" val="85" />
@@ -1275,7 +1275,7 @@
 		<set name="effectPoint" val="532" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />
@@ -1299,7 +1299,7 @@
 		<set name="effectPoint" val="532" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />

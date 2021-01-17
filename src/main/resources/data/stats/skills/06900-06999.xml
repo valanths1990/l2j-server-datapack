@@ -122,7 +122,7 @@
 		<set name="effectRange" val="1500" />
 		<set name="icon" val="icon.skill5860" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -170,7 +170,7 @@
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
 		<set name="icon" val="icon.skill1086" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -189,7 +189,7 @@
 		<set name="abnormalType" val="CASTING_TIME_DOWN" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill1085" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -273,7 +273,7 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="PATIENCE" />
 		<set name="icon" val="BranchSys2.icon.skill0952" />
-		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
+		<set name="isMagic" val="4" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />

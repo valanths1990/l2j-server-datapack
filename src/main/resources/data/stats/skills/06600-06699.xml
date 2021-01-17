@@ -711,7 +711,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="2000" />
 		<set name="hitTime" val="100" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -728,7 +728,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="2000" />
 		<set name="hitTime" val="100" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -765,7 +765,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="2000" />
 		<set name="hitTime" val="100" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -782,7 +782,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="2000" />
 		<set name="hitTime" val="100" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1064,7 +1064,7 @@
 		<set name="attributeType" val="HOLY" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="3000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="88" />
 		<set name="mpConsume1" val="22" />
@@ -1382,7 +1382,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill6274" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />

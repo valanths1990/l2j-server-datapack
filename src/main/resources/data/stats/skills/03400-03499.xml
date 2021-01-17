@@ -48,7 +48,7 @@
 		<set name="abnormalType" val="BIG_HEAD" />
 		<set name="abnormalVisualEffect" val="BIG_HEAD" />
 		<set name="activateRate" val="0" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1800000" />
@@ -62,7 +62,7 @@
 		</cond>
 	</skill>
 	<skill id="3405" levels="1" name="Large Firecracker Effect">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1200000" />
@@ -88,7 +88,7 @@
 		<set name="abnormalType" val="STEALTH" />
 		<set name="abnormalVisualEffect" val="STEALTH" />
 		<set name="activateRate" val="0" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="600000" />
@@ -104,7 +104,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="200" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="60000" />
@@ -131,7 +131,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="600" />
 		<set name="hitTime" val="3000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="300000" />
@@ -152,7 +152,7 @@
 		<set name="abnormalType" val="TALISMAN" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i01" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="55" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />
@@ -334,7 +334,7 @@
 	<skill id="3421" levels="1" name="Wolf Mount">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.skill0083" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -343,7 +343,7 @@
 	<skill id="3422" levels="1" name="Wolf Dismount">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.skill0083" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -353,7 +353,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -368,7 +368,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -383,7 +383,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.etc_summon_aga_agit_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -453,7 +453,7 @@
 		<set name="effectPoint" val="669" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i01" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="75" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />
@@ -472,7 +472,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.etc_talisman_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1800000" />
@@ -495,7 +495,7 @@
 		<set name="effectPoint" val="669" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i06" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="75" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />
@@ -517,7 +517,7 @@
 		<set name="effectPoint" val="669" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i06" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="75" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />
@@ -539,7 +539,7 @@
 		<set name="effectPoint" val="669" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i06" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="75" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />
@@ -561,7 +561,7 @@
 		<set name="effectPoint" val="669" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i06" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="75" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />
@@ -583,7 +583,7 @@
 		<set name="effectPoint" val="669" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i06" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="75" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />
@@ -605,7 +605,7 @@
 		<set name="effectPoint" val="669" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i06" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="75" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />
@@ -627,7 +627,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="hpConsume" val="800" />
 		<set name="icon" val="icon.etc_talisman_i01" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -646,7 +646,7 @@
 		<set name="effectPoint" val="669" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i01" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="75" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />
@@ -669,7 +669,7 @@
 		<set name="effectPoint" val="669" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i01" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="75" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />
@@ -1243,7 +1243,7 @@
 		<set name="effectPoint" val="532" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i01" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="55" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />
@@ -1265,7 +1265,7 @@
 		<set name="effectPoint" val="532" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i01" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="55" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />
@@ -1368,7 +1368,7 @@
 		<set name="effectPoint" val="532" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.etc_talisman_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="55" />
 		<set name="mpConsume2" val="40" />
 		<set name="mpConsume1" val="10" />

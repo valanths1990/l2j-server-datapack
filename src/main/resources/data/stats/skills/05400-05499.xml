@@ -6,7 +6,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1250" />
 		<set name="hitTime" val="5000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="30000" />
@@ -170,7 +170,7 @@
 	<skill id="5414" levels="1" name="Performing Agathion - Rainbow Clan Hall">
 		<!-- TODO: Needs to be verified -->
 		<set name="icon" val="icon.skill_agathion_cute" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -182,7 +182,7 @@
 	<skill id="5415" levels="1" name="Performing Agathion - Castle">
 		<!-- TODO: Needs to be verified -->
 		<set name="icon" val="icon.skill_agathion_cute" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -253,7 +253,7 @@
 		<set name="attributePower" val="20" />
 		<set name="icon" val="icon.skill1101" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -282,7 +282,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill4035" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -311,7 +311,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill0096" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -332,7 +332,7 @@
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="IRON_SHIELD_I" />
 		<set name="icon" val="icon.skill0527" />
-		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
+		<set name="isMagic" val="4" />
 		<set name="magicLvl" val="79" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
@@ -350,7 +350,7 @@
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="ARCHER_SPECIAL" />
 		<set name="icon" val="icon.skill0532" />
-		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
+		<set name="isMagic" val="4" />
 		<set name="magicLvl" val="79" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
@@ -370,7 +370,7 @@
 		<set name="abnormalType" val="ARCHER_SPECIAL" />
 		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill0533" />
-		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
+		<set name="isMagic" val="4" />
 		<set name="magicLvl" val="79" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
@@ -391,7 +391,7 @@
 		<set name="abnormalType" val="ARCHER_SPECIAL_I" />
 		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill0534" />
-		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
+		<set name="isMagic" val="4" />
 		<set name="magicLvl" val="79" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
@@ -421,7 +421,7 @@
 		<!-- Spoil Bomb effect -->
 		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill0537" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="79" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -585,7 +585,7 @@
 		<set name="affectRange" val="900" />
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
@@ -607,7 +607,7 @@
 		<set name="affectRange" val="900" />
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
@@ -769,7 +769,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill0523" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -812,7 +812,7 @@
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="activateRate" val="80" />
-		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
+		<set name="isMagic" val="4" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
@@ -849,7 +849,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="T_CRT_DMG_UP" />
-		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
+		<set name="isMagic" val="4" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
@@ -880,7 +880,7 @@
 		<set name="abnormalTime" val="25" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="effectPoint" val="100" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="77" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -892,7 +892,7 @@
 		<set name="abnormalTime" val="25" />
 		<set name="abnormalType" val="SILENCE" />
 		<set name="effectPoint" val="100" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="77" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -940,7 +940,7 @@
 	<skill id="5458" levels="1" name="Performing Agathion - Fortress">
 		<!-- TODO: Needs to be verified -->
 		<set name="icon" val="icon.skill_agathion_cute" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1334,7 +1334,7 @@
 		<set name="abnormalType" val="FATAL_POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1455,7 +1455,7 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributePower" val="180" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1505,7 +1505,7 @@
 		<set name="affectRange" val="150" />
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="3000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1526,7 +1526,7 @@
 		<set name="attributeType" val="UNHOLY" />
 		<set name="attributePower" val="180" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

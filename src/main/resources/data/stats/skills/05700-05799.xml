@@ -12,7 +12,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="MD_DOWN" />
 		<set name="icon" val="icon.skill1263" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="29" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
@@ -36,7 +36,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="PA_DOWN" />
 		<set name="icon" val="icon.skill4037" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="29" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
@@ -60,7 +60,7 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="36" />
 		<set name="mpConsume2" val="5" />
 		<set name="mpConsume1" val="2" />
@@ -90,7 +90,7 @@
 	<skill id="5704" levels="1" name="Water Strike">
 		<set name="effectPoint" val="-341" />
 		<set name="hitTime" val="2500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="36" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
@@ -99,7 +99,7 @@
 	</skill>
 	<skill id="5705" levels="1" name="Fire Trap">
 		<set name="effectPoint" val="-341" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="36" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -117,7 +117,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill4036" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="A2" />
@@ -135,7 +135,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill1170" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -151,7 +151,7 @@
 		<set name="attributePower" val="20" />
 		<set name="fanRange" val="0,0,400,60" />
 		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
@@ -169,7 +169,7 @@
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1200" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
@@ -207,7 +207,7 @@
 		<set name="activateRate" val="0" />
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
@@ -222,7 +222,7 @@
 		<set name="castRange" val="1300" />
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="CA5" />
 		<set name="reuseDelay" val="10000" />
@@ -235,7 +235,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="MAGICAL_STANCE" />
 		<set name="effectPoint" val="100" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -244,7 +244,7 @@
 	<skill id="5714" levels="1" name="Boom Up">
 		<set name="effectPoint" val="-574" />
 		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
@@ -266,7 +266,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill1160" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="73" />
 		<set name="operateType" val="A2" />
@@ -324,7 +324,7 @@
 		<set name="effectPoint" val="-650" />
 		<set name="effectRange" val="2000" />
 		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="73" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
@@ -345,7 +345,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill0176" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="73" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
@@ -363,7 +363,7 @@
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="PD_DOWN" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -603,7 +603,7 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="1080" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
@@ -628,7 +628,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="2500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
@@ -658,7 +658,7 @@
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill1181" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
@@ -693,7 +693,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1092" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
@@ -722,7 +722,7 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="mpConsume1" val="#mpConsume1" />
@@ -758,7 +758,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill1069" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
@@ -852,7 +852,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="icon" val="icon.skill5739" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -872,7 +872,7 @@
 		<!-- Kratei Cube Skills -->
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -894,7 +894,7 @@
 		<!-- Kratei Cube Skills -->
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1044,7 +1044,7 @@
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
@@ -1073,7 +1073,7 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill1417" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
@@ -1101,7 +1101,7 @@
 		<set name="affectRange" val="200" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="2500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
@@ -1131,7 +1131,7 @@
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="4000" />
 		<set name="hpConsume" val="#hpConsume" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A1" />
@@ -1158,7 +1158,7 @@
 		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.action117" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="99" />
 		<set name="mpConsume2" val="52" />
 		<set name="operateType" val="A2" />
@@ -1171,7 +1171,7 @@
 	<skill id="5754" levels="1" name="Presentation - Adiantum Round Fighter">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1180,7 +1180,7 @@
 	<skill id="5755" levels="1" name="Presentation - Trap On">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="2500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1189,7 +1189,7 @@
 	<skill id="5756" levels="1" name="Presentation - Summon Follower">
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="2500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1199,7 +1199,7 @@
 		<set name="abnormalVisualEffect" val="NONE" />
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="15000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="CA5" />
 		<set name="reuseDelay" val="30000" />
@@ -1207,7 +1207,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5758" levels="1" name="Presentation - Large Firework">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
@@ -1233,7 +1233,7 @@
 		<set name="abnormalType" val="SEED_OF_CRITICAL" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill5760" />
-		<set name="isMagic" val="4" /> <!-- Trigger Skill -->
+		<set name="isMagic" val="4" />
 		<set name="magicLvl" val="73" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
@@ -1278,7 +1278,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill5762" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1287,7 +1287,7 @@
 	<skill id="5763" levels="1" name="Wink">
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1305,7 +1305,7 @@
 		<set name="hitTime" val="2060" />
 		<set name="icon" val="icon.skill1092" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="95" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
@@ -1388,7 +1388,7 @@
 	<skill id="5769" levels="12" name="not_used">
 		<set name="effectPoint" val="418" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="10" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
@@ -1398,7 +1398,7 @@
 	<skill id="5770" levels="12" name="not_used">
 		<set name="effectPoint" val="418" />
 		<set name="hitTime" val="4000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="10" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
@@ -1412,7 +1412,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.action113" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1428,7 +1428,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill4279_new" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
@@ -1442,7 +1442,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill4280_new" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
@@ -1455,7 +1455,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1400" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1472,7 +1472,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill5762" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1517,7 +1517,7 @@
 		<set name="effectRange" val="600" />
 		<set name="hitTime" val="6000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
@@ -1572,7 +1572,7 @@
 	<skill id="5786" levels="1" name="Presentation - Ekimus Separation">
 		<!-- Confirmed CT2.5 -->
 		<set name="hitTime" val="22000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1581,7 +1581,7 @@
 	<skill id="5787" levels="1" name="Presentation - Ekimus Approach">
 		<!-- Confirmed CT2.5 -->
 		<set name="hitTime" val="11000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1590,7 +1590,7 @@
 	<skill id="5788" levels="1" name="Presentation - Ekimus Blood Hail">
 		<!-- Confirmed CT2.5 -->
 		<set name="hitTime" val="2100" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1599,7 +1599,7 @@
 	<skill id="5789" levels="1" name="Presentation - Ekimus Sneer">
 		<!-- Confirmed CT2.5 -->
 		<set name="hitTime" val="13000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1615,7 +1615,7 @@
 	<skill id="5791" levels="1" name="Presentation - Magyun's Entrance">
 		<!-- Confirmed CT2.5 -->
 		<set name="hitTime" val="4200" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1649,7 +1649,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1160" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
@@ -1703,7 +1703,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1160" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
@@ -1716,7 +1716,7 @@
 		<set name="effectPoint" val="-676" />
 		<set name="fanRange" val="0,0,600,60" />
 		<set name="hitTime" val="3500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="4000" />
@@ -1726,7 +1726,7 @@
 	<skill id="5798" levels="1" name="Fireball">
 		<set name="effectPoint" val="-676" />
 		<set name="hitTime" val="2500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="4000" />
@@ -1744,7 +1744,7 @@
 		<set name="hitTime" val="1800" />
 		<set name="icon" val="icon.skill0096" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />

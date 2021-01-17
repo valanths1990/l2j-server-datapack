@@ -6,7 +6,7 @@
 			13457,1,7.1429;13458,1,7.1429;13459,1,7.1429;13460,1,7.1429;13461,1,7.1429;13462,1,7.1429;13463,1,7.1429;13464,1,7.1429;13465,1,7.1429;13466,1,7.1429;13467,1,7.1429;13468,1,7.1429;13469,1,7.1429;13470,1,7.1423
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17069" /> <!-- Vesper Weapon Box -->
 		<set name="magicLvl" val="1" />
@@ -30,7 +30,7 @@
 			10215,1,8.3333;10216,1,8.3333;10217,1,8.3333;10218,1,8.3333;10219,1,8.3333;10220,1,8.3333;10221,1,8.3333;10222,1,8.3333;10223,1,8.3333;10224,1,8.3333;10225,1,8.3333;10226,1,8.3337
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17070" /> <!-- Icarus Weapon Box -->
 		<set name="magicLvl" val="1" />
@@ -54,7 +54,7 @@
 			9380,1,7.1429;9446,1,7.1429;10004,1,7.1429;9449,1,7.1429;9450,1,7.1429;9445,1,7.1429;9443,1,7.1429;9442,1,7.1429;10252,1,7.1429;9448,1,7.1429;10253,1,7.1429;9384,1,7.1429;9444,1,7.1429;9447,1,7.1423
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17071" /> <!-- Dynasty Weapon Box -->
 		<set name="magicLvl" val="1" />
@@ -78,7 +78,7 @@
 			13143,1,5.8824;14105,1,5.8824;14108,1,5.8824;14109,1,5.8824;14110,1,5.8824;14111,1,5.8824;13144,1,5.8824;14106,1,5.8824;14112,1,5.8824;14113,1,5.8824;14114,1,5.8824;13145,1,5.8824;14107,1,5.8824;14115,1,5.8824;14116,1,5.8824;14117,1,5.8824;13887,1,5.8816
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17072" /> <!-- Vesper Armor Box -->
 		<set name="magicLvl" val="1" />
@@ -102,7 +102,7 @@
 			15694,1,5.8824;15695,1,5.8824;15696,1,5.8824;15697,1,5.8824;15698,1,5.8824;15699,1,5.8824;15700,1,5.8824;15701,1,5.8824;15702,1,5.8824;15703,1,5.8824;15704,1,5.8824;15705,1,5.8824;15706,1,5.8824;15707,1,5.8824;15708,1,5.8824;15709,1,5.8824;15710,1,5.8816
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17073" /> <!-- Moirai Armor Box -->
 		<set name="magicLvl" val="1" />
@@ -126,7 +126,7 @@
 			9514,1,5.8824;9515,1,5.8824;9516,1,5.8824;9517,1,5.8824;9518,1,5.8824;9529,1,5.8824;9519,1,5.8824;9520,1,5.8824;9521,1,5.8824;9522,1,5.8824;9523,1,5.8824;9524,1,5.8824;9525,1,5.8824;9526,1,5.8824;9527,1,5.8824;9528,1,5.8824;13886,1,5.8816
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17074" /> <!-- Dynasty Armor Box -->
 		<set name="magicLvl" val="1" />
@@ -150,7 +150,7 @@
 			9570,1,33.3333;9571,1,33.3333;9572,1,33.3334
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17075" /> <!-- Soul Crystal - Stage 14 Box -->
 		<set name="magicLvl" val="1" />
@@ -174,7 +174,7 @@
 			10480,1,33.3333;10481,1,33.3333;10482,1,33.3334
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17076" /> <!-- Soul Crystal - Stage 15 Box -->
 		<set name="magicLvl" val="1" />
@@ -198,7 +198,7 @@
 			13071,1,33.3333;13072,1,33.3333;13073,1,33.3334
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17077" /> <!-- Soul Crystal - Stage 16 Box -->
 		<set name="magicLvl" val="1" />
@@ -222,7 +222,7 @@
 			8664,1,16.6667;8665,1,16.6667;8666,1,16.6667;14739,1,49.9999
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17078" /> <!-- Potion Box of Mask Type -->
 		<set name="magicLvl" val="1" />
@@ -246,7 +246,7 @@
 			8667,1,16.6667;8668,1,16.6667;8669,1,16.6667;8670,1,16.6667;14739,1,33.3332
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17079" /> <!-- Potion Box of Hair Color -->
 		<set name="magicLvl" val="1" />
@@ -270,7 +270,7 @@
 			8671,1,10;8672,1,10;8673,1,10;8674,1,10;8675,1,10;8676,1,10;8677,1,10;14739,1,30
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17080" /> <!-- Potion Box of Hair Style -->
 		<set name="magicLvl" val="1" />
@@ -294,7 +294,7 @@
 			9546,1,14.2857;9547,1,14.2857;9548,1,14.2857;9549,1,14.2857;9550,1,14.2857;9551,1,14.2857;2134,2,14.2858
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17081" /> <!-- Golden Apigas Box -->
 		<set name="magicLvl" val="1" />
@@ -321,7 +321,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.etc_lesser_potion_blue_i00" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17093" /> <!-- Vitality Maintaining Potion (10 mintues) (Event) -->
 		<set name="magicLvl" val="-1" />
@@ -331,7 +331,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9114" levels="1" name="Nevit's Voice">
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17094" /> <!-- Nevit's Voice -->
 		<set name="magicLvl" val="1" />
@@ -353,7 +353,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17095" /> <!-- Nevit's Hourglass - 1 hour -->
 		<set name="magicLvl" val="-1" />
@@ -369,7 +369,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17096" /> <!-- Nevit's Hourglass - 1.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -385,7 +385,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17097" /> <!-- Nevit's Hourglass - 2 hour -->
 		<set name="magicLvl" val="-1" />
@@ -401,7 +401,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17098" /> <!-- Nevit's Hourglass - 2.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -417,7 +417,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17099" /> <!-- Nevit's Hourglass - 3 hour -->
 		<set name="magicLvl" val="-1" />
@@ -433,7 +433,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17100" /> <!-- Nevit's Hourglass - 1 hour -->
 		<set name="magicLvl" val="-1" />
@@ -449,7 +449,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17101" /> <!-- Nevit's Hourglass - 1.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -465,7 +465,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17102" /> <!-- Nevit's Hourglass - 2 hour -->
 		<set name="magicLvl" val="-1" />
@@ -481,7 +481,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17103" /> <!-- Nevit's Hourglass - 2.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -497,7 +497,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17104" /> <!-- Nevit's Hourglass - 3 hour -->
 		<set name="magicLvl" val="-1" />
@@ -513,7 +513,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17105" /> <!-- Nevit's Hourglass - 1 hour -->
 		<set name="magicLvl" val="-1" />
@@ -529,7 +529,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17106" /> <!-- Nevit's Hourglass - 1.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -545,7 +545,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17107" /> <!-- Nevit's Hourglass - 2 hour -->
 		<set name="magicLvl" val="-1" />
@@ -561,7 +561,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17108" /> <!-- Nevit's Hourglass - 2.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -577,7 +577,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17109" /> <!-- Nevit's Hourglass - 3 hour -->
 		<set name="magicLvl" val="-1" />
@@ -593,7 +593,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17110" /> <!-- Nevit's Hourglass - 1 hour -->
 		<set name="magicLvl" val="-1" />
@@ -609,7 +609,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17111" /> <!-- Nevit's Hourglass - 1.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -625,7 +625,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17112" /> <!-- Nevit's Hourglass - 2 hour -->
 		<set name="magicLvl" val="-1" />
@@ -641,7 +641,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17113" /> <!-- Nevit's Hourglass - 2.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -657,7 +657,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17114" /> <!-- Nevit's Hourglass - 3 hour -->
 		<set name="magicLvl" val="-1" />
@@ -673,7 +673,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17115" /> <!-- Nevit's Hourglass - 1 hour -->
 		<set name="magicLvl" val="-1" />
@@ -689,7 +689,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17116" /> <!-- Nevit's Hourglass - 1.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -705,7 +705,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17117" /> <!-- Nevit's Hourglass - 2 hour -->
 		<set name="magicLvl" val="-1" />
@@ -721,7 +721,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17118" /> <!-- Nevit's Hourglass - 2.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -737,7 +737,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17119" /> <!-- Nevit's Hourglass - 3 hour -->
 		<set name="magicLvl" val="-1" />
@@ -753,7 +753,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17120" /> <!-- Nevit's Hourglass - 1 hour -->
 		<set name="magicLvl" val="-1" />
@@ -769,7 +769,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17121" /> <!-- Nevit's Hourglass - 1.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -785,7 +785,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17122" /> <!-- Nevit's Hourglass - 2 hour -->
 		<set name="magicLvl" val="-1" />
@@ -801,7 +801,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17123" /> <!-- Nevit's Hourglass - 2.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -817,7 +817,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17124" /> <!-- Nevit's Hourglass - 3 hour -->
 		<set name="magicLvl" val="-1" />
@@ -833,7 +833,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17125" /> <!-- Nevit's Hourglass - 1 hour -->
 		<set name="magicLvl" val="-1" />
@@ -849,7 +849,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17126" /> <!-- Nevit's Hourglass - 1.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -865,7 +865,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17127" /> <!-- Nevit's Hourglass - 2 hour -->
 		<set name="magicLvl" val="-1" />
@@ -881,7 +881,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17128" /> <!-- Nevit's Hourglass - 2.5 hour -->
 		<set name="magicLvl" val="-1" />
@@ -897,7 +897,7 @@
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17129" /> <!-- Nevit's Hourglass - 3 hour -->
 		<set name="magicLvl" val="-1" />
@@ -1064,7 +1064,7 @@
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17138" /> <!-- Freya's Gift -->
 		<set name="magicLvl" val="1" />
@@ -1090,7 +1090,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17139" /> <!-- Transformation Scroll: Anakim -->
 		<set name="magicLvl" val="-1" />
@@ -1115,7 +1115,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17140" /> <!-- Transformation Scroll: Zaken -->
 		<set name="magicLvl" val="-1" />
@@ -1142,7 +1142,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.weapon_vesper_slasher_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
@@ -1166,7 +1166,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.weapon_vesper_caster_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
@@ -1191,7 +1191,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
@@ -1212,7 +1212,7 @@
 		</table>
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17161" /> <!-- Special Gift of April Fool's Day (Event) -->
 		<set name="magicLvl" val="1" />
@@ -1237,7 +1237,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="icon" val="icon.etc_leaf_green_i00" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17163" /> <!-- Event - Leaf of Appreciation -->
 		<set name="magicLvl" val="1" />
@@ -1254,7 +1254,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
 		<set name="irreplaceableBuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="14744" /> <!-- Event - Vitality Replenishing Herb Tea 30 minutes -->
 		<set name="magicLvl" val="-1" />
@@ -1301,7 +1301,7 @@
 	<skill id="9174" levels="1" name="500,000 SP scroll">
 		<!-- High Five Skill -->
 		<set name="blockedInOlympiad" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17184" /> <!-- 500,000 SP scroll -->
 		<set name="magicLvl" val="1" />
@@ -1318,7 +1318,7 @@
 	<skill id="9175" levels="1" name="1,000,000 SP scroll">
 		<!-- High Five Skill -->
 		<set name="blockedInOlympiad" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17185" /> <!-- 1,000,000 SP scroll -->
 		<set name="magicLvl" val="1" />
@@ -1343,7 +1343,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17169" /> <!-- Olympiad Treasure Chest -->
 		<set name="operateType" val="A1" />
@@ -1372,7 +1372,7 @@
 		<set name="effectPoint" val="578" />
 		<set name="effectRange" val="2000" />
 		<set name="hitTime" val="3000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17268" />
 		<set name="operateType" val="A1" />
@@ -1393,7 +1393,7 @@
 		<!-- High Five Skill -->
 		<table name="#amount"> 5000000 10000000 </table>
 		<table name="#itemConsumeId"> 17276 17277 </table>
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="#itemConsumeId" />
 		<set name="magicLvl" val="1" />

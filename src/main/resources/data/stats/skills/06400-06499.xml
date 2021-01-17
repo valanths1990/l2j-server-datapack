@@ -11,7 +11,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1386" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="88" />
 		<set name="mpConsume1" val="22" />
@@ -58,7 +58,7 @@
 		<set name="effectRange" val="2200" />
 		<set name="icon" val="icon.skill0129" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="-1" />
 		<set name="mpConsume2" val="88" />
@@ -142,7 +142,7 @@
 		<set name="effectPoint" val="1000" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1336" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="56" />
@@ -198,7 +198,7 @@
 		<set name="effectRange" val="600" />
 		<set name="icon" val="icon.skill5919" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="mpConsume2" val="60" />
 		<set name="mpConsume1" val="15" />
@@ -219,7 +219,7 @@
 		<set name="effectRange" val="600" />
 		<set name="icon" val="icon.skill5919" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="-2" />
 		<set name="mpConsume2" val="60" />
 		<set name="mpConsume1" val="15" />
@@ -384,7 +384,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1102" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="88" />
@@ -415,7 +415,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1102" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="88" />
@@ -446,7 +446,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1102" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume2" val="88" />
@@ -585,7 +585,7 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill0122" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
@@ -607,7 +607,7 @@
 		<set name="attributeType" val="EARTH" />
 		<set name="attributePower" val="20" />
 		<set name="hitTime" val="2000" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -644,7 +644,7 @@
 		<set name="effectRange" val="2000" />
 		<set name="icon" val="icon.skill1201" />
 		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
 		<set name="mpConsume2" val="88" />
@@ -672,7 +672,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="icon" val="icon.skill6429" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -691,7 +691,7 @@
 		<set name="castRange" val="2000" />
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="500" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -712,7 +712,7 @@
 		<set name="effectRange" val="900" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1068" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="90000" />
@@ -734,7 +734,7 @@
 		<set name="effectRange" val="900" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1077" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="90000" />
@@ -756,7 +756,7 @@
 		<set name="effectRange" val="900" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1240" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="90000" />
@@ -778,7 +778,7 @@
 		<set name="effectRange" val="900" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1086" />
-		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="90000" />
@@ -1044,7 +1044,7 @@
 	<skill id="6445" levels="1" name="Presentation - Freya's Message 1">
 		<!-- Confirmed CT2.5 -->
 		<set name="hitTime" val="10000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1054,7 +1054,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="8000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1064,7 +1064,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="5000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1074,7 +1074,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1084,7 +1084,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="7000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1094,7 +1094,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="5000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1104,7 +1104,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="12000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1114,7 +1114,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="5000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1124,7 +1124,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="15000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1134,7 +1134,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="6000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1144,7 +1144,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="6000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1154,7 +1154,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1164,7 +1164,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="8000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1174,7 +1174,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="6000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1184,7 +1184,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="10000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1194,7 +1194,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="10000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1204,7 +1204,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="6000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1214,7 +1214,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="6000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1226,7 +1226,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="1000" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1239,7 +1239,7 @@
 		<set name="abnormalType" val="BIG_HEAD" />
 		<set name="abnormalVisualEffect" val="BIG_HEAD" />
 		<set name="icon" val="icon.ev_rotten_jack_ghost_i00" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1249,7 +1249,7 @@
 	<skill id="6465" levels="1" name="Jack O'Lantern Card">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="coolTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1258,7 +1258,7 @@
 	<skill id="6466" levels="1" name="Rotten Jack O'Lantern Card">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="coolTime" val="500" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1267,7 +1267,7 @@
 	<skill id="6467" levels="1" name="Jack O'Lantern Card - Confirm Skill">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1276,7 +1276,7 @@
 	<skill id="6468" levels="1" name="Rotten Jack O'Lantern Card - Confirm Skill">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1285,7 +1285,7 @@
 	<skill id="6469" levels="1" name="Halloween Defeat">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1294,7 +1294,7 @@
 	<skill id="6470" levels="1" name="1 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1303,7 +1303,7 @@
 	<skill id="6471" levels="1" name="2 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1312,7 +1312,7 @@
 	<skill id="6472" levels="1" name="3 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1321,7 +1321,7 @@
 	<skill id="6473" levels="1" name="4 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1330,7 +1330,7 @@
 	<skill id="6474" levels="1" name="5 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1339,7 +1339,7 @@
 	<skill id="6475" levels="1" name="6 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1348,7 +1348,7 @@
 	<skill id="6476" levels="1" name="7 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1357,7 +1357,7 @@
 	<skill id="6477" levels="1" name="8 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1366,7 +1366,7 @@
 	<skill id="6478" levels="1" name="9 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1375,7 +1375,7 @@
 	<skill id="6479" levels="1" name="10 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1384,7 +1384,7 @@
 	<skill id="6480" levels="1" name="11 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1393,7 +1393,7 @@
 	<skill id="6481" levels="1" name="12 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1402,7 +1402,7 @@
 	<skill id="6482" levels="1" name="13 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1411,7 +1411,7 @@
 	<skill id="6483" levels="1" name="14 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1420,7 +1420,7 @@
 	<skill id="6484" levels="1" name="15 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1429,7 +1429,7 @@
 	<skill id="6485" levels="1" name="16 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1438,7 +1438,7 @@
 	<skill id="6486" levels="1" name="17 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1447,7 +1447,7 @@
 	<skill id="6487" levels="1" name="18 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1456,7 +1456,7 @@
 	<skill id="6488" levels="1" name="19 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1465,7 +1465,7 @@
 	<skill id="6489" levels="1" name="20 win">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1474,7 +1474,7 @@
 	<skill id="6490" levels="1" name="Jack's game - Gauge">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1483,7 +1483,7 @@
 	<skill id="6491" levels="1" name="Jack's game - Target">
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-1" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

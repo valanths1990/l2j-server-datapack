@@ -1,5 +1,5 @@
 /*
- * Copyright © 2004-2020 L2J DataPack
+ * Copyright © 2004-2021 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -39,7 +39,7 @@ import com.l2jserver.gameserver.model.stats.Formulas;
  * @version 2.6.2.0
  */
 public final class MagicalAttackRange extends AbstractEffect {
-		  
+	
 	private final double power;
 	
 	private final double shieldDefensePercent;
