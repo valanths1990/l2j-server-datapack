@@ -46,104 +46,7 @@ import com.l2jserver.datapack.handlers.effecthandlers.custom.SilentMove;
 import com.l2jserver.datapack.handlers.effecthandlers.custom.Sleep;
 import com.l2jserver.datapack.handlers.effecthandlers.custom.Stun;
 import com.l2jserver.datapack.handlers.effecthandlers.custom.ThrowUp;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.AddHate;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Backstab;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Blink;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Bluff;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.CallParty;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.CallPc;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.CallSkill;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.ChangeFace;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.ChangeHairColor;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.ChangeHairStyle;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.ClanGate;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Confuse;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.ConsumeBody;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.ConvertItem;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Cp;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.DeathLink;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.DeleteHate;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.DeleteHateOfMe;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.DetectHiddenObjects;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.DispelAll;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.DispelByCategory;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.DispelBySlot;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.DispelBySlotProbability;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.EnergyAttack;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Escape;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.FatalBlow;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Fishing;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.FlySelf;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.FocusEnergy;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.FocusMaxEnergy;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.FocusSouls;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.FoodForPet;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.GetAgro;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.GiveRecommendation;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.GiveSp;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Harvesting;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.HeadquarterCreate;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Heal;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Hp;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.HpByLevel;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.HpDrain;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.HpPerMax;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.InstantAgathionEnergy;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.InstantBetray;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.InstantDispelByName;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Lethal;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalAttack;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalAttackByAbnormal;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalAttackMp;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalAttackRange;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.MagicalSoulAttack;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.ManaHealByLevel;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Mp;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.MpPerMax;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.OpenCommonRecipeBook;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.OpenDwarfRecipeBook;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.OutpostCreate;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.OutpostDestroy;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.PhysicalAttack;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.PhysicalAttackHpLink;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.PhysicalSoulAttack;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Pumping;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.RandomizeHate;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.RebalanceHP;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Reeling;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.RefuelAirship;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Restoration;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.RestorationRandom;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Resurrection;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.RunAway;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.SetSkill;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.SkillTurning;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.SoulBlow;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Sow;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Spoil;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.StaticDamage;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.StealAbnormal;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Summon;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.SummonAgathion;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.SummonCubic;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.SummonNpc;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.SummonPet;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.SummonTrap;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Sweeper;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.TakeCastle;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.TakeFort;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.TakeFortStart;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.TakeTerritoryFlag;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.TargetCancel;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.TargetMeProbability;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Teleport;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.TeleportToTarget;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.TransferHate;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.TrapDetect;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.TrapRemove;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Unsummon;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.UnsummonAgathion;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.VitalityPointUp;
+import com.l2jserver.datapack.handlers.effecthandlers.instant.*;
 import com.l2jserver.datapack.handlers.effecthandlers.pump.AttackTrait;
 import com.l2jserver.datapack.handlers.effecthandlers.pump.Betray;
 import com.l2jserver.datapack.handlers.effecthandlers.pump.BlockBuff;
@@ -178,6 +81,7 @@ import com.l2jserver.datapack.handlers.effecthandlers.pump.SoulEating;
 import com.l2jserver.datapack.handlers.effecthandlers.pump.TalismanSlot;
 import com.l2jserver.datapack.handlers.effecthandlers.pump.TargetMe;
 import com.l2jserver.datapack.handlers.effecthandlers.pump.TransferDamage;
+import com.l2jserver.datapack.handlers.effecthandlers.pump.TransformHangover;
 import com.l2jserver.datapack.handlers.effecthandlers.pump.Transformation;
 import com.l2jserver.datapack.handlers.effecthandlers.pump.TriggerSkillByAttack;
 import com.l2jserver.datapack.handlers.effecthandlers.pump.TriggerSkillByAvoid;
@@ -274,6 +178,7 @@ public final class EffectMasterHandler {
 		ImmobilePetBuff.class,
 		InstantAgathionEnergy.class,
 		InstantBetray.class,
+		InstantDespawn.class,
 		InstantDispelByName.class,
 		Lethal.class,
 		Lucky.class,
@@ -353,6 +258,7 @@ public final class EffectMasterHandler {
 		TickMp.class,
 		TransferDamage.class,
 		TransferHate.class,
+		TransformHangover.class,
 		Transformation.class,
 		TrapDetect.class,
 		TrapRemove.class,

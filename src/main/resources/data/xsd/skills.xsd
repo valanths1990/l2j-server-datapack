@@ -582,6 +582,7 @@
 					<xs:enumeration value="ImmobilePetBuff" />
 					<xs:enumeration value="InstantAgathionEnergy" />
 					<xs:enumeration value="InstantBetray" />
+					<xs:enumeration value="InstantDespawn" />
 					<xs:enumeration value="InstantDispelByName" />
 					<xs:enumeration value="Lethal" />
 					<xs:enumeration value="Lucky" />
@@ -662,6 +663,7 @@
 					<xs:enumeration value="TickMp" />
 					<xs:enumeration value="TransferDamage" />
 					<xs:enumeration value="TransferHate" />
+					<xs:enumeration value="TransformHangover" />
 					<xs:enumeration value="Transformation" />
 					<xs:enumeration value="TrapDetect" />
 					<xs:enumeration value="TrapRemove" />

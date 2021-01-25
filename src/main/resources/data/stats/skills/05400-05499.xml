@@ -1176,30 +1176,40 @@
 		</effects>
 	</skill>
 	<skill id="5481" levels="1" name="Transform Penalty">
-		<!-- You cannot be transformed while under this effect. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="TRANSFORM_HANGOVER" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform3" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="TransformHangover" />
+		</effects>
 	</skill>
 	<skill id="5482" levels="1" name="Transform Penalty">
-		<!-- You cannot be transformed while under this effect. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="480" />
 		<set name="abnormalType" val="TRANSFORM_HANGOVER" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform3" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="TransformHangover" />
+		</effects>
 	</skill>
 	<skill id="5483" levels="1" name="Counter Aggression">
 		<!-- High Five Confirmed -->

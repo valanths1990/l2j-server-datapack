@@ -1046,218 +1046,308 @@
 		</effects>
 	</skill>
 	<skill id="6343" levels="2" name="Maguen Plasma - Power">
-		<!-- Confirmed CT2.5 -->
-		<table name="#icons"> icon.skill6343_1 icon.skill6343_2 </table>
+		<!-- High Five Confirmed -->
+		<table name="#icon"> icon.skill6343_1 icon.skill6343_2 </table>
 		<table name="#mAtk"> 1.08 1.15 </table>
 		<table name="#pAtk"> 1.02 1.03 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="SIGNAL_B" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="PARTY" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1500" />
-		<set name="icon" val="#icons" />
+		<set name="icon" val="#icon" />
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume2" val="88" />
 		<set name="mpConsume1" val="22" />
+		<set name="mpConsume2" val="88" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="TARGET_PARTY" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
 				<mul stat="mAtk" val="#mAtk" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6365" levels="2" name="Maguen Plasma - Speed">
-		<!-- Confirmed CT2.5 -->
-		<table name="#icons"> icon.skill6365_1 icon.skill6365_2 </table>
-		<table name="#pmAtkSpd"> 1.04 1.08 </table>
+		<!-- High Five Confirmed -->
+		<table name="#icon"> icon.skill6365_1 icon.skill6365_2 </table>
+		<table name="#mAtkSpd"> 1.04 1.08 </table>
+		<table name="#pAtkSpd"> 1.04 1.08 </table>
 		<table name="#runSpd"> 5 10 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="SIGNAL_B" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="PARTY" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1500" />
-		<set name="icon" val="#icons" />
+		<set name="icon" val="#icon" />
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume2" val="88" />
 		<set name="mpConsume1" val="22" />
+		<set name="mpConsume2" val="88" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="TARGET_PARTY" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="mAtkSpd" val="#pmAtkSpd" />
-				<mul stat="pAtkSpd" val="#pmAtkSpd" />
+				<mul stat="pAtkSpd" val="#pAtkSpd" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mAtkSpd" val="#mAtkSpd" />
+			</effect>
+			<effect name="Buff">
 				<add stat="runSpd" val="#runSpd" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6366" levels="2" name="Maguen Plasma - Critical">
-		<!-- Confirmed CT2.5 -->
-		<table name="#cAtk"> 1.05 1.1 </table>
-		<table name="#icons"> icon.skill6366_1 icon.skill6366_2 </table>
+		<!-- High Five Confirmed -->
+		<table name="#critDmg"> 1.05 1.1 </table>
+		<table name="#critRate"> 1.04 1.08 </table>
+		<table name="#icon"> icon.skill6366_1 icon.skill6366_2 </table>
 		<table name="#mCritPower"> 1.02 1.04 </table>
-		<table name="#rCrit"> 1.04 1.08 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="SIGNAL_B" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="PARTY" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="1500" />
-		<set name="icon" val="#icons" />
+		<set name="icon" val="#icon" />
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume2" val="88" />
 		<set name="mpConsume1" val="22" />
+		<set name="mpConsume2" val="88" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="TARGET_PARTY" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="critRate" val="#rCrit" />
+				<mul stat="critDmg" val="#critDmg" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="critRate" val="#critRate" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="mCritPower" val="#mCritPower" />
-				<mul stat="critDmg" val="#cAtk" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6367" levels="3" name="Maguen Plasma - Bistakon">
-		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#icons"> icon.skill6367_1 icon.skill6367_2 icon.skill6367_3 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#icon"> icon.skill6367_1 icon.skill6367_2 icon.skill6367_3 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10800" />
 		<set name="abnormalType" val="SOA_BUFF1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
-		<set name="icon" val="#icons" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1500" />
+		<set name="icon" val="#icon" />
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume2" val="88" />
 		<set name="mpConsume1" val="22" />
+		<set name="mpConsume2" val="88" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<effect name="Buff" /> <!-- TODO: Remove when support for buffs without effects is finished. -->
+			<effect name="Buff" />
 		</effects>
 	</skill>
 	<skill id="6368" levels="3" name="Maguen Plasma - Cokrakon">
-		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#icons"> icon.skill6368_1 icon.skill6368_2 icon.skill6368_3 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#icon"> icon.skill6368_1 icon.skill6368_2 icon.skill6368_3 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10800" />
 		<set name="abnormalType" val="SOA_BUFF2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
-		<set name="icon" val="#icons" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1500" />
+		<set name="icon" val="#icon" />
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume2" val="88" />
 		<set name="mpConsume1" val="22" />
+		<set name="mpConsume2" val="88" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<effect name="Buff" /> <!-- TODO: Remove when support for buffs without effects is finished. -->
+			<effect name="Buff" />
 		</effects>
 	</skill>
 	<skill id="6369" levels="3" name="Maguen Plasma - Reptilikon">
-		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#icons"> icon.skill6369_1 icon.skill6369_2 icon.skill6369_3 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#icon"> icon.skill6369_1 icon.skill6369_2 icon.skill6369_3 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10800" />
 		<set name="abnormalType" val="SOA_BUFF3" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
-		<set name="icon" val="#icons" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1500" />
+		<set name="icon" val="#icon" />
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume2" val="88" />
 		<set name="mpConsume1" val="22" />
+		<set name="mpConsume2" val="88" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<effect name="Buff" /> <!-- TODO: Remove when support for buffs without effects is finished. -->
+			<effect name="Buff" />
 		</effects>
 	</skill>
 	<skill id="6370" levels="1" name="Thunderbolt">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="DAMAGE_AMPLIFY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-1" />
+		<set name="effectRange" val="300" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1500" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
+		<set name="mpConsume1" val="22" />
+		<set name="mpConsume2" val="88" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
+		<effects>
+			<effect name="Debuff">
+				<mul stat="mDef" val="0.1" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.1" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6371" levels="1" name="Invincibility">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="100" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="3500" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="BlockDebuff" />
+			<effect name="BlockDamage">
+				<param block="HP" />
+			</effect>
+			<effect name="BlockDamage">
+				<param block="MP" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="cancelVuln" val="0" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6372" levels="10" name="Power Up">
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 </table>
+		<table name="#pAtkSpd"> 1.02 1.04 1.06 1.08 1.1 1.12 1.14 1.16 1.18 1.2 </table>
+		<table name="#physicalSkillPower"> 2 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SIGNAL_A" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="85" />
+		<set name="mpConsume1" val="22" />
+		<set name="mpConsume2" val="88" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="#pAtkSpd" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6373" levels="1" name="Thunderbolt">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="DAMAGE_AMPLIFY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="CON" />
+		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-1" />
+		<set name="effectRange" val="300" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1500" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
+		<set name="mpConsume1" val="22" />
+		<set name="mpConsume2" val="88" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
+		<effects>
+			<effect name="Debuff">
+				<mul stat="mDef" val="0.1" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.1" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6374" levels="1" name="Notification">
 		<set name="effectPoint" val="1" />

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="6200" levels="1" name="NPC Transform Dispel">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="10" />
 		<set name="effectRange" val="1500" />
@@ -10,7 +11,7 @@
 		<set name="magicLvl" val="56" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<cond>
 			<player canUntransform="true" />
 		</cond>
@@ -21,10 +22,12 @@
 		</effects>
 	</skill>
 	<skill id="6201" levels="1" name="Transformation Condition - Frog">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="520" />
 		<set name="abnormalType" val="TRANSFORM" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="buffProtectLevel" val="1" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="10" />
 		<set name="effectRange" val="1500" />
@@ -34,30 +37,44 @@
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<cond>
 			<player canTransform="true" />
 		</cond>
 		<effects>
-			<effect name="Transformation">
-				<param id="111" />
-				<mul stat="weightLimit" val="11" />
-				<add stat="weightPenalty" val="9000" />
-				<add stat="inventoryLimit" val="8" />
+			<effect name="InstantDespawn">
+				<param chance="100" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
+				<param dispel="IMPROVE_SPEED_AVOID_UP" rate="100" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="SPEED_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
+			</effect>
+			<effect name="Buff">
+				<add stat="inventoryLimit" val="8" />
+			</effect>
+			<effect name="Transformation">
+				<param id="111" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="weightLimit" val="11" />
+			</effect>
+			<effect name="Buff">
+				<add stat="weightPenalty" val="9000" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6202" levels="1" name="Transformation Condition - Young Child">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="460" />
 		<set name="abnormalType" val="TRANSFORM" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="buffProtectLevel" val="1" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="10" />
 		<set name="effectRange" val="1500" />
@@ -67,30 +84,44 @@
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<cond>
 			<player canTransform="true" />
 		</cond>
 		<effects>
-			<effect name="Transformation">
-				<param id="112" />
-				<mul stat="weightLimit" val="11" />
-				<add stat="weightPenalty" val="9000" />
-				<add stat="inventoryLimit" val="8" />
+			<effect name="InstantDespawn">
+				<param chance="100" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
+				<param dispel="IMPROVE_SPEED_AVOID_UP" rate="100" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="SPEED_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
+			</effect>
+			<effect name="Buff">
+				<add stat="inventoryLimit" val="8" />
+			</effect>
+			<effect name="Transformation">
+				<param id="112" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="weightLimit" val="11" />
+			</effect>
+			<effect name="Buff">
+				<add stat="weightPenalty" val="9000" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6203" levels="1" name="Transformed Condition - Native">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="215" />
 		<set name="abnormalType" val="TRANSFORM" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="buffProtectLevel" val="1" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="10" />
 		<set name="effectRange" val="1500" />
@@ -100,30 +131,44 @@
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<cond>
 			<player canTransform="true" />
 		</cond>
 		<effects>
-			<effect name="Transformation">
-				<param id="124" />
-				<mul stat="weightLimit" val="11" />
-				<add stat="weightPenalty" val="9000" />
-				<add stat="inventoryLimit" val="8" />
+			<effect name="InstantDespawn">
+				<param chance="100" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
+				<param dispel="IMPROVE_SPEED_AVOID_UP" rate="100" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="SPEED_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
+			</effect>
+			<effect name="Buff">
+				<add stat="inventoryLimit" val="8" />
+			</effect>
+			<effect name="Transformation">
+				<param id="124" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="weightLimit" val="11" />
+			</effect>
+			<effect name="Buff">
+				<add stat="weightPenalty" val="9000" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6204" levels="1" name="Transformed Condition - Guards of the Dawn">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="-1" />
 		<set name="abnormalType" val="TRANSFORM" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="buffProtectLevel" val="1" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="10" />
 		<set name="effectRange" val="1500" />
@@ -133,22 +178,34 @@
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<cond>
 			<player canTransform="true" />
 		</cond>
 		<effects>
-			<effect name="Transformation">
-				<param id="113" />
-				<mul stat="weightLimit" val="11" />
-				<add stat="weightPenalty" val="9000" />
-				<add stat="inventoryLimit" val="8" />
+			<effect name="InstantDespawn">
+				<param chance="100" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
+				<param dispel="IMPROVE_SPEED_AVOID_UP" rate="100" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="SPEED_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
+			</effect>
+			<effect name="Buff">
+				<add stat="inventoryLimit" val="8" />
+			</effect>
+			<effect name="Transformation">
+				<param id="113" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="weightLimit" val="11" />
+			</effect>
+			<effect name="Buff">
+				<add stat="weightPenalty" val="9000" />
 			</effect>
 		</effects>
 	</skill>
@@ -244,15 +301,21 @@
 		</effects>
 	</skill>
 	<skill id="6208" levels="1" name="Blessed Guidance">
-		<!-- Blessed Guidance. For 10 seconds, increases accuracy by 2. -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="HIT_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="icon" val="icon.skill1240" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
+		<effects>
+			<effect name="Buff">
+				<add stat="accCombat" val="2" />
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6209" levels="4" name="Weapon Grade Penalty">
 		<table name="#cAtk"> 0.9 0.8 0.7 0.6 </table>
@@ -520,119 +583,152 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6241" levels="1" name="Heatstroke Prevention Effect - Gludio">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill1184" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="6242" levels="1" name="Heatstroke Prevention Effect - Dion">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill1184" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="6243" levels="1" name="Heatstroke Prevention Effect - Giran">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill1184" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="6244" levels="1" name="Heatstroke Prevention Effect - Oren">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill1184" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="6245" levels="1" name="Heatstroke Prevention Effect - Aden">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill1184" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="6246" levels="1" name="Heatstroke Prevention Effect - Innadril">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill1184" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="6247" levels="1" name="Heatstroke Prevention Effect - Goddard">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill1184" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="6248" levels="1" name="Heatstroke Prevention Effect - Rune">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill1184" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="6249" levels="1" name="Heatstroke Prevention Effect -Schuttgart">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="604800" />
 		<set name="abnormalType" val="EVENT_TERRITORY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skill1184" />
+		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="6250" levels="1" name="Severe Heatstroke">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SIGNAL_D" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="basicProperty" val="MEN" />
+		<set name="castRange" val="200" />
 		<set name="effectPoint" val="-1111" />
+		<set name="effectRange" val="400" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.etc_ashes_red_i00" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
@@ -640,11 +736,16 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="6251" skillLevel="1" />
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="6251" levels="1" name="Summon Humidity">
-		<!-- Confirmed CT2.5 -->
-		<set name="isMagic" val="2" />
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
@@ -656,7 +757,12 @@
 		</effects>
 	</skill>
 	<skill id="6252" levels="1" name="Humidity Attack">
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="affectRange" val="200" />
+		<set name="affectScope" val="POINT_BLANK" />
 		<set name="effectPoint" val="-1111" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
@@ -1303,14 +1409,16 @@
 		</effects>
 	</skill>
 	<skill id="6286" levels="1" name="Bless of Sword">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
 		<!-- Freya Jinia Skills -->
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="PD_UP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="650" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill6286" />
 		<set name="isMagic" val="1" />
@@ -1318,11 +1426,13 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.1" />
 				<mul stat="regHp" val="1.15" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.1" />
 			</effect>
 		</effects>
 	</skill>

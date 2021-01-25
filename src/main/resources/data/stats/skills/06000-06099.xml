@@ -210,62 +210,94 @@
 		</effects>
 	</skill>
 	<skill id="6024" levels="1" name="Weight Aerial Cleft">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="40" />
 		<set name="abnormalType" val="PUBLIC_SLOT" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-10" />
+		<set name="effectRange" val="1400" />
 		<set name="icon" val="icon.skill6024" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="14" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
+		<effects>
+			<effect name="BlockDebuff" />
+			<effect name="BlockDamage">
+				<param block="HP" />
+			</effect>
+			<effect name="BlockDamage">
+				<param block="MP" />
+			</effect>
+			<effect name="TransformHangover" />
+		</effects>
 	</skill>
 	<skill id="6025" levels="1" name="not_used">
+		<!-- High Five Confirmed -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6026" levels="1" name="not_used">
+		<!-- High Five Confirmed -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6027" levels="1" name="not_used">
+		<!-- High Five Confirmed -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6028" levels="1" name="not_used">
+		<!-- High Five Confirmed -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6029" levels="1" name="not_used">
+		<!-- High Five Confirmed -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6030" levels="1" name="not_used">
+		<!-- High Five Confirmed -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6031" levels="1" name="not_used">
+		<!-- High Five Confirmed -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6032" levels="1" name="not_used">
+		<!-- High Five Confirmed -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="P" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6033" levels="1" name="Treasure Seeker's Betrayal">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="STIGMA_A" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="1500" />
 		<set name="effectPoint" val="-671" />
 		<set name="effectRange" val="2000" />
@@ -274,7 +306,7 @@
 		<set name="mpConsume2" val="42" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Debuff" />
 		</effects>
@@ -309,110 +341,146 @@
 		</effects>
 	</skill>
 	<skill id="6035" levels="1" name="Red Team Transformation">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="TRANSFORM" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="stayAfterDeath" val="true" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
 		</cond>
 		<effects>
+			<effect name="InstantDespawn">
+				<param chance="100" />
+			</effect>
+			<effect name="Buff">
+				<add stat="inventoryLimit" val="8" />
+			</effect>
 			<effect name="Transformation">
 				<param id="121" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="weightLimit" val="11" />
+			</effect>
+			<effect name="Buff">
 				<add stat="weightPenalty" val="9000" />
-				<add stat="inventoryLimit" val="8" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6036" levels="1" name="Blue Team Transformation">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="TRANSFORM" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="irreplaceableBuff" val="true" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
+		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="stayAfterDeath" val="true" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
 		</cond>
 		<effects>
+			<effect name="InstantDespawn">
+				<param chance="100" />
+			</effect>
+			<effect name="Buff">
+				<add stat="inventoryLimit" val="8" />
+			</effect>
 			<effect name="Transformation">
 				<param id="122" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="weightLimit" val="11" />
+			</effect>
+			<effect name="Buff">
 				<add stat="weightPenalty" val="9000" />
-				<add stat="inventoryLimit" val="8" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6037" levels="1" name="Soul Unleash">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6038" levels="1" name="Report Status">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="BOT_PENALTY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="icon" val="icon.skill6038" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="stayAfterDeath" val="True" />
-		<set name="targetType" val="ONE" />
+		<set name="stayAfterDeath" val="true" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="BlockChat" />
 		</effects>
 	</skill>
 	<skill id="6039" levels="1" name="Report Status">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="BOT_PENALTY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="icon" val="icon.skill6038" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="stayAfterDeath" val="True" />
-		<set name="targetType" val="ONE" />
+		<set name="stayAfterDeath" val="true" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="BlockParty" />
 		</effects>
 	</skill>
 	<skill id="6040" levels="1" name="Report Status">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="BOT_PENALTY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="icon" val="icon.skill6038" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="stayAfterDeath" val="True" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="Flag" />
 		</effects>
 	</skill>
 	<skill id="6041" levels="1" name="Phoenix Rush">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-679" />
 		<set name="effectRange" val="600" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="800" />
 		<set name="icon" val="icon.skill6041" />
 		<set name="magicLvl" val="81" />
@@ -420,7 +488,7 @@
 		<set name="operateType" val="DA1" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
@@ -431,20 +499,22 @@
 		</effects>
 	</skill>
 	<skill id="6042" levels="1" name="Phoenix Cleanse">
-		<!-- Confirmed CT2.5 -->
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="679" />
 		<set name="effectRange" val="1100" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill6042" />
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="81" />
-		<set name="mpConsume2" val="47" />
 		<set name="mpConsume1" val="12" />
+		<set name="mpConsume2" val="47" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="180000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<effects>
 			<effect name="DispelByCategory">
 				<param slot="DEBUFF" rate="100" max="5" />
@@ -701,71 +771,93 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6055" levels="1" name="Report Status">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="7200" />
 		<set name="abnormalType" val="BOT_PENALTY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="icon" val="icon.skill6038" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="stayAfterDeath" val="True" />
-		<set name="targetType" val="ONE" />
+		<set name="stayAfterDeath" val="true" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<effect name="BlockAction">
-				<param blockedActions="-2" />
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.5" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mAtkSpd" val="0.5" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="0.5" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6056" levels="1" name="Report Status">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10800" />
 		<set name="abnormalType" val="BOT_PENALTY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="icon" val="icon.skill6038" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="stayAfterDeath" val="True" />
-		<set name="targetType" val="ONE" />
+		<set name="stayAfterDeath" val="true" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<effect name="BlockAction">
-				<param blockedActions="-2" />
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.2" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mAtkSpd" val="0.2" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="0.2" />
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6057" levels="1" name="Report Status">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="7200" />
 		<set name="abnormalType" val="BOT_PENALTY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="icon" val="icon.skill6038" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="stayAfterDeath" val="True" />
-		<set name="targetType" val="ONE" />
+		<set name="stayAfterDeath" val="true" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<effect name="Debuff">
-				<mul stat="runSpd" val="0.0" />
+			<effect name="Escape">
+				<param escapeType="TOWN" />
 			</effect>
+			<effect name="Root" />
 		</effects>
 	</skill>
 	<skill id="6058" levels="1" name="Report Status">
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="7200" />
 		<set name="abnormalType" val="BOT_PENALTY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="icon" val="icon.skill6038" />
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="stayAfterDeath" val="True" />
-		<set name="targetType" val="ONE" />
+		<set name="stayAfterDeath" val="true" />
+		<set name="targetType" val="TARGET" />
 		<effects>
-			<effect name="Debuff">
-				<mul stat="runSpd" val="0.0" />
+			<effect name="Escape">
+				<param escapeType="TOWN" />
 			</effect>
+			<effect name="Root" />
 		</effects>
 	</skill>
 	<skill id="6059" levels="1" name="Counter Critical">
@@ -1007,12 +1099,16 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6089" levels="1" name="Attack Motion">
+		<!-- High Five Confirmed -->
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="600" />
 		<set name="coolTime" val="500" />
+		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="3500" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="6090" levels="1" name="Lightning Strike">
 		<!-- Confirmed CT2.5 -->
