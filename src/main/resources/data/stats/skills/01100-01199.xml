@@ -1614,37 +1614,42 @@
 		</effects>
 	</skill>
 	<skill id="1182" levels="3" name="Resist Aqua" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#effectPoints"> 243 379 418 </table>
-		<table name="#mpConsume2"> 18 28 31 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#effectPoint"> 243 379 418 </table>
+		<table name="#magicLvl"> 25 40 44 </table>
 		<table name="#mpConsume1"> 5 7 8 </table>
+		<table name="#mpConsume2"> 18 28 31 </table>
 		<table name="#vuln"> 10 15 20 </table>
-		<table name="#ench1AbnormalTimes"> 1240 1280 1320 1360 1400 1440 1480 1520 1560 1600 1640 1680 1720 1760 1800 1840 1880 1920 1960 2000 2040 2080 2120 2160 2200 2240 2280 2320 2360 2400 </table>
-		<table name="#ench2MpConsume2"> 30 29 29 28 28 27 27 26 26 25 25 24 24 23 23 22 22 21 21 20 20 19 19 18 18 17 17 16 16 15 </table>
-		<table name="#ench2MpConsume1"> 7 7 7 7 7 7 7 6 6 6 6 6 6 6 6 5 5 5 5 5 5 5 4 4 4 4 4 4 4 4 </table>
-		<table name="#ench3vuln"> 24 28 33 37 41 46 50 54 59 63 67 72 76 80 85 89 93 98 102 106 111 115 119 124 128 132 137 141 145 150 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
-		<table name="#enchvuln"> 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#enchVuln"> 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 </table>
+		<table name="#ench1AbnormalTime"> 1240 1280 1320 1360 1400 1440 1480 1520 1560 1600 1640 1680 1720 1760 1800 1840 1880 1920 1960 2000 2040 2080 2120 2160 2200 2240 2280 2320 2360 2400 </table>
+		<table name="#ench2MpConsume1"> 7 7 7 7 7 7 7 6 6 6 6 6 6 6 6 5 5 5 5 5 5 5 4 4 4 4 4 4 4 4 </table>
+		<table name="#ench2MpConsume2"> 30 29 29 28 28 27 27 26 26 25 25 24 24 23 23 22 22 21 21 20 20 19 19 18 18 17 17 16 16 15 </table>
+		<table name="#ench3Vuln"> 24 28 33 37 41 46 50 54 59 63 67 72 76 80 85 89 93 98 102 106 111 115 119 124 128 132 137 141 145 150 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ARMOR_WATER" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1182" />
 		<set name="isMagic" val="1" />
-		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
-		<enchant1 name="abnormalTime" val="#ench1AbnormalTimes" />
+		<set name="targetType" val="TARGET" />
+		<enchant1 name="abnormalTime" val="#ench1AbnormalTime" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
+		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
 			<effect name="Buff">
@@ -1653,17 +1658,17 @@
 		</effects>
 		<enchant1Effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="#enchvuln" />
+				<add stat="waterRes" val="#enchVuln" />
 			</effect>
 		</enchant1Effects>
 		<enchant2Effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="#enchvuln" />
+				<add stat="waterRes" val="#enchVuln" />
 			</effect>
 		</enchant2Effects>
 		<enchant3Effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="#ench3vuln" />
+				<add stat="waterRes" val="#ench3Vuln" />
 			</effect>
 		</enchant3Effects>
 	</skill>
@@ -1744,38 +1749,43 @@
 		</effects>
 	</skill>
 	<skill id="1189" levels="3" name="Resist Wind" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#effectPoints"> 331 379 418 </table>
-		<table name="#mpConsume2"> 24 28 31 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#effectPoint"> 331 379 418 </table>
+		<table name="#magicLvl"> 35 40 44 </table>
 		<table name="#mpConsume1"> 6 7 8 </table>
+		<table name="#mpConsume2"> 24 28 31 </table>
 		<table name="#vuln"> 10 15 20 </table>
-		<table name="#ench1AbnormalTimes"> 1240 1280 1320 1360 1400 1440 1480 1520 1560 1600 1640 1680 1720 1760 1800 1840 1880 1920 1960 2000 2040 2080 2120 2160 2200 2240 2280 2320 2360 2400 </table>
-		<table name="#ench2MpConsume2"> 30 29 29 28 28 27 27 26 26 25 25 24 24 23 23 22 22 21 21 20 20 19 19 18 18 17 17 16 16 15 </table>
-		<table name="#ench2MpConsume1"> 7 7 7 7 7 7 7 6 6 6 6 6 6 6 6 5 5 5 5 5 5 5 4 4 4 4 4 4 4 4 </table>
-		<table name="#ench3abnormalLvl"> 3 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 </table>
-		<table name="#ench3vuln"> 24 28 33 37 41 46 50 54 59 63 67 72 76 80 85 89 93 98 102 106 111 115 119 124 128 132 137 141 145 150 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
-		<table name="#enchvuln"> 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#enchVuln"> 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 </table>
+		<table name="#ench1AbnormalTime"> 1240 1280 1320 1360 1400 1440 1480 1520 1560 1600 1640 1680 1720 1760 1800 1840 1880 1920 1960 2000 2040 2080 2120 2160 2200 2240 2280 2320 2360 2400 </table>
+		<table name="#ench2MpConsume1"> 7 7 7 7 7 7 7 6 6 6 6 6 6 6 6 5 5 5 5 5 5 5 4 4 4 4 4 4 4 4 </table>
+		<table name="#ench2MpConsume2"> 30 29 29 28 28 27 27 26 26 25 25 24 24 23 23 22 22 21 21 20 20 19 19 18 18 17 17 16 16 15 </table>
+		<table name="#ench3AbnormalLvl"> 3 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 </table>
+		<table name="#ench3Vuln"> 24 28 33 37 41 46 50 54 59 63 67 72 76 80 85 89 93 98 102 106 111 115 119 124 128 132 137 141 145 150 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ARMOR_WIND" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1189" />
 		<set name="isMagic" val="1" />
-		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
-		<enchant1 name="abnormalTime" val="#ench1AbnormalTimes" />
+		<set name="targetType" val="TARGET" />
+		<enchant1 name="abnormalTime" val="#ench1AbnormalTime" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
+		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
 			<effect name="Buff">
@@ -1784,53 +1794,58 @@
 		</effects>
 		<enchant1Effects>
 			<effect name="Buff">
-				<add stat="windRes" val="#enchvuln" />
+				<add stat="windRes" val="#enchVuln" />
 			</effect>
 		</enchant1Effects>
 		<enchant2Effects>
 			<effect name="Buff">
-				<add stat="windRes" val="#enchvuln" />
+				<add stat="windRes" val="#enchVuln" />
 			</effect>
 		</enchant2Effects>
 		<enchant3Effects>
 			<effect name="Buff">
-				<add stat="windRes" val="#ench3vuln" />
+				<add stat="windRes" val="#ench3Vuln" />
 			</effect>
 		</enchant3Effects>
 	</skill>
 	<skill id="1191" levels="3" name="Resist Fire" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
-		<table name="#abnormalLvls"> 1 2 3 </table>
-		<table name="#effectPoints"> 285 379 418 </table>
-		<table name="#mpConsume2"> 21 28 31 </table>
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#effectPoint"> 285 379 418 </table>
+		<table name="#magicLvl"> 30 40 44 </table>
 		<table name="#mpConsume1"> 6 7 8 </table>
+		<table name="#mpConsume2"> 21 28 31 </table>
 		<table name="#vuln"> 10 15 20 </table>
-		<table name="#ench1AbnormalTimes"> 1240 1280 1320 1360 1400 1440 1480 1520 1560 1600 1640 1680 1720 1760 1800 1840 1880 1920 1960 2000 2040 2080 2120 2160 2200 2240 2280 2320 2360 2400 </table>
-		<table name="#ench2MpConsume2"> 30 29 29 28 28 27 27 26 26 25 25 24 24 23 23 22 22 21 21 20 20 19 19 18 18 17 17 16 16 15 </table>
-		<table name="#ench2MpConsume1"> 7 7 7 7 7 7 7 6 6 6 6 6 6 6 6 5 5 5 5 5 5 5 4 4 4 4 4 4 4 4 </table>
-		<table name="#ench3abnormalLvl"> 3 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 </table>
-		<table name="#ench3vuln"> 24 28 33 37 41 46 50 54 59 63 67 72 76 80 85 89 93 98 102 106 111 115 119 124 128 132 137 141 145 150 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
-		<table name="#enchvuln"> 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#enchVuln"> 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 </table>
+		<table name="#ench1AbnormalTime"> 1240 1280 1320 1360 1400 1440 1480 1520 1560 1600 1640 1680 1720 1760 1800 1840 1880 1920 1960 2000 2040 2080 2120 2160 2200 2240 2280 2320 2360 2400 </table>
+		<table name="#ench2MpConsume1"> 7 7 7 7 7 7 7 6 6 6 6 6 6 6 6 5 5 5 5 5 5 5 4 4 4 4 4 4 4 4 </table>
+		<table name="#ench2MpConsume2"> 30 29 29 28 28 27 27 26 26 25 25 24 24 23 23 22 22 21 21 20 20 19 19 18 18 17 17 16 16 15 </table>
+		<table name="#ench3AbnormalLvl"> 3 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 </table>
+		<table name="#ench3Vuln"> 24 28 33 37 41 46 50 54 59 63 67 72 76 80 85 89 93 98 102 106 111 115 119 124 128 132 137 141 145 150 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ARMOR_FIRE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="400" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1191" />
 		<set name="isMagic" val="1" />
-		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
-		<enchant1 name="abnormalTime" val="#ench1AbnormalTimes" />
+		<set name="targetType" val="TARGET" />
+		<enchant1 name="abnormalTime" val="#ench1AbnormalTime" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant2 name="mpConsume1" val="#ench2MpConsume1" />
+		<enchant2 name="mpConsume2" val="#ench2MpConsume2" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<effects>
 			<effect name="Buff">
@@ -1839,17 +1854,17 @@
 		</effects>
 		<enchant1Effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="#enchvuln" />
+				<add stat="fireRes" val="#enchVuln" />
 			</effect>
 		</enchant1Effects>
 		<enchant2Effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="#enchvuln" />
+				<add stat="fireRes" val="#enchVuln" />
 			</effect>
 		</enchant2Effects>
 		<enchant3Effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="#ench3vuln" />
+				<add stat="fireRes" val="#ench3Vuln" />
 			</effect>
 		</enchant3Effects>
 	</skill>
