@@ -145,50 +145,71 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 	</skill>
-	<skill id="5008" levels="5" name="Frintezza's Songs">
-		<!-- Confirmed CT2.5 -->
+	<skill id="5008" levels="5" name="Frintezza's Concert Hall Melody">
+		<!-- High Five Confirmed -->
 		<!-- Frintezza Skills -->
-		<table name="#abnormalTypes"> NONE NONE ULTIMATE_BUFF HEAL_EFFECT_DOWN STUN </table>
-		<table name="#activateRate"> 0 0 0 10 10 </table>
+		<table name="#abnormalLvl"> 0 0 1 1 1 </table>
+		<table name="#abnormalTime"> 0 0 5 5 5 </table>
+		<table name="#abnormalType"> NONE NONE ULTIMATE_BUFF HEAL_EFFECT_DOWN STUN </table>
+		<table name="#abnormalVisualEffect"> NONE NONE NONE NONE DANCE_ROOT </table>
+		<table name="#activateRate"> 0 0 -1 10 10 </table>
 		<table name="#attackAndSpeed"> 1 1 1.2 1 1 </table>
-		<table name="#basicProperties"> NONE NONE NONE MEN MEN </table>
+		<table name="#basicProperty"> NONE NONE NONE MEN MEN </table>
 		<table name="#effectname1"> Buff Buff Buff Buff Stun </table>
-		<table name="#effectPoints"> 100 100 100 -100 -100 </table>
+		<table name="#effectPoint"> 100 100 100 -100 -100 </table>
 		<table name="#healEffect"> 1 1 1 0.5 1 </table>
-		<table name="#healPercent"> 3 0 0 0 0 </table>
-		<table name="#icons"> icon.skill0000 icon.skill0000 icon.skill0000 icon.skill5008_plague icon.skill5008_psycho </table>
+		<table name="#hpPerMax"> 3 0 0 0 0 </table>
+		<table name="#icon"> icon.skill0000 icon.skill0000 icon.skill0000 icon.skill5008_plague icon.skill5008_psycho </table>
 		<table name="#isDebuff"> false false false true true </table>
 		<table name="#isMagic"> 1 0 0 1 1 </table>
-		<table name="#lvlDepend"> 0 0 0 1 1 </table>
+		<table name="#lvlBonusRate"> 0 0 0 1 1 </table>
 		<table name="#maxNegated"> 0 0 0 0 10 </table>
-		<table name="#time"> 0 0 5 5 5 </table>
-		<table name="#traits"> NONE NONE NONE DERANGEMENT DERANGEMENT </table>
-		<set name="abnormalType" val="#abnormalTypes" />
-		<set name="basicProperty" val="#basicProperties" />
-		<set name="effectPoint" val="#effectPoints" />
-		<set name="icon" val="#icons" />
+		<table name="#operateType"> A1 A1 A2 A2 A2 </table>
+		<table name="#rate"> 0 0 0 0 20 </table>
+		<table name="#rideState"> NONE;STRIDER;WYVERN;WOLF NONE NONE NONE;STRIDER;WYVERN;WOLF NONE;STRIDER;WYVERN;WOLF </table>
+		<table name="#trait"> NONE NONE NONE DERANGEMENT DERANGEMENT </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="abnormalType" val="#abnormalType" />
+		<set name="abnormalVisualEffect" val="#abnormalVisualEffect" />
+		<set name="activateRate" val="#activateRate" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="basicProperty" val="#basicProperty" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="icon" val="#icon" />
 		<set name="isDebuff" val="#isDebuff" />
 		<set name="isMagic" val="#isMagic" />
-		<set name="lvlBonusRate" val="#lvlDepend" />
+		<set name="lvlBonusRate" val="#lvlBonusRate" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="SELF" />
-		<set name="trait" val="#traits" />
+		<set name="operateType" val="#operateType" />
+		<set name="rideState" val="#rideState" />
+		<set name="targetType" val="TARGET" />
+		<set name="trait" val="#trait" />
 		<effects>
-			<effect name="#effectname1">
+			<effect name="HpPerMax">
+				<param power="#hpPerMax" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="pAtk" val="#attackAndSpeed" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="mAtk" val="#attackAndSpeed" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#attackAndSpeed" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#attackAndSpeed" />
+			</effect>
+			<effect name="Buff">
 				<add stat="runSpd" val="#attackAndSpeed" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="healEffect" val="#healEffect" />
 			</effect>
+			<effect name="#effectname1" />
 			<effect name="DispelByCategory">
-				<param slot="BUFF" rate="#activateRate" max="#maxNegated" />
-			</effect>
-			<effect name="HpPerMax">
-				<param power="#healPercent" />
+				<param slot="BUFF" rate="#rate" max="#maxNegated" />
 			</effect>
 		</effects>
 	</skill>
