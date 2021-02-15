@@ -16,26 +16,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package com.l2jserver.datapack.custom.service.discord.commands;
+package com.l2jserver.datapack.custom.service.discord.commands.moderation;
 
 import com.l2jserver.datapack.custom.service.discord.AbstractCommand;
-import com.l2jserver.gameserver.data.xml.impl.AdminData;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.network.serverpackets.ExShowScreenMessage;
+import com.l2jserver.gameserver.util.Broadcast;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.awt.Color;
 
 /**
- * Online Command.
+ * Announce Command.
  * @author Stalitsa
  * @version 2.6.2.0
  */
-public class OnlineCommand extends AbstractCommand {
+public class AnnounceCommand extends AbstractCommand {
 
 	private static final String[] COMMANDS = {
-		"online",
-		"on"
+		"announce",
+		"ann"
 	};
 
 	@Override
@@ -45,25 +45,34 @@ public class OnlineCommand extends AbstractCommand {
 
 	@Override
 	public void executeCommand(MessageReceivedEvent event, String[] args) {
-		EmbedBuilder eb = new EmbedBuilder();
-		final int playersCount = L2World.getInstance().getAllPlayersCount();
-		final int gmCount = AdminData.getInstance().getAllGms(true).size();
-		if (args.length != 1) {
-			eb.setColor(Color.RED);
-			eb.setDescription("Please use the command without any Arguments");
-			event.getTextChannel().sendMessage(eb.build()).queue();
-			event.getMessage().addReaction("\u274C").queue(); // Bot reacts with X mark.
+		EmbedBuilder eb = new EmbedBuilder().setColor(Color.RED);
+		String announcement = event.getMessage().getContentRaw().replace(args[0] +" "+ args[1], "");
+
+		if (!canExecute(event)) {
 			return;
 		}
+
+		if (args.length <= 2) {
+			eb.setDescription("Wrong Arguments. Please type the message to be sent.");
+			event.getTextChannel().sendMessage(eb.build()).queue();
+			event.getMessage().addReaction("\u274C").queue();
+			return;
+		}
+
+		if (args[1].equals("normal")) {
+			Broadcast.toAllOnlinePlayers(announcement);
+		}
 		
-		// A command that the bot listens to and responds in an embed with online players and Gms
-		eb.setColor(Color.CYAN);
-		eb.setTitle(event.getAuthor().getName(), event.getAuthor().getEffectiveAvatarUrl());
-		eb.setDescription("***___GAME INFO___***");
-		eb.addField("Online Players", String.valueOf(playersCount), false);
-		eb.addBlankField(false);
-		eb.addField("Online GM's", String.valueOf(gmCount), false);
-		event.getChannel().sendMessage(eb.build()).queue(); // this actually sends the information to discord.
-		event.getMessage().addReaction("\u2705").queue(); // Bot reacts with check mark.
+		if (args[1].equals("critical")) {
+			Broadcast.toAllOnlinePlayers(announcement, true);
+		}
+		
+		if (args[1].equals("screen")) {
+			ExShowScreenMessage screenMessage = new ExShowScreenMessage(announcement, 20000);
+			Broadcast.toAllOnlinePlayers(screenMessage);
+		}
+		eb.setDescription("**In game Announcement have been sent**.");
+		event.getMessage().addReaction("\u2705").queue();
+		event.getChannel().sendMessage(eb.build()).queue();
 	}
 }

@@ -16,8 +16,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package com.l2jserver.datapack.custom.service.discord;
+package com.l2jserver.datapack.custom.service.discord.listeners;
 
+import com.l2jserver.datapack.custom.service.discord.DiscordBot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +32,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
  * @author Stalitsa
  * @version 2.6.2.0
  */
-public class StartListener extends ListenerAdapter {
+public class BasicListener extends ListenerAdapter {
 	private static final Logger LOG = LoggerFactory.getLogger(DiscordBot.class);
 	
 	@Override

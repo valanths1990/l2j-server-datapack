@@ -18,10 +18,15 @@
  */
 package com.l2jserver.datapack.custom.service.discord;
 
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.ChannelType;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,9 +39,9 @@ import static com.l2jserver.gameserver.config.Configuration.discord;
  */
 public abstract class AbstractCommand extends ListenerAdapter {
 	
-	public abstract List<String> getCommands();
+	public abstract String[] getCommands();
 	
-	public abstract void executeCommand(MessageReceivedEvent event, String[] args, String prefix);
+	public abstract void executeCommand(MessageReceivedEvent event, String[] args);
 	
 	@Override
 	public void onMessageReceived(MessageReceivedEvent event) {
@@ -45,7 +50,7 @@ public abstract class AbstractCommand extends ListenerAdapter {
 		}
 		String[] args = event.getMessage().getContentRaw().split(" ");
 		if (isCommand(args, discord().getPrefix())) {
-			executeCommand(event, args, discord().getPrefix());
+			executeCommand(event, args);
 		}
 	}
 	
@@ -56,5 +61,20 @@ public abstract class AbstractCommand extends ListenerAdapter {
 		}
 		return commands.contains(args[0]);
 	}
-	
+
+	public static boolean canExecute(MessageReceivedEvent event) {
+		EmbedBuilder eb = new EmbedBuilder().setColor(Color.RED);
+		Guild guild = event.getJDA().getGuildById(discord().getServerId());
+		Member guildMember = guild != null ? guild.getMember(event.getMessage().getAuthor()) : null;
+		Role gameMaster = guild != null ? guild.getRoleById(discord().getGameMasterId())  : null;
+
+		// Only Server owner and members with the specified role assigned can execute the command.
+		if ((guildMember == null) || (gameMaster == null) || !guildMember.isOwner() || !guildMember.getRoles().contains(gameMaster)) {
+			eb.setDescription("Only Staff members can use this command!");
+			event.getTextChannel().sendMessage(eb.build()).queue();
+			event.getMessage().addReaction("\u274C").queue();
+			return false;
+		}
+		return true;
+	}
 }

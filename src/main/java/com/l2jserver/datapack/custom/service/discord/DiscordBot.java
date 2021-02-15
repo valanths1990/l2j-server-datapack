@@ -18,16 +18,13 @@
  */
 package com.l2jserver.datapack.custom.service.discord;
 
-import static com.l2jserver.gameserver.config.Configuration.discord;
-
-import java.awt.Color;
-
-import javax.security.auth.login.LoginException;
-
-import com.l2jserver.datapack.custom.service.discord.commands.OnlineCommand;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.l2jserver.datapack.custom.service.discord.commands.*;
+import com.l2jserver.datapack.custom.service.discord.commands.moderation.AbortCommand;
+import com.l2jserver.datapack.custom.service.discord.commands.moderation.AnnounceCommand;
+import com.l2jserver.datapack.custom.service.discord.commands.moderation.RestartCommand;
+import com.l2jserver.datapack.custom.service.discord.commands.moderation.ShutdownCommand;
+import com.l2jserver.datapack.custom.service.discord.listeners.ChatListener;
+import com.l2jserver.datapack.custom.service.discord.listeners.BasicListener;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -37,6 +34,13 @@ import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.security.auth.login.LoginException;
+import java.awt.Color;
+
+import static com.l2jserver.gameserver.config.Configuration.discord;
 
 /**
  * Main class of Discord Bot.
@@ -50,8 +54,13 @@ public class DiscordBot {
 	private static JDA jda;
 	
 	private static final Object[] COMMANDS = {
-		new StartListener(),
+		new AbortCommand(),
+		new AnnounceCommand(),
 		new OnlineCommand(),
+		new RestartCommand(),
+		new ShutdownCommand(),
+		new ChatListener(),
+		new BasicListener(),
 	};
 	
 	public static void main(String[] args) {
@@ -91,7 +100,7 @@ public class DiscordBot {
 	 * @param ed the embed message to send. (The embed build(); is done here.)
 	 * @param channelId the channel to send the embed. // planned to be used by console logs
 	 */
-	public void sendMessageTo(EmbedBuilder ed, String channelId) {
+	public static void sendMessageTo(EmbedBuilder ed, String channelId) {
 		MessageChannel channel = jda.getTextChannelById(channelId);
 		if (channel != null) {
 			channel.sendMessage(ed.build()).queue(); // this actually sends the information to discord.
