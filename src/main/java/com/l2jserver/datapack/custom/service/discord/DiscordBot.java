@@ -18,7 +18,7 @@
  */
 package com.l2jserver.datapack.custom.service.discord;
 
-import com.l2jserver.datapack.custom.service.discord.commands.*;
+import com.l2jserver.datapack.custom.service.discord.commands.OnlineCommand;
 import com.l2jserver.datapack.custom.service.discord.commands.moderation.AbortCommand;
 import com.l2jserver.datapack.custom.service.discord.commands.moderation.AnnounceCommand;
 import com.l2jserver.datapack.custom.service.discord.commands.moderation.RestartCommand;
