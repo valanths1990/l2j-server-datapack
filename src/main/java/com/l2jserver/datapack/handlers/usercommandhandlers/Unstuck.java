@@ -24,6 +24,7 @@ import static com.l2jserver.gameserver.config.Configuration.character;
 import static com.l2jserver.gameserver.model.TeleportWhereType.TOWN;
 import static com.l2jserver.gameserver.network.SystemMessageId.THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT;
 import static com.l2jserver.gameserver.network.serverpackets.ActionFailed.STATIC_PACKET;
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.MINUTES;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
@@ -90,10 +91,10 @@ public class Unstuck implements IUserCommandHandler {
 			return true;
 		}
 		
-		if (character().getUnstuckInterval() > 100) {
-			activeChar.sendMessage("You use Escape: " + SECONDS.toMinutes(character().getUnstuckInterval()) + " minutes.");
+		if (MILLISECONDS.toSeconds(character().getUnstuckInterval()) > 100) {
+			activeChar.sendMessage("You use Escape: " + MILLISECONDS.toMinutes(character().getUnstuckInterval()) + " minutes.");
 		} else {
-			activeChar.sendMessage("You use Escape: " + character().getUnstuckInterval() + " seconds.");
+			activeChar.sendMessage("You use Escape: " + MILLISECONDS.toSeconds(character().getUnstuckInterval()) + " seconds.");
 		}
 		
 		activeChar.getAI().setIntention(AI_INTENTION_IDLE);
