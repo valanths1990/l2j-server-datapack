@@ -19,16 +19,16 @@
 	</skill>
 	<skill id="10001" levels="1" name="Mana Potion">
 		<set name="displayId" val="2288" />
-		<set name="isMagic" val="2" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="728" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="500" />
+		<set name="reuseDelay" val="10000" />
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="Mp">
-				<param amount="100" />
+				<param amount="1000" />
 			</effect>
 		</effects>
 	</skill>

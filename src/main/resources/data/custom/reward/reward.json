@@ -1,0 +1,53 @@
+{
+  "rewards": [
+    {
+      "type": "pvp",
+      "items": [
+        {
+          "id": 57,
+          "count": 1000
+        },
+        {
+          "id": 57,
+          "count": 1000
+        }
+      ]
+    },
+    {
+      "type": "assist",
+      "items": [
+        {
+          "id": 57,
+          "count": 1000
+        },
+        {
+          "id": 57,
+          "count": 1000
+        }
+      ]
+    },
+    {
+      "type": "tower",
+      "items": [
+        {
+          "id": 57,
+          "count": 1000
+        },
+        {
+          "id": 57,
+          "count": 1000
+        }
+      ]
+    },
+    {
+      "type": "ranking:weekly",
+      "id": 57,
+      "count": 1000
+    },
+    {
+      "type": "ranking:monthly",
+      "id": 57,
+      "count": 1000000
+    }
+  ]
+}

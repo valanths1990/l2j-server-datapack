@@ -221,6 +221,8 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="for_npc" val="true" />
+		<set name="item_skill" val="846-1"/>
+		<set name="isForceEquip" val="true" />
 		<for>
 			<set stat="pAtk" val="24" />
 			<set stat="mAtk" val="17" />

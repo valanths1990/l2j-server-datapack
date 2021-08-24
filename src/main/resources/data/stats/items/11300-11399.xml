@@ -1731,6 +1731,7 @@
 		</for>
 	</item>
 	<item id="11362" type="Armor" name="Zubei's Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_shrnoens_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1968,6 +1969,7 @@
 		</for>
 	</item>
 	<item id="11374" type="Armor" name="Avadon Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_avadon_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -2190,6 +2192,7 @@
 		</for>
 	</item>
 	<item id="11385" type="Armor" name="Doom Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_doom_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

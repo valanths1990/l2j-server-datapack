@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/multisell.xsd">
+
+<!--TOP JEWELS JEWEL MULTISESLL -->
+    <item>
+		<!-- ant -->
+		<production count="1" id="6660" />
+	</item>
+	<item>
+		<!-- zaken -->
+		<production count="1" id="6659" />
+	</item>
+	<item>
+		<!-- baium -->
+		<production count="1" id="6658" />
+	</item>
+	<item>
+		<!-- antharas -->
+		<production count="1" id="6656" />
+	</item>
+	<item>
+		<!-- valakas -->
+		<production count="1" id="6657" />
+	</item>
+	<item>
+		<!-- frintezza -->
+		<production count="1" id="8191" />
+	</item>
+	<item>
+		<!-- beleth -->
+		<production count="1" id="10314" />
+	</item>
+	<item>
+		<!-- freya -->
+		<production count="1" id="16025" />
+	</item>
+
+	
+</list>

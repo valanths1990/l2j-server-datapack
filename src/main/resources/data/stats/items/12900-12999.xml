@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="12900" type="Weapon" name="Demon Splinter - Thunder {PvP} - Critical Stun">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_demon_splinter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -33,6 +34,7 @@
 		</for>
 	</item>
 	<item id="12901" type="Weapon" name="Draconic Bow - Earth {PvP} - Cheap Shot">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_draconic_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -67,6 +69,7 @@
 		</for>
 	</item>
 	<item id="12902" type="Weapon" name="Draconic Bow - Earth {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_draconic_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -100,6 +103,7 @@
 		</for>
 	</item>
 	<item id="12903" type="Weapon" name="Draconic Bow - Earth {PvP} - Critical Slow">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_draconic_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -134,6 +138,7 @@
 		</for>
 	</item>
 	<item id="12904" type="Weapon" name="Dragon Hunter Axe - Thunder {PvP} - HP Regeneration">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -165,6 +170,7 @@
 		</for>
 	</item>
 	<item id="12905" type="Weapon" name="Dragon Hunter Axe - Thunder {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -196,6 +202,7 @@
 		</for>
 	</item>
 	<item id="12906" type="Weapon" name="Dragon Hunter Axe - Thunder {PvP} - HP Drain">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -227,6 +234,7 @@
 		</for>
 	</item>
 	<item id="12907" type="Weapon" name="Laevateinn - Lightning {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_leavatein_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -262,6 +270,7 @@
 		</for>
 	</item>
 	<item id="12908" type="Weapon" name="Laevateinn - Lightning {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_leavatein_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -297,6 +306,7 @@
 		</for>
 	</item>
 	<item id="12909" type="Weapon" name="Laevateinn - Lightning {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_leavatein_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -332,6 +342,7 @@
 		</for>
 	</item>
 	<item id="12910" type="Weapon" name="Basalt Battlehammer - Concentration {PvP} - HP Drain">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -363,6 +374,7 @@
 		</for>
 	</item>
 	<item id="12911" type="Weapon" name="Basalt Battlehammer - Concentration {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -394,6 +406,7 @@
 		</for>
 	</item>
 	<item id="12912" type="Weapon" name="Basalt Battlehammer - Concentration {PvP} - HP Regeneration">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -425,6 +438,7 @@
 		</for>
 	</item>
 	<item id="12913" type="Weapon" name="Sarunga - Earth {PvP} - Cheap Shot">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_sarnga_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -460,6 +474,7 @@
 		</for>
 	</item>
 	<item id="12914" type="Weapon" name="Sarunga - Earth {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_sarnga_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -495,6 +510,7 @@
 		</for>
 	</item>
 	<item id="12915" type="Weapon" name="Sarunga - Earth {PvP} - Critical Slow">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_sarnga_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -531,6 +547,7 @@
 		</for>
 	</item>
 	<item id="12916" type="Weapon" name="Saint Spear - Destruction {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_saint_spear_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -562,6 +579,7 @@
 		</for>
 	</item>
 	<item id="12917" type="Weapon" name="Saint Spear - Destruction {PvP} - Guidance">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_saint_spear_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -593,6 +611,7 @@
 		</for>
 	</item>
 	<item id="12918" type="Weapon" name="Saint Spear - Destruction {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_saint_spear_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -624,6 +643,7 @@
 		</for>
 	</item>
 	<item id="12919" type="Weapon" name="Arcana Mace - Nature {PvP} - Acumen">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_arcana_mace_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -656,6 +676,7 @@
 		</for>
 	</item>
 	<item id="12920" type="Weapon" name="Arcana Mace - Nature {PvP} - MP Regeneration">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_arcana_mace_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -688,6 +709,7 @@
 		</for>
 	</item>
 	<item id="12921" type="Weapon" name="Arcana Mace - Nature {PvP} - Mana Up">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_arcana_mace_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -720,6 +742,7 @@
 		</for>
 	</item>
 	<item id="12922" type="Weapon" name="Angel Slayer - Concentration {PvP} - Critical Damage">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_angel_slayer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -751,6 +774,7 @@
 		</for>
 	</item>
 	<item id="12923" type="Weapon" name="Angel Slayer - Concentration {PvP} - HP Drain">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_angel_slayer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -782,6 +806,7 @@
 		</for>
 	</item>
 	<item id="12924" type="Weapon" name="Angel Slayer - Concentration {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_angel_slayer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -813,6 +838,7 @@
 		</for>
 	</item>
 	<item id="12925" type="Weapon" name="Imperial Staff - Nature {PvP} - Empower">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_imperial_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -845,6 +871,7 @@
 		</for>
 	</item>
 	<item id="12926" type="Weapon" name="Imperial Staff - Nature {PvP} - MP Regeneration">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_imperial_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -877,6 +904,7 @@
 		</for>
 	</item>
 	<item id="12927" type="Weapon" name="Imperial Staff - Nature {PvP} - Magic Hold">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_imperial_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -942,6 +970,7 @@
 		</for>
 	</item>
 	<item id="12929" type="Weapon" name="Forgotten Blade - Lightning {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_forgotten_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -972,6 +1001,7 @@
 		</for>
 	</item>
 	<item id="12930" type="Weapon" name="Forgotten Blade - Lightning {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_forgotten_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1002,6 +1032,7 @@
 		</for>
 	</item>
 	<item id="12931" type="Weapon" name="Forgotten Blade - Lightning {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_forgotten_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1032,6 +1063,7 @@
 		</for>
 	</item>
 	<item id="12932" type="Weapon" name="Heavens Divider - Thunder {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_heavens_divider_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1062,6 +1094,7 @@
 		</for>
 	</item>
 	<item id="12933" type="Weapon" name="Heavens Divider - Thunder {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_heavens_divider_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1092,6 +1125,7 @@
 		</for>
 	</item>
 	<item id="12934" type="Weapon" name="Heavens Divider - Thunder {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_heavens_divider_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1122,6 +1156,7 @@
 		</for>
 	</item>
 	<item id="12935" type="Weapon" name="Dynasty Ancient Sword - Great Gale {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1156,6 +1191,7 @@
 		</for>
 	</item>
 	<item id="12936" type="Weapon" name="Dynasty Ancient Sword - Great Gale {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1190,6 +1226,7 @@
 		</for>
 	</item>
 	<item id="12937" type="Weapon" name="Dynasty Ancient Sword - Great Gale {PvP} - Light">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1224,6 +1261,7 @@
 		</for>
 	</item>
 	<item id="12938" type="Weapon" name="Dynasty Knife - Great Gale {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_dynasty_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />

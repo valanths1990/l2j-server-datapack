@@ -78,6 +78,7 @@
 		</for>
 	</item>
 	<item id="15604" type="Armor" name="Vorpal Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.Evilgate_Shield_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -413,6 +414,7 @@
 		</for>
 	</item>
 	<item id="15621" type="Armor" name="Moirai Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.weapon_tysandy_shield_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

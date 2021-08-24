@@ -36,7 +36,6 @@ public class Augment implements IBypassHandler {
 		if (!target.isNpc()) {
 			return false;
 		}
-		
 		try {
 			switch (Integer.parseInt(command.substring(8, 9).trim())) {
 				case 1:

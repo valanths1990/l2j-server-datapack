@@ -894,6 +894,7 @@
 		</for>
 	</item>
 	<item id="9036" type="Armor" name="Shadow Item: Bone Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_bone_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1244,6 +1245,7 @@
 		</for>
 	</item>
 	<item id="9056" type="Armor" name="Shadow Item: Composite Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_composite_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1493,6 +1495,7 @@
 		</for>
 	</item>
 	<item id="9070" type="Armor" name="Shadow Item: Zubei's Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_shrnoens_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1754,6 +1757,7 @@
 		</for>
 	</item>
 	<item id="9084" type="Armor" name="Shadow Item: Dark Crystal Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_dark_crystal_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

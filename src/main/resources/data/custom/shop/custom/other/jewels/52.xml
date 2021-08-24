@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../xsd/multisell.xsd">
+    <item>
+        <production id="848" count="1"/>
+    </item>
+    <item><!-- Enchanted Earring -->
+        <production id="879" count="1"/>
+    </item>
+    <item><!-- Enchanted Ring -->
+        <production id="911" count="1"/>
+
+    </item>
+    <item><!-- Enchanted Necklace -->
+        <production id="850" count="1"/>
+
+    </item>
+    <item><!-- Elven Earring -->
+        <production id="881" count="1"/>
+
+    </item>
+    <item><!-- Elven Ring -->
+        <production id="913" count="1"/>
+
+    </item>
+    <item><!-- Elven Necklace -->
+        <production id="849" count="1"/>
+
+    </item>
+    <item><!-- Tiger's Eye Earring -->
+        <production id="882" count="1"/>
+
+    </item>
+    <item><!-- Mithril Ring -->
+        <production id="912" count="1"/>
+
+    </item>
+    <item><!-- Near Forest Necklace -->
+        <production id="847" count="1"/>
+
+    </item>
+    <item><!-- Red Crescent Earring -->
+        <production id="890" count="1"/>
+
+    </item>
+    <item><!-- Ring of Devotion -->
+        <production id="910" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Devotion -->
+        <production id="851" count="1"/>
+
+    </item>
+    <item><!-- Omen Beast's Eye Earring -->
+        <production id="880" count="1"/>
+
+    </item>
+    <item><!-- Black Pearl Ring -->
+        <production id="914" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Darkness -->
+        <production id="852" count="1"/>
+
+    </item>
+    <item><!-- Moonstone Earring -->
+        <production id="883" count="1"/>
+
+    </item>
+    <item><!-- Aquastone Ring -->
+        <production id="915" count="1"/>
+
+    </item>
+    <item><!-- Aquastone Necklace -->
+        <production id="857" count="1"/>
+
+    </item>
+    <item><!-- Blessed Earring -->
+        <production id="888" count="1"/>
+
+    </item>
+    <item><!-- Blessed Ring -->
+        <production id="919" count="1"/>
+
+    </item>
+    <item><!-- Blessed Necklace -->
+        <production id="855" count="1"/>
+
+    </item>
+    <item><!-- Nassen's Earring -->
+        <production id="885" count="1"/>
+
+    </item>
+    <item><!-- Ring of Ages -->
+        <production id="917" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Mermaid -->
+        <production id="854" count="1"/>
+
+    </item>
+    <item><!-- Earring of Seal -->
+        <production id="886" count="1"/>
+
+    </item>
+    <item><!-- Ring of Seal -->
+        <production id="119" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Seal -->
+        <production id="853" count="1"/>
+
+    </item>
+    <item><!-- Earring of Protection -->
+        <production id="884" count="1"/>
+
+    </item>
+    <item><!-- Ring of Protection -->
+        <production id="916" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Protection -->
+        <production id="901" count="1"/>
+
+    </item>
+    <item><!-- Ring of Holy Spirit -->
+        <production id="870" count="1"/>
+
+    </item>
+    <item><!-- Earring of Holy Spirit -->
+        <production id="932" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Holy Spirit -->
+        <production id="900" count="1"/>
+
+    </item>
+    <item><!-- Ring of Grace -->
+        <production id="869" count="1"/>
+
+    </item>
+    <item><!-- Earring of Grace -->
+        <production id="931" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Grace -->
+        <production id="898" count="1"/>
+
+    </item>
+    <item><!-- Elemental Ring -->
+        <production id="867" count="1"/>
+
+    </item>
+    <item><!-- Elemental Earring -->
+        <production id="929" count="1"/>
+
+    </item>
+    <item><!-- Elemental Necklace -->
+        <production id="897" count="1"/>
+
+    </item>
+    <item><!-- Otherworldly Ring -->
+        <production id="866" count="1"/>
+
+    </item>
+    <item><!-- Otherworldly Earring -->
+        <production id="928" count="1"/>
+
+    </item>
+    <item><!-- Otherworldly Necklace -->
+        <production id="896" count="1"/>
+
+    </item>
+    <item><!-- Ring of Summoning -->
+        <production id="865" count="1"/>
+
+    </item>
+    <item><!-- Earring of Summoning -->
+        <production id="927" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Summoning -->
+        <production id="887" count="1"/>
+
+    </item>
+    <item><!-- Adamantite Ring -->
+        <production id="856" count="1"/>
+
+    </item>
+    <item><!-- Adamantite Earring -->
+        <production id="918" count="1"/>
+
+    </item>
+    <item><!-- Adamantite Necklace -->
+        <production id="117" count="1"/>
+
+    </item>
+    <item><!-- Ring of Mana -->
+        <production id="859" count="1"/>
+
+    </item>
+    <item><!-- Earring of Mana -->
+        <production id="921" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Mana -->
+        <production id="891" count="1"/>
+
+    </item>
+    <item><!-- Sage's Ring -->
+        <production id="860" count="1"/>
+
+    </item>
+    <item><!-- Sage's Earring -->
+        <production id="922" count="1"/>
+
+    </item>
+    <item><!-- Sage's Necklace -->
+        <production id="892" count="1"/>
+
+    </item>
+    <item><!-- Paradia Ring -->
+        <production id="861" count="1"/>
+
+    </item>
+    <item><!-- Paradia Earring -->
+        <production id="923" count="1"/>
+
+    </item>
+    <item><!-- Paradia Necklace -->
+        <production id="894" count="1"/>
+
+    </item>
+    <item><!-- Ring of Solar Eclipse -->
+        <production id="863" count="1"/>
+
+    </item>
+    <item><!-- Earring of Solar Eclipse -->
+        <production id="925" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Solar Eclipse -->
+        <production id="895" count="1"/>
+
+    </item>
+    <item><!-- Ring of Black Ore -->
+        <production id="864" count="1"/>
+
+    </item>
+    <item><!-- Earring of Black Ore -->
+        <production id="926" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Black Ore -->
+        <production id="905" count="1"/>
+
+    </item>
+    <item><!-- Ring of Blessing -->
+        <production id="874" count="1"/>
+
+    </item>
+    <item><!-- Earring of Blessing -->
+        <production id="936" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Blessing -->
+        <production id="904" count="1"/>
+
+    </item>
+    <item><!-- Ring of Aid -->
+        <production id="873" count="1"/>
+
+    </item>
+    <item><!-- Earring of Aid -->
+        <production id="935" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Aid -->
+        <production id="893" count="1"/>
+
+    </item>
+    <item><!-- Majestic Ring -->
+        <production id="862" count="1"/>
+
+    </item>
+    <item><!-- Majestic Earring -->
+        <production id="924" count="1"/>
+
+    </item>
+    <item><!-- Majestic Necklace -->
+        <production id="6328" count="1"/>
+
+    </item>
+    <item><!-- Sealed Majestic Ring -->
+        <production id="6327" count="1"/>
+
+    </item>
+    <item><!-- Sealed Majestic Earring -->
+        <production id="6326" count="1"/>
+
+    </item>
+    <item><!-- Sealed Majestic Necklace -->
+        <production id="6325" count="1"/>
+
+    </item>
+    <item><!-- Sealed Phoenix Ring -->
+        <production id="6324" count="1"/>
+
+    </item>
+    <item><!-- Sealed Phoenix Earring -->
+        <production id="6323" count="1"/>
+
+    </item>
+    <item><!-- Sealed Phoenix Necklace -->
+        <production id="902" count="1"/>
+
+    </item>
+    <item><!-- Phoenix Ring -->
+        <production id="871" count="1"/>
+
+    </item>
+    <item><!-- Phoenix Earring -->
+        <production id="933" count="1"/>
+
+    </item>
+    <item><!-- Phoenix Necklace -->
+        <production id="899" count="1"/>
+
+    </item>
+    <item><!-- Ring of Phantom -->
+        <production id="868" count="1"/>
+
+    </item>
+    <item><!-- Earring of Phantom -->
+        <production id="930" count="1"/>
+
+    </item>
+    <item><!-- Necklace of Phantom -->
+        <production id="903" count="1"/>
+
+    </item>
+    <item><!-- Cerberus Ring -->
+        <production id="872" count="1"/>
+
+    </item>
+    <item><!-- Cerberus Earring -->
+        <production id="934" count="1"/>
+
+    </item>
+    <item><!-- Cerberus Necklace -->
+        <production id="889" count="1"/>
+
+    </item>
+    <item><!-- Tateossian Ring -->
+        <production id="858" count="1"/>
+
+    </item>
+    <item><!-- Tateossian Earring -->
+        <production id="920" count="1"/>
+
+    </item>
+    <item><!-- Tateossian Necklace -->
+        <production id="9455" count="1"/>
+
+    </item>
+    <item><!-- Dynasty Earrings -->
+        <production id="9456" count="1"/>
+
+    </item>
+    <item><!-- Dynasty Necklace -->
+        <production id="9457" count="1"/>
+
+    </item>
+    <item><!-- Dynasty Ring -->
+        <production id="15723" count="1"/>
+
+    </item>
+    <item><!-- Moirai Ring -->
+        <production id="15724" count="1"/>
+
+    </item>
+    <item><!-- Moirai Earring -->
+        <production id="15725" count="1"/>
+
+    </item>
+    <item><!-- Moirai Necklace -->
+        <production id="14163" count="1"/>
+
+    </item>
+    <item><!-- Vesper Earring -->
+        <production id="14164" count="1"/>
+
+    </item>
+    <item><!-- Vesper Necklace -->
+        <production id="14165" count="1"/>
+
+    </item>
+    <item><!-- Vesper Ring -->
+        <production id="15717" count="1"/>
+
+    </item>
+    <item><!-- Elegia Ring -->
+        <production id="15718" count="1"/>
+
+    </item>
+    <item><!-- Elegia Earring -->
+        <production id="15719" count="1"/>
+
+    </item>
+    <item><!-- Elegia Necklace -->
+        <production id="15720" count="1"/>
+
+    </item>
+    <item><!-- Vorpal Ring -->
+        <production id="15721" count="1"/>
+
+    </item>
+    <item><!-- Vorpal Earring -->
+        <production id="15722" count="1"/>
+    </item><!-- Vorpal Necklace -->
+</list>

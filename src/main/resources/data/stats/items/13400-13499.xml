@@ -718,6 +718,7 @@
 		</for>
 	</item>
 	<item id="13447" type="Armor" name="(Not In Use) Vesper Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_vesper_verteidiger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1322,6 +1323,7 @@
 		</for>
 	</item>
 	<item id="13471" type="Armor" name="Vesper Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.weapon_vesper_verteidiger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

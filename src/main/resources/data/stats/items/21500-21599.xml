@@ -911,10 +911,16 @@
 		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<cond msgId="2453">
-			<player cloakStatus="true" />
+			<!--<player cloakStatus="false" />-->
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="25" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="21584" type="EtcItem" name="Festival's Cloak - Pitch Black">
@@ -938,10 +944,16 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_freightable" val="true" />
 		<cond msgId="2453">
-			<player cloakStatus="true" />
+			<!--<player cloakStatus="false" />-->
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="25" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="21586" type="EtcItem" name="Festival's Cloak - Pitch Black - Event">
@@ -965,10 +977,16 @@
 		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<cond msgId="2453">
-			<player cloakStatus="true" />
+			<!--<player cloakStatus="false" />-->
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="25" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="21588" type="Armor" name="7th Anniversary Cloak - Pearl White">
@@ -982,10 +1000,16 @@
 		<set name="is_droppable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<cond msgId="2453">
-			<player cloakStatus="true" />
+			<!--<player cloakStatus="false" />-->
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="25" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="21589" type="EtcItem" name="Festival's Cloak - Pearl White Pack">
@@ -1009,10 +1033,16 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_freightable" val="true" />
 		<cond msgId="2453">
-			<player cloakStatus="true" />
+			<!--<player cloakStatus="false" />-->
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="25" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="21591" type="EtcItem" name="Festival's Cloak - Pearl White Pack - Event">

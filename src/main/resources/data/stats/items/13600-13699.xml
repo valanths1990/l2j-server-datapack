@@ -1441,11 +1441,17 @@
 				<player castle="-1" /> <!-- owns a castle -->
 				<player pledgeClass="5" /> <!-- Baron -->
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player cloakStatus="true" />
+				<!--<player cloakStatus="false" />-->
 			</and>
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="13687" type="Armor" name="Knight's Cloak">
@@ -1464,12 +1470,17 @@
 			<and>
 				<player castle="-1" /> <!-- owns a castle -->
 				<player pledgeClass="5" /> <!-- Baron -->
-				<player cloakStatus="true" />
+				<!--<player cloakStatus="false" />-->
 			</and>
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="13688" type="Armor" name="Knight's Cloak - Light Armor exclusive">
@@ -1490,12 +1501,17 @@
 				<player categoryType="ROGUE_CLOACK" />
 				<player pledgeClass="5" /> <!-- Baron -->
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player cloakStatus="true" />
+				<!--<player cloakStatus="false" />-->
 			</and>
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="13689" type="Armor" name="Knight's Cloak - Robe exclusive">
@@ -1516,12 +1532,17 @@
 				<player categoryType="MAGE_CLOACK" />
 				<player pledgeClass="5" /> <!-- Baron -->
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player cloakStatus="true" />
+				<!--<player cloakStatus="false" />-->
 			</and>
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="13690" type="Armor" name="Knight's Cloak - Kamael exclusive">
@@ -1541,12 +1562,17 @@
 				<player castle="-1" /> <!-- owns a castle -->
 				<player pledgeClass="5" /> <!-- Baron -->
 				<player races="KAMAEL" />
-				<player cloakStatus="true" />
+				<!--<player cloakStatus="false" />-->
 			</and>
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="13691" type="EtcItem" name="Mark of Keucereus - Stage 1">

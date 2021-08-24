@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/zones.xsd">
+    <zone id="1" maxZ="100" minZ="-5000" name="Hellbound" shape="Cuboid" type="FarmZone" >
+        <node X="-31322" Y="260849"/>
+        <node X="14099" Y="228457"/>
+        <spawn X="-11826" Y="236249" Z="-3266" spawnName="Entrance"/>
+        <spawn X="-19293" Y="240534" Z="-2856" spawnName="Megaliths"/>
+        <spawn X="-23996" Y="245617" Z="-3134" spawnName="Ench. Megaliths"/>
+        <spawn X="-20114" Y="250407" Z="-3257" spawnName="Oasis"/>
+        <spawn X="-13048" Y="255743" Z="-3363" spawnName="Dunes"/>
+        <spawn X="-5478" Y="256044" Z="-3131" spawnName="Caravan"/>
+        <spawn X="-3708" Y="246514" Z="-1886" spawnName="Quarry"/>
+        <spawn X="406" Y="235140" Z="-3265" spawnName="1. Battered Lands"/>
+        <spawn X="11580" Y="236607" Z="-1968" spawnName="2. Battered Lands"/>
+        <spawn X="4773" Y="243914" Z="-1928" spawnName="Citadel Outpost"/>
+    </zone>
+        <zone id="2" maxZ="1000" minZ="-5000" shape="NPoly" type="FarmZone" name="Valley of Saints">
+            <node X="67868" Y="-91986"/>
+            <node X="69129" Y="-92172"/>
+            <node X="70136" Y="-92560"/>
+            <node X="71668" Y="-92686"/>
+            <node X="73941" Y="-93651"/>
+            <node X="74862" Y="-94037"/>
+            <node X="75772" Y="-94895"/>
+            <node X="78855" Y="-96211"/>
+            <node X="80900" Y="-95635"/>
+            <node X="85578" Y="-96201"/>
+            <node X="87625" Y="-97000"/>
+            <node X="93438" Y="-96442"/>
+            <node X="95501" Y="-95819"/>
+            <node X="96103" Y="-95559"/>
+            <node X="97593" Y="-94085"/>
+            <node X="99024" Y="-92068"/>
+            <node X="98975" Y="-89003"/>
+            <node X="96559" Y="-84426"/>
+            <node X="94905" Y="-79618"/>
+            <node X="93996" Y="-77855"/>
+            <node X="93994" Y="-76389"/>
+            <node X="94297" Y="-74717"/>
+            <node X="94151" Y="-73202"/>
+            <node X="93643" Y="-72768"/>
+            <node X="92551" Y="-72306"/>
+            <node X="90434" Y="-71230"/>
+            <node X="89360" Y="-70621"/>
+            <node X="88093" Y="-70831"/>
+            <node X="86022" Y="-70866"/>
+            <node X="84450" Y="-70392"/>
+            <node X="83255" Y="-69891"/>
+            <node X="81861" Y="-69423"/>
+            <node X="80228" Y="-69502"/>
+            <node X="78544" Y="-68223"/>
+            <node X="73926" Y="-68119"/>
+            <node X="71236" Y="-68140"/>
+            <node X="68533" Y="-67937"/>
+            <node X="66707" Y="-68046"/>
+            <node X="65377" Y="-68951"/>
+            <node X="65143" Y="-72162"/>
+            <node X="65448" Y="-73303"/>
+            <node X="65581" Y="-77668"/>
+            <node X="65760" Y="-79602"/>
+            <node X="66909" Y="-82134"/>
+            <node X="66695" Y="-83889"/>
+            <node X="66932" Y="-85867"/>
+            <node X="66117" Y="-88283"/>
+            <node X="66515" Y="-90610"/>
+            <spawn X="78284" Y="-79311" Z="-4023" spawnName="South Middle"/> <!-- south middle-->
+            <spawn X="81658" Y="-88264" Z="-3484" spawnName="North Middle"/><!-- north middle-->
+            <spawn X="66587" Y="-71816" Z="-3816" spawnName="South West"/>  <!-- south west-->
+            <spawn X="68510" Y="-79008" Z="-3915" spawnName="West"/>     <!-- west-->
+            <spawn X="72040" Y="-90576" Z="-2253" spawnName="North West"/>  <!-- north west-->
+            <spawn X="81380" Y="-93196" Z="-3137" spawnName="North"/> <!-- north-->
+            <spawn X="96402" Y="-90822" Z="-2767" spawnName="North East"/> <!-- north east-->
+            <spawn X="93873" Y="-82481" Z="-2757" spawnName="East"/> <!-- east-->
+            <spawn X="91339" Y="-76041" Z="-3669" spawnName="South East"/><!-- south east-->
+            <spawn X="82471" Y="-71206" Z="-3451" spawnName="South"/> <!-- south-->
+
+        </zone>
+</list>

@@ -87,12 +87,16 @@
 												<xs:enumeration value="redBanishPoint" />
 												<xs:enumeration value="redStartPoint" />
 												<xs:enumeration value="spectatorSpawn" />
+												<xs:enumeration value="redFlag" />
+												<xs:enumeration value="blueFlag" />
+												<xs:enumeration value="towerSpawn" />
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:attribute>
 									<xs:attribute name="X" type="xs:integer" use="required" />
 									<xs:attribute name="Y" type="xs:integer" use="required" />
 									<xs:attribute name="Z" type="xs:integer" use="required" />
+									<xs:attribute name="spawnName" type="xs:string"/>
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
@@ -113,6 +117,10 @@
 						<xs:attribute name="type" use="required">
 							<xs:simpleType>
 								<xs:restriction base="xs:token">
+
+									<xs:enumeration value="EventZone" />
+									<xs:enumeration value="PvpZone" />
+									<xs:enumeration value="FarmZone" />
 									<xs:enumeration value="ArenaZone" />
 									<xs:enumeration value="BossZone" />
 									<xs:enumeration value="CastleZone" />

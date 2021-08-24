@@ -265,6 +265,7 @@
 		</for>
 	</item>
 	<item id="13525" type="Armor" name="Gracian Soldier Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_mon_gracia_soldier_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

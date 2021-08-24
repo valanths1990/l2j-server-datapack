@@ -3255,87 +3255,87 @@
 			<height normal="42" />
 		</collision>
 	</npc>
-	<npc id="22541" level="80" type="L2Monster" name="Dragon Steed Troop Infantry">
-		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="Breath_Prob" value="1000" />
-			<param name="Skill01_Prob" value="1000" />
-			<param name="SelfRangeDD_Prob" value="1000" />
-			<skill name="Skill01_ID" id="5274" level="5" /> <!-- NPC(party) - Physical Single Long Range Attack -->
-			<skill name="Breath" id="5827" level="3" /> <!-- Fireball -->
-			<skill name="SelfRangeDD_ID" id="5832" level="1" /> <!-- Hate Aura -->
-		</parameters>
-		<race>DRAGON</race>
-		<sex>MALE</sex>
-		<equipment rhand="13979" lhand="13980" /> <!-- rhand: Exclusive to Monsters (Dragon Steed Troop Battle Infantry Sword) lhand: Exclusive to Monsters (Dragon Steed Troop Battle Infantry Shield) -->
-		<acquire expRate="13.0229036875" sp="8955" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="33093.4274797799" hpRegen="114.399578021039" mp="1674.8" mpRegen="3" />
-			<attack physical="5746.81895750842" magical="3924.33235398589" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="546.2" magical="599.528184" />
-			<attribute>
-				<attack type="FIRE" value="130" />
-				<defence fire="180" water="120" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
-			<speed>
-				<walk ground="56" />
-				<run ground="210" />
-			</speed>
-			<hitTime>450</hitTime>
-		</stats>
-		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skillList>
-			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
-			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!--Average P. Atk. -->
-			<skill id="4411" level="11" /> <!--Average M. Atk. -->
-			<skill id="4412" level="14" /> <!--Strong P. Def. -->
-			<skill id="4413" level="15" /> <!--Strong M. Def. -->
-			<skill id="4414" level="2" /> <!--Standard Type -->
-			<skill id="4415" level="3" /> <!--One-handed Sword -->
-			<skill id="4416" level="10" /> <!--Dragons -->
-			<skill id="5274" level="5" /> <!--NPC(party) - Physical Single Long Range Attack -->
-			<skill id="5462" level="1" /> <!--Fire Attacks -->
-			<skill id="5827" level="3" /> <!--Fireball -->
-			<skill id="5832" level="1" /> <!--Hate Aura -->
-		</skillList>
-		<exCrtEffect>false</exCrtEffect>
-		<sNpcPropHpRate>0.5</sNpcPropHpRate>
-		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clanList>
-				<clan>DES_DRAGON</clan>
-			</clanList>
-		</ai>
-		<dropLists>
-			<death>
-				<group chance="70">
-					<item id="57" min="8283" max="16910" chance="100" /> <!-- Adena -->
-				</group>
-				<group chance="0.8371000289916992">
-					<item id="270" min="1" max="1" chance="0.3503" /> <!-- Dragon Grinder -->
-					<item id="5538" min="1" max="1" chance="99.6497" /> <!-- Dragon Grinder Edge -->
-				</group>
-				<group chance="32.999298095703125">
-					<item id="1879" min="1" max="1" chance="43.882" /> <!-- Cokes -->
-					<item id="1885" min="1" max="1" chance="21.941" /> <!-- High-Grade Suede -->
-					<item id="9628" min="1" max="1" chance="2.065" /> <!-- Leonard -->
-					<item id="9630" min="1" max="1" chance="1.3857" /> <!-- Orichalcum -->
-					<item id="9629" min="1" max="1" chance="1.1447" /> <!-- Adamantine -->
-					<item id="6863" min="1" max="1" chance="0.3269" /> <!-- Recipe: Sealed Imperial Crusader Helmet (60%) -->
-					<item id="1345" min="60" max="180" chance="29.2547" /> <!-- Shining Arrow -->
-				</group>
-			</death>
-			<corpse>
-				<item id="1894" min="1" max="1" chance="43.3203" /> <!-- Crafted Leather -->
-				<item id="5488" min="1" max="1" chance="5.5596" /> <!-- Sealed Majestic Robe Fabric -->
-				<item id="3957" min="1" max="1" chance="0.5487" /> <!-- Recipe: Blessed Spiritshot S -->
-			</corpse>
-		</dropLists>
-		<collision>
-			<radius normal="22" />
-			<height normal="42" />
-		</collision>
-	</npc>
+<!--	<npc id="22541" level="80" type="L2Monster" name="Dragon Steed Troop Infantry">-->
+<!--		&lt;!&ndash; Confirmed CT2.5 &ndash;&gt;-->
+<!--		<parameters>-->
+<!--			<param name="Breath_Prob" value="1000" />-->
+<!--			<param name="Skill01_Prob" value="1000" />-->
+<!--			<param name="SelfRangeDD_Prob" value="1000" />-->
+<!--			<skill name="Skill01_ID" id="5274" level="5" /> &lt;!&ndash; NPC(party) - Physical Single Long Range Attack &ndash;&gt;-->
+<!--			<skill name="Breath" id="5827" level="3" /> &lt;!&ndash; Fireball &ndash;&gt;-->
+<!--			<skill name="SelfRangeDD_ID" id="5832" level="1" /> &lt;!&ndash; Hate Aura &ndash;&gt;-->
+<!--		</parameters>-->
+<!--		<race>DRAGON</race>-->
+<!--		<sex>MALE</sex>-->
+<!--		<equipment rhand="13979" lhand="13980" /> &lt;!&ndash; rhand: Exclusive to Monsters (Dragon Steed Troop Battle Infantry Sword) lhand: Exclusive to Monsters (Dragon Steed Troop Battle Infantry Shield) &ndash;&gt;-->
+<!--		<acquire expRate="13.0229036875" sp="8955" />-->
+<!--		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">-->
+<!--			<vitals hp="33093.4274797799" hpRegen="114.399578021039" mp="1674.8" mpRegen="3" />-->
+<!--			<attack physical="5746.81895750842" magical="3924.33235398589" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />-->
+<!--			<defence physical="546.2" magical="599.528184" />-->
+<!--			<attribute>-->
+<!--				<attack type="FIRE" value="130" />-->
+<!--				<defence fire="180" water="120" wind="150" earth="150" holy="150" dark="150" default="150" />-->
+<!--			</attribute>-->
+<!--			<speed>-->
+<!--				<walk ground="56" />-->
+<!--				<run ground="210" />-->
+<!--			</speed>-->
+<!--			<hitTime>450</hitTime>-->
+<!--		</stats>-->
+<!--		<status undying="false" noSleepMode="true" canBeSown="true" />-->
+<!--		<skillList>-->
+<!--			<skill id="4408" level="9" /> &lt;!&ndash;HP Increase (1/2x) &ndash;&gt;-->
+<!--			<skill id="4409" level="1" /> &lt;!&ndash;MP Increase (1x) &ndash;&gt;-->
+<!--			<skill id="4410" level="11" /> &lt;!&ndash;Average P. Atk. &ndash;&gt;-->
+<!--			<skill id="4411" level="11" /> &lt;!&ndash;Average M. Atk. &ndash;&gt;-->
+<!--			<skill id="4412" level="14" /> &lt;!&ndash;Strong P. Def. &ndash;&gt;-->
+<!--			<skill id="4413" level="15" /> &lt;!&ndash;Strong M. Def. &ndash;&gt;-->
+<!--			<skill id="4414" level="2" /> &lt;!&ndash;Standard Type &ndash;&gt;-->
+<!--			<skill id="4415" level="3" /> &lt;!&ndash;One-handed Sword &ndash;&gt;-->
+<!--			<skill id="4416" level="10" /> &lt;!&ndash;Dragons &ndash;&gt;-->
+<!--			<skill id="5274" level="5" /> &lt;!&ndash;NPC(party) - Physical Single Long Range Attack &ndash;&gt;-->
+<!--			<skill id="5462" level="1" /> &lt;!&ndash;Fire Attacks &ndash;&gt;-->
+<!--			<skill id="5827" level="3" /> &lt;!&ndash;Fireball &ndash;&gt;-->
+<!--			<skill id="5832" level="1" /> &lt;!&ndash;Hate Aura &ndash;&gt;-->
+<!--		</skillList>-->
+<!--		<exCrtEffect>false</exCrtEffect>-->
+<!--		<sNpcPropHpRate>0.5</sNpcPropHpRate>-->
+<!--		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">-->
+<!--			<clanList>-->
+<!--				<clan>DES_DRAGON</clan>-->
+<!--			</clanList>-->
+<!--		</ai>-->
+<!--		<dropLists>-->
+<!--			<death>-->
+<!--				<group chance="70">-->
+<!--					<item id="57" min="8283" max="16910" chance="100" /> &lt;!&ndash; Adena &ndash;&gt;-->
+<!--				</group>-->
+<!--				<group chance="0.8371000289916992">-->
+<!--					<item id="270" min="1" max="1" chance="0.3503" /> &lt;!&ndash; Dragon Grinder &ndash;&gt;-->
+<!--					<item id="5538" min="1" max="1" chance="99.6497" /> &lt;!&ndash; Dragon Grinder Edge &ndash;&gt;-->
+<!--				</group>-->
+<!--				<group chance="32.999298095703125">-->
+<!--					<item id="1879" min="1" max="1" chance="43.882" /> &lt;!&ndash; Cokes &ndash;&gt;-->
+<!--					<item id="1885" min="1" max="1" chance="21.941" /> &lt;!&ndash; High-Grade Suede &ndash;&gt;-->
+<!--					<item id="9628" min="1" max="1" chance="2.065" /> &lt;!&ndash; Leonard &ndash;&gt;-->
+<!--					<item id="9630" min="1" max="1" chance="1.3857" /> &lt;!&ndash; Orichalcum &ndash;&gt;-->
+<!--					<item id="9629" min="1" max="1" chance="1.1447" /> &lt;!&ndash; Adamantine &ndash;&gt;-->
+<!--					<item id="6863" min="1" max="1" chance="0.3269" /> &lt;!&ndash; Recipe: Sealed Imperial Crusader Helmet (60%) &ndash;&gt;-->
+<!--					<item id="1345" min="60" max="180" chance="29.2547" /> &lt;!&ndash; Shining Arrow &ndash;&gt;-->
+<!--				</group>-->
+<!--			</death>-->
+<!--			<corpse>-->
+<!--				<item id="1894" min="1" max="1" chance="43.3203" /> &lt;!&ndash; Crafted Leather &ndash;&gt;-->
+<!--				<item id="5488" min="1" max="1" chance="5.5596" /> &lt;!&ndash; Sealed Majestic Robe Fabric &ndash;&gt;-->
+<!--				<item id="3957" min="1" max="1" chance="0.5487" /> &lt;!&ndash; Recipe: Blessed Spiritshot S &ndash;&gt;-->
+<!--			</corpse>-->
+<!--		</dropLists>-->
+<!--		<collision>-->
+<!--			<radius normal="22" />-->
+<!--			<height normal="42" />-->
+<!--		</collision>-->
+<!--	</npc>-->
 	<npc id="22542" level="81" type="L2Monster" name="Dragon Steed Troop Magic Leader">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
@@ -3498,90 +3498,90 @@
 			<height normal="39.5" />
 		</collision>
 	</npc>
-	<npc id="22544" level="80" type="L2Monster" name="Dragon Steed Troop Magic Soldier">
-		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="Breath_Prob" value="1000" />
-			<param name="Skill01_Prob" value="10000" />
-			<param name="Skill02_Prob" value="10000" />
-			<skill name="Skill01_ID" id="5312" level="5" /> <!-- NPC(party) -Magic Single Long Range DD - Fire -->
-			<skill name="Skill02_ID" id="5829" level="4" /> <!-- Fire Flare -->
-			<skill name="Breath" id="5827" level="3" /> <!-- Fireball -->
-			<skill name="Buff" id="5834" level="1" /> <!-- Magic Barrier -->
-		</parameters>
-		<race>DRAGON</race>
-		<sex>MALE</sex>
-		<equipment rhand="13981" /> <!-- rhand: Exclusive to Monsters (Mounted Troops Tactics) -->
-		<acquire expRate="13.2711816666667" sp="9090" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="33093.4274797799" hpRegen="114.399578021039" mp="1674.8" mpRegen="3" />
-			<attack physical="5746.81895750842" magical="3924.33235398589" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="546.2" magical="599.528184" />
-			<attribute>
-				<attack type="FIRE" value="130" />
-				<defence fire="180" water="120" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
-			<speed>
-				<walk ground="82" />
-				<run ground="170" />
-			</speed>
-			<hitTime>480</hitTime>
-		</stats>
-		<status undying="false" noSleepMode="true" canBeSown="true" />
-		<skillList>
-			<skill id="4408" level="9" /> <!--HP Increase (1/2x) -->
-			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!--Average P. Atk. -->
-			<skill id="4411" level="11" /> <!--Average M. Atk. -->
-			<skill id="4412" level="11" /> <!--Average P. Def. -->
-			<skill id="4413" level="11" /> <!--Average M. Def. -->
-			<skill id="4414" level="2" /> <!--Standard Type -->
-			<skill id="4415" level="3" /> <!--One-handed Sword -->
-			<skill id="4416" level="10" /> <!--Dragons -->
-			<skill id="5312" level="5" /> <!--NPC(party) -Magic Single Long Range DD - Fire -->
-			<skill id="5462" level="1" /> <!--Fire Attacks -->
-			<skill id="5827" level="3" /> <!--Fireball -->
-			<skill id="5829" level="4" /> <!--Fire Flare -->
-			<skill id="5834" level="1" /> <!--Magic Barrier -->
-		</skillList>
-		<exCrtEffect>false</exCrtEffect>
-		<sNpcPropHpRate>0.5</sNpcPropHpRate>
-		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">
-			<clanList>
-				<clan>DES_DRAGON</clan>
-			</clanList>
-		</ai>
-		<dropLists>
-			<death>
-				<group chance="70">
-					<item id="57" min="8405" max="17160" chance="100" /> <!-- Adena -->
-				</group>
-				<group chance="1.3941999673843384">
-					<item id="5320" min="1" max="1" chance="0.3352" /> <!-- Sealed Leather Armor of Nightmare -->
-					<item id="5480" min="1" max="1" chance="49.6648" /> <!-- Sealed Leather Armor of Nightmare Fabric -->
-					<item id="5323" min="1" max="1" chance="0.3352" /> <!-- Sealed Majestic Leather Armor -->
-					<item id="5481" min="1" max="1" chance="49.6648" /> <!-- Sealed Majestic Leather Armor Fabric -->
-				</group>
-				<group chance="27.701799392700195">
-					<item id="1879" min="1" max="1" chance="61.8851" /> <!-- Cokes -->
-					<item id="1885" min="1" max="1" chance="30.9425" /> <!-- High-Grade Suede -->
-					<item id="9628" min="1" max="1" chance="2.9122" /> <!-- Leonard -->
-					<item id="9630" min="1" max="1" chance="1.9543" /> <!-- Orichalcum -->
-					<item id="9629" min="1" max="1" chance="1.6144" /> <!-- Adamantine -->
-					<item id="6869" min="1" max="1" chance="0.6915" /> <!-- Recipe: Sealed DraconicВ LeatherВ Boots (60%) -->
-				</group>
-			</death>
-			<corpse>
-				<item id="5162" min="1" max="1" chance="0.5568" /> <!-- Recipe: Spiritshot (S) Compressed Package (100%) -->
-				<item id="5514" min="1" max="1" chance="21.1591" /> <!-- Sealed Gauntlets of Nightmare Design -->
-				<item id="5167" min="1" max="1" chance="0.5568" /> <!-- Recipe: Blessed Spiritshot (S) Compressed Package (100%) -->
-			</corpse>
-		</dropLists>
-		<collision>
-			<radius normal="25" />
-			<height normal="34.5" />
-		</collision>
-	</npc>
+<!--	<npc id="22544" level="80" type="L2Monster" name="Dragon Steed Troop Magic Soldier">-->
+<!--		&lt;!&ndash; Confirmed CT2.5 &ndash;&gt;-->
+<!--		<parameters>-->
+<!--			<param name="Breath_Prob" value="1000" />-->
+<!--			<param name="Skill01_Prob" value="10000" />-->
+<!--			<param name="Skill02_Prob" value="10000" />-->
+<!--			<skill name="Skill01_ID" id="5312" level="5" /> &lt;!&ndash; NPC(party) -Magic Single Long Range DD - Fire &ndash;&gt;-->
+<!--			<skill name="Skill02_ID" id="5829" level="4" /> &lt;!&ndash; Fire Flare &ndash;&gt;-->
+<!--			<skill name="Breath" id="5827" level="3" /> &lt;!&ndash; Fireball &ndash;&gt;-->
+<!--			<skill name="Buff" id="5834" level="1" /> &lt;!&ndash; Magic Barrier &ndash;&gt;-->
+<!--		</parameters>-->
+<!--		<race>DRAGON</race>-->
+<!--		<sex>MALE</sex>-->
+<!--		<equipment rhand="13981" /> &lt;!&ndash; rhand: Exclusive to Monsters (Mounted Troops Tactics) &ndash;&gt;-->
+<!--		<acquire expRate="13.2711816666667" sp="9090" />-->
+<!--		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">-->
+<!--			<vitals hp="33093.4274797799" hpRegen="114.399578021039" mp="1674.8" mpRegen="3" />-->
+<!--			<attack physical="5746.81895750842" magical="3924.33235398589" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />-->
+<!--			<defence physical="546.2" magical="599.528184" />-->
+<!--			<attribute>-->
+<!--				<attack type="FIRE" value="130" />-->
+<!--				<defence fire="180" water="120" wind="150" earth="150" holy="150" dark="150" default="150" />-->
+<!--			</attribute>-->
+<!--			<speed>-->
+<!--				<walk ground="82" />-->
+<!--				<run ground="170" />-->
+<!--			</speed>-->
+<!--			<hitTime>480</hitTime>-->
+<!--		</stats>-->
+<!--		<status undying="false" noSleepMode="true" canBeSown="true" />-->
+<!--		<skillList>-->
+<!--			<skill id="4408" level="9" /> &lt;!&ndash;HP Increase (1/2x) &ndash;&gt;-->
+<!--			<skill id="4409" level="1" /> &lt;!&ndash;MP Increase (1x) &ndash;&gt;-->
+<!--			<skill id="4410" level="11" /> &lt;!&ndash;Average P. Atk. &ndash;&gt;-->
+<!--			<skill id="4411" level="11" /> &lt;!&ndash;Average M. Atk. &ndash;&gt;-->
+<!--			<skill id="4412" level="11" /> &lt;!&ndash;Average P. Def. &ndash;&gt;-->
+<!--			<skill id="4413" level="11" /> &lt;!&ndash;Average M. Def. &ndash;&gt;-->
+<!--			<skill id="4414" level="2" /> &lt;!&ndash;Standard Type &ndash;&gt;-->
+<!--			<skill id="4415" level="3" /> &lt;!&ndash;One-handed Sword &ndash;&gt;-->
+<!--			<skill id="4416" level="10" /> &lt;!&ndash;Dragons &ndash;&gt;-->
+<!--			<skill id="5312" level="5" /> &lt;!&ndash;NPC(party) -Magic Single Long Range DD - Fire &ndash;&gt;-->
+<!--			<skill id="5462" level="1" /> &lt;!&ndash;Fire Attacks &ndash;&gt;-->
+<!--			<skill id="5827" level="3" /> &lt;!&ndash;Fireball &ndash;&gt;-->
+<!--			<skill id="5829" level="4" /> &lt;!&ndash;Fire Flare &ndash;&gt;-->
+<!--			<skill id="5834" level="1" /> &lt;!&ndash;Magic Barrier &ndash;&gt;-->
+<!--		</skillList>-->
+<!--		<exCrtEffect>false</exCrtEffect>-->
+<!--		<sNpcPropHpRate>0.5</sNpcPropHpRate>-->
+<!--		<ai type="BALANCED" aggroRange="450" clanHelpRange="1000">-->
+<!--			<clanList>-->
+<!--				<clan>DES_DRAGON</clan>-->
+<!--			</clanList>-->
+<!--		</ai>-->
+<!--		<dropLists>-->
+<!--			<death>-->
+<!--				<group chance="70">-->
+<!--					<item id="57" min="8405" max="17160" chance="100" /> &lt;!&ndash; Adena &ndash;&gt;-->
+<!--				</group>-->
+<!--				<group chance="1.3941999673843384">-->
+<!--					<item id="5320" min="1" max="1" chance="0.3352" /> &lt;!&ndash; Sealed Leather Armor of Nightmare &ndash;&gt;-->
+<!--					<item id="5480" min="1" max="1" chance="49.6648" /> &lt;!&ndash; Sealed Leather Armor of Nightmare Fabric &ndash;&gt;-->
+<!--					<item id="5323" min="1" max="1" chance="0.3352" /> &lt;!&ndash; Sealed Majestic Leather Armor &ndash;&gt;-->
+<!--					<item id="5481" min="1" max="1" chance="49.6648" /> &lt;!&ndash; Sealed Majestic Leather Armor Fabric &ndash;&gt;-->
+<!--				</group>-->
+<!--				<group chance="27.701799392700195">-->
+<!--					<item id="1879" min="1" max="1" chance="61.8851" /> &lt;!&ndash; Cokes &ndash;&gt;-->
+<!--					<item id="1885" min="1" max="1" chance="30.9425" /> &lt;!&ndash; High-Grade Suede &ndash;&gt;-->
+<!--					<item id="9628" min="1" max="1" chance="2.9122" /> &lt;!&ndash; Leonard &ndash;&gt;-->
+<!--					<item id="9630" min="1" max="1" chance="1.9543" /> &lt;!&ndash; Orichalcum &ndash;&gt;-->
+<!--					<item id="9629" min="1" max="1" chance="1.6144" /> &lt;!&ndash; Adamantine &ndash;&gt;-->
+<!--					<item id="6869" min="1" max="1" chance="0.6915" /> &lt;!&ndash; Recipe: Sealed DraconicВ LeatherВ Boots (60%) &ndash;&gt;-->
+<!--				</group>-->
+<!--			</death>-->
+<!--			<corpse>-->
+<!--				<item id="5162" min="1" max="1" chance="0.5568" /> &lt;!&ndash; Recipe: Spiritshot (S) Compressed Package (100%) &ndash;&gt;-->
+<!--				<item id="5514" min="1" max="1" chance="21.1591" /> &lt;!&ndash; Sealed Gauntlets of Nightmare Design &ndash;&gt;-->
+<!--				<item id="5167" min="1" max="1" chance="0.5568" /> &lt;!&ndash; Recipe: Blessed Spiritshot (S) Compressed Package (100%) &ndash;&gt;-->
+<!--			</corpse>-->
+<!--		</dropLists>-->
+<!--		<collision>-->
+<!--			<radius normal="25" />-->
+<!--			<height normal="34.5" />-->
+<!--		</collision>-->
+<!--	</npc>-->
 	<npc id="22545" level="81" type="L2Monster" name="Wife of the Dragon of Darkness">
 		<!-- Confirmed CT2.5 -->
 		<parameters>

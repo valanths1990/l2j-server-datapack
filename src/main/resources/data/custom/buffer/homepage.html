@@ -1,0 +1,166 @@
+<html noscrollbar>
+
+<body>
+	<br>
+	<table border="0" width=500 height=500>
+		<tr>
+			<td width=180>
+				<table border="0">
+					<tr>
+						<td height=30 align=center>
+							<font name="hs16" color="fca503">Service</font>
+						</td>
+					</tr>
+					<tr>
+						<td height=30 height=30>
+							<button value="Teleport" action="bypass teleport;homepage" width=140 height=30
+								back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+						</td>
+					</tr>
+					<tr>
+						<td height=30>
+							<button value="Buffer" action="bypass buffer;homepage" width=140 height=30
+								back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+						</td>
+					</tr>
+					<tr>
+						<td height=30>
+							<button value="Shop" action="bypass shop;homepage" width=140 height=30
+								back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+						</td>
+					</tr>
+					<tr>
+						<td height=30 align=center>
+							<font name="hs16" color="fca503">Character</font>
+						</td>
+					</tr>
+					<tr>
+						<td height=30>
+							<button value="Class" action="bypass class;homepage" width=140 height=30
+								back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+						</td>
+					</tr>
+					<tr>
+						<td height=30 align=center>
+							<font name="hs16" color="fca503">Items</font>
+						</td>
+					</tr>
+					<tr>
+						<td height=30>
+							<button value="Augment" action="bypass augment;homepage" width=140 height=30
+								back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+						</td>
+					</tr>
+					<tr>
+						<td height=30>
+							<button value="Warehouse" action="bypass warehouse;homepage" width=140 height=30
+								back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+						</td>
+					</tr>
+
+				</table>
+			</td>
+
+			<td width=650>
+				<center>
+					<table border="0" width=450 height=490>
+						<tr>
+							<td height=30>
+
+							</td>
+						</tr>
+						<tr>
+							<td height=100>
+								<center>
+									<table border="0">
+										<tr>
+											<td width=200 align=center>Buffs %buffs%/36</td>
+											<td width=200 align=center>Songs/Dances %sd%/16</td>
+										</tr>
+									</table>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<button value="Auto Buffs" action="bypass buffer;homepage autobuff" width=140 height=30
+										back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+										<br>
+										<br>
+										<table cellspacing=40 cellpadding=0 border="0" width=500 height=200>
+											<tr>
+												<td><button value=" " action="bypass buffer;homepage general" width=32
+														height=32 back="icon.skill1499" fore="icon.skill1499">General
+												</td>
+												<td><button value=" " action="bypass buffer;homepage simple" width=32 height=32
+														back="icon.skill1077" fore="icon.skill1077">Simple</td>
+												<td><button value=" " action="bypass buffer;homepage specific" width=32
+														height=32 back="icon.skill1044" fore="icon.skill1388">Specific
+												</td>
+											</tr>
+
+											<tr>
+												<td><button value=" " action="bypass buffer;homepage resist" width=32 height=32
+														back="icon.skill1035" fore="icon.skill1035">Resist</td>
+												<td><button value=" " action="bypass buffer;homepage dance" width=32 height=32
+														back="icon.skill0530" fore="icon.skill0530">Dance</td>
+												<td><button value=" " action="bypass buffer;homepage song" width=32 height=32
+														back="icon.skill0529" fore="icon.skill0529">Song</td>
+											</tr>
+
+										</table>
+								</center>
+							</td>
+						</tr>
+						<tr>
+							<td height=60>
+								<table border="0" width=490 height=65>
+									<tr>
+										<td align=center><button value=" " action="bypass buffer;homepage heal"
+												width=32 height=32 back="icon.skill1401" fore="icon.skill1401">Heal</td>
+										<td align=center><button value=" " action="bypass buffer;homepage 1323"
+												width=32 height=32 back="icon.skill1323" fore="icon.skill1323">Nobless
+										</td>
+										<td align=center><button value=" " action="bypass buffer;homepage cancel"
+												width=32 height=32 back="icon.skill1056" fore="icon.skill1056">Cancel
+										</td>
+										<td align=center><button value=" " action="bypass buffer;homepage 1409"
+												width=32 height=32 back="icon.skill1409" fore="icon.skill1409">Cleanse
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</center>
+
+			</td>
+			<td>
+				<table border="0">
+					<tr>
+						<td width=200>
+							<font name="hs16" color="fca503">My Schemes</font>
+						</td>
+					</tr>
+				</table>
+				<table border="0"  id="schemes">
+				</table>
+				<br>
+				<br>
+				<br>
+				<center>
+					<edit width=140 var="schemeName">
+						<button value="Save my Buffs" action="bypass buffer;homepage save; $schemeName" width=140 height=30
+							back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+				</center>
+
+			</td>
+
+		</tr>
+
+	</table>
+
+
+</body>
+
+</html>

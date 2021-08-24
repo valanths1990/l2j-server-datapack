@@ -88,12 +88,12 @@ public final class PriestOfBlessing extends AbstractNpcAI {
 		addFirstTalkId(PRIEST);
 		addTalkId(PRIEST);
 		
-		if (!SPAWNED) {
-			for (Location spawn : SPAWNS) {
-				addSpawn(PRIEST, spawn, false, 0);
-			}
-			SPAWNED = true;
-		}
+//		if (!SPAWNED) {
+//			for (Location spawn : SPAWNS) {
+//				addSpawn(PRIEST, spawn, false, 0);
+//			}
+//			SPAWNED = true;
+//		}
 	}
 	
 	@Override

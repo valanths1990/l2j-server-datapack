@@ -34,6 +34,7 @@ public class ItemSkills extends ItemSkillsTemplate {
 			activeChar.sendPacket(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT);
 			return false;
 		}
+
 		return super.useItem(playable, item, forceUse);
 	}
 }

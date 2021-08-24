@@ -1532,6 +1532,7 @@
 		</for>
 	</item>
 	<item id="2493" type="Armor" name="Brigandine Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_brigandine_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1553,6 +1554,7 @@
 		</for>
 	</item>
 	<item id="2494" type="Armor" name="Plate Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_plate_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1574,6 +1576,7 @@
 		</for>
 	</item>
 	<item id="2495" type="Armor" name="Chain Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_chain_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1595,6 +1598,7 @@
 		</for>
 	</item>
 	<item id="2496" type="Armor" name="Dwarven Chain Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_dwarven_chain_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1616,6 +1620,7 @@
 		</for>
 	</item>
 	<item id="2497" type="Armor" name="Full Plate Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_full_plate_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

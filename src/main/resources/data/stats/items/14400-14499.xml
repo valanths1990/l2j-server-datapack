@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="14400" type="Weapon" name="Icarus Hand {PvP} - Rsk. Evasion">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_knuckle_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -32,6 +33,7 @@
 		</for>
 	</item>
 	<item id="14401" type="Weapon" name="Icarus Hand {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_knuckle_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -63,6 +65,7 @@
 		</for>
 	</item>
 	<item id="14402" type="Weapon" name="Icarus Hand {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_knuckle_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -94,6 +97,7 @@
 		</for>
 	</item>
 	<item id="14403" type="Weapon" name="Icarus Stinger {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -129,6 +133,7 @@
 		</for>
 	</item>
 	<item id="14404" type="Weapon" name="Icarus Stinger {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -164,6 +169,7 @@
 		</for>
 	</item>
 	<item id="14405" type="Weapon" name="Icarus Stinger {PvP} - Light">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -199,6 +205,7 @@
 		</for>
 	</item>
 	<item id="14406" type="Weapon" name="Icarus Wingblade {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_wing_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -233,6 +240,7 @@
 		</for>
 	</item>
 	<item id="14407" type="Weapon" name="Icarus Wingblade {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_wing_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -267,6 +275,7 @@
 		</for>
 	</item>
 	<item id="14408" type="Weapon" name="Icarus Wingblade {PvP} - Light">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_wing_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -301,6 +310,7 @@
 		</for>
 	</item>
 	<item id="14409" type="Weapon" name="Icarus Shooter {PvP} - Cheap Shot">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_shooter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -336,6 +346,7 @@
 		</for>
 	</item>
 	<item id="14410" type="Weapon" name="Icarus Shooter {PvP} - Guidance">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_shooter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -371,6 +382,7 @@
 		</for>
 	</item>
 	<item id="14411" type="Weapon" name="Icarus Shooter {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_shooter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -468,6 +480,7 @@
 		</for>
 	</item>
 	<item id="14414" type="Weapon" name="Icarus Disperser - Confusion {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_disperser_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -499,6 +512,7 @@
 		</for>
 	</item>
 	<item id="14415" type="Weapon" name="Icarus Disperser - Confusion {PvP} - Evasion">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_disperser_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -530,6 +544,7 @@
 		</for>
 	</item>
 	<item id="14416" type="Weapon" name="Icarus Disperser - Confusion {PvP} - Critical Damage">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_icarus_disperser_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />

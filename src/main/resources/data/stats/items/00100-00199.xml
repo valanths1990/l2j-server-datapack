@@ -50,6 +50,7 @@
 		</for>
 	</item>
 	<item id="102" type="Armor" name="Round Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_round_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -68,6 +69,7 @@
 		</for>
 	</item>
 	<item id="103" type="Armor" name="Tower Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_tower_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -110,6 +112,7 @@
 		</for>
 	</item>
 	<item id="105" type="Armor" name="Implosion Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_doom_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -131,6 +134,7 @@
 		</for>
 	</item>
 	<item id="106" type="Armor" name="Dark Dragon Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_dark_dragon_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -152,6 +156,7 @@
 		</for>
 	</item>
 	<item id="107" type="Armor" name="Composite Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_composite_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -173,6 +178,7 @@
 		</for>
 	</item>
 	<item id="108" type="Armor" name="Masterpiece Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_masterpiece_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -215,6 +221,7 @@
 		</for>
 	</item>
 	<item id="110" type="Armor" name="Doom Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_doom_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

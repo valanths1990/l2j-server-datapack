@@ -1321,6 +1321,7 @@
 		</for>
 	</item>
 	<item id="6678" type="Armor" name="Sealed Imperial Crusader Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_imperial_crusader_shield_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

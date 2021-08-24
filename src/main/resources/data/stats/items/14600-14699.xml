@@ -34,11 +34,17 @@
 		<cond msgId="2453">
 			<and>
 				<player races="KAMAEL" />
-				<player cloakStatus="true" />
+				<!--<player cloakStatus="false" />-->
 			</and>
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="14602" type="Armor" name="Ancient Cloak">
@@ -55,11 +61,17 @@
 		<cond msgId="2453">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player cloakStatus="true" />
+				<!--<player cloakStatus="false" />-->
 			</and>
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="14603" type="EtcItem" name="Sealed Ancient Cloak">
@@ -155,11 +167,17 @@
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="ROGUE_CLOACK" />
-				<player cloakStatus="true" />
+				<!--<player cloakStatus="false" />-->
 			</and>
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="14609" type="Armor" name="Ancient Cloak">
@@ -174,10 +192,16 @@
 		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="2453">
-			<player cloakStatus="true" />
+			<!--<player cloakStatus="false" />-->
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="14610" type="Armor" name="Ancient Cloak: Robe exclusive">
@@ -195,11 +219,17 @@
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="MAGE_CLOACK" />
-				<player cloakStatus="true" />
+				<!--<player cloakStatus="false" />-->
 			</and>
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="14611" type="Armor" name="Rudolph's Nose">

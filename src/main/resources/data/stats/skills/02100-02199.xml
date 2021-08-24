@@ -888,12 +888,13 @@
 		</effects>
 	</skill>
 	<skill id="2166" levels="2" name="CP Gauge Potion">
-		<table name="#amount"> 50 200 </table>
+		<table name="#amount"> 50 2000 </table>
 		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
+		<set name="reuseDelay" val="10000"/>
 		<effects>
 			<effect name="Cp">
 				<param amount="#amount" />

@@ -433,6 +433,7 @@
 		</for>
 	</item>
 	<item id="15913" type="Weapon" name="Eternal Core Sword {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_incessantcore_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -463,6 +464,7 @@
 		</for>
 	</item>
 	<item id="15914" type="Weapon" name="Mamba Edge {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_mambaedge_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -494,6 +496,7 @@
 		</for>
 	</item>
 	<item id="15915" type="Weapon" name="Eversor Mace {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_expowder_mace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -525,6 +528,7 @@
 		</for>
 	</item>
 	<item id="15916" type="Weapon" name="Contristo Hammer {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_retributer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />

@@ -269,6 +269,7 @@
 		</for>
 	</item>
 	<item id="12013" type="Armor" name="Common Item - Bronze Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_bronze_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1092,6 +1093,7 @@
 		</for>
 	</item>
 	<item id="12063" type="Armor" name="Common Item - Brigandine Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_brigandine_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1181,6 +1183,7 @@
 		</for>
 	</item>
 	<item id="12069" type="Armor" name="Common Item - Kite Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_kite_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1242,6 +1245,7 @@
 		</for>
 	</item>
 	<item id="12073" type="Armor" name="Common Item - Square Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_square_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1318,6 +1322,7 @@
 		</for>
 	</item>
 	<item id="12078" type="Armor" name="Common Item - Plate Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_plate_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1603,6 +1608,7 @@
 		</for>
 	</item>
 	<item id="12096" type="Armor" name="Common Item - Chain Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_chain_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

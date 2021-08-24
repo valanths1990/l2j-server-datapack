@@ -1038,15 +1038,15 @@ public class QuestLoader {
 	};
 	
 	public static void main(String[] args) {
-		int n = 0;
-		for (var quest : QUESTS) {
-			try {
-				quest.getDeclaredConstructor().newInstance();
-				n++;
-			} catch (Exception ex) {
-				LOG.error("Failed loading quest {}!", quest.getSimpleName(), ex);
-			}
-		}
-		LOG.info("Loaded {} quests.", n);
+//		int n = 0;
+//		for (var quest : QUESTS) {
+//			try {
+//				quest.getDeclaredConstructor().newInstance();
+//				n++;
+//			} catch (Exception ex) {
+//				LOG.error("Failed loading quest {}!", quest.getSimpleName(), ex);
+//			}
+//		}
+//		LOG.info("Loaded {} quests.", n);
 	}
 }

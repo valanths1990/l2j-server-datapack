@@ -1247,120 +1247,61 @@
 			<height normal="25" />
 		</collision>
 	</npc>
-	<npc id="22815" level="80" type="L2Monster" name="Drakos">
-		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6845" level="1" /> <!-- Power Strike -->
-		</parameters>
-		<race>UNDEAD</race>
-		<sex>MALE</sex>
-		<equipment rhand="13985" lhand="13986" /> <!-- rhand: Exclusive to Monsters (Death Slayer_r) lhand: Exclusive to Monsters (Death Slayer_l) -->
-		<acquire expRate="6.4548" sp="4436" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
-			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="DUAL" range="40" distance="80" width="120" />
-			<defence physical="341.375" magical="249.80341" />
-			<attribute>
-				<attack type="DARK" value="150" />
-				<defence fire="130" water="130" wind="130" earth="130" holy="90" dark="150" default="100" />
-			</attribute>
-			<speed>
-				<walk ground="64" />
-				<run ground="200" />
-			</speed>
-		</stats>
-		<status undying="false" canBeSown="true" />
-		<skillList>
-			<skill id="4408" level="10" /> <!--HP Increase (2x) -->
-			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
-			<skill id="4410" level="15" /> <!--Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!--Average M. Atk. -->
-			<skill id="4412" level="13" /> <!--Slightly Strong P. Def. -->
-			<skill id="4413" level="9" /> <!--Slightly Weak M. Def. -->
-			<skill id="4414" level="2" /> <!--Standard Type -->
-			<skill id="4415" level="19" /> <!--Dual-Sword Weapons -->
-			<skill id="4416" level="1" /> <!--Undead -->
-			<skill id="5467" level="1" /> <!--Dark Attacks -->
-			<skill id="6845" level="1" /> <!--Power Strike -->
-		</skillList>
-		<exCrtEffect>false</exCrtEffect>
-		<sNpcPropHpRate>2</sNpcPropHpRate>
-		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
-			<clanList>
-				<clan>DRAKOS</clan>
-			</clanList>
-		</ai>
-		<dropLists>
-			<death>
-				<group chance="66">
-					<item id="57" min="2710" max="6322" chance="100" /> <!-- Adena -->
-				</group>
-				<group chance="0.0010999999940395355">
-					<item id="9442" min="1" max="1" chance="9.0909" /> <!-- Dynasty Sword -->
-					<item id="9443" min="1" max="1" chance="9.0909" /> <!-- Dynasty Blade -->
-					<item id="9444" min="1" max="1" chance="9.0909" /> <!-- Dynasty Phantom -->
-					<item id="9445" min="1" max="1" chance="9.0909" /> <!-- Dynasty Bow -->
-					<item id="9446" min="1" max="1" chance="9.0909" /> <!-- Dynasty Knife -->
-					<item id="9447" min="1" max="1" chance="9.0909" /> <!-- Dynasty Halberd -->
-					<item id="9448" min="1" max="1" chance="9.0909" /> <!-- Dynasty Cudgel -->
-					<item id="9449" min="1" max="1" chance="9.0909" /> <!-- Dynasty Mace -->
-					<item id="9450" min="1" max="1" chance="9.0909" /> <!-- Dynasty Bagh-Nakh -->
-					<item id="10252" min="1" max="1" chance="9.0909" /> <!-- Dynasty Staff -->
-					<item id="10253" min="1" max="1" chance="9.091" /> <!-- Dynasty Crusher -->
-				</group>
-				<group chance="1.7591999769210815">
-					<item id="9573" min="1" max="1" chance="33.3" /> <!-- Life Stone - Level 80 -->
-					<item id="9574" min="1" max="1" chance="8.325" /> <!-- Mid-Grade Life Stone - Level 80 -->
-					<item id="9575" min="1" max="1" chance="0.8325" /> <!-- High-Grade Life Stone - Level 80 -->
-					<item id="9550" min="1" max="1" chance="38.3616" /> <!-- Dark Stone -->
-					<item id="6622" min="1" max="1" chance="19.1809" /> <!-- Giant's Codex -->
-				</group>
-				<group chance="42.0">
-					<item id="8600" min="1" max="1" chance="55" /> <!-- Herb of Life -->
-					<item id="8601" min="1" max="1" chance="38" /> <!-- Greater Herb of Life -->
-					<item id="8602" min="1" max="1" chance="7" /> <!-- Superior Herb of Life -->
-				</group>
-				<group chance="11.0">
-					<item id="8603" min="1" max="1" chance="7" /> <!-- Herb of Mana -->
-					<item id="8604" min="1" max="1" chance="81" /> <!-- Greater Herb of Mana -->
-					<item id="8605" min="1" max="1" chance="12" /> <!-- Superior Herb of Mana -->
-				</group>
-				<group chance="25.0">
-					<item id="8606" min="1" max="1" chance="20" /> <!-- Herb of Power -->
-					<item id="8608" min="1" max="1" chance="20" /> <!-- Herb of Alacrity -->
-					<item id="8610" min="1" max="1" chance="20" /> <!-- Herb of Critical Attack - Probability -->
-					<item id="10655" min="1" max="1" chance="20" /> <!-- Herb of Vampiric Rage -->
-					<item id="10656" min="1" max="1" chance="20" /> <!-- Herb of Critical Attack - Power -->
-				</group>
-				<group chance="10.0">
-					<item id="8607" min="1" max="1" chance="50" /> <!-- Herb of Magic -->
-					<item id="8609" min="1" max="1" chance="50" /> <!-- Herb of Casting Spd. -->
-				</group>
-				<group chance="1.0">
-					<item id="8612" min="1" max="1" chance="33" /> <!-- Herb of the Warrior -->
-					<item id="8613" min="1" max="1" chance="33" /> <!-- Herb of the Mystic -->
-					<item id="8614" min="1" max="1" chance="34" /> <!-- Herb of Recovery -->
-				</group>
-				<group chance="11.0">
-					<item id="8611" min="1" max="1" chance="94" /> <!-- Herb of Speed -->
-					<item id="10657" min="1" max="1" chance="3" /> <!-- Herb of Doubt -->
-					<item id="13028" min="1" max="1" chance="3" /> <!-- Vitality Replenishing Herb -->
-				</group>
-			</death>
-			<corpse>
-				<item id="4039" min="1" max="1" chance="17.124" /> <!-- Mold Glue -->
-				<item id="9628" min="1" max="1" chance="4.0292" /> <!-- Leonard -->
-				<item id="10403" min="1" max="1" chance="0.2195" /> <!-- Icarus Hand Piece -->
-				<item id="15778" min="1" max="1" chance="0.1526" /> <!-- Recipe - Sealed Moirai Breastplate (60%) -->
-				<item id="10218" min="1" max="1" chance="0.0007" /> <!-- Icarus Heavy Arms -->
-			</corpse>
-		</dropLists>
-		<collision>
-			<radius normal="16" />
-			<height normal="27.2" />
-		</collision>
-	</npc>
+<!--	<npc id="22815" level="83" type="L2Monster" name="Drakos">-->
+<!--		&lt;!&ndash; Confirmed CT2.5 &ndash;&gt;-->
+<!--		<parameters>-->
+<!--			<skill name="Skill01_ID" id="6845" level="1" /> &lt;!&ndash; Power Strike &ndash;&gt;-->
+<!--		</parameters>-->
+<!--		<race>UNDEAD</race>-->
+<!--		<sex>MALE</sex>-->
+<!--		<equipment rhand="13985" lhand="13986" /> &lt;!&ndash; rhand: Exclusive to Monsters (Death Slayer_r) lhand: Exclusive to Monsters (Death Slayer_l) &ndash;&gt;-->
+<!--		<acquire expRate="4" sp="1000" />-->
+<!--		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">-->
+<!--			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />-->
+<!--			<attack physical="400.537548504614" magical="300.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="DUAL" range="40" distance="80" width="120" />-->
+<!--			<defence physical="400.375" magical="50.80341" />-->
+<!--			<attribute>-->
+<!--				<attack type="DARK" value="150" />-->
+<!--				<defence fire="80" water="80" wind="80" earth="80" holy="80" dark="80" default="100" />-->
+<!--			</attribute>-->
+<!--			<speed>-->
+<!--				<walk ground="64" />-->
+<!--				<run ground="200" />-->
+<!--			</speed>-->
+<!--		</stats>-->
+<!--		<status undying="false" canBeSown="true" />-->
+<!--		<skillList>-->
+<!--			<skill id="4408" level="10" /> &lt;!&ndash;HP Increase (2x) &ndash;&gt;-->
+<!--			<skill id="4409" level="1" /> &lt;!&ndash;MP Increase (1x) &ndash;&gt;-->
+<!--			<skill id="4410" level="15" /> &lt;!&ndash;Strong P. Atk. &ndash;&gt;-->
+<!--			<skill id="4411" level="11" /> &lt;!&ndash;Average M. Atk. &ndash;&gt;-->
+<!--			<skill id="4412" level="13" /> &lt;!&ndash;Slightly Strong P. Def. &ndash;&gt;-->
+<!--			<skill id="4413" level="9" /> &lt;!&ndash;Slightly Weak M. Def. &ndash;&gt;-->
+<!--			<skill id="4414" level="2" /> &lt;!&ndash;Standard Type &ndash;&gt;-->
+<!--			<skill id="4415" level="19" /> &lt;!&ndash;Dual-Sword Weapons &ndash;&gt;-->
+<!--			<skill id="4416" level="1" /> &lt;!&ndash;Undead &ndash;&gt;-->
+<!--			<skill id="5467" level="1" /> &lt;!&ndash;Dark Attacks &ndash;&gt;-->
+<!--			<skill id="6845" level="1" /> &lt;!&ndash;Power Strike &ndash;&gt;-->
+<!--		</skillList>-->
+<!--		<exCrtEffect>false</exCrtEffect>-->
+<!--		<sNpcPropHpRate>2</sNpcPropHpRate>-->
+<!--		<ai type="BALANCED" aggroRange="300" isAggressive="false">-->
+<!--			<clanList>-->
+<!--				<clan>DRAKOS</clan>-->
+<!--			</clanList>-->
+<!--		</ai>-->
+<!--		<dropLists>-->
+<!--			<death>-->
+<!--				<group chance="66">-->
+<!--					<item id="57" min="200000" max="400000" chance="70" /> &lt;!&ndash; Adena &ndash;&gt;-->
+<!--				</group>-->
+<!--			</death>-->
+<!--		</dropLists>-->
+<!--		<collision>-->
+<!--			<radius normal="16" />-->
+<!--			<height normal="27.2" />-->
+<!--		</collision>-->
+<!--	</npc>-->
 	<npc id="22816" level="81" type="L2Monster" name="Maluk Maiden of the Valley">
 		<!-- Confirmed CT2.5 -->
 		<parameters>

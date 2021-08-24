@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="10800" type="Armor" name="Draconic Leather Armor {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t89_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -21,6 +22,7 @@
 		</for>
 	</item>
 	<item id="10801" type="Armor" name="Major Arcana Robe {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t90_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -45,6 +47,7 @@
 		</for>
 	</item>
 	<item id="10802" type="Armor" name="Dynasty Breastplate {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t91_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -68,6 +71,7 @@
 		</for>
 	</item>
 	<item id="10803" type="Armor" name="Dynasty Breastplate {PvP} - Shield Master">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t91_uk_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -94,6 +98,7 @@
 		</for>
 	</item>
 	<item id="10804" type="Armor" name="Dynasty Breastplate {PvP} - Weapon Master">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t91_uw_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -120,6 +125,7 @@
 		</for>
 	</item>
 	<item id="10805" type="Armor" name="Dynasty Breastplate {PvP} - Force Master">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t91_uf_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -146,6 +152,7 @@
 		</for>
 	</item>
 	<item id="10806" type="Armor" name="Dynasty Breastplate {PvP} - Bard">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t91_uke_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -172,6 +179,7 @@
 		</for>
 	</item>
 	<item id="10807" type="Armor" name="Dynasty Leather Armor {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t92_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -192,6 +200,7 @@
 		</for>
 	</item>
 	<item id="10808" type="Armor" name="Dynasty Leather Armor {PvP} - Dagger Master">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t92_ud_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -215,6 +224,7 @@
 		</for>
 	</item>
 	<item id="10809" type="Armor" name="Dynasty Leather Armor {PvP} - Bow Master">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t92_ub_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -238,6 +248,7 @@
 		</for>
 	</item>
 	<item id="10810" type="Armor" name="Dynasty Tunic {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t93_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -262,6 +273,7 @@
 		</for>
 	</item>
 	<item id="10811" type="Armor" name="Dynasty Tunic {PvP} - Healer">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t93_uh_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -289,6 +301,7 @@
 		</for>
 	</item>
 	<item id="10812" type="Armor" name="Dynasty Tunic {PvP} - Enchanter">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t93_ue_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -316,6 +329,7 @@
 		</for>
 	</item>
 	<item id="10813" type="Armor" name="Dynasty Tunic {PvP} - Summoner">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t93_us_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -343,6 +357,7 @@
 		</for>
 	</item>
 	<item id="10814" type="Armor" name="Dynasty Tunic {PvP} - Wizard">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t93_uw_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -370,6 +385,7 @@
 		</for>
 	</item>
 	<item id="10815" type="Armor" name="Dynasty Leather Armor {PvP} - Force Master">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t92_ud_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -396,6 +412,7 @@
 		</for>
 	</item>
 	<item id="10816" type="Armor" name="Dynasty Leather Armor {PvP} - Weapon Master">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t92_ub_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -419,6 +436,7 @@
 		</for>
 	</item>
 	<item id="10817" type="Armor" name="Dynasty Leather Armor {PvP} - Enchanter">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t92_ud_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -442,6 +460,7 @@
 		</for>
 	</item>
 	<item id="10818" type="Armor" name="Dynasty Leather Armor {PvP} - Summoner">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t92_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -465,6 +484,7 @@
 		</for>
 	</item>
 	<item id="10819" type="Armor" name="Dynasty Platinum Breastplate {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.armor_t91_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />

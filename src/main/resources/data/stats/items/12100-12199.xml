@@ -34,6 +34,7 @@
 		</for>
 	</item>
 	<item id="12102" type="Armor" name="Common Item - Dwarven Chain Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_dwarven_chain_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -111,6 +112,7 @@
 		</for>
 	</item>
 	<item id="12107" type="Armor" name="Common Item - Knight's Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_knight_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -407,6 +409,7 @@
 		</for>
 	</item>
 	<item id="12126" type="Armor" name="Common Item - Composite Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_composite_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -458,6 +461,7 @@
 		</for>
 	</item>
 	<item id="12129" type="Armor" name="Common Item - Tower Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_tower_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -672,6 +676,7 @@
 		</for>
 	</item>
 	<item id="12143" type="Armor" name="Common Item - Full Plate Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_full_plate_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -923,6 +928,7 @@
 		</for>
 	</item>
 	<item id="12159" type="Armor" name="Common Item - Zubei's Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_shrnoens_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1118,6 +1124,7 @@
 		</for>
 	</item>
 	<item id="12171" type="Armor" name="Common Item - Avadon Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_avadon_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1321,6 +1328,7 @@
 		</for>
 	</item>
 	<item id="12183" type="Armor" name="Common Item - Doom Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_doom_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

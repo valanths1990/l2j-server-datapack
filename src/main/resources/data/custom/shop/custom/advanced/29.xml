@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../xsd/multisell.xsd">
+<!-- Territory war earring -->
+
+	<item>
+		<ingredient count="120" id="13757"/>
+		<production count="1" id="14801" />
+	</item>
+	<item>
+		<ingredient count="120" id="13758"/>
+		<production count="1" id="14802" />
+	</item>
+	<item>
+		<ingredient count="120" id="13759"/>
+		<production count="1" id="14803" />
+	</item>
+	<item>
+		<ingredient count="120" id="13760"/>
+		<production count="1" id="14804" />
+	</item>
+	<item>
+		<ingredient count="120" id="13761"/>
+		<production count="1" id="14805" />
+	</item>
+	<item>
+		<ingredient count="120" id="13762"/>
+		<production count="1" id="14806" />
+	</item>
+	<item>
+		<ingredient count="120" id="13763"/>
+		<production count="1" id="14807" />
+	</item>
+	<item>
+		<ingredient count="120" id="13764"/>
+		<production count="1" id="14808" />
+	</item>
+	<item>
+		<ingredient count="120" id="13765"/>
+		<production count="1" id="14809" />
+	</item>
+	<item>
+		<ingredient count="120" id="13757"/>
+		<production count="1" id="14819" />
+	</item>
+	<item>
+		<ingredient count="120" id="13758"/>
+		<production count="1" id="14819" />
+	</item>
+	<item>
+		<ingredient count="120" id="13759"/>
+		<production count="1" id="14819" />
+	</item>
+	<item>
+		<ingredient count="120" id="13760"/>
+		<production count="1" id="14819" />
+	</item>
+	<item>
+		<ingredient count="120" id="13761"/>
+		<production count="1" id="14819" />
+	</item>
+	<item>
+		<ingredient count="120" id="13762"/>
+		<production count="1" id="14819" />
+	</item>
+	<item>
+		<ingredient count="120" id="13763"/>
+		<production count="1" id="14819" />
+	</item>
+	<item>
+		<ingredient count="120" id="13764"/>
+		<production count="1" id="14819" />
+	</item>
+	<item>
+		<ingredient count="120" id="13765"/>
+		<production count="1" id="14819" />
+	</item>
+
+
+</list>

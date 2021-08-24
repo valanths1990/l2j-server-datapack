@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/enchantItemData.xsd">
 	<!-- Scrolls: Enchant Weapon -->
-	<enchant id="729" targetGrade="A" />
-	<enchant id="947" targetGrade="B" />
-	<enchant id="951" targetGrade="C" />
-	<enchant id="955" targetGrade="D" />
-	<enchant id="959" targetGrade="S" />
+	<enchant id="729" targetGrade="A" maxEnchant="16" increaseEnchant="1"/>
+	<enchant id="947" targetGrade="B" maxEnchant="16" increaseEnchant="1"/>
+	<enchant id="951" targetGrade="C" maxEnchant="16" increaseEnchant="1"/>
+	<enchant id="955" targetGrade="D" maxEnchant="16" increaseEnchant="1"/>
+	<enchant id="959" targetGrade="S" maxEnchant="16" increaseEnchant="1"/>
 
 	<!-- Scrolls: Enchant Armor -->
-	<enchant id="730" targetGrade="A" />
-	<enchant id="948" targetGrade="B" />
-	<enchant id="952" targetGrade="C" />
-	<enchant id="956" targetGrade="D" scrollGroupId="0" /> <!-- Default scroll groups binding. -->
-	<enchant id="960" targetGrade="S" />
+	<enchant id="730" targetGrade="A" maxEnchant="16" increaseEnchant="1"/>
+	<enchant id="948" targetGrade="B" maxEnchant="16" increaseEnchant="1"/>
+	<enchant id="952" targetGrade="C" maxEnchant="16" increaseEnchant="1"/>
+	<enchant id="956" targetGrade="D" maxEnchant="16" increaseEnchant="1" scrollGroupId="0" /> <!-- Default scroll groups binding. -->
+	<enchant id="960" targetGrade="S" maxEnchant="16" increaseEnchant="1"/>
 
 	<!-- Blessed Scrolls: Enchant Weapon -->
-	<enchant id="6569" targetGrade="A" />
-	<enchant id="6571" targetGrade="B" />
-	<enchant id="6573" targetGrade="C" />
-	<enchant id="6575" targetGrade="D" />
-	<enchant id="6577" targetGrade="S" />
+	<enchant id="6569" targetGrade="A" maxEnchant="16" increaseEnchant="16"/>
+	<enchant id="6571" targetGrade="B" maxEnchant="16" increaseEnchant="16"/>
+	<enchant id="6573" targetGrade="C" maxEnchant="16" increaseEnchant="16"/>
+	<enchant id="6575" targetGrade="D" maxEnchant="16" increaseEnchant="16"/>
+	<enchant id="6577" targetGrade="S" maxEnchant="16" increaseEnchant="16">
+	</enchant>
 	<!-- Blessed Scrolls: Enchant Armor -->
-	<enchant id="6570" targetGrade="A" />
-	<enchant id="6572" targetGrade="B" />
-	<enchant id="6574" targetGrade="C" />
-	<enchant id="6576" targetGrade="D" />
-	<enchant id="6578" targetGrade="S" />
+	<enchant id="6570" targetGrade="A" maxEnchant="16" increaseEnchant="16"/>
+	<enchant id="6572" targetGrade="B" maxEnchant="16" increaseEnchant="16"/>
+	<enchant id="6574" targetGrade="C" maxEnchant="16" increaseEnchant="16"/>
+	<enchant id="6576" targetGrade="D" maxEnchant="16" increaseEnchant="16"/>
+	<enchant id="6578" targetGrade="S" maxEnchant="16" increaseEnchant="16"/>
 
 	<!-- Not used anymore. -->
 	<!-- Crystal Scrolls: Enchant Weapon -->
@@ -42,11 +43,11 @@
 	<!-- <enchant id="962" targetGrade="S" bonusRate="100" /> -->
 
 	<!-- Weapon Enchant Scrolls -->
-	<enchant id="22006" targetGrade="D" bonusRate="10" />
-	<enchant id="22007" targetGrade="C" bonusRate="10" />
-	<enchant id="22008" targetGrade="B" bonusRate="10" />
-	<enchant id="22009" targetGrade="A" bonusRate="10" />
-	<enchant id="20517" targetGrade="S" bonusRate="10" />
+	<enchant id="22006" targetGrade="D" bonusRate="10" maxEnchant="16"/>
+	<enchant id="22007" targetGrade="C" bonusRate="10" maxEnchant="16"/>
+	<enchant id="22008" targetGrade="B" bonusRate="10" maxEnchant="16"/>
+	<enchant id="22009" targetGrade="A" bonusRate="10" maxEnchant="16"/>
+	<enchant id="20517" targetGrade="S" bonusRate="10" maxEnchant="16"/>
 	<!-- Armor Enchant Scrolls -->
 	<enchant id="22010" targetGrade="D" bonusRate="10" />
 	<enchant id="22011" targetGrade="C" bonusRate="10" />
@@ -64,13 +65,13 @@
 	<enchant id="20520" targetGrade="S" maxEnchant="16" bonusRate="10" />
 
 	<!-- Divine Weapon Enchant Crystal -->
-	<enchant id="22018" targetGrade="B" bonusRate="100" />
-	<enchant id="22019" targetGrade="A" bonusRate="100" />
-	<enchant id="20521" targetGrade="S" bonusRate="100" />
+	<enchant id="22018" targetGrade="B" bonusRate="100" maxEnchant="16"/>
+	<enchant id="22019" targetGrade="A" bonusRate="100" maxEnchant="16"/>
+	<enchant id="20521" targetGrade="S" bonusRate="100" maxEnchant="16"/>
 	<!-- Divine Armor Enchant Crystal -->
-	<enchant id="22020" targetGrade="B" bonusRate="100" />
-	<enchant id="22021" targetGrade="A" bonusRate="100" />
-	<enchant id="20522" targetGrade="S" bonusRate="100" />
+	<enchant id="22020" targetGrade="B" bonusRate="100" maxEnchant="16"/>
+	<enchant id="22021" targetGrade="A" bonusRate="100" maxEnchant="16"/>
+	<enchant id="20522" targetGrade="S" bonusRate="100" maxEnchant="16"/>
 
 	<!-- Scroll: Enchant Weapon of Destruction -->
 	<enchant id="22221" targetGrade="S" maxEnchant="15" />
@@ -86,13 +87,13 @@
 	<enchant id="22230" targetGrade="D" maxEnchant="6" />
 
 	<!-- Master Yogi's Scroll: Enchant Weapon -->
-	<enchant id="13540" maxEnchant="23">
+	<enchant id="13540" maxEnchant="20">
 		<item id="13539" /> <!-- Staff of Master Yogi -->
 	</enchant>
 
 	<!-- Olf's T-shirt Enchant Scroll -->
 	<enchant id="21581" maxEnchant="10">
-		<item id="21580" /> <!-- Olf's T-shirt -->
+		<item id="21580"  /> <!-- Olf's T-shirt -->
 		<item id="21706" /> <!-- Olf's T-shirt (Event) -->
 	</enchant>
 
@@ -123,7 +124,7 @@
 	</enchant>
 
 	<!-- Event - Vitality Belt Enchant Scroll -->
-	<enchant id="15382" maxEnchant="50">
+	<enchant id="15382" maxEnchant="16">
 		<item id="15393" /> <!-- Vitality Belt (7-day limited period) -->
 		<item id="15394" /> <!-- Vitality Belt (30-day limited period) -->
 		<item id="15395" /> <!-- Vitality Belt (60-day limited period) -->
@@ -137,7 +138,7 @@
 	</enchant>
 
 	<!-- Weapon enhancing scroll exclusive for PC cafe -->
-	<enchant id="15346" targetGrade="S">
+	<enchant id="15346" targetGrade="S" maxEnchant="16">
 		<item id="15313" /> <!-- Player Commendation - Forgotten Blade (Player Recommendation Weapon) -->
 		<item id="15314" /> <!-- Player Commendation - Basalt Battlehammer (Player Recommendation Weapon) -->
 		<item id="15315" /> <!-- Player Commendation - Imperial Staff (Player Recommendation Weapon) -->
@@ -153,7 +154,7 @@
 		<item id="15325" /> <!-- Player Commendation - Sarunga (Player Recommendation Weapon) -->
 		<item id="15326" /> <!-- Player Commendation - Tallum Blade *Dark Legion's Edge (Player Recommendation Weapon) -->
 	</enchant>
-	<enchant id="15347" targetGrade="A">
+	<enchant id="15347" targetGrade="A" maxEnchant="16">
 		<item id="13210" /> <!-- Player Commendation - Sirra's Blade (Player Commendation Weapon) -->
 		<item id="13211" /> <!-- Player Commendation - Sword of Ipos (Player Commendation Weapon) -->
 		<item id="13212" /> <!-- Player Commendation - Barakiel's Axe (Player Commendation Weapon) -->
@@ -170,7 +171,7 @@
 		<item id="13223" /> <!-- Player Commendation - Durendal (Player Commendation Weapon) -->
 		<item id="13224" /> <!-- Player Commendation - Screaming Vengeance (Player Commendation Weapon) -->
 	</enchant>
-	<enchant id="15348" targetGrade="B">
+	<enchant id="15348" targetGrade="B" maxEnchant="16">
 		<item id="13194" /> <!-- Player Commendation - Damascus Sword (Player Commendation Weapon) -->
 		<item id="13195" /> <!-- Player Commendation - Lance (Player Commendation Weapon) -->
 		<item id="13196" /> <!-- Player Commendation - Deadman's Glory (Player Commendation Weapon) -->
@@ -188,7 +189,7 @@
 		<item id="13208" /> <!-- Player Commendation - Dismantler (Player Commendation Weapon) -->
 		<item id="13209" /> <!-- Player Commendation - Hell Hound (Player Commendation Weapon) -->
 	</enchant>
-	<enchant id="15349" targetGrade="C">
+	<enchant id="15349" targetGrade="C" maxEnchant="16">
 		<item id="13178" /> <!-- Player Commendation - Samurai Long Sword (Player Commendation Weapon) -->
 		<item id="13179" /> <!-- Player Commendation - Ghost's Wand (Player Commendation Weapon) -->
 		<item id="13180" /> <!-- Player Commendation - Ghoul's Wand (Player Commendation Weapon) -->
@@ -206,7 +207,7 @@
 		<item id="13192" /> <!-- Player Commendation - Ecliptic Axe (Player Commendation Weapon) -->
 		<item id="13193" /> <!-- Player Commendation - Dwarven Hammer (Player Commendation Weapon) -->
 	</enchant>
-	<enchant id="15350" targetGrade="D">
+	<enchant id="15350" targetGrade="D" maxEnchant="16">
 		<item id="13163" /> <!-- Player Commendation - Bastard*Crimson Sword (Player Commendation Weapon) -->
 		<item id="13164" /> <!-- Player Commendation - Claymore (Player Commendation Weapon) -->
 		<item id="13165" /> <!-- Player Commendation - Bonebreaker (Player Commendation Weapon) -->

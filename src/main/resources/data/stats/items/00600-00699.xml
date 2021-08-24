@@ -398,6 +398,7 @@
 		</for>
 	</item>
 	<item id="625" type="Armor" name="Bone Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_bone_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -416,6 +417,7 @@
 		</for>
 	</item>
 	<item id="626" type="Armor" name="Bronze Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_bronze_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -479,6 +481,7 @@
 		</for>
 	</item>
 	<item id="629" type="Armor" name="Kite Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_kite_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -500,6 +503,7 @@
 		</for>
 	</item>
 	<item id="630" type="Armor" name="Square Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_square_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -542,6 +546,7 @@
 		</for>
 	</item>
 	<item id="632" type="Armor" name="Knight's Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_knight_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -563,6 +568,7 @@
 		</for>
 	</item>
 	<item id="633" type="Armor" name="Zubei's Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_shrnoens_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -584,6 +590,7 @@
 		</for>
 	</item>
 	<item id="634" type="Armor" name="Dragon Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_shield_of_nightmare_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -606,6 +613,7 @@
 		</for>
 	</item>
 	<item id="635" type="Armor" name="Wolf Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_small_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -627,6 +635,7 @@
 		</for>
 	</item>
 	<item id="636" type="Armor" name="Shining Dragon Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_doom_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -669,6 +678,7 @@
 		</for>
 	</item>
 	<item id="638" type="Armor" name="Glorious Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_shield_of_victory_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -690,6 +700,7 @@
 		</for>
 	</item>
 	<item id="639" type="Armor" name="Red Flame Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_tower_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -711,6 +722,7 @@
 		</for>
 	</item>
 	<item id="640" type="Armor" name="Elven Crystal Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_masterpiece_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -732,6 +744,7 @@
 		</for>
 	</item>
 	<item id="641" type="Armor" name="Dark Crystal Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_dark_crystal_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -753,6 +766,7 @@
 		</for>
 	</item>
 	<item id="642" type="Armor" name="Elven Vagian Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_shield_of_victory_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -774,6 +788,7 @@
 		</for>
 	</item>
 	<item id="643" type="Armor" name="Dark Vagian Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_shield_of_victory_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -795,6 +810,7 @@
 		</for>
 	</item>
 	<item id="644" type="Armor" name="Hell Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_shield_of_grace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -816,6 +832,7 @@
 		</for>
 	</item>
 	<item id="645" type="Armor" name="Art of Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_knight_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -858,6 +875,7 @@
 		</for>
 	</item>
 	<item id="647" type="Armor" name="Gust Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_shield_of_grace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -879,6 +897,7 @@
 		</for>
 	</item>
 	<item id="648" type="Armor" name="Prairie Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_knight_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -942,6 +961,7 @@
 		</for>
 	</item>
 	<item id="651" type="Armor" name="Ace's Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_shield_of_assistance_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -963,6 +983,7 @@
 		</for>
 	</item>
 	<item id="652" type="Armor" name="Guardian's Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_knight_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -984,6 +1005,7 @@
 		</for>
 	</item>
 	<item id="653" type="Armor" name="Marksman Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_doom_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1026,6 +1048,7 @@
 		</for>
 	</item>
 	<item id="655" type="Armor" name="Sage's Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_sages_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1047,6 +1070,7 @@
 		</for>
 	</item>
 	<item id="656" type="Armor" name="Paradia Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_knight_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1068,6 +1092,7 @@
 		</for>
 	</item>
 	<item id="657" type="Armor" name="Inferno Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_shield_of_victory_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1131,6 +1156,7 @@
 		</for>
 	</item>
 	<item id="660" type="Armor" name="Otherworldly Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_round_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1152,6 +1178,7 @@
 		</for>
 	</item>
 	<item id="661" type="Armor" name="Elemental Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_knight_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1236,6 +1263,7 @@
 		</for>
 	</item>
 	<item id="665" type="Armor" name="Phoenix Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_knight_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1257,6 +1285,7 @@
 		</for>
 	</item>
 	<item id="666" type="Armor" name="Cerberus Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_doom_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1320,6 +1349,7 @@
 		</for>
 	</item>
 	<item id="669" type="Armor" name="Flame Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_composite_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1362,6 +1392,7 @@
 		</for>
 	</item>
 	<item id="671" type="Armor" name="Blood Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_knight_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1383,6 +1414,7 @@
 		</for>
 	</item>
 	<item id="672" type="Armor" name="Absolute Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_knight_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1404,6 +1436,7 @@
 		</for>
 	</item>
 	<item id="673" type="Armor" name="Avadon Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_avadon_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1425,6 +1458,7 @@
 		</for>
 	</item>
 	<item id="674" type="Armor" name="Divine Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_knight_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

@@ -1145,12 +1145,17 @@
 		<cond msgId="2453">
 			<and>
 				<player races="KAMAEL" />
-				<player cloakStatus="true" />
+				<!--<player cloakStatus="false" />-->
 			</and>
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="13890" type="Armor" name="Holy Spirit's Cloak">
@@ -1163,11 +1168,16 @@
 		<set name="weight" val="220" />
 		<set name="price" val="28671000" />
 		<cond msgId="2453">
-			<player cloakStatus="true" />
+			<!--<player cloakStatus="false" />-->
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="13891" type="Armor" name="Holy Spirit's Cloak - Light Armor exclusive">
@@ -1183,12 +1193,17 @@
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="ROGUE_CLOACK" />
-				<player cloakStatus="true" />
+				<!--<player cloakStatus="false" />-->
 			</and>
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="13892" type="Armor" name="Holy Spirit's Cloak - Robe exclusive">
@@ -1204,12 +1219,17 @@
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="MAGE_CLOACK" />
-				<player cloakStatus="true" />
+				<!--<player cloakStatus="false" />-->
 			</and>
 		</cond>
 		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="13893" type="EtcItem" name="Sealed Holy Spirit's Cloak">

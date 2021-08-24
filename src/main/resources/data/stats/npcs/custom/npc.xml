@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
+    <npc id="40000" displayId="18696" level="70" type="L2Custom" name="Teleporter" title="L2 Angel" usingServerSideTitle="true" usingServerSideName="true">
+        <!-- Confirmed CT2.5 -->
+        <race>CONSTRUCT</race>
+        <sex>MALE</sex>
+        <parameters>
+            <param name="type" value="teleport;homepage"/>
+        </parameters>
+        <status attackable="false" canMove="false"/>
+        <exCrtEffect>true</exCrtEffect>
+        <ai type="BALANCED"/>
+        <collision>
+            <radius normal="44.5"/>
+            <height normal="7"/>
+        </collision>
+    </npc>
+    <npc id="40001" displayId="4302" level="1" type="L2Custom" name="Master Dugi" title="Soul Healer">
+        <!-- Confirmed CT2.5 -->
+        <race>HUMANOID</race>
+        <sex>FEMALE</sex>
+        <status attackable="false" canMove="false"/>
+        <exCrtEffect>true</exCrtEffect>
+        <collision>
+            <radius normal="9"/>
+            <height normal="16.7"/>
+        </collision>
+    </npc>
+    <npc id="40002" displayId="4306" level="85" type="L2Custom" name="Shop" title="L2 Angel" usingServerSideTitle="true" usingServerSideName="true">
+        <!-- Confirmed CT2.5 -->
+        <parameters>
+            <param name="type" value="shop;homepage"/>
+        </parameters>
+        <race>HUMAN</race>
+        <sex>MALE</sex>
+        <status attackable="false" canMove="false" undying="true" />
+        <exCrtEffect>false</exCrtEffect>
+        <collision>
+            <radius normal="8"/>
+            <height normal="26.5"/>
+        </collision>
+    </npc>
+    <npc id="40003" displayId="36214" level="75" type="L2Custom" name="Class Master" title="L2 Angel" usingServerSideName="true" usingServerSideTitle="true">
+        <!-- Confirmed CT2.5 -->
+        <parameters>
+            <param name="type" value="class;homepage"/>
+        </parameters>
+        <race>CASTLE_GUARD</race>
+        <sex>MALE</sex>
+        <equipment rhand="9813" lhand="9813"/> <!-- rhand: Orc Officer lhand: Orc Officer -->
+        <status attackable="false" canMove="false"/>
+        <exCrtEffect>true</exCrtEffect>
+        <collision>
+            <radius normal="14.5"/>
+            <height normal="30"/>
+        </collision>
+    </npc>
+    <npc id="40004" displayId="36212" level="75" type="L2Custom" name="Ranking" title="L2 Angel" usingServerSideTitle="true" usingServerSideName="true">
+        <!-- Confirmed CT2.5 -->
+        <parameters>
+            <param name="type" value="ranking;homepage"/>
+        </parameters>
+        <race>HUMAN</race>
+        <sex>FEMALE</sex>
+        <equipment rhand="80" lhand="641"/> <!-- rhand: Tallum Blade lhand: Dark Crystal Shield -->
+        <status attackable="false" undying="true" canMove="false"/>
+        <exCrtEffect>true</exCrtEffect>
+        <collision>
+            <radius normal="10"/>
+            <height normal="23.75"/>
+        </collision>
+    </npc>
+    <npc id="40005" displayId="4305" level="70" type="L2Custom" name="Buffer" title="L2 Angel" usingServerSideName="true" usingServerSideTitle="true">
+        <!-- Confirmed CT2.5 -->
+        <parameters>
+            <param name="type" value="buffer;homepage"/>
+        </parameters>
+        <race>HUMAN</race>
+        <sex>FEMALE</sex>
+        <status attackable="false" canMove="false"/>
+        <exCrtEffect>true</exCrtEffect>
+        <collision>
+            <radius normal="10"/>
+            <height normal="20"/>
+        </collision>
+    </npc>
+    <npc id="40006" displayId="4307" level="80" type="L2Custom" name="Santa Claus" title="Event Manager" usingServerSideName="true" usingServerSideTitle="true">
+        <!-- TODO: Must be confirmed -->
+        <sex>MALE</sex>
+        <stats str="10" int="10" dex="10" wit="10" con="10" men="10">
+            <vitals hp="2444" mp="2444.0"/>
+            <attack physical="500" magical="500" attackSpeed="278" range="40"/>
+            <defence physical="500" magical="500"/>
+            <attribute>
+                <defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20"/>
+            </attribute>
+            <speed>
+                <walk ground="60"/>
+                <run ground="160"/>
+            </speed>
+        </stats>
+        <collision>
+            <radius normal="25"/>
+            <height normal="35"/>
+        </collision>
+    </npc>
+    <npc id="40007" displayId="32652" level="80" type="L2Custom" name="Teleport Crystal">
+        <!-- Confirmed CT2.5 -->
+        <race>ETC</race>
+        <sex>ETC</sex>
+        <status attackable="false" canMove="false" undying="true"/>
+        <exCrtEffect>false</exCrtEffect>
+        <collision>
+            <radius normal="30"/>
+            <height normal="32.5"/>
+        </collision>
+    </npc>
+    <npc id="40008" displayId="32632" level="70" type="L2Custom" name="Gracian Survivor">
+        <!-- Confirmed CT2.5 -->
+        <race>HUMAN</race>
+        <sex>FEMALE</sex>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7"/>
+            <attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="295.91597" magical="216.53847"/>
+            <attribute>
+                <defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20"/>
+            </attribute>
+            <speed>
+                <walk ground="50"/>
+                <run ground="160"/>
+            </speed>
+        </stats>
+        <status attackable="false" canMove="false"/>
+        <skillList>
+            <skill id="4045" level="1"/> <!--Resist Full Magic Attack -->
+            <skill id="4408" level="1"/> <!--HP Increase (1x) -->
+            <skill id="4409" level="1"/> <!--MP Increase (1x) -->
+            <skill id="4410" level="11"/> <!--Average P. Atk. -->
+            <skill id="4411" level="11"/> <!--Average M. Atk. -->
+            <skill id="4412" level="11"/> <!--Average P. Def. -->
+            <skill id="4413" level="11"/> <!--Average M. Def. -->
+            <skill id="4414" level="2"/> <!--Standard Type -->
+            <skill id="4415" level="3"/> <!--One-handed Sword -->
+            <skill id="4416" level="14"/> <!--Humans -->
+        </skillList>
+        <exCrtEffect>true</exCrtEffect>
+        <ai type="BALANCED"/>
+        <collision>
+            <radius normal="9.5"/>
+            <height normal="22.5"/>
+        </collision>
+    </npc>
+    <npc id="40009" displayId="32314" level="70" type="L2Npc" name="Tower" >
+        <!-- Confirmed CT2.5 -->
+        <parameters>
+            <param name="NoFnHi" value="1"/>
+            <param name="MoveAroundSocial" value="0"/>
+            <param name="MoveAroundSocial1" value="0"/>
+        </parameters>
+        <race>CONSTRUCT</race>
+        <sex>MALE</sex>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7"/>
+            <attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120"/>
+            <defence physical="295.91597" magical="216.53847"/>
+            <attribute>
+                <defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150"/>
+            </attribute>
+            <speed>
+                <walk ground="1"/>
+                <run ground="120"/>
+            </speed>
+        </stats>
+        <status attackable="false" canMove="false" targetable="false" undying="true"/>
+        <exCrtEffect>true</exCrtEffect>
+        <ai type="BALANCED"/>
+        <collision>
+            <radius normal="0"/>
+            <height normal="31"/>
+        </collision>
+    </npc>
+    <npc id="36600" displayId="32226" name="Event Manager" usingServerSideName="true" title="L2J" usingServerSideTitle="true" type="L2Custom">
+        <parameters>
+            <param name="type" value="eventengine;homepage"/>
+        </parameters>
+        <collision>
+            <radius normal="11" />
+            <height normal="22.25" />
+        </collision>
+    </npc>
+    <npc id="36601" displayId="35062" name="Flag" usingServerSideName="true" title="" usingServerSideTitle="false" type="L2Npc">
+        <collision>
+            <radius normal="10" />
+            <height normal="80" />
+        </collision>
+    </npc>
+    <npc id="36603" displayId="32027" name="Holder" usingServerSideName="true" title="" usingServerSideTitle="false" type="L2Npc">
+        <status targetable="false" attackable="false" canMove="false" undying="true" />
+        <collision>
+            <radius normal="30" />
+            <height normal="31" />
+        </collision>
+    </npc>
+</list>

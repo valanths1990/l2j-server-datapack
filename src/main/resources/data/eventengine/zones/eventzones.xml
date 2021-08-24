@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/zones.xsd">
+    <zone id="1" name="Fantasy Islande" type="EventZone" shape="Cylinder" rad="8000" minZ="-3000" maxZ="1000">
+        <node X="-59791" Y="-57282"/>
+        <spawn X="-56668" Y="-54413" Z="-2012" type="redStartPoint"/>
+        <spawn X="-60501" Y="-59169" Z="-2024" type="blueStartPoint"/>
+        <spawn X="-57333" Y="-55025" Z="-2009" type="redFlag"/>
+        <spawn X="-60258" Y="-59000" Z="-2009" type="blueFlag"/>
+    </zone>
+    <zone id="2" name="aden_castle_battlefield_territory" type="EventZone" shape="NPoly" minZ="-3184" maxZ="6816">
+        <stat name="castleId" val="5" />
+        <node X="142431" Y="362" />
+        <node X="152319" Y="344" />
+        <node X="152282" Y="15197" />
+        <node X="142393" Y="15215" />
+        <spawn X="149788" Y="12075" Z="-877" type="blueStartPoint"/>
+        <spawn X="145188" Y="12077" Z="-872" type="redStartPoint"/>
+        <spawn X="147464" Y="1535" Z="-371" type="towerSpawn"/>
+    </zone>
+</list>

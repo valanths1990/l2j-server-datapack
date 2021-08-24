@@ -387,6 +387,7 @@
 		</for>
 	</item>
 	<item id="21923" type="Weapon" name="Hellblade {PvP}">
+		<set name="element_enabled" val="true"/>
 		<!-- Description: Sword used by Darion. Bestows a special power upon the wielder. Bestows one of the following functions: Haste, Focus, or Health. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack. -->
 		<set name="icon" val="BranchSys2.icon.br_wp_Caladbulg_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -419,6 +420,7 @@
 		</for>
 	</item>
 	<item id="21924" type="Weapon" name="Hellblade {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<!-- Description: (Soul Crystal Enhancement). Sword used by Darion. Bestows a special power upon the wielder. Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP, and recovers CP at a fixed rate during an attack. -->
 		<set name="icon" val="BranchSys2.icon.br_wp_Caladbulg_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -451,6 +453,7 @@
 		</for>
 	</item>
 	<item id="21925" type="Weapon" name="Hellblade {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<!-- Description: (Soul Crystal Enhancement). Sword used by Darion. Bestows a special power upon the wielder. Increases Max HP by 25%. Increases damage inflicted during PvP, and recovers CP at a fixed rate during an attack. -->
 		<set name="icon" val="BranchSys2.icon.br_wp_Caladbulg_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -483,6 +486,7 @@
 		</for>
 	</item>
 	<item id="21926" type="Weapon" name="Hellblade {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<!-- Description: (Soul Crystal Enhancement). Sword used by Darion. Bestows a special power upon the wielder. Increases Critical by 131. Increases damage inflicted during PvP, and recovers CP at a fixed rate during an attack. -->
 		<set name="icon" val="BranchSys2.icon.br_wp_Caladbulg_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -663,6 +667,7 @@
 		</for>
 	</item>
 	<item id="21932" type="Weapon" name="Hellblade - Lightning {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<!-- Description: Masterwork Item that increases the critical attack rate. (Soul Crystal Enhancement). Sword used by Darion. Bestows a special power upon the wielder. Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP and has a chance of recovering CP during an attack. -->
 		<set name="icon" val="BranchSys2.icon.br_wp_Caladbulg_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -695,6 +700,7 @@
 		</for>
 	</item>
 	<item id="21933" type="Weapon" name="Hellblade - Lightning {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<!-- Description: Masterwork Item that increases the critical attack rate. (Soul Crystal Enhancement). Sword used by Darion. Bestows a special power upon the wielder. Increases Max HP by 25%. Increases damage inflicted during PvP and has a chance of recovering CP during an attack. -->
 		<set name="icon" val="BranchSys2.icon.br_wp_Caladbulg_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -727,6 +733,7 @@
 		</for>
 	</item>
 	<item id="21934" type="Weapon" name="Hellblade - Lightning {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<!-- Description: Masterwork Item that increases the critical attack rate. (Soul Crystal Enhancement). Sword used by Darion. Bestows a special power upon the wielder. Increases Critical by 131. Increases damage inflicted during PvP and has a chance of recovering CP during an attack. -->
 		<set name="icon" val="BranchSys2.icon.br_wp_Caladbulg_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1066,6 +1073,7 @@
 		</for>
 	</item>
 	<item id="21944" type="Weapon" name="Claw of Destruction {PvP} - HP Drain">
+		<set name="element_enabled" val="true"/>
 		<!-- Description: (Soul Crystal Enhancement). Blunt used by Tiat. Bestows a special power upon the wielder. Recovers 4% of melee damage inflicted upon the enemy to your own HP. Increases damage inflicted during PvP, and recovers CP at a fixed rate during an attack. -->
 		<set name="icon" val="BranchSys2.icon.br_wp_tiatenon_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1099,6 +1107,7 @@
 		</for>
 	</item>
 	<item id="21945" type="Weapon" name="Claw of Destruction {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<!-- Description: (Soul Crystal Enhancement). Blunt used by Tiat. Bestows a special power upon the wielder. Increases Max HP by 25%. Increases damage inflicted during PvP, and recovers CP at a fixed rate during an attack. -->
 		<set name="icon" val="BranchSys2.icon.br_wp_tiatenon_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1132,6 +1141,7 @@
 		</for>
 	</item>
 	<item id="21946" type="Weapon" name="Claw of Destruction {PvP} - HP Regeneration">
+		<set name="element_enabled" val="true"/>
 		<!-- Description: (Soul Crystal Enhancement). Blunt used by Tiat. Bestows a special power upon the wielder. HP recovery speed is increased. Increases damage inflicted during PvP, and recovers CP at a fixed rate during an attack. -->
 		<set name="icon" val="BranchSys2.icon.br_wp_tiatenon_i01" />
 		<set name="default_action" val="EQUIP" />

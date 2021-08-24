@@ -36,6 +36,7 @@
 						<xs:attribute name="emitter_id" type="xs:positiveInteger" />
 						<xs:attribute name="clanhall_id" type="xs:positiveInteger" />
 						<xs:attribute name="is_wall" type="xs:boolean" />
+						<xs:attribute name="is_event" type="xs:boolean" />
 						<xs:attribute name="default_status">
 							<xs:simpleType>
 								<xs:restriction base="xs:token">

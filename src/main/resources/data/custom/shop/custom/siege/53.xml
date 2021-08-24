@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../xsd/multisell.xsd">
+    <item>
+        <production count="1" id="10156"/>
+    </item>
+    <item>
+        <production count="1" id="10157"/>
+    </item>
+    <item>
+        <production count="1" id="10155"/>
+    </item>
+    <item>
+        <production count="1" id="10154"/>
+    </item>
+    <item>
+        <production count="1" id="10152"/>
+    </item>
+    <item>
+        <production count="1" id="10153"/>
+    </item>
+    <item>
+        <production count="1" id="10159"/>
+    </item>
+    <item>
+        <production count="1" id="9688"/>
+    </item>
+    <item>
+        <production count="1" id="10149"/>
+    </item>
+    <item>
+        <production count="1" id="10150"/>
+    </item>
+    <item>
+        <production count="1" id="8520"/>
+    </item>
+    <item>
+        <production count="1" id="8871"/>
+    </item>
+
+
+</list>

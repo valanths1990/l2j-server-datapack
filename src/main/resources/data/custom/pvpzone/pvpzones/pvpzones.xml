@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/zones.xsd">
+    <!-- rad 14500-->
+    <zone minZ="-7000" maxZ="6000" name="primal island" shape="Cylinder" rad="20000" type="PvpZone" id="2">
+        <stat name="default_enabled" val="true"/>
+        <node X="7190" Y="-20414"/>
+        <spawn X="10485" Y="-25223" Z="-3692"/>
+        <spawn X="9500" Y="-23281" Z="-3704"/>
+        <spawn X="9560" Y="-23281" Z="-3704"/>
+    </zone>
+    <zone maxZ="-3000" minZ="-4000" name="" shape="Cylinder" type="PvpZone" rad="10000" id="3">
+        <node X="-15836" Y="207243"/>
+        <spawn X="-17064" Y="206713" Z="-3665"/>
+        <spawn X="-16900" Y="209807" Z="-3641"/>
+    </zone>
+    <!-- <zone minZ="-3600" maxZ="-3000" name="test" shape="Cylinder" rad="5000" type="FlagZone" id="10002">
+        <stat name="default_enabled" val="true" />
+		<node X="81280" Y="148650" />
+    </zone> -->
+
+</list>

@@ -27,6 +27,10 @@ import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
+import com.l2jserver.gameserver.model.events.Containers;
+import com.l2jserver.gameserver.model.events.EventDispatcher;
+import com.l2jserver.gameserver.model.events.impl.OnDoorAction;
+import com.l2jserver.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
 import com.l2jserver.gameserver.model.holders.DoorRequestHolder;
 import com.l2jserver.gameserver.network.serverpackets.ConfirmDlg;
 
@@ -68,6 +72,7 @@ public class L2DoorInstanceAction implements IActionHandler {
 				}
 			}
 		}
+		EventDispatcher.getInstance().notifyEventAsync(new OnDoorAction(activeChar,(L2DoorInstance)target), Containers.Players());
 		return true;
 	}
 	

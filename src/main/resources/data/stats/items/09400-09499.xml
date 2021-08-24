@@ -744,6 +744,7 @@
 		</for>
 	</item>
 	<item id="9441" type="Armor" name="Dynasty Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_dynasty_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

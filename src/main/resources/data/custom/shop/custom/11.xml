@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/multisell.xsd">
+
+	<!-- TOP WEAPON MULTISESLL -->
+	<item>
+		<!-- eternal core -->
+		<production count="1" id="15873" />
+	</item>
+	<item>
+		<!-- eternal core -->
+		<production count="1" id="15871" />
+	</item>
+	<item>
+		<!-- eternal core -->
+		<production count="1" id="15872" />
+	</item>
+	<item>
+		<!-- mamba edge -->
+		<production count="1" id="15876" />
+	</item>
+	<item>
+		<!-- mamba edge -->
+		<production count="1" id="15874" />
+	</item>
+	<item>
+		<!-- mamba edge -->
+		<production count="1" id="15875" />
+	</item>
+	<item>
+		<!-- eversor mace -->
+		<production count="1" id="15879" />
+	</item>
+	<item>
+		<!-- eversor mace -->
+		<production count="1" id="15877" />
+	</item>
+	<item>
+		<!-- eversor mace -->
+		<production count="1" id="15878" />
+	</item>
+	<item>
+	<!-- Contristo Hammer - Health -->
+	<production count="1" id="15882" />
+</item>
+<item>
+	<!-- Contristo Hammer - HP Drain -->
+	<production count="1" id="15880" />
+</item>
+<item>
+	<!-- Contristo Hammer - HP Regeneration -->
+	<production count="1" id="15881" />
+</item>
+<item>
+	<!-- Lava Saw - Health -->
+	<production count="1" id="15885" />
+</item>
+<item>
+	<!-- Lava Saw - Focus -->
+	<production count="1" id="15883" />
+</item>
+<item>
+	<!-- Lava Saw - Haste -->
+	<production count="1" id="15884" />
+</item>
+<item>
+	<!-- Jade Claw - Health -->
+	<production count="1" id="15888" />
+</item>
+<item>
+	<!-- Jade Claw - Critical Stun -->
+	<production count="1" id="15886" />
+</item>
+<item>
+	<!-- Jade Claw - Focus -->
+	<production count="1" id="15887" />
+</item>
+<item>
+	<!-- Demitelum - Guidance -->
+	<production count="1" id="15891" />
+</item>
+<item>
+	<!-- Demitelum - Haste -->
+	<production count="1" id="15889" />
+</item>
+<item>
+	<!-- Demitelum - Health -->
+	<production count="1" id="15890" />
+</item>
+<item>
+	<!-- Sacredium - MP Regeneration -->
+	<production count="1" id="15894" />
+</item>
+<item>
+	<!-- Sacredium - Mana Up -->
+	<production count="1" id="15892" />
+</item>
+<item>
+	<!-- Sacredium - Acumen -->
+	<production count="1" id="15893" />
+</item>
+<item>
+	<!-- Cyclic Cane - MP Regeneration -->
+	<production count="1" id="15897" />
+</item>
+<item>
+	<!-- Cyclic Cane - Magic Hold -->
+	<production count="1" id="15895" />
+</item>
+<item>
+	<!-- Cyclic Cane - Empower -->
+	<production count="1" id="15896" />
+</item>
+<item>
+	<!-- Archangel Sword - Acumen -->
+	<production count="1" id="15900" />
+</item>
+<item>
+	<!-- Archangel Sword - Magic Hold -->
+	<production count="1" id="15898" />
+</item>
+<item>
+	<!-- Archangel Sword - Mana Up -->
+	<production count="1" id="15899" />
+</item>
+<item>
+	<!-- Recurve Thorne Bow - Focus -->
+	<production count="1" id="15903" />
+</item>
+<item>
+	<!-- Recurve Thorne Bow - Critical Slow -->
+	<production count="1" id="15901" />
+</item>
+<item>
+	<!-- Recurve Thorne Bow - Cheap Shot -->
+	<production count="1" id="15902" />
+</item>
+<item>
+	<!-- Heavenstare Rapier - Health -->
+	<production count="1" id="15906" />
+</item>
+<item>
+	<!-- Heavenstare Rapier - Focus -->
+	<production count="1" id="15904" />
+</item>
+<item>
+	<!-- Heavenstare Rapier - Haste -->
+	<production count="1" id="15905" />
+</item>
+<item>
+	<!-- Pyseal Blade - Health -->
+	<production count="1" id="15909" />
+</item>
+<item>
+	<!-- Pyseal Blade - Focus -->
+	<production count="1" id="15907" />
+</item>
+<item>
+	<!-- Pyseal Blade - Haste -->
+	<production count="1" id="15908" />
+</item>
+<item>
+	<!-- Thorne Crossbow - Focus -->
+	<production count="1" id="15912" />
+</item>
+<item>
+	<!-- Thorne Crossbow - Critical Slow -->
+	<production count="1" id="15910" />
+</item>
+<item>
+	<!-- Thorne Crossbow - Cheap Shot -->
+	<production count="1" id="15911" />
+</item>
+<item>
+	<!-- Eternal Core Dual Sword -->
+	<production count="1" id="16158" />
+</item>
+<item>
+	<!-- Mamba Edge Dual Daggers -->
+	<production count="1" id="16156" />
+</item>
+</list>

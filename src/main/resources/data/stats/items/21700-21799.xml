@@ -185,16 +185,16 @@
 		<set name="weight" val="220" />
 		<set name="item_skill" val="21242-1" />
 		<cond msgId="2453">
-			<player cloakStatus="true" />
+			<!--<player cloakStatus="false" />-->
 		</cond>
 		<for>
-			<add stat="darkRes" val="15" />
-			<add stat="earthRes" val="5" />
-			<add stat="fireRes" val="5" />
-			<add stat="holyRes" val="5" />
-			<add stat="waterRes" val="15" />
-			<add stat="windRes" val="15" />
-			<add order="0" stat="pDef" val="20" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="21717" type="Armor" name="Cloak of Freya">
@@ -209,7 +209,7 @@
 		<set name="weight" val="220" />
 		<set name="item_skill" val="21243-1" />
 		<cond msgId="2453">
-			<player cloakStatus="true" />
+			<!--<player cloakStatus="false" />-->
 		</cond>
 		<for>
 			<add stat="darkRes" val="10" />
@@ -233,16 +233,16 @@
 		<set name="weight" val="220" />
 		<set name="item_skill" val="21244-1" />
 		<cond msgId="2453">
-			<player cloakStatus="true" />
+			<!--<player cloakStatus="false" />-->
 		</cond>
 		<for>
-			<add stat="darkRes" val="15" />
-			<add stat="earthRes" val="15" />
-			<add stat="fireRes" val="15" />
-			<add stat="holyRes" val="5" />
-			<add stat="waterRes" val="5" />
-			<add stat="windRes" val="5" />
-			<add order="0" stat="pDef" val="20" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="21719" type="Armor" name="Soul Cloak of Zaken">
@@ -258,16 +258,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_droppable" val="false" />
 		<cond msgId="2453">
-			<player cloakStatus="true" />
+			<!--<player cloakStatus="false" />-->
 		</cond>
 		<for>
 			<add stat="darkRes" val="10" />
-			<add stat="earthRes" val="5" />
-			<add stat="fireRes" val="5" />
-			<add stat="holyRes" val="5" />
-			<add stat="waterRes" val="10" />
-			<add stat="windRes" val="10" />
-			<add order="0" stat="pDef" val="40" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="21720" type="Armor" name="Soul Cloak of Freya">
@@ -283,16 +283,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_droppable" val="false" />
 		<cond msgId="2453">
-			<player cloakStatus="true" />
+			<!--<player cloakStatus="false" />-->
 		</cond>
 		<for>
-			<add stat="darkRes" val="5" />
-			<add stat="earthRes" val="5" />
-			<add stat="fireRes" val="5" />
-			<add stat="holyRes" val="15" />
-			<add stat="waterRes" val="15" />
-			<add stat="windRes" val="15" />
-			<add order="0" stat="pDef" val="60" />
+			<add stat="darkRes" val="10" />
+			<add stat="earthRes" val="10" />
+			<add stat="fireRes" val="10" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="21721" type="Armor" name="Soul Cloak of Frintezza">
@@ -308,16 +308,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_droppable" val="false" />
 		<cond msgId="2453">
-			<player cloakStatus="true" />
+			<!--<player cloakStatus="false" />-->
 		</cond>
 		<for>
 			<add stat="darkRes" val="10" />
 			<add stat="earthRes" val="10" />
 			<add stat="fireRes" val="10" />
-			<add stat="holyRes" val="5" />
-			<add stat="waterRes" val="5" />
-			<add stat="windRes" val="5" />
-			<add order="0" stat="pDef" val="40" />
+			<add stat="holyRes" val="20" />
+			<add stat="waterRes" val="20" />
+			<add stat="windRes" val="20" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="21722" type="EtcItem" name="Zaken's Soul Fragment">

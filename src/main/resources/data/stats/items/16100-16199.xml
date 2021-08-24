@@ -343,6 +343,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="16134" type="Weapon" name="Vesper Cutter- Thunder {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_cutter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -373,6 +374,7 @@
 		</for>
 	</item>
 	<item id="16135" type="Weapon" name="Vesper Slasher- Gale {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_slasher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -403,6 +405,7 @@
 		</for>
 	</item>
 	<item id="16136" type="Weapon" name="Vesper Buster - Cleverness {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_burster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -434,6 +437,7 @@
 		</for>
 	</item>
 	<item id="16137" type="Weapon" name="Vesper Shaper - Gale {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_shaper_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1337,6 +1341,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_droppable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="element_enabled" val="true"/>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -1503,6 +1508,7 @@
 		</cond>
 	</item>
 	<item id="16179" type="Weapon" name="Vesper Cutter- Thunder {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1533,6 +1539,7 @@
 		</for>
 	</item>
 	<item id="16180" type="Weapon" name="Vesper Cutter- Thunder {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1563,6 +1570,7 @@
 		</for>
 	</item>
 	<item id="16181" type="Weapon" name="Vesper Cutter- Thunder {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1593,6 +1601,7 @@
 		</for>
 	</item>
 	<item id="16182" type="Weapon" name="Vesper Slasher- Gale {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1623,6 +1632,7 @@
 		</for>
 	</item>
 	<item id="16183" type="Weapon" name="Vesper Slasher- Gale {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1653,6 +1663,7 @@
 		</for>
 	</item>
 	<item id="16184" type="Weapon" name="Vesper Slasher- Gale {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1683,6 +1694,7 @@
 		</for>
 	</item>
 	<item id="16185" type="Weapon" name="Vesper Buster - Cleverness {PvP} - Mana Up">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_burster_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1714,6 +1726,7 @@
 		</for>
 	</item>
 	<item id="16186" type="Weapon" name="Vesper Buster - Cleverness {PvP} - Acumen">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_burster_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1745,6 +1758,7 @@
 		</for>
 	</item>
 	<item id="16187" type="Weapon" name="Vesper Buster - Cleverness {PvP} - Magic Hold">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_burster_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1778,6 +1792,7 @@
 		</for>
 	</item>
 	<item id="16188" type="Weapon" name="Vesper Shaper - Gale {PvP} - Critical Damage">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1809,6 +1824,7 @@
 		</for>
 	</item>
 	<item id="16189" type="Weapon" name="Vesper Shaper - Gale {PvP} - HP Drain">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1840,6 +1856,7 @@
 		</for>
 	</item>
 	<item id="16190" type="Weapon" name="Vesper Shaper - Gale {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1871,6 +1888,7 @@
 		</for>
 	</item>
 	<item id="16191" type="Weapon" name="Vesper Fighter - Gale {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_vesper_fighter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />

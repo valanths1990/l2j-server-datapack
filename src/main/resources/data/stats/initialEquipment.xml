@@ -1,110 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/initialEquipment.xsd">
-	<!-- Human Fighter -->
-	<equipment classId="0">
-		<item id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
-		<item id="10" count="1" /> <!-- Dagger -->
-		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
-		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
-		<item id="5588" count="1" /> <!-- Tutorial Guide -->
-		<item id="10650" count="5" /> <!-- Adventurer's Scroll of Escape -->
-		<item id="12753" count="10" /> <!-- Kamael Village Teleportation Scroll -->
-	</equipment>
-	<!-- Human Mystic -->
-	<equipment classId="10">
-		<item id="6" count="1" equipped="true" /> <!-- Apprentice's Wand -->
-		<item id="425" count="1" equipped="true" /> <!-- Apprentice's Tunic -->
-		<item id="461" count="1" equipped="true" /> <!-- Apprentice's Stockings -->
-		<item id="5588" count="1" /> <!-- Tutorial Guide -->
-		<item id="10650" count="5" /> <!-- Adventurer's Scroll of Escape -->
-		<item id="12753" count="10" /> <!-- Kamael Village Teleportation Scroll -->
-	</equipment>
-	<!-- Elven Fighter -->
-	<equipment classId="18">
-		<item id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
-		<item id="10" count="1" /> <!-- Dagger -->
-		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
-		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
-		<item id="5588" count="1" /> <!-- Tutorial Guide -->
-		<item id="10650" count="5" /> <!-- Adventurer's Scroll of Escape -->
-		<item id="12753" count="10" /> <!-- Kamael Village Teleportation Scroll -->
-	</equipment>
-	<!-- Elven Mystic -->
-	<equipment classId="25">
-		<item id="6" count="1" equipped="true" /> <!-- Apprentice's Wand -->
-		<item id="425" count="1" equipped="true" /> <!-- Apprentice's Tunic -->
-		<item id="461" count="1" equipped="true" /> <!-- Apprentice's Stockings -->
-		<item id="5588" count="1" /> <!-- Tutorial Guide -->
-		<item id="10650" count="5" /> <!-- Adventurer's Scroll of Escape -->
-		<item id="12753" count="10" /> <!-- Kamael Village Teleportation Scroll -->
-	</equipment>
-	<!-- Dark Fighter -->
-	<equipment classId="31">
-		<item id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
-		<item id="10" count="1" /> <!-- Dagger -->
-		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
-		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
-		<item id="5588" count="1" /> <!-- Tutorial Guide -->
-		<item id="10650" count="5" /> <!-- Adventurer's Scroll of Escape -->
-		<item id="12753" count="10" /> <!-- Kamael Village Teleportation Scroll -->
-	</equipment>
-	<!-- Dark Mystic -->
-	<equipment classId="38">
-		<item id="6" count="1" equipped="true" /> <!-- Apprentice's Wand -->
-		<item id="425" count="1" equipped="true" /> <!-- Apprentice's Tunic -->
-		<item id="461" count="1" equipped="true" /> <!-- Apprentice's Stockings -->
-		<item id="5588" count="1" /> <!-- Tutorial Guide -->
-		<item id="10650" count="5" /> <!-- Adventurer's Scroll of Escape -->
-		<item id="12753" count="10" /> <!-- Kamael Village Teleportation Scroll -->
-	</equipment>
-	<!-- Orc Fighter -->
-	<equipment classId="44">
-		<item id="2369" count="1" /> <!-- Squire's Sword -->
-		<item id="2368" count="1" equipped="true" /> <!-- Training Gloves -->
-		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
-		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
-		<item id="5588" count="1" /> <!-- Tutorial Guide -->
-		<item id="10650" count="5" /> <!-- Adventurer's Scroll of Escape -->
-		<item id="12753" count="10" /> <!-- Kamael Village Teleportation Scroll -->
-	</equipment>
-	<!-- Orc Mystic -->
-	<!-- NOTE: This is orc_mage (orc_shaman is retail typo) -->
-	<equipment classId="49">
-		<item id="2368" count="1" equipped="true" /> <!-- Training Gloves -->
-		<item id="425" count="1" equipped="true" /> <!-- Apprentice's Tunic -->
-		<item id="461" count="1" equipped="true" /> <!-- Apprentice's Stockings -->
-		<item id="5588" count="1" /> <!-- Tutorial Guide -->
-		<item id="10650" count="5" /> <!-- Adventurer's Scroll of Escape -->
-		<item id="12753" count="10" /> <!-- Kamael Village Teleportation Scroll -->
-	</equipment>
-	<!-- Dwarf Fighter -->
-	<equipment classId="53">
-		<item id="2370" count="1" equipped="true" /> <!-- Guild Member's Club -->
-		<item id="10" count="1" /> <!-- Dagger -->
-		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
-		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
-		<item id="5588" count="1" /> <!-- Tutorial Guide -->
-		<item id="10650" count="5" /> <!-- Adventurer's Scroll of Escape -->
-		<item id="12753" count="10" /> <!-- Kamael Village Teleportation Scroll -->
-	</equipment>
-	<!-- Male Kamael Soldier -->
-	<equipment classId="123">
-		<item id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
-		<item id="10" count="1" /> <!-- Dagger -->
-		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
-		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
-		<item id="5588" count="1" /> <!-- Tutorial Guide -->
-		<item id="10650" count="5" /> <!-- Adventurer's Scroll of Escape -->
-		<item id="12753" count="10" /> <!-- Kamael Village Teleportation Scroll -->
-	</equipment>
-	<!-- Female Kamael Soldier -->
-	<equipment classId="124">
-		<item id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
-		<item id="10" count="1" /> <!-- Dagger -->
-		<item id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
-		<item id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
-		<item id="5588" count="1" /> <!-- Tutorial Guide -->
-		<item id="10650" count="5" /> <!-- Adventurer's Scroll of Escape -->
-		<item id="12753" count="10" /> <!-- Kamael Village Teleportation Scroll -->
-	</equipment>
+    <!-- Human Fighter -->
+    <equipment classId="0">
+        <item id="15575" count="1" equipped="true"/> <!-- Squire's Sword -->
+        <item id="15578" count="1" equipped="true"/> <!-- Dagger -->
+        <item id="15581" count="1" equipped="true"/> <!-- Squire's Shirt -->
+        <item id="15584" count="1" equipped="true"/> <!-- Squire's Pants -->
+        <item id="15572" count="1" equipped="true"/> <!-- Tutorial Guide -->
+        <item id="15587" count="1" equipped="true"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="15871" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6657" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6656" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6659" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6658" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6660" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="57" count="1000000"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10650" count="5"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="12753" count="10"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="22123" count="1"/>
+        <item id="22113" count="1"/>
+        <item id="728" count="100"/>
+        <item id="1539" count="100"/>
+    </equipment>
+    <!-- Human Mystic -->
+    <equipment classId="10">
+        <item id="15577" count="1" equipped="true"/> <!-- Squire's Sword -->
+        <item id="15583" count="1" equipped="true"/> <!-- Dagger -->
+        <item id="15586" count="1" equipped="true"/> <!-- Squire's Shirt -->
+        <item id="15580" count="1" equipped="true"/> <!-- Squire's Pants -->
+        <item id="15574" count="1" equipped="true"/> <!-- Tutorial Guide -->
+        <item id="15588" count="1" equipped="true"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="15900" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6657" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6656" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6659" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6658" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10314" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="57" count="1000000"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10650" count="5"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="12753" count="10"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="22123" count="1"/>
+        <item id="22113" count="1"/>
+        <item id="728" count="100"/>
+        <item id="1539" count="100"/>
+    </equipment>
+    <!-- Elven Fighter -->
+    <equipment classId="18">
+        <item id="15575" count="1" equipped="true"/> <!-- Squire's Sword -->
+        <item id="15578" count="1" equipped="true"/> <!-- Dagger -->
+        <item id="15581" count="1" equipped="true"/> <!-- Squire's Shirt -->
+        <item id="15584" count="1" equipped="true"/> <!-- Squire's Pants -->
+        <item id="15572" count="1" equipped="true"/> <!-- Tutorial Guide -->
+        <item id="15587" count="1" equipped="true"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="15871" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6657" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6656" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6659" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6658" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6660" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="57" count="1000000"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10650" count="5"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="12753" count="10"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="22123" count="1"/>
+        <item id="22113" count="1"/>
+        <item id="728" count="100"/>
+        <item id="1539" count="100"/>
+    </equipment>
+    <!-- Elven Mystic -->
+    <equipment classId="25">
+        <item id="15577" count="1" equipped="true"/> <!-- Squire's Sword -->
+        <item id="15583" count="1" equipped="true"/> <!-- Dagger -->
+        <item id="15586" count="1" equipped="true"/> <!-- Squire's Shirt -->
+        <item id="15580" count="1" equipped="true"/> <!-- Squire's Pants -->
+        <item id="15574" count="1" equipped="true"/> <!-- Tutorial Guide -->
+        <item id="15588" count="1" equipped="true"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="15900" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6657" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6656" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6659" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6658" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10314" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="57" count="1000000"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10650" count="5"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="12753" count="10"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="22123" count="1"/>
+        <item id="22113" count="1"/>
+        <item id="728" count="100"/>
+        <item id="1539" count="100"/>
+    </equipment>
+    <!-- Dark Fighter -->
+    <equipment classId="31">
+        <item id="15575" count="1" equipped="true"/> <!-- Squire's Sword -->
+        <item id="15578" count="1" equipped="true"/> <!-- Dagger -->
+        <item id="15581" count="1" equipped="true"/> <!-- Squire's Shirt -->
+        <item id="15584" count="1" equipped="true"/> <!-- Squire's Pants -->
+        <item id="15572" count="1" equipped="true"/> <!-- Tutorial Guide -->
+        <item id="15587" count="1" equipped="true"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="15871" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6657" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6656" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6659" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6658" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6660" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="57" count="1000000"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10650" count="5"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="12753" count="10"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="22123" count="1"/>
+        <item id="22113" count="1"/>
+        <item id="728" count="100"/>
+        <item id="1539" count="100"/>
+    </equipment>
+    <!-- Dark Mystic -->
+    <equipment classId="38">
+        <item id="15577" count="1" equipped="true"/> <!-- Squire's Sword -->
+        <item id="15583" count="1" equipped="true"/> <!-- Dagger -->
+        <item id="15586" count="1" equipped="true"/> <!-- Squire's Shirt -->
+        <item id="15580" count="1" equipped="true"/> <!-- Squire's Pants -->
+        <item id="15574" count="1" equipped="true"/> <!-- Tutorial Guide -->
+        <item id="15588" count="1" equipped="true"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="15900" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6657" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6656" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6659" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6658" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10314" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="57" count="1000000"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10650" count="5"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="12753" count="10"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="22123" count="1"/>
+        <item id="22113" count="1"/>
+        <item id="728" count="100"/>
+        <item id="1539" count="100"/>
+    </equipment>
+    <!-- Orc Fighter -->
+    <equipment classId="44">
+        <item id="15575" count="1" equipped="true"/> <!-- Squire's Sword -->
+        <item id="15578" count="1" equipped="true"/> <!-- Dagger -->
+        <item id="15581" count="1" equipped="true"/> <!-- Squire's Shirt -->
+        <item id="15584" count="1" equipped="true"/> <!-- Squire's Pants -->
+        <item id="15572" count="1" equipped="true"/> <!-- Tutorial Guide -->
+        <item id="15587" count="1" equipped="true"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="15871" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6657" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6656" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6659" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6658" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6660" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="57" count="1000000"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10650" count="5"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="12753" count="10"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="22123" count="1"/>
+        <item id="22113" count="1"/>
+        <item id="728" count="100"/>
+        <item id="1539" count="100"/>
+    </equipment>
+    <!-- Orc Mystic -->
+    <!-- NOTE: This is orc_mage (orc_shaman is retail typo) -->
+    <equipment classId="49">
+        <item id="15577" count="1" equipped="true"/> <!-- Squire's Sword -->
+        <item id="15583" count="1" equipped="true"/> <!-- Dagger -->
+        <item id="15586" count="1" equipped="true"/> <!-- Squire's Shirt -->
+        <item id="15580" count="1" equipped="true"/> <!-- Squire's Pants -->
+        <item id="15574" count="1" equipped="true"/> <!-- Tutorial Guide -->
+        <item id="15588" count="1" equipped="true"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="15900" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6657" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6656" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6659" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6658" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10314" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="57" count="1000000"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10650" count="5"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="12753" count="10"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="22123" count="1"/>
+        <item id="22113" count="1"/>
+        <item id="728" count="100"/>
+        <item id="1539" count="100"/>
+    </equipment>
+    <!-- Dwarf Fighter -->
+    <equipment classId="53">
+        <item id="15575" count="1" equipped="true"/> <!-- Squire's Sword -->
+        <item id="15578" count="1" equipped="true"/> <!-- Dagger -->
+        <item id="15581" count="1" equipped="true"/> <!-- Squire's Shirt -->
+        <item id="15584" count="1" equipped="true"/> <!-- Squire's Pants -->
+        <item id="15572" count="1" equipped="true"/> <!-- Tutorial Guide -->
+        <item id="15587" count="1" equipped="true"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="15871" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6657" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6656" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6659" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6658" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6660" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="57" count="1000000"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10650" count="5"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="12753" count="10"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="22123" count="1"/>
+        <item id="22113" count="1"/>
+        <item id="728" count="100"/>
+        <item id="1539" count="100"/>
+    </equipment>
+    <!-- Male Kamael Soldier -->
+    <equipment classId="123">
+        <item id="15576" count="1" equipped="true"/> <!-- Squire's Sword -->
+        <item id="15579" count="1" equipped="true"/> <!-- Dagger -->
+        <item id="15582" count="1" equipped="true"/> <!-- Squire's Shirt -->
+        <item id="15585" count="1" equipped="true"/> <!-- Squire's Pants -->
+        <item id="15573" count="1" equipped="true"/> <!-- Tutorial Guide -->
+        <item id="15907" count="1" equipped="true"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="6657" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6656" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6659" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6658" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6660" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="57" count="1000000"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10650" count="5"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="12753" count="10"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="22123" count="1"/>
+        <item id="22113" count="1"/>
+        <item id="728" count="100"/>
+        <item id="1539" count="100"/>
+    </equipment>
+    <!-- Female Kamael Soldier -->
+    <equipment classId="124">
+        <item id="15576" count="1" equipped="true"/> <!-- Squire's Sword -->
+        <item id="15579" count="1" equipped="true"/> <!-- Dagger -->
+        <item id="15582" count="1" equipped="true"/> <!-- Squire's Shirt -->
+        <item id="15585" count="1" equipped="true"/> <!-- Squire's Pants -->
+        <item id="15573" count="1" equipped="true"/> <!-- Tutorial Guide -->
+        <item id="15904" count="1" equipped="true"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="6657" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6656" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6659" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6658" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="6660" count="1" equipped="true"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="57" count="1000000"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="10650" count="5"/> <!-- Adventurer's Scroll of Escape -->
+        <item id="12753" count="10"/> <!-- Kamael Village Teleportation Scroll -->
+        <item id="22123" count="1"/>
+        <item id="22113" count="1"/>
+        <item id="728" count="100"/>
+        <item id="1539" count="100"/>
+    </equipment>
 </list>

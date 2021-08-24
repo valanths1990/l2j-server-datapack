@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/multisell.xsd">
+
+<!-- GEAR TOP SHIRT BELT CLOAK BRACELET MULTISESLL -->
+    <item>
+		<ingredient count="20000000" id="57" />
+		<production count="1" id="14953" />
+	</item>
+	<item>
+		<ingredient count="20000000" id="57" />
+		<production count="1" id="14957" />
+	</item>
+	<item>
+		<ingredient count="20000000" id="57" />
+		<production count="1" id="14961" />
+	</item>
+	<item>
+		<ingredient count="20000000" id="57" />
+		<production count="1" id="10512" />
+	</item>
+	<item>
+		<ingredient count="20000000" id="57" />
+		<production count="1" id="10513" />
+	</item>
+	<item>
+		<ingredient count="20000000" id="57" />
+		<production count="1" id="10514" />
+	</item>
+	<item>
+		<ingredient count="20000000" id="57" />
+		<production count="1" id="14609" />
+	</item>
+	<item>
+		<ingredient count="20000000" id="57" />
+		<production count="1" id="10210" />
+	</item>
+
+	
+	
+</list>

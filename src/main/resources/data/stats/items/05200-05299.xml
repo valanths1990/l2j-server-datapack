@@ -1168,6 +1168,7 @@
 		</for>
 	</item>
 	<item id="5292" type="Armor" name="Sealed Dark Crystal Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_dark_crystal_shield_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

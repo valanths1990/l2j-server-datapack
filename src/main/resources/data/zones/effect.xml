@@ -2098,20 +2098,20 @@
 		<node X="73982" Y="-41655" />
 	</zone>
 	<!-- Primeval Isle - Lost Nest (Recharge Buff) -->
-	<zone name="20_17_ancient_tree_1" type="EffectZone" shape="NPoly" minZ="-3160" maxZ="-2660">
-		<stat name="skillIdLvl" val="5621-9;" /> <!-- s_area_recharge9 -->
-		<stat name="chance" val="100" />
-		<!-- stat name="unitTick" val="5" / -->
-		<stat name="initialDelay" val="1000" />
-		<stat name="default_enabled" val="true" />
-		<stat name="reuse" val="5000" /> <!-- Guess -->
-		<node X="20481" Y="-17577" />
-		<node X="21868" Y="-17768" />
-		<node X="22728" Y="-16287" />
-		<node X="21422" Y="-15075" />
-		<node X="20282" Y="-15490" />
-		<node X="19965" Y="-16508" />
-	</zone>
+<!--	<zone name="20_17_ancient_tree_1" type="EffectZone" shape="NPoly" minZ="-3160" maxZ="-2660">-->
+<!--		<stat name="skillIdLvl" val="5621-9;" /> &lt;!&ndash; s_area_recharge9 &ndash;&gt;-->
+<!--		<stat name="chance" val="100" />-->
+<!--		&lt;!&ndash; stat name="unitTick" val="5" / &ndash;&gt;-->
+<!--		<stat name="initialDelay" val="1000" />-->
+<!--		<stat name="default_enabled" val="true" />-->
+<!--		<stat name="reuse" val="5000" /> &lt;!&ndash; Guess &ndash;&gt;-->
+<!--		<node X="20481" Y="-17577" />-->
+<!--		<node X="21868" Y="-17768" />-->
+<!--		<node X="22728" Y="-16287" />-->
+<!--		<node X="21422" Y="-15075" />-->
+<!--		<node X="20282" Y="-15490" />-->
+<!--		<node X="19965" Y="-16508" />-->
+<!--	</zone>-->
 	<zone name="20_17_ancient_tree_2" type="EffectZone" shape="NPoly" minZ="-3296" maxZ="-2596">
 		<stat name="skillIdLvl" val="5621-9;" /> <!-- s_area_recharge9 -->
 		<stat name="chance" val="100" />

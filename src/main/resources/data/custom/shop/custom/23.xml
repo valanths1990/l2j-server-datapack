@@ -1,0 +1,5611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/multisell.xsd">
+<!-- PVP REMOVE -->
+	<item>
+		<!-- Sirra's Blade - Haste -->
+		<!-- Fame Points -->
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sirra's Blade {PvP} - Haste -->
+		<ingredient count="1" id="10667" />
+		<production count="1" id="8788" />
+	</item>
+	<item>
+		<!-- Sirra's Blade - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sirra's Blade {PvP} - Health -->
+		<ingredient count="1" id="10668" />
+		<production count="1" id="8789" />
+	</item>
+	<item>
+		<!-- Sirra's Blade - Critical Poison -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sirra's Blade {PvP} - Critical Poison -->
+		<ingredient count="1" id="10669" />
+		<production count="1" id="8790" />
+	</item>
+	<item>
+		<!-- Sword of Ipos - Focus -->
+		<!-- Fame Points -->
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sword of Ipos {PvP} - Focus -->
+		<ingredient count="1" id="10670" />
+		<production count="1" id="8791" />
+	</item>
+	<item>
+		<!-- Sword of Ipos - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sword of Ipos {PvP} - Haste -->
+		<ingredient count="1" id="10671" />
+		<production count="1" id="8791" />
+	</item>
+	<item>
+		<!-- Sword of Ipos - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sword of Ipos {PvP} - Health -->
+		<ingredient count="1" id="10671" />
+		<production count="1" id="8793" />
+	</item>
+	<item>
+		<!-- Barakiel's Axe - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Barakiel's Axe {PvP} - Health -->
+		<ingredient count="1" id="10673" />
+		<production count="1" id="8794" />
+	</item>
+	<item>
+		<!-- Barakiel's Axe - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Barakiel's Axe {PvP} - Haste -->
+		<ingredient count="1" id="10674" />
+		<production count="1" id="8795" />
+	</item>
+	<item>
+		<!-- Barakiel's Axe - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Barakiel's Axe {PvP} - Focus -->
+		<ingredient count="1" id="10675" />
+		<production count="1" id="8796" />
+	</item>
+	<item>
+		<!-- Behemoth's Tuning Fork - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Behemoth's Tuning Fork {PvP} - Focus -->
+		<ingredient count="1" id="10676" />
+		<production count="1" id="8797" />
+	</item>
+	<item>
+		<!-- Behemoth's Tuning Fork - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Behemoth's Tuning Fork {PvP} - Health -->
+		<ingredient count="1" id="10677" />
+		<production count="1" id="8798" />
+	</item>
+	<item>
+		<!-- Behemoth's Tuning Fork - Anger -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Behemoth's Tuning Fork {PvP} - Anger -->
+		<ingredient count="1" id="10678" />
+		<production count="1" id="8799" />
+	</item>
+	<item>
+		<!-- Naga Storm - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Naga Storm {PvP} - Focus -->
+		<ingredient count="1" id="10679" />
+		<production count="1" id="8800" />
+	</item>
+	<item>
+		<!-- Naga Storm - Critical Damage -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Naga Storm {PvP} - Critical Damage -->
+		<ingredient count="1" id="10680" />
+		<production count="1" id="8801" />
+	</item>
+	<item>
+		<!-- Naga Storm - Back Blow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Naga Storm {PvP} - Back Blow -->
+		<ingredient count="1" id="10681" />
+		<production count="1" id="8801" />
+	</item>
+	<item>
+		<!-- Tiphon's Spear - Critical Stun -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Tiphon's Spear {PvP} - Critical Stun -->
+		<ingredient count="1" id="10681" />
+		<production count="1" id="8803" />
+	</item>
+	<item>
+		<!-- Tiphon's Spear - Towering Blow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Tiphon's Spear {PvP} - Towering Blow -->
+		<ingredient count="1" id="10683" />
+		<production count="1" id="8804" />
+	</item>
+	<item>
+		<!-- Tiphon's Spear - Wild Blow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Tiphon's Spear {PvP} - Wild Blow -->
+		<ingredient count="1" id="10684" />
+		<production count="1" id="8805" />
+	</item>
+	<item>
+		<!-- Shyeed's Bow - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Shyeed's Bow {PvP} - Cheap Shot -->
+		<ingredient count="1" id="10685" />
+		<production count="1" id="8806" />
+	</item>
+	<item>
+		<!-- Shyeed's Bow - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Shyeed's Bow {PvP} - Focus -->
+		<ingredient count="1" id="10686" />
+		<production count="1" id="8807" />
+	</item>
+	<item>
+		<!-- Shyeed's Bow - Quick Recovery -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Shyeed's Bow {PvP} - Quick Recovery -->
+		<ingredient count="1" id="10687" />
+		<production count="1" id="8808" />
+	</item>
+	<item>
+		<!-- Sobekk's Hurricane - Rsk. Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sobekk's Hurricane {PvP} - Rsk. Haste -->
+		<ingredient count="1" id="10688" />
+		<production count="1" id="8809" />
+	</item>
+	<item>
+		<!-- Sobekk's Hurricane - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sobekk's Hurricane {PvP} - Haste -->
+		<ingredient count="1" id="10689" />
+		<production count="1" id="8810" />
+	</item>
+	<item>
+		<!-- Sobekk's Hurricane - Critical Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sobekk's Hurricane {PvP} - Critical Drain -->
+		<ingredient count="1" id="10690" />
+		<production count="1" id="8811" />
+	</item>
+	<item>
+		<!-- Themis' Tongue - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Themis' Tongue {PvP} - Mana Up -->
+		<ingredient count="1" id="10691" />
+		<production count="1" id="8811" />
+	</item>
+	<item>
+		<!-- Themis' Tongue - Mental Shield -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Themis' Tongue {PvP} - Mental Shield -->
+		<ingredient count="1" id="10691" />
+		<production count="1" id="8813" />
+	</item>
+	<item>
+		<!-- Themis' Tongue - Magic Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Themis' Tongue {PvP} - Magic Focus -->
+		<ingredient count="1" id="10693" />
+		<production count="1" id="8814" />
+	</item>
+	<item>
+		<!-- Cabrio's Hand - Conversion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Cabrio's Hand {PvP} - Conversion -->
+		<ingredient count="1" id="10694" />
+		<production count="1" id="8815" />
+	</item>
+	<item>
+		<!-- Cabrio's Hand - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Cabrio's Hand {PvP} - Mana Up -->
+		<ingredient count="1" id="10695" />
+		<production count="1" id="8816" />
+	</item>
+	<item>
+		<!-- Cabrio's Hand - Magic Silence -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Cabrio's Hand {PvP} - Magic Silence -->
+		<ingredient count="1" id="10696" />
+		<production count="1" id="8817" />
+	</item>
+	<item>
+		<!-- Daimon Crystal - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Daimon Crystal {PvP} - Mana Up -->
+		<ingredient count="1" id="10697" />
+		<production count="1" id="8818" />
+	</item>
+	<item>
+		<!-- Daimon Crystal - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Daimon Crystal {PvP} - Acumen -->
+		<ingredient count="1" id="10698" />
+		<production count="1" id="8819" />
+	</item>
+	<item>
+		<!-- Daimon Crystal - Mental Shield -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Daimon Crystal {PvP} - Mental Shield -->
+		<ingredient count="1" id="10699" />
+		<production count="1" id="8810" />
+	</item>
+	<item>
+		<!-- Eclair Bijou - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Eclair Bijou {PvP} - Haste -->
+		<ingredient count="1" id="10700" />
+		<production count="1" id="9353" />
+	</item>
+	<item>
+		<!-- Eclair Bijou - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Eclair Bijou {PvP} - Health -->
+		<ingredient count="1" id="10701" />
+		<production count="1" id="9354" />
+	</item>
+	<item>
+		<!-- Eclair Bijou - Critical Poison -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Eclair Bijou {PvP} - Critical Poison -->
+		<ingredient count="1" id="10701" />
+		<production count="1" id="9355" />
+	</item>
+	<item>
+		<!-- Durendal - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Durendal {PvP} - Focus -->
+		<ingredient count="1" id="10703" />
+		<production count="1" id="9357" />
+	</item>
+	<item>
+		<!-- Durendal - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Durendal {PvP} - Haste -->
+		<ingredient count="1" id="10704" />
+		<production count="1" id="9358" />
+	</item>
+	<item>
+		<!-- Durendal - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Durendal {PvP} - Health -->
+		<ingredient count="1" id="10705" />
+		<production count="1" id="9359" />
+	</item>
+	<item>
+		<!-- Screaming Vengeance - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Screaming Vengeance {PvP} - Cheap Shot -->
+		<ingredient count="1" id="10706" />
+		<production count="1" id="9361" />
+	</item>
+	<item>
+		<!-- Screaming Vengeance - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Screaming Vengeance {PvP} - Focus -->
+		<ingredient count="1" id="10707" />
+		<production count="1" id="9361" />
+	</item>
+	<item>
+		<!-- Screaming Vengeance - Quick Recovery -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Screaming Vengeance {PvP} - Quick Recovery -->
+		<ingredient count="1" id="10708" />
+		<production count="1" id="9363" />
+	</item>
+	<item>
+		<!-- Damascus * Tallum Blade -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Tallum Blade*Damascus {PvP} -->
+		<ingredient count="1" id="10709" />
+		<production count="1" id="8938" />
+	</item>
+	<item>
+		<!-- Forgotten Blade - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Forgotten Blade {PvP} - Haste -->
+		<ingredient count="1" id="10710" />
+		<production count="1" id="6581" />
+	</item>
+	<item>
+		<!-- Forgotten Blade - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Forgotten Blade {PvP} - Health -->
+		<ingredient count="1" id="10711" />
+		<production count="1" id="6581" />
+	</item>
+	<item>
+		<!-- Forgotten Blade - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Forgotten Blade {PvP} - Focus -->
+		<ingredient count="1" id="10711" />
+		<production count="1" id="6583" />
+	</item>
+	<item>
+		<!-- Heavens Divider - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Heavens Divider {PvP} - Haste -->
+		<ingredient count="1" id="10713" />
+		<production count="1" id="6605" />
+	</item>
+	<item>
+		<!-- Heavens Divider - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Heavens Divider {PvP} - Health -->
+		<ingredient count="1" id="10714" />
+		<production count="1" id="6606" />
+	</item>
+	<item>
+		<!-- Heavens Divider - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Heavens Divider {PvP} - Focus -->
+		<ingredient count="1" id="10715" />
+		<production count="1" id="6607" />
+	</item>
+	<item>
+		<!-- Basalt Battlehammer - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Basalt Battlehammer {PvP} - HP Drain -->
+		<ingredient count="1" id="10716" />
+		<production count="1" id="6584" />
+	</item>
+	<item>
+		<!-- Basalt Battlehammer - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Basalt Battlehammer {PvP} - Health -->
+		<ingredient count="1" id="10717" />
+		<production count="1" id="6585" />
+	</item>
+	<item>
+		<!-- Basalt Battlehammer - HP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Basalt Battlehammer {PvP} - HP Regeneration -->
+		<ingredient count="1" id="10718" />
+		<production count="1" id="6586" />
+	</item>
+	<item>
+		<!-- Dragon Hunter Axe - HP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dragon Hunter Axe {PvP} - HP Regeneration -->
+		<ingredient count="1" id="10719" />
+		<production count="1" id="6596" />
+	</item>
+	<item>
+		<!-- Dragon Hunter Axe - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dragon Hunter Axe {PvP} - Health -->
+		<ingredient count="1" id="10710" />
+		<production count="1" id="6597" />
+	</item>
+	<item>
+		<!-- Dragon Hunter Axe - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dragon Hunter Axe {PvP} - HP Drain -->
+		<ingredient count="1" id="10711" />
+		<production count="1" id="6598" />
+	</item>
+	<item>
+		<!-- Angel Slayer - Critical Damage -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Angel Slayer {PvP} - Critical Damage -->
+		<ingredient count="1" id="10711" />
+		<production count="1" id="6590" />
+	</item>
+	<item>
+		<!-- Angel Slayer - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Angel Slayer {PvP} - HP Drain -->
+		<ingredient count="1" id="10713" />
+		<production count="1" id="6591" />
+	</item>
+	<item>
+		<!-- Angel Slayer - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Angel Slayer {PvP} - Haste -->
+		<ingredient count="1" id="10714" />
+		<production count="1" id="6591" />
+	</item>
+	<item>
+		<!-- Saint Spear - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Saint Spear {PvP} - Health -->
+		<ingredient count="1" id="10715" />
+		<production count="1" id="6599" />
+	</item>
+	<item>
+		<!-- Saint Spear - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Saint Spear {PvP} - Guidance -->
+		<ingredient count="1" id="10716" />
+		<production count="1" id="6600" />
+	</item>
+	<item>
+		<!-- Saint Spear - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Saint Spear {PvP} - Haste -->
+		<ingredient count="1" id="10717" />
+		<production count="1" id="6601" />
+	</item>
+	<item>
+		<!-- Demon Splinter - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Demon Splinter {PvP} - Focus -->
+		<ingredient count="1" id="10718" />
+		<production count="1" id="6601" />
+	</item>
+	<item>
+		<!-- Demon Splinter - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Demon Splinter {PvP} - Health -->
+		<ingredient count="1" id="10719" />
+		<production count="1" id="6603" />
+	</item>
+	<item>
+		<!-- Demon Splinter - Critical Stun -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Demon Splinter {PvP} - Critical Stun -->
+		<ingredient count="1" id="10730" />
+		<production count="1" id="6604" />
+	</item>
+	<item>
+		<!-- Arcana Mace - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Arcana Mace {PvP} - Acumen -->
+		<ingredient count="1" id="10731" />
+		<production count="1" id="6608" />
+	</item>
+	<item>
+		<!-- Arcana Mace - MP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Arcana Mace {PvP} - MP Regeneration -->
+		<ingredient count="1" id="10731" />
+		<production count="1" id="6609" />
+	</item>
+	<item>
+		<!-- Arcana Mace - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Arcana Mace {PvP} - Mana Up -->
+		<ingredient count="1" id="10733" />
+		<production count="1" id="6610" />
+	</item>
+	<item>
+		<!-- Imperial Staff - Empower -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Imperial Staff {PvP} - Empower -->
+		<ingredient count="1" id="10734" />
+		<production count="1" id="6587" />
+	</item>
+	<item>
+		<!-- Imperial Staff - MP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Imperial Staff {PvP} - MP Regeneration -->
+		<ingredient count="1" id="10735" />
+		<production count="1" id="6588" />
+	</item>
+	<item>
+		<!-- Imperial Staff - Magic Hold -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Imperial Staff {PvP} - Magic Hold -->
+		<ingredient count="1" id="10736" />
+		<production count="1" id="6589" />
+	</item>
+	<item>
+		<!-- Draconic Bow - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Draconic Bow {PvP} - Cheap Shot -->
+		<ingredient count="1" id="10737" />
+		<production count="1" id="7576" />
+	</item>
+	<item>
+		<!-- Draconic Bow - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Draconic Bow {PvP} - Focus -->
+		<ingredient count="1" id="10738" />
+		<production count="1" id="7577" />
+	</item>
+	<item>
+		<!-- Draconic Bow - Critical Slow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Draconic Bow {PvP} - Critical Slow -->
+		<ingredient count="1" id="10739" />
+		<production count="1" id="7578" />
+	</item>
+	<item>
+		<!-- Laevateinn - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Laevateinn {PvP} - Haste -->
+		<ingredient count="1" id="10740" />
+		<production count="1" id="9365" />
+	</item>
+	<item>
+		<!-- Laevateinn - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Laevateinn {PvP} - Health -->
+		<ingredient count="1" id="10741" />
+		<production count="1" id="9366" />
+	</item>
+	<item>
+		<!-- Laevateinn - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Laevateinn {PvP} - Focus -->
+		<ingredient count="1" id="10741" />
+		<production count="1" id="9367" />
+	</item>
+	<item>
+		<!-- Gram - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Gram {PvP} - Haste -->
+		<ingredient count="1" id="10743" />
+		<production count="1" id="9369" />
+	</item>
+	<item>
+		<!-- Gram - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Gram {PvP} - Health -->
+		<ingredient count="1" id="10744" />
+		<production count="1" id="9370" />
+	</item>
+	<item>
+		<!-- Gram - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Gram {PvP} - Focus -->
+		<ingredient count="1" id="10745" />
+		<production count="1" id="9371" />
+	</item>
+	<item>
+		<!-- Sarunga - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sarunga {PvP} - Cheap Shot -->
+		<ingredient count="1" id="10746" />
+		<production count="1" id="9373" />
+	</item>
+	<item>
+		<!-- Sarunga - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sarunga {PvP} - Focus -->
+		<ingredient count="1" id="10747" />
+		<production count="1" id="9374" />
+	</item>
+	<item>
+		<!-- Sarunga - Critical Slow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sarunga {PvP} - Critical Slow -->
+		<ingredient count="1" id="10748" />
+		<production count="1" id="9375" />
+	</item>
+	<item>
+		<!-- Tallum Blade*Dark Legion's Edge -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Tallum Blade*Dark Legion's Edge {PvP} -->
+		<ingredient count="1" id="10749" />
+		<production count="1" id="6580" />
+	</item>
+	<item>
+		<!-- Dynasty Sword - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Sword {PvP} - Focus -->
+		<ingredient count="1" id="10750" />
+		<production count="1" id="9854" />
+	</item>
+	<item>
+		<!-- Dynasty Sword - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Sword {PvP} - Health -->
+		<ingredient count="1" id="10751" />
+		<production count="1" id="9855" />
+	</item>
+	<item>
+		<!-- Dynasty Sword - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Sword {PvP} - Light -->
+		<ingredient count="1" id="10751" />
+		<production count="1" id="9856" />
+	</item>
+	<item>
+		<!-- Dynasty Blade - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Blade {PvP} - Focus -->
+		<ingredient count="1" id="10753" />
+		<production count="1" id="9857" />
+	</item>
+	<item>
+		<!-- Dynasty Blade - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Blade {PvP} - Health -->
+		<ingredient count="1" id="10754" />
+		<production count="1" id="9858" />
+	</item>
+	<item>
+		<!-- Dynasty Blade - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Blade {PvP} - Light -->
+		<ingredient count="1" id="10755" />
+		<production count="1" id="9859" />
+	</item>
+	<item>
+		<!-- Dynasty Cudgel - Anger -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Cudgel {PvP} - Anger -->
+		<ingredient count="1" id="10756" />
+		<production count="1" id="9871" />
+	</item>
+	<item>
+		<!-- Dynasty Cudgel - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Cudgel {PvP} - Health -->
+		<ingredient count="1" id="10757" />
+		<production count="1" id="9873" />
+	</item>
+	<item>
+		<!-- Dynasty Cudgel - Rsk. Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Cudgel {PvP} - Rsk. Focus -->
+		<ingredient count="1" id="10758" />
+		<production count="1" id="9874" />
+	</item>
+	<item>
+		<!-- Dynasty Crusher - Anger -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Crusher {PvP} - Anger -->
+		<ingredient count="1" id="10759" />
+		<production count="1" id="10530" />
+	</item>
+	<item>
+		<!-- Dynasty Crusher - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Crusher {PvP} - Health -->
+		<ingredient count="1" id="10760" />
+		<production count="1" id="10531" />
+	</item>
+	<item>
+		<!-- Dynasty Crusher - Rsk. Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Crusher {PvP} - Rsk. Focus -->
+		<ingredient count="1" id="10761" />
+		<production count="1" id="10531" />
+	</item>
+	<item>
+		<!-- Dynasty Knife - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Knife {PvP} - Focus -->
+		<ingredient count="1" id="10761" />
+		<production count="1" id="9866" />
+	</item>
+	<item>
+		<!-- Dynasty Knife - Evasion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Knife {PvP} - Evasion -->
+		<ingredient count="1" id="10763" />
+		<production count="1" id="9867" />
+	</item>
+	<item>
+		<!-- Dynasty Knife - Critical Damage -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Knife {PvP} - Critical Damage -->
+		<ingredient count="1" id="10764" />
+		<production count="1" id="9868" />
+	</item>
+	<item>
+		<!-- Dynasty Halberd - Anger -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Halberd {PvP} - Anger -->
+		<ingredient count="1" id="10765" />
+		<production count="1" id="9869" />
+	</item>
+	<item>
+		<!-- Dynasty Halberd - Critical Stun -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Halberd {PvP} - Critical Stun -->
+		<ingredient count="1" id="10766" />
+		<production count="1" id="9870" />
+	</item>
+	<item>
+		<!-- Dynasty Halberd - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Halberd {PvP} - Light -->
+		<ingredient count="1" id="10767" />
+		<production count="1" id="9871" />
+	</item>
+	<item>
+		<!-- Dynasty Bagh-Nakh - Rsk. Evasion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Bagh-Nakh {PvP} - Rsk. Evasion -->
+		<ingredient count="1" id="10768" />
+		<production count="1" id="9878" />
+	</item>
+	<item>
+		<!-- Dynasty Bagh-Nakh - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Bagh-Nakh {PvP} - Focus -->
+		<ingredient count="1" id="10769" />
+		<production count="1" id="9879" />
+	</item>
+	<item>
+		<!-- Dynasty Bagh-Nakh - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Bagh-Nakh {PvP} - Haste -->
+		<ingredient count="1" id="10770" />
+		<production count="1" id="9880" />
+	</item>
+	<item>
+		<!-- Dynasty Phantom - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Phantom {PvP} - Acumen -->
+		<ingredient count="1" id="10771" />
+		<production count="1" id="9860" />
+	</item>
+	<item>
+		<!-- Dynasty Phantom - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Phantom {PvP} - Mana Up -->
+		<ingredient count="1" id="10771" />
+		<production count="1" id="9861" />
+	</item>
+	<item>
+		<!-- Dynasty Phantom - Conversion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Phantom {PvP} - Conversion -->
+		<ingredient count="1" id="10773" />
+		<production count="1" id="9861" />
+	</item>
+	<item>
+		<!-- Dynasty Mace - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Mace {PvP} - Mana Up -->
+		<ingredient count="1" id="10774" />
+		<production count="1" id="9875" />
+	</item>
+	<item>
+		<!-- Dynasty Mace - Conversion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Mace {PvP} - Conversion -->
+		<ingredient count="1" id="10775" />
+		<production count="1" id="9876" />
+	</item>
+	<item>
+		<!-- Dynasty Mace - Acumen -->
+		<!-- Fame Points -->
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Mace {PvP} - Acumen -->
+		<ingredient count="1" id="10776" />
+		<production count="1" id="9877" />
+	</item>
+	<item>
+		<!-- Dynasty Staff - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Staff {PvP} - Mana Up -->
+		<ingredient count="1" id="10777" />
+		<production count="1" id="10517" />
+	</item>
+	<item>
+		<!-- Dynasty Staff - Conversion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Staff {PvP} - Conversion -->
+		<ingredient count="1" id="10778" />
+		<production count="1" id="10518" />
+	</item>
+	<item>
+		<!-- Dynasty Staff - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Staff {PvP} - Acumen -->
+		<ingredient count="1" id="10779" />
+		<production count="1" id="10519" />
+	</item>
+	<item>
+		<!-- Dynasty Bow - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Bow {PvP} - Cheap Shot -->
+		<ingredient count="1" id="10780" />
+		<production count="1" id="9863" />
+	</item>
+	<item>
+		<!-- Dynasty Bow - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Bow {PvP} - Guidance -->
+		<ingredient count="1" id="10781" />
+		<production count="1" id="9864" />
+	</item>
+	<item>
+		<!-- Dynasty Bow - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Bow {PvP} - Focus -->
+		<ingredient count="1" id="10781" />
+		<production count="1" id="9865" />
+	</item>
+	<item>
+		<!-- Dynasty Rapier - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Rapier {PvP} - Focus -->
+		<ingredient count="1" id="10783" />
+		<production count="1" id="9377" />
+	</item>
+	<item>
+		<!-- Dynasty Rapier - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Rapier {PvP} - Health -->
+		<ingredient count="1" id="10784" />
+		<production count="1" id="9378" />
+	</item>
+	<item>
+		<!-- Dynasty Rapier - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Rapier {PvP} - Light -->
+		<ingredient count="1" id="10785" />
+		<production count="1" id="9379" />
+	</item>
+	<item>
+		<!-- Dynasty Ancient Sword - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Ancient Sword {PvP} - Focus -->
+		<ingredient count="1" id="10786" />
+		<production count="1" id="9381" />
+	</item>
+	<item>
+		<!-- Dynasty Ancient Sword - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Ancient Sword {PvP} - Health -->
+		<ingredient count="1" id="10787" />
+		<production count="1" id="9381" />
+	</item>
+	<item>
+		<!-- Dynasty Ancient Sword - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Ancient Sword {PvP} - Light -->
+		<ingredient count="1" id="10788" />
+		<production count="1" id="9383" />
+	</item>
+	<item>
+		<!-- Dynasty Crossbow - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Crossbow {PvP} - Cheap Shot -->
+		<ingredient count="1" id="10789" />
+		<production count="1" id="9385" />
+	</item>
+	<item>
+		<!-- Dynasty Crossbow - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Crossbow {PvP} - Guidance -->
+		<ingredient count="1" id="10790" />
+		<production count="1" id="9386" />
+	</item>
+	<item>
+		<!-- Dynasty Crossbow - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Crossbow {PvP} - Focus -->
+		<ingredient count="1" id="10791" />
+		<production count="1" id="9387" />
+	</item>
+	<item>
+		<!-- Dynasty Dual Sword -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Dual Sword {PvP} -->
+		<ingredient count="1" id="10791" />
+		<production count="1" id="10004" />
+	</item>
+	<item>
+		<!-- Dynasty Dual Daggers -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Dual Daggers {PvP} -->
+		<ingredient count="1" id="14558" />
+		<production count="1" id="13881" />
+	</item>
+	<item>
+		<!-- Dynasty Dual Daggers - Great Gale -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Dual Daggers - Great Gale {PvP} -->
+		<ingredient count="1" id="14518" />
+		<production count="1" id="14516" />
+	</item>
+	<item>
+		<!-- Sirra's Blade - Landslide - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sirra's Blade - Landslide {PvP} - Haste -->
+		<ingredient count="1" id="11879" />
+		<production count="1" id="11170" />
+	</item>
+	<item>
+		<!-- Sirra's Blade - Landslide - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sirra's Blade - Landslide {PvP} - Health -->
+		<ingredient count="1" id="11880" />
+		<production count="1" id="11171" />
+	</item>
+	<item>
+		<!-- Sirra's Blade - Landslide - Critical Poison -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sirra's Blade - Landslide {PvP} - Critical Poison -->
+		<ingredient count="1" id="11881" />
+		<production count="1" id="11171" />
+	</item>
+	<item>
+		<!-- Sword of Ipos - Earth - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sword of Ipos - Earth {PvP} - Focus -->
+		<ingredient count="1" id="11873" />
+		<production count="1" id="11161" />
+	</item>
+	<item>
+		<!-- Sword of Ipos - Earth - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sword of Ipos - Earth {PvP} - Haste -->
+		<ingredient count="1" id="11874" />
+		<production count="1" id="11163" />
+	</item>
+	<item>
+		<!-- Sword of Ipos - Earth - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sword of Ipos - Earth {PvP} - Health -->
+		<ingredient count="1" id="11875" />
+		<production count="1" id="11164" />
+	</item>
+	<item>
+		<!-- Barakiel's Axe - On Fire - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Barakiel's Axe - On Fire {PvP} - Health -->
+		<ingredient count="1" id="11858" />
+		<production count="1" id="11141" />
+	</item>
+	<item>
+		<!-- Barakiel's Axe - On Fire - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Barakiel's Axe - On Fire {PvP} - Haste -->
+		<ingredient count="1" id="11859" />
+		<production count="1" id="11143" />
+	</item>
+	<item>
+		<!-- Barakiel's Axe - On Fire - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Barakiel's Axe - On Fire {PvP} - Focus -->
+		<ingredient count="1" id="11860" />
+		<production count="1" id="11144" />
+	</item>
+	<item>
+		<!-- Behemoth's Tuning Fork - Destruction - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Behemoth's Tuning Fork - Destruction {PvP} - Focus -->
+		<ingredient count="1" id="11864" />
+		<production count="1" id="11150" />
+	</item>
+	<item>
+		<!-- Behemoth's Tuning Fork - Destruction - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Behemoth's Tuning Fork - Destruction {PvP} - Health -->
+		<ingredient count="1" id="11865" />
+		<production count="1" id="11151" />
+	</item>
+	<item>
+		<!-- Behemoth's Tuning Fork - Destruction - Anger -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Behemoth's Tuning Fork - Destruction {PvP} - Anger -->
+		<ingredient count="1" id="11866" />
+		<production count="1" id="11151" />
+	</item>
+	<item>
+		<!-- Naga Storm - Molar - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Naga Storm - Molar {PvP} - Focus -->
+		<ingredient count="1" id="11851" />
+		<production count="1" id="11134" />
+	</item>
+	<item>
+		<!-- Naga Storm - Molar - Critical Damage -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Naga Storm - Molar {PvP} - Critical Damage -->
+		<ingredient count="1" id="11853" />
+		<production count="1" id="11135" />
+	</item>
+	<item>
+		<!-- Naga Storm - Molar - Back Blow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Naga Storm - Molar {PvP} - Back Blow -->
+		<ingredient count="1" id="11854" />
+		<production count="1" id="11136" />
+	</item>
+	<item>
+		<!-- Tiphon's Spear - Landslide - Critical Stun -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Tiphon's Spear - Landslide {PvP} - Critical Stun -->
+		<ingredient count="1" id="11885" />
+		<production count="1" id="11178" />
+	</item>
+	<item>
+		<!-- Tiphon's Spear - Landslide - Towering Blow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Tiphon's Spear - Landslide {PvP} - Towering Blow -->
+		<ingredient count="1" id="11886" />
+		<production count="1" id="11179" />
+	</item>
+	<item>
+		<!-- Tiphon's Spear - Landslide - Wild Blow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Tiphon's Spear - Landslide {PvP} - Wild Blow -->
+		<ingredient count="1" id="11887" />
+		<production count="1" id="11180" />
+	</item>
+	<item>
+		<!-- Shyeed's Bow - Concentration - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Shyeed's Bow - Concentration {PvP} - Cheap Shot -->
+		<ingredient count="1" id="11870" />
+		<production count="1" id="11158" />
+	</item>
+	<item>
+		<!-- Shyeed's Bow - Concentration - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Shyeed's Bow - Concentration {PvP} - Focus -->
+		<ingredient count="1" id="11871" />
+		<production count="1" id="11159" />
+	</item>
+	<item>
+		<!-- Shyeed's Bow - Concentration - Quick Recovery -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Shyeed's Bow - Concentration {PvP} - Quick Recovery -->
+		<ingredient count="1" id="11871" />
+		<production count="1" id="11160" />
+	</item>
+	<item>
+		<!-- Sobekk's Hurricane - Landslide - Rsk. Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sobekk's Hurricane - Landslide {PvP} - Rsk. Haste -->
+		<ingredient count="1" id="11876" />
+		<production count="1" id="11166" />
+	</item>
+	<item>
+		<!-- Sobekk's Hurricane - Landslide - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sobekk's Hurricane - Landslide {PvP} - Haste -->
+		<ingredient count="1" id="11877" />
+		<production count="1" id="11167" />
+	</item>
+	<item>
+		<!-- Sobekk's Hurricane - Landslide - Critical Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sobekk's Hurricane - Landslide {PvP} - Critical Drain -->
+		<ingredient count="1" id="11878" />
+		<production count="1" id="11168" />
+	</item>
+	<item>
+		<!-- Themis' Tongue - Cleverness - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Themis' Tongue - Cleverness {PvP} - Mana Up -->
+		<ingredient count="1" id="11889" />
+		<production count="1" id="11183" />
+	</item>
+	<item>
+		<!-- Themis' Tongue - Cleverness - Mental Shield -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Themis' Tongue - Cleverness {PvP} - Mental Shield -->
+		<ingredient count="1" id="11890" />
+		<production count="1" id="11184" />
+	</item>
+	<item>
+		<!-- Themis' Tongue - Cleverness - Magic Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Themis' Tongue - Cleverness {PvP} - Magic Focus -->
+		<ingredient count="1" id="11891" />
+		<production count="1" id="11185" />
+	</item>
+	<item>
+		<!-- Cabrio's Hand - Cleverness - Conversion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Cabrio's Hand - Cleverness {PvP} - Conversion -->
+		<ingredient count="1" id="11891" />
+		<production count="1" id="11187" />
+	</item>
+	<item>
+		<!-- Cabrio's Hand - Cleverness - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Cabrio's Hand - Cleverness {PvP} - Mana Up -->
+		<ingredient count="1" id="11893" />
+		<production count="1" id="11188" />
+	</item>
+	<item>
+		<!-- Cabrio's Hand - Cleverness - Magic Silence -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Cabrio's Hand - Cleverness {PvP} - Magic Silence -->
+		<ingredient count="1" id="11894" />
+		<production count="1" id="11189" />
+	</item>
+	<item>
+		<!-- Daimon Crystal - Wisdom - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Daimon Crystal - Wisdom {PvP} - Mana Up -->
+		<ingredient count="1" id="11855" />
+		<production count="1" id="11138" />
+	</item>
+	<item>
+		<!-- Daimon Crystal - Wisdom - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Daimon Crystal - Wisdom {PvP} - Acumen -->
+		<ingredient count="1" id="11856" />
+		<production count="1" id="11139" />
+	</item>
+	<item>
+		<!-- Daimon Crystal - Wisdom - Mental Shield -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Daimon Crystal - Wisdom {PvP} - Mental Shield -->
+		<ingredient count="1" id="11857" />
+		<production count="1" id="11140" />
+	</item>
+	<item>
+		<!-- Eclair Bijou - Landslide - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Eclair Bijou - Landslide {PvP} - Haste -->
+		<ingredient count="1" id="11881" />
+		<production count="1" id="11174" />
+	</item>
+	<item>
+		<!-- Eclair Bijou - Landslide - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Eclair Bijou - Landslide {PvP} - Health -->
+		<ingredient count="1" id="11883" />
+		<production count="1" id="11175" />
+	</item>
+	<item>
+		<!-- Eclair Bijou - Landslide - Critical Poison -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Eclair Bijou - Landslide {PvP} - Critical Poison -->
+		<ingredient count="1" id="11884" />
+		<production count="1" id="11176" />
+	</item>
+	<item>
+		<!-- Bultgang - Earth - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Durendal - Earth {PvP} - Focus -->
+		<ingredient count="1" id="11867" />
+		<production count="1" id="11154" />
+	</item>
+	<item>
+		<!-- Bultgang - Earth - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Durendal - Earth {PvP} - Haste -->
+		<ingredient count="1" id="11868" />
+		<production count="1" id="11155" />
+	</item>
+	<item>
+		<!-- Bultgang - Earth - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Durendal - Earth {PvP} - Health -->
+		<ingredient count="1" id="11869" />
+		<production count="1" id="11156" />
+	</item>
+	<item>
+		<!-- Screaming Vengeance - Concentration - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Screaming Vengeance - Concentration {PvP} - Cheap Shot -->
+		<ingredient count="1" id="11861" />
+		<production count="1" id="11146" />
+	</item>
+	<item>
+		<!-- Screaming Vengeance - Concentration - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Screaming Vengeance - Concentration {PvP} - Focus -->
+		<ingredient count="1" id="11861" />
+		<production count="1" id="11147" />
+	</item>
+	<item>
+		<!-- Screaming Vengeance - Concentration - Quick Recovery -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Screaming Vengeance - Concentration {PvP} - Quick Recovery -->
+		<ingredient count="1" id="11863" />
+		<production count="1" id="11148" />
+	</item>
+	<item>
+		<!-- Tallum Blade*Damascus - Landslide -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Tallum Blade*Damascus - Landslide {PvP} -->
+		<ingredient count="1" id="11888" />
+		<production count="1" id="11181" />
+	</item>
+	<item>
+		<!-- Forgotten Blade - Lightning - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Forgotten Blade - Lightning {PvP} - Haste -->
+		<ingredient count="1" id="11919" />
+		<production count="1" id="11136" />
+	</item>
+	<item>
+		<!-- Forgotten Blade - Lightning - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Forgotten Blade - Lightning {PvP} - Health -->
+		<ingredient count="1" id="11930" />
+		<production count="1" id="11137" />
+	</item>
+	<item>
+		<!-- Forgotten Blade - Lightning - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Forgotten Blade - Lightning {PvP} - Focus -->
+		<ingredient count="1" id="11931" />
+		<production count="1" id="11138" />
+	</item>
+	<item>
+		<!-- Heaven's Divider - Thunder - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Heavens Divider - Thunder {PvP} - Haste -->
+		<ingredient count="1" id="11931" />
+		<production count="1" id="11140" />
+	</item>
+	<item>
+		<!-- Heaven's Divider - Thunder - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Heavens Divider - Thunder {PvP} - Health -->
+		<ingredient count="1" id="11933" />
+		<production count="1" id="11141" />
+	</item>
+	<item>
+		<!-- Heaven's Divider - Thunder - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Heavens Divider - Thunder {PvP} - Focus -->
+		<ingredient count="1" id="11934" />
+		<production count="1" id="11141" />
+	</item>
+	<item>
+		<!-- Basalt Battlehammer - Concentration - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Basalt Battlehammer - Concentration {PvP} - HP Drain -->
+		<ingredient count="1" id="11910" />
+		<production count="1" id="11111" />
+	</item>
+	<item>
+		<!-- Basalt Battlehammer - Concentration - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Basalt Battlehammer - Concentration {PvP} - Health -->
+		<ingredient count="1" id="11911" />
+		<production count="1" id="11111" />
+	</item>
+	<item>
+		<!-- Basalt Battlehammer - Concentration - HP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Basalt Battlehammer - Concentration {PvP} - HP Regeneration -->
+		<ingredient count="1" id="11911" />
+		<production count="1" id="11113" />
+	</item>
+	<item>
+		<!-- Dragon Hunter Axe - Thunder - HP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dragon Hunter Axe - Thunder {PvP} - HP Regeneration -->
+		<ingredient count="1" id="11904" />
+		<production count="1" id="11103" />
+	</item>
+	<item>
+		<!-- Dragon Hunter Axe - Thunder - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dragon Hunter Axe - Thunder {PvP} - Health -->
+		<ingredient count="1" id="11905" />
+		<production count="1" id="11104" />
+	</item>
+	<item>
+		<!-- Dragon Hunter Axe - Thunder - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dragon Hunter Axe - Thunder {PvP} - HP Drain -->
+		<ingredient count="1" id="11906" />
+		<production count="1" id="11105" />
+	</item>
+	<item>
+		<!-- Angel Slayer - Concentration - Critical Damage -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Angel Slayer - Concentration {PvP} - Critical Damage -->
+		<ingredient count="1" id="11911" />
+		<production count="1" id="11117" />
+	</item>
+	<item>
+		<!-- Angel Slayer - Concentration - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Angel Slayer - Concentration {PvP} - HP Drain -->
+		<ingredient count="1" id="11913" />
+		<production count="1" id="11118" />
+	</item>
+	<item>
+		<!-- Angel Slayer - Concentration - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Angel Slayer - Concentration {PvP} - Haste -->
+		<ingredient count="1" id="11914" />
+		<production count="1" id="11119" />
+	</item>
+	<item>
+		<!-- Saint Spear - Destruction - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Saint Spear - Destruction {PvP} - Health -->
+		<ingredient count="1" id="11916" />
+		<production count="1" id="11119" />
+	</item>
+	<item>
+		<!-- Saint Spear - Destruction - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Saint Spear - Destruction {PvP} - Guidance -->
+		<ingredient count="1" id="11917" />
+		<production count="1" id="11110" />
+	</item>
+	<item>
+		<!-- Saint Spear - Destruction - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Saint Spear - Destruction {PvP} - Haste -->
+		<ingredient count="1" id="11918" />
+		<production count="1" id="11111" />
+	</item>
+	<item>
+		<!-- Demon Splinter - Thunder - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Demon Splinter - Thunder {PvP} - Focus -->
+		<ingredient count="1" id="11898" />
+		<production count="1" id="11195" />
+	</item>
+	<item>
+		<!-- Demon Splinter - Thunder - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Demon Splinter - Thunder {PvP} - Health -->
+		<ingredient count="1" id="11899" />
+		<production count="1" id="11196" />
+	</item>
+	<item>
+		<!-- Demon Splinter - Thunder - Critical Stun -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Demon Splinter - Thunder {PvP} - Critical Stun -->
+		<ingredient count="1" id="11900" />
+		<production count="1" id="11197" />
+	</item>
+	<item>
+		<!-- Arcana Mace - Nature - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Arcana Mace - Nature {PvP} - Acumen -->
+		<ingredient count="1" id="11919" />
+		<production count="1" id="11113" />
+	</item>
+	<item>
+		<!-- Arcana Mace - Nature - MP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Arcana Mace - Nature {PvP} - MP Regeneration -->
+		<ingredient count="1" id="11910" />
+		<production count="1" id="11114" />
+	</item>
+	<item>
+		<!-- Arcana Mace - Nature - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Arcana Mace - Nature {PvP} - Mana Up -->
+		<ingredient count="1" id="11911" />
+		<production count="1" id="11115" />
+	</item>
+	<item>
+		<!-- Imperial Staff - Nature - Empower -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Imperial Staff - Nature {PvP} - Empower -->
+		<ingredient count="1" id="11915" />
+		<production count="1" id="11131" />
+	</item>
+	<item>
+		<!-- Imperial Staff - Nature - MP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Imperial Staff - Nature {PvP} - MP Regeneration -->
+		<ingredient count="1" id="11916" />
+		<production count="1" id="11131" />
+	</item>
+	<item>
+		<!-- Imperial Staff - Nature - Magic Hold -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Imperial Staff - Nature {PvP} - Magic Hold -->
+		<ingredient count="1" id="11917" />
+		<production count="1" id="11133" />
+	</item>
+	<item>
+		<!-- Draconic Bow - Earth - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Draconic Bow - Earth {PvP} - Cheap Shot -->
+		<ingredient count="1" id="11901" />
+		<production count="1" id="11199" />
+	</item>
+	<item>
+		<!-- Draconic Bow - Earth - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Draconic Bow - Earth {PvP} - Focus -->
+		<ingredient count="1" id="11901" />
+		<production count="1" id="11100" />
+	</item>
+	<item>
+		<!-- Draconic Bow - Earth - Critical Slow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Draconic Bow - Earth {PvP} - Critical Slow -->
+		<ingredient count="1" id="11903" />
+		<production count="1" id="11101" />
+	</item>
+	<item>
+		<!-- Laevateinn - Lightning - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Laevateinn - Lightning {PvP} - Haste -->
+		<ingredient count="1" id="11907" />
+		<production count="1" id="11107" />
+	</item>
+	<item>
+		<!-- Laevateinn - Lightning - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Laevateinn - Lightning {PvP} - Health -->
+		<ingredient count="1" id="11908" />
+		<production count="1" id="11108" />
+	</item>
+	<item>
+		<!-- Laevateinn - Lightning - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Laevateinn - Lightning {PvP} - Focus -->
+		<ingredient count="1" id="11909" />
+		<production count="1" id="11109" />
+	</item>
+	<item>
+		<!-- Gram - Thunder - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Gram - Thunder {PvP} - Haste -->
+		<ingredient count="1" id="11895" />
+		<production count="1" id="11191" />
+	</item>
+	<item>
+		<!-- Gram - Thunder - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Gram - Thunder {PvP} - Health -->
+		<ingredient count="1" id="11896" />
+		<production count="1" id="11191" />
+	</item>
+	<item>
+		<!-- Gram - Thunder - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Gram - Thunder {PvP} - Focus -->
+		<ingredient count="1" id="11897" />
+		<production count="1" id="11193" />
+	</item>
+	<item>
+		<!-- Sarunga - Earth - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sarunga - Earth {PvP} - Cheap Shot -->
+		<ingredient count="1" id="11913" />
+		<production count="1" id="11115" />
+	</item>
+	<item>
+		<!-- Sarunga - Earth - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sarunga - Earth {PvP} - Focus -->
+		<ingredient count="1" id="11914" />
+		<production count="1" id="11116" />
+	</item>
+	<item>
+		<!-- Sarunga - Earth - Critical Slow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sarunga - Earth {PvP} - Critical Slow -->
+		<ingredient count="1" id="11915" />
+		<production count="1" id="11117" />
+	</item>
+	<item>
+		<!-- Tallum Blade*Dark Legion's Edge - Lightning -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Tallum Blade*Dark Legion's Edge - Lightning {PvP} -->
+		<ingredient count="1" id="11918" />
+		<production count="1" id="11134" />
+	</item>
+	<item>
+		<!-- Dynasty Sword - Earth - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Sword - Earth {PvP} - Focus -->
+		<ingredient count="1" id="11957" />
+		<production count="1" id="11173" />
+	</item>
+	<item>
+		<!-- Dynasty Sword - Earth - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Sword - Earth {PvP} - Health -->
+		<ingredient count="1" id="11958" />
+		<production count="1" id="11174" />
+	</item>
+	<item>
+		<!-- Dynasty Sword - Earth - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Sword - Earth {PvP} - Light -->
+		<ingredient count="1" id="11959" />
+		<production count="1" id="11175" />
+	</item>
+	<item>
+		<!-- Dynasty Blade - Great Gale - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Blade - Great Gale {PvP} - Focus -->
+		<ingredient count="1" id="11954" />
+		<production count="1" id="11169" />
+	</item>
+	<item>
+		<!-- Dynasty Blade - Great Gale - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Blade - Great Gale {PvP} - Health -->
+		<ingredient count="1" id="11955" />
+		<production count="1" id="11170" />
+	</item>
+	<item>
+		<!-- Dynasty Blade - Great Gale - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Blade - Great Gale {PvP} - Light -->
+		<ingredient count="1" id="11956" />
+		<production count="1" id="11171" />
+	</item>
+	<item>
+		<!-- Dynasty Cudgel - Landslide - Anger -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Cudgel - Landslide {PvP} - Anger -->
+		<ingredient count="1" id="11963" />
+		<production count="1" id="11181" />
+	</item>
+	<item>
+		<!-- Dynasty Cudgel - Landslide - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Cudgel - Landslide {PvP} - Health -->
+		<ingredient count="1" id="11964" />
+		<production count="1" id="11181" />
+	</item>
+	<item>
+		<!-- Dynasty Cudgel - Landslide - Rsk. Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Cudgel - Landslide {PvP} - Rsk. Focus -->
+		<ingredient count="1" id="11965" />
+		<production count="1" id="11183" />
+	</item>
+	<item>
+		<!-- Dynasty Crusher - Great Gale - Anger -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Crusher - Great Gale {PvP} - Anger -->
+		<ingredient count="1" id="11966" />
+		<production count="1" id="11185" />
+	</item>
+	<item>
+		<!-- Dynasty Crusher - Great Gale - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Crusher - Great Gale {PvP} - Health -->
+		<ingredient count="1" id="11967" />
+		<production count="1" id="11186" />
+	</item>
+	<item>
+		<!-- Dynasty Crusher - Great Gale - Rsk. Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Crusher - Great Gale {PvP} - Rsk. Focus -->
+		<ingredient count="1" id="11968" />
+		<production count="1" id="11187" />
+	</item>
+	<item>
+		<!-- Dynasty Knife - Great Gale - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Knife - Great Gale {PvP} - Focus -->
+		<ingredient count="1" id="11938" />
+		<production count="1" id="11148" />
+	</item>
+	<item>
+		<!-- Dynasty Knife - Great Gale - Evasion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Knife - Great Gale {PvP} - Evasion -->
+		<ingredient count="1" id="11939" />
+		<production count="1" id="11149" />
+	</item>
+	<item>
+		<!-- Dynasty Knife - Great Gale - Critical Damage -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Knife - Great Gale {PvP} - Critical Damage -->
+		<ingredient count="1" id="11940" />
+		<production count="1" id="11150" />
+	</item>
+	<item>
+		<!-- Dynasty Halberd - Earth - Anger -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Halberd - Earth {PvP} - Anger -->
+		<ingredient count="1" id="11975" />
+		<production count="1" id="11197" />
+	</item>
+	<item>
+		<!-- Dynasty Halberd - Earth - Critical Stun -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Halberd - Earth {PvP} - Critical Stun -->
+		<ingredient count="1" id="11976" />
+		<production count="1" id="11198" />
+	</item>
+	<item>
+		<!-- Dynasty Halberd - Earth - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Halberd - Earth {PvP} - Light -->
+		<ingredient count="1" id="11977" />
+		<production count="1" id="11199" />
+	</item>
+	<item>
+		<!-- Dynasty Bagh-Nakh - Great Gale - Rsk. Evasion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Bagh-Nakh - Great Gale {PvP} - Rsk. Evasion -->
+		<ingredient count="1" id="11948" />
+		<production count="1" id="11161" />
+	</item>
+	<item>
+		<!-- Dynasty Bagh-Nakh - Great Gale - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Bagh-Nakh - Great Gale {PvP} - Focus -->
+		<ingredient count="1" id="11949" />
+		<production count="1" id="11161" />
+	</item>
+	<item>
+		<!-- Dynasty Bagh-Nakh - Great Gale - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Bagh-Nakh - Great Gale {PvP} - Haste -->
+		<ingredient count="1" id="11950" />
+		<production count="1" id="11163" />
+	</item>
+	<item>
+		<!-- Dynasty Phantom - Nature - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Phantom - Nature {PvP} - Acumen -->
+		<ingredient count="1" id="11971" />
+		<production count="1" id="11193" />
+	</item>
+	<item>
+		<!-- Dynasty Phantom - Nature - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Phantom - Nature {PvP} - Mana Up -->
+		<ingredient count="1" id="11973" />
+		<production count="1" id="11194" />
+	</item>
+	<item>
+		<!-- Dynasty Phantom - Nature - Conversion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Phantom - Nature {PvP} - Conversion -->
+		<ingredient count="1" id="11974" />
+		<production count="1" id="11195" />
+	</item>
+	<item>
+		<!-- Dynasty Mace - Earth - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Mace - Earth {PvP} - Mana Up -->
+		<ingredient count="1" id="11945" />
+		<production count="1" id="11157" />
+	</item>
+	<item>
+		<!-- Dynasty Mace - Earth - Conversion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Mace - Earth {PvP} - Conversion -->
+		<ingredient count="1" id="11946" />
+		<production count="1" id="11158" />
+	</item>
+	<item>
+		<!-- Dynasty Mace - Earth - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Mace - Earth {PvP} - Acumen -->
+		<ingredient count="1" id="11947" />
+		<production count="1" id="11159" />
+	</item>
+	<item>
+		<!-- Dynasty Staff - Holy Spirit - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Staff - Holy Spirit {PvP} - Mana Up -->
+		<ingredient count="1" id="11960" />
+		<production count="1" id="11177" />
+	</item>
+	<item>
+		<!-- Dynasty Staff - Holy Spirit - Conversion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Staff - Holy Spirit {PvP} - Conversion -->
+		<ingredient count="1" id="11961" />
+		<production count="1" id="11178" />
+	</item>
+	<item>
+		<!-- Dynasty Staff - Holy Spirit - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Staff - Holy Spirit {PvP} - Acumen -->
+		<ingredient count="1" id="11961" />
+		<production count="1" id="11179" />
+	</item>
+	<item>
+		<!-- Dynasty Bow - Great Gale - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Bow - Great Gale {PvP} - Cheap Shot -->
+		<ingredient count="1" id="11951" />
+		<production count="1" id="11165" />
+	</item>
+	<item>
+		<!-- Dynasty Bow - Great Gale - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Bow - Great Gale {PvP} - Guidance -->
+		<ingredient count="1" id="11951" />
+		<production count="1" id="11166" />
+	</item>
+	<item>
+		<!-- Dynasty Bow - Great Gale - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Bow - Great Gale {PvP} - Focus -->
+		<ingredient count="1" id="11953" />
+		<production count="1" id="11167" />
+	</item>
+	<item>
+		<!-- Dynasty Rapier - Earth - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Rapier - Earth {PvP} - Focus -->
+		<ingredient count="1" id="11941" />
+		<production count="1" id="11153" />
+	</item>
+	<item>
+		<!-- Dynasty Rapier - Earth - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Rapier - Earth {PvP} - Health -->
+		<ingredient count="1" id="11943" />
+		<production count="1" id="11154" />
+	</item>
+	<item>
+		<!-- Dynasty Rapier - Earth - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Rapier - Earth {PvP} - Light -->
+		<ingredient count="1" id="11944" />
+		<production count="1" id="11155" />
+	</item>
+	<item>
+		<!-- Dynasty Ancient Sword - Great Gale - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Ancient Sword - Great Gale {PvP} - Focus -->
+		<ingredient count="1" id="11935" />
+		<production count="1" id="11144" />
+	</item>
+	<item>
+		<!-- Dynasty Ancient Sword - Great Gale - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Ancient Sword - Great Gale {PvP} - Health -->
+		<ingredient count="1" id="11936" />
+		<production count="1" id="11145" />
+	</item>
+	<item>
+		<!-- Dynasty Ancient Sword - Great Gale - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Ancient Sword - Great Gale {PvP} - Light -->
+		<ingredient count="1" id="11937" />
+		<production count="1" id="11146" />
+	</item>
+	<item>
+		<!-- Dynasty Crossbow - Great Gale - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Crossbow - Great Gale {PvP} - Cheap Shot -->
+		<ingredient count="1" id="11969" />
+		<production count="1" id="11189" />
+	</item>
+	<item>
+		<!-- Dynasty Crossbow - Great Gale - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Crossbow - Great Gale {PvP} - Guidance -->
+		<ingredient count="1" id="11970" />
+		<production count="1" id="11190" />
+	</item>
+	<item>
+		<!-- Dynasty Crossbow - Great Gale - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Crossbow - Great Gale {PvP} - Focus -->
+		<ingredient count="1" id="11971" />
+		<production count="1" id="11191" />
+	</item>
+	<item>
+		<!-- Dynasty Dual Sword - Earth -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Dual Sword - Earth {PvP} -->
+		<ingredient count="1" id="11941" />
+		<production count="1" id="11151" />
+	</item>
+	<item>
+		<!-- Icarus Dual Sword -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Dual Sword {PvP} -->
+		<ingredient count="1" id="14375" />
+		<production count="1" id="10415" />
+	</item>
+	<item>
+		<!-- Icarus Sawsword - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Sawsword {PvP} - Focus -->
+		<ingredient count="1" id="14376" />
+		<production count="1" id="10434" />
+	</item>
+	<item>
+		<!-- Icarus Sawsword - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Sawsword {PvP} - Health -->
+		<ingredient count="1" id="14377" />
+		<production count="1" id="10435" />
+	</item>
+	<item>
+		<!-- Icarus Sawsword - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Sawsword {PvP} - Light -->
+		<ingredient count="1" id="14378" />
+		<production count="1" id="10436" />
+	</item>
+	<item>
+		<!-- Icarus Heavy Arms - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Heavy Arms {PvP} - Focus -->
+		<ingredient count="1" id="14379" />
+		<production count="1" id="10437" />
+	</item>
+	<item>
+		<!-- Icarus Heavy Arms - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Heavy Arms {PvP} - Health -->
+		<ingredient count="1" id="14380" />
+		<production count="1" id="10438" />
+	</item>
+	<item>
+		<!-- Icarus Heavy Arms - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Heavy Arms {PvP} - Light -->
+		<ingredient count="1" id="14381" />
+		<production count="1" id="10439" />
+	</item>
+	<item>
+		<!-- Icarus Spirit - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Spirit {PvP} - Acumen -->
+		<ingredient count="1" id="14381" />
+		<production count="1" id="10440" />
+	</item>
+	<item>
+		<!-- Icarus Spirit - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Spirit {PvP} - Mana Up -->
+		<ingredient count="1" id="14383" />
+		<production count="1" id="10441" />
+	</item>
+	<item>
+		<!-- Icarus Spirit - Conversion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Spirit {PvP} - Conversion -->
+		<ingredient count="1" id="14384" />
+		<production count="1" id="10441" />
+	</item>
+	<item>
+		<!-- Icarus Spitter - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Spitter {PvP} - Cheap Shot -->
+		<ingredient count="1" id="14385" />
+		<production count="1" id="10443" />
+	</item>
+	<item>
+		<!-- Icarus Spitter - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Spitter {PvP} - Guidance -->
+		<ingredient count="1" id="14386" />
+		<production count="1" id="10444" />
+	</item>
+	<item>
+		<!-- Icarus Spitter - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Spitter {PvP} - Focus -->
+		<ingredient count="1" id="14387" />
+		<production count="1" id="10445" />
+	</item>
+	<item>
+		<!-- Icarus Disperser - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Disperser {PvP} - Focus -->
+		<ingredient count="1" id="14388" />
+		<production count="1" id="10446" />
+	</item>
+	<item>
+		<!-- Icarus Disperser - Evasion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Disperser {PvP} - Evasion -->
+		<ingredient count="1" id="14389" />
+		<production count="1" id="10447" />
+	</item>
+	<item>
+		<!-- Icarus Disperser - Critical Damage -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Disperser {PvP} - Critical Damage -->
+		<ingredient count="1" id="14390" />
+		<production count="1" id="10448" />
+	</item>
+	<item>
+		<!-- Icarus Trident - Anger -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Trident {PvP} - Anger -->
+		<ingredient count="1" id="14391" />
+		<production count="1" id="10449" />
+	</item>
+	<item>
+		<!-- Icarus Trident - Critical Stun -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Trident {PvP} - Critical Stun -->
+		<ingredient count="1" id="14391" />
+		<production count="1" id="10450" />
+	</item>
+	<item>
+		<!-- Icarus Trident - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Trident {PvP} - Light -->
+		<ingredient count="1" id="14393" />
+		<production count="1" id="10451" />
+	</item>
+	<item>
+		<!-- Icarus Hammer - Anger -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hammer {PvP} - Anger -->
+		<ingredient count="1" id="14394" />
+		<production count="1" id="10451" />
+	</item>
+	<item>
+		<!-- Icarus Hammer - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hammer {PvP} - Health -->
+		<ingredient count="1" id="14395" />
+		<production count="1" id="10453" />
+	</item>
+	<item>
+		<!-- Icarus Hammer - Rsk. Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hammer {PvP} - Rsk. Focus -->
+		<ingredient count="1" id="14396" />
+		<production count="1" id="10454" />
+	</item>
+	<item>
+		<!-- Icarus Hall - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hall {PvP} - Mana Up -->
+		<ingredient count="1" id="14397" />
+		<production count="1" id="10455" />
+	</item>
+	<item>
+		<!-- Icarus Hall - Conversion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hall {PvP} - Conversion -->
+		<ingredient count="1" id="14398" />
+		<production count="1" id="10456" />
+	</item>
+	<item>
+		<!-- Icarus Hall - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hall {PvP} - Acumen -->
+		<ingredient count="1" id="14399" />
+		<production count="1" id="10457" />
+	</item>
+	<item>
+		<!-- Icarus Hand - Rsk. Evasion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hand {PvP} - Rsk. Evasion -->
+		<ingredient count="1" id="14400" />
+		<production count="1" id="10458" />
+	</item>
+	<item>
+		<!-- Icarus Hand - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hand {PvP} - Focus -->
+		<ingredient count="1" id="14401" />
+		<production count="1" id="10459" />
+	</item>
+	<item>
+		<!-- Icarus Hand - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hand {PvP} - Haste -->
+		<ingredient count="1" id="14401" />
+		<production count="1" id="10460" />
+	</item>
+	<item>
+		<!-- Icarus Stinger - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Stinger {PvP} - Focus -->
+		<ingredient count="1" id="14403" />
+		<production count="1" id="10461" />
+	</item>
+	<item>
+		<!-- Icarus Stinger - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Stinger {PvP} - Health -->
+		<ingredient count="1" id="14404" />
+		<production count="1" id="10461" />
+	</item>
+	<item>
+		<!-- Icarus Stinger - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Stinger {PvP} - Light -->
+		<ingredient count="1" id="14405" />
+		<production count="1" id="10463" />
+	</item>
+	<item>
+		<!-- Icarus Wingblade - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Wingblade {PvP} - Focus -->
+		<ingredient count="1" id="14406" />
+		<production count="1" id="10464" />
+	</item>
+	<item>
+		<!-- Icarus Wingblade - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Wingblade {PvP} - Health -->
+		<ingredient count="1" id="14407" />
+		<production count="1" id="10465" />
+	</item>
+	<item>
+		<!-- Icarus Wingblade - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Wingblade {PvP} - Light -->
+		<ingredient count="1" id="14408" />
+		<production count="1" id="10466" />
+	</item>
+	<item>
+		<!-- Icarus Shooter - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Shooter {PvP} - Cheap Shot -->
+		<ingredient count="1" id="14409" />
+		<production count="1" id="10467" />
+	</item>
+	<item>
+		<!-- Icarus Shooter - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Shooter {PvP} - Guidance -->
+		<ingredient count="1" id="14410" />
+		<production count="1" id="10468" />
+	</item>
+	<item>
+		<!-- Icarus Shooter - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Shooter {PvP} - Focus -->
+		<ingredient count="1" id="14411" />
+		<production count="1" id="10469" />
+	</item>
+	<item>
+		<!-- Icarus Dual Sword - Destruction -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Dual Sword - Destruction {PvP} -->
+		<ingredient count="1" id="14411" />
+		<production count="1" id="11300" />
+	</item>
+	<item>
+		<!-- Icarus Disperser - Confusion - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Disperser - Confusion {PvP} - Focus -->
+		<ingredient count="1" id="14414" />
+		<production count="1" id="11301" />
+	</item>
+	<item>
+		<!-- Icarus Disperser - Confusion - Evasion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Disperser - Confusion {PvP} - Evasion -->
+		<ingredient count="1" id="14415" />
+		<production count="1" id="11303" />
+	</item>
+	<item>
+		<!-- Icarus Disperser - Confusion - Critical Damage -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Disperser - Confusion {PvP} - Critical Damage -->
+		<ingredient count="1" id="14416" />
+		<production count="1" id="11304" />
+	</item>
+	<item>
+		<!-- Icarus Sawsword - Destruction - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Sawsword - Destruction {PvP} - Focus -->
+		<ingredient count="1" id="14418" />
+		<production count="1" id="11306" />
+	</item>
+	<item>
+		<!-- Icarus Sawsword - Destruction - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Sawsword - Destruction {PvP} - Health -->
+		<ingredient count="1" id="14419" />
+		<production count="1" id="11307" />
+	</item>
+	<item>
+		<!-- Icarus Sawsword - Destruction - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Sawsword - Destruction {PvP} - Light -->
+		<ingredient count="1" id="14410" />
+		<production count="1" id="11308" />
+	</item>
+	<item>
+		<!-- Icarus Shooter - Concentration - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Shooter - Concentration {PvP} - Cheap Shot -->
+		<ingredient count="1" id="14411" />
+		<production count="1" id="11310" />
+	</item>
+	<item>
+		<!-- Icarus Shooter - Concentration - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Shooter - Concentration {PvP} - Guidance -->
+		<ingredient count="1" id="14413" />
+		<production count="1" id="11311" />
+	</item>
+	<item>
+		<!-- Icarus Shooter - Concentration - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Shooter - Concentration {PvP} - Focus -->
+		<ingredient count="1" id="14414" />
+		<production count="1" id="11311" />
+	</item>
+	<item>
+		<!-- Icarus Stinger - Destruction - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Stinger - Destruction {PvP} - Focus -->
+		<ingredient count="1" id="14416" />
+		<production count="1" id="11314" />
+	</item>
+	<item>
+		<!-- Icarus Stinger - Destruction - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Stinger - Destruction {PvP} - Health -->
+		<ingredient count="1" id="14417" />
+		<production count="1" id="11315" />
+	</item>
+	<item>
+		<!-- Icarus Stinger - Destruction - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Stinger - Destruction {PvP} - Light -->
+		<ingredient count="1" id="14418" />
+		<production count="1" id="11316" />
+	</item>
+	<item>
+		<!-- Icarus Spirit - Nature - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Spirit - Nature {PvP} - Acumen -->
+		<ingredient count="1" id="14430" />
+		<production count="1" id="11318" />
+	</item>
+	<item>
+		<!-- Icarus Spirit - Nature - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Spirit - Nature {PvP} - Mana Up -->
+		<ingredient count="1" id="14431" />
+		<production count="1" id="11319" />
+	</item>
+	<item>
+		<!-- Icarus Spirit - Nature - Conversion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Spirit - Nature {PvP} - Conversion -->
+		<ingredient count="1" id="14431" />
+		<production count="1" id="11310" />
+	</item>
+	<item>
+		<!-- Icarus Spitter - Concentration - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Spitter - Concentration {PvP} - Cheap Shot -->
+		<ingredient count="1" id="14434" />
+		<production count="1" id="11311" />
+	</item>
+	<item>
+		<!-- Icarus Spitter - Concentration - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Spitter - Concentration {PvP} - Guidance -->
+		<ingredient count="1" id="14435" />
+		<production count="1" id="11313" />
+	</item>
+	<item>
+		<!-- Icarus Spitter - Concentration - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Spitter - Concentration {PvP} - Focus -->
+		<ingredient count="1" id="14436" />
+		<production count="1" id="11314" />
+	</item>
+	<item>
+		<!-- Icarus Wingblade - Lightning - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Wingblade - Lightning {PvP} - Focus -->
+		<ingredient count="1" id="14438" />
+		<production count="1" id="11316" />
+	</item>
+	<item>
+		<!-- Icarus Wingblade - Lightning - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Wingblade - Lightning {PvP} - Health -->
+		<ingredient count="1" id="14439" />
+		<production count="1" id="11317" />
+	</item>
+	<item>
+		<!-- Icarus Wingblade - Lightning - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Wingblade - Lightning {PvP} - Light -->
+		<ingredient count="1" id="14440" />
+		<production count="1" id="11318" />
+	</item>
+	<item>
+		<!-- Icarus Trident - Thunder - Anger -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Trident - Thunder {PvP} - Anger -->
+		<ingredient count="1" id="14441" />
+		<production count="1" id="11330" />
+	</item>
+	<item>
+		<!-- Icarus Trident - Thunder - Critical Stun -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Trident - Thunder {PvP} - Critical Stun -->
+		<ingredient count="1" id="14443" />
+		<production count="1" id="11331" />
+	</item>
+	<item>
+		<!-- Icarus Trident - Thunder - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Trident - Thunder {PvP} - Light -->
+		<ingredient count="1" id="14444" />
+		<production count="1" id="11331" />
+	</item>
+	<item>
+		<!-- Icarus Hammer - Earth - Anger -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hammer - Earth {PvP} - Anger -->
+		<ingredient count="1" id="14446" />
+		<production count="1" id="11334" />
+	</item>
+	<item>
+		<!-- Icarus Hammer - Earth - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hammer - Earth {PvP} - Health -->
+		<ingredient count="1" id="14447" />
+		<production count="1" id="11335" />
+	</item>
+	<item>
+		<!-- Icarus Hammer - Earth - Rsk. Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hammer - Earth {PvP} - Rsk. Focus -->
+		<ingredient count="1" id="14448" />
+		<production count="1" id="11336" />
+	</item>
+	<item>
+		<!-- Icarus Hand - Destruction - Rsk. Evasion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hand - Destruction {PvP} - Rsk. Evasion -->
+		<ingredient count="1" id="14450" />
+		<production count="1" id="11338" />
+	</item>
+	<item>
+		<!-- Icarus Hand - Destruction - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hand - Destruction {PvP} - Focus -->
+		<ingredient count="1" id="14451" />
+		<production count="1" id="11339" />
+	</item>
+	<item>
+		<!-- Icarus Hand - Destruction - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hand - Destruction {PvP} - Haste -->
+		<ingredient count="1" id="14451" />
+		<production count="1" id="11340" />
+	</item>
+	<item>
+		<!-- Icarus Heavy Arms - Lightning - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Heavy Arms - Lightning {PvP} - Focus -->
+		<ingredient count="1" id="14454" />
+		<production count="1" id="11341" />
+	</item>
+	<item>
+		<!-- Icarus Heavy Arms - Lightning - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Heavy Arms - Lightning {PvP} - Health -->
+		<ingredient count="1" id="14455" />
+		<production count="1" id="11343" />
+	</item>
+	<item>
+		<!-- Icarus Heavy Arms - Lightning - Light -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Heavy Arms - Lightning {PvP} - Light -->
+		<ingredient count="1" id="14456" />
+		<production count="1" id="11344" />
+	</item>
+	<item>
+		<!-- Icarus Hall - Hail - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hall - Hail {PvP} - Mana Up -->
+		<ingredient count="1" id="14458" />
+		<production count="1" id="11346" />
+	</item>
+	<item>
+		<!-- Icarus Hall - Hail - Conversion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hall - Hail {PvP} - Conversion -->
+		<ingredient count="1" id="14459" />
+		<production count="1" id="11347" />
+	</item>
+	<item>
+		<!-- Icarus Hall - Hail - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Hall - Hail {PvP} - Acumen -->
+		<ingredient count="1" id="14460" />
+		<production count="1" id="11348" />
+	</item>
+	<item>
+		<!-- Icarus Dual Daggers -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Dual Daggers {PvP} -->
+		<ingredient count="1" id="14461" />
+		<production count="1" id="13883" />
+	</item>
+	<item>
+		<!-- Icarus Dual Daggers - Confusion -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Icarus Dual Daggers - Confusion {PvP} -->
+		<ingredient count="1" id="14519" />
+		<production count="1" id="14517" />
+	</item>
+	<item>
+		<!-- Vesper Dual Sword -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Dual Sword {PvP} -->
+		<ingredient count="1" id="14461" />
+		<production count="1" id="51" />
+	</item>
+	<item>
+		<!-- Vesper Dual Daggers -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Dual Daggers {PvP} -->
+		<ingredient count="1" id="14477" />
+		<production count="1" id="13884" />
+	</item>
+	<item>
+		<!-- Vesper Dual Sword - Destruction -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Dual Sword - Destruction {PvP} -->
+		<ingredient count="1" id="16151" />
+		<production count="1" id="16150" />
+	</item>
+	<item>
+		<!-- Vesper Dual Daggers - Gale -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Dual Daggers - Gale {PvP} -->
+		<ingredient count="1" id="16149" />
+		<production count="1" id="16148" />
+	</item>
+	<item>
+		<!-- Vesper Cutter - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Cutter {PvP} - Haste -->
+		<ingredient count="1" id="14478" />
+		<production count="1" id="14118" />
+	</item>
+	<item>
+		<!-- Vesper Cutter - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Cutter {PvP} - Health -->
+		<ingredient count="1" id="14479" />
+		<production count="1" id="14119" />
+	</item>
+	<item>
+		<!-- Vesper Cutter - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Cutter {PvP} - Focus -->
+		<ingredient count="1" id="14480" />
+		<production count="1" id="14110" />
+	</item>
+	<item>
+		<!-- Vesper Slasher - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Slasher {PvP} - Haste -->
+		<ingredient count="1" id="14481" />
+		<production count="1" id="14111" />
+	</item>
+	<item>
+		<!-- Vesper Slasher - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Slasher {PvP} - Health -->
+		<ingredient count="1" id="14481" />
+		<production count="1" id="14111" />
+	</item>
+	<item>
+		<!-- Vesper Slasher - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Slasher {PvP} - Focus -->
+		<ingredient count="1" id="14483" />
+		<production count="1" id="14113" />
+	</item>
+	<item>
+		<!-- Vesper Buster - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Buster {PvP} - Mana Up -->
+		<ingredient count="1" id="14484" />
+		<production count="1" id="14114" />
+	</item>
+	<item>
+		<!-- Vesper Buster - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Buster {PvP} - Acumen -->
+		<ingredient count="1" id="14485" />
+		<production count="1" id="14115" />
+	</item>
+	<item>
+		<!-- Vesper Buster - Magic Hold -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Buster {PvP} - Magic Hold -->
+		<ingredient count="1" id="14486" />
+		<production count="1" id="14116" />
+	</item>
+	<item>
+		<!-- Vesper Shaper - Critical Damage -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Shaper {PvP} - Critical Damage -->
+		<ingredient count="1" id="14487" />
+		<production count="1" id="14117" />
+	</item>
+	<item>
+		<!-- Vesper Shaper - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Shaper {PvP} - HP Drain -->
+		<ingredient count="1" id="14488" />
+		<production count="1" id="14118" />
+	</item>
+	<item>
+		<!-- Vesper Shaper - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Shaper {PvP} - Haste -->
+		<ingredient count="1" id="14489" />
+		<production count="1" id="14119" />
+	</item>
+	<item>
+		<!-- Vesper Fighter - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Fighter {PvP} - Focus -->
+		<ingredient count="1" id="14490" />
+		<production count="1" id="14130" />
+	</item>
+	<item>
+		<!-- Vesper Fighter - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Fighter {PvP} - Health -->
+		<ingredient count="1" id="14491" />
+		<production count="1" id="14131" />
+	</item>
+	<item>
+		<!-- Vesper Fighter - Critical Stun -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Fighter {PvP} - Critical Stun -->
+		<ingredient count="1" id="14491" />
+		<production count="1" id="14131" />
+	</item>
+	<item>
+		<!-- Vesper Stormer - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Stormer {PvP} - Health -->
+		<ingredient count="1" id="14493" />
+		<production count="1" id="14133" />
+	</item>
+	<item>
+		<!-- Vesper Stormer - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Stormer {PvP} - Guidance -->
+		<ingredient count="1" id="14494" />
+		<production count="1" id="14134" />
+	</item>
+	<item>
+		<!-- Vesper Stormer - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Stormer {PvP} - Haste -->
+		<ingredient count="1" id="14495" />
+		<production count="1" id="14135" />
+	</item>
+	<item>
+		<!-- Vesper Avenger - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Avenger {PvP} - HP Drain -->
+		<ingredient count="1" id="14496" />
+		<production count="1" id="14136" />
+	</item>
+	<item>
+		<!-- Vesper Avenger - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Avenger {PvP} - Health -->
+		<ingredient count="1" id="14497" />
+		<production count="1" id="14137" />
+	</item>
+	<item>
+		<!-- Vesper Avenger - HP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Avenger {PvP} - HP Regeneration -->
+		<ingredient count="1" id="14498" />
+		<production count="1" id="14138" />
+	</item>
+	<item>
+		<!-- Vesper Retributer - HP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Retributer {PvP} - HP Regeneration -->
+		<ingredient count="1" id="14499" />
+		<production count="1" id="14139" />
+	</item>
+	<item>
+		<!-- Vesper Retributer - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Retributer {PvP} - Health -->
+		<ingredient count="1" id="14500" />
+		<production count="1" id="14140" />
+	</item>
+	<item>
+		<!-- Vesper Retributer - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Retributer {PvP} - HP Drain -->
+		<ingredient count="1" id="14501" />
+		<production count="1" id="14141" />
+	</item>
+	<item>
+		<!-- Vesper Caster - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Caster {PvP} - Acumen -->
+		<ingredient count="1" id="14501" />
+		<production count="1" id="14141" />
+	</item>
+	<item>
+		<!-- Vesper Caster - MP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Caster {PvP} - MP Regeneration -->
+		<ingredient count="1" id="14503" />
+		<production count="1" id="14143" />
+	</item>
+	<item>
+		<!-- Vesper Caster - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Caster {PvP} - Mana Up -->
+		<ingredient count="1" id="14504" />
+		<production count="1" id="14144" />
+	</item>
+	<item>
+		<!-- Vesper Singer - Empower -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Singer {PvP} - Empower -->
+		<ingredient count="1" id="14505" />
+		<production count="1" id="14145" />
+	</item>
+	<item>
+		<!-- Vesper Singer - MP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Singer {PvP} - MP Regeneration -->
+		<ingredient count="1" id="14506" />
+		<production count="1" id="14146" />
+	</item>
+	<item>
+		<!-- Vesper Singer - Magic Hold -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Singer {PvP} - Magic Hold -->
+		<ingredient count="1" id="14507" />
+		<production count="1" id="14147" />
+	</item>
+	<item>
+		<!-- Vesper Thrower - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Thrower {PvP} - Cheap Shot -->
+		<ingredient count="1" id="14508" />
+		<production count="1" id="14148" />
+	</item>
+	<item>
+		<!-- Vesper Thrower - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Thrower {PvP} - Focus -->
+		<ingredient count="1" id="14509" />
+		<production count="1" id="14149" />
+	</item>
+	<item>
+		<!-- Vesper Thrower - Critical Slow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Thrower {PvP} - Critical Slow -->
+		<ingredient count="1" id="14510" />
+		<production count="1" id="14150" />
+	</item>
+	<item>
+		<!-- Vesper Pincer - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Pincer {PvP} - Haste -->
+		<ingredient count="1" id="14511" />
+		<production count="1" id="14151" />
+	</item>
+	<item>
+		<!-- Vesper Pincer - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Pincer {PvP} - Health -->
+		<ingredient count="1" id="14511" />
+		<production count="1" id="14151" />
+	</item>
+	<item>
+		<!-- Vesper Pincer - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Pincer {PvP} - Focus -->
+		<ingredient count="1" id="14513" />
+		<production count="1" id="14153" />
+	</item>
+	<item>
+		<!-- Vesper Shooter - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Shooter {PvP} - Cheap Shot -->
+		<ingredient count="1" id="14514" />
+		<production count="1" id="14154" />
+	</item>
+	<item>
+		<!-- Vesper Shooter - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Shooter {PvP} - Focus -->
+		<ingredient count="1" id="14515" />
+		<production count="1" id="14155" />
+	</item>
+	<item>
+		<!-- Vesper Shooter - Critical Slow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Shooter {PvP} - Critical Slow -->
+		<ingredient count="1" id="14516" />
+		<production count="1" id="14156" />
+	</item>
+	<item>
+		<!-- Vesper Nagan - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Nagan {PvP} - Haste -->
+		<ingredient count="1" id="14517" />
+		<production count="1" id="14157" />
+	</item>
+	<item>
+		<!-- Vesper Nagan - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Nagan {PvP} - Health -->
+		<ingredient count="1" id="14518" />
+		<production count="1" id="14158" />
+	</item>
+	<item>
+		<!-- Vesper Nagan - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Nagan {PvP} - Focus -->
+		<ingredient count="1" id="14519" />
+		<production count="1" id="14159" />
+	</item>
+	<item>
+		<!-- Vesper Cutter - Thunder - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Cutter- Thunder {PvP} - Haste -->
+		<ingredient count="1" id="16179" />
+		<production count="1" id="16056" />
+	</item>
+	<item>
+		<!-- Vesper Cutter - Thunder - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Cutter- Thunder {PvP} - Health -->
+		<ingredient count="1" id="16180" />
+		<production count="1" id="16057" />
+	</item>
+	<item>
+		<!-- Vesper Cutter - Thunder - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Cutter- Thunder {PvP} - Focus -->
+		<ingredient count="1" id="16181" />
+		<production count="1" id="16058" />
+	</item>
+	<item>
+		<!-- Vesper Slasher - Gale - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Slasher- Gale {PvP} - Haste -->
+		<ingredient count="1" id="16181" />
+		<production count="1" id="16059" />
+	</item>
+	<item>
+		<!-- Vesper Slasher - Gale - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Slasher- Gale {PvP} - Health -->
+		<ingredient count="1" id="16183" />
+		<production count="1" id="16060" />
+	</item>
+	<item>
+		<!-- Vesper Slasher - Gale - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Slasher- Gale {PvP} - Focus -->
+		<ingredient count="1" id="16184" />
+		<production count="1" id="16061" />
+	</item>
+	<item>
+		<!-- Vesper Buster - Cleverness - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Buster - Cleverness {PvP} - Mana Up -->
+		<ingredient count="1" id="16185" />
+		<production count="1" id="16061" />
+	</item>
+	<item>
+		<!-- Vesper Buster - Cleverness - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Buster - Cleverness {PvP} - Acumen -->
+		<ingredient count="1" id="16186" />
+		<production count="1" id="16063" />
+	</item>
+	<item>
+		<!-- Vesper Buster - Cleverness - Magic Hold -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Buster - Cleverness {PvP} - Magic Hold -->
+		<ingredient count="1" id="16187" />
+		<production count="1" id="16064" />
+	</item>
+	<item>
+		<!-- Vesper Shaper - Gale - Critical Damage -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Shaper - Gale {PvP} - Critical Damage -->
+		<ingredient count="1" id="16188" />
+		<production count="1" id="16065" />
+	</item>
+	<item>
+		<!-- Vesper Shaper - Gale - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Shaper - Gale {PvP} - HP Drain -->
+		<ingredient count="1" id="16189" />
+		<production count="1" id="16066" />
+	</item>
+	<item>
+		<!-- Vesper Shaper - Gale - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Shaper - Gale {PvP} - Haste -->
+		<ingredient count="1" id="16190" />
+		<production count="1" id="16067" />
+	</item>
+	<item>
+		<!-- Vesper Fighter - Gale - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Fighter - Gale {PvP} - Focus -->
+		<ingredient count="1" id="16191" />
+		<production count="1" id="16068" />
+	</item>
+	<item>
+		<!-- Vesper Fighter - Gale - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Fighter - Gale {PvP} - Health -->
+		<ingredient count="1" id="16191" />
+		<production count="1" id="16069" />
+	</item>
+	<item>
+		<!-- Vesper Fighter - Gale - Critical Stun -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Fighter - Gale {PvP} - Critical Stun -->
+		<ingredient count="1" id="16193" />
+		<production count="1" id="16070" />
+	</item>
+	<item>
+		<!-- Vesper Stormer - Thunder - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Stormer - Thunder {PvP} - Health -->
+		<ingredient count="1" id="16194" />
+		<production count="1" id="16071" />
+	</item>
+	<item>
+		<!-- Vesper Stormer - Thunder - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Stormer - Thunder {PvP} - Guidance -->
+		<ingredient count="1" id="16195" />
+		<production count="1" id="16071" />
+	</item>
+	<item>
+		<!-- Vesper Stormer - Thunder - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Stormer - Thunder {PvP} - Haste -->
+		<ingredient count="1" id="16196" />
+		<production count="1" id="16073" />
+	</item>
+	<item>
+		<!-- Vesper Avenger - Landslide - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Avenger - Landslide {PvP} - HP Drain -->
+		<ingredient count="1" id="16197" />
+		<production count="1" id="16074" />
+	</item>
+	<item>
+		<!-- Vesper Avenger - Landslide - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Avenger - Landslide {PvP} - Health -->
+		<ingredient count="1" id="16198" />
+		<production count="1" id="16075" />
+	</item>
+	<item>
+		<!-- Vesper Avenger - Landslide - HP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Avenger - Landslide {PvP} - HP Regeneration -->
+		<ingredient count="1" id="16199" />
+		<production count="1" id="16076" />
+	</item>
+	<item>
+		<!-- Vesper Retributer - Gale - HP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Retributer - Gale {PvP} - HP Regeneration -->
+		<ingredient count="1" id="16100" />
+		<production count="1" id="16077" />
+	</item>
+	<item>
+		<!-- Vesper Retributer - Gale - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Retributer - Gale {PvP} - Health -->
+		<ingredient count="1" id="16101" />
+		<production count="1" id="16078" />
+	</item>
+	<item>
+		<!-- Vesper Retributer - Gale - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Retributer - Gale {PvP} - HP Drain -->
+		<ingredient count="1" id="16101" />
+		<production count="1" id="16079" />
+	</item>
+	<item>
+		<!-- Vesper Caster - Cleverness - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Caster - Cleverness {PvP} - Acumen -->
+		<ingredient count="1" id="16103" />
+		<production count="1" id="16080" />
+	</item>
+	<item>
+		<!-- Vesper Caster - Cleverness - MP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Caster - Cleverness {PvP} - MP Regeneration -->
+		<ingredient count="1" id="16104" />
+		<production count="1" id="16081" />
+	</item>
+	<item>
+		<!-- Vesper Caster - Cleverness - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Caster - Cleverness {PvP} - Mana Up -->
+		<ingredient count="1" id="16105" />
+		<production count="1" id="16081" />
+	</item>
+	<item>
+		<!-- Vesper Singer - Hail - Empower -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Singer - Hail {PvP} - Empower -->
+		<ingredient count="1" id="16106" />
+		<production count="1" id="16083" />
+	</item>
+	<item>
+		<!-- Vesper Singer - Hail - MP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Singer - Hail {PvP} - MP Regeneration -->
+		<ingredient count="1" id="16107" />
+		<production count="1" id="16084" />
+	</item>
+	<item>
+		<!-- Vesper Singer - Hail - Magic Hold -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Singer - Hail {PvP} - Magic Hold -->
+		<ingredient count="1" id="16108" />
+		<production count="1" id="16085" />
+	</item>
+	<item>
+		<!-- Vesper Thrower - Clairvoyance - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Thrower - Clairvoyance {PvP} - Cheap Shot -->
+		<ingredient count="1" id="16109" />
+		<production count="1" id="16086" />
+	</item>
+	<item>
+		<!-- Vesper Thrower - Clairvoyance - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Thrower - Clairvoyance {PvP} - Focus -->
+		<ingredient count="1" id="16110" />
+		<production count="1" id="16087" />
+	</item>
+	<item>
+		<!-- Vesper Thrower - Clairvoyance - Critical Slow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Thrower - Clairvoyance {PvP} - Critical Slow -->
+		<ingredient count="1" id="16111" />
+		<production count="1" id="16088" />
+	</item>
+	<item>
+		<!-- Vesper Pincer - Thunder - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Pincer- Thunder {PvP} - Haste -->
+		<ingredient count="1" id="16111" />
+		<production count="1" id="16089" />
+	</item>
+	<item>
+		<!-- Vesper Pincer - Thunder - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Pincer- Thunder {PvP} - Health -->
+		<ingredient count="1" id="16113" />
+		<production count="1" id="16090" />
+	</item>
+	<item>
+		<!-- Vesper Pincer - Thunder - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Pincer- Thunder {PvP} - Focus -->
+		<ingredient count="1" id="16114" />
+		<production count="1" id="16091" />
+	</item>
+	<item>
+		<!-- Vesper Shooter - Clairvoyance - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Shooter - Clairvoyance {PvP} - Cheap Shot -->
+		<ingredient count="1" id="16115" />
+		<production count="1" id="16091" />
+	</item>
+	<item>
+		<!-- Vesper Shooter - Clairvoyance - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Shooter - Clairvoyance {PvP} - Focus -->
+		<ingredient count="1" id="16116" />
+		<production count="1" id="16093" />
+	</item>
+	<item>
+		<!-- Vesper Shooter - Clairvoyance - Critical Slow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Shooter - Clairvoyance {PvP} - Critical Slow -->
+		<ingredient count="1" id="16117" />
+		<production count="1" id="16094" />
+	</item>
+	<item>
+		<!-- Vesper Nagan - Gale - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Nagan - Gale {PvP} - Haste -->
+		<ingredient count="1" id="16118" />
+		<production count="1" id="16095" />
+	</item>
+	<item>
+		<!-- Vesper Nagan - Gale - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Nagan - Gale {PvP} - Health -->
+		<ingredient count="1" id="16119" />
+		<production count="1" id="16096" />
+	</item>
+	<item>
+		<!-- Vesper Nagan - Gale - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Nagan - Gale {PvP} - Focus -->
+		<ingredient count="1" id="16110" />
+		<production count="1" id="16097" />
+	</item>
+	<item>
+		<!-- Periel Sword - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Periel Sword {PvP} - Focus -->
+		<ingredient count="1" id="15941" />
+		<production count="1" id="15830" />
+	</item>
+	<item>
+		<!-- Periel Sword - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Periel Sword {PvP} - Haste -->
+		<ingredient count="1" id="15943" />
+		<production count="1" id="15831" />
+	</item>
+	<item>
+		<!-- Periel Sword - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Periel Sword {PvP} - Health -->
+		<ingredient count="1" id="15941" />
+		<production count="1" id="15819" />
+	</item>
+	<item>
+		<!-- Skull Edge - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Skull Edge {PvP} - Haste -->
+		<ingredient count="1" id="15945" />
+		<production count="1" id="15833" />
+	</item>
+	<item>
+		<!-- Skull Edge - Critical Damage -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Skull Edge {PvP} - Critical Damage -->
+		<ingredient count="1" id="15946" />
+		<production count="1" id="15834" />
+	</item>
+	<item>
+		<!-- Skull Edge - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Skull Edge {PvP} - HP Drain -->
+		<ingredient count="1" id="15944" />
+		<production count="1" id="15831" />
+	</item>
+	<item>
+		<!-- Vigwik Axe - HP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vigwik Axe {PvP} - HP Regeneration -->
+		<ingredient count="1" id="15948" />
+		<production count="1" id="15836" />
+	</item>
+	<item>
+		<!-- Vigwik Axe - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vigwik Axe {PvP} - HP Drain -->
+		<ingredient count="1" id="15949" />
+		<production count="1" id="15837" />
+	</item>
+	<item>
+		<!-- Vigwik Axe - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vigwik Axe {PvP} - Health -->
+		<ingredient count="1" id="15947" />
+		<production count="1" id="15835" />
+	</item>
+	<item>
+		<!-- Devilish Maul - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Devilish Maul {PvP} - HP Drain -->
+		<ingredient count="1" id="15951" />
+		<production count="1" id="15839" />
+	</item>
+	<item>
+		<!-- Devilish Maul - HP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Devilish Maul {PvP} - HP Regeneration -->
+		<ingredient count="1" id="15951" />
+		<production count="1" id="15840" />
+	</item>
+	<item>
+		<!-- Devilish Maul - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Devilish Maul {PvP} - Health -->
+		<ingredient count="1" id="15950" />
+		<production count="1" id="15838" />
+	</item>
+	<item>
+		<!-- Feather Eye Blade - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Feather Eye Blade {PvP} - Focus -->
+		<ingredient count="1" id="15954" />
+		<production count="1" id="15841" />
+	</item>
+	<item>
+		<!-- Feather Eye Blade - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Feather Eye Blade {PvP} - Haste -->
+		<ingredient count="1" id="15955" />
+		<production count="1" id="15843" />
+	</item>
+	<item>
+		<!-- Feather Eye Blade - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Feather Eye Blade {PvP} - Health -->
+		<ingredient count="1" id="15953" />
+		<production count="1" id="15841" />
+	</item>
+	<item>
+		<!-- Octo Claw - Critical Stun -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Octo Claw {PvP} - Critical Stun -->
+		<ingredient count="1" id="15957" />
+		<production count="1" id="15845" />
+	</item>
+	<item>
+		<!-- Octo Claw - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Octo Claw {PvP} - Focus -->
+		<ingredient count="1" id="15958" />
+		<production count="1" id="15846" />
+	</item>
+	<item>
+		<!-- Octo Claw - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Octo Claw {PvP} - Health -->
+		<ingredient count="1" id="15956" />
+		<production count="1" id="15844" />
+	</item>
+	<item>
+		<!-- Doubletop Spear - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Doubletop Spear {PvP} - Haste -->
+		<ingredient count="1" id="15960" />
+		<production count="1" id="15848" />
+	</item>
+	<item>
+		<!-- Doubletop Spear - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Doubletop Spear {PvP} - Health -->
+		<ingredient count="1" id="15961" />
+		<production count="1" id="15849" />
+	</item>
+	<item>
+		<!-- Doubletop Spear - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Doubletop Spear {PvP} - Guidance -->
+		<ingredient count="1" id="15959" />
+		<production count="1" id="15847" />
+	</item>
+	<item>
+		<!-- Rising Star - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Rising Star {PvP} - Mana Up -->
+		<ingredient count="1" id="15963" />
+		<production count="1" id="15851" />
+	</item>
+	<item>
+		<!-- Rising Star - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Rising Star {PvP} - Acumen -->
+		<ingredient count="1" id="15964" />
+		<production count="1" id="15851" />
+	</item>
+	<item>
+		<!-- Rising Star - MP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Rising Star {PvP} - MP Regeneration -->
+		<ingredient count="1" id="15961" />
+		<production count="1" id="15850" />
+	</item>
+	<item>
+		<!-- Black Visage - Magic Hold -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Black Visage {PvP} - Magic Hold -->
+		<ingredient count="1" id="15966" />
+		<production count="1" id="15854" />
+	</item>
+	<item>
+		<!-- Black Visage - Empower -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Black Visage {PvP} - Empower -->
+		<ingredient count="1" id="15967" />
+		<production count="1" id="15855" />
+	</item>
+	<item>
+		<!-- Black Visage - MP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Black Visage {PvP} - MP Regeneration -->
+		<ingredient count="1" id="15965" />
+		<production count="1" id="15853" />
+	</item>
+	<item>
+		<!-- Veniplant Sword - Magic Hold -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Veniplant Sword {PvP} - Magic Hold -->
+		<ingredient count="1" id="15969" />
+		<production count="1" id="15857" />
+	</item>
+	<item>
+		<!-- Veniplant Sword - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Veniplant Sword {PvP} - Mana Up -->
+		<ingredient count="1" id="15970" />
+		<production count="1" id="15858" />
+	</item>
+	<item>
+		<!-- Veniplant Sword - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Veniplant Sword {PvP} - Acumen -->
+		<ingredient count="1" id="15968" />
+		<production count="1" id="15856" />
+	</item>
+	<item>
+		<!-- Skull Carnium Bow - Critical Slow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Skull Carnium Bow {PvP} - Critical Slow -->
+		<ingredient count="1" id="15971" />
+		<production count="1" id="15860" />
+	</item>
+	<item>
+		<!-- Skull Carnium Bow - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Skull Carnium Bow {PvP} - Cheap Shot -->
+		<ingredient count="1" id="15973" />
+		<production count="1" id="15861" />
+	</item>
+	<item>
+		<!-- Skull Carnium Bow - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Skull Carnium Bow {PvP} - Focus -->
+		<ingredient count="1" id="15971" />
+		<production count="1" id="15859" />
+	</item>
+	<item>
+		<!-- Gemtail Rapier - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Gemtail Rapier {PvP} - Focus -->
+		<ingredient count="1" id="15975" />
+		<production count="1" id="15863" />
+	</item>
+	<item>
+		<!-- Gemtail Rapier - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Gemtail Rapier {PvP} - Haste -->
+		<ingredient count="1" id="15976" />
+		<production count="1" id="15864" />
+	</item>
+	<item>
+		<!-- Gemtail Rapier - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Gemtail Rapier {PvP} - Health -->
+		<ingredient count="1" id="15974" />
+		<production count="1" id="15861" />
+	</item>
+	<item>
+		<!-- Finale Blade - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Finale Blade {PvP} - Focus -->
+		<ingredient count="1" id="15978" />
+		<production count="1" id="15866" />
+	</item>
+	<item>
+		<!-- Finale Blade - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Finale Blade {PvP} - Haste -->
+		<ingredient count="1" id="15979" />
+		<production count="1" id="15867" />
+	</item>
+	<item>
+		<!-- Finale Blade - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Finale Blade {PvP} - Health -->
+		<ingredient count="1" id="15977" />
+		<production count="1" id="15865" />
+	</item>
+	<item>
+		<!-- Dominion Crossbow - Critical Slow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dominion Crossbow {PvP} - Critical Slow -->
+		<ingredient count="1" id="15981" />
+		<production count="1" id="15869" />
+	</item>
+	<item>
+		<!-- Dominion Crossbow - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dominion Crossbow {PvP} - Cheap Shot -->
+		<ingredient count="1" id="15981" />
+		<production count="1" id="15870" />
+	</item>
+	<item>
+		<!-- Dominion Crossbow - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dominion Crossbow {PvP} - Focus -->
+		<ingredient count="1" id="15980" />
+		<production count="1" id="15868" />
+	</item>
+	<item>
+		<!-- Eternal Core Sword - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Eternal Core Sword {PvP} - Health -->
+		<ingredient count="1" id="15985" />
+		<production count="1" id="15873" />
+	</item>
+	<item>
+		<!-- Eternal Core Sword - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Eternal Core Sword {PvP} - Focus -->
+		<ingredient count="1" id="15983" />
+		<production count="1" id="15871" />
+	</item>
+	<item>
+		<!-- Eternal Core Sword - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Eternal Core Sword {PvP} - Haste -->
+		<ingredient count="1" id="15984" />
+		<production count="1" id="15871" />
+	</item>
+	<item>
+		<!-- Mamba Edge - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Mamba Edge {PvP} - HP Drain -->
+		<ingredient count="1" id="15988" />
+		<production count="1" id="15876" />
+	</item>
+	<item>
+		<!-- Mamba Edge - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Mamba Edge {PvP} - Haste -->
+		<ingredient count="1" id="15986" />
+		<production count="1" id="15874" />
+	</item>
+	<item>
+		<!-- Mamba Edge - Critical Damage -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Mamba Edge {PvP} - Critical Damage -->
+		<ingredient count="1" id="15987" />
+		<production count="1" id="15875" />
+	</item>
+	<item>
+		<!-- Eversor Mace - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Eversor Mace {PvP} - Health -->
+		<ingredient count="1" id="15991" />
+		<production count="1" id="15879" />
+	</item>
+	<item>
+		<!-- Eversor Mace - HP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Eversor Mace {PvP} - HP Regeneration -->
+		<ingredient count="1" id="15989" />
+		<production count="1" id="15877" />
+	</item>
+	<item>
+		<!-- Eversor Mace - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Eversor Mace {PvP} - HP Drain -->
+		<ingredient count="1" id="15990" />
+		<production count="1" id="15878" />
+	</item>
+	<item>
+		<!-- Contristo Hammer - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Contristo Hammer {PvP} - Health -->
+		<ingredient count="1" id="15994" />
+		<production count="1" id="15881" />
+	</item>
+	<item>
+		<!-- Contristo Hammer - HP Drain -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Contristo Hammer {PvP} - HP Drain -->
+		<ingredient count="1" id="15991" />
+		<production count="1" id="15880" />
+	</item>
+	<item>
+		<!-- Contristo Hammer - HP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Contristo Hammer {PvP} - HP Regeneration -->
+		<ingredient count="1" id="15993" />
+		<production count="1" id="15881" />
+	</item>
+	<item>
+		<!-- Lava Saw - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Lava Saw {PvP} - Health -->
+		<ingredient count="1" id="15997" />
+		<production count="1" id="15885" />
+	</item>
+	<item>
+		<!-- Lava Saw - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Lava Saw {PvP} - Focus -->
+		<ingredient count="1" id="15995" />
+		<production count="1" id="15883" />
+	</item>
+	<item>
+		<!-- Lava Saw - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Lava Saw {PvP} - Haste -->
+		<ingredient count="1" id="15996" />
+		<production count="1" id="15884" />
+	</item>
+	<item>
+		<!-- Jade Claw - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Jade Claw {PvP} - Health -->
+		<ingredient count="1" id="16000" />
+		<production count="1" id="15888" />
+	</item>
+	<item>
+		<!-- Jade Claw - Critical Stun -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Jade Claw {PvP} - Critical Stun -->
+		<ingredient count="1" id="15998" />
+		<production count="1" id="15886" />
+	</item>
+	<item>
+		<!-- Jade Claw - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Jade Claw {PvP} - Focus -->
+		<ingredient count="1" id="15999" />
+		<production count="1" id="15887" />
+	</item>
+	<item>
+		<!-- Demitelum - Guidance -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Demitelum {PvP} - Guidance -->
+		<ingredient count="1" id="16003" />
+		<production count="1" id="15891" />
+	</item>
+	<item>
+		<!-- Demitelum - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Demitelum {PvP} - Haste -->
+		<ingredient count="1" id="16001" />
+		<production count="1" id="15889" />
+	</item>
+	<item>
+		<!-- Demitelum - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Demitelum {PvP} - Health -->
+		<ingredient count="1" id="16001" />
+		<production count="1" id="15890" />
+	</item>
+	<item>
+		<!-- Sacredium - MP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sacredium {PvP} - MP Regeneration -->
+		<ingredient count="1" id="16006" />
+		<production count="1" id="15894" />
+	</item>
+	<item>
+		<!-- Sacredium - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sacredium {PvP} - Mana Up -->
+		<ingredient count="1" id="16004" />
+		<production count="1" id="15891" />
+	</item>
+	<item>
+		<!-- Sacredium - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Sacredium {PvP} - Acumen -->
+		<ingredient count="1" id="16005" />
+		<production count="1" id="15893" />
+	</item>
+	<item>
+		<!-- Cyclic Cane - MP Regeneration -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Cyclic Cane {PvP} - MP Regeneration -->
+		<ingredient count="1" id="16009" />
+		<production count="1" id="15897" />
+	</item>
+	<item>
+		<!-- Cyclic Cane - Magic Hold -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Cyclic Cane {PvP} - Magic Hold -->
+		<ingredient count="1" id="16007" />
+		<production count="1" id="15895" />
+	</item>
+	<item>
+		<!-- Cyclic Cane - Empower -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Cyclic Cane {PvP} - Empower -->
+		<ingredient count="1" id="16008" />
+		<production count="1" id="15896" />
+	</item>
+	<item>
+		<!-- Archangel Sword - Acumen -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Archangel Sword {PvP} - Acumen -->
+		<ingredient count="1" id="16011" />
+		<production count="1" id="15900" />
+	</item>
+	<item>
+		<!-- Archangel Sword - Magic Hold -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Archangel Sword {PvP} - Magic Hold -->
+		<ingredient count="1" id="16010" />
+		<production count="1" id="15898" />
+	</item>
+	<item>
+		<!-- Archangel Sword - Mana Up -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Archangel Sword {PvP} - Mana Up -->
+		<ingredient count="1" id="16011" />
+		<production count="1" id="15899" />
+	</item>
+	<item>
+		<!-- Recurve Thorne Bow - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Recurve Thorne Bow {PvP} - Focus -->
+		<ingredient count="1" id="16015" />
+		<production count="1" id="15903" />
+	</item>
+	<item>
+		<!-- Recurve Thorne Bow - Critical Slow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Recurve Thorne Bow {PvP} - Critical Slow -->
+		<ingredient count="1" id="16013" />
+		<production count="1" id="15901" />
+	</item>
+	<item>
+		<!-- Recurve Thorne Bow - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Recurve Thorne Bow {PvP} - Cheap Shot -->
+		<ingredient count="1" id="16014" />
+		<production count="1" id="15901" />
+	</item>
+	<item>
+		<!-- Heavenstare Rapier - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Heavenstare Rapier {PvP} - Health -->
+		<ingredient count="1" id="16018" />
+		<production count="1" id="15906" />
+	</item>
+	<item>
+		<!-- Heavenstare Rapier - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Heavenstare Rapier {PvP} - Focus -->
+		<ingredient count="1" id="16016" />
+		<production count="1" id="15904" />
+	</item>
+	<item>
+		<!-- Heavenstare Rapier - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Heavenstare Rapier {PvP} - Haste -->
+		<ingredient count="1" id="16017" />
+		<production count="1" id="15905" />
+	</item>
+	<item>
+		<!-- Pyseal Blade - Health -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Pyseal Blade {PvP} - Health -->
+		<ingredient count="1" id="16011" />
+		<production count="1" id="15909" />
+	</item>
+	<item>
+		<!-- Pyseal Blade - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Pyseal Blade {PvP} - Focus -->
+		<ingredient count="1" id="16019" />
+		<production count="1" id="15907" />
+	</item>
+	<item>
+		<!-- Pyseal Blade - Haste -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Pyseal Blade {PvP} - Haste -->
+		<ingredient count="1" id="16010" />
+		<production count="1" id="15908" />
+	</item>
+	<item>
+		<!-- Thorne Crossbow - Focus -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Thorne Crossbow {PvP} - Focus -->
+		<ingredient count="1" id="16014" />
+		<production count="1" id="15911" />
+	</item>
+	<item>
+		<!-- Thorne Crossbow - Critical Slow -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Thorne Crossbow {PvP} - Critical Slow -->
+		<ingredient count="1" id="16011" />
+		<production count="1" id="15910" />
+	</item>
+	<item>
+		<!-- Thorne Crossbow - Cheap Shot -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Thorne Crossbow {PvP} - Cheap Shot -->
+		<ingredient count="1" id="16013" />
+		<production count="1" id="15911" />
+	</item>
+	<item>
+		<!-- Skull Edge Dual Daggers -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Skull Edge Dual Daggers {PvP} -->
+		<ingredient count="1" id="16153" />
+		<production count="1" id="16151" />
+	</item>
+	<item>
+		<!-- Periel Dual Sword -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Periel Dual Sword {PvP} -->
+		<ingredient count="1" id="16155" />
+		<production count="1" id="16154" />
+	</item>
+	<item>
+		<!-- Mamba Edge Dual Daggers -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Mamba Edge Dual Daggers {PvP} -->
+		<ingredient count="1" id="16157" />
+		<production count="1" id="16156" />
+	</item>
+	<item>
+		<!-- Eternal Core Dual Sword -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Eternal Core Dual Sword {PvP} -->
+		<ingredient count="1" id="16159" />
+		<production count="1" id="16158" />
+	</item>
+	<item>
+		<!-- Armor of Nightmare -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Armor of Nightmare {PvP} -->
+		<ingredient count="1" id="10793" />
+		<production count="1" id="374" />
+	</item>
+	<item>
+		<!-- Majestic Plate Armor -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Majestic Plate Armor {PvP} -->
+		<ingredient count="1" id="10794" />
+		<production count="1" id="1383" />
+	</item>
+	<item>
+		<!-- Leather Armor of Nightmare -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Leather Armor of Nightmare {PvP} -->
+		<ingredient count="1" id="10795" />
+		<production count="1" id="1394" />
+	</item>
+	<item>
+		<!-- Majestic Leather Armor -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Majestic Leather Armor {PvP} -->
+		<ingredient count="1" id="10796" />
+		<production count="1" id="1395" />
+	</item>
+	<item>
+		<!-- Robe of Nightmare -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Robe of Nightmare {PvP} -->
+		<ingredient count="1" id="10797" />
+		<production count="1" id="1408" />
+	</item>
+	<item>
+		<!-- Majestic Robe -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Majestic Robe {PvP} -->
+		<ingredient count="1" id="10798" />
+		<production count="1" id="1409" />
+	</item>
+	<item>
+		<!-- Imperial Crusader Breastplate -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Imperial Crusader Breastplate {PvP} -->
+		<ingredient count="1" id="10799" />
+		<production count="1" id="6373" />
+	</item>
+	<item>
+		<!-- Draconic Leather Armor -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Draconic Leather Armor {PvP} -->
+		<ingredient count="1" id="10800" />
+		<production count="1" id="6379" />
+	</item>
+	<item>
+		<!-- Major Arcana Robe -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Major Arcana Robe {PvP} -->
+		<ingredient count="1" id="10801" />
+		<production count="1" id="6383" />
+	</item>
+	<item>
+		<!-- Dynasty Breast Plate -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Breastplate {PvP} -->
+		<ingredient count="1" id="10801" />
+		<production count="1" id="9416" />
+	</item>
+	<item>
+		<!-- Dynasty Breast Plate - Shield Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Breastplate {PvP} - Shield Master -->
+		<ingredient count="1" id="10803" />
+		<production count="1" id="9417" />
+	</item>
+	<item>
+		<!-- Dynasty Breast Plate - Weapon Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Breastplate {PvP} - Weapon Master -->
+		<ingredient count="1" id="10804" />
+		<production count="1" id="9418" />
+	</item>
+	<item>
+		<!-- Dynasty Breast Plate - Force Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Breastplate {PvP} - Force Master -->
+		<ingredient count="1" id="10805" />
+		<production count="1" id="9419" />
+	</item>
+	<item>
+		<!-- Dynasty Breast Plate - Bard -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Breastplate {PvP} - Bard -->
+		<ingredient count="1" id="10806" />
+		<production count="1" id="9410" />
+	</item>
+	<item>
+		<!-- Dynasty Leather Armor -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Leather Armor {PvP} -->
+		<ingredient count="1" id="10807" />
+		<production count="1" id="9415" />
+	</item>
+	<item>
+		<!-- Dynasty Leather Armor - Dagger Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Leather Armor {PvP} - Dagger Master -->
+		<ingredient count="1" id="10808" />
+		<production count="1" id="9416" />
+	</item>
+	<item>
+		<!-- Dynasty Leather Armor - Bow Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Leather Armor {PvP} - Bow Master -->
+		<ingredient count="1" id="10809" />
+		<production count="1" id="9417" />
+	</item>
+	<item>
+		<!-- Dynasty Tunic -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Tunic {PvP} -->
+		<ingredient count="1" id="10810" />
+		<production count="1" id="9431" />
+	</item>
+	<item>
+		<!-- Dynasty Tunic - Healer -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Tunic {PvP} - Healer -->
+		<ingredient count="1" id="10811" />
+		<production count="1" id="9433" />
+	</item>
+	<item>
+		<!-- Dynasty Tunic - Enchanter -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Tunic {PvP} - Enchanter -->
+		<ingredient count="1" id="10811" />
+		<production count="1" id="9434" />
+	</item>
+	<item>
+		<!-- Dynasty Tunic - Summoner -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Tunic {PvP} - Summoner -->
+		<ingredient count="1" id="10813" />
+		<production count="1" id="9435" />
+	</item>
+	<item>
+		<!-- Dynasty Tunic - Wizard -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Tunic {PvP} - Wizard -->
+		<ingredient count="1" id="10814" />
+		<production count="1" id="9436" />
+	</item>
+	<item>
+		<!-- Dynasty Leather Armor - Force Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Leather Armor {PvP} - Force Master -->
+		<ingredient count="1" id="10815" />
+		<production count="1" id="10116" />
+	</item>
+	<item>
+		<!-- Dynasty Leather Armor - Weapon Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Leather Armor {PvP} - Weapon Master -->
+		<ingredient count="1" id="10816" />
+		<production count="1" id="10117" />
+	</item>
+	<item>
+		<!-- Dynasty Leather Armor - Enchanter -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Leather Armor {PvP} - Enchanter -->
+		<ingredient count="1" id="10817" />
+		<production count="1" id="10168" />
+	</item>
+	<item>
+		<!-- Dynasty Leather Armor - Summoner -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Leather Armor {PvP} - Summoner -->
+		<ingredient count="1" id="10818" />
+		<production count="1" id="10114" />
+	</item>
+	<item>
+		<!-- Dynasty Platinum Plate - Shield Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Platinum Breastplate {PvP} - Shield Master -->
+		<ingredient count="1" id="10810" />
+		<production count="1" id="10118" />
+	</item>
+	<item>
+		<!-- Dynasty Platinum Plate - Weapon Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Platinum Breastplate {PvP} - Weapon Master -->
+		<ingredient count="1" id="10811" />
+		<production count="1" id="10119" />
+	</item>
+	<item>
+		<!-- Dynasty Platinum Plate - Force Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Platinum Breastplate {PvP} - Force Master -->
+		<ingredient count="1" id="10811" />
+		<production count="1" id="10130" />
+	</item>
+	<item>
+		<!-- Dynasty Platinum Plate - Bard -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Platinum Breastplate {PvP} - Bard -->
+		<ingredient count="1" id="10813" />
+		<production count="1" id="10131" />
+	</item>
+	<item>
+		<!-- Dynasty Jewel Leather Armor - Dagger Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Jewel Leather Armor {PvP} - Dagger Master -->
+		<ingredient count="1" id="10815" />
+		<production count="1" id="10133" />
+	</item>
+	<item>
+		<!-- Dynasty Jewel Leather Armor - Bow Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Jewel Leather Armor {PvP} - Bow Master -->
+		<ingredient count="1" id="10816" />
+		<production count="1" id="10134" />
+	</item>
+	<item>
+		<!-- Dynasty Silver Satin Tunic - Healer -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Silver Satin Tunic {PvP} - Healer -->
+		<ingredient count="1" id="10818" />
+		<production count="1" id="10136" />
+	</item>
+	<item>
+		<!-- Dynasty Silver Satin Tunic - Enchanter -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Silver Satin Tunic {PvP} - Enchanter -->
+		<ingredient count="1" id="10819" />
+		<production count="1" id="10137" />
+	</item>
+	<item>
+		<!-- Dynasty Silver Satin Tunic - Summoner -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Silver Satin Tunic {PvP} - Summoner -->
+		<ingredient count="1" id="10830" />
+		<production count="1" id="10138" />
+	</item>
+	<item>
+		<!-- Dynasty Silver Satin Tunic - Wizard -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Silver Satin Tunic {PvP} - Wizard -->
+		<ingredient count="1" id="10831" />
+		<production count="1" id="10139" />
+	</item>
+	<item>
+		<!-- Dynasty Jeweled Leather Armor - Force Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Jewel Leather Armor {PvP} - Force Master -->
+		<ingredient count="1" id="10831" />
+		<production count="1" id="10487" />
+	</item>
+	<item>
+		<!-- Dynasty Jeweled Leather Armor - Weapon Master -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Jewel Leather Armor {PvP} - Weapon Master -->
+		<ingredient count="1" id="10833" />
+		<production count="1" id="10488" />
+	</item>
+	<item>
+		<!-- Dynasty Jeweled Leather Armor - Enchanter -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Jewel Leather Armor {PvP} - Enchanter -->
+		<ingredient count="1" id="10834" />
+		<production count="1" id="10489" />
+	</item>
+	<item>
+		<!-- Dynasty Jeweled Leather Armor - Summoner -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Dynasty Jewel Leather Armor {PvP} - Summoner -->
+		<ingredient count="1" id="10835" />
+		<production count="1" id="10490" />
+	</item>
+	<item>
+		<!-- Vesper Breastplate -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Breastplate {PvP} -->
+		<ingredient count="1" id="14510" />
+		<production count="1" id="13431" />
+	</item>
+	<item>
+		<!-- Vesper Leather Breastplate -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Leather Breastplate {PvP} -->
+		<ingredient count="1" id="14511" />
+		<production count="1" id="13433" />
+	</item>
+	<item>
+		<!-- Vesper Tunic -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Tunic {PvP} -->
+		<ingredient count="1" id="14511" />
+		<production count="1" id="13434" />
+	</item>
+	<item>
+		<!-- Vesper Noble Breastplate -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Noble Breastplate {PvP} -->
+		<ingredient count="1" id="14513" />
+		<production count="1" id="13435" />
+	</item>
+	<item>
+		<!-- Vesper Noble Leather Breastplate -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Noble Leather Breastplate {PvP} -->
+		<ingredient count="1" id="14514" />
+		<production count="1" id="13436" />
+	</item>
+	<item>
+		<!-- Vesper Noble Tunic -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vesper Noble Tunic {PvP} -->
+		<ingredient count="1" id="14515" />
+		<production count="1" id="13437" />
+	</item>
+	<item>
+		<!-- Moirai Breastplate -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Moirai Breastplate {PvP} -->
+		<ingredient count="1" id="16174" />
+		<production count="1" id="15609" />
+	</item>
+	<item>
+		<!-- Moirai Leather Breastplate -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Moirai Leather Breastplate {PvP} -->
+		<ingredient count="1" id="16175" />
+		<production count="1" id="15610" />
+	</item>
+	<item>
+		<!-- Moirai Tunic -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Moirai Tunic {PvP} -->
+		<ingredient count="1" id="16176" />
+		<production count="1" id="15611" />
+	</item>
+	<item>
+		<!-- Vorpal Breastplate -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vorpal Breastplate {PvP} -->
+		<ingredient count="1" id="16171" />
+		<production count="1" id="15591" />
+	</item>
+	<item>
+		<!-- Vorpal Leather Breastplate -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vorpal Leather Breastplate {PvP} -->
+		<ingredient count="1" id="16171" />
+		<production count="1" id="15593" />
+	</item>
+	<item>
+		<!-- Vorpal Tunic -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Vorpal Tunic {PvP} -->
+		<ingredient count="1" id="16173" />
+		<production count="1" id="15594" />
+	</item>
+	<item>
+		<!-- Elegia Breastplate -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Elegia Breastplate {PvP} -->
+		<ingredient count="1" id="16168" />
+		<production count="1" id="15575" />
+	</item>
+	<item>
+		<!-- Elegia Leather Breastplate -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Elegia Leather Breastplate {PvP} -->
+		<ingredient count="1" id="16169" />
+		<production count="1" id="15576" />
+	</item>
+	<item>
+		<!-- Elegia Tunic -->
+		<!-- Fame Points -->
+		
+		<!-- Adena -->
+		<ingredient count="10000000" id="57"/>
+		<!-- Elegia Tunic {PvP} -->
+		<ingredient count="1" id="16170" />
+		<production count="1" id="15577" />
+	</item>
+</list>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="16000" type="Weapon" name="Jade Claw {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_jademice_claw_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -32,6 +33,7 @@
 		</for>
 	</item>
 	<item id="16001" type="Weapon" name="Demitelum {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_ghostcleaner_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -63,6 +65,7 @@
 		</for>
 	</item>
 	<item id="16002" type="Weapon" name="Demitelum {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_ghostcleaner_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -94,6 +97,7 @@
 		</for>
 	</item>
 	<item id="16003" type="Weapon" name="Demitelum {PvP} - Guidance">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_ghostcleaner_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -125,6 +129,7 @@
 		</for>
 	</item>
 	<item id="16004" type="Weapon" name="Sacredium {PvP} - Mana Up">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_sacredumors_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -157,6 +162,7 @@
 		</for>
 	</item>
 	<item id="16005" type="Weapon" name="Sacredium {PvP} - Acumen">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_sacredumors_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -189,6 +195,7 @@
 		</for>
 	</item>
 	<item id="16006" type="Weapon" name="Sacredium {PvP} - MP Regeneration">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_sacredumors_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -221,6 +228,7 @@
 		</for>
 	</item>
 	<item id="16007" type="Weapon" name="Cyclic Cane {PvP} - Magic Hold">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_psyskilt_cane_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -255,6 +263,7 @@
 		</for>
 	</item>
 	<item id="16008" type="Weapon" name="Cyclic Cane {PvP} - Empower">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_psyskilt_cane_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -287,6 +296,7 @@
 		</for>
 	</item>
 	<item id="16009" type="Weapon" name="Cyclic Cane {PvP} - MP Regeneration">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_psyskilt_cane_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -319,6 +329,7 @@
 		</for>
 	</item>
 	<item id="16010" type="Weapon" name="Archangel Sword {PvP} - Magic Hold">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_archangel_sword_i001" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -352,6 +363,7 @@
 		</for>
 	</item>
 	<item id="16011" type="Weapon" name="Archangel Sword {PvP} - Mana Up">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_archangel_sword_i001" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -383,6 +395,7 @@
 		</for>
 	</item>
 	<item id="16012" type="Weapon" name="Archangel Sword {PvP} - Acumen">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_archangel_sword_i001" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -414,6 +427,7 @@
 		</for>
 	</item>
 	<item id="16013" type="Weapon" name="Recurve Thorne Bow {PvP} - Critical Slow">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_recurvethorne_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -448,6 +462,7 @@
 		</for>
 	</item>
 	<item id="16014" type="Weapon" name="Recurve Thorne Bow {PvP} - Cheap Shot">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_recurvethorne_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -481,6 +496,7 @@
 		</for>
 	</item>
 	<item id="16015" type="Weapon" name="Recurve Thorne Bow {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_recurvethorne_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -514,6 +530,7 @@
 		</for>
 	</item>
 	<item id="16016" type="Weapon" name="Heavenstare Rapier {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_heavenstair_rapier_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -549,6 +566,7 @@
 		</for>
 	</item>
 	<item id="16017" type="Weapon" name="Heavenstare Rapier {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_heavenstair_rapier_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -584,6 +602,7 @@
 		</for>
 	</item>
 	<item id="16018" type="Weapon" name="Heavenstare Rapier {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_heavenstair_rapier_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -619,6 +638,7 @@
 		</for>
 	</item>
 	<item id="16019" type="Weapon" name="Pyseal Blade {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_pyseal_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -653,6 +673,7 @@
 		</for>
 	</item>
 	<item id="16020" type="Weapon" name="Pyseal Blade {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_pyseal_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -687,6 +708,7 @@
 		</for>
 	</item>
 	<item id="16021" type="Weapon" name="Pyseal Blade {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_pyseal_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -721,6 +743,7 @@
 		</for>
 	</item>
 	<item id="16022" type="Weapon" name="Thorne Crossbow {PvP} - Critical Slow">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_thorne_crossbow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -757,6 +780,7 @@
 		</for>
 	</item>
 	<item id="16023" type="Weapon" name="Thorne Crossbow {PvP} - Cheap Shot">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_thorne_crossbow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -792,6 +816,7 @@
 		</for>
 	</item>
 	<item id="16024" type="Weapon" name="Thorne Crossbow {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_thorne_crossbow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />

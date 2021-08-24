@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="10700" type="Weapon" name="Eclair Bijou {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -36,6 +37,7 @@
 		</for>
 	</item>
 	<item id="10701" type="Weapon" name="Eclair Bijou {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -71,6 +73,7 @@
 		</for>
 	</item>
 	<item id="10702" type="Weapon" name="Eclair Bijou {PvP} - Critical Poison">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -107,6 +110,7 @@
 		</for>
 	</item>
 	<item id="10703" type="Weapon" name="Durendal {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_death_bringer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -141,6 +145,7 @@
 		</for>
 	</item>
 	<item id="10704" type="Weapon" name="Durendal {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -175,6 +180,7 @@
 		</for>
 	</item>
 	<item id="10705" type="Weapon" name="Durendal {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -209,6 +215,7 @@
 		</for>
 	</item>
 	<item id="10706" type="Weapon" name="Screaming Vengeance {PvP} - Cheap Shot">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_soul_shooter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -244,6 +251,7 @@
 		</for>
 	</item>
 	<item id="10707" type="Weapon" name="Screaming Vengeance {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_soul_shooter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -279,6 +287,7 @@
 		</for>
 	</item>
 	<item id="10708" type="Weapon" name="Screaming Vengeance {PvP} - Quick Recovery">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_soul_shooter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -314,6 +323,7 @@
 		</for>
 	</item>
 	<item id="10709" type="Weapon" name="Tallum Blade*Damascus {PvP}">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -345,6 +355,7 @@
 		</for>
 	</item>
 	<item id="10710" type="Weapon" name="Forgotten Blade {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_forgotten_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -375,6 +386,7 @@
 		</for>
 	</item>
 	<item id="10711" type="Weapon" name="Forgotten Blade {PvP} - Health">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_forgotten_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -405,6 +417,7 @@
 		</for>
 	</item>
 	<item id="10712" type="Weapon" name="Forgotten Blade {PvP} - Focus">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_forgotten_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -435,6 +448,7 @@
 		</for>
 	</item>
 	<item id="10713" type="Weapon" name="Heavens Divider {PvP} - Haste">
+		<set name="element_enabled" val="true"/>
 		<set name="icon" val="icon.weapon_heavens_divider_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />

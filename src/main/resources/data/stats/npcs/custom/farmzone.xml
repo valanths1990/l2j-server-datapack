@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
+    <npc id="27405" level="85" type="L2CustomMonster" name="Monastic Pilgrim" usingServerSideName="true" usingServerSideTitle="true" title="L2 Angel">
+        <!-- TODO: Must be confirmed -->
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <equipment rhand="148"/> <!-- rhand: Sword of Valhalla -->
+        <parameters>
+            <param name="Breath_Prob" value="1000"/>
+            <param name="Skill01_Prob" value="1000"/>
+            <param name="SelfRangeDD_Prob" value="1000"/>
+            <skill name="Skill01_ID" id="5274" level="5"/> <!-- NPC(party) - Physical Single Long Range Attack -->
+            <skill name="Breath" id="5827" level="3"/> <!-- Fireball -->
+            <skill name="SelfRangeDD_ID" id="5832" level="1"/> <!-- Hate Aura -->
+        </parameters>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="15093.4274797799" hpRegen="114.399578021039" mp="1674.8" mpRegen="3"/>
+            <attack physical="5746.81895750842" magical="3924.33235398589" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="2000.2" magical="2000.528184"/>
+            <attribute>
+                <attack type="FIRE" value="130"/>
+                <defence fire="180" water="120" wind="150" earth="150" holy="150" dark="150" default="150"/>
+            </attribute>
+            <speed>
+                <walk ground="56"/>
+                <run ground="210"/>
+            </speed>
+            <hitTime>450</hitTime>
+        </stats>
+        <ai>
+            <clanList>
+                <clan>DIVINE</clan>
+            </clanList>
+        </ai>
+        <collision>
+            <radius normal="12"/>
+            <height normal="27.8"/>
+        </collision>
+        <dropLists>
+            <death>
+                <item id="57" min="800000" max="1200000" chance="80"/>
+            </death>
+        </dropLists>
+    </npc>
+    <npc id="27412" level="85" type="L2CustomMonster" name="Divinity Supervisor" usingServerSideTitle="true" usingServerSideName="true" title="L2 Angel">
+        <!-- TODO: Must be confirmed -->
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <parameters>
+            <param name="Breath_Prob" value="1000"/>
+            <param name="Skill01_Prob" value="1000"/>
+            <param name="SelfRangeDD_Prob" value="1000"/>
+            <skill name="Skill01_ID" id="5274" level="5"/> <!-- NPC(party) - Physical Single Long Range Attack -->
+            <skill name="Breath" id="5827" level="3"/> <!-- Fireball -->
+            <skill name="SelfRangeDD_ID" id="5832" level="1"/> <!-- Hate Aura -->
+        </parameters>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="15093.4274797799" hpRegen="114.399578021039" mp="1674.8" mpRegen="3"/>
+            <attack physical="5746.81895750842" magical="3924.33235398589" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="2000.2" magical="2000.528184"/>
+            <attribute>
+                <attack type="FIRE" value="130"/>
+                <defence fire="180" water="120" wind="150" earth="150" holy="150" dark="150" default="150"/>
+            </attribute>
+            <speed>
+                <walk ground="56"/>
+                <run ground="210"/>
+            </speed>
+            <hitTime>450</hitTime>
+        </stats>
+        <ai>
+            <clanList>
+                <clan>DIVINE</clan>
+            </clanList>
+        </ai>
+        <collision>
+            <radius normal="13"/>
+            <height normal="47"/>
+        </collision>
+        <dropLists>
+            <death>
+                <item id="57" min="800000" max="1200000" chance="80"/>
+            </death>
+        </dropLists>
+    </npc>
+    <npc id="27414" level="85" type="L2Monster" name="Divinity Magus" usingServerSideName="true" usingServerSideTitle="true" title="L2 Angel">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <stats str="40" int="20" dex="30" wit="20" con="43" men="20">
+            <vitals hp="22900.11306877694" hpRegen="8.5" mp="16740.8" mpRegen="3"/>
+            <attack physical="3000.537548504614" magical="4000.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="10000.375" magical="8000.80341"/>
+            <attribute>
+                <attack type="HOLY" value="130"/>
+                <defence fire="130" water="130" wind="130" earth="130" holy="150" dark="90" default="100"/>
+            </attribute>
+            <speed>
+                <walk ground="40"/>
+                <run ground="150"/>
+            </speed>
+        </stats>
+        <ai clanHelpRange="300" aggroRange="300">
+            <clanList>
+                <clan>DIVINE</clan>
+            </clanList>
+        </ai>
+        <collision>
+            <radius normal="18"/>
+            <height normal="44"/>
+        </collision>
+        <dropLists>
+            <death>
+                <item id="57" min="10000000" max="20000000" chance="100"/>
+                <item id="9627" max="10" min="10" chance="100"/>
+            </death>
+        </dropLists>
+    </npc>
+    <npc id="27413" level="85" type="L2Monster" name="Divinity Fighter" usingServerSideTitle="true" usingServerSideName="true" title="L2 Angel">
+        <!-- TODO: Must be confirmed -->
+        <race>DIVINE</race>
+        <sex>FEMALE</sex>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="99999.11306" hpRegen="8.5" mp="1674.8" mpRegen="3"/>
+            <attack physical="6000.537548504614" magical="9000.75132" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="15000.375" magical="15000.80341"/>
+            <attribute>
+                <attack type="HOLY" value="130"/>
+                <defence fire="130" water="130" wind="130" earth="130" holy="150" dark="90" default="100"/>
+            </attribute>
+            <speed>
+                <walk ground="50"/>
+                <run ground="150"/>
+            </speed>
+        </stats>
+        <dropLists>
+            <death>
+                <item id="57" min="200000000" max="200000000" chance="100"/>
+                <item id="9627" max="100" min="100" chance="100"/>
+            </death>
+        </dropLists>
+        <ai aggroRange="600" clanHelpRange="3500" >
+            <clanList>
+                <clan>DIVINE</clan>
+            </clanList>
+        </ai>
+        <collision>
+            <radius normal="24"/>
+            <height normal="49"/>
+        </collision>
+
+    </npc>
+    <npc id="27411" level="85" type="L2CustomMonster" name="Divinity Manager" usingServerSideName="true" usingServerSideTitle="true" title="L2 Angel">
+        <!-- TODO: Must be confirmed -->
+        <sex>MALE</sex>
+        <parameters>
+            <param name="Breath_Prob" value="1000"/>
+            <param name="Skill01_Prob" value="1000"/>
+            <param name="SelfRangeDD_Prob" value="1000"/>
+            <skill name="Skill01_ID" id="5274" level="5"/> <!-- NPC(party) - Physical Single Long Range Attack -->
+            <skill name="Breath" id="5827" level="3"/> <!-- Fireball -->
+            <skill name="SelfRangeDD_ID" id="5832" level="1"/> <!-- Hate Aura -->
+        </parameters>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="15093.4274797799" hpRegen="114.399578021039" mp="1674.8" mpRegen="3"/>
+            <attack physical="5746.81895750842" magical="3924.33235398589" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="2000.2" magical="2000.528184"/>
+            <attribute>
+                <attack type="FIRE" value="130"/>
+                <defence fire="180" water="120" wind="150" earth="150" holy="150" dark="150" default="150"/>
+            </attribute>
+            <speed>
+                <walk ground="56"/>
+                <run ground="210"/>
+            </speed>
+            <hitTime>450</hitTime>
+        </stats>
+        <collision>
+            <radius normal="25"/>
+            <height normal="35"/>
+        </collision>
+        <ai>
+            <clanList>
+                <clan>DIVINE</clan>
+            </clanList>
+        </ai>
+        <dropLists>
+            <death>
+                <item id="57" min="800000" max="1200000" chance="80"/>
+            </death>
+        </dropLists>
+    </npc>
+    <npc id="22541" level="85" type="L2CustomMonster" name="Dragon Steed Troop Infantry" title="L2 Angel" usingServerSideTitle="true" usingServerSideName="true">
+        <!-- Confirmed CT2.5 -->
+        <parameters>
+            <param name="Breath_Prob" value="1000"/>
+            <param name="Skill01_Prob" value="1000"/>
+            <param name="SelfRangeDD_Prob" value="1000"/>
+            <skill name="Skill01_ID" id="5274" level="5"/> <!-- NPC(party) - Physical Single Long Range Attack -->
+            <skill name="Breath" id="5827" level="3"/> <!-- Fireball -->
+            <skill name="SelfRangeDD_ID" id="5832" level="1"/> <!-- Hate Aura -->
+        </parameters>
+        <race>DRAGON</race>
+        <sex>MALE</sex>
+        <equipment rhand="13979" lhand="13980"/> <!-- rhand: Exclusive to Monsters (Dragon Steed Troop Battle Infantry Sword) lhand: Exclusive to Monsters (Dragon Steed Troop Battle Infantry Shield) -->
+        <acquire expRate="13.0229036875" sp="8955"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="15093.4274797799" hpRegen="114.399578021039" mp="1674.8" mpRegen="3"/>
+            <attack physical="5746.81895750842" magical="3924.33235398589" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="2000.2" magical="2000.528184"/>
+            <attribute>
+                <attack type="FIRE" value="130"/>
+                <defence fire="180" water="120" wind="150" earth="150" holy="150" dark="150" default="150"/>
+            </attribute>
+            <speed>
+                <walk ground="56"/>
+                <run ground="210"/>
+            </speed>
+            <hitTime>450</hitTime>
+        </stats>
+        <status undying="false" noSleepMode="true" canBeSown="true"/>
+        <skillList>
+            <skill id="4408" level="9"/> <!--HP Increase (1/2x) -->
+            <skill id="4409" level="1"/> <!--MP Increase (1x) -->
+            <skill id="4410" level="11"/> <!--Average P. Atk. -->
+            <skill id="4411" level="11"/> <!--Average M. Atk. -->
+            <skill id="4412" level="14"/> <!--Strong P. Def. -->
+            <skill id="4413" level="15"/> <!--Strong M. Def. -->
+            <skill id="4414" level="2"/> <!--Standard Type -->
+            <skill id="4415" level="3"/> <!--One-handed Sword -->
+            <skill id="4416" level="10"/> <!--Dragons -->
+            <skill id="5274" level="5"/> <!--NPC(party) - Physical Single Long Range Attack -->
+            <skill id="5462" level="1"/> <!--Fire Attacks -->
+            <skill id="5827" level="3"/> <!--Fireball -->
+            <skill id="5832" level="1"/> <!--Hate Aura -->
+        </skillList>
+        <exCrtEffect>false</exCrtEffect>
+        <sNpcPropHpRate>0.5</sNpcPropHpRate>
+        <collision>
+            <radius normal="22"/>
+            <height normal="42"/>
+        </collision>
+        <ai>
+            <clanList>
+                <clan>DIVINE</clan>
+            </clanList>
+        </ai>
+        <dropLists>
+            <death>
+                <item id="57" min="800000" max="1200000" chance="80"/>
+            </death>
+        </dropLists>
+    </npc>
+    <npc id="22544" level="85" type="L2CustomMonster" name="Dragon Steed Troop Magic Soldier" usingServerSideName="true" usingServerSideTitle="true" title="L2 Angel">
+        <!-- Confirmed CT2.5 -->
+        <parameters>
+            <param name="Breath_Prob" value="1000"/>
+            <param name="Skill01_Prob" value="10000"/>
+            <param name="Skill02_Prob" value="10000"/>
+            <skill name="Skill01_ID" id="5312" level="5"/> <!-- NPC(party) -Magic Single Long Range DD - Fire -->
+            <skill name="Skill02_ID" id="5829" level="4"/> <!-- Fire Flare -->
+            <skill name="Breath" id="5827" level="3"/> <!-- Fireball -->
+            <skill name="Buff" id="5834" level="1"/> <!-- Magic Barrier -->
+        </parameters>
+        <race>DRAGON</race>
+        <sex>MALE</sex>
+        <equipment rhand="13981"/> <!-- rhand: Exclusive to Monsters (Mounted Troops Tactics) -->
+        <acquire expRate="13.2711816666667" sp="9090"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="15093.4274797799" hpRegen="114.399578021039" mp="1674.8" mpRegen="3"/>
+            <attack physical="5746.81895750842" magical="3924.33235398589" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="2000.2" magical="2000.528184"/>
+            <attribute>
+                <attack type="FIRE" value="130"/>
+                <defence fire="180" water="120" wind="150" earth="150" holy="150" dark="150" default="150"/>
+            </attribute>
+            <speed>
+                <walk ground="82"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>480</hitTime>
+        </stats>
+        <status undying="false" noSleepMode="true" canBeSown="true"/>
+        <skillList>
+            <skill id="4408" level="9"/> <!--HP Increase (1/2x) -->
+            <skill id="4409" level="1"/> <!--MP Increase (1x) -->
+            <skill id="4410" level="11"/> <!--Average P. Atk. -->
+            <skill id="4411" level="11"/> <!--Average M. Atk. -->
+            <skill id="4412" level="11"/> <!--Average P. Def. -->
+            <skill id="4413" level="11"/> <!--Average M. Def. -->
+            <skill id="4414" level="2"/> <!--Standard Type -->
+            <skill id="4415" level="3"/> <!--One-handed Sword -->
+            <skill id="4416" level="10"/> <!--Dragons -->
+            <skill id="5312" level="5"/> <!--NPC(party) -Magic Single Long Range DD - Fire -->
+            <skill id="5462" level="1"/> <!--Fire Attacks -->
+            <skill id="5827" level="3"/> <!--Fireball -->
+            <skill id="5829" level="4"/> <!--Fire Flare -->
+            <skill id="5834" level="1"/> <!--Magic Barrier -->
+        </skillList>
+        <exCrtEffect>false</exCrtEffect>
+        <sNpcPropHpRate>0.5</sNpcPropHpRate>
+        <collision>
+            <radius normal="25"/>
+            <height normal="34.5"/>
+        </collision>
+        <ai>
+            <clanList>
+                <clan>DIVINE</clan>
+            </clanList>
+        </ai>
+        <dropLists>
+            <death>
+                <item id="57" min="800000" max="1200000" chance="80"/>
+            </death>
+        </dropLists>
+    </npc>
+</list>

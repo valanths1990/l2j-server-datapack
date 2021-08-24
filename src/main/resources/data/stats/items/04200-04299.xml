@@ -229,6 +229,7 @@
 		</for>
 	</item>
 	<item id="4222" type="Armor" name="Dream Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_hoplon_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -249,6 +250,7 @@
 		</for>
 	</item>
 	<item id="4223" type="Armor" name="Ubiquitous Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_dwarven_chain_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

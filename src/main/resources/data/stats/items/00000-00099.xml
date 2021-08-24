@@ -377,6 +377,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="18" type="Armor" name="Leather Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_leather_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -394,6 +395,7 @@
 		</for>
 	</item>
 	<item id="19" type="Armor" name="Small Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_small_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

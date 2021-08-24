@@ -1,0 +1,2919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/multisell.xsd">
+		<item>
+			<!-- Dynasty Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Sword - Focus -->
+			<ingredient count="1" id="9854" />
+			<production count="1" id="9442" />
+		</item>
+		<item>
+			<!-- Dynasty Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Sword - Health -->
+			<ingredient count="1" id="9855" />
+			<production count="1" id="9442" />
+		</item>
+		<item>
+			<!-- Dynasty Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Sword - Light -->
+			<ingredient count="1" id="9856" />
+			<production count="1" id="9442" />
+		</item>
+		<item>
+			<!-- Dynasty Blade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Blade - Focus -->
+			<ingredient count="1" id="9857" />
+			<production count="1" id="9443" />
+		</item>
+		<item>
+			<!-- Dynasty Blade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Blade - Health -->
+			<ingredient count="1" id="9858" />
+			<production count="1" id="9443" />
+		</item>
+		<item>
+			<!-- Dynasty Blade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Blade - Light -->
+			<ingredient count="1" id="9859" />
+			<production count="1" id="9443" />
+		</item>
+		<item>
+			<!-- Dynasty Phantom -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Phantom - Acumen -->
+			<ingredient count="1" id="9860" />
+			<production count="1" id="9444" />
+		</item>
+		<item>
+			<!-- Dynasty Phantom -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Phantom - Mana Up -->
+			<ingredient count="1" id="9861" />
+			<production count="1" id="9444" />
+		</item>
+		<item>
+			<!-- Dynasty Phantom -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Phantom - Conversion -->
+			<ingredient count="1" id="9862" />
+			<production count="1" id="9444" />
+		</item>
+		<item>
+			<!-- Dynasty Bow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Bow - Cheap Shot -->
+			<ingredient count="1" id="9863" />
+			<production count="1" id="9445" />
+		</item>
+		<item>
+			<!-- Dynasty Bow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Bow - Guidance -->
+			<ingredient count="1" id="9864" />
+			<production count="1" id="9445" />
+		</item>
+		<item>
+			<!-- Dynasty Bow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Bow - Focus -->
+			<ingredient count="1" id="9865" />
+			<production count="1" id="9445" />
+		</item>
+		<item>
+			<!-- Dynasty Knife -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Knife - Focus -->
+			<ingredient count="1" id="9866" />
+			<production count="1" id="9446" />
+		</item>
+		<item>
+			<!-- Dynasty Knife -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Knife - Evasion -->
+			<ingredient count="1" id="9867" />
+			<production count="1" id="9446" />
+		</item>
+		<item>
+			<!-- Dynasty Knife -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Knife - Critical Damage -->
+			<ingredient count="1" id="9868" />
+			<production count="1" id="9446" />
+		</item>
+		<item>
+			<!-- Dynasty Halberd -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Halberd - Anger -->
+			<ingredient count="1" id="9869" />
+			<production count="1" id="9447" />
+		</item>
+		<item>
+			<!-- Dynasty Halberd -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Halberd - Critical Stun -->
+			<ingredient count="1" id="9870" />
+			<production count="1" id="9447" />
+		</item>
+		<item>
+			<!-- Dynasty Halberd -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Halberd - Light -->
+			<ingredient count="1" id="9871" />
+			<production count="1" id="9447" />
+		</item>
+		<item>
+			<!-- Dynasty Cudgel -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Cudgel - Anger -->
+			<ingredient count="1" id="9872" />
+			<production count="1" id="9448" />
+		</item>
+		<item>
+			<!-- Dynasty Cudgel -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Cudgel - Health -->
+			<ingredient count="1" id="9873" />
+			<production count="1" id="9448" />
+		</item>
+		<item>
+			<!-- Dynasty Cudgel -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Cudgel - Rsk. Focus -->
+			<ingredient count="1" id="9874" />
+			<production count="1" id="9448" />
+		</item>
+		<item>
+			<!-- Dynasty Mace -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Mace - Mana Up -->
+			<ingredient count="1" id="9875" />
+			<production count="1" id="9449" />
+		</item>
+		<item>
+			<!-- Dynasty Mace -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Mace - Conversion -->
+			<ingredient count="1" id="9876" />
+			<production count="1" id="9449" />
+		</item>
+		<item>
+			<!-- Dynasty Mace -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Mace - Acumen -->
+			<ingredient count="1" id="9877" />
+			<production count="1" id="9449" />
+		</item>
+		<item>
+			<!-- Dynasty Bagh-Nakh -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Bagh-Nakh - Rsk. Evasion -->
+			<ingredient count="1" id="9878" />
+			<production count="1" id="9450" />
+		</item>
+		<item>
+			<!-- Dynasty Bagh-Nakh -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Bagh-Nakh - Focus -->
+			<ingredient count="1" id="9879" />
+			<production count="1" id="9450" />
+		</item>
+		<item>
+			<!-- Dynasty Bagh-Nakh -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Bagh-Nakh - Haste -->
+			<ingredient count="1" id="9880" />
+			<production count="1" id="9450" />
+		</item>
+		<item>
+			<!-- Dynasty Rapier -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Rapier - Focus -->
+			<ingredient count="1" id="9377" />
+			<production count="1" id="9376" />
+		</item>
+		<item>
+			<!-- Dynasty Rapier -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Rapier - Health -->
+			<ingredient count="1" id="9378" />
+			<production count="1" id="9376" />
+		</item>
+		<item>
+			<!-- Dynasty Rapier -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Rapier - Light -->
+			<ingredient count="1" id="9379" />
+			<production count="1" id="9376" />
+		</item>
+		<item>
+			<!-- Dynasty Ancient Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Ancient Sword - Focus -->
+			<ingredient count="1" id="9381" />
+			<production count="1" id="9380" />
+		</item>
+		<item>
+			<!-- Dynasty Ancient Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Ancient Sword - Health -->
+			<ingredient count="1" id="9382" />
+			<production count="1" id="9380" />
+		</item>
+		<item>
+			<!-- Dynasty Ancient Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Ancient Sword - Light -->
+			<ingredient count="1" id="9383" />
+			<production count="1" id="9380" />
+		</item>
+		<item>
+			<!-- Dynasty Crossbow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Crossbow - Cheap Shot -->
+			<ingredient count="1" id="9385" />
+			<production count="1" id="9384" />
+		</item>
+		<item>
+			<!-- Dynasty Crossbow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Crossbow - Guidance -->
+			<ingredient count="1" id="9386" />
+			<production count="1" id="9384" />
+		</item>
+		<item>
+			<!-- Dynasty Crossbow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Crossbow - Focus -->
+			<ingredient count="1" id="9387" />
+			<production count="1" id="9384" />
+		</item>
+		<item>
+			<!-- Dynasty Staff -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Staff - Mana Up -->
+			<ingredient count="1" id="10527" />
+			<production count="1" id="10252" />
+		</item>
+		<item>
+			<!-- Dynasty Staff -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Staff - Conversion -->
+			<ingredient count="1" id="10528" />
+			<production count="1" id="10252" />
+		</item>
+		<item>
+			<!-- Dynasty Staff -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Staff - Acumen -->
+			<ingredient count="1" id="10529" />
+			<production count="1" id="10252" />
+		</item>
+		<item>
+			<!-- Dynasty Crusher -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Crusher - Anger -->
+			<ingredient count="1" id="10530" />
+			<production count="1" id="10253" />
+		</item>
+		<item>
+			<!-- Dynasty Crusher -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Crusher - Health -->
+			<ingredient count="1" id="10531" />
+			<production count="1" id="10253" />
+		</item>
+		<item>
+			<!-- Dynasty Crusher -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Crusher - Rsk. Focus -->
+			<ingredient count="1" id="10532" />
+			<production count="1" id="10253" />
+		</item>
+		<item>
+			<!-- Icarus Sawsword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Sawsword - Focus -->
+			<ingredient count="1" id="10434" />
+			<production count="1" id="10215" />
+		</item>
+		<item>
+			<!-- Icarus Sawsword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Sawsword - Health -->
+			<ingredient count="1" id="10435" />
+			<production count="1" id="10215" />
+		</item>
+		<item>
+			<!-- Icarus Sawsword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Sawsword - Light -->
+			<ingredient count="1" id="10436" />
+			<production count="1" id="10215" />
+		</item>
+		<item>
+			<!-- Icarus Heavy Arms -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Heavy Arms - Focus -->
+			<ingredient count="1" id="10437" />
+			<production count="1" id="10218" />
+		</item>
+		<item>
+			<!-- Icarus Heavy Arms -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Heavy Arms - Health -->
+			<ingredient count="1" id="10438" />
+			<production count="1" id="10218" />
+		</item>
+		<item>
+			<!-- Icarus Heavy Arms -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Heavy Arms - Light -->
+			<ingredient count="1" id="10439" />
+			<production count="1" id="10218" />
+		</item>
+		<item>
+			<!-- Icarus Spirit -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Spirit - Acumen -->
+			<ingredient count="1" id="10440" />
+			<production count="1" id="10217" />
+		</item>
+		<item>
+			<!-- Icarus Spirit -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Spirit - Mana Up -->
+			<ingredient count="1" id="10441" />
+			<production count="1" id="10217" />
+		</item>
+		<item>
+			<!-- Icarus Spirit -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Spirit - Conversion -->
+			<ingredient count="1" id="10442" />
+			<production count="1" id="10217" />
+		</item>
+		<item>
+			<!-- Icarus Spitter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Spitter - Cheap Shot -->
+			<ingredient count="1" id="10443" />
+			<production count="1" id="10223" />
+		</item>
+		<item>
+			<!-- Icarus Spitter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Spitter - Guidance -->
+			<ingredient count="1" id="10444" />
+			<production count="1" id="10223" />
+		</item>
+		<item>
+			<!-- Icarus Spitter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Spitter - Focus -->
+			<ingredient count="1" id="10445" />
+			<production count="1" id="10223" />
+		</item>
+		<item>
+			<!-- Icarus Disperser -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Disperser - Focus -->
+			<ingredient count="1" id="10446" />
+			<production count="1" id="10216" />
+		</item>
+		<item>
+			<!-- Icarus Disperser -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Disperser - Evasion -->
+			<ingredient count="1" id="10447" />
+			<production count="1" id="10216" />
+		</item>
+		<item>
+			<!-- Icarus Disperser -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Disperser - Critical Damage -->
+			<ingredient count="1" id="10448" />
+			<production count="1" id="10216" />
+		</item>
+		<item>
+			<!-- Icarus Trident -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Trident - Anger -->
+			<ingredient count="1" id="10449" />
+			<production count="1" id="10219" />
+		</item>
+		<item>
+			<!-- Icarus Trident -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Trident - Critical Stun -->
+			<ingredient count="1" id="10450" />
+			<production count="1" id="10219" />
+		</item>
+		<item>
+			<!-- Icarus Trident -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Trident - Light -->
+			<ingredient count="1" id="10451" />
+			<production count="1" id="10219" />
+		</item>
+		<item>
+			<!-- Icarus Hammer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hammer - Anger -->
+			<ingredient count="1" id="10452" />
+			<production count="1" id="10220" />
+		</item>
+		<item>
+			<!-- Icarus Hammer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hammer - Health -->
+			<ingredient count="1" id="10453" />
+			<production count="1" id="10220" />
+		</item>
+		<item>
+			<!-- Icarus Hammer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hammer - Rsk. Focus -->
+			<ingredient count="1" id="10454" />
+			<production count="1" id="10220" />
+		</item>
+		<item>
+			<!-- Icarus Hall -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hall - Mana Up -->
+			<ingredient count="1" id="10455" />
+			<production count="1" id="10222" />
+		</item>
+		<item>
+			<!-- Icarus Hall -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hall - Conversion -->
+			<ingredient count="1" id="10456" />
+			<production count="1" id="10222" />
+		</item>
+		<item>
+			<!-- Icarus Hall -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hall - Acumen -->
+			<ingredient count="1" id="10457" />
+			<production count="1" id="10222" />
+		</item>
+		<item>
+			<!-- Icarus Hand -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hand - Rsk. Evasion -->
+			<ingredient count="1" id="10458" />
+			<production count="1" id="10221" />
+		</item>
+		<item>
+			<!-- Icarus Hand -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hand - Focus -->
+			<ingredient count="1" id="10459" />
+			<production count="1" id="10221" />
+		</item>
+		<item>
+			<!-- Icarus Hand -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hand - Haste -->
+			<ingredient count="1" id="10460" />
+			<production count="1" id="10221" />
+		</item>
+		<item>
+			<!-- Icarus Stinger -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Stinger - Focus -->
+			<ingredient count="1" id="10461" />
+			<production count="1" id="10224" />
+		</item>
+		<item>
+			<!-- Icarus Stinger -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Stinger - Health -->
+			<ingredient count="1" id="10462" />
+			<production count="1" id="10224" />
+		</item>
+		<item>
+			<!-- Icarus Stinger -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Stinger - Light -->
+			<ingredient count="1" id="10463" />
+			<production count="1" id="10224" />
+		</item>
+		<item>
+			<!-- Icarus Wingblade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Wingblade - Focus -->
+			<ingredient count="1" id="10464" />
+			<production count="1" id="10225" />
+		</item>
+		<item>
+			<!-- Icarus Wingblade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Wingblade - Health -->
+			<ingredient count="1" id="10465" />
+			<production count="1" id="10225" />
+		</item>
+		<item>
+			<!-- Icarus Wingblade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Wingblade - Light -->
+			<ingredient count="1" id="10466" />
+			<production count="1" id="10225" />
+		</item>
+		<item>
+			<!-- Icarus Shooter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Shooter - Cheap Shot -->
+			<ingredient count="1" id="10467" />
+			<production count="1" id="10226" />
+		</item>
+		<item>
+			<!-- Icarus Shooter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Shooter - Guidance -->
+			<ingredient count="1" id="10468" />
+			<production count="1" id="10226" />
+		</item>
+		<item>
+			<!-- Icarus Shooter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Shooter - Focus -->
+			<ingredient count="1" id="10469" />
+			<production count="1" id="10226" />
+		</item>
+		<item>
+			<!-- Dynasty Sword - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Sword - Earth - Focus -->
+			<ingredient count="1" id="11273" />
+			<production count="1" id="11272" />
+		</item>
+		<item>
+			<!-- Dynasty Sword - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Sword - Earth - Health -->
+			<ingredient count="1" id="11274" />
+			<production count="1" id="11272" />
+		</item>
+		<item>
+			<!-- Dynasty Sword - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Sword - Earth - Light -->
+			<ingredient count="1" id="11275" />
+			<production count="1" id="11272" />
+		</item>
+		<item>
+			<!-- Dynasty Blade - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Blade - Great Gale - Focus -->
+			<ingredient count="1" id="11269" />
+			<production count="1" id="11268" />
+		</item>
+		<item>
+			<!-- Dynasty Blade - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Blade - Great Gale - Health -->
+			<ingredient count="1" id="11270" />
+			<production count="1" id="11268" />
+		</item>
+		<item>
+			<!-- Dynasty Blade - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Blade - Great Gale - Light -->
+			<ingredient count="1" id="11271" />
+			<production count="1" id="11268" />
+		</item>
+		<item>
+			<!-- Dynasty Phantom - Nature -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Phantom - Nature - Acumen -->
+			<ingredient count="1" id="11293" />
+			<production count="1" id="11292" />
+		</item>
+		<item>
+			<!-- Dynasty Phantom - Nature -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Phantom - Nature - Mana Up -->
+			<ingredient count="1" id="11294" />
+			<production count="1" id="11292" />
+		</item>
+		<item>
+			<!-- Dynasty Phantom - Nature -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Phantom - Nature - Conversion -->
+			<ingredient count="1" id="11295" />
+			<production count="1" id="11292" />
+		</item>
+		<item>
+			<!-- Dynasty Bow - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Bow - Great Gale - Cheap Shot -->
+			<ingredient count="1" id="11265" />
+			<production count="1" id="11264" />
+		</item>
+		<item>
+			<!-- Dynasty Bow - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Bow - Great Gale - Guidance -->
+			<ingredient count="1" id="11266" />
+			<production count="1" id="11264" />
+		</item>
+		<item>
+			<!-- Dynasty Bow - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Bow - Great Gale - Focus -->
+			<ingredient count="1" id="11267" />
+			<production count="1" id="11264" />
+		</item>
+		<item>
+			<!-- Dynasty Knife - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Knife - Great Gale - Focus -->
+			<ingredient count="1" id="11248" />
+			<production count="1" id="11247" />
+		</item>
+		<item>
+			<!-- Dynasty Knife - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Knife - Great Gale - Evasion -->
+			<ingredient count="1" id="11249" />
+			<production count="1" id="11247" />
+		</item>
+		<item>
+			<!-- Dynasty Knife - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Knife - Great Gale - Critical Damage -->
+			<ingredient count="1" id="11250" />
+			<production count="1" id="11247" />
+		</item>
+		<item>
+			<!-- Dynasty Halberd - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Halberd - Earth - Anger -->
+			<ingredient count="1" id="11297" />
+			<production count="1" id="11296" />
+		</item>
+		<item>
+			<!-- Dynasty Halberd - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Halberd - Earth - Critical Stun -->
+			<ingredient count="1" id="11298" />
+			<production count="1" id="11296" />
+		</item>
+		<item>
+			<!-- Dynasty Halberd - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Halberd - Earth - Light -->
+			<ingredient count="1" id="11299" />
+			<production count="1" id="11296" />
+		</item>
+		<item>
+			<!-- Dynasty Cudgel - Landslide -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Cudgel - Landslide - Anger -->
+			<ingredient count="1" id="11281" />
+			<production count="1" id="11280" />
+		</item>
+		<item>
+			<!-- Dynasty Cudgel - Landslide -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Cudgel - Landslide - Health -->
+			<ingredient count="1" id="11282" />
+			<production count="1" id="11280" />
+		</item>
+		<item>
+			<!-- Dynasty Cudgel - Landslide -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Cudgel - Landslide - Rsk. Focus -->
+			<ingredient count="1" id="11283" />
+			<production count="1" id="11280" />
+		</item>
+		<item>
+			<!-- Dynasty Mace - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Mace - Earth - Mana Up -->
+			<ingredient count="1" id="11257" />
+			<production count="1" id="11256" />
+		</item>
+		<item>
+			<!-- Dynasty Mace - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Mace - Earth - Conversion -->
+			<ingredient count="1" id="11258" />
+			<production count="1" id="11256" />
+		</item>
+		<item>
+			<!-- Dynasty Mace - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Mace - Earth - Acumen -->
+			<ingredient count="1" id="11259" />
+			<production count="1" id="11256" />
+		</item>
+		<item>
+			<!-- Dynasty Bagh-Nakh - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Bagh-Nakh - Great Gale - Rsk. Evasion -->
+			<ingredient count="1" id="11261" />
+			<production count="1" id="11260" />
+		</item>
+		<item>
+			<!-- Dynasty Bagh-Nakh - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Bagh-Nakh - Great Gale - Focus -->
+			<ingredient count="1" id="11262" />
+			<production count="1" id="11260" />
+		</item>
+		<item>
+			<!-- Dynasty Bagh-Nakh - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Bagh-Nakh - Great Gale - Haste -->
+			<ingredient count="1" id="11263" />
+			<production count="1" id="11260" />
+		</item>
+		<item>
+			<!-- Dynasty Rapier - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Rapier - Earth - Focus -->
+			<ingredient count="1" id="11253" />
+			<production count="1" id="11252" />
+		</item>
+		<item>
+			<!-- Dynasty Rapier - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Rapier - Earth - Health -->
+			<ingredient count="1" id="11254" />
+			<production count="1" id="11252" />
+		</item>
+		<item>
+			<!-- Dynasty Rapier - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Rapier - Earth - Light -->
+			<ingredient count="1" id="11255" />
+			<production count="1" id="11252" />
+		</item>
+		<item>
+			<!-- Dynasty Ancient Sword - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Ancient Sword - Great Gale - Focus -->
+			<ingredient count="1" id="11244" />
+			<production count="1" id="11243" />
+		</item>
+		<item>
+			<!-- Dynasty Ancient Sword - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Ancient Sword - Great Gale - Health -->
+			<ingredient count="1" id="11245" />
+			<production count="1" id="11243" />
+		</item>
+		<item>
+			<!-- Dynasty Ancient Sword - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Ancient Sword - Great Gale - Light -->
+			<ingredient count="1" id="11246" />
+			<production count="1" id="11243" />
+		</item>
+		<item>
+			<!-- Dynasty Crossbow - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Crossbow - Great Gale - Cheap Shot -->
+			<ingredient count="1" id="11289" />
+			<production count="1" id="11288" />
+		</item>
+		<item>
+			<!-- Dynasty Crossbow - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Crossbow - Great Gale - Guidance -->
+			<ingredient count="1" id="11290" />
+			<production count="1" id="11288" />
+		</item>
+		<item>
+			<!-- Dynasty Crossbow - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Crossbow - Great Gale - Focus -->
+			<ingredient count="1" id="11291" />
+			<production count="1" id="11288" />
+		</item>
+		<item>
+			<!-- Dynasty Staff - Holy Spirit -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Staff - Holy Spirit - Mana Up -->
+			<ingredient count="1" id="11277" />
+			<production count="1" id="11276" />
+		</item>
+		<item>
+			<!-- Dynasty Staff - Holy Spirit -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Staff - Holy Spirit - Conversion -->
+			<ingredient count="1" id="11278" />
+			<production count="1" id="11276" />
+		</item>
+		<item>
+			<!-- Dynasty Staff - Holy Spirit -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Staff - Holy Spirit - Acumen -->
+			<ingredient count="1" id="11279" />
+			<production count="1" id="11276" />
+		</item>
+		<item>
+			<!-- Dynasty Crusher - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Crusher - Great Gale - Anger -->
+			<ingredient count="1" id="11285" />
+			<production count="1" id="11284" />
+		</item>
+		<item>
+			<!-- Dynasty Crusher - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Crusher - Great Gale - Health -->
+			<ingredient count="1" id="11286" />
+			<production count="1" id="11284" />
+		</item>
+		<item>
+			<!-- Dynasty Crusher - Great Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dynasty Crusher - Great Gale - Rsk. Focus -->
+			<ingredient count="1" id="11287" />
+			<production count="1" id="11284" />
+		</item>
+		<item>
+			<!-- Icarus Sawsword - Destruction -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Sawsword - Destruction - Focus -->
+			<ingredient count="1" id="11306" />
+			<production count="1" id="11305" />
+		</item>
+		<item>
+			<!-- Icarus Sawsword - Destruction -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Sawsword - Destruction - Health -->
+			<ingredient count="1" id="11307" />
+			<production count="1" id="11305" />
+		</item>
+		<item>
+			<!-- Icarus Sawsword - Destruction -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Sawsword - Destruction - Light -->
+			<ingredient count="1" id="11308" />
+			<production count="1" id="11305" />
+		</item>
+		<item>
+			<!-- Icarus Heavy Arms - Lightning -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Heavy Arms - Lightning - Focus -->
+			<ingredient count="1" id="11342" />
+			<production count="1" id="11341" />
+		</item>
+		<item>
+			<!-- Icarus Heavy Arms - Lightning -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Heavy Arms - Lightning - Health -->
+			<ingredient count="1" id="11343" />
+			<production count="1" id="11341" />
+		</item>
+		<item>
+			<!-- Icarus Heavy Arms - Lightning -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Heavy Arms - Lightning - Light -->
+			<ingredient count="1" id="11344" />
+			<production count="1" id="11341" />
+		</item>
+		<item>
+			<!-- Icarus Spirit - Nature -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Spirit - Nature - Acumen -->
+			<ingredient count="1" id="11318" />
+			<production count="1" id="11317" />
+		</item>
+		<item>
+			<!-- Icarus Spirit - Nature -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Spirit - Nature - Mana Up -->
+			<ingredient count="1" id="11319" />
+			<production count="1" id="11317" />
+		</item>
+		<item>
+			<!-- Icarus Spirit - Nature -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Spirit - Nature - Conversion -->
+			<ingredient count="1" id="11320" />
+			<production count="1" id="11317" />
+		</item>
+		<item>
+			<!-- Icarus Spitter - Concentration -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Spitter - Concentration - Cheap Shot -->
+			<ingredient count="1" id="11322" />
+			<production count="1" id="11321" />
+		</item>
+		<item>
+			<!-- Icarus Spitter - Concentration -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Spitter - Concentration - Guidance -->
+			<ingredient count="1" id="11323" />
+			<production count="1" id="11321" />
+		</item>
+		<item>
+			<!-- Icarus Spitter - Concentration -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Spitter - Concentration - Focus -->
+			<ingredient count="1" id="11324" />
+			<production count="1" id="11321" />
+		</item>
+		<item>
+			<!-- Icarus Disperser - Confusion -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Disperser - Confusion - Focus -->
+			<ingredient count="1" id="11302" />
+			<production count="1" id="11301" />
+		</item>
+		<item>
+			<!-- Icarus Disperser - Confusion -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Disperser - Confusion - Evasion -->
+			<ingredient count="1" id="11303" />
+			<production count="1" id="11301" />
+		</item>
+		<item>
+			<!-- Icarus Disperser - Confusion -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Disperser - Confusion - Critical Damage -->
+			<ingredient count="1" id="11304" />
+			<production count="1" id="11301" />
+		</item>
+		<item>
+			<!-- Icarus Trident - Thunder -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Trident - Thunder - Anger -->
+			<ingredient count="1" id="11330" />
+			<production count="1" id="11329" />
+		</item>
+		<item>
+			<!-- Icarus Trident - Thunder -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Trident - Thunder - Critical Stun -->
+			<ingredient count="1" id="11331" />
+			<production count="1" id="11329" />
+		</item>
+		<item>
+			<!-- Icarus Trident - Thunder -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Trident - Thunder - Light -->
+			<ingredient count="1" id="11332" />
+			<production count="1" id="11329" />
+		</item>
+		<item>
+			<!-- Icarus Hammer - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hammer - Earth - Anger -->
+			<ingredient count="1" id="11334" />
+			<production count="1" id="11333" />
+		</item>
+		<item>
+			<!-- Icarus Hammer - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hammer - Earth - Health -->
+			<ingredient count="1" id="11335" />
+			<production count="1" id="11333" />
+		</item>
+		<item>
+			<!-- Icarus Hammer - Earth -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hammer - Earth - Rsk. Focus -->
+			<ingredient count="1" id="11336" />
+			<production count="1" id="11333" />
+		</item>
+		<item>
+			<!-- Icarus Hall - Hail -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hall - Hail - Mana Up -->
+			<ingredient count="1" id="11346" />
+			<production count="1" id="11345" />
+		</item>
+		<item>
+			<!-- Icarus Hall - Hail -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hall - Hail - Conversion -->
+			<ingredient count="1" id="11347" />
+			<production count="1" id="11345" />
+		</item>
+		<item>
+			<!-- Icarus Hall - Hail -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hall - Hail - Acumen -->
+			<ingredient count="1" id="11348" />
+			<production count="1" id="11345" />
+		</item>
+		<item>
+			<!-- Icarus Hand - Destruction -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hand - Destruction - Rsk. Evasion -->
+			<ingredient count="1" id="11338" />
+			<production count="1" id="11337" />
+		</item>
+		<item>
+			<!-- Icarus Hand - Destruction -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hand - Destruction - Focus -->
+			<ingredient count="1" id="11339" />
+			<production count="1" id="11337" />
+		</item>
+		<item>
+			<!-- Icarus Hand - Destruction -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Hand - Destruction - Haste -->
+			<ingredient count="1" id="11340" />
+			<production count="1" id="11337" />
+		</item>
+		<item>
+			<!-- Icarus Stinger - Destruction -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Stinger - Destruction - Focus -->
+			<ingredient count="1" id="11314" />
+			<production count="1" id="11313" />
+		</item>
+		<item>
+			<!-- Icarus Stinger - Destruction -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Stinger - Destruction - Health -->
+			<ingredient count="1" id="11315" />
+			<production count="1" id="11313" />
+		</item>
+		<item>
+			<!-- Icarus Stinger - Destruction -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Stinger - Destruction - Light -->
+			<ingredient count="1" id="11316" />
+			<production count="1" id="11313" />
+		</item>
+		<item>
+			<!-- Icarus Wingblade - Lightning -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Wingblade - Lightning - Focus -->
+			<ingredient count="1" id="11326" />
+			<production count="1" id="11325" />
+		</item>
+		<item>
+			<!-- Icarus Wingblade - Lightning -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Wingblade - Lightning - Health -->
+			<ingredient count="1" id="11327" />
+			<production count="1" id="11325" />
+		</item>
+		<item>
+			<!-- Icarus Wingblade - Lightning -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Wingblade - Lightning - Light -->
+			<ingredient count="1" id="11328" />
+			<production count="1" id="11325" />
+		</item>
+		<item>
+			<!-- Icarus Shooter - Concentration -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Shooter - Concentration - Cheap Shot -->
+			<ingredient count="1" id="11310" />
+			<production count="1" id="11309" />
+		</item>
+		<item>
+			<!-- Icarus Shooter - Concentration -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Shooter - Concentration - Guidance -->
+			<ingredient count="1" id="11311" />
+			<production count="1" id="11309" />
+		</item>
+		<item>
+			<!-- Icarus Shooter - Concentration -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Icarus Shooter - Concentration - Focus -->
+			<ingredient count="1" id="11312" />
+			<production count="1" id="11309" />
+		</item>
+		<item>
+			<!-- Vesper Cutter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Cutter - Health -->
+			<ingredient count="1" id="14119" />
+			<production count="1" id="13457" />
+		</item>
+		<item>
+			<!-- Vesper Cutter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Cutter - Focus -->
+			<ingredient count="1" id="14120" />
+			<production count="1" id="13457" />
+		</item>
+		<item>
+			<!-- Vesper Cutter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Cutter - Haste -->
+			<ingredient count="1" id="14118" />
+			<production count="1" id="13457" />
+		</item>
+		<item>
+			<!-- Vesper Slasher -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Slasher - Focus -->
+			<ingredient count="1" id="14123" />
+			<production count="1" id="13458" />
+		</item>
+		<item>
+			<!-- Vesper Slasher -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Slasher - Haste -->
+			<ingredient count="1" id="14121" />
+			<production count="1" id="13458" />
+		</item>
+		<item>
+			<!-- Vesper Slasher -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Slasher - Health -->
+			<ingredient count="1" id="14122" />
+			<production count="1" id="13458" />
+		</item>
+		<item>
+			<!-- Vesper Fighter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Fighter - Health -->
+			<ingredient count="1" id="14131" />
+			<production count="1" id="13461" />
+		</item>
+		<item>
+			<!-- Vesper Fighter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Fighter - Critical Stun -->
+			<ingredient count="1" id="14132" />
+			<production count="1" id="13461" />
+		</item>
+		<item>
+			<!-- Vesper Fighter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Fighter - Focus -->
+			<ingredient count="1" id="14130" />
+			<production count="1" id="13461" />
+		</item>
+		<item>
+			<!-- Vesper Buster -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Buster - Magic Hold -->
+			<ingredient count="1" id="14126" />
+			<production count="1" id="13459" />
+		</item>
+		<item>
+			<!-- Vesper Buster -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Buster - Mana Up -->
+			<ingredient count="1" id="14124" />
+			<production count="1" id="13459" />
+		</item>
+		<item>
+			<!-- Vesper Buster -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Buster - Acumen -->
+			<ingredient count="1" id="14125" />
+			<production count="1" id="13459" />
+		</item>
+		<item>
+			<!-- Vesper Shaper -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Shaper - HP Drain -->
+			<ingredient count="1" id="14128" />
+			<production count="1" id="13460" />
+		</item>
+		<item>
+			<!-- Vesper Shaper -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Shaper - Haste -->
+			<ingredient count="1" id="14129" />
+			<production count="1" id="13460" />
+		</item>
+		<item>
+			<!-- Vesper Shaper -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Shaper - Critical Damage -->
+			<ingredient count="1" id="14127" />
+			<production count="1" id="13460" />
+		</item>
+		<item>
+			<!-- Vesper Stormer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Stormer - Guidance -->
+			<ingredient count="1" id="14134" />
+			<production count="1" id="13462" />
+		</item>
+		<item>
+			<!-- Vesper Stormer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Stormer - Haste -->
+			<ingredient count="1" id="14135" />
+			<production count="1" id="13462" />
+		</item>
+		<item>
+			<!-- Vesper Stormer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Stormer - Health -->
+			<ingredient count="1" id="14133" />
+			<production count="1" id="13462" />
+		</item>
+		<item>
+			<!-- Vesper Avenger -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Avenger - Health -->
+			<ingredient count="1" id="14137" />
+			<production count="1" id="13463" />
+		</item>
+		<item>
+			<!-- Vesper Avenger -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Avenger - HP Regeneration -->
+			<ingredient count="1" id="14138" />
+			<production count="1" id="13463" />
+		</item>
+		<item>
+			<!-- Vesper Avenger -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Avenger - HP Drain -->
+			<ingredient count="1" id="14136" />
+			<production count="1" id="13463" />
+		</item>
+		<item>
+			<!-- Vesper Retributer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Retributer - Health -->
+			<ingredient count="1" id="14140" />
+			<production count="1" id="13464" />
+		</item>
+		<item>
+			<!-- Vesper Retributer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Retributer - HP Drain -->
+			<ingredient count="1" id="14141" />
+			<production count="1" id="13464" />
+		</item>
+		<item>
+			<!-- Vesper Retributer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Retributer - HP Regeneration -->
+			<ingredient count="1" id="14139" />
+			<production count="1" id="13464" />
+		</item>
+		<item>
+			<!-- Vesper Caster -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Caster - MP Regeneration -->
+			<ingredient count="1" id="14143" />
+			<production count="1" id="13465" />
+		</item>
+		<item>
+			<!-- Vesper Caster -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Caster - Mana Up -->
+			<ingredient count="1" id="14144" />
+			<production count="1" id="13465" />
+		</item>
+		<item>
+			<!-- Vesper Caster -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Caster - Acumen -->
+			<ingredient count="1" id="14142" />
+			<production count="1" id="13465" />
+		</item>
+		<item>
+			<!-- Vesper Singer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Singer - Empower -->
+			<ingredient count="1" id="14145" />
+			<production count="1" id="13466" />
+		</item>
+		<item>
+			<!-- Vesper Singer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Singer - MP Regeneration -->
+			<ingredient count="1" id="14146" />
+			<production count="1" id="13466" />
+		</item>
+		<item>
+			<!-- Vesper Singer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Singer - Magic Hold -->
+			<ingredient count="1" id="14147" />
+			<production count="1" id="13466" />
+		</item>
+		<item>
+			<!-- Vesper Thrower -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Thrower - Focus -->
+			<ingredient count="1" id="14149" />
+			<production count="1" id="13467" />
+		</item>
+		<item>
+			<!-- Vesper Thrower -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Thrower - Cheap Shot -->
+			<ingredient count="1" id="14148" />
+			<production count="1" id="13467" />
+		</item>
+		<item>
+			<!-- Vesper Thrower -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Thrower - Critical Slow -->
+			<ingredient count="1" id="14150" />
+			<production count="1" id="13467" />
+		</item>
+		<item>
+			<!-- Vesper Pincer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Pincer - Health -->
+			<ingredient count="1" id="14152" />
+			<production count="1" id="13468" />
+		</item>
+		<item>
+			<!-- Vesper Pincer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Pincer - Focus -->
+			<ingredient count="1" id="14153" />
+			<production count="1" id="13468" />
+		</item>
+		<item>
+			<!-- Vesper Pincer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Pincer - Haste -->
+			<ingredient count="1" id="14151" />
+			<production count="1" id="13468" />
+		</item>
+		<item>
+			<!-- Vesper Shooter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Shooter - Focus -->
+			<ingredient count="1" id="14155" />
+			<production count="1" id="13469" />
+		</item>
+		<item>
+			<!-- Vesper Shooter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Shooter - Critical Slow -->
+			<ingredient count="1" id="14156" />
+			<production count="1" id="13469" />
+		</item>
+		<item>
+			<!-- Vesper Shooter -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Shooter - Cheap Shot -->
+			<ingredient count="1" id="14154" />
+			<production count="1" id="13469" />
+		</item>
+		<item>
+			<!-- Vesper Nagan -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Nagan - Health -->
+			<ingredient count="1" id="14158" />
+			<production count="1" id="13470" />
+		</item>
+		<item>
+			<!-- Vesper Nagan -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Nagan - Focus -->
+			<ingredient count="1" id="14159" />
+			<production count="1" id="13470" />
+		</item>
+		<item>
+			<!-- Vesper Nagan -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Nagan - Haste -->
+			<ingredient count="1" id="14157" />
+			<production count="1" id="13470" />
+		</item>
+		<item>
+			<!-- Vesper Cutter - Thunder -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Cutter - Thunder - Health -->
+			<ingredient count="1" id="16057" />
+			<production count="1" id="16042" />
+		</item>
+		<item>
+			<!-- Vesper Cutter - Thunder -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Cutter - Thunder - Focus -->
+			<ingredient count="1" id="16058" />
+			<production count="1" id="16042" />
+		</item>
+		<item>
+			<!-- Vesper Cutter - Thunder -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Cutter - Thunder - Haste -->
+			<ingredient count="1" id="16056" />
+			<production count="1" id="16042" />
+		</item>
+		<item>
+			<!-- Vesper Slasher - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Slasher - Gale - Focus -->
+			<ingredient count="1" id="16061" />
+			<production count="1" id="16043" />
+		</item>
+		<item>
+			<!-- Vesper Slasher - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Slasher - Gale - Haste -->
+			<ingredient count="1" id="16059" />
+			<production count="1" id="16043" />
+		</item>
+		<item>
+			<!-- Vesper Slasher - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Slasher - Gale - Health -->
+			<ingredient count="1" id="16060" />
+			<production count="1" id="16043" />
+		</item>
+		<item>
+			<!-- Vesper Fighter - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Fighter - Gale - Health -->
+			<ingredient count="1" id="16069" />
+			<production count="1" id="16046" />
+		</item>
+		<item>
+			<!-- Vesper Fighter - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Fighter - Gale - Critical Stun -->
+			<ingredient count="1" id="16070" />
+			<production count="1" id="16046" />
+		</item>
+		<item>
+			<!-- Vesper Fighter - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Fighter - Gale - Focus -->
+			<ingredient count="1" id="16068" />
+			<production count="1" id="16046" />
+		</item>
+		<item>
+			<!-- Vesper Buster - Cleverness -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Buster - Cleverness - Magic Hold -->
+			<ingredient count="1" id="16064" />
+			<production count="1" id="16044" />
+		</item>
+		<item>
+			<!-- Vesper Buster - Cleverness -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Buster - Cleverness - Mana Up -->
+			<ingredient count="1" id="16062" />
+			<production count="1" id="16044" />
+		</item>
+		<item>
+			<!-- Vesper Buster - Cleverness -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Buster - Cleverness - Acumen -->
+			<ingredient count="1" id="16063" />
+			<production count="1" id="16044" />
+		</item>
+		<item>
+			<!-- Vesper Shaper - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Shaper - Gale - HP Drain -->
+			<ingredient count="1" id="16066" />
+			<production count="1" id="16045" />
+		</item>
+		<item>
+			<!-- Vesper Shaper - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Shaper - Gale - Haste -->
+			<ingredient count="1" id="16067" />
+			<production count="1" id="16045" />
+		</item>
+		<item>
+			<!-- Vesper Shaper - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Shaper - Gale - Critical Damage -->
+			<ingredient count="1" id="16065" />
+			<production count="1" id="16045" />
+		</item>
+		<item>
+			<!-- Vesper Stormer - Thunder -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Stormer - Thunder - Guidance -->
+			<ingredient count="1" id="16072" />
+			<production count="1" id="16047" />
+		</item>
+		<item>
+			<!-- Vesper Stormer - Thunder -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Stormer - Thunder - Haste -->
+			<ingredient count="1" id="16073" />
+			<production count="1" id="16047" />
+		</item>
+		<item>
+			<!-- Vesper Stormer - Thunder -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Stormer - Thunder - Health -->
+			<ingredient count="1" id="16071" />
+			<production count="1" id="16047" />
+		</item>
+		<item>
+			<!-- Vesper Avenger - Landslide -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Avenger - Landslide - Health -->
+			<ingredient count="1" id="16075" />
+			<production count="1" id="16048" />
+		</item>
+		<item>
+			<!-- Vesper Avenger - Landslide -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Avenger - Landslide - HP Regeneration -->
+			<ingredient count="1" id="16076" />
+			<production count="1" id="16048" />
+		</item>
+		<item>
+			<!-- Vesper Avenger - Landslide -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Avenger - Landslide - HP Drain -->
+			<ingredient count="1" id="16074" />
+			<production count="1" id="16048" />
+		</item>
+		<item>
+			<!-- Vesper Retributer - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Retributer - Gale - Health -->
+			<ingredient count="1" id="16078" />
+			<production count="1" id="16049" />
+		</item>
+		<item>
+			<!-- Vesper Retributer - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Retributer - Gale - HP Drain -->
+			<ingredient count="1" id="16079" />
+			<production count="1" id="16049" />
+		</item>
+		<item>
+			<!-- Vesper Retributer - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Retributer - Gale - HP Regeneration -->
+			<ingredient count="1" id="16077" />
+			<production count="1" id="16049" />
+		</item>
+		<item>
+			<!-- Vesper Caster - Cleverness -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Caster - Cleverness - MP Regeneration -->
+			<ingredient count="1" id="16081" />
+			<production count="1" id="16050" />
+		</item>
+		<item>
+			<!-- Vesper Caster - Cleverness -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Caster - Cleverness - Mana Up -->
+			<ingredient count="1" id="16082" />
+			<production count="1" id="16050" />
+		</item>
+		<item>
+			<!-- Vesper Caster - Cleverness -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Caster - Cleverness - Acumen -->
+			<ingredient count="1" id="16080" />
+			<production count="1" id="16050" />
+		</item>
+		<item>
+			<!-- Vesper Singer - Hail -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Singer - Hail - Empower -->
+			<ingredient count="1" id="16083" />
+			<production count="1" id="16051" />
+		</item>
+		<item>
+			<!-- Vesper Singer - Hail -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Singer - Hail - MP Regeneration -->
+			<ingredient count="1" id="16084" />
+			<production count="1" id="16051" />
+		</item>
+		<item>
+			<!-- Vesper Singer - Hail -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Singer - Hail - Magic Hold -->
+			<ingredient count="1" id="16085" />
+			<production count="1" id="16051" />
+		</item>
+		<item>
+			<!-- Vesper Thrower - Clairvoyance -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Thrower - Clairvoyance - Focus -->
+			<ingredient count="1" id="16087" />
+			<production count="1" id="16052" />
+		</item>
+		<item>
+			<!-- Vesper Thrower - Clairvoyance -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Thrower - Clairvoyance - Cheap Shot -->
+			<ingredient count="1" id="16086" />
+			<production count="1" id="16052" />
+		</item>
+		<item>
+			<!-- Vesper Thrower - Clairvoyance -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Thrower - Clairvoyance - Critical Slow -->
+			<ingredient count="1" id="16088" />
+			<production count="1" id="16052" />
+		</item>
+		<item>
+			<!-- Vesper Pincer - Thunder -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Pincer - Thunder - Health -->
+			<ingredient count="1" id="16090" />
+			<production count="1" id="16053" />
+		</item>
+		<item>
+			<!-- Vesper Pincer - Thunder -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Pincer - Thunder - Focus -->
+			<ingredient count="1" id="16091" />
+			<production count="1" id="16053" />
+		</item>
+		<item>
+			<!-- Vesper Pincer - Thunder -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Pincer - Thunder - Haste -->
+			<ingredient count="1" id="16089" />
+			<production count="1" id="16053" />
+		</item>
+		<item>
+			<!-- Vesper Shooter - Clairvoyance -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Shooter - Clairvoyance - Focus -->
+			<ingredient count="1" id="16093" />
+			<production count="1" id="16054" />
+		</item>
+		<item>
+			<!-- Vesper Shooter - Clairvoyance -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Shooter - Clairvoyance - Critical Slow -->
+			<ingredient count="1" id="16094" />
+			<production count="1" id="16054" />
+		</item>
+		<item>
+			<!-- Vesper Shooter - Clairvoyance -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Shooter - Clairvoyance - Cheap Shot -->
+			<ingredient count="1" id="16092" />
+			<production count="1" id="16054" />
+		</item>
+		<item>
+			<!-- Vesper Nagan - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Nagan - Gale - Health -->
+			<ingredient count="1" id="16096" />
+			<production count="1" id="16055" />
+		</item>
+		<item>
+			<!-- Vesper Nagan - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Nagan - Gale - Focus -->
+			<ingredient count="1" id="16097" />
+			<production count="1" id="16055" />
+		</item>
+		<item>
+			<!-- Vesper Nagan - Gale -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vesper Nagan - Gale - Haste -->
+			<ingredient count="1" id="16095" />
+			<production count="1" id="16055" />
+		</item>
+		<item>
+			<!-- Periel Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Periel Sword - Focus -->
+			<ingredient count="1" id="15830" />
+			<production count="1" id="15558" />
+		</item>
+		<item>
+			<!-- Periel Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Periel Sword - Haste -->
+			<ingredient count="1" id="15831" />
+			<production count="1" id="15558" />
+		</item>
+		<item>
+			<!-- Periel Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Periel Sword - Health -->
+			<ingredient count="1" id="15829" />
+			<production count="1" id="15558" />
+		</item>
+		<item>
+			<!-- Skull Edge -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Skull Edge - Haste -->
+			<ingredient count="1" id="15833" />
+			<production count="1" id="15559" />
+		</item>
+		<item>
+			<!-- Skull Edge -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Skull Edge - Critical Damage -->
+			<ingredient count="1" id="15834" />
+			<production count="1" id="15559" />
+		</item>
+		<item>
+			<!-- Skull Edge -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Skull Edge - HP Drain -->
+			<ingredient count="1" id="15832" />
+			<production count="1" id="15559" />
+		</item>
+		<item>
+			<!-- Vigwik Axe -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vigwik Axe - HP Regeneration -->
+			<ingredient count="1" id="15836" />
+			<production count="1" id="15560" />
+		</item>
+		<item>
+			<!-- Vigwik Axe -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vigwik Axe - HP Drain -->
+			<ingredient count="1" id="15837" />
+			<production count="1" id="15560" />
+		</item>
+		<item>
+			<!-- Vigwik Axe -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Vigwik Axe - Health -->
+			<ingredient count="1" id="15835" />
+			<production count="1" id="15560" />
+		</item>
+		<item>
+			<!-- Devilish Maul -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Devilish Maul - HP Drain -->
+			<ingredient count="1" id="15839" />
+			<production count="1" id="15561" />
+		</item>
+		<item>
+			<!-- Devilish Maul -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Devilish Maul - HP Regeneration -->
+			<ingredient count="1" id="15840" />
+			<production count="1" id="15561" />
+		</item>
+		<item>
+			<!-- Devilish Maul -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Devilish Maul - Health -->
+			<ingredient count="1" id="15838" />
+			<production count="1" id="15561" />
+		</item>
+		<item>
+			<!-- Feather Eye Blade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Feather Eye Blade - Focus -->
+			<ingredient count="1" id="15842" />
+			<production count="1" id="15562" />
+		</item>
+		<item>
+			<!-- Feather Eye Blade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Feather Eye Blade - Haste -->
+			<ingredient count="1" id="15843" />
+			<production count="1" id="15562" />
+		</item>
+		<item>
+			<!-- Feather Eye Blade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Feather Eye Blade - Health -->
+			<ingredient count="1" id="15841" />
+			<production count="1" id="15562" />
+		</item>
+		<item>
+			<!-- Octo Claw -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Octo Claw - Critical Stun -->
+			<ingredient count="1" id="15845" />
+			<production count="1" id="15563" />
+		</item>
+		<item>
+			<!-- Octo Claw -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Octo Claw - Focus -->
+			<ingredient count="1" id="15846" />
+			<production count="1" id="15563" />
+		</item>
+		<item>
+			<!-- Octo Claw -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Octo Claw - Health -->
+			<ingredient count="1" id="15844" />
+			<production count="1" id="15563" />
+		</item>
+		<item>
+			<!-- Doubletop Spear -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Doubletop Spear - Haste -->
+			<ingredient count="1" id="15848" />
+			<production count="1" id="15564" />
+		</item>
+		<item>
+			<!-- Doubletop Spear -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Doubletop Spear - Health -->
+			<ingredient count="1" id="15849" />
+			<production count="1" id="15564" />
+		</item>
+		<item>
+			<!-- Doubletop Spear -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Doubletop Spear - Guidance -->
+			<ingredient count="1" id="15847" />
+			<production count="1" id="15564" />
+		</item>
+		<item>
+			<!-- Rising Star -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Rising Star - Mana Up -->
+			<ingredient count="1" id="15851" />
+			<production count="1" id="15565" />
+		</item>
+		<item>
+			<!-- Rising Star -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Rising Star - Acumen -->
+			<ingredient count="1" id="15852" />
+			<production count="1" id="15565" />
+		</item>
+		<item>
+			<!-- Rising Star -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Rising Star - MP Regeneration -->
+			<ingredient count="1" id="15850" />
+			<production count="1" id="15565" />
+		</item>
+		<item>
+			<!-- Black Visage -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Black Visage - Magic Hold -->
+			<ingredient count="1" id="15854" />
+			<production count="1" id="15566" />
+		</item>
+		<item>
+			<!-- Black Visage -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Black Visage - Empower -->
+			<ingredient count="1" id="15855" />
+			<production count="1" id="15566" />
+		</item>
+		<item>
+			<!-- Black Visage -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Black Visage - MP Regeneration -->
+			<ingredient count="1" id="15853" />
+			<production count="1" id="15566" />
+		</item>
+		<item>
+			<!-- Veniplant Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Veniplant Sword - Magic Hold -->
+			<ingredient count="1" id="15857" />
+			<production count="1" id="15567" />
+		</item>
+		<item>
+			<!-- Veniplant Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Veniplant Sword - Mana Up -->
+			<ingredient count="1" id="15858" />
+			<production count="1" id="15567" />
+		</item>
+		<item>
+			<!-- Veniplant Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Veniplant Sword - Acumen -->
+			<ingredient count="1" id="15856" />
+			<production count="1" id="15567" />
+		</item>
+		<item>
+			<!-- Skull Carnium Bow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Skull Carnium Bow - Critical Slow -->
+			<ingredient count="1" id="15860" />
+			<production count="1" id="15568" />
+		</item>
+		<item>
+			<!-- Skull Carnium Bow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Skull Carnium Bow - Cheap Shot -->
+			<ingredient count="1" id="15861" />
+			<production count="1" id="15568" />
+		</item>
+		<item>
+			<!-- Skull Carnium Bow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Skull Carnium Bow - Focus -->
+			<ingredient count="1" id="15859" />
+			<production count="1" id="15568" />
+		</item>
+		<item>
+			<!-- Gemtail Rapier -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Gemtail Rapier - Focus -->
+			<ingredient count="1" id="15863" />
+			<production count="1" id="15569" />
+		</item>
+		<item>
+			<!-- Gemtail Rapier -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Gemtail Rapier - Haste -->
+			<ingredient count="1" id="15864" />
+			<production count="1" id="15569" />
+		</item>
+		<item>
+			<!-- Gemtail Rapier -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Gemtail Rapier - Health -->
+			<ingredient count="1" id="15862" />
+			<production count="1" id="15569" />
+		</item>
+		<item>
+			<!-- Finale Blade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Finale Blade - Focus -->
+			<ingredient count="1" id="15866" />
+			<production count="1" id="15570" />
+		</item>
+		<item>
+			<!-- Finale Blade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Finale Blade - Haste -->
+			<ingredient count="1" id="15867" />
+			<production count="1" id="15570" />
+		</item>
+		<item>
+			<!-- Finale Blade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Finale Blade - Health -->
+			<ingredient count="1" id="15865" />
+			<production count="1" id="15570" />
+		</item>
+		<item>
+			<!-- Dominion Crossbow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dominion Crossbow - Critical Slow -->
+			<ingredient count="1" id="15869" />
+			<production count="1" id="15571" />
+		</item>
+		<item>
+			<!-- Dominion Crossbow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dominion Crossbow - Cheap Shot -->
+			<ingredient count="1" id="15870" />
+			<production count="1" id="15571" />
+		</item>
+		<item>
+			<!-- Dominion Crossbow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Dominion Crossbow - Focus -->
+			<ingredient count="1" id="15868" />
+			<production count="1" id="15571" />
+		</item>
+		<item>
+			<!-- Eternal Core Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Eternal Core Sword - Health -->
+			<ingredient count="1" id="15873" />
+			<production count="1" id="15544" />
+		</item>
+		<item>
+			<!-- Eternal Core Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Eternal Core Sword - Focus -->
+			<ingredient count="1" id="15871" />
+			<production count="1" id="15544" />
+		</item>
+		<item>
+			<!-- Eternal Core Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Eternal Core Sword - Haste -->
+			<ingredient count="1" id="15872" />
+			<production count="1" id="15544" />
+		</item>
+		<item>
+			<!-- Mamba Edge -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Mamba Edge - HP Drain -->
+			<ingredient count="1" id="15876" />
+			<production count="1" id="15545" />
+		</item>
+		<item>
+			<!-- Mamba Edge -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Mamba Edge - Haste -->
+			<ingredient count="1" id="15874" />
+			<production count="1" id="15545" />
+		</item>
+		<item>
+			<!-- Mamba Edge -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Mamba Edge - Critical Damage -->
+			<ingredient count="1" id="15875" />
+			<production count="1" id="15545" />
+		</item>
+		<item>
+			<!-- Eversor Mace -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Eversor Mace - Health -->
+			<ingredient count="1" id="15879" />
+			<production count="1" id="15546" />
+		</item>
+		<item>
+			<!-- Eversor Mace -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Eversor Mace - HP Regeneration -->
+			<ingredient count="1" id="15877" />
+			<production count="1" id="15546" />
+		</item>
+		<item>
+			<!-- Eversor Mace -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Eversor Mace - HP Drain -->
+			<ingredient count="1" id="15878" />
+			<production count="1" id="15546" />
+		</item>
+		<item>
+			<!-- Contristo Hammer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Contristo Hammer - Health -->
+			<ingredient count="1" id="15882" />
+			<production count="1" id="15547" />
+		</item>
+		<item>
+			<!-- Contristo Hammer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Contristo Hammer - HP Drain -->
+			<ingredient count="1" id="15880" />
+			<production count="1" id="15547" />
+		</item>
+		<item>
+			<!-- Contristo Hammer -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Contristo Hammer - HP Regeneration -->
+			<ingredient count="1" id="15881" />
+			<production count="1" id="15547" />
+		</item>
+		<item>
+			<!-- Lava Saw -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Lava Saw - Health -->
+			<ingredient count="1" id="15885" />
+			<production count="1" id="15548" />
+		</item>
+		<item>
+			<!-- Lava Saw -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Lava Saw - Focus -->
+			<ingredient count="1" id="15883" />
+			<production count="1" id="15548" />
+		</item>
+		<item>
+			<!-- Lava Saw -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Lava Saw - Haste -->
+			<ingredient count="1" id="15884" />
+			<production count="1" id="15548" />
+		</item>
+		<item>
+			<!-- Jade Claw -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Jade Claw - Health -->
+			<ingredient count="1" id="15888" />
+			<production count="1" id="15549" />
+		</item>
+		<item>
+			<!-- Jade Claw -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Jade Claw - Critical Stun -->
+			<ingredient count="1" id="15886" />
+			<production count="1" id="15549" />
+		</item>
+		<item>
+			<!-- Jade Claw -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Jade Claw - Focus -->
+			<ingredient count="1" id="15887" />
+			<production count="1" id="15549" />
+		</item>
+		<item>
+			<!-- Demitelum -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Demitelum - Guidance -->
+			<ingredient count="1" id="15891" />
+			<production count="1" id="15550" />
+		</item>
+		<item>
+			<!-- Demitelum -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Demitelum - Haste -->
+			<ingredient count="1" id="15889" />
+			<production count="1" id="15550" />
+		</item>
+		<item>
+			<!-- Demitelum -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Demitelum - Health -->
+			<ingredient count="1" id="15890" />
+			<production count="1" id="15550" />
+		</item>
+		<item>
+			<!-- Sacredium -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Sacredium - MP Regeneration -->
+			<ingredient count="1" id="15894" />
+			<production count="1" id="15551" />
+		</item>
+		<item>
+			<!-- Sacredium -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Sacredium - Mana Up -->
+			<ingredient count="1" id="15892" />
+			<production count="1" id="15551" />
+		</item>
+		<item>
+			<!-- Sacredium -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Sacredium - Acumen -->
+			<ingredient count="1" id="15893" />
+			<production count="1" id="15551" />
+		</item>
+		<item>
+			<!-- Cyclic Cane -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Cyclic Cane - MP Regeneration -->
+			<ingredient count="1" id="15897" />
+			<production count="1" id="15552" />
+		</item>
+		<item>
+			<!-- Cyclic Cane -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Cyclic Cane - Magic Hold -->
+			<ingredient count="1" id="15895" />
+			<production count="1" id="15552" />
+		</item>
+		<item>
+			<!-- Cyclic Cane -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Cyclic Cane - Empower -->
+			<ingredient count="1" id="15896" />
+			<production count="1" id="15552" />
+		</item>
+		<item>
+			<!-- Archangel Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Archangel Sword - Acumen -->
+			<ingredient count="1" id="15900" />
+			<production count="1" id="15553" />
+		</item>
+		<item>
+			<!-- Archangel Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Archangel Sword - Magic Hold -->
+			<ingredient count="1" id="15898" />
+			<production count="1" id="15553" />
+		</item>
+		<item>
+			<!-- Archangel Sword -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Archangel Sword - Mana Up -->
+			<ingredient count="1" id="15899" />
+			<production count="1" id="15553" />
+		</item>
+		<item>
+			<!-- Recurve Thorne Bow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Recurve Thorne Bow - Focus -->
+			<ingredient count="1" id="15903" />
+			<production count="1" id="15554" />
+		</item>
+		<item>
+			<!-- Recurve Thorne Bow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Recurve Thorne Bow - Critical Slow -->
+			<ingredient count="1" id="15901" />
+			<production count="1" id="15554" />
+		</item>
+		<item>
+			<!-- Recurve Thorne Bow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Recurve Thorne Bow - Cheap Shot -->
+			<ingredient count="1" id="15902" />
+			<production count="1" id="15554" />
+		</item>
+		<item>
+			<!-- Heavenstare Rapier -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Heavenstare Rapier - Health -->
+			<ingredient count="1" id="15906" />
+			<production count="1" id="15555" />
+		</item>
+		<item>
+			<!-- Heavenstare Rapier -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Heavenstare Rapier - Focus -->
+			<ingredient count="1" id="15904" />
+			<production count="1" id="15555" />
+		</item>
+		<item>
+			<!-- Heavenstare Rapier -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Heavenstare Rapier - Haste -->
+			<ingredient count="1" id="15905" />
+			<production count="1" id="15555" />
+		</item>
+		<item>
+			<!-- Pyseal Blade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Pyseal Blade - Health -->
+			<ingredient count="1" id="15909" />
+			<production count="1" id="15556" />
+		</item>
+		<item>
+			<!-- Pyseal Blade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Pyseal Blade - Focus -->
+			<ingredient count="1" id="15907" />
+			<production count="1" id="15556" />
+		</item>
+		<item>
+			<!-- Pyseal Blade -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Pyseal Blade - Haste -->
+			<ingredient count="1" id="15908" />
+			<production count="1" id="15556" />
+		</item>
+		<item>
+			<!-- Thorne Crossbow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Thorne Crossbow - Focus -->
+			<ingredient count="1" id="15912" />
+			<production count="1" id="15557" />
+		</item>
+		<item>
+			<!-- Thorne Crossbow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Thorne Crossbow - Critical Slow -->
+			<ingredient count="1" id="15910" />
+			<production count="1" id="15557" />
+		</item>
+		<item>
+			<!-- Thorne Crossbow -->
+			
+			<!-- Adena -->
+			<ingredient count="25000000" id="57" />
+			<!-- Thorne Crossbow - Cheap Shot -->
+			<ingredient count="1" id="15911" />
+			<production count="1" id="15557" />
+		</item>
+	</list>

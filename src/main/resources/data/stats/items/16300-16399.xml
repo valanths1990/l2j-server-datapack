@@ -82,6 +82,7 @@
 		</for>
 	</item>
 	<item id="16304" type="Armor" name="Moirai Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.weapon_tysandy_shield_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -434,6 +435,7 @@
 		</for>
 	</item>
 	<item id="16321" type="Armor" name="Vesper Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.weapon_vesper_verteidiger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -771,6 +773,7 @@
 		</for>
 	</item>
 	<item id="16338" type="Armor" name="Sealed Moirai Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.weapon_tysandy_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1106,6 +1109,7 @@
 		</for>
 	</item>
 	<item id="16355" type="Armor" name="Sealed Vesper Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.weapon_vesper_verteidiger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

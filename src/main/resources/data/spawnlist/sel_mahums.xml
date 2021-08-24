@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/spawnlist.xsd">
 	<!-- oren22_2219_a01 -->
-	<spawn name="smtg_drill_group_01">
+	<spawn name="smtg_drill_group_01" >
 			<AIData>
 				<disableRandomAnimation>true</disableRandomAnimation>
 				<disableRandomWalk>true</disableRandomWalk>
@@ -29,11 +29,12 @@
 			<npc id="22782" x="88529" y="55803" z="-3526" heading="13935" respawnDelay="90" />	<!-- Sel Mahum Recruit -->
 	</spawn>
 	<!-- oren22_2219_a02 -->
-	<spawn name="smtg_drill_group_02">
+	<spawn name="smtg_drill_group_02" >
 			<AIData>
 				<disableRandomAnimation>true</disableRandomAnimation>
 				<disableRandomWalk>true</disableRandomWalk>
 			</AIData>
+
 			<npc id="22775" x="89421" y="56422" z="-3501" heading="49152" respawnDelay="90" />	<!-- Sel Mahum Drill Sergeant -->
 			<npc id="22782" x="89261" y="56219" z="-3525" heading="16069" respawnDelay="90" />	<!-- Sel Mahum Recruit -->
 			<npc id="22782" x="89365" y="56222" z="-3527" heading="18156" respawnDelay="90" />	<!-- Sel Mahum Recruit -->

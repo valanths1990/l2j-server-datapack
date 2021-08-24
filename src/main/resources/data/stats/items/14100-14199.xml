@@ -199,6 +199,7 @@
 		</for>
 	</item>
 	<item id="14111" type="Armor" name="Sealed Vesper Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.weapon_vesper_verteidiger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

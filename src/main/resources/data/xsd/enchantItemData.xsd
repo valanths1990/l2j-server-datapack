@@ -47,6 +47,7 @@
 							</xs:simpleType>
 						</xs:attribute>
 						<xs:attribute name="scrollGroupId" type="xs:int" />
+						<xs:attribute name="increaseEnchant" type="xs:int"/>
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="support" maxOccurs="unbounded">

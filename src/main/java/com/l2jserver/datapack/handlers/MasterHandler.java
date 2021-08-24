@@ -1,18 +1,18 @@
 /*
  * Copyright © 2004-2021 L2J DataPack
- * 
+ *
  * This file is part of L2J DataPack.
- * 
+ *
  * L2J DataPack is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * L2J DataPack is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -21,6 +21,13 @@ package com.l2jserver.datapack.handlers;
 import static com.l2jserver.gameserver.config.Configuration.customs;
 import static com.l2jserver.gameserver.config.Configuration.general;
 
+import com.l2jserver.datapack.custom.Warehouse;
+import com.l2jserver.datapack.custom.buffer.BufferHandler;
+import com.l2jserver.datapack.custom.classes.ClassHandler;
+import com.l2jserver.datapack.custom.shop.ShopHandler;
+import com.l2jserver.gameserver.custom.skin.SkinHandler;
+import com.l2jserver.datapack.custom.teleporter.TeleporterHandler;
+import com.l2jserver.datapack.handlers.communityboard.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -157,14 +164,7 @@ import com.l2jserver.datapack.handlers.chathandlers.ChatPetition;
 import com.l2jserver.datapack.handlers.chathandlers.ChatShout;
 import com.l2jserver.datapack.handlers.chathandlers.ChatTell;
 import com.l2jserver.datapack.handlers.chathandlers.ChatTrade;
-import com.l2jserver.datapack.handlers.communityboard.ClanBoard;
-import com.l2jserver.datapack.handlers.communityboard.FavoriteBoard;
-import com.l2jserver.datapack.handlers.communityboard.FriendsBoard;
-import com.l2jserver.datapack.handlers.communityboard.HomeBoard;
-import com.l2jserver.datapack.handlers.communityboard.HomepageBoard;
-import com.l2jserver.datapack.handlers.communityboard.MailBoard;
-import com.l2jserver.datapack.handlers.communityboard.MemoBoard;
-import com.l2jserver.datapack.handlers.communityboard.RegionBoard;
+import com.l2jserver.datapack.handlers.communityboard.Service;
 import com.l2jserver.datapack.handlers.itemhandlers.BeastSoulShot;
 import com.l2jserver.datapack.handlers.itemhandlers.BeastSpiritShot;
 import com.l2jserver.datapack.handlers.itemhandlers.BlessedSpiritShot;
@@ -209,7 +209,6 @@ import com.l2jserver.datapack.handlers.targethandlers.AuraFriendly;
 import com.l2jserver.datapack.handlers.targethandlers.AuraUndeadEnemy;
 import com.l2jserver.datapack.handlers.targethandlers.BehindArea;
 import com.l2jserver.datapack.handlers.targethandlers.BehindAura;
-import com.l2jserver.datapack.handlers.targethandlers.Clan;
 import com.l2jserver.datapack.handlers.targethandlers.ClanMember;
 import com.l2jserver.datapack.handlers.targethandlers.CommandChannel;
 import com.l2jserver.datapack.handlers.targethandlers.CorpseClan;
@@ -290,7 +289,7 @@ import com.l2jserver.gameserver.handler.VoicedCommandHandler;
  */
 public class MasterHandler {
 	private static final Logger LOG = LoggerFactory.getLogger(MasterHandler.class);
-	
+
 	private static final Class<?>[] ACTION_HANDLERS = {
 		L2ArtefactInstanceAction.class,
 		L2DecoyAction.class,
@@ -303,7 +302,7 @@ public class MasterHandler {
 		L2SummonAction.class,
 		L2TrapAction.class,
 	};
-	
+
 	private static final Class<?>[] ACTION_SHIFT_HANDLERS = {
 		L2DoorInstanceActionShift.class,
 		L2ItemInstanceActionShift.class,
@@ -312,7 +311,7 @@ public class MasterHandler {
 		L2StaticObjectInstanceActionShift.class,
 		L2SummonActionShift.class,
 	};
-	
+
 	private static final Class<?>[] ADMIN_HANDLERS = {
 		AdminAdmin.class,
 		AdminAnnouncements.class,
@@ -387,7 +386,7 @@ public class MasterHandler {
 		AdminVitality.class,
 		AdminZone.class,
 	};
-	
+
 	private static final Class<?>[] BYPASS_HANDLERS = {
 		Augment.class,
 		Buy.class,
@@ -420,8 +419,21 @@ public class MasterHandler {
 		TutorialClose.class,
 		VoiceCommand.class,
 		Wear.class,
+		BufferHandler.class,
+		ShopHandler.class,
+		TeleporterHandler.class,
+		ClassHandler.class,
+		com.l2jserver.datapack.custom.account.Account.class,
+		com.l2jserver.datapack.custom.clan.Clan.class,
+		com.l2jserver.datapack.custom.action.Action.class,
+		com.l2jserver.datapack.custom.home.Home.class,
+		com.l2jserver.datapack.custom.ranking.Ranking.class,
+		SkinHandler.class,
+		com.l2jserver.datapack.custom.store.Store.class,
+		com.l2jserver.datapack.custom.augment.Augment.class,
+		Warehouse.class
 	};
-	
+
 	private static final Class<?>[] CHAT_HANDLERS = {
 		ChatAll.class,
 		ChatAlliance.class,
@@ -437,18 +449,18 @@ public class MasterHandler {
 		ChatTell.class,
 		ChatTrade.class,
 	};
-	
+
 	private static final Class<?>[] COMMUNITY_HANDLERS = {
-		ClanBoard.class,
-		FavoriteBoard.class,
-		FriendsBoard.class,
-		HomeBoard.class,
-		HomepageBoard.class,
-		MailBoard.class,
-		MemoBoard.class,
-		RegionBoard.class,
+		Clan.class,
+		Service.class,
+		Account.class,
+		Home.class,
+		Action.class,
+		Store.class,
+		Skin.class,
+		Ranking.class,
 	};
-	
+
 	private static final Class<?>[] ITEM_HANDLERS = {
 		BeastSoulShot.class,
 		BeastSpiritShot.class,
@@ -482,13 +494,13 @@ public class MasterHandler {
 		SummonItems.class,
 		TeleportBookmark.class,
 	};
-	
+
 	private static final Class<?>[] PUNISHMENT_HANDLERS = {
 		BanHandler.class,
 		ChatBanHandler.class,
 		JailHandler.class,
 	};
-	
+
 	private static final Class<?>[] USER_COMMAND_HANDLERS = {
 		ClanPenalty.class,
 		ClanWarsList.class,
@@ -506,7 +518,7 @@ public class MasterHandler {
 		MyBirthday.class,
 		SiegeStatus.class,
 	};
-	
+
 	private static final Class<?>[] TARGET_HANDLERS = {
 		Area.class,
 		AreaCorpseMob.class,
@@ -518,7 +530,7 @@ public class MasterHandler {
 		AuraUndeadEnemy.class,
 		BehindArea.class,
 		BehindAura.class,
-		Clan.class,
+		com.l2jserver.datapack.handlers.targethandlers.Clan.class,
 		ClanMember.class,
 		CommandChannel.class,
 		CorpseClan.class,
@@ -548,7 +560,7 @@ public class MasterHandler {
 		TargetParty.class,
 		Unlockable.class,
 	};
-	
+
 	private static final Class<?>[] TELNET_HANDLERS = {
 		ChatsHandler.class,
 		DebugHandler.class,
@@ -559,7 +571,7 @@ public class MasterHandler {
 		StatusHandler.class,
 		ThreadHandler.class,
 	};
-	
+
 	private static final Class<?>[] VOICED_COMMAND_HANDLERS = {
 		AutoLoot.class,
 		StatsVCmd.class,
@@ -573,19 +585,19 @@ public class MasterHandler {
 		(customs().debugVoiceCommand() ? Debug.class : null),
 		(customs().allowChangePassword() ? ChangePassword.class : null),
 	};
-	
+
 	// TODO(Zoey76): Add this handler.
 	// private static final Class<?>[] CUSTOM_HANDLERS =
 	// {
 	// CustomAnnouncePkPvP.class
 	// };
-	
+
 	public static void main(String[] args) {
 		if (general().noHandlers()) {
 			LOG.info("Handlers disabled...");
 			return;
 		}
-		
+
 		loadHandlers(VoicedCommandHandler.getInstance(), VOICED_COMMAND_HANDLERS);
 		loadHandlers(ActionHandler.getInstance(), ACTION_HANDLERS);
 		loadHandlers(ActionShiftHandler.getInstance(), ACTION_SHIFT_HANDLERS);
@@ -599,13 +611,13 @@ public class MasterHandler {
 		loadHandlers(TargetHandler.getInstance(), TARGET_HANDLERS);
 		loadHandlers(TelnetHandler.getInstance(), TELNET_HANDLERS);
 	}
-	
+
 	private static void loadHandlers(IHandler<?, ?> handler, Class<?>[] classes) {
 		for (Class<?> c : classes) {
 			if (c == null) {
 				continue;
 			}
-			
+
 			try {
 				handler.registerByClass(c);
 			} catch (Exception ex) {

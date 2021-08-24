@@ -35,6 +35,7 @@
 		</for>
 	</item>
 	<item id="12302" type="Armor" name="Common Item - Sealed Imperial Crusader Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_imperial_crusader_shield_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -140,6 +141,7 @@
 		</for>
 	</item>
 	<item id="12308" type="Armor" name="Common Item - Imperial Crusader Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.shield_imperial_crusader_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

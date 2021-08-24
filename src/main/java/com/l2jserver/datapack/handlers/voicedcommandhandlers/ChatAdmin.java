@@ -1,18 +1,18 @@
 /*
  * Copyright © 2004-2021 L2J DataPack
- * 
+ *
  * This file is part of L2J DataPack.
- * 
+ *
  * L2J DataPack is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * L2J DataPack is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -33,16 +33,14 @@ import com.l2jserver.gameserver.util.Util;
 
 public class ChatAdmin implements IVoicedCommandHandler {
 	private static final String[] VOICED_COMMANDS = {
-		"banchat",
-		"unbanchat"
+		"banchat", "unbanchat"
 	};
-	
-	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params) {
+
+	@Override public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params) {
 		if (!AdminData.getInstance().hasAccess(command, activeChar.getAccessLevel())) {
 			return false;
 		}
-		
+
 		if (command.equals(VOICED_COMMANDS[0])) // banchat
 		{
 			if (params == null) {
@@ -59,7 +57,7 @@ public class ChatAdmin implements IVoicedCommandHandler {
 						expirationTime = System.currentTimeMillis() + (Integer.parseInt(st.nextToken()) * 60 * 1000);
 					}
 				}
-				
+
 				int objId = CharNameTable.getInstance().getIdByName(name);
 				if (objId > 0) {
 					L2PcInstance player = L2World.getInstance().getPlayer(objId);
@@ -83,10 +81,10 @@ public class ChatAdmin implements IVoicedCommandHandler {
 						activeChar.sendMessage("You can't ban moderator !");
 						return false;
 					}
-					
+
 					PunishmentManager.getInstance().startPunishment(new PunishmentTask(objId, PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN, expirationTime, "Chat banned by moderator", activeChar.getName()));
 					player.sendMessage("Chat banned by moderator " + activeChar.getName());
-					
+
 					if (expirationTime > 0) {
 						activeChar.sendMessage("Player " + player.getName() + " chat banned for " + expirationTime + " minutes.");
 					} else {
@@ -106,7 +104,7 @@ public class ChatAdmin implements IVoicedCommandHandler {
 			StringTokenizer st = new StringTokenizer(params);
 			if (st.hasMoreTokens()) {
 				String name = st.nextToken();
-				
+
 				int objId = CharNameTable.getInstance().getIdByName(name);
 				if (objId > 0) {
 					L2PcInstance player = L2World.getInstance().getPlayer(objId);
@@ -118,9 +116,9 @@ public class ChatAdmin implements IVoicedCommandHandler {
 						activeChar.sendMessage("Player is not chat banned !");
 						return false;
 					}
-					
+
 					PunishmentManager.getInstance().stopPunishment(objId, PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN);
-					
+
 					activeChar.sendMessage("Player " + player.getName() + " chat unbanned.");
 					player.sendMessage("Chat unbanned by moderator " + activeChar.getName());
 				} else {
@@ -131,9 +129,8 @@ public class ChatAdmin implements IVoicedCommandHandler {
 		}
 		return true;
 	}
-	
-	@Override
-	public String[] getVoicedCommandList() {
+
+	@Override public String[] getVoicedCommandList() {
 		return VOICED_COMMANDS;
 	}
 }

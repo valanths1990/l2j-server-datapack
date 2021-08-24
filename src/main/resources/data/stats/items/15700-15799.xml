@@ -197,6 +197,7 @@
 		</for>
 	</item>
 	<item id="15710" type="Armor" name="Sealed Moirai Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.weapon_tysandy_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -735,6 +736,7 @@
 		</for>
 	</item>
 	<item id="15741" type="Armor" name="Sealed Elegia Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.heavengate_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1070,6 +1072,7 @@
 		</for>
 	</item>
 	<item id="15758" type="Armor" name="Sealed Vorpal Shield">
+		<set name="armor_type" val="SHIELD"/>
 		<set name="icon" val="icon.Evilgate_Shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
