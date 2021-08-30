@@ -742,6 +742,7 @@
 	<item id="2443" type="Armor" name="Dragon Leather Boots">
 		<set name="icon" val="icon.armor_t45_b_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />
@@ -806,6 +807,7 @@
 	<item id="2447" type="Armor" name="Gloves of Knowledge">
 		<set name="icon" val="icon.armor_t41_g_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="72" />
@@ -1286,6 +1288,7 @@
 	<item id="2477" type="Armor" name="Dragon Leather Gloves">
 		<set name="icon" val="icon.armor_t45_g_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="119" />

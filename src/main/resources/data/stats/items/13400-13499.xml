@@ -566,6 +566,7 @@
 	<item id="13439" type="Armor" name="Vesper Gauntlet">
 		<set name="icon" val="icon.armor_t94_g_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="560" />
@@ -586,6 +587,7 @@
 	<item id="13440" type="Armor" name="Vesper Boots">
 		<set name="icon" val="icon.armor_t94_b_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="560" />
@@ -624,6 +626,7 @@
 	<item id="13442" type="Armor" name="Vesper Leather Gloves">
 		<set name="icon" val="icon.armor_t95_g_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="560" />
@@ -641,6 +644,7 @@
 	<item id="13443" type="Armor" name="Vesper Leather Boots">
 		<set name="icon" val="icon.armor_t95_b_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="560" />
@@ -680,6 +684,7 @@
 	<item id="13445" type="Armor" name="Vesper Gloves">
 		<set name="icon" val="icon.armor_t96_g_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="560" />
@@ -700,6 +705,7 @@
 	<item id="13446" type="Armor" name="Vesper Shoes">
 		<set name="icon" val="icon.armor_t96_b_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="560" />
@@ -759,6 +765,7 @@
 	<item id="13449" type="Armor" name="Vesper Noble Gauntlet">
 		<set name="icon" val="icon.armor_t94_g_i01" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="670" />
@@ -779,6 +786,7 @@
 	<item id="13450" type="Armor" name="Vesper Noble Boots">
 		<set name="icon" val="icon.armor_t94_b_i01" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="670" />
@@ -817,6 +825,7 @@
 	<item id="13452" type="Armor" name="Vesper Noble Leather Gloves">
 		<set name="icon" val="icon.armor_t95_g_i01" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="670" />
@@ -834,6 +843,7 @@
 	<item id="13453" type="Armor" name="Vesper Noble Leather Boots">
 		<set name="icon" val="icon.armor_t95_b_i01" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="670" />
@@ -873,6 +883,7 @@
 	<item id="13455" type="Armor" name="Vesper Noble Gloves">
 		<set name="icon" val="icon.armor_t96_g_i01" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="670" />
@@ -893,6 +904,7 @@
 	<item id="13456" type="Armor" name="Vesper Noble Shoes">
 		<set name="icon" val="icon.armor_t96_b_i01" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="670" />

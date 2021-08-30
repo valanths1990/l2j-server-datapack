@@ -232,6 +232,9 @@
 					<xs:enumeration value="Armor" />
 					<xs:enumeration value="EtcItem" />
 					<xs:enumeration value="Weapon" />
+					<xs:enumeration value="ArmorSkin" />
+					<xs:enumeration value="WeaponSkin" />
+
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>

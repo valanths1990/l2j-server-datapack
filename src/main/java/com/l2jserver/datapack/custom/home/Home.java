@@ -15,7 +15,7 @@ public class Home implements IBypassHandler {
 	@Override public boolean useBypass(String command, L2PcInstance activeChar, L2Character bypassOrigin) {
 //		EventDispatcher.getInstance().notifyEvent(new OnPlayerPvPKill(activeChar,null), Containers.Players());
 //		HtmCache.getInstance().reload();
-		String html = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/custom/home/features.html");
+		String html = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/custom/home/home.html");
 		CommunityBoardHandler.separateAndSend(html, activeChar);
 		return true;
 	}

@@ -25,8 +25,8 @@ public class ShopHandler implements IBypassHandler {
 	}
 
 	@Override public boolean useBypass(String command, L2PcInstance player, L2Character bypassOrigin) {
-		MultisellData.getInstance().load();
-		MultisellData.getInstance().parseDatapackDirectory("data/custom/shop/custom", true);
+//		MultisellData.getInstance().load();
+//		MultisellData.getInstance().parseDatapackDirectory("data/custom/shop/custom", true);
 		String[] splitted = command.split(" ");
 		String currentPage = splitted[0].split(";")[1];
 		if (splitted.length == 1) {

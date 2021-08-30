@@ -1862,6 +1862,7 @@
 	<item id="16298" type="Armor" name="Moirai Gauntlet">
 		<set name="icon" val="icon.armor_t100_g_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="404" />
@@ -1883,6 +1884,7 @@
 	<item id="16299" type="Armor" name="Moirai Leather Gloves">
 		<set name="icon" val="icon.armor_t101_g_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="404" />

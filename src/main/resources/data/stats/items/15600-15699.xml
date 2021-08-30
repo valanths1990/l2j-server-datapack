@@ -3,6 +3,7 @@
 	<item id="15600" type="Armor" name="Vorpal Gloves">
 		<set name="icon" val="icon.armor_t96_g_i03" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="670" />
@@ -23,6 +24,7 @@
 	<item id="15601" type="Armor" name="Vorpal Boots">
 		<set name="icon" val="icon.armor_t94_b_i03" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="670" />
@@ -43,6 +45,7 @@
 	<item id="15602" type="Armor" name="Vorpal Leather Boots">
 		<set name="icon" val="icon.armor_t95_b_i03" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="670" />
@@ -60,6 +63,7 @@
 	<item id="15603" type="Armor" name="Vorpal Shoes">
 		<set name="icon" val="icon.armor_t96_b_i03" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="670" />
@@ -302,6 +306,7 @@
 	<item id="15615" type="Armor" name="Moirai Gauntlet">
 		<set name="icon" val="icon.armor_t100_g_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="404" />
@@ -322,6 +327,7 @@
 	<item id="15616" type="Armor" name="Moirai Leather Gloves">
 		<set name="icon" val="icon.armor_t101_g_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="404" />
@@ -339,6 +345,7 @@
 	<item id="15617" type="Armor" name="Moirai Gloves">
 		<set name="icon" val="icon.armor_t102_g_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="404" />
@@ -359,6 +366,7 @@
 	<item id="15618" type="Armor" name="Moirai Boots">
 		<set name="icon" val="icon.armor_t100_b_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="404" />
@@ -379,6 +387,7 @@
 	<item id="15619" type="Armor" name="Moirai Leather Boots">
 		<set name="icon" val="icon.armor_t101_b_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="404" />
@@ -396,6 +405,7 @@
 	<item id="15620" type="Armor" name="Moirai Shoes">
 		<set name="icon" val="icon.armor_t102_b_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="404" />

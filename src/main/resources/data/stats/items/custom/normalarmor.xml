@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/items.xsd">
+    <!--                blue wolf tunic-->
+    <item id="2398" type="ArmorSkin" name="Blue Wolf Tunic">
+        <set name="icon" val="icon.armor_t70_u_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="chest"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="248"/>
+        <set name="crystal_type" val="B"/>
+    </item>
+    <item id="2403" type="ArmorSkin" name="Blue Wolf Stockings">
+        <set name="icon" val="icon.armor_t70_l_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="legs"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="155"/>
+        <set name="crystal_type" val="B"/>
+    </item>
+    <item id="11398" type="ArmorSkin" name="Blue Wolf Boots - Robe">
+        <set name="icon" val="icon.armor_t70_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="83"/>
+        <set name="crystal_type" val="B"/>
+    </item>
+    <item id="5720" type="ArmorSkin" name="Blue Wolf Gloves - Robe">
+        <set name="icon" val="icon.armor_t70_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="83"/>
+        <set name="crystal_type" val="B"/>
+    </item>
+
+    <!--blue wolf leather armor-->
+    <item id="2391" type="ArmorSkin" name="Blue Wolf Leather Armor">
+        <set name="icon" val="icon.armor_t69_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="402"/>
+        <set name="crystal_type" val="B"/>
+    </item>
+    <item id="5719" type="ArmorSkin" name="Blue Wolf Gloves - Light Armor">
+        <set name="icon" val="icon.armor_t69_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="83"/>
+        <set name="crystal_type" val="B"/>
+    </item>
+    <item id="5735" type="ArmorSkin" name="Blue Wolf Boots - Light Armor">
+        <set name="icon" val="icon.armor_t69_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="83"/>
+        <set name="crystal_type" val="B"/>
+    </item>
+    <!--blue wolf breastplate-->
+    <item id="358" type="ArmorSkin" name="Blue Wolf Breastplate">
+        <set name="icon" val="icon.armor_t68_u_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="chest"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="330"/>
+        <set name="crystal_type" val="B"/>
+    </item>
+    <item id="11394" type="ArmorSkin" name="Blue Wolf Gaiters">
+        <set name="icon" val="icon.armor_t68_l_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="legs"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="206"/>
+        <set name="crystal_type" val="B"/>
+    </item>
+    <item id="11399" type="ArmorSkin" name="Blue Wolf Gloves - Heavy Armor">
+        <set name="icon" val="icon.armor_t68_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="83"/>
+        <set name="crystal_type" val="B"/>
+    </item>
+    <item id="11396" type="ArmorSkin" name="Blue Wolf Boots - Heavy Armor">
+        <set name="icon" val="icon.armor_t68_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="83"/>
+        <set name="crystal_type" val="B"/>
+    </item>
+    <!--    apella doublet-->
+    <item id="7867" type="ArmorSkin" name="Apella Doublet">
+        <set name="icon" val="icon.armor_t1006_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="7868" type="ArmorSkin" name="Apella Silk Gloves - Robe">
+        <set name="icon" val="icon.armor_t1006_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="7869" type="ArmorSkin" name="Apella Sandals - Robe">
+        <set name="icon" val="icon.armor_t1006_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--apella brigadine-->
+    <item id="7864" type="ArmorSkin" name="Apella Brigandine">
+        <set name="icon" val="icon.armor_t1005_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="7865" type="ArmorSkin" name="Apella Leather Gloves - Light Armor">
+        <set name="icon" val="icon.armor_t1005_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="7866" type="ArmorSkin" name="Apella Boots - Light Armor">
+        <set name="icon" val="icon.armor_t1005_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--    apella platearmor-->
+    <item id="7861" type="ArmorSkin" name="Apella Plate Armor">
+        <set name="icon" val="icon.armor_t1004_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="7862" type="ArmorSkin" name="Apella Gauntlet - Heavy Armor">
+        <set name="icon" val="icon.armor_t1004_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="7863" type="ArmorSkin" name="Apella Solleret - Heavy Armor">
+        <set name="icon" val="icon.armor_t1004_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--    robe of nightmare-->
+    <item id="2408" type="ArmorSkin" name="Robe of Nightmare">
+        <set name="icon" val="icon.armor_t82_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="528"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5773" type="ArmorSkin" name="Gauntlets of Nightmare - Robe">
+        <set name="icon" val="icon.armor_t82_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="108"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5785" type="ArmorSkin" name="Boots of Nightmare - Robe">
+        <set name="icon" val="icon.armor_t82_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="108"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--    leather armor of nightmare-->
+    <item id="2394" type="ArmorSkin" name="Leather Armor of Nightmare">
+        <set name="icon" val="icon.armor_t81_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="528"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="11473" type="ArmorSkin" name="Gauntlet of Nightmare - Light Armor Use">
+        <set name="icon" val="icon.armor_t81_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="108"/>
+        <set name="crystal_type" val="A"/>
+
+    </item>
+    <item id="5784" type="ArmorSkin" name="Boots of Nightmare - Light Armor">
+        <set name="icon" val="icon.armor_t81_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="108"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--    armor of nightmare-->
+    <item id="374" type="ArmorSkin" name="Armor of Nightmare">
+        <set name="icon" val="icon.armor_t80_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="704"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="11472" type="ArmorSkin" name="Gauntlet of Nightmare - Heavy Armor">
+        <set name="icon" val="icon.armor_t80_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="108"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5783" type="ArmorSkin" name="Boots of Nightmare - Heavy Armor">
+        <set name="icon" val="icon.armor_t80_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="108"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--    dark crystal robe-->
+    <item id="2407" type="ArmorSkin" name="Dark Crystal Robe">
+        <set name="icon" val="icon.armor_t76_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="347"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5767" type="ArmorSkin" name="Dark Crystal Gloves - Robe">
+        <set name="icon" val="icon.armor_t76_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="71"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5779" type="ArmorSkin" name="Dark Crystal Boots - Robe">
+        <set name="icon" val="icon.armor_t76_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="71"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--    dark crystal leather armor-->
+    <item id="2385" type="ArmorSkin" name="Dark Crystal Leather Armor">
+        <set name="icon" val="icon.armor_t75_u_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="chest"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="214"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="2389" type="ArmorSkin" name="Dark Crystal Leggings">
+        <set name="icon" val="icon.armor_t75_l_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="legs"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="134"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5766" type="ArmorSkin" name="Dark Crystal Gloves - Light Armor">
+        <set name="icon" val="icon.armor_t75_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="71"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5778" type="ArmorSkin" name="Dark Crystal Boots - Light Armor">
+        <set name="icon" val="icon.armor_t75_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="71"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--    dark crystal breastplate-->
+    <item id="365" type="ArmorSkin" name="Dark Crystal Breastplate">
+        <set name="icon" val="icon.armor_t74_u_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="chest"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="285"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="388" type="ArmorSkin" name="Dark Crystal Gaiters">
+        <set name="icon" val="icon.armor_t74_l_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="legs"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="178"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5765" type="ArmorSkin" name="Dark Crystal Gloves - Heavy Armor">
+        <set name="icon" val="icon.armor_t74_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="71"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5777" type="ArmorSkin" name="Dark Crystal Boots - Heavy Armor">
+        <set name="icon" val="icon.armor_t74_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="71"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--    tallum tunic-->
+    <item id="2400" type="ArmorSkin" name="Tallum Tunic">
+        <set name="icon" val="icon.armor_t79_u_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="chest"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="214"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5770" type="ArmorSkin" name="Tallum Gloves - Robe">
+        <set name="icon" val="icon.armor_t79_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="71"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5782" type="ArmorSkin" name="Tallum Boots - Robe">
+        <set name="icon" val="icon.armor_t79_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="71"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="2405" type="ArmorSkin" name="Tallum Stockings">
+        <set name="icon" val="icon.armor_t79_l_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="legs"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="134"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--  tallum leather armor  -->
+    <item id="2393" type="ArmorSkin" name="Tallum Leather Armor">
+        <set name="icon" val="icon.armor_t78_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="347"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5769" type="ArmorSkin" name="Tallum Gloves - Light Armor">
+        <set name="icon" val="icon.armor_t78_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="71"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5781" type="ArmorSkin" name="Tallum Boots - Light Armor">
+        <set name="icon" val="icon.armor_t78_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="71"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--    tallum plate armor-->
+    <item id="2382" type="ArmorSkin" name="Tallum Plate Armor">
+        <set name="icon" val="icon.armor_t77_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="463"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5768" type="ArmorSkin" name="Tallum Gloves - Heavy Armor">
+        <set name="icon" val="icon.armor_t77_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="71"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5780" type="ArmorSkin" name="Tallum Boots - Heavy Armor">
+        <set name="icon" val="icon.armor_t77_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="71"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--    majestic robe-->
+    <item id="2409" type="ArmorSkin" name="Majestic Robe">
+        <set name="icon" val="icon.armor_t85_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="528"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5776" type="ArmorSkin" name="Majestic Gauntlets - Robe">
+        <set name="icon" val="icon.armor_t85_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="108"/>
+        <set name="crystal_type" val="A"/>
+        <set name="material" val="LEATHER"/>
+    </item>
+    <item id="5788" type="ArmorSkin" name="Majestic Boots - Robe">
+        <set name="icon" val="icon.armor_t85_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="108"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--    majestic leather armor-->
+    <item id="2395" type="ArmorSkin" name="Majestic Leather Armor">
+        <set name="icon" val="icon.armor_t84_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="528"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5775" type="ArmorSkin" name="Majestic Gauntlets - Light Armor">
+        <set name="icon" val="icon.armor_t84_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="108"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5787" type="ArmorSkin" name="Majestic Boots - Light Armor">
+        <set name="icon" val="icon.armor_t84_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="108"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--    majestic plate amor-->
+    <item id="2383" type="ArmorSkin" name="Majestic Plate Armor">
+        <set name="icon" val="icon.armor_t83_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="704"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5774" type="ArmorSkin" name="Majestic Gauntlets - Heavy Armor">
+        <set name="icon" val="icon.armor_t83_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="108"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <item id="5786" type="ArmorSkin" name="Majestic Boots - Heavy Armor">
+        <set name="icon" val="icon.armor_t83_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="108"/>
+        <set name="crystal_type" val="A"/>
+    </item>
+    <!--    major arcane robe-->
+    <item id="6383" type="ArmorSkin" name="Major Arcana Robe">
+        <set name="icon" val="icon.armor_t90_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="748"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="6384" type="ArmorSkin" name="Major Arcana Gloves">
+        <set name="icon" val="icon.armor_t90_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="153"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="6385" type="ArmorSkin" name="Major Arcana Boots">
+        <set name="icon" val="icon.armor_t90_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="153"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <!--    imperial crusaider plate-->
+    <item id="6373" type="ArmorSkin" name="Imperial Crusader Breastplate">
+        <set name="icon" val="icon.armor_t88_u_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="chest"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="613"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="6374" type="ArmorSkin" name="Imperial Crusader Gaiters">
+        <set name="icon" val="icon.armor_t88_l_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="legs"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="383"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="6375" type="ArmorSkin" name="Imperial Crusader Gauntlets">
+        <set name="icon" val="icon.armor_t88_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="153"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="6376" type="ArmorSkin" name="Imperial Crusader Boots">
+        <set name="icon" val="icon.armor_t88_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="153"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <!--   draconic leather armor -->
+    <item id="6379" type="ArmorSkin" name="Draconic Leather Armor">
+        <set name="icon" val="icon.armor_t89_ul_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="onepiece"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="748"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="6380" type="ArmorSkin" name="Draconic Leather Gloves">
+        <set name="icon" val="icon.armor_t89_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="153"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="6381" type="ArmorSkin" name="Draconic Leather Boots">
+        <set name="icon" val="icon.armor_t89_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="153"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <!--    dynstic tunic-->
+    <item id="9432" type="ArmorSkin" name="Dynasty Tunic">
+        <set name="icon" val="icon.armor_t93_u_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="chest"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="878"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="9437" type="ArmorSkin" name="Dynasty Stockings">
+        <set name="icon" val="icon.armor_t93_l_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="legs"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="549"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="11514" type="ArmorSkin" name="Dynasty Gloves">
+        <set name="icon" val="icon.armor_t93_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="293"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="11533" type="ArmorSkin" name="Dynasty Shoes">
+        <set name="icon" val="icon.armor_t93_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="MAGIC"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="293"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <!--    dynasty leather armor-->
+    <item id="11517" type="ArmorSkin" name="Dynasty Leather Armor">
+        <set name="icon" val="icon.armor_t92_u_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="chest"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="878"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="11516" type="ArmorSkin" name="Dynasty Leather Leggings">
+        <set name="icon" val="icon.armor_t92_l_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="legs"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="549"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="11515" type="ArmorSkin" name="Dynasty Leather Gloves">
+        <set name="icon" val="icon.armor_t92_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="293"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="11524" type="ArmorSkin" name="Dynasty Leather Boots">
+        <set name="icon" val="icon.armor_t92_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="LIGHT"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="293"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <!--  dynasty breastplate  -->
+    <item id="9416" type="ArmorSkin" name="Dynasty Breast Plate">
+        <set name="icon" val="icon.armor_t91_u_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="chest"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="1171"/>
+
+    </item>
+    <item id="9421" type="ArmorSkin" name="Dynasty Gaiters">
+        <set name="icon" val="icon.armor_t91_l_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="legs"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="731"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="11513" type="ArmorSkin" name="Dynasty Gauntlet">
+        <set name="icon" val="icon.armor_t91_g_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="gloves"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="293"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+    <item id="11526" type="ArmorSkin" name="Dynasty Boots">
+        <set name="icon" val="icon.armor_t91_b_i00"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="armor_type" val="HEAVY"/>
+        <set name="bodypart" val="feet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_count" val="293"/>
+        <set name="crystal_type" val="S"/>
+    </item>
+</list>

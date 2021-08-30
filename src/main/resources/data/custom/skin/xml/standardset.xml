@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="skinset.xsd">
+    <!--     B GRADE Armor Sets -->
+    <set id="25">
+        <chest id="357"/> <!-- Zubei's Breastplate -->
+        <legs id="383"/> <!-- Zubei's Gaiters -->
+        <legs id="11355"/> <!-- Zubei's Gaiters -->
+        <gloves id="5710"/> <!-- Zubei's Gauntlets - Heavy -->
+        <gloves id="11356"/> <!-- Zubei's Gauntlet - Heavy -->
+        <feet id="5726"/> <!-- Zubei's Boots - Heavy -->
+        <feet id="11359"/> <!-- Zubei's Boots - Heavy -->
+    </set>
+    <set id="26">
+        <chest id="2376"/> <!-- Avadon Breastplate -->
+        <legs id="2379"/> <!-- Avadon Gaiters -->
+        <legs id="11375"/> <!-- Avadon Gaiters -->
+        <gloves id="5714"/> <!-- Avadon Gloves - Heavy -->
+        <gloves id="11365"/> <!-- Avadon Gloves - Heavy -->
+        <feet id="5730"/> <!-- Avadon Boots - Heavy -->
+        <feet id="11370"/> <!-- Avadon Boots - Heavy -->
+        <shield id="673"/> <!-- Avadon Shield -->
+        <shield id="11374"/> <!-- Avadon Shield -->
+    </set>
+    <set id="27">
+        <chest id="2384"/> <!-- Zubei's Leather Shirt -->
+        <legs id="2388"/> <!-- Zubei's Leather Gaiters -->
+        <legs id="11353"/> <!-- Zubei's Leather Gaiters -->
+        <gloves id="5711"/> <!-- Zubei's Gauntlets - Light -->
+        <gloves id="11357"/> <!-- Zubei's Gauntlet - Light Use -->
+        <feet id="5727"/> <!-- Zubei's Boots - Light -->
+        <feet id="11360"/> <!-- Zubei's Boots - Light Use -->
+    </set>
+    <set id="28">
+        <chest id="2390"/> <!-- Avadon Leather Armor -->
+        <gloves id="5715"/> <!-- Avadon Gloves - Light -->
+        <gloves id="11366"/> <!-- Avadon Gloves - Light Use -->
+        <feet id="5731"/> <!-- Avadon Boots - Light -->
+        <feet id="11371"/> <!-- Avadon Boots - Light Use -->
+    </set>
+    <set id="29">
+        <chest id="2397"/> <!-- Tunic of Zubei -->
+        <legs id="2402"/> <!-- Stockings of Zubei -->
+        <legs id="11378"/> <!-- Stockings of Zubei -->
+        <gloves id="5712"/> <!-- Zubei's Gauntlets - Robe -->
+        <gloves id="11358"/> <!-- Zubei's Gauntlet - Robe -->
+        <feet id="5728"/> <!-- Zubei's Boots - Robe -->
+        <feet id="11361"/> <!-- Zubei's Boots - Robe -->
+    </set>
+    <set id="30">
+        <chest id="2406"/> <!-- Avadon Robe -->
+        <gloves id="5716"/> <!-- Avadon Gloves - Robe -->
+        <gloves id="11367"/> <!-- Avadon Gloves - Robe -->
+        <feet id="5732"/> <!-- Avadon Boots - Robe -->
+        <feet id="11372"/> <!-- Avadon Boots - Robe -->
+    </set>
+    <set id="32">
+        <chest id="358"/> <!-- Blue Wolf Breastplate -->
+        <legs id="2380"/> <!-- Blue Wolf Gaiters -->
+        <legs id="11394"/> <!-- Blue Wolf Gaiters -->
+        <gloves id="5718"/> <!-- Blue Wolf Gloves - Heavy -->
+        <gloves id="11399"/> <!-- Blue Wolf Gloves - Heavy -->
+        <feet id="5734"/> <!-- Blue Wolf Boots - Heavy -->
+        <feet id="11396"/> <!-- Blue Wolf Boots - Heavy -->
+
+    </set>
+    <set id="33">
+        <chest id="2381"/> <!-- Doom Plate Armor -->
+        <gloves id="5722"/> <!-- Doom Gloves - Heavy -->
+        <gloves id="11379"/> <!-- Doom Gloves - Heavy -->
+        <feet id="5738"/> <!-- Doom Boots - Heavy -->
+        <feet id="11382"/> <!-- Doom Boots - Heavy -->
+        <shield id="110"/> <!-- Doom Shield -->
+        <shield id="11385"/> <!-- Doom Shield -->
+    </set>
+    <set id="34">
+        <chest id="2391"/> <!-- Blue Wolf Leather Armor -->
+        <gloves id="5719"/> <!-- Blue Wolf Gloves - Light -->
+        <gloves id="11400"/> <!-- Blue Wolf Gloves - Light Use -->
+        <feet id="5735"/> <!-- Blue Wolf Boots - Light -->
+        <feet id="11397"/> <!-- Blue Wolf Boots - Light Use -->
+    </set>
+    <set id="35">
+        <chest id="2392"/> <!-- Leather Armor of Doom -->
+        <gloves id="5723"/> <!-- Doom Gloves - Light -->
+        <gloves id="11380"/> <!-- Doom Gloves - Light Use -->
+        <feet id="5739"/> <!-- Doom Boots - Light -->
+        <feet id="11383"/> <!-- Doom Boots - Light Use -->
+    </set>
+    <set id="36">
+        <chest id="2398"/> <!-- Blue Wolf Tunic -->
+        <legs id="2403"/> <!-- Blue Wolf Stockings -->
+        <legs id="11404"/> <!-- Blue Wolf Stockings -->
+        <gloves id="5720"/> <!-- Blue Wolf Gloves - Robe -->
+        <gloves id="11401"/> <!-- Blue Wolf Gloves - Robe -->
+        <feet id="5736"/> <!-- Blue Wolf Boots - Robe -->
+        <feet id="11398"/> <!-- Blue Wolf Boots - Robe -->
+    </set>
+    <set id="37">
+        <chest id="2399"/> <!-- Tunic of Doom -->
+        <legs id="2404"/> <!-- Stockings of Doom -->
+        <legs id="11406"/> <!-- Stockings of Doom -->
+        <gloves id="5724"/> <!-- Doom Gloves - Robe -->
+        <gloves id="11381"/> <!-- Doom Gloves - Robe -->
+        <feet id="5740"/> <!-- Doom Boots - Robe -->
+        <feet id="11384"/> <!-- Doom Boots - Robe -->
+    </set>
+
+</list>
