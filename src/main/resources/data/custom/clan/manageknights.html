@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clan</title>
+</head>
+<body>
+<br>
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>
+            %navigationBar%
+        </td>
+        <td width="600" align="center">
+            <table border="0">
+                <tr>
+                    <td width="600" align="center">
+                        <font name="hs22" color="fca503">Knights</font>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <table border="0">
+                <tr>
+                    <td width="600" align="center">
+                        <font name="hs22" color="fca503">Create</font>
+                    </td>
+                </tr>
+            </table>
+            <table border="0">
+                <tr>
+                    <td width="150">
+                        Create new Knight Unit:
+                    </td>
+                    <td width="150">
+                        <edit width=140 var="knightName">
+                    </td>
+                    <td width="100" align="right">
+                        Leader Name:
+                    </td>
+                    <td width="150">
+                        <edit width=140 var="playerName">
+                    </td>
+                    <td width="200">
+                        <button value="Create Knights"
+                                action="bypass clan;homepage get create_royal $knightName $playerName" width=140
+                                height=30
+                                back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <table border="0">
+                <tr>
+                    <td width="600" align="center">
+                        <font name="hs22" color="fca503">Rename</font>
+                    </td>
+                </tr>
+            </table>
+            <table border="0">
+                <tr>
+                    <td width="150">
+                        Enter new Name:
+                    </td>
+                    <td width="150">
+                        <edit width=140 var="knightName">
+                    </td>
+                    <td width="200">
+                        <button value="Rename First Guard"
+                                action="bypass clan;homepage get rename_pledge 1001 $knightName" width=140 height=30
+                                back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+                    </td>
+                </tr>
+            </table>
+            <table border="0">
+                <tr>
+                    <td width="150">
+                        Enter new Name:
+                    </td>
+                    <td width="150">
+                        <edit width=140 var="guardName">
+                    </td>
+                    <td width="200">
+                        <button value="Rename Second Guard"
+                                action="bypass clan;homepage get rename_pledge 1002 $knightName" width=140 height=30
+                                back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+                    </td>
+                </tr>
+            </table>
+            <table border="0">
+                <tr>
+                    <td width="150">
+                        Enter new Name:
+                    </td>
+                    <td width="150">
+                        <edit width=140 var="knightName">
+                    </td>
+                    <td width="200">
+                        <button value="Rename First Guard"
+                                action="bypass clan;homepage get rename_pledge 2001 $knightName" width=140 height=30
+                                back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+                    </td>
+                </tr>
+            </table>
+            <table border="0">
+                <tr>
+                    <td width="150">
+                        Enter new Name:
+                    </td>
+                    <td width="150">
+                        <edit width=140 var="guardName">
+                    </td>
+                    <td width="200">
+                        <button value="Rename Second Guard"
+                                action="bypass clan;homepage get rename_pledge 2002 $knightName" width=140 height=30
+                                back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <table border="0">
+                <tr>
+                    <td width="600" align="center">
+                        <font name="hs22" color="fca503">Change Captain</font>
+                    </td>
+                </tr>
+            </table>
+            <table border="0">
+                <tr>
+                    <td width="150">
+                        Enter unit name:
+                    </td>
+                    <td width="150">
+                        <edit width=140 var="unitName">
+                    </td>
+                    <td width="100" align="right">
+                        new leader Name:
+                    </td>
+                    <td width="150">
+                        <edit width=140 var="playerName">
+                    </td>
+                    <td width="200">
+                        <button value="Create Academy"
+                                action="bypass clan;homepage get assign_subpl_leader $unitName $playerName" width=140
+                                height=30
+                                back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

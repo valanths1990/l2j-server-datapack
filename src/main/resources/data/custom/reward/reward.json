@@ -4,12 +4,8 @@
       "type": "pvp",
       "items": [
         {
-          "id": 57,
-          "count": 1000
-        },
-        {
-          "id": 57,
-          "count": 1000
+          "id": 9143,
+          "count": 100
         }
       ]
     },
@@ -17,12 +13,12 @@
       "type": "assist",
       "items": [
         {
-          "id": 57,
-          "count": 1000
+          "id": 9143,
+          "count": 30
         },
         {
           "id": 57,
-          "count": 1000
+          "count": 1000000
         }
       ]
     },
@@ -30,24 +26,41 @@
       "type": "tower",
       "items": [
         {
-          "id": 57,
-          "count": 1000
+          "id": 9143,
+          "count": 30
         },
         {
           "id": 57,
-          "count": 1000
+          "count": 1000000
+        }
+      ]
+    },
+
+    {
+      "type": "ranking:weekly",
+      "items": [
+        {
+          "id": 9143,
+          "count": 20000
+        },
+        {
+          "id": 57,
+          "count": 100000000
         }
       ]
     },
     {
-      "type": "ranking:weekly",
-      "id": 57,
-      "count": 1000
-    },
-    {
       "type": "ranking:monthly",
-      "id": 57,
-      "count": 1000000
+      "items": [
+        {
+          "id": 9143,
+          "count": 60000
+        },
+        {
+          "id": 57,
+          "count": 400000000
+        }
+      ]
     }
   ]
 }

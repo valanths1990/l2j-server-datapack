@@ -97,7 +97,7 @@ public final class Kamaloka extends AbstractInstance {
 	 * On retail only newbie guide buffs not removed<br>
 	 * CAUTION: array must be sorted in ascension order!
 	 */
-	protected static final int[] BUFFS_WHITELIST =
+	private static final int[] BUFFS_WHITELIST =
 	{
 		4322, 4323, 4324, 4325, 4326, 4327, 4328, 4329, 4330, 4331, 5632, 5637, 5950
 	};
@@ -1156,7 +1156,7 @@ public final class Kamaloka extends AbstractInstance {
 		31340
 	};
 	
-	protected class KamaWorld extends InstanceWorld {
+	protected static class KamaWorld extends InstanceWorld {
 		public int index; // 0-18 index of the kama type in arrays
 		public int shaman = 0; // objectId of the shaman
 		public List<L2Spawn> firstRoom; // list of the spawns in the first room (excluding shaman)
@@ -1290,12 +1290,8 @@ public final class Kamaloka extends AbstractInstance {
 	 */
 	private synchronized void enterInstance(L2PcInstance player, int index) {
 		int templateId;
-		try {
-			templateId = TEMPLATE_IDS[index];
-		} catch (ArrayIndexOutOfBoundsException e) {
-			throw e;
-		}
-		
+		templateId = TEMPLATE_IDS[index];
+
 		// check for existing instances for this player
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		// player already in the instance
@@ -1356,7 +1352,6 @@ public final class Kamaloka extends AbstractInstance {
 			removeBuffs(partyMember);
 			teleportPlayer(partyMember, TELEPORTS[index], instanceId);
 		}
-		return;
 	}
 	
 	/**

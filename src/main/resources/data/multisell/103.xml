@@ -183,12 +183,12 @@
 		<!-- Ancient Book: Divine Inspiration (Original Version) -->
 		<production count="1" id="8621" />
 	</item>
-	<item>
-		<!-- Olympiad Token -->
-		<ingredient count="220" id="13722" />
-		<!-- Warrior's Temporary Healing Potion -->
-		<production count="1" id="13750" />
-	</item>
+<!--	<item>-->
+<!--		&lt;!&ndash; Olympiad Token &ndash;&gt;-->
+<!--		<ingredient count="220" id="13722" />-->
+<!--		&lt;!&ndash; Warrior's Temporary Healing Potion &ndash;&gt;-->
+<!--		<production count="1" id="13750" />-->
+<!--	</item>-->
 	<item>
 		<!-- Olympiad Token -->
 		<ingredient count="30000" id="13722" />

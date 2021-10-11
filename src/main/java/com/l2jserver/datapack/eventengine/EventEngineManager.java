@@ -25,11 +25,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Logger;
 
 import com.l2jserver.datapack.eventengine.adapter.EventEngineAdapter;
-import com.l2jserver.datapack.eventengine.ai.NpcManager;
 import com.l2jserver.datapack.eventengine.config.BaseConfigLoader;
 import com.l2jserver.datapack.eventengine.datatables.BuffListData;
 import com.l2jserver.datapack.eventengine.datatables.EventLoader;
@@ -40,21 +38,14 @@ import com.l2jserver.datapack.eventengine.enums.EventEngineState;
 import com.l2jserver.datapack.eventengine.handler.EventEngineHandler;
 import com.l2jserver.datapack.eventengine.interfaces.IEventContainer;
 import com.l2jserver.datapack.eventengine.model.base.BaseEvent;
+import com.l2jserver.datapack.eventengine.model.config.AbstractEventConfig;
 import com.l2jserver.datapack.eventengine.model.entity.Player;
-import com.l2jserver.datapack.eventengine.model.holder.LocationHolder;
 import com.l2jserver.datapack.eventengine.security.DualBoxProtection;
 import com.l2jserver.datapack.eventengine.task.EventEngineTask;
 import com.l2jserver.commons.util.Rnd;
-import com.l2jserver.gameserver.BypassHasher;
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.data.xml.impl.DoorData;
-import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.handler.BypassHandler;
-import com.l2jserver.gameserver.handler.IBypassHandler;
-import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.actor.L2Npc;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
 import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
 
@@ -112,7 +103,7 @@ public class EventEngineManager {
 
 			ZoneManager.getInstance().parseDatapackDirectory("data/eventengine/zones", true);
 
-			DoorData.getInstance().parseDatapackFile("data/eventengine/xml/doors.xml");
+//			DoorData.getInstance().parseDatapackFile("data/eventengine/xml/doors.xml");
 		} catch (Exception e) {
 			LOGGER.warning(EventEngineManager.class.getSimpleName() + ": load() " + e);
 			e.printStackTrace();
@@ -158,14 +149,14 @@ public class EventEngineManager {
 
 	// XXX CURRENT EVENT ---------------------------------------------------------------------------------
 	// Event that is running
-	private BaseEvent _currentEvent;
+	private BaseEvent<?extends AbstractEventConfig> _currentEvent;
 
 	/**
 	 * Get the event currently running.
 	 *
 	 * @return
 	 */
-	public BaseEvent getCurrentEvent() {
+	public BaseEvent<?extends AbstractEventConfig> getCurrentEvent() {
 		return _currentEvent;
 	}
 

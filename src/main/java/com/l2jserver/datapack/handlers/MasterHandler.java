@@ -21,7 +21,10 @@ package com.l2jserver.datapack.handlers;
 import static com.l2jserver.gameserver.config.Configuration.customs;
 import static com.l2jserver.gameserver.config.Configuration.general;
 
+import com.l2jserver.datapack.custom.Olympiad.OlympiadHandler;
 import com.l2jserver.datapack.custom.Warehouse;
+import com.l2jserver.datapack.custom.raidboss.RaidbossHandler;
+import com.l2jserver.datapack.custom.settings.Settings;
 import com.l2jserver.datapack.custom.buffer.BufferHandler;
 import com.l2jserver.datapack.custom.classes.ClassHandler;
 import com.l2jserver.datapack.custom.shop.ShopHandler;
@@ -423,7 +426,7 @@ public class MasterHandler {
 		ShopHandler.class,
 		TeleporterHandler.class,
 		ClassHandler.class,
-		com.l2jserver.datapack.custom.account.Account.class,
+		Settings.class,
 		com.l2jserver.datapack.custom.clan.Clan.class,
 		com.l2jserver.datapack.custom.action.Action.class,
 		com.l2jserver.datapack.custom.home.Home.class,
@@ -431,7 +434,10 @@ public class MasterHandler {
 		SkinHandler.class,
 		com.l2jserver.datapack.custom.store.Store.class,
 		com.l2jserver.datapack.custom.augment.Augment.class,
-		Warehouse.class
+		Warehouse.class,
+		Settings.class,
+			OlympiadHandler.class
+
 	};
 
 	private static final Class<?>[] CHAT_HANDLERS = {

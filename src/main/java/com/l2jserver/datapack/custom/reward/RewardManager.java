@@ -26,7 +26,7 @@ public class RewardManager {
 
 	private RewardManager() {
 		try {
-			rewards = Json.fromJson(new File(Configuration.server().getDatapackRoot() + "\\data\\custom\\reward\\reward.json"), Rewards.class);
+			rewards = Json.fromJson(new File(Configuration.server().getDatapackRoot() + "/data/custom/reward/reward.json"), Rewards.class);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

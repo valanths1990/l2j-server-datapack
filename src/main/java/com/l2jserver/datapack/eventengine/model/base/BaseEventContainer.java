@@ -60,7 +60,7 @@ public abstract class BaseEventContainer implements IEventContainer {
 
 		return mConfig;
 	}
-
+	@SuppressWarnings("rawtypes")
 	public BaseEvent newEventInstance() {
 		EventBuilder builder = new EventBuilder();
 		builder.setEventClass(getEventClass());
@@ -71,7 +71,7 @@ public abstract class BaseEventContainer implements IEventContainer {
 	private static class EventBuilder {
 
 		private final Logger LOGGER = Logger.getLogger(EventBuilder.class.getName());
-
+		@SuppressWarnings("rawtypes")
 		private Class<? extends BaseEvent> mEventClass;
 		private AbstractEventConfig mConfig;
 
@@ -84,7 +84,7 @@ public abstract class BaseEventContainer implements IEventContainer {
 			mConfig = config;
 			return this;
 		}
-
+		@SuppressWarnings("rawtypes")
 		private BaseEvent build() {
 			BaseEvent event;
 

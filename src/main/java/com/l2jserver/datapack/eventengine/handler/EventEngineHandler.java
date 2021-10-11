@@ -16,7 +16,7 @@ import java.time.temporal.TemporalAmount;
 import java.util.concurrent.TimeUnit;
 
 public class EventEngineHandler implements IBypassHandler {
-	private String[] COMMANDS = { "eventengine;homepage" };
+	private final String[] COMMANDS = { "eventengine;homepage" };
 	private String button = "<button value=\"%action%\" action=\"bypass eventengine;homepage %action%\" width=180 height=40 back=\"L2UI_ct1.button_df_down\" fore=\"L2UI_ct1.button_df\">";
 	private String registeredPlayersLabel = "<font name=\"hs16\" color=\"fca503\">Registered Players: </font><font name=\"hs16\" color=\"ffffff\">%registeredPlayers%</font>";
 

@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.l2jserver</groupId>
     <artifactId>l2j-server-datapack</artifactId>
-    <version>2.6.2.0-SNAPSHOT</version>
+    <version>2.6.2.0</version>
     <name>L2J DataPack</name>
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
@@ -12,14 +12,14 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <slf4j.version>1.7.30</slf4j.version>
         <!-- L2J -->
-        <l2j-server-game.version>2.6.2.0-SNAPSHOT</l2j-server-game.version>
+        <l2j-server-game.version>2.6.2.0</l2j-server-game.version>
         <!-- Test -->
         <testng.version>7.3.0</testng.version>
         <easymock.version>4.2</easymock.version>
         <powermock.version>2.0.7</powermock.version>
         <!-- Plugins -->
-        <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
-        <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
+        <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+<!--        <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>-->
     </properties>
     <repositories>
         <repository>
@@ -51,7 +51,7 @@
         <dependency>
             <groupId>com.l2jserver</groupId>
             <artifactId>l2j-server-game</artifactId>
-            <version>${l2j-server-game.version}</version>
+            <version>2.6.2.0-SNAPSHOT</version>
         </dependency>
         <!-- Test -->
         <dependency>
@@ -86,15 +86,52 @@
         </dependency>
     </dependencies>
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources/</directory>
+                <excludes>
+                    <exclude>rebel.xml</exclude>
+                    <exclude>sql/**</exclude>
+                </excludes>
+                <targetPath>${env.USERPROFILE}/Desktop/l2workspace/l2Angel compiled</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <targetPath>${env.USERPROFILE}/Desktop/l2workspace/l2Angel compiled/script</targetPath>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12.4</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>3.8.1</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>default-compile</id>-->
+<!--                        <phase>compile</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>compile</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <skipMain>true</skipMain>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+            <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>${maven-jar-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>default-jar</id>
-                        <phase>never</phase>
+                        <phase>none</phase>
                         <configuration>
                             <finalName>unwanted</finalName>
                             <classifier>unwanted</classifier>
@@ -102,26 +139,26 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>${maven-assembly-plugin.version}</version><!--$NO-MVN-MAN-VER$ -->
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                        <configuration>
-                            <finalName>${project.artifactId}-${project.version}</finalName>
-                            <appendAssemblyId>false</appendAssemblyId>
-                            <descriptors>
-                                <descriptor>src/main/assembly/zip.xml</descriptor>
-                            </descriptors>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-assembly-plugin</artifactId>-->
+<!--                <version>${maven-assembly-plugin.version}</version>&lt;!&ndash;$NO-MVN-MAN-VER$ &ndash;&gt;-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>single</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <finalName>${project.artifactId}-${project.version}</finalName>-->
+<!--                            <appendAssemblyId>false</appendAssemblyId>-->
+<!--                            <descriptors>-->
+<!--&lt;!&ndash;                                <descriptor>src/main/assembly/zip.xml</descriptor>&ndash;&gt;-->
+<!--                            </descriptors>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 </project>

@@ -146,7 +146,7 @@ public class FarmZoneManager extends AbstractTimeZone {
 
 		OnAttackableAttack onAttackableAttack = (OnAttackableAttack) event;
 		L2PcInstance attacker = onAttackableAttack.getAttacker();
-		attacker.setPvpFlag(1);
+		attacker.updatePvPStatus();
 
 	}
 

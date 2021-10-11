@@ -79,7 +79,7 @@ public class Ranking implements IBypassHandler {
 
 	private void openBoard(L2PcInstance player, String boardToOpen) {
 		String html = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/custom/ranking/" + boardToOpen + ".html");
-		if (!boardToOpen.equals("homepage")) {
+		if (!boardToOpen.equals("homepage") && !boardToOpen.equals("reward")) {
 			html = html.replace("%alltimeRankingTable%", htmlTables.get("alltime" + boardToOpen)).replace("%weeklyRankingTable%", htmlTables.get("weekly" + boardToOpen)).replace("%monthlyRankingTable%", htmlTables.get("monthly" + boardToOpen));
 		}
 		CommunityBoardHandler.separateAndSend(html, player);

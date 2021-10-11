@@ -10,7 +10,7 @@ public class BaseConfigLoader {
 
     private static final String MAIN_CONFIG_PATH = Configuration.server().getDatapackRoot()+"/data/eventengine/EventEngine.conf";
 
-    private MainEventConfig mMainConfig;
+    private final MainEventConfig mMainConfig;
 
     private BaseConfigLoader() {
         mMainConfig = (MainEventConfig) GsonHelper.load(new File(MAIN_CONFIG_PATH), new MainEventConfig());

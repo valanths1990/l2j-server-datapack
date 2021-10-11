@@ -26,6 +26,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
+import com.l2jserver.datapack.eventengine.model.instance.WorldInstance;
 import com.l2jserver.gameserver.enums.InstanceReenterType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.L2World;
@@ -201,22 +202,21 @@ public abstract class AbstractInstance extends AbstractNpcAI {
 	private void handleRemoveBuffs(L2PcInstance player, InstanceWorld world) {
 		final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
 		switch (inst.getRemoveBuffType()) {
-			case ALL: {
+			case ALL -> {
 				player.stopAllEffectsExceptThoseThatLastThroughDeath();
-				
+
 				final L2Summon summon = player.getSummon();
 				if (summon != null) {
 					summon.stopAllEffectsExceptThoseThatLastThroughDeath();
 				}
-				break;
 			}
-			case WHITELIST: {
+			case WHITELIST -> {
 				for (BuffInfo info : player.getEffectList().getBuffs()) {
 					if (!inst.getBuffExceptionList().contains(info.getSkill().getId())) {
 						info.getEffected().getEffectList().stopSkillEffects(true, info.getSkill());
 					}
 				}
-				
+
 				final L2Summon summon = player.getSummon();
 				if (summon != null) {
 					for (BuffInfo info : summon.getEffectList().getBuffs()) {
@@ -225,15 +225,14 @@ public abstract class AbstractInstance extends AbstractNpcAI {
 						}
 					}
 				}
-				break;
 			}
-			case BLACKLIST: {
+			case BLACKLIST -> {
 				for (BuffInfo info : player.getEffectList().getBuffs()) {
 					if (inst.getBuffExceptionList().contains(info.getSkill().getId())) {
 						info.getEffected().getEffectList().stopSkillEffects(true, info.getSkill());
 					}
 				}
-				
+
 				final L2Summon summon = player.getSummon();
 				if (summon != null) {
 					for (BuffInfo info : summon.getEffectList().getBuffs()) {
@@ -242,7 +241,6 @@ public abstract class AbstractInstance extends AbstractNpcAI {
 						}
 					}
 				}
-				break;
 			}
 		}
 	}

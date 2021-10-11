@@ -38,8 +38,7 @@ import com.l2jserver.datapack.eventengine.events.schedules.AnnounceTeleportEvent
 import com.l2jserver.datapack.eventengine.events.schedules.ChangeToEndEvent;
 import com.l2jserver.datapack.eventengine.events.schedules.ChangeToFightEvent;
 import com.l2jserver.datapack.eventengine.events.schedules.ChangeToStartEvent;
-import com.l2jserver.datapack.eventengine.interfaces.IListenerSuscriber;
-import com.l2jserver.datapack.eventengine.interfaces.IParticipant;
+import com.l2jserver.datapack.eventengine.interfaces.IListenerSubscriber;
 import com.l2jserver.datapack.eventengine.managers.*;
 import com.l2jserver.datapack.eventengine.model.config.AbstractEventConfig;
 import com.l2jserver.datapack.eventengine.model.config.MainEventConfig;
@@ -51,8 +50,6 @@ import com.l2jserver.datapack.eventengine.model.template.SkillTemplate;
 import com.l2jserver.datapack.eventengine.util.EventUtil;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.TeleportWhereType;
-import com.l2jserver.gameserver.model.events.impl.OnDoorAction;
 import com.l2jserver.gameserver.model.holders.Participant;
 import com.l2jserver.gameserver.model.zone.type.L2EventZone;
 import com.l2jserver.gameserver.network.serverpackets.*;
@@ -60,683 +57,698 @@ import com.l2jserver.gameserver.network.serverpackets.*;
 /**
  * @author fissban
  */
-public abstract class BaseEvent<T extends AbstractEventConfig> implements IListenerSuscriber {
-	// Logger
-	private static final Logger LOGGER = Logger.getLogger(BaseEvent.class.getName());
+public abstract class BaseEvent<T extends AbstractEventConfig> implements IListenerSubscriber {
+    // Logger
+    private static final Logger LOGGER = Logger.getLogger(BaseEvent.class.getName());
 
-	private T _config;
+    private T _config;
 
-	protected L2EventZone zone;
+    protected L2EventZone zone;
+    protected WorldInstance world;
 
-//	protected int eventRunningTime = getMainConfig().getRunningTime() * 60;
+    public void initialize() {
+        chooseRandomZone();
+        // Add every player registered for the event
+        getPlayerEventManager().createEventPlayers();
 
-//	public int getEventRunningTime() {
-//		return eventRunningTime;
-//	}
+        if (getMainConfig().isAntiAfkEnabled()) {
+            _antiAfkManager = new AntiAfkManager();
+        }
+        initScheduledEvents();
+        // Starts the clock to control the sequence of internal events of the event
+        getScheduledEventsManager().startTaskControlTime();
+    }
 
-	public void initialize() {
-		chooseRandomZone();
-		// Add every player registered for the event
-		getPlayerEventManager().createEventPlayers();
+    public void setConfig(T config) {
+        _config = config;
+    }
 
-		if (getMainConfig().isAntiAfkEnabled()) {
-			_antiAfkManager = new AntiAfkManager();
-		}
-		initScheduledEvents();
-		// Starts the clock to control the sequence of internal events of the event
-		getScheduledEventsManager().startTaskControlTime();
-	}
+    protected T getConfig() {
+        return _config;
+    }
 
-	public void setConfig(T config) {
-		_config = config;
-	}
+    private MainEventConfig getMainConfig() {
+        return BaseConfigLoader.getInstance().getMainConfig();
+    }
 
-	protected T getConfig() {
-		return _config;
-	}
-
-	private MainEventConfig getMainConfig() {
-		return BaseConfigLoader.getInstance().getMainConfig();
-	}
-
-	/**
-	 * Necessary to handle the event states.
-	 *
-	 * @param state
-	 */
-	public final void runEventState(EventState state) {
-		switch (state) {
-			case START:
-				prepareToStart();
-				onEventStart();
-				break;
-			case FIGHT:
-				prepareToFight();
-				onEventFight();
-				break;
-			case END:
-				ListenerDispatcher.getInstance().removeSuscriber(this);
-				onEventEnd();
-				prepareToEnd();
-				break;
-		}
-	}
+    /**
+     * Necessary to handle the event states.
+     *
+     * @param state
+     */
+    public final void runEventState(EventState state) {
+        switch (state) {
+            case START -> {
+                prepareToStart();
+                onEventStart();
+            }
+            case FIGHT -> {
+                prepareToFight();
+                onEventFight();
+            }
+            case END -> {
+                ListenerDispatcher.getInstance().removeSuscriber(this);
+                onEventEnd();
+                prepareToEnd();
+            }
+        }
+    }
 
 
-	private void chooseRandomZone() {
-		Collections.shuffle(getConfig().getZoneIds());
-		zone = ZoneManager.getInstance().getZoneById(_config.getZoneIds().get(0), L2EventZone.class);
-		zone.setEnabled(true);
+    protected void chooseRandomZone() {
+        Collections.shuffle(getConfig().getZoneIds());
+        zone = ZoneManager.getInstance().getZoneById(_config.getZoneIds().get(0), L2EventZone.class);
+        zone.setEnabled(true);
 //		zone.getPlayersInside().forEach(p -> p.teleToLocation(TeleportWhereType.TOWN));
-	}
+    }
 
-	protected void updateScore(Player player) {
+    protected void updateScore(Player player) {
 
-		switch (_config.getType()) {
-			case SINGLE -> {
-				List<Participant> participants = getPlayerEventManager().getAllEventPlayers()
-					.stream()
-					.map(p->new Participant(p.getName(),p.getPoints(ScoreType.KILL)))
-					.sorted(Comparator.comparing(Participant::getPoints,Comparator.reverseOrder())).
-						collect(Collectors.toList());
-				getPlayerEventManager().getAllEventPlayers().forEach(p -> {
-					p.getPcInstance().sendPacket(new ExShowPVPMatchRecord(participants));
-				});
-			}
-			case TEAM -> {
-				int redPoints = _teamsManagers.getTeam(TeamType.RED).getPoints(getConfig().getScoreType());
-				int bluePoints = _teamsManagers.getTeam(TeamType.BLUE).getPoints(getConfig().getScoreType());
-				ExCubeGameChangePoints pointsChange = new ExCubeGameChangePoints(EventEngineManager.getInstance().getTime(), bluePoints, redPoints);
-				ExCubeGameExtendedChangePoints pointsChangeExtended = new ExCubeGameExtendedChangePoints(EventEngineManager.getInstance().getTime(), bluePoints, redPoints, player.getTeamType() == TeamType.RED, player.getPcInstance(), player.getPoints(getConfig().getScoreType()));
-				getPlayerEventManager().getAllEventPlayers().stream().map(Player::getPcInstance).forEach(pc -> {
-					pc.sendPacket(pointsChange);
-					pc.sendPacket(pointsChangeExtended);
-					pc.sendPacket(ActionFailed.STATIC_PACKET);
-				});
-			}
-		}
-	}
+        switch (_config.getType()) {
+            case SINGLE -> {
+                List<Participant> participants = getPlayerEventManager().getAllEventPlayers()
+                        .stream()
+                        .map(p -> new Participant(p.getName(), p.getPoints(ScoreType.KILL)))
+                        .sorted(Comparator.comparing(Participant::getPoints, Comparator.reverseOrder())).
+                        collect(Collectors.toList());
+                getPlayerEventManager().getAllEventPlayers().forEach(p -> p.getPcInstance().sendPacket(new ExShowPVPMatchRecord(participants)));
+            }
+            case TEAM -> {
+                int redPoints = _teamsManagers.getTeam(TeamType.RED).getPoints(getConfig().getScoreType());
+                int bluePoints = _teamsManagers.getTeam(TeamType.BLUE).getPoints(getConfig().getScoreType());
+                ExCubeGameChangePoints pointsChange = new ExCubeGameChangePoints(EventEngineManager.getInstance().getTime(), bluePoints, redPoints);
+                ExCubeGameExtendedChangePoints pointsChangeExtended = new ExCubeGameExtendedChangePoints(EventEngineManager.getInstance().getTime(), bluePoints, redPoints, player.getTeamType() == TeamType.RED, player.getPcInstance(), player.getPoints(getConfig().getScoreType()));
+                getPlayerEventManager().getAllEventPlayers().stream().map(Player::getPcInstance).forEach(pc -> {
+                    pc.sendPacket(pointsChange);
+                    pc.sendPacket(pointsChangeExtended);
+                    pc.sendPacket(ActionFailed.STATIC_PACKET);
+                });
+            }
+        }
+    }
 
-	protected abstract String getInstanceFile();
+    protected abstract String getInstanceFile();
 
-	protected abstract TeamsBuilder onCreateTeams();
+    protected abstract TeamsBuilder onCreateTeams();
 
-	protected abstract void onEventStart();
+    protected abstract void onEventStart();
 
-	protected abstract void onEventFight();
+    protected abstract void onEventFight();
 
-	protected abstract void onEventEnd();
+    protected abstract void onEventEnd();
 
-	// XXX ANTI AFK SYSTEM -------------------------------------------------------------------------------
-	private AntiAfkManager _antiAfkManager;
+    // XXX ANTI AFK SYSTEM -------------------------------------------------------------------------------
+    private AntiAfkManager _antiAfkManager;
 
-	public AntiAfkManager getAntiAfkManager() {
-		return _antiAfkManager;
-	}
+    public AntiAfkManager getAntiAfkManager() {
+        return _antiAfkManager;
+    }
 
-	// XXX TEAMS -----------------------------------------------------------------------------------------
-	private final TeamsManagers _teamsManagers = new TeamsManagers();
+    // XXX TEAMS -----------------------------------------------------------------------------------------
+    private final TeamsManagers _teamsManagers = new TeamsManagers();
 
-	public TeamsManagers getTeamsManager() {
-		return _teamsManagers;
-	}
+    public TeamsManagers getTeamsManager() {
+        return _teamsManagers;
+    }
 
-	// XXX DINAMIC INSTANCE ------------------------------------------------------------------------------
-	private final InstanceWorldManager _instanceWorldManager = InstanceWorldManager.newInstance();
+    // XXX DYNAMIC INSTANCE ------------------------------------------------------------------------------
+    private final InstanceWorldManager _instanceWorldManager = InstanceWorldManager.newInstance();
 
-	public InstanceWorldManager getInstanceWorldManager() {
-		return _instanceWorldManager;
-	}
+    public InstanceWorldManager getInstanceWorldManager() {
+        return _instanceWorldManager;
+    }
 
-	// XXX SCHEDULED AND UNSCHEDULED EVENTS --------------------------------------------------------------
-	private final ScheduledEventsManager _scheduledEventsManager = new ScheduledEventsManager();
+    // XXX SCHEDULED AND UNSCHEDULED EVENTS --------------------------------------------------------------
+    private final ScheduledEventsManager _scheduledEventsManager = new ScheduledEventsManager();
 
-	public ScheduledEventsManager getScheduledEventsManager() {
-		return _scheduledEventsManager;
-	}
+    public ScheduledEventsManager getScheduledEventsManager() {
+        return _scheduledEventsManager;
+    }
 
-	// XXX TELEPORT --------------------------------------------------------------
-	protected int _radius = 50;
+    // XXX TELEPORT --------------------------------------------------------------
+    protected int _radius = 50;
 
-	/**
-	 * Init the scheduled events.
-	 * <ul>
-	 * <b>Actions:</b>
-	 * </ul>
-	 * <li>Step 1: Announce participants will be teleported.</li>
-	 * <li>Wait 3 secs.</li>
-	 * <li>Step 2: Adjust the status of the event -> START.</li>
-	 * <li>We hope 1 sec to actions within each event is executed.</li>
-	 * <li>Step 3: Adjust the status of the event -> FIGHT.</li>
-	 * <li>Step 4: We sent a message that they are ready to fight.</li>
-	 * <li>We wait until the event ends.</li>
-	 * <li>Step 5: Adjust the status of the event -> END.</li>
-	 * <li>Step 6: We sent a message warning that term event.</li>
-	 * <li>Wait for 1 sec.</li>
-	 * <li>Step 7: Alert the event has ended.</li>
-	 */
-	private void initScheduledEvents() {
-		int time = 1000;
-		getScheduledEventsManager().addScheduledEvent(new AnnounceTeleportEvent(time));
-		time += 3000;
-		getScheduledEventsManager().addScheduledEvent(new ChangeToStartEvent(time));
-		time += 1000;
-		getScheduledEventsManager().addScheduledEvent(new ChangeToFightEvent(time));
-		time += getMainConfig().getRunningTime() * 60 * 1000;
-		getScheduledEventsManager().addScheduledEvent(new ChangeToEndEvent(time));
-		// Announce near end event
-		int timeLeftAnnounce = getMainConfig().getTextTimeForEnd() * 1000;
-		getScheduledEventsManager().addScheduledEvent(new AnnounceNearEndEvent(time - timeLeftAnnounce, getMainConfig().getTextTimeForEnd()));
-		getScheduledEventsManager().addScheduledEvent(new AnnounceNearEndEvent(time - (timeLeftAnnounce / 2), getMainConfig().getTextTimeForEnd() / 2));
-	}
+    /**
+     * Init the scheduled events.
+     * <ul>
+     * <b>Actions:</b>
+     * </ul>
+     * <li>Step 1: Announce participants will be teleported.</li>
+     * <li>Wait 3 secs.</li>
+     * <li>Step 2: Adjust the status of the event -> START.</li>
+     * <li>We hope 1 sec to actions within each event is executed.</li>
+     * <li>Step 3: Adjust the status of the event -> FIGHT.</li>
+     * <li>Step 4: We sent a message that they are ready to fight.</li>
+     * <li>We wait until the event ends.</li>
+     * <li>Step 5: Adjust the status of the event -> END.</li>
+     * <li>Step 6: We sent a message warning that term event.</li>
+     * <li>Wait for 1 sec.</li>
+     * <li>Step 7: Alert the event has ended.</li>
+     */
+    private void initScheduledEvents() {
+        int time = 1000;
+        getScheduledEventsManager().addScheduledEvent(new AnnounceTeleportEvent(time));
+        time += 3000;
+        getScheduledEventsManager().addScheduledEvent(new ChangeToStartEvent(time));
+        time += 1000;
+        getScheduledEventsManager().addScheduledEvent(new ChangeToFightEvent(time));
+        time += getMainConfig().getRunningTime() * 60 * 1000;
+        getScheduledEventsManager().addScheduledEvent(new ChangeToEndEvent(time));
+        // Announce near end event
+        int timeLeftAnnounce = getMainConfig().getTextTimeForEnd() * 1000;
+        getScheduledEventsManager().addScheduledEvent(new AnnounceNearEndEvent(time - timeLeftAnnounce, getMainConfig().getTextTimeForEnd()));
+        getScheduledEventsManager().addScheduledEvent(new AnnounceNearEndEvent(time - (timeLeftAnnounce / 2), getMainConfig().getTextTimeForEnd() / 2));
+    }
 
-	// REVIVE --------------------------------------------------------------------------------------- //
-	private final List<ScheduledFuture<?>> _revivePending = new CopyOnWriteArrayList<>();
+    // REVIVE --------------------------------------------------------------------------------------- //
+    private final List<ScheduledFuture<?>> _revivePending = new CopyOnWriteArrayList<>();
 
-	private void stopAllPendingRevive() {
-		Iterator<ScheduledFuture<?>> iterator = _revivePending.iterator();
-		while (iterator.hasNext()) {
-			iterator.next().cancel(true);
-		}
-		_revivePending.clear();
-	}
+    private void stopAllPendingRevive() {
+        for (ScheduledFuture<?> scheduledFuture : _revivePending) {
+            scheduledFuture.cancel(true);
+        }
+        _revivePending.clear();
+    }
 
-	// NPC IN EVENT --------------------------------------------------------------------------------- //
-	private final SpawnManager _spawnManager = new SpawnManager();
+    // NPC IN EVENT --------------------------------------------------------------------------------- //
+    private final SpawnManager _spawnManager = new SpawnManager();
 
-	public SpawnManager getSpawnManager() {
-		return _spawnManager;
-	}
+    public SpawnManager getSpawnManager() {
+        return _spawnManager;
+    }
 
-	// PLAYERS IN EVENT ----------------------------------------------------------------------------- //
-	private final PlayersManager _playerEventManager = new PlayersManager();
+    // PLAYERS IN EVENT ----------------------------------------------------------------------------- //
+    private final PlayersManager _playerEventManager = new PlayersManager();
 
-	public PlayersManager getPlayerEventManager() {
-		return _playerEventManager;
-	}
+    public PlayersManager getPlayerEventManager() {
+        return _playerEventManager;
+    }
 
-	// LISTENERS ------------------------------------------------------------------------------------ //
+    // LISTENERS ------------------------------------------------------------------------------------ //
 
-	/**
-	 * @param event
-	 */
-	@Override public final void listenerOnInteract(OnInteractEvent event) {
-		Player player = event.getPlayer();
-		Npc target = event.getNpc();
+    /**
+     * @param event
+     */
+    @Override
+    public final void listenerOnInteract(OnInteractEvent event) {
+        Player player = event.getPlayer();
+        Npc target = event.getNpc();
 
-		if (!getPlayerEventManager().isPlayableInEvent(player) || !getSpawnManager().isNpcInEvent(target)) {
-			return;
-		}
-		// Get the player involved in our event
-		Player activePlayer = getPlayerEventManager().getEventPlayer(player);
-		// Exclude the player from the next Anti Afk control
-		if (getAntiAfkManager() != null) {
-			getAntiAfkManager().excludePlayer(activePlayer);
-		}
-		onInteract(event);
-	}
+        if (!getPlayerEventManager().isPlayableInEvent(player) || !getSpawnManager().isNpcInEvent(target)) {
+            return;
+        }
+        // Get the player involved in our event
+        Player activePlayer = getPlayerEventManager().getEventPlayer(player);
+        // Exclude the player from the next Anti Afk control
+        if (getAntiAfkManager() != null) {
+            getAntiAfkManager().excludePlayer(activePlayer);
+        }
+        onInteract(event);
+    }
 
-	/**
-	 * @param event
-	 */
-	protected void onInteract(OnInteractEvent event) {
-	}
+    /**
+     * @param event
+     */
+    protected void onInteract(OnInteractEvent event) {
+    }
 
-	protected void onUnequipItem(OnUnequipItem event) {
+    protected void onUnequippedItem(OnUnequipItem event) {
 
-	}
+    }
 
-	@Override public final void listenerOnTowerCaptured(OnTowerCapturedEvent event) {
-		if(!_playerEventManager.isPlayableInEvent(event.getPlayer()))return;
-			onTowerCaptured(event);
-	}
-	protected void  onTowerCaptured(OnTowerCapturedEvent event){
+    @Override
+    public final void listenerOnDlgAnswer(OnDlgAnswer event) {
+        onDlgAnswer(event);
+    }
 
-	}
+    protected void onDlgAnswer(OnDlgAnswer event) {
 
-	@Override public final void listenerOnDoorAction(OnDoorActionEvent event) {
-		if(!_playerEventManager.isPlayableInEvent(event.getPlayer()))return;
-		onDoorAction(event);
-	}
-	protected void onDoorAction(OnDoorActionEvent event){
+    }
 
-	}
+    @Override
+    public final void listenerOnTowerCaptured(OnTowerCapturedEvent event) {
+        if (!_playerEventManager.isPlayableInEvent(event.getPlayer())) return;
+        onTowerCaptured(event);
+    }
 
-	@Override public void listenerOnUnequipItem(OnUnequipItem event) {
-		onUnequipItem(event);
-	}
+    protected void onTowerCaptured(OnTowerCapturedEvent event) {
 
-	@Override public void listenerOnPlayableHit(OnPlayableHitEvent event) {
-		onPlayableHit(event);
-	}
+    }
 
-	protected void onPlayableHit(OnPlayableHitEvent event) {
+    @Override
+    public final void listenerOnDoorAction(OnDoorActionEvent event) {
+        if (!_playerEventManager.isPlayableInEvent(event.getPlayer())) return;
+        onDoorAction(event);
+    }
 
-	}
+    protected void onDoorAction(OnDoorActionEvent event) {
 
-	/**
-	 * @param event
-	 */
-	@Override public final void listenerOnKill(OnKillEvent event) {
-		Playable playable = event.getAttacker();
-		Character target = event.getTarget();
+    }
 
-		if (!getPlayerEventManager().isPlayableInEvent(playable)) {
-			return;
-		}
-		// We ignore if they kill any summon
-		// XXX It could be used in some event...analyze!
-		if (target instanceof Summon) {
-			return;
-		}
-		// Get the player involved in our event
-		Player activePlayer = getPlayerEventManager().getEventPlayer(playable);
-		// Exclude the player from the next Anti Afk control
-		if (getAntiAfkManager() != null) {
-			getAntiAfkManager().excludePlayer(activePlayer);
-		}
-		onKill(event);
-	}
+    @Override
+    public void listenerOnUnequipItem(OnUnequipItem event) {
+        onUnequippedItem(event);
+    }
 
-	/**
-	 * @param event
-	 */
-	protected void onKill(OnKillEvent event) {
-	}
+    @Override
+    public void listenerOnPlayableHit(OnPlayableHitEvent event) {
+        onPlayableHit(event);
+    }
 
-	/**
-	 * @param event
-	 */
-	@Override public final void listenerOnDeath(OnDeathEvent event) {
-		Player player = event.getTarget();
+    protected void onPlayableHit(OnPlayableHitEvent event) {
 
-		if (!getPlayerEventManager().isPlayableInEvent(player)) {
-			return;
-		}
-		onDeath(event);
-	}
+    }
 
-	/**
-	 * @param event
-	 */
-	protected void onDeath(OnDeathEvent event) {
+    /**
+     * @param event
+     */
+    @Override
+    public final void listenerOnKill(OnKillEvent event) {
+        Playable playable = event.getAttacker();
+        Character target = event.getTarget();
 
-	}
+        if (!getPlayerEventManager().isPlayableInEvent(playable)) {
+            return;
+        }
+        // We ignore if they kill any summon
+        // XXX It could be used in some event...analyze!
+        if (target instanceof Summon) {
+            return;
+        }
+        // Get the player involved in our event
+        Player activePlayer = getPlayerEventManager().getEventPlayer(playable);
+        // Exclude the player from the next Anti Afk control
+        if (getAntiAfkManager() != null) {
+            getAntiAfkManager().excludePlayer(activePlayer);
+        }
+        onKill(event);
+    }
 
-	public void listenerOnUseTeleport(OnUseTeleport event) {
+    /**
+     * @param event
+     */
+    protected void onKill(OnKillEvent event) {
+    }
 
-		onUseTeleport(event);
-	}
+    /**
+     * @param event
+     */
+    @Override
+    public final void listenerOnDeath(OnDeathEvent event) {
+        Player player = event.getTarget();
 
-	protected void onUseTeleport(OnUseTeleport event) {
-		if (this.zone.isInsideZone(event.getLoc())) {
-			return;
-		}
-		event.setCancel(true);
-	}
+        if (!getPlayerEventManager().isPlayableInEvent(player)) {
+            return;
+        }
+        onDeath(event);
+    }
 
-	@Override public final void listenerOnAttack(OnAttackEvent event) {
-		Playable playable = event.getAttacker();
-		Character target = event.getTarget();
+    /**
+     * @param event
+     */
+    protected void onDeath(OnDeathEvent event) {
 
-		if (!getPlayerEventManager().isPlayableInEvent(playable)) {
-			event.setCancel(true);
-			return;
-		}
-		// We get the player involved in our event
-		Player activePlayer = getPlayerEventManager().getEventPlayer(playable);
+    }
 
-		// Remove the spawn protection time
-		if (activePlayer.getProtectionTimeEnd() > 0) {
-			activePlayer.setProtectionTimeEnd(0);
-			activePlayer.sendMessage(MessageData.getInstance().getMsgByLang(activePlayer, "spawnprotection_ended", false));
-		}
+    public void listenerOnUseTeleport(OnUseTeleport event) {
 
-		// Exclude the player from the next Anti Afk control
-		if (getAntiAfkManager() != null) {
-			getAntiAfkManager().excludePlayer(activePlayer);
-		}
+        onUseTeleport(event);
+    }
 
-		// If our target is L2Playable type and we do this in the event control
-		Player activeTarget = getPlayerEventManager().getEventPlayer(target);
+    protected void onUseTeleport(OnUseTeleport event) {
+        if (this.zone.isInsideZone(event.getLocation()) && event.getLocation().getInstanceId() == world.getInstanceId()) {
+            return;
+        }
+        event.setCancel(true);
+    }
 
-		if (activeTarget != null) {
-			if (activeTarget.isProtected()) {
-				activePlayer.sendMessage(MessageData.getInstance().getMsgByLang(activePlayer, "spawnprotection_protected", false));
-				return;
-			}
-			// Check Friendly Fire
-			if (!getMainConfig().isFriendlyFireEnabled()) {
-				if (activePlayer.getTeamType() == activeTarget.getTeamType()) {
-					if ((activePlayer.getTeamType() != TeamType.WHITE) || (activeTarget.getTeamType() != TeamType.WHITE)) {
-						return;
-					}
-				}
-			}
-		}
-		onAttack(event);
-	}
+    @Override
+    public final void listenerOnAttack(OnAttackEvent event) {
+        Playable playable = event.getAttacker();
+        Character target = event.getTarget();
 
-	/**
-	 * @param event
-	 */
-	protected void onAttack(OnAttackEvent event) {
-	}
+        if (!getPlayerEventManager().isPlayableInEvent(playable)) {
+            event.setCancel(true);
+            return;
+        }
+        // We get the player involved in our event
+        Player activePlayer = getPlayerEventManager().getEventPlayer(playable);
 
-	/**
-	 * @param event
-	 * @return true only in the event that an skill not want that continue its normal progress.
-	 */
-	@Override public final void listenerOnUseSkill(OnUseSkillEvent event) {
-		Playable playable = event.getCaster();
-		Character target = event.getTarget();
-		SkillTemplate skill = event.getSkill();
+        // Remove the spawn protection time
+        if (activePlayer.getProtectionTimeEnd() > 0) {
+            activePlayer.setProtectionTimeEnd(0);
+            activePlayer.sendMessage(MessageData.getInstance().getMsgByLang(activePlayer, "spawnprotection_ended", false));
+        }
 
-		if (!getPlayerEventManager().isPlayableInEvent(playable)) {
-			event.setCancel(true);
-			return;
-		}
-		// If the character has no target to finish the listener.
-		// XXX Perhaps in any event it is required to use skills without target... check!
-		if (target == null) {
-			event.setCancel(true);
-			return;
-		}
-		// If the character is using a skill on itself end the listener
-		if (playable.equals(target)) {
+        // Exclude the player from the next Anti Afk control
+        if (getAntiAfkManager() != null) {
+            getAntiAfkManager().excludePlayer(activePlayer);
+        }
+
+        // If our target is L2Playable type and we do this in the event control
+        Player activeTarget = getPlayerEventManager().getEventPlayer(target);
+
+        if (activeTarget != null) {
+            if (activeTarget.isProtected()) {
+                activePlayer.sendMessage(MessageData.getInstance().getMsgByLang(activePlayer, "spawnprotection_protected", false));
+                return;
+            }
+            // Check Friendly Fire
+            if (!getMainConfig().isFriendlyFireEnabled()) {
+                if (activePlayer.getTeamType() == activeTarget.getTeamType()) {
+                    if ((activePlayer.getTeamType() != TeamType.WHITE) || (activeTarget.getTeamType() != TeamType.WHITE)) {
+                        return;
+                    }
+                }
+            }
+        }
+        onAttack(event);
+    }
+
+    /**
+     * @param event
+     */
+    protected void onAttack(OnAttackEvent event) {
+    }
+
+    /**
+     * @param event
+     * @return true only in the event that an skill not want that continue its normal progress.
+     */
+    @Override
+    public final void listenerOnUseSkill(OnUseSkillEvent event) {
+        Playable playable = event.getCaster();
+        Character target = event.getTarget();
+        SkillTemplate skill = event.getSkill();
+
+        if (!getPlayerEventManager().isPlayableInEvent(playable)) {
+            event.setCancel(true);
+            return;
+        }
+        // If the character has no target to finish the listener.
+        // XXX Perhaps in any event it is required to use skills without target... check!
+        if (target == null) {
+            event.setCancel(true);
+            return;
+        }
+        // If the character is using a skill on itself end the listener
+        if (playable.equals(target)) {
 //			event.setCancel(true);
-			return;
-		}
-		// We get the player involved in our event
-		Player activePlayer = getPlayerEventManager().getEventPlayer(playable);
-		// Exclude the player from the next Anti Afk control
-		if (getAntiAfkManager() != null) {
-			getAntiAfkManager().excludePlayer(activePlayer);
-		}
-		// If our target is L2Playable type and we do this in the event control
-		Player activeTarget = getPlayerEventManager().getEventPlayer(target);
-		if (activeTarget != null) {
-			if (activeTarget.isProtected()) {
-				activePlayer.sendMessage(MessageData.getInstance().getMsgByLang(activePlayer, "spawnprotection_protected", false));
-				return;
-			}
+            return;
+        }
+        // We get the player involved in our event
+        Player activePlayer = getPlayerEventManager().getEventPlayer(playable);
+        // Exclude the player from the next Anti Afk control
+        if (getAntiAfkManager() != null) {
+            getAntiAfkManager().excludePlayer(activePlayer);
+        }
+        // If our target is L2Playable type, and we do this in the event control
+        Player activeTarget = getPlayerEventManager().getEventPlayer(target);
+        if (activeTarget != null) {
+            if (activeTarget.isProtected()) {
+                activePlayer.sendMessage(MessageData.getInstance().getMsgByLang(activePlayer, "spawnprotection_protected", false));
+                return;
+            }
 
-			if ((skill.isDamage() || skill.isDebuff())) {
-				// Remove the spawn protection time
-				if (activePlayer.getProtectionTimeEnd() > 0) {
-					activePlayer.setProtectionTimeEnd(0);
-					activePlayer.sendMessage(MessageData.getInstance().getMsgByLang(activePlayer, "spawnprotection_ended", false));
-				}
+            if ((skill.isDamage() || skill.isDebuff())) {
+                // Remove the spawn protection time
+                if (activePlayer.getProtectionTimeEnd() > 0) {
+                    activePlayer.setProtectionTimeEnd(0);
+                    activePlayer.sendMessage(MessageData.getInstance().getMsgByLang(activePlayer, "spawnprotection_ended", false));
+                }
 
-				// Check Friendly Fire
-				if (!getMainConfig().isFriendlyFireEnabled() && (activePlayer.getTeamType() == activeTarget.getTeamType())) {
-					if ((activePlayer.getTeamType() != TeamType.WHITE) || (activeTarget.getTeamType() != TeamType.WHITE)) {
-						return;
-					}
-				}
-			}
-		}
-		onUseSkill(event);
-	}
+                // Check Friendly Fire
+                if (!getMainConfig().isFriendlyFireEnabled() && (activePlayer.getTeamType() == activeTarget.getTeamType())) {
+                    if ((activePlayer.getTeamType() != TeamType.WHITE) || (activeTarget.getTeamType() != TeamType.WHITE)) {
+                        return;
+                    }
+                }
+            }
+        }
+        onUseSkill(event);
+    }
 
-	/**
-	 * @param event
-	 */
-	protected void onUseSkill(OnUseSkillEvent event) {
-	}
+    /**
+     * @param event
+     */
+    protected void onUseSkill(OnUseSkillEvent event) {
+    }
 
-	/**
-	 * @param event
-	 * @return Only in the event that an skill not want that continue its normal progress.
-	 */
-	@Override public final void listenerOnUseItem(OnUseItemEvent event) {
-		Player player = event.getPlayer();
-		ItemTemplate item = event.getItem();
+    /**
+     * @param event
+     * @return Only in the event that an skill not want that continue its normal progress.
+     */
+    @Override
+    public final void listenerOnUseItem(OnUseItemEvent event) {
+        Player player = event.getPlayer();
+        ItemTemplate item = event.getItem();
 
-		if (!getPlayerEventManager().isPlayableInEvent(player)) {
-			event.setCancel(true);
-			return;
-		}
-		// We will not allow the use of pots or scroll
-		// XXX It could be set as a theme config pots
-		if (item.isScroll() || item.isPotion()) {
-			return;
-		}
-		Player activePlayer = getPlayerEventManager().getEventPlayer(player);
-		// Exclude the player from the next Anti Afk control
-		if (getAntiAfkManager() != null) {
-			getAntiAfkManager().excludePlayer(activePlayer);
-		}
-		onUseItem(event);
-	}
+        if (!getPlayerEventManager().isPlayableInEvent(player)) {
+            event.setCancel(true);
+            return;
+        }
+        // We will not allow the use of pots or scroll
+        // XXX It could be set as a theme config pots
+        if (item.isScroll() || item.isPotion()) {
+            return;
+        }
+        Player activePlayer = getPlayerEventManager().getEventPlayer(player);
+        // Exclude the player from the next Anti Afk control
+        if (getAntiAfkManager() != null) {
+            getAntiAfkManager().excludePlayer(activePlayer);
+        }
+        onUseItem(event);
+    }
 
-	/**
-	 * @param event
-	 */
-	protected void onUseItem(OnUseItemEvent event) {
-	}
+    /**
+     * @param event
+     */
+    protected void onUseItem(OnUseItemEvent event) {
+    }
 
-	@Override public void listenerOnLogin(OnLogInEvent event) {
-		Player player = event.getPlayer();
-		if (getPlayerEventManager().isPlayableInEvent(player)) {
-			onLogin(event);
-		}
-	}
+    @Override
+    public void listenerOnLogin(OnLogInEvent event) {
+        Player player = event.getPlayer();
+        if (getPlayerEventManager().isPlayableInEvent(player)) {
+            onLogin(event);
+        }
+    }
 
-	protected void onLogin(OnLogInEvent event) {
-		Player player = _playerEventManager.getEventPlayer(event.getPlayer().getObjectId());
-		Optional<WorldInstance> world = _instanceWorldManager.getAllInstances().stream().filter(wi -> wi.getInstanceId() == player.getWorldInstanceId()).findFirst();
-		world.ifPresent(w ->{
-			player.setInstanceWorld(world.get());
-			player.addToEvent(_teamsManagers.getPlayerTeam(player));
-			player.setProtectionTimeEnd(System.currentTimeMillis() + (getMainConfig().getSpawnProtectionTime() * 1000L));
-			player.teleportTo(player.getTeam().getRndSpawn(), true);
-			player.getPcInstance().addEventListener(new EventEngineListener(player.getPcInstance()));
-			getScoreboardPackets().forEach(p->player.getPcInstance().sendPacket(p));
-			updateScore(player);
-		});
-	}
+    protected void onLogin(OnLogInEvent event) {
+        Player player = _playerEventManager.getEventPlayer(event.getPlayer().getObjectId());
+        Optional<WorldInstance> world = _instanceWorldManager.getAllInstances().stream().filter(wi -> wi.getInstanceId() == player.getWorldInstanceId()).findFirst();
+        world.ifPresent(w -> {
+            player.setInstanceWorld(world.get());
+            player.addToEvent(_teamsManagers.getPlayerTeam(player));
+            player.setProtectionTimeEnd(System.currentTimeMillis() + (getMainConfig().getSpawnProtectionTime() * 1000L));
+            player.teleportTo(player.getTeam().getRndSpawn(), true);
+            player.getPcInstance().addEventListener(new EventEngineListener(player.getPcInstance()));
+            getScoreboardPackets().forEach(p -> player.getPcInstance().sendPacket(p));
+            updateScore(player);
+        });
+    }
 
-	@Override public final void listenerOnLogout(OnLogOutEvent event) {
-		Player player = event.getPlayer();
+    @Override
+    public final void listenerOnLogout(OnLogOutEvent event) {
+        Player player = event.getPlayer();
 
-		if (getPlayerEventManager().isPlayableInEvent(player)) {
-			try {
-				Player activePlayer = getPlayerEventManager().getEventPlayer(player);
-				EventEngineManager.getInstance().addPlayerDisconnected(activePlayer);
-				// Listener
-				onLogout(event);
-				activePlayer.getOriginalTitle();
-				//				removePlayerFromEvent(activePlayer, false);
-			} catch (Exception e) {
-				LOGGER.warning(EventEngineManager.class.getSimpleName() + ": listenerOnLogout() " + e);
-				e.printStackTrace();
-			}
-		}
-	}
+        if (getPlayerEventManager().isPlayableInEvent(player)) {
+            try {
+                Player activePlayer = getPlayerEventManager().getEventPlayer(player);
+                EventEngineManager.getInstance().addPlayerDisconnected(activePlayer);
+                // Listener
+                onLogout(event);
+                activePlayer.getOriginalTitle();
+                //removePlayerFromEvent(activePlayer, false);
+            } catch (Exception e) {
+                LOGGER.warning(EventEngineManager.class.getSimpleName() + ": listenerOnLogout() " + e);
+                e.printStackTrace();
+            }
+        }
+    }
 
-	protected void onLogout(OnLogOutEvent event) {
-	}
+    protected void onLogout(OnLogOutEvent event) {
+    }
 
-	// VARIOUS METHODS. -------------------------------------------------------------------------------- //
+    // VARIOUS METHODS. -------------------------------------------------------------------------------- //
 
-	/**
-	 * Prepare players, teams and the instance to start.
-	 * <ul>
-	 * <b>Actions:</b>
-	 * </ul>
-	 * <li>Cancel any player attack in progress.</li>
-	 * <li>Cancel any player skill in progress.</li>
-	 * <li>Paralyzed the player.</li>
-	 * <li>Cancel all character effects.</li>
-	 * <li>Cancel summon pet.</li>
-	 * <li>Cancel all character cubics.</li>
-	 * <li>Save the return player location.</li>
-	 * <li>Create the teams.</li>
-	 * <li>Create the instance world.</li>
-	 */
-	public void prepareToStart() {
-		WorldInstance world = _instanceWorldManager.createNewInstanceWorld(getInstanceFile());
-		_teamsManagers.createTeams(onCreateTeams(), world.getInstanceId());
+    /**
+     * Prepare players, teams and the instance to start.
+     * <ul>
+     * <b>Actions:</b>
+     * </ul>
+     * <li>Cancel any player attack in progress.</li>
+     * <li>Cancel any player skill in progress.</li>
+     * <li>Paralyzed the player.</li>
+     * <li>Cancel all character effects.</li>
+     * <li>Cancel summon pet.</li>
+     * <li>Cancel all character cubics.</li>
+     * <li>Save the return player location.</li>
+     * <li>Create the teams.</li>
+     * <li>Create the instance world.</li>
+     */
+    public void prepareToStart() {
+        world = _instanceWorldManager.createNewInstanceWorld(getInstanceFile());
+        _teamsManagers.createTeams(onCreateTeams(), world.getInstanceId());
 
-		for (Player player : getPlayerEventManager().getAllEventPlayers()) {
-			player.cancelAllActions();
-			player.cancelAllEffects();
-			player.addToEvent(_teamsManagers.getPlayerTeam(player));
-			player.setInstanceWorld(world);
-			player.teleportTo(_teamsManagers.getPlayerTeam(player).getRndSpawn(), true);
-			player.setProtectionTimeEnd(System.currentTimeMillis() + (getMainConfig().getSpawnProtectionTime() * 1000L)); // Milliseconds
-			getScoreboardPackets().forEach(packet -> player.getPcInstance().sendPacket(packet));
-		}
-	}
+        for (Player player : getPlayerEventManager().getAllEventPlayers()) {
+            player.cancelAllActions();
+            player.cancelAllEffects();
+            player.addToEvent(_teamsManagers.getPlayerTeam(player));
+            player.setInstanceWorld(world);
+            player.teleportTo(_teamsManagers.getPlayerTeam(player).getRndSpawn(), true);
+            player.setProtectionTimeEnd(System.currentTimeMillis() + (getMainConfig().getSpawnProtectionTime() * 1000L)); // Milliseconds
+            getScoreboardPackets().forEach(packet -> player.getPcInstance().sendPacket(packet));
+        }
+    }
 
-	private List<L2GameServerPacket> getScoreboardPackets() {
-		List<L2GameServerPacket> packets = new ArrayList<>();
+    private List<L2GameServerPacket> getScoreboardPackets() {
+        List<L2GameServerPacket> packets = new ArrayList<>();
 
-		switch (_config.getType()) {
-			case TEAM -> {
-				packets.add(new ExCubeGameCloseUI());
-				packets.add(new ExCubeGameChangePoints(EventEngineManager.getInstance().getTime(), 0, 0));
-				Map<Boolean, List<Player>> redAndBlueTeam = getPlayerEventManager().getAllEventPlayers().stream().collect(Collectors.partitioningBy(player -> player.getTeamType() == TeamType.RED));
-				packets.add(new ExCubeGameTeamList(redAndBlueTeam.get(true).stream().map(Player::getPcInstance).collect(Collectors.toList()), redAndBlueTeam.get(false).stream().map(Player::getPcInstance).collect(Collectors.toList()), 0));
-				//				packets.add(new ExCubeGameCloseUI());
-				packets.add(ExBasicActionList.STATIC_PACKET);
-			}
-			case SINGLE -> {
-				List<Participant> participants = getPlayerEventManager().getAllEventPlayers().stream().map(p -> new Participant(p.getName(), 0)).collect(Collectors.toList());
-				packets.add(new ExShowPVPMatchRecord(participants));
-			}
-		}
-		return packets;
-	}
+        switch (_config.getType()) {
+            case TEAM -> {
+                packets.add(new ExCubeGameCloseUI());
+                packets.add(new ExCubeGameChangePoints(EventEngineManager.getInstance().getTime(), 0, 0));
+                Map<Boolean, List<Player>> redAndBlueTeam = getPlayerEventManager().getAllEventPlayers().stream().collect(Collectors.partitioningBy(player -> player.getTeamType() == TeamType.RED));
+                packets.add(new ExCubeGameTeamList(redAndBlueTeam.get(true).stream().map(Player::getPcInstance).collect(Collectors.toList()), redAndBlueTeam.get(false).stream().map(Player::getPcInstance).collect(Collectors.toList()), 0));
+                //packets.add(new ExCubeGameCloseUI());
+                packets.add(ExBasicActionList.STATIC_PACKET);
+            }
+            case SINGLE -> {
+                List<Participant> participants = getPlayerEventManager().getAllEventPlayers().stream().map(p -> new Participant(p.getName(), 0)).collect(Collectors.toList());
+                packets.add(new ExShowPVPMatchRecord(participants));
+            }
+        }
+        return packets;
+    }
 
-	/**
-	 * We prepare the player for the fight.
-	 * <ul>
-	 * <b>Actions:</b>
-	 * </ul>
-	 * <li>We canceled the paralysis made in <u>prepareToTeleport().</u></li>
-	 * <li>We deliver buffs defined in configs.</li>
-	 */
-	public void prepareToFight() {
-		for (Player ph : getPlayerEventManager().getAllEventPlayers()) {
-			ph.giveBuffs(BuffListData.getInstance().getBuffsPlayer(ph));
-		}
-	}
+    /**
+     * We prepare the player for the fight.
+     * <ul>
+     * <b>Actions:</b>
+     * </ul>
+     * <li>We canceled the paralysis made in <u>prepareToTeleport().</u></li>
+     * <li>We deliver buffs defined in configs.</li>
+     */
+    public void prepareToFight() {
+        for (Player ph : getPlayerEventManager().getAllEventPlayers()) {
+            ph.giveBuffs(BuffListData.getInstance().getBuffsPlayer(ph));
+        }
+    }
 
-	/**
-	 * We prepare the player for the end of the event.
-	 * <ul>
-	 * <b>Actions:</b>
-	 * </ul>
-	 * <li>Cancel any attack in progress.</li>
-	 * <li>Cancel any skill in progress.</li>
-	 * <li>Cancel all effects.</li>
-	 * <li>Recover the title and color of the participants.</li>
-	 * <li>We canceled the Team.</li>
-	 * <li>It out of the world we created for the event.</li>
-	 */
-	public void prepareToEnd() {
-		stopAllPendingRevive();
-		List<L2GameServerPacket> packets = new ArrayList<>();
+    /**
+     * We prepare the player for the end of the event.
+     * <ul>
+     * <b>Actions:</b>
+     * </ul>
+     * <li>Cancel any attack in progress.</li>
+     * <li>Cancel any skill in progress.</li>
+     * <li>Cancel all effects.</li>
+     * <li>Recover the title and color of the participants.</li>
+     * <li>We canceled the Team.</li>
+     * <li>It out of the world we created for the event.</li>
+     */
+    public void prepareToEnd() {
+        stopAllPendingRevive();
+        List<L2GameServerPacket> packets = new ArrayList<>();
 
-		switch (_config.getType()) {
-			case TEAM -> {
-				boolean isRedWinner = getTeamsManager().getAllTeams().stream().max(Comparator.comparingInt(p -> p.getPoints(getConfig().getScoreType()))).stream().anyMatch(t -> t.getTeamType() == TeamType.RED);
-				packets.add(new ExCubeGameEnd(isRedWinner));
-			}
-			case SINGLE -> {
+        switch (_config.getType()) {
+            case TEAM -> {
+                boolean isRedWinner = getTeamsManager().getAllTeams().stream().max(Comparator.comparingInt(p -> p.getPoints(getConfig().getScoreType()))).stream().anyMatch(t -> t.getTeamType() == TeamType.RED);
+                packets.add(new ExCubeGameEnd(isRedWinner));
+            }
+            case SINGLE -> {
 
-			}
-		}
-		_playerEventManager.getAllEventPlayers().stream().filter(p -> p.getPcInstance() != null).forEach(p -> {
-			p.revive(getMainConfig().getSpawnProtectionTime());
-			p.cancelAllActions();
-			p.cancelAllEffects();
-			removePlayerFromEvent(p, true);
-			packets.forEach(packet -> p.getPcInstance().sendPacket(packet));
-		});
-		getScheduledEventsManager().cancelTaskControlTime();
-		getInstanceWorldManager().destroyAllInstances();
-	}
+            }
+        }
+        _playerEventManager.getAllEventPlayers().stream().filter(p -> p.getPcInstance() != null).forEach(p -> {
+            p.revive(getMainConfig().getSpawnProtectionTime());
+            p.cancelAllActions();
+            p.cancelAllEffects();
+            removePlayerFromEvent(p, true);
+            packets.forEach(packet -> p.getPcInstance().sendPacket(packet));
+        });
+        getScheduledEventsManager().cancelTaskControlTime();
+        getInstanceWorldManager().destroyAllInstances();
+    }
 
-	/**
-	 * We generated a task to revive a character.
-	 * <ul>
-	 * <b>Actions:</b>
-	 * </ul>
-	 * <li>Generate a pause before executing any action.</li>
-	 * <li>Revive the character.</li>
-	 * <li>We give you the buff depending on the event in which this.</li>
-	 * <li>Teleport the character depending on the event in this.</li>
-	 * <li>We do invulnerable for 5 seconds and not allow it to move.</li>
-	 * <li>We canceled the invul and let you move.</li>
-	 *
-	 * @param player
-	 * @param time
-	 * @param radiusTeleport
-	 */
-	public void scheduleRevivePlayer(final Player player, int time, int radiusTeleport) {
-		try {
-			EventUtil.sendEventMessage(player, MessageData.getInstance().getMsgByLang(player, "revive_in", true).replace("%time%", time + ""));
-			_revivePending.add(ThreadPoolManager.getInstance().scheduleGeneral(() -> {
-				player.revive(getMainConfig().getSpawnProtectionTime());
-				player.giveBuffs(BuffListData.getInstance().getBuffsPlayer(player));
-				player.teleportTo(_teamsManagers.getPlayerTeam(player).getRndSpawn(), true);
-			}, time * 1000L));
-		} catch (Exception e) {
-			LOGGER.warning(BaseEvent.class.getSimpleName() + ": " + e);
-			e.printStackTrace();
-		}
-	}
+    /**
+     * We generated a task to revive a character.
+     * <ul>
+     * <b>Actions:</b>
+     * </ul>
+     * <li>Generate a pause before executing any action.</li>
+     * <li>Revive the character.</li>
+     * <li>We give you the buff depending on the event in which this.</li>
+     * <li>Teleport the character depending on the event in this.</li>
+     * <li>We do invulnerable for 5 seconds and not allow it to move.</li>
+     * <li>We canceled the invul and let you move.</li>
+     *
+     * @param player
+     * @param time
+     * @param radiusTeleport
+     */
+    public void scheduleRevivePlayer(final Player player, int time, int radiusTeleport) {
+        try {
+            EventUtil.sendEventMessage(player, MessageData.getInstance().getMsgByLang(player, "revive_in", true).replace("%time%", time + ""));
+            _revivePending.add(ThreadPoolManager.getInstance().scheduleGeneral(() -> {
+                player.revive(getMainConfig().getSpawnProtectionTime());
+                player.giveBuffs(BuffListData.getInstance().getBuffsPlayer(player));
+                player.teleportTo(_teamsManagers.getPlayerTeam(player).getRndSpawn(), true);
+            }, time * 1000L));
+        } catch (Exception e) {
+            LOGGER.warning(BaseEvent.class.getSimpleName() + ": " + e);
+            e.printStackTrace();
+        }
+    }
 
-	public void scheduleRevivePlayer(final Player player, int time) {
-		scheduleRevivePlayer(player, time, 0);
-	}
+    public void scheduleRevivePlayer(final Player player, int time) {
+        scheduleRevivePlayer(player, time, 0);
+    }
 
-	/**
-	 * <ul>
-	 * <b>Actions:</b>
-	 * </ul>
-	 * <li>Recover original title.</li>
-	 * <li>Recover original color title.</li>
-	 * <li>Remove from instance and back 0</li>
-	 *
-	 * @param ph
-	 * @param forceRemove
-	 */
-	public void removePlayerFromEvent(Player ph, boolean forceRemove) {
-		ph.teleportTo(ph.getReturnLocation(), false);
-		ph.getTeam().removeMember(ph);
-		ph.getOriginalTitle();
-		ph.removeFromEvent();
+    /**
+     * <ul>
+     * <b>Actions:</b>
+     * </ul>
+     * <li>Recover original title.</li>
+     * <li>Recover original color title.</li>
+     * <li>Remove from instance and back 0</li>
+     *
+     * @param ph
+     * @param forceRemove
+     */
+    public void removePlayerFromEvent(Player ph, boolean forceRemove) {
+        ph.teleportTo(ph.getReturnLocation(), false);
+        ph.getTeam().removeMember(ph);
+        ph.getOriginalTitle();
+        ph.removeFromEvent();
 
-		if (forceRemove) {
-			getPlayerEventManager().getAllEventPlayers().remove(ph);
-		}
-	}
+        if (forceRemove) {
+            getPlayerEventManager().getAllEventPlayers().remove(ph);
+        }
+    }
 
-	/**
-	 * <ul>
-	 * <b>Actions:</b>
-	 * </ul>
-	 * <li>Add a suscription to one type of events</li>
-	 *
-	 * @param type: ListenerType
-	 */
-	protected final void addSuscription(ListenerType type) {
-		ListenerDispatcher.getInstance().addSuscription(type, this);
-	}
+    /**
+     * <ul>
+     * <b>Actions:</b>
+     * </ul>
+     * <li>Add a suscription to one type of events</li>
+     *
+     * @param type: ListenerType
+     */
+    protected final void addSuscription(ListenerType type) {
+        ListenerDispatcher.getInstance().addSuscription(type, this);
+    }
 
-	/**
-	 * <ul>
-	 * <b>Actions:</b>
-	 * </ul>
-	 * <li>Remove the suscription to one type of events</li>
-	 *
-	 * @param type: ListenerType
-	 */
-	protected final void removeSuscription(ListenerType type) {
-		ListenerDispatcher.getInstance().removeSuscription(type, this);
-	}
+    /**
+     * <ul>
+     * <b>Actions:</b>
+     * </ul>
+     * <li>Remove the suscription to one type of events</li>
+     *
+     * @param type: ListenerType
+     */
+    protected final void removeSubscription(ListenerType type) {
+        ListenerDispatcher.getInstance().removeSuscription(type, this);
+    }
 }

@@ -1,6 +1,7 @@
 package com.l2jserver.datapack.custom.zones.pvpzone;
 
 import com.l2jserver.datapack.custom.zones.AbstractTimeZone;
+import com.l2jserver.datapack.custom.zones.pvpzone.zonemodes.Deathmatch;
 import com.l2jserver.datapack.custom.zones.pvpzone.zonemodes.DominationMode;
 import com.l2jserver.gameserver.config.Configuration;
 import com.l2jserver.gameserver.handler.BypassHandler;
@@ -18,7 +19,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public final class PvpZoneManager extends AbstractTimeZone {
 
-	private Map<L2PcInstance, Integer> currentZoneScore = new ConcurrentHashMap<>();
+	private final Map<L2PcInstance, Integer> currentZoneScore = new ConcurrentHashMap<>();
 	private ZoneMode z;
 
 	private PvpZoneManager() {

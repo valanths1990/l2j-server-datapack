@@ -31,11 +31,15 @@ public class AssistManager {
 
 	public void onSkillUse(IBaseEvent event) {
 		OnCreatureSkillUse onSkillUse = (OnCreatureSkillUse) event;
-		if (onSkillUse.getCaster().getParty() == null || !(onSkillUse.getCaster() instanceof L2PcInstance) || !customs().getSupportSkills().contains(onSkillUse.getSkill().getId()) || (onSkillUse.getTargets() == null && onSkillUse.getCaster() == onSkillUse.getTarget())) {
+		if (onSkillUse.getCaster().getParty() == null || !(onSkillUse.getCaster() instanceof L2PcInstance)
+			|| !customs().getSupportSkills().contains(onSkillUse.getSkill().getId())
+			|| (onSkillUse.getTargets() == null && (onSkillUse.getTarget() instanceof L2Playable )
+			&& onSkillUse.getCaster() == onSkillUse.getTarget())) {
 			return;
 		}
 		supportedPlayers.putIfAbsent((L2PcInstance) onSkillUse.getCaster(), new ConcurrentHashMap<>());
-		supportedPlayers.get(onSkillUse.getCaster()).put((L2Playable) onSkillUse.getTarget(), System.currentTimeMillis());
+		assert onSkillUse.getTarget() instanceof L2Playable;
+		supportedPlayers.get(onSkillUse.getCaster()).put((L2Playable) onSkillUse.getTarget(), System.currentTimeMillis());//error
 		Stream.ofNullable(onSkillUse.getTargets()).flatMap(Arrays::stream).forEach(o -> supportedPlayers.get(onSkillUse.getCaster()).put((L2Playable) o, System.currentTimeMillis()));
 
 	}
@@ -53,7 +57,11 @@ public class AssistManager {
 			}
 			return (supportedAttacker(p, killer) || attackedTarget(p, target)) && p.isInsideRadius(killer.getLocation(), 6000, false, false);
 		}).collect(Collectors.toList());
-		supporters.forEach(s -> RewardManager.getInstance().rewardPlayer(s, "assist"));
+		supporters.forEach(s -> {
+			RewardManager.getInstance().rewardPlayer(s, "assist");
+			s.sendMessage("You have been rewarded for your Assistance.");
+		});
+
 	}
 
 	private boolean supportedAttacker(L2PcInstance player, L2Playable killer) {

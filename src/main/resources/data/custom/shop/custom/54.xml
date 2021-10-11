@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/multisell.xsd">
+    <item>
+        <production id="57" count="100000000" />
+    </item><!-- Adena -->
+    <item>
+        <production id="5575" count="1" />
+    </item><!-- Ancient Adena -->
+    <item>
+        <production id="6673" count="1" />
+    </item><!-- Festival Adena -->
+    <item>
+        <production id="13067" count="1" />
+    </item><!-- Fantasy Isle Coin -->
+    <item>
+        <production id="13068" count="1" />
+    </item><!-- Fantasy Isle Coin (Player Commendation) -->
+    <item>
+        <production id="10639" count="1" />
+    </item><!-- Mouse Coin -->
+    <item>
+        <production id="3470" count="1" />
+    </item><!-- Gold Bar -->
+    <item>
+        <production id="9142" count="1" />
+    </item><!-- Apiga -->
+    <item>
+        <production id="9143" count="1" />
+    </item><!-- Golden Apiga -->
+    <item>
+        <production id="14720" count="1" />
+    </item><!-- Event - Apiga -->
+    <item>
+        <production id="14721" count="1" />
+    </item><!-- Event - Golden Apiga -->
+</list>

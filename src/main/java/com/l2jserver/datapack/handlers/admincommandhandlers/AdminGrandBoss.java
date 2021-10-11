@@ -22,9 +22,9 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-import com.l2jserver.datapack.ai.individual.QueenAnt;
-import com.l2jserver.datapack.ai.individual.Antharas.Antharas;
-import com.l2jserver.datapack.ai.individual.Baium.Baium;
+import com.l2jserver.datapack.instances.QueenAnt.QueenAnt;
+import com.l2jserver.datapack.instances.Antharas.Antharas;
+import com.l2jserver.datapack.instances.Baium.Baium;
 import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;

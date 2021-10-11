@@ -1661,7 +1661,7 @@
 		<race name="ELF" point="giran_castle_town" />
 		<race name="KAMAEL" point="giran_castle_town" />
 	</zone>
-	<zone name="kamaroka_17_12" type="RespawnZone" shape="NPoly" minZ="-15788" maxZ="-5288">
+	<zone name="kamaroka_17_12" type="PeaceZone" shape="NPoly" minZ="-15788" maxZ="-5288">
 		<node X="-90385" Y="-188637" />
 		<node X="-73551" Y="-188638" />
 		<node X="-73535" Y="-172014" />

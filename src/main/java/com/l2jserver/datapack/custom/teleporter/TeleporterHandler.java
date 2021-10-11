@@ -58,8 +58,9 @@ public class TeleporterHandler implements IBypassHandler {
 			return;
 		}
 		Location loc = new Location(tp.getLocX(), tp.getLocY(), tp.getLocZ());
+		loc.setInstanceId(0);
 		player.reduceAdena("Teleport", tp.getPrice(), null, true);
-		player.teleToLocation(loc, true);
+		player.teleToLocation(loc,true);
 	}
 
 	@Override public String[] getBypassList() {

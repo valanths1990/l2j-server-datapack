@@ -12,11 +12,13 @@
             <skill name="Skill01_ID" id="5274" level="5"/> <!-- NPC(party) - Physical Single Long Range Attack -->
             <skill name="Breath" id="5827" level="3"/> <!-- Fireball -->
             <skill name="SelfRangeDD_ID" id="5832" level="1"/> <!-- Hate Aura -->
+            <skill name="hp drain resistance" level="12" id="4002" /> <!--NPC HP Drain -->
         </parameters>
+        <acquire sp="3000" expRate="1"/>
         <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
             <vitals hp="15093.4274797799" hpRegen="114.399578021039" mp="1674.8" mpRegen="3"/>
             <attack physical="5746.81895750842" magical="3924.33235398589" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
-            <defence physical="2000.2" magical="2000.528184"/>
+            <defence physical="1500.2" magical="2000.528184"/>
             <attribute>
                 <attack type="FIRE" value="130"/>
                 <defence fire="180" water="120" wind="150" earth="150" holy="150" dark="150" default="150"/>
@@ -53,7 +55,9 @@
             <skill name="Skill01_ID" id="5274" level="5"/> <!-- NPC(party) - Physical Single Long Range Attack -->
             <skill name="Breath" id="5827" level="3"/> <!-- Fireball -->
             <skill name="SelfRangeDD_ID" id="5832" level="1"/> <!-- Hate Aura -->
+            <skill name="hp drain resistance" level="12" id="4002" /> <!--NPC HP Drain -->
         </parameters>
+        <acquire sp="3000" expRate="1"/>
         <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
             <vitals hp="15093.4274797799" hpRegen="114.399578021039" mp="1674.8" mpRegen="3"/>
             <attack physical="5746.81895750842" magical="3924.33235398589" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
@@ -86,6 +90,7 @@
     <npc id="27414" level="85" type="L2Monster" name="Divinity Magus" usingServerSideName="true" usingServerSideTitle="true" title="L2 Angel">
         <race>DIVINE</race>
         <sex>MALE</sex>
+        <acquire sp="3000" expRate="1"/>
         <stats str="40" int="20" dex="30" wit="20" con="43" men="20">
             <vitals hp="22900.11306877694" hpRegen="8.5" mp="16740.8" mpRegen="3"/>
             <attack physical="3000.537548504614" magical="4000.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
@@ -119,6 +124,7 @@
         <!-- TODO: Must be confirmed -->
         <race>DIVINE</race>
         <sex>FEMALE</sex>
+        <acquire sp="3000" expRate="1"/>
         <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
             <vitals hp="99999.11306" hpRegen="8.5" mp="1674.8" mpRegen="3"/>
             <attack physical="6000.537548504614" magical="9000.75132" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
@@ -159,7 +165,9 @@
             <skill name="Skill01_ID" id="5274" level="5"/> <!-- NPC(party) - Physical Single Long Range Attack -->
             <skill name="Breath" id="5827" level="3"/> <!-- Fireball -->
             <skill name="SelfRangeDD_ID" id="5832" level="1"/> <!-- Hate Aura -->
+            <skill name="hp drain resistance" level="12" id="4002" /> <!--NPC HP Drain -->
         </parameters>
+        <acquire sp="3000" expRate="1"/>
         <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
             <vitals hp="15093.4274797799" hpRegen="114.399578021039" mp="1674.8" mpRegen="3"/>
             <attack physical="5746.81895750842" magical="3924.33235398589" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
@@ -198,9 +206,11 @@
             <skill name="Skill01_ID" id="5274" level="5"/> <!-- NPC(party) - Physical Single Long Range Attack -->
             <skill name="Breath" id="5827" level="3"/> <!-- Fireball -->
             <skill name="SelfRangeDD_ID" id="5832" level="1"/> <!-- Hate Aura -->
+            <skill name="hp drain resistance" level="12" id="4002" /> <!--NPC HP Drain -->
         </parameters>
         <race>DRAGON</race>
         <sex>MALE</sex>
+        <acquire sp="3000" expRate="1"/>
         <equipment rhand="13979" lhand="13980"/> <!-- rhand: Exclusive to Monsters (Dragon Steed Troop Battle Infantry Sword) lhand: Exclusive to Monsters (Dragon Steed Troop Battle Infantry Shield) -->
         <acquire expRate="13.0229036875" sp="8955"/>
         <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
@@ -260,9 +270,11 @@
             <skill name="Skill02_ID" id="5829" level="4"/> <!-- Fire Flare -->
             <skill name="Breath" id="5827" level="3"/> <!-- Fireball -->
             <skill name="Buff" id="5834" level="1"/> <!-- Magic Barrier -->
+            <skill name="hp drain resistance" level="12" id="4002" /> <!--NPC HP Drain -->
         </parameters>
         <race>DRAGON</race>
         <sex>MALE</sex>
+        <acquire sp="3000" expRate="1"/>
         <equipment rhand="13981"/> <!-- rhand: Exclusive to Monsters (Mounted Troops Tactics) -->
         <acquire expRate="13.2711816666667" sp="9090"/>
         <stats str="40" int="21" dex="30" wit="20" con="43" men="20">

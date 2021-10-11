@@ -99,7 +99,7 @@ public class HuntingGround extends BaseEvent<HuntingGroundConfig> {
 
 	}
 
-	@Override protected void onUnequipItem(OnUnequipItem event) {
+	@Override protected void onUnequippedItem(OnUnequipItem event) {
 		if (eventItems.contains(event.getItem()) || event.getItem().getItemType() == EtcItemType.ARROW || event.getItem().getItemType() == WeaponType.BOW) {
 			event.setCancel(true);
 		}

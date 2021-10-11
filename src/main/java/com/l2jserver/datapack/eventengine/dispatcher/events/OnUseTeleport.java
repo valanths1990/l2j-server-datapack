@@ -5,15 +5,15 @@ import com.l2jserver.datapack.eventengine.model.entity.Player;
 import com.l2jserver.gameserver.model.Location;
 
 public class OnUseTeleport extends ListenerEvent {
-	private Player player;
-	private Location location;
+	private final Player player;
+	private final Location location;
 
 	public OnUseTeleport(Player player, Location location) {
 		this.location = location;
 		this.player = player;
 	}
 
-	public Location getLoc() {
+	public Location getLocation() {
 		return location;
 	}
 

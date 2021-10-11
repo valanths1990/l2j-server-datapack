@@ -43,10 +43,10 @@ public final class HellboundEngine extends AbstractNpcAI {
 	// @formatter:off
 	private static final int[][] DOOR_LIST =
 	{
-		{ 19250001, 5 },
-		{ 19250002, 5 },
-		{ 20250001, 9 },
-		{ 20250002, 7 }
+//		{ 19250001, 5 },
+//		{ 19250002, 5 },
+//		{ 20250001, 9 },
+//		{ 20250002, 7 }
 	};
 	private static final int[] MAX_TRUST =
 	{

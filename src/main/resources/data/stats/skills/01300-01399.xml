@@ -543,6 +543,7 @@
 		<set name="reuseDelayType" val="S" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="TARGET" />
+		<set name="isDebuff" val="true"/>
 		<effects>
 			<effect name="NoblesseBless" />
 		</effects>
@@ -557,7 +558,7 @@
 		<set name="magicLvl" val="-1" />
 		<set name="mpConsume1" val="412" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="600000" />
+		<set name="reuseDelay" val="25000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
@@ -3576,6 +3577,174 @@
 		</enchant3Effects>
 	</skill>
 	<skill id="1397" levels="3" name="Clarity" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1" enchantGroup4="1">
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#effectPoint"> 549 611 655 </table>
+		<table name="#itemConsumeCount"> 1 2 3 </table>
+		<table name="#magicalMpConsumeRate"> 0.96 0.93 0.9 </table>
+		<table name="#magicLvl"> 58 66 74 </table>
+		<table name="#mpConsumeRate"> 0.9 0.85 0.8 </table>
+		<table name="#mpConsume1"> 11 13 14 </table>
+		<table name="#mpConsume2"> 43 49 55 </table>
+		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
+		<table name="#enchMpConsumeRate"> 0.79 0.79 0.79 0.79 0.79 0.79 0.79 0.78 0.78 0.78 0.78 0.78 0.78 0.78 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.76 0.76 0.76 0.76 0.76 0.76 0.76 0.75 </table>
+		<table name="#ench2magicalMpConsumeRate"> 0.9 0.9 0.9 0.9 0.9 0.89 0.89 0.89 0.89 0.89 0.89 0.88 0.88 0.88 0.88 0.88 0.88 0.87 0.87 0.87 0.87 0.87 0.87 0.86 0.86 0.86 0.86 0.86 0.86 0.85 </table>
+		<table name="#ench4AbnormalTime"> 1240 1280 1320 1360 1400 1440 1480 1520 1560 1600 1640 1680 1720 1760 1800 1840 1880 1920 1960 2000 2040 2080 2120 2160 2200 2240 2280 2320 2360 2400 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="1200" />
+		<set name="abnormalType" val="CHEAP_MAGIC" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="400" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="4000" />
+		<set name="icon" val="icon.skill1397" />
+		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="operateType" val="A2" />
+		<set name="reuseDelay" val="2000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="TARGET" />
+		<enchant1 name="magicLvl" val="#enchMagicLvl" />
+		<enchant2 name="magicLvl" val="#enchMagicLvl" />
+		<enchant3 name="magicLvl" val="#enchMagicLvl" />
+		<enchant4 name="abnormalTime" val="#ench4AbnormalTime" />
+		<enchant4 name="magicLvl" val="#enchMagicLvl" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="physicalMpConsumeRate" val="#mpConsumeRate" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="magicalMpConsumeRate" val="#magicalMpConsumeRate" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="danceMpConsumeRate" val="#mpConsumeRate" />
+			</effect>
+		</effects>
+		<enchant1Effects>
+			<effect name="Buff">
+				<mul stat="magicalMpConsumeRate" val="0.9" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="physicalMpConsumeRate" val="#enchMpConsumeRate" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="danceMpConsumeRate" val="0.8" />
+			</effect>
+		</enchant1Effects>
+		<enchant2Effects>
+			<effect name="Buff">
+				<mul stat="magicalMpConsumeRate" val="#ench2magicalMpConsumeRate" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="physicalMpConsumeRate" val="0.8" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="danceMpConsumeRate" val="0.8" />
+			</effect>
+		</enchant2Effects>
+		<enchant3Effects>
+			<effect name="Buff">
+				<mul stat="magicalMpConsumeRate" val="0.9" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="physicalMpConsumeRate" val="0.8" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="danceMpConsumeRate" val="#enchMpConsumeRate" />
+			</effect>
+		</enchant3Effects>
+	</skill>
+	<skill id="13971" levels="3" name="Clarity" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1" enchantGroup4="1">
+		<!-- High Five Confirmed -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#effectPoint"> 549 611 655 </table>
+		<table name="#itemConsumeCount"> 1 2 3 </table>
+		<table name="#magicalMpConsumeRate"> 0.96 0.93 0.9 </table>
+		<table name="#magicLvl"> 58 66 74 </table>
+		<table name="#mpConsumeRate"> 0.9 0.85 0.8 </table>
+		<table name="#mpConsume1"> 11 13 14 </table>
+		<table name="#mpConsume2"> 43 49 55 </table>
+		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
+		<table name="#enchMpConsumeRate"> 0.79 0.79 0.79 0.79 0.79 0.79 0.79 0.78 0.78 0.78 0.78 0.78 0.78 0.78 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.76 0.76 0.76 0.76 0.76 0.76 0.76 0.75 </table>
+		<table name="#ench2magicalMpConsumeRate"> 0.9 0.9 0.9 0.9 0.9 0.89 0.89 0.89 0.89 0.89 0.89 0.88 0.88 0.88 0.88 0.88 0.88 0.87 0.87 0.87 0.87 0.87 0.87 0.86 0.86 0.86 0.86 0.86 0.86 0.85 </table>
+		<table name="#ench4AbnormalTime"> 1240 1280 1320 1360 1400 1440 1480 1520 1560 1600 1640 1680 1720 1760 1800 1840 1880 1920 1960 2000 2040 2080 2120 2160 2200 2240 2280 2320 2360 2400 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="1200" />
+		<set name="abnormalType" val="CHEAP_MAGIC" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="castRange" val="400" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="900" />
+		<set name="hitCancelTime" val="500" />
+		<set name="hitTime" val="4000" />
+		<set name="icon" val="icon.skill1397" />
+		<set name="isMagic" val="1" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume1" val="#mpConsume1" />
+		<set name="mpConsume2" val="#mpConsume2" />
+		<set name="operateType" val="A2" />
+		<set name="reuseDelay" val="2000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="TARGET" />
+		<enchant1 name="magicLvl" val="#enchMagicLvl" />
+		<enchant2 name="magicLvl" val="#enchMagicLvl" />
+		<enchant3 name="magicLvl" val="#enchMagicLvl" />
+		<enchant4 name="abnormalTime" val="#ench4AbnormalTime" />
+		<enchant4 name="magicLvl" val="#enchMagicLvl" />
+		<effects>
+			<effect name="Buff">
+				<mul stat="physicalMpConsumeRate" val="#mpConsumeRate" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="magicalMpConsumeRate" val="#magicalMpConsumeRate" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="danceMpConsumeRate" val="#mpConsumeRate" />
+			</effect>
+		</effects>
+		<enchant1Effects>
+			<effect name="Buff">
+				<mul stat="magicalMpConsumeRate" val="0.9" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="physicalMpConsumeRate" val="#enchMpConsumeRate" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="danceMpConsumeRate" val="0.8" />
+			</effect>
+		</enchant1Effects>
+		<enchant2Effects>
+			<effect name="Buff">
+				<mul stat="magicalMpConsumeRate" val="#ench2magicalMpConsumeRate" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="physicalMpConsumeRate" val="0.8" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="danceMpConsumeRate" val="0.8" />
+			</effect>
+		</enchant2Effects>
+		<enchant3Effects>
+			<effect name="Buff">
+				<mul stat="magicalMpConsumeRate" val="0.9" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="physicalMpConsumeRate" val="0.8" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="danceMpConsumeRate" val="#enchMpConsumeRate" />
+			</effect>
+		</enchant3Effects>
+	</skill>
+	<skill id="13972" levels="3" name="Clarity" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1" enchantGroup4="1">
 		<!-- High Five Confirmed -->
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#effectPoint"> 549 611 655 </table>

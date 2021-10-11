@@ -259,6 +259,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_droppable" val="false" />
 		<set name="is_stackable" val="true" />
+
 	</item>
 	<item id="14722" type="EtcItem" name="Event - Cupid's Fatigue Recovery Potion">
 		<set name="icon" val="icon.etc_faitgue_relief_of_cupid_i00" />

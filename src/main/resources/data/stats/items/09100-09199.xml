@@ -626,9 +626,9 @@
 	<item id="9143" type="EtcItem" name="Golden Apiga">
 		<set name="icon" val="icon.etc_pig_adena_i00" />
 		<set name="material" val="PAPER" />
-		<set name="is_tradable" val="false" />
+		<set name="is_tradable" val="true" />
 		<set name="is_droppable" val="false" />
-		<set name="is_sellable" val="false" />
+		<set name="is_sellable" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="9144" type="EtcItem" name="Pirate's Booty">

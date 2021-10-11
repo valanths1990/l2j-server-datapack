@@ -1,7 +1,5 @@
 package com.l2jserver.datapack.custom;
 
-import com.l2jserver.datapack.custom.reward.RewardManager;
-import com.l2jserver.datapack.handlers.effecthandlers.instant.Cp;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.handler.IItemHandler;
 import com.l2jserver.gameserver.handler.ItemHandler;
@@ -12,12 +10,10 @@ import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import com.l2jserver.gameserver.model.events.impl.item.OnItemUse;
 import com.l2jserver.gameserver.model.events.listeners.ConsumerEventListener;
-import com.l2jserver.gameserver.model.items.L2Item;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.skills.AbnormalType;
 import com.l2jserver.gameserver.network.serverpackets.ExAutoSoulShot;
-import com.l2jserver.gameserver.network.serverpackets.ExUseSharedGroupItem;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -37,7 +33,7 @@ public class PotionManager {
 
 		Containers.Players().addListener(new ConsumerEventListener(Containers.Players(), EventType.ON_ITEM_USE, this::receivedEvent, this));
 		Containers.Players().addListener(new ConsumerEventListener(Containers.Players(), EventType.ON_PLAYER_LOGOUT, this::receivedEvent, this));
-		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::replanishPotions, 0, 500, TimeUnit.MILLISECONDS);
+		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::replenishPotions, 0, 500, TimeUnit.MILLISECONDS);
 	}
 
 	private void receivedEvent(IBaseEvent event) {
@@ -70,10 +66,13 @@ public class PotionManager {
 
 	}
 
-	private void replanishPotions() {
+	private void replenishPotions() {
 
 		activePotions.forEach((player, list) -> {
 			list.forEach(item -> {
+				if(player.getEffectList().getBuffInfoByAbnormalType(AbnormalType.INVINCIBILITY) !=null){
+					return;
+				}
 				if (player.isInOlympiadMode()) {
 					return;
 				}

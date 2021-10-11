@@ -39,7 +39,7 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
  * @author St3eT
  */
 public final class CavernOfThePirateCaptain extends AbstractInstance {
-	protected class CavernOfThePirateCaptainWorld extends InstanceWorld {
+	protected static class CavernOfThePirateCaptainWorld extends InstanceWorld {
 		protected List<L2PcInstance> playersInside = new ArrayList<>();
 		protected L2Attackable _zaken;
 		protected long storeTime = 0;
@@ -257,7 +257,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance {
 		} else {
 			final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 			
-			if ((tmpworld != null) && (tmpworld instanceof CavernOfThePirateCaptainWorld)) {
+			if ((tmpworld instanceof CavernOfThePirateCaptainWorld)) {
 				final CavernOfThePirateCaptainWorld world = (CavernOfThePirateCaptainWorld) tmpworld;
 				
 				switch (event) {
@@ -317,7 +317,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance {
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
-		if ((tmpworld != null) && (tmpworld instanceof CavernOfThePirateCaptainWorld)) {
+		if ((tmpworld instanceof CavernOfThePirateCaptainWorld)) {
 			final CavernOfThePirateCaptainWorld world = (CavernOfThePirateCaptainWorld) tmpworld;
 			
 			if (npc.getId() == ZAKEN_83) {

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance ejectTime="5" name="Beleth" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+    <activityTime val="60" />
+    <allowSummon val="true" />
+    <doorlist>
+        <door doorId="20240001" />
+        <door doorId="20240002"/>
+        <door doorId="20240003"/>
+    </doorlist>
+</instance>

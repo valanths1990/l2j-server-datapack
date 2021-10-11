@@ -325,7 +325,11 @@
 		<set name="targetType" val="SELF" />
 		<effects>
 			<effect name="TalismanSlot">
-				<param slots="4" />
+				<param slots="6" />
+				<mul stat="pvpPhysDmg" val="1.09"/>
+				<mul stat="pvpPhysSkillsDmg" val="1.09"/>
+				<mul stat="pvpPhysDef" val="1.05"/>
+				<mul stat="pvpPhysSkillsDef" val="1.05"/>
 			</effect>
 		</effects>
 	</skill>

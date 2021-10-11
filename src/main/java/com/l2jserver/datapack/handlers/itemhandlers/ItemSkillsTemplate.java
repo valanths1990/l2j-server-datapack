@@ -21,11 +21,7 @@ package com.l2jserver.datapack.handlers.itemhandlers;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.handler.IItemHandler;
 import com.l2jserver.gameserver.model.actor.L2Playable;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.TvTEvent;
-import com.l2jserver.gameserver.model.events.Containers;
-import com.l2jserver.gameserver.model.events.EventDispatcher;
-import com.l2jserver.gameserver.model.events.impl.item.OnItemUse;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -59,6 +55,7 @@ public class ItemSkillsTemplate implements IItemHandler {
 			return false;
 		}
 
+		assert item.getEtcItem() != null;
 		final SkillHolder[] skills = item.getEtcItem().getSkills();
 		if (skills == null) {
 			_log.info("Item " + item + " does not have registered any skill for handler.");
@@ -136,8 +133,7 @@ public class ItemSkillsTemplate implements IItemHandler {
 	private boolean checkConsume(L2ItemInstance item, boolean hasConsumeSkill) {
 
 		switch (item.getItem().getDefaultAction()) {
-			case CAPSULE:
-			case SKILL_REDUCE: {
+			case CAPSULE, SKILL_REDUCE -> {
 				if (!hasConsumeSkill && item.getItem().hasImmediateEffect()) {
 					return true;
 				}
@@ -160,7 +156,7 @@ public class ItemSkillsTemplate implements IItemHandler {
 				final int hours = (int) (remainingTime / 3600000L);
 				final int minutes = (int) (remainingTime % 3600000L) / 60000;
 				final int seconds = (int) ((remainingTime / 1000) % 60);
-				SystemMessage sm = null;
+				SystemMessage sm;
 				if (hours > 0) {
 					sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HOURS_S3_MINUTES_S4_SECONDS_REMAINING_FOR_REUSE_S1);
 					if ((skill == null) || skill.isStatic()) {

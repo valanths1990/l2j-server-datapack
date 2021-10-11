@@ -38,7 +38,7 @@ public final class MonumentOfHeroes extends AbstractNpcAI {
 	};
 	// Items
 	private static final int WINGS_OF_DESTINY_CIRCLET = 6842;
-	private static final int[] WEAPONS = {
+	public static final int[] WEAPONS = {
 		6611, // Infinity Blade
 		6612, // Infinity Cleaver
 		6613, // Infinity Axe

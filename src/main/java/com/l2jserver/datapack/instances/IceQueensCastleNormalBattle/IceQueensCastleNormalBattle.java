@@ -28,6 +28,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.l2jserver.datapack.instances.AbstractInstance;
+import com.l2jserver.datapack.instances.GrandBossInstance;
 import com.l2jserver.datapack.quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.MountType;
@@ -67,8 +68,8 @@ import com.l2jserver.gameserver.util.Util;
  * Ice Queen's Castle (Normal Battle) instance zone.
  * @author St3eT
  */
-public final class IceQueensCastleNormalBattle extends AbstractInstance {
-	protected class IQCNBWorld extends InstanceWorld {
+public final class IceQueensCastleNormalBattle extends GrandBossInstance {
+	protected static class IQCNBWorld extends InstanceWorld {
 		protected Set<L2PcInstance> playersInside = ConcurrentHashMap.newKeySet();
 		protected List<L2Npc> knightStatues = new ArrayList<>();
 		protected List<L2Attackable> spawnedMobs = new CopyOnWriteArrayList<>();
@@ -171,7 +172,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 	private static final int DOOR_ID = 23140101;
 	
 	public IceQueensCastleNormalBattle() {
-		super(IceQueensCastleNormalBattle.class.getSimpleName());
+		super("Ice Queen Freya",29180,70052,"IceQueenCastleNormalBattle.xml",new IQCNBWorld());
 		addStartNpc(SIRRA, SUPP_KEGOR, SUPP_JINIA);
 		addFirstTalkId(SUPP_KEGOR, SUPP_JINIA);
 		addTalkId(SIRRA, JINIA, SUPP_KEGOR);
@@ -1015,7 +1016,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance {
 	@RegisterType(GLOBAL)
 	@RegisterEvent(ON_PLAYER_LOGOUT)
 	public void onPlayerLogout(OnPlayerLogout event) {
-		final var instanceWorld = InstanceManager.getInstance().getWorld(event.getActiveChar().getInstanceId());
+		final InstanceWorld instanceWorld = InstanceManager.getInstance().getWorld(event.getActiveChar().getInstanceId());
 		if (instanceWorld instanceof IQCNBWorld) {
 			final var world = (IQCNBWorld) instanceWorld;
 			world.playersInside.remove(event.getActiveChar());

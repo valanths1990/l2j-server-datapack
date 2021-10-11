@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance name="aden Castle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+    <allowSummon val="false"/>
+    <PvPInstance val="true"/>
+    <doorlist>
+        <door doorId="24180001" targetable="true" />
+        <door doorId="24180002" targetable="true"/>
+        <door doorId="24180003" targetable="true"/>
+        <door doorId="24180004" targetable="true"/>
+        <door doorId="24180005" targetable="true"/>
+        <door doorId="24180006" targetable="true"/>
+        <door doorId="24180007" targetable="true"/>
+        <door doorId="24180008" targetable="true"/>
+        <door doorId="24180009" targetable="true"/>
+        <door doorId="24180010" targetable="true"/>
+        <door doorId="24180011" targetable="true"/>
+        <door doorId="24180012" targetable="true"/>
+        <door doorId="24180013" targetable="true"/>
+        <door doorId="24180014" targetable="true"/>
+        <door doorId="24180015" targetable="true"/>
+        <door doorId="24180016" targetable="true"/>
+        <door doorId="24180018" targetable="true"/>
+        <door doorId="24180019" targetable="true"/>
+        <door doorId="24180020" targetable="true"/>
+        <door doorId="24180021" targetable="true"/>
+        <door doorId="24180022" targetable="true"/>
+        <door doorId="24180023" targetable="true"/>
+        <door doorId="24180024" targetable="true"/>
+        <door doorId="24180025" targetable="true"/>
+        <door doorId="24180026" targetable="true"/>
+        <door doorId="24180027" targetable="true"/>
+        <door doorId="24180028" targetable="true"/>
+        <door doorId="24180029" targetable="true"/>
+        <door doorId="24180030" targetable="true"/>
+        <door doorId="24180031" targetable="true"/>
+        <door doorId="24180032" targetable="true"/>
+        <door doorId="24180033" targetable="true"/>
+    </doorlist>
+</instance>

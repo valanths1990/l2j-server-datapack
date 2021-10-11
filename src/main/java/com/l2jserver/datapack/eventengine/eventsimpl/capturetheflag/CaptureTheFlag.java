@@ -181,7 +181,7 @@ public class CaptureTheFlag extends BaseEvent<CTFEventConfig> {
 	//		event.setCancel(true);
 	//		}
 	//	}
-	@Override public void onUnequipItem(OnUnequipItem event) {
+	@Override public void onUnequippedItem(OnUnequipItem event) {
 		if (hasFlag(event.getPlayer())) {
 			event.setCancel(true);
 		}

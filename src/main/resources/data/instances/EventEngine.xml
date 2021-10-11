@@ -35,6 +35,5 @@
         <door doorId="24180031" targetable="true"/>
         <door doorId="24180032" targetable="true"/>
         <door doorId="24180033" targetable="true"/>
-
     </doorlist>
 </instance>

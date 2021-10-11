@@ -26,7 +26,7 @@
             <height normal="16.7"/>
         </collision>
     </npc>
-    <npc id="40002" displayId="4306" level="85" type="L2Custom" name="Shop" title="L2 Angel" usingServerSideTitle="true" usingServerSideName="true">
+    <npc id="40002" displayId="32800" level="85" type="L2Custom" name="Shop" title="L2 Angel" usingServerSideTitle="true" usingServerSideName="true">
         <!-- Confirmed CT2.5 -->
         <parameters>
             <param name="type" value="shop;homepage"/>
@@ -70,7 +70,7 @@
             <height normal="23.75"/>
         </collision>
     </npc>
-    <npc id="40005" displayId="4305" level="70" type="L2Custom" name="Buffer" title="L2 Angel" usingServerSideName="true" usingServerSideTitle="true">
+    <npc id="40005" displayId="13268" level="70" type="L2Custom" name="Buffer" title="L2 Angel" usingServerSideName="true" usingServerSideTitle="true">
         <!-- Confirmed CT2.5 -->
         <parameters>
             <param name="type" value="buffer;homepage"/>
@@ -151,30 +151,11 @@
             <height normal="22.5"/>
         </collision>
     </npc>
-    <npc id="40009" displayId="32314" level="70" type="L2Npc" name="Tower" >
+    <npc id="40009" displayId="32314" level="85" type="L2Npc" name="Tower" >
         <!-- Confirmed CT2.5 -->
-        <parameters>
-            <param name="NoFnHi" value="1"/>
-            <param name="MoveAroundSocial" value="0"/>
-            <param name="MoveAroundSocial1" value="0"/>
-        </parameters>
         <race>CONSTRUCT</race>
         <sex>MALE</sex>
-        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-            <vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7"/>
-            <attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120"/>
-            <defence physical="295.91597" magical="216.53847"/>
-            <attribute>
-                <defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150"/>
-            </attribute>
-            <speed>
-                <walk ground="1"/>
-                <run ground="120"/>
-            </speed>
-        </stats>
-        <status attackable="false" canMove="false" targetable="false" undying="true"/>
-        <exCrtEffect>true</exCrtEffect>
-        <ai type="BALANCED"/>
+        <status attackable="false" canMove="false" targetable="true" undying="true"/>
         <collision>
             <radius normal="0"/>
             <height normal="31"/>

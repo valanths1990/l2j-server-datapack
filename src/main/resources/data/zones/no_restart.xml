@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/zones.xsd">
 	<!-- No Restart Zones -->
-	<zone name="zaken_no_restart" type="NoRestartZone" shape="NPoly" minZ="-4815" maxZ="-315"> <!-- 21_24 -->
-		<stat name="restartTime" val="1800" />
-		<stat name="restartAllowedTime" val="600" />
-		<node X="50797" Y="213515" />
-		<node X="57617" Y="213510" />
-		<node X="57669" Y="221683" />
-		<node X="50773" Y="221632" />
-	</zone>
 	<zone name="antaras_no_restart" id="70050" type="NoRestartZone" shape="NPoly" minZ="-8380" maxZ="-4880"> <!-- 25_21 -->
 		<stat name="restartTime" val="1800" />
 		<stat name="restartAllowedTime" val="600" />
@@ -16,6 +8,10 @@
 		<node X="188081" Y="110284" />
 		<node X="188132" Y="119249" />
 		<node X="173386" Y="119391" />
+		<spawn X="154679" Y="121094" Z="-3754" type="towerSpawn"/>
+		<spawn X="180148" Y="114848" Z="-7705" type="entrance"/>
+		<spawn X="150202" Y="117164" Z="0" spawnName="Antharas Bridge" type="other"/>
+		<spawn X="131752" Y="114393" Z="0" spawnName="Antharas Lair Entrance" type="other"/>
 	</zone>
 	<zone name="baium_no_restart" id="70051" type="NoRestartZone" shape="NPoly" minZ="10061" maxZ="11061"> <!-- 23_18 -->
 		<stat name="restartTime" val="1800" />
@@ -24,6 +20,60 @@
 		<node X="114562" Y="12623" />
 		<node X="118194" Y="15790" />
 		<node X="114825" Y="19589" />
+		<spawn X="112624" Y="14032" Z="10080" type="towerSpawn"/>
+		<spawn X="114077" Y="15882" Z="10078" type="entrance"/>
+	</zone>
+	<zone name="Ice Queen Freya" id="70052" type="NoRestartZone" shape="NPoly" minZ="-11249" maxZ="-10749">
+		<node X="112898" Y="-117865" />
+		<node X="116554" Y="-117891" />
+		<node X="116597" Y="-112972" />
+		<node X="112920" Y="-112997" />
+
+	</zone>
+	<zone name="zaken_no_restart" id="70053" type="NoRestartZone" shape="NPoly" minZ="-4815" maxZ="-315"> <!-- 21_24 -->
+		<stat name="restartTime" val="1800" />
+		<stat name="restartAllowedTime" val="600" />
+		<node X="50797" Y="213515" />
+		<node X="57617" Y="213510" />
+		<node X="57669" Y="221683" />
+		<node X="50773" Y="221632" />
+	</zone>
+
+	<zone name="valakas_no_restart" id="70054" type="NoRestartZone" shape="NPoly" minZ="-2572" maxZ="5428"> <!-- 25_21 -->
+		<stat name="restartTime" val="1800" />
+		<stat name="restartAllowedTime" val="600" />
+		<node X="196866" Y="-130845" />
+		<node X="229289" Y="-130860" />
+		<node X="229176" Y="-98508" />
+		<node X="196880" Y="-98498" />
+		<spawn X="189872" Y="-105152" Z="-724" type="towerSpawn"/>
+		<spawn X="204181" Y="-111783" Z="62" type="entrance"/>
+	</zone>
+	<zone name="queen_ant_no_restart" id="70055" type="NoRestartZone" shape="NPoly" minZ="-2572" maxZ="5428"> <!-- 25_21 -->
+	<stat name="restartTime" val="1800" />
+	<stat name="restartAllowedTime" val="600" />
+		<node X="-21490" Y="178613" />
+		<node X="-22258" Y="178961" />
+		<node X="-22890" Y="182205" />
+		<node X="-22770" Y="183129" />
+		<node X="-21594" Y="183945" />
+		<node X="-20570" Y="183381" />
+		<node X="-20310" Y="182673" />
+		<node X="-20762" Y="179129" />
+		<spawn X="-21148" Y="183902" Z="-5729" type="entrance"/>
+		<spawn X="-21148" Y="183902" Z="-5729" type="towerSpawn"/>
+		<spawn X="-9699" Y="177004" Z="-4189" type="other" spawnName="Wasteland Entrance"/>
+	</zone>
+	<zone name="Beleth's Chamber" id="70056" type="NoRestartZone" shape="NPoly" minZ="-10412" maxZ="-5112">
+		<stat name="restartTime" val="1800" />
+		<stat name="restartAllowedTime" val="600" />
+		<node X="11214" Y="205578" />
+		<node X="20607" Y="205578" />
+		<node X="20648" Y="220271" />
+		<node X="11172" Y="220271" />
+		<spawn X="-11826" Y="236249" Z="-3266"  type="other" spawnName="Hellbound Entrance"/>
+		<spawn X="9063" Y="251984" Z="-2025" type="towerSpawn"/>
+		<spawn X="16320" Y="208955" Z="-9358" type="entrance"/>
 	</zone>
 	<zone name="anakimNlilith" type="NoRestartZone" shape="NPoly" minZ="-5504" maxZ="-5104"> <!-- 25_17 -->
 		<stat name="restartTime" val="1800" />

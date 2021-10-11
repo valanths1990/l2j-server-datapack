@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clan</title>
+</head>
+<body>
+<br>
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>
+            %navigationBar%
+        </td>
+        <td width="600" align="center">
+            <table border="0" >
+                <tr>
+                    <td width="600" align="center">
+                        <font name="hs22" color="fca503">Academy</font>
+                    </td>
+                </tr>
+            </table>
+    <br>
+    <br>
+            <table border="0" >
+                <tr>
+                    <td width="150">
+                        Create new Academy:
+                    </td>
+                    <td width="150">
+                        <edit width=140 var="academyName">
+                    </td>
+                    <td width="200">
+                        <button value="Create Academy" action="bypass clan;homepage get create_academy $academyName" width=140 height=30
+                                back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+                    </td>
+                </tr>
+            </table>
+            <table border="0" >
+                <tr>
+                    <td width="150">
+                        Rename Academy:
+                    </td>
+                    <td width="150">
+                        <edit width=140 var="academyName">
+                    </td>
+                    <td width="200">
+                        <button value="Rename Academy" action="bypass clan;homepage get create_academy $academyName" width=140 height=30
+                                back="L2UI_ct1.button_df_down" fore="L2UI_ct1.button_df">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -745,7 +745,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="29118" level="83" type="L2GrandBoss" name="Beleth">
+	<npc id="29118" level="85" type="L2GrandBoss" name="Beleth">
 		<!-- Confirmed CT2.5 -->
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
@@ -2311,7 +2311,7 @@
 			<height normal="34.5" />
 		</collision>
 	</npc>
-	<npc id="29150" level="82" type="L2GrandBoss" name="Ekimus" title="Lord of Immortality">
+	<npc id="29150" level="85" type="L2GrandBoss" name="Ekimus" title="Lord of Immortality">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<skill name="Skill_HPBuff" id="5916" level="1" /> <!-- Cruising Aura -->
@@ -2866,7 +2866,7 @@
 			<height normal="51" />
 		</collision>
 	</npc>
-	<npc id="29163" level="82" type="L2GrandBoss" name="Tiat" title="Witch of the Dragon of Darkness">
+	<npc id="29163" level="85" type="L2GrandBoss" name="Tiat" title="Witch of the Dragon of Darkness">
 		<!-- Confirmed CT2.5 -->
 		<race>DRAGON</race>
 		<sex>FEMALE</sex>
@@ -3338,7 +3338,7 @@
 			<height normal="25" />
 		</collision>
 	</npc>
-	<npc id="29175" level="82" type="L2GrandBoss" name="Tiat" title="Witch of the Dragon of Darkness">
+	<npc id="29175" level="85" type="L2GrandBoss" name="Tiat" title="Witch of the Dragon of Darkness">
 		<!-- Confirmed CT2.5 -->
 		<race>DRAGON</race>
 		<sex>FEMALE</sex>
@@ -3410,7 +3410,7 @@
 			<height normal="104" grown="124.8" />
 		</collision>
 	</npc>
-	<npc id="29176" level="60" type="L2GrandBoss" name="Zaken">
+	<npc id="29176" level="85" type="L2GrandBoss" name="Zaken">
 		<!-- Confirmed CT2.5 -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
@@ -3781,7 +3781,7 @@
 			<height normal="55" />
 		</collision>
 	</npc>
-	<npc id="29181" level="83" type="L2GrandBoss" name="Zaken">
+	<npc id="29181" level="85" type="L2GrandBoss" name="Zaken">
 		<!-- Confirmed CT2.5 -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>

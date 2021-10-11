@@ -4,12 +4,9 @@ import com.l2jserver.datapack.eventengine.eventsimpl.allvsall.AllVsAllContainer;
 import com.l2jserver.datapack.eventengine.eventsimpl.capturetheflag.CaptureTheFlagContainer;
 import com.l2jserver.datapack.eventengine.eventsimpl.huntingground.HuntingGroundContainer;
 import com.l2jserver.datapack.eventengine.eventsimpl.siege.SiegeContainer;
-import com.l2jserver.datapack.eventengine.eventsimpl.teamvsteam.TeamVsTeam;
 import com.l2jserver.datapack.eventengine.eventsimpl.teamvsteam.TeamVsTeamContainer;
 import com.l2jserver.datapack.eventengine.interfaces.IEventContainer;
 import com.l2jserver.commons.util.Rnd;
-import com.l2jserver.datapack.eventengine.model.base.BaseEvent;
-import com.l2jserver.datapack.eventengine.model.base.BaseEventContainer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,8 +14,6 @@ import java.util.Map;
 
 public class EventLoader {
 
-	private static final String EVENT_JAR_PATH = "./eventengine/events/";
-	private static final String EVENT_CONFIG_NAME = "config.conf";
 
 	private final ArrayList<IEventContainer> _eventList = new ArrayList<>();
 	private final Map<String, IEventContainer> _eventMap = new HashMap<>();
@@ -41,25 +36,25 @@ public class EventLoader {
 
 	private void loadEvents() {
 
-//		IEventContainer teamVsTeam = new TeamVsTeamContainer();
-//		_eventList.add(teamVsTeam);
-//		_eventMap.put(teamVsTeam.getSimpleEventName(), teamVsTeam);
-//
-//		IEventContainer allvsall = new AllVsAllContainer();
-//		_eventList.add(allvsall);
-//		_eventMap.put(allvsall.getSimpleEventName(), allvsall);
+		IEventContainer teamVsTeam = new TeamVsTeamContainer();
+		_eventList.add(teamVsTeam);
+		_eventMap.put(teamVsTeam.getSimpleEventName(), teamVsTeam);
 
-//		IEventContainer captureTheFlag = new CaptureTheFlagContainer();
-//		_eventList.add(captureTheFlag);
-//		_eventMap.put(captureTheFlag.getSimpleEventName(), captureTheFlag);
+		IEventContainer allVsAll = new AllVsAllContainer();
+		_eventList.add(allVsAll);
+		_eventMap.put(allVsAll.getSimpleEventName(), allVsAll);
 
-//		IEventContainer huntingGround = new HuntingGroundContainer();
-//		_eventList.add(huntingGround);
-//		_eventMap.put(huntingGround.getSimpleEventName(), huntingGround);
+		IEventContainer captureTheFlag = new CaptureTheFlagContainer();
+		_eventList.add(captureTheFlag);
+		_eventMap.put(captureTheFlag.getSimpleEventName(), captureTheFlag);
 
-		IEventContainer siege= new SiegeContainer();
-		_eventList.add(siege);
-		_eventMap.put(siege.getSimpleEventName(),siege);
+		IEventContainer huntingGround = new HuntingGroundContainer();
+		_eventList.add(huntingGround);
+		_eventMap.put(huntingGround.getSimpleEventName(), huntingGround);
+
+//		IEventContainer siege= new SiegeContainer();
+//		_eventList.add(siege);
+//		_eventMap.put(siege.getSimpleEventName(),siege);
 
 	}
 

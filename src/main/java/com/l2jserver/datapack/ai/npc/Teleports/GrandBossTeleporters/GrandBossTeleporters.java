@@ -20,7 +20,7 @@ package com.l2jserver.datapack.ai.npc.Teleports.GrandBossTeleporters;
 
 import static com.l2jserver.gameserver.config.Configuration.grandBoss;
 
-import com.l2jserver.datapack.ai.individual.Valakas;
+import com.l2jserver.datapack.instances.Valakas.Valakas;
 import com.l2jserver.datapack.ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
@@ -65,14 +65,14 @@ public final class GrandBossTeleporters extends AbstractNpcAI {
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = "";
-		final QuestState st = getQuestState(player, false);
+//		final QuestState st = getQuestState(player, false);
 		
-		if (hasQuestItems(player, VACUALITE_FLOATING_STONE)) {
+//		if (hasQuestItems(player, VACUALITE_FLOATING_STONE)) {
 			player.teleToLocation(ENTER_HALL_OF_FLAMES);
-			st.set("allowEnter", "1");
-		} else {
-			htmltext = "31540-06.htm";
-		}
+//			st.set("allowEnter", "1");
+//		} else {
+//			htmltext = "31540-06.htm";
+//		}
 		return htmltext;
 	}
 	

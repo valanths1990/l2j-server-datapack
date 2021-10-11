@@ -62,8 +62,8 @@ public class ShopHandler implements IBypassHandler {
 									talismanToCharge.decreaseMana(false, -item.getMana()); // Minus in decrease = increase :P
 								}
 							});
-					} catch (Exception ignored) {
-
+					} catch (Exception e) {
+							e.printStackTrace();
 					}
 
 				}

@@ -28,6 +28,7 @@ import com.l2jserver.datapack.eventengine.enums.MessageType;
 import com.l2jserver.datapack.eventengine.model.base.BaseEvent;
 import com.l2jserver.datapack.eventengine.EventEngineManager;
 import com.l2jserver.datapack.eventengine.enums.CollectionTarget;
+import com.l2jserver.datapack.eventengine.model.config.AbstractEventConfig;
 import com.l2jserver.datapack.eventengine.model.entity.Player;
 import com.l2jserver.datapack.eventengine.util.EventUtil;
 import com.l2jserver.gameserver.ThreadPoolManager;
@@ -63,7 +64,7 @@ public class AntiAfkManager
 
 		_taskAntiAfk = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
 		{
-			BaseEvent currentEvent = EventEngineManager.getInstance().getCurrentEvent();
+			BaseEvent<?extends AbstractEventConfig> currentEvent = EventEngineManager.getInstance().getCurrentEvent();
 			Map<Player, Location> newMap = new HashMap<>();
 			
 			for (Player ph : currentEvent.getPlayerEventManager().getAllEventPlayers())
@@ -89,7 +90,7 @@ public class AntiAfkManager
 			_playersAfkCheck.clear();
 			_playersAfkCheck.putAll(newMap);
 			newMap.clear();
-		}, checkTime * 1000, checkTime * 1000);
+		}, checkTime * 1000L, checkTime * 1000L);
 	}
 	
 	/**

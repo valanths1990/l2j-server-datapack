@@ -50,216 +50,209 @@ import com.l2jserver.gameserver.model.skills.Skill;
 
 /**
  * This is an adapter to communicate the L2J Core with Event Engine
+ *
  * @author Zephyr
  */
-public class EventEngineAdapter extends Quest
-{
-	public EventEngineAdapter()
-	{
-		super(-1, NpcManager.class.getSimpleName(), "EventEngineAdapter");
-	}
+public class EventEngineAdapter extends Quest {
+    public EventEngineAdapter() {
+        super(-1, NpcManager.class.getSimpleName(), "EventEngineAdapter");
+    }
 
-	// When the player logins
-	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	@Priority(Integer.MAX_VALUE)
-	public void onPlayerLogin(OnPlayerLogin event)
-	{
-		Player player = CacheManager.getInstance().getPlayer(event.getActiveChar(), true);
-		ListenerDispatcher.getInstance().notifyEvent(new OnLogInEvent(player));
-	}
+    // When the player logins
+    @RegisterEvent(EventType.ON_PLAYER_LOGIN)
+    @RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+    @Priority(Integer.MAX_VALUE)
+    public void onPlayerLogin(OnPlayerLogin event) {
+        Player player = CacheManager.getInstance().getPlayer(event.getActiveChar(), true);
+        ListenerDispatcher.getInstance().notifyEvent(new OnLogInEvent(player));
+    }
 
-	// When the player exits
-	@RegisterEvent(EventType.ON_PLAYER_LOGOUT)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	@Priority(Integer.MAX_VALUE)
-	public void onPlayerLogout(OnPlayerLogout event)
-	{
-		Player player = CacheManager.getInstance().getPlayer(event.getActiveChar(), true);
-		ListenerDispatcher.getInstance().notifyEvent(new OnLogOutEvent(player));
-		CacheManager.getInstance().removePlayer(player.getObjectId());
-	}
+    // When the player exits
+    @RegisterEvent(EventType.ON_PLAYER_LOGOUT)
+    @RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+    @Priority(Integer.MAX_VALUE)
+    public void onPlayerLogout(OnPlayerLogout event) {
+        Player player = CacheManager.getInstance().getPlayer(event.getActiveChar(), true);
+        ListenerDispatcher.getInstance().notifyEvent(new OnLogOutEvent(player));
+        CacheManager.getInstance().removePlayer(player.getObjectId());
+    }
 
-	// When a playable uses a skill
-	@RegisterEvent(EventType.ON_CREATURE_SKILL_USE)
-	@RegisterType(ListenerRegisterType.GLOBAL)
-	@Priority(Integer.MAX_VALUE)
-	public TerminateReturn onPlayableUseSkill(OnCreatureSkillUse event)
-	{
-		if (event.getCaster().isPlayable())
-		{
-			Playable caster1 = CacheManager.getInstance().getPlayable((L2Playable) event.getCaster(), true);
-			Character target1 = CacheManager.getInstance().getCharacter(event.getTarget(), true);
+    // When a playable uses a skill
+    @RegisterEvent(EventType.ON_CREATURE_SKILL_USE)
+    @RegisterType(ListenerRegisterType.GLOBAL)
+    @Priority(Integer.MAX_VALUE)
+    public TerminateReturn onPlayableUseSkill(OnCreatureSkillUse event) {
+        if (event.getCaster().isPlayable()) {
+            Playable caster1 = CacheManager.getInstance().getPlayable((L2Playable) event.getCaster(), true);
+            Character target1 = CacheManager.getInstance().getCharacter(event.getTarget(), true);
 
-			Skill l2Skill = event.getSkill();
+            Skill l2Skill = event.getSkill();
 
-			SkillTemplate skill = SkillTemplate.Builder.newInstance()
-				.setId(l2Skill.getId())
-				.setLevel(l2Skill.getLevel())
-				.setIsDebuff(l2Skill.isDebuff())
-				.setIsDamage(l2Skill.isDamage())
-				.build();
+            SkillTemplate skill = SkillTemplate.Builder.newInstance()
+                    .setId(l2Skill.getId())
+                    .setLevel(l2Skill.getLevel())
+                    .setIsDebuff(l2Skill.isDebuff())
+                    .setIsDamage(l2Skill.isDamage())
+                    .build();
 
-			OnUseSkillEvent mainTargetEvent = new OnUseSkillEvent(caster1, skill, target1);
+            OnUseSkillEvent mainTargetEvent = new OnUseSkillEvent(caster1, skill, target1);
 
-			ListenerDispatcher.getInstance().notifyEvent(mainTargetEvent);
+            ListenerDispatcher.getInstance().notifyEvent(mainTargetEvent);
 
-			if (mainTargetEvent.isCanceled())
-			{
-				return new TerminateReturn(true, true, true);
-			}
-			// Note: The skill is canceled if there is at least one target with spawn protection in area skills
-			// This is not ok, but for now it's the only way
-			for (L2Object target : event.getTargets())
-			{
-				if (target instanceof L2Character)
-				{
-					Playable caster2 = CacheManager.getInstance().getPlayable((L2Playable) event.getCaster(), true);
-					Character target2 = CacheManager.getInstance().getCharacter(event.getTarget(), true);
+            if (mainTargetEvent.isCanceled()) {
+                return new TerminateReturn(true, true, true);
+            }
+            // Note: The skill is canceled if there is at least one target with spawn protection in area skills
+            // This is not ok, but for now it's the only way
+            for (L2Object target : event.getTargets()) {
+                if (target instanceof L2Character) {
+                    Playable caster2 = CacheManager.getInstance().getPlayable((L2Playable) event.getCaster(), true);
+                    Character target2 = CacheManager.getInstance().getCharacter(event.getTarget(), true);
 
-					OnUseSkillEvent otherTargetEvent = new OnUseSkillEvent(caster2, skill, target2);
+                    OnUseSkillEvent otherTargetEvent = new OnUseSkillEvent(caster2, skill, target2);
 
-					ListenerDispatcher.getInstance().notifyEvent(otherTargetEvent);
+                    ListenerDispatcher.getInstance().notifyEvent(otherTargetEvent);
 
-					if (otherTargetEvent.isCanceled())
-					{
-						return new TerminateReturn(true, true, true);
-					}
-				}
-			}
-		}
-		return null;
-	}
+                    if (otherTargetEvent.isCanceled()) {
+                        return new TerminateReturn(true, true, true);
+                    }
+                }
+            }
+        }
+        return null;
+    }
 
-	// When a playable attack a character
-	@RegisterEvent(EventType.ON_CREATURE_ATTACK)
-	@RegisterType(ListenerRegisterType.GLOBAL)
-	@Priority(Integer.MAX_VALUE)
-	public TerminateReturn onPlayableAttack(OnCreatureAttack event)
-	{
-		if ((event.getAttacker() != null) && event.getAttacker().isPlayable())
-		{
-			Playable attacker = CacheManager.getInstance().getPlayable((L2Playable) event.getAttacker(), true);
-			Character target = CacheManager.getInstance().getCharacter(event.getAttacker(), true);
-			OnAttackEvent newEvent = new OnAttackEvent(attacker, target);
-			ListenerDispatcher.getInstance().notifyEvent(newEvent);
+    // When a playable attack a character
+    @RegisterEvent(EventType.ON_CREATURE_ATTACK)
+    @RegisterType(ListenerRegisterType.GLOBAL)
+    @Priority(Integer.MAX_VALUE)
+    public TerminateReturn onPlayableAttack(OnCreatureAttack event) {
+        if ((event.getAttacker() != null) && event.getAttacker().isPlayable()) {
+            Playable attacker = CacheManager.getInstance().getPlayable((L2Playable) event.getAttacker(), true);
+            Character target = CacheManager.getInstance().getCharacter(event.getAttacker(), true);
+            OnAttackEvent newEvent = new OnAttackEvent(attacker, target);
+            ListenerDispatcher.getInstance().notifyEvent(newEvent);
 
-			if (newEvent.isCanceled())
-			{
-				return new TerminateReturn(true, true, true);
-			}
-		}
-		return null;
-	}
+            if (newEvent.isCanceled()) {
+                return new TerminateReturn(true, true, true);
+            }
+        }
+        return null;
+    }
 
-	// When a playable kills a character and a player dies
-	@RegisterEvent(EventType.ON_CREATURE_KILL)
-	@RegisterType(ListenerRegisterType.GLOBAL)
-	@Priority(Integer.MAX_VALUE)
-	public TerminateReturn onCharacterKill(OnCreatureKill event)
-	{
-		if ((event.getAttacker() != null) && event.getAttacker().isPlayable())
-		{
-			Playable attacker = CacheManager.getInstance().getPlayable((L2Playable) event.getAttacker(), true);
-			Character targetCharacter = CacheManager.getInstance().getCharacter(event.getTarget(), true);
-			ListenerDispatcher.getInstance().notifyEvent(new OnKillEvent(attacker, targetCharacter));
-		}
+    // When a playable kills a character and a player dies
+    @RegisterEvent(EventType.ON_CREATURE_KILL)
+    @RegisterType(ListenerRegisterType.GLOBAL)
+    @Priority(Integer.MAX_VALUE)
+    public TerminateReturn onCharacterKill(OnCreatureKill event) {
+        if ((event.getAttacker() != null) && event.getAttacker().isPlayable()) {
+            Playable attacker = CacheManager.getInstance().getPlayable((L2Playable) event.getAttacker(), true);
+            Character targetCharacter = CacheManager.getInstance().getCharacter(event.getTarget(), true);
+            ListenerDispatcher.getInstance().notifyEvent(new OnKillEvent(attacker, targetCharacter));
+        }
 
-		if (event.getTarget().isPlayer())
-		{
-			Player targetPlayer = CacheManager.getInstance().getPlayer((L2PcInstance) event.getTarget(), true);
-			ListenerDispatcher.getInstance().notifyEvent(new OnDeathEvent(targetPlayer));
-		}
+        if (event.getTarget().isPlayer()) {
+            Player targetPlayer = CacheManager.getInstance().getPlayer((L2PcInstance) event.getTarget(), true);
+            ListenerDispatcher.getInstance().notifyEvent(new OnDeathEvent(targetPlayer));
+        }
 
-		// TODO: When we hook L2World instance, this won't be necessary
-		CacheManager.getInstance().removeCharacter(event.getTarget().getObjectId());
-		return null;
-	}
+        // TODO: When we hook L2World instance, this won't be necessary
+        CacheManager.getInstance().removeCharacter(event.getTarget().getObjectId());
+        return null;
+    }
 
-	// TODO: not finished
-	// When a player equips an item
-	@RegisterEvent(EventType.ON_PLAYER_EQUIP_ITEM)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	@Priority(Integer.MAX_VALUE)
-	public void onUseItem(OnPlayerEquipItem event)
-	{
-		Player player = CacheManager.getInstance().getPlayer(event.getActiveChar(), true);
-		ItemTemplate item = ItemTemplate.newInstance(event.getItem().getId());
-		ListenerDispatcher.getInstance().notifyEvent(new OnUseItemEvent(player, item));
-	}
+    // TODO: not finished
+    // When a player equips an item
+    @RegisterEvent(EventType.ON_PLAYER_EQUIP_ITEM)
+    @RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+    @Priority(Integer.MAX_VALUE)
+    public void onUseItem(OnPlayerEquipItem event) {
+        Player player = CacheManager.getInstance().getPlayer(event.getActiveChar(), true);
+        ItemTemplate item = ItemTemplate.newInstance(event.getItem().getId());
+        ListenerDispatcher.getInstance().notifyEvent(new OnUseItemEvent(player, item));
+    }
 
-	// When a player talks with npc
-	@RegisterEvent(EventType.ON_NPC_FIRST_TALK)
-	@RegisterType(ListenerRegisterType.NPC)
-	// The npc with ids from 36600 to 36699 are reserved for engine
-	@Range(from = 36600, to = 36699)
-	@Priority(Integer.MAX_VALUE)
-	public void onNpcInteract(OnNpcFirstTalk event)
-	{
-		Player player = CacheManager.getInstance().getPlayer(event.getActiveChar(), true);
-		Npc npc = (Npc) CacheManager.getInstance().getCharacter(event.getNpc(), true);
-		ListenerDispatcher.getInstance().notifyEvent(new OnInteractEvent(player, npc));
-	}
+    // When a player talks with npc
+    @RegisterEvent(EventType.ON_NPC_FIRST_TALK)
+    @RegisterType(ListenerRegisterType.NPC)
+    // The npc with ids from 36600 to 36699 are reserved for engine
+    @Range(from = 36600, to = 36699)
+    @Priority(Integer.MAX_VALUE)
+    public void onNpcInteract(OnNpcFirstTalk event) {
+        Player player = CacheManager.getInstance().getPlayer(event.getActiveChar(), true);
+        Npc npc = (Npc) CacheManager.getInstance().getCharacter(event.getNpc(), true);
+        ListenerDispatcher.getInstance().notifyEvent(new OnInteractEvent(player, npc));
+    }
 
-	@RegisterEvent(EventType.ON_CREATURE_DAMAGE_RECEIVED)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	@Priority(0)
-	public void onPlayableHit(OnCreatureDamageReceived event){
-		if(!(event.getAttacker() instanceof L2PcInstance) ||!(event.getTarget() instanceof L2PcInstance)){
-			return;
-		}
-			Player attacker = CacheManager.getInstance().getPlayer((L2PcInstance) event.getAttacker(),true);
-			Player attacked = CacheManager.getInstance().getPlayer((L2PcInstance) event.getTarget(),true);
+    @RegisterEvent(EventType.ON_CREATURE_DAMAGE_RECEIVED)
+    @RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+    @Priority(0)
+    public void onPlayableHit(OnCreatureDamageReceived event) {
+        if (!(event.getAttacker() instanceof L2PcInstance) || !(event.getTarget() instanceof L2PcInstance)) {
+            return;
+        }
+        Player attacker = CacheManager.getInstance().getPlayer((L2PcInstance) event.getAttacker(), true);
+        Player attacked = CacheManager.getInstance().getPlayer((L2PcInstance) event.getTarget(), true);
 
-			if(attacked == null || attacker == null){
-				return;
-			}
-			ListenerDispatcher.getInstance().notifyEvent(new OnPlayableHitEvent(attacker,attacked,event.getDamage()));
-	}
-	@RegisterEvent(EventType.ON_PLAYER_UNEQUIP_ITEM)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	@Priority(0)
-	public TerminateReturn onPlayerUnEquipItem(OnPlayerUnequipItem event){
-		if(event.getActiveChar() == null ){
-				return null;
-		}
-		Player player = CacheManager.getInstance().getPlayer(event.getActiveChar(),true);
-		if(player == null){
-			return null;
-		}
-		L2ItemInstance item = event.getItem();
-		if(ListenerDispatcher.getInstance().notifyEvent(new OnUnequipItem(player,item))){
-			return new TerminateReturn(true,false,true);
-		}
-	return null;
-	}
-	@RegisterEvent(EventType.ON_PLAYER_USE_TELEPORT_TO_LOCATION)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	@Priority(Integer.MAX_VALUE)
-	public TerminateReturn onPlayerUseTeleportToLocation(OnPlayerUseTeleportToLocation event){
-	Player player =  CacheManager.getInstance().getPlayer(event.getPlayer(),true);
-	if(player == null ){
-		return null;
-	}
-	if(ListenerDispatcher.getInstance().notifyEvent(new OnUseTeleport(player,event.getLocation()))){
-		return new TerminateReturn(true,false,true);
-	}
-		return null;
-	}
+        if (attacked == null || attacker == null) {
+            return;
+        }
+        ListenerDispatcher.getInstance().notifyEvent(new OnPlayableHitEvent(attacker, attacked, event.getDamage()));
+    }
 
-	@RegisterEvent(EventType.ON_PLAYER_TOWER_CAPTURE)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	@Priority(Integer.MAX_VALUE)
-	public void onPlayerCaptureTower(OnPlayerTowerCapture event){
-			Player p = CacheManager.getInstance().getPlayer(event.getActiveChar(),true);
-		ListenerDispatcher.getInstance().notifyEvent(new OnTowerCapturedEvent(p,event.getTower()));
-	}
+    @RegisterEvent(EventType.ON_PLAYER_UNEQUIP_ITEM)
+    @RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+    @Priority(0)
+    public TerminateReturn onPlayerUnEquipItem(OnPlayerUnequipItem event) {
+        if (event.getActiveChar() == null) {
+            return null;
+        }
+        Player player = CacheManager.getInstance().getPlayer(event.getActiveChar(), true);
+        if (player == null) {
+            return null;
+        }
+        L2ItemInstance item = event.getItem();
+        if (ListenerDispatcher.getInstance().notifyEvent(new OnUnequipItem(player, item))) {
+            return new TerminateReturn(true, false, true);
+        }
+        return null;
+    }
 
-	@RegisterEvent(EventType.ON_DOOR_ACTION)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	@Priority(Integer.MAX_VALUE)
-	public void onDoorAction(OnDoorAction event) {
-		Player p = CacheManager.getInstance().getPlayer(event.getPlayer(),true);
-		ListenerDispatcher.getInstance().notifyEvent(new OnDoorActionEvent(p,event.getDoor()));
-	}
+    @RegisterEvent(EventType.ON_PLAYER_USE_TELEPORT_TO_LOCATION)
+    @RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+    @Priority(Integer.MAX_VALUE)
+    public TerminateReturn onPlayerUseTeleportToLocation(OnPlayerUseTeleportToLocation event) {
+        Player player = CacheManager.getInstance().getPlayer(event.getPlayer(), true);
+        if (player == null) {
+            return null;
+        }
+        if (ListenerDispatcher.getInstance().notifyEvent(new OnUseTeleport(player, event.getLocation()))) {
+            return new TerminateReturn(true, false, true);
+        }
+        return null;
+    }
+
+    @RegisterEvent(EventType.ON_PLAYER_TOWER_CAPTURE)
+    @RegisterType(ListenerRegisterType.GLOBAL)
+    @Priority(Integer.MAX_VALUE)
+    public void onPlayerCaptureTower(OnPlayerTowerCapture event) {
+        Player p = CacheManager.getInstance().getPlayer(event.getActiveChar(), true);
+        ListenerDispatcher.getInstance().notifyEvent(new OnTowerCapturedEvent(p, event.getTower()));
+    }
+
+    @RegisterEvent(EventType.ON_DOOR_ACTION)
+    @RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+    @Priority(Integer.MAX_VALUE)
+    public void onDoorAction(OnDoorAction event) {
+        Player p = CacheManager.getInstance().getPlayer(event.getPlayer(), true);
+        ListenerDispatcher.getInstance().notifyEvent(new OnDoorActionEvent(p, event.getDoor()));
+    }
+
+    @RegisterEvent(EventType.ON_PLAYER_DLG_ANSWER)
+    @RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+    @Priority(Integer.MAX_VALUE)
+    public void onPlayerDlgAnswer(OnPlayerDlgAnswer event) {
+        Player p = CacheManager.getInstance().getPlayer(event.getActiveChar(), true);
+        ListenerDispatcher.getInstance().notifyEvent(new OnDlgAnswer(p, event.getAnswer()));
+    }
 }

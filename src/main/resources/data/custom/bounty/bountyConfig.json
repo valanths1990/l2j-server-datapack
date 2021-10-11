@@ -1,0 +1,59 @@
+{
+    "bounties": [
+        {
+            "type": "pvp",
+            "base": 1.5,
+            "multiplier": 1,
+            "maxbounty": 20.0,
+            "transfer": 1.5,
+            "color": "b942f5",
+            "rewards": [
+                {
+                    "id": 57,
+                    "count": 1000,
+                    "multiply": true
+                },
+                {
+                    "id": 57,
+                    "count": 1000
+                }
+            ]
+        },
+        {
+            "type": "pk",
+            "base": 1.0,
+            "multiplier": 1.0,
+            "maxbounty": 5.0,
+            "color": "ffffff",
+            "rewards": [
+                {
+                    "id": 57,
+                    "count": 1000,
+                    "multiply": true
+                },
+                {
+                    "id": 57,
+                    "count": 1000
+                }
+            ]
+        },
+        {
+            "type": "assist",
+            "base": 1.0,
+            "multiplier": 1.0,
+            "maxbounty": 5.0,
+            "color": "ffffff",
+            "rewards": [
+                {
+                    "id": 57,
+                    "count": 1000,
+                    "multiply": true
+                },
+                {
+                    "id": 57,
+                    "count": 1000
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+  "achievements": [
+    {
+      "id": 1,
+      "title": "Th3DrXmas Idea",
+      "description": "kill the noob The3DrXmas to receive Noblesse.",
+      "minLevel": 85,
+      "state": [
+        {
+          "start": 0,
+          "end": 1,
+          "event": "ON_ATTACKABLE_KILL",
+          "id": "25325"
+        }
+      ],
+      "reward": {
+        "rewards": [
+          {
+            "type": "nobles"
+          },
+          {
+           "type": "nameColor",
+            "color": "960000"
+          },
+          {
+            "type": "buff",
+            "buffId": 1323
+          },
+          {
+            "type": "item",
+            "id": 57,
+            "amount": 1000000
+          },
+          {
+            "type": "skin",
+            "skinId": 6408
+          },
+          {
+            "type": "teleport",
+            "teleportId": 1
+          },
+          {
+            "type": "expSp",
+            "exp": 10000000000,
+            "sp": 1000000000
+          }
+        ]
+      },
+      "condition": {
+        "conditions": [
+          {
+            "type": "using",
+            "attribute": "kind",
+            "value": "ANCIENTSWORD"
+          },
+          {
+            "type": "player",
+            "attribute": "souls",
+            "value": "10"
+          }
+        ]
+      }
+    }
+  ]
+}

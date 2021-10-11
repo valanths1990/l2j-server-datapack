@@ -8,7 +8,7 @@
         <spawn X="-60258" Y="-59000" Z="-2009" type="blueFlag"/>
     </zone>
     <zone id="2" name="aden_castle_battlefield_territory" type="EventZone" shape="NPoly" minZ="-3184" maxZ="6816">
-        <stat name="castleId" val="5" />
+<!--        <stat name="castleId" val="5" />-->
         <node X="142431" Y="362" />
         <node X="152319" Y="344" />
         <node X="152282" Y="15197" />

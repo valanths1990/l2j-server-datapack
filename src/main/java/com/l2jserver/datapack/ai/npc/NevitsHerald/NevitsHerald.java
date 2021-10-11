@@ -41,17 +41,17 @@ public final class NevitsHerald extends AbstractNpcAI {
 	private static final int NEVITS_HERALD = 4326;
 	private static final List<L2Npc> SPAWNS = new ArrayList<>();
 	private static final Location[] NEVITS_HERALD_LOC = {
-		new Location(86971, -142772, -1336, 20480), // Town of Schuttgart
-		new Location(44165, -48494, -792, 32768), // Rune Township
-		new Location(148017, -55264, -2728, 49152), // Town of Goddard
-		new Location(147919, 26631, -2200, 16384), // Town of Aden
-		new Location(82325, 53278, -1488, 16384), // Town of Oren
-		new Location(81925, 148302, -3464, 49152), // Town of Giran
-		new Location(111678, 219197, -3536, 49152), // Heine
-		new Location(16254, 142808, -2696, 16384), // Town of Dion
-		new Location(-13865, 122081, -2984, 32768), // Town of Gludio
-		new Location(-83248, 150832, -3136, 32768), // Gludin Village
-		new Location(116899, 77256, -2688, 49152) // Hunters Village
+//		new Location(86971, -142772, -1336, 20480), // Town of Schuttgart
+//		new Location(44165, -48494, -792, 32768), // Rune Township
+//		new Location(148017, -55264, -2728, 49152), // Town of Goddard
+//		new Location(147919, 26631, -2200, 16384), // Town of Aden
+//		new Location(82325, 53278, -1488, 16384), // Town of Oren
+//		new Location(81925, 148302, -3464, 49152), // Town of Giran
+//		new Location(111678, 219197, -3536, 49152), // Heine
+//		new Location(16254, 142808, -2696, 16384), // Town of Dion
+//		new Location(-13865, 122081, -2984, 32768), // Town of Gludio
+//		new Location(-83248, 150832, -3136, 32768), // Gludin Village
+//		new Location(116899, 77256, -2688, 49152) // Hunters Village
 	};
 	private static final int ANTHARAS = 29068; // Antharas Strong (85)
 	private static final int VALAKAS = 29028; // Valakas (85)

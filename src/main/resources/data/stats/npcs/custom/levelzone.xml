@@ -12,7 +12,7 @@
         <race>HUMANOID</race>
         <sex>MALE</sex>
         <equipment rhand="1" /> <!-- rhand: Short Sword -->
-        <acquire expRate="0.05" sp="6" />
+        <acquire expRate="0.5" sp="60" />
         <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
             <vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
             <attack physical="40.33758" magical="13.20506" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -56,7 +56,7 @@
             <height normal="22" grown="26.4" />
         </collision>
     </npc>
-    <npc id="20936" level="40" type="L2Monster" name="Tanor Silenos" title="L2 Angel" usingServerSideTitle="true">
+    <npc id="20936" level="35" type="L2Monster" name="Tanor Silenos" title="L2 Angel" usingServerSideTitle="true">
         <!-- Confirmed CT2.5 -->
         <parameters>
             <param name="MoveAroundSocial" value="100" />
@@ -72,11 +72,11 @@
         <race>HUMANOID</race>
         <sex>MALE</sex>
         <equipment rhand="88" /> <!-- rhand: Morning Star -->
-        <acquire expRate="0.5" sp="50" />
-        <stats str="40" int="21" dex="30" wit="20" con="43" men="15">
+        <acquire expRate="2" sp="100" />
+        <stats str="40" int="21" dex="30" wit="20" con="35" men="15">
             <vitals hp="966.57792" hpRegen="4.5" mp="478.8" mpRegen="1.8" />
             <attack physical="300.36077" magical="300.43155" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-            <defence physical="300.55035" magical="10.232986928232" />
+            <defence physical="300.55035" magical="5.232986928232" />
             <attribute>
                 <defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
             </attribute>
@@ -129,7 +129,7 @@
         <race>UNDEAD</race>
         <sex>MALE</sex>
         <equipment rhand="232" /> <!-- rhand: Dark Elven Dagger -->
-        <acquire expRate="0.6" sp="50"/>
+        <acquire expRate="1.5" sp="100"/>
         <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
             <vitals hp="1933" hpRegen="6.5" mp="804.0" mpRegen="2.4" />
             <attack physical="600" magical="600" random="10" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
@@ -171,7 +171,7 @@
             <height normal="28" />
         </collision>
     </npc>
-    <npc id="22815" level="83" type="L2Monster" name="Drakos" title="L2 Angel" usingServerSideTitle="true" usingServerSideName="true">
+    <npc id="22815" level="81" type="L2Monster" name="Drakos" title="L2 Angel" usingServerSideTitle="true" usingServerSideName="true">
         <!-- Confirmed CT2.5 -->
         <parameters>
             <skill name="Skill01_ID" id="6845" level="1" /> <!-- Power Strike -->
@@ -179,7 +179,7 @@
         <race>UNDEAD</race>
         <sex>MALE</sex>
         <equipment rhand="13985" lhand="13986" /> <!-- rhand: Exclusive to Monsters (Death Slayer_r) lhand: Exclusive to Monsters (Death Slayer_l) -->
-        <acquire expRate="4" sp="1000" />
+        <acquire expRate="8" sp="100" />
         <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
             <vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
             <attack physical="400.537548504614" magical="300.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="DUAL" range="40" distance="80" width="120" />

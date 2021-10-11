@@ -63,13 +63,11 @@ import com.l2jserver.datapack.ai.group_template.VarkaKetra;
 import com.l2jserver.datapack.ai.group_template.WarriorFishingBlock;
 import com.l2jserver.datapack.ai.individual.Anais;
 import com.l2jserver.datapack.ai.individual.Ballista;
-import com.l2jserver.datapack.ai.individual.Beleth;
 import com.l2jserver.datapack.ai.individual.BlackdaggerWing;
 import com.l2jserver.datapack.ai.individual.BleedingFly;
 import com.l2jserver.datapack.ai.individual.BloodyBerserker;
 import com.l2jserver.datapack.ai.individual.BloodyKarik;
 import com.l2jserver.datapack.ai.individual.BloodyKarinness;
-import com.l2jserver.datapack.ai.individual.Core;
 import com.l2jserver.datapack.ai.individual.CrimsonHatuOtis;
 import com.l2jserver.datapack.ai.individual.DarkWaterDragon;
 import com.l2jserver.datapack.ai.individual.DivineBeast;
@@ -85,8 +83,6 @@ import com.l2jserver.datapack.ai.individual.GraveRobbers;
 import com.l2jserver.datapack.ai.individual.Knoriks;
 import com.l2jserver.datapack.ai.individual.MuscleBomber;
 import com.l2jserver.datapack.ai.individual.NecromancerOfTheValley;
-import com.l2jserver.datapack.ai.individual.Orfen;
-import com.l2jserver.datapack.ai.individual.QueenAnt;
 import com.l2jserver.datapack.ai.individual.QueenShyeed;
 import com.l2jserver.datapack.ai.individual.RagnaOrcCommander;
 import com.l2jserver.datapack.ai.individual.RagnaOrcHero;
@@ -94,9 +90,6 @@ import com.l2jserver.datapack.ai.individual.RagnaOrcSeer;
 import com.l2jserver.datapack.ai.individual.ShadowSummoner;
 import com.l2jserver.datapack.ai.individual.SinEater;
 import com.l2jserver.datapack.ai.individual.SinWardens;
-import com.l2jserver.datapack.ai.individual.Valakas;
-import com.l2jserver.datapack.ai.individual.Antharas.Antharas;
-import com.l2jserver.datapack.ai.individual.Baium.Baium;
 import com.l2jserver.datapack.ai.individual.Sailren.Sailren;
 import com.l2jserver.datapack.ai.individual.Venom.Venom;
 import com.l2jserver.datapack.ai.npc.Abercrombie.Abercrombie;
@@ -229,7 +222,7 @@ public class AILoader {
 		CastleTeleporter.class,
 		CastleWarehouse.class,
 		ClanTrader.class,
-		ClassMaster.class,
+//		ClassMaster.class,
 		Dorian.class,
 		DragonVortex.class,
 		EchoCrystals.class,
@@ -248,7 +241,7 @@ public class AILoader {
 		ManorManager.class,
 		MercenaryCaptain.class,
 		Minigame.class,
-		MonumentOfHeroes.class,
+//		MonumentOfHeroes.class,
 		NevitsHerald.class,
 		NpcBuffers.class,
 		CabaleBuffer.class,
@@ -339,20 +332,20 @@ public class AILoader {
 		VarkaKetra.class,
 		WarriorFishingBlock.class,
 		// Individual
-		Antharas.class,
-		Baium.class,
+//		Antharas.class,
+//		Baium.class,
 		Sailren.class,
 		Venom.class,
 		Anais.class,
 		Ballista.class,
-		Beleth.class,
+//		Beleth.class,
 		BlackdaggerWing.class,
 		BleedingFly.class,
 		BloodyBerserker.class,
 		BloodyKarik.class,
 		BloodyKarinness.class,
 		CrimsonHatuOtis.class,
-		Core.class,
+//		Core.class,
 		DarkWaterDragon.class,
 		DivineBeast.class,
 		DrakosWarrior.class,
@@ -366,8 +359,8 @@ public class AILoader {
 		GraveRobbers.class,
 		Knoriks.class,
 		MuscleBomber.class,
-		Orfen.class,
-		QueenAnt.class,
+//		Orfen.class,
+//		QueenAnt.class,
 		QueenShyeed.class,
 		RagnaOrcCommander.class,
 		RagnaOrcHero.class,
@@ -376,7 +369,7 @@ public class AILoader {
 		ShadowSummoner.class,
 		SinEater.class,
 		SinWardens.class,
-		Valakas.class,
+//		Valakas.class,
 		// Village Master
 		Clan.class,
 		Alliance.class,
