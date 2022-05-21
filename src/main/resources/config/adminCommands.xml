@@ -593,4 +593,12 @@
 	<admin command="banchat" accessLevel="7" />
 	<admin command="debug" accessLevel="7" />
 	<admin command="unbanchat" accessLevel="7" />
+
+<!--	custom admin-->
+	<admin  command="admin_balance" accessLevel="7" confirmDlg="false"/>
+	<admin  command="admin_pvpzone" accessLevel="7" confirmDlg="false"/>
+	<admin  command="admin_farmzone" accessLevel="7" confirmDlg="false"/>
+<!--	Autobots admin-->
+	<admin accessLevel="7" command="admin_a" confirmDlg="false"/>
+
 </list>

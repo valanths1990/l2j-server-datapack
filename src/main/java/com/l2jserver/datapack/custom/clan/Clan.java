@@ -36,18 +36,16 @@ public class Clan implements IBypassHandler {
             if (split[1].equalsIgnoreCase("showcastle")) {
 
                 Castle castle = CastleManager.getInstance().getCastle(split[2]);
-                if(castle!=null){
+                if (castle != null) {
                     activeChar.sendPacket(new SiegeInfo(castle));
                 }
 
-            }
-            else if(split[1].equalsIgnoreCase("showfortress")){
+            } else if (split[1].equalsIgnoreCase("showfortress")) {
                 Fort fortress = FortManager.getInstance().getFort(split[2]);
-                if(fortress!=null){
+                if (fortress != null) {
                     activeChar.sendPacket(new ExShowFortressSiegeInfo(fortress));
                 }
-            }
-            else {
+            } else {
                 highPriet.onBypassFeedback(activeChar, split[2]);
             }
             html = getHomepage(activeChar);
@@ -84,9 +82,10 @@ public class Clan implements IBypassHandler {
 
         if (fort != null) {
             html = html.replace("%base%", "Fortress").replace("%baseName%", fort.getName());
-        }
-        if (castle != null) {
+        } else if (castle != null) {
             html = html.replace("%base%", "Castle").replace("%baseName%", castle.getName());
+        } else {
+            html = html.replace("%base%", "Base").replace("%baseName%", "None");
         }
         String ally = pc.getClan().getAllyName() == null ? "" : pc.getClan().getAllyName();
         html = html.replace("%allyName%", ally);

@@ -153,7 +153,6 @@
             <radius normal="24"/>
             <height normal="49"/>
         </collision>
-
     </npc>
     <npc id="27411" level="85" type="L2CustomMonster" name="Divinity Manager" usingServerSideName="true" usingServerSideTitle="true" title="L2 Angel">
         <!-- TODO: Must be confirmed -->
@@ -324,5 +323,251 @@
                 <item id="57" min="800000" max="1200000" chance="80"/>
             </death>
         </dropLists>
+    </npc>
+    <npc id="22264" level="82" type="L2Monster" name="Castalia">
+        <!-- Confirmed CT2.5 -->
+        <parameters>
+            <param name="MoveAroundSocial" value="90" />
+            <param name="MoveAroundSocial1" value="90" />
+            <param name="MoveAroundSocial2" value="90" />
+            <param name="ai_type" value="party_private_wizard_oracle" />
+            <param name="silhouette" value="18365" /> <!-- Witch Warder -->
+            <skill name="debuff" id="5242" level="1" /> <!-- Sickness -->
+            <skill name="W_ShortRangeDDMagic" id="5265" level="10" /> <!-- NPC - Soul Emission -->
+            <skill name="W_LongRangeDDMagic" id="5263" level="10" /> <!-- NPC _ Chain Lightning -->
+        </parameters>
+        <race>ELEMENTAL</race>
+        <sex>FEMALE</sex>
+        <equipment rhand="9638" lhand="9638" /> <!-- rhand: Tears r1 lhand: Tears r1 -->
+        <acquire expRate="1.946598" sp="1431" />
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="3643.38976668326" hpRegen="8.5" mp="1743.0" mpRegen="3" />
+            <attack physical="1055.28566004965" magical="720.623302603812" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+            <defence physical="349.77477" magical="255.95" />
+            <attribute>
+                <attack type="WATER" value="30" />
+                <defence fire="50" water="90" wind="60" earth="60" holy="40" dark="60" default="50" />
+            </attribute>
+            <speed>
+                <walk ground="60" />
+                <run ground="180" />
+            </speed>
+            <hitTime>450</hitTime>
+        </stats>
+        <status undying="false" />
+        <skillList>
+            <skill id="4408" level="1" /> <!--HP Increase (1x) -->
+            <skill id="4409" level="1" /> <!--MP Increase (1x) -->
+            <skill id="4410" level="11" /> <!--Average P. Atk. -->
+            <skill id="4411" level="11" /> <!--Average M. Atk. -->
+            <skill id="4412" level="11" /> <!--Average P. Def. -->
+            <skill id="4413" level="11" /> <!--Average M. Def. -->
+            <skill id="4414" level="2" /> <!--Standard Type -->
+            <skill id="4415" level="3" /> <!--One-handed Sword -->
+            <skill id="4416" level="7" /> <!--Spirits -->
+            <skill id="5242" level="1" /> <!--Sickness -->
+            <skill id="5263" level="10" /> <!--NPC _ Chain Lightning -->
+            <skill id="5265" level="10" /> <!--NPC - Soul Emission -->
+            <skill id="5463" level="1" /> <!--Water Attacks -->
+            <skill id="5549" level="1" /> <!--Physical Short-range Weakness -->
+        </skillList>
+        <exCrtEffect>false</exCrtEffect>
+        <ai type="MAGE" aggroRange="300" clanHelpRange="500">
+            <clanList>
+                <clan>ORACLE</clan>
+            </clanList>
+        </ai>
+        <dropLists>
+            <death>
+                <item id="57" min="800000" max="1200000" chance="80"/>
+            </death>
+        </dropLists>
+        <collision>
+            <radius normal="20" />
+            <height normal="27.5" />
+        </collision>
+    </npc>
+    <npc id="22265" level="83" type="L2Monster" name="Chrysocolla">
+        <!-- Confirmed CT2.5 -->
+        <parameters>
+            <param name="MoveAroundSocial" value="126" />
+            <param name="MoveAroundSocial1" value="126" />
+            <param name="MoveAroundSocial2" value="126" />
+            <param name="ai_type" value="party_private_demonic_swordman_oracle" />
+            <param name="silhouette" value="18366" /> <!-- Witch Warder -->
+            <skill name="PhysicalSpecial" id="4073" level="10" /> <!-- Stun -->
+            <skill name="W_LongRangeDDMagic" id="4257" level="10" /> <!-- NPC Hydroblast - Magic -->
+            <skill name="debuff" id="5242" level="1" /> <!-- Sickness -->
+        </parameters>
+        <race>CONSTRUCT</race>
+        <sex>MALE</sex>
+        <acquire expRate="2.2488279375" sp="1673" />
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="3835.59060587002" hpRegen="8.5" mp="1777.4" mpRegen="3" />
+            <attack physical="1099.42361669366" magical="750.763809564873" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+            <defence physical="353.86144" magical="258.94045" />
+            <attribute>
+                <attack type="WATER" value="30" />
+                <defence fire="50" water="90" wind="60" earth="60" holy="60" dark="60" default="50" />
+            </attribute>
+            <speed>
+                <walk ground="54" />
+                <run ground="170" />
+            </speed>
+            <hitTime>340</hitTime>
+        </stats>
+        <status undying="false" />
+        <skillList>
+            <skill id="4073" level="10" /> <!--Stun -->
+            <skill id="4257" level="10" /> <!--NPC Hydroblast - Magic -->
+            <skill id="4286" level="1" /> <!--Greater Resist Sleep -->
+            <skill id="4408" level="1" /> <!--HP Increase (1x) -->
+            <skill id="4409" level="1" /> <!--MP Increase (1x) -->
+            <skill id="4410" level="11" /> <!--Average P. Atk. -->
+            <skill id="4411" level="11" /> <!--Average M. Atk. -->
+            <skill id="4412" level="11" /> <!--Average P. Def. -->
+            <skill id="4413" level="11" /> <!--Average M. Def. -->
+            <skill id="4414" level="2" /> <!--Standard Type -->
+            <skill id="4415" level="3" /> <!--One-handed Sword -->
+            <skill id="4416" level="2" /> <!--Magic Creatures -->
+            <skill id="5242" level="1" /> <!--Sickness -->
+            <skill id="5463" level="1" /> <!--Water Attacks -->
+            <skill id="5549" level="1" /> <!--Physical Short-range Weakness -->
+        </skillList>
+        <exCrtEffect>false</exCrtEffect>
+        <ai aggroRange="300" clanHelpRange="500">
+            <clanList>
+                <clan>ORACLE</clan>
+            </clanList>
+        </ai>
+        <dropLists>
+            <death>
+                <item id="57" min="800000" max="1200000" chance="80"/>
+            </death>
+        </dropLists>
+        <collision>
+            <radius normal="34" />
+            <height normal="47" />
+        </collision>
+    </npc>
+    <npc id="22263" level="82" type="L2Monster" name="Sonneratia">
+        <!-- Confirmed CT2.5 -->
+        <parameters>
+            <param name="MoveAroundSocial" value="90" />
+            <param name="MoveAroundSocial1" value="90" />
+            <param name="MoveAroundSocial2" value="90" />
+            <param name="ai_type" value="party_private_warrior_oracle" />
+            <param name="silhouette" value="18364" /> <!-- Witch Warder -->
+            <skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
+            <skill name="debuff" id="5242" level="1" /> <!-- Sickness -->
+        </parameters>
+        <race>BEAST</race>
+        <sex>MALE</sex>
+        <acquire expRate="2.18992275" sp="1610" />
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="3643.38976668326" hpRegen="8.5" mp="1743.0" mpRegen="3" />
+            <attack physical="1055.28566004965" magical="720.623302603812" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+            <defence physical="349.77477" magical="255.95" />
+            <attribute>
+                <attack type="WATER" value="30" />
+                <defence fire="40" water="90" wind="60" earth="60" holy="60" dark="60" default="50" />
+            </attribute>
+            <speed>
+                <walk ground="30" />
+                <run ground="180" />
+            </speed>
+            <hitTime>240</hitTime>
+        </stats>
+        <status undying="false" />
+        <skillList>
+            <skill id="4032" level="9" /> <!--NPC Strike -->
+            <skill id="4093" level="1" /> <!--Evasion -->
+            <skill id="4408" level="1" /> <!--HP Increase (1x) -->
+            <skill id="4409" level="1" /> <!--MP Increase (1x) -->
+            <skill id="4410" level="11" /> <!--Average P. Atk. -->
+            <skill id="4411" level="11" /> <!--Average M. Atk. -->
+            <skill id="4412" level="11" /> <!--Average P. Def. -->
+            <skill id="4413" level="11" /> <!--Average M. Def. -->
+            <skill id="4414" level="2" /> <!--Standard Type -->
+            <skill id="4415" level="3" /> <!--One-handed Sword -->
+            <skill id="4416" level="3" /> <!--Beasts -->
+            <skill id="5242" level="1" /> <!--Sickness -->
+            <skill id="5463" level="1" /> <!--Water Attacks -->
+            <skill id="5549" level="1" /> <!--Physical Short-range Weakness -->
+        </skillList>
+        <exCrtEffect>false</exCrtEffect>
+        <ai aggroRange="300" clanHelpRange="500" isAggressive="false">
+            <clanList>
+                <clan>ORACLE</clan>
+            </clanList>
+        </ai>
+        <dropLists>
+            <death>
+                <item id="57" min="800000" max="1200000" chance="80"/>
+            </death>
+        </dropLists>
+        <collision>
+            <radius normal="14" />
+            <height normal="18.7" />
+        </collision>
+    </npc>
+    <npc id="22267" level="83" type="L2Monster" name="Dark Water Dragon">
+        <!-- Confirmed CT2.5 -->
+        <parameters>
+            <param name="MoveAroundSocial" value="80" />
+            <param name="MoveAroundSocial1" value="80" />
+            <param name="MoveAroundSocial2" value="99" />
+            <param name="ai_type" value="beres_private_private" />
+            <param name="silhouette1" value="22268" /> <!-- Shade -->
+            <param name="silhouette2" value="22269" /> <!-- Shade -->
+            <skill name="PhysicalSpecial" id="5043" level="9" /> <!-- NPC Super Sonic Blaster -->
+        </parameters>
+        <race>DRAGON</race>
+        <sex>MALE</sex>
+        <acquire expRate="23.0129707456331" sp="17121" />
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="65569.2570829001" hpRegen="111.355378460862" mp="1777.4" mpRegen="3" />
+            <attack physical="5589.57218651355" magical="3816.95321518099" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+            <defence physical="566.178304" magical="621.45708" />
+            <attribute>
+                <attack type="DARK" value="20" />
+                <defence fire="60" water="60" wind="60" earth="60" holy="30" dark="90" default="50" />
+            </attribute>
+            <speed>
+                <walk ground="200" />
+                <run ground="200" />
+            </speed>
+        </stats>
+        <status undying="false" />
+        <skillList>
+            <skill id="4408" level="1" /> <!--HP Increase (1x) -->
+            <skill id="4409" level="1" /> <!--MP Increase (1x) -->
+            <skill id="4410" level="11" /> <!--Average P. Atk. -->
+            <skill id="4411" level="11" /> <!--Average M. Atk. -->
+            <skill id="4412" level="11" /> <!--Average P. Def. -->
+            <skill id="4413" level="11" /> <!--Average M. Def. -->
+            <skill id="4414" level="2" /> <!--Standard Type -->
+            <skill id="4415" level="3" /> <!--One-handed Sword -->
+            <skill id="4416" level="10" /> <!--Dragons -->
+            <skill id="4441" level="5" /> <!--Greater Resist Mental Derangement -->
+            <skill id="5043" level="9" /> <!--NPC Super Sonic Blaster -->
+            <skill id="5467" level="1" /> <!--Dark Attacks -->
+            <skill id="5549" level="1" /> <!--Physical Short-range Weakness -->
+        </skillList>
+        <exCrtEffect>false</exCrtEffect>
+        <ai aggroRange="300" clanHelpRange="500">
+            <clanList>
+                <clan>DARK</clan>
+            </clanList>
+        </ai>
+        <dropLists>
+            <death>
+                <item id="57" min="800000" max="1200000" chance="80"/>
+            </death>
+        </dropLists>
+        <collision>
+            <radius normal="42" />
+            <height normal="34.5" />
+        </collision>
     </npc>
 </list>

@@ -1,6 +1,7 @@
 package com.l2jserver.datapack.custom.raidboss;
 
 import com.l2jserver.commons.util.Rnd;
+import com.l2jserver.gameserver.custom.Activity.ActivityManager;
 import com.l2jserver.datapack.instances.Antharas.Antharas;
 import com.l2jserver.datapack.instances.Baium.Baium;
 import com.l2jserver.datapack.instances.Beleth.Beleth;
@@ -29,6 +30,7 @@ import com.l2jserver.gameserver.util.Util;
 
 import java.lang.reflect.InvocationTargetException;
 import java.time.DayOfWeek;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -47,13 +49,14 @@ public class CustomGrandBossManager {
     private Status status = Status.UPCOMING;
     private ScheduledFuture<?> future;
     private AbstractEventListener onAttackableKill;
+    private BossActivity bossAction;
 
     static {
         raidbosses.add(Antharas.class);
         raidbosses.add(Baium.class);
         raidbosses.add(Valakas.class);
-		raidbosses.add(QueenAnt.class);
-		raidbosses.add(Beleth.class);
+        raidbosses.add(QueenAnt.class);
+        raidbosses.add(Beleth.class);
 //        raidbosses.add()
 //		raidbosses.add(Core.class);
 //		raidbosses.add(Orfen.class);
@@ -89,6 +92,8 @@ public class CustomGrandBossManager {
         }
 //		future=	ThreadPoolManager.getInstance().scheduleGeneral(this::scheduleNextGrandBoss, Configuration.grandBoss().getGrandBossAliveTime(), TimeUnit.SECONDS);
         future = ThreadPoolManager.getInstance().scheduleGeneral(this::scheduleNextGrandBoss, 2100, TimeUnit.SECONDS);
+        bossAction = new BossActivity();
+        ActivityManager.getInstance().registerAction(bossAction, Duration.ofSeconds(2100));
     }
 
     private void onGrandBossKill(IBaseEvent event) {
@@ -99,6 +104,7 @@ public class CustomGrandBossManager {
             }
             future.cancel(true);
             future = ThreadPoolManager.getInstance().scheduleGeneral(this::scheduleNextGrandBoss, general().getInstanceFinishTime(), TimeUnit.SECONDS);
+            ActivityManager.getInstance().unregisterAction(bossAction);
         }
     }
 

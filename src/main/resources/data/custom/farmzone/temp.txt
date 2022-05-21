@@ -1,22 +1,185 @@
-------antharas
-<spawn X="150202" Y="117164" spawnName="Antharas Bridge"/>
-<spawn X="131752" Y="114393" spawnName="Antharas Lair Entrance/>
---------
-
--------valakas
-<spawn X="182345" Y="-117269" spawnName="Valakas Watchman Entrance"/>
-<spawn X="176397" Y="-116133" spawnName="Valakas Bridge"/>
-<spawn X="170090" Y="-116264" spawnName="Forge of Gods"/>
-
----- baium
-<spawn X="115906" Y="17321" spawnName="TOI 12th Floor"/>
-<spawn X="111936" Y="16393"spawnName="TIO 11th Floor/>
-<spawn X="114649" Y="11115" spawnName="TIO Entrance"/>
-<node X="204181" Y="-111783"/>
-<node X="-21148" Y="183902"/>
-<node X="9063" Y="251984"/>
-<node X="13501" Y="255162"/>
-<node X="9103" Y="251988"/>
-<node X="-21482" Y="183781"/>
-<node X="-9699" Y="177004"/>
-<node X="16320" Y="208955"/>
+<npc id="22267" X="148829" Y="160012" Z="-3147" heading="51141" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="149199" Y="160169" Z="-3160" heading="1636" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="149363" Y="159592" Z="-3203" heading="51219" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="149833" Y="159550" Z="-3206" heading="65341" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="149973" Y="159024" Z="-3239" heading="52635" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="150410" Y="158974" Z="-3264" heading="58980" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="150438" Y="158538" Z="-3289" heading="47817" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="150887" Y="158541" Z="-3346" heading="1503" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="150910" Y="158538" Z="-3358" heading="15788" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="150885" Y="157953" Z="-3370" heading="57820" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="151383" Y="158401" Z="-3400" heading="13416" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="151377" Y="157784" Z="-3376" heading="2294" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="151926" Y="158265" Z="-3417" heading="8841" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="151950" Y="157592" Z="-3384" heading="47093" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="152641" Y="158121" Z="-3456" heading="5942" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="153206" Y="157880" Z="-3456" heading="59121" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="152425" Y="157089" Z="-3511" heading="34115" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="153167" Y="156829" Z="-3623" heading="58702" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="153250" Y="156208" Z="-3667" heading="50453" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="153389" Y="155776" Z="-3673" heading="57286" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="153259" Y="155151" Z="-3645" heading="48690" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="152982" Y="154651" Z="-3646" heading="40443" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="152601" Y="154317" Z="-3668" heading="40312" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="152236" Y="154032" Z="-3673" heading="39596" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="151741" Y="153963" Z="-3665" heading="32859" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="151410" Y="154237" Z="-3671" heading="28186" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="150922" Y="154334" Z="-3663" heading="28244" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="150675" Y="154650" Z="-3649" heading="18430" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="151028" Y="155391" Z="-3673" heading="10598" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="151423" Y="155765" Z="-3673" heading="7615" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="152018" Y="156095" Z="-3675" heading="4613" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="152606" Y="155882" Z="-3681" heading="59222" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="152145" Y="155285" Z="-3679" heading="31678" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="151541" Y="155047" Z="-3676" heading="42763" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="153173" Y="153723" Z="-3653" heading="55497" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="153739" Y="153294" Z="-3654" heading="58905" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="153974" Y="153626" Z="-3669" heading="738" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="154566" Y="153481" Z="-3666" heading="64880" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="154993" Y="153110" Z="-3661" heading="52017" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="154521" Y="152407" Z="-3649" heading="43712" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="154241" Y="151884" Z="-3626" heading="38884" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="153814" Y="151574" Z="-3553" heading="35411" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="154539" Y="151333" Z="-3608" heading="2183" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="155078" Y="151744" Z="-3710" heading="745" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="155455" Y="151616" Z="-3702" heading="59396" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="155879" Y="150949" Z="-3688" heading="54094" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="156031" Y="150402" Z="-3683" heading="49958" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="156038" Y="150023" Z="-3670" heading="49801" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="156165" Y="149558" Z="-3648" heading="61923" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="156554" Y="149621" Z="-3629" heading="10146" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="156572" Y="150141" Z="-3630" heading="20744" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="156407" Y="150526" Z="-3641" heading="21082" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="156187" Y="151072" Z="-3662" heading="19216" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="155915" Y="151582" Z="-3655" heading="14260" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="156034" Y="152151" Z="-3636" heading="15252" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="156223" Y="152608" Z="-3600" heading="9802" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="156580" Y="152804" Z="-3567" heading="4410" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="156791" Y="153193" Z="-3518" heading="13818" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="157177" Y="153066" Z="-3520" heading="63817" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="157622" Y="153158" Z="-3507" heading="3096" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="157992" Y="153344" Z="-3443" heading="5070" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="157898" Y="152067" Z="-3416" heading="44394" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="157540" Y="151458" Z="-3400" heading="43481" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="157202" Y="150997" Z="-3552" heading="42081" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="157173" Y="150522" Z="-3512" heading="51712" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="156898" Y="150185" Z="-3550" heading="36746" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="156997" Y="149099" Z="-3599" heading="50934" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="157206" Y="148455" Z="-3574" heading="56355" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="157041" Y="147924" Z="-3600" heading="44729" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="156347" Y="147781" Z="-3726" heading="32570" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="155832" Y="148773" Z="-3698" heading="17011" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="155849" Y="149484" Z="-3709" heading="16444" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="157240" Y="151947" Z="-3534" heading="451" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="158353" Y="152044" Z="-3401" heading="64014" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="158792" Y="151910" Z="-3349" heading="62114" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="159275" Y="151669" Z="-3313" heading="59085" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="159762" Y="151730" Z="-3330" heading="1647" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="160259" Y="151698" Z="-3363" heading="64507" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="160708" Y="151769" Z="-3405" heading="3592" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="161176" Y="152128" Z="-3473" heading="10554" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="161164" Y="152497" Z="-3484" heading="21478" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="160818" Y="152776" Z="-3504" heading="28443" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="160328" Y="152892" Z="-3505" heading="28782" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="159721" Y="152972" Z="-3490" heading="31583" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="159759" Y="152619" Z="-3460" heading="52432" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="159809" Y="152084" Z="-3394" heading="49516" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="160430" Y="152089" Z="-3449" heading="1323" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="158968" Y="153171" Z="-3462" heading="27265" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="158350" Y="153206" Z="-3487" heading="34327" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="155468" Y="153985" Z="-3676" heading="16235" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="154981" Y="154472" Z="-3680" heading="27214" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="155029" Y="155127" Z="-3698" heading="17957" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="154930" Y="156024" Z="-3697" heading="15154" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="154504" Y="155905" Z="-3681" heading="39764" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="154993" Y="156564" Z="-3679" heading="13944" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="155082" Y="157185" Z="-3674" heading="14599" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="155488" Y="157376" Z="-3682" heading="794" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="155918" Y="157806" Z="-3633" heading="8790" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="156198" Y="158327" Z="-3478" heading="13394" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="156430" Y="158694" Z="-3354" heading="5193" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="157050" Y="158711" Z="-3347" heading="5677" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="157019" Y="158141" Z="-3484" heading="54243" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="157195" Y="157821" Z="-3528" heading="55658" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="157538" Y="157526" Z="-3510" heading="62924" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="157818" Y="157380" Z="-3455" heading="59321" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="157674" Y="156987" Z="-3507" heading="52913" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="157928" Y="156552" Z="-3328" heading="0" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="158337" Y="156840" Z="-3330" heading="6055" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="157660" Y="156864" Z="-3507" heading="31497" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="157229" Y="156648" Z="-3410" heading="38581" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="157237" Y="157056" Z="-3548" heading="5089" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="156552" Y="156741" Z="-3595" heading="27951" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="156183" Y="155962" Z="-3707" heading="49019" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="156352" Y="155107" Z="-3724" heading="43052" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="157038" Y="155790" Z="-3744" heading="10861" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="157573" Y="155136" Z="-3757" heading="55843" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="157744" Y="155825" Z="-3754" heading="12709" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="158187" Y="155876" Z="-3752" heading="64446" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="158840" Y="155713" Z="-3759" heading="62936" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="158847" Y="155132" Z="-3760" heading="44986" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="158311" Y="155104" Z="-3758" heading="29454" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="158180" Y="155427" Z="-3760" heading="7677" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="159254" Y="154947" Z="-3757" heading="60178" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="159391" Y="155556" Z="-3752" heading="15360" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="159831" Y="155428" Z="-3759" heading="62165" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="160316" Y="155286" Z="-3758" heading="62868" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="160740" Y="154607" Z="-3756" heading="48098" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="155994" Y="159942" Z="-3355" heading="56052" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="155787" Y="159703" Z="-3352" heading="32392" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="155699" Y="159954" Z="-3352" heading="5905" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="155508" Y="159784" Z="-3352" heading="44201" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="155333" Y="159962" Z="-3352" heading="16843" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="155187" Y="159754" Z="-3352" heading="49098" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="155212" Y="160206" Z="-3353" heading="19577" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="155205" Y="160484" Z="-3354" heading="12623" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="155417" Y="160451" Z="-3352" heading="62523" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="155530" Y="160130" Z="-3352" heading="51004" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="155586" Y="160474" Z="-3352" heading="15217" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="155826" Y="160503" Z="-3354" heading="60729" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="155948" Y="160240" Z="-3355" heading="54812" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="155769" Y="160222" Z="-3355" heading="58099" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="155484" Y="160066" Z="-3352" heading="36907" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="155953" Y="160483" Z="-3352" heading="12280" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="156353" Y="160181" Z="-3353" heading="0" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="156740" Y="160196" Z="-3353" heading="765" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="156736" Y="159853" Z="-3341" heading="50253" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="156740" Y="159382" Z="-3328" heading="48808" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="156886" Y="159250" Z="-3330" heading="514" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="156637" Y="159193" Z="-3330" heading="36981" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="156499" Y="158972" Z="-3331" heading="34963" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="156903" Y="158948" Z="-3332" heading="19764" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="156978" Y="158631" Z="-3374" heading="49723" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="156336" Y="158498" Z="-3388" heading="56534" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="154094" Y="150929" Z="-3500" heading="55868" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="153387" Y="151006" Z="-3473" heading="29248" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="152981" Y="151101" Z="-3488" heading="31981" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="152574" Y="151204" Z="-3486" heading="29731" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="152038" Y="151312" Z="-3490" heading="31287" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="151901" Y="150868" Z="-3474" heading="49020" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="152386" Y="150693" Z="-3465" heading="63216" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="152349" Y="150195" Z="-3416" heading="45333" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="151877" Y="150190" Z="-3357" heading="31828" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="152225" Y="149581" Z="-3318" heading="56556" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="151775" Y="149422" Z="-3229" heading="34858" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="151790" Y="148869" Z="-3215" heading="50567" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="152345" Y="148816" Z="-3250" heading="416" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="152017" Y="148328" Z="-3217" heading="33877" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="152079" Y="147773" Z="-3210" heading="48524" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="152311" Y="147394" Z="-3204" heading="53290" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="152507" Y="146929" Z="-3191" heading="53342" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22265" X="152725" Y="146571" Z="-3180" heading="55257" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="153031" Y="146186" Z="-3173" heading="60449" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="153395" Y="146365" Z="-3173" heading="9142" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="153741" Y="146665" Z="-3177" heading="7799" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="153923" Y="147124" Z="-3201" heading="13346" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="153922" Y="147581" Z="-3217" heading="17066" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="154107" Y="147996" Z="-3221" heading="12338" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="154101" Y="148616" Z="-3289" heading="17103" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="154108" Y="149160" Z="-3327" heading="15845" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="154165" Y="149615" Z="-3363" heading="13719" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="154079" Y="150088" Z="-3390" heading="20455" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22267" X="153549" Y="149999" Z="-3373" heading="38624" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22263" X="153440" Y="149565" Z="-3344" heading="49072" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="153368" Y="148353" Z="-3254" heading="48760" count="1"respawnDelay="60"respawnRandom="30" />
+<npc id="22264" X="-87015" Y="-81608" Z="-8358" heading="12872" count="1"respawnDelay="60"respawnRandom="30" />

@@ -64,7 +64,7 @@ public class VoteCMD implements IVoicedCommandHandler
 	private final Duration VOTE_REUSE = Duration.ofHours(12);
 
 	// vote site list
-	public static enum VoteSite
+	public enum VoteSite
 	{
 		ITOPZ,
 		HOPZONE,

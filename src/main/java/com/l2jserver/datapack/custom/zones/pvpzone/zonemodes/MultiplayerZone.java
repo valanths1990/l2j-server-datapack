@@ -1,15 +1,33 @@
 package com.l2jserver.datapack.custom.zones.pvpzone.zonemodes;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.datapack.custom.zones.pvpzone.ZoneMode;
+import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
+import com.l2jserver.gameserver.model.events.returns.AbstractEventReturn;
 import com.l2jserver.gameserver.model.zone.type.L2PvpZone;
 
-public class MultiplayerZone extends L2PvpZone {
-	public MultiplayerZone(int id) {
-		super(id);
-	}
+public class MultiplayerZone extends ZoneMode {
+    public MultiplayerZone(L2PvpZone currentZone) {
+        super(currentZone);
+    }
 
-	@Override protected void onEnter(L2Character character) {
-		super.onEnter(character);
-		System.out.println("worked");
-	}
+
+    @Override
+    protected void onZoneModeEnd() {
+
+    }
+
+    @Override
+    public void onZoneModeStart() {
+
+    }
+
+    @Override
+    protected AbstractEventReturn receivedEvent(IBaseEvent event) {
+        return null;
+    }
+
+    @Override
+    public String getZoneModeName() {
+        return "Multiplayer";
+    }
 }

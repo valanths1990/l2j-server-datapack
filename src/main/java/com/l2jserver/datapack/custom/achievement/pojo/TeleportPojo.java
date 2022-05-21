@@ -25,7 +25,7 @@ public class TeleportPojo implements IRewardOperation {
 
     @Override
     public String getRewardIcon() {
-        return "bookmark_scroll_i00";
+        return "icon.bookmark_scroll_i00";
     }
 
     @Override

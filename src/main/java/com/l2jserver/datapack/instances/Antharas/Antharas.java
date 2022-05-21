@@ -127,7 +127,7 @@ public final class Antharas extends GrandBossInstance {
     private static int attacker_3_hate = 0;
 
     public Antharas() {
-        super(Antharas.class.getSimpleName(), ANTHARAS, 70050, "antharas.xml", new InstanceWorld());
+        super(Antharas.class.getSimpleName(), ANTHARAS, 70050, "Antharas.xml", new InstanceWorld());
 
         boss = (L2GrandBossInstance) addSpawn(ANTHARAS, 185708, 114298, -8221, 0, false, 0, false, instanceId);
 

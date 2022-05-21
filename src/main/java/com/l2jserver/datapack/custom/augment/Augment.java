@@ -66,7 +66,6 @@ public class Augment implements IBypassHandler {
         }
         if (split.length == 3) {
             if (split[1].equals("set")) {
-
                 int id = Integer.parseInt(split[2]);
                 playersOptions.computeIfAbsent(activeChar, k -> new OptionHolder());
                 if (com.l2jserver.datapack.custom.augment.Options.getTypeById(id) == OptionsType.STAT) {

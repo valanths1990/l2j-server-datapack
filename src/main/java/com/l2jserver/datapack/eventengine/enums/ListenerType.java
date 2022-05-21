@@ -15,5 +15,6 @@ public enum ListenerType {
     ON_USE_TELEPORT,
     ON_TOWER_CAPTURED,
     ON_DOOR_ACTION,
-    ON_DLG_ANSWER
+    ON_DLG_ANSWER,
+    ON_PLAYER_MOVE
 }

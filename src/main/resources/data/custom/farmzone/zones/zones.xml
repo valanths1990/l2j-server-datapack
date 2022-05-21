@@ -73,6 +73,29 @@
             <spawn X="93873" Y="-82481" Z="-2757" spawnName="East"/> <!-- east-->
             <spawn X="91339" Y="-76041" Z="-3669" spawnName="South East"/><!-- south east-->
             <spawn X="82471" Y="-71206" Z="-3451" spawnName="South"/> <!-- south-->
-
         </zone>
+    <zone id="3" maxZ="200" minZ="-6000" name="Chromatic Highlands" shape="NPoly" type="FarmZone">
+        <node X="148599" Y="160744"/>
+        <node X="154633" Y="164188"/>
+        <node X="157551" Y="164871"/>
+        <node X="159560" Y="163352"/>
+        <node X="160533" Y="161446"/>
+        <node X="161681" Y="158747"/>
+        <node X="162005" Y="154984"/>
+        <node X="162556" Y="151403"/>
+        <node X="160572" Y="148815"/>
+        <node X="158555" Y="146528"/>
+        <node X="156578" Y="146085"/>
+        <node X="151498" Y="143470"/>
+        <node X="149431" Y="144158"/>
+        <node X="149688" Y="146725"/>
+        <node X="147097" Y="152451"/>
+        <node X="147658" Y="156405"/>
+        <node X="147223" Y="159149"/>
+        <spawn X="148684" Y="160369" Z="-3154" spawnName="Entrance"/>
+        <spawn X="157256" Y="157222" Z="-3550" spawnName="House"/>
+        <spawn X="159876" Y="155011" Z="-3758" spawnName="Sea Entrance"/>
+        <spawn X="160640" Y="152375" Z="-3490" spawnName="Sea Cliff"/>
+        <spawn X="156064" Y="148383" Z="-3675" spawnName="Seabed"/>
+    </zone>
 </list>

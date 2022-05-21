@@ -63,14 +63,26 @@ public class EventDispatcher implements EventListenerInterface<IBaseEvent> {
     }
 
     public void onAttackableFactionCall(OnAttackableFactionCall onAttackableFactionCall) {
+        if (onAttackableFactionCall.getAttacker().getParty() != null) {
+            onAttackableFactionCall.getAttacker().getParty().getMembers().forEach(p -> executeEventOnPlayer(p, onAttackableFactionCall));
+            return;
+        }
         executeEventOnPlayer(onAttackableFactionCall.getAttacker(), onAttackableFactionCall);
     }
 
     public void onAttackableKill(OnAttackableKill onAttackableKill) {
+        if (onAttackableKill.getAttacker().getParty() != null) {
+            onAttackableKill.getAttacker().getParty().getMembers().forEach(p -> executeEventOnPlayer(p, onAttackableKill));
+            return;
+        }
         executeEventOnPlayer(onAttackableKill.getAttacker(), onAttackableKill);
     }
 
     public void onGrandBossKill(OnGrandBossKill onGrandBossKill) {
+        if (onGrandBossKill.getActiveChar().getParty() != null) {
+            onGrandBossKill.getActiveChar().getParty().getMembers().forEach(p -> executeEventOnPlayer(p, onGrandBossKill));
+            return;
+        }
         executeEventOnPlayer(onGrandBossKill.getActiveChar().getActingPlayer(), onGrandBossKill);
     }
 
@@ -155,6 +167,10 @@ public class EventDispatcher implements EventListenerInterface<IBaseEvent> {
 
     public void onCreatureKill(OnCreatureKill onCreatureKill) {
         if (onCreatureKill.getAttacker() instanceof L2Playable) {
+            if (onCreatureKill.getAttacker().getParty() != null) {
+                onCreatureKill.getAttacker().getParty().getMembers().forEach(p -> executeEventOnPlayer(p.getActingPlayer(), onCreatureKill));
+                return;
+            }
             executeEventOnPlayer(onCreatureKill.getAttacker().getActingPlayer(), onCreatureKill);
         }
     }
@@ -505,7 +521,9 @@ public class EventDispatcher implements EventListenerInterface<IBaseEvent> {
             executeEventOnPlayer(onPlayerTitleChange.getPlayer().getActingPlayer(), onPlayerTitleChange);
         }
     }
-
+    public void onPlayerEventParticipated(OnPlayerEventParticipated onPlayerEventParticipated){
+        executeEventOnPlayer(onPlayerEventParticipated.getActiveChar(),onPlayerEventParticipated);
+    }
     public void onTrapAction(OnTrapAction onTrapAction) {
         executeEventOnPlayer(onTrapAction.getTrap().getActingPlayer(), onTrapAction);
     }
@@ -523,7 +541,7 @@ public class EventDispatcher implements EventListenerInterface<IBaseEvent> {
     public void onTvTEventStart(OnTvTEventStart onTvTEventStart) {
     }
 
-    private final void hookOnEvent(IBaseEvent event) {
+    private void hookOnEvent(IBaseEvent event) {
         switch (event.getType()) {
             case ON_ATTACKABLE_AGGRO_RANGE_ENTER -> onAttackableAggroRangeEnter((OnAttackableAggroRangeEnter) event);
             case ON_ATTACKABLE_ATTACK -> onAttackableAttack((OnAttackableAttack) event);
@@ -621,6 +639,7 @@ public class EventDispatcher implements EventListenerInterface<IBaseEvent> {
             case ON_PLAYER_PARTY_LEAVE -> onPlayerPartyLeave((OnPlayerPartyLeave) event);
             case ON_PLAYER_USE_TELEPORT_TO_LOCATION -> onPlayerUseTeleportToLocation((OnPlayerUseTeleportToLocation) event);
             case ON_PLAYER_TITLE_CHANGE -> onPlayerTitleChange((OnPlayerTitleChange) event);
+            case ON_PLAYER_EVENT_PARTICIPATED -> onPlayerEventParticipated((OnPlayerEventParticipated) event);
             case ON_TRAP_ACTION -> onTrapAction((OnTrapAction) event);
             case ON_TVT_EVENT_FINISH -> onTvTEventFinish((OnTvTEventFinish) event);
             case ON_TVT_EVENT_KILL -> onTvTEventKill((OnTvTEventKill) event);

@@ -94,7 +94,7 @@ public final class DispelBySlot extends AbstractEffect {
 
 			if ((entry.getKey() == toDispel.getSkill().getAbnormalType()) && ((entry.getValue() < 0) || (entry.getValue() >= toDispel.getSkill().getAbnormalLvl()))) {
 				effectList.stopSkillEffects(true, entry.getKey());
-				if (!info.getEffected().getActingPlayer().isInOlympiadMode()) {
+				if (info.getEffected().getActingPlayer() !=null &&!info.getEffected().getActingPlayer().isInOlympiadMode()) {
 					ThreadPoolManager.getInstance().scheduleGeneral(new BuffCancellation(info.getEffector().getActingPlayer(), info.getEffected().getActingPlayer(), List.of(toDispel), true), Configuration.customs().getBuffCancellationTime());
 				}
 			}

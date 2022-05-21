@@ -24,103 +24,123 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-public abstract class AbstractTimeZone  {
-	protected IBypassHandler handler = null;
-	protected boolean active = false;
-	protected L2ZoneType currentZone;
-	protected List<L2ZoneType> zones = null;
-	protected List<Location> zoneLocations;
-	protected Random rand = new Random();
-	protected Integer remainingTime;
-	protected Integer zoneTime;
-	protected ScheduledFuture<?> future;
-	protected List<AbstractEventListener> registeredListeners = new CopyOnWriteArrayList<>();
+public abstract class AbstractTimeZone {
+    protected IBypassHandler handler = null;
+    protected boolean active = false;
+    protected L2ZoneType currentZone;
+    protected List<L2ZoneType> zones = null;
+    protected List<Location> zoneLocations;
+    protected Random rand = new Random();
+    protected Integer remainingTime;
+    protected Integer zoneTime;
+    protected ScheduledFuture<?> future;
+    protected List<AbstractEventListener> registeredListeners = new CopyOnWriteArrayList<>();
 
-	protected AbstractTimeZone() {
-		ZoneManager.getInstance().parseDirectory(Configuration.server().getDatapackRoot() + "/data/custom", true);
-	}
+    protected AbstractTimeZone() {
+        ZoneManager.getInstance().parseDirectory(Configuration.server().getDatapackRoot() + "/data/custom", true);
+    }
 
-	protected void registerListeners() {
-		registeredListeners.add(currentZone.addListener(new ConsumerEventListener(Containers.Players(), EventType.ON_CREATURE_ZONE_EXIT, this::onExitZone, this)));
-		registeredListeners.add(currentZone.addListener(new ConsumerEventListener(Containers.Players(), EventType.ON_CREATURE_ZONE_ENTER, this::onEnterZone, this)));
-	}
+    protected void registerListeners() {
+        registeredListeners.add(currentZone.addListener(new ConsumerEventListener(currentZone, EventType.ON_CREATURE_ZONE_EXIT, this::onExitZone, this)));
+        registeredListeners.add(currentZone.addListener(new ConsumerEventListener(currentZone, EventType.ON_CREATURE_ZONE_ENTER, this::onEnterZone, this)));
+    }
 
-	protected void unregisterListeners() {
-		registeredListeners.forEach(l -> currentZone.removeListener(l));
-		registeredListeners.clear();
-	}
 
-	protected void onExitZone(IBaseEvent event) {
-		OnCreatureZoneExit e = (OnCreatureZoneExit) event;
-		if (e.getCreature() instanceof L2PcInstance) {
-			if (zones.contains(e.getZone())) {
-				e.getCreature().sendPacket(new ExSendUIEvent((L2PcInstance) e.getCreature(), true, false, 0, 0, null));
-			}
-		}
-	}
+    protected void unregisterListeners() {
+        registeredListeners.forEach(l -> currentZone.removeListener(l));
+        registeredListeners.clear();
+    }
 
-	protected void onEnterZone(IBaseEvent event) {
-		OnCreatureZoneEnter e = (OnCreatureZoneEnter) event;
-		if (e.getCreature() instanceof L2PcInstance) {
-			if (zones.contains(e.getZone())) {
-				e.getCreature().sendPacket(new ExSendUIEvent((L2PcInstance) e.getCreature(), false, false, remainingTime, 0,null));
-			}
-		}
-	}
+    protected void onExitZone(IBaseEvent event) {
+        OnCreatureZoneExit e = (OnCreatureZoneExit) event;
+        if (e.getCreature() instanceof L2PcInstance) {
+            if (zones.contains(e.getZone())) {
+                e.getCreature().sendPacket(new ExSendUIEvent((L2PcInstance) e.getCreature(), true, false, 0, 0, null));
+            }
+        }
+    }
 
-	protected void clearCurrentZone() {
-		if (currentZone == null) {
-			return;
-		}
-		unregisterListeners();
-		active = false;
-		currentZone.setEnabled(false);
-		teleportPlayersOut();
-	}
+    protected void onEnterZone(IBaseEvent event) {
+        OnCreatureZoneEnter e = (OnCreatureZoneEnter) event;
+        if (e.getCreature() instanceof L2PcInstance) {
+            if (zones.contains(e.getZone())) {
+                e.getCreature().sendPacket(new ExSendUIEvent((L2PcInstance) e.getCreature(), false, false, remainingTime, 0, null));
+            }
+        }
+    }
 
-	protected abstract void teleportPlayersOut();
+    protected void clearCurrentZone() {
+        if (currentZone == null) {
+            return;
+        }
+        unregisterListeners();
+        active = false;
+        currentZone.setEnabled(false);
+        teleportPlayersOut();
+    }
 
-	protected void startNewZone() {
-		clearCurrentZone();
-		currentZone = zones.get(rand.nextInt(zones.size()));
-		currentZone.setEnabled(true);
-		registerListeners();
-		zoneLocations = ((L2ZoneRespawn) currentZone).getSpawns();
-		active = true;
-		remainingTime = zoneTime;
-		startCountdown();
-	}
+    protected abstract void teleportPlayersOut();
 
-	protected void startCountdown() {
-		Timer timer = new Timer();
-		timer.scheduleAtFixedRate(new TimerTask() {
-			public void run() {
-				remainingTime--;
-				if (remainingTime <= 0) {
-					timer.cancel();
-				}
-			}
-		}, 1000, 1000);
-	}
+    public void disable() {
+        if (!active) {
+            return;
+        }
+        if (future != null && !future.isCancelled()) {
+            future.cancel(true);
+        }
+        clearCurrentZone();
+        active = false;
+    }
 
-	public L2ZoneType getCurrentZone() {
-		return currentZone;
-	}
+    public void enable() {
+        if (active) {
+            return;
+        }
+        scheduleNewZone();
+        active = true;
+    }
 
-	public void scheduleNewZone() {
-		future = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::startNewZone, 0, zoneTime, TimeUnit.SECONDS);
-	}
+    protected void startNewZone() {
+        clearCurrentZone();
+        currentZone = zones.get(rand.nextInt(zones.size()));
+        currentZone.setEnabled(true);
+        registerListeners();
+        zoneLocations = ((L2ZoneRespawn) currentZone).getSpawns();
+        active = true;
+        remainingTime = zoneTime;
+        startCountdown();
+    }
 
-	public List<Location> getSpawnLocations() {
-		return Collections.unmodifiableList(this.zoneLocations);
-	}
+    protected void startCountdown() {
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            public void run() {
+                remainingTime--;
+                if (remainingTime <= 0) {
+                    timer.cancel();
+                }
+            }
+        }, 1000, 1000);
+    }
 
-	public Location getRandomLocation() {
-		return this.zoneLocations.get(rand.nextInt(this.zoneLocations.size()));
-	}
+    public L2ZoneType getCurrentZone() {
+        return currentZone;
+    }
 
-	public boolean isActive() {
-		return active;
-	}
+    public void scheduleNewZone() {
+        future = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::startNewZone, 0, zoneTime, TimeUnit.SECONDS);
+    }
+
+    public List<Location> getSpawnLocations() {
+        return Collections.unmodifiableList(this.zoneLocations);
+    }
+
+    public Location getRandomLocation() {
+        return this.zoneLocations.get(rand.nextInt(this.zoneLocations.size()));
+    }
+
+    public boolean isActive() {
+        return active;
+    }
 
 }

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="list">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="equipment" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="classId" type="xs:string"/>
+                                <xs:attribute name="grade">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="NONE"/>
+                                            <xs:enumeration value="D"/>
+                                            <xs:enumeration value="C"/>
+                                            <xs:enumeration value="B"/>
+                                            <xs:enumeration value="A"/>
+                                            <xs:enumeration value="S"/>
+                                            <xs:enumeration value="S80"/>
+                                            <xs:enumeration value="S84"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="setId" type="xs:positiveInteger" default="1"/>
+                                <xs:attribute name="weaponType" type="xs:string">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="SWORD"/>
+                                            <xs:enumeration value="BLUNT"/>
+                                            <xs:enumeration value="DAGGER"/>
+                                            <xs:enumeration value="BOW"/>
+                                            <xs:enumeration value="POLE"/>
+                                            <xs:enumeration value="NONE"/>
+                                            <xs:enumeration value="DUAL"/>
+                                            <xs:enumeration value="ETC"/>
+                                            <xs:enumeration value="FIST"/>
+                                            <xs:enumeration value="DUALFIST"/>
+                                            <xs:enumeration value="FISHINGROD"/>
+                                            <xs:enumeration value="RAPIER"/>
+                                            <xs:enumeration value="ANCIENTSWORD"/>
+                                            <xs:enumeration value="CROSSBOW"/>
+                                            <xs:enumeration value="FLAG"/>
+                                            <xs:enumeration value="OWNTHING"/>
+                                            <xs:enumeration value="DUALDAGGER"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="isWeaponMagic"  type="xs:boolean" default="false"/>
+                                <xs:attribute name="isTwoHanded" type="xs:boolean" default="false"/>
+                                <xs:attribute name="useShield" type="xs:boolean" default="false"/>
+                                <xs:attribute name="shield" type="xs:string" default="SHIELD">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="SHIELD"/>
+                                            <xs:enumeration value="SIGIL"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="giveAccessories" type="xs:boolean" default="true"/>
+                                <xs:attribute name="raidBossAccessories" type="xs:boolean" default="false"/>
+                                <xs:attribute name="SA" type="xs:string" default="NONE">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Acumen"/>
+                                            <xs:enumeration value="Anger"/>
+                                            <xs:enumeration value="Back Blow"/>
+                                            <xs:enumeration value="Cheap Shot"/>
+                                            <xs:enumeration value="Conversion"/>
+                                            <xs:enumeration value="Critical Anger"/>
+                                            <xs:enumeration value="Critical Bleed"/>
+                                            <xs:enumeration value="Critical Damage"/>
+                                            <xs:enumeration value="Critical Drain"/>
+                                            <xs:enumeration value="Critical Poison"/>
+                                            <xs:enumeration value="Critical Stun"/>
+                                            <xs:enumeration value="Empower"/>
+                                            <xs:enumeration value="Evasion"/>
+                                            <xs:enumeration value="Focus"/>
+                                            <xs:enumeration value="Guidance"/>
+                                            <xs:enumeration value="Haste"/>
+                                            <xs:enumeration value="Health"/>
+                                            <xs:enumeration value="Long Blow"/>
+                                            <xs:enumeration value="Magic Bless Body"/>
+                                            <xs:enumeration value="Magic Chaos"/>
+                                            <xs:enumeration value="Magic Damage"/>
+                                            <xs:enumeration value="Magic Focus"/>
+                                            <xs:enumeration value="Magic Hold"/>
+                                            <xs:enumeration value="Magic Mental Shield"/>
+                                            <xs:enumeration value="Magic Might"/>
+                                            <xs:enumeration value="Magic Paralyze"/>
+                                            <xs:enumeration value="Magic Poison"/>
+                                            <xs:enumeration value="Magic Power"/>
+                                            <xs:enumeration value="Magic Regeneration"/>
+                                            <xs:enumeration value="Magic Shield"/>
+                                            <xs:enumeration value="Magic Silence"/>
+                                            <xs:enumeration value="Magic Weakness"/>
+                                            <xs:enumeration value="Mana Up"/>
+                                            <xs:enumeration value="Mental Shield"/>
+                                            <xs:enumeration value="Might Mortal"/>
+                                            <xs:enumeration value="Miser"/>
+                                            <xs:enumeration value="Quick Recovery"/>
+                                            <xs:enumeration value="Rsk. Evasion"/>
+                                            <xs:enumeration value="Rsk. Focus"/>
+                                            <xs:enumeration value="Rsk. Haste"/>
+                                            <xs:enumeration value="Towering Blow"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

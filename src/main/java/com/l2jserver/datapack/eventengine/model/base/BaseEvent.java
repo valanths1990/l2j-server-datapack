@@ -50,6 +50,9 @@ import com.l2jserver.datapack.eventengine.model.template.SkillTemplate;
 import com.l2jserver.datapack.eventengine.util.EventUtil;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
+import com.l2jserver.gameserver.model.events.Containers;
+import com.l2jserver.gameserver.model.events.EventDispatcher;
+import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerEventParticipated;
 import com.l2jserver.gameserver.model.holders.Participant;
 import com.l2jserver.gameserver.model.zone.type.L2EventZone;
 import com.l2jserver.gameserver.network.serverpackets.*;
@@ -383,6 +386,17 @@ public abstract class BaseEvent<T extends AbstractEventConfig> implements IListe
     }
 
     @Override
+    public void listenerOnPlayerMove(OnPlayerMoveEvent event) {
+        onPlayerMove(event);
+    }
+
+    protected void onPlayerMove(OnPlayerMoveEvent event) {
+        if (!zone.isInsideZone(event.getDestination().getLocation())) {
+            event.setCancel(true);
+        }
+    }
+
+    @Override
     public final void listenerOnAttack(OnAttackEvent event) {
         Playable playable = event.getAttacker();
         Character target = event.getTarget();
@@ -600,6 +614,7 @@ public abstract class BaseEvent<T extends AbstractEventConfig> implements IListe
             player.setProtectionTimeEnd(System.currentTimeMillis() + (getMainConfig().getSpawnProtectionTime() * 1000L)); // Milliseconds
             getScoreboardPackets().forEach(packet -> player.getPcInstance().sendPacket(packet));
         }
+        addSuscription(ListenerType.ON_PLAYER_MOVE);
     }
 
     private List<L2GameServerPacket> getScoreboardPackets() {
@@ -650,23 +665,28 @@ public abstract class BaseEvent<T extends AbstractEventConfig> implements IListe
      */
     public void prepareToEnd() {
         stopAllPendingRevive();
-        List<L2GameServerPacket> packets = new ArrayList<>();
+        final L2GameServerPacket packet;
 
         switch (_config.getType()) {
             case TEAM -> {
                 boolean isRedWinner = getTeamsManager().getAllTeams().stream().max(Comparator.comparingInt(p -> p.getPoints(getConfig().getScoreType()))).stream().anyMatch(t -> t.getTeamType() == TeamType.RED);
-                packets.add(new ExCubeGameEnd(isRedWinner));
+                packet = new ExCubeGameEnd(isRedWinner);
             }
             case SINGLE -> {
-
+                List<Participant> participants = _playerEventManager.getAllEventPlayers().stream().map(p -> new Participant(p.getName(), p.getPoints(ScoreType.KILL))).collect(Collectors.toList());
+                packet = new ExShowPVPMatchRecord(participants);
             }
+            default -> packet = null;
         }
         _playerEventManager.getAllEventPlayers().stream().filter(p -> p.getPcInstance() != null).forEach(p -> {
             p.revive(getMainConfig().getSpawnProtectionTime());
             p.cancelAllActions();
             p.cancelAllEffects();
             removePlayerFromEvent(p, true);
-            packets.forEach(packet -> p.getPcInstance().sendPacket(packet));
+            if (packet != null) {
+                p.getPcInstance().sendPacket(packet);
+            }
+            EventDispatcher.getInstance().notifyEventAsync(new OnPlayerEventParticipated(p.getPcInstance(), true), p.getPcInstance());
         });
         getScheduledEventsManager().cancelTaskControlTime();
         getInstanceWorldManager().destroyAllInstances();

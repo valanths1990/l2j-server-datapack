@@ -1,21 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/zones.xsd">
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../../xsd/zones.xsd">
     <!-- rad 14500-->
-    <zone minZ="-7000" maxZ="6000" name="primal island" shape="Cylinder" rad="20000" type="PvpZone" id="2">
+    <zone minZ="-7000" maxZ="6000" name="Primeval Island" shape="Cylinder" rad="20000" type="PvpZone" id="2">
         <stat name="default_enabled" val="true"/>
         <node X="7190" Y="-20414"/>
-        <spawn X="10485" Y="-25223" Z="-3692"/>
-        <spawn X="9500" Y="-23281" Z="-3704"/>
-        <spawn X="9560" Y="-23281" Z="-3704"/>
+        <spawn X="7861" Y="-22691" Z="-3677"/>
+        <spawn X="9857" Y="-24447" Z="-3729"/>
+        <spawn X="11072" Y="-22938" Z="-3663"/>
+        <spawn X="11427" Y="-24649" Z="-3640" type="towerSpawn"/>
+        <spawn X="9451" Y="-23289" Z="-3702" type="towerSpawn"/>
+        <spawn X="6433" Y="-24086" Z="-3733" type="towerSpawn"/>
     </zone>
-    <zone maxZ="-3000" minZ="-4000" name="" shape="Cylinder" type="PvpZone" rad="10000" id="3">
+    <zone maxZ="-3000" minZ="-4000" name="Wasteland" shape="Cylinder" type="PvpZone" rad="10000" id="3">
         <node X="-15836" Y="207243"/>
-        <spawn X="-17064" Y="206713" Z="-3665"/>
-        <spawn X="-16900" Y="209807" Z="-3641"/>
+        <spawn X="-17276" Y="206327" Z="-3661"/>
+        <spawn X="-16258" Y="213018" Z="-3661"/>
+        <spawn X="-14169" Y="211579" Z="-3550"/>
+        <spawn X="-14752" Y="209570" Z="-3661" type="towerSpawn"/>
+        <spawn X="-16397" Y="208097" Z="-3661" type="towerSpawn"/>
+        <spawn X="-17418" Y="209631" Z="-3661" type="towerSpawn"/>
     </zone>
-    <!-- <zone minZ="-3600" maxZ="-3000" name="test" shape="Cylinder" rad="5000" type="FlagZone" id="10002">
-        <stat name="default_enabled" val="true" />
-		<node X="81280" Y="148650" />
-    </zone> -->
-
+    <zone maxZ="-3000" minZ="-4000" name="Cruma Marshlands" shape="Cylinder" type="PvpZone" rad="13500" id="4">
+        <node X="17677" Y="114185"/>
+        <spawn X="15792" Y="114174" Z="-3578"/>
+        <spawn X="9485" Y="114174" Z="-3578"/>
+        <spawn X="24857" Y="113744" Z="-3712"/>
+        <spawn X="18620" Y="103616" Z="-3724"/>
+        <spawn X="16011" Y="121822" Z="-3660"/>
+        <spawn X="16305" Y="119082" Z="-37032" type="towerSpawn"/>
+        <spawn X="9550" Y="114045" Z="-3612" type="towerSpawn"/>
+        <spawn X="18463" Y="106507" Z="-3650" type="towerSpawn"/>
+        <spawn X="22194" Y="113015" Z="-3686" type="towerSpawn"/>
+    </zone>
+    <zone maxZ="-1800" minZ="-4000" name="Bee Hive" shape="Cylinder" type="PvpZone" rad="10000" id="5">
+        <node X="30221" Y="184598"/>
+        <spawn X="29567" Y="179304" Z="-3613"/>
+        <spawn X="30517" Y="191320" Z="-3702"/>
+        <spawn X="36379" Y="186249" Z="-3054"/>
+        <spawn X="22836" Y="188870" Z="-3522"/>
+        <spawn X="34125" Y="182764" Z="-3264" type="towerSpawn"/>
+        <spawn X="29652" Y="189068" Z="-3617" type="towerSpawn"/>
+        <spawn X="25133" Y="186497" Z="-3362" type="towerSpawn"/>
+    </zone>
+    <zone maxZ="-1500" minZ="3500" name="Abandoned Camp" shape="Cylinder" type="PvpZone" rad="9000" id="6">
+        <node X="-55179" Y="141190"/>
+        <spawn X="-55357" Y="140604" Z="-2504"/>
+        <spawn X="-49934" Y="137530" Z="-2879"/>
+        <spawn X="-54471" Y="146637" Z="-2875"/>
+        <spawn X="-51966" Y="143613" Z="-2889" type="towerSpawn"/>
+        <spawn X="-50618" Y="140313" Z="-2852" type="towerSpawn"/>
+        <spawn X="-52722" Y="137948" Z="-2918" type="towerSpawn"/>
+    </zone>
 </list>
+        <!--exection ground
+              cruma marshlands
+              bee hive
+              gludio ruins of despair  ruins of agony
+              abandoned camp
+              aden the cemetery
+        -->

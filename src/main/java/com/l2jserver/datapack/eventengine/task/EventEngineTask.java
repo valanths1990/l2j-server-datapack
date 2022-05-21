@@ -18,10 +18,10 @@
  */
 package com.l2jserver.datapack.eventengine.task;
 
+import com.l2jserver.gameserver.custom.Activity.ActivityManager;
+import com.l2jserver.datapack.eventengine.EventActivity;
 import com.l2jserver.datapack.eventengine.config.BaseConfigLoader;
 import com.l2jserver.datapack.eventengine.enums.MessageType;
-import com.l2jserver.datapack.eventengine.interfaces.IEventContainer;
-import com.l2jserver.datapack.eventengine.managers.CacheManager;
 import com.l2jserver.datapack.eventengine.model.base.BaseEvent;
 import com.l2jserver.datapack.eventengine.EventEngineManager;
 import com.l2jserver.datapack.eventengine.model.config.MainEventConfig;
@@ -29,8 +29,8 @@ import com.l2jserver.datapack.eventengine.datatables.EventLoader;
 import com.l2jserver.datapack.eventengine.enums.CollectionTarget;
 import com.l2jserver.datapack.eventengine.enums.EventEngineState;
 import com.l2jserver.datapack.eventengine.util.EventUtil;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.quest.Event;
+
+import java.time.Duration;
 
 /**
  * It handles the different state's behavior of EventEngineManager.
@@ -50,27 +50,27 @@ public class EventEngineTask implements Runnable {
         try {
 
             EventEngineState state = EventEngineManager.getInstance().getEventEngineState();
-			if (state == EventEngineState.WAITING) {
-				EventEngineManager.getInstance().setEventEngineState(EventEngineState.REGISTER);
+            if (state == EventEngineState.WAITING) {
+                EventEngineManager.getInstance().setEventEngineState(EventEngineState.REGISTER);
 //							EventEngineManager.getInstance().setNextEvent(EventLoader.getInstance().getRandomEventType());
-			}
+            }
             switch (state) {
                 case WAITING: {
-                    EventEngineManager.getInstance().setTime(0); //DEBUG
                     if (EventEngineManager.getInstance().getTime() <= 0) {
                         EventEngineManager.getInstance().setNextEvent(EventLoader.getInstance().getRandomEventType());
                         EventEngineManager.getInstance().setTime(getConfig().getRegisterTime() * 60);
                         String eventName = EventEngineManager.getInstance().getNextEvent().getEventName();
                         EventUtil.announceTo(MessageType.CRITICAL_ANNOUNCE, "event_register_started", "%event%", eventName, _type);
                         EventEngineManager.getInstance().setEventEngineState(EventEngineState.REGISTER);
+                        ActivityManager.getInstance().registerAction(new EventActivity(), Duration.ofSeconds(EventEngineManager.getInstance().getTime()));
                     }
                     break;
                 }
                 case REGISTER: {
 //					L2World.getInstance().getPlayers().forEach(p -> EventEngineManager.getInstance().registerPlayer(CacheManager.getInstance().getPlayer(p.getObjectId())));
-					if (EventEngineManager.getInstance().getAllRegisteredPlayers().size() > 1) {
-						EventEngineManager.getInstance().setEventEngineState(EventEngineState.RUN_EVENT);
-					}
+                    if (EventEngineManager.getInstance().getAllRegisteredPlayers().size() > 1) {
+                        EventEngineManager.getInstance().setEventEngineState(EventEngineState.RUN_EVENT);
+                    }
                     if (EventEngineManager.getInstance().getTime() > 0) {
                         int time = EventEngineManager.getInstance().getTime();
                         String eventName = EventEngineManager.getInstance().getNextEvent().getEventName();

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/items.xsd">
+    <item id="15312" type="Armor" name="Dawn's Bracelet">
+        <set name="icon" val="icon.accessory_lbracelet_of_dawn"/>
+        <set name="default_action" val="EQUIP"/>
+        <set name="bodypart" val="rbracelet"/>
+        <set name="immediate_effect" val="true"/>
+        <set name="crystal_type" val="S"/>
+        <set name="material" val="SILVER"/>
+        <set name="weight" val="15"/>
+        <set name="is_tradable" val="true"/>
+        <set name="is_droppable" val="false"/>
+        <set name="is_destroyable" val="false"/>
+        <set name="is_sellable" val="false"/>
+        <set name="is_depositable" val="false"/>
+        <set name="item_skill" val="8337-1"/>
+        <set name="time" val="1440"/>
+        <for>
+            <add stat="maxMp" val="120"/>
+        </for>
+    </item>
+</list>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
+
     <npc id="40000" displayId="18696" level="70" type="L2Custom" name="Teleporter" title="L2 Angel" usingServerSideTitle="true" usingServerSideName="true">
         <!-- Confirmed CT2.5 -->
         <race>CONSTRUCT</race>
@@ -181,6 +182,29 @@
         <collision>
             <radius normal="30" />
             <height normal="31" />
+        </collision>
+    </npc>
+    <npc id="40010" displayId="13298" level="80" type="L2Custom" name="PvP Manager" title="L2 Angel" usingServerSideName="true" usingServerSideTitle="true">
+        <!-- TODO: Must be confirmed -->
+        <parameters>
+            <param name="type" value="pvpzone;homepage npc"/>
+        </parameters>
+        <sex>MALE</sex>
+        <stats str="10" int="10" dex="10" wit="10" con="10" men="10">
+            <vitals hp="2444" mp="2444.0" />
+            <attack physical="500" magical="500" attackSpeed="278" range="40" />
+            <defence physical="500" magical="500" />
+            <attribute>
+                <defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+            </attribute>
+            <speed>
+                <walk ground="60" />
+                <run ground="160" />
+            </speed>
+        </stats>
+        <collision>
+            <radius normal="25" />
+            <height normal="22" />
         </collision>
     </npc>
 </list>

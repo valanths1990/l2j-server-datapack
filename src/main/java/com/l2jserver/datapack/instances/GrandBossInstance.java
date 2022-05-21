@@ -69,7 +69,7 @@ public abstract class GrandBossInstance extends AbstractInstance {
     @Override
     public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon) {
         if (npc.getId() == grandBossId) {
-            EventDispatcher.getInstance().notifyEventAsync(new OnGrandBossKill(killer, (L2GrandBossInstance) npc), Containers.Global());
+            EventDispatcher.getInstance().notifyEventAsync(new OnGrandBossKill(killer, (L2GrandBossInstance) npc),killer);
             finishInstance(world);
         }
         return super.onKill(npc, killer, isSummon);

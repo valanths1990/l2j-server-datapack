@@ -64,6 +64,7 @@ public class ListenerDispatcher {
             case ON_TOWER_CAPTURED -> subscriber.listenerOnTowerCaptured((OnTowerCapturedEvent) event);
             case ON_DOOR_ACTION -> subscriber.listenerOnDoorAction((OnDoorActionEvent) event);
             case ON_DLG_ANSWER -> subscriber.listenerOnDlgAnswer((OnDlgAnswer) event);
+            case ON_PLAYER_MOVE -> subscriber.listenerOnPlayerMove((OnPlayerMoveEvent) event);
         }
     }
 

@@ -78,7 +78,7 @@ public class VDSystem
 			LOG.info(DonateTaskManager.class.getSimpleName() + ": started.");
 		}
 
-		// register individual reward command
+//		 register individual reward command
 		VoicedCommandHandler.getInstance().registerHandler(new VoteCMD());
 
 		// load global system rewards

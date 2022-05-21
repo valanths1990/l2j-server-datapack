@@ -12,7 +12,6 @@ import com.l2jserver.datapack.eventengine.model.base.BaseEvent;
 import com.l2jserver.datapack.eventengine.model.entity.Player;
 import com.l2jserver.datapack.eventengine.model.entity.Team;
 import com.l2jserver.datapack.eventengine.model.holder.LocationHolder;
-import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.config.Configuration;
@@ -23,7 +22,6 @@ import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.capturetower.CaptureTower;
 import com.l2jserver.gameserver.network.clientpackets.Say2;
-import com.l2jserver.gameserver.network.serverpackets.ConfirmDlg;
 import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
 import com.l2jserver.gameserver.network.serverpackets.FlyToLocation;
 import com.l2jserver.gameserver.network.serverpackets.ValidateLocation;
@@ -109,38 +107,52 @@ public class Siege extends BaseEvent<SiegeConfig> {
 //        if (currentConqueror == null) {
 //            return;
 //        }
-        if (event.getPlayer().getPcInstance().calculateDistance(event.getDoor().getLocation(), false, false) > 150d) {
+        if (event.getPlayer().getPcInstance().calculateDistance(event.getDoor().getLocation(), false, false) > 140d) {
             return;
         }
 //        if (event.getPlayer().getTeamType() != currentConqueror.getTeamType()) {
 //            return;
 //        }
-
+        System.out.println("\n\n");
         L2PcInstance pc = event.getPlayer().getPcInstance();
 
         Location doorLocation = event.getDoor().getLocation();
         Location pcLocation = pc.getLocation();
+        Location doorMid ;
+        if((pcLocation.getX()-doorLocation.getX())>(pcLocation.getY()-doorLocation.getY())){
+        doorMid  = new Location((pcLocation.getX()-doorLocation.getX())+doorLocation.getX(),doorLocation.getY(), doorLocation.getZ());
+        }
+        else if((pcLocation.getX()-doorLocation.getX())<(pcLocation.getY()-doorLocation.getY())){
+           doorMid = new Location(doorLocation.getX(),(pcLocation.getY()-doorLocation.getY())+doorLocation.getY(), doorLocation.getZ());
+        }
+        else {
+            doorMid = new Location((pc.getLocation().getX()-doorLocation.getX())+doorLocation.getX(),(pcLocation.getY()-doorLocation.getY())+doorLocation.getY(), doorLocation.getZ());
+        }
 
 
 
-
-        final double angle = Util.calculateHeadingFrom(event.getDoor().getLocation(),pc.getLocation());
-        final double radian =  Math.toRadians(angle);
+        System.out.println(Util.calculateHeadingFrom(pcLocation,doorMid));
+        System.out.println(pc.getHeading());
+        System.out.println(doorMid);
+        pc.setHeading(Util.calculateHeadingFrom(pcLocation,doorMid));
+        final double angle = Util.convertHeadingToDegree(pc.getHeading());
+        final double radian = Math.toRadians(angle);
         final double course = Math.toRadians(180);
-        final int x1 = (int) (Math.cos(Math.PI + radian + course) * 180);
-        final int y1 = (int) (Math.sin(Math.PI + radian + course) * 180);
+        final int x1 = (int) (Math.cos(Math.PI + radian + course) * 150);
+        final int y1 = (int) (Math.sin(Math.PI + radian + course) * 150);
 
         int x = pc.getX() + x1;
         int y = pc.getY() + y1;
         int z = pc.getZ();
 
 //        Location l = GeoData.getInstance().moveCheck(pc.getX(), pc.getY(), pc.getZ(), x, y, z, pc.getInstanceId());
-        Location l = new Location(x,y,z,0, world.getInstanceId());
+        Location l = new Location(x, y, z, 0, world.getInstanceId());
         pc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
         pc.broadcastPacket(new FlyToLocation(pc, pc, FlyToLocation.FlyType.DUMMY));
         pc.abortAttack();
         pc.abortCast();
         pc.setXYZ(l);
+
         pc.broadcastPacket(new ValidateLocation(pc));
 
 

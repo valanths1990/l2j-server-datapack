@@ -30,7 +30,7 @@ import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.ZoneId;
 
 /**
- * @author Silvar
+ * @author Hallo
  */
 public class BufferHandler implements IBypassHandler {
     private final String[] COMMANDS = {"buffer;general", "buffer;dance", "buffer;song", "buffer;simple", "buffer;resist", "buffer;homepage", "buffer;specific"};

@@ -38,8 +38,8 @@ public class State<T extends Number> implements IState<T>, Serializable {
 
     @Override
     @SuppressWarnings("unchecked")
-    public void increaseCurrent(Double current) {
-        this.current = (T) Integer.valueOf(current.intValue());
+    public void increaseProgress(Integer current) {
+        this.current = (T) current;
         if (this.current.intValue() >= end.intValue()) {
             this.current = this.end;
             isDone = true;
@@ -55,7 +55,6 @@ public class State<T extends Number> implements IState<T>, Serializable {
         if (event.getType() == this.eventType && !isDone) {
             if (current instanceof Integer) {
                 current = (T) (Integer) (((Integer) current) + 1);
-                // current=(T)Integer.valueOf(current.intValue()+1);
                 if (current.intValue() >= end.intValue()) {
                     current = end;
                     isDone = true;
@@ -81,14 +80,11 @@ public class State<T extends Number> implements IState<T>, Serializable {
         return 0;
     }
 
+
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((end == null) ? 0 : end.hashCode());
-        result = prime * result + ((eventType == null) ? 0 : eventType.hashCode());
-        result = prime * result + ((start == null) ? 0 : start.hashCode());
-        return result;
+    public void reset() {
+        this.current = this.start;
+        this.isDone = false;
     }
 
     @Override
@@ -113,9 +109,13 @@ public class State<T extends Number> implements IState<T>, Serializable {
     }
 
     @Override
-    public void reset() {
-        this.current = this.start;
-        this.isDone = false;
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((end == null) ? 0 : end.hashCode());
+        result = prime * result + ((eventType == null) ? 0 : eventType.hashCode());
+        result = prime * result + ((start == null) ? 0 : start.hashCode());
+        return result;
     }
 
 }

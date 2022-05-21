@@ -26,7 +26,7 @@ public class NameColorPojo implements IRewardOperation {
 
     @Override
     public String getRewardIcon() {
-        return "color_name_i00";
+        return "icon.color_name_i00";
     }
 
     @Override

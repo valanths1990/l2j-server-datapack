@@ -36,9 +36,6 @@ public class TeleporterHandler implements IBypassHandler {
 	}
 
 	@Override public boolean useBypass(String command, L2PcInstance player, L2Character bypassOrigin) {
-//		ZoneManager.getInstance().reload();
-//		ZoneManager.getInstance().parseDatapackDirectory("data/custom",true);
-//		ZoneManager.getInstance().getZoneById(2, L2FarmZone.class).visualizeZone(-1430);
 		String[] splitted = command.split(" ");
 		String currentPage = splitted[0].split(";")[1];
 		if (splitted.length == 1) {

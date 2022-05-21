@@ -2,9 +2,10 @@
   "achievements": [
     {
       "id": 1,
-      "title": "Th3DrXmas Idea",
-      "description": "kill the noob The3DrXmas to receive Noblesse.",
+      "title": "Path Of A Noblesse Possessor Of A Precious Soul",
+      "description": "To receive Noblesse you need to kill Flame of Splendor Barakiel inside Saint of Valley.",
       "minLevel": 85,
+      "repeating": true,
       "state": [
         {
           "start": 0,
@@ -43,20 +44,6 @@
             "type": "expSp",
             "exp": 10000000000,
             "sp": 1000000000
-          }
-        ]
-      },
-      "condition": {
-        "conditions": [
-          {
-            "type": "using",
-            "attribute": "kind",
-            "value": "ANCIENTSWORD"
-          },
-          {
-            "type": "player",
-            "attribute": "souls",
-            "value": "10"
           }
         ]
       }

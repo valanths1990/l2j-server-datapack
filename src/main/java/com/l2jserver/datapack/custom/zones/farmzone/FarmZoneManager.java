@@ -44,130 +44,132 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class FarmZoneManager extends AbstractTimeZone {
-	private final L2NpcTemplate primaryRaidboss;//27413;
-	private final L2NpcTemplate secondaryRaidboss; //27414;
+    private final L2NpcTemplate primaryRaidboss;//27413;
+    private final L2NpcTemplate secondaryRaidboss; //27414;
 
-	private static final Map<Integer, Integer[]> zoneMobIds = new HashMap<>();
-	private final int attackRange = 2000;
-	List<L2NpcTemplate> templates;
-	List<L2MonsterInstance> spawnedMob = new CopyOnWriteArrayList<>();
+    private static final Map<Integer, Integer[]> zoneMobIds = new HashMap<>();
+    private final int attackRange = 2000;
+    List<L2NpcTemplate> templates;
+    List<L2MonsterInstance> spawnedMob = new CopyOnWriteArrayList<>();
 
-	static {
+    static {
+        zoneMobIds.put(1, new Integer[]{27412, 27405});
+        zoneMobIds.put(2, new Integer[]{22544, 22541});
+        zoneMobIds.put(3, new Integer[]{22264, 22263, 22265, 22267});
+    }
 
-		zoneMobIds.put(1, new Integer[] { 27412, 27405 });
-		zoneMobIds.put(2, new Integer[] { 22544, 22541 });
+    private FarmZoneManager() {
+        super();
+        this.zoneTime = Configuration.customs().getFarmZoneTime();
+        zones = new ArrayList<>(ZoneManager.getInstance().getAllZones(L2FarmZone.class));
+        zones.forEach(z -> z.setEnabled(false));
+        Collections.shuffle(zones);
+        handler = new FarmZoneHandler();
+        BypassHandler.getInstance().registerHandler(handler);
+        templates = NpcData.getInstance().getAllNpcOfClassType("L2CustomMonster");
+        primaryRaidboss = NpcData.getInstance().getTemplate(27413);
+        secondaryRaidboss = NpcData.getInstance().getTemplate(27414);
+        SpawnTable.getInstance().parseDatapackDirectory("data/custom/farmzone/custom", true);
+        scheduleNewZone();
+    }
 
-	}
+    @Override
+    protected void registerListeners() {
+        super.registerListeners();
+    }
 
-	private FarmZoneManager() {
-		super();
-		this.zoneTime = Configuration.customs().getFarmZoneTime();
-		zones = new ArrayList<>(ZoneManager.getInstance().getAllZones(L2FarmZone.class));
-		zones.forEach(z -> z.setEnabled(false));
-		Collections.shuffle(zones);
-		handler = new FarmZoneHandler();
-		BypassHandler.getInstance().registerHandler(handler);
-		templates = NpcData.getInstance().getAllNpcOfClassType("L2CustomMonster");
-		primaryRaidboss = NpcData.getInstance().getTemplate(27413);
-		secondaryRaidboss = NpcData.getInstance().getTemplate(27414);
-		SpawnTable.getInstance().parseDatapackDirectory("data/custom/farmzone/custom", true);
-		scheduleNewZone();
-	}
+    @Override
+    protected void startNewZone() {
+        super.startNewZone();
+        Set<L2Spawn> spawns = Stream.of(zoneMobIds.get(currentZone.getId())).map(npcId -> SpawnTable.getInstance().getSpawns(npcId)).flatMap(Set::stream).collect(Collectors.toSet());
+        spawns.forEach(this::spawnMobAndAddListener);
+    }
 
-	@Override protected void registerListeners() {
-		super.registerListeners();
-	}
+    private void spawnMobAndAddListener(L2Spawn s) {
+        L2MonsterInstance mob = (L2MonsterInstance) s.doSpawn();
+        ConsumerEventListener listener = new ConsumerEventListener(Containers.Monsters(), EventType.ON_ATTACKABLE_KILL, this::onCreatureKill, this);
+        mob.setOnKillDelay(100);
+        mob.addListener(listener);
+        spawnedMob.add(mob);
+    }
 
-	@Override protected void startNewZone() {
-		super.startNewZone();
-		Set<L2Spawn> spawns = Stream.of(zoneMobIds.get(currentZone.getId())).map(npcId -> SpawnTable.getInstance().getSpawns(npcId)).flatMap(Set::stream).collect(Collectors.toSet());
-		spawns.forEach(this::spawnMobAndAddListener);
-	}
+    @Override
+    protected void clearCurrentZone() {
+        spawnedMob.forEach(L2MonsterInstance::deleteMe);
+        spawnedMob.clear();
+        super.clearCurrentZone();
+    }
 
-	private void spawnMobAndAddListener(L2Spawn s) {
-		L2MonsterInstance mob = (L2MonsterInstance) s.doSpawn();
-		ConsumerEventListener listener = new ConsumerEventListener(Containers.Monsters(), EventType.ON_ATTACKABLE_KILL, this::onCreatureKill, this);
-		mob.setOnKillDelay(100);
-		mob.addListener(listener);
-		spawnedMob.add(mob);
-	}
+    private void onCreatureKill(IBaseEvent event) {
+        OnAttackableKill onAttackableKill = (OnAttackableKill) event;
 
-	@Override protected void clearCurrentZone() {
-		spawnedMob.forEach(L2MonsterInstance::deleteMe);
-		spawnedMob.clear();
-		super.clearCurrentZone();
-	}
+        if (onAttackableKill.getAttacker() == null || onAttackableKill.getTarget() == null) {
+            return;
+        }
 
-	private void onCreatureKill(IBaseEvent event) {
-		OnAttackableKill onAttackableKill = (OnAttackableKill) event;
+        if (!(onAttackableKill.getTarget() instanceof L2CustomMonsterInstance)) {
+            return;
+        }
+        L2MonsterInstance mob = (L2MonsterInstance) onAttackableKill.getTarget();
+        if (Configuration.customs().getPrimaryRaidBossSpawnRate() > rand.nextInt(100)) {
+            try {
+                L2Spawn primarySpawn = new L2Spawn(primaryRaidboss);
+                primarySpawn.setLocation(mob.getLocation());
+                primarySpawn.setCustom(true);
+                primarySpawn.setHeading(mob.getHeading());
+                L2MonsterInstance primaryMonster = (L2MonsterInstance) primarySpawn.doSpawn();
+                primaryMonster.setIsRaid(true);
+                primaryMonster.getKnownList().addKnownObject(onAttackableKill.getAttacker());
+                primaryMonster.addAttackerToAttackByList(onAttackableKill.getAttacker());
+                primaryMonster.doAttack(onAttackableKill.getAttacker());
+                primaryMonster.addListener(new ConsumerEventListener(Containers.Players(), EventType.ON_ATTACKABLE_ATTACK, this::onRaidAttack, this));
+            } catch (ClassNotFoundException | NoSuchMethodException e) {
+                e.printStackTrace();
+            }
+            return;
+        }
+        if (Configuration.customs().getSecondaryRaidBossRate() > rand.nextInt(100)) {
+            try {
+                L2Spawn secondarySpawn = new L2Spawn(secondaryRaidboss);
+                secondarySpawn.setLocation(mob.getLocation());
+                secondarySpawn.setCustom(true);
+                secondarySpawn.setHeading(mob.getHeading());
+                L2MonsterInstance secondaryMonster = (L2MonsterInstance) secondarySpawn.doSpawn();
+                secondaryMonster.getKnownList().addKnownObject(onAttackableKill.getAttacker());
+                secondaryMonster.addAttackerToAttackByList(onAttackableKill.getAttacker());
+                secondaryMonster.doAttack(onAttackableKill.getAttacker());
+            } catch (ClassNotFoundException | NoSuchMethodException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-		if (onAttackableKill.getAttacker() == null || onAttackableKill.getTarget() == null) {
-			return;
-		}
+    public void onRaidAttack(IBaseEvent event) {
+        OnAttackableAttack onAttackableAttack = (OnAttackableAttack) event;
+        L2PcInstance attacker = onAttackableAttack.getAttacker();
+        attacker.updatePvPStatus();
 
-		if (!(onAttackableKill.getTarget() instanceof L2CustomMonsterInstance)) {
-			return;
-		}
-		L2MonsterInstance mob = (L2MonsterInstance) onAttackableKill.getTarget();
-		if (Configuration.customs().getPrimaryRaidBossSpawnRate() > rand.nextInt(100)) {
-			try {
-				L2Spawn primarySpawn = new L2Spawn(primaryRaidboss);
-				primarySpawn.setLocation(mob.getLocation());
-				primarySpawn.setCustom(true);
-				primarySpawn.setHeading(mob.getHeading());
-				L2MonsterInstance primaryMonster = (L2MonsterInstance) primarySpawn.doSpawn();
-				primaryMonster.setIsRaid(true);
-				primaryMonster.getKnownList().addKnownObject(onAttackableKill.getAttacker());
-				primaryMonster.addAttackerToAttackByList(onAttackableKill.getAttacker());
-				primaryMonster.doAttack(onAttackableKill.getAttacker());
-				primaryMonster.addListener(new ConsumerEventListener(Containers.Players(),EventType.ON_ATTACKABLE_ATTACK,this::onRaidAttack,this));
-			} catch (ClassNotFoundException | NoSuchMethodException e) {
-				e.printStackTrace();
-			}
-			return;
-		}
-		if (Configuration.customs().getSecondaryRaidBossRate() > rand.nextInt(100)) {
-			try {
-				L2Spawn secondarySpawn = new L2Spawn(secondaryRaidboss);
-				secondarySpawn.setLocation(mob.getLocation());
-				secondarySpawn.setCustom(true);
-				secondarySpawn.setHeading(mob.getHeading());
-				L2MonsterInstance secondaryMonster = (L2MonsterInstance) secondarySpawn.doSpawn();
-				secondaryMonster.getKnownList().addKnownObject(onAttackableKill.getAttacker());
-				secondaryMonster.addAttackerToAttackByList(onAttackableKill.getAttacker());
-				secondaryMonster.doAttack(onAttackableKill.getAttacker());
-			} catch (ClassNotFoundException | NoSuchMethodException e) {
-				e.printStackTrace();
-			}
-		}
-	}
+    }
 
-	public void onRaidAttack(IBaseEvent event){
-
-		OnAttackableAttack onAttackableAttack = (OnAttackableAttack) event;
-		L2PcInstance attacker = onAttackableAttack.getAttacker();
-		attacker.updatePvPStatus();
-
-	}
-
-	@Override protected void teleportPlayersOut() {
-		if (currentZone == null) {
-			return;
-		}
-		currentZone.getPlayersInside().forEach(p -> handler.useBypass("farmzone;homepage leave", p, null));
-	}
+    @Override
+    protected void teleportPlayersOut() {
+        if (currentZone == null) {
+            return;
+        }
+        currentZone.getPlayersInside().forEach(p -> handler.useBypass("farmzone;homepage leave", p, null));
+    }
 
 
-	public static FarmZoneManager getInstance() {
-		return FarmZoneManager.SingletonHolder.instance;
-	}
+    public static FarmZoneManager getInstance() {
+        return FarmZoneManager.SingletonHolder.instance;
+    }
 
-	private static class SingletonHolder {
-		protected static final FarmZoneManager instance = new FarmZoneManager();
-	}
+    private static class SingletonHolder {
+        protected static final FarmZoneManager instance = new FarmZoneManager();
+    }
 
-	public static void main(String[] args) {
-		FarmZoneManager.getInstance();
-	}
+    public static void main(String[] args) {
+        FarmZoneManager.getInstance();
+    }
 
 }

@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="armorset.xsd">
+    <equipment classId="fighter" grade="NONE" setId="23" weaponType="SWORD"/>
+    <equipment classId="warrior" grade="D" setId="58" weaponType="SWORD"/>
+    <equipment classId="knight" grade="D" setId="58" weaponType="SWORD" useShield="true"/>
+    <equipment classId="rogue" grade="D" setId="394" weaponType="SWORD"/>
+
+    <equipment classId="mage" grade="NONE" setId="1101" weaponType="BLUNT" isWeaponMagic="true" useShield="true"/>
+    <equipment classId="wizard" grade="D" setId="436" weaponType="BLUNT" isWeaponMagic="true" useShield="true"/>
+    <equipment classId="cleric" grade="D" setId="436" weaponType="BLUNT" isWeaponMagic="true" useShield="true"/>
+
+    <equipment classId="elvenFighter" grade="NONE" setId="23" weaponType="SWORD"/>
+    <equipment classId="elvenKnight" grade="D" setId="58" weaponType="SWORD"/>
+    <equipment classId="elvenScout" grade="D" setId="394" weaponType="BOW"/>
+
+    <equipment classId="elvenMage" grade="NONE" setId="1101" weaponType="BLUNT" isWeaponMagic="true"
+               useShield="true"/>
+    <equipment classId="elvenWizard" grade="D" setId="436" weaponType="BLUNT" isWeaponMagic="true"
+               useShield="true"/>
+    <equipment classId="oracle" grade="D" setId="436" weaponType="BLUNT" isWeaponMagic="true" useShield="true"/>
+
+    <equipment classId="darkFighter" grade="NONE" setId="23" weaponType="SWORD"/>
+    <equipment classId="palusKnight" grade="D" setId="58" weaponType="SWORD" useShield="true"/>
+    <equipment classId="assassin" grade="D" setId="394" weaponType="BOW"/>
+
+    <equipment classId="darkMage" grade="NONE" setId="1101" weaponType="SWORD"/>
+    <equipment classId="darkWizard" grade="D" setId="436" weaponType="BLUNT" isWeaponMagic="true"
+               useShield="true"/>
+    <equipment classId="shillienOracle" grade="D" setId="436" weaponType="BLUNT" isWeaponMagic="true"
+               useShield="true"/>
+
+    <equipment classId="orcFighter" grade="NONE" setId="23" weaponType="FIST"/>
+    <equipment classId="orcRaider" grade="D" setId="58" weaponType="BLUNT"/>
+    <equipment classId="orcMonk" grade="D" setId="58" weaponType="FIST"/>
+
+    <equipment classId="orcMage" grade="NONE" setId="1101" weaponType="SWORD"/>
+    <equipment classId="orcShaman" grade="D" setId="436" weaponType="BLUNT" isWeaponMagic="true"
+               useShield="true"/>
+
+    <equipment classId="dwarvenFighter" grade="NONE" setId="23" weaponType="SWORD"/>
+    <equipment classId="artisan" grade="D" setId="58" weaponType="POLE"/>
+    <equipment classId="scavenger" grade="D" setId="58" weaponType="POLE"/>
+
+    <equipment classId="maleSoldier" grade="NONE" setId="23" weaponType="SWORD"/>
+    <equipment classId="femaleSoldier" grade="NONE" setId="23" weaponType="SWORD"/>
+
+    <equipment classId="trooper" grade="D" setId="394" weaponType="SWORD"/>
+    <equipment classId="warder" grade="D" setId="394" weaponType="SWORD"/>
+
+
+    <!-- Gladiator -->
+    <equipment classId="gladiator" grade="C" setId="356" weaponType="DUAL"/>
+    <equipment classId="gladiator" grade="B" setId="2381" weaponType="DUAL"/>
+    <equipment classId="gladiator" grade="A" setId="10794" weaponType="DUAL"/>
+    <equipment classId="duelist" grade="S" setId="10799" weaponType="DUAL" raidBossAccessories="true"/>
+
+    <equipment classId="duelist" grade="S84" setId="16168" weaponType="DUAL" raidBossAccessories="true"/>
+
+    <!-- Warlord -->
+    <equipment classId="warlord" grade="C" setId="356" weaponType="POLE"/>
+    <equipment classId="warlord" grade="B" setId="2381" weaponType="POLE"/>
+    <equipment classId="warlord" grade="A" setId="10794" weaponType="POLE"/>
+    <equipment classId="dreadnought" grade="S" setId="10799" weaponType="POLE" raidBossAccessories="true"/>
+
+    <equipment classId="dreadnought" grade="S84" setId="16168" weaponType="POLE" raidBossAccessories="true"/>
+
+    <!-- Paladin -->
+    <equipment classId="paladin" grade="C" setId="356" weaponType="SWORD" useShield="true" SA="Health"/>
+    <equipment classId="paladin" grade="B" setId="2381" weaponType="SWORD" useShield="true" SA="Health"/>
+    <equipment classId="paladin" grade="A" setId="10794" weaponType="SWORD" useShield="true" SA="Health"/>
+    <equipment classId="phoenixKnight" grade="S" setId="10799" weaponType="SWORD" useShield="true" SA="Health"
+               raidBossAccessories="true"/>
+    <equipment classId="phoenixKnight" grade="S84" setId="16171" weaponType="SWORD" useShield="true" SA="Health"
+               raidBossAccessories="true"/>
+
+    <!-- Dark Avenger -->
+    <equipment classId="darkAvenger" grade="C" setId="356" weaponType="SWORD" useShield="true" SA="Health"/>
+    <equipment classId="darkAvenger" grade="B" setId="2381" weaponType="SWORD" useShield="true" SA="Health"/>
+    <equipment classId="darkAvenger" grade="A" setId="10794" weaponType="SWORD" useShield="true" SA="Health"/>
+    <equipment classId="hellKnight" grade="S" setId="10799" weaponType="SWORD" useShield="true" SA="Health"
+               raidBossAccessories="true"/>
+    <equipment classId="hellKnight" grade="S84" setId="16171" weaponType="SWORD" useShield="true" SA="Health"
+               raidBossAccessories="true"/>
+
+    <!-- Treasure Hunter -->
+    <equipment classId="treasureHunter" grade="C" setId="401" weaponType="DAGGER" SA="Focus"/>
+    <equipment classId="treasureHunter" grade="B" setId="2391" weaponType="DAGGER" SA="Focus"/>
+    <equipment classId="treasureHunter" grade="A" setId="10796" weaponType="DAGGER" SA="Focus"/>
+    <equipment classId="adventurer" grade="S" setId="10800" weaponType="DAGGER" SA="Critical Damage"
+               raidBossAccessories="true"/>
+    <equipment classId="adventurer" grade="S84" setId="16172" weaponType="DAGGER" SA="Critical Damage"
+               raidBossAccessories="true"/>
+
+    <!-- Hawkeye -->
+    <equipment classId="hawkeye" grade="C" setId="401" weaponType="BOW" SA="Evasion"/>
+    <equipment classId="hawkeye" grade="B" setId="2391" weaponType="BOW" SA="Evasion"/>
+    <equipment classId="hawkeye" grade="A" setId="10796" weaponType="BOW" SA="Focus"/>
+    <equipment classId="sagittarius" grade="S" setId="10800" weaponType="BOW" SA="Focus"
+               raidBossAccessories="true"/>
+    <equipment classId="sagittarius" grade="S84" setId="16172" weaponType="BOW" SA="Focus"
+               raidBossAccessories="true"/>
+
+    <!-- Temple Knight -->
+    <equipment classId="templeKnight" grade="C" setId="356" weaponType="SWORD" useShield="true" SA="Health"/>
+    <equipment classId="templeKnight" grade="B" setId="2381" weaponType="SWORD" useShield="true" SA="Focus"/>
+    <equipment classId="templeKnight" grade="A" setId="10794" weaponType="SWORD" useShield="true" SA="Health"/>
+    <equipment classId="evaTemplar" grade="S" setId="10799" weaponType="SWORD" useShield="true" SA="Health"
+               raidBossAccessories="true"/>
+    <equipment classId="evaTemplar" grade="S84" setId="16171" weaponType="SWORD" useShield="true" SA="Health"
+               raidBossAccessories="true"/>
+
+    <!-- Sword Singer -->
+    <equipment classId="swordSinger" grade="C" setId="356" weaponType="DUAL"/>
+    <equipment classId="swordSinger" grade="B" setId="2381" weaponType="DUAL"/>
+    <equipment classId="swordSinger" grade="A" setId="10794" weaponType="DUAL"/>
+    <equipment classId="swordMuse" grade="S" setId="10799" weaponType="DUAL" raidBossAccessories="true"/>
+
+    <equipment classId="swordMuse" grade="S84" setId="16171" weaponType="DUAL" raidBossAccessories="true"/>
+
+    <!-- Plains Walker -->
+    <equipment classId="plainsWalker" grade="C" setId="401" weaponType="DAGGER" SA="Focus"/>
+    <equipment classId="plainsWalker" grade="B" setId="2391" weaponType="DAGGER" SA="Focus"/>
+    <equipment classId="plainsWalker" grade="A" setId="10796" weaponType="DAGGER" SA="Focus"/>
+    <equipment classId="windRider" grade="S" setId="10800" weaponType="DAGGER" SA="Critical Damage"
+               raidBossAccessories="true"/>
+    <equipment classId="windRider" grade="S84" setId="16172" weaponType="DAGGER" SA="Critical Damage"
+               raidBossAccessories="true"/>
+
+    <!-- Silver Ranger -->
+    <equipment classId="silverRanger" grade="C" setId="401" weaponType="BOW" SA="Evasion"/>
+    <equipment classId="silverRanger" grade="B" setId="2391" weaponType="BOW" SA="Evasion"/>
+    <equipment classId="silverRanger" grade="A" setId="10796" weaponType="BOW" SA="Focus"/>
+    <equipment classId="moonlightSentinel" grade="S" setId="10800" weaponType="BOW" SA="Focus"
+               raidBossAccessories="true"/>
+    <equipment classId="moonlightSentinel" grade="S84" setId="16172" weaponType="BOW" SA="Focus"
+               raidBossAccessories="true"/>
+
+    <!-- Shillien Knight -->
+    <equipment classId="shillienKnight" grade="C" setId="356" weaponType="SWORD" useShield="true" SA="Health"/>
+    <equipment classId="shillienKnight" grade="B" setId="2381" weaponType="SWORD" useShield="true" SA="Focus"/>
+    <equipment classId="shillienKnight" grade="A" setId="10794" weaponType="SWORD" useShield="true" SA="Health"/>
+    <equipment classId="shillienTemplar" grade="S" setId="10799" weaponType="SWORD" useShield="true" SA="Health"
+               raidBossAccessories="true"/>
+    <equipment classId="shillienTemplar" grade="S84" setId="16171" weaponType="SWORD" useShield="true" SA="Health"
+               raidBossAccessories="true"/>
+
+    <!-- Blade Dancer -->
+    <equipment classId="bladedancer" grade="C" setId="356" weaponType="DUAL"/>
+    <equipment classId="bladedancer" grade="B" setId="2381" weaponType="DUAL"/>
+    <equipment classId="bladedancer" grade="A" setId="10794" weaponType="DUAL"/>
+    <equipment classId="spectralDancer" grade="S" setId="10799" weaponType="DUAL" raidBossAccessories="true"/>
+
+    <equipment classId="spectralDancer" grade="S84" setId="16171" weaponType="DUAL" raidBossAccessories="true"/>
+
+    <!-- Abyss Walker -->
+    <equipment classId="abyssWalker" grade="C" setId="401" weaponType="DAGGER" SA="Focus"/>
+    <equipment classId="abyssWalker" grade="B" setId="2391" weaponType="DAGGER" SA="Focus"/>
+    <equipment classId="abyssWalker" grade="A" setId="10796" weaponType="DAGGER" SA="Focus"/>
+    <equipment classId="ghostHunter" grade="S" setId="10800" weaponType="DAGGER" SA="Critical Damage"
+               raidBossAccessories="true"/>
+    <equipment classId="ghostHunter" grade="S84" setId="16172" weaponType="DAGGER" SA="Critical Damage"
+               raidBossAccessories="true"/>
+
+    <!-- Phantom Ranger -->
+    <equipment classId="phantomRanger" grade="C" setId="401" weaponType="BOW" SA="Evasion"/>
+    <equipment classId="phantomRanger" grade="B" setId="2391" weaponType="BOW" SA="Evasion"/>
+    <equipment classId="phantomRanger" grade="A" setId="10796" weaponType="BOW" SA="Focus"/>
+    <equipment classId="ghostSentinel" grade="S" setId="10800" weaponType="BOW" SA="Focus"
+               raidBossAccessories="true"/>
+    <equipment classId="ghostSentinel" grade="S84" setId="16172" weaponType="BOW" SA="Focus"
+               raidBossAccessories="true"/>
+
+    <!-- Destroyer -->
+    <equipment classId="destroyer" grade="C" setId="356" weaponType="BLUNT" isTwoHanded="true" SA="Focus"/>
+    <equipment classId="destroyer" grade="B" setId="2381" weaponType="BLUNT" isTwoHanded="true" SA="Focus"/>
+    <equipment classId="destroyer" grade="A" setId="10794" weaponType="BLUNT" isTwoHanded="true" SA="Focus"/>
+    <equipment classId="titan" grade="S" setId="10799" weaponType="BLUNT" isTwoHanded="true" SA="Health"
+               raidBossAccessories="true"/>
+    <equipment classId="titan" grade="S84" setId="16168" weaponType="BLUNT" isTwoHanded="true" SA="Health"
+               raidBossAccessories="true"/>
+
+    <!-- Tyrant -->
+    <equipment classId="tyrant" grade="C" setId="356" weaponType="FIST" SA="Rsk. Haste"/>
+    <equipment classId="tyrant" grade="B" setId="2381" weaponType="FIST" SA="Rsk. Haste"/>
+    <equipment classId="tyrant" grade="A" setId="10794" weaponType="FIST" SA="Haste"/>
+    <equipment classId="grandKhavatari" grade="S" setId="10799" weaponType="FIST" SA="Focus"
+               raidBossAccessories="true"/>
+    <equipment classId="grandKhavatari" grade="S84" setId="16168" weaponType="FIST" SA="Focus"
+               raidBossAccessories="true"/>
+
+    <!-- Bounty Hunter -->
+    <equipment classId="bountyHunter" grade="C" setId="356" weaponType="SWORD" useShield="true" SA="Focus"/>
+    <equipment classId="bountyHunter" grade="B" setId="2381" weaponType="SWORD" useShield="true" SA="Focus"/>
+    <equipment classId="bountyHunter" grade="A" setId="10794" weaponType="SWORD" useShield="true" SA="Health"/>
+    <equipment classId="fortuneSeeker" grade="S" setId="10799" weaponType="POLE" useShield="true" SA="Health"
+               raidBossAccessories="true"/>
+    <equipment classId="fortuneSeeker" grade="S84" setId="16169" weaponType="POLE" useShield="true" SA="Health"
+               raidBossAccessories="true"/>
+
+    <!-- Warsmith -->
+    <equipment classId="warsmith" grade="C" setId="356" weaponType="BLUNT" useShield="true" SA="Health"/>
+    <equipment classId="warsmith" grade="B" setId="2381" weaponType="BLUNT" useShield="true" SA="Health"/>
+    <equipment classId="warsmith" grade="A" setId="10794" weaponType="BLUNT" useShield="true" SA="Health"/>
+    <equipment classId="maestro" grade="S" setId="10799" weaponType="BLUNT" useShield="true" SA="Health"
+               raidBossAccessories="true"/>
+    <equipment classId="maestro" grade="S84" setId="16168" weaponType="BLUNT" useShield="true" SA="Health"
+               raidBossAccessories="true"/>
+
+    <!-- Sorcerer -->
+    <equipment classId="sorceror" grade="C" setId="442" weaponType="SWORD" isWeaponMagic="true" useShield="true"
+               SA="Acumen"/>
+    <equipment classId="sorceror" grade="B" setId="2398" weaponType="SWORD" isWeaponMagic="true" useShield="true"
+               SA="Acumen"/>
+    <equipment classId="sorceror" grade="A" setId="10798" weaponType="SWORD" isWeaponMagic="true" useShield="true"
+               SA="Acumen"/>
+    <equipment classId="archmage" grade="S" setId="10801" weaponType="SWORD" isWeaponMagic="true" useShield="true"
+               shield="SIGIL" SA="Acumen" raidBossAccessories="true"/>
+    <equipment classId="archmage" grade="S84" setId="16170" weaponType="SWORD" isWeaponMagic="true" useShield="true"
+               shield="SIGIL" SA="Acumen" raidBossAccessories="true"/>
+
+    <!-- Necromancer -->
+    <equipment classId="necromancer" grade="C" setId="442" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="necromancer" grade="B" setId="2398" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="necromancer" grade="A" setId="10798" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="soultaker" grade="S" setId="10801" weaponType="SWORD" isWeaponMagic="true" useShield="true"
+               shield="SIGIL" SA="Acumen" raidBossAccessories="true"/>
+    <equipment classId="soultaker" grade="S84" setId="16170" weaponType="SWORD" isWeaponMagic="true" useShield="true"
+               shield="SIGIL" SA="Acumen" raidBossAccessories="true"/>
+
+    <!-- Warlock -->
+    <equipment classId="warlock" grade="C" setId="442" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="warlock" grade="B" setId="2398" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="warlock" grade="A" setId="10798" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="arcanaLord" grade="S" setId="10801" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+    <equipment classId="arcanaLord" grade="S84" setId="16170" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+    <!-- Bishop -->
+    <equipment classId="bishop" grade="C" setId="442" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="bishop" grade="B" setId="2398" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="bishop" grade="A" setId="10798" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="cardinal" grade="S" setId="10801" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+    <equipment classId="cardinal" grade="S84" setId="16170" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+
+    <!-- Prophet -->
+    <equipment classId="prophet" grade="C" setId="442" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="prophet" grade="B" setId="2398" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="prophet" grade="A" setId="10798" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="hierophant" grade="S" setId="10801" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+    <equipment classId="hierophant" grade="S84" setId="16170" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+
+    <!-- Spellsigner -->
+    <equipment classId="spellsinger" grade="C" setId="442" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="spellsinger" grade="B" setId="2398" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="spellsinger" grade="A" setId="10798" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="mysticMuse" grade="S" setId="10801" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+    <equipment classId="mysticMuse" grade="S84" setId="10801" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+
+    <!-- Elemental summoner -->
+    <equipment classId="elementalSummoner" grade="C" setId="442" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="elementalSummoner" grade="B" setId="2398" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="elementalSummoner" grade="A" setId="10798" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="elementalMaster" grade="S" setId="10801" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+    <equipment classId="elementalMaster" grade="S84" setId="16170" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+
+    <!-- Elven elder -->
+    <equipment classId="elder" grade="C" setId="442" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="elder" grade="B" setId="2398" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="elder" grade="A" setId="10798" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="evaSaint" grade="S" setId="10801" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+    <equipment classId="evaSaint" grade="S84" setId="16170" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+
+    <!-- Spellhowler -->
+    <equipment classId="spellhowler" grade="C" setId="442" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="spellhowler" grade="B" setId="2398" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="spellhowler" grade="A" setId="10798" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="stormScreamer" grade="S" setId="10801" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+    <equipment classId="stormScreamer" grade="S84" setId="16170" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+
+
+    <!-- Phantom summoner -->
+    <equipment classId="phantomSummoner" grade="C" setId="442" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="phantomSummoner" grade="B" setId="2398" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="phantomSummoner" grade="A" setId="10798" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="spectralMaster" grade="S" setId="10801" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+
+    <equipment classId="spectralMaster" grade="S84" setId="16170" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+
+
+    <!-- Shillien elder -->
+    <equipment classId="shillenElder" grade="C" setId="442" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="shillenElder" grade="B" setId="2398" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="shillenElder" grade="A" setId="10798" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="shillienSaint" grade="S" setId="10801" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+    <equipment classId="shillienSaint" grade="S84" setId="16170" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+
+    <!-- Overlord -->
+    <equipment classId="overlord" grade="C" setId="442" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="overlord" grade="B" setId="2398" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="overlord" grade="A" setId="10798" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="dominator" grade="S" setId="10801" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+
+    <equipment classId="dominator" grade="S84" setId="16170" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+
+    <!-- Warcryer -->
+    <equipment classId="warcryer" grade="C" setId="442" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="warcryer" grade="B" setId="2398" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="warcryer" grade="A" setId="10798" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen"/>
+    <equipment classId="doomcryer" grade="S" setId="10801" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+
+    <equipment classId="doomcryer" grade="S84" setId="16170" weaponType="SWORD" isWeaponMagic="true"
+               useShield="true" SA="Acumen" shield="SIGIL" raidBossAccessories="true"/>
+
+
+    <!--    doombringer -->
+    <equipment classId="berserker" grade="C" setId="401" weaponType="ANCIENTSWORD" SA="Focus"/>
+    <equipment classId="berserker" grade="B" setId="2391" weaponType="ANCIENTSWORD" SA="Focus"/>
+    <equipment classId="berserker" grade="A" setId="10796" weaponType="ANCIENTSWORD" SA="Focus"/>
+    <equipment classId="doombringer" grade="S" setId="10800" weaponType="ANCIENTSWORD" SA="Focus"
+               raidBossAccessories="true"/>
+    <equipment classId="doombringer" grade="S84" setId="16171" weaponType="ANCIENTSWORD" SA="Health"
+               raidBossAccessories="true"/>
+
+    <!--male Soul hound-->
+    <equipment classId="maleSoulbreaker" grade="C" setId="401" weaponType="RAPIER" SA="Focus"/>
+    <equipment classId="maleSoulbreaker" grade="B" setId="2391" weaponType="RAPIER" SA="Focus"/>
+    <equipment classId="maleSoulbreaker" grade="A" setId="10796" weaponType="RAPIER" SA="Critical Damage"/>
+    <equipment classId="maleSoulhound" grade="S" setId="10800" weaponType="RAPIER" SA="Focus"
+               raidBossAccessories="true"/>
+    <equipment classId="maleSoulhound" grade="S84" setId="16171" weaponType="RAPIER" SA="Health"
+               raidBossAccessories="true"/>
+
+    <!--    female soul hound-->
+    <equipment classId="femaleSoulbreaker" grade="C" setId="401" weaponType="RAPIER" SA="Focus"/>
+    <equipment classId="femaleSoulbreaker" grade="B" setId="2391" weaponType="RAPIER" SA="Focus"/>
+    <equipment classId="femaleSoulbreaker" grade="A" setId="10796" weaponType="RAPIER" SA="Critical Damage"/>
+    <equipment classId="femaleSoulhound" grade="S" setId="10800" weaponType="RAPIER" SA="Focus"
+               raidBossAccessories="true"/>
+    <equipment classId="femaleSoulhound" grade="S84" setId="16171" weaponType="RAPIER" SA="Health"
+               raidBossAccessories="true"/>
+    <!--    tricker-->
+    <equipment classId="arbakester" grade="C" setId="401" weaponType="CROSSBOW" SA="Evasion"/>
+    <equipment classId="arbakester" grade="B" setId="2391" weaponType="CROSSBOW" SA="Evasion"/>
+    <equipment classId="arbakester" grade="A" setId="10796" weaponType="CROSSBOW" SA="Focus"/>
+    <equipment classId="trickster" grade="S" setId="10800" weaponType="CROSSBOW" SA="Focus"
+               raidBossAccessories="true"/>
+    <equipment classId="trickster" grade="S84" setId="16171" weaponType="CROSSBOW" SA="Focus"
+               raidBossAccessories="true"/>
+
+    <!--    Judicator-->
+    <equipment classId="inspector" grade="C" setId="401" weaponType="RAPIER" SA="Health"/>
+    <equipment classId="inspector" grade="B" setId="2391" weaponType="RAPIER" SA="Focus"/>
+    <equipment classId="inspector" grade="A" setId="10796" weaponType="RAPIER" SA="Health"/>
+    <equipment classId="judicator" grade="S" setId="10800" weaponType="RAPIER" SA="Health"
+               raidBossAccessories="true"/>
+    <equipment classId="judicator" grade="S84" setId="16171" weaponType="RAPIER" SA="Health"
+               raidBossAccessories="true"/>
+
+</list>

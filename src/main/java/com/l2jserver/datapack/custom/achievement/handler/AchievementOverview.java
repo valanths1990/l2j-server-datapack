@@ -13,7 +13,6 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.util.HtmlUtil;
 import com.l2jserver.gameserver.util.Util;
 
-import java.math.BigDecimal;
 import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,7 +21,7 @@ public class AchievementOverview implements IBypassHandler {
     private static final String[] COMMANDS = {"achievement;homepage"};
     private static final String progressTable = "<tr><td align=\"left\" height=\"30\"><table cellspacing=0 cellpadding=2 background=\"Crest.crest_%serverId%_%imageId%\" width=\"256\" height=\"16\"> <tr> <td width=\"256\" height=\"14\"> <img src=\"Crest.crest_%serverId%_%imageId%\" width=\"%progress%\" height=\"8\"> </td> </tr> </table></td>";
     private static final String progressRow = "<td width=\"150\" align=\"center\" fixwidth=\"150\"><font name=\"hs12\" color=\"fca503\">%current%/%end%</font></td></tr>";
-    private static final String itemTable = "<td width=\"32\" height=\"32\"> <img src=\"%itemIcon%\" width=\"32\" height=\"32\"> </td> <td width=\"64\"> <font name=\"hs9\" color=\"fca503\">%count%</font> </td>";
+    private static final String itemTable = "<td width=\"32\" height=\"32\"> <img src=\"%itemIcon%\" width=\"32\" height=\"32\"> </td> <td width=\"32\"> <font name=\"hs9\" color=\"fca503\">%count%</font> </td>";
     private static final String repeating = "<img src=\"Crest.crest_%serverId%_%imageId%\" width=\"64\" height=\"16\">";
     private static final NavigableMap<Long, String> suffixes = new TreeMap<>();
 
@@ -70,7 +69,7 @@ public class AchievementOverview implements IBypassHandler {
         List<String> allAchievements = playersAchievements.stream().map(a -> createAchievementHtml(pc, a)).collect(Collectors.toList());
 
         PageResult pr = HtmlUtil.createTableWithPages
-                (allAchievements, allAchievements.size(), page, 3, 3, 1, 0, 0, 0, 0, 0, "",
+                (allAchievements, allAchievements.size(), page, 3, 3, 1,
                         i -> "<td align=\"center\"><a action=\"bypass achievement;homepage page " + i + "\"><font name=\"hs22\" color=\"fca503\">" + i + " </font></a></td>",
                         f -> f);
 
@@ -86,8 +85,8 @@ public class AchievementOverview implements IBypassHandler {
         String progress = a.getStates().stream().map(this::createProgress).collect(Collectors.joining());
 
         String itemHtml = a.getRewardOperations().stream().map(i -> itemTable
-                .replaceFirst("%itemIcon%", "ItemTable.getInstance().getTemplate(i.getId()).getIcon()")
-                .replaceFirst("%count%", "format(i.getCount())")).collect(Collectors.joining());
+                .replaceFirst("%itemIcon%", i.getRewardIcon())
+                .replaceFirst("%count%", i.getCount() > 1 ? format(i.getCount()) : "")).collect(Collectors.joining());
 
         achievementTemplate = achievementTemplate
                 .replaceFirst("%title%", a.getTitle())
@@ -103,9 +102,6 @@ public class AchievementOverview implements IBypassHandler {
         return achievementTemplate;
     }
 
-    private static String kFormatter(BigDecimal num) {
-        return String.valueOf(Math.abs(num.longValue()) > 999 ? Math.signum(num.longValue()) * ((Math.abs(num.longValue()) / 1000F)) + 'k' : Math.signum(num.longValue()) * Math.abs(num.longValue()));
-    }
 
     private String createProgress(IState<? extends Number> s) {
         int currentProgress = Util.map(s.getCurrent().intValue(), s.getStart().intValue(), s.getEnd().intValue(), 0, 256);

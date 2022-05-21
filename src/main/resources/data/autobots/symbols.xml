@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<symbolSets>
+
+    <!-- Gladiator -->
+    <symbol classId="duelist" symbols="170;172;110"/>
+
+    <!-- Warlord -->
+    <symbol classId="dreadnought" symbols="169;174;109"/>
+
+    <!-- Paladin -->
+    <symbol classId="phoenixKnight" symbols="172;112;179"/>
+
+    <!-- Dark Avenger -->
+    <symbol classId="hellKnight" symbols="172;112;179"/>
+
+    <!-- Treasure Hunter -->
+    <symbol classId="adventurer" symbols="173;171;179"/>
+
+    <!-- Hawkeye -->
+    <symbol classId="sagittarius" symbols="169;109;174"/>
+
+    <!-- Temple Knight -->
+    <symbol classId="evaTemplar" symbols="172;112;179"/>
+
+    <!-- Sword Singer -->
+    <symbol classId="swordMuse" symbols="169;174;109"/>
+
+    <!-- Plains Walker -->
+    <symbol classId="windRider" symbols="173;171;179"/>
+
+    <!-- Silver Ranger -->
+    <symbol classId="moonlightSentinel" symbols="169;109;174"/>
+
+    <!-- Shillien Knight -->
+    <symbol classId="shillienTemplar" symbols="172;112;179"/>
+
+    <!-- Blade Dancer -->
+    <symbol classId="spectralDancer" symbols="169;174;109"/>
+
+    <!-- Abyss Walker -->
+    <symbol classId="ghostHunter" symbols="173;171;179"/>
+
+    <!-- Phantom Ranger -->
+    <symbol classId="ghostSentinel" symbols="169;109;174"/>
+
+    <!-- Destroyer -->
+    <symbol classId="titan" symbols="174;114"/>
+
+    <!-- Tyrant -->
+    <symbol classId="grandKhavatari" symbols="170;172;110"/>
+
+    <!-- Bounty Hunter -->
+    <symbol classId="fortuneSeeker" symbols="169;174;109"/>
+
+    <!-- Warsmith -->
+    <symbol classId="maestro" symbols="169;174;109"/>
+
+    <!-- Sorcerer -->
+    <symbol classId="archmage" symbols="180;175;171"/>
+
+    <!-- Necromancer -->
+    <symbol classId="soultaker" symbols="180;175;171"/>
+
+    <!-- Warlock -->
+    <symbol classId="arcanaLord" symbols="180;120;171"/>
+
+    <!-- Bishop -->
+    <symbol classId="cardinal" symbols="179;119;171"/>
+
+    <!-- Prophet -->
+    <symbol classId="hierophant" symbols="179;119;171"/>
+
+    <!-- Spellsigner -->
+    <symbol classId="mysticMuse" symbols="180;120;175"/>
+
+    <!-- Elemental summoner -->
+    <symbol classId="elementalMaster" symbols="179;119;171"/>
+
+    <!-- Elven elder -->
+    <symbol classId="evaSaint" symbols="179;119;171"/>
+
+    <!-- Spellhowler -->
+    <symbol classId="stormScreamer" symbols="180;115;175"/>
+
+    <!-- Phantom summoner -->
+    <symbol classId="spectralMaster" symbols="179;119;171"/>
+
+    <!-- Shillien elder -->
+    <symbol classId="shillienSaint" symbols="179;119;171"/>
+
+    <!-- Overlord -->
+    <symbol classId="dominator" symbols="180;120;171"/>
+
+    <!-- Warcryer -->
+    <symbol classId="doomcryer" symbols="180;120;171"/>
+</symbolSets>
+
+

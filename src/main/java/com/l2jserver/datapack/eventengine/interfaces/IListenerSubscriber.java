@@ -32,4 +32,6 @@ public interface IListenerSubscriber {
 
 	void listenerOnDlgAnswer(OnDlgAnswer event);
 
+	void listenerOnPlayerMove(OnPlayerMoveEvent event);
+
 }

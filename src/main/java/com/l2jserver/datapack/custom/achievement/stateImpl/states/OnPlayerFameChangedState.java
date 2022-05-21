@@ -12,7 +12,7 @@ public class OnPlayerFameChangedState extends State<Long> {
     }
 
     @Override
-    public void increaseCurrent(Double current) {
+    public void increaseProgress(Double current) {
         this.current = current.longValue();
         if (this.current >= end) {
             this.current = this.end;

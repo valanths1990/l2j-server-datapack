@@ -153,7 +153,7 @@ public class Configurations
 	public static void load()
 	{
 		// load configuration file
-		Properties ep = initProperties("./config/VDSystem.properties");
+		Properties ep = initProperties(Configuration.server().getDatapackRoot()+"/config/VDSystem.properties");
 
 		// debug messages
 		DEBUG = Boolean.parseBoolean(ep.getProperty("VDS_DEBUG", "false"));
@@ -501,7 +501,7 @@ public class Configurations
 	private static Properties initProperties(String file)
 	{
 		Properties result = new Properties();
-		try (InputStream is = new FileInputStream(new File(file)))
+		try (InputStream is = new FileInputStream(file))
 		{
 			result.load(is);
 		} catch (final IOException e)

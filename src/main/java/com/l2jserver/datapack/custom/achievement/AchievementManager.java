@@ -2,7 +2,6 @@ package com.l2jserver.datapack.custom.achievement;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.ObjectInputFilter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,17 +19,13 @@ import com.l2jserver.datapack.custom.achievement.holder.AchievementHolder;
 import com.l2jserver.datapack.custom.achievement.holder.StateHolder;
 import com.l2jserver.datapack.custom.achievement.pojo.AchievementPojo;
 import com.l2jserver.datapack.custom.achievement.pojo.AchievementsListPojo;
-import com.l2jserver.datapack.custom.achievement.pojo.IRewardOperation;
 import com.l2jserver.datapack.custom.achievement.stateImpl.Achievement;
 import com.l2jserver.datapack.custom.achievement.stateImpl.IState;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.config.Configuration;
 import com.l2jserver.gameserver.handler.BypassHandler;
-import com.l2jserver.gameserver.instancemanager.MailManager;
 import com.l2jserver.gameserver.model.L2World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.Message;
-import com.l2jserver.gameserver.model.entity.Message.SendBySystem;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.ListenerRegisterType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
@@ -88,8 +83,7 @@ public final class AchievementManager extends Quest {
     private void load() throws IOException {
         allOriginalAchievements.clear();
         eventDispatcher = new EventDispatcher(this);
-        jsonFile = new File("C:\\Users\\Silvar\\Desktop\\l2workspace\\l2j-server-datapack-angel\\src\\main\\resources\\data\\custom\\achievement\\achievements.json");
-//        jsonFile = new File(Configuration.server().getDatapackRoot() + "/data/custom/achievement/achievements.json");
+        jsonFile = new File(Configuration.server().getDatapackRoot() + "/data/custom/achievement/achievements.json");
         AchievementsListPojo achievementsListPojo = Json.fromJson(jsonFile, AchievementsListPojo.class);
 
         Set<EventType> allUsedEventTypes = achievementsListPojo.getAchievementsList().stream()
@@ -132,7 +126,7 @@ public final class AchievementManager extends Quest {
             insertOrUpdateAchievement(copiedAchievement);
         } else {
             IntStream.range(0, holder.getStates().size()).filter(index -> index < copiedAchievement.getStates().size())
-                    .forEach(i -> copiedAchievement.getStates().get(i).increaseCurrent(holder.getStates().get(i).getCurrent()));
+                    .forEach(i -> copiedAchievement.getStates().get(i).increaseProgress(holder.getStates().get(i).getCurrent()));
         }
         if (copiedAchievement.getStates().stream().allMatch(IState::isDone)) {
             if (!completedAchievements.containsKey(player.getObjectId())) {
@@ -297,7 +291,7 @@ public final class AchievementManager extends Quest {
 //        if (!completedAchievements.containsKey(a.getOwner().getObjectId())) {
 //            completedAchievements.put(a.getOwner().getObjectId(), new CopyOnWriteArraySet<>());
 //        }
-        completedAchievements.putIfAbsent(a.getOwner().getObjectId(), new CopyOnWriteArraySet<>()).add(a);
+        completedAchievements.computeIfAbsent(a.getOwner().getObjectId(), k -> new CopyOnWriteArraySet<>()).add(a);
 //        completedAchievements.get(a.getOwner().getObjectId()).add(a);
         insertOrUpdateAchievement(a);
     }
@@ -366,7 +360,7 @@ public final class AchievementManager extends Quest {
 //            achievement.getRewardItems().stream().limit(8).forEach(reward -> Objects.requireNonNull(msg.createAttachments()).addItem("Achievement Reward", reward.getId(), reward.getCount(), null, null));
 ////            achievement.getRewa
 //            MailManager.getInstance().sendMessage(msg);
-            achievement.getRewardOperations().forEach(a->a.executeOperation(achievement.getOwner()));
+            achievement.getRewardOperations().forEach(a -> a.executeOperation(achievement.getOwner()));
         }
     }
 

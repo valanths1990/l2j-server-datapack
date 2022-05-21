@@ -23,6 +23,7 @@ import com.l2jserver.datapack.eventengine.ai.NpcManager;
 import com.l2jserver.datapack.eventengine.dispatcher.events.*;
 import com.l2jserver.datapack.eventengine.dispatcher.ListenerDispatcher;
 import com.l2jserver.datapack.eventengine.managers.CacheManager;
+import com.l2jserver.datapack.eventengine.model.holder.LocationHolder;
 import com.l2jserver.datapack.eventengine.model.template.ItemTemplate;
 import com.l2jserver.datapack.eventengine.model.template.SkillTemplate;
 import com.l2jserver.datapack.eventengine.model.entity.Character;
@@ -254,5 +255,19 @@ public class EventEngineAdapter extends Quest {
     public void onPlayerDlgAnswer(OnPlayerDlgAnswer event) {
         Player p = CacheManager.getInstance().getPlayer(event.getActiveChar(), true);
         ListenerDispatcher.getInstance().notifyEvent(new OnDlgAnswer(p, event.getAnswer()));
+    }
+
+    @RegisterEvent(EventType.ON_PLAYER_MOVE_REQUEST)
+    @RegisterType(ListenerRegisterType.GLOBAL)
+    @Priority(Integer.MAX_VALUE)
+    public TerminateReturn onPlayerMoveRequest(OnPlayerMoveRequest event) {
+
+        Player p = CacheManager.getInstance().getPlayer(event.getPlayer(), true);
+        LocationHolder destination = new LocationHolder(event.getLocation());
+        boolean canceled = ListenerDispatcher.getInstance().notifyEvent(new OnPlayerMoveEvent(p, destination));
+        if (canceled) {
+            return new TerminateReturn(true, true, true);
+        }
+        return null;
     }
 }

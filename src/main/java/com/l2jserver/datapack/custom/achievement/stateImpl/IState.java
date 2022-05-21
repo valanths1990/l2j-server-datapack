@@ -19,7 +19,17 @@ public interface IState<T extends Number> {
 
     boolean isDone();
 
-    void increaseCurrent(Double current);
+    default void increaseProgress(Integer current) {
+    }
+
+    default void increaseProgress(Long current) {
+    }
+
+    default void increaseProgress(Float current) {
+    }
+
+    default void increaseProgress(Double current) {
+    }
 
     void reset();
 }
